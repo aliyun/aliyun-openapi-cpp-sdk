@@ -39,32 +39,32 @@ void QueryKnowledgesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allKnowledges = value["Knowledges"]["Knowledge"];
-	for (auto value : allKnowledges)
+	auto allKnowledgesNode = value["Knowledges"]["Knowledge"];
+	for (auto valueKnowledgesKnowledge : allKnowledgesNode)
 	{
 		Knowledge knowledgesObject;
-		if(!value["KnowledgeId"].isNull())
-			knowledgesObject.knowledgeId = std::stol(value["KnowledgeId"].asString());
-		if(!value["ModifyTime"].isNull())
-			knowledgesObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["ModifyUserName"].isNull())
-			knowledgesObject.modifyUserName = value["ModifyUserName"].asString();
-		if(!value["CreateTime"].isNull())
-			knowledgesObject.createTime = value["CreateTime"].asString();
-		if(!value["CreateUserName"].isNull())
-			knowledgesObject.createUserName = value["CreateUserName"].asString();
-		if(!value["CategoryId"].isNull())
-			knowledgesObject.categoryId = std::stol(value["CategoryId"].asString());
-		if(!value["KnowledgeStatus"].isNull())
-			knowledgesObject.knowledgeStatus = std::stoi(value["KnowledgeStatus"].asString());
-		if(!value["KnowledgeTitle"].isNull())
-			knowledgesObject.knowledgeTitle = value["KnowledgeTitle"].asString();
-		if(!value["StartDate"].isNull())
-			knowledgesObject.startDate = value["StartDate"].asString();
-		if(!value["EndDate"].isNull())
-			knowledgesObject.endDate = value["EndDate"].asString();
-		if(!value["Version"].isNull())
-			knowledgesObject.version = value["Version"].asString();
+		if(!valueKnowledgesKnowledge["KnowledgeId"].isNull())
+			knowledgesObject.knowledgeId = std::stol(valueKnowledgesKnowledge["KnowledgeId"].asString());
+		if(!valueKnowledgesKnowledge["ModifyTime"].isNull())
+			knowledgesObject.modifyTime = valueKnowledgesKnowledge["ModifyTime"].asString();
+		if(!valueKnowledgesKnowledge["ModifyUserName"].isNull())
+			knowledgesObject.modifyUserName = valueKnowledgesKnowledge["ModifyUserName"].asString();
+		if(!valueKnowledgesKnowledge["CreateTime"].isNull())
+			knowledgesObject.createTime = valueKnowledgesKnowledge["CreateTime"].asString();
+		if(!valueKnowledgesKnowledge["CreateUserName"].isNull())
+			knowledgesObject.createUserName = valueKnowledgesKnowledge["CreateUserName"].asString();
+		if(!valueKnowledgesKnowledge["CategoryId"].isNull())
+			knowledgesObject.categoryId = std::stol(valueKnowledgesKnowledge["CategoryId"].asString());
+		if(!valueKnowledgesKnowledge["KnowledgeStatus"].isNull())
+			knowledgesObject.knowledgeStatus = std::stoi(valueKnowledgesKnowledge["KnowledgeStatus"].asString());
+		if(!valueKnowledgesKnowledge["KnowledgeTitle"].isNull())
+			knowledgesObject.knowledgeTitle = valueKnowledgesKnowledge["KnowledgeTitle"].asString();
+		if(!valueKnowledgesKnowledge["StartDate"].isNull())
+			knowledgesObject.startDate = valueKnowledgesKnowledge["StartDate"].asString();
+		if(!valueKnowledgesKnowledge["EndDate"].isNull())
+			knowledgesObject.endDate = valueKnowledgesKnowledge["EndDate"].asString();
+		if(!valueKnowledgesKnowledge["Version"].isNull())
+			knowledgesObject.version = valueKnowledgesKnowledge["Version"].asString();
 		auto allCoreWords = value["CoreWords"]["CoreWord"];
 		for (auto value : allCoreWords)
 			knowledgesObject.coreWords.push_back(value.asString());

@@ -40,22 +40,22 @@ void DetectImageElementsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allElements = value["Elements"]["Element"];
-	for (auto value : allElements)
+	auto allElementsNode = dataNode["Elements"]["Element"];
+	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
-		if(!value["Type"].isNull())
-			elementObject.type = value["Type"].asString();
-		if(!value["X"].isNull())
-			elementObject.x = std::stoi(value["X"].asString());
-		if(!value["Y"].isNull())
-			elementObject.y = std::stoi(value["Y"].asString());
-		if(!value["Width"].isNull())
-			elementObject.width = std::stoi(value["Width"].asString());
-		if(!value["Height"].isNull())
-			elementObject.height = std::stoi(value["Height"].asString());
-		if(!value["Score"].isNull())
-			elementObject.score = std::stof(value["Score"].asString());
+		if(!dataNodeElementsElement["Type"].isNull())
+			elementObject.type = dataNodeElementsElement["Type"].asString();
+		if(!dataNodeElementsElement["X"].isNull())
+			elementObject.x = std::stoi(dataNodeElementsElement["X"].asString());
+		if(!dataNodeElementsElement["Y"].isNull())
+			elementObject.y = std::stoi(dataNodeElementsElement["Y"].asString());
+		if(!dataNodeElementsElement["Width"].isNull())
+			elementObject.width = std::stoi(dataNodeElementsElement["Width"].asString());
+		if(!dataNodeElementsElement["Height"].isNull())
+			elementObject.height = std::stoi(dataNodeElementsElement["Height"].asString());
+		if(!dataNodeElementsElement["Score"].isNull())
+			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
 		data_.elements.push_back(elementObject);
 	}
 	if(!value["Code"].isNull())

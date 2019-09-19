@@ -39,30 +39,30 @@ void DescribeAccountsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAccounts = value["Accounts"]["DBAccount"];
-	for (auto value : allAccounts)
+	auto allAccountsNode = value["Accounts"]["DBAccount"];
+	for (auto valueAccountsDBAccount : allAccountsNode)
 	{
 		DBAccount accountsObject;
-		if(!value["AccountName"].isNull())
-			accountsObject.accountName = value["AccountName"].asString();
-		if(!value["AccountStatus"].isNull())
-			accountsObject.accountStatus = value["AccountStatus"].asString();
-		if(!value["AccountDescription"].isNull())
-			accountsObject.accountDescription = value["AccountDescription"].asString();
-		if(!value["AccountType"].isNull())
-			accountsObject.accountType = value["AccountType"].asString();
-		if(!value["AccountLockState"].isNull())
-			accountsObject.accountLockState = value["AccountLockState"].asString();
-		if(!value["PrivilegeExceeded"].isNull())
-			accountsObject.privilegeExceeded = value["PrivilegeExceeded"].asString();
-		auto allDatabasePrivileges = value["DatabasePrivileges"]["DatabasePrivilege"];
-		for (auto value : allDatabasePrivileges)
+		if(!valueAccountsDBAccount["AccountName"].isNull())
+			accountsObject.accountName = valueAccountsDBAccount["AccountName"].asString();
+		if(!valueAccountsDBAccount["AccountStatus"].isNull())
+			accountsObject.accountStatus = valueAccountsDBAccount["AccountStatus"].asString();
+		if(!valueAccountsDBAccount["AccountDescription"].isNull())
+			accountsObject.accountDescription = valueAccountsDBAccount["AccountDescription"].asString();
+		if(!valueAccountsDBAccount["AccountType"].isNull())
+			accountsObject.accountType = valueAccountsDBAccount["AccountType"].asString();
+		if(!valueAccountsDBAccount["AccountLockState"].isNull())
+			accountsObject.accountLockState = valueAccountsDBAccount["AccountLockState"].asString();
+		if(!valueAccountsDBAccount["PrivilegeExceeded"].isNull())
+			accountsObject.privilegeExceeded = valueAccountsDBAccount["PrivilegeExceeded"].asString();
+		auto allDatabasePrivilegesNode = allAccountsNode["DatabasePrivileges"]["DatabasePrivilege"];
+		for (auto allAccountsNodeDatabasePrivilegesDatabasePrivilege : allDatabasePrivilegesNode)
 		{
 			DBAccount::DatabasePrivilege databasePrivilegesObject;
-			if(!value["DBName"].isNull())
-				databasePrivilegesObject.dBName = value["DBName"].asString();
-			if(!value["AccountPrivilege"].isNull())
-				databasePrivilegesObject.accountPrivilege = value["AccountPrivilege"].asString();
+			if(!allAccountsNodeDatabasePrivilegesDatabasePrivilege["DBName"].isNull())
+				databasePrivilegesObject.dBName = allAccountsNodeDatabasePrivilegesDatabasePrivilege["DBName"].asString();
+			if(!allAccountsNodeDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].isNull())
+				databasePrivilegesObject.accountPrivilege = allAccountsNodeDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].asString();
 			accountsObject.databasePrivileges.push_back(databasePrivilegesObject);
 		}
 		accounts_.push_back(accountsObject);

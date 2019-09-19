@@ -39,14 +39,14 @@ void DescribeDomainsResolutionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainResolutions = value["DomainResolutions"]["DomainResolution"];
-	for (auto value : allDomainResolutions)
+	auto allDomainResolutionsNode = value["DomainResolutions"]["DomainResolution"];
+	for (auto valueDomainResolutionsDomainResolution : allDomainResolutionsNode)
 	{
 		DomainResolution domainResolutionsObject;
-		if(!value["DomainName"].isNull())
-			domainResolutionsObject.domainName = value["DomainName"].asString();
-		if(!value["DomainResolutionStatus"].isNull())
-			domainResolutionsObject.domainResolutionStatus = value["DomainResolutionStatus"].asString();
+		if(!valueDomainResolutionsDomainResolution["DomainName"].isNull())
+			domainResolutionsObject.domainName = valueDomainResolutionsDomainResolution["DomainName"].asString();
+		if(!valueDomainResolutionsDomainResolution["DomainResolutionStatus"].isNull())
+			domainResolutionsObject.domainResolutionStatus = valueDomainResolutionsDomainResolution["DomainResolutionStatus"].asString();
 		domainResolutions_.push_back(domainResolutionsObject);
 	}
 	if(!value["GroupId"].isNull())

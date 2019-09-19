@@ -39,16 +39,16 @@ void GetJobTopologyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Job"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["Job"];
+	for (auto valueDataJob : allDataNode)
 	{
 		Job dataObject;
-		if(!value["Text"].isNull())
-			dataObject.text = value["Text"].asString();
-		if(!value["Type"].isNull())
-			dataObject.type = value["Type"].asString();
-		if(!value["PluginRelation"].isNull())
-			dataObject.pluginRelation = value["PluginRelation"].asString();
+		if(!valueDataJob["Text"].isNull())
+			dataObject.text = valueDataJob["Text"].asString();
+		if(!valueDataJob["Type"].isNull())
+			dataObject.type = valueDataJob["Type"].asString();
+		if(!valueDataJob["PluginRelation"].isNull())
+			dataObject.pluginRelation = valueDataJob["PluginRelation"].asString();
 		auto allParents = value["Parents"]["Parent"];
 		for (auto value : allParents)
 			dataObject.parents.push_back(value.asString());

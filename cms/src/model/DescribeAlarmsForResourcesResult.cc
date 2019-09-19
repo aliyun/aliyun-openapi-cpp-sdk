@@ -39,54 +39,54 @@ void DescribeAlarmsForResourcesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDatapoints = value["Datapoints"]["Alarm"];
-	for (auto value : allDatapoints)
+	auto allDatapointsNode = value["Datapoints"]["Alarm"];
+	for (auto valueDatapointsAlarm : allDatapointsNode)
 	{
 		Alarm datapointsObject;
-		if(!value["Uuid"].isNull())
-			datapointsObject.uuid = value["Uuid"].asString();
-		if(!value["Name"].isNull())
-			datapointsObject.name = value["Name"].asString();
-		if(!value["Namespace"].isNull())
-			datapointsObject._namespace = value["Namespace"].asString();
-		if(!value["MetricName"].isNull())
-			datapointsObject.metricName = value["MetricName"].asString();
-		if(!value["Period"].isNull())
-			datapointsObject.period = value["Period"].asString();
-		if(!value["EvaluationCount"].isNull())
-			datapointsObject.evaluationCount = value["EvaluationCount"].asString();
-		if(!value["EffectiveInterval"].isNull())
-			datapointsObject.effectiveInterval = value["EffectiveInterval"].asString();
-		if(!value["NoEffectiveInterval"].isNull())
-			datapointsObject.noEffectiveInterval = value["NoEffectiveInterval"].asString();
-		if(!value["SilenceTime"].isNull())
-			datapointsObject.silenceTime = value["SilenceTime"].asString();
-		if(!value["Enable"].isNull())
-			datapointsObject.enable = value["Enable"].asString() == "true";
-		if(!value["State"].isNull())
-			datapointsObject.state = value["State"].asString();
-		if(!value["ContactGroups"].isNull())
-			datapointsObject.contactGroups = value["ContactGroups"].asString();
-		if(!value["Webhook"].isNull())
-			datapointsObject.webhook = value["Webhook"].asString();
-		if(!value["Subject"].isNull())
-			datapointsObject.subject = value["Subject"].asString();
-		if(!value["DisplayName"].isNull())
-			datapointsObject.displayName = value["DisplayName"].asString();
-		if(!value["Resources"].isNull())
-			datapointsObject.resources = value["Resources"].asString();
-		if(!value["Level"].isNull())
-			datapointsObject.level = value["Level"].asString();
-		if(!value["GroupId"].isNull())
-			datapointsObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			datapointsObject.groupName = value["GroupName"].asString();
-		if(!value["Statistics"].isNull())
-			datapointsObject.statistics = value["Statistics"].asString();
-		if(!value["ComparisonOperator"].isNull())
-			datapointsObject.comparisonOperator = value["ComparisonOperator"].asString();
-		if(!value["Threshold"].isNull())
-			datapointsObject.threshold = value["Threshold"].asString();
+		if(!valueDatapointsAlarm["Uuid"].isNull())
+			datapointsObject.uuid = valueDatapointsAlarm["Uuid"].asString();
+		if(!valueDatapointsAlarm["Name"].isNull())
+			datapointsObject.name = valueDatapointsAlarm["Name"].asString();
+		if(!valueDatapointsAlarm["Namespace"].isNull())
+			datapointsObject._namespace = valueDatapointsAlarm["Namespace"].asString();
+		if(!valueDatapointsAlarm["MetricName"].isNull())
+			datapointsObject.metricName = valueDatapointsAlarm["MetricName"].asString();
+		if(!valueDatapointsAlarm["Period"].isNull())
+			datapointsObject.period = valueDatapointsAlarm["Period"].asString();
+		if(!valueDatapointsAlarm["EvaluationCount"].isNull())
+			datapointsObject.evaluationCount = valueDatapointsAlarm["EvaluationCount"].asString();
+		if(!valueDatapointsAlarm["EffectiveInterval"].isNull())
+			datapointsObject.effectiveInterval = valueDatapointsAlarm["EffectiveInterval"].asString();
+		if(!valueDatapointsAlarm["NoEffectiveInterval"].isNull())
+			datapointsObject.noEffectiveInterval = valueDatapointsAlarm["NoEffectiveInterval"].asString();
+		if(!valueDatapointsAlarm["SilenceTime"].isNull())
+			datapointsObject.silenceTime = valueDatapointsAlarm["SilenceTime"].asString();
+		if(!valueDatapointsAlarm["Enable"].isNull())
+			datapointsObject.enable = valueDatapointsAlarm["Enable"].asString() == "true";
+		if(!valueDatapointsAlarm["State"].isNull())
+			datapointsObject.state = valueDatapointsAlarm["State"].asString();
+		if(!valueDatapointsAlarm["ContactGroups"].isNull())
+			datapointsObject.contactGroups = valueDatapointsAlarm["ContactGroups"].asString();
+		if(!valueDatapointsAlarm["Webhook"].isNull())
+			datapointsObject.webhook = valueDatapointsAlarm["Webhook"].asString();
+		if(!valueDatapointsAlarm["Subject"].isNull())
+			datapointsObject.subject = valueDatapointsAlarm["Subject"].asString();
+		if(!valueDatapointsAlarm["DisplayName"].isNull())
+			datapointsObject.displayName = valueDatapointsAlarm["DisplayName"].asString();
+		if(!valueDatapointsAlarm["Resources"].isNull())
+			datapointsObject.resources = valueDatapointsAlarm["Resources"].asString();
+		if(!valueDatapointsAlarm["Level"].isNull())
+			datapointsObject.level = valueDatapointsAlarm["Level"].asString();
+		if(!valueDatapointsAlarm["GroupId"].isNull())
+			datapointsObject.groupId = valueDatapointsAlarm["GroupId"].asString();
+		if(!valueDatapointsAlarm["GroupName"].isNull())
+			datapointsObject.groupName = valueDatapointsAlarm["GroupName"].asString();
+		if(!valueDatapointsAlarm["Statistics"].isNull())
+			datapointsObject.statistics = valueDatapointsAlarm["Statistics"].asString();
+		if(!valueDatapointsAlarm["ComparisonOperator"].isNull())
+			datapointsObject.comparisonOperator = valueDatapointsAlarm["ComparisonOperator"].asString();
+		if(!valueDatapointsAlarm["Threshold"].isNull())
+			datapointsObject.threshold = valueDatapointsAlarm["Threshold"].asString();
 		auto escalationsNode = value["Escalations"];
 		auto infoNode = escalationsNode["Info"];
 		if(!infoNode["ComparisonOperator"].isNull())

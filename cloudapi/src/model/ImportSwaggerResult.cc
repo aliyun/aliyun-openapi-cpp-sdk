@@ -39,30 +39,30 @@ void ImportSwaggerResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSuccess = value["Success"]["ApiImportSwaggerSuccess"];
-	for (auto value : allSuccess)
+	auto allSuccessNode = value["Success"]["ApiImportSwaggerSuccess"];
+	for (auto valueSuccessApiImportSwaggerSuccess : allSuccessNode)
 	{
 		ApiImportSwaggerSuccess successObject;
-		if(!value["Path"].isNull())
-			successObject.path = value["Path"].asString();
-		if(!value["HttpMethod"].isNull())
-			successObject.httpMethod = value["HttpMethod"].asString();
-		if(!value["ApiUid"].isNull())
-			successObject.apiUid = value["ApiUid"].asString();
-		if(!value["ApiOperation"].isNull())
-			successObject.apiOperation = value["ApiOperation"].asString();
+		if(!valueSuccessApiImportSwaggerSuccess["Path"].isNull())
+			successObject.path = valueSuccessApiImportSwaggerSuccess["Path"].asString();
+		if(!valueSuccessApiImportSwaggerSuccess["HttpMethod"].isNull())
+			successObject.httpMethod = valueSuccessApiImportSwaggerSuccess["HttpMethod"].asString();
+		if(!valueSuccessApiImportSwaggerSuccess["ApiUid"].isNull())
+			successObject.apiUid = valueSuccessApiImportSwaggerSuccess["ApiUid"].asString();
+		if(!valueSuccessApiImportSwaggerSuccess["ApiOperation"].isNull())
+			successObject.apiOperation = valueSuccessApiImportSwaggerSuccess["ApiOperation"].asString();
 		success_.push_back(successObject);
 	}
-	auto allFailed = value["Failed"]["ApiImportSwaggerFailed"];
-	for (auto value : allFailed)
+	auto allFailedNode = value["Failed"]["ApiImportSwaggerFailed"];
+	for (auto valueFailedApiImportSwaggerFailed : allFailedNode)
 	{
 		ApiImportSwaggerFailed failedObject;
-		if(!value["Path"].isNull())
-			failedObject.path = value["Path"].asString();
-		if(!value["HttpMethod"].isNull())
-			failedObject.httpMethod = value["HttpMethod"].asString();
-		if(!value["ErrorMsg"].isNull())
-			failedObject.errorMsg = value["ErrorMsg"].asString();
+		if(!valueFailedApiImportSwaggerFailed["Path"].isNull())
+			failedObject.path = valueFailedApiImportSwaggerFailed["Path"].asString();
+		if(!valueFailedApiImportSwaggerFailed["HttpMethod"].isNull())
+			failedObject.httpMethod = valueFailedApiImportSwaggerFailed["HttpMethod"].asString();
+		if(!valueFailedApiImportSwaggerFailed["ErrorMsg"].isNull())
+			failedObject.errorMsg = valueFailedApiImportSwaggerFailed["ErrorMsg"].asString();
 		failed_.push_back(failedObject);
 	}
 

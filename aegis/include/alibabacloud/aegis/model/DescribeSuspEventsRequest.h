@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setLevels(const std::string& levels);
 				std::string getParentEventTypes()const;
 				void setParentEventTypes(const std::string& parentEventTypes);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
 				std::string remark_;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				std::string name_;
 				std::string levels_;
 				std::string parentEventTypes_;
+				std::string status_;
 
 			};
 		}

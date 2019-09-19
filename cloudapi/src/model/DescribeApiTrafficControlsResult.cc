@@ -39,20 +39,20 @@ void DescribeApiTrafficControlsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allApiTrafficControls = value["ApiTrafficControls"]["ApiTrafficControlItem"];
-	for (auto value : allApiTrafficControls)
+	auto allApiTrafficControlsNode = value["ApiTrafficControls"]["ApiTrafficControlItem"];
+	for (auto valueApiTrafficControlsApiTrafficControlItem : allApiTrafficControlsNode)
 	{
 		ApiTrafficControlItem apiTrafficControlsObject;
-		if(!value["ApiId"].isNull())
-			apiTrafficControlsObject.apiId = value["ApiId"].asString();
-		if(!value["ApiName"].isNull())
-			apiTrafficControlsObject.apiName = value["ApiName"].asString();
-		if(!value["TrafficControlId"].isNull())
-			apiTrafficControlsObject.trafficControlId = value["TrafficControlId"].asString();
-		if(!value["TrafficControlName"].isNull())
-			apiTrafficControlsObject.trafficControlName = value["TrafficControlName"].asString();
-		if(!value["BoundTime"].isNull())
-			apiTrafficControlsObject.boundTime = value["BoundTime"].asString();
+		if(!valueApiTrafficControlsApiTrafficControlItem["ApiId"].isNull())
+			apiTrafficControlsObject.apiId = valueApiTrafficControlsApiTrafficControlItem["ApiId"].asString();
+		if(!valueApiTrafficControlsApiTrafficControlItem["ApiName"].isNull())
+			apiTrafficControlsObject.apiName = valueApiTrafficControlsApiTrafficControlItem["ApiName"].asString();
+		if(!valueApiTrafficControlsApiTrafficControlItem["TrafficControlId"].isNull())
+			apiTrafficControlsObject.trafficControlId = valueApiTrafficControlsApiTrafficControlItem["TrafficControlId"].asString();
+		if(!valueApiTrafficControlsApiTrafficControlItem["TrafficControlName"].isNull())
+			apiTrafficControlsObject.trafficControlName = valueApiTrafficControlsApiTrafficControlItem["TrafficControlName"].asString();
+		if(!valueApiTrafficControlsApiTrafficControlItem["BoundTime"].isNull())
+			apiTrafficControlsObject.boundTime = valueApiTrafficControlsApiTrafficControlItem["BoundTime"].asString();
 		apiTrafficControls_.push_back(apiTrafficControlsObject);
 	}
 	if(!value["TotalCount"].isNull())

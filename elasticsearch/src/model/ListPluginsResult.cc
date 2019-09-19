@@ -39,18 +39,18 @@ void ListPluginsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"]["ResultItem"];
-	for (auto value : allResult)
+	auto allResultNode = value["Result"]["ResultItem"];
+	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!value["name"].isNull())
-			resultObject.name = value["name"].asString();
-		if(!value["state"].isNull())
-			resultObject.state = value["state"].asString();
-		if(!value["source"].isNull())
-			resultObject.source = value["source"].asString();
-		if(!value["description"].isNull())
-			resultObject.description = value["description"].asString();
+		if(!valueResultResultItem["name"].isNull())
+			resultObject.name = valueResultResultItem["name"].asString();
+		if(!valueResultResultItem["state"].isNull())
+			resultObject.state = valueResultResultItem["state"].asString();
+		if(!valueResultResultItem["source"].isNull())
+			resultObject.source = valueResultResultItem["source"].asString();
+		if(!valueResultResultItem["description"].isNull())
+			resultObject.description = valueResultResultItem["description"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

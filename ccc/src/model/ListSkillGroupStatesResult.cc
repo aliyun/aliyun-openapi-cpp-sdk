@@ -46,30 +46,30 @@ void ListSkillGroupStatesResult::parse(const std::string &payload)
 		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
 	if(!dataNode["PageSize"].isNull())
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
-	auto allList = value["List"]["RealTimeSkillGroupState"];
-	for (auto value : allList)
+	auto allListNode = dataNode["List"]["RealTimeSkillGroupState"];
+	for (auto dataNodeListRealTimeSkillGroupState : allListNode)
 	{
 		Data::RealTimeSkillGroupState realTimeSkillGroupStateObject;
-		if(!value["InstanceId"].isNull())
-			realTimeSkillGroupStateObject.instanceId = value["InstanceId"].asString();
-		if(!value["SkillGroupId"].isNull())
-			realTimeSkillGroupStateObject.skillGroupId = value["SkillGroupId"].asString();
-		if(!value["SkillGroupName"].isNull())
-			realTimeSkillGroupStateObject.skillGroupName = value["SkillGroupName"].asString();
-		if(!value["WaitingCalls"].isNull())
-			realTimeSkillGroupStateObject.waitingCalls = std::stol(value["WaitingCalls"].asString());
-		if(!value["LongestCall"].isNull())
-			realTimeSkillGroupStateObject.longestCall = std::stol(value["LongestCall"].asString());
-		if(!value["LoggedInAgents"].isNull())
-			realTimeSkillGroupStateObject.loggedInAgents = std::stol(value["LoggedInAgents"].asString());
-		if(!value["ReadyAgents"].isNull())
-			realTimeSkillGroupStateObject.readyAgents = std::stol(value["ReadyAgents"].asString());
-		if(!value["BreakingAgents"].isNull())
-			realTimeSkillGroupStateObject.breakingAgents = std::stol(value["BreakingAgents"].asString());
-		if(!value["TalkingAgents"].isNull())
-			realTimeSkillGroupStateObject.talkingAgents = std::stol(value["TalkingAgents"].asString());
-		if(!value["WorkingAgents"].isNull())
-			realTimeSkillGroupStateObject.workingAgents = std::stol(value["WorkingAgents"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["InstanceId"].isNull())
+			realTimeSkillGroupStateObject.instanceId = dataNodeListRealTimeSkillGroupState["InstanceId"].asString();
+		if(!dataNodeListRealTimeSkillGroupState["SkillGroupId"].isNull())
+			realTimeSkillGroupStateObject.skillGroupId = dataNodeListRealTimeSkillGroupState["SkillGroupId"].asString();
+		if(!dataNodeListRealTimeSkillGroupState["SkillGroupName"].isNull())
+			realTimeSkillGroupStateObject.skillGroupName = dataNodeListRealTimeSkillGroupState["SkillGroupName"].asString();
+		if(!dataNodeListRealTimeSkillGroupState["WaitingCalls"].isNull())
+			realTimeSkillGroupStateObject.waitingCalls = std::stol(dataNodeListRealTimeSkillGroupState["WaitingCalls"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["LongestCall"].isNull())
+			realTimeSkillGroupStateObject.longestCall = std::stol(dataNodeListRealTimeSkillGroupState["LongestCall"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["LoggedInAgents"].isNull())
+			realTimeSkillGroupStateObject.loggedInAgents = std::stol(dataNodeListRealTimeSkillGroupState["LoggedInAgents"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["ReadyAgents"].isNull())
+			realTimeSkillGroupStateObject.readyAgents = std::stol(dataNodeListRealTimeSkillGroupState["ReadyAgents"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["BreakingAgents"].isNull())
+			realTimeSkillGroupStateObject.breakingAgents = std::stol(dataNodeListRealTimeSkillGroupState["BreakingAgents"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["TalkingAgents"].isNull())
+			realTimeSkillGroupStateObject.talkingAgents = std::stol(dataNodeListRealTimeSkillGroupState["TalkingAgents"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["WorkingAgents"].isNull())
+			realTimeSkillGroupStateObject.workingAgents = std::stol(dataNodeListRealTimeSkillGroupState["WorkingAgents"].asString());
 		data_.list.push_back(realTimeSkillGroupStateObject);
 	}
 	if(!value["Success"].isNull())

@@ -39,32 +39,32 @@ void ListProjectBindQueueResourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQueues = value["Queues"]["Queue"];
-	for (auto value : allQueues)
+	auto allQueuesNode = value["Queues"]["Queue"];
+	for (auto valueQueuesQueue : allQueuesNode)
 	{
 		Queue queuesObject;
-		if(!value["ClusterId"].isNull())
-			queuesObject.clusterId = value["ClusterId"].asString();
-		if(!value["QueueName"].isNull())
-			queuesObject.queueName = value["QueueName"].asString();
-		if(!value["MinGpu"].isNull())
-			queuesObject.minGpu = std::stoi(value["MinGpu"].asString());
-		if(!value["MaxGpu"].isNull())
-			queuesObject.maxGpu = std::stoi(value["MaxGpu"].asString());
-		if(!value["MinMem"].isNull())
-			queuesObject.minMem = std::stoi(value["MinMem"].asString());
-		if(!value["MaxMem"].isNull())
-			queuesObject.maxMem = std::stoi(value["MaxMem"].asString());
-		if(!value["MinVCore"].isNull())
-			queuesObject.minVCore = std::stoi(value["MinVCore"].asString());
-		if(!value["MaxVCore"].isNull())
-			queuesObject.maxVCore = std::stoi(value["MaxVCore"].asString());
-		if(!value["UsedVCore"].isNull())
-			queuesObject.usedVCore = std::stoi(value["UsedVCore"].asString());
-		if(!value["UsedGpu"].isNull())
-			queuesObject.usedGpu = std::stoi(value["UsedGpu"].asString());
-		if(!value["UsedMem"].isNull())
-			queuesObject.usedMem = std::stoi(value["UsedMem"].asString());
+		if(!valueQueuesQueue["ClusterId"].isNull())
+			queuesObject.clusterId = valueQueuesQueue["ClusterId"].asString();
+		if(!valueQueuesQueue["QueueName"].isNull())
+			queuesObject.queueName = valueQueuesQueue["QueueName"].asString();
+		if(!valueQueuesQueue["MinGpu"].isNull())
+			queuesObject.minGpu = std::stoi(valueQueuesQueue["MinGpu"].asString());
+		if(!valueQueuesQueue["MaxGpu"].isNull())
+			queuesObject.maxGpu = std::stoi(valueQueuesQueue["MaxGpu"].asString());
+		if(!valueQueuesQueue["MinMem"].isNull())
+			queuesObject.minMem = std::stoi(valueQueuesQueue["MinMem"].asString());
+		if(!valueQueuesQueue["MaxMem"].isNull())
+			queuesObject.maxMem = std::stoi(valueQueuesQueue["MaxMem"].asString());
+		if(!valueQueuesQueue["MinVCore"].isNull())
+			queuesObject.minVCore = std::stoi(valueQueuesQueue["MinVCore"].asString());
+		if(!valueQueuesQueue["MaxVCore"].isNull())
+			queuesObject.maxVCore = std::stoi(valueQueuesQueue["MaxVCore"].asString());
+		if(!valueQueuesQueue["UsedVCore"].isNull())
+			queuesObject.usedVCore = std::stoi(valueQueuesQueue["UsedVCore"].asString());
+		if(!valueQueuesQueue["UsedGpu"].isNull())
+			queuesObject.usedGpu = std::stoi(valueQueuesQueue["UsedGpu"].asString());
+		if(!valueQueuesQueue["UsedMem"].isNull())
+			queuesObject.usedMem = std::stoi(valueQueuesQueue["UsedMem"].asString());
 		queues_.push_back(queuesObject);
 	}
 

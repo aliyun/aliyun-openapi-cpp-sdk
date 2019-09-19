@@ -39,18 +39,18 @@ void DescribeLiveDomainFrameRateAndBitRateDataResult::parse(const std::string &p
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFrameRateAndBitRateInfos = value["FrameRateAndBitRateInfos"]["FrameRateAndBitRateInfo"];
-	for (auto value : allFrameRateAndBitRateInfos)
+	auto allFrameRateAndBitRateInfosNode = value["FrameRateAndBitRateInfos"]["FrameRateAndBitRateInfo"];
+	for (auto valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo : allFrameRateAndBitRateInfosNode)
 	{
 		FrameRateAndBitRateInfo frameRateAndBitRateInfosObject;
-		if(!value["AudioFrameRate"].isNull())
-			frameRateAndBitRateInfosObject.audioFrameRate = std::stof(value["AudioFrameRate"].asString());
-		if(!value["BitRate"].isNull())
-			frameRateAndBitRateInfosObject.bitRate = std::stof(value["BitRate"].asString());
-		if(!value["VideoFrameRate"].isNull())
-			frameRateAndBitRateInfosObject.videoFrameRate = std::stof(value["VideoFrameRate"].asString());
-		if(!value["StreamUrl"].isNull())
-			frameRateAndBitRateInfosObject.streamUrl = value["StreamUrl"].asString();
+		if(!valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["AudioFrameRate"].isNull())
+			frameRateAndBitRateInfosObject.audioFrameRate = std::stof(valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["AudioFrameRate"].asString());
+		if(!valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["BitRate"].isNull())
+			frameRateAndBitRateInfosObject.bitRate = std::stof(valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["BitRate"].asString());
+		if(!valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["VideoFrameRate"].isNull())
+			frameRateAndBitRateInfosObject.videoFrameRate = std::stof(valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["VideoFrameRate"].asString());
+		if(!valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["StreamUrl"].isNull())
+			frameRateAndBitRateInfosObject.streamUrl = valueFrameRateAndBitRateInfosFrameRateAndBitRateInfo["StreamUrl"].asString();
 		frameRateAndBitRateInfos_.push_back(frameRateAndBitRateInfosObject);
 	}
 

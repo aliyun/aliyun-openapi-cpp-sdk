@@ -39,24 +39,24 @@ void QueryMediaDetailJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobList = value["JobList"]["Job"];
-	for (auto value : allJobList)
+	auto allJobListNode = value["JobList"]["Job"];
+	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!value["Id"].isNull())
-			jobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			jobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			jobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			jobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			jobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			jobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			jobListObject.creationTime = value["CreationTime"].asString();
+		if(!valueJobListJob["Id"].isNull())
+			jobListObject.id = valueJobListJob["Id"].asString();
+		if(!valueJobListJob["UserData"].isNull())
+			jobListObject.userData = valueJobListJob["UserData"].asString();
+		if(!valueJobListJob["PipelineId"].isNull())
+			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
+		if(!valueJobListJob["State"].isNull())
+			jobListObject.state = valueJobListJob["State"].asString();
+		if(!valueJobListJob["Code"].isNull())
+			jobListObject.code = valueJobListJob["Code"].asString();
+		if(!valueJobListJob["Message"].isNull())
+			jobListObject.message = valueJobListJob["Message"].asString();
+		if(!valueJobListJob["CreationTime"].isNull())
+			jobListObject.creationTime = valueJobListJob["CreationTime"].asString();
 		auto inputNode = value["Input"];
 		if(!inputNode["Bucket"].isNull())
 			jobListObject.input.bucket = inputNode["Bucket"].asString();
@@ -79,88 +79,88 @@ void QueryMediaDetailJobListResult::parse(const std::string &payload)
 		auto mediaDetailResultNode = value["MediaDetailResult"];
 		if(!mediaDetailResultNode["Status"].isNull())
 			jobListObject.mediaDetailResult.status = mediaDetailResultNode["Status"].asString();
-		auto allMediaDetailRecgResults = value["MediaDetailRecgResults"]["MediaDetailRecgResult"];
-		for (auto value : allMediaDetailRecgResults)
+		auto allMediaDetailRecgResultsNode = mediaDetailResultNode["MediaDetailRecgResults"]["MediaDetailRecgResult"];
+		for (auto mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult : allMediaDetailRecgResultsNode)
 		{
 			Job::MediaDetailResult::MediaDetailRecgResult mediaDetailRecgResultObject;
-			if(!value["ImageUrl"].isNull())
-				mediaDetailRecgResultObject.imageUrl = value["ImageUrl"].asString();
-			if(!value["Time"].isNull())
-				mediaDetailRecgResultObject.time = value["Time"].asString();
-			if(!value["OcrText"].isNull())
-				mediaDetailRecgResultObject.ocrText = value["OcrText"].asString();
-			auto allCelebrities = value["Celebrities"]["Celebrity"];
-			for (auto value : allCelebrities)
+			if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["ImageUrl"].isNull())
+				mediaDetailRecgResultObject.imageUrl = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["ImageUrl"].asString();
+			if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["Time"].isNull())
+				mediaDetailRecgResultObject.time = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["Time"].asString();
+			if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["OcrText"].isNull())
+				mediaDetailRecgResultObject.ocrText = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["OcrText"].asString();
+			auto allCelebritiesNode = allMediaDetailRecgResultsNode["Celebrities"]["Celebrity"];
+			for (auto allMediaDetailRecgResultsNodeCelebritiesCelebrity : allCelebritiesNode)
 			{
 				Job::MediaDetailResult::MediaDetailRecgResult::Celebrity celebritiesObject;
-				if(!value["Name"].isNull())
-					celebritiesObject.name = value["Name"].asString();
-				if(!value["Score"].isNull())
-					celebritiesObject.score = value["Score"].asString();
-				if(!value["Target"].isNull())
-					celebritiesObject.target = value["Target"].asString();
+				if(!allMediaDetailRecgResultsNodeCelebritiesCelebrity["Name"].isNull())
+					celebritiesObject.name = allMediaDetailRecgResultsNodeCelebritiesCelebrity["Name"].asString();
+				if(!allMediaDetailRecgResultsNodeCelebritiesCelebrity["Score"].isNull())
+					celebritiesObject.score = allMediaDetailRecgResultsNodeCelebritiesCelebrity["Score"].asString();
+				if(!allMediaDetailRecgResultsNodeCelebritiesCelebrity["Target"].isNull())
+					celebritiesObject.target = allMediaDetailRecgResultsNodeCelebritiesCelebrity["Target"].asString();
 				mediaDetailRecgResultObject.celebrities.push_back(celebritiesObject);
 			}
-			auto allSensitives = value["Sensitives"]["Sensitive"];
-			for (auto value : allSensitives)
+			auto allSensitivesNode = allMediaDetailRecgResultsNode["Sensitives"]["Sensitive"];
+			for (auto allMediaDetailRecgResultsNodeSensitivesSensitive : allSensitivesNode)
 			{
 				Job::MediaDetailResult::MediaDetailRecgResult::Sensitive sensitivesObject;
-				if(!value["Name"].isNull())
-					sensitivesObject.name = value["Name"].asString();
-				if(!value["Score"].isNull())
-					sensitivesObject.score = value["Score"].asString();
-				if(!value["Target"].isNull())
-					sensitivesObject.target = value["Target"].asString();
+				if(!allMediaDetailRecgResultsNodeSensitivesSensitive["Name"].isNull())
+					sensitivesObject.name = allMediaDetailRecgResultsNodeSensitivesSensitive["Name"].asString();
+				if(!allMediaDetailRecgResultsNodeSensitivesSensitive["Score"].isNull())
+					sensitivesObject.score = allMediaDetailRecgResultsNodeSensitivesSensitive["Score"].asString();
+				if(!allMediaDetailRecgResultsNodeSensitivesSensitive["Target"].isNull())
+					sensitivesObject.target = allMediaDetailRecgResultsNodeSensitivesSensitive["Target"].asString();
 				mediaDetailRecgResultObject.sensitives.push_back(sensitivesObject);
 			}
-			auto allPoliticians = value["Politicians"]["Politician"];
-			for (auto value : allPoliticians)
+			auto allPoliticiansNode = allMediaDetailRecgResultsNode["Politicians"]["Politician"];
+			for (auto allMediaDetailRecgResultsNodePoliticiansPolitician : allPoliticiansNode)
 			{
 				Job::MediaDetailResult::MediaDetailRecgResult::Politician politiciansObject;
-				if(!value["Name"].isNull())
-					politiciansObject.name = value["Name"].asString();
-				if(!value["Score"].isNull())
-					politiciansObject.score = value["Score"].asString();
-				if(!value["Target"].isNull())
-					politiciansObject.target = value["Target"].asString();
+				if(!allMediaDetailRecgResultsNodePoliticiansPolitician["Name"].isNull())
+					politiciansObject.name = allMediaDetailRecgResultsNodePoliticiansPolitician["Name"].asString();
+				if(!allMediaDetailRecgResultsNodePoliticiansPolitician["Score"].isNull())
+					politiciansObject.score = allMediaDetailRecgResultsNodePoliticiansPolitician["Score"].asString();
+				if(!allMediaDetailRecgResultsNodePoliticiansPolitician["Target"].isNull())
+					politiciansObject.target = allMediaDetailRecgResultsNodePoliticiansPolitician["Target"].asString();
 				mediaDetailRecgResultObject.politicians.push_back(politiciansObject);
 			}
-			auto allFrameTagInfos = value["FrameTagInfos"]["FrameTagInfo"];
-			for (auto value : allFrameTagInfos)
+			auto allFrameTagInfosNode = allMediaDetailRecgResultsNode["FrameTagInfos"]["FrameTagInfo"];
+			for (auto allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo : allFrameTagInfosNode)
 			{
 				Job::MediaDetailResult::MediaDetailRecgResult::FrameTagInfo frameTagInfosObject;
-				if(!value["Tag"].isNull())
-					frameTagInfosObject.tag = value["Tag"].asString();
-				if(!value["Score"].isNull())
-					frameTagInfosObject.score = value["Score"].asString();
-				if(!value["Category"].isNull())
-					frameTagInfosObject.category = value["Category"].asString();
+				if(!allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Tag"].isNull())
+					frameTagInfosObject.tag = allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Tag"].asString();
+				if(!allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Score"].isNull())
+					frameTagInfosObject.score = allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Score"].asString();
+				if(!allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Category"].isNull())
+					frameTagInfosObject.category = allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Category"].asString();
 				mediaDetailRecgResultObject.frameTagInfos.push_back(frameTagInfosObject);
 			}
-			auto allCustoms = value["Customs"]["Custom"];
-			for (auto value : allCustoms)
+			auto allCustomsNode = allMediaDetailRecgResultsNode["Customs"]["Custom"];
+			for (auto allMediaDetailRecgResultsNodeCustomsCustom : allCustomsNode)
 			{
 				Job::MediaDetailResult::MediaDetailRecgResult::Custom customsObject;
-				if(!value["Name"].isNull())
-					customsObject.name = value["Name"].asString();
-				auto allClips = value["Clips"]["Clip"];
-				for (auto value : allClips)
+				if(!allMediaDetailRecgResultsNodeCustomsCustom["Name"].isNull())
+					customsObject.name = allMediaDetailRecgResultsNodeCustomsCustom["Name"].asString();
+				auto allClipsNode = allCustomsNode["Clips"]["Clip"];
+				for (auto allCustomsNodeClipsClip : allClipsNode)
 				{
 					Job::MediaDetailResult::MediaDetailRecgResult::Custom::Clip clipsObject;
-					if(!value["MinScore"].isNull())
-						clipsObject.minScore = value["MinScore"].asString();
-					if(!value["MaxScore"].isNull())
-						clipsObject.maxScore = value["MaxScore"].asString();
-					if(!value["AvgScore"].isNull())
-						clipsObject.avgScore = value["AvgScore"].asString();
-					if(!value["StartTarget"].isNull())
-						clipsObject.startTarget = value["StartTarget"].asString();
-					if(!value["EndTarget"].isNull())
-						clipsObject.endTarget = value["EndTarget"].asString();
-					if(!value["StartTime"].isNull())
-						clipsObject.startTime = value["StartTime"].asString();
-					if(!value["EndTime"].isNull())
-						clipsObject.endTime = value["EndTime"].asString();
+					if(!allCustomsNodeClipsClip["MinScore"].isNull())
+						clipsObject.minScore = allCustomsNodeClipsClip["MinScore"].asString();
+					if(!allCustomsNodeClipsClip["MaxScore"].isNull())
+						clipsObject.maxScore = allCustomsNodeClipsClip["MaxScore"].asString();
+					if(!allCustomsNodeClipsClip["AvgScore"].isNull())
+						clipsObject.avgScore = allCustomsNodeClipsClip["AvgScore"].asString();
+					if(!allCustomsNodeClipsClip["StartTarget"].isNull())
+						clipsObject.startTarget = allCustomsNodeClipsClip["StartTarget"].asString();
+					if(!allCustomsNodeClipsClip["EndTarget"].isNull())
+						clipsObject.endTarget = allCustomsNodeClipsClip["EndTarget"].asString();
+					if(!allCustomsNodeClipsClip["StartTime"].isNull())
+						clipsObject.startTime = allCustomsNodeClipsClip["StartTime"].asString();
+					if(!allCustomsNodeClipsClip["EndTime"].isNull())
+						clipsObject.endTime = allCustomsNodeClipsClip["EndTime"].asString();
 					customsObject.clips.push_back(clipsObject);
 				}
 				mediaDetailRecgResultObject.customs.push_back(customsObject);

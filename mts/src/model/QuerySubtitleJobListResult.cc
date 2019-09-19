@@ -39,20 +39,20 @@ void QuerySubtitleJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobList = value["JobList"]["Job"];
-	for (auto value : allJobList)
+	auto allJobListNode = value["JobList"]["Job"];
+	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!value["JobId"].isNull())
-			jobListObject.jobId = value["JobId"].asString();
-		if(!value["InputConfig"].isNull())
-			jobListObject.inputConfig = value["InputConfig"].asString();
-		if(!value["OutputConfig"].isNull())
-			jobListObject.outputConfig = value["OutputConfig"].asString();
-		if(!value["UserData"].isNull())
-			jobListObject.userData = value["UserData"].asString();
-		if(!value["State"].isNull())
-			jobListObject.state = value["State"].asString();
+		if(!valueJobListJob["JobId"].isNull())
+			jobListObject.jobId = valueJobListJob["JobId"].asString();
+		if(!valueJobListJob["InputConfig"].isNull())
+			jobListObject.inputConfig = valueJobListJob["InputConfig"].asString();
+		if(!valueJobListJob["OutputConfig"].isNull())
+			jobListObject.outputConfig = valueJobListJob["OutputConfig"].asString();
+		if(!valueJobListJob["UserData"].isNull())
+			jobListObject.userData = valueJobListJob["UserData"].asString();
+		if(!valueJobListJob["State"].isNull())
+			jobListObject.state = valueJobListJob["State"].asString();
 		auto mNSMessageResultNode = value["MNSMessageResult"];
 		if(!mNSMessageResultNode["MessageId"].isNull())
 			jobListObject.mNSMessageResult.messageId = mNSMessageResultNode["MessageId"].asString();

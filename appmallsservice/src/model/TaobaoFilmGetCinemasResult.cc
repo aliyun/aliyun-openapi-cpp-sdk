@@ -39,30 +39,30 @@ void TaobaoFilmGetCinemasResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCinemas = value["Cinemas"]["CinemasItem"];
-	for (auto value : allCinemas)
+	auto allCinemasNode = value["Cinemas"]["CinemasItem"];
+	for (auto valueCinemasCinemasItem : allCinemasNode)
 	{
 		CinemasItem cinemasObject;
-		if(!value["Address"].isNull())
-			cinemasObject.address = value["Address"].asString();
-		if(!value["CinemaName"].isNull())
-			cinemasObject.cinemaName = value["CinemaName"].asString();
-		if(!value["CityId"].isNull())
-			cinemasObject.cityId = std::stol(value["CityId"].asString());
-		if(!value["Id"].isNull())
-			cinemasObject.id = std::stol(value["Id"].asString());
-		if(!value["Latitude"].isNull())
-			cinemasObject.latitude = value["Latitude"].asString();
-		if(!value["Longitude"].isNull())
-			cinemasObject.longitude = value["Longitude"].asString();
-		if(!value["Phone"].isNull())
-			cinemasObject.phone = value["Phone"].asString();
-		if(!value["RegionName"].isNull())
-			cinemasObject.regionName = value["RegionName"].asString();
-		if(!value["ScheduleCloseTime"].isNull())
-			cinemasObject.scheduleCloseTime = std::stol(value["ScheduleCloseTime"].asString());
-		if(!value["StandardId"].isNull())
-			cinemasObject.standardId = value["StandardId"].asString();
+		if(!valueCinemasCinemasItem["Address"].isNull())
+			cinemasObject.address = valueCinemasCinemasItem["Address"].asString();
+		if(!valueCinemasCinemasItem["CinemaName"].isNull())
+			cinemasObject.cinemaName = valueCinemasCinemasItem["CinemaName"].asString();
+		if(!valueCinemasCinemasItem["CityId"].isNull())
+			cinemasObject.cityId = std::stol(valueCinemasCinemasItem["CityId"].asString());
+		if(!valueCinemasCinemasItem["Id"].isNull())
+			cinemasObject.id = std::stol(valueCinemasCinemasItem["Id"].asString());
+		if(!valueCinemasCinemasItem["Latitude"].isNull())
+			cinemasObject.latitude = valueCinemasCinemasItem["Latitude"].asString();
+		if(!valueCinemasCinemasItem["Longitude"].isNull())
+			cinemasObject.longitude = valueCinemasCinemasItem["Longitude"].asString();
+		if(!valueCinemasCinemasItem["Phone"].isNull())
+			cinemasObject.phone = valueCinemasCinemasItem["Phone"].asString();
+		if(!valueCinemasCinemasItem["RegionName"].isNull())
+			cinemasObject.regionName = valueCinemasCinemasItem["RegionName"].asString();
+		if(!valueCinemasCinemasItem["ScheduleCloseTime"].isNull())
+			cinemasObject.scheduleCloseTime = std::stol(valueCinemasCinemasItem["ScheduleCloseTime"].asString());
+		if(!valueCinemasCinemasItem["StandardId"].isNull())
+			cinemasObject.standardId = valueCinemasCinemasItem["StandardId"].asString();
 		cinemas_.push_back(cinemasObject);
 	}
 	if(!value["ErrorCode"].isNull())

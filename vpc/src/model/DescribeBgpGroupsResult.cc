@@ -39,36 +39,36 @@ void DescribeBgpGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBgpGroups = value["BgpGroups"]["BgpGroup"];
-	for (auto value : allBgpGroups)
+	auto allBgpGroupsNode = value["BgpGroups"]["BgpGroup"];
+	for (auto valueBgpGroupsBgpGroup : allBgpGroupsNode)
 	{
 		BgpGroup bgpGroupsObject;
-		if(!value["Name"].isNull())
-			bgpGroupsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			bgpGroupsObject.description = value["Description"].asString();
-		if(!value["BgpGroupId"].isNull())
-			bgpGroupsObject.bgpGroupId = value["BgpGroupId"].asString();
-		if(!value["PeerAsn"].isNull())
-			bgpGroupsObject.peerAsn = value["PeerAsn"].asString();
-		if(!value["AuthKey"].isNull())
-			bgpGroupsObject.authKey = value["AuthKey"].asString();
-		if(!value["RouterId"].isNull())
-			bgpGroupsObject.routerId = value["RouterId"].asString();
-		if(!value["Status"].isNull())
-			bgpGroupsObject.status = value["Status"].asString();
-		if(!value["Keepalive"].isNull())
-			bgpGroupsObject.keepalive = value["Keepalive"].asString();
-		if(!value["LocalAsn"].isNull())
-			bgpGroupsObject.localAsn = value["LocalAsn"].asString();
-		if(!value["Hold"].isNull())
-			bgpGroupsObject.hold = value["Hold"].asString();
-		if(!value["IsFake"].isNull())
-			bgpGroupsObject.isFake = value["IsFake"].asString();
-		if(!value["RouteLimit"].isNull())
-			bgpGroupsObject.routeLimit = value["RouteLimit"].asString();
-		if(!value["RegionId"].isNull())
-			bgpGroupsObject.regionId = value["RegionId"].asString();
+		if(!valueBgpGroupsBgpGroup["Name"].isNull())
+			bgpGroupsObject.name = valueBgpGroupsBgpGroup["Name"].asString();
+		if(!valueBgpGroupsBgpGroup["Description"].isNull())
+			bgpGroupsObject.description = valueBgpGroupsBgpGroup["Description"].asString();
+		if(!valueBgpGroupsBgpGroup["BgpGroupId"].isNull())
+			bgpGroupsObject.bgpGroupId = valueBgpGroupsBgpGroup["BgpGroupId"].asString();
+		if(!valueBgpGroupsBgpGroup["PeerAsn"].isNull())
+			bgpGroupsObject.peerAsn = valueBgpGroupsBgpGroup["PeerAsn"].asString();
+		if(!valueBgpGroupsBgpGroup["AuthKey"].isNull())
+			bgpGroupsObject.authKey = valueBgpGroupsBgpGroup["AuthKey"].asString();
+		if(!valueBgpGroupsBgpGroup["RouterId"].isNull())
+			bgpGroupsObject.routerId = valueBgpGroupsBgpGroup["RouterId"].asString();
+		if(!valueBgpGroupsBgpGroup["Status"].isNull())
+			bgpGroupsObject.status = valueBgpGroupsBgpGroup["Status"].asString();
+		if(!valueBgpGroupsBgpGroup["Keepalive"].isNull())
+			bgpGroupsObject.keepalive = valueBgpGroupsBgpGroup["Keepalive"].asString();
+		if(!valueBgpGroupsBgpGroup["LocalAsn"].isNull())
+			bgpGroupsObject.localAsn = valueBgpGroupsBgpGroup["LocalAsn"].asString();
+		if(!valueBgpGroupsBgpGroup["Hold"].isNull())
+			bgpGroupsObject.hold = valueBgpGroupsBgpGroup["Hold"].asString();
+		if(!valueBgpGroupsBgpGroup["IsFake"].isNull())
+			bgpGroupsObject.isFake = valueBgpGroupsBgpGroup["IsFake"].asString();
+		if(!valueBgpGroupsBgpGroup["RouteLimit"].isNull())
+			bgpGroupsObject.routeLimit = valueBgpGroupsBgpGroup["RouteLimit"].asString();
+		if(!valueBgpGroupsBgpGroup["RegionId"].isNull())
+			bgpGroupsObject.regionId = valueBgpGroupsBgpGroup["RegionId"].asString();
 		bgpGroups_.push_back(bgpGroupsObject);
 	}
 	if(!value["TotalCount"].isNull())

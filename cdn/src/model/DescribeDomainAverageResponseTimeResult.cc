@@ -39,14 +39,14 @@ void DescribeDomainAverageResponseTimeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAvgRTPerInterval = value["AvgRTPerInterval"]["DataModule"];
-	for (auto value : allAvgRTPerInterval)
+	auto allAvgRTPerIntervalNode = value["AvgRTPerInterval"]["DataModule"];
+	for (auto valueAvgRTPerIntervalDataModule : allAvgRTPerIntervalNode)
 	{
 		DataModule avgRTPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			avgRTPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			avgRTPerIntervalObject.value = value["Value"].asString();
+		if(!valueAvgRTPerIntervalDataModule["TimeStamp"].isNull())
+			avgRTPerIntervalObject.timeStamp = valueAvgRTPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueAvgRTPerIntervalDataModule["Value"].isNull())
+			avgRTPerIntervalObject.value = valueAvgRTPerIntervalDataModule["Value"].asString();
 		avgRTPerInterval_.push_back(avgRTPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

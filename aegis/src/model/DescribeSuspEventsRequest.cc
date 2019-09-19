@@ -146,3 +146,14 @@ void DescribeSuspEventsRequest::setParentEventTypes(const std::string& parentEve
 	setCoreParameter("ParentEventTypes", parentEventTypes);
 }
 
+std::string DescribeSuspEventsRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeSuspEventsRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setCoreParameter("Status", status);
+}
+

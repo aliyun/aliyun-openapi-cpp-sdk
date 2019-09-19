@@ -39,100 +39,100 @@ void ListVideosResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVideos = value["Videos"]["VideosItem"];
-	for (auto value : allVideos)
+	auto allVideosNode = value["Videos"]["VideosItem"];
+	for (auto valueVideosVideosItem : allVideosNode)
 	{
 		VideosItem videosObject;
-		if(!value["VideoUri"].isNull())
-			videosObject.videoUri = value["VideoUri"].asString();
-		if(!value["RemarksA"].isNull())
-			videosObject.remarksA = value["RemarksA"].asString();
-		if(!value["RemarksB"].isNull())
-			videosObject.remarksB = value["RemarksB"].asString();
-		if(!value["CreateTime"].isNull())
-			videosObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			videosObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["VideoWidth"].isNull())
-			videosObject.videoWidth = std::stoi(value["VideoWidth"].asString());
-		if(!value["VideoHeight"].isNull())
-			videosObject.videoHeight = std::stoi(value["VideoHeight"].asString());
-		if(!value["VideoFormat"].isNull())
-			videosObject.videoFormat = value["VideoFormat"].asString();
-		if(!value["VideoDuration"].isNull())
-			videosObject.videoDuration = std::stof(value["VideoDuration"].asString());
-		if(!value["FileSize"].isNull())
-			videosObject.fileSize = std::stoi(value["FileSize"].asString());
-		if(!value["VideoFrames"].isNull())
-			videosObject.videoFrames = std::stoi(value["VideoFrames"].asString());
-		if(!value["SourceType"].isNull())
-			videosObject.sourceType = value["SourceType"].asString();
-		if(!value["SourceUri"].isNull())
-			videosObject.sourceUri = value["SourceUri"].asString();
-		if(!value["SourcePosition"].isNull())
-			videosObject.sourcePosition = value["SourcePosition"].asString();
-		if(!value["ProcessStatus"].isNull())
-			videosObject.processStatus = value["ProcessStatus"].asString();
-		if(!value["ProcessModifyTime"].isNull())
-			videosObject.processModifyTime = value["ProcessModifyTime"].asString();
-		if(!value["VideoTagsStatus"].isNull())
-			videosObject.videoTagsStatus = value["VideoTagsStatus"].asString();
-		if(!value["VideoTagsModifyTime"].isNull())
-			videosObject.videoTagsModifyTime = value["VideoTagsModifyTime"].asString();
-		if(!value["CelebrityStatus"].isNull())
-			videosObject.celebrityStatus = value["CelebrityStatus"].asString();
-		if(!value["CelebrityModifyTime"].isNull())
-			videosObject.celebrityModifyTime = value["CelebrityModifyTime"].asString();
-		if(!value["CelebrityFailReason"].isNull())
-			videosObject.celebrityFailReason = value["CelebrityFailReason"].asString();
-		if(!value["VideoTagsFailReason"].isNull())
-			videosObject.videoTagsFailReason = value["VideoTagsFailReason"].asString();
-		if(!value["ProcessFailReason"].isNull())
-			videosObject.processFailReason = value["ProcessFailReason"].asString();
-		if(!value["RemarksC"].isNull())
-			videosObject.remarksC = value["RemarksC"].asString();
-		if(!value["RemarksD"].isNull())
-			videosObject.remarksD = value["RemarksD"].asString();
-		if(!value["ExternalId"].isNull())
-			videosObject.externalId = value["ExternalId"].asString();
-		auto allVideoTags = value["VideoTags"]["VideoTagsItem"];
-		for (auto value : allVideoTags)
+		if(!valueVideosVideosItem["VideoUri"].isNull())
+			videosObject.videoUri = valueVideosVideosItem["VideoUri"].asString();
+		if(!valueVideosVideosItem["RemarksA"].isNull())
+			videosObject.remarksA = valueVideosVideosItem["RemarksA"].asString();
+		if(!valueVideosVideosItem["RemarksB"].isNull())
+			videosObject.remarksB = valueVideosVideosItem["RemarksB"].asString();
+		if(!valueVideosVideosItem["CreateTime"].isNull())
+			videosObject.createTime = valueVideosVideosItem["CreateTime"].asString();
+		if(!valueVideosVideosItem["ModifyTime"].isNull())
+			videosObject.modifyTime = valueVideosVideosItem["ModifyTime"].asString();
+		if(!valueVideosVideosItem["VideoWidth"].isNull())
+			videosObject.videoWidth = std::stoi(valueVideosVideosItem["VideoWidth"].asString());
+		if(!valueVideosVideosItem["VideoHeight"].isNull())
+			videosObject.videoHeight = std::stoi(valueVideosVideosItem["VideoHeight"].asString());
+		if(!valueVideosVideosItem["VideoFormat"].isNull())
+			videosObject.videoFormat = valueVideosVideosItem["VideoFormat"].asString();
+		if(!valueVideosVideosItem["VideoDuration"].isNull())
+			videosObject.videoDuration = std::stof(valueVideosVideosItem["VideoDuration"].asString());
+		if(!valueVideosVideosItem["FileSize"].isNull())
+			videosObject.fileSize = std::stoi(valueVideosVideosItem["FileSize"].asString());
+		if(!valueVideosVideosItem["VideoFrames"].isNull())
+			videosObject.videoFrames = std::stoi(valueVideosVideosItem["VideoFrames"].asString());
+		if(!valueVideosVideosItem["SourceType"].isNull())
+			videosObject.sourceType = valueVideosVideosItem["SourceType"].asString();
+		if(!valueVideosVideosItem["SourceUri"].isNull())
+			videosObject.sourceUri = valueVideosVideosItem["SourceUri"].asString();
+		if(!valueVideosVideosItem["SourcePosition"].isNull())
+			videosObject.sourcePosition = valueVideosVideosItem["SourcePosition"].asString();
+		if(!valueVideosVideosItem["ProcessStatus"].isNull())
+			videosObject.processStatus = valueVideosVideosItem["ProcessStatus"].asString();
+		if(!valueVideosVideosItem["ProcessModifyTime"].isNull())
+			videosObject.processModifyTime = valueVideosVideosItem["ProcessModifyTime"].asString();
+		if(!valueVideosVideosItem["VideoTagsStatus"].isNull())
+			videosObject.videoTagsStatus = valueVideosVideosItem["VideoTagsStatus"].asString();
+		if(!valueVideosVideosItem["VideoTagsModifyTime"].isNull())
+			videosObject.videoTagsModifyTime = valueVideosVideosItem["VideoTagsModifyTime"].asString();
+		if(!valueVideosVideosItem["CelebrityStatus"].isNull())
+			videosObject.celebrityStatus = valueVideosVideosItem["CelebrityStatus"].asString();
+		if(!valueVideosVideosItem["CelebrityModifyTime"].isNull())
+			videosObject.celebrityModifyTime = valueVideosVideosItem["CelebrityModifyTime"].asString();
+		if(!valueVideosVideosItem["CelebrityFailReason"].isNull())
+			videosObject.celebrityFailReason = valueVideosVideosItem["CelebrityFailReason"].asString();
+		if(!valueVideosVideosItem["VideoTagsFailReason"].isNull())
+			videosObject.videoTagsFailReason = valueVideosVideosItem["VideoTagsFailReason"].asString();
+		if(!valueVideosVideosItem["ProcessFailReason"].isNull())
+			videosObject.processFailReason = valueVideosVideosItem["ProcessFailReason"].asString();
+		if(!valueVideosVideosItem["RemarksC"].isNull())
+			videosObject.remarksC = valueVideosVideosItem["RemarksC"].asString();
+		if(!valueVideosVideosItem["RemarksD"].isNull())
+			videosObject.remarksD = valueVideosVideosItem["RemarksD"].asString();
+		if(!valueVideosVideosItem["ExternalId"].isNull())
+			videosObject.externalId = valueVideosVideosItem["ExternalId"].asString();
+		auto allVideoTagsNode = allVideosNode["VideoTags"]["VideoTagsItem"];
+		for (auto allVideosNodeVideoTagsVideoTagsItem : allVideoTagsNode)
 		{
 			VideosItem::VideoTagsItem videoTagsObject;
-			if(!value["VideoTagName"].isNull())
-				videoTagsObject.videoTagName = value["VideoTagName"].asString();
-			if(!value["VideoTagEnName"].isNull())
-				videoTagsObject.videoTagEnName = value["VideoTagEnName"].asString();
-			if(!value["VideoTagConfidence"].isNull())
-				videoTagsObject.videoTagConfidence = std::stof(value["VideoTagConfidence"].asString());
+			if(!allVideosNodeVideoTagsVideoTagsItem["VideoTagName"].isNull())
+				videoTagsObject.videoTagName = allVideosNodeVideoTagsVideoTagsItem["VideoTagName"].asString();
+			if(!allVideosNodeVideoTagsVideoTagsItem["VideoTagEnName"].isNull())
+				videoTagsObject.videoTagEnName = allVideosNodeVideoTagsVideoTagsItem["VideoTagEnName"].asString();
+			if(!allVideosNodeVideoTagsVideoTagsItem["VideoTagConfidence"].isNull())
+				videoTagsObject.videoTagConfidence = std::stof(allVideosNodeVideoTagsVideoTagsItem["VideoTagConfidence"].asString());
 			videosObject.videoTags.push_back(videoTagsObject);
 		}
-		auto allCelebrity = value["Celebrity"]["CelebrityItem"];
-		for (auto value : allCelebrity)
+		auto allCelebrityNode = allVideosNode["Celebrity"]["CelebrityItem"];
+		for (auto allVideosNodeCelebrityCelebrityItem : allCelebrityNode)
 		{
 			VideosItem::CelebrityItem celebrityObject;
-			if(!value["CelebrityName"].isNull())
-				celebrityObject.celebrityName = value["CelebrityName"].asString();
-			if(!value["CelebrityNum"].isNull())
-				celebrityObject.celebrityNum = std::stoi(value["CelebrityNum"].asString());
-			if(!value["CelebrityLibraryName"].isNull())
-				celebrityObject.celebrityLibraryName = value["CelebrityLibraryName"].asString();
+			if(!allVideosNodeCelebrityCelebrityItem["CelebrityName"].isNull())
+				celebrityObject.celebrityName = allVideosNodeCelebrityCelebrityItem["CelebrityName"].asString();
+			if(!allVideosNodeCelebrityCelebrityItem["CelebrityNum"].isNull())
+				celebrityObject.celebrityNum = std::stoi(allVideosNodeCelebrityCelebrityItem["CelebrityNum"].asString());
+			if(!allVideosNodeCelebrityCelebrityItem["CelebrityLibraryName"].isNull())
+				celebrityObject.celebrityLibraryName = allVideosNodeCelebrityCelebrityItem["CelebrityLibraryName"].asString();
 			videosObject.celebrity.push_back(celebrityObject);
 		}
-		auto allPersons = value["Persons"]["PersonsItem"];
-		for (auto value : allPersons)
+		auto allPersonsNode = allVideosNode["Persons"]["PersonsItem"];
+		for (auto allVideosNodePersonsPersonsItem : allPersonsNode)
 		{
 			VideosItem::PersonsItem personsObject;
-			if(!value["PersonId"].isNull())
-				personsObject.personId = value["PersonId"].asString();
-			if(!value["Age"].isNull())
-				personsObject.age = std::stoi(value["Age"].asString());
-			if(!value["AgeConfidence"].isNull())
-				personsObject.ageConfidence = std::stof(value["AgeConfidence"].asString());
-			if(!value["Gender"].isNull())
-				personsObject.gender = value["Gender"].asString();
-			if(!value["GenderConfidence"].isNull())
-				personsObject.genderConfidence = std::stof(value["GenderConfidence"].asString());
+			if(!allVideosNodePersonsPersonsItem["PersonId"].isNull())
+				personsObject.personId = allVideosNodePersonsPersonsItem["PersonId"].asString();
+			if(!allVideosNodePersonsPersonsItem["Age"].isNull())
+				personsObject.age = std::stoi(allVideosNodePersonsPersonsItem["Age"].asString());
+			if(!allVideosNodePersonsPersonsItem["AgeConfidence"].isNull())
+				personsObject.ageConfidence = std::stof(allVideosNodePersonsPersonsItem["AgeConfidence"].asString());
+			if(!allVideosNodePersonsPersonsItem["Gender"].isNull())
+				personsObject.gender = allVideosNodePersonsPersonsItem["Gender"].asString();
+			if(!allVideosNodePersonsPersonsItem["GenderConfidence"].isNull())
+				personsObject.genderConfidence = std::stof(allVideosNodePersonsPersonsItem["GenderConfidence"].asString());
 			videosObject.persons.push_back(personsObject);
 		}
 		videos_.push_back(videosObject);

@@ -39,20 +39,20 @@ void ListTagSetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSets = value["Sets"]["SetsItem"];
-	for (auto value : allSets)
+	auto allSetsNode = value["Sets"]["SetsItem"];
+	for (auto valueSetsSetsItem : allSetsNode)
 	{
 		SetsItem setsObject;
-		if(!value["SetId"].isNull())
-			setsObject.setId = value["SetId"].asString();
-		if(!value["Status"].isNull())
-			setsObject.status = value["Status"].asString();
-		if(!value["Photos"].isNull())
-			setsObject.photos = std::stol(value["Photos"].asString());
-		if(!value["CreateTime"].isNull())
-			setsObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			setsObject.modifyTime = value["ModifyTime"].asString();
+		if(!valueSetsSetsItem["SetId"].isNull())
+			setsObject.setId = valueSetsSetsItem["SetId"].asString();
+		if(!valueSetsSetsItem["Status"].isNull())
+			setsObject.status = valueSetsSetsItem["Status"].asString();
+		if(!valueSetsSetsItem["Photos"].isNull())
+			setsObject.photos = std::stol(valueSetsSetsItem["Photos"].asString());
+		if(!valueSetsSetsItem["CreateTime"].isNull())
+			setsObject.createTime = valueSetsSetsItem["CreateTime"].asString();
+		if(!valueSetsSetsItem["ModifyTime"].isNull())
+			setsObject.modifyTime = valueSetsSetsItem["ModifyTime"].asString();
 		sets_.push_back(setsObject);
 	}
 	if(!value["NextMarker"].isNull())

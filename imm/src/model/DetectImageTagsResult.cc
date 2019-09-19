@@ -39,22 +39,22 @@ void DetectImageTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTags = value["Tags"]["TagsItem"];
-	for (auto value : allTags)
+	auto allTagsNode = value["Tags"]["TagsItem"];
+	for (auto valueTagsTagsItem : allTagsNode)
 	{
 		TagsItem tagsObject;
-		if(!value["TagName"].isNull())
-			tagsObject.tagName = value["TagName"].asString();
-		if(!value["TagConfidence"].isNull())
-			tagsObject.tagConfidence = std::stof(value["TagConfidence"].asString());
-		if(!value["TagLevel"].isNull())
-			tagsObject.tagLevel = std::stoi(value["TagLevel"].asString());
-		if(!value["ParentTagName"].isNull())
-			tagsObject.parentTagName = value["ParentTagName"].asString();
-		if(!value["ParentTagEnName"].isNull())
-			tagsObject.parentTagEnName = value["ParentTagEnName"].asString();
-		if(!value["TagEnName"].isNull())
-			tagsObject.tagEnName = value["TagEnName"].asString();
+		if(!valueTagsTagsItem["TagName"].isNull())
+			tagsObject.tagName = valueTagsTagsItem["TagName"].asString();
+		if(!valueTagsTagsItem["TagConfidence"].isNull())
+			tagsObject.tagConfidence = std::stof(valueTagsTagsItem["TagConfidence"].asString());
+		if(!valueTagsTagsItem["TagLevel"].isNull())
+			tagsObject.tagLevel = std::stoi(valueTagsTagsItem["TagLevel"].asString());
+		if(!valueTagsTagsItem["ParentTagName"].isNull())
+			tagsObject.parentTagName = valueTagsTagsItem["ParentTagName"].asString();
+		if(!valueTagsTagsItem["ParentTagEnName"].isNull())
+			tagsObject.parentTagEnName = valueTagsTagsItem["ParentTagEnName"].asString();
+		if(!valueTagsTagsItem["TagEnName"].isNull())
+			tagsObject.tagEnName = valueTagsTagsItem["TagEnName"].asString();
 		tags_.push_back(tagsObject);
 	}
 	if(!value["ImageUri"].isNull())

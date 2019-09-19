@@ -39,32 +39,32 @@ void DescribeCastersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCasterList = value["CasterList"]["Caster"];
-	for (auto value : allCasterList)
+	auto allCasterListNode = value["CasterList"]["Caster"];
+	for (auto valueCasterListCaster : allCasterListNode)
 	{
 		Caster casterListObject;
-		if(!value["Status"].isNull())
-			casterListObject.status = std::stoi(value["Status"].asString());
-		if(!value["NormType"].isNull())
-			casterListObject.normType = std::stoi(value["NormType"].asString());
-		if(!value["CasterId"].isNull())
-			casterListObject.casterId = value["CasterId"].asString();
-		if(!value["CasterName"].isNull())
-			casterListObject.casterName = value["CasterName"].asString();
-		if(!value["CreateTime"].isNull())
-			casterListObject.createTime = value["CreateTime"].asString();
-		if(!value["StartTime"].isNull())
-			casterListObject.startTime = value["StartTime"].asString();
-		if(!value["PurchaseTime"].isNull())
-			casterListObject.purchaseTime = value["PurchaseTime"].asString();
-		if(!value["ExpireTime"].isNull())
-			casterListObject.expireTime = value["ExpireTime"].asString();
-		if(!value["ChargeType"].isNull())
-			casterListObject.chargeType = value["ChargeType"].asString();
-		if(!value["CasterTemplate"].isNull())
-			casterListObject.casterTemplate = value["CasterTemplate"].asString();
-		if(!value["ChannelEnable"].isNull())
-			casterListObject.channelEnable = std::stoi(value["ChannelEnable"].asString());
+		if(!valueCasterListCaster["Status"].isNull())
+			casterListObject.status = std::stoi(valueCasterListCaster["Status"].asString());
+		if(!valueCasterListCaster["NormType"].isNull())
+			casterListObject.normType = std::stoi(valueCasterListCaster["NormType"].asString());
+		if(!valueCasterListCaster["CasterId"].isNull())
+			casterListObject.casterId = valueCasterListCaster["CasterId"].asString();
+		if(!valueCasterListCaster["CasterName"].isNull())
+			casterListObject.casterName = valueCasterListCaster["CasterName"].asString();
+		if(!valueCasterListCaster["CreateTime"].isNull())
+			casterListObject.createTime = valueCasterListCaster["CreateTime"].asString();
+		if(!valueCasterListCaster["StartTime"].isNull())
+			casterListObject.startTime = valueCasterListCaster["StartTime"].asString();
+		if(!valueCasterListCaster["PurchaseTime"].isNull())
+			casterListObject.purchaseTime = valueCasterListCaster["PurchaseTime"].asString();
+		if(!valueCasterListCaster["ExpireTime"].isNull())
+			casterListObject.expireTime = valueCasterListCaster["ExpireTime"].asString();
+		if(!valueCasterListCaster["ChargeType"].isNull())
+			casterListObject.chargeType = valueCasterListCaster["ChargeType"].asString();
+		if(!valueCasterListCaster["CasterTemplate"].isNull())
+			casterListObject.casterTemplate = valueCasterListCaster["CasterTemplate"].asString();
+		if(!valueCasterListCaster["ChannelEnable"].isNull())
+			casterListObject.channelEnable = std::stoi(valueCasterListCaster["ChannelEnable"].asString());
 		casterList_.push_back(casterListObject);
 	}
 	if(!value["Total"].isNull())

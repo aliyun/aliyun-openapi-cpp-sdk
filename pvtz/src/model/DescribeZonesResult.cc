@@ -39,30 +39,30 @@ void DescribeZonesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allZones = value["Zones"]["Zone"];
-	for (auto value : allZones)
+	auto allZonesNode = value["Zones"]["Zone"];
+	for (auto valueZonesZone : allZonesNode)
 	{
 		Zone zonesObject;
-		if(!value["ZoneId"].isNull())
-			zonesObject.zoneId = value["ZoneId"].asString();
-		if(!value["ZoneName"].isNull())
-			zonesObject.zoneName = value["ZoneName"].asString();
-		if(!value["Remark"].isNull())
-			zonesObject.remark = value["Remark"].asString();
-		if(!value["RecordCount"].isNull())
-			zonesObject.recordCount = std::stoi(value["RecordCount"].asString());
-		if(!value["CreateTime"].isNull())
-			zonesObject.createTime = value["CreateTime"].asString();
-		if(!value["CreateTimestamp"].isNull())
-			zonesObject.createTimestamp = std::stol(value["CreateTimestamp"].asString());
-		if(!value["UpdateTime"].isNull())
-			zonesObject.updateTime = value["UpdateTime"].asString();
-		if(!value["UpdateTimestamp"].isNull())
-			zonesObject.updateTimestamp = std::stol(value["UpdateTimestamp"].asString());
-		if(!value["IsPtr"].isNull())
-			zonesObject.isPtr = value["IsPtr"].asString() == "true";
-		if(!value["ProxyPattern"].isNull())
-			zonesObject.proxyPattern = value["ProxyPattern"].asString();
+		if(!valueZonesZone["ZoneId"].isNull())
+			zonesObject.zoneId = valueZonesZone["ZoneId"].asString();
+		if(!valueZonesZone["ZoneName"].isNull())
+			zonesObject.zoneName = valueZonesZone["ZoneName"].asString();
+		if(!valueZonesZone["Remark"].isNull())
+			zonesObject.remark = valueZonesZone["Remark"].asString();
+		if(!valueZonesZone["RecordCount"].isNull())
+			zonesObject.recordCount = std::stoi(valueZonesZone["RecordCount"].asString());
+		if(!valueZonesZone["CreateTime"].isNull())
+			zonesObject.createTime = valueZonesZone["CreateTime"].asString();
+		if(!valueZonesZone["CreateTimestamp"].isNull())
+			zonesObject.createTimestamp = std::stol(valueZonesZone["CreateTimestamp"].asString());
+		if(!valueZonesZone["UpdateTime"].isNull())
+			zonesObject.updateTime = valueZonesZone["UpdateTime"].asString();
+		if(!valueZonesZone["UpdateTimestamp"].isNull())
+			zonesObject.updateTimestamp = std::stol(valueZonesZone["UpdateTimestamp"].asString());
+		if(!valueZonesZone["IsPtr"].isNull())
+			zonesObject.isPtr = valueZonesZone["IsPtr"].asString() == "true";
+		if(!valueZonesZone["ProxyPattern"].isNull())
+			zonesObject.proxyPattern = valueZonesZone["ProxyPattern"].asString();
 		zones_.push_back(zonesObject);
 	}
 	if(!value["TotalItems"].isNull())

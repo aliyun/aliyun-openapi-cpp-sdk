@@ -42,14 +42,14 @@ void DescribeContactResult::parse(const std::string &payload)
 	auto datapointsNode = value["Datapoints"];
 	if(!datapointsNode["Name"].isNull())
 		datapoints_.name = datapointsNode["Name"].asString();
-	auto allChannels = value["Channels"]["Channel"];
-	for (auto value : allChannels)
+	auto allChannelsNode = datapointsNode["Channels"]["Channel"];
+	for (auto datapointsNodeChannelsChannel : allChannelsNode)
 	{
 		Datapoints::Channel channelObject;
-		if(!value["Type"].isNull())
-			channelObject.type = value["Type"].asString();
-		if(!value["Value"].isNull())
-			channelObject.value = value["Value"].asString();
+		if(!datapointsNodeChannelsChannel["Type"].isNull())
+			channelObject.type = datapointsNodeChannelsChannel["Type"].asString();
+		if(!datapointsNodeChannelsChannel["Value"].isNull())
+			channelObject.value = datapointsNodeChannelsChannel["Value"].asString();
 		datapoints_.channels.push_back(channelObject);
 	}
 	if(!value["Success"].isNull())

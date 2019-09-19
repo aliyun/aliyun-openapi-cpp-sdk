@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setEMapName(const std::string& eMapName);
 				long getStoreId()const;
 				void setStoreId(long storeId);
+				std::string getStatDate()const;
+				void setStatDate(const std::string& statDate);
 
             private:
 				std::string eMapName_;
 				long storeId_;
+				std::string statDate_;
 
 			};
 		}

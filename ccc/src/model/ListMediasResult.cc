@@ -46,28 +46,28 @@ void ListMediasResult::parse(const std::string &payload)
 		medias_.pageNumber = std::stoi(mediasNode["PageNumber"].asString());
 	if(!mediasNode["PageSize"].isNull())
 		medias_.pageSize = std::stoi(mediasNode["PageSize"].asString());
-	auto allList = value["List"]["Media"];
-	for (auto value : allList)
+	auto allListNode = mediasNode["List"]["Media"];
+	for (auto mediasNodeListMedia : allListNode)
 	{
 		Medias::Media mediaObject;
-		if(!value["Instance"].isNull())
-			mediaObject.instance = value["Instance"].asString();
-		if(!value["Name"].isNull())
-			mediaObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			mediaObject.description = value["Description"].asString();
-		if(!value["Type"].isNull())
-			mediaObject.type = value["Type"].asString();
-		if(!value["Content"].isNull())
-			mediaObject.content = value["Content"].asString();
-		if(!value["FilePath"].isNull())
-			mediaObject.filePath = value["FilePath"].asString();
-		if(!value["FileName"].isNull())
-			mediaObject.fileName = value["FileName"].asString();
-		if(!value["OssFileName"].isNull())
-			mediaObject.ossFileName = value["OssFileName"].asString();
-		if(!value["Status"].isNull())
-			mediaObject.status = value["Status"].asString();
+		if(!mediasNodeListMedia["Instance"].isNull())
+			mediaObject.instance = mediasNodeListMedia["Instance"].asString();
+		if(!mediasNodeListMedia["Name"].isNull())
+			mediaObject.name = mediasNodeListMedia["Name"].asString();
+		if(!mediasNodeListMedia["Description"].isNull())
+			mediaObject.description = mediasNodeListMedia["Description"].asString();
+		if(!mediasNodeListMedia["Type"].isNull())
+			mediaObject.type = mediasNodeListMedia["Type"].asString();
+		if(!mediasNodeListMedia["Content"].isNull())
+			mediaObject.content = mediasNodeListMedia["Content"].asString();
+		if(!mediasNodeListMedia["FilePath"].isNull())
+			mediaObject.filePath = mediasNodeListMedia["FilePath"].asString();
+		if(!mediasNodeListMedia["FileName"].isNull())
+			mediaObject.fileName = mediasNodeListMedia["FileName"].asString();
+		if(!mediasNodeListMedia["OssFileName"].isNull())
+			mediaObject.ossFileName = mediasNodeListMedia["OssFileName"].asString();
+		if(!mediasNodeListMedia["Status"].isNull())
+			mediaObject.status = mediasNodeListMedia["Status"].asString();
 		medias_.list.push_back(mediaObject);
 	}
 	if(!value["Success"].isNull())

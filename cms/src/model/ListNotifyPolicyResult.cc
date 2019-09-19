@@ -39,24 +39,24 @@ void ListNotifyPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNotifyPolicyList = value["NotifyPolicyList"]["NotifyPolicy"];
-	for (auto value : allNotifyPolicyList)
+	auto allNotifyPolicyListNode = value["NotifyPolicyList"]["NotifyPolicy"];
+	for (auto valueNotifyPolicyListNotifyPolicy : allNotifyPolicyListNode)
 	{
 		NotifyPolicy notifyPolicyListObject;
-		if(!value["AlertName"].isNull())
-			notifyPolicyListObject.alertName = value["AlertName"].asString();
-		if(!value["Dimensions"].isNull())
-			notifyPolicyListObject.dimensions = value["Dimensions"].asString();
-		if(!value["Type"].isNull())
-			notifyPolicyListObject.type = value["Type"].asString();
-		if(!value["Id"].isNull())
-			notifyPolicyListObject.id = value["Id"].asString();
-		if(!value["StartTime"].isNull())
-			notifyPolicyListObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["EndTime"].isNull())
-			notifyPolicyListObject.endTime = std::stol(value["EndTime"].asString());
-		if(!value["GroupId"].isNull())
-			notifyPolicyListObject.groupId = value["GroupId"].asString();
+		if(!valueNotifyPolicyListNotifyPolicy["AlertName"].isNull())
+			notifyPolicyListObject.alertName = valueNotifyPolicyListNotifyPolicy["AlertName"].asString();
+		if(!valueNotifyPolicyListNotifyPolicy["Dimensions"].isNull())
+			notifyPolicyListObject.dimensions = valueNotifyPolicyListNotifyPolicy["Dimensions"].asString();
+		if(!valueNotifyPolicyListNotifyPolicy["Type"].isNull())
+			notifyPolicyListObject.type = valueNotifyPolicyListNotifyPolicy["Type"].asString();
+		if(!valueNotifyPolicyListNotifyPolicy["Id"].isNull())
+			notifyPolicyListObject.id = valueNotifyPolicyListNotifyPolicy["Id"].asString();
+		if(!valueNotifyPolicyListNotifyPolicy["StartTime"].isNull())
+			notifyPolicyListObject.startTime = std::stol(valueNotifyPolicyListNotifyPolicy["StartTime"].asString());
+		if(!valueNotifyPolicyListNotifyPolicy["EndTime"].isNull())
+			notifyPolicyListObject.endTime = std::stol(valueNotifyPolicyListNotifyPolicy["EndTime"].asString());
+		if(!valueNotifyPolicyListNotifyPolicy["GroupId"].isNull())
+			notifyPolicyListObject.groupId = valueNotifyPolicyListNotifyPolicy["GroupId"].asString();
 		notifyPolicyList_.push_back(notifyPolicyListObject);
 	}
 	if(!value["Code"].isNull())

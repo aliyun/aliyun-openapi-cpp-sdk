@@ -39,28 +39,28 @@ void DescribeWhiteListStrategyStatisticsResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStrategies = value["Strategies"]["Strategy"];
-	for (auto value : allStrategies)
+	auto allStrategiesNode = value["Strategies"]["Strategy"];
+	for (auto valueStrategiesStrategy : allStrategiesNode)
 	{
 		Strategy strategiesObject;
-		if(!value["StrategyId"].isNull())
-			strategiesObject.strategyId = std::stol(value["StrategyId"].asString());
-		if(!value["StrategyName"].isNull())
-			strategiesObject.strategyName = value["StrategyName"].asString();
-		if(!value["StudyTime"].isNull())
-			strategiesObject.studyTime = std::stoi(value["StudyTime"].asString());
-		if(!value["AssetCount"].isNull())
-			strategiesObject.assetCount = std::stoi(value["AssetCount"].asString());
-		if(!value["Status"].isNull())
-			strategiesObject.status = std::stoi(value["Status"].asString());
-		if(!value["TrustProcCount"].isNull())
-			strategiesObject.trustProcCount = std::stoi(value["TrustProcCount"].asString());
-		if(!value["SuspiciousProcCount"].isNull())
-			strategiesObject.suspiciousProcCount = std::stoi(value["SuspiciousProcCount"].asString());
-		if(!value["VirusProcCount"].isNull())
-			strategiesObject.virusProcCount = std::stoi(value["VirusProcCount"].asString());
-		if(!value["Progress"].isNull())
-			strategiesObject.progress = std::stoi(value["Progress"].asString());
+		if(!valueStrategiesStrategy["StrategyId"].isNull())
+			strategiesObject.strategyId = std::stol(valueStrategiesStrategy["StrategyId"].asString());
+		if(!valueStrategiesStrategy["StrategyName"].isNull())
+			strategiesObject.strategyName = valueStrategiesStrategy["StrategyName"].asString();
+		if(!valueStrategiesStrategy["StudyTime"].isNull())
+			strategiesObject.studyTime = std::stoi(valueStrategiesStrategy["StudyTime"].asString());
+		if(!valueStrategiesStrategy["AssetCount"].isNull())
+			strategiesObject.assetCount = std::stoi(valueStrategiesStrategy["AssetCount"].asString());
+		if(!valueStrategiesStrategy["Status"].isNull())
+			strategiesObject.status = std::stoi(valueStrategiesStrategy["Status"].asString());
+		if(!valueStrategiesStrategy["TrustProcCount"].isNull())
+			strategiesObject.trustProcCount = std::stoi(valueStrategiesStrategy["TrustProcCount"].asString());
+		if(!valueStrategiesStrategy["SuspiciousProcCount"].isNull())
+			strategiesObject.suspiciousProcCount = std::stoi(valueStrategiesStrategy["SuspiciousProcCount"].asString());
+		if(!valueStrategiesStrategy["VirusProcCount"].isNull())
+			strategiesObject.virusProcCount = std::stoi(valueStrategiesStrategy["VirusProcCount"].asString());
+		if(!valueStrategiesStrategy["Progress"].isNull())
+			strategiesObject.progress = std::stoi(valueStrategiesStrategy["Progress"].asString());
 		strategies_.push_back(strategiesObject);
 	}
 	if(!value["Count"].isNull())

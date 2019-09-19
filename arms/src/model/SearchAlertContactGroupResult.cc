@@ -39,20 +39,20 @@ void SearchAlertContactGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allContactGroups = value["ContactGroups"]["ContactGroup"];
-	for (auto value : allContactGroups)
+	auto allContactGroupsNode = value["ContactGroups"]["ContactGroup"];
+	for (auto valueContactGroupsContactGroup : allContactGroupsNode)
 	{
 		ContactGroup contactGroupsObject;
-		if(!value["ContactGroupId"].isNull())
-			contactGroupsObject.contactGroupId = std::stol(value["ContactGroupId"].asString());
-		if(!value["ContactGroupName"].isNull())
-			contactGroupsObject.contactGroupName = value["ContactGroupName"].asString();
-		if(!value["UserId"].isNull())
-			contactGroupsObject.userId = value["UserId"].asString();
-		if(!value["CreateTime"].isNull())
-			contactGroupsObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["UpdateTime"].isNull())
-			contactGroupsObject.updateTime = std::stol(value["UpdateTime"].asString());
+		if(!valueContactGroupsContactGroup["ContactGroupId"].isNull())
+			contactGroupsObject.contactGroupId = std::stol(valueContactGroupsContactGroup["ContactGroupId"].asString());
+		if(!valueContactGroupsContactGroup["ContactGroupName"].isNull())
+			contactGroupsObject.contactGroupName = valueContactGroupsContactGroup["ContactGroupName"].asString();
+		if(!valueContactGroupsContactGroup["UserId"].isNull())
+			contactGroupsObject.userId = valueContactGroupsContactGroup["UserId"].asString();
+		if(!valueContactGroupsContactGroup["CreateTime"].isNull())
+			contactGroupsObject.createTime = std::stol(valueContactGroupsContactGroup["CreateTime"].asString());
+		if(!valueContactGroupsContactGroup["UpdateTime"].isNull())
+			contactGroupsObject.updateTime = std::stol(valueContactGroupsContactGroup["UpdateTime"].asString());
 		contactGroups_.push_back(contactGroupsObject);
 	}
 

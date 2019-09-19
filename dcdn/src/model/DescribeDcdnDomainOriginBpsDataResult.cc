@@ -39,22 +39,22 @@ void DescribeDcdnDomainOriginBpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOriginBpsDataPerInterval = value["OriginBpsDataPerInterval"]["DataModule"];
-	for (auto value : allOriginBpsDataPerInterval)
+	auto allOriginBpsDataPerIntervalNode = value["OriginBpsDataPerInterval"]["DataModule"];
+	for (auto valueOriginBpsDataPerIntervalDataModule : allOriginBpsDataPerIntervalNode)
 	{
 		DataModule originBpsDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			originBpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["OriginBps"].isNull())
-			originBpsDataPerIntervalObject.originBps = std::stof(value["OriginBps"].asString());
-		if(!value["DynamicHttpOriginBps"].isNull())
-			originBpsDataPerIntervalObject.dynamicHttpOriginBps = std::stof(value["DynamicHttpOriginBps"].asString());
-		if(!value["DynamicHttpsOriginBps"].isNull())
-			originBpsDataPerIntervalObject.dynamicHttpsOriginBps = std::stof(value["DynamicHttpsOriginBps"].asString());
-		if(!value["StaticHttpOriginBps"].isNull())
-			originBpsDataPerIntervalObject.staticHttpOriginBps = std::stof(value["StaticHttpOriginBps"].asString());
-		if(!value["StaticHttpsOriginBps"].isNull())
-			originBpsDataPerIntervalObject.staticHttpsOriginBps = std::stof(value["StaticHttpsOriginBps"].asString());
+		if(!valueOriginBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			originBpsDataPerIntervalObject.timeStamp = valueOriginBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueOriginBpsDataPerIntervalDataModule["OriginBps"].isNull())
+			originBpsDataPerIntervalObject.originBps = std::stof(valueOriginBpsDataPerIntervalDataModule["OriginBps"].asString());
+		if(!valueOriginBpsDataPerIntervalDataModule["DynamicHttpOriginBps"].isNull())
+			originBpsDataPerIntervalObject.dynamicHttpOriginBps = std::stof(valueOriginBpsDataPerIntervalDataModule["DynamicHttpOriginBps"].asString());
+		if(!valueOriginBpsDataPerIntervalDataModule["DynamicHttpsOriginBps"].isNull())
+			originBpsDataPerIntervalObject.dynamicHttpsOriginBps = std::stof(valueOriginBpsDataPerIntervalDataModule["DynamicHttpsOriginBps"].asString());
+		if(!valueOriginBpsDataPerIntervalDataModule["StaticHttpOriginBps"].isNull())
+			originBpsDataPerIntervalObject.staticHttpOriginBps = std::stof(valueOriginBpsDataPerIntervalDataModule["StaticHttpOriginBps"].asString());
+		if(!valueOriginBpsDataPerIntervalDataModule["StaticHttpsOriginBps"].isNull())
+			originBpsDataPerIntervalObject.staticHttpsOriginBps = std::stof(valueOriginBpsDataPerIntervalDataModule["StaticHttpsOriginBps"].asString());
 		originBpsDataPerInterval_.push_back(originBpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

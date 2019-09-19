@@ -39,48 +39,48 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPermissions = value["Permissions"]["Permission"];
-	for (auto value : allPermissions)
+	auto allPermissionsNode = value["Permissions"]["Permission"];
+	for (auto valuePermissionsPermission : allPermissionsNode)
 	{
 		Permission permissionsObject;
-		if(!value["IpProtocol"].isNull())
-			permissionsObject.ipProtocol = value["IpProtocol"].asString();
-		if(!value["PortRange"].isNull())
-			permissionsObject.portRange = value["PortRange"].asString();
-		if(!value["SourcePortRange"].isNull())
-			permissionsObject.sourcePortRange = value["SourcePortRange"].asString();
-		if(!value["SourceGroupId"].isNull())
-			permissionsObject.sourceGroupId = value["SourceGroupId"].asString();
-		if(!value["SourceGroupName"].isNull())
-			permissionsObject.sourceGroupName = value["SourceGroupName"].asString();
-		if(!value["SourceCidrIp"].isNull())
-			permissionsObject.sourceCidrIp = value["SourceCidrIp"].asString();
-		if(!value["Ipv6SourceCidrIp"].isNull())
-			permissionsObject.ipv6SourceCidrIp = value["Ipv6SourceCidrIp"].asString();
-		if(!value["Policy"].isNull())
-			permissionsObject.policy = value["Policy"].asString();
-		if(!value["NicType"].isNull())
-			permissionsObject.nicType = value["NicType"].asString();
-		if(!value["SourceGroupOwnerAccount"].isNull())
-			permissionsObject.sourceGroupOwnerAccount = value["SourceGroupOwnerAccount"].asString();
-		if(!value["DestGroupId"].isNull())
-			permissionsObject.destGroupId = value["DestGroupId"].asString();
-		if(!value["DestGroupName"].isNull())
-			permissionsObject.destGroupName = value["DestGroupName"].asString();
-		if(!value["DestCidrIp"].isNull())
-			permissionsObject.destCidrIp = value["DestCidrIp"].asString();
-		if(!value["Ipv6DestCidrIp"].isNull())
-			permissionsObject.ipv6DestCidrIp = value["Ipv6DestCidrIp"].asString();
-		if(!value["DestGroupOwnerAccount"].isNull())
-			permissionsObject.destGroupOwnerAccount = value["DestGroupOwnerAccount"].asString();
-		if(!value["Priority"].isNull())
-			permissionsObject.priority = value["Priority"].asString();
-		if(!value["Direction"].isNull())
-			permissionsObject.direction = value["Direction"].asString();
-		if(!value["Description"].isNull())
-			permissionsObject.description = value["Description"].asString();
-		if(!value["CreateTime"].isNull())
-			permissionsObject.createTime = value["CreateTime"].asString();
+		if(!valuePermissionsPermission["IpProtocol"].isNull())
+			permissionsObject.ipProtocol = valuePermissionsPermission["IpProtocol"].asString();
+		if(!valuePermissionsPermission["PortRange"].isNull())
+			permissionsObject.portRange = valuePermissionsPermission["PortRange"].asString();
+		if(!valuePermissionsPermission["SourcePortRange"].isNull())
+			permissionsObject.sourcePortRange = valuePermissionsPermission["SourcePortRange"].asString();
+		if(!valuePermissionsPermission["SourceGroupId"].isNull())
+			permissionsObject.sourceGroupId = valuePermissionsPermission["SourceGroupId"].asString();
+		if(!valuePermissionsPermission["SourceGroupName"].isNull())
+			permissionsObject.sourceGroupName = valuePermissionsPermission["SourceGroupName"].asString();
+		if(!valuePermissionsPermission["SourceCidrIp"].isNull())
+			permissionsObject.sourceCidrIp = valuePermissionsPermission["SourceCidrIp"].asString();
+		if(!valuePermissionsPermission["Ipv6SourceCidrIp"].isNull())
+			permissionsObject.ipv6SourceCidrIp = valuePermissionsPermission["Ipv6SourceCidrIp"].asString();
+		if(!valuePermissionsPermission["Policy"].isNull())
+			permissionsObject.policy = valuePermissionsPermission["Policy"].asString();
+		if(!valuePermissionsPermission["NicType"].isNull())
+			permissionsObject.nicType = valuePermissionsPermission["NicType"].asString();
+		if(!valuePermissionsPermission["SourceGroupOwnerAccount"].isNull())
+			permissionsObject.sourceGroupOwnerAccount = valuePermissionsPermission["SourceGroupOwnerAccount"].asString();
+		if(!valuePermissionsPermission["DestGroupId"].isNull())
+			permissionsObject.destGroupId = valuePermissionsPermission["DestGroupId"].asString();
+		if(!valuePermissionsPermission["DestGroupName"].isNull())
+			permissionsObject.destGroupName = valuePermissionsPermission["DestGroupName"].asString();
+		if(!valuePermissionsPermission["DestCidrIp"].isNull())
+			permissionsObject.destCidrIp = valuePermissionsPermission["DestCidrIp"].asString();
+		if(!valuePermissionsPermission["Ipv6DestCidrIp"].isNull())
+			permissionsObject.ipv6DestCidrIp = valuePermissionsPermission["Ipv6DestCidrIp"].asString();
+		if(!valuePermissionsPermission["DestGroupOwnerAccount"].isNull())
+			permissionsObject.destGroupOwnerAccount = valuePermissionsPermission["DestGroupOwnerAccount"].asString();
+		if(!valuePermissionsPermission["Priority"].isNull())
+			permissionsObject.priority = valuePermissionsPermission["Priority"].asString();
+		if(!valuePermissionsPermission["Direction"].isNull())
+			permissionsObject.direction = valuePermissionsPermission["Direction"].asString();
+		if(!valuePermissionsPermission["Description"].isNull())
+			permissionsObject.description = valuePermissionsPermission["Description"].asString();
+		if(!valuePermissionsPermission["CreateTime"].isNull())
+			permissionsObject.createTime = valuePermissionsPermission["CreateTime"].asString();
 		permissions_.push_back(permissionsObject);
 	}
 	if(!value["RegionId"].isNull())

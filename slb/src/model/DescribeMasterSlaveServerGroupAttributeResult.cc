@@ -39,26 +39,26 @@ void DescribeMasterSlaveServerGroupAttributeResult::parse(const std::string &pay
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMasterSlaveBackendServers = value["MasterSlaveBackendServers"]["MasterSlaveBackendServer"];
-	for (auto value : allMasterSlaveBackendServers)
+	auto allMasterSlaveBackendServersNode = value["MasterSlaveBackendServers"]["MasterSlaveBackendServer"];
+	for (auto valueMasterSlaveBackendServersMasterSlaveBackendServer : allMasterSlaveBackendServersNode)
 	{
 		MasterSlaveBackendServer masterSlaveBackendServersObject;
-		if(!value["ServerId"].isNull())
-			masterSlaveBackendServersObject.serverId = value["ServerId"].asString();
-		if(!value["Port"].isNull())
-			masterSlaveBackendServersObject.port = std::stoi(value["Port"].asString());
-		if(!value["Weight"].isNull())
-			masterSlaveBackendServersObject.weight = std::stoi(value["Weight"].asString());
-		if(!value["ServerType"].isNull())
-			masterSlaveBackendServersObject.serverType = value["ServerType"].asString();
-		if(!value["Type"].isNull())
-			masterSlaveBackendServersObject.type = value["Type"].asString();
-		if(!value["ServerIp"].isNull())
-			masterSlaveBackendServersObject.serverIp = value["ServerIp"].asString();
-		if(!value["VpcId"].isNull())
-			masterSlaveBackendServersObject.vpcId = value["VpcId"].asString();
-		if(!value["Description"].isNull())
-			masterSlaveBackendServersObject.description = value["Description"].asString();
+		if(!valueMasterSlaveBackendServersMasterSlaveBackendServer["ServerId"].isNull())
+			masterSlaveBackendServersObject.serverId = valueMasterSlaveBackendServersMasterSlaveBackendServer["ServerId"].asString();
+		if(!valueMasterSlaveBackendServersMasterSlaveBackendServer["Port"].isNull())
+			masterSlaveBackendServersObject.port = std::stoi(valueMasterSlaveBackendServersMasterSlaveBackendServer["Port"].asString());
+		if(!valueMasterSlaveBackendServersMasterSlaveBackendServer["Weight"].isNull())
+			masterSlaveBackendServersObject.weight = std::stoi(valueMasterSlaveBackendServersMasterSlaveBackendServer["Weight"].asString());
+		if(!valueMasterSlaveBackendServersMasterSlaveBackendServer["ServerType"].isNull())
+			masterSlaveBackendServersObject.serverType = valueMasterSlaveBackendServersMasterSlaveBackendServer["ServerType"].asString();
+		if(!valueMasterSlaveBackendServersMasterSlaveBackendServer["Type"].isNull())
+			masterSlaveBackendServersObject.type = valueMasterSlaveBackendServersMasterSlaveBackendServer["Type"].asString();
+		if(!valueMasterSlaveBackendServersMasterSlaveBackendServer["ServerIp"].isNull())
+			masterSlaveBackendServersObject.serverIp = valueMasterSlaveBackendServersMasterSlaveBackendServer["ServerIp"].asString();
+		if(!valueMasterSlaveBackendServersMasterSlaveBackendServer["VpcId"].isNull())
+			masterSlaveBackendServersObject.vpcId = valueMasterSlaveBackendServersMasterSlaveBackendServer["VpcId"].asString();
+		if(!valueMasterSlaveBackendServersMasterSlaveBackendServer["Description"].isNull())
+			masterSlaveBackendServersObject.description = valueMasterSlaveBackendServersMasterSlaveBackendServer["Description"].asString();
 		masterSlaveBackendServers_.push_back(masterSlaveBackendServersObject);
 	}
 	if(!value["LoadBalancerId"].isNull())

@@ -39,18 +39,18 @@ void DetectImageCelebrityResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCelebrity = value["Celebrity"]["CelebrityItem"];
-	for (auto value : allCelebrity)
+	auto allCelebrityNode = value["Celebrity"]["CelebrityItem"];
+	for (auto valueCelebrityCelebrityItem : allCelebrityNode)
 	{
 		CelebrityItem celebrityObject;
-		if(!value["CelebrityName"].isNull())
-			celebrityObject.celebrityName = value["CelebrityName"].asString();
-		if(!value["CelebrityGender"].isNull())
-			celebrityObject.celebrityGender = value["CelebrityGender"].asString();
-		if(!value["CelebrityConfidence"].isNull())
-			celebrityObject.celebrityConfidence = std::stof(value["CelebrityConfidence"].asString());
-		if(!value["CelebrityLibraryName"].isNull())
-			celebrityObject.celebrityLibraryName = value["CelebrityLibraryName"].asString();
+		if(!valueCelebrityCelebrityItem["CelebrityName"].isNull())
+			celebrityObject.celebrityName = valueCelebrityCelebrityItem["CelebrityName"].asString();
+		if(!valueCelebrityCelebrityItem["CelebrityGender"].isNull())
+			celebrityObject.celebrityGender = valueCelebrityCelebrityItem["CelebrityGender"].asString();
+		if(!valueCelebrityCelebrityItem["CelebrityConfidence"].isNull())
+			celebrityObject.celebrityConfidence = std::stof(valueCelebrityCelebrityItem["CelebrityConfidence"].asString());
+		if(!valueCelebrityCelebrityItem["CelebrityLibraryName"].isNull())
+			celebrityObject.celebrityLibraryName = valueCelebrityCelebrityItem["CelebrityLibraryName"].asString();
 		auto celebrityBoundaryNode = value["CelebrityBoundary"];
 		if(!celebrityBoundaryNode["Left"].isNull())
 			celebrityObject.celebrityBoundary.left = std::stoi(celebrityBoundaryNode["Left"].asString());

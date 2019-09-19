@@ -39,18 +39,18 @@ void DescribeServerRelatedGlobalAccelerationInstancesResult::parse(const std::st
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allGlobalAccelerationInstances = value["GlobalAccelerationInstances"]["GlobalAccelerationInstance"];
-	for (auto value : allGlobalAccelerationInstances)
+	auto allGlobalAccelerationInstancesNode = value["GlobalAccelerationInstances"]["GlobalAccelerationInstance"];
+	for (auto valueGlobalAccelerationInstancesGlobalAccelerationInstance : allGlobalAccelerationInstancesNode)
 	{
 		GlobalAccelerationInstance globalAccelerationInstancesObject;
-		if(!value["RegionId"].isNull())
-			globalAccelerationInstancesObject.regionId = value["RegionId"].asString();
-		if(!value["GlobalAccelerationInstanceId"].isNull())
-			globalAccelerationInstancesObject.globalAccelerationInstanceId = value["GlobalAccelerationInstanceId"].asString();
-		if(!value["IpAddress"].isNull())
-			globalAccelerationInstancesObject.ipAddress = value["IpAddress"].asString();
-		if(!value["ServerIpAddress"].isNull())
-			globalAccelerationInstancesObject.serverIpAddress = value["ServerIpAddress"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["RegionId"].isNull())
+			globalAccelerationInstancesObject.regionId = valueGlobalAccelerationInstancesGlobalAccelerationInstance["RegionId"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["GlobalAccelerationInstanceId"].isNull())
+			globalAccelerationInstancesObject.globalAccelerationInstanceId = valueGlobalAccelerationInstancesGlobalAccelerationInstance["GlobalAccelerationInstanceId"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["IpAddress"].isNull())
+			globalAccelerationInstancesObject.ipAddress = valueGlobalAccelerationInstancesGlobalAccelerationInstance["IpAddress"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ServerIpAddress"].isNull())
+			globalAccelerationInstancesObject.serverIpAddress = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ServerIpAddress"].asString();
 		globalAccelerationInstances_.push_back(globalAccelerationInstancesObject);
 	}
 

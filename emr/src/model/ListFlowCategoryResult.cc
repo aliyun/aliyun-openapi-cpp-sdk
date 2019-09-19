@@ -39,30 +39,30 @@ void ListFlowCategoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCategories = value["Categories"]["Category"];
-	for (auto value : allCategories)
+	auto allCategoriesNode = value["Categories"]["Category"];
+	for (auto valueCategoriesCategory : allCategoriesNode)
 	{
 		Category categoriesObject;
-		if(!value["Id"].isNull())
-			categoriesObject.id = value["Id"].asString();
-		if(!value["GmtCreate"].isNull())
-			categoriesObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			categoriesObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["Name"].isNull())
-			categoriesObject.name = value["Name"].asString();
-		if(!value["ParentId"].isNull())
-			categoriesObject.parentId = value["ParentId"].asString();
-		if(!value["Type"].isNull())
-			categoriesObject.type = value["Type"].asString();
-		if(!value["CategoryType"].isNull())
-			categoriesObject.categoryType = value["CategoryType"].asString();
-		if(!value["ObjectType"].isNull())
-			categoriesObject.objectType = value["ObjectType"].asString();
-		if(!value["ObjectId"].isNull())
-			categoriesObject.objectId = value["ObjectId"].asString();
-		if(!value["ProjectId"].isNull())
-			categoriesObject.projectId = value["ProjectId"].asString();
+		if(!valueCategoriesCategory["Id"].isNull())
+			categoriesObject.id = valueCategoriesCategory["Id"].asString();
+		if(!valueCategoriesCategory["GmtCreate"].isNull())
+			categoriesObject.gmtCreate = std::stol(valueCategoriesCategory["GmtCreate"].asString());
+		if(!valueCategoriesCategory["GmtModified"].isNull())
+			categoriesObject.gmtModified = std::stol(valueCategoriesCategory["GmtModified"].asString());
+		if(!valueCategoriesCategory["Name"].isNull())
+			categoriesObject.name = valueCategoriesCategory["Name"].asString();
+		if(!valueCategoriesCategory["ParentId"].isNull())
+			categoriesObject.parentId = valueCategoriesCategory["ParentId"].asString();
+		if(!valueCategoriesCategory["Type"].isNull())
+			categoriesObject.type = valueCategoriesCategory["Type"].asString();
+		if(!valueCategoriesCategory["CategoryType"].isNull())
+			categoriesObject.categoryType = valueCategoriesCategory["CategoryType"].asString();
+		if(!valueCategoriesCategory["ObjectType"].isNull())
+			categoriesObject.objectType = valueCategoriesCategory["ObjectType"].asString();
+		if(!valueCategoriesCategory["ObjectId"].isNull())
+			categoriesObject.objectId = valueCategoriesCategory["ObjectId"].asString();
+		if(!valueCategoriesCategory["ProjectId"].isNull())
+			categoriesObject.projectId = valueCategoriesCategory["ProjectId"].asString();
 		categories_.push_back(categoriesObject);
 	}
 	if(!value["PageNumber"].isNull())

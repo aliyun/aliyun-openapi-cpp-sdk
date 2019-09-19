@@ -40,24 +40,24 @@ void DescribeAnalysisCurveResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto curvesNode = value["Curves"];
-	auto allOriginalCurveList = value["OriginalCurveList"]["OriginalCurve"];
-	for (auto value : allOriginalCurveList)
+	auto allOriginalCurveListNode = curvesNode["OriginalCurveList"]["OriginalCurve"];
+	for (auto curvesNodeOriginalCurveListOriginalCurve : allOriginalCurveListNode)
 	{
 		Curves::OriginalCurve originalCurveObject;
-		if(!value["Count"].isNull())
-			originalCurveObject.count = std::stoi(value["Count"].asString());
-		if(!value["DsTimestamp"].isNull())
-			originalCurveObject.dsTimestamp = std::stol(value["DsTimestamp"].asString());
+		if(!curvesNodeOriginalCurveListOriginalCurve["Count"].isNull())
+			originalCurveObject.count = std::stoi(curvesNodeOriginalCurveListOriginalCurve["Count"].asString());
+		if(!curvesNodeOriginalCurveListOriginalCurve["DsTimestamp"].isNull())
+			originalCurveObject.dsTimestamp = std::stol(curvesNodeOriginalCurveListOriginalCurve["DsTimestamp"].asString());
 		curves_.originalCurveList.push_back(originalCurveObject);
 	}
-	auto allResultCurveList = value["ResultCurveList"]["ResultCurve"];
-	for (auto value : allResultCurveList)
+	auto allResultCurveListNode = curvesNode["ResultCurveList"]["ResultCurve"];
+	for (auto curvesNodeResultCurveListResultCurve : allResultCurveListNode)
 	{
 		Curves::ResultCurve resultCurveObject;
-		if(!value["Count"].isNull())
-			resultCurveObject.count = std::stoi(value["Count"].asString());
-		if(!value["DsTimestamp"].isNull())
-			resultCurveObject.dsTimestamp = std::stol(value["DsTimestamp"].asString());
+		if(!curvesNodeResultCurveListResultCurve["Count"].isNull())
+			resultCurveObject.count = std::stoi(curvesNodeResultCurveListResultCurve["Count"].asString());
+		if(!curvesNodeResultCurveListResultCurve["DsTimestamp"].isNull())
+			resultCurveObject.dsTimestamp = std::stol(curvesNodeResultCurveListResultCurve["DsTimestamp"].asString());
 		curves_.resultCurveList.push_back(resultCurveObject);
 	}
 

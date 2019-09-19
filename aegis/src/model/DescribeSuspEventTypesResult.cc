@@ -39,14 +39,14 @@ void DescribeSuspEventTypesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEventTypes = value["EventTypes"]["Data"];
-	for (auto value : allEventTypes)
+	auto allEventTypesNode = value["EventTypes"]["Data"];
+	for (auto valueEventTypesData : allEventTypesNode)
 	{
 		Data eventTypesObject;
-		if(!value["AliseEventType"].isNull())
-			eventTypesObject.aliseEventType = value["AliseEventType"].asString();
-		if(!value["EventType"].isNull())
-			eventTypesObject.eventType = value["EventType"].asString();
+		if(!valueEventTypesData["AliseEventType"].isNull())
+			eventTypesObject.aliseEventType = valueEventTypesData["AliseEventType"].asString();
+		if(!valueEventTypesData["EventType"].isNull())
+			eventTypesObject.eventType = valueEventTypesData["EventType"].asString();
 		eventTypes_.push_back(eventTypesObject);
 	}
 	if(!value["TotalCount"].isNull())

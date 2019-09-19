@@ -39,24 +39,24 @@ void DescribeAppInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAppInfoList = value["AppInfoList"]["AppInfo"];
-	for (auto value : allAppInfoList)
+	auto allAppInfoListNode = value["AppInfoList"]["AppInfo"];
+	for (auto valueAppInfoListAppInfo : allAppInfoListNode)
 	{
 		AppInfo appInfoListObject;
-		if(!value["Id"].isNull())
-			appInfoListObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			appInfoListObject.name = value["Name"].asString();
-		if(!value["PackageName"].isNull())
-			appInfoListObject.packageName = value["PackageName"].asString();
-		if(!value["Icon"].isNull())
-			appInfoListObject.icon = value["Icon"].asString();
-		if(!value["StartDate"].isNull())
-			appInfoListObject.startDate = value["StartDate"].asString();
-		if(!value["EndDate"].isNull())
-			appInfoListObject.endDate = value["EndDate"].asString();
-		if(!value["Type"].isNull())
-			appInfoListObject.type = std::stoi(value["Type"].asString());
+		if(!valueAppInfoListAppInfo["Id"].isNull())
+			appInfoListObject.id = std::stol(valueAppInfoListAppInfo["Id"].asString());
+		if(!valueAppInfoListAppInfo["Name"].isNull())
+			appInfoListObject.name = valueAppInfoListAppInfo["Name"].asString();
+		if(!valueAppInfoListAppInfo["PackageName"].isNull())
+			appInfoListObject.packageName = valueAppInfoListAppInfo["PackageName"].asString();
+		if(!valueAppInfoListAppInfo["Icon"].isNull())
+			appInfoListObject.icon = valueAppInfoListAppInfo["Icon"].asString();
+		if(!valueAppInfoListAppInfo["StartDate"].isNull())
+			appInfoListObject.startDate = valueAppInfoListAppInfo["StartDate"].asString();
+		if(!valueAppInfoListAppInfo["EndDate"].isNull())
+			appInfoListObject.endDate = valueAppInfoListAppInfo["EndDate"].asString();
+		if(!valueAppInfoListAppInfo["Type"].isNull())
+			appInfoListObject.type = std::stoi(valueAppInfoListAppInfo["Type"].asString());
 		auto packageInfoNode = value["PackageInfo"];
 		if(!packageInfoNode["Version"].isNull())
 			appInfoListObject.packageInfo.version = packageInfoNode["Version"].asString();

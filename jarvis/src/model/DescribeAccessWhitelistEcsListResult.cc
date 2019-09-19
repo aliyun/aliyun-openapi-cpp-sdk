@@ -39,16 +39,16 @@ void DescribeAccessWhitelistEcsListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEcsList = value["EcsList"]["Ecs"];
-	for (auto value : allEcsList)
+	auto allEcsListNode = value["EcsList"]["Ecs"];
+	for (auto valueEcsListEcs : allEcsListNode)
 	{
 		Ecs ecsListObject;
-		if(!value["InstanceName"].isNull())
-			ecsListObject.instanceName = value["InstanceName"].asString();
-		if(!value["InstanceId"].isNull())
-			ecsListObject.instanceId = value["InstanceId"].asString();
-		if(!value["IP"].isNull())
-			ecsListObject.iP = value["IP"].asString();
+		if(!valueEcsListEcs["InstanceName"].isNull())
+			ecsListObject.instanceName = valueEcsListEcs["InstanceName"].asString();
+		if(!valueEcsListEcs["InstanceId"].isNull())
+			ecsListObject.instanceId = valueEcsListEcs["InstanceId"].asString();
+		if(!valueEcsListEcs["IP"].isNull())
+			ecsListObject.iP = valueEcsListEcs["IP"].asString();
 		ecsList_.push_back(ecsListObject);
 	}
 	if(!value["TotalCount"].isNull())

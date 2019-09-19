@@ -39,24 +39,24 @@ void DescribeRisksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRisks = value["Risks"]["Risk"];
-	for (auto value : allRisks)
+	auto allRisksNode = value["Risks"]["Risk"];
+	for (auto valueRisksRisk : allRisksNode)
 	{
 		Risk risksObject;
-		if(!value["RiskId"].isNull())
-			risksObject.riskId = std::stol(value["RiskId"].asString());
-		if(!value["RiskName"].isNull())
-			risksObject.riskName = value["RiskName"].asString();
-		if(!value["RiskDetail"].isNull())
-			risksObject.riskDetail = value["RiskDetail"].asString();
-		if(!value["RiskType"].isNull())
-			risksObject.riskType = value["RiskType"].asString();
-		if(!value["TypeAlias"].isNull())
-			risksObject.typeAlias = value["TypeAlias"].asString();
-		if(!value["SubRiskType"].isNull())
-			risksObject.subRiskType = value["SubRiskType"].asString();
-		if(!value["SubTypeAlias"].isNull())
-			risksObject.subTypeAlias = value["SubTypeAlias"].asString();
+		if(!valueRisksRisk["RiskId"].isNull())
+			risksObject.riskId = std::stol(valueRisksRisk["RiskId"].asString());
+		if(!valueRisksRisk["RiskName"].isNull())
+			risksObject.riskName = valueRisksRisk["RiskName"].asString();
+		if(!valueRisksRisk["RiskDetail"].isNull())
+			risksObject.riskDetail = valueRisksRisk["RiskDetail"].asString();
+		if(!valueRisksRisk["RiskType"].isNull())
+			risksObject.riskType = valueRisksRisk["RiskType"].asString();
+		if(!valueRisksRisk["TypeAlias"].isNull())
+			risksObject.typeAlias = valueRisksRisk["TypeAlias"].asString();
+		if(!valueRisksRisk["SubRiskType"].isNull())
+			risksObject.subRiskType = valueRisksRisk["SubRiskType"].asString();
+		if(!valueRisksRisk["SubTypeAlias"].isNull())
+			risksObject.subTypeAlias = valueRisksRisk["SubTypeAlias"].asString();
 		risks_.push_back(risksObject);
 	}
 	if(!value["TotalCount"].isNull())

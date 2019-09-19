@@ -39,16 +39,16 @@ void OperateAgentClientInstallResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAegisCelintInstallResposeList = value["AegisCelintInstallResposeList"]["AegisCelintInstallRespose"];
-	for (auto value : allAegisCelintInstallResposeList)
+	auto allAegisCelintInstallResposeListNode = value["AegisCelintInstallResposeList"]["AegisCelintInstallRespose"];
+	for (auto valueAegisCelintInstallResposeListAegisCelintInstallRespose : allAegisCelintInstallResposeListNode)
 	{
 		AegisCelintInstallRespose aegisCelintInstallResposeListObject;
-		if(!value["InstanceId"].isNull())
-			aegisCelintInstallResposeListObject.instanceId = value["InstanceId"].asString();
-		if(!value["RecordId"].isNull())
-			aegisCelintInstallResposeListObject.recordId = std::stol(value["RecordId"].asString());
-		if(!value["Uuid"].isNull())
-			aegisCelintInstallResposeListObject.uuid = value["Uuid"].asString();
+		if(!valueAegisCelintInstallResposeListAegisCelintInstallRespose["InstanceId"].isNull())
+			aegisCelintInstallResposeListObject.instanceId = valueAegisCelintInstallResposeListAegisCelintInstallRespose["InstanceId"].asString();
+		if(!valueAegisCelintInstallResposeListAegisCelintInstallRespose["RecordId"].isNull())
+			aegisCelintInstallResposeListObject.recordId = std::stol(valueAegisCelintInstallResposeListAegisCelintInstallRespose["RecordId"].asString());
+		if(!valueAegisCelintInstallResposeListAegisCelintInstallRespose["Uuid"].isNull())
+			aegisCelintInstallResposeListObject.uuid = valueAegisCelintInstallResposeListAegisCelintInstallRespose["Uuid"].asString();
 		aegisCelintInstallResposeList_.push_back(aegisCelintInstallResposeListObject);
 	}
 

@@ -39,26 +39,26 @@ void ListProjectsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProjects = value["Projects"]["ProjectsItem"];
-	for (auto value : allProjects)
+	auto allProjectsNode = value["Projects"]["ProjectsItem"];
+	for (auto valueProjectsProjectsItem : allProjectsNode)
 	{
 		ProjectsItem projectsObject;
-		if(!value["Project"].isNull())
-			projectsObject.project = value["Project"].asString();
-		if(!value["Endpoint"].isNull())
-			projectsObject.endpoint = value["Endpoint"].asString();
-		if(!value["ServiceRole"].isNull())
-			projectsObject.serviceRole = value["ServiceRole"].asString();
-		if(!value["CreateTime"].isNull())
-			projectsObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			projectsObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["CU"].isNull())
-			projectsObject.cU = std::stoi(value["CU"].asString());
-		if(!value["Type"].isNull())
-			projectsObject.type = value["Type"].asString();
-		if(!value["BillingType"].isNull())
-			projectsObject.billingType = value["BillingType"].asString();
+		if(!valueProjectsProjectsItem["Project"].isNull())
+			projectsObject.project = valueProjectsProjectsItem["Project"].asString();
+		if(!valueProjectsProjectsItem["Endpoint"].isNull())
+			projectsObject.endpoint = valueProjectsProjectsItem["Endpoint"].asString();
+		if(!valueProjectsProjectsItem["ServiceRole"].isNull())
+			projectsObject.serviceRole = valueProjectsProjectsItem["ServiceRole"].asString();
+		if(!valueProjectsProjectsItem["CreateTime"].isNull())
+			projectsObject.createTime = valueProjectsProjectsItem["CreateTime"].asString();
+		if(!valueProjectsProjectsItem["ModifyTime"].isNull())
+			projectsObject.modifyTime = valueProjectsProjectsItem["ModifyTime"].asString();
+		if(!valueProjectsProjectsItem["CU"].isNull())
+			projectsObject.cU = std::stoi(valueProjectsProjectsItem["CU"].asString());
+		if(!valueProjectsProjectsItem["Type"].isNull())
+			projectsObject.type = valueProjectsProjectsItem["Type"].asString();
+		if(!valueProjectsProjectsItem["BillingType"].isNull())
+			projectsObject.billingType = valueProjectsProjectsItem["BillingType"].asString();
 		projects_.push_back(projectsObject);
 	}
 	if(!value["NextMarker"].isNull())

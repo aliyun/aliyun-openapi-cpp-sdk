@@ -39,16 +39,16 @@ void DescribeHpHostResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDiskList = value["DiskList"]["Disk"];
-	for (auto value : allDiskList)
+	auto allDiskListNode = value["DiskList"]["Disk"];
+	for (auto valueDiskListDisk : allDiskListNode)
 	{
 		Disk diskListObject;
-		if(!value["DiskDevice"].isNull())
-			diskListObject.diskDevice = value["DiskDevice"].asString();
-		if(!value["DiskSize"].isNull())
-			diskListObject.diskSize = std::stoi(value["DiskSize"].asString());
-		if(!value["MountPath"].isNull())
-			diskListObject.mountPath = value["MountPath"].asString();
+		if(!valueDiskListDisk["DiskDevice"].isNull())
+			diskListObject.diskDevice = valueDiskListDisk["DiskDevice"].asString();
+		if(!valueDiskListDisk["DiskSize"].isNull())
+			diskListObject.diskSize = std::stoi(valueDiskListDisk["DiskSize"].asString());
+		if(!valueDiskListDisk["MountPath"].isNull())
+			diskListObject.mountPath = valueDiskListDisk["MountPath"].asString();
 		diskList_.push_back(diskListObject);
 	}
 	auto allInstalledComponents = value["InstalledComponents"]["InstalledComponent"];

@@ -39,14 +39,14 @@ void DescribeDTCSecurityIpHostsForSQLServerResult::parse(const std::string &payl
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["WhiteListGroups"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["WhiteListGroups"];
+	for (auto valueItemsWhiteListGroups : allItemsNode)
 	{
 		WhiteListGroups itemsObject;
-		if(!value["SecurityIpHosts"].isNull())
-			itemsObject.securityIpHosts = value["SecurityIpHosts"].asString();
-		if(!value["WhitelistGroupName"].isNull())
-			itemsObject.whitelistGroupName = value["WhitelistGroupName"].asString();
+		if(!valueItemsWhiteListGroups["SecurityIpHosts"].isNull())
+			itemsObject.securityIpHosts = valueItemsWhiteListGroups["SecurityIpHosts"].asString();
+		if(!valueItemsWhiteListGroups["WhitelistGroupName"].isNull())
+			itemsObject.whitelistGroupName = valueItemsWhiteListGroups["WhitelistGroupName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceId"].isNull())

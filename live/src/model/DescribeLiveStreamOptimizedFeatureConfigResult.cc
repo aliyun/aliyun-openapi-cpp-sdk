@@ -39,18 +39,18 @@ void DescribeLiveStreamOptimizedFeatureConfigResult::parse(const std::string &pa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLiveStreamOptimizedFeatureConfigList = value["LiveStreamOptimizedFeatureConfigList"]["LiveStreamOptimizedFeatureConfig"];
-	for (auto value : allLiveStreamOptimizedFeatureConfigList)
+	auto allLiveStreamOptimizedFeatureConfigListNode = value["LiveStreamOptimizedFeatureConfigList"]["LiveStreamOptimizedFeatureConfig"];
+	for (auto valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig : allLiveStreamOptimizedFeatureConfigListNode)
 	{
 		LiveStreamOptimizedFeatureConfig liveStreamOptimizedFeatureConfigListObject;
-		if(!value["DomainName"].isNull())
-			liveStreamOptimizedFeatureConfigListObject.domainName = value["DomainName"].asString();
-		if(!value["ConfigName"].isNull())
-			liveStreamOptimizedFeatureConfigListObject.configName = value["ConfigName"].asString();
-		if(!value["ConfigStatus"].isNull())
-			liveStreamOptimizedFeatureConfigListObject.configStatus = value["ConfigStatus"].asString();
-		if(!value["ConfigValue"].isNull())
-			liveStreamOptimizedFeatureConfigListObject.configValue = value["ConfigValue"].asString();
+		if(!valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["DomainName"].isNull())
+			liveStreamOptimizedFeatureConfigListObject.domainName = valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["DomainName"].asString();
+		if(!valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigName"].isNull())
+			liveStreamOptimizedFeatureConfigListObject.configName = valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigName"].asString();
+		if(!valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigStatus"].isNull())
+			liveStreamOptimizedFeatureConfigListObject.configStatus = valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigStatus"].asString();
+		if(!valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigValue"].isNull())
+			liveStreamOptimizedFeatureConfigListObject.configValue = valueLiveStreamOptimizedFeatureConfigListLiveStreamOptimizedFeatureConfig["ConfigValue"].asString();
 		liveStreamOptimizedFeatureConfigList_.push_back(liveStreamOptimizedFeatureConfigListObject);
 	}
 

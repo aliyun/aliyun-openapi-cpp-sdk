@@ -39,34 +39,34 @@ void QueryCoverJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCoverJobList = value["CoverJobList"]["CoverJob"];
-	for (auto value : allCoverJobList)
+	auto allCoverJobListNode = value["CoverJobList"]["CoverJob"];
+	for (auto valueCoverJobListCoverJob : allCoverJobListNode)
 	{
 		CoverJob coverJobListObject;
-		if(!value["Id"].isNull())
-			coverJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			coverJobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			coverJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			coverJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			coverJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			coverJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			coverJobListObject.creationTime = value["CreationTime"].asString();
-		auto allCoverImageList = value["CoverImageList"]["CoverImage"];
-		for (auto value : allCoverImageList)
+		if(!valueCoverJobListCoverJob["Id"].isNull())
+			coverJobListObject.id = valueCoverJobListCoverJob["Id"].asString();
+		if(!valueCoverJobListCoverJob["UserData"].isNull())
+			coverJobListObject.userData = valueCoverJobListCoverJob["UserData"].asString();
+		if(!valueCoverJobListCoverJob["PipelineId"].isNull())
+			coverJobListObject.pipelineId = valueCoverJobListCoverJob["PipelineId"].asString();
+		if(!valueCoverJobListCoverJob["State"].isNull())
+			coverJobListObject.state = valueCoverJobListCoverJob["State"].asString();
+		if(!valueCoverJobListCoverJob["Code"].isNull())
+			coverJobListObject.code = valueCoverJobListCoverJob["Code"].asString();
+		if(!valueCoverJobListCoverJob["Message"].isNull())
+			coverJobListObject.message = valueCoverJobListCoverJob["Message"].asString();
+		if(!valueCoverJobListCoverJob["CreationTime"].isNull())
+			coverJobListObject.creationTime = valueCoverJobListCoverJob["CreationTime"].asString();
+		auto allCoverImageListNode = allCoverJobListNode["CoverImageList"]["CoverImage"];
+		for (auto allCoverJobListNodeCoverImageListCoverImage : allCoverImageListNode)
 		{
 			CoverJob::CoverImage coverImageListObject;
-			if(!value["Score"].isNull())
-				coverImageListObject.score = value["Score"].asString();
-			if(!value["Url"].isNull())
-				coverImageListObject.url = value["Url"].asString();
-			if(!value["Time"].isNull())
-				coverImageListObject.time = value["Time"].asString();
+			if(!allCoverJobListNodeCoverImageListCoverImage["Score"].isNull())
+				coverImageListObject.score = allCoverJobListNodeCoverImageListCoverImage["Score"].asString();
+			if(!allCoverJobListNodeCoverImageListCoverImage["Url"].isNull())
+				coverImageListObject.url = allCoverJobListNodeCoverImageListCoverImage["Url"].asString();
+			if(!allCoverJobListNodeCoverImageListCoverImage["Time"].isNull())
+				coverImageListObject.time = allCoverJobListNodeCoverImageListCoverImage["Time"].asString();
 			coverJobListObject.coverImageList.push_back(coverImageListObject);
 		}
 		auto inputNode = value["Input"];

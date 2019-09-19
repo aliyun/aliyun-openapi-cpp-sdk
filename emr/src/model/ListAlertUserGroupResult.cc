@@ -39,34 +39,34 @@ void ListAlertUserGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAlertUserGroupList = value["AlertUserGroupList"]["Group"];
-	for (auto value : allAlertUserGroupList)
+	auto allAlertUserGroupListNode = value["AlertUserGroupList"]["Group"];
+	for (auto valueAlertUserGroupListGroup : allAlertUserGroupListNode)
 	{
 		Group alertUserGroupListObject;
-		if(!value["Id"].isNull())
-			alertUserGroupListObject.id = std::stol(value["Id"].asString());
-		if(!value["GmtCreate"].isNull())
-			alertUserGroupListObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			alertUserGroupListObject.gmtModified = value["GmtModified"].asString();
-		if(!value["BizId"].isNull())
-			alertUserGroupListObject.bizId = value["BizId"].asString();
-		if(!value["Name"].isNull())
-			alertUserGroupListObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			alertUserGroupListObject.description = value["Description"].asString();
-		auto allUserList = value["UserList"]["UserInfo"];
-		for (auto value : allUserList)
+		if(!valueAlertUserGroupListGroup["Id"].isNull())
+			alertUserGroupListObject.id = std::stol(valueAlertUserGroupListGroup["Id"].asString());
+		if(!valueAlertUserGroupListGroup["GmtCreate"].isNull())
+			alertUserGroupListObject.gmtCreate = valueAlertUserGroupListGroup["GmtCreate"].asString();
+		if(!valueAlertUserGroupListGroup["GmtModified"].isNull())
+			alertUserGroupListObject.gmtModified = valueAlertUserGroupListGroup["GmtModified"].asString();
+		if(!valueAlertUserGroupListGroup["BizId"].isNull())
+			alertUserGroupListObject.bizId = valueAlertUserGroupListGroup["BizId"].asString();
+		if(!valueAlertUserGroupListGroup["Name"].isNull())
+			alertUserGroupListObject.name = valueAlertUserGroupListGroup["Name"].asString();
+		if(!valueAlertUserGroupListGroup["Description"].isNull())
+			alertUserGroupListObject.description = valueAlertUserGroupListGroup["Description"].asString();
+		auto allUserListNode = allAlertUserGroupListNode["UserList"]["UserInfo"];
+		for (auto allAlertUserGroupListNodeUserListUserInfo : allUserListNode)
 		{
 			Group::UserInfo userListObject;
-			if(!value["UserId"].isNull())
-				userListObject.userId = value["UserId"].asString();
-			if(!value["UserName"].isNull())
-				userListObject.userName = value["UserName"].asString();
-			if(!value["EnableSMS"].isNull())
-				userListObject.enableSMS = value["EnableSMS"].asString() == "true";
-			if(!value["EnableEmail"].isNull())
-				userListObject.enableEmail = value["EnableEmail"].asString() == "true";
+			if(!allAlertUserGroupListNodeUserListUserInfo["UserId"].isNull())
+				userListObject.userId = allAlertUserGroupListNodeUserListUserInfo["UserId"].asString();
+			if(!allAlertUserGroupListNodeUserListUserInfo["UserName"].isNull())
+				userListObject.userName = allAlertUserGroupListNodeUserListUserInfo["UserName"].asString();
+			if(!allAlertUserGroupListNodeUserListUserInfo["EnableSMS"].isNull())
+				userListObject.enableSMS = allAlertUserGroupListNodeUserListUserInfo["EnableSMS"].asString() == "true";
+			if(!allAlertUserGroupListNodeUserListUserInfo["EnableEmail"].isNull())
+				userListObject.enableEmail = allAlertUserGroupListNodeUserListUserInfo["EnableEmail"].asString() == "true";
 			alertUserGroupListObject.userList.push_back(userListObject);
 		}
 		alertUserGroupList_.push_back(alertUserGroupListObject);

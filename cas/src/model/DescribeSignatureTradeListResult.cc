@@ -39,28 +39,28 @@ void DescribeSignatureTradeListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTradeList = value["TradeList"]["trade"];
-	for (auto value : allTradeList)
+	auto allTradeListNode = value["TradeList"]["trade"];
+	for (auto valueTradeListtrade : allTradeListNode)
 	{
 		Trade tradeListObject;
-		if(!value["Id"].isNull())
-			tradeListObject.id = std::stol(value["Id"].asString());
-		if(!value["DocTitle"].isNull())
-			tradeListObject.docTitle = value["DocTitle"].asString();
-		if(!value["TransactionId"].isNull())
-			tradeListObject.transactionId = value["TransactionId"].asString();
-		if(!value["PeopleName"].isNull())
-			tradeListObject.peopleName = value["PeopleName"].asString();
-		if(!value["CreateTime"].isNull())
-			tradeListObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["SignStatus"].isNull())
-			tradeListObject.signStatus = std::stoi(value["SignStatus"].asString());
-		if(!value["SignMode"].isNull())
-			tradeListObject.signMode = std::stoi(value["SignMode"].asString());
-		if(!value["DocId"].isNull())
-			tradeListObject.docId = value["DocId"].asString();
-		if(!value["PeopleId"].isNull())
-			tradeListObject.peopleId = value["PeopleId"].asString();
+		if(!valueTradeListtrade["Id"].isNull())
+			tradeListObject.id = std::stol(valueTradeListtrade["Id"].asString());
+		if(!valueTradeListtrade["DocTitle"].isNull())
+			tradeListObject.docTitle = valueTradeListtrade["DocTitle"].asString();
+		if(!valueTradeListtrade["TransactionId"].isNull())
+			tradeListObject.transactionId = valueTradeListtrade["TransactionId"].asString();
+		if(!valueTradeListtrade["PeopleName"].isNull())
+			tradeListObject.peopleName = valueTradeListtrade["PeopleName"].asString();
+		if(!valueTradeListtrade["CreateTime"].isNull())
+			tradeListObject.createTime = std::stol(valueTradeListtrade["CreateTime"].asString());
+		if(!valueTradeListtrade["SignStatus"].isNull())
+			tradeListObject.signStatus = std::stoi(valueTradeListtrade["SignStatus"].asString());
+		if(!valueTradeListtrade["SignMode"].isNull())
+			tradeListObject.signMode = std::stoi(valueTradeListtrade["SignMode"].asString());
+		if(!valueTradeListtrade["DocId"].isNull())
+			tradeListObject.docId = valueTradeListtrade["DocId"].asString();
+		if(!valueTradeListtrade["PeopleId"].isNull())
+			tradeListObject.peopleId = valueTradeListtrade["PeopleId"].asString();
 		tradeList_.push_back(tradeListObject);
 	}
 	if(!value["CurrentPage"].isNull())

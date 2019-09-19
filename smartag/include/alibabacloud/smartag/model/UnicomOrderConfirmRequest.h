@@ -34,7 +34,7 @@ namespace AlibabaCloud
 				{
 					std::string scItemName;
 					std::string itemAmount;
-					SnList snList;
+					std::vector<std::string> snList;
 					std::string orderItemId;
 					std::string scItemCode;
 					int itemQuantity;

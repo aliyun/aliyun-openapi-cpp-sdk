@@ -39,20 +39,20 @@ void DescribeCasterComponentsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allComponents = value["Components"]["Component"];
-	for (auto value : allComponents)
+	auto allComponentsNode = value["Components"]["Component"];
+	for (auto valueComponentsComponent : allComponentsNode)
 	{
 		Component componentsObject;
-		if(!value["ComponentId"].isNull())
-			componentsObject.componentId = value["ComponentId"].asString();
-		if(!value["ComponentName"].isNull())
-			componentsObject.componentName = value["ComponentName"].asString();
-		if(!value["LocationId"].isNull())
-			componentsObject.locationId = value["LocationId"].asString();
-		if(!value["ComponentType"].isNull())
-			componentsObject.componentType = value["ComponentType"].asString();
-		if(!value["Effect"].isNull())
-			componentsObject.effect = value["Effect"].asString();
+		if(!valueComponentsComponent["ComponentId"].isNull())
+			componentsObject.componentId = valueComponentsComponent["ComponentId"].asString();
+		if(!valueComponentsComponent["ComponentName"].isNull())
+			componentsObject.componentName = valueComponentsComponent["ComponentName"].asString();
+		if(!valueComponentsComponent["LocationId"].isNull())
+			componentsObject.locationId = valueComponentsComponent["LocationId"].asString();
+		if(!valueComponentsComponent["ComponentType"].isNull())
+			componentsObject.componentType = valueComponentsComponent["ComponentType"].asString();
+		if(!valueComponentsComponent["Effect"].isNull())
+			componentsObject.effect = valueComponentsComponent["Effect"].asString();
 		auto componentLayerNode = value["ComponentLayer"];
 		if(!componentLayerNode["HeightNormalized"].isNull())
 			componentsObject.componentLayer.heightNormalized = std::stof(componentLayerNode["HeightNormalized"].asString());

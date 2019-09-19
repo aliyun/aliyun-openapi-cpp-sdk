@@ -60,20 +60,20 @@ void DescribePhysicalConnectionLOAResult::parse(const std::string &payload)
 		physicalConnectionLOAType_.loaUrl = physicalConnectionLOATypeNode["LoaUrl"].asString();
 	if(!physicalConnectionLOATypeNode["SI"].isNull())
 		physicalConnectionLOAType_.sI = physicalConnectionLOATypeNode["SI"].asString();
-	auto allPMInfo = value["PMInfo"]["PMInfoItem"];
-	for (auto value : allPMInfo)
+	auto allPMInfoNode = physicalConnectionLOATypeNode["PMInfo"]["PMInfoItem"];
+	for (auto physicalConnectionLOATypeNodePMInfoPMInfoItem : allPMInfoNode)
 	{
 		PhysicalConnectionLOAType::PMInfoItem pMInfoItemObject;
-		if(!value["PMName"].isNull())
-			pMInfoItemObject.pMName = value["PMName"].asString();
-		if(!value["PMContactInfo"].isNull())
-			pMInfoItemObject.pMContactInfo = value["PMContactInfo"].asString();
-		if(!value["PMCertificateType"].isNull())
-			pMInfoItemObject.pMCertificateType = value["PMCertificateType"].asString();
-		if(!value["PMCertificateNo"].isNull())
-			pMInfoItemObject.pMCertificateNo = value["PMCertificateNo"].asString();
-		if(!value["PMGender"].isNull())
-			pMInfoItemObject.pMGender = value["PMGender"].asString();
+		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMName"].isNull())
+			pMInfoItemObject.pMName = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMName"].asString();
+		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMContactInfo"].isNull())
+			pMInfoItemObject.pMContactInfo = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMContactInfo"].asString();
+		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateType"].isNull())
+			pMInfoItemObject.pMCertificateType = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateType"].asString();
+		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateNo"].isNull())
+			pMInfoItemObject.pMCertificateNo = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateNo"].asString();
+		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMGender"].isNull())
+			pMInfoItemObject.pMGender = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMGender"].asString();
 		physicalConnectionLOAType_.pMInfo.push_back(pMInfoItemObject);
 	}
 

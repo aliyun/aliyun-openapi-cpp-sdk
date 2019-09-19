@@ -39,26 +39,26 @@ void DescribeZoneRecordsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRecords = value["Records"]["Record"];
-	for (auto value : allRecords)
+	auto allRecordsNode = value["Records"]["Record"];
+	for (auto valueRecordsRecord : allRecordsNode)
 	{
 		Record recordsObject;
-		if(!value["RecordId"].isNull())
-			recordsObject.recordId = std::stol(value["RecordId"].asString());
-		if(!value["Rr"].isNull())
-			recordsObject.rr = value["Rr"].asString();
-		if(!value["Type"].isNull())
-			recordsObject.type = value["Type"].asString();
-		if(!value["Ttl"].isNull())
-			recordsObject.ttl = std::stoi(value["Ttl"].asString());
-		if(!value["Priority"].isNull())
-			recordsObject.priority = std::stoi(value["Priority"].asString());
-		if(!value["Value"].isNull())
-			recordsObject.value = value["Value"].asString();
-		if(!value["Status"].isNull())
-			recordsObject.status = value["Status"].asString();
-		if(!value["RegionId"].isNull())
-			recordsObject.regionId = value["RegionId"].asString();
+		if(!valueRecordsRecord["RecordId"].isNull())
+			recordsObject.recordId = std::stol(valueRecordsRecord["RecordId"].asString());
+		if(!valueRecordsRecord["Rr"].isNull())
+			recordsObject.rr = valueRecordsRecord["Rr"].asString();
+		if(!valueRecordsRecord["Type"].isNull())
+			recordsObject.type = valueRecordsRecord["Type"].asString();
+		if(!valueRecordsRecord["Ttl"].isNull())
+			recordsObject.ttl = std::stoi(valueRecordsRecord["Ttl"].asString());
+		if(!valueRecordsRecord["Priority"].isNull())
+			recordsObject.priority = std::stoi(valueRecordsRecord["Priority"].asString());
+		if(!valueRecordsRecord["Value"].isNull())
+			recordsObject.value = valueRecordsRecord["Value"].asString();
+		if(!valueRecordsRecord["Status"].isNull())
+			recordsObject.status = valueRecordsRecord["Status"].asString();
+		if(!valueRecordsRecord["RegionId"].isNull())
+			recordsObject.regionId = valueRecordsRecord["RegionId"].asString();
 		records_.push_back(recordsObject);
 	}
 	if(!value["TotalItems"].isNull())

@@ -25,6 +25,8 @@ set(dyvmsapi_public_header_model
 	include/alibabacloud/dyvmsapi/model/AddRtcAccountResult.h
 	include/alibabacloud/dyvmsapi/model/BatchRobotSmartCallRequest.h
 	include/alibabacloud/dyvmsapi/model/BatchRobotSmartCallResult.h
+	include/alibabacloud/dyvmsapi/model/BindNumberAndVoipIdRequest.h
+	include/alibabacloud/dyvmsapi/model/BindNumberAndVoipIdResult.h
 	include/alibabacloud/dyvmsapi/model/CancelCallRequest.h
 	include/alibabacloud/dyvmsapi/model/CancelCallResult.h
 	include/alibabacloud/dyvmsapi/model/CancelOrderRobotTaskRequest.h
@@ -69,6 +71,8 @@ set(dyvmsapi_public_header_model
 	include/alibabacloud/dyvmsapi/model/StartRobotTaskResult.h
 	include/alibabacloud/dyvmsapi/model/StopRobotTaskRequest.h
 	include/alibabacloud/dyvmsapi/model/StopRobotTaskResult.h
+	include/alibabacloud/dyvmsapi/model/UnbindNumberAndVoipIdRequest.h
+	include/alibabacloud/dyvmsapi/model/UnbindNumberAndVoipIdResult.h
 	include/alibabacloud/dyvmsapi/model/UploadRobotTaskCalledFileRequest.h
 	include/alibabacloud/dyvmsapi/model/UploadRobotTaskCalledFileResult.h
 	include/alibabacloud/dyvmsapi/model/VoipAddAccountRequest.h
@@ -82,6 +86,8 @@ set(dyvmsapi_src
 	src/model/AddRtcAccountResult.cc
 	src/model/BatchRobotSmartCallRequest.cc
 	src/model/BatchRobotSmartCallResult.cc
+	src/model/BindNumberAndVoipIdRequest.cc
+	src/model/BindNumberAndVoipIdResult.cc
 	src/model/CancelCallRequest.cc
 	src/model/CancelCallResult.cc
 	src/model/CancelOrderRobotTaskRequest.cc
@@ -126,6 +132,8 @@ set(dyvmsapi_src
 	src/model/StartRobotTaskResult.cc
 	src/model/StopRobotTaskRequest.cc
 	src/model/StopRobotTaskResult.cc
+	src/model/UnbindNumberAndVoipIdRequest.cc
+	src/model/UnbindNumberAndVoipIdResult.cc
 	src/model/UploadRobotTaskCalledFileRequest.cc
 	src/model/UploadRobotTaskCalledFileResult.cc
 	src/model/VoipAddAccountRequest.cc

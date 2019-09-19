@@ -39,34 +39,34 @@ void DescribeDataHubSubscriptionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Subscription"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Subscription"];
+	for (auto valueItemsSubscription : allItemsNode)
 	{
 		Subscription itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			itemsObject.description = value["Description"].asString();
-		if(!value["CreationTime"].isNull())
-			itemsObject.creationTime = std::stol(value["CreationTime"].asString());
-		if(!value["State"].isNull())
-			itemsObject.state = value["State"].asString();
-		if(!value["ApplicationName"].isNull())
-			itemsObject.applicationName = value["ApplicationName"].asString();
-		if(!value["UserId"].isNull())
-			itemsObject.userId = std::stol(value["UserId"].asString());
-		if(!value["LoginName"].isNull())
-			itemsObject.loginName = value["LoginName"].asString();
-		if(!value["DisplayName"].isNull())
-			itemsObject.displayName = value["DisplayName"].asString();
-		if(!value["SubscriptionUserId"].isNull())
-			itemsObject.subscriptionUserId = std::stol(value["SubscriptionUserId"].asString());
-		if(!value["SubscriptionUserName"].isNull())
-			itemsObject.subscriptionUserName = value["SubscriptionUserName"].asString();
-		if(!value["SubscriptionDisplayName"].isNull())
-			itemsObject.subscriptionDisplayName = value["SubscriptionDisplayName"].asString();
+		if(!valueItemsSubscription["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsSubscription["Id"].asString());
+		if(!valueItemsSubscription["Name"].isNull())
+			itemsObject.name = valueItemsSubscription["Name"].asString();
+		if(!valueItemsSubscription["Description"].isNull())
+			itemsObject.description = valueItemsSubscription["Description"].asString();
+		if(!valueItemsSubscription["CreationTime"].isNull())
+			itemsObject.creationTime = std::stol(valueItemsSubscription["CreationTime"].asString());
+		if(!valueItemsSubscription["State"].isNull())
+			itemsObject.state = valueItemsSubscription["State"].asString();
+		if(!valueItemsSubscription["ApplicationName"].isNull())
+			itemsObject.applicationName = valueItemsSubscription["ApplicationName"].asString();
+		if(!valueItemsSubscription["UserId"].isNull())
+			itemsObject.userId = std::stol(valueItemsSubscription["UserId"].asString());
+		if(!valueItemsSubscription["LoginName"].isNull())
+			itemsObject.loginName = valueItemsSubscription["LoginName"].asString();
+		if(!valueItemsSubscription["DisplayName"].isNull())
+			itemsObject.displayName = valueItemsSubscription["DisplayName"].asString();
+		if(!valueItemsSubscription["SubscriptionUserId"].isNull())
+			itemsObject.subscriptionUserId = std::stol(valueItemsSubscription["SubscriptionUserId"].asString());
+		if(!valueItemsSubscription["SubscriptionUserName"].isNull())
+			itemsObject.subscriptionUserName = valueItemsSubscription["SubscriptionUserName"].asString();
+		if(!valueItemsSubscription["SubscriptionDisplayName"].isNull())
+			itemsObject.subscriptionDisplayName = valueItemsSubscription["SubscriptionDisplayName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

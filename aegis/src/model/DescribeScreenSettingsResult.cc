@@ -39,14 +39,14 @@ void DescribeScreenSettingsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSasScreenSettingList = value["SasScreenSettingList"]["SasScreenSettingListItem"];
-	for (auto value : allSasScreenSettingList)
+	auto allSasScreenSettingListNode = value["SasScreenSettingList"]["SasScreenSettingListItem"];
+	for (auto valueSasScreenSettingListSasScreenSettingListItem : allSasScreenSettingListNode)
 	{
 		SasScreenSettingListItem sasScreenSettingListObject;
-		if(!value["ScreenSettingTitle"].isNull())
-			sasScreenSettingListObject.screenSettingTitle = value["ScreenSettingTitle"].asString();
-		if(!value["ScreenSettingIdMap"].isNull())
-			sasScreenSettingListObject.screenSettingIdMap = value["ScreenSettingIdMap"].asString();
+		if(!valueSasScreenSettingListSasScreenSettingListItem["ScreenSettingTitle"].isNull())
+			sasScreenSettingListObject.screenSettingTitle = valueSasScreenSettingListSasScreenSettingListItem["ScreenSettingTitle"].asString();
+		if(!valueSasScreenSettingListSasScreenSettingListItem["ScreenSettingIdMap"].isNull())
+			sasScreenSettingListObject.screenSettingIdMap = valueSasScreenSettingListSasScreenSettingListItem["ScreenSettingIdMap"].asString();
 		sasScreenSettingList_.push_back(sasScreenSettingListObject);
 	}
 

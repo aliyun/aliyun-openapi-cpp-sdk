@@ -39,46 +39,46 @@ void ListPhoneNumbersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPhoneNumbers = value["PhoneNumbers"]["PhoneNumber"];
-	for (auto value : allPhoneNumbers)
+	auto allPhoneNumbersNode = value["PhoneNumbers"]["PhoneNumber"];
+	for (auto valuePhoneNumbersPhoneNumber : allPhoneNumbersNode)
 	{
 		PhoneNumber phoneNumbersObject;
-		if(!value["PhoneNumberId"].isNull())
-			phoneNumbersObject.phoneNumberId = value["PhoneNumberId"].asString();
-		if(!value["InstanceId"].isNull())
-			phoneNumbersObject.instanceId = value["InstanceId"].asString();
-		if(!value["Number"].isNull())
-			phoneNumbersObject.number = value["Number"].asString();
-		if(!value["PhoneNumberDescription"].isNull())
-			phoneNumbersObject.phoneNumberDescription = value["PhoneNumberDescription"].asString();
-		if(!value["TestOnly"].isNull())
-			phoneNumbersObject.testOnly = value["TestOnly"].asString() == "true";
-		if(!value["RemainingTime"].isNull())
-			phoneNumbersObject.remainingTime = std::stoi(value["RemainingTime"].asString());
-		if(!value["AllowOutbound"].isNull())
-			phoneNumbersObject.allowOutbound = value["AllowOutbound"].asString() == "true";
-		if(!value["Usage"].isNull())
-			phoneNumbersObject.usage = value["Usage"].asString();
-		if(!value["Trunks"].isNull())
-			phoneNumbersObject.trunks = std::stoi(value["Trunks"].asString());
-		if(!value["Province"].isNull())
-			phoneNumbersObject.province = value["Province"].asString();
-		if(!value["City"].isNull())
-			phoneNumbersObject.city = value["City"].asString();
-		if(!value["Assignee"].isNull())
-			phoneNumbersObject.assignee = value["Assignee"].asString();
-		if(!value["NumberCommodityStatus"].isNull())
-			phoneNumbersObject.numberCommodityStatus = std::stoi(value["NumberCommodityStatus"].asString());
-		if(!value["SipTelX"].isNull())
-			phoneNumbersObject.sipTelX = value["SipTelX"].asString();
-		auto allSkillGroups = value["SkillGroups"]["SkillGroup"];
-		for (auto value : allSkillGroups)
+		if(!valuePhoneNumbersPhoneNumber["PhoneNumberId"].isNull())
+			phoneNumbersObject.phoneNumberId = valuePhoneNumbersPhoneNumber["PhoneNumberId"].asString();
+		if(!valuePhoneNumbersPhoneNumber["InstanceId"].isNull())
+			phoneNumbersObject.instanceId = valuePhoneNumbersPhoneNumber["InstanceId"].asString();
+		if(!valuePhoneNumbersPhoneNumber["Number"].isNull())
+			phoneNumbersObject.number = valuePhoneNumbersPhoneNumber["Number"].asString();
+		if(!valuePhoneNumbersPhoneNumber["PhoneNumberDescription"].isNull())
+			phoneNumbersObject.phoneNumberDescription = valuePhoneNumbersPhoneNumber["PhoneNumberDescription"].asString();
+		if(!valuePhoneNumbersPhoneNumber["TestOnly"].isNull())
+			phoneNumbersObject.testOnly = valuePhoneNumbersPhoneNumber["TestOnly"].asString() == "true";
+		if(!valuePhoneNumbersPhoneNumber["RemainingTime"].isNull())
+			phoneNumbersObject.remainingTime = std::stoi(valuePhoneNumbersPhoneNumber["RemainingTime"].asString());
+		if(!valuePhoneNumbersPhoneNumber["AllowOutbound"].isNull())
+			phoneNumbersObject.allowOutbound = valuePhoneNumbersPhoneNumber["AllowOutbound"].asString() == "true";
+		if(!valuePhoneNumbersPhoneNumber["Usage"].isNull())
+			phoneNumbersObject.usage = valuePhoneNumbersPhoneNumber["Usage"].asString();
+		if(!valuePhoneNumbersPhoneNumber["Trunks"].isNull())
+			phoneNumbersObject.trunks = std::stoi(valuePhoneNumbersPhoneNumber["Trunks"].asString());
+		if(!valuePhoneNumbersPhoneNumber["Province"].isNull())
+			phoneNumbersObject.province = valuePhoneNumbersPhoneNumber["Province"].asString();
+		if(!valuePhoneNumbersPhoneNumber["City"].isNull())
+			phoneNumbersObject.city = valuePhoneNumbersPhoneNumber["City"].asString();
+		if(!valuePhoneNumbersPhoneNumber["Assignee"].isNull())
+			phoneNumbersObject.assignee = valuePhoneNumbersPhoneNumber["Assignee"].asString();
+		if(!valuePhoneNumbersPhoneNumber["NumberCommodityStatus"].isNull())
+			phoneNumbersObject.numberCommodityStatus = std::stoi(valuePhoneNumbersPhoneNumber["NumberCommodityStatus"].asString());
+		if(!valuePhoneNumbersPhoneNumber["SipTelX"].isNull())
+			phoneNumbersObject.sipTelX = valuePhoneNumbersPhoneNumber["SipTelX"].asString();
+		auto allSkillGroupsNode = allPhoneNumbersNode["SkillGroups"]["SkillGroup"];
+		for (auto allPhoneNumbersNodeSkillGroupsSkillGroup : allSkillGroupsNode)
 		{
 			PhoneNumber::SkillGroup skillGroupsObject;
-			if(!value["SkillGroupId"].isNull())
-				skillGroupsObject.skillGroupId = value["SkillGroupId"].asString();
-			if(!value["SkillGroupName"].isNull())
-				skillGroupsObject.skillGroupName = value["SkillGroupName"].asString();
+			if(!allPhoneNumbersNodeSkillGroupsSkillGroup["SkillGroupId"].isNull())
+				skillGroupsObject.skillGroupId = allPhoneNumbersNodeSkillGroupsSkillGroup["SkillGroupId"].asString();
+			if(!allPhoneNumbersNodeSkillGroupsSkillGroup["SkillGroupName"].isNull())
+				skillGroupsObject.skillGroupName = allPhoneNumbersNodeSkillGroupsSkillGroup["SkillGroupName"].asString();
 			phoneNumbersObject.skillGroups.push_back(skillGroupsObject);
 		}
 		auto contactFlowNode = value["ContactFlow"];

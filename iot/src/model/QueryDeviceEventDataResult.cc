@@ -44,20 +44,20 @@ void QueryDeviceEventDataResult::parse(const std::string &payload)
 		data_.nextTime = std::stol(dataNode["NextTime"].asString());
 	if(!dataNode["NextValid"].isNull())
 		data_.nextValid = dataNode["NextValid"].asString() == "true";
-	auto allList = value["List"]["EventInfo"];
-	for (auto value : allList)
+	auto allListNode = dataNode["List"]["EventInfo"];
+	for (auto dataNodeListEventInfo : allListNode)
 	{
 		Data::EventInfo eventInfoObject;
-		if(!value["Time"].isNull())
-			eventInfoObject.time = value["Time"].asString();
-		if(!value["Identifier"].isNull())
-			eventInfoObject.identifier = value["Identifier"].asString();
-		if(!value["Name"].isNull())
-			eventInfoObject.name = value["Name"].asString();
-		if(!value["EventType"].isNull())
-			eventInfoObject.eventType = value["EventType"].asString();
-		if(!value["OutputData"].isNull())
-			eventInfoObject.outputData = value["OutputData"].asString();
+		if(!dataNodeListEventInfo["Time"].isNull())
+			eventInfoObject.time = dataNodeListEventInfo["Time"].asString();
+		if(!dataNodeListEventInfo["Identifier"].isNull())
+			eventInfoObject.identifier = dataNodeListEventInfo["Identifier"].asString();
+		if(!dataNodeListEventInfo["Name"].isNull())
+			eventInfoObject.name = dataNodeListEventInfo["Name"].asString();
+		if(!dataNodeListEventInfo["EventType"].isNull())
+			eventInfoObject.eventType = dataNodeListEventInfo["EventType"].asString();
+		if(!dataNodeListEventInfo["OutputData"].isNull())
+			eventInfoObject.outputData = dataNodeListEventInfo["OutputData"].asString();
 		data_.list.push_back(eventInfoObject);
 	}
 	if(!value["Success"].isNull())

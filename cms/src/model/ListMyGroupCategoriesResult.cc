@@ -42,14 +42,14 @@ void ListMyGroupCategoriesResult::parse(const std::string &payload)
 	auto categoryNode = value["Category"];
 	if(!categoryNode["GroupId"].isNull())
 		category_.groupId = std::stol(categoryNode["GroupId"].asString());
-	auto allCategoryItems = value["CategoryItems"]["CategoryItem"];
-	for (auto value : allCategoryItems)
+	auto allCategoryItemsNode = categoryNode["CategoryItems"]["CategoryItem"];
+	for (auto categoryNodeCategoryItemsCategoryItem : allCategoryItemsNode)
 	{
 		Category::CategoryItem categoryItemObject;
-		if(!value["Category"].isNull())
-			categoryItemObject.category = value["Category"].asString();
-		if(!value["Count"].isNull())
-			categoryItemObject.count = std::stoi(value["Count"].asString());
+		if(!categoryNodeCategoryItemsCategoryItem["Category"].isNull())
+			categoryItemObject.category = categoryNodeCategoryItemsCategoryItem["Category"].asString();
+		if(!categoryNodeCategoryItemsCategoryItem["Count"].isNull())
+			categoryItemObject.count = std::stoi(categoryNodeCategoryItemsCategoryItem["Count"].asString());
 		category_.categoryItems.push_back(categoryItemObject);
 	}
 	if(!value["Success"].isNull())

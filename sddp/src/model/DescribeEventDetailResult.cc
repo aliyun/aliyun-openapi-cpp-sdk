@@ -85,26 +85,26 @@ void DescribeEventDetailResult::parse(const std::string &payload)
 	if(!eventNode["DealReason"].isNull())
 		event_.dealReason = eventNode["DealReason"].asString();
 	auto detailNode = eventNode["Detail"];
-	auto allContent = value["Content"]["ContentItem"];
-	for (auto value : allContent)
+	auto allContentNode = detailNode["Content"]["ContentItem"];
+	for (auto detailNodeContentContentItem : allContentNode)
 	{
 		Event::Detail::ContentItem contentItemObject;
-		if(!value["Label"].isNull())
-			contentItemObject.label = value["Label"].asString();
-		if(!value["Value"].isNull())
-			contentItemObject.value = value["Value"].asString();
+		if(!detailNodeContentContentItem["Label"].isNull())
+			contentItemObject.label = detailNodeContentContentItem["Label"].asString();
+		if(!detailNodeContentContentItem["Value"].isNull())
+			contentItemObject.value = detailNodeContentContentItem["Value"].asString();
 		event_.detail.content.push_back(contentItemObject);
 	}
-	auto allChart = value["Chart"]["ChartItem"];
-	for (auto value : allChart)
+	auto allChartNode = detailNode["Chart"]["ChartItem"];
+	for (auto detailNodeChartChartItem : allChartNode)
 	{
 		Event::Detail::ChartItem chartItemObject;
-		if(!value["Label"].isNull())
-			chartItemObject.label = value["Label"].asString();
-		if(!value["XLabel"].isNull())
-			chartItemObject.xLabel = value["XLabel"].asString();
-		if(!value["YLabel"].isNull())
-			chartItemObject.yLabel = value["YLabel"].asString();
+		if(!detailNodeChartChartItem["Label"].isNull())
+			chartItemObject.label = detailNodeChartChartItem["Label"].asString();
+		if(!detailNodeChartChartItem["XLabel"].isNull())
+			chartItemObject.xLabel = detailNodeChartChartItem["XLabel"].asString();
+		if(!detailNodeChartChartItem["YLabel"].isNull())
+			chartItemObject.yLabel = detailNodeChartChartItem["YLabel"].asString();
 		auto dataNode = value["Data"];
 		if(!dataNode["X"].isNull())
 			chartItemObject.data.x = dataNode["X"].asString();
@@ -112,14 +112,14 @@ void DescribeEventDetailResult::parse(const std::string &payload)
 			chartItemObject.data.y = dataNode["Y"].asString();
 		event_.detail.chart.push_back(chartItemObject);
 	}
-	auto allResourceInfo = value["ResourceInfo"]["ResourceInfoItem"];
-	for (auto value : allResourceInfo)
+	auto allResourceInfoNode = detailNode["ResourceInfo"]["ResourceInfoItem"];
+	for (auto detailNodeResourceInfoResourceInfoItem : allResourceInfoNode)
 	{
 		Event::Detail::ResourceInfoItem resourceInfoItemObject;
-		if(!value["Label"].isNull())
-			resourceInfoItemObject.label = value["Label"].asString();
-		if(!value["Value"].isNull())
-			resourceInfoItemObject.value = value["Value"].asString();
+		if(!detailNodeResourceInfoResourceInfoItem["Label"].isNull())
+			resourceInfoItemObject.label = detailNodeResourceInfoResourceInfoItem["Label"].asString();
+		if(!detailNodeResourceInfoResourceInfoItem["Value"].isNull())
+			resourceInfoItemObject.value = detailNodeResourceInfoResourceInfoItem["Value"].asString();
 		event_.detail.resourceInfo.push_back(resourceInfoItemObject);
 	}
 

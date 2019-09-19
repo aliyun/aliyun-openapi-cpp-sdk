@@ -39,32 +39,32 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDatabases = value["Databases"]["Database"];
-	for (auto value : allDatabases)
+	auto allDatabasesNode = value["Databases"]["Database"];
+	for (auto valueDatabasesDatabase : allDatabasesNode)
 	{
 		Database databasesObject;
-		if(!value["DBName"].isNull())
-			databasesObject.dBName = value["DBName"].asString();
-		if(!value["DBStatus"].isNull())
-			databasesObject.dBStatus = value["DBStatus"].asString();
-		if(!value["DBDescription"].isNull())
-			databasesObject.dBDescription = value["DBDescription"].asString();
-		if(!value["CharacterSetName"].isNull())
-			databasesObject.characterSetName = value["CharacterSetName"].asString();
-		if(!value["Engine"].isNull())
-			databasesObject.engine = value["Engine"].asString();
-		auto allAccounts = value["Accounts"]["Account"];
-		for (auto value : allAccounts)
+		if(!valueDatabasesDatabase["DBName"].isNull())
+			databasesObject.dBName = valueDatabasesDatabase["DBName"].asString();
+		if(!valueDatabasesDatabase["DBStatus"].isNull())
+			databasesObject.dBStatus = valueDatabasesDatabase["DBStatus"].asString();
+		if(!valueDatabasesDatabase["DBDescription"].isNull())
+			databasesObject.dBDescription = valueDatabasesDatabase["DBDescription"].asString();
+		if(!valueDatabasesDatabase["CharacterSetName"].isNull())
+			databasesObject.characterSetName = valueDatabasesDatabase["CharacterSetName"].asString();
+		if(!valueDatabasesDatabase["Engine"].isNull())
+			databasesObject.engine = valueDatabasesDatabase["Engine"].asString();
+		auto allAccountsNode = allDatabasesNode["Accounts"]["Account"];
+		for (auto allDatabasesNodeAccountsAccount : allAccountsNode)
 		{
 			Database::Account accountsObject;
-			if(!value["AccountName"].isNull())
-				accountsObject.accountName = value["AccountName"].asString();
-			if(!value["AccountStatus"].isNull())
-				accountsObject.accountStatus = value["AccountStatus"].asString();
-			if(!value["AccountPrivilege"].isNull())
-				accountsObject.accountPrivilege = value["AccountPrivilege"].asString();
-			if(!value["PrivilegeStatus"].isNull())
-				accountsObject.privilegeStatus = value["PrivilegeStatus"].asString();
+			if(!allDatabasesNodeAccountsAccount["AccountName"].isNull())
+				accountsObject.accountName = allDatabasesNodeAccountsAccount["AccountName"].asString();
+			if(!allDatabasesNodeAccountsAccount["AccountStatus"].isNull())
+				accountsObject.accountStatus = allDatabasesNodeAccountsAccount["AccountStatus"].asString();
+			if(!allDatabasesNodeAccountsAccount["AccountPrivilege"].isNull())
+				accountsObject.accountPrivilege = allDatabasesNodeAccountsAccount["AccountPrivilege"].asString();
+			if(!allDatabasesNodeAccountsAccount["PrivilegeStatus"].isNull())
+				accountsObject.privilegeStatus = allDatabasesNodeAccountsAccount["PrivilegeStatus"].asString();
 			databasesObject.accounts.push_back(accountsObject);
 		}
 		databases_.push_back(databasesObject);

@@ -39,22 +39,22 @@ void GetCloudMetricLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMetricLogs = value["MetricLogs"]["MetricLog"];
-	for (auto value : allMetricLogs)
+	auto allMetricLogsNode = value["MetricLogs"]["MetricLog"];
+	for (auto valueMetricLogsMetricLog : allMetricLogsNode)
 	{
 		MetricLog metricLogsObject;
-		if(!value["Time"].isNull())
-			metricLogsObject.time = std::stoi(value["Time"].asString());
-		if(!value["InstanceId"].isNull())
-			metricLogsObject.instanceId = value["InstanceId"].asString();
-		if(!value["Hostname"].isNull())
-			metricLogsObject.hostname = value["Hostname"].asString();
-		if(!value["NetworkInterface"].isNull())
-			metricLogsObject.networkInterface = value["NetworkInterface"].asString();
-		if(!value["DiskDevice"].isNull())
-			metricLogsObject.diskDevice = value["DiskDevice"].asString();
-		if(!value["MetricData"].isNull())
-			metricLogsObject.metricData = value["MetricData"].asString();
+		if(!valueMetricLogsMetricLog["Time"].isNull())
+			metricLogsObject.time = std::stoi(valueMetricLogsMetricLog["Time"].asString());
+		if(!valueMetricLogsMetricLog["InstanceId"].isNull())
+			metricLogsObject.instanceId = valueMetricLogsMetricLog["InstanceId"].asString();
+		if(!valueMetricLogsMetricLog["Hostname"].isNull())
+			metricLogsObject.hostname = valueMetricLogsMetricLog["Hostname"].asString();
+		if(!valueMetricLogsMetricLog["NetworkInterface"].isNull())
+			metricLogsObject.networkInterface = valueMetricLogsMetricLog["NetworkInterface"].asString();
+		if(!valueMetricLogsMetricLog["DiskDevice"].isNull())
+			metricLogsObject.diskDevice = valueMetricLogsMetricLog["DiskDevice"].asString();
+		if(!valueMetricLogsMetricLog["MetricData"].isNull())
+			metricLogsObject.metricData = valueMetricLogsMetricLog["MetricData"].asString();
 		metricLogs_.push_back(metricLogsObject);
 	}
 

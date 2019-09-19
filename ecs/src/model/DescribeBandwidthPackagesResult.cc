@@ -39,46 +39,46 @@ void DescribeBandwidthPackagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBandwidthPackages = value["BandwidthPackages"]["BandwidthPackage"];
-	for (auto value : allBandwidthPackages)
+	auto allBandwidthPackagesNode = value["BandwidthPackages"]["BandwidthPackage"];
+	for (auto valueBandwidthPackagesBandwidthPackage : allBandwidthPackagesNode)
 	{
 		BandwidthPackage bandwidthPackagesObject;
-		if(!value["BandwidthPackageId"].isNull())
-			bandwidthPackagesObject.bandwidthPackageId = value["BandwidthPackageId"].asString();
-		if(!value["RegionId"].isNull())
-			bandwidthPackagesObject.regionId = value["RegionId"].asString();
-		if(!value["Name"].isNull())
-			bandwidthPackagesObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			bandwidthPackagesObject.description = value["Description"].asString();
-		if(!value["ZoneId"].isNull())
-			bandwidthPackagesObject.zoneId = value["ZoneId"].asString();
-		if(!value["NatGatewayId"].isNull())
-			bandwidthPackagesObject.natGatewayId = value["NatGatewayId"].asString();
-		if(!value["Bandwidth"].isNull())
-			bandwidthPackagesObject.bandwidth = value["Bandwidth"].asString();
-		if(!value["InstanceChargeType"].isNull())
-			bandwidthPackagesObject.instanceChargeType = value["InstanceChargeType"].asString();
-		if(!value["InternetChargeType"].isNull())
-			bandwidthPackagesObject.internetChargeType = value["InternetChargeType"].asString();
-		if(!value["BusinessStatus"].isNull())
-			bandwidthPackagesObject.businessStatus = value["BusinessStatus"].asString();
-		if(!value["IpCount"].isNull())
-			bandwidthPackagesObject.ipCount = value["IpCount"].asString();
-		if(!value["ISP"].isNull())
-			bandwidthPackagesObject.iSP = value["ISP"].asString();
-		if(!value["CreationTime"].isNull())
-			bandwidthPackagesObject.creationTime = value["CreationTime"].asString();
-		if(!value["Status"].isNull())
-			bandwidthPackagesObject.status = value["Status"].asString();
-		auto allPublicIpAddresses = value["PublicIpAddresses"]["PublicIpAddresse"];
-		for (auto value : allPublicIpAddresses)
+		if(!valueBandwidthPackagesBandwidthPackage["BandwidthPackageId"].isNull())
+			bandwidthPackagesObject.bandwidthPackageId = valueBandwidthPackagesBandwidthPackage["BandwidthPackageId"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["RegionId"].isNull())
+			bandwidthPackagesObject.regionId = valueBandwidthPackagesBandwidthPackage["RegionId"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["Name"].isNull())
+			bandwidthPackagesObject.name = valueBandwidthPackagesBandwidthPackage["Name"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["Description"].isNull())
+			bandwidthPackagesObject.description = valueBandwidthPackagesBandwidthPackage["Description"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["ZoneId"].isNull())
+			bandwidthPackagesObject.zoneId = valueBandwidthPackagesBandwidthPackage["ZoneId"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["NatGatewayId"].isNull())
+			bandwidthPackagesObject.natGatewayId = valueBandwidthPackagesBandwidthPackage["NatGatewayId"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["Bandwidth"].isNull())
+			bandwidthPackagesObject.bandwidth = valueBandwidthPackagesBandwidthPackage["Bandwidth"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["InstanceChargeType"].isNull())
+			bandwidthPackagesObject.instanceChargeType = valueBandwidthPackagesBandwidthPackage["InstanceChargeType"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["InternetChargeType"].isNull())
+			bandwidthPackagesObject.internetChargeType = valueBandwidthPackagesBandwidthPackage["InternetChargeType"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["BusinessStatus"].isNull())
+			bandwidthPackagesObject.businessStatus = valueBandwidthPackagesBandwidthPackage["BusinessStatus"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["IpCount"].isNull())
+			bandwidthPackagesObject.ipCount = valueBandwidthPackagesBandwidthPackage["IpCount"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["ISP"].isNull())
+			bandwidthPackagesObject.iSP = valueBandwidthPackagesBandwidthPackage["ISP"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["CreationTime"].isNull())
+			bandwidthPackagesObject.creationTime = valueBandwidthPackagesBandwidthPackage["CreationTime"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["Status"].isNull())
+			bandwidthPackagesObject.status = valueBandwidthPackagesBandwidthPackage["Status"].asString();
+		auto allPublicIpAddressesNode = allBandwidthPackagesNode["PublicIpAddresses"]["PublicIpAddresse"];
+		for (auto allBandwidthPackagesNodePublicIpAddressesPublicIpAddresse : allPublicIpAddressesNode)
 		{
 			BandwidthPackage::PublicIpAddresse publicIpAddressesObject;
-			if(!value["AllocationId"].isNull())
-				publicIpAddressesObject.allocationId = value["AllocationId"].asString();
-			if(!value["IpAddress"].isNull())
-				publicIpAddressesObject.ipAddress = value["IpAddress"].asString();
+			if(!allBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["AllocationId"].isNull())
+				publicIpAddressesObject.allocationId = allBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["AllocationId"].asString();
+			if(!allBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["IpAddress"].isNull())
+				publicIpAddressesObject.ipAddress = allBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["IpAddress"].asString();
 			bandwidthPackagesObject.publicIpAddresses.push_back(publicIpAddressesObject);
 		}
 		bandwidthPackages_.push_back(bandwidthPackagesObject);

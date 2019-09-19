@@ -39,24 +39,24 @@ void DescribeRefreshTasksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTasks = value["Tasks"]["CDNTask"];
-	for (auto value : allTasks)
+	auto allTasksNode = value["Tasks"]["CDNTask"];
+	for (auto valueTasksCDNTask : allTasksNode)
 	{
 		CDNTask tasksObject;
-		if(!value["TaskId"].isNull())
-			tasksObject.taskId = value["TaskId"].asString();
-		if(!value["ObjectPath"].isNull())
-			tasksObject.objectPath = value["ObjectPath"].asString();
-		if(!value["Process"].isNull())
-			tasksObject.process = value["Process"].asString();
-		if(!value["Status"].isNull())
-			tasksObject.status = value["Status"].asString();
-		if(!value["CreationTime"].isNull())
-			tasksObject.creationTime = value["CreationTime"].asString();
-		if(!value["Description"].isNull())
-			tasksObject.description = value["Description"].asString();
-		if(!value["ObjectType"].isNull())
-			tasksObject.objectType = value["ObjectType"].asString();
+		if(!valueTasksCDNTask["TaskId"].isNull())
+			tasksObject.taskId = valueTasksCDNTask["TaskId"].asString();
+		if(!valueTasksCDNTask["ObjectPath"].isNull())
+			tasksObject.objectPath = valueTasksCDNTask["ObjectPath"].asString();
+		if(!valueTasksCDNTask["Process"].isNull())
+			tasksObject.process = valueTasksCDNTask["Process"].asString();
+		if(!valueTasksCDNTask["Status"].isNull())
+			tasksObject.status = valueTasksCDNTask["Status"].asString();
+		if(!valueTasksCDNTask["CreationTime"].isNull())
+			tasksObject.creationTime = valueTasksCDNTask["CreationTime"].asString();
+		if(!valueTasksCDNTask["Description"].isNull())
+			tasksObject.description = valueTasksCDNTask["Description"].asString();
+		if(!valueTasksCDNTask["ObjectType"].isNull())
+			tasksObject.objectType = valueTasksCDNTask["ObjectType"].asString();
 		tasks_.push_back(tasksObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -39,14 +39,14 @@ void DescribeFlowJobResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResourceList = value["ResourceList"]["Resource"];
-	for (auto value : allResourceList)
+	auto allResourceListNode = value["ResourceList"]["Resource"];
+	for (auto valueResourceListResource : allResourceListNode)
 	{
 		Resource resourceListObject;
-		if(!value["Path"].isNull())
-			resourceListObject.path = value["Path"].asString();
-		if(!value["Alias"].isNull())
-			resourceListObject.alias = value["Alias"].asString();
+		if(!valueResourceListResource["Path"].isNull())
+			resourceListObject.path = valueResourceListResource["Path"].asString();
+		if(!valueResourceListResource["Alias"].isNull())
+			resourceListObject.alias = valueResourceListResource["Alias"].asString();
 		resourceList_.push_back(resourceListObject);
 	}
 	if(!value["Id"].isNull())

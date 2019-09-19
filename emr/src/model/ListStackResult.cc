@@ -39,16 +39,16 @@ void ListStackResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStackList = value["StackList"]["Stack"];
-	for (auto value : allStackList)
+	auto allStackListNode = value["StackList"]["Stack"];
+	for (auto valueStackListStack : allStackListNode)
 	{
 		Stack stackListObject;
-		if(!value["Name"].isNull())
-			stackListObject.name = value["Name"].asString();
-		if(!value["Version"].isNull())
-			stackListObject.version = value["Version"].asString();
-		if(!value["Status"].isNull())
-			stackListObject.status = value["Status"].asString();
+		if(!valueStackListStack["Name"].isNull())
+			stackListObject.name = valueStackListStack["Name"].asString();
+		if(!valueStackListStack["Version"].isNull())
+			stackListObject.version = valueStackListStack["Version"].asString();
+		if(!valueStackListStack["Status"].isNull())
+			stackListObject.status = valueStackListStack["Status"].asString();
 		stackList_.push_back(stackListObject);
 	}
 	if(!value["PageNumber"].isNull())

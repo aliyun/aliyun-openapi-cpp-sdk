@@ -39,28 +39,28 @@ void DescribeVpnConnectionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVpnConnections = value["VpnConnections"]["VpnConnection"];
-	for (auto value : allVpnConnections)
+	auto allVpnConnectionsNode = value["VpnConnections"]["VpnConnection"];
+	for (auto valueVpnConnectionsVpnConnection : allVpnConnectionsNode)
 	{
 		VpnConnection vpnConnectionsObject;
-		if(!value["VpnConnectionId"].isNull())
-			vpnConnectionsObject.vpnConnectionId = value["VpnConnectionId"].asString();
-		if(!value["CustomerGatewayId"].isNull())
-			vpnConnectionsObject.customerGatewayId = value["CustomerGatewayId"].asString();
-		if(!value["VpnGatewayId"].isNull())
-			vpnConnectionsObject.vpnGatewayId = value["VpnGatewayId"].asString();
-		if(!value["Name"].isNull())
-			vpnConnectionsObject.name = value["Name"].asString();
-		if(!value["LocalSubnet"].isNull())
-			vpnConnectionsObject.localSubnet = value["LocalSubnet"].asString();
-		if(!value["RemoteSubnet"].isNull())
-			vpnConnectionsObject.remoteSubnet = value["RemoteSubnet"].asString();
-		if(!value["CreateTime"].isNull())
-			vpnConnectionsObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["EffectImmediately"].isNull())
-			vpnConnectionsObject.effectImmediately = value["EffectImmediately"].asString() == "true";
-		if(!value["Status"].isNull())
-			vpnConnectionsObject.status = value["Status"].asString();
+		if(!valueVpnConnectionsVpnConnection["VpnConnectionId"].isNull())
+			vpnConnectionsObject.vpnConnectionId = valueVpnConnectionsVpnConnection["VpnConnectionId"].asString();
+		if(!valueVpnConnectionsVpnConnection["CustomerGatewayId"].isNull())
+			vpnConnectionsObject.customerGatewayId = valueVpnConnectionsVpnConnection["CustomerGatewayId"].asString();
+		if(!valueVpnConnectionsVpnConnection["VpnGatewayId"].isNull())
+			vpnConnectionsObject.vpnGatewayId = valueVpnConnectionsVpnConnection["VpnGatewayId"].asString();
+		if(!valueVpnConnectionsVpnConnection["Name"].isNull())
+			vpnConnectionsObject.name = valueVpnConnectionsVpnConnection["Name"].asString();
+		if(!valueVpnConnectionsVpnConnection["LocalSubnet"].isNull())
+			vpnConnectionsObject.localSubnet = valueVpnConnectionsVpnConnection["LocalSubnet"].asString();
+		if(!valueVpnConnectionsVpnConnection["RemoteSubnet"].isNull())
+			vpnConnectionsObject.remoteSubnet = valueVpnConnectionsVpnConnection["RemoteSubnet"].asString();
+		if(!valueVpnConnectionsVpnConnection["CreateTime"].isNull())
+			vpnConnectionsObject.createTime = std::stol(valueVpnConnectionsVpnConnection["CreateTime"].asString());
+		if(!valueVpnConnectionsVpnConnection["EffectImmediately"].isNull())
+			vpnConnectionsObject.effectImmediately = valueVpnConnectionsVpnConnection["EffectImmediately"].asString() == "true";
+		if(!valueVpnConnectionsVpnConnection["Status"].isNull())
+			vpnConnectionsObject.status = valueVpnConnectionsVpnConnection["Status"].asString();
 		auto ikeConfigNode = value["IkeConfig"];
 		if(!ikeConfigNode["Psk"].isNull())
 			vpnConnectionsObject.ikeConfig.psk = ikeConfigNode["Psk"].asString();

@@ -46,26 +46,26 @@ void ListBasicStatisticsReportSubItemsResult::parse(const std::string &payload)
 		subItems_.pageNumber = std::stoi(subItemsNode["PageNumber"].asString());
 	if(!subItemsNode["PageSize"].isNull())
 		subItems_.pageSize = std::stoi(subItemsNode["PageSize"].asString());
-	auto allList = value["List"]["BasicStatisticsReportSubItem"];
-	for (auto value : allList)
+	auto allListNode = subItemsNode["List"]["BasicStatisticsReportSubItem"];
+	for (auto subItemsNodeListBasicStatisticsReportSubItem : allListNode)
 	{
 		SubItems::BasicStatisticsReportSubItem basicStatisticsReportSubItemObject;
-		if(!value["BasicStatisticsReportSubItemName"].isNull())
-			basicStatisticsReportSubItemObject.basicStatisticsReportSubItemName = value["BasicStatisticsReportSubItemName"].asString();
-		if(!value["Value"].isNull())
-			basicStatisticsReportSubItemObject.value = value["Value"].asString();
-		if(!value["Count"].isNull())
-			basicStatisticsReportSubItemObject.count = std::stoi(value["Count"].asString());
-		if(!value["Percentage"].isNull())
-			basicStatisticsReportSubItemObject.percentage = std::stoi(value["Percentage"].asString());
-		auto allRow = value["Row"]["KeyValuePair"];
-		for (auto value : allRow)
+		if(!subItemsNodeListBasicStatisticsReportSubItem["BasicStatisticsReportSubItemName"].isNull())
+			basicStatisticsReportSubItemObject.basicStatisticsReportSubItemName = subItemsNodeListBasicStatisticsReportSubItem["BasicStatisticsReportSubItemName"].asString();
+		if(!subItemsNodeListBasicStatisticsReportSubItem["Value"].isNull())
+			basicStatisticsReportSubItemObject.value = subItemsNodeListBasicStatisticsReportSubItem["Value"].asString();
+		if(!subItemsNodeListBasicStatisticsReportSubItem["Count"].isNull())
+			basicStatisticsReportSubItemObject.count = std::stoi(subItemsNodeListBasicStatisticsReportSubItem["Count"].asString());
+		if(!subItemsNodeListBasicStatisticsReportSubItem["Percentage"].isNull())
+			basicStatisticsReportSubItemObject.percentage = std::stoi(subItemsNodeListBasicStatisticsReportSubItem["Percentage"].asString());
+		auto allRowNode = allListNode["Row"]["KeyValuePair"];
+		for (auto allListNodeRowKeyValuePair : allRowNode)
 		{
 			SubItems::BasicStatisticsReportSubItem::KeyValuePair rowObject;
-			if(!value["Key"].isNull())
-				rowObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				rowObject.value = value["Value"].asString();
+			if(!allListNodeRowKeyValuePair["Key"].isNull())
+				rowObject.key = allListNodeRowKeyValuePair["Key"].asString();
+			if(!allListNodeRowKeyValuePair["Value"].isNull())
+				rowObject.value = allListNodeRowKeyValuePair["Value"].asString();
 			basicStatisticsReportSubItemObject.row.push_back(rowObject);
 		}
 		subItems_.list.push_back(basicStatisticsReportSubItemObject);

@@ -134,118 +134,118 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 		clusterInfo_.resizeDiskEnable = clusterInfoNode["ResizeDiskEnable"].asString() == "true";
 	if(!clusterInfoNode["MetaStoreType"].isNull())
 		clusterInfo_.metaStoreType = clusterInfoNode["MetaStoreType"].asString();
-	auto allGatewayClusterInfoList = value["GatewayClusterInfoList"]["GatewayClusterInfo"];
-	for (auto value : allGatewayClusterInfoList)
+	auto allGatewayClusterInfoListNode = clusterInfoNode["GatewayClusterInfoList"]["GatewayClusterInfo"];
+	for (auto clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo : allGatewayClusterInfoListNode)
 	{
 		ClusterInfo::GatewayClusterInfo gatewayClusterInfoObject;
-		if(!value["ClusterId"].isNull())
-			gatewayClusterInfoObject.clusterId = value["ClusterId"].asString();
-		if(!value["ClusterName"].isNull())
-			gatewayClusterInfoObject.clusterName = value["ClusterName"].asString();
-		if(!value["Status"].isNull())
-			gatewayClusterInfoObject.status = value["Status"].asString();
+		if(!clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["ClusterId"].isNull())
+			gatewayClusterInfoObject.clusterId = clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["ClusterId"].asString();
+		if(!clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["ClusterName"].isNull())
+			gatewayClusterInfoObject.clusterName = clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["ClusterName"].asString();
+		if(!clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["Status"].isNull())
+			gatewayClusterInfoObject.status = clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["Status"].asString();
 		clusterInfo_.gatewayClusterInfoList.push_back(gatewayClusterInfoObject);
 	}
-	auto allHostGroupList = value["HostGroupList"]["HostGroup"];
-	for (auto value : allHostGroupList)
+	auto allHostGroupListNode = clusterInfoNode["HostGroupList"]["HostGroup"];
+	for (auto clusterInfoNodeHostGroupListHostGroup : allHostGroupListNode)
 	{
 		ClusterInfo::HostGroup hostGroupObject;
-		if(!value["HostGroupId"].isNull())
-			hostGroupObject.hostGroupId = value["HostGroupId"].asString();
-		if(!value["HostGroupName"].isNull())
-			hostGroupObject.hostGroupName = value["HostGroupName"].asString();
-		if(!value["HostGroupType"].isNull())
-			hostGroupObject.hostGroupType = value["HostGroupType"].asString();
-		if(!value["HostGroupSubType"].isNull())
-			hostGroupObject.hostGroupSubType = value["HostGroupSubType"].asString();
-		if(!value["HostGroupChangeType"].isNull())
-			hostGroupObject.hostGroupChangeType = value["HostGroupChangeType"].asString();
-		if(!value["HostGroupChangeStatus"].isNull())
-			hostGroupObject.hostGroupChangeStatus = value["HostGroupChangeStatus"].asString();
-		if(!value["ChargeType"].isNull())
-			hostGroupObject.chargeType = value["ChargeType"].asString();
-		if(!value["Period"].isNull())
-			hostGroupObject.period = value["Period"].asString();
-		if(!value["NodeCount"].isNull())
-			hostGroupObject.nodeCount = std::stoi(value["NodeCount"].asString());
-		if(!value["InstanceType"].isNull())
-			hostGroupObject.instanceType = value["InstanceType"].asString();
-		if(!value["CpuCore"].isNull())
-			hostGroupObject.cpuCore = std::stoi(value["CpuCore"].asString());
-		if(!value["MemoryCapacity"].isNull())
-			hostGroupObject.memoryCapacity = std::stoi(value["MemoryCapacity"].asString());
-		if(!value["DiskType"].isNull())
-			hostGroupObject.diskType = value["DiskType"].asString();
-		if(!value["DiskCapacity"].isNull())
-			hostGroupObject.diskCapacity = std::stoi(value["DiskCapacity"].asString());
-		if(!value["DiskCount"].isNull())
-			hostGroupObject.diskCount = std::stoi(value["DiskCount"].asString());
-		if(!value["BandWidth"].isNull())
-			hostGroupObject.bandWidth = value["BandWidth"].asString();
-		if(!value["LockType"].isNull())
-			hostGroupObject.lockType = value["LockType"].asString();
-		if(!value["LockReason"].isNull())
-			hostGroupObject.lockReason = value["LockReason"].asString();
-		auto allNodes = value["Nodes"]["Node"];
-		for (auto value : allNodes)
+		if(!clusterInfoNodeHostGroupListHostGroup["HostGroupId"].isNull())
+			hostGroupObject.hostGroupId = clusterInfoNodeHostGroupListHostGroup["HostGroupId"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["HostGroupName"].isNull())
+			hostGroupObject.hostGroupName = clusterInfoNodeHostGroupListHostGroup["HostGroupName"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["HostGroupType"].isNull())
+			hostGroupObject.hostGroupType = clusterInfoNodeHostGroupListHostGroup["HostGroupType"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["HostGroupSubType"].isNull())
+			hostGroupObject.hostGroupSubType = clusterInfoNodeHostGroupListHostGroup["HostGroupSubType"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["HostGroupChangeType"].isNull())
+			hostGroupObject.hostGroupChangeType = clusterInfoNodeHostGroupListHostGroup["HostGroupChangeType"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["HostGroupChangeStatus"].isNull())
+			hostGroupObject.hostGroupChangeStatus = clusterInfoNodeHostGroupListHostGroup["HostGroupChangeStatus"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["ChargeType"].isNull())
+			hostGroupObject.chargeType = clusterInfoNodeHostGroupListHostGroup["ChargeType"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["Period"].isNull())
+			hostGroupObject.period = clusterInfoNodeHostGroupListHostGroup["Period"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["NodeCount"].isNull())
+			hostGroupObject.nodeCount = std::stoi(clusterInfoNodeHostGroupListHostGroup["NodeCount"].asString());
+		if(!clusterInfoNodeHostGroupListHostGroup["InstanceType"].isNull())
+			hostGroupObject.instanceType = clusterInfoNodeHostGroupListHostGroup["InstanceType"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["CpuCore"].isNull())
+			hostGroupObject.cpuCore = std::stoi(clusterInfoNodeHostGroupListHostGroup["CpuCore"].asString());
+		if(!clusterInfoNodeHostGroupListHostGroup["MemoryCapacity"].isNull())
+			hostGroupObject.memoryCapacity = std::stoi(clusterInfoNodeHostGroupListHostGroup["MemoryCapacity"].asString());
+		if(!clusterInfoNodeHostGroupListHostGroup["DiskType"].isNull())
+			hostGroupObject.diskType = clusterInfoNodeHostGroupListHostGroup["DiskType"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["DiskCapacity"].isNull())
+			hostGroupObject.diskCapacity = std::stoi(clusterInfoNodeHostGroupListHostGroup["DiskCapacity"].asString());
+		if(!clusterInfoNodeHostGroupListHostGroup["DiskCount"].isNull())
+			hostGroupObject.diskCount = std::stoi(clusterInfoNodeHostGroupListHostGroup["DiskCount"].asString());
+		if(!clusterInfoNodeHostGroupListHostGroup["BandWidth"].isNull())
+			hostGroupObject.bandWidth = clusterInfoNodeHostGroupListHostGroup["BandWidth"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["LockType"].isNull())
+			hostGroupObject.lockType = clusterInfoNodeHostGroupListHostGroup["LockType"].asString();
+		if(!clusterInfoNodeHostGroupListHostGroup["LockReason"].isNull())
+			hostGroupObject.lockReason = clusterInfoNodeHostGroupListHostGroup["LockReason"].asString();
+		auto allNodesNode = allHostGroupListNode["Nodes"]["Node"];
+		for (auto allHostGroupListNodeNodesNode : allNodesNode)
 		{
 			ClusterInfo::HostGroup::Node nodesObject;
-			if(!value["ZoneId"].isNull())
-				nodesObject.zoneId = value["ZoneId"].asString();
-			if(!value["InstanceId"].isNull())
-				nodesObject.instanceId = value["InstanceId"].asString();
-			if(!value["Status"].isNull())
-				nodesObject.status = value["Status"].asString();
-			if(!value["PubIp"].isNull())
-				nodesObject.pubIp = value["PubIp"].asString();
-			if(!value["InnerIp"].isNull())
-				nodesObject.innerIp = value["InnerIp"].asString();
-			if(!value["ExpiredTime"].isNull())
-				nodesObject.expiredTime = value["ExpiredTime"].asString();
-			if(!value["CreateTime"].isNull())
-				nodesObject.createTime = value["CreateTime"].asString();
-			if(!value["EmrExpiredTime"].isNull())
-				nodesObject.emrExpiredTime = value["EmrExpiredTime"].asString();
-			if(!value["SupportIpV6"].isNull())
-				nodesObject.supportIpV6 = value["SupportIpV6"].asString() == "true";
-			auto allDaemonInfos = value["DaemonInfos"]["DaemonInfo"];
-			for (auto value : allDaemonInfos)
+			if(!allHostGroupListNodeNodesNode["ZoneId"].isNull())
+				nodesObject.zoneId = allHostGroupListNodeNodesNode["ZoneId"].asString();
+			if(!allHostGroupListNodeNodesNode["InstanceId"].isNull())
+				nodesObject.instanceId = allHostGroupListNodeNodesNode["InstanceId"].asString();
+			if(!allHostGroupListNodeNodesNode["Status"].isNull())
+				nodesObject.status = allHostGroupListNodeNodesNode["Status"].asString();
+			if(!allHostGroupListNodeNodesNode["PubIp"].isNull())
+				nodesObject.pubIp = allHostGroupListNodeNodesNode["PubIp"].asString();
+			if(!allHostGroupListNodeNodesNode["InnerIp"].isNull())
+				nodesObject.innerIp = allHostGroupListNodeNodesNode["InnerIp"].asString();
+			if(!allHostGroupListNodeNodesNode["ExpiredTime"].isNull())
+				nodesObject.expiredTime = allHostGroupListNodeNodesNode["ExpiredTime"].asString();
+			if(!allHostGroupListNodeNodesNode["CreateTime"].isNull())
+				nodesObject.createTime = allHostGroupListNodeNodesNode["CreateTime"].asString();
+			if(!allHostGroupListNodeNodesNode["EmrExpiredTime"].isNull())
+				nodesObject.emrExpiredTime = allHostGroupListNodeNodesNode["EmrExpiredTime"].asString();
+			if(!allHostGroupListNodeNodesNode["SupportIpV6"].isNull())
+				nodesObject.supportIpV6 = allHostGroupListNodeNodesNode["SupportIpV6"].asString() == "true";
+			auto allDaemonInfosNode = allNodesNode["DaemonInfos"]["DaemonInfo"];
+			for (auto allNodesNodeDaemonInfosDaemonInfo : allDaemonInfosNode)
 			{
 				ClusterInfo::HostGroup::Node::DaemonInfo daemonInfosObject;
-				if(!value["Name"].isNull())
-					daemonInfosObject.name = value["Name"].asString();
+				if(!allNodesNodeDaemonInfosDaemonInfo["Name"].isNull())
+					daemonInfosObject.name = allNodesNodeDaemonInfosDaemonInfo["Name"].asString();
 				nodesObject.daemonInfos.push_back(daemonInfosObject);
 			}
-			auto allDiskInfos = value["DiskInfos"]["DiskInfo"];
-			for (auto value : allDiskInfos)
+			auto allDiskInfosNode = allNodesNode["DiskInfos"]["DiskInfo"];
+			for (auto allNodesNodeDiskInfosDiskInfo : allDiskInfosNode)
 			{
 				ClusterInfo::HostGroup::Node::DiskInfo diskInfosObject;
-				if(!value["Device"].isNull())
-					diskInfosObject.device = value["Device"].asString();
-				if(!value["DiskName"].isNull())
-					diskInfosObject.diskName = value["DiskName"].asString();
-				if(!value["DiskId"].isNull())
-					diskInfosObject.diskId = value["DiskId"].asString();
-				if(!value["Type"].isNull())
-					diskInfosObject.type = value["Type"].asString();
-				if(!value["Size"].isNull())
-					diskInfosObject.size = std::stoi(value["Size"].asString());
+				if(!allNodesNodeDiskInfosDiskInfo["Device"].isNull())
+					diskInfosObject.device = allNodesNodeDiskInfosDiskInfo["Device"].asString();
+				if(!allNodesNodeDiskInfosDiskInfo["DiskName"].isNull())
+					diskInfosObject.diskName = allNodesNodeDiskInfosDiskInfo["DiskName"].asString();
+				if(!allNodesNodeDiskInfosDiskInfo["DiskId"].isNull())
+					diskInfosObject.diskId = allNodesNodeDiskInfosDiskInfo["DiskId"].asString();
+				if(!allNodesNodeDiskInfosDiskInfo["Type"].isNull())
+					diskInfosObject.type = allNodesNodeDiskInfosDiskInfo["Type"].asString();
+				if(!allNodesNodeDiskInfosDiskInfo["Size"].isNull())
+					diskInfosObject.size = std::stoi(allNodesNodeDiskInfosDiskInfo["Size"].asString());
 				nodesObject.diskInfos.push_back(diskInfosObject);
 			}
 			hostGroupObject.nodes.push_back(nodesObject);
 		}
 		clusterInfo_.hostGroupList.push_back(hostGroupObject);
 	}
-	auto allBootstrapActionList = value["BootstrapActionList"]["BootstrapAction"];
-	for (auto value : allBootstrapActionList)
+	auto allBootstrapActionListNode = clusterInfoNode["BootstrapActionList"]["BootstrapAction"];
+	for (auto clusterInfoNodeBootstrapActionListBootstrapAction : allBootstrapActionListNode)
 	{
 		ClusterInfo::BootstrapAction bootstrapActionObject;
-		if(!value["Name"].isNull())
-			bootstrapActionObject.name = value["Name"].asString();
-		if(!value["Path"].isNull())
-			bootstrapActionObject.path = value["Path"].asString();
-		if(!value["Arg"].isNull())
-			bootstrapActionObject.arg = value["Arg"].asString();
+		if(!clusterInfoNodeBootstrapActionListBootstrapAction["Name"].isNull())
+			bootstrapActionObject.name = clusterInfoNodeBootstrapActionListBootstrapAction["Name"].asString();
+		if(!clusterInfoNodeBootstrapActionListBootstrapAction["Path"].isNull())
+			bootstrapActionObject.path = clusterInfoNodeBootstrapActionListBootstrapAction["Path"].asString();
+		if(!clusterInfoNodeBootstrapActionListBootstrapAction["Arg"].isNull())
+			bootstrapActionObject.arg = clusterInfoNodeBootstrapActionListBootstrapAction["Arg"].asString();
 		clusterInfo_.bootstrapActionList.push_back(bootstrapActionObject);
 	}
 	auto relateClusterInfoNode = clusterInfoNode["RelateClusterInfo"];
@@ -272,31 +272,31 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 		clusterInfo_.softwareInfo.emrVer = softwareInfoNode["EmrVer"].asString();
 	if(!softwareInfoNode["ClusterType"].isNull())
 		clusterInfo_.softwareInfo.clusterType = softwareInfoNode["ClusterType"].asString();
-	auto allSoftwares = value["Softwares"]["Software"];
-	for (auto value : allSoftwares)
+	auto allSoftwaresNode = softwareInfoNode["Softwares"]["Software"];
+	for (auto softwareInfoNodeSoftwaresSoftware : allSoftwaresNode)
 	{
 		ClusterInfo::SoftwareInfo::Software softwareObject;
-		if(!value["DisplayName"].isNull())
-			softwareObject.displayName = value["DisplayName"].asString();
-		if(!value["Name"].isNull())
-			softwareObject.name = value["Name"].asString();
-		if(!value["OnlyDisplay"].isNull())
-			softwareObject.onlyDisplay = value["OnlyDisplay"].asString() == "true";
-		if(!value["StartTpe"].isNull())
-			softwareObject.startTpe = std::stoi(value["StartTpe"].asString());
-		if(!value["Version"].isNull())
-			softwareObject.version = value["Version"].asString();
+		if(!softwareInfoNodeSoftwaresSoftware["DisplayName"].isNull())
+			softwareObject.displayName = softwareInfoNodeSoftwaresSoftware["DisplayName"].asString();
+		if(!softwareInfoNodeSoftwaresSoftware["Name"].isNull())
+			softwareObject.name = softwareInfoNodeSoftwaresSoftware["Name"].asString();
+		if(!softwareInfoNodeSoftwaresSoftware["OnlyDisplay"].isNull())
+			softwareObject.onlyDisplay = softwareInfoNodeSoftwaresSoftware["OnlyDisplay"].asString() == "true";
+		if(!softwareInfoNodeSoftwaresSoftware["StartTpe"].isNull())
+			softwareObject.startTpe = std::stoi(softwareInfoNodeSoftwaresSoftware["StartTpe"].asString());
+		if(!softwareInfoNodeSoftwaresSoftware["Version"].isNull())
+			softwareObject.version = softwareInfoNodeSoftwaresSoftware["Version"].asString();
 		clusterInfo_.softwareInfo.softwares.push_back(softwareObject);
 	}
 	auto accessInfoNode = clusterInfoNode["AccessInfo"];
-	auto allZKLinks = value["ZKLinks"]["ZKLink"];
-	for (auto value : allZKLinks)
+	auto allZKLinksNode = accessInfoNode["ZKLinks"]["ZKLink"];
+	for (auto accessInfoNodeZKLinksZKLink : allZKLinksNode)
 	{
 		ClusterInfo::AccessInfo::ZKLink zKLinkObject;
-		if(!value["Link"].isNull())
-			zKLinkObject.link = value["Link"].asString();
-		if(!value["Port"].isNull())
-			zKLinkObject.port = value["Port"].asString();
+		if(!accessInfoNodeZKLinksZKLink["Link"].isNull())
+			zKLinkObject.link = accessInfoNodeZKLinksZKLink["Link"].asString();
+		if(!accessInfoNodeZKLinksZKLink["Port"].isNull())
+			zKLinkObject.port = accessInfoNodeZKLinksZKLink["Port"].asString();
 		clusterInfo_.accessInfo.zKLinks.push_back(zKLinkObject);
 	}
 

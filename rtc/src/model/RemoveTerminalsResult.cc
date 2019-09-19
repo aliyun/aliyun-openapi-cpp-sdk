@@ -39,16 +39,16 @@ void RemoveTerminalsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTerminals = value["Terminals"]["Terminal"];
-	for (auto value : allTerminals)
+	auto allTerminalsNode = value["Terminals"]["Terminal"];
+	for (auto valueTerminalsTerminal : allTerminalsNode)
 	{
 		Terminal terminalsObject;
-		if(!value["Id"].isNull())
-			terminalsObject.id = value["Id"].asString();
-		if(!value["Code"].isNull())
-			terminalsObject.code = std::stoi(value["Code"].asString());
-		if(!value["Message"].isNull())
-			terminalsObject.message = value["Message"].asString();
+		if(!valueTerminalsTerminal["Id"].isNull())
+			terminalsObject.id = valueTerminalsTerminal["Id"].asString();
+		if(!valueTerminalsTerminal["Code"].isNull())
+			terminalsObject.code = std::stoi(valueTerminalsTerminal["Code"].asString());
+		if(!valueTerminalsTerminal["Message"].isNull())
+			terminalsObject.message = valueTerminalsTerminal["Message"].asString();
 		terminals_.push_back(terminalsObject);
 	}
 

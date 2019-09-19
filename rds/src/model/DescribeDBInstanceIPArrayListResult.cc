@@ -39,20 +39,20 @@ void DescribeDBInstanceIPArrayListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["DBInstanceIPArray"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["DBInstanceIPArray"];
+	for (auto valueItemsDBInstanceIPArray : allItemsNode)
 	{
 		DBInstanceIPArray itemsObject;
-		if(!value["DBInstanceIPArrayName"].isNull())
-			itemsObject.dBInstanceIPArrayName = value["DBInstanceIPArrayName"].asString();
-		if(!value["DBInstanceIPArrayAttribute"].isNull())
-			itemsObject.dBInstanceIPArrayAttribute = value["DBInstanceIPArrayAttribute"].asString();
-		if(!value["SecurityIPType"].isNull())
-			itemsObject.securityIPType = value["SecurityIPType"].asString();
-		if(!value["SecurityIPList"].isNull())
-			itemsObject.securityIPList = value["SecurityIPList"].asString();
-		if(!value["WhitelistNetworkType"].isNull())
-			itemsObject.whitelistNetworkType = value["WhitelistNetworkType"].asString();
+		if(!valueItemsDBInstanceIPArray["DBInstanceIPArrayName"].isNull())
+			itemsObject.dBInstanceIPArrayName = valueItemsDBInstanceIPArray["DBInstanceIPArrayName"].asString();
+		if(!valueItemsDBInstanceIPArray["DBInstanceIPArrayAttribute"].isNull())
+			itemsObject.dBInstanceIPArrayAttribute = valueItemsDBInstanceIPArray["DBInstanceIPArrayAttribute"].asString();
+		if(!valueItemsDBInstanceIPArray["SecurityIPType"].isNull())
+			itemsObject.securityIPType = valueItemsDBInstanceIPArray["SecurityIPType"].asString();
+		if(!valueItemsDBInstanceIPArray["SecurityIPList"].isNull())
+			itemsObject.securityIPList = valueItemsDBInstanceIPArray["SecurityIPList"].asString();
+		if(!valueItemsDBInstanceIPArray["WhitelistNetworkType"].isNull())
+			itemsObject.whitelistNetworkType = valueItemsDBInstanceIPArray["WhitelistNetworkType"].asString();
 		items_.push_back(itemsObject);
 	}
 

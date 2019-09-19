@@ -39,36 +39,36 @@ void ListFlowInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFlowInstances = value["FlowInstances"]["FlowInstance"];
-	for (auto value : allFlowInstances)
+	auto allFlowInstancesNode = value["FlowInstances"]["FlowInstance"];
+	for (auto valueFlowInstancesFlowInstance : allFlowInstancesNode)
 	{
 		FlowInstance flowInstancesObject;
-		if(!value["Id"].isNull())
-			flowInstancesObject.id = value["Id"].asString();
-		if(!value["GmtCreate"].isNull())
-			flowInstancesObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			flowInstancesObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["FlowId"].isNull())
-			flowInstancesObject.flowId = value["FlowId"].asString();
-		if(!value["FlowName"].isNull())
-			flowInstancesObject.flowName = value["FlowName"].asString();
-		if(!value["ProjectId"].isNull())
-			flowInstancesObject.projectId = value["ProjectId"].asString();
-		if(!value["Status"].isNull())
-			flowInstancesObject.status = value["Status"].asString();
-		if(!value["ClusterId"].isNull())
-			flowInstancesObject.clusterId = value["ClusterId"].asString();
-		if(!value["Owner"].isNull())
-			flowInstancesObject.owner = value["Owner"].asString();
-		if(!value["StartTime"].isNull())
-			flowInstancesObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["EndTime"].isNull())
-			flowInstancesObject.endTime = std::stol(value["EndTime"].asString());
-		if(!value["Duration"].isNull())
-			flowInstancesObject.duration = std::stol(value["Duration"].asString());
-		if(!value["HasNodeFailed"].isNull())
-			flowInstancesObject.hasNodeFailed = value["HasNodeFailed"].asString() == "true";
+		if(!valueFlowInstancesFlowInstance["Id"].isNull())
+			flowInstancesObject.id = valueFlowInstancesFlowInstance["Id"].asString();
+		if(!valueFlowInstancesFlowInstance["GmtCreate"].isNull())
+			flowInstancesObject.gmtCreate = std::stol(valueFlowInstancesFlowInstance["GmtCreate"].asString());
+		if(!valueFlowInstancesFlowInstance["GmtModified"].isNull())
+			flowInstancesObject.gmtModified = std::stol(valueFlowInstancesFlowInstance["GmtModified"].asString());
+		if(!valueFlowInstancesFlowInstance["FlowId"].isNull())
+			flowInstancesObject.flowId = valueFlowInstancesFlowInstance["FlowId"].asString();
+		if(!valueFlowInstancesFlowInstance["FlowName"].isNull())
+			flowInstancesObject.flowName = valueFlowInstancesFlowInstance["FlowName"].asString();
+		if(!valueFlowInstancesFlowInstance["ProjectId"].isNull())
+			flowInstancesObject.projectId = valueFlowInstancesFlowInstance["ProjectId"].asString();
+		if(!valueFlowInstancesFlowInstance["Status"].isNull())
+			flowInstancesObject.status = valueFlowInstancesFlowInstance["Status"].asString();
+		if(!valueFlowInstancesFlowInstance["ClusterId"].isNull())
+			flowInstancesObject.clusterId = valueFlowInstancesFlowInstance["ClusterId"].asString();
+		if(!valueFlowInstancesFlowInstance["Owner"].isNull())
+			flowInstancesObject.owner = valueFlowInstancesFlowInstance["Owner"].asString();
+		if(!valueFlowInstancesFlowInstance["StartTime"].isNull())
+			flowInstancesObject.startTime = std::stol(valueFlowInstancesFlowInstance["StartTime"].asString());
+		if(!valueFlowInstancesFlowInstance["EndTime"].isNull())
+			flowInstancesObject.endTime = std::stol(valueFlowInstancesFlowInstance["EndTime"].asString());
+		if(!valueFlowInstancesFlowInstance["Duration"].isNull())
+			flowInstancesObject.duration = std::stol(valueFlowInstancesFlowInstance["Duration"].asString());
+		if(!valueFlowInstancesFlowInstance["HasNodeFailed"].isNull())
+			flowInstancesObject.hasNodeFailed = valueFlowInstancesFlowInstance["HasNodeFailed"].asString() == "true";
 		flowInstances_.push_back(flowInstancesObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -46,36 +46,36 @@ void ListRecordingsResult::parse(const std::string &payload)
 		recordings_.pageNumber = std::stoi(recordingsNode["PageNumber"].asString());
 	if(!recordingsNode["PageSize"].isNull())
 		recordings_.pageSize = std::stoi(recordingsNode["PageSize"].asString());
-	auto allList = value["List"]["Recording"];
-	for (auto value : allList)
+	auto allListNode = recordingsNode["List"]["Recording"];
+	for (auto recordingsNodeListRecording : allListNode)
 	{
 		Recordings::Recording recordingObject;
-		if(!value["ContactId"].isNull())
-			recordingObject.contactId = value["ContactId"].asString();
-		if(!value["ContactType"].isNull())
-			recordingObject.contactType = value["ContactType"].asString();
-		if(!value["AgentId"].isNull())
-			recordingObject.agentId = value["AgentId"].asString();
-		if(!value["AgentName"].isNull())
-			recordingObject.agentName = value["AgentName"].asString();
-		if(!value["CallingNumber"].isNull())
-			recordingObject.callingNumber = value["CallingNumber"].asString();
-		if(!value["CalledNumber"].isNull())
-			recordingObject.calledNumber = value["CalledNumber"].asString();
-		if(!value["StartTime"].isNull())
-			recordingObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["Duration"].isNull())
-			recordingObject.duration = std::stoi(value["Duration"].asString());
-		if(!value["FileName"].isNull())
-			recordingObject.fileName = value["FileName"].asString();
-		if(!value["FilePath"].isNull())
-			recordingObject.filePath = value["FilePath"].asString();
-		if(!value["FileDescription"].isNull())
-			recordingObject.fileDescription = value["FileDescription"].asString();
-		if(!value["Channel"].isNull())
-			recordingObject.channel = value["Channel"].asString();
-		if(!value["InstanceId"].isNull())
-			recordingObject.instanceId = value["InstanceId"].asString();
+		if(!recordingsNodeListRecording["ContactId"].isNull())
+			recordingObject.contactId = recordingsNodeListRecording["ContactId"].asString();
+		if(!recordingsNodeListRecording["ContactType"].isNull())
+			recordingObject.contactType = recordingsNodeListRecording["ContactType"].asString();
+		if(!recordingsNodeListRecording["AgentId"].isNull())
+			recordingObject.agentId = recordingsNodeListRecording["AgentId"].asString();
+		if(!recordingsNodeListRecording["AgentName"].isNull())
+			recordingObject.agentName = recordingsNodeListRecording["AgentName"].asString();
+		if(!recordingsNodeListRecording["CallingNumber"].isNull())
+			recordingObject.callingNumber = recordingsNodeListRecording["CallingNumber"].asString();
+		if(!recordingsNodeListRecording["CalledNumber"].isNull())
+			recordingObject.calledNumber = recordingsNodeListRecording["CalledNumber"].asString();
+		if(!recordingsNodeListRecording["StartTime"].isNull())
+			recordingObject.startTime = std::stol(recordingsNodeListRecording["StartTime"].asString());
+		if(!recordingsNodeListRecording["Duration"].isNull())
+			recordingObject.duration = std::stoi(recordingsNodeListRecording["Duration"].asString());
+		if(!recordingsNodeListRecording["FileName"].isNull())
+			recordingObject.fileName = recordingsNodeListRecording["FileName"].asString();
+		if(!recordingsNodeListRecording["FilePath"].isNull())
+			recordingObject.filePath = recordingsNodeListRecording["FilePath"].asString();
+		if(!recordingsNodeListRecording["FileDescription"].isNull())
+			recordingObject.fileDescription = recordingsNodeListRecording["FileDescription"].asString();
+		if(!recordingsNodeListRecording["Channel"].isNull())
+			recordingObject.channel = recordingsNodeListRecording["Channel"].asString();
+		if(!recordingsNodeListRecording["InstanceId"].isNull())
+			recordingObject.instanceId = recordingsNodeListRecording["InstanceId"].asString();
 		recordings_.list.push_back(recordingObject);
 	}
 	if(!value["Success"].isNull())

@@ -39,14 +39,14 @@ void DescribeUserOnlineClientStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserStatistics = value["UserStatistics"]["Statistics"];
-	for (auto value : allUserStatistics)
+	auto allUserStatisticsNode = value["UserStatistics"]["Statistics"];
+	for (auto valueUserStatisticsStatistics : allUserStatisticsNode)
 	{
 		Statistics userStatisticsObject;
-		if(!value["UserName"].isNull())
-			userStatisticsObject.userName = value["UserName"].asString();
-		if(!value["OnlineCount"].isNull())
-			userStatisticsObject.onlineCount = value["OnlineCount"].asString();
+		if(!valueUserStatisticsStatistics["UserName"].isNull())
+			userStatisticsObject.userName = valueUserStatisticsStatistics["UserName"].asString();
+		if(!valueUserStatisticsStatistics["OnlineCount"].isNull())
+			userStatisticsObject.onlineCount = valueUserStatisticsStatistics["OnlineCount"].asString();
 		userStatistics_.push_back(userStatisticsObject);
 	}
 

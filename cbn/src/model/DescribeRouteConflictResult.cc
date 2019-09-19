@@ -39,20 +39,20 @@ void DescribeRouteConflictResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRouteConflicts = value["RouteConflicts"]["RouteConflict"];
-	for (auto value : allRouteConflicts)
+	auto allRouteConflictsNode = value["RouteConflicts"]["RouteConflict"];
+	for (auto valueRouteConflictsRouteConflict : allRouteConflictsNode)
 	{
 		RouteConflict routeConflictsObject;
-		if(!value["DestinationCidrBlock"].isNull())
-			routeConflictsObject.destinationCidrBlock = value["DestinationCidrBlock"].asString();
-		if(!value["RegionId"].isNull())
-			routeConflictsObject.regionId = value["RegionId"].asString();
-		if(!value["InstanceId"].isNull())
-			routeConflictsObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceType"].isNull())
-			routeConflictsObject.instanceType = value["InstanceType"].asString();
-		if(!value["Status"].isNull())
-			routeConflictsObject.status = value["Status"].asString();
+		if(!valueRouteConflictsRouteConflict["DestinationCidrBlock"].isNull())
+			routeConflictsObject.destinationCidrBlock = valueRouteConflictsRouteConflict["DestinationCidrBlock"].asString();
+		if(!valueRouteConflictsRouteConflict["RegionId"].isNull())
+			routeConflictsObject.regionId = valueRouteConflictsRouteConflict["RegionId"].asString();
+		if(!valueRouteConflictsRouteConflict["InstanceId"].isNull())
+			routeConflictsObject.instanceId = valueRouteConflictsRouteConflict["InstanceId"].asString();
+		if(!valueRouteConflictsRouteConflict["InstanceType"].isNull())
+			routeConflictsObject.instanceType = valueRouteConflictsRouteConflict["InstanceType"].asString();
+		if(!valueRouteConflictsRouteConflict["Status"].isNull())
+			routeConflictsObject.status = valueRouteConflictsRouteConflict["Status"].asString();
 		routeConflicts_.push_back(routeConflictsObject);
 	}
 	if(!value["PageNumber"].isNull())

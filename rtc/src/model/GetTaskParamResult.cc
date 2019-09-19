@@ -39,16 +39,16 @@ void GetTaskParamResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMixPane = value["MixPane"]["MixPaneItem"];
-	for (auto value : allMixPane)
+	auto allMixPaneNode = value["MixPane"]["MixPaneItem"];
+	for (auto valueMixPaneMixPaneItem : allMixPaneNode)
 	{
 		MixPaneItem mixPaneObject;
-		if(!value["PaneId"].isNull())
-			mixPaneObject.paneId = std::stoi(value["PaneId"].asString());
-		if(!value["UserId"].isNull())
-			mixPaneObject.userId = value["UserId"].asString();
-		if(!value["SourceType"].isNull())
-			mixPaneObject.sourceType = value["SourceType"].asString();
+		if(!valueMixPaneMixPaneItem["PaneId"].isNull())
+			mixPaneObject.paneId = std::stoi(valueMixPaneMixPaneItem["PaneId"].asString());
+		if(!valueMixPaneMixPaneItem["UserId"].isNull())
+			mixPaneObject.userId = valueMixPaneMixPaneItem["UserId"].asString();
+		if(!valueMixPaneMixPaneItem["SourceType"].isNull())
+			mixPaneObject.sourceType = valueMixPaneMixPaneItem["SourceType"].asString();
 		mixPane_.push_back(mixPaneObject);
 	}
 	if(!value["ChannelId"].isNull())

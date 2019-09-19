@@ -39,16 +39,16 @@ void QueryFailReasonForDomainRealNameVerificationResult::parse(const std::string
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["FailRecord"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["FailRecord"];
+	for (auto valueDataFailRecord : allDataNode)
 	{
 		FailRecord dataObject;
-		if(!value["Date"].isNull())
-			dataObject.date = value["Date"].asString();
-		if(!value["FailReason"].isNull())
-			dataObject.failReason = value["FailReason"].asString();
-		if(!value["DomainNameVerificationStatus"].isNull())
-			dataObject.domainNameVerificationStatus = value["DomainNameVerificationStatus"].asString();
+		if(!valueDataFailRecord["Date"].isNull())
+			dataObject.date = valueDataFailRecord["Date"].asString();
+		if(!valueDataFailRecord["FailReason"].isNull())
+			dataObject.failReason = valueDataFailRecord["FailReason"].asString();
+		if(!valueDataFailRecord["DomainNameVerificationStatus"].isNull())
+			dataObject.domainNameVerificationStatus = valueDataFailRecord["DomainNameVerificationStatus"].asString();
 		data_.push_back(dataObject);
 	}
 

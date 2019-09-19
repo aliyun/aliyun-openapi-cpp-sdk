@@ -39,18 +39,18 @@ void AddAlbumPhotosResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResults = value["Results"]["Result"];
-	for (auto value : allResults)
+	auto allResultsNode = value["Results"]["Result"];
+	for (auto valueResultsResult : allResultsNode)
 	{
 		Result resultsObject;
-		if(!value["Id"].isNull())
-			resultsObject.id = std::stol(value["Id"].asString());
-		if(!value["IdStr"].isNull())
-			resultsObject.idStr = value["IdStr"].asString();
-		if(!value["Code"].isNull())
-			resultsObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			resultsObject.message = value["Message"].asString();
+		if(!valueResultsResult["Id"].isNull())
+			resultsObject.id = std::stol(valueResultsResult["Id"].asString());
+		if(!valueResultsResult["IdStr"].isNull())
+			resultsObject.idStr = valueResultsResult["IdStr"].asString();
+		if(!valueResultsResult["Code"].isNull())
+			resultsObject.code = valueResultsResult["Code"].asString();
+		if(!valueResultsResult["Message"].isNull())
+			resultsObject.message = valueResultsResult["Message"].asString();
 		results_.push_back(resultsObject);
 	}
 	if(!value["Code"].isNull())

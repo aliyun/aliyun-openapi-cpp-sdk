@@ -39,28 +39,28 @@ void DescribeApisResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allApiSummarys = value["ApiSummarys"]["ApiSummary"];
-	for (auto value : allApiSummarys)
+	auto allApiSummarysNode = value["ApiSummarys"]["ApiSummary"];
+	for (auto valueApiSummarysApiSummary : allApiSummarysNode)
 	{
 		ApiSummary apiSummarysObject;
-		if(!value["RegionId"].isNull())
-			apiSummarysObject.regionId = value["RegionId"].asString();
-		if(!value["GroupId"].isNull())
-			apiSummarysObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			apiSummarysObject.groupName = value["GroupName"].asString();
-		if(!value["ApiId"].isNull())
-			apiSummarysObject.apiId = value["ApiId"].asString();
-		if(!value["ApiName"].isNull())
-			apiSummarysObject.apiName = value["ApiName"].asString();
-		if(!value["Visibility"].isNull())
-			apiSummarysObject.visibility = value["Visibility"].asString();
-		if(!value["Description"].isNull())
-			apiSummarysObject.description = value["Description"].asString();
-		if(!value["CreatedTime"].isNull())
-			apiSummarysObject.createdTime = value["CreatedTime"].asString();
-		if(!value["ModifiedTime"].isNull())
-			apiSummarysObject.modifiedTime = value["ModifiedTime"].asString();
+		if(!valueApiSummarysApiSummary["RegionId"].isNull())
+			apiSummarysObject.regionId = valueApiSummarysApiSummary["RegionId"].asString();
+		if(!valueApiSummarysApiSummary["GroupId"].isNull())
+			apiSummarysObject.groupId = valueApiSummarysApiSummary["GroupId"].asString();
+		if(!valueApiSummarysApiSummary["GroupName"].isNull())
+			apiSummarysObject.groupName = valueApiSummarysApiSummary["GroupName"].asString();
+		if(!valueApiSummarysApiSummary["ApiId"].isNull())
+			apiSummarysObject.apiId = valueApiSummarysApiSummary["ApiId"].asString();
+		if(!valueApiSummarysApiSummary["ApiName"].isNull())
+			apiSummarysObject.apiName = valueApiSummarysApiSummary["ApiName"].asString();
+		if(!valueApiSummarysApiSummary["Visibility"].isNull())
+			apiSummarysObject.visibility = valueApiSummarysApiSummary["Visibility"].asString();
+		if(!valueApiSummarysApiSummary["Description"].isNull())
+			apiSummarysObject.description = valueApiSummarysApiSummary["Description"].asString();
+		if(!valueApiSummarysApiSummary["CreatedTime"].isNull())
+			apiSummarysObject.createdTime = valueApiSummarysApiSummary["CreatedTime"].asString();
+		if(!valueApiSummarysApiSummary["ModifiedTime"].isNull())
+			apiSummarysObject.modifiedTime = valueApiSummarysApiSummary["ModifiedTime"].asString();
 		apiSummarys_.push_back(apiSummarysObject);
 	}
 	if(!value["TotalCount"].isNull())

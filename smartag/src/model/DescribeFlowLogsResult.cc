@@ -39,38 +39,38 @@ void DescribeFlowLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFlowLogs = value["FlowLogs"]["FlowLogSetType"];
-	for (auto value : allFlowLogs)
+	auto allFlowLogsNode = value["FlowLogs"]["FlowLogSetType"];
+	for (auto valueFlowLogsFlowLogSetType : allFlowLogsNode)
 	{
 		FlowLogSetType flowLogsObject;
-		if(!value["FlowLogId"].isNull())
-			flowLogsObject.flowLogId = value["FlowLogId"].asString();
-		if(!value["Description"].isNull())
-			flowLogsObject.description = value["Description"].asString();
-		if(!value["ActiveAging"].isNull())
-			flowLogsObject.activeAging = std::stoi(value["ActiveAging"].asString());
-		if(!value["InactiveAging"].isNull())
-			flowLogsObject.inactiveAging = std::stoi(value["InactiveAging"].asString());
-		if(!value["OutputType"].isNull())
-			flowLogsObject.outputType = value["OutputType"].asString();
-		if(!value["SlsRegionId"].isNull())
-			flowLogsObject.slsRegionId = value["SlsRegionId"].asString();
-		if(!value["ProjectName"].isNull())
-			flowLogsObject.projectName = value["ProjectName"].asString();
-		if(!value["LogstoreName"].isNull())
-			flowLogsObject.logstoreName = value["LogstoreName"].asString();
-		if(!value["NetflowServerIp"].isNull())
-			flowLogsObject.netflowServerIp = value["NetflowServerIp"].asString();
-		if(!value["NetflowServerPort"].isNull())
-			flowLogsObject.netflowServerPort = value["NetflowServerPort"].asString();
-		if(!value["NetflowVersion"].isNull())
-			flowLogsObject.netflowVersion = value["NetflowVersion"].asString();
-		if(!value["Status"].isNull())
-			flowLogsObject.status = value["Status"].asString();
-		if(!value["Name"].isNull())
-			flowLogsObject.name = value["Name"].asString();
-		if(!value["TotalSagNum"].isNull())
-			flowLogsObject.totalSagNum = std::stoi(value["TotalSagNum"].asString());
+		if(!valueFlowLogsFlowLogSetType["FlowLogId"].isNull())
+			flowLogsObject.flowLogId = valueFlowLogsFlowLogSetType["FlowLogId"].asString();
+		if(!valueFlowLogsFlowLogSetType["Description"].isNull())
+			flowLogsObject.description = valueFlowLogsFlowLogSetType["Description"].asString();
+		if(!valueFlowLogsFlowLogSetType["ActiveAging"].isNull())
+			flowLogsObject.activeAging = std::stoi(valueFlowLogsFlowLogSetType["ActiveAging"].asString());
+		if(!valueFlowLogsFlowLogSetType["InactiveAging"].isNull())
+			flowLogsObject.inactiveAging = std::stoi(valueFlowLogsFlowLogSetType["InactiveAging"].asString());
+		if(!valueFlowLogsFlowLogSetType["OutputType"].isNull())
+			flowLogsObject.outputType = valueFlowLogsFlowLogSetType["OutputType"].asString();
+		if(!valueFlowLogsFlowLogSetType["SlsRegionId"].isNull())
+			flowLogsObject.slsRegionId = valueFlowLogsFlowLogSetType["SlsRegionId"].asString();
+		if(!valueFlowLogsFlowLogSetType["ProjectName"].isNull())
+			flowLogsObject.projectName = valueFlowLogsFlowLogSetType["ProjectName"].asString();
+		if(!valueFlowLogsFlowLogSetType["LogstoreName"].isNull())
+			flowLogsObject.logstoreName = valueFlowLogsFlowLogSetType["LogstoreName"].asString();
+		if(!valueFlowLogsFlowLogSetType["NetflowServerIp"].isNull())
+			flowLogsObject.netflowServerIp = valueFlowLogsFlowLogSetType["NetflowServerIp"].asString();
+		if(!valueFlowLogsFlowLogSetType["NetflowServerPort"].isNull())
+			flowLogsObject.netflowServerPort = valueFlowLogsFlowLogSetType["NetflowServerPort"].asString();
+		if(!valueFlowLogsFlowLogSetType["NetflowVersion"].isNull())
+			flowLogsObject.netflowVersion = valueFlowLogsFlowLogSetType["NetflowVersion"].asString();
+		if(!valueFlowLogsFlowLogSetType["Status"].isNull())
+			flowLogsObject.status = valueFlowLogsFlowLogSetType["Status"].asString();
+		if(!valueFlowLogsFlowLogSetType["Name"].isNull())
+			flowLogsObject.name = valueFlowLogsFlowLogSetType["Name"].asString();
+		if(!valueFlowLogsFlowLogSetType["TotalSagNum"].isNull())
+			flowLogsObject.totalSagNum = std::stoi(valueFlowLogsFlowLogSetType["TotalSagNum"].asString());
 		flowLogs_.push_back(flowLogsObject);
 	}
 	if(!value["TotalCount"].isNull())

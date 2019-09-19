@@ -39,22 +39,22 @@ void DescribeShardingInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstances = value["Instances"]["Instance"];
-	for (auto value : allInstances)
+	auto allInstancesNode = value["Instances"]["Instance"];
+	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
-		if(!value["InstanceId"].isNull())
-			instancesObject.instanceId = value["InstanceId"].asString();
-		auto allShardList = value["ShardList"]["Shard"];
-		for (auto value : allShardList)
+		if(!valueInstancesInstance["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
+		auto allShardListNode = allInstancesNode["ShardList"]["Shard"];
+		for (auto allInstancesNodeShardListShard : allShardListNode)
 		{
 			Instance::Shard shardListObject;
-			if(!value["NodeId"].isNull())
-				shardListObject.nodeId = value["NodeId"].asString();
-			if(!value["ShardReplicaClass"].isNull())
-				shardListObject.shardReplicaClass = value["ShardReplicaClass"].asString();
-			if(!value["ShardStorageQuantity"].isNull())
-				shardListObject.shardStorageQuantity = value["ShardStorageQuantity"].asString();
+			if(!allInstancesNodeShardListShard["NodeId"].isNull())
+				shardListObject.nodeId = allInstancesNodeShardListShard["NodeId"].asString();
+			if(!allInstancesNodeShardListShard["ShardReplicaClass"].isNull())
+				shardListObject.shardReplicaClass = allInstancesNodeShardListShard["ShardReplicaClass"].asString();
+			if(!allInstancesNodeShardListShard["ShardStorageQuantity"].isNull())
+				shardListObject.shardStorageQuantity = allInstancesNodeShardListShard["ShardStorageQuantity"].asString();
 			instancesObject.shardList.push_back(shardListObject);
 		}
 		instances_.push_back(instancesObject);

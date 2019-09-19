@@ -39,42 +39,42 @@ void DescribePropertyProcDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPropertys = value["Propertys"]["PropertyProc"];
-	for (auto value : allPropertys)
+	auto allPropertysNode = value["Propertys"]["PropertyProc"];
+	for (auto valuePropertysPropertyProc : allPropertysNode)
 	{
 		PropertyProc propertysObject;
-		if(!value["Pname"].isNull())
-			propertysObject.pname = value["Pname"].asString();
-		if(!value["EuidName"].isNull())
-			propertysObject.euidName = value["EuidName"].asString();
-		if(!value["InstanceName"].isNull())
-			propertysObject.instanceName = value["InstanceName"].asString();
-		if(!value["Pid"].isNull())
-			propertysObject.pid = value["Pid"].asString();
-		if(!value["Path"].isNull())
-			propertysObject.path = value["Path"].asString();
-		if(!value["Cmdline"].isNull())
-			propertysObject.cmdline = value["Cmdline"].asString();
-		if(!value["Name"].isNull())
-			propertysObject.name = value["Name"].asString();
-		if(!value["User"].isNull())
-			propertysObject.user = value["User"].asString();
-		if(!value["Md5"].isNull())
-			propertysObject.md5 = value["Md5"].asString();
-		if(!value["Create"].isNull())
-			propertysObject.create = value["Create"].asString();
-		if(!value["CreateTimestamp"].isNull())
-			propertysObject.createTimestamp = std::stol(value["CreateTimestamp"].asString());
-		if(!value["StartTime"].isNull())
-			propertysObject.startTime = value["StartTime"].asString();
-		if(!value["Uuid"].isNull())
-			propertysObject.uuid = value["Uuid"].asString();
-		if(!value["InstanceId"].isNull())
-			propertysObject.instanceId = value["InstanceId"].asString();
-		if(!value["IntranetIp"].isNull())
-			propertysObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["InternetIp"].isNull())
-			propertysObject.internetIp = value["InternetIp"].asString();
+		if(!valuePropertysPropertyProc["Pname"].isNull())
+			propertysObject.pname = valuePropertysPropertyProc["Pname"].asString();
+		if(!valuePropertysPropertyProc["EuidName"].isNull())
+			propertysObject.euidName = valuePropertysPropertyProc["EuidName"].asString();
+		if(!valuePropertysPropertyProc["InstanceName"].isNull())
+			propertysObject.instanceName = valuePropertysPropertyProc["InstanceName"].asString();
+		if(!valuePropertysPropertyProc["Pid"].isNull())
+			propertysObject.pid = valuePropertysPropertyProc["Pid"].asString();
+		if(!valuePropertysPropertyProc["Path"].isNull())
+			propertysObject.path = valuePropertysPropertyProc["Path"].asString();
+		if(!valuePropertysPropertyProc["Cmdline"].isNull())
+			propertysObject.cmdline = valuePropertysPropertyProc["Cmdline"].asString();
+		if(!valuePropertysPropertyProc["Name"].isNull())
+			propertysObject.name = valuePropertysPropertyProc["Name"].asString();
+		if(!valuePropertysPropertyProc["User"].isNull())
+			propertysObject.user = valuePropertysPropertyProc["User"].asString();
+		if(!valuePropertysPropertyProc["Md5"].isNull())
+			propertysObject.md5 = valuePropertysPropertyProc["Md5"].asString();
+		if(!valuePropertysPropertyProc["Create"].isNull())
+			propertysObject.create = valuePropertysPropertyProc["Create"].asString();
+		if(!valuePropertysPropertyProc["CreateTimestamp"].isNull())
+			propertysObject.createTimestamp = std::stol(valuePropertysPropertyProc["CreateTimestamp"].asString());
+		if(!valuePropertysPropertyProc["StartTime"].isNull())
+			propertysObject.startTime = valuePropertysPropertyProc["StartTime"].asString();
+		if(!valuePropertysPropertyProc["Uuid"].isNull())
+			propertysObject.uuid = valuePropertysPropertyProc["Uuid"].asString();
+		if(!valuePropertysPropertyProc["InstanceId"].isNull())
+			propertysObject.instanceId = valuePropertysPropertyProc["InstanceId"].asString();
+		if(!valuePropertysPropertyProc["IntranetIp"].isNull())
+			propertysObject.intranetIp = valuePropertysPropertyProc["IntranetIp"].asString();
+		if(!valuePropertysPropertyProc["InternetIp"].isNull())
+			propertysObject.internetIp = valuePropertysPropertyProc["InternetIp"].asString();
 		propertys_.push_back(propertysObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

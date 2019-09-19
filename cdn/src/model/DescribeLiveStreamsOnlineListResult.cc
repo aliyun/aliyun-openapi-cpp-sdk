@@ -39,20 +39,20 @@ void DescribeLiveStreamsOnlineListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOnlineInfo = value["OnlineInfo"]["LiveStreamOnlineInfo"];
-	for (auto value : allOnlineInfo)
+	auto allOnlineInfoNode = value["OnlineInfo"]["LiveStreamOnlineInfo"];
+	for (auto valueOnlineInfoLiveStreamOnlineInfo : allOnlineInfoNode)
 	{
 		LiveStreamOnlineInfo onlineInfoObject;
-		if(!value["DomainName"].isNull())
-			onlineInfoObject.domainName = value["DomainName"].asString();
-		if(!value["AppName"].isNull())
-			onlineInfoObject.appName = value["AppName"].asString();
-		if(!value["StreamName"].isNull())
-			onlineInfoObject.streamName = value["StreamName"].asString();
-		if(!value["PublishTime"].isNull())
-			onlineInfoObject.publishTime = value["PublishTime"].asString();
-		if(!value["PublishUrl"].isNull())
-			onlineInfoObject.publishUrl = value["PublishUrl"].asString();
+		if(!valueOnlineInfoLiveStreamOnlineInfo["DomainName"].isNull())
+			onlineInfoObject.domainName = valueOnlineInfoLiveStreamOnlineInfo["DomainName"].asString();
+		if(!valueOnlineInfoLiveStreamOnlineInfo["AppName"].isNull())
+			onlineInfoObject.appName = valueOnlineInfoLiveStreamOnlineInfo["AppName"].asString();
+		if(!valueOnlineInfoLiveStreamOnlineInfo["StreamName"].isNull())
+			onlineInfoObject.streamName = valueOnlineInfoLiveStreamOnlineInfo["StreamName"].asString();
+		if(!valueOnlineInfoLiveStreamOnlineInfo["PublishTime"].isNull())
+			onlineInfoObject.publishTime = valueOnlineInfoLiveStreamOnlineInfo["PublishTime"].asString();
+		if(!valueOnlineInfoLiveStreamOnlineInfo["PublishUrl"].isNull())
+			onlineInfoObject.publishUrl = valueOnlineInfoLiveStreamOnlineInfo["PublishUrl"].asString();
 		onlineInfo_.push_back(onlineInfoObject);
 	}
 	if(!value["PageNum"].isNull())

@@ -39,46 +39,46 @@ void ListAlarmResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAlarmList = value["AlarmList"]["Alarm"];
-	for (auto value : allAlarmList)
+	auto allAlarmListNode = value["AlarmList"]["Alarm"];
+	for (auto valueAlarmListAlarm : allAlarmListNode)
 	{
 		Alarm alarmListObject;
-		if(!value["Id"].isNull())
-			alarmListObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			alarmListObject.name = value["Name"].asString();
-		if(!value["Namespace"].isNull())
-			alarmListObject._namespace = value["Namespace"].asString();
-		if(!value["MetricName"].isNull())
-			alarmListObject.metricName = value["MetricName"].asString();
-		if(!value["Dimensions"].isNull())
-			alarmListObject.dimensions = value["Dimensions"].asString();
-		if(!value["Period"].isNull())
-			alarmListObject.period = std::stoi(value["Period"].asString());
-		if(!value["Statistics"].isNull())
-			alarmListObject.statistics = value["Statistics"].asString();
-		if(!value["ComparisonOperator"].isNull())
-			alarmListObject.comparisonOperator = value["ComparisonOperator"].asString();
-		if(!value["Threshold"].isNull())
-			alarmListObject.threshold = value["Threshold"].asString();
-		if(!value["EvaluationCount"].isNull())
-			alarmListObject.evaluationCount = std::stoi(value["EvaluationCount"].asString());
-		if(!value["StartTime"].isNull())
-			alarmListObject.startTime = std::stoi(value["StartTime"].asString());
-		if(!value["EndTime"].isNull())
-			alarmListObject.endTime = std::stoi(value["EndTime"].asString());
-		if(!value["SilenceTime"].isNull())
-			alarmListObject.silenceTime = std::stoi(value["SilenceTime"].asString());
-		if(!value["NotifyType"].isNull())
-			alarmListObject.notifyType = std::stoi(value["NotifyType"].asString());
-		if(!value["Enable"].isNull())
-			alarmListObject.enable = value["Enable"].asString() == "true";
-		if(!value["State"].isNull())
-			alarmListObject.state = value["State"].asString();
-		if(!value["ContactGroups"].isNull())
-			alarmListObject.contactGroups = value["ContactGroups"].asString();
-		if(!value["Webhook"].isNull())
-			alarmListObject.webhook = value["Webhook"].asString();
+		if(!valueAlarmListAlarm["Id"].isNull())
+			alarmListObject.id = valueAlarmListAlarm["Id"].asString();
+		if(!valueAlarmListAlarm["Name"].isNull())
+			alarmListObject.name = valueAlarmListAlarm["Name"].asString();
+		if(!valueAlarmListAlarm["Namespace"].isNull())
+			alarmListObject._namespace = valueAlarmListAlarm["Namespace"].asString();
+		if(!valueAlarmListAlarm["MetricName"].isNull())
+			alarmListObject.metricName = valueAlarmListAlarm["MetricName"].asString();
+		if(!valueAlarmListAlarm["Dimensions"].isNull())
+			alarmListObject.dimensions = valueAlarmListAlarm["Dimensions"].asString();
+		if(!valueAlarmListAlarm["Period"].isNull())
+			alarmListObject.period = std::stoi(valueAlarmListAlarm["Period"].asString());
+		if(!valueAlarmListAlarm["Statistics"].isNull())
+			alarmListObject.statistics = valueAlarmListAlarm["Statistics"].asString();
+		if(!valueAlarmListAlarm["ComparisonOperator"].isNull())
+			alarmListObject.comparisonOperator = valueAlarmListAlarm["ComparisonOperator"].asString();
+		if(!valueAlarmListAlarm["Threshold"].isNull())
+			alarmListObject.threshold = valueAlarmListAlarm["Threshold"].asString();
+		if(!valueAlarmListAlarm["EvaluationCount"].isNull())
+			alarmListObject.evaluationCount = std::stoi(valueAlarmListAlarm["EvaluationCount"].asString());
+		if(!valueAlarmListAlarm["StartTime"].isNull())
+			alarmListObject.startTime = std::stoi(valueAlarmListAlarm["StartTime"].asString());
+		if(!valueAlarmListAlarm["EndTime"].isNull())
+			alarmListObject.endTime = std::stoi(valueAlarmListAlarm["EndTime"].asString());
+		if(!valueAlarmListAlarm["SilenceTime"].isNull())
+			alarmListObject.silenceTime = std::stoi(valueAlarmListAlarm["SilenceTime"].asString());
+		if(!valueAlarmListAlarm["NotifyType"].isNull())
+			alarmListObject.notifyType = std::stoi(valueAlarmListAlarm["NotifyType"].asString());
+		if(!valueAlarmListAlarm["Enable"].isNull())
+			alarmListObject.enable = valueAlarmListAlarm["Enable"].asString() == "true";
+		if(!valueAlarmListAlarm["State"].isNull())
+			alarmListObject.state = valueAlarmListAlarm["State"].asString();
+		if(!valueAlarmListAlarm["ContactGroups"].isNull())
+			alarmListObject.contactGroups = valueAlarmListAlarm["ContactGroups"].asString();
+		if(!valueAlarmListAlarm["Webhook"].isNull())
+			alarmListObject.webhook = valueAlarmListAlarm["Webhook"].asString();
 		alarmList_.push_back(alarmListObject);
 	}
 	if(!value["Success"].isNull())

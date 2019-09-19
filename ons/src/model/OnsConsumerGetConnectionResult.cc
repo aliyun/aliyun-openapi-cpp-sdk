@@ -40,18 +40,18 @@ void OnsConsumerGetConnectionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allConnectionList = value["ConnectionList"]["ConnectionDo"];
-	for (auto value : allConnectionList)
+	auto allConnectionListNode = dataNode["ConnectionList"]["ConnectionDo"];
+	for (auto dataNodeConnectionListConnectionDo : allConnectionListNode)
 	{
 		Data::ConnectionDo connectionDoObject;
-		if(!value["ClientId"].isNull())
-			connectionDoObject.clientId = value["ClientId"].asString();
-		if(!value["ClientAddr"].isNull())
-			connectionDoObject.clientAddr = value["ClientAddr"].asString();
-		if(!value["Language"].isNull())
-			connectionDoObject.language = value["Language"].asString();
-		if(!value["Version"].isNull())
-			connectionDoObject.version = value["Version"].asString();
+		if(!dataNodeConnectionListConnectionDo["ClientId"].isNull())
+			connectionDoObject.clientId = dataNodeConnectionListConnectionDo["ClientId"].asString();
+		if(!dataNodeConnectionListConnectionDo["ClientAddr"].isNull())
+			connectionDoObject.clientAddr = dataNodeConnectionListConnectionDo["ClientAddr"].asString();
+		if(!dataNodeConnectionListConnectionDo["Language"].isNull())
+			connectionDoObject.language = dataNodeConnectionListConnectionDo["Language"].asString();
+		if(!dataNodeConnectionListConnectionDo["Version"].isNull())
+			connectionDoObject.version = dataNodeConnectionListConnectionDo["Version"].asString();
 		data_.connectionList.push_back(connectionDoObject);
 	}
 	if(!value["HelpUrl"].isNull())

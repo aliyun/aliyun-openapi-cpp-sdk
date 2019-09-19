@@ -39,16 +39,16 @@ void DescribeRiskWhiteListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allWhiteLists = value["WhiteLists"]["WhiteList"];
-	for (auto value : allWhiteLists)
+	auto allWhiteListsNode = value["WhiteLists"]["WhiteList"];
+	for (auto valueWhiteListsWhiteList : allWhiteListsNode)
 	{
 		WhiteList whiteListsObject;
-		if(!value["riskId"].isNull())
-			whiteListsObject.riskId = std::stol(value["riskId"].asString());
-		if(!value["riskName"].isNull())
-			whiteListsObject.riskName = value["riskName"].asString();
-		if(!value["reason"].isNull())
-			whiteListsObject.reason = value["reason"].asString();
+		if(!valueWhiteListsWhiteList["riskId"].isNull())
+			whiteListsObject.riskId = std::stol(valueWhiteListsWhiteList["riskId"].asString());
+		if(!valueWhiteListsWhiteList["riskName"].isNull())
+			whiteListsObject.riskName = valueWhiteListsWhiteList["riskName"].asString();
+		if(!valueWhiteListsWhiteList["reason"].isNull())
+			whiteListsObject.reason = valueWhiteListsWhiteList["reason"].asString();
 		whiteLists_.push_back(whiteListsObject);
 	}
 	if(!value["Count"].isNull())

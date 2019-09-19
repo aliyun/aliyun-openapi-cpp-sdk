@@ -39,22 +39,22 @@ void DescribeLiveSnapshotDetectPornConfigResult::parse(const std::string &payloa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLiveSnapshotDetectPornConfigList = value["LiveSnapshotDetectPornConfigList"]["LiveSnapshotDetectPornConfig"];
-	for (auto value : allLiveSnapshotDetectPornConfigList)
+	auto allLiveSnapshotDetectPornConfigListNode = value["LiveSnapshotDetectPornConfigList"]["LiveSnapshotDetectPornConfig"];
+	for (auto valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig : allLiveSnapshotDetectPornConfigListNode)
 	{
 		LiveSnapshotDetectPornConfig liveSnapshotDetectPornConfigListObject;
-		if(!value["DomainName"].isNull())
-			liveSnapshotDetectPornConfigListObject.domainName = value["DomainName"].asString();
-		if(!value["AppName"].isNull())
-			liveSnapshotDetectPornConfigListObject.appName = value["AppName"].asString();
-		if(!value["OssEndpoint"].isNull())
-			liveSnapshotDetectPornConfigListObject.ossEndpoint = value["OssEndpoint"].asString();
-		if(!value["OssBucket"].isNull())
-			liveSnapshotDetectPornConfigListObject.ossBucket = value["OssBucket"].asString();
-		if(!value["OssObject"].isNull())
-			liveSnapshotDetectPornConfigListObject.ossObject = value["OssObject"].asString();
-		if(!value["Interval"].isNull())
-			liveSnapshotDetectPornConfigListObject.interval = std::stoi(value["Interval"].asString());
+		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["DomainName"].isNull())
+			liveSnapshotDetectPornConfigListObject.domainName = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["DomainName"].asString();
+		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["AppName"].isNull())
+			liveSnapshotDetectPornConfigListObject.appName = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["AppName"].asString();
+		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssEndpoint"].isNull())
+			liveSnapshotDetectPornConfigListObject.ossEndpoint = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssEndpoint"].asString();
+		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssBucket"].isNull())
+			liveSnapshotDetectPornConfigListObject.ossBucket = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssBucket"].asString();
+		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssObject"].isNull())
+			liveSnapshotDetectPornConfigListObject.ossObject = valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["OssObject"].asString();
+		if(!valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["Interval"].isNull())
+			liveSnapshotDetectPornConfigListObject.interval = std::stoi(valueLiveSnapshotDetectPornConfigListLiveSnapshotDetectPornConfig["Interval"].asString());
 		auto allScenes = value["Scenes"]["scene"];
 		for (auto value : allScenes)
 			liveSnapshotDetectPornConfigListObject.scenes.push_back(value.asString());

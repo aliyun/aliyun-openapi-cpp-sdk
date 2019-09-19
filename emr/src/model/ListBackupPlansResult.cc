@@ -39,20 +39,20 @@ void ListBackupPlansResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Item"];
+	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			itemsObject.description = value["Description"].asString();
-		if(!value["ClusterId"].isNull())
-			itemsObject.clusterId = value["ClusterId"].asString();
-		if(!value["RootPath"].isNull())
-			itemsObject.rootPath = value["RootPath"].asString();
+		if(!valueItemsItem["Id"].isNull())
+			itemsObject.id = valueItemsItem["Id"].asString();
+		if(!valueItemsItem["Name"].isNull())
+			itemsObject.name = valueItemsItem["Name"].asString();
+		if(!valueItemsItem["Description"].isNull())
+			itemsObject.description = valueItemsItem["Description"].asString();
+		if(!valueItemsItem["ClusterId"].isNull())
+			itemsObject.clusterId = valueItemsItem["ClusterId"].asString();
+		if(!valueItemsItem["RootPath"].isNull())
+			itemsObject.rootPath = valueItemsItem["RootPath"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -39,16 +39,16 @@ void CheckResourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResources = value["Resources"]["Resource"];
-	for (auto value : allResources)
+	auto allResourcesNode = value["Resources"]["Resource"];
+	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!value["DBInstanceAvailable"].isNull())
-			resourcesObject.dBInstanceAvailable = value["DBInstanceAvailable"].asString();
-		if(!value["Engine"].isNull())
-			resourcesObject.engine = value["Engine"].asString();
-		if(!value["EngineVersion"].isNull())
-			resourcesObject.engineVersion = value["EngineVersion"].asString();
+		if(!valueResourcesResource["DBInstanceAvailable"].isNull())
+			resourcesObject.dBInstanceAvailable = valueResourcesResource["DBInstanceAvailable"].asString();
+		if(!valueResourcesResource["Engine"].isNull())
+			resourcesObject.engine = valueResourcesResource["Engine"].asString();
+		if(!valueResourcesResource["EngineVersion"].isNull())
+			resourcesObject.engineVersion = valueResourcesResource["EngineVersion"].asString();
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["SpecifyCount"].isNull())

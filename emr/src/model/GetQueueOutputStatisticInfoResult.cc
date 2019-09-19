@@ -39,14 +39,14 @@ void GetQueueOutputStatisticInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQueueOutputList = value["QueueOutputList"]["ClusterStatQueueOutput"];
-	for (auto value : allQueueOutputList)
+	auto allQueueOutputListNode = value["QueueOutputList"]["ClusterStatQueueOutput"];
+	for (auto valueQueueOutputListClusterStatQueueOutput : allQueueOutputListNode)
 	{
 		ClusterStatQueueOutput queueOutputListObject;
-		if(!value["Queue"].isNull())
-			queueOutputListObject.queue = value["Queue"].asString();
-		if(!value["BytesOutput"].isNull())
-			queueOutputListObject.bytesOutput = std::stol(value["BytesOutput"].asString());
+		if(!valueQueueOutputListClusterStatQueueOutput["Queue"].isNull())
+			queueOutputListObject.queue = valueQueueOutputListClusterStatQueueOutput["Queue"].asString();
+		if(!valueQueueOutputListClusterStatQueueOutput["BytesOutput"].isNull())
+			queueOutputListObject.bytesOutput = std::stol(valueQueueOutputListClusterStatQueueOutput["BytesOutput"].asString());
 		queueOutputList_.push_back(queueOutputListObject);
 	}
 

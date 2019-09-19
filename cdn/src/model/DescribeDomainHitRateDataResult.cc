@@ -39,14 +39,14 @@ void DescribeDomainHitRateDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHitRateInterval = value["HitRateInterval"]["DataModule"];
-	for (auto value : allHitRateInterval)
+	auto allHitRateIntervalNode = value["HitRateInterval"]["DataModule"];
+	for (auto valueHitRateIntervalDataModule : allHitRateIntervalNode)
 	{
 		DataModule hitRateIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			hitRateIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			hitRateIntervalObject.value = value["Value"].asString();
+		if(!valueHitRateIntervalDataModule["TimeStamp"].isNull())
+			hitRateIntervalObject.timeStamp = valueHitRateIntervalDataModule["TimeStamp"].asString();
+		if(!valueHitRateIntervalDataModule["Value"].isNull())
+			hitRateIntervalObject.value = valueHitRateIntervalDataModule["Value"].asString();
 		hitRateInterval_.push_back(hitRateIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

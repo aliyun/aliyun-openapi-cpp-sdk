@@ -39,40 +39,40 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEipAddresses = value["EipAddresses"]["EipAddress"];
-	for (auto value : allEipAddresses)
+	auto allEipAddressesNode = value["EipAddresses"]["EipAddress"];
+	for (auto valueEipAddressesEipAddress : allEipAddressesNode)
 	{
 		EipAddress eipAddressesObject;
-		if(!value["RegionId"].isNull())
-			eipAddressesObject.regionId = value["RegionId"].asString();
-		if(!value["IpAddress"].isNull())
-			eipAddressesObject.ipAddress = value["IpAddress"].asString();
-		if(!value["AllocationId"].isNull())
-			eipAddressesObject.allocationId = value["AllocationId"].asString();
-		if(!value["Status"].isNull())
-			eipAddressesObject.status = value["Status"].asString();
-		if(!value["InstanceId"].isNull())
-			eipAddressesObject.instanceId = value["InstanceId"].asString();
-		if(!value["Bandwidth"].isNull())
-			eipAddressesObject.bandwidth = value["Bandwidth"].asString();
-		if(!value["EipBandwidth"].isNull())
-			eipAddressesObject.eipBandwidth = value["EipBandwidth"].asString();
-		if(!value["InternetChargeType"].isNull())
-			eipAddressesObject.internetChargeType = value["InternetChargeType"].asString();
-		if(!value["AllocationTime"].isNull())
-			eipAddressesObject.allocationTime = value["AllocationTime"].asString();
-		if(!value["InstanceType"].isNull())
-			eipAddressesObject.instanceType = value["InstanceType"].asString();
-		if(!value["ChargeType"].isNull())
-			eipAddressesObject.chargeType = value["ChargeType"].asString();
-		if(!value["ExpiredTime"].isNull())
-			eipAddressesObject.expiredTime = value["ExpiredTime"].asString();
-		auto allOperationLocks = value["OperationLocks"]["LockReason"];
-		for (auto value : allOperationLocks)
+		if(!valueEipAddressesEipAddress["RegionId"].isNull())
+			eipAddressesObject.regionId = valueEipAddressesEipAddress["RegionId"].asString();
+		if(!valueEipAddressesEipAddress["IpAddress"].isNull())
+			eipAddressesObject.ipAddress = valueEipAddressesEipAddress["IpAddress"].asString();
+		if(!valueEipAddressesEipAddress["AllocationId"].isNull())
+			eipAddressesObject.allocationId = valueEipAddressesEipAddress["AllocationId"].asString();
+		if(!valueEipAddressesEipAddress["Status"].isNull())
+			eipAddressesObject.status = valueEipAddressesEipAddress["Status"].asString();
+		if(!valueEipAddressesEipAddress["InstanceId"].isNull())
+			eipAddressesObject.instanceId = valueEipAddressesEipAddress["InstanceId"].asString();
+		if(!valueEipAddressesEipAddress["Bandwidth"].isNull())
+			eipAddressesObject.bandwidth = valueEipAddressesEipAddress["Bandwidth"].asString();
+		if(!valueEipAddressesEipAddress["EipBandwidth"].isNull())
+			eipAddressesObject.eipBandwidth = valueEipAddressesEipAddress["EipBandwidth"].asString();
+		if(!valueEipAddressesEipAddress["InternetChargeType"].isNull())
+			eipAddressesObject.internetChargeType = valueEipAddressesEipAddress["InternetChargeType"].asString();
+		if(!valueEipAddressesEipAddress["AllocationTime"].isNull())
+			eipAddressesObject.allocationTime = valueEipAddressesEipAddress["AllocationTime"].asString();
+		if(!valueEipAddressesEipAddress["InstanceType"].isNull())
+			eipAddressesObject.instanceType = valueEipAddressesEipAddress["InstanceType"].asString();
+		if(!valueEipAddressesEipAddress["ChargeType"].isNull())
+			eipAddressesObject.chargeType = valueEipAddressesEipAddress["ChargeType"].asString();
+		if(!valueEipAddressesEipAddress["ExpiredTime"].isNull())
+			eipAddressesObject.expiredTime = valueEipAddressesEipAddress["ExpiredTime"].asString();
+		auto allOperationLocksNode = allEipAddressesNode["OperationLocks"]["LockReason"];
+		for (auto allEipAddressesNodeOperationLocksLockReason : allOperationLocksNode)
 		{
 			EipAddress::LockReason operationLocksObject;
-			if(!value["LockReason"].isNull())
-				operationLocksObject.lockReason = value["LockReason"].asString();
+			if(!allEipAddressesNodeOperationLocksLockReason["LockReason"].isNull())
+				operationLocksObject.lockReason = allEipAddressesNodeOperationLocksLockReason["LockReason"].asString();
 			eipAddressesObject.operationLocks.push_back(operationLocksObject);
 		}
 		eipAddresses_.push_back(eipAddressesObject);

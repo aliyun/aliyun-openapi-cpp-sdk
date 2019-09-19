@@ -39,24 +39,24 @@ void DescribePredictTemplatesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTemplates = value["Templates"]["Template"];
-	for (auto value : allTemplates)
+	auto allTemplatesNode = value["Templates"]["Template"];
+	for (auto valueTemplatesTemplate : allTemplatesNode)
 	{
 		_Template templatesObject;
-		if(!value["TemplateId"].isNull())
-			templatesObject.templateId = value["TemplateId"].asString();
-		if(!value["Name"].isNull())
-			templatesObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			templatesObject.description = value["Description"].asString();
-		if(!value["Interval"].isNull())
-			templatesObject.interval = std::stoi(value["Interval"].asString());
-		if(!value["Output"].isNull())
-			templatesObject.output = value["Output"].asString();
-		if(!value["ModelIds"].isNull())
-			templatesObject.modelIds = value["ModelIds"].asString();
-		if(!value["CreationTime"].isNull())
-			templatesObject.creationTime = value["CreationTime"].asString();
+		if(!valueTemplatesTemplate["TemplateId"].isNull())
+			templatesObject.templateId = valueTemplatesTemplate["TemplateId"].asString();
+		if(!valueTemplatesTemplate["Name"].isNull())
+			templatesObject.name = valueTemplatesTemplate["Name"].asString();
+		if(!valueTemplatesTemplate["Description"].isNull())
+			templatesObject.description = valueTemplatesTemplate["Description"].asString();
+		if(!valueTemplatesTemplate["Interval"].isNull())
+			templatesObject.interval = std::stoi(valueTemplatesTemplate["Interval"].asString());
+		if(!valueTemplatesTemplate["Output"].isNull())
+			templatesObject.output = valueTemplatesTemplate["Output"].asString();
+		if(!valueTemplatesTemplate["ModelIds"].isNull())
+			templatesObject.modelIds = valueTemplatesTemplate["ModelIds"].asString();
+		if(!valueTemplatesTemplate["CreationTime"].isNull())
+			templatesObject.creationTime = valueTemplatesTemplate["CreationTime"].asString();
 		templates_.push_back(templatesObject);
 	}
 	if(!value["CurrentPage"].isNull())

@@ -56,14 +56,14 @@ void ModifyTrainDataRegionTagAttributeResult::parse(const std::string &payload)
 		trainData_.status = trainDataNode["Status"].asString();
 	if(!trainDataNode["TagStatus"].isNull())
 		trainData_.tagStatus = trainDataNode["TagStatus"].asString();
-	auto allTagItems = value["TagItems"]["TagItem"];
-	for (auto value : allTagItems)
+	auto allTagItemsNode = trainDataNode["TagItems"]["TagItem"];
+	for (auto trainDataNodeTagItemsTagItem : allTagItemsNode)
 	{
 		TrainData::TagItem tagItemObject;
-		if(!value["TagId"].isNull())
-			tagItemObject.tagId = value["TagId"].asString();
-		if(!value["RegionType"].isNull())
-			tagItemObject.regionType = value["RegionType"].asString();
+		if(!trainDataNodeTagItemsTagItem["TagId"].isNull())
+			tagItemObject.tagId = trainDataNodeTagItemsTagItem["TagId"].asString();
+		if(!trainDataNodeTagItemsTagItem["RegionType"].isNull())
+			tagItemObject.regionType = trainDataNodeTagItemsTagItem["RegionType"].asString();
 		auto regionNode = value["Region"];
 		if(!regionNode["Left"].isNull())
 			tagItemObject.region.left = regionNode["Left"].asString();

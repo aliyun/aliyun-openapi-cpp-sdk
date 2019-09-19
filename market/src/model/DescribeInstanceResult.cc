@@ -39,46 +39,46 @@ void DescribeInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allModules = value["Modules"]["Module"];
-	for (auto value : allModules)
+	auto allModulesNode = value["Modules"]["Module"];
+	for (auto valueModulesModule : allModulesNode)
 	{
 		Module modulesObject;
-		if(!value["Id"].isNull())
-			modulesObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			modulesObject.name = value["Name"].asString();
-		if(!value["Code"].isNull())
-			modulesObject.code = value["Code"].asString();
-		auto allProperties = value["Properties"]["Property"];
-		for (auto value : allProperties)
+		if(!valueModulesModule["Id"].isNull())
+			modulesObject.id = valueModulesModule["Id"].asString();
+		if(!valueModulesModule["Name"].isNull())
+			modulesObject.name = valueModulesModule["Name"].asString();
+		if(!valueModulesModule["Code"].isNull())
+			modulesObject.code = valueModulesModule["Code"].asString();
+		auto allPropertiesNode = allModulesNode["Properties"]["Property"];
+		for (auto allModulesNodePropertiesProperty : allPropertiesNode)
 		{
 			Module::Property propertiesObject;
-			if(!value["Name"].isNull())
-				propertiesObject.name = value["Name"].asString();
-			if(!value["Key"].isNull())
-				propertiesObject.key = value["Key"].asString();
-			if(!value["ShowType"].isNull())
-				propertiesObject.showType = value["ShowType"].asString();
-			if(!value["DisplayUnit"].isNull())
-				propertiesObject.displayUnit = value["DisplayUnit"].asString();
-			auto allPropertyValues = value["PropertyValues"]["PropertyValue"];
-			for (auto value : allPropertyValues)
+			if(!allModulesNodePropertiesProperty["Name"].isNull())
+				propertiesObject.name = allModulesNodePropertiesProperty["Name"].asString();
+			if(!allModulesNodePropertiesProperty["Key"].isNull())
+				propertiesObject.key = allModulesNodePropertiesProperty["Key"].asString();
+			if(!allModulesNodePropertiesProperty["ShowType"].isNull())
+				propertiesObject.showType = allModulesNodePropertiesProperty["ShowType"].asString();
+			if(!allModulesNodePropertiesProperty["DisplayUnit"].isNull())
+				propertiesObject.displayUnit = allModulesNodePropertiesProperty["DisplayUnit"].asString();
+			auto allPropertyValuesNode = allPropertiesNode["PropertyValues"]["PropertyValue"];
+			for (auto allPropertiesNodePropertyValuesPropertyValue : allPropertyValuesNode)
 			{
 				Module::Property::PropertyValue propertyValuesObject;
-				if(!value["Value"].isNull())
-					propertyValuesObject.value = value["Value"].asString();
-				if(!value["DisplayName"].isNull())
-					propertyValuesObject.displayName = value["DisplayName"].asString();
-				if(!value["Type"].isNull())
-					propertyValuesObject.type = value["Type"].asString();
-				if(!value["Min"].isNull())
-					propertyValuesObject.min = value["Min"].asString();
-				if(!value["Max"].isNull())
-					propertyValuesObject.max = value["Max"].asString();
-				if(!value["Step"].isNull())
-					propertyValuesObject.step = value["Step"].asString();
-				if(!value["Remark"].isNull())
-					propertyValuesObject.remark = value["Remark"].asString();
+				if(!allPropertiesNodePropertyValuesPropertyValue["Value"].isNull())
+					propertyValuesObject.value = allPropertiesNodePropertyValuesPropertyValue["Value"].asString();
+				if(!allPropertiesNodePropertyValuesPropertyValue["DisplayName"].isNull())
+					propertyValuesObject.displayName = allPropertiesNodePropertyValuesPropertyValue["DisplayName"].asString();
+				if(!allPropertiesNodePropertyValuesPropertyValue["Type"].isNull())
+					propertyValuesObject.type = allPropertiesNodePropertyValuesPropertyValue["Type"].asString();
+				if(!allPropertiesNodePropertyValuesPropertyValue["Min"].isNull())
+					propertyValuesObject.min = allPropertiesNodePropertyValuesPropertyValue["Min"].asString();
+				if(!allPropertiesNodePropertyValuesPropertyValue["Max"].isNull())
+					propertyValuesObject.max = allPropertiesNodePropertyValuesPropertyValue["Max"].asString();
+				if(!allPropertiesNodePropertyValuesPropertyValue["Step"].isNull())
+					propertyValuesObject.step = allPropertiesNodePropertyValuesPropertyValue["Step"].asString();
+				if(!allPropertiesNodePropertyValuesPropertyValue["Remark"].isNull())
+					propertyValuesObject.remark = allPropertiesNodePropertyValuesPropertyValue["Remark"].asString();
 				propertiesObject.propertyValues.push_back(propertyValuesObject);
 			}
 			modulesObject.properties.push_back(propertiesObject);

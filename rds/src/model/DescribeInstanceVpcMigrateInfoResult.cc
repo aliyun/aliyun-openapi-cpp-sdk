@@ -39,24 +39,24 @@ void DescribeInstanceVpcMigrateInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDBInstanceMigrateInfos = value["DBInstanceMigrateInfos"]["DBInstanceMigrateInfo"];
-	for (auto value : allDBInstanceMigrateInfos)
+	auto allDBInstanceMigrateInfosNode = value["DBInstanceMigrateInfos"]["DBInstanceMigrateInfo"];
+	for (auto valueDBInstanceMigrateInfosDBInstanceMigrateInfo : allDBInstanceMigrateInfosNode)
 	{
 		DBInstanceMigrateInfo dBInstanceMigrateInfosObject;
-		if(!value["DBInstanceId"].isNull())
-			dBInstanceMigrateInfosObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["TargetRegionId"].isNull())
-			dBInstanceMigrateInfosObject.targetRegionId = value["TargetRegionId"].asString();
-		if(!value["TargetZoneId"].isNull())
-			dBInstanceMigrateInfosObject.targetZoneId = value["TargetZoneId"].asString();
-		if(!value["TargetVPCId"].isNull())
-			dBInstanceMigrateInfosObject.targetVPCId = value["TargetVPCId"].asString();
-		if(!value["TargetVSwitchId"].isNull())
-			dBInstanceMigrateInfosObject.targetVSwitchId = value["TargetVSwitchId"].asString();
-		if(!value["TargetIPAddress"].isNull())
-			dBInstanceMigrateInfosObject.targetIPAddress = value["TargetIPAddress"].asString();
-		if(!value["TargetVpcInstanceId"].isNull())
-			dBInstanceMigrateInfosObject.targetVpcInstanceId = value["TargetVpcInstanceId"].asString();
+		if(!valueDBInstanceMigrateInfosDBInstanceMigrateInfo["DBInstanceId"].isNull())
+			dBInstanceMigrateInfosObject.dBInstanceId = valueDBInstanceMigrateInfosDBInstanceMigrateInfo["DBInstanceId"].asString();
+		if(!valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetRegionId"].isNull())
+			dBInstanceMigrateInfosObject.targetRegionId = valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetRegionId"].asString();
+		if(!valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetZoneId"].isNull())
+			dBInstanceMigrateInfosObject.targetZoneId = valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetZoneId"].asString();
+		if(!valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetVPCId"].isNull())
+			dBInstanceMigrateInfosObject.targetVPCId = valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetVPCId"].asString();
+		if(!valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetVSwitchId"].isNull())
+			dBInstanceMigrateInfosObject.targetVSwitchId = valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetVSwitchId"].asString();
+		if(!valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetIPAddress"].isNull())
+			dBInstanceMigrateInfosObject.targetIPAddress = valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetIPAddress"].asString();
+		if(!valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetVpcInstanceId"].isNull())
+			dBInstanceMigrateInfosObject.targetVpcInstanceId = valueDBInstanceMigrateInfosDBInstanceMigrateInfo["TargetVpcInstanceId"].asString();
 		dBInstanceMigrateInfos_.push_back(dBInstanceMigrateInfosObject);
 	}
 

@@ -39,22 +39,22 @@ void DescribeSiteMonitorISPAreaCityResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIspCityList = value["IspCityList"]["IspCity"];
-	for (auto value : allIspCityList)
+	auto allIspCityListNode = value["IspCityList"]["IspCity"];
+	for (auto valueIspCityListIspCity : allIspCityListNode)
 	{
 		IspCity ispCityListObject;
-		if(!value["City"].isNull())
-			ispCityListObject.city = value["City"].asString();
-		if(!value["Isp"].isNull())
-			ispCityListObject.isp = value["Isp"].asString();
-		if(!value["CityName"].isNull())
-			ispCityListObject.cityName = value["CityName"].asString();
-		if(!value["IspName"].isNull())
-			ispCityListObject.ispName = value["IspName"].asString();
-		if(!value["Country"].isNull())
-			ispCityListObject.country = value["Country"].asString();
-		if(!value["Region"].isNull())
-			ispCityListObject.region = value["Region"].asString();
+		if(!valueIspCityListIspCity["City"].isNull())
+			ispCityListObject.city = valueIspCityListIspCity["City"].asString();
+		if(!valueIspCityListIspCity["Isp"].isNull())
+			ispCityListObject.isp = valueIspCityListIspCity["Isp"].asString();
+		if(!valueIspCityListIspCity["CityName"].isNull())
+			ispCityListObject.cityName = valueIspCityListIspCity["CityName"].asString();
+		if(!valueIspCityListIspCity["IspName"].isNull())
+			ispCityListObject.ispName = valueIspCityListIspCity["IspName"].asString();
+		if(!valueIspCityListIspCity["Country"].isNull())
+			ispCityListObject.country = valueIspCityListIspCity["Country"].asString();
+		if(!valueIspCityListIspCity["Region"].isNull())
+			ispCityListObject.region = valueIspCityListIspCity["Region"].asString();
 		ispCityList_.push_back(ispCityListObject);
 	}
 	if(!value["Code"].isNull())

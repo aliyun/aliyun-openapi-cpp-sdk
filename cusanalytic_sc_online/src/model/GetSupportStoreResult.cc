@@ -39,26 +39,26 @@ void GetSupportStoreResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStorePopDTOs = value["StorePopDTOs"]["StorePopDTO"];
-	for (auto value : allStorePopDTOs)
+	auto allStorePopDTOsNode = value["StorePopDTOs"]["StorePopDTO"];
+	for (auto valueStorePopDTOsStorePopDTO : allStorePopDTOsNode)
 	{
 		StorePopDTO storePopDTOsObject;
-		if(!value["StoreId"].isNull())
-			storePopDTOsObject.storeId = std::stol(value["StoreId"].asString());
-		if(!value["Name"].isNull())
-			storePopDTOsObject.name = value["Name"].asString();
-		if(!value["RegionName"].isNull())
-			storePopDTOsObject.regionName = value["RegionName"].asString();
-		if(!value["OpeningStartTime"].isNull())
-			storePopDTOsObject.openingStartTime = value["OpeningStartTime"].asString();
-		if(!value["OpeningEndTime"].isNull())
-			storePopDTOsObject.openingEndTime = value["OpeningEndTime"].asString();
-		if(!value["RegionId"].isNull())
-			storePopDTOsObject.regionId = std::stol(value["RegionId"].asString());
-		if(!value["StoreType"].isNull())
-			storePopDTOsObject.storeType = value["StoreType"].asString();
-		if(!value["Address"].isNull())
-			storePopDTOsObject.address = value["Address"].asString();
+		if(!valueStorePopDTOsStorePopDTO["StoreId"].isNull())
+			storePopDTOsObject.storeId = std::stol(valueStorePopDTOsStorePopDTO["StoreId"].asString());
+		if(!valueStorePopDTOsStorePopDTO["Name"].isNull())
+			storePopDTOsObject.name = valueStorePopDTOsStorePopDTO["Name"].asString();
+		if(!valueStorePopDTOsStorePopDTO["RegionName"].isNull())
+			storePopDTOsObject.regionName = valueStorePopDTOsStorePopDTO["RegionName"].asString();
+		if(!valueStorePopDTOsStorePopDTO["OpeningStartTime"].isNull())
+			storePopDTOsObject.openingStartTime = valueStorePopDTOsStorePopDTO["OpeningStartTime"].asString();
+		if(!valueStorePopDTOsStorePopDTO["OpeningEndTime"].isNull())
+			storePopDTOsObject.openingEndTime = valueStorePopDTOsStorePopDTO["OpeningEndTime"].asString();
+		if(!valueStorePopDTOsStorePopDTO["RegionId"].isNull())
+			storePopDTOsObject.regionId = std::stol(valueStorePopDTOsStorePopDTO["RegionId"].asString());
+		if(!valueStorePopDTOsStorePopDTO["StoreType"].isNull())
+			storePopDTOsObject.storeType = valueStorePopDTOsStorePopDTO["StoreType"].asString();
+		if(!valueStorePopDTOsStorePopDTO["Address"].isNull())
+			storePopDTOsObject.address = valueStorePopDTOsStorePopDTO["Address"].asString();
 		storePopDTOs_.push_back(storePopDTOsObject);
 	}
 

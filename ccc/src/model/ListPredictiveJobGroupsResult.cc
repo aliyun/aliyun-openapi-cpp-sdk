@@ -46,32 +46,32 @@ void ListPredictiveJobGroupsResult::parse(const std::string &payload)
 		jobGroups_.pageNumber = std::stoi(jobGroupsNode["PageNumber"].asString());
 	if(!jobGroupsNode["PageSize"].isNull())
 		jobGroups_.pageSize = std::stoi(jobGroupsNode["PageSize"].asString());
-	auto allList = value["List"]["JobGroup"];
-	for (auto value : allList)
+	auto allListNode = jobGroupsNode["List"]["JobGroup"];
+	for (auto jobGroupsNodeListJobGroup : allListNode)
 	{
 		JobGroups::JobGroup jobGroupObject;
-		if(!value["JobGroupId"].isNull())
-			jobGroupObject.jobGroupId = value["JobGroupId"].asString();
-		if(!value["InstanceId"].isNull())
-			jobGroupObject.instanceId = value["InstanceId"].asString();
-		if(!value["SkillGroupId"].isNull())
-			jobGroupObject.skillGroupId = value["SkillGroupId"].asString();
-		if(!value["SkillGroupName"].isNull())
-			jobGroupObject.skillGroupName = value["SkillGroupName"].asString();
-		if(!value["TaskType"].isNull())
-			jobGroupObject.taskType = value["TaskType"].asString();
-		if(!value["OccupancyRate"].isNull())
-			jobGroupObject.occupancyRate = value["OccupancyRate"].asString();
-		if(!value["StartTime"].isNull())
-			jobGroupObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			jobGroupObject.endTime = value["EndTime"].asString();
-		if(!value["Name"].isNull())
-			jobGroupObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			jobGroupObject.description = value["Description"].asString();
-		if(!value["CreationTime"].isNull())
-			jobGroupObject.creationTime = std::stol(value["CreationTime"].asString());
+		if(!jobGroupsNodeListJobGroup["JobGroupId"].isNull())
+			jobGroupObject.jobGroupId = jobGroupsNodeListJobGroup["JobGroupId"].asString();
+		if(!jobGroupsNodeListJobGroup["InstanceId"].isNull())
+			jobGroupObject.instanceId = jobGroupsNodeListJobGroup["InstanceId"].asString();
+		if(!jobGroupsNodeListJobGroup["SkillGroupId"].isNull())
+			jobGroupObject.skillGroupId = jobGroupsNodeListJobGroup["SkillGroupId"].asString();
+		if(!jobGroupsNodeListJobGroup["SkillGroupName"].isNull())
+			jobGroupObject.skillGroupName = jobGroupsNodeListJobGroup["SkillGroupName"].asString();
+		if(!jobGroupsNodeListJobGroup["TaskType"].isNull())
+			jobGroupObject.taskType = jobGroupsNodeListJobGroup["TaskType"].asString();
+		if(!jobGroupsNodeListJobGroup["OccupancyRate"].isNull())
+			jobGroupObject.occupancyRate = jobGroupsNodeListJobGroup["OccupancyRate"].asString();
+		if(!jobGroupsNodeListJobGroup["StartTime"].isNull())
+			jobGroupObject.startTime = jobGroupsNodeListJobGroup["StartTime"].asString();
+		if(!jobGroupsNodeListJobGroup["EndTime"].isNull())
+			jobGroupObject.endTime = jobGroupsNodeListJobGroup["EndTime"].asString();
+		if(!jobGroupsNodeListJobGroup["Name"].isNull())
+			jobGroupObject.name = jobGroupsNodeListJobGroup["Name"].asString();
+		if(!jobGroupsNodeListJobGroup["Description"].isNull())
+			jobGroupObject.description = jobGroupsNodeListJobGroup["Description"].asString();
+		if(!jobGroupsNodeListJobGroup["CreationTime"].isNull())
+			jobGroupObject.creationTime = std::stol(jobGroupsNodeListJobGroup["CreationTime"].asString());
 		auto strategyNode = value["Strategy"];
 		if(!strategyNode["StrategyId"].isNull())
 			jobGroupObject.strategy.strategyId = strategyNode["StrategyId"].asString();
@@ -83,14 +83,14 @@ void ListPredictiveJobGroupsResult::parse(const std::string &payload)
 			jobGroupObject.strategy.maxAttemptsPerDay = std::stoi(strategyNode["MaxAttemptsPerDay"].asString());
 		if(!strategyNode["MinAttemptInterval"].isNull())
 			jobGroupObject.strategy.minAttemptInterval = std::stoi(strategyNode["MinAttemptInterval"].asString());
-		auto allWorkingTime = value["WorkingTime"]["TimeFrame"];
-		for (auto value : allWorkingTime)
+		auto allWorkingTimeNode = strategyNode["WorkingTime"]["TimeFrame"];
+		for (auto strategyNodeWorkingTimeTimeFrame : allWorkingTimeNode)
 		{
 			JobGroups::JobGroup::Strategy::TimeFrame timeFrameObject;
-			if(!value["BeginTime"].isNull())
-				timeFrameObject.beginTime = value["BeginTime"].asString();
-			if(!value["EndTime"].isNull())
-				timeFrameObject.endTime = value["EndTime"].asString();
+			if(!strategyNodeWorkingTimeTimeFrame["BeginTime"].isNull())
+				timeFrameObject.beginTime = strategyNodeWorkingTimeTimeFrame["BeginTime"].asString();
+			if(!strategyNodeWorkingTimeTimeFrame["EndTime"].isNull())
+				timeFrameObject.endTime = strategyNodeWorkingTimeTimeFrame["EndTime"].asString();
 			jobGroupObject.strategy.workingTime.push_back(timeFrameObject);
 		}
 		auto progressNode = value["Progress"];
@@ -106,14 +106,14 @@ void ListPredictiveJobGroupsResult::parse(const std::string &payload)
 			jobGroupObject.progress.startTime = std::stol(progressNode["StartTime"].asString());
 		if(!progressNode["Duration"].isNull())
 			jobGroupObject.progress.duration = std::stoi(progressNode["Duration"].asString());
-		auto allCategories = value["Categories"]["KeyValuePair"];
-		for (auto value : allCategories)
+		auto allCategoriesNode = progressNode["Categories"]["KeyValuePair"];
+		for (auto progressNodeCategoriesKeyValuePair : allCategoriesNode)
 		{
 			JobGroups::JobGroup::Progress::KeyValuePair keyValuePairObject;
-			if(!value["Key"].isNull())
-				keyValuePairObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				keyValuePairObject.value = value["Value"].asString();
+			if(!progressNodeCategoriesKeyValuePair["Key"].isNull())
+				keyValuePairObject.key = progressNodeCategoriesKeyValuePair["Key"].asString();
+			if(!progressNodeCategoriesKeyValuePair["Value"].isNull())
+				keyValuePairObject.value = progressNodeCategoriesKeyValuePair["Value"].asString();
 			jobGroupObject.progress.categories.push_back(keyValuePairObject);
 		}
 		jobGroups_.list.push_back(jobGroupObject);

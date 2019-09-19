@@ -39,38 +39,38 @@ void DescribeDomainsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomains = value["Domains"]["Domain"];
-	for (auto value : allDomains)
+	auto allDomainsNode = value["Domains"]["Domain"];
+	for (auto valueDomainsDomain : allDomainsNode)
 	{
 		Domain domainsObject;
-		if(!value["DomainId"].isNull())
-			domainsObject.domainId = value["DomainId"].asString();
-		if(!value["DomainName"].isNull())
-			domainsObject.domainName = value["DomainName"].asString();
-		if(!value["PunyCode"].isNull())
-			domainsObject.punyCode = value["PunyCode"].asString();
-		if(!value["AliDomain"].isNull())
-			domainsObject.aliDomain = value["AliDomain"].asString() == "true";
-		if(!value["RecordCount"].isNull())
-			domainsObject.recordCount = std::stol(value["RecordCount"].asString());
-		if(!value["RegistrantEmail"].isNull())
-			domainsObject.registrantEmail = value["RegistrantEmail"].asString();
-		if(!value["Remark"].isNull())
-			domainsObject.remark = value["Remark"].asString();
-		if(!value["GroupId"].isNull())
-			domainsObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			domainsObject.groupName = value["GroupName"].asString();
-		if(!value["InstanceId"].isNull())
-			domainsObject.instanceId = value["InstanceId"].asString();
-		if(!value["VersionCode"].isNull())
-			domainsObject.versionCode = value["VersionCode"].asString();
-		if(!value["VersionName"].isNull())
-			domainsObject.versionName = value["VersionName"].asString();
-		if(!value["InstanceEndTime"].isNull())
-			domainsObject.instanceEndTime = value["InstanceEndTime"].asString();
-		if(!value["InstanceExpired"].isNull())
-			domainsObject.instanceExpired = value["InstanceExpired"].asString() == "true";
+		if(!valueDomainsDomain["DomainId"].isNull())
+			domainsObject.domainId = valueDomainsDomain["DomainId"].asString();
+		if(!valueDomainsDomain["DomainName"].isNull())
+			domainsObject.domainName = valueDomainsDomain["DomainName"].asString();
+		if(!valueDomainsDomain["PunyCode"].isNull())
+			domainsObject.punyCode = valueDomainsDomain["PunyCode"].asString();
+		if(!valueDomainsDomain["AliDomain"].isNull())
+			domainsObject.aliDomain = valueDomainsDomain["AliDomain"].asString() == "true";
+		if(!valueDomainsDomain["RecordCount"].isNull())
+			domainsObject.recordCount = std::stol(valueDomainsDomain["RecordCount"].asString());
+		if(!valueDomainsDomain["RegistrantEmail"].isNull())
+			domainsObject.registrantEmail = valueDomainsDomain["RegistrantEmail"].asString();
+		if(!valueDomainsDomain["Remark"].isNull())
+			domainsObject.remark = valueDomainsDomain["Remark"].asString();
+		if(!valueDomainsDomain["GroupId"].isNull())
+			domainsObject.groupId = valueDomainsDomain["GroupId"].asString();
+		if(!valueDomainsDomain["GroupName"].isNull())
+			domainsObject.groupName = valueDomainsDomain["GroupName"].asString();
+		if(!valueDomainsDomain["InstanceId"].isNull())
+			domainsObject.instanceId = valueDomainsDomain["InstanceId"].asString();
+		if(!valueDomainsDomain["VersionCode"].isNull())
+			domainsObject.versionCode = valueDomainsDomain["VersionCode"].asString();
+		if(!valueDomainsDomain["VersionName"].isNull())
+			domainsObject.versionName = valueDomainsDomain["VersionName"].asString();
+		if(!valueDomainsDomain["InstanceEndTime"].isNull())
+			domainsObject.instanceEndTime = valueDomainsDomain["InstanceEndTime"].asString();
+		if(!valueDomainsDomain["InstanceExpired"].isNull())
+			domainsObject.instanceExpired = valueDomainsDomain["InstanceExpired"].asString() == "true";
 		auto allDnsServers = value["DnsServers"]["DnsServer"];
 		for (auto value : allDnsServers)
 			domainsObject.dnsServers.push_back(value.asString());

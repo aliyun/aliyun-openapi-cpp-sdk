@@ -39,20 +39,20 @@ void DescribeConfigsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConfigList = value["ConfigList"]["Config"];
-	for (auto value : allConfigList)
+	auto allConfigListNode = value["ConfigList"]["Config"];
+	for (auto valueConfigListConfig : allConfigListNode)
 	{
 		Config configListObject;
-		if(!value["Id"].isNull())
-			configListObject.id = std::stol(value["Id"].asString());
-		if(!value["Code"].isNull())
-			configListObject.code = std::stoi(value["Code"].asString());
-		if(!value["Description"].isNull())
-			configListObject.description = value["Description"].asString();
-		if(!value["Value"].isNull())
-			configListObject.value = std::stol(value["Value"].asString());
-		if(!value["DefaultValue"].isNull())
-			configListObject.defaultValue = value["DefaultValue"].asString();
+		if(!valueConfigListConfig["Id"].isNull())
+			configListObject.id = std::stol(valueConfigListConfig["Id"].asString());
+		if(!valueConfigListConfig["Code"].isNull())
+			configListObject.code = std::stoi(valueConfigListConfig["Code"].asString());
+		if(!valueConfigListConfig["Description"].isNull())
+			configListObject.description = valueConfigListConfig["Description"].asString();
+		if(!valueConfigListConfig["Value"].isNull())
+			configListObject.value = std::stol(valueConfigListConfig["Value"].asString());
+		if(!valueConfigListConfig["DefaultValue"].isNull())
+			configListObject.defaultValue = valueConfigListConfig["DefaultValue"].asString();
 		configList_.push_back(configListObject);
 	}
 

@@ -39,24 +39,24 @@ void ListTranscodeTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTranscodeTaskList = value["TranscodeTaskList"]["TranscodeTask"];
-	for (auto value : allTranscodeTaskList)
+	auto allTranscodeTaskListNode = value["TranscodeTaskList"]["TranscodeTask"];
+	for (auto valueTranscodeTaskListTranscodeTask : allTranscodeTaskListNode)
 	{
 		TranscodeTask transcodeTaskListObject;
-		if(!value["TranscodeTaskId"].isNull())
-			transcodeTaskListObject.transcodeTaskId = value["TranscodeTaskId"].asString();
-		if(!value["VideoId"].isNull())
-			transcodeTaskListObject.videoId = value["VideoId"].asString();
-		if(!value["TaskStatus"].isNull())
-			transcodeTaskListObject.taskStatus = value["TaskStatus"].asString();
-		if(!value["TranscodeTemplateGroupId"].isNull())
-			transcodeTaskListObject.transcodeTemplateGroupId = value["TranscodeTemplateGroupId"].asString();
-		if(!value["CreationTime"].isNull())
-			transcodeTaskListObject.creationTime = value["CreationTime"].asString();
-		if(!value["CompleteTime"].isNull())
-			transcodeTaskListObject.completeTime = value["CompleteTime"].asString();
-		if(!value["Trigger"].isNull())
-			transcodeTaskListObject.trigger = value["Trigger"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["TranscodeTaskId"].isNull())
+			transcodeTaskListObject.transcodeTaskId = valueTranscodeTaskListTranscodeTask["TranscodeTaskId"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["VideoId"].isNull())
+			transcodeTaskListObject.videoId = valueTranscodeTaskListTranscodeTask["VideoId"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["TaskStatus"].isNull())
+			transcodeTaskListObject.taskStatus = valueTranscodeTaskListTranscodeTask["TaskStatus"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["TranscodeTemplateGroupId"].isNull())
+			transcodeTaskListObject.transcodeTemplateGroupId = valueTranscodeTaskListTranscodeTask["TranscodeTemplateGroupId"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["CreationTime"].isNull())
+			transcodeTaskListObject.creationTime = valueTranscodeTaskListTranscodeTask["CreationTime"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["CompleteTime"].isNull())
+			transcodeTaskListObject.completeTime = valueTranscodeTaskListTranscodeTask["CompleteTime"].asString();
+		if(!valueTranscodeTaskListTranscodeTask["Trigger"].isNull())
+			transcodeTaskListObject.trigger = valueTranscodeTaskListTranscodeTask["Trigger"].asString();
 		transcodeTaskList_.push_back(transcodeTaskListObject);
 	}
 

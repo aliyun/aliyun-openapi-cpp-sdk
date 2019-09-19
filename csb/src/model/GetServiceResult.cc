@@ -117,56 +117,56 @@ void GetServiceResult::parse(const std::string &payload)
 		data_.service.validConsumeTypes = serviceNode["ValidConsumeTypes"].asString() == "true";
 	if(!serviceNode["ValidProvideType"].isNull())
 		data_.service.validProvideType = serviceNode["ValidProvideType"].asString() == "true";
-	auto allServiceVersionsList = value["ServiceVersionsList"]["ServiceVersion"];
-	for (auto value : allServiceVersionsList)
+	auto allServiceVersionsListNode = serviceNode["ServiceVersionsList"]["ServiceVersion"];
+	for (auto serviceNodeServiceVersionsListServiceVersion : allServiceVersionsListNode)
 	{
 		Data::Service::ServiceVersion serviceVersionObject;
-		if(!value["Active"].isNull())
-			serviceVersionObject.active = value["Active"].asString() == "true";
-		if(!value["AllVisiable"].isNull())
-			serviceVersionObject.allVisiable = value["AllVisiable"].asString() == "true";
-		if(!value["Id"].isNull())
-			serviceVersionObject.id = std::stol(value["Id"].asString());
-		if(!value["OldVersion"].isNull())
-			serviceVersionObject.oldVersion = value["OldVersion"].asString();
-		if(!value["OttFlag"].isNull())
-			serviceVersionObject.ottFlag = value["OttFlag"].asString() == "true";
-		if(!value["SSL"].isNull())
-			serviceVersionObject.sSL = value["SSL"].asString() == "true";
-		if(!value["Scope"].isNull())
-			serviceVersionObject.scope = value["Scope"].asString();
-		if(!value["ServiceVersion"].isNull())
-			serviceVersionObject.serviceVersion = value["ServiceVersion"].asString();
-		if(!value["SkipAuth"].isNull())
-			serviceVersionObject.skipAuth = value["SkipAuth"].asString() == "true";
-		if(!value["StatisticName"].isNull())
-			serviceVersionObject.statisticName = value["StatisticName"].asString();
-		if(!value["Status"].isNull())
-			serviceVersionObject.status = std::stoi(value["Status"].asString());
-		if(!value["ValidConsumeTypes"].isNull())
-			serviceVersionObject.validConsumeTypes = value["ValidConsumeTypes"].asString() == "true";
-		if(!value["ValidProvideType"].isNull())
-			serviceVersionObject.validProvideType = value["ValidProvideType"].asString() == "true";
+		if(!serviceNodeServiceVersionsListServiceVersion["Active"].isNull())
+			serviceVersionObject.active = serviceNodeServiceVersionsListServiceVersion["Active"].asString() == "true";
+		if(!serviceNodeServiceVersionsListServiceVersion["AllVisiable"].isNull())
+			serviceVersionObject.allVisiable = serviceNodeServiceVersionsListServiceVersion["AllVisiable"].asString() == "true";
+		if(!serviceNodeServiceVersionsListServiceVersion["Id"].isNull())
+			serviceVersionObject.id = std::stol(serviceNodeServiceVersionsListServiceVersion["Id"].asString());
+		if(!serviceNodeServiceVersionsListServiceVersion["OldVersion"].isNull())
+			serviceVersionObject.oldVersion = serviceNodeServiceVersionsListServiceVersion["OldVersion"].asString();
+		if(!serviceNodeServiceVersionsListServiceVersion["OttFlag"].isNull())
+			serviceVersionObject.ottFlag = serviceNodeServiceVersionsListServiceVersion["OttFlag"].asString() == "true";
+		if(!serviceNodeServiceVersionsListServiceVersion["SSL"].isNull())
+			serviceVersionObject.sSL = serviceNodeServiceVersionsListServiceVersion["SSL"].asString() == "true";
+		if(!serviceNodeServiceVersionsListServiceVersion["Scope"].isNull())
+			serviceVersionObject.scope = serviceNodeServiceVersionsListServiceVersion["Scope"].asString();
+		if(!serviceNodeServiceVersionsListServiceVersion["ServiceVersion"].isNull())
+			serviceVersionObject.serviceVersion = serviceNodeServiceVersionsListServiceVersion["ServiceVersion"].asString();
+		if(!serviceNodeServiceVersionsListServiceVersion["SkipAuth"].isNull())
+			serviceVersionObject.skipAuth = serviceNodeServiceVersionsListServiceVersion["SkipAuth"].asString() == "true";
+		if(!serviceNodeServiceVersionsListServiceVersion["StatisticName"].isNull())
+			serviceVersionObject.statisticName = serviceNodeServiceVersionsListServiceVersion["StatisticName"].asString();
+		if(!serviceNodeServiceVersionsListServiceVersion["Status"].isNull())
+			serviceVersionObject.status = std::stoi(serviceNodeServiceVersionsListServiceVersion["Status"].asString());
+		if(!serviceNodeServiceVersionsListServiceVersion["ValidConsumeTypes"].isNull())
+			serviceVersionObject.validConsumeTypes = serviceNodeServiceVersionsListServiceVersion["ValidConsumeTypes"].asString() == "true";
+		if(!serviceNodeServiceVersionsListServiceVersion["ValidProvideType"].isNull())
+			serviceVersionObject.validProvideType = serviceNodeServiceVersionsListServiceVersion["ValidProvideType"].asString() == "true";
 		data_.service.serviceVersionsList.push_back(serviceVersionObject);
 	}
-	auto allVisiableGroupList = value["VisiableGroupList"]["VisiableGroup"];
-	for (auto value : allVisiableGroupList)
+	auto allVisiableGroupListNode = serviceNode["VisiableGroupList"]["VisiableGroup"];
+	for (auto serviceNodeVisiableGroupListVisiableGroup : allVisiableGroupListNode)
 	{
 		Data::Service::VisiableGroup visiableGroupObject;
-		if(!value["Id"].isNull())
-			visiableGroupObject.id = std::stol(value["Id"].asString());
-		if(!value["GroupId"].isNull())
-			visiableGroupObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["UserId"].isNull())
-			visiableGroupObject.userId = value["UserId"].asString();
-		if(!value["ServiceId"].isNull())
-			visiableGroupObject.serviceId = std::stol(value["ServiceId"].asString());
-		if(!value["CreateTime"].isNull())
-			visiableGroupObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["ModifiedTime"].isNull())
-			visiableGroupObject.modifiedTime = std::stol(value["ModifiedTime"].asString());
-		if(!value["Status"].isNull())
-			visiableGroupObject.status = std::stoi(value["Status"].asString());
+		if(!serviceNodeVisiableGroupListVisiableGroup["Id"].isNull())
+			visiableGroupObject.id = std::stol(serviceNodeVisiableGroupListVisiableGroup["Id"].asString());
+		if(!serviceNodeVisiableGroupListVisiableGroup["GroupId"].isNull())
+			visiableGroupObject.groupId = std::stol(serviceNodeVisiableGroupListVisiableGroup["GroupId"].asString());
+		if(!serviceNodeVisiableGroupListVisiableGroup["UserId"].isNull())
+			visiableGroupObject.userId = serviceNodeVisiableGroupListVisiableGroup["UserId"].asString();
+		if(!serviceNodeVisiableGroupListVisiableGroup["ServiceId"].isNull())
+			visiableGroupObject.serviceId = std::stol(serviceNodeVisiableGroupListVisiableGroup["ServiceId"].asString());
+		if(!serviceNodeVisiableGroupListVisiableGroup["CreateTime"].isNull())
+			visiableGroupObject.createTime = std::stol(serviceNodeVisiableGroupListVisiableGroup["CreateTime"].asString());
+		if(!serviceNodeVisiableGroupListVisiableGroup["ModifiedTime"].isNull())
+			visiableGroupObject.modifiedTime = std::stol(serviceNodeVisiableGroupListVisiableGroup["ModifiedTime"].asString());
+		if(!serviceNodeVisiableGroupListVisiableGroup["Status"].isNull())
+			visiableGroupObject.status = std::stoi(serviceNodeVisiableGroupListVisiableGroup["Status"].asString());
 		data_.service.visiableGroupList.push_back(visiableGroupObject);
 	}
 	auto routeConfNode = serviceNode["RouteConf"];
@@ -177,52 +177,52 @@ void GetServiceResult::parse(const std::string &payload)
 		data_.service.routeConf.importConf.accessEndpointJSON = importConfNode["AccessEndpointJSON"].asString();
 	if(!importConfNode["ProvideType"].isNull())
 		data_.service.routeConf.importConf.provideType = importConfNode["ProvideType"].asString();
-	auto allInputParameterMap = value["InputParameterMap"]["InputParameter"];
-	for (auto value : allInputParameterMap)
+	auto allInputParameterMapNode = importConfNode["InputParameterMap"]["InputParameter"];
+	for (auto importConfNodeInputParameterMapInputParameter : allInputParameterMapNode)
 	{
 		Data::Service::RouteConf::ImportConf::InputParameter inputParameterObject;
-		if(!value["CatType"].isNull())
-			inputParameterObject.catType = std::stoi(value["CatType"].asString());
-		if(!value["Depth"].isNull())
-			inputParameterObject.depth = std::stoi(value["Depth"].asString());
-		if(!value["ExtType"].isNull())
-			inputParameterObject.extType = std::stoi(value["ExtType"].asString());
-		if(!value["MapStyle"].isNull())
-			inputParameterObject.mapStyle = std::stoi(value["MapStyle"].asString());
-		if(!value["Optional"].isNull())
-			inputParameterObject.optional = value["Optional"].asString() == "true";
-		if(!value["OriginalName"].isNull())
-			inputParameterObject.originalName = value["OriginalName"].asString();
-		if(!value["ParamType"].isNull())
-			inputParameterObject.paramType = value["ParamType"].asString();
-		if(!value["PassMethod"].isNull())
-			inputParameterObject.passMethod = value["PassMethod"].asString();
-		if(!value["TargetName"].isNull())
-			inputParameterObject.targetName = value["TargetName"].asString();
+		if(!importConfNodeInputParameterMapInputParameter["CatType"].isNull())
+			inputParameterObject.catType = std::stoi(importConfNodeInputParameterMapInputParameter["CatType"].asString());
+		if(!importConfNodeInputParameterMapInputParameter["Depth"].isNull())
+			inputParameterObject.depth = std::stoi(importConfNodeInputParameterMapInputParameter["Depth"].asString());
+		if(!importConfNodeInputParameterMapInputParameter["ExtType"].isNull())
+			inputParameterObject.extType = std::stoi(importConfNodeInputParameterMapInputParameter["ExtType"].asString());
+		if(!importConfNodeInputParameterMapInputParameter["MapStyle"].isNull())
+			inputParameterObject.mapStyle = std::stoi(importConfNodeInputParameterMapInputParameter["MapStyle"].asString());
+		if(!importConfNodeInputParameterMapInputParameter["Optional"].isNull())
+			inputParameterObject.optional = importConfNodeInputParameterMapInputParameter["Optional"].asString() == "true";
+		if(!importConfNodeInputParameterMapInputParameter["OriginalName"].isNull())
+			inputParameterObject.originalName = importConfNodeInputParameterMapInputParameter["OriginalName"].asString();
+		if(!importConfNodeInputParameterMapInputParameter["ParamType"].isNull())
+			inputParameterObject.paramType = importConfNodeInputParameterMapInputParameter["ParamType"].asString();
+		if(!importConfNodeInputParameterMapInputParameter["PassMethod"].isNull())
+			inputParameterObject.passMethod = importConfNodeInputParameterMapInputParameter["PassMethod"].asString();
+		if(!importConfNodeInputParameterMapInputParameter["TargetName"].isNull())
+			inputParameterObject.targetName = importConfNodeInputParameterMapInputParameter["TargetName"].asString();
 		data_.service.routeConf.importConf.inputParameterMap.push_back(inputParameterObject);
 	}
-	auto allOutputParameterMap = value["OutputParameterMap"]["OutputParameter"];
-	for (auto value : allOutputParameterMap)
+	auto allOutputParameterMapNode = importConfNode["OutputParameterMap"]["OutputParameter"];
+	for (auto importConfNodeOutputParameterMapOutputParameter : allOutputParameterMapNode)
 	{
 		Data::Service::RouteConf::ImportConf::OutputParameter outputParameterObject;
-		if(!value["CatType"].isNull())
-			outputParameterObject.catType = std::stoi(value["CatType"].asString());
-		if(!value["Depth"].isNull())
-			outputParameterObject.depth = std::stoi(value["Depth"].asString());
-		if(!value["ExtType"].isNull())
-			outputParameterObject.extType = std::stoi(value["ExtType"].asString());
-		if(!value["MapStyle"].isNull())
-			outputParameterObject.mapStyle = std::stoi(value["MapStyle"].asString());
-		if(!value["Optional"].isNull())
-			outputParameterObject.optional = value["Optional"].asString() == "true";
-		if(!value["OriginalName"].isNull())
-			outputParameterObject.originalName = value["OriginalName"].asString();
-		if(!value["ParamType"].isNull())
-			outputParameterObject.paramType = value["ParamType"].asString();
-		if(!value["PassMethod"].isNull())
-			outputParameterObject.passMethod = value["PassMethod"].asString();
-		if(!value["TargetName"].isNull())
-			outputParameterObject.targetName = value["TargetName"].asString();
+		if(!importConfNodeOutputParameterMapOutputParameter["CatType"].isNull())
+			outputParameterObject.catType = std::stoi(importConfNodeOutputParameterMapOutputParameter["CatType"].asString());
+		if(!importConfNodeOutputParameterMapOutputParameter["Depth"].isNull())
+			outputParameterObject.depth = std::stoi(importConfNodeOutputParameterMapOutputParameter["Depth"].asString());
+		if(!importConfNodeOutputParameterMapOutputParameter["ExtType"].isNull())
+			outputParameterObject.extType = std::stoi(importConfNodeOutputParameterMapOutputParameter["ExtType"].asString());
+		if(!importConfNodeOutputParameterMapOutputParameter["MapStyle"].isNull())
+			outputParameterObject.mapStyle = std::stoi(importConfNodeOutputParameterMapOutputParameter["MapStyle"].asString());
+		if(!importConfNodeOutputParameterMapOutputParameter["Optional"].isNull())
+			outputParameterObject.optional = importConfNodeOutputParameterMapOutputParameter["Optional"].asString() == "true";
+		if(!importConfNodeOutputParameterMapOutputParameter["OriginalName"].isNull())
+			outputParameterObject.originalName = importConfNodeOutputParameterMapOutputParameter["OriginalName"].asString();
+		if(!importConfNodeOutputParameterMapOutputParameter["ParamType"].isNull())
+			outputParameterObject.paramType = importConfNodeOutputParameterMapOutputParameter["ParamType"].asString();
+		if(!importConfNodeOutputParameterMapOutputParameter["PassMethod"].isNull())
+			outputParameterObject.passMethod = importConfNodeOutputParameterMapOutputParameter["PassMethod"].asString();
+		if(!importConfNodeOutputParameterMapOutputParameter["TargetName"].isNull())
+			outputParameterObject.targetName = importConfNodeOutputParameterMapOutputParameter["TargetName"].asString();
 		data_.service.routeConf.importConf.outputParameterMap.push_back(outputParameterObject);
 	}
 	auto importConfsNode = routeConfNode["ImportConfs"];
@@ -230,52 +230,52 @@ void GetServiceResult::parse(const std::string &payload)
 		data_.service.routeConf.importConfs.accessEndpointJSON = importConfsNode["AccessEndpointJSON"].asString();
 	if(!importConfsNode["ProvideType"].isNull())
 		data_.service.routeConf.importConfs.provideType = importConfsNode["ProvideType"].asString();
-	auto allInputParameterMap1 = value["InputParameterMap"]["InputParameter"];
-	for (auto value : allInputParameterMap1)
+	auto allInputParameterMap1Node = importConfsNode["InputParameterMap"]["InputParameter"];
+	for (auto importConfsNodeInputParameterMapInputParameter : allInputParameterMap1Node)
 	{
 		Data::Service::RouteConf::ImportConfs::InputParameter3 inputParameter3Object;
-		if(!value["CatType"].isNull())
-			inputParameter3Object.catType = std::stoi(value["CatType"].asString());
-		if(!value["Depth"].isNull())
-			inputParameter3Object.depth = std::stoi(value["Depth"].asString());
-		if(!value["ExtType"].isNull())
-			inputParameter3Object.extType = std::stoi(value["ExtType"].asString());
-		if(!value["MapStyle"].isNull())
-			inputParameter3Object.mapStyle = std::stoi(value["MapStyle"].asString());
-		if(!value["Optional"].isNull())
-			inputParameter3Object.optional = value["Optional"].asString() == "true";
-		if(!value["OriginalName"].isNull())
-			inputParameter3Object.originalName = value["OriginalName"].asString();
-		if(!value["ParamType"].isNull())
-			inputParameter3Object.paramType = value["ParamType"].asString();
-		if(!value["PassMethod"].isNull())
-			inputParameter3Object.passMethod = value["PassMethod"].asString();
-		if(!value["TargetName"].isNull())
-			inputParameter3Object.targetName = value["TargetName"].asString();
+		if(!importConfsNodeInputParameterMapInputParameter["CatType"].isNull())
+			inputParameter3Object.catType = std::stoi(importConfsNodeInputParameterMapInputParameter["CatType"].asString());
+		if(!importConfsNodeInputParameterMapInputParameter["Depth"].isNull())
+			inputParameter3Object.depth = std::stoi(importConfsNodeInputParameterMapInputParameter["Depth"].asString());
+		if(!importConfsNodeInputParameterMapInputParameter["ExtType"].isNull())
+			inputParameter3Object.extType = std::stoi(importConfsNodeInputParameterMapInputParameter["ExtType"].asString());
+		if(!importConfsNodeInputParameterMapInputParameter["MapStyle"].isNull())
+			inputParameter3Object.mapStyle = std::stoi(importConfsNodeInputParameterMapInputParameter["MapStyle"].asString());
+		if(!importConfsNodeInputParameterMapInputParameter["Optional"].isNull())
+			inputParameter3Object.optional = importConfsNodeInputParameterMapInputParameter["Optional"].asString() == "true";
+		if(!importConfsNodeInputParameterMapInputParameter["OriginalName"].isNull())
+			inputParameter3Object.originalName = importConfsNodeInputParameterMapInputParameter["OriginalName"].asString();
+		if(!importConfsNodeInputParameterMapInputParameter["ParamType"].isNull())
+			inputParameter3Object.paramType = importConfsNodeInputParameterMapInputParameter["ParamType"].asString();
+		if(!importConfsNodeInputParameterMapInputParameter["PassMethod"].isNull())
+			inputParameter3Object.passMethod = importConfsNodeInputParameterMapInputParameter["PassMethod"].asString();
+		if(!importConfsNodeInputParameterMapInputParameter["TargetName"].isNull())
+			inputParameter3Object.targetName = importConfsNodeInputParameterMapInputParameter["TargetName"].asString();
 		data_.service.routeConf.importConfs.inputParameterMap1.push_back(inputParameter3Object);
 	}
-	auto allOutputParameterMap2 = value["OutputParameterMap"]["OutputParameter"];
-	for (auto value : allOutputParameterMap2)
+	auto allOutputParameterMap2Node = importConfsNode["OutputParameterMap"]["OutputParameter"];
+	for (auto importConfsNodeOutputParameterMapOutputParameter : allOutputParameterMap2Node)
 	{
 		Data::Service::RouteConf::ImportConfs::OutputParameter4 outputParameter4Object;
-		if(!value["CatType"].isNull())
-			outputParameter4Object.catType = std::stoi(value["CatType"].asString());
-		if(!value["Depth"].isNull())
-			outputParameter4Object.depth = std::stoi(value["Depth"].asString());
-		if(!value["ExtType"].isNull())
-			outputParameter4Object.extType = std::stoi(value["ExtType"].asString());
-		if(!value["MapStyle"].isNull())
-			outputParameter4Object.mapStyle = std::stoi(value["MapStyle"].asString());
-		if(!value["Optional"].isNull())
-			outputParameter4Object.optional = value["Optional"].asString() == "true";
-		if(!value["OriginalName"].isNull())
-			outputParameter4Object.originalName = value["OriginalName"].asString();
-		if(!value["ParamType"].isNull())
-			outputParameter4Object.paramType = value["ParamType"].asString();
-		if(!value["PassMethod"].isNull())
-			outputParameter4Object.passMethod = value["PassMethod"].asString();
-		if(!value["TargetName"].isNull())
-			outputParameter4Object.targetName = value["TargetName"].asString();
+		if(!importConfsNodeOutputParameterMapOutputParameter["CatType"].isNull())
+			outputParameter4Object.catType = std::stoi(importConfsNodeOutputParameterMapOutputParameter["CatType"].asString());
+		if(!importConfsNodeOutputParameterMapOutputParameter["Depth"].isNull())
+			outputParameter4Object.depth = std::stoi(importConfsNodeOutputParameterMapOutputParameter["Depth"].asString());
+		if(!importConfsNodeOutputParameterMapOutputParameter["ExtType"].isNull())
+			outputParameter4Object.extType = std::stoi(importConfsNodeOutputParameterMapOutputParameter["ExtType"].asString());
+		if(!importConfsNodeOutputParameterMapOutputParameter["MapStyle"].isNull())
+			outputParameter4Object.mapStyle = std::stoi(importConfsNodeOutputParameterMapOutputParameter["MapStyle"].asString());
+		if(!importConfsNodeOutputParameterMapOutputParameter["Optional"].isNull())
+			outputParameter4Object.optional = importConfsNodeOutputParameterMapOutputParameter["Optional"].asString() == "true";
+		if(!importConfsNodeOutputParameterMapOutputParameter["OriginalName"].isNull())
+			outputParameter4Object.originalName = importConfsNodeOutputParameterMapOutputParameter["OriginalName"].asString();
+		if(!importConfsNodeOutputParameterMapOutputParameter["ParamType"].isNull())
+			outputParameter4Object.paramType = importConfsNodeOutputParameterMapOutputParameter["ParamType"].asString();
+		if(!importConfsNodeOutputParameterMapOutputParameter["PassMethod"].isNull())
+			outputParameter4Object.passMethod = importConfsNodeOutputParameterMapOutputParameter["PassMethod"].asString();
+		if(!importConfsNodeOutputParameterMapOutputParameter["TargetName"].isNull())
+			outputParameter4Object.targetName = importConfsNodeOutputParameterMapOutputParameter["TargetName"].asString();
 		data_.service.routeConf.importConfs.outputParameterMap2.push_back(outputParameter4Object);
 	}
 		auto allCasServTargets = serviceNode["CasServTargets"]["CasServTarget"];

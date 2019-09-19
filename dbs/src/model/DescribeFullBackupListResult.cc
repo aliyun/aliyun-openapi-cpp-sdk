@@ -39,34 +39,34 @@ void DescribeFullBackupListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["FullBackupFile"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["FullBackupFile"];
+	for (auto valueItemsFullBackupFile : allItemsNode)
 	{
 		FullBackupFile itemsObject;
-		if(!value["BackupSetId"].isNull())
-			itemsObject.backupSetId = value["BackupSetId"].asString();
-		if(!value["SourceEndpointIpPort"].isNull())
-			itemsObject.sourceEndpointIpPort = value["SourceEndpointIpPort"].asString();
-		if(!value["StartTime"].isNull())
-			itemsObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["EndTime"].isNull())
-			itemsObject.endTime = std::stol(value["EndTime"].asString());
-		if(!value["BackupStatus"].isNull())
-			itemsObject.backupStatus = value["BackupStatus"].asString();
-		if(!value["BackupSetExpiredTime"].isNull())
-			itemsObject.backupSetExpiredTime = std::stol(value["BackupSetExpiredTime"].asString());
-		if(!value["BackupSize"].isNull())
-			itemsObject.backupSize = std::stol(value["BackupSize"].asString());
-		if(!value["StorageMethod"].isNull())
-			itemsObject.storageMethod = value["StorageMethod"].asString();
-		if(!value["ErrMessage"].isNull())
-			itemsObject.errMessage = value["ErrMessage"].asString();
-		if(!value["BackupObjects"].isNull())
-			itemsObject.backupObjects = value["BackupObjects"].asString();
-		if(!value["CreateTime"].isNull())
-			itemsObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["FinishTime"].isNull())
-			itemsObject.finishTime = std::stol(value["FinishTime"].asString());
+		if(!valueItemsFullBackupFile["BackupSetId"].isNull())
+			itemsObject.backupSetId = valueItemsFullBackupFile["BackupSetId"].asString();
+		if(!valueItemsFullBackupFile["SourceEndpointIpPort"].isNull())
+			itemsObject.sourceEndpointIpPort = valueItemsFullBackupFile["SourceEndpointIpPort"].asString();
+		if(!valueItemsFullBackupFile["StartTime"].isNull())
+			itemsObject.startTime = std::stol(valueItemsFullBackupFile["StartTime"].asString());
+		if(!valueItemsFullBackupFile["EndTime"].isNull())
+			itemsObject.endTime = std::stol(valueItemsFullBackupFile["EndTime"].asString());
+		if(!valueItemsFullBackupFile["BackupStatus"].isNull())
+			itemsObject.backupStatus = valueItemsFullBackupFile["BackupStatus"].asString();
+		if(!valueItemsFullBackupFile["BackupSetExpiredTime"].isNull())
+			itemsObject.backupSetExpiredTime = std::stol(valueItemsFullBackupFile["BackupSetExpiredTime"].asString());
+		if(!valueItemsFullBackupFile["BackupSize"].isNull())
+			itemsObject.backupSize = std::stol(valueItemsFullBackupFile["BackupSize"].asString());
+		if(!valueItemsFullBackupFile["StorageMethod"].isNull())
+			itemsObject.storageMethod = valueItemsFullBackupFile["StorageMethod"].asString();
+		if(!valueItemsFullBackupFile["ErrMessage"].isNull())
+			itemsObject.errMessage = valueItemsFullBackupFile["ErrMessage"].asString();
+		if(!valueItemsFullBackupFile["BackupObjects"].isNull())
+			itemsObject.backupObjects = valueItemsFullBackupFile["BackupObjects"].asString();
+		if(!valueItemsFullBackupFile["CreateTime"].isNull())
+			itemsObject.createTime = std::stol(valueItemsFullBackupFile["CreateTime"].asString());
+		if(!valueItemsFullBackupFile["FinishTime"].isNull())
+			itemsObject.finishTime = std::stol(valueItemsFullBackupFile["FinishTime"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

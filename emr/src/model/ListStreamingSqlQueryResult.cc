@@ -39,26 +39,26 @@ void ListStreamingSqlQueryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Item"];
+	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!value["GmtCreate"].isNull())
-			itemsObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			itemsObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["QueryName"].isNull())
-			itemsObject.queryName = value["QueryName"].asString();
-		if(!value["QueryId"].isNull())
-			itemsObject.queryId = value["QueryId"].asString();
-		if(!value["RunId"].isNull())
-			itemsObject.runId = value["RunId"].asString();
-		if(!value["Status"].isNull())
-			itemsObject.status = value["Status"].asString();
-		if(!value["Error"].isNull())
-			itemsObject.error = value["Error"].asString();
-		if(!value["InstanceId"].isNull())
-			itemsObject.instanceId = value["InstanceId"].asString();
+		if(!valueItemsItem["GmtCreate"].isNull())
+			itemsObject.gmtCreate = std::stol(valueItemsItem["GmtCreate"].asString());
+		if(!valueItemsItem["GmtModified"].isNull())
+			itemsObject.gmtModified = std::stol(valueItemsItem["GmtModified"].asString());
+		if(!valueItemsItem["QueryName"].isNull())
+			itemsObject.queryName = valueItemsItem["QueryName"].asString();
+		if(!valueItemsItem["QueryId"].isNull())
+			itemsObject.queryId = valueItemsItem["QueryId"].asString();
+		if(!valueItemsItem["RunId"].isNull())
+			itemsObject.runId = valueItemsItem["RunId"].asString();
+		if(!valueItemsItem["Status"].isNull())
+			itemsObject.status = valueItemsItem["Status"].asString();
+		if(!valueItemsItem["Error"].isNull())
+			itemsObject.error = valueItemsItem["Error"].asString();
+		if(!valueItemsItem["InstanceId"].isNull())
+			itemsObject.instanceId = valueItemsItem["InstanceId"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -39,46 +39,46 @@ void ListNodesByQueueResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNodes = value["Nodes"]["NodeInfo"];
-	for (auto value : allNodes)
+	auto allNodesNode = value["Nodes"]["NodeInfo"];
+	for (auto valueNodesNodeInfo : allNodesNode)
 	{
 		NodeInfo nodesObject;
-		if(!value["Id"].isNull())
-			nodesObject.id = value["Id"].asString();
-		if(!value["RegionId"].isNull())
-			nodesObject.regionId = value["RegionId"].asString();
-		if(!value["HostName"].isNull())
-			nodesObject.hostName = value["HostName"].asString();
-		if(!value["Status"].isNull())
-			nodesObject.status = value["Status"].asString();
-		if(!value["Version"].isNull())
-			nodesObject.version = value["Version"].asString();
-		if(!value["CreatedByEhpc"].isNull())
-			nodesObject.createdByEhpc = value["CreatedByEhpc"].asString() == "true";
-		if(!value["AddTime"].isNull())
-			nodesObject.addTime = value["AddTime"].asString();
-		if(!value["Expired"].isNull())
-			nodesObject.expired = value["Expired"].asString() == "true";
-		if(!value["ExpiredTime"].isNull())
-			nodesObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["SpotStrategy"].isNull())
-			nodesObject.spotStrategy = value["SpotStrategy"].asString();
-		if(!value["LockReason"].isNull())
-			nodesObject.lockReason = value["LockReason"].asString();
-		if(!value["ImageOwnerAlias"].isNull())
-			nodesObject.imageOwnerAlias = value["ImageOwnerAlias"].asString();
-		if(!value["ImageId"].isNull())
-			nodesObject.imageId = value["ImageId"].asString();
-		if(!value["Location"].isNull())
-			nodesObject.location = value["Location"].asString();
-		if(!value["CreateMode"].isNull())
-			nodesObject.createMode = value["CreateMode"].asString();
-		if(!value["VpcId"].isNull())
-			nodesObject.vpcId = value["VpcId"].asString();
-		if(!value["ZoneId"].isNull())
-			nodesObject.zoneId = value["ZoneId"].asString();
-		if(!value["VSwitchId"].isNull())
-			nodesObject.vSwitchId = value["VSwitchId"].asString();
+		if(!valueNodesNodeInfo["Id"].isNull())
+			nodesObject.id = valueNodesNodeInfo["Id"].asString();
+		if(!valueNodesNodeInfo["RegionId"].isNull())
+			nodesObject.regionId = valueNodesNodeInfo["RegionId"].asString();
+		if(!valueNodesNodeInfo["HostName"].isNull())
+			nodesObject.hostName = valueNodesNodeInfo["HostName"].asString();
+		if(!valueNodesNodeInfo["Status"].isNull())
+			nodesObject.status = valueNodesNodeInfo["Status"].asString();
+		if(!valueNodesNodeInfo["Version"].isNull())
+			nodesObject.version = valueNodesNodeInfo["Version"].asString();
+		if(!valueNodesNodeInfo["CreatedByEhpc"].isNull())
+			nodesObject.createdByEhpc = valueNodesNodeInfo["CreatedByEhpc"].asString() == "true";
+		if(!valueNodesNodeInfo["AddTime"].isNull())
+			nodesObject.addTime = valueNodesNodeInfo["AddTime"].asString();
+		if(!valueNodesNodeInfo["Expired"].isNull())
+			nodesObject.expired = valueNodesNodeInfo["Expired"].asString() == "true";
+		if(!valueNodesNodeInfo["ExpiredTime"].isNull())
+			nodesObject.expiredTime = valueNodesNodeInfo["ExpiredTime"].asString();
+		if(!valueNodesNodeInfo["SpotStrategy"].isNull())
+			nodesObject.spotStrategy = valueNodesNodeInfo["SpotStrategy"].asString();
+		if(!valueNodesNodeInfo["LockReason"].isNull())
+			nodesObject.lockReason = valueNodesNodeInfo["LockReason"].asString();
+		if(!valueNodesNodeInfo["ImageOwnerAlias"].isNull())
+			nodesObject.imageOwnerAlias = valueNodesNodeInfo["ImageOwnerAlias"].asString();
+		if(!valueNodesNodeInfo["ImageId"].isNull())
+			nodesObject.imageId = valueNodesNodeInfo["ImageId"].asString();
+		if(!valueNodesNodeInfo["Location"].isNull())
+			nodesObject.location = valueNodesNodeInfo["Location"].asString();
+		if(!valueNodesNodeInfo["CreateMode"].isNull())
+			nodesObject.createMode = valueNodesNodeInfo["CreateMode"].asString();
+		if(!valueNodesNodeInfo["VpcId"].isNull())
+			nodesObject.vpcId = valueNodesNodeInfo["VpcId"].asString();
+		if(!valueNodesNodeInfo["ZoneId"].isNull())
+			nodesObject.zoneId = valueNodesNodeInfo["ZoneId"].asString();
+		if(!valueNodesNodeInfo["VSwitchId"].isNull())
+			nodesObject.vSwitchId = valueNodesNodeInfo["VSwitchId"].asString();
 		auto totalResourcesNode = value["TotalResources"];
 		if(!totalResourcesNode["Cpu"].isNull())
 			nodesObject.totalResources.cpu = std::stoi(totalResourcesNode["Cpu"].asString());

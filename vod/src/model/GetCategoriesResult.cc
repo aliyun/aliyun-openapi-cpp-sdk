@@ -39,22 +39,22 @@ void GetCategoriesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSubCategories = value["SubCategories"]["Category"];
-	for (auto value : allSubCategories)
+	auto allSubCategoriesNode = value["SubCategories"]["Category"];
+	for (auto valueSubCategoriesCategory : allSubCategoriesNode)
 	{
 		Category subCategoriesObject;
-		if(!value["CateId"].isNull())
-			subCategoriesObject.cateId = std::stol(value["CateId"].asString());
-		if(!value["CateName"].isNull())
-			subCategoriesObject.cateName = value["CateName"].asString();
-		if(!value["Level"].isNull())
-			subCategoriesObject.level = std::stol(value["Level"].asString());
-		if(!value["ParentId"].isNull())
-			subCategoriesObject.parentId = std::stol(value["ParentId"].asString());
-		if(!value["SubTotal"].isNull())
-			subCategoriesObject.subTotal = std::stol(value["SubTotal"].asString());
-		if(!value["Type"].isNull())
-			subCategoriesObject.type = value["Type"].asString();
+		if(!valueSubCategoriesCategory["CateId"].isNull())
+			subCategoriesObject.cateId = std::stol(valueSubCategoriesCategory["CateId"].asString());
+		if(!valueSubCategoriesCategory["CateName"].isNull())
+			subCategoriesObject.cateName = valueSubCategoriesCategory["CateName"].asString();
+		if(!valueSubCategoriesCategory["Level"].isNull())
+			subCategoriesObject.level = std::stol(valueSubCategoriesCategory["Level"].asString());
+		if(!valueSubCategoriesCategory["ParentId"].isNull())
+			subCategoriesObject.parentId = std::stol(valueSubCategoriesCategory["ParentId"].asString());
+		if(!valueSubCategoriesCategory["SubTotal"].isNull())
+			subCategoriesObject.subTotal = std::stol(valueSubCategoriesCategory["SubTotal"].asString());
+		if(!valueSubCategoriesCategory["Type"].isNull())
+			subCategoriesObject.type = valueSubCategoriesCategory["Type"].asString();
 		subCategories_.push_back(subCategoriesObject);
 	}
 	auto category1Node = value["Category"];

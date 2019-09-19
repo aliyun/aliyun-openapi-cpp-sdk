@@ -39,50 +39,50 @@ void DescribeDemandsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDemands = value["Demands"]["Demand"];
-	for (auto value : allDemands)
+	auto allDemandsNode = value["Demands"]["Demand"];
+	for (auto valueDemandsDemand : allDemandsNode)
 	{
 		Demand demandsObject;
-		if(!value["ZoneId"].isNull())
-			demandsObject.zoneId = value["ZoneId"].asString();
-		if(!value["DemandTime"].isNull())
-			demandsObject.demandTime = value["DemandTime"].asString();
-		if(!value["InstanceTypeFamily"].isNull())
-			demandsObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
-		if(!value["InstanceType"].isNull())
-			demandsObject.instanceType = value["InstanceType"].asString();
-		if(!value["InstanceChargeType"].isNull())
-			demandsObject.instanceChargeType = value["InstanceChargeType"].asString();
-		if(!value["Period"].isNull())
-			demandsObject.period = std::stoi(value["Period"].asString());
-		if(!value["PeriodUnit"].isNull())
-			demandsObject.periodUnit = value["PeriodUnit"].asString();
-		if(!value["StartTime"].isNull())
-			demandsObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			demandsObject.endTime = value["EndTime"].asString();
-		if(!value["DemandStatus"].isNull())
-			demandsObject.demandStatus = value["DemandStatus"].asString();
-		if(!value["TotalAmount"].isNull())
-			demandsObject.totalAmount = std::stoi(value["TotalAmount"].asString());
-		if(!value["AvailableAmount"].isNull())
-			demandsObject.availableAmount = std::stoi(value["AvailableAmount"].asString());
-		if(!value["UsedAmount"].isNull())
-			demandsObject.usedAmount = std::stoi(value["UsedAmount"].asString());
-		if(!value["DeliveringAmount"].isNull())
-			demandsObject.deliveringAmount = std::stoi(value["DeliveringAmount"].asString());
-		auto allSupplyInfos = value["SupplyInfos"]["SupplyInfo"];
-		for (auto value : allSupplyInfos)
+		if(!valueDemandsDemand["ZoneId"].isNull())
+			demandsObject.zoneId = valueDemandsDemand["ZoneId"].asString();
+		if(!valueDemandsDemand["DemandTime"].isNull())
+			demandsObject.demandTime = valueDemandsDemand["DemandTime"].asString();
+		if(!valueDemandsDemand["InstanceTypeFamily"].isNull())
+			demandsObject.instanceTypeFamily = valueDemandsDemand["InstanceTypeFamily"].asString();
+		if(!valueDemandsDemand["InstanceType"].isNull())
+			demandsObject.instanceType = valueDemandsDemand["InstanceType"].asString();
+		if(!valueDemandsDemand["InstanceChargeType"].isNull())
+			demandsObject.instanceChargeType = valueDemandsDemand["InstanceChargeType"].asString();
+		if(!valueDemandsDemand["Period"].isNull())
+			demandsObject.period = std::stoi(valueDemandsDemand["Period"].asString());
+		if(!valueDemandsDemand["PeriodUnit"].isNull())
+			demandsObject.periodUnit = valueDemandsDemand["PeriodUnit"].asString();
+		if(!valueDemandsDemand["StartTime"].isNull())
+			demandsObject.startTime = valueDemandsDemand["StartTime"].asString();
+		if(!valueDemandsDemand["EndTime"].isNull())
+			demandsObject.endTime = valueDemandsDemand["EndTime"].asString();
+		if(!valueDemandsDemand["DemandStatus"].isNull())
+			demandsObject.demandStatus = valueDemandsDemand["DemandStatus"].asString();
+		if(!valueDemandsDemand["TotalAmount"].isNull())
+			demandsObject.totalAmount = std::stoi(valueDemandsDemand["TotalAmount"].asString());
+		if(!valueDemandsDemand["AvailableAmount"].isNull())
+			demandsObject.availableAmount = std::stoi(valueDemandsDemand["AvailableAmount"].asString());
+		if(!valueDemandsDemand["UsedAmount"].isNull())
+			demandsObject.usedAmount = std::stoi(valueDemandsDemand["UsedAmount"].asString());
+		if(!valueDemandsDemand["DeliveringAmount"].isNull())
+			demandsObject.deliveringAmount = std::stoi(valueDemandsDemand["DeliveringAmount"].asString());
+		auto allSupplyInfosNode = allDemandsNode["SupplyInfos"]["SupplyInfo"];
+		for (auto allDemandsNodeSupplyInfosSupplyInfo : allSupplyInfosNode)
 		{
 			Demand::SupplyInfo supplyInfosObject;
-			if(!value["Amount"].isNull())
-				supplyInfosObject.amount = std::stoi(value["Amount"].asString());
-			if(!value["SupplyStatus"].isNull())
-				supplyInfosObject.supplyStatus = value["SupplyStatus"].asString();
-			if(!value["SupplyStartTime"].isNull())
-				supplyInfosObject.supplyStartTime = value["SupplyStartTime"].asString();
-			if(!value["SupplyEndTime"].isNull())
-				supplyInfosObject.supplyEndTime = value["SupplyEndTime"].asString();
+			if(!allDemandsNodeSupplyInfosSupplyInfo["Amount"].isNull())
+				supplyInfosObject.amount = std::stoi(allDemandsNodeSupplyInfosSupplyInfo["Amount"].asString());
+			if(!allDemandsNodeSupplyInfosSupplyInfo["SupplyStatus"].isNull())
+				supplyInfosObject.supplyStatus = allDemandsNodeSupplyInfosSupplyInfo["SupplyStatus"].asString();
+			if(!allDemandsNodeSupplyInfosSupplyInfo["SupplyStartTime"].isNull())
+				supplyInfosObject.supplyStartTime = allDemandsNodeSupplyInfosSupplyInfo["SupplyStartTime"].asString();
+			if(!allDemandsNodeSupplyInfosSupplyInfo["SupplyEndTime"].isNull())
+				supplyInfosObject.supplyEndTime = allDemandsNodeSupplyInfosSupplyInfo["SupplyEndTime"].asString();
 			demandsObject.supplyInfos.push_back(supplyInfosObject);
 		}
 		demands_.push_back(demandsObject);

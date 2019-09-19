@@ -39,32 +39,32 @@ void DescribeDataHubConnectorsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Connector"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Connector"];
+	for (auto valueItemsConnector : allItemsNode)
 	{
 		Connector itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			itemsObject.description = value["Description"].asString();
-		if(!value["CreationTime"].isNull())
-			itemsObject.creationTime = std::stol(value["CreationTime"].asString());
-		if(!value["ConnectorProduct"].isNull())
-			itemsObject.connectorProduct = value["ConnectorProduct"].asString();
-		if(!value["ConnectorPath"].isNull())
-			itemsObject.connectorPath = value["ConnectorPath"].asString();
-		if(!value["RiskLevelId"].isNull())
-			itemsObject.riskLevelId = std::stol(value["RiskLevelId"].asString());
-		if(!value["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = value["RiskLevelName"].asString();
-		if(!value["UserId"].isNull())
-			itemsObject.userId = std::stol(value["UserId"].asString());
-		if(!value["LoginName"].isNull())
-			itemsObject.loginName = value["LoginName"].asString();
-		if(!value["DisplayName"].isNull())
-			itemsObject.displayName = value["DisplayName"].asString();
+		if(!valueItemsConnector["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsConnector["Id"].asString());
+		if(!valueItemsConnector["Name"].isNull())
+			itemsObject.name = valueItemsConnector["Name"].asString();
+		if(!valueItemsConnector["Description"].isNull())
+			itemsObject.description = valueItemsConnector["Description"].asString();
+		if(!valueItemsConnector["CreationTime"].isNull())
+			itemsObject.creationTime = std::stol(valueItemsConnector["CreationTime"].asString());
+		if(!valueItemsConnector["ConnectorProduct"].isNull())
+			itemsObject.connectorProduct = valueItemsConnector["ConnectorProduct"].asString();
+		if(!valueItemsConnector["ConnectorPath"].isNull())
+			itemsObject.connectorPath = valueItemsConnector["ConnectorPath"].asString();
+		if(!valueItemsConnector["RiskLevelId"].isNull())
+			itemsObject.riskLevelId = std::stol(valueItemsConnector["RiskLevelId"].asString());
+		if(!valueItemsConnector["RiskLevelName"].isNull())
+			itemsObject.riskLevelName = valueItemsConnector["RiskLevelName"].asString();
+		if(!valueItemsConnector["UserId"].isNull())
+			itemsObject.userId = std::stol(valueItemsConnector["UserId"].asString());
+		if(!valueItemsConnector["LoginName"].isNull())
+			itemsObject.loginName = valueItemsConnector["LoginName"].asString();
+		if(!valueItemsConnector["DisplayName"].isNull())
+			itemsObject.displayName = valueItemsConnector["DisplayName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

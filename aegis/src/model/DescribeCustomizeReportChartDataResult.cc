@@ -39,34 +39,34 @@ void DescribeCustomizeReportChartDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allChartList = value["ChartList"]["chart"];
-	for (auto value : allChartList)
+	auto allChartListNode = value["ChartList"]["chart"];
+	for (auto valueChartListchart : allChartListNode)
 	{
 		Chart chartListObject;
-		if(!value["ChartId"].isNull())
-			chartListObject.chartId = value["ChartId"].asString();
-		if(!value["ChartName"].isNull())
-			chartListObject.chartName = value["ChartName"].asString();
-		if(!value["Type"].isNull())
-			chartListObject.type = value["Type"].asString();
-		auto allDataList = value["DataList"]["data"];
-		for (auto value : allDataList)
+		if(!valueChartListchart["ChartId"].isNull())
+			chartListObject.chartId = valueChartListchart["ChartId"].asString();
+		if(!valueChartListchart["ChartName"].isNull())
+			chartListObject.chartName = valueChartListchart["ChartName"].asString();
+		if(!valueChartListchart["Type"].isNull())
+			chartListObject.type = valueChartListchart["Type"].asString();
+		auto allDataListNode = allChartListNode["DataList"]["data"];
+		for (auto allChartListNodeDataListdata : allDataListNode)
 		{
 			Chart::Data dataListObject;
-			if(!value["Name"].isNull())
-				dataListObject.name = value["Name"].asString();
-			if(!value["Count"].isNull())
-				dataListObject.count = std::stoi(value["Count"].asString());
-			if(!value["Old"].isNull())
-				dataListObject.old = std::stoi(value["Old"].asString());
-			auto allChartDataList = value["ChartDataList"]["chartData"];
-			for (auto value : allChartDataList)
+			if(!allChartListNodeDataListdata["Name"].isNull())
+				dataListObject.name = allChartListNodeDataListdata["Name"].asString();
+			if(!allChartListNodeDataListdata["Count"].isNull())
+				dataListObject.count = std::stoi(allChartListNodeDataListdata["Count"].asString());
+			if(!allChartListNodeDataListdata["Old"].isNull())
+				dataListObject.old = std::stoi(allChartListNodeDataListdata["Old"].asString());
+			auto allChartDataListNode = allDataListNode["ChartDataList"]["chartData"];
+			for (auto allDataListNodeChartDataListchartData : allChartDataListNode)
 			{
 				Chart::Data::ChartData chartDataListObject;
-				if(!value["Name"].isNull())
-					chartDataListObject.name = value["Name"].asString();
-				if(!value["Value"].isNull())
-					chartDataListObject.value = std::stoi(value["Value"].asString());
+				if(!allDataListNodeChartDataListchartData["Name"].isNull())
+					chartDataListObject.name = allDataListNodeChartDataListchartData["Name"].asString();
+				if(!allDataListNodeChartDataListchartData["Value"].isNull())
+					chartDataListObject.value = std::stoi(allDataListNodeChartDataListchartData["Value"].asString());
 				dataListObject.chartDataList.push_back(chartDataListObject);
 			}
 			chartListObject.dataList.push_back(dataListObject);

@@ -39,48 +39,48 @@ void DescribeAccountsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Account"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Account"];
+	for (auto valueItemsAccount : allItemsNode)
 	{
 		Account itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["UserId"].isNull())
-			itemsObject.userId = std::stol(value["UserId"].asString());
-		if(!value["FirstLevelDepartId"].isNull())
-			itemsObject.firstLevelDepartId = std::stol(value["FirstLevelDepartId"].asString());
-		if(!value["LoginName"].isNull())
-			itemsObject.loginName = value["LoginName"].asString();
-		if(!value["FullName"].isNull())
-			itemsObject.fullName = value["FullName"].asString();
-		if(!value["CellphoneNum"].isNull())
-			itemsObject.cellphoneNum = value["CellphoneNum"].asString();
-		if(!value["TelephoneNum"].isNull())
-			itemsObject.telephoneNum = value["TelephoneNum"].asString();
-		if(!value["Email"].isNull())
-			itemsObject.email = value["Email"].asString();
-		if(!value["ActiveStatus"].isNull())
-			itemsObject.activeStatus = value["ActiveStatus"].asString();
-		if(!value["DeleteStatus"].isNull())
-			itemsObject.deleteStatus = value["DeleteStatus"].asString();
-		if(!value["DataInstance"].isNull())
-			itemsObject.dataInstance = value["DataInstance"].asString();
-		if(!value["CreateTime"].isNull())
-			itemsObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["LoginDataTime"].isNull())
-			itemsObject.loginDataTime = std::stol(value["LoginDataTime"].asString());
-		if(!value["LoginPolicyName"].isNull())
-			itemsObject.loginPolicyName = value["LoginPolicyName"].asString();
-		if(!value["FirstLevelDepartName"].isNull())
-			itemsObject.firstLevelDepartName = value["FirstLevelDepartName"].asString();
-		if(!value["RoleNames"].isNull())
-			itemsObject.roleNames = value["RoleNames"].asString();
-		if(!value["InstanceName"].isNull())
-			itemsObject.instanceName = value["InstanceName"].asString();
-		if(!value["AliUid"].isNull())
-			itemsObject.aliUid = std::stol(value["AliUid"].asString());
-		if(!value["AccountTypeId"].isNull())
-			itemsObject.accountTypeId = std::stol(value["AccountTypeId"].asString());
+		if(!valueItemsAccount["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsAccount["Id"].asString());
+		if(!valueItemsAccount["UserId"].isNull())
+			itemsObject.userId = std::stol(valueItemsAccount["UserId"].asString());
+		if(!valueItemsAccount["FirstLevelDepartId"].isNull())
+			itemsObject.firstLevelDepartId = std::stol(valueItemsAccount["FirstLevelDepartId"].asString());
+		if(!valueItemsAccount["LoginName"].isNull())
+			itemsObject.loginName = valueItemsAccount["LoginName"].asString();
+		if(!valueItemsAccount["FullName"].isNull())
+			itemsObject.fullName = valueItemsAccount["FullName"].asString();
+		if(!valueItemsAccount["CellphoneNum"].isNull())
+			itemsObject.cellphoneNum = valueItemsAccount["CellphoneNum"].asString();
+		if(!valueItemsAccount["TelephoneNum"].isNull())
+			itemsObject.telephoneNum = valueItemsAccount["TelephoneNum"].asString();
+		if(!valueItemsAccount["Email"].isNull())
+			itemsObject.email = valueItemsAccount["Email"].asString();
+		if(!valueItemsAccount["ActiveStatus"].isNull())
+			itemsObject.activeStatus = valueItemsAccount["ActiveStatus"].asString();
+		if(!valueItemsAccount["DeleteStatus"].isNull())
+			itemsObject.deleteStatus = valueItemsAccount["DeleteStatus"].asString();
+		if(!valueItemsAccount["DataInstance"].isNull())
+			itemsObject.dataInstance = valueItemsAccount["DataInstance"].asString();
+		if(!valueItemsAccount["CreateTime"].isNull())
+			itemsObject.createTime = std::stol(valueItemsAccount["CreateTime"].asString());
+		if(!valueItemsAccount["LoginDataTime"].isNull())
+			itemsObject.loginDataTime = std::stol(valueItemsAccount["LoginDataTime"].asString());
+		if(!valueItemsAccount["LoginPolicyName"].isNull())
+			itemsObject.loginPolicyName = valueItemsAccount["LoginPolicyName"].asString();
+		if(!valueItemsAccount["FirstLevelDepartName"].isNull())
+			itemsObject.firstLevelDepartName = valueItemsAccount["FirstLevelDepartName"].asString();
+		if(!valueItemsAccount["RoleNames"].isNull())
+			itemsObject.roleNames = valueItemsAccount["RoleNames"].asString();
+		if(!valueItemsAccount["InstanceName"].isNull())
+			itemsObject.instanceName = valueItemsAccount["InstanceName"].asString();
+		if(!valueItemsAccount["AliUid"].isNull())
+			itemsObject.aliUid = std::stol(valueItemsAccount["AliUid"].asString());
+		if(!valueItemsAccount["AccountTypeId"].isNull())
+			itemsObject.accountTypeId = std::stol(valueItemsAccount["AccountTypeId"].asString());
 		auto eventCountNode = value["EventCount"];
 		auto totalNode = eventCountNode["Total"];
 		if(!totalNode["TotalCount"].isNull())

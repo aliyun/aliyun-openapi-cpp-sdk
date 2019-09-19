@@ -39,24 +39,24 @@ void ListContainerImagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allImages = value["Images"]["ImagesItem"];
-	for (auto value : allImages)
+	auto allImagesNode = value["Images"]["ImagesItem"];
+	for (auto valueImagesImagesItem : allImagesNode)
 	{
 		ImagesItem imagesObject;
-		if(!value["System"].isNull())
-			imagesObject.system = value["System"].asString();
-		if(!value["Type"].isNull())
-			imagesObject.type = value["Type"].asString();
-		if(!value["Status"].isNull())
-			imagesObject.status = value["Status"].asString();
-		if(!value["ImageId"].isNull())
-			imagesObject.imageId = value["ImageId"].asString();
-		if(!value["UpdateDateTime"].isNull())
-			imagesObject.updateDateTime = value["UpdateDateTime"].asString();
-		if(!value["Repository"].isNull())
-			imagesObject.repository = value["Repository"].asString();
-		if(!value["Tag"].isNull())
-			imagesObject.tag = value["Tag"].asString();
+		if(!valueImagesImagesItem["System"].isNull())
+			imagesObject.system = valueImagesImagesItem["System"].asString();
+		if(!valueImagesImagesItem["Type"].isNull())
+			imagesObject.type = valueImagesImagesItem["Type"].asString();
+		if(!valueImagesImagesItem["Status"].isNull())
+			imagesObject.status = valueImagesImagesItem["Status"].asString();
+		if(!valueImagesImagesItem["ImageId"].isNull())
+			imagesObject.imageId = valueImagesImagesItem["ImageId"].asString();
+		if(!valueImagesImagesItem["UpdateDateTime"].isNull())
+			imagesObject.updateDateTime = valueImagesImagesItem["UpdateDateTime"].asString();
+		if(!valueImagesImagesItem["Repository"].isNull())
+			imagesObject.repository = valueImagesImagesItem["Repository"].asString();
+		if(!valueImagesImagesItem["Tag"].isNull())
+			imagesObject.tag = valueImagesImagesItem["Tag"].asString();
 		images_.push_back(imagesObject);
 	}
 	if(!value["TotalCount"].isNull())

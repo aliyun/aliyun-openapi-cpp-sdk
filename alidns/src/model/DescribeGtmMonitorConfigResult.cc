@@ -39,18 +39,18 @@ void DescribeGtmMonitorConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIspCityNodes = value["IspCityNodes"]["IspCityNode"];
-	for (auto value : allIspCityNodes)
+	auto allIspCityNodesNode = value["IspCityNodes"]["IspCityNode"];
+	for (auto valueIspCityNodesIspCityNode : allIspCityNodesNode)
 	{
 		IspCityNode ispCityNodesObject;
-		if(!value["CountryName"].isNull())
-			ispCityNodesObject.countryName = value["CountryName"].asString();
-		if(!value["CountryCode"].isNull())
-			ispCityNodesObject.countryCode = value["CountryCode"].asString();
-		if(!value["CityName"].isNull())
-			ispCityNodesObject.cityName = value["CityName"].asString();
-		if(!value["CityCode"].isNull())
-			ispCityNodesObject.cityCode = value["CityCode"].asString();
+		if(!valueIspCityNodesIspCityNode["CountryName"].isNull())
+			ispCityNodesObject.countryName = valueIspCityNodesIspCityNode["CountryName"].asString();
+		if(!valueIspCityNodesIspCityNode["CountryCode"].isNull())
+			ispCityNodesObject.countryCode = valueIspCityNodesIspCityNode["CountryCode"].asString();
+		if(!valueIspCityNodesIspCityNode["CityName"].isNull())
+			ispCityNodesObject.cityName = valueIspCityNodesIspCityNode["CityName"].asString();
+		if(!valueIspCityNodesIspCityNode["CityCode"].isNull())
+			ispCityNodesObject.cityCode = valueIspCityNodesIspCityNode["CityCode"].asString();
 		ispCityNodes_.push_back(ispCityNodesObject);
 	}
 	if(!value["MonitorConfigId"].isNull())

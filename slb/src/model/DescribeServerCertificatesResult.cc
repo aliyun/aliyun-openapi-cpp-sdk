@@ -39,46 +39,46 @@ void DescribeServerCertificatesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allServerCertificates = value["ServerCertificates"]["ServerCertificate"];
-	for (auto value : allServerCertificates)
+	auto allServerCertificatesNode = value["ServerCertificates"]["ServerCertificate"];
+	for (auto valueServerCertificatesServerCertificate : allServerCertificatesNode)
 	{
 		ServerCertificate serverCertificatesObject;
-		if(!value["ServerCertificateId"].isNull())
-			serverCertificatesObject.serverCertificateId = value["ServerCertificateId"].asString();
-		if(!value["Fingerprint"].isNull())
-			serverCertificatesObject.fingerprint = value["Fingerprint"].asString();
-		if(!value["ServerCertificateName"].isNull())
-			serverCertificatesObject.serverCertificateName = value["ServerCertificateName"].asString();
-		if(!value["RegionId"].isNull())
-			serverCertificatesObject.regionId = value["RegionId"].asString();
-		if(!value["RegionIdAlias"].isNull())
-			serverCertificatesObject.regionIdAlias = value["RegionIdAlias"].asString();
-		if(!value["AliCloudCertificateId"].isNull())
-			serverCertificatesObject.aliCloudCertificateId = value["AliCloudCertificateId"].asString();
-		if(!value["AliCloudCertificateName"].isNull())
-			serverCertificatesObject.aliCloudCertificateName = value["AliCloudCertificateName"].asString();
-		if(!value["IsAliCloudCertificate"].isNull())
-			serverCertificatesObject.isAliCloudCertificate = std::stoi(value["IsAliCloudCertificate"].asString());
-		if(!value["ResourceGroupId"].isNull())
-			serverCertificatesObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["CreateTime"].isNull())
-			serverCertificatesObject.createTime = value["CreateTime"].asString();
-		if(!value["CreateTimeStamp"].isNull())
-			serverCertificatesObject.createTimeStamp = std::stol(value["CreateTimeStamp"].asString());
-		if(!value["ExpireTime"].isNull())
-			serverCertificatesObject.expireTime = value["ExpireTime"].asString();
-		if(!value["ExpireTimeStamp"].isNull())
-			serverCertificatesObject.expireTimeStamp = std::stol(value["ExpireTimeStamp"].asString());
-		if(!value["CommonName"].isNull())
-			serverCertificatesObject.commonName = value["CommonName"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueServerCertificatesServerCertificate["ServerCertificateId"].isNull())
+			serverCertificatesObject.serverCertificateId = valueServerCertificatesServerCertificate["ServerCertificateId"].asString();
+		if(!valueServerCertificatesServerCertificate["Fingerprint"].isNull())
+			serverCertificatesObject.fingerprint = valueServerCertificatesServerCertificate["Fingerprint"].asString();
+		if(!valueServerCertificatesServerCertificate["ServerCertificateName"].isNull())
+			serverCertificatesObject.serverCertificateName = valueServerCertificatesServerCertificate["ServerCertificateName"].asString();
+		if(!valueServerCertificatesServerCertificate["RegionId"].isNull())
+			serverCertificatesObject.regionId = valueServerCertificatesServerCertificate["RegionId"].asString();
+		if(!valueServerCertificatesServerCertificate["RegionIdAlias"].isNull())
+			serverCertificatesObject.regionIdAlias = valueServerCertificatesServerCertificate["RegionIdAlias"].asString();
+		if(!valueServerCertificatesServerCertificate["AliCloudCertificateId"].isNull())
+			serverCertificatesObject.aliCloudCertificateId = valueServerCertificatesServerCertificate["AliCloudCertificateId"].asString();
+		if(!valueServerCertificatesServerCertificate["AliCloudCertificateName"].isNull())
+			serverCertificatesObject.aliCloudCertificateName = valueServerCertificatesServerCertificate["AliCloudCertificateName"].asString();
+		if(!valueServerCertificatesServerCertificate["IsAliCloudCertificate"].isNull())
+			serverCertificatesObject.isAliCloudCertificate = std::stoi(valueServerCertificatesServerCertificate["IsAliCloudCertificate"].asString());
+		if(!valueServerCertificatesServerCertificate["ResourceGroupId"].isNull())
+			serverCertificatesObject.resourceGroupId = valueServerCertificatesServerCertificate["ResourceGroupId"].asString();
+		if(!valueServerCertificatesServerCertificate["CreateTime"].isNull())
+			serverCertificatesObject.createTime = valueServerCertificatesServerCertificate["CreateTime"].asString();
+		if(!valueServerCertificatesServerCertificate["CreateTimeStamp"].isNull())
+			serverCertificatesObject.createTimeStamp = std::stol(valueServerCertificatesServerCertificate["CreateTimeStamp"].asString());
+		if(!valueServerCertificatesServerCertificate["ExpireTime"].isNull())
+			serverCertificatesObject.expireTime = valueServerCertificatesServerCertificate["ExpireTime"].asString();
+		if(!valueServerCertificatesServerCertificate["ExpireTimeStamp"].isNull())
+			serverCertificatesObject.expireTimeStamp = std::stol(valueServerCertificatesServerCertificate["ExpireTimeStamp"].asString());
+		if(!valueServerCertificatesServerCertificate["CommonName"].isNull())
+			serverCertificatesObject.commonName = valueServerCertificatesServerCertificate["CommonName"].asString();
+		auto allTagsNode = allServerCertificatesNode["Tags"]["Tag"];
+		for (auto allServerCertificatesNodeTagsTag : allTagsNode)
 		{
 			ServerCertificate::Tag tagsObject;
-			if(!value["TagKey"].isNull())
-				tagsObject.tagKey = value["TagKey"].asString();
-			if(!value["TagValue"].isNull())
-				tagsObject.tagValue = value["TagValue"].asString();
+			if(!allServerCertificatesNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allServerCertificatesNodeTagsTag["TagKey"].asString();
+			if(!allServerCertificatesNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allServerCertificatesNodeTagsTag["TagValue"].asString();
 			serverCertificatesObject.tags.push_back(tagsObject);
 		}
 		auto allSubjectAlternativeNames = value["SubjectAlternativeNames"]["SubjectAlternativeName"];

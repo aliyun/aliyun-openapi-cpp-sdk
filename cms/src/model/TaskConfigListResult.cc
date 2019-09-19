@@ -39,28 +39,28 @@ void TaskConfigListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTaskList = value["TaskList"]["NodeTaskConfig"];
-	for (auto value : allTaskList)
+	auto allTaskListNode = value["TaskList"]["NodeTaskConfig"];
+	for (auto valueTaskListNodeTaskConfig : allTaskListNode)
 	{
 		NodeTaskConfig taskListObject;
-		if(!value["Id"].isNull())
-			taskListObject.id = std::stol(value["Id"].asString());
-		if(!value["TaskName"].isNull())
-			taskListObject.taskName = value["TaskName"].asString();
-		if(!value["TaskType"].isNull())
-			taskListObject.taskType = value["TaskType"].asString();
-		if(!value["TaskScope"].isNull())
-			taskListObject.taskScope = value["TaskScope"].asString();
-		if(!value["Disabled"].isNull())
-			taskListObject.disabled = value["Disabled"].asString() == "true";
-		if(!value["GroupId"].isNull())
-			taskListObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["GroupName"].isNull())
-			taskListObject.groupName = value["GroupName"].asString();
-		if(!value["JsonData"].isNull())
-			taskListObject.jsonData = value["JsonData"].asString();
-		if(!value["AlertConfig"].isNull())
-			taskListObject.alertConfig = value["AlertConfig"].asString();
+		if(!valueTaskListNodeTaskConfig["Id"].isNull())
+			taskListObject.id = std::stol(valueTaskListNodeTaskConfig["Id"].asString());
+		if(!valueTaskListNodeTaskConfig["TaskName"].isNull())
+			taskListObject.taskName = valueTaskListNodeTaskConfig["TaskName"].asString();
+		if(!valueTaskListNodeTaskConfig["TaskType"].isNull())
+			taskListObject.taskType = valueTaskListNodeTaskConfig["TaskType"].asString();
+		if(!valueTaskListNodeTaskConfig["TaskScope"].isNull())
+			taskListObject.taskScope = valueTaskListNodeTaskConfig["TaskScope"].asString();
+		if(!valueTaskListNodeTaskConfig["Disabled"].isNull())
+			taskListObject.disabled = valueTaskListNodeTaskConfig["Disabled"].asString() == "true";
+		if(!valueTaskListNodeTaskConfig["GroupId"].isNull())
+			taskListObject.groupId = std::stol(valueTaskListNodeTaskConfig["GroupId"].asString());
+		if(!valueTaskListNodeTaskConfig["GroupName"].isNull())
+			taskListObject.groupName = valueTaskListNodeTaskConfig["GroupName"].asString();
+		if(!valueTaskListNodeTaskConfig["JsonData"].isNull())
+			taskListObject.jsonData = valueTaskListNodeTaskConfig["JsonData"].asString();
+		if(!valueTaskListNodeTaskConfig["AlertConfig"].isNull())
+			taskListObject.alertConfig = valueTaskListNodeTaskConfig["AlertConfig"].asString();
 		auto allInstanceList = value["InstanceList"]["String"];
 		for (auto value : allInstanceList)
 			taskListObject.instanceList.push_back(value.asString());

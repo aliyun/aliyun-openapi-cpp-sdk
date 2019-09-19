@@ -39,16 +39,16 @@ void DescribeConfigNameResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConfigNames = value["ConfigNames"]["ConfigName"];
-	for (auto value : allConfigNames)
+	auto allConfigNamesNode = value["ConfigNames"]["ConfigName"];
+	for (auto valueConfigNamesConfigName : allConfigNamesNode)
 	{
 		ConfigName configNamesObject;
-		if(!value["AliUid"].isNull())
-			configNamesObject.aliUid = value["AliUid"].asString();
-		if(!value["ConfigName"].isNull())
-			configNamesObject.configName = value["ConfigName"].asString();
-		if(!value["RefExtId"].isNull())
-			configNamesObject.refExtId = value["RefExtId"].asString();
+		if(!valueConfigNamesConfigName["AliUid"].isNull())
+			configNamesObject.aliUid = valueConfigNamesConfigName["AliUid"].asString();
+		if(!valueConfigNamesConfigName["ConfigName"].isNull())
+			configNamesObject.configName = valueConfigNamesConfigName["ConfigName"].asString();
+		if(!valueConfigNamesConfigName["RefExtId"].isNull())
+			configNamesObject.refExtId = valueConfigNamesConfigName["RefExtId"].asString();
 		configNames_.push_back(configNamesObject);
 	}
 	if(!value["HasConfig"].isNull())

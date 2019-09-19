@@ -39,24 +39,24 @@ void QueryPornJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPornJobList = value["PornJobList"]["PornJob"];
-	for (auto value : allPornJobList)
+	auto allPornJobListNode = value["PornJobList"]["PornJob"];
+	for (auto valuePornJobListPornJob : allPornJobListNode)
 	{
 		PornJob pornJobListObject;
-		if(!value["Id"].isNull())
-			pornJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			pornJobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			pornJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			pornJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			pornJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			pornJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			pornJobListObject.creationTime = value["CreationTime"].asString();
+		if(!valuePornJobListPornJob["Id"].isNull())
+			pornJobListObject.id = valuePornJobListPornJob["Id"].asString();
+		if(!valuePornJobListPornJob["UserData"].isNull())
+			pornJobListObject.userData = valuePornJobListPornJob["UserData"].asString();
+		if(!valuePornJobListPornJob["PipelineId"].isNull())
+			pornJobListObject.pipelineId = valuePornJobListPornJob["PipelineId"].asString();
+		if(!valuePornJobListPornJob["State"].isNull())
+			pornJobListObject.state = valuePornJobListPornJob["State"].asString();
+		if(!valuePornJobListPornJob["Code"].isNull())
+			pornJobListObject.code = valuePornJobListPornJob["Code"].asString();
+		if(!valuePornJobListPornJob["Message"].isNull())
+			pornJobListObject.message = valuePornJobListPornJob["Message"].asString();
+		if(!valuePornJobListPornJob["CreationTime"].isNull())
+			pornJobListObject.creationTime = valuePornJobListPornJob["CreationTime"].asString();
 		auto inputNode = value["Input"];
 		if(!inputNode["Bucket"].isNull())
 			pornJobListObject.input.bucket = inputNode["Bucket"].asString();
@@ -85,30 +85,30 @@ void QueryPornJobListResult::parse(const std::string &payload)
 			pornJobListObject.censorPornResult.maxScore = censorPornResultNode["MaxScore"].asString();
 		if(!censorPornResultNode["AverageScore"].isNull())
 			pornJobListObject.censorPornResult.averageScore = censorPornResultNode["AverageScore"].asString();
-		auto allPornCounterList = value["PornCounterList"]["Counter"];
-		for (auto value : allPornCounterList)
+		auto allPornCounterListNode = censorPornResultNode["PornCounterList"]["Counter"];
+		for (auto censorPornResultNodePornCounterListCounter : allPornCounterListNode)
 		{
 			PornJob::CensorPornResult::Counter counterObject;
-			if(!value["Count"].isNull())
-				counterObject.count = std::stoi(value["Count"].asString());
-			if(!value["Label"].isNull())
-				counterObject.label = value["Label"].asString();
+			if(!censorPornResultNodePornCounterListCounter["Count"].isNull())
+				counterObject.count = std::stoi(censorPornResultNodePornCounterListCounter["Count"].asString());
+			if(!censorPornResultNodePornCounterListCounter["Label"].isNull())
+				counterObject.label = censorPornResultNodePornCounterListCounter["Label"].asString();
 			pornJobListObject.censorPornResult.pornCounterList.push_back(counterObject);
 		}
-		auto allPornTopList = value["PornTopList"]["Top"];
-		for (auto value : allPornTopList)
+		auto allPornTopListNode = censorPornResultNode["PornTopList"]["Top"];
+		for (auto censorPornResultNodePornTopListTop : allPornTopListNode)
 		{
 			PornJob::CensorPornResult::Top topObject;
-			if(!value["Label"].isNull())
-				topObject.label = value["Label"].asString();
-			if(!value["Score"].isNull())
-				topObject.score = value["Score"].asString();
-			if(!value["Timestamp"].isNull())
-				topObject.timestamp = value["Timestamp"].asString();
-			if(!value["Index"].isNull())
-				topObject.index = value["Index"].asString();
-			if(!value["Object"].isNull())
-				topObject.object = value["Object"].asString();
+			if(!censorPornResultNodePornTopListTop["Label"].isNull())
+				topObject.label = censorPornResultNodePornTopListTop["Label"].asString();
+			if(!censorPornResultNodePornTopListTop["Score"].isNull())
+				topObject.score = censorPornResultNodePornTopListTop["Score"].asString();
+			if(!censorPornResultNodePornTopListTop["Timestamp"].isNull())
+				topObject.timestamp = censorPornResultNodePornTopListTop["Timestamp"].asString();
+			if(!censorPornResultNodePornTopListTop["Index"].isNull())
+				topObject.index = censorPornResultNodePornTopListTop["Index"].asString();
+			if(!censorPornResultNodePornTopListTop["Object"].isNull())
+				topObject.object = censorPornResultNodePornTopListTop["Object"].asString();
 			pornJobListObject.censorPornResult.pornTopList.push_back(topObject);
 		}
 		pornJobList_.push_back(pornJobListObject);

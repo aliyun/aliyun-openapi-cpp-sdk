@@ -39,26 +39,26 @@ void DescribeWhiteListEffectiveAssetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAssets = value["Assets"]["Asset"];
-	for (auto value : allAssets)
+	auto allAssetsNode = value["Assets"]["Asset"];
+	for (auto valueAssetsAsset : allAssetsNode)
 	{
 		Asset assetsObject;
-		if(!value["Uuid"].isNull())
-			assetsObject.uuid = value["Uuid"].asString();
-		if(!value["MachineName"].isNull())
-			assetsObject.machineName = value["MachineName"].asString();
-		if(!value["InternetIp"].isNull())
-			assetsObject.internetIp = value["InternetIp"].asString();
-		if(!value["IntranetIp"].isNull())
-			assetsObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["StrategyId"].isNull())
-			assetsObject.strategyId = std::stol(value["StrategyId"].asString());
-		if(!value["StrategyName"].isNull())
-			assetsObject.strategyName = value["StrategyName"].asString();
-		if(!value["SuspiciousEventCount"].isNull())
-			assetsObject.suspiciousEventCount = std::stoi(value["SuspiciousEventCount"].asString());
-		if(!value["ProcessMethod"].isNull())
-			assetsObject.processMethod = std::stoi(value["ProcessMethod"].asString());
+		if(!valueAssetsAsset["Uuid"].isNull())
+			assetsObject.uuid = valueAssetsAsset["Uuid"].asString();
+		if(!valueAssetsAsset["MachineName"].isNull())
+			assetsObject.machineName = valueAssetsAsset["MachineName"].asString();
+		if(!valueAssetsAsset["InternetIp"].isNull())
+			assetsObject.internetIp = valueAssetsAsset["InternetIp"].asString();
+		if(!valueAssetsAsset["IntranetIp"].isNull())
+			assetsObject.intranetIp = valueAssetsAsset["IntranetIp"].asString();
+		if(!valueAssetsAsset["StrategyId"].isNull())
+			assetsObject.strategyId = std::stol(valueAssetsAsset["StrategyId"].asString());
+		if(!valueAssetsAsset["StrategyName"].isNull())
+			assetsObject.strategyName = valueAssetsAsset["StrategyName"].asString();
+		if(!valueAssetsAsset["SuspiciousEventCount"].isNull())
+			assetsObject.suspiciousEventCount = std::stoi(valueAssetsAsset["SuspiciousEventCount"].asString());
+		if(!valueAssetsAsset["ProcessMethod"].isNull())
+			assetsObject.processMethod = std::stoi(valueAssetsAsset["ProcessMethod"].asString());
 		assets_.push_back(assetsObject);
 	}
 	if(!value["Count"].isNull())

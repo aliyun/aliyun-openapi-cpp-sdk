@@ -39,42 +39,42 @@ void DescribeSmartAccessGatewayAttributeResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLinks = value["Links"]["Link"];
-	for (auto value : allLinks)
+	auto allLinksNode = value["Links"]["Link"];
+	for (auto valueLinksLink : allLinksNode)
 	{
 		Link linksObject;
-		if(!value["InstanceId"].isNull())
-			linksObject.instanceId = value["InstanceId"].asString();
-		if(!value["Type"].isNull())
-			linksObject.type = value["Type"].asString();
-		if(!value["Status"].isNull())
-			linksObject.status = value["Status"].asString();
-		if(!value["EndTime"].isNull())
-			linksObject.endTime = std::stol(value["EndTime"].asString());
-		if(!value["Bandwidth"].isNull())
-			linksObject.bandwidth = value["Bandwidth"].asString();
-		if(!value["RelateInstanceId"].isNull())
-			linksObject.relateInstanceId = value["RelateInstanceId"].asString();
-		if(!value["RelateInstanceRegionId"].isNull())
-			linksObject.relateInstanceRegionId = value["RelateInstanceRegionId"].asString();
-		if(!value["CommodityType"].isNull())
-			linksObject.commodityType = value["CommodityType"].asString();
+		if(!valueLinksLink["InstanceId"].isNull())
+			linksObject.instanceId = valueLinksLink["InstanceId"].asString();
+		if(!valueLinksLink["Type"].isNull())
+			linksObject.type = valueLinksLink["Type"].asString();
+		if(!valueLinksLink["Status"].isNull())
+			linksObject.status = valueLinksLink["Status"].asString();
+		if(!valueLinksLink["EndTime"].isNull())
+			linksObject.endTime = std::stol(valueLinksLink["EndTime"].asString());
+		if(!valueLinksLink["Bandwidth"].isNull())
+			linksObject.bandwidth = valueLinksLink["Bandwidth"].asString();
+		if(!valueLinksLink["RelateInstanceId"].isNull())
+			linksObject.relateInstanceId = valueLinksLink["RelateInstanceId"].asString();
+		if(!valueLinksLink["RelateInstanceRegionId"].isNull())
+			linksObject.relateInstanceRegionId = valueLinksLink["RelateInstanceRegionId"].asString();
+		if(!valueLinksLink["CommodityType"].isNull())
+			linksObject.commodityType = valueLinksLink["CommodityType"].asString();
 		links_.push_back(linksObject);
 	}
-	auto allDevices = value["Devices"]["Device"];
-	for (auto value : allDevices)
+	auto allDevicesNode = value["Devices"]["Device"];
+	for (auto valueDevicesDevice : allDevicesNode)
 	{
 		Device devicesObject;
-		if(!value["SerialNumber"].isNull())
-			devicesObject.serialNumber = value["SerialNumber"].asString();
-		if(!value["HcState"].isNull())
-			devicesObject.hcState = value["HcState"].asString();
-		if(!value["HaState"].isNull())
-			devicesObject.haState = value["HaState"].asString();
-		if(!value["SoftwareVersion"].isNull())
-			devicesObject.softwareVersion = std::stol(value["SoftwareVersion"].asString());
-		if(!value["MonitorVersion"].isNull())
-			devicesObject.monitorVersion = value["MonitorVersion"].asString();
+		if(!valueDevicesDevice["SerialNumber"].isNull())
+			devicesObject.serialNumber = valueDevicesDevice["SerialNumber"].asString();
+		if(!valueDevicesDevice["HcState"].isNull())
+			devicesObject.hcState = valueDevicesDevice["HcState"].asString();
+		if(!valueDevicesDevice["HaState"].isNull())
+			devicesObject.haState = valueDevicesDevice["HaState"].asString();
+		if(!valueDevicesDevice["SoftwareVersion"].isNull())
+			devicesObject.softwareVersion = std::stol(valueDevicesDevice["SoftwareVersion"].asString());
+		if(!valueDevicesDevice["MonitorVersion"].isNull())
+			devicesObject.monitorVersion = valueDevicesDevice["MonitorVersion"].asString();
 		devices_.push_back(devicesObject);
 	}
 	if(!value["SmartAGId"].isNull())

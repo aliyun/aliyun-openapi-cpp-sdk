@@ -39,38 +39,38 @@ void ListMonitoringTemplatesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResources = value["Resources"]["Resource"];
-	for (auto value : allResources)
+	auto allResourcesNode = value["Resources"]["Resource"];
+	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!value["Name"].isNull())
-			resourcesObject.name = value["Name"].asString();
-		if(!value["Namespace"].isNull())
-			resourcesObject._namespace = value["Namespace"].asString();
-		if(!value["Description"].isNull())
-			resourcesObject.description = value["Description"].asString();
-		if(!value["AlertTemplatesJson"].isNull())
-			resourcesObject.alertTemplatesJson = value["AlertTemplatesJson"].asString();
-		if(!value["RestVersion"].isNull())
-			resourcesObject.restVersion = std::stol(value["RestVersion"].asString());
-		if(!value["Id"].isNull())
-			resourcesObject.id = std::stol(value["Id"].asString());
-		if(!value["GmtCreate"].isNull())
-			resourcesObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			resourcesObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["EventRuleTemplatesJson"].isNull())
-			resourcesObject.eventRuleTemplatesJson = value["EventRuleTemplatesJson"].asString();
-		auto allApplyHistories = value["ApplyHistories"]["ApplyHistory"];
-		for (auto value : allApplyHistories)
+		if(!valueResourcesResource["Name"].isNull())
+			resourcesObject.name = valueResourcesResource["Name"].asString();
+		if(!valueResourcesResource["Namespace"].isNull())
+			resourcesObject._namespace = valueResourcesResource["Namespace"].asString();
+		if(!valueResourcesResource["Description"].isNull())
+			resourcesObject.description = valueResourcesResource["Description"].asString();
+		if(!valueResourcesResource["AlertTemplatesJson"].isNull())
+			resourcesObject.alertTemplatesJson = valueResourcesResource["AlertTemplatesJson"].asString();
+		if(!valueResourcesResource["RestVersion"].isNull())
+			resourcesObject.restVersion = std::stol(valueResourcesResource["RestVersion"].asString());
+		if(!valueResourcesResource["Id"].isNull())
+			resourcesObject.id = std::stol(valueResourcesResource["Id"].asString());
+		if(!valueResourcesResource["GmtCreate"].isNull())
+			resourcesObject.gmtCreate = std::stol(valueResourcesResource["GmtCreate"].asString());
+		if(!valueResourcesResource["GmtModified"].isNull())
+			resourcesObject.gmtModified = std::stol(valueResourcesResource["GmtModified"].asString());
+		if(!valueResourcesResource["EventRuleTemplatesJson"].isNull())
+			resourcesObject.eventRuleTemplatesJson = valueResourcesResource["EventRuleTemplatesJson"].asString();
+		auto allApplyHistoriesNode = allResourcesNode["ApplyHistories"]["ApplyHistory"];
+		for (auto allResourcesNodeApplyHistoriesApplyHistory : allApplyHistoriesNode)
 		{
 			Resource::ApplyHistory applyHistoriesObject;
-			if(!value["GroupId"].isNull())
-				applyHistoriesObject.groupId = std::stol(value["GroupId"].asString());
-			if(!value["GroupName"].isNull())
-				applyHistoriesObject.groupName = value["GroupName"].asString();
-			if(!value["ApplyTime"].isNull())
-				applyHistoriesObject.applyTime = std::stol(value["ApplyTime"].asString());
+			if(!allResourcesNodeApplyHistoriesApplyHistory["GroupId"].isNull())
+				applyHistoriesObject.groupId = std::stol(allResourcesNodeApplyHistoriesApplyHistory["GroupId"].asString());
+			if(!allResourcesNodeApplyHistoriesApplyHistory["GroupName"].isNull())
+				applyHistoriesObject.groupName = allResourcesNodeApplyHistoriesApplyHistory["GroupName"].asString();
+			if(!allResourcesNodeApplyHistoriesApplyHistory["ApplyTime"].isNull())
+				applyHistoriesObject.applyTime = std::stol(allResourcesNodeApplyHistoriesApplyHistory["ApplyTime"].asString());
 			resourcesObject.applyHistories.push_back(applyHistoriesObject);
 		}
 		resources_.push_back(resourcesObject);

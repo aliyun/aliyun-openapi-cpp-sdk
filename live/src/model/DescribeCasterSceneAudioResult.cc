@@ -39,16 +39,16 @@ void DescribeCasterSceneAudioResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAudioLayers = value["AudioLayers"]["AudioLayer"];
-	for (auto value : allAudioLayers)
+	auto allAudioLayersNode = value["AudioLayers"]["AudioLayer"];
+	for (auto valueAudioLayersAudioLayer : allAudioLayersNode)
 	{
 		AudioLayer audioLayersObject;
-		if(!value["VolumeRate"].isNull())
-			audioLayersObject.volumeRate = std::stof(value["VolumeRate"].asString());
-		if(!value["ValidChannel"].isNull())
-			audioLayersObject.validChannel = value["ValidChannel"].asString();
-		if(!value["FixedDelayDuration"].isNull())
-			audioLayersObject.fixedDelayDuration = std::stoi(value["FixedDelayDuration"].asString());
+		if(!valueAudioLayersAudioLayer["VolumeRate"].isNull())
+			audioLayersObject.volumeRate = std::stof(valueAudioLayersAudioLayer["VolumeRate"].asString());
+		if(!valueAudioLayersAudioLayer["ValidChannel"].isNull())
+			audioLayersObject.validChannel = valueAudioLayersAudioLayer["ValidChannel"].asString();
+		if(!valueAudioLayersAudioLayer["FixedDelayDuration"].isNull())
+			audioLayersObject.fixedDelayDuration = std::stoi(valueAudioLayersAudioLayer["FixedDelayDuration"].asString());
 		audioLayers_.push_back(audioLayersObject);
 	}
 	auto allMixList = value["MixList"]["LocationId"];

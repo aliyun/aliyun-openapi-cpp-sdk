@@ -39,16 +39,16 @@ void TodayqpsByRegionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Region"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["Region"];
+	for (auto valueDataRegion : allDataNode)
 	{
 		Region dataObject;
-		if(!value["RegionId"].isNull())
-			dataObject.regionId = value["RegionId"].asString();
-		if(!value["RegionNumber"].isNull())
-			dataObject.regionNumber = std::stol(value["RegionNumber"].asString());
-		if(!value["RegionFlow"].isNull())
-			dataObject.regionFlow = std::stol(value["RegionFlow"].asString());
+		if(!valueDataRegion["RegionId"].isNull())
+			dataObject.regionId = valueDataRegion["RegionId"].asString();
+		if(!valueDataRegion["RegionNumber"].isNull())
+			dataObject.regionNumber = std::stol(valueDataRegion["RegionNumber"].asString());
+		if(!valueDataRegion["RegionFlow"].isNull())
+			dataObject.regionFlow = std::stol(valueDataRegion["RegionFlow"].asString());
 		data_.push_back(dataObject);
 	}
 

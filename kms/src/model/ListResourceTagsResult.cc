@@ -39,16 +39,16 @@ void ListResourceTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTags = value["Tags"]["Tag"];
-	for (auto value : allTags)
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
 	{
 		Tag tagsObject;
-		if(!value["KeyId"].isNull())
-			tagsObject.keyId = value["KeyId"].asString();
-		if(!value["TagKey"].isNull())
-			tagsObject.tagKey = value["TagKey"].asString();
-		if(!value["TagValue"].isNull())
-			tagsObject.tagValue = value["TagValue"].asString();
+		if(!valueTagsTag["KeyId"].isNull())
+			tagsObject.keyId = valueTagsTag["KeyId"].asString();
+		if(!valueTagsTag["TagKey"].isNull())
+			tagsObject.tagKey = valueTagsTag["TagKey"].asString();
+		if(!valueTagsTag["TagValue"].isNull())
+			tagsObject.tagValue = valueTagsTag["TagValue"].asString();
 		tags_.push_back(tagsObject);
 	}
 

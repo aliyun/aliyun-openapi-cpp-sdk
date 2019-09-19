@@ -39,30 +39,30 @@ void DescribeAutoSnapshotPolicyExResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAutoSnapshotPolicies = value["AutoSnapshotPolicies"]["AutoSnapshotPolicy"];
-	for (auto value : allAutoSnapshotPolicies)
+	auto allAutoSnapshotPoliciesNode = value["AutoSnapshotPolicies"]["AutoSnapshotPolicy"];
+	for (auto valueAutoSnapshotPoliciesAutoSnapshotPolicy : allAutoSnapshotPoliciesNode)
 	{
 		AutoSnapshotPolicy autoSnapshotPoliciesObject;
-		if(!value["AutoSnapshotPolicyId"].isNull())
-			autoSnapshotPoliciesObject.autoSnapshotPolicyId = value["AutoSnapshotPolicyId"].asString();
-		if(!value["RegionId"].isNull())
-			autoSnapshotPoliciesObject.regionId = value["RegionId"].asString();
-		if(!value["AutoSnapshotPolicyName"].isNull())
-			autoSnapshotPoliciesObject.autoSnapshotPolicyName = value["AutoSnapshotPolicyName"].asString();
-		if(!value["TimePoints"].isNull())
-			autoSnapshotPoliciesObject.timePoints = value["TimePoints"].asString();
-		if(!value["RepeatWeekdays"].isNull())
-			autoSnapshotPoliciesObject.repeatWeekdays = value["RepeatWeekdays"].asString();
-		if(!value["RetentionDays"].isNull())
-			autoSnapshotPoliciesObject.retentionDays = std::stoi(value["RetentionDays"].asString());
-		if(!value["DiskNums"].isNull())
-			autoSnapshotPoliciesObject.diskNums = std::stoi(value["DiskNums"].asString());
-		if(!value["VolumeNums"].isNull())
-			autoSnapshotPoliciesObject.volumeNums = std::stoi(value["VolumeNums"].asString());
-		if(!value["CreationTime"].isNull())
-			autoSnapshotPoliciesObject.creationTime = value["CreationTime"].asString();
-		if(!value["Status"].isNull())
-			autoSnapshotPoliciesObject.status = value["Status"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyId"].isNull())
+			autoSnapshotPoliciesObject.autoSnapshotPolicyId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyId"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RegionId"].isNull())
+			autoSnapshotPoliciesObject.regionId = valueAutoSnapshotPoliciesAutoSnapshotPolicy["RegionId"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyName"].isNull())
+			autoSnapshotPoliciesObject.autoSnapshotPolicyName = valueAutoSnapshotPoliciesAutoSnapshotPolicy["AutoSnapshotPolicyName"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["TimePoints"].isNull())
+			autoSnapshotPoliciesObject.timePoints = valueAutoSnapshotPoliciesAutoSnapshotPolicy["TimePoints"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RepeatWeekdays"].isNull())
+			autoSnapshotPoliciesObject.repeatWeekdays = valueAutoSnapshotPoliciesAutoSnapshotPolicy["RepeatWeekdays"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["RetentionDays"].isNull())
+			autoSnapshotPoliciesObject.retentionDays = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["RetentionDays"].asString());
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["DiskNums"].isNull())
+			autoSnapshotPoliciesObject.diskNums = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["DiskNums"].asString());
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["VolumeNums"].isNull())
+			autoSnapshotPoliciesObject.volumeNums = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["VolumeNums"].asString());
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["CreationTime"].isNull())
+			autoSnapshotPoliciesObject.creationTime = valueAutoSnapshotPoliciesAutoSnapshotPolicy["CreationTime"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].isNull())
+			autoSnapshotPoliciesObject.status = valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].asString();
 		autoSnapshotPolicies_.push_back(autoSnapshotPoliciesObject);
 	}
 	if(!value["TotalCount"].isNull())

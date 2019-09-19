@@ -39,34 +39,34 @@ void GetClusterVolumesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVolumes = value["Volumes"]["VolumeInfo"];
-	for (auto value : allVolumes)
+	auto allVolumesNode = value["Volumes"]["VolumeInfo"];
+	for (auto valueVolumesVolumeInfo : allVolumesNode)
 	{
 		VolumeInfo volumesObject;
-		if(!value["VolumeId"].isNull())
-			volumesObject.volumeId = value["VolumeId"].asString();
-		if(!value["VolumeType"].isNull())
-			volumesObject.volumeType = value["VolumeType"].asString();
-		if(!value["VolumeProtocol"].isNull())
-			volumesObject.volumeProtocol = value["VolumeProtocol"].asString();
-		if(!value["VolumeMountpoint"].isNull())
-			volumesObject.volumeMountpoint = value["VolumeMountpoint"].asString();
-		if(!value["RemoteDirectory"].isNull())
-			volumesObject.remoteDirectory = value["RemoteDirectory"].asString();
-		if(!value["LocalDirectory"].isNull())
-			volumesObject.localDirectory = value["LocalDirectory"].asString();
-		if(!value["Location"].isNull())
-			volumesObject.location = value["Location"].asString();
-		if(!value["JobQueue"].isNull())
-			volumesObject.jobQueue = value["JobQueue"].asString();
-		if(!value["MustKeep"].isNull())
-			volumesObject.mustKeep = value["MustKeep"].asString() == "true";
-		auto allRoles = value["Roles"]["RoleInfo"];
-		for (auto value : allRoles)
+		if(!valueVolumesVolumeInfo["VolumeId"].isNull())
+			volumesObject.volumeId = valueVolumesVolumeInfo["VolumeId"].asString();
+		if(!valueVolumesVolumeInfo["VolumeType"].isNull())
+			volumesObject.volumeType = valueVolumesVolumeInfo["VolumeType"].asString();
+		if(!valueVolumesVolumeInfo["VolumeProtocol"].isNull())
+			volumesObject.volumeProtocol = valueVolumesVolumeInfo["VolumeProtocol"].asString();
+		if(!valueVolumesVolumeInfo["VolumeMountpoint"].isNull())
+			volumesObject.volumeMountpoint = valueVolumesVolumeInfo["VolumeMountpoint"].asString();
+		if(!valueVolumesVolumeInfo["RemoteDirectory"].isNull())
+			volumesObject.remoteDirectory = valueVolumesVolumeInfo["RemoteDirectory"].asString();
+		if(!valueVolumesVolumeInfo["LocalDirectory"].isNull())
+			volumesObject.localDirectory = valueVolumesVolumeInfo["LocalDirectory"].asString();
+		if(!valueVolumesVolumeInfo["Location"].isNull())
+			volumesObject.location = valueVolumesVolumeInfo["Location"].asString();
+		if(!valueVolumesVolumeInfo["JobQueue"].isNull())
+			volumesObject.jobQueue = valueVolumesVolumeInfo["JobQueue"].asString();
+		if(!valueVolumesVolumeInfo["MustKeep"].isNull())
+			volumesObject.mustKeep = valueVolumesVolumeInfo["MustKeep"].asString() == "true";
+		auto allRolesNode = allVolumesNode["Roles"]["RoleInfo"];
+		for (auto allVolumesNodeRolesRoleInfo : allRolesNode)
 		{
 			VolumeInfo::RoleInfo rolesObject;
-			if(!value["Name"].isNull())
-				rolesObject.name = value["Name"].asString();
+			if(!allVolumesNodeRolesRoleInfo["Name"].isNull())
+				rolesObject.name = allVolumesNodeRolesRoleInfo["Name"].asString();
 			volumesObject.roles.push_back(rolesObject);
 		}
 		volumes_.push_back(volumesObject);

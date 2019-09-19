@@ -65,36 +65,36 @@ void GetDataAPIServiceDetailResult::parse(const std::string &payload)
 		data_.sqlTemplateDTO.originSql = sqlTemplateDTONode["OriginSql"].asString();
 	if(!sqlTemplateDTONode["TemplateSql"].isNull())
 		data_.sqlTemplateDTO.templateSql = sqlTemplateDTONode["TemplateSql"].asString();
-	auto allRequestParams = value["RequestParams"]["RequestParamsItem"];
-	for (auto value : allRequestParams)
+	auto allRequestParamsNode = sqlTemplateDTONode["RequestParams"]["RequestParamsItem"];
+	for (auto sqlTemplateDTONodeRequestParamsRequestParamsItem : allRequestParamsNode)
 	{
 		Data::SqlTemplateDTO::RequestParamsItem requestParamsItemObject;
-		if(!value["Name"].isNull())
-			requestParamsItemObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			requestParamsItemObject.type = value["Type"].asString();
-		if(!value["Desc"].isNull())
-			requestParamsItemObject.desc = value["Desc"].asString();
-		if(!value["Example"].isNull())
-			requestParamsItemObject.example = value["Example"].asString();
-		if(!value["Required"].isNull())
-			requestParamsItemObject.required = value["Required"].asString() == "true";
+		if(!sqlTemplateDTONodeRequestParamsRequestParamsItem["Name"].isNull())
+			requestParamsItemObject.name = sqlTemplateDTONodeRequestParamsRequestParamsItem["Name"].asString();
+		if(!sqlTemplateDTONodeRequestParamsRequestParamsItem["Type"].isNull())
+			requestParamsItemObject.type = sqlTemplateDTONodeRequestParamsRequestParamsItem["Type"].asString();
+		if(!sqlTemplateDTONodeRequestParamsRequestParamsItem["Desc"].isNull())
+			requestParamsItemObject.desc = sqlTemplateDTONodeRequestParamsRequestParamsItem["Desc"].asString();
+		if(!sqlTemplateDTONodeRequestParamsRequestParamsItem["Example"].isNull())
+			requestParamsItemObject.example = sqlTemplateDTONodeRequestParamsRequestParamsItem["Example"].asString();
+		if(!sqlTemplateDTONodeRequestParamsRequestParamsItem["Required"].isNull())
+			requestParamsItemObject.required = sqlTemplateDTONodeRequestParamsRequestParamsItem["Required"].asString() == "true";
 		data_.sqlTemplateDTO.requestParams.push_back(requestParamsItemObject);
 	}
-	auto allResponseParams = value["ResponseParams"]["ResponseParamsItem"];
-	for (auto value : allResponseParams)
+	auto allResponseParamsNode = sqlTemplateDTONode["ResponseParams"]["ResponseParamsItem"];
+	for (auto sqlTemplateDTONodeResponseParamsResponseParamsItem : allResponseParamsNode)
 	{
 		Data::SqlTemplateDTO::ResponseParamsItem responseParamsItemObject;
-		if(!value["Name"].isNull())
-			responseParamsItemObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			responseParamsItemObject.type = value["Type"].asString();
-		if(!value["Desc"].isNull())
-			responseParamsItemObject.desc = value["Desc"].asString();
-		if(!value["Example"].isNull())
-			responseParamsItemObject.example = value["Example"].asString();
-		if(!value["Required"].isNull())
-			responseParamsItemObject.required = value["Required"].asString() == "true";
+		if(!sqlTemplateDTONodeResponseParamsResponseParamsItem["Name"].isNull())
+			responseParamsItemObject.name = sqlTemplateDTONodeResponseParamsResponseParamsItem["Name"].asString();
+		if(!sqlTemplateDTONodeResponseParamsResponseParamsItem["Type"].isNull())
+			responseParamsItemObject.type = sqlTemplateDTONodeResponseParamsResponseParamsItem["Type"].asString();
+		if(!sqlTemplateDTONodeResponseParamsResponseParamsItem["Desc"].isNull())
+			responseParamsItemObject.desc = sqlTemplateDTONodeResponseParamsResponseParamsItem["Desc"].asString();
+		if(!sqlTemplateDTONodeResponseParamsResponseParamsItem["Example"].isNull())
+			responseParamsItemObject.example = sqlTemplateDTONodeResponseParamsResponseParamsItem["Example"].asString();
+		if(!sqlTemplateDTONodeResponseParamsResponseParamsItem["Required"].isNull())
+			responseParamsItemObject.required = sqlTemplateDTONodeResponseParamsResponseParamsItem["Required"].asString() == "true";
 		data_.sqlTemplateDTO.responseParams.push_back(responseParamsItemObject);
 	}
 	if(!value["Success"].isNull())

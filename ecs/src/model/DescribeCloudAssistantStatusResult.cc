@@ -39,14 +39,14 @@ void DescribeCloudAssistantStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceCloudAssistantStatusSet = value["InstanceCloudAssistantStatusSet"]["InstanceCloudAssistantStatus"];
-	for (auto value : allInstanceCloudAssistantStatusSet)
+	auto allInstanceCloudAssistantStatusSetNode = value["InstanceCloudAssistantStatusSet"]["InstanceCloudAssistantStatus"];
+	for (auto valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus : allInstanceCloudAssistantStatusSetNode)
 	{
 		InstanceCloudAssistantStatus instanceCloudAssistantStatusSetObject;
-		if(!value["InstanceId"].isNull())
-			instanceCloudAssistantStatusSetObject.instanceId = value["InstanceId"].asString();
-		if(!value["CloudAssistantStatus"].isNull())
-			instanceCloudAssistantStatusSetObject.cloudAssistantStatus = value["CloudAssistantStatus"].asString();
+		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["InstanceId"].isNull())
+			instanceCloudAssistantStatusSetObject.instanceId = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["InstanceId"].asString();
+		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["CloudAssistantStatus"].isNull())
+			instanceCloudAssistantStatusSetObject.cloudAssistantStatus = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["CloudAssistantStatus"].asString();
 		instanceCloudAssistantStatusSet_.push_back(instanceCloudAssistantStatusSetObject);
 	}
 

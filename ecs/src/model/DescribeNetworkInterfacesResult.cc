@@ -39,48 +39,48 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNetworkInterfaceSets = value["NetworkInterfaceSets"]["NetworkInterfaceSet"];
-	for (auto value : allNetworkInterfaceSets)
+	auto allNetworkInterfaceSetsNode = value["NetworkInterfaceSets"]["NetworkInterfaceSet"];
+	for (auto valueNetworkInterfaceSetsNetworkInterfaceSet : allNetworkInterfaceSetsNode)
 	{
 		NetworkInterfaceSet networkInterfaceSetsObject;
-		if(!value["NetworkInterfaceId"].isNull())
-			networkInterfaceSetsObject.networkInterfaceId = value["NetworkInterfaceId"].asString();
-		if(!value["Status"].isNull())
-			networkInterfaceSetsObject.status = value["Status"].asString();
-		if(!value["Type"].isNull())
-			networkInterfaceSetsObject.type = value["Type"].asString();
-		if(!value["VpcId"].isNull())
-			networkInterfaceSetsObject.vpcId = value["VpcId"].asString();
-		if(!value["VSwitchId"].isNull())
-			networkInterfaceSetsObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["ZoneId"].isNull())
-			networkInterfaceSetsObject.zoneId = value["ZoneId"].asString();
-		if(!value["PrivateIpAddress"].isNull())
-			networkInterfaceSetsObject.privateIpAddress = value["PrivateIpAddress"].asString();
-		if(!value["MacAddress"].isNull())
-			networkInterfaceSetsObject.macAddress = value["MacAddress"].asString();
-		if(!value["NetworkInterfaceName"].isNull())
-			networkInterfaceSetsObject.networkInterfaceName = value["NetworkInterfaceName"].asString();
-		if(!value["Description"].isNull())
-			networkInterfaceSetsObject.description = value["Description"].asString();
-		if(!value["InstanceId"].isNull())
-			networkInterfaceSetsObject.instanceId = value["InstanceId"].asString();
-		if(!value["CreationTime"].isNull())
-			networkInterfaceSetsObject.creationTime = value["CreationTime"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			networkInterfaceSetsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["ServiceID"].isNull())
-			networkInterfaceSetsObject.serviceID = std::stol(value["ServiceID"].asString());
-		if(!value["ServiceManaged"].isNull())
-			networkInterfaceSetsObject.serviceManaged = value["ServiceManaged"].asString() == "true";
-		auto allPrivateIpSets = value["PrivateIpSets"]["PrivateIpSet"];
-		for (auto value : allPrivateIpSets)
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceId"].isNull())
+			networkInterfaceSetsObject.networkInterfaceId = valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Status"].isNull())
+			networkInterfaceSetsObject.status = valueNetworkInterfaceSetsNetworkInterfaceSet["Status"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Type"].isNull())
+			networkInterfaceSetsObject.type = valueNetworkInterfaceSetsNetworkInterfaceSet["Type"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["VpcId"].isNull())
+			networkInterfaceSetsObject.vpcId = valueNetworkInterfaceSetsNetworkInterfaceSet["VpcId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["VSwitchId"].isNull())
+			networkInterfaceSetsObject.vSwitchId = valueNetworkInterfaceSetsNetworkInterfaceSet["VSwitchId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["ZoneId"].isNull())
+			networkInterfaceSetsObject.zoneId = valueNetworkInterfaceSetsNetworkInterfaceSet["ZoneId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["PrivateIpAddress"].isNull())
+			networkInterfaceSetsObject.privateIpAddress = valueNetworkInterfaceSetsNetworkInterfaceSet["PrivateIpAddress"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["MacAddress"].isNull())
+			networkInterfaceSetsObject.macAddress = valueNetworkInterfaceSetsNetworkInterfaceSet["MacAddress"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceName"].isNull())
+			networkInterfaceSetsObject.networkInterfaceName = valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceName"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Description"].isNull())
+			networkInterfaceSetsObject.description = valueNetworkInterfaceSetsNetworkInterfaceSet["Description"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["InstanceId"].isNull())
+			networkInterfaceSetsObject.instanceId = valueNetworkInterfaceSetsNetworkInterfaceSet["InstanceId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["CreationTime"].isNull())
+			networkInterfaceSetsObject.creationTime = valueNetworkInterfaceSetsNetworkInterfaceSet["CreationTime"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["ResourceGroupId"].isNull())
+			networkInterfaceSetsObject.resourceGroupId = valueNetworkInterfaceSetsNetworkInterfaceSet["ResourceGroupId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceID"].isNull())
+			networkInterfaceSetsObject.serviceID = std::stol(valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceID"].asString());
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceManaged"].isNull())
+			networkInterfaceSetsObject.serviceManaged = valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceManaged"].asString() == "true";
+		auto allPrivateIpSetsNode = allNetworkInterfaceSetsNode["PrivateIpSets"]["PrivateIpSet"];
+		for (auto allNetworkInterfaceSetsNodePrivateIpSetsPrivateIpSet : allPrivateIpSetsNode)
 		{
 			NetworkInterfaceSet::PrivateIpSet privateIpSetsObject;
-			if(!value["PrivateIpAddress"].isNull())
-				privateIpSetsObject.privateIpAddress = value["PrivateIpAddress"].asString();
-			if(!value["Primary"].isNull())
-				privateIpSetsObject.primary = value["Primary"].asString() == "true";
+			if(!allNetworkInterfaceSetsNodePrivateIpSetsPrivateIpSet["PrivateIpAddress"].isNull())
+				privateIpSetsObject.privateIpAddress = allNetworkInterfaceSetsNodePrivateIpSetsPrivateIpSet["PrivateIpAddress"].asString();
+			if(!allNetworkInterfaceSetsNodePrivateIpSetsPrivateIpSet["Primary"].isNull())
+				privateIpSetsObject.primary = allNetworkInterfaceSetsNodePrivateIpSetsPrivateIpSet["Primary"].asString() == "true";
 			auto associatedPublicIp1Node = value["AssociatedPublicIp"];
 			if(!associatedPublicIp1Node["PublicIpAddress"].isNull())
 				privateIpSetsObject.associatedPublicIp1.publicIpAddress = associatedPublicIp1Node["PublicIpAddress"].asString();
@@ -88,22 +88,22 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 				privateIpSetsObject.associatedPublicIp1.allocationId = associatedPublicIp1Node["AllocationId"].asString();
 			networkInterfaceSetsObject.privateIpSets.push_back(privateIpSetsObject);
 		}
-		auto allIpv6Sets = value["Ipv6Sets"]["Ipv6Set"];
-		for (auto value : allIpv6Sets)
+		auto allIpv6SetsNode = allNetworkInterfaceSetsNode["Ipv6Sets"]["Ipv6Set"];
+		for (auto allNetworkInterfaceSetsNodeIpv6SetsIpv6Set : allIpv6SetsNode)
 		{
 			NetworkInterfaceSet::Ipv6Set ipv6SetsObject;
-			if(!value["Ipv6Address"].isNull())
-				ipv6SetsObject.ipv6Address = value["Ipv6Address"].asString();
+			if(!allNetworkInterfaceSetsNodeIpv6SetsIpv6Set["Ipv6Address"].isNull())
+				ipv6SetsObject.ipv6Address = allNetworkInterfaceSetsNodeIpv6SetsIpv6Set["Ipv6Address"].asString();
 			networkInterfaceSetsObject.ipv6Sets.push_back(ipv6SetsObject);
 		}
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		auto allTagsNode = allNetworkInterfaceSetsNode["Tags"]["Tag"];
+		for (auto allNetworkInterfaceSetsNodeTagsTag : allTagsNode)
 		{
 			NetworkInterfaceSet::Tag tagsObject;
-			if(!value["TagKey"].isNull())
-				tagsObject.tagKey = value["TagKey"].asString();
-			if(!value["TagValue"].isNull())
-				tagsObject.tagValue = value["TagValue"].asString();
+			if(!allNetworkInterfaceSetsNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allNetworkInterfaceSetsNodeTagsTag["TagKey"].asString();
+			if(!allNetworkInterfaceSetsNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allNetworkInterfaceSetsNodeTagsTag["TagValue"].asString();
 			networkInterfaceSetsObject.tags.push_back(tagsObject);
 		}
 		auto associatedPublicIpNode = value["AssociatedPublicIp"];

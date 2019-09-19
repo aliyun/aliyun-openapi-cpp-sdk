@@ -39,20 +39,20 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegions = value["Regions"]["Region"];
-	for (auto value : allRegions)
+	auto allRegionsNode = value["Regions"]["Region"];
+	for (auto valueRegionsRegion : allRegionsNode)
 	{
 		Region regionsObject;
-		if(!value["RegionId"].isNull())
-			regionsObject.regionId = value["RegionId"].asString();
-		if(!value["ClassicUnavailable"].isNull())
-			regionsObject.classicUnavailable = value["ClassicUnavailable"].asString() == "true";
-		if(!value["VpcUnavailable"].isNull())
-			regionsObject.vpcUnavailable = value["VpcUnavailable"].asString() == "true";
-		if(!value["RegionEndpoint"].isNull())
-			regionsObject.regionEndpoint = value["RegionEndpoint"].asString();
-		if(!value["LocalName"].isNull())
-			regionsObject.localName = value["LocalName"].asString();
+		if(!valueRegionsRegion["RegionId"].isNull())
+			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
+		if(!valueRegionsRegion["ClassicUnavailable"].isNull())
+			regionsObject.classicUnavailable = valueRegionsRegion["ClassicUnavailable"].asString() == "true";
+		if(!valueRegionsRegion["VpcUnavailable"].isNull())
+			regionsObject.vpcUnavailable = valueRegionsRegion["VpcUnavailable"].asString() == "true";
+		if(!valueRegionsRegion["RegionEndpoint"].isNull())
+			regionsObject.regionEndpoint = valueRegionsRegion["RegionEndpoint"].asString();
+		if(!valueRegionsRegion["LocalName"].isNull())
+			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
 		regions_.push_back(regionsObject);
 	}
 

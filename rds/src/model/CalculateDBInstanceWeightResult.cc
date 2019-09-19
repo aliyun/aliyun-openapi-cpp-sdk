@@ -39,20 +39,20 @@ void CalculateDBInstanceWeightResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["DBInstanceWeight"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["DBInstanceWeight"];
+	for (auto valueItemsDBInstanceWeight : allItemsNode)
 	{
 		DBInstanceWeight itemsObject;
-		if(!value["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["DBInstanceType"].isNull())
-			itemsObject.dBInstanceType = value["DBInstanceType"].asString();
-		if(!value["ReadonlyInstanceSQLDelayedTime"].isNull())
-			itemsObject.readonlyInstanceSQLDelayedTime = value["ReadonlyInstanceSQLDelayedTime"].asString();
-		if(!value["Availability"].isNull())
-			itemsObject.availability = value["Availability"].asString();
-		if(!value["Weight"].isNull())
-			itemsObject.weight = value["Weight"].asString();
+		if(!valueItemsDBInstanceWeight["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsDBInstanceWeight["DBInstanceId"].asString();
+		if(!valueItemsDBInstanceWeight["DBInstanceType"].isNull())
+			itemsObject.dBInstanceType = valueItemsDBInstanceWeight["DBInstanceType"].asString();
+		if(!valueItemsDBInstanceWeight["ReadonlyInstanceSQLDelayedTime"].isNull())
+			itemsObject.readonlyInstanceSQLDelayedTime = valueItemsDBInstanceWeight["ReadonlyInstanceSQLDelayedTime"].asString();
+		if(!valueItemsDBInstanceWeight["Availability"].isNull())
+			itemsObject.availability = valueItemsDBInstanceWeight["Availability"].asString();
+		if(!valueItemsDBInstanceWeight["Weight"].isNull())
+			itemsObject.weight = valueItemsDBInstanceWeight["Weight"].asString();
 		items_.push_back(itemsObject);
 	}
 

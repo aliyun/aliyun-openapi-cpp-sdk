@@ -39,16 +39,16 @@ void ListPrivilegesOfUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPrivileges = value["Privileges"]["Privilege"];
-	for (auto value : allPrivileges)
+	auto allPrivilegesNode = value["Privileges"]["Privilege"];
+	for (auto valuePrivilegesPrivilege : allPrivilegesNode)
 	{
 		Privilege privilegesObject;
-		if(!value["PrivilegeId"].isNull())
-			privilegesObject.privilegeId = value["PrivilegeId"].asString();
-		if(!value["PrivilegeName"].isNull())
-			privilegesObject.privilegeName = value["PrivilegeName"].asString();
-		if(!value["PrivilegeDescription"].isNull())
-			privilegesObject.privilegeDescription = value["PrivilegeDescription"].asString();
+		if(!valuePrivilegesPrivilege["PrivilegeId"].isNull())
+			privilegesObject.privilegeId = valuePrivilegesPrivilege["PrivilegeId"].asString();
+		if(!valuePrivilegesPrivilege["PrivilegeName"].isNull())
+			privilegesObject.privilegeName = valuePrivilegesPrivilege["PrivilegeName"].asString();
+		if(!valuePrivilegesPrivilege["PrivilegeDescription"].isNull())
+			privilegesObject.privilegeDescription = valuePrivilegesPrivilege["PrivilegeDescription"].asString();
 		privileges_.push_back(privilegesObject);
 	}
 	if(!value["Success"].isNull())

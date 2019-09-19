@@ -39,40 +39,40 @@ void DescribeStratetyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStrategies = value["Strategies"]["Strategy"];
-	for (auto value : allStrategies)
+	auto allStrategiesNode = value["Strategies"]["Strategy"];
+	for (auto valueStrategiesStrategy : allStrategiesNode)
 	{
 		Strategy strategiesObject;
-		if(!value["CycleDays"].isNull())
-			strategiesObject.cycleDays = std::stoi(value["CycleDays"].asString());
-		if(!value["Id"].isNull())
-			strategiesObject.id = std::stoi(value["Id"].asString());
-		if(!value["CycleStartTime"].isNull())
-			strategiesObject.cycleStartTime = std::stoi(value["CycleStartTime"].asString());
-		if(!value["Type"].isNull())
-			strategiesObject.type = std::stoi(value["Type"].asString());
-		if(!value["Name"].isNull())
-			strategiesObject.name = value["Name"].asString();
-		if(!value["RiskCount"].isNull())
-			strategiesObject.riskCount = std::stoi(value["RiskCount"].asString());
-		if(!value["EcsCount"].isNull())
-			strategiesObject.ecsCount = std::stoi(value["EcsCount"].asString());
-		if(!value["ExecStatus"].isNull())
-			strategiesObject.execStatus = std::stoi(value["ExecStatus"].asString());
-		if(!value["ProcessRate"].isNull())
-			strategiesObject.processRate = std::stoi(value["ProcessRate"].asString());
-		if(!value["PassRate"].isNull())
-			strategiesObject.passRate = std::stoi(value["PassRate"].asString());
-		auto allConfigTargets = value["ConfigTargets"]["ConfigTarget"];
-		for (auto value : allConfigTargets)
+		if(!valueStrategiesStrategy["CycleDays"].isNull())
+			strategiesObject.cycleDays = std::stoi(valueStrategiesStrategy["CycleDays"].asString());
+		if(!valueStrategiesStrategy["Id"].isNull())
+			strategiesObject.id = std::stoi(valueStrategiesStrategy["Id"].asString());
+		if(!valueStrategiesStrategy["CycleStartTime"].isNull())
+			strategiesObject.cycleStartTime = std::stoi(valueStrategiesStrategy["CycleStartTime"].asString());
+		if(!valueStrategiesStrategy["Type"].isNull())
+			strategiesObject.type = std::stoi(valueStrategiesStrategy["Type"].asString());
+		if(!valueStrategiesStrategy["Name"].isNull())
+			strategiesObject.name = valueStrategiesStrategy["Name"].asString();
+		if(!valueStrategiesStrategy["RiskCount"].isNull())
+			strategiesObject.riskCount = std::stoi(valueStrategiesStrategy["RiskCount"].asString());
+		if(!valueStrategiesStrategy["EcsCount"].isNull())
+			strategiesObject.ecsCount = std::stoi(valueStrategiesStrategy["EcsCount"].asString());
+		if(!valueStrategiesStrategy["ExecStatus"].isNull())
+			strategiesObject.execStatus = std::stoi(valueStrategiesStrategy["ExecStatus"].asString());
+		if(!valueStrategiesStrategy["ProcessRate"].isNull())
+			strategiesObject.processRate = std::stoi(valueStrategiesStrategy["ProcessRate"].asString());
+		if(!valueStrategiesStrategy["PassRate"].isNull())
+			strategiesObject.passRate = std::stoi(valueStrategiesStrategy["PassRate"].asString());
+		auto allConfigTargetsNode = allStrategiesNode["ConfigTargets"]["ConfigTarget"];
+		for (auto allStrategiesNodeConfigTargetsConfigTarget : allConfigTargetsNode)
 		{
 			Strategy::ConfigTarget configTargetsObject;
-			if(!value["Flag"].isNull())
-				configTargetsObject.flag = value["Flag"].asString();
-			if(!value["TargetType"].isNull())
-				configTargetsObject.targetType = value["TargetType"].asString();
-			if(!value["Target"].isNull())
-				configTargetsObject.target = value["Target"].asString();
+			if(!allStrategiesNodeConfigTargetsConfigTarget["Flag"].isNull())
+				configTargetsObject.flag = allStrategiesNodeConfigTargetsConfigTarget["Flag"].asString();
+			if(!allStrategiesNodeConfigTargetsConfigTarget["TargetType"].isNull())
+				configTargetsObject.targetType = allStrategiesNodeConfigTargetsConfigTarget["TargetType"].asString();
+			if(!allStrategiesNodeConfigTargetsConfigTarget["Target"].isNull())
+				configTargetsObject.target = allStrategiesNodeConfigTargetsConfigTarget["Target"].asString();
 			strategiesObject.configTargets.push_back(configTargetsObject);
 		}
 		strategies_.push_back(strategiesObject);

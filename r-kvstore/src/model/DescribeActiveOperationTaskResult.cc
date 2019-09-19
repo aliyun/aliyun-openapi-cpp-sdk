@@ -39,36 +39,36 @@ void DescribeActiveOperationTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["ItemsItem"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["ItemsItem"];
+	for (auto valueItemsItemsItem : allItemsNode)
 	{
 		ItemsItem itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stoi(value["Id"].asString());
-		if(!value["InsName"].isNull())
-			itemsObject.insName = value["InsName"].asString();
-		if(!value["DbType"].isNull())
-			itemsObject.dbType = value["DbType"].asString();
-		if(!value["StartTime"].isNull())
-			itemsObject.startTime = value["StartTime"].asString();
-		if(!value["SwitchTime"].isNull())
-			itemsObject.switchTime = value["SwitchTime"].asString();
-		if(!value["Deadline"].isNull())
-			itemsObject.deadline = value["Deadline"].asString();
-		if(!value["Status"].isNull())
-			itemsObject.status = std::stoi(value["Status"].asString());
-		if(!value["CreatedTime"].isNull())
-			itemsObject.createdTime = value["CreatedTime"].asString();
-		if(!value["ModifiedTime"].isNull())
-			itemsObject.modifiedTime = value["ModifiedTime"].asString();
-		if(!value["ResultInfo"].isNull())
-			itemsObject.resultInfo = value["ResultInfo"].asString();
-		if(!value["PrepareInterval"].isNull())
-			itemsObject.prepareInterval = value["PrepareInterval"].asString();
-		if(!value["TaskParams"].isNull())
-			itemsObject.taskParams = value["TaskParams"].asString();
-		if(!value["TaskType"].isNull())
-			itemsObject.taskType = value["TaskType"].asString();
+		if(!valueItemsItemsItem["Id"].isNull())
+			itemsObject.id = std::stoi(valueItemsItemsItem["Id"].asString());
+		if(!valueItemsItemsItem["InsName"].isNull())
+			itemsObject.insName = valueItemsItemsItem["InsName"].asString();
+		if(!valueItemsItemsItem["DbType"].isNull())
+			itemsObject.dbType = valueItemsItemsItem["DbType"].asString();
+		if(!valueItemsItemsItem["StartTime"].isNull())
+			itemsObject.startTime = valueItemsItemsItem["StartTime"].asString();
+		if(!valueItemsItemsItem["SwitchTime"].isNull())
+			itemsObject.switchTime = valueItemsItemsItem["SwitchTime"].asString();
+		if(!valueItemsItemsItem["Deadline"].isNull())
+			itemsObject.deadline = valueItemsItemsItem["Deadline"].asString();
+		if(!valueItemsItemsItem["Status"].isNull())
+			itemsObject.status = std::stoi(valueItemsItemsItem["Status"].asString());
+		if(!valueItemsItemsItem["CreatedTime"].isNull())
+			itemsObject.createdTime = valueItemsItemsItem["CreatedTime"].asString();
+		if(!valueItemsItemsItem["ModifiedTime"].isNull())
+			itemsObject.modifiedTime = valueItemsItemsItem["ModifiedTime"].asString();
+		if(!valueItemsItemsItem["ResultInfo"].isNull())
+			itemsObject.resultInfo = valueItemsItemsItem["ResultInfo"].asString();
+		if(!valueItemsItemsItem["PrepareInterval"].isNull())
+			itemsObject.prepareInterval = valueItemsItemsItem["PrepareInterval"].asString();
+		if(!valueItemsItemsItem["TaskParams"].isNull())
+			itemsObject.taskParams = valueItemsItemsItem["TaskParams"].asString();
+		if(!valueItemsItemsItem["TaskType"].isNull())
+			itemsObject.taskType = valueItemsItemsItem["TaskType"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

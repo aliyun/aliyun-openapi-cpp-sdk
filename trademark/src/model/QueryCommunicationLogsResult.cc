@@ -39,20 +39,20 @@ void QueryCommunicationLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["TaskList"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["TaskList"];
+	for (auto valueDataTaskList : allDataNode)
 	{
 		TaskList dataObject;
-		if(!value["BizId"].isNull())
-			dataObject.bizId = value["BizId"].asString();
-		if(!value["Note"].isNull())
-			dataObject.note = value["Note"].asString();
-		if(!value["PartnerCode"].isNull())
-			dataObject.partnerCode = value["PartnerCode"].asString();
-		if(!value["UpdateTime"].isNull())
-			dataObject.updateTime = std::stol(value["UpdateTime"].asString());
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = std::stol(value["CreateTime"].asString());
+		if(!valueDataTaskList["BizId"].isNull())
+			dataObject.bizId = valueDataTaskList["BizId"].asString();
+		if(!valueDataTaskList["Note"].isNull())
+			dataObject.note = valueDataTaskList["Note"].asString();
+		if(!valueDataTaskList["PartnerCode"].isNull())
+			dataObject.partnerCode = valueDataTaskList["PartnerCode"].asString();
+		if(!valueDataTaskList["UpdateTime"].isNull())
+			dataObject.updateTime = std::stol(valueDataTaskList["UpdateTime"].asString());
+		if(!valueDataTaskList["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataTaskList["CreateTime"].asString());
 		data_.push_back(dataObject);
 	}
 

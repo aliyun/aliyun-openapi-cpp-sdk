@@ -39,30 +39,30 @@ void ListEmailVerificationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["EmailVerification"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["EmailVerification"];
+	for (auto valueDataEmailVerification : allDataNode)
 	{
 		EmailVerification dataObject;
-		if(!value["GmtCreate"].isNull())
-			dataObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			dataObject.gmtModified = value["GmtModified"].asString();
-		if(!value["Email"].isNull())
-			dataObject.email = value["Email"].asString();
-		if(!value["UserId"].isNull())
-			dataObject.userId = value["UserId"].asString();
-		if(!value["EmailVerificationNo"].isNull())
-			dataObject.emailVerificationNo = value["EmailVerificationNo"].asString();
-		if(!value["TokenSendTime"].isNull())
-			dataObject.tokenSendTime = value["TokenSendTime"].asString();
-		if(!value["VerificationStatus"].isNull())
-			dataObject.verificationStatus = std::stoi(value["VerificationStatus"].asString());
-		if(!value["VerificationTime"].isNull())
-			dataObject.verificationTime = value["VerificationTime"].asString();
-		if(!value["SendIp"].isNull())
-			dataObject.sendIp = value["SendIp"].asString();
-		if(!value["ConfirmIp"].isNull())
-			dataObject.confirmIp = value["ConfirmIp"].asString();
+		if(!valueDataEmailVerification["GmtCreate"].isNull())
+			dataObject.gmtCreate = valueDataEmailVerification["GmtCreate"].asString();
+		if(!valueDataEmailVerification["GmtModified"].isNull())
+			dataObject.gmtModified = valueDataEmailVerification["GmtModified"].asString();
+		if(!valueDataEmailVerification["Email"].isNull())
+			dataObject.email = valueDataEmailVerification["Email"].asString();
+		if(!valueDataEmailVerification["UserId"].isNull())
+			dataObject.userId = valueDataEmailVerification["UserId"].asString();
+		if(!valueDataEmailVerification["EmailVerificationNo"].isNull())
+			dataObject.emailVerificationNo = valueDataEmailVerification["EmailVerificationNo"].asString();
+		if(!valueDataEmailVerification["TokenSendTime"].isNull())
+			dataObject.tokenSendTime = valueDataEmailVerification["TokenSendTime"].asString();
+		if(!valueDataEmailVerification["VerificationStatus"].isNull())
+			dataObject.verificationStatus = std::stoi(valueDataEmailVerification["VerificationStatus"].asString());
+		if(!valueDataEmailVerification["VerificationTime"].isNull())
+			dataObject.verificationTime = valueDataEmailVerification["VerificationTime"].asString();
+		if(!valueDataEmailVerification["SendIp"].isNull())
+			dataObject.sendIp = valueDataEmailVerification["SendIp"].asString();
+		if(!valueDataEmailVerification["ConfirmIp"].isNull())
+			dataObject.confirmIp = valueDataEmailVerification["ConfirmIp"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

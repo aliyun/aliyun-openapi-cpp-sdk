@@ -39,12 +39,12 @@ void CompareFaceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCompareResult = value["CompareResult"]["CompareResultItem"];
-	for (auto value : allCompareResult)
+	auto allCompareResultNode = value["CompareResult"]["CompareResultItem"];
+	for (auto valueCompareResultCompareResultItem : allCompareResultNode)
 	{
 		CompareResultItem compareResultObject;
-		if(!value["Similarity"].isNull())
-			compareResultObject.similarity = std::stof(value["Similarity"].asString());
+		if(!valueCompareResultCompareResultItem["Similarity"].isNull())
+			compareResultObject.similarity = std::stof(valueCompareResultCompareResultItem["Similarity"].asString());
 		auto faceANode = value["FaceA"];
 		if(!faceANode["ImageUri"].isNull())
 			compareResultObject.faceA.imageUri = faceANode["ImageUri"].asString();

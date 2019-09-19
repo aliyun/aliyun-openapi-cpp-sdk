@@ -39,12 +39,12 @@ void DescribeDomainsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomains = value["Domains"]["Domain"];
-	for (auto value : allDomains)
+	auto allDomainsNode = value["Domains"]["Domain"];
+	for (auto valueDomainsDomain : allDomainsNode)
 	{
 		Domain domainsObject;
-		if(!value["DomainName"].isNull())
-			domainsObject.domainName = value["DomainName"].asString();
+		if(!valueDomainsDomain["DomainName"].isNull())
+			domainsObject.domainName = valueDomainsDomain["DomainName"].asString();
 		domains_.push_back(domainsObject);
 	}
 	if(!value["TotalCount"].isNull())

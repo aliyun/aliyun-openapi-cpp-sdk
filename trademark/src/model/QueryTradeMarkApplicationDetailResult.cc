@@ -39,48 +39,48 @@ void QueryTradeMarkApplicationDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allThirdClassification = value["ThirdClassification"]["ThirdClassifications"];
-	for (auto value : allThirdClassification)
+	auto allThirdClassificationNode = value["ThirdClassification"]["ThirdClassifications"];
+	for (auto valueThirdClassificationThirdClassifications : allThirdClassificationNode)
 	{
 		ThirdClassifications thirdClassificationObject;
-		if(!value["Code"].isNull())
-			thirdClassificationObject.code = value["Code"].asString();
-		if(!value["Name"].isNull())
-			thirdClassificationObject.name = value["Name"].asString();
+		if(!valueThirdClassificationThirdClassifications["Code"].isNull())
+			thirdClassificationObject.code = valueThirdClassificationThirdClassifications["Code"].asString();
+		if(!valueThirdClassificationThirdClassifications["Name"].isNull())
+			thirdClassificationObject.name = valueThirdClassificationThirdClassifications["Name"].asString();
 		thirdClassification_.push_back(thirdClassificationObject);
 	}
-	auto allSupplements = value["Supplements"]["SupplementsItem"];
-	for (auto value : allSupplements)
+	auto allSupplementsNode = value["Supplements"]["SupplementsItem"];
+	for (auto valueSupplementsSupplementsItem : allSupplementsNode)
 	{
 		SupplementsItem supplementsObject;
-		if(!value["Id"].isNull())
-			supplementsObject.id = std::stol(value["Id"].asString());
-		if(!value["SerialNumber"].isNull())
-			supplementsObject.serialNumber = value["SerialNumber"].asString();
-		if(!value["Type"].isNull())
-			supplementsObject.type = std::stoi(value["Type"].asString());
-		if(!value["Status"].isNull())
-			supplementsObject.status = std::stoi(value["Status"].asString());
-		if(!value["OrderId"].isNull())
-			supplementsObject.orderId = value["OrderId"].asString();
-		if(!value["TmNumber"].isNull())
-			supplementsObject.tmNumber = value["TmNumber"].asString();
-		if(!value["SendTime"].isNull())
-			supplementsObject.sendTime = std::stol(value["SendTime"].asString());
-		if(!value["AcceptTime"].isNull())
-			supplementsObject.acceptTime = std::stol(value["AcceptTime"].asString());
-		if(!value["SbjDeadTime"].isNull())
-			supplementsObject.sbjDeadTime = std::stol(value["SbjDeadTime"].asString());
-		if(!value["AcceptDeadTime"].isNull())
-			supplementsObject.acceptDeadTime = std::stol(value["AcceptDeadTime"].asString());
-		if(!value["UploadFileTemplateUrl"].isNull())
-			supplementsObject.uploadFileTemplateUrl = value["UploadFileTemplateUrl"].asString();
-		if(!value["Content"].isNull())
-			supplementsObject.content = value["Content"].asString();
-		if(!value["BatchNum"].isNull())
-			supplementsObject.batchNum = value["BatchNum"].asString();
-		if(!value["OperateTime"].isNull())
-			supplementsObject.operateTime = std::stol(value["OperateTime"].asString());
+		if(!valueSupplementsSupplementsItem["Id"].isNull())
+			supplementsObject.id = std::stol(valueSupplementsSupplementsItem["Id"].asString());
+		if(!valueSupplementsSupplementsItem["SerialNumber"].isNull())
+			supplementsObject.serialNumber = valueSupplementsSupplementsItem["SerialNumber"].asString();
+		if(!valueSupplementsSupplementsItem["Type"].isNull())
+			supplementsObject.type = std::stoi(valueSupplementsSupplementsItem["Type"].asString());
+		if(!valueSupplementsSupplementsItem["Status"].isNull())
+			supplementsObject.status = std::stoi(valueSupplementsSupplementsItem["Status"].asString());
+		if(!valueSupplementsSupplementsItem["OrderId"].isNull())
+			supplementsObject.orderId = valueSupplementsSupplementsItem["OrderId"].asString();
+		if(!valueSupplementsSupplementsItem["TmNumber"].isNull())
+			supplementsObject.tmNumber = valueSupplementsSupplementsItem["TmNumber"].asString();
+		if(!valueSupplementsSupplementsItem["SendTime"].isNull())
+			supplementsObject.sendTime = std::stol(valueSupplementsSupplementsItem["SendTime"].asString());
+		if(!valueSupplementsSupplementsItem["AcceptTime"].isNull())
+			supplementsObject.acceptTime = std::stol(valueSupplementsSupplementsItem["AcceptTime"].asString());
+		if(!valueSupplementsSupplementsItem["SbjDeadTime"].isNull())
+			supplementsObject.sbjDeadTime = std::stol(valueSupplementsSupplementsItem["SbjDeadTime"].asString());
+		if(!valueSupplementsSupplementsItem["AcceptDeadTime"].isNull())
+			supplementsObject.acceptDeadTime = std::stol(valueSupplementsSupplementsItem["AcceptDeadTime"].asString());
+		if(!valueSupplementsSupplementsItem["UploadFileTemplateUrl"].isNull())
+			supplementsObject.uploadFileTemplateUrl = valueSupplementsSupplementsItem["UploadFileTemplateUrl"].asString();
+		if(!valueSupplementsSupplementsItem["Content"].isNull())
+			supplementsObject.content = valueSupplementsSupplementsItem["Content"].asString();
+		if(!valueSupplementsSupplementsItem["BatchNum"].isNull())
+			supplementsObject.batchNum = valueSupplementsSupplementsItem["BatchNum"].asString();
+		if(!valueSupplementsSupplementsItem["OperateTime"].isNull())
+			supplementsObject.operateTime = std::stol(valueSupplementsSupplementsItem["OperateTime"].asString());
 		auto allFileTemplateUrls = value["FileTemplateUrls"]["FileTemplateUrls"];
 		for (auto value : allFileTemplateUrls)
 			supplementsObject.fileTemplateUrls.push_back(value.asString());

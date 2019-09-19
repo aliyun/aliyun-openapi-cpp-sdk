@@ -39,12 +39,12 @@ void QueryDnsHostResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDnsHostList = value["DnsHostList"]["DnsHost"];
-	for (auto value : allDnsHostList)
+	auto allDnsHostListNode = value["DnsHostList"]["DnsHost"];
+	for (auto valueDnsHostListDnsHost : allDnsHostListNode)
 	{
 		DnsHost dnsHostListObject;
-		if(!value["DnsName"].isNull())
-			dnsHostListObject.dnsName = value["DnsName"].asString();
+		if(!valueDnsHostListDnsHost["DnsName"].isNull())
+			dnsHostListObject.dnsName = valueDnsHostListDnsHost["DnsName"].asString();
 		auto allIpList = value["IpList"]["ip"];
 		for (auto value : allIpList)
 			dnsHostListObject.ipList.push_back(value.asString());

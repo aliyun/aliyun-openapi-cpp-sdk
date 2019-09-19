@@ -39,14 +39,14 @@ void DescribeLiveStreamHistoryUserNumResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLiveStreamUserNumInfos = value["LiveStreamUserNumInfos"]["LiveStreamUserNumInfo"];
-	for (auto value : allLiveStreamUserNumInfos)
+	auto allLiveStreamUserNumInfosNode = value["LiveStreamUserNumInfos"]["LiveStreamUserNumInfo"];
+	for (auto valueLiveStreamUserNumInfosLiveStreamUserNumInfo : allLiveStreamUserNumInfosNode)
 	{
 		LiveStreamUserNumInfo liveStreamUserNumInfosObject;
-		if(!value["StreamTime"].isNull())
-			liveStreamUserNumInfosObject.streamTime = value["StreamTime"].asString();
-		if(!value["UserNum"].isNull())
-			liveStreamUserNumInfosObject.userNum = value["UserNum"].asString();
+		if(!valueLiveStreamUserNumInfosLiveStreamUserNumInfo["StreamTime"].isNull())
+			liveStreamUserNumInfosObject.streamTime = valueLiveStreamUserNumInfosLiveStreamUserNumInfo["StreamTime"].asString();
+		if(!valueLiveStreamUserNumInfosLiveStreamUserNumInfo["UserNum"].isNull())
+			liveStreamUserNumInfosObject.userNum = valueLiveStreamUserNumInfosLiveStreamUserNumInfo["UserNum"].asString();
 		liveStreamUserNumInfos_.push_back(liveStreamUserNumInfosObject);
 	}
 

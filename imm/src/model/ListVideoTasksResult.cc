@@ -39,32 +39,32 @@ void ListVideoTasksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTasks = value["Tasks"]["TasksItem"];
-	for (auto value : allTasks)
+	auto allTasksNode = value["Tasks"]["TasksItem"];
+	for (auto valueTasksTasksItem : allTasksNode)
 	{
 		TasksItem tasksObject;
-		if(!value["Status"].isNull())
-			tasksObject.status = value["Status"].asString();
-		if(!value["TaskId"].isNull())
-			tasksObject.taskId = value["TaskId"].asString();
-		if(!value["TaskType"].isNull())
-			tasksObject.taskType = value["TaskType"].asString();
-		if(!value["Parameters"].isNull())
-			tasksObject.parameters = value["Parameters"].asString();
-		if(!value["Result"].isNull())
-			tasksObject.result = value["Result"].asString();
-		if(!value["StartTime"].isNull())
-			tasksObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			tasksObject.endTime = value["EndTime"].asString();
-		if(!value["ErrorMessage"].isNull())
-			tasksObject.errorMessage = value["ErrorMessage"].asString();
-		if(!value["NotifyEndpoint"].isNull())
-			tasksObject.notifyEndpoint = value["NotifyEndpoint"].asString();
-		if(!value["NotifyTopicName"].isNull())
-			tasksObject.notifyTopicName = value["NotifyTopicName"].asString();
-		if(!value["Progress"].isNull())
-			tasksObject.progress = std::stoi(value["Progress"].asString());
+		if(!valueTasksTasksItem["Status"].isNull())
+			tasksObject.status = valueTasksTasksItem["Status"].asString();
+		if(!valueTasksTasksItem["TaskId"].isNull())
+			tasksObject.taskId = valueTasksTasksItem["TaskId"].asString();
+		if(!valueTasksTasksItem["TaskType"].isNull())
+			tasksObject.taskType = valueTasksTasksItem["TaskType"].asString();
+		if(!valueTasksTasksItem["Parameters"].isNull())
+			tasksObject.parameters = valueTasksTasksItem["Parameters"].asString();
+		if(!valueTasksTasksItem["Result"].isNull())
+			tasksObject.result = valueTasksTasksItem["Result"].asString();
+		if(!valueTasksTasksItem["StartTime"].isNull())
+			tasksObject.startTime = valueTasksTasksItem["StartTime"].asString();
+		if(!valueTasksTasksItem["EndTime"].isNull())
+			tasksObject.endTime = valueTasksTasksItem["EndTime"].asString();
+		if(!valueTasksTasksItem["ErrorMessage"].isNull())
+			tasksObject.errorMessage = valueTasksTasksItem["ErrorMessage"].asString();
+		if(!valueTasksTasksItem["NotifyEndpoint"].isNull())
+			tasksObject.notifyEndpoint = valueTasksTasksItem["NotifyEndpoint"].asString();
+		if(!valueTasksTasksItem["NotifyTopicName"].isNull())
+			tasksObject.notifyTopicName = valueTasksTasksItem["NotifyTopicName"].asString();
+		if(!valueTasksTasksItem["Progress"].isNull())
+			tasksObject.progress = std::stoi(valueTasksTasksItem["Progress"].asString());
 		tasks_.push_back(tasksObject);
 	}
 	if(!value["NextMarker"].isNull())

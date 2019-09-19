@@ -56,42 +56,42 @@ void GetTranscodeTemplateGroupResult::parse(const std::string &payload)
 		transcodeTemplateGroup_.appId = transcodeTemplateGroupNode["AppId"].asString();
 	if(!transcodeTemplateGroupNode["TranscodeTemplateGroupId"].isNull())
 		transcodeTemplateGroup_.transcodeTemplateGroupId = transcodeTemplateGroupNode["TranscodeTemplateGroupId"].asString();
-	auto allTranscodeTemplateList = value["TranscodeTemplateList"]["TranscodeTemplate"];
-	for (auto value : allTranscodeTemplateList)
+	auto allTranscodeTemplateListNode = transcodeTemplateGroupNode["TranscodeTemplateList"]["TranscodeTemplate"];
+	for (auto transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate : allTranscodeTemplateListNode)
 	{
 		TranscodeTemplateGroup::TranscodeTemplate transcodeTemplateObject;
-		if(!value["TranscodeTemplateId"].isNull())
-			transcodeTemplateObject.transcodeTemplateId = value["TranscodeTemplateId"].asString();
-		if(!value["Video"].isNull())
-			transcodeTemplateObject.video = value["Video"].asString();
-		if(!value["Audio"].isNull())
-			transcodeTemplateObject.audio = value["Audio"].asString();
-		if(!value["Container"].isNull())
-			transcodeTemplateObject.container = value["Container"].asString();
-		if(!value["MuxConfig"].isNull())
-			transcodeTemplateObject.muxConfig = value["MuxConfig"].asString();
-		if(!value["TransConfig"].isNull())
-			transcodeTemplateObject.transConfig = value["TransConfig"].asString();
-		if(!value["Definition"].isNull())
-			transcodeTemplateObject.definition = value["Definition"].asString();
-		if(!value["EncryptSetting"].isNull())
-			transcodeTemplateObject.encryptSetting = value["EncryptSetting"].asString();
-		if(!value["PackageSetting"].isNull())
-			transcodeTemplateObject.packageSetting = value["PackageSetting"].asString();
-		if(!value["SubtitleList"].isNull())
-			transcodeTemplateObject.subtitleList = value["SubtitleList"].asString();
-		if(!value["OpeningList"].isNull())
-			transcodeTemplateObject.openingList = value["OpeningList"].asString();
-		if(!value["TailSlateList"].isNull())
-			transcodeTemplateObject.tailSlateList = value["TailSlateList"].asString();
-		if(!value["TemplateName"].isNull())
-			transcodeTemplateObject.templateName = value["TemplateName"].asString();
-		if(!value["TranscodeFileRegular"].isNull())
-			transcodeTemplateObject.transcodeFileRegular = value["TranscodeFileRegular"].asString();
-		if(!value["Clip"].isNull())
-			transcodeTemplateObject.clip = value["Clip"].asString();
-		if(!value["Rotate"].isNull())
-			transcodeTemplateObject.rotate = value["Rotate"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TranscodeTemplateId"].isNull())
+			transcodeTemplateObject.transcodeTemplateId = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TranscodeTemplateId"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Video"].isNull())
+			transcodeTemplateObject.video = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Video"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Audio"].isNull())
+			transcodeTemplateObject.audio = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Audio"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Container"].isNull())
+			transcodeTemplateObject.container = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Container"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["MuxConfig"].isNull())
+			transcodeTemplateObject.muxConfig = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["MuxConfig"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TransConfig"].isNull())
+			transcodeTemplateObject.transConfig = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TransConfig"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Definition"].isNull())
+			transcodeTemplateObject.definition = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Definition"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["EncryptSetting"].isNull())
+			transcodeTemplateObject.encryptSetting = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["EncryptSetting"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["PackageSetting"].isNull())
+			transcodeTemplateObject.packageSetting = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["PackageSetting"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["SubtitleList"].isNull())
+			transcodeTemplateObject.subtitleList = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["SubtitleList"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["OpeningList"].isNull())
+			transcodeTemplateObject.openingList = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["OpeningList"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TailSlateList"].isNull())
+			transcodeTemplateObject.tailSlateList = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TailSlateList"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TemplateName"].isNull())
+			transcodeTemplateObject.templateName = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TemplateName"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TranscodeFileRegular"].isNull())
+			transcodeTemplateObject.transcodeFileRegular = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["TranscodeFileRegular"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Clip"].isNull())
+			transcodeTemplateObject.clip = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Clip"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Rotate"].isNull())
+			transcodeTemplateObject.rotate = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Rotate"].asString();
 		auto allWatermarkIds = value["WatermarkIds"]["WatermarkId"];
 		for (auto value : allWatermarkIds)
 			transcodeTemplateObject.watermarkIds.push_back(value.asString());

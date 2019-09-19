@@ -39,28 +39,28 @@ void DescribeDcdnUserResourcePackageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResourcePackageInfos = value["ResourcePackageInfos"]["ResourcePackageInfo"];
-	for (auto value : allResourcePackageInfos)
+	auto allResourcePackageInfosNode = value["ResourcePackageInfos"]["ResourcePackageInfo"];
+	for (auto valueResourcePackageInfosResourcePackageInfo : allResourcePackageInfosNode)
 	{
 		ResourcePackageInfo resourcePackageInfosObject;
-		if(!value["CurrCapacity"].isNull())
-			resourcePackageInfosObject.currCapacity = value["CurrCapacity"].asString();
-		if(!value["InitCapacity"].isNull())
-			resourcePackageInfosObject.initCapacity = value["InitCapacity"].asString();
-		if(!value["CommodityCode"].isNull())
-			resourcePackageInfosObject.commodityCode = value["CommodityCode"].asString();
-		if(!value["DisplayName"].isNull())
-			resourcePackageInfosObject.displayName = value["DisplayName"].asString();
-		if(!value["TemplateName"].isNull())
-			resourcePackageInfosObject.templateName = value["TemplateName"].asString();
-		if(!value["InstanceId"].isNull())
-			resourcePackageInfosObject.instanceId = value["InstanceId"].asString();
-		if(!value["Status"].isNull())
-			resourcePackageInfosObject.status = value["Status"].asString();
-		if(!value["StartTime"].isNull())
-			resourcePackageInfosObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			resourcePackageInfosObject.endTime = value["EndTime"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["CurrCapacity"].isNull())
+			resourcePackageInfosObject.currCapacity = valueResourcePackageInfosResourcePackageInfo["CurrCapacity"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["InitCapacity"].isNull())
+			resourcePackageInfosObject.initCapacity = valueResourcePackageInfosResourcePackageInfo["InitCapacity"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["CommodityCode"].isNull())
+			resourcePackageInfosObject.commodityCode = valueResourcePackageInfosResourcePackageInfo["CommodityCode"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["DisplayName"].isNull())
+			resourcePackageInfosObject.displayName = valueResourcePackageInfosResourcePackageInfo["DisplayName"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["TemplateName"].isNull())
+			resourcePackageInfosObject.templateName = valueResourcePackageInfosResourcePackageInfo["TemplateName"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["InstanceId"].isNull())
+			resourcePackageInfosObject.instanceId = valueResourcePackageInfosResourcePackageInfo["InstanceId"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["Status"].isNull())
+			resourcePackageInfosObject.status = valueResourcePackageInfosResourcePackageInfo["Status"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["StartTime"].isNull())
+			resourcePackageInfosObject.startTime = valueResourcePackageInfosResourcePackageInfo["StartTime"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["EndTime"].isNull())
+			resourcePackageInfosObject.endTime = valueResourcePackageInfosResourcePackageInfo["EndTime"].asString();
 		resourcePackageInfos_.push_back(resourcePackageInfosObject);
 	}
 

@@ -39,14 +39,14 @@ void DownloadAllTypeRecordingResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMediaDownloadParamList = value["MediaDownloadParamList"]["MediaDownloadParam"];
-	for (auto value : allMediaDownloadParamList)
+	auto allMediaDownloadParamListNode = value["MediaDownloadParamList"]["MediaDownloadParam"];
+	for (auto valueMediaDownloadParamListMediaDownloadParam : allMediaDownloadParamListNode)
 	{
 		MediaDownloadParam mediaDownloadParamListObject;
-		if(!value["SignatureUrl"].isNull())
-			mediaDownloadParamListObject.signatureUrl = value["SignatureUrl"].asString();
-		if(!value["FileName"].isNull())
-			mediaDownloadParamListObject.fileName = value["FileName"].asString();
+		if(!valueMediaDownloadParamListMediaDownloadParam["SignatureUrl"].isNull())
+			mediaDownloadParamListObject.signatureUrl = valueMediaDownloadParamListMediaDownloadParam["SignatureUrl"].asString();
+		if(!valueMediaDownloadParamListMediaDownloadParam["FileName"].isNull())
+			mediaDownloadParamListObject.fileName = valueMediaDownloadParamListMediaDownloadParam["FileName"].asString();
 		mediaDownloadParamList_.push_back(mediaDownloadParamListObject);
 	}
 	if(!value["Success"].isNull())

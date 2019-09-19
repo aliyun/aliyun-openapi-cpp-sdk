@@ -39,22 +39,22 @@ void QueryGenerateTaskResultResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPictures = value["Pictures"]["Picture"];
-	for (auto value : allPictures)
+	auto allPicturesNode = value["Pictures"]["Picture"];
+	for (auto valuePicturesPicture : allPicturesNode)
 	{
 		Picture picturesObject;
-		if(!value["Id"].isNull())
-			picturesObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			picturesObject.name = value["Name"].asString();
-		if(!value["PreviewUrl"].isNull())
-			picturesObject.previewUrl = value["PreviewUrl"].asString();
-		if(!value["Width"].isNull())
-			picturesObject.width = std::stoi(value["Width"].asString());
-		if(!value["Height"].isNull())
-			picturesObject.height = std::stoi(value["Height"].asString());
-		if(!value["Status"].isNull())
-			picturesObject.status = std::stoi(value["Status"].asString());
+		if(!valuePicturesPicture["Id"].isNull())
+			picturesObject.id = std::stol(valuePicturesPicture["Id"].asString());
+		if(!valuePicturesPicture["Name"].isNull())
+			picturesObject.name = valuePicturesPicture["Name"].asString();
+		if(!valuePicturesPicture["PreviewUrl"].isNull())
+			picturesObject.previewUrl = valuePicturesPicture["PreviewUrl"].asString();
+		if(!valuePicturesPicture["Width"].isNull())
+			picturesObject.width = std::stoi(valuePicturesPicture["Width"].asString());
+		if(!valuePicturesPicture["Height"].isNull())
+			picturesObject.height = std::stoi(valuePicturesPicture["Height"].asString());
+		if(!valuePicturesPicture["Status"].isNull())
+			picturesObject.status = std::stoi(valuePicturesPicture["Status"].asString());
 		pictures_.push_back(picturesObject);
 	}
 	if(!value["TotalSize"].isNull())

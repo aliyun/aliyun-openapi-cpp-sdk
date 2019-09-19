@@ -39,24 +39,24 @@ void ListAppInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAppInfoList = value["AppInfoList"]["AppInfo"];
-	for (auto value : allAppInfoList)
+	auto allAppInfoListNode = value["AppInfoList"]["AppInfo"];
+	for (auto valueAppInfoListAppInfo : allAppInfoListNode)
 	{
 		AppInfo appInfoListObject;
-		if(!value["AppId"].isNull())
-			appInfoListObject.appId = value["AppId"].asString();
-		if(!value["AppName"].isNull())
-			appInfoListObject.appName = value["AppName"].asString();
-		if(!value["Type"].isNull())
-			appInfoListObject.type = value["Type"].asString();
-		if(!value["Description"].isNull())
-			appInfoListObject.description = value["Description"].asString();
-		if(!value["Status"].isNull())
-			appInfoListObject.status = value["Status"].asString();
-		if(!value["CreationTime"].isNull())
-			appInfoListObject.creationTime = value["CreationTime"].asString();
-		if(!value["ModificationTime"].isNull())
-			appInfoListObject.modificationTime = value["ModificationTime"].asString();
+		if(!valueAppInfoListAppInfo["AppId"].isNull())
+			appInfoListObject.appId = valueAppInfoListAppInfo["AppId"].asString();
+		if(!valueAppInfoListAppInfo["AppName"].isNull())
+			appInfoListObject.appName = valueAppInfoListAppInfo["AppName"].asString();
+		if(!valueAppInfoListAppInfo["Type"].isNull())
+			appInfoListObject.type = valueAppInfoListAppInfo["Type"].asString();
+		if(!valueAppInfoListAppInfo["Description"].isNull())
+			appInfoListObject.description = valueAppInfoListAppInfo["Description"].asString();
+		if(!valueAppInfoListAppInfo["Status"].isNull())
+			appInfoListObject.status = valueAppInfoListAppInfo["Status"].asString();
+		if(!valueAppInfoListAppInfo["CreationTime"].isNull())
+			appInfoListObject.creationTime = valueAppInfoListAppInfo["CreationTime"].asString();
+		if(!valueAppInfoListAppInfo["ModificationTime"].isNull())
+			appInfoListObject.modificationTime = valueAppInfoListAppInfo["ModificationTime"].asString();
 		appInfoList_.push_back(appInfoListObject);
 	}
 	if(!value["Total"].isNull())

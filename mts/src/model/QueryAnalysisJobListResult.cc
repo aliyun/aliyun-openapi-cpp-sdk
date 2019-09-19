@@ -39,38 +39,38 @@ void QueryAnalysisJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAnalysisJobList = value["AnalysisJobList"]["AnalysisJob"];
-	for (auto value : allAnalysisJobList)
+	auto allAnalysisJobListNode = value["AnalysisJobList"]["AnalysisJob"];
+	for (auto valueAnalysisJobListAnalysisJob : allAnalysisJobListNode)
 	{
 		AnalysisJob analysisJobListObject;
-		if(!value["Id"].isNull())
-			analysisJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			analysisJobListObject.userData = value["UserData"].asString();
-		if(!value["State"].isNull())
-			analysisJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			analysisJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			analysisJobListObject.message = value["Message"].asString();
-		if(!value["Percent"].isNull())
-			analysisJobListObject.percent = std::stol(value["Percent"].asString());
-		if(!value["CreationTime"].isNull())
-			analysisJobListObject.creationTime = value["CreationTime"].asString();
-		if(!value["PipelineId"].isNull())
-			analysisJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["Priority"].isNull())
-			analysisJobListObject.priority = value["Priority"].asString();
-		auto allTemplateList = value["TemplateList"]["Template"];
-		for (auto value : allTemplateList)
+		if(!valueAnalysisJobListAnalysisJob["Id"].isNull())
+			analysisJobListObject.id = valueAnalysisJobListAnalysisJob["Id"].asString();
+		if(!valueAnalysisJobListAnalysisJob["UserData"].isNull())
+			analysisJobListObject.userData = valueAnalysisJobListAnalysisJob["UserData"].asString();
+		if(!valueAnalysisJobListAnalysisJob["State"].isNull())
+			analysisJobListObject.state = valueAnalysisJobListAnalysisJob["State"].asString();
+		if(!valueAnalysisJobListAnalysisJob["Code"].isNull())
+			analysisJobListObject.code = valueAnalysisJobListAnalysisJob["Code"].asString();
+		if(!valueAnalysisJobListAnalysisJob["Message"].isNull())
+			analysisJobListObject.message = valueAnalysisJobListAnalysisJob["Message"].asString();
+		if(!valueAnalysisJobListAnalysisJob["Percent"].isNull())
+			analysisJobListObject.percent = std::stol(valueAnalysisJobListAnalysisJob["Percent"].asString());
+		if(!valueAnalysisJobListAnalysisJob["CreationTime"].isNull())
+			analysisJobListObject.creationTime = valueAnalysisJobListAnalysisJob["CreationTime"].asString();
+		if(!valueAnalysisJobListAnalysisJob["PipelineId"].isNull())
+			analysisJobListObject.pipelineId = valueAnalysisJobListAnalysisJob["PipelineId"].asString();
+		if(!valueAnalysisJobListAnalysisJob["Priority"].isNull())
+			analysisJobListObject.priority = valueAnalysisJobListAnalysisJob["Priority"].asString();
+		auto allTemplateListNode = allAnalysisJobListNode["TemplateList"]["Template"];
+		for (auto allAnalysisJobListNodeTemplateListTemplate : allTemplateListNode)
 		{
 			AnalysisJob::_Template templateListObject;
-			if(!value["Id"].isNull())
-				templateListObject.id = value["Id"].asString();
-			if(!value["Name"].isNull())
-				templateListObject.name = value["Name"].asString();
-			if(!value["State"].isNull())
-				templateListObject.state = value["State"].asString();
+			if(!allAnalysisJobListNodeTemplateListTemplate["Id"].isNull())
+				templateListObject.id = allAnalysisJobListNodeTemplateListTemplate["Id"].asString();
+			if(!allAnalysisJobListNodeTemplateListTemplate["Name"].isNull())
+				templateListObject.name = allAnalysisJobListNodeTemplateListTemplate["Name"].asString();
+			if(!allAnalysisJobListNodeTemplateListTemplate["State"].isNull())
+				templateListObject.state = allAnalysisJobListNodeTemplateListTemplate["State"].asString();
 			auto containerNode = value["Container"];
 			if(!containerNode["Format"].isNull())
 				templateListObject.container.format = containerNode["Format"].asString();

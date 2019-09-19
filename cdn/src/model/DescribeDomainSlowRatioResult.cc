@@ -39,26 +39,26 @@ void DescribeDomainSlowRatioResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSlowRatioDataPerInterval = value["SlowRatioDataPerInterval"]["SlowRatioData"];
-	for (auto value : allSlowRatioDataPerInterval)
+	auto allSlowRatioDataPerIntervalNode = value["SlowRatioDataPerInterval"]["SlowRatioData"];
+	for (auto valueSlowRatioDataPerIntervalSlowRatioData : allSlowRatioDataPerIntervalNode)
 	{
 		SlowRatioData slowRatioDataPerIntervalObject;
-		if(!value["TotalUsers"].isNull())
-			slowRatioDataPerIntervalObject.totalUsers = std::stoi(value["TotalUsers"].asString());
-		if(!value["SlowUsers"].isNull())
-			slowRatioDataPerIntervalObject.slowUsers = std::stoi(value["SlowUsers"].asString());
-		if(!value["SlowRatio"].isNull())
-			slowRatioDataPerIntervalObject.slowRatio = std::stof(value["SlowRatio"].asString());
-		if(!value["RegionNameZh"].isNull())
-			slowRatioDataPerIntervalObject.regionNameZh = value["RegionNameZh"].asString();
-		if(!value["RegionNameEn"].isNull())
-			slowRatioDataPerIntervalObject.regionNameEn = value["RegionNameEn"].asString();
-		if(!value["IspNameZh"].isNull())
-			slowRatioDataPerIntervalObject.ispNameZh = value["IspNameZh"].asString();
-		if(!value["IspNameEn"].isNull())
-			slowRatioDataPerIntervalObject.ispNameEn = value["IspNameEn"].asString();
-		if(!value["Time"].isNull())
-			slowRatioDataPerIntervalObject.time = value["Time"].asString();
+		if(!valueSlowRatioDataPerIntervalSlowRatioData["TotalUsers"].isNull())
+			slowRatioDataPerIntervalObject.totalUsers = std::stoi(valueSlowRatioDataPerIntervalSlowRatioData["TotalUsers"].asString());
+		if(!valueSlowRatioDataPerIntervalSlowRatioData["SlowUsers"].isNull())
+			slowRatioDataPerIntervalObject.slowUsers = std::stoi(valueSlowRatioDataPerIntervalSlowRatioData["SlowUsers"].asString());
+		if(!valueSlowRatioDataPerIntervalSlowRatioData["SlowRatio"].isNull())
+			slowRatioDataPerIntervalObject.slowRatio = std::stof(valueSlowRatioDataPerIntervalSlowRatioData["SlowRatio"].asString());
+		if(!valueSlowRatioDataPerIntervalSlowRatioData["RegionNameZh"].isNull())
+			slowRatioDataPerIntervalObject.regionNameZh = valueSlowRatioDataPerIntervalSlowRatioData["RegionNameZh"].asString();
+		if(!valueSlowRatioDataPerIntervalSlowRatioData["RegionNameEn"].isNull())
+			slowRatioDataPerIntervalObject.regionNameEn = valueSlowRatioDataPerIntervalSlowRatioData["RegionNameEn"].asString();
+		if(!valueSlowRatioDataPerIntervalSlowRatioData["IspNameZh"].isNull())
+			slowRatioDataPerIntervalObject.ispNameZh = valueSlowRatioDataPerIntervalSlowRatioData["IspNameZh"].asString();
+		if(!valueSlowRatioDataPerIntervalSlowRatioData["IspNameEn"].isNull())
+			slowRatioDataPerIntervalObject.ispNameEn = valueSlowRatioDataPerIntervalSlowRatioData["IspNameEn"].asString();
+		if(!valueSlowRatioDataPerIntervalSlowRatioData["Time"].isNull())
+			slowRatioDataPerIntervalObject.time = valueSlowRatioDataPerIntervalSlowRatioData["Time"].asString();
 		slowRatioDataPerInterval_.push_back(slowRatioDataPerIntervalObject);
 	}
 	if(!value["EndTime"].isNull())

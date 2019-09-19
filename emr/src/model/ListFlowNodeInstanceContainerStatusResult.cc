@@ -39,18 +39,18 @@ void ListFlowNodeInstanceContainerStatusResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allContainerStatusList = value["ContainerStatusList"]["ContainerStatus"];
-	for (auto value : allContainerStatusList)
+	auto allContainerStatusListNode = value["ContainerStatusList"]["ContainerStatus"];
+	for (auto valueContainerStatusListContainerStatus : allContainerStatusListNode)
 	{
 		ContainerStatus containerStatusListObject;
-		if(!value["ApplicationId"].isNull())
-			containerStatusListObject.applicationId = value["ApplicationId"].asString();
-		if(!value["ContainerId"].isNull())
-			containerStatusListObject.containerId = value["ContainerId"].asString();
-		if(!value["HostName"].isNull())
-			containerStatusListObject.hostName = value["HostName"].asString();
-		if(!value["Status"].isNull())
-			containerStatusListObject.status = value["Status"].asString();
+		if(!valueContainerStatusListContainerStatus["ApplicationId"].isNull())
+			containerStatusListObject.applicationId = valueContainerStatusListContainerStatus["ApplicationId"].asString();
+		if(!valueContainerStatusListContainerStatus["ContainerId"].isNull())
+			containerStatusListObject.containerId = valueContainerStatusListContainerStatus["ContainerId"].asString();
+		if(!valueContainerStatusListContainerStatus["HostName"].isNull())
+			containerStatusListObject.hostName = valueContainerStatusListContainerStatus["HostName"].asString();
+		if(!valueContainerStatusListContainerStatus["Status"].isNull())
+			containerStatusListObject.status = valueContainerStatusListContainerStatus["Status"].asString();
 		containerStatusList_.push_back(containerStatusListObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -39,26 +39,26 @@ void DescribeWhiteListProcessResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProcesses = value["Processes"]["Process"];
-	for (auto value : allProcesses)
+	auto allProcessesNode = value["Processes"]["Process"];
+	for (auto valueProcessesProcess : allProcessesNode)
 	{
 		Process processesObject;
-		if(!value["Id"].isNull())
-			processesObject.id = std::stol(value["Id"].asString());
-		if(!value["ProcessId"].isNull())
-			processesObject.processId = std::stoi(value["ProcessId"].asString());
-		if(!value["ProcessName"].isNull())
-			processesObject.processName = value["ProcessName"].asString();
-		if(!value["FilePath"].isNull())
-			processesObject.filePath = value["FilePath"].asString();
-		if(!value["Md5"].isNull())
-			processesObject.md5 = value["Md5"].asString();
-		if(!value["Level"].isNull())
-			processesObject.level = std::stoi(value["Level"].asString());
-		if(!value["ProcessType"].isNull())
-			processesObject.processType = std::stoi(value["ProcessType"].asString());
-		if(!value["Status"].isNull())
-			processesObject.status = std::stoi(value["Status"].asString());
+		if(!valueProcessesProcess["Id"].isNull())
+			processesObject.id = std::stol(valueProcessesProcess["Id"].asString());
+		if(!valueProcessesProcess["ProcessId"].isNull())
+			processesObject.processId = std::stoi(valueProcessesProcess["ProcessId"].asString());
+		if(!valueProcessesProcess["ProcessName"].isNull())
+			processesObject.processName = valueProcessesProcess["ProcessName"].asString();
+		if(!valueProcessesProcess["FilePath"].isNull())
+			processesObject.filePath = valueProcessesProcess["FilePath"].asString();
+		if(!valueProcessesProcess["Md5"].isNull())
+			processesObject.md5 = valueProcessesProcess["Md5"].asString();
+		if(!valueProcessesProcess["Level"].isNull())
+			processesObject.level = std::stoi(valueProcessesProcess["Level"].asString());
+		if(!valueProcessesProcess["ProcessType"].isNull())
+			processesObject.processType = std::stoi(valueProcessesProcess["ProcessType"].asString());
+		if(!valueProcessesProcess["Status"].isNull())
+			processesObject.status = std::stoi(valueProcessesProcess["Status"].asString());
 		processes_.push_back(processesObject);
 	}
 	if(!value["Count"].isNull())

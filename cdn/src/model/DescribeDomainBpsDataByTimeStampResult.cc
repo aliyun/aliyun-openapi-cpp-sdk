@@ -39,18 +39,18 @@ void DescribeDomainBpsDataByTimeStampResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBpsDataList = value["BpsDataList"]["BpsDataModel"];
-	for (auto value : allBpsDataList)
+	auto allBpsDataListNode = value["BpsDataList"]["BpsDataModel"];
+	for (auto valueBpsDataListBpsDataModel : allBpsDataListNode)
 	{
 		BpsDataModel bpsDataListObject;
-		if(!value["TimeStamp"].isNull())
-			bpsDataListObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["LocationName"].isNull())
-			bpsDataListObject.locationName = value["LocationName"].asString();
-		if(!value["IspName"].isNull())
-			bpsDataListObject.ispName = value["IspName"].asString();
-		if(!value["Bps"].isNull())
-			bpsDataListObject.bps = std::stol(value["Bps"].asString());
+		if(!valueBpsDataListBpsDataModel["TimeStamp"].isNull())
+			bpsDataListObject.timeStamp = valueBpsDataListBpsDataModel["TimeStamp"].asString();
+		if(!valueBpsDataListBpsDataModel["LocationName"].isNull())
+			bpsDataListObject.locationName = valueBpsDataListBpsDataModel["LocationName"].asString();
+		if(!valueBpsDataListBpsDataModel["IspName"].isNull())
+			bpsDataListObject.ispName = valueBpsDataListBpsDataModel["IspName"].asString();
+		if(!valueBpsDataListBpsDataModel["Bps"].isNull())
+			bpsDataListObject.bps = std::stol(valueBpsDataListBpsDataModel["Bps"].asString());
 		bpsDataList_.push_back(bpsDataListObject);
 	}
 	if(!value["DomainName"].isNull())

@@ -39,14 +39,14 @@ void DescribeDcdnDomainRealTimeByteHitRateDataResult::parse(const std::string &p
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["ByteHitRateDataModel"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["ByteHitRateDataModel"];
+	for (auto valueDataByteHitRateDataModel : allDataNode)
 	{
 		ByteHitRateDataModel dataObject;
-		if(!value["ByteHitRate"].isNull())
-			dataObject.byteHitRate = std::stof(value["ByteHitRate"].asString());
-		if(!value["TimeStamp"].isNull())
-			dataObject.timeStamp = value["TimeStamp"].asString();
+		if(!valueDataByteHitRateDataModel["ByteHitRate"].isNull())
+			dataObject.byteHitRate = std::stof(valueDataByteHitRateDataModel["ByteHitRate"].asString());
+		if(!valueDataByteHitRateDataModel["TimeStamp"].isNull())
+			dataObject.timeStamp = valueDataByteHitRateDataModel["TimeStamp"].asString();
 		data_.push_back(dataObject);
 	}
 

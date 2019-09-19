@@ -39,16 +39,16 @@ void DescribeDcdnDomainHitRateDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHitRatePerInterval = value["HitRatePerInterval"]["DataModule"];
-	for (auto value : allHitRatePerInterval)
+	auto allHitRatePerIntervalNode = value["HitRatePerInterval"]["DataModule"];
+	for (auto valueHitRatePerIntervalDataModule : allHitRatePerIntervalNode)
 	{
 		DataModule hitRatePerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			hitRatePerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["ReqHitRate"].isNull())
-			hitRatePerIntervalObject.reqHitRate = std::stof(value["ReqHitRate"].asString());
-		if(!value["ByteHitRate"].isNull())
-			hitRatePerIntervalObject.byteHitRate = std::stof(value["ByteHitRate"].asString());
+		if(!valueHitRatePerIntervalDataModule["TimeStamp"].isNull())
+			hitRatePerIntervalObject.timeStamp = valueHitRatePerIntervalDataModule["TimeStamp"].asString();
+		if(!valueHitRatePerIntervalDataModule["ReqHitRate"].isNull())
+			hitRatePerIntervalObject.reqHitRate = std::stof(valueHitRatePerIntervalDataModule["ReqHitRate"].asString());
+		if(!valueHitRatePerIntervalDataModule["ByteHitRate"].isNull())
+			hitRatePerIntervalObject.byteHitRate = std::stof(valueHitRatePerIntervalDataModule["ByteHitRate"].asString());
 		hitRatePerInterval_.push_back(hitRatePerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

@@ -39,82 +39,82 @@ void DescribeExpressCloudConnectionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allExpressCloudConnectionSet = value["ExpressCloudConnectionSet"]["ExpressCloudConnectionType"];
-	for (auto value : allExpressCloudConnectionSet)
+	auto allExpressCloudConnectionSetNode = value["ExpressCloudConnectionSet"]["ExpressCloudConnectionType"];
+	for (auto valueExpressCloudConnectionSetExpressCloudConnectionType : allExpressCloudConnectionSetNode)
 	{
 		ExpressCloudConnectionType expressCloudConnectionSetObject;
-		if(!value["InstanceId"].isNull())
-			expressCloudConnectionSetObject.instanceId = value["InstanceId"].asString();
-		if(!value["Status"].isNull())
-			expressCloudConnectionSetObject.status = value["Status"].asString();
-		if(!value["Name"].isNull())
-			expressCloudConnectionSetObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			expressCloudConnectionSetObject.description = value["Description"].asString();
-		if(!value["GmtCreate"].isNull())
-			expressCloudConnectionSetObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModify"].isNull())
-			expressCloudConnectionSetObject.gmtModify = value["GmtModify"].asString();
-		if(!value["PeerCity"].isNull())
-			expressCloudConnectionSetObject.peerCity = value["PeerCity"].asString();
-		if(!value["PeerLocation"].isNull())
-			expressCloudConnectionSetObject.peerLocation = value["PeerLocation"].asString();
-		if(!value["PortType"].isNull())
-			expressCloudConnectionSetObject.portType = value["PortType"].asString();
-		if(!value["Bandwidth"].isNull())
-			expressCloudConnectionSetObject.bandwidth = std::stoi(value["Bandwidth"].asString());
-		if(!value["Distance"].isNull())
-			expressCloudConnectionSetObject.distance = std::stoi(value["Distance"].asString());
-		if(!value["RedundantEccId"].isNull())
-			expressCloudConnectionSetObject.redundantEccId = value["RedundantEccId"].asString();
-		if(!value["CircuitCode"].isNull())
-			expressCloudConnectionSetObject.circuitCode = value["CircuitCode"].asString();
-		if(!value["Isp"].isNull())
-			expressCloudConnectionSetObject.isp = value["Isp"].asString();
-		if(!value["Type"].isNull())
-			expressCloudConnectionSetObject.type = value["Type"].asString();
-		if(!value["IdcSP"].isNull())
-			expressCloudConnectionSetObject.idcSP = value["IdcSP"].asString();
-		if(!value["BusinessStatus"].isNull())
-			expressCloudConnectionSetObject.businessStatus = value["BusinessStatus"].asString();
-		if(!value["HasReservationData"].isNull())
-			expressCloudConnectionSetObject.hasReservationData = value["HasReservationData"].asString();
-		if(!value["ReservationBandwidth"].isNull())
-			expressCloudConnectionSetObject.reservationBandwidth = value["ReservationBandwidth"].asString();
-		if(!value["ReservationInternetChargeType"].isNull())
-			expressCloudConnectionSetObject.reservationInternetChargeType = value["ReservationInternetChargeType"].asString();
-		if(!value["ReservationActiveTime"].isNull())
-			expressCloudConnectionSetObject.reservationActiveTime = value["ReservationActiveTime"].asString();
-		if(!value["ReservationOrderType"].isNull())
-			expressCloudConnectionSetObject.reservationOrderType = value["ReservationOrderType"].asString();
-		if(!value["ApplicationType"].isNull())
-			expressCloudConnectionSetObject.applicationType = value["ApplicationType"].asString();
-		if(!value["ApplicationId"].isNull())
-			expressCloudConnectionSetObject.applicationId = value["ApplicationId"].asString();
-		if(!value["ApplicationStatus"].isNull())
-			expressCloudConnectionSetObject.applicationStatus = value["ApplicationStatus"].asString();
-		if(!value["ApplicationBandwidth"].isNull())
-			expressCloudConnectionSetObject.applicationBandwidth = value["ApplicationBandwidth"].asString();
-		if(!value["ContactTel"].isNull())
-			expressCloudConnectionSetObject.contactTel = value["ContactTel"].asString();
-		if(!value["ContactMail"].isNull())
-			expressCloudConnectionSetObject.contactMail = value["ContactMail"].asString();
-		if(!value["IDCardNo"].isNull())
-			expressCloudConnectionSetObject.iDCardNo = value["IDCardNo"].asString();
-		if(!value["EndTime"].isNull())
-			expressCloudConnectionSetObject.endTime = value["EndTime"].asString();
-		if(!value["ChargeType"].isNull())
-			expressCloudConnectionSetObject.chargeType = value["ChargeType"].asString();
-		auto allVirtualBorderRouterModels = value["VirtualBorderRouterModels"]["VirtualBorderRouterModel"];
-		for (auto value : allVirtualBorderRouterModels)
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["InstanceId"].isNull())
+			expressCloudConnectionSetObject.instanceId = valueExpressCloudConnectionSetExpressCloudConnectionType["InstanceId"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["Status"].isNull())
+			expressCloudConnectionSetObject.status = valueExpressCloudConnectionSetExpressCloudConnectionType["Status"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["Name"].isNull())
+			expressCloudConnectionSetObject.name = valueExpressCloudConnectionSetExpressCloudConnectionType["Name"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["Description"].isNull())
+			expressCloudConnectionSetObject.description = valueExpressCloudConnectionSetExpressCloudConnectionType["Description"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["GmtCreate"].isNull())
+			expressCloudConnectionSetObject.gmtCreate = valueExpressCloudConnectionSetExpressCloudConnectionType["GmtCreate"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["GmtModify"].isNull())
+			expressCloudConnectionSetObject.gmtModify = valueExpressCloudConnectionSetExpressCloudConnectionType["GmtModify"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["PeerCity"].isNull())
+			expressCloudConnectionSetObject.peerCity = valueExpressCloudConnectionSetExpressCloudConnectionType["PeerCity"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["PeerLocation"].isNull())
+			expressCloudConnectionSetObject.peerLocation = valueExpressCloudConnectionSetExpressCloudConnectionType["PeerLocation"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["PortType"].isNull())
+			expressCloudConnectionSetObject.portType = valueExpressCloudConnectionSetExpressCloudConnectionType["PortType"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["Bandwidth"].isNull())
+			expressCloudConnectionSetObject.bandwidth = std::stoi(valueExpressCloudConnectionSetExpressCloudConnectionType["Bandwidth"].asString());
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["Distance"].isNull())
+			expressCloudConnectionSetObject.distance = std::stoi(valueExpressCloudConnectionSetExpressCloudConnectionType["Distance"].asString());
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["RedundantEccId"].isNull())
+			expressCloudConnectionSetObject.redundantEccId = valueExpressCloudConnectionSetExpressCloudConnectionType["RedundantEccId"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["CircuitCode"].isNull())
+			expressCloudConnectionSetObject.circuitCode = valueExpressCloudConnectionSetExpressCloudConnectionType["CircuitCode"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["Isp"].isNull())
+			expressCloudConnectionSetObject.isp = valueExpressCloudConnectionSetExpressCloudConnectionType["Isp"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["Type"].isNull())
+			expressCloudConnectionSetObject.type = valueExpressCloudConnectionSetExpressCloudConnectionType["Type"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["IdcSP"].isNull())
+			expressCloudConnectionSetObject.idcSP = valueExpressCloudConnectionSetExpressCloudConnectionType["IdcSP"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["BusinessStatus"].isNull())
+			expressCloudConnectionSetObject.businessStatus = valueExpressCloudConnectionSetExpressCloudConnectionType["BusinessStatus"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["HasReservationData"].isNull())
+			expressCloudConnectionSetObject.hasReservationData = valueExpressCloudConnectionSetExpressCloudConnectionType["HasReservationData"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ReservationBandwidth"].isNull())
+			expressCloudConnectionSetObject.reservationBandwidth = valueExpressCloudConnectionSetExpressCloudConnectionType["ReservationBandwidth"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ReservationInternetChargeType"].isNull())
+			expressCloudConnectionSetObject.reservationInternetChargeType = valueExpressCloudConnectionSetExpressCloudConnectionType["ReservationInternetChargeType"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ReservationActiveTime"].isNull())
+			expressCloudConnectionSetObject.reservationActiveTime = valueExpressCloudConnectionSetExpressCloudConnectionType["ReservationActiveTime"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ReservationOrderType"].isNull())
+			expressCloudConnectionSetObject.reservationOrderType = valueExpressCloudConnectionSetExpressCloudConnectionType["ReservationOrderType"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ApplicationType"].isNull())
+			expressCloudConnectionSetObject.applicationType = valueExpressCloudConnectionSetExpressCloudConnectionType["ApplicationType"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ApplicationId"].isNull())
+			expressCloudConnectionSetObject.applicationId = valueExpressCloudConnectionSetExpressCloudConnectionType["ApplicationId"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ApplicationStatus"].isNull())
+			expressCloudConnectionSetObject.applicationStatus = valueExpressCloudConnectionSetExpressCloudConnectionType["ApplicationStatus"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ApplicationBandwidth"].isNull())
+			expressCloudConnectionSetObject.applicationBandwidth = valueExpressCloudConnectionSetExpressCloudConnectionType["ApplicationBandwidth"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ContactTel"].isNull())
+			expressCloudConnectionSetObject.contactTel = valueExpressCloudConnectionSetExpressCloudConnectionType["ContactTel"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ContactMail"].isNull())
+			expressCloudConnectionSetObject.contactMail = valueExpressCloudConnectionSetExpressCloudConnectionType["ContactMail"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["IDCardNo"].isNull())
+			expressCloudConnectionSetObject.iDCardNo = valueExpressCloudConnectionSetExpressCloudConnectionType["IDCardNo"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["EndTime"].isNull())
+			expressCloudConnectionSetObject.endTime = valueExpressCloudConnectionSetExpressCloudConnectionType["EndTime"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ChargeType"].isNull())
+			expressCloudConnectionSetObject.chargeType = valueExpressCloudConnectionSetExpressCloudConnectionType["ChargeType"].asString();
+		auto allVirtualBorderRouterModelsNode = allExpressCloudConnectionSetNode["VirtualBorderRouterModels"]["VirtualBorderRouterModel"];
+		for (auto allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel : allVirtualBorderRouterModelsNode)
 		{
 			ExpressCloudConnectionType::VirtualBorderRouterModel virtualBorderRouterModelsObject;
-			if(!value["InstanceId"].isNull())
-				virtualBorderRouterModelsObject.instanceId = value["InstanceId"].asString();
-			if(!value["AccessPointId"].isNull())
-				virtualBorderRouterModelsObject.accessPointId = value["AccessPointId"].asString();
-			if(!value["PhysicalConnectionId"].isNull())
-				virtualBorderRouterModelsObject.physicalConnectionId = value["PhysicalConnectionId"].asString();
+			if(!allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["InstanceId"].isNull())
+				virtualBorderRouterModelsObject.instanceId = allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["InstanceId"].asString();
+			if(!allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["AccessPointId"].isNull())
+				virtualBorderRouterModelsObject.accessPointId = allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["AccessPointId"].asString();
+			if(!allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["PhysicalConnectionId"].isNull())
+				virtualBorderRouterModelsObject.physicalConnectionId = allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["PhysicalConnectionId"].asString();
 			expressCloudConnectionSetObject.virtualBorderRouterModels.push_back(virtualBorderRouterModelsObject);
 		}
 		expressCloudConnectionSet_.push_back(expressCloudConnectionSetObject);

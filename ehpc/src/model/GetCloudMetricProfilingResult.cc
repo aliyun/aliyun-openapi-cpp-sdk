@@ -39,18 +39,18 @@ void GetCloudMetricProfilingResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSvgUrls = value["SvgUrls"]["SvgInfo"];
-	for (auto value : allSvgUrls)
+	auto allSvgUrlsNode = value["SvgUrls"]["SvgInfo"];
+	for (auto valueSvgUrlsSvgInfo : allSvgUrlsNode)
 	{
 		SvgInfo svgUrlsObject;
-		if(!value["Name"].isNull())
-			svgUrlsObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			svgUrlsObject.type = value["Type"].asString();
-		if(!value["Url"].isNull())
-			svgUrlsObject.url = value["Url"].asString();
-		if(!value["Size"].isNull())
-			svgUrlsObject.size = std::stoi(value["Size"].asString());
+		if(!valueSvgUrlsSvgInfo["Name"].isNull())
+			svgUrlsObject.name = valueSvgUrlsSvgInfo["Name"].asString();
+		if(!valueSvgUrlsSvgInfo["Type"].isNull())
+			svgUrlsObject.type = valueSvgUrlsSvgInfo["Type"].asString();
+		if(!valueSvgUrlsSvgInfo["Url"].isNull())
+			svgUrlsObject.url = valueSvgUrlsSvgInfo["Url"].asString();
+		if(!valueSvgUrlsSvgInfo["Size"].isNull())
+			svgUrlsObject.size = std::stoi(valueSvgUrlsSvgInfo["Size"].asString());
 		svgUrls_.push_back(svgUrlsObject);
 	}
 

@@ -46,16 +46,16 @@ void QueryDeviceByDriverResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
-	auto allDeviceList = value["DeviceList"]["Device"];
-	for (auto value : allDeviceList)
+	auto allDeviceListNode = dataNode["DeviceList"]["Device"];
+	for (auto dataNodeDeviceListDevice : allDeviceListNode)
 	{
 		Data::Device deviceObject;
-		if(!value["IotId"].isNull())
-			deviceObject.iotId = value["IotId"].asString();
-		if(!value["ProductKey"].isNull())
-			deviceObject.productKey = value["ProductKey"].asString();
-		if(!value["DeviceName"].isNull())
-			deviceObject.deviceName = value["DeviceName"].asString();
+		if(!dataNodeDeviceListDevice["IotId"].isNull())
+			deviceObject.iotId = dataNodeDeviceListDevice["IotId"].asString();
+		if(!dataNodeDeviceListDevice["ProductKey"].isNull())
+			deviceObject.productKey = dataNodeDeviceListDevice["ProductKey"].asString();
+		if(!dataNodeDeviceListDevice["DeviceName"].isNull())
+			deviceObject.deviceName = dataNodeDeviceListDevice["DeviceName"].asString();
 		data_.deviceList.push_back(deviceObject);
 	}
 	if(!value["Success"].isNull())

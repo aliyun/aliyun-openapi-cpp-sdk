@@ -39,28 +39,28 @@ void DescribeForwardTableEntriesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allForwardTableEntries = value["ForwardTableEntries"]["ForwardTableEntry"];
-	for (auto value : allForwardTableEntries)
+	auto allForwardTableEntriesNode = value["ForwardTableEntries"]["ForwardTableEntry"];
+	for (auto valueForwardTableEntriesForwardTableEntry : allForwardTableEntriesNode)
 	{
 		ForwardTableEntry forwardTableEntriesObject;
-		if(!value["ForwardTableId"].isNull())
-			forwardTableEntriesObject.forwardTableId = value["ForwardTableId"].asString();
-		if(!value["ForwardEntryId"].isNull())
-			forwardTableEntriesObject.forwardEntryId = value["ForwardEntryId"].asString();
-		if(!value["ExternalIp"].isNull())
-			forwardTableEntriesObject.externalIp = value["ExternalIp"].asString();
-		if(!value["ExternalPort"].isNull())
-			forwardTableEntriesObject.externalPort = value["ExternalPort"].asString();
-		if(!value["IpProtocol"].isNull())
-			forwardTableEntriesObject.ipProtocol = value["IpProtocol"].asString();
-		if(!value["InternalIp"].isNull())
-			forwardTableEntriesObject.internalIp = value["InternalIp"].asString();
-		if(!value["InternalPort"].isNull())
-			forwardTableEntriesObject.internalPort = value["InternalPort"].asString();
-		if(!value["Status"].isNull())
-			forwardTableEntriesObject.status = value["Status"].asString();
-		if(!value["ForwardEntryName"].isNull())
-			forwardTableEntriesObject.forwardEntryName = value["ForwardEntryName"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["ForwardTableId"].isNull())
+			forwardTableEntriesObject.forwardTableId = valueForwardTableEntriesForwardTableEntry["ForwardTableId"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["ForwardEntryId"].isNull())
+			forwardTableEntriesObject.forwardEntryId = valueForwardTableEntriesForwardTableEntry["ForwardEntryId"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["ExternalIp"].isNull())
+			forwardTableEntriesObject.externalIp = valueForwardTableEntriesForwardTableEntry["ExternalIp"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["ExternalPort"].isNull())
+			forwardTableEntriesObject.externalPort = valueForwardTableEntriesForwardTableEntry["ExternalPort"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["IpProtocol"].isNull())
+			forwardTableEntriesObject.ipProtocol = valueForwardTableEntriesForwardTableEntry["IpProtocol"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["InternalIp"].isNull())
+			forwardTableEntriesObject.internalIp = valueForwardTableEntriesForwardTableEntry["InternalIp"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["InternalPort"].isNull())
+			forwardTableEntriesObject.internalPort = valueForwardTableEntriesForwardTableEntry["InternalPort"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["Status"].isNull())
+			forwardTableEntriesObject.status = valueForwardTableEntriesForwardTableEntry["Status"].asString();
+		if(!valueForwardTableEntriesForwardTableEntry["ForwardEntryName"].isNull())
+			forwardTableEntriesObject.forwardEntryName = valueForwardTableEntriesForwardTableEntry["ForwardEntryName"].asString();
 		forwardTableEntries_.push_back(forwardTableEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())

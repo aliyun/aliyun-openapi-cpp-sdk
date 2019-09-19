@@ -39,26 +39,26 @@ void DescribeLiveLazyPullStreamConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLiveLazyPullConfigList = value["LiveLazyPullConfigList"]["LiveLazyPullConfig"];
-	for (auto value : allLiveLazyPullConfigList)
+	auto allLiveLazyPullConfigListNode = value["LiveLazyPullConfigList"]["LiveLazyPullConfig"];
+	for (auto valueLiveLazyPullConfigListLiveLazyPullConfig : allLiveLazyPullConfigListNode)
 	{
 		LiveLazyPullConfig liveLazyPullConfigListObject;
-		if(!value["DomainName"].isNull())
-			liveLazyPullConfigListObject.domainName = value["DomainName"].asString();
-		if(!value["AppName"].isNull())
-			liveLazyPullConfigListObject.appName = value["AppName"].asString();
-		if(!value["PullDomainName"].isNull())
-			liveLazyPullConfigListObject.pullDomainName = value["PullDomainName"].asString();
-		if(!value["PullAppName"].isNull())
-			liveLazyPullConfigListObject.pullAppName = value["PullAppName"].asString();
-		if(!value["PullProtocol"].isNull())
-			liveLazyPullConfigListObject.pullProtocol = value["PullProtocol"].asString();
-		if(!value["PullAuthType"].isNull())
-			liveLazyPullConfigListObject.pullAuthType = value["PullAuthType"].asString();
-		if(!value["PullAuthKey"].isNull())
-			liveLazyPullConfigListObject.pullAuthKey = value["PullAuthKey"].asString();
-		if(!value["PullArgs"].isNull())
-			liveLazyPullConfigListObject.pullArgs = value["PullArgs"].asString();
+		if(!valueLiveLazyPullConfigListLiveLazyPullConfig["DomainName"].isNull())
+			liveLazyPullConfigListObject.domainName = valueLiveLazyPullConfigListLiveLazyPullConfig["DomainName"].asString();
+		if(!valueLiveLazyPullConfigListLiveLazyPullConfig["AppName"].isNull())
+			liveLazyPullConfigListObject.appName = valueLiveLazyPullConfigListLiveLazyPullConfig["AppName"].asString();
+		if(!valueLiveLazyPullConfigListLiveLazyPullConfig["PullDomainName"].isNull())
+			liveLazyPullConfigListObject.pullDomainName = valueLiveLazyPullConfigListLiveLazyPullConfig["PullDomainName"].asString();
+		if(!valueLiveLazyPullConfigListLiveLazyPullConfig["PullAppName"].isNull())
+			liveLazyPullConfigListObject.pullAppName = valueLiveLazyPullConfigListLiveLazyPullConfig["PullAppName"].asString();
+		if(!valueLiveLazyPullConfigListLiveLazyPullConfig["PullProtocol"].isNull())
+			liveLazyPullConfigListObject.pullProtocol = valueLiveLazyPullConfigListLiveLazyPullConfig["PullProtocol"].asString();
+		if(!valueLiveLazyPullConfigListLiveLazyPullConfig["PullAuthType"].isNull())
+			liveLazyPullConfigListObject.pullAuthType = valueLiveLazyPullConfigListLiveLazyPullConfig["PullAuthType"].asString();
+		if(!valueLiveLazyPullConfigListLiveLazyPullConfig["PullAuthKey"].isNull())
+			liveLazyPullConfigListObject.pullAuthKey = valueLiveLazyPullConfigListLiveLazyPullConfig["PullAuthKey"].asString();
+		if(!valueLiveLazyPullConfigListLiveLazyPullConfig["PullArgs"].isNull())
+			liveLazyPullConfigListObject.pullArgs = valueLiveLazyPullConfigListLiveLazyPullConfig["PullArgs"].asString();
 		liveLazyPullConfigList_.push_back(liveLazyPullConfigListObject);
 	}
 

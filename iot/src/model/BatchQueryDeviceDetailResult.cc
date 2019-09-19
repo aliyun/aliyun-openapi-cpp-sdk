@@ -39,38 +39,38 @@ void BatchQueryDeviceDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DataItem"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!value["ProductKey"].isNull())
-			dataObject.productKey = value["ProductKey"].asString();
-		if(!value["ProductName"].isNull())
-			dataObject.productName = value["ProductName"].asString();
-		if(!value["DeviceName"].isNull())
-			dataObject.deviceName = value["DeviceName"].asString();
-		if(!value["Nickname"].isNull())
-			dataObject.nickname = value["Nickname"].asString();
-		if(!value["DeviceSecret"].isNull())
-			dataObject.deviceSecret = value["DeviceSecret"].asString();
-		if(!value["IotId"].isNull())
-			dataObject.iotId = value["IotId"].asString();
-		if(!value["UtcCreate"].isNull())
-			dataObject.utcCreate = value["UtcCreate"].asString();
-		if(!value["GmtCreate"].isNull())
-			dataObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["UtcActive"].isNull())
-			dataObject.utcActive = value["UtcActive"].asString();
-		if(!value["GmtActive"].isNull())
-			dataObject.gmtActive = value["GmtActive"].asString();
-		if(!value["Status"].isNull())
-			dataObject.status = value["Status"].asString();
-		if(!value["FirmwareVersion"].isNull())
-			dataObject.firmwareVersion = value["FirmwareVersion"].asString();
-		if(!value["NodeType"].isNull())
-			dataObject.nodeType = std::stoi(value["NodeType"].asString());
-		if(!value["Region"].isNull())
-			dataObject.region = value["Region"].asString();
+		if(!valueDataDataItem["ProductKey"].isNull())
+			dataObject.productKey = valueDataDataItem["ProductKey"].asString();
+		if(!valueDataDataItem["ProductName"].isNull())
+			dataObject.productName = valueDataDataItem["ProductName"].asString();
+		if(!valueDataDataItem["DeviceName"].isNull())
+			dataObject.deviceName = valueDataDataItem["DeviceName"].asString();
+		if(!valueDataDataItem["Nickname"].isNull())
+			dataObject.nickname = valueDataDataItem["Nickname"].asString();
+		if(!valueDataDataItem["DeviceSecret"].isNull())
+			dataObject.deviceSecret = valueDataDataItem["DeviceSecret"].asString();
+		if(!valueDataDataItem["IotId"].isNull())
+			dataObject.iotId = valueDataDataItem["IotId"].asString();
+		if(!valueDataDataItem["UtcCreate"].isNull())
+			dataObject.utcCreate = valueDataDataItem["UtcCreate"].asString();
+		if(!valueDataDataItem["GmtCreate"].isNull())
+			dataObject.gmtCreate = valueDataDataItem["GmtCreate"].asString();
+		if(!valueDataDataItem["UtcActive"].isNull())
+			dataObject.utcActive = valueDataDataItem["UtcActive"].asString();
+		if(!valueDataDataItem["GmtActive"].isNull())
+			dataObject.gmtActive = valueDataDataItem["GmtActive"].asString();
+		if(!valueDataDataItem["Status"].isNull())
+			dataObject.status = valueDataDataItem["Status"].asString();
+		if(!valueDataDataItem["FirmwareVersion"].isNull())
+			dataObject.firmwareVersion = valueDataDataItem["FirmwareVersion"].asString();
+		if(!valueDataDataItem["NodeType"].isNull())
+			dataObject.nodeType = std::stoi(valueDataDataItem["NodeType"].asString());
+		if(!valueDataDataItem["Region"].isNull())
+			dataObject.region = valueDataDataItem["Region"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

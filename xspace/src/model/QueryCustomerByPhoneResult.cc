@@ -39,26 +39,26 @@ void QueryCustomerByPhoneResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DataItem"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!value["Detail"].isNull())
-			dataObject.detail = value["Detail"].asString();
-		if(!value["Photo"].isNull())
-			dataObject.photo = value["Photo"].asString();
-		if(!value["Id"].isNull())
-			dataObject.id = value["Id"].asString();
-		if(!value["Phone"].isNull())
-			dataObject.phone = value["Phone"].asString();
-		if(!value["Gender"].isNull())
-			dataObject.gender = value["Gender"].asString();
-		if(!value["Email"].isNull())
-			dataObject.email = value["Email"].asString();
-		if(!value["Nick"].isNull())
-			dataObject.nick = value["Nick"].asString();
-		if(!value["RealName"].isNull())
-			dataObject.realName = value["RealName"].asString();
+		if(!valueDataDataItem["Detail"].isNull())
+			dataObject.detail = valueDataDataItem["Detail"].asString();
+		if(!valueDataDataItem["Photo"].isNull())
+			dataObject.photo = valueDataDataItem["Photo"].asString();
+		if(!valueDataDataItem["Id"].isNull())
+			dataObject.id = valueDataDataItem["Id"].asString();
+		if(!valueDataDataItem["Phone"].isNull())
+			dataObject.phone = valueDataDataItem["Phone"].asString();
+		if(!valueDataDataItem["Gender"].isNull())
+			dataObject.gender = valueDataDataItem["Gender"].asString();
+		if(!valueDataDataItem["Email"].isNull())
+			dataObject.email = valueDataDataItem["Email"].asString();
+		if(!valueDataDataItem["Nick"].isNull())
+			dataObject.nick = valueDataDataItem["Nick"].asString();
+		if(!valueDataDataItem["RealName"].isNull())
+			dataObject.realName = valueDataDataItem["RealName"].asString();
 		auto customizeFieldsNode = value["CustomizeFields"];
 		if(!customizeFieldsNode["Cid"].isNull())
 			dataObject.customizeFields.cid = customizeFieldsNode["Cid"].asString();

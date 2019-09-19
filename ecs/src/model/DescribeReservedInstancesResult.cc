@@ -39,46 +39,46 @@ void DescribeReservedInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allReservedInstances = value["ReservedInstances"]["ReservedInstance"];
-	for (auto value : allReservedInstances)
+	auto allReservedInstancesNode = value["ReservedInstances"]["ReservedInstance"];
+	for (auto valueReservedInstancesReservedInstance : allReservedInstancesNode)
 	{
 		ReservedInstance reservedInstancesObject;
-		if(!value["ReservedInstanceId"].isNull())
-			reservedInstancesObject.reservedInstanceId = value["ReservedInstanceId"].asString();
-		if(!value["RegionId"].isNull())
-			reservedInstancesObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			reservedInstancesObject.zoneId = value["ZoneId"].asString();
-		if(!value["ReservedInstanceName"].isNull())
-			reservedInstancesObject.reservedInstanceName = value["ReservedInstanceName"].asString();
-		if(!value["Description"].isNull())
-			reservedInstancesObject.description = value["Description"].asString();
-		if(!value["InstanceType"].isNull())
-			reservedInstancesObject.instanceType = value["InstanceType"].asString();
-		if(!value["Scope"].isNull())
-			reservedInstancesObject.scope = value["Scope"].asString();
-		if(!value["OfferingType"].isNull())
-			reservedInstancesObject.offeringType = value["OfferingType"].asString();
-		if(!value["Platform"].isNull())
-			reservedInstancesObject.platform = value["Platform"].asString();
-		if(!value["InstanceAmount"].isNull())
-			reservedInstancesObject.instanceAmount = std::stoi(value["InstanceAmount"].asString());
-		if(!value["Status"].isNull())
-			reservedInstancesObject.status = value["Status"].asString();
-		if(!value["CreationTime"].isNull())
-			reservedInstancesObject.creationTime = value["CreationTime"].asString();
-		if(!value["ExpiredTime"].isNull())
-			reservedInstancesObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["StartTime"].isNull())
-			reservedInstancesObject.startTime = value["StartTime"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			reservedInstancesObject.resourceGroupId = value["ResourceGroupId"].asString();
-		auto allOperationLocks = value["OperationLocks"]["OperationLock"];
-		for (auto value : allOperationLocks)
+		if(!valueReservedInstancesReservedInstance["ReservedInstanceId"].isNull())
+			reservedInstancesObject.reservedInstanceId = valueReservedInstancesReservedInstance["ReservedInstanceId"].asString();
+		if(!valueReservedInstancesReservedInstance["RegionId"].isNull())
+			reservedInstancesObject.regionId = valueReservedInstancesReservedInstance["RegionId"].asString();
+		if(!valueReservedInstancesReservedInstance["ZoneId"].isNull())
+			reservedInstancesObject.zoneId = valueReservedInstancesReservedInstance["ZoneId"].asString();
+		if(!valueReservedInstancesReservedInstance["ReservedInstanceName"].isNull())
+			reservedInstancesObject.reservedInstanceName = valueReservedInstancesReservedInstance["ReservedInstanceName"].asString();
+		if(!valueReservedInstancesReservedInstance["Description"].isNull())
+			reservedInstancesObject.description = valueReservedInstancesReservedInstance["Description"].asString();
+		if(!valueReservedInstancesReservedInstance["InstanceType"].isNull())
+			reservedInstancesObject.instanceType = valueReservedInstancesReservedInstance["InstanceType"].asString();
+		if(!valueReservedInstancesReservedInstance["Scope"].isNull())
+			reservedInstancesObject.scope = valueReservedInstancesReservedInstance["Scope"].asString();
+		if(!valueReservedInstancesReservedInstance["OfferingType"].isNull())
+			reservedInstancesObject.offeringType = valueReservedInstancesReservedInstance["OfferingType"].asString();
+		if(!valueReservedInstancesReservedInstance["Platform"].isNull())
+			reservedInstancesObject.platform = valueReservedInstancesReservedInstance["Platform"].asString();
+		if(!valueReservedInstancesReservedInstance["InstanceAmount"].isNull())
+			reservedInstancesObject.instanceAmount = std::stoi(valueReservedInstancesReservedInstance["InstanceAmount"].asString());
+		if(!valueReservedInstancesReservedInstance["Status"].isNull())
+			reservedInstancesObject.status = valueReservedInstancesReservedInstance["Status"].asString();
+		if(!valueReservedInstancesReservedInstance["CreationTime"].isNull())
+			reservedInstancesObject.creationTime = valueReservedInstancesReservedInstance["CreationTime"].asString();
+		if(!valueReservedInstancesReservedInstance["ExpiredTime"].isNull())
+			reservedInstancesObject.expiredTime = valueReservedInstancesReservedInstance["ExpiredTime"].asString();
+		if(!valueReservedInstancesReservedInstance["StartTime"].isNull())
+			reservedInstancesObject.startTime = valueReservedInstancesReservedInstance["StartTime"].asString();
+		if(!valueReservedInstancesReservedInstance["ResourceGroupId"].isNull())
+			reservedInstancesObject.resourceGroupId = valueReservedInstancesReservedInstance["ResourceGroupId"].asString();
+		auto allOperationLocksNode = allReservedInstancesNode["OperationLocks"]["OperationLock"];
+		for (auto allReservedInstancesNodeOperationLocksOperationLock : allOperationLocksNode)
 		{
 			ReservedInstance::OperationLock operationLocksObject;
-			if(!value["LockReason"].isNull())
-				operationLocksObject.lockReason = value["LockReason"].asString();
+			if(!allReservedInstancesNodeOperationLocksOperationLock["LockReason"].isNull())
+				operationLocksObject.lockReason = allReservedInstancesNodeOperationLocksOperationLock["LockReason"].asString();
 			reservedInstancesObject.operationLocks.push_back(operationLocksObject);
 		}
 		reservedInstances_.push_back(reservedInstancesObject);

@@ -39,14 +39,14 @@ void BatchGetAliyunIdByAliyunPkResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProfileList = value["ProfileList"]["ProfileItem"];
-	for (auto value : allProfileList)
+	auto allProfileListNode = value["ProfileList"]["ProfileItem"];
+	for (auto valueProfileListProfileItem : allProfileListNode)
 	{
 		ProfileItem profileListObject;
-		if(!value["AliyunId"].isNull())
-			profileListObject.aliyunId = value["AliyunId"].asString();
-		if(!value["AliyunPk"].isNull())
-			profileListObject.aliyunPk = value["AliyunPk"].asString();
+		if(!valueProfileListProfileItem["AliyunId"].isNull())
+			profileListObject.aliyunId = valueProfileListProfileItem["AliyunId"].asString();
+		if(!valueProfileListProfileItem["AliyunPk"].isNull())
+			profileListObject.aliyunPk = valueProfileListProfileItem["AliyunPk"].asString();
 		profileList_.push_back(profileListObject);
 	}
 

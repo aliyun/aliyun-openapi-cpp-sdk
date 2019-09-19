@@ -39,26 +39,26 @@ void GetConversationListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConversations = value["Conversations"]["ConversationDetail"];
-	for (auto value : allConversations)
+	auto allConversationsNode = value["Conversations"]["ConversationDetail"];
+	for (auto valueConversationsConversationDetail : allConversationsNode)
 	{
 		ConversationDetail conversationsObject;
-		if(!value["Timestamp"].isNull())
-			conversationsObject.timestamp = std::stol(value["Timestamp"].asString());
-		if(!value["Speaker"].isNull())
-			conversationsObject.speaker = value["Speaker"].asString();
-		if(!value["Script"].isNull())
-			conversationsObject.script = value["Script"].asString();
-		auto allSummary = value["Summary"]["SummaryItem"];
-		for (auto value : allSummary)
+		if(!valueConversationsConversationDetail["Timestamp"].isNull())
+			conversationsObject.timestamp = std::stol(valueConversationsConversationDetail["Timestamp"].asString());
+		if(!valueConversationsConversationDetail["Speaker"].isNull())
+			conversationsObject.speaker = valueConversationsConversationDetail["Speaker"].asString();
+		if(!valueConversationsConversationDetail["Script"].isNull())
+			conversationsObject.script = valueConversationsConversationDetail["Script"].asString();
+		auto allSummaryNode = allConversationsNode["Summary"]["SummaryItem"];
+		for (auto allConversationsNodeSummarySummaryItem : allSummaryNode)
 		{
 			ConversationDetail::SummaryItem summaryObject;
-			if(!value["Category"].isNull())
-				summaryObject.category = value["Category"].asString();
-			if(!value["SummaryName"].isNull())
-				summaryObject.summaryName = value["SummaryName"].asString();
-			if(!value["Content"].isNull())
-				summaryObject.content = value["Content"].asString();
+			if(!allConversationsNodeSummarySummaryItem["Category"].isNull())
+				summaryObject.category = allConversationsNodeSummarySummaryItem["Category"].asString();
+			if(!allConversationsNodeSummarySummaryItem["SummaryName"].isNull())
+				summaryObject.summaryName = allConversationsNodeSummarySummaryItem["SummaryName"].asString();
+			if(!allConversationsNodeSummarySummaryItem["Content"].isNull())
+				summaryObject.content = allConversationsNodeSummarySummaryItem["Content"].asString();
 			conversationsObject.summary.push_back(summaryObject);
 		}
 		conversations_.push_back(conversationsObject);

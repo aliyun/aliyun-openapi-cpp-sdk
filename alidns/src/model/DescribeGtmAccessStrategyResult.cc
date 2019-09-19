@@ -39,18 +39,18 @@ void DescribeGtmAccessStrategyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLines = value["Lines"]["Line"];
-	for (auto value : allLines)
+	auto allLinesNode = value["Lines"]["Line"];
+	for (auto valueLinesLine : allLinesNode)
 	{
 		Line linesObject;
-		if(!value["LineCode"].isNull())
-			linesObject.lineCode = value["LineCode"].asString();
-		if(!value["LineName"].isNull())
-			linesObject.lineName = value["LineName"].asString();
-		if(!value["GroupCode"].isNull())
-			linesObject.groupCode = value["GroupCode"].asString();
-		if(!value["GroupName"].isNull())
-			linesObject.groupName = value["GroupName"].asString();
+		if(!valueLinesLine["LineCode"].isNull())
+			linesObject.lineCode = valueLinesLine["LineCode"].asString();
+		if(!valueLinesLine["LineName"].isNull())
+			linesObject.lineName = valueLinesLine["LineName"].asString();
+		if(!valueLinesLine["GroupCode"].isNull())
+			linesObject.groupCode = valueLinesLine["GroupCode"].asString();
+		if(!valueLinesLine["GroupName"].isNull())
+			linesObject.groupName = valueLinesLine["GroupName"].asString();
 		lines_.push_back(linesObject);
 	}
 	if(!value["StrategyId"].isNull())

@@ -39,14 +39,14 @@ void ListSkillGroupsOfUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSkillLevels = value["SkillLevels"]["SkillLevel"];
-	for (auto value : allSkillLevels)
+	auto allSkillLevelsNode = value["SkillLevels"]["SkillLevel"];
+	for (auto valueSkillLevelsSkillLevel : allSkillLevelsNode)
 	{
 		SkillLevel skillLevelsObject;
-		if(!value["SkillLevelId"].isNull())
-			skillLevelsObject.skillLevelId = value["SkillLevelId"].asString();
-		if(!value["Level"].isNull())
-			skillLevelsObject.level = std::stoi(value["Level"].asString());
+		if(!valueSkillLevelsSkillLevel["SkillLevelId"].isNull())
+			skillLevelsObject.skillLevelId = valueSkillLevelsSkillLevel["SkillLevelId"].asString();
+		if(!valueSkillLevelsSkillLevel["Level"].isNull())
+			skillLevelsObject.level = std::stoi(valueSkillLevelsSkillLevel["Level"].asString());
 		auto skillNode = value["Skill"];
 		if(!skillNode["SkillGroupId"].isNull())
 			skillLevelsObject.skill.skillGroupId = skillNode["SkillGroupId"].asString();
@@ -58,32 +58,32 @@ void ListSkillGroupsOfUserResult::parse(const std::string &payload)
 			skillLevelsObject.skill.skillGroupDescription = skillNode["SkillGroupDescription"].asString();
 		if(!skillNode["RoutingStrategy"].isNull())
 			skillLevelsObject.skill.routingStrategy = skillNode["RoutingStrategy"].asString();
-		auto allOutboundPhoneNumbers = value["OutboundPhoneNumbers"]["PhoneNumber"];
-		for (auto value : allOutboundPhoneNumbers)
+		auto allOutboundPhoneNumbersNode = skillNode["OutboundPhoneNumbers"]["PhoneNumber"];
+		for (auto skillNodeOutboundPhoneNumbersPhoneNumber : allOutboundPhoneNumbersNode)
 		{
 			SkillLevel::Skill::PhoneNumber phoneNumberObject;
-			if(!value["PhoneNumberId"].isNull())
-				phoneNumberObject.phoneNumberId = value["PhoneNumberId"].asString();
-			if(!value["InstanceId"].isNull())
-				phoneNumberObject.instanceId = value["InstanceId"].asString();
-			if(!value["Number"].isNull())
-				phoneNumberObject.number = value["Number"].asString();
-			if(!value["PhoneNumberDescription"].isNull())
-				phoneNumberObject.phoneNumberDescription = value["PhoneNumberDescription"].asString();
-			if(!value["TestOnly"].isNull())
-				phoneNumberObject.testOnly = value["TestOnly"].asString() == "true";
-			if(!value["RemainingTime"].isNull())
-				phoneNumberObject.remainingTime = std::stoi(value["RemainingTime"].asString());
-			if(!value["AllowOutbound"].isNull())
-				phoneNumberObject.allowOutbound = value["AllowOutbound"].asString() == "true";
-			if(!value["Usage"].isNull())
-				phoneNumberObject.usage = value["Usage"].asString();
-			if(!value["Trunks"].isNull())
-				phoneNumberObject.trunks = std::stoi(value["Trunks"].asString());
-			if(!value["Province"].isNull())
-				phoneNumberObject.province = value["Province"].asString();
-			if(!value["City"].isNull())
-				phoneNumberObject.city = value["City"].asString();
+			if(!skillNodeOutboundPhoneNumbersPhoneNumber["PhoneNumberId"].isNull())
+				phoneNumberObject.phoneNumberId = skillNodeOutboundPhoneNumbersPhoneNumber["PhoneNumberId"].asString();
+			if(!skillNodeOutboundPhoneNumbersPhoneNumber["InstanceId"].isNull())
+				phoneNumberObject.instanceId = skillNodeOutboundPhoneNumbersPhoneNumber["InstanceId"].asString();
+			if(!skillNodeOutboundPhoneNumbersPhoneNumber["Number"].isNull())
+				phoneNumberObject.number = skillNodeOutboundPhoneNumbersPhoneNumber["Number"].asString();
+			if(!skillNodeOutboundPhoneNumbersPhoneNumber["PhoneNumberDescription"].isNull())
+				phoneNumberObject.phoneNumberDescription = skillNodeOutboundPhoneNumbersPhoneNumber["PhoneNumberDescription"].asString();
+			if(!skillNodeOutboundPhoneNumbersPhoneNumber["TestOnly"].isNull())
+				phoneNumberObject.testOnly = skillNodeOutboundPhoneNumbersPhoneNumber["TestOnly"].asString() == "true";
+			if(!skillNodeOutboundPhoneNumbersPhoneNumber["RemainingTime"].isNull())
+				phoneNumberObject.remainingTime = std::stoi(skillNodeOutboundPhoneNumbersPhoneNumber["RemainingTime"].asString());
+			if(!skillNodeOutboundPhoneNumbersPhoneNumber["AllowOutbound"].isNull())
+				phoneNumberObject.allowOutbound = skillNodeOutboundPhoneNumbersPhoneNumber["AllowOutbound"].asString() == "true";
+			if(!skillNodeOutboundPhoneNumbersPhoneNumber["Usage"].isNull())
+				phoneNumberObject.usage = skillNodeOutboundPhoneNumbersPhoneNumber["Usage"].asString();
+			if(!skillNodeOutboundPhoneNumbersPhoneNumber["Trunks"].isNull())
+				phoneNumberObject.trunks = std::stoi(skillNodeOutboundPhoneNumbersPhoneNumber["Trunks"].asString());
+			if(!skillNodeOutboundPhoneNumbersPhoneNumber["Province"].isNull())
+				phoneNumberObject.province = skillNodeOutboundPhoneNumbersPhoneNumber["Province"].asString();
+			if(!skillNodeOutboundPhoneNumbersPhoneNumber["City"].isNull())
+				phoneNumberObject.city = skillNodeOutboundPhoneNumbersPhoneNumber["City"].asString();
 			skillLevelsObject.skill.outboundPhoneNumbers.push_back(phoneNumberObject);
 		}
 		skillLevels_.push_back(skillLevelsObject);

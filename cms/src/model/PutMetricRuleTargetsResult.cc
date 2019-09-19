@@ -40,16 +40,16 @@ void PutMetricRuleTargetsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto failDataNode = value["FailData"];
-	auto allTargets = value["Targets"]["Target"];
-	for (auto value : allTargets)
+	auto allTargetsNode = failDataNode["Targets"]["Target"];
+	for (auto failDataNodeTargetsTarget : allTargetsNode)
 	{
 		FailData::Target targetObject;
-		if(!value["Id"].isNull())
-			targetObject.id = value["Id"].asString();
-		if(!value["Arn"].isNull())
-			targetObject.arn = value["Arn"].asString();
-		if(!value["Level"].isNull())
-			targetObject.level = value["Level"].asString();
+		if(!failDataNodeTargetsTarget["Id"].isNull())
+			targetObject.id = failDataNodeTargetsTarget["Id"].asString();
+		if(!failDataNodeTargetsTarget["Arn"].isNull())
+			targetObject.arn = failDataNodeTargetsTarget["Arn"].asString();
+		if(!failDataNodeTargetsTarget["Level"].isNull())
+			targetObject.level = failDataNodeTargetsTarget["Level"].asString();
 		failData_.targets.push_back(targetObject);
 	}
 	if(!value["Success"].isNull())

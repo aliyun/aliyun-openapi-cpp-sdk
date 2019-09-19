@@ -39,32 +39,32 @@ void DescribeLoadBalancerHTTPSListenerAttributeResult::parse(const std::string &
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRules = value["Rules"]["Rule"];
-	for (auto value : allRules)
+	auto allRulesNode = value["Rules"]["Rule"];
+	for (auto valueRulesRule : allRulesNode)
 	{
 		Rule rulesObject;
-		if(!value["RuleId"].isNull())
-			rulesObject.ruleId = value["RuleId"].asString();
-		if(!value["RuleName"].isNull())
-			rulesObject.ruleName = value["RuleName"].asString();
-		if(!value["Domain"].isNull())
-			rulesObject.domain = value["Domain"].asString();
-		if(!value["Url"].isNull())
-			rulesObject.url = value["Url"].asString();
-		if(!value["VServerGroupId"].isNull())
-			rulesObject.vServerGroupId = value["VServerGroupId"].asString();
+		if(!valueRulesRule["RuleId"].isNull())
+			rulesObject.ruleId = valueRulesRule["RuleId"].asString();
+		if(!valueRulesRule["RuleName"].isNull())
+			rulesObject.ruleName = valueRulesRule["RuleName"].asString();
+		if(!valueRulesRule["Domain"].isNull())
+			rulesObject.domain = valueRulesRule["Domain"].asString();
+		if(!valueRulesRule["Url"].isNull())
+			rulesObject.url = valueRulesRule["Url"].asString();
+		if(!valueRulesRule["VServerGroupId"].isNull())
+			rulesObject.vServerGroupId = valueRulesRule["VServerGroupId"].asString();
 		rules_.push_back(rulesObject);
 	}
-	auto allDomainExtensions = value["DomainExtensions"]["DomainExtension"];
-	for (auto value : allDomainExtensions)
+	auto allDomainExtensionsNode = value["DomainExtensions"]["DomainExtension"];
+	for (auto valueDomainExtensionsDomainExtension : allDomainExtensionsNode)
 	{
 		DomainExtension domainExtensionsObject;
-		if(!value["DomainExtensionId"].isNull())
-			domainExtensionsObject.domainExtensionId = value["DomainExtensionId"].asString();
-		if(!value["Domain"].isNull())
-			domainExtensionsObject.domain = value["Domain"].asString();
-		if(!value["ServerCertificateId"].isNull())
-			domainExtensionsObject.serverCertificateId = value["ServerCertificateId"].asString();
+		if(!valueDomainExtensionsDomainExtension["DomainExtensionId"].isNull())
+			domainExtensionsObject.domainExtensionId = valueDomainExtensionsDomainExtension["DomainExtensionId"].asString();
+		if(!valueDomainExtensionsDomainExtension["Domain"].isNull())
+			domainExtensionsObject.domain = valueDomainExtensionsDomainExtension["Domain"].asString();
+		if(!valueDomainExtensionsDomainExtension["ServerCertificateId"].isNull())
+			domainExtensionsObject.serverCertificateId = valueDomainExtensionsDomainExtension["ServerCertificateId"].asString();
 		domainExtensions_.push_back(domainExtensionsObject);
 	}
 	if(!value["ListenerPort"].isNull())

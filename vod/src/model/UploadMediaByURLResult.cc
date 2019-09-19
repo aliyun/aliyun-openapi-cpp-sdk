@@ -39,14 +39,14 @@ void UploadMediaByURLResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUploadJobs = value["UploadJobs"]["UploadJob"];
-	for (auto value : allUploadJobs)
+	auto allUploadJobsNode = value["UploadJobs"]["UploadJob"];
+	for (auto valueUploadJobsUploadJob : allUploadJobsNode)
 	{
 		UploadJob uploadJobsObject;
-		if(!value["JobId"].isNull())
-			uploadJobsObject.jobId = value["JobId"].asString();
-		if(!value["SourceURL"].isNull())
-			uploadJobsObject.sourceURL = value["SourceURL"].asString();
+		if(!valueUploadJobsUploadJob["JobId"].isNull())
+			uploadJobsObject.jobId = valueUploadJobsUploadJob["JobId"].asString();
+		if(!valueUploadJobsUploadJob["SourceURL"].isNull())
+			uploadJobsObject.sourceURL = valueUploadJobsUploadJob["SourceURL"].asString();
 		uploadJobs_.push_back(uploadJobsObject);
 	}
 

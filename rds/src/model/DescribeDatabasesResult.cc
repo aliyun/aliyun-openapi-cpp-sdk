@@ -39,32 +39,32 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDatabases = value["Databases"]["Database"];
-	for (auto value : allDatabases)
+	auto allDatabasesNode = value["Databases"]["Database"];
+	for (auto valueDatabasesDatabase : allDatabasesNode)
 	{
 		Database databasesObject;
-		if(!value["DBName"].isNull())
-			databasesObject.dBName = value["DBName"].asString();
-		if(!value["DBInstanceId"].isNull())
-			databasesObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["Engine"].isNull())
-			databasesObject.engine = value["Engine"].asString();
-		if(!value["DBStatus"].isNull())
-			databasesObject.dBStatus = value["DBStatus"].asString();
-		if(!value["CharacterSetName"].isNull())
-			databasesObject.characterSetName = value["CharacterSetName"].asString();
-		if(!value["DBDescription"].isNull())
-			databasesObject.dBDescription = value["DBDescription"].asString();
-		auto allAccounts = value["Accounts"]["AccountPrivilegeInfo"];
-		for (auto value : allAccounts)
+		if(!valueDatabasesDatabase["DBName"].isNull())
+			databasesObject.dBName = valueDatabasesDatabase["DBName"].asString();
+		if(!valueDatabasesDatabase["DBInstanceId"].isNull())
+			databasesObject.dBInstanceId = valueDatabasesDatabase["DBInstanceId"].asString();
+		if(!valueDatabasesDatabase["Engine"].isNull())
+			databasesObject.engine = valueDatabasesDatabase["Engine"].asString();
+		if(!valueDatabasesDatabase["DBStatus"].isNull())
+			databasesObject.dBStatus = valueDatabasesDatabase["DBStatus"].asString();
+		if(!valueDatabasesDatabase["CharacterSetName"].isNull())
+			databasesObject.characterSetName = valueDatabasesDatabase["CharacterSetName"].asString();
+		if(!valueDatabasesDatabase["DBDescription"].isNull())
+			databasesObject.dBDescription = valueDatabasesDatabase["DBDescription"].asString();
+		auto allAccountsNode = allDatabasesNode["Accounts"]["AccountPrivilegeInfo"];
+		for (auto allDatabasesNodeAccountsAccountPrivilegeInfo : allAccountsNode)
 		{
 			Database::AccountPrivilegeInfo accountsObject;
-			if(!value["Account"].isNull())
-				accountsObject.account = value["Account"].asString();
-			if(!value["AccountPrivilege"].isNull())
-				accountsObject.accountPrivilege = value["AccountPrivilege"].asString();
-			if(!value["AccountPrivilegeDetail"].isNull())
-				accountsObject.accountPrivilegeDetail = value["AccountPrivilegeDetail"].asString();
+			if(!allDatabasesNodeAccountsAccountPrivilegeInfo["Account"].isNull())
+				accountsObject.account = allDatabasesNodeAccountsAccountPrivilegeInfo["Account"].asString();
+			if(!allDatabasesNodeAccountsAccountPrivilegeInfo["AccountPrivilege"].isNull())
+				accountsObject.accountPrivilege = allDatabasesNodeAccountsAccountPrivilegeInfo["AccountPrivilege"].asString();
+			if(!allDatabasesNodeAccountsAccountPrivilegeInfo["AccountPrivilegeDetail"].isNull())
+				accountsObject.accountPrivilegeDetail = allDatabasesNodeAccountsAccountPrivilegeInfo["AccountPrivilegeDetail"].asString();
 			databasesObject.accounts.push_back(accountsObject);
 		}
 		databases_.push_back(databasesObject);

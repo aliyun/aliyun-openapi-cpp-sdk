@@ -39,30 +39,30 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRules = value["Rules"]["Rule"];
-	for (auto value : allRules)
+	auto allRulesNode = value["Rules"]["Rule"];
+	for (auto valueRulesRule : allRulesNode)
 	{
 		Rule rulesObject;
-		if(!value["RuleDescId"].isNull())
-			rulesObject.ruleDescId = std::stol(value["RuleDescId"].asString());
-		if(!value["Name"].isNull())
-			rulesObject.name = value["Name"].asString();
-		if(!value["Title"].isNull())
-			rulesObject.title = value["Title"].asString();
+		if(!valueRulesRule["RuleDescId"].isNull())
+			rulesObject.ruleDescId = std::stol(valueRulesRule["RuleDescId"].asString());
+		if(!valueRulesRule["Name"].isNull())
+			rulesObject.name = valueRulesRule["Name"].asString();
+		if(!valueRulesRule["Title"].isNull())
+			rulesObject.title = valueRulesRule["Title"].asString();
 		rules_.push_back(rulesObject);
 	}
-	auto allSubOrders = value["SubOrders"]["SubOrder"];
-	for (auto value : allSubOrders)
+	auto allSubOrdersNode = value["SubOrders"]["SubOrder"];
+	for (auto valueSubOrdersSubOrder : allSubOrdersNode)
 	{
 		SubOrder subOrdersObject;
-		if(!value["OriginalAmount"].isNull())
-			subOrdersObject.originalAmount = std::stof(value["OriginalAmount"].asString());
-		if(!value["TradeAmount"].isNull())
-			subOrdersObject.tradeAmount = std::stof(value["TradeAmount"].asString());
-		if(!value["DiscountAmount"].isNull())
-			subOrdersObject.discountAmount = std::stof(value["DiscountAmount"].asString());
-		if(!value["InstanceId"].isNull())
-			subOrdersObject.instanceId = value["InstanceId"].asString();
+		if(!valueSubOrdersSubOrder["OriginalAmount"].isNull())
+			subOrdersObject.originalAmount = std::stof(valueSubOrdersSubOrder["OriginalAmount"].asString());
+		if(!valueSubOrdersSubOrder["TradeAmount"].isNull())
+			subOrdersObject.tradeAmount = std::stof(valueSubOrdersSubOrder["TradeAmount"].asString());
+		if(!valueSubOrdersSubOrder["DiscountAmount"].isNull())
+			subOrdersObject.discountAmount = std::stof(valueSubOrdersSubOrder["DiscountAmount"].asString());
+		if(!valueSubOrdersSubOrder["InstanceId"].isNull())
+			subOrdersObject.instanceId = valueSubOrdersSubOrder["InstanceId"].asString();
 		auto allRuleIds = value["RuleIds"]["RuleId"];
 		for (auto value : allRuleIds)
 			subOrdersObject.ruleIds.push_back(value.asString());
@@ -77,18 +77,18 @@ void DescribeRenewalPriceResult::parse(const std::string &payload)
 		order_.discountAmount = std::stof(orderNode["DiscountAmount"].asString());
 	if(!orderNode["Currency"].isNull())
 		order_.currency = orderNode["Currency"].asString();
-	auto allCoupons = value["Coupons"]["Coupon"];
-	for (auto value : allCoupons)
+	auto allCouponsNode = orderNode["Coupons"]["Coupon"];
+	for (auto orderNodeCouponsCoupon : allCouponsNode)
 	{
 		Order::Coupon couponObject;
-		if(!value["CouponNo"].isNull())
-			couponObject.couponNo = value["CouponNo"].asString();
-		if(!value["Name"].isNull())
-			couponObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			couponObject.description = value["Description"].asString();
-		if(!value["IsSelected"].isNull())
-			couponObject.isSelected = value["IsSelected"].asString();
+		if(!orderNodeCouponsCoupon["CouponNo"].isNull())
+			couponObject.couponNo = orderNodeCouponsCoupon["CouponNo"].asString();
+		if(!orderNodeCouponsCoupon["Name"].isNull())
+			couponObject.name = orderNodeCouponsCoupon["Name"].asString();
+		if(!orderNodeCouponsCoupon["Description"].isNull())
+			couponObject.description = orderNodeCouponsCoupon["Description"].asString();
+		if(!orderNodeCouponsCoupon["IsSelected"].isNull())
+			couponObject.isSelected = orderNodeCouponsCoupon["IsSelected"].asString();
 		order_.coupons.push_back(couponObject);
 	}
 		auto allRuleIds1 = orderNode["RuleIds"]["RuleId"];

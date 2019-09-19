@@ -39,14 +39,14 @@ void DescribeOssIncrementCheckSettingResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBucketConfigList = value["BucketConfigList"]["BucketConfig"];
-	for (auto value : allBucketConfigList)
+	auto allBucketConfigListNode = value["BucketConfigList"]["BucketConfig"];
+	for (auto valueBucketConfigListBucketConfig : allBucketConfigListNode)
 	{
 		BucketConfig bucketConfigListObject;
-		if(!value["Selected"].isNull())
-			bucketConfigListObject.selected = value["Selected"].asString() == "true";
-		if(!value["Bucket"].isNull())
-			bucketConfigListObject.bucket = value["Bucket"].asString();
+		if(!valueBucketConfigListBucketConfig["Selected"].isNull())
+			bucketConfigListObject.selected = valueBucketConfigListBucketConfig["Selected"].asString() == "true";
+		if(!valueBucketConfigListBucketConfig["Bucket"].isNull())
+			bucketConfigListObject.bucket = valueBucketConfigListBucketConfig["Bucket"].asString();
 		auto allPrefixes = value["Prefixes"]["Prefix"];
 		for (auto value : allPrefixes)
 			bucketConfigListObject.prefixes.push_back(value.asString());

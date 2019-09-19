@@ -46,20 +46,20 @@ void GetConversationDetailByContactIdResult::parse(const std::string &payload)
 		dataList_.pageNumber = std::stoi(dataListNode["PageNumber"].asString());
 	if(!dataListNode["PageSize"].isNull())
 		dataList_.pageSize = std::stoi(dataListNode["PageSize"].asString());
-	auto allList = value["List"]["QualityCheckPhrase"];
-	for (auto value : allList)
+	auto allListNode = dataListNode["List"]["QualityCheckPhrase"];
+	for (auto dataListNodeListQualityCheckPhrase : allListNode)
 	{
 		DataList::QualityCheckPhrase qualityCheckPhraseObject;
-		if(!value["Identity"].isNull())
-			qualityCheckPhraseObject.identity = value["Identity"].asString();
-		if(!value["Role"].isNull())
-			qualityCheckPhraseObject.role = value["Role"].asString();
-		if(!value["Words"].isNull())
-			qualityCheckPhraseObject.words = value["Words"].asString();
-		if(!value["Begin"].isNull())
-			qualityCheckPhraseObject.begin = std::stol(value["Begin"].asString());
-		if(!value["End"].isNull())
-			qualityCheckPhraseObject.end = std::stol(value["End"].asString());
+		if(!dataListNodeListQualityCheckPhrase["Identity"].isNull())
+			qualityCheckPhraseObject.identity = dataListNodeListQualityCheckPhrase["Identity"].asString();
+		if(!dataListNodeListQualityCheckPhrase["Role"].isNull())
+			qualityCheckPhraseObject.role = dataListNodeListQualityCheckPhrase["Role"].asString();
+		if(!dataListNodeListQualityCheckPhrase["Words"].isNull())
+			qualityCheckPhraseObject.words = dataListNodeListQualityCheckPhrase["Words"].asString();
+		if(!dataListNodeListQualityCheckPhrase["Begin"].isNull())
+			qualityCheckPhraseObject.begin = std::stol(dataListNodeListQualityCheckPhrase["Begin"].asString());
+		if(!dataListNodeListQualityCheckPhrase["End"].isNull())
+			qualityCheckPhraseObject.end = std::stol(dataListNodeListQualityCheckPhrase["End"].asString());
 		dataList_.list.push_back(qualityCheckPhraseObject);
 	}
 	if(!value["Success"].isNull())

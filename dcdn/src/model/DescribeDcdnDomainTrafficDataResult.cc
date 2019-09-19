@@ -39,22 +39,22 @@ void DescribeDcdnDomainTrafficDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTrafficDataPerInterval = value["TrafficDataPerInterval"]["DataModule"];
-	for (auto value : allTrafficDataPerInterval)
+	auto allTrafficDataPerIntervalNode = value["TrafficDataPerInterval"]["DataModule"];
+	for (auto valueTrafficDataPerIntervalDataModule : allTrafficDataPerIntervalNode)
 	{
 		DataModule trafficDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			trafficDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Traffic"].isNull())
-			trafficDataPerIntervalObject.traffic = std::stof(value["Traffic"].asString());
-		if(!value["DynamicHttpTraffic"].isNull())
-			trafficDataPerIntervalObject.dynamicHttpTraffic = std::stof(value["DynamicHttpTraffic"].asString());
-		if(!value["DynamicHttpsTraffic"].isNull())
-			trafficDataPerIntervalObject.dynamicHttpsTraffic = std::stof(value["DynamicHttpsTraffic"].asString());
-		if(!value["StaticHttpTraffic"].isNull())
-			trafficDataPerIntervalObject.staticHttpTraffic = std::stof(value["StaticHttpTraffic"].asString());
-		if(!value["StaticHttpsTraffic"].isNull())
-			trafficDataPerIntervalObject.staticHttpsTraffic = std::stof(value["StaticHttpsTraffic"].asString());
+		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["Traffic"].isNull())
+			trafficDataPerIntervalObject.traffic = std::stof(valueTrafficDataPerIntervalDataModule["Traffic"].asString());
+		if(!valueTrafficDataPerIntervalDataModule["DynamicHttpTraffic"].isNull())
+			trafficDataPerIntervalObject.dynamicHttpTraffic = std::stof(valueTrafficDataPerIntervalDataModule["DynamicHttpTraffic"].asString());
+		if(!valueTrafficDataPerIntervalDataModule["DynamicHttpsTraffic"].isNull())
+			trafficDataPerIntervalObject.dynamicHttpsTraffic = std::stof(valueTrafficDataPerIntervalDataModule["DynamicHttpsTraffic"].asString());
+		if(!valueTrafficDataPerIntervalDataModule["StaticHttpTraffic"].isNull())
+			trafficDataPerIntervalObject.staticHttpTraffic = std::stof(valueTrafficDataPerIntervalDataModule["StaticHttpTraffic"].asString());
+		if(!valueTrafficDataPerIntervalDataModule["StaticHttpsTraffic"].isNull())
+			trafficDataPerIntervalObject.staticHttpsTraffic = std::stof(valueTrafficDataPerIntervalDataModule["StaticHttpsTraffic"].asString());
 		trafficDataPerInterval_.push_back(trafficDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

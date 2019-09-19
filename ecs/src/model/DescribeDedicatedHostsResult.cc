@@ -39,76 +39,76 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDedicatedHosts = value["DedicatedHosts"]["DedicatedHost"];
-	for (auto value : allDedicatedHosts)
+	auto allDedicatedHostsNode = value["DedicatedHosts"]["DedicatedHost"];
+	for (auto valueDedicatedHostsDedicatedHost : allDedicatedHostsNode)
 	{
 		DedicatedHost dedicatedHostsObject;
-		if(!value["DedicatedHostId"].isNull())
-			dedicatedHostsObject.dedicatedHostId = value["DedicatedHostId"].asString();
-		if(!value["AutoPlacement"].isNull())
-			dedicatedHostsObject.autoPlacement = value["AutoPlacement"].asString();
-		if(!value["RegionId"].isNull())
-			dedicatedHostsObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			dedicatedHostsObject.zoneId = value["ZoneId"].asString();
-		if(!value["DedicatedHostName"].isNull())
-			dedicatedHostsObject.dedicatedHostName = value["DedicatedHostName"].asString();
-		if(!value["MachineId"].isNull())
-			dedicatedHostsObject.machineId = value["MachineId"].asString();
-		if(!value["Description"].isNull())
-			dedicatedHostsObject.description = value["Description"].asString();
-		if(!value["DedicatedHostType"].isNull())
-			dedicatedHostsObject.dedicatedHostType = value["DedicatedHostType"].asString();
-		if(!value["Sockets"].isNull())
-			dedicatedHostsObject.sockets = std::stoi(value["Sockets"].asString());
-		if(!value["Cores"].isNull())
-			dedicatedHostsObject.cores = std::stoi(value["Cores"].asString());
-		if(!value["PhysicalGpus"].isNull())
-			dedicatedHostsObject.physicalGpus = std::stoi(value["PhysicalGpus"].asString());
-		if(!value["GPUSpec"].isNull())
-			dedicatedHostsObject.gPUSpec = value["GPUSpec"].asString();
-		if(!value["ActionOnMaintenance"].isNull())
-			dedicatedHostsObject.actionOnMaintenance = value["ActionOnMaintenance"].asString();
-		if(!value["Status"].isNull())
-			dedicatedHostsObject.status = value["Status"].asString();
-		if(!value["CreationTime"].isNull())
-			dedicatedHostsObject.creationTime = value["CreationTime"].asString();
-		if(!value["ChargeType"].isNull())
-			dedicatedHostsObject.chargeType = value["ChargeType"].asString();
-		if(!value["SaleCycle"].isNull())
-			dedicatedHostsObject.saleCycle = value["SaleCycle"].asString();
-		if(!value["ExpiredTime"].isNull())
-			dedicatedHostsObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["AutoReleaseTime"].isNull())
-			dedicatedHostsObject.autoReleaseTime = value["AutoReleaseTime"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			dedicatedHostsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		auto allInstances = value["Instances"]["Instance"];
-		for (auto value : allInstances)
+		if(!valueDedicatedHostsDedicatedHost["DedicatedHostId"].isNull())
+			dedicatedHostsObject.dedicatedHostId = valueDedicatedHostsDedicatedHost["DedicatedHostId"].asString();
+		if(!valueDedicatedHostsDedicatedHost["AutoPlacement"].isNull())
+			dedicatedHostsObject.autoPlacement = valueDedicatedHostsDedicatedHost["AutoPlacement"].asString();
+		if(!valueDedicatedHostsDedicatedHost["RegionId"].isNull())
+			dedicatedHostsObject.regionId = valueDedicatedHostsDedicatedHost["RegionId"].asString();
+		if(!valueDedicatedHostsDedicatedHost["ZoneId"].isNull())
+			dedicatedHostsObject.zoneId = valueDedicatedHostsDedicatedHost["ZoneId"].asString();
+		if(!valueDedicatedHostsDedicatedHost["DedicatedHostName"].isNull())
+			dedicatedHostsObject.dedicatedHostName = valueDedicatedHostsDedicatedHost["DedicatedHostName"].asString();
+		if(!valueDedicatedHostsDedicatedHost["MachineId"].isNull())
+			dedicatedHostsObject.machineId = valueDedicatedHostsDedicatedHost["MachineId"].asString();
+		if(!valueDedicatedHostsDedicatedHost["Description"].isNull())
+			dedicatedHostsObject.description = valueDedicatedHostsDedicatedHost["Description"].asString();
+		if(!valueDedicatedHostsDedicatedHost["DedicatedHostType"].isNull())
+			dedicatedHostsObject.dedicatedHostType = valueDedicatedHostsDedicatedHost["DedicatedHostType"].asString();
+		if(!valueDedicatedHostsDedicatedHost["Sockets"].isNull())
+			dedicatedHostsObject.sockets = std::stoi(valueDedicatedHostsDedicatedHost["Sockets"].asString());
+		if(!valueDedicatedHostsDedicatedHost["Cores"].isNull())
+			dedicatedHostsObject.cores = std::stoi(valueDedicatedHostsDedicatedHost["Cores"].asString());
+		if(!valueDedicatedHostsDedicatedHost["PhysicalGpus"].isNull())
+			dedicatedHostsObject.physicalGpus = std::stoi(valueDedicatedHostsDedicatedHost["PhysicalGpus"].asString());
+		if(!valueDedicatedHostsDedicatedHost["GPUSpec"].isNull())
+			dedicatedHostsObject.gPUSpec = valueDedicatedHostsDedicatedHost["GPUSpec"].asString();
+		if(!valueDedicatedHostsDedicatedHost["ActionOnMaintenance"].isNull())
+			dedicatedHostsObject.actionOnMaintenance = valueDedicatedHostsDedicatedHost["ActionOnMaintenance"].asString();
+		if(!valueDedicatedHostsDedicatedHost["Status"].isNull())
+			dedicatedHostsObject.status = valueDedicatedHostsDedicatedHost["Status"].asString();
+		if(!valueDedicatedHostsDedicatedHost["CreationTime"].isNull())
+			dedicatedHostsObject.creationTime = valueDedicatedHostsDedicatedHost["CreationTime"].asString();
+		if(!valueDedicatedHostsDedicatedHost["ChargeType"].isNull())
+			dedicatedHostsObject.chargeType = valueDedicatedHostsDedicatedHost["ChargeType"].asString();
+		if(!valueDedicatedHostsDedicatedHost["SaleCycle"].isNull())
+			dedicatedHostsObject.saleCycle = valueDedicatedHostsDedicatedHost["SaleCycle"].asString();
+		if(!valueDedicatedHostsDedicatedHost["ExpiredTime"].isNull())
+			dedicatedHostsObject.expiredTime = valueDedicatedHostsDedicatedHost["ExpiredTime"].asString();
+		if(!valueDedicatedHostsDedicatedHost["AutoReleaseTime"].isNull())
+			dedicatedHostsObject.autoReleaseTime = valueDedicatedHostsDedicatedHost["AutoReleaseTime"].asString();
+		if(!valueDedicatedHostsDedicatedHost["ResourceGroupId"].isNull())
+			dedicatedHostsObject.resourceGroupId = valueDedicatedHostsDedicatedHost["ResourceGroupId"].asString();
+		auto allInstancesNode = allDedicatedHostsNode["Instances"]["Instance"];
+		for (auto allDedicatedHostsNodeInstancesInstance : allInstancesNode)
 		{
 			DedicatedHost::Instance instancesObject;
-			if(!value["InstanceId"].isNull())
-				instancesObject.instanceId = value["InstanceId"].asString();
-			if(!value["InstanceType"].isNull())
-				instancesObject.instanceType = value["InstanceType"].asString();
+			if(!allDedicatedHostsNodeInstancesInstance["InstanceId"].isNull())
+				instancesObject.instanceId = allDedicatedHostsNodeInstancesInstance["InstanceId"].asString();
+			if(!allDedicatedHostsNodeInstancesInstance["InstanceType"].isNull())
+				instancesObject.instanceType = allDedicatedHostsNodeInstancesInstance["InstanceType"].asString();
 			dedicatedHostsObject.instances.push_back(instancesObject);
 		}
-		auto allOperationLocks = value["OperationLocks"]["OperationLock"];
-		for (auto value : allOperationLocks)
+		auto allOperationLocksNode = allDedicatedHostsNode["OperationLocks"]["OperationLock"];
+		for (auto allDedicatedHostsNodeOperationLocksOperationLock : allOperationLocksNode)
 		{
 			DedicatedHost::OperationLock operationLocksObject;
-			if(!value["LockReason"].isNull())
-				operationLocksObject.lockReason = value["LockReason"].asString();
+			if(!allDedicatedHostsNodeOperationLocksOperationLock["LockReason"].isNull())
+				operationLocksObject.lockReason = allDedicatedHostsNodeOperationLocksOperationLock["LockReason"].asString();
 			dedicatedHostsObject.operationLocks.push_back(operationLocksObject);
 		}
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		auto allTagsNode = allDedicatedHostsNode["Tags"]["Tag"];
+		for (auto allDedicatedHostsNodeTagsTag : allTagsNode)
 		{
 			DedicatedHost::Tag tagsObject;
-			if(!value["TagKey"].isNull())
-				tagsObject.tagKey = value["TagKey"].asString();
-			if(!value["TagValue"].isNull())
-				tagsObject.tagValue = value["TagValue"].asString();
+			if(!allDedicatedHostsNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allDedicatedHostsNodeTagsTag["TagKey"].asString();
+			if(!allDedicatedHostsNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allDedicatedHostsNodeTagsTag["TagValue"].asString();
 			dedicatedHostsObject.tags.push_back(tagsObject);
 		}
 		auto capacityNode = value["Capacity"];

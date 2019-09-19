@@ -39,36 +39,36 @@ void DescribeApiGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allApiGroupAttributes = value["ApiGroupAttributes"]["ApiGroupAttribute"];
-	for (auto value : allApiGroupAttributes)
+	auto allApiGroupAttributesNode = value["ApiGroupAttributes"]["ApiGroupAttribute"];
+	for (auto valueApiGroupAttributesApiGroupAttribute : allApiGroupAttributesNode)
 	{
 		ApiGroupAttribute apiGroupAttributesObject;
-		if(!value["GroupId"].isNull())
-			apiGroupAttributesObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			apiGroupAttributesObject.groupName = value["GroupName"].asString();
-		if(!value["SubDomain"].isNull())
-			apiGroupAttributesObject.subDomain = value["SubDomain"].asString();
-		if(!value["Description"].isNull())
-			apiGroupAttributesObject.description = value["Description"].asString();
-		if(!value["CreatedTime"].isNull())
-			apiGroupAttributesObject.createdTime = value["CreatedTime"].asString();
-		if(!value["ModifiedTime"].isNull())
-			apiGroupAttributesObject.modifiedTime = value["ModifiedTime"].asString();
-		if(!value["RegionId"].isNull())
-			apiGroupAttributesObject.regionId = value["RegionId"].asString();
-		if(!value["TrafficLimit"].isNull())
-			apiGroupAttributesObject.trafficLimit = std::stoi(value["TrafficLimit"].asString());
-		if(!value["BillingStatus"].isNull())
-			apiGroupAttributesObject.billingStatus = value["BillingStatus"].asString();
-		if(!value["IllegalStatus"].isNull())
-			apiGroupAttributesObject.illegalStatus = value["IllegalStatus"].asString();
-		if(!value["InstanceId"].isNull())
-			apiGroupAttributesObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceType"].isNull())
-			apiGroupAttributesObject.instanceType = value["InstanceType"].asString();
-		if(!value["HttpsPolicy"].isNull())
-			apiGroupAttributesObject.httpsPolicy = value["HttpsPolicy"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["GroupId"].isNull())
+			apiGroupAttributesObject.groupId = valueApiGroupAttributesApiGroupAttribute["GroupId"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["GroupName"].isNull())
+			apiGroupAttributesObject.groupName = valueApiGroupAttributesApiGroupAttribute["GroupName"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["SubDomain"].isNull())
+			apiGroupAttributesObject.subDomain = valueApiGroupAttributesApiGroupAttribute["SubDomain"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["Description"].isNull())
+			apiGroupAttributesObject.description = valueApiGroupAttributesApiGroupAttribute["Description"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["CreatedTime"].isNull())
+			apiGroupAttributesObject.createdTime = valueApiGroupAttributesApiGroupAttribute["CreatedTime"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["ModifiedTime"].isNull())
+			apiGroupAttributesObject.modifiedTime = valueApiGroupAttributesApiGroupAttribute["ModifiedTime"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["RegionId"].isNull())
+			apiGroupAttributesObject.regionId = valueApiGroupAttributesApiGroupAttribute["RegionId"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["TrafficLimit"].isNull())
+			apiGroupAttributesObject.trafficLimit = std::stoi(valueApiGroupAttributesApiGroupAttribute["TrafficLimit"].asString());
+		if(!valueApiGroupAttributesApiGroupAttribute["BillingStatus"].isNull())
+			apiGroupAttributesObject.billingStatus = valueApiGroupAttributesApiGroupAttribute["BillingStatus"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["IllegalStatus"].isNull())
+			apiGroupAttributesObject.illegalStatus = valueApiGroupAttributesApiGroupAttribute["IllegalStatus"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["InstanceId"].isNull())
+			apiGroupAttributesObject.instanceId = valueApiGroupAttributesApiGroupAttribute["InstanceId"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["InstanceType"].isNull())
+			apiGroupAttributesObject.instanceType = valueApiGroupAttributesApiGroupAttribute["InstanceType"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["HttpsPolicy"].isNull())
+			apiGroupAttributesObject.httpsPolicy = valueApiGroupAttributesApiGroupAttribute["HttpsPolicy"].asString();
 		apiGroupAttributes_.push_back(apiGroupAttributesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,54 +39,54 @@ void DescribeOrderListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOrderList = value["OrderList"]["Order"];
-	for (auto value : allOrderList)
+	auto allOrderListNode = value["OrderList"]["Order"];
+	for (auto valueOrderListOrder : allOrderListNode)
 	{
 		Order orderListObject;
-		if(!value["Id"].isNull())
-			orderListObject.id = std::stol(value["Id"].asString());
-		if(!value["SourceType"].isNull())
-			orderListObject.sourceType = value["SourceType"].asString();
-		if(!value["CertType"].isNull())
-			orderListObject.certType = value["CertType"].asString();
-		if(!value["InstanceId"].isNull())
-			orderListObject.instanceId = value["InstanceId"].asString();
-		if(!value["Year"].isNull())
-			orderListObject.year = std::stol(value["Year"].asString());
-		if(!value["OrderId"].isNull())
-			orderListObject.orderId = std::stol(value["OrderId"].asString());
-		if(!value["OrderType"].isNull())
-			orderListObject.orderType = value["OrderType"].asString();
-		if(!value["BrandName"].isNull())
-			orderListObject.brandName = value["BrandName"].asString();
-		if(!value["BuyDate"].isNull())
-			orderListObject.buyDate = std::stol(value["BuyDate"].asString());
-		if(!value["StatusCode"].isNull())
-			orderListObject.statusCode = value["StatusCode"].asString();
-		if(!value["Domain"].isNull())
-			orderListObject.domain = value["Domain"].asString();
-		if(!value["ProductAliasName"].isNull())
-			orderListObject.productAliasName = value["ProductAliasName"].asString();
-		if(!value["DomainCount"].isNull())
-			orderListObject.domainCount = std::stoi(value["DomainCount"].asString());
-		if(!value["WildDomainCount"].isNull())
-			orderListObject.wildDomainCount = std::stoi(value["WildDomainCount"].asString());
-		if(!value["VerifyStatus"].isNull())
-			orderListObject.verifyStatus = std::stoi(value["VerifyStatus"].asString());
-		if(!value["MaybeIssueDate"].isNull())
-			orderListObject.maybeIssueDate = std::stol(value["MaybeIssueDate"].asString());
-		if(!value["BeforeDate"].isNull())
-			orderListObject.beforeDate = std::stol(value["BeforeDate"].asString());
-		if(!value["AfterDate"].isNull())
-			orderListObject.afterDate = std::stol(value["AfterDate"].asString());
-		if(!value["ShowCancel"].isNull())
-			orderListObject.showCancel = value["ShowCancel"].asString() == "true";
-		if(!value["ShowRefund"].isNull())
-			orderListObject.showRefund = value["ShowRefund"].asString() == "true";
-		if(!value["PartnerOrderId"].isNull())
-			orderListObject.partnerOrderId = value["PartnerOrderId"].asString();
-		if(!value["IsFree"].isNull())
-			orderListObject.isFree = value["IsFree"].asString() == "true";
+		if(!valueOrderListOrder["Id"].isNull())
+			orderListObject.id = std::stol(valueOrderListOrder["Id"].asString());
+		if(!valueOrderListOrder["SourceType"].isNull())
+			orderListObject.sourceType = valueOrderListOrder["SourceType"].asString();
+		if(!valueOrderListOrder["CertType"].isNull())
+			orderListObject.certType = valueOrderListOrder["CertType"].asString();
+		if(!valueOrderListOrder["InstanceId"].isNull())
+			orderListObject.instanceId = valueOrderListOrder["InstanceId"].asString();
+		if(!valueOrderListOrder["Year"].isNull())
+			orderListObject.year = std::stol(valueOrderListOrder["Year"].asString());
+		if(!valueOrderListOrder["OrderId"].isNull())
+			orderListObject.orderId = std::stol(valueOrderListOrder["OrderId"].asString());
+		if(!valueOrderListOrder["OrderType"].isNull())
+			orderListObject.orderType = valueOrderListOrder["OrderType"].asString();
+		if(!valueOrderListOrder["BrandName"].isNull())
+			orderListObject.brandName = valueOrderListOrder["BrandName"].asString();
+		if(!valueOrderListOrder["BuyDate"].isNull())
+			orderListObject.buyDate = std::stol(valueOrderListOrder["BuyDate"].asString());
+		if(!valueOrderListOrder["StatusCode"].isNull())
+			orderListObject.statusCode = valueOrderListOrder["StatusCode"].asString();
+		if(!valueOrderListOrder["Domain"].isNull())
+			orderListObject.domain = valueOrderListOrder["Domain"].asString();
+		if(!valueOrderListOrder["ProductAliasName"].isNull())
+			orderListObject.productAliasName = valueOrderListOrder["ProductAliasName"].asString();
+		if(!valueOrderListOrder["DomainCount"].isNull())
+			orderListObject.domainCount = std::stoi(valueOrderListOrder["DomainCount"].asString());
+		if(!valueOrderListOrder["WildDomainCount"].isNull())
+			orderListObject.wildDomainCount = std::stoi(valueOrderListOrder["WildDomainCount"].asString());
+		if(!valueOrderListOrder["VerifyStatus"].isNull())
+			orderListObject.verifyStatus = std::stoi(valueOrderListOrder["VerifyStatus"].asString());
+		if(!valueOrderListOrder["MaybeIssueDate"].isNull())
+			orderListObject.maybeIssueDate = std::stol(valueOrderListOrder["MaybeIssueDate"].asString());
+		if(!valueOrderListOrder["BeforeDate"].isNull())
+			orderListObject.beforeDate = std::stol(valueOrderListOrder["BeforeDate"].asString());
+		if(!valueOrderListOrder["AfterDate"].isNull())
+			orderListObject.afterDate = std::stol(valueOrderListOrder["AfterDate"].asString());
+		if(!valueOrderListOrder["ShowCancel"].isNull())
+			orderListObject.showCancel = valueOrderListOrder["ShowCancel"].asString() == "true";
+		if(!valueOrderListOrder["ShowRefund"].isNull())
+			orderListObject.showRefund = valueOrderListOrder["ShowRefund"].asString() == "true";
+		if(!valueOrderListOrder["PartnerOrderId"].isNull())
+			orderListObject.partnerOrderId = valueOrderListOrder["PartnerOrderId"].asString();
+		if(!valueOrderListOrder["IsFree"].isNull())
+			orderListObject.isFree = valueOrderListOrder["IsFree"].asString() == "true";
 		orderList_.push_back(orderListObject);
 	}
 	if(!value["TotalCount"].isNull())

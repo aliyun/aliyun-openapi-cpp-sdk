@@ -39,30 +39,30 @@ void ListClusterResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClusters = value["Clusters"]["Cluster"];
-	for (auto value : allClusters)
+	auto allClustersNode = value["Clusters"]["Cluster"];
+	for (auto valueClustersCluster : allClustersNode)
 	{
 		Cluster clustersObject;
-		if(!value["ClusterId"].isNull())
-			clustersObject.clusterId = value["ClusterId"].asString();
-		if(!value["RegionId"].isNull())
-			clustersObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			clustersObject.zoneId = value["ZoneId"].asString();
-		if(!value["State"].isNull())
-			clustersObject.state = value["State"].asString();
-		if(!value["OwnerId"].isNull())
-			clustersObject.ownerId = value["OwnerId"].asString();
-		if(!value["Operator"].isNull())
-			clustersObject._operator = value["Operator"].asString();
-		if(!value["DisplayName"].isNull())
-			clustersObject.displayName = value["DisplayName"].asString();
-		if(!value["Description"].isNull())
-			clustersObject.description = value["Description"].asString();
-		if(!value["GmtCreate"].isNull())
-			clustersObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			clustersObject.gmtModified = std::stol(value["GmtModified"].asString());
+		if(!valueClustersCluster["ClusterId"].isNull())
+			clustersObject.clusterId = valueClustersCluster["ClusterId"].asString();
+		if(!valueClustersCluster["RegionId"].isNull())
+			clustersObject.regionId = valueClustersCluster["RegionId"].asString();
+		if(!valueClustersCluster["ZoneId"].isNull())
+			clustersObject.zoneId = valueClustersCluster["ZoneId"].asString();
+		if(!valueClustersCluster["State"].isNull())
+			clustersObject.state = valueClustersCluster["State"].asString();
+		if(!valueClustersCluster["OwnerId"].isNull())
+			clustersObject.ownerId = valueClustersCluster["OwnerId"].asString();
+		if(!valueClustersCluster["Operator"].isNull())
+			clustersObject._operator = valueClustersCluster["Operator"].asString();
+		if(!valueClustersCluster["DisplayName"].isNull())
+			clustersObject.displayName = valueClustersCluster["DisplayName"].asString();
+		if(!valueClustersCluster["Description"].isNull())
+			clustersObject.description = valueClustersCluster["Description"].asString();
+		if(!valueClustersCluster["GmtCreate"].isNull())
+			clustersObject.gmtCreate = std::stol(valueClustersCluster["GmtCreate"].asString());
+		if(!valueClustersCluster["GmtModified"].isNull())
+			clustersObject.gmtModified = std::stol(valueClustersCluster["GmtModified"].asString());
 		clusters_.push_back(clustersObject);
 	}
 	if(!value["TotalCount"].isNull())

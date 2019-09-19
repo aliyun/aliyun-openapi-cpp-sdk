@@ -39,26 +39,26 @@ void DetachInstanceRamRoleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDetachInstanceRamRoleResults = value["DetachInstanceRamRoleResults"]["DetachInstanceRamRoleResult"];
-	for (auto value : allDetachInstanceRamRoleResults)
+	auto allDetachInstanceRamRoleResultsNode = value["DetachInstanceRamRoleResults"]["DetachInstanceRamRoleResult"];
+	for (auto valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult : allDetachInstanceRamRoleResultsNode)
 	{
 		Result detachInstanceRamRoleResultsObject;
-		if(!value["InstanceId"].isNull())
-			detachInstanceRamRoleResultsObject.instanceId = value["InstanceId"].asString();
-		if(!value["Success"].isNull())
-			detachInstanceRamRoleResultsObject.success = value["Success"].asString() == "true";
-		if(!value["Code"].isNull())
-			detachInstanceRamRoleResultsObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			detachInstanceRamRoleResultsObject.message = value["Message"].asString();
-		auto allInstanceRamRoleSets = value["InstanceRamRoleSets"]["InstanceRamRoleSet"];
-		for (auto value : allInstanceRamRoleSets)
+		if(!valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["InstanceId"].isNull())
+			detachInstanceRamRoleResultsObject.instanceId = valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["InstanceId"].asString();
+		if(!valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["Success"].isNull())
+			detachInstanceRamRoleResultsObject.success = valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["Success"].asString() == "true";
+		if(!valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["Code"].isNull())
+			detachInstanceRamRoleResultsObject.code = valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["Code"].asString();
+		if(!valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["Message"].isNull())
+			detachInstanceRamRoleResultsObject.message = valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["Message"].asString();
+		auto allInstanceRamRoleSetsNode = allDetachInstanceRamRoleResultsNode["InstanceRamRoleSets"]["InstanceRamRoleSet"];
+		for (auto allDetachInstanceRamRoleResultsNodeInstanceRamRoleSetsInstanceRamRoleSet : allInstanceRamRoleSetsNode)
 		{
 			Result::InstanceRamRoleSet instanceRamRoleSetsObject;
-			if(!value["InstanceId"].isNull())
-				instanceRamRoleSetsObject.instanceId = value["InstanceId"].asString();
-			if(!value["RamRoleName"].isNull())
-				instanceRamRoleSetsObject.ramRoleName = value["RamRoleName"].asString();
+			if(!allDetachInstanceRamRoleResultsNodeInstanceRamRoleSetsInstanceRamRoleSet["InstanceId"].isNull())
+				instanceRamRoleSetsObject.instanceId = allDetachInstanceRamRoleResultsNodeInstanceRamRoleSetsInstanceRamRoleSet["InstanceId"].asString();
+			if(!allDetachInstanceRamRoleResultsNodeInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].isNull())
+				instanceRamRoleSetsObject.ramRoleName = allDetachInstanceRamRoleResultsNodeInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].asString();
 			detachInstanceRamRoleResultsObject.instanceRamRoleSets.push_back(instanceRamRoleSetsObject);
 		}
 		detachInstanceRamRoleResults_.push_back(detachInstanceRamRoleResultsObject);

@@ -39,20 +39,20 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceSystemEventSet = value["InstanceSystemEventSet"]["InstanceSystemEventType"];
-	for (auto value : allInstanceSystemEventSet)
+	auto allInstanceSystemEventSetNode = value["InstanceSystemEventSet"]["InstanceSystemEventType"];
+	for (auto valueInstanceSystemEventSetInstanceSystemEventType : allInstanceSystemEventSetNode)
 	{
 		InstanceSystemEventType instanceSystemEventSetObject;
-		if(!value["InstanceId"].isNull())
-			instanceSystemEventSetObject.instanceId = value["InstanceId"].asString();
-		if(!value["EventId"].isNull())
-			instanceSystemEventSetObject.eventId = value["EventId"].asString();
-		if(!value["EventPublishTime"].isNull())
-			instanceSystemEventSetObject.eventPublishTime = value["EventPublishTime"].asString();
-		if(!value["NotBefore"].isNull())
-			instanceSystemEventSetObject.notBefore = value["NotBefore"].asString();
-		if(!value["EventFinishTime"].isNull())
-			instanceSystemEventSetObject.eventFinishTime = value["EventFinishTime"].asString();
+		if(!valueInstanceSystemEventSetInstanceSystemEventType["InstanceId"].isNull())
+			instanceSystemEventSetObject.instanceId = valueInstanceSystemEventSetInstanceSystemEventType["InstanceId"].asString();
+		if(!valueInstanceSystemEventSetInstanceSystemEventType["EventId"].isNull())
+			instanceSystemEventSetObject.eventId = valueInstanceSystemEventSetInstanceSystemEventType["EventId"].asString();
+		if(!valueInstanceSystemEventSetInstanceSystemEventType["EventPublishTime"].isNull())
+			instanceSystemEventSetObject.eventPublishTime = valueInstanceSystemEventSetInstanceSystemEventType["EventPublishTime"].asString();
+		if(!valueInstanceSystemEventSetInstanceSystemEventType["NotBefore"].isNull())
+			instanceSystemEventSetObject.notBefore = valueInstanceSystemEventSetInstanceSystemEventType["NotBefore"].asString();
+		if(!valueInstanceSystemEventSetInstanceSystemEventType["EventFinishTime"].isNull())
+			instanceSystemEventSetObject.eventFinishTime = valueInstanceSystemEventSetInstanceSystemEventType["EventFinishTime"].asString();
 		auto eventTypeNode = value["EventType"];
 		if(!eventTypeNode["Code"].isNull())
 			instanceSystemEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());

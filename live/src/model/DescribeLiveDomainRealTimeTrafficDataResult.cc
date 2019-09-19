@@ -39,14 +39,14 @@ void DescribeLiveDomainRealTimeTrafficDataResult::parse(const std::string &paylo
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRealTimeTrafficDataPerInterval = value["RealTimeTrafficDataPerInterval"]["DataModule"];
-	for (auto value : allRealTimeTrafficDataPerInterval)
+	auto allRealTimeTrafficDataPerIntervalNode = value["RealTimeTrafficDataPerInterval"]["DataModule"];
+	for (auto valueRealTimeTrafficDataPerIntervalDataModule : allRealTimeTrafficDataPerIntervalNode)
 	{
 		DataModule realTimeTrafficDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			realTimeTrafficDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			realTimeTrafficDataPerIntervalObject.value = value["Value"].asString();
+		if(!valueRealTimeTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			realTimeTrafficDataPerIntervalObject.timeStamp = valueRealTimeTrafficDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueRealTimeTrafficDataPerIntervalDataModule["Value"].isNull())
+			realTimeTrafficDataPerIntervalObject.value = valueRealTimeTrafficDataPerIntervalDataModule["Value"].asString();
 		realTimeTrafficDataPerInterval_.push_back(realTimeTrafficDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

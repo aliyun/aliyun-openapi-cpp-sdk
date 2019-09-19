@@ -39,14 +39,14 @@ void GetRoiRankingResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRoiRankingItems = value["RoiRankingItems"]["RoiRankingItem"];
-	for (auto value : allRoiRankingItems)
+	auto allRoiRankingItemsNode = value["RoiRankingItems"]["RoiRankingItem"];
+	for (auto valueRoiRankingItemsRoiRankingItem : allRoiRankingItemsNode)
 	{
 		RoiRankingItem roiRankingItemsObject;
-		if(!value["LocationName"].isNull())
-			roiRankingItemsObject.locationName = value["LocationName"].asString();
-		if(!value["VisitorNum"].isNull())
-			roiRankingItemsObject.visitorNum = std::stoi(value["VisitorNum"].asString());
+		if(!valueRoiRankingItemsRoiRankingItem["LocationName"].isNull())
+			roiRankingItemsObject.locationName = valueRoiRankingItemsRoiRankingItem["LocationName"].asString();
+		if(!valueRoiRankingItemsRoiRankingItem["VisitorNum"].isNull())
+			roiRankingItemsObject.visitorNum = std::stoi(valueRoiRankingItemsRoiRankingItem["VisitorNum"].asString());
 		roiRankingItems_.push_back(roiRankingItemsObject);
 	}
 	if(!value["Msg"].isNull())

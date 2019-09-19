@@ -39,20 +39,20 @@ void DescribeGWSClustersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClusters = value["Clusters"]["ClusterInfo"];
-	for (auto value : allClusters)
+	auto allClustersNode = value["Clusters"]["ClusterInfo"];
+	for (auto valueClustersClusterInfo : allClustersNode)
 	{
 		ClusterInfo clustersObject;
-		if(!value["ClusterId"].isNull())
-			clustersObject.clusterId = value["ClusterId"].asString();
-		if(!value["Status"].isNull())
-			clustersObject.status = value["Status"].asString();
-		if(!value["CreateTime"].isNull())
-			clustersObject.createTime = value["CreateTime"].asString();
-		if(!value["VpcId"].isNull())
-			clustersObject.vpcId = value["VpcId"].asString();
-		if(!value["InstanceCount"].isNull())
-			clustersObject.instanceCount = std::stoi(value["InstanceCount"].asString());
+		if(!valueClustersClusterInfo["ClusterId"].isNull())
+			clustersObject.clusterId = valueClustersClusterInfo["ClusterId"].asString();
+		if(!valueClustersClusterInfo["Status"].isNull())
+			clustersObject.status = valueClustersClusterInfo["Status"].asString();
+		if(!valueClustersClusterInfo["CreateTime"].isNull())
+			clustersObject.createTime = valueClustersClusterInfo["CreateTime"].asString();
+		if(!valueClustersClusterInfo["VpcId"].isNull())
+			clustersObject.vpcId = valueClustersClusterInfo["VpcId"].asString();
+		if(!valueClustersClusterInfo["InstanceCount"].isNull())
+			clustersObject.instanceCount = std::stoi(valueClustersClusterInfo["InstanceCount"].asString());
 		clusters_.push_back(clustersObject);
 	}
 	if(!value["TotalCount"].isNull())

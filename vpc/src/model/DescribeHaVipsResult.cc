@@ -39,32 +39,32 @@ void DescribeHaVipsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHaVips = value["HaVips"]["HaVip"];
-	for (auto value : allHaVips)
+	auto allHaVipsNode = value["HaVips"]["HaVip"];
+	for (auto valueHaVipsHaVip : allHaVipsNode)
 	{
 		HaVip haVipsObject;
-		if(!value["HaVipId"].isNull())
-			haVipsObject.haVipId = value["HaVipId"].asString();
-		if(!value["RegionId"].isNull())
-			haVipsObject.regionId = value["RegionId"].asString();
-		if(!value["VpcId"].isNull())
-			haVipsObject.vpcId = value["VpcId"].asString();
-		if(!value["VSwitchId"].isNull())
-			haVipsObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["IpAddress"].isNull())
-			haVipsObject.ipAddress = value["IpAddress"].asString();
-		if(!value["Status"].isNull())
-			haVipsObject.status = value["Status"].asString();
-		if(!value["MasterInstanceId"].isNull())
-			haVipsObject.masterInstanceId = value["MasterInstanceId"].asString();
-		if(!value["Description"].isNull())
-			haVipsObject.description = value["Description"].asString();
-		if(!value["Name"].isNull())
-			haVipsObject.name = value["Name"].asString();
-		if(!value["ChargeType"].isNull())
-			haVipsObject.chargeType = value["ChargeType"].asString();
-		if(!value["CreateTime"].isNull())
-			haVipsObject.createTime = value["CreateTime"].asString();
+		if(!valueHaVipsHaVip["HaVipId"].isNull())
+			haVipsObject.haVipId = valueHaVipsHaVip["HaVipId"].asString();
+		if(!valueHaVipsHaVip["RegionId"].isNull())
+			haVipsObject.regionId = valueHaVipsHaVip["RegionId"].asString();
+		if(!valueHaVipsHaVip["VpcId"].isNull())
+			haVipsObject.vpcId = valueHaVipsHaVip["VpcId"].asString();
+		if(!valueHaVipsHaVip["VSwitchId"].isNull())
+			haVipsObject.vSwitchId = valueHaVipsHaVip["VSwitchId"].asString();
+		if(!valueHaVipsHaVip["IpAddress"].isNull())
+			haVipsObject.ipAddress = valueHaVipsHaVip["IpAddress"].asString();
+		if(!valueHaVipsHaVip["Status"].isNull())
+			haVipsObject.status = valueHaVipsHaVip["Status"].asString();
+		if(!valueHaVipsHaVip["MasterInstanceId"].isNull())
+			haVipsObject.masterInstanceId = valueHaVipsHaVip["MasterInstanceId"].asString();
+		if(!valueHaVipsHaVip["Description"].isNull())
+			haVipsObject.description = valueHaVipsHaVip["Description"].asString();
+		if(!valueHaVipsHaVip["Name"].isNull())
+			haVipsObject.name = valueHaVipsHaVip["Name"].asString();
+		if(!valueHaVipsHaVip["ChargeType"].isNull())
+			haVipsObject.chargeType = valueHaVipsHaVip["ChargeType"].asString();
+		if(!valueHaVipsHaVip["CreateTime"].isNull())
+			haVipsObject.createTime = valueHaVipsHaVip["CreateTime"].asString();
 		auto allAssociatedInstances = value["AssociatedInstances"]["associatedInstance"];
 		for (auto value : allAssociatedInstances)
 			haVipsObject.associatedInstances.push_back(value.asString());

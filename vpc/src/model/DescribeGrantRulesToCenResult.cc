@@ -39,16 +39,16 @@ void DescribeGrantRulesToCenResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCenGrantRules = value["CenGrantRules"]["CbnGrantRule"];
-	for (auto value : allCenGrantRules)
+	auto allCenGrantRulesNode = value["CenGrantRules"]["CbnGrantRule"];
+	for (auto valueCenGrantRulesCbnGrantRule : allCenGrantRulesNode)
 	{
 		CbnGrantRule cenGrantRulesObject;
-		if(!value["CenInstanceId"].isNull())
-			cenGrantRulesObject.cenInstanceId = value["CenInstanceId"].asString();
-		if(!value["CenOwnerId"].isNull())
-			cenGrantRulesObject.cenOwnerId = std::stol(value["CenOwnerId"].asString());
-		if(!value["CreationTime"].isNull())
-			cenGrantRulesObject.creationTime = value["CreationTime"].asString();
+		if(!valueCenGrantRulesCbnGrantRule["CenInstanceId"].isNull())
+			cenGrantRulesObject.cenInstanceId = valueCenGrantRulesCbnGrantRule["CenInstanceId"].asString();
+		if(!valueCenGrantRulesCbnGrantRule["CenOwnerId"].isNull())
+			cenGrantRulesObject.cenOwnerId = std::stol(valueCenGrantRulesCbnGrantRule["CenOwnerId"].asString());
+		if(!valueCenGrantRulesCbnGrantRule["CreationTime"].isNull())
+			cenGrantRulesObject.creationTime = valueCenGrantRulesCbnGrantRule["CreationTime"].asString();
 		cenGrantRules_.push_back(cenGrantRulesObject);
 	}
 	if(!value["TotalCount"].isNull())

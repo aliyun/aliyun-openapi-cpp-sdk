@@ -39,18 +39,18 @@ void DescribeDNSSLBSubDomainsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSlbSubDomains = value["SlbSubDomains"]["SlbSubDomain"];
-	for (auto value : allSlbSubDomains)
+	auto allSlbSubDomainsNode = value["SlbSubDomains"]["SlbSubDomain"];
+	for (auto valueSlbSubDomainsSlbSubDomain : allSlbSubDomainsNode)
 	{
 		SlbSubDomain slbSubDomainsObject;
-		if(!value["SubDomain"].isNull())
-			slbSubDomainsObject.subDomain = value["SubDomain"].asString();
-		if(!value["RecordCount"].isNull())
-			slbSubDomainsObject.recordCount = std::stol(value["RecordCount"].asString());
-		if(!value["Open"].isNull())
-			slbSubDomainsObject.open = value["Open"].asString() == "true";
-		if(!value["Type"].isNull())
-			slbSubDomainsObject.type = value["Type"].asString();
+		if(!valueSlbSubDomainsSlbSubDomain["SubDomain"].isNull())
+			slbSubDomainsObject.subDomain = valueSlbSubDomainsSlbSubDomain["SubDomain"].asString();
+		if(!valueSlbSubDomainsSlbSubDomain["RecordCount"].isNull())
+			slbSubDomainsObject.recordCount = std::stol(valueSlbSubDomainsSlbSubDomain["RecordCount"].asString());
+		if(!valueSlbSubDomainsSlbSubDomain["Open"].isNull())
+			slbSubDomainsObject.open = valueSlbSubDomainsSlbSubDomain["Open"].asString() == "true";
+		if(!valueSlbSubDomainsSlbSubDomain["Type"].isNull())
+			slbSubDomainsObject.type = valueSlbSubDomainsSlbSubDomain["Type"].asString();
 		slbSubDomains_.push_back(slbSubDomainsObject);
 	}
 	if(!value["TotalCount"].isNull())

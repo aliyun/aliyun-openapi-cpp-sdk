@@ -39,24 +39,24 @@ void DescribeScdnDomainQpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQpsDataPerInterval = value["QpsDataPerInterval"]["DataModule"];
-	for (auto value : allQpsDataPerInterval)
+	auto allQpsDataPerIntervalNode = value["QpsDataPerInterval"]["DataModule"];
+	for (auto valueQpsDataPerIntervalDataModule : allQpsDataPerIntervalNode)
 	{
 		DataModule qpsDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			qpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["QpsValue"].isNull())
-			qpsDataPerIntervalObject.qpsValue = value["QpsValue"].asString();
-		if(!value["HttpQpsValue"].isNull())
-			qpsDataPerIntervalObject.httpQpsValue = value["HttpQpsValue"].asString();
-		if(!value["HttpsQpsValue"].isNull())
-			qpsDataPerIntervalObject.httpsQpsValue = value["HttpsQpsValue"].asString();
-		if(!value["AccValue"].isNull())
-			qpsDataPerIntervalObject.accValue = value["AccValue"].asString();
-		if(!value["HttpAccValue"].isNull())
-			qpsDataPerIntervalObject.httpAccValue = value["HttpAccValue"].asString();
-		if(!value["HttpsAccValue"].isNull())
-			qpsDataPerIntervalObject.httpsAccValue = value["HttpsAccValue"].asString();
+		if(!valueQpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			qpsDataPerIntervalObject.timeStamp = valueQpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueQpsDataPerIntervalDataModule["QpsValue"].isNull())
+			qpsDataPerIntervalObject.qpsValue = valueQpsDataPerIntervalDataModule["QpsValue"].asString();
+		if(!valueQpsDataPerIntervalDataModule["HttpQpsValue"].isNull())
+			qpsDataPerIntervalObject.httpQpsValue = valueQpsDataPerIntervalDataModule["HttpQpsValue"].asString();
+		if(!valueQpsDataPerIntervalDataModule["HttpsQpsValue"].isNull())
+			qpsDataPerIntervalObject.httpsQpsValue = valueQpsDataPerIntervalDataModule["HttpsQpsValue"].asString();
+		if(!valueQpsDataPerIntervalDataModule["AccValue"].isNull())
+			qpsDataPerIntervalObject.accValue = valueQpsDataPerIntervalDataModule["AccValue"].asString();
+		if(!valueQpsDataPerIntervalDataModule["HttpAccValue"].isNull())
+			qpsDataPerIntervalObject.httpAccValue = valueQpsDataPerIntervalDataModule["HttpAccValue"].asString();
+		if(!valueQpsDataPerIntervalDataModule["HttpsAccValue"].isNull())
+			qpsDataPerIntervalObject.httpsAccValue = valueQpsDataPerIntervalDataModule["HttpsAccValue"].asString();
 		qpsDataPerInterval_.push_back(qpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

@@ -39,18 +39,18 @@ void ListCommandsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCommands = value["Commands"]["Command"];
-	for (auto value : allCommands)
+	auto allCommandsNode = value["Commands"]["Command"];
+	for (auto valueCommandsCommand : allCommandsNode)
 	{
 		Command commandsObject;
-		if(!value["CommandId"].isNull())
-			commandsObject.commandId = value["CommandId"].asString();
-		if(!value["CommandContent"].isNull())
-			commandsObject.commandContent = value["CommandContent"].asString();
-		if(!value["WorkingDir"].isNull())
-			commandsObject.workingDir = value["WorkingDir"].asString();
-		if(!value["Timeout"].isNull())
-			commandsObject.timeout = value["Timeout"].asString();
+		if(!valueCommandsCommand["CommandId"].isNull())
+			commandsObject.commandId = valueCommandsCommand["CommandId"].asString();
+		if(!valueCommandsCommand["CommandContent"].isNull())
+			commandsObject.commandContent = valueCommandsCommand["CommandContent"].asString();
+		if(!valueCommandsCommand["WorkingDir"].isNull())
+			commandsObject.workingDir = valueCommandsCommand["WorkingDir"].asString();
+		if(!valueCommandsCommand["Timeout"].isNull())
+			commandsObject.timeout = valueCommandsCommand["Timeout"].asString();
 		commands_.push_back(commandsObject);
 	}
 	if(!value["TotalCount"].isNull())

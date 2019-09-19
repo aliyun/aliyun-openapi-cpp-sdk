@@ -39,16 +39,16 @@ void SearchTemplateResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTemplateList = value["TemplateList"]["Template"];
-	for (auto value : allTemplateList)
+	auto allTemplateListNode = value["TemplateList"]["Template"];
+	for (auto valueTemplateListTemplate : allTemplateListNode)
 	{
 		_Template templateListObject;
-		if(!value["Id"].isNull())
-			templateListObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			templateListObject.name = value["Name"].asString();
-		if(!value["State"].isNull())
-			templateListObject.state = value["State"].asString();
+		if(!valueTemplateListTemplate["Id"].isNull())
+			templateListObject.id = valueTemplateListTemplate["Id"].asString();
+		if(!valueTemplateListTemplate["Name"].isNull())
+			templateListObject.name = valueTemplateListTemplate["Name"].asString();
+		if(!valueTemplateListTemplate["State"].isNull())
+			templateListObject.state = valueTemplateListTemplate["State"].asString();
 		auto containerNode = value["Container"];
 		if(!containerNode["Format"].isNull())
 			templateListObject.container.format = containerNode["Format"].asString();

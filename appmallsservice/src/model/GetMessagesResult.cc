@@ -39,18 +39,18 @@ void GetMessagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBizMessages = value["BizMessages"]["BizMessagesItem"];
-	for (auto value : allBizMessages)
+	auto allBizMessagesNode = value["BizMessages"]["BizMessagesItem"];
+	for (auto valueBizMessagesBizMessagesItem : allBizMessagesNode)
 	{
 		BizMessagesItem bizMessagesObject;
-		if(!value["PubTime"].isNull())
-			bizMessagesObject.pubTime = value["PubTime"].asString();
-		if(!value["Topic"].isNull())
-			bizMessagesObject.topic = value["Topic"].asString();
-		if(!value["DataId"].isNull())
-			bizMessagesObject.dataId = std::stol(value["DataId"].asString());
-		if(!value["ContentMapJson"].isNull())
-			bizMessagesObject.contentMapJson = value["ContentMapJson"].asString();
+		if(!valueBizMessagesBizMessagesItem["PubTime"].isNull())
+			bizMessagesObject.pubTime = valueBizMessagesBizMessagesItem["PubTime"].asString();
+		if(!valueBizMessagesBizMessagesItem["Topic"].isNull())
+			bizMessagesObject.topic = valueBizMessagesBizMessagesItem["Topic"].asString();
+		if(!valueBizMessagesBizMessagesItem["DataId"].isNull())
+			bizMessagesObject.dataId = std::stol(valueBizMessagesBizMessagesItem["DataId"].asString());
+		if(!valueBizMessagesBizMessagesItem["ContentMapJson"].isNull())
+			bizMessagesObject.contentMapJson = valueBizMessagesBizMessagesItem["ContentMapJson"].asString();
 		bizMessages_.push_back(bizMessagesObject);
 	}
 	if(!value["ErrorCode"].isNull())

@@ -39,18 +39,18 @@ void GetAnalyzeCommodityDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAnalyzeCommodityItems = value["AnalyzeCommodityItems"]["AnalyzeCommodityItem"];
-	for (auto value : allAnalyzeCommodityItems)
+	auto allAnalyzeCommodityItemsNode = value["AnalyzeCommodityItems"]["AnalyzeCommodityItem"];
+	for (auto valueAnalyzeCommodityItemsAnalyzeCommodityItem : allAnalyzeCommodityItemsNode)
 	{
 		AnalyzeCommodityItem analyzeCommodityItemsObject;
-		if(!value["LocationNames"].isNull())
-			analyzeCommodityItemsObject.locationNames = value["LocationNames"].asString();
-		if(!value["SupportCount"].isNull())
-			analyzeCommodityItemsObject.supportCount = std::stol(value["SupportCount"].asString());
-		if(!value["LocationIds"].isNull())
-			analyzeCommodityItemsObject.locationIds = value["LocationIds"].asString();
-		if(!value["ItemCount"].isNull())
-			analyzeCommodityItemsObject.itemCount = std::stol(value["ItemCount"].asString());
+		if(!valueAnalyzeCommodityItemsAnalyzeCommodityItem["LocationNames"].isNull())
+			analyzeCommodityItemsObject.locationNames = valueAnalyzeCommodityItemsAnalyzeCommodityItem["LocationNames"].asString();
+		if(!valueAnalyzeCommodityItemsAnalyzeCommodityItem["SupportCount"].isNull())
+			analyzeCommodityItemsObject.supportCount = std::stol(valueAnalyzeCommodityItemsAnalyzeCommodityItem["SupportCount"].asString());
+		if(!valueAnalyzeCommodityItemsAnalyzeCommodityItem["LocationIds"].isNull())
+			analyzeCommodityItemsObject.locationIds = valueAnalyzeCommodityItemsAnalyzeCommodityItem["LocationIds"].asString();
+		if(!valueAnalyzeCommodityItemsAnalyzeCommodityItem["ItemCount"].isNull())
+			analyzeCommodityItemsObject.itemCount = std::stol(valueAnalyzeCommodityItemsAnalyzeCommodityItem["ItemCount"].asString());
 		analyzeCommodityItems_.push_back(analyzeCommodityItemsObject);
 	}
 	if(!value["PageIndex"].isNull())

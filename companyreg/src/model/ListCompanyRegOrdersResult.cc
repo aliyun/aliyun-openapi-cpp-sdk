@@ -39,28 +39,28 @@ void ListCompanyRegOrdersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["CompanyRegOrder"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["CompanyRegOrder"];
+	for (auto valueDataCompanyRegOrder : allDataNode)
 	{
 		CompanyRegOrder dataObject;
-		if(!value["BizId"].isNull())
-			dataObject.bizId = value["BizId"].asString();
-		if(!value["CompanyName"].isNull())
-			dataObject.companyName = value["CompanyName"].asString();
-		if(!value["BizStatus"].isNull())
-			dataObject.bizStatus = value["BizStatus"].asString();
-		if(!value["BizInfo"].isNull())
-			dataObject.bizInfo = value["BizInfo"].asString();
-		if(!value["SupplementBizInfo"].isNull())
-			dataObject.supplementBizInfo = value["SupplementBizInfo"].asString();
-		if(!value["AliyunOrderId"].isNull())
-			dataObject.aliyunOrderId = value["AliyunOrderId"].asString();
-		if(!value["GmtModified"].isNull())
-			dataObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["Extend"].isNull())
-			dataObject.extend = value["Extend"].asString();
-		if(!value["BizSubCode"].isNull())
-			dataObject.bizSubCode = value["BizSubCode"].asString();
+		if(!valueDataCompanyRegOrder["BizId"].isNull())
+			dataObject.bizId = valueDataCompanyRegOrder["BizId"].asString();
+		if(!valueDataCompanyRegOrder["CompanyName"].isNull())
+			dataObject.companyName = valueDataCompanyRegOrder["CompanyName"].asString();
+		if(!valueDataCompanyRegOrder["BizStatus"].isNull())
+			dataObject.bizStatus = valueDataCompanyRegOrder["BizStatus"].asString();
+		if(!valueDataCompanyRegOrder["BizInfo"].isNull())
+			dataObject.bizInfo = valueDataCompanyRegOrder["BizInfo"].asString();
+		if(!valueDataCompanyRegOrder["SupplementBizInfo"].isNull())
+			dataObject.supplementBizInfo = valueDataCompanyRegOrder["SupplementBizInfo"].asString();
+		if(!valueDataCompanyRegOrder["AliyunOrderId"].isNull())
+			dataObject.aliyunOrderId = valueDataCompanyRegOrder["AliyunOrderId"].asString();
+		if(!valueDataCompanyRegOrder["GmtModified"].isNull())
+			dataObject.gmtModified = std::stol(valueDataCompanyRegOrder["GmtModified"].asString());
+		if(!valueDataCompanyRegOrder["Extend"].isNull())
+			dataObject.extend = valueDataCompanyRegOrder["Extend"].asString();
+		if(!valueDataCompanyRegOrder["BizSubCode"].isNull())
+			dataObject.bizSubCode = valueDataCompanyRegOrder["BizSubCode"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

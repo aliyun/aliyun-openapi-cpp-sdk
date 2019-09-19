@@ -39,16 +39,16 @@ void DescribeSignaturesByApiResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSignatures = value["Signatures"]["SignatureItem"];
-	for (auto value : allSignatures)
+	auto allSignaturesNode = value["Signatures"]["SignatureItem"];
+	for (auto valueSignaturesSignatureItem : allSignaturesNode)
 	{
 		SignatureItem signaturesObject;
-		if(!value["SignatureId"].isNull())
-			signaturesObject.signatureId = value["SignatureId"].asString();
-		if(!value["SignatureName"].isNull())
-			signaturesObject.signatureName = value["SignatureName"].asString();
-		if(!value["BoundTime"].isNull())
-			signaturesObject.boundTime = value["BoundTime"].asString();
+		if(!valueSignaturesSignatureItem["SignatureId"].isNull())
+			signaturesObject.signatureId = valueSignaturesSignatureItem["SignatureId"].asString();
+		if(!valueSignaturesSignatureItem["SignatureName"].isNull())
+			signaturesObject.signatureName = valueSignaturesSignatureItem["SignatureName"].asString();
+		if(!valueSignaturesSignatureItem["BoundTime"].isNull())
+			signaturesObject.boundTime = valueSignaturesSignatureItem["BoundTime"].asString();
 		signatures_.push_back(signaturesObject);
 	}
 

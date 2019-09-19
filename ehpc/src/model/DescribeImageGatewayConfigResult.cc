@@ -50,18 +50,18 @@ void DescribeImageGatewayConfigResult::parse(const std::string &payload)
 		imagegw_.imageExpirationTimeout = imagegwNode["ImageExpirationTimeout"].asString();
 	if(!imagegwNode["UpdateDateTime"].isNull())
 		imagegw_.updateDateTime = imagegwNode["UpdateDateTime"].asString();
-	auto allLocations = value["Locations"]["LocationInfo"];
-	for (auto value : allLocations)
+	auto allLocationsNode = imagegwNode["Locations"]["LocationInfo"];
+	for (auto imagegwNodeLocationsLocationInfo : allLocationsNode)
 	{
 		Imagegw::LocationInfo locationInfoObject;
-		if(!value["Location"].isNull())
-			locationInfoObject.location = value["Location"].asString();
-		if(!value["RemoteType"].isNull())
-			locationInfoObject.remoteType = value["RemoteType"].asString();
-		if(!value["Authentication"].isNull())
-			locationInfoObject.authentication = value["Authentication"].asString();
-		if(!value["URL"].isNull())
-			locationInfoObject.uRL = value["URL"].asString();
+		if(!imagegwNodeLocationsLocationInfo["Location"].isNull())
+			locationInfoObject.location = imagegwNodeLocationsLocationInfo["Location"].asString();
+		if(!imagegwNodeLocationsLocationInfo["RemoteType"].isNull())
+			locationInfoObject.remoteType = imagegwNodeLocationsLocationInfo["RemoteType"].asString();
+		if(!imagegwNodeLocationsLocationInfo["Authentication"].isNull())
+			locationInfoObject.authentication = imagegwNodeLocationsLocationInfo["Authentication"].asString();
+		if(!imagegwNodeLocationsLocationInfo["URL"].isNull())
+			locationInfoObject.uRL = imagegwNodeLocationsLocationInfo["URL"].asString();
 		imagegw_.locations.push_back(locationInfoObject);
 	}
 

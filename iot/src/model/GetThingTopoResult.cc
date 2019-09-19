@@ -48,16 +48,16 @@ void GetThingTopoResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["PageCount"].isNull())
 		data_.pageCount = std::stol(dataNode["PageCount"].asString());
-	auto allList = value["List"]["deviceInfo"];
-	for (auto value : allList)
+	auto allListNode = dataNode["List"]["deviceInfo"];
+	for (auto dataNodeListdeviceInfo : allListNode)
 	{
 		Data::DeviceInfo deviceInfoObject;
-		if(!value["IotId"].isNull())
-			deviceInfoObject.iotId = value["IotId"].asString();
-		if(!value["ProductKey"].isNull())
-			deviceInfoObject.productKey = value["ProductKey"].asString();
-		if(!value["DeviceName"].isNull())
-			deviceInfoObject.deviceName = value["DeviceName"].asString();
+		if(!dataNodeListdeviceInfo["IotId"].isNull())
+			deviceInfoObject.iotId = dataNodeListdeviceInfo["IotId"].asString();
+		if(!dataNodeListdeviceInfo["ProductKey"].isNull())
+			deviceInfoObject.productKey = dataNodeListdeviceInfo["ProductKey"].asString();
+		if(!dataNodeListdeviceInfo["DeviceName"].isNull())
+			deviceInfoObject.deviceName = dataNodeListdeviceInfo["DeviceName"].asString();
 		data_.list.push_back(deviceInfoObject);
 	}
 	if(!value["Success"].isNull())

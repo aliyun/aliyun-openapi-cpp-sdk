@@ -46,22 +46,22 @@ void ListJobGroupsResult::parse(const std::string &payload)
 		jobGroups_.pageNumber = std::stoi(jobGroupsNode["PageNumber"].asString());
 	if(!jobGroupsNode["PageSize"].isNull())
 		jobGroups_.pageSize = std::stoi(jobGroupsNode["PageSize"].asString());
-	auto allList = value["List"]["JobGroup"];
-	for (auto value : allList)
+	auto allListNode = jobGroupsNode["List"]["JobGroup"];
+	for (auto jobGroupsNodeListJobGroup : allListNode)
 	{
 		JobGroups::JobGroup jobGroupObject;
-		if(!value["Id"].isNull())
-			jobGroupObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			jobGroupObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			jobGroupObject.description = value["Description"].asString();
-		if(!value["ScenarioId"].isNull())
-			jobGroupObject.scenarioId = value["ScenarioId"].asString();
-		if(!value["JobFilePath"].isNull())
-			jobGroupObject.jobFilePath = value["JobFilePath"].asString();
-		if(!value["CreationTime"].isNull())
-			jobGroupObject.creationTime = std::stol(value["CreationTime"].asString());
+		if(!jobGroupsNodeListJobGroup["Id"].isNull())
+			jobGroupObject.id = jobGroupsNodeListJobGroup["Id"].asString();
+		if(!jobGroupsNodeListJobGroup["Name"].isNull())
+			jobGroupObject.name = jobGroupsNodeListJobGroup["Name"].asString();
+		if(!jobGroupsNodeListJobGroup["Description"].isNull())
+			jobGroupObject.description = jobGroupsNodeListJobGroup["Description"].asString();
+		if(!jobGroupsNodeListJobGroup["ScenarioId"].isNull())
+			jobGroupObject.scenarioId = jobGroupsNodeListJobGroup["ScenarioId"].asString();
+		if(!jobGroupsNodeListJobGroup["JobFilePath"].isNull())
+			jobGroupObject.jobFilePath = jobGroupsNodeListJobGroup["JobFilePath"].asString();
+		if(!jobGroupsNodeListJobGroup["CreationTime"].isNull())
+			jobGroupObject.creationTime = std::stol(jobGroupsNodeListJobGroup["CreationTime"].asString());
 		auto strategyNode = value["Strategy"];
 		if(!strategyNode["Id"].isNull())
 			jobGroupObject.strategy.id = strategyNode["Id"].asString();
@@ -89,14 +89,14 @@ void ListJobGroupsResult::parse(const std::string &payload)
 			jobGroupObject.strategy.followUpStrategy = strategyNode["FollowUpStrategy"].asString();
 		if(!strategyNode["IsTemplate"].isNull())
 			jobGroupObject.strategy.isTemplate = strategyNode["IsTemplate"].asString() == "true";
-		auto allWorkingTime = value["WorkingTime"]["TimeFrame"];
-		for (auto value : allWorkingTime)
+		auto allWorkingTimeNode = strategyNode["WorkingTime"]["TimeFrame"];
+		for (auto strategyNodeWorkingTimeTimeFrame : allWorkingTimeNode)
 		{
 			JobGroups::JobGroup::Strategy::TimeFrame timeFrameObject;
-			if(!value["BeginTime"].isNull())
-				timeFrameObject.beginTime = value["BeginTime"].asString();
-			if(!value["EndTime"].isNull())
-				timeFrameObject.endTime = value["EndTime"].asString();
+			if(!strategyNodeWorkingTimeTimeFrame["BeginTime"].isNull())
+				timeFrameObject.beginTime = strategyNodeWorkingTimeTimeFrame["BeginTime"].asString();
+			if(!strategyNodeWorkingTimeTimeFrame["EndTime"].isNull())
+				timeFrameObject.endTime = strategyNodeWorkingTimeTimeFrame["EndTime"].asString();
 			jobGroupObject.strategy.workingTime.push_back(timeFrameObject);
 		}
 			auto allRepeatDays = strategyNode["RepeatDays"]["Integer"];
@@ -115,14 +115,14 @@ void ListJobGroupsResult::parse(const std::string &payload)
 			jobGroupObject.progress.startTime = std::stol(progressNode["StartTime"].asString());
 		if(!progressNode["Duration"].isNull())
 			jobGroupObject.progress.duration = std::stoi(progressNode["Duration"].asString());
-		auto allCategories = value["Categories"]["KeyValuePair"];
-		for (auto value : allCategories)
+		auto allCategoriesNode = progressNode["Categories"]["KeyValuePair"];
+		for (auto progressNodeCategoriesKeyValuePair : allCategoriesNode)
 		{
 			JobGroups::JobGroup::Progress::KeyValuePair keyValuePairObject;
-			if(!value["Key"].isNull())
-				keyValuePairObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				keyValuePairObject.value = value["Value"].asString();
+			if(!progressNodeCategoriesKeyValuePair["Key"].isNull())
+				keyValuePairObject.key = progressNodeCategoriesKeyValuePair["Key"].asString();
+			if(!progressNodeCategoriesKeyValuePair["Value"].isNull())
+				keyValuePairObject.value = progressNodeCategoriesKeyValuePair["Value"].asString();
 			jobGroupObject.progress.categories.push_back(keyValuePairObject);
 		}
 		auto allCallingNumbers = value["CallingNumbers"]["String"];

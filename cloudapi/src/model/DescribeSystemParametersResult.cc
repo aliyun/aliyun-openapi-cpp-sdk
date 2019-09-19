@@ -39,18 +39,18 @@ void DescribeSystemParametersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSystemParams = value["SystemParams"]["SystemParamItem"];
-	for (auto value : allSystemParams)
+	auto allSystemParamsNode = value["SystemParams"]["SystemParamItem"];
+	for (auto valueSystemParamsSystemParamItem : allSystemParamsNode)
 	{
 		SystemParamItem systemParamsObject;
-		if(!value["ParamName"].isNull())
-			systemParamsObject.paramName = value["ParamName"].asString();
-		if(!value["ParamType"].isNull())
-			systemParamsObject.paramType = value["ParamType"].asString();
-		if(!value["DemoValue"].isNull())
-			systemParamsObject.demoValue = value["DemoValue"].asString();
-		if(!value["Description"].isNull())
-			systemParamsObject.description = value["Description"].asString();
+		if(!valueSystemParamsSystemParamItem["ParamName"].isNull())
+			systemParamsObject.paramName = valueSystemParamsSystemParamItem["ParamName"].asString();
+		if(!valueSystemParamsSystemParamItem["ParamType"].isNull())
+			systemParamsObject.paramType = valueSystemParamsSystemParamItem["ParamType"].asString();
+		if(!valueSystemParamsSystemParamItem["DemoValue"].isNull())
+			systemParamsObject.demoValue = valueSystemParamsSystemParamItem["DemoValue"].asString();
+		if(!valueSystemParamsSystemParamItem["Description"].isNull())
+			systemParamsObject.description = valueSystemParamsSystemParamItem["Description"].asString();
 		systemParams_.push_back(systemParamsObject);
 	}
 

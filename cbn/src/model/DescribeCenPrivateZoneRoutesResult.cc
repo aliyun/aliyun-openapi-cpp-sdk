@@ -39,18 +39,18 @@ void DescribeCenPrivateZoneRoutesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPrivateZoneInfos = value["PrivateZoneInfos"]["PrivateZoneInfo"];
-	for (auto value : allPrivateZoneInfos)
+	auto allPrivateZoneInfosNode = value["PrivateZoneInfos"]["PrivateZoneInfo"];
+	for (auto valuePrivateZoneInfosPrivateZoneInfo : allPrivateZoneInfosNode)
 	{
 		PrivateZoneInfo privateZoneInfosObject;
-		if(!value["AccessRegionId"].isNull())
-			privateZoneInfosObject.accessRegionId = value["AccessRegionId"].asString();
-		if(!value["HostRegionId"].isNull())
-			privateZoneInfosObject.hostRegionId = value["HostRegionId"].asString();
-		if(!value["HostVpcId"].isNull())
-			privateZoneInfosObject.hostVpcId = value["HostVpcId"].asString();
-		if(!value["Status"].isNull())
-			privateZoneInfosObject.status = value["Status"].asString();
+		if(!valuePrivateZoneInfosPrivateZoneInfo["AccessRegionId"].isNull())
+			privateZoneInfosObject.accessRegionId = valuePrivateZoneInfosPrivateZoneInfo["AccessRegionId"].asString();
+		if(!valuePrivateZoneInfosPrivateZoneInfo["HostRegionId"].isNull())
+			privateZoneInfosObject.hostRegionId = valuePrivateZoneInfosPrivateZoneInfo["HostRegionId"].asString();
+		if(!valuePrivateZoneInfosPrivateZoneInfo["HostVpcId"].isNull())
+			privateZoneInfosObject.hostVpcId = valuePrivateZoneInfosPrivateZoneInfo["HostVpcId"].asString();
+		if(!valuePrivateZoneInfosPrivateZoneInfo["Status"].isNull())
+			privateZoneInfosObject.status = valuePrivateZoneInfosPrivateZoneInfo["Status"].asString();
 		privateZoneInfos_.push_back(privateZoneInfosObject);
 	}
 	if(!value["CenId"].isNull())

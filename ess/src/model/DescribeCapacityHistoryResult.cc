@@ -39,20 +39,20 @@ void DescribeCapacityHistoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCapacityHistoryItems = value["CapacityHistoryItems"]["CapacityHistoryModel"];
-	for (auto value : allCapacityHistoryItems)
+	auto allCapacityHistoryItemsNode = value["CapacityHistoryItems"]["CapacityHistoryModel"];
+	for (auto valueCapacityHistoryItemsCapacityHistoryModel : allCapacityHistoryItemsNode)
 	{
 		CapacityHistoryModel capacityHistoryItemsObject;
-		if(!value["ScalingGroupId"].isNull())
-			capacityHistoryItemsObject.scalingGroupId = value["ScalingGroupId"].asString();
-		if(!value["TotalCapacity"].isNull())
-			capacityHistoryItemsObject.totalCapacity = std::stoi(value["TotalCapacity"].asString());
-		if(!value["AttachedCapacity"].isNull())
-			capacityHistoryItemsObject.attachedCapacity = std::stoi(value["AttachedCapacity"].asString());
-		if(!value["AutoCreatedCapacity"].isNull())
-			capacityHistoryItemsObject.autoCreatedCapacity = std::stoi(value["AutoCreatedCapacity"].asString());
-		if(!value["Timestamp"].isNull())
-			capacityHistoryItemsObject.timestamp = value["Timestamp"].asString();
+		if(!valueCapacityHistoryItemsCapacityHistoryModel["ScalingGroupId"].isNull())
+			capacityHistoryItemsObject.scalingGroupId = valueCapacityHistoryItemsCapacityHistoryModel["ScalingGroupId"].asString();
+		if(!valueCapacityHistoryItemsCapacityHistoryModel["TotalCapacity"].isNull())
+			capacityHistoryItemsObject.totalCapacity = std::stoi(valueCapacityHistoryItemsCapacityHistoryModel["TotalCapacity"].asString());
+		if(!valueCapacityHistoryItemsCapacityHistoryModel["AttachedCapacity"].isNull())
+			capacityHistoryItemsObject.attachedCapacity = std::stoi(valueCapacityHistoryItemsCapacityHistoryModel["AttachedCapacity"].asString());
+		if(!valueCapacityHistoryItemsCapacityHistoryModel["AutoCreatedCapacity"].isNull())
+			capacityHistoryItemsObject.autoCreatedCapacity = std::stoi(valueCapacityHistoryItemsCapacityHistoryModel["AutoCreatedCapacity"].asString());
+		if(!valueCapacityHistoryItemsCapacityHistoryModel["Timestamp"].isNull())
+			capacityHistoryItemsObject.timestamp = valueCapacityHistoryItemsCapacityHistoryModel["Timestamp"].asString();
 		capacityHistoryItems_.push_back(capacityHistoryItemsObject);
 	}
 	if(!value["TotalCount"].isNull())

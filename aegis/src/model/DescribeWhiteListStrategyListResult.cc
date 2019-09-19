@@ -39,18 +39,18 @@ void DescribeWhiteListStrategyListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStrategies = value["Strategies"]["Strategy"];
-	for (auto value : allStrategies)
+	auto allStrategiesNode = value["Strategies"]["Strategy"];
+	for (auto valueStrategiesStrategy : allStrategiesNode)
 	{
 		Strategy strategiesObject;
-		if(!value["StrategyId"].isNull())
-			strategiesObject.strategyId = std::stol(value["StrategyId"].asString());
-		if(!value["StrategyName"].isNull())
-			strategiesObject.strategyName = value["StrategyName"].asString();
-		if(!value["StudyTime"].isNull())
-			strategiesObject.studyTime = std::stoi(value["StudyTime"].asString());
-		if(!value["Status"].isNull())
-			strategiesObject.status = std::stoi(value["Status"].asString());
+		if(!valueStrategiesStrategy["StrategyId"].isNull())
+			strategiesObject.strategyId = std::stol(valueStrategiesStrategy["StrategyId"].asString());
+		if(!valueStrategiesStrategy["StrategyName"].isNull())
+			strategiesObject.strategyName = valueStrategiesStrategy["StrategyName"].asString();
+		if(!valueStrategiesStrategy["StudyTime"].isNull())
+			strategiesObject.studyTime = std::stoi(valueStrategiesStrategy["StudyTime"].asString());
+		if(!valueStrategiesStrategy["Status"].isNull())
+			strategiesObject.status = std::stoi(valueStrategiesStrategy["Status"].asString());
 		strategies_.push_back(strategiesObject);
 	}
 

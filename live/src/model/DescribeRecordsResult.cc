@@ -39,30 +39,30 @@ void DescribeRecordsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRecords = value["Records"]["Record"];
-	for (auto value : allRecords)
+	auto allRecordsNode = value["Records"]["Record"];
+	for (auto valueRecordsRecord : allRecordsNode)
 	{
 		Record recordsObject;
-		if(!value["RecordId"].isNull())
-			recordsObject.recordId = value["RecordId"].asString();
-		if(!value["AppId"].isNull())
-			recordsObject.appId = value["AppId"].asString();
-		if(!value["BoardId"].isNull())
-			recordsObject.boardId = std::stoi(value["BoardId"].asString());
-		if(!value["RecordStartTime"].isNull())
-			recordsObject.recordStartTime = std::stol(value["RecordStartTime"].asString());
-		if(!value["StartTime"].isNull())
-			recordsObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["EndTime"].isNull())
-			recordsObject.endTime = std::stol(value["EndTime"].asString());
-		if(!value["State"].isNull())
-			recordsObject.state = std::stoi(value["State"].asString());
-		if(!value["OssPath"].isNull())
-			recordsObject.ossPath = value["OssPath"].asString();
-		if(!value["OssBucket"].isNull())
-			recordsObject.ossBucket = value["OssBucket"].asString();
-		if(!value["OssEndpoint"].isNull())
-			recordsObject.ossEndpoint = value["OssEndpoint"].asString();
+		if(!valueRecordsRecord["RecordId"].isNull())
+			recordsObject.recordId = valueRecordsRecord["RecordId"].asString();
+		if(!valueRecordsRecord["AppId"].isNull())
+			recordsObject.appId = valueRecordsRecord["AppId"].asString();
+		if(!valueRecordsRecord["BoardId"].isNull())
+			recordsObject.boardId = std::stoi(valueRecordsRecord["BoardId"].asString());
+		if(!valueRecordsRecord["RecordStartTime"].isNull())
+			recordsObject.recordStartTime = std::stol(valueRecordsRecord["RecordStartTime"].asString());
+		if(!valueRecordsRecord["StartTime"].isNull())
+			recordsObject.startTime = std::stol(valueRecordsRecord["StartTime"].asString());
+		if(!valueRecordsRecord["EndTime"].isNull())
+			recordsObject.endTime = std::stol(valueRecordsRecord["EndTime"].asString());
+		if(!valueRecordsRecord["State"].isNull())
+			recordsObject.state = std::stoi(valueRecordsRecord["State"].asString());
+		if(!valueRecordsRecord["OssPath"].isNull())
+			recordsObject.ossPath = valueRecordsRecord["OssPath"].asString();
+		if(!valueRecordsRecord["OssBucket"].isNull())
+			recordsObject.ossBucket = valueRecordsRecord["OssBucket"].asString();
+		if(!valueRecordsRecord["OssEndpoint"].isNull())
+			recordsObject.ossEndpoint = valueRecordsRecord["OssEndpoint"].asString();
 		records_.push_back(recordsObject);
 	}
 

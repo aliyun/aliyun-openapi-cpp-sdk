@@ -39,22 +39,22 @@ void DescribePlayVideoStatisResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVideoPlayStatisDetails = value["VideoPlayStatisDetails"]["VideoPlayStatisDetail"];
-	for (auto value : allVideoPlayStatisDetails)
+	auto allVideoPlayStatisDetailsNode = value["VideoPlayStatisDetails"]["VideoPlayStatisDetail"];
+	for (auto valueVideoPlayStatisDetailsVideoPlayStatisDetail : allVideoPlayStatisDetailsNode)
 	{
 		VideoPlayStatisDetail videoPlayStatisDetailsObject;
-		if(!value["Date"].isNull())
-			videoPlayStatisDetailsObject.date = value["Date"].asString();
-		if(!value["PlayDuration"].isNull())
-			videoPlayStatisDetailsObject.playDuration = value["PlayDuration"].asString();
-		if(!value["VV"].isNull())
-			videoPlayStatisDetailsObject.vV = value["VV"].asString();
-		if(!value["UV"].isNull())
-			videoPlayStatisDetailsObject.uV = value["UV"].asString();
-		if(!value["PlayRange"].isNull())
-			videoPlayStatisDetailsObject.playRange = value["PlayRange"].asString();
-		if(!value["Title"].isNull())
-			videoPlayStatisDetailsObject.title = value["Title"].asString();
+		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["Date"].isNull())
+			videoPlayStatisDetailsObject.date = valueVideoPlayStatisDetailsVideoPlayStatisDetail["Date"].asString();
+		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["PlayDuration"].isNull())
+			videoPlayStatisDetailsObject.playDuration = valueVideoPlayStatisDetailsVideoPlayStatisDetail["PlayDuration"].asString();
+		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["VV"].isNull())
+			videoPlayStatisDetailsObject.vV = valueVideoPlayStatisDetailsVideoPlayStatisDetail["VV"].asString();
+		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["UV"].isNull())
+			videoPlayStatisDetailsObject.uV = valueVideoPlayStatisDetailsVideoPlayStatisDetail["UV"].asString();
+		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["PlayRange"].isNull())
+			videoPlayStatisDetailsObject.playRange = valueVideoPlayStatisDetailsVideoPlayStatisDetail["PlayRange"].asString();
+		if(!valueVideoPlayStatisDetailsVideoPlayStatisDetail["Title"].isNull())
+			videoPlayStatisDetailsObject.title = valueVideoPlayStatisDetailsVideoPlayStatisDetail["Title"].asString();
 		videoPlayStatisDetails_.push_back(videoPlayStatisDetailsObject);
 	}
 

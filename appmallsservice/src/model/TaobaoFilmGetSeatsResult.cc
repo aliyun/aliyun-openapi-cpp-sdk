@@ -68,30 +68,30 @@ void TaobaoFilmGetSeatsResult::parse(const std::string &payload)
 		seatMap_.soldCount = std::stol(seatMapNode["SoldCount"].asString());
 	if(!seatMapNode["TipMessage"].isNull())
 		seatMap_.tipMessage = seatMapNode["TipMessage"].asString();
-	auto allSeats = value["Seats"]["SeatsItem"];
-	for (auto value : allSeats)
+	auto allSeatsNode = seatMapNode["Seats"]["SeatsItem"];
+	for (auto seatMapNodeSeatsSeatsItem : allSeatsNode)
 	{
 		SeatMap::SeatsItem seatsItemObject;
-		if(!value["Area"].isNull())
-			seatsItemObject.area = value["Area"].asString();
-		if(!value["Column"].isNull())
-			seatsItemObject.column = std::stol(value["Column"].asString());
-		if(!value["ExtId"].isNull())
-			seatsItemObject.extId = value["ExtId"].asString();
-		if(!value["Flag"].isNull())
-			seatsItemObject.flag = std::stol(value["Flag"].asString());
-		if(!value["LeftPx"].isNull())
-			seatsItemObject.leftPx = std::stol(value["LeftPx"].asString());
-		if(!value["Name"].isNull())
-			seatsItemObject.name = value["Name"].asString();
-		if(!value["Row"].isNull())
-			seatsItemObject.row = std::stol(value["Row"].asString());
-		if(!value["RowName"].isNull())
-			seatsItemObject.rowName = value["RowName"].asString();
-		if(!value["Status"].isNull())
-			seatsItemObject.status = std::stol(value["Status"].asString());
-		if(!value["TopPx"].isNull())
-			seatsItemObject.topPx = std::stol(value["TopPx"].asString());
+		if(!seatMapNodeSeatsSeatsItem["Area"].isNull())
+			seatsItemObject.area = seatMapNodeSeatsSeatsItem["Area"].asString();
+		if(!seatMapNodeSeatsSeatsItem["Column"].isNull())
+			seatsItemObject.column = std::stol(seatMapNodeSeatsSeatsItem["Column"].asString());
+		if(!seatMapNodeSeatsSeatsItem["ExtId"].isNull())
+			seatsItemObject.extId = seatMapNodeSeatsSeatsItem["ExtId"].asString();
+		if(!seatMapNodeSeatsSeatsItem["Flag"].isNull())
+			seatsItemObject.flag = std::stol(seatMapNodeSeatsSeatsItem["Flag"].asString());
+		if(!seatMapNodeSeatsSeatsItem["LeftPx"].isNull())
+			seatsItemObject.leftPx = std::stol(seatMapNodeSeatsSeatsItem["LeftPx"].asString());
+		if(!seatMapNodeSeatsSeatsItem["Name"].isNull())
+			seatsItemObject.name = seatMapNodeSeatsSeatsItem["Name"].asString();
+		if(!seatMapNodeSeatsSeatsItem["Row"].isNull())
+			seatsItemObject.row = std::stol(seatMapNodeSeatsSeatsItem["Row"].asString());
+		if(!seatMapNodeSeatsSeatsItem["RowName"].isNull())
+			seatsItemObject.rowName = seatMapNodeSeatsSeatsItem["RowName"].asString();
+		if(!seatMapNodeSeatsSeatsItem["Status"].isNull())
+			seatsItemObject.status = std::stol(seatMapNodeSeatsSeatsItem["Status"].asString());
+		if(!seatMapNodeSeatsSeatsItem["TopPx"].isNull())
+			seatsItemObject.topPx = std::stol(seatMapNodeSeatsSeatsItem["TopPx"].asString());
 		seatMap_.seats.push_back(seatsItemObject);
 	}
 	if(!value["ErrorCode"].isNull())

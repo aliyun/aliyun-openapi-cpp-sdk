@@ -39,20 +39,20 @@ void DescribeDrdsDBsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Db"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["Db"];
+	for (auto valueDataDb : allDataNode)
 	{
 		Db dataObject;
-		if(!value["DbName"].isNull())
-			dataObject.dbName = value["DbName"].asString();
-		if(!value["Status"].isNull())
-			dataObject.status = std::stoi(value["Status"].asString());
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = value["CreateTime"].asString();
-		if(!value["Msg"].isNull())
-			dataObject.msg = value["Msg"].asString();
-		if(!value["Mode"].isNull())
-			dataObject.mode = value["Mode"].asString();
+		if(!valueDataDb["DbName"].isNull())
+			dataObject.dbName = valueDataDb["DbName"].asString();
+		if(!valueDataDb["Status"].isNull())
+			dataObject.status = std::stoi(valueDataDb["Status"].asString());
+		if(!valueDataDb["CreateTime"].isNull())
+			dataObject.createTime = valueDataDb["CreateTime"].asString();
+		if(!valueDataDb["Msg"].isNull())
+			dataObject.msg = valueDataDb["Msg"].asString();
+		if(!valueDataDb["Mode"].isNull())
+			dataObject.mode = valueDataDb["Mode"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

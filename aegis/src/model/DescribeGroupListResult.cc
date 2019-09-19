@@ -39,28 +39,28 @@ void DescribeGroupListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRuleGroups = value["RuleGroups"]["RuleGroupsItem"];
-	for (auto value : allRuleGroups)
+	auto allRuleGroupsNode = value["RuleGroups"]["RuleGroupsItem"];
+	for (auto valueRuleGroupsRuleGroupsItem : allRuleGroupsNode)
 	{
 		RuleGroupsItem ruleGroupsObject;
-		if(!value["GroupName"].isNull())
-			ruleGroupsObject.groupName = value["GroupName"].asString();
-		if(!value["RuleNum"].isNull())
-			ruleGroupsObject.ruleNum = std::stoi(value["RuleNum"].asString());
-		if(!value["Modified"].isNull())
-			ruleGroupsObject.modified = std::stol(value["Modified"].asString());
-		if(!value["Create"].isNull())
-			ruleGroupsObject.create = std::stol(value["Create"].asString());
-		if(!value["Description"].isNull())
-			ruleGroupsObject.description = value["Description"].asString();
-		if(!value["Id"].isNull())
-			ruleGroupsObject.id = std::stoi(value["Id"].asString());
-		if(!value["AliUid"].isNull())
-			ruleGroupsObject.aliUid = std::stol(value["AliUid"].asString());
-		if(!value["Status"].isNull())
-			ruleGroupsObject.status = std::stoi(value["Status"].asString());
-		if(!value["MachineGroupIds"].isNull())
-			ruleGroupsObject.machineGroupIds = value["MachineGroupIds"].asString();
+		if(!valueRuleGroupsRuleGroupsItem["GroupName"].isNull())
+			ruleGroupsObject.groupName = valueRuleGroupsRuleGroupsItem["GroupName"].asString();
+		if(!valueRuleGroupsRuleGroupsItem["RuleNum"].isNull())
+			ruleGroupsObject.ruleNum = std::stoi(valueRuleGroupsRuleGroupsItem["RuleNum"].asString());
+		if(!valueRuleGroupsRuleGroupsItem["Modified"].isNull())
+			ruleGroupsObject.modified = std::stol(valueRuleGroupsRuleGroupsItem["Modified"].asString());
+		if(!valueRuleGroupsRuleGroupsItem["Create"].isNull())
+			ruleGroupsObject.create = std::stol(valueRuleGroupsRuleGroupsItem["Create"].asString());
+		if(!valueRuleGroupsRuleGroupsItem["Description"].isNull())
+			ruleGroupsObject.description = valueRuleGroupsRuleGroupsItem["Description"].asString();
+		if(!valueRuleGroupsRuleGroupsItem["Id"].isNull())
+			ruleGroupsObject.id = std::stoi(valueRuleGroupsRuleGroupsItem["Id"].asString());
+		if(!valueRuleGroupsRuleGroupsItem["AliUid"].isNull())
+			ruleGroupsObject.aliUid = std::stol(valueRuleGroupsRuleGroupsItem["AliUid"].asString());
+		if(!valueRuleGroupsRuleGroupsItem["Status"].isNull())
+			ruleGroupsObject.status = std::stoi(valueRuleGroupsRuleGroupsItem["Status"].asString());
+		if(!valueRuleGroupsRuleGroupsItem["MachineGroupIds"].isNull())
+			ruleGroupsObject.machineGroupIds = valueRuleGroupsRuleGroupsItem["MachineGroupIds"].asString();
 		ruleGroups_.push_back(ruleGroupsObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

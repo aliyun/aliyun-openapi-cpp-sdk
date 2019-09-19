@@ -39,14 +39,14 @@ void QueryMcuTemplateResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTemplates = value["Templates"]["Job"];
-	for (auto value : allTemplates)
+	auto allTemplatesNode = value["Templates"]["Job"];
+	for (auto valueTemplatesJob : allTemplatesNode)
 	{
 		Job templatesObject;
-		if(!value["TemplateId"].isNull())
-			templatesObject.templateId = value["TemplateId"].asString();
-		if(!value["Template"].isNull())
-			templatesObject._template = value["Template"].asString();
+		if(!valueTemplatesJob["TemplateId"].isNull())
+			templatesObject.templateId = valueTemplatesJob["TemplateId"].asString();
+		if(!valueTemplatesJob["Template"].isNull())
+			templatesObject._template = valueTemplatesJob["Template"].asString();
 		templates_.push_back(templatesObject);
 	}
 

@@ -39,24 +39,24 @@ void ListClusterOperationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClusterOperationList = value["ClusterOperationList"]["ClusterOperation"];
-	for (auto value : allClusterOperationList)
+	auto allClusterOperationListNode = value["ClusterOperationList"]["ClusterOperation"];
+	for (auto valueClusterOperationListClusterOperation : allClusterOperationListNode)
 	{
 		ClusterOperation clusterOperationListObject;
-		if(!value["OperationId"].isNull())
-			clusterOperationListObject.operationId = value["OperationId"].asString();
-		if(!value["OperationName"].isNull())
-			clusterOperationListObject.operationName = value["OperationName"].asString();
-		if(!value["StartTime"].isNull())
-			clusterOperationListObject.startTime = value["StartTime"].asString();
-		if(!value["Duration"].isNull())
-			clusterOperationListObject.duration = value["Duration"].asString();
-		if(!value["Status"].isNull())
-			clusterOperationListObject.status = value["Status"].asString();
-		if(!value["Percentage"].isNull())
-			clusterOperationListObject.percentage = value["Percentage"].asString();
-		if(!value["Comment"].isNull())
-			clusterOperationListObject.comment = value["Comment"].asString();
+		if(!valueClusterOperationListClusterOperation["OperationId"].isNull())
+			clusterOperationListObject.operationId = valueClusterOperationListClusterOperation["OperationId"].asString();
+		if(!valueClusterOperationListClusterOperation["OperationName"].isNull())
+			clusterOperationListObject.operationName = valueClusterOperationListClusterOperation["OperationName"].asString();
+		if(!valueClusterOperationListClusterOperation["StartTime"].isNull())
+			clusterOperationListObject.startTime = valueClusterOperationListClusterOperation["StartTime"].asString();
+		if(!valueClusterOperationListClusterOperation["Duration"].isNull())
+			clusterOperationListObject.duration = valueClusterOperationListClusterOperation["Duration"].asString();
+		if(!valueClusterOperationListClusterOperation["Status"].isNull())
+			clusterOperationListObject.status = valueClusterOperationListClusterOperation["Status"].asString();
+		if(!valueClusterOperationListClusterOperation["Percentage"].isNull())
+			clusterOperationListObject.percentage = valueClusterOperationListClusterOperation["Percentage"].asString();
+		if(!valueClusterOperationListClusterOperation["Comment"].isNull())
+			clusterOperationListObject.comment = valueClusterOperationListClusterOperation["Comment"].asString();
 		clusterOperationList_.push_back(clusterOperationListObject);
 	}
 	if(!value["TotalCount"].isNull())

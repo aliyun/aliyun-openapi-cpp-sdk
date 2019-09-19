@@ -39,44 +39,44 @@ void DescribeLoginLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogList = value["LogList"]["LogListItem"];
-	for (auto value : allLogList)
+	auto allLogListNode = value["LogList"]["LogListItem"];
+	for (auto valueLogListLogListItem : allLogListNode)
 	{
 		LogListItem logListObject;
-		if(!value["LoginSourceIp"].isNull())
-			logListObject.loginSourceIp = value["LoginSourceIp"].asString();
-		if(!value["InstanceName"].isNull())
-			logListObject.instanceName = value["InstanceName"].asString();
-		if(!value["GroupId"].isNull())
-			logListObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["Ip"].isNull())
-			logListObject.ip = value["Ip"].asString();
-		if(!value["Type"].isNull())
-			logListObject.type = value["Type"].asString();
-		if(!value["UserName"].isNull())
-			logListObject.userName = value["UserName"].asString();
-		if(!value["Uuid"].isNull())
-			logListObject.uuid = value["Uuid"].asString();
-		if(!value["Protocol"].isNull())
-			logListObject.protocol = std::stoi(value["Protocol"].asString());
-		if(!value["LoginTime"].isNull())
-			logListObject.loginTime = std::stol(value["LoginTime"].asString());
-		if(!value["InstanceId"].isNull())
-			logListObject.instanceId = value["InstanceId"].asString();
-		if(!value["OsVersion"].isNull())
-			logListObject.osVersion = value["OsVersion"].asString();
-		if(!value["ProtocolName"].isNull())
-			logListObject.protocolName = value["ProtocolName"].asString();
-		if(!value["Online"].isNull())
-			logListObject.online = value["Online"].asString();
-		if(!value["Location"].isNull())
-			logListObject.location = value["Location"].asString();
-		if(!value["id"].isNull())
-			logListObject.id = std::stol(value["id"].asString());
-		if(!value["Region"].isNull())
-			logListObject.region = value["Region"].asString();
-		if(!value["Status"].isNull())
-			logListObject.status = std::stoi(value["Status"].asString());
+		if(!valueLogListLogListItem["LoginSourceIp"].isNull())
+			logListObject.loginSourceIp = valueLogListLogListItem["LoginSourceIp"].asString();
+		if(!valueLogListLogListItem["InstanceName"].isNull())
+			logListObject.instanceName = valueLogListLogListItem["InstanceName"].asString();
+		if(!valueLogListLogListItem["GroupId"].isNull())
+			logListObject.groupId = std::stol(valueLogListLogListItem["GroupId"].asString());
+		if(!valueLogListLogListItem["Ip"].isNull())
+			logListObject.ip = valueLogListLogListItem["Ip"].asString();
+		if(!valueLogListLogListItem["Type"].isNull())
+			logListObject.type = valueLogListLogListItem["Type"].asString();
+		if(!valueLogListLogListItem["UserName"].isNull())
+			logListObject.userName = valueLogListLogListItem["UserName"].asString();
+		if(!valueLogListLogListItem["Uuid"].isNull())
+			logListObject.uuid = valueLogListLogListItem["Uuid"].asString();
+		if(!valueLogListLogListItem["Protocol"].isNull())
+			logListObject.protocol = std::stoi(valueLogListLogListItem["Protocol"].asString());
+		if(!valueLogListLogListItem["LoginTime"].isNull())
+			logListObject.loginTime = std::stol(valueLogListLogListItem["LoginTime"].asString());
+		if(!valueLogListLogListItem["InstanceId"].isNull())
+			logListObject.instanceId = valueLogListLogListItem["InstanceId"].asString();
+		if(!valueLogListLogListItem["OsVersion"].isNull())
+			logListObject.osVersion = valueLogListLogListItem["OsVersion"].asString();
+		if(!valueLogListLogListItem["ProtocolName"].isNull())
+			logListObject.protocolName = valueLogListLogListItem["ProtocolName"].asString();
+		if(!valueLogListLogListItem["Online"].isNull())
+			logListObject.online = valueLogListLogListItem["Online"].asString();
+		if(!valueLogListLogListItem["Location"].isNull())
+			logListObject.location = valueLogListLogListItem["Location"].asString();
+		if(!valueLogListLogListItem["id"].isNull())
+			logListObject.id = std::stol(valueLogListLogListItem["id"].asString());
+		if(!valueLogListLogListItem["Region"].isNull())
+			logListObject.region = valueLogListLogListItem["Region"].asString();
+		if(!valueLogListLogListItem["Status"].isNull())
+			logListObject.status = std::stoi(valueLogListLogListItem["Status"].asString());
 		logList_.push_back(logListObject);
 	}
 	if(!value["PageSize"].isNull())

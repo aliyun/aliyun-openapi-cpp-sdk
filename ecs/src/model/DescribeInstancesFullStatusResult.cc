@@ -39,22 +39,22 @@ void DescribeInstancesFullStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceFullStatusSet = value["InstanceFullStatusSet"]["InstanceFullStatusType"];
-	for (auto value : allInstanceFullStatusSet)
+	auto allInstanceFullStatusSetNode = value["InstanceFullStatusSet"]["InstanceFullStatusType"];
+	for (auto valueInstanceFullStatusSetInstanceFullStatusType : allInstanceFullStatusSetNode)
 	{
 		InstanceFullStatusType instanceFullStatusSetObject;
-		if(!value["InstanceId"].isNull())
-			instanceFullStatusSetObject.instanceId = value["InstanceId"].asString();
-		auto allScheduledSystemEventSet = value["ScheduledSystemEventSet"]["ScheduledSystemEventType"];
-		for (auto value : allScheduledSystemEventSet)
+		if(!valueInstanceFullStatusSetInstanceFullStatusType["InstanceId"].isNull())
+			instanceFullStatusSetObject.instanceId = valueInstanceFullStatusSetInstanceFullStatusType["InstanceId"].asString();
+		auto allScheduledSystemEventSetNode = allInstanceFullStatusSetNode["ScheduledSystemEventSet"]["ScheduledSystemEventType"];
+		for (auto allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType : allScheduledSystemEventSetNode)
 		{
 			InstanceFullStatusType::ScheduledSystemEventType scheduledSystemEventSetObject;
-			if(!value["EventId"].isNull())
-				scheduledSystemEventSetObject.eventId = value["EventId"].asString();
-			if(!value["EventPublishTime"].isNull())
-				scheduledSystemEventSetObject.eventPublishTime = value["EventPublishTime"].asString();
-			if(!value["NotBefore"].isNull())
-				scheduledSystemEventSetObject.notBefore = value["NotBefore"].asString();
+			if(!allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["EventId"].isNull())
+				scheduledSystemEventSetObject.eventId = allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["EventId"].asString();
+			if(!allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["EventPublishTime"].isNull())
+				scheduledSystemEventSetObject.eventPublishTime = allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["EventPublishTime"].asString();
+			if(!allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["NotBefore"].isNull())
+				scheduledSystemEventSetObject.notBefore = allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["NotBefore"].asString();
 			auto eventCycleStatusNode = value["EventCycleStatus"];
 			if(!eventCycleStatusNode["Code"].isNull())
 				scheduledSystemEventSetObject.eventCycleStatus.code = std::stoi(eventCycleStatusNode["Code"].asString());

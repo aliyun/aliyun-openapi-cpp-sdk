@@ -39,24 +39,24 @@ void DescribeSignaturesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSignatureInfos = value["SignatureInfos"]["SignatureInfo"];
-	for (auto value : allSignatureInfos)
+	auto allSignatureInfosNode = value["SignatureInfos"]["SignatureInfo"];
+	for (auto valueSignatureInfosSignatureInfo : allSignatureInfosNode)
 	{
 		SignatureInfo signatureInfosObject;
-		if(!value["RegionId"].isNull())
-			signatureInfosObject.regionId = value["RegionId"].asString();
-		if(!value["SignatureId"].isNull())
-			signatureInfosObject.signatureId = value["SignatureId"].asString();
-		if(!value["SignatureName"].isNull())
-			signatureInfosObject.signatureName = value["SignatureName"].asString();
-		if(!value["SignatureKey"].isNull())
-			signatureInfosObject.signatureKey = value["SignatureKey"].asString();
-		if(!value["SignatureSecret"].isNull())
-			signatureInfosObject.signatureSecret = value["SignatureSecret"].asString();
-		if(!value["CreatedTime"].isNull())
-			signatureInfosObject.createdTime = value["CreatedTime"].asString();
-		if(!value["ModifiedTime"].isNull())
-			signatureInfosObject.modifiedTime = value["ModifiedTime"].asString();
+		if(!valueSignatureInfosSignatureInfo["RegionId"].isNull())
+			signatureInfosObject.regionId = valueSignatureInfosSignatureInfo["RegionId"].asString();
+		if(!valueSignatureInfosSignatureInfo["SignatureId"].isNull())
+			signatureInfosObject.signatureId = valueSignatureInfosSignatureInfo["SignatureId"].asString();
+		if(!valueSignatureInfosSignatureInfo["SignatureName"].isNull())
+			signatureInfosObject.signatureName = valueSignatureInfosSignatureInfo["SignatureName"].asString();
+		if(!valueSignatureInfosSignatureInfo["SignatureKey"].isNull())
+			signatureInfosObject.signatureKey = valueSignatureInfosSignatureInfo["SignatureKey"].asString();
+		if(!valueSignatureInfosSignatureInfo["SignatureSecret"].isNull())
+			signatureInfosObject.signatureSecret = valueSignatureInfosSignatureInfo["SignatureSecret"].asString();
+		if(!valueSignatureInfosSignatureInfo["CreatedTime"].isNull())
+			signatureInfosObject.createdTime = valueSignatureInfosSignatureInfo["CreatedTime"].asString();
+		if(!valueSignatureInfosSignatureInfo["ModifiedTime"].isNull())
+			signatureInfosObject.modifiedTime = valueSignatureInfosSignatureInfo["ModifiedTime"].asString();
 		signatureInfos_.push_back(signatureInfosObject);
 	}
 	if(!value["TotalCount"].isNull())

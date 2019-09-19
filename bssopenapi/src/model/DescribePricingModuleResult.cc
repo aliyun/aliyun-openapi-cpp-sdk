@@ -40,45 +40,45 @@ void DescribePricingModuleResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allModuleList = value["ModuleList"]["Module"];
-	for (auto value : allModuleList)
+	auto allModuleListNode = dataNode["ModuleList"]["Module"];
+	for (auto dataNodeModuleListModule : allModuleListNode)
 	{
 		Data::Module moduleObject;
-		if(!value["ModuleCode"].isNull())
-			moduleObject.moduleCode = value["ModuleCode"].asString();
-		if(!value["ModuleName"].isNull())
-			moduleObject.moduleName = value["ModuleName"].asString();
-		if(!value["PriceType"].isNull())
-			moduleObject.priceType = value["PriceType"].asString();
-		if(!value["Currency"].isNull())
-			moduleObject.currency = value["Currency"].asString();
+		if(!dataNodeModuleListModule["ModuleCode"].isNull())
+			moduleObject.moduleCode = dataNodeModuleListModule["ModuleCode"].asString();
+		if(!dataNodeModuleListModule["ModuleName"].isNull())
+			moduleObject.moduleName = dataNodeModuleListModule["ModuleName"].asString();
+		if(!dataNodeModuleListModule["PriceType"].isNull())
+			moduleObject.priceType = dataNodeModuleListModule["PriceType"].asString();
+		if(!dataNodeModuleListModule["Currency"].isNull())
+			moduleObject.currency = dataNodeModuleListModule["Currency"].asString();
 		auto allConfigList = value["ConfigList"]["ConfigList"];
 		for (auto value : allConfigList)
 			moduleObject.configList.push_back(value.asString());
 		data_.moduleList.push_back(moduleObject);
 	}
-	auto allAttributeList = value["AttributeList"]["Attribute"];
-	for (auto value : allAttributeList)
+	auto allAttributeListNode = dataNode["AttributeList"]["Attribute"];
+	for (auto dataNodeAttributeListAttribute : allAttributeListNode)
 	{
 		Data::Attribute attributeObject;
-		if(!value["Code"].isNull())
-			attributeObject.code = value["Code"].asString();
-		if(!value["Name"].isNull())
-			attributeObject.name = value["Name"].asString();
-		if(!value["Unit"].isNull())
-			attributeObject.unit = value["Unit"].asString();
-		auto allValues = value["Values"]["AttributeValue"];
-		for (auto value : allValues)
+		if(!dataNodeAttributeListAttribute["Code"].isNull())
+			attributeObject.code = dataNodeAttributeListAttribute["Code"].asString();
+		if(!dataNodeAttributeListAttribute["Name"].isNull())
+			attributeObject.name = dataNodeAttributeListAttribute["Name"].asString();
+		if(!dataNodeAttributeListAttribute["Unit"].isNull())
+			attributeObject.unit = dataNodeAttributeListAttribute["Unit"].asString();
+		auto allValuesNode = allAttributeListNode["Values"]["AttributeValue"];
+		for (auto allAttributeListNodeValuesAttributeValue : allValuesNode)
 		{
 			Data::Attribute::AttributeValue valuesObject;
-			if(!value["Type"].isNull())
-				valuesObject.type = value["Type"].asString();
-			if(!value["Name"].isNull())
-				valuesObject.name = value["Name"].asString();
-			if(!value["Value"].isNull())
-				valuesObject.value = value["Value"].asString();
-			if(!value["Remark"].isNull())
-				valuesObject.remark = value["Remark"].asString();
+			if(!allAttributeListNodeValuesAttributeValue["Type"].isNull())
+				valuesObject.type = allAttributeListNodeValuesAttributeValue["Type"].asString();
+			if(!allAttributeListNodeValuesAttributeValue["Name"].isNull())
+				valuesObject.name = allAttributeListNodeValuesAttributeValue["Name"].asString();
+			if(!allAttributeListNodeValuesAttributeValue["Value"].isNull())
+				valuesObject.value = allAttributeListNodeValuesAttributeValue["Value"].asString();
+			if(!allAttributeListNodeValuesAttributeValue["Remark"].isNull())
+				valuesObject.remark = allAttributeListNodeValuesAttributeValue["Remark"].asString();
 			attributeObject.values.push_back(valuesObject);
 		}
 		data_.attributeList.push_back(attributeObject);

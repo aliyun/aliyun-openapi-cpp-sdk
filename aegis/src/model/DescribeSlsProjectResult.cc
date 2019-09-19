@@ -39,12 +39,12 @@ void DescribeSlsProjectResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSlsProjectData = value["SlsProjectData"]["SlsProjectDataItem"];
-	for (auto value : allSlsProjectData)
+	auto allSlsProjectDataNode = value["SlsProjectData"]["SlsProjectDataItem"];
+	for (auto valueSlsProjectDataSlsProjectDataItem : allSlsProjectDataNode)
 	{
 		SlsProjectDataItem slsProjectDataObject;
-		if(!value["Project"].isNull())
-			slsProjectDataObject.project = value["Project"].asString();
+		if(!valueSlsProjectDataSlsProjectDataItem["Project"].isNull())
+			slsProjectDataObject.project = valueSlsProjectDataSlsProjectDataItem["Project"].asString();
 		auto allLogStore = value["LogStore"]["StringItem"];
 		for (auto value : allLogStore)
 			slsProjectDataObject.logStore.push_back(value.asString());

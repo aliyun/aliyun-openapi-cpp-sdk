@@ -39,76 +39,76 @@ void QueryMcuJobResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobResult = value["JobResult"]["Job"];
-	for (auto value : allJobResult)
+	auto allJobResultNode = value["JobResult"]["Job"];
+	for (auto valueJobResultJob : allJobResultNode)
 	{
 		Job jobResultObject;
-		if(!value["JobId"].isNull())
-			jobResultObject.jobId = value["JobId"].asString();
-		if(!value["UserData"].isNull())
-			jobResultObject.userData = value["UserData"].asString();
-		if(!value["TemplateId"].isNull())
-			jobResultObject.templateId = value["TemplateId"].asString();
-		if(!value["Template"].isNull())
-			jobResultObject._template = value["Template"].asString();
-		auto allOcrResult = value["OcrResult"]["Ocr"];
-		for (auto value : allOcrResult)
+		if(!valueJobResultJob["JobId"].isNull())
+			jobResultObject.jobId = valueJobResultJob["JobId"].asString();
+		if(!valueJobResultJob["UserData"].isNull())
+			jobResultObject.userData = valueJobResultJob["UserData"].asString();
+		if(!valueJobResultJob["TemplateId"].isNull())
+			jobResultObject.templateId = valueJobResultJob["TemplateId"].asString();
+		if(!valueJobResultJob["Template"].isNull())
+			jobResultObject._template = valueJobResultJob["Template"].asString();
+		auto allOcrResultNode = allJobResultNode["OcrResult"]["Ocr"];
+		for (auto allJobResultNodeOcrResultOcr : allOcrResultNode)
 		{
 			Job::Ocr ocrResultObject;
-			if(!value["Time"].isNull())
-				ocrResultObject.time = value["Time"].asString();
-			if(!value["OcrText"].isNull())
-				ocrResultObject.ocrText = value["OcrText"].asString();
-			if(!value["ImageUrl"].isNull())
-				ocrResultObject.imageUrl = value["ImageUrl"].asString();
-			if(!value["ImageId"].isNull())
-				ocrResultObject.imageId = value["ImageId"].asString();
+			if(!allJobResultNodeOcrResultOcr["Time"].isNull())
+				ocrResultObject.time = allJobResultNodeOcrResultOcr["Time"].asString();
+			if(!allJobResultNodeOcrResultOcr["OcrText"].isNull())
+				ocrResultObject.ocrText = allJobResultNodeOcrResultOcr["OcrText"].asString();
+			if(!allJobResultNodeOcrResultOcr["ImageUrl"].isNull())
+				ocrResultObject.imageUrl = allJobResultNodeOcrResultOcr["ImageUrl"].asString();
+			if(!allJobResultNodeOcrResultOcr["ImageId"].isNull())
+				ocrResultObject.imageId = allJobResultNodeOcrResultOcr["ImageId"].asString();
 			jobResultObject.ocrResult.push_back(ocrResultObject);
 		}
-		auto allTagResult = value["TagResult"]["Tag"];
-		for (auto value : allTagResult)
+		auto allTagResultNode = allJobResultNode["TagResult"]["Tag"];
+		for (auto allJobResultNodeTagResultTag : allTagResultNode)
 		{
 			Job::Tag tagResultObject;
-			if(!value["Time"].isNull())
-				tagResultObject.time = value["Time"].asString();
-			if(!value["ImageUrl"].isNull())
-				tagResultObject.imageUrl = value["ImageUrl"].asString();
-			if(!value["ImageId"].isNull())
-				tagResultObject.imageId = value["ImageId"].asString();
-			auto allFrameTagInfos = value["FrameTagInfos"]["FrameTagInfo"];
-			for (auto value : allFrameTagInfos)
+			if(!allJobResultNodeTagResultTag["Time"].isNull())
+				tagResultObject.time = allJobResultNodeTagResultTag["Time"].asString();
+			if(!allJobResultNodeTagResultTag["ImageUrl"].isNull())
+				tagResultObject.imageUrl = allJobResultNodeTagResultTag["ImageUrl"].asString();
+			if(!allJobResultNodeTagResultTag["ImageId"].isNull())
+				tagResultObject.imageId = allJobResultNodeTagResultTag["ImageId"].asString();
+			auto allFrameTagInfosNode = allTagResultNode["FrameTagInfos"]["FrameTagInfo"];
+			for (auto allTagResultNodeFrameTagInfosFrameTagInfo : allFrameTagInfosNode)
 			{
 				Job::Tag::FrameTagInfo frameTagInfosObject;
-				if(!value["Tag"].isNull())
-					frameTagInfosObject.tag = value["Tag"].asString();
-				if(!value["Score"].isNull())
-					frameTagInfosObject.score = value["Score"].asString();
-				if(!value["Category"].isNull())
-					frameTagInfosObject.category = value["Category"].asString();
+				if(!allTagResultNodeFrameTagInfosFrameTagInfo["Tag"].isNull())
+					frameTagInfosObject.tag = allTagResultNodeFrameTagInfosFrameTagInfo["Tag"].asString();
+				if(!allTagResultNodeFrameTagInfosFrameTagInfo["Score"].isNull())
+					frameTagInfosObject.score = allTagResultNodeFrameTagInfosFrameTagInfo["Score"].asString();
+				if(!allTagResultNodeFrameTagInfosFrameTagInfo["Category"].isNull())
+					frameTagInfosObject.category = allTagResultNodeFrameTagInfosFrameTagInfo["Category"].asString();
 				tagResultObject.frameTagInfos.push_back(frameTagInfosObject);
 			}
 			jobResultObject.tagResult.push_back(tagResultObject);
 		}
-		auto allFaceResult = value["FaceResult"]["Face"];
-		for (auto value : allFaceResult)
+		auto allFaceResultNode = allJobResultNode["FaceResult"]["Face"];
+		for (auto allJobResultNodeFaceResultFace : allFaceResultNode)
 		{
 			Job::Face faceResultObject;
-			if(!value["Time"].isNull())
-				faceResultObject.time = value["Time"].asString();
-			if(!value["ImageUrl"].isNull())
-				faceResultObject.imageUrl = value["ImageUrl"].asString();
-			if(!value["ImageId"].isNull())
-				faceResultObject.imageId = value["ImageId"].asString();
-			auto allCelebrities = value["Celebrities"]["Celebrity"];
-			for (auto value : allCelebrities)
+			if(!allJobResultNodeFaceResultFace["Time"].isNull())
+				faceResultObject.time = allJobResultNodeFaceResultFace["Time"].asString();
+			if(!allJobResultNodeFaceResultFace["ImageUrl"].isNull())
+				faceResultObject.imageUrl = allJobResultNodeFaceResultFace["ImageUrl"].asString();
+			if(!allJobResultNodeFaceResultFace["ImageId"].isNull())
+				faceResultObject.imageId = allJobResultNodeFaceResultFace["ImageId"].asString();
+			auto allCelebritiesNode = allFaceResultNode["Celebrities"]["Celebrity"];
+			for (auto allFaceResultNodeCelebritiesCelebrity : allCelebritiesNode)
 			{
 				Job::Face::Celebrity celebritiesObject;
-				if(!value["Name"].isNull())
-					celebritiesObject.name = value["Name"].asString();
-				if(!value["Score"].isNull())
-					celebritiesObject.score = value["Score"].asString();
-				if(!value["Target"].isNull())
-					celebritiesObject.target = value["Target"].asString();
+				if(!allFaceResultNodeCelebritiesCelebrity["Name"].isNull())
+					celebritiesObject.name = allFaceResultNodeCelebritiesCelebrity["Name"].asString();
+				if(!allFaceResultNodeCelebritiesCelebrity["Score"].isNull())
+					celebritiesObject.score = allFaceResultNodeCelebritiesCelebrity["Score"].asString();
+				if(!allFaceResultNodeCelebritiesCelebrity["Target"].isNull())
+					celebritiesObject.target = allFaceResultNodeCelebritiesCelebrity["Target"].asString();
 				faceResultObject.celebrities.push_back(celebritiesObject);
 			}
 			jobResultObject.faceResult.push_back(faceResultObject);
@@ -123,33 +123,33 @@ void QueryMcuJobResult::parse(const std::string &payload)
 		auto asrResultNode = value["AsrResult"];
 		if(!asrResultNode["Duration"].isNull())
 			jobResultObject.asrResult.duration = asrResultNode["Duration"].asString();
-		auto allAsrTextList = value["AsrTextList"]["AsrText"];
-		for (auto value : allAsrTextList)
+		auto allAsrTextListNode = asrResultNode["AsrTextList"]["AsrText"];
+		for (auto asrResultNodeAsrTextListAsrText : allAsrTextListNode)
 		{
 			Job::AsrResult::AsrText asrTextObject;
-			if(!value["StartTime"].isNull())
-				asrTextObject.startTime = std::stoi(value["StartTime"].asString());
-			if(!value["EndTime"].isNull())
-				asrTextObject.endTime = value["EndTime"].asString();
-			if(!value["ChannelId"].isNull())
-				asrTextObject.channelId = value["ChannelId"].asString();
-			if(!value["SpeechRate"].isNull())
-				asrTextObject.speechRate = value["SpeechRate"].asString();
-			if(!value["Text"].isNull())
-				asrTextObject.text = value["Text"].asString();
+			if(!asrResultNodeAsrTextListAsrText["StartTime"].isNull())
+				asrTextObject.startTime = std::stoi(asrResultNodeAsrTextListAsrText["StartTime"].asString());
+			if(!asrResultNodeAsrTextListAsrText["EndTime"].isNull())
+				asrTextObject.endTime = asrResultNodeAsrTextListAsrText["EndTime"].asString();
+			if(!asrResultNodeAsrTextListAsrText["ChannelId"].isNull())
+				asrTextObject.channelId = asrResultNodeAsrTextListAsrText["ChannelId"].asString();
+			if(!asrResultNodeAsrTextListAsrText["SpeechRate"].isNull())
+				asrTextObject.speechRate = asrResultNodeAsrTextListAsrText["SpeechRate"].asString();
+			if(!asrResultNodeAsrTextListAsrText["Text"].isNull())
+				asrTextObject.text = asrResultNodeAsrTextListAsrText["Text"].asString();
 			jobResultObject.asrResult.asrTextList.push_back(asrTextObject);
 		}
 		auto categoryResultNode = value["CategoryResult"];
 		if(!categoryResultNode["Details"].isNull())
 			jobResultObject.categoryResult.details = categoryResultNode["Details"].asString();
-		auto allCategories = value["Categories"]["Category"];
-		for (auto value : allCategories)
+		auto allCategoriesNode = categoryResultNode["Categories"]["Category"];
+		for (auto categoryResultNodeCategoriesCategory : allCategoriesNode)
 		{
 			Job::CategoryResult::Category categoryObject;
-			if(!value["Label"].isNull())
-				categoryObject.label = value["Label"].asString();
-			if(!value["Score"].isNull())
-				categoryObject.score = value["Score"].asString();
+			if(!categoryResultNodeCategoriesCategory["Label"].isNull())
+				categoryObject.label = categoryResultNodeCategoriesCategory["Label"].asString();
+			if(!categoryResultNodeCategoriesCategory["Score"].isNull())
+				categoryObject.score = categoryResultNodeCategoriesCategory["Score"].asString();
 			jobResultObject.categoryResult.categories.push_back(categoryObject);
 		}
 		jobResult_.push_back(jobResultObject);

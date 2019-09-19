@@ -39,20 +39,20 @@ void DescribeRecordDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRecordDetailInfos = value["RecordDetailInfos"]["RecordDetailInfo"];
-	for (auto value : allRecordDetailInfos)
+	auto allRecordDetailInfosNode = value["RecordDetailInfos"]["RecordDetailInfo"];
+	for (auto valueRecordDetailInfosRecordDetailInfo : allRecordDetailInfosNode)
 	{
 		RecordDetailInfo recordDetailInfosObject;
-		if(!value["Uid"].isNull())
-			recordDetailInfosObject.uid = value["Uid"].asString();
-		if(!value["StartTime"].isNull())
-			recordDetailInfosObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			recordDetailInfosObject.endTime = value["EndTime"].asString();
-		if(!value["DeviceType"].isNull())
-			recordDetailInfosObject.deviceType = value["DeviceType"].asString();
-		if(!value["SDKVersion"].isNull())
-			recordDetailInfosObject.sDKVersion = value["SDKVersion"].asString();
+		if(!valueRecordDetailInfosRecordDetailInfo["Uid"].isNull())
+			recordDetailInfosObject.uid = valueRecordDetailInfosRecordDetailInfo["Uid"].asString();
+		if(!valueRecordDetailInfosRecordDetailInfo["StartTime"].isNull())
+			recordDetailInfosObject.startTime = valueRecordDetailInfosRecordDetailInfo["StartTime"].asString();
+		if(!valueRecordDetailInfosRecordDetailInfo["EndTime"].isNull())
+			recordDetailInfosObject.endTime = valueRecordDetailInfosRecordDetailInfo["EndTime"].asString();
+		if(!valueRecordDetailInfosRecordDetailInfo["DeviceType"].isNull())
+			recordDetailInfosObject.deviceType = valueRecordDetailInfosRecordDetailInfo["DeviceType"].asString();
+		if(!valueRecordDetailInfosRecordDetailInfo["SDKVersion"].isNull())
+			recordDetailInfosObject.sDKVersion = valueRecordDetailInfosRecordDetailInfo["SDKVersion"].asString();
 		recordDetailInfos_.push_back(recordDetailInfosObject);
 	}
 	auto durationNode = value["Duration"];

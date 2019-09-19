@@ -39,14 +39,14 @@ void DescribeDomainSrcBpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSrcBpsDataPerInterval = value["SrcBpsDataPerInterval"]["DataModule"];
-	for (auto value : allSrcBpsDataPerInterval)
+	auto allSrcBpsDataPerIntervalNode = value["SrcBpsDataPerInterval"]["DataModule"];
+	for (auto valueSrcBpsDataPerIntervalDataModule : allSrcBpsDataPerIntervalNode)
 	{
 		DataModule srcBpsDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			srcBpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			srcBpsDataPerIntervalObject.value = value["Value"].asString();
+		if(!valueSrcBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			srcBpsDataPerIntervalObject.timeStamp = valueSrcBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueSrcBpsDataPerIntervalDataModule["Value"].isNull())
+			srcBpsDataPerIntervalObject.value = valueSrcBpsDataPerIntervalDataModule["Value"].asString();
 		srcBpsDataPerInterval_.push_back(srcBpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

@@ -39,32 +39,32 @@ void ListClusterServiceComponentHealthInfoResult::parse(const std::string &paylo
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHealthInfoList = value["HealthInfoList"]["HealthInfo"];
-	for (auto value : allHealthInfoList)
+	auto allHealthInfoListNode = value["HealthInfoList"]["HealthInfo"];
+	for (auto valueHealthInfoListHealthInfo : allHealthInfoListNode)
 	{
 		HealthInfo healthInfoListObject;
-		if(!value["ServiceName"].isNull())
-			healthInfoListObject.serviceName = value["ServiceName"].asString();
-		if(!value["ComponentName"].isNull())
-			healthInfoListObject.componentName = value["ComponentName"].asString();
-		if(!value["HealthLevel"].isNull())
-			healthInfoListObject.healthLevel = value["HealthLevel"].asString();
-		if(!value["StoppedNum"].isNull())
-			healthInfoListObject.stoppedNum = std::stoi(value["StoppedNum"].asString());
-		if(!value["ManualStoppedNum"].isNull())
-			healthInfoListObject.manualStoppedNum = std::stoi(value["ManualStoppedNum"].asString());
-		if(!value["NormalNum"].isNull())
-			healthInfoListObject.normalNum = std::stoi(value["NormalNum"].asString());
-		if(!value["TotalNum"].isNull())
-			healthInfoListObject.totalNum = std::stoi(value["TotalNum"].asString());
-		if(!value["AgentHeartBeatLostNum"].isNull())
-			healthInfoListObject.agentHeartBeatLostNum = std::stoi(value["AgentHeartBeatLostNum"].asString());
-		auto allHealthDetailList = value["HealthDetailList"]["HealthDetail"];
-		for (auto value : allHealthDetailList)
+		if(!valueHealthInfoListHealthInfo["ServiceName"].isNull())
+			healthInfoListObject.serviceName = valueHealthInfoListHealthInfo["ServiceName"].asString();
+		if(!valueHealthInfoListHealthInfo["ComponentName"].isNull())
+			healthInfoListObject.componentName = valueHealthInfoListHealthInfo["ComponentName"].asString();
+		if(!valueHealthInfoListHealthInfo["HealthLevel"].isNull())
+			healthInfoListObject.healthLevel = valueHealthInfoListHealthInfo["HealthLevel"].asString();
+		if(!valueHealthInfoListHealthInfo["StoppedNum"].isNull())
+			healthInfoListObject.stoppedNum = std::stoi(valueHealthInfoListHealthInfo["StoppedNum"].asString());
+		if(!valueHealthInfoListHealthInfo["ManualStoppedNum"].isNull())
+			healthInfoListObject.manualStoppedNum = std::stoi(valueHealthInfoListHealthInfo["ManualStoppedNum"].asString());
+		if(!valueHealthInfoListHealthInfo["NormalNum"].isNull())
+			healthInfoListObject.normalNum = std::stoi(valueHealthInfoListHealthInfo["NormalNum"].asString());
+		if(!valueHealthInfoListHealthInfo["TotalNum"].isNull())
+			healthInfoListObject.totalNum = std::stoi(valueHealthInfoListHealthInfo["TotalNum"].asString());
+		if(!valueHealthInfoListHealthInfo["AgentHeartBeatLostNum"].isNull())
+			healthInfoListObject.agentHeartBeatLostNum = std::stoi(valueHealthInfoListHealthInfo["AgentHeartBeatLostNum"].asString());
+		auto allHealthDetailListNode = allHealthInfoListNode["HealthDetailList"]["HealthDetail"];
+		for (auto allHealthInfoListNodeHealthDetailListHealthDetail : allHealthDetailListNode)
 		{
 			HealthInfo::HealthDetail healthDetailListObject;
-			if(!value["code"].isNull())
-				healthDetailListObject.code = value["code"].asString();
+			if(!allHealthInfoListNodeHealthDetailListHealthDetail["code"].isNull())
+				healthDetailListObject.code = allHealthInfoListNodeHealthDetailListHealthDetail["code"].asString();
 			auto healthRuleParamNode = value["HealthRuleParam"];
 			if(!healthRuleParamNode["Service"].isNull())
 				healthDetailListObject.healthRuleParam.service = healthRuleParamNode["Service"].asString();

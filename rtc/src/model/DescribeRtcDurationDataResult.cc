@@ -39,24 +39,24 @@ void DescribeRtcDurationDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDurationDataPerInterval = value["DurationDataPerInterval"]["DurationModule"];
-	for (auto value : allDurationDataPerInterval)
+	auto allDurationDataPerIntervalNode = value["DurationDataPerInterval"]["DurationModule"];
+	for (auto valueDurationDataPerIntervalDurationModule : allDurationDataPerIntervalNode)
 	{
 		DurationModule durationDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			durationDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["TotalDuration"].isNull())
-			durationDataPerIntervalObject.totalDuration = std::stol(value["TotalDuration"].asString());
-		if(!value["AudioDuration"].isNull())
-			durationDataPerIntervalObject.audioDuration = std::stol(value["AudioDuration"].asString());
-		if(!value["V360Duration"].isNull())
-			durationDataPerIntervalObject.v360Duration = std::stol(value["V360Duration"].asString());
-		if(!value["V720Duration"].isNull())
-			durationDataPerIntervalObject.v720Duration = std::stol(value["V720Duration"].asString());
-		if(!value["V1080Duration"].isNull())
-			durationDataPerIntervalObject.v1080Duration = std::stol(value["V1080Duration"].asString());
-		if(!value["ContentDuration"].isNull())
-			durationDataPerIntervalObject.contentDuration = std::stol(value["ContentDuration"].asString());
+		if(!valueDurationDataPerIntervalDurationModule["TimeStamp"].isNull())
+			durationDataPerIntervalObject.timeStamp = valueDurationDataPerIntervalDurationModule["TimeStamp"].asString();
+		if(!valueDurationDataPerIntervalDurationModule["TotalDuration"].isNull())
+			durationDataPerIntervalObject.totalDuration = std::stol(valueDurationDataPerIntervalDurationModule["TotalDuration"].asString());
+		if(!valueDurationDataPerIntervalDurationModule["AudioDuration"].isNull())
+			durationDataPerIntervalObject.audioDuration = std::stol(valueDurationDataPerIntervalDurationModule["AudioDuration"].asString());
+		if(!valueDurationDataPerIntervalDurationModule["V360Duration"].isNull())
+			durationDataPerIntervalObject.v360Duration = std::stol(valueDurationDataPerIntervalDurationModule["V360Duration"].asString());
+		if(!valueDurationDataPerIntervalDurationModule["V720Duration"].isNull())
+			durationDataPerIntervalObject.v720Duration = std::stol(valueDurationDataPerIntervalDurationModule["V720Duration"].asString());
+		if(!valueDurationDataPerIntervalDurationModule["V1080Duration"].isNull())
+			durationDataPerIntervalObject.v1080Duration = std::stol(valueDurationDataPerIntervalDurationModule["V1080Duration"].asString());
+		if(!valueDurationDataPerIntervalDurationModule["ContentDuration"].isNull())
+			durationDataPerIntervalObject.contentDuration = std::stol(valueDurationDataPerIntervalDurationModule["ContentDuration"].asString());
 		durationDataPerInterval_.push_back(durationDataPerIntervalObject);
 	}
 

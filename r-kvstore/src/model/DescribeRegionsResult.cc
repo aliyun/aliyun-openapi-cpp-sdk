@@ -39,18 +39,18 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegionIds = value["RegionIds"]["KVStoreRegion"];
-	for (auto value : allRegionIds)
+	auto allRegionIdsNode = value["RegionIds"]["KVStoreRegion"];
+	for (auto valueRegionIdsKVStoreRegion : allRegionIdsNode)
 	{
 		KVStoreRegion regionIdsObject;
-		if(!value["RegionId"].isNull())
-			regionIdsObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneIds"].isNull())
-			regionIdsObject.zoneIds = value["ZoneIds"].asString();
-		if(!value["LocalName"].isNull())
-			regionIdsObject.localName = value["LocalName"].asString();
-		if(!value["RegionEndpoint"].isNull())
-			regionIdsObject.regionEndpoint = value["RegionEndpoint"].asString();
+		if(!valueRegionIdsKVStoreRegion["RegionId"].isNull())
+			regionIdsObject.regionId = valueRegionIdsKVStoreRegion["RegionId"].asString();
+		if(!valueRegionIdsKVStoreRegion["ZoneIds"].isNull())
+			regionIdsObject.zoneIds = valueRegionIdsKVStoreRegion["ZoneIds"].asString();
+		if(!valueRegionIdsKVStoreRegion["LocalName"].isNull())
+			regionIdsObject.localName = valueRegionIdsKVStoreRegion["LocalName"].asString();
+		if(!valueRegionIdsKVStoreRegion["RegionEndpoint"].isNull())
+			regionIdsObject.regionEndpoint = valueRegionIdsKVStoreRegion["RegionEndpoint"].asString();
 		auto allZoneIdList = value["ZoneIdList"]["ZoneId"];
 		for (auto value : allZoneIdList)
 			regionIdsObject.zoneIdList.push_back(value.asString());

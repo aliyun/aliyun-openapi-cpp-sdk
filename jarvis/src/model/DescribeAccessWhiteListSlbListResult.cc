@@ -39,20 +39,20 @@ void DescribeAccessWhiteListSlbListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSlbList = value["SlbList"]["Ecs"];
-	for (auto value : allSlbList)
+	auto allSlbListNode = value["SlbList"]["Ecs"];
+	for (auto valueSlbListEcs : allSlbListNode)
 	{
 		Ecs slbListObject;
-		if(!value["InstanceName"].isNull())
-			slbListObject.instanceName = value["InstanceName"].asString();
-		if(!value["InstanceId"].isNull())
-			slbListObject.instanceId = value["InstanceId"].asString();
-		if(!value["IP"].isNull())
-			slbListObject.iP = value["IP"].asString();
-		if(!value["Region"].isNull())
-			slbListObject.region = value["Region"].asString();
-		if(!value["ItemSign"].isNull())
-			slbListObject.itemSign = value["ItemSign"].asString();
+		if(!valueSlbListEcs["InstanceName"].isNull())
+			slbListObject.instanceName = valueSlbListEcs["InstanceName"].asString();
+		if(!valueSlbListEcs["InstanceId"].isNull())
+			slbListObject.instanceId = valueSlbListEcs["InstanceId"].asString();
+		if(!valueSlbListEcs["IP"].isNull())
+			slbListObject.iP = valueSlbListEcs["IP"].asString();
+		if(!valueSlbListEcs["Region"].isNull())
+			slbListObject.region = valueSlbListEcs["Region"].asString();
+		if(!valueSlbListEcs["ItemSign"].isNull())
+			slbListObject.itemSign = valueSlbListEcs["ItemSign"].asString();
 		slbList_.push_back(slbListObject);
 	}
 	if(!value["TotalCount"].isNull())

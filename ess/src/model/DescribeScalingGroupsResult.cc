@@ -39,86 +39,86 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allScalingGroups = value["ScalingGroups"]["ScalingGroup"];
-	for (auto value : allScalingGroups)
+	auto allScalingGroupsNode = value["ScalingGroups"]["ScalingGroup"];
+	for (auto valueScalingGroupsScalingGroup : allScalingGroupsNode)
 	{
 		ScalingGroup scalingGroupsObject;
-		if(!value["DefaultCooldown"].isNull())
-			scalingGroupsObject.defaultCooldown = std::stoi(value["DefaultCooldown"].asString());
-		if(!value["MaxSize"].isNull())
-			scalingGroupsObject.maxSize = std::stoi(value["MaxSize"].asString());
-		if(!value["PendingWaitCapacity"].isNull())
-			scalingGroupsObject.pendingWaitCapacity = std::stoi(value["PendingWaitCapacity"].asString());
-		if(!value["RemovingWaitCapacity"].isNull())
-			scalingGroupsObject.removingWaitCapacity = std::stoi(value["RemovingWaitCapacity"].asString());
-		if(!value["PendingCapacity"].isNull())
-			scalingGroupsObject.pendingCapacity = std::stoi(value["PendingCapacity"].asString());
-		if(!value["RemovingCapacity"].isNull())
-			scalingGroupsObject.removingCapacity = std::stoi(value["RemovingCapacity"].asString());
-		if(!value["ScalingGroupName"].isNull())
-			scalingGroupsObject.scalingGroupName = value["ScalingGroupName"].asString();
-		if(!value["ActiveCapacity"].isNull())
-			scalingGroupsObject.activeCapacity = std::stoi(value["ActiveCapacity"].asString());
-		if(!value["StandbyCapacity"].isNull())
-			scalingGroupsObject.standbyCapacity = std::stoi(value["StandbyCapacity"].asString());
-		if(!value["ProtectedCapacity"].isNull())
-			scalingGroupsObject.protectedCapacity = std::stoi(value["ProtectedCapacity"].asString());
-		if(!value["ActiveScalingConfigurationId"].isNull())
-			scalingGroupsObject.activeScalingConfigurationId = value["ActiveScalingConfigurationId"].asString();
-		if(!value["LaunchTemplateId"].isNull())
-			scalingGroupsObject.launchTemplateId = value["LaunchTemplateId"].asString();
-		if(!value["LaunchTemplateVersion"].isNull())
-			scalingGroupsObject.launchTemplateVersion = value["LaunchTemplateVersion"].asString();
-		if(!value["ScalingGroupId"].isNull())
-			scalingGroupsObject.scalingGroupId = value["ScalingGroupId"].asString();
-		if(!value["RegionId"].isNull())
-			scalingGroupsObject.regionId = value["RegionId"].asString();
-		if(!value["TotalCapacity"].isNull())
-			scalingGroupsObject.totalCapacity = std::stoi(value["TotalCapacity"].asString());
-		if(!value["MinSize"].isNull())
-			scalingGroupsObject.minSize = std::stoi(value["MinSize"].asString());
-		if(!value["LifecycleState"].isNull())
-			scalingGroupsObject.lifecycleState = value["LifecycleState"].asString();
-		if(!value["CreationTime"].isNull())
-			scalingGroupsObject.creationTime = value["CreationTime"].asString();
-		if(!value["ModificationTime"].isNull())
-			scalingGroupsObject.modificationTime = value["ModificationTime"].asString();
-		if(!value["VpcId"].isNull())
-			scalingGroupsObject.vpcId = value["VpcId"].asString();
-		if(!value["VSwitchId"].isNull())
-			scalingGroupsObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["MultiAZPolicy"].isNull())
-			scalingGroupsObject.multiAZPolicy = value["MultiAZPolicy"].asString();
-		if(!value["HealthCheckType"].isNull())
-			scalingGroupsObject.healthCheckType = value["HealthCheckType"].asString();
-		if(!value["ScalingPolicy"].isNull())
-			scalingGroupsObject.scalingPolicy = value["ScalingPolicy"].asString();
-		if(!value["StoppedCapacity"].isNull())
-			scalingGroupsObject.stoppedCapacity = std::stoi(value["StoppedCapacity"].asString());
-		if(!value["OnDemandBaseCapacity"].isNull())
-			scalingGroupsObject.onDemandBaseCapacity = std::stoi(value["OnDemandBaseCapacity"].asString());
-		if(!value["OnDemandPercentageAboveBaseCapacity"].isNull())
-			scalingGroupsObject.onDemandPercentageAboveBaseCapacity = std::stoi(value["OnDemandPercentageAboveBaseCapacity"].asString());
-		if(!value["SpotInstanceRemedy"].isNull())
-			scalingGroupsObject.spotInstanceRemedy = value["SpotInstanceRemedy"].asString() == "true";
-		if(!value["SpotInstancePools"].isNull())
-			scalingGroupsObject.spotInstancePools = std::stoi(value["SpotInstancePools"].asString());
-		auto allVServerGroups = value["VServerGroups"]["VServerGroup"];
-		for (auto value : allVServerGroups)
+		if(!valueScalingGroupsScalingGroup["DefaultCooldown"].isNull())
+			scalingGroupsObject.defaultCooldown = std::stoi(valueScalingGroupsScalingGroup["DefaultCooldown"].asString());
+		if(!valueScalingGroupsScalingGroup["MaxSize"].isNull())
+			scalingGroupsObject.maxSize = std::stoi(valueScalingGroupsScalingGroup["MaxSize"].asString());
+		if(!valueScalingGroupsScalingGroup["PendingWaitCapacity"].isNull())
+			scalingGroupsObject.pendingWaitCapacity = std::stoi(valueScalingGroupsScalingGroup["PendingWaitCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["RemovingWaitCapacity"].isNull())
+			scalingGroupsObject.removingWaitCapacity = std::stoi(valueScalingGroupsScalingGroup["RemovingWaitCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["PendingCapacity"].isNull())
+			scalingGroupsObject.pendingCapacity = std::stoi(valueScalingGroupsScalingGroup["PendingCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["RemovingCapacity"].isNull())
+			scalingGroupsObject.removingCapacity = std::stoi(valueScalingGroupsScalingGroup["RemovingCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["ScalingGroupName"].isNull())
+			scalingGroupsObject.scalingGroupName = valueScalingGroupsScalingGroup["ScalingGroupName"].asString();
+		if(!valueScalingGroupsScalingGroup["ActiveCapacity"].isNull())
+			scalingGroupsObject.activeCapacity = std::stoi(valueScalingGroupsScalingGroup["ActiveCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["StandbyCapacity"].isNull())
+			scalingGroupsObject.standbyCapacity = std::stoi(valueScalingGroupsScalingGroup["StandbyCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["ProtectedCapacity"].isNull())
+			scalingGroupsObject.protectedCapacity = std::stoi(valueScalingGroupsScalingGroup["ProtectedCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["ActiveScalingConfigurationId"].isNull())
+			scalingGroupsObject.activeScalingConfigurationId = valueScalingGroupsScalingGroup["ActiveScalingConfigurationId"].asString();
+		if(!valueScalingGroupsScalingGroup["LaunchTemplateId"].isNull())
+			scalingGroupsObject.launchTemplateId = valueScalingGroupsScalingGroup["LaunchTemplateId"].asString();
+		if(!valueScalingGroupsScalingGroup["LaunchTemplateVersion"].isNull())
+			scalingGroupsObject.launchTemplateVersion = valueScalingGroupsScalingGroup["LaunchTemplateVersion"].asString();
+		if(!valueScalingGroupsScalingGroup["ScalingGroupId"].isNull())
+			scalingGroupsObject.scalingGroupId = valueScalingGroupsScalingGroup["ScalingGroupId"].asString();
+		if(!valueScalingGroupsScalingGroup["RegionId"].isNull())
+			scalingGroupsObject.regionId = valueScalingGroupsScalingGroup["RegionId"].asString();
+		if(!valueScalingGroupsScalingGroup["TotalCapacity"].isNull())
+			scalingGroupsObject.totalCapacity = std::stoi(valueScalingGroupsScalingGroup["TotalCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["MinSize"].isNull())
+			scalingGroupsObject.minSize = std::stoi(valueScalingGroupsScalingGroup["MinSize"].asString());
+		if(!valueScalingGroupsScalingGroup["LifecycleState"].isNull())
+			scalingGroupsObject.lifecycleState = valueScalingGroupsScalingGroup["LifecycleState"].asString();
+		if(!valueScalingGroupsScalingGroup["CreationTime"].isNull())
+			scalingGroupsObject.creationTime = valueScalingGroupsScalingGroup["CreationTime"].asString();
+		if(!valueScalingGroupsScalingGroup["ModificationTime"].isNull())
+			scalingGroupsObject.modificationTime = valueScalingGroupsScalingGroup["ModificationTime"].asString();
+		if(!valueScalingGroupsScalingGroup["VpcId"].isNull())
+			scalingGroupsObject.vpcId = valueScalingGroupsScalingGroup["VpcId"].asString();
+		if(!valueScalingGroupsScalingGroup["VSwitchId"].isNull())
+			scalingGroupsObject.vSwitchId = valueScalingGroupsScalingGroup["VSwitchId"].asString();
+		if(!valueScalingGroupsScalingGroup["MultiAZPolicy"].isNull())
+			scalingGroupsObject.multiAZPolicy = valueScalingGroupsScalingGroup["MultiAZPolicy"].asString();
+		if(!valueScalingGroupsScalingGroup["HealthCheckType"].isNull())
+			scalingGroupsObject.healthCheckType = valueScalingGroupsScalingGroup["HealthCheckType"].asString();
+		if(!valueScalingGroupsScalingGroup["ScalingPolicy"].isNull())
+			scalingGroupsObject.scalingPolicy = valueScalingGroupsScalingGroup["ScalingPolicy"].asString();
+		if(!valueScalingGroupsScalingGroup["StoppedCapacity"].isNull())
+			scalingGroupsObject.stoppedCapacity = std::stoi(valueScalingGroupsScalingGroup["StoppedCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["OnDemandBaseCapacity"].isNull())
+			scalingGroupsObject.onDemandBaseCapacity = std::stoi(valueScalingGroupsScalingGroup["OnDemandBaseCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["OnDemandPercentageAboveBaseCapacity"].isNull())
+			scalingGroupsObject.onDemandPercentageAboveBaseCapacity = std::stoi(valueScalingGroupsScalingGroup["OnDemandPercentageAboveBaseCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["SpotInstanceRemedy"].isNull())
+			scalingGroupsObject.spotInstanceRemedy = valueScalingGroupsScalingGroup["SpotInstanceRemedy"].asString() == "true";
+		if(!valueScalingGroupsScalingGroup["SpotInstancePools"].isNull())
+			scalingGroupsObject.spotInstancePools = std::stoi(valueScalingGroupsScalingGroup["SpotInstancePools"].asString());
+		auto allVServerGroupsNode = allScalingGroupsNode["VServerGroups"]["VServerGroup"];
+		for (auto allScalingGroupsNodeVServerGroupsVServerGroup : allVServerGroupsNode)
 		{
 			ScalingGroup::VServerGroup vServerGroupsObject;
-			if(!value["LoadBalancerId"].isNull())
-				vServerGroupsObject.loadBalancerId = value["LoadBalancerId"].asString();
-			auto allVServerGroupAttributes = value["VServerGroupAttributes"]["VServerGroupAttribute"];
-			for (auto value : allVServerGroupAttributes)
+			if(!allScalingGroupsNodeVServerGroupsVServerGroup["LoadBalancerId"].isNull())
+				vServerGroupsObject.loadBalancerId = allScalingGroupsNodeVServerGroupsVServerGroup["LoadBalancerId"].asString();
+			auto allVServerGroupAttributesNode = allVServerGroupsNode["VServerGroupAttributes"]["VServerGroupAttribute"];
+			for (auto allVServerGroupsNodeVServerGroupAttributesVServerGroupAttribute : allVServerGroupAttributesNode)
 			{
 				ScalingGroup::VServerGroup::VServerGroupAttribute vServerGroupAttributesObject;
-				if(!value["VServerGroupId"].isNull())
-					vServerGroupAttributesObject.vServerGroupId = value["VServerGroupId"].asString();
-				if(!value["Port"].isNull())
-					vServerGroupAttributesObject.port = std::stoi(value["Port"].asString());
-				if(!value["Weight"].isNull())
-					vServerGroupAttributesObject.weight = std::stoi(value["Weight"].asString());
+				if(!allVServerGroupsNodeVServerGroupAttributesVServerGroupAttribute["VServerGroupId"].isNull())
+					vServerGroupAttributesObject.vServerGroupId = allVServerGroupsNodeVServerGroupAttributesVServerGroupAttribute["VServerGroupId"].asString();
+				if(!allVServerGroupsNodeVServerGroupAttributesVServerGroupAttribute["Port"].isNull())
+					vServerGroupAttributesObject.port = std::stoi(allVServerGroupsNodeVServerGroupAttributesVServerGroupAttribute["Port"].asString());
+				if(!allVServerGroupsNodeVServerGroupAttributesVServerGroupAttribute["Weight"].isNull())
+					vServerGroupAttributesObject.weight = std::stoi(allVServerGroupsNodeVServerGroupAttributesVServerGroupAttribute["Weight"].asString());
 				vServerGroupsObject.vServerGroupAttributes.push_back(vServerGroupAttributesObject);
 			}
 			scalingGroupsObject.vServerGroups.push_back(vServerGroupsObject);

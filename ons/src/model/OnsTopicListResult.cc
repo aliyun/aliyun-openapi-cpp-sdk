@@ -39,28 +39,28 @@ void OnsTopicListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["PublishInfoDo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["PublishInfoDo"];
+	for (auto valueDataPublishInfoDo : allDataNode)
 	{
 		PublishInfoDo dataObject;
-		if(!value["Topic"].isNull())
-			dataObject.topic = value["Topic"].asString();
-		if(!value["Owner"].isNull())
-			dataObject.owner = value["Owner"].asString();
-		if(!value["Relation"].isNull())
-			dataObject.relation = std::stoi(value["Relation"].asString());
-		if(!value["RelationName"].isNull())
-			dataObject.relationName = value["RelationName"].asString();
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["Remark"].isNull())
-			dataObject.remark = value["Remark"].asString();
-		if(!value["MessageType"].isNull())
-			dataObject.messageType = std::stoi(value["MessageType"].asString());
-		if(!value["InstanceId"].isNull())
-			dataObject.instanceId = value["InstanceId"].asString();
-		if(!value["IndependentNaming"].isNull())
-			dataObject.independentNaming = value["IndependentNaming"].asString() == "true";
+		if(!valueDataPublishInfoDo["Topic"].isNull())
+			dataObject.topic = valueDataPublishInfoDo["Topic"].asString();
+		if(!valueDataPublishInfoDo["Owner"].isNull())
+			dataObject.owner = valueDataPublishInfoDo["Owner"].asString();
+		if(!valueDataPublishInfoDo["Relation"].isNull())
+			dataObject.relation = std::stoi(valueDataPublishInfoDo["Relation"].asString());
+		if(!valueDataPublishInfoDo["RelationName"].isNull())
+			dataObject.relationName = valueDataPublishInfoDo["RelationName"].asString();
+		if(!valueDataPublishInfoDo["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataPublishInfoDo["CreateTime"].asString());
+		if(!valueDataPublishInfoDo["Remark"].isNull())
+			dataObject.remark = valueDataPublishInfoDo["Remark"].asString();
+		if(!valueDataPublishInfoDo["MessageType"].isNull())
+			dataObject.messageType = std::stoi(valueDataPublishInfoDo["MessageType"].asString());
+		if(!valueDataPublishInfoDo["InstanceId"].isNull())
+			dataObject.instanceId = valueDataPublishInfoDo["InstanceId"].asString();
+		if(!valueDataPublishInfoDo["IndependentNaming"].isNull())
+			dataObject.independentNaming = valueDataPublishInfoDo["IndependentNaming"].asString() == "true";
 		data_.push_back(dataObject);
 	}
 	if(!value["HelpUrl"].isNull())

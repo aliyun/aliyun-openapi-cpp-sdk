@@ -39,24 +39,24 @@ void DescribeVpnPbrRouteEntriesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVpnPbrRouteEntries = value["VpnPbrRouteEntries"]["VpnPbrRouteEntry"];
-	for (auto value : allVpnPbrRouteEntries)
+	auto allVpnPbrRouteEntriesNode = value["VpnPbrRouteEntries"]["VpnPbrRouteEntry"];
+	for (auto valueVpnPbrRouteEntriesVpnPbrRouteEntry : allVpnPbrRouteEntriesNode)
 	{
 		VpnPbrRouteEntry vpnPbrRouteEntriesObject;
-		if(!value["VpnInstanceId"].isNull())
-			vpnPbrRouteEntriesObject.vpnInstanceId = value["VpnInstanceId"].asString();
-		if(!value["RouteSource"].isNull())
-			vpnPbrRouteEntriesObject.routeSource = value["RouteSource"].asString();
-		if(!value["RouteDest"].isNull())
-			vpnPbrRouteEntriesObject.routeDest = value["RouteDest"].asString();
-		if(!value["NextHop"].isNull())
-			vpnPbrRouteEntriesObject.nextHop = value["NextHop"].asString();
-		if(!value["Weight"].isNull())
-			vpnPbrRouteEntriesObject.weight = std::stoi(value["Weight"].asString());
-		if(!value["CreateTime"].isNull())
-			vpnPbrRouteEntriesObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["State"].isNull())
-			vpnPbrRouteEntriesObject.state = value["State"].asString();
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["VpnInstanceId"].isNull())
+			vpnPbrRouteEntriesObject.vpnInstanceId = valueVpnPbrRouteEntriesVpnPbrRouteEntry["VpnInstanceId"].asString();
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteSource"].isNull())
+			vpnPbrRouteEntriesObject.routeSource = valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteSource"].asString();
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteDest"].isNull())
+			vpnPbrRouteEntriesObject.routeDest = valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteDest"].asString();
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["NextHop"].isNull())
+			vpnPbrRouteEntriesObject.nextHop = valueVpnPbrRouteEntriesVpnPbrRouteEntry["NextHop"].asString();
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["Weight"].isNull())
+			vpnPbrRouteEntriesObject.weight = std::stoi(valueVpnPbrRouteEntriesVpnPbrRouteEntry["Weight"].asString());
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["CreateTime"].isNull())
+			vpnPbrRouteEntriesObject.createTime = std::stol(valueVpnPbrRouteEntriesVpnPbrRouteEntry["CreateTime"].asString());
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["State"].isNull())
+			vpnPbrRouteEntriesObject.state = valueVpnPbrRouteEntriesVpnPbrRouteEntry["State"].asString();
 		vpnPbrRouteEntries_.push_back(vpnPbrRouteEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())

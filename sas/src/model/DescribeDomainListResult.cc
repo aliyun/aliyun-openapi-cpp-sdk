@@ -39,14 +39,14 @@ void DescribeDomainListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainListResponseList = value["DomainListResponseList"]["DomainResponse"];
-	for (auto value : allDomainListResponseList)
+	auto allDomainListResponseListNode = value["DomainListResponseList"]["DomainResponse"];
+	for (auto valueDomainListResponseListDomainResponse : allDomainListResponseListNode)
 	{
 		DomainResponse domainListResponseListObject;
-		if(!value["Domain"].isNull())
-			domainListResponseListObject.domain = value["Domain"].asString();
-		if(!value["IpList"].isNull())
-			domainListResponseListObject.ipList = value["IpList"].asString();
+		if(!valueDomainListResponseListDomainResponse["Domain"].isNull())
+			domainListResponseListObject.domain = valueDomainListResponseListDomainResponse["Domain"].asString();
+		if(!valueDomainListResponseListDomainResponse["IpList"].isNull())
+			domainListResponseListObject.ipList = valueDomainListResponseListDomainResponse["IpList"].asString();
 		domainListResponseList_.push_back(domainListResponseListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

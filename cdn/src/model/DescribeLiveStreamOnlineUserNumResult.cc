@@ -39,16 +39,16 @@ void DescribeLiveStreamOnlineUserNumResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOnlineUserInfo = value["OnlineUserInfo"]["LiveStreamOnlineUserNumInfo"];
-	for (auto value : allOnlineUserInfo)
+	auto allOnlineUserInfoNode = value["OnlineUserInfo"]["LiveStreamOnlineUserNumInfo"];
+	for (auto valueOnlineUserInfoLiveStreamOnlineUserNumInfo : allOnlineUserInfoNode)
 	{
 		LiveStreamOnlineUserNumInfo onlineUserInfoObject;
-		if(!value["StreamUrl"].isNull())
-			onlineUserInfoObject.streamUrl = value["StreamUrl"].asString();
-		if(!value["UserNumber"].isNull())
-			onlineUserInfoObject.userNumber = std::stol(value["UserNumber"].asString());
-		if(!value["Time"].isNull())
-			onlineUserInfoObject.time = value["Time"].asString();
+		if(!valueOnlineUserInfoLiveStreamOnlineUserNumInfo["StreamUrl"].isNull())
+			onlineUserInfoObject.streamUrl = valueOnlineUserInfoLiveStreamOnlineUserNumInfo["StreamUrl"].asString();
+		if(!valueOnlineUserInfoLiveStreamOnlineUserNumInfo["UserNumber"].isNull())
+			onlineUserInfoObject.userNumber = std::stol(valueOnlineUserInfoLiveStreamOnlineUserNumInfo["UserNumber"].asString());
+		if(!valueOnlineUserInfoLiveStreamOnlineUserNumInfo["Time"].isNull())
+			onlineUserInfoObject.time = valueOnlineUserInfoLiveStreamOnlineUserNumInfo["Time"].asString();
 		onlineUserInfo_.push_back(onlineUserInfoObject);
 	}
 	if(!value["TotalUserNumber"].isNull())

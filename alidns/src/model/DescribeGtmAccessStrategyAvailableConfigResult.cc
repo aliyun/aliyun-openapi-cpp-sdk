@@ -39,32 +39,32 @@ void DescribeGtmAccessStrategyAvailableConfigResult::parse(const std::string &pa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAddrPools = value["AddrPools"]["AddrPool"];
-	for (auto value : allAddrPools)
+	auto allAddrPoolsNode = value["AddrPools"]["AddrPool"];
+	for (auto valueAddrPoolsAddrPool : allAddrPoolsNode)
 	{
 		AddrPool addrPoolsObject;
-		if(!value["AddrPoolId"].isNull())
-			addrPoolsObject.addrPoolId = value["AddrPoolId"].asString();
-		if(!value["AddrPoolName"].isNull())
-			addrPoolsObject.addrPoolName = value["AddrPoolName"].asString();
+		if(!valueAddrPoolsAddrPool["AddrPoolId"].isNull())
+			addrPoolsObject.addrPoolId = valueAddrPoolsAddrPool["AddrPoolId"].asString();
+		if(!valueAddrPoolsAddrPool["AddrPoolName"].isNull())
+			addrPoolsObject.addrPoolName = valueAddrPoolsAddrPool["AddrPoolName"].asString();
 		addrPools_.push_back(addrPoolsObject);
 	}
-	auto allLines = value["Lines"]["Line"];
-	for (auto value : allLines)
+	auto allLinesNode = value["Lines"]["Line"];
+	for (auto valueLinesLine : allLinesNode)
 	{
 		Line linesObject;
-		if(!value["LineCode"].isNull())
-			linesObject.lineCode = value["LineCode"].asString();
-		if(!value["LineName"].isNull())
-			linesObject.lineName = value["LineName"].asString();
-		if(!value["GroupCode"].isNull())
-			linesObject.groupCode = value["GroupCode"].asString();
-		if(!value["GroupName"].isNull())
-			linesObject.groupName = value["GroupName"].asString();
-		if(!value["Status"].isNull())
-			linesObject.status = value["Status"].asString();
-		if(!value["FatherCode"].isNull())
-			linesObject.fatherCode = value["FatherCode"].asString();
+		if(!valueLinesLine["LineCode"].isNull())
+			linesObject.lineCode = valueLinesLine["LineCode"].asString();
+		if(!valueLinesLine["LineName"].isNull())
+			linesObject.lineName = valueLinesLine["LineName"].asString();
+		if(!valueLinesLine["GroupCode"].isNull())
+			linesObject.groupCode = valueLinesLine["GroupCode"].asString();
+		if(!valueLinesLine["GroupName"].isNull())
+			linesObject.groupName = valueLinesLine["GroupName"].asString();
+		if(!valueLinesLine["Status"].isNull())
+			linesObject.status = valueLinesLine["Status"].asString();
+		if(!valueLinesLine["FatherCode"].isNull())
+			linesObject.fatherCode = valueLinesLine["FatherCode"].asString();
 		lines_.push_back(linesObject);
 	}
 

@@ -39,14 +39,14 @@ void CreateRulesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRules = value["Rules"]["Rule"];
-	for (auto value : allRules)
+	auto allRulesNode = value["Rules"]["Rule"];
+	for (auto valueRulesRule : allRulesNode)
 	{
 		Rule rulesObject;
-		if(!value["RuleId"].isNull())
-			rulesObject.ruleId = value["RuleId"].asString();
-		if(!value["RuleName"].isNull())
-			rulesObject.ruleName = value["RuleName"].asString();
+		if(!valueRulesRule["RuleId"].isNull())
+			rulesObject.ruleId = valueRulesRule["RuleId"].asString();
+		if(!valueRulesRule["RuleName"].isNull())
+			rulesObject.ruleName = valueRulesRule["RuleName"].asString();
 		rules_.push_back(rulesObject);
 	}
 

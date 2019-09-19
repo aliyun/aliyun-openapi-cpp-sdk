@@ -39,70 +39,70 @@ void DescribeProductResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProductSkus = value["ProductSkus"]["ProductSku"];
-	for (auto value : allProductSkus)
+	auto allProductSkusNode = value["ProductSkus"]["ProductSku"];
+	for (auto valueProductSkusProductSku : allProductSkusNode)
 	{
 		ProductSku productSkusObject;
-		if(!value["Name"].isNull())
-			productSkusObject.name = value["Name"].asString();
-		if(!value["Code"].isNull())
-			productSkusObject.code = value["Code"].asString();
-		if(!value["ChargeType"].isNull())
-			productSkusObject.chargeType = value["ChargeType"].asString();
-		if(!value["Constraints"].isNull())
-			productSkusObject.constraints = value["Constraints"].asString();
-		if(!value["Hidden"].isNull())
-			productSkusObject.hidden = value["Hidden"].asString() == "true";
-		auto allOrderPeriods = value["OrderPeriods"]["OrderPeriod"];
-		for (auto value : allOrderPeriods)
+		if(!valueProductSkusProductSku["Name"].isNull())
+			productSkusObject.name = valueProductSkusProductSku["Name"].asString();
+		if(!valueProductSkusProductSku["Code"].isNull())
+			productSkusObject.code = valueProductSkusProductSku["Code"].asString();
+		if(!valueProductSkusProductSku["ChargeType"].isNull())
+			productSkusObject.chargeType = valueProductSkusProductSku["ChargeType"].asString();
+		if(!valueProductSkusProductSku["Constraints"].isNull())
+			productSkusObject.constraints = valueProductSkusProductSku["Constraints"].asString();
+		if(!valueProductSkusProductSku["Hidden"].isNull())
+			productSkusObject.hidden = valueProductSkusProductSku["Hidden"].asString() == "true";
+		auto allOrderPeriodsNode = allProductSkusNode["OrderPeriods"]["OrderPeriod"];
+		for (auto allProductSkusNodeOrderPeriodsOrderPeriod : allOrderPeriodsNode)
 		{
 			ProductSku::OrderPeriod orderPeriodsObject;
-			if(!value["Name"].isNull())
-				orderPeriodsObject.name = value["Name"].asString();
-			if(!value["PeriodType"].isNull())
-				orderPeriodsObject.periodType = value["PeriodType"].asString();
+			if(!allProductSkusNodeOrderPeriodsOrderPeriod["Name"].isNull())
+				orderPeriodsObject.name = allProductSkusNodeOrderPeriodsOrderPeriod["Name"].asString();
+			if(!allProductSkusNodeOrderPeriodsOrderPeriod["PeriodType"].isNull())
+				orderPeriodsObject.periodType = allProductSkusNodeOrderPeriodsOrderPeriod["PeriodType"].asString();
 			productSkusObject.orderPeriods.push_back(orderPeriodsObject);
 		}
-		auto allModules = value["Modules"]["Module"];
-		for (auto value : allModules)
+		auto allModulesNode = allProductSkusNode["Modules"]["Module"];
+		for (auto allProductSkusNodeModulesModule : allModulesNode)
 		{
 			ProductSku::Module modulesObject;
-			if(!value["Id"].isNull())
-				modulesObject.id = value["Id"].asString();
-			if(!value["Name"].isNull())
-				modulesObject.name = value["Name"].asString();
-			if(!value["Code"].isNull())
-				modulesObject.code = value["Code"].asString();
-			auto allProperties = value["Properties"]["Property"];
-			for (auto value : allProperties)
+			if(!allProductSkusNodeModulesModule["Id"].isNull())
+				modulesObject.id = allProductSkusNodeModulesModule["Id"].asString();
+			if(!allProductSkusNodeModulesModule["Name"].isNull())
+				modulesObject.name = allProductSkusNodeModulesModule["Name"].asString();
+			if(!allProductSkusNodeModulesModule["Code"].isNull())
+				modulesObject.code = allProductSkusNodeModulesModule["Code"].asString();
+			auto allPropertiesNode = allModulesNode["Properties"]["Property"];
+			for (auto allModulesNodePropertiesProperty : allPropertiesNode)
 			{
 				ProductSku::Module::Property propertiesObject;
-				if(!value["Name"].isNull())
-					propertiesObject.name = value["Name"].asString();
-				if(!value["Key"].isNull())
-					propertiesObject.key = value["Key"].asString();
-				if(!value["ShowType"].isNull())
-					propertiesObject.showType = value["ShowType"].asString();
-				if(!value["DisplayUnit"].isNull())
-					propertiesObject.displayUnit = value["DisplayUnit"].asString();
-				auto allPropertyValues = value["PropertyValues"]["PropertyValue"];
-				for (auto value : allPropertyValues)
+				if(!allModulesNodePropertiesProperty["Name"].isNull())
+					propertiesObject.name = allModulesNodePropertiesProperty["Name"].asString();
+				if(!allModulesNodePropertiesProperty["Key"].isNull())
+					propertiesObject.key = allModulesNodePropertiesProperty["Key"].asString();
+				if(!allModulesNodePropertiesProperty["ShowType"].isNull())
+					propertiesObject.showType = allModulesNodePropertiesProperty["ShowType"].asString();
+				if(!allModulesNodePropertiesProperty["DisplayUnit"].isNull())
+					propertiesObject.displayUnit = allModulesNodePropertiesProperty["DisplayUnit"].asString();
+				auto allPropertyValuesNode = allPropertiesNode["PropertyValues"]["PropertyValue"];
+				for (auto allPropertiesNodePropertyValuesPropertyValue : allPropertyValuesNode)
 				{
 					ProductSku::Module::Property::PropertyValue propertyValuesObject;
-					if(!value["Value"].isNull())
-						propertyValuesObject.value = value["Value"].asString();
-					if(!value["DisplayName"].isNull())
-						propertyValuesObject.displayName = value["DisplayName"].asString();
-					if(!value["Type"].isNull())
-						propertyValuesObject.type = value["Type"].asString();
-					if(!value["Min"].isNull())
-						propertyValuesObject.min = value["Min"].asString();
-					if(!value["Max"].isNull())
-						propertyValuesObject.max = value["Max"].asString();
-					if(!value["Step"].isNull())
-						propertyValuesObject.step = value["Step"].asString();
-					if(!value["Remark"].isNull())
-						propertyValuesObject.remark = value["Remark"].asString();
+					if(!allPropertiesNodePropertyValuesPropertyValue["Value"].isNull())
+						propertyValuesObject.value = allPropertiesNodePropertyValuesPropertyValue["Value"].asString();
+					if(!allPropertiesNodePropertyValuesPropertyValue["DisplayName"].isNull())
+						propertyValuesObject.displayName = allPropertiesNodePropertyValuesPropertyValue["DisplayName"].asString();
+					if(!allPropertiesNodePropertyValuesPropertyValue["Type"].isNull())
+						propertyValuesObject.type = allPropertiesNodePropertyValuesPropertyValue["Type"].asString();
+					if(!allPropertiesNodePropertyValuesPropertyValue["Min"].isNull())
+						propertyValuesObject.min = allPropertiesNodePropertyValuesPropertyValue["Min"].asString();
+					if(!allPropertiesNodePropertyValuesPropertyValue["Max"].isNull())
+						propertyValuesObject.max = allPropertiesNodePropertyValuesPropertyValue["Max"].asString();
+					if(!allPropertiesNodePropertyValuesPropertyValue["Step"].isNull())
+						propertyValuesObject.step = allPropertiesNodePropertyValuesPropertyValue["Step"].asString();
+					if(!allPropertiesNodePropertyValuesPropertyValue["Remark"].isNull())
+						propertyValuesObject.remark = allPropertiesNodePropertyValuesPropertyValue["Remark"].asString();
 					propertiesObject.propertyValues.push_back(propertyValuesObject);
 				}
 				modulesObject.properties.push_back(propertiesObject);
@@ -111,20 +111,20 @@ void DescribeProductResult::parse(const std::string &payload)
 		}
 		productSkus_.push_back(productSkusObject);
 	}
-	auto allProductExtras = value["ProductExtras"]["ProductExtra"];
-	for (auto value : allProductExtras)
+	auto allProductExtrasNode = value["ProductExtras"]["ProductExtra"];
+	for (auto valueProductExtrasProductExtra : allProductExtrasNode)
 	{
 		ProductExtra productExtrasObject;
-		if(!value["Key"].isNull())
-			productExtrasObject.key = value["Key"].asString();
-		if(!value["Values"].isNull())
-			productExtrasObject.values = value["Values"].asString();
-		if(!value["Label"].isNull())
-			productExtrasObject.label = value["Label"].asString();
-		if(!value["Order"].isNull())
-			productExtrasObject.order = std::stoi(value["Order"].asString());
-		if(!value["Type"].isNull())
-			productExtrasObject.type = value["Type"].asString();
+		if(!valueProductExtrasProductExtra["Key"].isNull())
+			productExtrasObject.key = valueProductExtrasProductExtra["Key"].asString();
+		if(!valueProductExtrasProductExtra["Values"].isNull())
+			productExtrasObject.values = valueProductExtrasProductExtra["Values"].asString();
+		if(!valueProductExtrasProductExtra["Label"].isNull())
+			productExtrasObject.label = valueProductExtrasProductExtra["Label"].asString();
+		if(!valueProductExtrasProductExtra["Order"].isNull())
+			productExtrasObject.order = std::stoi(valueProductExtrasProductExtra["Order"].asString());
+		if(!valueProductExtrasProductExtra["Type"].isNull())
+			productExtrasObject.type = valueProductExtrasProductExtra["Type"].asString();
 		productExtras_.push_back(productExtrasObject);
 	}
 	auto shopInfoNode = value["ShopInfo"];
@@ -134,14 +134,14 @@ void DescribeProductResult::parse(const std::string &payload)
 		shopInfo_.name = shopInfoNode["Name"].asString();
 	if(!shopInfoNode["Emails"].isNull())
 		shopInfo_.emails = shopInfoNode["Emails"].asString();
-	auto allWangWangs = value["WangWangs"]["WangWang"];
-	for (auto value : allWangWangs)
+	auto allWangWangsNode = shopInfoNode["WangWangs"]["WangWang"];
+	for (auto shopInfoNodeWangWangsWangWang : allWangWangsNode)
 	{
 		ShopInfo::WangWang wangWangObject;
-		if(!value["UserName"].isNull())
-			wangWangObject.userName = value["UserName"].asString();
-		if(!value["Remark"].isNull())
-			wangWangObject.remark = value["Remark"].asString();
+		if(!shopInfoNodeWangWangsWangWang["UserName"].isNull())
+			wangWangObject.userName = shopInfoNodeWangWangsWangWang["UserName"].asString();
+		if(!shopInfoNodeWangWangsWangWang["Remark"].isNull())
+			wangWangObject.remark = shopInfoNodeWangWangsWangWang["Remark"].asString();
 		shopInfo_.wangWangs.push_back(wangWangObject);
 	}
 		auto allTelephones = shopInfoNode["Telephones"]["Telephone"];

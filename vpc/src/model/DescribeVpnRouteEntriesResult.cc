@@ -39,22 +39,22 @@ void DescribeVpnRouteEntriesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVpnRouteEntries = value["VpnRouteEntries"]["VpnRouteEntry"];
-	for (auto value : allVpnRouteEntries)
+	auto allVpnRouteEntriesNode = value["VpnRouteEntries"]["VpnRouteEntry"];
+	for (auto valueVpnRouteEntriesVpnRouteEntry : allVpnRouteEntriesNode)
 	{
 		VpnRouteEntry vpnRouteEntriesObject;
-		if(!value["VpnInstanceId"].isNull())
-			vpnRouteEntriesObject.vpnInstanceId = value["VpnInstanceId"].asString();
-		if(!value["RouteDest"].isNull())
-			vpnRouteEntriesObject.routeDest = value["RouteDest"].asString();
-		if(!value["NextHop"].isNull())
-			vpnRouteEntriesObject.nextHop = value["NextHop"].asString();
-		if(!value["Weight"].isNull())
-			vpnRouteEntriesObject.weight = std::stoi(value["Weight"].asString());
-		if(!value["CreateTime"].isNull())
-			vpnRouteEntriesObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["State"].isNull())
-			vpnRouteEntriesObject.state = value["State"].asString();
+		if(!valueVpnRouteEntriesVpnRouteEntry["VpnInstanceId"].isNull())
+			vpnRouteEntriesObject.vpnInstanceId = valueVpnRouteEntriesVpnRouteEntry["VpnInstanceId"].asString();
+		if(!valueVpnRouteEntriesVpnRouteEntry["RouteDest"].isNull())
+			vpnRouteEntriesObject.routeDest = valueVpnRouteEntriesVpnRouteEntry["RouteDest"].asString();
+		if(!valueVpnRouteEntriesVpnRouteEntry["NextHop"].isNull())
+			vpnRouteEntriesObject.nextHop = valueVpnRouteEntriesVpnRouteEntry["NextHop"].asString();
+		if(!valueVpnRouteEntriesVpnRouteEntry["Weight"].isNull())
+			vpnRouteEntriesObject.weight = std::stoi(valueVpnRouteEntriesVpnRouteEntry["Weight"].asString());
+		if(!valueVpnRouteEntriesVpnRouteEntry["CreateTime"].isNull())
+			vpnRouteEntriesObject.createTime = std::stol(valueVpnRouteEntriesVpnRouteEntry["CreateTime"].asString());
+		if(!valueVpnRouteEntriesVpnRouteEntry["State"].isNull())
+			vpnRouteEntriesObject.state = valueVpnRouteEntriesVpnRouteEntry["State"].asString();
 		vpnRouteEntries_.push_back(vpnRouteEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())

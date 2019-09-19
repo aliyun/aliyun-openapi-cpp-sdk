@@ -39,26 +39,26 @@ void DescribeRiskTypeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRiskTypes = value["RiskTypes"]["RiskType"];
-	for (auto value : allRiskTypes)
+	auto allRiskTypesNode = value["RiskTypes"]["RiskType"];
+	for (auto valueRiskTypesRiskType : allRiskTypesNode)
 	{
 		RiskType riskTypesObject;
-		if(!value["TypeName"].isNull())
-			riskTypesObject.typeName = value["TypeName"].asString();
-		if(!value["Alias"].isNull())
-			riskTypesObject.alias = value["Alias"].asString();
-		if(!value["WarnCount"].isNull())
-			riskTypesObject.warnCount = value["WarnCount"].asString();
-		auto allSubTypes = value["SubTypes"]["subType"];
-		for (auto value : allSubTypes)
+		if(!valueRiskTypesRiskType["TypeName"].isNull())
+			riskTypesObject.typeName = valueRiskTypesRiskType["TypeName"].asString();
+		if(!valueRiskTypesRiskType["Alias"].isNull())
+			riskTypesObject.alias = valueRiskTypesRiskType["Alias"].asString();
+		if(!valueRiskTypesRiskType["WarnCount"].isNull())
+			riskTypesObject.warnCount = valueRiskTypesRiskType["WarnCount"].asString();
+		auto allSubTypesNode = allRiskTypesNode["SubTypes"]["subType"];
+		for (auto allRiskTypesNodeSubTypessubType : allSubTypesNode)
 		{
 			RiskType::SubType subTypesObject;
-			if(!value["WarnCount"].isNull())
-				subTypesObject.warnCount = value["WarnCount"].asString();
-			if(!value["TypeName"].isNull())
-				subTypesObject.typeName = value["TypeName"].asString();
-			if(!value["Alias"].isNull())
-				subTypesObject.alias = value["Alias"].asString();
+			if(!allRiskTypesNodeSubTypessubType["WarnCount"].isNull())
+				subTypesObject.warnCount = allRiskTypesNodeSubTypessubType["WarnCount"].asString();
+			if(!allRiskTypesNodeSubTypessubType["TypeName"].isNull())
+				subTypesObject.typeName = allRiskTypesNodeSubTypessubType["TypeName"].asString();
+			if(!allRiskTypesNodeSubTypessubType["Alias"].isNull())
+				subTypesObject.alias = allRiskTypesNodeSubTypessubType["Alias"].asString();
 			riskTypesObject.subTypes.push_back(subTypesObject);
 		}
 		riskTypes_.push_back(riskTypesObject);

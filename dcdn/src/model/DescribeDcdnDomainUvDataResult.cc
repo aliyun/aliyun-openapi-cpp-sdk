@@ -39,14 +39,14 @@ void DescribeDcdnDomainUvDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUvDataInterval = value["UvDataInterval"]["UsageData"];
-	for (auto value : allUvDataInterval)
+	auto allUvDataIntervalNode = value["UvDataInterval"]["UsageData"];
+	for (auto valueUvDataIntervalUsageData : allUvDataIntervalNode)
 	{
 		UsageData uvDataIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			uvDataIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			uvDataIntervalObject.value = value["Value"].asString();
+		if(!valueUvDataIntervalUsageData["TimeStamp"].isNull())
+			uvDataIntervalObject.timeStamp = valueUvDataIntervalUsageData["TimeStamp"].asString();
+		if(!valueUvDataIntervalUsageData["Value"].isNull())
+			uvDataIntervalObject.value = valueUvDataIntervalUsageData["Value"].asString();
 		uvDataInterval_.push_back(uvDataIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

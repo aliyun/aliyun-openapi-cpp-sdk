@@ -46,46 +46,46 @@ void QueryAvailableInstancesResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
-	auto allInstanceList = value["InstanceList"]["Instance"];
-	for (auto value : allInstanceList)
+	auto allInstanceListNode = dataNode["InstanceList"]["Instance"];
+	for (auto dataNodeInstanceListInstance : allInstanceListNode)
 	{
 		Data::Instance instanceObject;
-		if(!value["OwnerId"].isNull())
-			instanceObject.ownerId = std::stol(value["OwnerId"].asString());
-		if(!value["SellerId"].isNull())
-			instanceObject.sellerId = std::stol(value["SellerId"].asString());
-		if(!value["ProductCode"].isNull())
-			instanceObject.productCode = value["ProductCode"].asString();
-		if(!value["ProductType"].isNull())
-			instanceObject.productType = value["ProductType"].asString();
-		if(!value["SubscriptionType"].isNull())
-			instanceObject.subscriptionType = value["SubscriptionType"].asString();
-		if(!value["InstanceID"].isNull())
-			instanceObject.instanceID = value["InstanceID"].asString();
-		if(!value["Region"].isNull())
-			instanceObject.region = value["Region"].asString();
-		if(!value["CreateTime"].isNull())
-			instanceObject.createTime = value["CreateTime"].asString();
-		if(!value["EndTime"].isNull())
-			instanceObject.endTime = value["EndTime"].asString();
-		if(!value["StopTime"].isNull())
-			instanceObject.stopTime = value["StopTime"].asString();
-		if(!value["ReleaseTime"].isNull())
-			instanceObject.releaseTime = value["ReleaseTime"].asString();
-		if(!value["ExpectedReleaseTime"].isNull())
-			instanceObject.expectedReleaseTime = value["ExpectedReleaseTime"].asString();
-		if(!value["Status"].isNull())
-			instanceObject.status = value["Status"].asString();
-		if(!value["SubStatus"].isNull())
-			instanceObject.subStatus = value["SubStatus"].asString();
-		if(!value["RenewStatus"].isNull())
-			instanceObject.renewStatus = value["RenewStatus"].asString();
-		if(!value["RenewalDuration"].isNull())
-			instanceObject.renewalDuration = std::stoi(value["RenewalDuration"].asString());
-		if(!value["RenewalDurationUnit"].isNull())
-			instanceObject.renewalDurationUnit = value["RenewalDurationUnit"].asString();
-		if(!value["Seller"].isNull())
-			instanceObject.seller = value["Seller"].asString();
+		if(!dataNodeInstanceListInstance["OwnerId"].isNull())
+			instanceObject.ownerId = std::stol(dataNodeInstanceListInstance["OwnerId"].asString());
+		if(!dataNodeInstanceListInstance["SellerId"].isNull())
+			instanceObject.sellerId = std::stol(dataNodeInstanceListInstance["SellerId"].asString());
+		if(!dataNodeInstanceListInstance["ProductCode"].isNull())
+			instanceObject.productCode = dataNodeInstanceListInstance["ProductCode"].asString();
+		if(!dataNodeInstanceListInstance["ProductType"].isNull())
+			instanceObject.productType = dataNodeInstanceListInstance["ProductType"].asString();
+		if(!dataNodeInstanceListInstance["SubscriptionType"].isNull())
+			instanceObject.subscriptionType = dataNodeInstanceListInstance["SubscriptionType"].asString();
+		if(!dataNodeInstanceListInstance["InstanceID"].isNull())
+			instanceObject.instanceID = dataNodeInstanceListInstance["InstanceID"].asString();
+		if(!dataNodeInstanceListInstance["Region"].isNull())
+			instanceObject.region = dataNodeInstanceListInstance["Region"].asString();
+		if(!dataNodeInstanceListInstance["CreateTime"].isNull())
+			instanceObject.createTime = dataNodeInstanceListInstance["CreateTime"].asString();
+		if(!dataNodeInstanceListInstance["EndTime"].isNull())
+			instanceObject.endTime = dataNodeInstanceListInstance["EndTime"].asString();
+		if(!dataNodeInstanceListInstance["StopTime"].isNull())
+			instanceObject.stopTime = dataNodeInstanceListInstance["StopTime"].asString();
+		if(!dataNodeInstanceListInstance["ReleaseTime"].isNull())
+			instanceObject.releaseTime = dataNodeInstanceListInstance["ReleaseTime"].asString();
+		if(!dataNodeInstanceListInstance["ExpectedReleaseTime"].isNull())
+			instanceObject.expectedReleaseTime = dataNodeInstanceListInstance["ExpectedReleaseTime"].asString();
+		if(!dataNodeInstanceListInstance["Status"].isNull())
+			instanceObject.status = dataNodeInstanceListInstance["Status"].asString();
+		if(!dataNodeInstanceListInstance["SubStatus"].isNull())
+			instanceObject.subStatus = dataNodeInstanceListInstance["SubStatus"].asString();
+		if(!dataNodeInstanceListInstance["RenewStatus"].isNull())
+			instanceObject.renewStatus = dataNodeInstanceListInstance["RenewStatus"].asString();
+		if(!dataNodeInstanceListInstance["RenewalDuration"].isNull())
+			instanceObject.renewalDuration = std::stoi(dataNodeInstanceListInstance["RenewalDuration"].asString());
+		if(!dataNodeInstanceListInstance["RenewalDurationUnit"].isNull())
+			instanceObject.renewalDurationUnit = dataNodeInstanceListInstance["RenewalDurationUnit"].asString();
+		if(!dataNodeInstanceListInstance["Seller"].isNull())
+			instanceObject.seller = dataNodeInstanceListInstance["Seller"].asString();
 		data_.instanceList.push_back(instanceObject);
 	}
 	if(!value["Success"].isNull())

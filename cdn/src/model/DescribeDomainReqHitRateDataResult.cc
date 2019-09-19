@@ -39,14 +39,14 @@ void DescribeDomainReqHitRateDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allReqHitRateInterval = value["ReqHitRateInterval"]["DataModule"];
-	for (auto value : allReqHitRateInterval)
+	auto allReqHitRateIntervalNode = value["ReqHitRateInterval"]["DataModule"];
+	for (auto valueReqHitRateIntervalDataModule : allReqHitRateIntervalNode)
 	{
 		DataModule reqHitRateIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			reqHitRateIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			reqHitRateIntervalObject.value = value["Value"].asString();
+		if(!valueReqHitRateIntervalDataModule["TimeStamp"].isNull())
+			reqHitRateIntervalObject.timeStamp = valueReqHitRateIntervalDataModule["TimeStamp"].asString();
+		if(!valueReqHitRateIntervalDataModule["Value"].isNull())
+			reqHitRateIntervalObject.value = valueReqHitRateIntervalDataModule["Value"].asString();
 		reqHitRateInterval_.push_back(reqHitRateIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

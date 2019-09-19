@@ -39,72 +39,72 @@ void DescribeDnsProductInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDnsProducts = value["DnsProducts"]["DnsProduct"];
-	for (auto value : allDnsProducts)
+	auto allDnsProductsNode = value["DnsProducts"]["DnsProduct"];
+	for (auto valueDnsProductsDnsProduct : allDnsProductsNode)
 	{
 		DnsProduct dnsProductsObject;
-		if(!value["InstanceId"].isNull())
-			dnsProductsObject.instanceId = value["InstanceId"].asString();
-		if(!value["VersionCode"].isNull())
-			dnsProductsObject.versionCode = value["VersionCode"].asString();
-		if(!value["VersionName"].isNull())
-			dnsProductsObject.versionName = value["VersionName"].asString();
-		if(!value["StartTime"].isNull())
-			dnsProductsObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			dnsProductsObject.endTime = value["EndTime"].asString();
-		if(!value["StartTimestamp"].isNull())
-			dnsProductsObject.startTimestamp = std::stol(value["StartTimestamp"].asString());
-		if(!value["EndTimestamp"].isNull())
-			dnsProductsObject.endTimestamp = std::stol(value["EndTimestamp"].asString());
-		if(!value["Domain"].isNull())
-			dnsProductsObject.domain = value["Domain"].asString();
-		if(!value["BindCount"].isNull())
-			dnsProductsObject.bindCount = std::stol(value["BindCount"].asString());
-		if(!value["BindUsedCount"].isNull())
-			dnsProductsObject.bindUsedCount = std::stol(value["BindUsedCount"].asString());
-		if(!value["TTLMinValue"].isNull())
-			dnsProductsObject.tTLMinValue = std::stol(value["TTLMinValue"].asString());
-		if(!value["SubDomainLevel"].isNull())
-			dnsProductsObject.subDomainLevel = std::stol(value["SubDomainLevel"].asString());
-		if(!value["DnsSLBCount"].isNull())
-			dnsProductsObject.dnsSLBCount = std::stol(value["DnsSLBCount"].asString());
-		if(!value["URLForwardCount"].isNull())
-			dnsProductsObject.uRLForwardCount = std::stol(value["URLForwardCount"].asString());
-		if(!value["DDosDefendFlow"].isNull())
-			dnsProductsObject.dDosDefendFlow = std::stol(value["DDosDefendFlow"].asString());
-		if(!value["DDosDefendQuery"].isNull())
-			dnsProductsObject.dDosDefendQuery = std::stol(value["DDosDefendQuery"].asString());
-		if(!value["OverseaDDosDefendFlow"].isNull())
-			dnsProductsObject.overseaDDosDefendFlow = std::stol(value["OverseaDDosDefendFlow"].asString());
-		if(!value["SearchEngineLines"].isNull())
-			dnsProductsObject.searchEngineLines = value["SearchEngineLines"].asString();
-		if(!value["ISPLines"].isNull())
-			dnsProductsObject.iSPLines = value["ISPLines"].asString();
-		if(!value["ISPRegionLines"].isNull())
-			dnsProductsObject.iSPRegionLines = value["ISPRegionLines"].asString();
-		if(!value["OverseaLine"].isNull())
-			dnsProductsObject.overseaLine = value["OverseaLine"].asString();
-		if(!value["MonitorNodeCount"].isNull())
-			dnsProductsObject.monitorNodeCount = std::stol(value["MonitorNodeCount"].asString());
-		if(!value["MonitorFrequency"].isNull())
-			dnsProductsObject.monitorFrequency = std::stol(value["MonitorFrequency"].asString());
-		if(!value["MonitorTaskCount"].isNull())
-			dnsProductsObject.monitorTaskCount = std::stol(value["MonitorTaskCount"].asString());
-		if(!value["RegionLines"].isNull())
-			dnsProductsObject.regionLines = value["RegionLines"].asString() == "true";
-		if(!value["Gslb"].isNull())
-			dnsProductsObject.gslb = value["Gslb"].asString() == "true";
-		if(!value["InClean"].isNull())
-			dnsProductsObject.inClean = value["InClean"].asString() == "true";
-		if(!value["InBlackHole"].isNull())
-			dnsProductsObject.inBlackHole = value["InBlackHole"].asString() == "true";
-		if(!value["BindDomainCount"].isNull())
-			dnsProductsObject.bindDomainCount = std::stol(value["BindDomainCount"].asString());
-		if(!value["BindDomainUsedCount"].isNull())
-			dnsProductsObject.bindDomainUsedCount = std::stol(value["BindDomainUsedCount"].asString());
-		if(!value["DnsSecurity"].isNull())
-			dnsProductsObject.dnsSecurity = value["DnsSecurity"].asString();
+		if(!valueDnsProductsDnsProduct["InstanceId"].isNull())
+			dnsProductsObject.instanceId = valueDnsProductsDnsProduct["InstanceId"].asString();
+		if(!valueDnsProductsDnsProduct["VersionCode"].isNull())
+			dnsProductsObject.versionCode = valueDnsProductsDnsProduct["VersionCode"].asString();
+		if(!valueDnsProductsDnsProduct["VersionName"].isNull())
+			dnsProductsObject.versionName = valueDnsProductsDnsProduct["VersionName"].asString();
+		if(!valueDnsProductsDnsProduct["StartTime"].isNull())
+			dnsProductsObject.startTime = valueDnsProductsDnsProduct["StartTime"].asString();
+		if(!valueDnsProductsDnsProduct["EndTime"].isNull())
+			dnsProductsObject.endTime = valueDnsProductsDnsProduct["EndTime"].asString();
+		if(!valueDnsProductsDnsProduct["StartTimestamp"].isNull())
+			dnsProductsObject.startTimestamp = std::stol(valueDnsProductsDnsProduct["StartTimestamp"].asString());
+		if(!valueDnsProductsDnsProduct["EndTimestamp"].isNull())
+			dnsProductsObject.endTimestamp = std::stol(valueDnsProductsDnsProduct["EndTimestamp"].asString());
+		if(!valueDnsProductsDnsProduct["Domain"].isNull())
+			dnsProductsObject.domain = valueDnsProductsDnsProduct["Domain"].asString();
+		if(!valueDnsProductsDnsProduct["BindCount"].isNull())
+			dnsProductsObject.bindCount = std::stol(valueDnsProductsDnsProduct["BindCount"].asString());
+		if(!valueDnsProductsDnsProduct["BindUsedCount"].isNull())
+			dnsProductsObject.bindUsedCount = std::stol(valueDnsProductsDnsProduct["BindUsedCount"].asString());
+		if(!valueDnsProductsDnsProduct["TTLMinValue"].isNull())
+			dnsProductsObject.tTLMinValue = std::stol(valueDnsProductsDnsProduct["TTLMinValue"].asString());
+		if(!valueDnsProductsDnsProduct["SubDomainLevel"].isNull())
+			dnsProductsObject.subDomainLevel = std::stol(valueDnsProductsDnsProduct["SubDomainLevel"].asString());
+		if(!valueDnsProductsDnsProduct["DnsSLBCount"].isNull())
+			dnsProductsObject.dnsSLBCount = std::stol(valueDnsProductsDnsProduct["DnsSLBCount"].asString());
+		if(!valueDnsProductsDnsProduct["URLForwardCount"].isNull())
+			dnsProductsObject.uRLForwardCount = std::stol(valueDnsProductsDnsProduct["URLForwardCount"].asString());
+		if(!valueDnsProductsDnsProduct["DDosDefendFlow"].isNull())
+			dnsProductsObject.dDosDefendFlow = std::stol(valueDnsProductsDnsProduct["DDosDefendFlow"].asString());
+		if(!valueDnsProductsDnsProduct["DDosDefendQuery"].isNull())
+			dnsProductsObject.dDosDefendQuery = std::stol(valueDnsProductsDnsProduct["DDosDefendQuery"].asString());
+		if(!valueDnsProductsDnsProduct["OverseaDDosDefendFlow"].isNull())
+			dnsProductsObject.overseaDDosDefendFlow = std::stol(valueDnsProductsDnsProduct["OverseaDDosDefendFlow"].asString());
+		if(!valueDnsProductsDnsProduct["SearchEngineLines"].isNull())
+			dnsProductsObject.searchEngineLines = valueDnsProductsDnsProduct["SearchEngineLines"].asString();
+		if(!valueDnsProductsDnsProduct["ISPLines"].isNull())
+			dnsProductsObject.iSPLines = valueDnsProductsDnsProduct["ISPLines"].asString();
+		if(!valueDnsProductsDnsProduct["ISPRegionLines"].isNull())
+			dnsProductsObject.iSPRegionLines = valueDnsProductsDnsProduct["ISPRegionLines"].asString();
+		if(!valueDnsProductsDnsProduct["OverseaLine"].isNull())
+			dnsProductsObject.overseaLine = valueDnsProductsDnsProduct["OverseaLine"].asString();
+		if(!valueDnsProductsDnsProduct["MonitorNodeCount"].isNull())
+			dnsProductsObject.monitorNodeCount = std::stol(valueDnsProductsDnsProduct["MonitorNodeCount"].asString());
+		if(!valueDnsProductsDnsProduct["MonitorFrequency"].isNull())
+			dnsProductsObject.monitorFrequency = std::stol(valueDnsProductsDnsProduct["MonitorFrequency"].asString());
+		if(!valueDnsProductsDnsProduct["MonitorTaskCount"].isNull())
+			dnsProductsObject.monitorTaskCount = std::stol(valueDnsProductsDnsProduct["MonitorTaskCount"].asString());
+		if(!valueDnsProductsDnsProduct["RegionLines"].isNull())
+			dnsProductsObject.regionLines = valueDnsProductsDnsProduct["RegionLines"].asString() == "true";
+		if(!valueDnsProductsDnsProduct["Gslb"].isNull())
+			dnsProductsObject.gslb = valueDnsProductsDnsProduct["Gslb"].asString() == "true";
+		if(!valueDnsProductsDnsProduct["InClean"].isNull())
+			dnsProductsObject.inClean = valueDnsProductsDnsProduct["InClean"].asString() == "true";
+		if(!valueDnsProductsDnsProduct["InBlackHole"].isNull())
+			dnsProductsObject.inBlackHole = valueDnsProductsDnsProduct["InBlackHole"].asString() == "true";
+		if(!valueDnsProductsDnsProduct["BindDomainCount"].isNull())
+			dnsProductsObject.bindDomainCount = std::stol(valueDnsProductsDnsProduct["BindDomainCount"].asString());
+		if(!valueDnsProductsDnsProduct["BindDomainUsedCount"].isNull())
+			dnsProductsObject.bindDomainUsedCount = std::stol(valueDnsProductsDnsProduct["BindDomainUsedCount"].asString());
+		if(!valueDnsProductsDnsProduct["DnsSecurity"].isNull())
+			dnsProductsObject.dnsSecurity = valueDnsProductsDnsProduct["DnsSecurity"].asString();
 		dnsProducts_.push_back(dnsProductsObject);
 	}
 	if(!value["TotalCount"].isNull())

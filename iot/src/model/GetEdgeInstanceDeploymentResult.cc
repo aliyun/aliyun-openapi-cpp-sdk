@@ -54,50 +54,50 @@ void GetEdgeInstanceDeploymentResult::parse(const std::string &payload)
 		data_.status = std::stoi(dataNode["Status"].asString());
 	if(!dataNode["Type"].isNull())
 		data_.type = dataNode["Type"].asString();
-	auto allTaskList = value["TaskList"]["Task"];
-	for (auto value : allTaskList)
+	auto allTaskListNode = dataNode["TaskList"]["Task"];
+	for (auto dataNodeTaskListTask : allTaskListNode)
 	{
 		Data::Task taskObject;
-		if(!value["GmtCreate"].isNull())
-			taskObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			taskObject.gmtModified = value["GmtModified"].asString();
-		if(!value["GmtCompleted"].isNull())
-			taskObject.gmtCompleted = value["GmtCompleted"].asString();
-		if(!value["GatewayId"].isNull())
-			taskObject.gatewayId = value["GatewayId"].asString();
-		if(!value["TaskId"].isNull())
-			taskObject.taskId = value["TaskId"].asString();
-		if(!value["Stage"].isNull())
-			taskObject.stage = std::stoi(value["Stage"].asString());
-		if(!value["Status"].isNull())
-			taskObject.status = std::stoi(value["Status"].asString());
-		auto allResourceSnapshotList = value["ResourceSnapshotList"]["ResourceSnapshot"];
-		for (auto value : allResourceSnapshotList)
+		if(!dataNodeTaskListTask["GmtCreate"].isNull())
+			taskObject.gmtCreate = dataNodeTaskListTask["GmtCreate"].asString();
+		if(!dataNodeTaskListTask["GmtModified"].isNull())
+			taskObject.gmtModified = dataNodeTaskListTask["GmtModified"].asString();
+		if(!dataNodeTaskListTask["GmtCompleted"].isNull())
+			taskObject.gmtCompleted = dataNodeTaskListTask["GmtCompleted"].asString();
+		if(!dataNodeTaskListTask["GatewayId"].isNull())
+			taskObject.gatewayId = dataNodeTaskListTask["GatewayId"].asString();
+		if(!dataNodeTaskListTask["TaskId"].isNull())
+			taskObject.taskId = dataNodeTaskListTask["TaskId"].asString();
+		if(!dataNodeTaskListTask["Stage"].isNull())
+			taskObject.stage = std::stoi(dataNodeTaskListTask["Stage"].asString());
+		if(!dataNodeTaskListTask["Status"].isNull())
+			taskObject.status = std::stoi(dataNodeTaskListTask["Status"].asString());
+		auto allResourceSnapshotListNode = allTaskListNode["ResourceSnapshotList"]["ResourceSnapshot"];
+		for (auto allTaskListNodeResourceSnapshotListResourceSnapshot : allResourceSnapshotListNode)
 		{
 			Data::Task::ResourceSnapshot resourceSnapshotListObject;
-			if(!value["GmtCreate"].isNull())
-				resourceSnapshotListObject.gmtCreate = value["GmtCreate"].asString();
-			if(!value["GmtModified"].isNull())
-				resourceSnapshotListObject.gmtModified = value["GmtModified"].asString();
-			if(!value["GmtCompleted"].isNull())
-				resourceSnapshotListObject.gmtCompleted = value["GmtCompleted"].asString();
-			if(!value["SnapshotId"].isNull())
-				resourceSnapshotListObject.snapshotId = value["SnapshotId"].asString();
-			if(!value["ResourceType"].isNull())
-				resourceSnapshotListObject.resourceType = value["ResourceType"].asString();
-			if(!value["ResourceId"].isNull())
-				resourceSnapshotListObject.resourceId = value["ResourceId"].asString();
-			if(!value["ResourceName"].isNull())
-				resourceSnapshotListObject.resourceName = value["ResourceName"].asString();
-			if(!value["OperateType"].isNull())
-				resourceSnapshotListObject.operateType = std::stoi(value["OperateType"].asString());
-			if(!value["Stage"].isNull())
-				resourceSnapshotListObject.stage = std::stoi(value["Stage"].asString());
-			if(!value["Status"].isNull())
-				resourceSnapshotListObject.status = std::stoi(value["Status"].asString());
-			if(!value["Log"].isNull())
-				resourceSnapshotListObject.log = value["Log"].asString();
+			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCreate"].isNull())
+				resourceSnapshotListObject.gmtCreate = allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCreate"].asString();
+			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["GmtModified"].isNull())
+				resourceSnapshotListObject.gmtModified = allTaskListNodeResourceSnapshotListResourceSnapshot["GmtModified"].asString();
+			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCompleted"].isNull())
+				resourceSnapshotListObject.gmtCompleted = allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCompleted"].asString();
+			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["SnapshotId"].isNull())
+				resourceSnapshotListObject.snapshotId = allTaskListNodeResourceSnapshotListResourceSnapshot["SnapshotId"].asString();
+			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceType"].isNull())
+				resourceSnapshotListObject.resourceType = allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceType"].asString();
+			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceId"].isNull())
+				resourceSnapshotListObject.resourceId = allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceId"].asString();
+			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceName"].isNull())
+				resourceSnapshotListObject.resourceName = allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceName"].asString();
+			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["OperateType"].isNull())
+				resourceSnapshotListObject.operateType = std::stoi(allTaskListNodeResourceSnapshotListResourceSnapshot["OperateType"].asString());
+			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["Stage"].isNull())
+				resourceSnapshotListObject.stage = std::stoi(allTaskListNodeResourceSnapshotListResourceSnapshot["Stage"].asString());
+			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["Status"].isNull())
+				resourceSnapshotListObject.status = std::stoi(allTaskListNodeResourceSnapshotListResourceSnapshot["Status"].asString());
+			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["Log"].isNull())
+				resourceSnapshotListObject.log = allTaskListNodeResourceSnapshotListResourceSnapshot["Log"].asString();
 			taskObject.resourceSnapshotList.push_back(resourceSnapshotListObject);
 		}
 		data_.taskList.push_back(taskObject);

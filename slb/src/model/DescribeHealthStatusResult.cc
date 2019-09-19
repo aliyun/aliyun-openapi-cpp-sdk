@@ -39,26 +39,26 @@ void DescribeHealthStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBackendServers = value["BackendServers"]["BackendServer"];
-	for (auto value : allBackendServers)
+	auto allBackendServersNode = value["BackendServers"]["BackendServer"];
+	for (auto valueBackendServersBackendServer : allBackendServersNode)
 	{
 		BackendServer backendServersObject;
-		if(!value["ListenerPort"].isNull())
-			backendServersObject.listenerPort = std::stoi(value["ListenerPort"].asString());
-		if(!value["ServerId"].isNull())
-			backendServersObject.serverId = value["ServerId"].asString();
-		if(!value["Port"].isNull())
-			backendServersObject.port = std::stoi(value["Port"].asString());
-		if(!value["ServerHealthStatus"].isNull())
-			backendServersObject.serverHealthStatus = value["ServerHealthStatus"].asString();
-		if(!value["ServerIp"].isNull())
-			backendServersObject.serverIp = value["ServerIp"].asString();
-		if(!value["EniHost"].isNull())
-			backendServersObject.eniHost = value["EniHost"].asString();
-		if(!value["Protocol"].isNull())
-			backendServersObject.protocol = value["Protocol"].asString();
-		if(!value["Type"].isNull())
-			backendServersObject.type = value["Type"].asString();
+		if(!valueBackendServersBackendServer["ListenerPort"].isNull())
+			backendServersObject.listenerPort = std::stoi(valueBackendServersBackendServer["ListenerPort"].asString());
+		if(!valueBackendServersBackendServer["ServerId"].isNull())
+			backendServersObject.serverId = valueBackendServersBackendServer["ServerId"].asString();
+		if(!valueBackendServersBackendServer["Port"].isNull())
+			backendServersObject.port = std::stoi(valueBackendServersBackendServer["Port"].asString());
+		if(!valueBackendServersBackendServer["ServerHealthStatus"].isNull())
+			backendServersObject.serverHealthStatus = valueBackendServersBackendServer["ServerHealthStatus"].asString();
+		if(!valueBackendServersBackendServer["ServerIp"].isNull())
+			backendServersObject.serverIp = valueBackendServersBackendServer["ServerIp"].asString();
+		if(!valueBackendServersBackendServer["EniHost"].isNull())
+			backendServersObject.eniHost = valueBackendServersBackendServer["EniHost"].asString();
+		if(!valueBackendServersBackendServer["Protocol"].isNull())
+			backendServersObject.protocol = valueBackendServersBackendServer["Protocol"].asString();
+		if(!valueBackendServersBackendServer["Type"].isNull())
+			backendServersObject.type = valueBackendServersBackendServer["Type"].asString();
 		backendServers_.push_back(backendServersObject);
 	}
 

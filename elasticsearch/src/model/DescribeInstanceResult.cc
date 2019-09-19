@@ -90,42 +90,42 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.enableKibanaPublicNetwork = resultNode["enableKibanaPublicNetwork"].asString() == "true";
 	if(!resultNode["haveKibana"].isNull())
 		result_.haveKibana = resultNode["haveKibana"].asString() == "true";
-	auto alldictList = value["dictList"]["DictListItem"];
-	for (auto value : alldictList)
+	auto alldictListNode = resultNode["dictList"]["DictListItem"];
+	for (auto resultNodedictListDictListItem : alldictListNode)
 	{
 		Result::DictListItem dictListItemObject;
-		if(!value["name"].isNull())
-			dictListItemObject.name = value["name"].asString();
-		if(!value["fileSize"].isNull())
-			dictListItemObject.fileSize = std::stol(value["fileSize"].asString());
-		if(!value["type"].isNull())
-			dictListItemObject.type = value["type"].asString();
-		if(!value["sourceType"].isNull())
-			dictListItemObject.sourceType = value["sourceType"].asString();
+		if(!resultNodedictListDictListItem["name"].isNull())
+			dictListItemObject.name = resultNodedictListDictListItem["name"].asString();
+		if(!resultNodedictListDictListItem["fileSize"].isNull())
+			dictListItemObject.fileSize = std::stol(resultNodedictListDictListItem["fileSize"].asString());
+		if(!resultNodedictListDictListItem["type"].isNull())
+			dictListItemObject.type = resultNodedictListDictListItem["type"].asString();
+		if(!resultNodedictListDictListItem["sourceType"].isNull())
+			dictListItemObject.sourceType = resultNodedictListDictListItem["sourceType"].asString();
 		result_.dictList.push_back(dictListItemObject);
 	}
-	auto allsynonymsDicts = value["synonymsDicts"]["SynonymsDictsItem"];
-	for (auto value : allsynonymsDicts)
+	auto allsynonymsDictsNode = resultNode["synonymsDicts"]["SynonymsDictsItem"];
+	for (auto resultNodesynonymsDictsSynonymsDictsItem : allsynonymsDictsNode)
 	{
 		Result::SynonymsDictsItem synonymsDictsItemObject;
-		if(!value["name"].isNull())
-			synonymsDictsItemObject.name = value["name"].asString();
-		if(!value["fileSize"].isNull())
-			synonymsDictsItemObject.fileSize = std::stol(value["fileSize"].asString());
-		if(!value["type"].isNull())
-			synonymsDictsItemObject.type = value["type"].asString();
-		if(!value["sourceType"].isNull())
-			synonymsDictsItemObject.sourceType = value["sourceType"].asString();
+		if(!resultNodesynonymsDictsSynonymsDictsItem["name"].isNull())
+			synonymsDictsItemObject.name = resultNodesynonymsDictsSynonymsDictsItem["name"].asString();
+		if(!resultNodesynonymsDictsSynonymsDictsItem["fileSize"].isNull())
+			synonymsDictsItemObject.fileSize = std::stol(resultNodesynonymsDictsSynonymsDictsItem["fileSize"].asString());
+		if(!resultNodesynonymsDictsSynonymsDictsItem["type"].isNull())
+			synonymsDictsItemObject.type = resultNodesynonymsDictsSynonymsDictsItem["type"].asString();
+		if(!resultNodesynonymsDictsSynonymsDictsItem["sourceType"].isNull())
+			synonymsDictsItemObject.sourceType = resultNodesynonymsDictsSynonymsDictsItem["sourceType"].asString();
 		result_.synonymsDicts.push_back(synonymsDictsItemObject);
 	}
-	auto allzoneInfos = value["zoneInfos"]["ZoneInfo"];
-	for (auto value : allzoneInfos)
+	auto allzoneInfosNode = resultNode["zoneInfos"]["ZoneInfo"];
+	for (auto resultNodezoneInfosZoneInfo : allzoneInfosNode)
 	{
 		Result::ZoneInfo zoneInfoObject;
-		if(!value["zoneId"].isNull())
-			zoneInfoObject.zoneId = value["zoneId"].asString();
-		if(!value["status"].isNull())
-			zoneInfoObject.status = value["status"].asString();
+		if(!resultNodezoneInfosZoneInfo["zoneId"].isNull())
+			zoneInfoObject.zoneId = resultNodezoneInfosZoneInfo["zoneId"].asString();
+		if(!resultNodezoneInfosZoneInfo["status"].isNull())
+			zoneInfoObject.status = resultNodezoneInfosZoneInfo["status"].asString();
 		result_.zoneInfos.push_back(zoneInfoObject);
 	}
 	auto nodeSpecNode = resultNode["nodeSpec"];

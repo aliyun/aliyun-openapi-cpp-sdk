@@ -39,18 +39,18 @@ void DescribeKeywordResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allKeywordList = value["KeywordList"]["Keyword"];
-	for (auto value : allKeywordList)
+	auto allKeywordListNode = value["KeywordList"]["Keyword"];
+	for (auto valueKeywordListKeyword : allKeywordListNode)
 	{
 		Keyword keywordListObject;
-		if(!value["Id"].isNull())
-			keywordListObject.id = std::stoi(value["Id"].asString());
-		if(!value["CreateTime"].isNull())
-			keywordListObject.createTime = value["CreateTime"].asString();
-		if(!value["Keyword"].isNull())
-			keywordListObject.keyword = value["Keyword"].asString();
-		if(!value["HitCount"].isNull())
-			keywordListObject.hitCount = std::stoi(value["HitCount"].asString());
+		if(!valueKeywordListKeyword["Id"].isNull())
+			keywordListObject.id = std::stoi(valueKeywordListKeyword["Id"].asString());
+		if(!valueKeywordListKeyword["CreateTime"].isNull())
+			keywordListObject.createTime = valueKeywordListKeyword["CreateTime"].asString();
+		if(!valueKeywordListKeyword["Keyword"].isNull())
+			keywordListObject.keyword = valueKeywordListKeyword["Keyword"].asString();
+		if(!valueKeywordListKeyword["HitCount"].isNull())
+			keywordListObject.hitCount = std::stoi(valueKeywordListKeyword["HitCount"].asString());
 		keywordList_.push_back(keywordListObject);
 	}
 	if(!value["TotalCount"].isNull())

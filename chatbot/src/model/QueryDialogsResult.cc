@@ -39,34 +39,34 @@ void QueryDialogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDialogs = value["Dialogs"]["Dialog"];
-	for (auto value : allDialogs)
+	auto allDialogsNode = value["Dialogs"]["Dialog"];
+	for (auto valueDialogsDialog : allDialogsNode)
 	{
 		Dialog dialogsObject;
-		if(!value["DialogId"].isNull())
-			dialogsObject.dialogId = std::stol(value["DialogId"].asString());
-		if(!value["DialogName"].isNull())
-			dialogsObject.dialogName = value["DialogName"].asString();
-		if(!value["Description"].isNull())
-			dialogsObject.description = value["Description"].asString();
-		if(!value["CreateTime"].isNull())
-			dialogsObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			dialogsObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["CreateUserId"].isNull())
-			dialogsObject.createUserId = value["CreateUserId"].asString();
-		if(!value["CreateUserName"].isNull())
-			dialogsObject.createUserName = value["CreateUserName"].asString();
-		if(!value["ModifyUserId"].isNull())
-			dialogsObject.modifyUserId = value["ModifyUserId"].asString();
-		if(!value["ModifyUserName"].isNull())
-			dialogsObject.modifyUserName = value["ModifyUserName"].asString();
-		if(!value["IsSampleDialog"].isNull())
-			dialogsObject.isSampleDialog = value["IsSampleDialog"].asString() == "true";
-		if(!value["Status"].isNull())
-			dialogsObject.status = std::stoi(value["Status"].asString());
-		if(!value["IsOnline"].isNull())
-			dialogsObject.isOnline = value["IsOnline"].asString() == "true";
+		if(!valueDialogsDialog["DialogId"].isNull())
+			dialogsObject.dialogId = std::stol(valueDialogsDialog["DialogId"].asString());
+		if(!valueDialogsDialog["DialogName"].isNull())
+			dialogsObject.dialogName = valueDialogsDialog["DialogName"].asString();
+		if(!valueDialogsDialog["Description"].isNull())
+			dialogsObject.description = valueDialogsDialog["Description"].asString();
+		if(!valueDialogsDialog["CreateTime"].isNull())
+			dialogsObject.createTime = valueDialogsDialog["CreateTime"].asString();
+		if(!valueDialogsDialog["ModifyTime"].isNull())
+			dialogsObject.modifyTime = valueDialogsDialog["ModifyTime"].asString();
+		if(!valueDialogsDialog["CreateUserId"].isNull())
+			dialogsObject.createUserId = valueDialogsDialog["CreateUserId"].asString();
+		if(!valueDialogsDialog["CreateUserName"].isNull())
+			dialogsObject.createUserName = valueDialogsDialog["CreateUserName"].asString();
+		if(!valueDialogsDialog["ModifyUserId"].isNull())
+			dialogsObject.modifyUserId = valueDialogsDialog["ModifyUserId"].asString();
+		if(!valueDialogsDialog["ModifyUserName"].isNull())
+			dialogsObject.modifyUserName = valueDialogsDialog["ModifyUserName"].asString();
+		if(!valueDialogsDialog["IsSampleDialog"].isNull())
+			dialogsObject.isSampleDialog = valueDialogsDialog["IsSampleDialog"].asString() == "true";
+		if(!valueDialogsDialog["Status"].isNull())
+			dialogsObject.status = std::stoi(valueDialogsDialog["Status"].asString());
+		if(!valueDialogsDialog["IsOnline"].isNull())
+			dialogsObject.isOnline = valueDialogsDialog["IsOnline"].asString() == "true";
 		dialogs_.push_back(dialogsObject);
 	}
 	if(!value["PageSize"].isNull())

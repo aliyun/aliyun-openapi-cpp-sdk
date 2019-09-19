@@ -39,28 +39,28 @@ void DescribeRecommendInstanceTypeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["RecommendInstanceType"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["RecommendInstanceType"];
+	for (auto valueDataRecommendInstanceType : allDataNode)
 	{
 		RecommendInstanceType dataObject;
-		if(!value["RegionId"].isNull())
-			dataObject.regionId = value["RegionId"].asString();
-		if(!value["CommodityCode"].isNull())
-			dataObject.commodityCode = value["CommodityCode"].asString();
-		if(!value["Scene"].isNull())
-			dataObject.scene = value["Scene"].asString();
-		if(!value["InstanceChargeType"].isNull())
-			dataObject.instanceChargeType = value["InstanceChargeType"].asString();
-		if(!value["SpotStrategy"].isNull())
-			dataObject.spotStrategy = value["SpotStrategy"].asString();
-		if(!value["Priority"].isNull())
-			dataObject.priority = std::stoi(value["Priority"].asString());
-		auto allZones = value["Zones"]["zone"];
-		for (auto value : allZones)
+		if(!valueDataRecommendInstanceType["RegionId"].isNull())
+			dataObject.regionId = valueDataRecommendInstanceType["RegionId"].asString();
+		if(!valueDataRecommendInstanceType["CommodityCode"].isNull())
+			dataObject.commodityCode = valueDataRecommendInstanceType["CommodityCode"].asString();
+		if(!valueDataRecommendInstanceType["Scene"].isNull())
+			dataObject.scene = valueDataRecommendInstanceType["Scene"].asString();
+		if(!valueDataRecommendInstanceType["InstanceChargeType"].isNull())
+			dataObject.instanceChargeType = valueDataRecommendInstanceType["InstanceChargeType"].asString();
+		if(!valueDataRecommendInstanceType["SpotStrategy"].isNull())
+			dataObject.spotStrategy = valueDataRecommendInstanceType["SpotStrategy"].asString();
+		if(!valueDataRecommendInstanceType["Priority"].isNull())
+			dataObject.priority = std::stoi(valueDataRecommendInstanceType["Priority"].asString());
+		auto allZonesNode = allDataNode["Zones"]["zone"];
+		for (auto allDataNodeZoneszone : allZonesNode)
 		{
 			RecommendInstanceType::Zone zonesObject;
-			if(!value["ZoneNo"].isNull())
-				zonesObject.zoneNo = value["ZoneNo"].asString();
+			if(!allDataNodeZoneszone["ZoneNo"].isNull())
+				zonesObject.zoneNo = allDataNodeZoneszone["ZoneNo"].asString();
 			auto allNetworkTypes = value["NetworkTypes"]["NetworkType"];
 			for (auto value : allNetworkTypes)
 				zonesObject.networkTypes.push_back(value.asString());

@@ -39,12 +39,12 @@ void QueryGroupUsersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DataItem"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!value["UserId"].isNull())
-			dataObject.userId = value["UserId"].asString();
+		if(!valueDataDataItem["UserId"].isNull())
+			dataObject.userId = valueDataDataItem["UserId"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

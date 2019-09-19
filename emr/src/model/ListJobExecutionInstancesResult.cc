@@ -39,28 +39,28 @@ void ListJobExecutionInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobInstances = value["JobInstances"]["JobInstance"];
-	for (auto value : allJobInstances)
+	auto allJobInstancesNode = value["JobInstances"]["JobInstance"];
+	for (auto valueJobInstancesJobInstance : allJobInstancesNode)
 	{
 		JobInstance jobInstancesObject;
-		if(!value["Id"].isNull())
-			jobInstancesObject.id = value["Id"].asString();
-		if(!value["JobName"].isNull())
-			jobInstancesObject.jobName = value["JobName"].asString();
-		if(!value["StartTime"].isNull())
-			jobInstancesObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["RunTime"].isNull())
-			jobInstancesObject.runTime = std::stoi(value["RunTime"].asString());
-		if(!value["JobType"].isNull())
-			jobInstancesObject.jobType = value["JobType"].asString();
-		if(!value["JobId"].isNull())
-			jobInstancesObject.jobId = value["JobId"].asString();
-		if(!value["ClusterId"].isNull())
-			jobInstancesObject.clusterId = value["ClusterId"].asString();
-		if(!value["Status"].isNull())
-			jobInstancesObject.status = value["Status"].asString();
-		if(!value["RetryInfo"].isNull())
-			jobInstancesObject.retryInfo = value["RetryInfo"].asString();
+		if(!valueJobInstancesJobInstance["Id"].isNull())
+			jobInstancesObject.id = valueJobInstancesJobInstance["Id"].asString();
+		if(!valueJobInstancesJobInstance["JobName"].isNull())
+			jobInstancesObject.jobName = valueJobInstancesJobInstance["JobName"].asString();
+		if(!valueJobInstancesJobInstance["StartTime"].isNull())
+			jobInstancesObject.startTime = std::stol(valueJobInstancesJobInstance["StartTime"].asString());
+		if(!valueJobInstancesJobInstance["RunTime"].isNull())
+			jobInstancesObject.runTime = std::stoi(valueJobInstancesJobInstance["RunTime"].asString());
+		if(!valueJobInstancesJobInstance["JobType"].isNull())
+			jobInstancesObject.jobType = valueJobInstancesJobInstance["JobType"].asString();
+		if(!valueJobInstancesJobInstance["JobId"].isNull())
+			jobInstancesObject.jobId = valueJobInstancesJobInstance["JobId"].asString();
+		if(!valueJobInstancesJobInstance["ClusterId"].isNull())
+			jobInstancesObject.clusterId = valueJobInstancesJobInstance["ClusterId"].asString();
+		if(!valueJobInstancesJobInstance["Status"].isNull())
+			jobInstancesObject.status = valueJobInstancesJobInstance["Status"].asString();
+		if(!valueJobInstancesJobInstance["RetryInfo"].isNull())
+			jobInstancesObject.retryInfo = valueJobInstancesJobInstance["RetryInfo"].asString();
 		jobInstances_.push_back(jobInstancesObject);
 	}
 	if(!value["TotalCount"].isNull())

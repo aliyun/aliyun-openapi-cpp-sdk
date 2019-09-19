@@ -39,20 +39,20 @@ void DescribeDeploymentDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDeploymentDetail = value["DeploymentDetail"]["Deployment"];
-	for (auto value : allDeploymentDetail)
+	auto allDeploymentDetailNode = value["DeploymentDetail"]["Deployment"];
+	for (auto valueDeploymentDetailDeployment : allDeploymentDetailNode)
 	{
 		Deployment deploymentDetailObject;
-		if(!value["CloudProduct"].isNull())
-			deploymentDetailObject.cloudProduct = value["CloudProduct"].asString();
-		if(!value["Domain"].isNull())
-			deploymentDetailObject.domain = value["Domain"].asString();
-		if(!value["Region"].isNull())
-			deploymentDetailObject.region = value["Region"].asString();
-		if(!value["DeployTime"].isNull())
-			deploymentDetailObject.deployTime = std::stol(value["DeployTime"].asString());
-		if(!value["Id"].isNull())
-			deploymentDetailObject.id = std::stol(value["Id"].asString());
+		if(!valueDeploymentDetailDeployment["CloudProduct"].isNull())
+			deploymentDetailObject.cloudProduct = valueDeploymentDetailDeployment["CloudProduct"].asString();
+		if(!valueDeploymentDetailDeployment["Domain"].isNull())
+			deploymentDetailObject.domain = valueDeploymentDetailDeployment["Domain"].asString();
+		if(!valueDeploymentDetailDeployment["Region"].isNull())
+			deploymentDetailObject.region = valueDeploymentDetailDeployment["Region"].asString();
+		if(!valueDeploymentDetailDeployment["DeployTime"].isNull())
+			deploymentDetailObject.deployTime = std::stol(valueDeploymentDetailDeployment["DeployTime"].asString());
+		if(!valueDeploymentDetailDeployment["Id"].isNull())
+			deploymentDetailObject.id = std::stol(valueDeploymentDetailDeployment["Id"].asString());
 		deploymentDetail_.push_back(deploymentDetailObject);
 	}
 

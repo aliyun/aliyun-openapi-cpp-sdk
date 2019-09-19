@@ -39,28 +39,28 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["LogRecords"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["LogRecords"];
+	for (auto valueItemsLogRecords : allItemsNode)
 	{
 		LogRecords itemsObject;
-		if(!value["NodeId"].isNull())
-			itemsObject.nodeId = value["NodeId"].asString();
-		if(!value["IPAddress"].isNull())
-			itemsObject.iPAddress = value["IPAddress"].asString();
-		if(!value["DBName"].isNull())
-			itemsObject.dBName = value["DBName"].asString();
-		if(!value["DataBaseName"].isNull())
-			itemsObject.dataBaseName = value["DataBaseName"].asString();
-		if(!value["Command"].isNull())
-			itemsObject.command = value["Command"].asString();
-		if(!value["ElapsedTime"].isNull())
-			itemsObject.elapsedTime = std::stol(value["ElapsedTime"].asString());
-		if(!value["ExecuteTime"].isNull())
-			itemsObject.executeTime = value["ExecuteTime"].asString();
-		if(!value["Account"].isNull())
-			itemsObject.account = value["Account"].asString();
-		if(!value["AccountName"].isNull())
-			itemsObject.accountName = value["AccountName"].asString();
+		if(!valueItemsLogRecords["NodeId"].isNull())
+			itemsObject.nodeId = valueItemsLogRecords["NodeId"].asString();
+		if(!valueItemsLogRecords["IPAddress"].isNull())
+			itemsObject.iPAddress = valueItemsLogRecords["IPAddress"].asString();
+		if(!valueItemsLogRecords["DBName"].isNull())
+			itemsObject.dBName = valueItemsLogRecords["DBName"].asString();
+		if(!valueItemsLogRecords["DataBaseName"].isNull())
+			itemsObject.dataBaseName = valueItemsLogRecords["DataBaseName"].asString();
+		if(!valueItemsLogRecords["Command"].isNull())
+			itemsObject.command = valueItemsLogRecords["Command"].asString();
+		if(!valueItemsLogRecords["ElapsedTime"].isNull())
+			itemsObject.elapsedTime = std::stol(valueItemsLogRecords["ElapsedTime"].asString());
+		if(!valueItemsLogRecords["ExecuteTime"].isNull())
+			itemsObject.executeTime = valueItemsLogRecords["ExecuteTime"].asString();
+		if(!valueItemsLogRecords["Account"].isNull())
+			itemsObject.account = valueItemsLogRecords["Account"].asString();
+		if(!valueItemsLogRecords["AccountName"].isNull())
+			itemsObject.accountName = valueItemsLogRecords["AccountName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["InstanceId"].isNull())

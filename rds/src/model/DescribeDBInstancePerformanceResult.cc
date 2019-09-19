@@ -39,24 +39,24 @@ void DescribeDBInstancePerformanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPerformanceKeys = value["PerformanceKeys"]["PerformanceKey"];
-	for (auto value : allPerformanceKeys)
+	auto allPerformanceKeysNode = value["PerformanceKeys"]["PerformanceKey"];
+	for (auto valuePerformanceKeysPerformanceKey : allPerformanceKeysNode)
 	{
 		PerformanceKey performanceKeysObject;
-		if(!value["Key"].isNull())
-			performanceKeysObject.key = value["Key"].asString();
-		if(!value["Unit"].isNull())
-			performanceKeysObject.unit = value["Unit"].asString();
-		if(!value["ValueFormat"].isNull())
-			performanceKeysObject.valueFormat = value["ValueFormat"].asString();
-		auto allValues = value["Values"]["PerformanceValue"];
-		for (auto value : allValues)
+		if(!valuePerformanceKeysPerformanceKey["Key"].isNull())
+			performanceKeysObject.key = valuePerformanceKeysPerformanceKey["Key"].asString();
+		if(!valuePerformanceKeysPerformanceKey["Unit"].isNull())
+			performanceKeysObject.unit = valuePerformanceKeysPerformanceKey["Unit"].asString();
+		if(!valuePerformanceKeysPerformanceKey["ValueFormat"].isNull())
+			performanceKeysObject.valueFormat = valuePerformanceKeysPerformanceKey["ValueFormat"].asString();
+		auto allValuesNode = allPerformanceKeysNode["Values"]["PerformanceValue"];
+		for (auto allPerformanceKeysNodeValuesPerformanceValue : allValuesNode)
 		{
 			PerformanceKey::PerformanceValue valuesObject;
-			if(!value["Value"].isNull())
-				valuesObject.value = value["Value"].asString();
-			if(!value["Date"].isNull())
-				valuesObject.date = value["Date"].asString();
+			if(!allPerformanceKeysNodeValuesPerformanceValue["Value"].isNull())
+				valuesObject.value = allPerformanceKeysNodeValuesPerformanceValue["Value"].asString();
+			if(!allPerformanceKeysNodeValuesPerformanceValue["Date"].isNull())
+				valuesObject.date = allPerformanceKeysNodeValuesPerformanceValue["Date"].asString();
 			performanceKeysObject.values.push_back(valuesObject);
 		}
 		performanceKeys_.push_back(performanceKeysObject);

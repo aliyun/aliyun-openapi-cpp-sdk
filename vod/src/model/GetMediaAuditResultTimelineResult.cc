@@ -40,28 +40,28 @@ void GetMediaAuditResultTimelineResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto mediaAuditResultTimelineNode = value["MediaAuditResultTimeline"];
-	auto allPorn = value["Porn"]["PornItem"];
-	for (auto value : allPorn)
+	auto allPornNode = mediaAuditResultTimelineNode["Porn"]["PornItem"];
+	for (auto mediaAuditResultTimelineNodePornPornItem : allPornNode)
 	{
 		MediaAuditResultTimeline::PornItem pornItemObject;
-		if(!value["Label"].isNull())
-			pornItemObject.label = value["Label"].asString();
-		if(!value["Score"].isNull())
-			pornItemObject.score = value["Score"].asString();
-		if(!value["Timestamp"].isNull())
-			pornItemObject.timestamp = value["Timestamp"].asString();
+		if(!mediaAuditResultTimelineNodePornPornItem["Label"].isNull())
+			pornItemObject.label = mediaAuditResultTimelineNodePornPornItem["Label"].asString();
+		if(!mediaAuditResultTimelineNodePornPornItem["Score"].isNull())
+			pornItemObject.score = mediaAuditResultTimelineNodePornPornItem["Score"].asString();
+		if(!mediaAuditResultTimelineNodePornPornItem["Timestamp"].isNull())
+			pornItemObject.timestamp = mediaAuditResultTimelineNodePornPornItem["Timestamp"].asString();
 		mediaAuditResultTimeline_.porn.push_back(pornItemObject);
 	}
-	auto allTerrorism = value["Terrorism"]["TerrorismItem"];
-	for (auto value : allTerrorism)
+	auto allTerrorismNode = mediaAuditResultTimelineNode["Terrorism"]["TerrorismItem"];
+	for (auto mediaAuditResultTimelineNodeTerrorismTerrorismItem : allTerrorismNode)
 	{
 		MediaAuditResultTimeline::TerrorismItem terrorismItemObject;
-		if(!value["Label"].isNull())
-			terrorismItemObject.label = value["Label"].asString();
-		if(!value["Score"].isNull())
-			terrorismItemObject.score = value["Score"].asString();
-		if(!value["Timestamp"].isNull())
-			terrorismItemObject.timestamp = value["Timestamp"].asString();
+		if(!mediaAuditResultTimelineNodeTerrorismTerrorismItem["Label"].isNull())
+			terrorismItemObject.label = mediaAuditResultTimelineNodeTerrorismTerrorismItem["Label"].asString();
+		if(!mediaAuditResultTimelineNodeTerrorismTerrorismItem["Score"].isNull())
+			terrorismItemObject.score = mediaAuditResultTimelineNodeTerrorismTerrorismItem["Score"].asString();
+		if(!mediaAuditResultTimelineNodeTerrorismTerrorismItem["Timestamp"].isNull())
+			terrorismItemObject.timestamp = mediaAuditResultTimelineNodeTerrorismTerrorismItem["Timestamp"].asString();
 		mediaAuditResultTimeline_.terrorism.push_back(terrorismItemObject);
 	}
 

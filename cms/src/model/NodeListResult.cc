@@ -39,38 +39,38 @@ void NodeListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNodes = value["Nodes"]["Node"];
-	for (auto value : allNodes)
+	auto allNodesNode = value["Nodes"]["Node"];
+	for (auto valueNodesNode : allNodesNode)
 	{
 		Node nodesObject;
-		if(!value["InstanceId"].isNull())
-			nodesObject.instanceId = value["InstanceId"].asString();
-		if(!value["SerialNumber"].isNull())
-			nodesObject.serialNumber = value["SerialNumber"].asString();
-		if(!value["HostName"].isNull())
-			nodesObject.hostName = value["HostName"].asString();
-		if(!value["AliUid"].isNull())
-			nodesObject.aliUid = std::stol(value["AliUid"].asString());
-		if(!value["OperatingSystem"].isNull())
-			nodesObject.operatingSystem = value["OperatingSystem"].asString();
-		if(!value["IpGroup"].isNull())
-			nodesObject.ipGroup = value["IpGroup"].asString();
-		if(!value["Region"].isNull())
-			nodesObject.region = value["Region"].asString();
-		if(!value["TianjimonVersion"].isNull())
-			nodesObject.tianjimonVersion = value["TianjimonVersion"].asString();
-		if(!value["EipAddress"].isNull())
-			nodesObject.eipAddress = value["EipAddress"].asString();
-		if(!value["EipId"].isNull())
-			nodesObject.eipId = value["EipId"].asString();
-		if(!value["AliyunHost"].isNull())
-			nodesObject.aliyunHost = value["AliyunHost"].asString() == "true";
-		if(!value["NatIp"].isNull())
-			nodesObject.natIp = value["NatIp"].asString();
-		if(!value["NetworkType"].isNull())
-			nodesObject.networkType = value["NetworkType"].asString();
-		if(!value["InstanceTypeFamily"].isNull())
-			nodesObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
+		if(!valueNodesNode["InstanceId"].isNull())
+			nodesObject.instanceId = valueNodesNode["InstanceId"].asString();
+		if(!valueNodesNode["SerialNumber"].isNull())
+			nodesObject.serialNumber = valueNodesNode["SerialNumber"].asString();
+		if(!valueNodesNode["HostName"].isNull())
+			nodesObject.hostName = valueNodesNode["HostName"].asString();
+		if(!valueNodesNode["AliUid"].isNull())
+			nodesObject.aliUid = std::stol(valueNodesNode["AliUid"].asString());
+		if(!valueNodesNode["OperatingSystem"].isNull())
+			nodesObject.operatingSystem = valueNodesNode["OperatingSystem"].asString();
+		if(!valueNodesNode["IpGroup"].isNull())
+			nodesObject.ipGroup = valueNodesNode["IpGroup"].asString();
+		if(!valueNodesNode["Region"].isNull())
+			nodesObject.region = valueNodesNode["Region"].asString();
+		if(!valueNodesNode["TianjimonVersion"].isNull())
+			nodesObject.tianjimonVersion = valueNodesNode["TianjimonVersion"].asString();
+		if(!valueNodesNode["EipAddress"].isNull())
+			nodesObject.eipAddress = valueNodesNode["EipAddress"].asString();
+		if(!valueNodesNode["EipId"].isNull())
+			nodesObject.eipId = valueNodesNode["EipId"].asString();
+		if(!valueNodesNode["AliyunHost"].isNull())
+			nodesObject.aliyunHost = valueNodesNode["AliyunHost"].asString() == "true";
+		if(!valueNodesNode["NatIp"].isNull())
+			nodesObject.natIp = valueNodesNode["NatIp"].asString();
+		if(!valueNodesNode["NetworkType"].isNull())
+			nodesObject.networkType = valueNodesNode["NetworkType"].asString();
+		if(!valueNodesNode["InstanceTypeFamily"].isNull())
+			nodesObject.instanceTypeFamily = valueNodesNode["InstanceTypeFamily"].asString();
 		nodes_.push_back(nodesObject);
 	}
 	if(!value["ErrorCode"].isNull())

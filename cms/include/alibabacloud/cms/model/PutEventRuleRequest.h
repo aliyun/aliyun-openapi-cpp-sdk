@@ -32,11 +32,11 @@ namespace AlibabaCloud
 			{
 				struct EventPattern
 				{
-					LevelList levelList;
+					std::vector<std::string> levelList;
 					std::string product;
-					StatusList statusList;
-					NameList nameList;
-					EventTypeList eventTypeList;
+					std::vector<std::string> statusList;
+					std::vector<std::string> nameList;
+					std::vector<std::string> eventTypeList;
 				};
 
 			public:

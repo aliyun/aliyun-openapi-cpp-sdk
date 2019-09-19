@@ -39,70 +39,70 @@ void ListEventTargetsByRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allContactParameters = value["ContactParameters"]["ContactParameter"];
-	for (auto value : allContactParameters)
+	auto allContactParametersNode = value["ContactParameters"]["ContactParameter"];
+	for (auto valueContactParametersContactParameter : allContactParametersNode)
 	{
 		ContactParameter contactParametersObject;
-		if(!value["ContactGroupName"].isNull())
-			contactParametersObject.contactGroupName = value["ContactGroupName"].asString();
-		if(!value["Level"].isNull())
-			contactParametersObject.level = value["Level"].asString();
-		if(!value["Id"].isNull())
-			contactParametersObject.id = value["Id"].asString();
+		if(!valueContactParametersContactParameter["ContactGroupName"].isNull())
+			contactParametersObject.contactGroupName = valueContactParametersContactParameter["ContactGroupName"].asString();
+		if(!valueContactParametersContactParameter["Level"].isNull())
+			contactParametersObject.level = valueContactParametersContactParameter["Level"].asString();
+		if(!valueContactParametersContactParameter["Id"].isNull())
+			contactParametersObject.id = valueContactParametersContactParameter["Id"].asString();
 		contactParameters_.push_back(contactParametersObject);
 	}
-	auto allFcParameters = value["FcParameters"]["FCParameter"];
-	for (auto value : allFcParameters)
+	auto allFcParametersNode = value["FcParameters"]["FCParameter"];
+	for (auto valueFcParametersFCParameter : allFcParametersNode)
 	{
 		FCParameter fcParametersObject;
-		if(!value["Region"].isNull())
-			fcParametersObject.region = value["Region"].asString();
-		if(!value["ServiceName"].isNull())
-			fcParametersObject.serviceName = value["ServiceName"].asString();
-		if(!value["FunctionName"].isNull())
-			fcParametersObject.functionName = value["FunctionName"].asString();
-		if(!value["Id"].isNull())
-			fcParametersObject.id = value["Id"].asString();
+		if(!valueFcParametersFCParameter["Region"].isNull())
+			fcParametersObject.region = valueFcParametersFCParameter["Region"].asString();
+		if(!valueFcParametersFCParameter["ServiceName"].isNull())
+			fcParametersObject.serviceName = valueFcParametersFCParameter["ServiceName"].asString();
+		if(!valueFcParametersFCParameter["FunctionName"].isNull())
+			fcParametersObject.functionName = valueFcParametersFCParameter["FunctionName"].asString();
+		if(!valueFcParametersFCParameter["Id"].isNull())
+			fcParametersObject.id = valueFcParametersFCParameter["Id"].asString();
 		fcParameters_.push_back(fcParametersObject);
 	}
-	auto allMnsParameters = value["MnsParameters"]["MnsParameter"];
-	for (auto value : allMnsParameters)
+	auto allMnsParametersNode = value["MnsParameters"]["MnsParameter"];
+	for (auto valueMnsParametersMnsParameter : allMnsParametersNode)
 	{
 		MnsParameter mnsParametersObject;
-		if(!value["Region"].isNull())
-			mnsParametersObject.region = value["Region"].asString();
-		if(!value["Queue"].isNull())
-			mnsParametersObject.queue = value["Queue"].asString();
-		if(!value["Id"].isNull())
-			mnsParametersObject.id = value["Id"].asString();
+		if(!valueMnsParametersMnsParameter["Region"].isNull())
+			mnsParametersObject.region = valueMnsParametersMnsParameter["Region"].asString();
+		if(!valueMnsParametersMnsParameter["Queue"].isNull())
+			mnsParametersObject.queue = valueMnsParametersMnsParameter["Queue"].asString();
+		if(!valueMnsParametersMnsParameter["Id"].isNull())
+			mnsParametersObject.id = valueMnsParametersMnsParameter["Id"].asString();
 		mnsParameters_.push_back(mnsParametersObject);
 	}
-	auto allWebhookParameters = value["WebhookParameters"]["WebhookParameter"];
-	for (auto value : allWebhookParameters)
+	auto allWebhookParametersNode = value["WebhookParameters"]["WebhookParameter"];
+	for (auto valueWebhookParametersWebhookParameter : allWebhookParametersNode)
 	{
 		WebhookParameter webhookParametersObject;
-		if(!value["Id"].isNull())
-			webhookParametersObject.id = value["Id"].asString();
-		if(!value["Protocol"].isNull())
-			webhookParametersObject.protocol = value["Protocol"].asString();
-		if(!value["Method"].isNull())
-			webhookParametersObject.method = value["Method"].asString();
-		if(!value["Url"].isNull())
-			webhookParametersObject.url = value["Url"].asString();
+		if(!valueWebhookParametersWebhookParameter["Id"].isNull())
+			webhookParametersObject.id = valueWebhookParametersWebhookParameter["Id"].asString();
+		if(!valueWebhookParametersWebhookParameter["Protocol"].isNull())
+			webhookParametersObject.protocol = valueWebhookParametersWebhookParameter["Protocol"].asString();
+		if(!valueWebhookParametersWebhookParameter["Method"].isNull())
+			webhookParametersObject.method = valueWebhookParametersWebhookParameter["Method"].asString();
+		if(!valueWebhookParametersWebhookParameter["Url"].isNull())
+			webhookParametersObject.url = valueWebhookParametersWebhookParameter["Url"].asString();
 		webhookParameters_.push_back(webhookParametersObject);
 	}
-	auto allSlsParameters = value["SlsParameters"]["SlsParameter"];
-	for (auto value : allSlsParameters)
+	auto allSlsParametersNode = value["SlsParameters"]["SlsParameter"];
+	for (auto valueSlsParametersSlsParameter : allSlsParametersNode)
 	{
 		SlsParameter slsParametersObject;
-		if(!value["Id"].isNull())
-			slsParametersObject.id = value["Id"].asString();
-		if(!value["Region"].isNull())
-			slsParametersObject.region = value["Region"].asString();
-		if(!value["Project"].isNull())
-			slsParametersObject.project = value["Project"].asString();
-		if(!value["LogStore"].isNull())
-			slsParametersObject.logStore = value["LogStore"].asString();
+		if(!valueSlsParametersSlsParameter["Id"].isNull())
+			slsParametersObject.id = valueSlsParametersSlsParameter["Id"].asString();
+		if(!valueSlsParametersSlsParameter["Region"].isNull())
+			slsParametersObject.region = valueSlsParametersSlsParameter["Region"].asString();
+		if(!valueSlsParametersSlsParameter["Project"].isNull())
+			slsParametersObject.project = valueSlsParametersSlsParameter["Project"].asString();
+		if(!valueSlsParametersSlsParameter["LogStore"].isNull())
+			slsParametersObject.logStore = valueSlsParametersSlsParameter["LogStore"].asString();
 		slsParameters_.push_back(slsParametersObject);
 	}
 	if(!value["Code"].isNull())

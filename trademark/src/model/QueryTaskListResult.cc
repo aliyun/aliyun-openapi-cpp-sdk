@@ -39,18 +39,18 @@ void QueryTaskListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["TaskList"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["TaskList"];
+	for (auto valueDataTaskList : allDataNode)
 	{
 		TaskList dataObject;
-		if(!value["TaskStatus"].isNull())
-			dataObject.taskStatus = value["TaskStatus"].asString();
-		if(!value["TaskType"].isNull())
-			dataObject.taskType = value["TaskType"].asString();
-		if(!value["ErrMsg"].isNull())
-			dataObject.errMsg = value["ErrMsg"].asString();
-		if(!value["Result"].isNull())
-			dataObject.result = value["Result"].asString();
+		if(!valueDataTaskList["TaskStatus"].isNull())
+			dataObject.taskStatus = valueDataTaskList["TaskStatus"].asString();
+		if(!valueDataTaskList["TaskType"].isNull())
+			dataObject.taskType = valueDataTaskList["TaskType"].asString();
+		if(!valueDataTaskList["ErrMsg"].isNull())
+			dataObject.errMsg = valueDataTaskList["ErrMsg"].asString();
+		if(!valueDataTaskList["Result"].isNull())
+			dataObject.result = valueDataTaskList["Result"].asString();
 		data_.push_back(dataObject);
 	}
 

@@ -39,26 +39,26 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLaunchTemplateVersionSets = value["LaunchTemplateVersionSets"]["LaunchTemplateVersionSet"];
-	for (auto value : allLaunchTemplateVersionSets)
+	auto allLaunchTemplateVersionSetsNode = value["LaunchTemplateVersionSets"]["LaunchTemplateVersionSet"];
+	for (auto valueLaunchTemplateVersionSetsLaunchTemplateVersionSet : allLaunchTemplateVersionSetsNode)
 	{
 		LaunchTemplateVersionSet launchTemplateVersionSetsObject;
-		if(!value["CreateTime"].isNull())
-			launchTemplateVersionSetsObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifiedTime"].isNull())
-			launchTemplateVersionSetsObject.modifiedTime = value["ModifiedTime"].asString();
-		if(!value["LaunchTemplateId"].isNull())
-			launchTemplateVersionSetsObject.launchTemplateId = value["LaunchTemplateId"].asString();
-		if(!value["LaunchTemplateName"].isNull())
-			launchTemplateVersionSetsObject.launchTemplateName = value["LaunchTemplateName"].asString();
-		if(!value["DefaultVersion"].isNull())
-			launchTemplateVersionSetsObject.defaultVersion = value["DefaultVersion"].asString() == "true";
-		if(!value["VersionNumber"].isNull())
-			launchTemplateVersionSetsObject.versionNumber = std::stol(value["VersionNumber"].asString());
-		if(!value["VersionDescription"].isNull())
-			launchTemplateVersionSetsObject.versionDescription = value["VersionDescription"].asString();
-		if(!value["CreatedBy"].isNull())
-			launchTemplateVersionSetsObject.createdBy = value["CreatedBy"].asString();
+		if(!valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["CreateTime"].isNull())
+			launchTemplateVersionSetsObject.createTime = valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["CreateTime"].asString();
+		if(!valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["ModifiedTime"].isNull())
+			launchTemplateVersionSetsObject.modifiedTime = valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["ModifiedTime"].asString();
+		if(!valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["LaunchTemplateId"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateId = valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["LaunchTemplateId"].asString();
+		if(!valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["LaunchTemplateName"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateName = valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["LaunchTemplateName"].asString();
+		if(!valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["DefaultVersion"].isNull())
+			launchTemplateVersionSetsObject.defaultVersion = valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["DefaultVersion"].asString() == "true";
+		if(!valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["VersionNumber"].isNull())
+			launchTemplateVersionSetsObject.versionNumber = std::stol(valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["VersionNumber"].asString());
+		if(!valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["VersionDescription"].isNull())
+			launchTemplateVersionSetsObject.versionDescription = valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["VersionDescription"].asString();
+		if(!valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["CreatedBy"].isNull())
+			launchTemplateVersionSetsObject.createdBy = valueLaunchTemplateVersionSetsLaunchTemplateVersionSet["CreatedBy"].asString();
 		auto launchTemplateDataNode = value["LaunchTemplateData"];
 		if(!launchTemplateDataNode["ImageId"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.imageId = launchTemplateDataNode["ImageId"].asString();
@@ -126,52 +126,52 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.resourceGroupId = launchTemplateDataNode["ResourceGroupId"].asString();
 		if(!launchTemplateDataNode["SecurityEnhancementStrategy"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.securityEnhancementStrategy = launchTemplateDataNode["SecurityEnhancementStrategy"].asString();
-		auto allDataDisks = value["DataDisks"]["DataDisk"];
-		for (auto value : allDataDisks)
+		auto allDataDisksNode = launchTemplateDataNode["DataDisks"]["DataDisk"];
+		for (auto launchTemplateDataNodeDataDisksDataDisk : allDataDisksNode)
 		{
 			LaunchTemplateVersionSet::LaunchTemplateData::DataDisk dataDiskObject;
-			if(!value["Size"].isNull())
-				dataDiskObject.size = std::stoi(value["Size"].asString());
-			if(!value["SnapshotId"].isNull())
-				dataDiskObject.snapshotId = value["SnapshotId"].asString();
-			if(!value["Category"].isNull())
-				dataDiskObject.category = value["Category"].asString();
-			if(!value["Encrypted"].isNull())
-				dataDiskObject.encrypted = value["Encrypted"].asString();
-			if(!value["DiskName"].isNull())
-				dataDiskObject.diskName = value["DiskName"].asString();
-			if(!value["Description"].isNull())
-				dataDiskObject.description = value["Description"].asString();
-			if(!value["DeleteWithInstance"].isNull())
-				dataDiskObject.deleteWithInstance = value["DeleteWithInstance"].asString() == "true";
-			if(!value["Device"].isNull())
-				dataDiskObject.device = value["Device"].asString();
+			if(!launchTemplateDataNodeDataDisksDataDisk["Size"].isNull())
+				dataDiskObject.size = std::stoi(launchTemplateDataNodeDataDisksDataDisk["Size"].asString());
+			if(!launchTemplateDataNodeDataDisksDataDisk["SnapshotId"].isNull())
+				dataDiskObject.snapshotId = launchTemplateDataNodeDataDisksDataDisk["SnapshotId"].asString();
+			if(!launchTemplateDataNodeDataDisksDataDisk["Category"].isNull())
+				dataDiskObject.category = launchTemplateDataNodeDataDisksDataDisk["Category"].asString();
+			if(!launchTemplateDataNodeDataDisksDataDisk["Encrypted"].isNull())
+				dataDiskObject.encrypted = launchTemplateDataNodeDataDisksDataDisk["Encrypted"].asString();
+			if(!launchTemplateDataNodeDataDisksDataDisk["DiskName"].isNull())
+				dataDiskObject.diskName = launchTemplateDataNodeDataDisksDataDisk["DiskName"].asString();
+			if(!launchTemplateDataNodeDataDisksDataDisk["Description"].isNull())
+				dataDiskObject.description = launchTemplateDataNodeDataDisksDataDisk["Description"].asString();
+			if(!launchTemplateDataNodeDataDisksDataDisk["DeleteWithInstance"].isNull())
+				dataDiskObject.deleteWithInstance = launchTemplateDataNodeDataDisksDataDisk["DeleteWithInstance"].asString() == "true";
+			if(!launchTemplateDataNodeDataDisksDataDisk["Device"].isNull())
+				dataDiskObject.device = launchTemplateDataNodeDataDisksDataDisk["Device"].asString();
 			launchTemplateVersionSetsObject.launchTemplateData.dataDisks.push_back(dataDiskObject);
 		}
-		auto allNetworkInterfaces = value["NetworkInterfaces"]["NetworkInterface"];
-		for (auto value : allNetworkInterfaces)
+		auto allNetworkInterfacesNode = launchTemplateDataNode["NetworkInterfaces"]["NetworkInterface"];
+		for (auto launchTemplateDataNodeNetworkInterfacesNetworkInterface : allNetworkInterfacesNode)
 		{
 			LaunchTemplateVersionSet::LaunchTemplateData::NetworkInterface networkInterfaceObject;
-			if(!value["PrimaryIpAddress"].isNull())
-				networkInterfaceObject.primaryIpAddress = value["PrimaryIpAddress"].asString();
-			if(!value["VSwitchId"].isNull())
-				networkInterfaceObject.vSwitchId = value["VSwitchId"].asString();
-			if(!value["SecurityGroupId"].isNull())
-				networkInterfaceObject.securityGroupId = value["SecurityGroupId"].asString();
-			if(!value["NetworkInterfaceName"].isNull())
-				networkInterfaceObject.networkInterfaceName = value["NetworkInterfaceName"].asString();
-			if(!value["Description"].isNull())
-				networkInterfaceObject.description = value["Description"].asString();
+			if(!launchTemplateDataNodeNetworkInterfacesNetworkInterface["PrimaryIpAddress"].isNull())
+				networkInterfaceObject.primaryIpAddress = launchTemplateDataNodeNetworkInterfacesNetworkInterface["PrimaryIpAddress"].asString();
+			if(!launchTemplateDataNodeNetworkInterfacesNetworkInterface["VSwitchId"].isNull())
+				networkInterfaceObject.vSwitchId = launchTemplateDataNodeNetworkInterfacesNetworkInterface["VSwitchId"].asString();
+			if(!launchTemplateDataNodeNetworkInterfacesNetworkInterface["SecurityGroupId"].isNull())
+				networkInterfaceObject.securityGroupId = launchTemplateDataNodeNetworkInterfacesNetworkInterface["SecurityGroupId"].asString();
+			if(!launchTemplateDataNodeNetworkInterfacesNetworkInterface["NetworkInterfaceName"].isNull())
+				networkInterfaceObject.networkInterfaceName = launchTemplateDataNodeNetworkInterfacesNetworkInterface["NetworkInterfaceName"].asString();
+			if(!launchTemplateDataNodeNetworkInterfacesNetworkInterface["Description"].isNull())
+				networkInterfaceObject.description = launchTemplateDataNodeNetworkInterfacesNetworkInterface["Description"].asString();
 			launchTemplateVersionSetsObject.launchTemplateData.networkInterfaces.push_back(networkInterfaceObject);
 		}
-		auto allTags = value["Tags"]["InstanceTag"];
-		for (auto value : allTags)
+		auto allTagsNode = launchTemplateDataNode["Tags"]["InstanceTag"];
+		for (auto launchTemplateDataNodeTagsInstanceTag : allTagsNode)
 		{
 			LaunchTemplateVersionSet::LaunchTemplateData::InstanceTag instanceTagObject;
-			if(!value["Key"].isNull())
-				instanceTagObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				instanceTagObject.value = value["Value"].asString();
+			if(!launchTemplateDataNodeTagsInstanceTag["Key"].isNull())
+				instanceTagObject.key = launchTemplateDataNodeTagsInstanceTag["Key"].asString();
+			if(!launchTemplateDataNodeTagsInstanceTag["Value"].isNull())
+				instanceTagObject.value = launchTemplateDataNodeTagsInstanceTag["Value"].asString();
 			launchTemplateVersionSetsObject.launchTemplateData.tags.push_back(instanceTagObject);
 		}
 		launchTemplateVersionSets_.push_back(launchTemplateVersionSetsObject);

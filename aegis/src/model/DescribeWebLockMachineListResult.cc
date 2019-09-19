@@ -39,22 +39,22 @@ void DescribeWebLockMachineListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMachineList = value["MachineList"]["MachineInfo"];
-	for (auto value : allMachineList)
+	auto allMachineListNode = value["MachineList"]["MachineInfo"];
+	for (auto valueMachineListMachineInfo : allMachineListNode)
 	{
 		MachineInfo machineListObject;
-		if(!value["Uuid"].isNull())
-			machineListObject.uuid = value["Uuid"].asString();
-		if(!value["InternetIp"].isNull())
-			machineListObject.internetIp = value["InternetIp"].asString();
-		if(!value["IntranetIp"].isNull())
-			machineListObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["InstanceId"].isNull())
-			machineListObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceName"].isNull())
-			machineListObject.instanceName = value["InstanceName"].asString();
-		if(!value["Status"].isNull())
-			machineListObject.status = value["Status"].asString();
+		if(!valueMachineListMachineInfo["Uuid"].isNull())
+			machineListObject.uuid = valueMachineListMachineInfo["Uuid"].asString();
+		if(!valueMachineListMachineInfo["InternetIp"].isNull())
+			machineListObject.internetIp = valueMachineListMachineInfo["InternetIp"].asString();
+		if(!valueMachineListMachineInfo["IntranetIp"].isNull())
+			machineListObject.intranetIp = valueMachineListMachineInfo["IntranetIp"].asString();
+		if(!valueMachineListMachineInfo["InstanceId"].isNull())
+			machineListObject.instanceId = valueMachineListMachineInfo["InstanceId"].asString();
+		if(!valueMachineListMachineInfo["InstanceName"].isNull())
+			machineListObject.instanceName = valueMachineListMachineInfo["InstanceName"].asString();
+		if(!valueMachineListMachineInfo["Status"].isNull())
+			machineListObject.status = valueMachineListMachineInfo["Status"].asString();
 		machineList_.push_back(machineListObject);
 	}
 	if(!value["TotalCount"].isNull())

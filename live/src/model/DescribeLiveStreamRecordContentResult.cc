@@ -39,22 +39,22 @@ void DescribeLiveStreamRecordContentResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRecordContentInfoList = value["RecordContentInfoList"]["RecordContentInfo"];
-	for (auto value : allRecordContentInfoList)
+	auto allRecordContentInfoListNode = value["RecordContentInfoList"]["RecordContentInfo"];
+	for (auto valueRecordContentInfoListRecordContentInfo : allRecordContentInfoListNode)
 	{
 		RecordContentInfo recordContentInfoListObject;
-		if(!value["OssEndpoint"].isNull())
-			recordContentInfoListObject.ossEndpoint = value["OssEndpoint"].asString();
-		if(!value["OssBucket"].isNull())
-			recordContentInfoListObject.ossBucket = value["OssBucket"].asString();
-		if(!value["OssObjectPrefix"].isNull())
-			recordContentInfoListObject.ossObjectPrefix = value["OssObjectPrefix"].asString();
-		if(!value["StartTime"].isNull())
-			recordContentInfoListObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			recordContentInfoListObject.endTime = value["EndTime"].asString();
-		if(!value["Duration"].isNull())
-			recordContentInfoListObject.duration = std::stof(value["Duration"].asString());
+		if(!valueRecordContentInfoListRecordContentInfo["OssEndpoint"].isNull())
+			recordContentInfoListObject.ossEndpoint = valueRecordContentInfoListRecordContentInfo["OssEndpoint"].asString();
+		if(!valueRecordContentInfoListRecordContentInfo["OssBucket"].isNull())
+			recordContentInfoListObject.ossBucket = valueRecordContentInfoListRecordContentInfo["OssBucket"].asString();
+		if(!valueRecordContentInfoListRecordContentInfo["OssObjectPrefix"].isNull())
+			recordContentInfoListObject.ossObjectPrefix = valueRecordContentInfoListRecordContentInfo["OssObjectPrefix"].asString();
+		if(!valueRecordContentInfoListRecordContentInfo["StartTime"].isNull())
+			recordContentInfoListObject.startTime = valueRecordContentInfoListRecordContentInfo["StartTime"].asString();
+		if(!valueRecordContentInfoListRecordContentInfo["EndTime"].isNull())
+			recordContentInfoListObject.endTime = valueRecordContentInfoListRecordContentInfo["EndTime"].asString();
+		if(!valueRecordContentInfoListRecordContentInfo["Duration"].isNull())
+			recordContentInfoListObject.duration = std::stof(valueRecordContentInfoListRecordContentInfo["Duration"].asString());
 		recordContentInfoList_.push_back(recordContentInfoListObject);
 	}
 

@@ -39,36 +39,36 @@ void QueryComplexJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobList = value["JobList"]["Job"];
-	for (auto value : allJobList)
+	auto allJobListNode = value["JobList"]["Job"];
+	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!value["JobId"].isNull())
-			jobListObject.jobId = value["JobId"].asString();
-		if(!value["State"].isNull())
-			jobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			jobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			jobListObject.message = value["Message"].asString();
-		if(!value["Percent"].isNull())
-			jobListObject.percent = std::stol(value["Percent"].asString());
-		if(!value["PipelineId"].isNull())
-			jobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["CreationTime"].isNull())
-			jobListObject.creationTime = value["CreationTime"].asString();
-		if(!value["FinishTime"].isNull())
-			jobListObject.finishTime = value["FinishTime"].asString();
-		auto allInputs = value["Inputs"]["InputsItem"];
-		for (auto value : allInputs)
+		if(!valueJobListJob["JobId"].isNull())
+			jobListObject.jobId = valueJobListJob["JobId"].asString();
+		if(!valueJobListJob["State"].isNull())
+			jobListObject.state = valueJobListJob["State"].asString();
+		if(!valueJobListJob["Code"].isNull())
+			jobListObject.code = valueJobListJob["Code"].asString();
+		if(!valueJobListJob["Message"].isNull())
+			jobListObject.message = valueJobListJob["Message"].asString();
+		if(!valueJobListJob["Percent"].isNull())
+			jobListObject.percent = std::stol(valueJobListJob["Percent"].asString());
+		if(!valueJobListJob["PipelineId"].isNull())
+			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
+		if(!valueJobListJob["CreationTime"].isNull())
+			jobListObject.creationTime = valueJobListJob["CreationTime"].asString();
+		if(!valueJobListJob["FinishTime"].isNull())
+			jobListObject.finishTime = valueJobListJob["FinishTime"].asString();
+		auto allInputsNode = allJobListNode["Inputs"]["InputsItem"];
+		for (auto allJobListNodeInputsInputsItem : allInputsNode)
 		{
 			Job::InputsItem inputsObject;
-			auto allEditingInputs = value["EditingInputs"]["EditingInput"];
-			for (auto value : allEditingInputs)
+			auto allEditingInputsNode = allInputsNode["EditingInputs"]["EditingInput"];
+			for (auto allInputsNodeEditingInputsEditingInput : allEditingInputsNode)
 			{
 				Job::InputsItem::EditingInput editingInputsObject;
-				if(!value["Id"].isNull())
-					editingInputsObject.id = value["Id"].asString();
+				if(!allInputsNodeEditingInputsEditingInput["Id"].isNull())
+					editingInputsObject.id = allInputsNodeEditingInputsEditingInput["Id"].asString();
 				auto inputFileNode = value["InputFile"];
 				if(!inputFileNode["Bucket"].isNull())
 					editingInputsObject.inputFile.bucket = inputFileNode["Bucket"].asString();
@@ -85,62 +85,62 @@ void QueryComplexJobListResult::parse(const std::string &payload)
 			}
 			jobListObject.inputs.push_back(inputsObject);
 		}
-		auto allComplexEditingConfigs = value["ComplexEditingConfigs"]["ComplexEditingConfigsItem"];
-		for (auto value : allComplexEditingConfigs)
+		auto allComplexEditingConfigsNode = allJobListNode["ComplexEditingConfigs"]["ComplexEditingConfigsItem"];
+		for (auto allJobListNodeComplexEditingConfigsComplexEditingConfigsItem : allComplexEditingConfigsNode)
 		{
 			Job::ComplexEditingConfigsItem complexEditingConfigsObject;
 			auto editingNode = value["Editing"];
-			auto allClipList = value["ClipList"]["Clip"];
-			for (auto value : allClipList)
+			auto allClipListNode = editingNode["ClipList"]["Clip"];
+			for (auto editingNodeClipListClip : allClipListNode)
 			{
 				Job::ComplexEditingConfigsItem::Editing::Clip clipObject;
-				if(!value["Id"].isNull())
-					clipObject.id = value["Id"].asString();
-				if(!value["Type"].isNull())
-					clipObject.type = value["Type"].asString();
-				if(!value["SourceType"].isNull())
-					clipObject.sourceType = value["SourceType"].asString();
-				if(!value["SourceID"].isNull())
-					clipObject.sourceID = value["SourceID"].asString();
-				if(!value["SourceStrmMap"].isNull())
-					clipObject.sourceStrmMap = value["SourceStrmMap"].asString();
-				if(!value["In"].isNull())
-					clipObject.in = value["In"].asString();
-				if(!value["Out"].isNull())
-					clipObject.out = value["Out"].asString();
-				auto allEffects = value["Effects"]["Effect"];
-				for (auto value : allEffects)
+				if(!editingNodeClipListClip["Id"].isNull())
+					clipObject.id = editingNodeClipListClip["Id"].asString();
+				if(!editingNodeClipListClip["Type"].isNull())
+					clipObject.type = editingNodeClipListClip["Type"].asString();
+				if(!editingNodeClipListClip["SourceType"].isNull())
+					clipObject.sourceType = editingNodeClipListClip["SourceType"].asString();
+				if(!editingNodeClipListClip["SourceID"].isNull())
+					clipObject.sourceID = editingNodeClipListClip["SourceID"].asString();
+				if(!editingNodeClipListClip["SourceStrmMap"].isNull())
+					clipObject.sourceStrmMap = editingNodeClipListClip["SourceStrmMap"].asString();
+				if(!editingNodeClipListClip["In"].isNull())
+					clipObject.in = editingNodeClipListClip["In"].asString();
+				if(!editingNodeClipListClip["Out"].isNull())
+					clipObject.out = editingNodeClipListClip["Out"].asString();
+				auto allEffectsNode = allClipListNode["Effects"]["Effect"];
+				for (auto allClipListNodeEffectsEffect : allEffectsNode)
 				{
 					Job::ComplexEditingConfigsItem::Editing::Clip::Effect effectsObject;
-					if(!value["Effect"].isNull())
-						effectsObject.effect = value["Effect"].asString();
-					if(!value["EffectConfig"].isNull())
-						effectsObject.effectConfig = value["EffectConfig"].asString();
+					if(!allClipListNodeEffectsEffect["Effect"].isNull())
+						effectsObject.effect = allClipListNodeEffectsEffect["Effect"].asString();
+					if(!allClipListNodeEffectsEffect["EffectConfig"].isNull())
+						effectsObject.effectConfig = allClipListNodeEffectsEffect["EffectConfig"].asString();
 					clipObject.effects.push_back(effectsObject);
 				}
 				complexEditingConfigsObject.editing.clipList.push_back(clipObject);
 			}
 			auto timelineNode = editingNode["Timeline"];
-			auto allTrackList = value["TrackList"]["Track"];
-			for (auto value : allTrackList)
+			auto allTrackListNode = timelineNode["TrackList"]["Track"];
+			for (auto timelineNodeTrackListTrack : allTrackListNode)
 			{
 				Job::ComplexEditingConfigsItem::Editing::Timeline::Track trackObject;
-				if(!value["Id"].isNull())
-					trackObject.id = value["Id"].asString();
-				if(!value["Type"].isNull())
-					trackObject.type = value["Type"].asString();
-				if(!value["Order"].isNull())
-					trackObject.order = value["Order"].asString();
-				auto allClips = value["Clips"]["Clip"];
-				for (auto value : allClips)
+				if(!timelineNodeTrackListTrack["Id"].isNull())
+					trackObject.id = timelineNodeTrackListTrack["Id"].asString();
+				if(!timelineNodeTrackListTrack["Type"].isNull())
+					trackObject.type = timelineNodeTrackListTrack["Type"].asString();
+				if(!timelineNodeTrackListTrack["Order"].isNull())
+					trackObject.order = timelineNodeTrackListTrack["Order"].asString();
+				auto allClipsNode = allTrackListNode["Clips"]["Clip"];
+				for (auto allTrackListNodeClipsClip : allClipsNode)
 				{
 					Job::ComplexEditingConfigsItem::Editing::Timeline::Track::Clip1 clipsObject;
-					if(!value["clipID"].isNull())
-						clipsObject.clipID = value["clipID"].asString();
-					if(!value["In"].isNull())
-						clipsObject.in = value["In"].asString();
-					if(!value["Out"].isNull())
-						clipsObject.out = value["Out"].asString();
+					if(!allTrackListNodeClipsClip["clipID"].isNull())
+						clipsObject.clipID = allTrackListNodeClipsClip["clipID"].asString();
+					if(!allTrackListNodeClipsClip["In"].isNull())
+						clipsObject.in = allTrackListNodeClipsClip["In"].asString();
+					if(!allTrackListNodeClipsClip["Out"].isNull())
+						clipsObject.out = allTrackListNodeClipsClip["Out"].asString();
 					auto clipsConfigNode = value["ClipsConfig"];
 					auto clipsConfigVideoNode = clipsConfigNode["ClipsConfigVideo"];
 					if(!clipsConfigVideoNode["L"].isNull())
@@ -197,24 +197,24 @@ void QueryComplexJobListResult::parse(const std::string &payload)
 			jobListObject.transcodeOutput.waterMarkConfigUrl = transcodeOutputNode["WaterMarkConfigUrl"].asString();
 		if(!transcodeOutputNode["MergeConfigUrl"].isNull())
 			jobListObject.transcodeOutput.mergeConfigUrl = transcodeOutputNode["MergeConfigUrl"].asString();
-		auto allWaterMarkList = value["WaterMarkList"]["WaterMark"];
-		for (auto value : allWaterMarkList)
+		auto allWaterMarkListNode = transcodeOutputNode["WaterMarkList"]["WaterMark"];
+		for (auto transcodeOutputNodeWaterMarkListWaterMark : allWaterMarkListNode)
 		{
 			Job::TranscodeOutput::WaterMark waterMarkObject;
-			if(!value["WaterMarkTemplateId"].isNull())
-				waterMarkObject.waterMarkTemplateId = value["WaterMarkTemplateId"].asString();
-			if(!value["Width"].isNull())
-				waterMarkObject.width = value["Width"].asString();
-			if(!value["Height"].isNull())
-				waterMarkObject.height = value["Height"].asString();
-			if(!value["Dx"].isNull())
-				waterMarkObject.dx = value["Dx"].asString();
-			if(!value["Dy"].isNull())
-				waterMarkObject.dy = value["Dy"].asString();
-			if(!value["ReferPos"].isNull())
-				waterMarkObject.referPos = value["ReferPos"].asString();
-			if(!value["Type"].isNull())
-				waterMarkObject.type = value["Type"].asString();
+			if(!transcodeOutputNodeWaterMarkListWaterMark["WaterMarkTemplateId"].isNull())
+				waterMarkObject.waterMarkTemplateId = transcodeOutputNodeWaterMarkListWaterMark["WaterMarkTemplateId"].asString();
+			if(!transcodeOutputNodeWaterMarkListWaterMark["Width"].isNull())
+				waterMarkObject.width = transcodeOutputNodeWaterMarkListWaterMark["Width"].asString();
+			if(!transcodeOutputNodeWaterMarkListWaterMark["Height"].isNull())
+				waterMarkObject.height = transcodeOutputNodeWaterMarkListWaterMark["Height"].asString();
+			if(!transcodeOutputNodeWaterMarkListWaterMark["Dx"].isNull())
+				waterMarkObject.dx = transcodeOutputNodeWaterMarkListWaterMark["Dx"].asString();
+			if(!transcodeOutputNodeWaterMarkListWaterMark["Dy"].isNull())
+				waterMarkObject.dy = transcodeOutputNodeWaterMarkListWaterMark["Dy"].asString();
+			if(!transcodeOutputNodeWaterMarkListWaterMark["ReferPos"].isNull())
+				waterMarkObject.referPos = transcodeOutputNodeWaterMarkListWaterMark["ReferPos"].asString();
+			if(!transcodeOutputNodeWaterMarkListWaterMark["Type"].isNull())
+				waterMarkObject.type = transcodeOutputNodeWaterMarkListWaterMark["Type"].asString();
 			auto inputFile2Node = value["InputFile"];
 			if(!inputFile2Node["Bucket"].isNull())
 				waterMarkObject.inputFile2.bucket = inputFile2Node["Bucket"].asString();
@@ -224,18 +224,18 @@ void QueryComplexJobListResult::parse(const std::string &payload)
 				waterMarkObject.inputFile2.object = inputFile2Node["Object"].asString();
 			jobListObject.transcodeOutput.waterMarkList.push_back(waterMarkObject);
 		}
-		auto allMergeList = value["MergeList"]["Merge"];
-		for (auto value : allMergeList)
+		auto allMergeListNode = transcodeOutputNode["MergeList"]["Merge"];
+		for (auto transcodeOutputNodeMergeListMerge : allMergeListNode)
 		{
 			Job::TranscodeOutput::Merge mergeObject;
-			if(!value["MergeURL"].isNull())
-				mergeObject.mergeURL = value["MergeURL"].asString();
-			if(!value["Start"].isNull())
-				mergeObject.start = value["Start"].asString();
-			if(!value["Duration"].isNull())
-				mergeObject.duration = value["Duration"].asString();
-			if(!value["RoleArn"].isNull())
-				mergeObject.roleArn = value["RoleArn"].asString();
+			if(!transcodeOutputNodeMergeListMerge["MergeURL"].isNull())
+				mergeObject.mergeURL = transcodeOutputNodeMergeListMerge["MergeURL"].asString();
+			if(!transcodeOutputNodeMergeListMerge["Start"].isNull())
+				mergeObject.start = transcodeOutputNodeMergeListMerge["Start"].asString();
+			if(!transcodeOutputNodeMergeListMerge["Duration"].isNull())
+				mergeObject.duration = transcodeOutputNodeMergeListMerge["Duration"].asString();
+			if(!transcodeOutputNodeMergeListMerge["RoleArn"].isNull())
+				mergeObject.roleArn = transcodeOutputNodeMergeListMerge["RoleArn"].asString();
 			jobListObject.transcodeOutput.mergeList.push_back(mergeObject);
 		}
 		auto digiWaterMarkNode = transcodeOutputNode["DigiWaterMark"];
@@ -281,54 +281,54 @@ void QueryComplexJobListResult::parse(const std::string &payload)
 		if(!propertiesNode["FileFormat"].isNull())
 			jobListObject.transcodeOutput.properties.fileFormat = propertiesNode["FileFormat"].asString();
 		auto streamsNode = propertiesNode["Streams"];
-		auto allVideoStreamList = value["VideoStreamList"]["VideoStream"];
-		for (auto value : allVideoStreamList)
+		auto allVideoStreamListNode = streamsNode["VideoStreamList"]["VideoStream"];
+		for (auto streamsNodeVideoStreamListVideoStream : allVideoStreamListNode)
 		{
 			Job::TranscodeOutput::Properties::Streams::VideoStream videoStreamObject;
-			if(!value["Index"].isNull())
-				videoStreamObject.index = value["Index"].asString();
-			if(!value["CodecName"].isNull())
-				videoStreamObject.codecName = value["CodecName"].asString();
-			if(!value["CodecLongName"].isNull())
-				videoStreamObject.codecLongName = value["CodecLongName"].asString();
-			if(!value["Profile"].isNull())
-				videoStreamObject.profile = value["Profile"].asString();
-			if(!value["CodecTimeBase"].isNull())
-				videoStreamObject.codecTimeBase = value["CodecTimeBase"].asString();
-			if(!value["CodecTagString"].isNull())
-				videoStreamObject.codecTagString = value["CodecTagString"].asString();
-			if(!value["CodecTag"].isNull())
-				videoStreamObject.codecTag = value["CodecTag"].asString();
-			if(!value["Width"].isNull())
-				videoStreamObject.width = value["Width"].asString();
-			if(!value["Height"].isNull())
-				videoStreamObject.height = value["Height"].asString();
-			if(!value["HasBFrames"].isNull())
-				videoStreamObject.hasBFrames = value["HasBFrames"].asString();
-			if(!value["Sar"].isNull())
-				videoStreamObject.sar = value["Sar"].asString();
-			if(!value["Dar"].isNull())
-				videoStreamObject.dar = value["Dar"].asString();
-			if(!value["PixFmt"].isNull())
-				videoStreamObject.pixFmt = value["PixFmt"].asString();
-			if(!value["Level"].isNull())
-				videoStreamObject.level = value["Level"].asString();
-			if(!value["Fps"].isNull())
-				videoStreamObject.fps = value["Fps"].asString();
-			if(!value["AvgFPS"].isNull())
-				videoStreamObject.avgFPS = value["AvgFPS"].asString();
-			if(!value["Timebase"].isNull())
-				videoStreamObject.timebase = value["Timebase"].asString();
-			if(!value["StartTime"].isNull())
-				videoStreamObject.startTime = value["StartTime"].asString();
-			if(!value["Duration"].isNull())
-				videoStreamObject.duration = value["Duration"].asString();
-			if(!value["Bitrate"].isNull())
-				videoStreamObject.bitrate = value["Bitrate"].asString();
-			if(!value["NumFrames"].isNull())
-				videoStreamObject.numFrames = value["NumFrames"].asString();
-			if(!value["Lang"].isNull())
-				videoStreamObject.lang = value["Lang"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Index"].isNull())
+				videoStreamObject.index = streamsNodeVideoStreamListVideoStream["Index"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["CodecName"].isNull())
+				videoStreamObject.codecName = streamsNodeVideoStreamListVideoStream["CodecName"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["CodecLongName"].isNull())
+				videoStreamObject.codecLongName = streamsNodeVideoStreamListVideoStream["CodecLongName"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Profile"].isNull())
+				videoStreamObject.profile = streamsNodeVideoStreamListVideoStream["Profile"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["CodecTimeBase"].isNull())
+				videoStreamObject.codecTimeBase = streamsNodeVideoStreamListVideoStream["CodecTimeBase"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["CodecTagString"].isNull())
+				videoStreamObject.codecTagString = streamsNodeVideoStreamListVideoStream["CodecTagString"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["CodecTag"].isNull())
+				videoStreamObject.codecTag = streamsNodeVideoStreamListVideoStream["CodecTag"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Width"].isNull())
+				videoStreamObject.width = streamsNodeVideoStreamListVideoStream["Width"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Height"].isNull())
+				videoStreamObject.height = streamsNodeVideoStreamListVideoStream["Height"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["HasBFrames"].isNull())
+				videoStreamObject.hasBFrames = streamsNodeVideoStreamListVideoStream["HasBFrames"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Sar"].isNull())
+				videoStreamObject.sar = streamsNodeVideoStreamListVideoStream["Sar"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Dar"].isNull())
+				videoStreamObject.dar = streamsNodeVideoStreamListVideoStream["Dar"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["PixFmt"].isNull())
+				videoStreamObject.pixFmt = streamsNodeVideoStreamListVideoStream["PixFmt"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Level"].isNull())
+				videoStreamObject.level = streamsNodeVideoStreamListVideoStream["Level"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Fps"].isNull())
+				videoStreamObject.fps = streamsNodeVideoStreamListVideoStream["Fps"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["AvgFPS"].isNull())
+				videoStreamObject.avgFPS = streamsNodeVideoStreamListVideoStream["AvgFPS"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Timebase"].isNull())
+				videoStreamObject.timebase = streamsNodeVideoStreamListVideoStream["Timebase"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["StartTime"].isNull())
+				videoStreamObject.startTime = streamsNodeVideoStreamListVideoStream["StartTime"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Duration"].isNull())
+				videoStreamObject.duration = streamsNodeVideoStreamListVideoStream["Duration"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Bitrate"].isNull())
+				videoStreamObject.bitrate = streamsNodeVideoStreamListVideoStream["Bitrate"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["NumFrames"].isNull())
+				videoStreamObject.numFrames = streamsNodeVideoStreamListVideoStream["NumFrames"].asString();
+			if(!streamsNodeVideoStreamListVideoStream["Lang"].isNull())
+				videoStreamObject.lang = streamsNodeVideoStreamListVideoStream["Lang"].asString();
 			auto networkCostNode = value["NetworkCost"];
 			if(!networkCostNode["PreloadTime"].isNull())
 				videoStreamObject.networkCost.preloadTime = networkCostNode["PreloadTime"].asString();
@@ -338,52 +338,52 @@ void QueryComplexJobListResult::parse(const std::string &payload)
 				videoStreamObject.networkCost.avgBitrate = networkCostNode["AvgBitrate"].asString();
 			jobListObject.transcodeOutput.properties.streams.videoStreamList.push_back(videoStreamObject);
 		}
-		auto allAudioStreamList = value["AudioStreamList"]["AudioStream"];
-		for (auto value : allAudioStreamList)
+		auto allAudioStreamListNode = streamsNode["AudioStreamList"]["AudioStream"];
+		for (auto streamsNodeAudioStreamListAudioStream : allAudioStreamListNode)
 		{
 			Job::TranscodeOutput::Properties::Streams::AudioStream audioStreamObject;
-			if(!value["Index"].isNull())
-				audioStreamObject.index = value["Index"].asString();
-			if(!value["CodecName"].isNull())
-				audioStreamObject.codecName = value["CodecName"].asString();
-			if(!value["CodecTimeBase"].isNull())
-				audioStreamObject.codecTimeBase = value["CodecTimeBase"].asString();
-			if(!value["CodecLongName"].isNull())
-				audioStreamObject.codecLongName = value["CodecLongName"].asString();
-			if(!value["CodecTagString"].isNull())
-				audioStreamObject.codecTagString = value["CodecTagString"].asString();
-			if(!value["CodecTag"].isNull())
-				audioStreamObject.codecTag = value["CodecTag"].asString();
-			if(!value["SampleFmt"].isNull())
-				audioStreamObject.sampleFmt = value["SampleFmt"].asString();
-			if(!value["Samplerate"].isNull())
-				audioStreamObject.samplerate = value["Samplerate"].asString();
-			if(!value["Channels"].isNull())
-				audioStreamObject.channels = value["Channels"].asString();
-			if(!value["ChannelLayout"].isNull())
-				audioStreamObject.channelLayout = value["ChannelLayout"].asString();
-			if(!value["Timebase"].isNull())
-				audioStreamObject.timebase = value["Timebase"].asString();
-			if(!value["StartTime"].isNull())
-				audioStreamObject.startTime = value["StartTime"].asString();
-			if(!value["Duration"].isNull())
-				audioStreamObject.duration = value["Duration"].asString();
-			if(!value["Bitrate"].isNull())
-				audioStreamObject.bitrate = value["Bitrate"].asString();
-			if(!value["NumFrames"].isNull())
-				audioStreamObject.numFrames = value["NumFrames"].asString();
-			if(!value["Lang"].isNull())
-				audioStreamObject.lang = value["Lang"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["Index"].isNull())
+				audioStreamObject.index = streamsNodeAudioStreamListAudioStream["Index"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["CodecName"].isNull())
+				audioStreamObject.codecName = streamsNodeAudioStreamListAudioStream["CodecName"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["CodecTimeBase"].isNull())
+				audioStreamObject.codecTimeBase = streamsNodeAudioStreamListAudioStream["CodecTimeBase"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["CodecLongName"].isNull())
+				audioStreamObject.codecLongName = streamsNodeAudioStreamListAudioStream["CodecLongName"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["CodecTagString"].isNull())
+				audioStreamObject.codecTagString = streamsNodeAudioStreamListAudioStream["CodecTagString"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["CodecTag"].isNull())
+				audioStreamObject.codecTag = streamsNodeAudioStreamListAudioStream["CodecTag"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["SampleFmt"].isNull())
+				audioStreamObject.sampleFmt = streamsNodeAudioStreamListAudioStream["SampleFmt"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["Samplerate"].isNull())
+				audioStreamObject.samplerate = streamsNodeAudioStreamListAudioStream["Samplerate"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["Channels"].isNull())
+				audioStreamObject.channels = streamsNodeAudioStreamListAudioStream["Channels"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["ChannelLayout"].isNull())
+				audioStreamObject.channelLayout = streamsNodeAudioStreamListAudioStream["ChannelLayout"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["Timebase"].isNull())
+				audioStreamObject.timebase = streamsNodeAudioStreamListAudioStream["Timebase"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["StartTime"].isNull())
+				audioStreamObject.startTime = streamsNodeAudioStreamListAudioStream["StartTime"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["Duration"].isNull())
+				audioStreamObject.duration = streamsNodeAudioStreamListAudioStream["Duration"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["Bitrate"].isNull())
+				audioStreamObject.bitrate = streamsNodeAudioStreamListAudioStream["Bitrate"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["NumFrames"].isNull())
+				audioStreamObject.numFrames = streamsNodeAudioStreamListAudioStream["NumFrames"].asString();
+			if(!streamsNodeAudioStreamListAudioStream["Lang"].isNull())
+				audioStreamObject.lang = streamsNodeAudioStreamListAudioStream["Lang"].asString();
 			jobListObject.transcodeOutput.properties.streams.audioStreamList.push_back(audioStreamObject);
 		}
-		auto allSubtitleStreamList = value["SubtitleStreamList"]["SubtitleStream"];
-		for (auto value : allSubtitleStreamList)
+		auto allSubtitleStreamListNode = streamsNode["SubtitleStreamList"]["SubtitleStream"];
+		for (auto streamsNodeSubtitleStreamListSubtitleStream : allSubtitleStreamListNode)
 		{
 			Job::TranscodeOutput::Properties::Streams::SubtitleStream subtitleStreamObject;
-			if(!value["Index"].isNull())
-				subtitleStreamObject.index = value["Index"].asString();
-			if(!value["Lang"].isNull())
-				subtitleStreamObject.lang = value["Lang"].asString();
+			if(!streamsNodeSubtitleStreamListSubtitleStream["Index"].isNull())
+				subtitleStreamObject.index = streamsNodeSubtitleStreamListSubtitleStream["Index"].asString();
+			if(!streamsNodeSubtitleStreamListSubtitleStream["Lang"].isNull())
+				subtitleStreamObject.lang = streamsNodeSubtitleStreamListSubtitleStream["Lang"].asString();
 			jobListObject.transcodeOutput.properties.streams.subtitleStreamList.push_back(subtitleStreamObject);
 		}
 		auto formatNode = propertiesNode["Format"];
@@ -413,22 +413,22 @@ void QueryComplexJobListResult::parse(const std::string &payload)
 		if(!superResoNode["IsHalfSample"].isNull())
 			jobListObject.transcodeOutput.superReso.isHalfSample = superResoNode["IsHalfSample"].asString();
 		auto subtitleConfigNode = transcodeOutputNode["SubtitleConfig"];
-		auto allSubtitleList = value["SubtitleList"]["Subtitle"];
-		for (auto value : allSubtitleList)
+		auto allSubtitleListNode = subtitleConfigNode["SubtitleList"]["Subtitle"];
+		for (auto subtitleConfigNodeSubtitleListSubtitle : allSubtitleListNode)
 		{
 			Job::TranscodeOutput::SubtitleConfig::Subtitle subtitleObject;
-			if(!value["Map"].isNull())
-				subtitleObject.map = value["Map"].asString();
+			if(!subtitleConfigNodeSubtitleListSubtitle["Map"].isNull())
+				subtitleObject.map = subtitleConfigNodeSubtitleListSubtitle["Map"].asString();
 			jobListObject.transcodeOutput.subtitleConfig.subtitleList.push_back(subtitleObject);
 		}
-		auto allExtSubtitleList = value["ExtSubtitleList"]["ExtSubtitle"];
-		for (auto value : allExtSubtitleList)
+		auto allExtSubtitleListNode = subtitleConfigNode["ExtSubtitleList"]["ExtSubtitle"];
+		for (auto subtitleConfigNodeExtSubtitleListExtSubtitle : allExtSubtitleListNode)
 		{
 			Job::TranscodeOutput::SubtitleConfig::ExtSubtitle extSubtitleObject;
-			if(!value["FontName"].isNull())
-				extSubtitleObject.fontName = value["FontName"].asString();
-			if(!value["CharEnc"].isNull())
-				extSubtitleObject.charEnc = value["CharEnc"].asString();
+			if(!subtitleConfigNodeExtSubtitleListExtSubtitle["FontName"].isNull())
+				extSubtitleObject.fontName = subtitleConfigNodeExtSubtitleListExtSubtitle["FontName"].asString();
+			if(!subtitleConfigNodeExtSubtitleListExtSubtitle["CharEnc"].isNull())
+				extSubtitleObject.charEnc = subtitleConfigNodeExtSubtitleListExtSubtitle["CharEnc"].asString();
 			auto inputNode = value["Input"];
 			if(!inputNode["Bucket"].isNull())
 				extSubtitleObject.input.bucket = inputNode["Bucket"].asString();

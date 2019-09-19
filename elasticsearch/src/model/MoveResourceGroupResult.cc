@@ -66,32 +66,32 @@ void MoveResourceGroupResult::parse(const std::string &payload)
 		result_.publicDomain = resultNode["publicDomain"].asString();
 	if(!resultNode["publicPort"].isNull())
 		result_.publicPort = std::stoi(resultNode["publicPort"].asString());
-	auto alldictList = value["dictList"]["dictListItem"];
-	for (auto value : alldictList)
+	auto alldictListNode = resultNode["dictList"]["dictListItem"];
+	for (auto resultNodedictListdictListItem : alldictListNode)
 	{
 		Result::DictListItem dictListItemObject;
-		if(!value["name"].isNull())
-			dictListItemObject.name = value["name"].asString();
-		if(!value["fileSize"].isNull())
-			dictListItemObject.fileSize = std::stol(value["fileSize"].asString());
-		if(!value["type"].isNull())
-			dictListItemObject.type = value["type"].asString();
-		if(!value["sourceType"].isNull())
-			dictListItemObject.sourceType = value["sourceType"].asString();
+		if(!resultNodedictListdictListItem["name"].isNull())
+			dictListItemObject.name = resultNodedictListdictListItem["name"].asString();
+		if(!resultNodedictListdictListItem["fileSize"].isNull())
+			dictListItemObject.fileSize = std::stol(resultNodedictListdictListItem["fileSize"].asString());
+		if(!resultNodedictListdictListItem["type"].isNull())
+			dictListItemObject.type = resultNodedictListdictListItem["type"].asString();
+		if(!resultNodedictListdictListItem["sourceType"].isNull())
+			dictListItemObject.sourceType = resultNodedictListdictListItem["sourceType"].asString();
 		result_.dictList.push_back(dictListItemObject);
 	}
-	auto allsynonymsDicts = value["synonymsDicts"]["synonymsDictsItem"];
-	for (auto value : allsynonymsDicts)
+	auto allsynonymsDictsNode = resultNode["synonymsDicts"]["synonymsDictsItem"];
+	for (auto resultNodesynonymsDictssynonymsDictsItem : allsynonymsDictsNode)
 	{
 		Result::SynonymsDictsItem synonymsDictsItemObject;
-		if(!value["name"].isNull())
-			synonymsDictsItemObject.name = value["name"].asString();
-		if(!value["fileSize"].isNull())
-			synonymsDictsItemObject.fileSize = std::stol(value["fileSize"].asString());
-		if(!value["type"].isNull())
-			synonymsDictsItemObject.type = value["type"].asString();
-		if(!value["sourceType"].isNull())
-			synonymsDictsItemObject.sourceType = value["sourceType"].asString();
+		if(!resultNodesynonymsDictssynonymsDictsItem["name"].isNull())
+			synonymsDictsItemObject.name = resultNodesynonymsDictssynonymsDictsItem["name"].asString();
+		if(!resultNodesynonymsDictssynonymsDictsItem["fileSize"].isNull())
+			synonymsDictsItemObject.fileSize = std::stol(resultNodesynonymsDictssynonymsDictsItem["fileSize"].asString());
+		if(!resultNodesynonymsDictssynonymsDictsItem["type"].isNull())
+			synonymsDictsItemObject.type = resultNodesynonymsDictssynonymsDictsItem["type"].asString();
+		if(!resultNodesynonymsDictssynonymsDictsItem["sourceType"].isNull())
+			synonymsDictsItemObject.sourceType = resultNodesynonymsDictssynonymsDictsItem["sourceType"].asString();
 		result_.synonymsDicts.push_back(synonymsDictsItemObject);
 	}
 	auto nodeSpecNode = resultNode["nodeSpec"];

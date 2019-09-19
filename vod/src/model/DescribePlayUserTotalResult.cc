@@ -39,16 +39,16 @@ void DescribePlayUserTotalResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserPlayStatisTotals = value["UserPlayStatisTotals"]["UserPlayStatisTotal"];
-	for (auto value : allUserPlayStatisTotals)
+	auto allUserPlayStatisTotalsNode = value["UserPlayStatisTotals"]["UserPlayStatisTotal"];
+	for (auto valueUserPlayStatisTotalsUserPlayStatisTotal : allUserPlayStatisTotalsNode)
 	{
 		UserPlayStatisTotal userPlayStatisTotalsObject;
-		if(!value["Date"].isNull())
-			userPlayStatisTotalsObject.date = value["Date"].asString();
-		if(!value["PlayDuration"].isNull())
-			userPlayStatisTotalsObject.playDuration = value["PlayDuration"].asString();
-		if(!value["PlayRange"].isNull())
-			userPlayStatisTotalsObject.playRange = value["PlayRange"].asString();
+		if(!valueUserPlayStatisTotalsUserPlayStatisTotal["Date"].isNull())
+			userPlayStatisTotalsObject.date = valueUserPlayStatisTotalsUserPlayStatisTotal["Date"].asString();
+		if(!valueUserPlayStatisTotalsUserPlayStatisTotal["PlayDuration"].isNull())
+			userPlayStatisTotalsObject.playDuration = valueUserPlayStatisTotalsUserPlayStatisTotal["PlayDuration"].asString();
+		if(!valueUserPlayStatisTotalsUserPlayStatisTotal["PlayRange"].isNull())
+			userPlayStatisTotalsObject.playRange = valueUserPlayStatisTotalsUserPlayStatisTotal["PlayRange"].asString();
 		auto vVNode = value["VV"];
 		if(!vVNode["Android"].isNull())
 			userPlayStatisTotalsObject.vV.android = vVNode["Android"].asString();

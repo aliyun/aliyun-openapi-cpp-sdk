@@ -39,26 +39,26 @@ void QueryImageSearchJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allImageSearchJobList = value["ImageSearchJobList"]["ImageSearchJob"];
-	for (auto value : allImageSearchJobList)
+	auto allImageSearchJobListNode = value["ImageSearchJobList"]["ImageSearchJob"];
+	for (auto valueImageSearchJobListImageSearchJob : allImageSearchJobListNode)
 	{
 		ImageSearchJob imageSearchJobListObject;
-		if(!value["Id"].isNull())
-			imageSearchJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			imageSearchJobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			imageSearchJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			imageSearchJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			imageSearchJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			imageSearchJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			imageSearchJobListObject.creationTime = value["CreationTime"].asString();
-		if(!value["FinishTime"].isNull())
-			imageSearchJobListObject.finishTime = value["FinishTime"].asString();
+		if(!valueImageSearchJobListImageSearchJob["Id"].isNull())
+			imageSearchJobListObject.id = valueImageSearchJobListImageSearchJob["Id"].asString();
+		if(!valueImageSearchJobListImageSearchJob["UserData"].isNull())
+			imageSearchJobListObject.userData = valueImageSearchJobListImageSearchJob["UserData"].asString();
+		if(!valueImageSearchJobListImageSearchJob["PipelineId"].isNull())
+			imageSearchJobListObject.pipelineId = valueImageSearchJobListImageSearchJob["PipelineId"].asString();
+		if(!valueImageSearchJobListImageSearchJob["State"].isNull())
+			imageSearchJobListObject.state = valueImageSearchJobListImageSearchJob["State"].asString();
+		if(!valueImageSearchJobListImageSearchJob["Code"].isNull())
+			imageSearchJobListObject.code = valueImageSearchJobListImageSearchJob["Code"].asString();
+		if(!valueImageSearchJobListImageSearchJob["Message"].isNull())
+			imageSearchJobListObject.message = valueImageSearchJobListImageSearchJob["Message"].asString();
+		if(!valueImageSearchJobListImageSearchJob["CreationTime"].isNull())
+			imageSearchJobListObject.creationTime = valueImageSearchJobListImageSearchJob["CreationTime"].asString();
+		if(!valueImageSearchJobListImageSearchJob["FinishTime"].isNull())
+			imageSearchJobListObject.finishTime = valueImageSearchJobListImageSearchJob["FinishTime"].asString();
 		auto inputVideoNode = value["InputVideo"];
 		if(!inputVideoNode["Bucket"].isNull())
 			imageSearchJobListObject.inputVideo.bucket = inputVideoNode["Bucket"].asString();
@@ -74,16 +74,16 @@ void QueryImageSearchJobListResult::parse(const std::string &payload)
 		if(!inputImageNode["Object"].isNull())
 			imageSearchJobListObject.inputImage.object = inputImageNode["Object"].asString();
 		auto resultNode = value["Result"];
-		auto allImageSearchShots = value["ImageSearchShots"]["ImageSearchShotsItem"];
-		for (auto value : allImageSearchShots)
+		auto allImageSearchShotsNode = resultNode["ImageSearchShots"]["ImageSearchShotsItem"];
+		for (auto resultNodeImageSearchShotsImageSearchShotsItem : allImageSearchShotsNode)
 		{
 			ImageSearchJob::Result::ImageSearchShotsItem imageSearchShotsItemObject;
-			if(!value["MatchedTimestamp"].isNull())
-				imageSearchShotsItemObject.matchedTimestamp = value["MatchedTimestamp"].asString();
-			if(!value["MatchedFrame"].isNull())
-				imageSearchShotsItemObject.matchedFrame = value["MatchedFrame"].asString();
-			if(!value["Similarity"].isNull())
-				imageSearchShotsItemObject.similarity = value["Similarity"].asString();
+			if(!resultNodeImageSearchShotsImageSearchShotsItem["MatchedTimestamp"].isNull())
+				imageSearchShotsItemObject.matchedTimestamp = resultNodeImageSearchShotsImageSearchShotsItem["MatchedTimestamp"].asString();
+			if(!resultNodeImageSearchShotsImageSearchShotsItem["MatchedFrame"].isNull())
+				imageSearchShotsItemObject.matchedFrame = resultNodeImageSearchShotsImageSearchShotsItem["MatchedFrame"].asString();
+			if(!resultNodeImageSearchShotsImageSearchShotsItem["Similarity"].isNull())
+				imageSearchShotsItemObject.similarity = resultNodeImageSearchShotsImageSearchShotsItem["Similarity"].asString();
 			imageSearchJobListObject.result.imageSearchShots.push_back(imageSearchShotsItemObject);
 		}
 		imageSearchJobList_.push_back(imageSearchJobListObject);

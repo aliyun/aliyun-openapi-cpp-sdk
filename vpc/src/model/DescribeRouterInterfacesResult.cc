@@ -39,84 +39,84 @@ void DescribeRouterInterfacesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRouterInterfaceSet = value["RouterInterfaceSet"]["RouterInterfaceType"];
-	for (auto value : allRouterInterfaceSet)
+	auto allRouterInterfaceSetNode = value["RouterInterfaceSet"]["RouterInterfaceType"];
+	for (auto valueRouterInterfaceSetRouterInterfaceType : allRouterInterfaceSetNode)
 	{
 		RouterInterfaceType routerInterfaceSetObject;
-		if(!value["RouterInterfaceId"].isNull())
-			routerInterfaceSetObject.routerInterfaceId = value["RouterInterfaceId"].asString();
-		if(!value["OppositeRegionId"].isNull())
-			routerInterfaceSetObject.oppositeRegionId = value["OppositeRegionId"].asString();
-		if(!value["Role"].isNull())
-			routerInterfaceSetObject.role = value["Role"].asString();
-		if(!value["Spec"].isNull())
-			routerInterfaceSetObject.spec = value["Spec"].asString();
-		if(!value["Name"].isNull())
-			routerInterfaceSetObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			routerInterfaceSetObject.description = value["Description"].asString();
-		if(!value["RouterId"].isNull())
-			routerInterfaceSetObject.routerId = value["RouterId"].asString();
-		if(!value["RouterType"].isNull())
-			routerInterfaceSetObject.routerType = value["RouterType"].asString();
-		if(!value["CreationTime"].isNull())
-			routerInterfaceSetObject.creationTime = value["CreationTime"].asString();
-		if(!value["EndTime"].isNull())
-			routerInterfaceSetObject.endTime = value["EndTime"].asString();
-		if(!value["ChargeType"].isNull())
-			routerInterfaceSetObject.chargeType = value["ChargeType"].asString();
-		if(!value["Status"].isNull())
-			routerInterfaceSetObject.status = value["Status"].asString();
-		if(!value["BusinessStatus"].isNull())
-			routerInterfaceSetObject.businessStatus = value["BusinessStatus"].asString();
-		if(!value["ConnectedTime"].isNull())
-			routerInterfaceSetObject.connectedTime = value["ConnectedTime"].asString();
-		if(!value["OppositeInterfaceId"].isNull())
-			routerInterfaceSetObject.oppositeInterfaceId = value["OppositeInterfaceId"].asString();
-		if(!value["OppositeInterfaceSpec"].isNull())
-			routerInterfaceSetObject.oppositeInterfaceSpec = value["OppositeInterfaceSpec"].asString();
-		if(!value["OppositeInterfaceStatus"].isNull())
-			routerInterfaceSetObject.oppositeInterfaceStatus = value["OppositeInterfaceStatus"].asString();
-		if(!value["OppositeInterfaceBusinessStatus"].isNull())
-			routerInterfaceSetObject.oppositeInterfaceBusinessStatus = value["OppositeInterfaceBusinessStatus"].asString();
-		if(!value["OppositeRouterId"].isNull())
-			routerInterfaceSetObject.oppositeRouterId = value["OppositeRouterId"].asString();
-		if(!value["OppositeRouterType"].isNull())
-			routerInterfaceSetObject.oppositeRouterType = value["OppositeRouterType"].asString();
-		if(!value["OppositeInterfaceOwnerId"].isNull())
-			routerInterfaceSetObject.oppositeInterfaceOwnerId = value["OppositeInterfaceOwnerId"].asString();
-		if(!value["AccessPointId"].isNull())
-			routerInterfaceSetObject.accessPointId = value["AccessPointId"].asString();
-		if(!value["OppositeAccessPointId"].isNull())
-			routerInterfaceSetObject.oppositeAccessPointId = value["OppositeAccessPointId"].asString();
-		if(!value["HealthCheckSourceIp"].isNull())
-			routerInterfaceSetObject.healthCheckSourceIp = value["HealthCheckSourceIp"].asString();
-		if(!value["HealthCheckTargetIp"].isNull())
-			routerInterfaceSetObject.healthCheckTargetIp = value["HealthCheckTargetIp"].asString();
-		if(!value["OppositeVpcInstanceId"].isNull())
-			routerInterfaceSetObject.oppositeVpcInstanceId = value["OppositeVpcInstanceId"].asString();
-		if(!value["Bandwidth"].isNull())
-			routerInterfaceSetObject.bandwidth = std::stoi(value["Bandwidth"].asString());
-		if(!value["VpcInstanceId"].isNull())
-			routerInterfaceSetObject.vpcInstanceId = value["VpcInstanceId"].asString();
-		if(!value["OppositeBandwidth"].isNull())
-			routerInterfaceSetObject.oppositeBandwidth = std::stoi(value["OppositeBandwidth"].asString());
-		if(!value["HasReservationData"].isNull())
-			routerInterfaceSetObject.hasReservationData = value["HasReservationData"].asString();
-		if(!value["ReservationBandwidth"].isNull())
-			routerInterfaceSetObject.reservationBandwidth = value["ReservationBandwidth"].asString();
-		if(!value["ReservationInternetChargeType"].isNull())
-			routerInterfaceSetObject.reservationInternetChargeType = value["ReservationInternetChargeType"].asString();
-		if(!value["ReservationActiveTime"].isNull())
-			routerInterfaceSetObject.reservationActiveTime = value["ReservationActiveTime"].asString();
-		if(!value["ReservationOrderType"].isNull())
-			routerInterfaceSetObject.reservationOrderType = value["ReservationOrderType"].asString();
-		if(!value["CrossBorder"].isNull())
-			routerInterfaceSetObject.crossBorder = value["CrossBorder"].asString() == "true";
-		if(!value["HcThreshold"].isNull())
-			routerInterfaceSetObject.hcThreshold = std::stoi(value["HcThreshold"].asString());
-		if(!value["HcRate"].isNull())
-			routerInterfaceSetObject.hcRate = std::stoi(value["HcRate"].asString());
+		if(!valueRouterInterfaceSetRouterInterfaceType["RouterInterfaceId"].isNull())
+			routerInterfaceSetObject.routerInterfaceId = valueRouterInterfaceSetRouterInterfaceType["RouterInterfaceId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeRegionId"].isNull())
+			routerInterfaceSetObject.oppositeRegionId = valueRouterInterfaceSetRouterInterfaceType["OppositeRegionId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["Role"].isNull())
+			routerInterfaceSetObject.role = valueRouterInterfaceSetRouterInterfaceType["Role"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["Spec"].isNull())
+			routerInterfaceSetObject.spec = valueRouterInterfaceSetRouterInterfaceType["Spec"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["Name"].isNull())
+			routerInterfaceSetObject.name = valueRouterInterfaceSetRouterInterfaceType["Name"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["Description"].isNull())
+			routerInterfaceSetObject.description = valueRouterInterfaceSetRouterInterfaceType["Description"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["RouterId"].isNull())
+			routerInterfaceSetObject.routerId = valueRouterInterfaceSetRouterInterfaceType["RouterId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["RouterType"].isNull())
+			routerInterfaceSetObject.routerType = valueRouterInterfaceSetRouterInterfaceType["RouterType"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["CreationTime"].isNull())
+			routerInterfaceSetObject.creationTime = valueRouterInterfaceSetRouterInterfaceType["CreationTime"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["EndTime"].isNull())
+			routerInterfaceSetObject.endTime = valueRouterInterfaceSetRouterInterfaceType["EndTime"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["ChargeType"].isNull())
+			routerInterfaceSetObject.chargeType = valueRouterInterfaceSetRouterInterfaceType["ChargeType"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["Status"].isNull())
+			routerInterfaceSetObject.status = valueRouterInterfaceSetRouterInterfaceType["Status"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["BusinessStatus"].isNull())
+			routerInterfaceSetObject.businessStatus = valueRouterInterfaceSetRouterInterfaceType["BusinessStatus"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["ConnectedTime"].isNull())
+			routerInterfaceSetObject.connectedTime = valueRouterInterfaceSetRouterInterfaceType["ConnectedTime"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceId"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceId = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceSpec"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceSpec = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceSpec"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceStatus"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceStatus = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceStatus"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceBusinessStatus"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceBusinessStatus = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceBusinessStatus"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeRouterId"].isNull())
+			routerInterfaceSetObject.oppositeRouterId = valueRouterInterfaceSetRouterInterfaceType["OppositeRouterId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeRouterType"].isNull())
+			routerInterfaceSetObject.oppositeRouterType = valueRouterInterfaceSetRouterInterfaceType["OppositeRouterType"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceOwnerId"].isNull())
+			routerInterfaceSetObject.oppositeInterfaceOwnerId = valueRouterInterfaceSetRouterInterfaceType["OppositeInterfaceOwnerId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["AccessPointId"].isNull())
+			routerInterfaceSetObject.accessPointId = valueRouterInterfaceSetRouterInterfaceType["AccessPointId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeAccessPointId"].isNull())
+			routerInterfaceSetObject.oppositeAccessPointId = valueRouterInterfaceSetRouterInterfaceType["OppositeAccessPointId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["HealthCheckSourceIp"].isNull())
+			routerInterfaceSetObject.healthCheckSourceIp = valueRouterInterfaceSetRouterInterfaceType["HealthCheckSourceIp"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["HealthCheckTargetIp"].isNull())
+			routerInterfaceSetObject.healthCheckTargetIp = valueRouterInterfaceSetRouterInterfaceType["HealthCheckTargetIp"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeVpcInstanceId"].isNull())
+			routerInterfaceSetObject.oppositeVpcInstanceId = valueRouterInterfaceSetRouterInterfaceType["OppositeVpcInstanceId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["Bandwidth"].isNull())
+			routerInterfaceSetObject.bandwidth = std::stoi(valueRouterInterfaceSetRouterInterfaceType["Bandwidth"].asString());
+		if(!valueRouterInterfaceSetRouterInterfaceType["VpcInstanceId"].isNull())
+			routerInterfaceSetObject.vpcInstanceId = valueRouterInterfaceSetRouterInterfaceType["VpcInstanceId"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["OppositeBandwidth"].isNull())
+			routerInterfaceSetObject.oppositeBandwidth = std::stoi(valueRouterInterfaceSetRouterInterfaceType["OppositeBandwidth"].asString());
+		if(!valueRouterInterfaceSetRouterInterfaceType["HasReservationData"].isNull())
+			routerInterfaceSetObject.hasReservationData = valueRouterInterfaceSetRouterInterfaceType["HasReservationData"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["ReservationBandwidth"].isNull())
+			routerInterfaceSetObject.reservationBandwidth = valueRouterInterfaceSetRouterInterfaceType["ReservationBandwidth"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["ReservationInternetChargeType"].isNull())
+			routerInterfaceSetObject.reservationInternetChargeType = valueRouterInterfaceSetRouterInterfaceType["ReservationInternetChargeType"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["ReservationActiveTime"].isNull())
+			routerInterfaceSetObject.reservationActiveTime = valueRouterInterfaceSetRouterInterfaceType["ReservationActiveTime"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["ReservationOrderType"].isNull())
+			routerInterfaceSetObject.reservationOrderType = valueRouterInterfaceSetRouterInterfaceType["ReservationOrderType"].asString();
+		if(!valueRouterInterfaceSetRouterInterfaceType["CrossBorder"].isNull())
+			routerInterfaceSetObject.crossBorder = valueRouterInterfaceSetRouterInterfaceType["CrossBorder"].asString() == "true";
+		if(!valueRouterInterfaceSetRouterInterfaceType["HcThreshold"].isNull())
+			routerInterfaceSetObject.hcThreshold = std::stoi(valueRouterInterfaceSetRouterInterfaceType["HcThreshold"].asString());
+		if(!valueRouterInterfaceSetRouterInterfaceType["HcRate"].isNull())
+			routerInterfaceSetObject.hcRate = std::stoi(valueRouterInterfaceSetRouterInterfaceType["HcRate"].asString());
 		routerInterfaceSet_.push_back(routerInterfaceSetObject);
 	}
 	if(!value["PageNumber"].isNull())

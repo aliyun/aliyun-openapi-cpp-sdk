@@ -39,26 +39,26 @@ void ListGroupDynamicRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResource = value["Resource"]["ResourceItem"];
-	for (auto value : allResource)
+	auto allResourceNode = value["Resource"]["ResourceItem"];
+	for (auto valueResourceResourceItem : allResourceNode)
 	{
 		ResourceItem resourceObject;
-		if(!value["GroupId"].isNull())
-			resourceObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["Category"].isNull())
-			resourceObject.category = value["Category"].asString();
-		if(!value["FilterRelation"].isNull())
-			resourceObject.filterRelation = value["FilterRelation"].asString();
-		auto allFilters = value["Filters"]["Filter"];
-		for (auto value : allFilters)
+		if(!valueResourceResourceItem["GroupId"].isNull())
+			resourceObject.groupId = std::stol(valueResourceResourceItem["GroupId"].asString());
+		if(!valueResourceResourceItem["Category"].isNull())
+			resourceObject.category = valueResourceResourceItem["Category"].asString();
+		if(!valueResourceResourceItem["FilterRelation"].isNull())
+			resourceObject.filterRelation = valueResourceResourceItem["FilterRelation"].asString();
+		auto allFiltersNode = allResourceNode["Filters"]["Filter"];
+		for (auto allResourceNodeFiltersFilter : allFiltersNode)
 		{
 			ResourceItem::Filter filtersObject;
-			if(!value["Function"].isNull())
-				filtersObject.function = value["Function"].asString();
-			if(!value["Name"].isNull())
-				filtersObject.name = value["Name"].asString();
-			if(!value["Value"].isNull())
-				filtersObject.value = value["Value"].asString();
+			if(!allResourceNodeFiltersFilter["Function"].isNull())
+				filtersObject.function = allResourceNodeFiltersFilter["Function"].asString();
+			if(!allResourceNodeFiltersFilter["Name"].isNull())
+				filtersObject.name = allResourceNodeFiltersFilter["Name"].asString();
+			if(!allResourceNodeFiltersFilter["Value"].isNull())
+				filtersObject.value = allResourceNodeFiltersFilter["Value"].asString();
 			resourceObject.filters.push_back(filtersObject);
 		}
 		resource_.push_back(resourceObject);

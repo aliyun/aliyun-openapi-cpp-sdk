@@ -39,20 +39,20 @@ void DescribeQuickDeploysResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQuickDeploys = value["QuickDeploys"]["QuickDeploy"];
-	for (auto value : allQuickDeploys)
+	auto allQuickDeploysNode = value["QuickDeploys"]["QuickDeploy"];
+	for (auto valueQuickDeploysQuickDeploy : allQuickDeploysNode)
 	{
 		QuickDeploy quickDeploysObject;
-		if(!value["ProjectId"].isNull())
-			quickDeploysObject.projectId = value["ProjectId"].asString();
-		if(!value["IterationId"].isNull())
-			quickDeploysObject.iterationId = value["IterationId"].asString();
-		if(!value["ModelId"].isNull())
-			quickDeploysObject.modelId = value["ModelId"].asString();
-		if(!value["CreationTime"].isNull())
-			quickDeploysObject.creationTime = value["CreationTime"].asString();
-		if(!value["DeployStatus"].isNull())
-			quickDeploysObject.deployStatus = value["DeployStatus"].asString();
+		if(!valueQuickDeploysQuickDeploy["ProjectId"].isNull())
+			quickDeploysObject.projectId = valueQuickDeploysQuickDeploy["ProjectId"].asString();
+		if(!valueQuickDeploysQuickDeploy["IterationId"].isNull())
+			quickDeploysObject.iterationId = valueQuickDeploysQuickDeploy["IterationId"].asString();
+		if(!valueQuickDeploysQuickDeploy["ModelId"].isNull())
+			quickDeploysObject.modelId = valueQuickDeploysQuickDeploy["ModelId"].asString();
+		if(!valueQuickDeploysQuickDeploy["CreationTime"].isNull())
+			quickDeploysObject.creationTime = valueQuickDeploysQuickDeploy["CreationTime"].asString();
+		if(!valueQuickDeploysQuickDeploy["DeployStatus"].isNull())
+			quickDeploysObject.deployStatus = valueQuickDeploysQuickDeploy["DeployStatus"].asString();
 		quickDeploys_.push_back(quickDeploysObject);
 	}
 	if(!value["CurrentPage"].isNull())

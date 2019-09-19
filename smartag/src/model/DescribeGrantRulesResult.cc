@@ -39,26 +39,26 @@ void DescribeGrantRulesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allGrantRules = value["GrantRules"]["GrantRule"];
-	for (auto value : allGrantRules)
+	auto allGrantRulesNode = value["GrantRules"]["GrantRule"];
+	for (auto valueGrantRulesGrantRule : allGrantRulesNode)
 	{
 		GrantRule grantRulesObject;
-		if(!value["GrantRuleId"].isNull())
-			grantRulesObject.grantRuleId = value["GrantRuleId"].asString();
-		if(!value["CenUid"].isNull())
-			grantRulesObject.cenUid = std::stol(value["CenUid"].asString());
-		if(!value["CcnUid"].isNull())
-			grantRulesObject.ccnUid = std::stol(value["CcnUid"].asString());
-		if(!value["CenInstanceId"].isNull())
-			grantRulesObject.cenInstanceId = value["CenInstanceId"].asString();
-		if(!value["CcnInstanceId"].isNull())
-			grantRulesObject.ccnInstanceId = value["CcnInstanceId"].asString();
-		if(!value["GmtCreate"].isNull())
-			grantRulesObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			grantRulesObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["RegionId"].isNull())
-			grantRulesObject.regionId = value["RegionId"].asString();
+		if(!valueGrantRulesGrantRule["GrantRuleId"].isNull())
+			grantRulesObject.grantRuleId = valueGrantRulesGrantRule["GrantRuleId"].asString();
+		if(!valueGrantRulesGrantRule["CenUid"].isNull())
+			grantRulesObject.cenUid = std::stol(valueGrantRulesGrantRule["CenUid"].asString());
+		if(!valueGrantRulesGrantRule["CcnUid"].isNull())
+			grantRulesObject.ccnUid = std::stol(valueGrantRulesGrantRule["CcnUid"].asString());
+		if(!valueGrantRulesGrantRule["CenInstanceId"].isNull())
+			grantRulesObject.cenInstanceId = valueGrantRulesGrantRule["CenInstanceId"].asString();
+		if(!valueGrantRulesGrantRule["CcnInstanceId"].isNull())
+			grantRulesObject.ccnInstanceId = valueGrantRulesGrantRule["CcnInstanceId"].asString();
+		if(!valueGrantRulesGrantRule["GmtCreate"].isNull())
+			grantRulesObject.gmtCreate = std::stol(valueGrantRulesGrantRule["GmtCreate"].asString());
+		if(!valueGrantRulesGrantRule["GmtModified"].isNull())
+			grantRulesObject.gmtModified = std::stol(valueGrantRulesGrantRule["GmtModified"].asString());
+		if(!valueGrantRulesGrantRule["RegionId"].isNull())
+			grantRulesObject.regionId = valueGrantRulesGrantRule["RegionId"].asString();
 		grantRules_.push_back(grantRulesObject);
 	}
 	if(!value["TotalCount"].isNull())

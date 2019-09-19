@@ -39,24 +39,24 @@ void SearchFaceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultFaces = value["ResultFaces"]["ResultFacesItem"];
-	for (auto value : allResultFaces)
+	auto allResultFacesNode = value["ResultFaces"]["ResultFacesItem"];
+	for (auto valueResultFacesResultFacesItem : allResultFacesNode)
 	{
 		ResultFacesItem resultFacesObject;
-		if(!value["GroupId"].isNull())
-			resultFacesObject.groupId = value["GroupId"].asString();
-		if(!value["User"].isNull())
-			resultFacesObject.user = value["User"].asString();
-		if(!value["ImageId"].isNull())
-			resultFacesObject.imageId = value["ImageId"].asString();
-		if(!value["Score"].isNull())
-			resultFacesObject.score = std::stof(value["Score"].asString());
-		if(!value["ImageUri"].isNull())
-			resultFacesObject.imageUri = value["ImageUri"].asString();
-		if(!value["Glasses"].isNull())
-			resultFacesObject.glasses = std::stoi(value["Glasses"].asString());
-		if(!value["Hat"].isNull())
-			resultFacesObject.hat = std::stoi(value["Hat"].asString());
+		if(!valueResultFacesResultFacesItem["GroupId"].isNull())
+			resultFacesObject.groupId = valueResultFacesResultFacesItem["GroupId"].asString();
+		if(!valueResultFacesResultFacesItem["User"].isNull())
+			resultFacesObject.user = valueResultFacesResultFacesItem["User"].asString();
+		if(!valueResultFacesResultFacesItem["ImageId"].isNull())
+			resultFacesObject.imageId = valueResultFacesResultFacesItem["ImageId"].asString();
+		if(!valueResultFacesResultFacesItem["Score"].isNull())
+			resultFacesObject.score = std::stof(valueResultFacesResultFacesItem["Score"].asString());
+		if(!valueResultFacesResultFacesItem["ImageUri"].isNull())
+			resultFacesObject.imageUri = valueResultFacesResultFacesItem["ImageUri"].asString();
+		if(!valueResultFacesResultFacesItem["Glasses"].isNull())
+			resultFacesObject.glasses = std::stoi(valueResultFacesResultFacesItem["Glasses"].asString());
+		if(!valueResultFacesResultFacesItem["Hat"].isNull())
+			resultFacesObject.hat = std::stoi(valueResultFacesResultFacesItem["Hat"].asString());
 		auto allAxis1 = value["Axis"]["Axis"];
 		for (auto value : allAxis1)
 			resultFacesObject.axis1.push_back(value.asString());

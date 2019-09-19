@@ -39,16 +39,16 @@ void SearchMediaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMediaList = value["MediaList"]["Media"];
-	for (auto value : allMediaList)
+	auto allMediaListNode = value["MediaList"]["Media"];
+	for (auto valueMediaListMedia : allMediaListNode)
 	{
 		Media mediaListObject;
-		if(!value["MediaType"].isNull())
-			mediaListObject.mediaType = value["MediaType"].asString();
-		if(!value["CreationTime"].isNull())
-			mediaListObject.creationTime = value["CreationTime"].asString();
-		if(!value["MediaId"].isNull())
-			mediaListObject.mediaId = value["MediaId"].asString();
+		if(!valueMediaListMedia["MediaType"].isNull())
+			mediaListObject.mediaType = valueMediaListMedia["MediaType"].asString();
+		if(!valueMediaListMedia["CreationTime"].isNull())
+			mediaListObject.creationTime = valueMediaListMedia["CreationTime"].asString();
+		if(!valueMediaListMedia["MediaId"].isNull())
+			mediaListObject.mediaId = valueMediaListMedia["MediaId"].asString();
 		auto videoNode = value["Video"];
 		if(!videoNode["VideoId"].isNull())
 			mediaListObject.video.videoId = videoNode["VideoId"].asString();
@@ -102,40 +102,40 @@ void SearchMediaResult::parse(const std::string &payload)
 			mediaListObject.video.customMediaInfo = videoNode["CustomMediaInfo"].asString();
 		if(!videoNode["AppId"].isNull())
 			mediaListObject.video.appId = videoNode["AppId"].asString();
-		auto allPlayInfoList = value["PlayInfoList"]["PlayInfo"];
-		for (auto value : allPlayInfoList)
+		auto allPlayInfoListNode = videoNode["PlayInfoList"]["PlayInfo"];
+		for (auto videoNodePlayInfoListPlayInfo : allPlayInfoListNode)
 		{
 			Media::Video::PlayInfo playInfoObject;
-			if(!value["Width"].isNull())
-				playInfoObject.width = value["Width"].asString();
-			if(!value["Height"].isNull())
-				playInfoObject.height = value["Height"].asString();
-			if(!value["Size"].isNull())
-				playInfoObject.size = value["Size"].asString();
-			if(!value["PlayURL"].isNull())
-				playInfoObject.playURL = value["PlayURL"].asString();
-			if(!value["Bitrate"].isNull())
-				playInfoObject.bitrate = value["Bitrate"].asString();
-			if(!value["Definition"].isNull())
-				playInfoObject.definition = value["Definition"].asString();
-			if(!value["Duration"].isNull())
-				playInfoObject.duration = value["Duration"].asString();
-			if(!value["Format"].isNull())
-				playInfoObject.format = value["Format"].asString();
-			if(!value["Fps"].isNull())
-				playInfoObject.fps = value["Fps"].asString();
-			if(!value["Encrypt"].isNull())
-				playInfoObject.encrypt = std::stol(value["Encrypt"].asString());
-			if(!value["Plaintext"].isNull())
-				playInfoObject.plaintext = value["Plaintext"].asString();
-			if(!value["Complexity"].isNull())
-				playInfoObject.complexity = value["Complexity"].asString();
-			if(!value["StreamType"].isNull())
-				playInfoObject.streamType = value["StreamType"].asString();
-			if(!value["Rand"].isNull())
-				playInfoObject.rand = value["Rand"].asString();
-			if(!value["JobId"].isNull())
-				playInfoObject.jobId = value["JobId"].asString();
+			if(!videoNodePlayInfoListPlayInfo["Width"].isNull())
+				playInfoObject.width = videoNodePlayInfoListPlayInfo["Width"].asString();
+			if(!videoNodePlayInfoListPlayInfo["Height"].isNull())
+				playInfoObject.height = videoNodePlayInfoListPlayInfo["Height"].asString();
+			if(!videoNodePlayInfoListPlayInfo["Size"].isNull())
+				playInfoObject.size = videoNodePlayInfoListPlayInfo["Size"].asString();
+			if(!videoNodePlayInfoListPlayInfo["PlayURL"].isNull())
+				playInfoObject.playURL = videoNodePlayInfoListPlayInfo["PlayURL"].asString();
+			if(!videoNodePlayInfoListPlayInfo["Bitrate"].isNull())
+				playInfoObject.bitrate = videoNodePlayInfoListPlayInfo["Bitrate"].asString();
+			if(!videoNodePlayInfoListPlayInfo["Definition"].isNull())
+				playInfoObject.definition = videoNodePlayInfoListPlayInfo["Definition"].asString();
+			if(!videoNodePlayInfoListPlayInfo["Duration"].isNull())
+				playInfoObject.duration = videoNodePlayInfoListPlayInfo["Duration"].asString();
+			if(!videoNodePlayInfoListPlayInfo["Format"].isNull())
+				playInfoObject.format = videoNodePlayInfoListPlayInfo["Format"].asString();
+			if(!videoNodePlayInfoListPlayInfo["Fps"].isNull())
+				playInfoObject.fps = videoNodePlayInfoListPlayInfo["Fps"].asString();
+			if(!videoNodePlayInfoListPlayInfo["Encrypt"].isNull())
+				playInfoObject.encrypt = std::stol(videoNodePlayInfoListPlayInfo["Encrypt"].asString());
+			if(!videoNodePlayInfoListPlayInfo["Plaintext"].isNull())
+				playInfoObject.plaintext = videoNodePlayInfoListPlayInfo["Plaintext"].asString();
+			if(!videoNodePlayInfoListPlayInfo["Complexity"].isNull())
+				playInfoObject.complexity = videoNodePlayInfoListPlayInfo["Complexity"].asString();
+			if(!videoNodePlayInfoListPlayInfo["StreamType"].isNull())
+				playInfoObject.streamType = videoNodePlayInfoListPlayInfo["StreamType"].asString();
+			if(!videoNodePlayInfoListPlayInfo["Rand"].isNull())
+				playInfoObject.rand = videoNodePlayInfoListPlayInfo["Rand"].asString();
+			if(!videoNodePlayInfoListPlayInfo["JobId"].isNull())
+				playInfoObject.jobId = videoNodePlayInfoListPlayInfo["JobId"].asString();
 			mediaListObject.video.playInfoList.push_back(playInfoObject);
 		}
 			auto allSnapshots = videoNode["Snapshots"]["Snapshot"];
@@ -195,40 +195,40 @@ void SearchMediaResult::parse(const std::string &payload)
 			mediaListObject.audio.customMediaInfo = audioNode["CustomMediaInfo"].asString();
 		if(!audioNode["AppId"].isNull())
 			mediaListObject.audio.appId = audioNode["AppId"].asString();
-		auto allPlayInfoList3 = value["PlayInfoList"]["PlayInfo"];
-		for (auto value : allPlayInfoList3)
+		auto allPlayInfoList3Node = audioNode["PlayInfoList"]["PlayInfo"];
+		for (auto audioNodePlayInfoListPlayInfo : allPlayInfoList3Node)
 		{
 			Media::Audio::PlayInfo4 playInfo4Object;
-			if(!value["Width"].isNull())
-				playInfo4Object.width = value["Width"].asString();
-			if(!value["Height"].isNull())
-				playInfo4Object.height = value["Height"].asString();
-			if(!value["Size"].isNull())
-				playInfo4Object.size = value["Size"].asString();
-			if(!value["PlayURL"].isNull())
-				playInfo4Object.playURL = value["PlayURL"].asString();
-			if(!value["Bitrate"].isNull())
-				playInfo4Object.bitrate = value["Bitrate"].asString();
-			if(!value["Definition"].isNull())
-				playInfo4Object.definition = value["Definition"].asString();
-			if(!value["Duration"].isNull())
-				playInfo4Object.duration = value["Duration"].asString();
-			if(!value["Format"].isNull())
-				playInfo4Object.format = value["Format"].asString();
-			if(!value["Fps"].isNull())
-				playInfo4Object.fps = value["Fps"].asString();
-			if(!value["Encrypt"].isNull())
-				playInfo4Object.encrypt = std::stol(value["Encrypt"].asString());
-			if(!value["Plaintext"].isNull())
-				playInfo4Object.plaintext = value["Plaintext"].asString();
-			if(!value["Complexity"].isNull())
-				playInfo4Object.complexity = value["Complexity"].asString();
-			if(!value["StreamType"].isNull())
-				playInfo4Object.streamType = value["StreamType"].asString();
-			if(!value["Rand"].isNull())
-				playInfo4Object.rand = value["Rand"].asString();
-			if(!value["JobId"].isNull())
-				playInfo4Object.jobId = value["JobId"].asString();
+			if(!audioNodePlayInfoListPlayInfo["Width"].isNull())
+				playInfo4Object.width = audioNodePlayInfoListPlayInfo["Width"].asString();
+			if(!audioNodePlayInfoListPlayInfo["Height"].isNull())
+				playInfo4Object.height = audioNodePlayInfoListPlayInfo["Height"].asString();
+			if(!audioNodePlayInfoListPlayInfo["Size"].isNull())
+				playInfo4Object.size = audioNodePlayInfoListPlayInfo["Size"].asString();
+			if(!audioNodePlayInfoListPlayInfo["PlayURL"].isNull())
+				playInfo4Object.playURL = audioNodePlayInfoListPlayInfo["PlayURL"].asString();
+			if(!audioNodePlayInfoListPlayInfo["Bitrate"].isNull())
+				playInfo4Object.bitrate = audioNodePlayInfoListPlayInfo["Bitrate"].asString();
+			if(!audioNodePlayInfoListPlayInfo["Definition"].isNull())
+				playInfo4Object.definition = audioNodePlayInfoListPlayInfo["Definition"].asString();
+			if(!audioNodePlayInfoListPlayInfo["Duration"].isNull())
+				playInfo4Object.duration = audioNodePlayInfoListPlayInfo["Duration"].asString();
+			if(!audioNodePlayInfoListPlayInfo["Format"].isNull())
+				playInfo4Object.format = audioNodePlayInfoListPlayInfo["Format"].asString();
+			if(!audioNodePlayInfoListPlayInfo["Fps"].isNull())
+				playInfo4Object.fps = audioNodePlayInfoListPlayInfo["Fps"].asString();
+			if(!audioNodePlayInfoListPlayInfo["Encrypt"].isNull())
+				playInfo4Object.encrypt = std::stol(audioNodePlayInfoListPlayInfo["Encrypt"].asString());
+			if(!audioNodePlayInfoListPlayInfo["Plaintext"].isNull())
+				playInfo4Object.plaintext = audioNodePlayInfoListPlayInfo["Plaintext"].asString();
+			if(!audioNodePlayInfoListPlayInfo["Complexity"].isNull())
+				playInfo4Object.complexity = audioNodePlayInfoListPlayInfo["Complexity"].asString();
+			if(!audioNodePlayInfoListPlayInfo["StreamType"].isNull())
+				playInfo4Object.streamType = audioNodePlayInfoListPlayInfo["StreamType"].asString();
+			if(!audioNodePlayInfoListPlayInfo["Rand"].isNull())
+				playInfo4Object.rand = audioNodePlayInfoListPlayInfo["Rand"].asString();
+			if(!audioNodePlayInfoListPlayInfo["JobId"].isNull())
+				playInfo4Object.jobId = audioNodePlayInfoListPlayInfo["JobId"].asString();
 			mediaListObject.audio.playInfoList3.push_back(playInfo4Object);
 		}
 			auto allSnapshots1 = audioNode["Snapshots"]["Snapshot"];
@@ -299,18 +299,18 @@ void SearchMediaResult::parse(const std::string &payload)
 			mediaListObject.attachedMedia.icon = attachedMediaNode["Icon"].asString();
 		if(!attachedMediaNode["OnlineStatus"].isNull())
 			mediaListObject.attachedMedia.onlineStatus = attachedMediaNode["OnlineStatus"].asString();
-		auto allCategories = value["Categories"]["Category"];
-		for (auto value : allCategories)
+		auto allCategoriesNode = attachedMediaNode["Categories"]["Category"];
+		for (auto attachedMediaNodeCategoriesCategory : allCategoriesNode)
 		{
 			Media::AttachedMedia::Category categoryObject;
-			if(!value["CateId"].isNull())
-				categoryObject.cateId = std::stol(value["CateId"].asString());
-			if(!value["CateName"].isNull())
-				categoryObject.cateName = value["CateName"].asString();
-			if(!value["Level"].isNull())
-				categoryObject.level = std::stol(value["Level"].asString());
-			if(!value["ParentId"].isNull())
-				categoryObject.parentId = std::stol(value["ParentId"].asString());
+			if(!attachedMediaNodeCategoriesCategory["CateId"].isNull())
+				categoryObject.cateId = std::stol(attachedMediaNodeCategoriesCategory["CateId"].asString());
+			if(!attachedMediaNodeCategoriesCategory["CateName"].isNull())
+				categoryObject.cateName = attachedMediaNodeCategoriesCategory["CateName"].asString();
+			if(!attachedMediaNodeCategoriesCategory["Level"].isNull())
+				categoryObject.level = std::stol(attachedMediaNodeCategoriesCategory["Level"].asString());
+			if(!attachedMediaNodeCategoriesCategory["ParentId"].isNull())
+				categoryObject.parentId = std::stol(attachedMediaNodeCategoriesCategory["ParentId"].asString());
 			mediaListObject.attachedMedia.categories.push_back(categoryObject);
 		}
 		mediaList_.push_back(mediaListObject);

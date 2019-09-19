@@ -39,14 +39,14 @@ void GetUserSubmissionStatisticInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserSubmissionList = value["UserSubmissionList"]["ClusterStatUserSubmission"];
-	for (auto value : allUserSubmissionList)
+	auto allUserSubmissionListNode = value["UserSubmissionList"]["ClusterStatUserSubmission"];
+	for (auto valueUserSubmissionListClusterStatUserSubmission : allUserSubmissionListNode)
 	{
 		ClusterStatUserSubmission userSubmissionListObject;
-		if(!value["User"].isNull())
-			userSubmissionListObject.user = value["User"].asString();
-		if(!value["Submission"].isNull())
-			userSubmissionListObject.submission = std::stol(value["Submission"].asString());
+		if(!valueUserSubmissionListClusterStatUserSubmission["User"].isNull())
+			userSubmissionListObject.user = valueUserSubmissionListClusterStatUserSubmission["User"].asString();
+		if(!valueUserSubmissionListClusterStatUserSubmission["Submission"].isNull())
+			userSubmissionListObject.submission = std::stol(valueUserSubmissionListClusterStatUserSubmission["Submission"].asString());
 		userSubmissionList_.push_back(userSubmissionListObject);
 	}
 

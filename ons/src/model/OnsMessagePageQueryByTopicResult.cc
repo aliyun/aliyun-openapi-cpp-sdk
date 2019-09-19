@@ -46,44 +46,44 @@ void OnsMessagePageQueryByTopicResult::parse(const std::string &payload)
 		msgFoundDo_.maxPageCount = std::stol(msgFoundDoNode["MaxPageCount"].asString());
 	if(!msgFoundDoNode["CurrentPage"].isNull())
 		msgFoundDo_.currentPage = std::stol(msgFoundDoNode["CurrentPage"].asString());
-	auto allMsgFoundList = value["MsgFoundList"]["OnsRestMessageDo"];
-	for (auto value : allMsgFoundList)
+	auto allMsgFoundListNode = msgFoundDoNode["MsgFoundList"]["OnsRestMessageDo"];
+	for (auto msgFoundDoNodeMsgFoundListOnsRestMessageDo : allMsgFoundListNode)
 	{
 		MsgFoundDo::OnsRestMessageDo onsRestMessageDoObject;
-		if(!value["Topic"].isNull())
-			onsRestMessageDoObject.topic = value["Topic"].asString();
-		if(!value["Flag"].isNull())
-			onsRestMessageDoObject.flag = std::stoi(value["Flag"].asString());
-		if(!value["Body"].isNull())
-			onsRestMessageDoObject.body = value["Body"].asString();
-		if(!value["StoreSize"].isNull())
-			onsRestMessageDoObject.storeSize = std::stoi(value["StoreSize"].asString());
-		if(!value["BornTimestamp"].isNull())
-			onsRestMessageDoObject.bornTimestamp = std::stol(value["BornTimestamp"].asString());
-		if(!value["BornHost"].isNull())
-			onsRestMessageDoObject.bornHost = value["BornHost"].asString();
-		if(!value["StoreTimestamp"].isNull())
-			onsRestMessageDoObject.storeTimestamp = std::stol(value["StoreTimestamp"].asString());
-		if(!value["StoreHost"].isNull())
-			onsRestMessageDoObject.storeHost = value["StoreHost"].asString();
-		if(!value["MsgId"].isNull())
-			onsRestMessageDoObject.msgId = value["MsgId"].asString();
-		if(!value["OffsetId"].isNull())
-			onsRestMessageDoObject.offsetId = value["OffsetId"].asString();
-		if(!value["BodyCRC"].isNull())
-			onsRestMessageDoObject.bodyCRC = std::stoi(value["BodyCRC"].asString());
-		if(!value["ReconsumeTimes"].isNull())
-			onsRestMessageDoObject.reconsumeTimes = std::stoi(value["ReconsumeTimes"].asString());
-		if(!value["InstanceId"].isNull())
-			onsRestMessageDoObject.instanceId = value["InstanceId"].asString();
-		auto allPropertyList = value["PropertyList"]["MessageProperty"];
-		for (auto value : allPropertyList)
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["Topic"].isNull())
+			onsRestMessageDoObject.topic = msgFoundDoNodeMsgFoundListOnsRestMessageDo["Topic"].asString();
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["Flag"].isNull())
+			onsRestMessageDoObject.flag = std::stoi(msgFoundDoNodeMsgFoundListOnsRestMessageDo["Flag"].asString());
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["Body"].isNull())
+			onsRestMessageDoObject.body = msgFoundDoNodeMsgFoundListOnsRestMessageDo["Body"].asString();
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["StoreSize"].isNull())
+			onsRestMessageDoObject.storeSize = std::stoi(msgFoundDoNodeMsgFoundListOnsRestMessageDo["StoreSize"].asString());
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["BornTimestamp"].isNull())
+			onsRestMessageDoObject.bornTimestamp = std::stol(msgFoundDoNodeMsgFoundListOnsRestMessageDo["BornTimestamp"].asString());
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["BornHost"].isNull())
+			onsRestMessageDoObject.bornHost = msgFoundDoNodeMsgFoundListOnsRestMessageDo["BornHost"].asString();
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["StoreTimestamp"].isNull())
+			onsRestMessageDoObject.storeTimestamp = std::stol(msgFoundDoNodeMsgFoundListOnsRestMessageDo["StoreTimestamp"].asString());
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["StoreHost"].isNull())
+			onsRestMessageDoObject.storeHost = msgFoundDoNodeMsgFoundListOnsRestMessageDo["StoreHost"].asString();
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["MsgId"].isNull())
+			onsRestMessageDoObject.msgId = msgFoundDoNodeMsgFoundListOnsRestMessageDo["MsgId"].asString();
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["OffsetId"].isNull())
+			onsRestMessageDoObject.offsetId = msgFoundDoNodeMsgFoundListOnsRestMessageDo["OffsetId"].asString();
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["BodyCRC"].isNull())
+			onsRestMessageDoObject.bodyCRC = std::stoi(msgFoundDoNodeMsgFoundListOnsRestMessageDo["BodyCRC"].asString());
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["ReconsumeTimes"].isNull())
+			onsRestMessageDoObject.reconsumeTimes = std::stoi(msgFoundDoNodeMsgFoundListOnsRestMessageDo["ReconsumeTimes"].asString());
+		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["InstanceId"].isNull())
+			onsRestMessageDoObject.instanceId = msgFoundDoNodeMsgFoundListOnsRestMessageDo["InstanceId"].asString();
+		auto allPropertyListNode = allMsgFoundListNode["PropertyList"]["MessageProperty"];
+		for (auto allMsgFoundListNodePropertyListMessageProperty : allPropertyListNode)
 		{
 			MsgFoundDo::OnsRestMessageDo::MessageProperty propertyListObject;
-			if(!value["Name"].isNull())
-				propertyListObject.name = value["Name"].asString();
-			if(!value["Value"].isNull())
-				propertyListObject.value = value["Value"].asString();
+			if(!allMsgFoundListNodePropertyListMessageProperty["Name"].isNull())
+				propertyListObject.name = allMsgFoundListNodePropertyListMessageProperty["Name"].asString();
+			if(!allMsgFoundListNodePropertyListMessageProperty["Value"].isNull())
+				propertyListObject.value = allMsgFoundListNodePropertyListMessageProperty["Value"].asString();
 			onsRestMessageDoObject.propertyList.push_back(propertyListObject);
 		}
 		msgFoundDo_.msgFoundList.push_back(onsRestMessageDoObject);

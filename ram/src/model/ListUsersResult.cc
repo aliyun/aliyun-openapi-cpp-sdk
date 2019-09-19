@@ -39,26 +39,26 @@ void ListUsersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUsers = value["Users"]["User"];
-	for (auto value : allUsers)
+	auto allUsersNode = value["Users"]["User"];
+	for (auto valueUsersUser : allUsersNode)
 	{
 		User usersObject;
-		if(!value["UserId"].isNull())
-			usersObject.userId = value["UserId"].asString();
-		if(!value["UserName"].isNull())
-			usersObject.userName = value["UserName"].asString();
-		if(!value["DisplayName"].isNull())
-			usersObject.displayName = value["DisplayName"].asString();
-		if(!value["MobilePhone"].isNull())
-			usersObject.mobilePhone = value["MobilePhone"].asString();
-		if(!value["Email"].isNull())
-			usersObject.email = value["Email"].asString();
-		if(!value["Comments"].isNull())
-			usersObject.comments = value["Comments"].asString();
-		if(!value["CreateDate"].isNull())
-			usersObject.createDate = value["CreateDate"].asString();
-		if(!value["UpdateDate"].isNull())
-			usersObject.updateDate = value["UpdateDate"].asString();
+		if(!valueUsersUser["UserId"].isNull())
+			usersObject.userId = valueUsersUser["UserId"].asString();
+		if(!valueUsersUser["UserName"].isNull())
+			usersObject.userName = valueUsersUser["UserName"].asString();
+		if(!valueUsersUser["DisplayName"].isNull())
+			usersObject.displayName = valueUsersUser["DisplayName"].asString();
+		if(!valueUsersUser["MobilePhone"].isNull())
+			usersObject.mobilePhone = valueUsersUser["MobilePhone"].asString();
+		if(!valueUsersUser["Email"].isNull())
+			usersObject.email = valueUsersUser["Email"].asString();
+		if(!valueUsersUser["Comments"].isNull())
+			usersObject.comments = valueUsersUser["Comments"].asString();
+		if(!valueUsersUser["CreateDate"].isNull())
+			usersObject.createDate = valueUsersUser["CreateDate"].asString();
+		if(!valueUsersUser["UpdateDate"].isNull())
+			usersObject.updateDate = valueUsersUser["UpdateDate"].asString();
 		users_.push_back(usersObject);
 	}
 	if(!value["IsTruncated"].isNull())

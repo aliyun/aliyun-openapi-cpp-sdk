@@ -39,26 +39,26 @@ void ListBackupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Item"];
+	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = value["Id"].asString();
-		if(!value["BackupPlanId"].isNull())
-			itemsObject.backupPlanId = value["BackupPlanId"].asString();
-		if(!value["ClusterId"].isNull())
-			itemsObject.clusterId = value["ClusterId"].asString();
-		if(!value["CreateTime"].isNull())
-			itemsObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["Md5"].isNull())
-			itemsObject.md5 = value["Md5"].asString();
-		if(!value["TarFileName"].isNull())
-			itemsObject.tarFileName = value["TarFileName"].asString();
-		if(!value["StorePath"].isNull())
-			itemsObject.storePath = value["StorePath"].asString();
-		if(!value["Status"].isNull())
-			itemsObject.status = value["Status"].asString();
+		if(!valueItemsItem["Id"].isNull())
+			itemsObject.id = valueItemsItem["Id"].asString();
+		if(!valueItemsItem["BackupPlanId"].isNull())
+			itemsObject.backupPlanId = valueItemsItem["BackupPlanId"].asString();
+		if(!valueItemsItem["ClusterId"].isNull())
+			itemsObject.clusterId = valueItemsItem["ClusterId"].asString();
+		if(!valueItemsItem["CreateTime"].isNull())
+			itemsObject.createTime = std::stol(valueItemsItem["CreateTime"].asString());
+		if(!valueItemsItem["Md5"].isNull())
+			itemsObject.md5 = valueItemsItem["Md5"].asString();
+		if(!valueItemsItem["TarFileName"].isNull())
+			itemsObject.tarFileName = valueItemsItem["TarFileName"].asString();
+		if(!valueItemsItem["StorePath"].isNull())
+			itemsObject.storePath = valueItemsItem["StorePath"].asString();
+		if(!valueItemsItem["Status"].isNull())
+			itemsObject.status = valueItemsItem["Status"].asString();
 		auto metadataInfoNode = value["MetadataInfo"];
 		if(!metadataInfoNode["MetadataType"].isNull())
 			itemsObject.metadataInfo.metadataType = metadataInfoNode["MetadataType"].asString();

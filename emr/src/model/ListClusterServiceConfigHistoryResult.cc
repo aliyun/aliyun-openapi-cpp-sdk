@@ -39,30 +39,30 @@ void ListClusterServiceConfigHistoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConfigHistoryList = value["ConfigHistoryList"]["ConfigHistory"];
-	for (auto value : allConfigHistoryList)
+	auto allConfigHistoryListNode = value["ConfigHistoryList"]["ConfigHistory"];
+	for (auto valueConfigHistoryListConfigHistory : allConfigHistoryListNode)
 	{
 		ConfigHistory configHistoryListObject;
-		if(!value["ServiceName"].isNull())
-			configHistoryListObject.serviceName = value["ServiceName"].asString();
-		if(!value["ConfigVersion"].isNull())
-			configHistoryListObject.configVersion = value["ConfigVersion"].asString();
-		if(!value["ConfigFileName"].isNull())
-			configHistoryListObject.configFileName = value["ConfigFileName"].asString();
-		if(!value["ConfigItemName"].isNull())
-			configHistoryListObject.configItemName = value["ConfigItemName"].asString();
-		if(!value["NewValue"].isNull())
-			configHistoryListObject.newValue = value["NewValue"].asString();
-		if(!value["OldValue"].isNull())
-			configHistoryListObject.oldValue = value["OldValue"].asString();
-		if(!value["Applied"].isNull())
-			configHistoryListObject.applied = value["Applied"].asString() == "true";
-		if(!value["CreateTime"].isNull())
-			configHistoryListObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["Author"].isNull())
-			configHistoryListObject.author = value["Author"].asString();
-		if(!value["Comment"].isNull())
-			configHistoryListObject.comment = value["Comment"].asString();
+		if(!valueConfigHistoryListConfigHistory["ServiceName"].isNull())
+			configHistoryListObject.serviceName = valueConfigHistoryListConfigHistory["ServiceName"].asString();
+		if(!valueConfigHistoryListConfigHistory["ConfigVersion"].isNull())
+			configHistoryListObject.configVersion = valueConfigHistoryListConfigHistory["ConfigVersion"].asString();
+		if(!valueConfigHistoryListConfigHistory["ConfigFileName"].isNull())
+			configHistoryListObject.configFileName = valueConfigHistoryListConfigHistory["ConfigFileName"].asString();
+		if(!valueConfigHistoryListConfigHistory["ConfigItemName"].isNull())
+			configHistoryListObject.configItemName = valueConfigHistoryListConfigHistory["ConfigItemName"].asString();
+		if(!valueConfigHistoryListConfigHistory["NewValue"].isNull())
+			configHistoryListObject.newValue = valueConfigHistoryListConfigHistory["NewValue"].asString();
+		if(!valueConfigHistoryListConfigHistory["OldValue"].isNull())
+			configHistoryListObject.oldValue = valueConfigHistoryListConfigHistory["OldValue"].asString();
+		if(!valueConfigHistoryListConfigHistory["Applied"].isNull())
+			configHistoryListObject.applied = valueConfigHistoryListConfigHistory["Applied"].asString() == "true";
+		if(!valueConfigHistoryListConfigHistory["CreateTime"].isNull())
+			configHistoryListObject.createTime = std::stol(valueConfigHistoryListConfigHistory["CreateTime"].asString());
+		if(!valueConfigHistoryListConfigHistory["Author"].isNull())
+			configHistoryListObject.author = valueConfigHistoryListConfigHistory["Author"].asString();
+		if(!valueConfigHistoryListConfigHistory["Comment"].isNull())
+			configHistoryListObject.comment = valueConfigHistoryListConfigHistory["Comment"].asString();
 		configHistoryList_.push_back(configHistoryListObject);
 	}
 	if(!value["TotalCount"].isNull())

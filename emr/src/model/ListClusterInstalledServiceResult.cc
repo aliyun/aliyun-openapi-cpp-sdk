@@ -39,44 +39,44 @@ void ListClusterInstalledServiceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClusterInstalledServiceList = value["ClusterInstalledServiceList"]["ClusterInstalledService"];
-	for (auto value : allClusterInstalledServiceList)
+	auto allClusterInstalledServiceListNode = value["ClusterInstalledServiceList"]["ClusterInstalledService"];
+	for (auto valueClusterInstalledServiceListClusterInstalledService : allClusterInstalledServiceListNode)
 	{
 		ClusterInstalledService clusterInstalledServiceListObject;
-		if(!value["ServiceName"].isNull())
-			clusterInstalledServiceListObject.serviceName = value["ServiceName"].asString();
-		if(!value["ServiceDisplayName"].isNull())
-			clusterInstalledServiceListObject.serviceDisplayName = value["ServiceDisplayName"].asString();
-		if(!value["ServiceVersion"].isNull())
-			clusterInstalledServiceListObject.serviceVersion = value["ServiceVersion"].asString();
-		if(!value["ServiceEcmVersion"].isNull())
-			clusterInstalledServiceListObject.serviceEcmVersion = value["ServiceEcmVersion"].asString();
-		if(!value["serviceStatus"].isNull())
-			clusterInstalledServiceListObject.serviceStatus = value["serviceStatus"].asString();
-		if(!value["onlyClient"].isNull())
-			clusterInstalledServiceListObject.onlyClient = value["onlyClient"].asString() == "true";
-		if(!value["notStartedNum"].isNull())
-			clusterInstalledServiceListObject.notStartedNum = std::stoi(value["notStartedNum"].asString());
-		if(!value["needRestartNum"].isNull())
-			clusterInstalledServiceListObject.needRestartNum = std::stoi(value["needRestartNum"].asString());
-		if(!value["abnormalNum"].isNull())
-			clusterInstalledServiceListObject.abnormalNum = std::stoi(value["abnormalNum"].asString());
-		if(!value["comment"].isNull())
-			clusterInstalledServiceListObject.comment = value["comment"].asString();
-		auto allServiceActionList = value["ServiceActionList"]["ServiceAction"];
-		for (auto value : allServiceActionList)
+		if(!valueClusterInstalledServiceListClusterInstalledService["ServiceName"].isNull())
+			clusterInstalledServiceListObject.serviceName = valueClusterInstalledServiceListClusterInstalledService["ServiceName"].asString();
+		if(!valueClusterInstalledServiceListClusterInstalledService["ServiceDisplayName"].isNull())
+			clusterInstalledServiceListObject.serviceDisplayName = valueClusterInstalledServiceListClusterInstalledService["ServiceDisplayName"].asString();
+		if(!valueClusterInstalledServiceListClusterInstalledService["ServiceVersion"].isNull())
+			clusterInstalledServiceListObject.serviceVersion = valueClusterInstalledServiceListClusterInstalledService["ServiceVersion"].asString();
+		if(!valueClusterInstalledServiceListClusterInstalledService["ServiceEcmVersion"].isNull())
+			clusterInstalledServiceListObject.serviceEcmVersion = valueClusterInstalledServiceListClusterInstalledService["ServiceEcmVersion"].asString();
+		if(!valueClusterInstalledServiceListClusterInstalledService["serviceStatus"].isNull())
+			clusterInstalledServiceListObject.serviceStatus = valueClusterInstalledServiceListClusterInstalledService["serviceStatus"].asString();
+		if(!valueClusterInstalledServiceListClusterInstalledService["onlyClient"].isNull())
+			clusterInstalledServiceListObject.onlyClient = valueClusterInstalledServiceListClusterInstalledService["onlyClient"].asString() == "true";
+		if(!valueClusterInstalledServiceListClusterInstalledService["notStartedNum"].isNull())
+			clusterInstalledServiceListObject.notStartedNum = std::stoi(valueClusterInstalledServiceListClusterInstalledService["notStartedNum"].asString());
+		if(!valueClusterInstalledServiceListClusterInstalledService["needRestartNum"].isNull())
+			clusterInstalledServiceListObject.needRestartNum = std::stoi(valueClusterInstalledServiceListClusterInstalledService["needRestartNum"].asString());
+		if(!valueClusterInstalledServiceListClusterInstalledService["abnormalNum"].isNull())
+			clusterInstalledServiceListObject.abnormalNum = std::stoi(valueClusterInstalledServiceListClusterInstalledService["abnormalNum"].asString());
+		if(!valueClusterInstalledServiceListClusterInstalledService["comment"].isNull())
+			clusterInstalledServiceListObject.comment = valueClusterInstalledServiceListClusterInstalledService["comment"].asString();
+		auto allServiceActionListNode = allClusterInstalledServiceListNode["ServiceActionList"]["ServiceAction"];
+		for (auto allClusterInstalledServiceListNodeServiceActionListServiceAction : allServiceActionListNode)
 		{
 			ClusterInstalledService::ServiceAction serviceActionListObject;
-			if(!value["ServiceName"].isNull())
-				serviceActionListObject.serviceName = value["ServiceName"].asString();
-			if(!value["ComponentName"].isNull())
-				serviceActionListObject.componentName = value["ComponentName"].asString();
-			if(!value["ActionName"].isNull())
-				serviceActionListObject.actionName = value["ActionName"].asString();
-			if(!value["Command"].isNull())
-				serviceActionListObject.command = value["Command"].asString();
-			if(!value["DisplayName"].isNull())
-				serviceActionListObject.displayName = value["DisplayName"].asString();
+			if(!allClusterInstalledServiceListNodeServiceActionListServiceAction["ServiceName"].isNull())
+				serviceActionListObject.serviceName = allClusterInstalledServiceListNodeServiceActionListServiceAction["ServiceName"].asString();
+			if(!allClusterInstalledServiceListNodeServiceActionListServiceAction["ComponentName"].isNull())
+				serviceActionListObject.componentName = allClusterInstalledServiceListNodeServiceActionListServiceAction["ComponentName"].asString();
+			if(!allClusterInstalledServiceListNodeServiceActionListServiceAction["ActionName"].isNull())
+				serviceActionListObject.actionName = allClusterInstalledServiceListNodeServiceActionListServiceAction["ActionName"].asString();
+			if(!allClusterInstalledServiceListNodeServiceActionListServiceAction["Command"].isNull())
+				serviceActionListObject.command = allClusterInstalledServiceListNodeServiceActionListServiceAction["Command"].asString();
+			if(!allClusterInstalledServiceListNodeServiceActionListServiceAction["DisplayName"].isNull())
+				serviceActionListObject.displayName = allClusterInstalledServiceListNodeServiceActionListServiceAction["DisplayName"].asString();
 			clusterInstalledServiceListObject.serviceActionList.push_back(serviceActionListObject);
 		}
 		clusterInstalledServiceList_.push_back(clusterInstalledServiceListObject);

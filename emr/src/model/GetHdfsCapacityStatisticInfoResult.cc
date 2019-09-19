@@ -39,28 +39,28 @@ void GetHdfsCapacityStatisticInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHdfsCapacityList = value["HdfsCapacityList"]["ClusterStatHdfsCapacity"];
-	for (auto value : allHdfsCapacityList)
+	auto allHdfsCapacityListNode = value["HdfsCapacityList"]["ClusterStatHdfsCapacity"];
+	for (auto valueHdfsCapacityListClusterStatHdfsCapacity : allHdfsCapacityListNode)
 	{
 		ClusterStatHdfsCapacity hdfsCapacityListObject;
-		if(!value["CapacityTotal"].isNull())
-			hdfsCapacityListObject.capacityTotal = std::stol(value["CapacityTotal"].asString());
-		if(!value["CapacityTotalGB"].isNull())
-			hdfsCapacityListObject.capacityTotalGB = std::stol(value["CapacityTotalGB"].asString());
-		if(!value["CapacityUsed"].isNull())
-			hdfsCapacityListObject.capacityUsed = std::stol(value["CapacityUsed"].asString());
-		if(!value["CapacityUsedGB"].isNull())
-			hdfsCapacityListObject.capacityUsedGB = std::stol(value["CapacityUsedGB"].asString());
-		if(!value["CapacityRemaining"].isNull())
-			hdfsCapacityListObject.capacityRemaining = std::stol(value["CapacityRemaining"].asString());
-		if(!value["CapacityRemainingGB"].isNull())
-			hdfsCapacityListObject.capacityRemainingGB = std::stol(value["CapacityRemainingGB"].asString());
-		if(!value["CapacityUsedNonDfs"].isNull())
-			hdfsCapacityListObject.capacityUsedNonDfs = std::stol(value["CapacityUsedNonDfs"].asString());
-		if(!value["ClusterBizId"].isNull())
-			hdfsCapacityListObject.clusterBizId = value["ClusterBizId"].asString();
-		if(!value["DateTime"].isNull())
-			hdfsCapacityListObject.dateTime = value["DateTime"].asString();
+		if(!valueHdfsCapacityListClusterStatHdfsCapacity["CapacityTotal"].isNull())
+			hdfsCapacityListObject.capacityTotal = std::stol(valueHdfsCapacityListClusterStatHdfsCapacity["CapacityTotal"].asString());
+		if(!valueHdfsCapacityListClusterStatHdfsCapacity["CapacityTotalGB"].isNull())
+			hdfsCapacityListObject.capacityTotalGB = std::stol(valueHdfsCapacityListClusterStatHdfsCapacity["CapacityTotalGB"].asString());
+		if(!valueHdfsCapacityListClusterStatHdfsCapacity["CapacityUsed"].isNull())
+			hdfsCapacityListObject.capacityUsed = std::stol(valueHdfsCapacityListClusterStatHdfsCapacity["CapacityUsed"].asString());
+		if(!valueHdfsCapacityListClusterStatHdfsCapacity["CapacityUsedGB"].isNull())
+			hdfsCapacityListObject.capacityUsedGB = std::stol(valueHdfsCapacityListClusterStatHdfsCapacity["CapacityUsedGB"].asString());
+		if(!valueHdfsCapacityListClusterStatHdfsCapacity["CapacityRemaining"].isNull())
+			hdfsCapacityListObject.capacityRemaining = std::stol(valueHdfsCapacityListClusterStatHdfsCapacity["CapacityRemaining"].asString());
+		if(!valueHdfsCapacityListClusterStatHdfsCapacity["CapacityRemainingGB"].isNull())
+			hdfsCapacityListObject.capacityRemainingGB = std::stol(valueHdfsCapacityListClusterStatHdfsCapacity["CapacityRemainingGB"].asString());
+		if(!valueHdfsCapacityListClusterStatHdfsCapacity["CapacityUsedNonDfs"].isNull())
+			hdfsCapacityListObject.capacityUsedNonDfs = std::stol(valueHdfsCapacityListClusterStatHdfsCapacity["CapacityUsedNonDfs"].asString());
+		if(!valueHdfsCapacityListClusterStatHdfsCapacity["ClusterBizId"].isNull())
+			hdfsCapacityListObject.clusterBizId = valueHdfsCapacityListClusterStatHdfsCapacity["ClusterBizId"].asString();
+		if(!valueHdfsCapacityListClusterStatHdfsCapacity["DateTime"].isNull())
+			hdfsCapacityListObject.dateTime = valueHdfsCapacityListClusterStatHdfsCapacity["DateTime"].asString();
 		hdfsCapacityList_.push_back(hdfsCapacityListObject);
 	}
 

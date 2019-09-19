@@ -39,24 +39,24 @@ void ListCloudMetricProfilingsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProfilings = value["Profilings"]["ProfilingInfo"];
-	for (auto value : allProfilings)
+	auto allProfilingsNode = value["Profilings"]["ProfilingInfo"];
+	for (auto valueProfilingsProfilingInfo : allProfilingsNode)
 	{
 		ProfilingInfo profilingsObject;
-		if(!value["ProfilingId"].isNull())
-			profilingsObject.profilingId = value["ProfilingId"].asString();
-		if(!value["InstanceId"].isNull())
-			profilingsObject.instanceId = value["InstanceId"].asString();
-		if(!value["HostName"].isNull())
-			profilingsObject.hostName = value["HostName"].asString();
-		if(!value["Pid"].isNull())
-			profilingsObject.pid = std::stoi(value["Pid"].asString());
-		if(!value["Duration"].isNull())
-			profilingsObject.duration = std::stoi(value["Duration"].asString());
-		if(!value["Freq"].isNull())
-			profilingsObject.freq = std::stoi(value["Freq"].asString());
-		if(!value["TriggerTime"].isNull())
-			profilingsObject.triggerTime = value["TriggerTime"].asString();
+		if(!valueProfilingsProfilingInfo["ProfilingId"].isNull())
+			profilingsObject.profilingId = valueProfilingsProfilingInfo["ProfilingId"].asString();
+		if(!valueProfilingsProfilingInfo["InstanceId"].isNull())
+			profilingsObject.instanceId = valueProfilingsProfilingInfo["InstanceId"].asString();
+		if(!valueProfilingsProfilingInfo["HostName"].isNull())
+			profilingsObject.hostName = valueProfilingsProfilingInfo["HostName"].asString();
+		if(!valueProfilingsProfilingInfo["Pid"].isNull())
+			profilingsObject.pid = std::stoi(valueProfilingsProfilingInfo["Pid"].asString());
+		if(!valueProfilingsProfilingInfo["Duration"].isNull())
+			profilingsObject.duration = std::stoi(valueProfilingsProfilingInfo["Duration"].asString());
+		if(!valueProfilingsProfilingInfo["Freq"].isNull())
+			profilingsObject.freq = std::stoi(valueProfilingsProfilingInfo["Freq"].asString());
+		if(!valueProfilingsProfilingInfo["TriggerTime"].isNull())
+			profilingsObject.triggerTime = valueProfilingsProfilingInfo["TriggerTime"].asString();
 		profilings_.push_back(profilingsObject);
 	}
 	if(!value["TotalCount"].isNull())

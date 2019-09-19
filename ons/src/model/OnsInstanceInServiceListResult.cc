@@ -39,22 +39,22 @@ void OnsInstanceInServiceListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["InstanceVO"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["InstanceVO"];
+	for (auto valueDataInstanceVO : allDataNode)
 	{
 		InstanceVO dataObject;
-		if(!value["InstanceId"].isNull())
-			dataObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceStatus"].isNull())
-			dataObject.instanceStatus = std::stoi(value["InstanceStatus"].asString());
-		if(!value["ReleaseTime"].isNull())
-			dataObject.releaseTime = std::stol(value["ReleaseTime"].asString());
-		if(!value["InstanceType"].isNull())
-			dataObject.instanceType = std::stoi(value["InstanceType"].asString());
-		if(!value["InstanceName"].isNull())
-			dataObject.instanceName = value["InstanceName"].asString();
-		if(!value["IndependentNaming"].isNull())
-			dataObject.independentNaming = value["IndependentNaming"].asString() == "true";
+		if(!valueDataInstanceVO["InstanceId"].isNull())
+			dataObject.instanceId = valueDataInstanceVO["InstanceId"].asString();
+		if(!valueDataInstanceVO["InstanceStatus"].isNull())
+			dataObject.instanceStatus = std::stoi(valueDataInstanceVO["InstanceStatus"].asString());
+		if(!valueDataInstanceVO["ReleaseTime"].isNull())
+			dataObject.releaseTime = std::stol(valueDataInstanceVO["ReleaseTime"].asString());
+		if(!valueDataInstanceVO["InstanceType"].isNull())
+			dataObject.instanceType = std::stoi(valueDataInstanceVO["InstanceType"].asString());
+		if(!valueDataInstanceVO["InstanceName"].isNull())
+			dataObject.instanceName = valueDataInstanceVO["InstanceName"].asString();
+		if(!valueDataInstanceVO["IndependentNaming"].isNull())
+			dataObject.independentNaming = valueDataInstanceVO["IndependentNaming"].asString() == "true";
 		data_.push_back(dataObject);
 	}
 	if(!value["HelpUrl"].isNull())

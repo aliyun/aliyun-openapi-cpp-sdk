@@ -39,18 +39,18 @@ void DescribeLiveStreamSnapshotInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLiveStreamSnapshotInfoList = value["LiveStreamSnapshotInfoList"]["LiveStreamSnapshotInfo"];
-	for (auto value : allLiveStreamSnapshotInfoList)
+	auto allLiveStreamSnapshotInfoListNode = value["LiveStreamSnapshotInfoList"]["LiveStreamSnapshotInfo"];
+	for (auto valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo : allLiveStreamSnapshotInfoListNode)
 	{
 		LiveStreamSnapshotInfo liveStreamSnapshotInfoListObject;
-		if(!value["OssEndpoint"].isNull())
-			liveStreamSnapshotInfoListObject.ossEndpoint = value["OssEndpoint"].asString();
-		if(!value["OssBucket"].isNull())
-			liveStreamSnapshotInfoListObject.ossBucket = value["OssBucket"].asString();
-		if(!value["OssObject"].isNull())
-			liveStreamSnapshotInfoListObject.ossObject = value["OssObject"].asString();
-		if(!value["CreateTime"].isNull())
-			liveStreamSnapshotInfoListObject.createTime = value["CreateTime"].asString();
+		if(!valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssEndpoint"].isNull())
+			liveStreamSnapshotInfoListObject.ossEndpoint = valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssEndpoint"].asString();
+		if(!valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssBucket"].isNull())
+			liveStreamSnapshotInfoListObject.ossBucket = valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssBucket"].asString();
+		if(!valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssObject"].isNull())
+			liveStreamSnapshotInfoListObject.ossObject = valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["OssObject"].asString();
+		if(!valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["CreateTime"].isNull())
+			liveStreamSnapshotInfoListObject.createTime = valueLiveStreamSnapshotInfoListLiveStreamSnapshotInfo["CreateTime"].asString();
 		liveStreamSnapshotInfoList_.push_back(liveStreamSnapshotInfoListObject);
 	}
 	if(!value["NextStartTime"].isNull())

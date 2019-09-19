@@ -39,18 +39,18 @@ void DescribeWebsiteStatResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allWebsiteStatList = value["WebsiteStatList"]["WebsiteStat"];
-	for (auto value : allWebsiteStatList)
+	auto allWebsiteStatListNode = value["WebsiteStatList"]["WebsiteStat"];
+	for (auto valueWebsiteStatListWebsiteStat : allWebsiteStatListNode)
 	{
 		WebsiteStat websiteStatListObject;
-		if(!value["SubServiceModule"].isNull())
-			websiteStatListObject.subServiceModule = value["SubServiceModule"].asString();
-		if(!value["InstanceCount"].isNull())
-			websiteStatListObject.instanceCount = std::stoi(value["InstanceCount"].asString());
-		if(!value["ScanCount"].isNull())
-			websiteStatListObject.scanCount = std::stoi(value["ScanCount"].asString());
-		if(!value["RiskCount"].isNull())
-			websiteStatListObject.riskCount = std::stoi(value["RiskCount"].asString());
+		if(!valueWebsiteStatListWebsiteStat["SubServiceModule"].isNull())
+			websiteStatListObject.subServiceModule = valueWebsiteStatListWebsiteStat["SubServiceModule"].asString();
+		if(!valueWebsiteStatListWebsiteStat["InstanceCount"].isNull())
+			websiteStatListObject.instanceCount = std::stoi(valueWebsiteStatListWebsiteStat["InstanceCount"].asString());
+		if(!valueWebsiteStatListWebsiteStat["ScanCount"].isNull())
+			websiteStatListObject.scanCount = std::stoi(valueWebsiteStatListWebsiteStat["ScanCount"].asString());
+		if(!valueWebsiteStatListWebsiteStat["RiskCount"].isNull())
+			websiteStatListObject.riskCount = std::stoi(valueWebsiteStatListWebsiteStat["RiskCount"].asString());
 		websiteStatList_.push_back(websiteStatListObject);
 	}
 	if(!value["TotalCount"].isNull())

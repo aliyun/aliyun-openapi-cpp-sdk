@@ -39,16 +39,16 @@ void DescribeStaticVerificationListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["ItemsItem"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["ItemsItem"];
+	for (auto valueItemsItemsItem : allItemsNode)
 	{
 		ItemsItem itemsObject;
-		if(!value["AbnormalType"].isNull())
-			itemsObject.abnormalType = value["AbnormalType"].asString();
-		if(!value["SourceDetail"].isNull())
-			itemsObject.sourceDetail = value["SourceDetail"].asString();
-		if(!value["DestinationDetail"].isNull())
-			itemsObject.destinationDetail = value["DestinationDetail"].asString();
+		if(!valueItemsItemsItem["AbnormalType"].isNull())
+			itemsObject.abnormalType = valueItemsItemsItem["AbnormalType"].asString();
+		if(!valueItemsItemsItem["SourceDetail"].isNull())
+			itemsObject.sourceDetail = valueItemsItemsItem["SourceDetail"].asString();
+		if(!valueItemsItemsItem["DestinationDetail"].isNull())
+			itemsObject.destinationDetail = valueItemsItemsItem["DestinationDetail"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["ReplicaId"].isNull())

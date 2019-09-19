@@ -39,18 +39,18 @@ void DescribeParameterModificationHistoryResult::parse(const std::string &payloa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHistoricalParameters = value["HistoricalParameters"]["HistoricalParameter"];
-	for (auto value : allHistoricalParameters)
+	auto allHistoricalParametersNode = value["HistoricalParameters"]["HistoricalParameter"];
+	for (auto valueHistoricalParametersHistoricalParameter : allHistoricalParametersNode)
 	{
 		HistoricalParameter historicalParametersObject;
-		if(!value["ParameterName"].isNull())
-			historicalParametersObject.parameterName = value["ParameterName"].asString();
-		if(!value["ModifyTime"].isNull())
-			historicalParametersObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["OldParameterValue"].isNull())
-			historicalParametersObject.oldParameterValue = value["OldParameterValue"].asString();
-		if(!value["NewParameterValue"].isNull())
-			historicalParametersObject.newParameterValue = value["NewParameterValue"].asString();
+		if(!valueHistoricalParametersHistoricalParameter["ParameterName"].isNull())
+			historicalParametersObject.parameterName = valueHistoricalParametersHistoricalParameter["ParameterName"].asString();
+		if(!valueHistoricalParametersHistoricalParameter["ModifyTime"].isNull())
+			historicalParametersObject.modifyTime = valueHistoricalParametersHistoricalParameter["ModifyTime"].asString();
+		if(!valueHistoricalParametersHistoricalParameter["OldParameterValue"].isNull())
+			historicalParametersObject.oldParameterValue = valueHistoricalParametersHistoricalParameter["OldParameterValue"].asString();
+		if(!valueHistoricalParametersHistoricalParameter["NewParameterValue"].isNull())
+			historicalParametersObject.newParameterValue = valueHistoricalParametersHistoricalParameter["NewParameterValue"].asString();
 		historicalParameters_.push_back(historicalParametersObject);
 	}
 

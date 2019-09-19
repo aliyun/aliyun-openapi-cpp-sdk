@@ -39,22 +39,22 @@ void DescribeAppsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAppList = value["AppList"]["App"];
-	for (auto value : allAppList)
+	auto allAppListNode = value["AppList"]["App"];
+	for (auto valueAppListApp : allAppListNode)
 	{
 		App appListObject;
-		if(!value["Status"].isNull())
-			appListObject.status = std::stoi(value["Status"].asString());
-		if(!value["AppId"].isNull())
-			appListObject.appId = value["AppId"].asString();
-		if(!value["AppName"].isNull())
-			appListObject.appName = value["AppName"].asString();
-		if(!value["CreateTime"].isNull())
-			appListObject.createTime = value["CreateTime"].asString();
-		if(!value["AppType"].isNull())
-			appListObject.appType = value["AppType"].asString();
-		if(!value["BillType"].isNull())
-			appListObject.billType = value["BillType"].asString();
+		if(!valueAppListApp["Status"].isNull())
+			appListObject.status = std::stoi(valueAppListApp["Status"].asString());
+		if(!valueAppListApp["AppId"].isNull())
+			appListObject.appId = valueAppListApp["AppId"].asString();
+		if(!valueAppListApp["AppName"].isNull())
+			appListObject.appName = valueAppListApp["AppName"].asString();
+		if(!valueAppListApp["CreateTime"].isNull())
+			appListObject.createTime = valueAppListApp["CreateTime"].asString();
+		if(!valueAppListApp["AppType"].isNull())
+			appListObject.appType = valueAppListApp["AppType"].asString();
+		if(!valueAppListApp["BillType"].isNull())
+			appListObject.billType = valueAppListApp["BillType"].asString();
 		auto allServiceAreas = value["ServiceAreas"]["ServiceArea"];
 		for (auto value : allServiceAreas)
 			appListObject.serviceAreas.push_back(value.asString());

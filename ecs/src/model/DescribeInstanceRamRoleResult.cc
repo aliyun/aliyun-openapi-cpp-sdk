@@ -39,14 +39,14 @@ void DescribeInstanceRamRoleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceRamRoleSets = value["InstanceRamRoleSets"]["InstanceRamRoleSet"];
-	for (auto value : allInstanceRamRoleSets)
+	auto allInstanceRamRoleSetsNode = value["InstanceRamRoleSets"]["InstanceRamRoleSet"];
+	for (auto valueInstanceRamRoleSetsInstanceRamRoleSet : allInstanceRamRoleSetsNode)
 	{
 		InstanceRamRoleSet instanceRamRoleSetsObject;
-		if(!value["InstanceId"].isNull())
-			instanceRamRoleSetsObject.instanceId = value["InstanceId"].asString();
-		if(!value["RamRoleName"].isNull())
-			instanceRamRoleSetsObject.ramRoleName = value["RamRoleName"].asString();
+		if(!valueInstanceRamRoleSetsInstanceRamRoleSet["InstanceId"].isNull())
+			instanceRamRoleSetsObject.instanceId = valueInstanceRamRoleSetsInstanceRamRoleSet["InstanceId"].asString();
+		if(!valueInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].isNull())
+			instanceRamRoleSetsObject.ramRoleName = valueInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].asString();
 		instanceRamRoleSets_.push_back(instanceRamRoleSetsObject);
 	}
 	if(!value["RegionId"].isNull())

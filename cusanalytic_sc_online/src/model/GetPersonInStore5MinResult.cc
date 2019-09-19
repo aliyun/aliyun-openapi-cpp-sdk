@@ -39,14 +39,14 @@ void GetPersonInStore5MinResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPersonInStores = value["PersonInStores"]["PersonInStore"];
-	for (auto value : allPersonInStores)
+	auto allPersonInStoresNode = value["PersonInStores"]["PersonInStore"];
+	for (auto valuePersonInStoresPersonInStore : allPersonInStoresNode)
 	{
 		PersonInStore personInStoresObject;
-		if(!value["Number"].isNull())
-			personInStoresObject.number = std::stoi(value["Number"].asString());
-		if(!value["Time"].isNull())
-			personInStoresObject.time = std::stol(value["Time"].asString());
+		if(!valuePersonInStoresPersonInStore["Number"].isNull())
+			personInStoresObject.number = std::stoi(valuePersonInStoresPersonInStore["Number"].asString());
+		if(!valuePersonInStoresPersonInStore["Time"].isNull())
+			personInStoresObject.time = std::stol(valuePersonInStoresPersonInStore["Time"].asString());
 		personInStores_.push_back(personInStoresObject);
 	}
 	if(!value["Success"].isNull())

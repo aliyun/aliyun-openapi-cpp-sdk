@@ -39,22 +39,22 @@ void DescribeReplicaSetRoleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allReplicaSets = value["ReplicaSets"]["ReplicaSet"];
-	for (auto value : allReplicaSets)
+	auto allReplicaSetsNode = value["ReplicaSets"]["ReplicaSet"];
+	for (auto valueReplicaSetsReplicaSet : allReplicaSetsNode)
 	{
 		ReplicaSet replicaSetsObject;
-		if(!value["ReplicaSetRole"].isNull())
-			replicaSetsObject.replicaSetRole = value["ReplicaSetRole"].asString();
-		if(!value["RoleId"].isNull())
-			replicaSetsObject.roleId = value["RoleId"].asString();
-		if(!value["ConnectionDomain"].isNull())
-			replicaSetsObject.connectionDomain = value["ConnectionDomain"].asString();
-		if(!value["ConnectionPort"].isNull())
-			replicaSetsObject.connectionPort = value["ConnectionPort"].asString();
-		if(!value["ExpiredTime"].isNull())
-			replicaSetsObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["NetworkType"].isNull())
-			replicaSetsObject.networkType = value["NetworkType"].asString();
+		if(!valueReplicaSetsReplicaSet["ReplicaSetRole"].isNull())
+			replicaSetsObject.replicaSetRole = valueReplicaSetsReplicaSet["ReplicaSetRole"].asString();
+		if(!valueReplicaSetsReplicaSet["RoleId"].isNull())
+			replicaSetsObject.roleId = valueReplicaSetsReplicaSet["RoleId"].asString();
+		if(!valueReplicaSetsReplicaSet["ConnectionDomain"].isNull())
+			replicaSetsObject.connectionDomain = valueReplicaSetsReplicaSet["ConnectionDomain"].asString();
+		if(!valueReplicaSetsReplicaSet["ConnectionPort"].isNull())
+			replicaSetsObject.connectionPort = valueReplicaSetsReplicaSet["ConnectionPort"].asString();
+		if(!valueReplicaSetsReplicaSet["ExpiredTime"].isNull())
+			replicaSetsObject.expiredTime = valueReplicaSetsReplicaSet["ExpiredTime"].asString();
+		if(!valueReplicaSetsReplicaSet["NetworkType"].isNull())
+			replicaSetsObject.networkType = valueReplicaSetsReplicaSet["NetworkType"].asString();
 		replicaSets_.push_back(replicaSetsObject);
 	}
 	if(!value["DBInstanceId"].isNull())

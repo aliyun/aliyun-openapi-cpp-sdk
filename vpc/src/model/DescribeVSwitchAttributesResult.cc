@@ -39,14 +39,14 @@ void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCloudResources = value["CloudResources"]["CloudResourceSetType"];
-	for (auto value : allCloudResources)
+	auto allCloudResourcesNode = value["CloudResources"]["CloudResourceSetType"];
+	for (auto valueCloudResourcesCloudResourceSetType : allCloudResourcesNode)
 	{
 		CloudResourceSetType cloudResourcesObject;
-		if(!value["ResourceType"].isNull())
-			cloudResourcesObject.resourceType = value["ResourceType"].asString();
-		if(!value["ResourceCount"].isNull())
-			cloudResourcesObject.resourceCount = std::stoi(value["ResourceCount"].asString());
+		if(!valueCloudResourcesCloudResourceSetType["ResourceType"].isNull())
+			cloudResourcesObject.resourceType = valueCloudResourcesCloudResourceSetType["ResourceType"].asString();
+		if(!valueCloudResourcesCloudResourceSetType["ResourceCount"].isNull())
+			cloudResourcesObject.resourceCount = std::stoi(valueCloudResourcesCloudResourceSetType["ResourceCount"].asString());
 		cloudResources_.push_back(cloudResourcesObject);
 	}
 	auto routeTableNode = value["RouteTable"];

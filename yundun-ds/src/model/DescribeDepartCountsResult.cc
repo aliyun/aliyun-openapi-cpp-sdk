@@ -39,36 +39,36 @@ void DescribeDepartCountsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["DepartCount"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["DepartCount"];
+	for (auto valueItemsDepartCount : allItemsNode)
 	{
 		DepartCount itemsObject;
-		if(!value["DepartName"].isNull())
-			itemsObject.departName = value["DepartName"].asString();
-		if(!value["DepartCount"].isNull())
-			itemsObject.departCount = std::stol(value["DepartCount"].asString());
-		if(!value["Count"].isNull())
-			itemsObject.count = std::stol(value["Count"].asString());
-		if(!value["UserCount"].isNull())
-			itemsObject.userCount = std::stol(value["UserCount"].asString());
-		if(!value["DtCount"].isNull())
-			itemsObject.dtCount = std::stol(value["DtCount"].asString());
-		if(!value["SubCount"].isNull())
-			itemsObject.subCount = std::stol(value["SubCount"].asString());
-		if(!value["SensitiveCount"].isNull())
-			itemsObject.sensitiveCount = std::stol(value["SensitiveCount"].asString());
-		if(!value["EventTotalCount"].isNull())
-			itemsObject.eventTotalCount = std::stol(value["EventTotalCount"].asString());
-		if(!value["ConfirmCount"].isNull())
-			itemsObject.confirmCount = std::stol(value["ConfirmCount"].asString());
-		if(!value["UserConfirmCount"].isNull())
-			itemsObject.userConfirmCount = std::stol(value["UserConfirmCount"].asString());
-		if(!value["LastEventCount"].isNull())
-			itemsObject.lastEventCount = std::stol(value["LastEventCount"].asString());
-		if(!value["TopSubTypeName"].isNull())
-			itemsObject.topSubTypeName = std::stol(value["TopSubTypeName"].asString());
-		if(!value["TopDisplayName"].isNull())
-			itemsObject.topDisplayName = std::stol(value["TopDisplayName"].asString());
+		if(!valueItemsDepartCount["DepartName"].isNull())
+			itemsObject.departName = valueItemsDepartCount["DepartName"].asString();
+		if(!valueItemsDepartCount["DepartCount"].isNull())
+			itemsObject.departCount = std::stol(valueItemsDepartCount["DepartCount"].asString());
+		if(!valueItemsDepartCount["Count"].isNull())
+			itemsObject.count = std::stol(valueItemsDepartCount["Count"].asString());
+		if(!valueItemsDepartCount["UserCount"].isNull())
+			itemsObject.userCount = std::stol(valueItemsDepartCount["UserCount"].asString());
+		if(!valueItemsDepartCount["DtCount"].isNull())
+			itemsObject.dtCount = std::stol(valueItemsDepartCount["DtCount"].asString());
+		if(!valueItemsDepartCount["SubCount"].isNull())
+			itemsObject.subCount = std::stol(valueItemsDepartCount["SubCount"].asString());
+		if(!valueItemsDepartCount["SensitiveCount"].isNull())
+			itemsObject.sensitiveCount = std::stol(valueItemsDepartCount["SensitiveCount"].asString());
+		if(!valueItemsDepartCount["EventTotalCount"].isNull())
+			itemsObject.eventTotalCount = std::stol(valueItemsDepartCount["EventTotalCount"].asString());
+		if(!valueItemsDepartCount["ConfirmCount"].isNull())
+			itemsObject.confirmCount = std::stol(valueItemsDepartCount["ConfirmCount"].asString());
+		if(!valueItemsDepartCount["UserConfirmCount"].isNull())
+			itemsObject.userConfirmCount = std::stol(valueItemsDepartCount["UserConfirmCount"].asString());
+		if(!valueItemsDepartCount["LastEventCount"].isNull())
+			itemsObject.lastEventCount = std::stol(valueItemsDepartCount["LastEventCount"].asString());
+		if(!valueItemsDepartCount["TopSubTypeName"].isNull())
+			itemsObject.topSubTypeName = std::stol(valueItemsDepartCount["TopSubTypeName"].asString());
+		if(!valueItemsDepartCount["TopDisplayName"].isNull())
+			itemsObject.topDisplayName = std::stol(valueItemsDepartCount["TopDisplayName"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

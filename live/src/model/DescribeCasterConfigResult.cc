@@ -50,18 +50,18 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 		recordConfig_.ossEndpoint = recordConfigNode["OssEndpoint"].asString();
 	if(!recordConfigNode["OssBucket"].isNull())
 		recordConfig_.ossBucket = recordConfigNode["OssBucket"].asString();
-	auto allRecordFormat = value["RecordFormat"]["RecordFormatItem"];
-	for (auto value : allRecordFormat)
+	auto allRecordFormatNode = recordConfigNode["RecordFormat"]["RecordFormatItem"];
+	for (auto recordConfigNodeRecordFormatRecordFormatItem : allRecordFormatNode)
 	{
 		RecordConfig::RecordFormatItem recordFormatItemObject;
-		if(!value["Format"].isNull())
-			recordFormatItemObject.format = value["Format"].asString();
-		if(!value["OssObjectPrefix"].isNull())
-			recordFormatItemObject.ossObjectPrefix = value["OssObjectPrefix"].asString();
-		if(!value["SliceOssObjectPrefix"].isNull())
-			recordFormatItemObject.sliceOssObjectPrefix = value["SliceOssObjectPrefix"].asString();
-		if(!value["CycleDuration"].isNull())
-			recordFormatItemObject.cycleDuration = std::stoi(value["CycleDuration"].asString());
+		if(!recordConfigNodeRecordFormatRecordFormatItem["Format"].isNull())
+			recordFormatItemObject.format = recordConfigNodeRecordFormatRecordFormatItem["Format"].asString();
+		if(!recordConfigNodeRecordFormatRecordFormatItem["OssObjectPrefix"].isNull())
+			recordFormatItemObject.ossObjectPrefix = recordConfigNodeRecordFormatRecordFormatItem["OssObjectPrefix"].asString();
+		if(!recordConfigNodeRecordFormatRecordFormatItem["SliceOssObjectPrefix"].isNull())
+			recordFormatItemObject.sliceOssObjectPrefix = recordConfigNodeRecordFormatRecordFormatItem["SliceOssObjectPrefix"].asString();
+		if(!recordConfigNodeRecordFormatRecordFormatItem["CycleDuration"].isNull())
+			recordFormatItemObject.cycleDuration = std::stoi(recordConfigNodeRecordFormatRecordFormatItem["CycleDuration"].asString());
 		recordConfig_.recordFormat.push_back(recordFormatItemObject);
 	}
 	if(!value["CasterId"].isNull())

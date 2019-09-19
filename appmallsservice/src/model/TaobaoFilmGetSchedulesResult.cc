@@ -39,40 +39,40 @@ void TaobaoFilmGetSchedulesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSchedules = value["Schedules"]["SchedulesItem"];
-	for (auto value : allSchedules)
+	auto allSchedulesNode = value["Schedules"]["SchedulesItem"];
+	for (auto valueSchedulesSchedulesItem : allSchedulesNode)
 	{
 		SchedulesItem schedulesObject;
-		if(!value["CinemaId"].isNull())
-			schedulesObject.cinemaId = std::stol(value["CinemaId"].asString());
-		if(!value["CloseTime"].isNull())
-			schedulesObject.closeTime = value["CloseTime"].asString();
-		if(!value["HallName"].isNull())
-			schedulesObject.hallName = value["HallName"].asString();
-		if(!value["Id"].isNull())
-			schedulesObject.id = std::stol(value["Id"].asString());
-		if(!value["IsExpired"].isNull())
-			schedulesObject.isExpired = value["IsExpired"].asString() == "true";
-		if(!value["MaxCanBuy"].isNull())
-			schedulesObject.maxCanBuy = std::stol(value["MaxCanBuy"].asString());
-		if(!value["Price"].isNull())
-			schedulesObject.price = std::stol(value["Price"].asString());
-		if(!value["ScheduleArea"].isNull())
-			schedulesObject.scheduleArea = value["ScheduleArea"].asString();
-		if(!value["SectionId"].isNull())
-			schedulesObject.sectionId = value["SectionId"].asString();
-		if(!value["ServiceFee"].isNull())
-			schedulesObject.serviceFee = std::stol(value["ServiceFee"].asString());
-		if(!value["ShowDate"].isNull())
-			schedulesObject.showDate = value["ShowDate"].asString();
-		if(!value["ShowId"].isNull())
-			schedulesObject.showId = std::stol(value["ShowId"].asString());
-		if(!value["ShowTime"].isNull())
-			schedulesObject.showTime = value["ShowTime"].asString();
-		if(!value["ShowVersion"].isNull())
-			schedulesObject.showVersion = value["ShowVersion"].asString();
-		if(!value["HallId"].isNull())
-			schedulesObject.hallId = value["HallId"].asString();
+		if(!valueSchedulesSchedulesItem["CinemaId"].isNull())
+			schedulesObject.cinemaId = std::stol(valueSchedulesSchedulesItem["CinemaId"].asString());
+		if(!valueSchedulesSchedulesItem["CloseTime"].isNull())
+			schedulesObject.closeTime = valueSchedulesSchedulesItem["CloseTime"].asString();
+		if(!valueSchedulesSchedulesItem["HallName"].isNull())
+			schedulesObject.hallName = valueSchedulesSchedulesItem["HallName"].asString();
+		if(!valueSchedulesSchedulesItem["Id"].isNull())
+			schedulesObject.id = std::stol(valueSchedulesSchedulesItem["Id"].asString());
+		if(!valueSchedulesSchedulesItem["IsExpired"].isNull())
+			schedulesObject.isExpired = valueSchedulesSchedulesItem["IsExpired"].asString() == "true";
+		if(!valueSchedulesSchedulesItem["MaxCanBuy"].isNull())
+			schedulesObject.maxCanBuy = std::stol(valueSchedulesSchedulesItem["MaxCanBuy"].asString());
+		if(!valueSchedulesSchedulesItem["Price"].isNull())
+			schedulesObject.price = std::stol(valueSchedulesSchedulesItem["Price"].asString());
+		if(!valueSchedulesSchedulesItem["ScheduleArea"].isNull())
+			schedulesObject.scheduleArea = valueSchedulesSchedulesItem["ScheduleArea"].asString();
+		if(!valueSchedulesSchedulesItem["SectionId"].isNull())
+			schedulesObject.sectionId = valueSchedulesSchedulesItem["SectionId"].asString();
+		if(!valueSchedulesSchedulesItem["ServiceFee"].isNull())
+			schedulesObject.serviceFee = std::stol(valueSchedulesSchedulesItem["ServiceFee"].asString());
+		if(!valueSchedulesSchedulesItem["ShowDate"].isNull())
+			schedulesObject.showDate = valueSchedulesSchedulesItem["ShowDate"].asString();
+		if(!valueSchedulesSchedulesItem["ShowId"].isNull())
+			schedulesObject.showId = std::stol(valueSchedulesSchedulesItem["ShowId"].asString());
+		if(!valueSchedulesSchedulesItem["ShowTime"].isNull())
+			schedulesObject.showTime = valueSchedulesSchedulesItem["ShowTime"].asString();
+		if(!valueSchedulesSchedulesItem["ShowVersion"].isNull())
+			schedulesObject.showVersion = valueSchedulesSchedulesItem["ShowVersion"].asString();
+		if(!valueSchedulesSchedulesItem["HallId"].isNull())
+			schedulesObject.hallId = valueSchedulesSchedulesItem["HallId"].asString();
 		schedules_.push_back(schedulesObject);
 	}
 	if(!value["ErrorCode"].isNull())

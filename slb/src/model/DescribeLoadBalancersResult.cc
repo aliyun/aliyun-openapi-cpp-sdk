@@ -39,54 +39,54 @@ void DescribeLoadBalancersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLoadBalancers = value["LoadBalancers"]["LoadBalancer"];
-	for (auto value : allLoadBalancers)
+	auto allLoadBalancersNode = value["LoadBalancers"]["LoadBalancer"];
+	for (auto valueLoadBalancersLoadBalancer : allLoadBalancersNode)
 	{
 		LoadBalancer loadBalancersObject;
-		if(!value["LoadBalancerId"].isNull())
-			loadBalancersObject.loadBalancerId = value["LoadBalancerId"].asString();
-		if(!value["LoadBalancerName"].isNull())
-			loadBalancersObject.loadBalancerName = value["LoadBalancerName"].asString();
-		if(!value["LoadBalancerStatus"].isNull())
-			loadBalancersObject.loadBalancerStatus = value["LoadBalancerStatus"].asString();
-		if(!value["Address"].isNull())
-			loadBalancersObject.address = value["Address"].asString();
-		if(!value["AddressType"].isNull())
-			loadBalancersObject.addressType = value["AddressType"].asString();
-		if(!value["RegionId"].isNull())
-			loadBalancersObject.regionId = value["RegionId"].asString();
-		if(!value["RegionIdAlias"].isNull())
-			loadBalancersObject.regionIdAlias = value["RegionIdAlias"].asString();
-		if(!value["VSwitchId"].isNull())
-			loadBalancersObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["VpcId"].isNull())
-			loadBalancersObject.vpcId = value["VpcId"].asString();
-		if(!value["NetworkType"].isNull())
-			loadBalancersObject.networkType = value["NetworkType"].asString();
-		if(!value["MasterZoneId"].isNull())
-			loadBalancersObject.masterZoneId = value["MasterZoneId"].asString();
-		if(!value["SlaveZoneId"].isNull())
-			loadBalancersObject.slaveZoneId = value["SlaveZoneId"].asString();
-		if(!value["InternetChargeType"].isNull())
-			loadBalancersObject.internetChargeType = value["InternetChargeType"].asString();
-		if(!value["CreateTime"].isNull())
-			loadBalancersObject.createTime = value["CreateTime"].asString();
-		if(!value["CreateTimeStamp"].isNull())
-			loadBalancersObject.createTimeStamp = std::stol(value["CreateTimeStamp"].asString());
-		if(!value["PayType"].isNull())
-			loadBalancersObject.payType = value["PayType"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			loadBalancersObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["AddressIPVersion"].isNull())
-			loadBalancersObject.addressIPVersion = value["AddressIPVersion"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueLoadBalancersLoadBalancer["LoadBalancerId"].isNull())
+			loadBalancersObject.loadBalancerId = valueLoadBalancersLoadBalancer["LoadBalancerId"].asString();
+		if(!valueLoadBalancersLoadBalancer["LoadBalancerName"].isNull())
+			loadBalancersObject.loadBalancerName = valueLoadBalancersLoadBalancer["LoadBalancerName"].asString();
+		if(!valueLoadBalancersLoadBalancer["LoadBalancerStatus"].isNull())
+			loadBalancersObject.loadBalancerStatus = valueLoadBalancersLoadBalancer["LoadBalancerStatus"].asString();
+		if(!valueLoadBalancersLoadBalancer["Address"].isNull())
+			loadBalancersObject.address = valueLoadBalancersLoadBalancer["Address"].asString();
+		if(!valueLoadBalancersLoadBalancer["AddressType"].isNull())
+			loadBalancersObject.addressType = valueLoadBalancersLoadBalancer["AddressType"].asString();
+		if(!valueLoadBalancersLoadBalancer["RegionId"].isNull())
+			loadBalancersObject.regionId = valueLoadBalancersLoadBalancer["RegionId"].asString();
+		if(!valueLoadBalancersLoadBalancer["RegionIdAlias"].isNull())
+			loadBalancersObject.regionIdAlias = valueLoadBalancersLoadBalancer["RegionIdAlias"].asString();
+		if(!valueLoadBalancersLoadBalancer["VSwitchId"].isNull())
+			loadBalancersObject.vSwitchId = valueLoadBalancersLoadBalancer["VSwitchId"].asString();
+		if(!valueLoadBalancersLoadBalancer["VpcId"].isNull())
+			loadBalancersObject.vpcId = valueLoadBalancersLoadBalancer["VpcId"].asString();
+		if(!valueLoadBalancersLoadBalancer["NetworkType"].isNull())
+			loadBalancersObject.networkType = valueLoadBalancersLoadBalancer["NetworkType"].asString();
+		if(!valueLoadBalancersLoadBalancer["MasterZoneId"].isNull())
+			loadBalancersObject.masterZoneId = valueLoadBalancersLoadBalancer["MasterZoneId"].asString();
+		if(!valueLoadBalancersLoadBalancer["SlaveZoneId"].isNull())
+			loadBalancersObject.slaveZoneId = valueLoadBalancersLoadBalancer["SlaveZoneId"].asString();
+		if(!valueLoadBalancersLoadBalancer["InternetChargeType"].isNull())
+			loadBalancersObject.internetChargeType = valueLoadBalancersLoadBalancer["InternetChargeType"].asString();
+		if(!valueLoadBalancersLoadBalancer["CreateTime"].isNull())
+			loadBalancersObject.createTime = valueLoadBalancersLoadBalancer["CreateTime"].asString();
+		if(!valueLoadBalancersLoadBalancer["CreateTimeStamp"].isNull())
+			loadBalancersObject.createTimeStamp = std::stol(valueLoadBalancersLoadBalancer["CreateTimeStamp"].asString());
+		if(!valueLoadBalancersLoadBalancer["PayType"].isNull())
+			loadBalancersObject.payType = valueLoadBalancersLoadBalancer["PayType"].asString();
+		if(!valueLoadBalancersLoadBalancer["ResourceGroupId"].isNull())
+			loadBalancersObject.resourceGroupId = valueLoadBalancersLoadBalancer["ResourceGroupId"].asString();
+		if(!valueLoadBalancersLoadBalancer["AddressIPVersion"].isNull())
+			loadBalancersObject.addressIPVersion = valueLoadBalancersLoadBalancer["AddressIPVersion"].asString();
+		auto allTagsNode = allLoadBalancersNode["Tags"]["Tag"];
+		for (auto allLoadBalancersNodeTagsTag : allTagsNode)
 		{
 			LoadBalancer::Tag tagsObject;
-			if(!value["TagKey"].isNull())
-				tagsObject.tagKey = value["TagKey"].asString();
-			if(!value["TagValue"].isNull())
-				tagsObject.tagValue = value["TagValue"].asString();
+			if(!allLoadBalancersNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allLoadBalancersNodeTagsTag["TagKey"].asString();
+			if(!allLoadBalancersNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allLoadBalancersNodeTagsTag["TagValue"].asString();
 			loadBalancersObject.tags.push_back(tagsObject);
 		}
 		loadBalancers_.push_back(loadBalancersObject);

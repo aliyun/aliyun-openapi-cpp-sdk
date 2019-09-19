@@ -39,36 +39,36 @@ void QueryEntitiesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEntities = value["Entities"]["Entity"];
-	for (auto value : allEntities)
+	auto allEntitiesNode = value["Entities"]["Entity"];
+	for (auto valueEntitiesEntity : allEntitiesNode)
 	{
 		Entity entitiesObject;
-		if(!value["EntityId"].isNull())
-			entitiesObject.entityId = std::stol(value["EntityId"].asString());
-		if(!value["EntityName"].isNull())
-			entitiesObject.entityName = value["EntityName"].asString();
-		if(!value["EntityType"].isNull())
-			entitiesObject.entityType = value["EntityType"].asString();
-		if(!value["Regex"].isNull())
-			entitiesObject.regex = value["Regex"].asString();
-		if(!value["CreateTime"].isNull())
-			entitiesObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			entitiesObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["CreateUserId"].isNull())
-			entitiesObject.createUserId = value["CreateUserId"].asString();
-		if(!value["CreateUserName"].isNull())
-			entitiesObject.createUserName = value["CreateUserName"].asString();
-		if(!value["ModifyUserId"].isNull())
-			entitiesObject.modifyUserId = value["ModifyUserId"].asString();
-		if(!value["ModifyUserName"].isNull())
-			entitiesObject.modifyUserName = value["ModifyUserName"].asString();
-		auto allMembers = value["Members"]["MembersItem"];
-		for (auto value : allMembers)
+		if(!valueEntitiesEntity["EntityId"].isNull())
+			entitiesObject.entityId = std::stol(valueEntitiesEntity["EntityId"].asString());
+		if(!valueEntitiesEntity["EntityName"].isNull())
+			entitiesObject.entityName = valueEntitiesEntity["EntityName"].asString();
+		if(!valueEntitiesEntity["EntityType"].isNull())
+			entitiesObject.entityType = valueEntitiesEntity["EntityType"].asString();
+		if(!valueEntitiesEntity["Regex"].isNull())
+			entitiesObject.regex = valueEntitiesEntity["Regex"].asString();
+		if(!valueEntitiesEntity["CreateTime"].isNull())
+			entitiesObject.createTime = valueEntitiesEntity["CreateTime"].asString();
+		if(!valueEntitiesEntity["ModifyTime"].isNull())
+			entitiesObject.modifyTime = valueEntitiesEntity["ModifyTime"].asString();
+		if(!valueEntitiesEntity["CreateUserId"].isNull())
+			entitiesObject.createUserId = valueEntitiesEntity["CreateUserId"].asString();
+		if(!valueEntitiesEntity["CreateUserName"].isNull())
+			entitiesObject.createUserName = valueEntitiesEntity["CreateUserName"].asString();
+		if(!valueEntitiesEntity["ModifyUserId"].isNull())
+			entitiesObject.modifyUserId = valueEntitiesEntity["ModifyUserId"].asString();
+		if(!valueEntitiesEntity["ModifyUserName"].isNull())
+			entitiesObject.modifyUserName = valueEntitiesEntity["ModifyUserName"].asString();
+		auto allMembersNode = allEntitiesNode["Members"]["MembersItem"];
+		for (auto allEntitiesNodeMembersMembersItem : allMembersNode)
 		{
 			Entity::MembersItem membersObject;
-			if(!value["MemberName"].isNull())
-				membersObject.memberName = value["MemberName"].asString();
+			if(!allEntitiesNodeMembersMembersItem["MemberName"].isNull())
+				membersObject.memberName = allEntitiesNodeMembersMembersItem["MemberName"].asString();
 			auto allSynonyms = value["Synonyms"]["Synonyms"];
 			for (auto value : allSynonyms)
 				membersObject.synonyms.push_back(value.asString());

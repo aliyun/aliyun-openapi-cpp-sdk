@@ -39,26 +39,26 @@ void TaobaoFilmGetShowCommentsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCommentList = value["CommentList"]["CommentListItem"];
-	for (auto value : allCommentList)
+	auto allCommentListNode = value["CommentList"]["CommentListItem"];
+	for (auto valueCommentListCommentListItem : allCommentListNode)
 	{
 		CommentListItem commentListObject;
-		if(!value["CommentTime"].isNull())
-			commentListObject.commentTime = value["CommentTime"].asString();
-		if(!value["Content"].isNull())
-			commentListObject.content = value["Content"].asString();
-		if(!value["FavorCount"].isNull())
-			commentListObject.favorCount = std::stol(value["FavorCount"].asString());
-		if(!value["Id"].isNull())
-			commentListObject.id = std::stol(value["Id"].asString());
-		if(!value["NickName"].isNull())
-			commentListObject.nickName = value["NickName"].asString();
-		if(!value["Remark"].isNull())
-			commentListObject.remark = std::stol(value["Remark"].asString());
-		if(!value["ShowId"].isNull())
-			commentListObject.showId = std::stol(value["ShowId"].asString());
-		if(!value["Subject"].isNull())
-			commentListObject.subject = value["Subject"].asString();
+		if(!valueCommentListCommentListItem["CommentTime"].isNull())
+			commentListObject.commentTime = valueCommentListCommentListItem["CommentTime"].asString();
+		if(!valueCommentListCommentListItem["Content"].isNull())
+			commentListObject.content = valueCommentListCommentListItem["Content"].asString();
+		if(!valueCommentListCommentListItem["FavorCount"].isNull())
+			commentListObject.favorCount = std::stol(valueCommentListCommentListItem["FavorCount"].asString());
+		if(!valueCommentListCommentListItem["Id"].isNull())
+			commentListObject.id = std::stol(valueCommentListCommentListItem["Id"].asString());
+		if(!valueCommentListCommentListItem["NickName"].isNull())
+			commentListObject.nickName = valueCommentListCommentListItem["NickName"].asString();
+		if(!valueCommentListCommentListItem["Remark"].isNull())
+			commentListObject.remark = std::stol(valueCommentListCommentListItem["Remark"].asString());
+		if(!valueCommentListCommentListItem["ShowId"].isNull())
+			commentListObject.showId = std::stol(valueCommentListCommentListItem["ShowId"].asString());
+		if(!valueCommentListCommentListItem["Subject"].isNull())
+			commentListObject.subject = valueCommentListCommentListItem["Subject"].asString();
 		commentList_.push_back(commentListObject);
 	}
 	if(!value["ErrorCode"].isNull())

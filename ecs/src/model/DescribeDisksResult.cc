@@ -39,110 +39,110 @@ void DescribeDisksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDisks = value["Disks"]["Disk"];
-	for (auto value : allDisks)
+	auto allDisksNode = value["Disks"]["Disk"];
+	for (auto valueDisksDisk : allDisksNode)
 	{
 		Disk disksObject;
-		if(!value["DiskId"].isNull())
-			disksObject.diskId = value["DiskId"].asString();
-		if(!value["RegionId"].isNull())
-			disksObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			disksObject.zoneId = value["ZoneId"].asString();
-		if(!value["DiskName"].isNull())
-			disksObject.diskName = value["DiskName"].asString();
-		if(!value["Description"].isNull())
-			disksObject.description = value["Description"].asString();
-		if(!value["Type"].isNull())
-			disksObject.type = value["Type"].asString();
-		if(!value["Category"].isNull())
-			disksObject.category = value["Category"].asString();
-		if(!value["Size"].isNull())
-			disksObject.size = std::stoi(value["Size"].asString());
-		if(!value["ImageId"].isNull())
-			disksObject.imageId = value["ImageId"].asString();
-		if(!value["SourceSnapshotId"].isNull())
-			disksObject.sourceSnapshotId = value["SourceSnapshotId"].asString();
-		if(!value["AutoSnapshotPolicyId"].isNull())
-			disksObject.autoSnapshotPolicyId = value["AutoSnapshotPolicyId"].asString();
-		if(!value["ProductCode"].isNull())
-			disksObject.productCode = value["ProductCode"].asString();
-		if(!value["Portable"].isNull())
-			disksObject.portable = value["Portable"].asString() == "true";
-		if(!value["Status"].isNull())
-			disksObject.status = value["Status"].asString();
-		if(!value["InstanceId"].isNull())
-			disksObject.instanceId = value["InstanceId"].asString();
-		if(!value["Device"].isNull())
-			disksObject.device = value["Device"].asString();
-		if(!value["DeleteWithInstance"].isNull())
-			disksObject.deleteWithInstance = value["DeleteWithInstance"].asString() == "true";
-		if(!value["DeleteAutoSnapshot"].isNull())
-			disksObject.deleteAutoSnapshot = value["DeleteAutoSnapshot"].asString() == "true";
-		if(!value["EnableAutoSnapshot"].isNull())
-			disksObject.enableAutoSnapshot = value["EnableAutoSnapshot"].asString() == "true";
-		if(!value["EnableAutomatedSnapshotPolicy"].isNull())
-			disksObject.enableAutomatedSnapshotPolicy = value["EnableAutomatedSnapshotPolicy"].asString() == "true";
-		if(!value["CreationTime"].isNull())
-			disksObject.creationTime = value["CreationTime"].asString();
-		if(!value["AttachedTime"].isNull())
-			disksObject.attachedTime = value["AttachedTime"].asString();
-		if(!value["DetachedTime"].isNull())
-			disksObject.detachedTime = value["DetachedTime"].asString();
-		if(!value["DiskChargeType"].isNull())
-			disksObject.diskChargeType = value["DiskChargeType"].asString();
-		if(!value["ExpiredTime"].isNull())
-			disksObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			disksObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["Encrypted"].isNull())
-			disksObject.encrypted = value["Encrypted"].asString() == "true";
-		if(!value["StorageSetId"].isNull())
-			disksObject.storageSetId = value["StorageSetId"].asString();
-		if(!value["StorageSetPartitionNumber"].isNull())
-			disksObject.storageSetPartitionNumber = std::stoi(value["StorageSetPartitionNumber"].asString());
-		if(!value["MountInstanceNum"].isNull())
-			disksObject.mountInstanceNum = std::stoi(value["MountInstanceNum"].asString());
-		if(!value["IOPS"].isNull())
-			disksObject.iOPS = std::stoi(value["IOPS"].asString());
-		if(!value["IOPSRead"].isNull())
-			disksObject.iOPSRead = std::stoi(value["IOPSRead"].asString());
-		if(!value["IOPSWrite"].isNull())
-			disksObject.iOPSWrite = std::stoi(value["IOPSWrite"].asString());
-		if(!value["KMSKeyId"].isNull())
-			disksObject.kMSKeyId = value["KMSKeyId"].asString();
-		if(!value["PerformanceLevel"].isNull())
-			disksObject.performanceLevel = value["PerformanceLevel"].asString();
-		if(!value["BdfId"].isNull())
-			disksObject.bdfId = value["BdfId"].asString();
-		auto allOperationLocks = value["OperationLocks"]["OperationLock"];
-		for (auto value : allOperationLocks)
+		if(!valueDisksDisk["DiskId"].isNull())
+			disksObject.diskId = valueDisksDisk["DiskId"].asString();
+		if(!valueDisksDisk["RegionId"].isNull())
+			disksObject.regionId = valueDisksDisk["RegionId"].asString();
+		if(!valueDisksDisk["ZoneId"].isNull())
+			disksObject.zoneId = valueDisksDisk["ZoneId"].asString();
+		if(!valueDisksDisk["DiskName"].isNull())
+			disksObject.diskName = valueDisksDisk["DiskName"].asString();
+		if(!valueDisksDisk["Description"].isNull())
+			disksObject.description = valueDisksDisk["Description"].asString();
+		if(!valueDisksDisk["Type"].isNull())
+			disksObject.type = valueDisksDisk["Type"].asString();
+		if(!valueDisksDisk["Category"].isNull())
+			disksObject.category = valueDisksDisk["Category"].asString();
+		if(!valueDisksDisk["Size"].isNull())
+			disksObject.size = std::stoi(valueDisksDisk["Size"].asString());
+		if(!valueDisksDisk["ImageId"].isNull())
+			disksObject.imageId = valueDisksDisk["ImageId"].asString();
+		if(!valueDisksDisk["SourceSnapshotId"].isNull())
+			disksObject.sourceSnapshotId = valueDisksDisk["SourceSnapshotId"].asString();
+		if(!valueDisksDisk["AutoSnapshotPolicyId"].isNull())
+			disksObject.autoSnapshotPolicyId = valueDisksDisk["AutoSnapshotPolicyId"].asString();
+		if(!valueDisksDisk["ProductCode"].isNull())
+			disksObject.productCode = valueDisksDisk["ProductCode"].asString();
+		if(!valueDisksDisk["Portable"].isNull())
+			disksObject.portable = valueDisksDisk["Portable"].asString() == "true";
+		if(!valueDisksDisk["Status"].isNull())
+			disksObject.status = valueDisksDisk["Status"].asString();
+		if(!valueDisksDisk["InstanceId"].isNull())
+			disksObject.instanceId = valueDisksDisk["InstanceId"].asString();
+		if(!valueDisksDisk["Device"].isNull())
+			disksObject.device = valueDisksDisk["Device"].asString();
+		if(!valueDisksDisk["DeleteWithInstance"].isNull())
+			disksObject.deleteWithInstance = valueDisksDisk["DeleteWithInstance"].asString() == "true";
+		if(!valueDisksDisk["DeleteAutoSnapshot"].isNull())
+			disksObject.deleteAutoSnapshot = valueDisksDisk["DeleteAutoSnapshot"].asString() == "true";
+		if(!valueDisksDisk["EnableAutoSnapshot"].isNull())
+			disksObject.enableAutoSnapshot = valueDisksDisk["EnableAutoSnapshot"].asString() == "true";
+		if(!valueDisksDisk["EnableAutomatedSnapshotPolicy"].isNull())
+			disksObject.enableAutomatedSnapshotPolicy = valueDisksDisk["EnableAutomatedSnapshotPolicy"].asString() == "true";
+		if(!valueDisksDisk["CreationTime"].isNull())
+			disksObject.creationTime = valueDisksDisk["CreationTime"].asString();
+		if(!valueDisksDisk["AttachedTime"].isNull())
+			disksObject.attachedTime = valueDisksDisk["AttachedTime"].asString();
+		if(!valueDisksDisk["DetachedTime"].isNull())
+			disksObject.detachedTime = valueDisksDisk["DetachedTime"].asString();
+		if(!valueDisksDisk["DiskChargeType"].isNull())
+			disksObject.diskChargeType = valueDisksDisk["DiskChargeType"].asString();
+		if(!valueDisksDisk["ExpiredTime"].isNull())
+			disksObject.expiredTime = valueDisksDisk["ExpiredTime"].asString();
+		if(!valueDisksDisk["ResourceGroupId"].isNull())
+			disksObject.resourceGroupId = valueDisksDisk["ResourceGroupId"].asString();
+		if(!valueDisksDisk["Encrypted"].isNull())
+			disksObject.encrypted = valueDisksDisk["Encrypted"].asString() == "true";
+		if(!valueDisksDisk["StorageSetId"].isNull())
+			disksObject.storageSetId = valueDisksDisk["StorageSetId"].asString();
+		if(!valueDisksDisk["StorageSetPartitionNumber"].isNull())
+			disksObject.storageSetPartitionNumber = std::stoi(valueDisksDisk["StorageSetPartitionNumber"].asString());
+		if(!valueDisksDisk["MountInstanceNum"].isNull())
+			disksObject.mountInstanceNum = std::stoi(valueDisksDisk["MountInstanceNum"].asString());
+		if(!valueDisksDisk["IOPS"].isNull())
+			disksObject.iOPS = std::stoi(valueDisksDisk["IOPS"].asString());
+		if(!valueDisksDisk["IOPSRead"].isNull())
+			disksObject.iOPSRead = std::stoi(valueDisksDisk["IOPSRead"].asString());
+		if(!valueDisksDisk["IOPSWrite"].isNull())
+			disksObject.iOPSWrite = std::stoi(valueDisksDisk["IOPSWrite"].asString());
+		if(!valueDisksDisk["KMSKeyId"].isNull())
+			disksObject.kMSKeyId = valueDisksDisk["KMSKeyId"].asString();
+		if(!valueDisksDisk["PerformanceLevel"].isNull())
+			disksObject.performanceLevel = valueDisksDisk["PerformanceLevel"].asString();
+		if(!valueDisksDisk["BdfId"].isNull())
+			disksObject.bdfId = valueDisksDisk["BdfId"].asString();
+		auto allOperationLocksNode = allDisksNode["OperationLocks"]["OperationLock"];
+		for (auto allDisksNodeOperationLocksOperationLock : allOperationLocksNode)
 		{
 			Disk::OperationLock operationLocksObject;
-			if(!value["LockReason"].isNull())
-				operationLocksObject.lockReason = value["LockReason"].asString();
+			if(!allDisksNodeOperationLocksOperationLock["LockReason"].isNull())
+				operationLocksObject.lockReason = allDisksNodeOperationLocksOperationLock["LockReason"].asString();
 			disksObject.operationLocks.push_back(operationLocksObject);
 		}
-		auto allMountInstances = value["MountInstances"]["MountInstance"];
-		for (auto value : allMountInstances)
+		auto allMountInstancesNode = allDisksNode["MountInstances"]["MountInstance"];
+		for (auto allDisksNodeMountInstancesMountInstance : allMountInstancesNode)
 		{
 			Disk::MountInstance mountInstancesObject;
-			if(!value["InstanceId"].isNull())
-				mountInstancesObject.instanceId = value["InstanceId"].asString();
-			if(!value["Device"].isNull())
-				mountInstancesObject.device = value["Device"].asString();
-			if(!value["AttachedTime"].isNull())
-				mountInstancesObject.attachedTime = value["AttachedTime"].asString();
+			if(!allDisksNodeMountInstancesMountInstance["InstanceId"].isNull())
+				mountInstancesObject.instanceId = allDisksNodeMountInstancesMountInstance["InstanceId"].asString();
+			if(!allDisksNodeMountInstancesMountInstance["Device"].isNull())
+				mountInstancesObject.device = allDisksNodeMountInstancesMountInstance["Device"].asString();
+			if(!allDisksNodeMountInstancesMountInstance["AttachedTime"].isNull())
+				mountInstancesObject.attachedTime = allDisksNodeMountInstancesMountInstance["AttachedTime"].asString();
 			disksObject.mountInstances.push_back(mountInstancesObject);
 		}
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		auto allTagsNode = allDisksNode["Tags"]["Tag"];
+		for (auto allDisksNodeTagsTag : allTagsNode)
 		{
 			Disk::Tag tagsObject;
-			if(!value["TagKey"].isNull())
-				tagsObject.tagKey = value["TagKey"].asString();
-			if(!value["TagValue"].isNull())
-				tagsObject.tagValue = value["TagValue"].asString();
+			if(!allDisksNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allDisksNodeTagsTag["TagKey"].asString();
+			if(!allDisksNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allDisksNodeTagsTag["TagValue"].asString();
 			disksObject.tags.push_back(tagsObject);
 		}
 		disks_.push_back(disksObject);

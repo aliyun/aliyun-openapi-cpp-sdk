@@ -39,24 +39,24 @@ void DescribeSpotPriceHistoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSpotPrices = value["SpotPrices"]["SpotPriceType"];
-	for (auto value : allSpotPrices)
+	auto allSpotPricesNode = value["SpotPrices"]["SpotPriceType"];
+	for (auto valueSpotPricesSpotPriceType : allSpotPricesNode)
 	{
 		SpotPriceType spotPricesObject;
-		if(!value["ZoneId"].isNull())
-			spotPricesObject.zoneId = value["ZoneId"].asString();
-		if(!value["InstanceType"].isNull())
-			spotPricesObject.instanceType = value["InstanceType"].asString();
-		if(!value["IoOptimized"].isNull())
-			spotPricesObject.ioOptimized = value["IoOptimized"].asString();
-		if(!value["Timestamp"].isNull())
-			spotPricesObject.timestamp = value["Timestamp"].asString();
-		if(!value["NetworkType"].isNull())
-			spotPricesObject.networkType = value["NetworkType"].asString();
-		if(!value["SpotPrice"].isNull())
-			spotPricesObject.spotPrice = std::stof(value["SpotPrice"].asString());
-		if(!value["OriginPrice"].isNull())
-			spotPricesObject.originPrice = std::stof(value["OriginPrice"].asString());
+		if(!valueSpotPricesSpotPriceType["ZoneId"].isNull())
+			spotPricesObject.zoneId = valueSpotPricesSpotPriceType["ZoneId"].asString();
+		if(!valueSpotPricesSpotPriceType["InstanceType"].isNull())
+			spotPricesObject.instanceType = valueSpotPricesSpotPriceType["InstanceType"].asString();
+		if(!valueSpotPricesSpotPriceType["IoOptimized"].isNull())
+			spotPricesObject.ioOptimized = valueSpotPricesSpotPriceType["IoOptimized"].asString();
+		if(!valueSpotPricesSpotPriceType["Timestamp"].isNull())
+			spotPricesObject.timestamp = valueSpotPricesSpotPriceType["Timestamp"].asString();
+		if(!valueSpotPricesSpotPriceType["NetworkType"].isNull())
+			spotPricesObject.networkType = valueSpotPricesSpotPriceType["NetworkType"].asString();
+		if(!valueSpotPricesSpotPriceType["SpotPrice"].isNull())
+			spotPricesObject.spotPrice = std::stof(valueSpotPricesSpotPriceType["SpotPrice"].asString());
+		if(!valueSpotPricesSpotPriceType["OriginPrice"].isNull())
+			spotPricesObject.originPrice = std::stof(valueSpotPricesSpotPriceType["OriginPrice"].asString());
 		spotPrices_.push_back(spotPricesObject);
 	}
 	if(!value["NextOffset"].isNull())

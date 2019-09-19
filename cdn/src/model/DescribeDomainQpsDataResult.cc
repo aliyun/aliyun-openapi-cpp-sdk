@@ -39,36 +39,36 @@ void DescribeDomainQpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQpsDataInterval = value["QpsDataInterval"]["DataModule"];
-	for (auto value : allQpsDataInterval)
+	auto allQpsDataIntervalNode = value["QpsDataInterval"]["DataModule"];
+	for (auto valueQpsDataIntervalDataModule : allQpsDataIntervalNode)
 	{
 		DataModule qpsDataIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			qpsDataIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			qpsDataIntervalObject.value = value["Value"].asString();
-		if(!value["DomesticValue"].isNull())
-			qpsDataIntervalObject.domesticValue = value["DomesticValue"].asString();
-		if(!value["OverseasValue"].isNull())
-			qpsDataIntervalObject.overseasValue = value["OverseasValue"].asString();
-		if(!value["AccValue"].isNull())
-			qpsDataIntervalObject.accValue = value["AccValue"].asString();
-		if(!value["AccDomesticValue"].isNull())
-			qpsDataIntervalObject.accDomesticValue = value["AccDomesticValue"].asString();
-		if(!value["AccOverseasValue"].isNull())
-			qpsDataIntervalObject.accOverseasValue = value["AccOverseasValue"].asString();
-		if(!value["DynamicValue"].isNull())
-			qpsDataIntervalObject.dynamicValue = value["DynamicValue"].asString();
-		if(!value["DynamicDomesticValue"].isNull())
-			qpsDataIntervalObject.dynamicDomesticValue = value["DynamicDomesticValue"].asString();
-		if(!value["DynamicOverseasValue"].isNull())
-			qpsDataIntervalObject.dynamicOverseasValue = value["DynamicOverseasValue"].asString();
-		if(!value["StaticValue"].isNull())
-			qpsDataIntervalObject.staticValue = value["StaticValue"].asString();
-		if(!value["StaticDomesticValue"].isNull())
-			qpsDataIntervalObject.staticDomesticValue = value["StaticDomesticValue"].asString();
-		if(!value["StaticOverseasValue"].isNull())
-			qpsDataIntervalObject.staticOverseasValue = value["StaticOverseasValue"].asString();
+		if(!valueQpsDataIntervalDataModule["TimeStamp"].isNull())
+			qpsDataIntervalObject.timeStamp = valueQpsDataIntervalDataModule["TimeStamp"].asString();
+		if(!valueQpsDataIntervalDataModule["Value"].isNull())
+			qpsDataIntervalObject.value = valueQpsDataIntervalDataModule["Value"].asString();
+		if(!valueQpsDataIntervalDataModule["DomesticValue"].isNull())
+			qpsDataIntervalObject.domesticValue = valueQpsDataIntervalDataModule["DomesticValue"].asString();
+		if(!valueQpsDataIntervalDataModule["OverseasValue"].isNull())
+			qpsDataIntervalObject.overseasValue = valueQpsDataIntervalDataModule["OverseasValue"].asString();
+		if(!valueQpsDataIntervalDataModule["AccValue"].isNull())
+			qpsDataIntervalObject.accValue = valueQpsDataIntervalDataModule["AccValue"].asString();
+		if(!valueQpsDataIntervalDataModule["AccDomesticValue"].isNull())
+			qpsDataIntervalObject.accDomesticValue = valueQpsDataIntervalDataModule["AccDomesticValue"].asString();
+		if(!valueQpsDataIntervalDataModule["AccOverseasValue"].isNull())
+			qpsDataIntervalObject.accOverseasValue = valueQpsDataIntervalDataModule["AccOverseasValue"].asString();
+		if(!valueQpsDataIntervalDataModule["DynamicValue"].isNull())
+			qpsDataIntervalObject.dynamicValue = valueQpsDataIntervalDataModule["DynamicValue"].asString();
+		if(!valueQpsDataIntervalDataModule["DynamicDomesticValue"].isNull())
+			qpsDataIntervalObject.dynamicDomesticValue = valueQpsDataIntervalDataModule["DynamicDomesticValue"].asString();
+		if(!valueQpsDataIntervalDataModule["DynamicOverseasValue"].isNull())
+			qpsDataIntervalObject.dynamicOverseasValue = valueQpsDataIntervalDataModule["DynamicOverseasValue"].asString();
+		if(!valueQpsDataIntervalDataModule["StaticValue"].isNull())
+			qpsDataIntervalObject.staticValue = valueQpsDataIntervalDataModule["StaticValue"].asString();
+		if(!valueQpsDataIntervalDataModule["StaticDomesticValue"].isNull())
+			qpsDataIntervalObject.staticDomesticValue = valueQpsDataIntervalDataModule["StaticDomesticValue"].asString();
+		if(!valueQpsDataIntervalDataModule["StaticOverseasValue"].isNull())
+			qpsDataIntervalObject.staticOverseasValue = valueQpsDataIntervalDataModule["StaticOverseasValue"].asString();
 		qpsDataInterval_.push_back(qpsDataIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

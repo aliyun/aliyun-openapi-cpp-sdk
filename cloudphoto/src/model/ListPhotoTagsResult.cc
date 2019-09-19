@@ -39,20 +39,20 @@ void ListPhotoTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTags = value["Tags"]["Tag"];
-	for (auto value : allTags)
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
 	{
 		Tag tagsObject;
-		if(!value["Id"].isNull())
-			tagsObject.id = std::stol(value["Id"].asString());
-		if(!value["IdStr"].isNull())
-			tagsObject.idStr = value["IdStr"].asString();
-		if(!value["IsSubTag"].isNull())
-			tagsObject.isSubTag = value["IsSubTag"].asString() == "true";
-		if(!value["Name"].isNull())
-			tagsObject.name = value["Name"].asString();
-		if(!value["ParentTag"].isNull())
-			tagsObject.parentTag = value["ParentTag"].asString();
+		if(!valueTagsTag["Id"].isNull())
+			tagsObject.id = std::stol(valueTagsTag["Id"].asString());
+		if(!valueTagsTag["IdStr"].isNull())
+			tagsObject.idStr = valueTagsTag["IdStr"].asString();
+		if(!valueTagsTag["IsSubTag"].isNull())
+			tagsObject.isSubTag = valueTagsTag["IsSubTag"].asString() == "true";
+		if(!valueTagsTag["Name"].isNull())
+			tagsObject.name = valueTagsTag["Name"].asString();
+		if(!valueTagsTag["ParentTag"].isNull())
+			tagsObject.parentTag = valueTagsTag["ParentTag"].asString();
 		tags_.push_back(tagsObject);
 	}
 	if(!value["Code"].isNull())

@@ -39,36 +39,36 @@ void GetUploadDetailsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUploadDetails = value["UploadDetails"]["UploadDetail"];
-	for (auto value : allUploadDetails)
+	auto allUploadDetailsNode = value["UploadDetails"]["UploadDetail"];
+	for (auto valueUploadDetailsUploadDetail : allUploadDetailsNode)
 	{
 		UploadDetail uploadDetailsObject;
-		if(!value["MediaId"].isNull())
-			uploadDetailsObject.mediaId = value["MediaId"].asString();
-		if(!value["Title"].isNull())
-			uploadDetailsObject.title = value["Title"].asString();
-		if(!value["FileSize"].isNull())
-			uploadDetailsObject.fileSize = std::stol(value["FileSize"].asString());
-		if(!value["Status"].isNull())
-			uploadDetailsObject.status = value["Status"].asString();
-		if(!value["UploadStatus"].isNull())
-			uploadDetailsObject.uploadStatus = value["UploadStatus"].asString();
-		if(!value["CreationTime"].isNull())
-			uploadDetailsObject.creationTime = value["CreationTime"].asString();
-		if(!value["ModificationTime"].isNull())
-			uploadDetailsObject.modificationTime = value["ModificationTime"].asString();
-		if(!value["CompletionTime"].isNull())
-			uploadDetailsObject.completionTime = value["CompletionTime"].asString();
-		if(!value["UploadSize"].isNull())
-			uploadDetailsObject.uploadSize = std::stol(value["UploadSize"].asString());
-		if(!value["UploadRatio"].isNull())
-			uploadDetailsObject.uploadRatio = std::stof(value["UploadRatio"].asString());
-		if(!value["UploadIP"].isNull())
-			uploadDetailsObject.uploadIP = value["UploadIP"].asString();
-		if(!value["UploadSource"].isNull())
-			uploadDetailsObject.uploadSource = value["UploadSource"].asString();
-		if(!value["DeviceModel"].isNull())
-			uploadDetailsObject.deviceModel = value["DeviceModel"].asString();
+		if(!valueUploadDetailsUploadDetail["MediaId"].isNull())
+			uploadDetailsObject.mediaId = valueUploadDetailsUploadDetail["MediaId"].asString();
+		if(!valueUploadDetailsUploadDetail["Title"].isNull())
+			uploadDetailsObject.title = valueUploadDetailsUploadDetail["Title"].asString();
+		if(!valueUploadDetailsUploadDetail["FileSize"].isNull())
+			uploadDetailsObject.fileSize = std::stol(valueUploadDetailsUploadDetail["FileSize"].asString());
+		if(!valueUploadDetailsUploadDetail["Status"].isNull())
+			uploadDetailsObject.status = valueUploadDetailsUploadDetail["Status"].asString();
+		if(!valueUploadDetailsUploadDetail["UploadStatus"].isNull())
+			uploadDetailsObject.uploadStatus = valueUploadDetailsUploadDetail["UploadStatus"].asString();
+		if(!valueUploadDetailsUploadDetail["CreationTime"].isNull())
+			uploadDetailsObject.creationTime = valueUploadDetailsUploadDetail["CreationTime"].asString();
+		if(!valueUploadDetailsUploadDetail["ModificationTime"].isNull())
+			uploadDetailsObject.modificationTime = valueUploadDetailsUploadDetail["ModificationTime"].asString();
+		if(!valueUploadDetailsUploadDetail["CompletionTime"].isNull())
+			uploadDetailsObject.completionTime = valueUploadDetailsUploadDetail["CompletionTime"].asString();
+		if(!valueUploadDetailsUploadDetail["UploadSize"].isNull())
+			uploadDetailsObject.uploadSize = std::stol(valueUploadDetailsUploadDetail["UploadSize"].asString());
+		if(!valueUploadDetailsUploadDetail["UploadRatio"].isNull())
+			uploadDetailsObject.uploadRatio = std::stof(valueUploadDetailsUploadDetail["UploadRatio"].asString());
+		if(!valueUploadDetailsUploadDetail["UploadIP"].isNull())
+			uploadDetailsObject.uploadIP = valueUploadDetailsUploadDetail["UploadIP"].asString();
+		if(!valueUploadDetailsUploadDetail["UploadSource"].isNull())
+			uploadDetailsObject.uploadSource = valueUploadDetailsUploadDetail["UploadSource"].asString();
+		if(!valueUploadDetailsUploadDetail["DeviceModel"].isNull())
+			uploadDetailsObject.deviceModel = valueUploadDetailsUploadDetail["DeviceModel"].asString();
 		uploadDetails_.push_back(uploadDetailsObject);
 	}
 	auto allNonExistMediaIds = value["NonExistMediaIds"]["MediaId"];

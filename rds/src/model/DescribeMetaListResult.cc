@@ -39,16 +39,16 @@ void DescribeMetaListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Meta"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Meta"];
+	for (auto valueItemsMeta : allItemsNode)
 	{
 		Meta itemsObject;
-		if(!value["Database"].isNull())
-			itemsObject.database = value["Database"].asString();
-		if(!value["Tables"].isNull())
-			itemsObject.tables = value["Tables"].asString();
-		if(!value["Size"].isNull())
-			itemsObject.size = value["Size"].asString();
+		if(!valueItemsMeta["Database"].isNull())
+			itemsObject.database = valueItemsMeta["Database"].asString();
+		if(!valueItemsMeta["Tables"].isNull())
+			itemsObject.tables = valueItemsMeta["Tables"].asString();
+		if(!valueItemsMeta["Size"].isNull())
+			itemsObject.size = valueItemsMeta["Size"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceName"].isNull())

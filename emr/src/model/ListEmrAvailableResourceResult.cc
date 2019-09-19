@@ -39,32 +39,32 @@ void ListEmrAvailableResourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEmrZoneInfoList = value["EmrZoneInfoList"]["EmrZoneInfo"];
-	for (auto value : allEmrZoneInfoList)
+	auto allEmrZoneInfoListNode = value["EmrZoneInfoList"]["EmrZoneInfo"];
+	for (auto valueEmrZoneInfoListEmrZoneInfo : allEmrZoneInfoListNode)
 	{
 		EmrZoneInfo emrZoneInfoListObject;
-		if(!value["ZoneId"].isNull())
-			emrZoneInfoListObject.zoneId = value["ZoneId"].asString();
-		auto allEmrResourceInfoList = value["EmrResourceInfoList"]["EmrResourceInfo"];
-		for (auto value : allEmrResourceInfoList)
+		if(!valueEmrZoneInfoListEmrZoneInfo["ZoneId"].isNull())
+			emrZoneInfoListObject.zoneId = valueEmrZoneInfoListEmrZoneInfo["ZoneId"].asString();
+		auto allEmrResourceInfoListNode = allEmrZoneInfoListNode["EmrResourceInfoList"]["EmrResourceInfo"];
+		for (auto allEmrZoneInfoListNodeEmrResourceInfoListEmrResourceInfo : allEmrResourceInfoListNode)
 		{
 			EmrZoneInfo::EmrResourceInfo emrResourceInfoListObject;
-			if(!value["Type"].isNull())
-				emrResourceInfoListObject.type = value["Type"].asString();
-			auto allSupportedResourceList = value["SupportedResourceList"]["SupportedResource"];
-			for (auto value : allSupportedResourceList)
+			if(!allEmrZoneInfoListNodeEmrResourceInfoListEmrResourceInfo["Type"].isNull())
+				emrResourceInfoListObject.type = allEmrZoneInfoListNodeEmrResourceInfoListEmrResourceInfo["Type"].asString();
+			auto allSupportedResourceListNode = allEmrResourceInfoListNode["SupportedResourceList"]["SupportedResource"];
+			for (auto allEmrResourceInfoListNodeSupportedResourceListSupportedResource : allSupportedResourceListNode)
 			{
 				EmrZoneInfo::EmrResourceInfo::SupportedResource supportedResourceListObject;
-				if(!value["Value"].isNull())
-					supportedResourceListObject.value = value["Value"].asString();
-				if(!value["Min"].isNull())
-					supportedResourceListObject.min = std::stoi(value["Min"].asString());
-				if(!value["Max"].isNull())
-					supportedResourceListObject.max = std::stoi(value["Max"].asString());
-				if(!value["Unit"].isNull())
-					supportedResourceListObject.unit = value["Unit"].asString();
-				if(!value["Value"].isNull())
-					supportedResourceListObject.value1 = value["Value"].asString();
+				if(!allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Value"].isNull())
+					supportedResourceListObject.value = allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Value"].asString();
+				if(!allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Min"].isNull())
+					supportedResourceListObject.min = std::stoi(allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Min"].asString());
+				if(!allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Max"].isNull())
+					supportedResourceListObject.max = std::stoi(allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Max"].asString());
+				if(!allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Unit"].isNull())
+					supportedResourceListObject.unit = allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Unit"].asString();
+				if(!allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Value"].isNull())
+					supportedResourceListObject.value1 = allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Value"].asString();
 				auto emrInstanceTypeNode = value["EmrInstanceType"];
 				if(!emrInstanceTypeNode["InstanceType"].isNull())
 					supportedResourceListObject.emrInstanceType.instanceType = emrInstanceTypeNode["InstanceType"].asString();

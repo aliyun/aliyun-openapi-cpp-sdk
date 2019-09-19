@@ -39,12 +39,12 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegions = value["Regions"]["Region"];
-	for (auto value : allRegions)
+	auto allRegionsNode = value["Regions"]["Region"];
+	for (auto valueRegionsRegion : allRegionsNode)
 	{
 		Region regionsObject;
-		if(!value["RegionId"].isNull())
-			regionsObject.regionId = value["RegionId"].asString();
+		if(!valueRegionsRegion["RegionId"].isNull())
+			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
 		regions_.push_back(regionsObject);
 	}
 

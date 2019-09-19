@@ -39,16 +39,16 @@ void DescribePropertyPortItemResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPropertyItems = value["PropertyItems"]["PropertyItem"];
-	for (auto value : allPropertyItems)
+	auto allPropertyItemsNode = value["PropertyItems"]["PropertyItem"];
+	for (auto valuePropertyItemsPropertyItem : allPropertyItemsNode)
 	{
 		PropertyItem propertyItemsObject;
-		if(!value["Port"].isNull())
-			propertyItemsObject.port = value["Port"].asString();
-		if(!value["Proto"].isNull())
-			propertyItemsObject.proto = value["Proto"].asString();
-		if(!value["Count"].isNull())
-			propertyItemsObject.count = std::stoi(value["Count"].asString());
+		if(!valuePropertyItemsPropertyItem["Port"].isNull())
+			propertyItemsObject.port = valuePropertyItemsPropertyItem["Port"].asString();
+		if(!valuePropertyItemsPropertyItem["Proto"].isNull())
+			propertyItemsObject.proto = valuePropertyItemsPropertyItem["Proto"].asString();
+		if(!valuePropertyItemsPropertyItem["Count"].isNull())
+			propertyItemsObject.count = std::stoi(valuePropertyItemsPropertyItem["Count"].asString());
 		propertyItems_.push_back(propertyItemsObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

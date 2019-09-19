@@ -39,38 +39,38 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQueues = value["Queues"]["QueueInfo"];
-	for (auto value : allQueues)
+	auto allQueuesNode = value["Queues"]["QueueInfo"];
+	for (auto valueQueuesQueueInfo : allQueuesNode)
 	{
 		QueueInfo queuesObject;
-		if(!value["QueueName"].isNull())
-			queuesObject.queueName = value["QueueName"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			queuesObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["InstanceType"].isNull())
-			queuesObject.instanceType = value["InstanceType"].asString();
-		if(!value["SpotStrategy"].isNull())
-			queuesObject.spotStrategy = value["SpotStrategy"].asString();
-		if(!value["SpotPriceLimit"].isNull())
-			queuesObject.spotPriceLimit = std::stof(value["SpotPriceLimit"].asString());
-		if(!value["EnableAutoGrow"].isNull())
-			queuesObject.enableAutoGrow = value["EnableAutoGrow"].asString() == "true";
-		if(!value["EnableAutoShrink"].isNull())
-			queuesObject.enableAutoShrink = value["EnableAutoShrink"].asString() == "true";
-		auto allInstanceTypes = value["InstanceTypes"]["InstanceTypeInfo"];
-		for (auto value : allInstanceTypes)
+		if(!valueQueuesQueueInfo["QueueName"].isNull())
+			queuesObject.queueName = valueQueuesQueueInfo["QueueName"].asString();
+		if(!valueQueuesQueueInfo["ResourceGroupId"].isNull())
+			queuesObject.resourceGroupId = valueQueuesQueueInfo["ResourceGroupId"].asString();
+		if(!valueQueuesQueueInfo["InstanceType"].isNull())
+			queuesObject.instanceType = valueQueuesQueueInfo["InstanceType"].asString();
+		if(!valueQueuesQueueInfo["SpotStrategy"].isNull())
+			queuesObject.spotStrategy = valueQueuesQueueInfo["SpotStrategy"].asString();
+		if(!valueQueuesQueueInfo["SpotPriceLimit"].isNull())
+			queuesObject.spotPriceLimit = std::stof(valueQueuesQueueInfo["SpotPriceLimit"].asString());
+		if(!valueQueuesQueueInfo["EnableAutoGrow"].isNull())
+			queuesObject.enableAutoGrow = valueQueuesQueueInfo["EnableAutoGrow"].asString() == "true";
+		if(!valueQueuesQueueInfo["EnableAutoShrink"].isNull())
+			queuesObject.enableAutoShrink = valueQueuesQueueInfo["EnableAutoShrink"].asString() == "true";
+		auto allInstanceTypesNode = allQueuesNode["InstanceTypes"]["InstanceTypeInfo"];
+		for (auto allQueuesNodeInstanceTypesInstanceTypeInfo : allInstanceTypesNode)
 		{
 			QueueInfo::InstanceTypeInfo instanceTypesObject;
-			if(!value["InstanceType"].isNull())
-				instanceTypesObject.instanceType = value["InstanceType"].asString();
-			if(!value["SpotStrategy"].isNull())
-				instanceTypesObject.spotStrategy = value["SpotStrategy"].asString();
-			if(!value["SpotPriceLimit"].isNull())
-				instanceTypesObject.spotPriceLimit = std::stof(value["SpotPriceLimit"].asString());
-			if(!value["ZoneId"].isNull())
-				instanceTypesObject.zoneId = value["ZoneId"].asString();
-			if(!value["VSwitchId"].isNull())
-				instanceTypesObject.vSwitchId = value["VSwitchId"].asString();
+			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["InstanceType"].isNull())
+				instanceTypesObject.instanceType = allQueuesNodeInstanceTypesInstanceTypeInfo["InstanceType"].asString();
+			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["SpotStrategy"].isNull())
+				instanceTypesObject.spotStrategy = allQueuesNodeInstanceTypesInstanceTypeInfo["SpotStrategy"].asString();
+			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["SpotPriceLimit"].isNull())
+				instanceTypesObject.spotPriceLimit = std::stof(allQueuesNodeInstanceTypesInstanceTypeInfo["SpotPriceLimit"].asString());
+			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["ZoneId"].isNull())
+				instanceTypesObject.zoneId = allQueuesNodeInstanceTypesInstanceTypeInfo["ZoneId"].asString();
+			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["VSwitchId"].isNull())
+				instanceTypesObject.vSwitchId = allQueuesNodeInstanceTypesInstanceTypeInfo["VSwitchId"].asString();
 			queuesObject.instanceTypes.push_back(instanceTypesObject);
 		}
 		queues_.push_back(queuesObject);

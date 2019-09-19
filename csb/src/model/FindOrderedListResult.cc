@@ -44,78 +44,78 @@ void FindOrderedListResult::parse(const std::string &payload)
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
 	if(!dataNode["PageNumber"].isNull())
 		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
-	auto allOrderList = value["OrderList"]["Order"];
-	for (auto value : allOrderList)
+	auto allOrderListNode = dataNode["OrderList"]["Order"];
+	for (auto dataNodeOrderListOrder : allOrderListNode)
 	{
 		Data::Order orderObject;
-		if(!value["Alias"].isNull())
-			orderObject.alias = value["Alias"].asString();
-		if(!value["ProjectName"].isNull())
-			orderObject.projectName = value["ProjectName"].asString();
-		if(!value["ServiceName"].isNull())
-			orderObject.serviceName = value["ServiceName"].asString();
-		if(!value["ServiceVersion"].isNull())
-			orderObject.serviceVersion = value["ServiceVersion"].asString();
-		if(!value["OrderStatus"].isNull())
-			orderObject.orderStatus = std::stoi(value["OrderStatus"].asString());
-		if(!value["AliveOrderCount"].isNull())
-			orderObject.aliveOrderCount = std::stoi(value["AliveOrderCount"].asString());
-		if(!value["GmtCreate"].isNull())
-			orderObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["MaxRT"].isNull())
-			orderObject.maxRT = std::stoi(value["MaxRT"].asString());
-		if(!value["MinRT"].isNull())
-			orderObject.minRT = std::stoi(value["MinRT"].asString());
-		if(!value["ServiceId"].isNull())
-			orderObject.serviceId = value["ServiceId"].asString();
-		if(!value["ServiceStatus"].isNull())
-			orderObject.serviceStatus = std::stoi(value["ServiceStatus"].asString());
-		auto allErrorTypeCatagoryList = value["ErrorTypeCatagoryList"]["ErrorTypeCatagory"];
-		for (auto value : allErrorTypeCatagoryList)
+		if(!dataNodeOrderListOrder["Alias"].isNull())
+			orderObject.alias = dataNodeOrderListOrder["Alias"].asString();
+		if(!dataNodeOrderListOrder["ProjectName"].isNull())
+			orderObject.projectName = dataNodeOrderListOrder["ProjectName"].asString();
+		if(!dataNodeOrderListOrder["ServiceName"].isNull())
+			orderObject.serviceName = dataNodeOrderListOrder["ServiceName"].asString();
+		if(!dataNodeOrderListOrder["ServiceVersion"].isNull())
+			orderObject.serviceVersion = dataNodeOrderListOrder["ServiceVersion"].asString();
+		if(!dataNodeOrderListOrder["OrderStatus"].isNull())
+			orderObject.orderStatus = std::stoi(dataNodeOrderListOrder["OrderStatus"].asString());
+		if(!dataNodeOrderListOrder["AliveOrderCount"].isNull())
+			orderObject.aliveOrderCount = std::stoi(dataNodeOrderListOrder["AliveOrderCount"].asString());
+		if(!dataNodeOrderListOrder["GmtCreate"].isNull())
+			orderObject.gmtCreate = std::stol(dataNodeOrderListOrder["GmtCreate"].asString());
+		if(!dataNodeOrderListOrder["MaxRT"].isNull())
+			orderObject.maxRT = std::stoi(dataNodeOrderListOrder["MaxRT"].asString());
+		if(!dataNodeOrderListOrder["MinRT"].isNull())
+			orderObject.minRT = std::stoi(dataNodeOrderListOrder["MinRT"].asString());
+		if(!dataNodeOrderListOrder["ServiceId"].isNull())
+			orderObject.serviceId = dataNodeOrderListOrder["ServiceId"].asString();
+		if(!dataNodeOrderListOrder["ServiceStatus"].isNull())
+			orderObject.serviceStatus = std::stoi(dataNodeOrderListOrder["ServiceStatus"].asString());
+		auto allErrorTypeCatagoryListNode = allOrderListNode["ErrorTypeCatagoryList"]["ErrorTypeCatagory"];
+		for (auto allOrderListNodeErrorTypeCatagoryListErrorTypeCatagory : allErrorTypeCatagoryListNode)
 		{
 			Data::Order::ErrorTypeCatagory errorTypeCatagoryListObject;
-			if(!value["Name"].isNull())
-				errorTypeCatagoryListObject.name = value["Name"].asString();
-			if(!value["Total"].isNull())
-				errorTypeCatagoryListObject.total = std::stol(value["Total"].asString());
-			if(!value["ErrorNum"].isNull())
-				errorTypeCatagoryListObject.errorNum = std::stol(value["ErrorNum"].asString());
+			if(!allOrderListNodeErrorTypeCatagoryListErrorTypeCatagory["Name"].isNull())
+				errorTypeCatagoryListObject.name = allOrderListNodeErrorTypeCatagoryListErrorTypeCatagory["Name"].asString();
+			if(!allOrderListNodeErrorTypeCatagoryListErrorTypeCatagory["Total"].isNull())
+				errorTypeCatagoryListObject.total = std::stol(allOrderListNodeErrorTypeCatagoryListErrorTypeCatagory["Total"].asString());
+			if(!allOrderListNodeErrorTypeCatagoryListErrorTypeCatagory["ErrorNum"].isNull())
+				errorTypeCatagoryListObject.errorNum = std::stol(allOrderListNodeErrorTypeCatagoryListErrorTypeCatagory["ErrorNum"].asString());
 			orderObject.errorTypeCatagoryList.push_back(errorTypeCatagoryListObject);
 		}
-		auto allOrders = value["Orders"]["Order"];
-		for (auto value : allOrders)
+		auto allOrdersNode = allOrderListNode["Orders"]["Order"];
+		for (auto allOrderListNodeOrdersOrder : allOrdersNode)
 		{
 			Data::Order::Order1 ordersObject;
-			if(!value["Alias"].isNull())
-				ordersObject.alias = value["Alias"].asString();
-			if(!value["ApproveComments"].isNull())
-				ordersObject.approveComments = value["ApproveComments"].asString();
-			if(!value["CsbId"].isNull())
-				ordersObject.csbId = std::stol(value["CsbId"].asString());
-			if(!value["GmtCreate"].isNull())
-				ordersObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-			if(!value["GmtModified"].isNull())
-				ordersObject.gmtModified = std::stol(value["GmtModified"].asString());
-			if(!value["GroupName"].isNull())
-				ordersObject.groupName = value["GroupName"].asString();
-			if(!value["Id"].isNull())
-				ordersObject.id = std::stol(value["Id"].asString());
-			if(!value["ProjectName"].isNull())
-				ordersObject.projectName = value["ProjectName"].asString();
-			if(!value["ServiceId"].isNull())
-				ordersObject.serviceId = std::stol(value["ServiceId"].asString());
-			if(!value["ServiceName"].isNull())
-				ordersObject.serviceName = value["ServiceName"].asString();
-			if(!value["ServiceStatus"].isNull())
-				ordersObject.serviceStatus = std::stoi(value["ServiceStatus"].asString());
-			if(!value["ServiceVersion"].isNull())
-				ordersObject.serviceVersion = value["ServiceVersion"].asString();
-			if(!value["StatisticName"].isNull())
-				ordersObject.statisticName = value["StatisticName"].asString();
-			if(!value["Status"].isNull())
-				ordersObject.status = std::stoi(value["Status"].asString());
-			if(!value["UserId"].isNull())
-				ordersObject.userId = value["UserId"].asString();
+			if(!allOrderListNodeOrdersOrder["Alias"].isNull())
+				ordersObject.alias = allOrderListNodeOrdersOrder["Alias"].asString();
+			if(!allOrderListNodeOrdersOrder["ApproveComments"].isNull())
+				ordersObject.approveComments = allOrderListNodeOrdersOrder["ApproveComments"].asString();
+			if(!allOrderListNodeOrdersOrder["CsbId"].isNull())
+				ordersObject.csbId = std::stol(allOrderListNodeOrdersOrder["CsbId"].asString());
+			if(!allOrderListNodeOrdersOrder["GmtCreate"].isNull())
+				ordersObject.gmtCreate = std::stol(allOrderListNodeOrdersOrder["GmtCreate"].asString());
+			if(!allOrderListNodeOrdersOrder["GmtModified"].isNull())
+				ordersObject.gmtModified = std::stol(allOrderListNodeOrdersOrder["GmtModified"].asString());
+			if(!allOrderListNodeOrdersOrder["GroupName"].isNull())
+				ordersObject.groupName = allOrderListNodeOrdersOrder["GroupName"].asString();
+			if(!allOrderListNodeOrdersOrder["Id"].isNull())
+				ordersObject.id = std::stol(allOrderListNodeOrdersOrder["Id"].asString());
+			if(!allOrderListNodeOrdersOrder["ProjectName"].isNull())
+				ordersObject.projectName = allOrderListNodeOrdersOrder["ProjectName"].asString();
+			if(!allOrderListNodeOrdersOrder["ServiceId"].isNull())
+				ordersObject.serviceId = std::stol(allOrderListNodeOrdersOrder["ServiceId"].asString());
+			if(!allOrderListNodeOrdersOrder["ServiceName"].isNull())
+				ordersObject.serviceName = allOrderListNodeOrdersOrder["ServiceName"].asString();
+			if(!allOrderListNodeOrdersOrder["ServiceStatus"].isNull())
+				ordersObject.serviceStatus = std::stoi(allOrderListNodeOrdersOrder["ServiceStatus"].asString());
+			if(!allOrderListNodeOrdersOrder["ServiceVersion"].isNull())
+				ordersObject.serviceVersion = allOrderListNodeOrdersOrder["ServiceVersion"].asString();
+			if(!allOrderListNodeOrdersOrder["StatisticName"].isNull())
+				ordersObject.statisticName = allOrderListNodeOrdersOrder["StatisticName"].asString();
+			if(!allOrderListNodeOrdersOrder["Status"].isNull())
+				ordersObject.status = std::stoi(allOrderListNodeOrdersOrder["Status"].asString());
+			if(!allOrderListNodeOrdersOrder["UserId"].isNull())
+				ordersObject.userId = allOrderListNodeOrdersOrder["UserId"].asString();
 			auto slaInfoNode = value["SlaInfo"];
 			if(!slaInfoNode["Qph"].isNull())
 				ordersObject.slaInfo.qph = slaInfoNode["Qph"].asString();

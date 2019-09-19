@@ -44,30 +44,30 @@ void FindInstanceListResult::parse(const std::string &payload)
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
 	if(!dataNode["PageNumber"].isNull())
 		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
-	auto allItemList = value["ItemList"]["Item"];
-	for (auto value : allItemList)
+	auto allItemListNode = dataNode["ItemList"]["Item"];
+	for (auto dataNodeItemListItem : allItemListNode)
 	{
 		Data::Item itemObject;
-		if(!value["Description"].isNull())
-			itemObject.description = value["Description"].asString();
-		if(!value["FrontStatus"].isNull())
-			itemObject.frontStatus = value["FrontStatus"].asString();
-		if(!value["GmtCreate"].isNull())
-			itemObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			itemObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["Id"].isNull())
-			itemObject.id = std::stol(value["Id"].asString());
-		if(!value["InstanceCategory"].isNull())
-			itemObject.instanceCategory = std::stoi(value["InstanceCategory"].asString());
-		if(!value["Name"].isNull())
-			itemObject.name = value["Name"].asString();
-		if(!value["StatusCode"].isNull())
-			itemObject.statusCode = std::stoi(value["StatusCode"].asString());
-		if(!value["Visible"].isNull())
-			itemObject.visible = value["Visible"].asString() == "true";
-		if(!value["VpcName"].isNull())
-			itemObject.vpcName = value["VpcName"].asString();
+		if(!dataNodeItemListItem["Description"].isNull())
+			itemObject.description = dataNodeItemListItem["Description"].asString();
+		if(!dataNodeItemListItem["FrontStatus"].isNull())
+			itemObject.frontStatus = dataNodeItemListItem["FrontStatus"].asString();
+		if(!dataNodeItemListItem["GmtCreate"].isNull())
+			itemObject.gmtCreate = std::stol(dataNodeItemListItem["GmtCreate"].asString());
+		if(!dataNodeItemListItem["GmtModified"].isNull())
+			itemObject.gmtModified = std::stol(dataNodeItemListItem["GmtModified"].asString());
+		if(!dataNodeItemListItem["Id"].isNull())
+			itemObject.id = std::stol(dataNodeItemListItem["Id"].asString());
+		if(!dataNodeItemListItem["InstanceCategory"].isNull())
+			itemObject.instanceCategory = std::stoi(dataNodeItemListItem["InstanceCategory"].asString());
+		if(!dataNodeItemListItem["Name"].isNull())
+			itemObject.name = dataNodeItemListItem["Name"].asString();
+		if(!dataNodeItemListItem["StatusCode"].isNull())
+			itemObject.statusCode = std::stoi(dataNodeItemListItem["StatusCode"].asString());
+		if(!dataNodeItemListItem["Visible"].isNull())
+			itemObject.visible = dataNodeItemListItem["Visible"].asString() == "true";
+		if(!dataNodeItemListItem["VpcName"].isNull())
+			itemObject.vpcName = dataNodeItemListItem["VpcName"].asString();
 		data_.itemList.push_back(itemObject);
 	}
 	if(!value["Code"].isNull())

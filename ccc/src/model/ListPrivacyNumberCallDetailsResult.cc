@@ -46,32 +46,32 @@ void ListPrivacyNumberCallDetailsResult::parse(const std::string &payload)
 		privacyNumberCallDetails_.pageNumber = std::stoi(privacyNumberCallDetailsNode["PageNumber"].asString());
 	if(!privacyNumberCallDetailsNode["PageSize"].isNull())
 		privacyNumberCallDetails_.pageSize = std::stoi(privacyNumberCallDetailsNode["PageSize"].asString());
-	auto allList = value["List"]["PrivacyNumberCallDetail"];
-	for (auto value : allList)
+	auto allListNode = privacyNumberCallDetailsNode["List"]["PrivacyNumberCallDetail"];
+	for (auto privacyNumberCallDetailsNodeListPrivacyNumberCallDetail : allListNode)
 	{
 		PrivacyNumberCallDetails::PrivacyNumberCallDetail privacyNumberCallDetailObject;
-		if(!value["AgentId"].isNull())
-			privacyNumberCallDetailObject.agentId = value["AgentId"].asString();
-		if(!value["AgentName"].isNull())
-			privacyNumberCallDetailObject.agentName = value["AgentName"].asString();
-		if(!value["ContactId"].isNull())
-			privacyNumberCallDetailObject.contactId = value["ContactId"].asString();
-		if(!value["CallingNumber"].isNull())
-			privacyNumberCallDetailObject.callingNumber = value["CallingNumber"].asString();
-		if(!value["CalledNumber"].isNull())
-			privacyNumberCallDetailObject.calledNumber = value["CalledNumber"].asString();
-		if(!value["PrivacyNumber"].isNull())
-			privacyNumberCallDetailObject.privacyNumber = value["PrivacyNumber"].asString();
-		if(!value["ContactType"].isNull())
-			privacyNumberCallDetailObject.contactType = value["ContactType"].asString();
-		if(!value["Result"].isNull())
-			privacyNumberCallDetailObject.result = value["Result"].asString();
-		if(!value["Description"].isNull())
-			privacyNumberCallDetailObject.description = value["Description"].asString();
-		if(!value["CallTime"].isNull())
-			privacyNumberCallDetailObject.callTime = std::stol(value["CallTime"].asString());
-		if(!value["Status"].isNull())
-			privacyNumberCallDetailObject.status = value["Status"].asString();
+		if(!privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["AgentId"].isNull())
+			privacyNumberCallDetailObject.agentId = privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["AgentId"].asString();
+		if(!privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["AgentName"].isNull())
+			privacyNumberCallDetailObject.agentName = privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["AgentName"].asString();
+		if(!privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["ContactId"].isNull())
+			privacyNumberCallDetailObject.contactId = privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["ContactId"].asString();
+		if(!privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["CallingNumber"].isNull())
+			privacyNumberCallDetailObject.callingNumber = privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["CallingNumber"].asString();
+		if(!privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["CalledNumber"].isNull())
+			privacyNumberCallDetailObject.calledNumber = privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["CalledNumber"].asString();
+		if(!privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["PrivacyNumber"].isNull())
+			privacyNumberCallDetailObject.privacyNumber = privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["PrivacyNumber"].asString();
+		if(!privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["ContactType"].isNull())
+			privacyNumberCallDetailObject.contactType = privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["ContactType"].asString();
+		if(!privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["Result"].isNull())
+			privacyNumberCallDetailObject.result = privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["Result"].asString();
+		if(!privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["Description"].isNull())
+			privacyNumberCallDetailObject.description = privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["Description"].asString();
+		if(!privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["CallTime"].isNull())
+			privacyNumberCallDetailObject.callTime = std::stol(privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["CallTime"].asString());
+		if(!privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["Status"].isNull())
+			privacyNumberCallDetailObject.status = privacyNumberCallDetailsNodeListPrivacyNumberCallDetail["Status"].asString();
 		privacyNumberCallDetails_.list.push_back(privacyNumberCallDetailObject);
 	}
 	if(!value["Success"].isNull())

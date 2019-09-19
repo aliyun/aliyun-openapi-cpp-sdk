@@ -39,16 +39,16 @@ void DescribeCloudDatabasesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCloudDatabaseList = value["CloudDatabaseList"]["CloudDatabase"];
-	for (auto value : allCloudDatabaseList)
+	auto allCloudDatabaseListNode = value["CloudDatabaseList"]["CloudDatabase"];
+	for (auto valueCloudDatabaseListCloudDatabase : allCloudDatabaseListNode)
 	{
 		CloudDatabase cloudDatabaseListObject;
-		if(!value["Engine"].isNull())
-			cloudDatabaseListObject.engine = value["Engine"].asString();
-		if(!value["Name"].isNull())
-			cloudDatabaseListObject.name = value["Name"].asString();
-		if(!value["InstanceId"].isNull())
-			cloudDatabaseListObject.instanceId = value["InstanceId"].asString();
+		if(!valueCloudDatabaseListCloudDatabase["Engine"].isNull())
+			cloudDatabaseListObject.engine = valueCloudDatabaseListCloudDatabase["Engine"].asString();
+		if(!valueCloudDatabaseListCloudDatabase["Name"].isNull())
+			cloudDatabaseListObject.name = valueCloudDatabaseListCloudDatabase["Name"].asString();
+		if(!valueCloudDatabaseListCloudDatabase["InstanceId"].isNull())
+			cloudDatabaseListObject.instanceId = valueCloudDatabaseListCloudDatabase["InstanceId"].asString();
 		cloudDatabaseList_.push_back(cloudDatabaseListObject);
 	}
 

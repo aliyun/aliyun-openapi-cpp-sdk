@@ -39,14 +39,14 @@ void DescribeVodDomainUsageDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUsageDataPerInterval = value["UsageDataPerInterval"]["DataModule"];
-	for (auto value : allUsageDataPerInterval)
+	auto allUsageDataPerIntervalNode = value["UsageDataPerInterval"]["DataModule"];
+	for (auto valueUsageDataPerIntervalDataModule : allUsageDataPerIntervalNode)
 	{
 		DataModule usageDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			usageDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			usageDataPerIntervalObject.value = value["Value"].asString();
+		if(!valueUsageDataPerIntervalDataModule["TimeStamp"].isNull())
+			usageDataPerIntervalObject.timeStamp = valueUsageDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueUsageDataPerIntervalDataModule["Value"].isNull())
+			usageDataPerIntervalObject.value = valueUsageDataPerIntervalDataModule["Value"].asString();
 		usageDataPerInterval_.push_back(usageDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

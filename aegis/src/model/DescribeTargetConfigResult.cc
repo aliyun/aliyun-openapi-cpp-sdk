@@ -39,16 +39,16 @@ void DescribeTargetConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTargetConfigs = value["TargetConfigs"]["TargetConfig"];
-	for (auto value : allTargetConfigs)
+	auto allTargetConfigsNode = value["TargetConfigs"]["TargetConfig"];
+	for (auto valueTargetConfigsTargetConfig : allTargetConfigsNode)
 	{
 		TargetConfig targetConfigsObject;
-		if(!value["Type"].isNull())
-			targetConfigsObject.type = value["Type"].asString();
-		if(!value["Config"].isNull())
-			targetConfigsObject.config = value["Config"].asString();
-		if(!value["OverAllConfig"].isNull())
-			targetConfigsObject.overAllConfig = value["OverAllConfig"].asString();
+		if(!valueTargetConfigsTargetConfig["Type"].isNull())
+			targetConfigsObject.type = valueTargetConfigsTargetConfig["Type"].asString();
+		if(!valueTargetConfigsTargetConfig["Config"].isNull())
+			targetConfigsObject.config = valueTargetConfigsTargetConfig["Config"].asString();
+		if(!valueTargetConfigsTargetConfig["OverAllConfig"].isNull())
+			targetConfigsObject.overAllConfig = valueTargetConfigsTargetConfig["OverAllConfig"].asString();
 		targetConfigs_.push_back(targetConfigsObject);
 	}
 	if(!value["TotalCount"].isNull())

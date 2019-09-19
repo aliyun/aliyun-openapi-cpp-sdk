@@ -39,16 +39,16 @@ void QueryQualificationDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCredentials = value["Credentials"]["QualificationCredential"];
-	for (auto value : allCredentials)
+	auto allCredentialsNode = value["Credentials"]["QualificationCredential"];
+	for (auto valueCredentialsQualificationCredential : allCredentialsNode)
 	{
 		QualificationCredential credentialsObject;
-		if(!value["CredentialNo"].isNull())
-			credentialsObject.credentialNo = value["CredentialNo"].asString();
-		if(!value["CredentialType"].isNull())
-			credentialsObject.credentialType = value["CredentialType"].asString();
-		if(!value["CredentialUrl"].isNull())
-			credentialsObject.credentialUrl = value["CredentialUrl"].asString();
+		if(!valueCredentialsQualificationCredential["CredentialNo"].isNull())
+			credentialsObject.credentialNo = valueCredentialsQualificationCredential["CredentialNo"].asString();
+		if(!valueCredentialsQualificationCredential["CredentialType"].isNull())
+			credentialsObject.credentialType = valueCredentialsQualificationCredential["CredentialType"].asString();
+		if(!valueCredentialsQualificationCredential["CredentialUrl"].isNull())
+			credentialsObject.credentialUrl = valueCredentialsQualificationCredential["CredentialUrl"].asString();
 		credentials_.push_back(credentialsObject);
 	}
 	if(!value["TrackId"].isNull())

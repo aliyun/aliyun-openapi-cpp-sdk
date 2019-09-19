@@ -39,18 +39,18 @@ void QueryDeviceListByDeviceGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["SimpleDeviceInfo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["SimpleDeviceInfo"];
+	for (auto valueDataSimpleDeviceInfo : allDataNode)
 	{
 		SimpleDeviceInfo dataObject;
-		if(!value["ProductName"].isNull())
-			dataObject.productName = value["ProductName"].asString();
-		if(!value["ProductKey"].isNull())
-			dataObject.productKey = value["ProductKey"].asString();
-		if(!value["DeviceName"].isNull())
-			dataObject.deviceName = value["DeviceName"].asString();
-		if(!value["IotId"].isNull())
-			dataObject.iotId = value["IotId"].asString();
+		if(!valueDataSimpleDeviceInfo["ProductName"].isNull())
+			dataObject.productName = valueDataSimpleDeviceInfo["ProductName"].asString();
+		if(!valueDataSimpleDeviceInfo["ProductKey"].isNull())
+			dataObject.productKey = valueDataSimpleDeviceInfo["ProductKey"].asString();
+		if(!valueDataSimpleDeviceInfo["DeviceName"].isNull())
+			dataObject.deviceName = valueDataSimpleDeviceInfo["DeviceName"].asString();
+		if(!valueDataSimpleDeviceInfo["IotId"].isNull())
+			dataObject.iotId = valueDataSimpleDeviceInfo["IotId"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

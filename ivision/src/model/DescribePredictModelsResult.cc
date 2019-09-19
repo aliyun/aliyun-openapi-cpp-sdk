@@ -39,40 +39,40 @@ void DescribePredictModelsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allModels = value["Models"]["Model"];
-	for (auto value : allModels)
+	auto allModelsNode = value["Models"]["Model"];
+	for (auto valueModelsModel : allModelsNode)
 	{
 		Model modelsObject;
-		if(!value["ModelId"].isNull())
-			modelsObject.modelId = value["ModelId"].asString();
-		if(!value["Name"].isNull())
-			modelsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			modelsObject.description = value["Description"].asString();
-		if(!value["ProjectId"].isNull())
-			modelsObject.projectId = value["ProjectId"].asString();
-		if(!value["ProjectName"].isNull())
-			modelsObject.projectName = value["ProjectName"].asString();
-		if(!value["IterationId"].isNull())
-			modelsObject.iterationId = value["IterationId"].asString();
-		if(!value["IterationVersion"].isNull())
-			modelsObject.iterationVersion = value["IterationVersion"].asString();
-		if(!value["Regions"].isNull())
-			modelsObject.regions = value["Regions"].asString();
-		if(!value["CreationTime"].isNull())
-			modelsObject.creationTime = value["CreationTime"].asString();
-		if(!value["Source"].isNull())
-			modelsObject.source = value["Source"].asString();
-		if(!value["Type"].isNull())
-			modelsObject.type = value["Type"].asString();
-		if(!value["DeployStatus"].isNull())
-			modelsObject.deployStatus = value["DeployStatus"].asString();
-		if(!value["Precision"].isNull())
-			modelsObject.precision = value["Precision"].asString();
-		if(!value["Recall"].isNull())
-			modelsObject.recall = value["Recall"].asString();
-		if(!value["MAP"].isNull())
-			modelsObject.mAP = value["MAP"].asString();
+		if(!valueModelsModel["ModelId"].isNull())
+			modelsObject.modelId = valueModelsModel["ModelId"].asString();
+		if(!valueModelsModel["Name"].isNull())
+			modelsObject.name = valueModelsModel["Name"].asString();
+		if(!valueModelsModel["Description"].isNull())
+			modelsObject.description = valueModelsModel["Description"].asString();
+		if(!valueModelsModel["ProjectId"].isNull())
+			modelsObject.projectId = valueModelsModel["ProjectId"].asString();
+		if(!valueModelsModel["ProjectName"].isNull())
+			modelsObject.projectName = valueModelsModel["ProjectName"].asString();
+		if(!valueModelsModel["IterationId"].isNull())
+			modelsObject.iterationId = valueModelsModel["IterationId"].asString();
+		if(!valueModelsModel["IterationVersion"].isNull())
+			modelsObject.iterationVersion = valueModelsModel["IterationVersion"].asString();
+		if(!valueModelsModel["Regions"].isNull())
+			modelsObject.regions = valueModelsModel["Regions"].asString();
+		if(!valueModelsModel["CreationTime"].isNull())
+			modelsObject.creationTime = valueModelsModel["CreationTime"].asString();
+		if(!valueModelsModel["Source"].isNull())
+			modelsObject.source = valueModelsModel["Source"].asString();
+		if(!valueModelsModel["Type"].isNull())
+			modelsObject.type = valueModelsModel["Type"].asString();
+		if(!valueModelsModel["DeployStatus"].isNull())
+			modelsObject.deployStatus = valueModelsModel["DeployStatus"].asString();
+		if(!valueModelsModel["Precision"].isNull())
+			modelsObject.precision = valueModelsModel["Precision"].asString();
+		if(!valueModelsModel["Recall"].isNull())
+			modelsObject.recall = valueModelsModel["Recall"].asString();
+		if(!valueModelsModel["MAP"].isNull())
+			modelsObject.mAP = valueModelsModel["MAP"].asString();
 		models_.push_back(modelsObject);
 	}
 	if(!value["CurrentPage"].isNull())

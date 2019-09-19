@@ -70,22 +70,22 @@ void DescribeAlarmEventDetailResult::parse(const std::string &payload)
 		data_.dataSource = dataNode["DataSource"].asString();
 	if(!dataNode["CanCancelFault"].isNull())
 		data_.canCancelFault = dataNode["CanCancelFault"].asString() == "true";
-	auto allCauseDetails = value["CauseDetails"]["CauseDetail"];
-	for (auto value : allCauseDetails)
+	auto allCauseDetailsNode = dataNode["CauseDetails"]["CauseDetail"];
+	for (auto dataNodeCauseDetailsCauseDetail : allCauseDetailsNode)
 	{
 		Data::CauseDetail causeDetailObject;
-		if(!value["Key"].isNull())
-			causeDetailObject.key = value["Key"].asString();
-		auto allValue = value["Value"]["ValueItem"];
-		for (auto value : allValue)
+		if(!dataNodeCauseDetailsCauseDetail["Key"].isNull())
+			causeDetailObject.key = dataNodeCauseDetailsCauseDetail["Key"].asString();
+		auto allValueNode = allCauseDetailsNode["Value"]["ValueItem"];
+		for (auto allCauseDetailsNodeValueValueItem : allValueNode)
 		{
 			Data::CauseDetail::ValueItem valueObject;
-			if(!value["Name"].isNull())
-				valueObject.name = value["Name"].asString();
-			if(!value["Type"].isNull())
-				valueObject.type = value["Type"].asString();
-			if(!value["Value"].isNull())
-				valueObject.value = value["Value"].asString();
+			if(!allCauseDetailsNodeValueValueItem["Name"].isNull())
+				valueObject.name = allCauseDetailsNodeValueValueItem["Name"].asString();
+			if(!allCauseDetailsNodeValueValueItem["Type"].isNull())
+				valueObject.type = allCauseDetailsNodeValueValueItem["Type"].asString();
+			if(!allCauseDetailsNodeValueValueItem["Value"].isNull())
+				valueObject.value = allCauseDetailsNodeValueValueItem["Value"].asString();
 			causeDetailObject.value.push_back(valueObject);
 		}
 		data_.causeDetails.push_back(causeDetailObject);

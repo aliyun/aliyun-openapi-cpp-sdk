@@ -39,18 +39,18 @@ void DescribeSuspEventDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDetails = value["Details"]["QuaraFile"];
-	for (auto value : allDetails)
+	auto allDetailsNode = value["Details"]["QuaraFile"];
+	for (auto valueDetailsQuaraFile : allDetailsNode)
 	{
 		QuaraFile detailsObject;
-		if(!value["Name"].isNull())
-			detailsObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			detailsObject.type = value["Type"].asString();
-		if(!value["InfoType"].isNull())
-			detailsObject.infoType = value["InfoType"].asString();
-		if(!value["Value"].isNull())
-			detailsObject.value = value["Value"].asString();
+		if(!valueDetailsQuaraFile["Name"].isNull())
+			detailsObject.name = valueDetailsQuaraFile["Name"].asString();
+		if(!valueDetailsQuaraFile["Type"].isNull())
+			detailsObject.type = valueDetailsQuaraFile["Type"].asString();
+		if(!valueDetailsQuaraFile["InfoType"].isNull())
+			detailsObject.infoType = valueDetailsQuaraFile["InfoType"].asString();
+		if(!valueDetailsQuaraFile["Value"].isNull())
+			detailsObject.value = valueDetailsQuaraFile["Value"].asString();
 		details_.push_back(detailsObject);
 	}
 	if(!value["LastTime"].isNull())

@@ -39,28 +39,28 @@ void DescribeAuditContentItemResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAuditContentItemList = value["AuditContentItemList"]["AuditContentItem"];
-	for (auto value : allAuditContentItemList)
+	auto allAuditContentItemListNode = value["AuditContentItemList"]["AuditContentItem"];
+	for (auto valueAuditContentItemListAuditContentItem : allAuditContentItemListNode)
 	{
 		AuditContentItem auditContentItemListObject;
-		if(!value["ParentTaskId"].isNull())
-			auditContentItemListObject.parentTaskId = value["ParentTaskId"].asString();
-		if(!value["Content"].isNull())
-			auditContentItemListObject.content = value["Content"].asString();
-		if(!value["Sn"].isNull())
-			auditContentItemListObject.sn = std::stoi(value["Sn"].asString());
-		if(!value["StartTime"].isNull())
-			auditContentItemListObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			auditContentItemListObject.endTime = value["EndTime"].asString();
-		if(!value["Audit"].isNull())
-			auditContentItemListObject.audit = std::stoi(value["Audit"].asString());
-		if(!value["AuditResult"].isNull())
-			auditContentItemListObject.auditResult = value["AuditResult"].asString();
-		if(!value["Suggestion"].isNull())
-			auditContentItemListObject.suggestion = value["Suggestion"].asString();
-		if(!value["Id"].isNull())
-			auditContentItemListObject.id = std::stol(value["Id"].asString());
+		if(!valueAuditContentItemListAuditContentItem["ParentTaskId"].isNull())
+			auditContentItemListObject.parentTaskId = valueAuditContentItemListAuditContentItem["ParentTaskId"].asString();
+		if(!valueAuditContentItemListAuditContentItem["Content"].isNull())
+			auditContentItemListObject.content = valueAuditContentItemListAuditContentItem["Content"].asString();
+		if(!valueAuditContentItemListAuditContentItem["Sn"].isNull())
+			auditContentItemListObject.sn = std::stoi(valueAuditContentItemListAuditContentItem["Sn"].asString());
+		if(!valueAuditContentItemListAuditContentItem["StartTime"].isNull())
+			auditContentItemListObject.startTime = valueAuditContentItemListAuditContentItem["StartTime"].asString();
+		if(!valueAuditContentItemListAuditContentItem["EndTime"].isNull())
+			auditContentItemListObject.endTime = valueAuditContentItemListAuditContentItem["EndTime"].asString();
+		if(!valueAuditContentItemListAuditContentItem["Audit"].isNull())
+			auditContentItemListObject.audit = std::stoi(valueAuditContentItemListAuditContentItem["Audit"].asString());
+		if(!valueAuditContentItemListAuditContentItem["AuditResult"].isNull())
+			auditContentItemListObject.auditResult = valueAuditContentItemListAuditContentItem["AuditResult"].asString();
+		if(!valueAuditContentItemListAuditContentItem["Suggestion"].isNull())
+			auditContentItemListObject.suggestion = valueAuditContentItemListAuditContentItem["Suggestion"].asString();
+		if(!valueAuditContentItemListAuditContentItem["Id"].isNull())
+			auditContentItemListObject.id = std::stol(valueAuditContentItemListAuditContentItem["Id"].asString());
 		auto allAuditIllegalReasons = value["AuditIllegalReasons"]["StringItem"];
 		for (auto value : allAuditIllegalReasons)
 			auditContentItemListObject.auditIllegalReasons.push_back(value.asString());

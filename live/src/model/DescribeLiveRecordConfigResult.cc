@@ -39,40 +39,40 @@ void DescribeLiveRecordConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLiveAppRecordList = value["LiveAppRecordList"]["LiveAppRecord"];
-	for (auto value : allLiveAppRecordList)
+	auto allLiveAppRecordListNode = value["LiveAppRecordList"]["LiveAppRecord"];
+	for (auto valueLiveAppRecordListLiveAppRecord : allLiveAppRecordListNode)
 	{
 		LiveAppRecord liveAppRecordListObject;
-		if(!value["DomainName"].isNull())
-			liveAppRecordListObject.domainName = value["DomainName"].asString();
-		if(!value["AppName"].isNull())
-			liveAppRecordListObject.appName = value["AppName"].asString();
-		if(!value["StreamName"].isNull())
-			liveAppRecordListObject.streamName = value["StreamName"].asString();
-		if(!value["OssEndpoint"].isNull())
-			liveAppRecordListObject.ossEndpoint = value["OssEndpoint"].asString();
-		if(!value["OssBucket"].isNull())
-			liveAppRecordListObject.ossBucket = value["OssBucket"].asString();
-		if(!value["CreateTime"].isNull())
-			liveAppRecordListObject.createTime = value["CreateTime"].asString();
-		if(!value["StartTime"].isNull())
-			liveAppRecordListObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			liveAppRecordListObject.endTime = value["EndTime"].asString();
-		if(!value["OnDemond"].isNull())
-			liveAppRecordListObject.onDemond = std::stoi(value["OnDemond"].asString());
-		auto allRecordFormatList = value["RecordFormatList"]["RecordFormat"];
-		for (auto value : allRecordFormatList)
+		if(!valueLiveAppRecordListLiveAppRecord["DomainName"].isNull())
+			liveAppRecordListObject.domainName = valueLiveAppRecordListLiveAppRecord["DomainName"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["AppName"].isNull())
+			liveAppRecordListObject.appName = valueLiveAppRecordListLiveAppRecord["AppName"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["StreamName"].isNull())
+			liveAppRecordListObject.streamName = valueLiveAppRecordListLiveAppRecord["StreamName"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["OssEndpoint"].isNull())
+			liveAppRecordListObject.ossEndpoint = valueLiveAppRecordListLiveAppRecord["OssEndpoint"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["OssBucket"].isNull())
+			liveAppRecordListObject.ossBucket = valueLiveAppRecordListLiveAppRecord["OssBucket"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["CreateTime"].isNull())
+			liveAppRecordListObject.createTime = valueLiveAppRecordListLiveAppRecord["CreateTime"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["StartTime"].isNull())
+			liveAppRecordListObject.startTime = valueLiveAppRecordListLiveAppRecord["StartTime"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["EndTime"].isNull())
+			liveAppRecordListObject.endTime = valueLiveAppRecordListLiveAppRecord["EndTime"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["OnDemond"].isNull())
+			liveAppRecordListObject.onDemond = std::stoi(valueLiveAppRecordListLiveAppRecord["OnDemond"].asString());
+		auto allRecordFormatListNode = allLiveAppRecordListNode["RecordFormatList"]["RecordFormat"];
+		for (auto allLiveAppRecordListNodeRecordFormatListRecordFormat : allRecordFormatListNode)
 		{
 			LiveAppRecord::RecordFormat recordFormatListObject;
-			if(!value["Format"].isNull())
-				recordFormatListObject.format = value["Format"].asString();
-			if(!value["OssObjectPrefix"].isNull())
-				recordFormatListObject.ossObjectPrefix = value["OssObjectPrefix"].asString();
-			if(!value["SliceOssObjectPrefix"].isNull())
-				recordFormatListObject.sliceOssObjectPrefix = value["SliceOssObjectPrefix"].asString();
-			if(!value["CycleDuration"].isNull())
-				recordFormatListObject.cycleDuration = std::stoi(value["CycleDuration"].asString());
+			if(!allLiveAppRecordListNodeRecordFormatListRecordFormat["Format"].isNull())
+				recordFormatListObject.format = allLiveAppRecordListNodeRecordFormatListRecordFormat["Format"].asString();
+			if(!allLiveAppRecordListNodeRecordFormatListRecordFormat["OssObjectPrefix"].isNull())
+				recordFormatListObject.ossObjectPrefix = allLiveAppRecordListNodeRecordFormatListRecordFormat["OssObjectPrefix"].asString();
+			if(!allLiveAppRecordListNodeRecordFormatListRecordFormat["SliceOssObjectPrefix"].isNull())
+				recordFormatListObject.sliceOssObjectPrefix = allLiveAppRecordListNodeRecordFormatListRecordFormat["SliceOssObjectPrefix"].asString();
+			if(!allLiveAppRecordListNodeRecordFormatListRecordFormat["CycleDuration"].isNull())
+				recordFormatListObject.cycleDuration = std::stoi(allLiveAppRecordListNodeRecordFormatListRecordFormat["CycleDuration"].asString());
 			liveAppRecordListObject.recordFormatList.push_back(recordFormatListObject);
 		}
 		liveAppRecordList_.push_back(liveAppRecordListObject);

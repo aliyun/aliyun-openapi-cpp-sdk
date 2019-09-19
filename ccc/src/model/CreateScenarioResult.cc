@@ -50,42 +50,42 @@ void CreateScenarioResult::parse(const std::string &payload)
 		scenario_.type = scenarioNode["Type"].asString();
 	if(!scenarioNode["IsTemplate"].isNull())
 		scenario_.isTemplate = scenarioNode["IsTemplate"].asString() == "true";
-	auto allSurveys = value["Surveys"]["Survey"];
-	for (auto value : allSurveys)
+	auto allSurveysNode = scenarioNode["Surveys"]["Survey"];
+	for (auto scenarioNodeSurveysSurvey : allSurveysNode)
 	{
 		Scenario::Survey surveyObject;
-		if(!value["SurveyId"].isNull())
-			surveyObject.surveyId = value["SurveyId"].asString();
-		if(!value["SurveyName"].isNull())
-			surveyObject.surveyName = value["SurveyName"].asString();
-		if(!value["SurveyDescription"].isNull())
-			surveyObject.surveyDescription = value["SurveyDescription"].asString();
-		if(!value["Role"].isNull())
-			surveyObject.role = value["Role"].asString();
-		if(!value["Round"].isNull())
-			surveyObject.round = std::stoi(value["Round"].asString());
-		if(!value["BeebotId"].isNull())
-			surveyObject.beebotId = value["BeebotId"].asString();
-		auto allIntents = value["Intents"]["IntentNode"];
-		for (auto value : allIntents)
+		if(!scenarioNodeSurveysSurvey["SurveyId"].isNull())
+			surveyObject.surveyId = scenarioNodeSurveysSurvey["SurveyId"].asString();
+		if(!scenarioNodeSurveysSurvey["SurveyName"].isNull())
+			surveyObject.surveyName = scenarioNodeSurveysSurvey["SurveyName"].asString();
+		if(!scenarioNodeSurveysSurvey["SurveyDescription"].isNull())
+			surveyObject.surveyDescription = scenarioNodeSurveysSurvey["SurveyDescription"].asString();
+		if(!scenarioNodeSurveysSurvey["Role"].isNull())
+			surveyObject.role = scenarioNodeSurveysSurvey["Role"].asString();
+		if(!scenarioNodeSurveysSurvey["Round"].isNull())
+			surveyObject.round = std::stoi(scenarioNodeSurveysSurvey["Round"].asString());
+		if(!scenarioNodeSurveysSurvey["BeebotId"].isNull())
+			surveyObject.beebotId = scenarioNodeSurveysSurvey["BeebotId"].asString();
+		auto allIntentsNode = allSurveysNode["Intents"]["IntentNode"];
+		for (auto allSurveysNodeIntentsIntentNode : allIntentsNode)
 		{
 			Scenario::Survey::IntentNode intentsObject;
-			if(!value["NodeId"].isNull())
-				intentsObject.nodeId = value["NodeId"].asString();
-			if(!value["IntentId"].isNull())
-				intentsObject.intentId = value["IntentId"].asString();
+			if(!allSurveysNodeIntentsIntentNode["NodeId"].isNull())
+				intentsObject.nodeId = allSurveysNodeIntentsIntentNode["NodeId"].asString();
+			if(!allSurveysNodeIntentsIntentNode["IntentId"].isNull())
+				intentsObject.intentId = allSurveysNodeIntentsIntentNode["IntentId"].asString();
 			surveyObject.intents.push_back(intentsObject);
 		}
 		scenario_.surveys.push_back(surveyObject);
 	}
-	auto allVariables = value["Variables"]["KeyValuePair"];
-	for (auto value : allVariables)
+	auto allVariablesNode = scenarioNode["Variables"]["KeyValuePair"];
+	for (auto scenarioNodeVariablesKeyValuePair : allVariablesNode)
 	{
 		Scenario::KeyValuePair keyValuePairObject;
-		if(!value["Key"].isNull())
-			keyValuePairObject.key = value["Key"].asString();
-		if(!value["Value"].isNull())
-			keyValuePairObject.value = value["Value"].asString();
+		if(!scenarioNodeVariablesKeyValuePair["Key"].isNull())
+			keyValuePairObject.key = scenarioNodeVariablesKeyValuePair["Key"].asString();
+		if(!scenarioNodeVariablesKeyValuePair["Value"].isNull())
+			keyValuePairObject.value = scenarioNodeVariablesKeyValuePair["Value"].asString();
 		scenario_.variables.push_back(keyValuePairObject);
 	}
 	auto strategyNode = scenarioNode["Strategy"];
@@ -115,14 +115,14 @@ void CreateScenarioResult::parse(const std::string &payload)
 		scenario_.strategy.followUpStrategy = strategyNode["FollowUpStrategy"].asString();
 	if(!strategyNode["IsTemplate"].isNull())
 		scenario_.strategy.isTemplate = strategyNode["IsTemplate"].asString() == "true";
-	auto allWorkingTime = value["WorkingTime"]["TimeFrame"];
-	for (auto value : allWorkingTime)
+	auto allWorkingTimeNode = strategyNode["WorkingTime"]["TimeFrame"];
+	for (auto strategyNodeWorkingTimeTimeFrame : allWorkingTimeNode)
 	{
 		Scenario::Strategy::TimeFrame timeFrameObject;
-		if(!value["BeginTime"].isNull())
-			timeFrameObject.beginTime = value["BeginTime"].asString();
-		if(!value["EndTime"].isNull())
-			timeFrameObject.endTime = value["EndTime"].asString();
+		if(!strategyNodeWorkingTimeTimeFrame["BeginTime"].isNull())
+			timeFrameObject.beginTime = strategyNodeWorkingTimeTimeFrame["BeginTime"].asString();
+		if(!strategyNodeWorkingTimeTimeFrame["EndTime"].isNull())
+			timeFrameObject.endTime = strategyNodeWorkingTimeTimeFrame["EndTime"].asString();
 		scenario_.strategy.workingTime.push_back(timeFrameObject);
 	}
 		auto allRepeatDays = strategyNode["RepeatDays"]["Integer"];

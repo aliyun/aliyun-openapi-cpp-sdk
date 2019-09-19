@@ -39,18 +39,18 @@ void OnsMessageTraceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["MessageTrack"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["MessageTrack"];
+	for (auto valueDataMessageTrack : allDataNode)
 	{
 		MessageTrack dataObject;
-		if(!value["ConsumerGroup"].isNull())
-			dataObject.consumerGroup = value["ConsumerGroup"].asString();
-		if(!value["TrackType"].isNull())
-			dataObject.trackType = value["TrackType"].asString();
-		if(!value["ExceptionDesc"].isNull())
-			dataObject.exceptionDesc = value["ExceptionDesc"].asString();
-		if(!value["InstanceId"].isNull())
-			dataObject.instanceId = value["InstanceId"].asString();
+		if(!valueDataMessageTrack["ConsumerGroup"].isNull())
+			dataObject.consumerGroup = valueDataMessageTrack["ConsumerGroup"].asString();
+		if(!valueDataMessageTrack["TrackType"].isNull())
+			dataObject.trackType = valueDataMessageTrack["TrackType"].asString();
+		if(!valueDataMessageTrack["ExceptionDesc"].isNull())
+			dataObject.exceptionDesc = valueDataMessageTrack["ExceptionDesc"].asString();
+		if(!valueDataMessageTrack["InstanceId"].isNull())
+			dataObject.instanceId = valueDataMessageTrack["InstanceId"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["HelpUrl"].isNull())

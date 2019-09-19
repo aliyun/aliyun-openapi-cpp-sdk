@@ -39,18 +39,18 @@ void AttachInstanceRamRoleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAttachInstanceRamRoleResults = value["AttachInstanceRamRoleResults"]["AttachInstanceRamRoleResult"];
-	for (auto value : allAttachInstanceRamRoleResults)
+	auto allAttachInstanceRamRoleResultsNode = value["AttachInstanceRamRoleResults"]["AttachInstanceRamRoleResult"];
+	for (auto valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult : allAttachInstanceRamRoleResultsNode)
 	{
 		Result attachInstanceRamRoleResultsObject;
-		if(!value["InstanceId"].isNull())
-			attachInstanceRamRoleResultsObject.instanceId = value["InstanceId"].asString();
-		if(!value["Success"].isNull())
-			attachInstanceRamRoleResultsObject.success = value["Success"].asString() == "true";
-		if(!value["Code"].isNull())
-			attachInstanceRamRoleResultsObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			attachInstanceRamRoleResultsObject.message = value["Message"].asString();
+		if(!valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["InstanceId"].isNull())
+			attachInstanceRamRoleResultsObject.instanceId = valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["InstanceId"].asString();
+		if(!valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Success"].isNull())
+			attachInstanceRamRoleResultsObject.success = valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Success"].asString() == "true";
+		if(!valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Code"].isNull())
+			attachInstanceRamRoleResultsObject.code = valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Code"].asString();
+		if(!valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Message"].isNull())
+			attachInstanceRamRoleResultsObject.message = valueAttachInstanceRamRoleResultsAttachInstanceRamRoleResult["Message"].asString();
 		attachInstanceRamRoleResults_.push_back(attachInstanceRamRoleResultsObject);
 	}
 	if(!value["TotalCount"].isNull())

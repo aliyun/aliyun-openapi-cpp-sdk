@@ -39,16 +39,16 @@ void DescribeRtcPeakUserCntDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPeakUserCntDataPerInterval = value["PeakUserCntDataPerInterval"]["PeakUserCntModule"];
-	for (auto value : allPeakUserCntDataPerInterval)
+	auto allPeakUserCntDataPerIntervalNode = value["PeakUserCntDataPerInterval"]["PeakUserCntModule"];
+	for (auto valuePeakUserCntDataPerIntervalPeakUserCntModule : allPeakUserCntDataPerIntervalNode)
 	{
 		PeakUserCntModule peakUserCntDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			peakUserCntDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["ActiveUserPeak"].isNull())
-			peakUserCntDataPerIntervalObject.activeUserPeak = std::stol(value["ActiveUserPeak"].asString());
-		if(!value["ActiveUserPeakTime"].isNull())
-			peakUserCntDataPerIntervalObject.activeUserPeakTime = value["ActiveUserPeakTime"].asString();
+		if(!valuePeakUserCntDataPerIntervalPeakUserCntModule["TimeStamp"].isNull())
+			peakUserCntDataPerIntervalObject.timeStamp = valuePeakUserCntDataPerIntervalPeakUserCntModule["TimeStamp"].asString();
+		if(!valuePeakUserCntDataPerIntervalPeakUserCntModule["ActiveUserPeak"].isNull())
+			peakUserCntDataPerIntervalObject.activeUserPeak = std::stol(valuePeakUserCntDataPerIntervalPeakUserCntModule["ActiveUserPeak"].asString());
+		if(!valuePeakUserCntDataPerIntervalPeakUserCntModule["ActiveUserPeakTime"].isNull())
+			peakUserCntDataPerIntervalObject.activeUserPeakTime = valuePeakUserCntDataPerIntervalPeakUserCntModule["ActiveUserPeakTime"].asString();
 		peakUserCntDataPerInterval_.push_back(peakUserCntDataPerIntervalObject);
 	}
 

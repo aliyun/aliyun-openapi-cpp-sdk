@@ -39,12 +39,12 @@ void QueryAliasesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAliasInfos = value["AliasInfos"]["AliasInfo"];
-	for (auto value : allAliasInfos)
+	auto allAliasInfosNode = value["AliasInfos"]["AliasInfo"];
+	for (auto valueAliasInfosAliasInfo : allAliasInfosNode)
 	{
 		AliasInfo aliasInfosObject;
-		if(!value["AliasName"].isNull())
-			aliasInfosObject.aliasName = value["AliasName"].asString();
+		if(!valueAliasInfosAliasInfo["AliasName"].isNull())
+			aliasInfosObject.aliasName = valueAliasInfosAliasInfo["AliasName"].asString();
 		aliasInfos_.push_back(aliasInfosObject);
 	}
 

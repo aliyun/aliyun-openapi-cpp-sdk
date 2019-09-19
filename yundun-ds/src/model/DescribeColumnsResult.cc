@@ -39,40 +39,40 @@ void DescribeColumnsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Column"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Column"];
+	for (auto valueItemsColumn : allItemsNode)
 	{
 		Column itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
-		if(!value["InstanceId"].isNull())
-			itemsObject.instanceId = std::stol(value["InstanceId"].asString());
-		if(!value["TableId"].isNull())
-			itemsObject.tableId = std::stol(value["TableId"].asString());
-		if(!value["CreationTime"].isNull())
-			itemsObject.creationTime = std::stol(value["CreationTime"].asString());
-		if(!value["Sensitive"].isNull())
-			itemsObject.sensitive = value["Sensitive"].asString() == "true";
-		if(!value["ProductCode"].isNull())
-			itemsObject.productCode = value["ProductCode"].asString();
-		if(!value["DataType"].isNull())
-			itemsObject.dataType = value["DataType"].asString();
-		if(!value["OdpsRiskLevelValue"].isNull())
-			itemsObject.odpsRiskLevelValue = std::stoi(value["OdpsRiskLevelValue"].asString());
-		if(!value["OdpsRiskLevelName"].isNull())
-			itemsObject.odpsRiskLevelName = value["OdpsRiskLevelName"].asString();
-		if(!value["RiskLevelId"].isNull())
-			itemsObject.riskLevelId = std::stol(value["RiskLevelId"].asString());
-		if(!value["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = value["RiskLevelName"].asString();
-		if(!value["RuleId"].isNull())
-			itemsObject.ruleId = std::stol(value["RuleId"].asString());
-		if(!value["RuleName"].isNull())
-			itemsObject.ruleName = value["RuleName"].asString();
-		if(!value["DepartName"].isNull())
-			itemsObject.departName = value["DepartName"].asString();
+		if(!valueItemsColumn["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsColumn["Id"].asString());
+		if(!valueItemsColumn["Name"].isNull())
+			itemsObject.name = valueItemsColumn["Name"].asString();
+		if(!valueItemsColumn["InstanceId"].isNull())
+			itemsObject.instanceId = std::stol(valueItemsColumn["InstanceId"].asString());
+		if(!valueItemsColumn["TableId"].isNull())
+			itemsObject.tableId = std::stol(valueItemsColumn["TableId"].asString());
+		if(!valueItemsColumn["CreationTime"].isNull())
+			itemsObject.creationTime = std::stol(valueItemsColumn["CreationTime"].asString());
+		if(!valueItemsColumn["Sensitive"].isNull())
+			itemsObject.sensitive = valueItemsColumn["Sensitive"].asString() == "true";
+		if(!valueItemsColumn["ProductCode"].isNull())
+			itemsObject.productCode = valueItemsColumn["ProductCode"].asString();
+		if(!valueItemsColumn["DataType"].isNull())
+			itemsObject.dataType = valueItemsColumn["DataType"].asString();
+		if(!valueItemsColumn["OdpsRiskLevelValue"].isNull())
+			itemsObject.odpsRiskLevelValue = std::stoi(valueItemsColumn["OdpsRiskLevelValue"].asString());
+		if(!valueItemsColumn["OdpsRiskLevelName"].isNull())
+			itemsObject.odpsRiskLevelName = valueItemsColumn["OdpsRiskLevelName"].asString();
+		if(!valueItemsColumn["RiskLevelId"].isNull())
+			itemsObject.riskLevelId = std::stol(valueItemsColumn["RiskLevelId"].asString());
+		if(!valueItemsColumn["RiskLevelName"].isNull())
+			itemsObject.riskLevelName = valueItemsColumn["RiskLevelName"].asString();
+		if(!valueItemsColumn["RuleId"].isNull())
+			itemsObject.ruleId = std::stol(valueItemsColumn["RuleId"].asString());
+		if(!valueItemsColumn["RuleName"].isNull())
+			itemsObject.ruleName = valueItemsColumn["RuleName"].asString();
+		if(!valueItemsColumn["DepartName"].isNull())
+			itemsObject.departName = valueItemsColumn["DepartName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

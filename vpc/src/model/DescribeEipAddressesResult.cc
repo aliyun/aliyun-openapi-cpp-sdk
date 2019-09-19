@@ -39,86 +39,86 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEipAddresses = value["EipAddresses"]["EipAddress"];
-	for (auto value : allEipAddresses)
+	auto allEipAddressesNode = value["EipAddresses"]["EipAddress"];
+	for (auto valueEipAddressesEipAddress : allEipAddressesNode)
 	{
 		EipAddress eipAddressesObject;
-		if(!value["RegionId"].isNull())
-			eipAddressesObject.regionId = value["RegionId"].asString();
-		if(!value["IpAddress"].isNull())
-			eipAddressesObject.ipAddress = value["IpAddress"].asString();
-		if(!value["PrivateIpAddress"].isNull())
-			eipAddressesObject.privateIpAddress = value["PrivateIpAddress"].asString();
-		if(!value["AllocationId"].isNull())
-			eipAddressesObject.allocationId = value["AllocationId"].asString();
-		if(!value["Status"].isNull())
-			eipAddressesObject.status = value["Status"].asString();
-		if(!value["InstanceId"].isNull())
-			eipAddressesObject.instanceId = value["InstanceId"].asString();
-		if(!value["Bandwidth"].isNull())
-			eipAddressesObject.bandwidth = value["Bandwidth"].asString();
-		if(!value["EipBandwidth"].isNull())
-			eipAddressesObject.eipBandwidth = value["EipBandwidth"].asString();
-		if(!value["InternetChargeType"].isNull())
-			eipAddressesObject.internetChargeType = value["InternetChargeType"].asString();
-		if(!value["AllocationTime"].isNull())
-			eipAddressesObject.allocationTime = value["AllocationTime"].asString();
-		if(!value["InstanceType"].isNull())
-			eipAddressesObject.instanceType = value["InstanceType"].asString();
-		if(!value["InstanceRegionId"].isNull())
-			eipAddressesObject.instanceRegionId = value["InstanceRegionId"].asString();
-		if(!value["ChargeType"].isNull())
-			eipAddressesObject.chargeType = value["ChargeType"].asString();
-		if(!value["ExpiredTime"].isNull())
-			eipAddressesObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["HDMonitorStatus"].isNull())
-			eipAddressesObject.hDMonitorStatus = value["HDMonitorStatus"].asString();
-		if(!value["Name"].isNull())
-			eipAddressesObject.name = value["Name"].asString();
-		if(!value["ISP"].isNull())
-			eipAddressesObject.iSP = value["ISP"].asString();
-		if(!value["Descritpion"].isNull())
-			eipAddressesObject.descritpion = value["Descritpion"].asString();
-		if(!value["BandwidthPackageId"].isNull())
-			eipAddressesObject.bandwidthPackageId = value["BandwidthPackageId"].asString();
-		if(!value["BandwidthPackageType"].isNull())
-			eipAddressesObject.bandwidthPackageType = value["BandwidthPackageType"].asString();
-		if(!value["BandwidthPackageBandwidth"].isNull())
-			eipAddressesObject.bandwidthPackageBandwidth = value["BandwidthPackageBandwidth"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			eipAddressesObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["HasReservationData"].isNull())
-			eipAddressesObject.hasReservationData = value["HasReservationData"].asString();
-		if(!value["ReservationBandwidth"].isNull())
-			eipAddressesObject.reservationBandwidth = value["ReservationBandwidth"].asString();
-		if(!value["ReservationInternetChargeType"].isNull())
-			eipAddressesObject.reservationInternetChargeType = value["ReservationInternetChargeType"].asString();
-		if(!value["ReservationActiveTime"].isNull())
-			eipAddressesObject.reservationActiveTime = value["ReservationActiveTime"].asString();
-		if(!value["ReservationOrderType"].isNull())
-			eipAddressesObject.reservationOrderType = value["ReservationOrderType"].asString();
-		if(!value["Mode"].isNull())
-			eipAddressesObject.mode = value["Mode"].asString();
-		if(!value["DeletionProtection"].isNull())
-			eipAddressesObject.deletionProtection = value["DeletionProtection"].asString() == "true";
-		if(!value["SecondLimited"].isNull())
-			eipAddressesObject.secondLimited = value["SecondLimited"].asString() == "true";
-		auto allOperationLocks = value["OperationLocks"]["LockReason"];
-		for (auto value : allOperationLocks)
+		if(!valueEipAddressesEipAddress["RegionId"].isNull())
+			eipAddressesObject.regionId = valueEipAddressesEipAddress["RegionId"].asString();
+		if(!valueEipAddressesEipAddress["IpAddress"].isNull())
+			eipAddressesObject.ipAddress = valueEipAddressesEipAddress["IpAddress"].asString();
+		if(!valueEipAddressesEipAddress["PrivateIpAddress"].isNull())
+			eipAddressesObject.privateIpAddress = valueEipAddressesEipAddress["PrivateIpAddress"].asString();
+		if(!valueEipAddressesEipAddress["AllocationId"].isNull())
+			eipAddressesObject.allocationId = valueEipAddressesEipAddress["AllocationId"].asString();
+		if(!valueEipAddressesEipAddress["Status"].isNull())
+			eipAddressesObject.status = valueEipAddressesEipAddress["Status"].asString();
+		if(!valueEipAddressesEipAddress["InstanceId"].isNull())
+			eipAddressesObject.instanceId = valueEipAddressesEipAddress["InstanceId"].asString();
+		if(!valueEipAddressesEipAddress["Bandwidth"].isNull())
+			eipAddressesObject.bandwidth = valueEipAddressesEipAddress["Bandwidth"].asString();
+		if(!valueEipAddressesEipAddress["EipBandwidth"].isNull())
+			eipAddressesObject.eipBandwidth = valueEipAddressesEipAddress["EipBandwidth"].asString();
+		if(!valueEipAddressesEipAddress["InternetChargeType"].isNull())
+			eipAddressesObject.internetChargeType = valueEipAddressesEipAddress["InternetChargeType"].asString();
+		if(!valueEipAddressesEipAddress["AllocationTime"].isNull())
+			eipAddressesObject.allocationTime = valueEipAddressesEipAddress["AllocationTime"].asString();
+		if(!valueEipAddressesEipAddress["InstanceType"].isNull())
+			eipAddressesObject.instanceType = valueEipAddressesEipAddress["InstanceType"].asString();
+		if(!valueEipAddressesEipAddress["InstanceRegionId"].isNull())
+			eipAddressesObject.instanceRegionId = valueEipAddressesEipAddress["InstanceRegionId"].asString();
+		if(!valueEipAddressesEipAddress["ChargeType"].isNull())
+			eipAddressesObject.chargeType = valueEipAddressesEipAddress["ChargeType"].asString();
+		if(!valueEipAddressesEipAddress["ExpiredTime"].isNull())
+			eipAddressesObject.expiredTime = valueEipAddressesEipAddress["ExpiredTime"].asString();
+		if(!valueEipAddressesEipAddress["HDMonitorStatus"].isNull())
+			eipAddressesObject.hDMonitorStatus = valueEipAddressesEipAddress["HDMonitorStatus"].asString();
+		if(!valueEipAddressesEipAddress["Name"].isNull())
+			eipAddressesObject.name = valueEipAddressesEipAddress["Name"].asString();
+		if(!valueEipAddressesEipAddress["ISP"].isNull())
+			eipAddressesObject.iSP = valueEipAddressesEipAddress["ISP"].asString();
+		if(!valueEipAddressesEipAddress["Descritpion"].isNull())
+			eipAddressesObject.descritpion = valueEipAddressesEipAddress["Descritpion"].asString();
+		if(!valueEipAddressesEipAddress["BandwidthPackageId"].isNull())
+			eipAddressesObject.bandwidthPackageId = valueEipAddressesEipAddress["BandwidthPackageId"].asString();
+		if(!valueEipAddressesEipAddress["BandwidthPackageType"].isNull())
+			eipAddressesObject.bandwidthPackageType = valueEipAddressesEipAddress["BandwidthPackageType"].asString();
+		if(!valueEipAddressesEipAddress["BandwidthPackageBandwidth"].isNull())
+			eipAddressesObject.bandwidthPackageBandwidth = valueEipAddressesEipAddress["BandwidthPackageBandwidth"].asString();
+		if(!valueEipAddressesEipAddress["ResourceGroupId"].isNull())
+			eipAddressesObject.resourceGroupId = valueEipAddressesEipAddress["ResourceGroupId"].asString();
+		if(!valueEipAddressesEipAddress["HasReservationData"].isNull())
+			eipAddressesObject.hasReservationData = valueEipAddressesEipAddress["HasReservationData"].asString();
+		if(!valueEipAddressesEipAddress["ReservationBandwidth"].isNull())
+			eipAddressesObject.reservationBandwidth = valueEipAddressesEipAddress["ReservationBandwidth"].asString();
+		if(!valueEipAddressesEipAddress["ReservationInternetChargeType"].isNull())
+			eipAddressesObject.reservationInternetChargeType = valueEipAddressesEipAddress["ReservationInternetChargeType"].asString();
+		if(!valueEipAddressesEipAddress["ReservationActiveTime"].isNull())
+			eipAddressesObject.reservationActiveTime = valueEipAddressesEipAddress["ReservationActiveTime"].asString();
+		if(!valueEipAddressesEipAddress["ReservationOrderType"].isNull())
+			eipAddressesObject.reservationOrderType = valueEipAddressesEipAddress["ReservationOrderType"].asString();
+		if(!valueEipAddressesEipAddress["Mode"].isNull())
+			eipAddressesObject.mode = valueEipAddressesEipAddress["Mode"].asString();
+		if(!valueEipAddressesEipAddress["DeletionProtection"].isNull())
+			eipAddressesObject.deletionProtection = valueEipAddressesEipAddress["DeletionProtection"].asString() == "true";
+		if(!valueEipAddressesEipAddress["SecondLimited"].isNull())
+			eipAddressesObject.secondLimited = valueEipAddressesEipAddress["SecondLimited"].asString() == "true";
+		auto allOperationLocksNode = allEipAddressesNode["OperationLocks"]["LockReason"];
+		for (auto allEipAddressesNodeOperationLocksLockReason : allOperationLocksNode)
 		{
 			EipAddress::LockReason operationLocksObject;
-			if(!value["LockReason"].isNull())
-				operationLocksObject.lockReason = value["LockReason"].asString();
+			if(!allEipAddressesNodeOperationLocksLockReason["LockReason"].isNull())
+				operationLocksObject.lockReason = allEipAddressesNodeOperationLocksLockReason["LockReason"].asString();
 			eipAddressesObject.operationLocks.push_back(operationLocksObject);
 		}
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		auto allTagsNode = allEipAddressesNode["Tags"]["Tag"];
+		for (auto allEipAddressesNodeTagsTag : allTagsNode)
 		{
 			EipAddress::Tag tagsObject;
-			if(!value["Key"].isNull())
-				tagsObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				tagsObject.value = value["Value"].asString();
+			if(!allEipAddressesNodeTagsTag["Key"].isNull())
+				tagsObject.key = allEipAddressesNodeTagsTag["Key"].asString();
+			if(!allEipAddressesNodeTagsTag["Value"].isNull())
+				tagsObject.value = allEipAddressesNodeTagsTag["Value"].asString();
 			eipAddressesObject.tags.push_back(tagsObject);
 		}
 		auto allAvailableRegions = value["AvailableRegions"]["AvailableRegion"];

@@ -39,46 +39,46 @@ void ListScenarioTemplatesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allScenarioTemplates = value["ScenarioTemplates"]["Scenario"];
-	for (auto value : allScenarioTemplates)
+	auto allScenarioTemplatesNode = value["ScenarioTemplates"]["Scenario"];
+	for (auto valueScenarioTemplatesScenario : allScenarioTemplatesNode)
 	{
 		Scenario scenarioTemplatesObject;
-		if(!value["Id"].isNull())
-			scenarioTemplatesObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			scenarioTemplatesObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			scenarioTemplatesObject.description = value["Description"].asString();
-		if(!value["Type"].isNull())
-			scenarioTemplatesObject.type = value["Type"].asString();
-		if(!value["IsTemplate"].isNull())
-			scenarioTemplatesObject.isTemplate = value["IsTemplate"].asString() == "true";
-		auto allSurveys = value["Surveys"]["Survey"];
-		for (auto value : allSurveys)
+		if(!valueScenarioTemplatesScenario["Id"].isNull())
+			scenarioTemplatesObject.id = valueScenarioTemplatesScenario["Id"].asString();
+		if(!valueScenarioTemplatesScenario["Name"].isNull())
+			scenarioTemplatesObject.name = valueScenarioTemplatesScenario["Name"].asString();
+		if(!valueScenarioTemplatesScenario["Description"].isNull())
+			scenarioTemplatesObject.description = valueScenarioTemplatesScenario["Description"].asString();
+		if(!valueScenarioTemplatesScenario["Type"].isNull())
+			scenarioTemplatesObject.type = valueScenarioTemplatesScenario["Type"].asString();
+		if(!valueScenarioTemplatesScenario["IsTemplate"].isNull())
+			scenarioTemplatesObject.isTemplate = valueScenarioTemplatesScenario["IsTemplate"].asString() == "true";
+		auto allSurveysNode = allScenarioTemplatesNode["Surveys"]["Survey"];
+		for (auto allScenarioTemplatesNodeSurveysSurvey : allSurveysNode)
 		{
 			Scenario::Survey surveysObject;
-			if(!value["Id"].isNull())
-				surveysObject.id = value["Id"].asString();
-			if(!value["Name"].isNull())
-				surveysObject.name = value["Name"].asString();
-			if(!value["Description"].isNull())
-				surveysObject.description = value["Description"].asString();
-			if(!value["Role"].isNull())
-				surveysObject.role = value["Role"].asString();
-			if(!value["Round"].isNull())
-				surveysObject.round = std::stoi(value["Round"].asString());
-			if(!value["BeebotId"].isNull())
-				surveysObject.beebotId = value["BeebotId"].asString();
-			if(!value["GlobalQuestions"].isNull())
-				surveysObject.globalQuestions = value["GlobalQuestions"].asString();
-			auto allIntents = value["Intents"]["IntentNode"];
-			for (auto value : allIntents)
+			if(!allScenarioTemplatesNodeSurveysSurvey["Id"].isNull())
+				surveysObject.id = allScenarioTemplatesNodeSurveysSurvey["Id"].asString();
+			if(!allScenarioTemplatesNodeSurveysSurvey["Name"].isNull())
+				surveysObject.name = allScenarioTemplatesNodeSurveysSurvey["Name"].asString();
+			if(!allScenarioTemplatesNodeSurveysSurvey["Description"].isNull())
+				surveysObject.description = allScenarioTemplatesNodeSurveysSurvey["Description"].asString();
+			if(!allScenarioTemplatesNodeSurveysSurvey["Role"].isNull())
+				surveysObject.role = allScenarioTemplatesNodeSurveysSurvey["Role"].asString();
+			if(!allScenarioTemplatesNodeSurveysSurvey["Round"].isNull())
+				surveysObject.round = std::stoi(allScenarioTemplatesNodeSurveysSurvey["Round"].asString());
+			if(!allScenarioTemplatesNodeSurveysSurvey["BeebotId"].isNull())
+				surveysObject.beebotId = allScenarioTemplatesNodeSurveysSurvey["BeebotId"].asString();
+			if(!allScenarioTemplatesNodeSurveysSurvey["GlobalQuestions"].isNull())
+				surveysObject.globalQuestions = allScenarioTemplatesNodeSurveysSurvey["GlobalQuestions"].asString();
+			auto allIntentsNode = allSurveysNode["Intents"]["IntentNode"];
+			for (auto allSurveysNodeIntentsIntentNode : allIntentsNode)
 			{
 				Scenario::Survey::IntentNode intentsObject;
-				if(!value["NodeId"].isNull())
-					intentsObject.nodeId = value["NodeId"].asString();
-				if(!value["IntentId"].isNull())
-					intentsObject.intentId = value["IntentId"].asString();
+				if(!allSurveysNodeIntentsIntentNode["NodeId"].isNull())
+					intentsObject.nodeId = allSurveysNodeIntentsIntentNode["NodeId"].asString();
+				if(!allSurveysNodeIntentsIntentNode["IntentId"].isNull())
+					intentsObject.intentId = allSurveysNodeIntentsIntentNode["IntentId"].asString();
 				surveysObject.intents.push_back(intentsObject);
 			}
 			auto flowNode = value["Flow"];
@@ -90,14 +90,14 @@ void ListScenarioTemplatesResult::parse(const std::string &payload)
 				surveysObject.flow.flowJson = flowNode["FlowJson"].asString();
 			scenarioTemplatesObject.surveys.push_back(surveysObject);
 		}
-		auto allVariables = value["Variables"]["KeyValuePair"];
-		for (auto value : allVariables)
+		auto allVariablesNode = allScenarioTemplatesNode["Variables"]["KeyValuePair"];
+		for (auto allScenarioTemplatesNodeVariablesKeyValuePair : allVariablesNode)
 		{
 			Scenario::KeyValuePair variablesObject;
-			if(!value["Key"].isNull())
-				variablesObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				variablesObject.value = value["Value"].asString();
+			if(!allScenarioTemplatesNodeVariablesKeyValuePair["Key"].isNull())
+				variablesObject.key = allScenarioTemplatesNodeVariablesKeyValuePair["Key"].asString();
+			if(!allScenarioTemplatesNodeVariablesKeyValuePair["Value"].isNull())
+				variablesObject.value = allScenarioTemplatesNodeVariablesKeyValuePair["Value"].asString();
 			scenarioTemplatesObject.variables.push_back(variablesObject);
 		}
 		scenarioTemplates_.push_back(scenarioTemplatesObject);

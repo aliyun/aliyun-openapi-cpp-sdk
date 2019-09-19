@@ -39,32 +39,32 @@ void DescribeScreenDataMapResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSasScreenTypeList = value["SasScreenTypeList"]["SasScreenType"];
-	for (auto value : allSasScreenTypeList)
+	auto allSasScreenTypeListNode = value["SasScreenTypeList"]["SasScreenType"];
+	for (auto valueSasScreenTypeListSasScreenType : allSasScreenTypeListNode)
 	{
 		SasScreenType sasScreenTypeListObject;
-		if(!value["Type"].isNull())
-			sasScreenTypeListObject.type = value["Type"].asString();
-		if(!value["TypeCode"].isNull())
-			sasScreenTypeListObject.typeCode = value["TypeCode"].asString();
-		auto allTypeData = value["TypeData"]["SasScreenModel"];
-		for (auto value : allTypeData)
+		if(!valueSasScreenTypeListSasScreenType["Type"].isNull())
+			sasScreenTypeListObject.type = valueSasScreenTypeListSasScreenType["Type"].asString();
+		if(!valueSasScreenTypeListSasScreenType["TypeCode"].isNull())
+			sasScreenTypeListObject.typeCode = valueSasScreenTypeListSasScreenType["TypeCode"].asString();
+		auto allTypeDataNode = allSasScreenTypeListNode["TypeData"]["SasScreenModel"];
+		for (auto allSasScreenTypeListNodeTypeDataSasScreenModel : allTypeDataNode)
 		{
 			SasScreenType::SasScreenModel typeDataObject;
-			if(!value["Code"].isNull())
-				typeDataObject.code = value["Code"].asString();
-			if(!value["Id"].isNull())
-				typeDataObject.id = value["Id"].asString();
-			if(!value["Title"].isNull())
-				typeDataObject.title = value["Title"].asString();
-			auto allDate = value["Date"]["IntegerItem"];
-			for (auto value : allDate)
+			if(!allSasScreenTypeListNodeTypeDataSasScreenModel["Code"].isNull())
+				typeDataObject.code = allSasScreenTypeListNodeTypeDataSasScreenModel["Code"].asString();
+			if(!allSasScreenTypeListNodeTypeDataSasScreenModel["Id"].isNull())
+				typeDataObject.id = allSasScreenTypeListNodeTypeDataSasScreenModel["Id"].asString();
+			if(!allSasScreenTypeListNodeTypeDataSasScreenModel["Title"].isNull())
+				typeDataObject.title = allSasScreenTypeListNodeTypeDataSasScreenModel["Title"].asString();
+			auto allDateNode = allTypeDataNode["Date"]["IntegerItem"];
+			for (auto allTypeDataNodeDateIntegerItem : allDateNode)
 			{
 				SasScreenType::SasScreenModel::IntegerItem dateObject;
-				if(!value["Value"].isNull())
-					dateObject.value = value["Value"].asString();
-				if(!value["Unit"].isNull())
-					dateObject.unit = value["Unit"].asString();
+				if(!allTypeDataNodeDateIntegerItem["Value"].isNull())
+					dateObject.value = allTypeDataNodeDateIntegerItem["Value"].asString();
+				if(!allTypeDataNodeDateIntegerItem["Unit"].isNull())
+					dateObject.unit = allTypeDataNodeDateIntegerItem["Unit"].asString();
 				typeDataObject.date.push_back(dateObject);
 			}
 			sasScreenTypeListObject.typeData.push_back(typeDataObject);

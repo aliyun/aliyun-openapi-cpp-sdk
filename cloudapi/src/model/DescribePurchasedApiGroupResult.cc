@@ -39,12 +39,12 @@ void DescribePurchasedApiGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomains = value["Domains"]["DomainItem"];
-	for (auto value : allDomains)
+	auto allDomainsNode = value["Domains"]["DomainItem"];
+	for (auto valueDomainsDomainItem : allDomainsNode)
 	{
 		DomainItem domainsObject;
-		if(!value["DomainName"].isNull())
-			domainsObject.domainName = value["DomainName"].asString();
+		if(!valueDomainsDomainItem["DomainName"].isNull())
+			domainsObject.domainName = valueDomainsDomainItem["DomainName"].asString();
 		domains_.push_back(domainsObject);
 	}
 	if(!value["GroupId"].isNull())

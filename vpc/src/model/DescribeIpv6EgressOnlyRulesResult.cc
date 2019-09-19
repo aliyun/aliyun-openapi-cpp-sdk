@@ -39,22 +39,22 @@ void DescribeIpv6EgressOnlyRulesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIpv6EgressOnlyRules = value["Ipv6EgressOnlyRules"]["Ipv6EgressOnlyRule"];
-	for (auto value : allIpv6EgressOnlyRules)
+	auto allIpv6EgressOnlyRulesNode = value["Ipv6EgressOnlyRules"]["Ipv6EgressOnlyRule"];
+	for (auto valueIpv6EgressOnlyRulesIpv6EgressOnlyRule : allIpv6EgressOnlyRulesNode)
 	{
 		Ipv6EgressOnlyRule ipv6EgressOnlyRulesObject;
-		if(!value["Ipv6EgressOnlyRuleId"].isNull())
-			ipv6EgressOnlyRulesObject.ipv6EgressOnlyRuleId = value["Ipv6EgressOnlyRuleId"].asString();
-		if(!value["InstanceType"].isNull())
-			ipv6EgressOnlyRulesObject.instanceType = value["InstanceType"].asString();
-		if(!value["InstanceId"].isNull())
-			ipv6EgressOnlyRulesObject.instanceId = value["InstanceId"].asString();
-		if(!value["Status"].isNull())
-			ipv6EgressOnlyRulesObject.status = value["Status"].asString();
-		if(!value["Name"].isNull())
-			ipv6EgressOnlyRulesObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			ipv6EgressOnlyRulesObject.description = value["Description"].asString();
+		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Ipv6EgressOnlyRuleId"].isNull())
+			ipv6EgressOnlyRulesObject.ipv6EgressOnlyRuleId = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Ipv6EgressOnlyRuleId"].asString();
+		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceType"].isNull())
+			ipv6EgressOnlyRulesObject.instanceType = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceType"].asString();
+		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceId"].isNull())
+			ipv6EgressOnlyRulesObject.instanceId = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceId"].asString();
+		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Status"].isNull())
+			ipv6EgressOnlyRulesObject.status = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Status"].asString();
+		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Name"].isNull())
+			ipv6EgressOnlyRulesObject.name = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Name"].asString();
+		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Description"].isNull())
+			ipv6EgressOnlyRulesObject.description = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Description"].asString();
 		ipv6EgressOnlyRules_.push_back(ipv6EgressOnlyRulesObject);
 	}
 	if(!value["TotalCount"].isNull())

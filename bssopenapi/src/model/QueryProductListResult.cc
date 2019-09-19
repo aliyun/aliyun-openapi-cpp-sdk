@@ -46,18 +46,18 @@ void QueryProductListResult::parse(const std::string &payload)
 		data_.pageNum = std::stoi(dataNode["PageNum"].asString());
 	if(!dataNode["PageSize"].isNull())
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
-	auto allProductList = value["ProductList"]["Product"];
-	for (auto value : allProductList)
+	auto allProductListNode = dataNode["ProductList"]["Product"];
+	for (auto dataNodeProductListProduct : allProductListNode)
 	{
 		Data::Product productObject;
-		if(!value["ProductCode"].isNull())
-			productObject.productCode = value["ProductCode"].asString();
-		if(!value["ProductName"].isNull())
-			productObject.productName = value["ProductName"].asString();
-		if(!value["ProductType"].isNull())
-			productObject.productType = value["ProductType"].asString();
-		if(!value["SubscriptionType"].isNull())
-			productObject.subscriptionType = value["SubscriptionType"].asString();
+		if(!dataNodeProductListProduct["ProductCode"].isNull())
+			productObject.productCode = dataNodeProductListProduct["ProductCode"].asString();
+		if(!dataNodeProductListProduct["ProductName"].isNull())
+			productObject.productName = dataNodeProductListProduct["ProductName"].asString();
+		if(!dataNodeProductListProduct["ProductType"].isNull())
+			productObject.productType = dataNodeProductListProduct["ProductType"].asString();
+		if(!dataNodeProductListProduct["SubscriptionType"].isNull())
+			productObject.subscriptionType = dataNodeProductListProduct["SubscriptionType"].asString();
 		data_.productList.push_back(productObject);
 	}
 	if(!value["Success"].isNull())

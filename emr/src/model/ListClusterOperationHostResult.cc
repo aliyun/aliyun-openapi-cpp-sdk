@@ -39,18 +39,18 @@ void ListClusterOperationHostResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClusterOperationHostList = value["ClusterOperationHostList"]["ClusterOperationHost"];
-	for (auto value : allClusterOperationHostList)
+	auto allClusterOperationHostListNode = value["ClusterOperationHostList"]["ClusterOperationHost"];
+	for (auto valueClusterOperationHostListClusterOperationHost : allClusterOperationHostListNode)
 	{
 		ClusterOperationHost clusterOperationHostListObject;
-		if(!value["HostId"].isNull())
-			clusterOperationHostListObject.hostId = value["HostId"].asString();
-		if(!value["HostName"].isNull())
-			clusterOperationHostListObject.hostName = value["HostName"].asString();
-		if(!value["Status"].isNull())
-			clusterOperationHostListObject.status = value["Status"].asString();
-		if(!value["Percentage"].isNull())
-			clusterOperationHostListObject.percentage = value["Percentage"].asString();
+		if(!valueClusterOperationHostListClusterOperationHost["HostId"].isNull())
+			clusterOperationHostListObject.hostId = valueClusterOperationHostListClusterOperationHost["HostId"].asString();
+		if(!valueClusterOperationHostListClusterOperationHost["HostName"].isNull())
+			clusterOperationHostListObject.hostName = valueClusterOperationHostListClusterOperationHost["HostName"].asString();
+		if(!valueClusterOperationHostListClusterOperationHost["Status"].isNull())
+			clusterOperationHostListObject.status = valueClusterOperationHostListClusterOperationHost["Status"].asString();
+		if(!valueClusterOperationHostListClusterOperationHost["Percentage"].isNull())
+			clusterOperationHostListObject.percentage = valueClusterOperationHostListClusterOperationHost["Percentage"].asString();
 		clusterOperationHostList_.push_back(clusterOperationHostListObject);
 	}
 	if(!value["TotalCount"].isNull())

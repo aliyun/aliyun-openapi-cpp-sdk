@@ -39,14 +39,14 @@ void DescribeDcdnDomainIpaTrafficDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTrafficDataPerInterval = value["TrafficDataPerInterval"]["DataModule"];
-	for (auto value : allTrafficDataPerInterval)
+	auto allTrafficDataPerIntervalNode = value["TrafficDataPerInterval"]["DataModule"];
+	for (auto valueTrafficDataPerIntervalDataModule : allTrafficDataPerIntervalNode)
 	{
 		DataModule trafficDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			trafficDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["IpaTraffic"].isNull())
-			trafficDataPerIntervalObject.ipaTraffic = std::stof(value["IpaTraffic"].asString());
+		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["IpaTraffic"].isNull())
+			trafficDataPerIntervalObject.ipaTraffic = std::stof(valueTrafficDataPerIntervalDataModule["IpaTraffic"].asString());
 		trafficDataPerInterval_.push_back(trafficDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

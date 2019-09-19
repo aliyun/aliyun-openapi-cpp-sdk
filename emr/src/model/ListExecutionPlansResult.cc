@@ -39,26 +39,26 @@ void ListExecutionPlansResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allExecutionPlans = value["ExecutionPlans"]["ExecutionPlanInfo"];
-	for (auto value : allExecutionPlans)
+	auto allExecutionPlansNode = value["ExecutionPlans"]["ExecutionPlanInfo"];
+	for (auto valueExecutionPlansExecutionPlanInfo : allExecutionPlansNode)
 	{
 		ExecutionPlanInfo executionPlansObject;
-		if(!value["Id"].isNull())
-			executionPlansObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			executionPlansObject.name = value["Name"].asString();
-		if(!value["CreateClusterOnDemand"].isNull())
-			executionPlansObject.createClusterOnDemand = value["CreateClusterOnDemand"].asString() == "true";
-		if(!value["Stragety"].isNull())
-			executionPlansObject.stragety = value["Stragety"].asString();
-		if(!value["Status"].isNull())
-			executionPlansObject.status = value["Status"].asString();
-		if(!value["TimeInterval"].isNull())
-			executionPlansObject.timeInterval = std::stoi(value["TimeInterval"].asString());
-		if(!value["StartTime"].isNull())
-			executionPlansObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["TimeUnit"].isNull())
-			executionPlansObject.timeUnit = value["TimeUnit"].asString();
+		if(!valueExecutionPlansExecutionPlanInfo["Id"].isNull())
+			executionPlansObject.id = valueExecutionPlansExecutionPlanInfo["Id"].asString();
+		if(!valueExecutionPlansExecutionPlanInfo["Name"].isNull())
+			executionPlansObject.name = valueExecutionPlansExecutionPlanInfo["Name"].asString();
+		if(!valueExecutionPlansExecutionPlanInfo["CreateClusterOnDemand"].isNull())
+			executionPlansObject.createClusterOnDemand = valueExecutionPlansExecutionPlanInfo["CreateClusterOnDemand"].asString() == "true";
+		if(!valueExecutionPlansExecutionPlanInfo["Stragety"].isNull())
+			executionPlansObject.stragety = valueExecutionPlansExecutionPlanInfo["Stragety"].asString();
+		if(!valueExecutionPlansExecutionPlanInfo["Status"].isNull())
+			executionPlansObject.status = valueExecutionPlansExecutionPlanInfo["Status"].asString();
+		if(!valueExecutionPlansExecutionPlanInfo["TimeInterval"].isNull())
+			executionPlansObject.timeInterval = std::stoi(valueExecutionPlansExecutionPlanInfo["TimeInterval"].asString());
+		if(!valueExecutionPlansExecutionPlanInfo["StartTime"].isNull())
+			executionPlansObject.startTime = std::stol(valueExecutionPlansExecutionPlanInfo["StartTime"].asString());
+		if(!valueExecutionPlansExecutionPlanInfo["TimeUnit"].isNull())
+			executionPlansObject.timeUnit = valueExecutionPlansExecutionPlanInfo["TimeUnit"].asString();
 		executionPlans_.push_back(executionPlansObject);
 	}
 	if(!value["TotalCount"].isNull())

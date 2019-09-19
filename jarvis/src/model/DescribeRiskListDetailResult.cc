@@ -39,52 +39,52 @@ void DescribeRiskListDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataList = value["DataList"]["Data"];
-	for (auto value : allDataList)
+	auto allDataListNode = value["DataList"]["Data"];
+	for (auto valueDataListData : allDataListNode)
 	{
 		Data dataListObject;
-		if(!value["RiskId"].isNull())
-			dataListObject.riskId = std::stoi(value["RiskId"].asString());
-		if(!value["UpdateTime"].isNull())
-			dataListObject.updateTime = value["UpdateTime"].asString();
-		if(!value["RiskDescribe"].isNull())
-			dataListObject.riskDescribe = value["RiskDescribe"].asString();
-		if(!value["RiskType"].isNull())
-			dataListObject.riskType = value["RiskType"].asString();
-		if(!value["RiskInstance"].isNull())
-			dataListObject.riskInstance = value["RiskInstance"].asString();
-		if(!value["Product"].isNull())
-			dataListObject.product = value["Product"].asString();
-		if(!value["RegionId"].isNull())
-			dataListObject.regionId = value["RegionId"].asString();
-		if(!value["TacticsName"].isNull())
-			dataListObject.tacticsName = value["TacticsName"].asString();
-		if(!value["Status"].isNull())
-			dataListObject.status = value["Status"].asString();
-		if(!value["IgnoreTime"].isNull())
-			dataListObject.ignoreTime = value["IgnoreTime"].asString();
-		auto allEcsSecGroupRisk = value["EcsSecGroupRisk"]["EcsSecGroupRiskItem"];
-		for (auto value : allEcsSecGroupRisk)
+		if(!valueDataListData["RiskId"].isNull())
+			dataListObject.riskId = std::stoi(valueDataListData["RiskId"].asString());
+		if(!valueDataListData["UpdateTime"].isNull())
+			dataListObject.updateTime = valueDataListData["UpdateTime"].asString();
+		if(!valueDataListData["RiskDescribe"].isNull())
+			dataListObject.riskDescribe = valueDataListData["RiskDescribe"].asString();
+		if(!valueDataListData["RiskType"].isNull())
+			dataListObject.riskType = valueDataListData["RiskType"].asString();
+		if(!valueDataListData["RiskInstance"].isNull())
+			dataListObject.riskInstance = valueDataListData["RiskInstance"].asString();
+		if(!valueDataListData["Product"].isNull())
+			dataListObject.product = valueDataListData["Product"].asString();
+		if(!valueDataListData["RegionId"].isNull())
+			dataListObject.regionId = valueDataListData["RegionId"].asString();
+		if(!valueDataListData["TacticsName"].isNull())
+			dataListObject.tacticsName = valueDataListData["TacticsName"].asString();
+		if(!valueDataListData["Status"].isNull())
+			dataListObject.status = valueDataListData["Status"].asString();
+		if(!valueDataListData["IgnoreTime"].isNull())
+			dataListObject.ignoreTime = valueDataListData["IgnoreTime"].asString();
+		auto allEcsSecGroupRiskNode = allDataListNode["EcsSecGroupRisk"]["EcsSecGroupRiskItem"];
+		for (auto allDataListNodeEcsSecGroupRiskEcsSecGroupRiskItem : allEcsSecGroupRiskNode)
 		{
 			Data::EcsSecGroupRiskItem ecsSecGroupRiskObject;
-			if(!value["NetType"].isNull())
-				ecsSecGroupRiskObject.netType = value["NetType"].asString();
-			if(!value["Direction"].isNull())
-				ecsSecGroupRiskObject.direction = value["Direction"].asString();
-			if(!value["DstPortRange"].isNull())
-				ecsSecGroupRiskObject.dstPortRange = value["DstPortRange"].asString();
-			if(!value["SrcIpRange"].isNull())
-				ecsSecGroupRiskObject.srcIpRange = value["SrcIpRange"].asString();
+			if(!allDataListNodeEcsSecGroupRiskEcsSecGroupRiskItem["NetType"].isNull())
+				ecsSecGroupRiskObject.netType = allDataListNodeEcsSecGroupRiskEcsSecGroupRiskItem["NetType"].asString();
+			if(!allDataListNodeEcsSecGroupRiskEcsSecGroupRiskItem["Direction"].isNull())
+				ecsSecGroupRiskObject.direction = allDataListNodeEcsSecGroupRiskEcsSecGroupRiskItem["Direction"].asString();
+			if(!allDataListNodeEcsSecGroupRiskEcsSecGroupRiskItem["DstPortRange"].isNull())
+				ecsSecGroupRiskObject.dstPortRange = allDataListNodeEcsSecGroupRiskEcsSecGroupRiskItem["DstPortRange"].asString();
+			if(!allDataListNodeEcsSecGroupRiskEcsSecGroupRiskItem["SrcIpRange"].isNull())
+				ecsSecGroupRiskObject.srcIpRange = allDataListNodeEcsSecGroupRiskEcsSecGroupRiskItem["SrcIpRange"].asString();
 			dataListObject.ecsSecGroupRisk.push_back(ecsSecGroupRiskObject);
 		}
-		auto allRdsWhitelistRisk = value["RdsWhitelistRisk"]["RdsWhitelistRiskItem"];
-		for (auto value : allRdsWhitelistRisk)
+		auto allRdsWhitelistRiskNode = allDataListNode["RdsWhitelistRisk"]["RdsWhitelistRiskItem"];
+		for (auto allDataListNodeRdsWhitelistRiskRdsWhitelistRiskItem : allRdsWhitelistRiskNode)
 		{
 			Data::RdsWhitelistRiskItem rdsWhitelistRiskObject;
-			if(!value["RdsWhitelistGroup"].isNull())
-				rdsWhitelistRiskObject.rdsWhitelistGroup = value["RdsWhitelistGroup"].asString();
-			if(!value["RiskDetail"].isNull())
-				rdsWhitelistRiskObject.riskDetail = value["RiskDetail"].asString();
+			if(!allDataListNodeRdsWhitelistRiskRdsWhitelistRiskItem["RdsWhitelistGroup"].isNull())
+				rdsWhitelistRiskObject.rdsWhitelistGroup = allDataListNodeRdsWhitelistRiskRdsWhitelistRiskItem["RdsWhitelistGroup"].asString();
+			if(!allDataListNodeRdsWhitelistRiskRdsWhitelistRiskItem["RiskDetail"].isNull())
+				rdsWhitelistRiskObject.riskDetail = allDataListNodeRdsWhitelistRiskRdsWhitelistRiskItem["RiskDetail"].asString();
 			dataListObject.rdsWhitelistRisk.push_back(rdsWhitelistRiskObject);
 		}
 		auto allInstanceList = value["InstanceList"]["InstanceList"];

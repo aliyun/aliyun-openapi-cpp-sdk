@@ -39,50 +39,50 @@ void DescribeDataAssetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Asset"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Asset"];
+	for (auto valueItemsAsset : allItemsNode)
 	{
 		Asset itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
-		if(!value["Owner"].isNull())
-			itemsObject.owner = value["Owner"].asString();
-		if(!value["CreationTime"].isNull())
-			itemsObject.creationTime = std::stol(value["CreationTime"].asString());
-		if(!value["ProductId"].isNull())
-			itemsObject.productId = value["ProductId"].asString();
-		if(!value["ProductCode"].isNull())
-			itemsObject.productCode = value["ProductCode"].asString();
-		if(!value["Protection"].isNull())
-			itemsObject.protection = value["Protection"].asString() == "true";
-		if(!value["Labelsec"].isNull())
-			itemsObject.labelsec = std::stoi(value["Labelsec"].asString());
-		if(!value["OdpsRiskLevelName"].isNull())
-			itemsObject.odpsRiskLevelName = value["OdpsRiskLevelName"].asString();
-		if(!value["Sensitive"].isNull())
-			itemsObject.sensitive = value["Sensitive"].asString() == "true";
-		if(!value["RiskLevelId"].isNull())
-			itemsObject.riskLevelId = std::stol(value["RiskLevelId"].asString());
-		if(!value["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = value["RiskLevelName"].asString();
-		if(!value["RuleName"].isNull())
-			itemsObject.ruleName = value["RuleName"].asString();
-		if(!value["DepartName"].isNull())
-			itemsObject.departName = value["DepartName"].asString();
-		if(!value["TotalCount"].isNull())
-			itemsObject.totalCount = std::stoi(value["TotalCount"].asString());
-		if(!value["SensitiveCount"].isNull())
-			itemsObject.sensitiveCount = std::stoi(value["SensitiveCount"].asString());
-		if(!value["Acl"].isNull())
-			itemsObject.acl = value["Acl"].asString();
-		if(!value["SensitiveRatio"].isNull())
-			itemsObject.sensitiveRatio = value["SensitiveRatio"].asString();
-		if(!value["DataType"].isNull())
-			itemsObject.dataType = value["DataType"].asString();
-		if(!value["ObjectKey"].isNull())
-			itemsObject.objectKey = value["ObjectKey"].asString();
+		if(!valueItemsAsset["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsAsset["Id"].asString());
+		if(!valueItemsAsset["Name"].isNull())
+			itemsObject.name = valueItemsAsset["Name"].asString();
+		if(!valueItemsAsset["Owner"].isNull())
+			itemsObject.owner = valueItemsAsset["Owner"].asString();
+		if(!valueItemsAsset["CreationTime"].isNull())
+			itemsObject.creationTime = std::stol(valueItemsAsset["CreationTime"].asString());
+		if(!valueItemsAsset["ProductId"].isNull())
+			itemsObject.productId = valueItemsAsset["ProductId"].asString();
+		if(!valueItemsAsset["ProductCode"].isNull())
+			itemsObject.productCode = valueItemsAsset["ProductCode"].asString();
+		if(!valueItemsAsset["Protection"].isNull())
+			itemsObject.protection = valueItemsAsset["Protection"].asString() == "true";
+		if(!valueItemsAsset["Labelsec"].isNull())
+			itemsObject.labelsec = std::stoi(valueItemsAsset["Labelsec"].asString());
+		if(!valueItemsAsset["OdpsRiskLevelName"].isNull())
+			itemsObject.odpsRiskLevelName = valueItemsAsset["OdpsRiskLevelName"].asString();
+		if(!valueItemsAsset["Sensitive"].isNull())
+			itemsObject.sensitive = valueItemsAsset["Sensitive"].asString() == "true";
+		if(!valueItemsAsset["RiskLevelId"].isNull())
+			itemsObject.riskLevelId = std::stol(valueItemsAsset["RiskLevelId"].asString());
+		if(!valueItemsAsset["RiskLevelName"].isNull())
+			itemsObject.riskLevelName = valueItemsAsset["RiskLevelName"].asString();
+		if(!valueItemsAsset["RuleName"].isNull())
+			itemsObject.ruleName = valueItemsAsset["RuleName"].asString();
+		if(!valueItemsAsset["DepartName"].isNull())
+			itemsObject.departName = valueItemsAsset["DepartName"].asString();
+		if(!valueItemsAsset["TotalCount"].isNull())
+			itemsObject.totalCount = std::stoi(valueItemsAsset["TotalCount"].asString());
+		if(!valueItemsAsset["SensitiveCount"].isNull())
+			itemsObject.sensitiveCount = std::stoi(valueItemsAsset["SensitiveCount"].asString());
+		if(!valueItemsAsset["Acl"].isNull())
+			itemsObject.acl = valueItemsAsset["Acl"].asString();
+		if(!valueItemsAsset["SensitiveRatio"].isNull())
+			itemsObject.sensitiveRatio = valueItemsAsset["SensitiveRatio"].asString();
+		if(!valueItemsAsset["DataType"].isNull())
+			itemsObject.dataType = valueItemsAsset["DataType"].asString();
+		if(!valueItemsAsset["ObjectKey"].isNull())
+			itemsObject.objectKey = valueItemsAsset["ObjectKey"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

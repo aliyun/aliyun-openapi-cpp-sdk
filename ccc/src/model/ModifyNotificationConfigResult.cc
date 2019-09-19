@@ -39,16 +39,16 @@ void ModifyNotificationConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSubscriptions = value["Subscriptions"]["SubscriptionsItem"];
-	for (auto value : allSubscriptions)
+	auto allSubscriptionsNode = value["Subscriptions"]["SubscriptionsItem"];
+	for (auto valueSubscriptionsSubscriptionsItem : allSubscriptionsNode)
 	{
 		SubscriptionsItem subscriptionsObject;
-		if(!value["Name"].isNull())
-			subscriptionsObject.name = value["Name"].asString();
-		if(!value["Selected"].isNull())
-			subscriptionsObject.selected = value["Selected"].asString() == "true";
-		if(!value["DisplayName"].isNull())
-			subscriptionsObject.displayName = value["DisplayName"].asString();
+		if(!valueSubscriptionsSubscriptionsItem["Name"].isNull())
+			subscriptionsObject.name = valueSubscriptionsSubscriptionsItem["Name"].asString();
+		if(!valueSubscriptionsSubscriptionsItem["Selected"].isNull())
+			subscriptionsObject.selected = valueSubscriptionsSubscriptionsItem["Selected"].asString() == "true";
+		if(!valueSubscriptionsSubscriptionsItem["DisplayName"].isNull())
+			subscriptionsObject.displayName = valueSubscriptionsSubscriptionsItem["DisplayName"].asString();
 		subscriptions_.push_back(subscriptionsObject);
 	}
 	if(!value["Success"].isNull())

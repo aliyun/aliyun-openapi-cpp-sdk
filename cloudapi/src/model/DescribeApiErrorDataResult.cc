@@ -39,24 +39,24 @@ void DescribeApiErrorDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClientErrors = value["ClientErrors"]["MonitorItem"];
-	for (auto value : allClientErrors)
+	auto allClientErrorsNode = value["ClientErrors"]["MonitorItem"];
+	for (auto valueClientErrorsMonitorItem : allClientErrorsNode)
 	{
 		MonitorItem clientErrorsObject;
-		if(!value["ItemTime"].isNull())
-			clientErrorsObject.itemTime = value["ItemTime"].asString();
-		if(!value["ItemValue"].isNull())
-			clientErrorsObject.itemValue = value["ItemValue"].asString();
+		if(!valueClientErrorsMonitorItem["ItemTime"].isNull())
+			clientErrorsObject.itemTime = valueClientErrorsMonitorItem["ItemTime"].asString();
+		if(!valueClientErrorsMonitorItem["ItemValue"].isNull())
+			clientErrorsObject.itemValue = valueClientErrorsMonitorItem["ItemValue"].asString();
 		clientErrors_.push_back(clientErrorsObject);
 	}
-	auto allServerErrors = value["ServerErrors"]["MonitorItem"];
-	for (auto value : allServerErrors)
+	auto allServerErrorsNode = value["ServerErrors"]["MonitorItem"];
+	for (auto valueServerErrorsMonitorItem : allServerErrorsNode)
 	{
 		MonitorItem serverErrorsObject;
-		if(!value["ItemTime"].isNull())
-			serverErrorsObject.itemTime = value["ItemTime"].asString();
-		if(!value["ItemValue"].isNull())
-			serverErrorsObject.itemValue = value["ItemValue"].asString();
+		if(!valueServerErrorsMonitorItem["ItemTime"].isNull())
+			serverErrorsObject.itemTime = valueServerErrorsMonitorItem["ItemTime"].asString();
+		if(!valueServerErrorsMonitorItem["ItemValue"].isNull())
+			serverErrorsObject.itemValue = valueServerErrorsMonitorItem["ItemValue"].asString();
 		serverErrors_.push_back(serverErrorsObject);
 	}
 

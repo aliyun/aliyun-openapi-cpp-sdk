@@ -39,14 +39,14 @@ void QueryCustomerLabelResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["CustomerLabel"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["CustomerLabel"];
+	for (auto valueDataCustomerLabel : allDataNode)
 	{
 		CustomerLabel dataObject;
-		if(!value["Label"].isNull())
-			dataObject.label = value["Label"].asString();
-		if(!value["LabelSeries"].isNull())
-			dataObject.labelSeries = value["LabelSeries"].asString();
+		if(!valueDataCustomerLabel["Label"].isNull())
+			dataObject.label = valueDataCustomerLabel["Label"].asString();
+		if(!valueDataCustomerLabel["LabelSeries"].isNull())
+			dataObject.labelSeries = valueDataCustomerLabel["LabelSeries"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

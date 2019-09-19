@@ -39,32 +39,32 @@ void DescribeCasterScenesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSceneList = value["SceneList"]["Scene"];
-	for (auto value : allSceneList)
+	auto allSceneListNode = value["SceneList"]["Scene"];
+	for (auto valueSceneListScene : allSceneListNode)
 	{
 		Scene sceneListObject;
-		if(!value["SceneId"].isNull())
-			sceneListObject.sceneId = value["SceneId"].asString();
-		if(!value["SceneName"].isNull())
-			sceneListObject.sceneName = value["SceneName"].asString();
-		if(!value["OutputType"].isNull())
-			sceneListObject.outputType = value["OutputType"].asString();
-		if(!value["LayoutId"].isNull())
-			sceneListObject.layoutId = value["LayoutId"].asString();
-		if(!value["StreamUrl"].isNull())
-			sceneListObject.streamUrl = value["StreamUrl"].asString();
-		if(!value["Status"].isNull())
-			sceneListObject.status = std::stoi(value["Status"].asString());
-		auto allStreamInfos = value["StreamInfos"]["StreamInfo"];
-		for (auto value : allStreamInfos)
+		if(!valueSceneListScene["SceneId"].isNull())
+			sceneListObject.sceneId = valueSceneListScene["SceneId"].asString();
+		if(!valueSceneListScene["SceneName"].isNull())
+			sceneListObject.sceneName = valueSceneListScene["SceneName"].asString();
+		if(!valueSceneListScene["OutputType"].isNull())
+			sceneListObject.outputType = valueSceneListScene["OutputType"].asString();
+		if(!valueSceneListScene["LayoutId"].isNull())
+			sceneListObject.layoutId = valueSceneListScene["LayoutId"].asString();
+		if(!valueSceneListScene["StreamUrl"].isNull())
+			sceneListObject.streamUrl = valueSceneListScene["StreamUrl"].asString();
+		if(!valueSceneListScene["Status"].isNull())
+			sceneListObject.status = std::stoi(valueSceneListScene["Status"].asString());
+		auto allStreamInfosNode = allSceneListNode["StreamInfos"]["StreamInfo"];
+		for (auto allSceneListNodeStreamInfosStreamInfo : allStreamInfosNode)
 		{
 			Scene::StreamInfo streamInfosObject;
-			if(!value["TranscodeConfig"].isNull())
-				streamInfosObject.transcodeConfig = value["TranscodeConfig"].asString();
-			if(!value["VideoFormat"].isNull())
-				streamInfosObject.videoFormat = value["VideoFormat"].asString();
-			if(!value["OutputStreamUrl"].isNull())
-				streamInfosObject.outputStreamUrl = value["OutputStreamUrl"].asString();
+			if(!allSceneListNodeStreamInfosStreamInfo["TranscodeConfig"].isNull())
+				streamInfosObject.transcodeConfig = allSceneListNodeStreamInfosStreamInfo["TranscodeConfig"].asString();
+			if(!allSceneListNodeStreamInfosStreamInfo["VideoFormat"].isNull())
+				streamInfosObject.videoFormat = allSceneListNodeStreamInfosStreamInfo["VideoFormat"].asString();
+			if(!allSceneListNodeStreamInfosStreamInfo["OutputStreamUrl"].isNull())
+				streamInfosObject.outputStreamUrl = allSceneListNodeStreamInfosStreamInfo["OutputStreamUrl"].asString();
 			sceneListObject.streamInfos.push_back(streamInfosObject);
 		}
 		auto allComponentIds = value["ComponentIds"]["componentId"];

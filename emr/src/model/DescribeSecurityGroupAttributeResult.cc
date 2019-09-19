@@ -39,34 +39,34 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAvailableGroupList = value["AvailableGroupList"]["SecurityGroup"];
-	for (auto value : allAvailableGroupList)
+	auto allAvailableGroupListNode = value["AvailableGroupList"]["SecurityGroup"];
+	for (auto valueAvailableGroupListSecurityGroup : allAvailableGroupListNode)
 	{
 		SecurityGroup availableGroupListObject;
-		if(!value["SecurityGroupId"].isNull())
-			availableGroupListObject.securityGroupId = value["SecurityGroupId"].asString();
-		if(!value["Description"].isNull())
-			availableGroupListObject.description = value["Description"].asString();
-		if(!value["SecurityGroupName"].isNull())
-			availableGroupListObject.securityGroupName = value["SecurityGroupName"].asString();
-		if(!value["VpcId"].isNull())
-			availableGroupListObject.vpcId = value["VpcId"].asString();
-		if(!value["CreationTime"].isNull())
-			availableGroupListObject.creationTime = value["CreationTime"].asString();
-		if(!value["AvailableInstanceAmount"].isNull())
-			availableGroupListObject.availableInstanceAmount = std::stoi(value["AvailableInstanceAmount"].asString());
-		if(!value["EcsCount"].isNull())
-			availableGroupListObject.ecsCount = std::stoi(value["EcsCount"].asString());
+		if(!valueAvailableGroupListSecurityGroup["SecurityGroupId"].isNull())
+			availableGroupListObject.securityGroupId = valueAvailableGroupListSecurityGroup["SecurityGroupId"].asString();
+		if(!valueAvailableGroupListSecurityGroup["Description"].isNull())
+			availableGroupListObject.description = valueAvailableGroupListSecurityGroup["Description"].asString();
+		if(!valueAvailableGroupListSecurityGroup["SecurityGroupName"].isNull())
+			availableGroupListObject.securityGroupName = valueAvailableGroupListSecurityGroup["SecurityGroupName"].asString();
+		if(!valueAvailableGroupListSecurityGroup["VpcId"].isNull())
+			availableGroupListObject.vpcId = valueAvailableGroupListSecurityGroup["VpcId"].asString();
+		if(!valueAvailableGroupListSecurityGroup["CreationTime"].isNull())
+			availableGroupListObject.creationTime = valueAvailableGroupListSecurityGroup["CreationTime"].asString();
+		if(!valueAvailableGroupListSecurityGroup["AvailableInstanceAmount"].isNull())
+			availableGroupListObject.availableInstanceAmount = std::stoi(valueAvailableGroupListSecurityGroup["AvailableInstanceAmount"].asString());
+		if(!valueAvailableGroupListSecurityGroup["EcsCount"].isNull())
+			availableGroupListObject.ecsCount = std::stoi(valueAvailableGroupListSecurityGroup["EcsCount"].asString());
 		availableGroupList_.push_back(availableGroupListObject);
 	}
-	auto allSecurityGroupAttributeList = value["SecurityGroupAttributeList"]["SecurityGroupAttribute"];
-	for (auto value : allSecurityGroupAttributeList)
+	auto allSecurityGroupAttributeListNode = value["SecurityGroupAttributeList"]["SecurityGroupAttribute"];
+	for (auto valueSecurityGroupAttributeListSecurityGroupAttribute : allSecurityGroupAttributeListNode)
 	{
 		SecurityGroupAttribute securityGroupAttributeListObject;
-		if(!value["BizType"].isNull())
-			securityGroupAttributeListObject.bizType = value["BizType"].asString();
-		if(!value["BizContent"].isNull())
-			securityGroupAttributeListObject.bizContent = value["BizContent"].asString();
+		if(!valueSecurityGroupAttributeListSecurityGroupAttribute["BizType"].isNull())
+			securityGroupAttributeListObject.bizType = valueSecurityGroupAttributeListSecurityGroupAttribute["BizType"].asString();
+		if(!valueSecurityGroupAttributeListSecurityGroupAttribute["BizContent"].isNull())
+			securityGroupAttributeListObject.bizContent = valueSecurityGroupAttributeListSecurityGroupAttribute["BizContent"].asString();
 		securityGroupAttributeList_.push_back(securityGroupAttributeListObject);
 	}
 

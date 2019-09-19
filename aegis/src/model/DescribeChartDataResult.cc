@@ -39,31 +39,31 @@ void DescribeChartDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMultipleData = value["MultipleData"]["MultipleDataItem"];
-	for (auto value : allMultipleData)
+	auto allMultipleDataNode = value["MultipleData"]["MultipleDataItem"];
+	for (auto valueMultipleDataMultipleDataItem : allMultipleDataNode)
 	{
 		MultipleDataItem multipleDataObject;
-		if(!value["Type"].isNull())
-			multipleDataObject.type = value["Type"].asString();
-		if(!value["Name"].isNull())
-			multipleDataObject.name = value["Name"].asString();
-		if(!value["Color"].isNull())
-			multipleDataObject.color = value["Color"].asString();
-		if(!value["Value"].isNull())
-			multipleDataObject.value = std::stol(value["Value"].asString());
+		if(!valueMultipleDataMultipleDataItem["Type"].isNull())
+			multipleDataObject.type = valueMultipleDataMultipleDataItem["Type"].asString();
+		if(!valueMultipleDataMultipleDataItem["Name"].isNull())
+			multipleDataObject.name = valueMultipleDataMultipleDataItem["Name"].asString();
+		if(!valueMultipleDataMultipleDataItem["Color"].isNull())
+			multipleDataObject.color = valueMultipleDataMultipleDataItem["Color"].asString();
+		if(!valueMultipleDataMultipleDataItem["Value"].isNull())
+			multipleDataObject.value = std::stol(valueMultipleDataMultipleDataItem["Value"].asString());
 		multipleData_.push_back(multipleDataObject);
 	}
 	auto coordinateDataNode = value["CoordinateData"];
-	auto allYAxisList = value["YAxisList"]["YAxisDo"];
-	for (auto value : allYAxisList)
+	auto allYAxisListNode = coordinateDataNode["YAxisList"]["YAxisDo"];
+	for (auto coordinateDataNodeYAxisListYAxisDo : allYAxisListNode)
 	{
 		CoordinateData::YAxisDo yAxisDoObject;
-		if(!value["Type"].isNull())
-			yAxisDoObject.type = value["Type"].asString();
-		if(!value["Name"].isNull())
-			yAxisDoObject.name = value["Name"].asString();
-		if(!value["Color"].isNull())
-			yAxisDoObject.color = value["Color"].asString();
+		if(!coordinateDataNodeYAxisListYAxisDo["Type"].isNull())
+			yAxisDoObject.type = coordinateDataNodeYAxisListYAxisDo["Type"].asString();
+		if(!coordinateDataNodeYAxisListYAxisDo["Name"].isNull())
+			yAxisDoObject.name = coordinateDataNodeYAxisListYAxisDo["Name"].asString();
+		if(!coordinateDataNodeYAxisListYAxisDo["Color"].isNull())
+			yAxisDoObject.color = coordinateDataNodeYAxisListYAxisDo["Color"].asString();
 		auto allValue = value["Value"]["LongItem"];
 		for (auto value : allValue)
 			yAxisDoObject.value.push_back(value.asString());

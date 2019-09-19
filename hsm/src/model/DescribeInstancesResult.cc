@@ -39,34 +39,34 @@ void DescribeInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstances = value["Instances"]["Instance"];
-	for (auto value : allInstances)
+	auto allInstancesNode = value["Instances"]["Instance"];
+	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
-		if(!value["InstanceId"].isNull())
-			instancesObject.instanceId = value["InstanceId"].asString();
-		if(!value["RegionId"].isNull())
-			instancesObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			instancesObject.zoneId = value["ZoneId"].asString();
-		if(!value["HsmStatus"].isNull())
-			instancesObject.hsmStatus = std::stoi(value["HsmStatus"].asString());
-		if(!value["HsmOem"].isNull())
-			instancesObject.hsmOem = value["HsmOem"].asString();
-		if(!value["HsmDeviceType"].isNull())
-			instancesObject.hsmDeviceType = value["HsmDeviceType"].asString();
-		if(!value["VpcId"].isNull())
-			instancesObject.vpcId = value["VpcId"].asString();
-		if(!value["VswitchId"].isNull())
-			instancesObject.vswitchId = value["VswitchId"].asString();
-		if(!value["Ip"].isNull())
-			instancesObject.ip = value["Ip"].asString();
-		if(!value["Remark"].isNull())
-			instancesObject.remark = value["Remark"].asString();
-		if(!value["ExpiredTime"].isNull())
-			instancesObject.expiredTime = std::stol(value["ExpiredTime"].asString());
-		if(!value["CreateTime"].isNull())
-			instancesObject.createTime = std::stol(value["CreateTime"].asString());
+		if(!valueInstancesInstance["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
+		if(!valueInstancesInstance["RegionId"].isNull())
+			instancesObject.regionId = valueInstancesInstance["RegionId"].asString();
+		if(!valueInstancesInstance["ZoneId"].isNull())
+			instancesObject.zoneId = valueInstancesInstance["ZoneId"].asString();
+		if(!valueInstancesInstance["HsmStatus"].isNull())
+			instancesObject.hsmStatus = std::stoi(valueInstancesInstance["HsmStatus"].asString());
+		if(!valueInstancesInstance["HsmOem"].isNull())
+			instancesObject.hsmOem = valueInstancesInstance["HsmOem"].asString();
+		if(!valueInstancesInstance["HsmDeviceType"].isNull())
+			instancesObject.hsmDeviceType = valueInstancesInstance["HsmDeviceType"].asString();
+		if(!valueInstancesInstance["VpcId"].isNull())
+			instancesObject.vpcId = valueInstancesInstance["VpcId"].asString();
+		if(!valueInstancesInstance["VswitchId"].isNull())
+			instancesObject.vswitchId = valueInstancesInstance["VswitchId"].asString();
+		if(!valueInstancesInstance["Ip"].isNull())
+			instancesObject.ip = valueInstancesInstance["Ip"].asString();
+		if(!valueInstancesInstance["Remark"].isNull())
+			instancesObject.remark = valueInstancesInstance["Remark"].asString();
+		if(!valueInstancesInstance["ExpiredTime"].isNull())
+			instancesObject.expiredTime = std::stol(valueInstancesInstance["ExpiredTime"].asString());
+		if(!valueInstancesInstance["CreateTime"].isNull())
+			instancesObject.createTime = std::stol(valueInstancesInstance["CreateTime"].asString());
 		auto allWhiteList = value["WhiteList"]["WhiteListItem"];
 		for (auto value : allWhiteList)
 			instancesObject.whiteList.push_back(value.asString());

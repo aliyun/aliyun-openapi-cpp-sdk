@@ -39,26 +39,26 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["SQLSlowRecord"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["SQLSlowRecord"];
+	for (auto valueItemsSQLSlowRecord : allItemsNode)
 	{
 		SQLSlowRecord itemsObject;
-		if(!value["HostAddress"].isNull())
-			itemsObject.hostAddress = value["HostAddress"].asString();
-		if(!value["DBName"].isNull())
-			itemsObject.dBName = value["DBName"].asString();
-		if(!value["SQLText"].isNull())
-			itemsObject.sQLText = value["SQLText"].asString();
-		if(!value["QueryTimes"].isNull())
-			itemsObject.queryTimes = std::stol(value["QueryTimes"].asString());
-		if(!value["LockTimes"].isNull())
-			itemsObject.lockTimes = std::stol(value["LockTimes"].asString());
-		if(!value["ParseRowCounts"].isNull())
-			itemsObject.parseRowCounts = std::stol(value["ParseRowCounts"].asString());
-		if(!value["ReturnRowCounts"].isNull())
-			itemsObject.returnRowCounts = std::stol(value["ReturnRowCounts"].asString());
-		if(!value["ExecutionStartTime"].isNull())
-			itemsObject.executionStartTime = value["ExecutionStartTime"].asString();
+		if(!valueItemsSQLSlowRecord["HostAddress"].isNull())
+			itemsObject.hostAddress = valueItemsSQLSlowRecord["HostAddress"].asString();
+		if(!valueItemsSQLSlowRecord["DBName"].isNull())
+			itemsObject.dBName = valueItemsSQLSlowRecord["DBName"].asString();
+		if(!valueItemsSQLSlowRecord["SQLText"].isNull())
+			itemsObject.sQLText = valueItemsSQLSlowRecord["SQLText"].asString();
+		if(!valueItemsSQLSlowRecord["QueryTimes"].isNull())
+			itemsObject.queryTimes = std::stol(valueItemsSQLSlowRecord["QueryTimes"].asString());
+		if(!valueItemsSQLSlowRecord["LockTimes"].isNull())
+			itemsObject.lockTimes = std::stol(valueItemsSQLSlowRecord["LockTimes"].asString());
+		if(!valueItemsSQLSlowRecord["ParseRowCounts"].isNull())
+			itemsObject.parseRowCounts = std::stol(valueItemsSQLSlowRecord["ParseRowCounts"].asString());
+		if(!valueItemsSQLSlowRecord["ReturnRowCounts"].isNull())
+			itemsObject.returnRowCounts = std::stol(valueItemsSQLSlowRecord["ReturnRowCounts"].asString());
+		if(!valueItemsSQLSlowRecord["ExecutionStartTime"].isNull())
+			itemsObject.executionStartTime = valueItemsSQLSlowRecord["ExecutionStartTime"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceId"].isNull())

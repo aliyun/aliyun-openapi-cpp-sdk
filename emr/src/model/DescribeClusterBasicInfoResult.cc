@@ -134,28 +134,28 @@ void DescribeClusterBasicInfoResult::parse(const std::string &payload)
 		clusterInfo_.resizeDiskEnable = clusterInfoNode["ResizeDiskEnable"].asString() == "true";
 	if(!clusterInfoNode["MetaStoreType"].isNull())
 		clusterInfo_.metaStoreType = clusterInfoNode["MetaStoreType"].asString();
-	auto allGatewayClusterInfoList = value["GatewayClusterInfoList"]["GatewayClusterInfo"];
-	for (auto value : allGatewayClusterInfoList)
+	auto allGatewayClusterInfoListNode = clusterInfoNode["GatewayClusterInfoList"]["GatewayClusterInfo"];
+	for (auto clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo : allGatewayClusterInfoListNode)
 	{
 		ClusterInfo::GatewayClusterInfo gatewayClusterInfoObject;
-		if(!value["ClusterId"].isNull())
-			gatewayClusterInfoObject.clusterId = value["ClusterId"].asString();
-		if(!value["ClusterName"].isNull())
-			gatewayClusterInfoObject.clusterName = value["ClusterName"].asString();
-		if(!value["Status"].isNull())
-			gatewayClusterInfoObject.status = value["Status"].asString();
+		if(!clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["ClusterId"].isNull())
+			gatewayClusterInfoObject.clusterId = clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["ClusterId"].asString();
+		if(!clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["ClusterName"].isNull())
+			gatewayClusterInfoObject.clusterName = clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["ClusterName"].asString();
+		if(!clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["Status"].isNull())
+			gatewayClusterInfoObject.status = clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo["Status"].asString();
 		clusterInfo_.gatewayClusterInfoList.push_back(gatewayClusterInfoObject);
 	}
-	auto allBootstrapActionList = value["BootstrapActionList"]["BootstrapAction"];
-	for (auto value : allBootstrapActionList)
+	auto allBootstrapActionListNode = clusterInfoNode["BootstrapActionList"]["BootstrapAction"];
+	for (auto clusterInfoNodeBootstrapActionListBootstrapAction : allBootstrapActionListNode)
 	{
 		ClusterInfo::BootstrapAction bootstrapActionObject;
-		if(!value["Name"].isNull())
-			bootstrapActionObject.name = value["Name"].asString();
-		if(!value["Path"].isNull())
-			bootstrapActionObject.path = value["Path"].asString();
-		if(!value["Arg"].isNull())
-			bootstrapActionObject.arg = value["Arg"].asString();
+		if(!clusterInfoNodeBootstrapActionListBootstrapAction["Name"].isNull())
+			bootstrapActionObject.name = clusterInfoNodeBootstrapActionListBootstrapAction["Name"].asString();
+		if(!clusterInfoNodeBootstrapActionListBootstrapAction["Path"].isNull())
+			bootstrapActionObject.path = clusterInfoNodeBootstrapActionListBootstrapAction["Path"].asString();
+		if(!clusterInfoNodeBootstrapActionListBootstrapAction["Arg"].isNull())
+			bootstrapActionObject.arg = clusterInfoNodeBootstrapActionListBootstrapAction["Arg"].asString();
 		clusterInfo_.bootstrapActionList.push_back(bootstrapActionObject);
 	}
 	auto relateClusterInfoNode = clusterInfoNode["RelateClusterInfo"];
@@ -182,31 +182,31 @@ void DescribeClusterBasicInfoResult::parse(const std::string &payload)
 		clusterInfo_.softwareInfo.emrVer = softwareInfoNode["EmrVer"].asString();
 	if(!softwareInfoNode["ClusterType"].isNull())
 		clusterInfo_.softwareInfo.clusterType = softwareInfoNode["ClusterType"].asString();
-	auto allSoftwares = value["Softwares"]["Software"];
-	for (auto value : allSoftwares)
+	auto allSoftwaresNode = softwareInfoNode["Softwares"]["Software"];
+	for (auto softwareInfoNodeSoftwaresSoftware : allSoftwaresNode)
 	{
 		ClusterInfo::SoftwareInfo::Software softwareObject;
-		if(!value["DisplayName"].isNull())
-			softwareObject.displayName = value["DisplayName"].asString();
-		if(!value["Name"].isNull())
-			softwareObject.name = value["Name"].asString();
-		if(!value["OnlyDisplay"].isNull())
-			softwareObject.onlyDisplay = value["OnlyDisplay"].asString() == "true";
-		if(!value["StartTpe"].isNull())
-			softwareObject.startTpe = std::stoi(value["StartTpe"].asString());
-		if(!value["Version"].isNull())
-			softwareObject.version = value["Version"].asString();
+		if(!softwareInfoNodeSoftwaresSoftware["DisplayName"].isNull())
+			softwareObject.displayName = softwareInfoNodeSoftwaresSoftware["DisplayName"].asString();
+		if(!softwareInfoNodeSoftwaresSoftware["Name"].isNull())
+			softwareObject.name = softwareInfoNodeSoftwaresSoftware["Name"].asString();
+		if(!softwareInfoNodeSoftwaresSoftware["OnlyDisplay"].isNull())
+			softwareObject.onlyDisplay = softwareInfoNodeSoftwaresSoftware["OnlyDisplay"].asString() == "true";
+		if(!softwareInfoNodeSoftwaresSoftware["StartTpe"].isNull())
+			softwareObject.startTpe = std::stoi(softwareInfoNodeSoftwaresSoftware["StartTpe"].asString());
+		if(!softwareInfoNodeSoftwaresSoftware["Version"].isNull())
+			softwareObject.version = softwareInfoNodeSoftwaresSoftware["Version"].asString();
 		clusterInfo_.softwareInfo.softwares.push_back(softwareObject);
 	}
 	auto accessInfoNode = clusterInfoNode["AccessInfo"];
-	auto allZKLinks = value["ZKLinks"]["ZKLink"];
-	for (auto value : allZKLinks)
+	auto allZKLinksNode = accessInfoNode["ZKLinks"]["ZKLink"];
+	for (auto accessInfoNodeZKLinksZKLink : allZKLinksNode)
 	{
 		ClusterInfo::AccessInfo::ZKLink zKLinkObject;
-		if(!value["Link"].isNull())
-			zKLinkObject.link = value["Link"].asString();
-		if(!value["Port"].isNull())
-			zKLinkObject.port = value["Port"].asString();
+		if(!accessInfoNodeZKLinksZKLink["Link"].isNull())
+			zKLinkObject.link = accessInfoNodeZKLinksZKLink["Link"].asString();
+		if(!accessInfoNodeZKLinksZKLink["Port"].isNull())
+			zKLinkObject.port = accessInfoNodeZKLinksZKLink["Port"].asString();
 		clusterInfo_.accessInfo.zKLinks.push_back(zKLinkObject);
 	}
 

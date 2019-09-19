@@ -39,24 +39,24 @@ void DescribeSecureSuggestionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSuggestions = value["Suggestions"]["Suggestion"];
-	for (auto value : allSuggestions)
+	auto allSuggestionsNode = value["Suggestions"]["Suggestion"];
+	for (auto valueSuggestionsSuggestion : allSuggestionsNode)
 	{
 		Suggestion suggestionsObject;
-		if(!value["SuggestType"].isNull())
-			suggestionsObject.suggestType = value["SuggestType"].asString();
-		if(!value["Points"].isNull())
-			suggestionsObject.points = std::stoi(value["Points"].asString());
-		auto allDetail = value["Detail"]["DetailItem"];
-		for (auto value : allDetail)
+		if(!valueSuggestionsSuggestion["SuggestType"].isNull())
+			suggestionsObject.suggestType = valueSuggestionsSuggestion["SuggestType"].asString();
+		if(!valueSuggestionsSuggestion["Points"].isNull())
+			suggestionsObject.points = std::stoi(valueSuggestionsSuggestion["Points"].asString());
+		auto allDetailNode = allSuggestionsNode["Detail"]["DetailItem"];
+		for (auto allSuggestionsNodeDetailDetailItem : allDetailNode)
 		{
 			Suggestion::DetailItem detailObject;
-			if(!value["Description"].isNull())
-				detailObject.description = value["Description"].asString();
-			if(!value["SubType"].isNull())
-				detailObject.subType = value["SubType"].asString();
-			if(!value["Title"].isNull())
-				detailObject.title = value["Title"].asString();
+			if(!allSuggestionsNodeDetailDetailItem["Description"].isNull())
+				detailObject.description = allSuggestionsNodeDetailDetailItem["Description"].asString();
+			if(!allSuggestionsNodeDetailDetailItem["SubType"].isNull())
+				detailObject.subType = allSuggestionsNodeDetailDetailItem["SubType"].asString();
+			if(!allSuggestionsNodeDetailDetailItem["Title"].isNull())
+				detailObject.title = allSuggestionsNodeDetailDetailItem["Title"].asString();
 			suggestionsObject.detail.push_back(detailObject);
 		}
 		suggestions_.push_back(suggestionsObject);

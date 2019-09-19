@@ -39,22 +39,22 @@ void DescribeRealTimeRecordListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCommunicationRecordInfos = value["CommunicationRecordInfos"]["CommunicationRecordInfo"];
-	for (auto value : allCommunicationRecordInfos)
+	auto allCommunicationRecordInfosNode = value["CommunicationRecordInfos"]["CommunicationRecordInfo"];
+	for (auto valueCommunicationRecordInfosCommunicationRecordInfo : allCommunicationRecordInfosNode)
 	{
 		CommunicationRecordInfo communicationRecordInfosObject;
-		if(!value["ChannelId"].isNull())
-			communicationRecordInfosObject.channelId = value["ChannelId"].asString();
-		if(!value["StartTime"].isNull())
-			communicationRecordInfosObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			communicationRecordInfosObject.endTime = value["EndTime"].asString();
-		if(!value["OnlineUserCnt"].isNull())
-			communicationRecordInfosObject.onlineUserCnt = std::stol(value["OnlineUserCnt"].asString());
-		if(!value["Status"].isNull())
-			communicationRecordInfosObject.status = value["Status"].asString() == "true";
-		if(!value["RecordId"].isNull())
-			communicationRecordInfosObject.recordId = value["RecordId"].asString();
+		if(!valueCommunicationRecordInfosCommunicationRecordInfo["ChannelId"].isNull())
+			communicationRecordInfosObject.channelId = valueCommunicationRecordInfosCommunicationRecordInfo["ChannelId"].asString();
+		if(!valueCommunicationRecordInfosCommunicationRecordInfo["StartTime"].isNull())
+			communicationRecordInfosObject.startTime = valueCommunicationRecordInfosCommunicationRecordInfo["StartTime"].asString();
+		if(!valueCommunicationRecordInfosCommunicationRecordInfo["EndTime"].isNull())
+			communicationRecordInfosObject.endTime = valueCommunicationRecordInfosCommunicationRecordInfo["EndTime"].asString();
+		if(!valueCommunicationRecordInfosCommunicationRecordInfo["OnlineUserCnt"].isNull())
+			communicationRecordInfosObject.onlineUserCnt = std::stol(valueCommunicationRecordInfosCommunicationRecordInfo["OnlineUserCnt"].asString());
+		if(!valueCommunicationRecordInfosCommunicationRecordInfo["Status"].isNull())
+			communicationRecordInfosObject.status = valueCommunicationRecordInfosCommunicationRecordInfo["Status"].asString() == "true";
+		if(!valueCommunicationRecordInfosCommunicationRecordInfo["RecordId"].isNull())
+			communicationRecordInfosObject.recordId = valueCommunicationRecordInfosCommunicationRecordInfo["RecordId"].asString();
 		auto allCallAreas = value["CallAreas"]["CallArea"];
 		for (auto value : allCallAreas)
 			communicationRecordInfosObject.callAreas.push_back(value.asString());

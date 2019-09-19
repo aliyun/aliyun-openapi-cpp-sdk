@@ -39,76 +39,76 @@ void DescribeApiDocResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allErrorCodeSamples = value["ErrorCodeSamples"]["ErrorCodeSample"];
-	for (auto value : allErrorCodeSamples)
+	auto allErrorCodeSamplesNode = value["ErrorCodeSamples"]["ErrorCodeSample"];
+	for (auto valueErrorCodeSamplesErrorCodeSample : allErrorCodeSamplesNode)
 	{
 		ErrorCodeSample errorCodeSamplesObject;
-		if(!value["Code"].isNull())
-			errorCodeSamplesObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			errorCodeSamplesObject.message = value["Message"].asString();
-		if(!value["Description"].isNull())
-			errorCodeSamplesObject.description = value["Description"].asString();
+		if(!valueErrorCodeSamplesErrorCodeSample["Code"].isNull())
+			errorCodeSamplesObject.code = valueErrorCodeSamplesErrorCodeSample["Code"].asString();
+		if(!valueErrorCodeSamplesErrorCodeSample["Message"].isNull())
+			errorCodeSamplesObject.message = valueErrorCodeSamplesErrorCodeSample["Message"].asString();
+		if(!valueErrorCodeSamplesErrorCodeSample["Description"].isNull())
+			errorCodeSamplesObject.description = valueErrorCodeSamplesErrorCodeSample["Description"].asString();
 		errorCodeSamples_.push_back(errorCodeSamplesObject);
 	}
-	auto allResultDescriptions = value["ResultDescriptions"]["ResultDescription"];
-	for (auto value : allResultDescriptions)
+	auto allResultDescriptionsNode = value["ResultDescriptions"]["ResultDescription"];
+	for (auto valueResultDescriptionsResultDescription : allResultDescriptionsNode)
 	{
 		ResultDescription resultDescriptionsObject;
-		if(!value["Id"].isNull())
-			resultDescriptionsObject.id = value["Id"].asString();
-		if(!value["Pid"].isNull())
-			resultDescriptionsObject.pid = value["Pid"].asString();
-		if(!value["HasChild"].isNull())
-			resultDescriptionsObject.hasChild = value["HasChild"].asString() == "true";
-		if(!value["Key"].isNull())
-			resultDescriptionsObject.key = value["Key"].asString();
-		if(!value["Name"].isNull())
-			resultDescriptionsObject.name = value["Name"].asString();
-		if(!value["Mandatory"].isNull())
-			resultDescriptionsObject.mandatory = value["Mandatory"].asString() == "true";
-		if(!value["Type"].isNull())
-			resultDescriptionsObject.type = value["Type"].asString();
-		if(!value["Description"].isNull())
-			resultDescriptionsObject.description = value["Description"].asString();
+		if(!valueResultDescriptionsResultDescription["Id"].isNull())
+			resultDescriptionsObject.id = valueResultDescriptionsResultDescription["Id"].asString();
+		if(!valueResultDescriptionsResultDescription["Pid"].isNull())
+			resultDescriptionsObject.pid = valueResultDescriptionsResultDescription["Pid"].asString();
+		if(!valueResultDescriptionsResultDescription["HasChild"].isNull())
+			resultDescriptionsObject.hasChild = valueResultDescriptionsResultDescription["HasChild"].asString() == "true";
+		if(!valueResultDescriptionsResultDescription["Key"].isNull())
+			resultDescriptionsObject.key = valueResultDescriptionsResultDescription["Key"].asString();
+		if(!valueResultDescriptionsResultDescription["Name"].isNull())
+			resultDescriptionsObject.name = valueResultDescriptionsResultDescription["Name"].asString();
+		if(!valueResultDescriptionsResultDescription["Mandatory"].isNull())
+			resultDescriptionsObject.mandatory = valueResultDescriptionsResultDescription["Mandatory"].asString() == "true";
+		if(!valueResultDescriptionsResultDescription["Type"].isNull())
+			resultDescriptionsObject.type = valueResultDescriptionsResultDescription["Type"].asString();
+		if(!valueResultDescriptionsResultDescription["Description"].isNull())
+			resultDescriptionsObject.description = valueResultDescriptionsResultDescription["Description"].asString();
 		resultDescriptions_.push_back(resultDescriptionsObject);
 	}
-	auto allRequestParameters = value["RequestParameters"]["RequestParameter"];
-	for (auto value : allRequestParameters)
+	auto allRequestParametersNode = value["RequestParameters"]["RequestParameter"];
+	for (auto valueRequestParametersRequestParameter : allRequestParametersNode)
 	{
 		RequestParameter requestParametersObject;
-		if(!value["ApiParameterName"].isNull())
-			requestParametersObject.apiParameterName = value["ApiParameterName"].asString();
-		if(!value["Location"].isNull())
-			requestParametersObject.location = value["Location"].asString();
-		if(!value["ParameterType"].isNull())
-			requestParametersObject.parameterType = value["ParameterType"].asString();
-		if(!value["Required"].isNull())
-			requestParametersObject.required = value["Required"].asString();
-		if(!value["DefaultValue"].isNull())
-			requestParametersObject.defaultValue = value["DefaultValue"].asString();
-		if(!value["DemoValue"].isNull())
-			requestParametersObject.demoValue = value["DemoValue"].asString();
-		if(!value["MaxValue"].isNull())
-			requestParametersObject.maxValue = std::stol(value["MaxValue"].asString());
-		if(!value["MinValue"].isNull())
-			requestParametersObject.minValue = std::stol(value["MinValue"].asString());
-		if(!value["MaxLength"].isNull())
-			requestParametersObject.maxLength = std::stol(value["MaxLength"].asString());
-		if(!value["MinLength"].isNull())
-			requestParametersObject.minLength = std::stol(value["MinLength"].asString());
-		if(!value["RegularExpression"].isNull())
-			requestParametersObject.regularExpression = value["RegularExpression"].asString();
-		if(!value["JsonScheme"].isNull())
-			requestParametersObject.jsonScheme = value["JsonScheme"].asString();
-		if(!value["EnumValue"].isNull())
-			requestParametersObject.enumValue = value["EnumValue"].asString();
-		if(!value["DocShow"].isNull())
-			requestParametersObject.docShow = value["DocShow"].asString();
-		if(!value["DocOrder"].isNull())
-			requestParametersObject.docOrder = std::stoi(value["DocOrder"].asString());
-		if(!value["Description"].isNull())
-			requestParametersObject.description = value["Description"].asString();
+		if(!valueRequestParametersRequestParameter["ApiParameterName"].isNull())
+			requestParametersObject.apiParameterName = valueRequestParametersRequestParameter["ApiParameterName"].asString();
+		if(!valueRequestParametersRequestParameter["Location"].isNull())
+			requestParametersObject.location = valueRequestParametersRequestParameter["Location"].asString();
+		if(!valueRequestParametersRequestParameter["ParameterType"].isNull())
+			requestParametersObject.parameterType = valueRequestParametersRequestParameter["ParameterType"].asString();
+		if(!valueRequestParametersRequestParameter["Required"].isNull())
+			requestParametersObject.required = valueRequestParametersRequestParameter["Required"].asString();
+		if(!valueRequestParametersRequestParameter["DefaultValue"].isNull())
+			requestParametersObject.defaultValue = valueRequestParametersRequestParameter["DefaultValue"].asString();
+		if(!valueRequestParametersRequestParameter["DemoValue"].isNull())
+			requestParametersObject.demoValue = valueRequestParametersRequestParameter["DemoValue"].asString();
+		if(!valueRequestParametersRequestParameter["MaxValue"].isNull())
+			requestParametersObject.maxValue = std::stol(valueRequestParametersRequestParameter["MaxValue"].asString());
+		if(!valueRequestParametersRequestParameter["MinValue"].isNull())
+			requestParametersObject.minValue = std::stol(valueRequestParametersRequestParameter["MinValue"].asString());
+		if(!valueRequestParametersRequestParameter["MaxLength"].isNull())
+			requestParametersObject.maxLength = std::stol(valueRequestParametersRequestParameter["MaxLength"].asString());
+		if(!valueRequestParametersRequestParameter["MinLength"].isNull())
+			requestParametersObject.minLength = std::stol(valueRequestParametersRequestParameter["MinLength"].asString());
+		if(!valueRequestParametersRequestParameter["RegularExpression"].isNull())
+			requestParametersObject.regularExpression = valueRequestParametersRequestParameter["RegularExpression"].asString();
+		if(!valueRequestParametersRequestParameter["JsonScheme"].isNull())
+			requestParametersObject.jsonScheme = valueRequestParametersRequestParameter["JsonScheme"].asString();
+		if(!valueRequestParametersRequestParameter["EnumValue"].isNull())
+			requestParametersObject.enumValue = valueRequestParametersRequestParameter["EnumValue"].asString();
+		if(!valueRequestParametersRequestParameter["DocShow"].isNull())
+			requestParametersObject.docShow = valueRequestParametersRequestParameter["DocShow"].asString();
+		if(!valueRequestParametersRequestParameter["DocOrder"].isNull())
+			requestParametersObject.docOrder = std::stoi(valueRequestParametersRequestParameter["DocOrder"].asString());
+		if(!valueRequestParametersRequestParameter["Description"].isNull())
+			requestParametersObject.description = valueRequestParametersRequestParameter["Description"].asString();
 		requestParameters_.push_back(requestParametersObject);
 	}
 	auto requestConfigNode = value["RequestConfig"];

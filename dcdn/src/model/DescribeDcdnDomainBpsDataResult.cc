@@ -39,22 +39,22 @@ void DescribeDcdnDomainBpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBpsDataPerInterval = value["BpsDataPerInterval"]["DataModule"];
-	for (auto value : allBpsDataPerInterval)
+	auto allBpsDataPerIntervalNode = value["BpsDataPerInterval"]["DataModule"];
+	for (auto valueBpsDataPerIntervalDataModule : allBpsDataPerIntervalNode)
 	{
 		DataModule bpsDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			bpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Bps"].isNull())
-			bpsDataPerIntervalObject.bps = std::stof(value["Bps"].asString());
-		if(!value["DynamicHttpBps"].isNull())
-			bpsDataPerIntervalObject.dynamicHttpBps = std::stof(value["DynamicHttpBps"].asString());
-		if(!value["DynamicHttpsBps"].isNull())
-			bpsDataPerIntervalObject.dynamicHttpsBps = std::stof(value["DynamicHttpsBps"].asString());
-		if(!value["StaticHttpBps"].isNull())
-			bpsDataPerIntervalObject.staticHttpBps = std::stof(value["StaticHttpBps"].asString());
-		if(!value["StaticHttpsBps"].isNull())
-			bpsDataPerIntervalObject.staticHttpsBps = std::stof(value["StaticHttpsBps"].asString());
+		if(!valueBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			bpsDataPerIntervalObject.timeStamp = valueBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueBpsDataPerIntervalDataModule["Bps"].isNull())
+			bpsDataPerIntervalObject.bps = std::stof(valueBpsDataPerIntervalDataModule["Bps"].asString());
+		if(!valueBpsDataPerIntervalDataModule["DynamicHttpBps"].isNull())
+			bpsDataPerIntervalObject.dynamicHttpBps = std::stof(valueBpsDataPerIntervalDataModule["DynamicHttpBps"].asString());
+		if(!valueBpsDataPerIntervalDataModule["DynamicHttpsBps"].isNull())
+			bpsDataPerIntervalObject.dynamicHttpsBps = std::stof(valueBpsDataPerIntervalDataModule["DynamicHttpsBps"].asString());
+		if(!valueBpsDataPerIntervalDataModule["StaticHttpBps"].isNull())
+			bpsDataPerIntervalObject.staticHttpBps = std::stof(valueBpsDataPerIntervalDataModule["StaticHttpBps"].asString());
+		if(!valueBpsDataPerIntervalDataModule["StaticHttpsBps"].isNull())
+			bpsDataPerIntervalObject.staticHttpsBps = std::stof(valueBpsDataPerIntervalDataModule["StaticHttpsBps"].asString());
 		bpsDataPerInterval_.push_back(bpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

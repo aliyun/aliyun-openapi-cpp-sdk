@@ -39,30 +39,30 @@ void GetSmsConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSmsConfigs = value["SmsConfigs"]["SmsConfig"];
-	for (auto value : allSmsConfigs)
+	auto allSmsConfigsNode = value["SmsConfigs"]["SmsConfig"];
+	for (auto valueSmsConfigsSmsConfig : allSmsConfigsNode)
 	{
 		SmsConfig smsConfigsObject;
-		if(!value["Id"].isNull())
-			smsConfigsObject.id = std::stol(value["Id"].asString());
-		if(!value["Instance"].isNull())
-			smsConfigsObject.instance = value["Instance"].asString();
-		if(!value["SignName"].isNull())
-			smsConfigsObject.signName = value["SignName"].asString();
-		if(!value["TemplateCode"].isNull())
-			smsConfigsObject.templateCode = value["TemplateCode"].asString();
-		if(!value["Scenario"].isNull())
-			smsConfigsObject.scenario = std::stoi(value["Scenario"].asString());
-		if(!value["Name"].isNull())
-			smsConfigsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			smsConfigsObject.description = value["Description"].asString();
-		if(!value["Extra"].isNull())
-			smsConfigsObject.extra = value["Extra"].asString();
-		if(!value["GmtCreate"].isNull())
-			smsConfigsObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			smsConfigsObject.gmtModified = value["GmtModified"].asString();
+		if(!valueSmsConfigsSmsConfig["Id"].isNull())
+			smsConfigsObject.id = std::stol(valueSmsConfigsSmsConfig["Id"].asString());
+		if(!valueSmsConfigsSmsConfig["Instance"].isNull())
+			smsConfigsObject.instance = valueSmsConfigsSmsConfig["Instance"].asString();
+		if(!valueSmsConfigsSmsConfig["SignName"].isNull())
+			smsConfigsObject.signName = valueSmsConfigsSmsConfig["SignName"].asString();
+		if(!valueSmsConfigsSmsConfig["TemplateCode"].isNull())
+			smsConfigsObject.templateCode = valueSmsConfigsSmsConfig["TemplateCode"].asString();
+		if(!valueSmsConfigsSmsConfig["Scenario"].isNull())
+			smsConfigsObject.scenario = std::stoi(valueSmsConfigsSmsConfig["Scenario"].asString());
+		if(!valueSmsConfigsSmsConfig["Name"].isNull())
+			smsConfigsObject.name = valueSmsConfigsSmsConfig["Name"].asString();
+		if(!valueSmsConfigsSmsConfig["Description"].isNull())
+			smsConfigsObject.description = valueSmsConfigsSmsConfig["Description"].asString();
+		if(!valueSmsConfigsSmsConfig["Extra"].isNull())
+			smsConfigsObject.extra = valueSmsConfigsSmsConfig["Extra"].asString();
+		if(!valueSmsConfigsSmsConfig["GmtCreate"].isNull())
+			smsConfigsObject.gmtCreate = valueSmsConfigsSmsConfig["GmtCreate"].asString();
+		if(!valueSmsConfigsSmsConfig["GmtModified"].isNull())
+			smsConfigsObject.gmtModified = valueSmsConfigsSmsConfig["GmtModified"].asString();
 		smsConfigs_.push_back(smsConfigsObject);
 	}
 	if(!value["Success"].isNull())

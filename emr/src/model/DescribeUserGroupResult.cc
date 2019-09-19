@@ -39,22 +39,22 @@ void DescribeUserGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRoleDTOList = value["RoleDTOList"]["RoleDTO"];
-	for (auto value : allRoleDTOList)
+	auto allRoleDTOListNode = value["RoleDTOList"]["RoleDTO"];
+	for (auto valueRoleDTOListRoleDTO : allRoleDTOListNode)
 	{
 		RoleDTO roleDTOListObject;
-		if(!value["Id"].isNull())
-			roleDTOListObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			roleDTOListObject.name = value["Name"].asString();
-		if(!value["ResourceType"].isNull())
-			roleDTOListObject.resourceType = value["ResourceType"].asString();
-		if(!value["GmtCreate"].isNull())
-			roleDTOListObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			roleDTOListObject.gmtModified = value["GmtModified"].asString();
-		if(!value["Description"].isNull())
-			roleDTOListObject.description = value["Description"].asString();
+		if(!valueRoleDTOListRoleDTO["Id"].isNull())
+			roleDTOListObject.id = std::stol(valueRoleDTOListRoleDTO["Id"].asString());
+		if(!valueRoleDTOListRoleDTO["Name"].isNull())
+			roleDTOListObject.name = valueRoleDTOListRoleDTO["Name"].asString();
+		if(!valueRoleDTOListRoleDTO["ResourceType"].isNull())
+			roleDTOListObject.resourceType = valueRoleDTOListRoleDTO["ResourceType"].asString();
+		if(!valueRoleDTOListRoleDTO["GmtCreate"].isNull())
+			roleDTOListObject.gmtCreate = valueRoleDTOListRoleDTO["GmtCreate"].asString();
+		if(!valueRoleDTOListRoleDTO["GmtModified"].isNull())
+			roleDTOListObject.gmtModified = valueRoleDTOListRoleDTO["GmtModified"].asString();
+		if(!valueRoleDTOListRoleDTO["Description"].isNull())
+			roleDTOListObject.description = valueRoleDTOListRoleDTO["Description"].asString();
 		roleDTOList_.push_back(roleDTOListObject);
 	}
 	if(!value["Paging"].isNull())

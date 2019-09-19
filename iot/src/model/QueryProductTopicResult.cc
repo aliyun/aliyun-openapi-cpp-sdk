@@ -39,20 +39,20 @@ void QueryProductTopicResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["ProductTopicInfo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["ProductTopicInfo"];
+	for (auto valueDataProductTopicInfo : allDataNode)
 	{
 		ProductTopicInfo dataObject;
-		if(!value["ProductKey"].isNull())
-			dataObject.productKey = value["ProductKey"].asString();
-		if(!value["TopicShortName"].isNull())
-			dataObject.topicShortName = value["TopicShortName"].asString();
-		if(!value["Operation"].isNull())
-			dataObject.operation = value["Operation"].asString();
-		if(!value["Desc"].isNull())
-			dataObject.desc = value["Desc"].asString();
-		if(!value["Id"].isNull())
-			dataObject.id = value["Id"].asString();
+		if(!valueDataProductTopicInfo["ProductKey"].isNull())
+			dataObject.productKey = valueDataProductTopicInfo["ProductKey"].asString();
+		if(!valueDataProductTopicInfo["TopicShortName"].isNull())
+			dataObject.topicShortName = valueDataProductTopicInfo["TopicShortName"].asString();
+		if(!valueDataProductTopicInfo["Operation"].isNull())
+			dataObject.operation = valueDataProductTopicInfo["Operation"].asString();
+		if(!valueDataProductTopicInfo["Desc"].isNull())
+			dataObject.desc = valueDataProductTopicInfo["Desc"].asString();
+		if(!valueDataProductTopicInfo["Id"].isNull())
+			dataObject.id = valueDataProductTopicInfo["Id"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

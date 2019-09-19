@@ -39,20 +39,20 @@ void DescribeSmartAccessGatewayClientUsersResult::parse(const std::string &paylo
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUsers = value["Users"]["User"];
-	for (auto value : allUsers)
+	auto allUsersNode = value["Users"]["User"];
+	for (auto valueUsersUser : allUsersNode)
 	{
 		User usersObject;
-		if(!value["ClientIp"].isNull())
-			usersObject.clientIp = value["ClientIp"].asString();
-		if(!value["UserMail"].isNull())
-			usersObject.userMail = value["UserMail"].asString();
-		if(!value["UserName"].isNull())
-			usersObject.userName = value["UserName"].asString();
-		if(!value["Bandwidth"].isNull())
-			usersObject.bandwidth = std::stoi(value["Bandwidth"].asString());
-		if(!value["State"].isNull())
-			usersObject.state = std::stoi(value["State"].asString());
+		if(!valueUsersUser["ClientIp"].isNull())
+			usersObject.clientIp = valueUsersUser["ClientIp"].asString();
+		if(!valueUsersUser["UserMail"].isNull())
+			usersObject.userMail = valueUsersUser["UserMail"].asString();
+		if(!valueUsersUser["UserName"].isNull())
+			usersObject.userName = valueUsersUser["UserName"].asString();
+		if(!valueUsersUser["Bandwidth"].isNull())
+			usersObject.bandwidth = std::stoi(valueUsersUser["Bandwidth"].asString());
+		if(!valueUsersUser["State"].isNull())
+			usersObject.state = std::stoi(valueUsersUser["State"].asString());
 		users_.push_back(usersObject);
 	}
 	if(!value["TotalCount"].isNull())

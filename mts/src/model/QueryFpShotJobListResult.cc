@@ -39,28 +39,28 @@ void QueryFpShotJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFpShotJobList = value["FpShotJobList"]["FpShotJob"];
-	for (auto value : allFpShotJobList)
+	auto allFpShotJobListNode = value["FpShotJobList"]["FpShotJob"];
+	for (auto valueFpShotJobListFpShotJob : allFpShotJobListNode)
 	{
 		FpShotJob fpShotJobListObject;
-		if(!value["Id"].isNull())
-			fpShotJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			fpShotJobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			fpShotJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["FileId"].isNull())
-			fpShotJobListObject.fileId = value["FileId"].asString();
-		if(!value["State"].isNull())
-			fpShotJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			fpShotJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			fpShotJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			fpShotJobListObject.creationTime = value["CreationTime"].asString();
-		if(!value["FinishTime"].isNull())
-			fpShotJobListObject.finishTime = value["FinishTime"].asString();
+		if(!valueFpShotJobListFpShotJob["Id"].isNull())
+			fpShotJobListObject.id = valueFpShotJobListFpShotJob["Id"].asString();
+		if(!valueFpShotJobListFpShotJob["UserData"].isNull())
+			fpShotJobListObject.userData = valueFpShotJobListFpShotJob["UserData"].asString();
+		if(!valueFpShotJobListFpShotJob["PipelineId"].isNull())
+			fpShotJobListObject.pipelineId = valueFpShotJobListFpShotJob["PipelineId"].asString();
+		if(!valueFpShotJobListFpShotJob["FileId"].isNull())
+			fpShotJobListObject.fileId = valueFpShotJobListFpShotJob["FileId"].asString();
+		if(!valueFpShotJobListFpShotJob["State"].isNull())
+			fpShotJobListObject.state = valueFpShotJobListFpShotJob["State"].asString();
+		if(!valueFpShotJobListFpShotJob["Code"].isNull())
+			fpShotJobListObject.code = valueFpShotJobListFpShotJob["Code"].asString();
+		if(!valueFpShotJobListFpShotJob["Message"].isNull())
+			fpShotJobListObject.message = valueFpShotJobListFpShotJob["Message"].asString();
+		if(!valueFpShotJobListFpShotJob["CreationTime"].isNull())
+			fpShotJobListObject.creationTime = valueFpShotJobListFpShotJob["CreationTime"].asString();
+		if(!valueFpShotJobListFpShotJob["FinishTime"].isNull())
+			fpShotJobListObject.finishTime = valueFpShotJobListFpShotJob["FinishTime"].asString();
 		auto inputFileNode = value["InputFile"];
 		if(!inputFileNode["Bucket"].isNull())
 			fpShotJobListObject.inputFile.bucket = inputFileNode["Bucket"].asString();
@@ -74,16 +74,16 @@ void QueryFpShotJobListResult::parse(const std::string &payload)
 		if(!fpShotConfigNode["SaveType"].isNull())
 			fpShotJobListObject.fpShotConfig.saveType = fpShotConfigNode["SaveType"].asString();
 		auto fpShotResultNode = value["FpShotResult"];
-		auto allFpShots = value["FpShots"]["FpShot"];
-		for (auto value : allFpShots)
+		auto allFpShotsNode = fpShotResultNode["FpShots"]["FpShot"];
+		for (auto fpShotResultNodeFpShotsFpShot : allFpShotsNode)
 		{
 			FpShotJob::FpShotResult::FpShot fpShotObject;
-			if(!value["PrimaryKey"].isNull())
-				fpShotObject.primaryKey = value["PrimaryKey"].asString();
-			if(!value["Similarity"].isNull())
-				fpShotObject.similarity = value["Similarity"].asString();
-			auto allFpShotSlices = value["FpShotSlices"]["FpShotSlice"];
-			for (auto value : allFpShotSlices)
+			if(!fpShotResultNodeFpShotsFpShot["PrimaryKey"].isNull())
+				fpShotObject.primaryKey = fpShotResultNodeFpShotsFpShot["PrimaryKey"].asString();
+			if(!fpShotResultNodeFpShotsFpShot["Similarity"].isNull())
+				fpShotObject.similarity = fpShotResultNodeFpShotsFpShot["Similarity"].asString();
+			auto allFpShotSlicesNode = allFpShotsNode["FpShotSlices"]["FpShotSlice"];
+			for (auto allFpShotsNodeFpShotSlicesFpShotSlice : allFpShotSlicesNode)
 			{
 				FpShotJob::FpShotResult::FpShot::FpShotSlice fpShotSlicesObject;
 				auto inputNode = value["Input"];
@@ -100,16 +100,16 @@ void QueryFpShotJobListResult::parse(const std::string &payload)
 			}
 			fpShotJobListObject.fpShotResult.fpShots.push_back(fpShotObject);
 		}
-		auto allAudioFpShots = value["AudioFpShots"]["FpShot"];
-		for (auto value : allAudioFpShots)
+		auto allAudioFpShotsNode = fpShotResultNode["AudioFpShots"]["FpShot"];
+		for (auto fpShotResultNodeAudioFpShotsFpShot : allAudioFpShotsNode)
 		{
 			FpShotJob::FpShotResult::FpShot fpShotObject;
-			if(!value["PrimaryKey"].isNull())
-				fpShotObject.primaryKey = value["PrimaryKey"].asString();
-			if(!value["Similarity"].isNull())
-				fpShotObject.similarity = value["Similarity"].asString();
-			auto allFpShotSlices = value["FpShotSlices"]["FpShotSlice"];
-			for (auto value : allFpShotSlices)
+			if(!fpShotResultNodeAudioFpShotsFpShot["PrimaryKey"].isNull())
+				fpShotObject.primaryKey = fpShotResultNodeAudioFpShotsFpShot["PrimaryKey"].asString();
+			if(!fpShotResultNodeAudioFpShotsFpShot["Similarity"].isNull())
+				fpShotObject.similarity = fpShotResultNodeAudioFpShotsFpShot["Similarity"].asString();
+			auto allFpShotSlicesNode = allAudioFpShotsNode["FpShotSlices"]["FpShotSlice"];
+			for (auto allAudioFpShotsNodeFpShotSlicesFpShotSlice : allFpShotSlicesNode)
 			{
 				FpShotJob::FpShotResult::FpShot::FpShotSlice fpShotSlicesObject;
 				auto inputNode = value["Input"];

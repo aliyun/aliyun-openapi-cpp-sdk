@@ -39,16 +39,16 @@ void DescribeCustomizeReportChartListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allChartList = value["ChartList"]["chart"];
-	for (auto value : allChartList)
+	auto allChartListNode = value["ChartList"]["chart"];
+	for (auto valueChartListchart : allChartListNode)
 	{
 		Chart chartListObject;
-		if(!value["ChartId"].isNull())
-			chartListObject.chartId = value["ChartId"].asString();
-		if(!value["ChartName"].isNull())
-			chartListObject.chartName = value["ChartName"].asString();
-		if(!value["Area"].isNull())
-			chartListObject.area = value["Area"].asString();
+		if(!valueChartListchart["ChartId"].isNull())
+			chartListObject.chartId = valueChartListchart["ChartId"].asString();
+		if(!valueChartListchart["ChartName"].isNull())
+			chartListObject.chartName = valueChartListchart["ChartName"].asString();
+		if(!valueChartListchart["Area"].isNull())
+			chartListObject.area = valueChartListchart["Area"].asString();
 		chartList_.push_back(chartListObject);
 	}
 

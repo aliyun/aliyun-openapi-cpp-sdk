@@ -39,16 +39,16 @@ void MuteAudioAllResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allParticipants = value["Participants"]["Participant"];
-	for (auto value : allParticipants)
+	auto allParticipantsNode = value["Participants"]["Participant"];
+	for (auto valueParticipantsParticipant : allParticipantsNode)
 	{
 		Participant participantsObject;
-		if(!value["Id"].isNull())
-			participantsObject.id = value["Id"].asString();
-		if(!value["Code"].isNull())
-			participantsObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			participantsObject.message = value["Message"].asString();
+		if(!valueParticipantsParticipant["Id"].isNull())
+			participantsObject.id = valueParticipantsParticipant["Id"].asString();
+		if(!valueParticipantsParticipant["Code"].isNull())
+			participantsObject.code = valueParticipantsParticipant["Code"].asString();
+		if(!valueParticipantsParticipant["Message"].isNull())
+			participantsObject.message = valueParticipantsParticipant["Message"].asString();
 		participants_.push_back(participantsObject);
 	}
 	if(!value["ConferenceId"].isNull())

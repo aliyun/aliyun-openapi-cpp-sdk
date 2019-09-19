@@ -44,8 +44,8 @@ void DetectFaceAttributesResult::parse(const std::string &payload)
 		data_.imgWidth = std::stoi(dataNode["ImgWidth"].asString());
 	if(!dataNode["ImgHeight"].isNull())
 		data_.imgHeight = std::stoi(dataNode["ImgHeight"].asString());
-	auto allFaceInfos = value["FaceInfos"]["FaceAttributesDetectInfo"];
-	for (auto value : allFaceInfos)
+	auto allFaceInfosNode = dataNode["FaceInfos"]["FaceAttributesDetectInfo"];
+	for (auto dataNodeFaceInfosFaceAttributesDetectInfo : allFaceInfosNode)
 	{
 		Data::FaceAttributesDetectInfo faceAttributesDetectInfoObject;
 		auto faceRectNode = value["FaceRect"];

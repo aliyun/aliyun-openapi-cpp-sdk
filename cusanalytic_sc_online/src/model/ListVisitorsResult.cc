@@ -39,32 +39,32 @@ void ListVisitorsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVisitorItems = value["VisitorItems"]["VisitorItem"];
-	for (auto value : allVisitorItems)
+	auto allVisitorItemsNode = value["VisitorItems"]["VisitorItem"];
+	for (auto valueVisitorItemsVisitorItem : allVisitorItemsNode)
 	{
 		VisitorItem visitorItemsObject;
-		if(!value["Img"].isNull())
-			visitorItemsObject.img = value["Img"].asString();
-		if(!value["PkId"].isNull())
-			visitorItemsObject.pkId = value["PkId"].asString();
-		if(!value["LatelyTime"].isNull())
-			visitorItemsObject.latelyTime = std::stol(value["LatelyTime"].asString());
-		if(!value["EarliestPlace"].isNull())
-			visitorItemsObject.earliestPlace = value["EarliestPlace"].asString();
-		if(!value["UkId"].isNull())
-			visitorItemsObject.ukId = value["UkId"].asString();
-		if(!value["Gender"].isNull())
-			visitorItemsObject.gender = value["Gender"].asString();
-		if(!value["EarliestTime"].isNull())
-			visitorItemsObject.earliestTime = std::stol(value["EarliestTime"].asString());
-		if(!value["LatelyPlace"].isNull())
-			visitorItemsObject.latelyPlace = value["LatelyPlace"].asString();
-		if(!value["Age"].isNull())
-			visitorItemsObject.age = std::stol(value["Age"].asString());
-		if(!value["StoreId"].isNull())
-			visitorItemsObject.storeId = std::stol(value["StoreId"].asString());
-		if(!value["EnterCount"].isNull())
-			visitorItemsObject.enterCount = std::stol(value["EnterCount"].asString());
+		if(!valueVisitorItemsVisitorItem["Img"].isNull())
+			visitorItemsObject.img = valueVisitorItemsVisitorItem["Img"].asString();
+		if(!valueVisitorItemsVisitorItem["PkId"].isNull())
+			visitorItemsObject.pkId = valueVisitorItemsVisitorItem["PkId"].asString();
+		if(!valueVisitorItemsVisitorItem["LatelyTime"].isNull())
+			visitorItemsObject.latelyTime = std::stol(valueVisitorItemsVisitorItem["LatelyTime"].asString());
+		if(!valueVisitorItemsVisitorItem["EarliestPlace"].isNull())
+			visitorItemsObject.earliestPlace = valueVisitorItemsVisitorItem["EarliestPlace"].asString();
+		if(!valueVisitorItemsVisitorItem["UkId"].isNull())
+			visitorItemsObject.ukId = valueVisitorItemsVisitorItem["UkId"].asString();
+		if(!valueVisitorItemsVisitorItem["Gender"].isNull())
+			visitorItemsObject.gender = valueVisitorItemsVisitorItem["Gender"].asString();
+		if(!valueVisitorItemsVisitorItem["EarliestTime"].isNull())
+			visitorItemsObject.earliestTime = std::stol(valueVisitorItemsVisitorItem["EarliestTime"].asString());
+		if(!valueVisitorItemsVisitorItem["LatelyPlace"].isNull())
+			visitorItemsObject.latelyPlace = valueVisitorItemsVisitorItem["LatelyPlace"].asString();
+		if(!valueVisitorItemsVisitorItem["Age"].isNull())
+			visitorItemsObject.age = std::stol(valueVisitorItemsVisitorItem["Age"].asString());
+		if(!valueVisitorItemsVisitorItem["StoreId"].isNull())
+			visitorItemsObject.storeId = std::stol(valueVisitorItemsVisitorItem["StoreId"].asString());
+		if(!valueVisitorItemsVisitorItem["EnterCount"].isNull())
+			visitorItemsObject.enterCount = std::stol(valueVisitorItemsVisitorItem["EnterCount"].asString());
 		visitorItems_.push_back(visitorItemsObject);
 	}
 	if(!value["Total"].isNull())

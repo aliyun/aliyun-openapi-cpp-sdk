@@ -110,66 +110,66 @@ void DescribeClusterTemplateResult::parse(const std::string &payload)
 		templateInfo_.metaStoreType = templateInfoNode["MetaStoreType"].asString();
 	if(!templateInfoNode["MetaStoreConf"].isNull())
 		templateInfo_.metaStoreConf = templateInfoNode["MetaStoreConf"].asString();
-	auto allBootstrapActionList = value["BootstrapActionList"]["BootstrapAction"];
-	for (auto value : allBootstrapActionList)
+	auto allBootstrapActionListNode = templateInfoNode["BootstrapActionList"]["BootstrapAction"];
+	for (auto templateInfoNodeBootstrapActionListBootstrapAction : allBootstrapActionListNode)
 	{
 		TemplateInfo::BootstrapAction bootstrapActionObject;
-		if(!value["Name"].isNull())
-			bootstrapActionObject.name = value["Name"].asString();
-		if(!value["Path"].isNull())
-			bootstrapActionObject.path = value["Path"].asString();
-		if(!value["Arg"].isNull())
-			bootstrapActionObject.arg = value["Arg"].asString();
+		if(!templateInfoNodeBootstrapActionListBootstrapAction["Name"].isNull())
+			bootstrapActionObject.name = templateInfoNodeBootstrapActionListBootstrapAction["Name"].asString();
+		if(!templateInfoNodeBootstrapActionListBootstrapAction["Path"].isNull())
+			bootstrapActionObject.path = templateInfoNodeBootstrapActionListBootstrapAction["Path"].asString();
+		if(!templateInfoNodeBootstrapActionListBootstrapAction["Arg"].isNull())
+			bootstrapActionObject.arg = templateInfoNodeBootstrapActionListBootstrapAction["Arg"].asString();
 		templateInfo_.bootstrapActionList.push_back(bootstrapActionObject);
 	}
-	auto allHostGroupList = value["HostGroupList"]["HostGroup"];
-	for (auto value : allHostGroupList)
+	auto allHostGroupListNode = templateInfoNode["HostGroupList"]["HostGroup"];
+	for (auto templateInfoNodeHostGroupListHostGroup : allHostGroupListNode)
 	{
 		TemplateInfo::HostGroup hostGroupObject;
-		if(!value["HostGroupId"].isNull())
-			hostGroupObject.hostGroupId = value["HostGroupId"].asString();
-		if(!value["HostGroupName"].isNull())
-			hostGroupObject.hostGroupName = value["HostGroupName"].asString();
-		if(!value["HostGroupType"].isNull())
-			hostGroupObject.hostGroupType = value["HostGroupType"].asString();
-		if(!value["ChargeType"].isNull())
-			hostGroupObject.chargeType = value["ChargeType"].asString();
-		if(!value["Period"].isNull())
-			hostGroupObject.period = value["Period"].asString();
-		if(!value["NodeCount"].isNull())
-			hostGroupObject.nodeCount = std::stoi(value["NodeCount"].asString());
-		if(!value["InstanceType"].isNull())
-			hostGroupObject.instanceType = value["InstanceType"].asString();
-		if(!value["DiskType"].isNull())
-			hostGroupObject.diskType = value["DiskType"].asString();
-		if(!value["DiskCapacity"].isNull())
-			hostGroupObject.diskCapacity = std::stoi(value["DiskCapacity"].asString());
-		if(!value["DiskCount"].isNull())
-			hostGroupObject.diskCount = std::stoi(value["DiskCount"].asString());
-		if(!value["SysDiskType"].isNull())
-			hostGroupObject.sysDiskType = value["SysDiskType"].asString();
-		if(!value["SysDiskCapacity"].isNull())
-			hostGroupObject.sysDiskCapacity = std::stoi(value["SysDiskCapacity"].asString());
-		if(!value["MultiInstanceTypes"].isNull())
-			hostGroupObject.multiInstanceTypes = value["MultiInstanceTypes"].asString();
+		if(!templateInfoNodeHostGroupListHostGroup["HostGroupId"].isNull())
+			hostGroupObject.hostGroupId = templateInfoNodeHostGroupListHostGroup["HostGroupId"].asString();
+		if(!templateInfoNodeHostGroupListHostGroup["HostGroupName"].isNull())
+			hostGroupObject.hostGroupName = templateInfoNodeHostGroupListHostGroup["HostGroupName"].asString();
+		if(!templateInfoNodeHostGroupListHostGroup["HostGroupType"].isNull())
+			hostGroupObject.hostGroupType = templateInfoNodeHostGroupListHostGroup["HostGroupType"].asString();
+		if(!templateInfoNodeHostGroupListHostGroup["ChargeType"].isNull())
+			hostGroupObject.chargeType = templateInfoNodeHostGroupListHostGroup["ChargeType"].asString();
+		if(!templateInfoNodeHostGroupListHostGroup["Period"].isNull())
+			hostGroupObject.period = templateInfoNodeHostGroupListHostGroup["Period"].asString();
+		if(!templateInfoNodeHostGroupListHostGroup["NodeCount"].isNull())
+			hostGroupObject.nodeCount = std::stoi(templateInfoNodeHostGroupListHostGroup["NodeCount"].asString());
+		if(!templateInfoNodeHostGroupListHostGroup["InstanceType"].isNull())
+			hostGroupObject.instanceType = templateInfoNodeHostGroupListHostGroup["InstanceType"].asString();
+		if(!templateInfoNodeHostGroupListHostGroup["DiskType"].isNull())
+			hostGroupObject.diskType = templateInfoNodeHostGroupListHostGroup["DiskType"].asString();
+		if(!templateInfoNodeHostGroupListHostGroup["DiskCapacity"].isNull())
+			hostGroupObject.diskCapacity = std::stoi(templateInfoNodeHostGroupListHostGroup["DiskCapacity"].asString());
+		if(!templateInfoNodeHostGroupListHostGroup["DiskCount"].isNull())
+			hostGroupObject.diskCount = std::stoi(templateInfoNodeHostGroupListHostGroup["DiskCount"].asString());
+		if(!templateInfoNodeHostGroupListHostGroup["SysDiskType"].isNull())
+			hostGroupObject.sysDiskType = templateInfoNodeHostGroupListHostGroup["SysDiskType"].asString();
+		if(!templateInfoNodeHostGroupListHostGroup["SysDiskCapacity"].isNull())
+			hostGroupObject.sysDiskCapacity = std::stoi(templateInfoNodeHostGroupListHostGroup["SysDiskCapacity"].asString());
+		if(!templateInfoNodeHostGroupListHostGroup["MultiInstanceTypes"].isNull())
+			hostGroupObject.multiInstanceTypes = templateInfoNodeHostGroupListHostGroup["MultiInstanceTypes"].asString();
 		templateInfo_.hostGroupList.push_back(hostGroupObject);
 	}
-	auto allConfigList = value["ConfigList"]["Config"];
-	for (auto value : allConfigList)
+	auto allConfigListNode = templateInfoNode["ConfigList"]["Config"];
+	for (auto templateInfoNodeConfigListConfig : allConfigListNode)
 	{
 		TemplateInfo::Config configObject;
-		if(!value["ServiceName"].isNull())
-			configObject.serviceName = value["ServiceName"].asString();
-		if(!value["FileName"].isNull())
-			configObject.fileName = value["FileName"].asString();
-		if(!value["ConfigKey"].isNull())
-			configObject.configKey = value["ConfigKey"].asString();
-		if(!value["ConfigValue"].isNull())
-			configObject.configValue = value["ConfigValue"].asString();
-		if(!value["Encrypt"].isNull())
-			configObject.encrypt = value["Encrypt"].asString();
-		if(!value["Replace"].isNull())
-			configObject.replace = value["Replace"].asString();
+		if(!templateInfoNodeConfigListConfig["ServiceName"].isNull())
+			configObject.serviceName = templateInfoNodeConfigListConfig["ServiceName"].asString();
+		if(!templateInfoNodeConfigListConfig["FileName"].isNull())
+			configObject.fileName = templateInfoNodeConfigListConfig["FileName"].asString();
+		if(!templateInfoNodeConfigListConfig["ConfigKey"].isNull())
+			configObject.configKey = templateInfoNodeConfigListConfig["ConfigKey"].asString();
+		if(!templateInfoNodeConfigListConfig["ConfigValue"].isNull())
+			configObject.configValue = templateInfoNodeConfigListConfig["ConfigValue"].asString();
+		if(!templateInfoNodeConfigListConfig["Encrypt"].isNull())
+			configObject.encrypt = templateInfoNodeConfigListConfig["Encrypt"].asString();
+		if(!templateInfoNodeConfigListConfig["Replace"].isNull())
+			configObject.replace = templateInfoNodeConfigListConfig["Replace"].asString();
 		templateInfo_.configList.push_back(configObject);
 	}
 		auto allSoftwareInfoList = templateInfoNode["SoftwareInfoList"]["SoftwareInfo"];

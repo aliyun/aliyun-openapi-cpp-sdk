@@ -39,72 +39,72 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["DBCluster"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["DBCluster"];
+	for (auto valueItemsDBCluster : allItemsNode)
 	{
 		DBCluster itemsObject;
-		if(!value["DBClusterId"].isNull())
-			itemsObject.dBClusterId = value["DBClusterId"].asString();
-		if(!value["DBClusterDescription"].isNull())
-			itemsObject.dBClusterDescription = value["DBClusterDescription"].asString();
-		if(!value["PayType"].isNull())
-			itemsObject.payType = value["PayType"].asString();
-		if(!value["DBClusterNetworkType"].isNull())
-			itemsObject.dBClusterNetworkType = value["DBClusterNetworkType"].asString();
-		if(!value["RegionId"].isNull())
-			itemsObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			itemsObject.zoneId = value["ZoneId"].asString();
-		if(!value["ExpireTime"].isNull())
-			itemsObject.expireTime = value["ExpireTime"].asString();
-		if(!value["Expired"].isNull())
-			itemsObject.expired = value["Expired"].asString();
-		if(!value["DBClusterStatus"].isNull())
-			itemsObject.dBClusterStatus = value["DBClusterStatus"].asString();
-		if(!value["Engine"].isNull())
-			itemsObject.engine = value["Engine"].asString();
-		if(!value["DBType"].isNull())
-			itemsObject.dBType = value["DBType"].asString();
-		if(!value["DBVersion"].isNull())
-			itemsObject.dBVersion = value["DBVersion"].asString();
-		if(!value["LockMode"].isNull())
-			itemsObject.lockMode = value["LockMode"].asString();
-		if(!value["DeletionLock"].isNull())
-			itemsObject.deletionLock = std::stoi(value["DeletionLock"].asString());
-		if(!value["CreateTime"].isNull())
-			itemsObject.createTime = value["CreateTime"].asString();
-		if(!value["VpcId"].isNull())
-			itemsObject.vpcId = value["VpcId"].asString();
-		if(!value["DBNodeNumber"].isNull())
-			itemsObject.dBNodeNumber = std::stoi(value["DBNodeNumber"].asString());
-		if(!value["DBNodeClass"].isNull())
-			itemsObject.dBNodeClass = value["DBNodeClass"].asString();
-		if(!value["StorageUsed"].isNull())
-			itemsObject.storageUsed = std::stol(value["StorageUsed"].asString());
-		auto allDBNodes = value["DBNodes"]["DBNode"];
-		for (auto value : allDBNodes)
+		if(!valueItemsDBCluster["DBClusterId"].isNull())
+			itemsObject.dBClusterId = valueItemsDBCluster["DBClusterId"].asString();
+		if(!valueItemsDBCluster["DBClusterDescription"].isNull())
+			itemsObject.dBClusterDescription = valueItemsDBCluster["DBClusterDescription"].asString();
+		if(!valueItemsDBCluster["PayType"].isNull())
+			itemsObject.payType = valueItemsDBCluster["PayType"].asString();
+		if(!valueItemsDBCluster["DBClusterNetworkType"].isNull())
+			itemsObject.dBClusterNetworkType = valueItemsDBCluster["DBClusterNetworkType"].asString();
+		if(!valueItemsDBCluster["RegionId"].isNull())
+			itemsObject.regionId = valueItemsDBCluster["RegionId"].asString();
+		if(!valueItemsDBCluster["ZoneId"].isNull())
+			itemsObject.zoneId = valueItemsDBCluster["ZoneId"].asString();
+		if(!valueItemsDBCluster["ExpireTime"].isNull())
+			itemsObject.expireTime = valueItemsDBCluster["ExpireTime"].asString();
+		if(!valueItemsDBCluster["Expired"].isNull())
+			itemsObject.expired = valueItemsDBCluster["Expired"].asString();
+		if(!valueItemsDBCluster["DBClusterStatus"].isNull())
+			itemsObject.dBClusterStatus = valueItemsDBCluster["DBClusterStatus"].asString();
+		if(!valueItemsDBCluster["Engine"].isNull())
+			itemsObject.engine = valueItemsDBCluster["Engine"].asString();
+		if(!valueItemsDBCluster["DBType"].isNull())
+			itemsObject.dBType = valueItemsDBCluster["DBType"].asString();
+		if(!valueItemsDBCluster["DBVersion"].isNull())
+			itemsObject.dBVersion = valueItemsDBCluster["DBVersion"].asString();
+		if(!valueItemsDBCluster["LockMode"].isNull())
+			itemsObject.lockMode = valueItemsDBCluster["LockMode"].asString();
+		if(!valueItemsDBCluster["DeletionLock"].isNull())
+			itemsObject.deletionLock = std::stoi(valueItemsDBCluster["DeletionLock"].asString());
+		if(!valueItemsDBCluster["CreateTime"].isNull())
+			itemsObject.createTime = valueItemsDBCluster["CreateTime"].asString();
+		if(!valueItemsDBCluster["VpcId"].isNull())
+			itemsObject.vpcId = valueItemsDBCluster["VpcId"].asString();
+		if(!valueItemsDBCluster["DBNodeNumber"].isNull())
+			itemsObject.dBNodeNumber = std::stoi(valueItemsDBCluster["DBNodeNumber"].asString());
+		if(!valueItemsDBCluster["DBNodeClass"].isNull())
+			itemsObject.dBNodeClass = valueItemsDBCluster["DBNodeClass"].asString();
+		if(!valueItemsDBCluster["StorageUsed"].isNull())
+			itemsObject.storageUsed = std::stol(valueItemsDBCluster["StorageUsed"].asString());
+		auto allDBNodesNode = allItemsNode["DBNodes"]["DBNode"];
+		for (auto allItemsNodeDBNodesDBNode : allDBNodesNode)
 		{
 			DBCluster::DBNode dBNodesObject;
-			if(!value["DBNodeId"].isNull())
-				dBNodesObject.dBNodeId = value["DBNodeId"].asString();
-			if(!value["DBNodeClass"].isNull())
-				dBNodesObject.dBNodeClass = value["DBNodeClass"].asString();
-			if(!value["DBNodeRole"].isNull())
-				dBNodesObject.dBNodeRole = value["DBNodeRole"].asString();
-			if(!value["RegionId"].isNull())
-				dBNodesObject.regionId = value["RegionId"].asString();
-			if(!value["ZoneId"].isNull())
-				dBNodesObject.zoneId = value["ZoneId"].asString();
+			if(!allItemsNodeDBNodesDBNode["DBNodeId"].isNull())
+				dBNodesObject.dBNodeId = allItemsNodeDBNodesDBNode["DBNodeId"].asString();
+			if(!allItemsNodeDBNodesDBNode["DBNodeClass"].isNull())
+				dBNodesObject.dBNodeClass = allItemsNodeDBNodesDBNode["DBNodeClass"].asString();
+			if(!allItemsNodeDBNodesDBNode["DBNodeRole"].isNull())
+				dBNodesObject.dBNodeRole = allItemsNodeDBNodesDBNode["DBNodeRole"].asString();
+			if(!allItemsNodeDBNodesDBNode["RegionId"].isNull())
+				dBNodesObject.regionId = allItemsNodeDBNodesDBNode["RegionId"].asString();
+			if(!allItemsNodeDBNodesDBNode["ZoneId"].isNull())
+				dBNodesObject.zoneId = allItemsNodeDBNodesDBNode["ZoneId"].asString();
 			itemsObject.dBNodes.push_back(dBNodesObject);
 		}
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		auto allTagsNode = allItemsNode["Tags"]["Tag"];
+		for (auto allItemsNodeTagsTag : allTagsNode)
 		{
 			DBCluster::Tag tagsObject;
-			if(!value["Key"].isNull())
-				tagsObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				tagsObject.value = value["Value"].asString();
+			if(!allItemsNodeTagsTag["Key"].isNull())
+				tagsObject.key = allItemsNodeTagsTag["Key"].asString();
+			if(!allItemsNodeTagsTag["Value"].isNull())
+				tagsObject.value = allItemsNodeTagsTag["Value"].asString();
 			itemsObject.tags.push_back(tagsObject);
 		}
 		items_.push_back(itemsObject);

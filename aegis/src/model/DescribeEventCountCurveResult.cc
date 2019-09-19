@@ -40,30 +40,30 @@ void DescribeEventCountCurveResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto curveDataNode = value["CurveData"];
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = curveDataNode["Items"]["Item"];
+	for (auto curveDataNodeItemsItem : allItemsNode)
 	{
 		CurveData::Item itemObject;
-		if(!value["Name"].isNull())
-			itemObject.name = value["Name"].asString();
-		auto allData = value["Data"]["DataItem"];
-		for (auto value : allData)
+		if(!curveDataNodeItemsItem["Name"].isNull())
+			itemObject.name = curveDataNodeItemsItem["Name"].asString();
+		auto allDataNode = allItemsNode["Data"]["DataItem"];
+		for (auto allItemsNodeDataDataItem : allDataNode)
 		{
 			CurveData::Item::DataItem dataObject;
-			if(!value["High"].isNull())
-				dataObject.high = std::stoi(value["High"].asString());
-			if(!value["Total"].isNull())
-				dataObject.total = std::stoi(value["Total"].asString());
-			if(!value["Low"].isNull())
-				dataObject.low = std::stoi(value["Low"].asString());
-			if(!value["Serious"].isNull())
-				dataObject.serious = std::stoi(value["Serious"].asString());
-			if(!value["Suspicious"].isNull())
-				dataObject.suspicious = std::stoi(value["Suspicious"].asString());
-			if(!value["Remind"].isNull())
-				dataObject.remind = std::stoi(value["Remind"].asString());
-			if(!value["Medium"].isNull())
-				dataObject.medium = std::stoi(value["Medium"].asString());
+			if(!allItemsNodeDataDataItem["High"].isNull())
+				dataObject.high = std::stoi(allItemsNodeDataDataItem["High"].asString());
+			if(!allItemsNodeDataDataItem["Total"].isNull())
+				dataObject.total = std::stoi(allItemsNodeDataDataItem["Total"].asString());
+			if(!allItemsNodeDataDataItem["Low"].isNull())
+				dataObject.low = std::stoi(allItemsNodeDataDataItem["Low"].asString());
+			if(!allItemsNodeDataDataItem["Serious"].isNull())
+				dataObject.serious = std::stoi(allItemsNodeDataDataItem["Serious"].asString());
+			if(!allItemsNodeDataDataItem["Suspicious"].isNull())
+				dataObject.suspicious = std::stoi(allItemsNodeDataDataItem["Suspicious"].asString());
+			if(!allItemsNodeDataDataItem["Remind"].isNull())
+				dataObject.remind = std::stoi(allItemsNodeDataDataItem["Remind"].asString());
+			if(!allItemsNodeDataDataItem["Medium"].isNull())
+				dataObject.medium = std::stoi(allItemsNodeDataDataItem["Medium"].asString());
 			itemObject.data.push_back(dataObject);
 		}
 		curveData_.items.push_back(itemObject);

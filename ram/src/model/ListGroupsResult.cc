@@ -39,18 +39,18 @@ void ListGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allGroups = value["Groups"]["Group"];
-	for (auto value : allGroups)
+	auto allGroupsNode = value["Groups"]["Group"];
+	for (auto valueGroupsGroup : allGroupsNode)
 	{
 		Group groupsObject;
-		if(!value["GroupName"].isNull())
-			groupsObject.groupName = value["GroupName"].asString();
-		if(!value["Comments"].isNull())
-			groupsObject.comments = value["Comments"].asString();
-		if(!value["CreateDate"].isNull())
-			groupsObject.createDate = value["CreateDate"].asString();
-		if(!value["UpdateDate"].isNull())
-			groupsObject.updateDate = value["UpdateDate"].asString();
+		if(!valueGroupsGroup["GroupName"].isNull())
+			groupsObject.groupName = valueGroupsGroup["GroupName"].asString();
+		if(!valueGroupsGroup["Comments"].isNull())
+			groupsObject.comments = valueGroupsGroup["Comments"].asString();
+		if(!valueGroupsGroup["CreateDate"].isNull())
+			groupsObject.createDate = valueGroupsGroup["CreateDate"].asString();
+		if(!valueGroupsGroup["UpdateDate"].isNull())
+			groupsObject.updateDate = valueGroupsGroup["UpdateDate"].asString();
 		groups_.push_back(groupsObject);
 	}
 	if(!value["IsTruncated"].isNull())

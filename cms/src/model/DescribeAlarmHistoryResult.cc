@@ -39,48 +39,48 @@ void DescribeAlarmHistoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAlarmHistoryList = value["AlarmHistoryList"]["AlarmHistory"];
-	for (auto value : allAlarmHistoryList)
+	auto allAlarmHistoryListNode = value["AlarmHistoryList"]["AlarmHistory"];
+	for (auto valueAlarmHistoryListAlarmHistory : allAlarmHistoryListNode)
 	{
 		AlarmHistory alarmHistoryListObject;
-		if(!value["Id"].isNull())
-			alarmHistoryListObject.id = value["Id"].asString();
-		if(!value["AlertName"].isNull())
-			alarmHistoryListObject.alertName = value["AlertName"].asString();
-		if(!value["GroupId"].isNull())
-			alarmHistoryListObject.groupId = value["GroupId"].asString();
-		if(!value["Namespace"].isNull())
-			alarmHistoryListObject._namespace = value["Namespace"].asString();
-		if(!value["MetricName"].isNull())
-			alarmHistoryListObject.metricName = value["MetricName"].asString();
-		if(!value["Dimensions"].isNull())
-			alarmHistoryListObject.dimensions = value["Dimensions"].asString();
-		if(!value["Expression"].isNull())
-			alarmHistoryListObject.expression = value["Expression"].asString();
-		if(!value["EvaluationCount"].isNull())
-			alarmHistoryListObject.evaluationCount = std::stoi(value["EvaluationCount"].asString());
-		if(!value["Value"].isNull())
-			alarmHistoryListObject.value = value["Value"].asString();
-		if(!value["AlertTime"].isNull())
-			alarmHistoryListObject.alertTime = std::stol(value["AlertTime"].asString());
-		if(!value["LastTime"].isNull())
-			alarmHistoryListObject.lastTime = std::stol(value["LastTime"].asString());
-		if(!value["Level"].isNull())
-			alarmHistoryListObject.level = value["Level"].asString();
-		if(!value["PreLevel"].isNull())
-			alarmHistoryListObject.preLevel = value["PreLevel"].asString();
-		if(!value["RuleName"].isNull())
-			alarmHistoryListObject.ruleName = value["RuleName"].asString();
-		if(!value["State"].isNull())
-			alarmHistoryListObject.state = value["State"].asString();
-		if(!value["Status"].isNull())
-			alarmHistoryListObject.status = std::stoi(value["Status"].asString());
-		if(!value["UserId"].isNull())
-			alarmHistoryListObject.userId = value["UserId"].asString();
-		if(!value["Webhooks"].isNull())
-			alarmHistoryListObject.webhooks = value["Webhooks"].asString();
-		if(!value["InstanceName"].isNull())
-			alarmHistoryListObject.instanceName = value["InstanceName"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["Id"].isNull())
+			alarmHistoryListObject.id = valueAlarmHistoryListAlarmHistory["Id"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["AlertName"].isNull())
+			alarmHistoryListObject.alertName = valueAlarmHistoryListAlarmHistory["AlertName"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["GroupId"].isNull())
+			alarmHistoryListObject.groupId = valueAlarmHistoryListAlarmHistory["GroupId"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["Namespace"].isNull())
+			alarmHistoryListObject._namespace = valueAlarmHistoryListAlarmHistory["Namespace"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["MetricName"].isNull())
+			alarmHistoryListObject.metricName = valueAlarmHistoryListAlarmHistory["MetricName"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["Dimensions"].isNull())
+			alarmHistoryListObject.dimensions = valueAlarmHistoryListAlarmHistory["Dimensions"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["Expression"].isNull())
+			alarmHistoryListObject.expression = valueAlarmHistoryListAlarmHistory["Expression"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["EvaluationCount"].isNull())
+			alarmHistoryListObject.evaluationCount = std::stoi(valueAlarmHistoryListAlarmHistory["EvaluationCount"].asString());
+		if(!valueAlarmHistoryListAlarmHistory["Value"].isNull())
+			alarmHistoryListObject.value = valueAlarmHistoryListAlarmHistory["Value"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["AlertTime"].isNull())
+			alarmHistoryListObject.alertTime = std::stol(valueAlarmHistoryListAlarmHistory["AlertTime"].asString());
+		if(!valueAlarmHistoryListAlarmHistory["LastTime"].isNull())
+			alarmHistoryListObject.lastTime = std::stol(valueAlarmHistoryListAlarmHistory["LastTime"].asString());
+		if(!valueAlarmHistoryListAlarmHistory["Level"].isNull())
+			alarmHistoryListObject.level = valueAlarmHistoryListAlarmHistory["Level"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["PreLevel"].isNull())
+			alarmHistoryListObject.preLevel = valueAlarmHistoryListAlarmHistory["PreLevel"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["RuleName"].isNull())
+			alarmHistoryListObject.ruleName = valueAlarmHistoryListAlarmHistory["RuleName"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["State"].isNull())
+			alarmHistoryListObject.state = valueAlarmHistoryListAlarmHistory["State"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["Status"].isNull())
+			alarmHistoryListObject.status = std::stoi(valueAlarmHistoryListAlarmHistory["Status"].asString());
+		if(!valueAlarmHistoryListAlarmHistory["UserId"].isNull())
+			alarmHistoryListObject.userId = valueAlarmHistoryListAlarmHistory["UserId"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["Webhooks"].isNull())
+			alarmHistoryListObject.webhooks = valueAlarmHistoryListAlarmHistory["Webhooks"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["InstanceName"].isNull())
+			alarmHistoryListObject.instanceName = valueAlarmHistoryListAlarmHistory["InstanceName"].asString();
 		auto allContactGroups = value["ContactGroups"]["ContactGroup"];
 		for (auto value : allContactGroups)
 			alarmHistoryListObject.contactGroups.push_back(value.asString());

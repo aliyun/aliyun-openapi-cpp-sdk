@@ -39,22 +39,22 @@ void DescribeClusterServiceConfigTagResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConfigTagList = value["ConfigTagList"]["ConfigTag"];
-	for (auto value : allConfigTagList)
+	auto allConfigTagListNode = value["ConfigTagList"]["ConfigTag"];
+	for (auto valueConfigTagListConfigTag : allConfigTagListNode)
 	{
 		ConfigTag configTagListObject;
-		if(!value["Tag"].isNull())
-			configTagListObject.tag = value["Tag"].asString();
-		if(!value["TagDesc"].isNull())
-			configTagListObject.tagDesc = value["TagDesc"].asString();
-		auto allValueList = value["ValueList"]["Value"];
-		for (auto value : allValueList)
+		if(!valueConfigTagListConfigTag["Tag"].isNull())
+			configTagListObject.tag = valueConfigTagListConfigTag["Tag"].asString();
+		if(!valueConfigTagListConfigTag["TagDesc"].isNull())
+			configTagListObject.tagDesc = valueConfigTagListConfigTag["TagDesc"].asString();
+		auto allValueListNode = allConfigTagListNode["ValueList"]["Value"];
+		for (auto allConfigTagListNodeValueListValue : allValueListNode)
 		{
 			ConfigTag::Value valueListObject;
-			if(!value["Value"].isNull())
-				valueListObject.value = value["Value"].asString();
-			if(!value["ValueDesc"].isNull())
-				valueListObject.valueDesc = value["ValueDesc"].asString();
+			if(!allConfigTagListNodeValueListValue["Value"].isNull())
+				valueListObject.value = allConfigTagListNodeValueListValue["Value"].asString();
+			if(!allConfigTagListNodeValueListValue["ValueDesc"].isNull())
+				valueListObject.valueDesc = allConfigTagListNodeValueListValue["ValueDesc"].asString();
 			configTagListObject.valueList.push_back(valueListObject);
 		}
 		configTagList_.push_back(configTagListObject);

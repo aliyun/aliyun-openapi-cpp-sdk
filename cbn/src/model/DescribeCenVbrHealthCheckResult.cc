@@ -39,24 +39,24 @@ void DescribeCenVbrHealthCheckResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVbrHealthChecks = value["VbrHealthChecks"]["VbrHealthCheck"];
-	for (auto value : allVbrHealthChecks)
+	auto allVbrHealthChecksNode = value["VbrHealthChecks"]["VbrHealthCheck"];
+	for (auto valueVbrHealthChecksVbrHealthCheck : allVbrHealthChecksNode)
 	{
 		VbrHealthCheck vbrHealthChecksObject;
-		if(!value["CenId"].isNull())
-			vbrHealthChecksObject.cenId = value["CenId"].asString();
-		if(!value["VbrInstanceId"].isNull())
-			vbrHealthChecksObject.vbrInstanceId = value["VbrInstanceId"].asString();
-		if(!value["LinkStatus"].isNull())
-			vbrHealthChecksObject.linkStatus = value["LinkStatus"].asString();
-		if(!value["PacketLoss"].isNull())
-			vbrHealthChecksObject.packetLoss = std::stol(value["PacketLoss"].asString());
-		if(!value["HealthCheckSourceIp"].isNull())
-			vbrHealthChecksObject.healthCheckSourceIp = value["HealthCheckSourceIp"].asString();
-		if(!value["HealthCheckTargetIp"].isNull())
-			vbrHealthChecksObject.healthCheckTargetIp = value["HealthCheckTargetIp"].asString();
-		if(!value["Delay"].isNull())
-			vbrHealthChecksObject.delay = std::stol(value["Delay"].asString());
+		if(!valueVbrHealthChecksVbrHealthCheck["CenId"].isNull())
+			vbrHealthChecksObject.cenId = valueVbrHealthChecksVbrHealthCheck["CenId"].asString();
+		if(!valueVbrHealthChecksVbrHealthCheck["VbrInstanceId"].isNull())
+			vbrHealthChecksObject.vbrInstanceId = valueVbrHealthChecksVbrHealthCheck["VbrInstanceId"].asString();
+		if(!valueVbrHealthChecksVbrHealthCheck["LinkStatus"].isNull())
+			vbrHealthChecksObject.linkStatus = valueVbrHealthChecksVbrHealthCheck["LinkStatus"].asString();
+		if(!valueVbrHealthChecksVbrHealthCheck["PacketLoss"].isNull())
+			vbrHealthChecksObject.packetLoss = std::stol(valueVbrHealthChecksVbrHealthCheck["PacketLoss"].asString());
+		if(!valueVbrHealthChecksVbrHealthCheck["HealthCheckSourceIp"].isNull())
+			vbrHealthChecksObject.healthCheckSourceIp = valueVbrHealthChecksVbrHealthCheck["HealthCheckSourceIp"].asString();
+		if(!valueVbrHealthChecksVbrHealthCheck["HealthCheckTargetIp"].isNull())
+			vbrHealthChecksObject.healthCheckTargetIp = valueVbrHealthChecksVbrHealthCheck["HealthCheckTargetIp"].asString();
+		if(!valueVbrHealthChecksVbrHealthCheck["Delay"].isNull())
+			vbrHealthChecksObject.delay = std::stol(valueVbrHealthChecksVbrHealthCheck["Delay"].asString());
 		vbrHealthChecks_.push_back(vbrHealthChecksObject);
 	}
 	if(!value["TotalCount"].isNull())

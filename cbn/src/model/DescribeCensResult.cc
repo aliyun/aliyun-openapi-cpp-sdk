@@ -39,30 +39,30 @@ void DescribeCensResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCens = value["Cens"]["Cen"];
-	for (auto value : allCens)
+	auto allCensNode = value["Cens"]["Cen"];
+	for (auto valueCensCen : allCensNode)
 	{
 		Cen censObject;
-		if(!value["CenId"].isNull())
-			censObject.cenId = value["CenId"].asString();
-		if(!value["Name"].isNull())
-			censObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			censObject.description = value["Description"].asString();
-		if(!value["ProtectionLevel"].isNull())
-			censObject.protectionLevel = value["ProtectionLevel"].asString();
-		if(!value["Status"].isNull())
-			censObject.status = value["Status"].asString();
-		if(!value["CreationTime"].isNull())
-			censObject.creationTime = value["CreationTime"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueCensCen["CenId"].isNull())
+			censObject.cenId = valueCensCen["CenId"].asString();
+		if(!valueCensCen["Name"].isNull())
+			censObject.name = valueCensCen["Name"].asString();
+		if(!valueCensCen["Description"].isNull())
+			censObject.description = valueCensCen["Description"].asString();
+		if(!valueCensCen["ProtectionLevel"].isNull())
+			censObject.protectionLevel = valueCensCen["ProtectionLevel"].asString();
+		if(!valueCensCen["Status"].isNull())
+			censObject.status = valueCensCen["Status"].asString();
+		if(!valueCensCen["CreationTime"].isNull())
+			censObject.creationTime = valueCensCen["CreationTime"].asString();
+		auto allTagsNode = allCensNode["Tags"]["Tag"];
+		for (auto allCensNodeTagsTag : allTagsNode)
 		{
 			Cen::Tag tagsObject;
-			if(!value["Key"].isNull())
-				tagsObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				tagsObject.value = value["Value"].asString();
+			if(!allCensNodeTagsTag["Key"].isNull())
+				tagsObject.key = allCensNodeTagsTag["Key"].asString();
+			if(!allCensNodeTagsTag["Value"].isNull())
+				tagsObject.value = allCensNodeTagsTag["Value"].asString();
 			censObject.tags.push_back(tagsObject);
 		}
 		auto allCenBandwidthPackageIds = value["CenBandwidthPackageIds"]["CenBandwidthPackageId"];

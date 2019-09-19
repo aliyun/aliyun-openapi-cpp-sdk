@@ -39,16 +39,16 @@ void QueryProjectMetaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResources = value["Resources"]["Resource"];
-	for (auto value : allResources)
+	auto allResourcesNode = value["Resources"]["Resource"];
+	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!value["Project"].isNull())
-			resourcesObject.project = value["Project"].asString();
-		if(!value["Description"].isNull())
-			resourcesObject.description = value["Description"].asString();
-		if(!value["Labels"].isNull())
-			resourcesObject.labels = value["Labels"].asString();
+		if(!valueResourcesResource["Project"].isNull())
+			resourcesObject.project = valueResourcesResource["Project"].asString();
+		if(!valueResourcesResource["Description"].isNull())
+			resourcesObject.description = valueResourcesResource["Description"].asString();
+		if(!valueResourcesResource["Labels"].isNull())
+			resourcesObject.labels = valueResourcesResource["Labels"].asString();
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["Success"].isNull())

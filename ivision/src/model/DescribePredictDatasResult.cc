@@ -39,44 +39,44 @@ void DescribePredictDatasResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPredictDatas = value["PredictDatas"]["PredictData"];
-	for (auto value : allPredictDatas)
+	auto allPredictDatasNode = value["PredictDatas"]["PredictData"];
+	for (auto valuePredictDatasPredictData : allPredictDatasNode)
 	{
 		PredictData predictDatasObject;
-		if(!value["ProjectId"].isNull())
-			predictDatasObject.projectId = value["ProjectId"].asString();
-		if(!value["IterationId"].isNull())
-			predictDatasObject.iterationId = value["IterationId"].asString();
-		if(!value["DataId"].isNull())
-			predictDatasObject.dataId = value["DataId"].asString();
-		if(!value["DataName"].isNull())
-			predictDatasObject.dataName = value["DataName"].asString();
-		if(!value["DataUrl"].isNull())
-			predictDatasObject.dataUrl = value["DataUrl"].asString();
-		if(!value["CreationTime"].isNull())
-			predictDatasObject.creationTime = value["CreationTime"].asString();
-		if(!value["Status"].isNull())
-			predictDatasObject.status = value["Status"].asString();
-		if(!value["ErrorCode"].isNull())
-			predictDatasObject.errorCode = value["ErrorCode"].asString();
-		if(!value["ErrorMessage"].isNull())
-			predictDatasObject.errorMessage = value["ErrorMessage"].asString();
-		auto allPredictionResults = value["PredictionResults"]["PredictionResult"];
-		for (auto value : allPredictionResults)
+		if(!valuePredictDatasPredictData["ProjectId"].isNull())
+			predictDatasObject.projectId = valuePredictDatasPredictData["ProjectId"].asString();
+		if(!valuePredictDatasPredictData["IterationId"].isNull())
+			predictDatasObject.iterationId = valuePredictDatasPredictData["IterationId"].asString();
+		if(!valuePredictDatasPredictData["DataId"].isNull())
+			predictDatasObject.dataId = valuePredictDatasPredictData["DataId"].asString();
+		if(!valuePredictDatasPredictData["DataName"].isNull())
+			predictDatasObject.dataName = valuePredictDatasPredictData["DataName"].asString();
+		if(!valuePredictDatasPredictData["DataUrl"].isNull())
+			predictDatasObject.dataUrl = valuePredictDatasPredictData["DataUrl"].asString();
+		if(!valuePredictDatasPredictData["CreationTime"].isNull())
+			predictDatasObject.creationTime = valuePredictDatasPredictData["CreationTime"].asString();
+		if(!valuePredictDatasPredictData["Status"].isNull())
+			predictDatasObject.status = valuePredictDatasPredictData["Status"].asString();
+		if(!valuePredictDatasPredictData["ErrorCode"].isNull())
+			predictDatasObject.errorCode = valuePredictDatasPredictData["ErrorCode"].asString();
+		if(!valuePredictDatasPredictData["ErrorMessage"].isNull())
+			predictDatasObject.errorMessage = valuePredictDatasPredictData["ErrorMessage"].asString();
+		auto allPredictionResultsNode = allPredictDatasNode["PredictionResults"]["PredictionResult"];
+		for (auto allPredictDatasNodePredictionResultsPredictionResult : allPredictionResultsNode)
 		{
 			PredictData::PredictionResult predictionResultsObject;
-			if(!value["TagId"].isNull())
-				predictionResultsObject.tagId = value["TagId"].asString();
-			if(!value["TagName"].isNull())
-				predictionResultsObject.tagName = value["TagName"].asString();
-			if(!value["Probability"].isNull())
-				predictionResultsObject.probability = value["Probability"].asString();
-			if(!value["Overlap"].isNull())
-				predictionResultsObject.overlap = value["Overlap"].asString();
-			if(!value["RegionType"].isNull())
-				predictionResultsObject.regionType = value["RegionType"].asString();
-			if(!value["Properties"].isNull())
-				predictionResultsObject.properties = value["Properties"].asString();
+			if(!allPredictDatasNodePredictionResultsPredictionResult["TagId"].isNull())
+				predictionResultsObject.tagId = allPredictDatasNodePredictionResultsPredictionResult["TagId"].asString();
+			if(!allPredictDatasNodePredictionResultsPredictionResult["TagName"].isNull())
+				predictionResultsObject.tagName = allPredictDatasNodePredictionResultsPredictionResult["TagName"].asString();
+			if(!allPredictDatasNodePredictionResultsPredictionResult["Probability"].isNull())
+				predictionResultsObject.probability = allPredictDatasNodePredictionResultsPredictionResult["Probability"].asString();
+			if(!allPredictDatasNodePredictionResultsPredictionResult["Overlap"].isNull())
+				predictionResultsObject.overlap = allPredictDatasNodePredictionResultsPredictionResult["Overlap"].asString();
+			if(!allPredictDatasNodePredictionResultsPredictionResult["RegionType"].isNull())
+				predictionResultsObject.regionType = allPredictDatasNodePredictionResultsPredictionResult["RegionType"].asString();
+			if(!allPredictDatasNodePredictionResultsPredictionResult["Properties"].isNull())
+				predictionResultsObject.properties = allPredictDatasNodePredictionResultsPredictionResult["Properties"].asString();
 			auto regionNode = value["Region"];
 			if(!regionNode["Left"].isNull())
 				predictionResultsObject.region.left = regionNode["Left"].asString();

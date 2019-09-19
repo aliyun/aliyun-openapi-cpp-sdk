@@ -39,14 +39,14 @@ void QueryUniqueDeviceStatResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAppDeviceStats = value["AppDeviceStats"]["AppDeviceStat"];
-	for (auto value : allAppDeviceStats)
+	auto allAppDeviceStatsNode = value["AppDeviceStats"]["AppDeviceStat"];
+	for (auto valueAppDeviceStatsAppDeviceStat : allAppDeviceStatsNode)
 	{
 		AppDeviceStat appDeviceStatsObject;
-		if(!value["Time"].isNull())
-			appDeviceStatsObject.time = value["Time"].asString();
-		if(!value["Count"].isNull())
-			appDeviceStatsObject.count = std::stol(value["Count"].asString());
+		if(!valueAppDeviceStatsAppDeviceStat["Time"].isNull())
+			appDeviceStatsObject.time = valueAppDeviceStatsAppDeviceStat["Time"].asString();
+		if(!valueAppDeviceStatsAppDeviceStat["Count"].isNull())
+			appDeviceStatsObject.count = std::stol(valueAppDeviceStatsAppDeviceStat["Count"].asString());
 		appDeviceStats_.push_back(appDeviceStatsObject);
 	}
 

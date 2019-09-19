@@ -39,24 +39,24 @@ void QueryTicketResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTickets = value["Tickets"]["Ticket"];
-	for (auto value : allTickets)
+	auto allTicketsNode = value["Tickets"]["Ticket"];
+	for (auto valueTicketsTicket : allTicketsNode)
 	{
 		Ticket ticketsObject;
-		if(!value["Id"].isNull())
-			ticketsObject.id = value["Id"].asString();
-		if(!value["Type"].isNull())
-			ticketsObject.type = value["Type"].asString();
-		if(!value["Stage"].isNull())
-			ticketsObject.stage = value["Stage"].asString();
-		if(!value["Description"].isNull())
-			ticketsObject.description = value["Description"].asString();
-		if(!value["CreatorId"].isNull())
-			ticketsObject.creatorId = value["CreatorId"].asString();
-		if(!value["CreateTime"].isNull())
-			ticketsObject.createTime = value["CreateTime"].asString();
-		if(!value["CustomFields"].isNull())
-			ticketsObject.customFields = value["CustomFields"].asString();
+		if(!valueTicketsTicket["Id"].isNull())
+			ticketsObject.id = valueTicketsTicket["Id"].asString();
+		if(!valueTicketsTicket["Type"].isNull())
+			ticketsObject.type = valueTicketsTicket["Type"].asString();
+		if(!valueTicketsTicket["Stage"].isNull())
+			ticketsObject.stage = valueTicketsTicket["Stage"].asString();
+		if(!valueTicketsTicket["Description"].isNull())
+			ticketsObject.description = valueTicketsTicket["Description"].asString();
+		if(!valueTicketsTicket["CreatorId"].isNull())
+			ticketsObject.creatorId = valueTicketsTicket["CreatorId"].asString();
+		if(!valueTicketsTicket["CreateTime"].isNull())
+			ticketsObject.createTime = valueTicketsTicket["CreateTime"].asString();
+		if(!valueTicketsTicket["CustomFields"].isNull())
+			ticketsObject.customFields = valueTicketsTicket["CustomFields"].asString();
 		tickets_.push_back(ticketsObject);
 	}
 	if(!value["PageNum"].isNull())

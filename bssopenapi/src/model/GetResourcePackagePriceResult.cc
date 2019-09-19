@@ -48,14 +48,14 @@ void GetResourcePackagePriceResult::parse(const std::string &payload)
 		data_.tradePrice = std::stof(dataNode["TradePrice"].asString());
 	if(!dataNode["DiscountPrice"].isNull())
 		data_.discountPrice = std::stof(dataNode["DiscountPrice"].asString());
-	auto allPromotions = value["Promotions"]["Promotion"];
-	for (auto value : allPromotions)
+	auto allPromotionsNode = dataNode["Promotions"]["Promotion"];
+	for (auto dataNodePromotionsPromotion : allPromotionsNode)
 	{
 		Data::Promotion promotionObject;
-		if(!value["Id"].isNull())
-			promotionObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			promotionObject.name = value["Name"].asString();
+		if(!dataNodePromotionsPromotion["Id"].isNull())
+			promotionObject.id = std::stol(dataNodePromotionsPromotion["Id"].asString());
+		if(!dataNodePromotionsPromotion["Name"].isNull())
+			promotionObject.name = dataNodePromotionsPromotion["Name"].asString();
 		data_.promotions.push_back(promotionObject);
 	}
 	if(!value["Success"].isNull())

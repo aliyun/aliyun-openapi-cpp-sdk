@@ -39,18 +39,18 @@ void UpdateAliwsDictResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"]["DictList"];
-	for (auto value : allResult)
+	auto allResultNode = value["Result"]["DictList"];
+	for (auto valueResultDictList : allResultNode)
 	{
 		DictList resultObject;
-		if(!value["name"].isNull())
-			resultObject.name = value["name"].asString();
-		if(!value["fileSize"].isNull())
-			resultObject.fileSize = std::stol(value["fileSize"].asString());
-		if(!value["type"].isNull())
-			resultObject.type = value["type"].asString();
-		if(!value["sourceType"].isNull())
-			resultObject.sourceType = value["sourceType"].asString();
+		if(!valueResultDictList["name"].isNull())
+			resultObject.name = valueResultDictList["name"].asString();
+		if(!valueResultDictList["fileSize"].isNull())
+			resultObject.fileSize = std::stol(valueResultDictList["fileSize"].asString());
+		if(!valueResultDictList["type"].isNull())
+			resultObject.type = valueResultDictList["type"].asString();
+		if(!valueResultDictList["sourceType"].isNull())
+			resultObject.sourceType = valueResultDictList["sourceType"].asString();
 		auto ossObjectNode = value["ossObject"];
 		if(!ossObjectNode["bucketName"].isNull())
 			resultObject.ossObject.bucketName = ossObjectNode["bucketName"].asString();

@@ -39,16 +39,16 @@ void ListAvailableFileSystemTypesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFileSystemTypeList = value["FileSystemTypeList"]["FileSystemTypes"];
-	for (auto value : allFileSystemTypeList)
+	auto allFileSystemTypeListNode = value["FileSystemTypeList"]["FileSystemTypes"];
+	for (auto valueFileSystemTypeListFileSystemTypes : allFileSystemTypeListNode)
 	{
 		FileSystemTypes fileSystemTypeListObject;
-		if(!value["FileSystemType"].isNull())
-			fileSystemTypeListObject.fileSystemType = value["FileSystemType"].asString();
-		if(!value["Available"].isNull())
-			fileSystemTypeListObject.available = value["Available"].asString() == "true";
-		if(!value["ProtocolType"].isNull())
-			fileSystemTypeListObject.protocolType = value["ProtocolType"].asString();
+		if(!valueFileSystemTypeListFileSystemTypes["FileSystemType"].isNull())
+			fileSystemTypeListObject.fileSystemType = valueFileSystemTypeListFileSystemTypes["FileSystemType"].asString();
+		if(!valueFileSystemTypeListFileSystemTypes["Available"].isNull())
+			fileSystemTypeListObject.available = valueFileSystemTypeListFileSystemTypes["Available"].asString() == "true";
+		if(!valueFileSystemTypeListFileSystemTypes["ProtocolType"].isNull())
+			fileSystemTypeListObject.protocolType = valueFileSystemTypeListFileSystemTypes["ProtocolType"].asString();
 		auto allStorageTypes = value["StorageTypes"]["StorageType"];
 		for (auto value : allStorageTypes)
 			fileSystemTypeListObject.storageTypes.push_back(value.asString());

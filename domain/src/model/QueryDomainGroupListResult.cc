@@ -39,24 +39,24 @@ void QueryDomainGroupListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DomainGroup"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DomainGroup"];
+	for (auto valueDataDomainGroup : allDataNode)
 	{
 		DomainGroup dataObject;
-		if(!value["DomainGroupId"].isNull())
-			dataObject.domainGroupId = value["DomainGroupId"].asString();
-		if(!value["DomainGroupName"].isNull())
-			dataObject.domainGroupName = value["DomainGroupName"].asString();
-		if(!value["TotalNumber"].isNull())
-			dataObject.totalNumber = std::stoi(value["TotalNumber"].asString());
-		if(!value["CreationDate"].isNull())
-			dataObject.creationDate = value["CreationDate"].asString();
-		if(!value["ModificationDate"].isNull())
-			dataObject.modificationDate = value["ModificationDate"].asString();
-		if(!value["DomainGroupStatus"].isNull())
-			dataObject.domainGroupStatus = value["DomainGroupStatus"].asString();
-		if(!value["BeingDeleted"].isNull())
-			dataObject.beingDeleted = value["BeingDeleted"].asString() == "true";
+		if(!valueDataDomainGroup["DomainGroupId"].isNull())
+			dataObject.domainGroupId = valueDataDomainGroup["DomainGroupId"].asString();
+		if(!valueDataDomainGroup["DomainGroupName"].isNull())
+			dataObject.domainGroupName = valueDataDomainGroup["DomainGroupName"].asString();
+		if(!valueDataDomainGroup["TotalNumber"].isNull())
+			dataObject.totalNumber = std::stoi(valueDataDomainGroup["TotalNumber"].asString());
+		if(!valueDataDomainGroup["CreationDate"].isNull())
+			dataObject.creationDate = valueDataDomainGroup["CreationDate"].asString();
+		if(!valueDataDomainGroup["ModificationDate"].isNull())
+			dataObject.modificationDate = valueDataDomainGroup["ModificationDate"].asString();
+		if(!valueDataDomainGroup["DomainGroupStatus"].isNull())
+			dataObject.domainGroupStatus = valueDataDomainGroup["DomainGroupStatus"].asString();
+		if(!valueDataDomainGroup["BeingDeleted"].isNull())
+			dataObject.beingDeleted = valueDataDomainGroup["BeingDeleted"].asString() == "true";
 		data_.push_back(dataObject);
 	}
 

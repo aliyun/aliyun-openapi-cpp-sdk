@@ -39,32 +39,32 @@ void DescribeUserDomainsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomains = value["Domains"]["PageData"];
-	for (auto value : allDomains)
+	auto allDomainsNode = value["Domains"]["PageData"];
+	for (auto valueDomainsPageData : allDomainsNode)
 	{
 		PageData domainsObject;
-		if(!value["DomainName"].isNull())
-			domainsObject.domainName = value["DomainName"].asString();
-		if(!value["Cname"].isNull())
-			domainsObject.cname = value["Cname"].asString();
-		if(!value["CdnType"].isNull())
-			domainsObject.cdnType = value["CdnType"].asString();
-		if(!value["DomainStatus"].isNull())
-			domainsObject.domainStatus = value["DomainStatus"].asString();
-		if(!value["GmtCreated"].isNull())
-			domainsObject.gmtCreated = value["GmtCreated"].asString();
-		if(!value["GmtModified"].isNull())
-			domainsObject.gmtModified = value["GmtModified"].asString();
-		if(!value["Description"].isNull())
-			domainsObject.description = value["Description"].asString();
-		if(!value["SourceType"].isNull())
-			domainsObject.sourceType = value["SourceType"].asString();
-		if(!value["SslProtocol"].isNull())
-			domainsObject.sslProtocol = value["SslProtocol"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			domainsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["Sandbox"].isNull())
-			domainsObject.sandbox = value["Sandbox"].asString();
+		if(!valueDomainsPageData["DomainName"].isNull())
+			domainsObject.domainName = valueDomainsPageData["DomainName"].asString();
+		if(!valueDomainsPageData["Cname"].isNull())
+			domainsObject.cname = valueDomainsPageData["Cname"].asString();
+		if(!valueDomainsPageData["CdnType"].isNull())
+			domainsObject.cdnType = valueDomainsPageData["CdnType"].asString();
+		if(!valueDomainsPageData["DomainStatus"].isNull())
+			domainsObject.domainStatus = valueDomainsPageData["DomainStatus"].asString();
+		if(!valueDomainsPageData["GmtCreated"].isNull())
+			domainsObject.gmtCreated = valueDomainsPageData["GmtCreated"].asString();
+		if(!valueDomainsPageData["GmtModified"].isNull())
+			domainsObject.gmtModified = valueDomainsPageData["GmtModified"].asString();
+		if(!valueDomainsPageData["Description"].isNull())
+			domainsObject.description = valueDomainsPageData["Description"].asString();
+		if(!valueDomainsPageData["SourceType"].isNull())
+			domainsObject.sourceType = valueDomainsPageData["SourceType"].asString();
+		if(!valueDomainsPageData["SslProtocol"].isNull())
+			domainsObject.sslProtocol = valueDomainsPageData["SslProtocol"].asString();
+		if(!valueDomainsPageData["ResourceGroupId"].isNull())
+			domainsObject.resourceGroupId = valueDomainsPageData["ResourceGroupId"].asString();
+		if(!valueDomainsPageData["Sandbox"].isNull())
+			domainsObject.sandbox = valueDomainsPageData["Sandbox"].asString();
 		auto allSources = value["Sources"]["Source"];
 		for (auto value : allSources)
 			domainsObject.sources.push_back(value.asString());

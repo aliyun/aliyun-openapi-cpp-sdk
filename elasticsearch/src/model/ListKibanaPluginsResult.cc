@@ -39,20 +39,20 @@ void ListKibanaPluginsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"]["PluginItem"];
-	for (auto value : allResult)
+	auto allResultNode = value["Result"]["PluginItem"];
+	for (auto valueResultPluginItem : allResultNode)
 	{
 		PluginItem resultObject;
-		if(!value["name"].isNull())
-			resultObject.name = value["name"].asString();
-		if(!value["state"].isNull())
-			resultObject.state = value["state"].asString();
-		if(!value["source"].isNull())
-			resultObject.source = value["source"].asString();
-		if(!value["description"].isNull())
-			resultObject.description = value["description"].asString();
-		if(!value["specificationUrl"].isNull())
-			resultObject.specificationUrl = value["specificationUrl"].asString();
+		if(!valueResultPluginItem["name"].isNull())
+			resultObject.name = valueResultPluginItem["name"].asString();
+		if(!valueResultPluginItem["state"].isNull())
+			resultObject.state = valueResultPluginItem["state"].asString();
+		if(!valueResultPluginItem["source"].isNull())
+			resultObject.source = valueResultPluginItem["source"].asString();
+		if(!valueResultPluginItem["description"].isNull())
+			resultObject.description = valueResultPluginItem["description"].asString();
+		if(!valueResultPluginItem["specificationUrl"].isNull())
+			resultObject.specificationUrl = valueResultPluginItem["specificationUrl"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

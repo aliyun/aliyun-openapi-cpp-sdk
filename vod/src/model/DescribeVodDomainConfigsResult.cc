@@ -39,24 +39,24 @@ void DescribeVodDomainConfigsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainConfigs = value["DomainConfigs"]["DomainConfig"];
-	for (auto value : allDomainConfigs)
+	auto allDomainConfigsNode = value["DomainConfigs"]["DomainConfig"];
+	for (auto valueDomainConfigsDomainConfig : allDomainConfigsNode)
 	{
 		DomainConfig domainConfigsObject;
-		if(!value["FunctionName"].isNull())
-			domainConfigsObject.functionName = value["FunctionName"].asString();
-		if(!value["ConfigId"].isNull())
-			domainConfigsObject.configId = value["ConfigId"].asString();
-		if(!value["Status"].isNull())
-			domainConfigsObject.status = value["Status"].asString();
-		auto allFunctionArgs = value["FunctionArgs"]["FunctionArg"];
-		for (auto value : allFunctionArgs)
+		if(!valueDomainConfigsDomainConfig["FunctionName"].isNull())
+			domainConfigsObject.functionName = valueDomainConfigsDomainConfig["FunctionName"].asString();
+		if(!valueDomainConfigsDomainConfig["ConfigId"].isNull())
+			domainConfigsObject.configId = valueDomainConfigsDomainConfig["ConfigId"].asString();
+		if(!valueDomainConfigsDomainConfig["Status"].isNull())
+			domainConfigsObject.status = valueDomainConfigsDomainConfig["Status"].asString();
+		auto allFunctionArgsNode = allDomainConfigsNode["FunctionArgs"]["FunctionArg"];
+		for (auto allDomainConfigsNodeFunctionArgsFunctionArg : allFunctionArgsNode)
 		{
 			DomainConfig::FunctionArg functionArgsObject;
-			if(!value["ArgName"].isNull())
-				functionArgsObject.argName = value["ArgName"].asString();
-			if(!value["ArgValue"].isNull())
-				functionArgsObject.argValue = value["ArgValue"].asString();
+			if(!allDomainConfigsNodeFunctionArgsFunctionArg["ArgName"].isNull())
+				functionArgsObject.argName = allDomainConfigsNodeFunctionArgsFunctionArg["ArgName"].asString();
+			if(!allDomainConfigsNodeFunctionArgsFunctionArg["ArgValue"].isNull())
+				functionArgsObject.argValue = allDomainConfigsNodeFunctionArgsFunctionArg["ArgValue"].asString();
 			domainConfigsObject.functionArgs.push_back(functionArgsObject);
 		}
 		domainConfigs_.push_back(domainConfigsObject);

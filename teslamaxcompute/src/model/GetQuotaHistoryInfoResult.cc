@@ -39,12 +39,12 @@ void GetQuotaHistoryInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DataItem"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!value["Times"].isNull())
-			dataObject.times = std::stoi(value["Times"].asString());
+		if(!valueDataDataItem["Times"].isNull())
+			dataObject.times = std::stoi(valueDataDataItem["Times"].asString());
 		auto pointNode = value["Point"];
 		auto cpuMaxQuotaNode = pointNode["CpuMaxQuota"];
 		if(!cpuMaxQuotaNode["Min"].isNull())

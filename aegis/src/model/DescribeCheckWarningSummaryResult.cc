@@ -39,32 +39,32 @@ void DescribeCheckWarningSummaryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allWarningSummarys = value["WarningSummarys"]["WarningSummary"];
-	for (auto value : allWarningSummarys)
+	auto allWarningSummarysNode = value["WarningSummarys"]["WarningSummary"];
+	for (auto valueWarningSummarysWarningSummary : allWarningSummarysNode)
 	{
 		WarningSummary warningSummarysObject;
-		if(!value["RiskId"].isNull())
-			warningSummarysObject.riskId = std::stol(value["RiskId"].asString());
-		if(!value["RiskName"].isNull())
-			warningSummarysObject.riskName = value["RiskName"].asString();
-		if(!value["TypeAlias"].isNull())
-			warningSummarysObject.typeAlias = value["TypeAlias"].asString();
-		if(!value["SubTypeAlias"].isNull())
-			warningSummarysObject.subTypeAlias = value["SubTypeAlias"].asString();
-		if(!value["LastFoundTime"].isNull())
-			warningSummarysObject.lastFoundTime = value["LastFoundTime"].asString();
-		if(!value["Level"].isNull())
-			warningSummarysObject.level = value["Level"].asString();
-		if(!value["CheckCount"].isNull())
-			warningSummarysObject.checkCount = std::stoi(value["CheckCount"].asString());
-		if(!value["HighWarningCount"].isNull())
-			warningSummarysObject.highWarningCount = std::stoi(value["HighWarningCount"].asString());
-		if(!value["MediumWarningCount"].isNull())
-			warningSummarysObject.mediumWarningCount = std::stoi(value["MediumWarningCount"].asString());
-		if(!value["LowWarningCount"].isNull())
-			warningSummarysObject.lowWarningCount = std::stoi(value["LowWarningCount"].asString());
-		if(!value["WarningMachineCount"].isNull())
-			warningSummarysObject.warningMachineCount = std::stoi(value["WarningMachineCount"].asString());
+		if(!valueWarningSummarysWarningSummary["RiskId"].isNull())
+			warningSummarysObject.riskId = std::stol(valueWarningSummarysWarningSummary["RiskId"].asString());
+		if(!valueWarningSummarysWarningSummary["RiskName"].isNull())
+			warningSummarysObject.riskName = valueWarningSummarysWarningSummary["RiskName"].asString();
+		if(!valueWarningSummarysWarningSummary["TypeAlias"].isNull())
+			warningSummarysObject.typeAlias = valueWarningSummarysWarningSummary["TypeAlias"].asString();
+		if(!valueWarningSummarysWarningSummary["SubTypeAlias"].isNull())
+			warningSummarysObject.subTypeAlias = valueWarningSummarysWarningSummary["SubTypeAlias"].asString();
+		if(!valueWarningSummarysWarningSummary["LastFoundTime"].isNull())
+			warningSummarysObject.lastFoundTime = valueWarningSummarysWarningSummary["LastFoundTime"].asString();
+		if(!valueWarningSummarysWarningSummary["Level"].isNull())
+			warningSummarysObject.level = valueWarningSummarysWarningSummary["Level"].asString();
+		if(!valueWarningSummarysWarningSummary["CheckCount"].isNull())
+			warningSummarysObject.checkCount = std::stoi(valueWarningSummarysWarningSummary["CheckCount"].asString());
+		if(!valueWarningSummarysWarningSummary["HighWarningCount"].isNull())
+			warningSummarysObject.highWarningCount = std::stoi(valueWarningSummarysWarningSummary["HighWarningCount"].asString());
+		if(!valueWarningSummarysWarningSummary["MediumWarningCount"].isNull())
+			warningSummarysObject.mediumWarningCount = std::stoi(valueWarningSummarysWarningSummary["MediumWarningCount"].asString());
+		if(!valueWarningSummarysWarningSummary["LowWarningCount"].isNull())
+			warningSummarysObject.lowWarningCount = std::stoi(valueWarningSummarysWarningSummary["LowWarningCount"].asString());
+		if(!valueWarningSummarysWarningSummary["WarningMachineCount"].isNull())
+			warningSummarysObject.warningMachineCount = std::stoi(valueWarningSummarysWarningSummary["WarningMachineCount"].asString());
 		warningSummarys_.push_back(warningSummarysObject);
 	}
 	if(!value["Count"].isNull())

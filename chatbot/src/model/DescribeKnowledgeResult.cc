@@ -39,48 +39,48 @@ void DescribeKnowledgeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOutlines = value["Outlines"]["Outline"];
-	for (auto value : allOutlines)
+	auto allOutlinesNode = value["Outlines"]["Outline"];
+	for (auto valueOutlinesOutline : allOutlinesNode)
 	{
 		Outline outlinesObject;
-		if(!value["KnowledgeId"].isNull())
-			outlinesObject.knowledgeId = std::stol(value["KnowledgeId"].asString());
-		if(!value["Title"].isNull())
-			outlinesObject.title = value["Title"].asString();
-		if(!value["OutlineId"].isNull())
-			outlinesObject.outlineId = std::stol(value["OutlineId"].asString());
+		if(!valueOutlinesOutline["KnowledgeId"].isNull())
+			outlinesObject.knowledgeId = std::stol(valueOutlinesOutline["KnowledgeId"].asString());
+		if(!valueOutlinesOutline["Title"].isNull())
+			outlinesObject.title = valueOutlinesOutline["Title"].asString();
+		if(!valueOutlinesOutline["OutlineId"].isNull())
+			outlinesObject.outlineId = std::stol(valueOutlinesOutline["OutlineId"].asString());
 		outlines_.push_back(outlinesObject);
 	}
-	auto allSimQuestions = value["SimQuestions"]["SimQuestion"];
-	for (auto value : allSimQuestions)
+	auto allSimQuestionsNode = value["SimQuestions"]["SimQuestion"];
+	for (auto valueSimQuestionsSimQuestion : allSimQuestionsNode)
 	{
 		SimQuestion simQuestionsObject;
-		if(!value["ModifyTime"].isNull())
-			simQuestionsObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["CreateTime"].isNull())
-			simQuestionsObject.createTime = value["CreateTime"].asString();
-		if(!value["SimQuestionId"].isNull())
-			simQuestionsObject.simQuestionId = std::stol(value["SimQuestionId"].asString());
-		if(!value["Title"].isNull())
-			simQuestionsObject.title = value["Title"].asString();
+		if(!valueSimQuestionsSimQuestion["ModifyTime"].isNull())
+			simQuestionsObject.modifyTime = valueSimQuestionsSimQuestion["ModifyTime"].asString();
+		if(!valueSimQuestionsSimQuestion["CreateTime"].isNull())
+			simQuestionsObject.createTime = valueSimQuestionsSimQuestion["CreateTime"].asString();
+		if(!valueSimQuestionsSimQuestion["SimQuestionId"].isNull())
+			simQuestionsObject.simQuestionId = std::stol(valueSimQuestionsSimQuestion["SimQuestionId"].asString());
+		if(!valueSimQuestionsSimQuestion["Title"].isNull())
+			simQuestionsObject.title = valueSimQuestionsSimQuestion["Title"].asString();
 		simQuestions_.push_back(simQuestionsObject);
 	}
-	auto allSolutions = value["Solutions"]["Solution"];
-	for (auto value : allSolutions)
+	auto allSolutionsNode = value["Solutions"]["Solution"];
+	for (auto valueSolutionsSolution : allSolutionsNode)
 	{
 		Solution solutionsObject;
-		if(!value["Summary"].isNull())
-			solutionsObject.summary = value["Summary"].asString();
-		if(!value["ModifyTime"].isNull())
-			solutionsObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["CreateTime"].isNull())
-			solutionsObject.createTime = value["CreateTime"].asString();
-		if(!value["SolutionId"].isNull())
-			solutionsObject.solutionId = std::stol(value["SolutionId"].asString());
-		if(!value["Content"].isNull())
-			solutionsObject.content = value["Content"].asString();
-		if(!value["PlainText"].isNull())
-			solutionsObject.plainText = value["PlainText"].asString();
+		if(!valueSolutionsSolution["Summary"].isNull())
+			solutionsObject.summary = valueSolutionsSolution["Summary"].asString();
+		if(!valueSolutionsSolution["ModifyTime"].isNull())
+			solutionsObject.modifyTime = valueSolutionsSolution["ModifyTime"].asString();
+		if(!valueSolutionsSolution["CreateTime"].isNull())
+			solutionsObject.createTime = valueSolutionsSolution["CreateTime"].asString();
+		if(!valueSolutionsSolution["SolutionId"].isNull())
+			solutionsObject.solutionId = std::stol(valueSolutionsSolution["SolutionId"].asString());
+		if(!valueSolutionsSolution["Content"].isNull())
+			solutionsObject.content = valueSolutionsSolution["Content"].asString();
+		if(!valueSolutionsSolution["PlainText"].isNull())
+			solutionsObject.plainText = valueSolutionsSolution["PlainText"].asString();
 		auto allPerspectiveIds = value["PerspectiveIds"]["PerspectiveId"];
 		for (auto value : allPerspectiveIds)
 			solutionsObject.perspectiveIds.push_back(value.asString());

@@ -39,14 +39,14 @@ void DescribeDBInstanceTDEResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDatabases = value["Databases"]["Database"];
-	for (auto value : allDatabases)
+	auto allDatabasesNode = value["Databases"]["Database"];
+	for (auto valueDatabasesDatabase : allDatabasesNode)
 	{
 		Database databasesObject;
-		if(!value["DBName"].isNull())
-			databasesObject.dBName = value["DBName"].asString();
-		if(!value["TDEStatus"].isNull())
-			databasesObject.tDEStatus = value["TDEStatus"].asString();
+		if(!valueDatabasesDatabase["DBName"].isNull())
+			databasesObject.dBName = valueDatabasesDatabase["DBName"].asString();
+		if(!valueDatabasesDatabase["TDEStatus"].isNull())
+			databasesObject.tDEStatus = valueDatabasesDatabase["TDEStatus"].asString();
 		databases_.push_back(databasesObject);
 	}
 	if(!value["TDEStatus"].isNull())

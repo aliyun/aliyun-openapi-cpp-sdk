@@ -39,14 +39,14 @@ void DescribeHitRatePieResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Item"];
+	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!value["Data"].isNull())
-			itemsObject.data = std::stol(value["Data"].asString());
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
+		if(!valueItemsItem["Data"].isNull())
+			itemsObject.data = std::stol(valueItemsItem["Data"].asString());
+		if(!valueItemsItem["Name"].isNull())
+			itemsObject.name = valueItemsItem["Name"].asString();
 		items_.push_back(itemsObject);
 	}
 

@@ -39,18 +39,18 @@ void AttachKeyPairResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResults = value["Results"]["Result"];
-	for (auto value : allResults)
+	auto allResultsNode = value["Results"]["Result"];
+	for (auto valueResultsResult : allResultsNode)
 	{
 		Result resultsObject;
-		if(!value["InstanceId"].isNull())
-			resultsObject.instanceId = value["InstanceId"].asString();
-		if(!value["Success"].isNull())
-			resultsObject.success = value["Success"].asString();
-		if(!value["Code"].isNull())
-			resultsObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			resultsObject.message = value["Message"].asString();
+		if(!valueResultsResult["InstanceId"].isNull())
+			resultsObject.instanceId = valueResultsResult["InstanceId"].asString();
+		if(!valueResultsResult["Success"].isNull())
+			resultsObject.success = valueResultsResult["Success"].asString();
+		if(!valueResultsResult["Code"].isNull())
+			resultsObject.code = valueResultsResult["Code"].asString();
+		if(!valueResultsResult["Message"].isNull())
+			resultsObject.message = valueResultsResult["Message"].asString();
 		results_.push_back(resultsObject);
 	}
 	if(!value["TotalCount"].isNull())

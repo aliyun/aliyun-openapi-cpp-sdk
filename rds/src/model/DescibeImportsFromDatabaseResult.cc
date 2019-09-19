@@ -39,20 +39,20 @@ void DescibeImportsFromDatabaseResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["ImportResultFromDB"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["ImportResultFromDB"];
+	for (auto valueItemsImportResultFromDB : allItemsNode)
 	{
 		ImportResultFromDB itemsObject;
-		if(!value["ImportId"].isNull())
-			itemsObject.importId = std::stoi(value["ImportId"].asString());
-		if(!value["ImportDataType"].isNull())
-			itemsObject.importDataType = value["ImportDataType"].asString();
-		if(!value["ImportDataStatus"].isNull())
-			itemsObject.importDataStatus = value["ImportDataStatus"].asString();
-		if(!value["ImportDataStatusDescription"].isNull())
-			itemsObject.importDataStatusDescription = value["ImportDataStatusDescription"].asString();
-		if(!value["IncrementalImportingTime"].isNull())
-			itemsObject.incrementalImportingTime = value["IncrementalImportingTime"].asString();
+		if(!valueItemsImportResultFromDB["ImportId"].isNull())
+			itemsObject.importId = std::stoi(valueItemsImportResultFromDB["ImportId"].asString());
+		if(!valueItemsImportResultFromDB["ImportDataType"].isNull())
+			itemsObject.importDataType = valueItemsImportResultFromDB["ImportDataType"].asString();
+		if(!valueItemsImportResultFromDB["ImportDataStatus"].isNull())
+			itemsObject.importDataStatus = valueItemsImportResultFromDB["ImportDataStatus"].asString();
+		if(!valueItemsImportResultFromDB["ImportDataStatusDescription"].isNull())
+			itemsObject.importDataStatusDescription = valueItemsImportResultFromDB["ImportDataStatusDescription"].asString();
+		if(!valueItemsImportResultFromDB["IncrementalImportingTime"].isNull())
+			itemsObject.incrementalImportingTime = valueItemsImportResultFromDB["IncrementalImportingTime"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

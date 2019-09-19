@@ -39,48 +39,48 @@ void ListSkillGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSkillGroups = value["SkillGroups"]["SkillGroup"];
-	for (auto value : allSkillGroups)
+	auto allSkillGroupsNode = value["SkillGroups"]["SkillGroup"];
+	for (auto valueSkillGroupsSkillGroup : allSkillGroupsNode)
 	{
 		SkillGroup skillGroupsObject;
-		if(!value["SkillGroupId"].isNull())
-			skillGroupsObject.skillGroupId = value["SkillGroupId"].asString();
-		if(!value["InstanceId"].isNull())
-			skillGroupsObject.instanceId = value["InstanceId"].asString();
-		if(!value["SkillGroupName"].isNull())
-			skillGroupsObject.skillGroupName = value["SkillGroupName"].asString();
-		if(!value["AccSkillGroupName"].isNull())
-			skillGroupsObject.accSkillGroupName = value["AccSkillGroupName"].asString();
-		if(!value["AccQueueName"].isNull())
-			skillGroupsObject.accQueueName = value["AccQueueName"].asString();
-		if(!value["SkillGroupDescription"].isNull())
-			skillGroupsObject.skillGroupDescription = value["SkillGroupDescription"].asString();
-		if(!value["RoutingStrategy"].isNull())
-			skillGroupsObject.routingStrategy = value["RoutingStrategy"].asString();
-		if(!value["UserCount"].isNull())
-			skillGroupsObject.userCount = std::stoi(value["UserCount"].asString());
-		auto allOutboundPhoneNumbers = value["OutboundPhoneNumbers"]["PhoneNumber"];
-		for (auto value : allOutboundPhoneNumbers)
+		if(!valueSkillGroupsSkillGroup["SkillGroupId"].isNull())
+			skillGroupsObject.skillGroupId = valueSkillGroupsSkillGroup["SkillGroupId"].asString();
+		if(!valueSkillGroupsSkillGroup["InstanceId"].isNull())
+			skillGroupsObject.instanceId = valueSkillGroupsSkillGroup["InstanceId"].asString();
+		if(!valueSkillGroupsSkillGroup["SkillGroupName"].isNull())
+			skillGroupsObject.skillGroupName = valueSkillGroupsSkillGroup["SkillGroupName"].asString();
+		if(!valueSkillGroupsSkillGroup["AccSkillGroupName"].isNull())
+			skillGroupsObject.accSkillGroupName = valueSkillGroupsSkillGroup["AccSkillGroupName"].asString();
+		if(!valueSkillGroupsSkillGroup["AccQueueName"].isNull())
+			skillGroupsObject.accQueueName = valueSkillGroupsSkillGroup["AccQueueName"].asString();
+		if(!valueSkillGroupsSkillGroup["SkillGroupDescription"].isNull())
+			skillGroupsObject.skillGroupDescription = valueSkillGroupsSkillGroup["SkillGroupDescription"].asString();
+		if(!valueSkillGroupsSkillGroup["RoutingStrategy"].isNull())
+			skillGroupsObject.routingStrategy = valueSkillGroupsSkillGroup["RoutingStrategy"].asString();
+		if(!valueSkillGroupsSkillGroup["UserCount"].isNull())
+			skillGroupsObject.userCount = std::stoi(valueSkillGroupsSkillGroup["UserCount"].asString());
+		auto allOutboundPhoneNumbersNode = allSkillGroupsNode["OutboundPhoneNumbers"]["PhoneNumber"];
+		for (auto allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber : allOutboundPhoneNumbersNode)
 		{
 			SkillGroup::PhoneNumber outboundPhoneNumbersObject;
-			if(!value["PhoneNumberId"].isNull())
-				outboundPhoneNumbersObject.phoneNumberId = value["PhoneNumberId"].asString();
-			if(!value["InstanceId"].isNull())
-				outboundPhoneNumbersObject.instanceId = value["InstanceId"].asString();
-			if(!value["Number"].isNull())
-				outboundPhoneNumbersObject.number = value["Number"].asString();
-			if(!value["PhoneNumberDescription"].isNull())
-				outboundPhoneNumbersObject.phoneNumberDescription = value["PhoneNumberDescription"].asString();
-			if(!value["TestOnly"].isNull())
-				outboundPhoneNumbersObject.testOnly = value["TestOnly"].asString() == "true";
-			if(!value["RemainingTime"].isNull())
-				outboundPhoneNumbersObject.remainingTime = std::stoi(value["RemainingTime"].asString());
-			if(!value["AllowOutbound"].isNull())
-				outboundPhoneNumbersObject.allowOutbound = value["AllowOutbound"].asString() == "true";
-			if(!value["Usage"].isNull())
-				outboundPhoneNumbersObject.usage = value["Usage"].asString();
-			if(!value["Trunks"].isNull())
-				outboundPhoneNumbersObject.trunks = std::stoi(value["Trunks"].asString());
+			if(!allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["PhoneNumberId"].isNull())
+				outboundPhoneNumbersObject.phoneNumberId = allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["PhoneNumberId"].asString();
+			if(!allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["InstanceId"].isNull())
+				outboundPhoneNumbersObject.instanceId = allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["InstanceId"].asString();
+			if(!allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["Number"].isNull())
+				outboundPhoneNumbersObject.number = allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["Number"].asString();
+			if(!allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["PhoneNumberDescription"].isNull())
+				outboundPhoneNumbersObject.phoneNumberDescription = allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["PhoneNumberDescription"].asString();
+			if(!allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["TestOnly"].isNull())
+				outboundPhoneNumbersObject.testOnly = allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["TestOnly"].asString() == "true";
+			if(!allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["RemainingTime"].isNull())
+				outboundPhoneNumbersObject.remainingTime = std::stoi(allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["RemainingTime"].asString());
+			if(!allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["AllowOutbound"].isNull())
+				outboundPhoneNumbersObject.allowOutbound = allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["AllowOutbound"].asString() == "true";
+			if(!allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["Usage"].isNull())
+				outboundPhoneNumbersObject.usage = allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["Usage"].asString();
+			if(!allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["Trunks"].isNull())
+				outboundPhoneNumbersObject.trunks = std::stoi(allSkillGroupsNodeOutboundPhoneNumbersPhoneNumber["Trunks"].asString());
 			skillGroupsObject.outboundPhoneNumbers.push_back(outboundPhoneNumbersObject);
 		}
 		skillGroups_.push_back(skillGroupsObject);

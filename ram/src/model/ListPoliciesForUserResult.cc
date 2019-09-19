@@ -39,20 +39,20 @@ void ListPoliciesForUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPolicies = value["Policies"]["Policy"];
-	for (auto value : allPolicies)
+	auto allPoliciesNode = value["Policies"]["Policy"];
+	for (auto valuePoliciesPolicy : allPoliciesNode)
 	{
 		Policy policiesObject;
-		if(!value["PolicyName"].isNull())
-			policiesObject.policyName = value["PolicyName"].asString();
-		if(!value["PolicyType"].isNull())
-			policiesObject.policyType = value["PolicyType"].asString();
-		if(!value["Description"].isNull())
-			policiesObject.description = value["Description"].asString();
-		if(!value["DefaultVersion"].isNull())
-			policiesObject.defaultVersion = value["DefaultVersion"].asString();
-		if(!value["AttachDate"].isNull())
-			policiesObject.attachDate = value["AttachDate"].asString();
+		if(!valuePoliciesPolicy["PolicyName"].isNull())
+			policiesObject.policyName = valuePoliciesPolicy["PolicyName"].asString();
+		if(!valuePoliciesPolicy["PolicyType"].isNull())
+			policiesObject.policyType = valuePoliciesPolicy["PolicyType"].asString();
+		if(!valuePoliciesPolicy["Description"].isNull())
+			policiesObject.description = valuePoliciesPolicy["Description"].asString();
+		if(!valuePoliciesPolicy["DefaultVersion"].isNull())
+			policiesObject.defaultVersion = valuePoliciesPolicy["DefaultVersion"].asString();
+		if(!valuePoliciesPolicy["AttachDate"].isNull())
+			policiesObject.attachDate = valuePoliciesPolicy["AttachDate"].asString();
 		policies_.push_back(policiesObject);
 	}
 

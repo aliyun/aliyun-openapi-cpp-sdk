@@ -39,14 +39,14 @@ void DescribeMasterSlaveVServerGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMasterSlaveVServerGroups = value["MasterSlaveVServerGroups"]["MasterSlaveVServerGroup"];
-	for (auto value : allMasterSlaveVServerGroups)
+	auto allMasterSlaveVServerGroupsNode = value["MasterSlaveVServerGroups"]["MasterSlaveVServerGroup"];
+	for (auto valueMasterSlaveVServerGroupsMasterSlaveVServerGroup : allMasterSlaveVServerGroupsNode)
 	{
 		MasterSlaveVServerGroup masterSlaveVServerGroupsObject;
-		if(!value["MasterSlaveVServerGroupId"].isNull())
-			masterSlaveVServerGroupsObject.masterSlaveVServerGroupId = value["MasterSlaveVServerGroupId"].asString();
-		if(!value["MasterSlaveVServerGroupName"].isNull())
-			masterSlaveVServerGroupsObject.masterSlaveVServerGroupName = value["MasterSlaveVServerGroupName"].asString();
+		if(!valueMasterSlaveVServerGroupsMasterSlaveVServerGroup["MasterSlaveVServerGroupId"].isNull())
+			masterSlaveVServerGroupsObject.masterSlaveVServerGroupId = valueMasterSlaveVServerGroupsMasterSlaveVServerGroup["MasterSlaveVServerGroupId"].asString();
+		if(!valueMasterSlaveVServerGroupsMasterSlaveVServerGroup["MasterSlaveVServerGroupName"].isNull())
+			masterSlaveVServerGroupsObject.masterSlaveVServerGroupName = valueMasterSlaveVServerGroupsMasterSlaveVServerGroup["MasterSlaveVServerGroupName"].asString();
 		masterSlaveVServerGroups_.push_back(masterSlaveVServerGroupsObject);
 	}
 

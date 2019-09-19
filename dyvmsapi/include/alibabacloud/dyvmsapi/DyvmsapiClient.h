@@ -26,6 +26,8 @@
 #include "model/AddRtcAccountResult.h"
 #include "model/BatchRobotSmartCallRequest.h"
 #include "model/BatchRobotSmartCallResult.h"
+#include "model/BindNumberAndVoipIdRequest.h"
+#include "model/BindNumberAndVoipIdResult.h"
 #include "model/CancelCallRequest.h"
 #include "model/CancelCallResult.h"
 #include "model/CancelOrderRobotTaskRequest.h"
@@ -70,6 +72,8 @@
 #include "model/StartRobotTaskResult.h"
 #include "model/StopRobotTaskRequest.h"
 #include "model/StopRobotTaskResult.h"
+#include "model/UnbindNumberAndVoipIdRequest.h"
+#include "model/UnbindNumberAndVoipIdResult.h"
 #include "model/UploadRobotTaskCalledFileRequest.h"
 #include "model/UploadRobotTaskCalledFileResult.h"
 #include "model/VoipAddAccountRequest.h"
@@ -91,6 +95,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchRobotSmartCallResult> BatchRobotSmartCallOutcome;
 			typedef std::future<BatchRobotSmartCallOutcome> BatchRobotSmartCallOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::BatchRobotSmartCallRequest&, const BatchRobotSmartCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchRobotSmartCallAsyncHandler;
+			typedef Outcome<Error, Model::BindNumberAndVoipIdResult> BindNumberAndVoipIdOutcome;
+			typedef std::future<BindNumberAndVoipIdOutcome> BindNumberAndVoipIdOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::BindNumberAndVoipIdRequest&, const BindNumberAndVoipIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindNumberAndVoipIdAsyncHandler;
 			typedef Outcome<Error, Model::CancelCallResult> CancelCallOutcome;
 			typedef std::future<CancelCallOutcome> CancelCallOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::CancelCallRequest&, const CancelCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelCallAsyncHandler;
@@ -157,6 +164,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopRobotTaskResult> StopRobotTaskOutcome;
 			typedef std::future<StopRobotTaskOutcome> StopRobotTaskOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::StopRobotTaskRequest&, const StopRobotTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopRobotTaskAsyncHandler;
+			typedef Outcome<Error, Model::UnbindNumberAndVoipIdResult> UnbindNumberAndVoipIdOutcome;
+			typedef std::future<UnbindNumberAndVoipIdOutcome> UnbindNumberAndVoipIdOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::UnbindNumberAndVoipIdRequest&, const UnbindNumberAndVoipIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindNumberAndVoipIdAsyncHandler;
 			typedef Outcome<Error, Model::UploadRobotTaskCalledFileResult> UploadRobotTaskCalledFileOutcome;
 			typedef std::future<UploadRobotTaskCalledFileOutcome> UploadRobotTaskCalledFileOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::UploadRobotTaskCalledFileRequest&, const UploadRobotTaskCalledFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadRobotTaskCalledFileAsyncHandler;
@@ -177,6 +187,9 @@ namespace AlibabaCloud
 			BatchRobotSmartCallOutcome batchRobotSmartCall(const Model::BatchRobotSmartCallRequest &request)const;
 			void batchRobotSmartCallAsync(const Model::BatchRobotSmartCallRequest& request, const BatchRobotSmartCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchRobotSmartCallOutcomeCallable batchRobotSmartCallCallable(const Model::BatchRobotSmartCallRequest& request) const;
+			BindNumberAndVoipIdOutcome bindNumberAndVoipId(const Model::BindNumberAndVoipIdRequest &request)const;
+			void bindNumberAndVoipIdAsync(const Model::BindNumberAndVoipIdRequest& request, const BindNumberAndVoipIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindNumberAndVoipIdOutcomeCallable bindNumberAndVoipIdCallable(const Model::BindNumberAndVoipIdRequest& request) const;
 			CancelCallOutcome cancelCall(const Model::CancelCallRequest &request)const;
 			void cancelCallAsync(const Model::CancelCallRequest& request, const CancelCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelCallOutcomeCallable cancelCallCallable(const Model::CancelCallRequest& request) const;
@@ -243,6 +256,9 @@ namespace AlibabaCloud
 			StopRobotTaskOutcome stopRobotTask(const Model::StopRobotTaskRequest &request)const;
 			void stopRobotTaskAsync(const Model::StopRobotTaskRequest& request, const StopRobotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopRobotTaskOutcomeCallable stopRobotTaskCallable(const Model::StopRobotTaskRequest& request) const;
+			UnbindNumberAndVoipIdOutcome unbindNumberAndVoipId(const Model::UnbindNumberAndVoipIdRequest &request)const;
+			void unbindNumberAndVoipIdAsync(const Model::UnbindNumberAndVoipIdRequest& request, const UnbindNumberAndVoipIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindNumberAndVoipIdOutcomeCallable unbindNumberAndVoipIdCallable(const Model::UnbindNumberAndVoipIdRequest& request) const;
 			UploadRobotTaskCalledFileOutcome uploadRobotTaskCalledFile(const Model::UploadRobotTaskCalledFileRequest &request)const;
 			void uploadRobotTaskCalledFileAsync(const Model::UploadRobotTaskCalledFileRequest& request, const UploadRobotTaskCalledFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UploadRobotTaskCalledFileOutcomeCallable uploadRobotTaskCalledFileCallable(const Model::UploadRobotTaskCalledFileRequest& request) const;

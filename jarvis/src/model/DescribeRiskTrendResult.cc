@@ -39,16 +39,16 @@ void DescribeRiskTrendResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataList = value["DataList"]["DataItem"];
-	for (auto value : allDataList)
+	auto allDataListNode = value["DataList"]["DataItem"];
+	for (auto valueDataListDataItem : allDataListNode)
 	{
 		DataItem dataListObject;
-		if(!value["UpdateTime"].isNull())
-			dataListObject.updateTime = value["UpdateTime"].asString();
-		if(!value["NewRiskCount"].isNull())
-			dataListObject.newRiskCount = std::stoi(value["NewRiskCount"].asString());
-		if(!value["TotalRiskCount"].isNull())
-			dataListObject.totalRiskCount = std::stoi(value["TotalRiskCount"].asString());
+		if(!valueDataListDataItem["UpdateTime"].isNull())
+			dataListObject.updateTime = valueDataListDataItem["UpdateTime"].asString();
+		if(!valueDataListDataItem["NewRiskCount"].isNull())
+			dataListObject.newRiskCount = std::stoi(valueDataListDataItem["NewRiskCount"].asString());
+		if(!valueDataListDataItem["TotalRiskCount"].isNull())
+			dataListObject.totalRiskCount = std::stoi(valueDataListDataItem["TotalRiskCount"].asString());
 		dataList_.push_back(dataListObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,20 +39,20 @@ void DescribeRoleZoneInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allZoneInfos = value["ZoneInfos"]["ZoneInfo"];
-	for (auto value : allZoneInfos)
+	auto allZoneInfosNode = value["ZoneInfos"]["ZoneInfo"];
+	for (auto valueZoneInfosZoneInfo : allZoneInfosNode)
 	{
 		ZoneInfo zoneInfosObject;
-		if(!value["NodeType"].isNull())
-			zoneInfosObject.nodeType = value["NodeType"].asString();
-		if(!value["RoleType"].isNull())
-			zoneInfosObject.roleType = value["RoleType"].asString();
-		if(!value["ZoneId"].isNull())
-			zoneInfosObject.zoneId = value["ZoneId"].asString();
-		if(!value["RoleId"].isNull())
-			zoneInfosObject.roleId = value["RoleId"].asString();
-		if(!value["InsName"].isNull())
-			zoneInfosObject.insName = value["InsName"].asString();
+		if(!valueZoneInfosZoneInfo["NodeType"].isNull())
+			zoneInfosObject.nodeType = valueZoneInfosZoneInfo["NodeType"].asString();
+		if(!valueZoneInfosZoneInfo["RoleType"].isNull())
+			zoneInfosObject.roleType = valueZoneInfosZoneInfo["RoleType"].asString();
+		if(!valueZoneInfosZoneInfo["ZoneId"].isNull())
+			zoneInfosObject.zoneId = valueZoneInfosZoneInfo["ZoneId"].asString();
+		if(!valueZoneInfosZoneInfo["RoleId"].isNull())
+			zoneInfosObject.roleId = valueZoneInfosZoneInfo["RoleId"].asString();
+		if(!valueZoneInfosZoneInfo["InsName"].isNull())
+			zoneInfosObject.insName = valueZoneInfosZoneInfo["InsName"].asString();
 		zoneInfos_.push_back(zoneInfosObject);
 	}
 

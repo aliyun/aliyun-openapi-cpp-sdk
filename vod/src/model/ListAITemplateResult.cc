@@ -39,26 +39,26 @@ void ListAITemplateResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTemplateInfoList = value["TemplateInfoList"]["TemplateInfoListItem"];
-	for (auto value : allTemplateInfoList)
+	auto allTemplateInfoListNode = value["TemplateInfoList"]["TemplateInfoListItem"];
+	for (auto valueTemplateInfoListTemplateInfoListItem : allTemplateInfoListNode)
 	{
 		TemplateInfoListItem templateInfoListObject;
-		if(!value["TemplateId"].isNull())
-			templateInfoListObject.templateId = value["TemplateId"].asString();
-		if(!value["TemplateType"].isNull())
-			templateInfoListObject.templateType = value["TemplateType"].asString();
-		if(!value["TemplateName"].isNull())
-			templateInfoListObject.templateName = value["TemplateName"].asString();
-		if(!value["TemplateConfig"].isNull())
-			templateInfoListObject.templateConfig = value["TemplateConfig"].asString();
-		if(!value["Source"].isNull())
-			templateInfoListObject.source = value["Source"].asString();
-		if(!value["IsDefault"].isNull())
-			templateInfoListObject.isDefault = value["IsDefault"].asString();
-		if(!value["CreationTime"].isNull())
-			templateInfoListObject.creationTime = value["CreationTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			templateInfoListObject.modifyTime = value["ModifyTime"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["TemplateId"].isNull())
+			templateInfoListObject.templateId = valueTemplateInfoListTemplateInfoListItem["TemplateId"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["TemplateType"].isNull())
+			templateInfoListObject.templateType = valueTemplateInfoListTemplateInfoListItem["TemplateType"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["TemplateName"].isNull())
+			templateInfoListObject.templateName = valueTemplateInfoListTemplateInfoListItem["TemplateName"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["TemplateConfig"].isNull())
+			templateInfoListObject.templateConfig = valueTemplateInfoListTemplateInfoListItem["TemplateConfig"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["Source"].isNull())
+			templateInfoListObject.source = valueTemplateInfoListTemplateInfoListItem["Source"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["IsDefault"].isNull())
+			templateInfoListObject.isDefault = valueTemplateInfoListTemplateInfoListItem["IsDefault"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["CreationTime"].isNull())
+			templateInfoListObject.creationTime = valueTemplateInfoListTemplateInfoListItem["CreationTime"].asString();
+		if(!valueTemplateInfoListTemplateInfoListItem["ModifyTime"].isNull())
+			templateInfoListObject.modifyTime = valueTemplateInfoListTemplateInfoListItem["ModifyTime"].asString();
 		templateInfoList_.push_back(templateInfoListObject);
 	}
 

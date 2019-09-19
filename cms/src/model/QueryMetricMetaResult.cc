@@ -39,26 +39,26 @@ void QueryMetricMetaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResources = value["Resources"]["Resource"];
-	for (auto value : allResources)
+	auto allResourcesNode = value["Resources"]["Resource"];
+	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!value["Project"].isNull())
-			resourcesObject.project = value["Project"].asString();
-		if(!value["Metric"].isNull())
-			resourcesObject.metric = value["Metric"].asString();
-		if(!value["Statistics"].isNull())
-			resourcesObject.statistics = value["Statistics"].asString();
-		if(!value["Unit"].isNull())
-			resourcesObject.unit = value["Unit"].asString();
-		if(!value["Description"].isNull())
-			resourcesObject.description = value["Description"].asString();
-		if(!value["Dimensions"].isNull())
-			resourcesObject.dimensions = value["Dimensions"].asString();
-		if(!value["Periods"].isNull())
-			resourcesObject.periods = value["Periods"].asString();
-		if(!value["Labels"].isNull())
-			resourcesObject.labels = value["Labels"].asString();
+		if(!valueResourcesResource["Project"].isNull())
+			resourcesObject.project = valueResourcesResource["Project"].asString();
+		if(!valueResourcesResource["Metric"].isNull())
+			resourcesObject.metric = valueResourcesResource["Metric"].asString();
+		if(!valueResourcesResource["Statistics"].isNull())
+			resourcesObject.statistics = valueResourcesResource["Statistics"].asString();
+		if(!valueResourcesResource["Unit"].isNull())
+			resourcesObject.unit = valueResourcesResource["Unit"].asString();
+		if(!valueResourcesResource["Description"].isNull())
+			resourcesObject.description = valueResourcesResource["Description"].asString();
+		if(!valueResourcesResource["Dimensions"].isNull())
+			resourcesObject.dimensions = valueResourcesResource["Dimensions"].asString();
+		if(!valueResourcesResource["Periods"].isNull())
+			resourcesObject.periods = valueResourcesResource["Periods"].asString();
+		if(!valueResourcesResource["Labels"].isNull())
+			resourcesObject.labels = valueResourcesResource["Labels"].asString();
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["Success"].isNull())

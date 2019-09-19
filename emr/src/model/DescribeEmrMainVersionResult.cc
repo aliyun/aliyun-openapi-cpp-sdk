@@ -54,28 +54,28 @@ void DescribeEmrMainVersionResult::parse(const std::string &payload)
 		emrMainVersion_.stackName = emrMainVersionNode["StackName"].asString();
 	if(!emrMainVersionNode["StackVersion"].isNull())
 		emrMainVersion_.stackVersion = emrMainVersionNode["StackVersion"].asString();
-	auto allClusterTypeInfoList = value["ClusterTypeInfoList"]["ClusterTypeInfo"];
-	for (auto value : allClusterTypeInfoList)
+	auto allClusterTypeInfoListNode = emrMainVersionNode["ClusterTypeInfoList"]["ClusterTypeInfo"];
+	for (auto emrMainVersionNodeClusterTypeInfoListClusterTypeInfo : allClusterTypeInfoListNode)
 	{
 		EmrMainVersion::ClusterTypeInfo clusterTypeInfoObject;
-		if(!value["ClusterType"].isNull())
-			clusterTypeInfoObject.clusterType = value["ClusterType"].asString();
-		auto allServiceInfoList = value["ServiceInfoList"]["ServiceInfo"];
-		for (auto value : allServiceInfoList)
+		if(!emrMainVersionNodeClusterTypeInfoListClusterTypeInfo["ClusterType"].isNull())
+			clusterTypeInfoObject.clusterType = emrMainVersionNodeClusterTypeInfoListClusterTypeInfo["ClusterType"].asString();
+		auto allServiceInfoListNode = allClusterTypeInfoListNode["ServiceInfoList"]["ServiceInfo"];
+		for (auto allClusterTypeInfoListNodeServiceInfoListServiceInfo : allServiceInfoListNode)
 		{
 			EmrMainVersion::ClusterTypeInfo::ServiceInfo serviceInfoListObject;
-			if(!value["ServiceName"].isNull())
-				serviceInfoListObject.serviceName = value["ServiceName"].asString();
-			if(!value["ServiceDisplayName"].isNull())
-				serviceInfoListObject.serviceDisplayName = value["ServiceDisplayName"].asString();
-			if(!value["ServiceVersion"].isNull())
-				serviceInfoListObject.serviceVersion = value["ServiceVersion"].asString();
-			if(!value["ServiceDisplayVersion"].isNull())
-				serviceInfoListObject.serviceDisplayVersion = value["ServiceDisplayVersion"].asString();
-			if(!value["Mandatory"].isNull())
-				serviceInfoListObject.mandatory = value["Mandatory"].asString() == "true";
-			if(!value["Display"].isNull())
-				serviceInfoListObject.display = value["Display"].asString() == "true";
+			if(!allClusterTypeInfoListNodeServiceInfoListServiceInfo["ServiceName"].isNull())
+				serviceInfoListObject.serviceName = allClusterTypeInfoListNodeServiceInfoListServiceInfo["ServiceName"].asString();
+			if(!allClusterTypeInfoListNodeServiceInfoListServiceInfo["ServiceDisplayName"].isNull())
+				serviceInfoListObject.serviceDisplayName = allClusterTypeInfoListNodeServiceInfoListServiceInfo["ServiceDisplayName"].asString();
+			if(!allClusterTypeInfoListNodeServiceInfoListServiceInfo["ServiceVersion"].isNull())
+				serviceInfoListObject.serviceVersion = allClusterTypeInfoListNodeServiceInfoListServiceInfo["ServiceVersion"].asString();
+			if(!allClusterTypeInfoListNodeServiceInfoListServiceInfo["ServiceDisplayVersion"].isNull())
+				serviceInfoListObject.serviceDisplayVersion = allClusterTypeInfoListNodeServiceInfoListServiceInfo["ServiceDisplayVersion"].asString();
+			if(!allClusterTypeInfoListNodeServiceInfoListServiceInfo["Mandatory"].isNull())
+				serviceInfoListObject.mandatory = allClusterTypeInfoListNodeServiceInfoListServiceInfo["Mandatory"].asString() == "true";
+			if(!allClusterTypeInfoListNodeServiceInfoListServiceInfo["Display"].isNull())
+				serviceInfoListObject.display = allClusterTypeInfoListNodeServiceInfoListServiceInfo["Display"].asString() == "true";
 			clusterTypeInfoObject.serviceInfoList.push_back(serviceInfoListObject);
 		}
 		emrMainVersion_.clusterTypeInfoList.push_back(clusterTypeInfoObject);

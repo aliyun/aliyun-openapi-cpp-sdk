@@ -39,20 +39,20 @@ void DescribeReplicaInitializeProgressResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["ItemsItem"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["ItemsItem"];
+	for (auto valueItemsItemsItem : allItemsNode)
 	{
 		ItemsItem itemsObject;
-		if(!value["ReplicaId"].isNull())
-			itemsObject.replicaId = value["ReplicaId"].asString();
-		if(!value["Status"].isNull())
-			itemsObject.status = value["Status"].asString();
-		if(!value["Progress"].isNull())
-			itemsObject.progress = value["Progress"].asString();
-		if(!value["FinishTime"].isNull())
-			itemsObject.finishTime = value["FinishTime"].asString();
-		if(!value["CurrentStep"].isNull())
-			itemsObject.currentStep = value["CurrentStep"].asString();
+		if(!valueItemsItemsItem["ReplicaId"].isNull())
+			itemsObject.replicaId = valueItemsItemsItem["ReplicaId"].asString();
+		if(!valueItemsItemsItem["Status"].isNull())
+			itemsObject.status = valueItemsItemsItem["Status"].asString();
+		if(!valueItemsItemsItem["Progress"].isNull())
+			itemsObject.progress = valueItemsItemsItem["Progress"].asString();
+		if(!valueItemsItemsItem["FinishTime"].isNull())
+			itemsObject.finishTime = valueItemsItemsItem["FinishTime"].asString();
+		if(!valueItemsItemsItem["CurrentStep"].isNull())
+			itemsObject.currentStep = valueItemsItemsItem["CurrentStep"].asString();
 		items_.push_back(itemsObject);
 	}
 

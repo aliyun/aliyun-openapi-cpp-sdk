@@ -39,62 +39,62 @@ void DescribeCenBandwidthPackagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCenBandwidthPackages = value["CenBandwidthPackages"]["CenBandwidthPackage"];
-	for (auto value : allCenBandwidthPackages)
+	auto allCenBandwidthPackagesNode = value["CenBandwidthPackages"]["CenBandwidthPackage"];
+	for (auto valueCenBandwidthPackagesCenBandwidthPackage : allCenBandwidthPackagesNode)
 	{
 		CenBandwidthPackage cenBandwidthPackagesObject;
-		if(!value["CenBandwidthPackageId"].isNull())
-			cenBandwidthPackagesObject.cenBandwidthPackageId = value["CenBandwidthPackageId"].asString();
-		if(!value["Name"].isNull())
-			cenBandwidthPackagesObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			cenBandwidthPackagesObject.description = value["Description"].asString();
-		if(!value["Bandwidth"].isNull())
-			cenBandwidthPackagesObject.bandwidth = std::stol(value["Bandwidth"].asString());
-		if(!value["BandwidthPackageChargeType"].isNull())
-			cenBandwidthPackagesObject.bandwidthPackageChargeType = value["BandwidthPackageChargeType"].asString();
-		if(!value["GeographicRegionAId"].isNull())
-			cenBandwidthPackagesObject.geographicRegionAId = value["GeographicRegionAId"].asString();
-		if(!value["GeographicRegionBId"].isNull())
-			cenBandwidthPackagesObject.geographicRegionBId = value["GeographicRegionBId"].asString();
-		if(!value["GeographicSpanId"].isNull())
-			cenBandwidthPackagesObject.geographicSpanId = value["GeographicSpanId"].asString();
-		if(!value["BusinessStatus"].isNull())
-			cenBandwidthPackagesObject.businessStatus = value["BusinessStatus"].asString();
-		if(!value["CreationTime"].isNull())
-			cenBandwidthPackagesObject.creationTime = value["CreationTime"].asString();
-		if(!value["ExpiredTime"].isNull())
-			cenBandwidthPackagesObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["Status"].isNull())
-			cenBandwidthPackagesObject.status = value["Status"].asString();
-		if(!value["IsCrossBorder"].isNull())
-			cenBandwidthPackagesObject.isCrossBorder = value["IsCrossBorder"].asString() == "true";
-		if(!value["TypeFor95"].isNull())
-			cenBandwidthPackagesObject.typeFor95 = value["TypeFor95"].asString();
-		if(!value["Ratio"].isNull())
-			cenBandwidthPackagesObject.ratio = value["Ratio"].asString();
-		if(!value["HasReservationData"].isNull())
-			cenBandwidthPackagesObject.hasReservationData = value["HasReservationData"].asString();
-		if(!value["ReservationBandwidth"].isNull())
-			cenBandwidthPackagesObject.reservationBandwidth = value["ReservationBandwidth"].asString();
-		if(!value["ReservationInternetChargeType"].isNull())
-			cenBandwidthPackagesObject.reservationInternetChargeType = value["ReservationInternetChargeType"].asString();
-		if(!value["ReservationActiveTime"].isNull())
-			cenBandwidthPackagesObject.reservationActiveTime = value["ReservationActiveTime"].asString();
-		if(!value["ReservationOrderType"].isNull())
-			cenBandwidthPackagesObject.reservationOrderType = value["ReservationOrderType"].asString();
-		auto allOrginInterRegionBandwidthLimits = value["OrginInterRegionBandwidthLimits"]["OrginInterRegionBandwidthLimit"];
-		for (auto value : allOrginInterRegionBandwidthLimits)
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["CenBandwidthPackageId"].isNull())
+			cenBandwidthPackagesObject.cenBandwidthPackageId = valueCenBandwidthPackagesCenBandwidthPackage["CenBandwidthPackageId"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["Name"].isNull())
+			cenBandwidthPackagesObject.name = valueCenBandwidthPackagesCenBandwidthPackage["Name"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["Description"].isNull())
+			cenBandwidthPackagesObject.description = valueCenBandwidthPackagesCenBandwidthPackage["Description"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["Bandwidth"].isNull())
+			cenBandwidthPackagesObject.bandwidth = std::stol(valueCenBandwidthPackagesCenBandwidthPackage["Bandwidth"].asString());
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["BandwidthPackageChargeType"].isNull())
+			cenBandwidthPackagesObject.bandwidthPackageChargeType = valueCenBandwidthPackagesCenBandwidthPackage["BandwidthPackageChargeType"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["GeographicRegionAId"].isNull())
+			cenBandwidthPackagesObject.geographicRegionAId = valueCenBandwidthPackagesCenBandwidthPackage["GeographicRegionAId"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["GeographicRegionBId"].isNull())
+			cenBandwidthPackagesObject.geographicRegionBId = valueCenBandwidthPackagesCenBandwidthPackage["GeographicRegionBId"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["GeographicSpanId"].isNull())
+			cenBandwidthPackagesObject.geographicSpanId = valueCenBandwidthPackagesCenBandwidthPackage["GeographicSpanId"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["BusinessStatus"].isNull())
+			cenBandwidthPackagesObject.businessStatus = valueCenBandwidthPackagesCenBandwidthPackage["BusinessStatus"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["CreationTime"].isNull())
+			cenBandwidthPackagesObject.creationTime = valueCenBandwidthPackagesCenBandwidthPackage["CreationTime"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["ExpiredTime"].isNull())
+			cenBandwidthPackagesObject.expiredTime = valueCenBandwidthPackagesCenBandwidthPackage["ExpiredTime"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["Status"].isNull())
+			cenBandwidthPackagesObject.status = valueCenBandwidthPackagesCenBandwidthPackage["Status"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["IsCrossBorder"].isNull())
+			cenBandwidthPackagesObject.isCrossBorder = valueCenBandwidthPackagesCenBandwidthPackage["IsCrossBorder"].asString() == "true";
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["TypeFor95"].isNull())
+			cenBandwidthPackagesObject.typeFor95 = valueCenBandwidthPackagesCenBandwidthPackage["TypeFor95"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["Ratio"].isNull())
+			cenBandwidthPackagesObject.ratio = valueCenBandwidthPackagesCenBandwidthPackage["Ratio"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["HasReservationData"].isNull())
+			cenBandwidthPackagesObject.hasReservationData = valueCenBandwidthPackagesCenBandwidthPackage["HasReservationData"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["ReservationBandwidth"].isNull())
+			cenBandwidthPackagesObject.reservationBandwidth = valueCenBandwidthPackagesCenBandwidthPackage["ReservationBandwidth"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["ReservationInternetChargeType"].isNull())
+			cenBandwidthPackagesObject.reservationInternetChargeType = valueCenBandwidthPackagesCenBandwidthPackage["ReservationInternetChargeType"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["ReservationActiveTime"].isNull())
+			cenBandwidthPackagesObject.reservationActiveTime = valueCenBandwidthPackagesCenBandwidthPackage["ReservationActiveTime"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["ReservationOrderType"].isNull())
+			cenBandwidthPackagesObject.reservationOrderType = valueCenBandwidthPackagesCenBandwidthPackage["ReservationOrderType"].asString();
+		auto allOrginInterRegionBandwidthLimitsNode = allCenBandwidthPackagesNode["OrginInterRegionBandwidthLimits"]["OrginInterRegionBandwidthLimit"];
+		for (auto allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit : allOrginInterRegionBandwidthLimitsNode)
 		{
 			CenBandwidthPackage::OrginInterRegionBandwidthLimit orginInterRegionBandwidthLimitsObject;
-			if(!value["LocalRegionId"].isNull())
-				orginInterRegionBandwidthLimitsObject.localRegionId = value["LocalRegionId"].asString();
-			if(!value["OppositeRegionId"].isNull())
-				orginInterRegionBandwidthLimitsObject.oppositeRegionId = value["OppositeRegionId"].asString();
-			if(!value["GeographicSpanId"].isNull())
-				orginInterRegionBandwidthLimitsObject.geographicSpanId = value["GeographicSpanId"].asString();
-			if(!value["BandwidthLimit"].isNull())
-				orginInterRegionBandwidthLimitsObject.bandwidthLimit = value["BandwidthLimit"].asString();
+			if(!allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["LocalRegionId"].isNull())
+				orginInterRegionBandwidthLimitsObject.localRegionId = allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["LocalRegionId"].asString();
+			if(!allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["OppositeRegionId"].isNull())
+				orginInterRegionBandwidthLimitsObject.oppositeRegionId = allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["OppositeRegionId"].asString();
+			if(!allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["GeographicSpanId"].isNull())
+				orginInterRegionBandwidthLimitsObject.geographicSpanId = allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["GeographicSpanId"].asString();
+			if(!allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["BandwidthLimit"].isNull())
+				orginInterRegionBandwidthLimitsObject.bandwidthLimit = allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["BandwidthLimit"].asString();
 			cenBandwidthPackagesObject.orginInterRegionBandwidthLimits.push_back(orginInterRegionBandwidthLimitsObject);
 		}
 		auto allCenIds = value["CenIds"]["CenId"];

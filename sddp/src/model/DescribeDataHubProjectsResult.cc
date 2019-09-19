@@ -39,30 +39,30 @@ void DescribeDataHubProjectsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Project"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Project"];
+	for (auto valueItemsProject : allItemsNode)
 	{
 		Project itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			itemsObject.description = value["Description"].asString();
-		if(!value["CreationTime"].isNull())
-			itemsObject.creationTime = std::stol(value["CreationTime"].asString());
-		if(!value["TopicCount"].isNull())
-			itemsObject.topicCount = value["TopicCount"].asString();
-		if(!value["TopicTupleCount"].isNull())
-			itemsObject.topicTupleCount = value["TopicTupleCount"].asString();
-		if(!value["TopicBlobCount"].isNull())
-			itemsObject.topicBlobCount = std::stol(value["TopicBlobCount"].asString());
-		if(!value["UserId"].isNull())
-			itemsObject.userId = std::stol(value["UserId"].asString());
-		if(!value["LoginName"].isNull())
-			itemsObject.loginName = value["LoginName"].asString();
-		if(!value["DisplayName"].isNull())
-			itemsObject.displayName = value["DisplayName"].asString();
+		if(!valueItemsProject["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsProject["Id"].asString());
+		if(!valueItemsProject["Name"].isNull())
+			itemsObject.name = valueItemsProject["Name"].asString();
+		if(!valueItemsProject["Description"].isNull())
+			itemsObject.description = valueItemsProject["Description"].asString();
+		if(!valueItemsProject["CreationTime"].isNull())
+			itemsObject.creationTime = std::stol(valueItemsProject["CreationTime"].asString());
+		if(!valueItemsProject["TopicCount"].isNull())
+			itemsObject.topicCount = valueItemsProject["TopicCount"].asString();
+		if(!valueItemsProject["TopicTupleCount"].isNull())
+			itemsObject.topicTupleCount = valueItemsProject["TopicTupleCount"].asString();
+		if(!valueItemsProject["TopicBlobCount"].isNull())
+			itemsObject.topicBlobCount = std::stol(valueItemsProject["TopicBlobCount"].asString());
+		if(!valueItemsProject["UserId"].isNull())
+			itemsObject.userId = std::stol(valueItemsProject["UserId"].asString());
+		if(!valueItemsProject["LoginName"].isNull())
+			itemsObject.loginName = valueItemsProject["LoginName"].asString();
+		if(!valueItemsProject["DisplayName"].isNull())
+			itemsObject.displayName = valueItemsProject["DisplayName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

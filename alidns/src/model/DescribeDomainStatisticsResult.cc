@@ -39,14 +39,14 @@ void DescribeDomainStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStatistics = value["Statistics"]["Statistic"];
-	for (auto value : allStatistics)
+	auto allStatisticsNode = value["Statistics"]["Statistic"];
+	for (auto valueStatisticsStatistic : allStatisticsNode)
 	{
 		Statistic statisticsObject;
-		if(!value["Timestamp"].isNull())
-			statisticsObject.timestamp = std::stol(value["Timestamp"].asString());
-		if(!value["Count"].isNull())
-			statisticsObject.count = std::stol(value["Count"].asString());
+		if(!valueStatisticsStatistic["Timestamp"].isNull())
+			statisticsObject.timestamp = std::stol(valueStatisticsStatistic["Timestamp"].asString());
+		if(!valueStatisticsStatistic["Count"].isNull())
+			statisticsObject.count = std::stol(valueStatisticsStatistic["Count"].asString());
 		statistics_.push_back(statisticsObject);
 	}
 

@@ -39,14 +39,14 @@ void DescribeInstanceStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceStatuses = value["InstanceStatuses"]["InstanceStatus"];
-	for (auto value : allInstanceStatuses)
+	auto allInstanceStatusesNode = value["InstanceStatuses"]["InstanceStatus"];
+	for (auto valueInstanceStatusesInstanceStatus : allInstanceStatusesNode)
 	{
 		InstanceStatus instanceStatusesObject;
-		if(!value["InstanceId"].isNull())
-			instanceStatusesObject.instanceId = value["InstanceId"].asString();
-		if(!value["Status"].isNull())
-			instanceStatusesObject.status = value["Status"].asString();
+		if(!valueInstanceStatusesInstanceStatus["InstanceId"].isNull())
+			instanceStatusesObject.instanceId = valueInstanceStatusesInstanceStatus["InstanceId"].asString();
+		if(!valueInstanceStatusesInstanceStatus["Status"].isNull())
+			instanceStatusesObject.status = valueInstanceStatusesInstanceStatus["Status"].asString();
 		instanceStatuses_.push_back(instanceStatusesObject);
 	}
 	if(!value["TotalCount"].isNull())

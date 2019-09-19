@@ -39,50 +39,50 @@ void DescribeResultListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultList = value["ResultList"]["ResultListArr"];
-	for (auto value : allResultList)
+	auto allResultListNode = value["ResultList"]["ResultListArr"];
+	for (auto valueResultListResultListArr : allResultListNode)
 	{
 		ResultListArr resultListObject;
-		if(!value["LastTimestamp"].isNull())
-			resultListObject.lastTimestamp = std::stol(value["LastTimestamp"].asString());
-		if(!value["ModifiedTimestamp"].isNull())
-			resultListObject.modifiedTimestamp = std::stol(value["ModifiedTimestamp"].asString());
-		if(!value["WarnLevel"].isNull())
-			resultListObject.warnLevel = value["WarnLevel"].asString();
-		if(!value["UniqueKey"].isNull())
-			resultListObject.uniqueKey = value["UniqueKey"].asString();
-		if(!value["LastOperate"].isNull())
-			resultListObject.lastOperate = std::stol(value["LastOperate"].asString());
-		if(!value["CreateTimestamp"].isNull())
-			resultListObject.createTimestamp = std::stol(value["CreateTimestamp"].asString());
-		if(!value["RuleDescription"].isNull())
-			resultListObject.ruleDescription = value["RuleDescription"].asString();
-		if(!value["RuleType"].isNull())
-			resultListObject.ruleType = value["RuleType"].asString();
-		if(!value["RuleName"].isNull())
-			resultListObject.ruleName = value["RuleName"].asString();
-		if(!value["Details"].isNull())
-			resultListObject.details = value["Details"].asString();
-		if(!value["Id"].isNull())
-			resultListObject.id = std::stoi(value["Id"].asString());
-		if(!value["AliUid"].isNull())
-			resultListObject.aliUid = std::stol(value["AliUid"].asString());
-		if(!value["RuleId"].isNull())
-			resultListObject.ruleId = std::stoi(value["RuleId"].asString());
-		if(!value["Status"].isNull())
-			resultListObject.status = std::stoi(value["Status"].asString());
-		if(!value["FieldKey"].isNull())
-			resultListObject.fieldKey = value["FieldKey"].asString();
-		if(!value["InternetIp"].isNull())
-			resultListObject.internetIp = value["InternetIp"].asString();
-		if(!value["IntranetIp"].isNull())
-			resultListObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["InstanceId"].isNull())
-			resultListObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceName"].isNull())
-			resultListObject.instanceName = value["InstanceName"].asString();
-		if(!value["FieldKey"].isNull())
-			resultListObject.fieldKey1 = value["FieldKey"].asString();
+		if(!valueResultListResultListArr["LastTimestamp"].isNull())
+			resultListObject.lastTimestamp = std::stol(valueResultListResultListArr["LastTimestamp"].asString());
+		if(!valueResultListResultListArr["ModifiedTimestamp"].isNull())
+			resultListObject.modifiedTimestamp = std::stol(valueResultListResultListArr["ModifiedTimestamp"].asString());
+		if(!valueResultListResultListArr["WarnLevel"].isNull())
+			resultListObject.warnLevel = valueResultListResultListArr["WarnLevel"].asString();
+		if(!valueResultListResultListArr["UniqueKey"].isNull())
+			resultListObject.uniqueKey = valueResultListResultListArr["UniqueKey"].asString();
+		if(!valueResultListResultListArr["LastOperate"].isNull())
+			resultListObject.lastOperate = std::stol(valueResultListResultListArr["LastOperate"].asString());
+		if(!valueResultListResultListArr["CreateTimestamp"].isNull())
+			resultListObject.createTimestamp = std::stol(valueResultListResultListArr["CreateTimestamp"].asString());
+		if(!valueResultListResultListArr["RuleDescription"].isNull())
+			resultListObject.ruleDescription = valueResultListResultListArr["RuleDescription"].asString();
+		if(!valueResultListResultListArr["RuleType"].isNull())
+			resultListObject.ruleType = valueResultListResultListArr["RuleType"].asString();
+		if(!valueResultListResultListArr["RuleName"].isNull())
+			resultListObject.ruleName = valueResultListResultListArr["RuleName"].asString();
+		if(!valueResultListResultListArr["Details"].isNull())
+			resultListObject.details = valueResultListResultListArr["Details"].asString();
+		if(!valueResultListResultListArr["Id"].isNull())
+			resultListObject.id = std::stoi(valueResultListResultListArr["Id"].asString());
+		if(!valueResultListResultListArr["AliUid"].isNull())
+			resultListObject.aliUid = std::stol(valueResultListResultListArr["AliUid"].asString());
+		if(!valueResultListResultListArr["RuleId"].isNull())
+			resultListObject.ruleId = std::stoi(valueResultListResultListArr["RuleId"].asString());
+		if(!valueResultListResultListArr["Status"].isNull())
+			resultListObject.status = std::stoi(valueResultListResultListArr["Status"].asString());
+		if(!valueResultListResultListArr["FieldKey"].isNull())
+			resultListObject.fieldKey = valueResultListResultListArr["FieldKey"].asString();
+		if(!valueResultListResultListArr["InternetIp"].isNull())
+			resultListObject.internetIp = valueResultListResultListArr["InternetIp"].asString();
+		if(!valueResultListResultListArr["IntranetIp"].isNull())
+			resultListObject.intranetIp = valueResultListResultListArr["IntranetIp"].asString();
+		if(!valueResultListResultListArr["InstanceId"].isNull())
+			resultListObject.instanceId = valueResultListResultListArr["InstanceId"].asString();
+		if(!valueResultListResultListArr["InstanceName"].isNull())
+			resultListObject.instanceName = valueResultListResultListArr["InstanceName"].asString();
+		if(!valueResultListResultListArr["FieldKey"].isNull())
+			resultListObject.fieldKey1 = valueResultListResultListArr["FieldKey"].asString();
 		resultList_.push_back(resultListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

@@ -46,24 +46,24 @@ void DescribeMetaDataResult::parse(const std::string &payload)
 		metaData_.projectName = metaDataNode["ProjectName"].asString();
 	if(!metaDataNode["Status"].isNull())
 		metaData_.status = std::stoi(metaDataNode["Status"].asString());
-	auto allDatasourceFieldList = value["DatasourceFieldList"]["DatasourceField"];
-	for (auto value : allDatasourceFieldList)
+	auto allDatasourceFieldListNode = metaDataNode["DatasourceFieldList"]["DatasourceField"];
+	for (auto metaDataNodeDatasourceFieldListDatasourceField : allDatasourceFieldListNode)
 	{
 		MetaData::DatasourceField datasourceFieldObject;
-		if(!value["FieldName"].isNull())
-			datasourceFieldObject.fieldName = value["FieldName"].asString();
-		if(!value["ValueType"].isNull())
-			datasourceFieldObject.valueType = value["ValueType"].asString();
-		if(!value["FieldDescription"].isNull())
-			datasourceFieldObject.fieldDescription = value["FieldDescription"].asString();
-		if(!value["FieldAliasName"].isNull())
-			datasourceFieldObject.fieldAliasName = value["FieldAliasName"].asString();
-		if(!value["FieldType"].isNull())
-			datasourceFieldObject.fieldType = value["FieldType"].asString();
-		if(!value["FieldValue"].isNull())
-			datasourceFieldObject.fieldValue = value["FieldValue"].asString();
-		if(!value["IsIdentification"].isNull())
-			datasourceFieldObject.isIdentification = std::stoi(value["IsIdentification"].asString());
+		if(!metaDataNodeDatasourceFieldListDatasourceField["FieldName"].isNull())
+			datasourceFieldObject.fieldName = metaDataNodeDatasourceFieldListDatasourceField["FieldName"].asString();
+		if(!metaDataNodeDatasourceFieldListDatasourceField["ValueType"].isNull())
+			datasourceFieldObject.valueType = metaDataNodeDatasourceFieldListDatasourceField["ValueType"].asString();
+		if(!metaDataNodeDatasourceFieldListDatasourceField["FieldDescription"].isNull())
+			datasourceFieldObject.fieldDescription = metaDataNodeDatasourceFieldListDatasourceField["FieldDescription"].asString();
+		if(!metaDataNodeDatasourceFieldListDatasourceField["FieldAliasName"].isNull())
+			datasourceFieldObject.fieldAliasName = metaDataNodeDatasourceFieldListDatasourceField["FieldAliasName"].asString();
+		if(!metaDataNodeDatasourceFieldListDatasourceField["FieldType"].isNull())
+			datasourceFieldObject.fieldType = metaDataNodeDatasourceFieldListDatasourceField["FieldType"].asString();
+		if(!metaDataNodeDatasourceFieldListDatasourceField["FieldValue"].isNull())
+			datasourceFieldObject.fieldValue = metaDataNodeDatasourceFieldListDatasourceField["FieldValue"].asString();
+		if(!metaDataNodeDatasourceFieldListDatasourceField["IsIdentification"].isNull())
+			datasourceFieldObject.isIdentification = std::stoi(metaDataNodeDatasourceFieldListDatasourceField["IsIdentification"].asString());
 		metaData_.datasourceFieldList.push_back(datasourceFieldObject);
 	}
 

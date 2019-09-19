@@ -39,20 +39,20 @@ void BatchFuzzyMatchDomainSensitiveWordResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSensitiveWordMatchResultList = value["SensitiveWordMatchResultList"]["SensitiveWordMatchResult"];
-	for (auto value : allSensitiveWordMatchResultList)
+	auto allSensitiveWordMatchResultListNode = value["SensitiveWordMatchResultList"]["SensitiveWordMatchResult"];
+	for (auto valueSensitiveWordMatchResultListSensitiveWordMatchResult : allSensitiveWordMatchResultListNode)
 	{
 		SensitiveWordMatchResult sensitiveWordMatchResultListObject;
-		if(!value["Keyword"].isNull())
-			sensitiveWordMatchResultListObject.keyword = value["Keyword"].asString();
-		if(!value["Exist"].isNull())
-			sensitiveWordMatchResultListObject.exist = value["Exist"].asString() == "true";
-		auto allMatchedSentiveWords = value["MatchedSentiveWords"]["MatchedSensitiveWord"];
-		for (auto value : allMatchedSentiveWords)
+		if(!valueSensitiveWordMatchResultListSensitiveWordMatchResult["Keyword"].isNull())
+			sensitiveWordMatchResultListObject.keyword = valueSensitiveWordMatchResultListSensitiveWordMatchResult["Keyword"].asString();
+		if(!valueSensitiveWordMatchResultListSensitiveWordMatchResult["Exist"].isNull())
+			sensitiveWordMatchResultListObject.exist = valueSensitiveWordMatchResultListSensitiveWordMatchResult["Exist"].asString() == "true";
+		auto allMatchedSentiveWordsNode = allSensitiveWordMatchResultListNode["MatchedSentiveWords"]["MatchedSensitiveWord"];
+		for (auto allSensitiveWordMatchResultListNodeMatchedSentiveWordsMatchedSensitiveWord : allMatchedSentiveWordsNode)
 		{
 			SensitiveWordMatchResult::MatchedSensitiveWord matchedSentiveWordsObject;
-			if(!value["Word"].isNull())
-				matchedSentiveWordsObject.word = value["Word"].asString();
+			if(!allSensitiveWordMatchResultListNodeMatchedSentiveWordsMatchedSensitiveWord["Word"].isNull())
+				matchedSentiveWordsObject.word = allSensitiveWordMatchResultListNodeMatchedSentiveWordsMatchedSensitiveWord["Word"].asString();
 			sensitiveWordMatchResultListObject.matchedSentiveWords.push_back(matchedSentiveWordsObject);
 		}
 		sensitiveWordMatchResultList_.push_back(sensitiveWordMatchResultListObject);

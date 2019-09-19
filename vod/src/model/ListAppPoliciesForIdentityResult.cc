@@ -39,24 +39,24 @@ void ListAppPoliciesForIdentityResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAppPolicyList = value["AppPolicyList"]["AppPolicy"];
-	for (auto value : allAppPolicyList)
+	auto allAppPolicyListNode = value["AppPolicyList"]["AppPolicy"];
+	for (auto valueAppPolicyListAppPolicy : allAppPolicyListNode)
 	{
 		AppPolicy appPolicyListObject;
-		if(!value["AppId"].isNull())
-			appPolicyListObject.appId = value["AppId"].asString();
-		if(!value["CreationTime"].isNull())
-			appPolicyListObject.creationTime = value["CreationTime"].asString();
-		if(!value["PolicyName"].isNull())
-			appPolicyListObject.policyName = value["PolicyName"].asString();
-		if(!value["PolicyType"].isNull())
-			appPolicyListObject.policyType = value["PolicyType"].asString();
-		if(!value["PolicyValue"].isNull())
-			appPolicyListObject.policyValue = value["PolicyValue"].asString();
-		if(!value["Description"].isNull())
-			appPolicyListObject.description = value["Description"].asString();
-		if(!value["ModificationTime"].isNull())
-			appPolicyListObject.modificationTime = value["ModificationTime"].asString();
+		if(!valueAppPolicyListAppPolicy["AppId"].isNull())
+			appPolicyListObject.appId = valueAppPolicyListAppPolicy["AppId"].asString();
+		if(!valueAppPolicyListAppPolicy["CreationTime"].isNull())
+			appPolicyListObject.creationTime = valueAppPolicyListAppPolicy["CreationTime"].asString();
+		if(!valueAppPolicyListAppPolicy["PolicyName"].isNull())
+			appPolicyListObject.policyName = valueAppPolicyListAppPolicy["PolicyName"].asString();
+		if(!valueAppPolicyListAppPolicy["PolicyType"].isNull())
+			appPolicyListObject.policyType = valueAppPolicyListAppPolicy["PolicyType"].asString();
+		if(!valueAppPolicyListAppPolicy["PolicyValue"].isNull())
+			appPolicyListObject.policyValue = valueAppPolicyListAppPolicy["PolicyValue"].asString();
+		if(!valueAppPolicyListAppPolicy["Description"].isNull())
+			appPolicyListObject.description = valueAppPolicyListAppPolicy["Description"].asString();
+		if(!valueAppPolicyListAppPolicy["ModificationTime"].isNull())
+			appPolicyListObject.modificationTime = valueAppPolicyListAppPolicy["ModificationTime"].asString();
 		appPolicyList_.push_back(appPolicyListObject);
 	}
 

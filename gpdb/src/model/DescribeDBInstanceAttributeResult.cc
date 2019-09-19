@@ -39,96 +39,96 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["DBInstanceAttribute"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["DBInstanceAttribute"];
+	for (auto valueItemsDBInstanceAttribute : allItemsNode)
 	{
 		DBInstanceAttribute itemsObject;
-		if(!value["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["PayType"].isNull())
-			itemsObject.payType = value["PayType"].asString();
-		if(!value["DBInstanceClassType"].isNull())
-			itemsObject.dBInstanceClassType = value["DBInstanceClassType"].asString();
-		if(!value["RegionId"].isNull())
-			itemsObject.regionId = value["RegionId"].asString();
-		if(!value["ConnectionString"].isNull())
-			itemsObject.connectionString = value["ConnectionString"].asString();
-		if(!value["Port"].isNull())
-			itemsObject.port = value["Port"].asString();
-		if(!value["Engine"].isNull())
-			itemsObject.engine = value["Engine"].asString();
-		if(!value["EngineVersion"].isNull())
-			itemsObject.engineVersion = value["EngineVersion"].asString();
-		if(!value["DBInstanceClass"].isNull())
-			itemsObject.dBInstanceClass = value["DBInstanceClass"].asString();
-		if(!value["DBInstanceCpuCores"].isNull())
-			itemsObject.dBInstanceCpuCores = std::stoi(value["DBInstanceCpuCores"].asString());
-		if(!value["DBInstanceMemory"].isNull())
-			itemsObject.dBInstanceMemory = std::stol(value["DBInstanceMemory"].asString());
-		if(!value["DBInstanceStorage"].isNull())
-			itemsObject.dBInstanceStorage = std::stol(value["DBInstanceStorage"].asString());
-		if(!value["DBInstanceDiskMBPS"].isNull())
-			itemsObject.dBInstanceDiskMBPS = std::stol(value["DBInstanceDiskMBPS"].asString());
-		if(!value["HostType"].isNull())
-			itemsObject.hostType = value["HostType"].asString();
-		if(!value["DBInstanceGroupCount"].isNull())
-			itemsObject.dBInstanceGroupCount = value["DBInstanceGroupCount"].asString();
-		if(!value["DBInstanceNetType"].isNull())
-			itemsObject.dBInstanceNetType = value["DBInstanceNetType"].asString();
-		if(!value["DBInstanceStatus"].isNull())
-			itemsObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
-		if(!value["DBInstanceDescription"].isNull())
-			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-		if(!value["LockMode"].isNull())
-			itemsObject.lockMode = value["LockMode"].asString();
-		if(!value["LockReason"].isNull())
-			itemsObject.lockReason = value["LockReason"].asString();
-		if(!value["ReadDelayTime"].isNull())
-			itemsObject.readDelayTime = value["ReadDelayTime"].asString();
-		if(!value["CreationTime"].isNull())
-			itemsObject.creationTime = value["CreationTime"].asString();
-		if(!value["ExpireTime"].isNull())
-			itemsObject.expireTime = value["ExpireTime"].asString();
-		if(!value["MaintainStartTime"].isNull())
-			itemsObject.maintainStartTime = value["MaintainStartTime"].asString();
-		if(!value["MaintainEndTime"].isNull())
-			itemsObject.maintainEndTime = value["MaintainEndTime"].asString();
-		if(!value["AvailabilityValue"].isNull())
-			itemsObject.availabilityValue = value["AvailabilityValue"].asString();
-		if(!value["MaxConnections"].isNull())
-			itemsObject.maxConnections = std::stoi(value["MaxConnections"].asString());
-		if(!value["SecurityIPList"].isNull())
-			itemsObject.securityIPList = value["SecurityIPList"].asString();
-		if(!value["ZoneId"].isNull())
-			itemsObject.zoneId = value["ZoneId"].asString();
-		if(!value["InstanceNetworkType"].isNull())
-			itemsObject.instanceNetworkType = value["InstanceNetworkType"].asString();
-		if(!value["VpcId"].isNull())
-			itemsObject.vpcId = value["VpcId"].asString();
-		if(!value["ConnectionMode"].isNull())
-			itemsObject.connectionMode = value["ConnectionMode"].asString();
-		if(!value["StorageType"].isNull())
-			itemsObject.storageType = value["StorageType"].asString();
-		if(!value["CpuCoresPerNode"].isNull())
-			itemsObject.cpuCoresPerNode = std::stoi(value["CpuCoresPerNode"].asString());
-		if(!value["SegmentCounts"].isNull())
-			itemsObject.segmentCounts = std::stoi(value["SegmentCounts"].asString());
-		if(!value["StoragePerNode"].isNull())
-			itemsObject.storagePerNode = std::stoi(value["StoragePerNode"].asString());
-		if(!value["MemoryPerNode"].isNull())
-			itemsObject.memoryPerNode = std::stoi(value["MemoryPerNode"].asString());
-		if(!value["StorageUnit"].isNull())
-			itemsObject.storageUnit = value["StorageUnit"].asString();
-		if(!value["MemoryUnit"].isNull())
-			itemsObject.memoryUnit = value["MemoryUnit"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueItemsDBInstanceAttribute["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsDBInstanceAttribute["DBInstanceId"].asString();
+		if(!valueItemsDBInstanceAttribute["PayType"].isNull())
+			itemsObject.payType = valueItemsDBInstanceAttribute["PayType"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceClassType"].isNull())
+			itemsObject.dBInstanceClassType = valueItemsDBInstanceAttribute["DBInstanceClassType"].asString();
+		if(!valueItemsDBInstanceAttribute["RegionId"].isNull())
+			itemsObject.regionId = valueItemsDBInstanceAttribute["RegionId"].asString();
+		if(!valueItemsDBInstanceAttribute["ConnectionString"].isNull())
+			itemsObject.connectionString = valueItemsDBInstanceAttribute["ConnectionString"].asString();
+		if(!valueItemsDBInstanceAttribute["Port"].isNull())
+			itemsObject.port = valueItemsDBInstanceAttribute["Port"].asString();
+		if(!valueItemsDBInstanceAttribute["Engine"].isNull())
+			itemsObject.engine = valueItemsDBInstanceAttribute["Engine"].asString();
+		if(!valueItemsDBInstanceAttribute["EngineVersion"].isNull())
+			itemsObject.engineVersion = valueItemsDBInstanceAttribute["EngineVersion"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceClass"].isNull())
+			itemsObject.dBInstanceClass = valueItemsDBInstanceAttribute["DBInstanceClass"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceCpuCores"].isNull())
+			itemsObject.dBInstanceCpuCores = std::stoi(valueItemsDBInstanceAttribute["DBInstanceCpuCores"].asString());
+		if(!valueItemsDBInstanceAttribute["DBInstanceMemory"].isNull())
+			itemsObject.dBInstanceMemory = std::stol(valueItemsDBInstanceAttribute["DBInstanceMemory"].asString());
+		if(!valueItemsDBInstanceAttribute["DBInstanceStorage"].isNull())
+			itemsObject.dBInstanceStorage = std::stol(valueItemsDBInstanceAttribute["DBInstanceStorage"].asString());
+		if(!valueItemsDBInstanceAttribute["DBInstanceDiskMBPS"].isNull())
+			itemsObject.dBInstanceDiskMBPS = std::stol(valueItemsDBInstanceAttribute["DBInstanceDiskMBPS"].asString());
+		if(!valueItemsDBInstanceAttribute["HostType"].isNull())
+			itemsObject.hostType = valueItemsDBInstanceAttribute["HostType"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceGroupCount"].isNull())
+			itemsObject.dBInstanceGroupCount = valueItemsDBInstanceAttribute["DBInstanceGroupCount"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceNetType"].isNull())
+			itemsObject.dBInstanceNetType = valueItemsDBInstanceAttribute["DBInstanceNetType"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = valueItemsDBInstanceAttribute["DBInstanceStatus"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = valueItemsDBInstanceAttribute["DBInstanceDescription"].asString();
+		if(!valueItemsDBInstanceAttribute["LockMode"].isNull())
+			itemsObject.lockMode = valueItemsDBInstanceAttribute["LockMode"].asString();
+		if(!valueItemsDBInstanceAttribute["LockReason"].isNull())
+			itemsObject.lockReason = valueItemsDBInstanceAttribute["LockReason"].asString();
+		if(!valueItemsDBInstanceAttribute["ReadDelayTime"].isNull())
+			itemsObject.readDelayTime = valueItemsDBInstanceAttribute["ReadDelayTime"].asString();
+		if(!valueItemsDBInstanceAttribute["CreationTime"].isNull())
+			itemsObject.creationTime = valueItemsDBInstanceAttribute["CreationTime"].asString();
+		if(!valueItemsDBInstanceAttribute["ExpireTime"].isNull())
+			itemsObject.expireTime = valueItemsDBInstanceAttribute["ExpireTime"].asString();
+		if(!valueItemsDBInstanceAttribute["MaintainStartTime"].isNull())
+			itemsObject.maintainStartTime = valueItemsDBInstanceAttribute["MaintainStartTime"].asString();
+		if(!valueItemsDBInstanceAttribute["MaintainEndTime"].isNull())
+			itemsObject.maintainEndTime = valueItemsDBInstanceAttribute["MaintainEndTime"].asString();
+		if(!valueItemsDBInstanceAttribute["AvailabilityValue"].isNull())
+			itemsObject.availabilityValue = valueItemsDBInstanceAttribute["AvailabilityValue"].asString();
+		if(!valueItemsDBInstanceAttribute["MaxConnections"].isNull())
+			itemsObject.maxConnections = std::stoi(valueItemsDBInstanceAttribute["MaxConnections"].asString());
+		if(!valueItemsDBInstanceAttribute["SecurityIPList"].isNull())
+			itemsObject.securityIPList = valueItemsDBInstanceAttribute["SecurityIPList"].asString();
+		if(!valueItemsDBInstanceAttribute["ZoneId"].isNull())
+			itemsObject.zoneId = valueItemsDBInstanceAttribute["ZoneId"].asString();
+		if(!valueItemsDBInstanceAttribute["InstanceNetworkType"].isNull())
+			itemsObject.instanceNetworkType = valueItemsDBInstanceAttribute["InstanceNetworkType"].asString();
+		if(!valueItemsDBInstanceAttribute["VpcId"].isNull())
+			itemsObject.vpcId = valueItemsDBInstanceAttribute["VpcId"].asString();
+		if(!valueItemsDBInstanceAttribute["ConnectionMode"].isNull())
+			itemsObject.connectionMode = valueItemsDBInstanceAttribute["ConnectionMode"].asString();
+		if(!valueItemsDBInstanceAttribute["StorageType"].isNull())
+			itemsObject.storageType = valueItemsDBInstanceAttribute["StorageType"].asString();
+		if(!valueItemsDBInstanceAttribute["CpuCoresPerNode"].isNull())
+			itemsObject.cpuCoresPerNode = std::stoi(valueItemsDBInstanceAttribute["CpuCoresPerNode"].asString());
+		if(!valueItemsDBInstanceAttribute["SegmentCounts"].isNull())
+			itemsObject.segmentCounts = std::stoi(valueItemsDBInstanceAttribute["SegmentCounts"].asString());
+		if(!valueItemsDBInstanceAttribute["StoragePerNode"].isNull())
+			itemsObject.storagePerNode = std::stoi(valueItemsDBInstanceAttribute["StoragePerNode"].asString());
+		if(!valueItemsDBInstanceAttribute["MemoryPerNode"].isNull())
+			itemsObject.memoryPerNode = std::stoi(valueItemsDBInstanceAttribute["MemoryPerNode"].asString());
+		if(!valueItemsDBInstanceAttribute["StorageUnit"].isNull())
+			itemsObject.storageUnit = valueItemsDBInstanceAttribute["StorageUnit"].asString();
+		if(!valueItemsDBInstanceAttribute["MemoryUnit"].isNull())
+			itemsObject.memoryUnit = valueItemsDBInstanceAttribute["MemoryUnit"].asString();
+		auto allTagsNode = allItemsNode["Tags"]["Tag"];
+		for (auto allItemsNodeTagsTag : allTagsNode)
 		{
 			DBInstanceAttribute::Tag tagsObject;
-			if(!value["Key"].isNull())
-				tagsObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				tagsObject.value = value["Value"].asString();
+			if(!allItemsNodeTagsTag["Key"].isNull())
+				tagsObject.key = allItemsNodeTagsTag["Key"].asString();
+			if(!allItemsNodeTagsTag["Value"].isNull())
+				tagsObject.value = allItemsNodeTagsTag["Value"].asString();
 			itemsObject.tags.push_back(tagsObject);
 		}
 		items_.push_back(itemsObject);

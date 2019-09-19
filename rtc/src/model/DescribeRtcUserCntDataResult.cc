@@ -39,14 +39,14 @@ void DescribeRtcUserCntDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserCntDataPerInterval = value["UserCntDataPerInterval"]["UserCntModule"];
-	for (auto value : allUserCntDataPerInterval)
+	auto allUserCntDataPerIntervalNode = value["UserCntDataPerInterval"]["UserCntModule"];
+	for (auto valueUserCntDataPerIntervalUserCntModule : allUserCntDataPerIntervalNode)
 	{
 		UserCntModule userCntDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			userCntDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["ActiveUserCnt"].isNull())
-			userCntDataPerIntervalObject.activeUserCnt = std::stol(value["ActiveUserCnt"].asString());
+		if(!valueUserCntDataPerIntervalUserCntModule["TimeStamp"].isNull())
+			userCntDataPerIntervalObject.timeStamp = valueUserCntDataPerIntervalUserCntModule["TimeStamp"].asString();
+		if(!valueUserCntDataPerIntervalUserCntModule["ActiveUserCnt"].isNull())
+			userCntDataPerIntervalObject.activeUserCnt = std::stol(valueUserCntDataPerIntervalUserCntModule["ActiveUserCnt"].asString());
 		userCntDataPerInterval_.push_back(userCntDataPerIntervalObject);
 	}
 

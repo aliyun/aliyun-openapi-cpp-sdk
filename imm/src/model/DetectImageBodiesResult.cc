@@ -39,12 +39,12 @@ void DetectImageBodiesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBodies = value["Bodies"]["BodiesItem"];
-	for (auto value : allBodies)
+	auto allBodiesNode = value["Bodies"]["BodiesItem"];
+	for (auto valueBodiesBodiesItem : allBodiesNode)
 	{
 		BodiesItem bodiesObject;
-		if(!value["BodyConfidence"].isNull())
-			bodiesObject.bodyConfidence = std::stof(value["BodyConfidence"].asString());
+		if(!valueBodiesBodiesItem["BodyConfidence"].isNull())
+			bodiesObject.bodyConfidence = std::stof(valueBodiesBodiesItem["BodyConfidence"].asString());
 		auto bodyBoundaryNode = value["BodyBoundary"];
 		if(!bodyBoundaryNode["Left"].isNull())
 			bodiesObject.bodyBoundary.left = std::stoi(bodyBoundaryNode["Left"].asString());

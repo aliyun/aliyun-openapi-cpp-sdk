@@ -39,20 +39,20 @@ void SearchItemResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAuctions = value["Auctions"]["Auction"];
-	for (auto value : allAuctions)
+	auto allAuctionsNode = value["Auctions"]["Auction"];
+	for (auto valueAuctionsAuction : allAuctionsNode)
 	{
 		Auction auctionsObject;
-		if(!value["CustContent"].isNull())
-			auctionsObject.custContent = value["CustContent"].asString();
-		if(!value["ItemId"].isNull())
-			auctionsObject.itemId = value["ItemId"].asString();
-		if(!value["SortExprValues"].isNull())
-			auctionsObject.sortExprValues = value["SortExprValues"].asString();
-		if(!value["CatId"].isNull())
-			auctionsObject.catId = value["CatId"].asString();
-		if(!value["PicName"].isNull())
-			auctionsObject.picName = value["PicName"].asString();
+		if(!valueAuctionsAuction["CustContent"].isNull())
+			auctionsObject.custContent = valueAuctionsAuction["CustContent"].asString();
+		if(!valueAuctionsAuction["ItemId"].isNull())
+			auctionsObject.itemId = valueAuctionsAuction["ItemId"].asString();
+		if(!valueAuctionsAuction["SortExprValues"].isNull())
+			auctionsObject.sortExprValues = valueAuctionsAuction["SortExprValues"].asString();
+		if(!valueAuctionsAuction["CatId"].isNull())
+			auctionsObject.catId = valueAuctionsAuction["CatId"].asString();
+		if(!valueAuctionsAuction["PicName"].isNull())
+			auctionsObject.picName = valueAuctionsAuction["PicName"].asString();
 		auctions_.push_back(auctionsObject);
 	}
 	auto headNode = value["Head"];
@@ -67,14 +67,14 @@ void SearchItemResult::parse(const std::string &payload)
 		picInfo_.category = picInfoNode["Category"].asString();
 	if(!picInfoNode["Region"].isNull())
 		picInfo_.region = picInfoNode["Region"].asString();
-	auto allAllCategory = value["AllCategory"]["Category"];
-	for (auto value : allAllCategory)
+	auto allAllCategoryNode = picInfoNode["AllCategory"]["Category"];
+	for (auto picInfoNodeAllCategoryCategory : allAllCategoryNode)
 	{
 		PicInfo::Category categoryObject;
-		if(!value["Name"].isNull())
-			categoryObject.name = value["Name"].asString();
-		if(!value["Id"].isNull())
-			categoryObject.id = value["Id"].asString();
+		if(!picInfoNodeAllCategoryCategory["Name"].isNull())
+			categoryObject.name = picInfoNodeAllCategoryCategory["Name"].asString();
+		if(!picInfoNodeAllCategoryCategory["Id"].isNull())
+			categoryObject.id = picInfoNodeAllCategoryCategory["Id"].asString();
 		picInfo_.allCategory.push_back(categoryObject);
 	}
 	if(!value["Success"].isNull())

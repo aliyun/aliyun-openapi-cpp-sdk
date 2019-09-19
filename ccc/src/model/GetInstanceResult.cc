@@ -68,16 +68,16 @@ void GetInstanceResult::parse(const std::string &payload)
 		instance_.createdTime = std::stol(instanceNode["CreatedTime"].asString());
 	if(!instanceNode["Owner"].isNull())
 		instance_.owner = instanceNode["Owner"].asString();
-	auto allAdmin = value["Admin"]["User"];
-	for (auto value : allAdmin)
+	auto allAdminNode = instanceNode["Admin"]["User"];
+	for (auto instanceNodeAdminUser : allAdminNode)
 	{
 		Instance::User userObject;
-		if(!value["UserId"].isNull())
-			userObject.userId = value["UserId"].asString();
-		if(!value["RamId"].isNull())
-			userObject.ramId = value["RamId"].asString();
-		if(!value["InstanceId"].isNull())
-			userObject.instanceId = value["InstanceId"].asString();
+		if(!instanceNodeAdminUser["UserId"].isNull())
+			userObject.userId = instanceNodeAdminUser["UserId"].asString();
+		if(!instanceNodeAdminUser["RamId"].isNull())
+			userObject.ramId = instanceNodeAdminUser["RamId"].asString();
+		if(!instanceNodeAdminUser["InstanceId"].isNull())
+			userObject.instanceId = instanceNodeAdminUser["InstanceId"].asString();
 		auto detailNode = value["Detail"];
 		if(!detailNode["LoginName"].isNull())
 			userObject.detail.loginName = detailNode["LoginName"].asString();
@@ -91,28 +91,28 @@ void GetInstanceResult::parse(const std::string &payload)
 			userObject.detail.department = detailNode["Department"].asString();
 		instance_.admin.push_back(userObject);
 	}
-	auto allPhoneNumbers = value["PhoneNumbers"]["PhoneNumber"];
-	for (auto value : allPhoneNumbers)
+	auto allPhoneNumbersNode = instanceNode["PhoneNumbers"]["PhoneNumber"];
+	for (auto instanceNodePhoneNumbersPhoneNumber : allPhoneNumbersNode)
 	{
 		Instance::PhoneNumber phoneNumberObject;
-		if(!value["PhoneNumberId"].isNull())
-			phoneNumberObject.phoneNumberId = value["PhoneNumberId"].asString();
-		if(!value["InstanceId"].isNull())
-			phoneNumberObject.instanceId = value["InstanceId"].asString();
-		if(!value["Number"].isNull())
-			phoneNumberObject.number = value["Number"].asString();
-		if(!value["PhoneNumberDescription"].isNull())
-			phoneNumberObject.phoneNumberDescription = value["PhoneNumberDescription"].asString();
-		if(!value["TestOnly"].isNull())
-			phoneNumberObject.testOnly = value["TestOnly"].asString() == "true";
-		if(!value["RemainingTime"].isNull())
-			phoneNumberObject.remainingTime = std::stoi(value["RemainingTime"].asString());
-		if(!value["AllowOutbound"].isNull())
-			phoneNumberObject.allowOutbound = value["AllowOutbound"].asString() == "true";
-		if(!value["Usage"].isNull())
-			phoneNumberObject.usage = value["Usage"].asString();
-		if(!value["Trunks"].isNull())
-			phoneNumberObject.trunks = std::stoi(value["Trunks"].asString());
+		if(!instanceNodePhoneNumbersPhoneNumber["PhoneNumberId"].isNull())
+			phoneNumberObject.phoneNumberId = instanceNodePhoneNumbersPhoneNumber["PhoneNumberId"].asString();
+		if(!instanceNodePhoneNumbersPhoneNumber["InstanceId"].isNull())
+			phoneNumberObject.instanceId = instanceNodePhoneNumbersPhoneNumber["InstanceId"].asString();
+		if(!instanceNodePhoneNumbersPhoneNumber["Number"].isNull())
+			phoneNumberObject.number = instanceNodePhoneNumbersPhoneNumber["Number"].asString();
+		if(!instanceNodePhoneNumbersPhoneNumber["PhoneNumberDescription"].isNull())
+			phoneNumberObject.phoneNumberDescription = instanceNodePhoneNumbersPhoneNumber["PhoneNumberDescription"].asString();
+		if(!instanceNodePhoneNumbersPhoneNumber["TestOnly"].isNull())
+			phoneNumberObject.testOnly = instanceNodePhoneNumbersPhoneNumber["TestOnly"].asString() == "true";
+		if(!instanceNodePhoneNumbersPhoneNumber["RemainingTime"].isNull())
+			phoneNumberObject.remainingTime = std::stoi(instanceNodePhoneNumbersPhoneNumber["RemainingTime"].asString());
+		if(!instanceNodePhoneNumbersPhoneNumber["AllowOutbound"].isNull())
+			phoneNumberObject.allowOutbound = instanceNodePhoneNumbersPhoneNumber["AllowOutbound"].asString() == "true";
+		if(!instanceNodePhoneNumbersPhoneNumber["Usage"].isNull())
+			phoneNumberObject.usage = instanceNodePhoneNumbersPhoneNumber["Usage"].asString();
+		if(!instanceNodePhoneNumbersPhoneNumber["Trunks"].isNull())
+			phoneNumberObject.trunks = std::stoi(instanceNodePhoneNumbersPhoneNumber["Trunks"].asString());
 		instance_.phoneNumbers.push_back(phoneNumberObject);
 	}
 	if(!value["Success"].isNull())

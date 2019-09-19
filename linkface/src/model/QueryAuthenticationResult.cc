@@ -39,28 +39,28 @@ void QueryAuthenticationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DataItem"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!value["LicenseType"].isNull())
-			dataObject.licenseType = std::stoi(value["LicenseType"].asString());
-		if(!value["IotId"].isNull())
-			dataObject.iotId = value["IotId"].asString();
-		if(!value["BeginTime"].isNull())
-			dataObject.beginTime = value["BeginTime"].asString();
-		if(!value["ExpiredTime"].isNull())
-			dataObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["ApkPubkey"].isNull())
-			dataObject.apkPubkey = value["ApkPubkey"].asString();
-		if(!value["PackageName"].isNull())
-			dataObject.packageName = value["PackageName"].asString();
-		if(!value["ClientId"].isNull())
-			dataObject.clientId = value["ClientId"].asString();
-		if(!value["ProductKey"].isNull())
-			dataObject.productKey = value["ProductKey"].asString();
-		if(!value["DeviceName"].isNull())
-			dataObject.deviceName = value["DeviceName"].asString();
+		if(!valueDataDataItem["LicenseType"].isNull())
+			dataObject.licenseType = std::stoi(valueDataDataItem["LicenseType"].asString());
+		if(!valueDataDataItem["IotId"].isNull())
+			dataObject.iotId = valueDataDataItem["IotId"].asString();
+		if(!valueDataDataItem["BeginTime"].isNull())
+			dataObject.beginTime = valueDataDataItem["BeginTime"].asString();
+		if(!valueDataDataItem["ExpiredTime"].isNull())
+			dataObject.expiredTime = valueDataDataItem["ExpiredTime"].asString();
+		if(!valueDataDataItem["ApkPubkey"].isNull())
+			dataObject.apkPubkey = valueDataDataItem["ApkPubkey"].asString();
+		if(!valueDataDataItem["PackageName"].isNull())
+			dataObject.packageName = valueDataDataItem["PackageName"].asString();
+		if(!valueDataDataItem["ClientId"].isNull())
+			dataObject.clientId = valueDataDataItem["ClientId"].asString();
+		if(!valueDataDataItem["ProductKey"].isNull())
+			dataObject.productKey = valueDataDataItem["ProductKey"].asString();
+		if(!valueDataDataItem["DeviceName"].isNull())
+			dataObject.deviceName = valueDataDataItem["DeviceName"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

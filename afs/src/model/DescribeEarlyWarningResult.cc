@@ -39,26 +39,26 @@ void DescribeEarlyWarningResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEarlyWarnings = value["EarlyWarnings"]["EarlyWarning"];
-	for (auto value : allEarlyWarnings)
+	auto allEarlyWarningsNode = value["EarlyWarnings"]["EarlyWarning"];
+	for (auto valueEarlyWarningsEarlyWarning : allEarlyWarningsNode)
 	{
 		EarlyWarning earlyWarningsObject;
-		if(!value["WarnOpen"].isNull())
-			earlyWarningsObject.warnOpen = value["WarnOpen"].asString() == "true";
-		if(!value["Title"].isNull())
-			earlyWarningsObject.title = value["Title"].asString();
-		if(!value["Content"].isNull())
-			earlyWarningsObject.content = value["Content"].asString();
-		if(!value["Frequency"].isNull())
-			earlyWarningsObject.frequency = value["Frequency"].asString();
-		if(!value["TimeOpen"].isNull())
-			earlyWarningsObject.timeOpen = value["TimeOpen"].asString() == "true";
-		if(!value["TimeBegin"].isNull())
-			earlyWarningsObject.timeBegin = value["TimeBegin"].asString();
-		if(!value["TimeEnd"].isNull())
-			earlyWarningsObject.timeEnd = value["TimeEnd"].asString();
-		if(!value["Channel"].isNull())
-			earlyWarningsObject.channel = value["Channel"].asString();
+		if(!valueEarlyWarningsEarlyWarning["WarnOpen"].isNull())
+			earlyWarningsObject.warnOpen = valueEarlyWarningsEarlyWarning["WarnOpen"].asString() == "true";
+		if(!valueEarlyWarningsEarlyWarning["Title"].isNull())
+			earlyWarningsObject.title = valueEarlyWarningsEarlyWarning["Title"].asString();
+		if(!valueEarlyWarningsEarlyWarning["Content"].isNull())
+			earlyWarningsObject.content = valueEarlyWarningsEarlyWarning["Content"].asString();
+		if(!valueEarlyWarningsEarlyWarning["Frequency"].isNull())
+			earlyWarningsObject.frequency = valueEarlyWarningsEarlyWarning["Frequency"].asString();
+		if(!valueEarlyWarningsEarlyWarning["TimeOpen"].isNull())
+			earlyWarningsObject.timeOpen = valueEarlyWarningsEarlyWarning["TimeOpen"].asString() == "true";
+		if(!valueEarlyWarningsEarlyWarning["TimeBegin"].isNull())
+			earlyWarningsObject.timeBegin = valueEarlyWarningsEarlyWarning["TimeBegin"].asString();
+		if(!valueEarlyWarningsEarlyWarning["TimeEnd"].isNull())
+			earlyWarningsObject.timeEnd = valueEarlyWarningsEarlyWarning["TimeEnd"].asString();
+		if(!valueEarlyWarningsEarlyWarning["Channel"].isNull())
+			earlyWarningsObject.channel = valueEarlyWarningsEarlyWarning["Channel"].asString();
 		earlyWarnings_.push_back(earlyWarningsObject);
 	}
 	if(!value["HasWarning"].isNull())

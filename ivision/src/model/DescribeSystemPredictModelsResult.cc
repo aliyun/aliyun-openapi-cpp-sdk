@@ -39,22 +39,22 @@ void DescribeSystemPredictModelsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allModels = value["Models"]["Model"];
-	for (auto value : allModels)
+	auto allModelsNode = value["Models"]["Model"];
+	for (auto valueModelsModel : allModelsNode)
 	{
 		Model modelsObject;
-		if(!value["ModelId"].isNull())
-			modelsObject.modelId = value["ModelId"].asString();
-		if(!value["Type"].isNull())
-			modelsObject.type = value["Type"].asString();
-		if(!value["Name"].isNull())
-			modelsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			modelsObject.description = value["Description"].asString();
-		if(!value["Scene"].isNull())
-			modelsObject.scene = value["Scene"].asString();
-		if(!value["CreationTime"].isNull())
-			modelsObject.creationTime = value["CreationTime"].asString();
+		if(!valueModelsModel["ModelId"].isNull())
+			modelsObject.modelId = valueModelsModel["ModelId"].asString();
+		if(!valueModelsModel["Type"].isNull())
+			modelsObject.type = valueModelsModel["Type"].asString();
+		if(!valueModelsModel["Name"].isNull())
+			modelsObject.name = valueModelsModel["Name"].asString();
+		if(!valueModelsModel["Description"].isNull())
+			modelsObject.description = valueModelsModel["Description"].asString();
+		if(!valueModelsModel["Scene"].isNull())
+			modelsObject.scene = valueModelsModel["Scene"].asString();
+		if(!valueModelsModel["CreationTime"].isNull())
+			modelsObject.creationTime = valueModelsModel["CreationTime"].asString();
 		models_.push_back(modelsObject);
 	}
 	if(!value["CurrentPage"].isNull())

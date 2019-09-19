@@ -39,26 +39,26 @@ void ListMomentsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMoments = value["Moments"]["Moment"];
-	for (auto value : allMoments)
+	auto allMomentsNode = value["Moments"]["Moment"];
+	for (auto valueMomentsMoment : allMomentsNode)
 	{
 		Moment momentsObject;
-		if(!value["Id"].isNull())
-			momentsObject.id = std::stol(value["Id"].asString());
-		if(!value["IdStr"].isNull())
-			momentsObject.idStr = value["IdStr"].asString();
-		if(!value["LocationName"].isNull())
-			momentsObject.locationName = value["LocationName"].asString();
-		if(!value["PhotosCount"].isNull())
-			momentsObject.photosCount = std::stoi(value["PhotosCount"].asString());
-		if(!value["State"].isNull())
-			momentsObject.state = value["State"].asString();
-		if(!value["TakenAt"].isNull())
-			momentsObject.takenAt = std::stol(value["TakenAt"].asString());
-		if(!value["Ctime"].isNull())
-			momentsObject.ctime = std::stol(value["Ctime"].asString());
-		if(!value["Mtime"].isNull())
-			momentsObject.mtime = std::stol(value["Mtime"].asString());
+		if(!valueMomentsMoment["Id"].isNull())
+			momentsObject.id = std::stol(valueMomentsMoment["Id"].asString());
+		if(!valueMomentsMoment["IdStr"].isNull())
+			momentsObject.idStr = valueMomentsMoment["IdStr"].asString();
+		if(!valueMomentsMoment["LocationName"].isNull())
+			momentsObject.locationName = valueMomentsMoment["LocationName"].asString();
+		if(!valueMomentsMoment["PhotosCount"].isNull())
+			momentsObject.photosCount = std::stoi(valueMomentsMoment["PhotosCount"].asString());
+		if(!valueMomentsMoment["State"].isNull())
+			momentsObject.state = valueMomentsMoment["State"].asString();
+		if(!valueMomentsMoment["TakenAt"].isNull())
+			momentsObject.takenAt = std::stol(valueMomentsMoment["TakenAt"].asString());
+		if(!valueMomentsMoment["Ctime"].isNull())
+			momentsObject.ctime = std::stol(valueMomentsMoment["Ctime"].asString());
+		if(!valueMomentsMoment["Mtime"].isNull())
+			momentsObject.mtime = std::stol(valueMomentsMoment["Mtime"].asString());
 		moments_.push_back(momentsObject);
 	}
 	if(!value["Code"].isNull())

@@ -39,18 +39,18 @@ void QueryDomainAdminDivisionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAdminDivisions = value["AdminDivisions"]["AdminDivision"];
-	for (auto value : allAdminDivisions)
+	auto allAdminDivisionsNode = value["AdminDivisions"]["AdminDivision"];
+	for (auto valueAdminDivisionsAdminDivision : allAdminDivisionsNode)
 	{
 		AdminDivision adminDivisionsObject;
-		if(!value["DivisionName"].isNull())
-			adminDivisionsObject.divisionName = value["DivisionName"].asString();
-		auto allChildren = value["Children"]["ChildrenItem"];
-		for (auto value : allChildren)
+		if(!valueAdminDivisionsAdminDivision["DivisionName"].isNull())
+			adminDivisionsObject.divisionName = valueAdminDivisionsAdminDivision["DivisionName"].asString();
+		auto allChildrenNode = allAdminDivisionsNode["Children"]["ChildrenItem"];
+		for (auto allAdminDivisionsNodeChildrenChildrenItem : allChildrenNode)
 		{
 			AdminDivision::ChildrenItem childrenObject;
-			if(!value["ChildDivisionName"].isNull())
-				childrenObject.childDivisionName = value["ChildDivisionName"].asString();
+			if(!allAdminDivisionsNodeChildrenChildrenItem["ChildDivisionName"].isNull())
+				childrenObject.childDivisionName = allAdminDivisionsNodeChildrenChildrenItem["ChildDivisionName"].asString();
 			adminDivisionsObject.children.push_back(childrenObject);
 		}
 		adminDivisions_.push_back(adminDivisionsObject);

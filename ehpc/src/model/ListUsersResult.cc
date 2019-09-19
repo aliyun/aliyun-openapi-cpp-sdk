@@ -39,16 +39,16 @@ void ListUsersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUsers = value["Users"]["UserInfo"];
-	for (auto value : allUsers)
+	auto allUsersNode = value["Users"]["UserInfo"];
+	for (auto valueUsersUserInfo : allUsersNode)
 	{
 		UserInfo usersObject;
-		if(!value["Name"].isNull())
-			usersObject.name = value["Name"].asString();
-		if(!value["Group"].isNull())
-			usersObject.group = value["Group"].asString();
-		if(!value["AddTime"].isNull())
-			usersObject.addTime = value["AddTime"].asString();
+		if(!valueUsersUserInfo["Name"].isNull())
+			usersObject.name = valueUsersUserInfo["Name"].asString();
+		if(!valueUsersUserInfo["Group"].isNull())
+			usersObject.group = valueUsersUserInfo["Group"].asString();
+		if(!valueUsersUserInfo["AddTime"].isNull())
+			usersObject.addTime = valueUsersUserInfo["AddTime"].asString();
 		users_.push_back(usersObject);
 	}
 	if(!value["TotalCount"].isNull())

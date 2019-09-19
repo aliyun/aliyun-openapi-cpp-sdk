@@ -39,14 +39,14 @@ void DescribeApiLatencyDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCallLatencys = value["CallLatencys"]["MonitorItem"];
-	for (auto value : allCallLatencys)
+	auto allCallLatencysNode = value["CallLatencys"]["MonitorItem"];
+	for (auto valueCallLatencysMonitorItem : allCallLatencysNode)
 	{
 		MonitorItem callLatencysObject;
-		if(!value["ItemTime"].isNull())
-			callLatencysObject.itemTime = value["ItemTime"].asString();
-		if(!value["ItemValue"].isNull())
-			callLatencysObject.itemValue = value["ItemValue"].asString();
+		if(!valueCallLatencysMonitorItem["ItemTime"].isNull())
+			callLatencysObject.itemTime = valueCallLatencysMonitorItem["ItemTime"].asString();
+		if(!valueCallLatencysMonitorItem["ItemValue"].isNull())
+			callLatencysObject.itemValue = valueCallLatencysMonitorItem["ItemValue"].asString();
 		callLatencys_.push_back(callLatencysObject);
 	}
 

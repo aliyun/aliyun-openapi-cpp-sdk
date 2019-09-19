@@ -39,14 +39,14 @@ void DescribeCdnTypesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCdnTypes = value["CdnTypes"]["CdnType"];
-	for (auto value : allCdnTypes)
+	auto allCdnTypesNode = value["CdnTypes"]["CdnType"];
+	for (auto valueCdnTypesCdnType : allCdnTypesNode)
 	{
 		CdnType cdnTypesObject;
-		if(!value["Type"].isNull())
-			cdnTypesObject.type = value["Type"].asString();
-		if(!value["Desc"].isNull())
-			cdnTypesObject.desc = value["Desc"].asString();
+		if(!valueCdnTypesCdnType["Type"].isNull())
+			cdnTypesObject.type = valueCdnTypesCdnType["Type"].asString();
+		if(!valueCdnTypesCdnType["Desc"].isNull())
+			cdnTypesObject.desc = valueCdnTypesCdnType["Desc"].asString();
 		cdnTypes_.push_back(cdnTypesObject);
 	}
 

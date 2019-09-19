@@ -39,14 +39,14 @@ void DescribeDcdnDomainRealTimeSrcTrafficDataResult::parse(const std::string &pa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRealTimeSrcTrafficDataPerInterval = value["RealTimeSrcTrafficDataPerInterval"]["DataModule"];
-	for (auto value : allRealTimeSrcTrafficDataPerInterval)
+	auto allRealTimeSrcTrafficDataPerIntervalNode = value["RealTimeSrcTrafficDataPerInterval"]["DataModule"];
+	for (auto valueRealTimeSrcTrafficDataPerIntervalDataModule : allRealTimeSrcTrafficDataPerIntervalNode)
 	{
 		DataModule realTimeSrcTrafficDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			realTimeSrcTrafficDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			realTimeSrcTrafficDataPerIntervalObject.value = value["Value"].asString();
+		if(!valueRealTimeSrcTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			realTimeSrcTrafficDataPerIntervalObject.timeStamp = valueRealTimeSrcTrafficDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueRealTimeSrcTrafficDataPerIntervalDataModule["Value"].isNull())
+			realTimeSrcTrafficDataPerIntervalObject.value = valueRealTimeSrcTrafficDataPerIntervalDataModule["Value"].asString();
 		realTimeSrcTrafficDataPerInterval_.push_back(realTimeSrcTrafficDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

@@ -39,18 +39,18 @@ void ListClusterSupportServiceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSupportServiceList = value["SupportServiceList"]["SupportService"];
-	for (auto value : allSupportServiceList)
+	auto allSupportServiceListNode = value["SupportServiceList"]["SupportService"];
+	for (auto valueSupportServiceListSupportService : allSupportServiceListNode)
 	{
 		SupportService supportServiceListObject;
-		if(!value["ServiceName"].isNull())
-			supportServiceListObject.serviceName = value["ServiceName"].asString();
-		if(!value["ServiceDisplayName"].isNull())
-			supportServiceListObject.serviceDisplayName = value["ServiceDisplayName"].asString();
-		if(!value["ServiceVersion"].isNull())
-			supportServiceListObject.serviceVersion = value["ServiceVersion"].asString();
-		if(!value["ServiceEcmVersion"].isNull())
-			supportServiceListObject.serviceEcmVersion = value["ServiceEcmVersion"].asString();
+		if(!valueSupportServiceListSupportService["ServiceName"].isNull())
+			supportServiceListObject.serviceName = valueSupportServiceListSupportService["ServiceName"].asString();
+		if(!valueSupportServiceListSupportService["ServiceDisplayName"].isNull())
+			supportServiceListObject.serviceDisplayName = valueSupportServiceListSupportService["ServiceDisplayName"].asString();
+		if(!valueSupportServiceListSupportService["ServiceVersion"].isNull())
+			supportServiceListObject.serviceVersion = valueSupportServiceListSupportService["ServiceVersion"].asString();
+		if(!valueSupportServiceListSupportService["ServiceEcmVersion"].isNull())
+			supportServiceListObject.serviceEcmVersion = valueSupportServiceListSupportService["ServiceEcmVersion"].asString();
 		supportServiceList_.push_back(supportServiceListObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,24 +39,24 @@ void DescribeDepartsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Depart"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Depart"];
+	for (auto valueItemsDepart : allItemsNode)
 	{
 		Depart itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["DepartId"].isNull())
-			itemsObject.departId = std::stol(value["DepartId"].asString());
-		if(!value["DepartName"].isNull())
-			itemsObject.departName = value["DepartName"].asString();
-		if(!value["Comment"].isNull())
-			itemsObject.comment = value["Comment"].asString();
-		if(!value["ParentDepartId"].isNull())
-			itemsObject.parentDepartId = std::stol(value["ParentDepartId"].asString());
-		if(!value["ParentDepartName"].isNull())
-			itemsObject.parentDepartName = value["ParentDepartName"].asString();
-		if(!value["Level"].isNull())
-			itemsObject.level = std::stoi(value["Level"].asString());
+		if(!valueItemsDepart["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsDepart["Id"].asString());
+		if(!valueItemsDepart["DepartId"].isNull())
+			itemsObject.departId = std::stol(valueItemsDepart["DepartId"].asString());
+		if(!valueItemsDepart["DepartName"].isNull())
+			itemsObject.departName = valueItemsDepart["DepartName"].asString();
+		if(!valueItemsDepart["Comment"].isNull())
+			itemsObject.comment = valueItemsDepart["Comment"].asString();
+		if(!valueItemsDepart["ParentDepartId"].isNull())
+			itemsObject.parentDepartId = std::stol(valueItemsDepart["ParentDepartId"].asString());
+		if(!valueItemsDepart["ParentDepartName"].isNull())
+			itemsObject.parentDepartName = valueItemsDepart["ParentDepartName"].asString();
+		if(!valueItemsDepart["Level"].isNull())
+			itemsObject.level = std::stoi(valueItemsDepart["Level"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

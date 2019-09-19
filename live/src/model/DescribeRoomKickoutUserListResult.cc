@@ -39,16 +39,16 @@ void DescribeRoomKickoutUserListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserList = value["UserList"]["User"];
-	for (auto value : allUserList)
+	auto allUserListNode = value["UserList"]["User"];
+	for (auto valueUserListUser : allUserListNode)
 	{
 		User userListObject;
-		if(!value["AppUid"].isNull())
-			userListObject.appUid = value["AppUid"].asString();
-		if(!value["OpStartTime"].isNull())
-			userListObject.opStartTime = value["OpStartTime"].asString();
-		if(!value["OpEndTime"].isNull())
-			userListObject.opEndTime = value["OpEndTime"].asString();
+		if(!valueUserListUser["AppUid"].isNull())
+			userListObject.appUid = valueUserListUser["AppUid"].asString();
+		if(!valueUserListUser["OpStartTime"].isNull())
+			userListObject.opStartTime = valueUserListUser["OpStartTime"].asString();
+		if(!valueUserListUser["OpEndTime"].isNull())
+			userListObject.opEndTime = valueUserListUser["OpEndTime"].asString();
 		userList_.push_back(userListObject);
 	}
 	if(!value["TotalNum"].isNull())

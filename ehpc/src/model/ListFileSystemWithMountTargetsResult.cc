@@ -39,48 +39,48 @@ void ListFileSystemWithMountTargetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFileSystemList = value["FileSystemList"]["FileSystems"];
-	for (auto value : allFileSystemList)
+	auto allFileSystemListNode = value["FileSystemList"]["FileSystems"];
+	for (auto valueFileSystemListFileSystems : allFileSystemListNode)
 	{
 		FileSystems fileSystemListObject;
-		if(!value["RegionId"].isNull())
-			fileSystemListObject.regionId = value["RegionId"].asString();
-		if(!value["FileSystemId"].isNull())
-			fileSystemListObject.fileSystemId = value["FileSystemId"].asString();
-		if(!value["ProtocolType"].isNull())
-			fileSystemListObject.protocolType = value["ProtocolType"].asString();
-		if(!value["CreateTime"].isNull())
-			fileSystemListObject.createTime = value["CreateTime"].asString();
-		if(!value["Destription"].isNull())
-			fileSystemListObject.destription = value["Destription"].asString();
-		if(!value["StorageType"].isNull())
-			fileSystemListObject.storageType = value["StorageType"].asString();
-		if(!value["MeteredSize"].isNull())
-			fileSystemListObject.meteredSize = value["MeteredSize"].asString();
-		auto allPackageList = value["PackageList"]["Packages"];
-		for (auto value : allPackageList)
+		if(!valueFileSystemListFileSystems["RegionId"].isNull())
+			fileSystemListObject.regionId = valueFileSystemListFileSystems["RegionId"].asString();
+		if(!valueFileSystemListFileSystems["FileSystemId"].isNull())
+			fileSystemListObject.fileSystemId = valueFileSystemListFileSystems["FileSystemId"].asString();
+		if(!valueFileSystemListFileSystems["ProtocolType"].isNull())
+			fileSystemListObject.protocolType = valueFileSystemListFileSystems["ProtocolType"].asString();
+		if(!valueFileSystemListFileSystems["CreateTime"].isNull())
+			fileSystemListObject.createTime = valueFileSystemListFileSystems["CreateTime"].asString();
+		if(!valueFileSystemListFileSystems["Destription"].isNull())
+			fileSystemListObject.destription = valueFileSystemListFileSystems["Destription"].asString();
+		if(!valueFileSystemListFileSystems["StorageType"].isNull())
+			fileSystemListObject.storageType = valueFileSystemListFileSystems["StorageType"].asString();
+		if(!valueFileSystemListFileSystems["MeteredSize"].isNull())
+			fileSystemListObject.meteredSize = valueFileSystemListFileSystems["MeteredSize"].asString();
+		auto allPackageListNode = allFileSystemListNode["PackageList"]["Packages"];
+		for (auto allFileSystemListNodePackageListPackages : allPackageListNode)
 		{
 			FileSystems::Packages packageListObject;
-			if(!value["PackageId"].isNull())
-				packageListObject.packageId = value["PackageId"].asString();
+			if(!allFileSystemListNodePackageListPackages["PackageId"].isNull())
+				packageListObject.packageId = allFileSystemListNodePackageListPackages["PackageId"].asString();
 			fileSystemListObject.packageList.push_back(packageListObject);
 		}
-		auto allMountTargetList = value["MountTargetList"]["MountTargets"];
-		for (auto value : allMountTargetList)
+		auto allMountTargetListNode = allFileSystemListNode["MountTargetList"]["MountTargets"];
+		for (auto allFileSystemListNodeMountTargetListMountTargets : allMountTargetListNode)
 		{
 			FileSystems::MountTargets mountTargetListObject;
-			if(!value["MountTargetDomain"].isNull())
-				mountTargetListObject.mountTargetDomain = value["MountTargetDomain"].asString();
-			if(!value["Status"].isNull())
-				mountTargetListObject.status = value["Status"].asString();
-			if(!value["NetworkType"].isNull())
-				mountTargetListObject.networkType = value["NetworkType"].asString();
-			if(!value["VswId"].isNull())
-				mountTargetListObject.vswId = value["VswId"].asString();
-			if(!value["VpcId"].isNull())
-				mountTargetListObject.vpcId = value["VpcId"].asString();
-			if(!value["AccessGroup"].isNull())
-				mountTargetListObject.accessGroup = value["AccessGroup"].asString();
+			if(!allFileSystemListNodeMountTargetListMountTargets["MountTargetDomain"].isNull())
+				mountTargetListObject.mountTargetDomain = allFileSystemListNodeMountTargetListMountTargets["MountTargetDomain"].asString();
+			if(!allFileSystemListNodeMountTargetListMountTargets["Status"].isNull())
+				mountTargetListObject.status = allFileSystemListNodeMountTargetListMountTargets["Status"].asString();
+			if(!allFileSystemListNodeMountTargetListMountTargets["NetworkType"].isNull())
+				mountTargetListObject.networkType = allFileSystemListNodeMountTargetListMountTargets["NetworkType"].asString();
+			if(!allFileSystemListNodeMountTargetListMountTargets["VswId"].isNull())
+				mountTargetListObject.vswId = allFileSystemListNodeMountTargetListMountTargets["VswId"].asString();
+			if(!allFileSystemListNodeMountTargetListMountTargets["VpcId"].isNull())
+				mountTargetListObject.vpcId = allFileSystemListNodeMountTargetListMountTargets["VpcId"].asString();
+			if(!allFileSystemListNodeMountTargetListMountTargets["AccessGroup"].isNull())
+				mountTargetListObject.accessGroup = allFileSystemListNodeMountTargetListMountTargets["AccessGroup"].asString();
 			fileSystemListObject.mountTargetList.push_back(mountTargetListObject);
 		}
 		fileSystemList_.push_back(fileSystemListObject);

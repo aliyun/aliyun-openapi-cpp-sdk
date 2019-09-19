@@ -39,16 +39,16 @@ void DescribeMetricRuleTargetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTargets = value["Targets"]["Target"];
-	for (auto value : allTargets)
+	auto allTargetsNode = value["Targets"]["Target"];
+	for (auto valueTargetsTarget : allTargetsNode)
 	{
 		Target targetsObject;
-		if(!value["Id"].isNull())
-			targetsObject.id = value["Id"].asString();
-		if(!value["Arn"].isNull())
-			targetsObject.arn = value["Arn"].asString();
-		if(!value["Level"].isNull())
-			targetsObject.level = value["Level"].asString();
+		if(!valueTargetsTarget["Id"].isNull())
+			targetsObject.id = valueTargetsTarget["Id"].asString();
+		if(!valueTargetsTarget["Arn"].isNull())
+			targetsObject.arn = valueTargetsTarget["Arn"].asString();
+		if(!valueTargetsTarget["Level"].isNull())
+			targetsObject.level = valueTargetsTarget["Level"].asString();
 		targets_.push_back(targetsObject);
 	}
 	if(!value["Code"].isNull())

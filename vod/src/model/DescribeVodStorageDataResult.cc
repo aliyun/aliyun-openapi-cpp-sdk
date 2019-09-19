@@ -39,16 +39,16 @@ void DescribeVodStorageDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStorageData = value["StorageData"]["StorageDataItem"];
-	for (auto value : allStorageData)
+	auto allStorageDataNode = value["StorageData"]["StorageDataItem"];
+	for (auto valueStorageDataStorageDataItem : allStorageDataNode)
 	{
 		StorageDataItem storageDataObject;
-		if(!value["TimeStamp"].isNull())
-			storageDataObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["StorageUtilization"].isNull())
-			storageDataObject.storageUtilization = value["StorageUtilization"].asString();
-		if(!value["NetworkOut"].isNull())
-			storageDataObject.networkOut = value["NetworkOut"].asString();
+		if(!valueStorageDataStorageDataItem["TimeStamp"].isNull())
+			storageDataObject.timeStamp = valueStorageDataStorageDataItem["TimeStamp"].asString();
+		if(!valueStorageDataStorageDataItem["StorageUtilization"].isNull())
+			storageDataObject.storageUtilization = valueStorageDataStorageDataItem["StorageUtilization"].asString();
+		if(!valueStorageDataStorageDataItem["NetworkOut"].isNull())
+			storageDataObject.networkOut = valueStorageDataStorageDataItem["NetworkOut"].asString();
 		storageData_.push_back(storageDataObject);
 	}
 	if(!value["DataInterval"].isNull())

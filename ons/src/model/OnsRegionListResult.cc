@@ -39,24 +39,24 @@ void OnsRegionListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["RegionDo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["RegionDo"];
+	for (auto valueDataRegionDo : allDataNode)
 	{
 		RegionDo dataObject;
-		if(!value["Id"].isNull())
-			dataObject.id = std::stol(value["Id"].asString());
-		if(!value["OnsRegionId"].isNull())
-			dataObject.onsRegionId = value["OnsRegionId"].asString();
-		if(!value["RegionName"].isNull())
-			dataObject.regionName = value["RegionName"].asString();
-		if(!value["ChannelId"].isNull())
-			dataObject.channelId = std::stoi(value["ChannelId"].asString());
-		if(!value["ChannelName"].isNull())
-			dataObject.channelName = value["ChannelName"].asString();
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["UpdateTime"].isNull())
-			dataObject.updateTime = std::stol(value["UpdateTime"].asString());
+		if(!valueDataRegionDo["Id"].isNull())
+			dataObject.id = std::stol(valueDataRegionDo["Id"].asString());
+		if(!valueDataRegionDo["OnsRegionId"].isNull())
+			dataObject.onsRegionId = valueDataRegionDo["OnsRegionId"].asString();
+		if(!valueDataRegionDo["RegionName"].isNull())
+			dataObject.regionName = valueDataRegionDo["RegionName"].asString();
+		if(!valueDataRegionDo["ChannelId"].isNull())
+			dataObject.channelId = std::stoi(valueDataRegionDo["ChannelId"].asString());
+		if(!valueDataRegionDo["ChannelName"].isNull())
+			dataObject.channelName = valueDataRegionDo["ChannelName"].asString();
+		if(!valueDataRegionDo["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataRegionDo["CreateTime"].asString());
+		if(!valueDataRegionDo["UpdateTime"].isNull())
+			dataObject.updateTime = std::stol(valueDataRegionDo["UpdateTime"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["HelpUrl"].isNull())

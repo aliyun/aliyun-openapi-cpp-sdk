@@ -46,22 +46,22 @@ void ListAgentSummaryReportsResult::parse(const std::string &payload)
 		pagedAgentSummaryReport_.pageNumber = std::stoi(pagedAgentSummaryReportNode["PageNumber"].asString());
 	if(!pagedAgentSummaryReportNode["PageSize"].isNull())
 		pagedAgentSummaryReport_.pageSize = std::stoi(pagedAgentSummaryReportNode["PageSize"].asString());
-	auto allList = value["List"]["AgentSummaryReport"];
-	for (auto value : allList)
+	auto allListNode = pagedAgentSummaryReportNode["List"]["AgentSummaryReport"];
+	for (auto pagedAgentSummaryReportNodeListAgentSummaryReport : allListNode)
 	{
 		PagedAgentSummaryReport::AgentSummaryReport agentSummaryReportObject;
-		if(!value["InstanceId"].isNull())
-			agentSummaryReportObject.instanceId = value["InstanceId"].asString();
-		if(!value["AgentId"].isNull())
-			agentSummaryReportObject.agentId = value["AgentId"].asString();
-		if(!value["LoginName"].isNull())
-			agentSummaryReportObject.loginName = value["LoginName"].asString();
-		if(!value["AgentName"].isNull())
-			agentSummaryReportObject.agentName = value["AgentName"].asString();
-		if(!value["SkillGroupIds"].isNull())
-			agentSummaryReportObject.skillGroupIds = value["SkillGroupIds"].asString();
-		if(!value["SkillGroupNames"].isNull())
-			agentSummaryReportObject.skillGroupNames = value["SkillGroupNames"].asString();
+		if(!pagedAgentSummaryReportNodeListAgentSummaryReport["InstanceId"].isNull())
+			agentSummaryReportObject.instanceId = pagedAgentSummaryReportNodeListAgentSummaryReport["InstanceId"].asString();
+		if(!pagedAgentSummaryReportNodeListAgentSummaryReport["AgentId"].isNull())
+			agentSummaryReportObject.agentId = pagedAgentSummaryReportNodeListAgentSummaryReport["AgentId"].asString();
+		if(!pagedAgentSummaryReportNodeListAgentSummaryReport["LoginName"].isNull())
+			agentSummaryReportObject.loginName = pagedAgentSummaryReportNodeListAgentSummaryReport["LoginName"].asString();
+		if(!pagedAgentSummaryReportNodeListAgentSummaryReport["AgentName"].isNull())
+			agentSummaryReportObject.agentName = pagedAgentSummaryReportNodeListAgentSummaryReport["AgentName"].asString();
+		if(!pagedAgentSummaryReportNodeListAgentSummaryReport["SkillGroupIds"].isNull())
+			agentSummaryReportObject.skillGroupIds = pagedAgentSummaryReportNodeListAgentSummaryReport["SkillGroupIds"].asString();
+		if(!pagedAgentSummaryReportNodeListAgentSummaryReport["SkillGroupNames"].isNull())
+			agentSummaryReportObject.skillGroupNames = pagedAgentSummaryReportNodeListAgentSummaryReport["SkillGroupNames"].asString();
 		auto overallNode = value["Overall"];
 		if(!overallNode["TotalCalls"].isNull())
 			agentSummaryReportObject.overall.totalCalls = std::stol(overallNode["TotalCalls"].asString());

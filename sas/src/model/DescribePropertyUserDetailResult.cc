@@ -39,38 +39,38 @@ void DescribePropertyUserDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPropertys = value["Propertys"]["PropertyUser"];
-	for (auto value : allPropertys)
+	auto allPropertysNode = value["Propertys"]["PropertyUser"];
+	for (auto valuePropertysPropertyUser : allPropertysNode)
 	{
 		PropertyUser propertysObject;
-		if(!value["LastLoginTime"].isNull())
-			propertysObject.lastLoginTime = value["LastLoginTime"].asString();
-		if(!value["IsRoot"].isNull())
-			propertysObject.isRoot = value["IsRoot"].asString();
-		if(!value["InstanceName"].isNull())
-			propertysObject.instanceName = value["InstanceName"].asString();
-		if(!value["AccountsExpirationDate"].isNull())
-			propertysObject.accountsExpirationDate = value["AccountsExpirationDate"].asString();
-		if(!value["PasswordExpirationDate"].isNull())
-			propertysObject.passwordExpirationDate = value["PasswordExpirationDate"].asString();
-		if(!value["Ip"].isNull())
-			propertysObject.ip = value["Ip"].asString();
-		if(!value["Create"].isNull())
-			propertysObject.create = value["Create"].asString();
-		if(!value["CreateTimestamp"].isNull())
-			propertysObject.createTimestamp = std::stol(value["CreateTimestamp"].asString());
-		if(!value["User"].isNull())
-			propertysObject.user = value["User"].asString();
-		if(!value["Uuid"].isNull())
-			propertysObject.uuid = value["Uuid"].asString();
-		if(!value["LastLoginIp"].isNull())
-			propertysObject.lastLoginIp = value["LastLoginIp"].asString();
-		if(!value["InstanceId"].isNull())
-			propertysObject.instanceId = value["InstanceId"].asString();
-		if(!value["IntranetIp"].isNull())
-			propertysObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["InternetIp"].isNull())
-			propertysObject.internetIp = value["InternetIp"].asString();
+		if(!valuePropertysPropertyUser["LastLoginTime"].isNull())
+			propertysObject.lastLoginTime = valuePropertysPropertyUser["LastLoginTime"].asString();
+		if(!valuePropertysPropertyUser["IsRoot"].isNull())
+			propertysObject.isRoot = valuePropertysPropertyUser["IsRoot"].asString();
+		if(!valuePropertysPropertyUser["InstanceName"].isNull())
+			propertysObject.instanceName = valuePropertysPropertyUser["InstanceName"].asString();
+		if(!valuePropertysPropertyUser["AccountsExpirationDate"].isNull())
+			propertysObject.accountsExpirationDate = valuePropertysPropertyUser["AccountsExpirationDate"].asString();
+		if(!valuePropertysPropertyUser["PasswordExpirationDate"].isNull())
+			propertysObject.passwordExpirationDate = valuePropertysPropertyUser["PasswordExpirationDate"].asString();
+		if(!valuePropertysPropertyUser["Ip"].isNull())
+			propertysObject.ip = valuePropertysPropertyUser["Ip"].asString();
+		if(!valuePropertysPropertyUser["Create"].isNull())
+			propertysObject.create = valuePropertysPropertyUser["Create"].asString();
+		if(!valuePropertysPropertyUser["CreateTimestamp"].isNull())
+			propertysObject.createTimestamp = std::stol(valuePropertysPropertyUser["CreateTimestamp"].asString());
+		if(!valuePropertysPropertyUser["User"].isNull())
+			propertysObject.user = valuePropertysPropertyUser["User"].asString();
+		if(!valuePropertysPropertyUser["Uuid"].isNull())
+			propertysObject.uuid = valuePropertysPropertyUser["Uuid"].asString();
+		if(!valuePropertysPropertyUser["LastLoginIp"].isNull())
+			propertysObject.lastLoginIp = valuePropertysPropertyUser["LastLoginIp"].asString();
+		if(!valuePropertysPropertyUser["InstanceId"].isNull())
+			propertysObject.instanceId = valuePropertysPropertyUser["InstanceId"].asString();
+		if(!valuePropertysPropertyUser["IntranetIp"].isNull())
+			propertysObject.intranetIp = valuePropertysPropertyUser["IntranetIp"].asString();
+		if(!valuePropertysPropertyUser["InternetIp"].isNull())
+			propertysObject.internetIp = valuePropertysPropertyUser["InternetIp"].asString();
 		auto allGroupNames = value["GroupNames"]["GroupName"];
 		for (auto value : allGroupNames)
 			propertysObject.groupNames.push_back(value.asString());

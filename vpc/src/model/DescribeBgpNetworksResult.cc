@@ -39,16 +39,16 @@ void DescribeBgpNetworksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBgpNetworks = value["BgpNetworks"]["BgpNetwork"];
-	for (auto value : allBgpNetworks)
+	auto allBgpNetworksNode = value["BgpNetworks"]["BgpNetwork"];
+	for (auto valueBgpNetworksBgpNetwork : allBgpNetworksNode)
 	{
 		BgpNetwork bgpNetworksObject;
-		if(!value["VpcId"].isNull())
-			bgpNetworksObject.vpcId = value["VpcId"].asString();
-		if(!value["DstCidrBlock"].isNull())
-			bgpNetworksObject.dstCidrBlock = value["DstCidrBlock"].asString();
-		if(!value["RouterId"].isNull())
-			bgpNetworksObject.routerId = value["RouterId"].asString();
+		if(!valueBgpNetworksBgpNetwork["VpcId"].isNull())
+			bgpNetworksObject.vpcId = valueBgpNetworksBgpNetwork["VpcId"].asString();
+		if(!valueBgpNetworksBgpNetwork["DstCidrBlock"].isNull())
+			bgpNetworksObject.dstCidrBlock = valueBgpNetworksBgpNetwork["DstCidrBlock"].asString();
+		if(!valueBgpNetworksBgpNetwork["RouterId"].isNull())
+			bgpNetworksObject.routerId = valueBgpNetworksBgpNetwork["RouterId"].asString();
 		bgpNetworks_.push_back(bgpNetworksObject);
 	}
 	if(!value["TotalCount"].isNull())

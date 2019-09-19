@@ -39,36 +39,36 @@ void SearchDocIndexResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDocInfos = value["DocInfos"]["DocInfosItem"];
-	for (auto value : allDocInfos)
+	auto allDocInfosNode = value["DocInfos"]["DocInfosItem"];
+	for (auto valueDocInfosDocInfosItem : allDocInfosNode)
 	{
 		DocInfosItem docInfosObject;
-		if(!value["UniqueId"].isNull())
-			docInfosObject.uniqueId = value["UniqueId"].asString();
-		if(!value["SrcUri"].isNull())
-			docInfosObject.srcUri = value["SrcUri"].asString();
-		if(!value["Name"].isNull())
-			docInfosObject.name = value["Name"].asString();
-		if(!value["ContentType"].isNull())
-			docInfosObject.contentType = value["ContentType"].asString();
-		if(!value["LastModified"].isNull())
-			docInfosObject.lastModified = value["LastModified"].asString();
-		if(!value["Size"].isNull())
-			docInfosObject.size = std::stoi(value["Size"].asString());
-		if(!value["PageNum"].isNull())
-			docInfosObject.pageNum = std::stoi(value["PageNum"].asString());
-		if(!value["CustomKey1"].isNull())
-			docInfosObject.customKey1 = value["CustomKey1"].asString();
-		if(!value["CustomKey2"].isNull())
-			docInfosObject.customKey2 = value["CustomKey2"].asString();
-		if(!value["CustomKey3"].isNull())
-			docInfosObject.customKey3 = value["CustomKey3"].asString();
-		if(!value["CustomKey4"].isNull())
-			docInfosObject.customKey4 = value["CustomKey4"].asString();
-		if(!value["CustomKey5"].isNull())
-			docInfosObject.customKey5 = value["CustomKey5"].asString();
-		if(!value["CustomKey6"].isNull())
-			docInfosObject.customKey6 = value["CustomKey6"].asString();
+		if(!valueDocInfosDocInfosItem["UniqueId"].isNull())
+			docInfosObject.uniqueId = valueDocInfosDocInfosItem["UniqueId"].asString();
+		if(!valueDocInfosDocInfosItem["SrcUri"].isNull())
+			docInfosObject.srcUri = valueDocInfosDocInfosItem["SrcUri"].asString();
+		if(!valueDocInfosDocInfosItem["Name"].isNull())
+			docInfosObject.name = valueDocInfosDocInfosItem["Name"].asString();
+		if(!valueDocInfosDocInfosItem["ContentType"].isNull())
+			docInfosObject.contentType = valueDocInfosDocInfosItem["ContentType"].asString();
+		if(!valueDocInfosDocInfosItem["LastModified"].isNull())
+			docInfosObject.lastModified = valueDocInfosDocInfosItem["LastModified"].asString();
+		if(!valueDocInfosDocInfosItem["Size"].isNull())
+			docInfosObject.size = std::stoi(valueDocInfosDocInfosItem["Size"].asString());
+		if(!valueDocInfosDocInfosItem["PageNum"].isNull())
+			docInfosObject.pageNum = std::stoi(valueDocInfosDocInfosItem["PageNum"].asString());
+		if(!valueDocInfosDocInfosItem["CustomKey1"].isNull())
+			docInfosObject.customKey1 = valueDocInfosDocInfosItem["CustomKey1"].asString();
+		if(!valueDocInfosDocInfosItem["CustomKey2"].isNull())
+			docInfosObject.customKey2 = valueDocInfosDocInfosItem["CustomKey2"].asString();
+		if(!valueDocInfosDocInfosItem["CustomKey3"].isNull())
+			docInfosObject.customKey3 = valueDocInfosDocInfosItem["CustomKey3"].asString();
+		if(!valueDocInfosDocInfosItem["CustomKey4"].isNull())
+			docInfosObject.customKey4 = valueDocInfosDocInfosItem["CustomKey4"].asString();
+		if(!valueDocInfosDocInfosItem["CustomKey5"].isNull())
+			docInfosObject.customKey5 = valueDocInfosDocInfosItem["CustomKey5"].asString();
+		if(!valueDocInfosDocInfosItem["CustomKey6"].isNull())
+			docInfosObject.customKey6 = valueDocInfosDocInfosItem["CustomKey6"].asString();
 		docInfos_.push_back(docInfosObject);
 	}
 

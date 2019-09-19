@@ -39,16 +39,16 @@ void DescribeApiStageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVariables = value["Variables"]["VariableItem"];
-	for (auto value : allVariables)
+	auto allVariablesNode = value["Variables"]["VariableItem"];
+	for (auto valueVariablesVariableItem : allVariablesNode)
 	{
 		VariableItem variablesObject;
-		if(!value["VariableName"].isNull())
-			variablesObject.variableName = value["VariableName"].asString();
-		if(!value["VariableValue"].isNull())
-			variablesObject.variableValue = value["VariableValue"].asString();
-		if(!value["SupportRoute"].isNull())
-			variablesObject.supportRoute = value["SupportRoute"].asString() == "true";
+		if(!valueVariablesVariableItem["VariableName"].isNull())
+			variablesObject.variableName = valueVariablesVariableItem["VariableName"].asString();
+		if(!valueVariablesVariableItem["VariableValue"].isNull())
+			variablesObject.variableValue = valueVariablesVariableItem["VariableValue"].asString();
+		if(!valueVariablesVariableItem["SupportRoute"].isNull())
+			variablesObject.supportRoute = valueVariablesVariableItem["SupportRoute"].asString() == "true";
 		auto stageRouteModelNode = value["StageRouteModel"];
 		if(!stageRouteModelNode["ParameterCatalog"].isNull())
 			variablesObject.stageRouteModel.parameterCatalog = stageRouteModelNode["ParameterCatalog"].asString();
@@ -60,18 +60,18 @@ void DescribeApiStageResult::parse(const std::string &payload)
 			variablesObject.stageRouteModel.parameterType = stageRouteModelNode["ParameterType"].asString();
 		if(!stageRouteModelNode["RouteMatchSymbol"].isNull())
 			variablesObject.stageRouteModel.routeMatchSymbol = stageRouteModelNode["RouteMatchSymbol"].asString();
-		auto allRouteRules = value["RouteRules"]["RouteRuleItem"];
-		for (auto value : allRouteRules)
+		auto allRouteRulesNode = stageRouteModelNode["RouteRules"]["RouteRuleItem"];
+		for (auto stageRouteModelNodeRouteRulesRouteRuleItem : allRouteRulesNode)
 		{
 			VariableItem::StageRouteModel::RouteRuleItem routeRuleItemObject;
-			if(!value["MaxValue"].isNull())
-				routeRuleItemObject.maxValue = std::stol(value["MaxValue"].asString());
-			if(!value["MinValue"].isNull())
-				routeRuleItemObject.minValue = std::stol(value["MinValue"].asString());
-			if(!value["ConditionValue"].isNull())
-				routeRuleItemObject.conditionValue = value["ConditionValue"].asString();
-			if(!value["ResultValue"].isNull())
-				routeRuleItemObject.resultValue = value["ResultValue"].asString();
+			if(!stageRouteModelNodeRouteRulesRouteRuleItem["MaxValue"].isNull())
+				routeRuleItemObject.maxValue = std::stol(stageRouteModelNodeRouteRulesRouteRuleItem["MaxValue"].asString());
+			if(!stageRouteModelNodeRouteRulesRouteRuleItem["MinValue"].isNull())
+				routeRuleItemObject.minValue = std::stol(stageRouteModelNodeRouteRulesRouteRuleItem["MinValue"].asString());
+			if(!stageRouteModelNodeRouteRulesRouteRuleItem["ConditionValue"].isNull())
+				routeRuleItemObject.conditionValue = stageRouteModelNodeRouteRulesRouteRuleItem["ConditionValue"].asString();
+			if(!stageRouteModelNodeRouteRulesRouteRuleItem["ResultValue"].isNull())
+				routeRuleItemObject.resultValue = stageRouteModelNodeRouteRulesRouteRuleItem["ResultValue"].asString();
 			variablesObject.stageRouteModel.routeRules.push_back(routeRuleItemObject);
 		}
 		variables_.push_back(variablesObject);

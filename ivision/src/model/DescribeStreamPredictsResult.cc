@@ -39,32 +39,32 @@ void DescribeStreamPredictsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStreamPredicts = value["StreamPredicts"]["StreamPredict"];
-	for (auto value : allStreamPredicts)
+	auto allStreamPredictsNode = value["StreamPredicts"]["StreamPredict"];
+	for (auto valueStreamPredictsStreamPredict : allStreamPredictsNode)
 	{
 		StreamPredict streamPredictsObject;
-		if(!value["PredictId"].isNull())
-			streamPredictsObject.predictId = value["PredictId"].asString();
-		if(!value["StreamType"].isNull())
-			streamPredictsObject.streamType = value["StreamType"].asString();
-		if(!value["StreamId"].isNull())
-			streamPredictsObject.streamId = value["StreamId"].asString();
-		if(!value["ModelIds"].isNull())
-			streamPredictsObject.modelIds = value["ModelIds"].asString();
-		if(!value["ProbabilityThresholds"].isNull())
-			streamPredictsObject.probabilityThresholds = value["ProbabilityThresholds"].asString();
-		if(!value["DetectIntervals"].isNull())
-			streamPredictsObject.detectIntervals = value["DetectIntervals"].asString();
-		if(!value["Output"].isNull())
-			streamPredictsObject.output = value["Output"].asString();
-		if(!value["Notify"].isNull())
-			streamPredictsObject.notify = value["Notify"].asString();
-		if(!value["UserData"].isNull())
-			streamPredictsObject.userData = value["UserData"].asString();
-		if(!value["CreationTime"].isNull())
-			streamPredictsObject.creationTime = value["CreationTime"].asString();
-		if(!value["Status"].isNull())
-			streamPredictsObject.status = value["Status"].asString();
+		if(!valueStreamPredictsStreamPredict["PredictId"].isNull())
+			streamPredictsObject.predictId = valueStreamPredictsStreamPredict["PredictId"].asString();
+		if(!valueStreamPredictsStreamPredict["StreamType"].isNull())
+			streamPredictsObject.streamType = valueStreamPredictsStreamPredict["StreamType"].asString();
+		if(!valueStreamPredictsStreamPredict["StreamId"].isNull())
+			streamPredictsObject.streamId = valueStreamPredictsStreamPredict["StreamId"].asString();
+		if(!valueStreamPredictsStreamPredict["ModelIds"].isNull())
+			streamPredictsObject.modelIds = valueStreamPredictsStreamPredict["ModelIds"].asString();
+		if(!valueStreamPredictsStreamPredict["ProbabilityThresholds"].isNull())
+			streamPredictsObject.probabilityThresholds = valueStreamPredictsStreamPredict["ProbabilityThresholds"].asString();
+		if(!valueStreamPredictsStreamPredict["DetectIntervals"].isNull())
+			streamPredictsObject.detectIntervals = valueStreamPredictsStreamPredict["DetectIntervals"].asString();
+		if(!valueStreamPredictsStreamPredict["Output"].isNull())
+			streamPredictsObject.output = valueStreamPredictsStreamPredict["Output"].asString();
+		if(!valueStreamPredictsStreamPredict["Notify"].isNull())
+			streamPredictsObject.notify = valueStreamPredictsStreamPredict["Notify"].asString();
+		if(!valueStreamPredictsStreamPredict["UserData"].isNull())
+			streamPredictsObject.userData = valueStreamPredictsStreamPredict["UserData"].asString();
+		if(!valueStreamPredictsStreamPredict["CreationTime"].isNull())
+			streamPredictsObject.creationTime = valueStreamPredictsStreamPredict["CreationTime"].asString();
+		if(!valueStreamPredictsStreamPredict["Status"].isNull())
+			streamPredictsObject.status = valueStreamPredictsStreamPredict["Status"].asString();
 		streamPredicts_.push_back(streamPredictsObject);
 	}
 	if(!value["TotalNum"].isNull())

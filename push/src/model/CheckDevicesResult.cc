@@ -39,14 +39,14 @@ void CheckDevicesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDeviceCheckInfos = value["DeviceCheckInfos"]["DeviceCheckInfo"];
-	for (auto value : allDeviceCheckInfos)
+	auto allDeviceCheckInfosNode = value["DeviceCheckInfos"]["DeviceCheckInfo"];
+	for (auto valueDeviceCheckInfosDeviceCheckInfo : allDeviceCheckInfosNode)
 	{
 		DeviceCheckInfo deviceCheckInfosObject;
-		if(!value["DeviceId"].isNull())
-			deviceCheckInfosObject.deviceId = value["DeviceId"].asString();
-		if(!value["Available"].isNull())
-			deviceCheckInfosObject.available = value["Available"].asString() == "true";
+		if(!valueDeviceCheckInfosDeviceCheckInfo["DeviceId"].isNull())
+			deviceCheckInfosObject.deviceId = valueDeviceCheckInfosDeviceCheckInfo["DeviceId"].asString();
+		if(!valueDeviceCheckInfosDeviceCheckInfo["Available"].isNull())
+			deviceCheckInfosObject.available = valueDeviceCheckInfosDeviceCheckInfo["Available"].asString() == "true";
 		deviceCheckInfos_.push_back(deviceCheckInfosObject);
 	}
 

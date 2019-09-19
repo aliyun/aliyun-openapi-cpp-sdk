@@ -39,22 +39,22 @@ void DescribeNetworkOptimizationSagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSmartAccessGateways = value["SmartAccessGateways"]["SmartAccessGateway"];
-	for (auto value : allSmartAccessGateways)
+	auto allSmartAccessGatewaysNode = value["SmartAccessGateways"]["SmartAccessGateway"];
+	for (auto valueSmartAccessGatewaysSmartAccessGateway : allSmartAccessGatewaysNode)
 	{
 		SmartAccessGateway smartAccessGatewaysObject;
-		if(!value["InstanceId"].isNull())
-			smartAccessGatewaysObject.instanceId = value["InstanceId"].asString();
-		if(!value["Name"].isNull())
-			smartAccessGatewaysObject.name = value["Name"].asString();
-		if(!value["State"].isNull())
-			smartAccessGatewaysObject.state = value["State"].asString();
-		if(!value["CreateTime"].isNull())
-			smartAccessGatewaysObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["EndTime"].isNull())
-			smartAccessGatewaysObject.endTime = std::stol(value["EndTime"].asString());
-		if(!value["MaxBandwidth"].isNull())
-			smartAccessGatewaysObject.maxBandwidth = value["MaxBandwidth"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["InstanceId"].isNull())
+			smartAccessGatewaysObject.instanceId = valueSmartAccessGatewaysSmartAccessGateway["InstanceId"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["Name"].isNull())
+			smartAccessGatewaysObject.name = valueSmartAccessGatewaysSmartAccessGateway["Name"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["State"].isNull())
+			smartAccessGatewaysObject.state = valueSmartAccessGatewaysSmartAccessGateway["State"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["CreateTime"].isNull())
+			smartAccessGatewaysObject.createTime = std::stol(valueSmartAccessGatewaysSmartAccessGateway["CreateTime"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["EndTime"].isNull())
+			smartAccessGatewaysObject.endTime = std::stol(valueSmartAccessGatewaysSmartAccessGateway["EndTime"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["MaxBandwidth"].isNull())
+			smartAccessGatewaysObject.maxBandwidth = valueSmartAccessGatewaysSmartAccessGateway["MaxBandwidth"].asString();
 		smartAccessGateways_.push_back(smartAccessGatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())

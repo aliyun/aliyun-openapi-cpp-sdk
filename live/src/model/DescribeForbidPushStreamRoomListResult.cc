@@ -39,18 +39,18 @@ void DescribeForbidPushStreamRoomListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRoomList = value["RoomList"]["Room"];
-	for (auto value : allRoomList)
+	auto allRoomListNode = value["RoomList"]["Room"];
+	for (auto valueRoomListRoom : allRoomListNode)
 	{
 		Room roomListObject;
-		if(!value["RoomId"].isNull())
-			roomListObject.roomId = value["RoomId"].asString();
-		if(!value["AnchorId"].isNull())
-			roomListObject.anchorId = value["AnchorId"].asString();
-		if(!value["OpStartTime"].isNull())
-			roomListObject.opStartTime = value["OpStartTime"].asString();
-		if(!value["OpEndTime"].isNull())
-			roomListObject.opEndTime = value["OpEndTime"].asString();
+		if(!valueRoomListRoom["RoomId"].isNull())
+			roomListObject.roomId = valueRoomListRoom["RoomId"].asString();
+		if(!valueRoomListRoom["AnchorId"].isNull())
+			roomListObject.anchorId = valueRoomListRoom["AnchorId"].asString();
+		if(!valueRoomListRoom["OpStartTime"].isNull())
+			roomListObject.opStartTime = valueRoomListRoom["OpStartTime"].asString();
+		if(!valueRoomListRoom["OpEndTime"].isNull())
+			roomListObject.opEndTime = valueRoomListRoom["OpEndTime"].asString();
 		roomList_.push_back(roomListObject);
 	}
 	if(!value["TotalNum"].isNull())

@@ -79,14 +79,14 @@ void CreateBatchJobsResult::parse(const std::string &payload)
 		jobGroup_.strategy.followUpStrategy = strategyNode["FollowUpStrategy"].asString();
 	if(!strategyNode["IsTemplate"].isNull())
 		jobGroup_.strategy.isTemplate = strategyNode["IsTemplate"].asString() == "true";
-	auto allWorkingTime = value["WorkingTime"]["TimeFrame"];
-	for (auto value : allWorkingTime)
+	auto allWorkingTimeNode = strategyNode["WorkingTime"]["TimeFrame"];
+	for (auto strategyNodeWorkingTimeTimeFrame : allWorkingTimeNode)
 	{
 		JobGroup::Strategy::TimeFrame timeFrameObject;
-		if(!value["BeginTime"].isNull())
-			timeFrameObject.beginTime = value["BeginTime"].asString();
-		if(!value["EndTime"].isNull())
-			timeFrameObject.endTime = value["EndTime"].asString();
+		if(!strategyNodeWorkingTimeTimeFrame["BeginTime"].isNull())
+			timeFrameObject.beginTime = strategyNodeWorkingTimeTimeFrame["BeginTime"].asString();
+		if(!strategyNodeWorkingTimeTimeFrame["EndTime"].isNull())
+			timeFrameObject.endTime = strategyNodeWorkingTimeTimeFrame["EndTime"].asString();
 		jobGroup_.strategy.workingTime.push_back(timeFrameObject);
 	}
 		auto allRepeatDays = strategyNode["RepeatDays"]["Integer"];

@@ -39,34 +39,34 @@ void ListProjectResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProjects = value["Projects"]["Project"];
-	for (auto value : allProjects)
+	auto allProjectsNode = value["Projects"]["Project"];
+	for (auto valueProjectsProject : allProjectsNode)
 	{
 		Project projectsObject;
-		if(!value["Name"].isNull())
-			projectsObject.name = value["Name"].asString();
-		if(!value["State"].isNull())
-			projectsObject.state = value["State"].asString();
-		if(!value["Creator"].isNull())
-			projectsObject.creator = value["Creator"].asString();
-		if(!value["CreateTime"].isNull())
-			projectsObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["Modifier"].isNull())
-			projectsObject.modifier = value["Modifier"].asString();
-		if(!value["ModifyTime"].isNull())
-			projectsObject.modifyTime = std::stol(value["ModifyTime"].asString());
-		if(!value["Description"].isNull())
-			projectsObject.description = value["Description"].asString();
-		if(!value["DeployType"].isNull())
-			projectsObject.deployType = value["DeployType"].asString();
-		if(!value["ClusterId"].isNull())
-			projectsObject.clusterId = value["ClusterId"].asString();
-		if(!value["ManagerIds"].isNull())
-			projectsObject.managerIds = value["ManagerIds"].asString();
-		if(!value["Region"].isNull())
-			projectsObject.region = value["Region"].asString();
-		if(!value["Id"].isNull())
-			projectsObject.id = value["Id"].asString();
+		if(!valueProjectsProject["Name"].isNull())
+			projectsObject.name = valueProjectsProject["Name"].asString();
+		if(!valueProjectsProject["State"].isNull())
+			projectsObject.state = valueProjectsProject["State"].asString();
+		if(!valueProjectsProject["Creator"].isNull())
+			projectsObject.creator = valueProjectsProject["Creator"].asString();
+		if(!valueProjectsProject["CreateTime"].isNull())
+			projectsObject.createTime = std::stol(valueProjectsProject["CreateTime"].asString());
+		if(!valueProjectsProject["Modifier"].isNull())
+			projectsObject.modifier = valueProjectsProject["Modifier"].asString();
+		if(!valueProjectsProject["ModifyTime"].isNull())
+			projectsObject.modifyTime = std::stol(valueProjectsProject["ModifyTime"].asString());
+		if(!valueProjectsProject["Description"].isNull())
+			projectsObject.description = valueProjectsProject["Description"].asString();
+		if(!valueProjectsProject["DeployType"].isNull())
+			projectsObject.deployType = valueProjectsProject["DeployType"].asString();
+		if(!valueProjectsProject["ClusterId"].isNull())
+			projectsObject.clusterId = valueProjectsProject["ClusterId"].asString();
+		if(!valueProjectsProject["ManagerIds"].isNull())
+			projectsObject.managerIds = valueProjectsProject["ManagerIds"].asString();
+		if(!valueProjectsProject["Region"].isNull())
+			projectsObject.region = valueProjectsProject["Region"].asString();
+		if(!valueProjectsProject["Id"].isNull())
+			projectsObject.id = valueProjectsProject["Id"].asString();
 		projects_.push_back(projectsObject);
 	}
 	if(!value["PageIndex"].isNull())

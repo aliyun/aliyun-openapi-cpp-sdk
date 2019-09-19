@@ -39,14 +39,14 @@ void ListTagKeysResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTagKeys = value["TagKeys"]["TagKey"];
-	for (auto value : allTagKeys)
+	auto allTagKeysNode = value["TagKeys"]["TagKey"];
+	for (auto valueTagKeysTagKey : allTagKeysNode)
 	{
 		TagKey tagKeysObject;
-		if(!value["TagKey"].isNull())
-			tagKeysObject.tagKey = value["TagKey"].asString();
-		if(!value["TagCount"].isNull())
-			tagKeysObject.tagCount = std::stoi(value["TagCount"].asString());
+		if(!valueTagKeysTagKey["TagKey"].isNull())
+			tagKeysObject.tagKey = valueTagKeysTagKey["TagKey"].asString();
+		if(!valueTagKeysTagKey["TagCount"].isNull())
+			tagKeysObject.tagCount = std::stoi(valueTagKeysTagKey["TagCount"].asString());
 		tagKeys_.push_back(tagKeysObject);
 	}
 	if(!value["CurrentPage"].isNull())

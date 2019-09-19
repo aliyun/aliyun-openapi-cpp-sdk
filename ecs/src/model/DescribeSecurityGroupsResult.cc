@@ -39,36 +39,36 @@ void DescribeSecurityGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSecurityGroups = value["SecurityGroups"]["SecurityGroup"];
-	for (auto value : allSecurityGroups)
+	auto allSecurityGroupsNode = value["SecurityGroups"]["SecurityGroup"];
+	for (auto valueSecurityGroupsSecurityGroup : allSecurityGroupsNode)
 	{
 		SecurityGroup securityGroupsObject;
-		if(!value["SecurityGroupId"].isNull())
-			securityGroupsObject.securityGroupId = value["SecurityGroupId"].asString();
-		if(!value["Description"].isNull())
-			securityGroupsObject.description = value["Description"].asString();
-		if(!value["SecurityGroupName"].isNull())
-			securityGroupsObject.securityGroupName = value["SecurityGroupName"].asString();
-		if(!value["VpcId"].isNull())
-			securityGroupsObject.vpcId = value["VpcId"].asString();
-		if(!value["CreationTime"].isNull())
-			securityGroupsObject.creationTime = value["CreationTime"].asString();
-		if(!value["SecurityGroupType"].isNull())
-			securityGroupsObject.securityGroupType = value["SecurityGroupType"].asString();
-		if(!value["AvailableInstanceAmount"].isNull())
-			securityGroupsObject.availableInstanceAmount = std::stoi(value["AvailableInstanceAmount"].asString());
-		if(!value["EcsCount"].isNull())
-			securityGroupsObject.ecsCount = std::stoi(value["EcsCount"].asString());
-		if(!value["ResourceGroupId"].isNull())
-			securityGroupsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueSecurityGroupsSecurityGroup["SecurityGroupId"].isNull())
+			securityGroupsObject.securityGroupId = valueSecurityGroupsSecurityGroup["SecurityGroupId"].asString();
+		if(!valueSecurityGroupsSecurityGroup["Description"].isNull())
+			securityGroupsObject.description = valueSecurityGroupsSecurityGroup["Description"].asString();
+		if(!valueSecurityGroupsSecurityGroup["SecurityGroupName"].isNull())
+			securityGroupsObject.securityGroupName = valueSecurityGroupsSecurityGroup["SecurityGroupName"].asString();
+		if(!valueSecurityGroupsSecurityGroup["VpcId"].isNull())
+			securityGroupsObject.vpcId = valueSecurityGroupsSecurityGroup["VpcId"].asString();
+		if(!valueSecurityGroupsSecurityGroup["CreationTime"].isNull())
+			securityGroupsObject.creationTime = valueSecurityGroupsSecurityGroup["CreationTime"].asString();
+		if(!valueSecurityGroupsSecurityGroup["SecurityGroupType"].isNull())
+			securityGroupsObject.securityGroupType = valueSecurityGroupsSecurityGroup["SecurityGroupType"].asString();
+		if(!valueSecurityGroupsSecurityGroup["AvailableInstanceAmount"].isNull())
+			securityGroupsObject.availableInstanceAmount = std::stoi(valueSecurityGroupsSecurityGroup["AvailableInstanceAmount"].asString());
+		if(!valueSecurityGroupsSecurityGroup["EcsCount"].isNull())
+			securityGroupsObject.ecsCount = std::stoi(valueSecurityGroupsSecurityGroup["EcsCount"].asString());
+		if(!valueSecurityGroupsSecurityGroup["ResourceGroupId"].isNull())
+			securityGroupsObject.resourceGroupId = valueSecurityGroupsSecurityGroup["ResourceGroupId"].asString();
+		auto allTagsNode = allSecurityGroupsNode["Tags"]["Tag"];
+		for (auto allSecurityGroupsNodeTagsTag : allTagsNode)
 		{
 			SecurityGroup::Tag tagsObject;
-			if(!value["TagKey"].isNull())
-				tagsObject.tagKey = value["TagKey"].asString();
-			if(!value["TagValue"].isNull())
-				tagsObject.tagValue = value["TagValue"].asString();
+			if(!allSecurityGroupsNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allSecurityGroupsNodeTagsTag["TagKey"].asString();
+			if(!allSecurityGroupsNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allSecurityGroupsNodeTagsTag["TagValue"].asString();
 			securityGroupsObject.tags.push_back(tagsObject);
 		}
 		securityGroups_.push_back(securityGroupsObject);

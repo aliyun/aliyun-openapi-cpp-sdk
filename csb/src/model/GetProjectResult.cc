@@ -40,44 +40,44 @@ void GetProjectResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allProjectList = value["ProjectList"]["Project"];
-	for (auto value : allProjectList)
+	auto allProjectListNode = dataNode["ProjectList"]["Project"];
+	for (auto dataNodeProjectListProject : allProjectListNode)
 	{
 		Data::Project projectObject;
-		if(!value["ApiNum"].isNull())
-			projectObject.apiNum = std::stoi(value["ApiNum"].asString());
-		if(!value["CsbId"].isNull())
-			projectObject.csbId = std::stol(value["CsbId"].asString());
-		if(!value["DeleteFlag"].isNull())
-			projectObject.deleteFlag = std::stoi(value["DeleteFlag"].asString());
-		if(!value["Description"].isNull())
-			projectObject.description = value["Description"].asString();
-		if(!value["GmtCreate"].isNull())
-			projectObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			projectObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["Id"].isNull())
-			projectObject.id = std::stol(value["Id"].asString());
-		if(!value["InterfaceJarLocation"].isNull())
-			projectObject.interfaceJarLocation = value["InterfaceJarLocation"].asString();
-		if(!value["InterfaceJarName"].isNull())
-			projectObject.interfaceJarName = value["InterfaceJarName"].asString();
-		if(!value["JarFileKey"].isNull())
-			projectObject.jarFileKey = value["JarFileKey"].asString();
-		if(!value["OwnerId"].isNull())
-			projectObject.ownerId = value["OwnerId"].asString();
-		if(!value["ProjectName"].isNull())
-			projectObject.projectName = value["ProjectName"].asString();
-		if(!value["ProjectOwnerEmail"].isNull())
-			projectObject.projectOwnerEmail = value["ProjectOwnerEmail"].asString();
-		if(!value["ProjectOwnerName"].isNull())
-			projectObject.projectOwnerName = value["ProjectOwnerName"].asString();
-		if(!value["ProjectOwnerPhoneNum"].isNull())
-			projectObject.projectOwnerPhoneNum = value["ProjectOwnerPhoneNum"].asString();
-		if(!value["Status"].isNull())
-			projectObject.status = std::stoi(value["Status"].asString());
-		if(!value["UserId"].isNull())
-			projectObject.userId = value["UserId"].asString();
+		if(!dataNodeProjectListProject["ApiNum"].isNull())
+			projectObject.apiNum = std::stoi(dataNodeProjectListProject["ApiNum"].asString());
+		if(!dataNodeProjectListProject["CsbId"].isNull())
+			projectObject.csbId = std::stol(dataNodeProjectListProject["CsbId"].asString());
+		if(!dataNodeProjectListProject["DeleteFlag"].isNull())
+			projectObject.deleteFlag = std::stoi(dataNodeProjectListProject["DeleteFlag"].asString());
+		if(!dataNodeProjectListProject["Description"].isNull())
+			projectObject.description = dataNodeProjectListProject["Description"].asString();
+		if(!dataNodeProjectListProject["GmtCreate"].isNull())
+			projectObject.gmtCreate = std::stol(dataNodeProjectListProject["GmtCreate"].asString());
+		if(!dataNodeProjectListProject["GmtModified"].isNull())
+			projectObject.gmtModified = std::stol(dataNodeProjectListProject["GmtModified"].asString());
+		if(!dataNodeProjectListProject["Id"].isNull())
+			projectObject.id = std::stol(dataNodeProjectListProject["Id"].asString());
+		if(!dataNodeProjectListProject["InterfaceJarLocation"].isNull())
+			projectObject.interfaceJarLocation = dataNodeProjectListProject["InterfaceJarLocation"].asString();
+		if(!dataNodeProjectListProject["InterfaceJarName"].isNull())
+			projectObject.interfaceJarName = dataNodeProjectListProject["InterfaceJarName"].asString();
+		if(!dataNodeProjectListProject["JarFileKey"].isNull())
+			projectObject.jarFileKey = dataNodeProjectListProject["JarFileKey"].asString();
+		if(!dataNodeProjectListProject["OwnerId"].isNull())
+			projectObject.ownerId = dataNodeProjectListProject["OwnerId"].asString();
+		if(!dataNodeProjectListProject["ProjectName"].isNull())
+			projectObject.projectName = dataNodeProjectListProject["ProjectName"].asString();
+		if(!dataNodeProjectListProject["ProjectOwnerEmail"].isNull())
+			projectObject.projectOwnerEmail = dataNodeProjectListProject["ProjectOwnerEmail"].asString();
+		if(!dataNodeProjectListProject["ProjectOwnerName"].isNull())
+			projectObject.projectOwnerName = dataNodeProjectListProject["ProjectOwnerName"].asString();
+		if(!dataNodeProjectListProject["ProjectOwnerPhoneNum"].isNull())
+			projectObject.projectOwnerPhoneNum = dataNodeProjectListProject["ProjectOwnerPhoneNum"].asString();
+		if(!dataNodeProjectListProject["Status"].isNull())
+			projectObject.status = std::stoi(dataNodeProjectListProject["Status"].asString());
+		if(!dataNodeProjectListProject["UserId"].isNull())
+			projectObject.userId = dataNodeProjectListProject["UserId"].asString();
 		data_.projectList.push_back(projectObject);
 	}
 	if(!value["Code"].isNull())

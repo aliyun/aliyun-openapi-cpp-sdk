@@ -39,24 +39,24 @@ void DescribeGWSImagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allImages = value["Images"]["ImageInfo"];
-	for (auto value : allImages)
+	auto allImagesNode = value["Images"]["ImageInfo"];
+	for (auto valueImagesImageInfo : allImagesNode)
 	{
 		ImageInfo imagesObject;
-		if(!value["ImageId"].isNull())
-			imagesObject.imageId = value["ImageId"].asString();
-		if(!value["Status"].isNull())
-			imagesObject.status = value["Status"].asString();
-		if(!value["CreateTime"].isNull())
-			imagesObject.createTime = value["CreateTime"].asString();
-		if(!value["Name"].isNull())
-			imagesObject.name = value["Name"].asString();
-		if(!value["ImageType"].isNull())
-			imagesObject.imageType = value["ImageType"].asString();
-		if(!value["Progress"].isNull())
-			imagesObject.progress = value["Progress"].asString();
-		if(!value["Size"].isNull())
-			imagesObject.size = std::stoi(value["Size"].asString());
+		if(!valueImagesImageInfo["ImageId"].isNull())
+			imagesObject.imageId = valueImagesImageInfo["ImageId"].asString();
+		if(!valueImagesImageInfo["Status"].isNull())
+			imagesObject.status = valueImagesImageInfo["Status"].asString();
+		if(!valueImagesImageInfo["CreateTime"].isNull())
+			imagesObject.createTime = valueImagesImageInfo["CreateTime"].asString();
+		if(!valueImagesImageInfo["Name"].isNull())
+			imagesObject.name = valueImagesImageInfo["Name"].asString();
+		if(!valueImagesImageInfo["ImageType"].isNull())
+			imagesObject.imageType = valueImagesImageInfo["ImageType"].asString();
+		if(!valueImagesImageInfo["Progress"].isNull())
+			imagesObject.progress = valueImagesImageInfo["Progress"].asString();
+		if(!valueImagesImageInfo["Size"].isNull())
+			imagesObject.size = std::stoi(valueImagesImageInfo["Size"].asString());
 		images_.push_back(imagesObject);
 	}
 	if(!value["TotalCount"].isNull())

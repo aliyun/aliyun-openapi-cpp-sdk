@@ -39,24 +39,24 @@ void DescribeApiQpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCallSuccesses = value["CallSuccesses"]["MonitorItem"];
-	for (auto value : allCallSuccesses)
+	auto allCallSuccessesNode = value["CallSuccesses"]["MonitorItem"];
+	for (auto valueCallSuccessesMonitorItem : allCallSuccessesNode)
 	{
 		MonitorItem callSuccessesObject;
-		if(!value["ItemTime"].isNull())
-			callSuccessesObject.itemTime = value["ItemTime"].asString();
-		if(!value["ItemValue"].isNull())
-			callSuccessesObject.itemValue = value["ItemValue"].asString();
+		if(!valueCallSuccessesMonitorItem["ItemTime"].isNull())
+			callSuccessesObject.itemTime = valueCallSuccessesMonitorItem["ItemTime"].asString();
+		if(!valueCallSuccessesMonitorItem["ItemValue"].isNull())
+			callSuccessesObject.itemValue = valueCallSuccessesMonitorItem["ItemValue"].asString();
 		callSuccesses_.push_back(callSuccessesObject);
 	}
-	auto allCallFails = value["CallFails"]["MonitorItem"];
-	for (auto value : allCallFails)
+	auto allCallFailsNode = value["CallFails"]["MonitorItem"];
+	for (auto valueCallFailsMonitorItem : allCallFailsNode)
 	{
 		MonitorItem callFailsObject;
-		if(!value["ItemTime"].isNull())
-			callFailsObject.itemTime = value["ItemTime"].asString();
-		if(!value["ItemValue"].isNull())
-			callFailsObject.itemValue = value["ItemValue"].asString();
+		if(!valueCallFailsMonitorItem["ItemTime"].isNull())
+			callFailsObject.itemTime = valueCallFailsMonitorItem["ItemTime"].asString();
+		if(!valueCallFailsMonitorItem["ItemValue"].isNull())
+			callFailsObject.itemValue = valueCallFailsMonitorItem["ItemValue"].asString();
 		callFails_.push_back(callFailsObject);
 	}
 

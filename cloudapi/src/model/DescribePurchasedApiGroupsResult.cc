@@ -39,30 +39,30 @@ void DescribePurchasedApiGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPurchasedApiGroupAttributes = value["PurchasedApiGroupAttributes"]["PurchasedApiGroupAttribute"];
-	for (auto value : allPurchasedApiGroupAttributes)
+	auto allPurchasedApiGroupAttributesNode = value["PurchasedApiGroupAttributes"]["PurchasedApiGroupAttribute"];
+	for (auto valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute : allPurchasedApiGroupAttributesNode)
 	{
 		PurchasedApiGroupAttribute purchasedApiGroupAttributesObject;
-		if(!value["GroupId"].isNull())
-			purchasedApiGroupAttributesObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			purchasedApiGroupAttributesObject.groupName = value["GroupName"].asString();
-		if(!value["Description"].isNull())
-			purchasedApiGroupAttributesObject.description = value["Description"].asString();
-		if(!value["PurchasedTime"].isNull())
-			purchasedApiGroupAttributesObject.purchasedTime = value["PurchasedTime"].asString();
-		if(!value["ExpireTime"].isNull())
-			purchasedApiGroupAttributesObject.expireTime = value["ExpireTime"].asString();
-		if(!value["RegionId"].isNull())
-			purchasedApiGroupAttributesObject.regionId = value["RegionId"].asString();
-		if(!value["BillingType"].isNull())
-			purchasedApiGroupAttributesObject.billingType = value["BillingType"].asString();
-		if(!value["InvokeTimesMax"].isNull())
-			purchasedApiGroupAttributesObject.invokeTimesMax = std::stol(value["InvokeTimesMax"].asString());
-		if(!value["InvokeTimesNow"].isNull())
-			purchasedApiGroupAttributesObject.invokeTimesNow = std::stol(value["InvokeTimesNow"].asString());
-		if(!value["Status"].isNull())
-			purchasedApiGroupAttributesObject.status = value["Status"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupId"].isNull())
+			purchasedApiGroupAttributesObject.groupId = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupId"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupName"].isNull())
+			purchasedApiGroupAttributesObject.groupName = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupName"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Description"].isNull())
+			purchasedApiGroupAttributesObject.description = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Description"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["PurchasedTime"].isNull())
+			purchasedApiGroupAttributesObject.purchasedTime = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["PurchasedTime"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["ExpireTime"].isNull())
+			purchasedApiGroupAttributesObject.expireTime = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["ExpireTime"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["RegionId"].isNull())
+			purchasedApiGroupAttributesObject.regionId = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["RegionId"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["BillingType"].isNull())
+			purchasedApiGroupAttributesObject.billingType = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["BillingType"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["InvokeTimesMax"].isNull())
+			purchasedApiGroupAttributesObject.invokeTimesMax = std::stol(valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["InvokeTimesMax"].asString());
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["InvokeTimesNow"].isNull())
+			purchasedApiGroupAttributesObject.invokeTimesNow = std::stol(valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["InvokeTimesNow"].asString());
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Status"].isNull())
+			purchasedApiGroupAttributesObject.status = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Status"].asString();
 		purchasedApiGroupAttributes_.push_back(purchasedApiGroupAttributesObject);
 	}
 	if(!value["TotalCount"].isNull())

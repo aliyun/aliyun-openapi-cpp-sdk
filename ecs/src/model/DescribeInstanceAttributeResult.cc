@@ -39,12 +39,12 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOperationLocks = value["OperationLocks"]["LockReason"];
-	for (auto value : allOperationLocks)
+	auto allOperationLocksNode = value["OperationLocks"]["LockReason"];
+	for (auto valueOperationLocksLockReason : allOperationLocksNode)
 	{
 		LockReason operationLocksObject;
-		if(!value["LockReason"].isNull())
-			operationLocksObject.lockReason = value["LockReason"].asString();
+		if(!valueOperationLocksLockReason["LockReason"].isNull())
+			operationLocksObject.lockReason = valueOperationLocksLockReason["LockReason"].asString();
 		operationLocks_.push_back(operationLocksObject);
 	}
 	auto vpcAttributesNode = value["VpcAttributes"];

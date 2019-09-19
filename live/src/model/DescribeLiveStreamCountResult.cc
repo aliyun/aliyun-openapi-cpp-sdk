@@ -39,26 +39,26 @@ void DescribeLiveStreamCountResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStreamCountInfos = value["StreamCountInfos"]["StreamCountInfo"];
-	for (auto value : allStreamCountInfos)
+	auto allStreamCountInfosNode = value["StreamCountInfos"]["StreamCountInfo"];
+	for (auto valueStreamCountInfosStreamCountInfo : allStreamCountInfosNode)
 	{
 		StreamCountInfo streamCountInfosObject;
-		if(!value["Count"].isNull())
-			streamCountInfosObject.count = std::stol(value["Count"].asString());
-		if(!value["Limit"].isNull())
-			streamCountInfosObject.limit = std::stol(value["Limit"].asString());
-		if(!value["Type"].isNull())
-			streamCountInfosObject.type = value["Type"].asString();
-		auto allStreamCountDetails = value["StreamCountDetails"]["StreamCountDetail"];
-		for (auto value : allStreamCountDetails)
+		if(!valueStreamCountInfosStreamCountInfo["Count"].isNull())
+			streamCountInfosObject.count = std::stol(valueStreamCountInfosStreamCountInfo["Count"].asString());
+		if(!valueStreamCountInfosStreamCountInfo["Limit"].isNull())
+			streamCountInfosObject.limit = std::stol(valueStreamCountInfosStreamCountInfo["Limit"].asString());
+		if(!valueStreamCountInfosStreamCountInfo["Type"].isNull())
+			streamCountInfosObject.type = valueStreamCountInfosStreamCountInfo["Type"].asString();
+		auto allStreamCountDetailsNode = allStreamCountInfosNode["StreamCountDetails"]["StreamCountDetail"];
+		for (auto allStreamCountInfosNodeStreamCountDetailsStreamCountDetail : allStreamCountDetailsNode)
 		{
 			StreamCountInfo::StreamCountDetail streamCountDetailsObject;
-			if(!value["Format"].isNull())
-				streamCountDetailsObject.format = value["Format"].asString();
-			if(!value["VideoDataRate"].isNull())
-				streamCountDetailsObject.videoDataRate = std::stol(value["VideoDataRate"].asString());
-			if(!value["Count"].isNull())
-				streamCountDetailsObject.count = std::stol(value["Count"].asString());
+			if(!allStreamCountInfosNodeStreamCountDetailsStreamCountDetail["Format"].isNull())
+				streamCountDetailsObject.format = allStreamCountInfosNodeStreamCountDetailsStreamCountDetail["Format"].asString();
+			if(!allStreamCountInfosNodeStreamCountDetailsStreamCountDetail["VideoDataRate"].isNull())
+				streamCountDetailsObject.videoDataRate = std::stol(allStreamCountInfosNodeStreamCountDetailsStreamCountDetail["VideoDataRate"].asString());
+			if(!allStreamCountInfosNodeStreamCountDetailsStreamCountDetail["Count"].isNull())
+				streamCountDetailsObject.count = std::stol(allStreamCountInfosNodeStreamCountDetailsStreamCountDetail["Count"].asString());
 			streamCountInfosObject.streamCountDetails.push_back(streamCountDetailsObject);
 		}
 		streamCountInfos_.push_back(streamCountInfosObject);

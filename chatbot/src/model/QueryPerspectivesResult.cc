@@ -39,28 +39,28 @@ void QueryPerspectivesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPerspectives = value["Perspectives"]["Perspective"];
-	for (auto value : allPerspectives)
+	auto allPerspectivesNode = value["Perspectives"]["Perspective"];
+	for (auto valuePerspectivesPerspective : allPerspectivesNode)
 	{
 		Perspective perspectivesObject;
-		if(!value["ModifyUserName"].isNull())
-			perspectivesObject.modifyUserName = value["ModifyUserName"].asString();
-		if(!value["ModifyTime"].isNull())
-			perspectivesObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["CreateTime"].isNull())
-			perspectivesObject.createTime = value["CreateTime"].asString();
-		if(!value["SelfDefine"].isNull())
-			perspectivesObject.selfDefine = value["SelfDefine"].asString();
-		if(!value["PerspectiveId"].isNull())
-			perspectivesObject.perspectiveId = value["PerspectiveId"].asString();
-		if(!value["CreateUserName"].isNull())
-			perspectivesObject.createUserName = value["CreateUserName"].asString();
-		if(!value["PerspectiveCode"].isNull())
-			perspectivesObject.perspectiveCode = value["PerspectiveCode"].asString();
-		if(!value["Status"].isNull())
-			perspectivesObject.status = std::stoi(value["Status"].asString());
-		if(!value["Name"].isNull())
-			perspectivesObject.name = value["Name"].asString();
+		if(!valuePerspectivesPerspective["ModifyUserName"].isNull())
+			perspectivesObject.modifyUserName = valuePerspectivesPerspective["ModifyUserName"].asString();
+		if(!valuePerspectivesPerspective["ModifyTime"].isNull())
+			perspectivesObject.modifyTime = valuePerspectivesPerspective["ModifyTime"].asString();
+		if(!valuePerspectivesPerspective["CreateTime"].isNull())
+			perspectivesObject.createTime = valuePerspectivesPerspective["CreateTime"].asString();
+		if(!valuePerspectivesPerspective["SelfDefine"].isNull())
+			perspectivesObject.selfDefine = valuePerspectivesPerspective["SelfDefine"].asString();
+		if(!valuePerspectivesPerspective["PerspectiveId"].isNull())
+			perspectivesObject.perspectiveId = valuePerspectivesPerspective["PerspectiveId"].asString();
+		if(!valuePerspectivesPerspective["CreateUserName"].isNull())
+			perspectivesObject.createUserName = valuePerspectivesPerspective["CreateUserName"].asString();
+		if(!valuePerspectivesPerspective["PerspectiveCode"].isNull())
+			perspectivesObject.perspectiveCode = valuePerspectivesPerspective["PerspectiveCode"].asString();
+		if(!valuePerspectivesPerspective["Status"].isNull())
+			perspectivesObject.status = std::stoi(valuePerspectivesPerspective["Status"].asString());
+		if(!valuePerspectivesPerspective["Name"].isNull())
+			perspectivesObject.name = valuePerspectivesPerspective["Name"].asString();
 		perspectives_.push_back(perspectivesObject);
 	}
 

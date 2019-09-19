@@ -39,14 +39,14 @@ void ListLiveRealtimeLogDeliveryDomainsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allContent = value["Content"]["Domains"];
-	for (auto value : allContent)
+	auto allContentNode = value["Content"]["Domains"];
+	for (auto valueContentDomains : allContentNode)
 	{
 		Domains contentObject;
-		if(!value["DomainName"].isNull())
-			contentObject.domainName = value["DomainName"].asString();
-		if(!value["Status"].isNull())
-			contentObject.status = value["Status"].asString();
+		if(!valueContentDomains["DomainName"].isNull())
+			contentObject.domainName = valueContentDomains["DomainName"].asString();
+		if(!valueContentDomains["Status"].isNull())
+			contentObject.status = valueContentDomains["Status"].asString();
 		content_.push_back(contentObject);
 	}
 

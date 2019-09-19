@@ -39,18 +39,18 @@ void DescribeSnatEntriesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSnatEntries = value["SnatEntries"]["SnatEntry"];
-	for (auto value : allSnatEntries)
+	auto allSnatEntriesNode = value["SnatEntries"]["SnatEntry"];
+	for (auto valueSnatEntriesSnatEntry : allSnatEntriesNode)
 	{
 		SnatEntry snatEntriesObject;
-		if(!value["InstanceId"].isNull())
-			snatEntriesObject.instanceId = value["InstanceId"].asString();
-		if(!value["CidrBlock"].isNull())
-			snatEntriesObject.cidrBlock = value["CidrBlock"].asString();
-		if(!value["SnatIp"].isNull())
-			snatEntriesObject.snatIp = value["SnatIp"].asString();
-		if(!value["CreateTime"].isNull())
-			snatEntriesObject.createTime = std::stol(value["CreateTime"].asString());
+		if(!valueSnatEntriesSnatEntry["InstanceId"].isNull())
+			snatEntriesObject.instanceId = valueSnatEntriesSnatEntry["InstanceId"].asString();
+		if(!valueSnatEntriesSnatEntry["CidrBlock"].isNull())
+			snatEntriesObject.cidrBlock = valueSnatEntriesSnatEntry["CidrBlock"].asString();
+		if(!valueSnatEntriesSnatEntry["SnatIp"].isNull())
+			snatEntriesObject.snatIp = valueSnatEntriesSnatEntry["SnatIp"].asString();
+		if(!valueSnatEntriesSnatEntry["CreateTime"].isNull())
+			snatEntriesObject.createTime = std::stol(valueSnatEntriesSnatEntry["CreateTime"].asString());
 		snatEntries_.push_back(snatEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())

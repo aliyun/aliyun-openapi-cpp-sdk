@@ -39,26 +39,26 @@ void DescribeConsoleAccessWhiteListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataList = value["DataList"]["Data"];
-	for (auto value : allDataList)
+	auto allDataListNode = value["DataList"]["Data"];
+	for (auto valueDataListData : allDataListNode)
 	{
 		Data dataListObject;
-		if(!value["Id"].isNull())
-			dataListObject.id = std::stoi(value["Id"].asString());
-		if(!value["SrcIp"].isNull())
-			dataListObject.srcIp = value["SrcIp"].asString();
-		if(!value["DstIp"].isNull())
-			dataListObject.dstIp = value["DstIp"].asString();
-		if(!value["InsProduct"].isNull())
-			dataListObject.insProduct = value["InsProduct"].asString();
-		if(!value["RegionId"].isNull())
-			dataListObject.regionId = value["RegionId"].asString();
-		if(!value["Status"].isNull())
-			dataListObject.status = value["Status"].asString();
-		if(!value["GmtCreate"].isNull())
-			dataListObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtRealExpire"].isNull())
-			dataListObject.gmtRealExpire = value["GmtRealExpire"].asString();
+		if(!valueDataListData["Id"].isNull())
+			dataListObject.id = std::stoi(valueDataListData["Id"].asString());
+		if(!valueDataListData["SrcIp"].isNull())
+			dataListObject.srcIp = valueDataListData["SrcIp"].asString();
+		if(!valueDataListData["DstIp"].isNull())
+			dataListObject.dstIp = valueDataListData["DstIp"].asString();
+		if(!valueDataListData["InsProduct"].isNull())
+			dataListObject.insProduct = valueDataListData["InsProduct"].asString();
+		if(!valueDataListData["RegionId"].isNull())
+			dataListObject.regionId = valueDataListData["RegionId"].asString();
+		if(!valueDataListData["Status"].isNull())
+			dataListObject.status = valueDataListData["Status"].asString();
+		if(!valueDataListData["GmtCreate"].isNull())
+			dataListObject.gmtCreate = valueDataListData["GmtCreate"].asString();
+		if(!valueDataListData["GmtRealExpire"].isNull())
+			dataListObject.gmtRealExpire = valueDataListData["GmtRealExpire"].asString();
 		dataList_.push_back(dataListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

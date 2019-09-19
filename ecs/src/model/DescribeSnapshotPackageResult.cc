@@ -39,18 +39,18 @@ void DescribeSnapshotPackageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSnapshotPackages = value["SnapshotPackages"]["SnapshotPackage"];
-	for (auto value : allSnapshotPackages)
+	auto allSnapshotPackagesNode = value["SnapshotPackages"]["SnapshotPackage"];
+	for (auto valueSnapshotPackagesSnapshotPackage : allSnapshotPackagesNode)
 	{
 		SnapshotPackage snapshotPackagesObject;
-		if(!value["StartTime"].isNull())
-			snapshotPackagesObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			snapshotPackagesObject.endTime = value["EndTime"].asString();
-		if(!value["InitCapacity"].isNull())
-			snapshotPackagesObject.initCapacity = std::stol(value["InitCapacity"].asString());
-		if(!value["DisplayName"].isNull())
-			snapshotPackagesObject.displayName = value["DisplayName"].asString();
+		if(!valueSnapshotPackagesSnapshotPackage["StartTime"].isNull())
+			snapshotPackagesObject.startTime = valueSnapshotPackagesSnapshotPackage["StartTime"].asString();
+		if(!valueSnapshotPackagesSnapshotPackage["EndTime"].isNull())
+			snapshotPackagesObject.endTime = valueSnapshotPackagesSnapshotPackage["EndTime"].asString();
+		if(!valueSnapshotPackagesSnapshotPackage["InitCapacity"].isNull())
+			snapshotPackagesObject.initCapacity = std::stol(valueSnapshotPackagesSnapshotPackage["InitCapacity"].asString());
+		if(!valueSnapshotPackagesSnapshotPackage["DisplayName"].isNull())
+			snapshotPackagesObject.displayName = valueSnapshotPackagesSnapshotPackage["DisplayName"].asString();
 		snapshotPackages_.push_back(snapshotPackagesObject);
 	}
 	if(!value["TotalCount"].isNull())

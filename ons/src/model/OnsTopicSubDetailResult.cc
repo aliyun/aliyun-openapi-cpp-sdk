@@ -42,16 +42,16 @@ void OnsTopicSubDetailResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Topic"].isNull())
 		data_.topic = dataNode["Topic"].asString();
-	auto allSubscriptionDataList = value["SubscriptionDataList"]["SubscriptionDataListItem"];
-	for (auto value : allSubscriptionDataList)
+	auto allSubscriptionDataListNode = dataNode["SubscriptionDataList"]["SubscriptionDataListItem"];
+	for (auto dataNodeSubscriptionDataListSubscriptionDataListItem : allSubscriptionDataListNode)
 	{
 		Data::SubscriptionDataListItem subscriptionDataListItemObject;
-		if(!value["GroupId"].isNull())
-			subscriptionDataListItemObject.groupId = value["GroupId"].asString();
-		if(!value["SubString"].isNull())
-			subscriptionDataListItemObject.subString = value["SubString"].asString();
-		if(!value["MessageModel"].isNull())
-			subscriptionDataListItemObject.messageModel = value["MessageModel"].asString();
+		if(!dataNodeSubscriptionDataListSubscriptionDataListItem["GroupId"].isNull())
+			subscriptionDataListItemObject.groupId = dataNodeSubscriptionDataListSubscriptionDataListItem["GroupId"].asString();
+		if(!dataNodeSubscriptionDataListSubscriptionDataListItem["SubString"].isNull())
+			subscriptionDataListItemObject.subString = dataNodeSubscriptionDataListSubscriptionDataListItem["SubString"].asString();
+		if(!dataNodeSubscriptionDataListSubscriptionDataListItem["MessageModel"].isNull())
+			subscriptionDataListItemObject.messageModel = dataNodeSubscriptionDataListSubscriptionDataListItem["MessageModel"].asString();
 		data_.subscriptionDataList.push_back(subscriptionDataListItemObject);
 	}
 

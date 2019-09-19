@@ -39,26 +39,26 @@ void DescribeDnatEntriesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDnatEntries = value["DnatEntries"]["DnatEntry"];
-	for (auto value : allDnatEntries)
+	auto allDnatEntriesNode = value["DnatEntries"]["DnatEntry"];
+	for (auto valueDnatEntriesDnatEntry : allDnatEntriesNode)
 	{
 		DnatEntry dnatEntriesObject;
-		if(!value["DnatEntryId"].isNull())
-			dnatEntriesObject.dnatEntryId = value["DnatEntryId"].asString();
-		if(!value["Type"].isNull())
-			dnatEntriesObject.type = value["Type"].asString();
-		if(!value["SagId"].isNull())
-			dnatEntriesObject.sagId = value["SagId"].asString();
-		if(!value["ExternalIp"].isNull())
-			dnatEntriesObject.externalIp = value["ExternalIp"].asString();
-		if(!value["ExternalPort"].isNull())
-			dnatEntriesObject.externalPort = value["ExternalPort"].asString();
-		if(!value["InternalIp"].isNull())
-			dnatEntriesObject.internalIp = value["InternalIp"].asString();
-		if(!value["IpProtocol"].isNull())
-			dnatEntriesObject.ipProtocol = value["IpProtocol"].asString();
-		if(!value["InternalPort"].isNull())
-			dnatEntriesObject.internalPort = value["InternalPort"].asString();
+		if(!valueDnatEntriesDnatEntry["DnatEntryId"].isNull())
+			dnatEntriesObject.dnatEntryId = valueDnatEntriesDnatEntry["DnatEntryId"].asString();
+		if(!valueDnatEntriesDnatEntry["Type"].isNull())
+			dnatEntriesObject.type = valueDnatEntriesDnatEntry["Type"].asString();
+		if(!valueDnatEntriesDnatEntry["SagId"].isNull())
+			dnatEntriesObject.sagId = valueDnatEntriesDnatEntry["SagId"].asString();
+		if(!valueDnatEntriesDnatEntry["ExternalIp"].isNull())
+			dnatEntriesObject.externalIp = valueDnatEntriesDnatEntry["ExternalIp"].asString();
+		if(!valueDnatEntriesDnatEntry["ExternalPort"].isNull())
+			dnatEntriesObject.externalPort = valueDnatEntriesDnatEntry["ExternalPort"].asString();
+		if(!valueDnatEntriesDnatEntry["InternalIp"].isNull())
+			dnatEntriesObject.internalIp = valueDnatEntriesDnatEntry["InternalIp"].asString();
+		if(!valueDnatEntriesDnatEntry["IpProtocol"].isNull())
+			dnatEntriesObject.ipProtocol = valueDnatEntriesDnatEntry["IpProtocol"].asString();
+		if(!valueDnatEntriesDnatEntry["InternalPort"].isNull())
+			dnatEntriesObject.internalPort = valueDnatEntriesDnatEntry["InternalPort"].asString();
 		dnatEntries_.push_back(dnatEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,40 +39,40 @@ void ListRecordingsByContactIdResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRecordings = value["Recordings"]["Recording"];
-	for (auto value : allRecordings)
+	auto allRecordingsNode = value["Recordings"]["Recording"];
+	for (auto valueRecordingsRecording : allRecordingsNode)
 	{
 		Recording recordingsObject;
-		if(!value["ContactId"].isNull())
-			recordingsObject.contactId = value["ContactId"].asString();
-		if(!value["ContactType"].isNull())
-			recordingsObject.contactType = value["ContactType"].asString();
-		if(!value["AgentId"].isNull())
-			recordingsObject.agentId = value["AgentId"].asString();
-		if(!value["AgentName"].isNull())
-			recordingsObject.agentName = value["AgentName"].asString();
-		if(!value["CallingNumber"].isNull())
-			recordingsObject.callingNumber = value["CallingNumber"].asString();
-		if(!value["CalledNumber"].isNull())
-			recordingsObject.calledNumber = value["CalledNumber"].asString();
-		if(!value["StartTime"].isNull())
-			recordingsObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["Duration"].isNull())
-			recordingsObject.duration = std::stoi(value["Duration"].asString());
-		if(!value["FileName"].isNull())
-			recordingsObject.fileName = value["FileName"].asString();
-		if(!value["FilePath"].isNull())
-			recordingsObject.filePath = value["FilePath"].asString();
-		if(!value["FileDescription"].isNull())
-			recordingsObject.fileDescription = value["FileDescription"].asString();
-		if(!value["Channel"].isNull())
-			recordingsObject.channel = value["Channel"].asString();
-		if(!value["InstanceId"].isNull())
-			recordingsObject.instanceId = value["InstanceId"].asString();
-		if(!value["QualityCheckTid"].isNull())
-			recordingsObject.qualityCheckTid = value["QualityCheckTid"].asString();
-		if(!value["QualityCheckTaskId"].isNull())
-			recordingsObject.qualityCheckTaskId = value["QualityCheckTaskId"].asString();
+		if(!valueRecordingsRecording["ContactId"].isNull())
+			recordingsObject.contactId = valueRecordingsRecording["ContactId"].asString();
+		if(!valueRecordingsRecording["ContactType"].isNull())
+			recordingsObject.contactType = valueRecordingsRecording["ContactType"].asString();
+		if(!valueRecordingsRecording["AgentId"].isNull())
+			recordingsObject.agentId = valueRecordingsRecording["AgentId"].asString();
+		if(!valueRecordingsRecording["AgentName"].isNull())
+			recordingsObject.agentName = valueRecordingsRecording["AgentName"].asString();
+		if(!valueRecordingsRecording["CallingNumber"].isNull())
+			recordingsObject.callingNumber = valueRecordingsRecording["CallingNumber"].asString();
+		if(!valueRecordingsRecording["CalledNumber"].isNull())
+			recordingsObject.calledNumber = valueRecordingsRecording["CalledNumber"].asString();
+		if(!valueRecordingsRecording["StartTime"].isNull())
+			recordingsObject.startTime = std::stol(valueRecordingsRecording["StartTime"].asString());
+		if(!valueRecordingsRecording["Duration"].isNull())
+			recordingsObject.duration = std::stoi(valueRecordingsRecording["Duration"].asString());
+		if(!valueRecordingsRecording["FileName"].isNull())
+			recordingsObject.fileName = valueRecordingsRecording["FileName"].asString();
+		if(!valueRecordingsRecording["FilePath"].isNull())
+			recordingsObject.filePath = valueRecordingsRecording["FilePath"].asString();
+		if(!valueRecordingsRecording["FileDescription"].isNull())
+			recordingsObject.fileDescription = valueRecordingsRecording["FileDescription"].asString();
+		if(!valueRecordingsRecording["Channel"].isNull())
+			recordingsObject.channel = valueRecordingsRecording["Channel"].asString();
+		if(!valueRecordingsRecording["InstanceId"].isNull())
+			recordingsObject.instanceId = valueRecordingsRecording["InstanceId"].asString();
+		if(!valueRecordingsRecording["QualityCheckTid"].isNull())
+			recordingsObject.qualityCheckTid = valueRecordingsRecording["QualityCheckTid"].asString();
+		if(!valueRecordingsRecording["QualityCheckTaskId"].isNull())
+			recordingsObject.qualityCheckTaskId = valueRecordingsRecording["QualityCheckTaskId"].asString();
 		recordings_.push_back(recordingsObject);
 	}
 	if(!value["Success"].isNull())

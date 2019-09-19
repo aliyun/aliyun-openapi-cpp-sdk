@@ -39,12 +39,12 @@ void SubmitTranscodeJobsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTranscodeJobs = value["TranscodeJobs"]["TranscodeJob"];
-	for (auto value : allTranscodeJobs)
+	auto allTranscodeJobsNode = value["TranscodeJobs"]["TranscodeJob"];
+	for (auto valueTranscodeJobsTranscodeJob : allTranscodeJobsNode)
 	{
 		TranscodeJob transcodeJobsObject;
-		if(!value["JobId"].isNull())
-			transcodeJobsObject.jobId = value["JobId"].asString();
+		if(!valueTranscodeJobsTranscodeJob["JobId"].isNull())
+			transcodeJobsObject.jobId = valueTranscodeJobsTranscodeJob["JobId"].asString();
 		transcodeJobs_.push_back(transcodeJobsObject);
 	}
 	if(!value["TranscodeTaskId"].isNull())

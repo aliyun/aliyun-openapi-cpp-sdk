@@ -47,6 +47,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CheckResourceResult.h
 	include/alibabacloud/rds/model/CloneDBInstanceRequest.h
 	include/alibabacloud/rds/model/CloneDBInstanceResult.h
+	include/alibabacloud/rds/model/CloneParameterGroupRequest.h
+	include/alibabacloud/rds/model/CloneParameterGroupResult.h
 	include/alibabacloud/rds/model/CopyDatabaseRequest.h
 	include/alibabacloud/rds/model/CopyDatabaseResult.h
 	include/alibabacloud/rds/model/CopyDatabaseBetweenInstancesRequest.h
@@ -71,6 +73,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CreateMigrateTaskForSQLServerResult.h
 	include/alibabacloud/rds/model/CreateOnlineDatabaseTaskRequest.h
 	include/alibabacloud/rds/model/CreateOnlineDatabaseTaskResult.h
+	include/alibabacloud/rds/model/CreateParameterGroupRequest.h
+	include/alibabacloud/rds/model/CreateParameterGroupResult.h
 	include/alibabacloud/rds/model/CreateReadOnlyDBInstanceRequest.h
 	include/alibabacloud/rds/model/CreateReadOnlyDBInstanceResult.h
 	include/alibabacloud/rds/model/CreateTempDBInstanceRequest.h
@@ -83,6 +87,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DeleteDBInstanceResult.h
 	include/alibabacloud/rds/model/DeleteDatabaseRequest.h
 	include/alibabacloud/rds/model/DeleteDatabaseResult.h
+	include/alibabacloud/rds/model/DeleteParameterGroupRequest.h
+	include/alibabacloud/rds/model/DeleteParameterGroupResult.h
 	include/alibabacloud/rds/model/DescibeImportsFromDatabaseRequest.h
 	include/alibabacloud/rds/model/DescibeImportsFromDatabaseResult.h
 	include/alibabacloud/rds/model/DescribeAccountsRequest.h
@@ -181,6 +187,10 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeOssDownloadsResult.h
 	include/alibabacloud/rds/model/DescribeOssDownloadsForSQLServerRequest.h
 	include/alibabacloud/rds/model/DescribeOssDownloadsForSQLServerResult.h
+	include/alibabacloud/rds/model/DescribeParameterGroupRequest.h
+	include/alibabacloud/rds/model/DescribeParameterGroupResult.h
+	include/alibabacloud/rds/model/DescribeParameterGroupsRequest.h
+	include/alibabacloud/rds/model/DescribeParameterGroupsResult.h
 	include/alibabacloud/rds/model/DescribeParameterTemplatesRequest.h
 	include/alibabacloud/rds/model/DescribeParameterTemplatesResult.h
 	include/alibabacloud/rds/model/DescribeParametersRequest.h
@@ -287,6 +297,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyMySQLDBInstanceDelayResult.h
 	include/alibabacloud/rds/model/ModifyParameterRequest.h
 	include/alibabacloud/rds/model/ModifyParameterResult.h
+	include/alibabacloud/rds/model/ModifyParameterGroupRequest.h
+	include/alibabacloud/rds/model/ModifyParameterGroupResult.h
 	include/alibabacloud/rds/model/ModifyReadWriteSplittingConnectionRequest.h
 	include/alibabacloud/rds/model/ModifyReadWriteSplittingConnectionResult.h
 	include/alibabacloud/rds/model/ModifyReadonlyInstanceDelayReplicationTimeRequest.h
@@ -386,6 +398,8 @@ set(rds_src
 	src/model/CheckResourceResult.cc
 	src/model/CloneDBInstanceRequest.cc
 	src/model/CloneDBInstanceResult.cc
+	src/model/CloneParameterGroupRequest.cc
+	src/model/CloneParameterGroupResult.cc
 	src/model/CopyDatabaseRequest.cc
 	src/model/CopyDatabaseResult.cc
 	src/model/CopyDatabaseBetweenInstancesRequest.cc
@@ -410,6 +424,8 @@ set(rds_src
 	src/model/CreateMigrateTaskForSQLServerResult.cc
 	src/model/CreateOnlineDatabaseTaskRequest.cc
 	src/model/CreateOnlineDatabaseTaskResult.cc
+	src/model/CreateParameterGroupRequest.cc
+	src/model/CreateParameterGroupResult.cc
 	src/model/CreateReadOnlyDBInstanceRequest.cc
 	src/model/CreateReadOnlyDBInstanceResult.cc
 	src/model/CreateTempDBInstanceRequest.cc
@@ -422,6 +438,8 @@ set(rds_src
 	src/model/DeleteDBInstanceResult.cc
 	src/model/DeleteDatabaseRequest.cc
 	src/model/DeleteDatabaseResult.cc
+	src/model/DeleteParameterGroupRequest.cc
+	src/model/DeleteParameterGroupResult.cc
 	src/model/DescibeImportsFromDatabaseRequest.cc
 	src/model/DescibeImportsFromDatabaseResult.cc
 	src/model/DescribeAccountsRequest.cc
@@ -520,6 +538,10 @@ set(rds_src
 	src/model/DescribeOssDownloadsResult.cc
 	src/model/DescribeOssDownloadsForSQLServerRequest.cc
 	src/model/DescribeOssDownloadsForSQLServerResult.cc
+	src/model/DescribeParameterGroupRequest.cc
+	src/model/DescribeParameterGroupResult.cc
+	src/model/DescribeParameterGroupsRequest.cc
+	src/model/DescribeParameterGroupsResult.cc
 	src/model/DescribeParameterTemplatesRequest.cc
 	src/model/DescribeParameterTemplatesResult.cc
 	src/model/DescribeParametersRequest.cc
@@ -626,6 +648,8 @@ set(rds_src
 	src/model/ModifyMySQLDBInstanceDelayResult.cc
 	src/model/ModifyParameterRequest.cc
 	src/model/ModifyParameterResult.cc
+	src/model/ModifyParameterGroupRequest.cc
+	src/model/ModifyParameterGroupResult.cc
 	src/model/ModifyReadWriteSplittingConnectionRequest.cc
 	src/model/ModifyReadWriteSplittingConnectionResult.cc
 	src/model/ModifyReadonlyInstanceDelayReplicationTimeRequest.cc

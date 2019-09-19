@@ -39,26 +39,26 @@ void DescribePreCheckProgressListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["PreCheckProgressDetail"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["PreCheckProgressDetail"];
+	for (auto valueItemsPreCheckProgressDetail : allItemsNode)
 	{
 		PreCheckProgressDetail itemsObject;
-		if(!value["JobId"].isNull())
-			itemsObject.jobId = value["JobId"].asString();
-		if(!value["State"].isNull())
-			itemsObject.state = value["State"].asString();
-		if(!value["OrderNum"].isNull())
-			itemsObject.orderNum = value["OrderNum"].asString();
-		if(!value["ErrMsg"].isNull())
-			itemsObject.errMsg = value["ErrMsg"].asString();
-		if(!value["Names"].isNull())
-			itemsObject.names = value["Names"].asString();
-		if(!value["Item"].isNull())
-			itemsObject.item = value["Item"].asString();
-		if(!value["BootTime"].isNull())
-			itemsObject.bootTime = std::stol(value["BootTime"].asString());
-		if(!value["FinishTime"].isNull())
-			itemsObject.finishTime = std::stol(value["FinishTime"].asString());
+		if(!valueItemsPreCheckProgressDetail["JobId"].isNull())
+			itemsObject.jobId = valueItemsPreCheckProgressDetail["JobId"].asString();
+		if(!valueItemsPreCheckProgressDetail["State"].isNull())
+			itemsObject.state = valueItemsPreCheckProgressDetail["State"].asString();
+		if(!valueItemsPreCheckProgressDetail["OrderNum"].isNull())
+			itemsObject.orderNum = valueItemsPreCheckProgressDetail["OrderNum"].asString();
+		if(!valueItemsPreCheckProgressDetail["ErrMsg"].isNull())
+			itemsObject.errMsg = valueItemsPreCheckProgressDetail["ErrMsg"].asString();
+		if(!valueItemsPreCheckProgressDetail["Names"].isNull())
+			itemsObject.names = valueItemsPreCheckProgressDetail["Names"].asString();
+		if(!valueItemsPreCheckProgressDetail["Item"].isNull())
+			itemsObject.item = valueItemsPreCheckProgressDetail["Item"].asString();
+		if(!valueItemsPreCheckProgressDetail["BootTime"].isNull())
+			itemsObject.bootTime = std::stol(valueItemsPreCheckProgressDetail["BootTime"].asString());
+		if(!valueItemsPreCheckProgressDetail["FinishTime"].isNull())
+			itemsObject.finishTime = std::stol(valueItemsPreCheckProgressDetail["FinishTime"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["Status"].isNull())

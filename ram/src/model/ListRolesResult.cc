@@ -39,22 +39,22 @@ void ListRolesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRoles = value["Roles"]["Role"];
-	for (auto value : allRoles)
+	auto allRolesNode = value["Roles"]["Role"];
+	for (auto valueRolesRole : allRolesNode)
 	{
 		Role rolesObject;
-		if(!value["RoleId"].isNull())
-			rolesObject.roleId = value["RoleId"].asString();
-		if(!value["RoleName"].isNull())
-			rolesObject.roleName = value["RoleName"].asString();
-		if(!value["Arn"].isNull())
-			rolesObject.arn = value["Arn"].asString();
-		if(!value["Description"].isNull())
-			rolesObject.description = value["Description"].asString();
-		if(!value["CreateDate"].isNull())
-			rolesObject.createDate = value["CreateDate"].asString();
-		if(!value["UpdateDate"].isNull())
-			rolesObject.updateDate = value["UpdateDate"].asString();
+		if(!valueRolesRole["RoleId"].isNull())
+			rolesObject.roleId = valueRolesRole["RoleId"].asString();
+		if(!valueRolesRole["RoleName"].isNull())
+			rolesObject.roleName = valueRolesRole["RoleName"].asString();
+		if(!valueRolesRole["Arn"].isNull())
+			rolesObject.arn = valueRolesRole["Arn"].asString();
+		if(!valueRolesRole["Description"].isNull())
+			rolesObject.description = valueRolesRole["Description"].asString();
+		if(!valueRolesRole["CreateDate"].isNull())
+			rolesObject.createDate = valueRolesRole["CreateDate"].asString();
+		if(!valueRolesRole["UpdateDate"].isNull())
+			rolesObject.updateDate = valueRolesRole["UpdateDate"].asString();
 		roles_.push_back(rolesObject);
 	}
 	if(!value["IsTruncated"].isNull())

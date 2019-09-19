@@ -33,7 +33,7 @@ namespace AlibabaCloud
 				struct HostComponentInfo
 				{
 					std::string hostName;
-					ComponentNameList componentNameList;
+					std::vector<std::string> componentNameList;
 					std::string serviceName;
 				};
 				struct HostGroup

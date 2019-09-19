@@ -60,18 +60,18 @@ void GetPhotoStoreResult::parse(const std::string &payload)
 		photoStore_.ctime = std::stol(photoStoreNode["Ctime"].asString());
 	if(!photoStoreNode["Mtime"].isNull())
 		photoStore_.mtime = std::stol(photoStoreNode["Mtime"].asString());
-	auto allBuckets = value["Buckets"]["Bucket"];
-	for (auto value : allBuckets)
+	auto allBucketsNode = photoStoreNode["Buckets"]["Bucket"];
+	for (auto photoStoreNodeBucketsBucket : allBucketsNode)
 	{
 		PhotoStore::Bucket bucketObject;
-		if(!value["Name"].isNull())
-			bucketObject.name = value["Name"].asString();
-		if(!value["Region"].isNull())
-			bucketObject.region = value["Region"].asString();
-		if(!value["State"].isNull())
-			bucketObject.state = value["State"].asString();
-		if(!value["Acl"].isNull())
-			bucketObject.acl = value["Acl"].asString();
+		if(!photoStoreNodeBucketsBucket["Name"].isNull())
+			bucketObject.name = photoStoreNodeBucketsBucket["Name"].asString();
+		if(!photoStoreNodeBucketsBucket["Region"].isNull())
+			bucketObject.region = photoStoreNodeBucketsBucket["Region"].asString();
+		if(!photoStoreNodeBucketsBucket["State"].isNull())
+			bucketObject.state = photoStoreNodeBucketsBucket["State"].asString();
+		if(!photoStoreNodeBucketsBucket["Acl"].isNull())
+			bucketObject.acl = photoStoreNodeBucketsBucket["Acl"].asString();
 		photoStore_.buckets.push_back(bucketObject);
 	}
 	if(!value["Code"].isNull())

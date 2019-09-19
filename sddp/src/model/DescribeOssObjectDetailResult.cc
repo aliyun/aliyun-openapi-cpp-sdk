@@ -50,14 +50,14 @@ void DescribeOssObjectDetailResult::parse(const std::string &payload)
 		ossObjectDetail_.bucketName = ossObjectDetailNode["BucketName"].asString();
 	if(!ossObjectDetailNode["CategoryName"].isNull())
 		ossObjectDetail_.categoryName = ossObjectDetailNode["CategoryName"].asString();
-	auto allRuleList = value["RuleList"]["Rule"];
-	for (auto value : allRuleList)
+	auto allRuleListNode = ossObjectDetailNode["RuleList"]["Rule"];
+	for (auto ossObjectDetailNodeRuleListRule : allRuleListNode)
 	{
 		OssObjectDetail::Rule ruleObject;
-		if(!value["RuleName"].isNull())
-			ruleObject.ruleName = value["RuleName"].asString();
-		if(!value["Count"].isNull())
-			ruleObject.count = std::stol(value["Count"].asString());
+		if(!ossObjectDetailNodeRuleListRule["RuleName"].isNull())
+			ruleObject.ruleName = ossObjectDetailNodeRuleListRule["RuleName"].asString();
+		if(!ossObjectDetailNodeRuleListRule["Count"].isNull())
+			ruleObject.count = std::stol(ossObjectDetailNodeRuleListRule["Count"].asString());
 		ossObjectDetail_.ruleList.push_back(ruleObject);
 	}
 

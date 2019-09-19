@@ -39,30 +39,30 @@ void ListVodTemplateResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVodTemplateInfoList = value["VodTemplateInfoList"]["VodTemplateInfo"];
-	for (auto value : allVodTemplateInfoList)
+	auto allVodTemplateInfoListNode = value["VodTemplateInfoList"]["VodTemplateInfo"];
+	for (auto valueVodTemplateInfoListVodTemplateInfo : allVodTemplateInfoListNode)
 	{
 		VodTemplateInfo vodTemplateInfoListObject;
-		if(!value["Name"].isNull())
-			vodTemplateInfoListObject.name = value["Name"].asString();
-		if(!value["VodTemplateId"].isNull())
-			vodTemplateInfoListObject.vodTemplateId = value["VodTemplateId"].asString();
-		if(!value["TemplateType"].isNull())
-			vodTemplateInfoListObject.templateType = value["TemplateType"].asString();
-		if(!value["SubTemplateType"].isNull())
-			vodTemplateInfoListObject.subTemplateType = value["SubTemplateType"].asString();
-		if(!value["Source"].isNull())
-			vodTemplateInfoListObject.source = value["Source"].asString();
-		if(!value["IsDefault"].isNull())
-			vodTemplateInfoListObject.isDefault = value["IsDefault"].asString();
-		if(!value["TemplateConfig"].isNull())
-			vodTemplateInfoListObject.templateConfig = value["TemplateConfig"].asString();
-		if(!value["CreationTime"].isNull())
-			vodTemplateInfoListObject.creationTime = value["CreationTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			vodTemplateInfoListObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["AppId"].isNull())
-			vodTemplateInfoListObject.appId = value["AppId"].asString();
+		if(!valueVodTemplateInfoListVodTemplateInfo["Name"].isNull())
+			vodTemplateInfoListObject.name = valueVodTemplateInfoListVodTemplateInfo["Name"].asString();
+		if(!valueVodTemplateInfoListVodTemplateInfo["VodTemplateId"].isNull())
+			vodTemplateInfoListObject.vodTemplateId = valueVodTemplateInfoListVodTemplateInfo["VodTemplateId"].asString();
+		if(!valueVodTemplateInfoListVodTemplateInfo["TemplateType"].isNull())
+			vodTemplateInfoListObject.templateType = valueVodTemplateInfoListVodTemplateInfo["TemplateType"].asString();
+		if(!valueVodTemplateInfoListVodTemplateInfo["SubTemplateType"].isNull())
+			vodTemplateInfoListObject.subTemplateType = valueVodTemplateInfoListVodTemplateInfo["SubTemplateType"].asString();
+		if(!valueVodTemplateInfoListVodTemplateInfo["Source"].isNull())
+			vodTemplateInfoListObject.source = valueVodTemplateInfoListVodTemplateInfo["Source"].asString();
+		if(!valueVodTemplateInfoListVodTemplateInfo["IsDefault"].isNull())
+			vodTemplateInfoListObject.isDefault = valueVodTemplateInfoListVodTemplateInfo["IsDefault"].asString();
+		if(!valueVodTemplateInfoListVodTemplateInfo["TemplateConfig"].isNull())
+			vodTemplateInfoListObject.templateConfig = valueVodTemplateInfoListVodTemplateInfo["TemplateConfig"].asString();
+		if(!valueVodTemplateInfoListVodTemplateInfo["CreationTime"].isNull())
+			vodTemplateInfoListObject.creationTime = valueVodTemplateInfoListVodTemplateInfo["CreationTime"].asString();
+		if(!valueVodTemplateInfoListVodTemplateInfo["ModifyTime"].isNull())
+			vodTemplateInfoListObject.modifyTime = valueVodTemplateInfoListVodTemplateInfo["ModifyTime"].asString();
+		if(!valueVodTemplateInfoListVodTemplateInfo["AppId"].isNull())
+			vodTemplateInfoListObject.appId = valueVodTemplateInfoListVodTemplateInfo["AppId"].asString();
 		vodTemplateInfoList_.push_back(vodTemplateInfoListObject);
 	}
 

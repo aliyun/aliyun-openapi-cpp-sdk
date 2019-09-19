@@ -519,6 +519,42 @@ RdsClient::CloneDBInstanceOutcomeCallable RdsClient::cloneDBInstanceCallable(con
 	return task->get_future();
 }
 
+RdsClient::CloneParameterGroupOutcome RdsClient::cloneParameterGroup(const CloneParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CloneParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CloneParameterGroupOutcome(CloneParameterGroupResult(outcome.result()));
+	else
+		return CloneParameterGroupOutcome(outcome.error());
+}
+
+void RdsClient::cloneParameterGroupAsync(const CloneParameterGroupRequest& request, const CloneParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cloneParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::CloneParameterGroupOutcomeCallable RdsClient::cloneParameterGroupCallable(const CloneParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CloneParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->cloneParameterGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::CopyDatabaseOutcome RdsClient::copyDatabase(const CopyDatabaseRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -951,6 +987,42 @@ RdsClient::CreateOnlineDatabaseTaskOutcomeCallable RdsClient::createOnlineDataba
 	return task->get_future();
 }
 
+RdsClient::CreateParameterGroupOutcome RdsClient::createParameterGroup(const CreateParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateParameterGroupOutcome(CreateParameterGroupResult(outcome.result()));
+	else
+		return CreateParameterGroupOutcome(outcome.error());
+}
+
+void RdsClient::createParameterGroupAsync(const CreateParameterGroupRequest& request, const CreateParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::CreateParameterGroupOutcomeCallable RdsClient::createParameterGroupCallable(const CreateParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createParameterGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::CreateReadOnlyDBInstanceOutcome RdsClient::createReadOnlyDBInstance(const CreateReadOnlyDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1233,42 @@ RdsClient::DeleteDatabaseOutcomeCallable RdsClient::deleteDatabaseCallable(const
 			[this, request]()
 			{
 			return this->deleteDatabase(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DeleteParameterGroupOutcome RdsClient::deleteParameterGroup(const DeleteParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteParameterGroupOutcome(DeleteParameterGroupResult(outcome.result()));
+	else
+		return DeleteParameterGroupOutcome(outcome.error());
+}
+
+void RdsClient::deleteParameterGroupAsync(const DeleteParameterGroupRequest& request, const DeleteParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DeleteParameterGroupOutcomeCallable RdsClient::deleteParameterGroupCallable(const DeleteParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteParameterGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2925,6 +3033,78 @@ RdsClient::DescribeOssDownloadsForSQLServerOutcomeCallable RdsClient::describeOs
 			[this, request]()
 			{
 			return this->describeOssDownloadsForSQLServer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeParameterGroupOutcome RdsClient::describeParameterGroup(const DescribeParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParameterGroupOutcome(DescribeParameterGroupResult(outcome.result()));
+	else
+		return DescribeParameterGroupOutcome(outcome.error());
+}
+
+void RdsClient::describeParameterGroupAsync(const DescribeParameterGroupRequest& request, const DescribeParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeParameterGroupOutcomeCallable RdsClient::describeParameterGroupCallable(const DescribeParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParameterGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeParameterGroupsOutcome RdsClient::describeParameterGroups(const DescribeParameterGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParameterGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParameterGroupsOutcome(DescribeParameterGroupsResult(outcome.result()));
+	else
+		return DescribeParameterGroupsOutcome(outcome.error());
+}
+
+void RdsClient::describeParameterGroupsAsync(const DescribeParameterGroupsRequest& request, const DescribeParameterGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParameterGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeParameterGroupsOutcomeCallable RdsClient::describeParameterGroupsCallable(const DescribeParameterGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParameterGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParameterGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4833,6 +5013,42 @@ RdsClient::ModifyParameterOutcomeCallable RdsClient::modifyParameterCallable(con
 			[this, request]()
 			{
 			return this->modifyParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyParameterGroupOutcome RdsClient::modifyParameterGroup(const ModifyParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyParameterGroupOutcome(ModifyParameterGroupResult(outcome.result()));
+	else
+		return ModifyParameterGroupOutcome(outcome.error());
+}
+
+void RdsClient::modifyParameterGroupAsync(const ModifyParameterGroupRequest& request, const ModifyParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyParameterGroupOutcomeCallable RdsClient::modifyParameterGroupCallable(const ModifyParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyParameterGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

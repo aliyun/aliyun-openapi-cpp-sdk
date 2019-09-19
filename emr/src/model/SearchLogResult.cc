@@ -39,24 +39,24 @@ void SearchLogResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSlsLogItemList = value["SlsLogItemList"]["SlsLogItem"];
-	for (auto value : allSlsLogItemList)
+	auto allSlsLogItemListNode = value["SlsLogItemList"]["SlsLogItem"];
+	for (auto valueSlsLogItemListSlsLogItem : allSlsLogItemListNode)
 	{
 		SlsLogItem slsLogItemListObject;
-		if(!value["Timestamp"].isNull())
-			slsLogItemListObject.timestamp = std::stoi(value["Timestamp"].asString());
-		if(!value["SourceIp"].isNull())
-			slsLogItemListObject.sourceIp = value["SourceIp"].asString();
-		if(!value["HostName"].isNull())
-			slsLogItemListObject.hostName = value["HostName"].asString();
-		if(!value["Path"].isNull())
-			slsLogItemListObject.path = value["Path"].asString();
-		if(!value["Content"].isNull())
-			slsLogItemListObject.content = value["Content"].asString();
-		if(!value["PackMeta"].isNull())
-			slsLogItemListObject.packMeta = value["PackMeta"].asString();
-		if(!value["PackId"].isNull())
-			slsLogItemListObject.packId = value["PackId"].asString();
+		if(!valueSlsLogItemListSlsLogItem["Timestamp"].isNull())
+			slsLogItemListObject.timestamp = std::stoi(valueSlsLogItemListSlsLogItem["Timestamp"].asString());
+		if(!valueSlsLogItemListSlsLogItem["SourceIp"].isNull())
+			slsLogItemListObject.sourceIp = valueSlsLogItemListSlsLogItem["SourceIp"].asString();
+		if(!valueSlsLogItemListSlsLogItem["HostName"].isNull())
+			slsLogItemListObject.hostName = valueSlsLogItemListSlsLogItem["HostName"].asString();
+		if(!valueSlsLogItemListSlsLogItem["Path"].isNull())
+			slsLogItemListObject.path = valueSlsLogItemListSlsLogItem["Path"].asString();
+		if(!valueSlsLogItemListSlsLogItem["Content"].isNull())
+			slsLogItemListObject.content = valueSlsLogItemListSlsLogItem["Content"].asString();
+		if(!valueSlsLogItemListSlsLogItem["PackMeta"].isNull())
+			slsLogItemListObject.packMeta = valueSlsLogItemListSlsLogItem["PackMeta"].asString();
+		if(!valueSlsLogItemListSlsLogItem["PackId"].isNull())
+			slsLogItemListObject.packId = valueSlsLogItemListSlsLogItem["PackId"].asString();
 		slsLogItemList_.push_back(slsLogItemListObject);
 	}
 	if(!value["Completed"].isNull())

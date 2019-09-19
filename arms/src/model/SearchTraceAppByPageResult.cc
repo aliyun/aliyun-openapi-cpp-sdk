@@ -46,26 +46,26 @@ void SearchTraceAppByPageResult::parse(const std::string &payload)
 		pageBean_.pageNumber = std::stoi(pageBeanNode["PageNumber"].asString());
 	if(!pageBeanNode["PageSize"].isNull())
 		pageBean_.pageSize = std::stoi(pageBeanNode["PageSize"].asString());
-	auto allTraceApps = value["TraceApps"]["TraceApp"];
-	for (auto value : allTraceApps)
+	auto allTraceAppsNode = pageBeanNode["TraceApps"]["TraceApp"];
+	for (auto pageBeanNodeTraceAppsTraceApp : allTraceAppsNode)
 	{
 		PageBean::TraceApp traceAppObject;
-		if(!value["AppId"].isNull())
-			traceAppObject.appId = std::stol(value["AppId"].asString());
-		if(!value["Pid"].isNull())
-			traceAppObject.pid = value["Pid"].asString();
-		if(!value["AppName"].isNull())
-			traceAppObject.appName = value["AppName"].asString();
-		if(!value["Type"].isNull())
-			traceAppObject.type = value["Type"].asString();
-		if(!value["UserId"].isNull())
-			traceAppObject.userId = value["UserId"].asString();
-		if(!value["RegionId"].isNull())
-			traceAppObject.regionId = value["RegionId"].asString();
-		if(!value["CreateTime"].isNull())
-			traceAppObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["UpdateTime"].isNull())
-			traceAppObject.updateTime = std::stol(value["UpdateTime"].asString());
+		if(!pageBeanNodeTraceAppsTraceApp["AppId"].isNull())
+			traceAppObject.appId = std::stol(pageBeanNodeTraceAppsTraceApp["AppId"].asString());
+		if(!pageBeanNodeTraceAppsTraceApp["Pid"].isNull())
+			traceAppObject.pid = pageBeanNodeTraceAppsTraceApp["Pid"].asString();
+		if(!pageBeanNodeTraceAppsTraceApp["AppName"].isNull())
+			traceAppObject.appName = pageBeanNodeTraceAppsTraceApp["AppName"].asString();
+		if(!pageBeanNodeTraceAppsTraceApp["Type"].isNull())
+			traceAppObject.type = pageBeanNodeTraceAppsTraceApp["Type"].asString();
+		if(!pageBeanNodeTraceAppsTraceApp["UserId"].isNull())
+			traceAppObject.userId = pageBeanNodeTraceAppsTraceApp["UserId"].asString();
+		if(!pageBeanNodeTraceAppsTraceApp["RegionId"].isNull())
+			traceAppObject.regionId = pageBeanNodeTraceAppsTraceApp["RegionId"].asString();
+		if(!pageBeanNodeTraceAppsTraceApp["CreateTime"].isNull())
+			traceAppObject.createTime = std::stol(pageBeanNodeTraceAppsTraceApp["CreateTime"].asString());
+		if(!pageBeanNodeTraceAppsTraceApp["UpdateTime"].isNull())
+			traceAppObject.updateTime = std::stol(pageBeanNodeTraceAppsTraceApp["UpdateTime"].asString());
 		pageBean_.traceApps.push_back(traceAppObject);
 	}
 

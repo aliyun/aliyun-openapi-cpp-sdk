@@ -39,14 +39,14 @@ void ListBusinessesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto alldata = value["data"]["BusinessInfo"];
-	for (auto value : alldata)
+	auto alldataNode = value["data"]["BusinessInfo"];
+	for (auto valuedataBusinessInfo : alldataNode)
 	{
 		BusinessInfo dataObject;
-		if(!value["text"].isNull())
-			dataObject.text = value["text"].asString();
-		if(!value["value"].isNull())
-			dataObject.value = value["value"].asString();
+		if(!valuedataBusinessInfo["text"].isNull())
+			dataObject.text = valuedataBusinessInfo["text"].asString();
+		if(!valuedataBusinessInfo["value"].isNull())
+			dataObject.value = valuedataBusinessInfo["value"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

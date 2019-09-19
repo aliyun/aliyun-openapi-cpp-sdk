@@ -92,26 +92,26 @@ void DescribeClusterResult::parse(const std::string &payload)
 		clusterInfo_.imageId = clusterInfoNode["ImageId"].asString();
 	if(!clusterInfoNode["Location"].isNull())
 		clusterInfo_.location = clusterInfoNode["Location"].asString();
-	auto allApplications = value["Applications"]["ApplicationInfo"];
-	for (auto value : allApplications)
+	auto allApplicationsNode = clusterInfoNode["Applications"]["ApplicationInfo"];
+	for (auto clusterInfoNodeApplicationsApplicationInfo : allApplicationsNode)
 	{
 		ClusterInfo::ApplicationInfo applicationInfoObject;
-		if(!value["Tag"].isNull())
-			applicationInfoObject.tag = value["Tag"].asString();
-		if(!value["Name"].isNull())
-			applicationInfoObject.name = value["Name"].asString();
-		if(!value["Version"].isNull())
-			applicationInfoObject.version = value["Version"].asString();
+		if(!clusterInfoNodeApplicationsApplicationInfo["Tag"].isNull())
+			applicationInfoObject.tag = clusterInfoNodeApplicationsApplicationInfo["Tag"].asString();
+		if(!clusterInfoNodeApplicationsApplicationInfo["Name"].isNull())
+			applicationInfoObject.name = clusterInfoNodeApplicationsApplicationInfo["Name"].asString();
+		if(!clusterInfoNodeApplicationsApplicationInfo["Version"].isNull())
+			applicationInfoObject.version = clusterInfoNodeApplicationsApplicationInfo["Version"].asString();
 		clusterInfo_.applications.push_back(applicationInfoObject);
 	}
-	auto allPostInstallScripts = value["PostInstallScripts"]["PostInstallScriptInfo"];
-	for (auto value : allPostInstallScripts)
+	auto allPostInstallScriptsNode = clusterInfoNode["PostInstallScripts"]["PostInstallScriptInfo"];
+	for (auto clusterInfoNodePostInstallScriptsPostInstallScriptInfo : allPostInstallScriptsNode)
 	{
 		ClusterInfo::PostInstallScriptInfo postInstallScriptInfoObject;
-		if(!value["Url"].isNull())
-			postInstallScriptInfoObject.url = value["Url"].asString();
-		if(!value["Args"].isNull())
-			postInstallScriptInfoObject.args = value["Args"].asString();
+		if(!clusterInfoNodePostInstallScriptsPostInstallScriptInfo["Url"].isNull())
+			postInstallScriptInfoObject.url = clusterInfoNodePostInstallScriptsPostInstallScriptInfo["Url"].asString();
+		if(!clusterInfoNodePostInstallScriptsPostInstallScriptInfo["Args"].isNull())
+			postInstallScriptInfoObject.args = clusterInfoNodePostInstallScriptsPostInstallScriptInfo["Args"].asString();
 		clusterInfo_.postInstallScripts.push_back(postInstallScriptInfoObject);
 	}
 	auto ecsInfoNode = clusterInfoNode["EcsInfo"];

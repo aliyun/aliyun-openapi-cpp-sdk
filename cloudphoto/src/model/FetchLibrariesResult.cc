@@ -39,16 +39,16 @@ void FetchLibrariesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLibraries = value["Libraries"]["Library"];
-	for (auto value : allLibraries)
+	auto allLibrariesNode = value["Libraries"]["Library"];
+	for (auto valueLibrariesLibrary : allLibrariesNode)
 	{
 		Library librariesObject;
-		if(!value["LibraryId"].isNull())
-			librariesObject.libraryId = value["LibraryId"].asString();
-		if(!value["Ctime"].isNull())
-			librariesObject.ctime = std::stol(value["Ctime"].asString());
-		if(!value["TotalQuota"].isNull())
-			librariesObject.totalQuota = std::stol(value["TotalQuota"].asString());
+		if(!valueLibrariesLibrary["LibraryId"].isNull())
+			librariesObject.libraryId = valueLibrariesLibrary["LibraryId"].asString();
+		if(!valueLibrariesLibrary["Ctime"].isNull())
+			librariesObject.ctime = std::stol(valueLibrariesLibrary["Ctime"].asString());
+		if(!valueLibrariesLibrary["TotalQuota"].isNull())
+			librariesObject.totalQuota = std::stol(valueLibrariesLibrary["TotalQuota"].asString());
 		libraries_.push_back(librariesObject);
 	}
 	if(!value["Code"].isNull())

@@ -39,22 +39,22 @@ void QueryLoRaJoinPermissionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJoinPermissions = value["JoinPermissions"]["JoinPermission"];
-	for (auto value : allJoinPermissions)
+	auto allJoinPermissionsNode = value["JoinPermissions"]["JoinPermission"];
+	for (auto valueJoinPermissionsJoinPermission : allJoinPermissionsNode)
 	{
 		JoinPermission joinPermissionsObject;
-		if(!value["JoinPermissionId"].isNull())
-			joinPermissionsObject.joinPermissionId = value["JoinPermissionId"].asString();
-		if(!value["JoinPermissionName"].isNull())
-			joinPermissionsObject.joinPermissionName = value["JoinPermissionName"].asString();
-		if(!value["JoinPermissionType"].isNull())
-			joinPermissionsObject.joinPermissionType = value["JoinPermissionType"].asString();
-		if(!value["OwnerAliyunPk"].isNull())
-			joinPermissionsObject.ownerAliyunPk = value["OwnerAliyunPk"].asString();
-		if(!value["Enabled"].isNull())
-			joinPermissionsObject.enabled = value["Enabled"].asString() == "true";
-		if(!value["ClassMode"].isNull())
-			joinPermissionsObject.classMode = value["ClassMode"].asString();
+		if(!valueJoinPermissionsJoinPermission["JoinPermissionId"].isNull())
+			joinPermissionsObject.joinPermissionId = valueJoinPermissionsJoinPermission["JoinPermissionId"].asString();
+		if(!valueJoinPermissionsJoinPermission["JoinPermissionName"].isNull())
+			joinPermissionsObject.joinPermissionName = valueJoinPermissionsJoinPermission["JoinPermissionName"].asString();
+		if(!valueJoinPermissionsJoinPermission["JoinPermissionType"].isNull())
+			joinPermissionsObject.joinPermissionType = valueJoinPermissionsJoinPermission["JoinPermissionType"].asString();
+		if(!valueJoinPermissionsJoinPermission["OwnerAliyunPk"].isNull())
+			joinPermissionsObject.ownerAliyunPk = valueJoinPermissionsJoinPermission["OwnerAliyunPk"].asString();
+		if(!valueJoinPermissionsJoinPermission["Enabled"].isNull())
+			joinPermissionsObject.enabled = valueJoinPermissionsJoinPermission["Enabled"].asString() == "true";
+		if(!valueJoinPermissionsJoinPermission["ClassMode"].isNull())
+			joinPermissionsObject.classMode = valueJoinPermissionsJoinPermission["ClassMode"].asString();
 		joinPermissions_.push_back(joinPermissionsObject);
 	}
 	if(!value["Success"].isNull())

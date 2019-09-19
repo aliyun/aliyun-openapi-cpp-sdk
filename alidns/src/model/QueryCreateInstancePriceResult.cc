@@ -39,16 +39,16 @@ void QueryCreateInstancePriceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRules = value["Rules"]["Rule"];
-	for (auto value : allRules)
+	auto allRulesNode = value["Rules"]["Rule"];
+	for (auto valueRulesRule : allRulesNode)
 	{
 		Rule rulesObject;
-		if(!value["RuleId"].isNull())
-			rulesObject.ruleId = std::stol(value["RuleId"].asString());
-		if(!value["Name"].isNull())
-			rulesObject.name = value["Name"].asString();
-		if(!value["Title"].isNull())
-			rulesObject.title = value["Title"].asString();
+		if(!valueRulesRule["RuleId"].isNull())
+			rulesObject.ruleId = std::stol(valueRulesRule["RuleId"].asString());
+		if(!valueRulesRule["Name"].isNull())
+			rulesObject.name = valueRulesRule["Name"].asString();
+		if(!valueRulesRule["Title"].isNull())
+			rulesObject.title = valueRulesRule["Title"].asString();
 		rules_.push_back(rulesObject);
 	}
 	if(!value["Origin"].isNull())

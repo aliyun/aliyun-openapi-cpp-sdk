@@ -39,14 +39,14 @@ void BuyOriginPicturesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPictures = value["Pictures"]["Picture"];
-	for (auto value : allPictures)
+	auto allPicturesNode = value["Pictures"]["Picture"];
+	for (auto valuePicturesPicture : allPicturesNode)
 	{
 		Picture picturesObject;
-		if(!value["Id"].isNull())
-			picturesObject.id = std::stol(value["Id"].asString());
-		if(!value["OriginalPictureUrl"].isNull())
-			picturesObject.originalPictureUrl = value["OriginalPictureUrl"].asString();
+		if(!valuePicturesPicture["Id"].isNull())
+			picturesObject.id = std::stol(valuePicturesPicture["Id"].asString());
+		if(!valuePicturesPicture["OriginalPictureUrl"].isNull())
+			picturesObject.originalPictureUrl = valuePicturesPicture["OriginalPictureUrl"].asString();
 		pictures_.push_back(picturesObject);
 	}
 

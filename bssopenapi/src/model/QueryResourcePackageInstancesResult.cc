@@ -48,34 +48,34 @@ void QueryResourcePackageInstancesResult::parse(const std::string &payload)
 		data_.pageSize = dataNode["PageSize"].asString();
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = dataNode["TotalCount"].asString();
-	auto allInstances = value["Instances"]["Instance"];
-	for (auto value : allInstances)
+	auto allInstancesNode = dataNode["Instances"]["Instance"];
+	for (auto dataNodeInstancesInstance : allInstancesNode)
 	{
 		Data::Instance instanceObject;
-		if(!value["InstanceId"].isNull())
-			instanceObject.instanceId = value["InstanceId"].asString();
-		if(!value["Region"].isNull())
-			instanceObject.region = value["Region"].asString();
-		if(!value["TotalAmount"].isNull())
-			instanceObject.totalAmount = value["TotalAmount"].asString();
-		if(!value["TotalAmountUnit"].isNull())
-			instanceObject.totalAmountUnit = value["TotalAmountUnit"].asString();
-		if(!value["RemainingAmount"].isNull())
-			instanceObject.remainingAmount = value["RemainingAmount"].asString();
-		if(!value["RemainingAmountUnit"].isNull())
-			instanceObject.remainingAmountUnit = value["RemainingAmountUnit"].asString();
-		if(!value["EffectiveTime"].isNull())
-			instanceObject.effectiveTime = value["EffectiveTime"].asString();
-		if(!value["ExpiryTime"].isNull())
-			instanceObject.expiryTime = value["ExpiryTime"].asString();
-		if(!value["Remark"].isNull())
-			instanceObject.remark = value["Remark"].asString();
-		if(!value["PackageType"].isNull())
-			instanceObject.packageType = value["PackageType"].asString();
-		if(!value["Status"].isNull())
-			instanceObject.status = value["Status"].asString();
-		if(!value["DeductType"].isNull())
-			instanceObject.deductType = value["DeductType"].asString();
+		if(!dataNodeInstancesInstance["InstanceId"].isNull())
+			instanceObject.instanceId = dataNodeInstancesInstance["InstanceId"].asString();
+		if(!dataNodeInstancesInstance["Region"].isNull())
+			instanceObject.region = dataNodeInstancesInstance["Region"].asString();
+		if(!dataNodeInstancesInstance["TotalAmount"].isNull())
+			instanceObject.totalAmount = dataNodeInstancesInstance["TotalAmount"].asString();
+		if(!dataNodeInstancesInstance["TotalAmountUnit"].isNull())
+			instanceObject.totalAmountUnit = dataNodeInstancesInstance["TotalAmountUnit"].asString();
+		if(!dataNodeInstancesInstance["RemainingAmount"].isNull())
+			instanceObject.remainingAmount = dataNodeInstancesInstance["RemainingAmount"].asString();
+		if(!dataNodeInstancesInstance["RemainingAmountUnit"].isNull())
+			instanceObject.remainingAmountUnit = dataNodeInstancesInstance["RemainingAmountUnit"].asString();
+		if(!dataNodeInstancesInstance["EffectiveTime"].isNull())
+			instanceObject.effectiveTime = dataNodeInstancesInstance["EffectiveTime"].asString();
+		if(!dataNodeInstancesInstance["ExpiryTime"].isNull())
+			instanceObject.expiryTime = dataNodeInstancesInstance["ExpiryTime"].asString();
+		if(!dataNodeInstancesInstance["Remark"].isNull())
+			instanceObject.remark = dataNodeInstancesInstance["Remark"].asString();
+		if(!dataNodeInstancesInstance["PackageType"].isNull())
+			instanceObject.packageType = dataNodeInstancesInstance["PackageType"].asString();
+		if(!dataNodeInstancesInstance["Status"].isNull())
+			instanceObject.status = dataNodeInstancesInstance["Status"].asString();
+		if(!dataNodeInstancesInstance["DeductType"].isNull())
+			instanceObject.deductType = dataNodeInstancesInstance["DeductType"].asString();
 		auto allApplicableProducts = value["ApplicableProducts"]["Product"];
 		for (auto value : allApplicableProducts)
 			instanceObject.applicableProducts.push_back(value.asString());

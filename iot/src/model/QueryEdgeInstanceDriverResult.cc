@@ -46,16 +46,16 @@ void QueryEdgeInstanceDriverResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
-	auto allDriverList = value["DriverList"]["Driver"];
-	for (auto value : allDriverList)
+	auto allDriverListNode = dataNode["DriverList"]["Driver"];
+	for (auto dataNodeDriverListDriver : allDriverListNode)
 	{
 		Data::Driver driverObject;
-		if(!value["DriverId"].isNull())
-			driverObject.driverId = value["DriverId"].asString();
-		if(!value["GmtCreate"].isNull())
-			driverObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			driverObject.gmtModified = value["GmtModified"].asString();
+		if(!dataNodeDriverListDriver["DriverId"].isNull())
+			driverObject.driverId = dataNodeDriverListDriver["DriverId"].asString();
+		if(!dataNodeDriverListDriver["GmtCreate"].isNull())
+			driverObject.gmtCreate = dataNodeDriverListDriver["GmtCreate"].asString();
+		if(!dataNodeDriverListDriver["GmtModified"].isNull())
+			driverObject.gmtModified = dataNodeDriverListDriver["GmtModified"].asString();
 		data_.driverList.push_back(driverObject);
 	}
 	if(!value["Success"].isNull())

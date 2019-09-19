@@ -39,18 +39,18 @@ void DetectQRCodesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSuccessDetails = value["SuccessDetails"]["SuccessDetailsItem"];
-	for (auto value : allSuccessDetails)
+	auto allSuccessDetailsNode = value["SuccessDetails"]["SuccessDetailsItem"];
+	for (auto valueSuccessDetailsSuccessDetailsItem : allSuccessDetailsNode)
 	{
 		SuccessDetailsItem successDetailsObject;
-		if(!value["SrcUri"].isNull())
-			successDetailsObject.srcUri = value["SrcUri"].asString();
-		auto allQRCodes = value["QRCodes"]["QRCodesItem"];
-		for (auto value : allQRCodes)
+		if(!valueSuccessDetailsSuccessDetailsItem["SrcUri"].isNull())
+			successDetailsObject.srcUri = valueSuccessDetailsSuccessDetailsItem["SrcUri"].asString();
+		auto allQRCodesNode = allSuccessDetailsNode["QRCodes"]["QRCodesItem"];
+		for (auto allSuccessDetailsNodeQRCodesQRCodesItem : allQRCodesNode)
 		{
 			SuccessDetailsItem::QRCodesItem qRCodesObject;
-			if(!value["Content"].isNull())
-				qRCodesObject.content = value["Content"].asString();
+			if(!allSuccessDetailsNodeQRCodesQRCodesItem["Content"].isNull())
+				qRCodesObject.content = allSuccessDetailsNodeQRCodesQRCodesItem["Content"].asString();
 			auto qRCodesRectangleNode = value["QRCodesRectangle"];
 			if(!qRCodesRectangleNode["Left"].isNull())
 				qRCodesObject.qRCodesRectangle.left = qRCodesRectangleNode["Left"].asString();
@@ -64,16 +64,16 @@ void DetectQRCodesResult::parse(const std::string &payload)
 		}
 		successDetails_.push_back(successDetailsObject);
 	}
-	auto allFailDetails = value["FailDetails"]["FailDetailsItem"];
-	for (auto value : allFailDetails)
+	auto allFailDetailsNode = value["FailDetails"]["FailDetailsItem"];
+	for (auto valueFailDetailsFailDetailsItem : allFailDetailsNode)
 	{
 		FailDetailsItem failDetailsObject;
-		if(!value["SrcUri"].isNull())
-			failDetailsObject.srcUri = value["SrcUri"].asString();
-		if(!value["ErrorCode"].isNull())
-			failDetailsObject.errorCode = value["ErrorCode"].asString();
-		if(!value["ErrorMessage"].isNull())
-			failDetailsObject.errorMessage = value["ErrorMessage"].asString();
+		if(!valueFailDetailsFailDetailsItem["SrcUri"].isNull())
+			failDetailsObject.srcUri = valueFailDetailsFailDetailsItem["SrcUri"].asString();
+		if(!valueFailDetailsFailDetailsItem["ErrorCode"].isNull())
+			failDetailsObject.errorCode = valueFailDetailsFailDetailsItem["ErrorCode"].asString();
+		if(!valueFailDetailsFailDetailsItem["ErrorMessage"].isNull())
+			failDetailsObject.errorMessage = valueFailDetailsFailDetailsItem["ErrorMessage"].asString();
 		failDetails_.push_back(failDetailsObject);
 	}
 

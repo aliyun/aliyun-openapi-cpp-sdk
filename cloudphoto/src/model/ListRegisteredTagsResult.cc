@@ -39,20 +39,20 @@ void ListRegisteredTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegisteredTags = value["RegisteredTags"]["RegisteredTag"];
-	for (auto value : allRegisteredTags)
+	auto allRegisteredTagsNode = value["RegisteredTags"]["RegisteredTag"];
+	for (auto valueRegisteredTagsRegisteredTag : allRegisteredTagsNode)
 	{
 		RegisteredTag registeredTagsObject;
-		if(!value["TagKey"].isNull())
-			registeredTagsObject.tagKey = value["TagKey"].asString();
-		auto allTagValues = value["TagValues"]["TagValue"];
-		for (auto value : allTagValues)
+		if(!valueRegisteredTagsRegisteredTag["TagKey"].isNull())
+			registeredTagsObject.tagKey = valueRegisteredTagsRegisteredTag["TagKey"].asString();
+		auto allTagValuesNode = allRegisteredTagsNode["TagValues"]["TagValue"];
+		for (auto allRegisteredTagsNodeTagValuesTagValue : allTagValuesNode)
 		{
 			RegisteredTag::TagValue tagValuesObject;
-			if(!value["Lang"].isNull())
-				tagValuesObject.lang = value["Lang"].asString();
-			if(!value["Text"].isNull())
-				tagValuesObject.text = value["Text"].asString();
+			if(!allRegisteredTagsNodeTagValuesTagValue["Lang"].isNull())
+				tagValuesObject.lang = allRegisteredTagsNodeTagValuesTagValue["Lang"].asString();
+			if(!allRegisteredTagsNodeTagValuesTagValue["Text"].isNull())
+				tagValuesObject.text = allRegisteredTagsNodeTagValuesTagValue["Text"].asString();
 			registeredTagsObject.tagValues.push_back(tagValuesObject);
 		}
 		registeredTags_.push_back(registeredTagsObject);

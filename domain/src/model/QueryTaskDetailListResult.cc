@@ -39,36 +39,36 @@ void QueryTaskDetailListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["TaskDetail"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["TaskDetail"];
+	for (auto valueDataTaskDetail : allDataNode)
 	{
 		TaskDetail dataObject;
-		if(!value["TaskNo"].isNull())
-			dataObject.taskNo = value["TaskNo"].asString();
-		if(!value["TaskDetailNo"].isNull())
-			dataObject.taskDetailNo = value["TaskDetailNo"].asString();
-		if(!value["TaskType"].isNull())
-			dataObject.taskType = value["TaskType"].asString();
-		if(!value["InstanceId"].isNull())
-			dataObject.instanceId = value["InstanceId"].asString();
-		if(!value["DomainName"].isNull())
-			dataObject.domainName = value["DomainName"].asString();
-		if(!value["TaskStatus"].isNull())
-			dataObject.taskStatus = value["TaskStatus"].asString();
-		if(!value["UpdateTime"].isNull())
-			dataObject.updateTime = value["UpdateTime"].asString();
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = value["CreateTime"].asString();
-		if(!value["TryCount"].isNull())
-			dataObject.tryCount = std::stoi(value["TryCount"].asString());
-		if(!value["ErrorMsg"].isNull())
-			dataObject.errorMsg = value["ErrorMsg"].asString();
-		if(!value["TaskStatusCode"].isNull())
-			dataObject.taskStatusCode = std::stoi(value["TaskStatusCode"].asString());
-		if(!value["TaskResult"].isNull())
-			dataObject.taskResult = value["TaskResult"].asString();
-		if(!value["TaskTypeDescription"].isNull())
-			dataObject.taskTypeDescription = value["TaskTypeDescription"].asString();
+		if(!valueDataTaskDetail["TaskNo"].isNull())
+			dataObject.taskNo = valueDataTaskDetail["TaskNo"].asString();
+		if(!valueDataTaskDetail["TaskDetailNo"].isNull())
+			dataObject.taskDetailNo = valueDataTaskDetail["TaskDetailNo"].asString();
+		if(!valueDataTaskDetail["TaskType"].isNull())
+			dataObject.taskType = valueDataTaskDetail["TaskType"].asString();
+		if(!valueDataTaskDetail["InstanceId"].isNull())
+			dataObject.instanceId = valueDataTaskDetail["InstanceId"].asString();
+		if(!valueDataTaskDetail["DomainName"].isNull())
+			dataObject.domainName = valueDataTaskDetail["DomainName"].asString();
+		if(!valueDataTaskDetail["TaskStatus"].isNull())
+			dataObject.taskStatus = valueDataTaskDetail["TaskStatus"].asString();
+		if(!valueDataTaskDetail["UpdateTime"].isNull())
+			dataObject.updateTime = valueDataTaskDetail["UpdateTime"].asString();
+		if(!valueDataTaskDetail["CreateTime"].isNull())
+			dataObject.createTime = valueDataTaskDetail["CreateTime"].asString();
+		if(!valueDataTaskDetail["TryCount"].isNull())
+			dataObject.tryCount = std::stoi(valueDataTaskDetail["TryCount"].asString());
+		if(!valueDataTaskDetail["ErrorMsg"].isNull())
+			dataObject.errorMsg = valueDataTaskDetail["ErrorMsg"].asString();
+		if(!valueDataTaskDetail["TaskStatusCode"].isNull())
+			dataObject.taskStatusCode = std::stoi(valueDataTaskDetail["TaskStatusCode"].asString());
+		if(!valueDataTaskDetail["TaskResult"].isNull())
+			dataObject.taskResult = valueDataTaskDetail["TaskResult"].asString();
+		if(!valueDataTaskDetail["TaskTypeDescription"].isNull())
+			dataObject.taskTypeDescription = valueDataTaskDetail["TaskTypeDescription"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

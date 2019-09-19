@@ -39,26 +39,26 @@ void ChatResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMessages = value["Messages"]["Message"];
-	for (auto value : allMessages)
+	auto allMessagesNode = value["Messages"]["Message"];
+	for (auto valueMessagesMessage : allMessagesNode)
 	{
 		Message messagesObject;
-		if(!value["Type"].isNull())
-			messagesObject.type = value["Type"].asString();
-		auto allRecommends = value["Recommends"]["Recommend"];
-		for (auto value : allRecommends)
+		if(!valueMessagesMessage["Type"].isNull())
+			messagesObject.type = valueMessagesMessage["Type"].asString();
+		auto allRecommendsNode = allMessagesNode["Recommends"]["Recommend"];
+		for (auto allMessagesNodeRecommendsRecommend : allRecommendsNode)
 		{
 			Message::Recommend recommendsObject;
-			if(!value["KnowledgeId"].isNull())
-				recommendsObject.knowledgeId = value["KnowledgeId"].asString();
-			if(!value["Title"].isNull())
-				recommendsObject.title = value["Title"].asString();
-			if(!value["AnswerSource"].isNull())
-				recommendsObject.answerSource = value["AnswerSource"].asString();
-			if(!value["Summary"].isNull())
-				recommendsObject.summary = value["Summary"].asString();
-			if(!value["Content"].isNull())
-				recommendsObject.content = value["Content"].asString();
+			if(!allMessagesNodeRecommendsRecommend["KnowledgeId"].isNull())
+				recommendsObject.knowledgeId = allMessagesNodeRecommendsRecommend["KnowledgeId"].asString();
+			if(!allMessagesNodeRecommendsRecommend["Title"].isNull())
+				recommendsObject.title = allMessagesNodeRecommendsRecommend["Title"].asString();
+			if(!allMessagesNodeRecommendsRecommend["AnswerSource"].isNull())
+				recommendsObject.answerSource = allMessagesNodeRecommendsRecommend["AnswerSource"].asString();
+			if(!allMessagesNodeRecommendsRecommend["Summary"].isNull())
+				recommendsObject.summary = allMessagesNodeRecommendsRecommend["Summary"].asString();
+			if(!allMessagesNodeRecommendsRecommend["Content"].isNull())
+				recommendsObject.content = allMessagesNodeRecommendsRecommend["Content"].asString();
 			messagesObject.recommends.push_back(recommendsObject);
 		}
 		auto textNode = value["Text"];

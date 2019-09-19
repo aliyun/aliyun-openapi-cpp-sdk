@@ -60,14 +60,14 @@ void DescribeLicenseResult::parse(const std::string &payload)
 		license_.productName = licenseNode["ProductName"].asString();
 	if(!licenseNode["SupplierName"].isNull())
 		license_.supplierName = licenseNode["SupplierName"].asString();
-	auto allExtendArray = value["ExtendArray"]["LicenseAttribute"];
-	for (auto value : allExtendArray)
+	auto allExtendArrayNode = licenseNode["ExtendArray"]["LicenseAttribute"];
+	for (auto licenseNodeExtendArrayLicenseAttribute : allExtendArrayNode)
 	{
 		License::LicenseAttribute licenseAttributeObject;
-		if(!value["Code"].isNull())
-			licenseAttributeObject.code = value["Code"].asString();
-		if(!value["Value"].isNull())
-			licenseAttributeObject.value = value["Value"].asString();
+		if(!licenseNodeExtendArrayLicenseAttribute["Code"].isNull())
+			licenseAttributeObject.code = licenseNodeExtendArrayLicenseAttribute["Code"].asString();
+		if(!licenseNodeExtendArrayLicenseAttribute["Value"].isNull())
+			licenseAttributeObject.value = licenseNodeExtendArrayLicenseAttribute["Value"].asString();
 		license_.extendArray.push_back(licenseAttributeObject);
 	}
 	auto extendInfoNode = licenseNode["ExtendInfo"];

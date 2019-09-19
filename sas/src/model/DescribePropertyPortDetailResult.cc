@@ -39,34 +39,34 @@ void DescribePropertyPortDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPropertys = value["Propertys"]["PropertyPort"];
-	for (auto value : allPropertys)
+	auto allPropertysNode = value["Propertys"]["PropertyPort"];
+	for (auto valuePropertysPropertyPort : allPropertysNode)
 	{
 		PropertyPort propertysObject;
-		if(!value["BindIp"].isNull())
-			propertysObject.bindIp = value["BindIp"].asString();
-		if(!value["Port"].isNull())
-			propertysObject.port = value["Port"].asString();
-		if(!value["InstanceName"].isNull())
-			propertysObject.instanceName = value["InstanceName"].asString();
-		if(!value["Proto"].isNull())
-			propertysObject.proto = value["Proto"].asString();
-		if(!value["Ip"].isNull())
-			propertysObject.ip = value["Ip"].asString();
-		if(!value["Create"].isNull())
-			propertysObject.create = value["Create"].asString();
-		if(!value["CreateTimestamp"].isNull())
-			propertysObject.createTimestamp = std::stol(value["CreateTimestamp"].asString());
-		if(!value["ProcName"].isNull())
-			propertysObject.procName = value["ProcName"].asString();
-		if(!value["Uuid"].isNull())
-			propertysObject.uuid = value["Uuid"].asString();
-		if(!value["InstanceId"].isNull())
-			propertysObject.instanceId = value["InstanceId"].asString();
-		if(!value["IntranetIp"].isNull())
-			propertysObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["InternetIp"].isNull())
-			propertysObject.internetIp = value["InternetIp"].asString();
+		if(!valuePropertysPropertyPort["BindIp"].isNull())
+			propertysObject.bindIp = valuePropertysPropertyPort["BindIp"].asString();
+		if(!valuePropertysPropertyPort["Port"].isNull())
+			propertysObject.port = valuePropertysPropertyPort["Port"].asString();
+		if(!valuePropertysPropertyPort["InstanceName"].isNull())
+			propertysObject.instanceName = valuePropertysPropertyPort["InstanceName"].asString();
+		if(!valuePropertysPropertyPort["Proto"].isNull())
+			propertysObject.proto = valuePropertysPropertyPort["Proto"].asString();
+		if(!valuePropertysPropertyPort["Ip"].isNull())
+			propertysObject.ip = valuePropertysPropertyPort["Ip"].asString();
+		if(!valuePropertysPropertyPort["Create"].isNull())
+			propertysObject.create = valuePropertysPropertyPort["Create"].asString();
+		if(!valuePropertysPropertyPort["CreateTimestamp"].isNull())
+			propertysObject.createTimestamp = std::stol(valuePropertysPropertyPort["CreateTimestamp"].asString());
+		if(!valuePropertysPropertyPort["ProcName"].isNull())
+			propertysObject.procName = valuePropertysPropertyPort["ProcName"].asString();
+		if(!valuePropertysPropertyPort["Uuid"].isNull())
+			propertysObject.uuid = valuePropertysPropertyPort["Uuid"].asString();
+		if(!valuePropertysPropertyPort["InstanceId"].isNull())
+			propertysObject.instanceId = valuePropertysPropertyPort["InstanceId"].asString();
+		if(!valuePropertysPropertyPort["IntranetIp"].isNull())
+			propertysObject.intranetIp = valuePropertysPropertyPort["IntranetIp"].asString();
+		if(!valuePropertysPropertyPort["InternetIp"].isNull())
+			propertysObject.internetIp = valuePropertysPropertyPort["InternetIp"].asString();
 		propertys_.push_back(propertysObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

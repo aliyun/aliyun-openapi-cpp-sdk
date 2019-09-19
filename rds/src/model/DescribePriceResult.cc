@@ -39,16 +39,16 @@ void DescribePriceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRules = value["Rules"]["Rule"];
-	for (auto value : allRules)
+	auto allRulesNode = value["Rules"]["Rule"];
+	for (auto valueRulesRule : allRulesNode)
 	{
 		Rule rulesObject;
-		if(!value["RuleId"].isNull())
-			rulesObject.ruleId = std::stol(value["RuleId"].asString());
-		if(!value["Name"].isNull())
-			rulesObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			rulesObject.description = value["Description"].asString();
+		if(!valueRulesRule["RuleId"].isNull())
+			rulesObject.ruleId = std::stol(valueRulesRule["RuleId"].asString());
+		if(!valueRulesRule["Name"].isNull())
+			rulesObject.name = valueRulesRule["Name"].asString();
+		if(!valueRulesRule["Description"].isNull())
+			rulesObject.description = valueRulesRule["Description"].asString();
 		rules_.push_back(rulesObject);
 	}
 	auto priceInfoNode = value["PriceInfo"];
@@ -60,18 +60,18 @@ void DescribePriceResult::parse(const std::string &payload)
 		priceInfo_.tradePrice = std::stof(priceInfoNode["TradePrice"].asString());
 	if(!priceInfoNode["DiscountPrice"].isNull())
 		priceInfo_.discountPrice = std::stof(priceInfoNode["DiscountPrice"].asString());
-	auto allCoupons = value["Coupons"]["Coupon"];
-	for (auto value : allCoupons)
+	auto allCouponsNode = priceInfoNode["Coupons"]["Coupon"];
+	for (auto priceInfoNodeCouponsCoupon : allCouponsNode)
 	{
 		PriceInfo::Coupon couponObject;
-		if(!value["CouponNo"].isNull())
-			couponObject.couponNo = value["CouponNo"].asString();
-		if(!value["Name"].isNull())
-			couponObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			couponObject.description = value["Description"].asString();
-		if(!value["IsSelected"].isNull())
-			couponObject.isSelected = value["IsSelected"].asString();
+		if(!priceInfoNodeCouponsCoupon["CouponNo"].isNull())
+			couponObject.couponNo = priceInfoNodeCouponsCoupon["CouponNo"].asString();
+		if(!priceInfoNodeCouponsCoupon["Name"].isNull())
+			couponObject.name = priceInfoNodeCouponsCoupon["Name"].asString();
+		if(!priceInfoNodeCouponsCoupon["Description"].isNull())
+			couponObject.description = priceInfoNodeCouponsCoupon["Description"].asString();
+		if(!priceInfoNodeCouponsCoupon["IsSelected"].isNull())
+			couponObject.isSelected = priceInfoNodeCouponsCoupon["IsSelected"].asString();
 		priceInfo_.coupons.push_back(couponObject);
 	}
 	auto activityInfoNode = priceInfoNode["ActivityInfo"];

@@ -39,18 +39,18 @@ void ListQueuesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQueues = value["Queues"]["QueueInfo"];
-	for (auto value : allQueues)
+	auto allQueuesNode = value["Queues"]["QueueInfo"];
+	for (auto valueQueuesQueueInfo : allQueuesNode)
 	{
 		QueueInfo queuesObject;
-		if(!value["QueueName"].isNull())
-			queuesObject.queueName = value["QueueName"].asString();
-		if(!value["Type"].isNull())
-			queuesObject.type = value["Type"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			queuesObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["ComputeInstanceType"].isNull())
-			queuesObject.computeInstanceType = value["ComputeInstanceType"].asString();
+		if(!valueQueuesQueueInfo["QueueName"].isNull())
+			queuesObject.queueName = valueQueuesQueueInfo["QueueName"].asString();
+		if(!valueQueuesQueueInfo["Type"].isNull())
+			queuesObject.type = valueQueuesQueueInfo["Type"].asString();
+		if(!valueQueuesQueueInfo["ResourceGroupId"].isNull())
+			queuesObject.resourceGroupId = valueQueuesQueueInfo["ResourceGroupId"].asString();
+		if(!valueQueuesQueueInfo["ComputeInstanceType"].isNull())
+			queuesObject.computeInstanceType = valueQueuesQueueInfo["ComputeInstanceType"].asString();
 		queues_.push_back(queuesObject);
 	}
 

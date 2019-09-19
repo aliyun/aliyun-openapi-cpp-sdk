@@ -39,26 +39,26 @@ void ListPushRecordsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPushMessageInfos = value["PushMessageInfos"]["PushMessageInfo"];
-	for (auto value : allPushMessageInfos)
+	auto allPushMessageInfosNode = value["PushMessageInfos"]["PushMessageInfo"];
+	for (auto valuePushMessageInfosPushMessageInfo : allPushMessageInfosNode)
 	{
 		PushMessageInfo pushMessageInfosObject;
-		if(!value["AppKey"].isNull())
-			pushMessageInfosObject.appKey = std::stol(value["AppKey"].asString());
-		if(!value["AppName"].isNull())
-			pushMessageInfosObject.appName = value["AppName"].asString();
-		if(!value["MessageId"].isNull())
-			pushMessageInfosObject.messageId = value["MessageId"].asString();
-		if(!value["Type"].isNull())
-			pushMessageInfosObject.type = value["Type"].asString();
-		if(!value["DeviceType"].isNull())
-			pushMessageInfosObject.deviceType = value["DeviceType"].asString();
-		if(!value["PushTime"].isNull())
-			pushMessageInfosObject.pushTime = value["PushTime"].asString();
-		if(!value["Title"].isNull())
-			pushMessageInfosObject.title = value["Title"].asString();
-		if(!value["Body"].isNull())
-			pushMessageInfosObject.body = value["Body"].asString();
+		if(!valuePushMessageInfosPushMessageInfo["AppKey"].isNull())
+			pushMessageInfosObject.appKey = std::stol(valuePushMessageInfosPushMessageInfo["AppKey"].asString());
+		if(!valuePushMessageInfosPushMessageInfo["AppName"].isNull())
+			pushMessageInfosObject.appName = valuePushMessageInfosPushMessageInfo["AppName"].asString();
+		if(!valuePushMessageInfosPushMessageInfo["MessageId"].isNull())
+			pushMessageInfosObject.messageId = valuePushMessageInfosPushMessageInfo["MessageId"].asString();
+		if(!valuePushMessageInfosPushMessageInfo["Type"].isNull())
+			pushMessageInfosObject.type = valuePushMessageInfosPushMessageInfo["Type"].asString();
+		if(!valuePushMessageInfosPushMessageInfo["DeviceType"].isNull())
+			pushMessageInfosObject.deviceType = valuePushMessageInfosPushMessageInfo["DeviceType"].asString();
+		if(!valuePushMessageInfosPushMessageInfo["PushTime"].isNull())
+			pushMessageInfosObject.pushTime = valuePushMessageInfosPushMessageInfo["PushTime"].asString();
+		if(!valuePushMessageInfosPushMessageInfo["Title"].isNull())
+			pushMessageInfosObject.title = valuePushMessageInfosPushMessageInfo["Title"].asString();
+		if(!valuePushMessageInfosPushMessageInfo["Body"].isNull())
+			pushMessageInfosObject.body = valuePushMessageInfosPushMessageInfo["Body"].asString();
 		pushMessageInfos_.push_back(pushMessageInfosObject);
 	}
 	if(!value["Total"].isNull())

@@ -39,16 +39,16 @@ void DescribeSecurityIpsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSecurityIpGroups = value["SecurityIpGroups"]["SecurityIpGroup"];
-	for (auto value : allSecurityIpGroups)
+	auto allSecurityIpGroupsNode = value["SecurityIpGroups"]["SecurityIpGroup"];
+	for (auto valueSecurityIpGroupsSecurityIpGroup : allSecurityIpGroupsNode)
 	{
 		SecurityIpGroup securityIpGroupsObject;
-		if(!value["SecurityIpGroupName"].isNull())
-			securityIpGroupsObject.securityIpGroupName = value["SecurityIpGroupName"].asString();
-		if(!value["SecurityIpGroupAttribute"].isNull())
-			securityIpGroupsObject.securityIpGroupAttribute = value["SecurityIpGroupAttribute"].asString();
-		if(!value["SecurityIpList"].isNull())
-			securityIpGroupsObject.securityIpList = value["SecurityIpList"].asString();
+		if(!valueSecurityIpGroupsSecurityIpGroup["SecurityIpGroupName"].isNull())
+			securityIpGroupsObject.securityIpGroupName = valueSecurityIpGroupsSecurityIpGroup["SecurityIpGroupName"].asString();
+		if(!valueSecurityIpGroupsSecurityIpGroup["SecurityIpGroupAttribute"].isNull())
+			securityIpGroupsObject.securityIpGroupAttribute = valueSecurityIpGroupsSecurityIpGroup["SecurityIpGroupAttribute"].asString();
+		if(!valueSecurityIpGroupsSecurityIpGroup["SecurityIpList"].isNull())
+			securityIpGroupsObject.securityIpList = valueSecurityIpGroupsSecurityIpGroup["SecurityIpList"].asString();
 		securityIpGroups_.push_back(securityIpGroupsObject);
 	}
 	if(!value["SecurityIps"].isNull())

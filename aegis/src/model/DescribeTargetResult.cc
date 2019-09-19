@@ -39,16 +39,16 @@ void DescribeTargetResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTargets = value["Targets"]["Target"];
-	for (auto value : allTargets)
+	auto allTargetsNode = value["Targets"]["Target"];
+	for (auto valueTargetsTarget : allTargetsNode)
 	{
 		Target targetsObject;
-		if(!value["TargetType"].isNull())
-			targetsObject.targetType = value["TargetType"].asString();
-		if(!value["Target"].isNull())
-			targetsObject.target = value["Target"].asString();
-		if(!value["Flag"].isNull())
-			targetsObject.flag = value["Flag"].asString();
+		if(!valueTargetsTarget["TargetType"].isNull())
+			targetsObject.targetType = valueTargetsTarget["TargetType"].asString();
+		if(!valueTargetsTarget["Target"].isNull())
+			targetsObject.target = valueTargetsTarget["Target"].asString();
+		if(!valueTargetsTarget["Flag"].isNull())
+			targetsObject.flag = valueTargetsTarget["Flag"].asString();
 		targets_.push_back(targetsObject);
 	}
 	if(!value["TotalCount"].isNull())

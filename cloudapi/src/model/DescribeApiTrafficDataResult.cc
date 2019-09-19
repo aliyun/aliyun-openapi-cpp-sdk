@@ -39,24 +39,24 @@ void DescribeApiTrafficDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCallUploads = value["CallUploads"]["MonitorItem"];
-	for (auto value : allCallUploads)
+	auto allCallUploadsNode = value["CallUploads"]["MonitorItem"];
+	for (auto valueCallUploadsMonitorItem : allCallUploadsNode)
 	{
 		MonitorItem callUploadsObject;
-		if(!value["ItemTime"].isNull())
-			callUploadsObject.itemTime = value["ItemTime"].asString();
-		if(!value["ItemValue"].isNull())
-			callUploadsObject.itemValue = value["ItemValue"].asString();
+		if(!valueCallUploadsMonitorItem["ItemTime"].isNull())
+			callUploadsObject.itemTime = valueCallUploadsMonitorItem["ItemTime"].asString();
+		if(!valueCallUploadsMonitorItem["ItemValue"].isNull())
+			callUploadsObject.itemValue = valueCallUploadsMonitorItem["ItemValue"].asString();
 		callUploads_.push_back(callUploadsObject);
 	}
-	auto allCallDownloads = value["CallDownloads"]["MonitorItem"];
-	for (auto value : allCallDownloads)
+	auto allCallDownloadsNode = value["CallDownloads"]["MonitorItem"];
+	for (auto valueCallDownloadsMonitorItem : allCallDownloadsNode)
 	{
 		MonitorItem callDownloadsObject;
-		if(!value["ItemTime"].isNull())
-			callDownloadsObject.itemTime = value["ItemTime"].asString();
-		if(!value["ItemValue"].isNull())
-			callDownloadsObject.itemValue = value["ItemValue"].asString();
+		if(!valueCallDownloadsMonitorItem["ItemTime"].isNull())
+			callDownloadsObject.itemTime = valueCallDownloadsMonitorItem["ItemTime"].asString();
+		if(!valueCallDownloadsMonitorItem["ItemValue"].isNull())
+			callDownloadsObject.itemValue = valueCallDownloadsMonitorItem["ItemValue"].asString();
 		callDownloads_.push_back(callDownloadsObject);
 	}
 

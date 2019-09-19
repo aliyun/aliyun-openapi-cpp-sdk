@@ -39,18 +39,18 @@ void ListAuditSecurityIpResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSecurityIpList = value["SecurityIpList"]["SecurityIp"];
-	for (auto value : allSecurityIpList)
+	auto allSecurityIpListNode = value["SecurityIpList"]["SecurityIp"];
+	for (auto valueSecurityIpListSecurityIp : allSecurityIpListNode)
 	{
 		SecurityIp securityIpListObject;
-		if(!value["SecurityGroupName"].isNull())
-			securityIpListObject.securityGroupName = value["SecurityGroupName"].asString();
-		if(!value["Ips"].isNull())
-			securityIpListObject.ips = value["Ips"].asString();
-		if(!value["CreationTime"].isNull())
-			securityIpListObject.creationTime = value["CreationTime"].asString();
-		if(!value["ModificationTime"].isNull())
-			securityIpListObject.modificationTime = value["ModificationTime"].asString();
+		if(!valueSecurityIpListSecurityIp["SecurityGroupName"].isNull())
+			securityIpListObject.securityGroupName = valueSecurityIpListSecurityIp["SecurityGroupName"].asString();
+		if(!valueSecurityIpListSecurityIp["Ips"].isNull())
+			securityIpListObject.ips = valueSecurityIpListSecurityIp["Ips"].asString();
+		if(!valueSecurityIpListSecurityIp["CreationTime"].isNull())
+			securityIpListObject.creationTime = valueSecurityIpListSecurityIp["CreationTime"].asString();
+		if(!valueSecurityIpListSecurityIp["ModificationTime"].isNull())
+			securityIpListObject.modificationTime = valueSecurityIpListSecurityIp["ModificationTime"].asString();
 		securityIpList_.push_back(securityIpListObject);
 	}
 

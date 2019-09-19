@@ -39,16 +39,16 @@ void DescribeDdosDefenseInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDdosDefenseThreshold = value["DdosDefenseThreshold"]["DdosDefenseThresholdItem"];
-	for (auto value : allDdosDefenseThreshold)
+	auto allDdosDefenseThresholdNode = value["DdosDefenseThreshold"]["DdosDefenseThresholdItem"];
+	for (auto valueDdosDefenseThresholdDdosDefenseThresholdItem : allDdosDefenseThresholdNode)
 	{
 		DdosDefenseThresholdItem ddosDefenseThresholdObject;
-		if(!value["RegionId"].isNull())
-			ddosDefenseThresholdObject.regionId = value["RegionId"].asString();
-		if(!value["CurrThreshold"].isNull())
-			ddosDefenseThresholdObject.currThreshold = std::stoi(value["CurrThreshold"].asString());
-		if(!value["RecommendThreshold"].isNull())
-			ddosDefenseThresholdObject.recommendThreshold = std::stoi(value["RecommendThreshold"].asString());
+		if(!valueDdosDefenseThresholdDdosDefenseThresholdItem["RegionId"].isNull())
+			ddosDefenseThresholdObject.regionId = valueDdosDefenseThresholdDdosDefenseThresholdItem["RegionId"].asString();
+		if(!valueDdosDefenseThresholdDdosDefenseThresholdItem["CurrThreshold"].isNull())
+			ddosDefenseThresholdObject.currThreshold = std::stoi(valueDdosDefenseThresholdDdosDefenseThresholdItem["CurrThreshold"].asString());
+		if(!valueDdosDefenseThresholdDdosDefenseThresholdItem["RecommendThreshold"].isNull())
+			ddosDefenseThresholdObject.recommendThreshold = std::stoi(valueDdosDefenseThresholdDdosDefenseThresholdItem["RecommendThreshold"].asString());
 		ddosDefenseThreshold_.push_back(ddosDefenseThresholdObject);
 	}
 	if(!value["Module"].isNull())

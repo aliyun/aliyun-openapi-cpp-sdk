@@ -39,16 +39,16 @@ void DescribeTrafficControlsByApiResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTrafficControlItems = value["TrafficControlItems"]["TrafficControlItem"];
-	for (auto value : allTrafficControlItems)
+	auto allTrafficControlItemsNode = value["TrafficControlItems"]["TrafficControlItem"];
+	for (auto valueTrafficControlItemsTrafficControlItem : allTrafficControlItemsNode)
 	{
 		TrafficControlItem trafficControlItemsObject;
-		if(!value["TrafficControlItemId"].isNull())
-			trafficControlItemsObject.trafficControlItemId = value["TrafficControlItemId"].asString();
-		if(!value["TrafficControlItemName"].isNull())
-			trafficControlItemsObject.trafficControlItemName = value["TrafficControlItemName"].asString();
-		if(!value["BoundTime"].isNull())
-			trafficControlItemsObject.boundTime = value["BoundTime"].asString();
+		if(!valueTrafficControlItemsTrafficControlItem["TrafficControlItemId"].isNull())
+			trafficControlItemsObject.trafficControlItemId = valueTrafficControlItemsTrafficControlItem["TrafficControlItemId"].asString();
+		if(!valueTrafficControlItemsTrafficControlItem["TrafficControlItemName"].isNull())
+			trafficControlItemsObject.trafficControlItemName = valueTrafficControlItemsTrafficControlItem["TrafficControlItemName"].asString();
+		if(!valueTrafficControlItemsTrafficControlItem["BoundTime"].isNull())
+			trafficControlItemsObject.boundTime = valueTrafficControlItemsTrafficControlItem["BoundTime"].asString();
 		trafficControlItems_.push_back(trafficControlItemsObject);
 	}
 

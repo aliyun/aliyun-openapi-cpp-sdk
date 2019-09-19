@@ -39,20 +39,20 @@ void DescribeDBInstanceByTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["DBInstanceTag"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["DBInstanceTag"];
+	for (auto valueItemsDBInstanceTag : allItemsNode)
 	{
 		DBInstanceTag itemsObject;
-		if(!value["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueItemsDBInstanceTag["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsDBInstanceTag["DBInstanceId"].asString();
+		auto allTagsNode = allItemsNode["Tags"]["Tag"];
+		for (auto allItemsNodeTagsTag : allTagsNode)
 		{
 			DBInstanceTag::Tag tagsObject;
-			if(!value["TagKey"].isNull())
-				tagsObject.tagKey = value["TagKey"].asString();
-			if(!value["TagValue"].isNull())
-				tagsObject.tagValue = value["TagValue"].asString();
+			if(!allItemsNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allItemsNodeTagsTag["TagKey"].asString();
+			if(!allItemsNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allItemsNodeTagsTag["TagValue"].asString();
 			itemsObject.tags.push_back(tagsObject);
 		}
 		items_.push_back(itemsObject);

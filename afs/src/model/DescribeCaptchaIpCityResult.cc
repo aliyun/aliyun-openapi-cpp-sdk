@@ -39,28 +39,28 @@ void DescribeCaptchaIpCityResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCaptchaCities = value["CaptchaCities"]["CaptchaCitie"];
-	for (auto value : allCaptchaCities)
+	auto allCaptchaCitiesNode = value["CaptchaCities"]["CaptchaCitie"];
+	for (auto valueCaptchaCitiesCaptchaCitie : allCaptchaCitiesNode)
 	{
 		CaptchaCitie captchaCitiesObject;
-		if(!value["Location"].isNull())
-			captchaCitiesObject.location = value["Location"].asString();
-		if(!value["Lat"].isNull())
-			captchaCitiesObject.lat = value["Lat"].asString();
-		if(!value["Lng"].isNull())
-			captchaCitiesObject.lng = value["Lng"].asString();
-		if(!value["Pv"].isNull())
-			captchaCitiesObject.pv = std::stoi(value["Pv"].asString());
+		if(!valueCaptchaCitiesCaptchaCitie["Location"].isNull())
+			captchaCitiesObject.location = valueCaptchaCitiesCaptchaCitie["Location"].asString();
+		if(!valueCaptchaCitiesCaptchaCitie["Lat"].isNull())
+			captchaCitiesObject.lat = valueCaptchaCitiesCaptchaCitie["Lat"].asString();
+		if(!valueCaptchaCitiesCaptchaCitie["Lng"].isNull())
+			captchaCitiesObject.lng = valueCaptchaCitiesCaptchaCitie["Lng"].asString();
+		if(!valueCaptchaCitiesCaptchaCitie["Pv"].isNull())
+			captchaCitiesObject.pv = std::stoi(valueCaptchaCitiesCaptchaCitie["Pv"].asString());
 		captchaCities_.push_back(captchaCitiesObject);
 	}
-	auto allCaptchaIps = value["CaptchaIps"]["CaptchaIp"];
-	for (auto value : allCaptchaIps)
+	auto allCaptchaIpsNode = value["CaptchaIps"]["CaptchaIp"];
+	for (auto valueCaptchaIpsCaptchaIp : allCaptchaIpsNode)
 	{
 		CaptchaIp captchaIpsObject;
-		if(!value["Ip"].isNull())
-			captchaIpsObject.ip = value["Ip"].asString();
-		if(!value["Value"].isNull())
-			captchaIpsObject.value = std::stoi(value["Value"].asString());
+		if(!valueCaptchaIpsCaptchaIp["Ip"].isNull())
+			captchaIpsObject.ip = valueCaptchaIpsCaptchaIp["Ip"].asString();
+		if(!valueCaptchaIpsCaptchaIp["Value"].isNull())
+			captchaIpsObject.value = std::stoi(valueCaptchaIpsCaptchaIp["Value"].asString());
 		captchaIps_.push_back(captchaIpsObject);
 	}
 	if(!value["BizCode"].isNull())

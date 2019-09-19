@@ -39,18 +39,18 @@ void GetInstanceMetricResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMetrics = value["Metrics"]["Metric"];
-	for (auto value : allMetrics)
+	auto allMetricsNode = value["Metrics"]["Metric"];
+	for (auto valueMetricsMetric : allMetricsNode)
 	{
 		Metric metricsObject;
-		if(!value["MetricName"].isNull())
-			metricsObject.metricName = value["MetricName"].asString();
-		if(!value["Dps"].isNull())
-			metricsObject.dps = value["Dps"].asString();
-		if(!value["Summary"].isNull())
-			metricsObject.summary = std::stof(value["Summary"].asString());
-		if(!value["Tags"].isNull())
-			metricsObject.tags = value["Tags"].asString();
+		if(!valueMetricsMetric["MetricName"].isNull())
+			metricsObject.metricName = valueMetricsMetric["MetricName"].asString();
+		if(!valueMetricsMetric["Dps"].isNull())
+			metricsObject.dps = valueMetricsMetric["Dps"].asString();
+		if(!valueMetricsMetric["Summary"].isNull())
+			metricsObject.summary = std::stof(valueMetricsMetric["Summary"].asString());
+		if(!valueMetricsMetric["Tags"].isNull())
+			metricsObject.tags = valueMetricsMetric["Tags"].asString();
 		metrics_.push_back(metricsObject);
 	}
 

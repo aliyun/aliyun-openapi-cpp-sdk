@@ -39,20 +39,20 @@ void DescribeLoadBalancerHTTPListenerAttributeResult::parse(const std::string &p
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRules = value["Rules"]["Rule"];
-	for (auto value : allRules)
+	auto allRulesNode = value["Rules"]["Rule"];
+	for (auto valueRulesRule : allRulesNode)
 	{
 		Rule rulesObject;
-		if(!value["RuleId"].isNull())
-			rulesObject.ruleId = value["RuleId"].asString();
-		if(!value["RuleName"].isNull())
-			rulesObject.ruleName = value["RuleName"].asString();
-		if(!value["Domain"].isNull())
-			rulesObject.domain = value["Domain"].asString();
-		if(!value["Url"].isNull())
-			rulesObject.url = value["Url"].asString();
-		if(!value["VServerGroupId"].isNull())
-			rulesObject.vServerGroupId = value["VServerGroupId"].asString();
+		if(!valueRulesRule["RuleId"].isNull())
+			rulesObject.ruleId = valueRulesRule["RuleId"].asString();
+		if(!valueRulesRule["RuleName"].isNull())
+			rulesObject.ruleName = valueRulesRule["RuleName"].asString();
+		if(!valueRulesRule["Domain"].isNull())
+			rulesObject.domain = valueRulesRule["Domain"].asString();
+		if(!valueRulesRule["Url"].isNull())
+			rulesObject.url = valueRulesRule["Url"].asString();
+		if(!valueRulesRule["VServerGroupId"].isNull())
+			rulesObject.vServerGroupId = valueRulesRule["VServerGroupId"].asString();
 		rules_.push_back(rulesObject);
 	}
 	if(!value["ListenerPort"].isNull())

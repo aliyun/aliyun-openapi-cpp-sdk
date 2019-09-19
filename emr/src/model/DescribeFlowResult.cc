@@ -39,18 +39,18 @@ void DescribeFlowResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allParentFlowList = value["ParentFlowList"]["ParentFlow"];
-	for (auto value : allParentFlowList)
+	auto allParentFlowListNode = value["ParentFlowList"]["ParentFlow"];
+	for (auto valueParentFlowListParentFlow : allParentFlowListNode)
 	{
 		ParentFlow parentFlowListObject;
-		if(!value["ParentFlowId"].isNull())
-			parentFlowListObject.parentFlowId = value["ParentFlowId"].asString();
-		if(!value["ParentFlowName"].isNull())
-			parentFlowListObject.parentFlowName = value["ParentFlowName"].asString();
-		if(!value["ProjectId"].isNull())
-			parentFlowListObject.projectId = value["ProjectId"].asString();
-		if(!value["ProjectName"].isNull())
-			parentFlowListObject.projectName = value["ProjectName"].asString();
+		if(!valueParentFlowListParentFlow["ParentFlowId"].isNull())
+			parentFlowListObject.parentFlowId = valueParentFlowListParentFlow["ParentFlowId"].asString();
+		if(!valueParentFlowListParentFlow["ParentFlowName"].isNull())
+			parentFlowListObject.parentFlowName = valueParentFlowListParentFlow["ParentFlowName"].asString();
+		if(!valueParentFlowListParentFlow["ProjectId"].isNull())
+			parentFlowListObject.projectId = valueParentFlowListParentFlow["ProjectId"].asString();
+		if(!valueParentFlowListParentFlow["ProjectName"].isNull())
+			parentFlowListObject.projectName = valueParentFlowListParentFlow["ProjectName"].asString();
 		parentFlowList_.push_back(parentFlowListObject);
 	}
 	if(!value["Id"].isNull())

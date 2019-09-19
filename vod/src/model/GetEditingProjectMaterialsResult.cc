@@ -39,38 +39,38 @@ void GetEditingProjectMaterialsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMaterialList = value["MaterialList"]["Material"];
-	for (auto value : allMaterialList)
+	auto allMaterialListNode = value["MaterialList"]["Material"];
+	for (auto valueMaterialListMaterial : allMaterialListNode)
 	{
 		Material materialListObject;
-		if(!value["MaterialId"].isNull())
-			materialListObject.materialId = value["MaterialId"].asString();
-		if(!value["Title"].isNull())
-			materialListObject.title = value["Title"].asString();
-		if(!value["Tags"].isNull())
-			materialListObject.tags = value["Tags"].asString();
-		if(!value["Status"].isNull())
-			materialListObject.status = value["Status"].asString();
-		if(!value["Size"].isNull())
-			materialListObject.size = std::stol(value["Size"].asString());
-		if(!value["Duration"].isNull())
-			materialListObject.duration = std::stof(value["Duration"].asString());
-		if(!value["Description"].isNull())
-			materialListObject.description = value["Description"].asString();
-		if(!value["CreationTime"].isNull())
-			materialListObject.creationTime = value["CreationTime"].asString();
-		if(!value["ModifiedTime"].isNull())
-			materialListObject.modifiedTime = value["ModifiedTime"].asString();
-		if(!value["CoverURL"].isNull())
-			materialListObject.coverURL = value["CoverURL"].asString();
-		if(!value["CateId"].isNull())
-			materialListObject.cateId = std::stoi(value["CateId"].asString());
-		if(!value["CateName"].isNull())
-			materialListObject.cateName = value["CateName"].asString();
-		if(!value["Source"].isNull())
-			materialListObject.source = value["Source"].asString();
-		if(!value["SpriteConfig"].isNull())
-			materialListObject.spriteConfig = value["SpriteConfig"].asString();
+		if(!valueMaterialListMaterial["MaterialId"].isNull())
+			materialListObject.materialId = valueMaterialListMaterial["MaterialId"].asString();
+		if(!valueMaterialListMaterial["Title"].isNull())
+			materialListObject.title = valueMaterialListMaterial["Title"].asString();
+		if(!valueMaterialListMaterial["Tags"].isNull())
+			materialListObject.tags = valueMaterialListMaterial["Tags"].asString();
+		if(!valueMaterialListMaterial["Status"].isNull())
+			materialListObject.status = valueMaterialListMaterial["Status"].asString();
+		if(!valueMaterialListMaterial["Size"].isNull())
+			materialListObject.size = std::stol(valueMaterialListMaterial["Size"].asString());
+		if(!valueMaterialListMaterial["Duration"].isNull())
+			materialListObject.duration = std::stof(valueMaterialListMaterial["Duration"].asString());
+		if(!valueMaterialListMaterial["Description"].isNull())
+			materialListObject.description = valueMaterialListMaterial["Description"].asString();
+		if(!valueMaterialListMaterial["CreationTime"].isNull())
+			materialListObject.creationTime = valueMaterialListMaterial["CreationTime"].asString();
+		if(!valueMaterialListMaterial["ModifiedTime"].isNull())
+			materialListObject.modifiedTime = valueMaterialListMaterial["ModifiedTime"].asString();
+		if(!valueMaterialListMaterial["CoverURL"].isNull())
+			materialListObject.coverURL = valueMaterialListMaterial["CoverURL"].asString();
+		if(!valueMaterialListMaterial["CateId"].isNull())
+			materialListObject.cateId = std::stoi(valueMaterialListMaterial["CateId"].asString());
+		if(!valueMaterialListMaterial["CateName"].isNull())
+			materialListObject.cateName = valueMaterialListMaterial["CateName"].asString();
+		if(!valueMaterialListMaterial["Source"].isNull())
+			materialListObject.source = valueMaterialListMaterial["Source"].asString();
+		if(!valueMaterialListMaterial["SpriteConfig"].isNull())
+			materialListObject.spriteConfig = valueMaterialListMaterial["SpriteConfig"].asString();
 		auto allSnapshots = value["Snapshots"]["Snapshot"];
 		for (auto value : allSnapshots)
 			materialListObject.snapshots.push_back(value.asString());

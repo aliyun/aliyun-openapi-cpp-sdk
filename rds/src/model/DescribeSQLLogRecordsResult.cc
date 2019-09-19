@@ -39,26 +39,26 @@ void DescribeSQLLogRecordsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["SQLRecord"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["SQLRecord"];
+	for (auto valueItemsSQLRecord : allItemsNode)
 	{
 		SQLRecord itemsObject;
-		if(!value["DBName"].isNull())
-			itemsObject.dBName = value["DBName"].asString();
-		if(!value["AccountName"].isNull())
-			itemsObject.accountName = value["AccountName"].asString();
-		if(!value["HostAddress"].isNull())
-			itemsObject.hostAddress = value["HostAddress"].asString();
-		if(!value["SQLText"].isNull())
-			itemsObject.sQLText = value["SQLText"].asString();
-		if(!value["TotalExecutionTimes"].isNull())
-			itemsObject.totalExecutionTimes = std::stol(value["TotalExecutionTimes"].asString());
-		if(!value["ReturnRowCounts"].isNull())
-			itemsObject.returnRowCounts = std::stol(value["ReturnRowCounts"].asString());
-		if(!value["ExecuteTime"].isNull())
-			itemsObject.executeTime = value["ExecuteTime"].asString();
-		if(!value["ThreadID"].isNull())
-			itemsObject.threadID = value["ThreadID"].asString();
+		if(!valueItemsSQLRecord["DBName"].isNull())
+			itemsObject.dBName = valueItemsSQLRecord["DBName"].asString();
+		if(!valueItemsSQLRecord["AccountName"].isNull())
+			itemsObject.accountName = valueItemsSQLRecord["AccountName"].asString();
+		if(!valueItemsSQLRecord["HostAddress"].isNull())
+			itemsObject.hostAddress = valueItemsSQLRecord["HostAddress"].asString();
+		if(!valueItemsSQLRecord["SQLText"].isNull())
+			itemsObject.sQLText = valueItemsSQLRecord["SQLText"].asString();
+		if(!valueItemsSQLRecord["TotalExecutionTimes"].isNull())
+			itemsObject.totalExecutionTimes = std::stol(valueItemsSQLRecord["TotalExecutionTimes"].asString());
+		if(!valueItemsSQLRecord["ReturnRowCounts"].isNull())
+			itemsObject.returnRowCounts = std::stol(valueItemsSQLRecord["ReturnRowCounts"].asString());
+		if(!valueItemsSQLRecord["ExecuteTime"].isNull())
+			itemsObject.executeTime = valueItemsSQLRecord["ExecuteTime"].asString();
+		if(!valueItemsSQLRecord["ThreadID"].isNull())
+			itemsObject.threadID = valueItemsSQLRecord["ThreadID"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

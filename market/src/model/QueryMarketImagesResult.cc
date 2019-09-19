@@ -39,82 +39,82 @@ void QueryMarketImagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"]["ImageProduct"];
-	for (auto value : allResult)
+	auto allResultNode = value["Result"]["ImageProduct"];
+	for (auto valueResultImageProduct : allResultNode)
 	{
 		ImageProduct resultObject;
-		if(!value["ImageProductCode"].isNull())
-			resultObject.imageProductCode = value["ImageProductCode"].asString();
-		if(!value["ProductName"].isNull())
-			resultObject.productName = value["ProductName"].asString();
-		if(!value["CategoryName"].isNull())
-			resultObject.categoryName = value["CategoryName"].asString();
-		if(!value["SupplierName"].isNull())
-			resultObject.supplierName = value["SupplierName"].asString();
-		if(!value["BaseSystem"].isNull())
-			resultObject.baseSystem = value["BaseSystem"].asString();
-		if(!value["OsKind"].isNull())
-			resultObject.osKind = value["OsKind"].asString();
-		if(!value["OsBit"].isNull())
-			resultObject.osBit = std::stoi(value["OsBit"].asString());
-		if(!value["PictureUrl"].isNull())
-			resultObject.pictureUrl = value["PictureUrl"].asString();
-		if(!value["SmallPicUrl"].isNull())
-			resultObject.smallPicUrl = value["SmallPicUrl"].asString();
-		if(!value["ShortDescription"].isNull())
-			resultObject.shortDescription = value["ShortDescription"].asString();
-		if(!value["AgreementUrl"].isNull())
-			resultObject.agreementUrl = value["AgreementUrl"].asString();
-		if(!value["DetailUrl"].isNull())
-			resultObject.detailUrl = value["DetailUrl"].asString();
-		if(!value["BuyUrl"].isNull())
-			resultObject.buyUrl = value["BuyUrl"].asString();
-		if(!value["StoreUrl"].isNull())
-			resultObject.storeUrl = value["StoreUrl"].asString();
-		if(!value["Score"].isNull())
-			resultObject.score = std::stof(value["Score"].asString());
-		if(!value["UserCount"].isNull())
-			resultObject.userCount = std::stol(value["UserCount"].asString());
-		if(!value["SupportIO"].isNull())
-			resultObject.supportIO = value["SupportIO"].asString() == "true";
-		if(!value["CreatedOn"].isNull())
-			resultObject.createdOn = std::stol(value["CreatedOn"].asString());
-		auto allImages = value["Images"]["Image"];
-		for (auto value : allImages)
+		if(!valueResultImageProduct["ImageProductCode"].isNull())
+			resultObject.imageProductCode = valueResultImageProduct["ImageProductCode"].asString();
+		if(!valueResultImageProduct["ProductName"].isNull())
+			resultObject.productName = valueResultImageProduct["ProductName"].asString();
+		if(!valueResultImageProduct["CategoryName"].isNull())
+			resultObject.categoryName = valueResultImageProduct["CategoryName"].asString();
+		if(!valueResultImageProduct["SupplierName"].isNull())
+			resultObject.supplierName = valueResultImageProduct["SupplierName"].asString();
+		if(!valueResultImageProduct["BaseSystem"].isNull())
+			resultObject.baseSystem = valueResultImageProduct["BaseSystem"].asString();
+		if(!valueResultImageProduct["OsKind"].isNull())
+			resultObject.osKind = valueResultImageProduct["OsKind"].asString();
+		if(!valueResultImageProduct["OsBit"].isNull())
+			resultObject.osBit = std::stoi(valueResultImageProduct["OsBit"].asString());
+		if(!valueResultImageProduct["PictureUrl"].isNull())
+			resultObject.pictureUrl = valueResultImageProduct["PictureUrl"].asString();
+		if(!valueResultImageProduct["SmallPicUrl"].isNull())
+			resultObject.smallPicUrl = valueResultImageProduct["SmallPicUrl"].asString();
+		if(!valueResultImageProduct["ShortDescription"].isNull())
+			resultObject.shortDescription = valueResultImageProduct["ShortDescription"].asString();
+		if(!valueResultImageProduct["AgreementUrl"].isNull())
+			resultObject.agreementUrl = valueResultImageProduct["AgreementUrl"].asString();
+		if(!valueResultImageProduct["DetailUrl"].isNull())
+			resultObject.detailUrl = valueResultImageProduct["DetailUrl"].asString();
+		if(!valueResultImageProduct["BuyUrl"].isNull())
+			resultObject.buyUrl = valueResultImageProduct["BuyUrl"].asString();
+		if(!valueResultImageProduct["StoreUrl"].isNull())
+			resultObject.storeUrl = valueResultImageProduct["StoreUrl"].asString();
+		if(!valueResultImageProduct["Score"].isNull())
+			resultObject.score = std::stof(valueResultImageProduct["Score"].asString());
+		if(!valueResultImageProduct["UserCount"].isNull())
+			resultObject.userCount = std::stol(valueResultImageProduct["UserCount"].asString());
+		if(!valueResultImageProduct["SupportIO"].isNull())
+			resultObject.supportIO = valueResultImageProduct["SupportIO"].asString() == "true";
+		if(!valueResultImageProduct["CreatedOn"].isNull())
+			resultObject.createdOn = std::stol(valueResultImageProduct["CreatedOn"].asString());
+		auto allImagesNode = allResultNode["Images"]["Image"];
+		for (auto allResultNodeImagesImage : allImagesNode)
 		{
 			ImageProduct::Image imagesObject;
-			if(!value["Version"].isNull())
-				imagesObject.version = value["Version"].asString();
-			if(!value["VersionDescription"].isNull())
-				imagesObject.versionDescription = value["VersionDescription"].asString();
-			if(!value["ImageId"].isNull())
-				imagesObject.imageId = value["ImageId"].asString();
-			if(!value["ImageSize"].isNull())
-				imagesObject.imageSize = std::stoi(value["ImageSize"].asString());
-			if(!value["Region"].isNull())
-				imagesObject.region = value["Region"].asString();
-			if(!value["IsDefault"].isNull())
-				imagesObject.isDefault = value["IsDefault"].asString() == "true";
-			if(!value["SupportIO"].isNull())
-				imagesObject.supportIO = value["SupportIO"].asString() == "true";
-			auto allDiskDeviceMappings = value["DiskDeviceMappings"]["DiskDeviceMapping"];
-			for (auto value : allDiskDeviceMappings)
+			if(!allResultNodeImagesImage["Version"].isNull())
+				imagesObject.version = allResultNodeImagesImage["Version"].asString();
+			if(!allResultNodeImagesImage["VersionDescription"].isNull())
+				imagesObject.versionDescription = allResultNodeImagesImage["VersionDescription"].asString();
+			if(!allResultNodeImagesImage["ImageId"].isNull())
+				imagesObject.imageId = allResultNodeImagesImage["ImageId"].asString();
+			if(!allResultNodeImagesImage["ImageSize"].isNull())
+				imagesObject.imageSize = std::stoi(allResultNodeImagesImage["ImageSize"].asString());
+			if(!allResultNodeImagesImage["Region"].isNull())
+				imagesObject.region = allResultNodeImagesImage["Region"].asString();
+			if(!allResultNodeImagesImage["IsDefault"].isNull())
+				imagesObject.isDefault = allResultNodeImagesImage["IsDefault"].asString() == "true";
+			if(!allResultNodeImagesImage["SupportIO"].isNull())
+				imagesObject.supportIO = allResultNodeImagesImage["SupportIO"].asString() == "true";
+			auto allDiskDeviceMappingsNode = allImagesNode["DiskDeviceMappings"]["DiskDeviceMapping"];
+			for (auto allImagesNodeDiskDeviceMappingsDiskDeviceMapping : allDiskDeviceMappingsNode)
 			{
 				ImageProduct::Image::DiskDeviceMapping diskDeviceMappingsObject;
-				if(!value["DiskType"].isNull())
-					diskDeviceMappingsObject.diskType = value["DiskType"].asString();
-				if(!value["Format"].isNull())
-					diskDeviceMappingsObject.format = value["Format"].asString();
-				if(!value["SnapshotId"].isNull())
-					diskDeviceMappingsObject.snapshotId = value["SnapshotId"].asString();
-				if(!value["Size"].isNull())
-					diskDeviceMappingsObject.size = std::stoi(value["Size"].asString());
-				if(!value["Device"].isNull())
-					diskDeviceMappingsObject.device = value["Device"].asString();
-				if(!value["ImportOSSBucket"].isNull())
-					diskDeviceMappingsObject.importOSSBucket = value["ImportOSSBucket"].asString();
-				if(!value["ImportOSSObject"].isNull())
-					diskDeviceMappingsObject.importOSSObject = value["ImportOSSObject"].asString();
+				if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["DiskType"].isNull())
+					diskDeviceMappingsObject.diskType = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["DiskType"].asString();
+				if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Format"].isNull())
+					diskDeviceMappingsObject.format = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Format"].asString();
+				if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["SnapshotId"].isNull())
+					diskDeviceMappingsObject.snapshotId = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["SnapshotId"].asString();
+				if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Size"].isNull())
+					diskDeviceMappingsObject.size = std::stoi(allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Size"].asString());
+				if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Device"].isNull())
+					diskDeviceMappingsObject.device = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Device"].asString();
+				if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSBucket"].isNull())
+					diskDeviceMappingsObject.importOSSBucket = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSBucket"].asString();
+				if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSObject"].isNull())
+					diskDeviceMappingsObject.importOSSObject = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSObject"].asString();
 				imagesObject.diskDeviceMappings.push_back(diskDeviceMappingsObject);
 			}
 			resultObject.images.push_back(imagesObject);
@@ -127,16 +127,16 @@ void QueryMarketImagesResult::parse(const std::string &payload)
 		if(!quotaNode["UnusedQuota"].isNull())
 			resultObject.quota.unusedQuota = std::stol(quotaNode["UnusedQuota"].asString());
 		auto priceInfoNode = value["PriceInfo"];
-		auto allRules = value["Rules"]["Rule"];
-		for (auto value : allRules)
+		auto allRulesNode = priceInfoNode["Rules"]["Rule"];
+		for (auto priceInfoNodeRulesRule : allRulesNode)
 		{
 			ImageProduct::PriceInfo::Rule ruleObject;
-			if(!value["RuleId"].isNull())
-				ruleObject.ruleId = std::stol(value["RuleId"].asString());
-			if(!value["Title"].isNull())
-				ruleObject.title = value["Title"].asString();
-			if(!value["Name"].isNull())
-				ruleObject.name = value["Name"].asString();
+			if(!priceInfoNodeRulesRule["RuleId"].isNull())
+				ruleObject.ruleId = std::stol(priceInfoNodeRulesRule["RuleId"].asString());
+			if(!priceInfoNodeRulesRule["Title"].isNull())
+				ruleObject.title = priceInfoNodeRulesRule["Title"].asString();
+			if(!priceInfoNodeRulesRule["Name"].isNull())
+				ruleObject.name = priceInfoNodeRulesRule["Name"].asString();
 			resultObject.priceInfo.rules.push_back(ruleObject);
 		}
 		auto orderNode = priceInfoNode["Order"];

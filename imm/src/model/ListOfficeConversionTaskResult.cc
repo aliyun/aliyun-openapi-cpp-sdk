@@ -39,36 +39,36 @@ void ListOfficeConversionTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTasks = value["Tasks"]["TasksItem"];
-	for (auto value : allTasks)
+	auto allTasksNode = value["Tasks"]["TasksItem"];
+	for (auto valueTasksTasksItem : allTasksNode)
 	{
 		TasksItem tasksObject;
-		if(!value["TaskId"].isNull())
-			tasksObject.taskId = value["TaskId"].asString();
-		if(!value["Status"].isNull())
-			tasksObject.status = value["Status"].asString();
-		if(!value["Percent"].isNull())
-			tasksObject.percent = std::stoi(value["Percent"].asString());
-		if(!value["PageCount"].isNull())
-			tasksObject.pageCount = std::stoi(value["PageCount"].asString());
-		if(!value["SrcUri"].isNull())
-			tasksObject.srcUri = value["SrcUri"].asString();
-		if(!value["TgtType"].isNull())
-			tasksObject.tgtType = value["TgtType"].asString();
-		if(!value["TgtUri"].isNull())
-			tasksObject.tgtUri = value["TgtUri"].asString();
-		if(!value["ImageSpec"].isNull())
-			tasksObject.imageSpec = value["ImageSpec"].asString();
-		if(!value["NotifyTopicName"].isNull())
-			tasksObject.notifyTopicName = value["NotifyTopicName"].asString();
-		if(!value["NotifyEndpoint"].isNull())
-			tasksObject.notifyEndpoint = value["NotifyEndpoint"].asString();
-		if(!value["ExternalID"].isNull())
-			tasksObject.externalID = value["ExternalID"].asString();
-		if(!value["CreateTime"].isNull())
-			tasksObject.createTime = value["CreateTime"].asString();
-		if(!value["FinishTime"].isNull())
-			tasksObject.finishTime = value["FinishTime"].asString();
+		if(!valueTasksTasksItem["TaskId"].isNull())
+			tasksObject.taskId = valueTasksTasksItem["TaskId"].asString();
+		if(!valueTasksTasksItem["Status"].isNull())
+			tasksObject.status = valueTasksTasksItem["Status"].asString();
+		if(!valueTasksTasksItem["Percent"].isNull())
+			tasksObject.percent = std::stoi(valueTasksTasksItem["Percent"].asString());
+		if(!valueTasksTasksItem["PageCount"].isNull())
+			tasksObject.pageCount = std::stoi(valueTasksTasksItem["PageCount"].asString());
+		if(!valueTasksTasksItem["SrcUri"].isNull())
+			tasksObject.srcUri = valueTasksTasksItem["SrcUri"].asString();
+		if(!valueTasksTasksItem["TgtType"].isNull())
+			tasksObject.tgtType = valueTasksTasksItem["TgtType"].asString();
+		if(!valueTasksTasksItem["TgtUri"].isNull())
+			tasksObject.tgtUri = valueTasksTasksItem["TgtUri"].asString();
+		if(!valueTasksTasksItem["ImageSpec"].isNull())
+			tasksObject.imageSpec = valueTasksTasksItem["ImageSpec"].asString();
+		if(!valueTasksTasksItem["NotifyTopicName"].isNull())
+			tasksObject.notifyTopicName = valueTasksTasksItem["NotifyTopicName"].asString();
+		if(!valueTasksTasksItem["NotifyEndpoint"].isNull())
+			tasksObject.notifyEndpoint = valueTasksTasksItem["NotifyEndpoint"].asString();
+		if(!valueTasksTasksItem["ExternalID"].isNull())
+			tasksObject.externalID = valueTasksTasksItem["ExternalID"].asString();
+		if(!valueTasksTasksItem["CreateTime"].isNull())
+			tasksObject.createTime = valueTasksTasksItem["CreateTime"].asString();
+		if(!valueTasksTasksItem["FinishTime"].isNull())
+			tasksObject.finishTime = valueTasksTasksItem["FinishTime"].asString();
 		tasks_.push_back(tasksObject);
 	}
 	if(!value["NextMarker"].isNull())

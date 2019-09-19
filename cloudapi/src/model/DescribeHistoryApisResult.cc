@@ -39,30 +39,30 @@ void DescribeHistoryApisResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allApiHisItems = value["ApiHisItems"]["ApiHisItem"];
-	for (auto value : allApiHisItems)
+	auto allApiHisItemsNode = value["ApiHisItems"]["ApiHisItem"];
+	for (auto valueApiHisItemsApiHisItem : allApiHisItemsNode)
 	{
 		ApiHisItem apiHisItemsObject;
-		if(!value["RegionId"].isNull())
-			apiHisItemsObject.regionId = value["RegionId"].asString();
-		if(!value["ApiId"].isNull())
-			apiHisItemsObject.apiId = value["ApiId"].asString();
-		if(!value["ApiName"].isNull())
-			apiHisItemsObject.apiName = value["ApiName"].asString();
-		if(!value["GroupId"].isNull())
-			apiHisItemsObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			apiHisItemsObject.groupName = value["GroupName"].asString();
-		if(!value["StageName"].isNull())
-			apiHisItemsObject.stageName = value["StageName"].asString();
-		if(!value["HistoryVersion"].isNull())
-			apiHisItemsObject.historyVersion = value["HistoryVersion"].asString();
-		if(!value["Status"].isNull())
-			apiHisItemsObject.status = value["Status"].asString();
-		if(!value["Description"].isNull())
-			apiHisItemsObject.description = value["Description"].asString();
-		if(!value["DeployedTime"].isNull())
-			apiHisItemsObject.deployedTime = value["DeployedTime"].asString();
+		if(!valueApiHisItemsApiHisItem["RegionId"].isNull())
+			apiHisItemsObject.regionId = valueApiHisItemsApiHisItem["RegionId"].asString();
+		if(!valueApiHisItemsApiHisItem["ApiId"].isNull())
+			apiHisItemsObject.apiId = valueApiHisItemsApiHisItem["ApiId"].asString();
+		if(!valueApiHisItemsApiHisItem["ApiName"].isNull())
+			apiHisItemsObject.apiName = valueApiHisItemsApiHisItem["ApiName"].asString();
+		if(!valueApiHisItemsApiHisItem["GroupId"].isNull())
+			apiHisItemsObject.groupId = valueApiHisItemsApiHisItem["GroupId"].asString();
+		if(!valueApiHisItemsApiHisItem["GroupName"].isNull())
+			apiHisItemsObject.groupName = valueApiHisItemsApiHisItem["GroupName"].asString();
+		if(!valueApiHisItemsApiHisItem["StageName"].isNull())
+			apiHisItemsObject.stageName = valueApiHisItemsApiHisItem["StageName"].asString();
+		if(!valueApiHisItemsApiHisItem["HistoryVersion"].isNull())
+			apiHisItemsObject.historyVersion = valueApiHisItemsApiHisItem["HistoryVersion"].asString();
+		if(!valueApiHisItemsApiHisItem["Status"].isNull())
+			apiHisItemsObject.status = valueApiHisItemsApiHisItem["Status"].asString();
+		if(!valueApiHisItemsApiHisItem["Description"].isNull())
+			apiHisItemsObject.description = valueApiHisItemsApiHisItem["Description"].asString();
+		if(!valueApiHisItemsApiHisItem["DeployedTime"].isNull())
+			apiHisItemsObject.deployedTime = valueApiHisItemsApiHisItem["DeployedTime"].asString();
 		apiHisItems_.push_back(apiHisItemsObject);
 	}
 	if(!value["TotalCount"].isNull())

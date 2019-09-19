@@ -60,18 +60,18 @@ void RequestLoginInfoResult::parse(const std::string &payload)
 		loginInfo_.signature = loginInfoNode["Signature"].asString();
 	if(!loginInfoNode["SignData"].isNull())
 		loginInfo_.signData = loginInfoNode["SignData"].asString();
-	auto allRoles = value["Roles"]["Role"];
-	for (auto value : allRoles)
+	auto allRolesNode = loginInfoNode["Roles"]["Role"];
+	for (auto loginInfoNodeRolesRole : allRolesNode)
 	{
 		LoginInfo::Role roleObject;
-		if(!value["RoleId"].isNull())
-			roleObject.roleId = value["RoleId"].asString();
-		if(!value["InstanceId"].isNull())
-			roleObject.instanceId = value["InstanceId"].asString();
-		if(!value["RoleName"].isNull())
-			roleObject.roleName = value["RoleName"].asString();
-		if(!value["RoleDescription"].isNull())
-			roleObject.roleDescription = value["RoleDescription"].asString();
+		if(!loginInfoNodeRolesRole["RoleId"].isNull())
+			roleObject.roleId = loginInfoNodeRolesRole["RoleId"].asString();
+		if(!loginInfoNodeRolesRole["InstanceId"].isNull())
+			roleObject.instanceId = loginInfoNodeRolesRole["InstanceId"].asString();
+		if(!loginInfoNodeRolesRole["RoleName"].isNull())
+			roleObject.roleName = loginInfoNodeRolesRole["RoleName"].asString();
+		if(!loginInfoNodeRolesRole["RoleDescription"].isNull())
+			roleObject.roleDescription = loginInfoNodeRolesRole["RoleDescription"].asString();
 		loginInfo_.roles.push_back(roleObject);
 	}
 	if(!value["Success"].isNull())

@@ -39,20 +39,20 @@ void DescribeAppAttributesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allApps = value["Apps"]["AppAttribute"];
-	for (auto value : allApps)
+	auto allAppsNode = value["Apps"]["AppAttribute"];
+	for (auto valueAppsAppAttribute : allAppsNode)
 	{
 		AppAttribute appsObject;
-		if(!value["AppId"].isNull())
-			appsObject.appId = std::stol(value["AppId"].asString());
-		if(!value["AppName"].isNull())
-			appsObject.appName = value["AppName"].asString();
-		if(!value["Description"].isNull())
-			appsObject.description = value["Description"].asString();
-		if(!value["CreatedTime"].isNull())
-			appsObject.createdTime = value["CreatedTime"].asString();
-		if(!value["ModifiedTime"].isNull())
-			appsObject.modifiedTime = value["ModifiedTime"].asString();
+		if(!valueAppsAppAttribute["AppId"].isNull())
+			appsObject.appId = std::stol(valueAppsAppAttribute["AppId"].asString());
+		if(!valueAppsAppAttribute["AppName"].isNull())
+			appsObject.appName = valueAppsAppAttribute["AppName"].asString();
+		if(!valueAppsAppAttribute["Description"].isNull())
+			appsObject.description = valueAppsAppAttribute["Description"].asString();
+		if(!valueAppsAppAttribute["CreatedTime"].isNull())
+			appsObject.createdTime = valueAppsAppAttribute["CreatedTime"].asString();
+		if(!valueAppsAppAttribute["ModifiedTime"].isNull())
+			appsObject.modifiedTime = valueAppsAppAttribute["ModifiedTime"].asString();
 		apps_.push_back(appsObject);
 	}
 	if(!value["TotalCount"].isNull())

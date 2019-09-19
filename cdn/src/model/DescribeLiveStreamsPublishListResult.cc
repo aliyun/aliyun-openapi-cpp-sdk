@@ -39,28 +39,28 @@ void DescribeLiveStreamsPublishListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPublishInfo = value["PublishInfo"]["LiveStreamPublishInfo"];
-	for (auto value : allPublishInfo)
+	auto allPublishInfoNode = value["PublishInfo"]["LiveStreamPublishInfo"];
+	for (auto valuePublishInfoLiveStreamPublishInfo : allPublishInfoNode)
 	{
 		LiveStreamPublishInfo publishInfoObject;
-		if(!value["DomainName"].isNull())
-			publishInfoObject.domainName = value["DomainName"].asString();
-		if(!value["AppName"].isNull())
-			publishInfoObject.appName = value["AppName"].asString();
-		if(!value["StreamName"].isNull())
-			publishInfoObject.streamName = value["StreamName"].asString();
-		if(!value["StreamUrl"].isNull())
-			publishInfoObject.streamUrl = value["StreamUrl"].asString();
-		if(!value["PublishTime"].isNull())
-			publishInfoObject.publishTime = value["PublishTime"].asString();
-		if(!value["StopTime"].isNull())
-			publishInfoObject.stopTime = value["StopTime"].asString();
-		if(!value["PublishUrl"].isNull())
-			publishInfoObject.publishUrl = value["PublishUrl"].asString();
-		if(!value["ClientAddr"].isNull())
-			publishInfoObject.clientAddr = value["ClientAddr"].asString();
-		if(!value["EdgeNodeAddr"].isNull())
-			publishInfoObject.edgeNodeAddr = value["EdgeNodeAddr"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["DomainName"].isNull())
+			publishInfoObject.domainName = valuePublishInfoLiveStreamPublishInfo["DomainName"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["AppName"].isNull())
+			publishInfoObject.appName = valuePublishInfoLiveStreamPublishInfo["AppName"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["StreamName"].isNull())
+			publishInfoObject.streamName = valuePublishInfoLiveStreamPublishInfo["StreamName"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["StreamUrl"].isNull())
+			publishInfoObject.streamUrl = valuePublishInfoLiveStreamPublishInfo["StreamUrl"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["PublishTime"].isNull())
+			publishInfoObject.publishTime = valuePublishInfoLiveStreamPublishInfo["PublishTime"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["StopTime"].isNull())
+			publishInfoObject.stopTime = valuePublishInfoLiveStreamPublishInfo["StopTime"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["PublishUrl"].isNull())
+			publishInfoObject.publishUrl = valuePublishInfoLiveStreamPublishInfo["PublishUrl"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["ClientAddr"].isNull())
+			publishInfoObject.clientAddr = valuePublishInfoLiveStreamPublishInfo["ClientAddr"].asString();
+		if(!valuePublishInfoLiveStreamPublishInfo["EdgeNodeAddr"].isNull())
+			publishInfoObject.edgeNodeAddr = valuePublishInfoLiveStreamPublishInfo["EdgeNodeAddr"].asString();
 		publishInfo_.push_back(publishInfoObject);
 	}
 

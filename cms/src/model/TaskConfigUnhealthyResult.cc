@@ -39,12 +39,12 @@ void TaskConfigUnhealthyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUnhealthyList = value["UnhealthyList"]["NodeTaskInstance"];
-	for (auto value : allUnhealthyList)
+	auto allUnhealthyListNode = value["UnhealthyList"]["NodeTaskInstance"];
+	for (auto valueUnhealthyListNodeTaskInstance : allUnhealthyListNode)
 	{
 		NodeTaskInstance unhealthyListObject;
-		if(!value["TaskId"].isNull())
-			unhealthyListObject.taskId = std::stol(value["TaskId"].asString());
+		if(!valueUnhealthyListNodeTaskInstance["TaskId"].isNull())
+			unhealthyListObject.taskId = std::stol(valueUnhealthyListNodeTaskInstance["TaskId"].asString());
 		auto allInstanceList = value["InstanceList"]["String"];
 		for (auto value : allInstanceList)
 			unhealthyListObject.instanceList.push_back(value.asString());

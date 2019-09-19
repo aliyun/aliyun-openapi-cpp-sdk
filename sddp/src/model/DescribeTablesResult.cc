@@ -39,38 +39,38 @@ void DescribeTablesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Table"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Table"];
+	for (auto valueItemsTable : allItemsNode)
 	{
 		Table itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
-		if(!value["Owner"].isNull())
-			itemsObject.owner = value["Owner"].asString();
-		if(!value["CreationTime"].isNull())
-			itemsObject.creationTime = std::stol(value["CreationTime"].asString());
-		if(!value["ProductId"].isNull())
-			itemsObject.productId = value["ProductId"].asString();
-		if(!value["ProductCode"].isNull())
-			itemsObject.productCode = value["ProductCode"].asString();
-		if(!value["Sensitive"].isNull())
-			itemsObject.sensitive = value["Sensitive"].asString() == "true";
-		if(!value["RiskLevelId"].isNull())
-			itemsObject.riskLevelId = std::stol(value["RiskLevelId"].asString());
-		if(!value["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = value["RiskLevelName"].asString();
-		if(!value["DepartName"].isNull())
-			itemsObject.departName = value["DepartName"].asString();
-		if(!value["TotalCount"].isNull())
-			itemsObject.totalCount = std::stoi(value["TotalCount"].asString());
-		if(!value["SensitiveCount"].isNull())
-			itemsObject.sensitiveCount = std::stoi(value["SensitiveCount"].asString());
-		if(!value["SensitiveRatio"].isNull())
-			itemsObject.sensitiveRatio = value["SensitiveRatio"].asString();
-		if(!value["InstanceId"].isNull())
-			itemsObject.instanceId = std::stol(value["InstanceId"].asString());
+		if(!valueItemsTable["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsTable["Id"].asString());
+		if(!valueItemsTable["Name"].isNull())
+			itemsObject.name = valueItemsTable["Name"].asString();
+		if(!valueItemsTable["Owner"].isNull())
+			itemsObject.owner = valueItemsTable["Owner"].asString();
+		if(!valueItemsTable["CreationTime"].isNull())
+			itemsObject.creationTime = std::stol(valueItemsTable["CreationTime"].asString());
+		if(!valueItemsTable["ProductId"].isNull())
+			itemsObject.productId = valueItemsTable["ProductId"].asString();
+		if(!valueItemsTable["ProductCode"].isNull())
+			itemsObject.productCode = valueItemsTable["ProductCode"].asString();
+		if(!valueItemsTable["Sensitive"].isNull())
+			itemsObject.sensitive = valueItemsTable["Sensitive"].asString() == "true";
+		if(!valueItemsTable["RiskLevelId"].isNull())
+			itemsObject.riskLevelId = std::stol(valueItemsTable["RiskLevelId"].asString());
+		if(!valueItemsTable["RiskLevelName"].isNull())
+			itemsObject.riskLevelName = valueItemsTable["RiskLevelName"].asString();
+		if(!valueItemsTable["DepartName"].isNull())
+			itemsObject.departName = valueItemsTable["DepartName"].asString();
+		if(!valueItemsTable["TotalCount"].isNull())
+			itemsObject.totalCount = std::stoi(valueItemsTable["TotalCount"].asString());
+		if(!valueItemsTable["SensitiveCount"].isNull())
+			itemsObject.sensitiveCount = std::stoi(valueItemsTable["SensitiveCount"].asString());
+		if(!valueItemsTable["SensitiveRatio"].isNull())
+			itemsObject.sensitiveRatio = valueItemsTable["SensitiveRatio"].asString();
+		if(!valueItemsTable["InstanceId"].isNull())
+			itemsObject.instanceId = std::stol(valueItemsTable["InstanceId"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

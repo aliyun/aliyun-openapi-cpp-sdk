@@ -46,18 +46,18 @@ void BandPrecheckResult::parse(const std::string &payload)
 		resultModule_.uploadBandwidth = std::stoi(resultModuleNode["UploadBandwidth"].asString());
 	if(!resultModuleNode["DownloadBandwidth"].isNull())
 		resultModule_.downloadBandwidth = std::stoi(resultModuleNode["DownloadBandwidth"].asString());
-	auto allBandOfferList = value["BandOfferList"]["BandOfferListItem"];
-	for (auto value : allBandOfferList)
+	auto allBandOfferListNode = resultModuleNode["BandOfferList"]["BandOfferListItem"];
+	for (auto resultModuleNodeBandOfferListBandOfferListItem : allBandOfferListNode)
 	{
 		ResultModule::BandOfferListItem bandOfferListItemObject;
-		if(!value["OfferId"].isNull())
-			bandOfferListItemObject.offerId = std::stol(value["OfferId"].asString());
-		if(!value["Bandwidth"].isNull())
-			bandOfferListItemObject.bandwidth = std::stoi(value["Bandwidth"].asString());
-		if(!value["Duration"].isNull())
-			bandOfferListItemObject.duration = std::stol(value["Duration"].asString());
-		if(!value["Direction"].isNull())
-			bandOfferListItemObject.direction = value["Direction"].asString();
+		if(!resultModuleNodeBandOfferListBandOfferListItem["OfferId"].isNull())
+			bandOfferListItemObject.offerId = std::stol(resultModuleNodeBandOfferListBandOfferListItem["OfferId"].asString());
+		if(!resultModuleNodeBandOfferListBandOfferListItem["Bandwidth"].isNull())
+			bandOfferListItemObject.bandwidth = std::stoi(resultModuleNodeBandOfferListBandOfferListItem["Bandwidth"].asString());
+		if(!resultModuleNodeBandOfferListBandOfferListItem["Duration"].isNull())
+			bandOfferListItemObject.duration = std::stol(resultModuleNodeBandOfferListBandOfferListItem["Duration"].asString());
+		if(!resultModuleNodeBandOfferListBandOfferListItem["Direction"].isNull())
+			bandOfferListItemObject.direction = resultModuleNodeBandOfferListBandOfferListItem["Direction"].asString();
 		resultModule_.bandOfferList.push_back(bandOfferListItemObject);
 	}
 	if(!value["ResultCode"].isNull())

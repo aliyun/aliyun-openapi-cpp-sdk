@@ -39,14 +39,14 @@ void DescribeLiveDomainSnapshotDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSnapshotDataInfos = value["SnapshotDataInfos"]["SnapshotDataInfo"];
-	for (auto value : allSnapshotDataInfos)
+	auto allSnapshotDataInfosNode = value["SnapshotDataInfos"]["SnapshotDataInfo"];
+	for (auto valueSnapshotDataInfosSnapshotDataInfo : allSnapshotDataInfosNode)
 	{
 		SnapshotDataInfo snapshotDataInfosObject;
-		if(!value["Date"].isNull())
-			snapshotDataInfosObject.date = value["Date"].asString();
-		if(!value["Total"].isNull())
-			snapshotDataInfosObject.total = std::stoi(value["Total"].asString());
+		if(!valueSnapshotDataInfosSnapshotDataInfo["Date"].isNull())
+			snapshotDataInfosObject.date = valueSnapshotDataInfosSnapshotDataInfo["Date"].asString();
+		if(!valueSnapshotDataInfosSnapshotDataInfo["Total"].isNull())
+			snapshotDataInfosObject.total = std::stoi(valueSnapshotDataInfosSnapshotDataInfo["Total"].asString());
 		snapshotDataInfos_.push_back(snapshotDataInfosObject);
 	}
 

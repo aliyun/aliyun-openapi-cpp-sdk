@@ -39,28 +39,28 @@ void DescribeDeploymentSetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDeploymentSets = value["DeploymentSets"]["DeploymentSet"];
-	for (auto value : allDeploymentSets)
+	auto allDeploymentSetsNode = value["DeploymentSets"]["DeploymentSet"];
+	for (auto valueDeploymentSetsDeploymentSet : allDeploymentSetsNode)
 	{
 		DeploymentSet deploymentSetsObject;
-		if(!value["DeploymentSetId"].isNull())
-			deploymentSetsObject.deploymentSetId = value["DeploymentSetId"].asString();
-		if(!value["DeploymentSetDescription"].isNull())
-			deploymentSetsObject.deploymentSetDescription = value["DeploymentSetDescription"].asString();
-		if(!value["DeploymentSetName"].isNull())
-			deploymentSetsObject.deploymentSetName = value["DeploymentSetName"].asString();
-		if(!value["Strategy"].isNull())
-			deploymentSetsObject.strategy = value["Strategy"].asString();
-		if(!value["DeploymentStrategy"].isNull())
-			deploymentSetsObject.deploymentStrategy = value["DeploymentStrategy"].asString();
-		if(!value["Domain"].isNull())
-			deploymentSetsObject.domain = value["Domain"].asString();
-		if(!value["Granularity"].isNull())
-			deploymentSetsObject.granularity = value["Granularity"].asString();
-		if(!value["InstanceAmount"].isNull())
-			deploymentSetsObject.instanceAmount = std::stoi(value["InstanceAmount"].asString());
-		if(!value["CreationTime"].isNull())
-			deploymentSetsObject.creationTime = value["CreationTime"].asString();
+		if(!valueDeploymentSetsDeploymentSet["DeploymentSetId"].isNull())
+			deploymentSetsObject.deploymentSetId = valueDeploymentSetsDeploymentSet["DeploymentSetId"].asString();
+		if(!valueDeploymentSetsDeploymentSet["DeploymentSetDescription"].isNull())
+			deploymentSetsObject.deploymentSetDescription = valueDeploymentSetsDeploymentSet["DeploymentSetDescription"].asString();
+		if(!valueDeploymentSetsDeploymentSet["DeploymentSetName"].isNull())
+			deploymentSetsObject.deploymentSetName = valueDeploymentSetsDeploymentSet["DeploymentSetName"].asString();
+		if(!valueDeploymentSetsDeploymentSet["Strategy"].isNull())
+			deploymentSetsObject.strategy = valueDeploymentSetsDeploymentSet["Strategy"].asString();
+		if(!valueDeploymentSetsDeploymentSet["DeploymentStrategy"].isNull())
+			deploymentSetsObject.deploymentStrategy = valueDeploymentSetsDeploymentSet["DeploymentStrategy"].asString();
+		if(!valueDeploymentSetsDeploymentSet["Domain"].isNull())
+			deploymentSetsObject.domain = valueDeploymentSetsDeploymentSet["Domain"].asString();
+		if(!valueDeploymentSetsDeploymentSet["Granularity"].isNull())
+			deploymentSetsObject.granularity = valueDeploymentSetsDeploymentSet["Granularity"].asString();
+		if(!valueDeploymentSetsDeploymentSet["InstanceAmount"].isNull())
+			deploymentSetsObject.instanceAmount = std::stoi(valueDeploymentSetsDeploymentSet["InstanceAmount"].asString());
+		if(!valueDeploymentSetsDeploymentSet["CreationTime"].isNull())
+			deploymentSetsObject.creationTime = valueDeploymentSetsDeploymentSet["CreationTime"].asString();
 		auto allInstanceIds = value["InstanceIds"]["InstanceId"];
 		for (auto value : allInstanceIds)
 			deploymentSetsObject.instanceIds.push_back(value.asString());

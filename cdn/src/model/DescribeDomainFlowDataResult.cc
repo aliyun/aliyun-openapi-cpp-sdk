@@ -39,30 +39,30 @@ void DescribeDomainFlowDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFlowDataPerInterval = value["FlowDataPerInterval"]["DataModule"];
-	for (auto value : allFlowDataPerInterval)
+	auto allFlowDataPerIntervalNode = value["FlowDataPerInterval"]["DataModule"];
+	for (auto valueFlowDataPerIntervalDataModule : allFlowDataPerIntervalNode)
 	{
 		DataModule flowDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			flowDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			flowDataPerIntervalObject.value = value["Value"].asString();
-		if(!value["DomesticValue"].isNull())
-			flowDataPerIntervalObject.domesticValue = value["DomesticValue"].asString();
-		if(!value["OverseasValue"].isNull())
-			flowDataPerIntervalObject.overseasValue = value["OverseasValue"].asString();
-		if(!value["DynamicValue"].isNull())
-			flowDataPerIntervalObject.dynamicValue = value["DynamicValue"].asString();
-		if(!value["DynamicDomesticValue"].isNull())
-			flowDataPerIntervalObject.dynamicDomesticValue = value["DynamicDomesticValue"].asString();
-		if(!value["DynamicOverseasValue"].isNull())
-			flowDataPerIntervalObject.dynamicOverseasValue = value["DynamicOverseasValue"].asString();
-		if(!value["StaticValue"].isNull())
-			flowDataPerIntervalObject.staticValue = value["StaticValue"].asString();
-		if(!value["StaticDomesticValue"].isNull())
-			flowDataPerIntervalObject.staticDomesticValue = value["StaticDomesticValue"].asString();
-		if(!value["StaticOverseasValue"].isNull())
-			flowDataPerIntervalObject.staticOverseasValue = value["StaticOverseasValue"].asString();
+		if(!valueFlowDataPerIntervalDataModule["TimeStamp"].isNull())
+			flowDataPerIntervalObject.timeStamp = valueFlowDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueFlowDataPerIntervalDataModule["Value"].isNull())
+			flowDataPerIntervalObject.value = valueFlowDataPerIntervalDataModule["Value"].asString();
+		if(!valueFlowDataPerIntervalDataModule["DomesticValue"].isNull())
+			flowDataPerIntervalObject.domesticValue = valueFlowDataPerIntervalDataModule["DomesticValue"].asString();
+		if(!valueFlowDataPerIntervalDataModule["OverseasValue"].isNull())
+			flowDataPerIntervalObject.overseasValue = valueFlowDataPerIntervalDataModule["OverseasValue"].asString();
+		if(!valueFlowDataPerIntervalDataModule["DynamicValue"].isNull())
+			flowDataPerIntervalObject.dynamicValue = valueFlowDataPerIntervalDataModule["DynamicValue"].asString();
+		if(!valueFlowDataPerIntervalDataModule["DynamicDomesticValue"].isNull())
+			flowDataPerIntervalObject.dynamicDomesticValue = valueFlowDataPerIntervalDataModule["DynamicDomesticValue"].asString();
+		if(!valueFlowDataPerIntervalDataModule["DynamicOverseasValue"].isNull())
+			flowDataPerIntervalObject.dynamicOverseasValue = valueFlowDataPerIntervalDataModule["DynamicOverseasValue"].asString();
+		if(!valueFlowDataPerIntervalDataModule["StaticValue"].isNull())
+			flowDataPerIntervalObject.staticValue = valueFlowDataPerIntervalDataModule["StaticValue"].asString();
+		if(!valueFlowDataPerIntervalDataModule["StaticDomesticValue"].isNull())
+			flowDataPerIntervalObject.staticDomesticValue = valueFlowDataPerIntervalDataModule["StaticDomesticValue"].asString();
+		if(!valueFlowDataPerIntervalDataModule["StaticOverseasValue"].isNull())
+			flowDataPerIntervalObject.staticOverseasValue = valueFlowDataPerIntervalDataModule["StaticOverseasValue"].asString();
 		flowDataPerInterval_.push_back(flowDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

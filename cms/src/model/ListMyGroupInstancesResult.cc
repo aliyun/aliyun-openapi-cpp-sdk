@@ -39,22 +39,22 @@ void ListMyGroupInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResources = value["Resources"]["Resource"];
-	for (auto value : allResources)
+	auto allResourcesNode = value["Resources"]["Resource"];
+	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!value["Id"].isNull())
-			resourcesObject.id = std::stol(value["Id"].asString());
-		if(!value["AliUid"].isNull())
-			resourcesObject.aliUid = std::stol(value["AliUid"].asString());
-		if(!value["RegionId"].isNull())
-			resourcesObject.regionId = value["RegionId"].asString();
-		if(!value["InstanceId"].isNull())
-			resourcesObject.instanceId = value["InstanceId"].asString();
-		if(!value["Category"].isNull())
-			resourcesObject.category = value["Category"].asString();
-		if(!value["InstanceName"].isNull())
-			resourcesObject.instanceName = value["InstanceName"].asString();
+		if(!valueResourcesResource["Id"].isNull())
+			resourcesObject.id = std::stol(valueResourcesResource["Id"].asString());
+		if(!valueResourcesResource["AliUid"].isNull())
+			resourcesObject.aliUid = std::stol(valueResourcesResource["AliUid"].asString());
+		if(!valueResourcesResource["RegionId"].isNull())
+			resourcesObject.regionId = valueResourcesResource["RegionId"].asString();
+		if(!valueResourcesResource["InstanceId"].isNull())
+			resourcesObject.instanceId = valueResourcesResource["InstanceId"].asString();
+		if(!valueResourcesResource["Category"].isNull())
+			resourcesObject.category = valueResourcesResource["Category"].asString();
+		if(!valueResourcesResource["InstanceName"].isNull())
+			resourcesObject.instanceName = valueResourcesResource["InstanceName"].asString();
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["Success"].isNull())

@@ -39,20 +39,20 @@ void DescribeDiagnosticReportListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allReportList = value["ReportList"]["Report"];
-	for (auto value : allReportList)
+	auto allReportListNode = value["ReportList"]["Report"];
+	for (auto valueReportListReport : allReportListNode)
 	{
 		Report reportListObject;
-		if(!value["DiagnosticTime"].isNull())
-			reportListObject.diagnosticTime = value["DiagnosticTime"].asString();
-		if(!value["Score"].isNull())
-			reportListObject.score = std::stoi(value["Score"].asString());
-		if(!value["StartTime"].isNull())
-			reportListObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			reportListObject.endTime = value["EndTime"].asString();
-		if(!value["DownloadURL"].isNull())
-			reportListObject.downloadURL = value["DownloadURL"].asString();
+		if(!valueReportListReport["DiagnosticTime"].isNull())
+			reportListObject.diagnosticTime = valueReportListReport["DiagnosticTime"].asString();
+		if(!valueReportListReport["Score"].isNull())
+			reportListObject.score = std::stoi(valueReportListReport["Score"].asString());
+		if(!valueReportListReport["StartTime"].isNull())
+			reportListObject.startTime = valueReportListReport["StartTime"].asString();
+		if(!valueReportListReport["EndTime"].isNull())
+			reportListObject.endTime = valueReportListReport["EndTime"].asString();
+		if(!valueReportListReport["DownloadURL"].isNull())
+			reportListObject.downloadURL = valueReportListReport["DownloadURL"].asString();
 		reportList_.push_back(reportListObject);
 	}
 

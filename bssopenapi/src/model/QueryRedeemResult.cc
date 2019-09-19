@@ -46,30 +46,30 @@ void QueryRedeemResult::parse(const std::string &payload)
 		data_.pageSize = std::stol(dataNode["PageSize"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
-	auto allRedeem = value["Redeem"]["RedeemItem"];
-	for (auto value : allRedeem)
+	auto allRedeemNode = dataNode["Redeem"]["RedeemItem"];
+	for (auto dataNodeRedeemRedeemItem : allRedeemNode)
 	{
 		Data::RedeemItem redeemItemObject;
-		if(!value["RedeemId"].isNull())
-			redeemItemObject.redeemId = value["RedeemId"].asString();
-		if(!value["RedeemNo"].isNull())
-			redeemItemObject.redeemNo = value["RedeemNo"].asString();
-		if(!value["Status"].isNull())
-			redeemItemObject.status = value["Status"].asString();
-		if(!value["GrantedTime"].isNull())
-			redeemItemObject.grantedTime = value["GrantedTime"].asString();
-		if(!value["EffectiveTime"].isNull())
-			redeemItemObject.effectiveTime = value["EffectiveTime"].asString();
-		if(!value["ExpiryTime"].isNull())
-			redeemItemObject.expiryTime = value["ExpiryTime"].asString();
-		if(!value["NominalValue"].isNull())
-			redeemItemObject.nominalValue = value["NominalValue"].asString();
-		if(!value["Balance"].isNull())
-			redeemItemObject.balance = value["Balance"].asString();
-		if(!value["ApplicableProducts"].isNull())
-			redeemItemObject.applicableProducts = value["ApplicableProducts"].asString();
-		if(!value["Specification"].isNull())
-			redeemItemObject.specification = value["Specification"].asString();
+		if(!dataNodeRedeemRedeemItem["RedeemId"].isNull())
+			redeemItemObject.redeemId = dataNodeRedeemRedeemItem["RedeemId"].asString();
+		if(!dataNodeRedeemRedeemItem["RedeemNo"].isNull())
+			redeemItemObject.redeemNo = dataNodeRedeemRedeemItem["RedeemNo"].asString();
+		if(!dataNodeRedeemRedeemItem["Status"].isNull())
+			redeemItemObject.status = dataNodeRedeemRedeemItem["Status"].asString();
+		if(!dataNodeRedeemRedeemItem["GrantedTime"].isNull())
+			redeemItemObject.grantedTime = dataNodeRedeemRedeemItem["GrantedTime"].asString();
+		if(!dataNodeRedeemRedeemItem["EffectiveTime"].isNull())
+			redeemItemObject.effectiveTime = dataNodeRedeemRedeemItem["EffectiveTime"].asString();
+		if(!dataNodeRedeemRedeemItem["ExpiryTime"].isNull())
+			redeemItemObject.expiryTime = dataNodeRedeemRedeemItem["ExpiryTime"].asString();
+		if(!dataNodeRedeemRedeemItem["NominalValue"].isNull())
+			redeemItemObject.nominalValue = dataNodeRedeemRedeemItem["NominalValue"].asString();
+		if(!dataNodeRedeemRedeemItem["Balance"].isNull())
+			redeemItemObject.balance = dataNodeRedeemRedeemItem["Balance"].asString();
+		if(!dataNodeRedeemRedeemItem["ApplicableProducts"].isNull())
+			redeemItemObject.applicableProducts = dataNodeRedeemRedeemItem["ApplicableProducts"].asString();
+		if(!dataNodeRedeemRedeemItem["Specification"].isNull())
+			redeemItemObject.specification = dataNodeRedeemRedeemItem["Specification"].asString();
 		data_.redeem.push_back(redeemItemObject);
 	}
 	if(!value["Success"].isNull())

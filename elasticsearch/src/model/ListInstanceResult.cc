@@ -39,30 +39,30 @@ void ListInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"]["Instance"];
-	for (auto value : allResult)
+	auto allResultNode = value["Result"]["Instance"];
+	for (auto valueResultInstance : allResultNode)
 	{
 		Instance resultObject;
-		if(!value["instanceId"].isNull())
-			resultObject.instanceId = value["instanceId"].asString();
-		if(!value["description"].isNull())
-			resultObject.description = value["description"].asString();
-		if(!value["nodeAmount"].isNull())
-			resultObject.nodeAmount = std::stoi(value["nodeAmount"].asString());
-		if(!value["paymentType"].isNull())
-			resultObject.paymentType = value["paymentType"].asString();
-		if(!value["status"].isNull())
-			resultObject.status = value["status"].asString();
-		if(!value["esVersion"].isNull())
-			resultObject.esVersion = value["esVersion"].asString();
-		if(!value["createdAt"].isNull())
-			resultObject.createdAt = value["createdAt"].asString();
-		if(!value["updatedAt"].isNull())
-			resultObject.updatedAt = value["updatedAt"].asString();
-		if(!value["advancedDedicateMaster"].isNull())
-			resultObject.advancedDedicateMaster = value["advancedDedicateMaster"].asString() == "true";
-		if(!value["dedicateMaster"].isNull())
-			resultObject.dedicateMaster = value["dedicateMaster"].asString() == "true";
+		if(!valueResultInstance["instanceId"].isNull())
+			resultObject.instanceId = valueResultInstance["instanceId"].asString();
+		if(!valueResultInstance["description"].isNull())
+			resultObject.description = valueResultInstance["description"].asString();
+		if(!valueResultInstance["nodeAmount"].isNull())
+			resultObject.nodeAmount = std::stoi(valueResultInstance["nodeAmount"].asString());
+		if(!valueResultInstance["paymentType"].isNull())
+			resultObject.paymentType = valueResultInstance["paymentType"].asString();
+		if(!valueResultInstance["status"].isNull())
+			resultObject.status = valueResultInstance["status"].asString();
+		if(!valueResultInstance["esVersion"].isNull())
+			resultObject.esVersion = valueResultInstance["esVersion"].asString();
+		if(!valueResultInstance["createdAt"].isNull())
+			resultObject.createdAt = valueResultInstance["createdAt"].asString();
+		if(!valueResultInstance["updatedAt"].isNull())
+			resultObject.updatedAt = valueResultInstance["updatedAt"].asString();
+		if(!valueResultInstance["advancedDedicateMaster"].isNull())
+			resultObject.advancedDedicateMaster = valueResultInstance["advancedDedicateMaster"].asString() == "true";
+		if(!valueResultInstance["dedicateMaster"].isNull())
+			resultObject.dedicateMaster = valueResultInstance["dedicateMaster"].asString() == "true";
 		auto nodeSpecNode = value["nodeSpec"];
 		if(!nodeSpecNode["spec"].isNull())
 			resultObject.nodeSpec.spec = nodeSpecNode["spec"].asString();

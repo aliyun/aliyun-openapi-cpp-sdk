@@ -39,14 +39,14 @@ void ListConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConfigItems = value["ConfigItems"]["ConfigItem"];
-	for (auto value : allConfigItems)
+	auto allConfigItemsNode = value["ConfigItems"]["ConfigItem"];
+	for (auto valueConfigItemsConfigItem : allConfigItemsNode)
 	{
 		ConfigItem configItemsObject;
-		if(!value["Name"].isNull())
-			configItemsObject.name = value["Name"].asString();
-		if(!value["Value"].isNull())
-			configItemsObject.value = value["Value"].asString();
+		if(!valueConfigItemsConfigItem["Name"].isNull())
+			configItemsObject.name = valueConfigItemsConfigItem["Name"].asString();
+		if(!valueConfigItemsConfigItem["Value"].isNull())
+			configItemsObject.value = valueConfigItemsConfigItem["Value"].asString();
 		configItems_.push_back(configItemsObject);
 	}
 	if(!value["Success"].isNull())

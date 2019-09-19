@@ -39,22 +39,22 @@ void QueryChangeLogListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["ChangeLog"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["ChangeLog"];
+	for (auto valueDataChangeLog : allDataNode)
 	{
 		ChangeLog dataObject;
-		if(!value["DomainName"].isNull())
-			dataObject.domainName = value["DomainName"].asString();
-		if(!value["Result"].isNull())
-			dataObject.result = value["Result"].asString();
-		if(!value["Operation"].isNull())
-			dataObject.operation = value["Operation"].asString();
-		if(!value["OperationIPAddress"].isNull())
-			dataObject.operationIPAddress = value["OperationIPAddress"].asString();
-		if(!value["Details"].isNull())
-			dataObject.details = value["Details"].asString();
-		if(!value["Time"].isNull())
-			dataObject.time = value["Time"].asString();
+		if(!valueDataChangeLog["DomainName"].isNull())
+			dataObject.domainName = valueDataChangeLog["DomainName"].asString();
+		if(!valueDataChangeLog["Result"].isNull())
+			dataObject.result = valueDataChangeLog["Result"].asString();
+		if(!valueDataChangeLog["Operation"].isNull())
+			dataObject.operation = valueDataChangeLog["Operation"].asString();
+		if(!valueDataChangeLog["OperationIPAddress"].isNull())
+			dataObject.operationIPAddress = valueDataChangeLog["OperationIPAddress"].asString();
+		if(!valueDataChangeLog["Details"].isNull())
+			dataObject.details = valueDataChangeLog["Details"].asString();
+		if(!valueDataChangeLog["Time"].isNull())
+			dataObject.time = valueDataChangeLog["Time"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

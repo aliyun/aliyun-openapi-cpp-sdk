@@ -39,32 +39,32 @@ void DescribeQosPoliciesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQosPolicies = value["QosPolicies"]["QosPolicy"];
-	for (auto value : allQosPolicies)
+	auto allQosPoliciesNode = value["QosPolicies"]["QosPolicy"];
+	for (auto valueQosPoliciesQosPolicy : allQosPoliciesNode)
 	{
 		QosPolicy qosPoliciesObject;
-		if(!value["QosPolicyId"].isNull())
-			qosPoliciesObject.qosPolicyId = value["QosPolicyId"].asString();
-		if(!value["QosId"].isNull())
-			qosPoliciesObject.qosId = value["QosId"].asString();
-		if(!value["Priority"].isNull())
-			qosPoliciesObject.priority = std::stoi(value["Priority"].asString());
-		if(!value["Description"].isNull())
-			qosPoliciesObject.description = value["Description"].asString();
-		if(!value["SourceCidr"].isNull())
-			qosPoliciesObject.sourceCidr = value["SourceCidr"].asString();
-		if(!value["DestCidr"].isNull())
-			qosPoliciesObject.destCidr = value["DestCidr"].asString();
-		if(!value["IpProtocol"].isNull())
-			qosPoliciesObject.ipProtocol = value["IpProtocol"].asString();
-		if(!value["SourcePortRange"].isNull())
-			qosPoliciesObject.sourcePortRange = value["SourcePortRange"].asString();
-		if(!value["DestPortRange"].isNull())
-			qosPoliciesObject.destPortRange = value["DestPortRange"].asString();
-		if(!value["StartTime"].isNull())
-			qosPoliciesObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			qosPoliciesObject.endTime = value["EndTime"].asString();
+		if(!valueQosPoliciesQosPolicy["QosPolicyId"].isNull())
+			qosPoliciesObject.qosPolicyId = valueQosPoliciesQosPolicy["QosPolicyId"].asString();
+		if(!valueQosPoliciesQosPolicy["QosId"].isNull())
+			qosPoliciesObject.qosId = valueQosPoliciesQosPolicy["QosId"].asString();
+		if(!valueQosPoliciesQosPolicy["Priority"].isNull())
+			qosPoliciesObject.priority = std::stoi(valueQosPoliciesQosPolicy["Priority"].asString());
+		if(!valueQosPoliciesQosPolicy["Description"].isNull())
+			qosPoliciesObject.description = valueQosPoliciesQosPolicy["Description"].asString();
+		if(!valueQosPoliciesQosPolicy["SourceCidr"].isNull())
+			qosPoliciesObject.sourceCidr = valueQosPoliciesQosPolicy["SourceCidr"].asString();
+		if(!valueQosPoliciesQosPolicy["DestCidr"].isNull())
+			qosPoliciesObject.destCidr = valueQosPoliciesQosPolicy["DestCidr"].asString();
+		if(!valueQosPoliciesQosPolicy["IpProtocol"].isNull())
+			qosPoliciesObject.ipProtocol = valueQosPoliciesQosPolicy["IpProtocol"].asString();
+		if(!valueQosPoliciesQosPolicy["SourcePortRange"].isNull())
+			qosPoliciesObject.sourcePortRange = valueQosPoliciesQosPolicy["SourcePortRange"].asString();
+		if(!valueQosPoliciesQosPolicy["DestPortRange"].isNull())
+			qosPoliciesObject.destPortRange = valueQosPoliciesQosPolicy["DestPortRange"].asString();
+		if(!valueQosPoliciesQosPolicy["StartTime"].isNull())
+			qosPoliciesObject.startTime = valueQosPoliciesQosPolicy["StartTime"].asString();
+		if(!valueQosPoliciesQosPolicy["EndTime"].isNull())
+			qosPoliciesObject.endTime = valueQosPoliciesQosPolicy["EndTime"].asString();
 		qosPolicies_.push_back(qosPoliciesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,14 +39,14 @@ void DescribeActiveOperationTaskRegionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegionList = value["RegionList"]["Items"];
-	for (auto value : allRegionList)
+	auto allRegionListNode = value["RegionList"]["Items"];
+	for (auto valueRegionListItems : allRegionListNode)
 	{
 		Items regionListObject;
-		if(!value["Region"].isNull())
-			regionListObject.region = value["Region"].asString();
-		if(!value["Count"].isNull())
-			regionListObject.count = std::stoi(value["Count"].asString());
+		if(!valueRegionListItems["Region"].isNull())
+			regionListObject.region = valueRegionListItems["Region"].asString();
+		if(!valueRegionListItems["Count"].isNull())
+			regionListObject.count = std::stoi(valueRegionListItems["Count"].asString());
 		regionList_.push_back(regionListObject);
 	}
 

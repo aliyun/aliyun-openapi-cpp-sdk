@@ -79,14 +79,14 @@ void CreateJobGroupResult::parse(const std::string &payload)
 		jobGroup_.strategy.followUpStrategy = strategyNode["FollowUpStrategy"].asString();
 	if(!strategyNode["IsTemplate"].isNull())
 		jobGroup_.strategy.isTemplate = strategyNode["IsTemplate"].asString() == "true";
-	auto allWorkingTime = value["WorkingTime"]["TimeFrame"];
-	for (auto value : allWorkingTime)
+	auto allWorkingTimeNode = strategyNode["WorkingTime"]["TimeFrame"];
+	for (auto strategyNodeWorkingTimeTimeFrame : allWorkingTimeNode)
 	{
 		JobGroup::Strategy::TimeFrame timeFrameObject;
-		if(!value["From"].isNull())
-			timeFrameObject.from = value["From"].asString();
-		if(!value["To"].isNull())
-			timeFrameObject.to = value["To"].asString();
+		if(!strategyNodeWorkingTimeTimeFrame["From"].isNull())
+			timeFrameObject.from = strategyNodeWorkingTimeTimeFrame["From"].asString();
+		if(!strategyNodeWorkingTimeTimeFrame["To"].isNull())
+			timeFrameObject.to = strategyNodeWorkingTimeTimeFrame["To"].asString();
 		jobGroup_.strategy.workingTime.push_back(timeFrameObject);
 	}
 		auto allRepeatDays = strategyNode["RepeatDays"]["Integer"];

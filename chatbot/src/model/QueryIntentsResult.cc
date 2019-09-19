@@ -39,54 +39,54 @@ void QueryIntentsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIntents = value["Intents"]["Intent"];
-	for (auto value : allIntents)
+	auto allIntentsNode = value["Intents"]["Intent"];
+	for (auto valueIntentsIntent : allIntentsNode)
 	{
 		Intent intentsObject;
-		if(!value["IntentId"].isNull())
-			intentsObject.intentId = std::stol(value["IntentId"].asString());
-		if(!value["Name"].isNull())
-			intentsObject.name = value["Name"].asString();
-		if(!value["CreateTime"].isNull())
-			intentsObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			intentsObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["CreateUserId"].isNull())
-			intentsObject.createUserId = value["CreateUserId"].asString();
-		if(!value["CreateUserName"].isNull())
-			intentsObject.createUserName = value["CreateUserName"].asString();
-		if(!value["ModifyUserId"].isNull())
-			intentsObject.modifyUserId = value["ModifyUserId"].asString();
-		if(!value["ModifyUserName"].isNull())
-			intentsObject.modifyUserName = value["ModifyUserName"].asString();
-		auto allUserSay = value["UserSay"]["UserSayItem"];
-		for (auto value : allUserSay)
+		if(!valueIntentsIntent["IntentId"].isNull())
+			intentsObject.intentId = std::stol(valueIntentsIntent["IntentId"].asString());
+		if(!valueIntentsIntent["Name"].isNull())
+			intentsObject.name = valueIntentsIntent["Name"].asString();
+		if(!valueIntentsIntent["CreateTime"].isNull())
+			intentsObject.createTime = valueIntentsIntent["CreateTime"].asString();
+		if(!valueIntentsIntent["ModifyTime"].isNull())
+			intentsObject.modifyTime = valueIntentsIntent["ModifyTime"].asString();
+		if(!valueIntentsIntent["CreateUserId"].isNull())
+			intentsObject.createUserId = valueIntentsIntent["CreateUserId"].asString();
+		if(!valueIntentsIntent["CreateUserName"].isNull())
+			intentsObject.createUserName = valueIntentsIntent["CreateUserName"].asString();
+		if(!valueIntentsIntent["ModifyUserId"].isNull())
+			intentsObject.modifyUserId = valueIntentsIntent["ModifyUserId"].asString();
+		if(!valueIntentsIntent["ModifyUserName"].isNull())
+			intentsObject.modifyUserName = valueIntentsIntent["ModifyUserName"].asString();
+		auto allUserSayNode = allIntentsNode["UserSay"]["UserSayItem"];
+		for (auto allIntentsNodeUserSayUserSayItem : allUserSayNode)
 		{
 			Intent::UserSayItem userSayObject;
-			if(!value["Strict"].isNull())
-				userSayObject.strict = value["Strict"].asString() == "true";
-			if(!value["UserSayId"].isNull())
-				userSayObject.userSayId = value["UserSayId"].asString();
-			auto allData = value["Data"]["DataItem"];
-			for (auto value : allData)
+			if(!allIntentsNodeUserSayUserSayItem["Strict"].isNull())
+				userSayObject.strict = allIntentsNodeUserSayUserSayItem["Strict"].asString() == "true";
+			if(!allIntentsNodeUserSayUserSayItem["UserSayId"].isNull())
+				userSayObject.userSayId = allIntentsNodeUserSayUserSayItem["UserSayId"].asString();
+			auto allDataNode = allUserSayNode["Data"]["DataItem"];
+			for (auto allUserSayNodeDataDataItem : allDataNode)
 			{
 				Intent::UserSayItem::DataItem dataObject;
-				if(!value["Text"].isNull())
-					dataObject.text = value["Text"].asString();
-				if(!value["SlotId"].isNull())
-					dataObject.slotId = value["SlotId"].asString();
+				if(!allUserSayNodeDataDataItem["Text"].isNull())
+					dataObject.text = allUserSayNodeDataDataItem["Text"].asString();
+				if(!allUserSayNodeDataDataItem["SlotId"].isNull())
+					dataObject.slotId = allUserSayNodeDataDataItem["SlotId"].asString();
 				userSayObject.data.push_back(dataObject);
 			}
 			intentsObject.userSay.push_back(userSayObject);
 		}
-		auto allRuleCheck = value["RuleCheck"]["RuleCheckItem"];
-		for (auto value : allRuleCheck)
+		auto allRuleCheckNode = allIntentsNode["RuleCheck"]["RuleCheckItem"];
+		for (auto allIntentsNodeRuleCheckRuleCheckItem : allRuleCheckNode)
 		{
 			Intent::RuleCheckItem ruleCheckObject;
-			if(!value["Text"].isNull())
-				ruleCheckObject.text = value["Text"].asString();
-			if(!value["Strict"].isNull())
-				ruleCheckObject.strict = value["Strict"].asString() == "true";
+			if(!allIntentsNodeRuleCheckRuleCheckItem["Text"].isNull())
+				ruleCheckObject.text = allIntentsNodeRuleCheckRuleCheckItem["Text"].asString();
+			if(!allIntentsNodeRuleCheckRuleCheckItem["Strict"].isNull())
+				ruleCheckObject.strict = allIntentsNodeRuleCheckRuleCheckItem["Strict"].asString() == "true";
 			auto allWarning = value["Warning"]["Warning"];
 			for (auto value : allWarning)
 				ruleCheckObject.warning.push_back(value.asString());
@@ -95,30 +95,30 @@ void QueryIntentsResult::parse(const std::string &payload)
 				ruleCheckObject.error.push_back(value.asString());
 			intentsObject.ruleCheck.push_back(ruleCheckObject);
 		}
-		auto allSlot = value["Slot"]["SlotItem"];
-		for (auto value : allSlot)
+		auto allSlotNode = allIntentsNode["Slot"]["SlotItem"];
+		for (auto allIntentsNodeSlotSlotItem : allSlotNode)
 		{
 			Intent::SlotItem slotObject;
-			if(!value["Name"].isNull())
-				slotObject.name = value["Name"].asString();
-			if(!value["Value"].isNull())
-				slotObject.value = value["Value"].asString();
-			if(!value["IsNecessary"].isNull())
-				slotObject.isNecessary = value["IsNecessary"].asString() == "true";
-			if(!value["IsArray"].isNull())
-				slotObject.isArray = value["IsArray"].asString() == "true";
-			if(!value["LifeSpan"].isNull())
-				slotObject.lifeSpan = std::stoi(value["LifeSpan"].asString());
-			if(!value["SlotId"].isNull())
-				slotObject.slotId = value["SlotId"].asString();
-			auto allTags = value["Tags"]["TagsItem"];
-			for (auto value : allTags)
+			if(!allIntentsNodeSlotSlotItem["Name"].isNull())
+				slotObject.name = allIntentsNodeSlotSlotItem["Name"].asString();
+			if(!allIntentsNodeSlotSlotItem["Value"].isNull())
+				slotObject.value = allIntentsNodeSlotSlotItem["Value"].asString();
+			if(!allIntentsNodeSlotSlotItem["IsNecessary"].isNull())
+				slotObject.isNecessary = allIntentsNodeSlotSlotItem["IsNecessary"].asString() == "true";
+			if(!allIntentsNodeSlotSlotItem["IsArray"].isNull())
+				slotObject.isArray = allIntentsNodeSlotSlotItem["IsArray"].asString() == "true";
+			if(!allIntentsNodeSlotSlotItem["LifeSpan"].isNull())
+				slotObject.lifeSpan = std::stoi(allIntentsNodeSlotSlotItem["LifeSpan"].asString());
+			if(!allIntentsNodeSlotSlotItem["SlotId"].isNull())
+				slotObject.slotId = allIntentsNodeSlotSlotItem["SlotId"].asString();
+			auto allTagsNode = allSlotNode["Tags"]["TagsItem"];
+			for (auto allSlotNodeTagsTagsItem : allTagsNode)
 			{
 				Intent::SlotItem::TagsItem tagsObject;
-				if(!value["Value"].isNull())
-					tagsObject.value = value["Value"].asString();
-				if(!value["UserSayId"].isNull())
-					tagsObject.userSayId = value["UserSayId"].asString();
+				if(!allSlotNodeTagsTagsItem["Value"].isNull())
+					tagsObject.value = allSlotNodeTagsTagsItem["Value"].asString();
+				if(!allSlotNodeTagsTagsItem["UserSayId"].isNull())
+					tagsObject.userSayId = allSlotNodeTagsTagsItem["UserSayId"].asString();
 				slotObject.tags.push_back(tagsObject);
 			}
 			auto allQuestion = value["Question"]["Question"];

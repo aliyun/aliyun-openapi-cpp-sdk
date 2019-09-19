@@ -39,44 +39,44 @@ void OnsMessageGetByKeyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["OnsRestMessageDo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["OnsRestMessageDo"];
+	for (auto valueDataOnsRestMessageDo : allDataNode)
 	{
 		OnsRestMessageDo dataObject;
-		if(!value["Topic"].isNull())
-			dataObject.topic = value["Topic"].asString();
-		if(!value["Flag"].isNull())
-			dataObject.flag = std::stoi(value["Flag"].asString());
-		if(!value["Body"].isNull())
-			dataObject.body = value["Body"].asString();
-		if(!value["StoreSize"].isNull())
-			dataObject.storeSize = std::stoi(value["StoreSize"].asString());
-		if(!value["BornTimestamp"].isNull())
-			dataObject.bornTimestamp = std::stol(value["BornTimestamp"].asString());
-		if(!value["BornHost"].isNull())
-			dataObject.bornHost = value["BornHost"].asString();
-		if(!value["StoreTimestamp"].isNull())
-			dataObject.storeTimestamp = std::stol(value["StoreTimestamp"].asString());
-		if(!value["StoreHost"].isNull())
-			dataObject.storeHost = value["StoreHost"].asString();
-		if(!value["MsgId"].isNull())
-			dataObject.msgId = value["MsgId"].asString();
-		if(!value["OffsetId"].isNull())
-			dataObject.offsetId = value["OffsetId"].asString();
-		if(!value["BodyCRC"].isNull())
-			dataObject.bodyCRC = std::stoi(value["BodyCRC"].asString());
-		if(!value["ReconsumeTimes"].isNull())
-			dataObject.reconsumeTimes = std::stoi(value["ReconsumeTimes"].asString());
-		if(!value["InstanceId"].isNull())
-			dataObject.instanceId = value["InstanceId"].asString();
-		auto allPropertyList = value["PropertyList"]["MessageProperty"];
-		for (auto value : allPropertyList)
+		if(!valueDataOnsRestMessageDo["Topic"].isNull())
+			dataObject.topic = valueDataOnsRestMessageDo["Topic"].asString();
+		if(!valueDataOnsRestMessageDo["Flag"].isNull())
+			dataObject.flag = std::stoi(valueDataOnsRestMessageDo["Flag"].asString());
+		if(!valueDataOnsRestMessageDo["Body"].isNull())
+			dataObject.body = valueDataOnsRestMessageDo["Body"].asString();
+		if(!valueDataOnsRestMessageDo["StoreSize"].isNull())
+			dataObject.storeSize = std::stoi(valueDataOnsRestMessageDo["StoreSize"].asString());
+		if(!valueDataOnsRestMessageDo["BornTimestamp"].isNull())
+			dataObject.bornTimestamp = std::stol(valueDataOnsRestMessageDo["BornTimestamp"].asString());
+		if(!valueDataOnsRestMessageDo["BornHost"].isNull())
+			dataObject.bornHost = valueDataOnsRestMessageDo["BornHost"].asString();
+		if(!valueDataOnsRestMessageDo["StoreTimestamp"].isNull())
+			dataObject.storeTimestamp = std::stol(valueDataOnsRestMessageDo["StoreTimestamp"].asString());
+		if(!valueDataOnsRestMessageDo["StoreHost"].isNull())
+			dataObject.storeHost = valueDataOnsRestMessageDo["StoreHost"].asString();
+		if(!valueDataOnsRestMessageDo["MsgId"].isNull())
+			dataObject.msgId = valueDataOnsRestMessageDo["MsgId"].asString();
+		if(!valueDataOnsRestMessageDo["OffsetId"].isNull())
+			dataObject.offsetId = valueDataOnsRestMessageDo["OffsetId"].asString();
+		if(!valueDataOnsRestMessageDo["BodyCRC"].isNull())
+			dataObject.bodyCRC = std::stoi(valueDataOnsRestMessageDo["BodyCRC"].asString());
+		if(!valueDataOnsRestMessageDo["ReconsumeTimes"].isNull())
+			dataObject.reconsumeTimes = std::stoi(valueDataOnsRestMessageDo["ReconsumeTimes"].asString());
+		if(!valueDataOnsRestMessageDo["InstanceId"].isNull())
+			dataObject.instanceId = valueDataOnsRestMessageDo["InstanceId"].asString();
+		auto allPropertyListNode = allDataNode["PropertyList"]["MessageProperty"];
+		for (auto allDataNodePropertyListMessageProperty : allPropertyListNode)
 		{
 			OnsRestMessageDo::MessageProperty propertyListObject;
-			if(!value["Name"].isNull())
-				propertyListObject.name = value["Name"].asString();
-			if(!value["Value"].isNull())
-				propertyListObject.value = value["Value"].asString();
+			if(!allDataNodePropertyListMessageProperty["Name"].isNull())
+				propertyListObject.name = allDataNodePropertyListMessageProperty["Name"].asString();
+			if(!allDataNodePropertyListMessageProperty["Value"].isNull())
+				propertyListObject.value = allDataNodePropertyListMessageProperty["Value"].asString();
 			dataObject.propertyList.push_back(propertyListObject);
 		}
 		data_.push_back(dataObject);

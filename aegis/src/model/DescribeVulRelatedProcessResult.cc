@@ -39,20 +39,20 @@ void DescribeVulRelatedProcessResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProcessList = value["ProcessList"]["Process"];
-	for (auto value : allProcessList)
+	auto allProcessListNode = value["ProcessList"]["Process"];
+	for (auto valueProcessListProcess : allProcessListNode)
 	{
 		Process processListObject;
-		if(!value["Uuid"].isNull())
-			processListObject.uuid = value["Uuid"].asString();
-		if(!value["Rpm"].isNull())
-			processListObject.rpm = value["Rpm"].asString();
-		if(!value["Pname"].isNull())
-			processListObject.pname = value["Pname"].asString();
-		if(!value["Pid"].isNull())
-			processListObject.pid = value["Pid"].asString();
-		if(!value["Ppid"].isNull())
-			processListObject.ppid = value["Ppid"].asString();
+		if(!valueProcessListProcess["Uuid"].isNull())
+			processListObject.uuid = valueProcessListProcess["Uuid"].asString();
+		if(!valueProcessListProcess["Rpm"].isNull())
+			processListObject.rpm = valueProcessListProcess["Rpm"].asString();
+		if(!valueProcessListProcess["Pname"].isNull())
+			processListObject.pname = valueProcessListProcess["Pname"].asString();
+		if(!valueProcessListProcess["Pid"].isNull())
+			processListObject.pid = valueProcessListProcess["Pid"].asString();
+		if(!valueProcessListProcess["Ppid"].isNull())
+			processListObject.ppid = valueProcessListProcess["Ppid"].asString();
 		processList_.push_back(processListObject);
 	}
 	if(!value["GmtLastTs"].isNull())

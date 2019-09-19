@@ -39,16 +39,16 @@ void DescribeDomainExtensionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainExtensions = value["DomainExtensions"]["DomainExtension"];
-	for (auto value : allDomainExtensions)
+	auto allDomainExtensionsNode = value["DomainExtensions"]["DomainExtension"];
+	for (auto valueDomainExtensionsDomainExtension : allDomainExtensionsNode)
 	{
 		DomainExtension domainExtensionsObject;
-		if(!value["DomainExtensionId"].isNull())
-			domainExtensionsObject.domainExtensionId = value["DomainExtensionId"].asString();
-		if(!value["Domain"].isNull())
-			domainExtensionsObject.domain = value["Domain"].asString();
-		if(!value["ServerCertificateId"].isNull())
-			domainExtensionsObject.serverCertificateId = value["ServerCertificateId"].asString();
+		if(!valueDomainExtensionsDomainExtension["DomainExtensionId"].isNull())
+			domainExtensionsObject.domainExtensionId = valueDomainExtensionsDomainExtension["DomainExtensionId"].asString();
+		if(!valueDomainExtensionsDomainExtension["Domain"].isNull())
+			domainExtensionsObject.domain = valueDomainExtensionsDomainExtension["Domain"].asString();
+		if(!valueDomainExtensionsDomainExtension["ServerCertificateId"].isNull())
+			domainExtensionsObject.serverCertificateId = valueDomainExtensionsDomainExtension["ServerCertificateId"].asString();
 		domainExtensions_.push_back(domainExtensionsObject);
 	}
 

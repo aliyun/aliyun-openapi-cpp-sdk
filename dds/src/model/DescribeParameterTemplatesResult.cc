@@ -39,22 +39,22 @@ void DescribeParameterTemplatesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allParameters = value["Parameters"]["TemplateRecord"];
-	for (auto value : allParameters)
+	auto allParametersNode = value["Parameters"]["TemplateRecord"];
+	for (auto valueParametersTemplateRecord : allParametersNode)
 	{
 		TemplateRecord parametersObject;
-		if(!value["ParameterName"].isNull())
-			parametersObject.parameterName = value["ParameterName"].asString();
-		if(!value["ParameterValue"].isNull())
-			parametersObject.parameterValue = value["ParameterValue"].asString();
-		if(!value["ForceModify"].isNull())
-			parametersObject.forceModify = value["ForceModify"].asString() == "true";
-		if(!value["ForceRestart"].isNull())
-			parametersObject.forceRestart = value["ForceRestart"].asString() == "true";
-		if(!value["CheckingCode"].isNull())
-			parametersObject.checkingCode = value["CheckingCode"].asString();
-		if(!value["ParameterDescription"].isNull())
-			parametersObject.parameterDescription = value["ParameterDescription"].asString();
+		if(!valueParametersTemplateRecord["ParameterName"].isNull())
+			parametersObject.parameterName = valueParametersTemplateRecord["ParameterName"].asString();
+		if(!valueParametersTemplateRecord["ParameterValue"].isNull())
+			parametersObject.parameterValue = valueParametersTemplateRecord["ParameterValue"].asString();
+		if(!valueParametersTemplateRecord["ForceModify"].isNull())
+			parametersObject.forceModify = valueParametersTemplateRecord["ForceModify"].asString() == "true";
+		if(!valueParametersTemplateRecord["ForceRestart"].isNull())
+			parametersObject.forceRestart = valueParametersTemplateRecord["ForceRestart"].asString() == "true";
+		if(!valueParametersTemplateRecord["CheckingCode"].isNull())
+			parametersObject.checkingCode = valueParametersTemplateRecord["CheckingCode"].asString();
+		if(!valueParametersTemplateRecord["ParameterDescription"].isNull())
+			parametersObject.parameterDescription = valueParametersTemplateRecord["ParameterDescription"].asString();
 		parameters_.push_back(parametersObject);
 	}
 	if(!value["Engine"].isNull())

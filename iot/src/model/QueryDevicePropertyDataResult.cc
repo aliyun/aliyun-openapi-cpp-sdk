@@ -44,14 +44,14 @@ void QueryDevicePropertyDataResult::parse(const std::string &payload)
 		data_.nextValid = dataNode["NextValid"].asString() == "true";
 	if(!dataNode["NextTime"].isNull())
 		data_.nextTime = std::stol(dataNode["NextTime"].asString());
-	auto allList = value["List"]["PropertyInfo"];
-	for (auto value : allList)
+	auto allListNode = dataNode["List"]["PropertyInfo"];
+	for (auto dataNodeListPropertyInfo : allListNode)
 	{
 		Data::PropertyInfo propertyInfoObject;
-		if(!value["Time"].isNull())
-			propertyInfoObject.time = value["Time"].asString();
-		if(!value["Value"].isNull())
-			propertyInfoObject.value = value["Value"].asString();
+		if(!dataNodeListPropertyInfo["Time"].isNull())
+			propertyInfoObject.time = dataNodeListPropertyInfo["Time"].asString();
+		if(!dataNodeListPropertyInfo["Value"].isNull())
+			propertyInfoObject.value = dataNodeListPropertyInfo["Value"].asString();
 		data_.list.push_back(propertyInfoObject);
 	}
 	if(!value["Success"].isNull())

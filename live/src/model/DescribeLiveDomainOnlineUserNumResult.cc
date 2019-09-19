@@ -39,20 +39,20 @@ void DescribeLiveDomainOnlineUserNumResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOnlineUserInfo = value["OnlineUserInfo"]["LiveStreamOnlineUserNumInfo"];
-	for (auto value : allOnlineUserInfo)
+	auto allOnlineUserInfoNode = value["OnlineUserInfo"]["LiveStreamOnlineUserNumInfo"];
+	for (auto valueOnlineUserInfoLiveStreamOnlineUserNumInfo : allOnlineUserInfoNode)
 	{
 		LiveStreamOnlineUserNumInfo onlineUserInfoObject;
-		if(!value["StreamName"].isNull())
-			onlineUserInfoObject.streamName = value["StreamName"].asString();
-		auto allInfos = value["Infos"]["Info"];
-		for (auto value : allInfos)
+		if(!valueOnlineUserInfoLiveStreamOnlineUserNumInfo["StreamName"].isNull())
+			onlineUserInfoObject.streamName = valueOnlineUserInfoLiveStreamOnlineUserNumInfo["StreamName"].asString();
+		auto allInfosNode = allOnlineUserInfoNode["Infos"]["Info"];
+		for (auto allOnlineUserInfoNodeInfosInfo : allInfosNode)
 		{
 			LiveStreamOnlineUserNumInfo::Info infosObject;
-			if(!value["TranscodeTemplate"].isNull())
-				infosObject.transcodeTemplate = value["TranscodeTemplate"].asString();
-			if(!value["UserNumber"].isNull())
-				infosObject.userNumber = std::stol(value["UserNumber"].asString());
+			if(!allOnlineUserInfoNodeInfosInfo["TranscodeTemplate"].isNull())
+				infosObject.transcodeTemplate = allOnlineUserInfoNodeInfosInfo["TranscodeTemplate"].asString();
+			if(!allOnlineUserInfoNodeInfosInfo["UserNumber"].isNull())
+				infosObject.userNumber = std::stol(allOnlineUserInfoNodeInfosInfo["UserNumber"].asString());
 			onlineUserInfoObject.infos.push_back(infosObject);
 		}
 		onlineUserInfo_.push_back(onlineUserInfoObject);

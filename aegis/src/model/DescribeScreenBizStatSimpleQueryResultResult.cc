@@ -39,12 +39,12 @@ void DescribeScreenBizStatSimpleQueryResultResult::parse(const std::string &payl
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTrendDataArr = value["TrendDataArr"]["BizStatTrendDOS"];
-	for (auto value : allTrendDataArr)
+	auto allTrendDataArrNode = value["TrendDataArr"]["BizStatTrendDOS"];
+	for (auto valueTrendDataArrBizStatTrendDOS : allTrendDataArrNode)
 	{
 		BizStatTrendDOS trendDataArrObject;
-		if(!value["BizName"].isNull())
-			trendDataArrObject.bizName = value["BizName"].asString();
+		if(!valueTrendDataArrBizStatTrendDOS["BizName"].isNull())
+			trendDataArrObject.bizName = valueTrendDataArrBizStatTrendDOS["BizName"].asString();
 		auto allValueArray = value["ValueArray"]["IntegerItem"];
 		for (auto value : allValueArray)
 			trendDataArrObject.valueArray.push_back(value.asString());

@@ -39,50 +39,50 @@ void ListFlowResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFlow = value["Flow"]["FlowItem"];
-	for (auto value : allFlow)
+	auto allFlowNode = value["Flow"]["FlowItem"];
+	for (auto valueFlowFlowItem : allFlowNode)
 	{
 		FlowItem flowObject;
-		if(!value["Id"].isNull())
-			flowObject.id = value["Id"].asString();
-		if(!value["GmtCreate"].isNull())
-			flowObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			flowObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["Name"].isNull())
-			flowObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			flowObject.description = value["Description"].asString();
-		if(!value["Type"].isNull())
-			flowObject.type = value["Type"].asString();
-		if(!value["Status"].isNull())
-			flowObject.status = value["Status"].asString();
-		if(!value["Periodic"].isNull())
-			flowObject.periodic = value["Periodic"].asString() == "true";
-		if(!value["StartSchedule"].isNull())
-			flowObject.startSchedule = std::stol(value["StartSchedule"].asString());
-		if(!value["EndSchedule"].isNull())
-			flowObject.endSchedule = std::stol(value["EndSchedule"].asString());
-		if(!value["CronExpr"].isNull())
-			flowObject.cronExpr = value["CronExpr"].asString();
-		if(!value["CreateCluster"].isNull())
-			flowObject.createCluster = value["CreateCluster"].asString() == "true";
-		if(!value["ClusterId"].isNull())
-			flowObject.clusterId = value["ClusterId"].asString();
-		if(!value["ProjectId"].isNull())
-			flowObject.projectId = value["ProjectId"].asString();
-		if(!value["HostName"].isNull())
-			flowObject.hostName = value["HostName"].asString();
-		if(!value["Graph"].isNull())
-			flowObject.graph = value["Graph"].asString();
-		if(!value["AlertUserGroupBizId"].isNull())
-			flowObject.alertUserGroupBizId = value["AlertUserGroupBizId"].asString();
-		if(!value["AlertDingDingGroupBizId"].isNull())
-			flowObject.alertDingDingGroupBizId = value["AlertDingDingGroupBizId"].asString();
-		if(!value["AlertConf"].isNull())
-			flowObject.alertConf = value["AlertConf"].asString();
-		if(!value["CategoryId"].isNull())
-			flowObject.categoryId = value["CategoryId"].asString();
+		if(!valueFlowFlowItem["Id"].isNull())
+			flowObject.id = valueFlowFlowItem["Id"].asString();
+		if(!valueFlowFlowItem["GmtCreate"].isNull())
+			flowObject.gmtCreate = std::stol(valueFlowFlowItem["GmtCreate"].asString());
+		if(!valueFlowFlowItem["GmtModified"].isNull())
+			flowObject.gmtModified = std::stol(valueFlowFlowItem["GmtModified"].asString());
+		if(!valueFlowFlowItem["Name"].isNull())
+			flowObject.name = valueFlowFlowItem["Name"].asString();
+		if(!valueFlowFlowItem["Description"].isNull())
+			flowObject.description = valueFlowFlowItem["Description"].asString();
+		if(!valueFlowFlowItem["Type"].isNull())
+			flowObject.type = valueFlowFlowItem["Type"].asString();
+		if(!valueFlowFlowItem["Status"].isNull())
+			flowObject.status = valueFlowFlowItem["Status"].asString();
+		if(!valueFlowFlowItem["Periodic"].isNull())
+			flowObject.periodic = valueFlowFlowItem["Periodic"].asString() == "true";
+		if(!valueFlowFlowItem["StartSchedule"].isNull())
+			flowObject.startSchedule = std::stol(valueFlowFlowItem["StartSchedule"].asString());
+		if(!valueFlowFlowItem["EndSchedule"].isNull())
+			flowObject.endSchedule = std::stol(valueFlowFlowItem["EndSchedule"].asString());
+		if(!valueFlowFlowItem["CronExpr"].isNull())
+			flowObject.cronExpr = valueFlowFlowItem["CronExpr"].asString();
+		if(!valueFlowFlowItem["CreateCluster"].isNull())
+			flowObject.createCluster = valueFlowFlowItem["CreateCluster"].asString() == "true";
+		if(!valueFlowFlowItem["ClusterId"].isNull())
+			flowObject.clusterId = valueFlowFlowItem["ClusterId"].asString();
+		if(!valueFlowFlowItem["ProjectId"].isNull())
+			flowObject.projectId = valueFlowFlowItem["ProjectId"].asString();
+		if(!valueFlowFlowItem["HostName"].isNull())
+			flowObject.hostName = valueFlowFlowItem["HostName"].asString();
+		if(!valueFlowFlowItem["Graph"].isNull())
+			flowObject.graph = valueFlowFlowItem["Graph"].asString();
+		if(!valueFlowFlowItem["AlertUserGroupBizId"].isNull())
+			flowObject.alertUserGroupBizId = valueFlowFlowItem["AlertUserGroupBizId"].asString();
+		if(!valueFlowFlowItem["AlertDingDingGroupBizId"].isNull())
+			flowObject.alertDingDingGroupBizId = valueFlowFlowItem["AlertDingDingGroupBizId"].asString();
+		if(!valueFlowFlowItem["AlertConf"].isNull())
+			flowObject.alertConf = valueFlowFlowItem["AlertConf"].asString();
+		if(!valueFlowFlowItem["CategoryId"].isNull())
+			flowObject.categoryId = valueFlowFlowItem["CategoryId"].asString();
 		flow_.push_back(flowObject);
 	}
 	if(!value["PageNumber"].isNull())

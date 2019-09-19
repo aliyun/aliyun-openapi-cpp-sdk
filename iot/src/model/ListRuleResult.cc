@@ -39,40 +39,40 @@ void ListRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["RuleInfo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["RuleInfo"];
+	for (auto valueDataRuleInfo : allDataNode)
 	{
 		RuleInfo dataObject;
-		if(!value["Id"].isNull())
-			dataObject.id = std::stol(value["Id"].asString());
-		if(!value["Select"].isNull())
-			dataObject.select = value["Select"].asString();
-		if(!value["Topic"].isNull())
-			dataObject.topic = value["Topic"].asString();
-		if(!value["ShortTopic"].isNull())
-			dataObject.shortTopic = value["ShortTopic"].asString();
-		if(!value["Where"].isNull())
-			dataObject.where = value["Where"].asString();
-		if(!value["Status"].isNull())
-			dataObject.status = value["Status"].asString();
-		if(!value["CreateUserId"].isNull())
-			dataObject.createUserId = std::stol(value["CreateUserId"].asString());
-		if(!value["ProductKey"].isNull())
-			dataObject.productKey = value["ProductKey"].asString();
-		if(!value["Name"].isNull())
-			dataObject.name = value["Name"].asString();
-		if(!value["DataType"].isNull())
-			dataObject.dataType = value["DataType"].asString();
-		if(!value["RuleDesc"].isNull())
-			dataObject.ruleDesc = value["RuleDesc"].asString();
-		if(!value["Created"].isNull())
-			dataObject.created = value["Created"].asString();
-		if(!value["UtcCreated"].isNull())
-			dataObject.utcCreated = value["UtcCreated"].asString();
-		if(!value["Modified"].isNull())
-			dataObject.modified = value["Modified"].asString();
-		if(!value["UtcModified"].isNull())
-			dataObject.utcModified = value["UtcModified"].asString();
+		if(!valueDataRuleInfo["Id"].isNull())
+			dataObject.id = std::stol(valueDataRuleInfo["Id"].asString());
+		if(!valueDataRuleInfo["Select"].isNull())
+			dataObject.select = valueDataRuleInfo["Select"].asString();
+		if(!valueDataRuleInfo["Topic"].isNull())
+			dataObject.topic = valueDataRuleInfo["Topic"].asString();
+		if(!valueDataRuleInfo["ShortTopic"].isNull())
+			dataObject.shortTopic = valueDataRuleInfo["ShortTopic"].asString();
+		if(!valueDataRuleInfo["Where"].isNull())
+			dataObject.where = valueDataRuleInfo["Where"].asString();
+		if(!valueDataRuleInfo["Status"].isNull())
+			dataObject.status = valueDataRuleInfo["Status"].asString();
+		if(!valueDataRuleInfo["CreateUserId"].isNull())
+			dataObject.createUserId = std::stol(valueDataRuleInfo["CreateUserId"].asString());
+		if(!valueDataRuleInfo["ProductKey"].isNull())
+			dataObject.productKey = valueDataRuleInfo["ProductKey"].asString();
+		if(!valueDataRuleInfo["Name"].isNull())
+			dataObject.name = valueDataRuleInfo["Name"].asString();
+		if(!valueDataRuleInfo["DataType"].isNull())
+			dataObject.dataType = valueDataRuleInfo["DataType"].asString();
+		if(!valueDataRuleInfo["RuleDesc"].isNull())
+			dataObject.ruleDesc = valueDataRuleInfo["RuleDesc"].asString();
+		if(!valueDataRuleInfo["Created"].isNull())
+			dataObject.created = valueDataRuleInfo["Created"].asString();
+		if(!valueDataRuleInfo["UtcCreated"].isNull())
+			dataObject.utcCreated = valueDataRuleInfo["UtcCreated"].asString();
+		if(!valueDataRuleInfo["Modified"].isNull())
+			dataObject.modified = valueDataRuleInfo["Modified"].asString();
+		if(!valueDataRuleInfo["UtcModified"].isNull())
+			dataObject.utcModified = valueDataRuleInfo["UtcModified"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

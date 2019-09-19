@@ -46,50 +46,50 @@ void GetMediaAuditResultResult::parse(const std::string &payload)
 		mediaAuditResult_.label = mediaAuditResultNode["Label"].asString();
 	if(!mediaAuditResultNode["Suggestion"].isNull())
 		mediaAuditResult_.suggestion = mediaAuditResultNode["Suggestion"].asString();
-	auto allImageResult = value["ImageResult"]["ImageResultItem"];
-	for (auto value : allImageResult)
+	auto allImageResultNode = mediaAuditResultNode["ImageResult"]["ImageResultItem"];
+	for (auto mediaAuditResultNodeImageResultImageResultItem : allImageResultNode)
 	{
 		MediaAuditResult::ImageResultItem imageResultItemObject;
-		if(!value["Suggestion"].isNull())
-			imageResultItemObject.suggestion = value["Suggestion"].asString();
-		if(!value["Label"].isNull())
-			imageResultItemObject.label = value["Label"].asString();
-		if(!value["Type"].isNull())
-			imageResultItemObject.type = value["Type"].asString();
-		if(!value["Url"].isNull())
-			imageResultItemObject.url = value["Url"].asString();
-		auto allResult = value["Result"]["ResultItem"];
-		for (auto value : allResult)
+		if(!mediaAuditResultNodeImageResultImageResultItem["Suggestion"].isNull())
+			imageResultItemObject.suggestion = mediaAuditResultNodeImageResultImageResultItem["Suggestion"].asString();
+		if(!mediaAuditResultNodeImageResultImageResultItem["Label"].isNull())
+			imageResultItemObject.label = mediaAuditResultNodeImageResultImageResultItem["Label"].asString();
+		if(!mediaAuditResultNodeImageResultImageResultItem["Type"].isNull())
+			imageResultItemObject.type = mediaAuditResultNodeImageResultImageResultItem["Type"].asString();
+		if(!mediaAuditResultNodeImageResultImageResultItem["Url"].isNull())
+			imageResultItemObject.url = mediaAuditResultNodeImageResultImageResultItem["Url"].asString();
+		auto allResultNode = allImageResultNode["Result"]["ResultItem"];
+		for (auto allImageResultNodeResultResultItem : allResultNode)
 		{
 			MediaAuditResult::ImageResultItem::ResultItem resultObject;
-			if(!value["Suggestion"].isNull())
-				resultObject.suggestion = value["Suggestion"].asString();
-			if(!value["Label"].isNull())
-				resultObject.label = value["Label"].asString();
-			if(!value["Score"].isNull())
-				resultObject.score = value["Score"].asString();
-			if(!value["Scene"].isNull())
-				resultObject.scene = value["Scene"].asString();
+			if(!allImageResultNodeResultResultItem["Suggestion"].isNull())
+				resultObject.suggestion = allImageResultNodeResultResultItem["Suggestion"].asString();
+			if(!allImageResultNodeResultResultItem["Label"].isNull())
+				resultObject.label = allImageResultNodeResultResultItem["Label"].asString();
+			if(!allImageResultNodeResultResultItem["Score"].isNull())
+				resultObject.score = allImageResultNodeResultResultItem["Score"].asString();
+			if(!allImageResultNodeResultResultItem["Scene"].isNull())
+				resultObject.scene = allImageResultNodeResultResultItem["Scene"].asString();
 			imageResultItemObject.result.push_back(resultObject);
 		}
 		mediaAuditResult_.imageResult.push_back(imageResultItemObject);
 	}
-	auto allTextResult = value["TextResult"]["TextResultItem"];
-	for (auto value : allTextResult)
+	auto allTextResultNode = mediaAuditResultNode["TextResult"]["TextResultItem"];
+	for (auto mediaAuditResultNodeTextResultTextResultItem : allTextResultNode)
 	{
 		MediaAuditResult::TextResultItem textResultItemObject;
-		if(!value["Suggestion"].isNull())
-			textResultItemObject.suggestion = value["Suggestion"].asString();
-		if(!value["Label"].isNull())
-			textResultItemObject.label = value["Label"].asString();
-		if(!value["Score"].isNull())
-			textResultItemObject.score = value["Score"].asString();
-		if(!value["Scene"].isNull())
-			textResultItemObject.scene = value["Scene"].asString();
-		if(!value["Type"].isNull())
-			textResultItemObject.type = value["Type"].asString();
-		if(!value["Content"].isNull())
-			textResultItemObject.content = value["Content"].asString();
+		if(!mediaAuditResultNodeTextResultTextResultItem["Suggestion"].isNull())
+			textResultItemObject.suggestion = mediaAuditResultNodeTextResultTextResultItem["Suggestion"].asString();
+		if(!mediaAuditResultNodeTextResultTextResultItem["Label"].isNull())
+			textResultItemObject.label = mediaAuditResultNodeTextResultTextResultItem["Label"].asString();
+		if(!mediaAuditResultNodeTextResultTextResultItem["Score"].isNull())
+			textResultItemObject.score = mediaAuditResultNodeTextResultTextResultItem["Score"].asString();
+		if(!mediaAuditResultNodeTextResultTextResultItem["Scene"].isNull())
+			textResultItemObject.scene = mediaAuditResultNodeTextResultTextResultItem["Scene"].asString();
+		if(!mediaAuditResultNodeTextResultTextResultItem["Type"].isNull())
+			textResultItemObject.type = mediaAuditResultNodeTextResultTextResultItem["Type"].asString();
+		if(!mediaAuditResultNodeTextResultTextResultItem["Content"].isNull())
+			textResultItemObject.content = mediaAuditResultNodeTextResultTextResultItem["Content"].asString();
 		mediaAuditResult_.textResult.push_back(textResultItemObject);
 	}
 	auto videoResultNode = mediaAuditResultNode["VideoResult"];
@@ -106,28 +106,28 @@ void GetMediaAuditResultResult::parse(const std::string &payload)
 		mediaAuditResult_.videoResult.terrorismResult.maxScore = terrorismResultNode["MaxScore"].asString();
 	if(!terrorismResultNode["AverageScore"].isNull())
 		mediaAuditResult_.videoResult.terrorismResult.averageScore = terrorismResultNode["AverageScore"].asString();
-	auto allCounterList = value["CounterList"]["CounterListItem"];
-	for (auto value : allCounterList)
+	auto allCounterListNode = terrorismResultNode["CounterList"]["CounterListItem"];
+	for (auto terrorismResultNodeCounterListCounterListItem : allCounterListNode)
 	{
 		MediaAuditResult::VideoResult::TerrorismResult::CounterListItem counterListItemObject;
-		if(!value["Label"].isNull())
-			counterListItemObject.label = value["Label"].asString();
-		if(!value["Count"].isNull())
-			counterListItemObject.count = std::stoi(value["Count"].asString());
+		if(!terrorismResultNodeCounterListCounterListItem["Label"].isNull())
+			counterListItemObject.label = terrorismResultNodeCounterListCounterListItem["Label"].asString();
+		if(!terrorismResultNodeCounterListCounterListItem["Count"].isNull())
+			counterListItemObject.count = std::stoi(terrorismResultNodeCounterListCounterListItem["Count"].asString());
 		mediaAuditResult_.videoResult.terrorismResult.counterList.push_back(counterListItemObject);
 	}
-	auto allTopList = value["TopList"]["TopListItem"];
-	for (auto value : allTopList)
+	auto allTopListNode = terrorismResultNode["TopList"]["TopListItem"];
+	for (auto terrorismResultNodeTopListTopListItem : allTopListNode)
 	{
 		MediaAuditResult::VideoResult::TerrorismResult::TopListItem topListItemObject;
-		if(!value["Label"].isNull())
-			topListItemObject.label = value["Label"].asString();
-		if(!value["Score"].isNull())
-			topListItemObject.score = value["Score"].asString();
-		if(!value["Timestamp"].isNull())
-			topListItemObject.timestamp = value["Timestamp"].asString();
-		if(!value["Url"].isNull())
-			topListItemObject.url = value["Url"].asString();
+		if(!terrorismResultNodeTopListTopListItem["Label"].isNull())
+			topListItemObject.label = terrorismResultNodeTopListTopListItem["Label"].asString();
+		if(!terrorismResultNodeTopListTopListItem["Score"].isNull())
+			topListItemObject.score = terrorismResultNodeTopListTopListItem["Score"].asString();
+		if(!terrorismResultNodeTopListTopListItem["Timestamp"].isNull())
+			topListItemObject.timestamp = terrorismResultNodeTopListTopListItem["Timestamp"].asString();
+		if(!terrorismResultNodeTopListTopListItem["Url"].isNull())
+			topListItemObject.url = terrorismResultNodeTopListTopListItem["Url"].asString();
 		mediaAuditResult_.videoResult.terrorismResult.topList.push_back(topListItemObject);
 	}
 	auto pornResultNode = videoResultNode["PornResult"];
@@ -139,28 +139,28 @@ void GetMediaAuditResultResult::parse(const std::string &payload)
 		mediaAuditResult_.videoResult.pornResult.maxScore = pornResultNode["MaxScore"].asString();
 	if(!pornResultNode["AverageScore"].isNull())
 		mediaAuditResult_.videoResult.pornResult.averageScore = pornResultNode["AverageScore"].asString();
-	auto allCounterList1 = value["CounterList"]["CounterListItem"];
-	for (auto value : allCounterList1)
+	auto allCounterList1Node = pornResultNode["CounterList"]["CounterListItem"];
+	for (auto pornResultNodeCounterListCounterListItem : allCounterList1Node)
 	{
 		MediaAuditResult::VideoResult::PornResult::CounterListItem3 counterListItem3Object;
-		if(!value["Label"].isNull())
-			counterListItem3Object.label = value["Label"].asString();
-		if(!value["Count"].isNull())
-			counterListItem3Object.count = std::stoi(value["Count"].asString());
+		if(!pornResultNodeCounterListCounterListItem["Label"].isNull())
+			counterListItem3Object.label = pornResultNodeCounterListCounterListItem["Label"].asString();
+		if(!pornResultNodeCounterListCounterListItem["Count"].isNull())
+			counterListItem3Object.count = std::stoi(pornResultNodeCounterListCounterListItem["Count"].asString());
 		mediaAuditResult_.videoResult.pornResult.counterList1.push_back(counterListItem3Object);
 	}
-	auto allTopList2 = value["TopList"]["TopListItem"];
-	for (auto value : allTopList2)
+	auto allTopList2Node = pornResultNode["TopList"]["TopListItem"];
+	for (auto pornResultNodeTopListTopListItem : allTopList2Node)
 	{
 		MediaAuditResult::VideoResult::PornResult::TopListItem4 topListItem4Object;
-		if(!value["Label"].isNull())
-			topListItem4Object.label = value["Label"].asString();
-		if(!value["Score"].isNull())
-			topListItem4Object.score = value["Score"].asString();
-		if(!value["Timestamp"].isNull())
-			topListItem4Object.timestamp = value["Timestamp"].asString();
-		if(!value["Url"].isNull())
-			topListItem4Object.url = value["Url"].asString();
+		if(!pornResultNodeTopListTopListItem["Label"].isNull())
+			topListItem4Object.label = pornResultNodeTopListTopListItem["Label"].asString();
+		if(!pornResultNodeTopListTopListItem["Score"].isNull())
+			topListItem4Object.score = pornResultNodeTopListTopListItem["Score"].asString();
+		if(!pornResultNodeTopListTopListItem["Timestamp"].isNull())
+			topListItem4Object.timestamp = pornResultNodeTopListTopListItem["Timestamp"].asString();
+		if(!pornResultNodeTopListTopListItem["Url"].isNull())
+			topListItem4Object.url = pornResultNodeTopListTopListItem["Url"].asString();
 		mediaAuditResult_.videoResult.pornResult.topList2.push_back(topListItem4Object);
 	}
 

@@ -39,28 +39,28 @@ void QueryMaterialListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Trademark"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["Trademark"];
+	for (auto valueDataTrademark : allDataNode)
 	{
 		Trademark dataObject;
-		if(!value["Id"].isNull())
-			dataObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			dataObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			dataObject.type = std::stoi(value["Type"].asString());
-		if(!value["Region"].isNull())
-			dataObject.region = std::stoi(value["Region"].asString());
-		if(!value["ContactName"].isNull())
-			dataObject.contactName = value["ContactName"].asString();
-		if(!value["Status"].isNull())
-			dataObject.status = std::stoi(value["Status"].asString());
-		if(!value["LoaKey"].isNull())
-			dataObject.loaKey = value["LoaKey"].asString();
-		if(!value["LoaStatus"].isNull())
-			dataObject.loaStatus = std::stoi(value["LoaStatus"].asString());
-		if(!value["CardNumber"].isNull())
-			dataObject.cardNumber = value["CardNumber"].asString();
+		if(!valueDataTrademark["Id"].isNull())
+			dataObject.id = std::stol(valueDataTrademark["Id"].asString());
+		if(!valueDataTrademark["Name"].isNull())
+			dataObject.name = valueDataTrademark["Name"].asString();
+		if(!valueDataTrademark["Type"].isNull())
+			dataObject.type = std::stoi(valueDataTrademark["Type"].asString());
+		if(!valueDataTrademark["Region"].isNull())
+			dataObject.region = std::stoi(valueDataTrademark["Region"].asString());
+		if(!valueDataTrademark["ContactName"].isNull())
+			dataObject.contactName = valueDataTrademark["ContactName"].asString();
+		if(!valueDataTrademark["Status"].isNull())
+			dataObject.status = std::stoi(valueDataTrademark["Status"].asString());
+		if(!valueDataTrademark["LoaKey"].isNull())
+			dataObject.loaKey = valueDataTrademark["LoaKey"].asString();
+		if(!valueDataTrademark["LoaStatus"].isNull())
+			dataObject.loaStatus = std::stoi(valueDataTrademark["LoaStatus"].asString());
+		if(!valueDataTrademark["CardNumber"].isNull())
+			dataObject.cardNumber = valueDataTrademark["CardNumber"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

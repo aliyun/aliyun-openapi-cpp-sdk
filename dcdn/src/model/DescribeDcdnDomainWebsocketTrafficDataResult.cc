@@ -39,14 +39,14 @@ void DescribeDcdnDomainWebsocketTrafficDataResult::parse(const std::string &payl
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTrafficDataPerInterval = value["TrafficDataPerInterval"]["DataModule"];
-	for (auto value : allTrafficDataPerInterval)
+	auto allTrafficDataPerIntervalNode = value["TrafficDataPerInterval"]["DataModule"];
+	for (auto valueTrafficDataPerIntervalDataModule : allTrafficDataPerIntervalNode)
 	{
 		DataModule trafficDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			trafficDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["WebsocketTraffic"].isNull())
-			trafficDataPerIntervalObject.websocketTraffic = std::stof(value["WebsocketTraffic"].asString());
+		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["WebsocketTraffic"].isNull())
+			trafficDataPerIntervalObject.websocketTraffic = std::stof(valueTrafficDataPerIntervalDataModule["WebsocketTraffic"].asString());
 		trafficDataPerInterval_.push_back(trafficDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

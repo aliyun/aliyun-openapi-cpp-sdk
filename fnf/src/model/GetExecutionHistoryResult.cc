@@ -39,22 +39,22 @@ void GetExecutionHistoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEvents = value["Events"]["EventsItem"];
-	for (auto value : allEvents)
+	auto allEventsNode = value["Events"]["EventsItem"];
+	for (auto valueEventsEventsItem : allEventsNode)
 	{
 		EventsItem eventsObject;
-		if(!value["StepName"].isNull())
-			eventsObject.stepName = value["StepName"].asString();
-		if(!value["Type"].isNull())
-			eventsObject.type = value["Type"].asString();
-		if(!value["EventId"].isNull())
-			eventsObject.eventId = std::stol(value["EventId"].asString());
-		if(!value["ScheduleEventId"].isNull())
-			eventsObject.scheduleEventId = std::stol(value["ScheduleEventId"].asString());
-		if(!value["EventDetail"].isNull())
-			eventsObject.eventDetail = value["EventDetail"].asString();
-		if(!value["Time"].isNull())
-			eventsObject.time = value["Time"].asString();
+		if(!valueEventsEventsItem["StepName"].isNull())
+			eventsObject.stepName = valueEventsEventsItem["StepName"].asString();
+		if(!valueEventsEventsItem["Type"].isNull())
+			eventsObject.type = valueEventsEventsItem["Type"].asString();
+		if(!valueEventsEventsItem["EventId"].isNull())
+			eventsObject.eventId = std::stol(valueEventsEventsItem["EventId"].asString());
+		if(!valueEventsEventsItem["ScheduleEventId"].isNull())
+			eventsObject.scheduleEventId = std::stol(valueEventsEventsItem["ScheduleEventId"].asString());
+		if(!valueEventsEventsItem["EventDetail"].isNull())
+			eventsObject.eventDetail = valueEventsEventsItem["EventDetail"].asString();
+		if(!valueEventsEventsItem["Time"].isNull())
+			eventsObject.time = valueEventsEventsItem["Time"].asString();
 		events_.push_back(eventsObject);
 	}
 	if(!value["NextToken"].isNull())

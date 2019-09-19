@@ -39,32 +39,32 @@ void DescribeWebLockBindListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBindList = value["BindList"]["Bind"];
-	for (auto value : allBindList)
+	auto allBindListNode = value["BindList"]["Bind"];
+	for (auto valueBindListBind : allBindListNode)
 	{
 		Bind bindListObject;
-		if(!value["Uuid"].isNull())
-			bindListObject.uuid = value["Uuid"].asString();
-		if(!value["InstanceName"].isNull())
-			bindListObject.instanceName = value["InstanceName"].asString();
-		if(!value["InternetIp"].isNull())
-			bindListObject.internetIp = value["InternetIp"].asString();
-		if(!value["IntranetIp"].isNull())
-			bindListObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["Os"].isNull())
-			bindListObject.os = value["Os"].asString();
-		if(!value["DirCount"].isNull())
-			bindListObject.dirCount = value["DirCount"].asString();
-		if(!value["ServiceStatus"].isNull())
-			bindListObject.serviceStatus = value["ServiceStatus"].asString();
-		if(!value["ServiceCode"].isNull())
-			bindListObject.serviceCode = value["ServiceCode"].asString();
-		if(!value["ServiceDetail"].isNull())
-			bindListObject.serviceDetail = value["ServiceDetail"].asString();
-		if(!value["Status"].isNull())
-			bindListObject.status = value["Status"].asString();
-		if(!value["Percent"].isNull())
-			bindListObject.percent = std::stoi(value["Percent"].asString());
+		if(!valueBindListBind["Uuid"].isNull())
+			bindListObject.uuid = valueBindListBind["Uuid"].asString();
+		if(!valueBindListBind["InstanceName"].isNull())
+			bindListObject.instanceName = valueBindListBind["InstanceName"].asString();
+		if(!valueBindListBind["InternetIp"].isNull())
+			bindListObject.internetIp = valueBindListBind["InternetIp"].asString();
+		if(!valueBindListBind["IntranetIp"].isNull())
+			bindListObject.intranetIp = valueBindListBind["IntranetIp"].asString();
+		if(!valueBindListBind["Os"].isNull())
+			bindListObject.os = valueBindListBind["Os"].asString();
+		if(!valueBindListBind["DirCount"].isNull())
+			bindListObject.dirCount = valueBindListBind["DirCount"].asString();
+		if(!valueBindListBind["ServiceStatus"].isNull())
+			bindListObject.serviceStatus = valueBindListBind["ServiceStatus"].asString();
+		if(!valueBindListBind["ServiceCode"].isNull())
+			bindListObject.serviceCode = valueBindListBind["ServiceCode"].asString();
+		if(!valueBindListBind["ServiceDetail"].isNull())
+			bindListObject.serviceDetail = valueBindListBind["ServiceDetail"].asString();
+		if(!valueBindListBind["Status"].isNull())
+			bindListObject.status = valueBindListBind["Status"].asString();
+		if(!valueBindListBind["Percent"].isNull())
+			bindListObject.percent = std::stoi(valueBindListBind["Percent"].asString());
 		bindList_.push_back(bindListObject);
 	}
 	if(!value["PageSize"].isNull())

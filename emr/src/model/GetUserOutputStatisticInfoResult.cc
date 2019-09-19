@@ -39,14 +39,14 @@ void GetUserOutputStatisticInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserOutputList = value["UserOutputList"]["ClusterStatUserOutput"];
-	for (auto value : allUserOutputList)
+	auto allUserOutputListNode = value["UserOutputList"]["ClusterStatUserOutput"];
+	for (auto valueUserOutputListClusterStatUserOutput : allUserOutputListNode)
 	{
 		ClusterStatUserOutput userOutputListObject;
-		if(!value["User"].isNull())
-			userOutputListObject.user = value["User"].asString();
-		if(!value["BytesOutput"].isNull())
-			userOutputListObject.bytesOutput = std::stol(value["BytesOutput"].asString());
+		if(!valueUserOutputListClusterStatUserOutput["User"].isNull())
+			userOutputListObject.user = valueUserOutputListClusterStatUserOutput["User"].asString();
+		if(!valueUserOutputListClusterStatUserOutput["BytesOutput"].isNull())
+			userOutputListObject.bytesOutput = std::stol(valueUserOutputListClusterStatUserOutput["BytesOutput"].asString());
 		userOutputList_.push_back(userOutputListObject);
 	}
 

@@ -39,16 +39,16 @@ void QuerySystemEntitiesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSystemEntities = value["SystemEntities"]["Entity"];
-	for (auto value : allSystemEntities)
+	auto allSystemEntitiesNode = value["SystemEntities"]["Entity"];
+	for (auto valueSystemEntitiesEntity : allSystemEntitiesNode)
 	{
 		Entity systemEntitiesObject;
-		if(!value["DefaultQuestion"].isNull())
-			systemEntitiesObject.defaultQuestion = value["DefaultQuestion"].asString();
-		if(!value["EntityName"].isNull())
-			systemEntitiesObject.entityName = value["EntityName"].asString();
-		if(!value["EntityCode"].isNull())
-			systemEntitiesObject.entityCode = value["EntityCode"].asString();
+		if(!valueSystemEntitiesEntity["DefaultQuestion"].isNull())
+			systemEntitiesObject.defaultQuestion = valueSystemEntitiesEntity["DefaultQuestion"].asString();
+		if(!valueSystemEntitiesEntity["EntityName"].isNull())
+			systemEntitiesObject.entityName = valueSystemEntitiesEntity["EntityName"].asString();
+		if(!valueSystemEntitiesEntity["EntityCode"].isNull())
+			systemEntitiesObject.entityCode = valueSystemEntitiesEntity["EntityCode"].asString();
 		systemEntities_.push_back(systemEntitiesObject);
 	}
 

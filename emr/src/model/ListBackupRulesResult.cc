@@ -39,22 +39,22 @@ void ListBackupRulesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Item"];
+	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			itemsObject.description = value["Description"].asString();
-		if(!value["MetadataType"].isNull())
-			itemsObject.metadataType = value["MetadataType"].asString();
-		if(!value["BackupMethodType"].isNull())
-			itemsObject.backupMethodType = value["BackupMethodType"].asString();
-		if(!value["BackupPlanId"].isNull())
-			itemsObject.backupPlanId = value["BackupPlanId"].asString();
+		if(!valueItemsItem["Id"].isNull())
+			itemsObject.id = valueItemsItem["Id"].asString();
+		if(!valueItemsItem["Name"].isNull())
+			itemsObject.name = valueItemsItem["Name"].asString();
+		if(!valueItemsItem["Description"].isNull())
+			itemsObject.description = valueItemsItem["Description"].asString();
+		if(!valueItemsItem["MetadataType"].isNull())
+			itemsObject.metadataType = valueItemsItem["MetadataType"].asString();
+		if(!valueItemsItem["BackupMethodType"].isNull())
+			itemsObject.backupMethodType = valueItemsItem["BackupMethodType"].asString();
+		if(!valueItemsItem["BackupPlanId"].isNull())
+			itemsObject.backupPlanId = valueItemsItem["BackupPlanId"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

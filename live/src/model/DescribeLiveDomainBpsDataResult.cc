@@ -39,18 +39,18 @@ void DescribeLiveDomainBpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBpsDataPerInterval = value["BpsDataPerInterval"]["DataModule"];
-	for (auto value : allBpsDataPerInterval)
+	auto allBpsDataPerIntervalNode = value["BpsDataPerInterval"]["DataModule"];
+	for (auto valueBpsDataPerIntervalDataModule : allBpsDataPerIntervalNode)
 	{
 		DataModule bpsDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			bpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["BpsValue"].isNull())
-			bpsDataPerIntervalObject.bpsValue = value["BpsValue"].asString();
-		if(!value["HttpBpsValue"].isNull())
-			bpsDataPerIntervalObject.httpBpsValue = value["HttpBpsValue"].asString();
-		if(!value["HttpsBpsValue"].isNull())
-			bpsDataPerIntervalObject.httpsBpsValue = value["HttpsBpsValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			bpsDataPerIntervalObject.timeStamp = valueBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueBpsDataPerIntervalDataModule["BpsValue"].isNull())
+			bpsDataPerIntervalObject.bpsValue = valueBpsDataPerIntervalDataModule["BpsValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["HttpBpsValue"].isNull())
+			bpsDataPerIntervalObject.httpBpsValue = valueBpsDataPerIntervalDataModule["HttpBpsValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["HttpsBpsValue"].isNull())
+			bpsDataPerIntervalObject.httpsBpsValue = valueBpsDataPerIntervalDataModule["HttpsBpsValue"].asString();
 		bpsDataPerInterval_.push_back(bpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

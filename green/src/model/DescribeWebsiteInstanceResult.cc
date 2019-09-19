@@ -39,28 +39,28 @@ void DescribeWebsiteInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allWebsiteInstanceList = value["WebsiteInstanceList"]["WebsiteInstance"];
-	for (auto value : allWebsiteInstanceList)
+	auto allWebsiteInstanceListNode = value["WebsiteInstanceList"]["WebsiteInstance"];
+	for (auto valueWebsiteInstanceListWebsiteInstance : allWebsiteInstanceListNode)
 	{
 		WebsiteInstance websiteInstanceListObject;
-		if(!value["Protocol"].isNull())
-			websiteInstanceListObject.protocol = value["Protocol"].asString();
-		if(!value["InstanceId"].isNull())
-			websiteInstanceListObject.instanceId = value["InstanceId"].asString();
-		if(!value["WebsiteScanInterval"].isNull())
-			websiteInstanceListObject.websiteScanInterval = std::stoi(value["WebsiteScanInterval"].asString());
-		if(!value["Domain"].isNull())
-			websiteInstanceListObject.domain = value["Domain"].asString();
-		if(!value["BuyTime"].isNull())
-			websiteInstanceListObject.buyTime = value["BuyTime"].asString();
-		if(!value["IndexPageScanInterval"].isNull())
-			websiteInstanceListObject.indexPageScanInterval = std::stoi(value["IndexPageScanInterval"].asString());
-		if(!value["IndexPage"].isNull())
-			websiteInstanceListObject.indexPage = value["IndexPage"].asString();
-		if(!value["ExpiredTime"].isNull())
-			websiteInstanceListObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["Status"].isNull())
-			websiteInstanceListObject.status = value["Status"].asString();
+		if(!valueWebsiteInstanceListWebsiteInstance["Protocol"].isNull())
+			websiteInstanceListObject.protocol = valueWebsiteInstanceListWebsiteInstance["Protocol"].asString();
+		if(!valueWebsiteInstanceListWebsiteInstance["InstanceId"].isNull())
+			websiteInstanceListObject.instanceId = valueWebsiteInstanceListWebsiteInstance["InstanceId"].asString();
+		if(!valueWebsiteInstanceListWebsiteInstance["WebsiteScanInterval"].isNull())
+			websiteInstanceListObject.websiteScanInterval = std::stoi(valueWebsiteInstanceListWebsiteInstance["WebsiteScanInterval"].asString());
+		if(!valueWebsiteInstanceListWebsiteInstance["Domain"].isNull())
+			websiteInstanceListObject.domain = valueWebsiteInstanceListWebsiteInstance["Domain"].asString();
+		if(!valueWebsiteInstanceListWebsiteInstance["BuyTime"].isNull())
+			websiteInstanceListObject.buyTime = valueWebsiteInstanceListWebsiteInstance["BuyTime"].asString();
+		if(!valueWebsiteInstanceListWebsiteInstance["IndexPageScanInterval"].isNull())
+			websiteInstanceListObject.indexPageScanInterval = std::stoi(valueWebsiteInstanceListWebsiteInstance["IndexPageScanInterval"].asString());
+		if(!valueWebsiteInstanceListWebsiteInstance["IndexPage"].isNull())
+			websiteInstanceListObject.indexPage = valueWebsiteInstanceListWebsiteInstance["IndexPage"].asString();
+		if(!valueWebsiteInstanceListWebsiteInstance["ExpiredTime"].isNull())
+			websiteInstanceListObject.expiredTime = valueWebsiteInstanceListWebsiteInstance["ExpiredTime"].asString();
+		if(!valueWebsiteInstanceListWebsiteInstance["Status"].isNull())
+			websiteInstanceListObject.status = valueWebsiteInstanceListWebsiteInstance["Status"].asString();
 		websiteInstanceList_.push_back(websiteInstanceListObject);
 	}
 	if(!value["PageSize"].isNull())

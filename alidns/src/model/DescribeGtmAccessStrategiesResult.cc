@@ -39,54 +39,54 @@ void DescribeGtmAccessStrategiesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStrategies = value["Strategies"]["Strategy"];
-	for (auto value : allStrategies)
+	auto allStrategiesNode = value["Strategies"]["Strategy"];
+	for (auto valueStrategiesStrategy : allStrategiesNode)
 	{
 		Strategy strategiesObject;
-		if(!value["StrategyId"].isNull())
-			strategiesObject.strategyId = value["StrategyId"].asString();
-		if(!value["StrategyName"].isNull())
-			strategiesObject.strategyName = value["StrategyName"].asString();
-		if(!value["CreateTime"].isNull())
-			strategiesObject.createTime = value["CreateTime"].asString();
-		if(!value["CreateTimestamp"].isNull())
-			strategiesObject.createTimestamp = std::stol(value["CreateTimestamp"].asString());
-		if(!value["DefaultAddrPoolId"].isNull())
-			strategiesObject.defaultAddrPoolId = value["DefaultAddrPoolId"].asString();
-		if(!value["DefaultAddrPoolName"].isNull())
-			strategiesObject.defaultAddrPoolName = value["DefaultAddrPoolName"].asString();
-		if(!value["FailoverAddrPoolId"].isNull())
-			strategiesObject.failoverAddrPoolId = value["FailoverAddrPoolId"].asString();
-		if(!value["FailoverAddrPoolName"].isNull())
-			strategiesObject.failoverAddrPoolName = value["FailoverAddrPoolName"].asString();
-		if(!value["AccessMode"].isNull())
-			strategiesObject.accessMode = value["AccessMode"].asString();
-		if(!value["AccessStatus"].isNull())
-			strategiesObject.accessStatus = value["AccessStatus"].asString();
-		if(!value["StrategyMode"].isNull())
-			strategiesObject.strategyMode = value["StrategyMode"].asString();
-		if(!value["InstanceId"].isNull())
-			strategiesObject.instanceId = value["InstanceId"].asString();
-		if(!value["DefaultAddrPoolStatus"].isNull())
-			strategiesObject.defaultAddrPoolStatus = value["DefaultAddrPoolStatus"].asString();
-		if(!value["FailoverAddrPoolStatus"].isNull())
-			strategiesObject.failoverAddrPoolStatus = value["FailoverAddrPoolStatus"].asString();
-		if(!value["DefaultAddrPoolMonitorStatus"].isNull())
-			strategiesObject.defaultAddrPoolMonitorStatus = value["DefaultAddrPoolMonitorStatus"].asString();
-		if(!value["FailoverAddrPoolMonitorStatus"].isNull())
-			strategiesObject.failoverAddrPoolMonitorStatus = value["FailoverAddrPoolMonitorStatus"].asString();
-		auto allLines = value["Lines"]["Line"];
-		for (auto value : allLines)
+		if(!valueStrategiesStrategy["StrategyId"].isNull())
+			strategiesObject.strategyId = valueStrategiesStrategy["StrategyId"].asString();
+		if(!valueStrategiesStrategy["StrategyName"].isNull())
+			strategiesObject.strategyName = valueStrategiesStrategy["StrategyName"].asString();
+		if(!valueStrategiesStrategy["CreateTime"].isNull())
+			strategiesObject.createTime = valueStrategiesStrategy["CreateTime"].asString();
+		if(!valueStrategiesStrategy["CreateTimestamp"].isNull())
+			strategiesObject.createTimestamp = std::stol(valueStrategiesStrategy["CreateTimestamp"].asString());
+		if(!valueStrategiesStrategy["DefaultAddrPoolId"].isNull())
+			strategiesObject.defaultAddrPoolId = valueStrategiesStrategy["DefaultAddrPoolId"].asString();
+		if(!valueStrategiesStrategy["DefaultAddrPoolName"].isNull())
+			strategiesObject.defaultAddrPoolName = valueStrategiesStrategy["DefaultAddrPoolName"].asString();
+		if(!valueStrategiesStrategy["FailoverAddrPoolId"].isNull())
+			strategiesObject.failoverAddrPoolId = valueStrategiesStrategy["FailoverAddrPoolId"].asString();
+		if(!valueStrategiesStrategy["FailoverAddrPoolName"].isNull())
+			strategiesObject.failoverAddrPoolName = valueStrategiesStrategy["FailoverAddrPoolName"].asString();
+		if(!valueStrategiesStrategy["AccessMode"].isNull())
+			strategiesObject.accessMode = valueStrategiesStrategy["AccessMode"].asString();
+		if(!valueStrategiesStrategy["AccessStatus"].isNull())
+			strategiesObject.accessStatus = valueStrategiesStrategy["AccessStatus"].asString();
+		if(!valueStrategiesStrategy["StrategyMode"].isNull())
+			strategiesObject.strategyMode = valueStrategiesStrategy["StrategyMode"].asString();
+		if(!valueStrategiesStrategy["InstanceId"].isNull())
+			strategiesObject.instanceId = valueStrategiesStrategy["InstanceId"].asString();
+		if(!valueStrategiesStrategy["DefaultAddrPoolStatus"].isNull())
+			strategiesObject.defaultAddrPoolStatus = valueStrategiesStrategy["DefaultAddrPoolStatus"].asString();
+		if(!valueStrategiesStrategy["FailoverAddrPoolStatus"].isNull())
+			strategiesObject.failoverAddrPoolStatus = valueStrategiesStrategy["FailoverAddrPoolStatus"].asString();
+		if(!valueStrategiesStrategy["DefaultAddrPoolMonitorStatus"].isNull())
+			strategiesObject.defaultAddrPoolMonitorStatus = valueStrategiesStrategy["DefaultAddrPoolMonitorStatus"].asString();
+		if(!valueStrategiesStrategy["FailoverAddrPoolMonitorStatus"].isNull())
+			strategiesObject.failoverAddrPoolMonitorStatus = valueStrategiesStrategy["FailoverAddrPoolMonitorStatus"].asString();
+		auto allLinesNode = allStrategiesNode["Lines"]["Line"];
+		for (auto allStrategiesNodeLinesLine : allLinesNode)
 		{
 			Strategy::Line linesObject;
-			if(!value["LineCode"].isNull())
-				linesObject.lineCode = value["LineCode"].asString();
-			if(!value["LineName"].isNull())
-				linesObject.lineName = value["LineName"].asString();
-			if(!value["GroupCode"].isNull())
-				linesObject.groupCode = value["GroupCode"].asString();
-			if(!value["GroupName"].isNull())
-				linesObject.groupName = value["GroupName"].asString();
+			if(!allStrategiesNodeLinesLine["LineCode"].isNull())
+				linesObject.lineCode = allStrategiesNodeLinesLine["LineCode"].asString();
+			if(!allStrategiesNodeLinesLine["LineName"].isNull())
+				linesObject.lineName = allStrategiesNodeLinesLine["LineName"].asString();
+			if(!allStrategiesNodeLinesLine["GroupCode"].isNull())
+				linesObject.groupCode = allStrategiesNodeLinesLine["GroupCode"].asString();
+			if(!allStrategiesNodeLinesLine["GroupName"].isNull())
+				linesObject.groupName = allStrategiesNodeLinesLine["GroupName"].asString();
 			strategiesObject.lines.push_back(linesObject);
 		}
 		strategies_.push_back(strategiesObject);

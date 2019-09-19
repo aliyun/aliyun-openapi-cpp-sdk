@@ -39,34 +39,34 @@ void DescribePunishListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataList = value["DataList"]["Data"];
-	for (auto value : allDataList)
+	auto allDataListNode = value["DataList"]["Data"];
+	for (auto valueDataListData : allDataListNode)
 	{
 		Data dataListObject;
-		if(!value["GmtCreate"].isNull())
-			dataListObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["SrcPort"].isNull())
-			dataListObject.srcPort = std::stoi(value["SrcPort"].asString());
-		if(!value["FeedBack"].isNull())
-			dataListObject.feedBack = std::stoi(value["FeedBack"].asString());
-		if(!value["GmtExpire"].isNull())
-			dataListObject.gmtExpire = value["GmtExpire"].asString();
-		if(!value["PunishType"].isNull())
-			dataListObject.punishType = value["PunishType"].asString();
-		if(!value["DstIP"].isNull())
-			dataListObject.dstIP = value["DstIP"].asString();
-		if(!value["PunishResult"].isNull())
-			dataListObject.punishResult = value["PunishResult"].asString();
-		if(!value["RegionId"].isNull())
-			dataListObject.regionId = value["RegionId"].asString();
-		if(!value["DstPort"].isNull())
-			dataListObject.dstPort = std::stoi(value["DstPort"].asString());
-		if(!value["Protocol"].isNull())
-			dataListObject.protocol = value["Protocol"].asString();
-		if(!value["SrcIP"].isNull())
-			dataListObject.srcIP = value["SrcIP"].asString();
-		if(!value["Reason"].isNull())
-			dataListObject.reason = value["Reason"].asString();
+		if(!valueDataListData["GmtCreate"].isNull())
+			dataListObject.gmtCreate = valueDataListData["GmtCreate"].asString();
+		if(!valueDataListData["SrcPort"].isNull())
+			dataListObject.srcPort = std::stoi(valueDataListData["SrcPort"].asString());
+		if(!valueDataListData["FeedBack"].isNull())
+			dataListObject.feedBack = std::stoi(valueDataListData["FeedBack"].asString());
+		if(!valueDataListData["GmtExpire"].isNull())
+			dataListObject.gmtExpire = valueDataListData["GmtExpire"].asString();
+		if(!valueDataListData["PunishType"].isNull())
+			dataListObject.punishType = valueDataListData["PunishType"].asString();
+		if(!valueDataListData["DstIP"].isNull())
+			dataListObject.dstIP = valueDataListData["DstIP"].asString();
+		if(!valueDataListData["PunishResult"].isNull())
+			dataListObject.punishResult = valueDataListData["PunishResult"].asString();
+		if(!valueDataListData["RegionId"].isNull())
+			dataListObject.regionId = valueDataListData["RegionId"].asString();
+		if(!valueDataListData["DstPort"].isNull())
+			dataListObject.dstPort = std::stoi(valueDataListData["DstPort"].asString());
+		if(!valueDataListData["Protocol"].isNull())
+			dataListObject.protocol = valueDataListData["Protocol"].asString();
+		if(!valueDataListData["SrcIP"].isNull())
+			dataListObject.srcIP = valueDataListData["SrcIP"].asString();
+		if(!valueDataListData["Reason"].isNull())
+			dataListObject.reason = valueDataListData["Reason"].asString();
 		dataList_.push_back(dataListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

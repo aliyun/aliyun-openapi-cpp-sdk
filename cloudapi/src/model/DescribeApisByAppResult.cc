@@ -39,30 +39,30 @@ void DescribeApisByAppResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAppApiRelationInfos = value["AppApiRelationInfos"]["AppApiRelationInfo"];
-	for (auto value : allAppApiRelationInfos)
+	auto allAppApiRelationInfosNode = value["AppApiRelationInfos"]["AppApiRelationInfo"];
+	for (auto valueAppApiRelationInfosAppApiRelationInfo : allAppApiRelationInfosNode)
 	{
 		AppApiRelationInfo appApiRelationInfosObject;
-		if(!value["RegionId"].isNull())
-			appApiRelationInfosObject.regionId = value["RegionId"].asString();
-		if(!value["GroupId"].isNull())
-			appApiRelationInfosObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			appApiRelationInfosObject.groupName = value["GroupName"].asString();
-		if(!value["StageName"].isNull())
-			appApiRelationInfosObject.stageName = value["StageName"].asString();
-		if(!value["Operator"].isNull())
-			appApiRelationInfosObject._operator = value["Operator"].asString();
-		if(!value["ApiId"].isNull())
-			appApiRelationInfosObject.apiId = value["ApiId"].asString();
-		if(!value["ApiName"].isNull())
-			appApiRelationInfosObject.apiName = value["ApiName"].asString();
-		if(!value["AuthorizationSource"].isNull())
-			appApiRelationInfosObject.authorizationSource = value["AuthorizationSource"].asString();
-		if(!value["Description"].isNull())
-			appApiRelationInfosObject.description = value["Description"].asString();
-		if(!value["CreatedTime"].isNull())
-			appApiRelationInfosObject.createdTime = value["CreatedTime"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["RegionId"].isNull())
+			appApiRelationInfosObject.regionId = valueAppApiRelationInfosAppApiRelationInfo["RegionId"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["GroupId"].isNull())
+			appApiRelationInfosObject.groupId = valueAppApiRelationInfosAppApiRelationInfo["GroupId"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["GroupName"].isNull())
+			appApiRelationInfosObject.groupName = valueAppApiRelationInfosAppApiRelationInfo["GroupName"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["StageName"].isNull())
+			appApiRelationInfosObject.stageName = valueAppApiRelationInfosAppApiRelationInfo["StageName"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["Operator"].isNull())
+			appApiRelationInfosObject._operator = valueAppApiRelationInfosAppApiRelationInfo["Operator"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["ApiId"].isNull())
+			appApiRelationInfosObject.apiId = valueAppApiRelationInfosAppApiRelationInfo["ApiId"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["ApiName"].isNull())
+			appApiRelationInfosObject.apiName = valueAppApiRelationInfosAppApiRelationInfo["ApiName"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["AuthorizationSource"].isNull())
+			appApiRelationInfosObject.authorizationSource = valueAppApiRelationInfosAppApiRelationInfo["AuthorizationSource"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["Description"].isNull())
+			appApiRelationInfosObject.description = valueAppApiRelationInfosAppApiRelationInfo["Description"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["CreatedTime"].isNull())
+			appApiRelationInfosObject.createdTime = valueAppApiRelationInfosAppApiRelationInfo["CreatedTime"].asString();
 		appApiRelationInfos_.push_back(appApiRelationInfosObject);
 	}
 	if(!value["TotalCount"].isNull())

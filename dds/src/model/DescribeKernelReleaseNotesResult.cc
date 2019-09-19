@@ -39,14 +39,14 @@ void DescribeKernelReleaseNotesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allReleaseNotes = value["ReleaseNotes"]["ReleaseNote"];
-	for (auto value : allReleaseNotes)
+	auto allReleaseNotesNode = value["ReleaseNotes"]["ReleaseNote"];
+	for (auto valueReleaseNotesReleaseNote : allReleaseNotesNode)
 	{
 		ReleaseNote releaseNotesObject;
-		if(!value["KernelVersion"].isNull())
-			releaseNotesObject.kernelVersion = value["KernelVersion"].asString();
-		if(!value["ReleaseNote"].isNull())
-			releaseNotesObject.releaseNote = value["ReleaseNote"].asString();
+		if(!valueReleaseNotesReleaseNote["KernelVersion"].isNull())
+			releaseNotesObject.kernelVersion = valueReleaseNotesReleaseNote["KernelVersion"].asString();
+		if(!valueReleaseNotesReleaseNote["ReleaseNote"].isNull())
+			releaseNotesObject.releaseNote = valueReleaseNotesReleaseNote["ReleaseNote"].asString();
 		releaseNotes_.push_back(releaseNotesObject);
 	}
 

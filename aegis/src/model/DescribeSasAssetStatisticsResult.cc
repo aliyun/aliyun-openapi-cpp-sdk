@@ -39,18 +39,18 @@ void DescribeSasAssetStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAssetList = value["AssetList"]["Asset"];
-	for (auto value : allAssetList)
+	auto allAssetListNode = value["AssetList"]["Asset"];
+	for (auto valueAssetListAsset : allAssetListNode)
 	{
 		Asset assetListObject;
-		if(!value["HealthCheckCount"].isNull())
-			assetListObject.healthCheckCount = std::stoi(value["HealthCheckCount"].asString());
-		if(!value["VulCount"].isNull())
-			assetListObject.vulCount = std::stoi(value["VulCount"].asString());
-		if(!value["SafeEventCount"].isNull())
-			assetListObject.safeEventCount = std::stoi(value["SafeEventCount"].asString());
-		if(!value["Uuid"].isNull())
-			assetListObject.uuid = value["Uuid"].asString();
+		if(!valueAssetListAsset["HealthCheckCount"].isNull())
+			assetListObject.healthCheckCount = std::stoi(valueAssetListAsset["HealthCheckCount"].asString());
+		if(!valueAssetListAsset["VulCount"].isNull())
+			assetListObject.vulCount = std::stoi(valueAssetListAsset["VulCount"].asString());
+		if(!valueAssetListAsset["SafeEventCount"].isNull())
+			assetListObject.safeEventCount = std::stoi(valueAssetListAsset["SafeEventCount"].asString());
+		if(!valueAssetListAsset["Uuid"].isNull())
+			assetListObject.uuid = valueAssetListAsset["Uuid"].asString();
 		assetList_.push_back(assetListObject);
 	}
 	if(!value["PageSize"].isNull())

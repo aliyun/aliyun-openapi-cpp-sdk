@@ -39,18 +39,18 @@ void DescribeAgentInstallStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAegisClientInvokeStatusResponseList = value["AegisClientInvokeStatusResponseList"]["AegisClientInvokeStatusResponse"];
-	for (auto value : allAegisClientInvokeStatusResponseList)
+	auto allAegisClientInvokeStatusResponseListNode = value["AegisClientInvokeStatusResponseList"]["AegisClientInvokeStatusResponse"];
+	for (auto valueAegisClientInvokeStatusResponseListAegisClientInvokeStatusResponse : allAegisClientInvokeStatusResponseListNode)
 	{
 		AegisClientInvokeStatusResponse aegisClientInvokeStatusResponseListObject;
-		if(!value["Uuid"].isNull())
-			aegisClientInvokeStatusResponseListObject.uuid = value["Uuid"].asString();
-		if(!value["Message"].isNull())
-			aegisClientInvokeStatusResponseListObject.message = value["Message"].asString();
-		if(!value["Result"].isNull())
-			aegisClientInvokeStatusResponseListObject.result = std::stoi(value["Result"].asString());
-		if(!value["ResuleCode"].isNull())
-			aegisClientInvokeStatusResponseListObject.resuleCode = value["ResuleCode"].asString();
+		if(!valueAegisClientInvokeStatusResponseListAegisClientInvokeStatusResponse["Uuid"].isNull())
+			aegisClientInvokeStatusResponseListObject.uuid = valueAegisClientInvokeStatusResponseListAegisClientInvokeStatusResponse["Uuid"].asString();
+		if(!valueAegisClientInvokeStatusResponseListAegisClientInvokeStatusResponse["Message"].isNull())
+			aegisClientInvokeStatusResponseListObject.message = valueAegisClientInvokeStatusResponseListAegisClientInvokeStatusResponse["Message"].asString();
+		if(!valueAegisClientInvokeStatusResponseListAegisClientInvokeStatusResponse["Result"].isNull())
+			aegisClientInvokeStatusResponseListObject.result = std::stoi(valueAegisClientInvokeStatusResponseListAegisClientInvokeStatusResponse["Result"].asString());
+		if(!valueAegisClientInvokeStatusResponseListAegisClientInvokeStatusResponse["ResuleCode"].isNull())
+			aegisClientInvokeStatusResponseListObject.resuleCode = valueAegisClientInvokeStatusResponseListAegisClientInvokeStatusResponse["ResuleCode"].asString();
 		aegisClientInvokeStatusResponseList_.push_back(aegisClientInvokeStatusResponseListObject);
 	}
 

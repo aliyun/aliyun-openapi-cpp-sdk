@@ -39,20 +39,20 @@ void DescribeDeviceInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDeviceInfoList = value["DeviceInfoList"]["DeviceInfo"];
-	for (auto value : allDeviceInfoList)
+	auto allDeviceInfoListNode = value["DeviceInfoList"]["DeviceInfo"];
+	for (auto valueDeviceInfoListDeviceInfo : allDeviceInfoListNode)
 	{
 		DeviceInfo deviceInfoListObject;
-		if(!value["DeviceId"].isNull())
-			deviceInfoListObject.deviceId = value["DeviceId"].asString();
-		if(!value["UserDeviceId"].isNull())
-			deviceInfoListObject.userDeviceId = value["UserDeviceId"].asString();
-		if(!value["BizType"].isNull())
-			deviceInfoListObject.bizType = value["BizType"].asString();
-		if(!value["BeginDay"].isNull())
-			deviceInfoListObject.beginDay = value["BeginDay"].asString();
-		if(!value["ExpiredDay"].isNull())
-			deviceInfoListObject.expiredDay = value["ExpiredDay"].asString();
+		if(!valueDeviceInfoListDeviceInfo["DeviceId"].isNull())
+			deviceInfoListObject.deviceId = valueDeviceInfoListDeviceInfo["DeviceId"].asString();
+		if(!valueDeviceInfoListDeviceInfo["UserDeviceId"].isNull())
+			deviceInfoListObject.userDeviceId = valueDeviceInfoListDeviceInfo["UserDeviceId"].asString();
+		if(!valueDeviceInfoListDeviceInfo["BizType"].isNull())
+			deviceInfoListObject.bizType = valueDeviceInfoListDeviceInfo["BizType"].asString();
+		if(!valueDeviceInfoListDeviceInfo["BeginDay"].isNull())
+			deviceInfoListObject.beginDay = valueDeviceInfoListDeviceInfo["BeginDay"].asString();
+		if(!valueDeviceInfoListDeviceInfo["ExpiredDay"].isNull())
+			deviceInfoListObject.expiredDay = valueDeviceInfoListDeviceInfo["ExpiredDay"].asString();
 		deviceInfoList_.push_back(deviceInfoListObject);
 	}
 	if(!value["PageSize"].isNull())

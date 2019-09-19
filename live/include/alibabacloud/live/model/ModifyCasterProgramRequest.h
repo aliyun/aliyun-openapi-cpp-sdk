@@ -36,7 +36,7 @@ namespace AlibabaCloud
 					std::string episodeType;
 					std::string episodeName;
 					std::string resourceId;
-					ComponentId componentId;
+					std::vector<std::string> componentId;
 					std::string startTime;
 					std::string endTime;
 					std::string switchType;

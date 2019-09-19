@@ -39,62 +39,62 @@ void EvaluateFailOverSwitchResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["ItemsItem"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["ItemsItem"];
+	for (auto valueItemsItemsItem : allItemsNode)
 	{
 		ItemsItem itemsObject;
-		if(!value["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["RegionId"].isNull())
-			itemsObject.regionId = value["RegionId"].asString();
-		if(!value["ReadWriteType"].isNull())
-			itemsObject.readWriteType = value["ReadWriteType"].asString();
-		if(!value["InstanceNetworkType"].isNull())
-			itemsObject.instanceNetworkType = value["InstanceNetworkType"].asString();
-		if(!value["SecurityIPList"].isNull())
-			itemsObject.securityIPList = value["SecurityIPList"].asString();
-		if(!value["HasInternetIP"].isNull())
-			itemsObject.hasInternetIP = value["HasInternetIP"].asString() == "true";
-		if(!value["InternetIP"].isNull())
-			itemsObject.internetIP = value["InternetIP"].asString();
-		auto allAccounts = value["Accounts"]["AccountsItem"];
-		for (auto value : allAccounts)
+		if(!valueItemsItemsItem["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsItemsItem["DBInstanceId"].asString();
+		if(!valueItemsItemsItem["RegionId"].isNull())
+			itemsObject.regionId = valueItemsItemsItem["RegionId"].asString();
+		if(!valueItemsItemsItem["ReadWriteType"].isNull())
+			itemsObject.readWriteType = valueItemsItemsItem["ReadWriteType"].asString();
+		if(!valueItemsItemsItem["InstanceNetworkType"].isNull())
+			itemsObject.instanceNetworkType = valueItemsItemsItem["InstanceNetworkType"].asString();
+		if(!valueItemsItemsItem["SecurityIPList"].isNull())
+			itemsObject.securityIPList = valueItemsItemsItem["SecurityIPList"].asString();
+		if(!valueItemsItemsItem["HasInternetIP"].isNull())
+			itemsObject.hasInternetIP = valueItemsItemsItem["HasInternetIP"].asString() == "true";
+		if(!valueItemsItemsItem["InternetIP"].isNull())
+			itemsObject.internetIP = valueItemsItemsItem["InternetIP"].asString();
+		auto allAccountsNode = allItemsNode["Accounts"]["AccountsItem"];
+		for (auto allItemsNodeAccountsAccountsItem : allAccountsNode)
 		{
 			ItemsItem::AccountsItem accountsObject;
-			if(!value["AccountPrivilege"].isNull())
-				accountsObject.accountPrivilege = value["AccountPrivilege"].asString();
-			if(!value["AccountStatus"].isNull())
-				accountsObject.accountStatus = value["AccountStatus"].asString();
-			if(!value["AccountPrivilegeDetail"].isNull())
-				accountsObject.accountPrivilegeDetail = value["AccountPrivilegeDetail"].asString();
-			if(!value["AccountDescription"].isNull())
-				accountsObject.accountDescription = value["AccountDescription"].asString();
-			if(!value["AccountID"].isNull())
-				accountsObject.accountID = value["AccountID"].asString();
-			if(!value["AccountName"].isNull())
-				accountsObject.accountName = value["AccountName"].asString();
-			if(!value["PrivExceeded"].isNull())
-				accountsObject.privExceeded = value["PrivExceeded"].asString();
-			if(!value["Engine"].isNull())
-				accountsObject.engine = value["Engine"].asString();
-			if(!value["AccountType"].isNull())
-				accountsObject.accountType = value["AccountType"].asString();
+			if(!allItemsNodeAccountsAccountsItem["AccountPrivilege"].isNull())
+				accountsObject.accountPrivilege = allItemsNodeAccountsAccountsItem["AccountPrivilege"].asString();
+			if(!allItemsNodeAccountsAccountsItem["AccountStatus"].isNull())
+				accountsObject.accountStatus = allItemsNodeAccountsAccountsItem["AccountStatus"].asString();
+			if(!allItemsNodeAccountsAccountsItem["AccountPrivilegeDetail"].isNull())
+				accountsObject.accountPrivilegeDetail = allItemsNodeAccountsAccountsItem["AccountPrivilegeDetail"].asString();
+			if(!allItemsNodeAccountsAccountsItem["AccountDescription"].isNull())
+				accountsObject.accountDescription = allItemsNodeAccountsAccountsItem["AccountDescription"].asString();
+			if(!allItemsNodeAccountsAccountsItem["AccountID"].isNull())
+				accountsObject.accountID = allItemsNodeAccountsAccountsItem["AccountID"].asString();
+			if(!allItemsNodeAccountsAccountsItem["AccountName"].isNull())
+				accountsObject.accountName = allItemsNodeAccountsAccountsItem["AccountName"].asString();
+			if(!allItemsNodeAccountsAccountsItem["PrivExceeded"].isNull())
+				accountsObject.privExceeded = allItemsNodeAccountsAccountsItem["PrivExceeded"].asString();
+			if(!allItemsNodeAccountsAccountsItem["Engine"].isNull())
+				accountsObject.engine = allItemsNodeAccountsAccountsItem["Engine"].asString();
+			if(!allItemsNodeAccountsAccountsItem["AccountType"].isNull())
+				accountsObject.accountType = allItemsNodeAccountsAccountsItem["AccountType"].asString();
 			itemsObject.accounts.push_back(accountsObject);
 		}
 		items_.push_back(itemsObject);
 	}
-	auto allReports = value["Reports"]["ReportsItem"];
-	for (auto value : allReports)
+	auto allReportsNode = value["Reports"]["ReportsItem"];
+	for (auto valueReportsReportsItem : allReportsNode)
 	{
 		ReportsItem reportsObject;
-		if(!value["CheckType"].isNull())
-			reportsObject.checkType = value["CheckType"].asString();
-		if(!value["Severity"].isNull())
-			reportsObject.severity = value["Severity"].asString();
-		if(!value["ReasonCode"].isNull())
-			reportsObject.reasonCode = value["ReasonCode"].asString();
-		if(!value["ReasonMessage"].isNull())
-			reportsObject.reasonMessage = value["ReasonMessage"].asString();
+		if(!valueReportsReportsItem["CheckType"].isNull())
+			reportsObject.checkType = valueReportsReportsItem["CheckType"].asString();
+		if(!valueReportsReportsItem["Severity"].isNull())
+			reportsObject.severity = valueReportsReportsItem["Severity"].asString();
+		if(!valueReportsReportsItem["ReasonCode"].isNull())
+			reportsObject.reasonCode = valueReportsReportsItem["ReasonCode"].asString();
+		if(!valueReportsReportsItem["ReasonMessage"].isNull())
+			reportsObject.reasonMessage = valueReportsReportsItem["ReasonMessage"].asString();
 		reports_.push_back(reportsObject);
 	}
 	if(!value["ReplicaId"].isNull())

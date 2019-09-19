@@ -39,44 +39,44 @@ void DescribeVpcsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVpcs = value["Vpcs"]["Vpc"];
-	for (auto value : allVpcs)
+	auto allVpcsNode = value["Vpcs"]["Vpc"];
+	for (auto valueVpcsVpc : allVpcsNode)
 	{
 		Vpc vpcsObject;
-		if(!value["VpcId"].isNull())
-			vpcsObject.vpcId = value["VpcId"].asString();
-		if(!value["RegionId"].isNull())
-			vpcsObject.regionId = value["RegionId"].asString();
-		if(!value["Status"].isNull())
-			vpcsObject.status = value["Status"].asString();
-		if(!value["VpcName"].isNull())
-			vpcsObject.vpcName = value["VpcName"].asString();
-		if(!value["CreationTime"].isNull())
-			vpcsObject.creationTime = value["CreationTime"].asString();
-		if(!value["CidrBlock"].isNull())
-			vpcsObject.cidrBlock = value["CidrBlock"].asString();
-		if(!value["Ipv6CidrBlock"].isNull())
-			vpcsObject.ipv6CidrBlock = value["Ipv6CidrBlock"].asString();
-		if(!value["VRouterId"].isNull())
-			vpcsObject.vRouterId = value["VRouterId"].asString();
-		if(!value["Description"].isNull())
-			vpcsObject.description = value["Description"].asString();
-		if(!value["IsDefault"].isNull())
-			vpcsObject.isDefault = value["IsDefault"].asString() == "true";
-		if(!value["NetworkAclNum"].isNull())
-			vpcsObject.networkAclNum = value["NetworkAclNum"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			vpcsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["CenStatus"].isNull())
-			vpcsObject.cenStatus = value["CenStatus"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueVpcsVpc["VpcId"].isNull())
+			vpcsObject.vpcId = valueVpcsVpc["VpcId"].asString();
+		if(!valueVpcsVpc["RegionId"].isNull())
+			vpcsObject.regionId = valueVpcsVpc["RegionId"].asString();
+		if(!valueVpcsVpc["Status"].isNull())
+			vpcsObject.status = valueVpcsVpc["Status"].asString();
+		if(!valueVpcsVpc["VpcName"].isNull())
+			vpcsObject.vpcName = valueVpcsVpc["VpcName"].asString();
+		if(!valueVpcsVpc["CreationTime"].isNull())
+			vpcsObject.creationTime = valueVpcsVpc["CreationTime"].asString();
+		if(!valueVpcsVpc["CidrBlock"].isNull())
+			vpcsObject.cidrBlock = valueVpcsVpc["CidrBlock"].asString();
+		if(!valueVpcsVpc["Ipv6CidrBlock"].isNull())
+			vpcsObject.ipv6CidrBlock = valueVpcsVpc["Ipv6CidrBlock"].asString();
+		if(!valueVpcsVpc["VRouterId"].isNull())
+			vpcsObject.vRouterId = valueVpcsVpc["VRouterId"].asString();
+		if(!valueVpcsVpc["Description"].isNull())
+			vpcsObject.description = valueVpcsVpc["Description"].asString();
+		if(!valueVpcsVpc["IsDefault"].isNull())
+			vpcsObject.isDefault = valueVpcsVpc["IsDefault"].asString() == "true";
+		if(!valueVpcsVpc["NetworkAclNum"].isNull())
+			vpcsObject.networkAclNum = valueVpcsVpc["NetworkAclNum"].asString();
+		if(!valueVpcsVpc["ResourceGroupId"].isNull())
+			vpcsObject.resourceGroupId = valueVpcsVpc["ResourceGroupId"].asString();
+		if(!valueVpcsVpc["CenStatus"].isNull())
+			vpcsObject.cenStatus = valueVpcsVpc["CenStatus"].asString();
+		auto allTagsNode = allVpcsNode["Tags"]["Tag"];
+		for (auto allVpcsNodeTagsTag : allTagsNode)
 		{
 			Vpc::Tag tagsObject;
-			if(!value["Key"].isNull())
-				tagsObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				tagsObject.value = value["Value"].asString();
+			if(!allVpcsNodeTagsTag["Key"].isNull())
+				tagsObject.key = allVpcsNodeTagsTag["Key"].asString();
+			if(!allVpcsNodeTagsTag["Value"].isNull())
+				tagsObject.value = allVpcsNodeTagsTag["Value"].asString();
 			vpcsObject.tags.push_back(tagsObject);
 		}
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];

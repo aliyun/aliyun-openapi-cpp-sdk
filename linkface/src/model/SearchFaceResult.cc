@@ -40,14 +40,14 @@ void SearchFaceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allTopUserItem = value["TopUserItem"]["TopUserItemItem"];
-	for (auto value : allTopUserItem)
+	auto allTopUserItemNode = dataNode["TopUserItem"]["TopUserItemItem"];
+	for (auto dataNodeTopUserItemTopUserItemItem : allTopUserItemNode)
 	{
 		Data::TopUserItemItem topUserItemItemObject;
-		if(!value["UserId"].isNull())
-			topUserItemItemObject.userId = value["UserId"].asString();
-		if(!value["Score"].isNull())
-			topUserItemItemObject.score = std::stof(value["Score"].asString());
+		if(!dataNodeTopUserItemTopUserItemItem["UserId"].isNull())
+			topUserItemItemObject.userId = dataNodeTopUserItemTopUserItemItem["UserId"].asString();
+		if(!dataNodeTopUserItemTopUserItemItem["Score"].isNull())
+			topUserItemItemObject.score = std::stof(dataNodeTopUserItemTopUserItemItem["Score"].asString());
 		data_.topUserItem.push_back(topUserItemItemObject);
 	}
 	if(!value["Code"].isNull())

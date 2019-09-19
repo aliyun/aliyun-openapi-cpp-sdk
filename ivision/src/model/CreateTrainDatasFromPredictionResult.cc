@@ -39,34 +39,34 @@ void CreateTrainDatasFromPredictionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTrainDatas = value["TrainDatas"]["TrainData"];
-	for (auto value : allTrainDatas)
+	auto allTrainDatasNode = value["TrainDatas"]["TrainData"];
+	for (auto valueTrainDatasTrainData : allTrainDatasNode)
 	{
 		TrainData trainDatasObject;
-		if(!value["ProjectId"].isNull())
-			trainDatasObject.projectId = value["ProjectId"].asString();
-		if(!value["IterationId"].isNull())
-			trainDatasObject.iterationId = value["IterationId"].asString();
-		if(!value["DataId"].isNull())
-			trainDatasObject.dataId = value["DataId"].asString();
-		if(!value["DataName"].isNull())
-			trainDatasObject.dataName = value["DataName"].asString();
-		if(!value["DataUrl"].isNull())
-			trainDatasObject.dataUrl = value["DataUrl"].asString();
-		if(!value["CreationTime"].isNull())
-			trainDatasObject.creationTime = value["CreationTime"].asString();
-		if(!value["Status"].isNull())
-			trainDatasObject.status = value["Status"].asString();
-		if(!value["TagStatus"].isNull())
-			trainDatasObject.tagStatus = value["TagStatus"].asString();
-		auto allTagItems = value["TagItems"]["TagItem"];
-		for (auto value : allTagItems)
+		if(!valueTrainDatasTrainData["ProjectId"].isNull())
+			trainDatasObject.projectId = valueTrainDatasTrainData["ProjectId"].asString();
+		if(!valueTrainDatasTrainData["IterationId"].isNull())
+			trainDatasObject.iterationId = valueTrainDatasTrainData["IterationId"].asString();
+		if(!valueTrainDatasTrainData["DataId"].isNull())
+			trainDatasObject.dataId = valueTrainDatasTrainData["DataId"].asString();
+		if(!valueTrainDatasTrainData["DataName"].isNull())
+			trainDatasObject.dataName = valueTrainDatasTrainData["DataName"].asString();
+		if(!valueTrainDatasTrainData["DataUrl"].isNull())
+			trainDatasObject.dataUrl = valueTrainDatasTrainData["DataUrl"].asString();
+		if(!valueTrainDatasTrainData["CreationTime"].isNull())
+			trainDatasObject.creationTime = valueTrainDatasTrainData["CreationTime"].asString();
+		if(!valueTrainDatasTrainData["Status"].isNull())
+			trainDatasObject.status = valueTrainDatasTrainData["Status"].asString();
+		if(!valueTrainDatasTrainData["TagStatus"].isNull())
+			trainDatasObject.tagStatus = valueTrainDatasTrainData["TagStatus"].asString();
+		auto allTagItemsNode = allTrainDatasNode["TagItems"]["TagItem"];
+		for (auto allTrainDatasNodeTagItemsTagItem : allTagItemsNode)
 		{
 			TrainData::TagItem tagItemsObject;
-			if(!value["TagId"].isNull())
-				tagItemsObject.tagId = value["TagId"].asString();
-			if(!value["RegionType"].isNull())
-				tagItemsObject.regionType = value["RegionType"].asString();
+			if(!allTrainDatasNodeTagItemsTagItem["TagId"].isNull())
+				tagItemsObject.tagId = allTrainDatasNodeTagItemsTagItem["TagId"].asString();
+			if(!allTrainDatasNodeTagItemsTagItem["RegionType"].isNull())
+				tagItemsObject.regionType = allTrainDatasNodeTagItemsTagItem["RegionType"].asString();
 			auto regionNode = value["Region"];
 			if(!regionNode["Left"].isNull())
 				tagItemsObject.region.left = regionNode["Left"].asString();

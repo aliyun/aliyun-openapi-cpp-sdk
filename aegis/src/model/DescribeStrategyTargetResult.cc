@@ -39,16 +39,16 @@ void DescribeStrategyTargetResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStrategyTargets = value["StrategyTargets"]["StrategyTarget"];
-	for (auto value : allStrategyTargets)
+	auto allStrategyTargetsNode = value["StrategyTargets"]["StrategyTarget"];
+	for (auto valueStrategyTargetsStrategyTarget : allStrategyTargetsNode)
 	{
 		StrategyTarget strategyTargetsObject;
-		if(!value["Flag"].isNull())
-			strategyTargetsObject.flag = value["Flag"].asString();
-		if(!value["Target"].isNull())
-			strategyTargetsObject.target = value["Target"].asString();
-		if(!value["TargetType"].isNull())
-			strategyTargetsObject.targetType = value["TargetType"].asString();
+		if(!valueStrategyTargetsStrategyTarget["Flag"].isNull())
+			strategyTargetsObject.flag = valueStrategyTargetsStrategyTarget["Flag"].asString();
+		if(!valueStrategyTargetsStrategyTarget["Target"].isNull())
+			strategyTargetsObject.target = valueStrategyTargetsStrategyTarget["Target"].asString();
+		if(!valueStrategyTargetsStrategyTarget["TargetType"].isNull())
+			strategyTargetsObject.targetType = valueStrategyTargetsStrategyTarget["TargetType"].asString();
 		strategyTargets_.push_back(strategyTargetsObject);
 	}
 

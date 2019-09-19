@@ -39,28 +39,28 @@ void DescribeGtmInstanceAddressPoolResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAddrs = value["Addrs"]["Addr"];
-	for (auto value : allAddrs)
+	auto allAddrsNode = value["Addrs"]["Addr"];
+	for (auto valueAddrsAddr : allAddrsNode)
 	{
 		Addr addrsObject;
-		if(!value["AddrId"].isNull())
-			addrsObject.addrId = std::stol(value["AddrId"].asString());
-		if(!value["CreateTime"].isNull())
-			addrsObject.createTime = value["CreateTime"].asString();
-		if(!value["CreateTimestamp"].isNull())
-			addrsObject.createTimestamp = std::stol(value["CreateTimestamp"].asString());
-		if(!value["UpdateTime"].isNull())
-			addrsObject.updateTime = value["UpdateTime"].asString();
-		if(!value["UpdateTimestamp"].isNull())
-			addrsObject.updateTimestamp = std::stol(value["UpdateTimestamp"].asString());
-		if(!value["Value"].isNull())
-			addrsObject.value = value["Value"].asString();
-		if(!value["LbaWeight"].isNull())
-			addrsObject.lbaWeight = std::stoi(value["LbaWeight"].asString());
-		if(!value["Mode"].isNull())
-			addrsObject.mode = value["Mode"].asString();
-		if(!value["AlertStatus"].isNull())
-			addrsObject.alertStatus = value["AlertStatus"].asString();
+		if(!valueAddrsAddr["AddrId"].isNull())
+			addrsObject.addrId = std::stol(valueAddrsAddr["AddrId"].asString());
+		if(!valueAddrsAddr["CreateTime"].isNull())
+			addrsObject.createTime = valueAddrsAddr["CreateTime"].asString();
+		if(!valueAddrsAddr["CreateTimestamp"].isNull())
+			addrsObject.createTimestamp = std::stol(valueAddrsAddr["CreateTimestamp"].asString());
+		if(!valueAddrsAddr["UpdateTime"].isNull())
+			addrsObject.updateTime = valueAddrsAddr["UpdateTime"].asString();
+		if(!valueAddrsAddr["UpdateTimestamp"].isNull())
+			addrsObject.updateTimestamp = std::stol(valueAddrsAddr["UpdateTimestamp"].asString());
+		if(!valueAddrsAddr["Value"].isNull())
+			addrsObject.value = valueAddrsAddr["Value"].asString();
+		if(!valueAddrsAddr["LbaWeight"].isNull())
+			addrsObject.lbaWeight = std::stoi(valueAddrsAddr["LbaWeight"].asString());
+		if(!valueAddrsAddr["Mode"].isNull())
+			addrsObject.mode = valueAddrsAddr["Mode"].asString();
+		if(!valueAddrsAddr["AlertStatus"].isNull())
+			addrsObject.alertStatus = valueAddrsAddr["AlertStatus"].asString();
 		addrs_.push_back(addrsObject);
 	}
 	if(!value["AddrPoolId"].isNull())

@@ -39,22 +39,22 @@ void DescribeAutoRenewAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["AutoRenewAttribute"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["AutoRenewAttribute"];
+	for (auto valueItemsAutoRenewAttribute : allItemsNode)
 	{
 		AutoRenewAttribute itemsObject;
-		if(!value["DBClusterId"].isNull())
-			itemsObject.dBClusterId = value["DBClusterId"].asString();
-		if(!value["RegionId"].isNull())
-			itemsObject.regionId = value["RegionId"].asString();
-		if(!value["AutoRenewEnabled"].isNull())
-			itemsObject.autoRenewEnabled = value["AutoRenewEnabled"].asString() == "true";
-		if(!value["Duration"].isNull())
-			itemsObject.duration = std::stoi(value["Duration"].asString());
-		if(!value["PeriodUnit"].isNull())
-			itemsObject.periodUnit = value["PeriodUnit"].asString();
-		if(!value["RenewalStatus"].isNull())
-			itemsObject.renewalStatus = value["RenewalStatus"].asString();
+		if(!valueItemsAutoRenewAttribute["DBClusterId"].isNull())
+			itemsObject.dBClusterId = valueItemsAutoRenewAttribute["DBClusterId"].asString();
+		if(!valueItemsAutoRenewAttribute["RegionId"].isNull())
+			itemsObject.regionId = valueItemsAutoRenewAttribute["RegionId"].asString();
+		if(!valueItemsAutoRenewAttribute["AutoRenewEnabled"].isNull())
+			itemsObject.autoRenewEnabled = valueItemsAutoRenewAttribute["AutoRenewEnabled"].asString() == "true";
+		if(!valueItemsAutoRenewAttribute["Duration"].isNull())
+			itemsObject.duration = std::stoi(valueItemsAutoRenewAttribute["Duration"].asString());
+		if(!valueItemsAutoRenewAttribute["PeriodUnit"].isNull())
+			itemsObject.periodUnit = valueItemsAutoRenewAttribute["PeriodUnit"].asString();
+		if(!valueItemsAutoRenewAttribute["RenewalStatus"].isNull())
+			itemsObject.renewalStatus = valueItemsAutoRenewAttribute["RenewalStatus"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

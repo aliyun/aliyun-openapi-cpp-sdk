@@ -39,14 +39,14 @@ void GetServiceExtensionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allServiceExtensions = value["ServiceExtensions"]["ServiceExtension"];
-	for (auto value : allServiceExtensions)
+	auto allServiceExtensionsNode = value["ServiceExtensions"]["ServiceExtension"];
+	for (auto valueServiceExtensionsServiceExtension : allServiceExtensionsNode)
 	{
 		ServiceExtension serviceExtensionsObject;
-		if(!value["Name"].isNull())
-			serviceExtensionsObject.name = value["Name"].asString();
-		if(!value["Number"].isNull())
-			serviceExtensionsObject.number = value["Number"].asString();
+		if(!valueServiceExtensionsServiceExtension["Name"].isNull())
+			serviceExtensionsObject.name = valueServiceExtensionsServiceExtension["Name"].asString();
+		if(!valueServiceExtensionsServiceExtension["Number"].isNull())
+			serviceExtensionsObject.number = valueServiceExtensionsServiceExtension["Number"].asString();
 		serviceExtensions_.push_back(serviceExtensionsObject);
 	}
 	if(!value["Success"].isNull())

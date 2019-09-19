@@ -39,40 +39,40 @@ void ListNotaryOrdersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["NotaryOrder"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["NotaryOrder"];
+	for (auto valueDataNotaryOrder : allDataNode)
 	{
 		NotaryOrder dataObject;
-		if(!value["NotaryOrderId"].isNull())
-			dataObject.notaryOrderId = std::stol(value["NotaryOrderId"].asString());
-		if(!value["AliyunOrderId"].isNull())
-			dataObject.aliyunOrderId = value["AliyunOrderId"].asString();
-		if(!value["TmRegisterNo"].isNull())
-			dataObject.tmRegisterNo = value["TmRegisterNo"].asString();
-		if(!value["TmName"].isNull())
-			dataObject.tmName = value["TmName"].asString();
-		if(!value["TmImage"].isNull())
-			dataObject.tmImage = value["TmImage"].asString();
-		if(!value["TmClassification"].isNull())
-			dataObject.tmClassification = value["TmClassification"].asString();
-		if(!value["OrderPrice"].isNull())
-			dataObject.orderPrice = std::stof(value["OrderPrice"].asString());
-		if(!value["NotaryStatus"].isNull())
-			dataObject.notaryStatus = std::stoi(value["NotaryStatus"].asString());
-		if(!value["OrderDate"].isNull())
-			dataObject.orderDate = std::stol(value["OrderDate"].asString());
-		if(!value["GmtModified"].isNull())
-			dataObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["NotaryCertificate"].isNull())
-			dataObject.notaryCertificate = value["NotaryCertificate"].asString();
-		if(!value["BizId"].isNull())
-			dataObject.bizId = value["BizId"].asString();
-		if(!value["NotaryType"].isNull())
-			dataObject.notaryType = std::stoi(value["NotaryType"].asString());
-		if(!value["NotaryPlatformName"].isNull())
-			dataObject.notaryPlatformName = value["NotaryPlatformName"].asString();
-		if(!value["ApplyPostStatus"].isNull())
-			dataObject.applyPostStatus = value["ApplyPostStatus"].asString();
+		if(!valueDataNotaryOrder["NotaryOrderId"].isNull())
+			dataObject.notaryOrderId = std::stol(valueDataNotaryOrder["NotaryOrderId"].asString());
+		if(!valueDataNotaryOrder["AliyunOrderId"].isNull())
+			dataObject.aliyunOrderId = valueDataNotaryOrder["AliyunOrderId"].asString();
+		if(!valueDataNotaryOrder["TmRegisterNo"].isNull())
+			dataObject.tmRegisterNo = valueDataNotaryOrder["TmRegisterNo"].asString();
+		if(!valueDataNotaryOrder["TmName"].isNull())
+			dataObject.tmName = valueDataNotaryOrder["TmName"].asString();
+		if(!valueDataNotaryOrder["TmImage"].isNull())
+			dataObject.tmImage = valueDataNotaryOrder["TmImage"].asString();
+		if(!valueDataNotaryOrder["TmClassification"].isNull())
+			dataObject.tmClassification = valueDataNotaryOrder["TmClassification"].asString();
+		if(!valueDataNotaryOrder["OrderPrice"].isNull())
+			dataObject.orderPrice = std::stof(valueDataNotaryOrder["OrderPrice"].asString());
+		if(!valueDataNotaryOrder["NotaryStatus"].isNull())
+			dataObject.notaryStatus = std::stoi(valueDataNotaryOrder["NotaryStatus"].asString());
+		if(!valueDataNotaryOrder["OrderDate"].isNull())
+			dataObject.orderDate = std::stol(valueDataNotaryOrder["OrderDate"].asString());
+		if(!valueDataNotaryOrder["GmtModified"].isNull())
+			dataObject.gmtModified = std::stol(valueDataNotaryOrder["GmtModified"].asString());
+		if(!valueDataNotaryOrder["NotaryCertificate"].isNull())
+			dataObject.notaryCertificate = valueDataNotaryOrder["NotaryCertificate"].asString();
+		if(!valueDataNotaryOrder["BizId"].isNull())
+			dataObject.bizId = valueDataNotaryOrder["BizId"].asString();
+		if(!valueDataNotaryOrder["NotaryType"].isNull())
+			dataObject.notaryType = std::stoi(valueDataNotaryOrder["NotaryType"].asString());
+		if(!valueDataNotaryOrder["NotaryPlatformName"].isNull())
+			dataObject.notaryPlatformName = valueDataNotaryOrder["NotaryPlatformName"].asString();
+		if(!valueDataNotaryOrder["ApplyPostStatus"].isNull())
+			dataObject.applyPostStatus = valueDataNotaryOrder["ApplyPostStatus"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

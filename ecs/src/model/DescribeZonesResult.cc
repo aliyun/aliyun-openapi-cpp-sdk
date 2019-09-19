@@ -39,20 +39,20 @@ void DescribeZonesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allZones = value["Zones"]["Zone"];
-	for (auto value : allZones)
+	auto allZonesNode = value["Zones"]["Zone"];
+	for (auto valueZonesZone : allZonesNode)
 	{
 		Zone zonesObject;
-		if(!value["ZoneId"].isNull())
-			zonesObject.zoneId = value["ZoneId"].asString();
-		if(!value["LocalName"].isNull())
-			zonesObject.localName = value["LocalName"].asString();
-		auto allAvailableResources = value["AvailableResources"]["ResourcesInfo"];
-		for (auto value : allAvailableResources)
+		if(!valueZonesZone["ZoneId"].isNull())
+			zonesObject.zoneId = valueZonesZone["ZoneId"].asString();
+		if(!valueZonesZone["LocalName"].isNull())
+			zonesObject.localName = valueZonesZone["LocalName"].asString();
+		auto allAvailableResourcesNode = allZonesNode["AvailableResources"]["ResourcesInfo"];
+		for (auto allZonesNodeAvailableResourcesResourcesInfo : allAvailableResourcesNode)
 		{
 			Zone::ResourcesInfo availableResourcesObject;
-			if(!value["IoOptimized"].isNull())
-				availableResourcesObject.ioOptimized = value["IoOptimized"].asString() == "true";
+			if(!allZonesNodeAvailableResourcesResourcesInfo["IoOptimized"].isNull())
+				availableResourcesObject.ioOptimized = allZonesNodeAvailableResourcesResourcesInfo["IoOptimized"].asString() == "true";
 			auto allSystemDiskCategories = value["SystemDiskCategories"]["supportedSystemDiskCategory"];
 			for (auto value : allSystemDiskCategories)
 				availableResourcesObject.systemDiskCategories.push_back(value.asString());

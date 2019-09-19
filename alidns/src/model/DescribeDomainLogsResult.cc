@@ -39,24 +39,24 @@ void DescribeDomainLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainLogs = value["DomainLogs"]["DomainLog"];
-	for (auto value : allDomainLogs)
+	auto allDomainLogsNode = value["DomainLogs"]["DomainLog"];
+	for (auto valueDomainLogsDomainLog : allDomainLogsNode)
 	{
 		DomainLog domainLogsObject;
-		if(!value["ActionTime"].isNull())
-			domainLogsObject.actionTime = value["ActionTime"].asString();
-		if(!value["ActionTimestamp"].isNull())
-			domainLogsObject.actionTimestamp = std::stol(value["ActionTimestamp"].asString());
-		if(!value["DomainName"].isNull())
-			domainLogsObject.domainName = value["DomainName"].asString();
-		if(!value["Action"].isNull())
-			domainLogsObject.action = value["Action"].asString();
-		if(!value["Message"].isNull())
-			domainLogsObject.message = value["Message"].asString();
-		if(!value["ClientIp"].isNull())
-			domainLogsObject.clientIp = value["ClientIp"].asString();
-		if(!value["ZoneId"].isNull())
-			domainLogsObject.zoneId = value["ZoneId"].asString();
+		if(!valueDomainLogsDomainLog["ActionTime"].isNull())
+			domainLogsObject.actionTime = valueDomainLogsDomainLog["ActionTime"].asString();
+		if(!valueDomainLogsDomainLog["ActionTimestamp"].isNull())
+			domainLogsObject.actionTimestamp = std::stol(valueDomainLogsDomainLog["ActionTimestamp"].asString());
+		if(!valueDomainLogsDomainLog["DomainName"].isNull())
+			domainLogsObject.domainName = valueDomainLogsDomainLog["DomainName"].asString();
+		if(!valueDomainLogsDomainLog["Action"].isNull())
+			domainLogsObject.action = valueDomainLogsDomainLog["Action"].asString();
+		if(!valueDomainLogsDomainLog["Message"].isNull())
+			domainLogsObject.message = valueDomainLogsDomainLog["Message"].asString();
+		if(!valueDomainLogsDomainLog["ClientIp"].isNull())
+			domainLogsObject.clientIp = valueDomainLogsDomainLog["ClientIp"].asString();
+		if(!valueDomainLogsDomainLog["ZoneId"].isNull())
+			domainLogsObject.zoneId = valueDomainLogsDomainLog["ZoneId"].asString();
 		domainLogs_.push_back(domainLogsObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,16 +39,16 @@ void ListRetcodeAppsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRetcodeApps = value["RetcodeApps"]["RetcodeApp"];
-	for (auto value : allRetcodeApps)
+	auto allRetcodeAppsNode = value["RetcodeApps"]["RetcodeApp"];
+	for (auto valueRetcodeAppsRetcodeApp : allRetcodeAppsNode)
 	{
 		RetcodeApp retcodeAppsObject;
-		if(!value["AppId"].isNull())
-			retcodeAppsObject.appId = std::stol(value["AppId"].asString());
-		if(!value["Pid"].isNull())
-			retcodeAppsObject.pid = value["Pid"].asString();
-		if(!value["AppName"].isNull())
-			retcodeAppsObject.appName = value["AppName"].asString();
+		if(!valueRetcodeAppsRetcodeApp["AppId"].isNull())
+			retcodeAppsObject.appId = std::stol(valueRetcodeAppsRetcodeApp["AppId"].asString());
+		if(!valueRetcodeAppsRetcodeApp["Pid"].isNull())
+			retcodeAppsObject.pid = valueRetcodeAppsRetcodeApp["Pid"].asString();
+		if(!valueRetcodeAppsRetcodeApp["AppName"].isNull())
+			retcodeAppsObject.appName = valueRetcodeAppsRetcodeApp["AppName"].asString();
 		retcodeApps_.push_back(retcodeAppsObject);
 	}
 

@@ -39,20 +39,20 @@ void TaobaoFilmGetRegionListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegions = value["Regions"]["RegionsItem"];
-	for (auto value : allRegions)
+	auto allRegionsNode = value["Regions"]["RegionsItem"];
+	for (auto valueRegionsRegionsItem : allRegionsNode)
 	{
 		RegionsItem regionsObject;
-		if(!value["CityCode"].isNull())
-			regionsObject.cityCode = std::stol(value["CityCode"].asString());
-		if(!value["Id"].isNull())
-			regionsObject.id = std::stol(value["Id"].asString());
-		if(!value["ParentId"].isNull())
-			regionsObject.parentId = std::stol(value["ParentId"].asString());
-		if(!value["PinYin"].isNull())
-			regionsObject.pinYin = value["PinYin"].asString();
-		if(!value["RegionName"].isNull())
-			regionsObject.regionName = value["RegionName"].asString();
+		if(!valueRegionsRegionsItem["CityCode"].isNull())
+			regionsObject.cityCode = std::stol(valueRegionsRegionsItem["CityCode"].asString());
+		if(!valueRegionsRegionsItem["Id"].isNull())
+			regionsObject.id = std::stol(valueRegionsRegionsItem["Id"].asString());
+		if(!valueRegionsRegionsItem["ParentId"].isNull())
+			regionsObject.parentId = std::stol(valueRegionsRegionsItem["ParentId"].asString());
+		if(!valueRegionsRegionsItem["PinYin"].isNull())
+			regionsObject.pinYin = valueRegionsRegionsItem["PinYin"].asString();
+		if(!valueRegionsRegionsItem["RegionName"].isNull())
+			regionsObject.regionName = valueRegionsRegionsItem["RegionName"].asString();
 		regions_.push_back(regionsObject);
 	}
 	if(!value["ErrorCode"].isNull())

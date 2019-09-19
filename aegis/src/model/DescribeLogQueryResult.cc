@@ -39,16 +39,16 @@ void DescribeLogQueryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQueryItems = value["QueryItems"]["QueryItemsItem"];
-	for (auto value : allQueryItems)
+	auto allQueryItemsNode = value["QueryItems"]["QueryItemsItem"];
+	for (auto valueQueryItemsQueryItemsItem : allQueryItemsNode)
 	{
 		QueryItemsItem queryItemsObject;
-		if(!value["QueryDetail"].isNull())
-			queryItemsObject.queryDetail = value["QueryDetail"].asString();
-		if(!value["QueryName"].isNull())
-			queryItemsObject.queryName = value["QueryName"].asString();
-		if(!value["Conditions"].isNull())
-			queryItemsObject.conditions = value["Conditions"].asString();
+		if(!valueQueryItemsQueryItemsItem["QueryDetail"].isNull())
+			queryItemsObject.queryDetail = valueQueryItemsQueryItemsItem["QueryDetail"].asString();
+		if(!valueQueryItemsQueryItemsItem["QueryName"].isNull())
+			queryItemsObject.queryName = valueQueryItemsQueryItemsItem["QueryName"].asString();
+		if(!valueQueryItemsQueryItemsItem["Conditions"].isNull())
+			queryItemsObject.conditions = valueQueryItemsQueryItemsItem["Conditions"].asString();
 		queryItems_.push_back(queryItemsObject);
 	}
 	if(!value["ListTotal"].isNull())

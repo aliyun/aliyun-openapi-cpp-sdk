@@ -39,16 +39,16 @@ void DescribeLiveDomainTranscodeDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTranscodeDataInfos = value["TranscodeDataInfos"]["TranscodeDataInfo"];
-	for (auto value : allTranscodeDataInfos)
+	auto allTranscodeDataInfosNode = value["TranscodeDataInfos"]["TranscodeDataInfo"];
+	for (auto valueTranscodeDataInfosTranscodeDataInfo : allTranscodeDataInfosNode)
 	{
 		TranscodeDataInfo transcodeDataInfosObject;
-		if(!value["Date"].isNull())
-			transcodeDataInfosObject.date = value["Date"].asString();
-		if(!value["Total"].isNull())
-			transcodeDataInfosObject.total = std::stoi(value["Total"].asString());
-		if(!value["Detail"].isNull())
-			transcodeDataInfosObject.detail = value["Detail"].asString();
+		if(!valueTranscodeDataInfosTranscodeDataInfo["Date"].isNull())
+			transcodeDataInfosObject.date = valueTranscodeDataInfosTranscodeDataInfo["Date"].asString();
+		if(!valueTranscodeDataInfosTranscodeDataInfo["Total"].isNull())
+			transcodeDataInfosObject.total = std::stoi(valueTranscodeDataInfosTranscodeDataInfo["Total"].asString());
+		if(!valueTranscodeDataInfosTranscodeDataInfo["Detail"].isNull())
+			transcodeDataInfosObject.detail = valueTranscodeDataInfosTranscodeDataInfo["Detail"].asString();
 		transcodeDataInfos_.push_back(transcodeDataInfosObject);
 	}
 

@@ -39,18 +39,18 @@ void DescribeCasterChannelsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allChannels = value["Channels"]["Channel"];
-	for (auto value : allChannels)
+	auto allChannelsNode = value["Channels"]["Channel"];
+	for (auto valueChannelsChannel : allChannelsNode)
 	{
 		Channel channelsObject;
-		if(!value["ChannelId"].isNull())
-			channelsObject.channelId = value["ChannelId"].asString();
-		if(!value["ResourceId"].isNull())
-			channelsObject.resourceId = value["ResourceId"].asString();
-		if(!value["StreamUrl"].isNull())
-			channelsObject.streamUrl = value["StreamUrl"].asString();
-		if(!value["RtmpUrl"].isNull())
-			channelsObject.rtmpUrl = value["RtmpUrl"].asString();
+		if(!valueChannelsChannel["ChannelId"].isNull())
+			channelsObject.channelId = valueChannelsChannel["ChannelId"].asString();
+		if(!valueChannelsChannel["ResourceId"].isNull())
+			channelsObject.resourceId = valueChannelsChannel["ResourceId"].asString();
+		if(!valueChannelsChannel["StreamUrl"].isNull())
+			channelsObject.streamUrl = valueChannelsChannel["StreamUrl"].asString();
+		if(!valueChannelsChannel["RtmpUrl"].isNull())
+			channelsObject.rtmpUrl = valueChannelsChannel["RtmpUrl"].asString();
 		channels_.push_back(channelsObject);
 	}
 	if(!value["Total"].isNull())

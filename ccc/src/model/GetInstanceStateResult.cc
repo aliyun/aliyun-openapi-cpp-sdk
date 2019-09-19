@@ -40,14 +40,14 @@ void GetInstanceStateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto realTimeInstanceStateNode = value["RealTimeInstanceState"];
-	auto allAgentStateDistributions = value["AgentStateDistributions"]["AgentStateCount"];
-	for (auto value : allAgentStateDistributions)
+	auto allAgentStateDistributionsNode = realTimeInstanceStateNode["AgentStateDistributions"]["AgentStateCount"];
+	for (auto realTimeInstanceStateNodeAgentStateDistributionsAgentStateCount : allAgentStateDistributionsNode)
 	{
 		RealTimeInstanceState::AgentStateCount agentStateCountObject;
-		if(!value["State"].isNull())
-			agentStateCountObject.state = value["State"].asString();
-		if(!value["Count"].isNull())
-			agentStateCountObject.count = std::stol(value["Count"].asString());
+		if(!realTimeInstanceStateNodeAgentStateDistributionsAgentStateCount["State"].isNull())
+			agentStateCountObject.state = realTimeInstanceStateNodeAgentStateDistributionsAgentStateCount["State"].asString();
+		if(!realTimeInstanceStateNodeAgentStateDistributionsAgentStateCount["Count"].isNull())
+			agentStateCountObject.count = std::stol(realTimeInstanceStateNodeAgentStateDistributionsAgentStateCount["Count"].asString());
 		realTimeInstanceState_.agentStateDistributions.push_back(agentStateCountObject);
 	}
 	if(!value["Success"].isNull())

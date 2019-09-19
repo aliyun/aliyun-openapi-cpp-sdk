@@ -40,22 +40,22 @@ void ApplyTemplateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resourceNode = value["Resource"];
-	auto allCreateAlertResults = value["CreateAlertResults"]["AlertResult"];
-	for (auto value : allCreateAlertResults)
+	auto allCreateAlertResultsNode = resourceNode["CreateAlertResults"]["AlertResult"];
+	for (auto resourceNodeCreateAlertResultsAlertResult : allCreateAlertResultsNode)
 	{
 		Resource::AlertResult alertResultObject;
-		if(!value["Name"].isNull())
-			alertResultObject.name = value["Name"].asString();
-		if(!value["DisplayName"].isNull())
-			alertResultObject.displayName = value["DisplayName"].asString();
-		if(!value["MetricNamespace"].isNull())
-			alertResultObject.metricNamespace = value["MetricNamespace"].asString();
-		if(!value["MetricName"].isNull())
-			alertResultObject.metricName = value["MetricName"].asString();
-		if(!value["Message"].isNull())
-			alertResultObject.message = value["Message"].asString();
-		if(!value["Success"].isNull())
-			alertResultObject.success = value["Success"].asString();
+		if(!resourceNodeCreateAlertResultsAlertResult["Name"].isNull())
+			alertResultObject.name = resourceNodeCreateAlertResultsAlertResult["Name"].asString();
+		if(!resourceNodeCreateAlertResultsAlertResult["DisplayName"].isNull())
+			alertResultObject.displayName = resourceNodeCreateAlertResultsAlertResult["DisplayName"].asString();
+		if(!resourceNodeCreateAlertResultsAlertResult["MetricNamespace"].isNull())
+			alertResultObject.metricNamespace = resourceNodeCreateAlertResultsAlertResult["MetricNamespace"].asString();
+		if(!resourceNodeCreateAlertResultsAlertResult["MetricName"].isNull())
+			alertResultObject.metricName = resourceNodeCreateAlertResultsAlertResult["MetricName"].asString();
+		if(!resourceNodeCreateAlertResultsAlertResult["Message"].isNull())
+			alertResultObject.message = resourceNodeCreateAlertResultsAlertResult["Message"].asString();
+		if(!resourceNodeCreateAlertResultsAlertResult["Success"].isNull())
+			alertResultObject.success = resourceNodeCreateAlertResultsAlertResult["Success"].asString();
 		resource_.createAlertResults.push_back(alertResultObject);
 	}
 	if(!value["Success"].isNull())

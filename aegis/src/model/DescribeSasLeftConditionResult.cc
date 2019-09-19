@@ -39,16 +39,16 @@ void DescribeSasLeftConditionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConditionList = value["ConditionList"]["Condition"];
-	for (auto value : allConditionList)
+	auto allConditionListNode = value["ConditionList"]["Condition"];
+	for (auto valueConditionListCondition : allConditionListNode)
 	{
 		Condition conditionListObject;
-		if(!value["Name"].isNull())
-			conditionListObject.name = value["Name"].asString();
-		if(!value["Count"].isNull())
-			conditionListObject.count = std::stoi(value["Count"].asString());
-		if(!value["Id"].isNull())
-			conditionListObject.id = value["Id"].asString();
+		if(!valueConditionListCondition["Name"].isNull())
+			conditionListObject.name = valueConditionListCondition["Name"].asString();
+		if(!valueConditionListCondition["Count"].isNull())
+			conditionListObject.count = std::stoi(valueConditionListCondition["Count"].asString());
+		if(!valueConditionListCondition["Id"].isNull())
+			conditionListObject.id = valueConditionListCondition["Id"].asString();
 		conditionList_.push_back(conditionListObject);
 	}
 

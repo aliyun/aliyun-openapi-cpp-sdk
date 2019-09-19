@@ -39,46 +39,46 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceTypes = value["InstanceTypes"]["InstanceType"];
-	for (auto value : allInstanceTypes)
+	auto allInstanceTypesNode = value["InstanceTypes"]["InstanceType"];
+	for (auto valueInstanceTypesInstanceType : allInstanceTypesNode)
 	{
 		InstanceType instanceTypesObject;
-		if(!value["InstanceTypeId"].isNull())
-			instanceTypesObject.instanceTypeId = value["InstanceTypeId"].asString();
-		if(!value["CpuCoreCount"].isNull())
-			instanceTypesObject.cpuCoreCount = std::stoi(value["CpuCoreCount"].asString());
-		if(!value["MemorySize"].isNull())
-			instanceTypesObject.memorySize = std::stof(value["MemorySize"].asString());
-		if(!value["InstanceTypeFamily"].isNull())
-			instanceTypesObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
-		if(!value["LocalStorageCapacity"].isNull())
-			instanceTypesObject.localStorageCapacity = std::stol(value["LocalStorageCapacity"].asString());
-		if(!value["LocalStorageAmount"].isNull())
-			instanceTypesObject.localStorageAmount = std::stoi(value["LocalStorageAmount"].asString());
-		if(!value["LocalStorageCategory"].isNull())
-			instanceTypesObject.localStorageCategory = value["LocalStorageCategory"].asString();
-		if(!value["GPUAmount"].isNull())
-			instanceTypesObject.gPUAmount = std::stoi(value["GPUAmount"].asString());
-		if(!value["GPUSpec"].isNull())
-			instanceTypesObject.gPUSpec = value["GPUSpec"].asString();
-		if(!value["InitialCredit"].isNull())
-			instanceTypesObject.initialCredit = std::stoi(value["InitialCredit"].asString());
-		if(!value["BaselineCredit"].isNull())
-			instanceTypesObject.baselineCredit = std::stoi(value["BaselineCredit"].asString());
-		if(!value["EniQuantity"].isNull())
-			instanceTypesObject.eniQuantity = std::stoi(value["EniQuantity"].asString());
-		if(!value["EniPrivateIpAddressQuantity"].isNull())
-			instanceTypesObject.eniPrivateIpAddressQuantity = std::stoi(value["EniPrivateIpAddressQuantity"].asString());
-		if(!value["InstanceBandwidthRx"].isNull())
-			instanceTypesObject.instanceBandwidthRx = std::stoi(value["InstanceBandwidthRx"].asString());
-		if(!value["InstanceBandwidthTx"].isNull())
-			instanceTypesObject.instanceBandwidthTx = std::stoi(value["InstanceBandwidthTx"].asString());
-		if(!value["InstancePpsRx"].isNull())
-			instanceTypesObject.instancePpsRx = std::stol(value["InstancePpsRx"].asString());
-		if(!value["InstancePpsTx"].isNull())
-			instanceTypesObject.instancePpsTx = std::stol(value["InstancePpsTx"].asString());
-		if(!value["InstanceFamilyLevel"].isNull())
-			instanceTypesObject.instanceFamilyLevel = value["InstanceFamilyLevel"].asString();
+		if(!valueInstanceTypesInstanceType["InstanceTypeId"].isNull())
+			instanceTypesObject.instanceTypeId = valueInstanceTypesInstanceType["InstanceTypeId"].asString();
+		if(!valueInstanceTypesInstanceType["CpuCoreCount"].isNull())
+			instanceTypesObject.cpuCoreCount = std::stoi(valueInstanceTypesInstanceType["CpuCoreCount"].asString());
+		if(!valueInstanceTypesInstanceType["MemorySize"].isNull())
+			instanceTypesObject.memorySize = std::stof(valueInstanceTypesInstanceType["MemorySize"].asString());
+		if(!valueInstanceTypesInstanceType["InstanceTypeFamily"].isNull())
+			instanceTypesObject.instanceTypeFamily = valueInstanceTypesInstanceType["InstanceTypeFamily"].asString();
+		if(!valueInstanceTypesInstanceType["LocalStorageCapacity"].isNull())
+			instanceTypesObject.localStorageCapacity = std::stol(valueInstanceTypesInstanceType["LocalStorageCapacity"].asString());
+		if(!valueInstanceTypesInstanceType["LocalStorageAmount"].isNull())
+			instanceTypesObject.localStorageAmount = std::stoi(valueInstanceTypesInstanceType["LocalStorageAmount"].asString());
+		if(!valueInstanceTypesInstanceType["LocalStorageCategory"].isNull())
+			instanceTypesObject.localStorageCategory = valueInstanceTypesInstanceType["LocalStorageCategory"].asString();
+		if(!valueInstanceTypesInstanceType["GPUAmount"].isNull())
+			instanceTypesObject.gPUAmount = std::stoi(valueInstanceTypesInstanceType["GPUAmount"].asString());
+		if(!valueInstanceTypesInstanceType["GPUSpec"].isNull())
+			instanceTypesObject.gPUSpec = valueInstanceTypesInstanceType["GPUSpec"].asString();
+		if(!valueInstanceTypesInstanceType["InitialCredit"].isNull())
+			instanceTypesObject.initialCredit = std::stoi(valueInstanceTypesInstanceType["InitialCredit"].asString());
+		if(!valueInstanceTypesInstanceType["BaselineCredit"].isNull())
+			instanceTypesObject.baselineCredit = std::stoi(valueInstanceTypesInstanceType["BaselineCredit"].asString());
+		if(!valueInstanceTypesInstanceType["EniQuantity"].isNull())
+			instanceTypesObject.eniQuantity = std::stoi(valueInstanceTypesInstanceType["EniQuantity"].asString());
+		if(!valueInstanceTypesInstanceType["EniPrivateIpAddressQuantity"].isNull())
+			instanceTypesObject.eniPrivateIpAddressQuantity = std::stoi(valueInstanceTypesInstanceType["EniPrivateIpAddressQuantity"].asString());
+		if(!valueInstanceTypesInstanceType["InstanceBandwidthRx"].isNull())
+			instanceTypesObject.instanceBandwidthRx = std::stoi(valueInstanceTypesInstanceType["InstanceBandwidthRx"].asString());
+		if(!valueInstanceTypesInstanceType["InstanceBandwidthTx"].isNull())
+			instanceTypesObject.instanceBandwidthTx = std::stoi(valueInstanceTypesInstanceType["InstanceBandwidthTx"].asString());
+		if(!valueInstanceTypesInstanceType["InstancePpsRx"].isNull())
+			instanceTypesObject.instancePpsRx = std::stol(valueInstanceTypesInstanceType["InstancePpsRx"].asString());
+		if(!valueInstanceTypesInstanceType["InstancePpsTx"].isNull())
+			instanceTypesObject.instancePpsTx = std::stol(valueInstanceTypesInstanceType["InstancePpsTx"].asString());
+		if(!valueInstanceTypesInstanceType["InstanceFamilyLevel"].isNull())
+			instanceTypesObject.instanceFamilyLevel = valueInstanceTypesInstanceType["InstanceFamilyLevel"].asString();
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 

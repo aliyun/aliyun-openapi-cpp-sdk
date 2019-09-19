@@ -50,42 +50,42 @@ void DescribeClusterServiceResult::parse(const std::string &payload)
 		serviceInfo_.needRestartInfo = serviceInfoNode["NeedRestartInfo"].asString();
 	if(!serviceInfoNode["NeedRestartNum"].isNull())
 		serviceInfo_.needRestartNum = std::stoi(serviceInfoNode["NeedRestartNum"].asString());
-	auto allServiceActionList = value["ServiceActionList"]["ServiceAction"];
-	for (auto value : allServiceActionList)
+	auto allServiceActionListNode = serviceInfoNode["ServiceActionList"]["ServiceAction"];
+	for (auto serviceInfoNodeServiceActionListServiceAction : allServiceActionListNode)
 	{
 		ServiceInfo::ServiceAction serviceActionObject;
-		if(!value["ServiceName"].isNull())
-			serviceActionObject.serviceName = value["ServiceName"].asString();
-		if(!value["ComponentName"].isNull())
-			serviceActionObject.componentName = value["ComponentName"].asString();
-		if(!value["ActionName"].isNull())
-			serviceActionObject.actionName = value["ActionName"].asString();
-		if(!value["Command"].isNull())
-			serviceActionObject.command = value["Command"].asString();
-		if(!value["DisplayName"].isNull())
-			serviceActionObject.displayName = value["DisplayName"].asString();
+		if(!serviceInfoNodeServiceActionListServiceAction["ServiceName"].isNull())
+			serviceActionObject.serviceName = serviceInfoNodeServiceActionListServiceAction["ServiceName"].asString();
+		if(!serviceInfoNodeServiceActionListServiceAction["ComponentName"].isNull())
+			serviceActionObject.componentName = serviceInfoNodeServiceActionListServiceAction["ComponentName"].asString();
+		if(!serviceInfoNodeServiceActionListServiceAction["ActionName"].isNull())
+			serviceActionObject.actionName = serviceInfoNodeServiceActionListServiceAction["ActionName"].asString();
+		if(!serviceInfoNodeServiceActionListServiceAction["Command"].isNull())
+			serviceActionObject.command = serviceInfoNodeServiceActionListServiceAction["Command"].asString();
+		if(!serviceInfoNodeServiceActionListServiceAction["DisplayName"].isNull())
+			serviceActionObject.displayName = serviceInfoNodeServiceActionListServiceAction["DisplayName"].asString();
 		serviceInfo_.serviceActionList.push_back(serviceActionObject);
 	}
-	auto allClusterServiceSummaryList = value["ClusterServiceSummaryList"]["ClusterServiceSummary"];
-	for (auto value : allClusterServiceSummaryList)
+	auto allClusterServiceSummaryListNode = serviceInfoNode["ClusterServiceSummaryList"]["ClusterServiceSummary"];
+	for (auto serviceInfoNodeClusterServiceSummaryListClusterServiceSummary : allClusterServiceSummaryListNode)
 	{
 		ServiceInfo::ClusterServiceSummary clusterServiceSummaryObject;
-		if(!value["Key"].isNull())
-			clusterServiceSummaryObject.key = value["Key"].asString();
-		if(!value["DisplayName"].isNull())
-			clusterServiceSummaryObject.displayName = value["DisplayName"].asString();
-		if(!value["Value"].isNull())
-			clusterServiceSummaryObject.value = value["Value"].asString();
-		if(!value["DesiredStoppedValue"].isNull())
-			clusterServiceSummaryObject.desiredStoppedValue = std::stoi(value["DesiredStoppedValue"].asString());
-		if(!value["Status"].isNull())
-			clusterServiceSummaryObject.status = value["Status"].asString();
-		if(!value["Type"].isNull())
-			clusterServiceSummaryObject.type = value["Type"].asString();
-		if(!value["Category"].isNull())
-			clusterServiceSummaryObject.category = value["Category"].asString();
-		if(!value["AlertInfo"].isNull())
-			clusterServiceSummaryObject.alertInfo = value["AlertInfo"].asString();
+		if(!serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["Key"].isNull())
+			clusterServiceSummaryObject.key = serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["Key"].asString();
+		if(!serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["DisplayName"].isNull())
+			clusterServiceSummaryObject.displayName = serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["DisplayName"].asString();
+		if(!serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["Value"].isNull())
+			clusterServiceSummaryObject.value = serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["Value"].asString();
+		if(!serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["DesiredStoppedValue"].isNull())
+			clusterServiceSummaryObject.desiredStoppedValue = std::stoi(serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["DesiredStoppedValue"].asString());
+		if(!serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["Status"].isNull())
+			clusterServiceSummaryObject.status = serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["Status"].asString();
+		if(!serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["Type"].isNull())
+			clusterServiceSummaryObject.type = serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["Type"].asString();
+		if(!serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["Category"].isNull())
+			clusterServiceSummaryObject.category = serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["Category"].asString();
+		if(!serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["AlertInfo"].isNull())
+			clusterServiceSummaryObject.alertInfo = serviceInfoNodeClusterServiceSummaryListClusterServiceSummary["AlertInfo"].asString();
 		serviceInfo_.clusterServiceSummaryList.push_back(clusterServiceSummaryObject);
 	}
 		auto allNeedRestartHostIdList = serviceInfoNode["NeedRestartHostIdList"]["Service"];

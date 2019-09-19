@@ -54,32 +54,32 @@ void GetTranscodeTaskResult::parse(const std::string &payload)
 		transcodeTask_.trigger = transcodeTaskNode["Trigger"].asString();
 	if(!transcodeTaskNode["TranscodeTemplateGroupId"].isNull())
 		transcodeTask_.transcodeTemplateGroupId = transcodeTaskNode["TranscodeTemplateGroupId"].asString();
-	auto allTranscodeJobInfoList = value["TranscodeJobInfoList"]["TranscodeJobInfo"];
-	for (auto value : allTranscodeJobInfoList)
+	auto allTranscodeJobInfoListNode = transcodeTaskNode["TranscodeJobInfoList"]["TranscodeJobInfo"];
+	for (auto transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo : allTranscodeJobInfoListNode)
 	{
 		TranscodeTask::TranscodeJobInfo transcodeJobInfoObject;
-		if(!value["TranscodeJobId"].isNull())
-			transcodeJobInfoObject.transcodeJobId = value["TranscodeJobId"].asString();
-		if(!value["TranscodeTemplateId"].isNull())
-			transcodeJobInfoObject.transcodeTemplateId = value["TranscodeTemplateId"].asString();
-		if(!value["TranscodeJobStatus"].isNull())
-			transcodeJobInfoObject.transcodeJobStatus = value["TranscodeJobStatus"].asString();
-		if(!value["CreationTime"].isNull())
-			transcodeJobInfoObject.creationTime = value["CreationTime"].asString();
-		if(!value["CompleteTime"].isNull())
-			transcodeJobInfoObject.completeTime = value["CompleteTime"].asString();
-		if(!value["TranscodeProgress"].isNull())
-			transcodeJobInfoObject.transcodeProgress = std::stol(value["TranscodeProgress"].asString());
-		if(!value["InputFileUrl"].isNull())
-			transcodeJobInfoObject.inputFileUrl = value["InputFileUrl"].asString();
-		if(!value["Priority"].isNull())
-			transcodeJobInfoObject.priority = value["Priority"].asString();
-		if(!value["ErrorCode"].isNull())
-			transcodeJobInfoObject.errorCode = value["ErrorCode"].asString();
-		if(!value["ErrorMessage"].isNull())
-			transcodeJobInfoObject.errorMessage = value["ErrorMessage"].asString();
-		if(!value["Definition"].isNull())
-			transcodeJobInfoObject.definition = value["Definition"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobId"].isNull())
+			transcodeJobInfoObject.transcodeJobId = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobId"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeTemplateId"].isNull())
+			transcodeJobInfoObject.transcodeTemplateId = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeTemplateId"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobStatus"].isNull())
+			transcodeJobInfoObject.transcodeJobStatus = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeJobStatus"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["CreationTime"].isNull())
+			transcodeJobInfoObject.creationTime = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["CreationTime"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["CompleteTime"].isNull())
+			transcodeJobInfoObject.completeTime = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["CompleteTime"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeProgress"].isNull())
+			transcodeJobInfoObject.transcodeProgress = std::stol(transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["TranscodeProgress"].asString());
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["InputFileUrl"].isNull())
+			transcodeJobInfoObject.inputFileUrl = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["InputFileUrl"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["Priority"].isNull())
+			transcodeJobInfoObject.priority = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["Priority"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorCode"].isNull())
+			transcodeJobInfoObject.errorCode = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorCode"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorMessage"].isNull())
+			transcodeJobInfoObject.errorMessage = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["ErrorMessage"].asString();
+		if(!transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["Definition"].isNull())
+			transcodeJobInfoObject.definition = transcodeTaskNodeTranscodeJobInfoListTranscodeJobInfo["Definition"].asString();
 		auto outputFileNode = value["OutputFile"];
 		if(!outputFileNode["Width"].isNull())
 			transcodeJobInfoObject.outputFile.width = outputFileNode["Width"].asString();

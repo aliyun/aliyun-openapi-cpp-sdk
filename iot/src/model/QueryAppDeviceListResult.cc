@@ -39,34 +39,34 @@ void QueryAppDeviceListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DataItem"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!value["ProductName"].isNull())
-			dataObject.productName = value["ProductName"].asString();
-		if(!value["ProductKey"].isNull())
-			dataObject.productKey = value["ProductKey"].asString();
-		if(!value["DeviceName"].isNull())
-			dataObject.deviceName = value["DeviceName"].asString();
-		if(!value["NodeType"].isNull())
-			dataObject.nodeType = std::stoi(value["NodeType"].asString());
-		if(!value["Status"].isNull())
-			dataObject.status = value["Status"].asString();
-		if(!value["ActiveTime"].isNull())
-			dataObject.activeTime = value["ActiveTime"].asString();
-		if(!value["LastOnlineTime"].isNull())
-			dataObject.lastOnlineTime = value["LastOnlineTime"].asString();
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = value["CreateTime"].asString();
-		if(!value["ChildDeviceCount"].isNull())
-			dataObject.childDeviceCount = std::stol(value["ChildDeviceCount"].asString());
-		if(!value["UtcActiveTime"].isNull())
-			dataObject.utcActiveTime = value["UtcActiveTime"].asString();
-		if(!value["UtcLastOnlineTime"].isNull())
-			dataObject.utcLastOnlineTime = value["UtcLastOnlineTime"].asString();
-		if(!value["UtcCreateTime"].isNull())
-			dataObject.utcCreateTime = value["UtcCreateTime"].asString();
+		if(!valueDataDataItem["ProductName"].isNull())
+			dataObject.productName = valueDataDataItem["ProductName"].asString();
+		if(!valueDataDataItem["ProductKey"].isNull())
+			dataObject.productKey = valueDataDataItem["ProductKey"].asString();
+		if(!valueDataDataItem["DeviceName"].isNull())
+			dataObject.deviceName = valueDataDataItem["DeviceName"].asString();
+		if(!valueDataDataItem["NodeType"].isNull())
+			dataObject.nodeType = std::stoi(valueDataDataItem["NodeType"].asString());
+		if(!valueDataDataItem["Status"].isNull())
+			dataObject.status = valueDataDataItem["Status"].asString();
+		if(!valueDataDataItem["ActiveTime"].isNull())
+			dataObject.activeTime = valueDataDataItem["ActiveTime"].asString();
+		if(!valueDataDataItem["LastOnlineTime"].isNull())
+			dataObject.lastOnlineTime = valueDataDataItem["LastOnlineTime"].asString();
+		if(!valueDataDataItem["CreateTime"].isNull())
+			dataObject.createTime = valueDataDataItem["CreateTime"].asString();
+		if(!valueDataDataItem["ChildDeviceCount"].isNull())
+			dataObject.childDeviceCount = std::stol(valueDataDataItem["ChildDeviceCount"].asString());
+		if(!valueDataDataItem["UtcActiveTime"].isNull())
+			dataObject.utcActiveTime = valueDataDataItem["UtcActiveTime"].asString();
+		if(!valueDataDataItem["UtcLastOnlineTime"].isNull())
+			dataObject.utcLastOnlineTime = valueDataDataItem["UtcLastOnlineTime"].asString();
+		if(!valueDataDataItem["UtcCreateTime"].isNull())
+			dataObject.utcCreateTime = valueDataDataItem["UtcCreateTime"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

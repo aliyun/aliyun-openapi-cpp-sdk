@@ -39,12 +39,12 @@ void ListFlowNodeSqlResultResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRowList = value["RowList"]["Row"];
-	for (auto value : allRowList)
+	auto allRowListNode = value["RowList"]["Row"];
+	for (auto valueRowListRow : allRowListNode)
 	{
 		Row rowListObject;
-		if(!value["RowIndex"].isNull())
-			rowListObject.rowIndex = std::stoi(value["RowIndex"].asString());
+		if(!valueRowListRow["RowIndex"].isNull())
+			rowListObject.rowIndex = std::stoi(valueRowListRow["RowIndex"].asString());
 		auto allRowItemList = value["RowItemList"]["rowItem"];
 		for (auto value : allRowItemList)
 			rowListObject.rowItemList.push_back(value.asString());

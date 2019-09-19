@@ -39,44 +39,44 @@ void DescribeCrossRegionBackupDBInstanceResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Item"];
+	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!value["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["DBInstanceDescription"].isNull())
-			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-		if(!value["DBInstanceStatus"].isNull())
-			itemsObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
-		if(!value["DBInstanceStatusDesc"].isNull())
-			itemsObject.dBInstanceStatusDesc = value["DBInstanceStatusDesc"].asString();
-		if(!value["Engine"].isNull())
-			itemsObject.engine = value["Engine"].asString();
-		if(!value["EngineVersion"].isNull())
-			itemsObject.engineVersion = value["EngineVersion"].asString();
-		if(!value["CrossBackupRegion"].isNull())
-			itemsObject.crossBackupRegion = value["CrossBackupRegion"].asString();
-		if(!value["CrossBackupType"].isNull())
-			itemsObject.crossBackupType = value["CrossBackupType"].asString();
-		if(!value["BackupEnabled"].isNull())
-			itemsObject.backupEnabled = value["BackupEnabled"].asString();
-		if(!value["LogBackupEnabled"].isNull())
-			itemsObject.logBackupEnabled = value["LogBackupEnabled"].asString();
-		if(!value["LogBackupEnabledTime"].isNull())
-			itemsObject.logBackupEnabledTime = value["LogBackupEnabledTime"].asString();
-		if(!value["BackupEnabledTime"].isNull())
-			itemsObject.backupEnabledTime = value["BackupEnabledTime"].asString();
-		if(!value["RetentType"].isNull())
-			itemsObject.retentType = std::stoi(value["RetentType"].asString());
-		if(!value["Retention"].isNull())
-			itemsObject.retention = std::stoi(value["Retention"].asString());
-		if(!value["LockMode"].isNull())
-			itemsObject.lockMode = value["LockMode"].asString();
-		if(!value["RelService"].isNull())
-			itemsObject.relService = value["RelService"].asString();
-		if(!value["RelServiceId"].isNull())
-			itemsObject.relServiceId = value["RelServiceId"].asString();
+		if(!valueItemsItem["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsItem["DBInstanceId"].asString();
+		if(!valueItemsItem["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = valueItemsItem["DBInstanceDescription"].asString();
+		if(!valueItemsItem["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = valueItemsItem["DBInstanceStatus"].asString();
+		if(!valueItemsItem["DBInstanceStatusDesc"].isNull())
+			itemsObject.dBInstanceStatusDesc = valueItemsItem["DBInstanceStatusDesc"].asString();
+		if(!valueItemsItem["Engine"].isNull())
+			itemsObject.engine = valueItemsItem["Engine"].asString();
+		if(!valueItemsItem["EngineVersion"].isNull())
+			itemsObject.engineVersion = valueItemsItem["EngineVersion"].asString();
+		if(!valueItemsItem["CrossBackupRegion"].isNull())
+			itemsObject.crossBackupRegion = valueItemsItem["CrossBackupRegion"].asString();
+		if(!valueItemsItem["CrossBackupType"].isNull())
+			itemsObject.crossBackupType = valueItemsItem["CrossBackupType"].asString();
+		if(!valueItemsItem["BackupEnabled"].isNull())
+			itemsObject.backupEnabled = valueItemsItem["BackupEnabled"].asString();
+		if(!valueItemsItem["LogBackupEnabled"].isNull())
+			itemsObject.logBackupEnabled = valueItemsItem["LogBackupEnabled"].asString();
+		if(!valueItemsItem["LogBackupEnabledTime"].isNull())
+			itemsObject.logBackupEnabledTime = valueItemsItem["LogBackupEnabledTime"].asString();
+		if(!valueItemsItem["BackupEnabledTime"].isNull())
+			itemsObject.backupEnabledTime = valueItemsItem["BackupEnabledTime"].asString();
+		if(!valueItemsItem["RetentType"].isNull())
+			itemsObject.retentType = std::stoi(valueItemsItem["RetentType"].asString());
+		if(!valueItemsItem["Retention"].isNull())
+			itemsObject.retention = std::stoi(valueItemsItem["Retention"].asString());
+		if(!valueItemsItem["LockMode"].isNull())
+			itemsObject.lockMode = valueItemsItem["LockMode"].asString();
+		if(!valueItemsItem["RelService"].isNull())
+			itemsObject.relService = valueItemsItem["RelService"].asString();
+		if(!valueItemsItem["RelServiceId"].isNull())
+			itemsObject.relServiceId = valueItemsItem["RelServiceId"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["RegionId"].isNull())

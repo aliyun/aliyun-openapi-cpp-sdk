@@ -39,24 +39,24 @@ void DescribeProjectsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProjects = value["Projects"]["Project"];
-	for (auto value : allProjects)
+	auto allProjectsNode = value["Projects"]["Project"];
+	for (auto valueProjectsProject : allProjectsNode)
 	{
 		Project projectsObject;
-		if(!value["ProjectId"].isNull())
-			projectsObject.projectId = value["ProjectId"].asString();
-		if(!value["Name"].isNull())
-			projectsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			projectsObject.description = value["Description"].asString();
-		if(!value["ProType"].isNull())
-			projectsObject.proType = value["ProType"].asString();
-		if(!value["IterCount"].isNull())
-			projectsObject.iterCount = std::stoi(value["IterCount"].asString());
-		if(!value["CreationTime"].isNull())
-			projectsObject.creationTime = value["CreationTime"].asString();
-		if(!value["Status"].isNull())
-			projectsObject.status = value["Status"].asString();
+		if(!valueProjectsProject["ProjectId"].isNull())
+			projectsObject.projectId = valueProjectsProject["ProjectId"].asString();
+		if(!valueProjectsProject["Name"].isNull())
+			projectsObject.name = valueProjectsProject["Name"].asString();
+		if(!valueProjectsProject["Description"].isNull())
+			projectsObject.description = valueProjectsProject["Description"].asString();
+		if(!valueProjectsProject["ProType"].isNull())
+			projectsObject.proType = valueProjectsProject["ProType"].asString();
+		if(!valueProjectsProject["IterCount"].isNull())
+			projectsObject.iterCount = std::stoi(valueProjectsProject["IterCount"].asString());
+		if(!valueProjectsProject["CreationTime"].isNull())
+			projectsObject.creationTime = valueProjectsProject["CreationTime"].asString();
+		if(!valueProjectsProject["Status"].isNull())
+			projectsObject.status = valueProjectsProject["Status"].asString();
 		projects_.push_back(projectsObject);
 	}
 	if(!value["TotalNum"].isNull())

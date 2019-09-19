@@ -42,40 +42,40 @@ void ApplyMonitoringTemplateResult::parse(const std::string &payload)
 	auto resourceNode = value["Resource"];
 	if(!resourceNode["GroupId"].isNull())
 		resource_.groupId = std::stol(resourceNode["GroupId"].asString());
-	auto allEventResults = value["EventResults"]["Result"];
-	for (auto value : allEventResults)
+	auto allEventResultsNode = resourceNode["EventResults"]["Result"];
+	for (auto resourceNodeEventResultsResult : allEventResultsNode)
 	{
 		Resource::Result resultObject;
-		if(!value["GroupId"].isNull())
-			resultObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["Name"].isNull())
-			resultObject.name = value["Name"].asString();
-		if(!value["Message"].isNull())
-			resultObject.message = value["Message"].asString();
-		if(!value["DisplayName"].isNull())
-			resultObject.displayName = value["DisplayName"].asString();
-		if(!value["Code"].isNull())
-			resultObject.code = std::stoi(value["Code"].asString());
-		if(!value["Success"].isNull())
-			resultObject.success = value["Success"].asString() == "true";
+		if(!resourceNodeEventResultsResult["GroupId"].isNull())
+			resultObject.groupId = std::stol(resourceNodeEventResultsResult["GroupId"].asString());
+		if(!resourceNodeEventResultsResult["Name"].isNull())
+			resultObject.name = resourceNodeEventResultsResult["Name"].asString();
+		if(!resourceNodeEventResultsResult["Message"].isNull())
+			resultObject.message = resourceNodeEventResultsResult["Message"].asString();
+		if(!resourceNodeEventResultsResult["DisplayName"].isNull())
+			resultObject.displayName = resourceNodeEventResultsResult["DisplayName"].asString();
+		if(!resourceNodeEventResultsResult["Code"].isNull())
+			resultObject.code = std::stoi(resourceNodeEventResultsResult["Code"].asString());
+		if(!resourceNodeEventResultsResult["Success"].isNull())
+			resultObject.success = resourceNodeEventResultsResult["Success"].asString() == "true";
 		resource_.eventResults.push_back(resultObject);
 	}
-	auto allAlertResults = value["AlertResults"]["Result"];
-	for (auto value : allAlertResults)
+	auto allAlertResultsNode = resourceNode["AlertResults"]["Result"];
+	for (auto resourceNodeAlertResultsResult : allAlertResultsNode)
 	{
 		Resource::Result resultObject;
-		if(!value["GroupId"].isNull())
-			resultObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["Name"].isNull())
-			resultObject.name = value["Name"].asString();
-		if(!value["Message"].isNull())
-			resultObject.message = value["Message"].asString();
-		if(!value["DisplayName"].isNull())
-			resultObject.displayName = value["DisplayName"].asString();
-		if(!value["Code"].isNull())
-			resultObject.code = std::stoi(value["Code"].asString());
-		if(!value["Success"].isNull())
-			resultObject.success = value["Success"].asString() == "true";
+		if(!resourceNodeAlertResultsResult["GroupId"].isNull())
+			resultObject.groupId = std::stol(resourceNodeAlertResultsResult["GroupId"].asString());
+		if(!resourceNodeAlertResultsResult["Name"].isNull())
+			resultObject.name = resourceNodeAlertResultsResult["Name"].asString();
+		if(!resourceNodeAlertResultsResult["Message"].isNull())
+			resultObject.message = resourceNodeAlertResultsResult["Message"].asString();
+		if(!resourceNodeAlertResultsResult["DisplayName"].isNull())
+			resultObject.displayName = resourceNodeAlertResultsResult["DisplayName"].asString();
+		if(!resourceNodeAlertResultsResult["Code"].isNull())
+			resultObject.code = std::stoi(resourceNodeAlertResultsResult["Code"].asString());
+		if(!resourceNodeAlertResultsResult["Success"].isNull())
+			resultObject.success = resourceNodeAlertResultsResult["Success"].asString() == "true";
 		resource_.alertResults.push_back(resultObject);
 	}
 	if(!value["Success"].isNull())

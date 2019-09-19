@@ -39,14 +39,14 @@ void DescribeInstanceTopologyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTopologys = value["Topologys"]["Topology"];
-	for (auto value : allTopologys)
+	auto allTopologysNode = value["Topologys"]["Topology"];
+	for (auto valueTopologysTopology : allTopologysNode)
 	{
 		Topology topologysObject;
-		if(!value["InstanceId"].isNull())
-			topologysObject.instanceId = value["InstanceId"].asString();
-		if(!value["HostId"].isNull())
-			topologysObject.hostId = value["HostId"].asString();
+		if(!valueTopologysTopology["InstanceId"].isNull())
+			topologysObject.instanceId = valueTopologysTopology["InstanceId"].asString();
+		if(!valueTopologysTopology["HostId"].isNull())
+			topologysObject.hostId = valueTopologysTopology["HostId"].asString();
 		topologys_.push_back(topologysObject);
 	}
 

@@ -58,14 +58,14 @@ void GetInstanceResult::parse(const std::string &payload)
 		instanceInfo_.createTime = instanceInfoNode["CreateTime"].asString();
 	if(!instanceInfoNode["ClusterType"].isNull())
 		instanceInfo_.clusterType = instanceInfoNode["ClusterType"].asString();
-	auto allTagInfos = value["TagInfos"]["TagInfo"];
-	for (auto value : allTagInfos)
+	auto allTagInfosNode = instanceInfoNode["TagInfos"]["TagInfo"];
+	for (auto instanceInfoNodeTagInfosTagInfo : allTagInfosNode)
 	{
 		InstanceInfo::TagInfo tagInfoObject;
-		if(!value["TagKey"].isNull())
-			tagInfoObject.tagKey = value["TagKey"].asString();
-		if(!value["TagValue"].isNull())
-			tagInfoObject.tagValue = value["TagValue"].asString();
+		if(!instanceInfoNodeTagInfosTagInfo["TagKey"].isNull())
+			tagInfoObject.tagKey = instanceInfoNodeTagInfosTagInfo["TagKey"].asString();
+		if(!instanceInfoNodeTagInfosTagInfo["TagValue"].isNull())
+			tagInfoObject.tagValue = instanceInfoNodeTagInfosTagInfo["TagValue"].asString();
 		instanceInfo_.tagInfos.push_back(tagInfoObject);
 	}
 	auto quotaNode = instanceInfoNode["Quota"];

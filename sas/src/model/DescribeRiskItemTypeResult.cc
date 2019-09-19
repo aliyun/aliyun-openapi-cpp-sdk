@@ -39,14 +39,14 @@ void DescribeRiskItemTypeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allList = value["List"]["ItemType"];
-	for (auto value : allList)
+	auto allListNode = value["List"]["ItemType"];
+	for (auto valueListItemType : allListNode)
 	{
 		ItemType listObject;
-		if(!value["Id"].isNull())
-			listObject.id = std::stol(value["Id"].asString());
-		if(!value["Title"].isNull())
-			listObject.title = value["Title"].asString();
+		if(!valueListItemType["Id"].isNull())
+			listObject.id = std::stol(valueListItemType["Id"].asString());
+		if(!valueListItemType["Title"].isNull())
+			listObject.title = valueListItemType["Title"].asString();
 		list_.push_back(listObject);
 	}
 

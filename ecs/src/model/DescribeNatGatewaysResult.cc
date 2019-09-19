@@ -39,30 +39,30 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNatGateways = value["NatGateways"]["NatGateway"];
-	for (auto value : allNatGateways)
+	auto allNatGatewaysNode = value["NatGateways"]["NatGateway"];
+	for (auto valueNatGatewaysNatGateway : allNatGatewaysNode)
 	{
 		NatGateway natGatewaysObject;
-		if(!value["NatGatewayId"].isNull())
-			natGatewaysObject.natGatewayId = value["NatGatewayId"].asString();
-		if(!value["RegionId"].isNull())
-			natGatewaysObject.regionId = value["RegionId"].asString();
-		if(!value["Name"].isNull())
-			natGatewaysObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			natGatewaysObject.description = value["Description"].asString();
-		if(!value["VpcId"].isNull())
-			natGatewaysObject.vpcId = value["VpcId"].asString();
-		if(!value["Spec"].isNull())
-			natGatewaysObject.spec = value["Spec"].asString();
-		if(!value["InstanceChargeType"].isNull())
-			natGatewaysObject.instanceChargeType = value["InstanceChargeType"].asString();
-		if(!value["BusinessStatus"].isNull())
-			natGatewaysObject.businessStatus = value["BusinessStatus"].asString();
-		if(!value["CreationTime"].isNull())
-			natGatewaysObject.creationTime = value["CreationTime"].asString();
-		if(!value["Status"].isNull())
-			natGatewaysObject.status = value["Status"].asString();
+		if(!valueNatGatewaysNatGateway["NatGatewayId"].isNull())
+			natGatewaysObject.natGatewayId = valueNatGatewaysNatGateway["NatGatewayId"].asString();
+		if(!valueNatGatewaysNatGateway["RegionId"].isNull())
+			natGatewaysObject.regionId = valueNatGatewaysNatGateway["RegionId"].asString();
+		if(!valueNatGatewaysNatGateway["Name"].isNull())
+			natGatewaysObject.name = valueNatGatewaysNatGateway["Name"].asString();
+		if(!valueNatGatewaysNatGateway["Description"].isNull())
+			natGatewaysObject.description = valueNatGatewaysNatGateway["Description"].asString();
+		if(!valueNatGatewaysNatGateway["VpcId"].isNull())
+			natGatewaysObject.vpcId = valueNatGatewaysNatGateway["VpcId"].asString();
+		if(!valueNatGatewaysNatGateway["Spec"].isNull())
+			natGatewaysObject.spec = valueNatGatewaysNatGateway["Spec"].asString();
+		if(!valueNatGatewaysNatGateway["InstanceChargeType"].isNull())
+			natGatewaysObject.instanceChargeType = valueNatGatewaysNatGateway["InstanceChargeType"].asString();
+		if(!valueNatGatewaysNatGateway["BusinessStatus"].isNull())
+			natGatewaysObject.businessStatus = valueNatGatewaysNatGateway["BusinessStatus"].asString();
+		if(!valueNatGatewaysNatGateway["CreationTime"].isNull())
+			natGatewaysObject.creationTime = valueNatGatewaysNatGateway["CreationTime"].asString();
+		if(!valueNatGatewaysNatGateway["Status"].isNull())
+			natGatewaysObject.status = valueNatGatewaysNatGateway["Status"].asString();
 		auto allForwardTableIds = value["ForwardTableIds"]["ForwardTableId"];
 		for (auto value : allForwardTableIds)
 			natGatewaysObject.forwardTableIds.push_back(value.asString());

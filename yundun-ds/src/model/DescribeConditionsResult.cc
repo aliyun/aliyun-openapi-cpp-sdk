@@ -40,110 +40,110 @@ void DescribeConditionsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto conditionNode = value["Condition"];
-	auto allRiskLevelList = value["RiskLevelList"]["RiskLevel"];
-	for (auto value : allRiskLevelList)
+	auto allRiskLevelListNode = conditionNode["RiskLevelList"]["RiskLevel"];
+	for (auto conditionNodeRiskLevelListRiskLevel : allRiskLevelListNode)
 	{
 		Condition::RiskLevel riskLevelObject;
-		if(!value["Id"].isNull())
-			riskLevelObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			riskLevelObject.name = value["Name"].asString();
-		if(!value["Defaulted"].isNull())
-			riskLevelObject.defaulted = value["Defaulted"].asString() == "true";
-		if(!value["Sensitive"].isNull())
-			riskLevelObject.sensitive = value["Sensitive"].asString() == "true";
+		if(!conditionNodeRiskLevelListRiskLevel["Id"].isNull())
+			riskLevelObject.id = std::stol(conditionNodeRiskLevelListRiskLevel["Id"].asString());
+		if(!conditionNodeRiskLevelListRiskLevel["Name"].isNull())
+			riskLevelObject.name = conditionNodeRiskLevelListRiskLevel["Name"].asString();
+		if(!conditionNodeRiskLevelListRiskLevel["Defaulted"].isNull())
+			riskLevelObject.defaulted = conditionNodeRiskLevelListRiskLevel["Defaulted"].asString() == "true";
+		if(!conditionNodeRiskLevelListRiskLevel["Sensitive"].isNull())
+			riskLevelObject.sensitive = conditionNodeRiskLevelListRiskLevel["Sensitive"].asString() == "true";
 		condition_.riskLevelList.push_back(riskLevelObject);
 	}
-	auto allRuleList = value["RuleList"]["Rule"];
-	for (auto value : allRuleList)
+	auto allRuleListNode = conditionNode["RuleList"]["Rule"];
+	for (auto conditionNodeRuleListRule : allRuleListNode)
 	{
 		Condition::Rule ruleObject;
-		if(!value["Id"].isNull())
-			ruleObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			ruleObject.name = value["Name"].asString();
+		if(!conditionNodeRuleListRule["Id"].isNull())
+			ruleObject.id = std::stol(conditionNodeRuleListRule["Id"].asString());
+		if(!conditionNodeRuleListRule["Name"].isNull())
+			ruleObject.name = conditionNodeRuleListRule["Name"].asString();
 		condition_.ruleList.push_back(ruleObject);
 	}
-	auto allRangeList = value["RangeList"]["Range"];
-	for (auto value : allRangeList)
+	auto allRangeListNode = conditionNode["RangeList"]["Range"];
+	for (auto conditionNodeRangeListRange : allRangeListNode)
 	{
 		Condition::Range rangeObject;
-		if(!value["Id"].isNull())
-			rangeObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			rangeObject.name = value["Name"].asString();
+		if(!conditionNodeRangeListRange["Id"].isNull())
+			rangeObject.id = std::stol(conditionNodeRangeListRange["Id"].asString());
+		if(!conditionNodeRangeListRange["Name"].isNull())
+			rangeObject.name = conditionNodeRangeListRange["Name"].asString();
 		condition_.rangeList.push_back(rangeObject);
 	}
-	auto allEventTypeList = value["EventTypeList"]["EventType"];
-	for (auto value : allEventTypeList)
+	auto allEventTypeListNode = conditionNode["EventTypeList"]["EventType"];
+	for (auto conditionNodeEventTypeListEventType : allEventTypeListNode)
 	{
 		Condition::EventType eventTypeObject;
-		if(!value["Id"].isNull())
-			eventTypeObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			eventTypeObject.name = value["Name"].asString();
-		if(!value["Code"].isNull())
-			eventTypeObject.code = value["Code"].asString();
+		if(!conditionNodeEventTypeListEventType["Id"].isNull())
+			eventTypeObject.id = std::stol(conditionNodeEventTypeListEventType["Id"].asString());
+		if(!conditionNodeEventTypeListEventType["Name"].isNull())
+			eventTypeObject.name = conditionNodeEventTypeListEventType["Name"].asString();
+		if(!conditionNodeEventTypeListEventType["Code"].isNull())
+			eventTypeObject.code = conditionNodeEventTypeListEventType["Code"].asString();
 		condition_.eventTypeList.push_back(eventTypeObject);
 	}
-	auto allStatusList = value["StatusList"]["Status"];
-	for (auto value : allStatusList)
+	auto allStatusListNode = conditionNode["StatusList"]["Status"];
+	for (auto conditionNodeStatusListStatus : allStatusListNode)
 	{
 		Condition::Status statusObject;
-		if(!value["Id"].isNull())
-			statusObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			statusObject.name = value["Name"].asString();
+		if(!conditionNodeStatusListStatus["Id"].isNull())
+			statusObject.id = std::stol(conditionNodeStatusListStatus["Id"].asString());
+		if(!conditionNodeStatusListStatus["Name"].isNull())
+			statusObject.name = conditionNodeStatusListStatus["Name"].asString();
 		condition_.statusList.push_back(statusObject);
 	}
-	auto allDataTypeList = value["DataTypeList"]["DataType"];
-	for (auto value : allDataTypeList)
+	auto allDataTypeListNode = conditionNode["DataTypeList"]["DataType"];
+	for (auto conditionNodeDataTypeListDataType : allDataTypeListNode)
 	{
 		Condition::DataType dataTypeObject;
-		if(!value["Id"].isNull())
-			dataTypeObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			dataTypeObject.name = value["Name"].asString();
+		if(!conditionNodeDataTypeListDataType["Id"].isNull())
+			dataTypeObject.id = std::stol(conditionNodeDataTypeListDataType["Id"].asString());
+		if(!conditionNodeDataTypeListDataType["Name"].isNull())
+			dataTypeObject.name = conditionNodeDataTypeListDataType["Name"].asString();
 		condition_.dataTypeList.push_back(dataTypeObject);
 	}
-	auto allOperationList = value["OperationList"]["Operation"];
-	for (auto value : allOperationList)
+	auto allOperationListNode = conditionNode["OperationList"]["Operation"];
+	for (auto conditionNodeOperationListOperation : allOperationListNode)
 	{
 		Condition::Operation operationObject;
-		if(!value["Id"].isNull())
-			operationObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			operationObject.name = value["Name"].asString();
+		if(!conditionNodeOperationListOperation["Id"].isNull())
+			operationObject.id = std::stol(conditionNodeOperationListOperation["Id"].asString());
+		if(!conditionNodeOperationListOperation["Name"].isNull())
+			operationObject.name = conditionNodeOperationListOperation["Name"].asString();
 		condition_.operationList.push_back(operationObject);
 	}
-	auto allProductList = value["ProductList"]["Product"];
-	for (auto value : allProductList)
+	auto allProductListNode = conditionNode["ProductList"]["Product"];
+	for (auto conditionNodeProductListProduct : allProductListNode)
 	{
 		Condition::Product productObject;
-		if(!value["Id"].isNull())
-			productObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			productObject.name = value["Name"].asString();
+		if(!conditionNodeProductListProduct["Id"].isNull())
+			productObject.id = std::stol(conditionNodeProductListProduct["Id"].asString());
+		if(!conditionNodeProductListProduct["Name"].isNull())
+			productObject.name = conditionNodeProductListProduct["Name"].asString();
 		condition_.productList.push_back(productObject);
 	}
-	auto allTransferProductList = value["TransferProductList"]["TransferProduct"];
-	for (auto value : allTransferProductList)
+	auto allTransferProductListNode = conditionNode["TransferProductList"]["TransferProduct"];
+	for (auto conditionNodeTransferProductListTransferProduct : allTransferProductListNode)
 	{
 		Condition::TransferProduct transferProductObject;
-		if(!value["Code"].isNull())
-			transferProductObject.code = value["Code"].asString();
-		if(!value["Status"].isNull())
-			transferProductObject.status = std::stoi(value["Status"].asString());
+		if(!conditionNodeTransferProductListTransferProduct["Code"].isNull())
+			transferProductObject.code = conditionNodeTransferProductListTransferProduct["Code"].asString();
+		if(!conditionNodeTransferProductListTransferProduct["Status"].isNull())
+			transferProductObject.status = std::stoi(conditionNodeTransferProductListTransferProduct["Status"].asString());
 		condition_.transferProductList.push_back(transferProductObject);
 	}
-	auto allRuleCategoryList = value["RuleCategoryList"]["RuleCategory"];
-	for (auto value : allRuleCategoryList)
+	auto allRuleCategoryListNode = conditionNode["RuleCategoryList"]["RuleCategory"];
+	for (auto conditionNodeRuleCategoryListRuleCategory : allRuleCategoryListNode)
 	{
 		Condition::RuleCategory ruleCategoryObject;
-		if(!value["Id"].isNull())
-			ruleCategoryObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			ruleCategoryObject.name = value["Name"].asString();
+		if(!conditionNodeRuleCategoryListRuleCategory["Id"].isNull())
+			ruleCategoryObject.id = std::stol(conditionNodeRuleCategoryListRuleCategory["Id"].asString());
+		if(!conditionNodeRuleCategoryListRuleCategory["Name"].isNull())
+			ruleCategoryObject.name = conditionNodeRuleCategoryListRuleCategory["Name"].asString();
 		condition_.ruleCategoryList.push_back(ruleCategoryObject);
 	}
 

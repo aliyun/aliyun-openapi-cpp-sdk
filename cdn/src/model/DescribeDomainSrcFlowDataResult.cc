@@ -39,14 +39,14 @@ void DescribeDomainSrcFlowDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSrcFlowDataPerInterval = value["SrcFlowDataPerInterval"]["DataModule"];
-	for (auto value : allSrcFlowDataPerInterval)
+	auto allSrcFlowDataPerIntervalNode = value["SrcFlowDataPerInterval"]["DataModule"];
+	for (auto valueSrcFlowDataPerIntervalDataModule : allSrcFlowDataPerIntervalNode)
 	{
 		DataModule srcFlowDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			srcFlowDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			srcFlowDataPerIntervalObject.value = value["Value"].asString();
+		if(!valueSrcFlowDataPerIntervalDataModule["TimeStamp"].isNull())
+			srcFlowDataPerIntervalObject.timeStamp = valueSrcFlowDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueSrcFlowDataPerIntervalDataModule["Value"].isNull())
+			srcFlowDataPerIntervalObject.value = valueSrcFlowDataPerIntervalDataModule["Value"].asString();
 		srcFlowDataPerInterval_.push_back(srcFlowDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

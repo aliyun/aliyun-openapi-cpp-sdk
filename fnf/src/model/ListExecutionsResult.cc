@@ -39,26 +39,26 @@ void ListExecutionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allExecutions = value["Executions"]["ExecutionsItem"];
-	for (auto value : allExecutions)
+	auto allExecutionsNode = value["Executions"]["ExecutionsItem"];
+	for (auto valueExecutionsExecutionsItem : allExecutionsNode)
 	{
 		ExecutionsItem executionsObject;
-		if(!value["Name"].isNull())
-			executionsObject.name = value["Name"].asString();
-		if(!value["FlowName"].isNull())
-			executionsObject.flowName = value["FlowName"].asString();
-		if(!value["FlowDefinition"].isNull())
-			executionsObject.flowDefinition = value["FlowDefinition"].asString();
-		if(!value["Input"].isNull())
-			executionsObject.input = value["Input"].asString();
-		if(!value["Output"].isNull())
-			executionsObject.output = value["Output"].asString();
-		if(!value["Status"].isNull())
-			executionsObject.status = value["Status"].asString();
-		if(!value["StartedTime"].isNull())
-			executionsObject.startedTime = value["StartedTime"].asString();
-		if(!value["StoppedTime"].isNull())
-			executionsObject.stoppedTime = value["StoppedTime"].asString();
+		if(!valueExecutionsExecutionsItem["Name"].isNull())
+			executionsObject.name = valueExecutionsExecutionsItem["Name"].asString();
+		if(!valueExecutionsExecutionsItem["FlowName"].isNull())
+			executionsObject.flowName = valueExecutionsExecutionsItem["FlowName"].asString();
+		if(!valueExecutionsExecutionsItem["FlowDefinition"].isNull())
+			executionsObject.flowDefinition = valueExecutionsExecutionsItem["FlowDefinition"].asString();
+		if(!valueExecutionsExecutionsItem["Input"].isNull())
+			executionsObject.input = valueExecutionsExecutionsItem["Input"].asString();
+		if(!valueExecutionsExecutionsItem["Output"].isNull())
+			executionsObject.output = valueExecutionsExecutionsItem["Output"].asString();
+		if(!valueExecutionsExecutionsItem["Status"].isNull())
+			executionsObject.status = valueExecutionsExecutionsItem["Status"].asString();
+		if(!valueExecutionsExecutionsItem["StartedTime"].isNull())
+			executionsObject.startedTime = valueExecutionsExecutionsItem["StartedTime"].asString();
+		if(!valueExecutionsExecutionsItem["StoppedTime"].isNull())
+			executionsObject.stoppedTime = valueExecutionsExecutionsItem["StoppedTime"].asString();
 		executions_.push_back(executionsObject);
 	}
 	if(!value["NextToken"].isNull())

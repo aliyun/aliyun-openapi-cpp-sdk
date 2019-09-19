@@ -39,48 +39,48 @@ void DescribeDrdsInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Instance"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["Instance"];
+	for (auto valueDataInstance : allDataNode)
 	{
 		Instance dataObject;
-		if(!value["DrdsInstanceId"].isNull())
-			dataObject.drdsInstanceId = value["DrdsInstanceId"].asString();
-		if(!value["Type"].isNull())
-			dataObject.type = value["Type"].asString();
-		if(!value["RegionId"].isNull())
-			dataObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			dataObject.zoneId = value["ZoneId"].asString();
-		if(!value["Description"].isNull())
-			dataObject.description = value["Description"].asString();
-		if(!value["NetworkType"].isNull())
-			dataObject.networkType = value["NetworkType"].asString();
-		if(!value["Status"].isNull())
-			dataObject.status = value["Status"].asString();
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["Version"].isNull())
-			dataObject.version = std::stol(value["Version"].asString());
-		if(!value["VpcCloudInstanceId"].isNull())
-			dataObject.vpcCloudInstanceId = value["VpcCloudInstanceId"].asString();
-		if(!value["InstRole"].isNull())
-			dataObject.instRole = value["InstRole"].asString();
-		if(!value["MasterInstId"].isNull())
-			dataObject.masterInstId = value["MasterInstId"].asString();
-		auto allVips = value["Vips"]["Vip"];
-		for (auto value : allVips)
+		if(!valueDataInstance["DrdsInstanceId"].isNull())
+			dataObject.drdsInstanceId = valueDataInstance["DrdsInstanceId"].asString();
+		if(!valueDataInstance["Type"].isNull())
+			dataObject.type = valueDataInstance["Type"].asString();
+		if(!valueDataInstance["RegionId"].isNull())
+			dataObject.regionId = valueDataInstance["RegionId"].asString();
+		if(!valueDataInstance["ZoneId"].isNull())
+			dataObject.zoneId = valueDataInstance["ZoneId"].asString();
+		if(!valueDataInstance["Description"].isNull())
+			dataObject.description = valueDataInstance["Description"].asString();
+		if(!valueDataInstance["NetworkType"].isNull())
+			dataObject.networkType = valueDataInstance["NetworkType"].asString();
+		if(!valueDataInstance["Status"].isNull())
+			dataObject.status = valueDataInstance["Status"].asString();
+		if(!valueDataInstance["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataInstance["CreateTime"].asString());
+		if(!valueDataInstance["Version"].isNull())
+			dataObject.version = std::stol(valueDataInstance["Version"].asString());
+		if(!valueDataInstance["VpcCloudInstanceId"].isNull())
+			dataObject.vpcCloudInstanceId = valueDataInstance["VpcCloudInstanceId"].asString();
+		if(!valueDataInstance["InstRole"].isNull())
+			dataObject.instRole = valueDataInstance["InstRole"].asString();
+		if(!valueDataInstance["MasterInstId"].isNull())
+			dataObject.masterInstId = valueDataInstance["MasterInstId"].asString();
+		auto allVipsNode = allDataNode["Vips"]["Vip"];
+		for (auto allDataNodeVipsVip : allVipsNode)
 		{
 			Instance::Vip vipsObject;
-			if(!value["IP"].isNull())
-				vipsObject.iP = value["IP"].asString();
-			if(!value["Port"].isNull())
-				vipsObject.port = value["Port"].asString();
-			if(!value["Type"].isNull())
-				vipsObject.type = value["Type"].asString();
-			if(!value["VpcId"].isNull())
-				vipsObject.vpcId = value["VpcId"].asString();
-			if(!value["VswitchId"].isNull())
-				vipsObject.vswitchId = value["VswitchId"].asString();
+			if(!allDataNodeVipsVip["IP"].isNull())
+				vipsObject.iP = allDataNodeVipsVip["IP"].asString();
+			if(!allDataNodeVipsVip["Port"].isNull())
+				vipsObject.port = allDataNodeVipsVip["Port"].asString();
+			if(!allDataNodeVipsVip["Type"].isNull())
+				vipsObject.type = allDataNodeVipsVip["Type"].asString();
+			if(!allDataNodeVipsVip["VpcId"].isNull())
+				vipsObject.vpcId = allDataNodeVipsVip["VpcId"].asString();
+			if(!allDataNodeVipsVip["VswitchId"].isNull())
+				vipsObject.vswitchId = allDataNodeVipsVip["VswitchId"].asString();
 			dataObject.vips.push_back(vipsObject);
 		}
 		auto allSlaveInstId = value["SlaveInstId"]["instId"];

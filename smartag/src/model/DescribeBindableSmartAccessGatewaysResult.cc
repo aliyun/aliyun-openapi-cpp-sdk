@@ -39,16 +39,16 @@ void DescribeBindableSmartAccessGatewaysResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSmartAccessGateways = value["SmartAccessGateways"]["SmartAccessGateway"];
-	for (auto value : allSmartAccessGateways)
+	auto allSmartAccessGatewaysNode = value["SmartAccessGateways"]["SmartAccessGateway"];
+	for (auto valueSmartAccessGatewaysSmartAccessGateway : allSmartAccessGatewaysNode)
 	{
 		SmartAccessGateway smartAccessGatewaysObject;
-		if(!value["SmartAGId"].isNull())
-			smartAccessGatewaysObject.smartAGId = value["SmartAGId"].asString();
-		if(!value["Name"].isNull())
-			smartAccessGatewaysObject.name = value["Name"].asString();
-		if(!value["SmartAGUid"].isNull())
-			smartAccessGatewaysObject.smartAGUid = std::stol(value["SmartAGUid"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGId"].isNull())
+			smartAccessGatewaysObject.smartAGId = valueSmartAccessGatewaysSmartAccessGateway["SmartAGId"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["Name"].isNull())
+			smartAccessGatewaysObject.name = valueSmartAccessGatewaysSmartAccessGateway["Name"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGUid"].isNull())
+			smartAccessGatewaysObject.smartAGUid = std::stol(valueSmartAccessGatewaysSmartAccessGateway["SmartAGUid"].asString());
 		smartAccessGateways_.push_back(smartAccessGatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())

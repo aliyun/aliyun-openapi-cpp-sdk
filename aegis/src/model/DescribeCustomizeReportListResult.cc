@@ -39,20 +39,20 @@ void DescribeCustomizeReportListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allReportList = value["ReportList"]["Report"];
-	for (auto value : allReportList)
+	auto allReportListNode = value["ReportList"]["Report"];
+	for (auto valueReportListReport : allReportListNode)
 	{
 		Report reportListObject;
-		if(!value["ReportId"].isNull())
-			reportListObject.reportId = std::stol(value["ReportId"].asString());
-		if(!value["Title"].isNull())
-			reportListObject.title = value["Title"].asString();
-		if(!value["ReportType"].isNull())
-			reportListObject.reportType = std::stoi(value["ReportType"].asString());
-		if(!value["ReportStatus"].isNull())
-			reportListObject.reportStatus = value["ReportStatus"].asString();
-		if(!value["IsDefault"].isNull())
-			reportListObject.isDefault = value["IsDefault"].asString();
+		if(!valueReportListReport["ReportId"].isNull())
+			reportListObject.reportId = std::stol(valueReportListReport["ReportId"].asString());
+		if(!valueReportListReport["Title"].isNull())
+			reportListObject.title = valueReportListReport["Title"].asString();
+		if(!valueReportListReport["ReportType"].isNull())
+			reportListObject.reportType = std::stoi(valueReportListReport["ReportType"].asString());
+		if(!valueReportListReport["ReportStatus"].isNull())
+			reportListObject.reportStatus = valueReportListReport["ReportStatus"].asString();
+		if(!valueReportListReport["IsDefault"].isNull())
+			reportListObject.isDefault = valueReportListReport["IsDefault"].asString();
 		reportList_.push_back(reportListObject);
 	}
 

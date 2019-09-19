@@ -39,44 +39,44 @@ void DescribeInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Instance"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Instance"];
+	for (auto valueItemsInstance : allItemsNode)
 	{
 		Instance itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
-		if(!value["Owner"].isNull())
-			itemsObject.owner = value["Owner"].asString();
-		if(!value["CreationTime"].isNull())
-			itemsObject.creationTime = std::stol(value["CreationTime"].asString());
-		if(!value["ProductId"].isNull())
-			itemsObject.productId = value["ProductId"].asString();
-		if(!value["ProductCode"].isNull())
-			itemsObject.productCode = value["ProductCode"].asString();
-		if(!value["Protection"].isNull())
-			itemsObject.protection = value["Protection"].asString() == "true";
-		if(!value["Labelsec"].isNull())
-			itemsObject.labelsec = std::stoi(value["Labelsec"].asString());
-		if(!value["OdpsRiskLevelName"].isNull())
-			itemsObject.odpsRiskLevelName = value["OdpsRiskLevelName"].asString();
-		if(!value["Sensitive"].isNull())
-			itemsObject.sensitive = value["Sensitive"].asString() == "true";
-		if(!value["RiskLevelId"].isNull())
-			itemsObject.riskLevelId = std::stol(value["RiskLevelId"].asString());
-		if(!value["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = value["RiskLevelName"].asString();
-		if(!value["RuleName"].isNull())
-			itemsObject.ruleName = value["RuleName"].asString();
-		if(!value["DepartName"].isNull())
-			itemsObject.departName = value["DepartName"].asString();
-		if(!value["TotalCount"].isNull())
-			itemsObject.totalCount = std::stoi(value["TotalCount"].asString());
-		if(!value["SensitiveCount"].isNull())
-			itemsObject.sensitiveCount = std::stoi(value["SensitiveCount"].asString());
-		if(!value["Acl"].isNull())
-			itemsObject.acl = value["Acl"].asString();
+		if(!valueItemsInstance["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsInstance["Id"].asString());
+		if(!valueItemsInstance["Name"].isNull())
+			itemsObject.name = valueItemsInstance["Name"].asString();
+		if(!valueItemsInstance["Owner"].isNull())
+			itemsObject.owner = valueItemsInstance["Owner"].asString();
+		if(!valueItemsInstance["CreationTime"].isNull())
+			itemsObject.creationTime = std::stol(valueItemsInstance["CreationTime"].asString());
+		if(!valueItemsInstance["ProductId"].isNull())
+			itemsObject.productId = valueItemsInstance["ProductId"].asString();
+		if(!valueItemsInstance["ProductCode"].isNull())
+			itemsObject.productCode = valueItemsInstance["ProductCode"].asString();
+		if(!valueItemsInstance["Protection"].isNull())
+			itemsObject.protection = valueItemsInstance["Protection"].asString() == "true";
+		if(!valueItemsInstance["Labelsec"].isNull())
+			itemsObject.labelsec = std::stoi(valueItemsInstance["Labelsec"].asString());
+		if(!valueItemsInstance["OdpsRiskLevelName"].isNull())
+			itemsObject.odpsRiskLevelName = valueItemsInstance["OdpsRiskLevelName"].asString();
+		if(!valueItemsInstance["Sensitive"].isNull())
+			itemsObject.sensitive = valueItemsInstance["Sensitive"].asString() == "true";
+		if(!valueItemsInstance["RiskLevelId"].isNull())
+			itemsObject.riskLevelId = std::stol(valueItemsInstance["RiskLevelId"].asString());
+		if(!valueItemsInstance["RiskLevelName"].isNull())
+			itemsObject.riskLevelName = valueItemsInstance["RiskLevelName"].asString();
+		if(!valueItemsInstance["RuleName"].isNull())
+			itemsObject.ruleName = valueItemsInstance["RuleName"].asString();
+		if(!valueItemsInstance["DepartName"].isNull())
+			itemsObject.departName = valueItemsInstance["DepartName"].asString();
+		if(!valueItemsInstance["TotalCount"].isNull())
+			itemsObject.totalCount = std::stoi(valueItemsInstance["TotalCount"].asString());
+		if(!valueItemsInstance["SensitiveCount"].isNull())
+			itemsObject.sensitiveCount = std::stoi(valueItemsInstance["SensitiveCount"].asString());
+		if(!valueItemsInstance["Acl"].isNull())
+			itemsObject.acl = valueItemsInstance["Acl"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

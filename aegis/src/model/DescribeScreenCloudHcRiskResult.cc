@@ -39,18 +39,18 @@ void DescribeScreenCloudHcRiskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCloudHcRiskItems = value["CloudHcRiskItems"]["CloudHcRiskItem"];
-	for (auto value : allCloudHcRiskItems)
+	auto allCloudHcRiskItemsNode = value["CloudHcRiskItems"]["CloudHcRiskItem"];
+	for (auto valueCloudHcRiskItemsCloudHcRiskItem : allCloudHcRiskItemsNode)
 	{
 		CloudHcRiskItem cloudHcRiskItemsObject;
-		if(!value["Level"].isNull())
-			cloudHcRiskItemsObject.level = value["Level"].asString();
-		if(!value["CheckItem"].isNull())
-			cloudHcRiskItemsObject.checkItem = value["CheckItem"].asString();
-		if(!value["AffectCount"].isNull())
-			cloudHcRiskItemsObject.affectCount = std::stoi(value["AffectCount"].asString());
-		if(!value["Pass"].isNull())
-			cloudHcRiskItemsObject.pass = value["Pass"].asString() == "true";
+		if(!valueCloudHcRiskItemsCloudHcRiskItem["Level"].isNull())
+			cloudHcRiskItemsObject.level = valueCloudHcRiskItemsCloudHcRiskItem["Level"].asString();
+		if(!valueCloudHcRiskItemsCloudHcRiskItem["CheckItem"].isNull())
+			cloudHcRiskItemsObject.checkItem = valueCloudHcRiskItemsCloudHcRiskItem["CheckItem"].asString();
+		if(!valueCloudHcRiskItemsCloudHcRiskItem["AffectCount"].isNull())
+			cloudHcRiskItemsObject.affectCount = std::stoi(valueCloudHcRiskItemsCloudHcRiskItem["AffectCount"].asString());
+		if(!valueCloudHcRiskItemsCloudHcRiskItem["Pass"].isNull())
+			cloudHcRiskItemsObject.pass = valueCloudHcRiskItemsCloudHcRiskItem["Pass"].asString() == "true";
 		cloudHcRiskItems_.push_back(cloudHcRiskItemsObject);
 	}
 	if(!value["Success"].isNull())

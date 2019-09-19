@@ -39,20 +39,20 @@ void DescribeDomainFileSizeProportionDataResult::parse(const std::string &payloa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFileSizeProportionDataInterval = value["FileSizeProportionDataInterval"]["UsageData"];
-	for (auto value : allFileSizeProportionDataInterval)
+	auto allFileSizeProportionDataIntervalNode = value["FileSizeProportionDataInterval"]["UsageData"];
+	for (auto valueFileSizeProportionDataIntervalUsageData : allFileSizeProportionDataIntervalNode)
 	{
 		UsageData fileSizeProportionDataIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			fileSizeProportionDataIntervalObject.timeStamp = value["TimeStamp"].asString();
-		auto allValue = value["Value"]["FileSizeProportionData"];
-		for (auto value : allValue)
+		if(!valueFileSizeProportionDataIntervalUsageData["TimeStamp"].isNull())
+			fileSizeProportionDataIntervalObject.timeStamp = valueFileSizeProportionDataIntervalUsageData["TimeStamp"].asString();
+		auto allValueNode = allFileSizeProportionDataIntervalNode["Value"]["FileSizeProportionData"];
+		for (auto allFileSizeProportionDataIntervalNodeValueFileSizeProportionData : allValueNode)
 		{
 			UsageData::FileSizeProportionData valueObject;
-			if(!value["FileSize"].isNull())
-				valueObject.fileSize = value["FileSize"].asString();
-			if(!value["Proportion"].isNull())
-				valueObject.proportion = value["Proportion"].asString();
+			if(!allFileSizeProportionDataIntervalNodeValueFileSizeProportionData["FileSize"].isNull())
+				valueObject.fileSize = allFileSizeProportionDataIntervalNodeValueFileSizeProportionData["FileSize"].asString();
+			if(!allFileSizeProportionDataIntervalNodeValueFileSizeProportionData["Proportion"].isNull())
+				valueObject.proportion = allFileSizeProportionDataIntervalNodeValueFileSizeProportionData["Proportion"].asString();
 			fileSizeProportionDataIntervalObject.value.push_back(valueObject);
 		}
 		fileSizeProportionDataInterval_.push_back(fileSizeProportionDataIntervalObject);

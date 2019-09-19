@@ -46,28 +46,28 @@ void GetUserResult::parse(const std::string &payload)
 		user_.ramId = userNode["RamId"].asString();
 	if(!userNode["InstanceId"].isNull())
 		user_.instanceId = userNode["InstanceId"].asString();
-	auto allRoles = value["Roles"]["Role"];
-	for (auto value : allRoles)
+	auto allRolesNode = userNode["Roles"]["Role"];
+	for (auto userNodeRolesRole : allRolesNode)
 	{
 		User::Role roleObject;
-		if(!value["RoleId"].isNull())
-			roleObject.roleId = value["RoleId"].asString();
-		if(!value["InstanceId"].isNull())
-			roleObject.instanceId = value["InstanceId"].asString();
-		if(!value["RoleName"].isNull())
-			roleObject.roleName = value["RoleName"].asString();
-		if(!value["RoleDescription"].isNull())
-			roleObject.roleDescription = value["RoleDescription"].asString();
+		if(!userNodeRolesRole["RoleId"].isNull())
+			roleObject.roleId = userNodeRolesRole["RoleId"].asString();
+		if(!userNodeRolesRole["InstanceId"].isNull())
+			roleObject.instanceId = userNodeRolesRole["InstanceId"].asString();
+		if(!userNodeRolesRole["RoleName"].isNull())
+			roleObject.roleName = userNodeRolesRole["RoleName"].asString();
+		if(!userNodeRolesRole["RoleDescription"].isNull())
+			roleObject.roleDescription = userNodeRolesRole["RoleDescription"].asString();
 		user_.roles.push_back(roleObject);
 	}
-	auto allSkillLevels = value["SkillLevels"]["SkillLevel"];
-	for (auto value : allSkillLevels)
+	auto allSkillLevelsNode = userNode["SkillLevels"]["SkillLevel"];
+	for (auto userNodeSkillLevelsSkillLevel : allSkillLevelsNode)
 	{
 		User::SkillLevel skillLevelObject;
-		if(!value["SkillLevelId"].isNull())
-			skillLevelObject.skillLevelId = value["SkillLevelId"].asString();
-		if(!value["Level"].isNull())
-			skillLevelObject.level = std::stoi(value["Level"].asString());
+		if(!userNodeSkillLevelsSkillLevel["SkillLevelId"].isNull())
+			skillLevelObject.skillLevelId = userNodeSkillLevelsSkillLevel["SkillLevelId"].asString();
+		if(!userNodeSkillLevelsSkillLevel["Level"].isNull())
+			skillLevelObject.level = std::stoi(userNodeSkillLevelsSkillLevel["Level"].asString());
 		auto skillNode = value["Skill"];
 		if(!skillNode["SkillGroupId"].isNull())
 			skillLevelObject.skill.skillGroupId = skillNode["SkillGroupId"].asString();

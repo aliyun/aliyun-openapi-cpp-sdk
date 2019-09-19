@@ -39,30 +39,30 @@ void GetStylesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStyles = value["Styles"]["Style"];
-	for (auto value : allStyles)
+	auto allStylesNode = value["Styles"]["Style"];
+	for (auto valueStylesStyle : allStylesNode)
 	{
 		Style stylesObject;
-		if(!value["Id"].isNull())
-			stylesObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			stylesObject.name = value["Name"].asString();
-		if(!value["ParentId"].isNull())
-			stylesObject.parentId = std::stol(value["ParentId"].asString());
-		if(!value["PreviewUrl"].isNull())
-			stylesObject.previewUrl = value["PreviewUrl"].asString();
-		auto allSubStyles = value["SubStyles"]["SubStyle"];
-		for (auto value : allSubStyles)
+		if(!valueStylesStyle["Id"].isNull())
+			stylesObject.id = std::stol(valueStylesStyle["Id"].asString());
+		if(!valueStylesStyle["Name"].isNull())
+			stylesObject.name = valueStylesStyle["Name"].asString();
+		if(!valueStylesStyle["ParentId"].isNull())
+			stylesObject.parentId = std::stol(valueStylesStyle["ParentId"].asString());
+		if(!valueStylesStyle["PreviewUrl"].isNull())
+			stylesObject.previewUrl = valueStylesStyle["PreviewUrl"].asString();
+		auto allSubStylesNode = allStylesNode["SubStyles"]["SubStyle"];
+		for (auto allStylesNodeSubStylesSubStyle : allSubStylesNode)
 		{
 			Style::SubStyle subStylesObject;
-			if(!value["Id"].isNull())
-				subStylesObject.id = std::stol(value["Id"].asString());
-			if(!value["Name"].isNull())
-				subStylesObject.name = value["Name"].asString();
-			if(!value["ParentId"].isNull())
-				subStylesObject.parentId = std::stol(value["ParentId"].asString());
-			if(!value["PreviewUrl"].isNull())
-				subStylesObject.previewUrl = value["PreviewUrl"].asString();
+			if(!allStylesNodeSubStylesSubStyle["Id"].isNull())
+				subStylesObject.id = std::stol(allStylesNodeSubStylesSubStyle["Id"].asString());
+			if(!allStylesNodeSubStylesSubStyle["Name"].isNull())
+				subStylesObject.name = allStylesNodeSubStylesSubStyle["Name"].asString();
+			if(!allStylesNodeSubStylesSubStyle["ParentId"].isNull())
+				subStylesObject.parentId = std::stol(allStylesNodeSubStylesSubStyle["ParentId"].asString());
+			if(!allStylesNodeSubStylesSubStyle["PreviewUrl"].isNull())
+				subStylesObject.previewUrl = allStylesNodeSubStylesSubStyle["PreviewUrl"].asString();
 			stylesObject.subStyles.push_back(subStylesObject);
 		}
 		styles_.push_back(stylesObject);

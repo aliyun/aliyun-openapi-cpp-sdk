@@ -39,28 +39,28 @@ void GetImageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFaces = value["Faces"]["FacesItem"];
-	for (auto value : allFaces)
+	auto allFacesNode = value["Faces"]["FacesItem"];
+	for (auto valueFacesFacesItem : allFacesNode)
 	{
 		FacesItem facesObject;
-		if(!value["FaceId"].isNull())
-			facesObject.faceId = value["FaceId"].asString();
-		if(!value["FaceConfidence"].isNull())
-			facesObject.faceConfidence = std::stof(value["FaceConfidence"].asString());
-		if(!value["Age"].isNull())
-			facesObject.age = value["Age"].asString();
-		if(!value["Gender"].isNull())
-			facesObject.gender = value["Gender"].asString();
-		if(!value["Emotion"].isNull())
-			facesObject.emotion = value["Emotion"].asString();
-		if(!value["Attractive"].isNull())
-			facesObject.attractive = std::stof(value["Attractive"].asString());
-		if(!value["GenderConfidence"].isNull())
-			facesObject.genderConfidence = std::stof(value["GenderConfidence"].asString());
-		if(!value["GroupId"].isNull())
-			facesObject.groupId = value["GroupId"].asString();
-		if(!value["FaceQuality"].isNull())
-			facesObject.faceQuality = std::stof(value["FaceQuality"].asString());
+		if(!valueFacesFacesItem["FaceId"].isNull())
+			facesObject.faceId = valueFacesFacesItem["FaceId"].asString();
+		if(!valueFacesFacesItem["FaceConfidence"].isNull())
+			facesObject.faceConfidence = std::stof(valueFacesFacesItem["FaceConfidence"].asString());
+		if(!valueFacesFacesItem["Age"].isNull())
+			facesObject.age = valueFacesFacesItem["Age"].asString();
+		if(!valueFacesFacesItem["Gender"].isNull())
+			facesObject.gender = valueFacesFacesItem["Gender"].asString();
+		if(!valueFacesFacesItem["Emotion"].isNull())
+			facesObject.emotion = valueFacesFacesItem["Emotion"].asString();
+		if(!valueFacesFacesItem["Attractive"].isNull())
+			facesObject.attractive = std::stof(valueFacesFacesItem["Attractive"].asString());
+		if(!valueFacesFacesItem["GenderConfidence"].isNull())
+			facesObject.genderConfidence = std::stof(valueFacesFacesItem["GenderConfidence"].asString());
+		if(!valueFacesFacesItem["GroupId"].isNull())
+			facesObject.groupId = valueFacesFacesItem["GroupId"].asString();
+		if(!valueFacesFacesItem["FaceQuality"].isNull())
+			facesObject.faceQuality = std::stof(valueFacesFacesItem["FaceQuality"].asString());
 		auto faceAttributesNode = value["FaceAttributes"];
 		if(!faceAttributesNode["Glasses"].isNull())
 			facesObject.faceAttributes.glasses = faceAttributesNode["Glasses"].asString();
@@ -111,14 +111,14 @@ void GetImageResult::parse(const std::string &payload)
 			facesObject.emotionDetails.cALM = std::stof(emotionDetailsNode["CALM"].asString());
 		faces_.push_back(facesObject);
 	}
-	auto allOCR = value["OCR"]["OCRItem"];
-	for (auto value : allOCR)
+	auto allOCRNode = value["OCR"]["OCRItem"];
+	for (auto valueOCROCRItem : allOCRNode)
 	{
 		OCRItem oCRObject;
-		if(!value["OCRContents"].isNull())
-			oCRObject.oCRContents = value["OCRContents"].asString();
-		if(!value["OCRConfidence"].isNull())
-			oCRObject.oCRConfidence = std::stof(value["OCRConfidence"].asString());
+		if(!valueOCROCRItem["OCRContents"].isNull())
+			oCRObject.oCRContents = valueOCROCRItem["OCRContents"].asString();
+		if(!valueOCROCRItem["OCRConfidence"].isNull())
+			oCRObject.oCRConfidence = std::stof(valueOCROCRItem["OCRConfidence"].asString());
 		auto oCRBoundaryNode = value["OCRBoundary"];
 		if(!oCRBoundaryNode["Left"].isNull())
 			oCRObject.oCRBoundary.left = std::stoi(oCRBoundaryNode["Left"].asString());
@@ -130,32 +130,32 @@ void GetImageResult::parse(const std::string &payload)
 			oCRObject.oCRBoundary.height = std::stoi(oCRBoundaryNode["Height"].asString());
 		oCR_.push_back(oCRObject);
 	}
-	auto allTags = value["Tags"]["TagsItem"];
-	for (auto value : allTags)
+	auto allTagsNode = value["Tags"]["TagsItem"];
+	for (auto valueTagsTagsItem : allTagsNode)
 	{
 		TagsItem tagsObject;
-		if(!value["TagName"].isNull())
-			tagsObject.tagName = value["TagName"].asString();
-		if(!value["TagConfidence"].isNull())
-			tagsObject.tagConfidence = std::stof(value["TagConfidence"].asString());
-		if(!value["TagLevel"].isNull())
-			tagsObject.tagLevel = std::stoi(value["TagLevel"].asString());
-		if(!value["ParentTagName"].isNull())
-			tagsObject.parentTagName = value["ParentTagName"].asString();
+		if(!valueTagsTagsItem["TagName"].isNull())
+			tagsObject.tagName = valueTagsTagsItem["TagName"].asString();
+		if(!valueTagsTagsItem["TagConfidence"].isNull())
+			tagsObject.tagConfidence = std::stof(valueTagsTagsItem["TagConfidence"].asString());
+		if(!valueTagsTagsItem["TagLevel"].isNull())
+			tagsObject.tagLevel = std::stoi(valueTagsTagsItem["TagLevel"].asString());
+		if(!valueTagsTagsItem["ParentTagName"].isNull())
+			tagsObject.parentTagName = valueTagsTagsItem["ParentTagName"].asString();
 		tags_.push_back(tagsObject);
 	}
-	auto allCelebrity = value["Celebrity"]["CelebrityItem"];
-	for (auto value : allCelebrity)
+	auto allCelebrityNode = value["Celebrity"]["CelebrityItem"];
+	for (auto valueCelebrityCelebrityItem : allCelebrityNode)
 	{
 		CelebrityItem celebrityObject;
-		if(!value["CelebrityName"].isNull())
-			celebrityObject.celebrityName = value["CelebrityName"].asString();
-		if(!value["CelebrityGender"].isNull())
-			celebrityObject.celebrityGender = value["CelebrityGender"].asString();
-		if(!value["CelebrityConfidence"].isNull())
-			celebrityObject.celebrityConfidence = std::stof(value["CelebrityConfidence"].asString());
-		if(!value["CelebrityLibraryName"].isNull())
-			celebrityObject.celebrityLibraryName = value["CelebrityLibraryName"].asString();
+		if(!valueCelebrityCelebrityItem["CelebrityName"].isNull())
+			celebrityObject.celebrityName = valueCelebrityCelebrityItem["CelebrityName"].asString();
+		if(!valueCelebrityCelebrityItem["CelebrityGender"].isNull())
+			celebrityObject.celebrityGender = valueCelebrityCelebrityItem["CelebrityGender"].asString();
+		if(!valueCelebrityCelebrityItem["CelebrityConfidence"].isNull())
+			celebrityObject.celebrityConfidence = std::stof(valueCelebrityCelebrityItem["CelebrityConfidence"].asString());
+		if(!valueCelebrityCelebrityItem["CelebrityLibraryName"].isNull())
+			celebrityObject.celebrityLibraryName = valueCelebrityCelebrityItem["CelebrityLibraryName"].asString();
 		auto celebrityBoundaryNode = value["CelebrityBoundary"];
 		if(!celebrityBoundaryNode["Left"].isNull())
 			celebrityObject.celebrityBoundary.left = std::stoi(celebrityBoundaryNode["Left"].asString());

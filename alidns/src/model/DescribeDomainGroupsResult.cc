@@ -39,16 +39,16 @@ void DescribeDomainGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainGroups = value["DomainGroups"]["DomainGroup"];
-	for (auto value : allDomainGroups)
+	auto allDomainGroupsNode = value["DomainGroups"]["DomainGroup"];
+	for (auto valueDomainGroupsDomainGroup : allDomainGroupsNode)
 	{
 		DomainGroup domainGroupsObject;
-		if(!value["GroupId"].isNull())
-			domainGroupsObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			domainGroupsObject.groupName = value["GroupName"].asString();
-		if(!value["DomainCount"].isNull())
-			domainGroupsObject.domainCount = std::stol(value["DomainCount"].asString());
+		if(!valueDomainGroupsDomainGroup["GroupId"].isNull())
+			domainGroupsObject.groupId = valueDomainGroupsDomainGroup["GroupId"].asString();
+		if(!valueDomainGroupsDomainGroup["GroupName"].isNull())
+			domainGroupsObject.groupName = valueDomainGroupsDomainGroup["GroupName"].asString();
+		if(!valueDomainGroupsDomainGroup["DomainCount"].isNull())
+			domainGroupsObject.domainCount = std::stol(valueDomainGroupsDomainGroup["DomainCount"].asString());
 		domainGroups_.push_back(domainGroupsObject);
 	}
 	if(!value["TotalCount"].isNull())

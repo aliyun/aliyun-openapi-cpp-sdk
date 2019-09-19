@@ -39,36 +39,36 @@ void DescribeWebLockEventsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEventList = value["EventList"]["EventInfo"];
-	for (auto value : allEventList)
+	auto allEventListNode = value["EventList"]["EventInfo"];
+	for (auto valueEventListEventInfo : allEventListNode)
 	{
 		EventInfo eventListObject;
-		if(!value["Id"].isNull())
-			eventListObject.id = std::stol(value["Id"].asString());
-		if(!value["Uuid"].isNull())
-			eventListObject.uuid = value["Uuid"].asString();
-		if(!value["Ip"].isNull())
-			eventListObject.ip = value["Ip"].asString();
-		if(!value["InternetIp"].isNull())
-			eventListObject.internetIp = value["InternetIp"].asString();
-		if(!value["IntranetIp"].isNull())
-			eventListObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["InstanceName"].isNull())
-			eventListObject.instanceName = value["InstanceName"].asString();
-		if(!value["EventType"].isNull())
-			eventListObject.eventType = value["EventType"].asString();
-		if(!value["EventName"].isNull())
-			eventListObject.eventName = value["EventName"].asString();
-		if(!value["Level"].isNull())
-			eventListObject.level = value["Level"].asString();
-		if(!value["Status"].isNull())
-			eventListObject.status = value["Status"].asString();
-		if(!value["GmtEvent"].isNull())
-			eventListObject.gmtEvent = std::stol(value["GmtEvent"].asString());
-		if(!value["Path"].isNull())
-			eventListObject.path = value["Path"].asString();
-		if(!value["Solution"].isNull())
-			eventListObject.solution = value["Solution"].asString();
+		if(!valueEventListEventInfo["Id"].isNull())
+			eventListObject.id = std::stol(valueEventListEventInfo["Id"].asString());
+		if(!valueEventListEventInfo["Uuid"].isNull())
+			eventListObject.uuid = valueEventListEventInfo["Uuid"].asString();
+		if(!valueEventListEventInfo["Ip"].isNull())
+			eventListObject.ip = valueEventListEventInfo["Ip"].asString();
+		if(!valueEventListEventInfo["InternetIp"].isNull())
+			eventListObject.internetIp = valueEventListEventInfo["InternetIp"].asString();
+		if(!valueEventListEventInfo["IntranetIp"].isNull())
+			eventListObject.intranetIp = valueEventListEventInfo["IntranetIp"].asString();
+		if(!valueEventListEventInfo["InstanceName"].isNull())
+			eventListObject.instanceName = valueEventListEventInfo["InstanceName"].asString();
+		if(!valueEventListEventInfo["EventType"].isNull())
+			eventListObject.eventType = valueEventListEventInfo["EventType"].asString();
+		if(!valueEventListEventInfo["EventName"].isNull())
+			eventListObject.eventName = valueEventListEventInfo["EventName"].asString();
+		if(!valueEventListEventInfo["Level"].isNull())
+			eventListObject.level = valueEventListEventInfo["Level"].asString();
+		if(!valueEventListEventInfo["Status"].isNull())
+			eventListObject.status = valueEventListEventInfo["Status"].asString();
+		if(!valueEventListEventInfo["GmtEvent"].isNull())
+			eventListObject.gmtEvent = std::stol(valueEventListEventInfo["GmtEvent"].asString());
+		if(!valueEventListEventInfo["Path"].isNull())
+			eventListObject.path = valueEventListEventInfo["Path"].asString();
+		if(!valueEventListEventInfo["Solution"].isNull())
+			eventListObject.solution = valueEventListEventInfo["Solution"].asString();
 		eventList_.push_back(eventListObject);
 	}
 	if(!value["CurrentPage"].isNull())
