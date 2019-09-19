@@ -39,26 +39,26 @@ void BatchGetInstanceRunSummaryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRunSummarys = value["RunSummarys"]["RunSummary"];
-	for (auto value : allRunSummarys)
+	auto allRunSummarysNode = value["RunSummarys"]["RunSummary"];
+	for (auto valueRunSummarysRunSummary : allRunSummarysNode)
 	{
 		RunSummary runSummarysObject;
-		if(!value["Id"].isNull())
-			runSummarysObject.id = std::stol(value["Id"].asString());
-		if(!value["ActualState"].isNull())
-			runSummarysObject.actualState = value["ActualState"].asString();
-		if(!value["ExpectState"].isNull())
-			runSummarysObject.expectState = value["ExpectState"].asString();
-		if(!value["LastErrorTime"].isNull())
-			runSummarysObject.lastErrorTime = std::stol(value["LastErrorTime"].asString());
-		if(!value["LastErrorMessage"].isNull())
-			runSummarysObject.lastErrorMessage = value["LastErrorMessage"].asString();
-		if(!value["EngineJobHandler"].isNull())
-			runSummarysObject.engineJobHandler = value["EngineJobHandler"].asString();
-		if(!value["InputDelay"].isNull())
-			runSummarysObject.inputDelay = std::stol(value["InputDelay"].asString());
-		if(!value["JobName"].isNull())
-			runSummarysObject.jobName = value["JobName"].asString();
+		if(!valueRunSummarysRunSummary["Id"].isNull())
+			runSummarysObject.id = std::stol(valueRunSummarysRunSummary["Id"].asString());
+		if(!valueRunSummarysRunSummary["ActualState"].isNull())
+			runSummarysObject.actualState = valueRunSummarysRunSummary["ActualState"].asString();
+		if(!valueRunSummarysRunSummary["ExpectState"].isNull())
+			runSummarysObject.expectState = valueRunSummarysRunSummary["ExpectState"].asString();
+		if(!valueRunSummarysRunSummary["LastErrorTime"].isNull())
+			runSummarysObject.lastErrorTime = std::stol(valueRunSummarysRunSummary["LastErrorTime"].asString());
+		if(!valueRunSummarysRunSummary["LastErrorMessage"].isNull())
+			runSummarysObject.lastErrorMessage = valueRunSummarysRunSummary["LastErrorMessage"].asString();
+		if(!valueRunSummarysRunSummary["EngineJobHandler"].isNull())
+			runSummarysObject.engineJobHandler = valueRunSummarysRunSummary["EngineJobHandler"].asString();
+		if(!valueRunSummarysRunSummary["InputDelay"].isNull())
+			runSummarysObject.inputDelay = std::stol(valueRunSummarysRunSummary["InputDelay"].asString());
+		if(!valueRunSummarysRunSummary["JobName"].isNull())
+			runSummarysObject.jobName = valueRunSummarysRunSummary["JobName"].asString();
 		runSummarys_.push_back(runSummarysObject);
 	}
 

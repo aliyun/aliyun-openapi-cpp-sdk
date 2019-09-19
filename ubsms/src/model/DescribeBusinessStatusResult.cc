@@ -39,22 +39,22 @@ void DescribeBusinessStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserBusinessStatusList = value["UserBusinessStatusList"]["UserBusinessStatus"];
-	for (auto value : allUserBusinessStatusList)
+	auto allUserBusinessStatusListNode = value["UserBusinessStatusList"]["UserBusinessStatus"];
+	for (auto valueUserBusinessStatusListUserBusinessStatus : allUserBusinessStatusListNode)
 	{
 		UserBusinessStatus userBusinessStatusListObject;
-		if(!value["Uid"].isNull())
-			userBusinessStatusListObject.uid = value["Uid"].asString();
-		if(!value["ServiceCode"].isNull())
-			userBusinessStatusListObject.serviceCode = value["ServiceCode"].asString();
-		auto allStatuses = value["Statuses"]["Status"];
-		for (auto value : allStatuses)
+		if(!valueUserBusinessStatusListUserBusinessStatus["Uid"].isNull())
+			userBusinessStatusListObject.uid = valueUserBusinessStatusListUserBusinessStatus["Uid"].asString();
+		if(!valueUserBusinessStatusListUserBusinessStatus["ServiceCode"].isNull())
+			userBusinessStatusListObject.serviceCode = valueUserBusinessStatusListUserBusinessStatus["ServiceCode"].asString();
+		auto allStatusesNode = allUserBusinessStatusListNode["Statuses"]["Status"];
+		for (auto allUserBusinessStatusListNodeStatusesStatus : allStatusesNode)
 		{
 			UserBusinessStatus::Status statusesObject;
-			if(!value["StatusKey"].isNull())
-				statusesObject.statusKey = value["StatusKey"].asString();
-			if(!value["StatusValue"].isNull())
-				statusesObject.statusValue = value["StatusValue"].asString();
+			if(!allUserBusinessStatusListNodeStatusesStatus["StatusKey"].isNull())
+				statusesObject.statusKey = allUserBusinessStatusListNodeStatusesStatus["StatusKey"].asString();
+			if(!allUserBusinessStatusListNodeStatusesStatus["StatusValue"].isNull())
+				statusesObject.statusValue = allUserBusinessStatusListNodeStatusesStatus["StatusValue"].asString();
 			userBusinessStatusListObject.statuses.push_back(statusesObject);
 		}
 		userBusinessStatusList_.push_back(userBusinessStatusListObject);

@@ -39,38 +39,38 @@ void DescribeGWSInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstances = value["Instances"]["InstanceInfo"];
-	for (auto value : allInstances)
+	auto allInstancesNode = value["Instances"]["InstanceInfo"];
+	for (auto valueInstancesInstanceInfo : allInstancesNode)
 	{
 		InstanceInfo instancesObject;
-		if(!value["ClusterId"].isNull())
-			instancesObject.clusterId = value["ClusterId"].asString();
-		if(!value["InstanceId"].isNull())
-			instancesObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceType"].isNull())
-			instancesObject.instanceType = value["InstanceType"].asString();
-		if(!value["Status"].isNull())
-			instancesObject.status = value["Status"].asString();
-		if(!value["CreateTime"].isNull())
-			instancesObject.createTime = value["CreateTime"].asString();
-		if(!value["ExpireTime"].isNull())
-			instancesObject.expireTime = value["ExpireTime"].asString();
-		if(!value["WorkMode"].isNull())
-			instancesObject.workMode = value["WorkMode"].asString();
-		if(!value["Name"].isNull())
-			instancesObject.name = value["Name"].asString();
-		if(!value["UserName"].isNull())
-			instancesObject.userName = value["UserName"].asString();
-		auto allAppList = value["AppList"]["AppInfo"];
-		for (auto value : allAppList)
+		if(!valueInstancesInstanceInfo["ClusterId"].isNull())
+			instancesObject.clusterId = valueInstancesInstanceInfo["ClusterId"].asString();
+		if(!valueInstancesInstanceInfo["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesInstanceInfo["InstanceId"].asString();
+		if(!valueInstancesInstanceInfo["InstanceType"].isNull())
+			instancesObject.instanceType = valueInstancesInstanceInfo["InstanceType"].asString();
+		if(!valueInstancesInstanceInfo["Status"].isNull())
+			instancesObject.status = valueInstancesInstanceInfo["Status"].asString();
+		if(!valueInstancesInstanceInfo["CreateTime"].isNull())
+			instancesObject.createTime = valueInstancesInstanceInfo["CreateTime"].asString();
+		if(!valueInstancesInstanceInfo["ExpireTime"].isNull())
+			instancesObject.expireTime = valueInstancesInstanceInfo["ExpireTime"].asString();
+		if(!valueInstancesInstanceInfo["WorkMode"].isNull())
+			instancesObject.workMode = valueInstancesInstanceInfo["WorkMode"].asString();
+		if(!valueInstancesInstanceInfo["Name"].isNull())
+			instancesObject.name = valueInstancesInstanceInfo["Name"].asString();
+		if(!valueInstancesInstanceInfo["UserName"].isNull())
+			instancesObject.userName = valueInstancesInstanceInfo["UserName"].asString();
+		auto allAppListNode = allInstancesNode["AppList"]["AppInfo"];
+		for (auto allInstancesNodeAppListAppInfo : allAppListNode)
 		{
 			InstanceInfo::AppInfo appListObject;
-			if(!value["AppName"].isNull())
-				appListObject.appName = value["AppName"].asString();
-			if(!value["AppPath"].isNull())
-				appListObject.appPath = value["AppPath"].asString();
-			if(!value["AppArgs"].isNull())
-				appListObject.appArgs = value["AppArgs"].asString();
+			if(!allInstancesNodeAppListAppInfo["AppName"].isNull())
+				appListObject.appName = allInstancesNodeAppListAppInfo["AppName"].asString();
+			if(!allInstancesNodeAppListAppInfo["AppPath"].isNull())
+				appListObject.appPath = allInstancesNodeAppListAppInfo["AppPath"].asString();
+			if(!allInstancesNodeAppListAppInfo["AppArgs"].isNull())
+				appListObject.appArgs = allInstancesNodeAppListAppInfo["AppArgs"].asString();
 			instancesObject.appList.push_back(appListObject);
 		}
 		instances_.push_back(instancesObject);

@@ -39,18 +39,18 @@ void DescribeDrdsInstanceNetInfoForInnerResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNetInfos = value["NetInfos"]["NetInfo"];
-	for (auto value : allNetInfos)
+	auto allNetInfosNode = value["NetInfos"]["NetInfo"];
+	for (auto valueNetInfosNetInfo : allNetInfosNode)
 	{
 		NetInfo netInfosObject;
-		if(!value["IP"].isNull())
-			netInfosObject.iP = value["IP"].asString();
-		if(!value["Port"].isNull())
-			netInfosObject.port = value["Port"].asString();
-		if(!value["Type"].isNull())
-			netInfosObject.type = value["Type"].asString();
-		if(!value["IsForVpc"].isNull())
-			netInfosObject.isForVpc = value["IsForVpc"].asString() == "true";
+		if(!valueNetInfosNetInfo["IP"].isNull())
+			netInfosObject.iP = valueNetInfosNetInfo["IP"].asString();
+		if(!valueNetInfosNetInfo["Port"].isNull())
+			netInfosObject.port = valueNetInfosNetInfo["Port"].asString();
+		if(!valueNetInfosNetInfo["Type"].isNull())
+			netInfosObject.type = valueNetInfosNetInfo["Type"].asString();
+		if(!valueNetInfosNetInfo["IsForVpc"].isNull())
+			netInfosObject.isForVpc = valueNetInfosNetInfo["IsForVpc"].asString() == "true";
 		netInfos_.push_back(netInfosObject);
 	}
 	if(!value["Success"].isNull())

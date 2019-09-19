@@ -39,46 +39,46 @@ void ListActiveAlertRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDatapoints = value["Datapoints"]["Alarm"];
-	for (auto value : allDatapoints)
+	auto allDatapointsNode = value["Datapoints"]["Alarm"];
+	for (auto valueDatapointsAlarm : allDatapointsNode)
 	{
 		Alarm datapointsObject;
-		if(!value["Uuid"].isNull())
-			datapointsObject.uuid = value["Uuid"].asString();
-		if(!value["Name"].isNull())
-			datapointsObject.name = value["Name"].asString();
-		if(!value["Namespace"].isNull())
-			datapointsObject._namespace = value["Namespace"].asString();
-		if(!value["MetricName"].isNull())
-			datapointsObject.metricName = value["MetricName"].asString();
-		if(!value["Period"].isNull())
-			datapointsObject.period = value["Period"].asString();
-		if(!value["Statistics"].isNull())
-			datapointsObject.statistics = value["Statistics"].asString();
-		if(!value["ComparisonOperator"].isNull())
-			datapointsObject.comparisonOperator = value["ComparisonOperator"].asString();
-		if(!value["Threshold"].isNull())
-			datapointsObject.threshold = value["Threshold"].asString();
-		if(!value["EvaluationCount"].isNull())
-			datapointsObject.evaluationCount = value["EvaluationCount"].asString();
-		if(!value["StartTime"].isNull())
-			datapointsObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			datapointsObject.endTime = value["EndTime"].asString();
-		if(!value["SilenceTime"].isNull())
-			datapointsObject.silenceTime = value["SilenceTime"].asString();
-		if(!value["NotifyType"].isNull())
-			datapointsObject.notifyType = value["NotifyType"].asString();
-		if(!value["Enable"].isNull())
-			datapointsObject.enable = value["Enable"].asString();
-		if(!value["State"].isNull())
-			datapointsObject.state = value["State"].asString();
-		if(!value["ContactGroups"].isNull())
-			datapointsObject.contactGroups = value["ContactGroups"].asString();
-		if(!value["Webhook"].isNull())
-			datapointsObject.webhook = value["Webhook"].asString();
-		if(!value["RuleName"].isNull())
-			datapointsObject.ruleName = value["RuleName"].asString();
+		if(!valueDatapointsAlarm["Uuid"].isNull())
+			datapointsObject.uuid = valueDatapointsAlarm["Uuid"].asString();
+		if(!valueDatapointsAlarm["Name"].isNull())
+			datapointsObject.name = valueDatapointsAlarm["Name"].asString();
+		if(!valueDatapointsAlarm["Namespace"].isNull())
+			datapointsObject._namespace = valueDatapointsAlarm["Namespace"].asString();
+		if(!valueDatapointsAlarm["MetricName"].isNull())
+			datapointsObject.metricName = valueDatapointsAlarm["MetricName"].asString();
+		if(!valueDatapointsAlarm["Period"].isNull())
+			datapointsObject.period = valueDatapointsAlarm["Period"].asString();
+		if(!valueDatapointsAlarm["Statistics"].isNull())
+			datapointsObject.statistics = valueDatapointsAlarm["Statistics"].asString();
+		if(!valueDatapointsAlarm["ComparisonOperator"].isNull())
+			datapointsObject.comparisonOperator = valueDatapointsAlarm["ComparisonOperator"].asString();
+		if(!valueDatapointsAlarm["Threshold"].isNull())
+			datapointsObject.threshold = valueDatapointsAlarm["Threshold"].asString();
+		if(!valueDatapointsAlarm["EvaluationCount"].isNull())
+			datapointsObject.evaluationCount = valueDatapointsAlarm["EvaluationCount"].asString();
+		if(!valueDatapointsAlarm["StartTime"].isNull())
+			datapointsObject.startTime = valueDatapointsAlarm["StartTime"].asString();
+		if(!valueDatapointsAlarm["EndTime"].isNull())
+			datapointsObject.endTime = valueDatapointsAlarm["EndTime"].asString();
+		if(!valueDatapointsAlarm["SilenceTime"].isNull())
+			datapointsObject.silenceTime = valueDatapointsAlarm["SilenceTime"].asString();
+		if(!valueDatapointsAlarm["NotifyType"].isNull())
+			datapointsObject.notifyType = valueDatapointsAlarm["NotifyType"].asString();
+		if(!valueDatapointsAlarm["Enable"].isNull())
+			datapointsObject.enable = valueDatapointsAlarm["Enable"].asString();
+		if(!valueDatapointsAlarm["State"].isNull())
+			datapointsObject.state = valueDatapointsAlarm["State"].asString();
+		if(!valueDatapointsAlarm["ContactGroups"].isNull())
+			datapointsObject.contactGroups = valueDatapointsAlarm["ContactGroups"].asString();
+		if(!valueDatapointsAlarm["Webhook"].isNull())
+			datapointsObject.webhook = valueDatapointsAlarm["Webhook"].asString();
+		if(!valueDatapointsAlarm["RuleName"].isNull())
+			datapointsObject.ruleName = valueDatapointsAlarm["RuleName"].asString();
 		datapoints_.push_back(datapointsObject);
 	}
 	if(!value["Success"].isNull())

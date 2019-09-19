@@ -39,14 +39,14 @@ void DescribeScreenTopRequestAndFlowResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTopRequestsIpCountDOS = value["TopRequestsIpCountDOS"]["TopRequestsIpCountDOSItem"];
-	for (auto value : allTopRequestsIpCountDOS)
+	auto allTopRequestsIpCountDOSNode = value["TopRequestsIpCountDOS"]["TopRequestsIpCountDOSItem"];
+	for (auto valueTopRequestsIpCountDOSTopRequestsIpCountDOSItem : allTopRequestsIpCountDOSNode)
 	{
 		TopRequestsIpCountDOSItem topRequestsIpCountDOSObject;
-		if(!value["ReqCount"].isNull())
-			topRequestsIpCountDOSObject.reqCount = std::stoi(value["ReqCount"].asString());
-		if(!value["Ip"].isNull())
-			topRequestsIpCountDOSObject.ip = value["Ip"].asString();
+		if(!valueTopRequestsIpCountDOSTopRequestsIpCountDOSItem["ReqCount"].isNull())
+			topRequestsIpCountDOSObject.reqCount = std::stoi(valueTopRequestsIpCountDOSTopRequestsIpCountDOSItem["ReqCount"].asString());
+		if(!valueTopRequestsIpCountDOSTopRequestsIpCountDOSItem["Ip"].isNull())
+			topRequestsIpCountDOSObject.ip = valueTopRequestsIpCountDOSTopRequestsIpCountDOSItem["Ip"].asString();
 		topRequestsIpCountDOS_.push_back(topRequestsIpCountDOSObject);
 	}
 	if(!value["Success"].isNull())

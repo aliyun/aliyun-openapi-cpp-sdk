@@ -58,16 +58,16 @@ void SubmitAnalysisJobResult::parse(const std::string &payload)
 		analysisJob_.pipelineId = analysisJobNode["PipelineId"].asString();
 	if(!analysisJobNode["Priority"].isNull())
 		analysisJob_.priority = analysisJobNode["Priority"].asString();
-	auto allTemplateList = value["TemplateList"]["Template"];
-	for (auto value : allTemplateList)
+	auto allTemplateListNode = analysisJobNode["TemplateList"]["Template"];
+	for (auto analysisJobNodeTemplateListTemplate : allTemplateListNode)
 	{
 		AnalysisJob::_Template _templateObject;
-		if(!value["Id"].isNull())
-			_templateObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			_templateObject.name = value["Name"].asString();
-		if(!value["State"].isNull())
-			_templateObject.state = value["State"].asString();
+		if(!analysisJobNodeTemplateListTemplate["Id"].isNull())
+			_templateObject.id = analysisJobNodeTemplateListTemplate["Id"].asString();
+		if(!analysisJobNodeTemplateListTemplate["Name"].isNull())
+			_templateObject.name = analysisJobNodeTemplateListTemplate["Name"].asString();
+		if(!analysisJobNodeTemplateListTemplate["State"].isNull())
+			_templateObject.state = analysisJobNodeTemplateListTemplate["State"].asString();
 		auto containerNode = value["Container"];
 		if(!containerNode["Format"].isNull())
 			_templateObject.container.format = containerNode["Format"].asString();

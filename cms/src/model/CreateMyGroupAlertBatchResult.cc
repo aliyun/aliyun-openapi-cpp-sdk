@@ -39,26 +39,26 @@ void CreateMyGroupAlertBatchResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResources = value["Resources"]["AlertResult"];
-	for (auto value : allResources)
+	auto allResourcesNode = value["Resources"]["AlertResult"];
+	for (auto valueResourcesAlertResult : allResourcesNode)
 	{
 		AlertResult resourcesObject;
-		if(!value["AlertName"].isNull())
-			resourcesObject.alertName = value["AlertName"].asString();
-		if(!value["DisplayName"].isNull())
-			resourcesObject.displayName = value["DisplayName"].asString();
-		if(!value["MetricNamespace"].isNull())
-			resourcesObject.metricNamespace = value["MetricNamespace"].asString();
-		if(!value["MetricName"].isNull())
-			resourcesObject.metricName = value["MetricName"].asString();
-		if(!value["Message"].isNull())
-			resourcesObject.message = value["Message"].asString();
-		if(!value["Code"].isNull())
-			resourcesObject.code = std::stoi(value["Code"].asString());
-		if(!value["Success"].isNull())
-			resourcesObject.success = value["Success"].asString() == "true";
-		if(!value["GroupId"].isNull())
-			resourcesObject.groupId = std::stol(value["GroupId"].asString());
+		if(!valueResourcesAlertResult["AlertName"].isNull())
+			resourcesObject.alertName = valueResourcesAlertResult["AlertName"].asString();
+		if(!valueResourcesAlertResult["DisplayName"].isNull())
+			resourcesObject.displayName = valueResourcesAlertResult["DisplayName"].asString();
+		if(!valueResourcesAlertResult["MetricNamespace"].isNull())
+			resourcesObject.metricNamespace = valueResourcesAlertResult["MetricNamespace"].asString();
+		if(!valueResourcesAlertResult["MetricName"].isNull())
+			resourcesObject.metricName = valueResourcesAlertResult["MetricName"].asString();
+		if(!valueResourcesAlertResult["Message"].isNull())
+			resourcesObject.message = valueResourcesAlertResult["Message"].asString();
+		if(!valueResourcesAlertResult["Code"].isNull())
+			resourcesObject.code = std::stoi(valueResourcesAlertResult["Code"].asString());
+		if(!valueResourcesAlertResult["Success"].isNull())
+			resourcesObject.success = valueResourcesAlertResult["Success"].asString() == "true";
+		if(!valueResourcesAlertResult["GroupId"].isNull())
+			resourcesObject.groupId = std::stol(valueResourcesAlertResult["GroupId"].asString());
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["Success"].isNull())

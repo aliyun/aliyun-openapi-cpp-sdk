@@ -39,22 +39,22 @@ void DescribeDcdnDomainWebsocketHttpCodeDataResult::parse(const std::string &pay
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataPerInterval = value["DataPerInterval"]["DataModule"];
-	for (auto value : allDataPerInterval)
+	auto allDataPerIntervalNode = value["DataPerInterval"]["DataModule"];
+	for (auto valueDataPerIntervalDataModule : allDataPerIntervalNode)
 	{
 		DataModule dataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			dataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		auto allWebsocketHttpCodeDataPerInterval = value["WebsocketHttpCodeDataPerInterval"]["HttpCodeDataModule"];
-		for (auto value : allWebsocketHttpCodeDataPerInterval)
+		if(!valueDataPerIntervalDataModule["TimeStamp"].isNull())
+			dataPerIntervalObject.timeStamp = valueDataPerIntervalDataModule["TimeStamp"].asString();
+		auto allWebsocketHttpCodeDataPerIntervalNode = allDataPerIntervalNode["WebsocketHttpCodeDataPerInterval"]["HttpCodeDataModule"];
+		for (auto allDataPerIntervalNodeWebsocketHttpCodeDataPerIntervalHttpCodeDataModule : allWebsocketHttpCodeDataPerIntervalNode)
 		{
 			DataModule::HttpCodeDataModule websocketHttpCodeDataPerIntervalObject;
-			if(!value["Code"].isNull())
-				websocketHttpCodeDataPerIntervalObject.code = std::stoi(value["Code"].asString());
-			if(!value["Proportion"].isNull())
-				websocketHttpCodeDataPerIntervalObject.proportion = std::stof(value["Proportion"].asString());
-			if(!value["Count"].isNull())
-				websocketHttpCodeDataPerIntervalObject.count = std::stof(value["Count"].asString());
+			if(!allDataPerIntervalNodeWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Code"].isNull())
+				websocketHttpCodeDataPerIntervalObject.code = std::stoi(allDataPerIntervalNodeWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Code"].asString());
+			if(!allDataPerIntervalNodeWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].isNull())
+				websocketHttpCodeDataPerIntervalObject.proportion = std::stof(allDataPerIntervalNodeWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].asString());
+			if(!allDataPerIntervalNodeWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Count"].isNull())
+				websocketHttpCodeDataPerIntervalObject.count = std::stof(allDataPerIntervalNodeWebsocketHttpCodeDataPerIntervalHttpCodeDataModule["Count"].asString());
 			dataPerIntervalObject.websocketHttpCodeDataPerInterval.push_back(websocketHttpCodeDataPerIntervalObject);
 		}
 		dataPerInterval_.push_back(dataPerIntervalObject);

@@ -47,3 +47,14 @@ void GetHeatMapDataRequest::setStoreId(long storeId)
 	setCoreParameter("StoreId", std::to_string(storeId));
 }
 
+std::string GetHeatMapDataRequest::getStatDate()const
+{
+	return statDate_;
+}
+
+void GetHeatMapDataRequest::setStatDate(const std::string& statDate)
+{
+	statDate_ = statDate;
+	setCoreParameter("StatDate", statDate);
+}
+

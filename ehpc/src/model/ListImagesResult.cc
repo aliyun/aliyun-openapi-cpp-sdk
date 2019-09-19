@@ -39,18 +39,18 @@ void ListImagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOsTags = value["OsTags"]["OsInfo"];
-	for (auto value : allOsTags)
+	auto allOsTagsNode = value["OsTags"]["OsInfo"];
+	for (auto valueOsTagsOsInfo : allOsTagsNode)
 	{
 		OsInfo osTagsObject;
-		if(!value["OsTag"].isNull())
-			osTagsObject.osTag = value["OsTag"].asString();
-		if(!value["Platform"].isNull())
-			osTagsObject.platform = value["Platform"].asString();
-		if(!value["Version"].isNull())
-			osTagsObject.version = value["Version"].asString();
-		if(!value["Architecture"].isNull())
-			osTagsObject.architecture = value["Architecture"].asString();
+		if(!valueOsTagsOsInfo["OsTag"].isNull())
+			osTagsObject.osTag = valueOsTagsOsInfo["OsTag"].asString();
+		if(!valueOsTagsOsInfo["Platform"].isNull())
+			osTagsObject.platform = valueOsTagsOsInfo["Platform"].asString();
+		if(!valueOsTagsOsInfo["Version"].isNull())
+			osTagsObject.version = valueOsTagsOsInfo["Version"].asString();
+		if(!valueOsTagsOsInfo["Architecture"].isNull())
+			osTagsObject.architecture = valueOsTagsOsInfo["Architecture"].asString();
 		osTags_.push_back(osTagsObject);
 	}
 

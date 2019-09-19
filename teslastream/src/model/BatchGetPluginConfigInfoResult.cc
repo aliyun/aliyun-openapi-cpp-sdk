@@ -39,14 +39,14 @@ void BatchGetPluginConfigInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["plugin"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["plugin"];
+	for (auto valueDataplugin : allDataNode)
 	{
 		Plugin dataObject;
-		if(!value["PluginProperties"].isNull())
-			dataObject.pluginProperties = value["PluginProperties"].asString();
-		if(!value["PluginUniqKey"].isNull())
-			dataObject.pluginUniqKey = value["PluginUniqKey"].asString();
+		if(!valueDataplugin["PluginProperties"].isNull())
+			dataObject.pluginProperties = valueDataplugin["PluginProperties"].asString();
+		if(!valueDataplugin["PluginUniqKey"].isNull())
+			dataObject.pluginUniqKey = valueDataplugin["PluginUniqKey"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

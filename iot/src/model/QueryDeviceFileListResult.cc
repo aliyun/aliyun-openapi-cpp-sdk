@@ -39,18 +39,18 @@ void QueryDeviceFileListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["FileSummary"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["FileSummary"];
+	for (auto valueDataFileSummary : allDataNode)
 	{
 		FileSummary dataObject;
-		if(!value["FileId"].isNull())
-			dataObject.fileId = value["FileId"].asString();
-		if(!value["Name"].isNull())
-			dataObject.name = value["Name"].asString();
-		if(!value["Size"].isNull())
-			dataObject.size = value["Size"].asString();
-		if(!value["UtcCreatedOn"].isNull())
-			dataObject.utcCreatedOn = value["UtcCreatedOn"].asString();
+		if(!valueDataFileSummary["FileId"].isNull())
+			dataObject.fileId = valueDataFileSummary["FileId"].asString();
+		if(!valueDataFileSummary["Name"].isNull())
+			dataObject.name = valueDataFileSummary["Name"].asString();
+		if(!valueDataFileSummary["Size"].isNull())
+			dataObject.size = valueDataFileSummary["Size"].asString();
+		if(!valueDataFileSummary["UtcCreatedOn"].isNull())
+			dataObject.utcCreatedOn = valueDataFileSummary["UtcCreatedOn"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

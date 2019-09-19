@@ -39,50 +39,50 @@ void ListClustersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClusters = value["Clusters"]["ClusterInfoSimple"];
-	for (auto value : allClusters)
+	auto allClustersNode = value["Clusters"]["ClusterInfoSimple"];
+	for (auto valueClustersClusterInfoSimple : allClustersNode)
 	{
 		ClusterInfoSimple clustersObject;
-		if(!value["Id"].isNull())
-			clustersObject.id = value["Id"].asString();
-		if(!value["RegionId"].isNull())
-			clustersObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			clustersObject.zoneId = value["ZoneId"].asString();
-		if(!value["VSwitchId"].isNull())
-			clustersObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["VpcId"].isNull())
-			clustersObject.vpcId = value["VpcId"].asString();
-		if(!value["Name"].isNull())
-			clustersObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			clustersObject.description = value["Description"].asString();
-		if(!value["Status"].isNull())
-			clustersObject.status = value["Status"].asString();
-		if(!value["OsTag"].isNull())
-			clustersObject.osTag = value["OsTag"].asString();
-		if(!value["AccountType"].isNull())
-			clustersObject.accountType = value["AccountType"].asString();
-		if(!value["SchedulerType"].isNull())
-			clustersObject.schedulerType = value["SchedulerType"].asString();
-		if(!value["DeployMode"].isNull())
-			clustersObject.deployMode = value["DeployMode"].asString();
-		if(!value["Count"].isNull())
-			clustersObject.count = std::stoi(value["Count"].asString());
-		if(!value["InstanceType"].isNull())
-			clustersObject.instanceType = value["InstanceType"].asString();
-		if(!value["LoginNodes"].isNull())
-			clustersObject.loginNodes = value["LoginNodes"].asString();
-		if(!value["CreateTime"].isNull())
-			clustersObject.createTime = value["CreateTime"].asString();
-		if(!value["ImageOwnerAlias"].isNull())
-			clustersObject.imageOwnerAlias = value["ImageOwnerAlias"].asString();
-		if(!value["ImageId"].isNull())
-			clustersObject.imageId = value["ImageId"].asString();
-		if(!value["Location"].isNull())
-			clustersObject.location = value["Location"].asString();
-		if(!value["EhpcVersion"].isNull())
-			clustersObject.ehpcVersion = value["EhpcVersion"].asString();
+		if(!valueClustersClusterInfoSimple["Id"].isNull())
+			clustersObject.id = valueClustersClusterInfoSimple["Id"].asString();
+		if(!valueClustersClusterInfoSimple["RegionId"].isNull())
+			clustersObject.regionId = valueClustersClusterInfoSimple["RegionId"].asString();
+		if(!valueClustersClusterInfoSimple["ZoneId"].isNull())
+			clustersObject.zoneId = valueClustersClusterInfoSimple["ZoneId"].asString();
+		if(!valueClustersClusterInfoSimple["VSwitchId"].isNull())
+			clustersObject.vSwitchId = valueClustersClusterInfoSimple["VSwitchId"].asString();
+		if(!valueClustersClusterInfoSimple["VpcId"].isNull())
+			clustersObject.vpcId = valueClustersClusterInfoSimple["VpcId"].asString();
+		if(!valueClustersClusterInfoSimple["Name"].isNull())
+			clustersObject.name = valueClustersClusterInfoSimple["Name"].asString();
+		if(!valueClustersClusterInfoSimple["Description"].isNull())
+			clustersObject.description = valueClustersClusterInfoSimple["Description"].asString();
+		if(!valueClustersClusterInfoSimple["Status"].isNull())
+			clustersObject.status = valueClustersClusterInfoSimple["Status"].asString();
+		if(!valueClustersClusterInfoSimple["OsTag"].isNull())
+			clustersObject.osTag = valueClustersClusterInfoSimple["OsTag"].asString();
+		if(!valueClustersClusterInfoSimple["AccountType"].isNull())
+			clustersObject.accountType = valueClustersClusterInfoSimple["AccountType"].asString();
+		if(!valueClustersClusterInfoSimple["SchedulerType"].isNull())
+			clustersObject.schedulerType = valueClustersClusterInfoSimple["SchedulerType"].asString();
+		if(!valueClustersClusterInfoSimple["DeployMode"].isNull())
+			clustersObject.deployMode = valueClustersClusterInfoSimple["DeployMode"].asString();
+		if(!valueClustersClusterInfoSimple["Count"].isNull())
+			clustersObject.count = std::stoi(valueClustersClusterInfoSimple["Count"].asString());
+		if(!valueClustersClusterInfoSimple["InstanceType"].isNull())
+			clustersObject.instanceType = valueClustersClusterInfoSimple["InstanceType"].asString();
+		if(!valueClustersClusterInfoSimple["LoginNodes"].isNull())
+			clustersObject.loginNodes = valueClustersClusterInfoSimple["LoginNodes"].asString();
+		if(!valueClustersClusterInfoSimple["CreateTime"].isNull())
+			clustersObject.createTime = valueClustersClusterInfoSimple["CreateTime"].asString();
+		if(!valueClustersClusterInfoSimple["ImageOwnerAlias"].isNull())
+			clustersObject.imageOwnerAlias = valueClustersClusterInfoSimple["ImageOwnerAlias"].asString();
+		if(!valueClustersClusterInfoSimple["ImageId"].isNull())
+			clustersObject.imageId = valueClustersClusterInfoSimple["ImageId"].asString();
+		if(!valueClustersClusterInfoSimple["Location"].isNull())
+			clustersObject.location = valueClustersClusterInfoSimple["Location"].asString();
+		if(!valueClustersClusterInfoSimple["EhpcVersion"].isNull())
+			clustersObject.ehpcVersion = valueClustersClusterInfoSimple["EhpcVersion"].asString();
 		auto managersNode = value["Managers"];
 		if(!managersNode["Total"].isNull())
 			clustersObject.managers.total = std::stoi(managersNode["Total"].asString());

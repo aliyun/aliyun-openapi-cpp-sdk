@@ -39,48 +39,48 @@ void ListVolumesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVolumes = value["Volumes"]["VolumeInfo"];
-	for (auto value : allVolumes)
+	auto allVolumesNode = value["Volumes"]["VolumeInfo"];
+	for (auto valueVolumesVolumeInfo : allVolumesNode)
 	{
 		VolumeInfo volumesObject;
-		if(!value["RegionId"].isNull())
-			volumesObject.regionId = value["RegionId"].asString();
-		if(!value["ClusterId"].isNull())
-			volumesObject.clusterId = value["ClusterId"].asString();
-		if(!value["ClusterName"].isNull())
-			volumesObject.clusterName = value["ClusterName"].asString();
-		if(!value["VolumeId"].isNull())
-			volumesObject.volumeId = value["VolumeId"].asString();
-		if(!value["VolumeType"].isNull())
-			volumesObject.volumeType = value["VolumeType"].asString();
-		if(!value["VolumeProtocol"].isNull())
-			volumesObject.volumeProtocol = value["VolumeProtocol"].asString();
-		if(!value["VolumeMountpoint"].isNull())
-			volumesObject.volumeMountpoint = value["VolumeMountpoint"].asString();
-		if(!value["RemoteDirectory"].isNull())
-			volumesObject.remoteDirectory = value["RemoteDirectory"].asString();
-		auto allAdditionalVolumes = value["AdditionalVolumes"]["VolumeInfo"];
-		for (auto value : allAdditionalVolumes)
+		if(!valueVolumesVolumeInfo["RegionId"].isNull())
+			volumesObject.regionId = valueVolumesVolumeInfo["RegionId"].asString();
+		if(!valueVolumesVolumeInfo["ClusterId"].isNull())
+			volumesObject.clusterId = valueVolumesVolumeInfo["ClusterId"].asString();
+		if(!valueVolumesVolumeInfo["ClusterName"].isNull())
+			volumesObject.clusterName = valueVolumesVolumeInfo["ClusterName"].asString();
+		if(!valueVolumesVolumeInfo["VolumeId"].isNull())
+			volumesObject.volumeId = valueVolumesVolumeInfo["VolumeId"].asString();
+		if(!valueVolumesVolumeInfo["VolumeType"].isNull())
+			volumesObject.volumeType = valueVolumesVolumeInfo["VolumeType"].asString();
+		if(!valueVolumesVolumeInfo["VolumeProtocol"].isNull())
+			volumesObject.volumeProtocol = valueVolumesVolumeInfo["VolumeProtocol"].asString();
+		if(!valueVolumesVolumeInfo["VolumeMountpoint"].isNull())
+			volumesObject.volumeMountpoint = valueVolumesVolumeInfo["VolumeMountpoint"].asString();
+		if(!valueVolumesVolumeInfo["RemoteDirectory"].isNull())
+			volumesObject.remoteDirectory = valueVolumesVolumeInfo["RemoteDirectory"].asString();
+		auto allAdditionalVolumesNode = allVolumesNode["AdditionalVolumes"]["VolumeInfo"];
+		for (auto allVolumesNodeAdditionalVolumesVolumeInfo : allAdditionalVolumesNode)
 		{
 			VolumeInfo::VolumeInfo1 additionalVolumesObject;
-			if(!value["VolumeType"].isNull())
-				additionalVolumesObject.volumeType = value["VolumeType"].asString();
-			if(!value["VolumeId"].isNull())
-				additionalVolumesObject.volumeId = value["VolumeId"].asString();
-			if(!value["VolumeProtocol"].isNull())
-				additionalVolumesObject.volumeProtocol = value["VolumeProtocol"].asString();
-			if(!value["VolumeMountpoint"].isNull())
-				additionalVolumesObject.volumeMountpoint = value["VolumeMountpoint"].asString();
-			if(!value["RemoteDirectory"].isNull())
-				additionalVolumesObject.remoteDirectory = value["RemoteDirectory"].asString();
-			if(!value["LocalDirectory"].isNull())
-				additionalVolumesObject.localDirectory = value["LocalDirectory"].asString();
-			if(!value["Role"].isNull())
-				additionalVolumesObject.role = value["Role"].asString();
-			if(!value["Location"].isNull())
-				additionalVolumesObject.location = value["Location"].asString();
-			if(!value["JobQueue"].isNull())
-				additionalVolumesObject.jobQueue = value["JobQueue"].asString();
+			if(!allVolumesNodeAdditionalVolumesVolumeInfo["VolumeType"].isNull())
+				additionalVolumesObject.volumeType = allVolumesNodeAdditionalVolumesVolumeInfo["VolumeType"].asString();
+			if(!allVolumesNodeAdditionalVolumesVolumeInfo["VolumeId"].isNull())
+				additionalVolumesObject.volumeId = allVolumesNodeAdditionalVolumesVolumeInfo["VolumeId"].asString();
+			if(!allVolumesNodeAdditionalVolumesVolumeInfo["VolumeProtocol"].isNull())
+				additionalVolumesObject.volumeProtocol = allVolumesNodeAdditionalVolumesVolumeInfo["VolumeProtocol"].asString();
+			if(!allVolumesNodeAdditionalVolumesVolumeInfo["VolumeMountpoint"].isNull())
+				additionalVolumesObject.volumeMountpoint = allVolumesNodeAdditionalVolumesVolumeInfo["VolumeMountpoint"].asString();
+			if(!allVolumesNodeAdditionalVolumesVolumeInfo["RemoteDirectory"].isNull())
+				additionalVolumesObject.remoteDirectory = allVolumesNodeAdditionalVolumesVolumeInfo["RemoteDirectory"].asString();
+			if(!allVolumesNodeAdditionalVolumesVolumeInfo["LocalDirectory"].isNull())
+				additionalVolumesObject.localDirectory = allVolumesNodeAdditionalVolumesVolumeInfo["LocalDirectory"].asString();
+			if(!allVolumesNodeAdditionalVolumesVolumeInfo["Role"].isNull())
+				additionalVolumesObject.role = allVolumesNodeAdditionalVolumesVolumeInfo["Role"].asString();
+			if(!allVolumesNodeAdditionalVolumesVolumeInfo["Location"].isNull())
+				additionalVolumesObject.location = allVolumesNodeAdditionalVolumesVolumeInfo["Location"].asString();
+			if(!allVolumesNodeAdditionalVolumesVolumeInfo["JobQueue"].isNull())
+				additionalVolumesObject.jobQueue = allVolumesNodeAdditionalVolumesVolumeInfo["JobQueue"].asString();
 			volumesObject.additionalVolumes.push_back(additionalVolumesObject);
 		}
 		volumes_.push_back(volumesObject);

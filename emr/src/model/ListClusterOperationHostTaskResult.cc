@@ -39,18 +39,18 @@ void ListClusterOperationHostTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClusterOperationHostTaskList = value["ClusterOperationHostTaskList"]["ClusterOperationHostTask"];
-	for (auto value : allClusterOperationHostTaskList)
+	auto allClusterOperationHostTaskListNode = value["ClusterOperationHostTaskList"]["ClusterOperationHostTask"];
+	for (auto valueClusterOperationHostTaskListClusterOperationHostTask : allClusterOperationHostTaskListNode)
 	{
 		ClusterOperationHostTask clusterOperationHostTaskListObject;
-		if(!value["TaskId"].isNull())
-			clusterOperationHostTaskListObject.taskId = value["TaskId"].asString();
-		if(!value["TaskName"].isNull())
-			clusterOperationHostTaskListObject.taskName = value["TaskName"].asString();
-		if(!value["Status"].isNull())
-			clusterOperationHostTaskListObject.status = value["Status"].asString();
-		if(!value["Percentage"].isNull())
-			clusterOperationHostTaskListObject.percentage = value["Percentage"].asString();
+		if(!valueClusterOperationHostTaskListClusterOperationHostTask["TaskId"].isNull())
+			clusterOperationHostTaskListObject.taskId = valueClusterOperationHostTaskListClusterOperationHostTask["TaskId"].asString();
+		if(!valueClusterOperationHostTaskListClusterOperationHostTask["TaskName"].isNull())
+			clusterOperationHostTaskListObject.taskName = valueClusterOperationHostTaskListClusterOperationHostTask["TaskName"].asString();
+		if(!valueClusterOperationHostTaskListClusterOperationHostTask["Status"].isNull())
+			clusterOperationHostTaskListObject.status = valueClusterOperationHostTaskListClusterOperationHostTask["Status"].asString();
+		if(!valueClusterOperationHostTaskListClusterOperationHostTask["Percentage"].isNull())
+			clusterOperationHostTaskListObject.percentage = valueClusterOperationHostTaskListClusterOperationHostTask["Percentage"].asString();
 		clusterOperationHostTaskList_.push_back(clusterOperationHostTaskListObject);
 	}
 	if(!value["TotalCount"].isNull())

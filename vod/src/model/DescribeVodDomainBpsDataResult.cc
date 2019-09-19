@@ -39,24 +39,24 @@ void DescribeVodDomainBpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBpsDataPerInterval = value["BpsDataPerInterval"]["DataModule"];
-	for (auto value : allBpsDataPerInterval)
+	auto allBpsDataPerIntervalNode = value["BpsDataPerInterval"]["DataModule"];
+	for (auto valueBpsDataPerIntervalDataModule : allBpsDataPerIntervalNode)
 	{
 		DataModule bpsDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			bpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			bpsDataPerIntervalObject.value = value["Value"].asString();
-		if(!value["DomesticValue"].isNull())
-			bpsDataPerIntervalObject.domesticValue = value["DomesticValue"].asString();
-		if(!value["OverseasValue"].isNull())
-			bpsDataPerIntervalObject.overseasValue = value["OverseasValue"].asString();
-		if(!value["HttpsValue"].isNull())
-			bpsDataPerIntervalObject.httpsValue = value["HttpsValue"].asString();
-		if(!value["HttpsDomesticValue"].isNull())
-			bpsDataPerIntervalObject.httpsDomesticValue = value["HttpsDomesticValue"].asString();
-		if(!value["HttpsOverseasValue"].isNull())
-			bpsDataPerIntervalObject.httpsOverseasValue = value["HttpsOverseasValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			bpsDataPerIntervalObject.timeStamp = valueBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueBpsDataPerIntervalDataModule["Value"].isNull())
+			bpsDataPerIntervalObject.value = valueBpsDataPerIntervalDataModule["Value"].asString();
+		if(!valueBpsDataPerIntervalDataModule["DomesticValue"].isNull())
+			bpsDataPerIntervalObject.domesticValue = valueBpsDataPerIntervalDataModule["DomesticValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["OverseasValue"].isNull())
+			bpsDataPerIntervalObject.overseasValue = valueBpsDataPerIntervalDataModule["OverseasValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["HttpsValue"].isNull())
+			bpsDataPerIntervalObject.httpsValue = valueBpsDataPerIntervalDataModule["HttpsValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["HttpsDomesticValue"].isNull())
+			bpsDataPerIntervalObject.httpsDomesticValue = valueBpsDataPerIntervalDataModule["HttpsDomesticValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["HttpsOverseasValue"].isNull())
+			bpsDataPerIntervalObject.httpsOverseasValue = valueBpsDataPerIntervalDataModule["HttpsOverseasValue"].asString();
 		bpsDataPerInterval_.push_back(bpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

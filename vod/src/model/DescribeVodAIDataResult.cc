@@ -39,20 +39,20 @@ void DescribeVodAIDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAIData = value["AIData"]["AIDataItem"];
-	for (auto value : allAIData)
+	auto allAIDataNode = value["AIData"]["AIDataItem"];
+	for (auto valueAIDataAIDataItem : allAIDataNode)
 	{
 		AIDataItem aIDataObject;
-		if(!value["TimeStamp"].isNull())
-			aIDataObject.timeStamp = value["TimeStamp"].asString();
-		auto allData = value["Data"]["DataItem"];
-		for (auto value : allData)
+		if(!valueAIDataAIDataItem["TimeStamp"].isNull())
+			aIDataObject.timeStamp = valueAIDataAIDataItem["TimeStamp"].asString();
+		auto allDataNode = allAIDataNode["Data"]["DataItem"];
+		for (auto allAIDataNodeDataDataItem : allDataNode)
 		{
 			AIDataItem::DataItem dataObject;
-			if(!value["Name"].isNull())
-				dataObject.name = value["Name"].asString();
-			if(!value["Value"].isNull())
-				dataObject.value = value["Value"].asString();
+			if(!allAIDataNodeDataDataItem["Name"].isNull())
+				dataObject.name = allAIDataNodeDataDataItem["Name"].asString();
+			if(!allAIDataNodeDataDataItem["Value"].isNull())
+				dataObject.value = allAIDataNodeDataDataItem["Value"].asString();
 			aIDataObject.data.push_back(dataObject);
 		}
 		aIData_.push_back(aIDataObject);

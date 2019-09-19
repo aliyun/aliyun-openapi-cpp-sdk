@@ -39,52 +39,52 @@ void GetAttachedMediaInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAttachedMediaList = value["AttachedMediaList"]["AttachedMedia"];
-	for (auto value : allAttachedMediaList)
+	auto allAttachedMediaListNode = value["AttachedMediaList"]["AttachedMedia"];
+	for (auto valueAttachedMediaListAttachedMedia : allAttachedMediaListNode)
 	{
 		AttachedMedia attachedMediaListObject;
-		if(!value["MediaId"].isNull())
-			attachedMediaListObject.mediaId = value["MediaId"].asString();
-		if(!value["Title"].isNull())
-			attachedMediaListObject.title = value["Title"].asString();
-		if(!value["Type"].isNull())
-			attachedMediaListObject.type = value["Type"].asString();
-		if(!value["Tags"].isNull())
-			attachedMediaListObject.tags = value["Tags"].asString();
-		if(!value["URL"].isNull())
-			attachedMediaListObject.uRL = value["URL"].asString();
-		if(!value["Description"].isNull())
-			attachedMediaListObject.description = value["Description"].asString();
-		if(!value["FileSize"].isNull())
-			attachedMediaListObject.fileSize = std::stol(value["FileSize"].asString());
-		if(!value["StorageLocation"].isNull())
-			attachedMediaListObject.storageLocation = std::stol(value["StorageLocation"].asString());
-		if(!value["CreationTime"].isNull())
-			attachedMediaListObject.creationTime = value["CreationTime"].asString();
-		if(!value["ModificationTime"].isNull())
-			attachedMediaListObject.modificationTime = value["ModificationTime"].asString();
-		if(!value["AppId"].isNull())
-			attachedMediaListObject.appId = value["AppId"].asString();
-		if(!value["Status"].isNull())
-			attachedMediaListObject.status = value["Status"].asString();
-		if(!value["OnlineStatus"].isNull())
-			attachedMediaListObject.onlineStatus = value["OnlineStatus"].asString();
-		if(!value["Icon"].isNull())
-			attachedMediaListObject.icon = value["Icon"].asString();
-		if(!value["RegionId"].isNull())
-			attachedMediaListObject.regionId = value["RegionId"].asString();
-		auto allCategories = value["Categories"]["Category"];
-		for (auto value : allCategories)
+		if(!valueAttachedMediaListAttachedMedia["MediaId"].isNull())
+			attachedMediaListObject.mediaId = valueAttachedMediaListAttachedMedia["MediaId"].asString();
+		if(!valueAttachedMediaListAttachedMedia["Title"].isNull())
+			attachedMediaListObject.title = valueAttachedMediaListAttachedMedia["Title"].asString();
+		if(!valueAttachedMediaListAttachedMedia["Type"].isNull())
+			attachedMediaListObject.type = valueAttachedMediaListAttachedMedia["Type"].asString();
+		if(!valueAttachedMediaListAttachedMedia["Tags"].isNull())
+			attachedMediaListObject.tags = valueAttachedMediaListAttachedMedia["Tags"].asString();
+		if(!valueAttachedMediaListAttachedMedia["URL"].isNull())
+			attachedMediaListObject.uRL = valueAttachedMediaListAttachedMedia["URL"].asString();
+		if(!valueAttachedMediaListAttachedMedia["Description"].isNull())
+			attachedMediaListObject.description = valueAttachedMediaListAttachedMedia["Description"].asString();
+		if(!valueAttachedMediaListAttachedMedia["FileSize"].isNull())
+			attachedMediaListObject.fileSize = std::stol(valueAttachedMediaListAttachedMedia["FileSize"].asString());
+		if(!valueAttachedMediaListAttachedMedia["StorageLocation"].isNull())
+			attachedMediaListObject.storageLocation = std::stol(valueAttachedMediaListAttachedMedia["StorageLocation"].asString());
+		if(!valueAttachedMediaListAttachedMedia["CreationTime"].isNull())
+			attachedMediaListObject.creationTime = valueAttachedMediaListAttachedMedia["CreationTime"].asString();
+		if(!valueAttachedMediaListAttachedMedia["ModificationTime"].isNull())
+			attachedMediaListObject.modificationTime = valueAttachedMediaListAttachedMedia["ModificationTime"].asString();
+		if(!valueAttachedMediaListAttachedMedia["AppId"].isNull())
+			attachedMediaListObject.appId = valueAttachedMediaListAttachedMedia["AppId"].asString();
+		if(!valueAttachedMediaListAttachedMedia["Status"].isNull())
+			attachedMediaListObject.status = valueAttachedMediaListAttachedMedia["Status"].asString();
+		if(!valueAttachedMediaListAttachedMedia["OnlineStatus"].isNull())
+			attachedMediaListObject.onlineStatus = valueAttachedMediaListAttachedMedia["OnlineStatus"].asString();
+		if(!valueAttachedMediaListAttachedMedia["Icon"].isNull())
+			attachedMediaListObject.icon = valueAttachedMediaListAttachedMedia["Icon"].asString();
+		if(!valueAttachedMediaListAttachedMedia["RegionId"].isNull())
+			attachedMediaListObject.regionId = valueAttachedMediaListAttachedMedia["RegionId"].asString();
+		auto allCategoriesNode = allAttachedMediaListNode["Categories"]["Category"];
+		for (auto allAttachedMediaListNodeCategoriesCategory : allCategoriesNode)
 		{
 			AttachedMedia::Category categoriesObject;
-			if(!value["CateId"].isNull())
-				categoriesObject.cateId = std::stol(value["CateId"].asString());
-			if(!value["CateName"].isNull())
-				categoriesObject.cateName = value["CateName"].asString();
-			if(!value["Level"].isNull())
-				categoriesObject.level = std::stol(value["Level"].asString());
-			if(!value["ParentId"].isNull())
-				categoriesObject.parentId = std::stol(value["ParentId"].asString());
+			if(!allAttachedMediaListNodeCategoriesCategory["CateId"].isNull())
+				categoriesObject.cateId = std::stol(allAttachedMediaListNodeCategoriesCategory["CateId"].asString());
+			if(!allAttachedMediaListNodeCategoriesCategory["CateName"].isNull())
+				categoriesObject.cateName = allAttachedMediaListNodeCategoriesCategory["CateName"].asString();
+			if(!allAttachedMediaListNodeCategoriesCategory["Level"].isNull())
+				categoriesObject.level = std::stol(allAttachedMediaListNodeCategoriesCategory["Level"].asString());
+			if(!allAttachedMediaListNodeCategoriesCategory["ParentId"].isNull())
+				categoriesObject.parentId = std::stol(allAttachedMediaListNodeCategoriesCategory["ParentId"].asString());
 			attachedMediaListObject.categories.push_back(categoriesObject);
 		}
 		attachedMediaList_.push_back(attachedMediaListObject);

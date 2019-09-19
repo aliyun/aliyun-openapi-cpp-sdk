@@ -39,20 +39,20 @@ void DescribeDedicatedHostAutoRenewResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDedicatedHostRenewAttributes = value["DedicatedHostRenewAttributes"]["DedicatedHostRenewAttribute"];
-	for (auto value : allDedicatedHostRenewAttributes)
+	auto allDedicatedHostRenewAttributesNode = value["DedicatedHostRenewAttributes"]["DedicatedHostRenewAttribute"];
+	for (auto valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute : allDedicatedHostRenewAttributesNode)
 	{
 		DedicatedHostRenewAttribute dedicatedHostRenewAttributesObject;
-		if(!value["DedicatedHostId"].isNull())
-			dedicatedHostRenewAttributesObject.dedicatedHostId = value["DedicatedHostId"].asString();
-		if(!value["AutoRenewEnabled"].isNull())
-			dedicatedHostRenewAttributesObject.autoRenewEnabled = value["AutoRenewEnabled"].asString() == "true";
-		if(!value["Duration"].isNull())
-			dedicatedHostRenewAttributesObject.duration = std::stoi(value["Duration"].asString());
-		if(!value["PeriodUnit"].isNull())
-			dedicatedHostRenewAttributesObject.periodUnit = value["PeriodUnit"].asString();
-		if(!value["RenewalStatus"].isNull())
-			dedicatedHostRenewAttributesObject.renewalStatus = value["RenewalStatus"].asString();
+		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["DedicatedHostId"].isNull())
+			dedicatedHostRenewAttributesObject.dedicatedHostId = valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["DedicatedHostId"].asString();
+		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["AutoRenewEnabled"].isNull())
+			dedicatedHostRenewAttributesObject.autoRenewEnabled = valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["AutoRenewEnabled"].asString() == "true";
+		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["Duration"].isNull())
+			dedicatedHostRenewAttributesObject.duration = std::stoi(valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["Duration"].asString());
+		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["PeriodUnit"].isNull())
+			dedicatedHostRenewAttributesObject.periodUnit = valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["PeriodUnit"].asString();
+		if(!valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["RenewalStatus"].isNull())
+			dedicatedHostRenewAttributesObject.renewalStatus = valueDedicatedHostRenewAttributesDedicatedHostRenewAttribute["RenewalStatus"].asString();
 		dedicatedHostRenewAttributes_.push_back(dedicatedHostRenewAttributesObject);
 	}
 

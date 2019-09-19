@@ -39,32 +39,32 @@ void DescribeEventsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEventItems = value["EventItems"]["EventItemsItem"];
-	for (auto value : allEventItems)
+	auto allEventItemsNode = value["EventItems"]["EventItemsItem"];
+	for (auto valueEventItemsEventItemsItem : allEventItemsNode)
 	{
 		EventItemsItem eventItemsObject;
-		if(!value["EventId"].isNull())
-			eventItemsObject.eventId = std::stoi(value["EventId"].asString());
-		if(!value["EventType"].isNull())
-			eventItemsObject.eventType = value["EventType"].asString();
-		if(!value["EventName"].isNull())
-			eventItemsObject.eventName = value["EventName"].asString();
-		if(!value["EventTime"].isNull())
-			eventItemsObject.eventTime = value["EventTime"].asString();
-		if(!value["ResourceType"].isNull())
-			eventItemsObject.resourceType = value["ResourceType"].asString();
-		if(!value["ResourceName"].isNull())
-			eventItemsObject.resourceName = value["ResourceName"].asString();
-		if(!value["RegionId"].isNull())
-			eventItemsObject.regionId = value["RegionId"].asString();
-		if(!value["EventUserType"].isNull())
-			eventItemsObject.eventUserType = value["EventUserType"].asString();
-		if(!value["EventReason"].isNull())
-			eventItemsObject.eventReason = value["EventReason"].asString();
-		if(!value["EventPayload"].isNull())
-			eventItemsObject.eventPayload = value["EventPayload"].asString();
-		if(!value["EventRecordTime"].isNull())
-			eventItemsObject.eventRecordTime = value["EventRecordTime"].asString();
+		if(!valueEventItemsEventItemsItem["EventId"].isNull())
+			eventItemsObject.eventId = std::stoi(valueEventItemsEventItemsItem["EventId"].asString());
+		if(!valueEventItemsEventItemsItem["EventType"].isNull())
+			eventItemsObject.eventType = valueEventItemsEventItemsItem["EventType"].asString();
+		if(!valueEventItemsEventItemsItem["EventName"].isNull())
+			eventItemsObject.eventName = valueEventItemsEventItemsItem["EventName"].asString();
+		if(!valueEventItemsEventItemsItem["EventTime"].isNull())
+			eventItemsObject.eventTime = valueEventItemsEventItemsItem["EventTime"].asString();
+		if(!valueEventItemsEventItemsItem["ResourceType"].isNull())
+			eventItemsObject.resourceType = valueEventItemsEventItemsItem["ResourceType"].asString();
+		if(!valueEventItemsEventItemsItem["ResourceName"].isNull())
+			eventItemsObject.resourceName = valueEventItemsEventItemsItem["ResourceName"].asString();
+		if(!valueEventItemsEventItemsItem["RegionId"].isNull())
+			eventItemsObject.regionId = valueEventItemsEventItemsItem["RegionId"].asString();
+		if(!valueEventItemsEventItemsItem["EventUserType"].isNull())
+			eventItemsObject.eventUserType = valueEventItemsEventItemsItem["EventUserType"].asString();
+		if(!valueEventItemsEventItemsItem["EventReason"].isNull())
+			eventItemsObject.eventReason = valueEventItemsEventItemsItem["EventReason"].asString();
+		if(!valueEventItemsEventItemsItem["EventPayload"].isNull())
+			eventItemsObject.eventPayload = valueEventItemsEventItemsItem["EventPayload"].asString();
+		if(!valueEventItemsEventItemsItem["EventRecordTime"].isNull())
+			eventItemsObject.eventRecordTime = valueEventItemsEventItemsItem["EventRecordTime"].asString();
 		eventItems_.push_back(eventItemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

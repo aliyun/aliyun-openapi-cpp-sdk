@@ -39,160 +39,160 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["DBInstanceAttribute"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["DBInstanceAttribute"];
+	for (auto valueItemsDBInstanceAttribute : allItemsNode)
 	{
 		DBInstanceAttribute itemsObject;
-		if(!value["IPType"].isNull())
-			itemsObject.iPType = value["IPType"].asString();
-		if(!value["DBInstanceDiskUsed"].isNull())
-			itemsObject.dBInstanceDiskUsed = value["DBInstanceDiskUsed"].asString();
-		if(!value["GuardDBInstanceName"].isNull())
-			itemsObject.guardDBInstanceName = value["GuardDBInstanceName"].asString();
-		if(!value["CanTempUpgrade"].isNull())
-			itemsObject.canTempUpgrade = value["CanTempUpgrade"].asString() == "true";
-		if(!value["TempUpgradeTimeStart"].isNull())
-			itemsObject.tempUpgradeTimeStart = value["TempUpgradeTimeStart"].asString();
-		if(!value["TempUpgradeTimeEnd"].isNull())
-			itemsObject.tempUpgradeTimeEnd = value["TempUpgradeTimeEnd"].asString();
-		if(!value["TempUpgradeRecoveryTime"].isNull())
-			itemsObject.tempUpgradeRecoveryTime = value["TempUpgradeRecoveryTime"].asString();
-		if(!value["TempUpgradeRecoveryClass"].isNull())
-			itemsObject.tempUpgradeRecoveryClass = value["TempUpgradeRecoveryClass"].asString();
-		if(!value["TempUpgradeRecoveryCpu"].isNull())
-			itemsObject.tempUpgradeRecoveryCpu = std::stoi(value["TempUpgradeRecoveryCpu"].asString());
-		if(!value["TempUpgradeRecoveryMemory"].isNull())
-			itemsObject.tempUpgradeRecoveryMemory = std::stoi(value["TempUpgradeRecoveryMemory"].asString());
-		if(!value["TempUpgradeRecoveryMaxIOPS"].isNull())
-			itemsObject.tempUpgradeRecoveryMaxIOPS = value["TempUpgradeRecoveryMaxIOPS"].asString();
-		if(!value["TempUpgradeRecoveryMaxConnections"].isNull())
-			itemsObject.tempUpgradeRecoveryMaxConnections = value["TempUpgradeRecoveryMaxConnections"].asString();
-		if(!value["InsId"].isNull())
-			itemsObject.insId = std::stoi(value["InsId"].asString());
-		if(!value["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["PayType"].isNull())
-			itemsObject.payType = value["PayType"].asString();
-		if(!value["DBInstanceClassType"].isNull())
-			itemsObject.dBInstanceClassType = value["DBInstanceClassType"].asString();
-		if(!value["DBInstanceType"].isNull())
-			itemsObject.dBInstanceType = value["DBInstanceType"].asString();
-		if(!value["RegionId"].isNull())
-			itemsObject.regionId = value["RegionId"].asString();
-		if(!value["ConnectionString"].isNull())
-			itemsObject.connectionString = value["ConnectionString"].asString();
-		if(!value["Port"].isNull())
-			itemsObject.port = value["Port"].asString();
-		if(!value["Engine"].isNull())
-			itemsObject.engine = value["Engine"].asString();
-		if(!value["EngineVersion"].isNull())
-			itemsObject.engineVersion = value["EngineVersion"].asString();
-		if(!value["DBInstanceClass"].isNull())
-			itemsObject.dBInstanceClass = value["DBInstanceClass"].asString();
-		if(!value["DBInstanceMemory"].isNull())
-			itemsObject.dBInstanceMemory = std::stol(value["DBInstanceMemory"].asString());
-		if(!value["DBInstanceStorage"].isNull())
-			itemsObject.dBInstanceStorage = std::stoi(value["DBInstanceStorage"].asString());
-		if(!value["VpcCloudInstanceId"].isNull())
-			itemsObject.vpcCloudInstanceId = value["VpcCloudInstanceId"].asString();
-		if(!value["DBInstanceNetType"].isNull())
-			itemsObject.dBInstanceNetType = value["DBInstanceNetType"].asString();
-		if(!value["DBInstanceStatus"].isNull())
-			itemsObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
-		if(!value["DBInstanceDescription"].isNull())
-			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-		if(!value["LockMode"].isNull())
-			itemsObject.lockMode = value["LockMode"].asString();
-		if(!value["LockReason"].isNull())
-			itemsObject.lockReason = value["LockReason"].asString();
-		if(!value["ReadDelayTime"].isNull())
-			itemsObject.readDelayTime = value["ReadDelayTime"].asString();
-		if(!value["DBMaxQuantity"].isNull())
-			itemsObject.dBMaxQuantity = std::stoi(value["DBMaxQuantity"].asString());
-		if(!value["AccountMaxQuantity"].isNull())
-			itemsObject.accountMaxQuantity = std::stoi(value["AccountMaxQuantity"].asString());
-		if(!value["CreationTime"].isNull())
-			itemsObject.creationTime = value["CreationTime"].asString();
-		if(!value["ExpireTime"].isNull())
-			itemsObject.expireTime = value["ExpireTime"].asString();
-		if(!value["MaintainTime"].isNull())
-			itemsObject.maintainTime = value["MaintainTime"].asString();
-		if(!value["AvailabilityValue"].isNull())
-			itemsObject.availabilityValue = value["AvailabilityValue"].asString();
-		if(!value["MaxIOPS"].isNull())
-			itemsObject.maxIOPS = std::stoi(value["MaxIOPS"].asString());
-		if(!value["MaxConnections"].isNull())
-			itemsObject.maxConnections = std::stoi(value["MaxConnections"].asString());
-		if(!value["MasterInstanceId"].isNull())
-			itemsObject.masterInstanceId = value["MasterInstanceId"].asString();
-		if(!value["DBInstanceCPU"].isNull())
-			itemsObject.dBInstanceCPU = value["DBInstanceCPU"].asString();
-		if(!value["IncrementSourceDBInstanceId"].isNull())
-			itemsObject.incrementSourceDBInstanceId = value["IncrementSourceDBInstanceId"].asString();
-		if(!value["GuardDBInstanceId"].isNull())
-			itemsObject.guardDBInstanceId = value["GuardDBInstanceId"].asString();
-		if(!value["ReplicateId"].isNull())
-			itemsObject.replicateId = value["ReplicateId"].asString();
-		if(!value["TempDBInstanceId"].isNull())
-			itemsObject.tempDBInstanceId = value["TempDBInstanceId"].asString();
-		if(!value["SecurityIPList"].isNull())
-			itemsObject.securityIPList = value["SecurityIPList"].asString();
-		if(!value["ZoneId"].isNull())
-			itemsObject.zoneId = value["ZoneId"].asString();
-		if(!value["InstanceNetworkType"].isNull())
-			itemsObject.instanceNetworkType = value["InstanceNetworkType"].asString();
-		if(!value["DBInstanceStorageType"].isNull())
-			itemsObject.dBInstanceStorageType = value["DBInstanceStorageType"].asString();
-		if(!value["AdvancedFeatures"].isNull())
-			itemsObject.advancedFeatures = value["AdvancedFeatures"].asString();
-		if(!value["Category"].isNull())
-			itemsObject.category = value["Category"].asString();
-		if(!value["AccountType"].isNull())
-			itemsObject.accountType = value["AccountType"].asString();
-		if(!value["SupportUpgradeAccountType"].isNull())
-			itemsObject.supportUpgradeAccountType = value["SupportUpgradeAccountType"].asString();
-		if(!value["SupportCreateSuperAccount"].isNull())
-			itemsObject.supportCreateSuperAccount = value["SupportCreateSuperAccount"].asString();
-		if(!value["VpcId"].isNull())
-			itemsObject.vpcId = value["VpcId"].asString();
-		if(!value["VSwitchId"].isNull())
-			itemsObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["ConnectionMode"].isNull())
-			itemsObject.connectionMode = value["ConnectionMode"].asString();
-		if(!value["CurrentKernelVersion"].isNull())
-			itemsObject.currentKernelVersion = value["CurrentKernelVersion"].asString();
-		if(!value["LatestKernelVersion"].isNull())
-			itemsObject.latestKernelVersion = value["LatestKernelVersion"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			itemsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["ReadonlyInstanceSQLDelayedTime"].isNull())
-			itemsObject.readonlyInstanceSQLDelayedTime = value["ReadonlyInstanceSQLDelayedTime"].asString();
-		if(!value["SecurityIPMode"].isNull())
-			itemsObject.securityIPMode = value["SecurityIPMode"].asString();
-		if(!value["TimeZone"].isNull())
-			itemsObject.timeZone = value["TimeZone"].asString();
-		if(!value["Collation"].isNull())
-			itemsObject.collation = value["Collation"].asString();
-		if(!value["DispenseMode"].isNull())
-			itemsObject.dispenseMode = value["DispenseMode"].asString();
-		if(!value["MasterZone"].isNull())
-			itemsObject.masterZone = value["MasterZone"].asString();
-		if(!value["AutoUpgradeMinorVersion"].isNull())
-			itemsObject.autoUpgradeMinorVersion = value["AutoUpgradeMinorVersion"].asString();
-		auto allSlaveZones = value["SlaveZones"]["SlaveZone"];
-		for (auto value : allSlaveZones)
+		if(!valueItemsDBInstanceAttribute["IPType"].isNull())
+			itemsObject.iPType = valueItemsDBInstanceAttribute["IPType"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceDiskUsed"].isNull())
+			itemsObject.dBInstanceDiskUsed = valueItemsDBInstanceAttribute["DBInstanceDiskUsed"].asString();
+		if(!valueItemsDBInstanceAttribute["GuardDBInstanceName"].isNull())
+			itemsObject.guardDBInstanceName = valueItemsDBInstanceAttribute["GuardDBInstanceName"].asString();
+		if(!valueItemsDBInstanceAttribute["CanTempUpgrade"].isNull())
+			itemsObject.canTempUpgrade = valueItemsDBInstanceAttribute["CanTempUpgrade"].asString() == "true";
+		if(!valueItemsDBInstanceAttribute["TempUpgradeTimeStart"].isNull())
+			itemsObject.tempUpgradeTimeStart = valueItemsDBInstanceAttribute["TempUpgradeTimeStart"].asString();
+		if(!valueItemsDBInstanceAttribute["TempUpgradeTimeEnd"].isNull())
+			itemsObject.tempUpgradeTimeEnd = valueItemsDBInstanceAttribute["TempUpgradeTimeEnd"].asString();
+		if(!valueItemsDBInstanceAttribute["TempUpgradeRecoveryTime"].isNull())
+			itemsObject.tempUpgradeRecoveryTime = valueItemsDBInstanceAttribute["TempUpgradeRecoveryTime"].asString();
+		if(!valueItemsDBInstanceAttribute["TempUpgradeRecoveryClass"].isNull())
+			itemsObject.tempUpgradeRecoveryClass = valueItemsDBInstanceAttribute["TempUpgradeRecoveryClass"].asString();
+		if(!valueItemsDBInstanceAttribute["TempUpgradeRecoveryCpu"].isNull())
+			itemsObject.tempUpgradeRecoveryCpu = std::stoi(valueItemsDBInstanceAttribute["TempUpgradeRecoveryCpu"].asString());
+		if(!valueItemsDBInstanceAttribute["TempUpgradeRecoveryMemory"].isNull())
+			itemsObject.tempUpgradeRecoveryMemory = std::stoi(valueItemsDBInstanceAttribute["TempUpgradeRecoveryMemory"].asString());
+		if(!valueItemsDBInstanceAttribute["TempUpgradeRecoveryMaxIOPS"].isNull())
+			itemsObject.tempUpgradeRecoveryMaxIOPS = valueItemsDBInstanceAttribute["TempUpgradeRecoveryMaxIOPS"].asString();
+		if(!valueItemsDBInstanceAttribute["TempUpgradeRecoveryMaxConnections"].isNull())
+			itemsObject.tempUpgradeRecoveryMaxConnections = valueItemsDBInstanceAttribute["TempUpgradeRecoveryMaxConnections"].asString();
+		if(!valueItemsDBInstanceAttribute["InsId"].isNull())
+			itemsObject.insId = std::stoi(valueItemsDBInstanceAttribute["InsId"].asString());
+		if(!valueItemsDBInstanceAttribute["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsDBInstanceAttribute["DBInstanceId"].asString();
+		if(!valueItemsDBInstanceAttribute["PayType"].isNull())
+			itemsObject.payType = valueItemsDBInstanceAttribute["PayType"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceClassType"].isNull())
+			itemsObject.dBInstanceClassType = valueItemsDBInstanceAttribute["DBInstanceClassType"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceType"].isNull())
+			itemsObject.dBInstanceType = valueItemsDBInstanceAttribute["DBInstanceType"].asString();
+		if(!valueItemsDBInstanceAttribute["RegionId"].isNull())
+			itemsObject.regionId = valueItemsDBInstanceAttribute["RegionId"].asString();
+		if(!valueItemsDBInstanceAttribute["ConnectionString"].isNull())
+			itemsObject.connectionString = valueItemsDBInstanceAttribute["ConnectionString"].asString();
+		if(!valueItemsDBInstanceAttribute["Port"].isNull())
+			itemsObject.port = valueItemsDBInstanceAttribute["Port"].asString();
+		if(!valueItemsDBInstanceAttribute["Engine"].isNull())
+			itemsObject.engine = valueItemsDBInstanceAttribute["Engine"].asString();
+		if(!valueItemsDBInstanceAttribute["EngineVersion"].isNull())
+			itemsObject.engineVersion = valueItemsDBInstanceAttribute["EngineVersion"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceClass"].isNull())
+			itemsObject.dBInstanceClass = valueItemsDBInstanceAttribute["DBInstanceClass"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceMemory"].isNull())
+			itemsObject.dBInstanceMemory = std::stol(valueItemsDBInstanceAttribute["DBInstanceMemory"].asString());
+		if(!valueItemsDBInstanceAttribute["DBInstanceStorage"].isNull())
+			itemsObject.dBInstanceStorage = std::stoi(valueItemsDBInstanceAttribute["DBInstanceStorage"].asString());
+		if(!valueItemsDBInstanceAttribute["VpcCloudInstanceId"].isNull())
+			itemsObject.vpcCloudInstanceId = valueItemsDBInstanceAttribute["VpcCloudInstanceId"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceNetType"].isNull())
+			itemsObject.dBInstanceNetType = valueItemsDBInstanceAttribute["DBInstanceNetType"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = valueItemsDBInstanceAttribute["DBInstanceStatus"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = valueItemsDBInstanceAttribute["DBInstanceDescription"].asString();
+		if(!valueItemsDBInstanceAttribute["LockMode"].isNull())
+			itemsObject.lockMode = valueItemsDBInstanceAttribute["LockMode"].asString();
+		if(!valueItemsDBInstanceAttribute["LockReason"].isNull())
+			itemsObject.lockReason = valueItemsDBInstanceAttribute["LockReason"].asString();
+		if(!valueItemsDBInstanceAttribute["ReadDelayTime"].isNull())
+			itemsObject.readDelayTime = valueItemsDBInstanceAttribute["ReadDelayTime"].asString();
+		if(!valueItemsDBInstanceAttribute["DBMaxQuantity"].isNull())
+			itemsObject.dBMaxQuantity = std::stoi(valueItemsDBInstanceAttribute["DBMaxQuantity"].asString());
+		if(!valueItemsDBInstanceAttribute["AccountMaxQuantity"].isNull())
+			itemsObject.accountMaxQuantity = std::stoi(valueItemsDBInstanceAttribute["AccountMaxQuantity"].asString());
+		if(!valueItemsDBInstanceAttribute["CreationTime"].isNull())
+			itemsObject.creationTime = valueItemsDBInstanceAttribute["CreationTime"].asString();
+		if(!valueItemsDBInstanceAttribute["ExpireTime"].isNull())
+			itemsObject.expireTime = valueItemsDBInstanceAttribute["ExpireTime"].asString();
+		if(!valueItemsDBInstanceAttribute["MaintainTime"].isNull())
+			itemsObject.maintainTime = valueItemsDBInstanceAttribute["MaintainTime"].asString();
+		if(!valueItemsDBInstanceAttribute["AvailabilityValue"].isNull())
+			itemsObject.availabilityValue = valueItemsDBInstanceAttribute["AvailabilityValue"].asString();
+		if(!valueItemsDBInstanceAttribute["MaxIOPS"].isNull())
+			itemsObject.maxIOPS = std::stoi(valueItemsDBInstanceAttribute["MaxIOPS"].asString());
+		if(!valueItemsDBInstanceAttribute["MaxConnections"].isNull())
+			itemsObject.maxConnections = std::stoi(valueItemsDBInstanceAttribute["MaxConnections"].asString());
+		if(!valueItemsDBInstanceAttribute["MasterInstanceId"].isNull())
+			itemsObject.masterInstanceId = valueItemsDBInstanceAttribute["MasterInstanceId"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceCPU"].isNull())
+			itemsObject.dBInstanceCPU = valueItemsDBInstanceAttribute["DBInstanceCPU"].asString();
+		if(!valueItemsDBInstanceAttribute["IncrementSourceDBInstanceId"].isNull())
+			itemsObject.incrementSourceDBInstanceId = valueItemsDBInstanceAttribute["IncrementSourceDBInstanceId"].asString();
+		if(!valueItemsDBInstanceAttribute["GuardDBInstanceId"].isNull())
+			itemsObject.guardDBInstanceId = valueItemsDBInstanceAttribute["GuardDBInstanceId"].asString();
+		if(!valueItemsDBInstanceAttribute["ReplicateId"].isNull())
+			itemsObject.replicateId = valueItemsDBInstanceAttribute["ReplicateId"].asString();
+		if(!valueItemsDBInstanceAttribute["TempDBInstanceId"].isNull())
+			itemsObject.tempDBInstanceId = valueItemsDBInstanceAttribute["TempDBInstanceId"].asString();
+		if(!valueItemsDBInstanceAttribute["SecurityIPList"].isNull())
+			itemsObject.securityIPList = valueItemsDBInstanceAttribute["SecurityIPList"].asString();
+		if(!valueItemsDBInstanceAttribute["ZoneId"].isNull())
+			itemsObject.zoneId = valueItemsDBInstanceAttribute["ZoneId"].asString();
+		if(!valueItemsDBInstanceAttribute["InstanceNetworkType"].isNull())
+			itemsObject.instanceNetworkType = valueItemsDBInstanceAttribute["InstanceNetworkType"].asString();
+		if(!valueItemsDBInstanceAttribute["DBInstanceStorageType"].isNull())
+			itemsObject.dBInstanceStorageType = valueItemsDBInstanceAttribute["DBInstanceStorageType"].asString();
+		if(!valueItemsDBInstanceAttribute["AdvancedFeatures"].isNull())
+			itemsObject.advancedFeatures = valueItemsDBInstanceAttribute["AdvancedFeatures"].asString();
+		if(!valueItemsDBInstanceAttribute["Category"].isNull())
+			itemsObject.category = valueItemsDBInstanceAttribute["Category"].asString();
+		if(!valueItemsDBInstanceAttribute["AccountType"].isNull())
+			itemsObject.accountType = valueItemsDBInstanceAttribute["AccountType"].asString();
+		if(!valueItemsDBInstanceAttribute["SupportUpgradeAccountType"].isNull())
+			itemsObject.supportUpgradeAccountType = valueItemsDBInstanceAttribute["SupportUpgradeAccountType"].asString();
+		if(!valueItemsDBInstanceAttribute["SupportCreateSuperAccount"].isNull())
+			itemsObject.supportCreateSuperAccount = valueItemsDBInstanceAttribute["SupportCreateSuperAccount"].asString();
+		if(!valueItemsDBInstanceAttribute["VpcId"].isNull())
+			itemsObject.vpcId = valueItemsDBInstanceAttribute["VpcId"].asString();
+		if(!valueItemsDBInstanceAttribute["VSwitchId"].isNull())
+			itemsObject.vSwitchId = valueItemsDBInstanceAttribute["VSwitchId"].asString();
+		if(!valueItemsDBInstanceAttribute["ConnectionMode"].isNull())
+			itemsObject.connectionMode = valueItemsDBInstanceAttribute["ConnectionMode"].asString();
+		if(!valueItemsDBInstanceAttribute["CurrentKernelVersion"].isNull())
+			itemsObject.currentKernelVersion = valueItemsDBInstanceAttribute["CurrentKernelVersion"].asString();
+		if(!valueItemsDBInstanceAttribute["LatestKernelVersion"].isNull())
+			itemsObject.latestKernelVersion = valueItemsDBInstanceAttribute["LatestKernelVersion"].asString();
+		if(!valueItemsDBInstanceAttribute["ResourceGroupId"].isNull())
+			itemsObject.resourceGroupId = valueItemsDBInstanceAttribute["ResourceGroupId"].asString();
+		if(!valueItemsDBInstanceAttribute["ReadonlyInstanceSQLDelayedTime"].isNull())
+			itemsObject.readonlyInstanceSQLDelayedTime = valueItemsDBInstanceAttribute["ReadonlyInstanceSQLDelayedTime"].asString();
+		if(!valueItemsDBInstanceAttribute["SecurityIPMode"].isNull())
+			itemsObject.securityIPMode = valueItemsDBInstanceAttribute["SecurityIPMode"].asString();
+		if(!valueItemsDBInstanceAttribute["TimeZone"].isNull())
+			itemsObject.timeZone = valueItemsDBInstanceAttribute["TimeZone"].asString();
+		if(!valueItemsDBInstanceAttribute["Collation"].isNull())
+			itemsObject.collation = valueItemsDBInstanceAttribute["Collation"].asString();
+		if(!valueItemsDBInstanceAttribute["DispenseMode"].isNull())
+			itemsObject.dispenseMode = valueItemsDBInstanceAttribute["DispenseMode"].asString();
+		if(!valueItemsDBInstanceAttribute["MasterZone"].isNull())
+			itemsObject.masterZone = valueItemsDBInstanceAttribute["MasterZone"].asString();
+		if(!valueItemsDBInstanceAttribute["AutoUpgradeMinorVersion"].isNull())
+			itemsObject.autoUpgradeMinorVersion = valueItemsDBInstanceAttribute["AutoUpgradeMinorVersion"].asString();
+		auto allSlaveZonesNode = allItemsNode["SlaveZones"]["SlaveZone"];
+		for (auto allItemsNodeSlaveZonesSlaveZone : allSlaveZonesNode)
 		{
 			DBInstanceAttribute::SlaveZone slaveZonesObject;
-			if(!value["ZoneId"].isNull())
-				slaveZonesObject.zoneId = value["ZoneId"].asString();
+			if(!allItemsNodeSlaveZonesSlaveZone["ZoneId"].isNull())
+				slaveZonesObject.zoneId = allItemsNodeSlaveZonesSlaveZone["ZoneId"].asString();
 			itemsObject.slaveZones.push_back(slaveZonesObject);
 		}
-		auto allReadOnlyDBInstanceIds = value["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
-		for (auto value : allReadOnlyDBInstanceIds)
+		auto allReadOnlyDBInstanceIdsNode = allItemsNode["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
+		for (auto allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{
 			DBInstanceAttribute::ReadOnlyDBInstanceId readOnlyDBInstanceIdsObject;
-			if(!value["DBInstanceId"].isNull())
-				readOnlyDBInstanceIdsObject.dBInstanceId = value["DBInstanceId"].asString();
+			if(!allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].isNull())
+				readOnlyDBInstanceIdsObject.dBInstanceId = allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].asString();
 			itemsObject.readOnlyDBInstanceIds.push_back(readOnlyDBInstanceIdsObject);
 		}
 		auto extraNode = value["Extra"];

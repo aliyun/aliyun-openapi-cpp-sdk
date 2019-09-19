@@ -39,14 +39,14 @@ void DescribeUserOnlineClientsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUsers = value["Users"]["User"];
-	for (auto value : allUsers)
+	auto allUsersNode = value["Users"]["User"];
+	for (auto valueUsersUser : allUsersNode)
 	{
 		User usersObject;
-		if(!value["ClientIp"].isNull())
-			usersObject.clientIp = value["ClientIp"].asString();
-		if(!value["OnlineTime"].isNull())
-			usersObject.onlineTime = value["OnlineTime"].asString();
+		if(!valueUsersUser["ClientIp"].isNull())
+			usersObject.clientIp = valueUsersUser["ClientIp"].asString();
+		if(!valueUsersUser["OnlineTime"].isNull())
+			usersObject.onlineTime = valueUsersUser["OnlineTime"].asString();
 		users_.push_back(usersObject);
 	}
 

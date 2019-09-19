@@ -39,40 +39,40 @@ void DescribeReplicasResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allReplicas = value["Replicas"]["Items"];
-	for (auto value : allReplicas)
+	auto allReplicasNode = value["Replicas"]["Items"];
+	for (auto valueReplicasItems : allReplicasNode)
 	{
 		Items replicasObject;
-		if(!value["ReplicaId"].isNull())
-			replicasObject.replicaId = value["ReplicaId"].asString();
-		if(!value["ReplicaDescription"].isNull())
-			replicasObject.replicaDescription = value["ReplicaDescription"].asString();
-		if(!value["ReplicaStatus"].isNull())
-			replicasObject.replicaStatus = value["ReplicaStatus"].asString();
-		if(!value["ReplicaMode"].isNull())
-			replicasObject.replicaMode = value["ReplicaMode"].asString();
-		if(!value["DomainMode"].isNull())
-			replicasObject.domainMode = value["DomainMode"].asString();
-		auto allDBInstances = value["DBInstances"]["Items"];
-		for (auto value : allDBInstances)
+		if(!valueReplicasItems["ReplicaId"].isNull())
+			replicasObject.replicaId = valueReplicasItems["ReplicaId"].asString();
+		if(!valueReplicasItems["ReplicaDescription"].isNull())
+			replicasObject.replicaDescription = valueReplicasItems["ReplicaDescription"].asString();
+		if(!valueReplicasItems["ReplicaStatus"].isNull())
+			replicasObject.replicaStatus = valueReplicasItems["ReplicaStatus"].asString();
+		if(!valueReplicasItems["ReplicaMode"].isNull())
+			replicasObject.replicaMode = valueReplicasItems["ReplicaMode"].asString();
+		if(!valueReplicasItems["DomainMode"].isNull())
+			replicasObject.domainMode = valueReplicasItems["DomainMode"].asString();
+		auto allDBInstancesNode = allReplicasNode["DBInstances"]["Items"];
+		for (auto allReplicasNodeDBInstancesItems : allDBInstancesNode)
 		{
 			Items::Items1 dBInstancesObject;
-			if(!value["DBInstanceId"].isNull())
-				dBInstancesObject.dBInstanceId = value["DBInstanceId"].asString();
-			if(!value["Role"].isNull())
-				dBInstancesObject.role = value["Role"].asString();
-			if(!value["ReadWriteType"].isNull())
-				dBInstancesObject.readWriteType = value["ReadWriteType"].asString();
-			if(!value["InstanceNetworkType"].isNull())
-				dBInstancesObject.instanceNetworkType = value["InstanceNetworkType"].asString();
-			if(!value["DBInstanceDescription"].isNull())
-				dBInstancesObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-			if(!value["DBInstanceStatus"].isNull())
-				dBInstancesObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
-			if(!value["Engine"].isNull())
-				dBInstancesObject.engine = value["Engine"].asString();
-			if(!value["RegionId"].isNull())
-				dBInstancesObject.regionId = value["RegionId"].asString();
+			if(!allReplicasNodeDBInstancesItems["DBInstanceId"].isNull())
+				dBInstancesObject.dBInstanceId = allReplicasNodeDBInstancesItems["DBInstanceId"].asString();
+			if(!allReplicasNodeDBInstancesItems["Role"].isNull())
+				dBInstancesObject.role = allReplicasNodeDBInstancesItems["Role"].asString();
+			if(!allReplicasNodeDBInstancesItems["ReadWriteType"].isNull())
+				dBInstancesObject.readWriteType = allReplicasNodeDBInstancesItems["ReadWriteType"].asString();
+			if(!allReplicasNodeDBInstancesItems["InstanceNetworkType"].isNull())
+				dBInstancesObject.instanceNetworkType = allReplicasNodeDBInstancesItems["InstanceNetworkType"].asString();
+			if(!allReplicasNodeDBInstancesItems["DBInstanceDescription"].isNull())
+				dBInstancesObject.dBInstanceDescription = allReplicasNodeDBInstancesItems["DBInstanceDescription"].asString();
+			if(!allReplicasNodeDBInstancesItems["DBInstanceStatus"].isNull())
+				dBInstancesObject.dBInstanceStatus = allReplicasNodeDBInstancesItems["DBInstanceStatus"].asString();
+			if(!allReplicasNodeDBInstancesItems["Engine"].isNull())
+				dBInstancesObject.engine = allReplicasNodeDBInstancesItems["Engine"].asString();
+			if(!allReplicasNodeDBInstancesItems["RegionId"].isNull())
+				dBInstancesObject.regionId = allReplicasNodeDBInstancesItems["RegionId"].asString();
 			replicasObject.dBInstances.push_back(dBInstancesObject);
 		}
 		replicas_.push_back(replicasObject);

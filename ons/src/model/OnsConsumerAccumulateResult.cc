@@ -50,18 +50,18 @@ void OnsConsumerAccumulateResult::parse(const std::string &payload)
 		data_.lastTimestamp = std::stol(dataNode["LastTimestamp"].asString());
 	if(!dataNode["DelayTime"].isNull())
 		data_.delayTime = std::stol(dataNode["DelayTime"].asString());
-	auto allDetailInTopicList = value["DetailInTopicList"]["DetailInTopicDo"];
-	for (auto value : allDetailInTopicList)
+	auto allDetailInTopicListNode = dataNode["DetailInTopicList"]["DetailInTopicDo"];
+	for (auto dataNodeDetailInTopicListDetailInTopicDo : allDetailInTopicListNode)
 	{
 		Data::DetailInTopicDo detailInTopicDoObject;
-		if(!value["Topic"].isNull())
-			detailInTopicDoObject.topic = value["Topic"].asString();
-		if(!value["TotalDiff"].isNull())
-			detailInTopicDoObject.totalDiff = std::stol(value["TotalDiff"].asString());
-		if(!value["LastTimestamp"].isNull())
-			detailInTopicDoObject.lastTimestamp = std::stol(value["LastTimestamp"].asString());
-		if(!value["DelayTime"].isNull())
-			detailInTopicDoObject.delayTime = std::stol(value["DelayTime"].asString());
+		if(!dataNodeDetailInTopicListDetailInTopicDo["Topic"].isNull())
+			detailInTopicDoObject.topic = dataNodeDetailInTopicListDetailInTopicDo["Topic"].asString();
+		if(!dataNodeDetailInTopicListDetailInTopicDo["TotalDiff"].isNull())
+			detailInTopicDoObject.totalDiff = std::stol(dataNodeDetailInTopicListDetailInTopicDo["TotalDiff"].asString());
+		if(!dataNodeDetailInTopicListDetailInTopicDo["LastTimestamp"].isNull())
+			detailInTopicDoObject.lastTimestamp = std::stol(dataNodeDetailInTopicListDetailInTopicDo["LastTimestamp"].asString());
+		if(!dataNodeDetailInTopicListDetailInTopicDo["DelayTime"].isNull())
+			detailInTopicDoObject.delayTime = std::stol(dataNodeDetailInTopicListDetailInTopicDo["DelayTime"].asString());
 		data_.detailInTopicList.push_back(detailInTopicDoObject);
 	}
 	if(!value["HelpUrl"].isNull())

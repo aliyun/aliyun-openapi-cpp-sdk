@@ -39,22 +39,22 @@ void DescribeOrderDocumentResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOrderDocumentList = value["OrderDocumentList"]["OrderDocument"];
-	for (auto value : allOrderDocumentList)
+	auto allOrderDocumentListNode = value["OrderDocumentList"]["OrderDocument"];
+	for (auto valueOrderDocumentListOrderDocument : allOrderDocumentListNode)
 	{
 		OrderDocument orderDocumentListObject;
-		if(!value["DocumentType"].isNull())
-			orderDocumentListObject.documentType = std::stoi(value["DocumentType"].asString());
-		if(!value["TplDocNote"].isNull())
-			orderDocumentListObject.tplDocNote = value["TplDocNote"].asString();
-		if(!value["TplDocOssKey"].isNull())
-			orderDocumentListObject.tplDocOssKey = value["TplDocOssKey"].asString();
-		if(!value["OrderDocOssKey"].isNull())
-			orderDocumentListObject.orderDocOssKey = value["OrderDocOssKey"].asString();
-		if(!value["OrderDocDate"].isNull())
-			orderDocumentListObject.orderDocDate = std::stol(value["OrderDocDate"].asString());
-		if(!value["OrderDocExt"].isNull())
-			orderDocumentListObject.orderDocExt = value["OrderDocExt"].asString();
+		if(!valueOrderDocumentListOrderDocument["DocumentType"].isNull())
+			orderDocumentListObject.documentType = std::stoi(valueOrderDocumentListOrderDocument["DocumentType"].asString());
+		if(!valueOrderDocumentListOrderDocument["TplDocNote"].isNull())
+			orderDocumentListObject.tplDocNote = valueOrderDocumentListOrderDocument["TplDocNote"].asString();
+		if(!valueOrderDocumentListOrderDocument["TplDocOssKey"].isNull())
+			orderDocumentListObject.tplDocOssKey = valueOrderDocumentListOrderDocument["TplDocOssKey"].asString();
+		if(!valueOrderDocumentListOrderDocument["OrderDocOssKey"].isNull())
+			orderDocumentListObject.orderDocOssKey = valueOrderDocumentListOrderDocument["OrderDocOssKey"].asString();
+		if(!valueOrderDocumentListOrderDocument["OrderDocDate"].isNull())
+			orderDocumentListObject.orderDocDate = std::stol(valueOrderDocumentListOrderDocument["OrderDocDate"].asString());
+		if(!valueOrderDocumentListOrderDocument["OrderDocExt"].isNull())
+			orderDocumentListObject.orderDocExt = valueOrderDocumentListOrderDocument["OrderDocExt"].asString();
 		orderDocumentList_.push_back(orderDocumentListObject);
 	}
 

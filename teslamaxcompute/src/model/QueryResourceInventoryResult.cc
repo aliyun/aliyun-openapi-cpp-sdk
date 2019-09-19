@@ -42,40 +42,40 @@ void QueryResourceInventoryResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["LastUpdate"].isNull())
 		data_.lastUpdate = dataNode["LastUpdate"].asString();
-	auto allClusters = value["Clusters"]["cluster"];
-	for (auto value : allClusters)
+	auto allClustersNode = dataNode["Clusters"]["cluster"];
+	for (auto dataNodeClusterscluster : allClustersNode)
 	{
 		Data::Cluster clusterObject;
-		if(!value["Status"].isNull())
-			clusterObject.status = value["Status"].asString();
-		if(!value["Cluster"].isNull())
-			clusterObject.cluster = value["Cluster"].asString();
-		if(!value["MachineRoom"].isNull())
-			clusterObject.machineRoom = value["MachineRoom"].asString();
-		if(!value["Region"].isNull())
-			clusterObject.region = value["Region"].asString();
-		auto allResourceParameters = value["ResourceParameters"]["resourceParameter"];
-		for (auto value : allResourceParameters)
+		if(!dataNodeClusterscluster["Status"].isNull())
+			clusterObject.status = dataNodeClusterscluster["Status"].asString();
+		if(!dataNodeClusterscluster["Cluster"].isNull())
+			clusterObject.cluster = dataNodeClusterscluster["Cluster"].asString();
+		if(!dataNodeClusterscluster["MachineRoom"].isNull())
+			clusterObject.machineRoom = dataNodeClusterscluster["MachineRoom"].asString();
+		if(!dataNodeClusterscluster["Region"].isNull())
+			clusterObject.region = dataNodeClusterscluster["Region"].asString();
+		auto allResourceParametersNode = allClustersNode["ResourceParameters"]["resourceParameter"];
+		for (auto allClustersNodeResourceParametersresourceParameter : allResourceParametersNode)
 		{
 			Data::Cluster::ResourceParameter resourceParametersObject;
-			if(!value["ParaName"].isNull())
-				resourceParametersObject.paraName = value["ParaName"].asString();
-			if(!value["ParaValue"].isNull())
-				resourceParametersObject.paraValue = value["ParaValue"].asString();
+			if(!allClustersNodeResourceParametersresourceParameter["ParaName"].isNull())
+				resourceParametersObject.paraName = allClustersNodeResourceParametersresourceParameter["ParaName"].asString();
+			if(!allClustersNodeResourceParametersresourceParameter["ParaValue"].isNull())
+				resourceParametersObject.paraValue = allClustersNodeResourceParametersresourceParameter["ParaValue"].asString();
 			clusterObject.resourceParameters.push_back(resourceParametersObject);
 		}
-		auto allResourceInventories = value["ResourceInventories"]["resourceInventory"];
-		for (auto value : allResourceInventories)
+		auto allResourceInventoriesNode = allClustersNode["ResourceInventories"]["resourceInventory"];
+		for (auto allClustersNodeResourceInventoriesresourceInventory : allResourceInventoriesNode)
 		{
 			Data::Cluster::ResourceInventory resourceInventoriesObject;
-			if(!value["Total"].isNull())
-				resourceInventoriesObject.total = std::stol(value["Total"].asString());
-			if(!value["Available"].isNull())
-				resourceInventoriesObject.available = std::stol(value["Available"].asString());
-			if(!value["Used"].isNull())
-				resourceInventoriesObject.used = std::stol(value["Used"].asString());
-			if(!value["ResourceType"].isNull())
-				resourceInventoriesObject.resourceType = value["ResourceType"].asString();
+			if(!allClustersNodeResourceInventoriesresourceInventory["Total"].isNull())
+				resourceInventoriesObject.total = std::stol(allClustersNodeResourceInventoriesresourceInventory["Total"].asString());
+			if(!allClustersNodeResourceInventoriesresourceInventory["Available"].isNull())
+				resourceInventoriesObject.available = std::stol(allClustersNodeResourceInventoriesresourceInventory["Available"].asString());
+			if(!allClustersNodeResourceInventoriesresourceInventory["Used"].isNull())
+				resourceInventoriesObject.used = std::stol(allClustersNodeResourceInventoriesresourceInventory["Used"].asString());
+			if(!allClustersNodeResourceInventoriesresourceInventory["ResourceType"].isNull())
+				resourceInventoriesObject.resourceType = allClustersNodeResourceInventoriesresourceInventory["ResourceType"].asString();
 			clusterObject.resourceInventories.push_back(resourceInventoriesObject);
 		}
 		data_.clusters.push_back(clusterObject);

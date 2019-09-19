@@ -39,20 +39,20 @@ void GetAuditHistoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHistories = value["Histories"]["History"];
-	for (auto value : allHistories)
+	auto allHistoriesNode = value["Histories"]["History"];
+	for (auto valueHistoriesHistory : allHistoriesNode)
 	{
 		History historiesObject;
-		if(!value["CreationTime"].isNull())
-			historiesObject.creationTime = value["CreationTime"].asString();
-		if(!value["Status"].isNull())
-			historiesObject.status = value["Status"].asString();
-		if(!value["Reason"].isNull())
-			historiesObject.reason = value["Reason"].asString();
-		if(!value["Comment"].isNull())
-			historiesObject.comment = value["Comment"].asString();
-		if(!value["Auditor"].isNull())
-			historiesObject.auditor = value["Auditor"].asString();
+		if(!valueHistoriesHistory["CreationTime"].isNull())
+			historiesObject.creationTime = valueHistoriesHistory["CreationTime"].asString();
+		if(!valueHistoriesHistory["Status"].isNull())
+			historiesObject.status = valueHistoriesHistory["Status"].asString();
+		if(!valueHistoriesHistory["Reason"].isNull())
+			historiesObject.reason = valueHistoriesHistory["Reason"].asString();
+		if(!valueHistoriesHistory["Comment"].isNull())
+			historiesObject.comment = valueHistoriesHistory["Comment"].asString();
+		if(!valueHistoriesHistory["Auditor"].isNull())
+			historiesObject.auditor = valueHistoriesHistory["Auditor"].asString();
 		histories_.push_back(historiesObject);
 	}
 	if(!value["Status"].isNull())

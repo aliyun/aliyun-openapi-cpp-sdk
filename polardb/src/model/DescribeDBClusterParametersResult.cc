@@ -39,28 +39,28 @@ void DescribeDBClusterParametersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRunningParameters = value["RunningParameters"]["Parameter"];
-	for (auto value : allRunningParameters)
+	auto allRunningParametersNode = value["RunningParameters"]["Parameter"];
+	for (auto valueRunningParametersParameter : allRunningParametersNode)
 	{
 		Parameter runningParametersObject;
-		if(!value["ParameterName"].isNull())
-			runningParametersObject.parameterName = value["ParameterName"].asString();
-		if(!value["DataType"].isNull())
-			runningParametersObject.dataType = value["DataType"].asString();
-		if(!value["DefaultParameterValue"].isNull())
-			runningParametersObject.defaultParameterValue = value["DefaultParameterValue"].asString();
-		if(!value["ParameterValue"].isNull())
-			runningParametersObject.parameterValue = value["ParameterValue"].asString();
-		if(!value["IsModifiable"].isNull())
-			runningParametersObject.isModifiable = value["IsModifiable"].asString() == "true";
-		if(!value["ForceRestart"].isNull())
-			runningParametersObject.forceRestart = value["ForceRestart"].asString() == "true";
-		if(!value["ParameterStatus"].isNull())
-			runningParametersObject.parameterStatus = value["ParameterStatus"].asString();
-		if(!value["CheckingCode"].isNull())
-			runningParametersObject.checkingCode = value["CheckingCode"].asString();
-		if(!value["ParameterDescription"].isNull())
-			runningParametersObject.parameterDescription = value["ParameterDescription"].asString();
+		if(!valueRunningParametersParameter["ParameterName"].isNull())
+			runningParametersObject.parameterName = valueRunningParametersParameter["ParameterName"].asString();
+		if(!valueRunningParametersParameter["DataType"].isNull())
+			runningParametersObject.dataType = valueRunningParametersParameter["DataType"].asString();
+		if(!valueRunningParametersParameter["DefaultParameterValue"].isNull())
+			runningParametersObject.defaultParameterValue = valueRunningParametersParameter["DefaultParameterValue"].asString();
+		if(!valueRunningParametersParameter["ParameterValue"].isNull())
+			runningParametersObject.parameterValue = valueRunningParametersParameter["ParameterValue"].asString();
+		if(!valueRunningParametersParameter["IsModifiable"].isNull())
+			runningParametersObject.isModifiable = valueRunningParametersParameter["IsModifiable"].asString() == "true";
+		if(!valueRunningParametersParameter["ForceRestart"].isNull())
+			runningParametersObject.forceRestart = valueRunningParametersParameter["ForceRestart"].asString() == "true";
+		if(!valueRunningParametersParameter["ParameterStatus"].isNull())
+			runningParametersObject.parameterStatus = valueRunningParametersParameter["ParameterStatus"].asString();
+		if(!valueRunningParametersParameter["CheckingCode"].isNull())
+			runningParametersObject.checkingCode = valueRunningParametersParameter["CheckingCode"].asString();
+		if(!valueRunningParametersParameter["ParameterDescription"].isNull())
+			runningParametersObject.parameterDescription = valueRunningParametersParameter["ParameterDescription"].asString();
 		runningParameters_.push_back(runningParametersObject);
 	}
 	if(!value["Engine"].isNull())

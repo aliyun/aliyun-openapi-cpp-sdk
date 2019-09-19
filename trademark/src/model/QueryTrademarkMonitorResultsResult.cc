@@ -39,44 +39,44 @@ void QueryTrademarkMonitorResultsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["TmMonitorResult"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["TmMonitorResult"];
+	for (auto valueDataTmMonitorResult : allDataNode)
 	{
 		TmMonitorResult dataObject;
-		if(!value["UserId"].isNull())
-			dataObject.userId = value["UserId"].asString();
-		if(!value["RuleId"].isNull())
-			dataObject.ruleId = value["RuleId"].asString();
-		if(!value["TmUid"].isNull())
-			dataObject.tmUid = value["TmUid"].asString();
-		if(!value["DataCreateTime"].isNull())
-			dataObject.dataCreateTime = std::stol(value["DataCreateTime"].asString());
-		if(!value["DataUpdateTime"].isNull())
-			dataObject.dataUpdateTime = std::stol(value["DataUpdateTime"].asString());
-		if(!value["TmName"].isNull())
-			dataObject.tmName = value["TmName"].asString();
-		if(!value["TmImage"].isNull())
-			dataObject.tmImage = value["TmImage"].asString();
-		if(!value["Classification"].isNull())
-			dataObject.classification = value["Classification"].asString();
-		if(!value["RegistrationNumber"].isNull())
-			dataObject.registrationNumber = value["RegistrationNumber"].asString();
-		if(!value["TmProcedureStatusDesc"].isNull())
-			dataObject.tmProcedureStatusDesc = value["TmProcedureStatusDesc"].asString();
-		if(!value["OwnerName"].isNull())
-			dataObject.ownerName = value["OwnerName"].asString();
-		if(!value["OwnerEnName"].isNull())
-			dataObject.ownerEnName = value["OwnerEnName"].asString();
-		if(!value["ApplyDate"].isNull())
-			dataObject.applyDate = value["ApplyDate"].asString();
-		if(!value["XuzhanEndDate"].isNull())
-			dataObject.xuzhanEndDate = value["XuzhanEndDate"].asString();
-		if(!value["ChesanEndDate"].isNull())
-			dataObject.chesanEndDate = value["ChesanEndDate"].asString();
-		if(!value["WuxiaoEndDate"].isNull())
-			dataObject.wuxiaoEndDate = value["WuxiaoEndDate"].asString();
-		if(!value["YiyiEndDate"].isNull())
-			dataObject.yiyiEndDate = value["YiyiEndDate"].asString();
+		if(!valueDataTmMonitorResult["UserId"].isNull())
+			dataObject.userId = valueDataTmMonitorResult["UserId"].asString();
+		if(!valueDataTmMonitorResult["RuleId"].isNull())
+			dataObject.ruleId = valueDataTmMonitorResult["RuleId"].asString();
+		if(!valueDataTmMonitorResult["TmUid"].isNull())
+			dataObject.tmUid = valueDataTmMonitorResult["TmUid"].asString();
+		if(!valueDataTmMonitorResult["DataCreateTime"].isNull())
+			dataObject.dataCreateTime = std::stol(valueDataTmMonitorResult["DataCreateTime"].asString());
+		if(!valueDataTmMonitorResult["DataUpdateTime"].isNull())
+			dataObject.dataUpdateTime = std::stol(valueDataTmMonitorResult["DataUpdateTime"].asString());
+		if(!valueDataTmMonitorResult["TmName"].isNull())
+			dataObject.tmName = valueDataTmMonitorResult["TmName"].asString();
+		if(!valueDataTmMonitorResult["TmImage"].isNull())
+			dataObject.tmImage = valueDataTmMonitorResult["TmImage"].asString();
+		if(!valueDataTmMonitorResult["Classification"].isNull())
+			dataObject.classification = valueDataTmMonitorResult["Classification"].asString();
+		if(!valueDataTmMonitorResult["RegistrationNumber"].isNull())
+			dataObject.registrationNumber = valueDataTmMonitorResult["RegistrationNumber"].asString();
+		if(!valueDataTmMonitorResult["TmProcedureStatusDesc"].isNull())
+			dataObject.tmProcedureStatusDesc = valueDataTmMonitorResult["TmProcedureStatusDesc"].asString();
+		if(!valueDataTmMonitorResult["OwnerName"].isNull())
+			dataObject.ownerName = valueDataTmMonitorResult["OwnerName"].asString();
+		if(!valueDataTmMonitorResult["OwnerEnName"].isNull())
+			dataObject.ownerEnName = valueDataTmMonitorResult["OwnerEnName"].asString();
+		if(!valueDataTmMonitorResult["ApplyDate"].isNull())
+			dataObject.applyDate = valueDataTmMonitorResult["ApplyDate"].asString();
+		if(!valueDataTmMonitorResult["XuzhanEndDate"].isNull())
+			dataObject.xuzhanEndDate = valueDataTmMonitorResult["XuzhanEndDate"].asString();
+		if(!valueDataTmMonitorResult["ChesanEndDate"].isNull())
+			dataObject.chesanEndDate = valueDataTmMonitorResult["ChesanEndDate"].asString();
+		if(!valueDataTmMonitorResult["WuxiaoEndDate"].isNull())
+			dataObject.wuxiaoEndDate = valueDataTmMonitorResult["WuxiaoEndDate"].asString();
+		if(!valueDataTmMonitorResult["YiyiEndDate"].isNull())
+			dataObject.yiyiEndDate = valueDataTmMonitorResult["YiyiEndDate"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

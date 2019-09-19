@@ -40,32 +40,32 @@ void GetEntityListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allList = value["List"]["Entity"];
-	for (auto value : allList)
+	auto allListNode = dataNode["List"]["Entity"];
+	for (auto dataNodeListEntity : allListNode)
 	{
 		Data::Entity entityObject;
-		if(!value["Uuid"].isNull())
-			entityObject.uuid = value["Uuid"].asString();
-		if(!value["GroupId"].isNull())
-			entityObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["Ip"].isNull())
-			entityObject.ip = value["Ip"].asString();
-		if(!value["InstanceName"].isNull())
-			entityObject.instanceName = value["InstanceName"].asString();
-		if(!value["InstanceId"].isNull())
-			entityObject.instanceId = value["InstanceId"].asString();
-		if(!value["Region"].isNull())
-			entityObject.region = value["Region"].asString();
-		if(!value["Os"].isNull())
-			entityObject.os = value["Os"].asString();
-		if(!value["Flag"].isNull())
-			entityObject.flag = value["Flag"].asString();
-		if(!value["BuyVersion"].isNull())
-			entityObject.buyVersion = value["BuyVersion"].asString();
-		if(!value["AegisOnline"].isNull())
-			entityObject.aegisOnline = value["AegisOnline"].asString() == "true";
-		if(!value["aegisVersion"].isNull())
-			entityObject.aegisVersion = value["aegisVersion"].asString();
+		if(!dataNodeListEntity["Uuid"].isNull())
+			entityObject.uuid = dataNodeListEntity["Uuid"].asString();
+		if(!dataNodeListEntity["GroupId"].isNull())
+			entityObject.groupId = std::stol(dataNodeListEntity["GroupId"].asString());
+		if(!dataNodeListEntity["Ip"].isNull())
+			entityObject.ip = dataNodeListEntity["Ip"].asString();
+		if(!dataNodeListEntity["InstanceName"].isNull())
+			entityObject.instanceName = dataNodeListEntity["InstanceName"].asString();
+		if(!dataNodeListEntity["InstanceId"].isNull())
+			entityObject.instanceId = dataNodeListEntity["InstanceId"].asString();
+		if(!dataNodeListEntity["Region"].isNull())
+			entityObject.region = dataNodeListEntity["Region"].asString();
+		if(!dataNodeListEntity["Os"].isNull())
+			entityObject.os = dataNodeListEntity["Os"].asString();
+		if(!dataNodeListEntity["Flag"].isNull())
+			entityObject.flag = dataNodeListEntity["Flag"].asString();
+		if(!dataNodeListEntity["BuyVersion"].isNull())
+			entityObject.buyVersion = dataNodeListEntity["BuyVersion"].asString();
+		if(!dataNodeListEntity["AegisOnline"].isNull())
+			entityObject.aegisOnline = dataNodeListEntity["AegisOnline"].asString() == "true";
+		if(!dataNodeListEntity["aegisVersion"].isNull())
+			entityObject.aegisVersion = dataNodeListEntity["aegisVersion"].asString();
 		data_.list.push_back(entityObject);
 	}
 	auto pageInfoNode = dataNode["PageInfo"];

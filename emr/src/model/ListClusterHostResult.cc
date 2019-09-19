@@ -39,62 +39,62 @@ void ListClusterHostResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHostList = value["HostList"]["Host"];
-	for (auto value : allHostList)
+	auto allHostListNode = value["HostList"]["Host"];
+	for (auto valueHostListHost : allHostListNode)
 	{
 		Host hostListObject;
-		if(!value["HostName"].isNull())
-			hostListObject.hostName = value["HostName"].asString();
-		if(!value["PublicIp"].isNull())
-			hostListObject.publicIp = value["PublicIp"].asString();
-		if(!value["PrivateIp"].isNull())
-			hostListObject.privateIp = value["PrivateIp"].asString();
-		if(!value["Role"].isNull())
-			hostListObject.role = value["Role"].asString();
-		if(!value["ZoneId"].isNull())
-			hostListObject.zoneId = value["ZoneId"].asString();
-		if(!value["InstanceType"].isNull())
-			hostListObject.instanceType = value["InstanceType"].asString();
-		if(!value["Cpu"].isNull())
-			hostListObject.cpu = std::stoi(value["Cpu"].asString());
-		if(!value["Memory"].isNull())
-			hostListObject.memory = std::stoi(value["Memory"].asString());
-		if(!value["Status"].isNull())
-			hostListObject.status = value["Status"].asString();
-		if(!value["InstanceStatus"].isNull())
-			hostListObject.instanceStatus = value["InstanceStatus"].asString();
-		if(!value["Type"].isNull())
-			hostListObject.type = value["Type"].asString();
-		if(!value["HostInstanceId"].isNull())
-			hostListObject.hostInstanceId = value["HostInstanceId"].asString();
-		if(!value["SerialNumber"].isNull())
-			hostListObject.serialNumber = value["SerialNumber"].asString();
-		if(!value["ChargeType"].isNull())
-			hostListObject.chargeType = value["ChargeType"].asString();
-		if(!value["ExpiredTime"].isNull())
-			hostListObject.expiredTime = std::stol(value["ExpiredTime"].asString());
-		if(!value["HostGroupId"].isNull())
-			hostListObject.hostGroupId = value["HostGroupId"].asString();
-		if(!value["CreateTime"].isNull())
-			hostListObject.createTime = value["CreateTime"].asString();
-		if(!value["EmrExpiredTime"].isNull())
-			hostListObject.emrExpiredTime = value["EmrExpiredTime"].asString();
-		if(!value["SupportIpV6"].isNull())
-			hostListObject.supportIpV6 = value["SupportIpV6"].asString() == "true";
-		auto allDiskList = value["DiskList"]["Disk"];
-		for (auto value : allDiskList)
+		if(!valueHostListHost["HostName"].isNull())
+			hostListObject.hostName = valueHostListHost["HostName"].asString();
+		if(!valueHostListHost["PublicIp"].isNull())
+			hostListObject.publicIp = valueHostListHost["PublicIp"].asString();
+		if(!valueHostListHost["PrivateIp"].isNull())
+			hostListObject.privateIp = valueHostListHost["PrivateIp"].asString();
+		if(!valueHostListHost["Role"].isNull())
+			hostListObject.role = valueHostListHost["Role"].asString();
+		if(!valueHostListHost["ZoneId"].isNull())
+			hostListObject.zoneId = valueHostListHost["ZoneId"].asString();
+		if(!valueHostListHost["InstanceType"].isNull())
+			hostListObject.instanceType = valueHostListHost["InstanceType"].asString();
+		if(!valueHostListHost["Cpu"].isNull())
+			hostListObject.cpu = std::stoi(valueHostListHost["Cpu"].asString());
+		if(!valueHostListHost["Memory"].isNull())
+			hostListObject.memory = std::stoi(valueHostListHost["Memory"].asString());
+		if(!valueHostListHost["Status"].isNull())
+			hostListObject.status = valueHostListHost["Status"].asString();
+		if(!valueHostListHost["InstanceStatus"].isNull())
+			hostListObject.instanceStatus = valueHostListHost["InstanceStatus"].asString();
+		if(!valueHostListHost["Type"].isNull())
+			hostListObject.type = valueHostListHost["Type"].asString();
+		if(!valueHostListHost["HostInstanceId"].isNull())
+			hostListObject.hostInstanceId = valueHostListHost["HostInstanceId"].asString();
+		if(!valueHostListHost["SerialNumber"].isNull())
+			hostListObject.serialNumber = valueHostListHost["SerialNumber"].asString();
+		if(!valueHostListHost["ChargeType"].isNull())
+			hostListObject.chargeType = valueHostListHost["ChargeType"].asString();
+		if(!valueHostListHost["ExpiredTime"].isNull())
+			hostListObject.expiredTime = std::stol(valueHostListHost["ExpiredTime"].asString());
+		if(!valueHostListHost["HostGroupId"].isNull())
+			hostListObject.hostGroupId = valueHostListHost["HostGroupId"].asString();
+		if(!valueHostListHost["CreateTime"].isNull())
+			hostListObject.createTime = valueHostListHost["CreateTime"].asString();
+		if(!valueHostListHost["EmrExpiredTime"].isNull())
+			hostListObject.emrExpiredTime = valueHostListHost["EmrExpiredTime"].asString();
+		if(!valueHostListHost["SupportIpV6"].isNull())
+			hostListObject.supportIpV6 = valueHostListHost["SupportIpV6"].asString() == "true";
+		auto allDiskListNode = allHostListNode["DiskList"]["Disk"];
+		for (auto allHostListNodeDiskListDisk : allDiskListNode)
 		{
 			Host::Disk diskListObject;
-			if(!value["DiskId"].isNull())
-				diskListObject.diskId = value["DiskId"].asString();
-			if(!value["Type"].isNull())
-				diskListObject.type = value["Type"].asString();
-			if(!value["Device"].isNull())
-				diskListObject.device = value["Device"].asString();
-			if(!value["DiskType"].isNull())
-				diskListObject.diskType = value["DiskType"].asString();
-			if(!value["DiskSize"].isNull())
-				diskListObject.diskSize = std::stoi(value["DiskSize"].asString());
+			if(!allHostListNodeDiskListDisk["DiskId"].isNull())
+				diskListObject.diskId = allHostListNodeDiskListDisk["DiskId"].asString();
+			if(!allHostListNodeDiskListDisk["Type"].isNull())
+				diskListObject.type = allHostListNodeDiskListDisk["Type"].asString();
+			if(!allHostListNodeDiskListDisk["Device"].isNull())
+				diskListObject.device = allHostListNodeDiskListDisk["Device"].asString();
+			if(!allHostListNodeDiskListDisk["DiskType"].isNull())
+				diskListObject.diskType = allHostListNodeDiskListDisk["DiskType"].asString();
+			if(!allHostListNodeDiskListDisk["DiskSize"].isNull())
+				diskListObject.diskSize = std::stoi(allHostListNodeDiskListDisk["DiskSize"].asString());
 			hostListObject.diskList.push_back(diskListObject);
 		}
 		hostList_.push_back(hostListObject);

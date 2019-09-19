@@ -39,20 +39,20 @@ void DescribeErrorLogRecordsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["LogRecords"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["LogRecords"];
+	for (auto valueItemsLogRecords : allItemsNode)
 	{
 		LogRecords itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stoi(value["Id"].asString());
-		if(!value["CreateTime"].isNull())
-			itemsObject.createTime = value["CreateTime"].asString();
-		if(!value["Category"].isNull())
-			itemsObject.category = value["Category"].asString();
-		if(!value["ConnInfo"].isNull())
-			itemsObject.connInfo = value["ConnInfo"].asString();
-		if(!value["Content"].isNull())
-			itemsObject.content = value["Content"].asString();
+		if(!valueItemsLogRecords["Id"].isNull())
+			itemsObject.id = std::stoi(valueItemsLogRecords["Id"].asString());
+		if(!valueItemsLogRecords["CreateTime"].isNull())
+			itemsObject.createTime = valueItemsLogRecords["CreateTime"].asString();
+		if(!valueItemsLogRecords["Category"].isNull())
+			itemsObject.category = valueItemsLogRecords["Category"].asString();
+		if(!valueItemsLogRecords["ConnInfo"].isNull())
+			itemsObject.connInfo = valueItemsLogRecords["ConnInfo"].asString();
+		if(!valueItemsLogRecords["Content"].isNull())
+			itemsObject.content = valueItemsLogRecords["Content"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Engine"].isNull())

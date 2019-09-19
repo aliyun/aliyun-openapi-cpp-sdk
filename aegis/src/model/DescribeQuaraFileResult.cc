@@ -39,26 +39,26 @@ void DescribeQuaraFileResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQuaraFiles = value["QuaraFiles"]["QuaraFile"];
-	for (auto value : allQuaraFiles)
+	auto allQuaraFilesNode = value["QuaraFiles"]["QuaraFile"];
+	for (auto valueQuaraFilesQuaraFile : allQuaraFilesNode)
 	{
 		QuaraFile quaraFilesObject;
-		if(!value["Path"].isNull())
-			quaraFilesObject.path = value["Path"].asString();
-		if(!value["EventName"].isNull())
-			quaraFilesObject.eventName = value["EventName"].asString();
-		if(!value["Online"].isNull())
-			quaraFilesObject.online = value["Online"].asString() == "true";
-		if(!value["EventType"].isNull())
-			quaraFilesObject.eventType = value["EventType"].asString();
-		if(!value["Tag"].isNull())
-			quaraFilesObject.tag = value["Tag"].asString();
-		if(!value["Uuid"].isNull())
-			quaraFilesObject.uuid = value["Uuid"].asString();
-		if(!value["FileStatus"].isNull())
-			quaraFilesObject.fileStatus = value["FileStatus"].asString();
-		if(!value["Md5"].isNull())
-			quaraFilesObject.md5 = value["Md5"].asString();
+		if(!valueQuaraFilesQuaraFile["Path"].isNull())
+			quaraFilesObject.path = valueQuaraFilesQuaraFile["Path"].asString();
+		if(!valueQuaraFilesQuaraFile["EventName"].isNull())
+			quaraFilesObject.eventName = valueQuaraFilesQuaraFile["EventName"].asString();
+		if(!valueQuaraFilesQuaraFile["Online"].isNull())
+			quaraFilesObject.online = valueQuaraFilesQuaraFile["Online"].asString() == "true";
+		if(!valueQuaraFilesQuaraFile["EventType"].isNull())
+			quaraFilesObject.eventType = valueQuaraFilesQuaraFile["EventType"].asString();
+		if(!valueQuaraFilesQuaraFile["Tag"].isNull())
+			quaraFilesObject.tag = valueQuaraFilesQuaraFile["Tag"].asString();
+		if(!valueQuaraFilesQuaraFile["Uuid"].isNull())
+			quaraFilesObject.uuid = valueQuaraFilesQuaraFile["Uuid"].asString();
+		if(!valueQuaraFilesQuaraFile["FileStatus"].isNull())
+			quaraFilesObject.fileStatus = valueQuaraFilesQuaraFile["FileStatus"].asString();
+		if(!valueQuaraFilesQuaraFile["Md5"].isNull())
+			quaraFilesObject.md5 = valueQuaraFilesQuaraFile["Md5"].asString();
 		quaraFiles_.push_back(quaraFilesObject);
 	}
 	if(!value["PageSize"].isNull())

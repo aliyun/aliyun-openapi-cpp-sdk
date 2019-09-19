@@ -39,14 +39,14 @@ void GetInstancesStatusCountResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DataItem"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!value["Status"].isNull())
-			dataObject.status = value["Status"].asString();
-		if(!value["Size"].isNull())
-			dataObject.size = std::stoi(value["Size"].asString());
+		if(!valueDataDataItem["Status"].isNull())
+			dataObject.status = valueDataDataItem["Status"].asString();
+		if(!valueDataDataItem["Size"].isNull())
+			dataObject.size = std::stoi(valueDataDataItem["Size"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

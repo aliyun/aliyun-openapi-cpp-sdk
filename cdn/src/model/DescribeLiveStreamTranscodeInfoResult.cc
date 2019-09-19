@@ -39,22 +39,22 @@ void DescribeLiveStreamTranscodeInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainTranscodeList = value["DomainTranscodeList"]["DomainTranscodeInfo"];
-	for (auto value : allDomainTranscodeList)
+	auto allDomainTranscodeListNode = value["DomainTranscodeList"]["DomainTranscodeInfo"];
+	for (auto valueDomainTranscodeListDomainTranscodeInfo : allDomainTranscodeListNode)
 	{
 		DomainTranscodeInfo domainTranscodeListObject;
-		if(!value["TranscodeApp"].isNull())
-			domainTranscodeListObject.transcodeApp = value["TranscodeApp"].asString();
-		if(!value["TranscodeId"].isNull())
-			domainTranscodeListObject.transcodeId = value["TranscodeId"].asString();
-		if(!value["TranscodeName"].isNull())
-			domainTranscodeListObject.transcodeName = value["TranscodeName"].asString();
-		if(!value["TranscodeRecord"].isNull())
-			domainTranscodeListObject.transcodeRecord = value["TranscodeRecord"].asString();
-		if(!value["TranscodeSnapshot"].isNull())
-			domainTranscodeListObject.transcodeSnapshot = value["TranscodeSnapshot"].asString();
-		if(!value["TranscodeTemplate"].isNull())
-			domainTranscodeListObject.transcodeTemplate = value["TranscodeTemplate"].asString();
+		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeApp"].isNull())
+			domainTranscodeListObject.transcodeApp = valueDomainTranscodeListDomainTranscodeInfo["TranscodeApp"].asString();
+		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeId"].isNull())
+			domainTranscodeListObject.transcodeId = valueDomainTranscodeListDomainTranscodeInfo["TranscodeId"].asString();
+		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeName"].isNull())
+			domainTranscodeListObject.transcodeName = valueDomainTranscodeListDomainTranscodeInfo["TranscodeName"].asString();
+		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeRecord"].isNull())
+			domainTranscodeListObject.transcodeRecord = valueDomainTranscodeListDomainTranscodeInfo["TranscodeRecord"].asString();
+		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeSnapshot"].isNull())
+			domainTranscodeListObject.transcodeSnapshot = valueDomainTranscodeListDomainTranscodeInfo["TranscodeSnapshot"].asString();
+		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeTemplate"].isNull())
+			domainTranscodeListObject.transcodeTemplate = valueDomainTranscodeListDomainTranscodeInfo["TranscodeTemplate"].asString();
 		domainTranscodeList_.push_back(domainTranscodeListObject);
 	}
 

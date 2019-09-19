@@ -40,52 +40,52 @@ void ValidateJobResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto jobInOutNode = value["JobInOut"];
-	auto allInputs = value["Inputs"]["Input"];
-	for (auto value : allInputs)
+	auto allInputsNode = jobInOutNode["Inputs"]["Input"];
+	for (auto jobInOutNodeInputsInput : allInputsNode)
 	{
 		JobInOut::Input inputObject;
-		if(!value["Type"].isNull())
-			inputObject.type = value["Type"].asString();
-		if(!value["Workspace"].isNull())
-			inputObject.workspace = value["Workspace"].asString();
-		if(!value["Name"].isNull())
-			inputObject.name = value["Name"].asString();
-		if(!value["Properties"].isNull())
-			inputObject.properties = value["Properties"].asString();
-		if(!value["Alias"].isNull())
-			inputObject.alias = value["Alias"].asString();
+		if(!jobInOutNodeInputsInput["Type"].isNull())
+			inputObject.type = jobInOutNodeInputsInput["Type"].asString();
+		if(!jobInOutNodeInputsInput["Workspace"].isNull())
+			inputObject.workspace = jobInOutNodeInputsInput["Workspace"].asString();
+		if(!jobInOutNodeInputsInput["Name"].isNull())
+			inputObject.name = jobInOutNodeInputsInput["Name"].asString();
+		if(!jobInOutNodeInputsInput["Properties"].isNull())
+			inputObject.properties = jobInOutNodeInputsInput["Properties"].asString();
+		if(!jobInOutNodeInputsInput["Alias"].isNull())
+			inputObject.alias = jobInOutNodeInputsInput["Alias"].asString();
 		jobInOut_.inputs.push_back(inputObject);
 	}
-	auto allOutputs = value["Outputs"]["Output"];
-	for (auto value : allOutputs)
+	auto allOutputsNode = jobInOutNode["Outputs"]["Output"];
+	for (auto jobInOutNodeOutputsOutput : allOutputsNode)
 	{
 		JobInOut::Output outputObject;
-		if(!value["Type"].isNull())
-			outputObject.type = value["Type"].asString();
-		if(!value["Workspace"].isNull())
-			outputObject.workspace = value["Workspace"].asString();
-		if(!value["Name"].isNull())
-			outputObject.name = value["Name"].asString();
-		if(!value["Properties"].isNull())
-			outputObject.properties = value["Properties"].asString();
-		if(!value["Alias"].isNull())
-			outputObject.alias = value["Alias"].asString();
+		if(!jobInOutNodeOutputsOutput["Type"].isNull())
+			outputObject.type = jobInOutNodeOutputsOutput["Type"].asString();
+		if(!jobInOutNodeOutputsOutput["Workspace"].isNull())
+			outputObject.workspace = jobInOutNodeOutputsOutput["Workspace"].asString();
+		if(!jobInOutNodeOutputsOutput["Name"].isNull())
+			outputObject.name = jobInOutNodeOutputsOutput["Name"].asString();
+		if(!jobInOutNodeOutputsOutput["Properties"].isNull())
+			outputObject.properties = jobInOutNodeOutputsOutput["Properties"].asString();
+		if(!jobInOutNodeOutputsOutput["Alias"].isNull())
+			outputObject.alias = jobInOutNodeOutputsOutput["Alias"].asString();
 		jobInOut_.outputs.push_back(outputObject);
 	}
-	auto allDims = value["Dims"]["Dim"];
-	for (auto value : allDims)
+	auto allDimsNode = jobInOutNode["Dims"]["Dim"];
+	for (auto jobInOutNodeDimsDim : allDimsNode)
 	{
 		JobInOut::Dim dimObject;
-		if(!value["Type"].isNull())
-			dimObject.type = value["Type"].asString();
-		if(!value["Workspace"].isNull())
-			dimObject.workspace = value["Workspace"].asString();
-		if(!value["Name"].isNull())
-			dimObject.name = value["Name"].asString();
-		if(!value["Properties"].isNull())
-			dimObject.properties = value["Properties"].asString();
-		if(!value["Alias"].isNull())
-			dimObject.alias = value["Alias"].asString();
+		if(!jobInOutNodeDimsDim["Type"].isNull())
+			dimObject.type = jobInOutNodeDimsDim["Type"].asString();
+		if(!jobInOutNodeDimsDim["Workspace"].isNull())
+			dimObject.workspace = jobInOutNodeDimsDim["Workspace"].asString();
+		if(!jobInOutNodeDimsDim["Name"].isNull())
+			dimObject.name = jobInOutNodeDimsDim["Name"].asString();
+		if(!jobInOutNodeDimsDim["Properties"].isNull())
+			dimObject.properties = jobInOutNodeDimsDim["Properties"].asString();
+		if(!jobInOutNodeDimsDim["Alias"].isNull())
+			dimObject.alias = jobInOutNodeDimsDim["Alias"].asString();
 		jobInOut_.dims.push_back(dimObject);
 	}
 

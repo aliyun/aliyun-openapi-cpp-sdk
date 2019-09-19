@@ -39,96 +39,96 @@ void ListImagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allImages = value["Images"]["ImagesItem"];
-	for (auto value : allImages)
+	auto allImagesNode = value["Images"]["ImagesItem"];
+	for (auto valueImagesImagesItem : allImagesNode)
 	{
 		ImagesItem imagesObject;
-		if(!value["FacesModifyTime"].isNull())
-			imagesObject.facesModifyTime = value["FacesModifyTime"].asString();
-		if(!value["OCRModifyTime"].isNull())
-			imagesObject.oCRModifyTime = value["OCRModifyTime"].asString();
-		if(!value["OCRStatus"].isNull())
-			imagesObject.oCRStatus = value["OCRStatus"].asString();
-		if(!value["SourcePosition"].isNull())
-			imagesObject.sourcePosition = value["SourcePosition"].asString();
-		if(!value["Exif"].isNull())
-			imagesObject.exif = value["Exif"].asString();
-		if(!value["ImageUri"].isNull())
-			imagesObject.imageUri = value["ImageUri"].asString();
-		if(!value["ImageWidth"].isNull())
-			imagesObject.imageWidth = std::stoi(value["ImageWidth"].asString());
-		if(!value["ImageFormat"].isNull())
-			imagesObject.imageFormat = value["ImageFormat"].asString();
-		if(!value["SourceType"].isNull())
-			imagesObject.sourceType = value["SourceType"].asString();
-		if(!value["ModifyTime"].isNull())
-			imagesObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["FileSize"].isNull())
-			imagesObject.fileSize = std::stoi(value["FileSize"].asString());
-		if(!value["SourceUri"].isNull())
-			imagesObject.sourceUri = value["SourceUri"].asString();
-		if(!value["CreateTime"].isNull())
-			imagesObject.createTime = value["CreateTime"].asString();
-		if(!value["FacesStatus"].isNull())
-			imagesObject.facesStatus = value["FacesStatus"].asString();
-		if(!value["RemarksA"].isNull())
-			imagesObject.remarksA = value["RemarksA"].asString();
-		if(!value["ImageHeight"].isNull())
-			imagesObject.imageHeight = std::stoi(value["ImageHeight"].asString());
-		if(!value["RemarksB"].isNull())
-			imagesObject.remarksB = value["RemarksB"].asString();
-		if(!value["ImageTime"].isNull())
-			imagesObject.imageTime = value["ImageTime"].asString();
-		if(!value["Orientation"].isNull())
-			imagesObject.orientation = value["Orientation"].asString();
-		if(!value["Location"].isNull())
-			imagesObject.location = value["Location"].asString();
-		if(!value["OCRFailReason"].isNull())
-			imagesObject.oCRFailReason = value["OCRFailReason"].asString();
-		if(!value["FacesFailReason"].isNull())
-			imagesObject.facesFailReason = value["FacesFailReason"].asString();
-		if(!value["TagsFailReason"].isNull())
-			imagesObject.tagsFailReason = value["TagsFailReason"].asString();
-		if(!value["TagsModifyTime"].isNull())
-			imagesObject.tagsModifyTime = value["TagsModifyTime"].asString();
-		if(!value["CelebrityStatus"].isNull())
-			imagesObject.celebrityStatus = value["CelebrityStatus"].asString();
-		if(!value["CelebrityModifyTime"].isNull())
-			imagesObject.celebrityModifyTime = value["CelebrityModifyTime"].asString();
-		if(!value["CelebrityFailReason"].isNull())
-			imagesObject.celebrityFailReason = value["CelebrityFailReason"].asString();
-		if(!value["TagsStatus"].isNull())
-			imagesObject.tagsStatus = value["TagsStatus"].asString();
-		if(!value["RemarksC"].isNull())
-			imagesObject.remarksC = value["RemarksC"].asString();
-		if(!value["RemarksD"].isNull())
-			imagesObject.remarksD = value["RemarksD"].asString();
-		if(!value["ExternalId"].isNull())
-			imagesObject.externalId = value["ExternalId"].asString();
-		auto allFaces = value["Faces"]["FacesItem"];
-		for (auto value : allFaces)
+		if(!valueImagesImagesItem["FacesModifyTime"].isNull())
+			imagesObject.facesModifyTime = valueImagesImagesItem["FacesModifyTime"].asString();
+		if(!valueImagesImagesItem["OCRModifyTime"].isNull())
+			imagesObject.oCRModifyTime = valueImagesImagesItem["OCRModifyTime"].asString();
+		if(!valueImagesImagesItem["OCRStatus"].isNull())
+			imagesObject.oCRStatus = valueImagesImagesItem["OCRStatus"].asString();
+		if(!valueImagesImagesItem["SourcePosition"].isNull())
+			imagesObject.sourcePosition = valueImagesImagesItem["SourcePosition"].asString();
+		if(!valueImagesImagesItem["Exif"].isNull())
+			imagesObject.exif = valueImagesImagesItem["Exif"].asString();
+		if(!valueImagesImagesItem["ImageUri"].isNull())
+			imagesObject.imageUri = valueImagesImagesItem["ImageUri"].asString();
+		if(!valueImagesImagesItem["ImageWidth"].isNull())
+			imagesObject.imageWidth = std::stoi(valueImagesImagesItem["ImageWidth"].asString());
+		if(!valueImagesImagesItem["ImageFormat"].isNull())
+			imagesObject.imageFormat = valueImagesImagesItem["ImageFormat"].asString();
+		if(!valueImagesImagesItem["SourceType"].isNull())
+			imagesObject.sourceType = valueImagesImagesItem["SourceType"].asString();
+		if(!valueImagesImagesItem["ModifyTime"].isNull())
+			imagesObject.modifyTime = valueImagesImagesItem["ModifyTime"].asString();
+		if(!valueImagesImagesItem["FileSize"].isNull())
+			imagesObject.fileSize = std::stoi(valueImagesImagesItem["FileSize"].asString());
+		if(!valueImagesImagesItem["SourceUri"].isNull())
+			imagesObject.sourceUri = valueImagesImagesItem["SourceUri"].asString();
+		if(!valueImagesImagesItem["CreateTime"].isNull())
+			imagesObject.createTime = valueImagesImagesItem["CreateTime"].asString();
+		if(!valueImagesImagesItem["FacesStatus"].isNull())
+			imagesObject.facesStatus = valueImagesImagesItem["FacesStatus"].asString();
+		if(!valueImagesImagesItem["RemarksA"].isNull())
+			imagesObject.remarksA = valueImagesImagesItem["RemarksA"].asString();
+		if(!valueImagesImagesItem["ImageHeight"].isNull())
+			imagesObject.imageHeight = std::stoi(valueImagesImagesItem["ImageHeight"].asString());
+		if(!valueImagesImagesItem["RemarksB"].isNull())
+			imagesObject.remarksB = valueImagesImagesItem["RemarksB"].asString();
+		if(!valueImagesImagesItem["ImageTime"].isNull())
+			imagesObject.imageTime = valueImagesImagesItem["ImageTime"].asString();
+		if(!valueImagesImagesItem["Orientation"].isNull())
+			imagesObject.orientation = valueImagesImagesItem["Orientation"].asString();
+		if(!valueImagesImagesItem["Location"].isNull())
+			imagesObject.location = valueImagesImagesItem["Location"].asString();
+		if(!valueImagesImagesItem["OCRFailReason"].isNull())
+			imagesObject.oCRFailReason = valueImagesImagesItem["OCRFailReason"].asString();
+		if(!valueImagesImagesItem["FacesFailReason"].isNull())
+			imagesObject.facesFailReason = valueImagesImagesItem["FacesFailReason"].asString();
+		if(!valueImagesImagesItem["TagsFailReason"].isNull())
+			imagesObject.tagsFailReason = valueImagesImagesItem["TagsFailReason"].asString();
+		if(!valueImagesImagesItem["TagsModifyTime"].isNull())
+			imagesObject.tagsModifyTime = valueImagesImagesItem["TagsModifyTime"].asString();
+		if(!valueImagesImagesItem["CelebrityStatus"].isNull())
+			imagesObject.celebrityStatus = valueImagesImagesItem["CelebrityStatus"].asString();
+		if(!valueImagesImagesItem["CelebrityModifyTime"].isNull())
+			imagesObject.celebrityModifyTime = valueImagesImagesItem["CelebrityModifyTime"].asString();
+		if(!valueImagesImagesItem["CelebrityFailReason"].isNull())
+			imagesObject.celebrityFailReason = valueImagesImagesItem["CelebrityFailReason"].asString();
+		if(!valueImagesImagesItem["TagsStatus"].isNull())
+			imagesObject.tagsStatus = valueImagesImagesItem["TagsStatus"].asString();
+		if(!valueImagesImagesItem["RemarksC"].isNull())
+			imagesObject.remarksC = valueImagesImagesItem["RemarksC"].asString();
+		if(!valueImagesImagesItem["RemarksD"].isNull())
+			imagesObject.remarksD = valueImagesImagesItem["RemarksD"].asString();
+		if(!valueImagesImagesItem["ExternalId"].isNull())
+			imagesObject.externalId = valueImagesImagesItem["ExternalId"].asString();
+		auto allFacesNode = allImagesNode["Faces"]["FacesItem"];
+		for (auto allImagesNodeFacesFacesItem : allFacesNode)
 		{
 			ImagesItem::FacesItem facesObject;
-			if(!value["Age"].isNull())
-				facesObject.age = std::stoi(value["Age"].asString());
-			if(!value["GenderConfidence"].isNull())
-				facesObject.genderConfidence = std::stof(value["GenderConfidence"].asString());
-			if(!value["Attractive"].isNull())
-				facesObject.attractive = std::stof(value["Attractive"].asString());
-			if(!value["Gender"].isNull())
-				facesObject.gender = value["Gender"].asString();
-			if(!value["FaceConfidence"].isNull())
-				facesObject.faceConfidence = std::stof(value["FaceConfidence"].asString());
-			if(!value["Emotion"].isNull())
-				facesObject.emotion = value["Emotion"].asString();
-			if(!value["FaceId"].isNull())
-				facesObject.faceId = value["FaceId"].asString();
-			if(!value["EmotionConfidence"].isNull())
-				facesObject.emotionConfidence = std::stof(value["EmotionConfidence"].asString());
-			if(!value["GroupId"].isNull())
-				facesObject.groupId = value["GroupId"].asString();
-			if(!value["FaceQuality"].isNull())
-				facesObject.faceQuality = std::stof(value["FaceQuality"].asString());
+			if(!allImagesNodeFacesFacesItem["Age"].isNull())
+				facesObject.age = std::stoi(allImagesNodeFacesFacesItem["Age"].asString());
+			if(!allImagesNodeFacesFacesItem["GenderConfidence"].isNull())
+				facesObject.genderConfidence = std::stof(allImagesNodeFacesFacesItem["GenderConfidence"].asString());
+			if(!allImagesNodeFacesFacesItem["Attractive"].isNull())
+				facesObject.attractive = std::stof(allImagesNodeFacesFacesItem["Attractive"].asString());
+			if(!allImagesNodeFacesFacesItem["Gender"].isNull())
+				facesObject.gender = allImagesNodeFacesFacesItem["Gender"].asString();
+			if(!allImagesNodeFacesFacesItem["FaceConfidence"].isNull())
+				facesObject.faceConfidence = std::stof(allImagesNodeFacesFacesItem["FaceConfidence"].asString());
+			if(!allImagesNodeFacesFacesItem["Emotion"].isNull())
+				facesObject.emotion = allImagesNodeFacesFacesItem["Emotion"].asString();
+			if(!allImagesNodeFacesFacesItem["FaceId"].isNull())
+				facesObject.faceId = allImagesNodeFacesFacesItem["FaceId"].asString();
+			if(!allImagesNodeFacesFacesItem["EmotionConfidence"].isNull())
+				facesObject.emotionConfidence = std::stof(allImagesNodeFacesFacesItem["EmotionConfidence"].asString());
+			if(!allImagesNodeFacesFacesItem["GroupId"].isNull())
+				facesObject.groupId = allImagesNodeFacesFacesItem["GroupId"].asString();
+			if(!allImagesNodeFacesFacesItem["FaceQuality"].isNull())
+				facesObject.faceQuality = std::stof(allImagesNodeFacesFacesItem["FaceQuality"].asString());
 			auto emotionDetailsNode = value["EmotionDetails"];
 			if(!emotionDetailsNode["SAD"].isNull())
 				facesObject.emotionDetails.sAD = std::stof(emotionDetailsNode["SAD"].asString());
@@ -179,28 +179,28 @@ void ListImagesResult::parse(const std::string &payload)
 				facesObject.faceAttributes.headPose.yaw = std::stof(headPoseNode["Yaw"].asString());
 			imagesObject.faces.push_back(facesObject);
 		}
-		auto allTags = value["Tags"]["TagsItem"];
-		for (auto value : allTags)
+		auto allTagsNode = allImagesNode["Tags"]["TagsItem"];
+		for (auto allImagesNodeTagsTagsItem : allTagsNode)
 		{
 			ImagesItem::TagsItem tagsObject;
-			if(!value["TagConfidence"].isNull())
-				tagsObject.tagConfidence = std::stof(value["TagConfidence"].asString());
-			if(!value["TagLevel"].isNull())
-				tagsObject.tagLevel = std::stoi(value["TagLevel"].asString());
-			if(!value["TagName"].isNull())
-				tagsObject.tagName = value["TagName"].asString();
-			if(!value["ParentTagName"].isNull())
-				tagsObject.parentTagName = value["ParentTagName"].asString();
+			if(!allImagesNodeTagsTagsItem["TagConfidence"].isNull())
+				tagsObject.tagConfidence = std::stof(allImagesNodeTagsTagsItem["TagConfidence"].asString());
+			if(!allImagesNodeTagsTagsItem["TagLevel"].isNull())
+				tagsObject.tagLevel = std::stoi(allImagesNodeTagsTagsItem["TagLevel"].asString());
+			if(!allImagesNodeTagsTagsItem["TagName"].isNull())
+				tagsObject.tagName = allImagesNodeTagsTagsItem["TagName"].asString();
+			if(!allImagesNodeTagsTagsItem["ParentTagName"].isNull())
+				tagsObject.parentTagName = allImagesNodeTagsTagsItem["ParentTagName"].asString();
 			imagesObject.tags.push_back(tagsObject);
 		}
-		auto allOCR = value["OCR"]["OCRItem"];
-		for (auto value : allOCR)
+		auto allOCRNode = allImagesNode["OCR"]["OCRItem"];
+		for (auto allImagesNodeOCROCRItem : allOCRNode)
 		{
 			ImagesItem::OCRItem oCRObject;
-			if(!value["OCRContents"].isNull())
-				oCRObject.oCRContents = value["OCRContents"].asString();
-			if(!value["OCRConfidence"].isNull())
-				oCRObject.oCRConfidence = std::stof(value["OCRConfidence"].asString());
+			if(!allImagesNodeOCROCRItem["OCRContents"].isNull())
+				oCRObject.oCRContents = allImagesNodeOCROCRItem["OCRContents"].asString();
+			if(!allImagesNodeOCROCRItem["OCRConfidence"].isNull())
+				oCRObject.oCRConfidence = std::stof(allImagesNodeOCROCRItem["OCRConfidence"].asString());
 			auto oCRBoundaryNode = value["OCRBoundary"];
 			if(!oCRBoundaryNode["Left"].isNull())
 				oCRObject.oCRBoundary.left = std::stoi(oCRBoundaryNode["Left"].asString());
@@ -212,18 +212,18 @@ void ListImagesResult::parse(const std::string &payload)
 				oCRObject.oCRBoundary.height = std::stoi(oCRBoundaryNode["Height"].asString());
 			imagesObject.oCR.push_back(oCRObject);
 		}
-		auto allCelebrity = value["Celebrity"]["CelebrityItem"];
-		for (auto value : allCelebrity)
+		auto allCelebrityNode = allImagesNode["Celebrity"]["CelebrityItem"];
+		for (auto allImagesNodeCelebrityCelebrityItem : allCelebrityNode)
 		{
 			ImagesItem::CelebrityItem celebrityObject;
-			if(!value["CelebrityName"].isNull())
-				celebrityObject.celebrityName = value["CelebrityName"].asString();
-			if(!value["CelebrityGender"].isNull())
-				celebrityObject.celebrityGender = value["CelebrityGender"].asString();
-			if(!value["CelebrityConfidence"].isNull())
-				celebrityObject.celebrityConfidence = std::stof(value["CelebrityConfidence"].asString());
-			if(!value["CelebrityLibraryName"].isNull())
-				celebrityObject.celebrityLibraryName = value["CelebrityLibraryName"].asString();
+			if(!allImagesNodeCelebrityCelebrityItem["CelebrityName"].isNull())
+				celebrityObject.celebrityName = allImagesNodeCelebrityCelebrityItem["CelebrityName"].asString();
+			if(!allImagesNodeCelebrityCelebrityItem["CelebrityGender"].isNull())
+				celebrityObject.celebrityGender = allImagesNodeCelebrityCelebrityItem["CelebrityGender"].asString();
+			if(!allImagesNodeCelebrityCelebrityItem["CelebrityConfidence"].isNull())
+				celebrityObject.celebrityConfidence = std::stof(allImagesNodeCelebrityCelebrityItem["CelebrityConfidence"].asString());
+			if(!allImagesNodeCelebrityCelebrityItem["CelebrityLibraryName"].isNull())
+				celebrityObject.celebrityLibraryName = allImagesNodeCelebrityCelebrityItem["CelebrityLibraryName"].asString();
 			auto celebrityBoundaryNode = value["CelebrityBoundary"];
 			if(!celebrityBoundaryNode["Left"].isNull())
 				celebrityObject.celebrityBoundary.left = std::stoi(celebrityBoundaryNode["Left"].asString());

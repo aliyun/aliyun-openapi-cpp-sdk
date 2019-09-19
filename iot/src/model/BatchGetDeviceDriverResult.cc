@@ -39,14 +39,14 @@ void BatchGetDeviceDriverResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDeviceDriverList = value["DeviceDriverList"]["DeviceDriver"];
-	for (auto value : allDeviceDriverList)
+	auto allDeviceDriverListNode = value["DeviceDriverList"]["DeviceDriver"];
+	for (auto valueDeviceDriverListDeviceDriver : allDeviceDriverListNode)
 	{
 		DeviceDriver deviceDriverListObject;
-		if(!value["DriverId"].isNull())
-			deviceDriverListObject.driverId = value["DriverId"].asString();
-		if(!value["IotId"].isNull())
-			deviceDriverListObject.iotId = value["IotId"].asString();
+		if(!valueDeviceDriverListDeviceDriver["DriverId"].isNull())
+			deviceDriverListObject.driverId = valueDeviceDriverListDeviceDriver["DriverId"].asString();
+		if(!valueDeviceDriverListDeviceDriver["IotId"].isNull())
+			deviceDriverListObject.iotId = valueDeviceDriverListDeviceDriver["IotId"].asString();
 		deviceDriverList_.push_back(deviceDriverListObject);
 	}
 	if(!value["Success"].isNull())

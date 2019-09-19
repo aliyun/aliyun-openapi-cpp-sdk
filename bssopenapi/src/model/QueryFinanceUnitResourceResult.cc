@@ -46,36 +46,36 @@ void QueryFinanceUnitResourceResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
-	auto allResourceInstanceDtoList = value["ResourceInstanceDtoList"]["ResourceInstanceList"];
-	for (auto value : allResourceInstanceDtoList)
+	auto allResourceInstanceDtoListNode = dataNode["ResourceInstanceDtoList"]["ResourceInstanceList"];
+	for (auto dataNodeResourceInstanceDtoListResourceInstanceList : allResourceInstanceDtoListNode)
 	{
 		Data::ResourceInstanceList resourceInstanceListObject;
-		if(!value["ResourceUserId"].isNull())
-			resourceInstanceListObject.resourceUserId = std::stol(value["ResourceUserId"].asString());
-		if(!value["ResourceId"].isNull())
-			resourceInstanceListObject.resourceId = std::stol(value["ResourceId"].asString());
-		if(!value["CommodityCode"].isNull())
-			resourceInstanceListObject.commodityCode = value["CommodityCode"].asString();
-		if(!value["ResourceUserName"].isNull())
-			resourceInstanceListObject.resourceUserName = value["ResourceUserName"].asString();
-		if(!value["CommodityName"].isNull())
-			resourceInstanceListObject.commodityName = value["CommodityName"].asString();
-		if(!value["ResourceGroup"].isNull())
-			resourceInstanceListObject.resourceGroup = value["ResourceGroup"].asString();
-		if(!value["ResourceTag"].isNull())
-			resourceInstanceListObject.resourceTag = value["ResourceTag"].asString();
-		if(!value["ResourceNick"].isNull())
-			resourceInstanceListObject.resourceNick = value["ResourceNick"].asString();
-		if(!value["ResourceType"].isNull())
-			resourceInstanceListObject.resourceType = value["ResourceType"].asString();
-		if(!value["ResourceStatus"].isNull())
-			resourceInstanceListObject.resourceStatus = value["ResourceStatus"].asString();
-		if(!value["RelatedResources"].isNull())
-			resourceInstanceListObject.relatedResources = value["RelatedResources"].asString();
-		if(!value["ApportionCode"].isNull())
-			resourceInstanceListObject.apportionCode = value["ApportionCode"].asString();
-		if(!value["ApportionName"].isNull())
-			resourceInstanceListObject.apportionName = value["ApportionName"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserId"].isNull())
+			resourceInstanceListObject.resourceUserId = std::stol(dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserId"].asString());
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceId"].isNull())
+			resourceInstanceListObject.resourceId = std::stol(dataNodeResourceInstanceDtoListResourceInstanceList["ResourceId"].asString());
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["CommodityCode"].isNull())
+			resourceInstanceListObject.commodityCode = dataNodeResourceInstanceDtoListResourceInstanceList["CommodityCode"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserName"].isNull())
+			resourceInstanceListObject.resourceUserName = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserName"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["CommodityName"].isNull())
+			resourceInstanceListObject.commodityName = dataNodeResourceInstanceDtoListResourceInstanceList["CommodityName"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceGroup"].isNull())
+			resourceInstanceListObject.resourceGroup = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceGroup"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceTag"].isNull())
+			resourceInstanceListObject.resourceTag = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceTag"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceNick"].isNull())
+			resourceInstanceListObject.resourceNick = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceNick"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceType"].isNull())
+			resourceInstanceListObject.resourceType = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceType"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceStatus"].isNull())
+			resourceInstanceListObject.resourceStatus = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceStatus"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["RelatedResources"].isNull())
+			resourceInstanceListObject.relatedResources = dataNodeResourceInstanceDtoListResourceInstanceList["RelatedResources"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ApportionCode"].isNull())
+			resourceInstanceListObject.apportionCode = dataNodeResourceInstanceDtoListResourceInstanceList["ApportionCode"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ApportionName"].isNull())
+			resourceInstanceListObject.apportionName = dataNodeResourceInstanceDtoListResourceInstanceList["ApportionName"].asString();
 		data_.resourceInstanceDtoList.push_back(resourceInstanceListObject);
 	}
 	auto financeUnitNode = dataNode["FinanceUnit"];

@@ -39,22 +39,22 @@ void DescribeRouteServicesInCenResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRouteServiceEntries = value["RouteServiceEntries"]["RouteServiceEntry"];
-	for (auto value : allRouteServiceEntries)
+	auto allRouteServiceEntriesNode = value["RouteServiceEntries"]["RouteServiceEntry"];
+	for (auto valueRouteServiceEntriesRouteServiceEntry : allRouteServiceEntriesNode)
 	{
 		RouteServiceEntry routeServiceEntriesObject;
-		if(!value["CenId"].isNull())
-			routeServiceEntriesObject.cenId = value["CenId"].asString();
-		if(!value["Host"].isNull())
-			routeServiceEntriesObject.host = value["Host"].asString();
-		if(!value["HostRegionId"].isNull())
-			routeServiceEntriesObject.hostRegionId = value["HostRegionId"].asString();
-		if(!value["AccessRegionId"].isNull())
-			routeServiceEntriesObject.accessRegionId = value["AccessRegionId"].asString();
-		if(!value["UpdateInterval"].isNull())
-			routeServiceEntriesObject.updateInterval = value["UpdateInterval"].asString();
-		if(!value["Status"].isNull())
-			routeServiceEntriesObject.status = value["Status"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["CenId"].isNull())
+			routeServiceEntriesObject.cenId = valueRouteServiceEntriesRouteServiceEntry["CenId"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["Host"].isNull())
+			routeServiceEntriesObject.host = valueRouteServiceEntriesRouteServiceEntry["Host"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["HostRegionId"].isNull())
+			routeServiceEntriesObject.hostRegionId = valueRouteServiceEntriesRouteServiceEntry["HostRegionId"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["AccessRegionId"].isNull())
+			routeServiceEntriesObject.accessRegionId = valueRouteServiceEntriesRouteServiceEntry["AccessRegionId"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["UpdateInterval"].isNull())
+			routeServiceEntriesObject.updateInterval = valueRouteServiceEntriesRouteServiceEntry["UpdateInterval"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["Status"].isNull())
+			routeServiceEntriesObject.status = valueRouteServiceEntriesRouteServiceEntry["Status"].asString();
 		auto allCidrs = value["Cidrs"]["Cidr"];
 		for (auto value : allCidrs)
 			routeServiceEntriesObject.cidrs.push_back(value.asString());

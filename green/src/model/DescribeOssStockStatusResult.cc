@@ -39,14 +39,14 @@ void DescribeOssStockStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBucketList = value["BucketList"]["bucket"];
-	for (auto value : allBucketList)
+	auto allBucketListNode = value["BucketList"]["bucket"];
+	for (auto valueBucketListbucket : allBucketListNode)
 	{
 		Bucket bucketListObject;
-		if(!value["Selected"].isNull())
-			bucketListObject.selected = value["Selected"].asString() == "true";
-		if(!value["Bucket"].isNull())
-			bucketListObject.bucket = value["Bucket"].asString();
+		if(!valueBucketListbucket["Selected"].isNull())
+			bucketListObject.selected = valueBucketListbucket["Selected"].asString() == "true";
+		if(!valueBucketListbucket["Bucket"].isNull())
+			bucketListObject.bucket = valueBucketListbucket["Bucket"].asString();
 		auto allPrefixes = value["Prefixes"]["prefixe"];
 		for (auto value : allPrefixes)
 			bucketListObject.prefixes.push_back(value.asString());

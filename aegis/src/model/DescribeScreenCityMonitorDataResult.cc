@@ -39,16 +39,16 @@ void DescribeScreenCityMonitorDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMonitorData = value["MonitorData"]["MonitorDataItem"];
-	for (auto value : allMonitorData)
+	auto allMonitorDataNode = value["MonitorData"]["MonitorDataItem"];
+	for (auto valueMonitorDataMonitorDataItem : allMonitorDataNode)
 	{
 		MonitorDataItem monitorDataObject;
-		if(!value["City"].isNull())
-			monitorDataObject.city = value["City"].asString();
-		if(!value["Availability"].isNull())
-			monitorDataObject.availability = value["Availability"].asString();
-		if(!value["ReturnTime"].isNull())
-			monitorDataObject.returnTime = value["ReturnTime"].asString();
+		if(!valueMonitorDataMonitorDataItem["City"].isNull())
+			monitorDataObject.city = valueMonitorDataMonitorDataItem["City"].asString();
+		if(!valueMonitorDataMonitorDataItem["Availability"].isNull())
+			monitorDataObject.availability = valueMonitorDataMonitorDataItem["Availability"].asString();
+		if(!valueMonitorDataMonitorDataItem["ReturnTime"].isNull())
+			monitorDataObject.returnTime = valueMonitorDataMonitorDataItem["ReturnTime"].asString();
 		monitorData_.push_back(monitorDataObject);
 	}
 	if(!value["Success"].isNull())

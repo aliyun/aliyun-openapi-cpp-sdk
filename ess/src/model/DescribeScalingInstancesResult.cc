@@ -39,32 +39,32 @@ void DescribeScalingInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allScalingInstances = value["ScalingInstances"]["ScalingInstance"];
-	for (auto value : allScalingInstances)
+	auto allScalingInstancesNode = value["ScalingInstances"]["ScalingInstance"];
+	for (auto valueScalingInstancesScalingInstance : allScalingInstancesNode)
 	{
 		ScalingInstance scalingInstancesObject;
-		if(!value["InstanceId"].isNull())
-			scalingInstancesObject.instanceId = value["InstanceId"].asString();
-		if(!value["ScalingConfigurationId"].isNull())
-			scalingInstancesObject.scalingConfigurationId = value["ScalingConfigurationId"].asString();
-		if(!value["ScalingGroupId"].isNull())
-			scalingInstancesObject.scalingGroupId = value["ScalingGroupId"].asString();
-		if(!value["HealthStatus"].isNull())
-			scalingInstancesObject.healthStatus = value["HealthStatus"].asString();
-		if(!value["LoadBalancerWeight"].isNull())
-			scalingInstancesObject.loadBalancerWeight = std::stoi(value["LoadBalancerWeight"].asString());
-		if(!value["LifecycleState"].isNull())
-			scalingInstancesObject.lifecycleState = value["LifecycleState"].asString();
-		if(!value["CreationTime"].isNull())
-			scalingInstancesObject.creationTime = value["CreationTime"].asString();
-		if(!value["CreationType"].isNull())
-			scalingInstancesObject.creationType = value["CreationType"].asString();
-		if(!value["LaunchTemplateId"].isNull())
-			scalingInstancesObject.launchTemplateId = value["LaunchTemplateId"].asString();
-		if(!value["LaunchTemplateVersion"].isNull())
-			scalingInstancesObject.launchTemplateVersion = value["LaunchTemplateVersion"].asString();
-		if(!value["WarmupState"].isNull())
-			scalingInstancesObject.warmupState = value["WarmupState"].asString();
+		if(!valueScalingInstancesScalingInstance["InstanceId"].isNull())
+			scalingInstancesObject.instanceId = valueScalingInstancesScalingInstance["InstanceId"].asString();
+		if(!valueScalingInstancesScalingInstance["ScalingConfigurationId"].isNull())
+			scalingInstancesObject.scalingConfigurationId = valueScalingInstancesScalingInstance["ScalingConfigurationId"].asString();
+		if(!valueScalingInstancesScalingInstance["ScalingGroupId"].isNull())
+			scalingInstancesObject.scalingGroupId = valueScalingInstancesScalingInstance["ScalingGroupId"].asString();
+		if(!valueScalingInstancesScalingInstance["HealthStatus"].isNull())
+			scalingInstancesObject.healthStatus = valueScalingInstancesScalingInstance["HealthStatus"].asString();
+		if(!valueScalingInstancesScalingInstance["LoadBalancerWeight"].isNull())
+			scalingInstancesObject.loadBalancerWeight = std::stoi(valueScalingInstancesScalingInstance["LoadBalancerWeight"].asString());
+		if(!valueScalingInstancesScalingInstance["LifecycleState"].isNull())
+			scalingInstancesObject.lifecycleState = valueScalingInstancesScalingInstance["LifecycleState"].asString();
+		if(!valueScalingInstancesScalingInstance["CreationTime"].isNull())
+			scalingInstancesObject.creationTime = valueScalingInstancesScalingInstance["CreationTime"].asString();
+		if(!valueScalingInstancesScalingInstance["CreationType"].isNull())
+			scalingInstancesObject.creationType = valueScalingInstancesScalingInstance["CreationType"].asString();
+		if(!valueScalingInstancesScalingInstance["LaunchTemplateId"].isNull())
+			scalingInstancesObject.launchTemplateId = valueScalingInstancesScalingInstance["LaunchTemplateId"].asString();
+		if(!valueScalingInstancesScalingInstance["LaunchTemplateVersion"].isNull())
+			scalingInstancesObject.launchTemplateVersion = valueScalingInstancesScalingInstance["LaunchTemplateVersion"].asString();
+		if(!valueScalingInstancesScalingInstance["WarmupState"].isNull())
+			scalingInstancesObject.warmupState = valueScalingInstancesScalingInstance["WarmupState"].asString();
 		scalingInstances_.push_back(scalingInstancesObject);
 	}
 	if(!value["TotalCount"].isNull())

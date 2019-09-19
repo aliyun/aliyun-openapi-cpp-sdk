@@ -66,20 +66,20 @@ void QueryInstanceInfoByConnResult::parse(const std::string &payload)
 		data_.specTypeName = dataNode["SpecTypeName"].asString();
 	if(!dataNode["VpcCloudInstanceId"].isNull())
 		data_.vpcCloudInstanceId = dataNode["VpcCloudInstanceId"].asString();
-	auto allVips = value["Vips"]["Vip"];
-	for (auto value : allVips)
+	auto allVipsNode = dataNode["Vips"]["Vip"];
+	for (auto dataNodeVipsVip : allVipsNode)
 	{
 		Data::Vip vipObject;
-		if(!value["IP"].isNull())
-			vipObject.iP = value["IP"].asString();
-		if(!value["Port"].isNull())
-			vipObject.port = value["Port"].asString();
-		if(!value["Type"].isNull())
-			vipObject.type = value["Type"].asString();
-		if(!value["VpcId"].isNull())
-			vipObject.vpcId = value["VpcId"].asString();
-		if(!value["VswitchId"].isNull())
-			vipObject.vswitchId = value["VswitchId"].asString();
+		if(!dataNodeVipsVip["IP"].isNull())
+			vipObject.iP = dataNodeVipsVip["IP"].asString();
+		if(!dataNodeVipsVip["Port"].isNull())
+			vipObject.port = dataNodeVipsVip["Port"].asString();
+		if(!dataNodeVipsVip["Type"].isNull())
+			vipObject.type = dataNodeVipsVip["Type"].asString();
+		if(!dataNodeVipsVip["VpcId"].isNull())
+			vipObject.vpcId = dataNodeVipsVip["VpcId"].asString();
+		if(!dataNodeVipsVip["VswitchId"].isNull())
+			vipObject.vswitchId = dataNodeVipsVip["VswitchId"].asString();
 		data_.vips.push_back(vipObject);
 	}
 	if(!value["Success"].isNull())

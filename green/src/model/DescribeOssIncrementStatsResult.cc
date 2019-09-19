@@ -39,24 +39,24 @@ void DescribeOssIncrementStatsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStatList = value["StatList"]["Stat"];
-	for (auto value : allStatList)
+	auto allStatListNode = value["StatList"]["Stat"];
+	for (auto valueStatListStat : allStatListNode)
 	{
 		Stat statListObject;
-		if(!value["ResourceType"].isNull())
-			statListObject.resourceType = value["ResourceType"].asString();
-		if(!value["Scene"].isNull())
-			statListObject.scene = value["Scene"].asString();
-		if(!value["Date"].isNull())
-			statListObject.date = value["Date"].asString();
-		if(!value["TotalCount"].isNull())
-			statListObject.totalCount = std::stoi(value["TotalCount"].asString());
-		if(!value["PassCount"].isNull())
-			statListObject.passCount = std::stoi(value["PassCount"].asString());
-		if(!value["ReviewCount"].isNull())
-			statListObject.reviewCount = std::stoi(value["ReviewCount"].asString());
-		if(!value["BlockCount"].isNull())
-			statListObject.blockCount = std::stoi(value["BlockCount"].asString());
+		if(!valueStatListStat["ResourceType"].isNull())
+			statListObject.resourceType = valueStatListStat["ResourceType"].asString();
+		if(!valueStatListStat["Scene"].isNull())
+			statListObject.scene = valueStatListStat["Scene"].asString();
+		if(!valueStatListStat["Date"].isNull())
+			statListObject.date = valueStatListStat["Date"].asString();
+		if(!valueStatListStat["TotalCount"].isNull())
+			statListObject.totalCount = std::stoi(valueStatListStat["TotalCount"].asString());
+		if(!valueStatListStat["PassCount"].isNull())
+			statListObject.passCount = std::stoi(valueStatListStat["PassCount"].asString());
+		if(!valueStatListStat["ReviewCount"].isNull())
+			statListObject.reviewCount = std::stoi(valueStatListStat["ReviewCount"].asString());
+		if(!valueStatListStat["BlockCount"].isNull())
+			statListObject.blockCount = std::stoi(valueStatListStat["BlockCount"].asString());
 		statList_.push_back(statListObject);
 	}
 	if(!value["TotalCount"].isNull())

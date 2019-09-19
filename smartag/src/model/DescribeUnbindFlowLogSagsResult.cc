@@ -39,16 +39,16 @@ void DescribeUnbindFlowLogSagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSags = value["Sags"]["Sag"];
-	for (auto value : allSags)
+	auto allSagsNode = value["Sags"]["Sag"];
+	for (auto valueSagsSag : allSagsNode)
 	{
 		Sag sagsObject;
-		if(!value["SmartAGId"].isNull())
-			sagsObject.smartAGId = value["SmartAGId"].asString();
-		if(!value["Description"].isNull())
-			sagsObject.description = value["Description"].asString();
-		if(!value["Name"].isNull())
-			sagsObject.name = value["Name"].asString();
+		if(!valueSagsSag["SmartAGId"].isNull())
+			sagsObject.smartAGId = valueSagsSag["SmartAGId"].asString();
+		if(!valueSagsSag["Description"].isNull())
+			sagsObject.description = valueSagsSag["Description"].asString();
+		if(!valueSagsSag["Name"].isNull())
+			sagsObject.name = valueSagsSag["Name"].asString();
 		sags_.push_back(sagsObject);
 	}
 	if(!value["Count"].isNull())

@@ -39,94 +39,94 @@ void PutEventTargetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allContactParameters = value["ContactParameters"]["ContactParameter"];
-	for (auto value : allContactParameters)
+	auto allContactParametersNode = value["ContactParameters"]["ContactParameter"];
+	for (auto valueContactParametersContactParameter : allContactParametersNode)
 	{
 		ContactParameter contactParametersObject;
-		if(!value["Id"].isNull())
-			contactParametersObject.id = std::stoi(value["Id"].asString());
-		if(!value["ContactGroupName"].isNull())
-			contactParametersObject.contactGroupName = value["ContactGroupName"].asString();
-		if(!value["Level"].isNull())
-			contactParametersObject.level = value["Level"].asString();
+		if(!valueContactParametersContactParameter["Id"].isNull())
+			contactParametersObject.id = std::stoi(valueContactParametersContactParameter["Id"].asString());
+		if(!valueContactParametersContactParameter["ContactGroupName"].isNull())
+			contactParametersObject.contactGroupName = valueContactParametersContactParameter["ContactGroupName"].asString();
+		if(!valueContactParametersContactParameter["Level"].isNull())
+			contactParametersObject.level = valueContactParametersContactParameter["Level"].asString();
 		contactParameters_.push_back(contactParametersObject);
 	}
-	auto allMnsParameters = value["MnsParameters"]["MnsParameter"];
-	for (auto value : allMnsParameters)
+	auto allMnsParametersNode = value["MnsParameters"]["MnsParameter"];
+	for (auto valueMnsParametersMnsParameter : allMnsParametersNode)
 	{
 		MnsParameter mnsParametersObject;
-		if(!value["Id"].isNull())
-			mnsParametersObject.id = std::stoi(value["Id"].asString());
-		if(!value["Region"].isNull())
-			mnsParametersObject.region = value["Region"].asString();
-		if(!value["Queue"].isNull())
-			mnsParametersObject.queue = value["Queue"].asString();
+		if(!valueMnsParametersMnsParameter["Id"].isNull())
+			mnsParametersObject.id = std::stoi(valueMnsParametersMnsParameter["Id"].asString());
+		if(!valueMnsParametersMnsParameter["Region"].isNull())
+			mnsParametersObject.region = valueMnsParametersMnsParameter["Region"].asString();
+		if(!valueMnsParametersMnsParameter["Queue"].isNull())
+			mnsParametersObject.queue = valueMnsParametersMnsParameter["Queue"].asString();
 		mnsParameters_.push_back(mnsParametersObject);
 	}
-	auto allFcParameters = value["FcParameters"]["FcParameter"];
-	for (auto value : allFcParameters)
+	auto allFcParametersNode = value["FcParameters"]["FcParameter"];
+	for (auto valueFcParametersFcParameter : allFcParametersNode)
 	{
 		FcParameter fcParametersObject;
-		if(!value["Id"].isNull())
-			fcParametersObject.id = std::stoi(value["Id"].asString());
-		if(!value["Region"].isNull())
-			fcParametersObject.region = value["Region"].asString();
-		if(!value["ServiceName"].isNull())
-			fcParametersObject.serviceName = value["ServiceName"].asString();
-		if(!value["FunctionName"].isNull())
-			fcParametersObject.functionName = value["FunctionName"].asString();
+		if(!valueFcParametersFcParameter["Id"].isNull())
+			fcParametersObject.id = std::stoi(valueFcParametersFcParameter["Id"].asString());
+		if(!valueFcParametersFcParameter["Region"].isNull())
+			fcParametersObject.region = valueFcParametersFcParameter["Region"].asString();
+		if(!valueFcParametersFcParameter["ServiceName"].isNull())
+			fcParametersObject.serviceName = valueFcParametersFcParameter["ServiceName"].asString();
+		if(!valueFcParametersFcParameter["FunctionName"].isNull())
+			fcParametersObject.functionName = valueFcParametersFcParameter["FunctionName"].asString();
 		fcParameters_.push_back(fcParametersObject);
 	}
-	auto allFailedContactParameters = value["FailedContactParameters"]["ContactParameter"];
-	for (auto value : allFailedContactParameters)
+	auto allFailedContactParametersNode = value["FailedContactParameters"]["ContactParameter"];
+	for (auto valueFailedContactParametersContactParameter : allFailedContactParametersNode)
 	{
 		ContactParameter failedContactParametersObject;
-		if(!value["Id"].isNull())
-			failedContactParametersObject.id = std::stoi(value["Id"].asString());
-		if(!value["ContactGroupName"].isNull())
-			failedContactParametersObject.contactGroupName = value["ContactGroupName"].asString();
-		if(!value["Level"].isNull())
-			failedContactParametersObject.level = value["Level"].asString();
+		if(!valueFailedContactParametersContactParameter["Id"].isNull())
+			failedContactParametersObject.id = std::stoi(valueFailedContactParametersContactParameter["Id"].asString());
+		if(!valueFailedContactParametersContactParameter["ContactGroupName"].isNull())
+			failedContactParametersObject.contactGroupName = valueFailedContactParametersContactParameter["ContactGroupName"].asString();
+		if(!valueFailedContactParametersContactParameter["Level"].isNull())
+			failedContactParametersObject.level = valueFailedContactParametersContactParameter["Level"].asString();
 		failedContactParameters_.push_back(failedContactParametersObject);
 	}
-	auto allFailedMnsParameters = value["FailedMnsParameters"]["MnsParameter"];
-	for (auto value : allFailedMnsParameters)
+	auto allFailedMnsParametersNode = value["FailedMnsParameters"]["MnsParameter"];
+	for (auto valueFailedMnsParametersMnsParameter : allFailedMnsParametersNode)
 	{
 		MnsParameter failedMnsParametersObject;
-		if(!value["Id"].isNull())
-			failedMnsParametersObject.id = std::stoi(value["Id"].asString());
-		if(!value["Region"].isNull())
-			failedMnsParametersObject.region = value["Region"].asString();
-		if(!value["Queue"].isNull())
-			failedMnsParametersObject.queue = value["Queue"].asString();
+		if(!valueFailedMnsParametersMnsParameter["Id"].isNull())
+			failedMnsParametersObject.id = std::stoi(valueFailedMnsParametersMnsParameter["Id"].asString());
+		if(!valueFailedMnsParametersMnsParameter["Region"].isNull())
+			failedMnsParametersObject.region = valueFailedMnsParametersMnsParameter["Region"].asString();
+		if(!valueFailedMnsParametersMnsParameter["Queue"].isNull())
+			failedMnsParametersObject.queue = valueFailedMnsParametersMnsParameter["Queue"].asString();
 		failedMnsParameters_.push_back(failedMnsParametersObject);
 	}
-	auto allFailedFcParameters = value["FailedFcParameters"]["FcParameter"];
-	for (auto value : allFailedFcParameters)
+	auto allFailedFcParametersNode = value["FailedFcParameters"]["FcParameter"];
+	for (auto valueFailedFcParametersFcParameter : allFailedFcParametersNode)
 	{
 		FcParameter failedFcParametersObject;
-		if(!value["Id"].isNull())
-			failedFcParametersObject.id = std::stoi(value["Id"].asString());
-		if(!value["Region"].isNull())
-			failedFcParametersObject.region = value["Region"].asString();
-		if(!value["ServiceName"].isNull())
-			failedFcParametersObject.serviceName = value["ServiceName"].asString();
-		if(!value["FunctionName"].isNull())
-			failedFcParametersObject.functionName = value["FunctionName"].asString();
+		if(!valueFailedFcParametersFcParameter["Id"].isNull())
+			failedFcParametersObject.id = std::stoi(valueFailedFcParametersFcParameter["Id"].asString());
+		if(!valueFailedFcParametersFcParameter["Region"].isNull())
+			failedFcParametersObject.region = valueFailedFcParametersFcParameter["Region"].asString();
+		if(!valueFailedFcParametersFcParameter["ServiceName"].isNull())
+			failedFcParametersObject.serviceName = valueFailedFcParametersFcParameter["ServiceName"].asString();
+		if(!valueFailedFcParametersFcParameter["FunctionName"].isNull())
+			failedFcParametersObject.functionName = valueFailedFcParametersFcParameter["FunctionName"].asString();
 		failedFcParameters_.push_back(failedFcParametersObject);
 	}
-	auto allFailedSlsParameters = value["FailedSlsParameters"]["FailedSlsParameter"];
-	for (auto value : allFailedSlsParameters)
+	auto allFailedSlsParametersNode = value["FailedSlsParameters"]["FailedSlsParameter"];
+	for (auto valueFailedSlsParametersFailedSlsParameter : allFailedSlsParametersNode)
 	{
 		FailedSlsParameter failedSlsParametersObject;
-		if(!value["Id"].isNull())
-			failedSlsParametersObject.id = value["Id"].asString();
-		if(!value["Region"].isNull())
-			failedSlsParametersObject.region = value["Region"].asString();
-		if(!value["Project"].isNull())
-			failedSlsParametersObject.project = value["Project"].asString();
-		if(!value["LogStore"].isNull())
-			failedSlsParametersObject.logStore = value["LogStore"].asString();
+		if(!valueFailedSlsParametersFailedSlsParameter["Id"].isNull())
+			failedSlsParametersObject.id = valueFailedSlsParametersFailedSlsParameter["Id"].asString();
+		if(!valueFailedSlsParametersFailedSlsParameter["Region"].isNull())
+			failedSlsParametersObject.region = valueFailedSlsParametersFailedSlsParameter["Region"].asString();
+		if(!valueFailedSlsParametersFailedSlsParameter["Project"].isNull())
+			failedSlsParametersObject.project = valueFailedSlsParametersFailedSlsParameter["Project"].asString();
+		if(!valueFailedSlsParametersFailedSlsParameter["LogStore"].isNull())
+			failedSlsParametersObject.logStore = valueFailedSlsParametersFailedSlsParameter["LogStore"].asString();
 		failedSlsParameters_.push_back(failedSlsParametersObject);
 	}
 	if(!value["Success"].isNull())

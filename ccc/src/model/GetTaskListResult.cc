@@ -39,54 +39,54 @@ void GetTaskListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTasks = value["Tasks"]["Task"];
-	for (auto value : allTasks)
+	auto allTasksNode = value["Tasks"]["Task"];
+	for (auto valueTasksTask : allTasksNode)
 	{
 		Task tasksObject;
-		if(!value["TaskId"].isNull())
-			tasksObject.taskId = value["TaskId"].asString();
-		if(!value["JobId"].isNull())
-			tasksObject.jobId = value["JobId"].asString();
-		if(!value["ScenarioId"].isNull())
-			tasksObject.scenarioId = value["ScenarioId"].asString();
-		if(!value["ChatbotId"].isNull())
-			tasksObject.chatbotId = value["ChatbotId"].asString();
-		if(!value["PlanedTime"].isNull())
-			tasksObject.planedTime = std::stol(value["PlanedTime"].asString());
-		if(!value["ActualTime"].isNull())
-			tasksObject.actualTime = std::stol(value["ActualTime"].asString());
-		if(!value["CallingNumber"].isNull())
-			tasksObject.callingNumber = value["CallingNumber"].asString();
-		if(!value["CalledNumber"].isNull())
-			tasksObject.calledNumber = value["CalledNumber"].asString();
-		if(!value["CallId"].isNull())
-			tasksObject.callId = value["CallId"].asString();
-		if(!value["Status"].isNull())
-			tasksObject.status = value["Status"].asString();
-		if(!value["Brief"].isNull())
-			tasksObject.brief = value["Brief"].asString();
-		if(!value["Duration"].isNull())
-			tasksObject.duration = std::stoi(value["Duration"].asString());
-		auto allConversation = value["Conversation"]["ConversationDetail"];
-		for (auto value : allConversation)
+		if(!valueTasksTask["TaskId"].isNull())
+			tasksObject.taskId = valueTasksTask["TaskId"].asString();
+		if(!valueTasksTask["JobId"].isNull())
+			tasksObject.jobId = valueTasksTask["JobId"].asString();
+		if(!valueTasksTask["ScenarioId"].isNull())
+			tasksObject.scenarioId = valueTasksTask["ScenarioId"].asString();
+		if(!valueTasksTask["ChatbotId"].isNull())
+			tasksObject.chatbotId = valueTasksTask["ChatbotId"].asString();
+		if(!valueTasksTask["PlanedTime"].isNull())
+			tasksObject.planedTime = std::stol(valueTasksTask["PlanedTime"].asString());
+		if(!valueTasksTask["ActualTime"].isNull())
+			tasksObject.actualTime = std::stol(valueTasksTask["ActualTime"].asString());
+		if(!valueTasksTask["CallingNumber"].isNull())
+			tasksObject.callingNumber = valueTasksTask["CallingNumber"].asString();
+		if(!valueTasksTask["CalledNumber"].isNull())
+			tasksObject.calledNumber = valueTasksTask["CalledNumber"].asString();
+		if(!valueTasksTask["CallId"].isNull())
+			tasksObject.callId = valueTasksTask["CallId"].asString();
+		if(!valueTasksTask["Status"].isNull())
+			tasksObject.status = valueTasksTask["Status"].asString();
+		if(!valueTasksTask["Brief"].isNull())
+			tasksObject.brief = valueTasksTask["Brief"].asString();
+		if(!valueTasksTask["Duration"].isNull())
+			tasksObject.duration = std::stoi(valueTasksTask["Duration"].asString());
+		auto allConversationNode = allTasksNode["Conversation"]["ConversationDetail"];
+		for (auto allTasksNodeConversationConversationDetail : allConversationNode)
 		{
 			Task::ConversationDetail conversationObject;
-			if(!value["Timestamp"].isNull())
-				conversationObject.timestamp = std::stol(value["Timestamp"].asString());
-			if(!value["Speaker"].isNull())
-				conversationObject.speaker = value["Speaker"].asString();
-			if(!value["Script"].isNull())
-				conversationObject.script = value["Script"].asString();
-			auto allSummary = value["Summary"]["SummaryItem"];
-			for (auto value : allSummary)
+			if(!allTasksNodeConversationConversationDetail["Timestamp"].isNull())
+				conversationObject.timestamp = std::stol(allTasksNodeConversationConversationDetail["Timestamp"].asString());
+			if(!allTasksNodeConversationConversationDetail["Speaker"].isNull())
+				conversationObject.speaker = allTasksNodeConversationConversationDetail["Speaker"].asString();
+			if(!allTasksNodeConversationConversationDetail["Script"].isNull())
+				conversationObject.script = allTasksNodeConversationConversationDetail["Script"].asString();
+			auto allSummaryNode = allConversationNode["Summary"]["SummaryItem"];
+			for (auto allConversationNodeSummarySummaryItem : allSummaryNode)
 			{
 				Task::ConversationDetail::SummaryItem summaryObject;
-				if(!value["Category"].isNull())
-					summaryObject.category = value["Category"].asString();
-				if(!value["SummaryName"].isNull())
-					summaryObject.summaryName = value["SummaryName"].asString();
-				if(!value["Content"].isNull())
-					summaryObject.content = value["Content"].asString();
+				if(!allConversationNodeSummarySummaryItem["Category"].isNull())
+					summaryObject.category = allConversationNodeSummarySummaryItem["Category"].asString();
+				if(!allConversationNodeSummarySummaryItem["SummaryName"].isNull())
+					summaryObject.summaryName = allConversationNodeSummarySummaryItem["SummaryName"].asString();
+				if(!allConversationNodeSummarySummaryItem["Content"].isNull())
+					summaryObject.content = allConversationNodeSummarySummaryItem["Content"].asString();
 				conversationObject.summary.push_back(summaryObject);
 			}
 			tasksObject.conversation.push_back(conversationObject);

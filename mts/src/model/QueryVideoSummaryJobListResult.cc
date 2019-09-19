@@ -39,24 +39,24 @@ void QueryVideoSummaryJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobList = value["JobList"]["Job"];
-	for (auto value : allJobList)
+	auto allJobListNode = value["JobList"]["Job"];
+	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!value["Id"].isNull())
-			jobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			jobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			jobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			jobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			jobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			jobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			jobListObject.creationTime = value["CreationTime"].asString();
+		if(!valueJobListJob["Id"].isNull())
+			jobListObject.id = valueJobListJob["Id"].asString();
+		if(!valueJobListJob["UserData"].isNull())
+			jobListObject.userData = valueJobListJob["UserData"].asString();
+		if(!valueJobListJob["PipelineId"].isNull())
+			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
+		if(!valueJobListJob["State"].isNull())
+			jobListObject.state = valueJobListJob["State"].asString();
+		if(!valueJobListJob["Code"].isNull())
+			jobListObject.code = valueJobListJob["Code"].asString();
+		if(!valueJobListJob["Message"].isNull())
+			jobListObject.message = valueJobListJob["Message"].asString();
+		if(!valueJobListJob["CreationTime"].isNull())
+			jobListObject.creationTime = valueJobListJob["CreationTime"].asString();
 		auto inputNode = value["Input"];
 		if(!inputNode["Bucket"].isNull())
 			jobListObject.input.bucket = inputNode["Bucket"].asString();
@@ -65,14 +65,14 @@ void QueryVideoSummaryJobListResult::parse(const std::string &payload)
 		if(!inputNode["Object"].isNull())
 			jobListObject.input.object = inputNode["Object"].asString();
 		auto videoSummaryResultNode = value["VideoSummaryResult"];
-		auto allVideoSummaryList = value["VideoSummaryList"]["VideoSummary"];
-		for (auto value : allVideoSummaryList)
+		auto allVideoSummaryListNode = videoSummaryResultNode["VideoSummaryList"]["VideoSummary"];
+		for (auto videoSummaryResultNodeVideoSummaryListVideoSummary : allVideoSummaryListNode)
 		{
 			Job::VideoSummaryResult::VideoSummary videoSummaryObject;
-			if(!value["StartTime"].isNull())
-				videoSummaryObject.startTime = value["StartTime"].asString();
-			if(!value["EndTime"].isNull())
-				videoSummaryObject.endTime = value["EndTime"].asString();
+			if(!videoSummaryResultNodeVideoSummaryListVideoSummary["StartTime"].isNull())
+				videoSummaryObject.startTime = videoSummaryResultNodeVideoSummaryListVideoSummary["StartTime"].asString();
+			if(!videoSummaryResultNodeVideoSummaryListVideoSummary["EndTime"].isNull())
+				videoSummaryObject.endTime = videoSummaryResultNodeVideoSummaryListVideoSummary["EndTime"].asString();
 			jobListObject.videoSummaryResult.videoSummaryList.push_back(videoSummaryObject);
 		}
 		auto outputFileNode = videoSummaryResultNode["OutputFile"];

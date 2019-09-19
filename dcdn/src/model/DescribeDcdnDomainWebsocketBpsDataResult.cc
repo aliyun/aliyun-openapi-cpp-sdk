@@ -39,14 +39,14 @@ void DescribeDcdnDomainWebsocketBpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBpsDataPerInterval = value["BpsDataPerInterval"]["DataModule"];
-	for (auto value : allBpsDataPerInterval)
+	auto allBpsDataPerIntervalNode = value["BpsDataPerInterval"]["DataModule"];
+	for (auto valueBpsDataPerIntervalDataModule : allBpsDataPerIntervalNode)
 	{
 		DataModule bpsDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			bpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["WebsocketBps"].isNull())
-			bpsDataPerIntervalObject.websocketBps = std::stof(value["WebsocketBps"].asString());
+		if(!valueBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			bpsDataPerIntervalObject.timeStamp = valueBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueBpsDataPerIntervalDataModule["WebsocketBps"].isNull())
+			bpsDataPerIntervalObject.websocketBps = std::stof(valueBpsDataPerIntervalDataModule["WebsocketBps"].asString());
 		bpsDataPerInterval_.push_back(bpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

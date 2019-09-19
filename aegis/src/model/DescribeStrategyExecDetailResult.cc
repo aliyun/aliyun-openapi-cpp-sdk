@@ -39,20 +39,20 @@ void DescribeStrategyExecDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFailedEcsList = value["FailedEcsList"]["FailedEcs"];
-	for (auto value : allFailedEcsList)
+	auto allFailedEcsListNode = value["FailedEcsList"]["FailedEcs"];
+	for (auto valueFailedEcsListFailedEcs : allFailedEcsListNode)
 	{
 		FailedEcs failedEcsListObject;
-		if(!value["Reason"].isNull())
-			failedEcsListObject.reason = value["Reason"].asString();
-		if(!value["InstanceName"].isNull())
-			failedEcsListObject.instanceName = value["InstanceName"].asString();
-		if(!value["IP"].isNull())
-			failedEcsListObject.iP = value["IP"].asString();
-		if(!value["InternetIp"].isNull())
-			failedEcsListObject.internetIp = value["InternetIp"].asString();
-		if(!value["IntranetIp"].isNull())
-			failedEcsListObject.intranetIp = value["IntranetIp"].asString();
+		if(!valueFailedEcsListFailedEcs["Reason"].isNull())
+			failedEcsListObject.reason = valueFailedEcsListFailedEcs["Reason"].asString();
+		if(!valueFailedEcsListFailedEcs["InstanceName"].isNull())
+			failedEcsListObject.instanceName = valueFailedEcsListFailedEcs["InstanceName"].asString();
+		if(!valueFailedEcsListFailedEcs["IP"].isNull())
+			failedEcsListObject.iP = valueFailedEcsListFailedEcs["IP"].asString();
+		if(!valueFailedEcsListFailedEcs["InternetIp"].isNull())
+			failedEcsListObject.internetIp = valueFailedEcsListFailedEcs["InternetIp"].asString();
+		if(!valueFailedEcsListFailedEcs["IntranetIp"].isNull())
+			failedEcsListObject.intranetIp = valueFailedEcsListFailedEcs["IntranetIp"].asString();
 		failedEcsList_.push_back(failedEcsListObject);
 	}
 	if(!value["StartTime"].isNull())

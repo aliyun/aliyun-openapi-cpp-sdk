@@ -52,48 +52,48 @@ void DescribeClusterServiceConfigForAdminResult::parse(const std::string &payloa
 		config_.author = configNode["Author"].asString();
 	if(!configNode["Comment"].isNull())
 		config_.comment = configNode["Comment"].asString();
-	auto allConfigValueList = value["ConfigValueList"]["ConfigValue"];
-	for (auto value : allConfigValueList)
+	auto allConfigValueListNode = configNode["ConfigValueList"]["ConfigValue"];
+	for (auto configNodeConfigValueListConfigValue : allConfigValueListNode)
 	{
 		Config::ConfigValue configValueObject;
-		if(!value["ConfigName"].isNull())
-			configValueObject.configName = value["ConfigName"].asString();
-		if(!value["AllowCustom"].isNull())
-			configValueObject.allowCustom = value["AllowCustom"].asString() == "true";
-		auto allConfigItemValueList = value["ConfigItemValueList"]["ConfigItemValue"];
-		for (auto value : allConfigItemValueList)
+		if(!configNodeConfigValueListConfigValue["ConfigName"].isNull())
+			configValueObject.configName = configNodeConfigValueListConfigValue["ConfigName"].asString();
+		if(!configNodeConfigValueListConfigValue["AllowCustom"].isNull())
+			configValueObject.allowCustom = configNodeConfigValueListConfigValue["AllowCustom"].asString() == "true";
+		auto allConfigItemValueListNode = allConfigValueListNode["ConfigItemValueList"]["ConfigItemValue"];
+		for (auto allConfigValueListNodeConfigItemValueListConfigItemValue : allConfigItemValueListNode)
 		{
 			Config::ConfigValue::ConfigItemValue configItemValueListObject;
-			if(!value["ItemName"].isNull())
-				configItemValueListObject.itemName = value["ItemName"].asString();
-			if(!value["Value"].isNull())
-				configItemValueListObject.value = value["Value"].asString();
-			if(!value["IsCustom"].isNull())
-				configItemValueListObject.isCustom = value["IsCustom"].asString() == "true";
-			if(!value["Description"].isNull())
-				configItemValueListObject.description = value["Description"].asString();
+			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["ItemName"].isNull())
+				configItemValueListObject.itemName = allConfigValueListNodeConfigItemValueListConfigItemValue["ItemName"].asString();
+			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["Value"].isNull())
+				configItemValueListObject.value = allConfigValueListNodeConfigItemValueListConfigItemValue["Value"].asString();
+			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["IsCustom"].isNull())
+				configItemValueListObject.isCustom = allConfigValueListNodeConfigItemValueListConfigItemValue["IsCustom"].asString() == "true";
+			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["Description"].isNull())
+				configItemValueListObject.description = allConfigValueListNodeConfigItemValueListConfigItemValue["Description"].asString();
 			configValueObject.configItemValueList.push_back(configItemValueListObject);
 		}
 		config_.configValueList.push_back(configValueObject);
 	}
-	auto allPropertyInfoList = value["PropertyInfoList"]["PropertyInfo"];
-	for (auto value : allPropertyInfoList)
+	auto allPropertyInfoListNode = configNode["PropertyInfoList"]["PropertyInfo"];
+	for (auto configNodePropertyInfoListPropertyInfo : allPropertyInfoListNode)
 	{
 		Config::PropertyInfo propertyInfoObject;
-		if(!value["Name"].isNull())
-			propertyInfoObject.name = value["Name"].asString();
-		if(!value["Value"].isNull())
-			propertyInfoObject.value = value["Value"].asString();
-		if(!value["Description"].isNull())
-			propertyInfoObject.description = value["Description"].asString();
-		if(!value["FileName"].isNull())
-			propertyInfoObject.fileName = value["FileName"].asString();
-		if(!value["DisplayName"].isNull())
-			propertyInfoObject.displayName = value["DisplayName"].asString();
-		if(!value["ServiceName"].isNull())
-			propertyInfoObject.serviceName = value["ServiceName"].asString();
-		if(!value["Component"].isNull())
-			propertyInfoObject.component = value["Component"].asString();
+		if(!configNodePropertyInfoListPropertyInfo["Name"].isNull())
+			propertyInfoObject.name = configNodePropertyInfoListPropertyInfo["Name"].asString();
+		if(!configNodePropertyInfoListPropertyInfo["Value"].isNull())
+			propertyInfoObject.value = configNodePropertyInfoListPropertyInfo["Value"].asString();
+		if(!configNodePropertyInfoListPropertyInfo["Description"].isNull())
+			propertyInfoObject.description = configNodePropertyInfoListPropertyInfo["Description"].asString();
+		if(!configNodePropertyInfoListPropertyInfo["FileName"].isNull())
+			propertyInfoObject.fileName = configNodePropertyInfoListPropertyInfo["FileName"].asString();
+		if(!configNodePropertyInfoListPropertyInfo["DisplayName"].isNull())
+			propertyInfoObject.displayName = configNodePropertyInfoListPropertyInfo["DisplayName"].asString();
+		if(!configNodePropertyInfoListPropertyInfo["ServiceName"].isNull())
+			propertyInfoObject.serviceName = configNodePropertyInfoListPropertyInfo["ServiceName"].asString();
+		if(!configNodePropertyInfoListPropertyInfo["Component"].isNull())
+			propertyInfoObject.component = configNodePropertyInfoListPropertyInfo["Component"].asString();
 		auto propertyValueAttributesNode = value["PropertyValueAttributes"];
 		if(!propertyValueAttributesNode["Type"].isNull())
 			propertyInfoObject.propertyValueAttributes.type = propertyValueAttributesNode["Type"].asString();
@@ -109,16 +109,16 @@ void DescribeClusterServiceConfigForAdminResult::parse(const std::string &payloa
 			propertyInfoObject.propertyValueAttributes.hidden = propertyValueAttributesNode["Hidden"].asString() == "true";
 		if(!propertyValueAttributesNode["IncrememtStep"].isNull())
 			propertyInfoObject.propertyValueAttributes.incrememtStep = propertyValueAttributesNode["IncrememtStep"].asString();
-		auto allEntries = value["Entries"]["ValueEntryInfo"];
-		for (auto value : allEntries)
+		auto allEntriesNode = propertyValueAttributesNode["Entries"]["ValueEntryInfo"];
+		for (auto propertyValueAttributesNodeEntriesValueEntryInfo : allEntriesNode)
 		{
 			Config::PropertyInfo::PropertyValueAttributes::ValueEntryInfo valueEntryInfoObject;
-			if(!value["Value"].isNull())
-				valueEntryInfoObject.value = value["Value"].asString();
-			if(!value["Label"].isNull())
-				valueEntryInfoObject.label = value["Label"].asString();
-			if(!value["Description"].isNull())
-				valueEntryInfoObject.description = value["Description"].asString();
+			if(!propertyValueAttributesNodeEntriesValueEntryInfo["Value"].isNull())
+				valueEntryInfoObject.value = propertyValueAttributesNodeEntriesValueEntryInfo["Value"].asString();
+			if(!propertyValueAttributesNodeEntriesValueEntryInfo["Label"].isNull())
+				valueEntryInfoObject.label = propertyValueAttributesNodeEntriesValueEntryInfo["Label"].asString();
+			if(!propertyValueAttributesNodeEntriesValueEntryInfo["Description"].isNull())
+				valueEntryInfoObject.description = propertyValueAttributesNodeEntriesValueEntryInfo["Description"].asString();
 			propertyInfoObject.propertyValueAttributes.entries.push_back(valueEntryInfoObject);
 		}
 		auto effectWayNode = value["EffectWay"];

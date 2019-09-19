@@ -39,26 +39,26 @@ void DescribeOssDownloadsForSQLServerResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["OssDownload"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["OssDownload"];
+	for (auto valueItemsOssDownload : allItemsNode)
 	{
 		OssDownload itemsObject;
-		if(!value["FileName"].isNull())
-			itemsObject.fileName = value["FileName"].asString();
-		if(!value["CreateTime"].isNull())
-			itemsObject.createTime = value["CreateTime"].asString();
-		if(!value["CreateTime"].isNull())
-			itemsObject.createTime1 = value["CreateTime"].asString();
-		if(!value["BakType"].isNull())
-			itemsObject.bakType = value["BakType"].asString();
-		if(!value["FileSize"].isNull())
-			itemsObject.fileSize = value["FileSize"].asString();
-		if(!value["Status"].isNull())
-			itemsObject.status = value["Status"].asString();
-		if(!value["IsAvail"].isNull())
-			itemsObject.isAvail = value["IsAvail"].asString();
-		if(!value["Desc"].isNull())
-			itemsObject.desc = value["Desc"].asString();
+		if(!valueItemsOssDownload["FileName"].isNull())
+			itemsObject.fileName = valueItemsOssDownload["FileName"].asString();
+		if(!valueItemsOssDownload["CreateTime"].isNull())
+			itemsObject.createTime = valueItemsOssDownload["CreateTime"].asString();
+		if(!valueItemsOssDownload["CreateTime"].isNull())
+			itemsObject.createTime1 = valueItemsOssDownload["CreateTime"].asString();
+		if(!valueItemsOssDownload["BakType"].isNull())
+			itemsObject.bakType = valueItemsOssDownload["BakType"].asString();
+		if(!valueItemsOssDownload["FileSize"].isNull())
+			itemsObject.fileSize = valueItemsOssDownload["FileSize"].asString();
+		if(!valueItemsOssDownload["Status"].isNull())
+			itemsObject.status = valueItemsOssDownload["Status"].asString();
+		if(!valueItemsOssDownload["IsAvail"].isNull())
+			itemsObject.isAvail = valueItemsOssDownload["IsAvail"].asString();
+		if(!valueItemsOssDownload["Desc"].isNull())
+			itemsObject.desc = valueItemsOssDownload["Desc"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceName"].isNull())

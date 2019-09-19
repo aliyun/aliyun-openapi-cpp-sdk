@@ -39,20 +39,20 @@ void DescribeApiIpControlsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allApiIpControls = value["ApiIpControls"]["ApiIpControlItem"];
-	for (auto value : allApiIpControls)
+	auto allApiIpControlsNode = value["ApiIpControls"]["ApiIpControlItem"];
+	for (auto valueApiIpControlsApiIpControlItem : allApiIpControlsNode)
 	{
 		ApiIpControlItem apiIpControlsObject;
-		if(!value["ApiId"].isNull())
-			apiIpControlsObject.apiId = value["ApiId"].asString();
-		if(!value["ApiName"].isNull())
-			apiIpControlsObject.apiName = value["ApiName"].asString();
-		if(!value["IpControlId"].isNull())
-			apiIpControlsObject.ipControlId = value["IpControlId"].asString();
-		if(!value["IpControlName"].isNull())
-			apiIpControlsObject.ipControlName = value["IpControlName"].asString();
-		if(!value["BoundTime"].isNull())
-			apiIpControlsObject.boundTime = value["BoundTime"].asString();
+		if(!valueApiIpControlsApiIpControlItem["ApiId"].isNull())
+			apiIpControlsObject.apiId = valueApiIpControlsApiIpControlItem["ApiId"].asString();
+		if(!valueApiIpControlsApiIpControlItem["ApiName"].isNull())
+			apiIpControlsObject.apiName = valueApiIpControlsApiIpControlItem["ApiName"].asString();
+		if(!valueApiIpControlsApiIpControlItem["IpControlId"].isNull())
+			apiIpControlsObject.ipControlId = valueApiIpControlsApiIpControlItem["IpControlId"].asString();
+		if(!valueApiIpControlsApiIpControlItem["IpControlName"].isNull())
+			apiIpControlsObject.ipControlName = valueApiIpControlsApiIpControlItem["IpControlName"].asString();
+		if(!valueApiIpControlsApiIpControlItem["BoundTime"].isNull())
+			apiIpControlsObject.boundTime = valueApiIpControlsApiIpControlItem["BoundTime"].asString();
 		apiIpControls_.push_back(apiIpControlsObject);
 	}
 	if(!value["TotalCount"].isNull())

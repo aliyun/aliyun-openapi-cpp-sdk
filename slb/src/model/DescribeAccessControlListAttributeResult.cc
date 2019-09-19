@@ -39,28 +39,28 @@ void DescribeAccessControlListAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAclEntrys = value["AclEntrys"]["AclEntry"];
-	for (auto value : allAclEntrys)
+	auto allAclEntrysNode = value["AclEntrys"]["AclEntry"];
+	for (auto valueAclEntrysAclEntry : allAclEntrysNode)
 	{
 		AclEntry aclEntrysObject;
-		if(!value["AclEntryIP"].isNull())
-			aclEntrysObject.aclEntryIP = value["AclEntryIP"].asString();
-		if(!value["AclEntryComment"].isNull())
-			aclEntrysObject.aclEntryComment = value["AclEntryComment"].asString();
+		if(!valueAclEntrysAclEntry["AclEntryIP"].isNull())
+			aclEntrysObject.aclEntryIP = valueAclEntrysAclEntry["AclEntryIP"].asString();
+		if(!valueAclEntrysAclEntry["AclEntryComment"].isNull())
+			aclEntrysObject.aclEntryComment = valueAclEntrysAclEntry["AclEntryComment"].asString();
 		aclEntrys_.push_back(aclEntrysObject);
 	}
-	auto allRelatedListeners = value["RelatedListeners"]["RelatedListener"];
-	for (auto value : allRelatedListeners)
+	auto allRelatedListenersNode = value["RelatedListeners"]["RelatedListener"];
+	for (auto valueRelatedListenersRelatedListener : allRelatedListenersNode)
 	{
 		RelatedListener relatedListenersObject;
-		if(!value["LoadBalancerId"].isNull())
-			relatedListenersObject.loadBalancerId = value["LoadBalancerId"].asString();
-		if(!value["ListenerPort"].isNull())
-			relatedListenersObject.listenerPort = std::stoi(value["ListenerPort"].asString());
-		if(!value["AclType"].isNull())
-			relatedListenersObject.aclType = value["AclType"].asString();
-		if(!value["Protocol"].isNull())
-			relatedListenersObject.protocol = value["Protocol"].asString();
+		if(!valueRelatedListenersRelatedListener["LoadBalancerId"].isNull())
+			relatedListenersObject.loadBalancerId = valueRelatedListenersRelatedListener["LoadBalancerId"].asString();
+		if(!valueRelatedListenersRelatedListener["ListenerPort"].isNull())
+			relatedListenersObject.listenerPort = std::stoi(valueRelatedListenersRelatedListener["ListenerPort"].asString());
+		if(!valueRelatedListenersRelatedListener["AclType"].isNull())
+			relatedListenersObject.aclType = valueRelatedListenersRelatedListener["AclType"].asString();
+		if(!valueRelatedListenersRelatedListener["Protocol"].isNull())
+			relatedListenersObject.protocol = valueRelatedListenersRelatedListener["Protocol"].asString();
 		relatedListeners_.push_back(relatedListenersObject);
 	}
 	if(!value["AclId"].isNull())

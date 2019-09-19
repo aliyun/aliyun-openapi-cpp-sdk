@@ -66,14 +66,14 @@ void OnsDLQMessageGetByIdResult::parse(const std::string &payload)
 		data_.reconsumeTimes = std::stoi(dataNode["ReconsumeTimes"].asString());
 	if(!dataNode["InstanceId"].isNull())
 		data_.instanceId = dataNode["InstanceId"].asString();
-	auto allPropertyList = value["PropertyList"]["MessageProperty"];
-	for (auto value : allPropertyList)
+	auto allPropertyListNode = dataNode["PropertyList"]["MessageProperty"];
+	for (auto dataNodePropertyListMessageProperty : allPropertyListNode)
 	{
 		Data::MessageProperty messagePropertyObject;
-		if(!value["Name"].isNull())
-			messagePropertyObject.name = value["Name"].asString();
-		if(!value["Value"].isNull())
-			messagePropertyObject.value = value["Value"].asString();
+		if(!dataNodePropertyListMessageProperty["Name"].isNull())
+			messagePropertyObject.name = dataNodePropertyListMessageProperty["Name"].asString();
+		if(!dataNodePropertyListMessageProperty["Value"].isNull())
+			messagePropertyObject.value = dataNodePropertyListMessageProperty["Value"].asString();
 		data_.propertyList.push_back(messagePropertyObject);
 	}
 	if(!value["HelpUrl"].isNull())

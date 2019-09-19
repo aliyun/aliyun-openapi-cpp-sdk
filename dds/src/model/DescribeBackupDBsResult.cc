@@ -39,12 +39,12 @@ void DescribeBackupDBsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDatabases = value["Databases"]["Database"];
-	for (auto value : allDatabases)
+	auto allDatabasesNode = value["Databases"]["Database"];
+	for (auto valueDatabasesDatabase : allDatabasesNode)
 	{
 		Database databasesObject;
-		if(!value["DBName"].isNull())
-			databasesObject.dBName = value["DBName"].asString();
+		if(!valueDatabasesDatabase["DBName"].isNull())
+			databasesObject.dBName = valueDatabasesDatabase["DBName"].asString();
 		databases_.push_back(databasesObject);
 	}
 	if(!value["PageNumber"].isNull())

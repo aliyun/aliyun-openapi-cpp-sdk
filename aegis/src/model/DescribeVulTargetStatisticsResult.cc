@@ -39,26 +39,26 @@ void DescribeVulTargetStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTargetStats = value["TargetStats"]["TargetStat"];
-	for (auto value : allTargetStats)
+	auto allTargetStatsNode = value["TargetStats"]["TargetStat"];
+	for (auto valueTargetStatsTargetStat : allTargetStatsNode)
 	{
 		TargetStat targetStatsObject;
-		if(!value["VulType"].isNull())
-			targetStatsObject.vulType = value["VulType"].asString();
-		if(!value["UuidCount"].isNull())
-			targetStatsObject.uuidCount = value["UuidCount"].asString();
-		if(!value["TotalCount"].isNull())
-			targetStatsObject.totalCount = value["TotalCount"].asString();
-		auto allTargets = value["Targets"]["Target"];
-		for (auto value : allTargets)
+		if(!valueTargetStatsTargetStat["VulType"].isNull())
+			targetStatsObject.vulType = valueTargetStatsTargetStat["VulType"].asString();
+		if(!valueTargetStatsTargetStat["UuidCount"].isNull())
+			targetStatsObject.uuidCount = valueTargetStatsTargetStat["UuidCount"].asString();
+		if(!valueTargetStatsTargetStat["TotalCount"].isNull())
+			targetStatsObject.totalCount = valueTargetStatsTargetStat["TotalCount"].asString();
+		auto allTargetsNode = allTargetStatsNode["Targets"]["Target"];
+		for (auto allTargetStatsNodeTargetsTarget : allTargetsNode)
 		{
 			TargetStat::Target targetsObject;
-			if(!value["Target"].isNull())
-				targetsObject.target = value["Target"].asString();
-			if(!value["TargetType"].isNull())
-				targetsObject.targetType = value["TargetType"].asString();
-			if(!value["Flag"].isNull())
-				targetsObject.flag = value["Flag"].asString();
+			if(!allTargetStatsNodeTargetsTarget["Target"].isNull())
+				targetsObject.target = allTargetStatsNodeTargetsTarget["Target"].asString();
+			if(!allTargetStatsNodeTargetsTarget["TargetType"].isNull())
+				targetsObject.targetType = allTargetStatsNodeTargetsTarget["TargetType"].asString();
+			if(!allTargetStatsNodeTargetsTarget["Flag"].isNull())
+				targetsObject.flag = allTargetStatsNodeTargetsTarget["Flag"].asString();
 			targetStatsObject.targets.push_back(targetsObject);
 		}
 		targetStats_.push_back(targetStatsObject);

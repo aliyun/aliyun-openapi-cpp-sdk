@@ -39,32 +39,32 @@ void DescribeEntityListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEntityList = value["EntityList"]["Entity"];
-	for (auto value : allEntityList)
+	auto allEntityListNode = value["EntityList"]["Entity"];
+	for (auto valueEntityListEntity : allEntityListNode)
 	{
 		Entity entityListObject;
-		if(!value["AegisOnline"].isNull())
-			entityListObject.aegisOnline = value["AegisOnline"].asString() == "true";
-		if(!value["Flag"].isNull())
-			entityListObject.flag = std::stoi(value["Flag"].asString());
-		if(!value["Os"].isNull())
-			entityListObject.os = value["Os"].asString();
-		if(!value["InstanceName"].isNull())
-			entityListObject.instanceName = value["InstanceName"].asString();
-		if(!value["AegisVersion"].isNull())
-			entityListObject.aegisVersion = value["AegisVersion"].asString();
-		if(!value["GroupId"].isNull())
-			entityListObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["Ip"].isNull())
-			entityListObject.ip = value["Ip"].asString();
-		if(!value["ClientStatus"].isNull())
-			entityListObject.clientStatus = value["ClientStatus"].asString() == "true";
-		if(!value["Region"].isNull())
-			entityListObject.region = value["Region"].asString();
-		if(!value["BuyVersion"].isNull())
-			entityListObject.buyVersion = value["BuyVersion"].asString();
-		if(!value["Uuid"].isNull())
-			entityListObject.uuid = value["Uuid"].asString();
+		if(!valueEntityListEntity["AegisOnline"].isNull())
+			entityListObject.aegisOnline = valueEntityListEntity["AegisOnline"].asString() == "true";
+		if(!valueEntityListEntity["Flag"].isNull())
+			entityListObject.flag = std::stoi(valueEntityListEntity["Flag"].asString());
+		if(!valueEntityListEntity["Os"].isNull())
+			entityListObject.os = valueEntityListEntity["Os"].asString();
+		if(!valueEntityListEntity["InstanceName"].isNull())
+			entityListObject.instanceName = valueEntityListEntity["InstanceName"].asString();
+		if(!valueEntityListEntity["AegisVersion"].isNull())
+			entityListObject.aegisVersion = valueEntityListEntity["AegisVersion"].asString();
+		if(!valueEntityListEntity["GroupId"].isNull())
+			entityListObject.groupId = std::stol(valueEntityListEntity["GroupId"].asString());
+		if(!valueEntityListEntity["Ip"].isNull())
+			entityListObject.ip = valueEntityListEntity["Ip"].asString();
+		if(!valueEntityListEntity["ClientStatus"].isNull())
+			entityListObject.clientStatus = valueEntityListEntity["ClientStatus"].asString() == "true";
+		if(!valueEntityListEntity["Region"].isNull())
+			entityListObject.region = valueEntityListEntity["Region"].asString();
+		if(!valueEntityListEntity["BuyVersion"].isNull())
+			entityListObject.buyVersion = valueEntityListEntity["BuyVersion"].asString();
+		if(!valueEntityListEntity["Uuid"].isNull())
+			entityListObject.uuid = valueEntityListEntity["Uuid"].asString();
 		entityList_.push_back(entityListObject);
 	}
 	if(!value["PageSize"].isNull())

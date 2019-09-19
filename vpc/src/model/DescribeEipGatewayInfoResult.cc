@@ -39,16 +39,16 @@ void DescribeEipGatewayInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEipInfos = value["EipInfos"]["EipInfo"];
-	for (auto value : allEipInfos)
+	auto allEipInfosNode = value["EipInfos"]["EipInfo"];
+	for (auto valueEipInfosEipInfo : allEipInfosNode)
 	{
 		EipInfo eipInfosObject;
-		if(!value["Ip"].isNull())
-			eipInfosObject.ip = value["Ip"].asString();
-		if(!value["IpGw"].isNull())
-			eipInfosObject.ipGw = value["IpGw"].asString();
-		if(!value["IpMask"].isNull())
-			eipInfosObject.ipMask = value["IpMask"].asString();
+		if(!valueEipInfosEipInfo["Ip"].isNull())
+			eipInfosObject.ip = valueEipInfosEipInfo["Ip"].asString();
+		if(!valueEipInfosEipInfo["IpGw"].isNull())
+			eipInfosObject.ipGw = valueEipInfosEipInfo["IpGw"].asString();
+		if(!valueEipInfosEipInfo["IpMask"].isNull())
+			eipInfosObject.ipMask = valueEipInfosEipInfo["IpMask"].asString();
 		eipInfos_.push_back(eipInfosObject);
 	}
 	if(!value["Code"].isNull())

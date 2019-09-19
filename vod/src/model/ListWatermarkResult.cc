@@ -39,26 +39,26 @@ void ListWatermarkResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allWatermarkInfos = value["WatermarkInfos"]["WatermarkInfo"];
-	for (auto value : allWatermarkInfos)
+	auto allWatermarkInfosNode = value["WatermarkInfos"]["WatermarkInfo"];
+	for (auto valueWatermarkInfosWatermarkInfo : allWatermarkInfosNode)
 	{
 		WatermarkInfo watermarkInfosObject;
-		if(!value["CreationTime"].isNull())
-			watermarkInfosObject.creationTime = value["CreationTime"].asString();
-		if(!value["Type"].isNull())
-			watermarkInfosObject.type = value["Type"].asString();
-		if(!value["IsDefault"].isNull())
-			watermarkInfosObject.isDefault = value["IsDefault"].asString();
-		if(!value["WatermarkId"].isNull())
-			watermarkInfosObject.watermarkId = value["WatermarkId"].asString();
-		if(!value["Name"].isNull())
-			watermarkInfosObject.name = value["Name"].asString();
-		if(!value["FileUrl"].isNull())
-			watermarkInfosObject.fileUrl = value["FileUrl"].asString();
-		if(!value["WatermarkConfig"].isNull())
-			watermarkInfosObject.watermarkConfig = value["WatermarkConfig"].asString();
-		if(!value["AppId"].isNull())
-			watermarkInfosObject.appId = value["AppId"].asString();
+		if(!valueWatermarkInfosWatermarkInfo["CreationTime"].isNull())
+			watermarkInfosObject.creationTime = valueWatermarkInfosWatermarkInfo["CreationTime"].asString();
+		if(!valueWatermarkInfosWatermarkInfo["Type"].isNull())
+			watermarkInfosObject.type = valueWatermarkInfosWatermarkInfo["Type"].asString();
+		if(!valueWatermarkInfosWatermarkInfo["IsDefault"].isNull())
+			watermarkInfosObject.isDefault = valueWatermarkInfosWatermarkInfo["IsDefault"].asString();
+		if(!valueWatermarkInfosWatermarkInfo["WatermarkId"].isNull())
+			watermarkInfosObject.watermarkId = valueWatermarkInfosWatermarkInfo["WatermarkId"].asString();
+		if(!valueWatermarkInfosWatermarkInfo["Name"].isNull())
+			watermarkInfosObject.name = valueWatermarkInfosWatermarkInfo["Name"].asString();
+		if(!valueWatermarkInfosWatermarkInfo["FileUrl"].isNull())
+			watermarkInfosObject.fileUrl = valueWatermarkInfosWatermarkInfo["FileUrl"].asString();
+		if(!valueWatermarkInfosWatermarkInfo["WatermarkConfig"].isNull())
+			watermarkInfosObject.watermarkConfig = valueWatermarkInfosWatermarkInfo["WatermarkConfig"].asString();
+		if(!valueWatermarkInfosWatermarkInfo["AppId"].isNull())
+			watermarkInfosObject.appId = valueWatermarkInfosWatermarkInfo["AppId"].asString();
 		watermarkInfos_.push_back(watermarkInfosObject);
 	}
 

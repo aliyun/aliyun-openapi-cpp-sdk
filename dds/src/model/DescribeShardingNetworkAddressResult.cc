@@ -39,28 +39,28 @@ void DescribeShardingNetworkAddressResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNetworkAddresses = value["NetworkAddresses"]["NetworkAddress"];
-	for (auto value : allNetworkAddresses)
+	auto allNetworkAddressesNode = value["NetworkAddresses"]["NetworkAddress"];
+	for (auto valueNetworkAddressesNetworkAddress : allNetworkAddressesNode)
 	{
 		NetworkAddress networkAddressesObject;
-		if(!value["NetworkAddress"].isNull())
-			networkAddressesObject.networkAddress = value["NetworkAddress"].asString();
-		if(!value["IPAddress"].isNull())
-			networkAddressesObject.iPAddress = value["IPAddress"].asString();
-		if(!value["NetworkType"].isNull())
-			networkAddressesObject.networkType = value["NetworkType"].asString();
-		if(!value["Port"].isNull())
-			networkAddressesObject.port = value["Port"].asString();
-		if(!value["VPCId"].isNull())
-			networkAddressesObject.vPCId = value["VPCId"].asString();
-		if(!value["VswitchId"].isNull())
-			networkAddressesObject.vswitchId = value["VswitchId"].asString();
-		if(!value["NodeId"].isNull())
-			networkAddressesObject.nodeId = value["NodeId"].asString();
-		if(!value["ExpiredTime"].isNull())
-			networkAddressesObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["NodeType"].isNull())
-			networkAddressesObject.nodeType = value["NodeType"].asString();
+		if(!valueNetworkAddressesNetworkAddress["NetworkAddress"].isNull())
+			networkAddressesObject.networkAddress = valueNetworkAddressesNetworkAddress["NetworkAddress"].asString();
+		if(!valueNetworkAddressesNetworkAddress["IPAddress"].isNull())
+			networkAddressesObject.iPAddress = valueNetworkAddressesNetworkAddress["IPAddress"].asString();
+		if(!valueNetworkAddressesNetworkAddress["NetworkType"].isNull())
+			networkAddressesObject.networkType = valueNetworkAddressesNetworkAddress["NetworkType"].asString();
+		if(!valueNetworkAddressesNetworkAddress["Port"].isNull())
+			networkAddressesObject.port = valueNetworkAddressesNetworkAddress["Port"].asString();
+		if(!valueNetworkAddressesNetworkAddress["VPCId"].isNull())
+			networkAddressesObject.vPCId = valueNetworkAddressesNetworkAddress["VPCId"].asString();
+		if(!valueNetworkAddressesNetworkAddress["VswitchId"].isNull())
+			networkAddressesObject.vswitchId = valueNetworkAddressesNetworkAddress["VswitchId"].asString();
+		if(!valueNetworkAddressesNetworkAddress["NodeId"].isNull())
+			networkAddressesObject.nodeId = valueNetworkAddressesNetworkAddress["NodeId"].asString();
+		if(!valueNetworkAddressesNetworkAddress["ExpiredTime"].isNull())
+			networkAddressesObject.expiredTime = valueNetworkAddressesNetworkAddress["ExpiredTime"].asString();
+		if(!valueNetworkAddressesNetworkAddress["NodeType"].isNull())
+			networkAddressesObject.nodeType = valueNetworkAddressesNetworkAddress["NodeType"].asString();
 		networkAddresses_.push_back(networkAddressesObject);
 	}
 

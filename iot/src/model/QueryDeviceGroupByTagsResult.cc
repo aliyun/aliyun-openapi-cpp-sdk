@@ -39,14 +39,14 @@ void QueryDeviceGroupByTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DeviceGroup"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DeviceGroup"];
+	for (auto valueDataDeviceGroup : allDataNode)
 	{
 		DeviceGroup dataObject;
-		if(!value["GroupId"].isNull())
-			dataObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			dataObject.groupName = value["GroupName"].asString();
+		if(!valueDataDeviceGroup["GroupId"].isNull())
+			dataObject.groupId = valueDataDeviceGroup["GroupId"].asString();
+		if(!valueDataDeviceGroup["GroupName"].isNull())
+			dataObject.groupName = valueDataDeviceGroup["GroupName"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

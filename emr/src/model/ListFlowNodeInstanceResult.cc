@@ -39,66 +39,66 @@ void ListFlowNodeInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFlowNodeInstances = value["FlowNodeInstances"]["FlowNodeInstance"];
-	for (auto value : allFlowNodeInstances)
+	auto allFlowNodeInstancesNode = value["FlowNodeInstances"]["FlowNodeInstance"];
+	for (auto valueFlowNodeInstancesFlowNodeInstance : allFlowNodeInstancesNode)
 	{
 		FlowNodeInstance flowNodeInstancesObject;
-		if(!value["Id"].isNull())
-			flowNodeInstancesObject.id = value["Id"].asString();
-		if(!value["GmtCreate"].isNull())
-			flowNodeInstancesObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			flowNodeInstancesObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["Type"].isNull())
-			flowNodeInstancesObject.type = value["Type"].asString();
-		if(!value["Status"].isNull())
-			flowNodeInstancesObject.status = value["Status"].asString();
-		if(!value["JobId"].isNull())
-			flowNodeInstancesObject.jobId = value["JobId"].asString();
-		if(!value["JobName"].isNull())
-			flowNodeInstancesObject.jobName = value["JobName"].asString();
-		if(!value["JobType"].isNull())
-			flowNodeInstancesObject.jobType = value["JobType"].asString();
-		if(!value["JobParams"].isNull())
-			flowNodeInstancesObject.jobParams = value["JobParams"].asString();
-		if(!value["FailAct"].isNull())
-			flowNodeInstancesObject.failAct = value["FailAct"].asString();
-		if(!value["MaxRetry"].isNull())
-			flowNodeInstancesObject.maxRetry = value["MaxRetry"].asString();
-		if(!value["RetryInterval"].isNull())
-			flowNodeInstancesObject.retryInterval = value["RetryInterval"].asString();
-		if(!value["NodeName"].isNull())
-			flowNodeInstancesObject.nodeName = value["NodeName"].asString();
-		if(!value["FlowId"].isNull())
-			flowNodeInstancesObject.flowId = value["FlowId"].asString();
-		if(!value["FlowInstanceId"].isNull())
-			flowNodeInstancesObject.flowInstanceId = value["FlowInstanceId"].asString();
-		if(!value["ClusterId"].isNull())
-			flowNodeInstancesObject.clusterId = value["ClusterId"].asString();
-		if(!value["HostName"].isNull())
-			flowNodeInstancesObject.hostName = value["HostName"].asString();
-		if(!value["ProjectId"].isNull())
-			flowNodeInstancesObject.projectId = value["ProjectId"].asString();
-		if(!value["Pending"].isNull())
-			flowNodeInstancesObject.pending = value["Pending"].asString() == "true";
-		if(!value["StartTime"].isNull())
-			flowNodeInstancesObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["EndTime"].isNull())
-			flowNodeInstancesObject.endTime = std::stol(value["EndTime"].asString());
-		if(!value["Duration"].isNull())
-			flowNodeInstancesObject.duration = std::stol(value["Duration"].asString());
-		if(!value["Retries"].isNull())
-			flowNodeInstancesObject.retries = std::stoi(value["Retries"].asString());
-		if(!value["ExternalId"].isNull())
-			flowNodeInstancesObject.externalId = value["ExternalId"].asString();
-		if(!value["ExternalSubId"].isNull())
-			flowNodeInstancesObject.externalSubId = value["ExternalSubId"].asString();
-		if(!value["ExternalChildIds"].isNull())
-			flowNodeInstancesObject.externalChildIds = value["ExternalChildIds"].asString();
-		if(!value["ExternalStatus"].isNull())
-			flowNodeInstancesObject.externalStatus = value["ExternalStatus"].asString();
-		if(!value["ExternalInfo"].isNull())
-			flowNodeInstancesObject.externalInfo = value["ExternalInfo"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["Id"].isNull())
+			flowNodeInstancesObject.id = valueFlowNodeInstancesFlowNodeInstance["Id"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["GmtCreate"].isNull())
+			flowNodeInstancesObject.gmtCreate = std::stol(valueFlowNodeInstancesFlowNodeInstance["GmtCreate"].asString());
+		if(!valueFlowNodeInstancesFlowNodeInstance["GmtModified"].isNull())
+			flowNodeInstancesObject.gmtModified = std::stol(valueFlowNodeInstancesFlowNodeInstance["GmtModified"].asString());
+		if(!valueFlowNodeInstancesFlowNodeInstance["Type"].isNull())
+			flowNodeInstancesObject.type = valueFlowNodeInstancesFlowNodeInstance["Type"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["Status"].isNull())
+			flowNodeInstancesObject.status = valueFlowNodeInstancesFlowNodeInstance["Status"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["JobId"].isNull())
+			flowNodeInstancesObject.jobId = valueFlowNodeInstancesFlowNodeInstance["JobId"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["JobName"].isNull())
+			flowNodeInstancesObject.jobName = valueFlowNodeInstancesFlowNodeInstance["JobName"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["JobType"].isNull())
+			flowNodeInstancesObject.jobType = valueFlowNodeInstancesFlowNodeInstance["JobType"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["JobParams"].isNull())
+			flowNodeInstancesObject.jobParams = valueFlowNodeInstancesFlowNodeInstance["JobParams"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["FailAct"].isNull())
+			flowNodeInstancesObject.failAct = valueFlowNodeInstancesFlowNodeInstance["FailAct"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["MaxRetry"].isNull())
+			flowNodeInstancesObject.maxRetry = valueFlowNodeInstancesFlowNodeInstance["MaxRetry"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["RetryInterval"].isNull())
+			flowNodeInstancesObject.retryInterval = valueFlowNodeInstancesFlowNodeInstance["RetryInterval"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["NodeName"].isNull())
+			flowNodeInstancesObject.nodeName = valueFlowNodeInstancesFlowNodeInstance["NodeName"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["FlowId"].isNull())
+			flowNodeInstancesObject.flowId = valueFlowNodeInstancesFlowNodeInstance["FlowId"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["FlowInstanceId"].isNull())
+			flowNodeInstancesObject.flowInstanceId = valueFlowNodeInstancesFlowNodeInstance["FlowInstanceId"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["ClusterId"].isNull())
+			flowNodeInstancesObject.clusterId = valueFlowNodeInstancesFlowNodeInstance["ClusterId"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["HostName"].isNull())
+			flowNodeInstancesObject.hostName = valueFlowNodeInstancesFlowNodeInstance["HostName"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["ProjectId"].isNull())
+			flowNodeInstancesObject.projectId = valueFlowNodeInstancesFlowNodeInstance["ProjectId"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["Pending"].isNull())
+			flowNodeInstancesObject.pending = valueFlowNodeInstancesFlowNodeInstance["Pending"].asString() == "true";
+		if(!valueFlowNodeInstancesFlowNodeInstance["StartTime"].isNull())
+			flowNodeInstancesObject.startTime = std::stol(valueFlowNodeInstancesFlowNodeInstance["StartTime"].asString());
+		if(!valueFlowNodeInstancesFlowNodeInstance["EndTime"].isNull())
+			flowNodeInstancesObject.endTime = std::stol(valueFlowNodeInstancesFlowNodeInstance["EndTime"].asString());
+		if(!valueFlowNodeInstancesFlowNodeInstance["Duration"].isNull())
+			flowNodeInstancesObject.duration = std::stol(valueFlowNodeInstancesFlowNodeInstance["Duration"].asString());
+		if(!valueFlowNodeInstancesFlowNodeInstance["Retries"].isNull())
+			flowNodeInstancesObject.retries = std::stoi(valueFlowNodeInstancesFlowNodeInstance["Retries"].asString());
+		if(!valueFlowNodeInstancesFlowNodeInstance["ExternalId"].isNull())
+			flowNodeInstancesObject.externalId = valueFlowNodeInstancesFlowNodeInstance["ExternalId"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["ExternalSubId"].isNull())
+			flowNodeInstancesObject.externalSubId = valueFlowNodeInstancesFlowNodeInstance["ExternalSubId"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["ExternalChildIds"].isNull())
+			flowNodeInstancesObject.externalChildIds = valueFlowNodeInstancesFlowNodeInstance["ExternalChildIds"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["ExternalStatus"].isNull())
+			flowNodeInstancesObject.externalStatus = valueFlowNodeInstancesFlowNodeInstance["ExternalStatus"].asString();
+		if(!valueFlowNodeInstancesFlowNodeInstance["ExternalInfo"].isNull())
+			flowNodeInstancesObject.externalInfo = valueFlowNodeInstancesFlowNodeInstance["ExternalInfo"].asString();
 		flowNodeInstances_.push_back(flowNodeInstancesObject);
 	}
 	if(!value["PageNumber"].isNull())

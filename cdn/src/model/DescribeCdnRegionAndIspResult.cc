@@ -39,24 +39,24 @@ void DescribeCdnRegionAndIspResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegions = value["Regions"]["Region"];
-	for (auto value : allRegions)
+	auto allRegionsNode = value["Regions"]["Region"];
+	for (auto valueRegionsRegion : allRegionsNode)
 	{
 		Region regionsObject;
-		if(!value["NameZh"].isNull())
-			regionsObject.nameZh = value["NameZh"].asString();
-		if(!value["NameEn"].isNull())
-			regionsObject.nameEn = value["NameEn"].asString();
+		if(!valueRegionsRegion["NameZh"].isNull())
+			regionsObject.nameZh = valueRegionsRegion["NameZh"].asString();
+		if(!valueRegionsRegion["NameEn"].isNull())
+			regionsObject.nameEn = valueRegionsRegion["NameEn"].asString();
 		regions_.push_back(regionsObject);
 	}
-	auto allIsps = value["Isps"]["Isp"];
-	for (auto value : allIsps)
+	auto allIspsNode = value["Isps"]["Isp"];
+	for (auto valueIspsIsp : allIspsNode)
 	{
 		Isp ispsObject;
-		if(!value["NameZh"].isNull())
-			ispsObject.nameZh = value["NameZh"].asString();
-		if(!value["NameEn"].isNull())
-			ispsObject.nameEn = value["NameEn"].asString();
+		if(!valueIspsIsp["NameZh"].isNull())
+			ispsObject.nameZh = valueIspsIsp["NameZh"].asString();
+		if(!valueIspsIsp["NameEn"].isNull())
+			ispsObject.nameEn = valueIspsIsp["NameEn"].asString();
 		isps_.push_back(ispsObject);
 	}
 

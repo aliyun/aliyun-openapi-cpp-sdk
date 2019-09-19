@@ -39,26 +39,26 @@ void DescribeStorageSetDetailsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDisks = value["Disks"]["Disk"];
-	for (auto value : allDisks)
+	auto allDisksNode = value["Disks"]["Disk"];
+	for (auto valueDisksDisk : allDisksNode)
 	{
 		Disk disksObject;
-		if(!value["DiskId"].isNull())
-			disksObject.diskId = value["DiskId"].asString();
-		if(!value["DiskName"].isNull())
-			disksObject.diskName = value["DiskName"].asString();
-		if(!value["Category"].isNull())
-			disksObject.category = value["Category"].asString();
-		if(!value["StorageSetId"].isNull())
-			disksObject.storageSetId = value["StorageSetId"].asString();
-		if(!value["CreationTime"].isNull())
-			disksObject.creationTime = value["CreationTime"].asString();
-		if(!value["StorageSetPartitionNumber"].isNull())
-			disksObject.storageSetPartitionNumber = std::stoi(value["StorageSetPartitionNumber"].asString());
-		if(!value["RegionId"].isNull())
-			disksObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			disksObject.zoneId = value["ZoneId"].asString();
+		if(!valueDisksDisk["DiskId"].isNull())
+			disksObject.diskId = valueDisksDisk["DiskId"].asString();
+		if(!valueDisksDisk["DiskName"].isNull())
+			disksObject.diskName = valueDisksDisk["DiskName"].asString();
+		if(!valueDisksDisk["Category"].isNull())
+			disksObject.category = valueDisksDisk["Category"].asString();
+		if(!valueDisksDisk["StorageSetId"].isNull())
+			disksObject.storageSetId = valueDisksDisk["StorageSetId"].asString();
+		if(!valueDisksDisk["CreationTime"].isNull())
+			disksObject.creationTime = valueDisksDisk["CreationTime"].asString();
+		if(!valueDisksDisk["StorageSetPartitionNumber"].isNull())
+			disksObject.storageSetPartitionNumber = std::stoi(valueDisksDisk["StorageSetPartitionNumber"].asString());
+		if(!valueDisksDisk["RegionId"].isNull())
+			disksObject.regionId = valueDisksDisk["RegionId"].asString();
+		if(!valueDisksDisk["ZoneId"].isNull())
+			disksObject.zoneId = valueDisksDisk["ZoneId"].asString();
 		disks_.push_back(disksObject);
 	}
 	if(!value["TotalCount"].isNull())

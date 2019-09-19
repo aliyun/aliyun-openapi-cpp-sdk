@@ -39,22 +39,22 @@ void ListClusterTagForAdminResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClusterTagList = value["ClusterTagList"]["ClusterTag"];
-	for (auto value : allClusterTagList)
+	auto allClusterTagListNode = value["ClusterTagList"]["ClusterTag"];
+	for (auto valueClusterTagListClusterTag : allClusterTagListNode)
 	{
 		ClusterTag clusterTagListObject;
-		if(!value["ClusterId"].isNull())
-			clusterTagListObject.clusterId = value["ClusterId"].asString();
-		auto allTagInfoList = value["TagInfoList"]["TagInfo"];
-		for (auto value : allTagInfoList)
+		if(!valueClusterTagListClusterTag["ClusterId"].isNull())
+			clusterTagListObject.clusterId = valueClusterTagListClusterTag["ClusterId"].asString();
+		auto allTagInfoListNode = allClusterTagListNode["TagInfoList"]["TagInfo"];
+		for (auto allClusterTagListNodeTagInfoListTagInfo : allTagInfoListNode)
 		{
 			ClusterTag::TagInfo tagInfoListObject;
-			if(!value["TagType"].isNull())
-				tagInfoListObject.tagType = value["TagType"].asString();
-			if(!value["TagValue"].isNull())
-				tagInfoListObject.tagValue = value["TagValue"].asString();
-			if(!value["TagKey"].isNull())
-				tagInfoListObject.tagKey = value["TagKey"].asString();
+			if(!allClusterTagListNodeTagInfoListTagInfo["TagType"].isNull())
+				tagInfoListObject.tagType = allClusterTagListNodeTagInfoListTagInfo["TagType"].asString();
+			if(!allClusterTagListNodeTagInfoListTagInfo["TagValue"].isNull())
+				tagInfoListObject.tagValue = allClusterTagListNodeTagInfoListTagInfo["TagValue"].asString();
+			if(!allClusterTagListNodeTagInfoListTagInfo["TagKey"].isNull())
+				tagInfoListObject.tagKey = allClusterTagListNodeTagInfoListTagInfo["TagKey"].asString();
 			clusterTagListObject.tagInfoList.push_back(tagInfoListObject);
 		}
 		clusterTagList_.push_back(clusterTagListObject);

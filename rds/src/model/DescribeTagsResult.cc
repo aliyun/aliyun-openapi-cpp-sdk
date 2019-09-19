@@ -39,14 +39,14 @@ void DescribeTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["TagInfos"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["TagInfos"];
+	for (auto valueItemsTagInfos : allItemsNode)
 	{
 		TagInfos itemsObject;
-		if(!value["TagKey"].isNull())
-			itemsObject.tagKey = value["TagKey"].asString();
-		if(!value["TagValue"].isNull())
-			itemsObject.tagValue = value["TagValue"].asString();
+		if(!valueItemsTagInfos["TagKey"].isNull())
+			itemsObject.tagKey = valueItemsTagInfos["TagKey"].asString();
+		if(!valueItemsTagInfos["TagValue"].isNull())
+			itemsObject.tagValue = valueItemsTagInfos["TagValue"].asString();
 		auto allDBInstanceIds = value["DBInstanceIds"]["DBInstanceIds"];
 		for (auto value : allDBInstanceIds)
 			itemsObject.dBInstanceIds.push_back(value.asString());

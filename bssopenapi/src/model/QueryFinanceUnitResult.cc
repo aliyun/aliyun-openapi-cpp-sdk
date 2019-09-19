@@ -46,18 +46,18 @@ void QueryFinanceUnitResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
-	auto allFinanceUnitDtoList = value["FinanceUnitDtoList"]["FinanceUnitDtoListItem"];
-	for (auto value : allFinanceUnitDtoList)
+	auto allFinanceUnitDtoListNode = dataNode["FinanceUnitDtoList"]["FinanceUnitDtoListItem"];
+	for (auto dataNodeFinanceUnitDtoListFinanceUnitDtoListItem : allFinanceUnitDtoListNode)
 	{
 		Data::FinanceUnitDtoListItem financeUnitDtoListItemObject;
-		if(!value["OwnerUid"].isNull())
-			financeUnitDtoListItemObject.ownerUid = std::stol(value["OwnerUid"].asString());
-		if(!value["ParentUnitId"].isNull())
-			financeUnitDtoListItemObject.parentUnitId = std::stol(value["ParentUnitId"].asString());
-		if(!value["UnitId"].isNull())
-			financeUnitDtoListItemObject.unitId = std::stol(value["UnitId"].asString());
-		if(!value["UnitName"].isNull())
-			financeUnitDtoListItemObject.unitName = value["UnitName"].asString();
+		if(!dataNodeFinanceUnitDtoListFinanceUnitDtoListItem["OwnerUid"].isNull())
+			financeUnitDtoListItemObject.ownerUid = std::stol(dataNodeFinanceUnitDtoListFinanceUnitDtoListItem["OwnerUid"].asString());
+		if(!dataNodeFinanceUnitDtoListFinanceUnitDtoListItem["ParentUnitId"].isNull())
+			financeUnitDtoListItemObject.parentUnitId = std::stol(dataNodeFinanceUnitDtoListFinanceUnitDtoListItem["ParentUnitId"].asString());
+		if(!dataNodeFinanceUnitDtoListFinanceUnitDtoListItem["UnitId"].isNull())
+			financeUnitDtoListItemObject.unitId = std::stol(dataNodeFinanceUnitDtoListFinanceUnitDtoListItem["UnitId"].asString());
+		if(!dataNodeFinanceUnitDtoListFinanceUnitDtoListItem["UnitName"].isNull())
+			financeUnitDtoListItemObject.unitName = dataNodeFinanceUnitDtoListFinanceUnitDtoListItem["UnitName"].asString();
 		data_.financeUnitDtoList.push_back(financeUnitDtoListItemObject);
 	}
 	if(!value["Success"].isNull())

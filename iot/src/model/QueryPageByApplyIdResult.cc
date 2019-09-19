@@ -39,18 +39,18 @@ void QueryPageByApplyIdResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allApplyDeviceList = value["ApplyDeviceList"]["ApplyDeviceInfo"];
-	for (auto value : allApplyDeviceList)
+	auto allApplyDeviceListNode = value["ApplyDeviceList"]["ApplyDeviceInfo"];
+	for (auto valueApplyDeviceListApplyDeviceInfo : allApplyDeviceListNode)
 	{
 		ApplyDeviceInfo applyDeviceListObject;
-		if(!value["DeviceId"].isNull())
-			applyDeviceListObject.deviceId = value["DeviceId"].asString();
-		if(!value["DeviceName"].isNull())
-			applyDeviceListObject.deviceName = value["DeviceName"].asString();
-		if(!value["DeviceSecret"].isNull())
-			applyDeviceListObject.deviceSecret = value["DeviceSecret"].asString();
-		if(!value["IotId"].isNull())
-			applyDeviceListObject.iotId = value["IotId"].asString();
+		if(!valueApplyDeviceListApplyDeviceInfo["DeviceId"].isNull())
+			applyDeviceListObject.deviceId = valueApplyDeviceListApplyDeviceInfo["DeviceId"].asString();
+		if(!valueApplyDeviceListApplyDeviceInfo["DeviceName"].isNull())
+			applyDeviceListObject.deviceName = valueApplyDeviceListApplyDeviceInfo["DeviceName"].asString();
+		if(!valueApplyDeviceListApplyDeviceInfo["DeviceSecret"].isNull())
+			applyDeviceListObject.deviceSecret = valueApplyDeviceListApplyDeviceInfo["DeviceSecret"].asString();
+		if(!valueApplyDeviceListApplyDeviceInfo["IotId"].isNull())
+			applyDeviceListObject.iotId = valueApplyDeviceListApplyDeviceInfo["IotId"].asString();
 		applyDeviceList_.push_back(applyDeviceListObject);
 	}
 	if(!value["Success"].isNull())

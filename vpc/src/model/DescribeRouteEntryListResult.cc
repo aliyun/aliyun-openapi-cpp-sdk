@@ -39,38 +39,38 @@ void DescribeRouteEntryListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRouteEntrys = value["RouteEntrys"]["RouteEntry"];
-	for (auto value : allRouteEntrys)
+	auto allRouteEntrysNode = value["RouteEntrys"]["RouteEntry"];
+	for (auto valueRouteEntrysRouteEntry : allRouteEntrysNode)
 	{
 		RouteEntry routeEntrysObject;
-		if(!value["RouteTableId"].isNull())
-			routeEntrysObject.routeTableId = value["RouteTableId"].asString();
-		if(!value["DestinationCidrBlock"].isNull())
-			routeEntrysObject.destinationCidrBlock = value["DestinationCidrBlock"].asString();
-		if(!value["Type"].isNull())
-			routeEntrysObject.type = value["Type"].asString();
-		if(!value["RouteEntryId"].isNull())
-			routeEntrysObject.routeEntryId = value["RouteEntryId"].asString();
-		if(!value["RouteEntryName"].isNull())
-			routeEntrysObject.routeEntryName = value["RouteEntryName"].asString();
-		if(!value["Status"].isNull())
-			routeEntrysObject.status = value["Status"].asString();
-		if(!value["IpVersion"].isNull())
-			routeEntrysObject.ipVersion = value["IpVersion"].asString();
-		auto allNextHops = value["NextHops"]["NextHop"];
-		for (auto value : allNextHops)
+		if(!valueRouteEntrysRouteEntry["RouteTableId"].isNull())
+			routeEntrysObject.routeTableId = valueRouteEntrysRouteEntry["RouteTableId"].asString();
+		if(!valueRouteEntrysRouteEntry["DestinationCidrBlock"].isNull())
+			routeEntrysObject.destinationCidrBlock = valueRouteEntrysRouteEntry["DestinationCidrBlock"].asString();
+		if(!valueRouteEntrysRouteEntry["Type"].isNull())
+			routeEntrysObject.type = valueRouteEntrysRouteEntry["Type"].asString();
+		if(!valueRouteEntrysRouteEntry["RouteEntryId"].isNull())
+			routeEntrysObject.routeEntryId = valueRouteEntrysRouteEntry["RouteEntryId"].asString();
+		if(!valueRouteEntrysRouteEntry["RouteEntryName"].isNull())
+			routeEntrysObject.routeEntryName = valueRouteEntrysRouteEntry["RouteEntryName"].asString();
+		if(!valueRouteEntrysRouteEntry["Status"].isNull())
+			routeEntrysObject.status = valueRouteEntrysRouteEntry["Status"].asString();
+		if(!valueRouteEntrysRouteEntry["IpVersion"].isNull())
+			routeEntrysObject.ipVersion = valueRouteEntrysRouteEntry["IpVersion"].asString();
+		auto allNextHopsNode = allRouteEntrysNode["NextHops"]["NextHop"];
+		for (auto allRouteEntrysNodeNextHopsNextHop : allNextHopsNode)
 		{
 			RouteEntry::NextHop nextHopsObject;
-			if(!value["NextHopType"].isNull())
-				nextHopsObject.nextHopType = value["NextHopType"].asString();
-			if(!value["NextHopId"].isNull())
-				nextHopsObject.nextHopId = value["NextHopId"].asString();
-			if(!value["Enabled"].isNull())
-				nextHopsObject.enabled = std::stoi(value["Enabled"].asString());
-			if(!value["Weight"].isNull())
-				nextHopsObject.weight = std::stoi(value["Weight"].asString());
-			if(!value["NextHopRegionId"].isNull())
-				nextHopsObject.nextHopRegionId = value["NextHopRegionId"].asString();
+			if(!allRouteEntrysNodeNextHopsNextHop["NextHopType"].isNull())
+				nextHopsObject.nextHopType = allRouteEntrysNodeNextHopsNextHop["NextHopType"].asString();
+			if(!allRouteEntrysNodeNextHopsNextHop["NextHopId"].isNull())
+				nextHopsObject.nextHopId = allRouteEntrysNodeNextHopsNextHop["NextHopId"].asString();
+			if(!allRouteEntrysNodeNextHopsNextHop["Enabled"].isNull())
+				nextHopsObject.enabled = std::stoi(allRouteEntrysNodeNextHopsNextHop["Enabled"].asString());
+			if(!allRouteEntrysNodeNextHopsNextHop["Weight"].isNull())
+				nextHopsObject.weight = std::stoi(allRouteEntrysNodeNextHopsNextHop["Weight"].asString());
+			if(!allRouteEntrysNodeNextHopsNextHop["NextHopRegionId"].isNull())
+				nextHopsObject.nextHopRegionId = allRouteEntrysNodeNextHopsNextHop["NextHopRegionId"].asString();
 			auto nextHopRelatedInfoNode = value["NextHopRelatedInfo"];
 			if(!nextHopRelatedInfoNode["InstanceType"].isNull())
 				nextHopsObject.nextHopRelatedInfo.instanceType = nextHopRelatedInfoNode["InstanceType"].asString();

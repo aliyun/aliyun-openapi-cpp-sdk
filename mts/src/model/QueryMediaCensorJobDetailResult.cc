@@ -58,28 +58,28 @@ void QueryMediaCensorJobDetailResult::parse(const std::string &payload)
 		mediaCensorJobDetail_.creationTime = mediaCensorJobDetailNode["CreationTime"].asString();
 	if(!mediaCensorJobDetailNode["FinishTime"].isNull())
 		mediaCensorJobDetail_.finishTime = mediaCensorJobDetailNode["FinishTime"].asString();
-	auto allCoverImageCensorResults = value["CoverImageCensorResults"]["CoverImageCensorResult"];
-	for (auto value : allCoverImageCensorResults)
+	auto allCoverImageCensorResultsNode = mediaCensorJobDetailNode["CoverImageCensorResults"]["CoverImageCensorResult"];
+	for (auto mediaCensorJobDetailNodeCoverImageCensorResultsCoverImageCensorResult : allCoverImageCensorResultsNode)
 	{
 		MediaCensorJobDetail::CoverImageCensorResult coverImageCensorResultObject;
-		if(!value["Location"].isNull())
-			coverImageCensorResultObject.location = value["Location"].asString();
-		if(!value["Bucket"].isNull())
-			coverImageCensorResultObject.bucket = value["Bucket"].asString();
-		if(!value["Object"].isNull())
-			coverImageCensorResultObject.object = value["Object"].asString();
-		auto allResults = value["Results"]["Result"];
-		for (auto value : allResults)
+		if(!mediaCensorJobDetailNodeCoverImageCensorResultsCoverImageCensorResult["Location"].isNull())
+			coverImageCensorResultObject.location = mediaCensorJobDetailNodeCoverImageCensorResultsCoverImageCensorResult["Location"].asString();
+		if(!mediaCensorJobDetailNodeCoverImageCensorResultsCoverImageCensorResult["Bucket"].isNull())
+			coverImageCensorResultObject.bucket = mediaCensorJobDetailNodeCoverImageCensorResultsCoverImageCensorResult["Bucket"].asString();
+		if(!mediaCensorJobDetailNodeCoverImageCensorResultsCoverImageCensorResult["Object"].isNull())
+			coverImageCensorResultObject.object = mediaCensorJobDetailNodeCoverImageCensorResultsCoverImageCensorResult["Object"].asString();
+		auto allResultsNode = allCoverImageCensorResultsNode["Results"]["Result"];
+		for (auto allCoverImageCensorResultsNodeResultsResult : allResultsNode)
 		{
 			MediaCensorJobDetail::CoverImageCensorResult::Result resultsObject;
-			if(!value["Rate"].isNull())
-				resultsObject.rate = value["Rate"].asString();
-			if(!value["Scene"].isNull())
-				resultsObject.scene = value["Scene"].asString();
-			if(!value["Label"].isNull())
-				resultsObject.label = value["Label"].asString();
-			if(!value["Suggestion"].isNull())
-				resultsObject.suggestion = value["Suggestion"].asString();
+			if(!allCoverImageCensorResultsNodeResultsResult["Rate"].isNull())
+				resultsObject.rate = allCoverImageCensorResultsNodeResultsResult["Rate"].asString();
+			if(!allCoverImageCensorResultsNodeResultsResult["Scene"].isNull())
+				resultsObject.scene = allCoverImageCensorResultsNodeResultsResult["Scene"].asString();
+			if(!allCoverImageCensorResultsNodeResultsResult["Label"].isNull())
+				resultsObject.label = allCoverImageCensorResultsNodeResultsResult["Label"].asString();
+			if(!allCoverImageCensorResultsNodeResultsResult["Suggestion"].isNull())
+				resultsObject.suggestion = allCoverImageCensorResultsNodeResultsResult["Suggestion"].asString();
 			coverImageCensorResultObject.results.push_back(resultsObject);
 		}
 		mediaCensorJobDetail_.coverImageCensorResults.push_back(coverImageCensorResultObject);
@@ -133,40 +133,40 @@ void QueryMediaCensorJobDetailResult::parse(const std::string &payload)
 	auto vensorCensorResultNode = mediaCensorJobDetailNode["VensorCensorResult"];
 	if(!vensorCensorResultNode["NextPageToken"].isNull())
 		mediaCensorJobDetail_.vensorCensorResult.nextPageToken = vensorCensorResultNode["NextPageToken"].asString();
-	auto allCensorResults = value["CensorResults"]["CensorResult"];
-	for (auto value : allCensorResults)
+	auto allCensorResultsNode = vensorCensorResultNode["CensorResults"]["CensorResult"];
+	for (auto vensorCensorResultNodeCensorResultsCensorResult : allCensorResultsNode)
 	{
 		MediaCensorJobDetail::VensorCensorResult::CensorResult censorResultObject;
-		if(!value["Rate"].isNull())
-			censorResultObject.rate = value["Rate"].asString();
-		if(!value["Scene"].isNull())
-			censorResultObject.scene = value["Scene"].asString();
-		if(!value["Label"].isNull())
-			censorResultObject.label = value["Label"].asString();
-		if(!value["Suggestion"].isNull())
-			censorResultObject.suggestion = value["Suggestion"].asString();
+		if(!vensorCensorResultNodeCensorResultsCensorResult["Rate"].isNull())
+			censorResultObject.rate = vensorCensorResultNodeCensorResultsCensorResult["Rate"].asString();
+		if(!vensorCensorResultNodeCensorResultsCensorResult["Scene"].isNull())
+			censorResultObject.scene = vensorCensorResultNodeCensorResultsCensorResult["Scene"].asString();
+		if(!vensorCensorResultNodeCensorResultsCensorResult["Label"].isNull())
+			censorResultObject.label = vensorCensorResultNodeCensorResultsCensorResult["Label"].asString();
+		if(!vensorCensorResultNodeCensorResultsCensorResult["Suggestion"].isNull())
+			censorResultObject.suggestion = vensorCensorResultNodeCensorResultsCensorResult["Suggestion"].asString();
 		mediaCensorJobDetail_.vensorCensorResult.censorResults.push_back(censorResultObject);
 	}
-	auto allVideoTimelines = value["VideoTimelines"]["VideoTimeline"];
-	for (auto value : allVideoTimelines)
+	auto allVideoTimelinesNode = vensorCensorResultNode["VideoTimelines"]["VideoTimeline"];
+	for (auto vensorCensorResultNodeVideoTimelinesVideoTimeline : allVideoTimelinesNode)
 	{
 		MediaCensorJobDetail::VensorCensorResult::VideoTimeline videoTimelineObject;
-		if(!value["Object"].isNull())
-			videoTimelineObject.object = value["Object"].asString();
-		if(!value["Timestamp"].isNull())
-			videoTimelineObject.timestamp = value["Timestamp"].asString();
-		auto allCensorResults1 = value["CensorResults"]["CensorResult"];
-		for (auto value : allCensorResults1)
+		if(!vensorCensorResultNodeVideoTimelinesVideoTimeline["Object"].isNull())
+			videoTimelineObject.object = vensorCensorResultNodeVideoTimelinesVideoTimeline["Object"].asString();
+		if(!vensorCensorResultNodeVideoTimelinesVideoTimeline["Timestamp"].isNull())
+			videoTimelineObject.timestamp = vensorCensorResultNodeVideoTimelinesVideoTimeline["Timestamp"].asString();
+		auto allCensorResults1Node = allVideoTimelinesNode["CensorResults"]["CensorResult"];
+		for (auto allVideoTimelinesNodeCensorResultsCensorResult : allCensorResults1Node)
 		{
 			MediaCensorJobDetail::VensorCensorResult::VideoTimeline::CensorResult2 censorResults1Object;
-			if(!value["Rate"].isNull())
-				censorResults1Object.rate = value["Rate"].asString();
-			if(!value["Scene"].isNull())
-				censorResults1Object.scene = value["Scene"].asString();
-			if(!value["Label"].isNull())
-				censorResults1Object.label = value["Label"].asString();
-			if(!value["Suggestion"].isNull())
-				censorResults1Object.suggestion = value["Suggestion"].asString();
+			if(!allVideoTimelinesNodeCensorResultsCensorResult["Rate"].isNull())
+				censorResults1Object.rate = allVideoTimelinesNodeCensorResultsCensorResult["Rate"].asString();
+			if(!allVideoTimelinesNodeCensorResultsCensorResult["Scene"].isNull())
+				censorResults1Object.scene = allVideoTimelinesNodeCensorResultsCensorResult["Scene"].asString();
+			if(!allVideoTimelinesNodeCensorResultsCensorResult["Label"].isNull())
+				censorResults1Object.label = allVideoTimelinesNodeCensorResultsCensorResult["Label"].asString();
+			if(!allVideoTimelinesNodeCensorResultsCensorResult["Suggestion"].isNull())
+				censorResults1Object.suggestion = allVideoTimelinesNodeCensorResultsCensorResult["Suggestion"].asString();
 			videoTimelineObject.censorResults1.push_back(censorResults1Object);
 		}
 		mediaCensorJobDetail_.vensorCensorResult.videoTimelines.push_back(videoTimelineObject);

@@ -39,24 +39,24 @@ void ListNotaryInfosResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["NotaryInfo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["NotaryInfo"];
+	for (auto valueDataNotaryInfo : allDataNode)
 	{
 		NotaryInfo dataObject;
-		if(!value["BizOrderNo"].isNull())
-			dataObject.bizOrderNo = value["BizOrderNo"].asString();
-		if(!value["Token"].isNull())
-			dataObject.token = value["Token"].asString();
-		if(!value["NotaryStatus"].isNull())
-			dataObject.notaryStatus = std::stoi(value["NotaryStatus"].asString());
-		if(!value["TmRegisterNo"].isNull())
-			dataObject.tmRegisterNo = value["TmRegisterNo"].asString();
-		if(!value["TmClassification"].isNull())
-			dataObject.tmClassification = value["TmClassification"].asString();
-		if(!value["GmtModified"].isNull())
-			dataObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["NotaryFailedReason"].isNull())
-			dataObject.notaryFailedReason = value["NotaryFailedReason"].asString();
+		if(!valueDataNotaryInfo["BizOrderNo"].isNull())
+			dataObject.bizOrderNo = valueDataNotaryInfo["BizOrderNo"].asString();
+		if(!valueDataNotaryInfo["Token"].isNull())
+			dataObject.token = valueDataNotaryInfo["Token"].asString();
+		if(!valueDataNotaryInfo["NotaryStatus"].isNull())
+			dataObject.notaryStatus = std::stoi(valueDataNotaryInfo["NotaryStatus"].asString());
+		if(!valueDataNotaryInfo["TmRegisterNo"].isNull())
+			dataObject.tmRegisterNo = valueDataNotaryInfo["TmRegisterNo"].asString();
+		if(!valueDataNotaryInfo["TmClassification"].isNull())
+			dataObject.tmClassification = valueDataNotaryInfo["TmClassification"].asString();
+		if(!valueDataNotaryInfo["GmtModified"].isNull())
+			dataObject.gmtModified = std::stol(valueDataNotaryInfo["GmtModified"].asString());
+		if(!valueDataNotaryInfo["NotaryFailedReason"].isNull())
+			dataObject.notaryFailedReason = valueDataNotaryInfo["NotaryFailedReason"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

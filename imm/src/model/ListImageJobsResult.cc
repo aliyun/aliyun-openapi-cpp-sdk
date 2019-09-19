@@ -39,32 +39,32 @@ void ListImageJobsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobs = value["Jobs"]["JobsItem"];
-	for (auto value : allJobs)
+	auto allJobsNode = value["Jobs"]["JobsItem"];
+	for (auto valueJobsJobsItem : allJobsNode)
 	{
 		JobsItem jobsObject;
-		if(!value["Status"].isNull())
-			jobsObject.status = value["Status"].asString();
-		if(!value["JobId"].isNull())
-			jobsObject.jobId = value["JobId"].asString();
-		if(!value["JobType"].isNull())
-			jobsObject.jobType = value["JobType"].asString();
-		if(!value["Parameters"].isNull())
-			jobsObject.parameters = value["Parameters"].asString();
-		if(!value["Result"].isNull())
-			jobsObject.result = value["Result"].asString();
-		if(!value["StartTime"].isNull())
-			jobsObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			jobsObject.endTime = value["EndTime"].asString();
-		if(!value["ErrorMessage"].isNull())
-			jobsObject.errorMessage = value["ErrorMessage"].asString();
-		if(!value["NotifyEndpoint"].isNull())
-			jobsObject.notifyEndpoint = value["NotifyEndpoint"].asString();
-		if(!value["NotifyTopicName"].isNull())
-			jobsObject.notifyTopicName = value["NotifyTopicName"].asString();
-		if(!value["Progress"].isNull())
-			jobsObject.progress = std::stoi(value["Progress"].asString());
+		if(!valueJobsJobsItem["Status"].isNull())
+			jobsObject.status = valueJobsJobsItem["Status"].asString();
+		if(!valueJobsJobsItem["JobId"].isNull())
+			jobsObject.jobId = valueJobsJobsItem["JobId"].asString();
+		if(!valueJobsJobsItem["JobType"].isNull())
+			jobsObject.jobType = valueJobsJobsItem["JobType"].asString();
+		if(!valueJobsJobsItem["Parameters"].isNull())
+			jobsObject.parameters = valueJobsJobsItem["Parameters"].asString();
+		if(!valueJobsJobsItem["Result"].isNull())
+			jobsObject.result = valueJobsJobsItem["Result"].asString();
+		if(!valueJobsJobsItem["StartTime"].isNull())
+			jobsObject.startTime = valueJobsJobsItem["StartTime"].asString();
+		if(!valueJobsJobsItem["EndTime"].isNull())
+			jobsObject.endTime = valueJobsJobsItem["EndTime"].asString();
+		if(!valueJobsJobsItem["ErrorMessage"].isNull())
+			jobsObject.errorMessage = valueJobsJobsItem["ErrorMessage"].asString();
+		if(!valueJobsJobsItem["NotifyEndpoint"].isNull())
+			jobsObject.notifyEndpoint = valueJobsJobsItem["NotifyEndpoint"].asString();
+		if(!valueJobsJobsItem["NotifyTopicName"].isNull())
+			jobsObject.notifyTopicName = valueJobsJobsItem["NotifyTopicName"].asString();
+		if(!valueJobsJobsItem["Progress"].isNull())
+			jobsObject.progress = std::stoi(valueJobsJobsItem["Progress"].asString());
 		jobs_.push_back(jobsObject);
 	}
 	if(!value["NextMarker"].isNull())

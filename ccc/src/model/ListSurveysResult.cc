@@ -39,28 +39,28 @@ void ListSurveysResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSurveys = value["Surveys"]["Survey"];
-	for (auto value : allSurveys)
+	auto allSurveysNode = value["Surveys"]["Survey"];
+	for (auto valueSurveysSurvey : allSurveysNode)
 	{
 		Survey surveysObject;
-		if(!value["Id"].isNull())
-			surveysObject.id = value["Id"].asString();
-		if(!value["ScenarioUuid"].isNull())
-			surveysObject.scenarioUuid = value["ScenarioUuid"].asString();
-		if(!value["Name"].isNull())
-			surveysObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			surveysObject.description = value["Description"].asString();
-		if(!value["Role"].isNull())
-			surveysObject.role = value["Role"].asString();
-		if(!value["Round"].isNull())
-			surveysObject.round = std::stoi(value["Round"].asString());
-		if(!value["HotWords"].isNull())
-			surveysObject.hotWords = value["HotWords"].asString();
-		if(!value["SpeechOptimizationParam"].isNull())
-			surveysObject.speechOptimizationParam = value["SpeechOptimizationParam"].asString();
-		if(!value["GlobalQuestions"].isNull())
-			surveysObject.globalQuestions = value["GlobalQuestions"].asString();
+		if(!valueSurveysSurvey["Id"].isNull())
+			surveysObject.id = valueSurveysSurvey["Id"].asString();
+		if(!valueSurveysSurvey["ScenarioUuid"].isNull())
+			surveysObject.scenarioUuid = valueSurveysSurvey["ScenarioUuid"].asString();
+		if(!valueSurveysSurvey["Name"].isNull())
+			surveysObject.name = valueSurveysSurvey["Name"].asString();
+		if(!valueSurveysSurvey["Description"].isNull())
+			surveysObject.description = valueSurveysSurvey["Description"].asString();
+		if(!valueSurveysSurvey["Role"].isNull())
+			surveysObject.role = valueSurveysSurvey["Role"].asString();
+		if(!valueSurveysSurvey["Round"].isNull())
+			surveysObject.round = std::stoi(valueSurveysSurvey["Round"].asString());
+		if(!valueSurveysSurvey["HotWords"].isNull())
+			surveysObject.hotWords = valueSurveysSurvey["HotWords"].asString();
+		if(!valueSurveysSurvey["SpeechOptimizationParam"].isNull())
+			surveysObject.speechOptimizationParam = valueSurveysSurvey["SpeechOptimizationParam"].asString();
+		if(!valueSurveysSurvey["GlobalQuestions"].isNull())
+			surveysObject.globalQuestions = valueSurveysSurvey["GlobalQuestions"].asString();
 		auto flowNode = value["Flow"];
 		if(!flowNode["FlowId"].isNull())
 			surveysObject.flow.flowId = flowNode["FlowId"].asString();

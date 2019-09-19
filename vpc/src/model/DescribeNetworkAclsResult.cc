@@ -39,78 +39,78 @@ void DescribeNetworkAclsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNetworkAcls = value["NetworkAcls"]["NetworkAcl"];
-	for (auto value : allNetworkAcls)
+	auto allNetworkAclsNode = value["NetworkAcls"]["NetworkAcl"];
+	for (auto valueNetworkAclsNetworkAcl : allNetworkAclsNode)
 	{
 		NetworkAcl networkAclsObject;
-		if(!value["NetworkAclId"].isNull())
-			networkAclsObject.networkAclId = value["NetworkAclId"].asString();
-		if(!value["RegionId"].isNull())
-			networkAclsObject.regionId = value["RegionId"].asString();
-		if(!value["NetworkAclName"].isNull())
-			networkAclsObject.networkAclName = value["NetworkAclName"].asString();
-		if(!value["Description"].isNull())
-			networkAclsObject.description = value["Description"].asString();
-		if(!value["VpcId"].isNull())
-			networkAclsObject.vpcId = value["VpcId"].asString();
-		if(!value["CreationTime"].isNull())
-			networkAclsObject.creationTime = value["CreationTime"].asString();
-		if(!value["Status"].isNull())
-			networkAclsObject.status = value["Status"].asString();
-		auto allIngressAclEntries = value["IngressAclEntries"]["IngressAclEntry"];
-		for (auto value : allIngressAclEntries)
+		if(!valueNetworkAclsNetworkAcl["NetworkAclId"].isNull())
+			networkAclsObject.networkAclId = valueNetworkAclsNetworkAcl["NetworkAclId"].asString();
+		if(!valueNetworkAclsNetworkAcl["RegionId"].isNull())
+			networkAclsObject.regionId = valueNetworkAclsNetworkAcl["RegionId"].asString();
+		if(!valueNetworkAclsNetworkAcl["NetworkAclName"].isNull())
+			networkAclsObject.networkAclName = valueNetworkAclsNetworkAcl["NetworkAclName"].asString();
+		if(!valueNetworkAclsNetworkAcl["Description"].isNull())
+			networkAclsObject.description = valueNetworkAclsNetworkAcl["Description"].asString();
+		if(!valueNetworkAclsNetworkAcl["VpcId"].isNull())
+			networkAclsObject.vpcId = valueNetworkAclsNetworkAcl["VpcId"].asString();
+		if(!valueNetworkAclsNetworkAcl["CreationTime"].isNull())
+			networkAclsObject.creationTime = valueNetworkAclsNetworkAcl["CreationTime"].asString();
+		if(!valueNetworkAclsNetworkAcl["Status"].isNull())
+			networkAclsObject.status = valueNetworkAclsNetworkAcl["Status"].asString();
+		auto allIngressAclEntriesNode = allNetworkAclsNode["IngressAclEntries"]["IngressAclEntry"];
+		for (auto allNetworkAclsNodeIngressAclEntriesIngressAclEntry : allIngressAclEntriesNode)
 		{
 			NetworkAcl::IngressAclEntry ingressAclEntriesObject;
-			if(!value["NetworkAclEntryId"].isNull())
-				ingressAclEntriesObject.networkAclEntryId = value["NetworkAclEntryId"].asString();
-			if(!value["Policy"].isNull())
-				ingressAclEntriesObject.policy = value["Policy"].asString();
-			if(!value["Protocol"].isNull())
-				ingressAclEntriesObject.protocol = value["Protocol"].asString();
-			if(!value["SourceCidrIp"].isNull())
-				ingressAclEntriesObject.sourceCidrIp = value["SourceCidrIp"].asString();
-			if(!value["Port"].isNull())
-				ingressAclEntriesObject.port = value["Port"].asString();
-			if(!value["EntryType"].isNull())
-				ingressAclEntriesObject.entryType = value["EntryType"].asString();
-			if(!value["NetworkAclEntryName"].isNull())
-				ingressAclEntriesObject.networkAclEntryName = value["NetworkAclEntryName"].asString();
-			if(!value["Description"].isNull())
-				ingressAclEntriesObject.description = value["Description"].asString();
+			if(!allNetworkAclsNodeIngressAclEntriesIngressAclEntry["NetworkAclEntryId"].isNull())
+				ingressAclEntriesObject.networkAclEntryId = allNetworkAclsNodeIngressAclEntriesIngressAclEntry["NetworkAclEntryId"].asString();
+			if(!allNetworkAclsNodeIngressAclEntriesIngressAclEntry["Policy"].isNull())
+				ingressAclEntriesObject.policy = allNetworkAclsNodeIngressAclEntriesIngressAclEntry["Policy"].asString();
+			if(!allNetworkAclsNodeIngressAclEntriesIngressAclEntry["Protocol"].isNull())
+				ingressAclEntriesObject.protocol = allNetworkAclsNodeIngressAclEntriesIngressAclEntry["Protocol"].asString();
+			if(!allNetworkAclsNodeIngressAclEntriesIngressAclEntry["SourceCidrIp"].isNull())
+				ingressAclEntriesObject.sourceCidrIp = allNetworkAclsNodeIngressAclEntriesIngressAclEntry["SourceCidrIp"].asString();
+			if(!allNetworkAclsNodeIngressAclEntriesIngressAclEntry["Port"].isNull())
+				ingressAclEntriesObject.port = allNetworkAclsNodeIngressAclEntriesIngressAclEntry["Port"].asString();
+			if(!allNetworkAclsNodeIngressAclEntriesIngressAclEntry["EntryType"].isNull())
+				ingressAclEntriesObject.entryType = allNetworkAclsNodeIngressAclEntriesIngressAclEntry["EntryType"].asString();
+			if(!allNetworkAclsNodeIngressAclEntriesIngressAclEntry["NetworkAclEntryName"].isNull())
+				ingressAclEntriesObject.networkAclEntryName = allNetworkAclsNodeIngressAclEntriesIngressAclEntry["NetworkAclEntryName"].asString();
+			if(!allNetworkAclsNodeIngressAclEntriesIngressAclEntry["Description"].isNull())
+				ingressAclEntriesObject.description = allNetworkAclsNodeIngressAclEntriesIngressAclEntry["Description"].asString();
 			networkAclsObject.ingressAclEntries.push_back(ingressAclEntriesObject);
 		}
-		auto allEgressAclEntries = value["EgressAclEntries"]["EgressAclEntry"];
-		for (auto value : allEgressAclEntries)
+		auto allEgressAclEntriesNode = allNetworkAclsNode["EgressAclEntries"]["EgressAclEntry"];
+		for (auto allNetworkAclsNodeEgressAclEntriesEgressAclEntry : allEgressAclEntriesNode)
 		{
 			NetworkAcl::EgressAclEntry egressAclEntriesObject;
-			if(!value["NetworkAclEntryId"].isNull())
-				egressAclEntriesObject.networkAclEntryId = value["NetworkAclEntryId"].asString();
-			if(!value["Policy"].isNull())
-				egressAclEntriesObject.policy = value["Policy"].asString();
-			if(!value["Protocol"].isNull())
-				egressAclEntriesObject.protocol = value["Protocol"].asString();
-			if(!value["DestinationCidrIp"].isNull())
-				egressAclEntriesObject.destinationCidrIp = value["DestinationCidrIp"].asString();
-			if(!value["Port"].isNull())
-				egressAclEntriesObject.port = value["Port"].asString();
-			if(!value["EntryType"].isNull())
-				egressAclEntriesObject.entryType = value["EntryType"].asString();
-			if(!value["Description"].isNull())
-				egressAclEntriesObject.description = value["Description"].asString();
-			if(!value["NetworkAclEntryName"].isNull())
-				egressAclEntriesObject.networkAclEntryName = value["NetworkAclEntryName"].asString();
+			if(!allNetworkAclsNodeEgressAclEntriesEgressAclEntry["NetworkAclEntryId"].isNull())
+				egressAclEntriesObject.networkAclEntryId = allNetworkAclsNodeEgressAclEntriesEgressAclEntry["NetworkAclEntryId"].asString();
+			if(!allNetworkAclsNodeEgressAclEntriesEgressAclEntry["Policy"].isNull())
+				egressAclEntriesObject.policy = allNetworkAclsNodeEgressAclEntriesEgressAclEntry["Policy"].asString();
+			if(!allNetworkAclsNodeEgressAclEntriesEgressAclEntry["Protocol"].isNull())
+				egressAclEntriesObject.protocol = allNetworkAclsNodeEgressAclEntriesEgressAclEntry["Protocol"].asString();
+			if(!allNetworkAclsNodeEgressAclEntriesEgressAclEntry["DestinationCidrIp"].isNull())
+				egressAclEntriesObject.destinationCidrIp = allNetworkAclsNodeEgressAclEntriesEgressAclEntry["DestinationCidrIp"].asString();
+			if(!allNetworkAclsNodeEgressAclEntriesEgressAclEntry["Port"].isNull())
+				egressAclEntriesObject.port = allNetworkAclsNodeEgressAclEntriesEgressAclEntry["Port"].asString();
+			if(!allNetworkAclsNodeEgressAclEntriesEgressAclEntry["EntryType"].isNull())
+				egressAclEntriesObject.entryType = allNetworkAclsNodeEgressAclEntriesEgressAclEntry["EntryType"].asString();
+			if(!allNetworkAclsNodeEgressAclEntriesEgressAclEntry["Description"].isNull())
+				egressAclEntriesObject.description = allNetworkAclsNodeEgressAclEntriesEgressAclEntry["Description"].asString();
+			if(!allNetworkAclsNodeEgressAclEntriesEgressAclEntry["NetworkAclEntryName"].isNull())
+				egressAclEntriesObject.networkAclEntryName = allNetworkAclsNodeEgressAclEntriesEgressAclEntry["NetworkAclEntryName"].asString();
 			networkAclsObject.egressAclEntries.push_back(egressAclEntriesObject);
 		}
-		auto allResources = value["Resources"]["Resource"];
-		for (auto value : allResources)
+		auto allResourcesNode = allNetworkAclsNode["Resources"]["Resource"];
+		for (auto allNetworkAclsNodeResourcesResource : allResourcesNode)
 		{
 			NetworkAcl::Resource resourcesObject;
-			if(!value["ResourceId"].isNull())
-				resourcesObject.resourceId = value["ResourceId"].asString();
-			if(!value["ResourceType"].isNull())
-				resourcesObject.resourceType = value["ResourceType"].asString();
-			if(!value["Status"].isNull())
-				resourcesObject.status = value["Status"].asString();
+			if(!allNetworkAclsNodeResourcesResource["ResourceId"].isNull())
+				resourcesObject.resourceId = allNetworkAclsNodeResourcesResource["ResourceId"].asString();
+			if(!allNetworkAclsNodeResourcesResource["ResourceType"].isNull())
+				resourcesObject.resourceType = allNetworkAclsNodeResourcesResource["ResourceType"].asString();
+			if(!allNetworkAclsNodeResourcesResource["Status"].isNull())
+				resourcesObject.status = allNetworkAclsNodeResourcesResource["Status"].asString();
 			networkAclsObject.resources.push_back(resourcesObject);
 		}
 		networkAcls_.push_back(networkAclsObject);

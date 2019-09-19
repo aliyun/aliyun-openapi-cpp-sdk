@@ -39,32 +39,32 @@ void DescribeDcdnDomainQpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQpsDataPerInterval = value["QpsDataPerInterval"]["DataModule"];
-	for (auto value : allQpsDataPerInterval)
+	auto allQpsDataPerIntervalNode = value["QpsDataPerInterval"]["DataModule"];
+	for (auto valueQpsDataPerIntervalDataModule : allQpsDataPerIntervalNode)
 	{
 		DataModule qpsDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			qpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Qps"].isNull())
-			qpsDataPerIntervalObject.qps = std::stof(value["Qps"].asString());
-		if(!value["DynamicHttpQps"].isNull())
-			qpsDataPerIntervalObject.dynamicHttpQps = std::stof(value["DynamicHttpQps"].asString());
-		if(!value["DynamicHttpsQps"].isNull())
-			qpsDataPerIntervalObject.dynamicHttpsQps = std::stof(value["DynamicHttpsQps"].asString());
-		if(!value["StaticHttpQps"].isNull())
-			qpsDataPerIntervalObject.staticHttpQps = std::stof(value["StaticHttpQps"].asString());
-		if(!value["StaticHttpsQps"].isNull())
-			qpsDataPerIntervalObject.staticHttpsQps = std::stof(value["StaticHttpsQps"].asString());
-		if(!value["Acc"].isNull())
-			qpsDataPerIntervalObject.acc = std::stof(value["Acc"].asString());
-		if(!value["DynamicHttpAcc"].isNull())
-			qpsDataPerIntervalObject.dynamicHttpAcc = std::stof(value["DynamicHttpAcc"].asString());
-		if(!value["DynamicHttpsAcc"].isNull())
-			qpsDataPerIntervalObject.dynamicHttpsAcc = std::stof(value["DynamicHttpsAcc"].asString());
-		if(!value["StaticHttpAcc"].isNull())
-			qpsDataPerIntervalObject.staticHttpAcc = std::stof(value["StaticHttpAcc"].asString());
-		if(!value["StaticHttpsAcc"].isNull())
-			qpsDataPerIntervalObject.staticHttpsAcc = std::stof(value["StaticHttpsAcc"].asString());
+		if(!valueQpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			qpsDataPerIntervalObject.timeStamp = valueQpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueQpsDataPerIntervalDataModule["Qps"].isNull())
+			qpsDataPerIntervalObject.qps = std::stof(valueQpsDataPerIntervalDataModule["Qps"].asString());
+		if(!valueQpsDataPerIntervalDataModule["DynamicHttpQps"].isNull())
+			qpsDataPerIntervalObject.dynamicHttpQps = std::stof(valueQpsDataPerIntervalDataModule["DynamicHttpQps"].asString());
+		if(!valueQpsDataPerIntervalDataModule["DynamicHttpsQps"].isNull())
+			qpsDataPerIntervalObject.dynamicHttpsQps = std::stof(valueQpsDataPerIntervalDataModule["DynamicHttpsQps"].asString());
+		if(!valueQpsDataPerIntervalDataModule["StaticHttpQps"].isNull())
+			qpsDataPerIntervalObject.staticHttpQps = std::stof(valueQpsDataPerIntervalDataModule["StaticHttpQps"].asString());
+		if(!valueQpsDataPerIntervalDataModule["StaticHttpsQps"].isNull())
+			qpsDataPerIntervalObject.staticHttpsQps = std::stof(valueQpsDataPerIntervalDataModule["StaticHttpsQps"].asString());
+		if(!valueQpsDataPerIntervalDataModule["Acc"].isNull())
+			qpsDataPerIntervalObject.acc = std::stof(valueQpsDataPerIntervalDataModule["Acc"].asString());
+		if(!valueQpsDataPerIntervalDataModule["DynamicHttpAcc"].isNull())
+			qpsDataPerIntervalObject.dynamicHttpAcc = std::stof(valueQpsDataPerIntervalDataModule["DynamicHttpAcc"].asString());
+		if(!valueQpsDataPerIntervalDataModule["DynamicHttpsAcc"].isNull())
+			qpsDataPerIntervalObject.dynamicHttpsAcc = std::stof(valueQpsDataPerIntervalDataModule["DynamicHttpsAcc"].asString());
+		if(!valueQpsDataPerIntervalDataModule["StaticHttpAcc"].isNull())
+			qpsDataPerIntervalObject.staticHttpAcc = std::stof(valueQpsDataPerIntervalDataModule["StaticHttpAcc"].asString());
+		if(!valueQpsDataPerIntervalDataModule["StaticHttpsAcc"].isNull())
+			qpsDataPerIntervalObject.staticHttpsAcc = std::stof(valueQpsDataPerIntervalDataModule["StaticHttpsAcc"].asString());
 		qpsDataPerInterval_.push_back(qpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

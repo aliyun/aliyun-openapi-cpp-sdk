@@ -39,30 +39,30 @@ void GetURLUploadInfosResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allURLUploadInfoList = value["URLUploadInfoList"]["UrlUploadJobInfoDTO"];
-	for (auto value : allURLUploadInfoList)
+	auto allURLUploadInfoListNode = value["URLUploadInfoList"]["UrlUploadJobInfoDTO"];
+	for (auto valueURLUploadInfoListUrlUploadJobInfoDTO : allURLUploadInfoListNode)
 	{
 		UrlUploadJobInfoDTO uRLUploadInfoListObject;
-		if(!value["JobId"].isNull())
-			uRLUploadInfoListObject.jobId = value["JobId"].asString();
-		if(!value["UploadURL"].isNull())
-			uRLUploadInfoListObject.uploadURL = value["UploadURL"].asString();
-		if(!value["MediaId"].isNull())
-			uRLUploadInfoListObject.mediaId = value["MediaId"].asString();
-		if(!value["FileSize"].isNull())
-			uRLUploadInfoListObject.fileSize = value["FileSize"].asString();
-		if(!value["Status"].isNull())
-			uRLUploadInfoListObject.status = value["Status"].asString();
-		if(!value["UserData"].isNull())
-			uRLUploadInfoListObject.userData = value["UserData"].asString();
-		if(!value["ErrorCode"].isNull())
-			uRLUploadInfoListObject.errorCode = value["ErrorCode"].asString();
-		if(!value["ErrorMessage"].isNull())
-			uRLUploadInfoListObject.errorMessage = value["ErrorMessage"].asString();
-		if(!value["CreationTime"].isNull())
-			uRLUploadInfoListObject.creationTime = value["CreationTime"].asString();
-		if(!value["CompleteTime"].isNull())
-			uRLUploadInfoListObject.completeTime = value["CompleteTime"].asString();
+		if(!valueURLUploadInfoListUrlUploadJobInfoDTO["JobId"].isNull())
+			uRLUploadInfoListObject.jobId = valueURLUploadInfoListUrlUploadJobInfoDTO["JobId"].asString();
+		if(!valueURLUploadInfoListUrlUploadJobInfoDTO["UploadURL"].isNull())
+			uRLUploadInfoListObject.uploadURL = valueURLUploadInfoListUrlUploadJobInfoDTO["UploadURL"].asString();
+		if(!valueURLUploadInfoListUrlUploadJobInfoDTO["MediaId"].isNull())
+			uRLUploadInfoListObject.mediaId = valueURLUploadInfoListUrlUploadJobInfoDTO["MediaId"].asString();
+		if(!valueURLUploadInfoListUrlUploadJobInfoDTO["FileSize"].isNull())
+			uRLUploadInfoListObject.fileSize = valueURLUploadInfoListUrlUploadJobInfoDTO["FileSize"].asString();
+		if(!valueURLUploadInfoListUrlUploadJobInfoDTO["Status"].isNull())
+			uRLUploadInfoListObject.status = valueURLUploadInfoListUrlUploadJobInfoDTO["Status"].asString();
+		if(!valueURLUploadInfoListUrlUploadJobInfoDTO["UserData"].isNull())
+			uRLUploadInfoListObject.userData = valueURLUploadInfoListUrlUploadJobInfoDTO["UserData"].asString();
+		if(!valueURLUploadInfoListUrlUploadJobInfoDTO["ErrorCode"].isNull())
+			uRLUploadInfoListObject.errorCode = valueURLUploadInfoListUrlUploadJobInfoDTO["ErrorCode"].asString();
+		if(!valueURLUploadInfoListUrlUploadJobInfoDTO["ErrorMessage"].isNull())
+			uRLUploadInfoListObject.errorMessage = valueURLUploadInfoListUrlUploadJobInfoDTO["ErrorMessage"].asString();
+		if(!valueURLUploadInfoListUrlUploadJobInfoDTO["CreationTime"].isNull())
+			uRLUploadInfoListObject.creationTime = valueURLUploadInfoListUrlUploadJobInfoDTO["CreationTime"].asString();
+		if(!valueURLUploadInfoListUrlUploadJobInfoDTO["CompleteTime"].isNull())
+			uRLUploadInfoListObject.completeTime = valueURLUploadInfoListUrlUploadJobInfoDTO["CompleteTime"].asString();
 		uRLUploadInfoList_.push_back(uRLUploadInfoListObject);
 	}
 	auto allNonExists = value["NonExists"]["ExistId"];

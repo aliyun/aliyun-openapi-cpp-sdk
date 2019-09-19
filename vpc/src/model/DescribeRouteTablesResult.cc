@@ -39,72 +39,72 @@ void DescribeRouteTablesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRouteTables = value["RouteTables"]["RouteTable"];
-	for (auto value : allRouteTables)
+	auto allRouteTablesNode = value["RouteTables"]["RouteTable"];
+	for (auto valueRouteTablesRouteTable : allRouteTablesNode)
 	{
 		RouteTable routeTablesObject;
-		if(!value["VRouterId"].isNull())
-			routeTablesObject.vRouterId = value["VRouterId"].asString();
-		if(!value["RouteTableId"].isNull())
-			routeTablesObject.routeTableId = value["RouteTableId"].asString();
-		if(!value["RouteTableType"].isNull())
-			routeTablesObject.routeTableType = value["RouteTableType"].asString();
-		if(!value["CreationTime"].isNull())
-			routeTablesObject.creationTime = value["CreationTime"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			routeTablesObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["Status"].isNull())
-			routeTablesObject.status = value["Status"].asString();
-		auto allRouteEntrys = value["RouteEntrys"]["RouteEntry"];
-		for (auto value : allRouteEntrys)
+		if(!valueRouteTablesRouteTable["VRouterId"].isNull())
+			routeTablesObject.vRouterId = valueRouteTablesRouteTable["VRouterId"].asString();
+		if(!valueRouteTablesRouteTable["RouteTableId"].isNull())
+			routeTablesObject.routeTableId = valueRouteTablesRouteTable["RouteTableId"].asString();
+		if(!valueRouteTablesRouteTable["RouteTableType"].isNull())
+			routeTablesObject.routeTableType = valueRouteTablesRouteTable["RouteTableType"].asString();
+		if(!valueRouteTablesRouteTable["CreationTime"].isNull())
+			routeTablesObject.creationTime = valueRouteTablesRouteTable["CreationTime"].asString();
+		if(!valueRouteTablesRouteTable["ResourceGroupId"].isNull())
+			routeTablesObject.resourceGroupId = valueRouteTablesRouteTable["ResourceGroupId"].asString();
+		if(!valueRouteTablesRouteTable["Status"].isNull())
+			routeTablesObject.status = valueRouteTablesRouteTable["Status"].asString();
+		auto allRouteEntrysNode = allRouteTablesNode["RouteEntrys"]["RouteEntry"];
+		for (auto allRouteTablesNodeRouteEntrysRouteEntry : allRouteEntrysNode)
 		{
 			RouteTable::RouteEntry routeEntrysObject;
-			if(!value["RouteTableId"].isNull())
-				routeEntrysObject.routeTableId = value["RouteTableId"].asString();
-			if(!value["DestinationCidrBlock"].isNull())
-				routeEntrysObject.destinationCidrBlock = value["DestinationCidrBlock"].asString();
-			if(!value["Type"].isNull())
-				routeEntrysObject.type = value["Type"].asString();
-			if(!value["Status"].isNull())
-				routeEntrysObject.status = value["Status"].asString();
-			if(!value["InstanceId"].isNull())
-				routeEntrysObject.instanceId = value["InstanceId"].asString();
-			if(!value["NextHopType"].isNull())
-				routeEntrysObject.nextHopType = value["NextHopType"].asString();
-			if(!value["RouteEntryName"].isNull())
-				routeEntrysObject.routeEntryName = value["RouteEntryName"].asString();
-			if(!value["RouteEntryId"].isNull())
-				routeEntrysObject.routeEntryId = value["RouteEntryId"].asString();
-			if(!value["NextHopRegionId"].isNull())
-				routeEntrysObject.nextHopRegionId = value["NextHopRegionId"].asString();
-			if(!value["NextHopOppsiteType"].isNull())
-				routeEntrysObject.nextHopOppsiteType = value["NextHopOppsiteType"].asString();
-			if(!value["NextHopOppsiteInstanceId"].isNull())
-				routeEntrysObject.nextHopOppsiteInstanceId = value["NextHopOppsiteInstanceId"].asString();
-			if(!value["NextHopOppsiteRegionId"].isNull())
-				routeEntrysObject.nextHopOppsiteRegionId = value["NextHopOppsiteRegionId"].asString();
-			if(!value["PrivateIpAddress"].isNull())
-				routeEntrysObject.privateIpAddress = value["PrivateIpAddress"].asString();
-			auto allNextHops = value["NextHops"]["NextHop"];
-			for (auto value : allNextHops)
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["RouteTableId"].isNull())
+				routeEntrysObject.routeTableId = allRouteTablesNodeRouteEntrysRouteEntry["RouteTableId"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["DestinationCidrBlock"].isNull())
+				routeEntrysObject.destinationCidrBlock = allRouteTablesNodeRouteEntrysRouteEntry["DestinationCidrBlock"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["Type"].isNull())
+				routeEntrysObject.type = allRouteTablesNodeRouteEntrysRouteEntry["Type"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["Status"].isNull())
+				routeEntrysObject.status = allRouteTablesNodeRouteEntrysRouteEntry["Status"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["InstanceId"].isNull())
+				routeEntrysObject.instanceId = allRouteTablesNodeRouteEntrysRouteEntry["InstanceId"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["NextHopType"].isNull())
+				routeEntrysObject.nextHopType = allRouteTablesNodeRouteEntrysRouteEntry["NextHopType"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryName"].isNull())
+				routeEntrysObject.routeEntryName = allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryName"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryId"].isNull())
+				routeEntrysObject.routeEntryId = allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryId"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["NextHopRegionId"].isNull())
+				routeEntrysObject.nextHopRegionId = allRouteTablesNodeRouteEntrysRouteEntry["NextHopRegionId"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteType"].isNull())
+				routeEntrysObject.nextHopOppsiteType = allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteType"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteInstanceId"].isNull())
+				routeEntrysObject.nextHopOppsiteInstanceId = allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteInstanceId"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteRegionId"].isNull())
+				routeEntrysObject.nextHopOppsiteRegionId = allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteRegionId"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["PrivateIpAddress"].isNull())
+				routeEntrysObject.privateIpAddress = allRouteTablesNodeRouteEntrysRouteEntry["PrivateIpAddress"].asString();
+			auto allNextHopsNode = allRouteEntrysNode["NextHops"]["NextHop"];
+			for (auto allRouteEntrysNodeNextHopsNextHop : allNextHopsNode)
 			{
 				RouteTable::RouteEntry::NextHop nextHopsObject;
-				if(!value["NextHopType"].isNull())
-					nextHopsObject.nextHopType = value["NextHopType"].asString();
-				if(!value["NextHopId"].isNull())
-					nextHopsObject.nextHopId = value["NextHopId"].asString();
-				if(!value["Enabled"].isNull())
-					nextHopsObject.enabled = std::stoi(value["Enabled"].asString());
-				if(!value["Weight"].isNull())
-					nextHopsObject.weight = std::stoi(value["Weight"].asString());
-				if(!value["NextHopRegionId"].isNull())
-					nextHopsObject.nextHopRegionId = value["NextHopRegionId"].asString();
-				if(!value["NextHopOppsiteType"].isNull())
-					nextHopsObject.nextHopOppsiteType = value["NextHopOppsiteType"].asString();
-				if(!value["NextHopOppsiteInstanceId"].isNull())
-					nextHopsObject.nextHopOppsiteInstanceId = value["NextHopOppsiteInstanceId"].asString();
-				if(!value["NextHopOppsiteRegionId"].isNull())
-					nextHopsObject.nextHopOppsiteRegionId = value["NextHopOppsiteRegionId"].asString();
+				if(!allRouteEntrysNodeNextHopsNextHop["NextHopType"].isNull())
+					nextHopsObject.nextHopType = allRouteEntrysNodeNextHopsNextHop["NextHopType"].asString();
+				if(!allRouteEntrysNodeNextHopsNextHop["NextHopId"].isNull())
+					nextHopsObject.nextHopId = allRouteEntrysNodeNextHopsNextHop["NextHopId"].asString();
+				if(!allRouteEntrysNodeNextHopsNextHop["Enabled"].isNull())
+					nextHopsObject.enabled = std::stoi(allRouteEntrysNodeNextHopsNextHop["Enabled"].asString());
+				if(!allRouteEntrysNodeNextHopsNextHop["Weight"].isNull())
+					nextHopsObject.weight = std::stoi(allRouteEntrysNodeNextHopsNextHop["Weight"].asString());
+				if(!allRouteEntrysNodeNextHopsNextHop["NextHopRegionId"].isNull())
+					nextHopsObject.nextHopRegionId = allRouteEntrysNodeNextHopsNextHop["NextHopRegionId"].asString();
+				if(!allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteType"].isNull())
+					nextHopsObject.nextHopOppsiteType = allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteType"].asString();
+				if(!allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteInstanceId"].isNull())
+					nextHopsObject.nextHopOppsiteInstanceId = allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteInstanceId"].asString();
+				if(!allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteRegionId"].isNull())
+					nextHopsObject.nextHopOppsiteRegionId = allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteRegionId"].asString();
 				routeEntrysObject.nextHops.push_back(nextHopsObject);
 			}
 			routeTablesObject.routeEntrys.push_back(routeEntrysObject);

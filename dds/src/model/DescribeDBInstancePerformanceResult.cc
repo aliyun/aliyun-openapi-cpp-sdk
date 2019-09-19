@@ -39,24 +39,24 @@ void DescribeDBInstancePerformanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPerformanceKeys = value["PerformanceKeys"]["PerformanceKey"];
-	for (auto value : allPerformanceKeys)
+	auto allPerformanceKeysNode = value["PerformanceKeys"]["PerformanceKey"];
+	for (auto valuePerformanceKeysPerformanceKey : allPerformanceKeysNode)
 	{
 		PerformanceKey performanceKeysObject;
-		if(!value["Key"].isNull())
-			performanceKeysObject.key = value["Key"].asString();
-		if(!value["Unit"].isNull())
-			performanceKeysObject.unit = value["Unit"].asString();
-		if(!value["ValueFormat"].isNull())
-			performanceKeysObject.valueFormat = value["ValueFormat"].asString();
-		auto allPerformanceValues = value["PerformanceValues"]["PerformanceValue"];
-		for (auto value : allPerformanceValues)
+		if(!valuePerformanceKeysPerformanceKey["Key"].isNull())
+			performanceKeysObject.key = valuePerformanceKeysPerformanceKey["Key"].asString();
+		if(!valuePerformanceKeysPerformanceKey["Unit"].isNull())
+			performanceKeysObject.unit = valuePerformanceKeysPerformanceKey["Unit"].asString();
+		if(!valuePerformanceKeysPerformanceKey["ValueFormat"].isNull())
+			performanceKeysObject.valueFormat = valuePerformanceKeysPerformanceKey["ValueFormat"].asString();
+		auto allPerformanceValuesNode = allPerformanceKeysNode["PerformanceValues"]["PerformanceValue"];
+		for (auto allPerformanceKeysNodePerformanceValuesPerformanceValue : allPerformanceValuesNode)
 		{
 			PerformanceKey::PerformanceValue performanceValuesObject;
-			if(!value["Value"].isNull())
-				performanceValuesObject.value = value["Value"].asString();
-			if(!value["Date"].isNull())
-				performanceValuesObject.date = value["Date"].asString();
+			if(!allPerformanceKeysNodePerformanceValuesPerformanceValue["Value"].isNull())
+				performanceValuesObject.value = allPerformanceKeysNodePerformanceValuesPerformanceValue["Value"].asString();
+			if(!allPerformanceKeysNodePerformanceValuesPerformanceValue["Date"].isNull())
+				performanceValuesObject.date = allPerformanceKeysNodePerformanceValuesPerformanceValue["Date"].asString();
 			performanceKeysObject.performanceValues.push_back(performanceValuesObject);
 		}
 		performanceKeys_.push_back(performanceKeysObject);

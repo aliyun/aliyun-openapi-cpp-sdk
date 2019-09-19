@@ -39,14 +39,14 @@ void DescribeLiveDomainMappingResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLiveDomainModels = value["LiveDomainModels"]["LiveDomainModel"];
-	for (auto value : allLiveDomainModels)
+	auto allLiveDomainModelsNode = value["LiveDomainModels"]["LiveDomainModel"];
+	for (auto valueLiveDomainModelsLiveDomainModel : allLiveDomainModelsNode)
 	{
 		LiveDomainModel liveDomainModelsObject;
-		if(!value["DomainName"].isNull())
-			liveDomainModelsObject.domainName = value["DomainName"].asString();
-		if(!value["Type"].isNull())
-			liveDomainModelsObject.type = value["Type"].asString();
+		if(!valueLiveDomainModelsLiveDomainModel["DomainName"].isNull())
+			liveDomainModelsObject.domainName = valueLiveDomainModelsLiveDomainModel["DomainName"].asString();
+		if(!valueLiveDomainModelsLiveDomainModel["Type"].isNull())
+			liveDomainModelsObject.type = valueLiveDomainModelsLiveDomainModel["Type"].asString();
 		liveDomainModels_.push_back(liveDomainModelsObject);
 	}
 

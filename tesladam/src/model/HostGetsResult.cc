@@ -39,26 +39,26 @@ void HostGetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["dataItem"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["dataItem"];
+	for (auto valueDatadataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!value["Hostname"].isNull())
-			dataObject.hostname = value["Hostname"].asString();
-		if(!value["Ip"].isNull())
-			dataObject.ip = value["Ip"].asString();
-		if(!value["AppCode"].isNull())
-			dataObject.appCode = value["AppCode"].asString();
-		if(!value["ClusterCode"].isNull())
-			dataObject.clusterCode = value["ClusterCode"].asString();
-		if(!value["SshStatus"].isNull())
-			dataObject.sshStatus = std::stoi(value["SshStatus"].asString());
-		if(!value["heartStatus"].isNull())
-			dataObject.heartStatus = std::stoi(value["heartStatus"].asString());
-		if(!value["HealthScoreLast"].isNull())
-			dataObject.healthScoreLast = std::stoi(value["HealthScoreLast"].asString());
-		if(!value["HealthReasonLast"].isNull())
-			dataObject.healthReasonLast = value["HealthReasonLast"].asString();
+		if(!valueDatadataItem["Hostname"].isNull())
+			dataObject.hostname = valueDatadataItem["Hostname"].asString();
+		if(!valueDatadataItem["Ip"].isNull())
+			dataObject.ip = valueDatadataItem["Ip"].asString();
+		if(!valueDatadataItem["AppCode"].isNull())
+			dataObject.appCode = valueDatadataItem["AppCode"].asString();
+		if(!valueDatadataItem["ClusterCode"].isNull())
+			dataObject.clusterCode = valueDatadataItem["ClusterCode"].asString();
+		if(!valueDatadataItem["SshStatus"].isNull())
+			dataObject.sshStatus = std::stoi(valueDatadataItem["SshStatus"].asString());
+		if(!valueDatadataItem["heartStatus"].isNull())
+			dataObject.heartStatus = std::stoi(valueDatadataItem["heartStatus"].asString());
+		if(!valueDatadataItem["HealthScoreLast"].isNull())
+			dataObject.healthScoreLast = std::stoi(valueDatadataItem["HealthScoreLast"].asString());
+		if(!valueDatadataItem["HealthReasonLast"].isNull())
+			dataObject.healthReasonLast = valueDatadataItem["HealthReasonLast"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Status"].isNull())

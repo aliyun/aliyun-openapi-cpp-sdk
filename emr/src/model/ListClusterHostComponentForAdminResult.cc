@@ -39,44 +39,44 @@ void ListClusterHostComponentForAdminResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allComponentList = value["ComponentList"]["Component"];
-	for (auto value : allComponentList)
+	auto allComponentListNode = value["ComponentList"]["Component"];
+	for (auto valueComponentListComponent : allComponentListNode)
 	{
 		Component componentListObject;
-		if(!value["ServiceName"].isNull())
-			componentListObject.serviceName = value["ServiceName"].asString();
-		if(!value["ServiceDisplayName"].isNull())
-			componentListObject.serviceDisplayName = value["ServiceDisplayName"].asString();
-		if(!value["ComponentName"].isNull())
-			componentListObject.componentName = value["ComponentName"].asString();
-		if(!value["ComponentDisplayName"].isNull())
-			componentListObject.componentDisplayName = value["ComponentDisplayName"].asString();
-		if(!value["Status"].isNull())
-			componentListObject.status = value["Status"].asString();
-		if(!value["NeedRestart"].isNull())
-			componentListObject.needRestart = value["NeedRestart"].asString() == "true";
-		if(!value["HostId"].isNull())
-			componentListObject.hostId = value["HostId"].asString();
-		if(!value["ServerStatus"].isNull())
-			componentListObject.serverStatus = value["ServerStatus"].asString();
-		if(!value["HostName"].isNull())
-			componentListObject.hostName = value["HostName"].asString();
-		if(!value["PublicIp"].isNull())
-			componentListObject.publicIp = value["PublicIp"].asString();
-		if(!value["PrivateIp"].isNull())
-			componentListObject.privateIp = value["PrivateIp"].asString();
-		if(!value["Role"].isNull())
-			componentListObject.role = value["Role"].asString();
-		if(!value["InstanceType"].isNull())
-			componentListObject.instanceType = value["InstanceType"].asString();
-		if(!value["Cpu"].isNull())
-			componentListObject.cpu = std::stoi(value["Cpu"].asString());
-		if(!value["Memory"].isNull())
-			componentListObject.memory = std::stoi(value["Memory"].asString());
-		if(!value["HostInstanceId"].isNull())
-			componentListObject.hostInstanceId = value["HostInstanceId"].asString();
-		if(!value["SerialNumber"].isNull())
-			componentListObject.serialNumber = value["SerialNumber"].asString();
+		if(!valueComponentListComponent["ServiceName"].isNull())
+			componentListObject.serviceName = valueComponentListComponent["ServiceName"].asString();
+		if(!valueComponentListComponent["ServiceDisplayName"].isNull())
+			componentListObject.serviceDisplayName = valueComponentListComponent["ServiceDisplayName"].asString();
+		if(!valueComponentListComponent["ComponentName"].isNull())
+			componentListObject.componentName = valueComponentListComponent["ComponentName"].asString();
+		if(!valueComponentListComponent["ComponentDisplayName"].isNull())
+			componentListObject.componentDisplayName = valueComponentListComponent["ComponentDisplayName"].asString();
+		if(!valueComponentListComponent["Status"].isNull())
+			componentListObject.status = valueComponentListComponent["Status"].asString();
+		if(!valueComponentListComponent["NeedRestart"].isNull())
+			componentListObject.needRestart = valueComponentListComponent["NeedRestart"].asString() == "true";
+		if(!valueComponentListComponent["HostId"].isNull())
+			componentListObject.hostId = valueComponentListComponent["HostId"].asString();
+		if(!valueComponentListComponent["ServerStatus"].isNull())
+			componentListObject.serverStatus = valueComponentListComponent["ServerStatus"].asString();
+		if(!valueComponentListComponent["HostName"].isNull())
+			componentListObject.hostName = valueComponentListComponent["HostName"].asString();
+		if(!valueComponentListComponent["PublicIp"].isNull())
+			componentListObject.publicIp = valueComponentListComponent["PublicIp"].asString();
+		if(!valueComponentListComponent["PrivateIp"].isNull())
+			componentListObject.privateIp = valueComponentListComponent["PrivateIp"].asString();
+		if(!valueComponentListComponent["Role"].isNull())
+			componentListObject.role = valueComponentListComponent["Role"].asString();
+		if(!valueComponentListComponent["InstanceType"].isNull())
+			componentListObject.instanceType = valueComponentListComponent["InstanceType"].asString();
+		if(!valueComponentListComponent["Cpu"].isNull())
+			componentListObject.cpu = std::stoi(valueComponentListComponent["Cpu"].asString());
+		if(!valueComponentListComponent["Memory"].isNull())
+			componentListObject.memory = std::stoi(valueComponentListComponent["Memory"].asString());
+		if(!valueComponentListComponent["HostInstanceId"].isNull())
+			componentListObject.hostInstanceId = valueComponentListComponent["HostInstanceId"].asString();
+		if(!valueComponentListComponent["SerialNumber"].isNull())
+			componentListObject.serialNumber = valueComponentListComponent["SerialNumber"].asString();
 		componentList_.push_back(componentListObject);
 	}
 	if(!value["PageNumber"].isNull())

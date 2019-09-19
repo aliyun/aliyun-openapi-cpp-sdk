@@ -39,14 +39,14 @@ void DetectImageLogosResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogos = value["Logos"]["LogosItem"];
-	for (auto value : allLogos)
+	auto allLogosNode = value["Logos"]["LogosItem"];
+	for (auto valueLogosLogosItem : allLogosNode)
 	{
 		LogosItem logosObject;
-		if(!value["LogoName"].isNull())
-			logosObject.logoName = value["LogoName"].asString();
-		if(!value["LogoConfidence"].isNull())
-			logosObject.logoConfidence = std::stof(value["LogoConfidence"].asString());
+		if(!valueLogosLogosItem["LogoName"].isNull())
+			logosObject.logoName = valueLogosLogosItem["LogoName"].asString();
+		if(!valueLogosLogosItem["LogoConfidence"].isNull())
+			logosObject.logoConfidence = std::stof(valueLogosLogosItem["LogoConfidence"].asString());
 		auto logoBoundaryNode = value["LogoBoundary"];
 		if(!logoBoundaryNode["Width"].isNull())
 			logosObject.logoBoundary.width = std::stoi(logoBoundaryNode["Width"].asString());

@@ -39,22 +39,22 @@ void DescribeVpcAccessesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVpcAccessAttributes = value["VpcAccessAttributes"]["VpcAccessAttribute"];
-	for (auto value : allVpcAccessAttributes)
+	auto allVpcAccessAttributesNode = value["VpcAccessAttributes"]["VpcAccessAttribute"];
+	for (auto valueVpcAccessAttributesVpcAccessAttribute : allVpcAccessAttributesNode)
 	{
 		VpcAccessAttribute vpcAccessAttributesObject;
-		if(!value["VpcId"].isNull())
-			vpcAccessAttributesObject.vpcId = value["VpcId"].asString();
-		if(!value["InstanceId"].isNull())
-			vpcAccessAttributesObject.instanceId = value["InstanceId"].asString();
-		if(!value["CreatedTime"].isNull())
-			vpcAccessAttributesObject.createdTime = value["CreatedTime"].asString();
-		if(!value["Port"].isNull())
-			vpcAccessAttributesObject.port = std::stoi(value["Port"].asString());
-		if(!value["RegionId"].isNull())
-			vpcAccessAttributesObject.regionId = value["RegionId"].asString();
-		if(!value["Name"].isNull())
-			vpcAccessAttributesObject.name = value["Name"].asString();
+		if(!valueVpcAccessAttributesVpcAccessAttribute["VpcId"].isNull())
+			vpcAccessAttributesObject.vpcId = valueVpcAccessAttributesVpcAccessAttribute["VpcId"].asString();
+		if(!valueVpcAccessAttributesVpcAccessAttribute["InstanceId"].isNull())
+			vpcAccessAttributesObject.instanceId = valueVpcAccessAttributesVpcAccessAttribute["InstanceId"].asString();
+		if(!valueVpcAccessAttributesVpcAccessAttribute["CreatedTime"].isNull())
+			vpcAccessAttributesObject.createdTime = valueVpcAccessAttributesVpcAccessAttribute["CreatedTime"].asString();
+		if(!valueVpcAccessAttributesVpcAccessAttribute["Port"].isNull())
+			vpcAccessAttributesObject.port = std::stoi(valueVpcAccessAttributesVpcAccessAttribute["Port"].asString());
+		if(!valueVpcAccessAttributesVpcAccessAttribute["RegionId"].isNull())
+			vpcAccessAttributesObject.regionId = valueVpcAccessAttributesVpcAccessAttribute["RegionId"].asString();
+		if(!valueVpcAccessAttributesVpcAccessAttribute["Name"].isNull())
+			vpcAccessAttributesObject.name = valueVpcAccessAttributesVpcAccessAttribute["Name"].asString();
 		vpcAccessAttributes_.push_back(vpcAccessAttributesObject);
 	}
 	if(!value["TotalCount"].isNull())

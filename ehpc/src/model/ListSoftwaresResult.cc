@@ -39,34 +39,34 @@ void ListSoftwaresResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSoftwares = value["Softwares"]["SoftwareInfo"];
-	for (auto value : allSoftwares)
+	auto allSoftwaresNode = value["Softwares"]["SoftwareInfo"];
+	for (auto valueSoftwaresSoftwareInfo : allSoftwaresNode)
 	{
 		SoftwareInfo softwaresObject;
-		if(!value["EhpcVersion"].isNull())
-			softwaresObject.ehpcVersion = value["EhpcVersion"].asString();
-		if(!value["OsTag"].isNull())
-			softwaresObject.osTag = value["OsTag"].asString();
-		if(!value["SchedulerType"].isNull())
-			softwaresObject.schedulerType = value["SchedulerType"].asString();
-		if(!value["SchedulerVersion"].isNull())
-			softwaresObject.schedulerVersion = value["SchedulerVersion"].asString();
-		if(!value["AccountType"].isNull())
-			softwaresObject.accountType = value["AccountType"].asString();
-		if(!value["AccountVersion"].isNull())
-			softwaresObject.accountVersion = value["AccountVersion"].asString();
-		auto allApplications = value["Applications"]["ApplicationInfo"];
-		for (auto value : allApplications)
+		if(!valueSoftwaresSoftwareInfo["EhpcVersion"].isNull())
+			softwaresObject.ehpcVersion = valueSoftwaresSoftwareInfo["EhpcVersion"].asString();
+		if(!valueSoftwaresSoftwareInfo["OsTag"].isNull())
+			softwaresObject.osTag = valueSoftwaresSoftwareInfo["OsTag"].asString();
+		if(!valueSoftwaresSoftwareInfo["SchedulerType"].isNull())
+			softwaresObject.schedulerType = valueSoftwaresSoftwareInfo["SchedulerType"].asString();
+		if(!valueSoftwaresSoftwareInfo["SchedulerVersion"].isNull())
+			softwaresObject.schedulerVersion = valueSoftwaresSoftwareInfo["SchedulerVersion"].asString();
+		if(!valueSoftwaresSoftwareInfo["AccountType"].isNull())
+			softwaresObject.accountType = valueSoftwaresSoftwareInfo["AccountType"].asString();
+		if(!valueSoftwaresSoftwareInfo["AccountVersion"].isNull())
+			softwaresObject.accountVersion = valueSoftwaresSoftwareInfo["AccountVersion"].asString();
+		auto allApplicationsNode = allSoftwaresNode["Applications"]["ApplicationInfo"];
+		for (auto allSoftwaresNodeApplicationsApplicationInfo : allApplicationsNode)
 		{
 			SoftwareInfo::ApplicationInfo applicationsObject;
-			if(!value["Tag"].isNull())
-				applicationsObject.tag = value["Tag"].asString();
-			if(!value["Name"].isNull())
-				applicationsObject.name = value["Name"].asString();
-			if(!value["Version"].isNull())
-				applicationsObject.version = value["Version"].asString();
-			if(!value["Required"].isNull())
-				applicationsObject.required = value["Required"].asString() == "true";
+			if(!allSoftwaresNodeApplicationsApplicationInfo["Tag"].isNull())
+				applicationsObject.tag = allSoftwaresNodeApplicationsApplicationInfo["Tag"].asString();
+			if(!allSoftwaresNodeApplicationsApplicationInfo["Name"].isNull())
+				applicationsObject.name = allSoftwaresNodeApplicationsApplicationInfo["Name"].asString();
+			if(!allSoftwaresNodeApplicationsApplicationInfo["Version"].isNull())
+				applicationsObject.version = allSoftwaresNodeApplicationsApplicationInfo["Version"].asString();
+			if(!allSoftwaresNodeApplicationsApplicationInfo["Required"].isNull())
+				applicationsObject.required = allSoftwaresNodeApplicationsApplicationInfo["Required"].asString() == "true";
 			softwaresObject.applications.push_back(applicationsObject);
 		}
 		softwares_.push_back(softwaresObject);

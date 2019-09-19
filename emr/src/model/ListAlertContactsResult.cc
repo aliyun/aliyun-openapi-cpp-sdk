@@ -39,24 +39,24 @@ void ListAlertContactsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAlertContactList = value["AlertContactList"]["AlertContact"];
-	for (auto value : allAlertContactList)
+	auto allAlertContactListNode = value["AlertContactList"]["AlertContact"];
+	for (auto valueAlertContactListAlertContact : allAlertContactListNode)
 	{
 		AlertContact alertContactListObject;
-		if(!value["Id"].isNull())
-			alertContactListObject.id = std::stol(value["Id"].asString());
-		if(!value["GmtCreate"].isNull())
-			alertContactListObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			alertContactListObject.gmtModified = value["GmtModified"].asString();
-		if(!value["BizId"].isNull())
-			alertContactListObject.bizId = value["BizId"].asString();
-		if(!value["Name"].isNull())
-			alertContactListObject.name = value["Name"].asString();
-		if(!value["Email"].isNull())
-			alertContactListObject.email = value["Email"].asString();
-		if(!value["PhoneNumber"].isNull())
-			alertContactListObject.phoneNumber = value["PhoneNumber"].asString();
+		if(!valueAlertContactListAlertContact["Id"].isNull())
+			alertContactListObject.id = std::stol(valueAlertContactListAlertContact["Id"].asString());
+		if(!valueAlertContactListAlertContact["GmtCreate"].isNull())
+			alertContactListObject.gmtCreate = valueAlertContactListAlertContact["GmtCreate"].asString();
+		if(!valueAlertContactListAlertContact["GmtModified"].isNull())
+			alertContactListObject.gmtModified = valueAlertContactListAlertContact["GmtModified"].asString();
+		if(!valueAlertContactListAlertContact["BizId"].isNull())
+			alertContactListObject.bizId = valueAlertContactListAlertContact["BizId"].asString();
+		if(!valueAlertContactListAlertContact["Name"].isNull())
+			alertContactListObject.name = valueAlertContactListAlertContact["Name"].asString();
+		if(!valueAlertContactListAlertContact["Email"].isNull())
+			alertContactListObject.email = valueAlertContactListAlertContact["Email"].asString();
+		if(!valueAlertContactListAlertContact["PhoneNumber"].isNull())
+			alertContactListObject.phoneNumber = valueAlertContactListAlertContact["PhoneNumber"].asString();
 		alertContactList_.push_back(alertContactListObject);
 	}
 

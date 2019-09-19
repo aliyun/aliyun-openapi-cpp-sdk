@@ -39,16 +39,16 @@ void DescribeTransferEventCountsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTransferEventCountList = value["TransferEventCountList"]["Transfer"];
-	for (auto value : allTransferEventCountList)
+	auto allTransferEventCountListNode = value["TransferEventCountList"]["Transfer"];
+	for (auto valueTransferEventCountListTransfer : allTransferEventCountListNode)
 	{
 		Transfer transferEventCountListObject;
-		if(!value["TotalCount"].isNull())
-			transferEventCountListObject.totalCount = std::stol(value["TotalCount"].asString());
-		if(!value["ProductCode"].isNull())
-			transferEventCountListObject.productCode = value["ProductCode"].asString();
-		if(!value["TargetProductCode"].isNull())
-			transferEventCountListObject.targetProductCode = value["TargetProductCode"].asString();
+		if(!valueTransferEventCountListTransfer["TotalCount"].isNull())
+			transferEventCountListObject.totalCount = std::stol(valueTransferEventCountListTransfer["TotalCount"].asString());
+		if(!valueTransferEventCountListTransfer["ProductCode"].isNull())
+			transferEventCountListObject.productCode = valueTransferEventCountListTransfer["ProductCode"].asString();
+		if(!valueTransferEventCountListTransfer["TargetProductCode"].isNull())
+			transferEventCountListObject.targetProductCode = valueTransferEventCountListTransfer["TargetProductCode"].asString();
 		transferEventCountList_.push_back(transferEventCountListObject);
 	}
 

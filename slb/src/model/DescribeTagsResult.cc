@@ -39,16 +39,16 @@ void DescribeTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTagSets = value["TagSets"]["TagSet"];
-	for (auto value : allTagSets)
+	auto allTagSetsNode = value["TagSets"]["TagSet"];
+	for (auto valueTagSetsTagSet : allTagSetsNode)
 	{
 		TagSet tagSetsObject;
-		if(!value["TagKey"].isNull())
-			tagSetsObject.tagKey = value["TagKey"].asString();
-		if(!value["TagValue"].isNull())
-			tagSetsObject.tagValue = value["TagValue"].asString();
-		if(!value["InstanceCount"].isNull())
-			tagSetsObject.instanceCount = std::stoi(value["InstanceCount"].asString());
+		if(!valueTagSetsTagSet["TagKey"].isNull())
+			tagSetsObject.tagKey = valueTagSetsTagSet["TagKey"].asString();
+		if(!valueTagSetsTagSet["TagValue"].isNull())
+			tagSetsObject.tagValue = valueTagSetsTagSet["TagValue"].asString();
+		if(!valueTagSetsTagSet["InstanceCount"].isNull())
+			tagSetsObject.instanceCount = std::stoi(valueTagSetsTagSet["InstanceCount"].asString());
 		tagSets_.push_back(tagSetsObject);
 	}
 	if(!value["PageSize"].isNull())

@@ -42,34 +42,34 @@ void QueryCustomerSaleInfoResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["LastUpdate"].isNull())
 		data_.lastUpdate = dataNode["LastUpdate"].asString();
-	auto allClusters = value["Clusters"]["cluster"];
-	for (auto value : allClusters)
+	auto allClustersNode = dataNode["Clusters"]["cluster"];
+	for (auto dataNodeClusterscluster : allClustersNode)
 	{
 		Data::Cluster clusterObject;
-		if(!value["Cluster"].isNull())
-			clusterObject.cluster = value["Cluster"].asString();
-		if(!value["Region"].isNull())
-			clusterObject.region = value["Region"].asString();
-		if(!value["MachineRoom"].isNull())
-			clusterObject.machineRoom = value["MachineRoom"].asString();
-		auto allSaleInfos = value["SaleInfos"]["saleInfo"];
-		for (auto value : allSaleInfos)
+		if(!dataNodeClusterscluster["Cluster"].isNull())
+			clusterObject.cluster = dataNodeClusterscluster["Cluster"].asString();
+		if(!dataNodeClusterscluster["Region"].isNull())
+			clusterObject.region = dataNodeClusterscluster["Region"].asString();
+		if(!dataNodeClusterscluster["MachineRoom"].isNull())
+			clusterObject.machineRoom = dataNodeClusterscluster["MachineRoom"].asString();
+		auto allSaleInfosNode = allClustersNode["SaleInfos"]["saleInfo"];
+		for (auto allClustersNodeSaleInfossaleInfo : allSaleInfosNode)
 		{
 			Data::Cluster::SaleInfo saleInfosObject;
-			if(!value["SaleMode"].isNull())
-				saleInfosObject.saleMode = value["SaleMode"].asString();
-			if(!value["Uid"].isNull())
-				saleInfosObject.uid = value["Uid"].asString();
-			if(!value["Mem"].isNull())
-				saleInfosObject.mem = std::stol(value["Mem"].asString());
-			if(!value["Cpu"].isNull())
-				saleInfosObject.cpu = std::stol(value["Cpu"].asString());
-			if(!value["BizCategory"].isNull())
-				saleInfosObject.bizCategory = value["BizCategory"].asString();
-			if(!value["Owner"].isNull())
-				saleInfosObject.owner = value["Owner"].asString();
-			if(!value["QueryDate"].isNull())
-				saleInfosObject.queryDate = value["QueryDate"].asString();
+			if(!allClustersNodeSaleInfossaleInfo["SaleMode"].isNull())
+				saleInfosObject.saleMode = allClustersNodeSaleInfossaleInfo["SaleMode"].asString();
+			if(!allClustersNodeSaleInfossaleInfo["Uid"].isNull())
+				saleInfosObject.uid = allClustersNodeSaleInfossaleInfo["Uid"].asString();
+			if(!allClustersNodeSaleInfossaleInfo["Mem"].isNull())
+				saleInfosObject.mem = std::stol(allClustersNodeSaleInfossaleInfo["Mem"].asString());
+			if(!allClustersNodeSaleInfossaleInfo["Cpu"].isNull())
+				saleInfosObject.cpu = std::stol(allClustersNodeSaleInfossaleInfo["Cpu"].asString());
+			if(!allClustersNodeSaleInfossaleInfo["BizCategory"].isNull())
+				saleInfosObject.bizCategory = allClustersNodeSaleInfossaleInfo["BizCategory"].asString();
+			if(!allClustersNodeSaleInfossaleInfo["Owner"].isNull())
+				saleInfosObject.owner = allClustersNodeSaleInfossaleInfo["Owner"].asString();
+			if(!allClustersNodeSaleInfossaleInfo["QueryDate"].isNull())
+				saleInfosObject.queryDate = allClustersNodeSaleInfossaleInfo["QueryDate"].asString();
 			clusterObject.saleInfos.push_back(saleInfosObject);
 		}
 		data_.clusters.push_back(clusterObject);

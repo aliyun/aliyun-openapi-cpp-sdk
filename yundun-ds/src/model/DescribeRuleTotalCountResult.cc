@@ -42,14 +42,14 @@ void DescribeRuleTotalCountResult::parse(const std::string &payload)
 	auto ruleCountNode = value["RuleCount"];
 	if(!ruleCountNode["TotalCount"].isNull())
 		ruleCount_.totalCount = std::stol(ruleCountNode["TotalCount"].asString());
-	auto allCategoryCountList = value["CategoryCountList"]["CategoryCount"];
-	for (auto value : allCategoryCountList)
+	auto allCategoryCountListNode = ruleCountNode["CategoryCountList"]["CategoryCount"];
+	for (auto ruleCountNodeCategoryCountListCategoryCount : allCategoryCountListNode)
 	{
 		RuleCount::CategoryCount categoryCountObject;
-		if(!value["Name"].isNull())
-			categoryCountObject.name = value["Name"].asString();
-		if(!value["Count"].isNull())
-			categoryCountObject.count = value["Count"].asString();
+		if(!ruleCountNodeCategoryCountListCategoryCount["Name"].isNull())
+			categoryCountObject.name = ruleCountNodeCategoryCountListCategoryCount["Name"].asString();
+		if(!ruleCountNodeCategoryCountListCategoryCount["Count"].isNull())
+			categoryCountObject.count = ruleCountNodeCategoryCountListCategoryCount["Count"].asString();
 		ruleCount_.categoryCountList.push_back(categoryCountObject);
 	}
 

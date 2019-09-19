@@ -39,22 +39,22 @@ void DescribeResetRecordListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataList = value["DataList"]["Data"];
-	for (auto value : allDataList)
+	auto allDataListNode = value["DataList"]["Data"];
+	for (auto valueDataListData : allDataListNode)
 	{
 		Data dataListObject;
-		if(!value["PunishType"].isNull())
-			dataListObject.punishType = value["PunishType"].asString();
-		if(!value["DstIP"].isNull())
-			dataListObject.dstIP = value["DstIP"].asString();
-		if(!value["PunishResult"].isNull())
-			dataListObject.punishResult = value["PunishResult"].asString();
-		if(!value["DstPort"].isNull())
-			dataListObject.dstPort = std::stoi(value["DstPort"].asString());
-		if(!value["SrcIP"].isNull())
-			dataListObject.srcIP = value["SrcIP"].asString();
-		if(!value["PunishCount"].isNull())
-			dataListObject.punishCount = std::stoi(value["PunishCount"].asString());
+		if(!valueDataListData["PunishType"].isNull())
+			dataListObject.punishType = valueDataListData["PunishType"].asString();
+		if(!valueDataListData["DstIP"].isNull())
+			dataListObject.dstIP = valueDataListData["DstIP"].asString();
+		if(!valueDataListData["PunishResult"].isNull())
+			dataListObject.punishResult = valueDataListData["PunishResult"].asString();
+		if(!valueDataListData["DstPort"].isNull())
+			dataListObject.dstPort = std::stoi(valueDataListData["DstPort"].asString());
+		if(!valueDataListData["SrcIP"].isNull())
+			dataListObject.srcIP = valueDataListData["SrcIP"].asString();
+		if(!valueDataListData["PunishCount"].isNull())
+			dataListObject.punishCount = std::stoi(valueDataListData["PunishCount"].asString());
 		dataList_.push_back(dataListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

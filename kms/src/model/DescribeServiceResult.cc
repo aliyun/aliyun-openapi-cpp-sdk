@@ -39,12 +39,12 @@ void DescribeServiceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProtectionLevels = value["ProtectionLevels"]["ProtectionLevel"];
-	for (auto value : allProtectionLevels)
+	auto allProtectionLevelsNode = value["ProtectionLevels"]["ProtectionLevel"];
+	for (auto valueProtectionLevelsProtectionLevel : allProtectionLevelsNode)
 	{
 		ProtectionLevel protectionLevelsObject;
-		if(!value["Type"].isNull())
-			protectionLevelsObject.type = value["Type"].asString();
+		if(!valueProtectionLevelsProtectionLevel["Type"].isNull())
+			protectionLevelsObject.type = valueProtectionLevelsProtectionLevel["Type"].asString();
 		protectionLevels_.push_back(protectionLevelsObject);
 	}
 

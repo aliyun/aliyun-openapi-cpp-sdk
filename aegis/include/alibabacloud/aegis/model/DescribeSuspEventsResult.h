@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct WarningSummary
 				{
+					std::string uniqueInfo;
 					std::string alarmEventName;
 					int eventStatus;
 					std::string saleVersion;

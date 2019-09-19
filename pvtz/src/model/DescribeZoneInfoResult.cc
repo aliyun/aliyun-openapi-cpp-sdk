@@ -39,20 +39,20 @@ void DescribeZoneInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBindVpcs = value["BindVpcs"]["Vpc"];
-	for (auto value : allBindVpcs)
+	auto allBindVpcsNode = value["BindVpcs"]["Vpc"];
+	for (auto valueBindVpcsVpc : allBindVpcsNode)
 	{
 		Vpc bindVpcsObject;
-		if(!value["ReionId"].isNull())
-			bindVpcsObject.reionId = value["ReionId"].asString();
-		if(!value["VpcId"].isNull())
-			bindVpcsObject.vpcId = value["VpcId"].asString();
-		if(!value["VpcName"].isNull())
-			bindVpcsObject.vpcName = value["VpcName"].asString();
-		if(!value["RegionName"].isNull())
-			bindVpcsObject.regionName = value["RegionName"].asString();
-		if(!value["RegionId"].isNull())
-			bindVpcsObject.regionId = value["RegionId"].asString();
+		if(!valueBindVpcsVpc["ReionId"].isNull())
+			bindVpcsObject.reionId = valueBindVpcsVpc["ReionId"].asString();
+		if(!valueBindVpcsVpc["VpcId"].isNull())
+			bindVpcsObject.vpcId = valueBindVpcsVpc["VpcId"].asString();
+		if(!valueBindVpcsVpc["VpcName"].isNull())
+			bindVpcsObject.vpcName = valueBindVpcsVpc["VpcName"].asString();
+		if(!valueBindVpcsVpc["RegionName"].isNull())
+			bindVpcsObject.regionName = valueBindVpcsVpc["RegionName"].asString();
+		if(!valueBindVpcsVpc["RegionId"].isNull())
+			bindVpcsObject.regionId = valueBindVpcsVpc["RegionId"].asString();
 		bindVpcs_.push_back(bindVpcsObject);
 	}
 	if(!value["ZoneId"].isNull())

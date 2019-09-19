@@ -39,24 +39,24 @@ void DescribeLogItemsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogsList = value["LogsList"]["LogsListItem"];
-	for (auto value : allLogsList)
+	auto allLogsListNode = value["LogsList"]["LogsListItem"];
+	for (auto valueLogsListLogsListItem : allLogsListNode)
 	{
 		LogsListItem logsListObject;
-		if(!value["MLogTime"].isNull())
-			logsListObject.mLogTime = value["MLogTime"].asString();
-		if(!value["LogSourceId"].isNull())
-			logsListObject.logSourceId = value["LogSourceId"].asString();
-		if(!value["LogSource"].isNull())
-			logsListObject.logSource = value["LogSource"].asString();
-		auto allMContents = value["MContents"]["MContentsItem"];
-		for (auto value : allMContents)
+		if(!valueLogsListLogsListItem["MLogTime"].isNull())
+			logsListObject.mLogTime = valueLogsListLogsListItem["MLogTime"].asString();
+		if(!valueLogsListLogsListItem["LogSourceId"].isNull())
+			logsListObject.logSourceId = valueLogsListLogsListItem["LogSourceId"].asString();
+		if(!valueLogsListLogsListItem["LogSource"].isNull())
+			logsListObject.logSource = valueLogsListLogsListItem["LogSource"].asString();
+		auto allMContentsNode = allLogsListNode["MContents"]["MContentsItem"];
+		for (auto allLogsListNodeMContentsMContentsItem : allMContentsNode)
 		{
 			LogsListItem::MContentsItem mContentsObject;
-			if(!value["MKey"].isNull())
-				mContentsObject.mKey = value["MKey"].asString();
-			if(!value["MValue"].isNull())
-				mContentsObject.mValue = value["MValue"].asString();
+			if(!allLogsListNodeMContentsMContentsItem["MKey"].isNull())
+				mContentsObject.mKey = allLogsListNodeMContentsMContentsItem["MKey"].asString();
+			if(!allLogsListNodeMContentsMContentsItem["MValue"].isNull())
+				mContentsObject.mValue = allLogsListNodeMContentsMContentsItem["MValue"].asString();
 			logsListObject.mContents.push_back(mContentsObject);
 		}
 		logsList_.push_back(logsListObject);

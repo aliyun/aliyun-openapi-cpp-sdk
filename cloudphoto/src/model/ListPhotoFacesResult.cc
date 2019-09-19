@@ -39,16 +39,16 @@ void ListPhotoFacesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFaces = value["Faces"]["Face"];
-	for (auto value : allFaces)
+	auto allFacesNode = value["Faces"]["Face"];
+	for (auto valueFacesFace : allFacesNode)
 	{
 		Face facesObject;
-		if(!value["FaceId"].isNull())
-			facesObject.faceId = std::stol(value["FaceId"].asString());
-		if(!value["FaceIdStr"].isNull())
-			facesObject.faceIdStr = value["FaceIdStr"].asString();
-		if(!value["FaceName"].isNull())
-			facesObject.faceName = value["FaceName"].asString();
+		if(!valueFacesFace["FaceId"].isNull())
+			facesObject.faceId = std::stol(valueFacesFace["FaceId"].asString());
+		if(!valueFacesFace["FaceIdStr"].isNull())
+			facesObject.faceIdStr = valueFacesFace["FaceIdStr"].asString();
+		if(!valueFacesFace["FaceName"].isNull())
+			facesObject.faceName = valueFacesFace["FaceName"].asString();
 		auto allAxis = value["Axis"]["Axis"];
 		for (auto value : allAxis)
 			facesObject.axis.push_back(value.asString());

@@ -39,72 +39,72 @@ void DescribePerDateDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataView = value["DataView"]["dataViewItem"];
-	for (auto value : allDataView)
+	auto allDataViewNode = value["DataView"]["dataViewItem"];
+	for (auto valueDataViewdataViewItem : allDataViewNode)
 	{
 		DataViewItem dataViewObject;
-		if(!value["DataTime"].isNull())
-			dataViewObject.dataTime = value["DataTime"].asString();
-		if(!value["CallTimes"].isNull())
-			dataViewObject.callTimes = std::stol(value["CallTimes"].asString());
-		if(!value["TotalHit"].isNull())
-			dataViewObject.totalHit = std::stol(value["TotalHit"].asString());
-		if(!value["HitRate"].isNull())
-			dataViewObject.hitRate = std::stol(value["HitRate"].asString());
-		if(!value["IsGreyPhone"].isNull())
-			dataViewObject.isGreyPhone = std::stol(value["IsGreyPhone"].asString());
-		if(!value["IsBlackPhone"].isNull())
-			dataViewObject.isBlackPhone = std::stol(value["IsBlackPhone"].asString());
-		if(!value["IsVirtualOperator"].isNull())
-			dataViewObject.isVirtualOperator = std::stol(value["IsVirtualOperator"].asString());
-		if(!value["IsOpenCommonPort1d"].isNull())
-			dataViewObject.isOpenCommonPort1d = std::stol(value["IsOpenCommonPort1d"].asString());
-		if(!value["IsOpenCommonPort7d"].isNull())
-			dataViewObject.isOpenCommonPort7d = std::stol(value["IsOpenCommonPort7d"].asString());
-		if(!value["IsOpenCommonPort30d"].isNull())
-			dataViewObject.isOpenCommonPort30d = std::stol(value["IsOpenCommonPort30d"].asString());
-		if(!value["IsCheatFlow1d"].isNull())
-			dataViewObject.isCheatFlow1d = std::stol(value["IsCheatFlow1d"].asString());
-		if(!value["IsCheatFlow7d"].isNull())
-			dataViewObject.isCheatFlow7d = std::stol(value["IsCheatFlow7d"].asString());
-		if(!value["IsCheatFlow30d"].isNull())
-			dataViewObject.isCheatFlow30d = std::stol(value["IsCheatFlow30d"].asString());
-		if(!value["IsProxy1d"].isNull())
-			dataViewObject.isProxy1d = std::stol(value["IsProxy1d"].asString());
-		if(!value["IsProxy7d"].isNull())
-			dataViewObject.isProxy7d = std::stol(value["IsProxy7d"].asString());
-		if(!value["IsProxy30d"].isNull())
-			dataViewObject.isProxy30d = std::stol(value["IsProxy30d"].asString());
-		if(!value["IsHiJack1d"].isNull())
-			dataViewObject.isHiJack1d = std::stol(value["IsHiJack1d"].asString());
-		if(!value["IsHiJack7d"].isNull())
-			dataViewObject.isHiJack7d = std::stol(value["IsHiJack7d"].asString());
-		if(!value["IsHiJack30d"].isNull())
-			dataViewObject.isHiJack30d = std::stol(value["IsHiJack30d"].asString());
-		if(!value["IsC21d"].isNull())
-			dataViewObject.isC21d = std::stol(value["IsC21d"].asString());
-		if(!value["IsC27d"].isNull())
-			dataViewObject.isC27d = std::stol(value["IsC27d"].asString());
-		if(!value["IsC230d"].isNull())
-			dataViewObject.isC230d = std::stol(value["IsC230d"].asString());
-		if(!value["IsBotnet1d"].isNull())
-			dataViewObject.isBotnet1d = std::stol(value["IsBotnet1d"].asString());
-		if(!value["IsBotnet7d"].isNull())
-			dataViewObject.isBotnet7d = std::stol(value["IsBotnet7d"].asString());
-		if(!value["IsBotnet30d"].isNull())
-			dataViewObject.isBotnet30d = std::stol(value["IsBotnet30d"].asString());
-		if(!value["IsNetAttack1d"].isNull())
-			dataViewObject.isNetAttack1d = std::stol(value["IsNetAttack1d"].asString());
-		if(!value["IsNetAttack7d"].isNull())
-			dataViewObject.isNetAttack7d = std::stol(value["IsNetAttack7d"].asString());
-		if(!value["IsNetAttack30d"].isNull())
-			dataViewObject.isNetAttack30d = std::stol(value["IsNetAttack30d"].asString());
-		if(!value["IsBlackCampaign1d"].isNull())
-			dataViewObject.isBlackCampaign1d = std::stol(value["IsBlackCampaign1d"].asString());
-		if(!value["IsBlackCampaign7d"].isNull())
-			dataViewObject.isBlackCampaign7d = std::stol(value["IsBlackCampaign7d"].asString());
-		if(!value["IsBlackCampaign30d"].isNull())
-			dataViewObject.isBlackCampaign30d = std::stol(value["IsBlackCampaign30d"].asString());
+		if(!valueDataViewdataViewItem["DataTime"].isNull())
+			dataViewObject.dataTime = valueDataViewdataViewItem["DataTime"].asString();
+		if(!valueDataViewdataViewItem["CallTimes"].isNull())
+			dataViewObject.callTimes = std::stol(valueDataViewdataViewItem["CallTimes"].asString());
+		if(!valueDataViewdataViewItem["TotalHit"].isNull())
+			dataViewObject.totalHit = std::stol(valueDataViewdataViewItem["TotalHit"].asString());
+		if(!valueDataViewdataViewItem["HitRate"].isNull())
+			dataViewObject.hitRate = std::stol(valueDataViewdataViewItem["HitRate"].asString());
+		if(!valueDataViewdataViewItem["IsGreyPhone"].isNull())
+			dataViewObject.isGreyPhone = std::stol(valueDataViewdataViewItem["IsGreyPhone"].asString());
+		if(!valueDataViewdataViewItem["IsBlackPhone"].isNull())
+			dataViewObject.isBlackPhone = std::stol(valueDataViewdataViewItem["IsBlackPhone"].asString());
+		if(!valueDataViewdataViewItem["IsVirtualOperator"].isNull())
+			dataViewObject.isVirtualOperator = std::stol(valueDataViewdataViewItem["IsVirtualOperator"].asString());
+		if(!valueDataViewdataViewItem["IsOpenCommonPort1d"].isNull())
+			dataViewObject.isOpenCommonPort1d = std::stol(valueDataViewdataViewItem["IsOpenCommonPort1d"].asString());
+		if(!valueDataViewdataViewItem["IsOpenCommonPort7d"].isNull())
+			dataViewObject.isOpenCommonPort7d = std::stol(valueDataViewdataViewItem["IsOpenCommonPort7d"].asString());
+		if(!valueDataViewdataViewItem["IsOpenCommonPort30d"].isNull())
+			dataViewObject.isOpenCommonPort30d = std::stol(valueDataViewdataViewItem["IsOpenCommonPort30d"].asString());
+		if(!valueDataViewdataViewItem["IsCheatFlow1d"].isNull())
+			dataViewObject.isCheatFlow1d = std::stol(valueDataViewdataViewItem["IsCheatFlow1d"].asString());
+		if(!valueDataViewdataViewItem["IsCheatFlow7d"].isNull())
+			dataViewObject.isCheatFlow7d = std::stol(valueDataViewdataViewItem["IsCheatFlow7d"].asString());
+		if(!valueDataViewdataViewItem["IsCheatFlow30d"].isNull())
+			dataViewObject.isCheatFlow30d = std::stol(valueDataViewdataViewItem["IsCheatFlow30d"].asString());
+		if(!valueDataViewdataViewItem["IsProxy1d"].isNull())
+			dataViewObject.isProxy1d = std::stol(valueDataViewdataViewItem["IsProxy1d"].asString());
+		if(!valueDataViewdataViewItem["IsProxy7d"].isNull())
+			dataViewObject.isProxy7d = std::stol(valueDataViewdataViewItem["IsProxy7d"].asString());
+		if(!valueDataViewdataViewItem["IsProxy30d"].isNull())
+			dataViewObject.isProxy30d = std::stol(valueDataViewdataViewItem["IsProxy30d"].asString());
+		if(!valueDataViewdataViewItem["IsHiJack1d"].isNull())
+			dataViewObject.isHiJack1d = std::stol(valueDataViewdataViewItem["IsHiJack1d"].asString());
+		if(!valueDataViewdataViewItem["IsHiJack7d"].isNull())
+			dataViewObject.isHiJack7d = std::stol(valueDataViewdataViewItem["IsHiJack7d"].asString());
+		if(!valueDataViewdataViewItem["IsHiJack30d"].isNull())
+			dataViewObject.isHiJack30d = std::stol(valueDataViewdataViewItem["IsHiJack30d"].asString());
+		if(!valueDataViewdataViewItem["IsC21d"].isNull())
+			dataViewObject.isC21d = std::stol(valueDataViewdataViewItem["IsC21d"].asString());
+		if(!valueDataViewdataViewItem["IsC27d"].isNull())
+			dataViewObject.isC27d = std::stol(valueDataViewdataViewItem["IsC27d"].asString());
+		if(!valueDataViewdataViewItem["IsC230d"].isNull())
+			dataViewObject.isC230d = std::stol(valueDataViewdataViewItem["IsC230d"].asString());
+		if(!valueDataViewdataViewItem["IsBotnet1d"].isNull())
+			dataViewObject.isBotnet1d = std::stol(valueDataViewdataViewItem["IsBotnet1d"].asString());
+		if(!valueDataViewdataViewItem["IsBotnet7d"].isNull())
+			dataViewObject.isBotnet7d = std::stol(valueDataViewdataViewItem["IsBotnet7d"].asString());
+		if(!valueDataViewdataViewItem["IsBotnet30d"].isNull())
+			dataViewObject.isBotnet30d = std::stol(valueDataViewdataViewItem["IsBotnet30d"].asString());
+		if(!valueDataViewdataViewItem["IsNetAttack1d"].isNull())
+			dataViewObject.isNetAttack1d = std::stol(valueDataViewdataViewItem["IsNetAttack1d"].asString());
+		if(!valueDataViewdataViewItem["IsNetAttack7d"].isNull())
+			dataViewObject.isNetAttack7d = std::stol(valueDataViewdataViewItem["IsNetAttack7d"].asString());
+		if(!valueDataViewdataViewItem["IsNetAttack30d"].isNull())
+			dataViewObject.isNetAttack30d = std::stol(valueDataViewdataViewItem["IsNetAttack30d"].asString());
+		if(!valueDataViewdataViewItem["IsBlackCampaign1d"].isNull())
+			dataViewObject.isBlackCampaign1d = std::stol(valueDataViewdataViewItem["IsBlackCampaign1d"].asString());
+		if(!valueDataViewdataViewItem["IsBlackCampaign7d"].isNull())
+			dataViewObject.isBlackCampaign7d = std::stol(valueDataViewdataViewItem["IsBlackCampaign7d"].asString());
+		if(!valueDataViewdataViewItem["IsBlackCampaign30d"].isNull())
+			dataViewObject.isBlackCampaign30d = std::stol(valueDataViewdataViewItem["IsBlackCampaign30d"].asString());
 		dataView_.push_back(dataViewObject);
 	}
 

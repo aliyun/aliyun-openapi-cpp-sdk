@@ -39,32 +39,32 @@ void QueryEndPointListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEndPointList = value["EndPointList"]["EndPointListItem"];
-	for (auto value : allEndPointList)
+	auto allEndPointListNode = value["EndPointList"]["EndPointListItem"];
+	for (auto valueEndPointListEndPointListItem : allEndPointListNode)
 	{
 		EndPointListItem endPointListObject;
-		if(!value["endPointID"].isNull())
-			endPointListObject.endPointID = value["endPointID"].asString();
-		if(!value["zone"].isNull())
-			endPointListObject.zone = value["zone"].asString();
-		if(!value["vSwitch"].isNull())
-			endPointListObject.vSwitch = value["vSwitch"].asString();
-		if(!value["status"].isNull())
-			endPointListObject.status = value["status"].asString();
-		if(!value["vpcID"].isNull())
-			endPointListObject.vpcID = value["vpcID"].asString();
-		if(!value["host"].isNull())
-			endPointListObject.host = value["host"].asString();
-		if(!value["domainURL"].isNull())
-			endPointListObject.domainURL = value["domainURL"].asString();
-		if(!value["networkType"].isNull())
-			endPointListObject.networkType = value["networkType"].asString();
-		if(!value["allowIP"].isNull())
-			endPointListObject.allowIP = value["allowIP"].asString();
-		if(!value["port"].isNull())
-			endPointListObject.port = value["port"].asString();
-		if(!value["cloudInstanceID"].isNull())
-			endPointListObject.cloudInstanceID = value["cloudInstanceID"].asString();
+		if(!valueEndPointListEndPointListItem["endPointID"].isNull())
+			endPointListObject.endPointID = valueEndPointListEndPointListItem["endPointID"].asString();
+		if(!valueEndPointListEndPointListItem["zone"].isNull())
+			endPointListObject.zone = valueEndPointListEndPointListItem["zone"].asString();
+		if(!valueEndPointListEndPointListItem["vSwitch"].isNull())
+			endPointListObject.vSwitch = valueEndPointListEndPointListItem["vSwitch"].asString();
+		if(!valueEndPointListEndPointListItem["status"].isNull())
+			endPointListObject.status = valueEndPointListEndPointListItem["status"].asString();
+		if(!valueEndPointListEndPointListItem["vpcID"].isNull())
+			endPointListObject.vpcID = valueEndPointListEndPointListItem["vpcID"].asString();
+		if(!valueEndPointListEndPointListItem["host"].isNull())
+			endPointListObject.host = valueEndPointListEndPointListItem["host"].asString();
+		if(!valueEndPointListEndPointListItem["domainURL"].isNull())
+			endPointListObject.domainURL = valueEndPointListEndPointListItem["domainURL"].asString();
+		if(!valueEndPointListEndPointListItem["networkType"].isNull())
+			endPointListObject.networkType = valueEndPointListEndPointListItem["networkType"].asString();
+		if(!valueEndPointListEndPointListItem["allowIP"].isNull())
+			endPointListObject.allowIP = valueEndPointListEndPointListItem["allowIP"].asString();
+		if(!valueEndPointListEndPointListItem["port"].isNull())
+			endPointListObject.port = valueEndPointListEndPointListItem["port"].asString();
+		if(!valueEndPointListEndPointListItem["cloudInstanceID"].isNull())
+			endPointListObject.cloudInstanceID = valueEndPointListEndPointListItem["cloudInstanceID"].asString();
 		endPointList_.push_back(endPointListObject);
 	}
 	if(!value["RegionId"].isNull())

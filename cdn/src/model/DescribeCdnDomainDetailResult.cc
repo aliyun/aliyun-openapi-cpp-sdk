@@ -72,20 +72,20 @@ void DescribeCdnDomainDetailResult::parse(const std::string &payload)
 		getDomainDetailModel_.certificateName = getDomainDetailModelNode["CertificateName"].asString();
 	if(!getDomainDetailModelNode["ResourceGroupId"].isNull())
 		getDomainDetailModel_.resourceGroupId = getDomainDetailModelNode["ResourceGroupId"].asString();
-	auto allSourceModels = value["SourceModels"]["SourceModel"];
-	for (auto value : allSourceModels)
+	auto allSourceModelsNode = getDomainDetailModelNode["SourceModels"]["SourceModel"];
+	for (auto getDomainDetailModelNodeSourceModelsSourceModel : allSourceModelsNode)
 	{
 		GetDomainDetailModel::SourceModel sourceModelObject;
-		if(!value["Content"].isNull())
-			sourceModelObject.content = value["Content"].asString();
-		if(!value["Type"].isNull())
-			sourceModelObject.type = value["Type"].asString();
-		if(!value["Port"].isNull())
-			sourceModelObject.port = std::stoi(value["Port"].asString());
-		if(!value["Enabled"].isNull())
-			sourceModelObject.enabled = value["Enabled"].asString();
-		if(!value["Priority"].isNull())
-			sourceModelObject.priority = value["Priority"].asString();
+		if(!getDomainDetailModelNodeSourceModelsSourceModel["Content"].isNull())
+			sourceModelObject.content = getDomainDetailModelNodeSourceModelsSourceModel["Content"].asString();
+		if(!getDomainDetailModelNodeSourceModelsSourceModel["Type"].isNull())
+			sourceModelObject.type = getDomainDetailModelNodeSourceModelsSourceModel["Type"].asString();
+		if(!getDomainDetailModelNodeSourceModelsSourceModel["Port"].isNull())
+			sourceModelObject.port = std::stoi(getDomainDetailModelNodeSourceModelsSourceModel["Port"].asString());
+		if(!getDomainDetailModelNodeSourceModelsSourceModel["Enabled"].isNull())
+			sourceModelObject.enabled = getDomainDetailModelNodeSourceModelsSourceModel["Enabled"].asString();
+		if(!getDomainDetailModelNodeSourceModelsSourceModel["Priority"].isNull())
+			sourceModelObject.priority = getDomainDetailModelNodeSourceModelsSourceModel["Priority"].asString();
 		getDomainDetailModel_.sourceModels.push_back(sourceModelObject);
 	}
 		auto allSources = getDomainDetailModelNode["Sources"]["Source"];

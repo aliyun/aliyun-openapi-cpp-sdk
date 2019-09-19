@@ -39,52 +39,52 @@ void QueryTransferInListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["TransferInInfo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["TransferInInfo"];
+	for (auto valueDataTransferInInfo : allDataNode)
 	{
 		TransferInInfo dataObject;
-		if(!value["SubmissionDate"].isNull())
-			dataObject.submissionDate = value["SubmissionDate"].asString();
-		if(!value["ModificationDate"].isNull())
-			dataObject.modificationDate = value["ModificationDate"].asString();
-		if(!value["UserId"].isNull())
-			dataObject.userId = value["UserId"].asString();
-		if(!value["InstanceId"].isNull())
-			dataObject.instanceId = value["InstanceId"].asString();
-		if(!value["DomainName"].isNull())
-			dataObject.domainName = value["DomainName"].asString();
-		if(!value["Status"].isNull())
-			dataObject.status = std::stoi(value["Status"].asString());
-		if(!value["SimpleTransferInStatus"].isNull())
-			dataObject.simpleTransferInStatus = value["SimpleTransferInStatus"].asString();
-		if(!value["ResultCode"].isNull())
-			dataObject.resultCode = value["ResultCode"].asString();
-		if(!value["ResultDate"].isNull())
-			dataObject.resultDate = value["ResultDate"].asString();
-		if(!value["ResultMsg"].isNull())
-			dataObject.resultMsg = value["ResultMsg"].asString();
-		if(!value["TransferAuthorizationCodeSubmissionDate"].isNull())
-			dataObject.transferAuthorizationCodeSubmissionDate = value["TransferAuthorizationCodeSubmissionDate"].asString();
-		if(!value["NeedMailCheck"].isNull())
-			dataObject.needMailCheck = value["NeedMailCheck"].asString() == "true";
-		if(!value["Email"].isNull())
-			dataObject.email = value["Email"].asString();
-		if(!value["WhoisMailStatus"].isNull())
-			dataObject.whoisMailStatus = value["WhoisMailStatus"].asString() == "true";
-		if(!value["ExpirationDate"].isNull())
-			dataObject.expirationDate = value["ExpirationDate"].asString();
-		if(!value["ProgressBarType"].isNull())
-			dataObject.progressBarType = std::stoi(value["ProgressBarType"].asString());
-		if(!value["SubmissionDateLong"].isNull())
-			dataObject.submissionDateLong = std::stol(value["SubmissionDateLong"].asString());
-		if(!value["ModificationDateLong"].isNull())
-			dataObject.modificationDateLong = std::stol(value["ModificationDateLong"].asString());
-		if(!value["ResultDateLong"].isNull())
-			dataObject.resultDateLong = std::stol(value["ResultDateLong"].asString());
-		if(!value["ExpirationDateLong"].isNull())
-			dataObject.expirationDateLong = std::stol(value["ExpirationDateLong"].asString());
-		if(!value["TransferAuthorizationCodeSubmissionDateLong"].isNull())
-			dataObject.transferAuthorizationCodeSubmissionDateLong = std::stol(value["TransferAuthorizationCodeSubmissionDateLong"].asString());
+		if(!valueDataTransferInInfo["SubmissionDate"].isNull())
+			dataObject.submissionDate = valueDataTransferInInfo["SubmissionDate"].asString();
+		if(!valueDataTransferInInfo["ModificationDate"].isNull())
+			dataObject.modificationDate = valueDataTransferInInfo["ModificationDate"].asString();
+		if(!valueDataTransferInInfo["UserId"].isNull())
+			dataObject.userId = valueDataTransferInInfo["UserId"].asString();
+		if(!valueDataTransferInInfo["InstanceId"].isNull())
+			dataObject.instanceId = valueDataTransferInInfo["InstanceId"].asString();
+		if(!valueDataTransferInInfo["DomainName"].isNull())
+			dataObject.domainName = valueDataTransferInInfo["DomainName"].asString();
+		if(!valueDataTransferInInfo["Status"].isNull())
+			dataObject.status = std::stoi(valueDataTransferInInfo["Status"].asString());
+		if(!valueDataTransferInInfo["SimpleTransferInStatus"].isNull())
+			dataObject.simpleTransferInStatus = valueDataTransferInInfo["SimpleTransferInStatus"].asString();
+		if(!valueDataTransferInInfo["ResultCode"].isNull())
+			dataObject.resultCode = valueDataTransferInInfo["ResultCode"].asString();
+		if(!valueDataTransferInInfo["ResultDate"].isNull())
+			dataObject.resultDate = valueDataTransferInInfo["ResultDate"].asString();
+		if(!valueDataTransferInInfo["ResultMsg"].isNull())
+			dataObject.resultMsg = valueDataTransferInInfo["ResultMsg"].asString();
+		if(!valueDataTransferInInfo["TransferAuthorizationCodeSubmissionDate"].isNull())
+			dataObject.transferAuthorizationCodeSubmissionDate = valueDataTransferInInfo["TransferAuthorizationCodeSubmissionDate"].asString();
+		if(!valueDataTransferInInfo["NeedMailCheck"].isNull())
+			dataObject.needMailCheck = valueDataTransferInInfo["NeedMailCheck"].asString() == "true";
+		if(!valueDataTransferInInfo["Email"].isNull())
+			dataObject.email = valueDataTransferInInfo["Email"].asString();
+		if(!valueDataTransferInInfo["WhoisMailStatus"].isNull())
+			dataObject.whoisMailStatus = valueDataTransferInInfo["WhoisMailStatus"].asString() == "true";
+		if(!valueDataTransferInInfo["ExpirationDate"].isNull())
+			dataObject.expirationDate = valueDataTransferInInfo["ExpirationDate"].asString();
+		if(!valueDataTransferInInfo["ProgressBarType"].isNull())
+			dataObject.progressBarType = std::stoi(valueDataTransferInInfo["ProgressBarType"].asString());
+		if(!valueDataTransferInInfo["SubmissionDateLong"].isNull())
+			dataObject.submissionDateLong = std::stol(valueDataTransferInInfo["SubmissionDateLong"].asString());
+		if(!valueDataTransferInInfo["ModificationDateLong"].isNull())
+			dataObject.modificationDateLong = std::stol(valueDataTransferInInfo["ModificationDateLong"].asString());
+		if(!valueDataTransferInInfo["ResultDateLong"].isNull())
+			dataObject.resultDateLong = std::stol(valueDataTransferInInfo["ResultDateLong"].asString());
+		if(!valueDataTransferInInfo["ExpirationDateLong"].isNull())
+			dataObject.expirationDateLong = std::stol(valueDataTransferInInfo["ExpirationDateLong"].asString());
+		if(!valueDataTransferInInfo["TransferAuthorizationCodeSubmissionDateLong"].isNull())
+			dataObject.transferAuthorizationCodeSubmissionDateLong = std::stol(valueDataTransferInInfo["TransferAuthorizationCodeSubmissionDateLong"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

@@ -39,24 +39,24 @@ void DescribeWhiteListAssetResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAssets = value["Assets"]["Asset"];
-	for (auto value : allAssets)
+	auto allAssetsNode = value["Assets"]["Asset"];
+	for (auto valueAssetsAsset : allAssetsNode)
 	{
 		Asset assetsObject;
-		if(!value["Id"].isNull())
-			assetsObject.id = std::stol(value["Id"].asString());
-		if(!value["Uuid"].isNull())
-			assetsObject.uuid = value["Uuid"].asString();
-		if(!value["GroupId"].isNull())
-			assetsObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["MachineName"].isNull())
-			assetsObject.machineName = value["MachineName"].asString();
-		if(!value["MachineIp"].isNull())
-			assetsObject.machineIp = value["MachineIp"].asString();
-		if(!value["Selected"].isNull())
-			assetsObject.selected = std::stoi(value["Selected"].asString());
-		if(!value["AllowSelected"].isNull())
-			assetsObject.allowSelected = std::stoi(value["AllowSelected"].asString());
+		if(!valueAssetsAsset["Id"].isNull())
+			assetsObject.id = std::stol(valueAssetsAsset["Id"].asString());
+		if(!valueAssetsAsset["Uuid"].isNull())
+			assetsObject.uuid = valueAssetsAsset["Uuid"].asString();
+		if(!valueAssetsAsset["GroupId"].isNull())
+			assetsObject.groupId = std::stol(valueAssetsAsset["GroupId"].asString());
+		if(!valueAssetsAsset["MachineName"].isNull())
+			assetsObject.machineName = valueAssetsAsset["MachineName"].asString();
+		if(!valueAssetsAsset["MachineIp"].isNull())
+			assetsObject.machineIp = valueAssetsAsset["MachineIp"].asString();
+		if(!valueAssetsAsset["Selected"].isNull())
+			assetsObject.selected = std::stoi(valueAssetsAsset["Selected"].asString());
+		if(!valueAssetsAsset["AllowSelected"].isNull())
+			assetsObject.allowSelected = std::stoi(valueAssetsAsset["AllowSelected"].asString());
 		assets_.push_back(assetsObject);
 	}
 

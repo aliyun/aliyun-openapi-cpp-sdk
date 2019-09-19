@@ -39,14 +39,14 @@ void ListVirtualMFADevicesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVirtualMFADevices = value["VirtualMFADevices"]["VirtualMFADevice"];
-	for (auto value : allVirtualMFADevices)
+	auto allVirtualMFADevicesNode = value["VirtualMFADevices"]["VirtualMFADevice"];
+	for (auto valueVirtualMFADevicesVirtualMFADevice : allVirtualMFADevicesNode)
 	{
 		VirtualMFADevice virtualMFADevicesObject;
-		if(!value["SerialNumber"].isNull())
-			virtualMFADevicesObject.serialNumber = value["SerialNumber"].asString();
-		if(!value["ActivateDate"].isNull())
-			virtualMFADevicesObject.activateDate = value["ActivateDate"].asString();
+		if(!valueVirtualMFADevicesVirtualMFADevice["SerialNumber"].isNull())
+			virtualMFADevicesObject.serialNumber = valueVirtualMFADevicesVirtualMFADevice["SerialNumber"].asString();
+		if(!valueVirtualMFADevicesVirtualMFADevice["ActivateDate"].isNull())
+			virtualMFADevicesObject.activateDate = valueVirtualMFADevicesVirtualMFADevice["ActivateDate"].asString();
 		auto userNode = value["User"];
 		if(!userNode["UserId"].isNull())
 			virtualMFADevicesObject.user.userId = userNode["UserId"].asString();

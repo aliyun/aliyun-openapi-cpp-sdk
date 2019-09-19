@@ -39,20 +39,20 @@ void DescribeBoardEventsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEvents = value["Events"]["Event"];
-	for (auto value : allEvents)
+	auto allEventsNode = value["Events"]["Event"];
+	for (auto valueEventsEvent : allEventsNode)
 	{
 		Event eventsObject;
-		if(!value["EventId"].isNull())
-			eventsObject.eventId = std::stol(value["EventId"].asString());
-		if(!value["EventType"].isNull())
-			eventsObject.eventType = std::stoi(value["EventType"].asString());
-		if(!value["UserId"].isNull())
-			eventsObject.userId = std::stoi(value["UserId"].asString());
-		if(!value["Data"].isNull())
-			eventsObject.data = value["Data"].asString();
-		if(!value["Timestamp"].isNull())
-			eventsObject.timestamp = std::stol(value["Timestamp"].asString());
+		if(!valueEventsEvent["EventId"].isNull())
+			eventsObject.eventId = std::stol(valueEventsEvent["EventId"].asString());
+		if(!valueEventsEvent["EventType"].isNull())
+			eventsObject.eventType = std::stoi(valueEventsEvent["EventType"].asString());
+		if(!valueEventsEvent["UserId"].isNull())
+			eventsObject.userId = std::stoi(valueEventsEvent["UserId"].asString());
+		if(!valueEventsEvent["Data"].isNull())
+			eventsObject.data = valueEventsEvent["Data"].asString();
+		if(!valueEventsEvent["Timestamp"].isNull())
+			eventsObject.timestamp = std::stol(valueEventsEvent["Timestamp"].asString());
 		events_.push_back(eventsObject);
 	}
 

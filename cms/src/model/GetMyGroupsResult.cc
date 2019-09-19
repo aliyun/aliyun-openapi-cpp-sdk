@@ -50,12 +50,12 @@ void GetMyGroupsResult::parse(const std::string &payload)
 		group_.bindUrl = groupNode["BindUrl"].asString();
 	if(!groupNode["Type"].isNull())
 		group_.type = groupNode["Type"].asString();
-	auto allContactGroups = value["ContactGroups"]["ContactGroup"];
-	for (auto value : allContactGroups)
+	auto allContactGroupsNode = groupNode["ContactGroups"]["ContactGroup"];
+	for (auto groupNodeContactGroupsContactGroup : allContactGroupsNode)
 	{
 		Group::ContactGroup contactGroupObject;
-		if(!value["Name"].isNull())
-			contactGroupObject.name = value["Name"].asString();
+		if(!groupNodeContactGroupsContactGroup["Name"].isNull())
+			contactGroupObject.name = groupNodeContactGroupsContactGroup["Name"].asString();
 		group_.contactGroups.push_back(contactGroupObject);
 	}
 	if(!value["Success"].isNull())

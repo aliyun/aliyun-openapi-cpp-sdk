@@ -39,24 +39,24 @@ void QueryCutoutTaskResultResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPictures = value["Pictures"]["Picture"];
-	for (auto value : allPictures)
+	auto allPicturesNode = value["Pictures"]["Picture"];
+	for (auto valuePicturesPicture : allPicturesNode)
 	{
 		Picture picturesObject;
-		if(!value["OriginUrl"].isNull())
-			picturesObject.originUrl = value["OriginUrl"].asString();
-		if(!value["CutoutUrl"].isNull())
-			picturesObject.cutoutUrl = value["CutoutUrl"].asString();
-		if(!value["Width"].isNull())
-			picturesObject.width = std::stoi(value["Width"].asString());
-		if(!value["Height"].isNull())
-			picturesObject.height = std::stoi(value["Height"].asString());
-		if(!value["Status"].isNull())
-			picturesObject.status = std::stoi(value["Status"].asString());
-		if(!value["ErrorCode"].isNull())
-			picturesObject.errorCode = value["ErrorCode"].asString();
-		if(!value["ErrorMessage"].isNull())
-			picturesObject.errorMessage = value["ErrorMessage"].asString();
+		if(!valuePicturesPicture["OriginUrl"].isNull())
+			picturesObject.originUrl = valuePicturesPicture["OriginUrl"].asString();
+		if(!valuePicturesPicture["CutoutUrl"].isNull())
+			picturesObject.cutoutUrl = valuePicturesPicture["CutoutUrl"].asString();
+		if(!valuePicturesPicture["Width"].isNull())
+			picturesObject.width = std::stoi(valuePicturesPicture["Width"].asString());
+		if(!valuePicturesPicture["Height"].isNull())
+			picturesObject.height = std::stoi(valuePicturesPicture["Height"].asString());
+		if(!valuePicturesPicture["Status"].isNull())
+			picturesObject.status = std::stoi(valuePicturesPicture["Status"].asString());
+		if(!valuePicturesPicture["ErrorCode"].isNull())
+			picturesObject.errorCode = valuePicturesPicture["ErrorCode"].asString();
+		if(!valuePicturesPicture["ErrorMessage"].isNull())
+			picturesObject.errorMessage = valuePicturesPicture["ErrorMessage"].asString();
 		pictures_.push_back(picturesObject);
 	}
 	if(!value["TotalSize"].isNull())

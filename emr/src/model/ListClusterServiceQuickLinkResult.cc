@@ -39,22 +39,22 @@ void ListClusterServiceQuickLinkResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQuickLinkList = value["QuickLinkList"]["QuickLink"];
-	for (auto value : allQuickLinkList)
+	auto allQuickLinkListNode = value["QuickLinkList"]["QuickLink"];
+	for (auto valueQuickLinkListQuickLink : allQuickLinkListNode)
 	{
 		QuickLink quickLinkListObject;
-		if(!value["ServiceName"].isNull())
-			quickLinkListObject.serviceName = value["ServiceName"].asString();
-		if(!value["ServiceDisplayName"].isNull())
-			quickLinkListObject.serviceDisplayName = value["ServiceDisplayName"].asString();
-		if(!value["QuickLinkAddress"].isNull())
-			quickLinkListObject.quickLinkAddress = value["QuickLinkAddress"].asString();
-		if(!value["Protocol"].isNull())
-			quickLinkListObject.protocol = value["Protocol"].asString();
-		if(!value["Port"].isNull())
-			quickLinkListObject.port = value["Port"].asString();
-		if(!value["Type"].isNull())
-			quickLinkListObject.type = value["Type"].asString();
+		if(!valueQuickLinkListQuickLink["ServiceName"].isNull())
+			quickLinkListObject.serviceName = valueQuickLinkListQuickLink["ServiceName"].asString();
+		if(!valueQuickLinkListQuickLink["ServiceDisplayName"].isNull())
+			quickLinkListObject.serviceDisplayName = valueQuickLinkListQuickLink["ServiceDisplayName"].asString();
+		if(!valueQuickLinkListQuickLink["QuickLinkAddress"].isNull())
+			quickLinkListObject.quickLinkAddress = valueQuickLinkListQuickLink["QuickLinkAddress"].asString();
+		if(!valueQuickLinkListQuickLink["Protocol"].isNull())
+			quickLinkListObject.protocol = valueQuickLinkListQuickLink["Protocol"].asString();
+		if(!valueQuickLinkListQuickLink["Port"].isNull())
+			quickLinkListObject.port = valueQuickLinkListQuickLink["Port"].asString();
+		if(!valueQuickLinkListQuickLink["Type"].isNull())
+			quickLinkListObject.type = valueQuickLinkListQuickLink["Type"].asString();
 		quickLinkList_.push_back(quickLinkListObject);
 	}
 

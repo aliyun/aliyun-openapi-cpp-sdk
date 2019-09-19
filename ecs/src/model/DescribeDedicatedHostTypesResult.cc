@@ -39,32 +39,32 @@ void DescribeDedicatedHostTypesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDedicatedHostTypes = value["DedicatedHostTypes"]["DedicatedHostType"];
-	for (auto value : allDedicatedHostTypes)
+	auto allDedicatedHostTypesNode = value["DedicatedHostTypes"]["DedicatedHostType"];
+	for (auto valueDedicatedHostTypesDedicatedHostType : allDedicatedHostTypesNode)
 	{
 		DedicatedHostType dedicatedHostTypesObject;
-		if(!value["DedicatedHostType"].isNull())
-			dedicatedHostTypesObject.dedicatedHostType = value["DedicatedHostType"].asString();
-		if(!value["Sockets"].isNull())
-			dedicatedHostTypesObject.sockets = std::stoi(value["Sockets"].asString());
-		if(!value["TotalVcpus"].isNull())
-			dedicatedHostTypesObject.totalVcpus = std::stoi(value["TotalVcpus"].asString());
-		if(!value["TotalVgpus"].isNull())
-			dedicatedHostTypesObject.totalVgpus = std::stoi(value["TotalVgpus"].asString());
-		if(!value["Cores"].isNull())
-			dedicatedHostTypesObject.cores = std::stoi(value["Cores"].asString());
-		if(!value["PhysicalGpus"].isNull())
-			dedicatedHostTypesObject.physicalGpus = std::stoi(value["PhysicalGpus"].asString());
-		if(!value["MemorySize"].isNull())
-			dedicatedHostTypesObject.memorySize = std::stof(value["MemorySize"].asString());
-		if(!value["LocalStorageCapacity"].isNull())
-			dedicatedHostTypesObject.localStorageCapacity = std::stol(value["LocalStorageCapacity"].asString());
-		if(!value["LocalStorageAmount"].isNull())
-			dedicatedHostTypesObject.localStorageAmount = std::stoi(value["LocalStorageAmount"].asString());
-		if(!value["LocalStorageCategory"].isNull())
-			dedicatedHostTypesObject.localStorageCategory = value["LocalStorageCategory"].asString();
-		if(!value["GPUSpec"].isNull())
-			dedicatedHostTypesObject.gPUSpec = value["GPUSpec"].asString();
+		if(!valueDedicatedHostTypesDedicatedHostType["DedicatedHostType"].isNull())
+			dedicatedHostTypesObject.dedicatedHostType = valueDedicatedHostTypesDedicatedHostType["DedicatedHostType"].asString();
+		if(!valueDedicatedHostTypesDedicatedHostType["Sockets"].isNull())
+			dedicatedHostTypesObject.sockets = std::stoi(valueDedicatedHostTypesDedicatedHostType["Sockets"].asString());
+		if(!valueDedicatedHostTypesDedicatedHostType["TotalVcpus"].isNull())
+			dedicatedHostTypesObject.totalVcpus = std::stoi(valueDedicatedHostTypesDedicatedHostType["TotalVcpus"].asString());
+		if(!valueDedicatedHostTypesDedicatedHostType["TotalVgpus"].isNull())
+			dedicatedHostTypesObject.totalVgpus = std::stoi(valueDedicatedHostTypesDedicatedHostType["TotalVgpus"].asString());
+		if(!valueDedicatedHostTypesDedicatedHostType["Cores"].isNull())
+			dedicatedHostTypesObject.cores = std::stoi(valueDedicatedHostTypesDedicatedHostType["Cores"].asString());
+		if(!valueDedicatedHostTypesDedicatedHostType["PhysicalGpus"].isNull())
+			dedicatedHostTypesObject.physicalGpus = std::stoi(valueDedicatedHostTypesDedicatedHostType["PhysicalGpus"].asString());
+		if(!valueDedicatedHostTypesDedicatedHostType["MemorySize"].isNull())
+			dedicatedHostTypesObject.memorySize = std::stof(valueDedicatedHostTypesDedicatedHostType["MemorySize"].asString());
+		if(!valueDedicatedHostTypesDedicatedHostType["LocalStorageCapacity"].isNull())
+			dedicatedHostTypesObject.localStorageCapacity = std::stol(valueDedicatedHostTypesDedicatedHostType["LocalStorageCapacity"].asString());
+		if(!valueDedicatedHostTypesDedicatedHostType["LocalStorageAmount"].isNull())
+			dedicatedHostTypesObject.localStorageAmount = std::stoi(valueDedicatedHostTypesDedicatedHostType["LocalStorageAmount"].asString());
+		if(!valueDedicatedHostTypesDedicatedHostType["LocalStorageCategory"].isNull())
+			dedicatedHostTypesObject.localStorageCategory = valueDedicatedHostTypesDedicatedHostType["LocalStorageCategory"].asString();
+		if(!valueDedicatedHostTypesDedicatedHostType["GPUSpec"].isNull())
+			dedicatedHostTypesObject.gPUSpec = valueDedicatedHostTypesDedicatedHostType["GPUSpec"].asString();
 		auto allSupportedInstanceTypeFamilies = value["SupportedInstanceTypeFamilies"]["SupportedInstanceTypeFamily"];
 		for (auto value : allSupportedInstanceTypeFamilies)
 			dedicatedHostTypesObject.supportedInstanceTypeFamilies.push_back(value.asString());

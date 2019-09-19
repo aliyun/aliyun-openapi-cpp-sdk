@@ -39,24 +39,24 @@ void ListCallMeasureSummaryReportsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCallMeasureSummaryReportList = value["CallMeasureSummaryReportList"]["CallMeasureSummaryReport"];
-	for (auto value : allCallMeasureSummaryReportList)
+	auto allCallMeasureSummaryReportListNode = value["CallMeasureSummaryReportList"]["CallMeasureSummaryReport"];
+	for (auto valueCallMeasureSummaryReportListCallMeasureSummaryReport : allCallMeasureSummaryReportListNode)
 	{
 		CallMeasureSummaryReport callMeasureSummaryReportListObject;
-		if(!value["Year"].isNull())
-			callMeasureSummaryReportListObject.year = value["Year"].asString();
-		if(!value["Month"].isNull())
-			callMeasureSummaryReportListObject.month = value["Month"].asString();
-		if(!value["Day"].isNull())
-			callMeasureSummaryReportListObject.day = value["Day"].asString();
-		if(!value["InboundCount"].isNull())
-			callMeasureSummaryReportListObject.inboundCount = std::stol(value["InboundCount"].asString());
-		if(!value["OutboundCount"].isNull())
-			callMeasureSummaryReportListObject.outboundCount = std::stol(value["OutboundCount"].asString());
-		if(!value["OutboundDurationByMinute"].isNull())
-			callMeasureSummaryReportListObject.outboundDurationByMinute = std::stol(value["OutboundDurationByMinute"].asString());
-		if(!value["InboundDurationByMinute"].isNull())
-			callMeasureSummaryReportListObject.inboundDurationByMinute = std::stol(value["InboundDurationByMinute"].asString());
+		if(!valueCallMeasureSummaryReportListCallMeasureSummaryReport["Year"].isNull())
+			callMeasureSummaryReportListObject.year = valueCallMeasureSummaryReportListCallMeasureSummaryReport["Year"].asString();
+		if(!valueCallMeasureSummaryReportListCallMeasureSummaryReport["Month"].isNull())
+			callMeasureSummaryReportListObject.month = valueCallMeasureSummaryReportListCallMeasureSummaryReport["Month"].asString();
+		if(!valueCallMeasureSummaryReportListCallMeasureSummaryReport["Day"].isNull())
+			callMeasureSummaryReportListObject.day = valueCallMeasureSummaryReportListCallMeasureSummaryReport["Day"].asString();
+		if(!valueCallMeasureSummaryReportListCallMeasureSummaryReport["InboundCount"].isNull())
+			callMeasureSummaryReportListObject.inboundCount = std::stol(valueCallMeasureSummaryReportListCallMeasureSummaryReport["InboundCount"].asString());
+		if(!valueCallMeasureSummaryReportListCallMeasureSummaryReport["OutboundCount"].isNull())
+			callMeasureSummaryReportListObject.outboundCount = std::stol(valueCallMeasureSummaryReportListCallMeasureSummaryReport["OutboundCount"].asString());
+		if(!valueCallMeasureSummaryReportListCallMeasureSummaryReport["OutboundDurationByMinute"].isNull())
+			callMeasureSummaryReportListObject.outboundDurationByMinute = std::stol(valueCallMeasureSummaryReportListCallMeasureSummaryReport["OutboundDurationByMinute"].asString());
+		if(!valueCallMeasureSummaryReportListCallMeasureSummaryReport["InboundDurationByMinute"].isNull())
+			callMeasureSummaryReportListObject.inboundDurationByMinute = std::stol(valueCallMeasureSummaryReportListCallMeasureSummaryReport["InboundDurationByMinute"].asString());
 		callMeasureSummaryReportList_.push_back(callMeasureSummaryReportListObject);
 	}
 	if(!value["Success"].isNull())

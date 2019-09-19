@@ -39,22 +39,22 @@ void QueryMediaWorkflowListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMediaWorkflowList = value["MediaWorkflowList"]["MediaWorkflow"];
-	for (auto value : allMediaWorkflowList)
+	auto allMediaWorkflowListNode = value["MediaWorkflowList"]["MediaWorkflow"];
+	for (auto valueMediaWorkflowListMediaWorkflow : allMediaWorkflowListNode)
 	{
 		MediaWorkflow mediaWorkflowListObject;
-		if(!value["MediaWorkflowId"].isNull())
-			mediaWorkflowListObject.mediaWorkflowId = value["MediaWorkflowId"].asString();
-		if(!value["Name"].isNull())
-			mediaWorkflowListObject.name = value["Name"].asString();
-		if(!value["Topology"].isNull())
-			mediaWorkflowListObject.topology = value["Topology"].asString();
-		if(!value["TriggerMode"].isNull())
-			mediaWorkflowListObject.triggerMode = value["TriggerMode"].asString();
-		if(!value["State"].isNull())
-			mediaWorkflowListObject.state = value["State"].asString();
-		if(!value["CreationTime"].isNull())
-			mediaWorkflowListObject.creationTime = value["CreationTime"].asString();
+		if(!valueMediaWorkflowListMediaWorkflow["MediaWorkflowId"].isNull())
+			mediaWorkflowListObject.mediaWorkflowId = valueMediaWorkflowListMediaWorkflow["MediaWorkflowId"].asString();
+		if(!valueMediaWorkflowListMediaWorkflow["Name"].isNull())
+			mediaWorkflowListObject.name = valueMediaWorkflowListMediaWorkflow["Name"].asString();
+		if(!valueMediaWorkflowListMediaWorkflow["Topology"].isNull())
+			mediaWorkflowListObject.topology = valueMediaWorkflowListMediaWorkflow["Topology"].asString();
+		if(!valueMediaWorkflowListMediaWorkflow["TriggerMode"].isNull())
+			mediaWorkflowListObject.triggerMode = valueMediaWorkflowListMediaWorkflow["TriggerMode"].asString();
+		if(!valueMediaWorkflowListMediaWorkflow["State"].isNull())
+			mediaWorkflowListObject.state = valueMediaWorkflowListMediaWorkflow["State"].asString();
+		if(!valueMediaWorkflowListMediaWorkflow["CreationTime"].isNull())
+			mediaWorkflowListObject.creationTime = valueMediaWorkflowListMediaWorkflow["CreationTime"].asString();
 		mediaWorkflowList_.push_back(mediaWorkflowListObject);
 	}
 	auto allNonExistMediaWorkflowIds = value["NonExistMediaWorkflowIds"]["MediaWorkflowId"];

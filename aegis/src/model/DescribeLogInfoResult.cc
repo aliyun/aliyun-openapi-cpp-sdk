@@ -39,24 +39,24 @@ void DescribeLogInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogInfoItems = value["LogInfoItems"]["Item"];
-	for (auto value : allLogInfoItems)
+	auto allLogInfoItemsNode = value["LogInfoItems"]["Item"];
+	for (auto valueLogInfoItemsItem : allLogInfoItemsNode)
 	{
 		Item logInfoItemsObject;
-		if(!value["Name"].isNull())
-			logInfoItemsObject.name = value["Name"].asString();
-		if(!value["Id"].isNull())
-			logInfoItemsObject.id = value["Id"].asString();
-		auto allFields = value["Fields"]["Field"];
-		for (auto value : allFields)
+		if(!valueLogInfoItemsItem["Name"].isNull())
+			logInfoItemsObject.name = valueLogInfoItemsItem["Name"].asString();
+		if(!valueLogInfoItemsItem["Id"].isNull())
+			logInfoItemsObject.id = valueLogInfoItemsItem["Id"].asString();
+		auto allFieldsNode = allLogInfoItemsNode["Fields"]["Field"];
+		for (auto allLogInfoItemsNodeFieldsField : allFieldsNode)
 		{
 			Item::Field fieldsObject;
-			if(!value["Name"].isNull())
-				fieldsObject.name = value["Name"].asString();
-			if(!value["Type"].isNull())
-				fieldsObject.type = value["Type"].asString();
-			if(!value["Desc"].isNull())
-				fieldsObject.desc = value["Desc"].asString();
+			if(!allLogInfoItemsNodeFieldsField["Name"].isNull())
+				fieldsObject.name = allLogInfoItemsNodeFieldsField["Name"].asString();
+			if(!allLogInfoItemsNodeFieldsField["Type"].isNull())
+				fieldsObject.type = allLogInfoItemsNodeFieldsField["Type"].asString();
+			if(!allLogInfoItemsNodeFieldsField["Desc"].isNull())
+				fieldsObject.desc = allLogInfoItemsNodeFieldsField["Desc"].asString();
 			logInfoItemsObject.fields.push_back(fieldsObject);
 		}
 		logInfoItems_.push_back(logInfoItemsObject);

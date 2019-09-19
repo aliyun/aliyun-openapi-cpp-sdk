@@ -39,16 +39,16 @@ void DescribeRtcPeakChannelCntDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPeakChannelCntDataPerInterval = value["PeakChannelCntDataPerInterval"]["PeakChannelCntModule"];
-	for (auto value : allPeakChannelCntDataPerInterval)
+	auto allPeakChannelCntDataPerIntervalNode = value["PeakChannelCntDataPerInterval"]["PeakChannelCntModule"];
+	for (auto valuePeakChannelCntDataPerIntervalPeakChannelCntModule : allPeakChannelCntDataPerIntervalNode)
 	{
 		PeakChannelCntModule peakChannelCntDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			peakChannelCntDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["ActiveChannelPeak"].isNull())
-			peakChannelCntDataPerIntervalObject.activeChannelPeak = std::stol(value["ActiveChannelPeak"].asString());
-		if(!value["ActiveChannelPeakTime"].isNull())
-			peakChannelCntDataPerIntervalObject.activeChannelPeakTime = value["ActiveChannelPeakTime"].asString();
+		if(!valuePeakChannelCntDataPerIntervalPeakChannelCntModule["TimeStamp"].isNull())
+			peakChannelCntDataPerIntervalObject.timeStamp = valuePeakChannelCntDataPerIntervalPeakChannelCntModule["TimeStamp"].asString();
+		if(!valuePeakChannelCntDataPerIntervalPeakChannelCntModule["ActiveChannelPeak"].isNull())
+			peakChannelCntDataPerIntervalObject.activeChannelPeak = std::stol(valuePeakChannelCntDataPerIntervalPeakChannelCntModule["ActiveChannelPeak"].asString());
+		if(!valuePeakChannelCntDataPerIntervalPeakChannelCntModule["ActiveChannelPeakTime"].isNull())
+			peakChannelCntDataPerIntervalObject.activeChannelPeakTime = valuePeakChannelCntDataPerIntervalPeakChannelCntModule["ActiveChannelPeakTime"].asString();
 		peakChannelCntDataPerInterval_.push_back(peakChannelCntDataPerIntervalObject);
 	}
 

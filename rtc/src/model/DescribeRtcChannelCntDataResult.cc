@@ -39,14 +39,14 @@ void DescribeRtcChannelCntDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allChannelCntDataPerInterval = value["ChannelCntDataPerInterval"]["ChannelCntModule"];
-	for (auto value : allChannelCntDataPerInterval)
+	auto allChannelCntDataPerIntervalNode = value["ChannelCntDataPerInterval"]["ChannelCntModule"];
+	for (auto valueChannelCntDataPerIntervalChannelCntModule : allChannelCntDataPerIntervalNode)
 	{
 		ChannelCntModule channelCntDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			channelCntDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["ActiveChannelCnt"].isNull())
-			channelCntDataPerIntervalObject.activeChannelCnt = std::stol(value["ActiveChannelCnt"].asString());
+		if(!valueChannelCntDataPerIntervalChannelCntModule["TimeStamp"].isNull())
+			channelCntDataPerIntervalObject.timeStamp = valueChannelCntDataPerIntervalChannelCntModule["TimeStamp"].asString();
+		if(!valueChannelCntDataPerIntervalChannelCntModule["ActiveChannelCnt"].isNull())
+			channelCntDataPerIntervalObject.activeChannelCnt = std::stol(valueChannelCntDataPerIntervalChannelCntModule["ActiveChannelCnt"].asString());
 		channelCntDataPerInterval_.push_back(channelCntDataPerIntervalObject);
 	}
 

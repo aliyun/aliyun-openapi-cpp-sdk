@@ -39,16 +39,16 @@ void DescribeAllGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allGroups = value["Groups"]["Group"];
-	for (auto value : allGroups)
+	auto allGroupsNode = value["Groups"]["Group"];
+	for (auto valueGroupsGroup : allGroupsNode)
 	{
 		Group groupsObject;
-		if(!value["GroupName"].isNull())
-			groupsObject.groupName = value["GroupName"].asString();
-		if(!value["GroupId"].isNull())
-			groupsObject.groupId = std::stoi(value["GroupId"].asString());
-		if(!value["GroupFlag"].isNull())
-			groupsObject.groupFlag = std::stoi(value["GroupFlag"].asString());
+		if(!valueGroupsGroup["GroupName"].isNull())
+			groupsObject.groupName = valueGroupsGroup["GroupName"].asString();
+		if(!valueGroupsGroup["GroupId"].isNull())
+			groupsObject.groupId = std::stoi(valueGroupsGroup["GroupId"].asString());
+		if(!valueGroupsGroup["GroupFlag"].isNull())
+			groupsObject.groupFlag = std::stoi(valueGroupsGroup["GroupFlag"].asString());
 		groups_.push_back(groupsObject);
 	}
 	if(!value["Count"].isNull())

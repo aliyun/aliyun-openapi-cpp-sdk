@@ -39,18 +39,18 @@ void DescribeBoardsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBoards = value["Boards"]["Event"];
-	for (auto value : allBoards)
+	auto allBoardsNode = value["Boards"]["Event"];
+	for (auto valueBoardsEvent : allBoardsNode)
 	{
 		Event boardsObject;
-		if(!value["BoardId"].isNull())
-			boardsObject.boardId = value["BoardId"].asString();
-		if(!value["Topic"].isNull())
-			boardsObject.topic = value["Topic"].asString();
-		if(!value["State"].isNull())
-			boardsObject.state = std::stoi(value["State"].asString());
-		if(!value["UserId"].isNull())
-			boardsObject.userId = value["UserId"].asString();
+		if(!valueBoardsEvent["BoardId"].isNull())
+			boardsObject.boardId = valueBoardsEvent["BoardId"].asString();
+		if(!valueBoardsEvent["Topic"].isNull())
+			boardsObject.topic = valueBoardsEvent["Topic"].asString();
+		if(!valueBoardsEvent["State"].isNull())
+			boardsObject.state = std::stoi(valueBoardsEvent["State"].asString());
+		if(!valueBoardsEvent["UserId"].isNull())
+			boardsObject.userId = valueBoardsEvent["UserId"].asString();
 		boards_.push_back(boardsObject);
 	}
 

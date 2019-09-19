@@ -39,24 +39,24 @@ void DescribeStorageSetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStorageSets = value["StorageSets"]["StorageSet"];
-	for (auto value : allStorageSets)
+	auto allStorageSetsNode = value["StorageSets"]["StorageSet"];
+	for (auto valueStorageSetsStorageSet : allStorageSetsNode)
 	{
 		StorageSet storageSetsObject;
-		if(!value["StorageSetId"].isNull())
-			storageSetsObject.storageSetId = value["StorageSetId"].asString();
-		if(!value["CreationTime"].isNull())
-			storageSetsObject.creationTime = value["CreationTime"].asString();
-		if(!value["StorageSetName"].isNull())
-			storageSetsObject.storageSetName = value["StorageSetName"].asString();
-		if(!value["Description"].isNull())
-			storageSetsObject.description = value["Description"].asString();
-		if(!value["StorageSetPartitionNumber"].isNull())
-			storageSetsObject.storageSetPartitionNumber = std::stoi(value["StorageSetPartitionNumber"].asString());
-		if(!value["RegionId"].isNull())
-			storageSetsObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			storageSetsObject.zoneId = value["ZoneId"].asString();
+		if(!valueStorageSetsStorageSet["StorageSetId"].isNull())
+			storageSetsObject.storageSetId = valueStorageSetsStorageSet["StorageSetId"].asString();
+		if(!valueStorageSetsStorageSet["CreationTime"].isNull())
+			storageSetsObject.creationTime = valueStorageSetsStorageSet["CreationTime"].asString();
+		if(!valueStorageSetsStorageSet["StorageSetName"].isNull())
+			storageSetsObject.storageSetName = valueStorageSetsStorageSet["StorageSetName"].asString();
+		if(!valueStorageSetsStorageSet["Description"].isNull())
+			storageSetsObject.description = valueStorageSetsStorageSet["Description"].asString();
+		if(!valueStorageSetsStorageSet["StorageSetPartitionNumber"].isNull())
+			storageSetsObject.storageSetPartitionNumber = std::stoi(valueStorageSetsStorageSet["StorageSetPartitionNumber"].asString());
+		if(!valueStorageSetsStorageSet["RegionId"].isNull())
+			storageSetsObject.regionId = valueStorageSetsStorageSet["RegionId"].asString();
+		if(!valueStorageSetsStorageSet["ZoneId"].isNull())
+			storageSetsObject.zoneId = valueStorageSetsStorageSet["ZoneId"].asString();
 		storageSets_.push_back(storageSetsObject);
 	}
 	if(!value["TotalCount"].isNull())

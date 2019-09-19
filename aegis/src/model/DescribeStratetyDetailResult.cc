@@ -50,26 +50,26 @@ void DescribeStratetyDetailResult::parse(const std::string &payload)
 		strategy_.cycleStartTime = std::stoi(strategyNode["CycleStartTime"].asString());
 	if(!strategyNode["Type"].isNull())
 		strategy_.type = std::stoi(strategyNode["Type"].asString());
-	auto allRiskTypeWhiteListQueryResultList = value["RiskTypeWhiteListQueryResultList"]["RiskTypeWhiteListQueryResult"];
-	for (auto value : allRiskTypeWhiteListQueryResultList)
+	auto allRiskTypeWhiteListQueryResultListNode = strategyNode["RiskTypeWhiteListQueryResultList"]["RiskTypeWhiteListQueryResult"];
+	for (auto strategyNodeRiskTypeWhiteListQueryResultListRiskTypeWhiteListQueryResult : allRiskTypeWhiteListQueryResultListNode)
 	{
 		Strategy::RiskTypeWhiteListQueryResult riskTypeWhiteListQueryResultObject;
-		if(!value["TypeName"].isNull())
-			riskTypeWhiteListQueryResultObject.typeName = value["TypeName"].asString();
-		if(!value["Alias"].isNull())
-			riskTypeWhiteListQueryResultObject.alias = value["Alias"].asString();
-		if(!value["On"].isNull())
-			riskTypeWhiteListQueryResultObject.on = value["On"].asString() == "true";
-		auto allSubTypes = value["SubTypes"]["SubType"];
-		for (auto value : allSubTypes)
+		if(!strategyNodeRiskTypeWhiteListQueryResultListRiskTypeWhiteListQueryResult["TypeName"].isNull())
+			riskTypeWhiteListQueryResultObject.typeName = strategyNodeRiskTypeWhiteListQueryResultListRiskTypeWhiteListQueryResult["TypeName"].asString();
+		if(!strategyNodeRiskTypeWhiteListQueryResultListRiskTypeWhiteListQueryResult["Alias"].isNull())
+			riskTypeWhiteListQueryResultObject.alias = strategyNodeRiskTypeWhiteListQueryResultListRiskTypeWhiteListQueryResult["Alias"].asString();
+		if(!strategyNodeRiskTypeWhiteListQueryResultListRiskTypeWhiteListQueryResult["On"].isNull())
+			riskTypeWhiteListQueryResultObject.on = strategyNodeRiskTypeWhiteListQueryResultListRiskTypeWhiteListQueryResult["On"].asString() == "true";
+		auto allSubTypesNode = allRiskTypeWhiteListQueryResultListNode["SubTypes"]["SubType"];
+		for (auto allRiskTypeWhiteListQueryResultListNodeSubTypesSubType : allSubTypesNode)
 		{
 			Strategy::RiskTypeWhiteListQueryResult::SubType subTypesObject;
-			if(!value["TypeName"].isNull())
-				subTypesObject.typeName = value["TypeName"].asString();
-			if(!value["Alias"].isNull())
-				subTypesObject.alias = value["Alias"].asString();
-			if(!value["On"].isNull())
-				subTypesObject.on = value["On"].asString() == "true";
+			if(!allRiskTypeWhiteListQueryResultListNodeSubTypesSubType["TypeName"].isNull())
+				subTypesObject.typeName = allRiskTypeWhiteListQueryResultListNodeSubTypesSubType["TypeName"].asString();
+			if(!allRiskTypeWhiteListQueryResultListNodeSubTypesSubType["Alias"].isNull())
+				subTypesObject.alias = allRiskTypeWhiteListQueryResultListNodeSubTypesSubType["Alias"].asString();
+			if(!allRiskTypeWhiteListQueryResultListNodeSubTypesSubType["On"].isNull())
+				subTypesObject.on = allRiskTypeWhiteListQueryResultListNodeSubTypesSubType["On"].asString() == "true";
 			riskTypeWhiteListQueryResultObject.subTypes.push_back(subTypesObject);
 		}
 		strategy_.riskTypeWhiteListQueryResultList.push_back(riskTypeWhiteListQueryResultObject);

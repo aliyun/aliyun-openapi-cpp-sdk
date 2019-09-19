@@ -40,22 +40,22 @@ void QueryDevicePropertyStatusResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allList = value["List"]["PropertyStatusInfo"];
-	for (auto value : allList)
+	auto allListNode = dataNode["List"]["PropertyStatusInfo"];
+	for (auto dataNodeListPropertyStatusInfo : allListNode)
 	{
 		Data::PropertyStatusInfo propertyStatusInfoObject;
-		if(!value["Unit"].isNull())
-			propertyStatusInfoObject.unit = value["Unit"].asString();
-		if(!value["Identifier"].isNull())
-			propertyStatusInfoObject.identifier = value["Identifier"].asString();
-		if(!value["DataType"].isNull())
-			propertyStatusInfoObject.dataType = value["DataType"].asString();
-		if(!value["Time"].isNull())
-			propertyStatusInfoObject.time = value["Time"].asString();
-		if(!value["Value"].isNull())
-			propertyStatusInfoObject.value = value["Value"].asString();
-		if(!value["Name"].isNull())
-			propertyStatusInfoObject.name = value["Name"].asString();
+		if(!dataNodeListPropertyStatusInfo["Unit"].isNull())
+			propertyStatusInfoObject.unit = dataNodeListPropertyStatusInfo["Unit"].asString();
+		if(!dataNodeListPropertyStatusInfo["Identifier"].isNull())
+			propertyStatusInfoObject.identifier = dataNodeListPropertyStatusInfo["Identifier"].asString();
+		if(!dataNodeListPropertyStatusInfo["DataType"].isNull())
+			propertyStatusInfoObject.dataType = dataNodeListPropertyStatusInfo["DataType"].asString();
+		if(!dataNodeListPropertyStatusInfo["Time"].isNull())
+			propertyStatusInfoObject.time = dataNodeListPropertyStatusInfo["Time"].asString();
+		if(!dataNodeListPropertyStatusInfo["Value"].isNull())
+			propertyStatusInfoObject.value = dataNodeListPropertyStatusInfo["Value"].asString();
+		if(!dataNodeListPropertyStatusInfo["Name"].isNull())
+			propertyStatusInfoObject.name = dataNodeListPropertyStatusInfo["Name"].asString();
 		data_.list.push_back(propertyStatusInfoObject);
 	}
 	if(!value["Success"].isNull())

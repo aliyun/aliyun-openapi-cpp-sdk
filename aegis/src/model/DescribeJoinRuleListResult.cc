@@ -39,38 +39,38 @@ void DescribeJoinRuleListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJoinRuleList = value["JoinRuleList"]["JoinRuleListArr"];
-	for (auto value : allJoinRuleList)
+	auto allJoinRuleListNode = value["JoinRuleList"]["JoinRuleListArr"];
+	for (auto valueJoinRuleListJoinRuleListArr : allJoinRuleListNode)
 	{
 		JoinRuleListArr joinRuleListObject;
-		if(!value["TimeWindow"].isNull())
-			joinRuleListObject.timeWindow = std::stoi(value["TimeWindow"].asString());
-		if(!value["WarnLevel"].isNull())
-			joinRuleListObject.warnLevel = value["WarnLevel"].asString();
-		if(!value["DataSourceId1"].isNull())
-			joinRuleListObject.dataSourceId1 = std::stoi(value["DataSourceId1"].asString());
-		if(!value["Description"].isNull())
-			joinRuleListObject.description = value["Description"].asString();
-		if(!value["RuleName"].isNull())
-			joinRuleListObject.ruleName = value["RuleName"].asString();
-		if(!value["JoinRelation"].isNull())
-			joinRuleListObject.joinRelation = value["JoinRelation"].asString();
-		if(!value["DataSourceId2"].isNull())
-			joinRuleListObject.dataSourceId2 = std::stoi(value["DataSourceId2"].asString());
-		if(!value["Expression2"].isNull())
-			joinRuleListObject.expression2 = value["Expression2"].asString();
-		if(!value["RuleId"].isNull())
-			joinRuleListObject.ruleId = std::stoi(value["RuleId"].asString());
-		if(!value["Expression1"].isNull())
-			joinRuleListObject.expression1 = value["Expression1"].asString();
-		if(!value["Actions"].isNull())
-			joinRuleListObject.actions = value["Actions"].asString();
-		if(!value["StatisticsRules"].isNull())
-			joinRuleListObject.statisticsRules = value["StatisticsRules"].asString();
-		if(!value["NeedGroup"].isNull())
-			joinRuleListObject.needGroup = value["NeedGroup"].asString() == "true";
-		if(!value["StatusCode"].isNull())
-			joinRuleListObject.statusCode = value["StatusCode"].asString();
+		if(!valueJoinRuleListJoinRuleListArr["TimeWindow"].isNull())
+			joinRuleListObject.timeWindow = std::stoi(valueJoinRuleListJoinRuleListArr["TimeWindow"].asString());
+		if(!valueJoinRuleListJoinRuleListArr["WarnLevel"].isNull())
+			joinRuleListObject.warnLevel = valueJoinRuleListJoinRuleListArr["WarnLevel"].asString();
+		if(!valueJoinRuleListJoinRuleListArr["DataSourceId1"].isNull())
+			joinRuleListObject.dataSourceId1 = std::stoi(valueJoinRuleListJoinRuleListArr["DataSourceId1"].asString());
+		if(!valueJoinRuleListJoinRuleListArr["Description"].isNull())
+			joinRuleListObject.description = valueJoinRuleListJoinRuleListArr["Description"].asString();
+		if(!valueJoinRuleListJoinRuleListArr["RuleName"].isNull())
+			joinRuleListObject.ruleName = valueJoinRuleListJoinRuleListArr["RuleName"].asString();
+		if(!valueJoinRuleListJoinRuleListArr["JoinRelation"].isNull())
+			joinRuleListObject.joinRelation = valueJoinRuleListJoinRuleListArr["JoinRelation"].asString();
+		if(!valueJoinRuleListJoinRuleListArr["DataSourceId2"].isNull())
+			joinRuleListObject.dataSourceId2 = std::stoi(valueJoinRuleListJoinRuleListArr["DataSourceId2"].asString());
+		if(!valueJoinRuleListJoinRuleListArr["Expression2"].isNull())
+			joinRuleListObject.expression2 = valueJoinRuleListJoinRuleListArr["Expression2"].asString();
+		if(!valueJoinRuleListJoinRuleListArr["RuleId"].isNull())
+			joinRuleListObject.ruleId = std::stoi(valueJoinRuleListJoinRuleListArr["RuleId"].asString());
+		if(!valueJoinRuleListJoinRuleListArr["Expression1"].isNull())
+			joinRuleListObject.expression1 = valueJoinRuleListJoinRuleListArr["Expression1"].asString();
+		if(!valueJoinRuleListJoinRuleListArr["Actions"].isNull())
+			joinRuleListObject.actions = valueJoinRuleListJoinRuleListArr["Actions"].asString();
+		if(!valueJoinRuleListJoinRuleListArr["StatisticsRules"].isNull())
+			joinRuleListObject.statisticsRules = valueJoinRuleListJoinRuleListArr["StatisticsRules"].asString();
+		if(!valueJoinRuleListJoinRuleListArr["NeedGroup"].isNull())
+			joinRuleListObject.needGroup = valueJoinRuleListJoinRuleListArr["NeedGroup"].asString() == "true";
+		if(!valueJoinRuleListJoinRuleListArr["StatusCode"].isNull())
+			joinRuleListObject.statusCode = valueJoinRuleListJoinRuleListArr["StatusCode"].asString();
 		joinRuleList_.push_back(joinRuleListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

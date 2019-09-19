@@ -39,14 +39,14 @@ void DescribeSnapshotMonitorDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMonitorData = value["MonitorData"]["DataPoint"];
-	for (auto value : allMonitorData)
+	auto allMonitorDataNode = value["MonitorData"]["DataPoint"];
+	for (auto valueMonitorDataDataPoint : allMonitorDataNode)
 	{
 		DataPoint monitorDataObject;
-		if(!value["TimeStamp"].isNull())
-			monitorDataObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Size"].isNull())
-			monitorDataObject.size = std::stol(value["Size"].asString());
+		if(!valueMonitorDataDataPoint["TimeStamp"].isNull())
+			monitorDataObject.timeStamp = valueMonitorDataDataPoint["TimeStamp"].asString();
+		if(!valueMonitorDataDataPoint["Size"].isNull())
+			monitorDataObject.size = std::stol(valueMonitorDataDataPoint["Size"].asString());
 		monitorData_.push_back(monitorDataObject);
 	}
 

@@ -39,22 +39,22 @@ void DescribeNetworkOptimizationsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNetworkOptimizations = value["NetworkOptimizations"]["NetworkOptimization"];
-	for (auto value : allNetworkOptimizations)
+	auto allNetworkOptimizationsNode = value["NetworkOptimizations"]["NetworkOptimization"];
+	for (auto valueNetworkOptimizationsNetworkOptimization : allNetworkOptimizationsNode)
 	{
 		NetworkOptimization networkOptimizationsObject;
-		if(!value["InstanceId"].isNull())
-			networkOptimizationsObject.instanceId = value["InstanceId"].asString();
-		if(!value["Name"].isNull())
-			networkOptimizationsObject.name = value["Name"].asString();
-		if(!value["State"].isNull())
-			networkOptimizationsObject.state = value["State"].asString();
-		if(!value["CreateTime"].isNull())
-			networkOptimizationsObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["SagCount"].isNull())
-			networkOptimizationsObject.sagCount = std::stoi(value["SagCount"].asString());
-		if(!value["CcnId"].isNull())
-			networkOptimizationsObject.ccnId = value["CcnId"].asString();
+		if(!valueNetworkOptimizationsNetworkOptimization["InstanceId"].isNull())
+			networkOptimizationsObject.instanceId = valueNetworkOptimizationsNetworkOptimization["InstanceId"].asString();
+		if(!valueNetworkOptimizationsNetworkOptimization["Name"].isNull())
+			networkOptimizationsObject.name = valueNetworkOptimizationsNetworkOptimization["Name"].asString();
+		if(!valueNetworkOptimizationsNetworkOptimization["State"].isNull())
+			networkOptimizationsObject.state = valueNetworkOptimizationsNetworkOptimization["State"].asString();
+		if(!valueNetworkOptimizationsNetworkOptimization["CreateTime"].isNull())
+			networkOptimizationsObject.createTime = std::stol(valueNetworkOptimizationsNetworkOptimization["CreateTime"].asString());
+		if(!valueNetworkOptimizationsNetworkOptimization["SagCount"].isNull())
+			networkOptimizationsObject.sagCount = std::stoi(valueNetworkOptimizationsNetworkOptimization["SagCount"].asString());
+		if(!valueNetworkOptimizationsNetworkOptimization["CcnId"].isNull())
+			networkOptimizationsObject.ccnId = valueNetworkOptimizationsNetworkOptimization["CcnId"].asString();
 		networkOptimizations_.push_back(networkOptimizationsObject);
 	}
 	if(!value["TotalCount"].isNull())

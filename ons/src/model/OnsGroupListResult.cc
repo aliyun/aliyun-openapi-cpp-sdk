@@ -39,24 +39,24 @@ void OnsGroupListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["SubscribeInfoDo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["SubscribeInfoDo"];
+	for (auto valueDataSubscribeInfoDo : allDataNode)
 	{
 		SubscribeInfoDo dataObject;
-		if(!value["Owner"].isNull())
-			dataObject.owner = value["Owner"].asString();
-		if(!value["GroupId"].isNull())
-			dataObject.groupId = value["GroupId"].asString();
-		if(!value["UpdateTime"].isNull())
-			dataObject.updateTime = std::stol(value["UpdateTime"].asString());
-		if(!value["Remark"].isNull())
-			dataObject.remark = value["Remark"].asString();
-		if(!value["InstanceId"].isNull())
-			dataObject.instanceId = value["InstanceId"].asString();
-		if(!value["IndependentNaming"].isNull())
-			dataObject.independentNaming = value["IndependentNaming"].asString() == "true";
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = std::stol(value["CreateTime"].asString());
+		if(!valueDataSubscribeInfoDo["Owner"].isNull())
+			dataObject.owner = valueDataSubscribeInfoDo["Owner"].asString();
+		if(!valueDataSubscribeInfoDo["GroupId"].isNull())
+			dataObject.groupId = valueDataSubscribeInfoDo["GroupId"].asString();
+		if(!valueDataSubscribeInfoDo["UpdateTime"].isNull())
+			dataObject.updateTime = std::stol(valueDataSubscribeInfoDo["UpdateTime"].asString());
+		if(!valueDataSubscribeInfoDo["Remark"].isNull())
+			dataObject.remark = valueDataSubscribeInfoDo["Remark"].asString();
+		if(!valueDataSubscribeInfoDo["InstanceId"].isNull())
+			dataObject.instanceId = valueDataSubscribeInfoDo["InstanceId"].asString();
+		if(!valueDataSubscribeInfoDo["IndependentNaming"].isNull())
+			dataObject.independentNaming = valueDataSubscribeInfoDo["IndependentNaming"].asString() == "true";
+		if(!valueDataSubscribeInfoDo["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataSubscribeInfoDo["CreateTime"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["HelpUrl"].isNull())

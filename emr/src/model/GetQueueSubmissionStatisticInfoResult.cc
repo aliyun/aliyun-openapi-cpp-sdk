@@ -39,14 +39,14 @@ void GetQueueSubmissionStatisticInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQueueSubmissionList = value["QueueSubmissionList"]["ClusterStatQueueSubmission"];
-	for (auto value : allQueueSubmissionList)
+	auto allQueueSubmissionListNode = value["QueueSubmissionList"]["ClusterStatQueueSubmission"];
+	for (auto valueQueueSubmissionListClusterStatQueueSubmission : allQueueSubmissionListNode)
 	{
 		ClusterStatQueueSubmission queueSubmissionListObject;
-		if(!value["Queue"].isNull())
-			queueSubmissionListObject.queue = value["Queue"].asString();
-		if(!value["Submission"].isNull())
-			queueSubmissionListObject.submission = std::stol(value["Submission"].asString());
+		if(!valueQueueSubmissionListClusterStatQueueSubmission["Queue"].isNull())
+			queueSubmissionListObject.queue = valueQueueSubmissionListClusterStatQueueSubmission["Queue"].asString();
+		if(!valueQueueSubmissionListClusterStatQueueSubmission["Submission"].isNull())
+			queueSubmissionListObject.submission = std::stol(valueQueueSubmissionListClusterStatQueueSubmission["Submission"].asString());
 		queueSubmissionList_.push_back(queueSubmissionListObject);
 	}
 

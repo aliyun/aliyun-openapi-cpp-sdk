@@ -39,28 +39,28 @@ void DescribeHlsLiveStreamRealTimeBpsDataResult::parse(const std::string &payloa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUsageData = value["UsageData"]["UsageDataPerDomain"];
-	for (auto value : allUsageData)
+	auto allUsageDataNode = value["UsageData"]["UsageDataPerDomain"];
+	for (auto valueUsageDataUsageDataPerDomain : allUsageDataNode)
 	{
 		UsageDataPerDomain usageDataObject;
-		if(!value["DomainName"].isNull())
-			usageDataObject.domainName = value["DomainName"].asString();
-		auto allStreamInfos = value["StreamInfos"]["StreamInfo"];
-		for (auto value : allStreamInfos)
+		if(!valueUsageDataUsageDataPerDomain["DomainName"].isNull())
+			usageDataObject.domainName = valueUsageDataUsageDataPerDomain["DomainName"].asString();
+		auto allStreamInfosNode = allUsageDataNode["StreamInfos"]["StreamInfo"];
+		for (auto allUsageDataNodeStreamInfosStreamInfo : allStreamInfosNode)
 		{
 			UsageDataPerDomain::StreamInfo streamInfosObject;
-			if(!value["StreamName"].isNull())
-				streamInfosObject.streamName = value["StreamName"].asString();
-			auto allInfos = value["Infos"]["Info"];
-			for (auto value : allInfos)
+			if(!allUsageDataNodeStreamInfosStreamInfo["StreamName"].isNull())
+				streamInfosObject.streamName = allUsageDataNodeStreamInfosStreamInfo["StreamName"].asString();
+			auto allInfosNode = allStreamInfosNode["Infos"]["Info"];
+			for (auto allStreamInfosNodeInfosInfo : allInfosNode)
 			{
 				UsageDataPerDomain::StreamInfo::Info infosObject;
-				if(!value["DownFlow"].isNull())
-					infosObject.downFlow = std::stof(value["DownFlow"].asString());
-				if(!value["Rate"].isNull())
-					infosObject.rate = value["Rate"].asString();
-				if(!value["Online"].isNull())
-					infosObject.online = std::stof(value["Online"].asString());
+				if(!allStreamInfosNodeInfosInfo["DownFlow"].isNull())
+					infosObject.downFlow = std::stof(allStreamInfosNodeInfosInfo["DownFlow"].asString());
+				if(!allStreamInfosNodeInfosInfo["Rate"].isNull())
+					infosObject.rate = allStreamInfosNodeInfosInfo["Rate"].asString();
+				if(!allStreamInfosNodeInfosInfo["Online"].isNull())
+					infosObject.online = std::stof(allStreamInfosNodeInfosInfo["Online"].asString());
 				streamInfosObject.infos.push_back(infosObject);
 			}
 			usageDataObject.streamInfos.push_back(streamInfosObject);

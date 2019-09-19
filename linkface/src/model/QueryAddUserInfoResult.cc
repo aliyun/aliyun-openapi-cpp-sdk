@@ -40,28 +40,28 @@ void QueryAddUserInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allCurrentFaceInfos = value["CurrentFaceInfos"]["CurrentFaceInfosItem"];
-	for (auto value : allCurrentFaceInfos)
+	auto allCurrentFaceInfosNode = dataNode["CurrentFaceInfos"]["CurrentFaceInfosItem"];
+	for (auto dataNodeCurrentFaceInfosCurrentFaceInfosItem : allCurrentFaceInfosNode)
 	{
 		Data::CurrentFaceInfosItem currentFaceInfosItemObject;
-		if(!value["UserId"].isNull())
-			currentFaceInfosItemObject.userId = value["UserId"].asString();
-		if(!value["ClientTag"].isNull())
-			currentFaceInfosItemObject.clientTag = value["ClientTag"].asString();
-		if(!value["Index"].isNull())
-			currentFaceInfosItemObject.index = std::stoi(value["Index"].asString());
+		if(!dataNodeCurrentFaceInfosCurrentFaceInfosItem["UserId"].isNull())
+			currentFaceInfosItemObject.userId = dataNodeCurrentFaceInfosCurrentFaceInfosItem["UserId"].asString();
+		if(!dataNodeCurrentFaceInfosCurrentFaceInfosItem["ClientTag"].isNull())
+			currentFaceInfosItemObject.clientTag = dataNodeCurrentFaceInfosCurrentFaceInfosItem["ClientTag"].asString();
+		if(!dataNodeCurrentFaceInfosCurrentFaceInfosItem["Index"].isNull())
+			currentFaceInfosItemObject.index = std::stoi(dataNodeCurrentFaceInfosCurrentFaceInfosItem["Index"].asString());
 		data_.currentFaceInfos.push_back(currentFaceInfosItemObject);
 	}
-	auto allFailedFaceInfos = value["FailedFaceInfos"]["FailedFaceInfosItem"];
-	for (auto value : allFailedFaceInfos)
+	auto allFailedFaceInfosNode = dataNode["FailedFaceInfos"]["FailedFaceInfosItem"];
+	for (auto dataNodeFailedFaceInfosFailedFaceInfosItem : allFailedFaceInfosNode)
 	{
 		Data::FailedFaceInfosItem failedFaceInfosItemObject;
-		if(!value["UserId"].isNull())
-			failedFaceInfosItemObject.userId = value["UserId"].asString();
-		if(!value["ClientTag"].isNull())
-			failedFaceInfosItemObject.clientTag = value["ClientTag"].asString();
-		if(!value["Index"].isNull())
-			failedFaceInfosItemObject.index = std::stoi(value["Index"].asString());
+		if(!dataNodeFailedFaceInfosFailedFaceInfosItem["UserId"].isNull())
+			failedFaceInfosItemObject.userId = dataNodeFailedFaceInfosFailedFaceInfosItem["UserId"].asString();
+		if(!dataNodeFailedFaceInfosFailedFaceInfosItem["ClientTag"].isNull())
+			failedFaceInfosItemObject.clientTag = dataNodeFailedFaceInfosFailedFaceInfosItem["ClientTag"].asString();
+		if(!dataNodeFailedFaceInfosFailedFaceInfosItem["Index"].isNull())
+			failedFaceInfosItemObject.index = std::stoi(dataNodeFailedFaceInfosFailedFaceInfosItem["Index"].asString());
 		data_.failedFaceInfos.push_back(failedFaceInfosItemObject);
 	}
 	if(!value["Code"].isNull())

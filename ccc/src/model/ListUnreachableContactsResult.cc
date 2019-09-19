@@ -46,28 +46,28 @@ void ListUnreachableContactsResult::parse(const std::string &payload)
 		unreachableContacts_.pageNumber = std::stoi(unreachableContactsNode["PageNumber"].asString());
 	if(!unreachableContactsNode["PageSize"].isNull())
 		unreachableContacts_.pageSize = std::stoi(unreachableContactsNode["PageSize"].asString());
-	auto allList = value["List"]["UnreachableContact"];
-	for (auto value : allList)
+	auto allListNode = unreachableContactsNode["List"]["UnreachableContact"];
+	for (auto unreachableContactsNodeListUnreachableContact : allListNode)
 	{
 		UnreachableContacts::UnreachableContact unreachableContactObject;
-		if(!value["TotalAttempts"].isNull())
-			unreachableContactObject.totalAttempts = std::stoi(value["TotalAttempts"].asString());
-		auto allContacts = value["Contacts"]["Contact"];
-		for (auto value : allContacts)
+		if(!unreachableContactsNodeListUnreachableContact["TotalAttempts"].isNull())
+			unreachableContactObject.totalAttempts = std::stoi(unreachableContactsNodeListUnreachableContact["TotalAttempts"].asString());
+		auto allContactsNode = allListNode["Contacts"]["Contact"];
+		for (auto allListNodeContactsContact : allContactsNode)
 		{
 			UnreachableContacts::UnreachableContact::Contact contactsObject;
-			if(!value["ContactId"].isNull())
-				contactsObject.contactId = value["ContactId"].asString();
-			if(!value["ContactName"].isNull())
-				contactsObject.contactName = value["ContactName"].asString();
-			if(!value["Role"].isNull())
-				contactsObject.role = value["Role"].asString();
-			if(!value["PhoneNumber"].isNull())
-				contactsObject.phoneNumber = value["PhoneNumber"].asString();
-			if(!value["State"].isNull())
-				contactsObject.state = value["State"].asString();
-			if(!value["ReferenceId"].isNull())
-				contactsObject.referenceId = value["ReferenceId"].asString();
+			if(!allListNodeContactsContact["ContactId"].isNull())
+				contactsObject.contactId = allListNodeContactsContact["ContactId"].asString();
+			if(!allListNodeContactsContact["ContactName"].isNull())
+				contactsObject.contactName = allListNodeContactsContact["ContactName"].asString();
+			if(!allListNodeContactsContact["Role"].isNull())
+				contactsObject.role = allListNodeContactsContact["Role"].asString();
+			if(!allListNodeContactsContact["PhoneNumber"].isNull())
+				contactsObject.phoneNumber = allListNodeContactsContact["PhoneNumber"].asString();
+			if(!allListNodeContactsContact["State"].isNull())
+				contactsObject.state = allListNodeContactsContact["State"].asString();
+			if(!allListNodeContactsContact["ReferenceId"].isNull())
+				contactsObject.referenceId = allListNodeContactsContact["ReferenceId"].asString();
 			unreachableContactObject.contacts.push_back(contactsObject);
 		}
 		unreachableContacts_.list.push_back(unreachableContactObject);

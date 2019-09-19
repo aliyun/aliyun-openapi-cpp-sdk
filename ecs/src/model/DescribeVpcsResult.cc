@@ -39,28 +39,28 @@ void DescribeVpcsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVpcs = value["Vpcs"]["Vpc"];
-	for (auto value : allVpcs)
+	auto allVpcsNode = value["Vpcs"]["Vpc"];
+	for (auto valueVpcsVpc : allVpcsNode)
 	{
 		Vpc vpcsObject;
-		if(!value["VpcId"].isNull())
-			vpcsObject.vpcId = value["VpcId"].asString();
-		if(!value["RegionId"].isNull())
-			vpcsObject.regionId = value["RegionId"].asString();
-		if(!value["Status"].isNull())
-			vpcsObject.status = value["Status"].asString();
-		if(!value["VpcName"].isNull())
-			vpcsObject.vpcName = value["VpcName"].asString();
-		if(!value["CreationTime"].isNull())
-			vpcsObject.creationTime = value["CreationTime"].asString();
-		if(!value["CidrBlock"].isNull())
-			vpcsObject.cidrBlock = value["CidrBlock"].asString();
-		if(!value["VRouterId"].isNull())
-			vpcsObject.vRouterId = value["VRouterId"].asString();
-		if(!value["Description"].isNull())
-			vpcsObject.description = value["Description"].asString();
-		if(!value["IsDefault"].isNull())
-			vpcsObject.isDefault = value["IsDefault"].asString() == "true";
+		if(!valueVpcsVpc["VpcId"].isNull())
+			vpcsObject.vpcId = valueVpcsVpc["VpcId"].asString();
+		if(!valueVpcsVpc["RegionId"].isNull())
+			vpcsObject.regionId = valueVpcsVpc["RegionId"].asString();
+		if(!valueVpcsVpc["Status"].isNull())
+			vpcsObject.status = valueVpcsVpc["Status"].asString();
+		if(!valueVpcsVpc["VpcName"].isNull())
+			vpcsObject.vpcName = valueVpcsVpc["VpcName"].asString();
+		if(!valueVpcsVpc["CreationTime"].isNull())
+			vpcsObject.creationTime = valueVpcsVpc["CreationTime"].asString();
+		if(!valueVpcsVpc["CidrBlock"].isNull())
+			vpcsObject.cidrBlock = valueVpcsVpc["CidrBlock"].asString();
+		if(!valueVpcsVpc["VRouterId"].isNull())
+			vpcsObject.vRouterId = valueVpcsVpc["VRouterId"].asString();
+		if(!valueVpcsVpc["Description"].isNull())
+			vpcsObject.description = valueVpcsVpc["Description"].asString();
+		if(!valueVpcsVpc["IsDefault"].isNull())
+			vpcsObject.isDefault = valueVpcsVpc["IsDefault"].asString() == "true";
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			vpcsObject.vSwitchIds.push_back(value.asString());

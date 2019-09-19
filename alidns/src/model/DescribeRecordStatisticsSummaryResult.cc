@@ -39,14 +39,14 @@ void DescribeRecordStatisticsSummaryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStatistics = value["Statistics"]["Statistic"];
-	for (auto value : allStatistics)
+	auto allStatisticsNode = value["Statistics"]["Statistic"];
+	for (auto valueStatisticsStatistic : allStatisticsNode)
 	{
 		Statistic statisticsObject;
-		if(!value["SubDomain"].isNull())
-			statisticsObject.subDomain = value["SubDomain"].asString();
-		if(!value["Count"].isNull())
-			statisticsObject.count = std::stol(value["Count"].asString());
+		if(!valueStatisticsStatistic["SubDomain"].isNull())
+			statisticsObject.subDomain = valueStatisticsStatistic["SubDomain"].asString();
+		if(!valueStatisticsStatistic["Count"].isNull())
+			statisticsObject.count = std::stol(valueStatisticsStatistic["Count"].asString());
 		statistics_.push_back(statisticsObject);
 	}
 	if(!value["TotalItems"].isNull())

@@ -39,66 +39,66 @@ void DescribeUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRoleDTOList = value["RoleDTOList"]["RoleDTO"];
-	for (auto value : allRoleDTOList)
+	auto allRoleDTOListNode = value["RoleDTOList"]["RoleDTO"];
+	for (auto valueRoleDTOListRoleDTO : allRoleDTOListNode)
 	{
 		RoleDTO roleDTOListObject;
-		if(!value["Id"].isNull())
-			roleDTOListObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			roleDTOListObject.name = value["Name"].asString();
-		if(!value["ResourceType"].isNull())
-			roleDTOListObject.resourceType = value["ResourceType"].asString();
-		if(!value["GmtCreate"].isNull())
-			roleDTOListObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			roleDTOListObject.gmtModified = value["GmtModified"].asString();
-		if(!value["Description"].isNull())
-			roleDTOListObject.description = value["Description"].asString();
+		if(!valueRoleDTOListRoleDTO["Id"].isNull())
+			roleDTOListObject.id = std::stol(valueRoleDTOListRoleDTO["Id"].asString());
+		if(!valueRoleDTOListRoleDTO["Name"].isNull())
+			roleDTOListObject.name = valueRoleDTOListRoleDTO["Name"].asString();
+		if(!valueRoleDTOListRoleDTO["ResourceType"].isNull())
+			roleDTOListObject.resourceType = valueRoleDTOListRoleDTO["ResourceType"].asString();
+		if(!valueRoleDTOListRoleDTO["GmtCreate"].isNull())
+			roleDTOListObject.gmtCreate = valueRoleDTOListRoleDTO["GmtCreate"].asString();
+		if(!valueRoleDTOListRoleDTO["GmtModified"].isNull())
+			roleDTOListObject.gmtModified = valueRoleDTOListRoleDTO["GmtModified"].asString();
+		if(!valueRoleDTOListRoleDTO["Description"].isNull())
+			roleDTOListObject.description = valueRoleDTOListRoleDTO["Description"].asString();
 		roleDTOList_.push_back(roleDTOListObject);
 	}
-	auto allGroupDTOList = value["GroupDTOList"]["GroupDTO"];
-	for (auto value : allGroupDTOList)
+	auto allGroupDTOListNode = value["GroupDTOList"]["GroupDTO"];
+	for (auto valueGroupDTOListGroupDTO : allGroupDTOListNode)
 	{
 		GroupDTO groupDTOListObject;
-		if(!value["Id"].isNull())
-			groupDTOListObject.id = std::stol(value["Id"].asString());
-		if(!value["Type"].isNull())
-			groupDTOListObject.type = value["Type"].asString();
-		if(!value["Name"].isNull())
-			groupDTOListObject.name = value["Name"].asString();
-		if(!value["GmtCreate"].isNull())
-			groupDTOListObject.gmtCreate = value["GmtCreate"].asString();
-		auto allRoleDTOList1 = value["RoleDTOList"]["RoleDTO"];
-		for (auto value : allRoleDTOList1)
+		if(!valueGroupDTOListGroupDTO["Id"].isNull())
+			groupDTOListObject.id = std::stol(valueGroupDTOListGroupDTO["Id"].asString());
+		if(!valueGroupDTOListGroupDTO["Type"].isNull())
+			groupDTOListObject.type = valueGroupDTOListGroupDTO["Type"].asString();
+		if(!valueGroupDTOListGroupDTO["Name"].isNull())
+			groupDTOListObject.name = valueGroupDTOListGroupDTO["Name"].asString();
+		if(!valueGroupDTOListGroupDTO["GmtCreate"].isNull())
+			groupDTOListObject.gmtCreate = valueGroupDTOListGroupDTO["GmtCreate"].asString();
+		auto allRoleDTOList1Node = allGroupDTOListNode["RoleDTOList"]["RoleDTO"];
+		for (auto allGroupDTOListNodeRoleDTOListRoleDTO : allRoleDTOList1Node)
 		{
 			GroupDTO::RoleDTO2 roleDTOList1Object;
-			if(!value["Id"].isNull())
-				roleDTOList1Object.id = std::stol(value["Id"].asString());
-			if(!value["Name"].isNull())
-				roleDTOList1Object.name = value["Name"].asString();
-			if(!value["ResourceType"].isNull())
-				roleDTOList1Object.resourceType = value["ResourceType"].asString();
-			if(!value["GmtCreate"].isNull())
-				roleDTOList1Object.gmtCreate = value["GmtCreate"].asString();
-			if(!value["GmtModified"].isNull())
-				roleDTOList1Object.gmtModified = value["GmtModified"].asString();
-			if(!value["Description"].isNull())
-				roleDTOList1Object.description = value["Description"].asString();
+			if(!allGroupDTOListNodeRoleDTOListRoleDTO["Id"].isNull())
+				roleDTOList1Object.id = std::stol(allGroupDTOListNodeRoleDTOListRoleDTO["Id"].asString());
+			if(!allGroupDTOListNodeRoleDTOListRoleDTO["Name"].isNull())
+				roleDTOList1Object.name = allGroupDTOListNodeRoleDTOListRoleDTO["Name"].asString();
+			if(!allGroupDTOListNodeRoleDTOListRoleDTO["ResourceType"].isNull())
+				roleDTOList1Object.resourceType = allGroupDTOListNodeRoleDTOListRoleDTO["ResourceType"].asString();
+			if(!allGroupDTOListNodeRoleDTOListRoleDTO["GmtCreate"].isNull())
+				roleDTOList1Object.gmtCreate = allGroupDTOListNodeRoleDTOListRoleDTO["GmtCreate"].asString();
+			if(!allGroupDTOListNodeRoleDTOListRoleDTO["GmtModified"].isNull())
+				roleDTOList1Object.gmtModified = allGroupDTOListNodeRoleDTOListRoleDTO["GmtModified"].asString();
+			if(!allGroupDTOListNodeRoleDTOListRoleDTO["Description"].isNull())
+				roleDTOList1Object.description = allGroupDTOListNodeRoleDTOListRoleDTO["Description"].asString();
 			groupDTOListObject.roleDTOList1.push_back(roleDTOList1Object);
 		}
 		groupDTOList_.push_back(groupDTOListObject);
 	}
-	auto allAccountDTOList = value["AccountDTOList"]["AccountDTO"];
-	for (auto value : allAccountDTOList)
+	auto allAccountDTOListNode = value["AccountDTOList"]["AccountDTO"];
+	for (auto valueAccountDTOListAccountDTO : allAccountDTOListNode)
 	{
 		AccountDTO accountDTOListObject;
-		if(!value["AliyunUserId"].isNull())
-			accountDTOListObject.aliyunUserId = value["AliyunUserId"].asString();
-		if(!value["AccountType"].isNull())
-			accountDTOListObject.accountType = value["AccountType"].asString();
-		if(!value["AuthType"].isNull())
-			accountDTOListObject.authType = value["AuthType"].asString();
+		if(!valueAccountDTOListAccountDTO["AliyunUserId"].isNull())
+			accountDTOListObject.aliyunUserId = valueAccountDTOListAccountDTO["AliyunUserId"].asString();
+		if(!valueAccountDTOListAccountDTO["AccountType"].isNull())
+			accountDTOListObject.accountType = valueAccountDTOListAccountDTO["AccountType"].asString();
+		if(!valueAccountDTOListAccountDTO["AuthType"].isNull())
+			accountDTOListObject.authType = valueAccountDTOListAccountDTO["AuthType"].asString();
 		accountDTOList_.push_back(accountDTOListObject);
 	}
 	if(!value["Paging"].isNull())

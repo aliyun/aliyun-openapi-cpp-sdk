@@ -39,18 +39,18 @@ void QueryDeviceGroupByDeviceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allGroupInfos = value["GroupInfos"]["GroupInfo"];
-	for (auto value : allGroupInfos)
+	auto allGroupInfosNode = value["GroupInfos"]["GroupInfo"];
+	for (auto valueGroupInfosGroupInfo : allGroupInfosNode)
 	{
 		GroupInfo groupInfosObject;
-		if(!value["GroupId"].isNull())
-			groupInfosObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			groupInfosObject.groupName = value["GroupName"].asString();
-		if(!value["UtcCreate"].isNull())
-			groupInfosObject.utcCreate = value["UtcCreate"].asString();
-		if(!value["GroupDesc"].isNull())
-			groupInfosObject.groupDesc = value["GroupDesc"].asString();
+		if(!valueGroupInfosGroupInfo["GroupId"].isNull())
+			groupInfosObject.groupId = valueGroupInfosGroupInfo["GroupId"].asString();
+		if(!valueGroupInfosGroupInfo["GroupName"].isNull())
+			groupInfosObject.groupName = valueGroupInfosGroupInfo["GroupName"].asString();
+		if(!valueGroupInfosGroupInfo["UtcCreate"].isNull())
+			groupInfosObject.utcCreate = valueGroupInfosGroupInfo["UtcCreate"].asString();
+		if(!valueGroupInfosGroupInfo["GroupDesc"].isNull())
+			groupInfosObject.groupDesc = valueGroupInfosGroupInfo["GroupDesc"].asString();
 		groupInfos_.push_back(groupInfosObject);
 	}
 	if(!value["Success"].isNull())

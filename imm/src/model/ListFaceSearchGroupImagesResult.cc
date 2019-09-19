@@ -39,36 +39,36 @@ void ListFaceSearchGroupImagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allImages = value["Images"]["ImagesItem"];
-	for (auto value : allImages)
+	auto allImagesNode = value["Images"]["ImagesItem"];
+	for (auto valueImagesImagesItem : allImagesNode)
 	{
 		ImagesItem imagesObject;
-		if(!value["User"].isNull())
-			imagesObject.user = value["User"].asString();
-		if(!value["ImageId"].isNull())
-			imagesObject.imageId = value["ImageId"].asString();
-		if(!value["ImageUri"].isNull())
-			imagesObject.imageUri = value["ImageUri"].asString();
-		if(!value["ImageMd5"].isNull())
-			imagesObject.imageMd5 = value["ImageMd5"].asString();
-		if(!value["Roll"].isNull())
-			imagesObject.roll = std::stof(value["Roll"].asString());
-		if(!value["FaceId"].isNull())
-			imagesObject.faceId = value["FaceId"].asString();
-		if(!value["Yaw"].isNull())
-			imagesObject.yaw = std::stof(value["Yaw"].asString());
-		if(!value["Quality"].isNull())
-			imagesObject.quality = std::stof(value["Quality"].asString());
-		if(!value["Glasses"].isNull())
-			imagesObject.glasses = std::stoi(value["Glasses"].asString());
-		if(!value["Hat"].isNull())
-			imagesObject.hat = std::stoi(value["Hat"].asString());
-		if(!value["Pitch"].isNull())
-			imagesObject.pitch = std::stof(value["Pitch"].asString());
-		if(!value["Age"].isNull())
-			imagesObject.age = std::stoi(value["Age"].asString());
-		if(!value["Gender"].isNull())
-			imagesObject.gender = value["Gender"].asString();
+		if(!valueImagesImagesItem["User"].isNull())
+			imagesObject.user = valueImagesImagesItem["User"].asString();
+		if(!valueImagesImagesItem["ImageId"].isNull())
+			imagesObject.imageId = valueImagesImagesItem["ImageId"].asString();
+		if(!valueImagesImagesItem["ImageUri"].isNull())
+			imagesObject.imageUri = valueImagesImagesItem["ImageUri"].asString();
+		if(!valueImagesImagesItem["ImageMd5"].isNull())
+			imagesObject.imageMd5 = valueImagesImagesItem["ImageMd5"].asString();
+		if(!valueImagesImagesItem["Roll"].isNull())
+			imagesObject.roll = std::stof(valueImagesImagesItem["Roll"].asString());
+		if(!valueImagesImagesItem["FaceId"].isNull())
+			imagesObject.faceId = valueImagesImagesItem["FaceId"].asString();
+		if(!valueImagesImagesItem["Yaw"].isNull())
+			imagesObject.yaw = std::stof(valueImagesImagesItem["Yaw"].asString());
+		if(!valueImagesImagesItem["Quality"].isNull())
+			imagesObject.quality = std::stof(valueImagesImagesItem["Quality"].asString());
+		if(!valueImagesImagesItem["Glasses"].isNull())
+			imagesObject.glasses = std::stoi(valueImagesImagesItem["Glasses"].asString());
+		if(!valueImagesImagesItem["Hat"].isNull())
+			imagesObject.hat = std::stoi(valueImagesImagesItem["Hat"].asString());
+		if(!valueImagesImagesItem["Pitch"].isNull())
+			imagesObject.pitch = std::stof(valueImagesImagesItem["Pitch"].asString());
+		if(!valueImagesImagesItem["Age"].isNull())
+			imagesObject.age = std::stoi(valueImagesImagesItem["Age"].asString());
+		if(!valueImagesImagesItem["Gender"].isNull())
+			imagesObject.gender = valueImagesImagesItem["Gender"].asString();
 		auto allAxis = value["Axis"]["Axis"];
 		for (auto value : allAxis)
 			imagesObject.axis.push_back(value.asString());

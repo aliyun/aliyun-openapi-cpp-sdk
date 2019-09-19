@@ -39,54 +39,54 @@ void DescribeViewContentResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allViewContentList = value["ViewContentList"]["ViewContent"];
-	for (auto value : allViewContentList)
+	auto allViewContentListNode = value["ViewContentList"]["ViewContent"];
+	for (auto valueViewContentListViewContent : allViewContentListNode)
 	{
 		ViewContent viewContentListObject;
-		if(!value["TaskId"].isNull())
-			viewContentListObject.taskId = value["TaskId"].asString();
-		if(!value["DataId"].isNull())
-			viewContentListObject.dataId = value["DataId"].asString();
-		if(!value["BizType"].isNull())
-			viewContentListObject.bizType = value["BizType"].asString();
-		if(!value["Content"].isNull())
-			viewContentListObject.content = value["Content"].asString();
-		if(!value["Url"].isNull())
-			viewContentListObject.url = value["Url"].asString();
-		if(!value["NewUrl"].isNull())
-			viewContentListObject.newUrl = value["NewUrl"].asString();
-		if(!value["Thumbnail"].isNull())
-			viewContentListObject.thumbnail = value["Thumbnail"].asString();
-		if(!value["RequestTime"].isNull())
-			viewContentListObject.requestTime = value["RequestTime"].asString();
-		if(!value["ScanFinishedTime"].isNull())
-			viewContentListObject.scanFinishedTime = value["ScanFinishedTime"].asString();
-		if(!value["Suggestion"].isNull())
-			viewContentListObject.suggestion = value["Suggestion"].asString();
-		if(!value["Id"].isNull())
-			viewContentListObject.id = std::stol(value["Id"].asString());
-		if(!value["ScanResult"].isNull())
-			viewContentListObject.scanResult = value["ScanResult"].asString();
-		auto allResults = value["Results"]["Result"];
-		for (auto value : allResults)
+		if(!valueViewContentListViewContent["TaskId"].isNull())
+			viewContentListObject.taskId = valueViewContentListViewContent["TaskId"].asString();
+		if(!valueViewContentListViewContent["DataId"].isNull())
+			viewContentListObject.dataId = valueViewContentListViewContent["DataId"].asString();
+		if(!valueViewContentListViewContent["BizType"].isNull())
+			viewContentListObject.bizType = valueViewContentListViewContent["BizType"].asString();
+		if(!valueViewContentListViewContent["Content"].isNull())
+			viewContentListObject.content = valueViewContentListViewContent["Content"].asString();
+		if(!valueViewContentListViewContent["Url"].isNull())
+			viewContentListObject.url = valueViewContentListViewContent["Url"].asString();
+		if(!valueViewContentListViewContent["NewUrl"].isNull())
+			viewContentListObject.newUrl = valueViewContentListViewContent["NewUrl"].asString();
+		if(!valueViewContentListViewContent["Thumbnail"].isNull())
+			viewContentListObject.thumbnail = valueViewContentListViewContent["Thumbnail"].asString();
+		if(!valueViewContentListViewContent["RequestTime"].isNull())
+			viewContentListObject.requestTime = valueViewContentListViewContent["RequestTime"].asString();
+		if(!valueViewContentListViewContent["ScanFinishedTime"].isNull())
+			viewContentListObject.scanFinishedTime = valueViewContentListViewContent["ScanFinishedTime"].asString();
+		if(!valueViewContentListViewContent["Suggestion"].isNull())
+			viewContentListObject.suggestion = valueViewContentListViewContent["Suggestion"].asString();
+		if(!valueViewContentListViewContent["Id"].isNull())
+			viewContentListObject.id = std::stol(valueViewContentListViewContent["Id"].asString());
+		if(!valueViewContentListViewContent["ScanResult"].isNull())
+			viewContentListObject.scanResult = valueViewContentListViewContent["ScanResult"].asString();
+		auto allResultsNode = allViewContentListNode["Results"]["Result"];
+		for (auto allViewContentListNodeResultsResult : allResultsNode)
 		{
 			ViewContent::Result resultsObject;
-			if(!value["Suggestion"].isNull())
-				resultsObject.suggestion = value["Suggestion"].asString();
-			if(!value["Label"].isNull())
-				resultsObject.label = value["Label"].asString();
-			if(!value["Scene"].isNull())
-				resultsObject.scene = value["Scene"].asString();
+			if(!allViewContentListNodeResultsResult["Suggestion"].isNull())
+				resultsObject.suggestion = allViewContentListNodeResultsResult["Suggestion"].asString();
+			if(!allViewContentListNodeResultsResult["Label"].isNull())
+				resultsObject.label = allViewContentListNodeResultsResult["Label"].asString();
+			if(!allViewContentListNodeResultsResult["Scene"].isNull())
+				resultsObject.scene = allViewContentListNodeResultsResult["Scene"].asString();
 			viewContentListObject.results.push_back(resultsObject);
 		}
-		auto allFrameResults = value["FrameResults"]["frameResult"];
-		for (auto value : allFrameResults)
+		auto allFrameResultsNode = allViewContentListNode["FrameResults"]["frameResult"];
+		for (auto allViewContentListNodeFrameResultsframeResult : allFrameResultsNode)
 		{
 			ViewContent::FrameResult frameResultsObject;
-			if(!value["Url"].isNull())
-				frameResultsObject.url = value["Url"].asString();
-			if(!value["Offset"].isNull())
-				frameResultsObject.offset = std::stoi(value["Offset"].asString());
+			if(!allViewContentListNodeFrameResultsframeResult["Url"].isNull())
+				frameResultsObject.url = allViewContentListNodeFrameResultsframeResult["Url"].asString();
+			if(!allViewContentListNodeFrameResultsframeResult["Offset"].isNull())
+				frameResultsObject.offset = std::stoi(allViewContentListNodeFrameResultsframeResult["Offset"].asString());
 			viewContentListObject.frameResults.push_back(frameResultsObject);
 		}
 		viewContentList_.push_back(viewContentListObject);

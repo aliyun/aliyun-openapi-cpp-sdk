@@ -39,24 +39,24 @@ void DescribeCenAttachedChildInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allChildInstances = value["ChildInstances"]["ChildInstance"];
-	for (auto value : allChildInstances)
+	auto allChildInstancesNode = value["ChildInstances"]["ChildInstance"];
+	for (auto valueChildInstancesChildInstance : allChildInstancesNode)
 	{
 		ChildInstance childInstancesObject;
-		if(!value["CenId"].isNull())
-			childInstancesObject.cenId = value["CenId"].asString();
-		if(!value["ChildInstanceId"].isNull())
-			childInstancesObject.childInstanceId = value["ChildInstanceId"].asString();
-		if(!value["ChildInstanceType"].isNull())
-			childInstancesObject.childInstanceType = value["ChildInstanceType"].asString();
-		if(!value["ChildInstanceRegionId"].isNull())
-			childInstancesObject.childInstanceRegionId = value["ChildInstanceRegionId"].asString();
-		if(!value["ChildInstanceOwnerId"].isNull())
-			childInstancesObject.childInstanceOwnerId = std::stol(value["ChildInstanceOwnerId"].asString());
-		if(!value["Status"].isNull())
-			childInstancesObject.status = value["Status"].asString();
-		if(!value["ChildInstanceAttachTime"].isNull())
-			childInstancesObject.childInstanceAttachTime = value["ChildInstanceAttachTime"].asString();
+		if(!valueChildInstancesChildInstance["CenId"].isNull())
+			childInstancesObject.cenId = valueChildInstancesChildInstance["CenId"].asString();
+		if(!valueChildInstancesChildInstance["ChildInstanceId"].isNull())
+			childInstancesObject.childInstanceId = valueChildInstancesChildInstance["ChildInstanceId"].asString();
+		if(!valueChildInstancesChildInstance["ChildInstanceType"].isNull())
+			childInstancesObject.childInstanceType = valueChildInstancesChildInstance["ChildInstanceType"].asString();
+		if(!valueChildInstancesChildInstance["ChildInstanceRegionId"].isNull())
+			childInstancesObject.childInstanceRegionId = valueChildInstancesChildInstance["ChildInstanceRegionId"].asString();
+		if(!valueChildInstancesChildInstance["ChildInstanceOwnerId"].isNull())
+			childInstancesObject.childInstanceOwnerId = std::stol(valueChildInstancesChildInstance["ChildInstanceOwnerId"].asString());
+		if(!valueChildInstancesChildInstance["Status"].isNull())
+			childInstancesObject.status = valueChildInstancesChildInstance["Status"].asString();
+		if(!valueChildInstancesChildInstance["ChildInstanceAttachTime"].isNull())
+			childInstancesObject.childInstanceAttachTime = valueChildInstancesChildInstance["ChildInstanceAttachTime"].asString();
 		childInstances_.push_back(childInstancesObject);
 	}
 	if(!value["TotalCount"].isNull())

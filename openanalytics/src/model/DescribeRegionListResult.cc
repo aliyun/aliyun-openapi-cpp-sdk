@@ -39,12 +39,12 @@ void DescribeRegionListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegionList = value["RegionList"]["RegionListItem"];
-	for (auto value : allRegionList)
+	auto allRegionListNode = value["RegionList"]["RegionListItem"];
+	for (auto valueRegionListRegionListItem : allRegionListNode)
 	{
 		RegionListItem regionListObject;
-		if(!value["regionID"].isNull())
-			regionListObject.regionID = value["regionID"].asString();
+		if(!valueRegionListRegionListItem["regionID"].isNull())
+			regionListObject.regionID = valueRegionListRegionListItem["regionID"].asString();
 		regionList_.push_back(regionListObject);
 	}
 	if(!value["RegionId"].isNull())

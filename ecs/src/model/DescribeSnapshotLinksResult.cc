@@ -39,30 +39,30 @@ void DescribeSnapshotLinksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSnapshotLinks = value["SnapshotLinks"]["SnapshotLink"];
-	for (auto value : allSnapshotLinks)
+	auto allSnapshotLinksNode = value["SnapshotLinks"]["SnapshotLink"];
+	for (auto valueSnapshotLinksSnapshotLink : allSnapshotLinksNode)
 	{
 		SnapshotLink snapshotLinksObject;
-		if(!value["SnapshotLinkId"].isNull())
-			snapshotLinksObject.snapshotLinkId = value["SnapshotLinkId"].asString();
-		if(!value["RegionId"].isNull())
-			snapshotLinksObject.regionId = value["RegionId"].asString();
-		if(!value["InstanceId"].isNull())
-			snapshotLinksObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceName"].isNull())
-			snapshotLinksObject.instanceName = value["InstanceName"].asString();
-		if(!value["SourceDiskId"].isNull())
-			snapshotLinksObject.sourceDiskId = value["SourceDiskId"].asString();
-		if(!value["SourceDiskName"].isNull())
-			snapshotLinksObject.sourceDiskName = value["SourceDiskName"].asString();
-		if(!value["SourceDiskSize"].isNull())
-			snapshotLinksObject.sourceDiskSize = std::stoi(value["SourceDiskSize"].asString());
-		if(!value["SourceDiskType"].isNull())
-			snapshotLinksObject.sourceDiskType = value["SourceDiskType"].asString();
-		if(!value["TotalSize"].isNull())
-			snapshotLinksObject.totalSize = std::stol(value["TotalSize"].asString());
-		if(!value["TotalCount"].isNull())
-			snapshotLinksObject.totalCount = std::stoi(value["TotalCount"].asString());
+		if(!valueSnapshotLinksSnapshotLink["SnapshotLinkId"].isNull())
+			snapshotLinksObject.snapshotLinkId = valueSnapshotLinksSnapshotLink["SnapshotLinkId"].asString();
+		if(!valueSnapshotLinksSnapshotLink["RegionId"].isNull())
+			snapshotLinksObject.regionId = valueSnapshotLinksSnapshotLink["RegionId"].asString();
+		if(!valueSnapshotLinksSnapshotLink["InstanceId"].isNull())
+			snapshotLinksObject.instanceId = valueSnapshotLinksSnapshotLink["InstanceId"].asString();
+		if(!valueSnapshotLinksSnapshotLink["InstanceName"].isNull())
+			snapshotLinksObject.instanceName = valueSnapshotLinksSnapshotLink["InstanceName"].asString();
+		if(!valueSnapshotLinksSnapshotLink["SourceDiskId"].isNull())
+			snapshotLinksObject.sourceDiskId = valueSnapshotLinksSnapshotLink["SourceDiskId"].asString();
+		if(!valueSnapshotLinksSnapshotLink["SourceDiskName"].isNull())
+			snapshotLinksObject.sourceDiskName = valueSnapshotLinksSnapshotLink["SourceDiskName"].asString();
+		if(!valueSnapshotLinksSnapshotLink["SourceDiskSize"].isNull())
+			snapshotLinksObject.sourceDiskSize = std::stoi(valueSnapshotLinksSnapshotLink["SourceDiskSize"].asString());
+		if(!valueSnapshotLinksSnapshotLink["SourceDiskType"].isNull())
+			snapshotLinksObject.sourceDiskType = valueSnapshotLinksSnapshotLink["SourceDiskType"].asString();
+		if(!valueSnapshotLinksSnapshotLink["TotalSize"].isNull())
+			snapshotLinksObject.totalSize = std::stol(valueSnapshotLinksSnapshotLink["TotalSize"].asString());
+		if(!valueSnapshotLinksSnapshotLink["TotalCount"].isNull())
+			snapshotLinksObject.totalCount = std::stoi(valueSnapshotLinksSnapshotLink["TotalCount"].asString());
 		snapshotLinks_.push_back(snapshotLinksObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,20 +39,20 @@ void ListSearchLogResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"]["ResultItem"];
-	for (auto value : allResult)
+	auto allResultNode = value["Result"]["ResultItem"];
+	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!value["timestamp"].isNull())
-			resultObject.timestamp = std::stol(value["timestamp"].asString());
-		if(!value["host"].isNull())
-			resultObject.host = value["host"].asString();
-		if(!value["level"].isNull())
-			resultObject.level = value["level"].asString();
-		if(!value["content"].isNull())
-			resultObject.content = value["content"].asString();
-		if(!value["instanceId"].isNull())
-			resultObject.instanceId = value["instanceId"].asString();
+		if(!valueResultResultItem["timestamp"].isNull())
+			resultObject.timestamp = std::stol(valueResultResultItem["timestamp"].asString());
+		if(!valueResultResultItem["host"].isNull())
+			resultObject.host = valueResultResultItem["host"].asString();
+		if(!valueResultResultItem["level"].isNull())
+			resultObject.level = valueResultResultItem["level"].asString();
+		if(!valueResultResultItem["content"].isNull())
+			resultObject.content = valueResultResultItem["content"].asString();
+		if(!valueResultResultItem["instanceId"].isNull())
+			resultObject.instanceId = valueResultResultItem["instanceId"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

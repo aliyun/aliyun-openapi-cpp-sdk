@@ -39,24 +39,24 @@ void GetAlbumsByNamesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAlbums = value["Albums"]["Album"];
-	for (auto value : allAlbums)
+	auto allAlbumsNode = value["Albums"]["Album"];
+	for (auto valueAlbumsAlbum : allAlbumsNode)
 	{
 		Album albumsObject;
-		if(!value["Id"].isNull())
-			albumsObject.id = std::stol(value["Id"].asString());
-		if(!value["IdStr"].isNull())
-			albumsObject.idStr = value["IdStr"].asString();
-		if(!value["Name"].isNull())
-			albumsObject.name = value["Name"].asString();
-		if(!value["State"].isNull())
-			albumsObject.state = value["State"].asString();
-		if(!value["PhotosCount"].isNull())
-			albumsObject.photosCount = std::stol(value["PhotosCount"].asString());
-		if(!value["Ctime"].isNull())
-			albumsObject.ctime = std::stol(value["Ctime"].asString());
-		if(!value["Mtime"].isNull())
-			albumsObject.mtime = std::stol(value["Mtime"].asString());
+		if(!valueAlbumsAlbum["Id"].isNull())
+			albumsObject.id = std::stol(valueAlbumsAlbum["Id"].asString());
+		if(!valueAlbumsAlbum["IdStr"].isNull())
+			albumsObject.idStr = valueAlbumsAlbum["IdStr"].asString();
+		if(!valueAlbumsAlbum["Name"].isNull())
+			albumsObject.name = valueAlbumsAlbum["Name"].asString();
+		if(!valueAlbumsAlbum["State"].isNull())
+			albumsObject.state = valueAlbumsAlbum["State"].asString();
+		if(!valueAlbumsAlbum["PhotosCount"].isNull())
+			albumsObject.photosCount = std::stol(valueAlbumsAlbum["PhotosCount"].asString());
+		if(!valueAlbumsAlbum["Ctime"].isNull())
+			albumsObject.ctime = std::stol(valueAlbumsAlbum["Ctime"].asString());
+		if(!valueAlbumsAlbum["Mtime"].isNull())
+			albumsObject.mtime = std::stol(valueAlbumsAlbum["Mtime"].asString());
 		auto coverNode = value["Cover"];
 		if(!coverNode["Id"].isNull())
 			albumsObject.cover.id = std::stol(coverNode["Id"].asString());

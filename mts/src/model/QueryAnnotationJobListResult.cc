@@ -39,24 +39,24 @@ void QueryAnnotationJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAnnotationJobList = value["AnnotationJobList"]["AnnotationJob"];
-	for (auto value : allAnnotationJobList)
+	auto allAnnotationJobListNode = value["AnnotationJobList"]["AnnotationJob"];
+	for (auto valueAnnotationJobListAnnotationJob : allAnnotationJobListNode)
 	{
 		AnnotationJob annotationJobListObject;
-		if(!value["Id"].isNull())
-			annotationJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			annotationJobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			annotationJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			annotationJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			annotationJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			annotationJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			annotationJobListObject.creationTime = value["CreationTime"].asString();
+		if(!valueAnnotationJobListAnnotationJob["Id"].isNull())
+			annotationJobListObject.id = valueAnnotationJobListAnnotationJob["Id"].asString();
+		if(!valueAnnotationJobListAnnotationJob["UserData"].isNull())
+			annotationJobListObject.userData = valueAnnotationJobListAnnotationJob["UserData"].asString();
+		if(!valueAnnotationJobListAnnotationJob["PipelineId"].isNull())
+			annotationJobListObject.pipelineId = valueAnnotationJobListAnnotationJob["PipelineId"].asString();
+		if(!valueAnnotationJobListAnnotationJob["State"].isNull())
+			annotationJobListObject.state = valueAnnotationJobListAnnotationJob["State"].asString();
+		if(!valueAnnotationJobListAnnotationJob["Code"].isNull())
+			annotationJobListObject.code = valueAnnotationJobListAnnotationJob["Code"].asString();
+		if(!valueAnnotationJobListAnnotationJob["Message"].isNull())
+			annotationJobListObject.message = valueAnnotationJobListAnnotationJob["Message"].asString();
+		if(!valueAnnotationJobListAnnotationJob["CreationTime"].isNull())
+			annotationJobListObject.creationTime = valueAnnotationJobListAnnotationJob["CreationTime"].asString();
 		auto inputNode = value["Input"];
 		if(!inputNode["Bucket"].isNull())
 			annotationJobListObject.input.bucket = inputNode["Bucket"].asString();
@@ -67,14 +67,14 @@ void QueryAnnotationJobListResult::parse(const std::string &payload)
 		auto videoAnnotationResultNode = value["VideoAnnotationResult"];
 		if(!videoAnnotationResultNode["Details"].isNull())
 			annotationJobListObject.videoAnnotationResult.details = videoAnnotationResultNode["Details"].asString();
-		auto allAnnotations = value["Annotations"]["Annotation"];
-		for (auto value : allAnnotations)
+		auto allAnnotationsNode = videoAnnotationResultNode["Annotations"]["Annotation"];
+		for (auto videoAnnotationResultNodeAnnotationsAnnotation : allAnnotationsNode)
 		{
 			AnnotationJob::VideoAnnotationResult::Annotation annotationObject;
-			if(!value["Label"].isNull())
-				annotationObject.label = value["Label"].asString();
-			if(!value["Score"].isNull())
-				annotationObject.score = value["Score"].asString();
+			if(!videoAnnotationResultNodeAnnotationsAnnotation["Label"].isNull())
+				annotationObject.label = videoAnnotationResultNodeAnnotationsAnnotation["Label"].asString();
+			if(!videoAnnotationResultNodeAnnotationsAnnotation["Score"].isNull())
+				annotationObject.score = videoAnnotationResultNodeAnnotationsAnnotation["Score"].asString();
 			annotationJobListObject.videoAnnotationResult.annotations.push_back(annotationObject);
 		}
 		annotationJobList_.push_back(annotationJobListObject);

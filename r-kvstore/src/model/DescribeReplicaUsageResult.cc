@@ -40,25 +40,25 @@ void DescribeReplicaUsageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto performanceKeysNode = value["PerformanceKeys"];
-	auto allPerformanceKey = value["PerformanceKey"]["PerformanceKeyItem"];
-	for (auto value : allPerformanceKey)
+	auto allPerformanceKeyNode = performanceKeysNode["PerformanceKey"]["PerformanceKeyItem"];
+	for (auto performanceKeysNodePerformanceKeyPerformanceKeyItem : allPerformanceKeyNode)
 	{
 		PerformanceKeys::PerformanceKeyItem performanceKeyItemObject;
-		if(!value["Key"].isNull())
-			performanceKeyItemObject.key = value["Key"].asString();
-		if(!value["Unit"].isNull())
-			performanceKeyItemObject.unit = value["Unit"].asString();
-		if(!value["ValueFormat"].isNull())
-			performanceKeyItemObject.valueFormat = value["ValueFormat"].asString();
+		if(!performanceKeysNodePerformanceKeyPerformanceKeyItem["Key"].isNull())
+			performanceKeyItemObject.key = performanceKeysNodePerformanceKeyPerformanceKeyItem["Key"].asString();
+		if(!performanceKeysNodePerformanceKeyPerformanceKeyItem["Unit"].isNull())
+			performanceKeyItemObject.unit = performanceKeysNodePerformanceKeyPerformanceKeyItem["Unit"].asString();
+		if(!performanceKeysNodePerformanceKeyPerformanceKeyItem["ValueFormat"].isNull())
+			performanceKeyItemObject.valueFormat = performanceKeysNodePerformanceKeyPerformanceKeyItem["ValueFormat"].asString();
 		auto performanceValuesNode = value["PerformanceValues"];
-		auto allPerformanceValue = value["PerformanceValue"]["PerformanceValueItem"];
-		for (auto value : allPerformanceValue)
+		auto allPerformanceValueNode = performanceValuesNode["PerformanceValue"]["PerformanceValueItem"];
+		for (auto performanceValuesNodePerformanceValuePerformanceValueItem : allPerformanceValueNode)
 		{
 			PerformanceKeys::PerformanceKeyItem::PerformanceValues::PerformanceValueItem performanceValueItemObject;
-			if(!value["Value"].isNull())
-				performanceValueItemObject.value = value["Value"].asString();
-			if(!value["Date"].isNull())
-				performanceValueItemObject.date = value["Date"].asString();
+			if(!performanceValuesNodePerformanceValuePerformanceValueItem["Value"].isNull())
+				performanceValueItemObject.value = performanceValuesNodePerformanceValuePerformanceValueItem["Value"].asString();
+			if(!performanceValuesNodePerformanceValuePerformanceValueItem["Date"].isNull())
+				performanceValueItemObject.date = performanceValuesNodePerformanceValuePerformanceValueItem["Date"].asString();
 			performanceKeyItemObject.performanceValues.performanceValue.push_back(performanceValueItemObject);
 		}
 		performanceKeys_.performanceKey.push_back(performanceKeyItemObject);

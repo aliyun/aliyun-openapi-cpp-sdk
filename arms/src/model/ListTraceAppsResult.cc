@@ -39,26 +39,26 @@ void ListTraceAppsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTraceApps = value["TraceApps"]["TraceApp"];
-	for (auto value : allTraceApps)
+	auto allTraceAppsNode = value["TraceApps"]["TraceApp"];
+	for (auto valueTraceAppsTraceApp : allTraceAppsNode)
 	{
 		TraceApp traceAppsObject;
-		if(!value["AppId"].isNull())
-			traceAppsObject.appId = std::stol(value["AppId"].asString());
-		if(!value["Pid"].isNull())
-			traceAppsObject.pid = value["Pid"].asString();
-		if(!value["AppName"].isNull())
-			traceAppsObject.appName = value["AppName"].asString();
-		if(!value["Type"].isNull())
-			traceAppsObject.type = value["Type"].asString();
-		if(!value["UserId"].isNull())
-			traceAppsObject.userId = value["UserId"].asString();
-		if(!value["CreateTime"].isNull())
-			traceAppsObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["UpdateTime"].isNull())
-			traceAppsObject.updateTime = std::stol(value["UpdateTime"].asString());
-		if(!value["RegionId"].isNull())
-			traceAppsObject.regionId = value["RegionId"].asString();
+		if(!valueTraceAppsTraceApp["AppId"].isNull())
+			traceAppsObject.appId = std::stol(valueTraceAppsTraceApp["AppId"].asString());
+		if(!valueTraceAppsTraceApp["Pid"].isNull())
+			traceAppsObject.pid = valueTraceAppsTraceApp["Pid"].asString();
+		if(!valueTraceAppsTraceApp["AppName"].isNull())
+			traceAppsObject.appName = valueTraceAppsTraceApp["AppName"].asString();
+		if(!valueTraceAppsTraceApp["Type"].isNull())
+			traceAppsObject.type = valueTraceAppsTraceApp["Type"].asString();
+		if(!valueTraceAppsTraceApp["UserId"].isNull())
+			traceAppsObject.userId = valueTraceAppsTraceApp["UserId"].asString();
+		if(!valueTraceAppsTraceApp["CreateTime"].isNull())
+			traceAppsObject.createTime = std::stol(valueTraceAppsTraceApp["CreateTime"].asString());
+		if(!valueTraceAppsTraceApp["UpdateTime"].isNull())
+			traceAppsObject.updateTime = std::stol(valueTraceAppsTraceApp["UpdateTime"].asString());
+		if(!valueTraceAppsTraceApp["RegionId"].isNull())
+			traceAppsObject.regionId = valueTraceAppsTraceApp["RegionId"].asString();
 		traceApps_.push_back(traceAppsObject);
 	}
 	if(!value["Success"].isNull())

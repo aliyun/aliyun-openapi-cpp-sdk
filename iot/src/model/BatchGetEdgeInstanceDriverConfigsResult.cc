@@ -39,24 +39,24 @@ void BatchGetEdgeInstanceDriverConfigsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDriverConfigList = value["DriverConfigList"]["DriverConfig"];
-	for (auto value : allDriverConfigList)
+	auto allDriverConfigListNode = value["DriverConfigList"]["DriverConfig"];
+	for (auto valueDriverConfigListDriverConfig : allDriverConfigListNode)
 	{
 		DriverConfig driverConfigListObject;
-		if(!value["DriverId"].isNull())
-			driverConfigListObject.driverId = value["DriverId"].asString();
-		auto allConfigList = value["ConfigList"]["Config"];
-		for (auto value : allConfigList)
+		if(!valueDriverConfigListDriverConfig["DriverId"].isNull())
+			driverConfigListObject.driverId = valueDriverConfigListDriverConfig["DriverId"].asString();
+		auto allConfigListNode = allDriverConfigListNode["ConfigList"]["Config"];
+		for (auto allDriverConfigListNodeConfigListConfig : allConfigListNode)
 		{
 			DriverConfig::Config configListObject;
-			if(!value["ConfigId"].isNull())
-				configListObject.configId = value["ConfigId"].asString();
-			if(!value["Format"].isNull())
-				configListObject.format = value["Format"].asString();
-			if(!value["Content"].isNull())
-				configListObject.content = value["Content"].asString();
-			if(!value["Key"].isNull())
-				configListObject.key = value["Key"].asString();
+			if(!allDriverConfigListNodeConfigListConfig["ConfigId"].isNull())
+				configListObject.configId = allDriverConfigListNodeConfigListConfig["ConfigId"].asString();
+			if(!allDriverConfigListNodeConfigListConfig["Format"].isNull())
+				configListObject.format = allDriverConfigListNodeConfigListConfig["Format"].asString();
+			if(!allDriverConfigListNodeConfigListConfig["Content"].isNull())
+				configListObject.content = allDriverConfigListNodeConfigListConfig["Content"].asString();
+			if(!allDriverConfigListNodeConfigListConfig["Key"].isNull())
+				configListObject.key = allDriverConfigListNodeConfigListConfig["Key"].asString();
 			driverConfigListObject.configList.push_back(configListObject);
 		}
 		driverConfigList_.push_back(driverConfigListObject);

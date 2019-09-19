@@ -39,24 +39,24 @@ void ListFlowProjectClusterSettingResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClusterSettings = value["ClusterSettings"]["ClusterSetting"];
-	for (auto value : allClusterSettings)
+	auto allClusterSettingsNode = value["ClusterSettings"]["ClusterSetting"];
+	for (auto valueClusterSettingsClusterSetting : allClusterSettingsNode)
 	{
 		ClusterSetting clusterSettingsObject;
-		if(!value["GmtCreate"].isNull())
-			clusterSettingsObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			clusterSettingsObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["ProjectId"].isNull())
-			clusterSettingsObject.projectId = value["ProjectId"].asString();
-		if(!value["ClusterId"].isNull())
-			clusterSettingsObject.clusterId = value["ClusterId"].asString();
-		if(!value["ClusterName"].isNull())
-			clusterSettingsObject.clusterName = value["ClusterName"].asString();
-		if(!value["DefaultUser"].isNull())
-			clusterSettingsObject.defaultUser = value["DefaultUser"].asString();
-		if(!value["DefaultQueue"].isNull())
-			clusterSettingsObject.defaultQueue = value["DefaultQueue"].asString();
+		if(!valueClusterSettingsClusterSetting["GmtCreate"].isNull())
+			clusterSettingsObject.gmtCreate = std::stol(valueClusterSettingsClusterSetting["GmtCreate"].asString());
+		if(!valueClusterSettingsClusterSetting["GmtModified"].isNull())
+			clusterSettingsObject.gmtModified = std::stol(valueClusterSettingsClusterSetting["GmtModified"].asString());
+		if(!valueClusterSettingsClusterSetting["ProjectId"].isNull())
+			clusterSettingsObject.projectId = valueClusterSettingsClusterSetting["ProjectId"].asString();
+		if(!valueClusterSettingsClusterSetting["ClusterId"].isNull())
+			clusterSettingsObject.clusterId = valueClusterSettingsClusterSetting["ClusterId"].asString();
+		if(!valueClusterSettingsClusterSetting["ClusterName"].isNull())
+			clusterSettingsObject.clusterName = valueClusterSettingsClusterSetting["ClusterName"].asString();
+		if(!valueClusterSettingsClusterSetting["DefaultUser"].isNull())
+			clusterSettingsObject.defaultUser = valueClusterSettingsClusterSetting["DefaultUser"].asString();
+		if(!valueClusterSettingsClusterSetting["DefaultQueue"].isNull())
+			clusterSettingsObject.defaultQueue = valueClusterSettingsClusterSetting["DefaultQueue"].asString();
 		auto allUserList = value["UserList"]["User"];
 		for (auto value : allUserList)
 			clusterSettingsObject.userList.push_back(value.asString());

@@ -46,34 +46,34 @@ void QueryEdgeInstanceResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
-	auto allInstanceList = value["InstanceList"]["Instance"];
-	for (auto value : allInstanceList)
+	auto allInstanceListNode = dataNode["InstanceList"]["Instance"];
+	for (auto dataNodeInstanceListInstance : allInstanceListNode)
 	{
 		Data::Instance instanceObject;
-		if(!value["InstanceId"].isNull())
-			instanceObject.instanceId = value["InstanceId"].asString();
-		if(!value["Name"].isNull())
-			instanceObject.name = value["Name"].asString();
-		if(!value["Tags"].isNull())
-			instanceObject.tags = value["Tags"].asString();
-		if(!value["GmtCreate"].isNull())
-			instanceObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			instanceObject.gmtModified = value["GmtModified"].asString();
-		if(!value["RoleArn"].isNull())
-			instanceObject.roleArn = value["RoleArn"].asString();
-		if(!value["RoleName"].isNull())
-			instanceObject.roleName = value["RoleName"].asString();
-		if(!value["RoleAttachTime"].isNull())
-			instanceObject.roleAttachTime = value["RoleAttachTime"].asString();
-		if(!value["Spec"].isNull())
-			instanceObject.spec = std::stoi(value["Spec"].asString());
-		if(!value["BizEnable"].isNull())
-			instanceObject.bizEnable = value["BizEnable"].asString() == "true";
-		if(!value["LatestDeploymentStatus"].isNull())
-			instanceObject.latestDeploymentStatus = std::stoi(value["LatestDeploymentStatus"].asString());
-		if(!value["LatestDeploymentType"].isNull())
-			instanceObject.latestDeploymentType = value["LatestDeploymentType"].asString();
+		if(!dataNodeInstanceListInstance["InstanceId"].isNull())
+			instanceObject.instanceId = dataNodeInstanceListInstance["InstanceId"].asString();
+		if(!dataNodeInstanceListInstance["Name"].isNull())
+			instanceObject.name = dataNodeInstanceListInstance["Name"].asString();
+		if(!dataNodeInstanceListInstance["Tags"].isNull())
+			instanceObject.tags = dataNodeInstanceListInstance["Tags"].asString();
+		if(!dataNodeInstanceListInstance["GmtCreate"].isNull())
+			instanceObject.gmtCreate = dataNodeInstanceListInstance["GmtCreate"].asString();
+		if(!dataNodeInstanceListInstance["GmtModified"].isNull())
+			instanceObject.gmtModified = dataNodeInstanceListInstance["GmtModified"].asString();
+		if(!dataNodeInstanceListInstance["RoleArn"].isNull())
+			instanceObject.roleArn = dataNodeInstanceListInstance["RoleArn"].asString();
+		if(!dataNodeInstanceListInstance["RoleName"].isNull())
+			instanceObject.roleName = dataNodeInstanceListInstance["RoleName"].asString();
+		if(!dataNodeInstanceListInstance["RoleAttachTime"].isNull())
+			instanceObject.roleAttachTime = dataNodeInstanceListInstance["RoleAttachTime"].asString();
+		if(!dataNodeInstanceListInstance["Spec"].isNull())
+			instanceObject.spec = std::stoi(dataNodeInstanceListInstance["Spec"].asString());
+		if(!dataNodeInstanceListInstance["BizEnable"].isNull())
+			instanceObject.bizEnable = dataNodeInstanceListInstance["BizEnable"].asString() == "true";
+		if(!dataNodeInstanceListInstance["LatestDeploymentStatus"].isNull())
+			instanceObject.latestDeploymentStatus = std::stoi(dataNodeInstanceListInstance["LatestDeploymentStatus"].asString());
+		if(!dataNodeInstanceListInstance["LatestDeploymentType"].isNull())
+			instanceObject.latestDeploymentType = dataNodeInstanceListInstance["LatestDeploymentType"].asString();
 		data_.instanceList.push_back(instanceObject);
 	}
 	if(!value["Success"].isNull())

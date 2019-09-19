@@ -39,32 +39,32 @@ void DescribeWebshellListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allWebshells = value["Webshells"]["Data"];
-	for (auto value : allWebshells)
+	auto allWebshellsNode = value["Webshells"]["Data"];
+	for (auto valueWebshellsData : allWebshellsNode)
 	{
 		Data webshellsObject;
-		if(!value["FoundTime"].isNull())
-			webshellsObject.foundTime = value["FoundTime"].asString();
-		if(!value["TrojanType"].isNull())
-			webshellsObject.trojanType = value["TrojanType"].asString();
-		if(!value["TrojanSize"].isNull())
-			webshellsObject.trojanSize = std::stoi(value["TrojanSize"].asString());
-		if(!value["FirstFoundTime"].isNull())
-			webshellsObject.firstFoundTime = value["FirstFoundTime"].asString();
-		if(!value["Domain"].isNull())
-			webshellsObject.domain = value["Domain"].asString();
-		if(!value["DownloadUrl"].isNull())
-			webshellsObject.downloadUrl = value["DownloadUrl"].asString();
-		if(!value["TrojanPath"].isNull())
-			webshellsObject.trojanPath = value["TrojanPath"].asString();
-		if(!value["Uuid"].isNull())
-			webshellsObject.uuid = value["Uuid"].asString();
-		if(!value["MachineName"].isNull())
-			webshellsObject.machineName = value["MachineName"].asString();
-		if(!value["Status"].isNull())
-			webshellsObject.status = std::stoi(value["Status"].asString());
-		if(!value["MachineIp"].isNull())
-			webshellsObject.machineIp = value["MachineIp"].asString();
+		if(!valueWebshellsData["FoundTime"].isNull())
+			webshellsObject.foundTime = valueWebshellsData["FoundTime"].asString();
+		if(!valueWebshellsData["TrojanType"].isNull())
+			webshellsObject.trojanType = valueWebshellsData["TrojanType"].asString();
+		if(!valueWebshellsData["TrojanSize"].isNull())
+			webshellsObject.trojanSize = std::stoi(valueWebshellsData["TrojanSize"].asString());
+		if(!valueWebshellsData["FirstFoundTime"].isNull())
+			webshellsObject.firstFoundTime = valueWebshellsData["FirstFoundTime"].asString();
+		if(!valueWebshellsData["Domain"].isNull())
+			webshellsObject.domain = valueWebshellsData["Domain"].asString();
+		if(!valueWebshellsData["DownloadUrl"].isNull())
+			webshellsObject.downloadUrl = valueWebshellsData["DownloadUrl"].asString();
+		if(!valueWebshellsData["TrojanPath"].isNull())
+			webshellsObject.trojanPath = valueWebshellsData["TrojanPath"].asString();
+		if(!valueWebshellsData["Uuid"].isNull())
+			webshellsObject.uuid = valueWebshellsData["Uuid"].asString();
+		if(!valueWebshellsData["MachineName"].isNull())
+			webshellsObject.machineName = valueWebshellsData["MachineName"].asString();
+		if(!valueWebshellsData["Status"].isNull())
+			webshellsObject.status = std::stoi(valueWebshellsData["Status"].asString());
+		if(!valueWebshellsData["MachineIp"].isNull())
+			webshellsObject.machineIp = valueWebshellsData["MachineIp"].asString();
 		webshells_.push_back(webshellsObject);
 	}
 	if(!value["Success"].isNull())

@@ -39,32 +39,32 @@ void DescribeUserBizTypesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBizTypeList = value["BizTypeList"]["item"];
-	for (auto value : allBizTypeList)
+	auto allBizTypeListNode = value["BizTypeList"]["item"];
+	for (auto valueBizTypeListitem : allBizTypeListNode)
 	{
 		Item bizTypeListObject;
-		if(!value["BizType"].isNull())
-			bizTypeListObject.bizType = value["BizType"].asString();
-		if(!value["SourceBizType"].isNull())
-			bizTypeListObject.sourceBizType = value["SourceBizType"].asString();
-		if(!value["Gray"].isNull())
-			bizTypeListObject.gray = value["Gray"].asString() == "true";
-		if(!value["Source"].isNull())
-			bizTypeListObject.source = value["Source"].asString();
+		if(!valueBizTypeListitem["BizType"].isNull())
+			bizTypeListObject.bizType = valueBizTypeListitem["BizType"].asString();
+		if(!valueBizTypeListitem["SourceBizType"].isNull())
+			bizTypeListObject.sourceBizType = valueBizTypeListitem["SourceBizType"].asString();
+		if(!valueBizTypeListitem["Gray"].isNull())
+			bizTypeListObject.gray = valueBizTypeListitem["Gray"].asString() == "true";
+		if(!valueBizTypeListitem["Source"].isNull())
+			bizTypeListObject.source = valueBizTypeListitem["Source"].asString();
 		bizTypeList_.push_back(bizTypeListObject);
 	}
-	auto allBizTypeListImport = value["BizTypeListImport"]["item"];
-	for (auto value : allBizTypeListImport)
+	auto allBizTypeListImportNode = value["BizTypeListImport"]["item"];
+	for (auto valueBizTypeListImportitem : allBizTypeListImportNode)
 	{
 		Item bizTypeListImportObject;
-		if(!value["BizType"].isNull())
-			bizTypeListImportObject.bizType = value["BizType"].asString();
-		if(!value["SourceBizType"].isNull())
-			bizTypeListImportObject.sourceBizType = value["SourceBizType"].asString();
-		if(!value["Gray"].isNull())
-			bizTypeListImportObject.gray = value["Gray"].asString() == "true";
-		if(!value["Source"].isNull())
-			bizTypeListImportObject.source = value["Source"].asString();
+		if(!valueBizTypeListImportitem["BizType"].isNull())
+			bizTypeListImportObject.bizType = valueBizTypeListImportitem["BizType"].asString();
+		if(!valueBizTypeListImportitem["SourceBizType"].isNull())
+			bizTypeListImportObject.sourceBizType = valueBizTypeListImportitem["SourceBizType"].asString();
+		if(!valueBizTypeListImportitem["Gray"].isNull())
+			bizTypeListImportObject.gray = valueBizTypeListImportitem["Gray"].asString() == "true";
+		if(!valueBizTypeListImportitem["Source"].isNull())
+			bizTypeListImportObject.source = valueBizTypeListImportitem["Source"].asString();
 		bizTypeListImport_.push_back(bizTypeListImportObject);
 	}
 

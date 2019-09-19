@@ -46,28 +46,28 @@ void SearchAlertContactResult::parse(const std::string &payload)
 		pageBean_.pageNumber = std::stoi(pageBeanNode["PageNumber"].asString());
 	if(!pageBeanNode["PageSize"].isNull())
 		pageBean_.pageSize = std::stoi(pageBeanNode["PageSize"].asString());
-	auto allContacts = value["Contacts"]["Contact"];
-	for (auto value : allContacts)
+	auto allContactsNode = pageBeanNode["Contacts"]["Contact"];
+	for (auto pageBeanNodeContactsContact : allContactsNode)
 	{
 		PageBean::Contact contactObject;
-		if(!value["ContactId"].isNull())
-			contactObject.contactId = std::stol(value["ContactId"].asString());
-		if(!value["ContactName"].isNull())
-			contactObject.contactName = value["ContactName"].asString();
-		if(!value["Phone"].isNull())
-			contactObject.phone = value["Phone"].asString();
-		if(!value["Email"].isNull())
-			contactObject.email = value["Email"].asString();
-		if(!value["UserId"].isNull())
-			contactObject.userId = value["UserId"].asString();
-		if(!value["DingRobot"].isNull())
-			contactObject.dingRobot = value["DingRobot"].asString();
-		if(!value["CreateTime"].isNull())
-			contactObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["UpdateTime"].isNull())
-			contactObject.updateTime = std::stol(value["UpdateTime"].asString());
-		if(!value["SystemNoc"].isNull())
-			contactObject.systemNoc = value["SystemNoc"].asString() == "true";
+		if(!pageBeanNodeContactsContact["ContactId"].isNull())
+			contactObject.contactId = std::stol(pageBeanNodeContactsContact["ContactId"].asString());
+		if(!pageBeanNodeContactsContact["ContactName"].isNull())
+			contactObject.contactName = pageBeanNodeContactsContact["ContactName"].asString();
+		if(!pageBeanNodeContactsContact["Phone"].isNull())
+			contactObject.phone = pageBeanNodeContactsContact["Phone"].asString();
+		if(!pageBeanNodeContactsContact["Email"].isNull())
+			contactObject.email = pageBeanNodeContactsContact["Email"].asString();
+		if(!pageBeanNodeContactsContact["UserId"].isNull())
+			contactObject.userId = pageBeanNodeContactsContact["UserId"].asString();
+		if(!pageBeanNodeContactsContact["DingRobot"].isNull())
+			contactObject.dingRobot = pageBeanNodeContactsContact["DingRobot"].asString();
+		if(!pageBeanNodeContactsContact["CreateTime"].isNull())
+			contactObject.createTime = std::stol(pageBeanNodeContactsContact["CreateTime"].asString());
+		if(!pageBeanNodeContactsContact["UpdateTime"].isNull())
+			contactObject.updateTime = std::stol(pageBeanNodeContactsContact["UpdateTime"].asString());
+		if(!pageBeanNodeContactsContact["SystemNoc"].isNull())
+			contactObject.systemNoc = pageBeanNodeContactsContact["SystemNoc"].asString() == "true";
 		pageBean_.contacts.push_back(contactObject);
 	}
 

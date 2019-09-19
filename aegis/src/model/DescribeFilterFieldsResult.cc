@@ -39,12 +39,12 @@ void DescribeFilterFieldsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogFilterList = value["LogFilterList"]["LogFilterListItem"];
-	for (auto value : allLogFilterList)
+	auto allLogFilterListNode = value["LogFilterList"]["LogFilterListItem"];
+	for (auto valueLogFilterListLogFilterListItem : allLogFilterListNode)
 	{
 		LogFilterListItem logFilterListObject;
-		if(!value["Fields"].isNull())
-			logFilterListObject.fields = value["Fields"].asString();
+		if(!valueLogFilterListLogFilterListItem["Fields"].isNull())
+			logFilterListObject.fields = valueLogFilterListLogFilterListItem["Fields"].asString();
 		logFilterList_.push_back(logFilterListObject);
 	}
 	if(!value["Total"].isNull())

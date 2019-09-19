@@ -39,42 +39,42 @@ void PlayInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPlayInfoList = value["PlayInfoList"]["PlayInfo"];
-	for (auto value : allPlayInfoList)
+	auto allPlayInfoListNode = value["PlayInfoList"]["PlayInfo"];
+	for (auto valuePlayInfoListPlayInfo : allPlayInfoListNode)
 	{
 		PlayInfo playInfoListObject;
-		if(!value["Url"].isNull())
-			playInfoListObject.url = value["Url"].asString();
-		if(!value["duration"].isNull())
-			playInfoListObject.duration = value["duration"].asString();
-		if(!value["size"].isNull())
-			playInfoListObject.size = value["size"].asString();
-		if(!value["width"].isNull())
-			playInfoListObject.width = value["width"].asString();
-		if(!value["height"].isNull())
-			playInfoListObject.height = value["height"].asString();
-		if(!value["bitrate"].isNull())
-			playInfoListObject.bitrate = value["bitrate"].asString();
-		if(!value["fps"].isNull())
-			playInfoListObject.fps = value["fps"].asString();
-		if(!value["format"].isNull())
-			playInfoListObject.format = value["format"].asString();
-		if(!value["definition"].isNull())
-			playInfoListObject.definition = value["definition"].asString();
-		if(!value["encryption"].isNull())
-			playInfoListObject.encryption = value["encryption"].asString();
-		if(!value["rand"].isNull())
-			playInfoListObject.rand = value["rand"].asString();
-		if(!value["plaintext"].isNull())
-			playInfoListObject.plaintext = value["plaintext"].asString();
-		if(!value["complexity"].isNull())
-			playInfoListObject.complexity = value["complexity"].asString();
-		if(!value["activityName"].isNull())
-			playInfoListObject.activityName = value["activityName"].asString();
-		if(!value["encryptionType"].isNull())
-			playInfoListObject.encryptionType = value["encryptionType"].asString();
-		if(!value["downloadType"].isNull())
-			playInfoListObject.downloadType = value["downloadType"].asString();
+		if(!valuePlayInfoListPlayInfo["Url"].isNull())
+			playInfoListObject.url = valuePlayInfoListPlayInfo["Url"].asString();
+		if(!valuePlayInfoListPlayInfo["duration"].isNull())
+			playInfoListObject.duration = valuePlayInfoListPlayInfo["duration"].asString();
+		if(!valuePlayInfoListPlayInfo["size"].isNull())
+			playInfoListObject.size = valuePlayInfoListPlayInfo["size"].asString();
+		if(!valuePlayInfoListPlayInfo["width"].isNull())
+			playInfoListObject.width = valuePlayInfoListPlayInfo["width"].asString();
+		if(!valuePlayInfoListPlayInfo["height"].isNull())
+			playInfoListObject.height = valuePlayInfoListPlayInfo["height"].asString();
+		if(!valuePlayInfoListPlayInfo["bitrate"].isNull())
+			playInfoListObject.bitrate = valuePlayInfoListPlayInfo["bitrate"].asString();
+		if(!valuePlayInfoListPlayInfo["fps"].isNull())
+			playInfoListObject.fps = valuePlayInfoListPlayInfo["fps"].asString();
+		if(!valuePlayInfoListPlayInfo["format"].isNull())
+			playInfoListObject.format = valuePlayInfoListPlayInfo["format"].asString();
+		if(!valuePlayInfoListPlayInfo["definition"].isNull())
+			playInfoListObject.definition = valuePlayInfoListPlayInfo["definition"].asString();
+		if(!valuePlayInfoListPlayInfo["encryption"].isNull())
+			playInfoListObject.encryption = valuePlayInfoListPlayInfo["encryption"].asString();
+		if(!valuePlayInfoListPlayInfo["rand"].isNull())
+			playInfoListObject.rand = valuePlayInfoListPlayInfo["rand"].asString();
+		if(!valuePlayInfoListPlayInfo["plaintext"].isNull())
+			playInfoListObject.plaintext = valuePlayInfoListPlayInfo["plaintext"].asString();
+		if(!valuePlayInfoListPlayInfo["complexity"].isNull())
+			playInfoListObject.complexity = valuePlayInfoListPlayInfo["complexity"].asString();
+		if(!valuePlayInfoListPlayInfo["activityName"].isNull())
+			playInfoListObject.activityName = valuePlayInfoListPlayInfo["activityName"].asString();
+		if(!valuePlayInfoListPlayInfo["encryptionType"].isNull())
+			playInfoListObject.encryptionType = valuePlayInfoListPlayInfo["encryptionType"].asString();
+		if(!valuePlayInfoListPlayInfo["downloadType"].isNull())
+			playInfoListObject.downloadType = valuePlayInfoListPlayInfo["downloadType"].asString();
 		playInfoList_.push_back(playInfoListObject);
 	}
 	auto allNotFoundCDNDomain = value["NotFoundCDNDomain"]["String"];

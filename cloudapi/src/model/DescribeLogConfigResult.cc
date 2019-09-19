@@ -39,18 +39,18 @@ void DescribeLogConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogInfos = value["LogInfos"]["LogInfo"];
-	for (auto value : allLogInfos)
+	auto allLogInfosNode = value["LogInfos"]["LogInfo"];
+	for (auto valueLogInfosLogInfo : allLogInfosNode)
 	{
 		LogInfo logInfosObject;
-		if(!value["RegionId"].isNull())
-			logInfosObject.regionId = value["RegionId"].asString();
-		if(!value["SlsProject"].isNull())
-			logInfosObject.slsProject = value["SlsProject"].asString();
-		if(!value["SlsLogStore"].isNull())
-			logInfosObject.slsLogStore = value["SlsLogStore"].asString();
-		if(!value["LogType"].isNull())
-			logInfosObject.logType = value["LogType"].asString();
+		if(!valueLogInfosLogInfo["RegionId"].isNull())
+			logInfosObject.regionId = valueLogInfosLogInfo["RegionId"].asString();
+		if(!valueLogInfosLogInfo["SlsProject"].isNull())
+			logInfosObject.slsProject = valueLogInfosLogInfo["SlsProject"].asString();
+		if(!valueLogInfosLogInfo["SlsLogStore"].isNull())
+			logInfosObject.slsLogStore = valueLogInfosLogInfo["SlsLogStore"].asString();
+		if(!valueLogInfosLogInfo["LogType"].isNull())
+			logInfosObject.logType = valueLogInfosLogInfo["LogType"].asString();
 		logInfos_.push_back(logInfosObject);
 	}
 

@@ -39,24 +39,24 @@ void DescribeTopRiskyAssetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTopRiskyAssets = value["TopRiskyAssets"]["TopRiskyAsset"];
-	for (auto value : allTopRiskyAssets)
+	auto allTopRiskyAssetsNode = value["TopRiskyAssets"]["TopRiskyAsset"];
+	for (auto valueTopRiskyAssetsTopRiskyAsset : allTopRiskyAssetsNode)
 	{
 		TopRiskyAsset topRiskyAssetsObject;
-		if(!value["Type"].isNull())
-			topRiskyAssetsObject.type = value["Type"].asString();
-		auto allAssetInfos = value["AssetInfos"]["AssetInfo"];
-		for (auto value : allAssetInfos)
+		if(!valueTopRiskyAssetsTopRiskyAsset["Type"].isNull())
+			topRiskyAssetsObject.type = valueTopRiskyAssetsTopRiskyAsset["Type"].asString();
+		auto allAssetInfosNode = allTopRiskyAssetsNode["AssetInfos"]["AssetInfo"];
+		for (auto allTopRiskyAssetsNodeAssetInfosAssetInfo : allAssetInfosNode)
 		{
 			TopRiskyAsset::AssetInfo assetInfosObject;
-			if(!value["Uuid"].isNull())
-				assetInfosObject.uuid = value["Uuid"].asString();
-			if(!value["Ip"].isNull())
-				assetInfosObject.ip = value["Ip"].asString();
-			if(!value["InstanceName"].isNull())
-				assetInfosObject.instanceName = value["InstanceName"].asString();
-			if(!value["Count"].isNull())
-				assetInfosObject.count = value["Count"].asString();
+			if(!allTopRiskyAssetsNodeAssetInfosAssetInfo["Uuid"].isNull())
+				assetInfosObject.uuid = allTopRiskyAssetsNodeAssetInfosAssetInfo["Uuid"].asString();
+			if(!allTopRiskyAssetsNodeAssetInfosAssetInfo["Ip"].isNull())
+				assetInfosObject.ip = allTopRiskyAssetsNodeAssetInfosAssetInfo["Ip"].asString();
+			if(!allTopRiskyAssetsNodeAssetInfosAssetInfo["InstanceName"].isNull())
+				assetInfosObject.instanceName = allTopRiskyAssetsNodeAssetInfosAssetInfo["InstanceName"].asString();
+			if(!allTopRiskyAssetsNodeAssetInfosAssetInfo["Count"].isNull())
+				assetInfosObject.count = allTopRiskyAssetsNodeAssetInfosAssetInfo["Count"].asString();
 			topRiskyAssetsObject.assetInfos.push_back(assetInfosObject);
 		}
 		topRiskyAssets_.push_back(topRiskyAssetsObject);

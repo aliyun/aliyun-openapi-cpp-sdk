@@ -39,28 +39,28 @@ void ListAIJobResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAIJobList = value["AIJobList"]["AIJob"];
-	for (auto value : allAIJobList)
+	auto allAIJobListNode = value["AIJobList"]["AIJob"];
+	for (auto valueAIJobListAIJob : allAIJobListNode)
 	{
 		AIJob aIJobListObject;
-		if(!value["JobId"].isNull())
-			aIJobListObject.jobId = value["JobId"].asString();
-		if(!value["MediaId"].isNull())
-			aIJobListObject.mediaId = value["MediaId"].asString();
-		if(!value["Type"].isNull())
-			aIJobListObject.type = value["Type"].asString();
-		if(!value["Status"].isNull())
-			aIJobListObject.status = value["Status"].asString();
-		if(!value["Code"].isNull())
-			aIJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			aIJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			aIJobListObject.creationTime = value["CreationTime"].asString();
-		if(!value["CompleteTime"].isNull())
-			aIJobListObject.completeTime = value["CompleteTime"].asString();
-		if(!value["Data"].isNull())
-			aIJobListObject.data = value["Data"].asString();
+		if(!valueAIJobListAIJob["JobId"].isNull())
+			aIJobListObject.jobId = valueAIJobListAIJob["JobId"].asString();
+		if(!valueAIJobListAIJob["MediaId"].isNull())
+			aIJobListObject.mediaId = valueAIJobListAIJob["MediaId"].asString();
+		if(!valueAIJobListAIJob["Type"].isNull())
+			aIJobListObject.type = valueAIJobListAIJob["Type"].asString();
+		if(!valueAIJobListAIJob["Status"].isNull())
+			aIJobListObject.status = valueAIJobListAIJob["Status"].asString();
+		if(!valueAIJobListAIJob["Code"].isNull())
+			aIJobListObject.code = valueAIJobListAIJob["Code"].asString();
+		if(!valueAIJobListAIJob["Message"].isNull())
+			aIJobListObject.message = valueAIJobListAIJob["Message"].asString();
+		if(!valueAIJobListAIJob["CreationTime"].isNull())
+			aIJobListObject.creationTime = valueAIJobListAIJob["CreationTime"].asString();
+		if(!valueAIJobListAIJob["CompleteTime"].isNull())
+			aIJobListObject.completeTime = valueAIJobListAIJob["CompleteTime"].asString();
+		if(!valueAIJobListAIJob["Data"].isNull())
+			aIJobListObject.data = valueAIJobListAIJob["Data"].asString();
 		aIJobList_.push_back(aIJobListObject);
 	}
 	auto allNonExistAIJobIds = value["NonExistAIJobIds"]["String"];

@@ -39,20 +39,20 @@ void ListFaceGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFaceGroups = value["FaceGroups"]["FaceGroupsItem"];
-	for (auto value : allFaceGroups)
+	auto allFaceGroupsNode = value["FaceGroups"]["FaceGroupsItem"];
+	for (auto valueFaceGroupsFaceGroupsItem : allFaceGroupsNode)
 	{
 		FaceGroupsItem faceGroupsObject;
-		if(!value["GroupId"].isNull())
-			faceGroupsObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			faceGroupsObject.groupName = value["GroupName"].asString();
-		if(!value["FaceCount"].isNull())
-			faceGroupsObject.faceCount = std::stoi(value["FaceCount"].asString());
-		if(!value["CreateTime"].isNull())
-			faceGroupsObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			faceGroupsObject.modifyTime = value["ModifyTime"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["GroupId"].isNull())
+			faceGroupsObject.groupId = valueFaceGroupsFaceGroupsItem["GroupId"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["GroupName"].isNull())
+			faceGroupsObject.groupName = valueFaceGroupsFaceGroupsItem["GroupName"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["FaceCount"].isNull())
+			faceGroupsObject.faceCount = std::stoi(valueFaceGroupsFaceGroupsItem["FaceCount"].asString());
+		if(!valueFaceGroupsFaceGroupsItem["CreateTime"].isNull())
+			faceGroupsObject.createTime = valueFaceGroupsFaceGroupsItem["CreateTime"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["ModifyTime"].isNull())
+			faceGroupsObject.modifyTime = valueFaceGroupsFaceGroupsItem["ModifyTime"].asString();
 		auto groupCoverFaceNode = value["GroupCoverFace"];
 		if(!groupCoverFaceNode["FaceId"].isNull())
 			faceGroupsObject.groupCoverFace.faceId = groupCoverFaceNode["FaceId"].asString();

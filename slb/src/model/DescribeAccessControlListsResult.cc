@@ -39,26 +39,26 @@ void DescribeAccessControlListsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAcls = value["Acls"]["Acl"];
-	for (auto value : allAcls)
+	auto allAclsNode = value["Acls"]["Acl"];
+	for (auto valueAclsAcl : allAclsNode)
 	{
 		Acl aclsObject;
-		if(!value["AclId"].isNull())
-			aclsObject.aclId = value["AclId"].asString();
-		if(!value["AclName"].isNull())
-			aclsObject.aclName = value["AclName"].asString();
-		if(!value["AddressIPVersion"].isNull())
-			aclsObject.addressIPVersion = value["AddressIPVersion"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			aclsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueAclsAcl["AclId"].isNull())
+			aclsObject.aclId = valueAclsAcl["AclId"].asString();
+		if(!valueAclsAcl["AclName"].isNull())
+			aclsObject.aclName = valueAclsAcl["AclName"].asString();
+		if(!valueAclsAcl["AddressIPVersion"].isNull())
+			aclsObject.addressIPVersion = valueAclsAcl["AddressIPVersion"].asString();
+		if(!valueAclsAcl["ResourceGroupId"].isNull())
+			aclsObject.resourceGroupId = valueAclsAcl["ResourceGroupId"].asString();
+		auto allTagsNode = allAclsNode["Tags"]["Tag"];
+		for (auto allAclsNodeTagsTag : allTagsNode)
 		{
 			Acl::Tag tagsObject;
-			if(!value["TagKey"].isNull())
-				tagsObject.tagKey = value["TagKey"].asString();
-			if(!value["TagValue"].isNull())
-				tagsObject.tagValue = value["TagValue"].asString();
+			if(!allAclsNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allAclsNodeTagsTag["TagKey"].asString();
+			if(!allAclsNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allAclsNodeTagsTag["TagValue"].asString();
 			aclsObject.tags.push_back(tagsObject);
 		}
 		acls_.push_back(aclsObject);

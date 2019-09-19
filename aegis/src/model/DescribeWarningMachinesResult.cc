@@ -39,28 +39,28 @@ void DescribeWarningMachinesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allWarningMachines = value["WarningMachines"]["WarningMachine"];
-	for (auto value : allWarningMachines)
+	auto allWarningMachinesNode = value["WarningMachines"]["WarningMachine"];
+	for (auto valueWarningMachinesWarningMachine : allWarningMachinesNode)
 	{
 		WarningMachine warningMachinesObject;
-		if(!value["Uuid"].isNull())
-			warningMachinesObject.uuid = value["Uuid"].asString();
-		if(!value["MachineName"].isNull())
-			warningMachinesObject.machineName = value["MachineName"].asString();
-		if(!value["InternetIp"].isNull())
-			warningMachinesObject.internetIp = value["InternetIp"].asString();
-		if(!value["IntranetIp"].isNull())
-			warningMachinesObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["PassCount"].isNull())
-			warningMachinesObject.passCount = std::stoi(value["PassCount"].asString());
-		if(!value["HighWarningCount"].isNull())
-			warningMachinesObject.highWarningCount = std::stoi(value["HighWarningCount"].asString());
-		if(!value["MediumWarningCount"].isNull())
-			warningMachinesObject.mediumWarningCount = std::stoi(value["MediumWarningCount"].asString());
-		if(!value["LowWarningCount"].isNull())
-			warningMachinesObject.lowWarningCount = std::stoi(value["LowWarningCount"].asString());
-		if(!value["Status"].isNull())
-			warningMachinesObject.status = std::stoi(value["Status"].asString());
+		if(!valueWarningMachinesWarningMachine["Uuid"].isNull())
+			warningMachinesObject.uuid = valueWarningMachinesWarningMachine["Uuid"].asString();
+		if(!valueWarningMachinesWarningMachine["MachineName"].isNull())
+			warningMachinesObject.machineName = valueWarningMachinesWarningMachine["MachineName"].asString();
+		if(!valueWarningMachinesWarningMachine["InternetIp"].isNull())
+			warningMachinesObject.internetIp = valueWarningMachinesWarningMachine["InternetIp"].asString();
+		if(!valueWarningMachinesWarningMachine["IntranetIp"].isNull())
+			warningMachinesObject.intranetIp = valueWarningMachinesWarningMachine["IntranetIp"].asString();
+		if(!valueWarningMachinesWarningMachine["PassCount"].isNull())
+			warningMachinesObject.passCount = std::stoi(valueWarningMachinesWarningMachine["PassCount"].asString());
+		if(!valueWarningMachinesWarningMachine["HighWarningCount"].isNull())
+			warningMachinesObject.highWarningCount = std::stoi(valueWarningMachinesWarningMachine["HighWarningCount"].asString());
+		if(!valueWarningMachinesWarningMachine["MediumWarningCount"].isNull())
+			warningMachinesObject.mediumWarningCount = std::stoi(valueWarningMachinesWarningMachine["MediumWarningCount"].asString());
+		if(!valueWarningMachinesWarningMachine["LowWarningCount"].isNull())
+			warningMachinesObject.lowWarningCount = std::stoi(valueWarningMachinesWarningMachine["LowWarningCount"].asString());
+		if(!valueWarningMachinesWarningMachine["Status"].isNull())
+			warningMachinesObject.status = std::stoi(valueWarningMachinesWarningMachine["Status"].asString());
 		warningMachines_.push_back(warningMachinesObject);
 	}
 	if(!value["Count"].isNull())

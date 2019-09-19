@@ -42,22 +42,22 @@ void GetMediaAuditResultDetailResult::parse(const std::string &payload)
 	auto mediaAuditResultDetailNode = value["MediaAuditResultDetail"];
 	if(!mediaAuditResultDetailNode["Total"].isNull())
 		mediaAuditResultDetail_.total = std::stoi(mediaAuditResultDetailNode["Total"].asString());
-	auto allList = value["List"]["ListItem"];
-	for (auto value : allList)
+	auto allListNode = mediaAuditResultDetailNode["List"]["ListItem"];
+	for (auto mediaAuditResultDetailNodeListListItem : allListNode)
 	{
 		MediaAuditResultDetail::ListItem listItemObject;
-		if(!value["PornLabel"].isNull())
-			listItemObject.pornLabel = value["PornLabel"].asString();
-		if(!value["PornScore"].isNull())
-			listItemObject.pornScore = value["PornScore"].asString();
-		if(!value["TerrorismLabel"].isNull())
-			listItemObject.terrorismLabel = value["TerrorismLabel"].asString();
-		if(!value["TerrorismScore"].isNull())
-			listItemObject.terrorismScore = value["TerrorismScore"].asString();
-		if(!value["Timestamp"].isNull())
-			listItemObject.timestamp = value["Timestamp"].asString();
-		if(!value["Url"].isNull())
-			listItemObject.url = value["Url"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["PornLabel"].isNull())
+			listItemObject.pornLabel = mediaAuditResultDetailNodeListListItem["PornLabel"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["PornScore"].isNull())
+			listItemObject.pornScore = mediaAuditResultDetailNodeListListItem["PornScore"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["TerrorismLabel"].isNull())
+			listItemObject.terrorismLabel = mediaAuditResultDetailNodeListListItem["TerrorismLabel"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["TerrorismScore"].isNull())
+			listItemObject.terrorismScore = mediaAuditResultDetailNodeListListItem["TerrorismScore"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["Timestamp"].isNull())
+			listItemObject.timestamp = mediaAuditResultDetailNodeListListItem["Timestamp"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["Url"].isNull())
+			listItemObject.url = mediaAuditResultDetailNodeListListItem["Url"].asString();
 		mediaAuditResultDetail_.list.push_back(listItemObject);
 	}
 

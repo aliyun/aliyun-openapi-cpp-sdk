@@ -39,32 +39,32 @@ void DescribeAuthorizedApisResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAuthorizedApis = value["AuthorizedApis"]["AuthorizedApi"];
-	for (auto value : allAuthorizedApis)
+	auto allAuthorizedApisNode = value["AuthorizedApis"]["AuthorizedApi"];
+	for (auto valueAuthorizedApisAuthorizedApi : allAuthorizedApisNode)
 	{
 		AuthorizedApi authorizedApisObject;
-		if(!value["RegionId"].isNull())
-			authorizedApisObject.regionId = value["RegionId"].asString();
-		if(!value["GroupId"].isNull())
-			authorizedApisObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			authorizedApisObject.groupName = value["GroupName"].asString();
-		if(!value["StageName"].isNull())
-			authorizedApisObject.stageName = value["StageName"].asString();
-		if(!value["Operator"].isNull())
-			authorizedApisObject._operator = value["Operator"].asString();
-		if(!value["ApiId"].isNull())
-			authorizedApisObject.apiId = value["ApiId"].asString();
-		if(!value["ApiName"].isNull())
-			authorizedApisObject.apiName = value["ApiName"].asString();
-		if(!value["AuthorizationSource"].isNull())
-			authorizedApisObject.authorizationSource = value["AuthorizationSource"].asString();
-		if(!value["Description"].isNull())
-			authorizedApisObject.description = value["Description"].asString();
-		if(!value["AuthorizedTime"].isNull())
-			authorizedApisObject.authorizedTime = value["AuthorizedTime"].asString();
-		if(!value["AuthVaildTime"].isNull())
-			authorizedApisObject.authVaildTime = value["AuthVaildTime"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["RegionId"].isNull())
+			authorizedApisObject.regionId = valueAuthorizedApisAuthorizedApi["RegionId"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["GroupId"].isNull())
+			authorizedApisObject.groupId = valueAuthorizedApisAuthorizedApi["GroupId"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["GroupName"].isNull())
+			authorizedApisObject.groupName = valueAuthorizedApisAuthorizedApi["GroupName"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["StageName"].isNull())
+			authorizedApisObject.stageName = valueAuthorizedApisAuthorizedApi["StageName"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["Operator"].isNull())
+			authorizedApisObject._operator = valueAuthorizedApisAuthorizedApi["Operator"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["ApiId"].isNull())
+			authorizedApisObject.apiId = valueAuthorizedApisAuthorizedApi["ApiId"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["ApiName"].isNull())
+			authorizedApisObject.apiName = valueAuthorizedApisAuthorizedApi["ApiName"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["AuthorizationSource"].isNull())
+			authorizedApisObject.authorizationSource = valueAuthorizedApisAuthorizedApi["AuthorizationSource"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["Description"].isNull())
+			authorizedApisObject.description = valueAuthorizedApisAuthorizedApi["Description"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["AuthorizedTime"].isNull())
+			authorizedApisObject.authorizedTime = valueAuthorizedApisAuthorizedApi["AuthorizedTime"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["AuthVaildTime"].isNull())
+			authorizedApisObject.authVaildTime = valueAuthorizedApisAuthorizedApi["AuthVaildTime"].asString();
 		authorizedApis_.push_back(authorizedApisObject);
 	}
 	if(!value["TotalCount"].isNull())

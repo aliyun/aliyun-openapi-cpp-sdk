@@ -39,22 +39,22 @@ void DescribeNetworkInterfacePermissionsResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNetworkInterfacePermissions = value["NetworkInterfacePermissions"]["NetworkInterfacePermission"];
-	for (auto value : allNetworkInterfacePermissions)
+	auto allNetworkInterfacePermissionsNode = value["NetworkInterfacePermissions"]["NetworkInterfacePermission"];
+	for (auto valueNetworkInterfacePermissionsNetworkInterfacePermission : allNetworkInterfacePermissionsNode)
 	{
 		NetworkInterfacePermission networkInterfacePermissionsObject;
-		if(!value["AccountId"].isNull())
-			networkInterfacePermissionsObject.accountId = std::stol(value["AccountId"].asString());
-		if(!value["ServiceName"].isNull())
-			networkInterfacePermissionsObject.serviceName = value["ServiceName"].asString();
-		if(!value["NetworkInterfaceId"].isNull())
-			networkInterfacePermissionsObject.networkInterfaceId = value["NetworkInterfaceId"].asString();
-		if(!value["NetworkInterfacePermissionId"].isNull())
-			networkInterfacePermissionsObject.networkInterfacePermissionId = value["NetworkInterfacePermissionId"].asString();
-		if(!value["Permission"].isNull())
-			networkInterfacePermissionsObject.permission = value["Permission"].asString();
-		if(!value["PermissionState"].isNull())
-			networkInterfacePermissionsObject.permissionState = value["PermissionState"].asString();
+		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["AccountId"].isNull())
+			networkInterfacePermissionsObject.accountId = std::stol(valueNetworkInterfacePermissionsNetworkInterfacePermission["AccountId"].asString());
+		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["ServiceName"].isNull())
+			networkInterfacePermissionsObject.serviceName = valueNetworkInterfacePermissionsNetworkInterfacePermission["ServiceName"].asString();
+		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfaceId"].isNull())
+			networkInterfacePermissionsObject.networkInterfaceId = valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfaceId"].asString();
+		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfacePermissionId"].isNull())
+			networkInterfacePermissionsObject.networkInterfacePermissionId = valueNetworkInterfacePermissionsNetworkInterfacePermission["NetworkInterfacePermissionId"].asString();
+		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["Permission"].isNull())
+			networkInterfacePermissionsObject.permission = valueNetworkInterfacePermissionsNetworkInterfacePermission["Permission"].asString();
+		if(!valueNetworkInterfacePermissionsNetworkInterfacePermission["PermissionState"].isNull())
+			networkInterfacePermissionsObject.permissionState = valueNetworkInterfacePermissionsNetworkInterfacePermission["PermissionState"].asString();
 		networkInterfacePermissions_.push_back(networkInterfacePermissionsObject);
 	}
 	if(!value["TotalCount"].isNull())

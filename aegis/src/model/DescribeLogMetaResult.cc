@@ -39,22 +39,22 @@ void DescribeLogMetaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogMetaList = value["LogMetaList"]["LogMeta"];
-	for (auto value : allLogMetaList)
+	auto allLogMetaListNode = value["LogMetaList"]["LogMeta"];
+	for (auto valueLogMetaListLogMeta : allLogMetaListNode)
 	{
 		LogMeta logMetaListObject;
-		if(!value["Project"].isNull())
-			logMetaListObject.project = value["Project"].asString();
-		if(!value["UserProject"].isNull())
-			logMetaListObject.userProject = value["UserProject"].asString();
-		if(!value["LogStore"].isNull())
-			logMetaListObject.logStore = value["LogStore"].asString();
-		if(!value["LogDesc"].isNull())
-			logMetaListObject.logDesc = value["LogDesc"].asString();
-		if(!value["Category"].isNull())
-			logMetaListObject.category = value["Category"].asString();
-		if(!value["Status"].isNull())
-			logMetaListObject.status = value["Status"].asString();
+		if(!valueLogMetaListLogMeta["Project"].isNull())
+			logMetaListObject.project = valueLogMetaListLogMeta["Project"].asString();
+		if(!valueLogMetaListLogMeta["UserProject"].isNull())
+			logMetaListObject.userProject = valueLogMetaListLogMeta["UserProject"].asString();
+		if(!valueLogMetaListLogMeta["LogStore"].isNull())
+			logMetaListObject.logStore = valueLogMetaListLogMeta["LogStore"].asString();
+		if(!valueLogMetaListLogMeta["LogDesc"].isNull())
+			logMetaListObject.logDesc = valueLogMetaListLogMeta["LogDesc"].asString();
+		if(!valueLogMetaListLogMeta["Category"].isNull())
+			logMetaListObject.category = valueLogMetaListLogMeta["Category"].asString();
+		if(!valueLogMetaListLogMeta["Status"].isNull())
+			logMetaListObject.status = valueLogMetaListLogMeta["Status"].asString();
 		logMetaList_.push_back(logMetaListObject);
 	}
 	if(!value["TotalCount"].isNull())

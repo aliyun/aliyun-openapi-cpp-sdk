@@ -39,16 +39,16 @@ void DescribeMonthlyServiceStatusDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAffectedInfos = value["AffectedInfos"]["AffectedInfo"];
-	for (auto value : allAffectedInfos)
+	auto allAffectedInfosNode = value["AffectedInfos"]["AffectedInfo"];
+	for (auto valueAffectedInfosAffectedInfo : allAffectedInfosNode)
 	{
 		AffectedInfo affectedInfosObject;
-		if(!value["StartTime"].isNull())
-			affectedInfosObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			affectedInfosObject.endTime = value["EndTime"].asString();
-		if(!value["Description"].isNull())
-			affectedInfosObject.description = value["Description"].asString();
+		if(!valueAffectedInfosAffectedInfo["StartTime"].isNull())
+			affectedInfosObject.startTime = valueAffectedInfosAffectedInfo["StartTime"].asString();
+		if(!valueAffectedInfosAffectedInfo["EndTime"].isNull())
+			affectedInfosObject.endTime = valueAffectedInfosAffectedInfo["EndTime"].asString();
+		if(!valueAffectedInfosAffectedInfo["Description"].isNull())
+			affectedInfosObject.description = valueAffectedInfosAffectedInfo["Description"].asString();
 		affectedInfos_.push_back(affectedInfosObject);
 	}
 	if(!value["InstanceId"].isNull())

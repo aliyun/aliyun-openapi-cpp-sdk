@@ -39,16 +39,16 @@ void ListAccessKeysResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAccessKeys = value["AccessKeys"]["AccessKey"];
-	for (auto value : allAccessKeys)
+	auto allAccessKeysNode = value["AccessKeys"]["AccessKey"];
+	for (auto valueAccessKeysAccessKey : allAccessKeysNode)
 	{
 		AccessKey accessKeysObject;
-		if(!value["AccessKeyId"].isNull())
-			accessKeysObject.accessKeyId = value["AccessKeyId"].asString();
-		if(!value["Status"].isNull())
-			accessKeysObject.status = value["Status"].asString();
-		if(!value["CreateDate"].isNull())
-			accessKeysObject.createDate = value["CreateDate"].asString();
+		if(!valueAccessKeysAccessKey["AccessKeyId"].isNull())
+			accessKeysObject.accessKeyId = valueAccessKeysAccessKey["AccessKeyId"].asString();
+		if(!valueAccessKeysAccessKey["Status"].isNull())
+			accessKeysObject.status = valueAccessKeysAccessKey["Status"].asString();
+		if(!valueAccessKeysAccessKey["CreateDate"].isNull())
+			accessKeysObject.createDate = valueAccessKeysAccessKey["CreateDate"].asString();
 		accessKeys_.push_back(accessKeysObject);
 	}
 

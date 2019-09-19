@@ -39,14 +39,14 @@ void DescribeZonesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allZones = value["Zones"]["Zone"];
-	for (auto value : allZones)
+	auto allZonesNode = value["Zones"]["Zone"];
+	for (auto valueZonesZone : allZonesNode)
 	{
 		Zone zonesObject;
-		if(!value["ZoneId"].isNull())
-			zonesObject.zoneId = value["ZoneId"].asString();
-		if(!value["LocalName"].isNull())
-			zonesObject.localName = value["LocalName"].asString();
+		if(!valueZonesZone["ZoneId"].isNull())
+			zonesObject.zoneId = valueZonesZone["ZoneId"].asString();
+		if(!valueZonesZone["LocalName"].isNull())
+			zonesObject.localName = valueZonesZone["LocalName"].asString();
 		zones_.push_back(zonesObject);
 	}
 

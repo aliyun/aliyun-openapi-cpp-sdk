@@ -39,34 +39,34 @@ void DescribeLaunchTemplatesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLaunchTemplateSets = value["LaunchTemplateSets"]["LaunchTemplateSet"];
-	for (auto value : allLaunchTemplateSets)
+	auto allLaunchTemplateSetsNode = value["LaunchTemplateSets"]["LaunchTemplateSet"];
+	for (auto valueLaunchTemplateSetsLaunchTemplateSet : allLaunchTemplateSetsNode)
 	{
 		LaunchTemplateSet launchTemplateSetsObject;
-		if(!value["CreateTime"].isNull())
-			launchTemplateSetsObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifiedTime"].isNull())
-			launchTemplateSetsObject.modifiedTime = value["ModifiedTime"].asString();
-		if(!value["LaunchTemplateId"].isNull())
-			launchTemplateSetsObject.launchTemplateId = value["LaunchTemplateId"].asString();
-		if(!value["LaunchTemplateName"].isNull())
-			launchTemplateSetsObject.launchTemplateName = value["LaunchTemplateName"].asString();
-		if(!value["DefaultVersionNumber"].isNull())
-			launchTemplateSetsObject.defaultVersionNumber = std::stol(value["DefaultVersionNumber"].asString());
-		if(!value["LatestVersionNumber"].isNull())
-			launchTemplateSetsObject.latestVersionNumber = std::stol(value["LatestVersionNumber"].asString());
-		if(!value["CreatedBy"].isNull())
-			launchTemplateSetsObject.createdBy = value["CreatedBy"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			launchTemplateSetsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["CreateTime"].isNull())
+			launchTemplateSetsObject.createTime = valueLaunchTemplateSetsLaunchTemplateSet["CreateTime"].asString();
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["ModifiedTime"].isNull())
+			launchTemplateSetsObject.modifiedTime = valueLaunchTemplateSetsLaunchTemplateSet["ModifiedTime"].asString();
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["LaunchTemplateId"].isNull())
+			launchTemplateSetsObject.launchTemplateId = valueLaunchTemplateSetsLaunchTemplateSet["LaunchTemplateId"].asString();
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["LaunchTemplateName"].isNull())
+			launchTemplateSetsObject.launchTemplateName = valueLaunchTemplateSetsLaunchTemplateSet["LaunchTemplateName"].asString();
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["DefaultVersionNumber"].isNull())
+			launchTemplateSetsObject.defaultVersionNumber = std::stol(valueLaunchTemplateSetsLaunchTemplateSet["DefaultVersionNumber"].asString());
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["LatestVersionNumber"].isNull())
+			launchTemplateSetsObject.latestVersionNumber = std::stol(valueLaunchTemplateSetsLaunchTemplateSet["LatestVersionNumber"].asString());
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["CreatedBy"].isNull())
+			launchTemplateSetsObject.createdBy = valueLaunchTemplateSetsLaunchTemplateSet["CreatedBy"].asString();
+		if(!valueLaunchTemplateSetsLaunchTemplateSet["ResourceGroupId"].isNull())
+			launchTemplateSetsObject.resourceGroupId = valueLaunchTemplateSetsLaunchTemplateSet["ResourceGroupId"].asString();
+		auto allTagsNode = allLaunchTemplateSetsNode["Tags"]["Tag"];
+		for (auto allLaunchTemplateSetsNodeTagsTag : allTagsNode)
 		{
 			LaunchTemplateSet::Tag tagsObject;
-			if(!value["TagKey"].isNull())
-				tagsObject.tagKey = value["TagKey"].asString();
-			if(!value["TagValue"].isNull())
-				tagsObject.tagValue = value["TagValue"].asString();
+			if(!allLaunchTemplateSetsNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allLaunchTemplateSetsNodeTagsTag["TagKey"].asString();
+			if(!allLaunchTemplateSetsNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allLaunchTemplateSetsNodeTagsTag["TagValue"].asString();
 			launchTemplateSetsObject.tags.push_back(tagsObject);
 		}
 		launchTemplateSets_.push_back(launchTemplateSetsObject);

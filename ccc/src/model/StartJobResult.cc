@@ -39,14 +39,14 @@ void StartJobResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTaskIds = value["TaskIds"]["KeyValuePair"];
-	for (auto value : allTaskIds)
+	auto allTaskIdsNode = value["TaskIds"]["KeyValuePair"];
+	for (auto valueTaskIdsKeyValuePair : allTaskIdsNode)
 	{
 		KeyValuePair taskIdsObject;
-		if(!value["Key"].isNull())
-			taskIdsObject.key = value["Key"].asString();
-		if(!value["Value"].isNull())
-			taskIdsObject.value = value["Value"].asString();
+		if(!valueTaskIdsKeyValuePair["Key"].isNull())
+			taskIdsObject.key = valueTaskIdsKeyValuePair["Key"].asString();
+		if(!valueTaskIdsKeyValuePair["Value"].isNull())
+			taskIdsObject.value = valueTaskIdsKeyValuePair["Value"].asString();
 		taskIds_.push_back(taskIdsObject);
 	}
 	if(!value["Success"].isNull())

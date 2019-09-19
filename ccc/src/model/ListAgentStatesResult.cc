@@ -46,24 +46,24 @@ void ListAgentStatesResult::parse(const std::string &payload)
 		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
 	if(!dataNode["PageSize"].isNull())
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
-	auto allList = value["List"]["RealTimeAgentState"];
-	for (auto value : allList)
+	auto allListNode = dataNode["List"]["RealTimeAgentState"];
+	for (auto dataNodeListRealTimeAgentState : allListNode)
 	{
 		Data::RealTimeAgentState realTimeAgentStateObject;
-		if(!value["InstanceId"].isNull())
-			realTimeAgentStateObject.instanceId = value["InstanceId"].asString();
-		if(!value["AgentId"].isNull())
-			realTimeAgentStateObject.agentId = value["AgentId"].asString();
-		if(!value["LoginName"].isNull())
-			realTimeAgentStateObject.loginName = value["LoginName"].asString();
-		if(!value["AgentName"].isNull())
-			realTimeAgentStateObject.agentName = value["AgentName"].asString();
-		if(!value["State"].isNull())
-			realTimeAgentStateObject.state = value["State"].asString();
-		if(!value["Dn"].isNull())
-			realTimeAgentStateObject.dn = value["Dn"].asString();
-		if(!value["StateDuration"].isNull())
-			realTimeAgentStateObject.stateDuration = value["StateDuration"].asString();
+		if(!dataNodeListRealTimeAgentState["InstanceId"].isNull())
+			realTimeAgentStateObject.instanceId = dataNodeListRealTimeAgentState["InstanceId"].asString();
+		if(!dataNodeListRealTimeAgentState["AgentId"].isNull())
+			realTimeAgentStateObject.agentId = dataNodeListRealTimeAgentState["AgentId"].asString();
+		if(!dataNodeListRealTimeAgentState["LoginName"].isNull())
+			realTimeAgentStateObject.loginName = dataNodeListRealTimeAgentState["LoginName"].asString();
+		if(!dataNodeListRealTimeAgentState["AgentName"].isNull())
+			realTimeAgentStateObject.agentName = dataNodeListRealTimeAgentState["AgentName"].asString();
+		if(!dataNodeListRealTimeAgentState["State"].isNull())
+			realTimeAgentStateObject.state = dataNodeListRealTimeAgentState["State"].asString();
+		if(!dataNodeListRealTimeAgentState["Dn"].isNull())
+			realTimeAgentStateObject.dn = dataNodeListRealTimeAgentState["Dn"].asString();
+		if(!dataNodeListRealTimeAgentState["StateDuration"].isNull())
+			realTimeAgentStateObject.stateDuration = dataNodeListRealTimeAgentState["StateDuration"].asString();
 		data_.list.push_back(realTimeAgentStateObject);
 	}
 	if(!value["Success"].isNull())

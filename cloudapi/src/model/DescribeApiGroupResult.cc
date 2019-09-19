@@ -39,38 +39,38 @@ void DescribeApiGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCustomDomains = value["CustomDomains"]["DomainItem"];
-	for (auto value : allCustomDomains)
+	auto allCustomDomainsNode = value["CustomDomains"]["DomainItem"];
+	for (auto valueCustomDomainsDomainItem : allCustomDomainsNode)
 	{
 		DomainItem customDomainsObject;
-		if(!value["DomainName"].isNull())
-			customDomainsObject.domainName = value["DomainName"].asString();
-		if(!value["CertificateId"].isNull())
-			customDomainsObject.certificateId = value["CertificateId"].asString();
-		if(!value["CertificateName"].isNull())
-			customDomainsObject.certificateName = value["CertificateName"].asString();
-		if(!value["DomainCNAMEStatus"].isNull())
-			customDomainsObject.domainCNAMEStatus = value["DomainCNAMEStatus"].asString();
-		if(!value["DomainBindingStatus"].isNull())
-			customDomainsObject.domainBindingStatus = value["DomainBindingStatus"].asString();
-		if(!value["DomainLegalStatus"].isNull())
-			customDomainsObject.domainLegalStatus = value["DomainLegalStatus"].asString();
-		if(!value["DomainWebSocketStatus"].isNull())
-			customDomainsObject.domainWebSocketStatus = value["DomainWebSocketStatus"].asString();
-		if(!value["DomainRemark"].isNull())
-			customDomainsObject.domainRemark = value["DomainRemark"].asString();
+		if(!valueCustomDomainsDomainItem["DomainName"].isNull())
+			customDomainsObject.domainName = valueCustomDomainsDomainItem["DomainName"].asString();
+		if(!valueCustomDomainsDomainItem["CertificateId"].isNull())
+			customDomainsObject.certificateId = valueCustomDomainsDomainItem["CertificateId"].asString();
+		if(!valueCustomDomainsDomainItem["CertificateName"].isNull())
+			customDomainsObject.certificateName = valueCustomDomainsDomainItem["CertificateName"].asString();
+		if(!valueCustomDomainsDomainItem["DomainCNAMEStatus"].isNull())
+			customDomainsObject.domainCNAMEStatus = valueCustomDomainsDomainItem["DomainCNAMEStatus"].asString();
+		if(!valueCustomDomainsDomainItem["DomainBindingStatus"].isNull())
+			customDomainsObject.domainBindingStatus = valueCustomDomainsDomainItem["DomainBindingStatus"].asString();
+		if(!valueCustomDomainsDomainItem["DomainLegalStatus"].isNull())
+			customDomainsObject.domainLegalStatus = valueCustomDomainsDomainItem["DomainLegalStatus"].asString();
+		if(!valueCustomDomainsDomainItem["DomainWebSocketStatus"].isNull())
+			customDomainsObject.domainWebSocketStatus = valueCustomDomainsDomainItem["DomainWebSocketStatus"].asString();
+		if(!valueCustomDomainsDomainItem["DomainRemark"].isNull())
+			customDomainsObject.domainRemark = valueCustomDomainsDomainItem["DomainRemark"].asString();
 		customDomains_.push_back(customDomainsObject);
 	}
-	auto allStageItems = value["StageItems"]["StageInfo"];
-	for (auto value : allStageItems)
+	auto allStageItemsNode = value["StageItems"]["StageInfo"];
+	for (auto valueStageItemsStageInfo : allStageItemsNode)
 	{
 		StageInfo stageItemsObject;
-		if(!value["StageId"].isNull())
-			stageItemsObject.stageId = value["StageId"].asString();
-		if(!value["StageName"].isNull())
-			stageItemsObject.stageName = value["StageName"].asString();
-		if(!value["Description"].isNull())
-			stageItemsObject.description = value["Description"].asString();
+		if(!valueStageItemsStageInfo["StageId"].isNull())
+			stageItemsObject.stageId = valueStageItemsStageInfo["StageId"].asString();
+		if(!valueStageItemsStageInfo["StageName"].isNull())
+			stageItemsObject.stageName = valueStageItemsStageInfo["StageName"].asString();
+		if(!valueStageItemsStageInfo["Description"].isNull())
+			stageItemsObject.description = valueStageItemsStageInfo["Description"].asString();
 		stageItems_.push_back(stageItemsObject);
 	}
 	if(!value["GroupId"].isNull())

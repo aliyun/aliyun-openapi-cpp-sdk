@@ -39,26 +39,26 @@ void ListAgentDevicesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAgentDeviceList = value["AgentDeviceList"]["AgentDevice"];
-	for (auto value : allAgentDeviceList)
+	auto allAgentDeviceListNode = value["AgentDeviceList"]["AgentDevice"];
+	for (auto valueAgentDeviceListAgentDevice : allAgentDeviceListNode)
 	{
 		AgentDevice agentDeviceListObject;
-		if(!value["InstanceId"].isNull())
-			agentDeviceListObject.instanceId = value["InstanceId"].asString();
-		if(!value["RamId"].isNull())
-			agentDeviceListObject.ramId = std::stol(value["RamId"].asString());
-		if(!value["LoginTime"].isNull())
-			agentDeviceListObject.loginTime = std::stol(value["LoginTime"].asString());
-		if(!value["ClientIp"].isNull())
-			agentDeviceListObject.clientIp = value["ClientIp"].asString();
-		if(!value["ClientPort"].isNull())
-			agentDeviceListObject.clientPort = value["ClientPort"].asString();
-		if(!value["BrowserVersion"].isNull())
-			agentDeviceListObject.browserVersion = value["BrowserVersion"].asString();
-		if(!value["IsLogin"].isNull())
-			agentDeviceListObject.isLogin = std::stoi(value["IsLogin"].asString());
-		if(!value["Remark"].isNull())
-			agentDeviceListObject.remark = value["Remark"].asString();
+		if(!valueAgentDeviceListAgentDevice["InstanceId"].isNull())
+			agentDeviceListObject.instanceId = valueAgentDeviceListAgentDevice["InstanceId"].asString();
+		if(!valueAgentDeviceListAgentDevice["RamId"].isNull())
+			agentDeviceListObject.ramId = std::stol(valueAgentDeviceListAgentDevice["RamId"].asString());
+		if(!valueAgentDeviceListAgentDevice["LoginTime"].isNull())
+			agentDeviceListObject.loginTime = std::stol(valueAgentDeviceListAgentDevice["LoginTime"].asString());
+		if(!valueAgentDeviceListAgentDevice["ClientIp"].isNull())
+			agentDeviceListObject.clientIp = valueAgentDeviceListAgentDevice["ClientIp"].asString();
+		if(!valueAgentDeviceListAgentDevice["ClientPort"].isNull())
+			agentDeviceListObject.clientPort = valueAgentDeviceListAgentDevice["ClientPort"].asString();
+		if(!valueAgentDeviceListAgentDevice["BrowserVersion"].isNull())
+			agentDeviceListObject.browserVersion = valueAgentDeviceListAgentDevice["BrowserVersion"].asString();
+		if(!valueAgentDeviceListAgentDevice["IsLogin"].isNull())
+			agentDeviceListObject.isLogin = std::stoi(valueAgentDeviceListAgentDevice["IsLogin"].asString());
+		if(!valueAgentDeviceListAgentDevice["Remark"].isNull())
+			agentDeviceListObject.remark = valueAgentDeviceListAgentDevice["Remark"].asString();
 		agentDeviceList_.push_back(agentDeviceListObject);
 	}
 	if(!value["Success"].isNull())

@@ -44,20 +44,20 @@ void QueryDeviceServiceDataResult::parse(const std::string &payload)
 		data_.nextTime = std::stol(dataNode["NextTime"].asString());
 	if(!dataNode["NextValid"].isNull())
 		data_.nextValid = dataNode["NextValid"].asString() == "true";
-	auto allList = value["List"]["ServiceInfo"];
-	for (auto value : allList)
+	auto allListNode = dataNode["List"]["ServiceInfo"];
+	for (auto dataNodeListServiceInfo : allListNode)
 	{
 		Data::ServiceInfo serviceInfoObject;
-		if(!value["Time"].isNull())
-			serviceInfoObject.time = value["Time"].asString();
-		if(!value["Identifier"].isNull())
-			serviceInfoObject.identifier = value["Identifier"].asString();
-		if(!value["Name"].isNull())
-			serviceInfoObject.name = value["Name"].asString();
-		if(!value["InputData"].isNull())
-			serviceInfoObject.inputData = value["InputData"].asString();
-		if(!value["OutputData"].isNull())
-			serviceInfoObject.outputData = value["OutputData"].asString();
+		if(!dataNodeListServiceInfo["Time"].isNull())
+			serviceInfoObject.time = dataNodeListServiceInfo["Time"].asString();
+		if(!dataNodeListServiceInfo["Identifier"].isNull())
+			serviceInfoObject.identifier = dataNodeListServiceInfo["Identifier"].asString();
+		if(!dataNodeListServiceInfo["Name"].isNull())
+			serviceInfoObject.name = dataNodeListServiceInfo["Name"].asString();
+		if(!dataNodeListServiceInfo["InputData"].isNull())
+			serviceInfoObject.inputData = dataNodeListServiceInfo["InputData"].asString();
+		if(!dataNodeListServiceInfo["OutputData"].isNull())
+			serviceInfoObject.outputData = dataNodeListServiceInfo["OutputData"].asString();
 		data_.list.push_back(serviceInfoObject);
 	}
 	if(!value["Success"].isNull())

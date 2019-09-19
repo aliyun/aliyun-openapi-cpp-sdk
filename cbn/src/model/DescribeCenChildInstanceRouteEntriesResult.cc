@@ -39,52 +39,52 @@ void DescribeCenChildInstanceRouteEntriesResult::parse(const std::string &payloa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCenRouteEntries = value["CenRouteEntries"]["CenRouteEntry"];
-	for (auto value : allCenRouteEntries)
+	auto allCenRouteEntriesNode = value["CenRouteEntries"]["CenRouteEntry"];
+	for (auto valueCenRouteEntriesCenRouteEntry : allCenRouteEntriesNode)
 	{
 		CenRouteEntry cenRouteEntriesObject;
-		if(!value["DestinationCidrBlock"].isNull())
-			cenRouteEntriesObject.destinationCidrBlock = value["DestinationCidrBlock"].asString();
-		if(!value["Type"].isNull())
-			cenRouteEntriesObject.type = value["Type"].asString();
-		if(!value["NextHopInstanceId"].isNull())
-			cenRouteEntriesObject.nextHopInstanceId = value["NextHopInstanceId"].asString();
-		if(!value["NextHopType"].isNull())
-			cenRouteEntriesObject.nextHopType = value["NextHopType"].asString();
-		if(!value["NextHopRegionId"].isNull())
-			cenRouteEntriesObject.nextHopRegionId = value["NextHopRegionId"].asString();
-		if(!value["Status"].isNull())
-			cenRouteEntriesObject.status = value["Status"].asString();
-		if(!value["OperationalMode"].isNull())
-			cenRouteEntriesObject.operationalMode = value["OperationalMode"].asString() == "true";
-		if(!value["PublishStatus"].isNull())
-			cenRouteEntriesObject.publishStatus = value["PublishStatus"].asString();
-		if(!value["RouteTableId"].isNull())
-			cenRouteEntriesObject.routeTableId = value["RouteTableId"].asString();
-		auto allCenRouteMapRecords = value["CenRouteMapRecords"]["CenRouteMapRecord"];
-		for (auto value : allCenRouteMapRecords)
+		if(!valueCenRouteEntriesCenRouteEntry["DestinationCidrBlock"].isNull())
+			cenRouteEntriesObject.destinationCidrBlock = valueCenRouteEntriesCenRouteEntry["DestinationCidrBlock"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["Type"].isNull())
+			cenRouteEntriesObject.type = valueCenRouteEntriesCenRouteEntry["Type"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["NextHopInstanceId"].isNull())
+			cenRouteEntriesObject.nextHopInstanceId = valueCenRouteEntriesCenRouteEntry["NextHopInstanceId"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["NextHopType"].isNull())
+			cenRouteEntriesObject.nextHopType = valueCenRouteEntriesCenRouteEntry["NextHopType"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["NextHopRegionId"].isNull())
+			cenRouteEntriesObject.nextHopRegionId = valueCenRouteEntriesCenRouteEntry["NextHopRegionId"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["Status"].isNull())
+			cenRouteEntriesObject.status = valueCenRouteEntriesCenRouteEntry["Status"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["OperationalMode"].isNull())
+			cenRouteEntriesObject.operationalMode = valueCenRouteEntriesCenRouteEntry["OperationalMode"].asString() == "true";
+		if(!valueCenRouteEntriesCenRouteEntry["PublishStatus"].isNull())
+			cenRouteEntriesObject.publishStatus = valueCenRouteEntriesCenRouteEntry["PublishStatus"].asString();
+		if(!valueCenRouteEntriesCenRouteEntry["RouteTableId"].isNull())
+			cenRouteEntriesObject.routeTableId = valueCenRouteEntriesCenRouteEntry["RouteTableId"].asString();
+		auto allCenRouteMapRecordsNode = allCenRouteEntriesNode["CenRouteMapRecords"]["CenRouteMapRecord"];
+		for (auto allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord : allCenRouteMapRecordsNode)
 		{
 			CenRouteEntry::CenRouteMapRecord cenRouteMapRecordsObject;
-			if(!value["RegionId"].isNull())
-				cenRouteMapRecordsObject.regionId = value["RegionId"].asString();
-			if(!value["RouteMapId"].isNull())
-				cenRouteMapRecordsObject.routeMapId = value["RouteMapId"].asString();
+			if(!allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RegionId"].isNull())
+				cenRouteMapRecordsObject.regionId = allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RegionId"].asString();
+			if(!allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].isNull())
+				cenRouteMapRecordsObject.routeMapId = allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].asString();
 			cenRouteEntriesObject.cenRouteMapRecords.push_back(cenRouteMapRecordsObject);
 		}
-		auto allConflicts = value["Conflicts"]["Conflict"];
-		for (auto value : allConflicts)
+		auto allConflictsNode = allCenRouteEntriesNode["Conflicts"]["Conflict"];
+		for (auto allCenRouteEntriesNodeConflictsConflict : allConflictsNode)
 		{
 			CenRouteEntry::Conflict conflictsObject;
-			if(!value["DestinationCidrBlock"].isNull())
-				conflictsObject.destinationCidrBlock = value["DestinationCidrBlock"].asString();
-			if(!value["RegionId"].isNull())
-				conflictsObject.regionId = value["RegionId"].asString();
-			if(!value["InstanceId"].isNull())
-				conflictsObject.instanceId = value["InstanceId"].asString();
-			if(!value["InstanceType"].isNull())
-				conflictsObject.instanceType = value["InstanceType"].asString();
-			if(!value["Status"].isNull())
-				conflictsObject.status = value["Status"].asString();
+			if(!allCenRouteEntriesNodeConflictsConflict["DestinationCidrBlock"].isNull())
+				conflictsObject.destinationCidrBlock = allCenRouteEntriesNodeConflictsConflict["DestinationCidrBlock"].asString();
+			if(!allCenRouteEntriesNodeConflictsConflict["RegionId"].isNull())
+				conflictsObject.regionId = allCenRouteEntriesNodeConflictsConflict["RegionId"].asString();
+			if(!allCenRouteEntriesNodeConflictsConflict["InstanceId"].isNull())
+				conflictsObject.instanceId = allCenRouteEntriesNodeConflictsConflict["InstanceId"].asString();
+			if(!allCenRouteEntriesNodeConflictsConflict["InstanceType"].isNull())
+				conflictsObject.instanceType = allCenRouteEntriesNodeConflictsConflict["InstanceType"].asString();
+			if(!allCenRouteEntriesNodeConflictsConflict["Status"].isNull())
+				conflictsObject.status = allCenRouteEntriesNodeConflictsConflict["Status"].asString();
 			cenRouteEntriesObject.conflicts.push_back(conflictsObject);
 		}
 		auto allAsPaths = value["AsPaths"]["AsPath"];

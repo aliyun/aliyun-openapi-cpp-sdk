@@ -39,30 +39,30 @@ void ListPornBatchDetectJobsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobs = value["Jobs"]["JobsItem"];
-	for (auto value : allJobs)
+	auto allJobsNode = value["Jobs"]["JobsItem"];
+	for (auto valueJobsJobsItem : allJobsNode)
 	{
 		JobsItem jobsObject;
-		if(!value["JobId"].isNull())
-			jobsObject.jobId = value["JobId"].asString();
-		if(!value["SrcUri"].isNull())
-			jobsObject.srcUri = value["SrcUri"].asString();
-		if(!value["Status"].isNull())
-			jobsObject.status = value["Status"].asString();
-		if(!value["TgtUri"].isNull())
-			jobsObject.tgtUri = value["TgtUri"].asString();
-		if(!value["NotifyTopicName"].isNull())
-			jobsObject.notifyTopicName = std::stoi(value["NotifyTopicName"].asString());
-		if(!value["NotifyEndpoint"].isNull())
-			jobsObject.notifyEndpoint = value["NotifyEndpoint"].asString();
-		if(!value["ExternalID"].isNull())
-			jobsObject.externalID = value["ExternalID"].asString();
-		if(!value["CreateTime"].isNull())
-			jobsObject.createTime = value["CreateTime"].asString();
-		if(!value["FinishTime"].isNull())
-			jobsObject.finishTime = value["FinishTime"].asString();
-		if(!value["Percent"].isNull())
-			jobsObject.percent = std::stoi(value["Percent"].asString());
+		if(!valueJobsJobsItem["JobId"].isNull())
+			jobsObject.jobId = valueJobsJobsItem["JobId"].asString();
+		if(!valueJobsJobsItem["SrcUri"].isNull())
+			jobsObject.srcUri = valueJobsJobsItem["SrcUri"].asString();
+		if(!valueJobsJobsItem["Status"].isNull())
+			jobsObject.status = valueJobsJobsItem["Status"].asString();
+		if(!valueJobsJobsItem["TgtUri"].isNull())
+			jobsObject.tgtUri = valueJobsJobsItem["TgtUri"].asString();
+		if(!valueJobsJobsItem["NotifyTopicName"].isNull())
+			jobsObject.notifyTopicName = std::stoi(valueJobsJobsItem["NotifyTopicName"].asString());
+		if(!valueJobsJobsItem["NotifyEndpoint"].isNull())
+			jobsObject.notifyEndpoint = valueJobsJobsItem["NotifyEndpoint"].asString();
+		if(!valueJobsJobsItem["ExternalID"].isNull())
+			jobsObject.externalID = valueJobsJobsItem["ExternalID"].asString();
+		if(!valueJobsJobsItem["CreateTime"].isNull())
+			jobsObject.createTime = valueJobsJobsItem["CreateTime"].asString();
+		if(!valueJobsJobsItem["FinishTime"].isNull())
+			jobsObject.finishTime = valueJobsJobsItem["FinishTime"].asString();
+		if(!valueJobsJobsItem["Percent"].isNull())
+			jobsObject.percent = std::stoi(valueJobsJobsItem["Percent"].asString());
 		jobs_.push_back(jobsObject);
 	}
 	if(!value["NextMarker"].isNull())

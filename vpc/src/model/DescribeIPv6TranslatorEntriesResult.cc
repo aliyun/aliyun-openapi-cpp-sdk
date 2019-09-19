@@ -39,40 +39,40 @@ void DescribeIPv6TranslatorEntriesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIpv6TranslatorEntries = value["Ipv6TranslatorEntries"]["Ipv6TranslatorEntry"];
-	for (auto value : allIpv6TranslatorEntries)
+	auto allIpv6TranslatorEntriesNode = value["Ipv6TranslatorEntries"]["Ipv6TranslatorEntry"];
+	for (auto valueIpv6TranslatorEntriesIpv6TranslatorEntry : allIpv6TranslatorEntriesNode)
 	{
 		Ipv6TranslatorEntry ipv6TranslatorEntriesObject;
-		if(!value["Ipv6TranslatorId"].isNull())
-			ipv6TranslatorEntriesObject.ipv6TranslatorId = value["Ipv6TranslatorId"].asString();
-		if(!value["Ipv6TranslatorEntryId"].isNull())
-			ipv6TranslatorEntriesObject.ipv6TranslatorEntryId = value["Ipv6TranslatorEntryId"].asString();
-		if(!value["AllocateIpv6Addr"].isNull())
-			ipv6TranslatorEntriesObject.allocateIpv6Addr = value["AllocateIpv6Addr"].asString();
-		if(!value["AllocateIpv6Port"].isNull())
-			ipv6TranslatorEntriesObject.allocateIpv6Port = std::stoi(value["AllocateIpv6Port"].asString());
-		if(!value["BackendIpv4Addr"].isNull())
-			ipv6TranslatorEntriesObject.backendIpv4Addr = value["BackendIpv4Addr"].asString();
-		if(!value["BackendIpv4Port"].isNull())
-			ipv6TranslatorEntriesObject.backendIpv4Port = value["BackendIpv4Port"].asString();
-		if(!value["TransProtocol"].isNull())
-			ipv6TranslatorEntriesObject.transProtocol = value["TransProtocol"].asString();
-		if(!value["EntryBandwidth"].isNull())
-			ipv6TranslatorEntriesObject.entryBandwidth = value["EntryBandwidth"].asString();
-		if(!value["EntryDescription"].isNull())
-			ipv6TranslatorEntriesObject.entryDescription = value["EntryDescription"].asString();
-		if(!value["EntryName"].isNull())
-			ipv6TranslatorEntriesObject.entryName = value["EntryName"].asString();
-		if(!value["EntryStatus"].isNull())
-			ipv6TranslatorEntriesObject.entryStatus = value["EntryStatus"].asString();
-		if(!value["AclStatus"].isNull())
-			ipv6TranslatorEntriesObject.aclStatus = value["AclStatus"].asString();
-		if(!value["AclType"].isNull())
-			ipv6TranslatorEntriesObject.aclType = value["AclType"].asString();
-		if(!value["AclId"].isNull())
-			ipv6TranslatorEntriesObject.aclId = value["AclId"].asString();
-		if(!value["RegionId"].isNull())
-			ipv6TranslatorEntriesObject.regionId = value["RegionId"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["Ipv6TranslatorId"].isNull())
+			ipv6TranslatorEntriesObject.ipv6TranslatorId = valueIpv6TranslatorEntriesIpv6TranslatorEntry["Ipv6TranslatorId"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["Ipv6TranslatorEntryId"].isNull())
+			ipv6TranslatorEntriesObject.ipv6TranslatorEntryId = valueIpv6TranslatorEntriesIpv6TranslatorEntry["Ipv6TranslatorEntryId"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["AllocateIpv6Addr"].isNull())
+			ipv6TranslatorEntriesObject.allocateIpv6Addr = valueIpv6TranslatorEntriesIpv6TranslatorEntry["AllocateIpv6Addr"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["AllocateIpv6Port"].isNull())
+			ipv6TranslatorEntriesObject.allocateIpv6Port = std::stoi(valueIpv6TranslatorEntriesIpv6TranslatorEntry["AllocateIpv6Port"].asString());
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["BackendIpv4Addr"].isNull())
+			ipv6TranslatorEntriesObject.backendIpv4Addr = valueIpv6TranslatorEntriesIpv6TranslatorEntry["BackendIpv4Addr"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["BackendIpv4Port"].isNull())
+			ipv6TranslatorEntriesObject.backendIpv4Port = valueIpv6TranslatorEntriesIpv6TranslatorEntry["BackendIpv4Port"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["TransProtocol"].isNull())
+			ipv6TranslatorEntriesObject.transProtocol = valueIpv6TranslatorEntriesIpv6TranslatorEntry["TransProtocol"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["EntryBandwidth"].isNull())
+			ipv6TranslatorEntriesObject.entryBandwidth = valueIpv6TranslatorEntriesIpv6TranslatorEntry["EntryBandwidth"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["EntryDescription"].isNull())
+			ipv6TranslatorEntriesObject.entryDescription = valueIpv6TranslatorEntriesIpv6TranslatorEntry["EntryDescription"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["EntryName"].isNull())
+			ipv6TranslatorEntriesObject.entryName = valueIpv6TranslatorEntriesIpv6TranslatorEntry["EntryName"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["EntryStatus"].isNull())
+			ipv6TranslatorEntriesObject.entryStatus = valueIpv6TranslatorEntriesIpv6TranslatorEntry["EntryStatus"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["AclStatus"].isNull())
+			ipv6TranslatorEntriesObject.aclStatus = valueIpv6TranslatorEntriesIpv6TranslatorEntry["AclStatus"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["AclType"].isNull())
+			ipv6TranslatorEntriesObject.aclType = valueIpv6TranslatorEntriesIpv6TranslatorEntry["AclType"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["AclId"].isNull())
+			ipv6TranslatorEntriesObject.aclId = valueIpv6TranslatorEntriesIpv6TranslatorEntry["AclId"].asString();
+		if(!valueIpv6TranslatorEntriesIpv6TranslatorEntry["RegionId"].isNull())
+			ipv6TranslatorEntriesObject.regionId = valueIpv6TranslatorEntriesIpv6TranslatorEntry["RegionId"].asString();
 		ipv6TranslatorEntries_.push_back(ipv6TranslatorEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())

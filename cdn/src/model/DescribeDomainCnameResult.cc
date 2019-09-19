@@ -39,16 +39,16 @@ void DescribeDomainCnameResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCnameDatas = value["CnameDatas"]["Data"];
-	for (auto value : allCnameDatas)
+	auto allCnameDatasNode = value["CnameDatas"]["Data"];
+	for (auto valueCnameDatasData : allCnameDatasNode)
 	{
 		Data cnameDatasObject;
-		if(!value["Domain"].isNull())
-			cnameDatasObject.domain = value["Domain"].asString();
-		if(!value["Cname"].isNull())
-			cnameDatasObject.cname = value["Cname"].asString();
-		if(!value["Status"].isNull())
-			cnameDatasObject.status = std::stoi(value["Status"].asString());
+		if(!valueCnameDatasData["Domain"].isNull())
+			cnameDatasObject.domain = valueCnameDatasData["Domain"].asString();
+		if(!valueCnameDatasData["Cname"].isNull())
+			cnameDatasObject.cname = valueCnameDatasData["Cname"].asString();
+		if(!valueCnameDatasData["Status"].isNull())
+			cnameDatasObject.status = std::stoi(valueCnameDatasData["Status"].asString());
 		cnameDatas_.push_back(cnameDatasObject);
 	}
 

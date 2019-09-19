@@ -39,14 +39,14 @@ void DescribeNotificationConfigurationsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNotificationConfigurationModels = value["NotificationConfigurationModels"]["NotificationConfigurationModel"];
-	for (auto value : allNotificationConfigurationModels)
+	auto allNotificationConfigurationModelsNode = value["NotificationConfigurationModels"]["NotificationConfigurationModel"];
+	for (auto valueNotificationConfigurationModelsNotificationConfigurationModel : allNotificationConfigurationModelsNode)
 	{
 		NotificationConfigurationModel notificationConfigurationModelsObject;
-		if(!value["ScalingGroupId"].isNull())
-			notificationConfigurationModelsObject.scalingGroupId = value["ScalingGroupId"].asString();
-		if(!value["NotificationArn"].isNull())
-			notificationConfigurationModelsObject.notificationArn = value["NotificationArn"].asString();
+		if(!valueNotificationConfigurationModelsNotificationConfigurationModel["ScalingGroupId"].isNull())
+			notificationConfigurationModelsObject.scalingGroupId = valueNotificationConfigurationModelsNotificationConfigurationModel["ScalingGroupId"].asString();
+		if(!valueNotificationConfigurationModelsNotificationConfigurationModel["NotificationArn"].isNull())
+			notificationConfigurationModelsObject.notificationArn = valueNotificationConfigurationModelsNotificationConfigurationModel["NotificationArn"].asString();
 		auto allNotificationTypes = value["NotificationTypes"]["NotificationType"];
 		for (auto value : allNotificationTypes)
 			notificationConfigurationModelsObject.notificationTypes.push_back(value.asString());

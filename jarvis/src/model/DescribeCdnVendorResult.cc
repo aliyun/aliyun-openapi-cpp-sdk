@@ -39,20 +39,20 @@ void DescribeCdnVendorResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataList = value["DataList"]["Data"];
-	for (auto value : allDataList)
+	auto allDataListNode = value["DataList"]["Data"];
+	for (auto valueDataListData : allDataListNode)
 	{
 		Data dataListObject;
-		if(!value["VendorAliuid"].isNull())
-			dataListObject.vendorAliuid = std::stoi(value["VendorAliuid"].asString());
-		if(!value["VendorName"].isNull())
-			dataListObject.vendorName = value["VendorName"].asString();
-		if(!value["SafetyFactor"].isNull())
-			dataListObject.safetyFactor = value["SafetyFactor"].asString();
-		if(!value["GmtCreate"].isNull())
-			dataListObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["UpdateTime"].isNull())
-			dataListObject.updateTime = value["UpdateTime"].asString();
+		if(!valueDataListData["VendorAliuid"].isNull())
+			dataListObject.vendorAliuid = std::stoi(valueDataListData["VendorAliuid"].asString());
+		if(!valueDataListData["VendorName"].isNull())
+			dataListObject.vendorName = valueDataListData["VendorName"].asString();
+		if(!valueDataListData["SafetyFactor"].isNull())
+			dataListObject.safetyFactor = valueDataListData["SafetyFactor"].asString();
+		if(!valueDataListData["GmtCreate"].isNull())
+			dataListObject.gmtCreate = valueDataListData["GmtCreate"].asString();
+		if(!valueDataListData["UpdateTime"].isNull())
+			dataListObject.updateTime = valueDataListData["UpdateTime"].asString();
 		dataList_.push_back(dataListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

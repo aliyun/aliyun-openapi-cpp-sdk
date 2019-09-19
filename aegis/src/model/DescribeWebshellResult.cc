@@ -39,38 +39,38 @@ void DescribeWebshellResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allWebshellList = value["WebshellList"]["WebshellListItem"];
-	for (auto value : allWebshellList)
+	auto allWebshellListNode = value["WebshellList"]["WebshellListItem"];
+	for (auto valueWebshellListWebshellListItem : allWebshellListNode)
 	{
 		WebshellListItem webshellListObject;
-		if(!value["Os"].isNull())
-			webshellListObject.os = value["Os"].asString();
-		if(!value["InstanceName"].isNull())
-			webshellListObject.instanceName = value["InstanceName"].asString();
-		if(!value["GroupId"].isNull())
-			webshellListObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["Ip"].isNull())
-			webshellListObject.ip = value["Ip"].asString();
-		if(!value["Uuid"].isNull())
-			webshellListObject.uuid = value["Uuid"].asString();
-		if(!value["FoundTime"].isNull())
-			webshellListObject.foundTime = value["FoundTime"].asString();
-		if(!value["InstanceId"].isNull())
-			webshellListObject.instanceId = value["InstanceId"].asString();
-		if(!value["TrojanType"].isNull())
-			webshellListObject.trojanType = value["TrojanType"].asString();
-		if(!value["FirstFoundTime"].isNull())
-			webshellListObject.firstFoundTime = value["FirstFoundTime"].asString();
-		if(!value["TrojanSize"].isNull())
-			webshellListObject.trojanSize = std::stol(value["TrojanSize"].asString());
-		if(!value["Domain"].isNull())
-			webshellListObject.domain = value["Domain"].asString();
-		if(!value["TrojanPath"].isNull())
-			webshellListObject.trojanPath = value["TrojanPath"].asString();
-		if(!value["Region"].isNull())
-			webshellListObject.region = value["Region"].asString();
-		if(!value["Status"].isNull())
-			webshellListObject.status = std::stoi(value["Status"].asString());
+		if(!valueWebshellListWebshellListItem["Os"].isNull())
+			webshellListObject.os = valueWebshellListWebshellListItem["Os"].asString();
+		if(!valueWebshellListWebshellListItem["InstanceName"].isNull())
+			webshellListObject.instanceName = valueWebshellListWebshellListItem["InstanceName"].asString();
+		if(!valueWebshellListWebshellListItem["GroupId"].isNull())
+			webshellListObject.groupId = std::stol(valueWebshellListWebshellListItem["GroupId"].asString());
+		if(!valueWebshellListWebshellListItem["Ip"].isNull())
+			webshellListObject.ip = valueWebshellListWebshellListItem["Ip"].asString();
+		if(!valueWebshellListWebshellListItem["Uuid"].isNull())
+			webshellListObject.uuid = valueWebshellListWebshellListItem["Uuid"].asString();
+		if(!valueWebshellListWebshellListItem["FoundTime"].isNull())
+			webshellListObject.foundTime = valueWebshellListWebshellListItem["FoundTime"].asString();
+		if(!valueWebshellListWebshellListItem["InstanceId"].isNull())
+			webshellListObject.instanceId = valueWebshellListWebshellListItem["InstanceId"].asString();
+		if(!valueWebshellListWebshellListItem["TrojanType"].isNull())
+			webshellListObject.trojanType = valueWebshellListWebshellListItem["TrojanType"].asString();
+		if(!valueWebshellListWebshellListItem["FirstFoundTime"].isNull())
+			webshellListObject.firstFoundTime = valueWebshellListWebshellListItem["FirstFoundTime"].asString();
+		if(!valueWebshellListWebshellListItem["TrojanSize"].isNull())
+			webshellListObject.trojanSize = std::stol(valueWebshellListWebshellListItem["TrojanSize"].asString());
+		if(!valueWebshellListWebshellListItem["Domain"].isNull())
+			webshellListObject.domain = valueWebshellListWebshellListItem["Domain"].asString();
+		if(!valueWebshellListWebshellListItem["TrojanPath"].isNull())
+			webshellListObject.trojanPath = valueWebshellListWebshellListItem["TrojanPath"].asString();
+		if(!valueWebshellListWebshellListItem["Region"].isNull())
+			webshellListObject.region = valueWebshellListWebshellListItem["Region"].asString();
+		if(!valueWebshellListWebshellListItem["Status"].isNull())
+			webshellListObject.status = std::stoi(valueWebshellListWebshellListItem["Status"].asString());
 		webshellList_.push_back(webshellListObject);
 	}
 

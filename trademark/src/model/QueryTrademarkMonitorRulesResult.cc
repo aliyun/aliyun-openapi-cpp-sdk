@@ -39,48 +39,48 @@ void QueryTrademarkMonitorRulesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["TmMonitorRule"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["TmMonitorRule"];
+	for (auto valueDataTmMonitorRule : allDataNode)
 	{
 		TmMonitorRule dataObject;
-		if(!value["Id"].isNull())
-			dataObject.id = value["Id"].asString();
-		if(!value["UserId"].isNull())
-			dataObject.userId = value["UserId"].asString();
-		if(!value["RuleStatus"].isNull())
-			dataObject.ruleStatus = value["RuleStatus"].asString();
-		if(!value["RuleSource"].isNull())
-			dataObject.ruleSource = value["RuleSource"].asString();
-		if(!value["RuleName"].isNull())
-			dataObject.ruleName = value["RuleName"].asString();
-		if(!value["RuleType"].isNull())
-			dataObject.ruleType = std::stoi(value["RuleType"].asString());
-		if(!value["RuleKeyword"].isNull())
-			dataObject.ruleKeyword = value["RuleKeyword"].asString();
-		if(!value["RuleDetail"].isNull())
-			dataObject.ruleDetail = value["RuleDetail"].asString();
-		if(!value["NotifyUpdate"].isNull())
-			dataObject.notifyUpdate = std::stoi(value["NotifyUpdate"].asString());
-		if(!value["Version"].isNull())
-			dataObject.version = std::stoi(value["Version"].asString());
-		if(!value["StartTime"].isNull())
-			dataObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			dataObject.endTime = value["EndTime"].asString();
-		if(!value["LastRunTime"].isNull())
-			dataObject.lastRunTime = value["LastRunTime"].asString();
-		if(!value["LastFinishTime"].isNull())
-			dataObject.lastFinishTime = value["LastFinishTime"].asString();
-		if(!value["LastUpdateTime"].isNull())
-			dataObject.lastUpdateTime = value["LastUpdateTime"].asString();
-		if(!value["Env"].isNull())
-			dataObject.env = value["Env"].asString();
-		if(!value["RuleExtend"].isNull())
-			dataObject.ruleExtend = value["RuleExtend"].asString();
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = value["CreateTime"].asString();
-		if(!value["UpdateTime"].isNull())
-			dataObject.updateTime = value["UpdateTime"].asString();
+		if(!valueDataTmMonitorRule["Id"].isNull())
+			dataObject.id = valueDataTmMonitorRule["Id"].asString();
+		if(!valueDataTmMonitorRule["UserId"].isNull())
+			dataObject.userId = valueDataTmMonitorRule["UserId"].asString();
+		if(!valueDataTmMonitorRule["RuleStatus"].isNull())
+			dataObject.ruleStatus = valueDataTmMonitorRule["RuleStatus"].asString();
+		if(!valueDataTmMonitorRule["RuleSource"].isNull())
+			dataObject.ruleSource = valueDataTmMonitorRule["RuleSource"].asString();
+		if(!valueDataTmMonitorRule["RuleName"].isNull())
+			dataObject.ruleName = valueDataTmMonitorRule["RuleName"].asString();
+		if(!valueDataTmMonitorRule["RuleType"].isNull())
+			dataObject.ruleType = std::stoi(valueDataTmMonitorRule["RuleType"].asString());
+		if(!valueDataTmMonitorRule["RuleKeyword"].isNull())
+			dataObject.ruleKeyword = valueDataTmMonitorRule["RuleKeyword"].asString();
+		if(!valueDataTmMonitorRule["RuleDetail"].isNull())
+			dataObject.ruleDetail = valueDataTmMonitorRule["RuleDetail"].asString();
+		if(!valueDataTmMonitorRule["NotifyUpdate"].isNull())
+			dataObject.notifyUpdate = std::stoi(valueDataTmMonitorRule["NotifyUpdate"].asString());
+		if(!valueDataTmMonitorRule["Version"].isNull())
+			dataObject.version = std::stoi(valueDataTmMonitorRule["Version"].asString());
+		if(!valueDataTmMonitorRule["StartTime"].isNull())
+			dataObject.startTime = valueDataTmMonitorRule["StartTime"].asString();
+		if(!valueDataTmMonitorRule["EndTime"].isNull())
+			dataObject.endTime = valueDataTmMonitorRule["EndTime"].asString();
+		if(!valueDataTmMonitorRule["LastRunTime"].isNull())
+			dataObject.lastRunTime = valueDataTmMonitorRule["LastRunTime"].asString();
+		if(!valueDataTmMonitorRule["LastFinishTime"].isNull())
+			dataObject.lastFinishTime = valueDataTmMonitorRule["LastFinishTime"].asString();
+		if(!valueDataTmMonitorRule["LastUpdateTime"].isNull())
+			dataObject.lastUpdateTime = valueDataTmMonitorRule["LastUpdateTime"].asString();
+		if(!valueDataTmMonitorRule["Env"].isNull())
+			dataObject.env = valueDataTmMonitorRule["Env"].asString();
+		if(!valueDataTmMonitorRule["RuleExtend"].isNull())
+			dataObject.ruleExtend = valueDataTmMonitorRule["RuleExtend"].asString();
+		if(!valueDataTmMonitorRule["CreateTime"].isNull())
+			dataObject.createTime = valueDataTmMonitorRule["CreateTime"].asString();
+		if(!valueDataTmMonitorRule["UpdateTime"].isNull())
+			dataObject.updateTime = valueDataTmMonitorRule["UpdateTime"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

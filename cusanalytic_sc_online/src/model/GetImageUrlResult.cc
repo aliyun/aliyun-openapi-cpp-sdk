@@ -39,14 +39,14 @@ void GetImageUrlResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUrls = value["Urls"]["ImageUrl"];
-	for (auto value : allUrls)
+	auto allUrlsNode = value["Urls"]["ImageUrl"];
+	for (auto valueUrlsImageUrl : allUrlsNode)
 	{
 		ImageUrl urlsObject;
-		if(!value["ObjectKey"].isNull())
-			urlsObject.objectKey = value["ObjectKey"].asString();
-		if(!value["Url"].isNull())
-			urlsObject.url = value["Url"].asString();
+		if(!valueUrlsImageUrl["ObjectKey"].isNull())
+			urlsObject.objectKey = valueUrlsImageUrl["ObjectKey"].asString();
+		if(!valueUrlsImageUrl["Url"].isNull())
+			urlsObject.url = valueUrlsImageUrl["Url"].asString();
 		urls_.push_back(urlsObject);
 	}
 	if(!value["ErrorMsg"].isNull())

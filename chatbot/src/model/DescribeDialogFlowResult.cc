@@ -40,24 +40,24 @@ void DescribeDialogFlowResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto moduleDefinitionNode = value["ModuleDefinition"];
-	auto allNodes = value["Nodes"]["NodesItem"];
-	for (auto value : allNodes)
+	auto allNodesNode = moduleDefinitionNode["Nodes"]["NodesItem"];
+	for (auto moduleDefinitionNodeNodesNodesItem : allNodesNode)
 	{
 		ModuleDefinition::NodesItem nodesItemObject;
-		if(!value["Code"].isNull())
-			nodesItemObject.code = value["Code"].asString();
-		if(!value["ComponentCode"].isNull())
-			nodesItemObject.componentCode = value["ComponentCode"].asString();
-		if(!value["PluginDataUpdate"].isNull())
-			nodesItemObject.pluginDataUpdate = value["PluginDataUpdate"].asString() == "true";
-		if(!value["Xx"].isNull())
-			nodesItemObject.xx = value["Xx"].asString();
-		if(!value["Yy"].isNull())
-			nodesItemObject.yy = value["Yy"].asString();
-		if(!value["Id"].isNull())
-			nodesItemObject.id = value["Id"].asString();
-		if(!value["Label"].isNull())
-			nodesItemObject.label = value["Label"].asString();
+		if(!moduleDefinitionNodeNodesNodesItem["Code"].isNull())
+			nodesItemObject.code = moduleDefinitionNodeNodesNodesItem["Code"].asString();
+		if(!moduleDefinitionNodeNodesNodesItem["ComponentCode"].isNull())
+			nodesItemObject.componentCode = moduleDefinitionNodeNodesNodesItem["ComponentCode"].asString();
+		if(!moduleDefinitionNodeNodesNodesItem["PluginDataUpdate"].isNull())
+			nodesItemObject.pluginDataUpdate = moduleDefinitionNodeNodesNodesItem["PluginDataUpdate"].asString() == "true";
+		if(!moduleDefinitionNodeNodesNodesItem["Xx"].isNull())
+			nodesItemObject.xx = moduleDefinitionNodeNodesNodesItem["Xx"].asString();
+		if(!moduleDefinitionNodeNodesNodesItem["Yy"].isNull())
+			nodesItemObject.yy = moduleDefinitionNodeNodesNodesItem["Yy"].asString();
+		if(!moduleDefinitionNodeNodesNodesItem["Id"].isNull())
+			nodesItemObject.id = moduleDefinitionNodeNodesNodesItem["Id"].asString();
+		if(!moduleDefinitionNodeNodesNodesItem["Label"].isNull())
+			nodesItemObject.label = moduleDefinitionNodeNodesNodesItem["Label"].asString();
 		auto pluginDataNode = value["PluginData"];
 		auto entryNode = pluginDataNode["Entry"];
 		auto pluginFieldDataEntryNode = entryNode["PluginFieldDataEntry"];
@@ -65,24 +65,24 @@ void DescribeDialogFlowResult::parse(const std::string &payload)
 			nodesItemObject.pluginData.entry.pluginFieldDataEntry.lifeSpan = std::stoi(pluginFieldDataEntryNode["LifeSpan"].asString());
 		if(!pluginFieldDataEntryNode["Name"].isNull())
 			nodesItemObject.pluginData.entry.pluginFieldDataEntry.name = pluginFieldDataEntryNode["Name"].asString();
-		auto allContentEntry = value["ContentEntry"]["ContentEntryItem"];
-		for (auto value : allContentEntry)
+		auto allContentEntryNode = pluginFieldDataEntryNode["ContentEntry"]["ContentEntryItem"];
+		for (auto pluginFieldDataEntryNodeContentEntryContentEntryItem : allContentEntryNode)
 		{
 			ModuleDefinition::NodesItem::PluginData::Entry::PluginFieldDataEntry::ContentEntryItem contentEntryItemObject;
-			auto allConditionEntries = value["ConditionEntries"]["ConditionEntriesItem"];
-			for (auto value : allConditionEntries)
+			auto allConditionEntriesNode = allContentEntryNode["ConditionEntries"]["ConditionEntriesItem"];
+			for (auto allContentEntryNodeConditionEntriesConditionEntriesItem : allConditionEntriesNode)
 			{
 				ModuleDefinition::NodesItem::PluginData::Entry::PluginFieldDataEntry::ContentEntryItem::ConditionEntriesItem conditionEntriesObject;
-				if(!value["Id"].isNull())
-					conditionEntriesObject.id = value["Id"].asString();
-				if(!value["Term"].isNull())
-					conditionEntriesObject.term = value["Term"].asString();
-				if(!value["Name"].isNull())
-					conditionEntriesObject.name = value["Name"].asString();
-				if(!value["Type"].isNull())
-					conditionEntriesObject.type = value["Type"].asString();
-				if(!value["Value"].isNull())
-					conditionEntriesObject.value = value["Value"].asString();
+				if(!allContentEntryNodeConditionEntriesConditionEntriesItem["Id"].isNull())
+					conditionEntriesObject.id = allContentEntryNodeConditionEntriesConditionEntriesItem["Id"].asString();
+				if(!allContentEntryNodeConditionEntriesConditionEntriesItem["Term"].isNull())
+					conditionEntriesObject.term = allContentEntryNodeConditionEntriesConditionEntriesItem["Term"].asString();
+				if(!allContentEntryNodeConditionEntriesConditionEntriesItem["Name"].isNull())
+					conditionEntriesObject.name = allContentEntryNodeConditionEntriesConditionEntriesItem["Name"].asString();
+				if(!allContentEntryNodeConditionEntriesConditionEntriesItem["Type"].isNull())
+					conditionEntriesObject.type = allContentEntryNodeConditionEntriesConditionEntriesItem["Type"].asString();
+				if(!allContentEntryNodeConditionEntriesConditionEntriesItem["Value"].isNull())
+					conditionEntriesObject.value = allContentEntryNodeConditionEntriesConditionEntriesItem["Value"].asString();
 				contentEntryItemObject.conditionEntries.push_back(conditionEntriesObject);
 			}
 			nodesItemObject.pluginData.entry.pluginFieldDataEntry.contentEntry.push_back(contentEntryItemObject);
@@ -107,20 +107,20 @@ void DescribeDialogFlowResult::parse(const std::string &payload)
 			nodesItemObject.pluginData.function.pluginFieldDataFunction.type = pluginFieldDataFunctionNode["Type"].asString();
 		if(!pluginFieldDataFunctionNode["Params"].isNull())
 			nodesItemObject.pluginData.function.pluginFieldDataFunction.params = pluginFieldDataFunctionNode["Params"].asString();
-		auto allSwitch = value["Switch"]["SwitchItem"];
-		for (auto value : allSwitch)
+		auto allSwitchNode = pluginFieldDataFunctionNode["Switch"]["SwitchItem"];
+		for (auto pluginFieldDataFunctionNodeSwitchSwitchItem : allSwitchNode)
 		{
 			ModuleDefinition::NodesItem::PluginData::Function::PluginFieldDataFunction::SwitchItem switchItemObject;
-			if(!value["Id"].isNull())
-				switchItemObject.id = value["Id"].asString();
-			if(!value["Label"].isNull())
-				switchItemObject.label = value["Label"].asString();
-			if(!value["Type"].isNull())
-				switchItemObject.type = value["Type"].asString();
-			if(!value["Value"].isNull())
-				switchItemObject.value = value["Value"].asString();
-			if(!value["Name"].isNull())
-				switchItemObject.name = value["Name"].asString();
+			if(!pluginFieldDataFunctionNodeSwitchSwitchItem["Id"].isNull())
+				switchItemObject.id = pluginFieldDataFunctionNodeSwitchSwitchItem["Id"].asString();
+			if(!pluginFieldDataFunctionNodeSwitchSwitchItem["Label"].isNull())
+				switchItemObject.label = pluginFieldDataFunctionNodeSwitchSwitchItem["Label"].asString();
+			if(!pluginFieldDataFunctionNodeSwitchSwitchItem["Type"].isNull())
+				switchItemObject.type = pluginFieldDataFunctionNodeSwitchSwitchItem["Type"].asString();
+			if(!pluginFieldDataFunctionNodeSwitchSwitchItem["Value"].isNull())
+				switchItemObject.value = pluginFieldDataFunctionNodeSwitchSwitchItem["Value"].asString();
+			if(!pluginFieldDataFunctionNodeSwitchSwitchItem["Name"].isNull())
+				switchItemObject.name = pluginFieldDataFunctionNodeSwitchSwitchItem["Name"].asString();
 			nodesItemObject.pluginData.function.pluginFieldDataFunction.switch.push_back(switchItemObject);
 		}
 		auto responseNode = pluginDataNode["Response"];
@@ -137,16 +137,16 @@ void DescribeDialogFlowResult::parse(const std::string &payload)
 		auto buttonListNode = contentResponseNode["ButtonList"];
 		if(!buttonListNode["Intro"].isNull())
 			nodesItemObject.pluginData.response.pluginFieldDataResponse.contentResponse.buttonList.intro = buttonListNode["Intro"].asString();
-		auto allButton = value["Button"]["ButtonItem"];
-		for (auto value : allButton)
+		auto allButtonNode = buttonListNode["Button"]["ButtonItem"];
+		for (auto buttonListNodeButtonButtonItem : allButtonNode)
 		{
 			ModuleDefinition::NodesItem::PluginData::Response::PluginFieldDataResponse::ContentResponse::ButtonList::ButtonItem buttonItemObject;
-			if(!value["Name"].isNull())
-				buttonItemObject.name = value["Name"].asString();
-			if(!value["Type"].isNull())
-				buttonItemObject.type = value["Type"].asString();
-			if(!value["Text"].isNull())
-				buttonItemObject.text = value["Text"].asString();
+			if(!buttonListNodeButtonButtonItem["Name"].isNull())
+				buttonItemObject.name = buttonListNodeButtonButtonItem["Name"].asString();
+			if(!buttonListNodeButtonButtonItem["Type"].isNull())
+				buttonItemObject.type = buttonListNodeButtonButtonItem["Type"].asString();
+			if(!buttonListNodeButtonButtonItem["Text"].isNull())
+				buttonItemObject.text = buttonListNodeButtonButtonItem["Text"].asString();
 			nodesItemObject.pluginData.response.pluginFieldDataResponse.contentResponse.buttonList.button.push_back(buttonItemObject);
 		}
 		auto slotNode = pluginDataNode["Slot"];
@@ -159,20 +159,20 @@ void DescribeDialogFlowResult::parse(const std::string &payload)
 			nodesItemObject.pluginData.slot.pluginFieldDataSlot.isSysIntent = pluginFieldDataSlotNode["IsSysIntent"].asString() == "true";
 		if(!pluginFieldDataSlotNode["Name"].isNull())
 			nodesItemObject.pluginData.slot.pluginFieldDataSlot.name = pluginFieldDataSlotNode["Name"].asString();
-		auto allContentSlot = value["ContentSlot"]["ContentSlotItem"];
-		for (auto value : allContentSlot)
+		auto allContentSlotNode = pluginFieldDataSlotNode["ContentSlot"]["ContentSlotItem"];
+		for (auto pluginFieldDataSlotNodeContentSlotContentSlotItem : allContentSlotNode)
 		{
 			ModuleDefinition::NodesItem::PluginData::Slot::PluginFieldDataSlot::ContentSlotItem contentSlotItemObject;
-			if(!value["IsArray"].isNull())
-				contentSlotItemObject.isArray = value["IsArray"].asString() == "true";
-			if(!value["IsNecessary"].isNull())
-				contentSlotItemObject.isNecessary = value["IsNecessary"].asString() == "true";
-			if(!value["LifeSpan"].isNull())
-				contentSlotItemObject.lifeSpan = std::stoi(value["LifeSpan"].asString());
-			if(!value["Name"].isNull())
-				contentSlotItemObject.name = value["Name"].asString();
-			if(!value["Value"].isNull())
-				contentSlotItemObject.value = value["Value"].asString();
+			if(!pluginFieldDataSlotNodeContentSlotContentSlotItem["IsArray"].isNull())
+				contentSlotItemObject.isArray = pluginFieldDataSlotNodeContentSlotContentSlotItem["IsArray"].asString() == "true";
+			if(!pluginFieldDataSlotNodeContentSlotContentSlotItem["IsNecessary"].isNull())
+				contentSlotItemObject.isNecessary = pluginFieldDataSlotNodeContentSlotContentSlotItem["IsNecessary"].asString() == "true";
+			if(!pluginFieldDataSlotNodeContentSlotContentSlotItem["LifeSpan"].isNull())
+				contentSlotItemObject.lifeSpan = std::stoi(pluginFieldDataSlotNodeContentSlotContentSlotItem["LifeSpan"].asString());
+			if(!pluginFieldDataSlotNodeContentSlotContentSlotItem["Name"].isNull())
+				contentSlotItemObject.name = pluginFieldDataSlotNodeContentSlotContentSlotItem["Name"].asString();
+			if(!pluginFieldDataSlotNodeContentSlotContentSlotItem["Value"].isNull())
+				contentSlotItemObject.value = pluginFieldDataSlotNodeContentSlotContentSlotItem["Value"].asString();
 			auto allQuestion = value["Question"]["Question"];
 			for (auto value : allQuestion)
 				contentSlotItemObject.question.push_back(value.asString());
@@ -180,18 +180,18 @@ void DescribeDialogFlowResult::parse(const std::string &payload)
 		}
 		moduleDefinition_.nodes.push_back(nodesItemObject);
 	}
-	auto allEdges = value["Edges"]["EdgesItem"];
-	for (auto value : allEdges)
+	auto allEdgesNode = moduleDefinitionNode["Edges"]["EdgesItem"];
+	for (auto moduleDefinitionNodeEdgesEdgesItem : allEdgesNode)
 	{
 		ModuleDefinition::EdgesItem edgesItemObject;
-		if(!value["Id"].isNull())
-			edgesItemObject.id = value["Id"].asString();
-		if(!value["Label"].isNull())
-			edgesItemObject.label = value["Label"].asString();
-		if(!value["Source"].isNull())
-			edgesItemObject.source = value["Source"].asString();
-		if(!value["Target"].isNull())
-			edgesItemObject.target = value["Target"].asString();
+		if(!moduleDefinitionNodeEdgesEdgesItem["Id"].isNull())
+			edgesItemObject.id = moduleDefinitionNodeEdgesEdgesItem["Id"].asString();
+		if(!moduleDefinitionNodeEdgesEdgesItem["Label"].isNull())
+			edgesItemObject.label = moduleDefinitionNodeEdgesEdgesItem["Label"].asString();
+		if(!moduleDefinitionNodeEdgesEdgesItem["Source"].isNull())
+			edgesItemObject.source = moduleDefinitionNodeEdgesEdgesItem["Source"].asString();
+		if(!moduleDefinitionNodeEdgesEdgesItem["Target"].isNull())
+			edgesItemObject.target = moduleDefinitionNodeEdgesEdgesItem["Target"].asString();
 		moduleDefinition_.edges.push_back(edgesItemObject);
 	}
 	if(!value["DialogId"].isNull())

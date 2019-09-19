@@ -39,22 +39,22 @@ void LookupTmchNoticeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClaims = value["Claims"]["Claim"];
-	for (auto value : allClaims)
+	auto allClaimsNode = value["Claims"]["Claim"];
+	for (auto valueClaimsClaim : allClaimsNode)
 	{
 		Claim claimsObject;
-		if(!value["MarkName"].isNull())
-			claimsObject.markName = value["MarkName"].asString();
-		if(!value["GoodsAndServices"].isNull())
-			claimsObject.goodsAndServices = value["GoodsAndServices"].asString();
-		auto allHolders = value["Holders"]["Holder"];
-		for (auto value : allHolders)
+		if(!valueClaimsClaim["MarkName"].isNull())
+			claimsObject.markName = valueClaimsClaim["MarkName"].asString();
+		if(!valueClaimsClaim["GoodsAndServices"].isNull())
+			claimsObject.goodsAndServices = valueClaimsClaim["GoodsAndServices"].asString();
+		auto allHoldersNode = allClaimsNode["Holders"]["Holder"];
+		for (auto allClaimsNodeHoldersHolder : allHoldersNode)
 		{
 			Claim::Holder holdersObject;
-			if(!value["Entitlement"].isNull())
-				holdersObject.entitlement = value["Entitlement"].asString();
-			if(!value["Org"].isNull())
-				holdersObject.org = value["Org"].asString();
+			if(!allClaimsNodeHoldersHolder["Entitlement"].isNull())
+				holdersObject.entitlement = allClaimsNodeHoldersHolder["Entitlement"].asString();
+			if(!allClaimsNodeHoldersHolder["Org"].isNull())
+				holdersObject.org = allClaimsNodeHoldersHolder["Org"].asString();
 			auto addrNode = value["Addr"];
 			if(!addrNode["City"].isNull())
 				holdersObject.addr.city = addrNode["City"].asString();
@@ -69,22 +69,22 @@ void LookupTmchNoticeResult::parse(const std::string &payload)
 					holdersObject.addr.street.push_back(value.asString());
 			claimsObject.holders.push_back(holdersObject);
 		}
-		auto allContacts = value["Contacts"]["Contact"];
-		for (auto value : allContacts)
+		auto allContactsNode = allClaimsNode["Contacts"]["Contact"];
+		for (auto allClaimsNodeContactsContact : allContactsNode)
 		{
 			Claim::Contact contactsObject;
-			if(!value["Type"].isNull())
-				contactsObject.type = value["Type"].asString();
-			if(!value["Name"].isNull())
-				contactsObject.name = value["Name"].asString();
-			if(!value["Org"].isNull())
-				contactsObject.org = value["Org"].asString();
-			if(!value["Voice"].isNull())
-				contactsObject.voice = value["Voice"].asString();
-			if(!value["Fax"].isNull())
-				contactsObject.fax = value["Fax"].asString();
-			if(!value["Email"].isNull())
-				contactsObject.email = value["Email"].asString();
+			if(!allClaimsNodeContactsContact["Type"].isNull())
+				contactsObject.type = allClaimsNodeContactsContact["Type"].asString();
+			if(!allClaimsNodeContactsContact["Name"].isNull())
+				contactsObject.name = allClaimsNodeContactsContact["Name"].asString();
+			if(!allClaimsNodeContactsContact["Org"].isNull())
+				contactsObject.org = allClaimsNodeContactsContact["Org"].asString();
+			if(!allClaimsNodeContactsContact["Voice"].isNull())
+				contactsObject.voice = allClaimsNodeContactsContact["Voice"].asString();
+			if(!allClaimsNodeContactsContact["Fax"].isNull())
+				contactsObject.fax = allClaimsNodeContactsContact["Fax"].asString();
+			if(!allClaimsNodeContactsContact["Email"].isNull())
+				contactsObject.email = allClaimsNodeContactsContact["Email"].asString();
 			auto addr1Node = value["Addr"];
 			if(!addr1Node["City"].isNull())
 				contactsObject.addr1.city = addr1Node["City"].asString();
@@ -99,14 +99,14 @@ void LookupTmchNoticeResult::parse(const std::string &payload)
 					contactsObject.addr1.street2.push_back(value.asString());
 			claimsObject.contacts.push_back(contactsObject);
 		}
-		auto allClassDescs = value["ClassDescs"]["ClassDesc"];
-		for (auto value : allClassDescs)
+		auto allClassDescsNode = allClaimsNode["ClassDescs"]["ClassDesc"];
+		for (auto allClaimsNodeClassDescsClassDesc : allClassDescsNode)
 		{
 			Claim::ClassDesc classDescsObject;
-			if(!value["ClassNum"].isNull())
-				classDescsObject.classNum = std::stoi(value["ClassNum"].asString());
-			if(!value["Desc"].isNull())
-				classDescsObject.desc = value["Desc"].asString();
+			if(!allClaimsNodeClassDescsClassDesc["ClassNum"].isNull())
+				classDescsObject.classNum = std::stoi(allClaimsNodeClassDescsClassDesc["ClassNum"].asString());
+			if(!allClaimsNodeClassDescsClassDesc["Desc"].isNull())
+				classDescsObject.desc = allClaimsNodeClassDescsClassDesc["Desc"].asString();
 			claimsObject.classDescs.push_back(classDescsObject);
 		}
 		auto jurDescNode = value["JurDesc"];

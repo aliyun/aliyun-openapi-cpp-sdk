@@ -39,26 +39,26 @@ void DescribeTempInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTempInstances = value["TempInstances"]["TempInstance"];
-	for (auto value : allTempInstances)
+	auto allTempInstancesNode = value["TempInstances"]["TempInstance"];
+	for (auto valueTempInstancesTempInstance : allTempInstancesNode)
 	{
 		TempInstance tempInstancesObject;
-		if(!value["InstanceId"].isNull())
-			tempInstancesObject.instanceId = value["InstanceId"].asString();
-		if(!value["TempInstanceId"].isNull())
-			tempInstancesObject.tempInstanceId = value["TempInstanceId"].asString();
-		if(!value["SnapshotId"].isNull())
-			tempInstancesObject.snapshotId = value["SnapshotId"].asString();
-		if(!value["CreateTime"].isNull())
-			tempInstancesObject.createTime = value["CreateTime"].asString();
-		if(!value["Domain"].isNull())
-			tempInstancesObject.domain = value["Domain"].asString();
-		if(!value["Status"].isNull())
-			tempInstancesObject.status = value["Status"].asString();
-		if(!value["Memory"].isNull())
-			tempInstancesObject.memory = std::stol(value["Memory"].asString());
-		if(!value["ExpireTime"].isNull())
-			tempInstancesObject.expireTime = value["ExpireTime"].asString();
+		if(!valueTempInstancesTempInstance["InstanceId"].isNull())
+			tempInstancesObject.instanceId = valueTempInstancesTempInstance["InstanceId"].asString();
+		if(!valueTempInstancesTempInstance["TempInstanceId"].isNull())
+			tempInstancesObject.tempInstanceId = valueTempInstancesTempInstance["TempInstanceId"].asString();
+		if(!valueTempInstancesTempInstance["SnapshotId"].isNull())
+			tempInstancesObject.snapshotId = valueTempInstancesTempInstance["SnapshotId"].asString();
+		if(!valueTempInstancesTempInstance["CreateTime"].isNull())
+			tempInstancesObject.createTime = valueTempInstancesTempInstance["CreateTime"].asString();
+		if(!valueTempInstancesTempInstance["Domain"].isNull())
+			tempInstancesObject.domain = valueTempInstancesTempInstance["Domain"].asString();
+		if(!valueTempInstancesTempInstance["Status"].isNull())
+			tempInstancesObject.status = valueTempInstancesTempInstance["Status"].asString();
+		if(!valueTempInstancesTempInstance["Memory"].isNull())
+			tempInstancesObject.memory = std::stol(valueTempInstancesTempInstance["Memory"].asString());
+		if(!valueTempInstancesTempInstance["ExpireTime"].isNull())
+			tempInstancesObject.expireTime = valueTempInstancesTempInstance["ExpireTime"].asString();
 		tempInstances_.push_back(tempInstancesObject);
 	}
 

@@ -39,28 +39,28 @@ void DescribesummaryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allWarningSummarys = value["WarningSummarys"]["WarningSummary"];
-	for (auto value : allWarningSummarys)
+	auto allWarningSummarysNode = value["WarningSummarys"]["WarningSummary"];
+	for (auto valueWarningSummarysWarningSummary : allWarningSummarysNode)
 	{
 		WarningSummary warningSummarysObject;
-		if(!value["RiskId"].isNull())
-			warningSummarysObject.riskId = std::stol(value["RiskId"].asString());
-		if(!value["RiskName"].isNull())
-			warningSummarysObject.riskName = value["RiskName"].asString();
-		if(!value["Level"].isNull())
-			warningSummarysObject.level = value["Level"].asString();
-		if(!value["TypeAlias"].isNull())
-			warningSummarysObject.typeAlias = value["TypeAlias"].asString();
-		if(!value["SubTypeAlias"].isNull())
-			warningSummarysObject.subTypeAlias = value["SubTypeAlias"].asString();
-		if(!value["LastFoundTime"].isNull())
-			warningSummarysObject.lastFoundTime = value["LastFoundTime"].asString();
-		if(!value["PendingCount"].isNull())
-			warningSummarysObject.pendingCount = std::stoi(value["PendingCount"].asString());
-		if(!value["TotalCount"].isNull())
-			warningSummarysObject.totalCount = std::stoi(value["TotalCount"].asString());
-		if(!value["RiskDetail"].isNull())
-			warningSummarysObject.riskDetail = value["RiskDetail"].asString();
+		if(!valueWarningSummarysWarningSummary["RiskId"].isNull())
+			warningSummarysObject.riskId = std::stol(valueWarningSummarysWarningSummary["RiskId"].asString());
+		if(!valueWarningSummarysWarningSummary["RiskName"].isNull())
+			warningSummarysObject.riskName = valueWarningSummarysWarningSummary["RiskName"].asString();
+		if(!valueWarningSummarysWarningSummary["Level"].isNull())
+			warningSummarysObject.level = valueWarningSummarysWarningSummary["Level"].asString();
+		if(!valueWarningSummarysWarningSummary["TypeAlias"].isNull())
+			warningSummarysObject.typeAlias = valueWarningSummarysWarningSummary["TypeAlias"].asString();
+		if(!valueWarningSummarysWarningSummary["SubTypeAlias"].isNull())
+			warningSummarysObject.subTypeAlias = valueWarningSummarysWarningSummary["SubTypeAlias"].asString();
+		if(!valueWarningSummarysWarningSummary["LastFoundTime"].isNull())
+			warningSummarysObject.lastFoundTime = valueWarningSummarysWarningSummary["LastFoundTime"].asString();
+		if(!valueWarningSummarysWarningSummary["PendingCount"].isNull())
+			warningSummarysObject.pendingCount = std::stoi(valueWarningSummarysWarningSummary["PendingCount"].asString());
+		if(!valueWarningSummarysWarningSummary["TotalCount"].isNull())
+			warningSummarysObject.totalCount = std::stoi(valueWarningSummarysWarningSummary["TotalCount"].asString());
+		if(!valueWarningSummarysWarningSummary["RiskDetail"].isNull())
+			warningSummarysObject.riskDetail = valueWarningSummarysWarningSummary["RiskDetail"].asString();
 		warningSummarys_.push_back(warningSummarysObject);
 	}
 	if(!value["Count"].isNull())

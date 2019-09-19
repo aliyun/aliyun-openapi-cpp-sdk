@@ -39,18 +39,18 @@ void ListClusterLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogs = value["Logs"]["LogInfo"];
-	for (auto value : allLogs)
+	auto allLogsNode = value["Logs"]["LogInfo"];
+	for (auto valueLogsLogInfo : allLogsNode)
 	{
 		LogInfo logsObject;
-		if(!value["Operation"].isNull())
-			logsObject.operation = value["Operation"].asString();
-		if(!value["Level"].isNull())
-			logsObject.level = value["Level"].asString();
-		if(!value["Message"].isNull())
-			logsObject.message = value["Message"].asString();
-		if(!value["CreateTime"].isNull())
-			logsObject.createTime = value["CreateTime"].asString();
+		if(!valueLogsLogInfo["Operation"].isNull())
+			logsObject.operation = valueLogsLogInfo["Operation"].asString();
+		if(!valueLogsLogInfo["Level"].isNull())
+			logsObject.level = valueLogsLogInfo["Level"].asString();
+		if(!valueLogsLogInfo["Message"].isNull())
+			logsObject.message = valueLogsLogInfo["Message"].asString();
+		if(!valueLogsLogInfo["CreateTime"].isNull())
+			logsObject.createTime = valueLogsLogInfo["CreateTime"].asString();
 		logs_.push_back(logsObject);
 	}
 	if(!value["TotalCount"].isNull())

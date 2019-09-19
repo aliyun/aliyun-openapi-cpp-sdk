@@ -39,28 +39,28 @@ void DescribeGtmLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogs = value["Logs"]["Log"];
-	for (auto value : allLogs)
+	auto allLogsNode = value["Logs"]["Log"];
+	for (auto valueLogsLog : allLogsNode)
 	{
 		Log logsObject;
-		if(!value["OperTime"].isNull())
-			logsObject.operTime = value["OperTime"].asString();
-		if(!value["OperAction"].isNull())
-			logsObject.operAction = value["OperAction"].asString();
-		if(!value["EntityType"].isNull())
-			logsObject.entityType = value["EntityType"].asString();
-		if(!value["EntityId"].isNull())
-			logsObject.entityId = value["EntityId"].asString();
-		if(!value["EntityName"].isNull())
-			logsObject.entityName = value["EntityName"].asString();
-		if(!value["OperIp"].isNull())
-			logsObject.operIp = value["OperIp"].asString();
-		if(!value["OperTimestamp"].isNull())
-			logsObject.operTimestamp = std::stol(value["OperTimestamp"].asString());
-		if(!value["Id"].isNull())
-			logsObject.id = std::stol(value["Id"].asString());
-		if(!value["Content"].isNull())
-			logsObject.content = value["Content"].asString();
+		if(!valueLogsLog["OperTime"].isNull())
+			logsObject.operTime = valueLogsLog["OperTime"].asString();
+		if(!valueLogsLog["OperAction"].isNull())
+			logsObject.operAction = valueLogsLog["OperAction"].asString();
+		if(!valueLogsLog["EntityType"].isNull())
+			logsObject.entityType = valueLogsLog["EntityType"].asString();
+		if(!valueLogsLog["EntityId"].isNull())
+			logsObject.entityId = valueLogsLog["EntityId"].asString();
+		if(!valueLogsLog["EntityName"].isNull())
+			logsObject.entityName = valueLogsLog["EntityName"].asString();
+		if(!valueLogsLog["OperIp"].isNull())
+			logsObject.operIp = valueLogsLog["OperIp"].asString();
+		if(!valueLogsLog["OperTimestamp"].isNull())
+			logsObject.operTimestamp = std::stol(valueLogsLog["OperTimestamp"].asString());
+		if(!valueLogsLog["Id"].isNull())
+			logsObject.id = std::stol(valueLogsLog["Id"].asString());
+		if(!valueLogsLog["Content"].isNull())
+			logsObject.content = valueLogsLog["Content"].asString();
 		logs_.push_back(logsObject);
 	}
 	if(!value["TotalItems"].isNull())

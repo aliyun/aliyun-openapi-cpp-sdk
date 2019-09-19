@@ -39,26 +39,26 @@ void DescribeVerificationListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["ItemsItem"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["ItemsItem"];
+	for (auto valueItemsItemsItem : allItemsNode)
 	{
 		ItemsItem itemsObject;
-		if(!value["InstanceIdA"].isNull())
-			itemsObject.instanceIdA = value["InstanceIdA"].asString();
-		if(!value["InstanceIdB"].isNull())
-			itemsObject.instanceIdB = value["InstanceIdB"].asString();
-		if(!value["Key"].isNull())
-			itemsObject.key = value["Key"].asString();
-		if(!value["KeyType"].isNull())
-			itemsObject.keyType = value["KeyType"].asString();
-		if(!value["InconsistentType"].isNull())
-			itemsObject.inconsistentType = value["InconsistentType"].asString();
-		if(!value["OccurTime"].isNull())
-			itemsObject.occurTime = value["OccurTime"].asString();
-		if(!value["Schema"].isNull())
-			itemsObject.schema = value["Schema"].asString();
-		if(!value["InconsistentFields"].isNull())
-			itemsObject.inconsistentFields = value["InconsistentFields"].asString();
+		if(!valueItemsItemsItem["InstanceIdA"].isNull())
+			itemsObject.instanceIdA = valueItemsItemsItem["InstanceIdA"].asString();
+		if(!valueItemsItemsItem["InstanceIdB"].isNull())
+			itemsObject.instanceIdB = valueItemsItemsItem["InstanceIdB"].asString();
+		if(!valueItemsItemsItem["Key"].isNull())
+			itemsObject.key = valueItemsItemsItem["Key"].asString();
+		if(!valueItemsItemsItem["KeyType"].isNull())
+			itemsObject.keyType = valueItemsItemsItem["KeyType"].asString();
+		if(!valueItemsItemsItem["InconsistentType"].isNull())
+			itemsObject.inconsistentType = valueItemsItemsItem["InconsistentType"].asString();
+		if(!valueItemsItemsItem["OccurTime"].isNull())
+			itemsObject.occurTime = valueItemsItemsItem["OccurTime"].asString();
+		if(!valueItemsItemsItem["Schema"].isNull())
+			itemsObject.schema = valueItemsItemsItem["Schema"].asString();
+		if(!valueItemsItemsItem["InconsistentFields"].isNull())
+			itemsObject.inconsistentFields = valueItemsItemsItem["InconsistentFields"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["ReplicaId"].isNull())

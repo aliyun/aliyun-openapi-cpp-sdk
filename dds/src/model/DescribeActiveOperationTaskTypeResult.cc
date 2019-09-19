@@ -39,14 +39,14 @@ void DescribeActiveOperationTaskTypeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTypeList = value["TypeList"]["Items"];
-	for (auto value : allTypeList)
+	auto allTypeListNode = value["TypeList"]["Items"];
+	for (auto valueTypeListItems : allTypeListNode)
 	{
 		Items typeListObject;
-		if(!value["TaskType"].isNull())
-			typeListObject.taskType = value["TaskType"].asString();
-		if(!value["Count"].isNull())
-			typeListObject.count = std::stoi(value["Count"].asString());
+		if(!valueTypeListItems["TaskType"].isNull())
+			typeListObject.taskType = valueTypeListItems["TaskType"].asString();
+		if(!valueTypeListItems["Count"].isNull())
+			typeListObject.count = std::stoi(valueTypeListItems["Count"].asString());
 		typeList_.push_back(typeListObject);
 	}
 

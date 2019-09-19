@@ -39,16 +39,16 @@ void DescribeDBClusterAccessWhitelistResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["DBClusterIPArray"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["DBClusterIPArray"];
+	for (auto valueItemsDBClusterIPArray : allItemsNode)
 	{
 		DBClusterIPArray itemsObject;
-		if(!value["DBClusterIPArrayName"].isNull())
-			itemsObject.dBClusterIPArrayName = value["DBClusterIPArrayName"].asString();
-		if(!value["DBClusterIPArrayAttribute"].isNull())
-			itemsObject.dBClusterIPArrayAttribute = value["DBClusterIPArrayAttribute"].asString();
-		if(!value["SecurityIps"].isNull())
-			itemsObject.securityIps = value["SecurityIps"].asString();
+		if(!valueItemsDBClusterIPArray["DBClusterIPArrayName"].isNull())
+			itemsObject.dBClusterIPArrayName = valueItemsDBClusterIPArray["DBClusterIPArrayName"].asString();
+		if(!valueItemsDBClusterIPArray["DBClusterIPArrayAttribute"].isNull())
+			itemsObject.dBClusterIPArrayAttribute = valueItemsDBClusterIPArray["DBClusterIPArrayAttribute"].asString();
+		if(!valueItemsDBClusterIPArray["SecurityIps"].isNull())
+			itemsObject.securityIps = valueItemsDBClusterIPArray["SecurityIps"].asString();
 		items_.push_back(itemsObject);
 	}
 

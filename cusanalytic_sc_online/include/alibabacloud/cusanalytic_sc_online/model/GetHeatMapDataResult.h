@@ -43,22 +43,26 @@ namespace AlibabaCloud
 				GetHeatMapDataResult();
 				explicit GetHeatMapDataResult(const std::string &payload);
 				~GetHeatMapDataResult();
+				std::string getMsg()const;
 				std::vector<HeatMapItem> getHeatMapItems()const;
 				std::string getEMapName()const;
 				long getStoreId()const;
 				std::string getEMapUrl()const;
 				float getHeight()const;
 				float getWidth()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string msg_;
 				std::vector<HeatMapItem> heatMapItems_;
 				std::string eMapName_;
 				long storeId_;
 				std::string eMapUrl_;
 				float height_;
 				float width_;
+				bool success_;
 
 			};
 		}

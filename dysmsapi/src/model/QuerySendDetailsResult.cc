@@ -39,26 +39,26 @@ void QuerySendDetailsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSmsSendDetailDTOs = value["SmsSendDetailDTOs"]["SmsSendDetailDTO"];
-	for (auto value : allSmsSendDetailDTOs)
+	auto allSmsSendDetailDTOsNode = value["SmsSendDetailDTOs"]["SmsSendDetailDTO"];
+	for (auto valueSmsSendDetailDTOsSmsSendDetailDTO : allSmsSendDetailDTOsNode)
 	{
 		SmsSendDetailDTO smsSendDetailDTOsObject;
-		if(!value["PhoneNum"].isNull())
-			smsSendDetailDTOsObject.phoneNum = value["PhoneNum"].asString();
-		if(!value["SendStatus"].isNull())
-			smsSendDetailDTOsObject.sendStatus = std::stol(value["SendStatus"].asString());
-		if(!value["ErrCode"].isNull())
-			smsSendDetailDTOsObject.errCode = value["ErrCode"].asString();
-		if(!value["TemplateCode"].isNull())
-			smsSendDetailDTOsObject.templateCode = value["TemplateCode"].asString();
-		if(!value["Content"].isNull())
-			smsSendDetailDTOsObject.content = value["Content"].asString();
-		if(!value["SendDate"].isNull())
-			smsSendDetailDTOsObject.sendDate = value["SendDate"].asString();
-		if(!value["ReceiveDate"].isNull())
-			smsSendDetailDTOsObject.receiveDate = value["ReceiveDate"].asString();
-		if(!value["OutId"].isNull())
-			smsSendDetailDTOsObject.outId = value["OutId"].asString();
+		if(!valueSmsSendDetailDTOsSmsSendDetailDTO["PhoneNum"].isNull())
+			smsSendDetailDTOsObject.phoneNum = valueSmsSendDetailDTOsSmsSendDetailDTO["PhoneNum"].asString();
+		if(!valueSmsSendDetailDTOsSmsSendDetailDTO["SendStatus"].isNull())
+			smsSendDetailDTOsObject.sendStatus = std::stol(valueSmsSendDetailDTOsSmsSendDetailDTO["SendStatus"].asString());
+		if(!valueSmsSendDetailDTOsSmsSendDetailDTO["ErrCode"].isNull())
+			smsSendDetailDTOsObject.errCode = valueSmsSendDetailDTOsSmsSendDetailDTO["ErrCode"].asString();
+		if(!valueSmsSendDetailDTOsSmsSendDetailDTO["TemplateCode"].isNull())
+			smsSendDetailDTOsObject.templateCode = valueSmsSendDetailDTOsSmsSendDetailDTO["TemplateCode"].asString();
+		if(!valueSmsSendDetailDTOsSmsSendDetailDTO["Content"].isNull())
+			smsSendDetailDTOsObject.content = valueSmsSendDetailDTOsSmsSendDetailDTO["Content"].asString();
+		if(!valueSmsSendDetailDTOsSmsSendDetailDTO["SendDate"].isNull())
+			smsSendDetailDTOsObject.sendDate = valueSmsSendDetailDTOsSmsSendDetailDTO["SendDate"].asString();
+		if(!valueSmsSendDetailDTOsSmsSendDetailDTO["ReceiveDate"].isNull())
+			smsSendDetailDTOsObject.receiveDate = valueSmsSendDetailDTOsSmsSendDetailDTO["ReceiveDate"].asString();
+		if(!valueSmsSendDetailDTOsSmsSendDetailDTO["OutId"].isNull())
+			smsSendDetailDTOsObject.outId = valueSmsSendDetailDTOsSmsSendDetailDTO["OutId"].asString();
 		smsSendDetailDTOs_.push_back(smsSendDetailDTOsObject);
 	}
 	if(!value["Code"].isNull())

@@ -46,14 +46,14 @@ void OnsTrendTopicInputTpsResult::parse(const std::string &payload)
 		data_.xUnit = dataNode["XUnit"].asString();
 	if(!dataNode["YUnit"].isNull())
 		data_.yUnit = dataNode["YUnit"].asString();
-	auto allRecords = value["Records"]["StatsDataDo"];
-	for (auto value : allRecords)
+	auto allRecordsNode = dataNode["Records"]["StatsDataDo"];
+	for (auto dataNodeRecordsStatsDataDo : allRecordsNode)
 	{
 		Data::StatsDataDo statsDataDoObject;
-		if(!value["X"].isNull())
-			statsDataDoObject.x = std::stol(value["X"].asString());
-		if(!value["Y"].isNull())
-			statsDataDoObject.y = std::stof(value["Y"].asString());
+		if(!dataNodeRecordsStatsDataDo["X"].isNull())
+			statsDataDoObject.x = std::stol(dataNodeRecordsStatsDataDo["X"].asString());
+		if(!dataNodeRecordsStatsDataDo["Y"].isNull())
+			statsDataDoObject.y = std::stof(dataNodeRecordsStatsDataDo["Y"].asString());
 		data_.records.push_back(statsDataDoObject);
 	}
 	if(!value["HelpUrl"].isNull())

@@ -46,42 +46,42 @@ void ListUsersResult::parse(const std::string &payload)
 		users_.pageNumber = std::stoi(usersNode["PageNumber"].asString());
 	if(!usersNode["PageSize"].isNull())
 		users_.pageSize = std::stoi(usersNode["PageSize"].asString());
-	auto allList = value["List"]["User"];
-	for (auto value : allList)
+	auto allListNode = usersNode["List"]["User"];
+	for (auto usersNodeListUser : allListNode)
 	{
 		Users::User userObject;
-		if(!value["UserId"].isNull())
-			userObject.userId = value["UserId"].asString();
-		if(!value["RamId"].isNull())
-			userObject.ramId = value["RamId"].asString();
-		if(!value["InstanceId"].isNull())
-			userObject.instanceId = value["InstanceId"].asString();
-		if(!value["Primary"].isNull())
-			userObject.primary = value["Primary"].asString() == "true";
-		if(!value["PrivateOutboundNumberId"].isNull())
-			userObject.privateOutboundNumberId = value["PrivateOutboundNumberId"].asString();
-		auto allRoles = value["Roles"]["Role"];
-		for (auto value : allRoles)
+		if(!usersNodeListUser["UserId"].isNull())
+			userObject.userId = usersNodeListUser["UserId"].asString();
+		if(!usersNodeListUser["RamId"].isNull())
+			userObject.ramId = usersNodeListUser["RamId"].asString();
+		if(!usersNodeListUser["InstanceId"].isNull())
+			userObject.instanceId = usersNodeListUser["InstanceId"].asString();
+		if(!usersNodeListUser["Primary"].isNull())
+			userObject.primary = usersNodeListUser["Primary"].asString() == "true";
+		if(!usersNodeListUser["PrivateOutboundNumberId"].isNull())
+			userObject.privateOutboundNumberId = usersNodeListUser["PrivateOutboundNumberId"].asString();
+		auto allRolesNode = allListNode["Roles"]["Role"];
+		for (auto allListNodeRolesRole : allRolesNode)
 		{
 			Users::User::Role rolesObject;
-			if(!value["RoleId"].isNull())
-				rolesObject.roleId = value["RoleId"].asString();
-			if(!value["InstanceId"].isNull())
-				rolesObject.instanceId = value["InstanceId"].asString();
-			if(!value["RoleName"].isNull())
-				rolesObject.roleName = value["RoleName"].asString();
-			if(!value["RoleDescription"].isNull())
-				rolesObject.roleDescription = value["RoleDescription"].asString();
+			if(!allListNodeRolesRole["RoleId"].isNull())
+				rolesObject.roleId = allListNodeRolesRole["RoleId"].asString();
+			if(!allListNodeRolesRole["InstanceId"].isNull())
+				rolesObject.instanceId = allListNodeRolesRole["InstanceId"].asString();
+			if(!allListNodeRolesRole["RoleName"].isNull())
+				rolesObject.roleName = allListNodeRolesRole["RoleName"].asString();
+			if(!allListNodeRolesRole["RoleDescription"].isNull())
+				rolesObject.roleDescription = allListNodeRolesRole["RoleDescription"].asString();
 			userObject.roles.push_back(rolesObject);
 		}
-		auto allSkillLevels = value["SkillLevels"]["SkillLevel"];
-		for (auto value : allSkillLevels)
+		auto allSkillLevelsNode = allListNode["SkillLevels"]["SkillLevel"];
+		for (auto allListNodeSkillLevelsSkillLevel : allSkillLevelsNode)
 		{
 			Users::User::SkillLevel skillLevelsObject;
-			if(!value["SkillLevelId"].isNull())
-				skillLevelsObject.skillLevelId = value["SkillLevelId"].asString();
-			if(!value["Level"].isNull())
-				skillLevelsObject.level = std::stoi(value["Level"].asString());
+			if(!allListNodeSkillLevelsSkillLevel["SkillLevelId"].isNull())
+				skillLevelsObject.skillLevelId = allListNodeSkillLevelsSkillLevel["SkillLevelId"].asString();
+			if(!allListNodeSkillLevelsSkillLevel["Level"].isNull())
+				skillLevelsObject.level = std::stoi(allListNodeSkillLevelsSkillLevel["Level"].asString());
 			auto skillNode = value["Skill"];
 			if(!skillNode["SkillGroupId"].isNull())
 				skillLevelsObject.skill.skillGroupId = skillNode["SkillGroupId"].asString();

@@ -39,14 +39,14 @@ void DescribeUserFlowStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSagStatistics = value["SagStatistics"]["Statistics"];
-	for (auto value : allSagStatistics)
+	auto allSagStatisticsNode = value["SagStatistics"]["Statistics"];
+	for (auto valueSagStatisticsStatistics : allSagStatisticsNode)
 	{
 		Statistics sagStatisticsObject;
-		if(!value["UserName"].isNull())
-			sagStatisticsObject.userName = value["UserName"].asString();
-		if(!value["TotalBytes"].isNull())
-			sagStatisticsObject.totalBytes = value["TotalBytes"].asString();
+		if(!valueSagStatisticsStatistics["UserName"].isNull())
+			sagStatisticsObject.userName = valueSagStatisticsStatistics["UserName"].asString();
+		if(!valueSagStatisticsStatistics["TotalBytes"].isNull())
+			sagStatisticsObject.totalBytes = valueSagStatisticsStatistics["TotalBytes"].asString();
 		sagStatistics_.push_back(sagStatisticsObject);
 	}
 

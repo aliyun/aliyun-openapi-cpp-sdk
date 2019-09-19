@@ -62,22 +62,22 @@ void DescribeDcdnDomainDetailResult::parse(const std::string &payload)
 		domainDetail_.certName = domainDetailNode["CertName"].asString();
 	if(!domainDetailNode["ResourceGroupId"].isNull())
 		domainDetail_.resourceGroupId = domainDetailNode["ResourceGroupId"].asString();
-	auto allSources = value["Sources"]["Source"];
-	for (auto value : allSources)
+	auto allSourcesNode = domainDetailNode["Sources"]["Source"];
+	for (auto domainDetailNodeSourcesSource : allSourcesNode)
 	{
 		DomainDetail::Source sourceObject;
-		if(!value["Content"].isNull())
-			sourceObject.content = value["Content"].asString();
-		if(!value["Type"].isNull())
-			sourceObject.type = value["Type"].asString();
-		if(!value["Port"].isNull())
-			sourceObject.port = std::stoi(value["Port"].asString());
-		if(!value["Enabled"].isNull())
-			sourceObject.enabled = value["Enabled"].asString();
-		if(!value["Priority"].isNull())
-			sourceObject.priority = value["Priority"].asString();
-		if(!value["Weight"].isNull())
-			sourceObject.weight = value["Weight"].asString();
+		if(!domainDetailNodeSourcesSource["Content"].isNull())
+			sourceObject.content = domainDetailNodeSourcesSource["Content"].asString();
+		if(!domainDetailNodeSourcesSource["Type"].isNull())
+			sourceObject.type = domainDetailNodeSourcesSource["Type"].asString();
+		if(!domainDetailNodeSourcesSource["Port"].isNull())
+			sourceObject.port = std::stoi(domainDetailNodeSourcesSource["Port"].asString());
+		if(!domainDetailNodeSourcesSource["Enabled"].isNull())
+			sourceObject.enabled = domainDetailNodeSourcesSource["Enabled"].asString();
+		if(!domainDetailNodeSourcesSource["Priority"].isNull())
+			sourceObject.priority = domainDetailNodeSourcesSource["Priority"].asString();
+		if(!domainDetailNodeSourcesSource["Weight"].isNull())
+			sourceObject.weight = domainDetailNodeSourcesSource["Weight"].asString();
 		domainDetail_.sources.push_back(sourceObject);
 	}
 

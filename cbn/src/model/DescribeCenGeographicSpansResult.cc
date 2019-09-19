@@ -39,16 +39,16 @@ void DescribeCenGeographicSpansResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allGeographicSpanModels = value["GeographicSpanModels"]["GeographicSpanModel"];
-	for (auto value : allGeographicSpanModels)
+	auto allGeographicSpanModelsNode = value["GeographicSpanModels"]["GeographicSpanModel"];
+	for (auto valueGeographicSpanModelsGeographicSpanModel : allGeographicSpanModelsNode)
 	{
 		GeographicSpanModel geographicSpanModelsObject;
-		if(!value["GeographicSpanId"].isNull())
-			geographicSpanModelsObject.geographicSpanId = value["GeographicSpanId"].asString();
-		if(!value["LocalGeoRegionId"].isNull())
-			geographicSpanModelsObject.localGeoRegionId = value["LocalGeoRegionId"].asString();
-		if(!value["OppositeGeoRegionId"].isNull())
-			geographicSpanModelsObject.oppositeGeoRegionId = value["OppositeGeoRegionId"].asString();
+		if(!valueGeographicSpanModelsGeographicSpanModel["GeographicSpanId"].isNull())
+			geographicSpanModelsObject.geographicSpanId = valueGeographicSpanModelsGeographicSpanModel["GeographicSpanId"].asString();
+		if(!valueGeographicSpanModelsGeographicSpanModel["LocalGeoRegionId"].isNull())
+			geographicSpanModelsObject.localGeoRegionId = valueGeographicSpanModelsGeographicSpanModel["LocalGeoRegionId"].asString();
+		if(!valueGeographicSpanModelsGeographicSpanModel["OppositeGeoRegionId"].isNull())
+			geographicSpanModelsObject.oppositeGeoRegionId = valueGeographicSpanModelsGeographicSpanModel["OppositeGeoRegionId"].asString();
 		geographicSpanModels_.push_back(geographicSpanModelsObject);
 	}
 	if(!value["TotalCount"].isNull())

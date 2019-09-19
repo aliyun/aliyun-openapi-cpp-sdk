@@ -39,16 +39,16 @@ void DescribeRequestGraphResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRequestDetails = value["RequestDetails"]["ZoneRequestTop"];
-	for (auto value : allRequestDetails)
+	auto allRequestDetailsNode = value["RequestDetails"]["ZoneRequestTop"];
+	for (auto valueRequestDetailsZoneRequestTop : allRequestDetailsNode)
 	{
 		ZoneRequestTop requestDetailsObject;
-		if(!value["Time"].isNull())
-			requestDetailsObject.time = value["Time"].asString();
-		if(!value["Timestamp"].isNull())
-			requestDetailsObject.timestamp = std::stol(value["Timestamp"].asString());
-		if(!value["RequestCount"].isNull())
-			requestDetailsObject.requestCount = std::stol(value["RequestCount"].asString());
+		if(!valueRequestDetailsZoneRequestTop["Time"].isNull())
+			requestDetailsObject.time = valueRequestDetailsZoneRequestTop["Time"].asString();
+		if(!valueRequestDetailsZoneRequestTop["Timestamp"].isNull())
+			requestDetailsObject.timestamp = std::stol(valueRequestDetailsZoneRequestTop["Timestamp"].asString());
+		if(!valueRequestDetailsZoneRequestTop["RequestCount"].isNull())
+			requestDetailsObject.requestCount = std::stol(valueRequestDetailsZoneRequestTop["RequestCount"].asString());
 		requestDetails_.push_back(requestDetailsObject);
 	}
 

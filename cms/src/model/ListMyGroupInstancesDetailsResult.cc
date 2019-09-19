@@ -39,32 +39,32 @@ void ListMyGroupInstancesDetailsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResources = value["Resources"]["Resource"];
-	for (auto value : allResources)
+	auto allResourcesNode = value["Resources"]["Resource"];
+	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!value["AliUid"].isNull())
-			resourcesObject.aliUid = std::stol(value["AliUid"].asString());
-		if(!value["InstanceName"].isNull())
-			resourcesObject.instanceName = value["InstanceName"].asString();
-		if(!value["InstanceId"].isNull())
-			resourcesObject.instanceId = value["InstanceId"].asString();
-		if(!value["Desc"].isNull())
-			resourcesObject.desc = value["Desc"].asString();
-		if(!value["NetworkType"].isNull())
-			resourcesObject.networkType = value["NetworkType"].asString();
-		if(!value["Category"].isNull())
-			resourcesObject.category = value["Category"].asString();
-		if(!value["Dimension"].isNull())
-			resourcesObject.dimension = value["Dimension"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueResourcesResource["AliUid"].isNull())
+			resourcesObject.aliUid = std::stol(valueResourcesResource["AliUid"].asString());
+		if(!valueResourcesResource["InstanceName"].isNull())
+			resourcesObject.instanceName = valueResourcesResource["InstanceName"].asString();
+		if(!valueResourcesResource["InstanceId"].isNull())
+			resourcesObject.instanceId = valueResourcesResource["InstanceId"].asString();
+		if(!valueResourcesResource["Desc"].isNull())
+			resourcesObject.desc = valueResourcesResource["Desc"].asString();
+		if(!valueResourcesResource["NetworkType"].isNull())
+			resourcesObject.networkType = valueResourcesResource["NetworkType"].asString();
+		if(!valueResourcesResource["Category"].isNull())
+			resourcesObject.category = valueResourcesResource["Category"].asString();
+		if(!valueResourcesResource["Dimension"].isNull())
+			resourcesObject.dimension = valueResourcesResource["Dimension"].asString();
+		auto allTagsNode = allResourcesNode["Tags"]["Tag"];
+		for (auto allResourcesNodeTagsTag : allTagsNode)
 		{
 			Resource::Tag tagsObject;
-			if(!value["Key"].isNull())
-				tagsObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				tagsObject.value = value["Value"].asString();
+			if(!allResourcesNodeTagsTag["Key"].isNull())
+				tagsObject.key = allResourcesNodeTagsTag["Key"].asString();
+			if(!allResourcesNodeTagsTag["Value"].isNull())
+				tagsObject.value = allResourcesNodeTagsTag["Value"].asString();
 			resourcesObject.tags.push_back(tagsObject);
 		}
 		auto regionNode = value["Region"];

@@ -39,14 +39,14 @@ void DescribePropertyProcItemResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPropertyItems = value["PropertyItems"]["PropertyProcItem"];
-	for (auto value : allPropertyItems)
+	auto allPropertyItemsNode = value["PropertyItems"]["PropertyProcItem"];
+	for (auto valuePropertyItemsPropertyProcItem : allPropertyItemsNode)
 	{
 		PropertyProcItem propertyItemsObject;
-		if(!value["Name"].isNull())
-			propertyItemsObject.name = value["Name"].asString();
-		if(!value["Count"].isNull())
-			propertyItemsObject.count = std::stoi(value["Count"].asString());
+		if(!valuePropertyItemsPropertyProcItem["Name"].isNull())
+			propertyItemsObject.name = valuePropertyItemsPropertyProcItem["Name"].asString();
+		if(!valuePropertyItemsPropertyProcItem["Count"].isNull())
+			propertyItemsObject.count = std::stoi(valuePropertyItemsPropertyProcItem["Count"].asString());
 		propertyItems_.push_back(propertyItemsObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

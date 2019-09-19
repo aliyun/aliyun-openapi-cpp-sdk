@@ -39,28 +39,28 @@ void QuerySnapshotJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSnapshotJobList = value["SnapshotJobList"]["SnapshotJob"];
-	for (auto value : allSnapshotJobList)
+	auto allSnapshotJobListNode = value["SnapshotJobList"]["SnapshotJob"];
+	for (auto valueSnapshotJobListSnapshotJob : allSnapshotJobListNode)
 	{
 		SnapshotJob snapshotJobListObject;
-		if(!value["Id"].isNull())
-			snapshotJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			snapshotJobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			snapshotJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			snapshotJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			snapshotJobListObject.code = value["Code"].asString();
-		if(!value["Count"].isNull())
-			snapshotJobListObject.count = value["Count"].asString();
-		if(!value["TileCount"].isNull())
-			snapshotJobListObject.tileCount = value["TileCount"].asString();
-		if(!value["Message"].isNull())
-			snapshotJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			snapshotJobListObject.creationTime = value["CreationTime"].asString();
+		if(!valueSnapshotJobListSnapshotJob["Id"].isNull())
+			snapshotJobListObject.id = valueSnapshotJobListSnapshotJob["Id"].asString();
+		if(!valueSnapshotJobListSnapshotJob["UserData"].isNull())
+			snapshotJobListObject.userData = valueSnapshotJobListSnapshotJob["UserData"].asString();
+		if(!valueSnapshotJobListSnapshotJob["PipelineId"].isNull())
+			snapshotJobListObject.pipelineId = valueSnapshotJobListSnapshotJob["PipelineId"].asString();
+		if(!valueSnapshotJobListSnapshotJob["State"].isNull())
+			snapshotJobListObject.state = valueSnapshotJobListSnapshotJob["State"].asString();
+		if(!valueSnapshotJobListSnapshotJob["Code"].isNull())
+			snapshotJobListObject.code = valueSnapshotJobListSnapshotJob["Code"].asString();
+		if(!valueSnapshotJobListSnapshotJob["Count"].isNull())
+			snapshotJobListObject.count = valueSnapshotJobListSnapshotJob["Count"].asString();
+		if(!valueSnapshotJobListSnapshotJob["TileCount"].isNull())
+			snapshotJobListObject.tileCount = valueSnapshotJobListSnapshotJob["TileCount"].asString();
+		if(!valueSnapshotJobListSnapshotJob["Message"].isNull())
+			snapshotJobListObject.message = valueSnapshotJobListSnapshotJob["Message"].asString();
+		if(!valueSnapshotJobListSnapshotJob["CreationTime"].isNull())
+			snapshotJobListObject.creationTime = valueSnapshotJobListSnapshotJob["CreationTime"].asString();
 		auto inputNode = value["Input"];
 		if(!inputNode["Bucket"].isNull())
 			snapshotJobListObject.input.bucket = inputNode["Bucket"].asString();

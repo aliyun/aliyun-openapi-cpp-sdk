@@ -39,14 +39,14 @@ void PreCheckCreateOrderForCloneResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFailures = value["Failures"]["FailuresItem"];
-	for (auto value : allFailures)
+	auto allFailuresNode = value["Failures"]["FailuresItem"];
+	for (auto valueFailuresFailuresItem : allFailuresNode)
 	{
 		FailuresItem failuresObject;
-		if(!value["Code"].isNull())
-			failuresObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			failuresObject.message = value["Message"].asString();
+		if(!valueFailuresFailuresItem["Code"].isNull())
+			failuresObject.code = valueFailuresFailuresItem["Code"].asString();
+		if(!valueFailuresFailuresItem["Message"].isNull())
+			failuresObject.message = valueFailuresFailuresItem["Message"].asString();
 		failures_.push_back(failuresObject);
 	}
 	if(!value["PreCheckResult"].isNull())

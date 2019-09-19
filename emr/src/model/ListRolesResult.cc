@@ -39,22 +39,22 @@ void ListRolesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["roleDTO"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["roleDTO"];
+	for (auto valueDataroleDTO : allDataNode)
 	{
 		RoleDTO dataObject;
-		if(!value["Id"].isNull())
-			dataObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			dataObject.name = value["Name"].asString();
-		if(!value["ResourceType"].isNull())
-			dataObject.resourceType = value["ResourceType"].asString();
-		if(!value["GmtCreate"].isNull())
-			dataObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			dataObject.gmtModified = value["GmtModified"].asString();
-		if(!value["Description"].isNull())
-			dataObject.description = value["Description"].asString();
+		if(!valueDataroleDTO["Id"].isNull())
+			dataObject.id = std::stol(valueDataroleDTO["Id"].asString());
+		if(!valueDataroleDTO["Name"].isNull())
+			dataObject.name = valueDataroleDTO["Name"].asString();
+		if(!valueDataroleDTO["ResourceType"].isNull())
+			dataObject.resourceType = valueDataroleDTO["ResourceType"].asString();
+		if(!valueDataroleDTO["GmtCreate"].isNull())
+			dataObject.gmtCreate = valueDataroleDTO["GmtCreate"].asString();
+		if(!valueDataroleDTO["GmtModified"].isNull())
+			dataObject.gmtModified = valueDataroleDTO["GmtModified"].asString();
+		if(!valueDataroleDTO["Description"].isNull())
+			dataObject.description = valueDataroleDTO["Description"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Paging"].isNull())

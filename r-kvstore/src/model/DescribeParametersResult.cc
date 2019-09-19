@@ -39,40 +39,40 @@ void DescribeParametersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConfigParameters = value["ConfigParameters"]["Parameter"];
-	for (auto value : allConfigParameters)
+	auto allConfigParametersNode = value["ConfigParameters"]["Parameter"];
+	for (auto valueConfigParametersParameter : allConfigParametersNode)
 	{
 		Parameter configParametersObject;
-		if(!value["ParameterName"].isNull())
-			configParametersObject.parameterName = value["ParameterName"].asString();
-		if(!value["ParameterValue"].isNull())
-			configParametersObject.parameterValue = value["ParameterValue"].asString();
-		if(!value["ModifiableStatus"].isNull())
-			configParametersObject.modifiableStatus = value["ModifiableStatus"].asString() == "true";
-		if(!value["ForceRestart"].isNull())
-			configParametersObject.forceRestart = value["ForceRestart"].asString() == "true";
-		if(!value["CheckingCode"].isNull())
-			configParametersObject.checkingCode = value["CheckingCode"].asString();
-		if(!value["ParameterDescription"].isNull())
-			configParametersObject.parameterDescription = value["ParameterDescription"].asString();
+		if(!valueConfigParametersParameter["ParameterName"].isNull())
+			configParametersObject.parameterName = valueConfigParametersParameter["ParameterName"].asString();
+		if(!valueConfigParametersParameter["ParameterValue"].isNull())
+			configParametersObject.parameterValue = valueConfigParametersParameter["ParameterValue"].asString();
+		if(!valueConfigParametersParameter["ModifiableStatus"].isNull())
+			configParametersObject.modifiableStatus = valueConfigParametersParameter["ModifiableStatus"].asString() == "true";
+		if(!valueConfigParametersParameter["ForceRestart"].isNull())
+			configParametersObject.forceRestart = valueConfigParametersParameter["ForceRestart"].asString() == "true";
+		if(!valueConfigParametersParameter["CheckingCode"].isNull())
+			configParametersObject.checkingCode = valueConfigParametersParameter["CheckingCode"].asString();
+		if(!valueConfigParametersParameter["ParameterDescription"].isNull())
+			configParametersObject.parameterDescription = valueConfigParametersParameter["ParameterDescription"].asString();
 		configParameters_.push_back(configParametersObject);
 	}
-	auto allRunningParameters = value["RunningParameters"]["Parameter"];
-	for (auto value : allRunningParameters)
+	auto allRunningParametersNode = value["RunningParameters"]["Parameter"];
+	for (auto valueRunningParametersParameter : allRunningParametersNode)
 	{
 		Parameter runningParametersObject;
-		if(!value["ParameterName"].isNull())
-			runningParametersObject.parameterName = value["ParameterName"].asString();
-		if(!value["ParameterValue"].isNull())
-			runningParametersObject.parameterValue = value["ParameterValue"].asString();
-		if(!value["ModifiableStatus"].isNull())
-			runningParametersObject.modifiableStatus = value["ModifiableStatus"].asString() == "true";
-		if(!value["ForceRestart"].isNull())
-			runningParametersObject.forceRestart = value["ForceRestart"].asString() == "true";
-		if(!value["CheckingCode"].isNull())
-			runningParametersObject.checkingCode = value["CheckingCode"].asString();
-		if(!value["ParameterDescription"].isNull())
-			runningParametersObject.parameterDescription = value["ParameterDescription"].asString();
+		if(!valueRunningParametersParameter["ParameterName"].isNull())
+			runningParametersObject.parameterName = valueRunningParametersParameter["ParameterName"].asString();
+		if(!valueRunningParametersParameter["ParameterValue"].isNull())
+			runningParametersObject.parameterValue = valueRunningParametersParameter["ParameterValue"].asString();
+		if(!valueRunningParametersParameter["ModifiableStatus"].isNull())
+			runningParametersObject.modifiableStatus = valueRunningParametersParameter["ModifiableStatus"].asString() == "true";
+		if(!valueRunningParametersParameter["ForceRestart"].isNull())
+			runningParametersObject.forceRestart = valueRunningParametersParameter["ForceRestart"].asString() == "true";
+		if(!valueRunningParametersParameter["CheckingCode"].isNull())
+			runningParametersObject.checkingCode = valueRunningParametersParameter["CheckingCode"].asString();
+		if(!valueRunningParametersParameter["ParameterDescription"].isNull())
+			runningParametersObject.parameterDescription = valueRunningParametersParameter["ParameterDescription"].asString();
 		runningParameters_.push_back(runningParametersObject);
 	}
 	if(!value["Engine"].isNull())

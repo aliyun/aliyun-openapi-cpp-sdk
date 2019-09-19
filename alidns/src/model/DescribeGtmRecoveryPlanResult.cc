@@ -39,26 +39,26 @@ void DescribeGtmRecoveryPlanResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFaultAddrPools = value["FaultAddrPools"]["FaultAddrPool"];
-	for (auto value : allFaultAddrPools)
+	auto allFaultAddrPoolsNode = value["FaultAddrPools"]["FaultAddrPool"];
+	for (auto valueFaultAddrPoolsFaultAddrPool : allFaultAddrPoolsNode)
 	{
 		FaultAddrPool faultAddrPoolsObject;
-		if(!value["AddrPoolId"].isNull())
-			faultAddrPoolsObject.addrPoolId = value["AddrPoolId"].asString();
-		if(!value["AddrPoolName"].isNull())
-			faultAddrPoolsObject.addrPoolName = value["AddrPoolName"].asString();
-		if(!value["InstanceId"].isNull())
-			faultAddrPoolsObject.instanceId = value["InstanceId"].asString();
-		auto allAddrs = value["Addrs"]["Addr"];
-		for (auto value : allAddrs)
+		if(!valueFaultAddrPoolsFaultAddrPool["AddrPoolId"].isNull())
+			faultAddrPoolsObject.addrPoolId = valueFaultAddrPoolsFaultAddrPool["AddrPoolId"].asString();
+		if(!valueFaultAddrPoolsFaultAddrPool["AddrPoolName"].isNull())
+			faultAddrPoolsObject.addrPoolName = valueFaultAddrPoolsFaultAddrPool["AddrPoolName"].asString();
+		if(!valueFaultAddrPoolsFaultAddrPool["InstanceId"].isNull())
+			faultAddrPoolsObject.instanceId = valueFaultAddrPoolsFaultAddrPool["InstanceId"].asString();
+		auto allAddrsNode = allFaultAddrPoolsNode["Addrs"]["Addr"];
+		for (auto allFaultAddrPoolsNodeAddrsAddr : allAddrsNode)
 		{
 			FaultAddrPool::Addr addrsObject;
-			if(!value["Id"].isNull())
-				addrsObject.id = std::stol(value["Id"].asString());
-			if(!value["Mode"].isNull())
-				addrsObject.mode = value["Mode"].asString();
-			if(!value["Value"].isNull())
-				addrsObject.value = value["Value"].asString();
+			if(!allFaultAddrPoolsNodeAddrsAddr["Id"].isNull())
+				addrsObject.id = std::stol(allFaultAddrPoolsNodeAddrsAddr["Id"].asString());
+			if(!allFaultAddrPoolsNodeAddrsAddr["Mode"].isNull())
+				addrsObject.mode = allFaultAddrPoolsNodeAddrsAddr["Mode"].asString();
+			if(!allFaultAddrPoolsNodeAddrsAddr["Value"].isNull())
+				addrsObject.value = allFaultAddrPoolsNodeAddrsAddr["Value"].asString();
 			faultAddrPoolsObject.addrs.push_back(addrsObject);
 		}
 		faultAddrPools_.push_back(faultAddrPoolsObject);

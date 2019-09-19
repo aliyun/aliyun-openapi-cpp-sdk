@@ -39,54 +39,54 @@ void DescribeAutoProvisioningGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAutoProvisioningGroups = value["AutoProvisioningGroups"]["AutoProvisioningGroup"];
-	for (auto value : allAutoProvisioningGroups)
+	auto allAutoProvisioningGroupsNode = value["AutoProvisioningGroups"]["AutoProvisioningGroup"];
+	for (auto valueAutoProvisioningGroupsAutoProvisioningGroup : allAutoProvisioningGroupsNode)
 	{
 		AutoProvisioningGroup autoProvisioningGroupsObject;
-		if(!value["AutoProvisioningGroupId"].isNull())
-			autoProvisioningGroupsObject.autoProvisioningGroupId = value["AutoProvisioningGroupId"].asString();
-		if(!value["AutoProvisioningGroupName"].isNull())
-			autoProvisioningGroupsObject.autoProvisioningGroupName = value["AutoProvisioningGroupName"].asString();
-		if(!value["AutoProvisioningGroupType"].isNull())
-			autoProvisioningGroupsObject.autoProvisioningGroupType = value["AutoProvisioningGroupType"].asString();
-		if(!value["Status"].isNull())
-			autoProvisioningGroupsObject.status = value["Status"].asString();
-		if(!value["State"].isNull())
-			autoProvisioningGroupsObject.state = value["State"].asString();
-		if(!value["RegionId"].isNull())
-			autoProvisioningGroupsObject.regionId = value["RegionId"].asString();
-		if(!value["ValidFrom"].isNull())
-			autoProvisioningGroupsObject.validFrom = value["ValidFrom"].asString();
-		if(!value["ValidUntil"].isNull())
-			autoProvisioningGroupsObject.validUntil = value["ValidUntil"].asString();
-		if(!value["ExcessCapacityTerminationPolicy"].isNull())
-			autoProvisioningGroupsObject.excessCapacityTerminationPolicy = value["ExcessCapacityTerminationPolicy"].asString();
-		if(!value["MaxSpotPrice"].isNull())
-			autoProvisioningGroupsObject.maxSpotPrice = std::stof(value["MaxSpotPrice"].asString());
-		if(!value["LaunchTemplateId"].isNull())
-			autoProvisioningGroupsObject.launchTemplateId = value["LaunchTemplateId"].asString();
-		if(!value["LaunchTemplateVersion"].isNull())
-			autoProvisioningGroupsObject.launchTemplateVersion = value["LaunchTemplateVersion"].asString();
-		if(!value["TerminateInstances"].isNull())
-			autoProvisioningGroupsObject.terminateInstances = value["TerminateInstances"].asString() == "true";
-		if(!value["TerminateInstancesWithExpiration"].isNull())
-			autoProvisioningGroupsObject.terminateInstancesWithExpiration = value["TerminateInstancesWithExpiration"].asString() == "true";
-		if(!value["CreationTime"].isNull())
-			autoProvisioningGroupsObject.creationTime = value["CreationTime"].asString();
-		auto allLaunchTemplateConfigs = value["LaunchTemplateConfigs"]["LaunchTemplateConfig"];
-		for (auto value : allLaunchTemplateConfigs)
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["AutoProvisioningGroupId"].isNull())
+			autoProvisioningGroupsObject.autoProvisioningGroupId = valueAutoProvisioningGroupsAutoProvisioningGroup["AutoProvisioningGroupId"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["AutoProvisioningGroupName"].isNull())
+			autoProvisioningGroupsObject.autoProvisioningGroupName = valueAutoProvisioningGroupsAutoProvisioningGroup["AutoProvisioningGroupName"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["AutoProvisioningGroupType"].isNull())
+			autoProvisioningGroupsObject.autoProvisioningGroupType = valueAutoProvisioningGroupsAutoProvisioningGroup["AutoProvisioningGroupType"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["Status"].isNull())
+			autoProvisioningGroupsObject.status = valueAutoProvisioningGroupsAutoProvisioningGroup["Status"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["State"].isNull())
+			autoProvisioningGroupsObject.state = valueAutoProvisioningGroupsAutoProvisioningGroup["State"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["RegionId"].isNull())
+			autoProvisioningGroupsObject.regionId = valueAutoProvisioningGroupsAutoProvisioningGroup["RegionId"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["ValidFrom"].isNull())
+			autoProvisioningGroupsObject.validFrom = valueAutoProvisioningGroupsAutoProvisioningGroup["ValidFrom"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["ValidUntil"].isNull())
+			autoProvisioningGroupsObject.validUntil = valueAutoProvisioningGroupsAutoProvisioningGroup["ValidUntil"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["ExcessCapacityTerminationPolicy"].isNull())
+			autoProvisioningGroupsObject.excessCapacityTerminationPolicy = valueAutoProvisioningGroupsAutoProvisioningGroup["ExcessCapacityTerminationPolicy"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["MaxSpotPrice"].isNull())
+			autoProvisioningGroupsObject.maxSpotPrice = std::stof(valueAutoProvisioningGroupsAutoProvisioningGroup["MaxSpotPrice"].asString());
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["LaunchTemplateId"].isNull())
+			autoProvisioningGroupsObject.launchTemplateId = valueAutoProvisioningGroupsAutoProvisioningGroup["LaunchTemplateId"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["LaunchTemplateVersion"].isNull())
+			autoProvisioningGroupsObject.launchTemplateVersion = valueAutoProvisioningGroupsAutoProvisioningGroup["LaunchTemplateVersion"].asString();
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["TerminateInstances"].isNull())
+			autoProvisioningGroupsObject.terminateInstances = valueAutoProvisioningGroupsAutoProvisioningGroup["TerminateInstances"].asString() == "true";
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["TerminateInstancesWithExpiration"].isNull())
+			autoProvisioningGroupsObject.terminateInstancesWithExpiration = valueAutoProvisioningGroupsAutoProvisioningGroup["TerminateInstancesWithExpiration"].asString() == "true";
+		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["CreationTime"].isNull())
+			autoProvisioningGroupsObject.creationTime = valueAutoProvisioningGroupsAutoProvisioningGroup["CreationTime"].asString();
+		auto allLaunchTemplateConfigsNode = allAutoProvisioningGroupsNode["LaunchTemplateConfigs"]["LaunchTemplateConfig"];
+		for (auto allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig : allLaunchTemplateConfigsNode)
 		{
 			AutoProvisioningGroup::LaunchTemplateConfig launchTemplateConfigsObject;
-			if(!value["InstanceType"].isNull())
-				launchTemplateConfigsObject.instanceType = value["InstanceType"].asString();
-			if(!value["MaxPrice"].isNull())
-				launchTemplateConfigsObject.maxPrice = std::stof(value["MaxPrice"].asString());
-			if(!value["VSwitchId"].isNull())
-				launchTemplateConfigsObject.vSwitchId = value["VSwitchId"].asString();
-			if(!value["WeightedCapacity"].isNull())
-				launchTemplateConfigsObject.weightedCapacity = std::stof(value["WeightedCapacity"].asString());
-			if(!value["Priority"].isNull())
-				launchTemplateConfigsObject.priority = std::stof(value["Priority"].asString());
+			if(!allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["InstanceType"].isNull())
+				launchTemplateConfigsObject.instanceType = allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["InstanceType"].asString();
+			if(!allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["MaxPrice"].isNull())
+				launchTemplateConfigsObject.maxPrice = std::stof(allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["MaxPrice"].asString());
+			if(!allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["VSwitchId"].isNull())
+				launchTemplateConfigsObject.vSwitchId = allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["VSwitchId"].asString();
+			if(!allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["WeightedCapacity"].isNull())
+				launchTemplateConfigsObject.weightedCapacity = std::stof(allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["WeightedCapacity"].asString());
+			if(!allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["Priority"].isNull())
+				launchTemplateConfigsObject.priority = std::stof(allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["Priority"].asString());
 			autoProvisioningGroupsObject.launchTemplateConfigs.push_back(launchTemplateConfigsObject);
 		}
 		auto spotOptionsNode = value["SpotOptions"];

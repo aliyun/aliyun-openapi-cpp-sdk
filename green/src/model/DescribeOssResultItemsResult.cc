@@ -39,48 +39,48 @@ void DescribeOssResultItemsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allScanResultList = value["ScanResultList"]["ScanResult"];
-	for (auto value : allScanResultList)
+	auto allScanResultListNode = value["ScanResultList"]["ScanResult"];
+	for (auto valueScanResultListScanResult : allScanResultListNode)
 	{
 		ScanResult scanResultListObject;
-		if(!value["TaskId"].isNull())
-			scanResultListObject.taskId = value["TaskId"].asString();
-		if(!value["DataId"].isNull())
-			scanResultListObject.dataId = value["DataId"].asString();
-		if(!value["NewUrl"].isNull())
-			scanResultListObject.newUrl = value["NewUrl"].asString();
-		if(!value["Thumbnail"].isNull())
-			scanResultListObject.thumbnail = value["Thumbnail"].asString();
-		if(!value["RequestTime"].isNull())
-			scanResultListObject.requestTime = value["RequestTime"].asString();
-		if(!value["ScanFinishedTime"].isNull())
-			scanResultListObject.scanFinishedTime = value["ScanFinishedTime"].asString();
-		if(!value["CreateTime"].isNull())
-			scanResultListObject.createTime = value["CreateTime"].asString();
-		if(!value["Suggestion"].isNull())
-			scanResultListObject.suggestion = value["Suggestion"].asString();
-		if(!value["Id"].isNull())
-			scanResultListObject.id = std::stol(value["Id"].asString());
-		if(!value["Bucket"].isNull())
-			scanResultListObject.bucket = value["Bucket"].asString();
-		if(!value["Object"].isNull())
-			scanResultListObject.object = value["Object"].asString();
-		if(!value["Score"].isNull())
-			scanResultListObject.score = value["Score"].asString();
-		if(!value["HandleStatus"].isNull())
-			scanResultListObject.handleStatus = std::stoi(value["HandleStatus"].asString());
-		if(!value["ResourceStatus"].isNull())
-			scanResultListObject.resourceStatus = std::stoi(value["ResourceStatus"].asString());
-		auto allFrameResults = value["FrameResults"]["FrameResult"];
-		for (auto value : allFrameResults)
+		if(!valueScanResultListScanResult["TaskId"].isNull())
+			scanResultListObject.taskId = valueScanResultListScanResult["TaskId"].asString();
+		if(!valueScanResultListScanResult["DataId"].isNull())
+			scanResultListObject.dataId = valueScanResultListScanResult["DataId"].asString();
+		if(!valueScanResultListScanResult["NewUrl"].isNull())
+			scanResultListObject.newUrl = valueScanResultListScanResult["NewUrl"].asString();
+		if(!valueScanResultListScanResult["Thumbnail"].isNull())
+			scanResultListObject.thumbnail = valueScanResultListScanResult["Thumbnail"].asString();
+		if(!valueScanResultListScanResult["RequestTime"].isNull())
+			scanResultListObject.requestTime = valueScanResultListScanResult["RequestTime"].asString();
+		if(!valueScanResultListScanResult["ScanFinishedTime"].isNull())
+			scanResultListObject.scanFinishedTime = valueScanResultListScanResult["ScanFinishedTime"].asString();
+		if(!valueScanResultListScanResult["CreateTime"].isNull())
+			scanResultListObject.createTime = valueScanResultListScanResult["CreateTime"].asString();
+		if(!valueScanResultListScanResult["Suggestion"].isNull())
+			scanResultListObject.suggestion = valueScanResultListScanResult["Suggestion"].asString();
+		if(!valueScanResultListScanResult["Id"].isNull())
+			scanResultListObject.id = std::stol(valueScanResultListScanResult["Id"].asString());
+		if(!valueScanResultListScanResult["Bucket"].isNull())
+			scanResultListObject.bucket = valueScanResultListScanResult["Bucket"].asString();
+		if(!valueScanResultListScanResult["Object"].isNull())
+			scanResultListObject.object = valueScanResultListScanResult["Object"].asString();
+		if(!valueScanResultListScanResult["Score"].isNull())
+			scanResultListObject.score = valueScanResultListScanResult["Score"].asString();
+		if(!valueScanResultListScanResult["HandleStatus"].isNull())
+			scanResultListObject.handleStatus = std::stoi(valueScanResultListScanResult["HandleStatus"].asString());
+		if(!valueScanResultListScanResult["ResourceStatus"].isNull())
+			scanResultListObject.resourceStatus = std::stoi(valueScanResultListScanResult["ResourceStatus"].asString());
+		auto allFrameResultsNode = allScanResultListNode["FrameResults"]["FrameResult"];
+		for (auto allScanResultListNodeFrameResultsFrameResult : allFrameResultsNode)
 		{
 			ScanResult::FrameResult frameResultsObject;
-			if(!value["Thumbnail"].isNull())
-				frameResultsObject.thumbnail = value["Thumbnail"].asString();
-			if(!value["Offset"].isNull())
-				frameResultsObject.offset = std::stoi(value["Offset"].asString());
-			if(!value["Url"].isNull())
-				frameResultsObject.url = value["Url"].asString();
+			if(!allScanResultListNodeFrameResultsFrameResult["Thumbnail"].isNull())
+				frameResultsObject.thumbnail = allScanResultListNodeFrameResultsFrameResult["Thumbnail"].asString();
+			if(!allScanResultListNodeFrameResultsFrameResult["Offset"].isNull())
+				frameResultsObject.offset = std::stoi(allScanResultListNodeFrameResultsFrameResult["Offset"].asString());
+			if(!allScanResultListNodeFrameResultsFrameResult["Url"].isNull())
+				frameResultsObject.url = allScanResultListNodeFrameResultsFrameResult["Url"].asString();
 			scanResultListObject.frameResults.push_back(frameResultsObject);
 		}
 		scanResultList_.push_back(scanResultListObject);

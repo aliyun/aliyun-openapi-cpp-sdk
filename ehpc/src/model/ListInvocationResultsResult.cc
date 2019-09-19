@@ -39,24 +39,24 @@ void ListInvocationResultsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInvocationResults = value["InvocationResults"]["InvocationResult"];
-	for (auto value : allInvocationResults)
+	auto allInvocationResultsNode = value["InvocationResults"]["InvocationResult"];
+	for (auto valueInvocationResultsInvocationResult : allInvocationResultsNode)
 	{
 		InvocationResult invocationResultsObject;
-		if(!value["Success"].isNull())
-			invocationResultsObject.success = value["Success"].asString() == "true";
-		if(!value["CommandId"].isNull())
-			invocationResultsObject.commandId = value["CommandId"].asString();
-		if(!value["InstanceId"].isNull())
-			invocationResultsObject.instanceId = value["InstanceId"].asString();
-		if(!value["InvokeRecordStatus"].isNull())
-			invocationResultsObject.invokeRecordStatus = value["InvokeRecordStatus"].asString();
-		if(!value["FinishedTime"].isNull())
-			invocationResultsObject.finishedTime = value["FinishedTime"].asString();
-		if(!value["ExitCode"].isNull())
-			invocationResultsObject.exitCode = std::stoi(value["ExitCode"].asString());
-		if(!value["Message"].isNull())
-			invocationResultsObject.message = value["Message"].asString();
+		if(!valueInvocationResultsInvocationResult["Success"].isNull())
+			invocationResultsObject.success = valueInvocationResultsInvocationResult["Success"].asString() == "true";
+		if(!valueInvocationResultsInvocationResult["CommandId"].isNull())
+			invocationResultsObject.commandId = valueInvocationResultsInvocationResult["CommandId"].asString();
+		if(!valueInvocationResultsInvocationResult["InstanceId"].isNull())
+			invocationResultsObject.instanceId = valueInvocationResultsInvocationResult["InstanceId"].asString();
+		if(!valueInvocationResultsInvocationResult["InvokeRecordStatus"].isNull())
+			invocationResultsObject.invokeRecordStatus = valueInvocationResultsInvocationResult["InvokeRecordStatus"].asString();
+		if(!valueInvocationResultsInvocationResult["FinishedTime"].isNull())
+			invocationResultsObject.finishedTime = valueInvocationResultsInvocationResult["FinishedTime"].asString();
+		if(!valueInvocationResultsInvocationResult["ExitCode"].isNull())
+			invocationResultsObject.exitCode = std::stoi(valueInvocationResultsInvocationResult["ExitCode"].asString());
+		if(!valueInvocationResultsInvocationResult["Message"].isNull())
+			invocationResultsObject.message = valueInvocationResultsInvocationResult["Message"].asString();
 		invocationResults_.push_back(invocationResultsObject);
 	}
 	if(!value["TotalCount"].isNull())

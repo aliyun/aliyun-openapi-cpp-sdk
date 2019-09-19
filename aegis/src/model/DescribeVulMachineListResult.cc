@@ -39,38 +39,38 @@ void DescribeVulMachineListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMachineStatistics = value["MachineStatistics"]["MachineStatistic"];
-	for (auto value : allMachineStatistics)
+	auto allMachineStatisticsNode = value["MachineStatistics"]["MachineStatistic"];
+	for (auto valueMachineStatisticsMachineStatistic : allMachineStatisticsNode)
 	{
 		MachineStatistic machineStatisticsObject;
-		if(!value["Uuid"].isNull())
-			machineStatisticsObject.uuid = value["Uuid"].asString();
-		if(!value["CveNum"].isNull())
-			machineStatisticsObject.cveNum = std::stoi(value["CveNum"].asString());
-		if(!value["EmgNum"].isNull())
-			machineStatisticsObject.emgNum = std::stoi(value["EmgNum"].asString());
-		if(!value["SysNum"].isNull())
-			machineStatisticsObject.sysNum = std::stoi(value["SysNum"].asString());
-		if(!value["CmsNum"].isNull())
-			machineStatisticsObject.cmsNum = std::stoi(value["CmsNum"].asString());
-		if(!value["CmsDealedTotalNum"].isNull())
-			machineStatisticsObject.cmsDealedTotalNum = std::stoi(value["CmsDealedTotalNum"].asString());
-		if(!value["VulDealedTotalNum"].isNull())
-			machineStatisticsObject.vulDealedTotalNum = std::stoi(value["VulDealedTotalNum"].asString());
-		if(!value["VulAsapSum"].isNull())
-			machineStatisticsObject.vulAsapSum = std::stoi(value["VulAsapSum"].asString());
-		if(!value["VulLaterSum"].isNull())
-			machineStatisticsObject.vulLaterSum = std::stoi(value["VulLaterSum"].asString());
-		if(!value["VulNntfSum"].isNull())
-			machineStatisticsObject.vulNntfSum = std::stoi(value["VulNntfSum"].asString());
-		if(!value["VulSeriousTotal"].isNull())
-			machineStatisticsObject.vulSeriousTotal = std::stoi(value["VulSeriousTotal"].asString());
-		if(!value["VulHighTotal"].isNull())
-			machineStatisticsObject.vulHighTotal = std::stoi(value["VulHighTotal"].asString());
-		if(!value["VulMediumTotal"].isNull())
-			machineStatisticsObject.vulMediumTotal = std::stoi(value["VulMediumTotal"].asString());
-		if(!value["VulLowTotal"].isNull())
-			machineStatisticsObject.vulLowTotal = std::stoi(value["VulLowTotal"].asString());
+		if(!valueMachineStatisticsMachineStatistic["Uuid"].isNull())
+			machineStatisticsObject.uuid = valueMachineStatisticsMachineStatistic["Uuid"].asString();
+		if(!valueMachineStatisticsMachineStatistic["CveNum"].isNull())
+			machineStatisticsObject.cveNum = std::stoi(valueMachineStatisticsMachineStatistic["CveNum"].asString());
+		if(!valueMachineStatisticsMachineStatistic["EmgNum"].isNull())
+			machineStatisticsObject.emgNum = std::stoi(valueMachineStatisticsMachineStatistic["EmgNum"].asString());
+		if(!valueMachineStatisticsMachineStatistic["SysNum"].isNull())
+			machineStatisticsObject.sysNum = std::stoi(valueMachineStatisticsMachineStatistic["SysNum"].asString());
+		if(!valueMachineStatisticsMachineStatistic["CmsNum"].isNull())
+			machineStatisticsObject.cmsNum = std::stoi(valueMachineStatisticsMachineStatistic["CmsNum"].asString());
+		if(!valueMachineStatisticsMachineStatistic["CmsDealedTotalNum"].isNull())
+			machineStatisticsObject.cmsDealedTotalNum = std::stoi(valueMachineStatisticsMachineStatistic["CmsDealedTotalNum"].asString());
+		if(!valueMachineStatisticsMachineStatistic["VulDealedTotalNum"].isNull())
+			machineStatisticsObject.vulDealedTotalNum = std::stoi(valueMachineStatisticsMachineStatistic["VulDealedTotalNum"].asString());
+		if(!valueMachineStatisticsMachineStatistic["VulAsapSum"].isNull())
+			machineStatisticsObject.vulAsapSum = std::stoi(valueMachineStatisticsMachineStatistic["VulAsapSum"].asString());
+		if(!valueMachineStatisticsMachineStatistic["VulLaterSum"].isNull())
+			machineStatisticsObject.vulLaterSum = std::stoi(valueMachineStatisticsMachineStatistic["VulLaterSum"].asString());
+		if(!valueMachineStatisticsMachineStatistic["VulNntfSum"].isNull())
+			machineStatisticsObject.vulNntfSum = std::stoi(valueMachineStatisticsMachineStatistic["VulNntfSum"].asString());
+		if(!valueMachineStatisticsMachineStatistic["VulSeriousTotal"].isNull())
+			machineStatisticsObject.vulSeriousTotal = std::stoi(valueMachineStatisticsMachineStatistic["VulSeriousTotal"].asString());
+		if(!valueMachineStatisticsMachineStatistic["VulHighTotal"].isNull())
+			machineStatisticsObject.vulHighTotal = std::stoi(valueMachineStatisticsMachineStatistic["VulHighTotal"].asString());
+		if(!valueMachineStatisticsMachineStatistic["VulMediumTotal"].isNull())
+			machineStatisticsObject.vulMediumTotal = std::stoi(valueMachineStatisticsMachineStatistic["VulMediumTotal"].asString());
+		if(!valueMachineStatisticsMachineStatistic["VulLowTotal"].isNull())
+			machineStatisticsObject.vulLowTotal = std::stoi(valueMachineStatisticsMachineStatistic["VulLowTotal"].asString());
 		machineStatistics_.push_back(machineStatisticsObject);
 	}
 	if(!value["TotalCount"].isNull())

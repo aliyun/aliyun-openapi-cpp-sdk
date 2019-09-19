@@ -39,64 +39,64 @@ void ListContactFlowsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allContactFlows = value["ContactFlows"]["ContactFlow"];
-	for (auto value : allContactFlows)
+	auto allContactFlowsNode = value["ContactFlows"]["ContactFlow"];
+	for (auto valueContactFlowsContactFlow : allContactFlowsNode)
 	{
 		ContactFlow contactFlowsObject;
-		if(!value["ContactFlowId"].isNull())
-			contactFlowsObject.contactFlowId = value["ContactFlowId"].asString();
-		if(!value["InstanceId"].isNull())
-			contactFlowsObject.instanceId = value["InstanceId"].asString();
-		if(!value["ContactFlowName"].isNull())
-			contactFlowsObject.contactFlowName = value["ContactFlowName"].asString();
-		if(!value["ContactFlowDescription"].isNull())
-			contactFlowsObject.contactFlowDescription = value["ContactFlowDescription"].asString();
-		if(!value["Type"].isNull())
-			contactFlowsObject.type = value["Type"].asString();
-		if(!value["AppliedVersion"].isNull())
-			contactFlowsObject.appliedVersion = value["AppliedVersion"].asString();
-		auto allVersions = value["Versions"]["ContactFlowVersion"];
-		for (auto value : allVersions)
+		if(!valueContactFlowsContactFlow["ContactFlowId"].isNull())
+			contactFlowsObject.contactFlowId = valueContactFlowsContactFlow["ContactFlowId"].asString();
+		if(!valueContactFlowsContactFlow["InstanceId"].isNull())
+			contactFlowsObject.instanceId = valueContactFlowsContactFlow["InstanceId"].asString();
+		if(!valueContactFlowsContactFlow["ContactFlowName"].isNull())
+			contactFlowsObject.contactFlowName = valueContactFlowsContactFlow["ContactFlowName"].asString();
+		if(!valueContactFlowsContactFlow["ContactFlowDescription"].isNull())
+			contactFlowsObject.contactFlowDescription = valueContactFlowsContactFlow["ContactFlowDescription"].asString();
+		if(!valueContactFlowsContactFlow["Type"].isNull())
+			contactFlowsObject.type = valueContactFlowsContactFlow["Type"].asString();
+		if(!valueContactFlowsContactFlow["AppliedVersion"].isNull())
+			contactFlowsObject.appliedVersion = valueContactFlowsContactFlow["AppliedVersion"].asString();
+		auto allVersionsNode = allContactFlowsNode["Versions"]["ContactFlowVersion"];
+		for (auto allContactFlowsNodeVersionsContactFlowVersion : allVersionsNode)
 		{
 			ContactFlow::ContactFlowVersion versionsObject;
-			if(!value["ContactFlowVersionId"].isNull())
-				versionsObject.contactFlowVersionId = value["ContactFlowVersionId"].asString();
-			if(!value["Version"].isNull())
-				versionsObject.version = value["Version"].asString();
-			if(!value["ContactFlowVersionDescription"].isNull())
-				versionsObject.contactFlowVersionDescription = value["ContactFlowVersionDescription"].asString();
-			if(!value["LastModified"].isNull())
-				versionsObject.lastModified = value["LastModified"].asString();
-			if(!value["LastModifiedBy"].isNull())
-				versionsObject.lastModifiedBy = value["LastModifiedBy"].asString();
-			if(!value["LockedBy"].isNull())
-				versionsObject.lockedBy = value["LockedBy"].asString();
-			if(!value["Status"].isNull())
-				versionsObject.status = value["Status"].asString();
+			if(!allContactFlowsNodeVersionsContactFlowVersion["ContactFlowVersionId"].isNull())
+				versionsObject.contactFlowVersionId = allContactFlowsNodeVersionsContactFlowVersion["ContactFlowVersionId"].asString();
+			if(!allContactFlowsNodeVersionsContactFlowVersion["Version"].isNull())
+				versionsObject.version = allContactFlowsNodeVersionsContactFlowVersion["Version"].asString();
+			if(!allContactFlowsNodeVersionsContactFlowVersion["ContactFlowVersionDescription"].isNull())
+				versionsObject.contactFlowVersionDescription = allContactFlowsNodeVersionsContactFlowVersion["ContactFlowVersionDescription"].asString();
+			if(!allContactFlowsNodeVersionsContactFlowVersion["LastModified"].isNull())
+				versionsObject.lastModified = allContactFlowsNodeVersionsContactFlowVersion["LastModified"].asString();
+			if(!allContactFlowsNodeVersionsContactFlowVersion["LastModifiedBy"].isNull())
+				versionsObject.lastModifiedBy = allContactFlowsNodeVersionsContactFlowVersion["LastModifiedBy"].asString();
+			if(!allContactFlowsNodeVersionsContactFlowVersion["LockedBy"].isNull())
+				versionsObject.lockedBy = allContactFlowsNodeVersionsContactFlowVersion["LockedBy"].asString();
+			if(!allContactFlowsNodeVersionsContactFlowVersion["Status"].isNull())
+				versionsObject.status = allContactFlowsNodeVersionsContactFlowVersion["Status"].asString();
 			contactFlowsObject.versions.push_back(versionsObject);
 		}
-		auto allPhoneNumbers = value["PhoneNumbers"]["PhoneNumber"];
-		for (auto value : allPhoneNumbers)
+		auto allPhoneNumbersNode = allContactFlowsNode["PhoneNumbers"]["PhoneNumber"];
+		for (auto allContactFlowsNodePhoneNumbersPhoneNumber : allPhoneNumbersNode)
 		{
 			ContactFlow::PhoneNumber phoneNumbersObject;
-			if(!value["PhoneNumberId"].isNull())
-				phoneNumbersObject.phoneNumberId = value["PhoneNumberId"].asString();
-			if(!value["InstanceId"].isNull())
-				phoneNumbersObject.instanceId = value["InstanceId"].asString();
-			if(!value["Number"].isNull())
-				phoneNumbersObject.number = value["Number"].asString();
-			if(!value["PhoneNumberDescription"].isNull())
-				phoneNumbersObject.phoneNumberDescription = value["PhoneNumberDescription"].asString();
-			if(!value["TestOnly"].isNull())
-				phoneNumbersObject.testOnly = value["TestOnly"].asString() == "true";
-			if(!value["RemainingTime"].isNull())
-				phoneNumbersObject.remainingTime = std::stoi(value["RemainingTime"].asString());
-			if(!value["AllowOutbound"].isNull())
-				phoneNumbersObject.allowOutbound = value["AllowOutbound"].asString() == "true";
-			if(!value["Usage"].isNull())
-				phoneNumbersObject.usage = value["Usage"].asString();
-			if(!value["Trunks"].isNull())
-				phoneNumbersObject.trunks = std::stoi(value["Trunks"].asString());
+			if(!allContactFlowsNodePhoneNumbersPhoneNumber["PhoneNumberId"].isNull())
+				phoneNumbersObject.phoneNumberId = allContactFlowsNodePhoneNumbersPhoneNumber["PhoneNumberId"].asString();
+			if(!allContactFlowsNodePhoneNumbersPhoneNumber["InstanceId"].isNull())
+				phoneNumbersObject.instanceId = allContactFlowsNodePhoneNumbersPhoneNumber["InstanceId"].asString();
+			if(!allContactFlowsNodePhoneNumbersPhoneNumber["Number"].isNull())
+				phoneNumbersObject.number = allContactFlowsNodePhoneNumbersPhoneNumber["Number"].asString();
+			if(!allContactFlowsNodePhoneNumbersPhoneNumber["PhoneNumberDescription"].isNull())
+				phoneNumbersObject.phoneNumberDescription = allContactFlowsNodePhoneNumbersPhoneNumber["PhoneNumberDescription"].asString();
+			if(!allContactFlowsNodePhoneNumbersPhoneNumber["TestOnly"].isNull())
+				phoneNumbersObject.testOnly = allContactFlowsNodePhoneNumbersPhoneNumber["TestOnly"].asString() == "true";
+			if(!allContactFlowsNodePhoneNumbersPhoneNumber["RemainingTime"].isNull())
+				phoneNumbersObject.remainingTime = std::stoi(allContactFlowsNodePhoneNumbersPhoneNumber["RemainingTime"].asString());
+			if(!allContactFlowsNodePhoneNumbersPhoneNumber["AllowOutbound"].isNull())
+				phoneNumbersObject.allowOutbound = allContactFlowsNodePhoneNumbersPhoneNumber["AllowOutbound"].asString() == "true";
+			if(!allContactFlowsNodePhoneNumbersPhoneNumber["Usage"].isNull())
+				phoneNumbersObject.usage = allContactFlowsNodePhoneNumbersPhoneNumber["Usage"].asString();
+			if(!allContactFlowsNodePhoneNumbersPhoneNumber["Trunks"].isNull())
+				phoneNumbersObject.trunks = std::stoi(allContactFlowsNodePhoneNumbersPhoneNumber["Trunks"].asString());
 			contactFlowsObject.phoneNumbers.push_back(phoneNumbersObject);
 		}
 		contactFlows_.push_back(contactFlowsObject);

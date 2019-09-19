@@ -39,34 +39,34 @@ void ListUserGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["groupDTO"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["groupDTO"];
+	for (auto valueDatagroupDTO : allDataNode)
 	{
 		GroupDTO dataObject;
-		if(!value["Id"].isNull())
-			dataObject.id = std::stol(value["Id"].asString());
-		if(!value["Type"].isNull())
-			dataObject.type = value["Type"].asString();
-		if(!value["Name"].isNull())
-			dataObject.name = value["Name"].asString();
-		if(!value["GmtCreate"].isNull())
-			dataObject.gmtCreate = value["GmtCreate"].asString();
-		auto allRoleDTOList = value["RoleDTOList"]["RoleDTO"];
-		for (auto value : allRoleDTOList)
+		if(!valueDatagroupDTO["Id"].isNull())
+			dataObject.id = std::stol(valueDatagroupDTO["Id"].asString());
+		if(!valueDatagroupDTO["Type"].isNull())
+			dataObject.type = valueDatagroupDTO["Type"].asString();
+		if(!valueDatagroupDTO["Name"].isNull())
+			dataObject.name = valueDatagroupDTO["Name"].asString();
+		if(!valueDatagroupDTO["GmtCreate"].isNull())
+			dataObject.gmtCreate = valueDatagroupDTO["GmtCreate"].asString();
+		auto allRoleDTOListNode = allDataNode["RoleDTOList"]["RoleDTO"];
+		for (auto allDataNodeRoleDTOListRoleDTO : allRoleDTOListNode)
 		{
 			GroupDTO::RoleDTO roleDTOListObject;
-			if(!value["Id"].isNull())
-				roleDTOListObject.id = std::stol(value["Id"].asString());
-			if(!value["Name"].isNull())
-				roleDTOListObject.name = value["Name"].asString();
-			if(!value["ResourceType"].isNull())
-				roleDTOListObject.resourceType = value["ResourceType"].asString();
-			if(!value["GmtCreate"].isNull())
-				roleDTOListObject.gmtCreate = value["GmtCreate"].asString();
-			if(!value["GmtModified"].isNull())
-				roleDTOListObject.gmtModified = value["GmtModified"].asString();
-			if(!value["Description"].isNull())
-				roleDTOListObject.description = value["Description"].asString();
+			if(!allDataNodeRoleDTOListRoleDTO["Id"].isNull())
+				roleDTOListObject.id = std::stol(allDataNodeRoleDTOListRoleDTO["Id"].asString());
+			if(!allDataNodeRoleDTOListRoleDTO["Name"].isNull())
+				roleDTOListObject.name = allDataNodeRoleDTOListRoleDTO["Name"].asString();
+			if(!allDataNodeRoleDTOListRoleDTO["ResourceType"].isNull())
+				roleDTOListObject.resourceType = allDataNodeRoleDTOListRoleDTO["ResourceType"].asString();
+			if(!allDataNodeRoleDTOListRoleDTO["GmtCreate"].isNull())
+				roleDTOListObject.gmtCreate = allDataNodeRoleDTOListRoleDTO["GmtCreate"].asString();
+			if(!allDataNodeRoleDTOListRoleDTO["GmtModified"].isNull())
+				roleDTOListObject.gmtModified = allDataNodeRoleDTOListRoleDTO["GmtModified"].asString();
+			if(!allDataNodeRoleDTOListRoleDTO["Description"].isNull())
+				roleDTOListObject.description = allDataNodeRoleDTOListRoleDTO["Description"].asString();
 			dataObject.roleDTOList.push_back(roleDTOListObject);
 		}
 		data_.push_back(dataObject);

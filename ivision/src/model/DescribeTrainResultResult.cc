@@ -64,20 +64,20 @@ void DescribeTrainResultResult::parse(const std::string &payload)
 		trainResult_.errorCode = trainResultNode["ErrorCode"].asString();
 	if(!trainResultNode["ErrorMessage"].isNull())
 		trainResult_.errorMessage = trainResultNode["ErrorMessage"].asString();
-	auto allTagResults = value["TagResults"]["TagResult"];
-	for (auto value : allTagResults)
+	auto allTagResultsNode = trainResultNode["TagResults"]["TagResult"];
+	for (auto trainResultNodeTagResultsTagResult : allTagResultsNode)
 	{
 		TrainResult::TagResult tagResultObject;
-		if(!value["TagId"].isNull())
-			tagResultObject.tagId = value["TagId"].asString();
-		if(!value["TagName"].isNull())
-			tagResultObject.tagName = value["TagName"].asString();
-		if(!value["Precision"].isNull())
-			tagResultObject.precision = value["Precision"].asString();
-		if(!value["Recall"].isNull())
-			tagResultObject.recall = value["Recall"].asString();
-		if(!value["AP"].isNull())
-			tagResultObject.aP = value["AP"].asString();
+		if(!trainResultNodeTagResultsTagResult["TagId"].isNull())
+			tagResultObject.tagId = trainResultNodeTagResultsTagResult["TagId"].asString();
+		if(!trainResultNodeTagResultsTagResult["TagName"].isNull())
+			tagResultObject.tagName = trainResultNodeTagResultsTagResult["TagName"].asString();
+		if(!trainResultNodeTagResultsTagResult["Precision"].isNull())
+			tagResultObject.precision = trainResultNodeTagResultsTagResult["Precision"].asString();
+		if(!trainResultNodeTagResultsTagResult["Recall"].isNull())
+			tagResultObject.recall = trainResultNodeTagResultsTagResult["Recall"].asString();
+		if(!trainResultNodeTagResultsTagResult["AP"].isNull())
+			tagResultObject.aP = trainResultNodeTagResultsTagResult["AP"].asString();
 		trainResult_.tagResults.push_back(tagResultObject);
 	}
 

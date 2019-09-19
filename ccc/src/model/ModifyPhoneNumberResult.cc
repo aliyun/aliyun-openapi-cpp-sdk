@@ -58,14 +58,14 @@ void ModifyPhoneNumberResult::parse(const std::string &payload)
 		phoneNumber_.usage = phoneNumberNode["Usage"].asString();
 	if(!phoneNumberNode["Trunks"].isNull())
 		phoneNumber_.trunks = std::stoi(phoneNumberNode["Trunks"].asString());
-	auto allSkillGroups = value["SkillGroups"]["SkillGroup"];
-	for (auto value : allSkillGroups)
+	auto allSkillGroupsNode = phoneNumberNode["SkillGroups"]["SkillGroup"];
+	for (auto phoneNumberNodeSkillGroupsSkillGroup : allSkillGroupsNode)
 	{
 		PhoneNumber::SkillGroup skillGroupObject;
-		if(!value["SkillGroupId"].isNull())
-			skillGroupObject.skillGroupId = value["SkillGroupId"].asString();
-		if(!value["SkillGroupName"].isNull())
-			skillGroupObject.skillGroupName = value["SkillGroupName"].asString();
+		if(!phoneNumberNodeSkillGroupsSkillGroup["SkillGroupId"].isNull())
+			skillGroupObject.skillGroupId = phoneNumberNodeSkillGroupsSkillGroup["SkillGroupId"].asString();
+		if(!phoneNumberNodeSkillGroupsSkillGroup["SkillGroupName"].isNull())
+			skillGroupObject.skillGroupName = phoneNumberNodeSkillGroupsSkillGroup["SkillGroupName"].asString();
 		phoneNumber_.skillGroups.push_back(skillGroupObject);
 	}
 	auto contactFlowNode = phoneNumberNode["ContactFlow"];

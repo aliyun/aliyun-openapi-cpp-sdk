@@ -39,24 +39,24 @@ void DescribeDingTalkResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allActionList = value["ActionList"]["ActionListArr"];
-	for (auto value : allActionList)
+	auto allActionListNode = value["ActionList"]["ActionListArr"];
+	for (auto valueActionListActionListArr : allActionListNode)
 	{
 		ActionListArr actionListObject;
-		if(!value["GmtModified"].isNull())
-			actionListObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["Id"].isNull())
-			actionListObject.id = std::stoi(value["Id"].asString());
-		if(!value["AliUid"].isNull())
-			actionListObject.aliUid = std::stol(value["AliUid"].asString());
-		if(!value["GmtCreate"].isNull())
-			actionListObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["Url"].isNull())
-			actionListObject.url = value["Url"].asString();
-		if(!value["IntervalTime"].isNull())
-			actionListObject.intervalTime = std::stoi(value["IntervalTime"].asString());
-		if(!value["ActionName"].isNull())
-			actionListObject.actionName = value["ActionName"].asString();
+		if(!valueActionListActionListArr["GmtModified"].isNull())
+			actionListObject.gmtModified = std::stol(valueActionListActionListArr["GmtModified"].asString());
+		if(!valueActionListActionListArr["Id"].isNull())
+			actionListObject.id = std::stoi(valueActionListActionListArr["Id"].asString());
+		if(!valueActionListActionListArr["AliUid"].isNull())
+			actionListObject.aliUid = std::stol(valueActionListActionListArr["AliUid"].asString());
+		if(!valueActionListActionListArr["GmtCreate"].isNull())
+			actionListObject.gmtCreate = std::stol(valueActionListActionListArr["GmtCreate"].asString());
+		if(!valueActionListActionListArr["Url"].isNull())
+			actionListObject.url = valueActionListActionListArr["Url"].asString();
+		if(!valueActionListActionListArr["IntervalTime"].isNull())
+			actionListObject.intervalTime = std::stoi(valueActionListActionListArr["IntervalTime"].asString());
+		if(!valueActionListActionListArr["ActionName"].isNull())
+			actionListObject.actionName = valueActionListActionListArr["ActionName"].asString();
 		actionList_.push_back(actionListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

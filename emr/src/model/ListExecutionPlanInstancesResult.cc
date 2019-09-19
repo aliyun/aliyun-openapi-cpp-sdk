@@ -39,34 +39,34 @@ void ListExecutionPlanInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allExecutionPlanInstances = value["ExecutionPlanInstances"]["ExecutionPlanInstance"];
-	for (auto value : allExecutionPlanInstances)
+	auto allExecutionPlanInstancesNode = value["ExecutionPlanInstances"]["ExecutionPlanInstance"];
+	for (auto valueExecutionPlanInstancesExecutionPlanInstance : allExecutionPlanInstancesNode)
 	{
 		ExecutionPlanInstance executionPlanInstancesObject;
-		if(!value["Id"].isNull())
-			executionPlanInstancesObject.id = value["Id"].asString();
-		if(!value["ExecutionPlanId"].isNull())
-			executionPlanInstancesObject.executionPlanId = value["ExecutionPlanId"].asString();
-		if(!value["ExecutionPlanName"].isNull())
-			executionPlanInstancesObject.executionPlanName = value["ExecutionPlanName"].asString();
-		if(!value["StartTime"].isNull())
-			executionPlanInstancesObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["RunTime"].isNull())
-			executionPlanInstancesObject.runTime = std::stoi(value["RunTime"].asString());
-		if(!value["ClusterId"].isNull())
-			executionPlanInstancesObject.clusterId = value["ClusterId"].asString();
-		if(!value["ClusterName"].isNull())
-			executionPlanInstancesObject.clusterName = value["ClusterName"].asString();
-		if(!value["ClusterType"].isNull())
-			executionPlanInstancesObject.clusterType = value["ClusterType"].asString();
-		if(!value["Status"].isNull())
-			executionPlanInstancesObject.status = value["Status"].asString();
-		if(!value["LogEnable"].isNull())
-			executionPlanInstancesObject.logEnable = value["LogEnable"].asString() == "true";
-		if(!value["LogPath"].isNull())
-			executionPlanInstancesObject.logPath = value["LogPath"].asString();
-		if(!value["WorkflowApp"].isNull())
-			executionPlanInstancesObject.workflowApp = value["WorkflowApp"].asString();
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["Id"].isNull())
+			executionPlanInstancesObject.id = valueExecutionPlanInstancesExecutionPlanInstance["Id"].asString();
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["ExecutionPlanId"].isNull())
+			executionPlanInstancesObject.executionPlanId = valueExecutionPlanInstancesExecutionPlanInstance["ExecutionPlanId"].asString();
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["ExecutionPlanName"].isNull())
+			executionPlanInstancesObject.executionPlanName = valueExecutionPlanInstancesExecutionPlanInstance["ExecutionPlanName"].asString();
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["StartTime"].isNull())
+			executionPlanInstancesObject.startTime = std::stol(valueExecutionPlanInstancesExecutionPlanInstance["StartTime"].asString());
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["RunTime"].isNull())
+			executionPlanInstancesObject.runTime = std::stoi(valueExecutionPlanInstancesExecutionPlanInstance["RunTime"].asString());
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["ClusterId"].isNull())
+			executionPlanInstancesObject.clusterId = valueExecutionPlanInstancesExecutionPlanInstance["ClusterId"].asString();
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["ClusterName"].isNull())
+			executionPlanInstancesObject.clusterName = valueExecutionPlanInstancesExecutionPlanInstance["ClusterName"].asString();
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["ClusterType"].isNull())
+			executionPlanInstancesObject.clusterType = valueExecutionPlanInstancesExecutionPlanInstance["ClusterType"].asString();
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["Status"].isNull())
+			executionPlanInstancesObject.status = valueExecutionPlanInstancesExecutionPlanInstance["Status"].asString();
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["LogEnable"].isNull())
+			executionPlanInstancesObject.logEnable = valueExecutionPlanInstancesExecutionPlanInstance["LogEnable"].asString() == "true";
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["LogPath"].isNull())
+			executionPlanInstancesObject.logPath = valueExecutionPlanInstancesExecutionPlanInstance["LogPath"].asString();
+		if(!valueExecutionPlanInstancesExecutionPlanInstance["WorkflowApp"].isNull())
+			executionPlanInstancesObject.workflowApp = valueExecutionPlanInstancesExecutionPlanInstance["WorkflowApp"].asString();
 		executionPlanInstances_.push_back(executionPlanInstancesObject);
 	}
 	if(!value["TotalCount"].isNull())

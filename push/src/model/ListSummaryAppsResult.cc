@@ -39,14 +39,14 @@ void ListSummaryAppsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSummaryAppInfos = value["SummaryAppInfos"]["SummaryAppInfo"];
-	for (auto value : allSummaryAppInfos)
+	auto allSummaryAppInfosNode = value["SummaryAppInfos"]["SummaryAppInfo"];
+	for (auto valueSummaryAppInfosSummaryAppInfo : allSummaryAppInfosNode)
 	{
 		SummaryAppInfo summaryAppInfosObject;
-		if(!value["AppName"].isNull())
-			summaryAppInfosObject.appName = value["AppName"].asString();
-		if(!value["AppKey"].isNull())
-			summaryAppInfosObject.appKey = std::stol(value["AppKey"].asString());
+		if(!valueSummaryAppInfosSummaryAppInfo["AppName"].isNull())
+			summaryAppInfosObject.appName = valueSummaryAppInfosSummaryAppInfo["AppName"].asString();
+		if(!valueSummaryAppInfosSummaryAppInfo["AppKey"].isNull())
+			summaryAppInfosObject.appKey = std::stol(valueSummaryAppInfosSummaryAppInfo["AppKey"].asString());
 		summaryAppInfos_.push_back(summaryAppInfosObject);
 	}
 

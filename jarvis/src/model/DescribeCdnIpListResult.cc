@@ -39,22 +39,22 @@ void DescribeCdnIpListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataList = value["DataList"]["Data"];
-	for (auto value : allDataList)
+	auto allDataListNode = value["DataList"]["Data"];
+	for (auto valueDataListData : allDataListNode)
 	{
 		Data dataListObject;
-		if(!value["Id"].isNull())
-			dataListObject.id = std::stoi(value["Id"].asString());
-		if(!value["VendorAliuid"].isNull())
-			dataListObject.vendorAliuid = std::stoi(value["VendorAliuid"].asString());
-		if(!value["IpSeg"].isNull())
-			dataListObject.ipSeg = value["IpSeg"].asString();
-		if(!value["State"].isNull())
-			dataListObject.state = std::stoi(value["State"].asString());
-		if(!value["CreateTime"].isNull())
-			dataListObject.createTime = value["CreateTime"].asString();
-		if(!value["UpdateTime"].isNull())
-			dataListObject.updateTime = value["UpdateTime"].asString();
+		if(!valueDataListData["Id"].isNull())
+			dataListObject.id = std::stoi(valueDataListData["Id"].asString());
+		if(!valueDataListData["VendorAliuid"].isNull())
+			dataListObject.vendorAliuid = std::stoi(valueDataListData["VendorAliuid"].asString());
+		if(!valueDataListData["IpSeg"].isNull())
+			dataListObject.ipSeg = valueDataListData["IpSeg"].asString();
+		if(!valueDataListData["State"].isNull())
+			dataListObject.state = std::stoi(valueDataListData["State"].asString());
+		if(!valueDataListData["CreateTime"].isNull())
+			dataListObject.createTime = valueDataListData["CreateTime"].asString();
+		if(!valueDataListData["UpdateTime"].isNull())
+			dataListObject.updateTime = valueDataListData["UpdateTime"].asString();
 		dataList_.push_back(dataListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

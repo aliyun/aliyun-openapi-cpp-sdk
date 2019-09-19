@@ -39,14 +39,14 @@ void DescribeLiveDomainRealTimeBpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRealTimeBpsDataPerInterval = value["RealTimeBpsDataPerInterval"]["DataModule"];
-	for (auto value : allRealTimeBpsDataPerInterval)
+	auto allRealTimeBpsDataPerIntervalNode = value["RealTimeBpsDataPerInterval"]["DataModule"];
+	for (auto valueRealTimeBpsDataPerIntervalDataModule : allRealTimeBpsDataPerIntervalNode)
 	{
 		DataModule realTimeBpsDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			realTimeBpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			realTimeBpsDataPerIntervalObject.value = value["Value"].asString();
+		if(!valueRealTimeBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			realTimeBpsDataPerIntervalObject.timeStamp = valueRealTimeBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueRealTimeBpsDataPerIntervalDataModule["Value"].isNull())
+			realTimeBpsDataPerIntervalObject.value = valueRealTimeBpsDataPerIntervalDataModule["Value"].asString();
 		realTimeBpsDataPerInterval_.push_back(realTimeBpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

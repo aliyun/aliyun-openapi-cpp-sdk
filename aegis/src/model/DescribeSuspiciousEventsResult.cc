@@ -39,52 +39,52 @@ void DescribeSuspiciousEventsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogList = value["LogList"]["LogListItem"];
-	for (auto value : allLogList)
+	auto allLogListNode = value["LogList"]["LogListItem"];
+	for (auto valueLogListLogListItem : allLogListNode)
 	{
 		LogListItem logListObject;
-		if(!value["AliasEventType"].isNull())
-			logListObject.aliasEventType = value["AliasEventType"].asString();
-		if(!value["LastTime"].isNull())
-			logListObject.lastTime = std::stol(value["LastTime"].asString());
-		if(!value["Level"].isNull())
-			logListObject.level = value["Level"].asString();
-		if(!value["InstanceName"].isNull())
-			logListObject.instanceName = value["InstanceName"].asString();
-		if(!value["GroupId"].isNull())
-			logListObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["Ip"].isNull())
-			logListObject.ip = value["Ip"].asString();
-		if(!value["EventType"].isNull())
-			logListObject.eventType = value["EventType"].asString();
-		if(!value["Uuid"].isNull())
-			logListObject.uuid = value["Uuid"].asString();
-		if(!value["FirstTime"].isNull())
-			logListObject.firstTime = std::stol(value["FirstTime"].asString());
-		if(!value["InstanceId"].isNull())
-			logListObject.instanceId = value["InstanceId"].asString();
-		if(!value["Tag"].isNull())
-			logListObject.tag = value["Tag"].asString();
-		if(!value["AliasEventName"].isNull())
-			logListObject.aliasEventName = value["AliasEventName"].asString();
-		if(!value["OsVersion"].isNull())
-			logListObject.osVersion = value["OsVersion"].asString();
-		if(!value["ClientIp"].isNull())
-			logListObject.clientIp = value["ClientIp"].asString();
-		if(!value["EventName"].isNull())
-			logListObject.eventName = value["EventName"].asString();
-		auto allDetailList = value["DetailList"]["DetailListItem"];
-		for (auto value : allDetailList)
+		if(!valueLogListLogListItem["AliasEventType"].isNull())
+			logListObject.aliasEventType = valueLogListLogListItem["AliasEventType"].asString();
+		if(!valueLogListLogListItem["LastTime"].isNull())
+			logListObject.lastTime = std::stol(valueLogListLogListItem["LastTime"].asString());
+		if(!valueLogListLogListItem["Level"].isNull())
+			logListObject.level = valueLogListLogListItem["Level"].asString();
+		if(!valueLogListLogListItem["InstanceName"].isNull())
+			logListObject.instanceName = valueLogListLogListItem["InstanceName"].asString();
+		if(!valueLogListLogListItem["GroupId"].isNull())
+			logListObject.groupId = std::stol(valueLogListLogListItem["GroupId"].asString());
+		if(!valueLogListLogListItem["Ip"].isNull())
+			logListObject.ip = valueLogListLogListItem["Ip"].asString();
+		if(!valueLogListLogListItem["EventType"].isNull())
+			logListObject.eventType = valueLogListLogListItem["EventType"].asString();
+		if(!valueLogListLogListItem["Uuid"].isNull())
+			logListObject.uuid = valueLogListLogListItem["Uuid"].asString();
+		if(!valueLogListLogListItem["FirstTime"].isNull())
+			logListObject.firstTime = std::stol(valueLogListLogListItem["FirstTime"].asString());
+		if(!valueLogListLogListItem["InstanceId"].isNull())
+			logListObject.instanceId = valueLogListLogListItem["InstanceId"].asString();
+		if(!valueLogListLogListItem["Tag"].isNull())
+			logListObject.tag = valueLogListLogListItem["Tag"].asString();
+		if(!valueLogListLogListItem["AliasEventName"].isNull())
+			logListObject.aliasEventName = valueLogListLogListItem["AliasEventName"].asString();
+		if(!valueLogListLogListItem["OsVersion"].isNull())
+			logListObject.osVersion = valueLogListLogListItem["OsVersion"].asString();
+		if(!valueLogListLogListItem["ClientIp"].isNull())
+			logListObject.clientIp = valueLogListLogListItem["ClientIp"].asString();
+		if(!valueLogListLogListItem["EventName"].isNull())
+			logListObject.eventName = valueLogListLogListItem["EventName"].asString();
+		auto allDetailListNode = allLogListNode["DetailList"]["DetailListItem"];
+		for (auto allLogListNodeDetailListDetailListItem : allDetailListNode)
 		{
 			LogListItem::DetailListItem detailListObject;
-			if(!value["Name"].isNull())
-				detailListObject.name = value["Name"].asString();
-			if(!value["Type"].isNull())
-				detailListObject.type = value["Type"].asString();
-			if(!value["Value"].isNull())
-				detailListObject.value = value["Value"].asString();
-			if(!value["InfoType"].isNull())
-				detailListObject.infoType = value["InfoType"].asString();
+			if(!allLogListNodeDetailListDetailListItem["Name"].isNull())
+				detailListObject.name = allLogListNodeDetailListDetailListItem["Name"].asString();
+			if(!allLogListNodeDetailListDetailListItem["Type"].isNull())
+				detailListObject.type = allLogListNodeDetailListDetailListItem["Type"].asString();
+			if(!allLogListNodeDetailListDetailListItem["Value"].isNull())
+				detailListObject.value = allLogListNodeDetailListDetailListItem["Value"].asString();
+			if(!allLogListNodeDetailListDetailListItem["InfoType"].isNull())
+				detailListObject.infoType = allLogListNodeDetailListDetailListItem["InfoType"].asString();
 			logListObject.detailList.push_back(detailListObject);
 		}
 		logList_.push_back(logListObject);

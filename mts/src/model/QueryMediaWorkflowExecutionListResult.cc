@@ -39,42 +39,42 @@ void QueryMediaWorkflowExecutionListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMediaWorkflowExecutionList = value["MediaWorkflowExecutionList"]["MediaWorkflowExecution"];
-	for (auto value : allMediaWorkflowExecutionList)
+	auto allMediaWorkflowExecutionListNode = value["MediaWorkflowExecutionList"]["MediaWorkflowExecution"];
+	for (auto valueMediaWorkflowExecutionListMediaWorkflowExecution : allMediaWorkflowExecutionListNode)
 	{
 		MediaWorkflowExecution mediaWorkflowExecutionListObject;
-		if(!value["RunId"].isNull())
-			mediaWorkflowExecutionListObject.runId = value["RunId"].asString();
-		if(!value["MediaWorkflowId"].isNull())
-			mediaWorkflowExecutionListObject.mediaWorkflowId = value["MediaWorkflowId"].asString();
-		if(!value["Name"].isNull())
-			mediaWorkflowExecutionListObject.name = value["Name"].asString();
-		if(!value["State"].isNull())
-			mediaWorkflowExecutionListObject.state = value["State"].asString();
-		if(!value["MediaId"].isNull())
-			mediaWorkflowExecutionListObject.mediaId = value["MediaId"].asString();
-		if(!value["CreationTime"].isNull())
-			mediaWorkflowExecutionListObject.creationTime = value["CreationTime"].asString();
-		auto allActivityList = value["ActivityList"]["Activity"];
-		for (auto value : allActivityList)
+		if(!valueMediaWorkflowExecutionListMediaWorkflowExecution["RunId"].isNull())
+			mediaWorkflowExecutionListObject.runId = valueMediaWorkflowExecutionListMediaWorkflowExecution["RunId"].asString();
+		if(!valueMediaWorkflowExecutionListMediaWorkflowExecution["MediaWorkflowId"].isNull())
+			mediaWorkflowExecutionListObject.mediaWorkflowId = valueMediaWorkflowExecutionListMediaWorkflowExecution["MediaWorkflowId"].asString();
+		if(!valueMediaWorkflowExecutionListMediaWorkflowExecution["Name"].isNull())
+			mediaWorkflowExecutionListObject.name = valueMediaWorkflowExecutionListMediaWorkflowExecution["Name"].asString();
+		if(!valueMediaWorkflowExecutionListMediaWorkflowExecution["State"].isNull())
+			mediaWorkflowExecutionListObject.state = valueMediaWorkflowExecutionListMediaWorkflowExecution["State"].asString();
+		if(!valueMediaWorkflowExecutionListMediaWorkflowExecution["MediaId"].isNull())
+			mediaWorkflowExecutionListObject.mediaId = valueMediaWorkflowExecutionListMediaWorkflowExecution["MediaId"].asString();
+		if(!valueMediaWorkflowExecutionListMediaWorkflowExecution["CreationTime"].isNull())
+			mediaWorkflowExecutionListObject.creationTime = valueMediaWorkflowExecutionListMediaWorkflowExecution["CreationTime"].asString();
+		auto allActivityListNode = allMediaWorkflowExecutionListNode["ActivityList"]["Activity"];
+		for (auto allMediaWorkflowExecutionListNodeActivityListActivity : allActivityListNode)
 		{
 			MediaWorkflowExecution::Activity activityListObject;
-			if(!value["Name"].isNull())
-				activityListObject.name = value["Name"].asString();
-			if(!value["Type"].isNull())
-				activityListObject.type = value["Type"].asString();
-			if(!value["JobId"].isNull())
-				activityListObject.jobId = value["JobId"].asString();
-			if(!value["State"].isNull())
-				activityListObject.state = value["State"].asString();
-			if(!value["Code"].isNull())
-				activityListObject.code = value["Code"].asString();
-			if(!value["Message"].isNull())
-				activityListObject.message = value["Message"].asString();
-			if(!value["StartTime"].isNull())
-				activityListObject.startTime = value["StartTime"].asString();
-			if(!value["EndTime"].isNull())
-				activityListObject.endTime = value["EndTime"].asString();
+			if(!allMediaWorkflowExecutionListNodeActivityListActivity["Name"].isNull())
+				activityListObject.name = allMediaWorkflowExecutionListNodeActivityListActivity["Name"].asString();
+			if(!allMediaWorkflowExecutionListNodeActivityListActivity["Type"].isNull())
+				activityListObject.type = allMediaWorkflowExecutionListNodeActivityListActivity["Type"].asString();
+			if(!allMediaWorkflowExecutionListNodeActivityListActivity["JobId"].isNull())
+				activityListObject.jobId = allMediaWorkflowExecutionListNodeActivityListActivity["JobId"].asString();
+			if(!allMediaWorkflowExecutionListNodeActivityListActivity["State"].isNull())
+				activityListObject.state = allMediaWorkflowExecutionListNodeActivityListActivity["State"].asString();
+			if(!allMediaWorkflowExecutionListNodeActivityListActivity["Code"].isNull())
+				activityListObject.code = allMediaWorkflowExecutionListNodeActivityListActivity["Code"].asString();
+			if(!allMediaWorkflowExecutionListNodeActivityListActivity["Message"].isNull())
+				activityListObject.message = allMediaWorkflowExecutionListNodeActivityListActivity["Message"].asString();
+			if(!allMediaWorkflowExecutionListNodeActivityListActivity["StartTime"].isNull())
+				activityListObject.startTime = allMediaWorkflowExecutionListNodeActivityListActivity["StartTime"].asString();
+			if(!allMediaWorkflowExecutionListNodeActivityListActivity["EndTime"].isNull())
+				activityListObject.endTime = allMediaWorkflowExecutionListNodeActivityListActivity["EndTime"].asString();
 			auto mNSMessageResultNode = value["MNSMessageResult"];
 			if(!mNSMessageResultNode["MessageId"].isNull())
 				activityListObject.mNSMessageResult.messageId = mNSMessageResultNode["MessageId"].asString();

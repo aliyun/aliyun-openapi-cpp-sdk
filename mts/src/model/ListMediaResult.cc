@@ -39,40 +39,40 @@ void ListMediaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMediaList = value["MediaList"]["Media"];
-	for (auto value : allMediaList)
+	auto allMediaListNode = value["MediaList"]["Media"];
+	for (auto valueMediaListMedia : allMediaListNode)
 	{
 		Media mediaListObject;
-		if(!value["MediaId"].isNull())
-			mediaListObject.mediaId = value["MediaId"].asString();
-		if(!value["Title"].isNull())
-			mediaListObject.title = value["Title"].asString();
-		if(!value["Description"].isNull())
-			mediaListObject.description = value["Description"].asString();
-		if(!value["CoverURL"].isNull())
-			mediaListObject.coverURL = value["CoverURL"].asString();
-		if(!value["CateId"].isNull())
-			mediaListObject.cateId = std::stol(value["CateId"].asString());
-		if(!value["Duration"].isNull())
-			mediaListObject.duration = value["Duration"].asString();
-		if(!value["Format"].isNull())
-			mediaListObject.format = value["Format"].asString();
-		if(!value["Size"].isNull())
-			mediaListObject.size = value["Size"].asString();
-		if(!value["Bitrate"].isNull())
-			mediaListObject.bitrate = value["Bitrate"].asString();
-		if(!value["Width"].isNull())
-			mediaListObject.width = value["Width"].asString();
-		if(!value["Height"].isNull())
-			mediaListObject.height = value["Height"].asString();
-		if(!value["Fps"].isNull())
-			mediaListObject.fps = value["Fps"].asString();
-		if(!value["PublishState"].isNull())
-			mediaListObject.publishState = value["PublishState"].asString();
-		if(!value["CensorState"].isNull())
-			mediaListObject.censorState = value["CensorState"].asString();
-		if(!value["CreationTime"].isNull())
-			mediaListObject.creationTime = value["CreationTime"].asString();
+		if(!valueMediaListMedia["MediaId"].isNull())
+			mediaListObject.mediaId = valueMediaListMedia["MediaId"].asString();
+		if(!valueMediaListMedia["Title"].isNull())
+			mediaListObject.title = valueMediaListMedia["Title"].asString();
+		if(!valueMediaListMedia["Description"].isNull())
+			mediaListObject.description = valueMediaListMedia["Description"].asString();
+		if(!valueMediaListMedia["CoverURL"].isNull())
+			mediaListObject.coverURL = valueMediaListMedia["CoverURL"].asString();
+		if(!valueMediaListMedia["CateId"].isNull())
+			mediaListObject.cateId = std::stol(valueMediaListMedia["CateId"].asString());
+		if(!valueMediaListMedia["Duration"].isNull())
+			mediaListObject.duration = valueMediaListMedia["Duration"].asString();
+		if(!valueMediaListMedia["Format"].isNull())
+			mediaListObject.format = valueMediaListMedia["Format"].asString();
+		if(!valueMediaListMedia["Size"].isNull())
+			mediaListObject.size = valueMediaListMedia["Size"].asString();
+		if(!valueMediaListMedia["Bitrate"].isNull())
+			mediaListObject.bitrate = valueMediaListMedia["Bitrate"].asString();
+		if(!valueMediaListMedia["Width"].isNull())
+			mediaListObject.width = valueMediaListMedia["Width"].asString();
+		if(!valueMediaListMedia["Height"].isNull())
+			mediaListObject.height = valueMediaListMedia["Height"].asString();
+		if(!valueMediaListMedia["Fps"].isNull())
+			mediaListObject.fps = valueMediaListMedia["Fps"].asString();
+		if(!valueMediaListMedia["PublishState"].isNull())
+			mediaListObject.publishState = valueMediaListMedia["PublishState"].asString();
+		if(!valueMediaListMedia["CensorState"].isNull())
+			mediaListObject.censorState = valueMediaListMedia["CensorState"].asString();
+		if(!valueMediaListMedia["CreationTime"].isNull())
+			mediaListObject.creationTime = valueMediaListMedia["CreationTime"].asString();
 		auto fileNode = value["File"];
 		if(!fileNode["URL"].isNull())
 			mediaListObject.file.uRL = fileNode["URL"].asString();

@@ -39,32 +39,32 @@ void ListMyGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResources = value["Resources"]["Resource"];
-	for (auto value : allResources)
+	auto allResourcesNode = value["Resources"]["Resource"];
+	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!value["GroupId"].isNull())
-			resourcesObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["GroupName"].isNull())
-			resourcesObject.groupName = value["GroupName"].asString();
-		if(!value["ServiceId"].isNull())
-			resourcesObject.serviceId = value["ServiceId"].asString();
-		if(!value["BindUrls"].isNull())
-			resourcesObject.bindUrls = value["BindUrls"].asString();
-		if(!value["Type"].isNull())
-			resourcesObject.type = value["Type"].asString();
-		if(!value["GmtModified"].isNull())
-			resourcesObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["GmtCreate"].isNull())
-			resourcesObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["BindUrl"].isNull())
-			resourcesObject.bindUrl = value["BindUrl"].asString();
-		auto allContactGroups = value["ContactGroups"]["ContactGroup"];
-		for (auto value : allContactGroups)
+		if(!valueResourcesResource["GroupId"].isNull())
+			resourcesObject.groupId = std::stol(valueResourcesResource["GroupId"].asString());
+		if(!valueResourcesResource["GroupName"].isNull())
+			resourcesObject.groupName = valueResourcesResource["GroupName"].asString();
+		if(!valueResourcesResource["ServiceId"].isNull())
+			resourcesObject.serviceId = valueResourcesResource["ServiceId"].asString();
+		if(!valueResourcesResource["BindUrls"].isNull())
+			resourcesObject.bindUrls = valueResourcesResource["BindUrls"].asString();
+		if(!valueResourcesResource["Type"].isNull())
+			resourcesObject.type = valueResourcesResource["Type"].asString();
+		if(!valueResourcesResource["GmtModified"].isNull())
+			resourcesObject.gmtModified = std::stol(valueResourcesResource["GmtModified"].asString());
+		if(!valueResourcesResource["GmtCreate"].isNull())
+			resourcesObject.gmtCreate = std::stol(valueResourcesResource["GmtCreate"].asString());
+		if(!valueResourcesResource["BindUrl"].isNull())
+			resourcesObject.bindUrl = valueResourcesResource["BindUrl"].asString();
+		auto allContactGroupsNode = allResourcesNode["ContactGroups"]["ContactGroup"];
+		for (auto allResourcesNodeContactGroupsContactGroup : allContactGroupsNode)
 		{
 			Resource::ContactGroup contactGroupsObject;
-			if(!value["Name"].isNull())
-				contactGroupsObject.name = value["Name"].asString();
+			if(!allResourcesNodeContactGroupsContactGroup["Name"].isNull())
+				contactGroupsObject.name = allResourcesNodeContactGroupsContactGroup["Name"].asString();
 			resourcesObject.contactGroups.push_back(contactGroupsObject);
 		}
 		resources_.push_back(resourcesObject);

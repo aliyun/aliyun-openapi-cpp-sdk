@@ -39,28 +39,28 @@ void QueryIntentionListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Intention"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["Intention"];
+	for (auto valueDataIntention : allDataNode)
 	{
 		Intention dataObject;
-		if(!value["UserId"].isNull())
-			dataObject.userId = value["UserId"].asString();
-		if(!value["RegisterNumber"].isNull())
-			dataObject.registerNumber = value["RegisterNumber"].asString();
-		if(!value["Classification"].isNull())
-			dataObject.classification = value["Classification"].asString();
-		if(!value["Type"].isNull())
-			dataObject.type = std::stoi(value["Type"].asString());
-		if(!value["BizId"].isNull())
-			dataObject.bizId = value["BizId"].asString();
-		if(!value["Description"].isNull())
-			dataObject.description = value["Description"].asString();
-		if(!value["Status"].isNull())
-			dataObject.status = std::stoi(value["Status"].asString());
-		if(!value["UpdateTime"].isNull())
-			dataObject.updateTime = std::stol(value["UpdateTime"].asString());
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = std::stol(value["CreateTime"].asString());
+		if(!valueDataIntention["UserId"].isNull())
+			dataObject.userId = valueDataIntention["UserId"].asString();
+		if(!valueDataIntention["RegisterNumber"].isNull())
+			dataObject.registerNumber = valueDataIntention["RegisterNumber"].asString();
+		if(!valueDataIntention["Classification"].isNull())
+			dataObject.classification = valueDataIntention["Classification"].asString();
+		if(!valueDataIntention["Type"].isNull())
+			dataObject.type = std::stoi(valueDataIntention["Type"].asString());
+		if(!valueDataIntention["BizId"].isNull())
+			dataObject.bizId = valueDataIntention["BizId"].asString();
+		if(!valueDataIntention["Description"].isNull())
+			dataObject.description = valueDataIntention["Description"].asString();
+		if(!valueDataIntention["Status"].isNull())
+			dataObject.status = std::stoi(valueDataIntention["Status"].asString());
+		if(!valueDataIntention["UpdateTime"].isNull())
+			dataObject.updateTime = std::stol(valueDataIntention["UpdateTime"].asString());
+		if(!valueDataIntention["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataIntention["CreateTime"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

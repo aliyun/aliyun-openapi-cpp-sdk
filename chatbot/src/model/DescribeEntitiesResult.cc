@@ -39,12 +39,12 @@ void DescribeEntitiesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMembers = value["Members"]["MembersItem"];
-	for (auto value : allMembers)
+	auto allMembersNode = value["Members"]["MembersItem"];
+	for (auto valueMembersMembersItem : allMembersNode)
 	{
 		MembersItem membersObject;
-		if(!value["MemberName"].isNull())
-			membersObject.memberName = value["MemberName"].asString();
+		if(!valueMembersMembersItem["MemberName"].isNull())
+			membersObject.memberName = valueMembersMembersItem["MemberName"].asString();
 		auto allSynonyms = value["Synonyms"]["Synonyms"];
 		for (auto value : allSynonyms)
 			membersObject.synonyms.push_back(value.asString());

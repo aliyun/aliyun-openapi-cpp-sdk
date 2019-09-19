@@ -39,14 +39,14 @@ void DescribeDcdnDomainIpaBpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBpsDataPerInterval = value["BpsDataPerInterval"]["DataModule"];
-	for (auto value : allBpsDataPerInterval)
+	auto allBpsDataPerIntervalNode = value["BpsDataPerInterval"]["DataModule"];
+	for (auto valueBpsDataPerIntervalDataModule : allBpsDataPerIntervalNode)
 	{
 		DataModule bpsDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			bpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["IpaBps"].isNull())
-			bpsDataPerIntervalObject.ipaBps = std::stof(value["IpaBps"].asString());
+		if(!valueBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			bpsDataPerIntervalObject.timeStamp = valueBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueBpsDataPerIntervalDataModule["IpaBps"].isNull())
+			bpsDataPerIntervalObject.ipaBps = std::stof(valueBpsDataPerIntervalDataModule["IpaBps"].asString());
 		bpsDataPerInterval_.push_back(bpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

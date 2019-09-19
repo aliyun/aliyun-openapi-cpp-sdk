@@ -39,18 +39,18 @@ void DescribeVulWhitelistResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVulWhitelists = value["VulWhitelists"]["VulWhitelist"];
-	for (auto value : allVulWhitelists)
+	auto allVulWhitelistsNode = value["VulWhitelists"]["VulWhitelist"];
+	for (auto valueVulWhitelistsVulWhitelist : allVulWhitelistsNode)
 	{
 		VulWhitelist vulWhitelistsObject;
-		if(!value["Name"].isNull())
-			vulWhitelistsObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			vulWhitelistsObject.type = value["Type"].asString();
-		if(!value["AliasName"].isNull())
-			vulWhitelistsObject.aliasName = value["AliasName"].asString();
-		if(!value["Reason"].isNull())
-			vulWhitelistsObject.reason = value["Reason"].asString();
+		if(!valueVulWhitelistsVulWhitelist["Name"].isNull())
+			vulWhitelistsObject.name = valueVulWhitelistsVulWhitelist["Name"].asString();
+		if(!valueVulWhitelistsVulWhitelist["Type"].isNull())
+			vulWhitelistsObject.type = valueVulWhitelistsVulWhitelist["Type"].asString();
+		if(!valueVulWhitelistsVulWhitelist["AliasName"].isNull())
+			vulWhitelistsObject.aliasName = valueVulWhitelistsVulWhitelist["AliasName"].asString();
+		if(!valueVulWhitelistsVulWhitelist["Reason"].isNull())
+			vulWhitelistsObject.reason = valueVulWhitelistsVulWhitelist["Reason"].asString();
 		vulWhitelists_.push_back(vulWhitelistsObject);
 	}
 	if(!value["PageSize"].isNull())

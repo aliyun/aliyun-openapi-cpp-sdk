@@ -39,30 +39,30 @@ void ListServerLockResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["QueryTransferInResponse"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["QueryTransferInResponse"];
+	for (auto valueDataQueryTransferInResponse : allDataNode)
 	{
 		QueryTransferInResponse dataObject;
-		if(!value["GmtCreate"].isNull())
-			dataObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			dataObject.gmtModified = value["GmtModified"].asString();
-		if(!value["UserId"].isNull())
-			dataObject.userId = value["UserId"].asString();
-		if(!value["DomainName"].isNull())
-			dataObject.domainName = value["DomainName"].asString();
-		if(!value["DomainInstanceId"].isNull())
-			dataObject.domainInstanceId = value["DomainInstanceId"].asString();
-		if(!value["LockProductId"].isNull())
-			dataObject.lockProductId = value["LockProductId"].asString();
-		if(!value["StartDate"].isNull())
-			dataObject.startDate = value["StartDate"].asString();
-		if(!value["ExpireDate"].isNull())
-			dataObject.expireDate = value["ExpireDate"].asString();
-		if(!value["LockInstanceId"].isNull())
-			dataObject.lockInstanceId = value["LockInstanceId"].asString();
-		if(!value["ServerLockStatus"].isNull())
-			dataObject.serverLockStatus = value["ServerLockStatus"].asString();
+		if(!valueDataQueryTransferInResponse["GmtCreate"].isNull())
+			dataObject.gmtCreate = valueDataQueryTransferInResponse["GmtCreate"].asString();
+		if(!valueDataQueryTransferInResponse["GmtModified"].isNull())
+			dataObject.gmtModified = valueDataQueryTransferInResponse["GmtModified"].asString();
+		if(!valueDataQueryTransferInResponse["UserId"].isNull())
+			dataObject.userId = valueDataQueryTransferInResponse["UserId"].asString();
+		if(!valueDataQueryTransferInResponse["DomainName"].isNull())
+			dataObject.domainName = valueDataQueryTransferInResponse["DomainName"].asString();
+		if(!valueDataQueryTransferInResponse["DomainInstanceId"].isNull())
+			dataObject.domainInstanceId = valueDataQueryTransferInResponse["DomainInstanceId"].asString();
+		if(!valueDataQueryTransferInResponse["LockProductId"].isNull())
+			dataObject.lockProductId = valueDataQueryTransferInResponse["LockProductId"].asString();
+		if(!valueDataQueryTransferInResponse["StartDate"].isNull())
+			dataObject.startDate = valueDataQueryTransferInResponse["StartDate"].asString();
+		if(!valueDataQueryTransferInResponse["ExpireDate"].isNull())
+			dataObject.expireDate = valueDataQueryTransferInResponse["ExpireDate"].asString();
+		if(!valueDataQueryTransferInResponse["LockInstanceId"].isNull())
+			dataObject.lockInstanceId = valueDataQueryTransferInResponse["LockInstanceId"].asString();
+		if(!valueDataQueryTransferInResponse["ServerLockStatus"].isNull())
+			dataObject.serverLockStatus = valueDataQueryTransferInResponse["ServerLockStatus"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

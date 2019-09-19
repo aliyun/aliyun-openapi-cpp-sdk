@@ -39,26 +39,26 @@ void DescribeAccessPointsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAccessPointSet = value["AccessPointSet"]["AccessPointType"];
-	for (auto value : allAccessPointSet)
+	auto allAccessPointSetNode = value["AccessPointSet"]["AccessPointType"];
+	for (auto valueAccessPointSetAccessPointType : allAccessPointSetNode)
 	{
 		AccessPointType accessPointSetObject;
-		if(!value["AccessPointId"].isNull())
-			accessPointSetObject.accessPointId = value["AccessPointId"].asString();
-		if(!value["Status"].isNull())
-			accessPointSetObject.status = value["Status"].asString();
-		if(!value["Type"].isNull())
-			accessPointSetObject.type = value["Type"].asString();
-		if(!value["AttachedRegionNo"].isNull())
-			accessPointSetObject.attachedRegionNo = value["AttachedRegionNo"].asString();
-		if(!value["Location"].isNull())
-			accessPointSetObject.location = value["Location"].asString();
-		if(!value["HostOperator"].isNull())
-			accessPointSetObject.hostOperator = value["HostOperator"].asString();
-		if(!value["Name"].isNull())
-			accessPointSetObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			accessPointSetObject.description = value["Description"].asString();
+		if(!valueAccessPointSetAccessPointType["AccessPointId"].isNull())
+			accessPointSetObject.accessPointId = valueAccessPointSetAccessPointType["AccessPointId"].asString();
+		if(!valueAccessPointSetAccessPointType["Status"].isNull())
+			accessPointSetObject.status = valueAccessPointSetAccessPointType["Status"].asString();
+		if(!valueAccessPointSetAccessPointType["Type"].isNull())
+			accessPointSetObject.type = valueAccessPointSetAccessPointType["Type"].asString();
+		if(!valueAccessPointSetAccessPointType["AttachedRegionNo"].isNull())
+			accessPointSetObject.attachedRegionNo = valueAccessPointSetAccessPointType["AttachedRegionNo"].asString();
+		if(!valueAccessPointSetAccessPointType["Location"].isNull())
+			accessPointSetObject.location = valueAccessPointSetAccessPointType["Location"].asString();
+		if(!valueAccessPointSetAccessPointType["HostOperator"].isNull())
+			accessPointSetObject.hostOperator = valueAccessPointSetAccessPointType["HostOperator"].asString();
+		if(!valueAccessPointSetAccessPointType["Name"].isNull())
+			accessPointSetObject.name = valueAccessPointSetAccessPointType["Name"].asString();
+		if(!valueAccessPointSetAccessPointType["Description"].isNull())
+			accessPointSetObject.description = valueAccessPointSetAccessPointType["Description"].asString();
 		accessPointSet_.push_back(accessPointSetObject);
 	}
 	if(!value["PageNumber"].isNull())

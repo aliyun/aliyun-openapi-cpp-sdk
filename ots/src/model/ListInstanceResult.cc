@@ -39,14 +39,14 @@ void ListInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceInfos = value["InstanceInfos"]["InstanceInfo"];
-	for (auto value : allInstanceInfos)
+	auto allInstanceInfosNode = value["InstanceInfos"]["InstanceInfo"];
+	for (auto valueInstanceInfosInstanceInfo : allInstanceInfosNode)
 	{
 		InstanceInfo instanceInfosObject;
-		if(!value["InstanceName"].isNull())
-			instanceInfosObject.instanceName = value["InstanceName"].asString();
-		if(!value["Timestamp"].isNull())
-			instanceInfosObject.timestamp = value["Timestamp"].asString();
+		if(!valueInstanceInfosInstanceInfo["InstanceName"].isNull())
+			instanceInfosObject.instanceName = valueInstanceInfosInstanceInfo["InstanceName"].asString();
+		if(!valueInstanceInfosInstanceInfo["Timestamp"].isNull())
+			instanceInfosObject.timestamp = valueInstanceInfosInstanceInfo["Timestamp"].asString();
 		instanceInfos_.push_back(instanceInfosObject);
 	}
 	if(!value["TotalCount"].isNull())

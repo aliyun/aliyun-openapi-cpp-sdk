@@ -39,22 +39,22 @@ void GetAnalyzePlaceDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAnalyzePlaceItems = value["AnalyzePlaceItems"]["AnalyzePlaceItem"];
-	for (auto value : allAnalyzePlaceItems)
+	auto allAnalyzePlaceItemsNode = value["AnalyzePlaceItems"]["AnalyzePlaceItem"];
+	for (auto valueAnalyzePlaceItemsAnalyzePlaceItem : allAnalyzePlaceItemsNode)
 	{
 		AnalyzePlaceItem analyzePlaceItemsObject;
-		if(!value["LocationName"].isNull())
-			analyzePlaceItemsObject.locationName = value["LocationName"].asString();
-		if(!value["LocationId"].isNull())
-			analyzePlaceItemsObject.locationId = std::stol(value["LocationId"].asString());
-		if(!value["ParentLocationIds"].isNull())
-			analyzePlaceItemsObject.parentLocationIds = value["ParentLocationIds"].asString();
-		if(!value["Count"].isNull())
-			analyzePlaceItemsObject.count = std::stol(value["Count"].asString());
-		if(!value["StoreId"].isNull())
-			analyzePlaceItemsObject.storeId = std::stol(value["StoreId"].asString());
-		if(!value["Percent"].isNull())
-			analyzePlaceItemsObject.percent = std::stof(value["Percent"].asString());
+		if(!valueAnalyzePlaceItemsAnalyzePlaceItem["LocationName"].isNull())
+			analyzePlaceItemsObject.locationName = valueAnalyzePlaceItemsAnalyzePlaceItem["LocationName"].asString();
+		if(!valueAnalyzePlaceItemsAnalyzePlaceItem["LocationId"].isNull())
+			analyzePlaceItemsObject.locationId = std::stol(valueAnalyzePlaceItemsAnalyzePlaceItem["LocationId"].asString());
+		if(!valueAnalyzePlaceItemsAnalyzePlaceItem["ParentLocationIds"].isNull())
+			analyzePlaceItemsObject.parentLocationIds = valueAnalyzePlaceItemsAnalyzePlaceItem["ParentLocationIds"].asString();
+		if(!valueAnalyzePlaceItemsAnalyzePlaceItem["Count"].isNull())
+			analyzePlaceItemsObject.count = std::stol(valueAnalyzePlaceItemsAnalyzePlaceItem["Count"].asString());
+		if(!valueAnalyzePlaceItemsAnalyzePlaceItem["StoreId"].isNull())
+			analyzePlaceItemsObject.storeId = std::stol(valueAnalyzePlaceItemsAnalyzePlaceItem["StoreId"].asString());
+		if(!valueAnalyzePlaceItemsAnalyzePlaceItem["Percent"].isNull())
+			analyzePlaceItemsObject.percent = std::stof(valueAnalyzePlaceItemsAnalyzePlaceItem["Percent"].asString());
 		analyzePlaceItems_.push_back(analyzePlaceItemsObject);
 	}
 	if(!value["Count"].isNull())

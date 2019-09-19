@@ -39,18 +39,18 @@ void ListTagResourcesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTagResources = value["TagResources"]["TagResource"];
-	for (auto value : allTagResources)
+	auto allTagResourcesNode = value["TagResources"]["TagResource"];
+	for (auto valueTagResourcesTagResource : allTagResourcesNode)
 	{
 		TagResource tagResourcesObject;
-		if(!value["TagKey"].isNull())
-			tagResourcesObject.tagKey = value["TagKey"].asString();
-		if(!value["TagValue"].isNull())
-			tagResourcesObject.tagValue = value["TagValue"].asString();
-		if(!value["ResourcId"].isNull())
-			tagResourcesObject.resourcId = value["ResourcId"].asString();
-		if(!value["ResourceType"].isNull())
-			tagResourcesObject.resourceType = value["ResourceType"].asString();
+		if(!valueTagResourcesTagResource["TagKey"].isNull())
+			tagResourcesObject.tagKey = valueTagResourcesTagResource["TagKey"].asString();
+		if(!valueTagResourcesTagResource["TagValue"].isNull())
+			tagResourcesObject.tagValue = valueTagResourcesTagResource["TagValue"].asString();
+		if(!valueTagResourcesTagResource["ResourcId"].isNull())
+			tagResourcesObject.resourcId = valueTagResourcesTagResource["ResourcId"].asString();
+		if(!valueTagResourcesTagResource["ResourceType"].isNull())
+			tagResourcesObject.resourceType = valueTagResourcesTagResource["ResourceType"].asString();
 		tagResources_.push_back(tagResourcesObject);
 	}
 	if(!value["NextToken"].isNull())

@@ -42,7 +42,7 @@ namespace AlibabaCloud
 					float heightNormalized;
 					float widthNormalized;
 					std::string positionRefer;
-					PositionNormalized positionNormalized;
+					std::vector<float> positionNormalized;
 					int fixedDelayDuration;
 				};
 

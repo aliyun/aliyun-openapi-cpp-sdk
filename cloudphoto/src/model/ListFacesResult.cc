@@ -39,26 +39,26 @@ void ListFacesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFaces = value["Faces"]["Face"];
-	for (auto value : allFaces)
+	auto allFacesNode = value["Faces"]["Face"];
+	for (auto valueFacesFace : allFacesNode)
 	{
 		Face facesObject;
-		if(!value["Id"].isNull())
-			facesObject.id = std::stol(value["Id"].asString());
-		if(!value["IdStr"].isNull())
-			facesObject.idStr = value["IdStr"].asString();
-		if(!value["Name"].isNull())
-			facesObject.name = value["Name"].asString();
-		if(!value["PhotosCount"].isNull())
-			facesObject.photosCount = std::stoi(value["PhotosCount"].asString());
-		if(!value["State"].isNull())
-			facesObject.state = value["State"].asString();
-		if(!value["IsMe"].isNull())
-			facesObject.isMe = value["IsMe"].asString() == "true";
-		if(!value["Ctime"].isNull())
-			facesObject.ctime = std::stol(value["Ctime"].asString());
-		if(!value["Mtime"].isNull())
-			facesObject.mtime = std::stol(value["Mtime"].asString());
+		if(!valueFacesFace["Id"].isNull())
+			facesObject.id = std::stol(valueFacesFace["Id"].asString());
+		if(!valueFacesFace["IdStr"].isNull())
+			facesObject.idStr = valueFacesFace["IdStr"].asString();
+		if(!valueFacesFace["Name"].isNull())
+			facesObject.name = valueFacesFace["Name"].asString();
+		if(!valueFacesFace["PhotosCount"].isNull())
+			facesObject.photosCount = std::stoi(valueFacesFace["PhotosCount"].asString());
+		if(!valueFacesFace["State"].isNull())
+			facesObject.state = valueFacesFace["State"].asString();
+		if(!valueFacesFace["IsMe"].isNull())
+			facesObject.isMe = valueFacesFace["IsMe"].asString() == "true";
+		if(!valueFacesFace["Ctime"].isNull())
+			facesObject.ctime = std::stol(valueFacesFace["Ctime"].asString());
+		if(!valueFacesFace["Mtime"].isNull())
+			facesObject.mtime = std::stol(valueFacesFace["Mtime"].asString());
 		auto coverNode = value["Cover"];
 		if(!coverNode["Id"].isNull())
 			facesObject.cover.id = std::stol(coverNode["Id"].asString());

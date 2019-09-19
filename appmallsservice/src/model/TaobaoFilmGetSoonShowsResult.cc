@@ -39,44 +39,44 @@ void TaobaoFilmGetSoonShowsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allShows = value["Shows"]["ShowsItem"];
-	for (auto value : allShows)
+	auto allShowsNode = value["Shows"]["ShowsItem"];
+	for (auto valueShowsShowsItem : allShowsNode)
 	{
 		ShowsItem showsObject;
-		if(!value["BackgroundPicture"].isNull())
-			showsObject.backgroundPicture = value["BackgroundPicture"].asString();
-		if(!value["Country"].isNull())
-			showsObject.country = value["Country"].asString();
-		if(!value["Description"].isNull())
-			showsObject.description = value["Description"].asString();
-		if(!value["Director"].isNull())
-			showsObject.director = value["Director"].asString();
-		if(!value["Duration"].isNull())
-			showsObject.duration = std::stol(value["Duration"].asString());
-		if(!value["Highlight"].isNull())
-			showsObject.highlight = value["Highlight"].asString();
-		if(!value["Id"].isNull())
-			showsObject.id = std::stol(value["Id"].asString());
-		if(!value["Language"].isNull())
-			showsObject.language = value["Language"].asString();
-		if(!value["LeadingRole"].isNull())
-			showsObject.leadingRole = value["LeadingRole"].asString();
-		if(!value["OpenDay"].isNull())
-			showsObject.openDay = value["OpenDay"].asString();
-		if(!value["OpenTime"].isNull())
-			showsObject.openTime = value["OpenTime"].asString();
-		if(!value["Poster"].isNull())
-			showsObject.poster = value["Poster"].asString();
-		if(!value["Remark"].isNull())
-			showsObject.remark = value["Remark"].asString();
-		if(!value["ShowMark"].isNull())
-			showsObject.showMark = value["ShowMark"].asString();
-		if(!value["ShowName"].isNull())
-			showsObject.showName = value["ShowName"].asString();
-		if(!value["ShowNameEn"].isNull())
-			showsObject.showNameEn = value["ShowNameEn"].asString();
-		if(!value["Type"].isNull())
-			showsObject.type = value["Type"].asString();
+		if(!valueShowsShowsItem["BackgroundPicture"].isNull())
+			showsObject.backgroundPicture = valueShowsShowsItem["BackgroundPicture"].asString();
+		if(!valueShowsShowsItem["Country"].isNull())
+			showsObject.country = valueShowsShowsItem["Country"].asString();
+		if(!valueShowsShowsItem["Description"].isNull())
+			showsObject.description = valueShowsShowsItem["Description"].asString();
+		if(!valueShowsShowsItem["Director"].isNull())
+			showsObject.director = valueShowsShowsItem["Director"].asString();
+		if(!valueShowsShowsItem["Duration"].isNull())
+			showsObject.duration = std::stol(valueShowsShowsItem["Duration"].asString());
+		if(!valueShowsShowsItem["Highlight"].isNull())
+			showsObject.highlight = valueShowsShowsItem["Highlight"].asString();
+		if(!valueShowsShowsItem["Id"].isNull())
+			showsObject.id = std::stol(valueShowsShowsItem["Id"].asString());
+		if(!valueShowsShowsItem["Language"].isNull())
+			showsObject.language = valueShowsShowsItem["Language"].asString();
+		if(!valueShowsShowsItem["LeadingRole"].isNull())
+			showsObject.leadingRole = valueShowsShowsItem["LeadingRole"].asString();
+		if(!valueShowsShowsItem["OpenDay"].isNull())
+			showsObject.openDay = valueShowsShowsItem["OpenDay"].asString();
+		if(!valueShowsShowsItem["OpenTime"].isNull())
+			showsObject.openTime = valueShowsShowsItem["OpenTime"].asString();
+		if(!valueShowsShowsItem["Poster"].isNull())
+			showsObject.poster = valueShowsShowsItem["Poster"].asString();
+		if(!valueShowsShowsItem["Remark"].isNull())
+			showsObject.remark = valueShowsShowsItem["Remark"].asString();
+		if(!valueShowsShowsItem["ShowMark"].isNull())
+			showsObject.showMark = valueShowsShowsItem["ShowMark"].asString();
+		if(!valueShowsShowsItem["ShowName"].isNull())
+			showsObject.showName = valueShowsShowsItem["ShowName"].asString();
+		if(!valueShowsShowsItem["ShowNameEn"].isNull())
+			showsObject.showNameEn = valueShowsShowsItem["ShowNameEn"].asString();
+		if(!valueShowsShowsItem["Type"].isNull())
+			showsObject.type = valueShowsShowsItem["Type"].asString();
 		auto allShowVersionList = value["ShowVersionList"]["ShowVersionList"];
 		for (auto value : allShowVersionList)
 			showsObject.showVersionList.push_back(value.asString());

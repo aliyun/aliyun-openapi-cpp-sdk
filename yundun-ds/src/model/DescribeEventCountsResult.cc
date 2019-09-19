@@ -39,16 +39,16 @@ void DescribeEventCountsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEventCountList = value["EventCountList"]["EventCount"];
-	for (auto value : allEventCountList)
+	auto allEventCountListNode = value["EventCountList"]["EventCount"];
+	for (auto valueEventCountListEventCount : allEventCountListNode)
 	{
 		EventCount eventCountListObject;
-		if(!value["TypeCode"].isNull())
-			eventCountListObject.typeCode = value["TypeCode"].asString();
-		if(!value["TypeName"].isNull())
-			eventCountListObject.typeName = value["TypeName"].asString();
-		if(!value["Date"].isNull())
-			eventCountListObject.date = std::stol(value["Date"].asString());
+		if(!valueEventCountListEventCount["TypeCode"].isNull())
+			eventCountListObject.typeCode = valueEventCountListEventCount["TypeCode"].asString();
+		if(!valueEventCountListEventCount["TypeName"].isNull())
+			eventCountListObject.typeName = valueEventCountListEventCount["TypeName"].asString();
+		if(!valueEventCountListEventCount["Date"].isNull())
+			eventCountListObject.date = std::stol(valueEventCountListEventCount["Date"].asString());
 		auto totalNode = value["Total"];
 		if(!totalNode["TotalCount"].isNull())
 			eventCountListObject.total.totalCount = std::stol(totalNode["TotalCount"].asString());

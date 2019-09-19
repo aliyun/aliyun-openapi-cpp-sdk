@@ -39,50 +39,50 @@ void DescribeAvailableInstanceClassResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAvailableZones = value["AvailableZones"]["AvailableZone"];
-	for (auto value : allAvailableZones)
+	auto allAvailableZonesNode = value["AvailableZones"]["AvailableZone"];
+	for (auto valueAvailableZonesAvailableZone : allAvailableZonesNode)
 	{
 		AvailableZone availableZonesObject;
-		if(!value["RegionId"].isNull())
-			availableZonesObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			availableZonesObject.zoneId = value["ZoneId"].asString();
-		if(!value["Status"].isNull())
-			availableZonesObject.status = value["Status"].asString();
-		if(!value["NetworkTypes"].isNull())
-			availableZonesObject.networkTypes = value["NetworkTypes"].asString();
-		auto allSupportedEngine = value["SupportedEngine"]["SupportedEngines"];
-		for (auto value : allSupportedEngine)
+		if(!valueAvailableZonesAvailableZone["RegionId"].isNull())
+			availableZonesObject.regionId = valueAvailableZonesAvailableZone["RegionId"].asString();
+		if(!valueAvailableZonesAvailableZone["ZoneId"].isNull())
+			availableZonesObject.zoneId = valueAvailableZonesAvailableZone["ZoneId"].asString();
+		if(!valueAvailableZonesAvailableZone["Status"].isNull())
+			availableZonesObject.status = valueAvailableZonesAvailableZone["Status"].asString();
+		if(!valueAvailableZonesAvailableZone["NetworkTypes"].isNull())
+			availableZonesObject.networkTypes = valueAvailableZonesAvailableZone["NetworkTypes"].asString();
+		auto allSupportedEngineNode = allAvailableZonesNode["SupportedEngine"]["SupportedEngines"];
+		for (auto allAvailableZonesNodeSupportedEngineSupportedEngines : allSupportedEngineNode)
 		{
 			AvailableZone::SupportedEngines supportedEngineObject;
-			if(!value["Engine"].isNull())
-				supportedEngineObject.engine = value["Engine"].asString();
-			auto allSupportedEngineVersion = value["SupportedEngineVersion"]["SupportedEngineVersions"];
-			for (auto value : allSupportedEngineVersion)
+			if(!allAvailableZonesNodeSupportedEngineSupportedEngines["Engine"].isNull())
+				supportedEngineObject.engine = allAvailableZonesNodeSupportedEngineSupportedEngines["Engine"].asString();
+			auto allSupportedEngineVersionNode = allSupportedEngineNode["SupportedEngineVersion"]["SupportedEngineVersions"];
+			for (auto allSupportedEngineNodeSupportedEngineVersionSupportedEngineVersions : allSupportedEngineVersionNode)
 			{
 				AvailableZone::SupportedEngines::SupportedEngineVersions supportedEngineVersionObject;
-				if(!value["Version"].isNull())
-					supportedEngineVersionObject.version = value["Version"].asString();
-				auto allSupportedCategory = value["SupportedCategory"]["SupportedCategorys"];
-				for (auto value : allSupportedCategory)
+				if(!allSupportedEngineNodeSupportedEngineVersionSupportedEngineVersions["Version"].isNull())
+					supportedEngineVersionObject.version = allSupportedEngineNodeSupportedEngineVersionSupportedEngineVersions["Version"].asString();
+				auto allSupportedCategoryNode = allSupportedEngineVersionNode["SupportedCategory"]["SupportedCategorys"];
+				for (auto allSupportedEngineVersionNodeSupportedCategorySupportedCategorys : allSupportedCategoryNode)
 				{
 					AvailableZone::SupportedEngines::SupportedEngineVersions::SupportedCategorys supportedCategoryObject;
-					if(!value["Category"].isNull())
-						supportedCategoryObject.category = value["Category"].asString();
-					auto allSupportedStorageType = value["SupportedStorageType"]["SupportedStorageTypes"];
-					for (auto value : allSupportedStorageType)
+					if(!allSupportedEngineVersionNodeSupportedCategorySupportedCategorys["Category"].isNull())
+						supportedCategoryObject.category = allSupportedEngineVersionNodeSupportedCategorySupportedCategorys["Category"].asString();
+					auto allSupportedStorageTypeNode = allSupportedCategoryNode["SupportedStorageType"]["SupportedStorageTypes"];
+					for (auto allSupportedCategoryNodeSupportedStorageTypeSupportedStorageTypes : allSupportedStorageTypeNode)
 					{
 						AvailableZone::SupportedEngines::SupportedEngineVersions::SupportedCategorys::SupportedStorageTypes supportedStorageTypeObject;
-						if(!value["StorageType"].isNull())
-							supportedStorageTypeObject.storageType = value["StorageType"].asString();
-						auto allAvailableResource = value["AvailableResource"]["AvailableResources"];
-						for (auto value : allAvailableResource)
+						if(!allSupportedCategoryNodeSupportedStorageTypeSupportedStorageTypes["StorageType"].isNull())
+							supportedStorageTypeObject.storageType = allSupportedCategoryNodeSupportedStorageTypeSupportedStorageTypes["StorageType"].asString();
+						auto allAvailableResourceNode = allSupportedStorageTypeNode["AvailableResource"]["AvailableResources"];
+						for (auto allSupportedStorageTypeNodeAvailableResourceAvailableResources : allAvailableResourceNode)
 						{
 							AvailableZone::SupportedEngines::SupportedEngineVersions::SupportedCategorys::SupportedStorageTypes::AvailableResources availableResourceObject;
-							if(!value["DBInstanceClass"].isNull())
-								availableResourceObject.dBInstanceClass = value["DBInstanceClass"].asString();
-							if(!value["StorageRange"].isNull())
-								availableResourceObject.storageRange = value["StorageRange"].asString();
+							if(!allSupportedStorageTypeNodeAvailableResourceAvailableResources["DBInstanceClass"].isNull())
+								availableResourceObject.dBInstanceClass = allSupportedStorageTypeNodeAvailableResourceAvailableResources["DBInstanceClass"].asString();
+							if(!allSupportedStorageTypeNodeAvailableResourceAvailableResources["StorageRange"].isNull())
+								availableResourceObject.storageRange = allSupportedStorageTypeNodeAvailableResourceAvailableResources["StorageRange"].asString();
 							supportedStorageTypeObject.availableResource.push_back(availableResourceObject);
 						}
 						supportedCategoryObject.supportedStorageType.push_back(supportedStorageTypeObject);

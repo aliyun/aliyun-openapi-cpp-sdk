@@ -39,50 +39,50 @@ void DescribeBackupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Backup"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Backup"];
+	for (auto valueItemsBackup : allItemsNode)
 	{
 		Backup itemsObject;
-		if(!value["BackupId"].isNull())
-			itemsObject.backupId = value["BackupId"].asString();
-		if(!value["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["BackupStatus"].isNull())
-			itemsObject.backupStatus = value["BackupStatus"].asString();
-		if(!value["BackupStartTime"].isNull())
-			itemsObject.backupStartTime = value["BackupStartTime"].asString();
-		if(!value["BackupEndTime"].isNull())
-			itemsObject.backupEndTime = value["BackupEndTime"].asString();
-		if(!value["BackupType"].isNull())
-			itemsObject.backupType = value["BackupType"].asString();
-		if(!value["BackupMode"].isNull())
-			itemsObject.backupMode = value["BackupMode"].asString();
-		if(!value["BackupMethod"].isNull())
-			itemsObject.backupMethod = value["BackupMethod"].asString();
-		if(!value["BackupDownloadURL"].isNull())
-			itemsObject.backupDownloadURL = value["BackupDownloadURL"].asString();
-		if(!value["BackupIntranetDownloadURL"].isNull())
-			itemsObject.backupIntranetDownloadURL = value["BackupIntranetDownloadURL"].asString();
-		if(!value["BackupLocation"].isNull())
-			itemsObject.backupLocation = value["BackupLocation"].asString();
-		if(!value["BackupExtractionStatus"].isNull())
-			itemsObject.backupExtractionStatus = value["BackupExtractionStatus"].asString();
-		if(!value["BackupScale"].isNull())
-			itemsObject.backupScale = value["BackupScale"].asString();
-		if(!value["BackupDBNames"].isNull())
-			itemsObject.backupDBNames = value["BackupDBNames"].asString();
-		if(!value["TotalBackupSize"].isNull())
-			itemsObject.totalBackupSize = std::stol(value["TotalBackupSize"].asString());
-		if(!value["BackupSize"].isNull())
-			itemsObject.backupSize = std::stol(value["BackupSize"].asString());
-		if(!value["HostInstanceID"].isNull())
-			itemsObject.hostInstanceID = value["HostInstanceID"].asString();
-		if(!value["StoreStatus"].isNull())
-			itemsObject.storeStatus = value["StoreStatus"].asString();
-		if(!value["MetaStatus"].isNull())
-			itemsObject.metaStatus = value["MetaStatus"].asString();
-		if(!value["SlaveStatus"].isNull())
-			itemsObject.slaveStatus = value["SlaveStatus"].asString();
+		if(!valueItemsBackup["BackupId"].isNull())
+			itemsObject.backupId = valueItemsBackup["BackupId"].asString();
+		if(!valueItemsBackup["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsBackup["DBInstanceId"].asString();
+		if(!valueItemsBackup["BackupStatus"].isNull())
+			itemsObject.backupStatus = valueItemsBackup["BackupStatus"].asString();
+		if(!valueItemsBackup["BackupStartTime"].isNull())
+			itemsObject.backupStartTime = valueItemsBackup["BackupStartTime"].asString();
+		if(!valueItemsBackup["BackupEndTime"].isNull())
+			itemsObject.backupEndTime = valueItemsBackup["BackupEndTime"].asString();
+		if(!valueItemsBackup["BackupType"].isNull())
+			itemsObject.backupType = valueItemsBackup["BackupType"].asString();
+		if(!valueItemsBackup["BackupMode"].isNull())
+			itemsObject.backupMode = valueItemsBackup["BackupMode"].asString();
+		if(!valueItemsBackup["BackupMethod"].isNull())
+			itemsObject.backupMethod = valueItemsBackup["BackupMethod"].asString();
+		if(!valueItemsBackup["BackupDownloadURL"].isNull())
+			itemsObject.backupDownloadURL = valueItemsBackup["BackupDownloadURL"].asString();
+		if(!valueItemsBackup["BackupIntranetDownloadURL"].isNull())
+			itemsObject.backupIntranetDownloadURL = valueItemsBackup["BackupIntranetDownloadURL"].asString();
+		if(!valueItemsBackup["BackupLocation"].isNull())
+			itemsObject.backupLocation = valueItemsBackup["BackupLocation"].asString();
+		if(!valueItemsBackup["BackupExtractionStatus"].isNull())
+			itemsObject.backupExtractionStatus = valueItemsBackup["BackupExtractionStatus"].asString();
+		if(!valueItemsBackup["BackupScale"].isNull())
+			itemsObject.backupScale = valueItemsBackup["BackupScale"].asString();
+		if(!valueItemsBackup["BackupDBNames"].isNull())
+			itemsObject.backupDBNames = valueItemsBackup["BackupDBNames"].asString();
+		if(!valueItemsBackup["TotalBackupSize"].isNull())
+			itemsObject.totalBackupSize = std::stol(valueItemsBackup["TotalBackupSize"].asString());
+		if(!valueItemsBackup["BackupSize"].isNull())
+			itemsObject.backupSize = std::stol(valueItemsBackup["BackupSize"].asString());
+		if(!valueItemsBackup["HostInstanceID"].isNull())
+			itemsObject.hostInstanceID = valueItemsBackup["HostInstanceID"].asString();
+		if(!valueItemsBackup["StoreStatus"].isNull())
+			itemsObject.storeStatus = valueItemsBackup["StoreStatus"].asString();
+		if(!valueItemsBackup["MetaStatus"].isNull())
+			itemsObject.metaStatus = valueItemsBackup["MetaStatus"].asString();
+		if(!valueItemsBackup["SlaveStatus"].isNull())
+			itemsObject.slaveStatus = valueItemsBackup["SlaveStatus"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

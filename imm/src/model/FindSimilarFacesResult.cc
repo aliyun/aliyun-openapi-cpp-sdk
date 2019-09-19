@@ -39,26 +39,26 @@ void FindSimilarFacesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFaces = value["Faces"]["FacesItem"];
-	for (auto value : allFaces)
+	auto allFacesNode = value["Faces"]["FacesItem"];
+	for (auto valueFacesFacesItem : allFacesNode)
 	{
 		FacesItem facesObject;
-		if(!value["FaceId"].isNull())
-			facesObject.faceId = value["FaceId"].asString();
-		if(!value["ImageUri"].isNull())
-			facesObject.imageUri = value["ImageUri"].asString();
-		if(!value["Similarity"].isNull())
-			facesObject.similarity = std::stof(value["Similarity"].asString());
-		auto allSimilarFaces = value["SimilarFaces"]["SimilarFacesItem"];
-		for (auto value : allSimilarFaces)
+		if(!valueFacesFacesItem["FaceId"].isNull())
+			facesObject.faceId = valueFacesFacesItem["FaceId"].asString();
+		if(!valueFacesFacesItem["ImageUri"].isNull())
+			facesObject.imageUri = valueFacesFacesItem["ImageUri"].asString();
+		if(!valueFacesFacesItem["Similarity"].isNull())
+			facesObject.similarity = std::stof(valueFacesFacesItem["Similarity"].asString());
+		auto allSimilarFacesNode = allFacesNode["SimilarFaces"]["SimilarFacesItem"];
+		for (auto allFacesNodeSimilarFacesSimilarFacesItem : allSimilarFacesNode)
 		{
 			FacesItem::SimilarFacesItem similarFacesObject;
-			if(!value["FaceId"].isNull())
-				similarFacesObject.faceId = value["FaceId"].asString();
-			if(!value["ImageUri"].isNull())
-				similarFacesObject.imageUri = value["ImageUri"].asString();
-			if(!value["Similarity"].isNull())
-				similarFacesObject.similarity = std::stof(value["Similarity"].asString());
+			if(!allFacesNodeSimilarFacesSimilarFacesItem["FaceId"].isNull())
+				similarFacesObject.faceId = allFacesNodeSimilarFacesSimilarFacesItem["FaceId"].asString();
+			if(!allFacesNodeSimilarFacesSimilarFacesItem["ImageUri"].isNull())
+				similarFacesObject.imageUri = allFacesNodeSimilarFacesSimilarFacesItem["ImageUri"].asString();
+			if(!allFacesNodeSimilarFacesSimilarFacesItem["Similarity"].isNull())
+				similarFacesObject.similarity = std::stof(allFacesNodeSimilarFacesSimilarFacesItem["Similarity"].asString());
 			auto faceAttributes1Node = value["FaceAttributes"];
 			auto faceBoundaryNode = faceAttributes1Node["FaceBoundary"];
 			if(!faceBoundaryNode["Left"].isNull())

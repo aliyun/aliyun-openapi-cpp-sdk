@@ -39,22 +39,22 @@ void DescribeCenInterRegionBandwidthLimitsResult::parse(const std::string &paylo
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCenInterRegionBandwidthLimits = value["CenInterRegionBandwidthLimits"]["CenInterRegionBandwidthLimit"];
-	for (auto value : allCenInterRegionBandwidthLimits)
+	auto allCenInterRegionBandwidthLimitsNode = value["CenInterRegionBandwidthLimits"]["CenInterRegionBandwidthLimit"];
+	for (auto valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit : allCenInterRegionBandwidthLimitsNode)
 	{
 		CenInterRegionBandwidthLimit cenInterRegionBandwidthLimitsObject;
-		if(!value["CenId"].isNull())
-			cenInterRegionBandwidthLimitsObject.cenId = value["CenId"].asString();
-		if(!value["LocalRegionId"].isNull())
-			cenInterRegionBandwidthLimitsObject.localRegionId = value["LocalRegionId"].asString();
-		if(!value["OppositeRegionId"].isNull())
-			cenInterRegionBandwidthLimitsObject.oppositeRegionId = value["OppositeRegionId"].asString();
-		if(!value["GeographicSpanId"].isNull())
-			cenInterRegionBandwidthLimitsObject.geographicSpanId = value["GeographicSpanId"].asString();
-		if(!value["BandwidthLimit"].isNull())
-			cenInterRegionBandwidthLimitsObject.bandwidthLimit = std::stol(value["BandwidthLimit"].asString());
-		if(!value["Status"].isNull())
-			cenInterRegionBandwidthLimitsObject.status = value["Status"].asString();
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["CenId"].isNull())
+			cenInterRegionBandwidthLimitsObject.cenId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["CenId"].asString();
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["LocalRegionId"].isNull())
+			cenInterRegionBandwidthLimitsObject.localRegionId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["LocalRegionId"].asString();
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["OppositeRegionId"].isNull())
+			cenInterRegionBandwidthLimitsObject.oppositeRegionId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["OppositeRegionId"].asString();
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["GeographicSpanId"].isNull())
+			cenInterRegionBandwidthLimitsObject.geographicSpanId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["GeographicSpanId"].asString();
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["BandwidthLimit"].isNull())
+			cenInterRegionBandwidthLimitsObject.bandwidthLimit = std::stol(valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["BandwidthLimit"].asString());
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["Status"].isNull())
+			cenInterRegionBandwidthLimitsObject.status = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["Status"].asString();
 		cenInterRegionBandwidthLimits_.push_back(cenInterRegionBandwidthLimitsObject);
 	}
 	if(!value["TotalCount"].isNull())

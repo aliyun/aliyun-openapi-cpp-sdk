@@ -39,20 +39,20 @@ void QueryTrademarkPriceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPrices = value["Prices"]["PricesItem"];
-	for (auto value : allPrices)
+	auto allPricesNode = value["Prices"]["PricesItem"];
+	for (auto valuePricesPricesItem : allPricesNode)
 	{
 		PricesItem pricesObject;
-		if(!value["ClassificationCode"].isNull())
-			pricesObject.classificationCode = value["ClassificationCode"].asString();
-		if(!value["DiscountPrice"].isNull())
-			pricesObject.discountPrice = std::stof(value["DiscountPrice"].asString());
-		if(!value["OriginalPrice"].isNull())
-			pricesObject.originalPrice = std::stof(value["OriginalPrice"].asString());
-		if(!value["TradePrice"].isNull())
-			pricesObject.tradePrice = std::stof(value["TradePrice"].asString());
-		if(!value["Currency"].isNull())
-			pricesObject.currency = value["Currency"].asString();
+		if(!valuePricesPricesItem["ClassificationCode"].isNull())
+			pricesObject.classificationCode = valuePricesPricesItem["ClassificationCode"].asString();
+		if(!valuePricesPricesItem["DiscountPrice"].isNull())
+			pricesObject.discountPrice = std::stof(valuePricesPricesItem["DiscountPrice"].asString());
+		if(!valuePricesPricesItem["OriginalPrice"].isNull())
+			pricesObject.originalPrice = std::stof(valuePricesPricesItem["OriginalPrice"].asString());
+		if(!valuePricesPricesItem["TradePrice"].isNull())
+			pricesObject.tradePrice = std::stof(valuePricesPricesItem["TradePrice"].asString());
+		if(!valuePricesPricesItem["Currency"].isNull())
+			pricesObject.currency = valuePricesPricesItem["Currency"].asString();
 		prices_.push_back(pricesObject);
 	}
 	if(!value["DiscountPrice"].isNull())

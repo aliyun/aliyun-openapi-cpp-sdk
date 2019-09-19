@@ -39,32 +39,32 @@ void ListResourcePoolResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPoolInfoList = value["PoolInfoList"]["PoolInfo"];
-	for (auto value : allPoolInfoList)
+	auto allPoolInfoListNode = value["PoolInfoList"]["PoolInfo"];
+	for (auto valuePoolInfoListPoolInfo : allPoolInfoListNode)
 	{
 		PoolInfo poolInfoListObject;
-		auto allQueueList = value["QueueList"]["Queue"];
-		for (auto value : allQueueList)
+		auto allQueueListNode = allPoolInfoListNode["QueueList"]["Queue"];
+		for (auto allPoolInfoListNodeQueueListQueue : allQueueListNode)
 		{
 			PoolInfo::Queue queueListObject;
-			auto allEcmResourcePoolConfigList1 = value["EcmResourcePoolConfigList"]["EcmResourcePoolConfig"];
-			for (auto value : allEcmResourcePoolConfigList1)
+			auto allEcmResourcePoolConfigList1Node = allQueueListNode["EcmResourcePoolConfigList"]["EcmResourcePoolConfig"];
+			for (auto allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig : allEcmResourcePoolConfigList1Node)
 			{
 				PoolInfo::Queue::EcmResourcePoolConfig ecmResourcePoolConfigList1Object;
-				if(!value["Id"].isNull())
-					ecmResourcePoolConfigList1Object.id = std::stol(value["Id"].asString());
-				if(!value["ConfigKey"].isNull())
-					ecmResourcePoolConfigList1Object.configKey = value["ConfigKey"].asString();
-				if(!value["ConfigValue"].isNull())
-					ecmResourcePoolConfigList1Object.configValue = value["ConfigValue"].asString();
-				if(!value["ConfigType"].isNull())
-					ecmResourcePoolConfigList1Object.configType = value["ConfigType"].asString();
-				if(!value["Category"].isNull())
-					ecmResourcePoolConfigList1Object.category = value["Category"].asString();
-				if(!value["Status"].isNull())
-					ecmResourcePoolConfigList1Object.status = value["Status"].asString();
-				if(!value["Note"].isNull())
-					ecmResourcePoolConfigList1Object.note = value["Note"].asString();
+				if(!allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Id"].isNull())
+					ecmResourcePoolConfigList1Object.id = std::stol(allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Id"].asString());
+				if(!allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigKey"].isNull())
+					ecmResourcePoolConfigList1Object.configKey = allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigKey"].asString();
+				if(!allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigValue"].isNull())
+					ecmResourcePoolConfigList1Object.configValue = allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigValue"].asString();
+				if(!allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigType"].isNull())
+					ecmResourcePoolConfigList1Object.configType = allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigType"].asString();
+				if(!allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Category"].isNull())
+					ecmResourcePoolConfigList1Object.category = allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Category"].asString();
+				if(!allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Status"].isNull())
+					ecmResourcePoolConfigList1Object.status = allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Status"].asString();
+				if(!allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Note"].isNull())
+					ecmResourcePoolConfigList1Object.note = allQueueListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Note"].asString();
 				queueListObject.ecmResourcePoolConfigList1.push_back(ecmResourcePoolConfigList1Object);
 			}
 			auto ecmResourceQueueNode = value["EcmResourceQueue"];
@@ -88,24 +88,24 @@ void ListResourcePoolResult::parse(const std::string &payload)
 				queueListObject.ecmResourceQueue.resourcePoolId = std::stol(ecmResourceQueueNode["ResourcePoolId"].asString());
 			poolInfoListObject.queueList.push_back(queueListObject);
 		}
-		auto allEcmResourcePoolConfigList = value["EcmResourcePoolConfigList"]["EcmResourcePoolConfig"];
-		for (auto value : allEcmResourcePoolConfigList)
+		auto allEcmResourcePoolConfigListNode = allPoolInfoListNode["EcmResourcePoolConfigList"]["EcmResourcePoolConfig"];
+		for (auto allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig : allEcmResourcePoolConfigListNode)
 		{
 			PoolInfo::EcmResourcePoolConfig2 ecmResourcePoolConfigListObject;
-			if(!value["Id"].isNull())
-				ecmResourcePoolConfigListObject.id = std::stol(value["Id"].asString());
-			if(!value["ConfigKey"].isNull())
-				ecmResourcePoolConfigListObject.configKey = value["ConfigKey"].asString();
-			if(!value["ConfigValue"].isNull())
-				ecmResourcePoolConfigListObject.configValue = value["ConfigValue"].asString();
-			if(!value["ConfigType"].isNull())
-				ecmResourcePoolConfigListObject.configType = value["ConfigType"].asString();
-			if(!value["Category"].isNull())
-				ecmResourcePoolConfigListObject.category = value["Category"].asString();
-			if(!value["Status"].isNull())
-				ecmResourcePoolConfigListObject.status = value["Status"].asString();
-			if(!value["Note"].isNull())
-				ecmResourcePoolConfigListObject.note = value["Note"].asString();
+			if(!allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Id"].isNull())
+				ecmResourcePoolConfigListObject.id = std::stol(allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Id"].asString());
+			if(!allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigKey"].isNull())
+				ecmResourcePoolConfigListObject.configKey = allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigKey"].asString();
+			if(!allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigValue"].isNull())
+				ecmResourcePoolConfigListObject.configValue = allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigValue"].asString();
+			if(!allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigType"].isNull())
+				ecmResourcePoolConfigListObject.configType = allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["ConfigType"].asString();
+			if(!allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Category"].isNull())
+				ecmResourcePoolConfigListObject.category = allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Category"].asString();
+			if(!allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Status"].isNull())
+				ecmResourcePoolConfigListObject.status = allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Status"].asString();
+			if(!allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Note"].isNull())
+				ecmResourcePoolConfigListObject.note = allPoolInfoListNodeEcmResourcePoolConfigListEcmResourcePoolConfig["Note"].asString();
 			poolInfoListObject.ecmResourcePoolConfigList.push_back(ecmResourcePoolConfigListObject);
 		}
 		auto ecmResourcePoolNode = value["EcmResourcePool"];

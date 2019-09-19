@@ -39,20 +39,20 @@ void DescribeLivePullStreamConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLiveAppRecordList = value["LiveAppRecordList"]["LiveAppRecord"];
-	for (auto value : allLiveAppRecordList)
+	auto allLiveAppRecordListNode = value["LiveAppRecordList"]["LiveAppRecord"];
+	for (auto valueLiveAppRecordListLiveAppRecord : allLiveAppRecordListNode)
 	{
 		LiveAppRecord liveAppRecordListObject;
-		if(!value["DomainName"].isNull())
-			liveAppRecordListObject.domainName = value["DomainName"].asString();
-		if(!value["StreamName"].isNull())
-			liveAppRecordListObject.streamName = value["StreamName"].asString();
-		if(!value["SourceUrl"].isNull())
-			liveAppRecordListObject.sourceUrl = value["SourceUrl"].asString();
-		if(!value["StartTime"].isNull())
-			liveAppRecordListObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			liveAppRecordListObject.endTime = value["EndTime"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["DomainName"].isNull())
+			liveAppRecordListObject.domainName = valueLiveAppRecordListLiveAppRecord["DomainName"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["StreamName"].isNull())
+			liveAppRecordListObject.streamName = valueLiveAppRecordListLiveAppRecord["StreamName"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["SourceUrl"].isNull())
+			liveAppRecordListObject.sourceUrl = valueLiveAppRecordListLiveAppRecord["SourceUrl"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["StartTime"].isNull())
+			liveAppRecordListObject.startTime = valueLiveAppRecordListLiveAppRecord["StartTime"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["EndTime"].isNull())
+			liveAppRecordListObject.endTime = valueLiveAppRecordListLiveAppRecord["EndTime"].asString();
 		liveAppRecordList_.push_back(liveAppRecordListObject);
 	}
 

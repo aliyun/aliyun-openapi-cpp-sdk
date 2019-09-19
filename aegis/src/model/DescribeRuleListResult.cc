@@ -39,52 +39,52 @@ void DescribeRuleListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRules = value["Rules"]["RulesItem"];
-	for (auto value : allRules)
+	auto allRulesNode = value["Rules"]["RulesItem"];
+	for (auto valueRulesRulesItem : allRulesNode)
 	{
 		RulesItem rulesObject;
-		if(!value["WarnLevel"].isNull())
-			rulesObject.warnLevel = value["WarnLevel"].asString();
-		if(!value["Modified"].isNull())
-			rulesObject.modified = std::stol(value["Modified"].asString());
-		if(!value["Create"].isNull())
-			rulesObject.create = std::stol(value["Create"].asString());
-		if(!value["RuleName"].isNull())
-			rulesObject.ruleName = value["RuleName"].asString();
-		if(!value["Description"].isNull())
-			rulesObject.description = value["Description"].asString();
-		if(!value["Id"].isNull())
-			rulesObject.id = std::stoi(value["Id"].asString());
-		if(!value["DataSourceId"].isNull())
-			rulesObject.dataSourceId = std::stoi(value["DataSourceId"].asString());
-		if(!value["Expressions"].isNull())
-			rulesObject.expressions = value["Expressions"].asString();
-		if(!value["Actions"].isNull())
-			rulesObject.actions = value["Actions"].asString();
-		if(!value["StatisticsRules"].isNull())
-			rulesObject.statisticsRules = value["StatisticsRules"].asString();
-		if(!value["NeedGroup"].isNull())
-			rulesObject.needGroup = value["NeedGroup"].asString() == "true";
-		if(!value["StatusCode"].isNull())
-			rulesObject.statusCode = value["StatusCode"].asString();
-		auto allRuleGroups = value["RuleGroups"]["RuleGroup"];
-		for (auto value : allRuleGroups)
+		if(!valueRulesRulesItem["WarnLevel"].isNull())
+			rulesObject.warnLevel = valueRulesRulesItem["WarnLevel"].asString();
+		if(!valueRulesRulesItem["Modified"].isNull())
+			rulesObject.modified = std::stol(valueRulesRulesItem["Modified"].asString());
+		if(!valueRulesRulesItem["Create"].isNull())
+			rulesObject.create = std::stol(valueRulesRulesItem["Create"].asString());
+		if(!valueRulesRulesItem["RuleName"].isNull())
+			rulesObject.ruleName = valueRulesRulesItem["RuleName"].asString();
+		if(!valueRulesRulesItem["Description"].isNull())
+			rulesObject.description = valueRulesRulesItem["Description"].asString();
+		if(!valueRulesRulesItem["Id"].isNull())
+			rulesObject.id = std::stoi(valueRulesRulesItem["Id"].asString());
+		if(!valueRulesRulesItem["DataSourceId"].isNull())
+			rulesObject.dataSourceId = std::stoi(valueRulesRulesItem["DataSourceId"].asString());
+		if(!valueRulesRulesItem["Expressions"].isNull())
+			rulesObject.expressions = valueRulesRulesItem["Expressions"].asString();
+		if(!valueRulesRulesItem["Actions"].isNull())
+			rulesObject.actions = valueRulesRulesItem["Actions"].asString();
+		if(!valueRulesRulesItem["StatisticsRules"].isNull())
+			rulesObject.statisticsRules = valueRulesRulesItem["StatisticsRules"].asString();
+		if(!valueRulesRulesItem["NeedGroup"].isNull())
+			rulesObject.needGroup = valueRulesRulesItem["NeedGroup"].asString() == "true";
+		if(!valueRulesRulesItem["StatusCode"].isNull())
+			rulesObject.statusCode = valueRulesRulesItem["StatusCode"].asString();
+		auto allRuleGroupsNode = allRulesNode["RuleGroups"]["RuleGroup"];
+		for (auto allRulesNodeRuleGroupsRuleGroup : allRuleGroupsNode)
 		{
 			RulesItem::RuleGroup ruleGroupsObject;
-			if(!value["GroupName"].isNull())
-				ruleGroupsObject.groupName = value["GroupName"].asString();
-			if(!value["RuleNum"].isNull())
-				ruleGroupsObject.ruleNum = std::stoi(value["RuleNum"].asString());
-			if(!value["Modified"].isNull())
-				ruleGroupsObject.modified = std::stol(value["Modified"].asString());
-			if(!value["Create"].isNull())
-				ruleGroupsObject.create = std::stol(value["Create"].asString());
-			if(!value["Description"].isNull())
-				ruleGroupsObject.description = value["Description"].asString();
-			if(!value["Id"].isNull())
-				ruleGroupsObject.id = std::stoi(value["Id"].asString());
-			if(!value["AliUid"].isNull())
-				ruleGroupsObject.aliUid = std::stoi(value["AliUid"].asString());
+			if(!allRulesNodeRuleGroupsRuleGroup["GroupName"].isNull())
+				ruleGroupsObject.groupName = allRulesNodeRuleGroupsRuleGroup["GroupName"].asString();
+			if(!allRulesNodeRuleGroupsRuleGroup["RuleNum"].isNull())
+				ruleGroupsObject.ruleNum = std::stoi(allRulesNodeRuleGroupsRuleGroup["RuleNum"].asString());
+			if(!allRulesNodeRuleGroupsRuleGroup["Modified"].isNull())
+				ruleGroupsObject.modified = std::stol(allRulesNodeRuleGroupsRuleGroup["Modified"].asString());
+			if(!allRulesNodeRuleGroupsRuleGroup["Create"].isNull())
+				ruleGroupsObject.create = std::stol(allRulesNodeRuleGroupsRuleGroup["Create"].asString());
+			if(!allRulesNodeRuleGroupsRuleGroup["Description"].isNull())
+				ruleGroupsObject.description = allRulesNodeRuleGroupsRuleGroup["Description"].asString();
+			if(!allRulesNodeRuleGroupsRuleGroup["Id"].isNull())
+				ruleGroupsObject.id = std::stoi(allRulesNodeRuleGroupsRuleGroup["Id"].asString());
+			if(!allRulesNodeRuleGroupsRuleGroup["AliUid"].isNull())
+				ruleGroupsObject.aliUid = std::stoi(allRulesNodeRuleGroupsRuleGroup["AliUid"].asString());
 			rulesObject.ruleGroups.push_back(ruleGroupsObject);
 		}
 		rules_.push_back(rulesObject);

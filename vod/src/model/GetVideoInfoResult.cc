@@ -84,12 +84,12 @@ void GetVideoInfoResult::parse(const std::string &payload)
 		video_.auditStatus = videoNode["AuditStatus"].asString();
 	if(!videoNode["AppId"].isNull())
 		video_.appId = videoNode["AppId"].asString();
-	auto allThumbnailList = value["ThumbnailList"]["Thumbnail"];
-	for (auto value : allThumbnailList)
+	auto allThumbnailListNode = videoNode["ThumbnailList"]["Thumbnail"];
+	for (auto videoNodeThumbnailListThumbnail : allThumbnailListNode)
 	{
 		Video::Thumbnail thumbnailObject;
-		if(!value["URL"].isNull())
-			thumbnailObject.uRL = value["URL"].asString();
+		if(!videoNodeThumbnailListThumbnail["URL"].isNull())
+			thumbnailObject.uRL = videoNodeThumbnailListThumbnail["URL"].asString();
 		video_.thumbnailList.push_back(thumbnailObject);
 	}
 		auto allSnapshots = videoNode["Snapshots"]["Snapshot"];

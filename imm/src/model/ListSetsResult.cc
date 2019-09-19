@@ -39,26 +39,26 @@ void ListSetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSets = value["Sets"]["SetsItem"];
-	for (auto value : allSets)
+	auto allSetsNode = value["Sets"]["SetsItem"];
+	for (auto valueSetsSetsItem : allSetsNode)
 	{
 		SetsItem setsObject;
-		if(!value["SetId"].isNull())
-			setsObject.setId = value["SetId"].asString();
-		if(!value["SetName"].isNull())
-			setsObject.setName = value["SetName"].asString();
-		if(!value["CreateTime"].isNull())
-			setsObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			setsObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["FaceCount"].isNull())
-			setsObject.faceCount = std::stoi(value["FaceCount"].asString());
-		if(!value["ImageCount"].isNull())
-			setsObject.imageCount = std::stoi(value["ImageCount"].asString());
-		if(!value["VideoCount"].isNull())
-			setsObject.videoCount = std::stoi(value["VideoCount"].asString());
-		if(!value["VideoLength"].isNull())
-			setsObject.videoLength = std::stoi(value["VideoLength"].asString());
+		if(!valueSetsSetsItem["SetId"].isNull())
+			setsObject.setId = valueSetsSetsItem["SetId"].asString();
+		if(!valueSetsSetsItem["SetName"].isNull())
+			setsObject.setName = valueSetsSetsItem["SetName"].asString();
+		if(!valueSetsSetsItem["CreateTime"].isNull())
+			setsObject.createTime = valueSetsSetsItem["CreateTime"].asString();
+		if(!valueSetsSetsItem["ModifyTime"].isNull())
+			setsObject.modifyTime = valueSetsSetsItem["ModifyTime"].asString();
+		if(!valueSetsSetsItem["FaceCount"].isNull())
+			setsObject.faceCount = std::stoi(valueSetsSetsItem["FaceCount"].asString());
+		if(!valueSetsSetsItem["ImageCount"].isNull())
+			setsObject.imageCount = std::stoi(valueSetsSetsItem["ImageCount"].asString());
+		if(!valueSetsSetsItem["VideoCount"].isNull())
+			setsObject.videoCount = std::stoi(valueSetsSetsItem["VideoCount"].asString());
+		if(!valueSetsSetsItem["VideoLength"].isNull())
+			setsObject.videoLength = std::stoi(valueSetsSetsItem["VideoLength"].asString());
 		sets_.push_back(setsObject);
 	}
 	if(!value["NextMarker"].isNull())

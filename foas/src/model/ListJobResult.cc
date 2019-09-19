@@ -39,48 +39,48 @@ void ListJobResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobs = value["Jobs"]["Job"];
-	for (auto value : allJobs)
+	auto allJobsNode = value["Jobs"]["Job"];
+	for (auto valueJobsJob : allJobsNode)
 	{
 		Job jobsObject;
-		if(!value["JobName"].isNull())
-			jobsObject.jobName = value["JobName"].asString();
-		if(!value["ProjectName"].isNull())
-			jobsObject.projectName = value["ProjectName"].asString();
-		if(!value["JobType"].isNull())
-			jobsObject.jobType = value["JobType"].asString();
-		if(!value["ApiType"].isNull())
-			jobsObject.apiType = value["ApiType"].asString();
-		if(!value["Code"].isNull())
-			jobsObject.code = value["Code"].asString();
-		if(!value["PlanJson"].isNull())
-			jobsObject.planJson = value["PlanJson"].asString();
-		if(!value["Properties"].isNull())
-			jobsObject.properties = value["Properties"].asString();
-		if(!value["Packages"].isNull())
-			jobsObject.packages = value["Packages"].asString();
-		if(!value["IsCommitted"].isNull())
-			jobsObject.isCommitted = value["IsCommitted"].asString() == "true";
-		if(!value["Creator"].isNull())
-			jobsObject.creator = value["Creator"].asString();
-		if(!value["CreateTime"].isNull())
-			jobsObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["Modifier"].isNull())
-			jobsObject.modifier = value["Modifier"].asString();
-		if(!value["ModifyTime"].isNull())
-			jobsObject.modifyTime = std::stol(value["ModifyTime"].asString());
-		if(!value["Description"].isNull())
-			jobsObject.description = value["Description"].asString();
-		if(!value["EngineVersion"].isNull())
-			jobsObject.engineVersion = value["EngineVersion"].asString();
-		if(!value["ClusterId"].isNull())
-			jobsObject.clusterId = value["ClusterId"].asString();
-		if(!value["QueueName"].isNull())
-			jobsObject.queueName = value["QueueName"].asString();
-		if(!value["FolderId"].isNull())
-			jobsObject.folderId = std::stol(value["FolderId"].asString());
-		if(!value["JobId"].isNull())
-			jobsObject.jobId = value["JobId"].asString();
+		if(!valueJobsJob["JobName"].isNull())
+			jobsObject.jobName = valueJobsJob["JobName"].asString();
+		if(!valueJobsJob["ProjectName"].isNull())
+			jobsObject.projectName = valueJobsJob["ProjectName"].asString();
+		if(!valueJobsJob["JobType"].isNull())
+			jobsObject.jobType = valueJobsJob["JobType"].asString();
+		if(!valueJobsJob["ApiType"].isNull())
+			jobsObject.apiType = valueJobsJob["ApiType"].asString();
+		if(!valueJobsJob["Code"].isNull())
+			jobsObject.code = valueJobsJob["Code"].asString();
+		if(!valueJobsJob["PlanJson"].isNull())
+			jobsObject.planJson = valueJobsJob["PlanJson"].asString();
+		if(!valueJobsJob["Properties"].isNull())
+			jobsObject.properties = valueJobsJob["Properties"].asString();
+		if(!valueJobsJob["Packages"].isNull())
+			jobsObject.packages = valueJobsJob["Packages"].asString();
+		if(!valueJobsJob["IsCommitted"].isNull())
+			jobsObject.isCommitted = valueJobsJob["IsCommitted"].asString() == "true";
+		if(!valueJobsJob["Creator"].isNull())
+			jobsObject.creator = valueJobsJob["Creator"].asString();
+		if(!valueJobsJob["CreateTime"].isNull())
+			jobsObject.createTime = std::stol(valueJobsJob["CreateTime"].asString());
+		if(!valueJobsJob["Modifier"].isNull())
+			jobsObject.modifier = valueJobsJob["Modifier"].asString();
+		if(!valueJobsJob["ModifyTime"].isNull())
+			jobsObject.modifyTime = std::stol(valueJobsJob["ModifyTime"].asString());
+		if(!valueJobsJob["Description"].isNull())
+			jobsObject.description = valueJobsJob["Description"].asString();
+		if(!valueJobsJob["EngineVersion"].isNull())
+			jobsObject.engineVersion = valueJobsJob["EngineVersion"].asString();
+		if(!valueJobsJob["ClusterId"].isNull())
+			jobsObject.clusterId = valueJobsJob["ClusterId"].asString();
+		if(!valueJobsJob["QueueName"].isNull())
+			jobsObject.queueName = valueJobsJob["QueueName"].asString();
+		if(!valueJobsJob["FolderId"].isNull())
+			jobsObject.folderId = std::stol(valueJobsJob["FolderId"].asString());
+		if(!valueJobsJob["JobId"].isNull())
+			jobsObject.jobId = valueJobsJob["JobId"].asString();
 		jobs_.push_back(jobsObject);
 	}
 	if(!value["PageIndex"].isNull())

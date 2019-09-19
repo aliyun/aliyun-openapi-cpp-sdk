@@ -39,22 +39,22 @@ void RegisterMediaDetailPersonResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegisteredPersonages = value["RegisteredPersonages"]["RegisteredPersonage"];
-	for (auto value : allRegisteredPersonages)
+	auto allRegisteredPersonagesNode = value["RegisteredPersonages"]["RegisteredPersonage"];
+	for (auto valueRegisteredPersonagesRegisteredPersonage : allRegisteredPersonagesNode)
 	{
 		RegisteredPersonage registeredPersonagesObject;
-		if(!value["PersonName"].isNull())
-			registeredPersonagesObject.personName = value["PersonName"].asString();
-		if(!value["FaceId"].isNull())
-			registeredPersonagesObject.faceId = value["FaceId"].asString();
-		if(!value["Target"].isNull())
-			registeredPersonagesObject.target = value["Target"].asString();
-		if(!value["Quality"].isNull())
-			registeredPersonagesObject.quality = value["Quality"].asString();
-		if(!value["Gender"].isNull())
-			registeredPersonagesObject.gender = value["Gender"].asString();
-		if(!value["ImageId"].isNull())
-			registeredPersonagesObject.imageId = value["ImageId"].asString();
+		if(!valueRegisteredPersonagesRegisteredPersonage["PersonName"].isNull())
+			registeredPersonagesObject.personName = valueRegisteredPersonagesRegisteredPersonage["PersonName"].asString();
+		if(!valueRegisteredPersonagesRegisteredPersonage["FaceId"].isNull())
+			registeredPersonagesObject.faceId = valueRegisteredPersonagesRegisteredPersonage["FaceId"].asString();
+		if(!valueRegisteredPersonagesRegisteredPersonage["Target"].isNull())
+			registeredPersonagesObject.target = valueRegisteredPersonagesRegisteredPersonage["Target"].asString();
+		if(!valueRegisteredPersonagesRegisteredPersonage["Quality"].isNull())
+			registeredPersonagesObject.quality = valueRegisteredPersonagesRegisteredPersonage["Quality"].asString();
+		if(!valueRegisteredPersonagesRegisteredPersonage["Gender"].isNull())
+			registeredPersonagesObject.gender = valueRegisteredPersonagesRegisteredPersonage["Gender"].asString();
+		if(!valueRegisteredPersonagesRegisteredPersonage["ImageId"].isNull())
+			registeredPersonagesObject.imageId = valueRegisteredPersonagesRegisteredPersonage["ImageId"].asString();
 		auto imageFileNode = value["ImageFile"];
 		if(!imageFileNode["Bucket"].isNull())
 			registeredPersonagesObject.imageFile.bucket = imageFileNode["Bucket"].asString();
@@ -64,14 +64,14 @@ void RegisterMediaDetailPersonResult::parse(const std::string &payload)
 			registeredPersonagesObject.imageFile.object = imageFileNode["Object"].asString();
 		registeredPersonages_.push_back(registeredPersonagesObject);
 	}
-	auto allFailedImages = value["FailedImages"]["FailedImage"];
-	for (auto value : allFailedImages)
+	auto allFailedImagesNode = value["FailedImages"]["FailedImage"];
+	for (auto valueFailedImagesFailedImage : allFailedImagesNode)
 	{
 		FailedImage failedImagesObject;
-		if(!value["Code"].isNull())
-			failedImagesObject.code = value["Code"].asString();
-		if(!value["Success"].isNull())
-			failedImagesObject.success = value["Success"].asString();
+		if(!valueFailedImagesFailedImage["Code"].isNull())
+			failedImagesObject.code = valueFailedImagesFailedImage["Code"].asString();
+		if(!valueFailedImagesFailedImage["Success"].isNull())
+			failedImagesObject.success = valueFailedImagesFailedImage["Success"].asString();
 		auto imageFile1Node = value["ImageFile"];
 		if(!imageFile1Node["Bucket"].isNull())
 			failedImagesObject.imageFile1.bucket = imageFile1Node["Bucket"].asString();

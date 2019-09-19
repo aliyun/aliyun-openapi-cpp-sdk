@@ -39,24 +39,24 @@ void DescribeSnatTableEntriesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSnatTableEntries = value["SnatTableEntries"]["SnatTableEntry"];
-	for (auto value : allSnatTableEntries)
+	auto allSnatTableEntriesNode = value["SnatTableEntries"]["SnatTableEntry"];
+	for (auto valueSnatTableEntriesSnatTableEntry : allSnatTableEntriesNode)
 	{
 		SnatTableEntry snatTableEntriesObject;
-		if(!value["SnatTableId"].isNull())
-			snatTableEntriesObject.snatTableId = value["SnatTableId"].asString();
-		if(!value["SnatEntryId"].isNull())
-			snatTableEntriesObject.snatEntryId = value["SnatEntryId"].asString();
-		if(!value["SourceVSwitchId"].isNull())
-			snatTableEntriesObject.sourceVSwitchId = value["SourceVSwitchId"].asString();
-		if(!value["SourceCIDR"].isNull())
-			snatTableEntriesObject.sourceCIDR = value["SourceCIDR"].asString();
-		if(!value["SnatIp"].isNull())
-			snatTableEntriesObject.snatIp = value["SnatIp"].asString();
-		if(!value["Status"].isNull())
-			snatTableEntriesObject.status = value["Status"].asString();
-		if(!value["SnatEntryName"].isNull())
-			snatTableEntriesObject.snatEntryName = value["SnatEntryName"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["SnatTableId"].isNull())
+			snatTableEntriesObject.snatTableId = valueSnatTableEntriesSnatTableEntry["SnatTableId"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["SnatEntryId"].isNull())
+			snatTableEntriesObject.snatEntryId = valueSnatTableEntriesSnatTableEntry["SnatEntryId"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["SourceVSwitchId"].isNull())
+			snatTableEntriesObject.sourceVSwitchId = valueSnatTableEntriesSnatTableEntry["SourceVSwitchId"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["SourceCIDR"].isNull())
+			snatTableEntriesObject.sourceCIDR = valueSnatTableEntriesSnatTableEntry["SourceCIDR"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["SnatIp"].isNull())
+			snatTableEntriesObject.snatIp = valueSnatTableEntriesSnatTableEntry["SnatIp"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["Status"].isNull())
+			snatTableEntriesObject.status = valueSnatTableEntriesSnatTableEntry["Status"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["SnatEntryName"].isNull())
+			snatTableEntriesObject.snatEntryName = valueSnatTableEntriesSnatTableEntry["SnatEntryName"].asString();
 		snatTableEntries_.push_back(snatTableEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())

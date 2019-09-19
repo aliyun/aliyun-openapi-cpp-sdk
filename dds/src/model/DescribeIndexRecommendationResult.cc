@@ -39,46 +39,46 @@ void DescribeIndexRecommendationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAnalyzations = value["Analyzations"]["Analyzation"];
-	for (auto value : allAnalyzations)
+	auto allAnalyzationsNode = value["Analyzations"]["Analyzation"];
+	for (auto valueAnalyzationsAnalyzation : allAnalyzationsNode)
 	{
 		Analyzation analyzationsObject;
-		if(!value["Database"].isNull())
-			analyzationsObject.database = value["Database"].asString();
-		if(!value["Namespace"].isNull())
-			analyzationsObject._namespace = value["Namespace"].asString();
-		if(!value["Operation"].isNull())
-			analyzationsObject.operation = value["Operation"].asString();
-		if(!value["Query"].isNull())
-			analyzationsObject.query = value["Query"].asString();
-		if(!value["Sort"].isNull())
-			analyzationsObject.sort = value["Sort"].asString();
-		if(!value["Count"].isNull())
-			analyzationsObject.count = std::stol(value["Count"].asString());
-		if(!value["TotalExecutionTime"].isNull())
-			analyzationsObject.totalExecutionTime = std::stol(value["TotalExecutionTime"].asString());
-		if(!value["AverageExecutionTime"].isNull())
-			analyzationsObject.averageExecutionTime = std::stol(value["AverageExecutionTime"].asString());
-		if(!value["AverageReturnRowCount"].isNull())
-			analyzationsObject.averageReturnRowCount = std::stol(value["AverageReturnRowCount"].asString());
-		if(!value["AverageDocsExaminedCount"].isNull())
-			analyzationsObject.averageDocsExaminedCount = std::stol(value["AverageDocsExaminedCount"].asString());
-		if(!value["AverageKeysExaminedCount"].isNull())
-			analyzationsObject.averageKeysExaminedCount = std::stol(value["AverageKeysExaminedCount"].asString());
-		if(!value["InMemorySort"].isNull())
-			analyzationsObject.inMemorySort = value["InMemorySort"].asString();
-		if(!value["LastExecutionTime"].isNull())
-			analyzationsObject.lastExecutionTime = value["LastExecutionTime"].asString();
-		if(!value["ExecutionPlan"].isNull())
-			analyzationsObject.executionPlan = value["ExecutionPlan"].asString();
-		auto allIndexRecommendations = value["IndexRecommendations"]["Recommendation"];
-		for (auto value : allIndexRecommendations)
+		if(!valueAnalyzationsAnalyzation["Database"].isNull())
+			analyzationsObject.database = valueAnalyzationsAnalyzation["Database"].asString();
+		if(!valueAnalyzationsAnalyzation["Namespace"].isNull())
+			analyzationsObject._namespace = valueAnalyzationsAnalyzation["Namespace"].asString();
+		if(!valueAnalyzationsAnalyzation["Operation"].isNull())
+			analyzationsObject.operation = valueAnalyzationsAnalyzation["Operation"].asString();
+		if(!valueAnalyzationsAnalyzation["Query"].isNull())
+			analyzationsObject.query = valueAnalyzationsAnalyzation["Query"].asString();
+		if(!valueAnalyzationsAnalyzation["Sort"].isNull())
+			analyzationsObject.sort = valueAnalyzationsAnalyzation["Sort"].asString();
+		if(!valueAnalyzationsAnalyzation["Count"].isNull())
+			analyzationsObject.count = std::stol(valueAnalyzationsAnalyzation["Count"].asString());
+		if(!valueAnalyzationsAnalyzation["TotalExecutionTime"].isNull())
+			analyzationsObject.totalExecutionTime = std::stol(valueAnalyzationsAnalyzation["TotalExecutionTime"].asString());
+		if(!valueAnalyzationsAnalyzation["AverageExecutionTime"].isNull())
+			analyzationsObject.averageExecutionTime = std::stol(valueAnalyzationsAnalyzation["AverageExecutionTime"].asString());
+		if(!valueAnalyzationsAnalyzation["AverageReturnRowCount"].isNull())
+			analyzationsObject.averageReturnRowCount = std::stol(valueAnalyzationsAnalyzation["AverageReturnRowCount"].asString());
+		if(!valueAnalyzationsAnalyzation["AverageDocsExaminedCount"].isNull())
+			analyzationsObject.averageDocsExaminedCount = std::stol(valueAnalyzationsAnalyzation["AverageDocsExaminedCount"].asString());
+		if(!valueAnalyzationsAnalyzation["AverageKeysExaminedCount"].isNull())
+			analyzationsObject.averageKeysExaminedCount = std::stol(valueAnalyzationsAnalyzation["AverageKeysExaminedCount"].asString());
+		if(!valueAnalyzationsAnalyzation["InMemorySort"].isNull())
+			analyzationsObject.inMemorySort = valueAnalyzationsAnalyzation["InMemorySort"].asString();
+		if(!valueAnalyzationsAnalyzation["LastExecutionTime"].isNull())
+			analyzationsObject.lastExecutionTime = valueAnalyzationsAnalyzation["LastExecutionTime"].asString();
+		if(!valueAnalyzationsAnalyzation["ExecutionPlan"].isNull())
+			analyzationsObject.executionPlan = valueAnalyzationsAnalyzation["ExecutionPlan"].asString();
+		auto allIndexRecommendationsNode = allAnalyzationsNode["IndexRecommendations"]["Recommendation"];
+		for (auto allAnalyzationsNodeIndexRecommendationsRecommendation : allIndexRecommendationsNode)
 		{
 			Analyzation::Recommendation indexRecommendationsObject;
-			if(!value["RecmdType"].isNull())
-				indexRecommendationsObject.recmdType = value["RecmdType"].asString();
-			if(!value["Content"].isNull())
-				indexRecommendationsObject.content = value["Content"].asString();
+			if(!allAnalyzationsNodeIndexRecommendationsRecommendation["RecmdType"].isNull())
+				indexRecommendationsObject.recmdType = allAnalyzationsNodeIndexRecommendationsRecommendation["RecmdType"].asString();
+			if(!allAnalyzationsNodeIndexRecommendationsRecommendation["Content"].isNull())
+				indexRecommendationsObject.content = allAnalyzationsNodeIndexRecommendationsRecommendation["Content"].asString();
 			analyzationsObject.indexRecommendations.push_back(indexRecommendationsObject);
 		}
 		auto allIndexCombines = value["IndexCombines"]["IndexCombine"];

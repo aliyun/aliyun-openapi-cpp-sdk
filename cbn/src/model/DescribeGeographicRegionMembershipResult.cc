@@ -39,12 +39,12 @@ void DescribeGeographicRegionMembershipResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegionIds = value["RegionIds"]["RegionId"];
-	for (auto value : allRegionIds)
+	auto allRegionIdsNode = value["RegionIds"]["RegionId"];
+	for (auto valueRegionIdsRegionId : allRegionIdsNode)
 	{
 		RegionId regionIdsObject;
-		if(!value["RegionId"].isNull())
-			regionIdsObject.regionId = value["RegionId"].asString();
+		if(!valueRegionIdsRegionId["RegionId"].isNull())
+			regionIdsObject.regionId = valueRegionIdsRegionId["RegionId"].asString();
 		regionIds_.push_back(regionIdsObject);
 	}
 	if(!value["TotalCount"].isNull())

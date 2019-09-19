@@ -39,26 +39,26 @@ void DescribeLifecycleHooksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLifecycleHooks = value["LifecycleHooks"]["LifecycleHook"];
-	for (auto value : allLifecycleHooks)
+	auto allLifecycleHooksNode = value["LifecycleHooks"]["LifecycleHook"];
+	for (auto valueLifecycleHooksLifecycleHook : allLifecycleHooksNode)
 	{
 		LifecycleHook lifecycleHooksObject;
-		if(!value["ScalingGroupId"].isNull())
-			lifecycleHooksObject.scalingGroupId = value["ScalingGroupId"].asString();
-		if(!value["LifecycleHookId"].isNull())
-			lifecycleHooksObject.lifecycleHookId = value["LifecycleHookId"].asString();
-		if(!value["LifecycleHookName"].isNull())
-			lifecycleHooksObject.lifecycleHookName = value["LifecycleHookName"].asString();
-		if(!value["DefaultResult"].isNull())
-			lifecycleHooksObject.defaultResult = value["DefaultResult"].asString();
-		if(!value["HeartbeatTimeout"].isNull())
-			lifecycleHooksObject.heartbeatTimeout = std::stoi(value["HeartbeatTimeout"].asString());
-		if(!value["LifecycleTransition"].isNull())
-			lifecycleHooksObject.lifecycleTransition = value["LifecycleTransition"].asString();
-		if(!value["NotificationMetadata"].isNull())
-			lifecycleHooksObject.notificationMetadata = value["NotificationMetadata"].asString();
-		if(!value["NotificationArn"].isNull())
-			lifecycleHooksObject.notificationArn = value["NotificationArn"].asString();
+		if(!valueLifecycleHooksLifecycleHook["ScalingGroupId"].isNull())
+			lifecycleHooksObject.scalingGroupId = valueLifecycleHooksLifecycleHook["ScalingGroupId"].asString();
+		if(!valueLifecycleHooksLifecycleHook["LifecycleHookId"].isNull())
+			lifecycleHooksObject.lifecycleHookId = valueLifecycleHooksLifecycleHook["LifecycleHookId"].asString();
+		if(!valueLifecycleHooksLifecycleHook["LifecycleHookName"].isNull())
+			lifecycleHooksObject.lifecycleHookName = valueLifecycleHooksLifecycleHook["LifecycleHookName"].asString();
+		if(!valueLifecycleHooksLifecycleHook["DefaultResult"].isNull())
+			lifecycleHooksObject.defaultResult = valueLifecycleHooksLifecycleHook["DefaultResult"].asString();
+		if(!valueLifecycleHooksLifecycleHook["HeartbeatTimeout"].isNull())
+			lifecycleHooksObject.heartbeatTimeout = std::stoi(valueLifecycleHooksLifecycleHook["HeartbeatTimeout"].asString());
+		if(!valueLifecycleHooksLifecycleHook["LifecycleTransition"].isNull())
+			lifecycleHooksObject.lifecycleTransition = valueLifecycleHooksLifecycleHook["LifecycleTransition"].asString();
+		if(!valueLifecycleHooksLifecycleHook["NotificationMetadata"].isNull())
+			lifecycleHooksObject.notificationMetadata = valueLifecycleHooksLifecycleHook["NotificationMetadata"].asString();
+		if(!valueLifecycleHooksLifecycleHook["NotificationArn"].isNull())
+			lifecycleHooksObject.notificationArn = valueLifecycleHooksLifecycleHook["NotificationArn"].asString();
 		lifecycleHooks_.push_back(lifecycleHooksObject);
 	}
 	if(!value["TotalCount"].isNull())

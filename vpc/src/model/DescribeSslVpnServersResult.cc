@@ -39,38 +39,38 @@ void DescribeSslVpnServersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSslVpnServers = value["SslVpnServers"]["SslVpnServer"];
-	for (auto value : allSslVpnServers)
+	auto allSslVpnServersNode = value["SslVpnServers"]["SslVpnServer"];
+	for (auto valueSslVpnServersSslVpnServer : allSslVpnServersNode)
 	{
 		SslVpnServer sslVpnServersObject;
-		if(!value["RegionId"].isNull())
-			sslVpnServersObject.regionId = value["RegionId"].asString();
-		if(!value["SslVpnServerId"].isNull())
-			sslVpnServersObject.sslVpnServerId = value["SslVpnServerId"].asString();
-		if(!value["VpnGatewayId"].isNull())
-			sslVpnServersObject.vpnGatewayId = value["VpnGatewayId"].asString();
-		if(!value["Name"].isNull())
-			sslVpnServersObject.name = value["Name"].asString();
-		if(!value["LocalSubnet"].isNull())
-			sslVpnServersObject.localSubnet = value["LocalSubnet"].asString();
-		if(!value["ClientIpPool"].isNull())
-			sslVpnServersObject.clientIpPool = value["ClientIpPool"].asString();
-		if(!value["CreateTime"].isNull())
-			sslVpnServersObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["Cipher"].isNull())
-			sslVpnServersObject.cipher = value["Cipher"].asString();
-		if(!value["Proto"].isNull())
-			sslVpnServersObject.proto = value["Proto"].asString();
-		if(!value["Port"].isNull())
-			sslVpnServersObject.port = std::stoi(value["Port"].asString());
-		if(!value["Compress"].isNull())
-			sslVpnServersObject.compress = value["Compress"].asString() == "true";
-		if(!value["Connections"].isNull())
-			sslVpnServersObject.connections = std::stoi(value["Connections"].asString());
-		if(!value["MaxConnections"].isNull())
-			sslVpnServersObject.maxConnections = std::stoi(value["MaxConnections"].asString());
-		if(!value["InternetIp"].isNull())
-			sslVpnServersObject.internetIp = value["InternetIp"].asString();
+		if(!valueSslVpnServersSslVpnServer["RegionId"].isNull())
+			sslVpnServersObject.regionId = valueSslVpnServersSslVpnServer["RegionId"].asString();
+		if(!valueSslVpnServersSslVpnServer["SslVpnServerId"].isNull())
+			sslVpnServersObject.sslVpnServerId = valueSslVpnServersSslVpnServer["SslVpnServerId"].asString();
+		if(!valueSslVpnServersSslVpnServer["VpnGatewayId"].isNull())
+			sslVpnServersObject.vpnGatewayId = valueSslVpnServersSslVpnServer["VpnGatewayId"].asString();
+		if(!valueSslVpnServersSslVpnServer["Name"].isNull())
+			sslVpnServersObject.name = valueSslVpnServersSslVpnServer["Name"].asString();
+		if(!valueSslVpnServersSslVpnServer["LocalSubnet"].isNull())
+			sslVpnServersObject.localSubnet = valueSslVpnServersSslVpnServer["LocalSubnet"].asString();
+		if(!valueSslVpnServersSslVpnServer["ClientIpPool"].isNull())
+			sslVpnServersObject.clientIpPool = valueSslVpnServersSslVpnServer["ClientIpPool"].asString();
+		if(!valueSslVpnServersSslVpnServer["CreateTime"].isNull())
+			sslVpnServersObject.createTime = std::stol(valueSslVpnServersSslVpnServer["CreateTime"].asString());
+		if(!valueSslVpnServersSslVpnServer["Cipher"].isNull())
+			sslVpnServersObject.cipher = valueSslVpnServersSslVpnServer["Cipher"].asString();
+		if(!valueSslVpnServersSslVpnServer["Proto"].isNull())
+			sslVpnServersObject.proto = valueSslVpnServersSslVpnServer["Proto"].asString();
+		if(!valueSslVpnServersSslVpnServer["Port"].isNull())
+			sslVpnServersObject.port = std::stoi(valueSslVpnServersSslVpnServer["Port"].asString());
+		if(!valueSslVpnServersSslVpnServer["Compress"].isNull())
+			sslVpnServersObject.compress = valueSslVpnServersSslVpnServer["Compress"].asString() == "true";
+		if(!valueSslVpnServersSslVpnServer["Connections"].isNull())
+			sslVpnServersObject.connections = std::stoi(valueSslVpnServersSslVpnServer["Connections"].asString());
+		if(!valueSslVpnServersSslVpnServer["MaxConnections"].isNull())
+			sslVpnServersObject.maxConnections = std::stoi(valueSslVpnServersSslVpnServer["MaxConnections"].asString());
+		if(!valueSslVpnServersSslVpnServer["InternetIp"].isNull())
+			sslVpnServersObject.internetIp = valueSslVpnServersSslVpnServer["InternetIp"].asString();
 		sslVpnServers_.push_back(sslVpnServersObject);
 	}
 	if(!value["TotalCount"].isNull())

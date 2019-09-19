@@ -39,26 +39,26 @@ void DescribeAutoProvisioningGroupHistoryResult::parse(const std::string &payloa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAutoProvisioningGroupHistories = value["AutoProvisioningGroupHistories"]["AutoProvisioningGroupHistory"];
-	for (auto value : allAutoProvisioningGroupHistories)
+	auto allAutoProvisioningGroupHistoriesNode = value["AutoProvisioningGroupHistories"]["AutoProvisioningGroupHistory"];
+	for (auto valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory : allAutoProvisioningGroupHistoriesNode)
 	{
 		AutoProvisioningGroupHistory autoProvisioningGroupHistoriesObject;
-		if(!value["TaskId"].isNull())
-			autoProvisioningGroupHistoriesObject.taskId = value["TaskId"].asString();
-		if(!value["Status"].isNull())
-			autoProvisioningGroupHistoriesObject.status = value["Status"].asString();
-		if(!value["LastEventTime"].isNull())
-			autoProvisioningGroupHistoriesObject.lastEventTime = value["LastEventTime"].asString();
-		if(!value["StartTime"].isNull())
-			autoProvisioningGroupHistoriesObject.startTime = value["StartTime"].asString();
-		auto allActivityDetails = value["ActivityDetails"]["ActivityDetail"];
-		for (auto value : allActivityDetails)
+		if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["TaskId"].isNull())
+			autoProvisioningGroupHistoriesObject.taskId = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["TaskId"].asString();
+		if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["Status"].isNull())
+			autoProvisioningGroupHistoriesObject.status = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["Status"].asString();
+		if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["LastEventTime"].isNull())
+			autoProvisioningGroupHistoriesObject.lastEventTime = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["LastEventTime"].asString();
+		if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["StartTime"].isNull())
+			autoProvisioningGroupHistoriesObject.startTime = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["StartTime"].asString();
+		auto allActivityDetailsNode = allAutoProvisioningGroupHistoriesNode["ActivityDetails"]["ActivityDetail"];
+		for (auto allAutoProvisioningGroupHistoriesNodeActivityDetailsActivityDetail : allActivityDetailsNode)
 		{
 			AutoProvisioningGroupHistory::ActivityDetail activityDetailsObject;
-			if(!value["Detail"].isNull())
-				activityDetailsObject.detail = value["Detail"].asString();
-			if(!value["Status"].isNull())
-				activityDetailsObject.status = value["Status"].asString();
+			if(!allAutoProvisioningGroupHistoriesNodeActivityDetailsActivityDetail["Detail"].isNull())
+				activityDetailsObject.detail = allAutoProvisioningGroupHistoriesNodeActivityDetailsActivityDetail["Detail"].asString();
+			if(!allAutoProvisioningGroupHistoriesNodeActivityDetailsActivityDetail["Status"].isNull())
+				activityDetailsObject.status = allAutoProvisioningGroupHistoriesNodeActivityDetailsActivityDetail["Status"].asString();
 			autoProvisioningGroupHistoriesObject.activityDetails.push_back(activityDetailsObject);
 		}
 		autoProvisioningGroupHistories_.push_back(autoProvisioningGroupHistoriesObject);

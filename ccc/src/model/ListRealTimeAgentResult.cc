@@ -39,30 +39,30 @@ void ListRealTimeAgentResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["User"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["User"];
+	for (auto valueDataUser : allDataNode)
 	{
 		User dataObject;
-		if(!value["RamId"].isNull())
-			dataObject.ramId = value["RamId"].asString();
-		if(!value["DisplayName"].isNull())
-			dataObject.displayName = value["DisplayName"].asString();
-		if(!value["Phone"].isNull())
-			dataObject.phone = value["Phone"].asString();
-		if(!value["Dn"].isNull())
-			dataObject.dn = value["Dn"].asString();
-		if(!value["State"].isNull())
-			dataObject.state = value["State"].asString();
-		if(!value["StateDesc"].isNull())
-			dataObject.stateDesc = value["StateDesc"].asString();
-		auto allSkillLevels = value["SkillLevels"]["SkillLevel"];
-		for (auto value : allSkillLevels)
+		if(!valueDataUser["RamId"].isNull())
+			dataObject.ramId = valueDataUser["RamId"].asString();
+		if(!valueDataUser["DisplayName"].isNull())
+			dataObject.displayName = valueDataUser["DisplayName"].asString();
+		if(!valueDataUser["Phone"].isNull())
+			dataObject.phone = valueDataUser["Phone"].asString();
+		if(!valueDataUser["Dn"].isNull())
+			dataObject.dn = valueDataUser["Dn"].asString();
+		if(!valueDataUser["State"].isNull())
+			dataObject.state = valueDataUser["State"].asString();
+		if(!valueDataUser["StateDesc"].isNull())
+			dataObject.stateDesc = valueDataUser["StateDesc"].asString();
+		auto allSkillLevelsNode = allDataNode["SkillLevels"]["SkillLevel"];
+		for (auto allDataNodeSkillLevelsSkillLevel : allSkillLevelsNode)
 		{
 			User::SkillLevel skillLevelsObject;
-			if(!value["SkillLevelId"].isNull())
-				skillLevelsObject.skillLevelId = value["SkillLevelId"].asString();
-			if(!value["Level"].isNull())
-				skillLevelsObject.level = std::stoi(value["Level"].asString());
+			if(!allDataNodeSkillLevelsSkillLevel["SkillLevelId"].isNull())
+				skillLevelsObject.skillLevelId = allDataNodeSkillLevelsSkillLevel["SkillLevelId"].asString();
+			if(!allDataNodeSkillLevelsSkillLevel["Level"].isNull())
+				skillLevelsObject.level = std::stoi(allDataNodeSkillLevelsSkillLevel["Level"].asString());
 			auto skillNode = value["Skill"];
 			if(!skillNode["SkillGroupId"].isNull())
 				skillLevelsObject.skill.skillGroupId = skillNode["SkillGroupId"].asString();

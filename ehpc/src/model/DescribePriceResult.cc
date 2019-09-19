@@ -39,18 +39,18 @@ void DescribePriceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPrices = value["Prices"]["PriceInfo"];
-	for (auto value : allPrices)
+	auto allPricesNode = value["Prices"]["PriceInfo"];
+	for (auto valuePricesPriceInfo : allPricesNode)
 	{
 		PriceInfo pricesObject;
-		if(!value["NodeType"].isNull())
-			pricesObject.nodeType = value["NodeType"].asString();
-		if(!value["OriginalPrice"].isNull())
-			pricesObject.originalPrice = std::stof(value["OriginalPrice"].asString());
-		if(!value["TradePrice"].isNull())
-			pricesObject.tradePrice = std::stof(value["TradePrice"].asString());
-		if(!value["Currency"].isNull())
-			pricesObject.currency = value["Currency"].asString();
+		if(!valuePricesPriceInfo["NodeType"].isNull())
+			pricesObject.nodeType = valuePricesPriceInfo["NodeType"].asString();
+		if(!valuePricesPriceInfo["OriginalPrice"].isNull())
+			pricesObject.originalPrice = std::stof(valuePricesPriceInfo["OriginalPrice"].asString());
+		if(!valuePricesPriceInfo["TradePrice"].isNull())
+			pricesObject.tradePrice = std::stof(valuePricesPriceInfo["TradePrice"].asString());
+		if(!valuePricesPriceInfo["Currency"].isNull())
+			pricesObject.currency = valuePricesPriceInfo["Currency"].asString();
 		prices_.push_back(pricesObject);
 	}
 	if(!value["TotalTradePrice"].isNull())

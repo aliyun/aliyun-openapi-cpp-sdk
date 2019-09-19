@@ -39,26 +39,26 @@ void DescribeDomainsBySourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainsList = value["DomainsList"]["DomainsData"];
-	for (auto value : allDomainsList)
+	auto allDomainsListNode = value["DomainsList"]["DomainsData"];
+	for (auto valueDomainsListDomainsData : allDomainsListNode)
 	{
 		DomainsData domainsListObject;
-		if(!value["Source"].isNull())
-			domainsListObject.source = value["Source"].asString();
-		auto allDomainInfos = value["DomainInfos"]["domainInfo"];
-		for (auto value : allDomainInfos)
+		if(!valueDomainsListDomainsData["Source"].isNull())
+			domainsListObject.source = valueDomainsListDomainsData["Source"].asString();
+		auto allDomainInfosNode = allDomainsListNode["DomainInfos"]["domainInfo"];
+		for (auto allDomainsListNodeDomainInfosdomainInfo : allDomainInfosNode)
 		{
 			DomainsData::DomainInfo domainInfosObject;
-			if(!value["DomainName"].isNull())
-				domainInfosObject.domainName = value["DomainName"].asString();
-			if(!value["DomainCname"].isNull())
-				domainInfosObject.domainCname = value["DomainCname"].asString();
-			if(!value["CreateTime"].isNull())
-				domainInfosObject.createTime = value["CreateTime"].asString();
-			if(!value["UpdateTime"].isNull())
-				domainInfosObject.updateTime = value["UpdateTime"].asString();
-			if(!value["Status"].isNull())
-				domainInfosObject.status = value["Status"].asString();
+			if(!allDomainsListNodeDomainInfosdomainInfo["DomainName"].isNull())
+				domainInfosObject.domainName = allDomainsListNodeDomainInfosdomainInfo["DomainName"].asString();
+			if(!allDomainsListNodeDomainInfosdomainInfo["DomainCname"].isNull())
+				domainInfosObject.domainCname = allDomainsListNodeDomainInfosdomainInfo["DomainCname"].asString();
+			if(!allDomainsListNodeDomainInfosdomainInfo["CreateTime"].isNull())
+				domainInfosObject.createTime = allDomainsListNodeDomainInfosdomainInfo["CreateTime"].asString();
+			if(!allDomainsListNodeDomainInfosdomainInfo["UpdateTime"].isNull())
+				domainInfosObject.updateTime = allDomainsListNodeDomainInfosdomainInfo["UpdateTime"].asString();
+			if(!allDomainsListNodeDomainInfosdomainInfo["Status"].isNull())
+				domainInfosObject.status = allDomainsListNodeDomainInfosdomainInfo["Status"].asString();
 			domainsListObject.domainInfos.push_back(domainInfosObject);
 		}
 		auto allDomains = value["Domains"]["domainNames"];

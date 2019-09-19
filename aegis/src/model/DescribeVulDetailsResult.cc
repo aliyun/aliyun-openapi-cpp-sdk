@@ -39,58 +39,58 @@ void DescribeVulDetailsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCves = value["Cves"]["Cve"];
-	for (auto value : allCves)
+	auto allCvesNode = value["Cves"]["Cve"];
+	for (auto valueCvesCve : allCvesNode)
 	{
 		Cve cvesObject;
-		if(!value["CveId"].isNull())
-			cvesObject.cveId = value["CveId"].asString();
-		if(!value["CnvdId"].isNull())
-			cvesObject.cnvdId = value["CnvdId"].asString();
-		if(!value["OtherId"].isNull())
-			cvesObject.otherId = value["OtherId"].asString();
-		if(!value["Title"].isNull())
-			cvesObject.title = value["Title"].asString();
-		if(!value["CvssScore"].isNull())
-			cvesObject.cvssScore = value["CvssScore"].asString();
-		if(!value["CvssVector"].isNull())
-			cvesObject.cvssVector = value["CvssVector"].asString();
-		if(!value["ReleaseTime"].isNull())
-			cvesObject.releaseTime = std::stol(value["ReleaseTime"].asString());
-		if(!value["Complexity"].isNull())
-			cvesObject.complexity = value["Complexity"].asString();
-		if(!value["Poc"].isNull())
-			cvesObject.poc = value["Poc"].asString();
-		if(!value["PocCreateTime"].isNull())
-			cvesObject.pocCreateTime = std::stol(value["PocCreateTime"].asString());
-		if(!value["PocDisclosureTime"].isNull())
-			cvesObject.pocDisclosureTime = std::stol(value["PocDisclosureTime"].asString());
-		if(!value["Summary"].isNull())
-			cvesObject.summary = value["Summary"].asString();
-		if(!value["Solution"].isNull())
-			cvesObject.solution = value["Solution"].asString();
-		if(!value["Content"].isNull())
-			cvesObject.content = value["Content"].asString();
-		if(!value["Vendor"].isNull())
-			cvesObject.vendor = value["Vendor"].asString();
-		if(!value["Product"].isNull())
-			cvesObject.product = value["Product"].asString();
-		if(!value["VulLevel"].isNull())
-			cvesObject.vulLevel = value["VulLevel"].asString();
-		if(!value["Reference"].isNull())
-			cvesObject.reference = value["Reference"].asString();
-		if(!value["Classify"].isNull())
-			cvesObject.classify = value["Classify"].asString();
-		auto allClassifys = value["Classifys"]["Classify"];
-		for (auto value : allClassifys)
+		if(!valueCvesCve["CveId"].isNull())
+			cvesObject.cveId = valueCvesCve["CveId"].asString();
+		if(!valueCvesCve["CnvdId"].isNull())
+			cvesObject.cnvdId = valueCvesCve["CnvdId"].asString();
+		if(!valueCvesCve["OtherId"].isNull())
+			cvesObject.otherId = valueCvesCve["OtherId"].asString();
+		if(!valueCvesCve["Title"].isNull())
+			cvesObject.title = valueCvesCve["Title"].asString();
+		if(!valueCvesCve["CvssScore"].isNull())
+			cvesObject.cvssScore = valueCvesCve["CvssScore"].asString();
+		if(!valueCvesCve["CvssVector"].isNull())
+			cvesObject.cvssVector = valueCvesCve["CvssVector"].asString();
+		if(!valueCvesCve["ReleaseTime"].isNull())
+			cvesObject.releaseTime = std::stol(valueCvesCve["ReleaseTime"].asString());
+		if(!valueCvesCve["Complexity"].isNull())
+			cvesObject.complexity = valueCvesCve["Complexity"].asString();
+		if(!valueCvesCve["Poc"].isNull())
+			cvesObject.poc = valueCvesCve["Poc"].asString();
+		if(!valueCvesCve["PocCreateTime"].isNull())
+			cvesObject.pocCreateTime = std::stol(valueCvesCve["PocCreateTime"].asString());
+		if(!valueCvesCve["PocDisclosureTime"].isNull())
+			cvesObject.pocDisclosureTime = std::stol(valueCvesCve["PocDisclosureTime"].asString());
+		if(!valueCvesCve["Summary"].isNull())
+			cvesObject.summary = valueCvesCve["Summary"].asString();
+		if(!valueCvesCve["Solution"].isNull())
+			cvesObject.solution = valueCvesCve["Solution"].asString();
+		if(!valueCvesCve["Content"].isNull())
+			cvesObject.content = valueCvesCve["Content"].asString();
+		if(!valueCvesCve["Vendor"].isNull())
+			cvesObject.vendor = valueCvesCve["Vendor"].asString();
+		if(!valueCvesCve["Product"].isNull())
+			cvesObject.product = valueCvesCve["Product"].asString();
+		if(!valueCvesCve["VulLevel"].isNull())
+			cvesObject.vulLevel = valueCvesCve["VulLevel"].asString();
+		if(!valueCvesCve["Reference"].isNull())
+			cvesObject.reference = valueCvesCve["Reference"].asString();
+		if(!valueCvesCve["Classify"].isNull())
+			cvesObject.classify = valueCvesCve["Classify"].asString();
+		auto allClassifysNode = allCvesNode["Classifys"]["Classify"];
+		for (auto allCvesNodeClassifysClassify : allClassifysNode)
 		{
 			Cve::Classify classifysObject;
-			if(!value["Classify"].isNull())
-				classifysObject.classify = value["Classify"].asString();
-			if(!value["Description"].isNull())
-				classifysObject.description = value["Description"].asString();
-			if(!value["DemoVideoUrl"].isNull())
-				classifysObject.demoVideoUrl = value["DemoVideoUrl"].asString();
+			if(!allCvesNodeClassifysClassify["Classify"].isNull())
+				classifysObject.classify = allCvesNodeClassifysClassify["Classify"].asString();
+			if(!allCvesNodeClassifysClassify["Description"].isNull())
+				classifysObject.description = allCvesNodeClassifysClassify["Description"].asString();
+			if(!allCvesNodeClassifysClassify["DemoVideoUrl"].isNull())
+				classifysObject.demoVideoUrl = allCvesNodeClassifysClassify["DemoVideoUrl"].asString();
 			cvesObject.classifys.push_back(classifysObject);
 		}
 		cves_.push_back(cvesObject);

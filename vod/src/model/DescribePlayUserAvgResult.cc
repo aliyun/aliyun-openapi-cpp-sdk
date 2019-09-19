@@ -39,16 +39,16 @@ void DescribePlayUserAvgResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserPlayStatisAvgs = value["UserPlayStatisAvgs"]["UserPlayStatisAvg"];
-	for (auto value : allUserPlayStatisAvgs)
+	auto allUserPlayStatisAvgsNode = value["UserPlayStatisAvgs"]["UserPlayStatisAvg"];
+	for (auto valueUserPlayStatisAvgsUserPlayStatisAvg : allUserPlayStatisAvgsNode)
 	{
 		UserPlayStatisAvg userPlayStatisAvgsObject;
-		if(!value["Date"].isNull())
-			userPlayStatisAvgsObject.date = value["Date"].asString();
-		if(!value["AvgPlayDuration"].isNull())
-			userPlayStatisAvgsObject.avgPlayDuration = value["AvgPlayDuration"].asString();
-		if(!value["AvgPlayCount"].isNull())
-			userPlayStatisAvgsObject.avgPlayCount = value["AvgPlayCount"].asString();
+		if(!valueUserPlayStatisAvgsUserPlayStatisAvg["Date"].isNull())
+			userPlayStatisAvgsObject.date = valueUserPlayStatisAvgsUserPlayStatisAvg["Date"].asString();
+		if(!valueUserPlayStatisAvgsUserPlayStatisAvg["AvgPlayDuration"].isNull())
+			userPlayStatisAvgsObject.avgPlayDuration = valueUserPlayStatisAvgsUserPlayStatisAvg["AvgPlayDuration"].asString();
+		if(!valueUserPlayStatisAvgsUserPlayStatisAvg["AvgPlayCount"].isNull())
+			userPlayStatisAvgsObject.avgPlayCount = valueUserPlayStatisAvgsUserPlayStatisAvg["AvgPlayCount"].asString();
 		userPlayStatisAvgs_.push_back(userPlayStatisAvgsObject);
 	}
 

@@ -40,28 +40,28 @@ void DescribeTraceInfoNodeListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto nodeListInfoNode = value["NodeListInfo"];
-	auto allEdgeList = value["EdgeList"]["Edge"];
-	for (auto value : allEdgeList)
+	auto allEdgeListNode = nodeListInfoNode["EdgeList"]["Edge"];
+	for (auto nodeListInfoNodeEdgeListEdge : allEdgeListNode)
 	{
 		NodeListInfo::Edge edgeObject;
-		if(!value["EndId"].isNull())
-			edgeObject.endId = value["EndId"].asString();
-		if(!value["StartId"].isNull())
-			edgeObject.startId = value["StartId"].asString();
-		if(!value["Time"].isNull())
-			edgeObject.time = value["Time"].asString();
+		if(!nodeListInfoNodeEdgeListEdge["EndId"].isNull())
+			edgeObject.endId = nodeListInfoNodeEdgeListEdge["EndId"].asString();
+		if(!nodeListInfoNodeEdgeListEdge["StartId"].isNull())
+			edgeObject.startId = nodeListInfoNodeEdgeListEdge["StartId"].asString();
+		if(!nodeListInfoNodeEdgeListEdge["Time"].isNull())
+			edgeObject.time = nodeListInfoNodeEdgeListEdge["Time"].asString();
 		nodeListInfo_.edgeList.push_back(edgeObject);
 	}
-	auto allVertexList = value["VertexList"]["Vertex"];
-	for (auto value : allVertexList)
+	auto allVertexListNode = nodeListInfoNode["VertexList"]["Vertex"];
+	for (auto nodeListInfoNodeVertexListVertex : allVertexListNode)
 	{
 		NodeListInfo::Vertex vertexObject;
-		if(!value["Name"].isNull())
-			vertexObject.name = value["Name"].asString();
-		if(!value["Id"].isNull())
-			vertexObject.id = value["Id"].asString();
-		if(!value["Time"].isNull())
-			vertexObject.time = value["Time"].asString();
+		if(!nodeListInfoNodeVertexListVertex["Name"].isNull())
+			vertexObject.name = nodeListInfoNodeVertexListVertex["Name"].asString();
+		if(!nodeListInfoNodeVertexListVertex["Id"].isNull())
+			vertexObject.id = nodeListInfoNodeVertexListVertex["Id"].asString();
+		if(!nodeListInfoNodeVertexListVertex["Time"].isNull())
+			vertexObject.time = nodeListInfoNodeVertexListVertex["Time"].asString();
 		auto allNeighborList = value["NeighborList"]["StringItem"];
 		for (auto value : allNeighborList)
 			vertexObject.neighborList.push_back(value.asString());

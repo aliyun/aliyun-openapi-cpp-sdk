@@ -39,16 +39,16 @@ void DescribeShardDBsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DbIntancePair"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DbIntancePair"];
+	for (auto valueDataDbIntancePair : allDataNode)
 	{
 		DbIntancePair dataObject;
-		if(!value["SubDbName"].isNull())
-			dataObject.subDbName = value["SubDbName"].asString();
-		if(!value["InstanceName"].isNull())
-			dataObject.instanceName = value["InstanceName"].asString();
-		if(!value["GroupName"].isNull())
-			dataObject.groupName = value["GroupName"].asString();
+		if(!valueDataDbIntancePair["SubDbName"].isNull())
+			dataObject.subDbName = valueDataDbIntancePair["SubDbName"].asString();
+		if(!valueDataDbIntancePair["InstanceName"].isNull())
+			dataObject.instanceName = valueDataDbIntancePair["InstanceName"].asString();
+		if(!valueDataDbIntancePair["GroupName"].isNull())
+			dataObject.groupName = valueDataDbIntancePair["GroupName"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

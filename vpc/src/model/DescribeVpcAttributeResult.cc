@@ -39,26 +39,26 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAssociatedCens = value["AssociatedCens"]["AssociatedCen"];
-	for (auto value : allAssociatedCens)
+	auto allAssociatedCensNode = value["AssociatedCens"]["AssociatedCen"];
+	for (auto valueAssociatedCensAssociatedCen : allAssociatedCensNode)
 	{
 		AssociatedCen associatedCensObject;
-		if(!value["CenId"].isNull())
-			associatedCensObject.cenId = value["CenId"].asString();
-		if(!value["CenOwnerId"].isNull())
-			associatedCensObject.cenOwnerId = std::stol(value["CenOwnerId"].asString());
-		if(!value["CenStatus"].isNull())
-			associatedCensObject.cenStatus = value["CenStatus"].asString();
+		if(!valueAssociatedCensAssociatedCen["CenId"].isNull())
+			associatedCensObject.cenId = valueAssociatedCensAssociatedCen["CenId"].asString();
+		if(!valueAssociatedCensAssociatedCen["CenOwnerId"].isNull())
+			associatedCensObject.cenOwnerId = std::stol(valueAssociatedCensAssociatedCen["CenOwnerId"].asString());
+		if(!valueAssociatedCensAssociatedCen["CenStatus"].isNull())
+			associatedCensObject.cenStatus = valueAssociatedCensAssociatedCen["CenStatus"].asString();
 		associatedCens_.push_back(associatedCensObject);
 	}
-	auto allCloudResources = value["CloudResources"]["CloudResourceSetType"];
-	for (auto value : allCloudResources)
+	auto allCloudResourcesNode = value["CloudResources"]["CloudResourceSetType"];
+	for (auto valueCloudResourcesCloudResourceSetType : allCloudResourcesNode)
 	{
 		CloudResourceSetType cloudResourcesObject;
-		if(!value["ResourceType"].isNull())
-			cloudResourcesObject.resourceType = value["ResourceType"].asString();
-		if(!value["ResourceCount"].isNull())
-			cloudResourcesObject.resourceCount = std::stoi(value["ResourceCount"].asString());
+		if(!valueCloudResourcesCloudResourceSetType["ResourceType"].isNull())
+			cloudResourcesObject.resourceType = valueCloudResourcesCloudResourceSetType["ResourceType"].asString();
+		if(!valueCloudResourcesCloudResourceSetType["ResourceCount"].isNull())
+			cloudResourcesObject.resourceCount = std::stoi(valueCloudResourcesCloudResourceSetType["ResourceCount"].asString());
 		cloudResources_.push_back(cloudResourcesObject);
 	}
 	auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];

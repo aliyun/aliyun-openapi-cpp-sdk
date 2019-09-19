@@ -39,30 +39,30 @@ void DescribeWebsiteScanResultResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allWebsiteScanResultList = value["WebsiteScanResultList"]["WebsiteScanResult"];
-	for (auto value : allWebsiteScanResultList)
+	auto allWebsiteScanResultListNode = value["WebsiteScanResultList"]["WebsiteScanResult"];
+	for (auto valueWebsiteScanResultListWebsiteScanResult : allWebsiteScanResultListNode)
 	{
 		WebsiteScanResult websiteScanResultListObject;
-		if(!value["InstanceId"].isNull())
-			websiteScanResultListObject.instanceId = value["InstanceId"].asString();
-		if(!value["ScanTime"].isNull())
-			websiteScanResultListObject.scanTime = value["ScanTime"].asString();
-		if(!value["Domain"].isNull())
-			websiteScanResultListObject.domain = value["Domain"].asString();
-		if(!value["SourceRiskCount"].isNull())
-			websiteScanResultListObject.sourceRiskCount = std::stoi(value["SourceRiskCount"].asString());
-		if(!value["ImageRiskCount"].isNull())
-			websiteScanResultListObject.imageRiskCount = std::stoi(value["ImageRiskCount"].asString());
-		if(!value["HandleStatus"].isNull())
-			websiteScanResultListObject.handleStatus = std::stoi(value["HandleStatus"].asString());
-		if(!value["Id"].isNull())
-			websiteScanResultListObject.id = std::stoi(value["Id"].asString());
-		if(!value["TextRiskCount"].isNull())
-			websiteScanResultListObject.textRiskCount = std::stoi(value["TextRiskCount"].asString());
-		if(!value["TaskId"].isNull())
-			websiteScanResultListObject.taskId = value["TaskId"].asString();
-		if(!value["Url"].isNull())
-			websiteScanResultListObject.url = value["Url"].asString();
+		if(!valueWebsiteScanResultListWebsiteScanResult["InstanceId"].isNull())
+			websiteScanResultListObject.instanceId = valueWebsiteScanResultListWebsiteScanResult["InstanceId"].asString();
+		if(!valueWebsiteScanResultListWebsiteScanResult["ScanTime"].isNull())
+			websiteScanResultListObject.scanTime = valueWebsiteScanResultListWebsiteScanResult["ScanTime"].asString();
+		if(!valueWebsiteScanResultListWebsiteScanResult["Domain"].isNull())
+			websiteScanResultListObject.domain = valueWebsiteScanResultListWebsiteScanResult["Domain"].asString();
+		if(!valueWebsiteScanResultListWebsiteScanResult["SourceRiskCount"].isNull())
+			websiteScanResultListObject.sourceRiskCount = std::stoi(valueWebsiteScanResultListWebsiteScanResult["SourceRiskCount"].asString());
+		if(!valueWebsiteScanResultListWebsiteScanResult["ImageRiskCount"].isNull())
+			websiteScanResultListObject.imageRiskCount = std::stoi(valueWebsiteScanResultListWebsiteScanResult["ImageRiskCount"].asString());
+		if(!valueWebsiteScanResultListWebsiteScanResult["HandleStatus"].isNull())
+			websiteScanResultListObject.handleStatus = std::stoi(valueWebsiteScanResultListWebsiteScanResult["HandleStatus"].asString());
+		if(!valueWebsiteScanResultListWebsiteScanResult["Id"].isNull())
+			websiteScanResultListObject.id = std::stoi(valueWebsiteScanResultListWebsiteScanResult["Id"].asString());
+		if(!valueWebsiteScanResultListWebsiteScanResult["TextRiskCount"].isNull())
+			websiteScanResultListObject.textRiskCount = std::stoi(valueWebsiteScanResultListWebsiteScanResult["TextRiskCount"].asString());
+		if(!valueWebsiteScanResultListWebsiteScanResult["TaskId"].isNull())
+			websiteScanResultListObject.taskId = valueWebsiteScanResultListWebsiteScanResult["TaskId"].asString();
+		if(!valueWebsiteScanResultListWebsiteScanResult["Url"].isNull())
+			websiteScanResultListObject.url = valueWebsiteScanResultListWebsiteScanResult["Url"].asString();
 		auto allLabels = value["Labels"]["StringItem"];
 		for (auto value : allLabels)
 			websiteScanResultListObject.labels.push_back(value.asString());

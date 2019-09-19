@@ -39,32 +39,32 @@ void DescribeAccessWhiteListGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataList = value["DataList"]["Data"];
-	for (auto value : allDataList)
+	auto allDataListNode = value["DataList"]["Data"];
+	for (auto valueDataListData : allDataListNode)
 	{
 		Data dataListObject;
-		if(!value["Status"].isNull())
-			dataListObject.status = value["Status"].asString();
-		if(!value["InsProduct"].isNull())
-			dataListObject.insProduct = value["InsProduct"].asString();
-		if(!value["GmtCreate"].isNull())
-			dataListObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtRealExpire"].isNull())
-			dataListObject.gmtRealExpire = value["GmtRealExpire"].asString();
-		if(!value["SrcIP"].isNull())
-			dataListObject.srcIP = value["SrcIP"].asString();
-		if(!value["AutoConfig"].isNull())
-			dataListObject.autoConfig = std::stoi(value["AutoConfig"].asString());
-		if(!value["GroupId"].isNull())
-			dataListObject.groupId = std::stoi(value["GroupId"].asString());
-		auto allItems = value["Items"]["Item"];
-		for (auto value : allItems)
+		if(!valueDataListData["Status"].isNull())
+			dataListObject.status = valueDataListData["Status"].asString();
+		if(!valueDataListData["InsProduct"].isNull())
+			dataListObject.insProduct = valueDataListData["InsProduct"].asString();
+		if(!valueDataListData["GmtCreate"].isNull())
+			dataListObject.gmtCreate = valueDataListData["GmtCreate"].asString();
+		if(!valueDataListData["GmtRealExpire"].isNull())
+			dataListObject.gmtRealExpire = valueDataListData["GmtRealExpire"].asString();
+		if(!valueDataListData["SrcIP"].isNull())
+			dataListObject.srcIP = valueDataListData["SrcIP"].asString();
+		if(!valueDataListData["AutoConfig"].isNull())
+			dataListObject.autoConfig = std::stoi(valueDataListData["AutoConfig"].asString());
+		if(!valueDataListData["GroupId"].isNull())
+			dataListObject.groupId = std::stoi(valueDataListData["GroupId"].asString());
+		auto allItemsNode = allDataListNode["Items"]["Item"];
+		for (auto allDataListNodeItemsItem : allItemsNode)
 		{
 			Data::Item itemsObject;
-			if(!value["IP"].isNull())
-				itemsObject.iP = value["IP"].asString();
-			if(!value["RegionId"].isNull())
-				itemsObject.regionId = value["RegionId"].asString();
+			if(!allDataListNodeItemsItem["IP"].isNull())
+				itemsObject.iP = allDataListNodeItemsItem["IP"].asString();
+			if(!allDataListNodeItemsItem["RegionId"].isNull())
+				itemsObject.regionId = allDataListNodeItemsItem["RegionId"].asString();
 			dataListObject.items.push_back(itemsObject);
 		}
 		dataList_.push_back(dataListObject);

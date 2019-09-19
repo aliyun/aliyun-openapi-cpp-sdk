@@ -39,76 +39,76 @@ void DescribeFlowInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDependencyFlowList = value["DependencyFlowList"]["ParentFlow"];
-	for (auto value : allDependencyFlowList)
+	auto allDependencyFlowListNode = value["DependencyFlowList"]["ParentFlow"];
+	for (auto valueDependencyFlowListParentFlow : allDependencyFlowListNode)
 	{
 		ParentFlow dependencyFlowListObject;
-		if(!value["ProjectId"].isNull())
-			dependencyFlowListObject.projectId = value["ProjectId"].asString();
-		if(!value["FlowId"].isNull())
-			dependencyFlowListObject.flowId = value["FlowId"].asString();
-		if(!value["DependencyFlowId"].isNull())
-			dependencyFlowListObject.dependencyFlowId = value["DependencyFlowId"].asString();
-		if(!value["FlowInstanceId"].isNull())
-			dependencyFlowListObject.flowInstanceId = value["FlowInstanceId"].asString();
-		if(!value["DependencyInstanceId"].isNull())
-			dependencyFlowListObject.dependencyInstanceId = value["DependencyInstanceId"].asString();
-		if(!value["ScheduleKey"].isNull())
-			dependencyFlowListObject.scheduleKey = value["ScheduleKey"].asString();
-		if(!value["BizDate"].isNull())
-			dependencyFlowListObject.bizDate = std::stol(value["BizDate"].asString());
+		if(!valueDependencyFlowListParentFlow["ProjectId"].isNull())
+			dependencyFlowListObject.projectId = valueDependencyFlowListParentFlow["ProjectId"].asString();
+		if(!valueDependencyFlowListParentFlow["FlowId"].isNull())
+			dependencyFlowListObject.flowId = valueDependencyFlowListParentFlow["FlowId"].asString();
+		if(!valueDependencyFlowListParentFlow["DependencyFlowId"].isNull())
+			dependencyFlowListObject.dependencyFlowId = valueDependencyFlowListParentFlow["DependencyFlowId"].asString();
+		if(!valueDependencyFlowListParentFlow["FlowInstanceId"].isNull())
+			dependencyFlowListObject.flowInstanceId = valueDependencyFlowListParentFlow["FlowInstanceId"].asString();
+		if(!valueDependencyFlowListParentFlow["DependencyInstanceId"].isNull())
+			dependencyFlowListObject.dependencyInstanceId = valueDependencyFlowListParentFlow["DependencyInstanceId"].asString();
+		if(!valueDependencyFlowListParentFlow["ScheduleKey"].isNull())
+			dependencyFlowListObject.scheduleKey = valueDependencyFlowListParentFlow["ScheduleKey"].asString();
+		if(!valueDependencyFlowListParentFlow["BizDate"].isNull())
+			dependencyFlowListObject.bizDate = std::stol(valueDependencyFlowListParentFlow["BizDate"].asString());
 		dependencyFlowList_.push_back(dependencyFlowListObject);
 	}
-	auto allNodeInstance = value["NodeInstance"]["NodeInstanceItem"];
-	for (auto value : allNodeInstance)
+	auto allNodeInstanceNode = value["NodeInstance"]["NodeInstanceItem"];
+	for (auto valueNodeInstanceNodeInstanceItem : allNodeInstanceNode)
 	{
 		NodeInstanceItem nodeInstanceObject;
-		if(!value["Id"].isNull())
-			nodeInstanceObject.id = value["Id"].asString();
-		if(!value["GmtCreate"].isNull())
-			nodeInstanceObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			nodeInstanceObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["Type"].isNull())
-			nodeInstanceObject.type = value["Type"].asString();
-		if(!value["Status"].isNull())
-			nodeInstanceObject.status = value["Status"].asString();
-		if(!value["JobId"].isNull())
-			nodeInstanceObject.jobId = value["JobId"].asString();
-		if(!value["JobName"].isNull())
-			nodeInstanceObject.jobName = value["JobName"].asString();
-		if(!value["JobType"].isNull())
-			nodeInstanceObject.jobType = value["JobType"].asString();
-		if(!value["FailAct"].isNull())
-			nodeInstanceObject.failAct = value["FailAct"].asString();
-		if(!value["MaxRetry"].isNull())
-			nodeInstanceObject.maxRetry = value["MaxRetry"].asString();
-		if(!value["RetryInterval"].isNull())
-			nodeInstanceObject.retryInterval = value["RetryInterval"].asString();
-		if(!value["NodeName"].isNull())
-			nodeInstanceObject.nodeName = value["NodeName"].asString();
-		if(!value["ClusterId"].isNull())
-			nodeInstanceObject.clusterId = value["ClusterId"].asString();
-		if(!value["HostName"].isNull())
-			nodeInstanceObject.hostName = value["HostName"].asString();
-		if(!value["ProjectId"].isNull())
-			nodeInstanceObject.projectId = value["ProjectId"].asString();
-		if(!value["Pending"].isNull())
-			nodeInstanceObject.pending = value["Pending"].asString() == "true";
-		if(!value["StartTime"].isNull())
-			nodeInstanceObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["EndTime"].isNull())
-			nodeInstanceObject.endTime = std::stol(value["EndTime"].asString());
-		if(!value["Duration"].isNull())
-			nodeInstanceObject.duration = std::stol(value["Duration"].asString());
-		if(!value["Retries"].isNull())
-			nodeInstanceObject.retries = std::stoi(value["Retries"].asString());
-		if(!value["ExternalId"].isNull())
-			nodeInstanceObject.externalId = value["ExternalId"].asString();
-		if(!value["ExternalStatus"].isNull())
-			nodeInstanceObject.externalStatus = value["ExternalStatus"].asString();
-		if(!value["ExternalInfo"].isNull())
-			nodeInstanceObject.externalInfo = value["ExternalInfo"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["Id"].isNull())
+			nodeInstanceObject.id = valueNodeInstanceNodeInstanceItem["Id"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["GmtCreate"].isNull())
+			nodeInstanceObject.gmtCreate = std::stol(valueNodeInstanceNodeInstanceItem["GmtCreate"].asString());
+		if(!valueNodeInstanceNodeInstanceItem["GmtModified"].isNull())
+			nodeInstanceObject.gmtModified = std::stol(valueNodeInstanceNodeInstanceItem["GmtModified"].asString());
+		if(!valueNodeInstanceNodeInstanceItem["Type"].isNull())
+			nodeInstanceObject.type = valueNodeInstanceNodeInstanceItem["Type"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["Status"].isNull())
+			nodeInstanceObject.status = valueNodeInstanceNodeInstanceItem["Status"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["JobId"].isNull())
+			nodeInstanceObject.jobId = valueNodeInstanceNodeInstanceItem["JobId"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["JobName"].isNull())
+			nodeInstanceObject.jobName = valueNodeInstanceNodeInstanceItem["JobName"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["JobType"].isNull())
+			nodeInstanceObject.jobType = valueNodeInstanceNodeInstanceItem["JobType"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["FailAct"].isNull())
+			nodeInstanceObject.failAct = valueNodeInstanceNodeInstanceItem["FailAct"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["MaxRetry"].isNull())
+			nodeInstanceObject.maxRetry = valueNodeInstanceNodeInstanceItem["MaxRetry"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["RetryInterval"].isNull())
+			nodeInstanceObject.retryInterval = valueNodeInstanceNodeInstanceItem["RetryInterval"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["NodeName"].isNull())
+			nodeInstanceObject.nodeName = valueNodeInstanceNodeInstanceItem["NodeName"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["ClusterId"].isNull())
+			nodeInstanceObject.clusterId = valueNodeInstanceNodeInstanceItem["ClusterId"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["HostName"].isNull())
+			nodeInstanceObject.hostName = valueNodeInstanceNodeInstanceItem["HostName"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["ProjectId"].isNull())
+			nodeInstanceObject.projectId = valueNodeInstanceNodeInstanceItem["ProjectId"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["Pending"].isNull())
+			nodeInstanceObject.pending = valueNodeInstanceNodeInstanceItem["Pending"].asString() == "true";
+		if(!valueNodeInstanceNodeInstanceItem["StartTime"].isNull())
+			nodeInstanceObject.startTime = std::stol(valueNodeInstanceNodeInstanceItem["StartTime"].asString());
+		if(!valueNodeInstanceNodeInstanceItem["EndTime"].isNull())
+			nodeInstanceObject.endTime = std::stol(valueNodeInstanceNodeInstanceItem["EndTime"].asString());
+		if(!valueNodeInstanceNodeInstanceItem["Duration"].isNull())
+			nodeInstanceObject.duration = std::stol(valueNodeInstanceNodeInstanceItem["Duration"].asString());
+		if(!valueNodeInstanceNodeInstanceItem["Retries"].isNull())
+			nodeInstanceObject.retries = std::stoi(valueNodeInstanceNodeInstanceItem["Retries"].asString());
+		if(!valueNodeInstanceNodeInstanceItem["ExternalId"].isNull())
+			nodeInstanceObject.externalId = valueNodeInstanceNodeInstanceItem["ExternalId"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["ExternalStatus"].isNull())
+			nodeInstanceObject.externalStatus = valueNodeInstanceNodeInstanceItem["ExternalStatus"].asString();
+		if(!valueNodeInstanceNodeInstanceItem["ExternalInfo"].isNull())
+			nodeInstanceObject.externalInfo = valueNodeInstanceNodeInstanceItem["ExternalInfo"].asString();
 		nodeInstance_.push_back(nodeInstanceObject);
 	}
 	if(!value["Id"].isNull())

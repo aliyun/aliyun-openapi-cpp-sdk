@@ -39,23 +39,23 @@ void DescribeMasterSlaveServerGroupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMasterSlaveServerGroups = value["MasterSlaveServerGroups"]["MasterSlaveServerGroup"];
-	for (auto value : allMasterSlaveServerGroups)
+	auto allMasterSlaveServerGroupsNode = value["MasterSlaveServerGroups"]["MasterSlaveServerGroup"];
+	for (auto valueMasterSlaveServerGroupsMasterSlaveServerGroup : allMasterSlaveServerGroupsNode)
 	{
 		MasterSlaveServerGroup masterSlaveServerGroupsObject;
-		if(!value["MasterSlaveServerGroupId"].isNull())
-			masterSlaveServerGroupsObject.masterSlaveServerGroupId = value["MasterSlaveServerGroupId"].asString();
-		if(!value["MasterSlaveServerGroupName"].isNull())
-			masterSlaveServerGroupsObject.masterSlaveServerGroupName = value["MasterSlaveServerGroupName"].asString();
+		if(!valueMasterSlaveServerGroupsMasterSlaveServerGroup["MasterSlaveServerGroupId"].isNull())
+			masterSlaveServerGroupsObject.masterSlaveServerGroupId = valueMasterSlaveServerGroupsMasterSlaveServerGroup["MasterSlaveServerGroupId"].asString();
+		if(!valueMasterSlaveServerGroupsMasterSlaveServerGroup["MasterSlaveServerGroupName"].isNull())
+			masterSlaveServerGroupsObject.masterSlaveServerGroupName = valueMasterSlaveServerGroupsMasterSlaveServerGroup["MasterSlaveServerGroupName"].asString();
 		auto associatedObjectsNode = value["AssociatedObjects"];
-		auto allListeners = value["Listeners"]["Listener"];
-		for (auto value : allListeners)
+		auto allListenersNode = associatedObjectsNode["Listeners"]["Listener"];
+		for (auto associatedObjectsNodeListenersListener : allListenersNode)
 		{
 			MasterSlaveServerGroup::AssociatedObjects::Listener listenerObject;
-			if(!value["Protocol"].isNull())
-				listenerObject.protocol = value["Protocol"].asString();
-			if(!value["Port"].isNull())
-				listenerObject.port = std::stoi(value["Port"].asString());
+			if(!associatedObjectsNodeListenersListener["Protocol"].isNull())
+				listenerObject.protocol = associatedObjectsNodeListenersListener["Protocol"].asString();
+			if(!associatedObjectsNodeListenersListener["Port"].isNull())
+				listenerObject.port = std::stoi(associatedObjectsNodeListenersListener["Port"].asString());
 			masterSlaveServerGroupsObject.associatedObjects.listeners.push_back(listenerObject);
 		}
 		masterSlaveServerGroups_.push_back(masterSlaveServerGroupsObject);

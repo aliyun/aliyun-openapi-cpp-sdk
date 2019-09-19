@@ -39,28 +39,28 @@ void DescribeWebLockConfigListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConfigList = value["ConfigList"]["ConfigInfo"];
-	for (auto value : allConfigList)
+	auto allConfigListNode = value["ConfigList"]["ConfigInfo"];
+	for (auto valueConfigListConfigInfo : allConfigListNode)
 	{
 		ConfigInfo configListObject;
-		if(!value["Id"].isNull())
-			configListObject.id = value["Id"].asString();
-		if(!value["Uuid"].isNull())
-			configListObject.uuid = value["Uuid"].asString();
-		if(!value["Dir"].isNull())
-			configListObject.dir = value["Dir"].asString();
-		if(!value["ExclusiveDir"].isNull())
-			configListObject.exclusiveDir = value["ExclusiveDir"].asString();
-		if(!value["ExclusiveFileType"].isNull())
-			configListObject.exclusiveFileType = value["ExclusiveFileType"].asString();
-		if(!value["LocalBackupDir"].isNull())
-			configListObject.localBackupDir = value["LocalBackupDir"].asString();
-		if(!value["Mode"].isNull())
-			configListObject.mode = value["Mode"].asString();
-		if(!value["InclusiveFileType"].isNull())
-			configListObject.inclusiveFileType = value["InclusiveFileType"].asString();
-		if(!value["ExclusiveFile"].isNull())
-			configListObject.exclusiveFile = value["ExclusiveFile"].asString();
+		if(!valueConfigListConfigInfo["Id"].isNull())
+			configListObject.id = valueConfigListConfigInfo["Id"].asString();
+		if(!valueConfigListConfigInfo["Uuid"].isNull())
+			configListObject.uuid = valueConfigListConfigInfo["Uuid"].asString();
+		if(!valueConfigListConfigInfo["Dir"].isNull())
+			configListObject.dir = valueConfigListConfigInfo["Dir"].asString();
+		if(!valueConfigListConfigInfo["ExclusiveDir"].isNull())
+			configListObject.exclusiveDir = valueConfigListConfigInfo["ExclusiveDir"].asString();
+		if(!valueConfigListConfigInfo["ExclusiveFileType"].isNull())
+			configListObject.exclusiveFileType = valueConfigListConfigInfo["ExclusiveFileType"].asString();
+		if(!valueConfigListConfigInfo["LocalBackupDir"].isNull())
+			configListObject.localBackupDir = valueConfigListConfigInfo["LocalBackupDir"].asString();
+		if(!valueConfigListConfigInfo["Mode"].isNull())
+			configListObject.mode = valueConfigListConfigInfo["Mode"].asString();
+		if(!valueConfigListConfigInfo["InclusiveFileType"].isNull())
+			configListObject.inclusiveFileType = valueConfigListConfigInfo["InclusiveFileType"].asString();
+		if(!valueConfigListConfigInfo["ExclusiveFile"].isNull())
+			configListObject.exclusiveFile = valueConfigListConfigInfo["ExclusiveFile"].asString();
 		configList_.push_back(configListObject);
 	}
 	if(!value["TotalCount"].isNull())

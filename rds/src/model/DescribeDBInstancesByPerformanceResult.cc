@@ -39,22 +39,22 @@ void DescribeDBInstancesByPerformanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["DBInstancePerformance"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["DBInstancePerformance"];
+	for (auto valueItemsDBInstancePerformance : allItemsNode)
 	{
 		DBInstancePerformance itemsObject;
-		if(!value["CPUUsage"].isNull())
-			itemsObject.cPUUsage = value["CPUUsage"].asString();
-		if(!value["IOPSUsage"].isNull())
-			itemsObject.iOPSUsage = value["IOPSUsage"].asString();
-		if(!value["DiskUsage"].isNull())
-			itemsObject.diskUsage = value["DiskUsage"].asString();
-		if(!value["SessionUsage"].isNull())
-			itemsObject.sessionUsage = value["SessionUsage"].asString();
-		if(!value["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["DBInstanceDescription"].isNull())
-			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
+		if(!valueItemsDBInstancePerformance["CPUUsage"].isNull())
+			itemsObject.cPUUsage = valueItemsDBInstancePerformance["CPUUsage"].asString();
+		if(!valueItemsDBInstancePerformance["IOPSUsage"].isNull())
+			itemsObject.iOPSUsage = valueItemsDBInstancePerformance["IOPSUsage"].asString();
+		if(!valueItemsDBInstancePerformance["DiskUsage"].isNull())
+			itemsObject.diskUsage = valueItemsDBInstancePerformance["DiskUsage"].asString();
+		if(!valueItemsDBInstancePerformance["SessionUsage"].isNull())
+			itemsObject.sessionUsage = valueItemsDBInstancePerformance["SessionUsage"].asString();
+		if(!valueItemsDBInstancePerformance["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsDBInstancePerformance["DBInstanceId"].asString();
+		if(!valueItemsDBInstancePerformance["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = valueItemsDBInstancePerformance["DBInstanceDescription"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

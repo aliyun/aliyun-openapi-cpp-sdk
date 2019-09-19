@@ -39,16 +39,16 @@ void QuerySuperDeviceGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["GroupInfo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["GroupInfo"];
+	for (auto valueDataGroupInfo : allDataNode)
 	{
 		GroupInfo dataObject;
-		if(!value["GroupId"].isNull())
-			dataObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			dataObject.groupName = value["GroupName"].asString();
-		if(!value["GroupDesc"].isNull())
-			dataObject.groupDesc = value["GroupDesc"].asString();
+		if(!valueDataGroupInfo["GroupId"].isNull())
+			dataObject.groupId = valueDataGroupInfo["GroupId"].asString();
+		if(!valueDataGroupInfo["GroupName"].isNull())
+			dataObject.groupName = valueDataGroupInfo["GroupName"].asString();
+		if(!valueDataGroupInfo["GroupDesc"].isNull())
+			dataObject.groupDesc = valueDataGroupInfo["GroupDesc"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

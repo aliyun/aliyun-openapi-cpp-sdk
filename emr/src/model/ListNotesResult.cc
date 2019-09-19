@@ -39,16 +39,16 @@ void ListNotesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNotes = value["Notes"]["NoteInfo"];
-	for (auto value : allNotes)
+	auto allNotesNode = value["Notes"]["NoteInfo"];
+	for (auto valueNotesNoteInfo : allNotesNode)
 	{
 		NoteInfo notesObject;
-		if(!value["Id"].isNull())
-			notesObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			notesObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			notesObject.type = value["Type"].asString();
+		if(!valueNotesNoteInfo["Id"].isNull())
+			notesObject.id = valueNotesNoteInfo["Id"].asString();
+		if(!valueNotesNoteInfo["Name"].isNull())
+			notesObject.name = valueNotesNoteInfo["Name"].asString();
+		if(!valueNotesNoteInfo["Type"].isNull())
+			notesObject.type = valueNotesNoteInfo["Type"].asString();
 		notes_.push_back(notesObject);
 	}
 

@@ -39,20 +39,20 @@ void DescribeCustomerGatewaysResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCustomerGateways = value["CustomerGateways"]["CustomerGateway"];
-	for (auto value : allCustomerGateways)
+	auto allCustomerGatewaysNode = value["CustomerGateways"]["CustomerGateway"];
+	for (auto valueCustomerGatewaysCustomerGateway : allCustomerGatewaysNode)
 	{
 		CustomerGateway customerGatewaysObject;
-		if(!value["CustomerGatewayId"].isNull())
-			customerGatewaysObject.customerGatewayId = value["CustomerGatewayId"].asString();
-		if(!value["Name"].isNull())
-			customerGatewaysObject.name = value["Name"].asString();
-		if(!value["IpAddress"].isNull())
-			customerGatewaysObject.ipAddress = value["IpAddress"].asString();
-		if(!value["Description"].isNull())
-			customerGatewaysObject.description = value["Description"].asString();
-		if(!value["CreateTime"].isNull())
-			customerGatewaysObject.createTime = std::stol(value["CreateTime"].asString());
+		if(!valueCustomerGatewaysCustomerGateway["CustomerGatewayId"].isNull())
+			customerGatewaysObject.customerGatewayId = valueCustomerGatewaysCustomerGateway["CustomerGatewayId"].asString();
+		if(!valueCustomerGatewaysCustomerGateway["Name"].isNull())
+			customerGatewaysObject.name = valueCustomerGatewaysCustomerGateway["Name"].asString();
+		if(!valueCustomerGatewaysCustomerGateway["IpAddress"].isNull())
+			customerGatewaysObject.ipAddress = valueCustomerGatewaysCustomerGateway["IpAddress"].asString();
+		if(!valueCustomerGatewaysCustomerGateway["Description"].isNull())
+			customerGatewaysObject.description = valueCustomerGatewaysCustomerGateway["Description"].asString();
+		if(!valueCustomerGatewaysCustomerGateway["CreateTime"].isNull())
+			customerGatewaysObject.createTime = std::stol(valueCustomerGatewaysCustomerGateway["CreateTime"].asString());
 		customerGateways_.push_back(customerGatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())

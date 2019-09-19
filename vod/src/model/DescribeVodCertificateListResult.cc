@@ -42,22 +42,22 @@ void DescribeVodCertificateListResult::parse(const std::string &payload)
 	auto certificateListModelNode = value["CertificateListModel"];
 	if(!certificateListModelNode["Count"].isNull())
 		certificateListModel_.count = std::stoi(certificateListModelNode["Count"].asString());
-	auto allCertList = value["CertList"]["Cert"];
-	for (auto value : allCertList)
+	auto allCertListNode = certificateListModelNode["CertList"]["Cert"];
+	for (auto certificateListModelNodeCertListCert : allCertListNode)
 	{
 		CertificateListModel::Cert certObject;
-		if(!value["CertName"].isNull())
-			certObject.certName = value["CertName"].asString();
-		if(!value["CertId"].isNull())
-			certObject.certId = std::stol(value["CertId"].asString());
-		if(!value["Fingerprint"].isNull())
-			certObject.fingerprint = value["Fingerprint"].asString();
-		if(!value["Common"].isNull())
-			certObject.common = value["Common"].asString();
-		if(!value["Issuer"].isNull())
-			certObject.issuer = value["Issuer"].asString();
-		if(!value["LastTime"].isNull())
-			certObject.lastTime = std::stol(value["LastTime"].asString());
+		if(!certificateListModelNodeCertListCert["CertName"].isNull())
+			certObject.certName = certificateListModelNodeCertListCert["CertName"].asString();
+		if(!certificateListModelNodeCertListCert["CertId"].isNull())
+			certObject.certId = std::stol(certificateListModelNodeCertListCert["CertId"].asString());
+		if(!certificateListModelNodeCertListCert["Fingerprint"].isNull())
+			certObject.fingerprint = certificateListModelNodeCertListCert["Fingerprint"].asString();
+		if(!certificateListModelNodeCertListCert["Common"].isNull())
+			certObject.common = certificateListModelNodeCertListCert["Common"].asString();
+		if(!certificateListModelNodeCertListCert["Issuer"].isNull())
+			certObject.issuer = certificateListModelNodeCertListCert["Issuer"].asString();
+		if(!certificateListModelNodeCertListCert["LastTime"].isNull())
+			certObject.lastTime = std::stol(certificateListModelNodeCertListCert["LastTime"].asString());
 		certificateListModel_.certList.push_back(certObject);
 	}
 

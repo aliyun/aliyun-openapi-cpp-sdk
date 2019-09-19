@@ -39,22 +39,22 @@ void NodeProcessesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNodeProcesses = value["NodeProcesses"]["NodeProcess"];
-	for (auto value : allNodeProcesses)
+	auto allNodeProcessesNode = value["NodeProcesses"]["NodeProcess"];
+	for (auto valueNodeProcessesNodeProcess : allNodeProcessesNode)
 	{
 		NodeProcess nodeProcessesObject;
-		if(!value["Id"].isNull())
-			nodeProcessesObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			nodeProcessesObject.name = value["Name"].asString();
-		if(!value["InstanceId"].isNull())
-			nodeProcessesObject.instanceId = value["InstanceId"].asString();
-		if(!value["ProcessName"].isNull())
-			nodeProcessesObject.processName = value["ProcessName"].asString();
-		if(!value["ProcessUser"].isNull())
-			nodeProcessesObject.processUser = value["ProcessUser"].asString();
-		if(!value["Command"].isNull())
-			nodeProcessesObject.command = value["Command"].asString();
+		if(!valueNodeProcessesNodeProcess["Id"].isNull())
+			nodeProcessesObject.id = std::stol(valueNodeProcessesNodeProcess["Id"].asString());
+		if(!valueNodeProcessesNodeProcess["Name"].isNull())
+			nodeProcessesObject.name = valueNodeProcessesNodeProcess["Name"].asString();
+		if(!valueNodeProcessesNodeProcess["InstanceId"].isNull())
+			nodeProcessesObject.instanceId = valueNodeProcessesNodeProcess["InstanceId"].asString();
+		if(!valueNodeProcessesNodeProcess["ProcessName"].isNull())
+			nodeProcessesObject.processName = valueNodeProcessesNodeProcess["ProcessName"].asString();
+		if(!valueNodeProcessesNodeProcess["ProcessUser"].isNull())
+			nodeProcessesObject.processUser = valueNodeProcessesNodeProcess["ProcessUser"].asString();
+		if(!valueNodeProcessesNodeProcess["Command"].isNull())
+			nodeProcessesObject.command = valueNodeProcessesNodeProcess["Command"].asString();
 		nodeProcesses_.push_back(nodeProcessesObject);
 	}
 	if(!value["ErrorCode"].isNull())

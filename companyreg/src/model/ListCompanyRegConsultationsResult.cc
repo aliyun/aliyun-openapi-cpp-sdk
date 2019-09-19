@@ -39,24 +39,24 @@ void ListCompanyRegConsultationsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["CompanyRegConsultation"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["CompanyRegConsultation"];
+	for (auto valueDataCompanyRegConsultation : allDataNode)
 	{
 		CompanyRegConsultation dataObject;
-		if(!value["BizId"].isNull())
-			dataObject.bizId = value["BizId"].asString();
-		if(!value["ConsultInfo"].isNull())
-			dataObject.consultInfo = value["ConsultInfo"].asString();
-		if(!value["GmtModified"].isNull())
-			dataObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["City"].isNull())
-			dataObject.city = value["City"].asString();
-		if(!value["PlatformName"].isNull())
-			dataObject.platformName = value["PlatformName"].asString();
-		if(!value["InboundPhone"].isNull())
-			dataObject.inboundPhone = value["InboundPhone"].asString();
-		if(!value["OutboundPhone"].isNull())
-			dataObject.outboundPhone = value["OutboundPhone"].asString();
+		if(!valueDataCompanyRegConsultation["BizId"].isNull())
+			dataObject.bizId = valueDataCompanyRegConsultation["BizId"].asString();
+		if(!valueDataCompanyRegConsultation["ConsultInfo"].isNull())
+			dataObject.consultInfo = valueDataCompanyRegConsultation["ConsultInfo"].asString();
+		if(!valueDataCompanyRegConsultation["GmtModified"].isNull())
+			dataObject.gmtModified = std::stol(valueDataCompanyRegConsultation["GmtModified"].asString());
+		if(!valueDataCompanyRegConsultation["City"].isNull())
+			dataObject.city = valueDataCompanyRegConsultation["City"].asString();
+		if(!valueDataCompanyRegConsultation["PlatformName"].isNull())
+			dataObject.platformName = valueDataCompanyRegConsultation["PlatformName"].asString();
+		if(!valueDataCompanyRegConsultation["InboundPhone"].isNull())
+			dataObject.inboundPhone = valueDataCompanyRegConsultation["InboundPhone"].asString();
+		if(!valueDataCompanyRegConsultation["OutboundPhone"].isNull())
+			dataObject.outboundPhone = valueDataCompanyRegConsultation["OutboundPhone"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

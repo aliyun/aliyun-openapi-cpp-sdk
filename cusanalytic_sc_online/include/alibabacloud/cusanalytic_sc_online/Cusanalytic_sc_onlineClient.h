@@ -24,6 +24,8 @@
 #include "Cusanalytic_sc_onlineExport.h"
 #include "model/DescribeActionDataRequest.h"
 #include "model/DescribeActionDataResult.h"
+#include "model/DescribeHistoryActionDataRequest.h"
+#include "model/DescribeHistoryActionDataResult.h"
 #include "model/DescribeLocationsRequest.h"
 #include "model/DescribeLocationsResult.h"
 #include "model/GetActionCursorRequest.h"
@@ -66,6 +68,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeActionDataResult> DescribeActionDataOutcome;
 			typedef std::future<DescribeActionDataOutcome> DescribeActionDataOutcomeCallable;
 			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::DescribeActionDataRequest&, const DescribeActionDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActionDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeHistoryActionDataResult> DescribeHistoryActionDataOutcome;
+			typedef std::future<DescribeHistoryActionDataOutcome> DescribeHistoryActionDataOutcomeCallable;
+			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::DescribeHistoryActionDataRequest&, const DescribeHistoryActionDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryActionDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLocationsResult> DescribeLocationsOutcome;
 			typedef std::future<DescribeLocationsOutcome> DescribeLocationsOutcomeCallable;
 			typedef std::function<void(const Cusanalytic_sc_onlineClient*, const Model::DescribeLocationsRequest&, const DescribeLocationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLocationsAsyncHandler;
@@ -119,6 +124,9 @@ namespace AlibabaCloud
 			DescribeActionDataOutcome describeActionData(const Model::DescribeActionDataRequest &request)const;
 			void describeActionDataAsync(const Model::DescribeActionDataRequest& request, const DescribeActionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeActionDataOutcomeCallable describeActionDataCallable(const Model::DescribeActionDataRequest& request) const;
+			DescribeHistoryActionDataOutcome describeHistoryActionData(const Model::DescribeHistoryActionDataRequest &request)const;
+			void describeHistoryActionDataAsync(const Model::DescribeHistoryActionDataRequest& request, const DescribeHistoryActionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeHistoryActionDataOutcomeCallable describeHistoryActionDataCallable(const Model::DescribeHistoryActionDataRequest& request) const;
 			DescribeLocationsOutcome describeLocations(const Model::DescribeLocationsRequest &request)const;
 			void describeLocationsAsync(const Model::DescribeLocationsRequest& request, const DescribeLocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLocationsOutcomeCallable describeLocationsCallable(const Model::DescribeLocationsRequest& request) const;

@@ -39,28 +39,28 @@ void QueryTaskInfoHistoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allObjects = value["Objects"]["TaskInfoHistory"];
-	for (auto value : allObjects)
+	auto allObjectsNode = value["Objects"]["TaskInfoHistory"];
+	for (auto valueObjectsTaskInfoHistory : allObjectsNode)
 	{
 		TaskInfoHistory objectsObject;
-		if(!value["TaskType"].isNull())
-			objectsObject.taskType = value["TaskType"].asString();
-		if(!value["TaskNum"].isNull())
-			objectsObject.taskNum = std::stoi(value["TaskNum"].asString());
-		if(!value["TaskStatus"].isNull())
-			objectsObject.taskStatus = value["TaskStatus"].asString();
-		if(!value["CreateTime"].isNull())
-			objectsObject.createTime = value["CreateTime"].asString();
-		if(!value["Clientip"].isNull())
-			objectsObject.clientip = value["Clientip"].asString();
-		if(!value["TaskNo"].isNull())
-			objectsObject.taskNo = value["TaskNo"].asString();
-		if(!value["CreateTimeLong"].isNull())
-			objectsObject.createTimeLong = std::stol(value["CreateTimeLong"].asString());
-		if(!value["TaskStatusCode"].isNull())
-			objectsObject.taskStatusCode = std::stoi(value["TaskStatusCode"].asString());
-		if(!value["TaskTypeDescription"].isNull())
-			objectsObject.taskTypeDescription = value["TaskTypeDescription"].asString();
+		if(!valueObjectsTaskInfoHistory["TaskType"].isNull())
+			objectsObject.taskType = valueObjectsTaskInfoHistory["TaskType"].asString();
+		if(!valueObjectsTaskInfoHistory["TaskNum"].isNull())
+			objectsObject.taskNum = std::stoi(valueObjectsTaskInfoHistory["TaskNum"].asString());
+		if(!valueObjectsTaskInfoHistory["TaskStatus"].isNull())
+			objectsObject.taskStatus = valueObjectsTaskInfoHistory["TaskStatus"].asString();
+		if(!valueObjectsTaskInfoHistory["CreateTime"].isNull())
+			objectsObject.createTime = valueObjectsTaskInfoHistory["CreateTime"].asString();
+		if(!valueObjectsTaskInfoHistory["Clientip"].isNull())
+			objectsObject.clientip = valueObjectsTaskInfoHistory["Clientip"].asString();
+		if(!valueObjectsTaskInfoHistory["TaskNo"].isNull())
+			objectsObject.taskNo = valueObjectsTaskInfoHistory["TaskNo"].asString();
+		if(!valueObjectsTaskInfoHistory["CreateTimeLong"].isNull())
+			objectsObject.createTimeLong = std::stol(valueObjectsTaskInfoHistory["CreateTimeLong"].asString());
+		if(!valueObjectsTaskInfoHistory["TaskStatusCode"].isNull())
+			objectsObject.taskStatusCode = std::stoi(valueObjectsTaskInfoHistory["TaskStatusCode"].asString());
+		if(!valueObjectsTaskInfoHistory["TaskTypeDescription"].isNull())
+			objectsObject.taskTypeDescription = valueObjectsTaskInfoHistory["TaskTypeDescription"].asString();
 		objects_.push_back(objectsObject);
 	}
 	auto currentPageCursorNode = value["CurrentPageCursor"];

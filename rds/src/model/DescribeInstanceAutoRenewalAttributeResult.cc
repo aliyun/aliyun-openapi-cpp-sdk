@@ -39,20 +39,20 @@ void DescribeInstanceAutoRenewalAttributeResult::parse(const std::string &payloa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Item"];
+	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!value["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["RegionId"].isNull())
-			itemsObject.regionId = value["RegionId"].asString();
-		if(!value["Duration"].isNull())
-			itemsObject.duration = std::stoi(value["Duration"].asString());
-		if(!value["Status"].isNull())
-			itemsObject.status = value["Status"].asString();
-		if(!value["AutoRenew"].isNull())
-			itemsObject.autoRenew = value["AutoRenew"].asString();
+		if(!valueItemsItem["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsItem["DBInstanceId"].asString();
+		if(!valueItemsItem["RegionId"].isNull())
+			itemsObject.regionId = valueItemsItem["RegionId"].asString();
+		if(!valueItemsItem["Duration"].isNull())
+			itemsObject.duration = std::stoi(valueItemsItem["Duration"].asString());
+		if(!valueItemsItem["Status"].isNull())
+			itemsObject.status = valueItemsItem["Status"].asString();
+		if(!valueItemsItem["AutoRenew"].isNull())
+			itemsObject.autoRenew = valueItemsItem["AutoRenew"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

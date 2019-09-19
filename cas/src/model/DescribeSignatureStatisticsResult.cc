@@ -39,18 +39,18 @@ void DescribeSignatureStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDayDataList = value["DayDataList"]["dayData"];
-	for (auto value : allDayDataList)
+	auto allDayDataListNode = value["DayDataList"]["dayData"];
+	for (auto valueDayDataListdayData : allDayDataListNode)
 	{
 		DayData dayDataListObject;
-		if(!value["Date"].isNull())
-			dayDataListObject.date = value["Date"].asString();
-		if(!value["UnSignCount"].isNull())
-			dayDataListObject.unSignCount = std::stoi(value["UnSignCount"].asString());
-		if(!value["SignCount"].isNull())
-			dayDataListObject.signCount = std::stoi(value["SignCount"].asString());
-		if(!value["FailCount"].isNull())
-			dayDataListObject.failCount = std::stoi(value["FailCount"].asString());
+		if(!valueDayDataListdayData["Date"].isNull())
+			dayDataListObject.date = valueDayDataListdayData["Date"].asString();
+		if(!valueDayDataListdayData["UnSignCount"].isNull())
+			dayDataListObject.unSignCount = std::stoi(valueDayDataListdayData["UnSignCount"].asString());
+		if(!valueDayDataListdayData["SignCount"].isNull())
+			dayDataListObject.signCount = std::stoi(valueDayDataListdayData["SignCount"].asString());
+		if(!valueDayDataListdayData["FailCount"].isNull())
+			dayDataListObject.failCount = std::stoi(valueDayDataListdayData["FailCount"].asString());
 		dayDataList_.push_back(dayDataListObject);
 	}
 	if(!value["UnSignCount"].isNull())

@@ -39,20 +39,20 @@ void ListClustersMetaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClusters = value["Clusters"]["ClusterInfoSimple"];
-	for (auto value : allClusters)
+	auto allClustersNode = value["Clusters"]["ClusterInfoSimple"];
+	for (auto valueClustersClusterInfoSimple : allClustersNode)
 	{
 		ClusterInfoSimple clustersObject;
-		if(!value["Id"].isNull())
-			clustersObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			clustersObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			clustersObject.description = value["Description"].asString();
-		if(!value["Status"].isNull())
-			clustersObject.status = value["Status"].asString();
-		if(!value["Location"].isNull())
-			clustersObject.location = value["Location"].asString();
+		if(!valueClustersClusterInfoSimple["Id"].isNull())
+			clustersObject.id = valueClustersClusterInfoSimple["Id"].asString();
+		if(!valueClustersClusterInfoSimple["Name"].isNull())
+			clustersObject.name = valueClustersClusterInfoSimple["Name"].asString();
+		if(!valueClustersClusterInfoSimple["Description"].isNull())
+			clustersObject.description = valueClustersClusterInfoSimple["Description"].asString();
+		if(!valueClustersClusterInfoSimple["Status"].isNull())
+			clustersObject.status = valueClustersClusterInfoSimple["Status"].asString();
+		if(!valueClustersClusterInfoSimple["Location"].isNull())
+			clustersObject.location = valueClustersClusterInfoSimple["Location"].asString();
 		clusters_.push_back(clustersObject);
 	}
 	if(!value["TotalCount"].isNull())

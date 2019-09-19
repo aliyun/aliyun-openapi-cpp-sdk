@@ -39,18 +39,18 @@ void DescribeDomainPathDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPathDataPerInterval = value["PathDataPerInterval"]["UsageData"];
-	for (auto value : allPathDataPerInterval)
+	auto allPathDataPerIntervalNode = value["PathDataPerInterval"]["UsageData"];
+	for (auto valuePathDataPerIntervalUsageData : allPathDataPerIntervalNode)
 	{
 		UsageData pathDataPerIntervalObject;
-		if(!value["Traffic"].isNull())
-			pathDataPerIntervalObject.traffic = std::stoi(value["Traffic"].asString());
-		if(!value["Acc"].isNull())
-			pathDataPerIntervalObject.acc = std::stoi(value["Acc"].asString());
-		if(!value["Path"].isNull())
-			pathDataPerIntervalObject.path = value["Path"].asString();
-		if(!value["Time"].isNull())
-			pathDataPerIntervalObject.time = value["Time"].asString();
+		if(!valuePathDataPerIntervalUsageData["Traffic"].isNull())
+			pathDataPerIntervalObject.traffic = std::stoi(valuePathDataPerIntervalUsageData["Traffic"].asString());
+		if(!valuePathDataPerIntervalUsageData["Acc"].isNull())
+			pathDataPerIntervalObject.acc = std::stoi(valuePathDataPerIntervalUsageData["Acc"].asString());
+		if(!valuePathDataPerIntervalUsageData["Path"].isNull())
+			pathDataPerIntervalObject.path = valuePathDataPerIntervalUsageData["Path"].asString();
+		if(!valuePathDataPerIntervalUsageData["Time"].isNull())
+			pathDataPerIntervalObject.time = valuePathDataPerIntervalUsageData["Time"].asString();
 		pathDataPerInterval_.push_back(pathDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

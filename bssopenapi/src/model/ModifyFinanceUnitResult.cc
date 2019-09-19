@@ -39,16 +39,16 @@ void ModifyFinanceUnitResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DataItem"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!value["OwnerUid"].isNull())
-			dataObject.ownerUid = std::stol(value["OwnerUid"].asString());
-		if(!value["UnitId"].isNull())
-			dataObject.unitId = std::stol(value["UnitId"].asString());
-		if(!value["IsSuccess"].isNull())
-			dataObject.isSuccess = value["IsSuccess"].asString() == "true";
+		if(!valueDataDataItem["OwnerUid"].isNull())
+			dataObject.ownerUid = std::stol(valueDataDataItem["OwnerUid"].asString());
+		if(!valueDataDataItem["UnitId"].isNull())
+			dataObject.unitId = std::stol(valueDataDataItem["UnitId"].asString());
+		if(!valueDataDataItem["IsSuccess"].isNull())
+			dataObject.isSuccess = valueDataDataItem["IsSuccess"].asString() == "true";
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

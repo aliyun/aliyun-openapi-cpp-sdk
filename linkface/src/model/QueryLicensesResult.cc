@@ -39,16 +39,16 @@ void QueryLicensesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DataItem"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!value["LicenseType"].isNull())
-			dataObject.licenseType = std::stoi(value["LicenseType"].asString());
-		if(!value["Quantity"].isNull())
-			dataObject.quantity = std::stoi(value["Quantity"].asString());
-		if(!value["CostQuantity"].isNull())
-			dataObject.costQuantity = std::stoi(value["CostQuantity"].asString());
+		if(!valueDataDataItem["LicenseType"].isNull())
+			dataObject.licenseType = std::stoi(valueDataDataItem["LicenseType"].asString());
+		if(!valueDataDataItem["Quantity"].isNull())
+			dataObject.quantity = std::stoi(valueDataDataItem["Quantity"].asString());
+		if(!valueDataDataItem["CostQuantity"].isNull())
+			dataObject.costQuantity = std::stoi(valueDataDataItem["CostQuantity"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

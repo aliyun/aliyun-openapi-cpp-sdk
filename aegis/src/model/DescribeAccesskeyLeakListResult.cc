@@ -39,30 +39,30 @@ void DescribeAccesskeyLeakListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAccessKeyLeakList = value["AccessKeyLeakList"]["AccessKeyLeak"];
-	for (auto value : allAccessKeyLeakList)
+	auto allAccessKeyLeakListNode = value["AccessKeyLeakList"]["AccessKeyLeak"];
+	for (auto valueAccessKeyLeakListAccessKeyLeak : allAccessKeyLeakListNode)
 	{
 		AccessKeyLeak accessKeyLeakListObject;
-		if(!value["Id"].isNull())
-			accessKeyLeakListObject.id = std::stol(value["Id"].asString());
-		if(!value["GmtModified"].isNull())
-			accessKeyLeakListObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["Asset"].isNull())
-			accessKeyLeakListObject.asset = value["Asset"].asString();
-		if(!value["Type"].isNull())
-			accessKeyLeakListObject.type = value["Type"].asString();
-		if(!value["AccesskeyId"].isNull())
-			accessKeyLeakListObject.accesskeyId = value["AccesskeyId"].asString();
-		if(!value["Status"].isNull())
-			accessKeyLeakListObject.status = value["Status"].asString();
-		if(!value["AliUserName"].isNull())
-			accessKeyLeakListObject.aliUserName = value["AliUserName"].asString();
-		if(!value["DealType"].isNull())
-			accessKeyLeakListObject.dealType = value["DealType"].asString();
-		if(!value["DealTime"].isNull())
-			accessKeyLeakListObject.dealTime = value["DealTime"].asString();
-		if(!value["UserType"].isNull())
-			accessKeyLeakListObject.userType = value["UserType"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["Id"].isNull())
+			accessKeyLeakListObject.id = std::stol(valueAccessKeyLeakListAccessKeyLeak["Id"].asString());
+		if(!valueAccessKeyLeakListAccessKeyLeak["GmtModified"].isNull())
+			accessKeyLeakListObject.gmtModified = std::stol(valueAccessKeyLeakListAccessKeyLeak["GmtModified"].asString());
+		if(!valueAccessKeyLeakListAccessKeyLeak["Asset"].isNull())
+			accessKeyLeakListObject.asset = valueAccessKeyLeakListAccessKeyLeak["Asset"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["Type"].isNull())
+			accessKeyLeakListObject.type = valueAccessKeyLeakListAccessKeyLeak["Type"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["AccesskeyId"].isNull())
+			accessKeyLeakListObject.accesskeyId = valueAccessKeyLeakListAccessKeyLeak["AccesskeyId"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["Status"].isNull())
+			accessKeyLeakListObject.status = valueAccessKeyLeakListAccessKeyLeak["Status"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["AliUserName"].isNull())
+			accessKeyLeakListObject.aliUserName = valueAccessKeyLeakListAccessKeyLeak["AliUserName"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["DealType"].isNull())
+			accessKeyLeakListObject.dealType = valueAccessKeyLeakListAccessKeyLeak["DealType"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["DealTime"].isNull())
+			accessKeyLeakListObject.dealTime = valueAccessKeyLeakListAccessKeyLeak["DealTime"].asString();
+		if(!valueAccessKeyLeakListAccessKeyLeak["UserType"].isNull())
+			accessKeyLeakListObject.userType = valueAccessKeyLeakListAccessKeyLeak["UserType"].asString();
 		accessKeyLeakList_.push_back(accessKeyLeakListObject);
 	}
 	if(!value["GmtLast"].isNull())

@@ -39,16 +39,16 @@ void GetCompanyRegOrderResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOperations = value["Operations"]["BizOperation"];
-	for (auto value : allOperations)
+	auto allOperationsNode = value["Operations"]["BizOperation"];
+	for (auto valueOperationsBizOperation : allOperationsNode)
 	{
 		BizOperation operationsObject;
-		if(!value["GmtAction"].isNull())
-			operationsObject.gmtAction = std::stol(value["GmtAction"].asString());
-		if(!value["ActionType"].isNull())
-			operationsObject.actionType = value["ActionType"].asString();
-		if(!value["ActionInfo"].isNull())
-			operationsObject.actionInfo = value["ActionInfo"].asString();
+		if(!valueOperationsBizOperation["GmtAction"].isNull())
+			operationsObject.gmtAction = std::stol(valueOperationsBizOperation["GmtAction"].asString());
+		if(!valueOperationsBizOperation["ActionType"].isNull())
+			operationsObject.actionType = valueOperationsBizOperation["ActionType"].asString();
+		if(!valueOperationsBizOperation["ActionInfo"].isNull())
+			operationsObject.actionInfo = valueOperationsBizOperation["ActionInfo"].asString();
 		operations_.push_back(operationsObject);
 	}
 	if(!value["BizId"].isNull())

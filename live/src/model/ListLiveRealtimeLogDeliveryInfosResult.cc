@@ -39,16 +39,16 @@ void ListLiveRealtimeLogDeliveryInfosResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allContent = value["Content"]["RealtimeLogDeliveryInfos"];
-	for (auto value : allContent)
+	auto allContentNode = value["Content"]["RealtimeLogDeliveryInfos"];
+	for (auto valueContentRealtimeLogDeliveryInfos : allContentNode)
 	{
 		RealtimeLogDeliveryInfos contentObject;
-		if(!value["Project"].isNull())
-			contentObject.project = value["Project"].asString();
-		if(!value["Logstore"].isNull())
-			contentObject.logstore = value["Logstore"].asString();
-		if(!value["Region"].isNull())
-			contentObject.region = value["Region"].asString();
+		if(!valueContentRealtimeLogDeliveryInfos["Project"].isNull())
+			contentObject.project = valueContentRealtimeLogDeliveryInfos["Project"].asString();
+		if(!valueContentRealtimeLogDeliveryInfos["Logstore"].isNull())
+			contentObject.logstore = valueContentRealtimeLogDeliveryInfos["Logstore"].asString();
+		if(!valueContentRealtimeLogDeliveryInfos["Region"].isNull())
+			contentObject.region = valueContentRealtimeLogDeliveryInfos["Region"].asString();
 		content_.push_back(contentObject);
 	}
 

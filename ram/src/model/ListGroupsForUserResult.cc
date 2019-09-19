@@ -39,16 +39,16 @@ void ListGroupsForUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allGroups = value["Groups"]["Group"];
-	for (auto value : allGroups)
+	auto allGroupsNode = value["Groups"]["Group"];
+	for (auto valueGroupsGroup : allGroupsNode)
 	{
 		Group groupsObject;
-		if(!value["GroupName"].isNull())
-			groupsObject.groupName = value["GroupName"].asString();
-		if(!value["Comments"].isNull())
-			groupsObject.comments = value["Comments"].asString();
-		if(!value["JoinDate"].isNull())
-			groupsObject.joinDate = value["JoinDate"].asString();
+		if(!valueGroupsGroup["GroupName"].isNull())
+			groupsObject.groupName = valueGroupsGroup["GroupName"].asString();
+		if(!valueGroupsGroup["Comments"].isNull())
+			groupsObject.comments = valueGroupsGroup["Comments"].asString();
+		if(!valueGroupsGroup["JoinDate"].isNull())
+			groupsObject.joinDate = valueGroupsGroup["JoinDate"].asString();
 		groups_.push_back(groupsObject);
 	}
 

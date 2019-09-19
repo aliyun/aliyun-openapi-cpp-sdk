@@ -39,32 +39,32 @@ void DescribeFlowLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFlowLogs = value["FlowLogs"]["FlowLog"];
-	for (auto value : allFlowLogs)
+	auto allFlowLogsNode = value["FlowLogs"]["FlowLog"];
+	for (auto valueFlowLogsFlowLog : allFlowLogsNode)
 	{
 		FlowLog flowLogsObject;
-		if(!value["FlowLogId"].isNull())
-			flowLogsObject.flowLogId = value["FlowLogId"].asString();
-		if(!value["FlowLogName"].isNull())
-			flowLogsObject.flowLogName = value["FlowLogName"].asString();
-		if(!value["Description"].isNull())
-			flowLogsObject.description = value["Description"].asString();
-		if(!value["CreationTime"].isNull())
-			flowLogsObject.creationTime = value["CreationTime"].asString();
-		if(!value["ResourceType"].isNull())
-			flowLogsObject.resourceType = value["ResourceType"].asString();
-		if(!value["ResourceId"].isNull())
-			flowLogsObject.resourceId = value["ResourceId"].asString();
-		if(!value["ProjectName"].isNull())
-			flowLogsObject.projectName = value["ProjectName"].asString();
-		if(!value["LogStoreName"].isNull())
-			flowLogsObject.logStoreName = value["LogStoreName"].asString();
-		if(!value["Status"].isNull())
-			flowLogsObject.status = value["Status"].asString();
-		if(!value["TrafficType"].isNull())
-			flowLogsObject.trafficType = value["TrafficType"].asString();
-		if(!value["RegionId"].isNull())
-			flowLogsObject.regionId = value["RegionId"].asString();
+		if(!valueFlowLogsFlowLog["FlowLogId"].isNull())
+			flowLogsObject.flowLogId = valueFlowLogsFlowLog["FlowLogId"].asString();
+		if(!valueFlowLogsFlowLog["FlowLogName"].isNull())
+			flowLogsObject.flowLogName = valueFlowLogsFlowLog["FlowLogName"].asString();
+		if(!valueFlowLogsFlowLog["Description"].isNull())
+			flowLogsObject.description = valueFlowLogsFlowLog["Description"].asString();
+		if(!valueFlowLogsFlowLog["CreationTime"].isNull())
+			flowLogsObject.creationTime = valueFlowLogsFlowLog["CreationTime"].asString();
+		if(!valueFlowLogsFlowLog["ResourceType"].isNull())
+			flowLogsObject.resourceType = valueFlowLogsFlowLog["ResourceType"].asString();
+		if(!valueFlowLogsFlowLog["ResourceId"].isNull())
+			flowLogsObject.resourceId = valueFlowLogsFlowLog["ResourceId"].asString();
+		if(!valueFlowLogsFlowLog["ProjectName"].isNull())
+			flowLogsObject.projectName = valueFlowLogsFlowLog["ProjectName"].asString();
+		if(!valueFlowLogsFlowLog["LogStoreName"].isNull())
+			flowLogsObject.logStoreName = valueFlowLogsFlowLog["LogStoreName"].asString();
+		if(!valueFlowLogsFlowLog["Status"].isNull())
+			flowLogsObject.status = valueFlowLogsFlowLog["Status"].asString();
+		if(!valueFlowLogsFlowLog["TrafficType"].isNull())
+			flowLogsObject.trafficType = valueFlowLogsFlowLog["TrafficType"].asString();
+		if(!valueFlowLogsFlowLog["RegionId"].isNull())
+			flowLogsObject.regionId = valueFlowLogsFlowLog["RegionId"].asString();
 		flowLogs_.push_back(flowLogsObject);
 	}
 	if(!value["Success"].isNull())

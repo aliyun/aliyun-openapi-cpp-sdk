@@ -39,34 +39,34 @@ void DescribePropertySoftwareDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPropertys = value["Propertys"]["PropertySoftware"];
-	for (auto value : allPropertys)
+	auto allPropertysNode = value["Propertys"]["PropertySoftware"];
+	for (auto valuePropertysPropertySoftware : allPropertysNode)
 	{
 		PropertySoftware propertysObject;
-		if(!value["Name"].isNull())
-			propertysObject.name = value["Name"].asString();
-		if(!value["Path"].isNull())
-			propertysObject.path = value["Path"].asString();
-		if(!value["InstanceName"].isNull())
-			propertysObject.instanceName = value["InstanceName"].asString();
-		if(!value["Ip"].isNull())
-			propertysObject.ip = value["Ip"].asString();
-		if(!value["Create"].isNull())
-			propertysObject.create = std::stol(value["Create"].asString());
-		if(!value["CreateTimestamp"].isNull())
-			propertysObject.createTimestamp = std::stol(value["CreateTimestamp"].asString());
-		if(!value["InstallTime"].isNull())
-			propertysObject.installTime = value["InstallTime"].asString();
-		if(!value["Version"].isNull())
-			propertysObject.version = value["Version"].asString();
-		if(!value["Uuid"].isNull())
-			propertysObject.uuid = value["Uuid"].asString();
-		if(!value["InstanceId"].isNull())
-			propertysObject.instanceId = value["InstanceId"].asString();
-		if(!value["IntranetIp"].isNull())
-			propertysObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["InternetIp"].isNull())
-			propertysObject.internetIp = value["InternetIp"].asString();
+		if(!valuePropertysPropertySoftware["Name"].isNull())
+			propertysObject.name = valuePropertysPropertySoftware["Name"].asString();
+		if(!valuePropertysPropertySoftware["Path"].isNull())
+			propertysObject.path = valuePropertysPropertySoftware["Path"].asString();
+		if(!valuePropertysPropertySoftware["InstanceName"].isNull())
+			propertysObject.instanceName = valuePropertysPropertySoftware["InstanceName"].asString();
+		if(!valuePropertysPropertySoftware["Ip"].isNull())
+			propertysObject.ip = valuePropertysPropertySoftware["Ip"].asString();
+		if(!valuePropertysPropertySoftware["Create"].isNull())
+			propertysObject.create = std::stol(valuePropertysPropertySoftware["Create"].asString());
+		if(!valuePropertysPropertySoftware["CreateTimestamp"].isNull())
+			propertysObject.createTimestamp = std::stol(valuePropertysPropertySoftware["CreateTimestamp"].asString());
+		if(!valuePropertysPropertySoftware["InstallTime"].isNull())
+			propertysObject.installTime = valuePropertysPropertySoftware["InstallTime"].asString();
+		if(!valuePropertysPropertySoftware["Version"].isNull())
+			propertysObject.version = valuePropertysPropertySoftware["Version"].asString();
+		if(!valuePropertysPropertySoftware["Uuid"].isNull())
+			propertysObject.uuid = valuePropertysPropertySoftware["Uuid"].asString();
+		if(!valuePropertysPropertySoftware["InstanceId"].isNull())
+			propertysObject.instanceId = valuePropertysPropertySoftware["InstanceId"].asString();
+		if(!valuePropertysPropertySoftware["IntranetIp"].isNull())
+			propertysObject.intranetIp = valuePropertysPropertySoftware["IntranetIp"].asString();
+		if(!valuePropertysPropertySoftware["InternetIp"].isNull())
+			propertysObject.internetIp = valuePropertysPropertySoftware["InternetIp"].asString();
 		propertys_.push_back(propertysObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

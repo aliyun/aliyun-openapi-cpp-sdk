@@ -39,44 +39,44 @@ void DescribeBgpPeersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBgpPeers = value["BgpPeers"]["BgpPeer"];
-	for (auto value : allBgpPeers)
+	auto allBgpPeersNode = value["BgpPeers"]["BgpPeer"];
+	for (auto valueBgpPeersBgpPeer : allBgpPeersNode)
 	{
 		BgpPeer bgpPeersObject;
-		if(!value["Name"].isNull())
-			bgpPeersObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			bgpPeersObject.description = value["Description"].asString();
-		if(!value["BgpPeerId"].isNull())
-			bgpPeersObject.bgpPeerId = value["BgpPeerId"].asString();
-		if(!value["BgpGroupId"].isNull())
-			bgpPeersObject.bgpGroupId = value["BgpGroupId"].asString();
-		if(!value["PeerIpAddress"].isNull())
-			bgpPeersObject.peerIpAddress = value["PeerIpAddress"].asString();
-		if(!value["PeerAsn"].isNull())
-			bgpPeersObject.peerAsn = value["PeerAsn"].asString();
-		if(!value["AuthKey"].isNull())
-			bgpPeersObject.authKey = value["AuthKey"].asString();
-		if(!value["RouterId"].isNull())
-			bgpPeersObject.routerId = value["RouterId"].asString();
-		if(!value["BgpStatus"].isNull())
-			bgpPeersObject.bgpStatus = value["BgpStatus"].asString();
-		if(!value["Status"].isNull())
-			bgpPeersObject.status = value["Status"].asString();
-		if(!value["Keepalive"].isNull())
-			bgpPeersObject.keepalive = value["Keepalive"].asString();
-		if(!value["LocalAsn"].isNull())
-			bgpPeersObject.localAsn = value["LocalAsn"].asString();
-		if(!value["Hold"].isNull())
-			bgpPeersObject.hold = value["Hold"].asString();
-		if(!value["IsFake"].isNull())
-			bgpPeersObject.isFake = value["IsFake"].asString();
-		if(!value["RouteLimit"].isNull())
-			bgpPeersObject.routeLimit = value["RouteLimit"].asString();
-		if(!value["RegionId"].isNull())
-			bgpPeersObject.regionId = value["RegionId"].asString();
-		if(!value["EnableBfd"].isNull())
-			bgpPeersObject.enableBfd = value["EnableBfd"].asString() == "true";
+		if(!valueBgpPeersBgpPeer["Name"].isNull())
+			bgpPeersObject.name = valueBgpPeersBgpPeer["Name"].asString();
+		if(!valueBgpPeersBgpPeer["Description"].isNull())
+			bgpPeersObject.description = valueBgpPeersBgpPeer["Description"].asString();
+		if(!valueBgpPeersBgpPeer["BgpPeerId"].isNull())
+			bgpPeersObject.bgpPeerId = valueBgpPeersBgpPeer["BgpPeerId"].asString();
+		if(!valueBgpPeersBgpPeer["BgpGroupId"].isNull())
+			bgpPeersObject.bgpGroupId = valueBgpPeersBgpPeer["BgpGroupId"].asString();
+		if(!valueBgpPeersBgpPeer["PeerIpAddress"].isNull())
+			bgpPeersObject.peerIpAddress = valueBgpPeersBgpPeer["PeerIpAddress"].asString();
+		if(!valueBgpPeersBgpPeer["PeerAsn"].isNull())
+			bgpPeersObject.peerAsn = valueBgpPeersBgpPeer["PeerAsn"].asString();
+		if(!valueBgpPeersBgpPeer["AuthKey"].isNull())
+			bgpPeersObject.authKey = valueBgpPeersBgpPeer["AuthKey"].asString();
+		if(!valueBgpPeersBgpPeer["RouterId"].isNull())
+			bgpPeersObject.routerId = valueBgpPeersBgpPeer["RouterId"].asString();
+		if(!valueBgpPeersBgpPeer["BgpStatus"].isNull())
+			bgpPeersObject.bgpStatus = valueBgpPeersBgpPeer["BgpStatus"].asString();
+		if(!valueBgpPeersBgpPeer["Status"].isNull())
+			bgpPeersObject.status = valueBgpPeersBgpPeer["Status"].asString();
+		if(!valueBgpPeersBgpPeer["Keepalive"].isNull())
+			bgpPeersObject.keepalive = valueBgpPeersBgpPeer["Keepalive"].asString();
+		if(!valueBgpPeersBgpPeer["LocalAsn"].isNull())
+			bgpPeersObject.localAsn = valueBgpPeersBgpPeer["LocalAsn"].asString();
+		if(!valueBgpPeersBgpPeer["Hold"].isNull())
+			bgpPeersObject.hold = valueBgpPeersBgpPeer["Hold"].asString();
+		if(!valueBgpPeersBgpPeer["IsFake"].isNull())
+			bgpPeersObject.isFake = valueBgpPeersBgpPeer["IsFake"].asString();
+		if(!valueBgpPeersBgpPeer["RouteLimit"].isNull())
+			bgpPeersObject.routeLimit = valueBgpPeersBgpPeer["RouteLimit"].asString();
+		if(!valueBgpPeersBgpPeer["RegionId"].isNull())
+			bgpPeersObject.regionId = valueBgpPeersBgpPeer["RegionId"].asString();
+		if(!valueBgpPeersBgpPeer["EnableBfd"].isNull())
+			bgpPeersObject.enableBfd = valueBgpPeersBgpPeer["EnableBfd"].asString() == "true";
 		bgpPeers_.push_back(bgpPeersObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,38 +39,38 @@ void ListJobsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobs = value["Jobs"]["JobInfo"];
-	for (auto value : allJobs)
+	auto allJobsNode = value["Jobs"]["JobInfo"];
+	for (auto valueJobsJobInfo : allJobsNode)
 	{
 		JobInfo jobsObject;
-		if(!value["Id"].isNull())
-			jobsObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			jobsObject.name = value["Name"].asString();
-		if(!value["Owner"].isNull())
-			jobsObject.owner = value["Owner"].asString();
-		if(!value["NodeList"].isNull())
-			jobsObject.nodeList = value["NodeList"].asString();
-		if(!value["Priority"].isNull())
-			jobsObject.priority = std::stoi(value["Priority"].asString());
-		if(!value["State"].isNull())
-			jobsObject.state = value["State"].asString();
-		if(!value["SubmitTime"].isNull())
-			jobsObject.submitTime = value["SubmitTime"].asString();
-		if(!value["StartTime"].isNull())
-			jobsObject.startTime = value["StartTime"].asString();
-		if(!value["LastModifyTime"].isNull())
-			jobsObject.lastModifyTime = value["LastModifyTime"].asString();
-		if(!value["Stdout"].isNull())
-			jobsObject._stdout = value["Stdout"].asString();
-		if(!value["Stderr"].isNull())
-			jobsObject._stderr = value["Stderr"].asString();
-		if(!value["ShellPath"].isNull())
-			jobsObject.shellPath = value["ShellPath"].asString();
-		if(!value["Comment"].isNull())
-			jobsObject.comment = value["Comment"].asString();
-		if(!value["ArrayRequest"].isNull())
-			jobsObject.arrayRequest = value["ArrayRequest"].asString();
+		if(!valueJobsJobInfo["Id"].isNull())
+			jobsObject.id = valueJobsJobInfo["Id"].asString();
+		if(!valueJobsJobInfo["Name"].isNull())
+			jobsObject.name = valueJobsJobInfo["Name"].asString();
+		if(!valueJobsJobInfo["Owner"].isNull())
+			jobsObject.owner = valueJobsJobInfo["Owner"].asString();
+		if(!valueJobsJobInfo["NodeList"].isNull())
+			jobsObject.nodeList = valueJobsJobInfo["NodeList"].asString();
+		if(!valueJobsJobInfo["Priority"].isNull())
+			jobsObject.priority = std::stoi(valueJobsJobInfo["Priority"].asString());
+		if(!valueJobsJobInfo["State"].isNull())
+			jobsObject.state = valueJobsJobInfo["State"].asString();
+		if(!valueJobsJobInfo["SubmitTime"].isNull())
+			jobsObject.submitTime = valueJobsJobInfo["SubmitTime"].asString();
+		if(!valueJobsJobInfo["StartTime"].isNull())
+			jobsObject.startTime = valueJobsJobInfo["StartTime"].asString();
+		if(!valueJobsJobInfo["LastModifyTime"].isNull())
+			jobsObject.lastModifyTime = valueJobsJobInfo["LastModifyTime"].asString();
+		if(!valueJobsJobInfo["Stdout"].isNull())
+			jobsObject._stdout = valueJobsJobInfo["Stdout"].asString();
+		if(!valueJobsJobInfo["Stderr"].isNull())
+			jobsObject._stderr = valueJobsJobInfo["Stderr"].asString();
+		if(!valueJobsJobInfo["ShellPath"].isNull())
+			jobsObject.shellPath = valueJobsJobInfo["ShellPath"].asString();
+		if(!valueJobsJobInfo["Comment"].isNull())
+			jobsObject.comment = valueJobsJobInfo["Comment"].asString();
+		if(!valueJobsJobInfo["ArrayRequest"].isNull())
+			jobsObject.arrayRequest = valueJobsJobInfo["ArrayRequest"].asString();
 		auto resourcesNode = value["Resources"];
 		if(!resourcesNode["Nodes"].isNull())
 			jobsObject.resources.nodes = std::stoi(resourcesNode["Nodes"].asString());

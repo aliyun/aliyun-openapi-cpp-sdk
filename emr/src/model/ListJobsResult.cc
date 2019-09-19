@@ -39,24 +39,24 @@ void ListJobsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobs = value["Jobs"]["JobInfo"];
-	for (auto value : allJobs)
+	auto allJobsNode = value["Jobs"]["JobInfo"];
+	for (auto valueJobsJobInfo : allJobsNode)
 	{
 		JobInfo jobsObject;
-		if(!value["Id"].isNull())
-			jobsObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			jobsObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			jobsObject.type = value["Type"].asString();
-		if(!value["RunParameter"].isNull())
-			jobsObject.runParameter = value["RunParameter"].asString();
-		if(!value["FailAct"].isNull())
-			jobsObject.failAct = value["FailAct"].asString();
-		if(!value["MaxRetry"].isNull())
-			jobsObject.maxRetry = std::stoi(value["MaxRetry"].asString());
-		if(!value["RetryInterval"].isNull())
-			jobsObject.retryInterval = std::stoi(value["RetryInterval"].asString());
+		if(!valueJobsJobInfo["Id"].isNull())
+			jobsObject.id = valueJobsJobInfo["Id"].asString();
+		if(!valueJobsJobInfo["Name"].isNull())
+			jobsObject.name = valueJobsJobInfo["Name"].asString();
+		if(!valueJobsJobInfo["Type"].isNull())
+			jobsObject.type = valueJobsJobInfo["Type"].asString();
+		if(!valueJobsJobInfo["RunParameter"].isNull())
+			jobsObject.runParameter = valueJobsJobInfo["RunParameter"].asString();
+		if(!valueJobsJobInfo["FailAct"].isNull())
+			jobsObject.failAct = valueJobsJobInfo["FailAct"].asString();
+		if(!valueJobsJobInfo["MaxRetry"].isNull())
+			jobsObject.maxRetry = std::stoi(valueJobsJobInfo["MaxRetry"].asString());
+		if(!valueJobsJobInfo["RetryInterval"].isNull())
+			jobsObject.retryInterval = std::stoi(valueJobsJobInfo["RetryInterval"].asString());
 		jobs_.push_back(jobsObject);
 	}
 	if(!value["TotalCount"].isNull())

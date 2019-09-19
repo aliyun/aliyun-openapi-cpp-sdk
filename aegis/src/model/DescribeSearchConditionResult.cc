@@ -39,28 +39,28 @@ void DescribeSearchConditionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConditionList = value["ConditionList"]["Condition"];
-	for (auto value : allConditionList)
+	auto allConditionListNode = value["ConditionList"]["Condition"];
+	for (auto valueConditionListCondition : allConditionListNode)
 	{
 		Condition conditionListObject;
-		if(!value["Name"].isNull())
-			conditionListObject.name = value["Name"].asString();
-		if(!value["AssetType"].isNull())
-			conditionListObject.assetType = value["AssetType"].asString();
-		if(!value["Tag"].isNull())
-			conditionListObject.tag = value["Tag"].asString();
-		if(!value["Region"].isNull())
-			conditionListObject.region = value["Region"].asString();
-		if(!value["SafeStatus"].isNull())
-			conditionListObject.safeStatus = value["SafeStatus"].asString();
-		if(!value["ClientStatus"].isNull())
-			conditionListObject.clientStatus = value["ClientStatus"].asString();
-		if(!value["GroupId"].isNull())
-			conditionListObject.groupId = value["GroupId"].asString();
-		if(!value["Os"].isNull())
-			conditionListObject.os = value["Os"].asString();
-		if(!value["Remark"].isNull())
-			conditionListObject.remark = value["Remark"].asString();
+		if(!valueConditionListCondition["Name"].isNull())
+			conditionListObject.name = valueConditionListCondition["Name"].asString();
+		if(!valueConditionListCondition["AssetType"].isNull())
+			conditionListObject.assetType = valueConditionListCondition["AssetType"].asString();
+		if(!valueConditionListCondition["Tag"].isNull())
+			conditionListObject.tag = valueConditionListCondition["Tag"].asString();
+		if(!valueConditionListCondition["Region"].isNull())
+			conditionListObject.region = valueConditionListCondition["Region"].asString();
+		if(!valueConditionListCondition["SafeStatus"].isNull())
+			conditionListObject.safeStatus = valueConditionListCondition["SafeStatus"].asString();
+		if(!valueConditionListCondition["ClientStatus"].isNull())
+			conditionListObject.clientStatus = valueConditionListCondition["ClientStatus"].asString();
+		if(!valueConditionListCondition["GroupId"].isNull())
+			conditionListObject.groupId = valueConditionListCondition["GroupId"].asString();
+		if(!valueConditionListCondition["Os"].isNull())
+			conditionListObject.os = valueConditionListCondition["Os"].asString();
+		if(!valueConditionListCondition["Remark"].isNull())
+			conditionListObject.remark = valueConditionListCondition["Remark"].asString();
 		conditionList_.push_back(conditionListObject);
 	}
 

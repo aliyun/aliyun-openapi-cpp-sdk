@@ -39,16 +39,16 @@ void DescribeResourceByTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResources = value["Resources"]["Resource"];
-	for (auto value : allResources)
+	auto allResourcesNode = value["Resources"]["Resource"];
+	for (auto valueResourcesResource : allResourcesNode)
 	{
 		Resource resourcesObject;
-		if(!value["ResourceId"].isNull())
-			resourcesObject.resourceId = value["ResourceId"].asString();
-		if(!value["ResourceType"].isNull())
-			resourcesObject.resourceType = value["ResourceType"].asString();
-		if(!value["RegionId"].isNull())
-			resourcesObject.regionId = value["RegionId"].asString();
+		if(!valueResourcesResource["ResourceId"].isNull())
+			resourcesObject.resourceId = valueResourcesResource["ResourceId"].asString();
+		if(!valueResourcesResource["ResourceType"].isNull())
+			resourcesObject.resourceType = valueResourcesResource["ResourceType"].asString();
+		if(!valueResourcesResource["RegionId"].isNull())
+			resourcesObject.regionId = valueResourcesResource["RegionId"].asString();
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["PageSize"].isNull())

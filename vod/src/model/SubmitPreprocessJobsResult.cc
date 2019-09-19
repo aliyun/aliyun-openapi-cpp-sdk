@@ -39,12 +39,12 @@ void SubmitPreprocessJobsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPreprocessJobs = value["PreprocessJobs"]["PreprocessJob"];
-	for (auto value : allPreprocessJobs)
+	auto allPreprocessJobsNode = value["PreprocessJobs"]["PreprocessJob"];
+	for (auto valuePreprocessJobsPreprocessJob : allPreprocessJobsNode)
 	{
 		PreprocessJob preprocessJobsObject;
-		if(!value["JobId"].isNull())
-			preprocessJobsObject.jobId = value["JobId"].asString();
+		if(!valuePreprocessJobsPreprocessJob["JobId"].isNull())
+			preprocessJobsObject.jobId = valuePreprocessJobsPreprocessJob["JobId"].asString();
 		preprocessJobs_.push_back(preprocessJobsObject);
 	}
 

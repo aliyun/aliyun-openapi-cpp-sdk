@@ -39,32 +39,32 @@ void DescribeTasksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["TaskProgressInfo"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["TaskProgressInfo"];
+	for (auto valueItemsTaskProgressInfo : allItemsNode)
 	{
 		TaskProgressInfo itemsObject;
-		if(!value["DBName"].isNull())
-			itemsObject.dBName = value["DBName"].asString();
-		if(!value["BeginTime"].isNull())
-			itemsObject.beginTime = value["BeginTime"].asString();
-		if(!value["ProgressInfo"].isNull())
-			itemsObject.progressInfo = value["ProgressInfo"].asString();
-		if(!value["FinishTime"].isNull())
-			itemsObject.finishTime = value["FinishTime"].asString();
-		if(!value["TaskAction"].isNull())
-			itemsObject.taskAction = value["TaskAction"].asString();
-		if(!value["TaskId"].isNull())
-			itemsObject.taskId = value["TaskId"].asString();
-		if(!value["Progress"].isNull())
-			itemsObject.progress = value["Progress"].asString();
-		if(!value["ExpectedFinishTime"].isNull())
-			itemsObject.expectedFinishTime = value["ExpectedFinishTime"].asString();
-		if(!value["Status"].isNull())
-			itemsObject.status = value["Status"].asString();
-		if(!value["TaskErrorCode"].isNull())
-			itemsObject.taskErrorCode = value["TaskErrorCode"].asString();
-		if(!value["TaskErrorMessage"].isNull())
-			itemsObject.taskErrorMessage = value["TaskErrorMessage"].asString();
+		if(!valueItemsTaskProgressInfo["DBName"].isNull())
+			itemsObject.dBName = valueItemsTaskProgressInfo["DBName"].asString();
+		if(!valueItemsTaskProgressInfo["BeginTime"].isNull())
+			itemsObject.beginTime = valueItemsTaskProgressInfo["BeginTime"].asString();
+		if(!valueItemsTaskProgressInfo["ProgressInfo"].isNull())
+			itemsObject.progressInfo = valueItemsTaskProgressInfo["ProgressInfo"].asString();
+		if(!valueItemsTaskProgressInfo["FinishTime"].isNull())
+			itemsObject.finishTime = valueItemsTaskProgressInfo["FinishTime"].asString();
+		if(!valueItemsTaskProgressInfo["TaskAction"].isNull())
+			itemsObject.taskAction = valueItemsTaskProgressInfo["TaskAction"].asString();
+		if(!valueItemsTaskProgressInfo["TaskId"].isNull())
+			itemsObject.taskId = valueItemsTaskProgressInfo["TaskId"].asString();
+		if(!valueItemsTaskProgressInfo["Progress"].isNull())
+			itemsObject.progress = valueItemsTaskProgressInfo["Progress"].asString();
+		if(!valueItemsTaskProgressInfo["ExpectedFinishTime"].isNull())
+			itemsObject.expectedFinishTime = valueItemsTaskProgressInfo["ExpectedFinishTime"].asString();
+		if(!valueItemsTaskProgressInfo["Status"].isNull())
+			itemsObject.status = valueItemsTaskProgressInfo["Status"].asString();
+		if(!valueItemsTaskProgressInfo["TaskErrorCode"].isNull())
+			itemsObject.taskErrorCode = valueItemsTaskProgressInfo["TaskErrorCode"].asString();
+		if(!valueItemsTaskProgressInfo["TaskErrorMessage"].isNull())
+			itemsObject.taskErrorMessage = valueItemsTaskProgressInfo["TaskErrorMessage"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

@@ -39,14 +39,14 @@ void DescribeIPv6TranslatorAclListsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIpv6TranslatorAcls = value["Ipv6TranslatorAcls"]["IPv6TranslatorAcl"];
-	for (auto value : allIpv6TranslatorAcls)
+	auto allIpv6TranslatorAclsNode = value["Ipv6TranslatorAcls"]["IPv6TranslatorAcl"];
+	for (auto valueIpv6TranslatorAclsIPv6TranslatorAcl : allIpv6TranslatorAclsNode)
 	{
 		IPv6TranslatorAcl ipv6TranslatorAclsObject;
-		if(!value["AclId"].isNull())
-			ipv6TranslatorAclsObject.aclId = value["AclId"].asString();
-		if(!value["AclName"].isNull())
-			ipv6TranslatorAclsObject.aclName = value["AclName"].asString();
+		if(!valueIpv6TranslatorAclsIPv6TranslatorAcl["AclId"].isNull())
+			ipv6TranslatorAclsObject.aclId = valueIpv6TranslatorAclsIPv6TranslatorAcl["AclId"].asString();
+		if(!valueIpv6TranslatorAclsIPv6TranslatorAcl["AclName"].isNull())
+			ipv6TranslatorAclsObject.aclName = valueIpv6TranslatorAclsIPv6TranslatorAcl["AclName"].asString();
 		ipv6TranslatorAcls_.push_back(ipv6TranslatorAclsObject);
 	}
 	if(!value["TotalCount"].isNull())

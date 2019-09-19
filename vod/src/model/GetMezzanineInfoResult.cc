@@ -68,92 +68,92 @@ void GetMezzanineInfoResult::parse(const std::string &payload)
 		mezzanine_.preprocessStatus = mezzanineNode["PreprocessStatus"].asString();
 	if(!mezzanineNode["OutputType"].isNull())
 		mezzanine_.outputType = mezzanineNode["OutputType"].asString();
-	auto allAudioStreamList = value["AudioStreamList"]["AudioStream"];
-	for (auto value : allAudioStreamList)
+	auto allAudioStreamListNode = mezzanineNode["AudioStreamList"]["AudioStream"];
+	for (auto mezzanineNodeAudioStreamListAudioStream : allAudioStreamListNode)
 	{
 		Mezzanine::AudioStream audioStreamObject;
-		if(!value["Index"].isNull())
-			audioStreamObject.index = value["Index"].asString();
-		if(!value["CodecName"].isNull())
-			audioStreamObject.codecName = value["CodecName"].asString();
-		if(!value["CodecLongName"].isNull())
-			audioStreamObject.codecLongName = value["CodecLongName"].asString();
-		if(!value["CodecTimeBase"].isNull())
-			audioStreamObject.codecTimeBase = value["CodecTimeBase"].asString();
-		if(!value["CodecTagString"].isNull())
-			audioStreamObject.codecTagString = value["CodecTagString"].asString();
-		if(!value["CodecTag"].isNull())
-			audioStreamObject.codecTag = value["CodecTag"].asString();
-		if(!value["SampleFmt"].isNull())
-			audioStreamObject.sampleFmt = value["SampleFmt"].asString();
-		if(!value["SampleRate"].isNull())
-			audioStreamObject.sampleRate = value["SampleRate"].asString();
-		if(!value["Channels"].isNull())
-			audioStreamObject.channels = value["Channels"].asString();
-		if(!value["ChannelLayout"].isNull())
-			audioStreamObject.channelLayout = value["ChannelLayout"].asString();
-		if(!value["Timebase"].isNull())
-			audioStreamObject.timebase = value["Timebase"].asString();
-		if(!value["StartTime"].isNull())
-			audioStreamObject.startTime = value["StartTime"].asString();
-		if(!value["Duration"].isNull())
-			audioStreamObject.duration = value["Duration"].asString();
-		if(!value["Bitrate"].isNull())
-			audioStreamObject.bitrate = value["Bitrate"].asString();
-		if(!value["NumFrames"].isNull())
-			audioStreamObject.numFrames = value["NumFrames"].asString();
-		if(!value["Lang"].isNull())
-			audioStreamObject.lang = value["Lang"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["Index"].isNull())
+			audioStreamObject.index = mezzanineNodeAudioStreamListAudioStream["Index"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["CodecName"].isNull())
+			audioStreamObject.codecName = mezzanineNodeAudioStreamListAudioStream["CodecName"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["CodecLongName"].isNull())
+			audioStreamObject.codecLongName = mezzanineNodeAudioStreamListAudioStream["CodecLongName"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["CodecTimeBase"].isNull())
+			audioStreamObject.codecTimeBase = mezzanineNodeAudioStreamListAudioStream["CodecTimeBase"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["CodecTagString"].isNull())
+			audioStreamObject.codecTagString = mezzanineNodeAudioStreamListAudioStream["CodecTagString"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["CodecTag"].isNull())
+			audioStreamObject.codecTag = mezzanineNodeAudioStreamListAudioStream["CodecTag"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["SampleFmt"].isNull())
+			audioStreamObject.sampleFmt = mezzanineNodeAudioStreamListAudioStream["SampleFmt"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["SampleRate"].isNull())
+			audioStreamObject.sampleRate = mezzanineNodeAudioStreamListAudioStream["SampleRate"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["Channels"].isNull())
+			audioStreamObject.channels = mezzanineNodeAudioStreamListAudioStream["Channels"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["ChannelLayout"].isNull())
+			audioStreamObject.channelLayout = mezzanineNodeAudioStreamListAudioStream["ChannelLayout"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["Timebase"].isNull())
+			audioStreamObject.timebase = mezzanineNodeAudioStreamListAudioStream["Timebase"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["StartTime"].isNull())
+			audioStreamObject.startTime = mezzanineNodeAudioStreamListAudioStream["StartTime"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["Duration"].isNull())
+			audioStreamObject.duration = mezzanineNodeAudioStreamListAudioStream["Duration"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["Bitrate"].isNull())
+			audioStreamObject.bitrate = mezzanineNodeAudioStreamListAudioStream["Bitrate"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["NumFrames"].isNull())
+			audioStreamObject.numFrames = mezzanineNodeAudioStreamListAudioStream["NumFrames"].asString();
+		if(!mezzanineNodeAudioStreamListAudioStream["Lang"].isNull())
+			audioStreamObject.lang = mezzanineNodeAudioStreamListAudioStream["Lang"].asString();
 		mezzanine_.audioStreamList.push_back(audioStreamObject);
 	}
-	auto allVideoStreamList = value["VideoStreamList"]["VideoStream"];
-	for (auto value : allVideoStreamList)
+	auto allVideoStreamListNode = mezzanineNode["VideoStreamList"]["VideoStream"];
+	for (auto mezzanineNodeVideoStreamListVideoStream : allVideoStreamListNode)
 	{
 		Mezzanine::VideoStream videoStreamObject;
-		if(!value["Index"].isNull())
-			videoStreamObject.index = value["Index"].asString();
-		if(!value["CodecName"].isNull())
-			videoStreamObject.codecName = value["CodecName"].asString();
-		if(!value["CodecLongName"].isNull())
-			videoStreamObject.codecLongName = value["CodecLongName"].asString();
-		if(!value["Profile"].isNull())
-			videoStreamObject.profile = value["Profile"].asString();
-		if(!value["CodecTimeBase"].isNull())
-			videoStreamObject.codecTimeBase = value["CodecTimeBase"].asString();
-		if(!value["CodecTagString"].isNull())
-			videoStreamObject.codecTagString = value["CodecTagString"].asString();
-		if(!value["CodecTag"].isNull())
-			videoStreamObject.codecTag = value["CodecTag"].asString();
-		if(!value["Width"].isNull())
-			videoStreamObject.width = value["Width"].asString();
-		if(!value["Height"].isNull())
-			videoStreamObject.height = value["Height"].asString();
-		if(!value["HasBFrames"].isNull())
-			videoStreamObject.hasBFrames = value["HasBFrames"].asString();
-		if(!value["Sar"].isNull())
-			videoStreamObject.sar = value["Sar"].asString();
-		if(!value["Dar"].isNull())
-			videoStreamObject.dar = value["Dar"].asString();
-		if(!value["PixFmt"].isNull())
-			videoStreamObject.pixFmt = value["PixFmt"].asString();
-		if(!value["Level"].isNull())
-			videoStreamObject.level = value["Level"].asString();
-		if(!value["Fps"].isNull())
-			videoStreamObject.fps = value["Fps"].asString();
-		if(!value["AvgFPS"].isNull())
-			videoStreamObject.avgFPS = value["AvgFPS"].asString();
-		if(!value["Timebase"].isNull())
-			videoStreamObject.timebase = value["Timebase"].asString();
-		if(!value["StartTime"].isNull())
-			videoStreamObject.startTime = value["StartTime"].asString();
-		if(!value["Duration"].isNull())
-			videoStreamObject.duration = value["Duration"].asString();
-		if(!value["NumFrames"].isNull())
-			videoStreamObject.numFrames = value["NumFrames"].asString();
-		if(!value["Lang"].isNull())
-			videoStreamObject.lang = value["Lang"].asString();
-		if(!value["Rotate"].isNull())
-			videoStreamObject.rotate = value["Rotate"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Index"].isNull())
+			videoStreamObject.index = mezzanineNodeVideoStreamListVideoStream["Index"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["CodecName"].isNull())
+			videoStreamObject.codecName = mezzanineNodeVideoStreamListVideoStream["CodecName"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["CodecLongName"].isNull())
+			videoStreamObject.codecLongName = mezzanineNodeVideoStreamListVideoStream["CodecLongName"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Profile"].isNull())
+			videoStreamObject.profile = mezzanineNodeVideoStreamListVideoStream["Profile"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["CodecTimeBase"].isNull())
+			videoStreamObject.codecTimeBase = mezzanineNodeVideoStreamListVideoStream["CodecTimeBase"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["CodecTagString"].isNull())
+			videoStreamObject.codecTagString = mezzanineNodeVideoStreamListVideoStream["CodecTagString"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["CodecTag"].isNull())
+			videoStreamObject.codecTag = mezzanineNodeVideoStreamListVideoStream["CodecTag"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Width"].isNull())
+			videoStreamObject.width = mezzanineNodeVideoStreamListVideoStream["Width"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Height"].isNull())
+			videoStreamObject.height = mezzanineNodeVideoStreamListVideoStream["Height"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["HasBFrames"].isNull())
+			videoStreamObject.hasBFrames = mezzanineNodeVideoStreamListVideoStream["HasBFrames"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Sar"].isNull())
+			videoStreamObject.sar = mezzanineNodeVideoStreamListVideoStream["Sar"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Dar"].isNull())
+			videoStreamObject.dar = mezzanineNodeVideoStreamListVideoStream["Dar"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["PixFmt"].isNull())
+			videoStreamObject.pixFmt = mezzanineNodeVideoStreamListVideoStream["PixFmt"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Level"].isNull())
+			videoStreamObject.level = mezzanineNodeVideoStreamListVideoStream["Level"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Fps"].isNull())
+			videoStreamObject.fps = mezzanineNodeVideoStreamListVideoStream["Fps"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["AvgFPS"].isNull())
+			videoStreamObject.avgFPS = mezzanineNodeVideoStreamListVideoStream["AvgFPS"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Timebase"].isNull())
+			videoStreamObject.timebase = mezzanineNodeVideoStreamListVideoStream["Timebase"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["StartTime"].isNull())
+			videoStreamObject.startTime = mezzanineNodeVideoStreamListVideoStream["StartTime"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Duration"].isNull())
+			videoStreamObject.duration = mezzanineNodeVideoStreamListVideoStream["Duration"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["NumFrames"].isNull())
+			videoStreamObject.numFrames = mezzanineNodeVideoStreamListVideoStream["NumFrames"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Lang"].isNull())
+			videoStreamObject.lang = mezzanineNodeVideoStreamListVideoStream["Lang"].asString();
+		if(!mezzanineNodeVideoStreamListVideoStream["Rotate"].isNull())
+			videoStreamObject.rotate = mezzanineNodeVideoStreamListVideoStream["Rotate"].asString();
 		mezzanine_.videoStreamList.push_back(videoStreamObject);
 	}
 

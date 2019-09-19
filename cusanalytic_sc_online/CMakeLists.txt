@@ -23,6 +23,8 @@ set(cusanalytic_sc_online_public_header
 set(cusanalytic_sc_online_public_header_model 
 	include/alibabacloud/cusanalytic_sc_online/model/DescribeActionDataRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/DescribeActionDataResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/DescribeHistoryActionDataRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/DescribeHistoryActionDataResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/DescribeLocationsRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/DescribeLocationsResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetActionCursorRequest.h
@@ -58,6 +60,8 @@ set(cusanalytic_sc_online_src
 	src/Cusanalytic_sc_onlineClient.cc
 	src/model/DescribeActionDataRequest.cc
 	src/model/DescribeActionDataResult.cc
+	src/model/DescribeHistoryActionDataRequest.cc
+	src/model/DescribeHistoryActionDataResult.cc
 	src/model/DescribeLocationsRequest.cc
 	src/model/DescribeLocationsResult.cc
 	src/model/GetActionCursorRequest.cc

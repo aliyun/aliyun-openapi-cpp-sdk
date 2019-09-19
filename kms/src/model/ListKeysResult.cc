@@ -39,14 +39,14 @@ void ListKeysResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allKeys = value["Keys"]["Key"];
-	for (auto value : allKeys)
+	auto allKeysNode = value["Keys"]["Key"];
+	for (auto valueKeysKey : allKeysNode)
 	{
 		Key keysObject;
-		if(!value["KeyId"].isNull())
-			keysObject.keyId = value["KeyId"].asString();
-		if(!value["KeyArn"].isNull())
-			keysObject.keyArn = value["KeyArn"].asString();
+		if(!valueKeysKey["KeyId"].isNull())
+			keysObject.keyId = valueKeysKey["KeyId"].asString();
+		if(!valueKeysKey["KeyArn"].isNull())
+			keysObject.keyArn = valueKeysKey["KeyArn"].asString();
 		keys_.push_back(keysObject);
 	}
 	if(!value["TotalCount"].isNull())

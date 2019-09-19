@@ -39,20 +39,20 @@ void DescribeChartListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allChartList = value["ChartList"]["chart"];
-	for (auto value : allChartList)
+	auto allChartListNode = value["ChartList"]["chart"];
+	for (auto valueChartListchart : allChartListNode)
 	{
 		Chart chartListObject;
-		if(!value["ChartId"].isNull())
-			chartListObject.chartId = value["ChartId"].asString();
-		if(!value["ChartName"].isNull())
-			chartListObject.chartName = value["ChartName"].asString();
-		if(!value["BusinessType"].isNull())
-			chartListObject.businessType = value["BusinessType"].asString();
-		if(!value["BusinessName"].isNull())
-			chartListObject.businessName = value["BusinessName"].asString();
-		if(!value["ChartType"].isNull())
-			chartListObject.chartType = value["ChartType"].asString();
+		if(!valueChartListchart["ChartId"].isNull())
+			chartListObject.chartId = valueChartListchart["ChartId"].asString();
+		if(!valueChartListchart["ChartName"].isNull())
+			chartListObject.chartName = valueChartListchart["ChartName"].asString();
+		if(!valueChartListchart["BusinessType"].isNull())
+			chartListObject.businessType = valueChartListchart["BusinessType"].asString();
+		if(!valueChartListchart["BusinessName"].isNull())
+			chartListObject.businessName = valueChartListchart["BusinessName"].asString();
+		if(!valueChartListchart["ChartType"].isNull())
+			chartListObject.chartType = valueChartListchart["ChartType"].asString();
 		chartList_.push_back(chartListObject);
 	}
 

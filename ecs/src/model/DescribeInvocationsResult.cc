@@ -39,42 +39,42 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInvocations = value["Invocations"]["Invocation"];
-	for (auto value : allInvocations)
+	auto allInvocationsNode = value["Invocations"]["Invocation"];
+	for (auto valueInvocationsInvocation : allInvocationsNode)
 	{
 		Invocation invocationsObject;
-		if(!value["InvokeId"].isNull())
-			invocationsObject.invokeId = value["InvokeId"].asString();
-		if(!value["CommandId"].isNull())
-			invocationsObject.commandId = value["CommandId"].asString();
-		if(!value["CommandType"].isNull())
-			invocationsObject.commandType = value["CommandType"].asString();
-		if(!value["CommandName"].isNull())
-			invocationsObject.commandName = value["CommandName"].asString();
-		if(!value["Frequency"].isNull())
-			invocationsObject.frequency = value["Frequency"].asString();
-		if(!value["Timed"].isNull())
-			invocationsObject.timed = value["Timed"].asString() == "true";
-		if(!value["InvokeStatus"].isNull())
-			invocationsObject.invokeStatus = value["InvokeStatus"].asString();
-		if(!value["Parameters"].isNull())
-			invocationsObject.parameters = value["Parameters"].asString();
-		if(!value["CommandContent"].isNull())
-			invocationsObject.commandContent = value["CommandContent"].asString();
-		auto allInvokeInstances = value["InvokeInstances"]["InvokeInstance"];
-		for (auto value : allInvokeInstances)
+		if(!valueInvocationsInvocation["InvokeId"].isNull())
+			invocationsObject.invokeId = valueInvocationsInvocation["InvokeId"].asString();
+		if(!valueInvocationsInvocation["CommandId"].isNull())
+			invocationsObject.commandId = valueInvocationsInvocation["CommandId"].asString();
+		if(!valueInvocationsInvocation["CommandType"].isNull())
+			invocationsObject.commandType = valueInvocationsInvocation["CommandType"].asString();
+		if(!valueInvocationsInvocation["CommandName"].isNull())
+			invocationsObject.commandName = valueInvocationsInvocation["CommandName"].asString();
+		if(!valueInvocationsInvocation["Frequency"].isNull())
+			invocationsObject.frequency = valueInvocationsInvocation["Frequency"].asString();
+		if(!valueInvocationsInvocation["Timed"].isNull())
+			invocationsObject.timed = valueInvocationsInvocation["Timed"].asString() == "true";
+		if(!valueInvocationsInvocation["InvokeStatus"].isNull())
+			invocationsObject.invokeStatus = valueInvocationsInvocation["InvokeStatus"].asString();
+		if(!valueInvocationsInvocation["Parameters"].isNull())
+			invocationsObject.parameters = valueInvocationsInvocation["Parameters"].asString();
+		if(!valueInvocationsInvocation["CommandContent"].isNull())
+			invocationsObject.commandContent = valueInvocationsInvocation["CommandContent"].asString();
+		auto allInvokeInstancesNode = allInvocationsNode["InvokeInstances"]["InvokeInstance"];
+		for (auto allInvocationsNodeInvokeInstancesInvokeInstance : allInvokeInstancesNode)
 		{
 			Invocation::InvokeInstance invokeInstancesObject;
-			if(!value["InstanceId"].isNull())
-				invokeInstancesObject.instanceId = value["InstanceId"].asString();
-			if(!value["InstanceInvokeStatus"].isNull())
-				invokeInstancesObject.instanceInvokeStatus = value["InstanceInvokeStatus"].asString();
-			if(!value["CreationTime"].isNull())
-				invokeInstancesObject.creationTime = value["CreationTime"].asString();
-			if(!value["StartTime"].isNull())
-				invokeInstancesObject.startTime = value["StartTime"].asString();
-			if(!value["FinishTime"].isNull())
-				invokeInstancesObject.finishTime = value["FinishTime"].asString();
+			if(!allInvocationsNodeInvokeInstancesInvokeInstance["InstanceId"].isNull())
+				invokeInstancesObject.instanceId = allInvocationsNodeInvokeInstancesInvokeInstance["InstanceId"].asString();
+			if(!allInvocationsNodeInvokeInstancesInvokeInstance["InstanceInvokeStatus"].isNull())
+				invokeInstancesObject.instanceInvokeStatus = allInvocationsNodeInvokeInstancesInvokeInstance["InstanceInvokeStatus"].asString();
+			if(!allInvocationsNodeInvokeInstancesInvokeInstance["CreationTime"].isNull())
+				invokeInstancesObject.creationTime = allInvocationsNodeInvokeInstancesInvokeInstance["CreationTime"].asString();
+			if(!allInvocationsNodeInvokeInstancesInvokeInstance["StartTime"].isNull())
+				invokeInstancesObject.startTime = allInvocationsNodeInvokeInstancesInvokeInstance["StartTime"].asString();
+			if(!allInvocationsNodeInvokeInstancesInvokeInstance["FinishTime"].isNull())
+				invokeInstancesObject.finishTime = allInvocationsNodeInvokeInstancesInvokeInstance["FinishTime"].asString();
 			invocationsObject.invokeInstances.push_back(invokeInstancesObject);
 		}
 		invocations_.push_back(invocationsObject);

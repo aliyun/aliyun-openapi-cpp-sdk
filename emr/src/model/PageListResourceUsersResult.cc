@@ -39,42 +39,42 @@ void PageListResourceUsersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Item"];
+	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!value["AliyunUserId"].isNull())
-			itemsObject.aliyunUserId = value["AliyunUserId"].asString();
-		if(!value["UserName"].isNull())
-			itemsObject.userName = value["UserName"].asString();
-		if(!value["Status"].isNull())
-			itemsObject.status = value["Status"].asString();
-		if(!value["GmtCreate"].isNull())
-			itemsObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["KnoxSyncStatus"].isNull())
-			itemsObject.knoxSyncStatus = value["KnoxSyncStatus"].asString();
-		if(!value["LinuxSyncStatus"].isNull())
-			itemsObject.linuxSyncStatus = value["LinuxSyncStatus"].asString();
-		if(!value["KerberosStutus"].isNull())
-			itemsObject.kerberosStutus = value["KerberosStutus"].asString();
-		if(!value["SourceType"].isNull())
-			itemsObject.sourceType = value["SourceType"].asString();
-		auto allRoleDTOList = value["RoleDTOList"]["RoleDTO"];
-		for (auto value : allRoleDTOList)
+		if(!valueItemsItem["AliyunUserId"].isNull())
+			itemsObject.aliyunUserId = valueItemsItem["AliyunUserId"].asString();
+		if(!valueItemsItem["UserName"].isNull())
+			itemsObject.userName = valueItemsItem["UserName"].asString();
+		if(!valueItemsItem["Status"].isNull())
+			itemsObject.status = valueItemsItem["Status"].asString();
+		if(!valueItemsItem["GmtCreate"].isNull())
+			itemsObject.gmtCreate = std::stol(valueItemsItem["GmtCreate"].asString());
+		if(!valueItemsItem["KnoxSyncStatus"].isNull())
+			itemsObject.knoxSyncStatus = valueItemsItem["KnoxSyncStatus"].asString();
+		if(!valueItemsItem["LinuxSyncStatus"].isNull())
+			itemsObject.linuxSyncStatus = valueItemsItem["LinuxSyncStatus"].asString();
+		if(!valueItemsItem["KerberosStutus"].isNull())
+			itemsObject.kerberosStutus = valueItemsItem["KerberosStutus"].asString();
+		if(!valueItemsItem["SourceType"].isNull())
+			itemsObject.sourceType = valueItemsItem["SourceType"].asString();
+		auto allRoleDTOListNode = allItemsNode["RoleDTOList"]["RoleDTO"];
+		for (auto allItemsNodeRoleDTOListRoleDTO : allRoleDTOListNode)
 		{
 			Item::RoleDTO roleDTOListObject;
-			if(!value["Id"].isNull())
-				roleDTOListObject.id = std::stol(value["Id"].asString());
-			if(!value["Name"].isNull())
-				roleDTOListObject.name = value["Name"].asString();
-			if(!value["ResourceType"].isNull())
-				roleDTOListObject.resourceType = value["ResourceType"].asString();
-			if(!value["GmtCreate"].isNull())
-				roleDTOListObject.gmtCreate = value["GmtCreate"].asString();
-			if(!value["GmtModified"].isNull())
-				roleDTOListObject.gmtModified = value["GmtModified"].asString();
-			if(!value["Description"].isNull())
-				roleDTOListObject.description = value["Description"].asString();
+			if(!allItemsNodeRoleDTOListRoleDTO["Id"].isNull())
+				roleDTOListObject.id = std::stol(allItemsNodeRoleDTOListRoleDTO["Id"].asString());
+			if(!allItemsNodeRoleDTOListRoleDTO["Name"].isNull())
+				roleDTOListObject.name = allItemsNodeRoleDTOListRoleDTO["Name"].asString();
+			if(!allItemsNodeRoleDTOListRoleDTO["ResourceType"].isNull())
+				roleDTOListObject.resourceType = allItemsNodeRoleDTOListRoleDTO["ResourceType"].asString();
+			if(!allItemsNodeRoleDTOListRoleDTO["GmtCreate"].isNull())
+				roleDTOListObject.gmtCreate = allItemsNodeRoleDTOListRoleDTO["GmtCreate"].asString();
+			if(!allItemsNodeRoleDTOListRoleDTO["GmtModified"].isNull())
+				roleDTOListObject.gmtModified = allItemsNodeRoleDTOListRoleDTO["GmtModified"].asString();
+			if(!allItemsNodeRoleDTOListRoleDTO["Description"].isNull())
+				roleDTOListObject.description = allItemsNodeRoleDTOListRoleDTO["Description"].asString();
 			itemsObject.roleDTOList.push_back(roleDTOListObject);
 		}
 		items_.push_back(itemsObject);

@@ -33,7 +33,7 @@ namespace AlibabaCloud
 				struct Param
 				{
 					std::string listParamType;
-					ListParamValue listParamValue;
+					std::vector<std::string> listParamValue;
 					std::string paramValue;
 					std::string paramName;
 				};

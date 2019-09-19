@@ -42,20 +42,20 @@ void DescribeCdnDomainLogsResult::parse(const std::string &payload)
 	auto domainLogModelNode = value["DomainLogModel"];
 	if(!domainLogModelNode["DomainName"].isNull())
 		domainLogModel_.domainName = domainLogModelNode["DomainName"].asString();
-	auto allDomainLogDetails = value["DomainLogDetails"]["DomainLogDetail"];
-	for (auto value : allDomainLogDetails)
+	auto allDomainLogDetailsNode = domainLogModelNode["DomainLogDetails"]["DomainLogDetail"];
+	for (auto domainLogModelNodeDomainLogDetailsDomainLogDetail : allDomainLogDetailsNode)
 	{
 		DomainLogModel::DomainLogDetail domainLogDetailObject;
-		if(!value["LogName"].isNull())
-			domainLogDetailObject.logName = value["LogName"].asString();
-		if(!value["LogPath"].isNull())
-			domainLogDetailObject.logPath = value["LogPath"].asString();
-		if(!value["LogSize"].isNull())
-			domainLogDetailObject.logSize = std::stol(value["LogSize"].asString());
-		if(!value["StartTime"].isNull())
-			domainLogDetailObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			domainLogDetailObject.endTime = value["EndTime"].asString();
+		if(!domainLogModelNodeDomainLogDetailsDomainLogDetail["LogName"].isNull())
+			domainLogDetailObject.logName = domainLogModelNodeDomainLogDetailsDomainLogDetail["LogName"].asString();
+		if(!domainLogModelNodeDomainLogDetailsDomainLogDetail["LogPath"].isNull())
+			domainLogDetailObject.logPath = domainLogModelNodeDomainLogDetailsDomainLogDetail["LogPath"].asString();
+		if(!domainLogModelNodeDomainLogDetailsDomainLogDetail["LogSize"].isNull())
+			domainLogDetailObject.logSize = std::stol(domainLogModelNodeDomainLogDetailsDomainLogDetail["LogSize"].asString());
+		if(!domainLogModelNodeDomainLogDetailsDomainLogDetail["StartTime"].isNull())
+			domainLogDetailObject.startTime = domainLogModelNodeDomainLogDetailsDomainLogDetail["StartTime"].asString();
+		if(!domainLogModelNodeDomainLogDetailsDomainLogDetail["EndTime"].isNull())
+			domainLogDetailObject.endTime = domainLogModelNodeDomainLogDetailsDomainLogDetail["EndTime"].asString();
 		domainLogModel_.domainLogDetails.push_back(domainLogDetailObject);
 	}
 	if(!value["PageNumber"].isNull())

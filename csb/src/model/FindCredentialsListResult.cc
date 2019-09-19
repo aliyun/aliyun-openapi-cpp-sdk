@@ -44,20 +44,20 @@ void FindCredentialsListResult::parse(const std::string &payload)
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
 	if(!dataNode["PageNumber"].isNull())
 		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
-	auto allCredentialList = value["CredentialList"]["Credential"];
-	for (auto value : allCredentialList)
+	auto allCredentialListNode = dataNode["CredentialList"]["Credential"];
+	for (auto dataNodeCredentialListCredential : allCredentialListNode)
 	{
 		Data::Credential credentialObject;
-		if(!value["GmtCreate"].isNull())
-			credentialObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["Id"].isNull())
-			credentialObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			credentialObject.name = value["Name"].asString();
-		if(!value["OwnerAttr"].isNull())
-			credentialObject.ownerAttr = value["OwnerAttr"].asString();
-		if(!value["UserId"].isNull())
-			credentialObject.userId = value["UserId"].asString();
+		if(!dataNodeCredentialListCredential["GmtCreate"].isNull())
+			credentialObject.gmtCreate = std::stol(dataNodeCredentialListCredential["GmtCreate"].asString());
+		if(!dataNodeCredentialListCredential["Id"].isNull())
+			credentialObject.id = std::stol(dataNodeCredentialListCredential["Id"].asString());
+		if(!dataNodeCredentialListCredential["Name"].isNull())
+			credentialObject.name = dataNodeCredentialListCredential["Name"].asString();
+		if(!dataNodeCredentialListCredential["OwnerAttr"].isNull())
+			credentialObject.ownerAttr = dataNodeCredentialListCredential["OwnerAttr"].asString();
+		if(!dataNodeCredentialListCredential["UserId"].isNull())
+			credentialObject.userId = dataNodeCredentialListCredential["UserId"].asString();
 		auto currentCredentialNode = value["CurrentCredential"];
 		if(!currentCredentialNode["AccessKey"].isNull())
 			credentialObject.currentCredential.accessKey = currentCredentialNode["AccessKey"].asString();

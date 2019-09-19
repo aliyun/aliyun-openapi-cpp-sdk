@@ -39,12 +39,12 @@ void DescribeFlowNodeInstanceLauncherLogResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogEntrys = value["LogEntrys"]["LogEntry"];
-	for (auto value : allLogEntrys)
+	auto allLogEntrysNode = value["LogEntrys"]["LogEntry"];
+	for (auto valueLogEntrysLogEntry : allLogEntrysNode)
 	{
 		LogEntry logEntrysObject;
-		if(!value["Content"].isNull())
-			logEntrysObject.content = value["Content"].asString();
+		if(!valueLogEntrysLogEntry["Content"].isNull())
+			logEntrysObject.content = valueLogEntrysLogEntry["Content"].asString();
 		logEntrys_.push_back(logEntrysObject);
 	}
 	if(!value["LogEnd"].isNull())

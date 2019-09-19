@@ -39,68 +39,68 @@ void DescribeInstancesByExpireTimeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstances = value["Instances"]["KVStoreInstance"];
-	for (auto value : allInstances)
+	auto allInstancesNode = value["Instances"]["KVStoreInstance"];
+	for (auto valueInstancesKVStoreInstance : allInstancesNode)
 	{
 		KVStoreInstance instancesObject;
-		if(!value["ReplacateId"].isNull())
-			instancesObject.replacateId = value["ReplacateId"].asString();
-		if(!value["InstanceId"].isNull())
-			instancesObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceName"].isNull())
-			instancesObject.instanceName = value["InstanceName"].asString();
-		if(!value["ConnectionDomain"].isNull())
-			instancesObject.connectionDomain = value["ConnectionDomain"].asString();
-		if(!value["Port"].isNull())
-			instancesObject.port = std::stol(value["Port"].asString());
-		if(!value["UserName"].isNull())
-			instancesObject.userName = value["UserName"].asString();
-		if(!value["InstanceStatus"].isNull())
-			instancesObject.instanceStatus = value["InstanceStatus"].asString();
-		if(!value["RegionId"].isNull())
-			instancesObject.regionId = value["RegionId"].asString();
-		if(!value["Capacity"].isNull())
-			instancesObject.capacity = std::stol(value["Capacity"].asString());
-		if(!value["InstanceClass"].isNull())
-			instancesObject.instanceClass = value["InstanceClass"].asString();
-		if(!value["QPS"].isNull())
-			instancesObject.qPS = std::stol(value["QPS"].asString());
-		if(!value["Bandwidth"].isNull())
-			instancesObject.bandwidth = std::stol(value["Bandwidth"].asString());
-		if(!value["Connections"].isNull())
-			instancesObject.connections = std::stol(value["Connections"].asString());
-		if(!value["ZoneId"].isNull())
-			instancesObject.zoneId = value["ZoneId"].asString();
-		if(!value["Config"].isNull())
-			instancesObject.config = value["Config"].asString();
-		if(!value["ChargeType"].isNull())
-			instancesObject.chargeType = value["ChargeType"].asString();
-		if(!value["NetworkType"].isNull())
-			instancesObject.networkType = value["NetworkType"].asString();
-		if(!value["VpcId"].isNull())
-			instancesObject.vpcId = value["VpcId"].asString();
-		if(!value["VSwitchId"].isNull())
-			instancesObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["PrivateIp"].isNull())
-			instancesObject.privateIp = value["PrivateIp"].asString();
-		if(!value["CreateTime"].isNull())
-			instancesObject.createTime = value["CreateTime"].asString();
-		if(!value["EndTime"].isNull())
-			instancesObject.endTime = value["EndTime"].asString();
-		if(!value["HasRenewChangeOrder"].isNull())
-			instancesObject.hasRenewChangeOrder = value["HasRenewChangeOrder"].asString();
-		if(!value["IsRds"].isNull())
-			instancesObject.isRds = value["IsRds"].asString() == "true";
-		if(!value["InstanceType"].isNull())
-			instancesObject.instanceType = value["InstanceType"].asString();
-		if(!value["ArchitectureType"].isNull())
-			instancesObject.architectureType = value["ArchitectureType"].asString();
-		if(!value["NodeType"].isNull())
-			instancesObject.nodeType = value["NodeType"].asString();
-		if(!value["PackageType"].isNull())
-			instancesObject.packageType = value["PackageType"].asString();
-		if(!value["EngineVersion"].isNull())
-			instancesObject.engineVersion = value["EngineVersion"].asString();
+		if(!valueInstancesKVStoreInstance["ReplacateId"].isNull())
+			instancesObject.replacateId = valueInstancesKVStoreInstance["ReplacateId"].asString();
+		if(!valueInstancesKVStoreInstance["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesKVStoreInstance["InstanceId"].asString();
+		if(!valueInstancesKVStoreInstance["InstanceName"].isNull())
+			instancesObject.instanceName = valueInstancesKVStoreInstance["InstanceName"].asString();
+		if(!valueInstancesKVStoreInstance["ConnectionDomain"].isNull())
+			instancesObject.connectionDomain = valueInstancesKVStoreInstance["ConnectionDomain"].asString();
+		if(!valueInstancesKVStoreInstance["Port"].isNull())
+			instancesObject.port = std::stol(valueInstancesKVStoreInstance["Port"].asString());
+		if(!valueInstancesKVStoreInstance["UserName"].isNull())
+			instancesObject.userName = valueInstancesKVStoreInstance["UserName"].asString();
+		if(!valueInstancesKVStoreInstance["InstanceStatus"].isNull())
+			instancesObject.instanceStatus = valueInstancesKVStoreInstance["InstanceStatus"].asString();
+		if(!valueInstancesKVStoreInstance["RegionId"].isNull())
+			instancesObject.regionId = valueInstancesKVStoreInstance["RegionId"].asString();
+		if(!valueInstancesKVStoreInstance["Capacity"].isNull())
+			instancesObject.capacity = std::stol(valueInstancesKVStoreInstance["Capacity"].asString());
+		if(!valueInstancesKVStoreInstance["InstanceClass"].isNull())
+			instancesObject.instanceClass = valueInstancesKVStoreInstance["InstanceClass"].asString();
+		if(!valueInstancesKVStoreInstance["QPS"].isNull())
+			instancesObject.qPS = std::stol(valueInstancesKVStoreInstance["QPS"].asString());
+		if(!valueInstancesKVStoreInstance["Bandwidth"].isNull())
+			instancesObject.bandwidth = std::stol(valueInstancesKVStoreInstance["Bandwidth"].asString());
+		if(!valueInstancesKVStoreInstance["Connections"].isNull())
+			instancesObject.connections = std::stol(valueInstancesKVStoreInstance["Connections"].asString());
+		if(!valueInstancesKVStoreInstance["ZoneId"].isNull())
+			instancesObject.zoneId = valueInstancesKVStoreInstance["ZoneId"].asString();
+		if(!valueInstancesKVStoreInstance["Config"].isNull())
+			instancesObject.config = valueInstancesKVStoreInstance["Config"].asString();
+		if(!valueInstancesKVStoreInstance["ChargeType"].isNull())
+			instancesObject.chargeType = valueInstancesKVStoreInstance["ChargeType"].asString();
+		if(!valueInstancesKVStoreInstance["NetworkType"].isNull())
+			instancesObject.networkType = valueInstancesKVStoreInstance["NetworkType"].asString();
+		if(!valueInstancesKVStoreInstance["VpcId"].isNull())
+			instancesObject.vpcId = valueInstancesKVStoreInstance["VpcId"].asString();
+		if(!valueInstancesKVStoreInstance["VSwitchId"].isNull())
+			instancesObject.vSwitchId = valueInstancesKVStoreInstance["VSwitchId"].asString();
+		if(!valueInstancesKVStoreInstance["PrivateIp"].isNull())
+			instancesObject.privateIp = valueInstancesKVStoreInstance["PrivateIp"].asString();
+		if(!valueInstancesKVStoreInstance["CreateTime"].isNull())
+			instancesObject.createTime = valueInstancesKVStoreInstance["CreateTime"].asString();
+		if(!valueInstancesKVStoreInstance["EndTime"].isNull())
+			instancesObject.endTime = valueInstancesKVStoreInstance["EndTime"].asString();
+		if(!valueInstancesKVStoreInstance["HasRenewChangeOrder"].isNull())
+			instancesObject.hasRenewChangeOrder = valueInstancesKVStoreInstance["HasRenewChangeOrder"].asString();
+		if(!valueInstancesKVStoreInstance["IsRds"].isNull())
+			instancesObject.isRds = valueInstancesKVStoreInstance["IsRds"].asString() == "true";
+		if(!valueInstancesKVStoreInstance["InstanceType"].isNull())
+			instancesObject.instanceType = valueInstancesKVStoreInstance["InstanceType"].asString();
+		if(!valueInstancesKVStoreInstance["ArchitectureType"].isNull())
+			instancesObject.architectureType = valueInstancesKVStoreInstance["ArchitectureType"].asString();
+		if(!valueInstancesKVStoreInstance["NodeType"].isNull())
+			instancesObject.nodeType = valueInstancesKVStoreInstance["NodeType"].asString();
+		if(!valueInstancesKVStoreInstance["PackageType"].isNull())
+			instancesObject.packageType = valueInstancesKVStoreInstance["PackageType"].asString();
+		if(!valueInstancesKVStoreInstance["EngineVersion"].isNull())
+			instancesObject.engineVersion = valueInstancesKVStoreInstance["EngineVersion"].asString();
 		instances_.push_back(instancesObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -39,36 +39,36 @@ void ListAlarmHistoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAlarmHistoryList = value["AlarmHistoryList"]["AlarmHistory"];
-	for (auto value : allAlarmHistoryList)
+	auto allAlarmHistoryListNode = value["AlarmHistoryList"]["AlarmHistory"];
+	for (auto valueAlarmHistoryListAlarmHistory : allAlarmHistoryListNode)
 	{
 		AlarmHistory alarmHistoryListObject;
-		if(!value["Id"].isNull())
-			alarmHistoryListObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			alarmHistoryListObject.name = value["Name"].asString();
-		if(!value["Namespace"].isNull())
-			alarmHistoryListObject._namespace = value["Namespace"].asString();
-		if(!value["MetricName"].isNull())
-			alarmHistoryListObject.metricName = value["MetricName"].asString();
-		if(!value["Dimension"].isNull())
-			alarmHistoryListObject.dimension = value["Dimension"].asString();
-		if(!value["EvaluationCount"].isNull())
-			alarmHistoryListObject.evaluationCount = std::stoi(value["EvaluationCount"].asString());
-		if(!value["Value"].isNull())
-			alarmHistoryListObject.value = value["Value"].asString();
-		if(!value["AlarmTime"].isNull())
-			alarmHistoryListObject.alarmTime = std::stol(value["AlarmTime"].asString());
-		if(!value["LastTime"].isNull())
-			alarmHistoryListObject.lastTime = std::stol(value["LastTime"].asString());
-		if(!value["State"].isNull())
-			alarmHistoryListObject.state = value["State"].asString();
-		if(!value["Status"].isNull())
-			alarmHistoryListObject.status = std::stoi(value["Status"].asString());
-		if(!value["ContactGroups"].isNull())
-			alarmHistoryListObject.contactGroups = value["ContactGroups"].asString();
-		if(!value["InstanceName"].isNull())
-			alarmHistoryListObject.instanceName = value["InstanceName"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["Id"].isNull())
+			alarmHistoryListObject.id = valueAlarmHistoryListAlarmHistory["Id"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["Name"].isNull())
+			alarmHistoryListObject.name = valueAlarmHistoryListAlarmHistory["Name"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["Namespace"].isNull())
+			alarmHistoryListObject._namespace = valueAlarmHistoryListAlarmHistory["Namespace"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["MetricName"].isNull())
+			alarmHistoryListObject.metricName = valueAlarmHistoryListAlarmHistory["MetricName"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["Dimension"].isNull())
+			alarmHistoryListObject.dimension = valueAlarmHistoryListAlarmHistory["Dimension"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["EvaluationCount"].isNull())
+			alarmHistoryListObject.evaluationCount = std::stoi(valueAlarmHistoryListAlarmHistory["EvaluationCount"].asString());
+		if(!valueAlarmHistoryListAlarmHistory["Value"].isNull())
+			alarmHistoryListObject.value = valueAlarmHistoryListAlarmHistory["Value"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["AlarmTime"].isNull())
+			alarmHistoryListObject.alarmTime = std::stol(valueAlarmHistoryListAlarmHistory["AlarmTime"].asString());
+		if(!valueAlarmHistoryListAlarmHistory["LastTime"].isNull())
+			alarmHistoryListObject.lastTime = std::stol(valueAlarmHistoryListAlarmHistory["LastTime"].asString());
+		if(!valueAlarmHistoryListAlarmHistory["State"].isNull())
+			alarmHistoryListObject.state = valueAlarmHistoryListAlarmHistory["State"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["Status"].isNull())
+			alarmHistoryListObject.status = std::stoi(valueAlarmHistoryListAlarmHistory["Status"].asString());
+		if(!valueAlarmHistoryListAlarmHistory["ContactGroups"].isNull())
+			alarmHistoryListObject.contactGroups = valueAlarmHistoryListAlarmHistory["ContactGroups"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["InstanceName"].isNull())
+			alarmHistoryListObject.instanceName = valueAlarmHistoryListAlarmHistory["InstanceName"].asString();
 		alarmHistoryList_.push_back(alarmHistoryListObject);
 	}
 	if(!value["Success"].isNull())

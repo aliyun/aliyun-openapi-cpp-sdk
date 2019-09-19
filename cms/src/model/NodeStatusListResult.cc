@@ -39,16 +39,16 @@ void NodeStatusListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNodeStatusList = value["NodeStatusList"]["NodeStatus"];
-	for (auto value : allNodeStatusList)
+	auto allNodeStatusListNode = value["NodeStatusList"]["NodeStatus"];
+	for (auto valueNodeStatusListNodeStatus : allNodeStatusListNode)
 	{
 		NodeStatus nodeStatusListObject;
-		if(!value["InstanceId"].isNull())
-			nodeStatusListObject.instanceId = value["InstanceId"].asString();
-		if(!value["AutoInstall"].isNull())
-			nodeStatusListObject.autoInstall = value["AutoInstall"].asString() == "true";
-		if(!value["Status"].isNull())
-			nodeStatusListObject.status = value["Status"].asString();
+		if(!valueNodeStatusListNodeStatus["InstanceId"].isNull())
+			nodeStatusListObject.instanceId = valueNodeStatusListNodeStatus["InstanceId"].asString();
+		if(!valueNodeStatusListNodeStatus["AutoInstall"].isNull())
+			nodeStatusListObject.autoInstall = valueNodeStatusListNodeStatus["AutoInstall"].asString() == "true";
+		if(!valueNodeStatusListNodeStatus["Status"].isNull())
+			nodeStatusListObject.status = valueNodeStatusListNodeStatus["Status"].asString();
 		nodeStatusList_.push_back(nodeStatusListObject);
 	}
 	if(!value["ErrorCode"].isNull())

@@ -39,24 +39,24 @@ void DescribeTopDomainsByFlowResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTopDomains = value["TopDomains"]["TopDomain"];
-	for (auto value : allTopDomains)
+	auto allTopDomainsNode = value["TopDomains"]["TopDomain"];
+	for (auto valueTopDomainsTopDomain : allTopDomainsNode)
 	{
 		TopDomain topDomainsObject;
-		if(!value["DomainName"].isNull())
-			topDomainsObject.domainName = value["DomainName"].asString();
-		if(!value["Rank"].isNull())
-			topDomainsObject.rank = std::stol(value["Rank"].asString());
-		if(!value["TotalTraffic"].isNull())
-			topDomainsObject.totalTraffic = value["TotalTraffic"].asString();
-		if(!value["TrafficPercent"].isNull())
-			topDomainsObject.trafficPercent = value["TrafficPercent"].asString();
-		if(!value["MaxBps"].isNull())
-			topDomainsObject.maxBps = std::stof(value["MaxBps"].asString());
-		if(!value["MaxBpsTime"].isNull())
-			topDomainsObject.maxBpsTime = value["MaxBpsTime"].asString();
-		if(!value["TotalAccess"].isNull())
-			topDomainsObject.totalAccess = std::stol(value["TotalAccess"].asString());
+		if(!valueTopDomainsTopDomain["DomainName"].isNull())
+			topDomainsObject.domainName = valueTopDomainsTopDomain["DomainName"].asString();
+		if(!valueTopDomainsTopDomain["Rank"].isNull())
+			topDomainsObject.rank = std::stol(valueTopDomainsTopDomain["Rank"].asString());
+		if(!valueTopDomainsTopDomain["TotalTraffic"].isNull())
+			topDomainsObject.totalTraffic = valueTopDomainsTopDomain["TotalTraffic"].asString();
+		if(!valueTopDomainsTopDomain["TrafficPercent"].isNull())
+			topDomainsObject.trafficPercent = valueTopDomainsTopDomain["TrafficPercent"].asString();
+		if(!valueTopDomainsTopDomain["MaxBps"].isNull())
+			topDomainsObject.maxBps = std::stof(valueTopDomainsTopDomain["MaxBps"].asString());
+		if(!valueTopDomainsTopDomain["MaxBpsTime"].isNull())
+			topDomainsObject.maxBpsTime = valueTopDomainsTopDomain["MaxBpsTime"].asString();
+		if(!valueTopDomainsTopDomain["TotalAccess"].isNull())
+			topDomainsObject.totalAccess = std::stol(valueTopDomainsTopDomain["TotalAccess"].asString());
 		topDomains_.push_back(topDomainsObject);
 	}
 	if(!value["StartTime"].isNull())

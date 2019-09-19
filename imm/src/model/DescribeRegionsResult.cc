@@ -40,12 +40,12 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto regionsNode = value["Regions"];
-	auto allRegion = value["Region"]["RegionItem"];
-	for (auto value : allRegion)
+	auto allRegionNode = regionsNode["Region"]["RegionItem"];
+	for (auto regionsNodeRegionRegionItem : allRegionNode)
 	{
 		Regions::RegionItem regionItemObject;
-		if(!value["RegionId"].isNull())
-			regionItemObject.regionId = value["RegionId"].asString();
+		if(!regionsNodeRegionRegionItem["RegionId"].isNull())
+			regionItemObject.regionId = regionsNodeRegionRegionItem["RegionId"].asString();
 		auto allProjectTypes = value["ProjectTypes"]["ProjectTypes"];
 		for (auto value : allProjectTypes)
 			regionItemObject.projectTypes.push_back(value.asString());

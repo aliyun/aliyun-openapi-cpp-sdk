@@ -34,7 +34,7 @@ namespace AlibabaCloud
 				{
 					int mode;
 					std::string hostResourceId;
-					ResourceIds resourceIds;
+					std::vector<std::string> resourceIds;
 				};
 
 			public:

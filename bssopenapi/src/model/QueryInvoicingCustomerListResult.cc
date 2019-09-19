@@ -40,52 +40,52 @@ void QueryInvoicingCustomerListResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allCustomerInvoiceList = value["CustomerInvoiceList"]["CustomerInvoice"];
-	for (auto value : allCustomerInvoiceList)
+	auto allCustomerInvoiceListNode = dataNode["CustomerInvoiceList"]["CustomerInvoice"];
+	for (auto dataNodeCustomerInvoiceListCustomerInvoice : allCustomerInvoiceListNode)
 	{
 		Data::CustomerInvoice customerInvoiceObject;
-		if(!value["Id"].isNull())
-			customerInvoiceObject.id = std::stol(value["Id"].asString());
-		if(!value["UserId"].isNull())
-			customerInvoiceObject.userId = std::stol(value["UserId"].asString());
-		if(!value["UserNick"].isNull())
-			customerInvoiceObject.userNick = value["UserNick"].asString();
-		if(!value["InvoiceTitle"].isNull())
-			customerInvoiceObject.invoiceTitle = value["InvoiceTitle"].asString();
-		if(!value["CustomerType"].isNull())
-			customerInvoiceObject.customerType = std::stol(value["CustomerType"].asString());
-		if(!value["TaxpayerType"].isNull())
-			customerInvoiceObject.taxpayerType = std::stol(value["TaxpayerType"].asString());
-		if(!value["Bank"].isNull())
-			customerInvoiceObject.bank = value["Bank"].asString();
-		if(!value["BankNo"].isNull())
-			customerInvoiceObject.bankNo = value["BankNo"].asString();
-		if(!value["OperatingLicenseAddress"].isNull())
-			customerInvoiceObject.operatingLicenseAddress = value["OperatingLicenseAddress"].asString();
-		if(!value["OperatingLicensePhone"].isNull())
-			customerInvoiceObject.operatingLicensePhone = value["OperatingLicensePhone"].asString();
-		if(!value["RegisterNo"].isNull())
-			customerInvoiceObject.registerNo = value["RegisterNo"].asString();
-		if(!value["StartCycle"].isNull())
-			customerInvoiceObject.startCycle = std::stol(value["StartCycle"].asString());
-		if(!value["Status"].isNull())
-			customerInvoiceObject.status = std::stol(value["Status"].asString());
-		if(!value["GmtCreate"].isNull())
-			customerInvoiceObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["TaxationLicense"].isNull())
-			customerInvoiceObject.taxationLicense = value["TaxationLicense"].asString();
-		if(!value["AdjustType"].isNull())
-			customerInvoiceObject.adjustType = std::stol(value["AdjustType"].asString());
-		if(!value["EndCycle"].isNull())
-			customerInvoiceObject.endCycle = std::stol(value["EndCycle"].asString());
-		if(!value["TitleChangeInstructions"].isNull())
-			customerInvoiceObject.titleChangeInstructions = value["TitleChangeInstructions"].asString();
-		if(!value["IssueType"].isNull())
-			customerInvoiceObject.issueType = std::stol(value["IssueType"].asString());
-		if(!value["Type"].isNull())
-			customerInvoiceObject.type = std::stol(value["Type"].asString());
-		if(!value["DefaultRemark"].isNull())
-			customerInvoiceObject.defaultRemark = value["DefaultRemark"].asString();
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["Id"].isNull())
+			customerInvoiceObject.id = std::stol(dataNodeCustomerInvoiceListCustomerInvoice["Id"].asString());
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["UserId"].isNull())
+			customerInvoiceObject.userId = std::stol(dataNodeCustomerInvoiceListCustomerInvoice["UserId"].asString());
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["UserNick"].isNull())
+			customerInvoiceObject.userNick = dataNodeCustomerInvoiceListCustomerInvoice["UserNick"].asString();
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["InvoiceTitle"].isNull())
+			customerInvoiceObject.invoiceTitle = dataNodeCustomerInvoiceListCustomerInvoice["InvoiceTitle"].asString();
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["CustomerType"].isNull())
+			customerInvoiceObject.customerType = std::stol(dataNodeCustomerInvoiceListCustomerInvoice["CustomerType"].asString());
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["TaxpayerType"].isNull())
+			customerInvoiceObject.taxpayerType = std::stol(dataNodeCustomerInvoiceListCustomerInvoice["TaxpayerType"].asString());
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["Bank"].isNull())
+			customerInvoiceObject.bank = dataNodeCustomerInvoiceListCustomerInvoice["Bank"].asString();
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["BankNo"].isNull())
+			customerInvoiceObject.bankNo = dataNodeCustomerInvoiceListCustomerInvoice["BankNo"].asString();
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["OperatingLicenseAddress"].isNull())
+			customerInvoiceObject.operatingLicenseAddress = dataNodeCustomerInvoiceListCustomerInvoice["OperatingLicenseAddress"].asString();
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["OperatingLicensePhone"].isNull())
+			customerInvoiceObject.operatingLicensePhone = dataNodeCustomerInvoiceListCustomerInvoice["OperatingLicensePhone"].asString();
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["RegisterNo"].isNull())
+			customerInvoiceObject.registerNo = dataNodeCustomerInvoiceListCustomerInvoice["RegisterNo"].asString();
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["StartCycle"].isNull())
+			customerInvoiceObject.startCycle = std::stol(dataNodeCustomerInvoiceListCustomerInvoice["StartCycle"].asString());
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["Status"].isNull())
+			customerInvoiceObject.status = std::stol(dataNodeCustomerInvoiceListCustomerInvoice["Status"].asString());
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["GmtCreate"].isNull())
+			customerInvoiceObject.gmtCreate = dataNodeCustomerInvoiceListCustomerInvoice["GmtCreate"].asString();
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["TaxationLicense"].isNull())
+			customerInvoiceObject.taxationLicense = dataNodeCustomerInvoiceListCustomerInvoice["TaxationLicense"].asString();
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["AdjustType"].isNull())
+			customerInvoiceObject.adjustType = std::stol(dataNodeCustomerInvoiceListCustomerInvoice["AdjustType"].asString());
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["EndCycle"].isNull())
+			customerInvoiceObject.endCycle = std::stol(dataNodeCustomerInvoiceListCustomerInvoice["EndCycle"].asString());
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["TitleChangeInstructions"].isNull())
+			customerInvoiceObject.titleChangeInstructions = dataNodeCustomerInvoiceListCustomerInvoice["TitleChangeInstructions"].asString();
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["IssueType"].isNull())
+			customerInvoiceObject.issueType = std::stol(dataNodeCustomerInvoiceListCustomerInvoice["IssueType"].asString());
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["Type"].isNull())
+			customerInvoiceObject.type = std::stol(dataNodeCustomerInvoiceListCustomerInvoice["Type"].asString());
+		if(!dataNodeCustomerInvoiceListCustomerInvoice["DefaultRemark"].isNull())
+			customerInvoiceObject.defaultRemark = dataNodeCustomerInvoiceListCustomerInvoice["DefaultRemark"].asString();
 		data_.customerInvoiceList.push_back(customerInvoiceObject);
 	}
 	if(!value["Success"].isNull())

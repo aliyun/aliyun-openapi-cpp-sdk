@@ -39,32 +39,32 @@ void DescribeSQLReportsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Item"];
+	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!value["ReportTime"].isNull())
-			itemsObject.reportTime = value["ReportTime"].asString();
-		auto allLatencyTopNItems = value["LatencyTopNItems"]["LatencyTopNItem"];
-		for (auto value : allLatencyTopNItems)
+		if(!valueItemsItem["ReportTime"].isNull())
+			itemsObject.reportTime = valueItemsItem["ReportTime"].asString();
+		auto allLatencyTopNItemsNode = allItemsNode["LatencyTopNItems"]["LatencyTopNItem"];
+		for (auto allItemsNodeLatencyTopNItemsLatencyTopNItem : allLatencyTopNItemsNode)
 		{
 			Item::LatencyTopNItem latencyTopNItemsObject;
-			if(!value["SQLText"].isNull())
-				latencyTopNItemsObject.sQLText = value["SQLText"].asString();
-			if(!value["AvgLatency"].isNull())
-				latencyTopNItemsObject.avgLatency = std::stol(value["AvgLatency"].asString());
-			if(!value["SQLExecuteTimes"].isNull())
-				latencyTopNItemsObject.sQLExecuteTimes = std::stol(value["SQLExecuteTimes"].asString());
+			if(!allItemsNodeLatencyTopNItemsLatencyTopNItem["SQLText"].isNull())
+				latencyTopNItemsObject.sQLText = allItemsNodeLatencyTopNItemsLatencyTopNItem["SQLText"].asString();
+			if(!allItemsNodeLatencyTopNItemsLatencyTopNItem["AvgLatency"].isNull())
+				latencyTopNItemsObject.avgLatency = std::stol(allItemsNodeLatencyTopNItemsLatencyTopNItem["AvgLatency"].asString());
+			if(!allItemsNodeLatencyTopNItemsLatencyTopNItem["SQLExecuteTimes"].isNull())
+				latencyTopNItemsObject.sQLExecuteTimes = std::stol(allItemsNodeLatencyTopNItemsLatencyTopNItem["SQLExecuteTimes"].asString());
 			itemsObject.latencyTopNItems.push_back(latencyTopNItemsObject);
 		}
-		auto allQPSTopNItems = value["QPSTopNItems"]["QPSTopNItem"];
-		for (auto value : allQPSTopNItems)
+		auto allQPSTopNItemsNode = allItemsNode["QPSTopNItems"]["QPSTopNItem"];
+		for (auto allItemsNodeQPSTopNItemsQPSTopNItem : allQPSTopNItemsNode)
 		{
 			Item::QPSTopNItem qPSTopNItemsObject;
-			if(!value["SQLText"].isNull())
-				qPSTopNItemsObject.sQLText = value["SQLText"].asString();
-			if(!value["SQLExecuteTimes"].isNull())
-				qPSTopNItemsObject.sQLExecuteTimes = std::stol(value["SQLExecuteTimes"].asString());
+			if(!allItemsNodeQPSTopNItemsQPSTopNItem["SQLText"].isNull())
+				qPSTopNItemsObject.sQLText = allItemsNodeQPSTopNItemsQPSTopNItem["SQLText"].asString();
+			if(!allItemsNodeQPSTopNItemsQPSTopNItem["SQLExecuteTimes"].isNull())
+				qPSTopNItemsObject.sQLExecuteTimes = std::stol(allItemsNodeQPSTopNItemsQPSTopNItem["SQLExecuteTimes"].asString());
 			itemsObject.qPSTopNItems.push_back(qPSTopNItemsObject);
 		}
 		items_.push_back(itemsObject);

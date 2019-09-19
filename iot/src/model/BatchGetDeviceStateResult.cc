@@ -39,22 +39,22 @@ void BatchGetDeviceStateResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDeviceStatusList = value["DeviceStatusList"]["DeviceStatus"];
-	for (auto value : allDeviceStatusList)
+	auto allDeviceStatusListNode = value["DeviceStatusList"]["DeviceStatus"];
+	for (auto valueDeviceStatusListDeviceStatus : allDeviceStatusListNode)
 	{
 		DeviceStatus deviceStatusListObject;
-		if(!value["DeviceId"].isNull())
-			deviceStatusListObject.deviceId = value["DeviceId"].asString();
-		if(!value["DeviceName"].isNull())
-			deviceStatusListObject.deviceName = value["DeviceName"].asString();
-		if(!value["Status"].isNull())
-			deviceStatusListObject.status = value["Status"].asString();
-		if(!value["AsAddress"].isNull())
-			deviceStatusListObject.asAddress = value["AsAddress"].asString();
-		if(!value["LastOnlineTime"].isNull())
-			deviceStatusListObject.lastOnlineTime = value["LastOnlineTime"].asString();
-		if(!value["IotId"].isNull())
-			deviceStatusListObject.iotId = value["IotId"].asString();
+		if(!valueDeviceStatusListDeviceStatus["DeviceId"].isNull())
+			deviceStatusListObject.deviceId = valueDeviceStatusListDeviceStatus["DeviceId"].asString();
+		if(!valueDeviceStatusListDeviceStatus["DeviceName"].isNull())
+			deviceStatusListObject.deviceName = valueDeviceStatusListDeviceStatus["DeviceName"].asString();
+		if(!valueDeviceStatusListDeviceStatus["Status"].isNull())
+			deviceStatusListObject.status = valueDeviceStatusListDeviceStatus["Status"].asString();
+		if(!valueDeviceStatusListDeviceStatus["AsAddress"].isNull())
+			deviceStatusListObject.asAddress = valueDeviceStatusListDeviceStatus["AsAddress"].asString();
+		if(!valueDeviceStatusListDeviceStatus["LastOnlineTime"].isNull())
+			deviceStatusListObject.lastOnlineTime = valueDeviceStatusListDeviceStatus["LastOnlineTime"].asString();
+		if(!valueDeviceStatusListDeviceStatus["IotId"].isNull())
+			deviceStatusListObject.iotId = valueDeviceStatusListDeviceStatus["IotId"].asString();
 		deviceStatusList_.push_back(deviceStatusListObject);
 	}
 	if(!value["Success"].isNull())

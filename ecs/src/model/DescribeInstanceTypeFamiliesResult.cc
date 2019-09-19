@@ -39,14 +39,14 @@ void DescribeInstanceTypeFamiliesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceTypeFamilies = value["InstanceTypeFamilies"]["InstanceTypeFamily"];
-	for (auto value : allInstanceTypeFamilies)
+	auto allInstanceTypeFamiliesNode = value["InstanceTypeFamilies"]["InstanceTypeFamily"];
+	for (auto valueInstanceTypeFamiliesInstanceTypeFamily : allInstanceTypeFamiliesNode)
 	{
 		InstanceTypeFamily instanceTypeFamiliesObject;
-		if(!value["InstanceTypeFamilyId"].isNull())
-			instanceTypeFamiliesObject.instanceTypeFamilyId = value["InstanceTypeFamilyId"].asString();
-		if(!value["Generation"].isNull())
-			instanceTypeFamiliesObject.generation = value["Generation"].asString();
+		if(!valueInstanceTypeFamiliesInstanceTypeFamily["InstanceTypeFamilyId"].isNull())
+			instanceTypeFamiliesObject.instanceTypeFamilyId = valueInstanceTypeFamiliesInstanceTypeFamily["InstanceTypeFamilyId"].asString();
+		if(!valueInstanceTypeFamiliesInstanceTypeFamily["Generation"].isNull())
+			instanceTypeFamiliesObject.generation = valueInstanceTypeFamiliesInstanceTypeFamily["Generation"].asString();
 		instanceTypeFamilies_.push_back(instanceTypeFamiliesObject);
 	}
 

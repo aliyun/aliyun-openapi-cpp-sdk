@@ -39,14 +39,14 @@ void GetUserInputStatisticInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserInputList = value["UserInputList"]["ClusterStatUserInput"];
-	for (auto value : allUserInputList)
+	auto allUserInputListNode = value["UserInputList"]["ClusterStatUserInput"];
+	for (auto valueUserInputListClusterStatUserInput : allUserInputListNode)
 	{
 		ClusterStatUserInput userInputListObject;
-		if(!value["User"].isNull())
-			userInputListObject.user = value["User"].asString();
-		if(!value["BytesInput"].isNull())
-			userInputListObject.bytesInput = std::stol(value["BytesInput"].asString());
+		if(!valueUserInputListClusterStatUserInput["User"].isNull())
+			userInputListObject.user = valueUserInputListClusterStatUserInput["User"].asString();
+		if(!valueUserInputListClusterStatUserInput["BytesInput"].isNull())
+			userInputListObject.bytesInput = std::stol(valueUserInputListClusterStatUserInput["BytesInput"].asString());
 		userInputList_.push_back(userInputListObject);
 	}
 

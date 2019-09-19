@@ -46,30 +46,30 @@ void ListAgentSummaryReportsByIntervalResult::parse(const std::string &payload)
 		pagedAgentSummaryReport_.pageNumber = std::stoi(pagedAgentSummaryReportNode["PageNumber"].asString());
 	if(!pagedAgentSummaryReportNode["PageSize"].isNull())
 		pagedAgentSummaryReport_.pageSize = std::stoi(pagedAgentSummaryReportNode["PageSize"].asString());
-	auto allList = value["List"]["AgentTimeIntervalReport"];
-	for (auto value : allList)
+	auto allListNode = pagedAgentSummaryReportNode["List"]["AgentTimeIntervalReport"];
+	for (auto pagedAgentSummaryReportNodeListAgentTimeIntervalReport : allListNode)
 	{
 		PagedAgentSummaryReport::AgentTimeIntervalReport agentTimeIntervalReportObject;
-		if(!value["AgentId"].isNull())
-			agentTimeIntervalReportObject.agentId = value["AgentId"].asString();
-		auto allIntervalList = value["IntervalList"]["AgentSummaryReport"];
-		for (auto value : allIntervalList)
+		if(!pagedAgentSummaryReportNodeListAgentTimeIntervalReport["AgentId"].isNull())
+			agentTimeIntervalReportObject.agentId = pagedAgentSummaryReportNodeListAgentTimeIntervalReport["AgentId"].asString();
+		auto allIntervalListNode = allListNode["IntervalList"]["AgentSummaryReport"];
+		for (auto allListNodeIntervalListAgentSummaryReport : allIntervalListNode)
 		{
 			PagedAgentSummaryReport::AgentTimeIntervalReport::AgentSummaryReport intervalListObject;
-			if(!value["Timestamp"].isNull())
-				intervalListObject.timestamp = value["Timestamp"].asString();
-			if(!value["InstanceId"].isNull())
-				intervalListObject.instanceId = value["InstanceId"].asString();
-			if(!value["AgentId"].isNull())
-				intervalListObject.agentId = value["AgentId"].asString();
-			if(!value["LoginName"].isNull())
-				intervalListObject.loginName = value["LoginName"].asString();
-			if(!value["AgentName"].isNull())
-				intervalListObject.agentName = value["AgentName"].asString();
-			if(!value["SkillGroupIds"].isNull())
-				intervalListObject.skillGroupIds = value["SkillGroupIds"].asString();
-			if(!value["SkillGroupNames"].isNull())
-				intervalListObject.skillGroupNames = value["SkillGroupNames"].asString();
+			if(!allListNodeIntervalListAgentSummaryReport["Timestamp"].isNull())
+				intervalListObject.timestamp = allListNodeIntervalListAgentSummaryReport["Timestamp"].asString();
+			if(!allListNodeIntervalListAgentSummaryReport["InstanceId"].isNull())
+				intervalListObject.instanceId = allListNodeIntervalListAgentSummaryReport["InstanceId"].asString();
+			if(!allListNodeIntervalListAgentSummaryReport["AgentId"].isNull())
+				intervalListObject.agentId = allListNodeIntervalListAgentSummaryReport["AgentId"].asString();
+			if(!allListNodeIntervalListAgentSummaryReport["LoginName"].isNull())
+				intervalListObject.loginName = allListNodeIntervalListAgentSummaryReport["LoginName"].asString();
+			if(!allListNodeIntervalListAgentSummaryReport["AgentName"].isNull())
+				intervalListObject.agentName = allListNodeIntervalListAgentSummaryReport["AgentName"].asString();
+			if(!allListNodeIntervalListAgentSummaryReport["SkillGroupIds"].isNull())
+				intervalListObject.skillGroupIds = allListNodeIntervalListAgentSummaryReport["SkillGroupIds"].asString();
+			if(!allListNodeIntervalListAgentSummaryReport["SkillGroupNames"].isNull())
+				intervalListObject.skillGroupNames = allListNodeIntervalListAgentSummaryReport["SkillGroupNames"].asString();
 			auto overallNode = value["Overall"];
 			if(!overallNode["TotalCalls"].isNull())
 				intervalListObject.overall.totalCalls = std::stol(overallNode["TotalCalls"].asString());

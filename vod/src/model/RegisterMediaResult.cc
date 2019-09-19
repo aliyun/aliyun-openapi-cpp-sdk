@@ -39,16 +39,16 @@ void RegisterMediaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegisteredMediaList = value["RegisteredMediaList"]["RegisteredMedia"];
-	for (auto value : allRegisteredMediaList)
+	auto allRegisteredMediaListNode = value["RegisteredMediaList"]["RegisteredMedia"];
+	for (auto valueRegisteredMediaListRegisteredMedia : allRegisteredMediaListNode)
 	{
 		RegisteredMedia registeredMediaListObject;
-		if(!value["MediaId"].isNull())
-			registeredMediaListObject.mediaId = value["MediaId"].asString();
-		if(!value["FileURL"].isNull())
-			registeredMediaListObject.fileURL = value["FileURL"].asString();
-		if(!value["NewRegister"].isNull())
-			registeredMediaListObject.newRegister = value["NewRegister"].asString() == "true";
+		if(!valueRegisteredMediaListRegisteredMedia["MediaId"].isNull())
+			registeredMediaListObject.mediaId = valueRegisteredMediaListRegisteredMedia["MediaId"].asString();
+		if(!valueRegisteredMediaListRegisteredMedia["FileURL"].isNull())
+			registeredMediaListObject.fileURL = valueRegisteredMediaListRegisteredMedia["FileURL"].asString();
+		if(!valueRegisteredMediaListRegisteredMedia["NewRegister"].isNull())
+			registeredMediaListObject.newRegister = valueRegisteredMediaListRegisteredMedia["NewRegister"].asString() == "true";
 		registeredMediaList_.push_back(registeredMediaListObject);
 	}
 	auto allFailedFileURLs = value["FailedFileURLs"]["FileURL"];

@@ -39,22 +39,22 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDBInstanceNetInfos = value["DBInstanceNetInfos"]["DBInstanceNetInfo"];
-	for (auto value : allDBInstanceNetInfos)
+	auto allDBInstanceNetInfosNode = value["DBInstanceNetInfos"]["DBInstanceNetInfo"];
+	for (auto valueDBInstanceNetInfosDBInstanceNetInfo : allDBInstanceNetInfosNode)
 	{
 		DBInstanceNetInfo dBInstanceNetInfosObject;
-		if(!value["ConnectionString"].isNull())
-			dBInstanceNetInfosObject.connectionString = value["ConnectionString"].asString();
-		if(!value["IPAddress"].isNull())
-			dBInstanceNetInfosObject.iPAddress = value["IPAddress"].asString();
-		if(!value["IPType"].isNull())
-			dBInstanceNetInfosObject.iPType = value["IPType"].asString();
-		if(!value["Port"].isNull())
-			dBInstanceNetInfosObject.port = value["Port"].asString();
-		if(!value["VPCId"].isNull())
-			dBInstanceNetInfosObject.vPCId = value["VPCId"].asString();
-		if(!value["VSwitchId"].isNull())
-			dBInstanceNetInfosObject.vSwitchId = value["VSwitchId"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["ConnectionString"].isNull())
+			dBInstanceNetInfosObject.connectionString = valueDBInstanceNetInfosDBInstanceNetInfo["ConnectionString"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].isNull())
+			dBInstanceNetInfosObject.iPAddress = valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["IPType"].isNull())
+			dBInstanceNetInfosObject.iPType = valueDBInstanceNetInfosDBInstanceNetInfo["IPType"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["Port"].isNull())
+			dBInstanceNetInfosObject.port = valueDBInstanceNetInfosDBInstanceNetInfo["Port"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["VPCId"].isNull())
+			dBInstanceNetInfosObject.vPCId = valueDBInstanceNetInfosDBInstanceNetInfo["VPCId"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["VSwitchId"].isNull())
+			dBInstanceNetInfosObject.vSwitchId = valueDBInstanceNetInfosDBInstanceNetInfo["VSwitchId"].asString();
 		dBInstanceNetInfos_.push_back(dBInstanceNetInfosObject);
 	}
 	if(!value["InstanceNetworkType"].isNull())

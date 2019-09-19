@@ -39,14 +39,14 @@ void ListProductTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["ProductTag"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["ProductTag"];
+	for (auto valueDataProductTag : allDataNode)
 	{
 		ProductTag dataObject;
-		if(!value["TagKey"].isNull())
-			dataObject.tagKey = value["TagKey"].asString();
-		if(!value["TagValue"].isNull())
-			dataObject.tagValue = value["TagValue"].asString();
+		if(!valueDataProductTag["TagKey"].isNull())
+			dataObject.tagKey = valueDataProductTag["TagKey"].asString();
+		if(!valueDataProductTag["TagValue"].isNull())
+			dataObject.tagValue = valueDataProductTag["TagValue"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

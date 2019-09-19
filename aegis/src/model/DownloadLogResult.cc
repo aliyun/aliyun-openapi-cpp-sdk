@@ -39,20 +39,20 @@ void DownloadLogResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStackTrace = value["StackTrace"]["StackTraceItem"];
-	for (auto value : allStackTrace)
+	auto allStackTraceNode = value["StackTrace"]["StackTraceItem"];
+	for (auto valueStackTraceStackTraceItem : allStackTraceNode)
 	{
 		StackTraceItem stackTraceObject;
-		if(!value["FileName"].isNull())
-			stackTraceObject.fileName = value["FileName"].asString();
-		if(!value["NativeMethod"].isNull())
-			stackTraceObject.nativeMethod = value["NativeMethod"].asString() == "true";
-		if(!value["MethodName"].isNull())
-			stackTraceObject.methodName = value["MethodName"].asString();
-		if(!value["ClassName"].isNull())
-			stackTraceObject.className = value["ClassName"].asString();
-		if(!value["LineNumber"].isNull())
-			stackTraceObject.lineNumber = std::stoi(value["LineNumber"].asString());
+		if(!valueStackTraceStackTraceItem["FileName"].isNull())
+			stackTraceObject.fileName = valueStackTraceStackTraceItem["FileName"].asString();
+		if(!valueStackTraceStackTraceItem["NativeMethod"].isNull())
+			stackTraceObject.nativeMethod = valueStackTraceStackTraceItem["NativeMethod"].asString() == "true";
+		if(!valueStackTraceStackTraceItem["MethodName"].isNull())
+			stackTraceObject.methodName = valueStackTraceStackTraceItem["MethodName"].asString();
+		if(!valueStackTraceStackTraceItem["ClassName"].isNull())
+			stackTraceObject.className = valueStackTraceStackTraceItem["ClassName"].asString();
+		if(!valueStackTraceStackTraceItem["LineNumber"].isNull())
+			stackTraceObject.lineNumber = std::stoi(valueStackTraceStackTraceItem["LineNumber"].asString());
 		stackTrace_.push_back(stackTraceObject);
 	}
 	auto allSuppressed = value["Suppressed"]["StringItem"];

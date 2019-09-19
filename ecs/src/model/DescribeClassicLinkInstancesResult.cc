@@ -39,14 +39,14 @@ void DescribeClassicLinkInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLinks = value["Links"]["Link"];
-	for (auto value : allLinks)
+	auto allLinksNode = value["Links"]["Link"];
+	for (auto valueLinksLink : allLinksNode)
 	{
 		Link linksObject;
-		if(!value["InstanceId"].isNull())
-			linksObject.instanceId = value["InstanceId"].asString();
-		if(!value["VpcId"].isNull())
-			linksObject.vpcId = value["VpcId"].asString();
+		if(!valueLinksLink["InstanceId"].isNull())
+			linksObject.instanceId = valueLinksLink["InstanceId"].asString();
+		if(!valueLinksLink["VpcId"].isNull())
+			linksObject.vpcId = valueLinksLink["VpcId"].asString();
 		links_.push_back(linksObject);
 	}
 	if(!value["TotalCount"].isNull())

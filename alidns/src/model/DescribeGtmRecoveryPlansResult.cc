@@ -39,36 +39,36 @@ void DescribeGtmRecoveryPlansResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRecoveryPlans = value["RecoveryPlans"]["RecoveryPlan"];
-	for (auto value : allRecoveryPlans)
+	auto allRecoveryPlansNode = value["RecoveryPlans"]["RecoveryPlan"];
+	for (auto valueRecoveryPlansRecoveryPlan : allRecoveryPlansNode)
 	{
 		RecoveryPlan recoveryPlansObject;
-		if(!value["RecoveryPlanId"].isNull())
-			recoveryPlansObject.recoveryPlanId = std::stol(value["RecoveryPlanId"].asString());
-		if(!value["Name"].isNull())
-			recoveryPlansObject.name = value["Name"].asString();
-		if(!value["Remark"].isNull())
-			recoveryPlansObject.remark = value["Remark"].asString();
-		if(!value["FaultAddrPoolNum"].isNull())
-			recoveryPlansObject.faultAddrPoolNum = std::stoi(value["FaultAddrPoolNum"].asString());
-		if(!value["LastExecuteTime"].isNull())
-			recoveryPlansObject.lastExecuteTime = value["LastExecuteTime"].asString();
-		if(!value["LastExecuteTimestamp"].isNull())
-			recoveryPlansObject.lastExecuteTimestamp = std::stol(value["LastExecuteTimestamp"].asString());
-		if(!value["LastRollbackTime"].isNull())
-			recoveryPlansObject.lastRollbackTime = value["LastRollbackTime"].asString();
-		if(!value["LastRollbackTimestamp"].isNull())
-			recoveryPlansObject.lastRollbackTimestamp = std::stol(value["LastRollbackTimestamp"].asString());
-		if(!value["CreateTime"].isNull())
-			recoveryPlansObject.createTime = value["CreateTime"].asString();
-		if(!value["CreateTimestamp"].isNull())
-			recoveryPlansObject.createTimestamp = std::stol(value["CreateTimestamp"].asString());
-		if(!value["UpdateTime"].isNull())
-			recoveryPlansObject.updateTime = value["UpdateTime"].asString();
-		if(!value["UpdateTimestamp"].isNull())
-			recoveryPlansObject.updateTimestamp = std::stol(value["UpdateTimestamp"].asString());
-		if(!value["Status"].isNull())
-			recoveryPlansObject.status = value["Status"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["RecoveryPlanId"].isNull())
+			recoveryPlansObject.recoveryPlanId = std::stol(valueRecoveryPlansRecoveryPlan["RecoveryPlanId"].asString());
+		if(!valueRecoveryPlansRecoveryPlan["Name"].isNull())
+			recoveryPlansObject.name = valueRecoveryPlansRecoveryPlan["Name"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["Remark"].isNull())
+			recoveryPlansObject.remark = valueRecoveryPlansRecoveryPlan["Remark"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["FaultAddrPoolNum"].isNull())
+			recoveryPlansObject.faultAddrPoolNum = std::stoi(valueRecoveryPlansRecoveryPlan["FaultAddrPoolNum"].asString());
+		if(!valueRecoveryPlansRecoveryPlan["LastExecuteTime"].isNull())
+			recoveryPlansObject.lastExecuteTime = valueRecoveryPlansRecoveryPlan["LastExecuteTime"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["LastExecuteTimestamp"].isNull())
+			recoveryPlansObject.lastExecuteTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["LastExecuteTimestamp"].asString());
+		if(!valueRecoveryPlansRecoveryPlan["LastRollbackTime"].isNull())
+			recoveryPlansObject.lastRollbackTime = valueRecoveryPlansRecoveryPlan["LastRollbackTime"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["LastRollbackTimestamp"].isNull())
+			recoveryPlansObject.lastRollbackTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["LastRollbackTimestamp"].asString());
+		if(!valueRecoveryPlansRecoveryPlan["CreateTime"].isNull())
+			recoveryPlansObject.createTime = valueRecoveryPlansRecoveryPlan["CreateTime"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["CreateTimestamp"].isNull())
+			recoveryPlansObject.createTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["CreateTimestamp"].asString());
+		if(!valueRecoveryPlansRecoveryPlan["UpdateTime"].isNull())
+			recoveryPlansObject.updateTime = valueRecoveryPlansRecoveryPlan["UpdateTime"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["UpdateTimestamp"].isNull())
+			recoveryPlansObject.updateTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["UpdateTimestamp"].asString());
+		if(!valueRecoveryPlansRecoveryPlan["Status"].isNull())
+			recoveryPlansObject.status = valueRecoveryPlansRecoveryPlan["Status"].asString();
 		recoveryPlans_.push_back(recoveryPlansObject);
 	}
 	if(!value["TotalItems"].isNull())

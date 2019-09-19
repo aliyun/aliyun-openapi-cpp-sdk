@@ -39,20 +39,20 @@ void DescribeImageSharePermissionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allShareGroups = value["ShareGroups"]["ShareGroup"];
-	for (auto value : allShareGroups)
+	auto allShareGroupsNode = value["ShareGroups"]["ShareGroup"];
+	for (auto valueShareGroupsShareGroup : allShareGroupsNode)
 	{
 		ShareGroup shareGroupsObject;
-		if(!value["Group"].isNull())
-			shareGroupsObject.group = value["Group"].asString();
+		if(!valueShareGroupsShareGroup["Group"].isNull())
+			shareGroupsObject.group = valueShareGroupsShareGroup["Group"].asString();
 		shareGroups_.push_back(shareGroupsObject);
 	}
-	auto allAccounts = value["Accounts"]["Account"];
-	for (auto value : allAccounts)
+	auto allAccountsNode = value["Accounts"]["Account"];
+	for (auto valueAccountsAccount : allAccountsNode)
 	{
 		Account accountsObject;
-		if(!value["AliyunId"].isNull())
-			accountsObject.aliyunId = value["AliyunId"].asString();
+		if(!valueAccountsAccount["AliyunId"].isNull())
+			accountsObject.aliyunId = valueAccountsAccount["AliyunId"].asString();
 		accounts_.push_back(accountsObject);
 	}
 	if(!value["RegionId"].isNull())

@@ -39,50 +39,50 @@ void QueryAdvancedDomainListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Domain"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["Domain"];
+	for (auto valueDataDomain : allDataNode)
 	{
 		Domain dataObject;
-		if(!value["DomainName"].isNull())
-			dataObject.domainName = value["DomainName"].asString();
-		if(!value["InstanceId"].isNull())
-			dataObject.instanceId = value["InstanceId"].asString();
-		if(!value["ExpirationDate"].isNull())
-			dataObject.expirationDate = value["ExpirationDate"].asString();
-		if(!value["RegistrationDate"].isNull())
-			dataObject.registrationDate = value["RegistrationDate"].asString();
-		if(!value["DomainType"].isNull())
-			dataObject.domainType = value["DomainType"].asString();
-		if(!value["DomainStatus"].isNull())
-			dataObject.domainStatus = value["DomainStatus"].asString();
-		if(!value["ProductId"].isNull())
-			dataObject.productId = value["ProductId"].asString();
-		if(!value["ExpirationDateLong"].isNull())
-			dataObject.expirationDateLong = std::stol(value["ExpirationDateLong"].asString());
-		if(!value["RegistrationDateLong"].isNull())
-			dataObject.registrationDateLong = std::stol(value["RegistrationDateLong"].asString());
-		if(!value["Premium"].isNull())
-			dataObject.premium = value["Premium"].asString() == "true";
-		if(!value["DomainAuditStatus"].isNull())
-			dataObject.domainAuditStatus = value["DomainAuditStatus"].asString();
-		if(!value["ExpirationDateStatus"].isNull())
-			dataObject.expirationDateStatus = value["ExpirationDateStatus"].asString();
-		if(!value["RegistrantType"].isNull())
-			dataObject.registrantType = value["RegistrantType"].asString();
-		if(!value["DomainGroupId"].isNull())
-			dataObject.domainGroupId = value["DomainGroupId"].asString();
-		if(!value["Remark"].isNull())
-			dataObject.remark = value["Remark"].asString();
-		if(!value["DomainGroupName"].isNull())
-			dataObject.domainGroupName = value["DomainGroupName"].asString();
-		if(!value["ExpirationCurrDateDiff"].isNull())
-			dataObject.expirationCurrDateDiff = std::stoi(value["ExpirationCurrDateDiff"].asString());
-		if(!value["Email"].isNull())
-			dataObject.email = value["Email"].asString();
-		if(!value["ZhRegistrantOrganization"].isNull())
-			dataObject.zhRegistrantOrganization = value["ZhRegistrantOrganization"].asString();
-		if(!value["RegistrantOrganization"].isNull())
-			dataObject.registrantOrganization = value["RegistrantOrganization"].asString();
+		if(!valueDataDomain["DomainName"].isNull())
+			dataObject.domainName = valueDataDomain["DomainName"].asString();
+		if(!valueDataDomain["InstanceId"].isNull())
+			dataObject.instanceId = valueDataDomain["InstanceId"].asString();
+		if(!valueDataDomain["ExpirationDate"].isNull())
+			dataObject.expirationDate = valueDataDomain["ExpirationDate"].asString();
+		if(!valueDataDomain["RegistrationDate"].isNull())
+			dataObject.registrationDate = valueDataDomain["RegistrationDate"].asString();
+		if(!valueDataDomain["DomainType"].isNull())
+			dataObject.domainType = valueDataDomain["DomainType"].asString();
+		if(!valueDataDomain["DomainStatus"].isNull())
+			dataObject.domainStatus = valueDataDomain["DomainStatus"].asString();
+		if(!valueDataDomain["ProductId"].isNull())
+			dataObject.productId = valueDataDomain["ProductId"].asString();
+		if(!valueDataDomain["ExpirationDateLong"].isNull())
+			dataObject.expirationDateLong = std::stol(valueDataDomain["ExpirationDateLong"].asString());
+		if(!valueDataDomain["RegistrationDateLong"].isNull())
+			dataObject.registrationDateLong = std::stol(valueDataDomain["RegistrationDateLong"].asString());
+		if(!valueDataDomain["Premium"].isNull())
+			dataObject.premium = valueDataDomain["Premium"].asString() == "true";
+		if(!valueDataDomain["DomainAuditStatus"].isNull())
+			dataObject.domainAuditStatus = valueDataDomain["DomainAuditStatus"].asString();
+		if(!valueDataDomain["ExpirationDateStatus"].isNull())
+			dataObject.expirationDateStatus = valueDataDomain["ExpirationDateStatus"].asString();
+		if(!valueDataDomain["RegistrantType"].isNull())
+			dataObject.registrantType = valueDataDomain["RegistrantType"].asString();
+		if(!valueDataDomain["DomainGroupId"].isNull())
+			dataObject.domainGroupId = valueDataDomain["DomainGroupId"].asString();
+		if(!valueDataDomain["Remark"].isNull())
+			dataObject.remark = valueDataDomain["Remark"].asString();
+		if(!valueDataDomain["DomainGroupName"].isNull())
+			dataObject.domainGroupName = valueDataDomain["DomainGroupName"].asString();
+		if(!valueDataDomain["ExpirationCurrDateDiff"].isNull())
+			dataObject.expirationCurrDateDiff = std::stoi(valueDataDomain["ExpirationCurrDateDiff"].asString());
+		if(!valueDataDomain["Email"].isNull())
+			dataObject.email = valueDataDomain["Email"].asString();
+		if(!valueDataDomain["ZhRegistrantOrganization"].isNull())
+			dataObject.zhRegistrantOrganization = valueDataDomain["ZhRegistrantOrganization"].asString();
+		if(!valueDataDomain["RegistrantOrganization"].isNull())
+			dataObject.registrantOrganization = valueDataDomain["RegistrantOrganization"].asString();
 		auto allDnsList = value["DnsList"]["Dns"];
 		for (auto value : allDnsList)
 			dataObject.dnsList.push_back(value.asString());

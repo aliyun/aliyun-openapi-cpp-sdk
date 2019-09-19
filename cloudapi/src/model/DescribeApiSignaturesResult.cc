@@ -39,20 +39,20 @@ void DescribeApiSignaturesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allApiSignatures = value["ApiSignatures"]["ApiSignatureItem"];
-	for (auto value : allApiSignatures)
+	auto allApiSignaturesNode = value["ApiSignatures"]["ApiSignatureItem"];
+	for (auto valueApiSignaturesApiSignatureItem : allApiSignaturesNode)
 	{
 		ApiSignatureItem apiSignaturesObject;
-		if(!value["ApiId"].isNull())
-			apiSignaturesObject.apiId = value["ApiId"].asString();
-		if(!value["ApiName"].isNull())
-			apiSignaturesObject.apiName = value["ApiName"].asString();
-		if(!value["SignatureId"].isNull())
-			apiSignaturesObject.signatureId = value["SignatureId"].asString();
-		if(!value["SignatureName"].isNull())
-			apiSignaturesObject.signatureName = value["SignatureName"].asString();
-		if(!value["BoundTime"].isNull())
-			apiSignaturesObject.boundTime = value["BoundTime"].asString();
+		if(!valueApiSignaturesApiSignatureItem["ApiId"].isNull())
+			apiSignaturesObject.apiId = valueApiSignaturesApiSignatureItem["ApiId"].asString();
+		if(!valueApiSignaturesApiSignatureItem["ApiName"].isNull())
+			apiSignaturesObject.apiName = valueApiSignaturesApiSignatureItem["ApiName"].asString();
+		if(!valueApiSignaturesApiSignatureItem["SignatureId"].isNull())
+			apiSignaturesObject.signatureId = valueApiSignaturesApiSignatureItem["SignatureId"].asString();
+		if(!valueApiSignaturesApiSignatureItem["SignatureName"].isNull())
+			apiSignaturesObject.signatureName = valueApiSignaturesApiSignatureItem["SignatureName"].asString();
+		if(!valueApiSignaturesApiSignatureItem["BoundTime"].isNull())
+			apiSignaturesObject.boundTime = valueApiSignaturesApiSignatureItem["BoundTime"].asString();
 		apiSignatures_.push_back(apiSignaturesObject);
 	}
 	if(!value["TotalCount"].isNull())

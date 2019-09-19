@@ -39,20 +39,20 @@ void DescribeInstanceAutoRenewAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceRenewAttributes = value["InstanceRenewAttributes"]["InstanceRenewAttribute"];
-	for (auto value : allInstanceRenewAttributes)
+	auto allInstanceRenewAttributesNode = value["InstanceRenewAttributes"]["InstanceRenewAttribute"];
+	for (auto valueInstanceRenewAttributesInstanceRenewAttribute : allInstanceRenewAttributesNode)
 	{
 		InstanceRenewAttribute instanceRenewAttributesObject;
-		if(!value["InstanceId"].isNull())
-			instanceRenewAttributesObject.instanceId = value["InstanceId"].asString();
-		if(!value["AutoRenewEnabled"].isNull())
-			instanceRenewAttributesObject.autoRenewEnabled = value["AutoRenewEnabled"].asString() == "true";
-		if(!value["Duration"].isNull())
-			instanceRenewAttributesObject.duration = std::stoi(value["Duration"].asString());
-		if(!value["PeriodUnit"].isNull())
-			instanceRenewAttributesObject.periodUnit = value["PeriodUnit"].asString();
-		if(!value["RenewalStatus"].isNull())
-			instanceRenewAttributesObject.renewalStatus = value["RenewalStatus"].asString();
+		if(!valueInstanceRenewAttributesInstanceRenewAttribute["InstanceId"].isNull())
+			instanceRenewAttributesObject.instanceId = valueInstanceRenewAttributesInstanceRenewAttribute["InstanceId"].asString();
+		if(!valueInstanceRenewAttributesInstanceRenewAttribute["AutoRenewEnabled"].isNull())
+			instanceRenewAttributesObject.autoRenewEnabled = valueInstanceRenewAttributesInstanceRenewAttribute["AutoRenewEnabled"].asString() == "true";
+		if(!valueInstanceRenewAttributesInstanceRenewAttribute["Duration"].isNull())
+			instanceRenewAttributesObject.duration = std::stoi(valueInstanceRenewAttributesInstanceRenewAttribute["Duration"].asString());
+		if(!valueInstanceRenewAttributesInstanceRenewAttribute["PeriodUnit"].isNull())
+			instanceRenewAttributesObject.periodUnit = valueInstanceRenewAttributesInstanceRenewAttribute["PeriodUnit"].asString();
+		if(!valueInstanceRenewAttributesInstanceRenewAttribute["RenewalStatus"].isNull())
+			instanceRenewAttributesObject.renewalStatus = valueInstanceRenewAttributesInstanceRenewAttribute["RenewalStatus"].asString();
 		instanceRenewAttributes_.push_back(instanceRenewAttributesObject);
 	}
 	if(!value["PageNumber"].isNull())

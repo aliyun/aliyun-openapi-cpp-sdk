@@ -39,22 +39,22 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAvailableResources = value["AvailableResources"]["AvailableResource"];
-	for (auto value : allAvailableResources)
+	auto allAvailableResourcesNode = value["AvailableResources"]["AvailableResource"];
+	for (auto valueAvailableResourcesAvailableResource : allAvailableResourcesNode)
 	{
 		AvailableResource availableResourcesObject;
-		if(!value["MasterZoneId"].isNull())
-			availableResourcesObject.masterZoneId = value["MasterZoneId"].asString();
-		if(!value["SlaveZoneId"].isNull())
-			availableResourcesObject.slaveZoneId = value["SlaveZoneId"].asString();
-		auto allSupportResources = value["SupportResources"]["SupportResource"];
-		for (auto value : allSupportResources)
+		if(!valueAvailableResourcesAvailableResource["MasterZoneId"].isNull())
+			availableResourcesObject.masterZoneId = valueAvailableResourcesAvailableResource["MasterZoneId"].asString();
+		if(!valueAvailableResourcesAvailableResource["SlaveZoneId"].isNull())
+			availableResourcesObject.slaveZoneId = valueAvailableResourcesAvailableResource["SlaveZoneId"].asString();
+		auto allSupportResourcesNode = allAvailableResourcesNode["SupportResources"]["SupportResource"];
+		for (auto allAvailableResourcesNodeSupportResourcesSupportResource : allSupportResourcesNode)
 		{
 			AvailableResource::SupportResource supportResourcesObject;
-			if(!value["AddressType"].isNull())
-				supportResourcesObject.addressType = value["AddressType"].asString();
-			if(!value["AddressIPVersion"].isNull())
-				supportResourcesObject.addressIPVersion = value["AddressIPVersion"].asString();
+			if(!allAvailableResourcesNodeSupportResourcesSupportResource["AddressType"].isNull())
+				supportResourcesObject.addressType = allAvailableResourcesNodeSupportResourcesSupportResource["AddressType"].asString();
+			if(!allAvailableResourcesNodeSupportResourcesSupportResource["AddressIPVersion"].isNull())
+				supportResourcesObject.addressIPVersion = allAvailableResourcesNodeSupportResourcesSupportResource["AddressIPVersion"].asString();
 			availableResourcesObject.supportResources.push_back(supportResourcesObject);
 		}
 		availableResources_.push_back(availableResourcesObject);

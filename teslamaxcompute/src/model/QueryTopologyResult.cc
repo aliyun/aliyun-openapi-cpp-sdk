@@ -39,40 +39,40 @@ void QueryTopologyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"]["resultItem"];
-	for (auto value : allResult)
+	auto allResultNode = value["Result"]["resultItem"];
+	for (auto valueResultresultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!value["LastUpdate"].isNull())
-			resultObject.lastUpdate = value["LastUpdate"].asString();
-		auto allRegions = value["Regions"]["regionItem"];
-		for (auto value : allRegions)
+		if(!valueResultresultItem["LastUpdate"].isNull())
+			resultObject.lastUpdate = valueResultresultItem["LastUpdate"].asString();
+		auto allRegionsNode = allResultNode["Regions"]["regionItem"];
+		for (auto allResultNodeRegionsregionItem : allRegionsNode)
 		{
 			ResultItem::RegionItem regionsObject;
-			if(!value["Region"].isNull())
-				regionsObject.region = value["Region"].asString();
-			if(!value["RegionEnName"].isNull())
-				regionsObject.regionEnName = value["RegionEnName"].asString();
-			if(!value["RegionCnName"].isNull())
-				regionsObject.regionCnName = value["RegionCnName"].asString();
-			auto allClusters = value["Clusters"]["clusterItem"];
-			for (auto value : allClusters)
+			if(!allResultNodeRegionsregionItem["Region"].isNull())
+				regionsObject.region = allResultNodeRegionsregionItem["Region"].asString();
+			if(!allResultNodeRegionsregionItem["RegionEnName"].isNull())
+				regionsObject.regionEnName = allResultNodeRegionsregionItem["RegionEnName"].asString();
+			if(!allResultNodeRegionsregionItem["RegionCnName"].isNull())
+				regionsObject.regionCnName = allResultNodeRegionsregionItem["RegionCnName"].asString();
+			auto allClustersNode = allRegionsNode["Clusters"]["clusterItem"];
+			for (auto allRegionsNodeClustersclusterItem : allClustersNode)
 			{
 				ResultItem::RegionItem::ClusterItem clustersObject;
-				if(!value["Cluster"].isNull())
-					clustersObject.cluster = value["Cluster"].asString();
-				if(!value["ProductLine"].isNull())
-					clustersObject.productLine = value["ProductLine"].asString();
-				if(!value["ProductClass"].isNull())
-					clustersObject.productClass = value["ProductClass"].asString();
-				if(!value["NetCode"].isNull())
-					clustersObject.netCode = value["NetCode"].asString();
-				if(!value["Business"].isNull())
-					clustersObject.business = value["Business"].asString();
-				if(!value["MachineRoom"].isNull())
-					clustersObject.machineRoom = value["MachineRoom"].asString();
-				if(!value["NetArch"].isNull())
-					clustersObject.netArch = value["NetArch"].asString();
+				if(!allRegionsNodeClustersclusterItem["Cluster"].isNull())
+					clustersObject.cluster = allRegionsNodeClustersclusterItem["Cluster"].asString();
+				if(!allRegionsNodeClustersclusterItem["ProductLine"].isNull())
+					clustersObject.productLine = allRegionsNodeClustersclusterItem["ProductLine"].asString();
+				if(!allRegionsNodeClustersclusterItem["ProductClass"].isNull())
+					clustersObject.productClass = allRegionsNodeClustersclusterItem["ProductClass"].asString();
+				if(!allRegionsNodeClustersclusterItem["NetCode"].isNull())
+					clustersObject.netCode = allRegionsNodeClustersclusterItem["NetCode"].asString();
+				if(!allRegionsNodeClustersclusterItem["Business"].isNull())
+					clustersObject.business = allRegionsNodeClustersclusterItem["Business"].asString();
+				if(!allRegionsNodeClustersclusterItem["MachineRoom"].isNull())
+					clustersObject.machineRoom = allRegionsNodeClustersclusterItem["MachineRoom"].asString();
+				if(!allRegionsNodeClustersclusterItem["NetArch"].isNull())
+					clustersObject.netArch = allRegionsNodeClustersclusterItem["NetArch"].asString();
 				regionsObject.clusters.push_back(clustersObject);
 			}
 			resultObject.regions.push_back(regionsObject);

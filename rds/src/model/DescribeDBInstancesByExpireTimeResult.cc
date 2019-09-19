@@ -39,20 +39,20 @@ void DescribeDBInstancesByExpireTimeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["DBInstanceExpireTime"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["DBInstanceExpireTime"];
+	for (auto valueItemsDBInstanceExpireTime : allItemsNode)
 	{
 		DBInstanceExpireTime itemsObject;
-		if(!value["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["DBInstanceDescription"].isNull())
-			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-		if(!value["ExpireTime"].isNull())
-			itemsObject.expireTime = value["ExpireTime"].asString();
-		if(!value["DBInstanceStatus"].isNull())
-			itemsObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
-		if(!value["LockMode"].isNull())
-			itemsObject.lockMode = value["LockMode"].asString();
+		if(!valueItemsDBInstanceExpireTime["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsDBInstanceExpireTime["DBInstanceId"].asString();
+		if(!valueItemsDBInstanceExpireTime["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = valueItemsDBInstanceExpireTime["DBInstanceDescription"].asString();
+		if(!valueItemsDBInstanceExpireTime["ExpireTime"].isNull())
+			itemsObject.expireTime = valueItemsDBInstanceExpireTime["ExpireTime"].asString();
+		if(!valueItemsDBInstanceExpireTime["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = valueItemsDBInstanceExpireTime["DBInstanceStatus"].asString();
+		if(!valueItemsDBInstanceExpireTime["LockMode"].isNull())
+			itemsObject.lockMode = valueItemsDBInstanceExpireTime["LockMode"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

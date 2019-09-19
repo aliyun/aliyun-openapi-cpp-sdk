@@ -39,18 +39,18 @@ void QueryCensorPipelineListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPipelineList = value["PipelineList"]["Pipeline"];
-	for (auto value : allPipelineList)
+	auto allPipelineListNode = value["PipelineList"]["Pipeline"];
+	for (auto valuePipelineListPipeline : allPipelineListNode)
 	{
 		Pipeline pipelineListObject;
-		if(!value["Id"].isNull())
-			pipelineListObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			pipelineListObject.name = value["Name"].asString();
-		if(!value["State"].isNull())
-			pipelineListObject.state = value["State"].asString();
-		if(!value["Priority"].isNull())
-			pipelineListObject.priority = value["Priority"].asString();
+		if(!valuePipelineListPipeline["Id"].isNull())
+			pipelineListObject.id = valuePipelineListPipeline["Id"].asString();
+		if(!valuePipelineListPipeline["Name"].isNull())
+			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
+		if(!valuePipelineListPipeline["State"].isNull())
+			pipelineListObject.state = valuePipelineListPipeline["State"].asString();
+		if(!valuePipelineListPipeline["Priority"].isNull())
+			pipelineListObject.priority = valuePipelineListPipeline["Priority"].asString();
 		auto notifyConfigNode = value["NotifyConfig"];
 		if(!notifyConfigNode["Topic"].isNull())
 			pipelineListObject.notifyConfig.topic = notifyConfigNode["Topic"].asString();

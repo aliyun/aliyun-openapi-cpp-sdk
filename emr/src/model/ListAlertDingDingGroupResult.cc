@@ -39,24 +39,24 @@ void ListAlertDingDingGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAlertDingDingGroupList = value["AlertDingDingGroupList"]["alertDingDingGroup"];
-	for (auto value : allAlertDingDingGroupList)
+	auto allAlertDingDingGroupListNode = value["AlertDingDingGroupList"]["alertDingDingGroup"];
+	for (auto valueAlertDingDingGroupListalertDingDingGroup : allAlertDingDingGroupListNode)
 	{
 		AlertDingDingGroup alertDingDingGroupListObject;
-		if(!value["Id"].isNull())
-			alertDingDingGroupListObject.id = std::stol(value["Id"].asString());
-		if(!value["GmtCreate"].isNull())
-			alertDingDingGroupListObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			alertDingDingGroupListObject.gmtModified = value["GmtModified"].asString();
-		if(!value["BizId"].isNull())
-			alertDingDingGroupListObject.bizId = value["BizId"].asString();
-		if(!value["Name"].isNull())
-			alertDingDingGroupListObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			alertDingDingGroupListObject.description = value["Description"].asString();
-		if(!value["WebHookUrl"].isNull())
-			alertDingDingGroupListObject.webHookUrl = value["WebHookUrl"].asString();
+		if(!valueAlertDingDingGroupListalertDingDingGroup["Id"].isNull())
+			alertDingDingGroupListObject.id = std::stol(valueAlertDingDingGroupListalertDingDingGroup["Id"].asString());
+		if(!valueAlertDingDingGroupListalertDingDingGroup["GmtCreate"].isNull())
+			alertDingDingGroupListObject.gmtCreate = valueAlertDingDingGroupListalertDingDingGroup["GmtCreate"].asString();
+		if(!valueAlertDingDingGroupListalertDingDingGroup["GmtModified"].isNull())
+			alertDingDingGroupListObject.gmtModified = valueAlertDingDingGroupListalertDingDingGroup["GmtModified"].asString();
+		if(!valueAlertDingDingGroupListalertDingDingGroup["BizId"].isNull())
+			alertDingDingGroupListObject.bizId = valueAlertDingDingGroupListalertDingDingGroup["BizId"].asString();
+		if(!valueAlertDingDingGroupListalertDingDingGroup["Name"].isNull())
+			alertDingDingGroupListObject.name = valueAlertDingDingGroupListalertDingDingGroup["Name"].asString();
+		if(!valueAlertDingDingGroupListalertDingDingGroup["Description"].isNull())
+			alertDingDingGroupListObject.description = valueAlertDingDingGroupListalertDingDingGroup["Description"].asString();
+		if(!valueAlertDingDingGroupListalertDingDingGroup["WebHookUrl"].isNull())
+			alertDingDingGroupListObject.webHookUrl = valueAlertDingDingGroupListalertDingDingGroup["WebHookUrl"].asString();
 		alertDingDingGroupList_.push_back(alertDingDingGroupListObject);
 	}
 

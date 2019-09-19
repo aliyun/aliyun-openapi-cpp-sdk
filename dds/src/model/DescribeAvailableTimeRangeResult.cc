@@ -39,20 +39,20 @@ void DescribeAvailableTimeRangeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTimeRange = value["TimeRange"]["TimeRangeItem"];
-	for (auto value : allTimeRange)
+	auto allTimeRangeNode = value["TimeRange"]["TimeRangeItem"];
+	for (auto valueTimeRangeTimeRangeItem : allTimeRangeNode)
 	{
 		TimeRangeItem timeRangeObject;
-		if(!value["StartTime"].isNull())
-			timeRangeObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			timeRangeObject.endTime = value["EndTime"].asString();
-		if(!value["Status"].isNull())
-			timeRangeObject.status = value["Status"].asString();
-		if(!value["NodeId"].isNull())
-			timeRangeObject.nodeId = value["NodeId"].asString();
-		if(!value["TaskId"].isNull())
-			timeRangeObject.taskId = value["TaskId"].asString();
+		if(!valueTimeRangeTimeRangeItem["StartTime"].isNull())
+			timeRangeObject.startTime = valueTimeRangeTimeRangeItem["StartTime"].asString();
+		if(!valueTimeRangeTimeRangeItem["EndTime"].isNull())
+			timeRangeObject.endTime = valueTimeRangeTimeRangeItem["EndTime"].asString();
+		if(!valueTimeRangeTimeRangeItem["Status"].isNull())
+			timeRangeObject.status = valueTimeRangeTimeRangeItem["Status"].asString();
+		if(!valueTimeRangeTimeRangeItem["NodeId"].isNull())
+			timeRangeObject.nodeId = valueTimeRangeTimeRangeItem["NodeId"].asString();
+		if(!valueTimeRangeTimeRangeItem["TaskId"].isNull())
+			timeRangeObject.taskId = valueTimeRangeTimeRangeItem["TaskId"].asString();
 		timeRange_.push_back(timeRangeObject);
 	}
 

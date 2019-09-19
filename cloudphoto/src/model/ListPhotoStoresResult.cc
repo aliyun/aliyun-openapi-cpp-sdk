@@ -39,38 +39,38 @@ void ListPhotoStoresResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPhotoStores = value["PhotoStores"]["PhotoStore"];
-	for (auto value : allPhotoStores)
+	auto allPhotoStoresNode = value["PhotoStores"]["PhotoStore"];
+	for (auto valuePhotoStoresPhotoStore : allPhotoStoresNode)
 	{
 		PhotoStore photoStoresObject;
-		if(!value["Id"].isNull())
-			photoStoresObject.id = std::stol(value["Id"].asString());
-		if(!value["IdStr"].isNull())
-			photoStoresObject.idStr = value["IdStr"].asString();
-		if(!value["Name"].isNull())
-			photoStoresObject.name = value["Name"].asString();
-		if(!value["Remark"].isNull())
-			photoStoresObject.remark = value["Remark"].asString();
-		if(!value["AutoCleanEnabled"].isNull())
-			photoStoresObject.autoCleanEnabled = value["AutoCleanEnabled"].asString() == "true";
-		if(!value["AutoCleanDays"].isNull())
-			photoStoresObject.autoCleanDays = std::stoi(value["AutoCleanDays"].asString());
-		if(!value["DefaultQuota"].isNull())
-			photoStoresObject.defaultQuota = std::stol(value["DefaultQuota"].asString());
-		if(!value["Ctime"].isNull())
-			photoStoresObject.ctime = std::stol(value["Ctime"].asString());
-		if(!value["Mtime"].isNull())
-			photoStoresObject.mtime = std::stol(value["Mtime"].asString());
-		auto allBuckets = value["Buckets"]["Bucket"];
-		for (auto value : allBuckets)
+		if(!valuePhotoStoresPhotoStore["Id"].isNull())
+			photoStoresObject.id = std::stol(valuePhotoStoresPhotoStore["Id"].asString());
+		if(!valuePhotoStoresPhotoStore["IdStr"].isNull())
+			photoStoresObject.idStr = valuePhotoStoresPhotoStore["IdStr"].asString();
+		if(!valuePhotoStoresPhotoStore["Name"].isNull())
+			photoStoresObject.name = valuePhotoStoresPhotoStore["Name"].asString();
+		if(!valuePhotoStoresPhotoStore["Remark"].isNull())
+			photoStoresObject.remark = valuePhotoStoresPhotoStore["Remark"].asString();
+		if(!valuePhotoStoresPhotoStore["AutoCleanEnabled"].isNull())
+			photoStoresObject.autoCleanEnabled = valuePhotoStoresPhotoStore["AutoCleanEnabled"].asString() == "true";
+		if(!valuePhotoStoresPhotoStore["AutoCleanDays"].isNull())
+			photoStoresObject.autoCleanDays = std::stoi(valuePhotoStoresPhotoStore["AutoCleanDays"].asString());
+		if(!valuePhotoStoresPhotoStore["DefaultQuota"].isNull())
+			photoStoresObject.defaultQuota = std::stol(valuePhotoStoresPhotoStore["DefaultQuota"].asString());
+		if(!valuePhotoStoresPhotoStore["Ctime"].isNull())
+			photoStoresObject.ctime = std::stol(valuePhotoStoresPhotoStore["Ctime"].asString());
+		if(!valuePhotoStoresPhotoStore["Mtime"].isNull())
+			photoStoresObject.mtime = std::stol(valuePhotoStoresPhotoStore["Mtime"].asString());
+		auto allBucketsNode = allPhotoStoresNode["Buckets"]["Bucket"];
+		for (auto allPhotoStoresNodeBucketsBucket : allBucketsNode)
 		{
 			PhotoStore::Bucket bucketsObject;
-			if(!value["Name"].isNull())
-				bucketsObject.name = value["Name"].asString();
-			if(!value["Region"].isNull())
-				bucketsObject.region = value["Region"].asString();
-			if(!value["State"].isNull())
-				bucketsObject.state = value["State"].asString();
+			if(!allPhotoStoresNodeBucketsBucket["Name"].isNull())
+				bucketsObject.name = allPhotoStoresNodeBucketsBucket["Name"].asString();
+			if(!allPhotoStoresNodeBucketsBucket["Region"].isNull())
+				bucketsObject.region = allPhotoStoresNodeBucketsBucket["Region"].asString();
+			if(!allPhotoStoresNodeBucketsBucket["State"].isNull())
+				bucketsObject.state = allPhotoStoresNodeBucketsBucket["State"].asString();
 			photoStoresObject.buckets.push_back(bucketsObject);
 		}
 		photoStores_.push_back(photoStoresObject);

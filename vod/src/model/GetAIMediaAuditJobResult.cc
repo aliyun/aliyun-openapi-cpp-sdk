@@ -63,50 +63,50 @@ void GetAIMediaAuditJobResult::parse(const std::string &payload)
 		mediaAuditJob_.data.abnormalModules = dataNode["AbnormalModules"].asString();
 	if(!dataNode["Label"].isNull())
 		mediaAuditJob_.data.label = dataNode["Label"].asString();
-	auto allImageResult = value["ImageResult"]["ImageResultItem"];
-	for (auto value : allImageResult)
+	auto allImageResultNode = dataNode["ImageResult"]["ImageResultItem"];
+	for (auto dataNodeImageResultImageResultItem : allImageResultNode)
 	{
 		MediaAuditJob::Data::ImageResultItem imageResultItemObject;
-		if(!value["Suggestion"].isNull())
-			imageResultItemObject.suggestion = value["Suggestion"].asString();
-		if(!value["Label"].isNull())
-			imageResultItemObject.label = value["Label"].asString();
-		if(!value["Type"].isNull())
-			imageResultItemObject.type = value["Type"].asString();
-		if(!value["Url"].isNull())
-			imageResultItemObject.url = value["Url"].asString();
-		auto allResult = value["Result"]["ResultItem"];
-		for (auto value : allResult)
+		if(!dataNodeImageResultImageResultItem["Suggestion"].isNull())
+			imageResultItemObject.suggestion = dataNodeImageResultImageResultItem["Suggestion"].asString();
+		if(!dataNodeImageResultImageResultItem["Label"].isNull())
+			imageResultItemObject.label = dataNodeImageResultImageResultItem["Label"].asString();
+		if(!dataNodeImageResultImageResultItem["Type"].isNull())
+			imageResultItemObject.type = dataNodeImageResultImageResultItem["Type"].asString();
+		if(!dataNodeImageResultImageResultItem["Url"].isNull())
+			imageResultItemObject.url = dataNodeImageResultImageResultItem["Url"].asString();
+		auto allResultNode = allImageResultNode["Result"]["ResultItem"];
+		for (auto allImageResultNodeResultResultItem : allResultNode)
 		{
 			MediaAuditJob::Data::ImageResultItem::ResultItem resultObject;
-			if(!value["Suggestion"].isNull())
-				resultObject.suggestion = value["Suggestion"].asString();
-			if(!value["Label"].isNull())
-				resultObject.label = value["Label"].asString();
-			if(!value["Score"].isNull())
-				resultObject.score = value["Score"].asString();
-			if(!value["Scene"].isNull())
-				resultObject.scene = value["Scene"].asString();
+			if(!allImageResultNodeResultResultItem["Suggestion"].isNull())
+				resultObject.suggestion = allImageResultNodeResultResultItem["Suggestion"].asString();
+			if(!allImageResultNodeResultResultItem["Label"].isNull())
+				resultObject.label = allImageResultNodeResultResultItem["Label"].asString();
+			if(!allImageResultNodeResultResultItem["Score"].isNull())
+				resultObject.score = allImageResultNodeResultResultItem["Score"].asString();
+			if(!allImageResultNodeResultResultItem["Scene"].isNull())
+				resultObject.scene = allImageResultNodeResultResultItem["Scene"].asString();
 			imageResultItemObject.result.push_back(resultObject);
 		}
 		mediaAuditJob_.data.imageResult.push_back(imageResultItemObject);
 	}
-	auto allTextResult = value["TextResult"]["TextResultItem"];
-	for (auto value : allTextResult)
+	auto allTextResultNode = dataNode["TextResult"]["TextResultItem"];
+	for (auto dataNodeTextResultTextResultItem : allTextResultNode)
 	{
 		MediaAuditJob::Data::TextResultItem textResultItemObject;
-		if(!value["Suggestion"].isNull())
-			textResultItemObject.suggestion = value["Suggestion"].asString();
-		if(!value["Label"].isNull())
-			textResultItemObject.label = value["Label"].asString();
-		if(!value["Score"].isNull())
-			textResultItemObject.score = value["Score"].asString();
-		if(!value["Scene"].isNull())
-			textResultItemObject.scene = value["Scene"].asString();
-		if(!value["Type"].isNull())
-			textResultItemObject.type = value["Type"].asString();
-		if(!value["Content"].isNull())
-			textResultItemObject.content = value["Content"].asString();
+		if(!dataNodeTextResultTextResultItem["Suggestion"].isNull())
+			textResultItemObject.suggestion = dataNodeTextResultTextResultItem["Suggestion"].asString();
+		if(!dataNodeTextResultTextResultItem["Label"].isNull())
+			textResultItemObject.label = dataNodeTextResultTextResultItem["Label"].asString();
+		if(!dataNodeTextResultTextResultItem["Score"].isNull())
+			textResultItemObject.score = dataNodeTextResultTextResultItem["Score"].asString();
+		if(!dataNodeTextResultTextResultItem["Scene"].isNull())
+			textResultItemObject.scene = dataNodeTextResultTextResultItem["Scene"].asString();
+		if(!dataNodeTextResultTextResultItem["Type"].isNull())
+			textResultItemObject.type = dataNodeTextResultTextResultItem["Type"].asString();
+		if(!dataNodeTextResultTextResultItem["Content"].isNull())
+			textResultItemObject.content = dataNodeTextResultTextResultItem["Content"].asString();
 		mediaAuditJob_.data.textResult.push_back(textResultItemObject);
 	}
 	auto videoResultNode = dataNode["VideoResult"];
@@ -123,28 +123,28 @@ void GetAIMediaAuditJobResult::parse(const std::string &payload)
 		mediaAuditJob_.data.videoResult.terrorismResult.maxScore = terrorismResultNode["MaxScore"].asString();
 	if(!terrorismResultNode["AverageScore"].isNull())
 		mediaAuditJob_.data.videoResult.terrorismResult.averageScore = terrorismResultNode["AverageScore"].asString();
-	auto allCounterList = value["CounterList"]["CounterListItem"];
-	for (auto value : allCounterList)
+	auto allCounterListNode = terrorismResultNode["CounterList"]["CounterListItem"];
+	for (auto terrorismResultNodeCounterListCounterListItem : allCounterListNode)
 	{
 		MediaAuditJob::Data::VideoResult::TerrorismResult::CounterListItem counterListItemObject;
-		if(!value["Label"].isNull())
-			counterListItemObject.label = value["Label"].asString();
-		if(!value["Count"].isNull())
-			counterListItemObject.count = std::stoi(value["Count"].asString());
+		if(!terrorismResultNodeCounterListCounterListItem["Label"].isNull())
+			counterListItemObject.label = terrorismResultNodeCounterListCounterListItem["Label"].asString();
+		if(!terrorismResultNodeCounterListCounterListItem["Count"].isNull())
+			counterListItemObject.count = std::stoi(terrorismResultNodeCounterListCounterListItem["Count"].asString());
 		mediaAuditJob_.data.videoResult.terrorismResult.counterList.push_back(counterListItemObject);
 	}
-	auto allTopList = value["TopList"]["TopListItem"];
-	for (auto value : allTopList)
+	auto allTopListNode = terrorismResultNode["TopList"]["TopListItem"];
+	for (auto terrorismResultNodeTopListTopListItem : allTopListNode)
 	{
 		MediaAuditJob::Data::VideoResult::TerrorismResult::TopListItem topListItemObject;
-		if(!value["Label"].isNull())
-			topListItemObject.label = value["Label"].asString();
-		if(!value["Score"].isNull())
-			topListItemObject.score = value["Score"].asString();
-		if(!value["Timestamp"].isNull())
-			topListItemObject.timestamp = value["Timestamp"].asString();
-		if(!value["Url"].isNull())
-			topListItemObject.url = value["Url"].asString();
+		if(!terrorismResultNodeTopListTopListItem["Label"].isNull())
+			topListItemObject.label = terrorismResultNodeTopListTopListItem["Label"].asString();
+		if(!terrorismResultNodeTopListTopListItem["Score"].isNull())
+			topListItemObject.score = terrorismResultNodeTopListTopListItem["Score"].asString();
+		if(!terrorismResultNodeTopListTopListItem["Timestamp"].isNull())
+			topListItemObject.timestamp = terrorismResultNodeTopListTopListItem["Timestamp"].asString();
+		if(!terrorismResultNodeTopListTopListItem["Url"].isNull())
+			topListItemObject.url = terrorismResultNodeTopListTopListItem["Url"].asString();
 		mediaAuditJob_.data.videoResult.terrorismResult.topList.push_back(topListItemObject);
 	}
 	auto pornResultNode = videoResultNode["PornResult"];
@@ -156,28 +156,28 @@ void GetAIMediaAuditJobResult::parse(const std::string &payload)
 		mediaAuditJob_.data.videoResult.pornResult.maxScore = pornResultNode["MaxScore"].asString();
 	if(!pornResultNode["AverageScore"].isNull())
 		mediaAuditJob_.data.videoResult.pornResult.averageScore = pornResultNode["AverageScore"].asString();
-	auto allCounterList1 = value["CounterList"]["CounterListItem"];
-	for (auto value : allCounterList1)
+	auto allCounterList1Node = pornResultNode["CounterList"]["CounterListItem"];
+	for (auto pornResultNodeCounterListCounterListItem : allCounterList1Node)
 	{
 		MediaAuditJob::Data::VideoResult::PornResult::CounterListItem3 counterListItem3Object;
-		if(!value["Label"].isNull())
-			counterListItem3Object.label = value["Label"].asString();
-		if(!value["Count"].isNull())
-			counterListItem3Object.count = std::stoi(value["Count"].asString());
+		if(!pornResultNodeCounterListCounterListItem["Label"].isNull())
+			counterListItem3Object.label = pornResultNodeCounterListCounterListItem["Label"].asString();
+		if(!pornResultNodeCounterListCounterListItem["Count"].isNull())
+			counterListItem3Object.count = std::stoi(pornResultNodeCounterListCounterListItem["Count"].asString());
 		mediaAuditJob_.data.videoResult.pornResult.counterList1.push_back(counterListItem3Object);
 	}
-	auto allTopList2 = value["TopList"]["TopListItem"];
-	for (auto value : allTopList2)
+	auto allTopList2Node = pornResultNode["TopList"]["TopListItem"];
+	for (auto pornResultNodeTopListTopListItem : allTopList2Node)
 	{
 		MediaAuditJob::Data::VideoResult::PornResult::TopListItem4 topListItem4Object;
-		if(!value["Label"].isNull())
-			topListItem4Object.label = value["Label"].asString();
-		if(!value["Score"].isNull())
-			topListItem4Object.score = value["Score"].asString();
-		if(!value["Timestamp"].isNull())
-			topListItem4Object.timestamp = value["Timestamp"].asString();
-		if(!value["Url"].isNull())
-			topListItem4Object.url = value["Url"].asString();
+		if(!pornResultNodeTopListTopListItem["Label"].isNull())
+			topListItem4Object.label = pornResultNodeTopListTopListItem["Label"].asString();
+		if(!pornResultNodeTopListTopListItem["Score"].isNull())
+			topListItem4Object.score = pornResultNodeTopListTopListItem["Score"].asString();
+		if(!pornResultNodeTopListTopListItem["Timestamp"].isNull())
+			topListItem4Object.timestamp = pornResultNodeTopListTopListItem["Timestamp"].asString();
+		if(!pornResultNodeTopListTopListItem["Url"].isNull())
+			topListItem4Object.url = pornResultNodeTopListTopListItem["Url"].asString();
 		mediaAuditJob_.data.videoResult.pornResult.topList2.push_back(topListItem4Object);
 	}
 	auto adResultNode = videoResultNode["AdResult"];
@@ -189,28 +189,28 @@ void GetAIMediaAuditJobResult::parse(const std::string &payload)
 		mediaAuditJob_.data.videoResult.adResult.maxScore = adResultNode["MaxScore"].asString();
 	if(!adResultNode["AverageScore"].isNull())
 		mediaAuditJob_.data.videoResult.adResult.averageScore = adResultNode["AverageScore"].asString();
-	auto allCounterList5 = value["CounterList"]["CounterListItem"];
-	for (auto value : allCounterList5)
+	auto allCounterList5Node = adResultNode["CounterList"]["CounterListItem"];
+	for (auto adResultNodeCounterListCounterListItem : allCounterList5Node)
 	{
 		MediaAuditJob::Data::VideoResult::AdResult::CounterListItem7 counterListItem7Object;
-		if(!value["Label"].isNull())
-			counterListItem7Object.label = value["Label"].asString();
-		if(!value["Count"].isNull())
-			counterListItem7Object.count = std::stoi(value["Count"].asString());
+		if(!adResultNodeCounterListCounterListItem["Label"].isNull())
+			counterListItem7Object.label = adResultNodeCounterListCounterListItem["Label"].asString();
+		if(!adResultNodeCounterListCounterListItem["Count"].isNull())
+			counterListItem7Object.count = std::stoi(adResultNodeCounterListCounterListItem["Count"].asString());
 		mediaAuditJob_.data.videoResult.adResult.counterList5.push_back(counterListItem7Object);
 	}
-	auto allTopList6 = value["TopList"]["TopListItem"];
-	for (auto value : allTopList6)
+	auto allTopList6Node = adResultNode["TopList"]["TopListItem"];
+	for (auto adResultNodeTopListTopListItem : allTopList6Node)
 	{
 		MediaAuditJob::Data::VideoResult::AdResult::TopListItem8 topListItem8Object;
-		if(!value["Label"].isNull())
-			topListItem8Object.label = value["Label"].asString();
-		if(!value["Score"].isNull())
-			topListItem8Object.score = value["Score"].asString();
-		if(!value["Timestamp"].isNull())
-			topListItem8Object.timestamp = value["Timestamp"].asString();
-		if(!value["Url"].isNull())
-			topListItem8Object.url = value["Url"].asString();
+		if(!adResultNodeTopListTopListItem["Label"].isNull())
+			topListItem8Object.label = adResultNodeTopListTopListItem["Label"].asString();
+		if(!adResultNodeTopListTopListItem["Score"].isNull())
+			topListItem8Object.score = adResultNodeTopListTopListItem["Score"].asString();
+		if(!adResultNodeTopListTopListItem["Timestamp"].isNull())
+			topListItem8Object.timestamp = adResultNodeTopListTopListItem["Timestamp"].asString();
+		if(!adResultNodeTopListTopListItem["Url"].isNull())
+			topListItem8Object.url = adResultNodeTopListTopListItem["Url"].asString();
 		mediaAuditJob_.data.videoResult.adResult.topList6.push_back(topListItem8Object);
 	}
 	auto liveResultNode = videoResultNode["LiveResult"];
@@ -222,28 +222,28 @@ void GetAIMediaAuditJobResult::parse(const std::string &payload)
 		mediaAuditJob_.data.videoResult.liveResult.maxScore = liveResultNode["MaxScore"].asString();
 	if(!liveResultNode["AverageScore"].isNull())
 		mediaAuditJob_.data.videoResult.liveResult.averageScore = liveResultNode["AverageScore"].asString();
-	auto allCounterList9 = value["CounterList"]["CounterListItem"];
-	for (auto value : allCounterList9)
+	auto allCounterList9Node = liveResultNode["CounterList"]["CounterListItem"];
+	for (auto liveResultNodeCounterListCounterListItem : allCounterList9Node)
 	{
 		MediaAuditJob::Data::VideoResult::LiveResult::CounterListItem11 counterListItem11Object;
-		if(!value["Label"].isNull())
-			counterListItem11Object.label = value["Label"].asString();
-		if(!value["Count"].isNull())
-			counterListItem11Object.count = std::stoi(value["Count"].asString());
+		if(!liveResultNodeCounterListCounterListItem["Label"].isNull())
+			counterListItem11Object.label = liveResultNodeCounterListCounterListItem["Label"].asString();
+		if(!liveResultNodeCounterListCounterListItem["Count"].isNull())
+			counterListItem11Object.count = std::stoi(liveResultNodeCounterListCounterListItem["Count"].asString());
 		mediaAuditJob_.data.videoResult.liveResult.counterList9.push_back(counterListItem11Object);
 	}
-	auto allTopList10 = value["TopList"]["TopListItem"];
-	for (auto value : allTopList10)
+	auto allTopList10Node = liveResultNode["TopList"]["TopListItem"];
+	for (auto liveResultNodeTopListTopListItem : allTopList10Node)
 	{
 		MediaAuditJob::Data::VideoResult::LiveResult::TopListItem12 topListItem12Object;
-		if(!value["Label"].isNull())
-			topListItem12Object.label = value["Label"].asString();
-		if(!value["Score"].isNull())
-			topListItem12Object.score = value["Score"].asString();
-		if(!value["Timestamp"].isNull())
-			topListItem12Object.timestamp = value["Timestamp"].asString();
-		if(!value["Url"].isNull())
-			topListItem12Object.url = value["Url"].asString();
+		if(!liveResultNodeTopListTopListItem["Label"].isNull())
+			topListItem12Object.label = liveResultNodeTopListTopListItem["Label"].asString();
+		if(!liveResultNodeTopListTopListItem["Score"].isNull())
+			topListItem12Object.score = liveResultNodeTopListTopListItem["Score"].asString();
+		if(!liveResultNodeTopListTopListItem["Timestamp"].isNull())
+			topListItem12Object.timestamp = liveResultNodeTopListTopListItem["Timestamp"].asString();
+		if(!liveResultNodeTopListTopListItem["Url"].isNull())
+			topListItem12Object.url = liveResultNodeTopListTopListItem["Url"].asString();
 		mediaAuditJob_.data.videoResult.liveResult.topList10.push_back(topListItem12Object);
 	}
 	auto logoResultNode = videoResultNode["LogoResult"];
@@ -255,28 +255,28 @@ void GetAIMediaAuditJobResult::parse(const std::string &payload)
 		mediaAuditJob_.data.videoResult.logoResult.maxScore = logoResultNode["MaxScore"].asString();
 	if(!logoResultNode["AverageScore"].isNull())
 		mediaAuditJob_.data.videoResult.logoResult.averageScore = logoResultNode["AverageScore"].asString();
-	auto allCounterList13 = value["CounterList"]["CounterListItem"];
-	for (auto value : allCounterList13)
+	auto allCounterList13Node = logoResultNode["CounterList"]["CounterListItem"];
+	for (auto logoResultNodeCounterListCounterListItem : allCounterList13Node)
 	{
 		MediaAuditJob::Data::VideoResult::LogoResult::CounterListItem15 counterListItem15Object;
-		if(!value["Label"].isNull())
-			counterListItem15Object.label = value["Label"].asString();
-		if(!value["Count"].isNull())
-			counterListItem15Object.count = std::stoi(value["Count"].asString());
+		if(!logoResultNodeCounterListCounterListItem["Label"].isNull())
+			counterListItem15Object.label = logoResultNodeCounterListCounterListItem["Label"].asString();
+		if(!logoResultNodeCounterListCounterListItem["Count"].isNull())
+			counterListItem15Object.count = std::stoi(logoResultNodeCounterListCounterListItem["Count"].asString());
 		mediaAuditJob_.data.videoResult.logoResult.counterList13.push_back(counterListItem15Object);
 	}
-	auto allTopList14 = value["TopList"]["TopListItem"];
-	for (auto value : allTopList14)
+	auto allTopList14Node = logoResultNode["TopList"]["TopListItem"];
+	for (auto logoResultNodeTopListTopListItem : allTopList14Node)
 	{
 		MediaAuditJob::Data::VideoResult::LogoResult::TopListItem16 topListItem16Object;
-		if(!value["Label"].isNull())
-			topListItem16Object.label = value["Label"].asString();
-		if(!value["Score"].isNull())
-			topListItem16Object.score = value["Score"].asString();
-		if(!value["Timestamp"].isNull())
-			topListItem16Object.timestamp = value["Timestamp"].asString();
-		if(!value["Url"].isNull())
-			topListItem16Object.url = value["Url"].asString();
+		if(!logoResultNodeTopListTopListItem["Label"].isNull())
+			topListItem16Object.label = logoResultNodeTopListTopListItem["Label"].asString();
+		if(!logoResultNodeTopListTopListItem["Score"].isNull())
+			topListItem16Object.score = logoResultNodeTopListTopListItem["Score"].asString();
+		if(!logoResultNodeTopListTopListItem["Timestamp"].isNull())
+			topListItem16Object.timestamp = logoResultNodeTopListTopListItem["Timestamp"].asString();
+		if(!logoResultNodeTopListTopListItem["Url"].isNull())
+			topListItem16Object.url = logoResultNodeTopListTopListItem["Url"].asString();
 		mediaAuditJob_.data.videoResult.logoResult.topList14.push_back(topListItem16Object);
 	}
 

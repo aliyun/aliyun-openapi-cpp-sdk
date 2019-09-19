@@ -39,18 +39,18 @@ void DescribeScdnDomainOriginTrafficDataResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOriginTrafficDataPerInterval = value["OriginTrafficDataPerInterval"]["DataModule"];
-	for (auto value : allOriginTrafficDataPerInterval)
+	auto allOriginTrafficDataPerIntervalNode = value["OriginTrafficDataPerInterval"]["DataModule"];
+	for (auto valueOriginTrafficDataPerIntervalDataModule : allOriginTrafficDataPerIntervalNode)
 	{
 		DataModule originTrafficDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			originTrafficDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["TrafficValue"].isNull())
-			originTrafficDataPerIntervalObject.trafficValue = value["TrafficValue"].asString();
-		if(!value["HttpTrafficValue"].isNull())
-			originTrafficDataPerIntervalObject.httpTrafficValue = value["HttpTrafficValue"].asString();
-		if(!value["HttpsTrafficValue"].isNull())
-			originTrafficDataPerIntervalObject.httpsTrafficValue = value["HttpsTrafficValue"].asString();
+		if(!valueOriginTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			originTrafficDataPerIntervalObject.timeStamp = valueOriginTrafficDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueOriginTrafficDataPerIntervalDataModule["TrafficValue"].isNull())
+			originTrafficDataPerIntervalObject.trafficValue = valueOriginTrafficDataPerIntervalDataModule["TrafficValue"].asString();
+		if(!valueOriginTrafficDataPerIntervalDataModule["HttpTrafficValue"].isNull())
+			originTrafficDataPerIntervalObject.httpTrafficValue = valueOriginTrafficDataPerIntervalDataModule["HttpTrafficValue"].asString();
+		if(!valueOriginTrafficDataPerIntervalDataModule["HttpsTrafficValue"].isNull())
+			originTrafficDataPerIntervalObject.httpsTrafficValue = valueOriginTrafficDataPerIntervalDataModule["HttpsTrafficValue"].asString();
 		originTrafficDataPerInterval_.push_back(originTrafficDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

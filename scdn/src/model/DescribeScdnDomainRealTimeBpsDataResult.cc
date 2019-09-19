@@ -39,14 +39,14 @@ void DescribeScdnDomainRealTimeBpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["BpsModel"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["BpsModel"];
+	for (auto valueDataBpsModel : allDataNode)
 	{
 		BpsModel dataObject;
-		if(!value["Bps"].isNull())
-			dataObject.bps = std::stof(value["Bps"].asString());
-		if(!value["TimeStamp"].isNull())
-			dataObject.timeStamp = value["TimeStamp"].asString();
+		if(!valueDataBpsModel["Bps"].isNull())
+			dataObject.bps = std::stof(valueDataBpsModel["Bps"].asString());
+		if(!valueDataBpsModel["TimeStamp"].isNull())
+			dataObject.timeStamp = valueDataBpsModel["TimeStamp"].asString();
 		data_.push_back(dataObject);
 	}
 

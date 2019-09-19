@@ -39,12 +39,12 @@ void DescribeWebsiteScanResultDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allImageScanResults = value["ImageScanResults"]["ImageScanResult"];
-	for (auto value : allImageScanResults)
+	auto allImageScanResultsNode = value["ImageScanResults"]["ImageScanResult"];
+	for (auto valueImageScanResultsImageScanResult : allImageScanResultsNode)
 	{
 		ImageScanResult imageScanResultsObject;
-		if(!value["Url"].isNull())
-			imageScanResultsObject.url = value["Url"].asString();
+		if(!valueImageScanResultsImageScanResult["Url"].isNull())
+			imageScanResultsObject.url = valueImageScanResultsImageScanResult["Url"].asString();
 		auto allLabels = value["Labels"]["StringItem"];
 		for (auto value : allLabels)
 			imageScanResultsObject.labels.push_back(value.asString());

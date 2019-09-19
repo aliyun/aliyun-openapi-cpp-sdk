@@ -40,16 +40,16 @@ void RecognizeImageColorResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allColorTemplateList = value["ColorTemplateList"]["ColorTemplate"];
-	for (auto value : allColorTemplateList)
+	auto allColorTemplateListNode = dataNode["ColorTemplateList"]["ColorTemplate"];
+	for (auto dataNodeColorTemplateListColorTemplate : allColorTemplateListNode)
 	{
 		Data::ColorTemplate colorTemplateObject;
-		if(!value["Color"].isNull())
-			colorTemplateObject.color = value["Color"].asString();
-		if(!value["Label"].isNull())
-			colorTemplateObject.label = value["Label"].asString();
-		if(!value["Percentage"].isNull())
-			colorTemplateObject.percentage = std::stof(value["Percentage"].asString());
+		if(!dataNodeColorTemplateListColorTemplate["Color"].isNull())
+			colorTemplateObject.color = dataNodeColorTemplateListColorTemplate["Color"].asString();
+		if(!dataNodeColorTemplateListColorTemplate["Label"].isNull())
+			colorTemplateObject.label = dataNodeColorTemplateListColorTemplate["Label"].asString();
+		if(!dataNodeColorTemplateListColorTemplate["Percentage"].isNull())
+			colorTemplateObject.percentage = std::stof(dataNodeColorTemplateListColorTemplate["Percentage"].asString());
 		data_.colorTemplateList.push_back(colorTemplateObject);
 	}
 	if(!value["Code"].isNull())

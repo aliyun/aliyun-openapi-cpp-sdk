@@ -39,40 +39,40 @@ void SubmitEmailVerificationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSuccessList = value["SuccessList"]["SendResult"];
-	for (auto value : allSuccessList)
+	auto allSuccessListNode = value["SuccessList"]["SendResult"];
+	for (auto valueSuccessListSendResult : allSuccessListNode)
 	{
 		SendResult successListObject;
-		if(!value["Email"].isNull())
-			successListObject.email = value["Email"].asString();
-		if(!value["Code"].isNull())
-			successListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			successListObject.message = value["Message"].asString();
+		if(!valueSuccessListSendResult["Email"].isNull())
+			successListObject.email = valueSuccessListSendResult["Email"].asString();
+		if(!valueSuccessListSendResult["Code"].isNull())
+			successListObject.code = valueSuccessListSendResult["Code"].asString();
+		if(!valueSuccessListSendResult["Message"].isNull())
+			successListObject.message = valueSuccessListSendResult["Message"].asString();
 		successList_.push_back(successListObject);
 	}
-	auto allFailList = value["FailList"]["SendResult"];
-	for (auto value : allFailList)
+	auto allFailListNode = value["FailList"]["SendResult"];
+	for (auto valueFailListSendResult : allFailListNode)
 	{
 		SendResult failListObject;
-		if(!value["Email"].isNull())
-			failListObject.email = value["Email"].asString();
-		if(!value["Code"].isNull())
-			failListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			failListObject.message = value["Message"].asString();
+		if(!valueFailListSendResult["Email"].isNull())
+			failListObject.email = valueFailListSendResult["Email"].asString();
+		if(!valueFailListSendResult["Code"].isNull())
+			failListObject.code = valueFailListSendResult["Code"].asString();
+		if(!valueFailListSendResult["Message"].isNull())
+			failListObject.message = valueFailListSendResult["Message"].asString();
 		failList_.push_back(failListObject);
 	}
-	auto allExistList = value["ExistList"]["SendResult"];
-	for (auto value : allExistList)
+	auto allExistListNode = value["ExistList"]["SendResult"];
+	for (auto valueExistListSendResult : allExistListNode)
 	{
 		SendResult existListObject;
-		if(!value["Email"].isNull())
-			existListObject.email = value["Email"].asString();
-		if(!value["Code"].isNull())
-			existListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			existListObject.message = value["Message"].asString();
+		if(!valueExistListSendResult["Email"].isNull())
+			existListObject.email = valueExistListSendResult["Email"].asString();
+		if(!valueExistListSendResult["Code"].isNull())
+			existListObject.code = valueExistListSendResult["Code"].asString();
+		if(!valueExistListSendResult["Message"].isNull())
+			existListObject.message = valueExistListSendResult["Message"].asString();
 		existList_.push_back(existListObject);
 	}
 

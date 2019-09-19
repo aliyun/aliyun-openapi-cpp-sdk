@@ -39,16 +39,16 @@ void StartMixStreamsServiceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMixStreamsInfoList = value["MixStreamsInfoList"]["MixStreamsInfo"];
-	for (auto value : allMixStreamsInfoList)
+	auto allMixStreamsInfoListNode = value["MixStreamsInfoList"]["MixStreamsInfo"];
+	for (auto valueMixStreamsInfoListMixStreamsInfo : allMixStreamsInfoListNode)
 	{
 		MixStreamsInfo mixStreamsInfoListObject;
-		if(!value["DomainName"].isNull())
-			mixStreamsInfoListObject.domainName = value["DomainName"].asString();
-		if(!value["AppName"].isNull())
-			mixStreamsInfoListObject.appName = value["AppName"].asString();
-		if(!value["StreamName"].isNull())
-			mixStreamsInfoListObject.streamName = value["StreamName"].asString();
+		if(!valueMixStreamsInfoListMixStreamsInfo["DomainName"].isNull())
+			mixStreamsInfoListObject.domainName = valueMixStreamsInfoListMixStreamsInfo["DomainName"].asString();
+		if(!valueMixStreamsInfoListMixStreamsInfo["AppName"].isNull())
+			mixStreamsInfoListObject.appName = valueMixStreamsInfoListMixStreamsInfo["AppName"].asString();
+		if(!valueMixStreamsInfoListMixStreamsInfo["StreamName"].isNull())
+			mixStreamsInfoListObject.streamName = valueMixStreamsInfoListMixStreamsInfo["StreamName"].asString();
 		mixStreamsInfoList_.push_back(mixStreamsInfoListObject);
 	}
 

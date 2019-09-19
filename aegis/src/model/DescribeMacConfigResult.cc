@@ -39,40 +39,40 @@ void DescribeMacConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConfigs = value["Configs"]["Config"];
-	for (auto value : allConfigs)
+	auto allConfigsNode = value["Configs"]["Config"];
+	for (auto valueConfigsConfig : allConfigsNode)
 	{
 		Config configsObject;
-		if(!value["StartTime"].isNull())
-			configsObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			configsObject.endTime = value["EndTime"].asString();
-		if(!value["Ip"].isNull())
-			configsObject.ip = value["Ip"].asString();
-		if(!value["StrategyId"].isNull())
-			configsObject.strategyId = std::stol(value["StrategyId"].asString());
-		if(!value["Account"].isNull())
-			configsObject.account = value["Account"].asString();
-		if(!value["Location"].isNull())
-			configsObject.location = value["Location"].asString();
-		if(!value["Switcher"].isNull())
-			configsObject.switcher = value["Switcher"].asString();
-		if(!value["VulType"].isNull())
-			configsObject.vulType = value["VulType"].asString();
-		if(!value["UuidCount"].isNull())
-			configsObject.uuidCount = std::stoi(value["UuidCount"].asString());
-		if(!value["TotalCount"].isNull())
-			configsObject.totalCount = std::stoi(value["TotalCount"].asString());
-		auto allTargetList = value["TargetList"]["Target"];
-		for (auto value : allTargetList)
+		if(!valueConfigsConfig["StartTime"].isNull())
+			configsObject.startTime = valueConfigsConfig["StartTime"].asString();
+		if(!valueConfigsConfig["EndTime"].isNull())
+			configsObject.endTime = valueConfigsConfig["EndTime"].asString();
+		if(!valueConfigsConfig["Ip"].isNull())
+			configsObject.ip = valueConfigsConfig["Ip"].asString();
+		if(!valueConfigsConfig["StrategyId"].isNull())
+			configsObject.strategyId = std::stol(valueConfigsConfig["StrategyId"].asString());
+		if(!valueConfigsConfig["Account"].isNull())
+			configsObject.account = valueConfigsConfig["Account"].asString();
+		if(!valueConfigsConfig["Location"].isNull())
+			configsObject.location = valueConfigsConfig["Location"].asString();
+		if(!valueConfigsConfig["Switcher"].isNull())
+			configsObject.switcher = valueConfigsConfig["Switcher"].asString();
+		if(!valueConfigsConfig["VulType"].isNull())
+			configsObject.vulType = valueConfigsConfig["VulType"].asString();
+		if(!valueConfigsConfig["UuidCount"].isNull())
+			configsObject.uuidCount = std::stoi(valueConfigsConfig["UuidCount"].asString());
+		if(!valueConfigsConfig["TotalCount"].isNull())
+			configsObject.totalCount = std::stoi(valueConfigsConfig["TotalCount"].asString());
+		auto allTargetListNode = allConfigsNode["TargetList"]["Target"];
+		for (auto allConfigsNodeTargetListTarget : allTargetListNode)
 		{
 			Config::Target targetListObject;
-			if(!value["Flag"].isNull())
-				targetListObject.flag = value["Flag"].asString();
-			if(!value["TargetType"].isNull())
-				targetListObject.targetType = value["TargetType"].asString();
-			if(!value["Target"].isNull())
-				targetListObject.target = value["Target"].asString();
+			if(!allConfigsNodeTargetListTarget["Flag"].isNull())
+				targetListObject.flag = allConfigsNodeTargetListTarget["Flag"].asString();
+			if(!allConfigsNodeTargetListTarget["TargetType"].isNull())
+				targetListObject.targetType = allConfigsNodeTargetListTarget["TargetType"].asString();
+			if(!allConfigsNodeTargetListTarget["Target"].isNull())
+				targetListObject.target = allConfigsNodeTargetListTarget["Target"].asString();
 			configsObject.targetList.push_back(targetListObject);
 		}
 		configs_.push_back(configsObject);

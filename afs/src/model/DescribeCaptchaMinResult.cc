@@ -39,16 +39,16 @@ void DescribeCaptchaMinResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCaptchaMins = value["CaptchaMins"]["CaptchaMin"];
-	for (auto value : allCaptchaMins)
+	auto allCaptchaMinsNode = value["CaptchaMins"]["CaptchaMin"];
+	for (auto valueCaptchaMinsCaptchaMin : allCaptchaMinsNode)
 	{
 		CaptchaMin captchaMinsObject;
-		if(!value["Time"].isNull())
-			captchaMinsObject.time = value["Time"].asString();
-		if(!value["Pass"].isNull())
-			captchaMinsObject.pass = value["Pass"].asString();
-		if(!value["Interception"].isNull())
-			captchaMinsObject.interception = value["Interception"].asString();
+		if(!valueCaptchaMinsCaptchaMin["Time"].isNull())
+			captchaMinsObject.time = valueCaptchaMinsCaptchaMin["Time"].asString();
+		if(!valueCaptchaMinsCaptchaMin["Pass"].isNull())
+			captchaMinsObject.pass = valueCaptchaMinsCaptchaMin["Pass"].asString();
+		if(!valueCaptchaMinsCaptchaMin["Interception"].isNull())
+			captchaMinsObject.interception = valueCaptchaMinsCaptchaMin["Interception"].asString();
 		captchaMins_.push_back(captchaMinsObject);
 	}
 	if(!value["BizCode"].isNull())

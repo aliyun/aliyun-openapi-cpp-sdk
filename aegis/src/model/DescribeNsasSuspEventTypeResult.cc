@@ -39,16 +39,16 @@ void DescribeNsasSuspEventTypeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEventTypes = value["EventTypes"]["Data"];
-	for (auto value : allEventTypes)
+	auto allEventTypesNode = value["EventTypes"]["Data"];
+	for (auto valueEventTypesData : allEventTypesNode)
 	{
 		Data eventTypesObject;
-		if(!value["Name"].isNull())
-			eventTypesObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			eventTypesObject.type = value["Type"].asString();
-		if(!value["SuspEventCount"].isNull())
-			eventTypesObject.suspEventCount = std::stoi(value["SuspEventCount"].asString());
+		if(!valueEventTypesData["Name"].isNull())
+			eventTypesObject.name = valueEventTypesData["Name"].asString();
+		if(!valueEventTypesData["Type"].isNull())
+			eventTypesObject.type = valueEventTypesData["Type"].asString();
+		if(!valueEventTypesData["SuspEventCount"].isNull())
+			eventTypesObject.suspEventCount = std::stoi(valueEventTypesData["SuspEventCount"].asString());
 		eventTypes_.push_back(eventTypesObject);
 	}
 

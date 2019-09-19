@@ -39,16 +39,16 @@ void QueryCategoriesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCategories = value["Categories"]["Category"];
-	for (auto value : allCategories)
+	auto allCategoriesNode = value["Categories"]["Category"];
+	for (auto valueCategoriesCategory : allCategoriesNode)
 	{
 		Category categoriesObject;
-		if(!value["CategoryId"].isNull())
-			categoriesObject.categoryId = std::stol(value["CategoryId"].asString());
-		if(!value["ParentCategoryId"].isNull())
-			categoriesObject.parentCategoryId = std::stol(value["ParentCategoryId"].asString());
-		if(!value["Name"].isNull())
-			categoriesObject.name = value["Name"].asString();
+		if(!valueCategoriesCategory["CategoryId"].isNull())
+			categoriesObject.categoryId = std::stol(valueCategoriesCategory["CategoryId"].asString());
+		if(!valueCategoriesCategory["ParentCategoryId"].isNull())
+			categoriesObject.parentCategoryId = std::stol(valueCategoriesCategory["ParentCategoryId"].asString());
+		if(!valueCategoriesCategory["Name"].isNull())
+			categoriesObject.name = valueCategoriesCategory["Name"].asString();
 		auto allChildrens = value["Childrens"]["Children"];
 		for (auto value : allChildrens)
 			categoriesObject.childrens.push_back(value.asString());

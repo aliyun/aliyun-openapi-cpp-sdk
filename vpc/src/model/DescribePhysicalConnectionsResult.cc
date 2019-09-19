@@ -39,62 +39,62 @@ void DescribePhysicalConnectionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPhysicalConnectionSet = value["PhysicalConnectionSet"]["PhysicalConnectionType"];
-	for (auto value : allPhysicalConnectionSet)
+	auto allPhysicalConnectionSetNode = value["PhysicalConnectionSet"]["PhysicalConnectionType"];
+	for (auto valuePhysicalConnectionSetPhysicalConnectionType : allPhysicalConnectionSetNode)
 	{
 		PhysicalConnectionType physicalConnectionSetObject;
-		if(!value["PhysicalConnectionId"].isNull())
-			physicalConnectionSetObject.physicalConnectionId = value["PhysicalConnectionId"].asString();
-		if(!value["AccessPointId"].isNull())
-			physicalConnectionSetObject.accessPointId = value["AccessPointId"].asString();
-		if(!value["Type"].isNull())
-			physicalConnectionSetObject.type = value["Type"].asString();
-		if(!value["Status"].isNull())
-			physicalConnectionSetObject.status = value["Status"].asString();
-		if(!value["BusinessStatus"].isNull())
-			physicalConnectionSetObject.businessStatus = value["BusinessStatus"].asString();
-		if(!value["CreationTime"].isNull())
-			physicalConnectionSetObject.creationTime = value["CreationTime"].asString();
-		if(!value["EnabledTime"].isNull())
-			physicalConnectionSetObject.enabledTime = value["EnabledTime"].asString();
-		if(!value["LineOperator"].isNull())
-			physicalConnectionSetObject.lineOperator = value["LineOperator"].asString();
-		if(!value["Spec"].isNull())
-			physicalConnectionSetObject.spec = value["Spec"].asString();
-		if(!value["PeerLocation"].isNull())
-			physicalConnectionSetObject.peerLocation = value["PeerLocation"].asString();
-		if(!value["PortType"].isNull())
-			physicalConnectionSetObject.portType = value["PortType"].asString();
-		if(!value["RedundantPhysicalConnectionId"].isNull())
-			physicalConnectionSetObject.redundantPhysicalConnectionId = value["RedundantPhysicalConnectionId"].asString();
-		if(!value["Name"].isNull())
-			physicalConnectionSetObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			physicalConnectionSetObject.description = value["Description"].asString();
-		if(!value["AdLocation"].isNull())
-			physicalConnectionSetObject.adLocation = value["AdLocation"].asString();
-		if(!value["PortNumber"].isNull())
-			physicalConnectionSetObject.portNumber = value["PortNumber"].asString();
-		if(!value["CircuitCode"].isNull())
-			physicalConnectionSetObject.circuitCode = value["CircuitCode"].asString();
-		if(!value["Bandwidth"].isNull())
-			physicalConnectionSetObject.bandwidth = std::stol(value["Bandwidth"].asString());
-		if(!value["LoaStatus"].isNull())
-			physicalConnectionSetObject.loaStatus = value["LoaStatus"].asString();
-		if(!value["Spec"].isNull())
-			physicalConnectionSetObject.spec1 = value["Spec"].asString();
-		if(!value["HasReservationData"].isNull())
-			physicalConnectionSetObject.hasReservationData = value["HasReservationData"].asString();
-		if(!value["ReservationInternetChargeType"].isNull())
-			physicalConnectionSetObject.reservationInternetChargeType = value["ReservationInternetChargeType"].asString();
-		if(!value["ReservationActiveTime"].isNull())
-			physicalConnectionSetObject.reservationActiveTime = value["ReservationActiveTime"].asString();
-		if(!value["ReservationOrderType"].isNull())
-			physicalConnectionSetObject.reservationOrderType = value["ReservationOrderType"].asString();
-		if(!value["EndTime"].isNull())
-			physicalConnectionSetObject.endTime = value["EndTime"].asString();
-		if(!value["ChargeType"].isNull())
-			physicalConnectionSetObject.chargeType = value["ChargeType"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["PhysicalConnectionId"].isNull())
+			physicalConnectionSetObject.physicalConnectionId = valuePhysicalConnectionSetPhysicalConnectionType["PhysicalConnectionId"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["AccessPointId"].isNull())
+			physicalConnectionSetObject.accessPointId = valuePhysicalConnectionSetPhysicalConnectionType["AccessPointId"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Type"].isNull())
+			physicalConnectionSetObject.type = valuePhysicalConnectionSetPhysicalConnectionType["Type"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Status"].isNull())
+			physicalConnectionSetObject.status = valuePhysicalConnectionSetPhysicalConnectionType["Status"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["BusinessStatus"].isNull())
+			physicalConnectionSetObject.businessStatus = valuePhysicalConnectionSetPhysicalConnectionType["BusinessStatus"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["CreationTime"].isNull())
+			physicalConnectionSetObject.creationTime = valuePhysicalConnectionSetPhysicalConnectionType["CreationTime"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["EnabledTime"].isNull())
+			physicalConnectionSetObject.enabledTime = valuePhysicalConnectionSetPhysicalConnectionType["EnabledTime"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["LineOperator"].isNull())
+			physicalConnectionSetObject.lineOperator = valuePhysicalConnectionSetPhysicalConnectionType["LineOperator"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Spec"].isNull())
+			physicalConnectionSetObject.spec = valuePhysicalConnectionSetPhysicalConnectionType["Spec"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["PeerLocation"].isNull())
+			physicalConnectionSetObject.peerLocation = valuePhysicalConnectionSetPhysicalConnectionType["PeerLocation"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["PortType"].isNull())
+			physicalConnectionSetObject.portType = valuePhysicalConnectionSetPhysicalConnectionType["PortType"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["RedundantPhysicalConnectionId"].isNull())
+			physicalConnectionSetObject.redundantPhysicalConnectionId = valuePhysicalConnectionSetPhysicalConnectionType["RedundantPhysicalConnectionId"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Name"].isNull())
+			physicalConnectionSetObject.name = valuePhysicalConnectionSetPhysicalConnectionType["Name"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Description"].isNull())
+			physicalConnectionSetObject.description = valuePhysicalConnectionSetPhysicalConnectionType["Description"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["AdLocation"].isNull())
+			physicalConnectionSetObject.adLocation = valuePhysicalConnectionSetPhysicalConnectionType["AdLocation"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["PortNumber"].isNull())
+			physicalConnectionSetObject.portNumber = valuePhysicalConnectionSetPhysicalConnectionType["PortNumber"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["CircuitCode"].isNull())
+			physicalConnectionSetObject.circuitCode = valuePhysicalConnectionSetPhysicalConnectionType["CircuitCode"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Bandwidth"].isNull())
+			physicalConnectionSetObject.bandwidth = std::stol(valuePhysicalConnectionSetPhysicalConnectionType["Bandwidth"].asString());
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["LoaStatus"].isNull())
+			physicalConnectionSetObject.loaStatus = valuePhysicalConnectionSetPhysicalConnectionType["LoaStatus"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["Spec"].isNull())
+			physicalConnectionSetObject.spec1 = valuePhysicalConnectionSetPhysicalConnectionType["Spec"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["HasReservationData"].isNull())
+			physicalConnectionSetObject.hasReservationData = valuePhysicalConnectionSetPhysicalConnectionType["HasReservationData"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["ReservationInternetChargeType"].isNull())
+			physicalConnectionSetObject.reservationInternetChargeType = valuePhysicalConnectionSetPhysicalConnectionType["ReservationInternetChargeType"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["ReservationActiveTime"].isNull())
+			physicalConnectionSetObject.reservationActiveTime = valuePhysicalConnectionSetPhysicalConnectionType["ReservationActiveTime"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["ReservationOrderType"].isNull())
+			physicalConnectionSetObject.reservationOrderType = valuePhysicalConnectionSetPhysicalConnectionType["ReservationOrderType"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["EndTime"].isNull())
+			physicalConnectionSetObject.endTime = valuePhysicalConnectionSetPhysicalConnectionType["EndTime"].asString();
+		if(!valuePhysicalConnectionSetPhysicalConnectionType["ChargeType"].isNull())
+			physicalConnectionSetObject.chargeType = valuePhysicalConnectionSetPhysicalConnectionType["ChargeType"].asString();
 		physicalConnectionSet_.push_back(physicalConnectionSetObject);
 	}
 	if(!value["PageNumber"].isNull())

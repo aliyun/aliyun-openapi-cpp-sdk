@@ -39,28 +39,28 @@ void DescribeReplicaConflictInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["ItemsItem"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["ItemsItem"];
+	for (auto valueItemsItemsItem : allItemsNode)
 	{
 		ItemsItem itemsObject;
-		if(!value["SourceInstanceId"].isNull())
-			itemsObject.sourceInstanceId = value["SourceInstanceId"].asString();
-		if(!value["DestinationInstanceId"].isNull())
-			itemsObject.destinationInstanceId = value["DestinationInstanceId"].asString();
-		if(!value["OccurTime"].isNull())
-			itemsObject.occurTime = value["OccurTime"].asString();
-		if(!value["DetailInfo"].isNull())
-			itemsObject.detailInfo = value["DetailInfo"].asString();
-		if(!value["ConfictKey"].isNull())
-			itemsObject.confictKey = value["ConfictKey"].asString();
-		if(!value["ConfictReason"].isNull())
-			itemsObject.confictReason = value["ConfictReason"].asString();
-		if(!value["DatabaseName"].isNull())
-			itemsObject.databaseName = value["DatabaseName"].asString();
-		if(!value["RecoveryMode"].isNull())
-			itemsObject.recoveryMode = value["RecoveryMode"].asString();
-		if(!value["ConflictGtid"].isNull())
-			itemsObject.conflictGtid = value["ConflictGtid"].asString();
+		if(!valueItemsItemsItem["SourceInstanceId"].isNull())
+			itemsObject.sourceInstanceId = valueItemsItemsItem["SourceInstanceId"].asString();
+		if(!valueItemsItemsItem["DestinationInstanceId"].isNull())
+			itemsObject.destinationInstanceId = valueItemsItemsItem["DestinationInstanceId"].asString();
+		if(!valueItemsItemsItem["OccurTime"].isNull())
+			itemsObject.occurTime = valueItemsItemsItem["OccurTime"].asString();
+		if(!valueItemsItemsItem["DetailInfo"].isNull())
+			itemsObject.detailInfo = valueItemsItemsItem["DetailInfo"].asString();
+		if(!valueItemsItemsItem["ConfictKey"].isNull())
+			itemsObject.confictKey = valueItemsItemsItem["ConfictKey"].asString();
+		if(!valueItemsItemsItem["ConfictReason"].isNull())
+			itemsObject.confictReason = valueItemsItemsItem["ConfictReason"].asString();
+		if(!valueItemsItemsItem["DatabaseName"].isNull())
+			itemsObject.databaseName = valueItemsItemsItem["DatabaseName"].asString();
+		if(!valueItemsItemsItem["RecoveryMode"].isNull())
+			itemsObject.recoveryMode = valueItemsItemsItem["RecoveryMode"].asString();
+		if(!valueItemsItemsItem["ConflictGtid"].isNull())
+			itemsObject.conflictGtid = valueItemsItemsItem["ConflictGtid"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["ReplicaId"].isNull())

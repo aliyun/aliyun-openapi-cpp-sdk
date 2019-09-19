@@ -39,24 +39,24 @@ void DescribeStreamPredictResultResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStreamPredictDatas = value["StreamPredictDatas"]["StreamPredictData"];
-	for (auto value : allStreamPredictDatas)
+	auto allStreamPredictDatasNode = value["StreamPredictDatas"]["StreamPredictData"];
+	for (auto valueStreamPredictDatasStreamPredictData : allStreamPredictDatasNode)
 	{
 		StreamPredictData streamPredictDatasObject;
-		if(!value["PredictId"].isNull())
-			streamPredictDatasObject.predictId = value["PredictId"].asString();
-		if(!value["ModelId"].isNull())
-			streamPredictDatasObject.modelId = value["ModelId"].asString();
-		if(!value["DataUrl"].isNull())
-			streamPredictDatasObject.dataUrl = value["DataUrl"].asString();
-		if(!value["Timestamp"].isNull())
-			streamPredictDatasObject.timestamp = std::stol(value["Timestamp"].asString());
-		if(!value["PredictTime"].isNull())
-			streamPredictDatasObject.predictTime = value["PredictTime"].asString();
-		if(!value["Status"].isNull())
-			streamPredictDatasObject.status = value["Status"].asString();
-		if(!value["PredictResult"].isNull())
-			streamPredictDatasObject.predictResult = value["PredictResult"].asString();
+		if(!valueStreamPredictDatasStreamPredictData["PredictId"].isNull())
+			streamPredictDatasObject.predictId = valueStreamPredictDatasStreamPredictData["PredictId"].asString();
+		if(!valueStreamPredictDatasStreamPredictData["ModelId"].isNull())
+			streamPredictDatasObject.modelId = valueStreamPredictDatasStreamPredictData["ModelId"].asString();
+		if(!valueStreamPredictDatasStreamPredictData["DataUrl"].isNull())
+			streamPredictDatasObject.dataUrl = valueStreamPredictDatasStreamPredictData["DataUrl"].asString();
+		if(!valueStreamPredictDatasStreamPredictData["Timestamp"].isNull())
+			streamPredictDatasObject.timestamp = std::stol(valueStreamPredictDatasStreamPredictData["Timestamp"].asString());
+		if(!valueStreamPredictDatasStreamPredictData["PredictTime"].isNull())
+			streamPredictDatasObject.predictTime = valueStreamPredictDatasStreamPredictData["PredictTime"].asString();
+		if(!valueStreamPredictDatasStreamPredictData["Status"].isNull())
+			streamPredictDatasObject.status = valueStreamPredictDatasStreamPredictData["Status"].asString();
+		if(!valueStreamPredictDatasStreamPredictData["PredictResult"].isNull())
+			streamPredictDatasObject.predictResult = valueStreamPredictDatasStreamPredictData["PredictResult"].asString();
 		streamPredictDatas_.push_back(streamPredictDatasObject);
 	}
 	if(!value["TotalNum"].isNull())

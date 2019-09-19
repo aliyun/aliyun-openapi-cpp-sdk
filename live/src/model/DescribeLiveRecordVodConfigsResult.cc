@@ -39,26 +39,26 @@ void DescribeLiveRecordVodConfigsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLiveRecordVodConfigs = value["LiveRecordVodConfigs"]["LiveRecordVodConfig"];
-	for (auto value : allLiveRecordVodConfigs)
+	auto allLiveRecordVodConfigsNode = value["LiveRecordVodConfigs"]["LiveRecordVodConfig"];
+	for (auto valueLiveRecordVodConfigsLiveRecordVodConfig : allLiveRecordVodConfigsNode)
 	{
 		LiveRecordVodConfig liveRecordVodConfigsObject;
-		if(!value["CreateTime"].isNull())
-			liveRecordVodConfigsObject.createTime = value["CreateTime"].asString();
-		if(!value["DomainName"].isNull())
-			liveRecordVodConfigsObject.domainName = value["DomainName"].asString();
-		if(!value["AppName"].isNull())
-			liveRecordVodConfigsObject.appName = value["AppName"].asString();
-		if(!value["StreamName"].isNull())
-			liveRecordVodConfigsObject.streamName = value["StreamName"].asString();
-		if(!value["VodTranscodeGroupId"].isNull())
-			liveRecordVodConfigsObject.vodTranscodeGroupId = value["VodTranscodeGroupId"].asString();
-		if(!value["CycleDuration"].isNull())
-			liveRecordVodConfigsObject.cycleDuration = std::stoi(value["CycleDuration"].asString());
-		if(!value["AutoCompose"].isNull())
-			liveRecordVodConfigsObject.autoCompose = value["AutoCompose"].asString();
-		if(!value["ComposeVodTranscodeGroupId"].isNull())
-			liveRecordVodConfigsObject.composeVodTranscodeGroupId = value["ComposeVodTranscodeGroupId"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["CreateTime"].isNull())
+			liveRecordVodConfigsObject.createTime = valueLiveRecordVodConfigsLiveRecordVodConfig["CreateTime"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["DomainName"].isNull())
+			liveRecordVodConfigsObject.domainName = valueLiveRecordVodConfigsLiveRecordVodConfig["DomainName"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["AppName"].isNull())
+			liveRecordVodConfigsObject.appName = valueLiveRecordVodConfigsLiveRecordVodConfig["AppName"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["StreamName"].isNull())
+			liveRecordVodConfigsObject.streamName = valueLiveRecordVodConfigsLiveRecordVodConfig["StreamName"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["VodTranscodeGroupId"].isNull())
+			liveRecordVodConfigsObject.vodTranscodeGroupId = valueLiveRecordVodConfigsLiveRecordVodConfig["VodTranscodeGroupId"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["CycleDuration"].isNull())
+			liveRecordVodConfigsObject.cycleDuration = std::stoi(valueLiveRecordVodConfigsLiveRecordVodConfig["CycleDuration"].asString());
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["AutoCompose"].isNull())
+			liveRecordVodConfigsObject.autoCompose = valueLiveRecordVodConfigsLiveRecordVodConfig["AutoCompose"].asString();
+		if(!valueLiveRecordVodConfigsLiveRecordVodConfig["ComposeVodTranscodeGroupId"].isNull())
+			liveRecordVodConfigsObject.composeVodTranscodeGroupId = valueLiveRecordVodConfigsLiveRecordVodConfig["ComposeVodTranscodeGroupId"].asString();
 		liveRecordVodConfigs_.push_back(liveRecordVodConfigsObject);
 	}
 	if(!value["PageNum"].isNull())

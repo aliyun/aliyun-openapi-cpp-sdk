@@ -39,20 +39,20 @@ void ListVpcInfoByInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVpcInfos = value["VpcInfos"]["VpcInfo"];
-	for (auto value : allVpcInfos)
+	auto allVpcInfosNode = value["VpcInfos"]["VpcInfo"];
+	for (auto valueVpcInfosVpcInfo : allVpcInfosNode)
 	{
 		VpcInfo vpcInfosObject;
-		if(!value["InstanceVpcName"].isNull())
-			vpcInfosObject.instanceVpcName = value["InstanceVpcName"].asString();
-		if(!value["VpcId"].isNull())
-			vpcInfosObject.vpcId = value["VpcId"].asString();
-		if(!value["Endpoint"].isNull())
-			vpcInfosObject.endpoint = value["Endpoint"].asString();
-		if(!value["Domain"].isNull())
-			vpcInfosObject.domain = value["Domain"].asString();
-		if(!value["RegionNo"].isNull())
-			vpcInfosObject.regionNo = value["RegionNo"].asString();
+		if(!valueVpcInfosVpcInfo["InstanceVpcName"].isNull())
+			vpcInfosObject.instanceVpcName = valueVpcInfosVpcInfo["InstanceVpcName"].asString();
+		if(!valueVpcInfosVpcInfo["VpcId"].isNull())
+			vpcInfosObject.vpcId = valueVpcInfosVpcInfo["VpcId"].asString();
+		if(!valueVpcInfosVpcInfo["Endpoint"].isNull())
+			vpcInfosObject.endpoint = valueVpcInfosVpcInfo["Endpoint"].asString();
+		if(!valueVpcInfosVpcInfo["Domain"].isNull())
+			vpcInfosObject.domain = valueVpcInfosVpcInfo["Domain"].asString();
+		if(!valueVpcInfosVpcInfo["RegionNo"].isNull())
+			vpcInfosObject.regionNo = valueVpcInfosVpcInfo["RegionNo"].asString();
 		vpcInfos_.push_back(vpcInfosObject);
 	}
 	if(!value["InstanceName"].isNull())

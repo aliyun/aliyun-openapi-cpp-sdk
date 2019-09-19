@@ -39,14 +39,14 @@ void DescribeDataCountsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataCountList = value["DataCountList"]["DataCount"];
-	for (auto value : allDataCountList)
+	auto allDataCountListNode = value["DataCountList"]["DataCount"];
+	for (auto valueDataCountListDataCount : allDataCountListNode)
 	{
 		DataCount dataCountListObject;
-		if(!value["ProductId"].isNull())
-			dataCountListObject.productId = std::stol(value["ProductId"].asString());
-		if(!value["ProductCode"].isNull())
-			dataCountListObject.productCode = value["ProductCode"].asString();
+		if(!valueDataCountListDataCount["ProductId"].isNull())
+			dataCountListObject.productId = std::stol(valueDataCountListDataCount["ProductId"].asString());
+		if(!valueDataCountListDataCount["ProductCode"].isNull())
+			dataCountListObject.productCode = valueDataCountListDataCount["ProductCode"].asString();
 		auto instanceNode = value["Instance"];
 		if(!instanceNode["TotalCount"].isNull())
 			dataCountListObject.instance.totalCount = std::stol(instanceNode["TotalCount"].asString());

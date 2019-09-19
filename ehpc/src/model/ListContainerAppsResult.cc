@@ -39,24 +39,24 @@ void ListContainerAppsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allContainerApps = value["ContainerApps"]["ContainerAppsItem"];
-	for (auto value : allContainerApps)
+	auto allContainerAppsNode = value["ContainerApps"]["ContainerAppsItem"];
+	for (auto valueContainerAppsContainerAppsItem : allContainerAppsNode)
 	{
 		ContainerAppsItem containerAppsObject;
-		if(!value["Id"].isNull())
-			containerAppsObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			containerAppsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			containerAppsObject.description = value["Description"].asString();
-		if(!value["Repository"].isNull())
-			containerAppsObject.repository = value["Repository"].asString();
-		if(!value["ImageTag"].isNull())
-			containerAppsObject.imageTag = value["ImageTag"].asString();
-		if(!value["CreateTime"].isNull())
-			containerAppsObject.createTime = value["CreateTime"].asString();
-		if(!value["Type"].isNull())
-			containerAppsObject.type = value["Type"].asString();
+		if(!valueContainerAppsContainerAppsItem["Id"].isNull())
+			containerAppsObject.id = valueContainerAppsContainerAppsItem["Id"].asString();
+		if(!valueContainerAppsContainerAppsItem["Name"].isNull())
+			containerAppsObject.name = valueContainerAppsContainerAppsItem["Name"].asString();
+		if(!valueContainerAppsContainerAppsItem["Description"].isNull())
+			containerAppsObject.description = valueContainerAppsContainerAppsItem["Description"].asString();
+		if(!valueContainerAppsContainerAppsItem["Repository"].isNull())
+			containerAppsObject.repository = valueContainerAppsContainerAppsItem["Repository"].asString();
+		if(!valueContainerAppsContainerAppsItem["ImageTag"].isNull())
+			containerAppsObject.imageTag = valueContainerAppsContainerAppsItem["ImageTag"].asString();
+		if(!valueContainerAppsContainerAppsItem["CreateTime"].isNull())
+			containerAppsObject.createTime = valueContainerAppsContainerAppsItem["CreateTime"].asString();
+		if(!valueContainerAppsContainerAppsItem["Type"].isNull())
+			containerAppsObject.type = valueContainerAppsContainerAppsItem["Type"].asString();
 		containerApps_.push_back(containerAppsObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,12 +39,12 @@ void ListClusterServiceCustomActionSupportConfigForAdminResult::parse(const std:
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSupportedConfigList = value["SupportedConfigList"]["SupportedConfig"];
-	for (auto value : allSupportedConfigList)
+	auto allSupportedConfigListNode = value["SupportedConfigList"]["SupportedConfig"];
+	for (auto valueSupportedConfigListSupportedConfig : allSupportedConfigListNode)
 	{
 		SupportedConfig supportedConfigListObject;
-		if(!value["ConfigKey"].isNull())
-			supportedConfigListObject.configKey = value["ConfigKey"].asString();
+		if(!valueSupportedConfigListSupportedConfig["ConfigKey"].isNull())
+			supportedConfigListObject.configKey = valueSupportedConfigListSupportedConfig["ConfigKey"].asString();
 		supportedConfigList_.push_back(supportedConfigListObject);
 	}
 

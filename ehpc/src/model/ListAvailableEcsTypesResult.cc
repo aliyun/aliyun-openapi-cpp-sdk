@@ -39,40 +39,40 @@ void ListAvailableEcsTypesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceTypeFamilies = value["InstanceTypeFamilies"]["InstanceTypeFamilyInfo"];
-	for (auto value : allInstanceTypeFamilies)
+	auto allInstanceTypeFamiliesNode = value["InstanceTypeFamilies"]["InstanceTypeFamilyInfo"];
+	for (auto valueInstanceTypeFamiliesInstanceTypeFamilyInfo : allInstanceTypeFamiliesNode)
 	{
 		InstanceTypeFamilyInfo instanceTypeFamiliesObject;
-		if(!value["InstanceTypeFamilyId"].isNull())
-			instanceTypeFamiliesObject.instanceTypeFamilyId = value["InstanceTypeFamilyId"].asString();
-		if(!value["Generation"].isNull())
-			instanceTypeFamiliesObject.generation = value["Generation"].asString();
-		auto allTypes = value["Types"]["TypesInfo"];
-		for (auto value : allTypes)
+		if(!valueInstanceTypeFamiliesInstanceTypeFamilyInfo["InstanceTypeFamilyId"].isNull())
+			instanceTypeFamiliesObject.instanceTypeFamilyId = valueInstanceTypeFamiliesInstanceTypeFamilyInfo["InstanceTypeFamilyId"].asString();
+		if(!valueInstanceTypeFamiliesInstanceTypeFamilyInfo["Generation"].isNull())
+			instanceTypeFamiliesObject.generation = valueInstanceTypeFamiliesInstanceTypeFamilyInfo["Generation"].asString();
+		auto allTypesNode = allInstanceTypeFamiliesNode["Types"]["TypesInfo"];
+		for (auto allInstanceTypeFamiliesNodeTypesTypesInfo : allTypesNode)
 		{
 			InstanceTypeFamilyInfo::TypesInfo typesObject;
-			if(!value["CpuCoreCount"].isNull())
-				typesObject.cpuCoreCount = std::stoi(value["CpuCoreCount"].asString());
-			if(!value["MemorySize"].isNull())
-				typesObject.memorySize = std::stoi(value["MemorySize"].asString());
-			if(!value["GPUAmount"].isNull())
-				typesObject.gPUAmount = std::stoi(value["GPUAmount"].asString());
-			if(!value["InstanceBandwidthRx"].isNull())
-				typesObject.instanceBandwidthRx = std::stoi(value["InstanceBandwidthRx"].asString());
-			if(!value["InstancePpsRx"].isNull())
-				typesObject.instancePpsRx = std::stoi(value["InstancePpsRx"].asString());
-			if(!value["InstancePpsTx"].isNull())
-				typesObject.instancePpsTx = std::stoi(value["InstancePpsTx"].asString());
-			if(!value["EniQuantity"].isNull())
-				typesObject.eniQuantity = std::stoi(value["EniQuantity"].asString());
-			if(!value["InstanceBandwidthTx"].isNull())
-				typesObject.instanceBandwidthTx = std::stoi(value["InstanceBandwidthTx"].asString());
-			if(!value["InstanceTypeId"].isNull())
-				typesObject.instanceTypeId = value["InstanceTypeId"].asString();
-			if(!value["GPUSpec"].isNull())
-				typesObject.gPUSpec = value["GPUSpec"].asString();
-			if(!value["Status"].isNull())
-				typesObject.status = value["Status"].asString();
+			if(!allInstanceTypeFamiliesNodeTypesTypesInfo["CpuCoreCount"].isNull())
+				typesObject.cpuCoreCount = std::stoi(allInstanceTypeFamiliesNodeTypesTypesInfo["CpuCoreCount"].asString());
+			if(!allInstanceTypeFamiliesNodeTypesTypesInfo["MemorySize"].isNull())
+				typesObject.memorySize = std::stoi(allInstanceTypeFamiliesNodeTypesTypesInfo["MemorySize"].asString());
+			if(!allInstanceTypeFamiliesNodeTypesTypesInfo["GPUAmount"].isNull())
+				typesObject.gPUAmount = std::stoi(allInstanceTypeFamiliesNodeTypesTypesInfo["GPUAmount"].asString());
+			if(!allInstanceTypeFamiliesNodeTypesTypesInfo["InstanceBandwidthRx"].isNull())
+				typesObject.instanceBandwidthRx = std::stoi(allInstanceTypeFamiliesNodeTypesTypesInfo["InstanceBandwidthRx"].asString());
+			if(!allInstanceTypeFamiliesNodeTypesTypesInfo["InstancePpsRx"].isNull())
+				typesObject.instancePpsRx = std::stoi(allInstanceTypeFamiliesNodeTypesTypesInfo["InstancePpsRx"].asString());
+			if(!allInstanceTypeFamiliesNodeTypesTypesInfo["InstancePpsTx"].isNull())
+				typesObject.instancePpsTx = std::stoi(allInstanceTypeFamiliesNodeTypesTypesInfo["InstancePpsTx"].asString());
+			if(!allInstanceTypeFamiliesNodeTypesTypesInfo["EniQuantity"].isNull())
+				typesObject.eniQuantity = std::stoi(allInstanceTypeFamiliesNodeTypesTypesInfo["EniQuantity"].asString());
+			if(!allInstanceTypeFamiliesNodeTypesTypesInfo["InstanceBandwidthTx"].isNull())
+				typesObject.instanceBandwidthTx = std::stoi(allInstanceTypeFamiliesNodeTypesTypesInfo["InstanceBandwidthTx"].asString());
+			if(!allInstanceTypeFamiliesNodeTypesTypesInfo["InstanceTypeId"].isNull())
+				typesObject.instanceTypeId = allInstanceTypeFamiliesNodeTypesTypesInfo["InstanceTypeId"].asString();
+			if(!allInstanceTypeFamiliesNodeTypesTypesInfo["GPUSpec"].isNull())
+				typesObject.gPUSpec = allInstanceTypeFamiliesNodeTypesTypesInfo["GPUSpec"].asString();
+			if(!allInstanceTypeFamiliesNodeTypesTypesInfo["Status"].isNull())
+				typesObject.status = allInstanceTypeFamiliesNodeTypesTypesInfo["Status"].asString();
 			instanceTypeFamiliesObject.types.push_back(typesObject);
 		}
 		instanceTypeFamilies_.push_back(instanceTypeFamiliesObject);

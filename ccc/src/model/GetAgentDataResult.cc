@@ -46,36 +46,36 @@ void GetAgentDataResult::parse(const std::string &payload)
 		dataList_.pageNumber = std::stoi(dataListNode["PageNumber"].asString());
 	if(!dataListNode["PageSize"].isNull())
 		dataList_.pageSize = std::stoi(dataListNode["PageSize"].asString());
-	auto allList = value["List"]["GenerateAgentStatistic"];
-	for (auto value : allList)
+	auto allListNode = dataListNode["List"]["GenerateAgentStatistic"];
+	for (auto dataListNodeListGenerateAgentStatistic : allListNode)
 	{
 		DataList::GenerateAgentStatistic generateAgentStatisticObject;
-		if(!value["AgentId"].isNull())
-			generateAgentStatisticObject.agentId = value["AgentId"].asString();
-		if(!value["LoginName"].isNull())
-			generateAgentStatisticObject.loginName = value["LoginName"].asString();
-		if(!value["AgentName"].isNull())
-			generateAgentStatisticObject.agentName = value["AgentName"].asString();
-		if(!value["SkillGroupIds"].isNull())
-			generateAgentStatisticObject.skillGroupIds = value["SkillGroupIds"].asString();
-		if(!value["SkillGroupNames"].isNull())
-			generateAgentStatisticObject.skillGroupNames = value["SkillGroupNames"].asString();
-		if(!value["InstanceId"].isNull())
-			generateAgentStatisticObject.instanceId = value["InstanceId"].asString();
-		if(!value["RecordDate"].isNull())
-			generateAgentStatisticObject.recordDate = value["RecordDate"].asString();
-		if(!value["TotalLoggedInTime"].isNull())
-			generateAgentStatisticObject.totalLoggedInTime = std::stol(value["TotalLoggedInTime"].asString());
-		if(!value["TotalBreakTime"].isNull())
-			generateAgentStatisticObject.totalBreakTime = std::stol(value["TotalBreakTime"].asString());
-		if(!value["OccupancyRate"].isNull())
-			generateAgentStatisticObject.occupancyRate = std::stof(value["OccupancyRate"].asString());
-		if(!value["TotalReadyTime"].isNull())
-			generateAgentStatisticObject.totalReadyTime = std::stol(value["TotalReadyTime"].asString());
-		if(!value["MaxReadyTime"].isNull())
-			generateAgentStatisticObject.maxReadyTime = std::stol(value["MaxReadyTime"].asString());
-		if(!value["AverageReadyTime"].isNull())
-			generateAgentStatisticObject.averageReadyTime = std::stol(value["AverageReadyTime"].asString());
+		if(!dataListNodeListGenerateAgentStatistic["AgentId"].isNull())
+			generateAgentStatisticObject.agentId = dataListNodeListGenerateAgentStatistic["AgentId"].asString();
+		if(!dataListNodeListGenerateAgentStatistic["LoginName"].isNull())
+			generateAgentStatisticObject.loginName = dataListNodeListGenerateAgentStatistic["LoginName"].asString();
+		if(!dataListNodeListGenerateAgentStatistic["AgentName"].isNull())
+			generateAgentStatisticObject.agentName = dataListNodeListGenerateAgentStatistic["AgentName"].asString();
+		if(!dataListNodeListGenerateAgentStatistic["SkillGroupIds"].isNull())
+			generateAgentStatisticObject.skillGroupIds = dataListNodeListGenerateAgentStatistic["SkillGroupIds"].asString();
+		if(!dataListNodeListGenerateAgentStatistic["SkillGroupNames"].isNull())
+			generateAgentStatisticObject.skillGroupNames = dataListNodeListGenerateAgentStatistic["SkillGroupNames"].asString();
+		if(!dataListNodeListGenerateAgentStatistic["InstanceId"].isNull())
+			generateAgentStatisticObject.instanceId = dataListNodeListGenerateAgentStatistic["InstanceId"].asString();
+		if(!dataListNodeListGenerateAgentStatistic["RecordDate"].isNull())
+			generateAgentStatisticObject.recordDate = dataListNodeListGenerateAgentStatistic["RecordDate"].asString();
+		if(!dataListNodeListGenerateAgentStatistic["TotalLoggedInTime"].isNull())
+			generateAgentStatisticObject.totalLoggedInTime = std::stol(dataListNodeListGenerateAgentStatistic["TotalLoggedInTime"].asString());
+		if(!dataListNodeListGenerateAgentStatistic["TotalBreakTime"].isNull())
+			generateAgentStatisticObject.totalBreakTime = std::stol(dataListNodeListGenerateAgentStatistic["TotalBreakTime"].asString());
+		if(!dataListNodeListGenerateAgentStatistic["OccupancyRate"].isNull())
+			generateAgentStatisticObject.occupancyRate = std::stof(dataListNodeListGenerateAgentStatistic["OccupancyRate"].asString());
+		if(!dataListNodeListGenerateAgentStatistic["TotalReadyTime"].isNull())
+			generateAgentStatisticObject.totalReadyTime = std::stol(dataListNodeListGenerateAgentStatistic["TotalReadyTime"].asString());
+		if(!dataListNodeListGenerateAgentStatistic["MaxReadyTime"].isNull())
+			generateAgentStatisticObject.maxReadyTime = std::stol(dataListNodeListGenerateAgentStatistic["MaxReadyTime"].asString());
+		if(!dataListNodeListGenerateAgentStatistic["AverageReadyTime"].isNull())
+			generateAgentStatisticObject.averageReadyTime = std::stol(dataListNodeListGenerateAgentStatistic["AverageReadyTime"].asString());
 		auto inboundNode = value["Inbound"];
 		if(!inboundNode["TotalTalkTime"].isNull())
 			generateAgentStatisticObject.inbound.totalTalkTime = std::stol(inboundNode["TotalTalkTime"].asString());

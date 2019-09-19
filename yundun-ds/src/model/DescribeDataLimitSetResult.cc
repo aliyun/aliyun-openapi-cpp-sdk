@@ -42,48 +42,48 @@ void DescribeDataLimitSetResult::parse(const std::string &payload)
 	auto dataLimitSetNode = value["DataLimitSet"];
 	if(!dataLimitSetNode["ResourceType"].isNull())
 		dataLimitSet_.resourceType = std::stoi(dataLimitSetNode["ResourceType"].asString());
-	auto allDataLimitList = value["DataLimitList"]["DataLimit"];
-	for (auto value : allDataLimitList)
+	auto allDataLimitListNode = dataLimitSetNode["DataLimitList"]["DataLimit"];
+	for (auto dataLimitSetNodeDataLimitListDataLimit : allDataLimitListNode)
 	{
 		DataLimitSet::DataLimit dataLimitObject;
-		if(!value["RegionId"].isNull())
-			dataLimitObject.regionId = value["RegionId"].asString();
-		if(!value["LocalName"].isNull())
-			dataLimitObject.localName = value["LocalName"].asString();
-		if(!value["ParentId"].isNull())
-			dataLimitObject.parentId = value["ParentId"].asString();
-		if(!value["Id"].isNull())
-			dataLimitObject.id = std::stol(value["Id"].asString());
-		if(!value["UserName"].isNull())
-			dataLimitObject.userName = value["UserName"].asString();
-		if(!value["GmtCreate"].isNull())
-			dataLimitObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["Connector"].isNull())
-			dataLimitObject.connector = value["Connector"].asString();
-		if(!value["CheckStatus"].isNull())
-			dataLimitObject.checkStatus = std::stoi(value["CheckStatus"].asString());
-		if(!value["CheckStatusName"].isNull())
-			dataLimitObject.checkStatusName = value["CheckStatusName"].asString();
+		if(!dataLimitSetNodeDataLimitListDataLimit["RegionId"].isNull())
+			dataLimitObject.regionId = dataLimitSetNodeDataLimitListDataLimit["RegionId"].asString();
+		if(!dataLimitSetNodeDataLimitListDataLimit["LocalName"].isNull())
+			dataLimitObject.localName = dataLimitSetNodeDataLimitListDataLimit["LocalName"].asString();
+		if(!dataLimitSetNodeDataLimitListDataLimit["ParentId"].isNull())
+			dataLimitObject.parentId = dataLimitSetNodeDataLimitListDataLimit["ParentId"].asString();
+		if(!dataLimitSetNodeDataLimitListDataLimit["Id"].isNull())
+			dataLimitObject.id = std::stol(dataLimitSetNodeDataLimitListDataLimit["Id"].asString());
+		if(!dataLimitSetNodeDataLimitListDataLimit["UserName"].isNull())
+			dataLimitObject.userName = dataLimitSetNodeDataLimitListDataLimit["UserName"].asString();
+		if(!dataLimitSetNodeDataLimitListDataLimit["GmtCreate"].isNull())
+			dataLimitObject.gmtCreate = std::stol(dataLimitSetNodeDataLimitListDataLimit["GmtCreate"].asString());
+		if(!dataLimitSetNodeDataLimitListDataLimit["Connector"].isNull())
+			dataLimitObject.connector = dataLimitSetNodeDataLimitListDataLimit["Connector"].asString();
+		if(!dataLimitSetNodeDataLimitListDataLimit["CheckStatus"].isNull())
+			dataLimitObject.checkStatus = std::stoi(dataLimitSetNodeDataLimitListDataLimit["CheckStatus"].asString());
+		if(!dataLimitSetNodeDataLimitListDataLimit["CheckStatusName"].isNull())
+			dataLimitObject.checkStatusName = dataLimitSetNodeDataLimitListDataLimit["CheckStatusName"].asString();
 		dataLimitSet_.dataLimitList.push_back(dataLimitObject);
 	}
-	auto allOssBucketList = value["OssBucketList"]["OssBucket"];
-	for (auto value : allOssBucketList)
+	auto allOssBucketListNode = dataLimitSetNode["OssBucketList"]["OssBucket"];
+	for (auto dataLimitSetNodeOssBucketListOssBucket : allOssBucketListNode)
 	{
 		DataLimitSet::OssBucket ossBucketObject;
-		if(!value["BucketName"].isNull())
-			ossBucketObject.bucketName = value["BucketName"].asString();
-		if(!value["RegionId"].isNull())
-			ossBucketObject.regionId = value["RegionId"].asString();
+		if(!dataLimitSetNodeOssBucketListOssBucket["BucketName"].isNull())
+			ossBucketObject.bucketName = dataLimitSetNodeOssBucketListOssBucket["BucketName"].asString();
+		if(!dataLimitSetNodeOssBucketListOssBucket["RegionId"].isNull())
+			ossBucketObject.regionId = dataLimitSetNodeOssBucketListOssBucket["RegionId"].asString();
 		dataLimitSet_.ossBucketList.push_back(ossBucketObject);
 	}
-	auto allRegionList = value["RegionList"]["Region"];
-	for (auto value : allRegionList)
+	auto allRegionListNode = dataLimitSetNode["RegionList"]["Region"];
+	for (auto dataLimitSetNodeRegionListRegion : allRegionListNode)
 	{
 		DataLimitSet::Region regionObject;
-		if(!value["LocalName"].isNull())
-			regionObject.localName = value["LocalName"].asString();
-		if(!value["RegionId"].isNull())
-			regionObject.regionId = value["RegionId"].asString();
+		if(!dataLimitSetNodeRegionListRegion["LocalName"].isNull())
+			regionObject.localName = dataLimitSetNodeRegionListRegion["LocalName"].asString();
+		if(!dataLimitSetNodeRegionListRegion["RegionId"].isNull())
+			regionObject.regionId = dataLimitSetNodeRegionListRegion["RegionId"].asString();
 		dataLimitSet_.regionList.push_back(regionObject);
 	}
 

@@ -48,16 +48,16 @@ void OnsMqttQueryClientByClientIdResult::parse(const std::string &payload)
 		mqttClientInfoDo_.socketChannel = mqttClientInfoDoNode["SocketChannel"].asString();
 	if(!mqttClientInfoDoNode["LastTouch"].isNull())
 		mqttClientInfoDo_.lastTouch = std::stol(mqttClientInfoDoNode["LastTouch"].asString());
-	auto allSubScriptonData = value["SubScriptonData"]["SubscriptionDo"];
-	for (auto value : allSubScriptonData)
+	auto allSubScriptonDataNode = mqttClientInfoDoNode["SubScriptonData"]["SubscriptionDo"];
+	for (auto mqttClientInfoDoNodeSubScriptonDataSubscriptionDo : allSubScriptonDataNode)
 	{
 		MqttClientInfoDo::SubscriptionDo subscriptionDoObject;
-		if(!value["ParentTopic"].isNull())
-			subscriptionDoObject.parentTopic = value["ParentTopic"].asString();
-		if(!value["SubTopic"].isNull())
-			subscriptionDoObject.subTopic = value["SubTopic"].asString();
-		if(!value["Qos"].isNull())
-			subscriptionDoObject.qos = std::stoi(value["Qos"].asString());
+		if(!mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["ParentTopic"].isNull())
+			subscriptionDoObject.parentTopic = mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["ParentTopic"].asString();
+		if(!mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["SubTopic"].isNull())
+			subscriptionDoObject.subTopic = mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["SubTopic"].asString();
+		if(!mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["Qos"].isNull())
+			subscriptionDoObject.qos = std::stoi(mqttClientInfoDoNodeSubScriptonDataSubscriptionDo["Qos"].asString());
 		mqttClientInfoDo_.subScriptonData.push_back(subscriptionDoObject);
 	}
 	if(!value["HelpUrl"].isNull())

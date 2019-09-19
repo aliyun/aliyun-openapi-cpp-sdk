@@ -39,54 +39,54 @@ void DescribeFleetsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFleets = value["Fleets"]["Fleet"];
-	for (auto value : allFleets)
+	auto allFleetsNode = value["Fleets"]["Fleet"];
+	for (auto valueFleetsFleet : allFleetsNode)
 	{
 		Fleet fleetsObject;
-		if(!value["FleetId"].isNull())
-			fleetsObject.fleetId = value["FleetId"].asString();
-		if(!value["FleetName"].isNull())
-			fleetsObject.fleetName = value["FleetName"].asString();
-		if(!value["FleetType"].isNull())
-			fleetsObject.fleetType = value["FleetType"].asString();
-		if(!value["Status"].isNull())
-			fleetsObject.status = value["Status"].asString();
-		if(!value["State"].isNull())
-			fleetsObject.state = value["State"].asString();
-		if(!value["RegionId"].isNull())
-			fleetsObject.regionId = value["RegionId"].asString();
-		if(!value["ValidFrom"].isNull())
-			fleetsObject.validFrom = value["ValidFrom"].asString();
-		if(!value["ValidUntil"].isNull())
-			fleetsObject.validUntil = value["ValidUntil"].asString();
-		if(!value["ExcessCapacityTerminationPolicy"].isNull())
-			fleetsObject.excessCapacityTerminationPolicy = value["ExcessCapacityTerminationPolicy"].asString();
-		if(!value["MaxSpotPrice"].isNull())
-			fleetsObject.maxSpotPrice = std::stof(value["MaxSpotPrice"].asString());
-		if(!value["LaunchTemplateId"].isNull())
-			fleetsObject.launchTemplateId = value["LaunchTemplateId"].asString();
-		if(!value["LaunchTemplateVersion"].isNull())
-			fleetsObject.launchTemplateVersion = value["LaunchTemplateVersion"].asString();
-		if(!value["TerminateInstances"].isNull())
-			fleetsObject.terminateInstances = value["TerminateInstances"].asString() == "true";
-		if(!value["TerminateInstancesWithExpiration"].isNull())
-			fleetsObject.terminateInstancesWithExpiration = value["TerminateInstancesWithExpiration"].asString() == "true";
-		if(!value["CreationTime"].isNull())
-			fleetsObject.creationTime = value["CreationTime"].asString();
-		auto alllaunchTemplateConfigs = value["launchTemplateConfigs"]["LaunchTemplateConfig"];
-		for (auto value : alllaunchTemplateConfigs)
+		if(!valueFleetsFleet["FleetId"].isNull())
+			fleetsObject.fleetId = valueFleetsFleet["FleetId"].asString();
+		if(!valueFleetsFleet["FleetName"].isNull())
+			fleetsObject.fleetName = valueFleetsFleet["FleetName"].asString();
+		if(!valueFleetsFleet["FleetType"].isNull())
+			fleetsObject.fleetType = valueFleetsFleet["FleetType"].asString();
+		if(!valueFleetsFleet["Status"].isNull())
+			fleetsObject.status = valueFleetsFleet["Status"].asString();
+		if(!valueFleetsFleet["State"].isNull())
+			fleetsObject.state = valueFleetsFleet["State"].asString();
+		if(!valueFleetsFleet["RegionId"].isNull())
+			fleetsObject.regionId = valueFleetsFleet["RegionId"].asString();
+		if(!valueFleetsFleet["ValidFrom"].isNull())
+			fleetsObject.validFrom = valueFleetsFleet["ValidFrom"].asString();
+		if(!valueFleetsFleet["ValidUntil"].isNull())
+			fleetsObject.validUntil = valueFleetsFleet["ValidUntil"].asString();
+		if(!valueFleetsFleet["ExcessCapacityTerminationPolicy"].isNull())
+			fleetsObject.excessCapacityTerminationPolicy = valueFleetsFleet["ExcessCapacityTerminationPolicy"].asString();
+		if(!valueFleetsFleet["MaxSpotPrice"].isNull())
+			fleetsObject.maxSpotPrice = std::stof(valueFleetsFleet["MaxSpotPrice"].asString());
+		if(!valueFleetsFleet["LaunchTemplateId"].isNull())
+			fleetsObject.launchTemplateId = valueFleetsFleet["LaunchTemplateId"].asString();
+		if(!valueFleetsFleet["LaunchTemplateVersion"].isNull())
+			fleetsObject.launchTemplateVersion = valueFleetsFleet["LaunchTemplateVersion"].asString();
+		if(!valueFleetsFleet["TerminateInstances"].isNull())
+			fleetsObject.terminateInstances = valueFleetsFleet["TerminateInstances"].asString() == "true";
+		if(!valueFleetsFleet["TerminateInstancesWithExpiration"].isNull())
+			fleetsObject.terminateInstancesWithExpiration = valueFleetsFleet["TerminateInstancesWithExpiration"].asString() == "true";
+		if(!valueFleetsFleet["CreationTime"].isNull())
+			fleetsObject.creationTime = valueFleetsFleet["CreationTime"].asString();
+		auto alllaunchTemplateConfigsNode = allFleetsNode["launchTemplateConfigs"]["LaunchTemplateConfig"];
+		for (auto allFleetsNodelaunchTemplateConfigsLaunchTemplateConfig : alllaunchTemplateConfigsNode)
 		{
 			Fleet::LaunchTemplateConfig launchTemplateConfigsObject;
-			if(!value["InstanceType"].isNull())
-				launchTemplateConfigsObject.instanceType = value["InstanceType"].asString();
-			if(!value["MaxPrice"].isNull())
-				launchTemplateConfigsObject.maxPrice = std::stof(value["MaxPrice"].asString());
-			if(!value["VSWitchId"].isNull())
-				launchTemplateConfigsObject.vSWitchId = value["VSWitchId"].asString();
-			if(!value["WeightedCapacity"].isNull())
-				launchTemplateConfigsObject.weightedCapacity = std::stof(value["WeightedCapacity"].asString());
-			if(!value["Priority"].isNull())
-				launchTemplateConfigsObject.priority = std::stof(value["Priority"].asString());
+			if(!allFleetsNodelaunchTemplateConfigsLaunchTemplateConfig["InstanceType"].isNull())
+				launchTemplateConfigsObject.instanceType = allFleetsNodelaunchTemplateConfigsLaunchTemplateConfig["InstanceType"].asString();
+			if(!allFleetsNodelaunchTemplateConfigsLaunchTemplateConfig["MaxPrice"].isNull())
+				launchTemplateConfigsObject.maxPrice = std::stof(allFleetsNodelaunchTemplateConfigsLaunchTemplateConfig["MaxPrice"].asString());
+			if(!allFleetsNodelaunchTemplateConfigsLaunchTemplateConfig["VSWitchId"].isNull())
+				launchTemplateConfigsObject.vSWitchId = allFleetsNodelaunchTemplateConfigsLaunchTemplateConfig["VSWitchId"].asString();
+			if(!allFleetsNodelaunchTemplateConfigsLaunchTemplateConfig["WeightedCapacity"].isNull())
+				launchTemplateConfigsObject.weightedCapacity = std::stof(allFleetsNodelaunchTemplateConfigsLaunchTemplateConfig["WeightedCapacity"].asString());
+			if(!allFleetsNodelaunchTemplateConfigsLaunchTemplateConfig["Priority"].isNull())
+				launchTemplateConfigsObject.priority = std::stof(allFleetsNodelaunchTemplateConfigsLaunchTemplateConfig["Priority"].asString());
 			fleetsObject.launchTemplateConfigs.push_back(launchTemplateConfigsObject);
 		}
 		auto spotOptionsNode = value["SpotOptions"];

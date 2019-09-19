@@ -39,26 +39,26 @@ void QueryMarketCategoriesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCategories = value["Categories"]["Category"];
-	for (auto value : allCategories)
+	auto allCategoriesNode = value["Categories"]["Category"];
+	for (auto valueCategoriesCategory : allCategoriesNode)
 	{
 		Category categoriesObject;
-		if(!value["Id"].isNull())
-			categoriesObject.id = std::stol(value["Id"].asString());
-		if(!value["CategoryCode"].isNull())
-			categoriesObject.categoryCode = value["CategoryCode"].asString();
-		if(!value["CategoryName"].isNull())
-			categoriesObject.categoryName = value["CategoryName"].asString();
-		auto allChildCategories = value["ChildCategories"]["ChildCategory"];
-		for (auto value : allChildCategories)
+		if(!valueCategoriesCategory["Id"].isNull())
+			categoriesObject.id = std::stol(valueCategoriesCategory["Id"].asString());
+		if(!valueCategoriesCategory["CategoryCode"].isNull())
+			categoriesObject.categoryCode = valueCategoriesCategory["CategoryCode"].asString();
+		if(!valueCategoriesCategory["CategoryName"].isNull())
+			categoriesObject.categoryName = valueCategoriesCategory["CategoryName"].asString();
+		auto allChildCategoriesNode = allCategoriesNode["ChildCategories"]["ChildCategory"];
+		for (auto allCategoriesNodeChildCategoriesChildCategory : allChildCategoriesNode)
 		{
 			Category::ChildCategory childCategoriesObject;
-			if(!value["Id"].isNull())
-				childCategoriesObject.id = std::stol(value["Id"].asString());
-			if(!value["CategoryCode"].isNull())
-				childCategoriesObject.categoryCode = value["CategoryCode"].asString();
-			if(!value["CategoryName"].isNull())
-				childCategoriesObject.categoryName = value["CategoryName"].asString();
+			if(!allCategoriesNodeChildCategoriesChildCategory["Id"].isNull())
+				childCategoriesObject.id = std::stol(allCategoriesNodeChildCategoriesChildCategory["Id"].asString());
+			if(!allCategoriesNodeChildCategoriesChildCategory["CategoryCode"].isNull())
+				childCategoriesObject.categoryCode = allCategoriesNodeChildCategoriesChildCategory["CategoryCode"].asString();
+			if(!allCategoriesNodeChildCategoriesChildCategory["CategoryName"].isNull())
+				childCategoriesObject.categoryName = allCategoriesNodeChildCategoriesChildCategory["CategoryName"].asString();
 			categoriesObject.childCategories.push_back(childCategoriesObject);
 		}
 		categories_.push_back(categoriesObject);

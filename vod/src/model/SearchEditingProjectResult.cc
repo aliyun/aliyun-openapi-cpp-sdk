@@ -39,30 +39,30 @@ void SearchEditingProjectResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProjectList = value["ProjectList"]["Project"];
-	for (auto value : allProjectList)
+	auto allProjectListNode = value["ProjectList"]["Project"];
+	for (auto valueProjectListProject : allProjectListNode)
 	{
 		Project projectListObject;
-		if(!value["ProjectId"].isNull())
-			projectListObject.projectId = value["ProjectId"].asString();
-		if(!value["CreationTime"].isNull())
-			projectListObject.creationTime = value["CreationTime"].asString();
-		if(!value["ModifiedTime"].isNull())
-			projectListObject.modifiedTime = value["ModifiedTime"].asString();
-		if(!value["Status"].isNull())
-			projectListObject.status = value["Status"].asString();
-		if(!value["Description"].isNull())
-			projectListObject.description = value["Description"].asString();
-		if(!value["Title"].isNull())
-			projectListObject.title = value["Title"].asString();
-		if(!value["CoverURL"].isNull())
-			projectListObject.coverURL = value["CoverURL"].asString();
-		if(!value["StorageLocation"].isNull())
-			projectListObject.storageLocation = value["StorageLocation"].asString();
-		if(!value["RegionId"].isNull())
-			projectListObject.regionId = value["RegionId"].asString();
-		if(!value["Duration"].isNull())
-			projectListObject.duration = std::stof(value["Duration"].asString());
+		if(!valueProjectListProject["ProjectId"].isNull())
+			projectListObject.projectId = valueProjectListProject["ProjectId"].asString();
+		if(!valueProjectListProject["CreationTime"].isNull())
+			projectListObject.creationTime = valueProjectListProject["CreationTime"].asString();
+		if(!valueProjectListProject["ModifiedTime"].isNull())
+			projectListObject.modifiedTime = valueProjectListProject["ModifiedTime"].asString();
+		if(!valueProjectListProject["Status"].isNull())
+			projectListObject.status = valueProjectListProject["Status"].asString();
+		if(!valueProjectListProject["Description"].isNull())
+			projectListObject.description = valueProjectListProject["Description"].asString();
+		if(!valueProjectListProject["Title"].isNull())
+			projectListObject.title = valueProjectListProject["Title"].asString();
+		if(!valueProjectListProject["CoverURL"].isNull())
+			projectListObject.coverURL = valueProjectListProject["CoverURL"].asString();
+		if(!valueProjectListProject["StorageLocation"].isNull())
+			projectListObject.storageLocation = valueProjectListProject["StorageLocation"].asString();
+		if(!valueProjectListProject["RegionId"].isNull())
+			projectListObject.regionId = valueProjectListProject["RegionId"].asString();
+		if(!valueProjectListProject["Duration"].isNull())
+			projectListObject.duration = std::stof(valueProjectListProject["Duration"].asString());
 		projectList_.push_back(projectListObject);
 	}
 	if(!value["Total"].isNull())

@@ -39,26 +39,26 @@ void DescribePurchasedApisResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPurchasedApis = value["PurchasedApis"]["PurchasedApi"];
-	for (auto value : allPurchasedApis)
+	auto allPurchasedApisNode = value["PurchasedApis"]["PurchasedApi"];
+	for (auto valuePurchasedApisPurchasedApi : allPurchasedApisNode)
 	{
 		PurchasedApi purchasedApisObject;
-		if(!value["RegionId"].isNull())
-			purchasedApisObject.regionId = value["RegionId"].asString();
-		if(!value["GroupId"].isNull())
-			purchasedApisObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			purchasedApisObject.groupName = value["GroupName"].asString();
-		if(!value["ApiId"].isNull())
-			purchasedApisObject.apiId = value["ApiId"].asString();
-		if(!value["ApiName"].isNull())
-			purchasedApisObject.apiName = value["ApiName"].asString();
-		if(!value["StageName"].isNull())
-			purchasedApisObject.stageName = value["StageName"].asString();
-		if(!value["Description"].isNull())
-			purchasedApisObject.description = value["Description"].asString();
-		if(!value["PurchasedTime"].isNull())
-			purchasedApisObject.purchasedTime = value["PurchasedTime"].asString();
+		if(!valuePurchasedApisPurchasedApi["RegionId"].isNull())
+			purchasedApisObject.regionId = valuePurchasedApisPurchasedApi["RegionId"].asString();
+		if(!valuePurchasedApisPurchasedApi["GroupId"].isNull())
+			purchasedApisObject.groupId = valuePurchasedApisPurchasedApi["GroupId"].asString();
+		if(!valuePurchasedApisPurchasedApi["GroupName"].isNull())
+			purchasedApisObject.groupName = valuePurchasedApisPurchasedApi["GroupName"].asString();
+		if(!valuePurchasedApisPurchasedApi["ApiId"].isNull())
+			purchasedApisObject.apiId = valuePurchasedApisPurchasedApi["ApiId"].asString();
+		if(!valuePurchasedApisPurchasedApi["ApiName"].isNull())
+			purchasedApisObject.apiName = valuePurchasedApisPurchasedApi["ApiName"].asString();
+		if(!valuePurchasedApisPurchasedApi["StageName"].isNull())
+			purchasedApisObject.stageName = valuePurchasedApisPurchasedApi["StageName"].asString();
+		if(!valuePurchasedApisPurchasedApi["Description"].isNull())
+			purchasedApisObject.description = valuePurchasedApisPurchasedApi["Description"].asString();
+		if(!valuePurchasedApisPurchasedApi["PurchasedTime"].isNull())
+			purchasedApisObject.purchasedTime = valuePurchasedApisPurchasedApi["PurchasedTime"].asString();
 		purchasedApis_.push_back(purchasedApisObject);
 	}
 	if(!value["TotalCount"].isNull())

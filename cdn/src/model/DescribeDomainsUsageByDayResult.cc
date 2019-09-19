@@ -39,30 +39,30 @@ void DescribeDomainsUsageByDayResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUsageByDays = value["UsageByDays"]["UsageByDay"];
-	for (auto value : allUsageByDays)
+	auto allUsageByDaysNode = value["UsageByDays"]["UsageByDay"];
+	for (auto valueUsageByDaysUsageByDay : allUsageByDaysNode)
 	{
 		UsageByDay usageByDaysObject;
-		if(!value["TimeStamp"].isNull())
-			usageByDaysObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Qps"].isNull())
-			usageByDaysObject.qps = value["Qps"].asString();
-		if(!value["BytesHitRate"].isNull())
-			usageByDaysObject.bytesHitRate = value["BytesHitRate"].asString();
-		if(!value["RequestHitRate"].isNull())
-			usageByDaysObject.requestHitRate = value["RequestHitRate"].asString();
-		if(!value["MaxBps"].isNull())
-			usageByDaysObject.maxBps = value["MaxBps"].asString();
-		if(!value["MaxBpsTime"].isNull())
-			usageByDaysObject.maxBpsTime = value["MaxBpsTime"].asString();
-		if(!value["MaxSrcBps"].isNull())
-			usageByDaysObject.maxSrcBps = value["MaxSrcBps"].asString();
-		if(!value["MaxSrcBpsTime"].isNull())
-			usageByDaysObject.maxSrcBpsTime = value["MaxSrcBpsTime"].asString();
-		if(!value["TotalAccess"].isNull())
-			usageByDaysObject.totalAccess = value["TotalAccess"].asString();
-		if(!value["TotalTraffic"].isNull())
-			usageByDaysObject.totalTraffic = value["TotalTraffic"].asString();
+		if(!valueUsageByDaysUsageByDay["TimeStamp"].isNull())
+			usageByDaysObject.timeStamp = valueUsageByDaysUsageByDay["TimeStamp"].asString();
+		if(!valueUsageByDaysUsageByDay["Qps"].isNull())
+			usageByDaysObject.qps = valueUsageByDaysUsageByDay["Qps"].asString();
+		if(!valueUsageByDaysUsageByDay["BytesHitRate"].isNull())
+			usageByDaysObject.bytesHitRate = valueUsageByDaysUsageByDay["BytesHitRate"].asString();
+		if(!valueUsageByDaysUsageByDay["RequestHitRate"].isNull())
+			usageByDaysObject.requestHitRate = valueUsageByDaysUsageByDay["RequestHitRate"].asString();
+		if(!valueUsageByDaysUsageByDay["MaxBps"].isNull())
+			usageByDaysObject.maxBps = valueUsageByDaysUsageByDay["MaxBps"].asString();
+		if(!valueUsageByDaysUsageByDay["MaxBpsTime"].isNull())
+			usageByDaysObject.maxBpsTime = valueUsageByDaysUsageByDay["MaxBpsTime"].asString();
+		if(!valueUsageByDaysUsageByDay["MaxSrcBps"].isNull())
+			usageByDaysObject.maxSrcBps = valueUsageByDaysUsageByDay["MaxSrcBps"].asString();
+		if(!valueUsageByDaysUsageByDay["MaxSrcBpsTime"].isNull())
+			usageByDaysObject.maxSrcBpsTime = valueUsageByDaysUsageByDay["MaxSrcBpsTime"].asString();
+		if(!valueUsageByDaysUsageByDay["TotalAccess"].isNull())
+			usageByDaysObject.totalAccess = valueUsageByDaysUsageByDay["TotalAccess"].asString();
+		if(!valueUsageByDaysUsageByDay["TotalTraffic"].isNull())
+			usageByDaysObject.totalTraffic = valueUsageByDaysUsageByDay["TotalTraffic"].asString();
 		usageByDays_.push_back(usageByDaysObject);
 	}
 	auto usageTotalNode = value["UsageTotal"];

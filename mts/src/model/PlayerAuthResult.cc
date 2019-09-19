@@ -39,18 +39,18 @@ void PlayerAuthResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSwitchList = value["SwitchList"]["Switch"];
-	for (auto value : allSwitchList)
+	auto allSwitchListNode = value["SwitchList"]["Switch"];
+	for (auto valueSwitchListSwitch : allSwitchListNode)
 	{
 		Switch switchListObject;
-		if(!value["State"].isNull())
-			switchListObject.state = value["State"].asString();
-		if(!value["FunctionId"].isNull())
-			switchListObject.functionId = value["FunctionId"].asString();
-		if(!value["SwitchId"].isNull())
-			switchListObject.switchId = value["SwitchId"].asString();
-		if(!value["FunctionName"].isNull())
-			switchListObject.functionName = value["FunctionName"].asString();
+		if(!valueSwitchListSwitch["State"].isNull())
+			switchListObject.state = valueSwitchListSwitch["State"].asString();
+		if(!valueSwitchListSwitch["FunctionId"].isNull())
+			switchListObject.functionId = valueSwitchListSwitch["FunctionId"].asString();
+		if(!valueSwitchListSwitch["SwitchId"].isNull())
+			switchListObject.switchId = valueSwitchListSwitch["SwitchId"].asString();
+		if(!valueSwitchListSwitch["FunctionName"].isNull())
+			switchListObject.functionName = valueSwitchListSwitch["FunctionName"].asString();
 		switchList_.push_back(switchListObject);
 	}
 	if(!value["LogURL"].isNull())

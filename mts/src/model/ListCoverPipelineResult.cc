@@ -39,30 +39,30 @@ void ListCoverPipelineResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPipelineList = value["PipelineList"]["Pipeline"];
-	for (auto value : allPipelineList)
+	auto allPipelineListNode = value["PipelineList"]["Pipeline"];
+	for (auto valuePipelineListPipeline : allPipelineListNode)
 	{
 		Pipeline pipelineListObject;
-		if(!value["UserId"].isNull())
-			pipelineListObject.userId = std::stol(value["UserId"].asString());
-		if(!value["PipelineId"].isNull())
-			pipelineListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["Name"].isNull())
-			pipelineListObject.name = value["Name"].asString();
-		if(!value["State"].isNull())
-			pipelineListObject.state = value["State"].asString();
-		if(!value["Priority"].isNull())
-			pipelineListObject.priority = value["Priority"].asString();
-		if(!value["quotaNum"].isNull())
-			pipelineListObject.quotaNum = std::stoi(value["quotaNum"].asString());
-		if(!value["quotaUsed"].isNull())
-			pipelineListObject.quotaUsed = std::stoi(value["quotaUsed"].asString());
-		if(!value["NotifyConfig"].isNull())
-			pipelineListObject.notifyConfig = value["NotifyConfig"].asString();
-		if(!value["Role"].isNull())
-			pipelineListObject.role = value["Role"].asString();
-		if(!value["ExtendConfig"].isNull())
-			pipelineListObject.extendConfig = value["ExtendConfig"].asString();
+		if(!valuePipelineListPipeline["UserId"].isNull())
+			pipelineListObject.userId = std::stol(valuePipelineListPipeline["UserId"].asString());
+		if(!valuePipelineListPipeline["PipelineId"].isNull())
+			pipelineListObject.pipelineId = valuePipelineListPipeline["PipelineId"].asString();
+		if(!valuePipelineListPipeline["Name"].isNull())
+			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
+		if(!valuePipelineListPipeline["State"].isNull())
+			pipelineListObject.state = valuePipelineListPipeline["State"].asString();
+		if(!valuePipelineListPipeline["Priority"].isNull())
+			pipelineListObject.priority = valuePipelineListPipeline["Priority"].asString();
+		if(!valuePipelineListPipeline["quotaNum"].isNull())
+			pipelineListObject.quotaNum = std::stoi(valuePipelineListPipeline["quotaNum"].asString());
+		if(!valuePipelineListPipeline["quotaUsed"].isNull())
+			pipelineListObject.quotaUsed = std::stoi(valuePipelineListPipeline["quotaUsed"].asString());
+		if(!valuePipelineListPipeline["NotifyConfig"].isNull())
+			pipelineListObject.notifyConfig = valuePipelineListPipeline["NotifyConfig"].asString();
+		if(!valuePipelineListPipeline["Role"].isNull())
+			pipelineListObject.role = valuePipelineListPipeline["Role"].asString();
+		if(!valuePipelineListPipeline["ExtendConfig"].isNull())
+			pipelineListObject.extendConfig = valuePipelineListPipeline["ExtendConfig"].asString();
 		pipelineList_.push_back(pipelineListObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,14 +39,14 @@ void ListPreferredEcsTypesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSeries = value["Series"]["SeriesInfo"];
-	for (auto value : allSeries)
+	auto allSeriesNode = value["Series"]["SeriesInfo"];
+	for (auto valueSeriesSeriesInfo : allSeriesNode)
 	{
 		SeriesInfo seriesObject;
-		if(!value["SeriesId"].isNull())
-			seriesObject.seriesId = value["SeriesId"].asString();
-		if(!value["SeriesName"].isNull())
-			seriesObject.seriesName = value["SeriesName"].asString();
+		if(!valueSeriesSeriesInfo["SeriesId"].isNull())
+			seriesObject.seriesId = valueSeriesSeriesInfo["SeriesId"].asString();
+		if(!valueSeriesSeriesInfo["SeriesName"].isNull())
+			seriesObject.seriesName = valueSeriesSeriesInfo["SeriesName"].asString();
 		auto rolesNode = value["Roles"];
 			auto allManager = rolesNode["Manager"]["InstanceTypeId"];
 			for (auto value : allManager)

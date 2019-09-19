@@ -39,16 +39,16 @@ void DescribeGroupedTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allGroupedFileds = value["GroupedFileds"]["GroupedFiled"];
-	for (auto value : allGroupedFileds)
+	auto allGroupedFiledsNode = value["GroupedFileds"]["GroupedFiled"];
+	for (auto valueGroupedFiledsGroupedFiled : allGroupedFiledsNode)
 	{
 		GroupedFiled groupedFiledsObject;
-		if(!value["Name"].isNull())
-			groupedFiledsObject.name = value["Name"].asString();
-		if(!value["TagId"].isNull())
-			groupedFiledsObject.tagId = std::stoi(value["TagId"].asString());
-		if(!value["Count"].isNull())
-			groupedFiledsObject.count = value["Count"].asString();
+		if(!valueGroupedFiledsGroupedFiled["Name"].isNull())
+			groupedFiledsObject.name = valueGroupedFiledsGroupedFiled["Name"].asString();
+		if(!valueGroupedFiledsGroupedFiled["TagId"].isNull())
+			groupedFiledsObject.tagId = std::stoi(valueGroupedFiledsGroupedFiled["TagId"].asString());
+		if(!valueGroupedFiledsGroupedFiled["Count"].isNull())
+			groupedFiledsObject.count = valueGroupedFiledsGroupedFiled["Count"].asString();
 		groupedFileds_.push_back(groupedFiledsObject);
 	}
 	if(!value["Success"].isNull())

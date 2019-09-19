@@ -39,24 +39,24 @@ void DescribeDomainDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainDetailItems = value["DomainDetailItems"]["DomainDetailItem"];
-	for (auto value : allDomainDetailItems)
+	auto allDomainDetailItemsNode = value["DomainDetailItems"]["DomainDetailItem"];
+	for (auto valueDomainDetailItemsDomainDetailItem : allDomainDetailItemsNode)
 	{
 		DomainDetailItem domainDetailItemsObject;
-		if(!value["InternetIp"].isNull())
-			domainDetailItemsObject.internetIp = value["InternetIp"].asString();
-		if(!value["InstanceId"].isNull())
-			domainDetailItemsObject.instanceId = value["InstanceId"].asString();
-		if(!value["Uuid"].isNull())
-			domainDetailItemsObject.uuid = value["Uuid"].asString();
-		if(!value["AssetType"].isNull())
-			domainDetailItemsObject.assetType = value["AssetType"].asString();
-		if(!value["InstanceName"].isNull())
-			domainDetailItemsObject.instanceName = value["InstanceName"].asString();
-		if(!value["MachineIp"].isNull())
-			domainDetailItemsObject.machineIp = value["MachineIp"].asString();
-		if(!value["IntranetIp"].isNull())
-			domainDetailItemsObject.intranetIp = value["IntranetIp"].asString();
+		if(!valueDomainDetailItemsDomainDetailItem["InternetIp"].isNull())
+			domainDetailItemsObject.internetIp = valueDomainDetailItemsDomainDetailItem["InternetIp"].asString();
+		if(!valueDomainDetailItemsDomainDetailItem["InstanceId"].isNull())
+			domainDetailItemsObject.instanceId = valueDomainDetailItemsDomainDetailItem["InstanceId"].asString();
+		if(!valueDomainDetailItemsDomainDetailItem["Uuid"].isNull())
+			domainDetailItemsObject.uuid = valueDomainDetailItemsDomainDetailItem["Uuid"].asString();
+		if(!valueDomainDetailItemsDomainDetailItem["AssetType"].isNull())
+			domainDetailItemsObject.assetType = valueDomainDetailItemsDomainDetailItem["AssetType"].asString();
+		if(!valueDomainDetailItemsDomainDetailItem["InstanceName"].isNull())
+			domainDetailItemsObject.instanceName = valueDomainDetailItemsDomainDetailItem["InstanceName"].asString();
+		if(!valueDomainDetailItemsDomainDetailItem["MachineIp"].isNull())
+			domainDetailItemsObject.machineIp = valueDomainDetailItemsDomainDetailItem["MachineIp"].asString();
+		if(!valueDomainDetailItemsDomainDetailItem["IntranetIp"].isNull())
+			domainDetailItemsObject.intranetIp = valueDomainDetailItemsDomainDetailItem["IntranetIp"].asString();
 		domainDetailItems_.push_back(domainDetailItemsObject);
 	}
 	if(!value["Domain"].isNull())

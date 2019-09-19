@@ -39,16 +39,16 @@ void ListJobInstanceWorkersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobInstanceWorkers = value["JobInstanceWorkers"]["JobInstanceWorkerInfo"];
-	for (auto value : allJobInstanceWorkers)
+	auto allJobInstanceWorkersNode = value["JobInstanceWorkers"]["JobInstanceWorkerInfo"];
+	for (auto valueJobInstanceWorkersJobInstanceWorkerInfo : allJobInstanceWorkersNode)
 	{
 		JobInstanceWorkerInfo jobInstanceWorkersObject;
-		if(!value["ApplicationId"].isNull())
-			jobInstanceWorkersObject.applicationId = value["ApplicationId"].asString();
-		if(!value["InstanceInfo"].isNull())
-			jobInstanceWorkersObject.instanceInfo = value["InstanceInfo"].asString();
-		if(!value["ContainerInfo"].isNull())
-			jobInstanceWorkersObject.containerInfo = value["ContainerInfo"].asString();
+		if(!valueJobInstanceWorkersJobInstanceWorkerInfo["ApplicationId"].isNull())
+			jobInstanceWorkersObject.applicationId = valueJobInstanceWorkersJobInstanceWorkerInfo["ApplicationId"].asString();
+		if(!valueJobInstanceWorkersJobInstanceWorkerInfo["InstanceInfo"].isNull())
+			jobInstanceWorkersObject.instanceInfo = valueJobInstanceWorkersJobInstanceWorkerInfo["InstanceInfo"].asString();
+		if(!valueJobInstanceWorkersJobInstanceWorkerInfo["ContainerInfo"].isNull())
+			jobInstanceWorkersObject.containerInfo = valueJobInstanceWorkersJobInstanceWorkerInfo["ContainerInfo"].asString();
 		jobInstanceWorkers_.push_back(jobInstanceWorkersObject);
 	}
 

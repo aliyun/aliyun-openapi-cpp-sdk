@@ -39,26 +39,26 @@ void ListEventRulesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDatapoints = value["Datapoints"]["EventRule"];
-	for (auto value : allDatapoints)
+	auto allDatapointsNode = value["Datapoints"]["EventRule"];
+	for (auto valueDatapointsEventRule : allDatapointsNode)
 	{
 		EventRule datapointsObject;
-		if(!value["Name"].isNull())
-			datapointsObject.name = value["Name"].asString();
-		if(!value["GroupId"].isNull())
-			datapointsObject.groupId = value["GroupId"].asString();
-		if(!value["EventType"].isNull())
-			datapointsObject.eventType = value["EventType"].asString();
-		if(!value["State"].isNull())
-			datapointsObject.state = value["State"].asString();
-		if(!value["Description"].isNull())
-			datapointsObject.description = value["Description"].asString();
-		auto allEventPattern = value["EventPattern"]["EventPatternItem"];
-		for (auto value : allEventPattern)
+		if(!valueDatapointsEventRule["Name"].isNull())
+			datapointsObject.name = valueDatapointsEventRule["Name"].asString();
+		if(!valueDatapointsEventRule["GroupId"].isNull())
+			datapointsObject.groupId = valueDatapointsEventRule["GroupId"].asString();
+		if(!valueDatapointsEventRule["EventType"].isNull())
+			datapointsObject.eventType = valueDatapointsEventRule["EventType"].asString();
+		if(!valueDatapointsEventRule["State"].isNull())
+			datapointsObject.state = valueDatapointsEventRule["State"].asString();
+		if(!valueDatapointsEventRule["Description"].isNull())
+			datapointsObject.description = valueDatapointsEventRule["Description"].asString();
+		auto allEventPatternNode = allDatapointsNode["EventPattern"]["EventPatternItem"];
+		for (auto allDatapointsNodeEventPatternEventPatternItem : allEventPatternNode)
 		{
 			EventRule::EventPatternItem eventPatternObject;
-			if(!value["Product"].isNull())
-				eventPatternObject.product = value["Product"].asString();
+			if(!allDatapointsNodeEventPatternEventPatternItem["Product"].isNull())
+				eventPatternObject.product = allDatapointsNodeEventPatternEventPatternItem["Product"].asString();
 			auto allNameList = value["NameList"]["NameList"];
 			for (auto value : allNameList)
 				eventPatternObject.nameList.push_back(value.asString());

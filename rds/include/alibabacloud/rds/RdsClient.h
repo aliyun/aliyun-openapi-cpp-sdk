@@ -48,6 +48,8 @@
 #include "model/CheckResourceResult.h"
 #include "model/CloneDBInstanceRequest.h"
 #include "model/CloneDBInstanceResult.h"
+#include "model/CloneParameterGroupRequest.h"
+#include "model/CloneParameterGroupResult.h"
 #include "model/CopyDatabaseRequest.h"
 #include "model/CopyDatabaseResult.h"
 #include "model/CopyDatabaseBetweenInstancesRequest.h"
@@ -72,6 +74,8 @@
 #include "model/CreateMigrateTaskForSQLServerResult.h"
 #include "model/CreateOnlineDatabaseTaskRequest.h"
 #include "model/CreateOnlineDatabaseTaskResult.h"
+#include "model/CreateParameterGroupRequest.h"
+#include "model/CreateParameterGroupResult.h"
 #include "model/CreateReadOnlyDBInstanceRequest.h"
 #include "model/CreateReadOnlyDBInstanceResult.h"
 #include "model/CreateTempDBInstanceRequest.h"
@@ -84,6 +88,8 @@
 #include "model/DeleteDBInstanceResult.h"
 #include "model/DeleteDatabaseRequest.h"
 #include "model/DeleteDatabaseResult.h"
+#include "model/DeleteParameterGroupRequest.h"
+#include "model/DeleteParameterGroupResult.h"
 #include "model/DescibeImportsFromDatabaseRequest.h"
 #include "model/DescibeImportsFromDatabaseResult.h"
 #include "model/DescribeAccountsRequest.h"
@@ -182,6 +188,10 @@
 #include "model/DescribeOssDownloadsResult.h"
 #include "model/DescribeOssDownloadsForSQLServerRequest.h"
 #include "model/DescribeOssDownloadsForSQLServerResult.h"
+#include "model/DescribeParameterGroupRequest.h"
+#include "model/DescribeParameterGroupResult.h"
+#include "model/DescribeParameterGroupsRequest.h"
+#include "model/DescribeParameterGroupsResult.h"
 #include "model/DescribeParameterTemplatesRequest.h"
 #include "model/DescribeParameterTemplatesResult.h"
 #include "model/DescribeParametersRequest.h"
@@ -288,6 +298,8 @@
 #include "model/ModifyMySQLDBInstanceDelayResult.h"
 #include "model/ModifyParameterRequest.h"
 #include "model/ModifyParameterResult.h"
+#include "model/ModifyParameterGroupRequest.h"
+#include "model/ModifyParameterGroupResult.h"
 #include "model/ModifyReadWriteSplittingConnectionRequest.h"
 #include "model/ModifyReadWriteSplittingConnectionResult.h"
 #include "model/ModifyReadonlyInstanceDelayReplicationTimeRequest.h"
@@ -406,6 +418,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CloneDBInstanceResult> CloneDBInstanceOutcome;
 			typedef std::future<CloneDBInstanceOutcome> CloneDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CloneDBInstanceRequest&, const CloneDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloneDBInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CloneParameterGroupResult> CloneParameterGroupOutcome;
+			typedef std::future<CloneParameterGroupOutcome> CloneParameterGroupOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CloneParameterGroupRequest&, const CloneParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloneParameterGroupAsyncHandler;
 			typedef Outcome<Error, Model::CopyDatabaseResult> CopyDatabaseOutcome;
 			typedef std::future<CopyDatabaseOutcome> CopyDatabaseOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CopyDatabaseRequest&, const CopyDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyDatabaseAsyncHandler;
@@ -442,6 +457,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateOnlineDatabaseTaskResult> CreateOnlineDatabaseTaskOutcome;
 			typedef std::future<CreateOnlineDatabaseTaskOutcome> CreateOnlineDatabaseTaskOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CreateOnlineDatabaseTaskRequest&, const CreateOnlineDatabaseTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOnlineDatabaseTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateParameterGroupResult> CreateParameterGroupOutcome;
+			typedef std::future<CreateParameterGroupOutcome> CreateParameterGroupOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CreateParameterGroupRequest&, const CreateParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateParameterGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateReadOnlyDBInstanceResult> CreateReadOnlyDBInstanceOutcome;
 			typedef std::future<CreateReadOnlyDBInstanceOutcome> CreateReadOnlyDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CreateReadOnlyDBInstanceRequest&, const CreateReadOnlyDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateReadOnlyDBInstanceAsyncHandler;
@@ -460,6 +478,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDatabaseResult> DeleteDatabaseOutcome;
 			typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteDatabaseRequest&, const DeleteDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatabaseAsyncHandler;
+			typedef Outcome<Error, Model::DeleteParameterGroupResult> DeleteParameterGroupOutcome;
+			typedef std::future<DeleteParameterGroupOutcome> DeleteParameterGroupOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteParameterGroupRequest&, const DeleteParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParameterGroupAsyncHandler;
 			typedef Outcome<Error, Model::DescibeImportsFromDatabaseResult> DescibeImportsFromDatabaseOutcome;
 			typedef std::future<DescibeImportsFromDatabaseOutcome> DescibeImportsFromDatabaseOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescibeImportsFromDatabaseRequest&, const DescibeImportsFromDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescibeImportsFromDatabaseAsyncHandler;
@@ -607,6 +628,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeOssDownloadsForSQLServerResult> DescribeOssDownloadsForSQLServerOutcome;
 			typedef std::future<DescribeOssDownloadsForSQLServerOutcome> DescribeOssDownloadsForSQLServerOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeOssDownloadsForSQLServerRequest&, const DescribeOssDownloadsForSQLServerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOssDownloadsForSQLServerAsyncHandler;
+			typedef Outcome<Error, Model::DescribeParameterGroupResult> DescribeParameterGroupOutcome;
+			typedef std::future<DescribeParameterGroupOutcome> DescribeParameterGroupOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeParameterGroupRequest&, const DescribeParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParameterGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeParameterGroupsResult> DescribeParameterGroupsOutcome;
+			typedef std::future<DescribeParameterGroupsOutcome> DescribeParameterGroupsOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeParameterGroupsRequest&, const DescribeParameterGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParameterGroupsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeParameterTemplatesResult> DescribeParameterTemplatesOutcome;
 			typedef std::future<DescribeParameterTemplatesOutcome> DescribeParameterTemplatesOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeParameterTemplatesRequest&, const DescribeParameterTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParameterTemplatesAsyncHandler;
@@ -766,6 +793,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyParameterResult> ModifyParameterOutcome;
 			typedef std::future<ModifyParameterOutcome> ModifyParameterOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyParameterRequest&, const ModifyParameterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParameterAsyncHandler;
+			typedef Outcome<Error, Model::ModifyParameterGroupResult> ModifyParameterGroupOutcome;
+			typedef std::future<ModifyParameterGroupOutcome> ModifyParameterGroupOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyParameterGroupRequest&, const ModifyParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParameterGroupAsyncHandler;
 			typedef Outcome<Error, Model::ModifyReadWriteSplittingConnectionResult> ModifyReadWriteSplittingConnectionOutcome;
 			typedef std::future<ModifyReadWriteSplittingConnectionOutcome> ModifyReadWriteSplittingConnectionOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyReadWriteSplittingConnectionRequest&, const ModifyReadWriteSplittingConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReadWriteSplittingConnectionAsyncHandler;
@@ -915,6 +945,9 @@ namespace AlibabaCloud
 			CloneDBInstanceOutcome cloneDBInstance(const Model::CloneDBInstanceRequest &request)const;
 			void cloneDBInstanceAsync(const Model::CloneDBInstanceRequest& request, const CloneDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloneDBInstanceOutcomeCallable cloneDBInstanceCallable(const Model::CloneDBInstanceRequest& request) const;
+			CloneParameterGroupOutcome cloneParameterGroup(const Model::CloneParameterGroupRequest &request)const;
+			void cloneParameterGroupAsync(const Model::CloneParameterGroupRequest& request, const CloneParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CloneParameterGroupOutcomeCallable cloneParameterGroupCallable(const Model::CloneParameterGroupRequest& request) const;
 			CopyDatabaseOutcome copyDatabase(const Model::CopyDatabaseRequest &request)const;
 			void copyDatabaseAsync(const Model::CopyDatabaseRequest& request, const CopyDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CopyDatabaseOutcomeCallable copyDatabaseCallable(const Model::CopyDatabaseRequest& request) const;
@@ -951,6 +984,9 @@ namespace AlibabaCloud
 			CreateOnlineDatabaseTaskOutcome createOnlineDatabaseTask(const Model::CreateOnlineDatabaseTaskRequest &request)const;
 			void createOnlineDatabaseTaskAsync(const Model::CreateOnlineDatabaseTaskRequest& request, const CreateOnlineDatabaseTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateOnlineDatabaseTaskOutcomeCallable createOnlineDatabaseTaskCallable(const Model::CreateOnlineDatabaseTaskRequest& request) const;
+			CreateParameterGroupOutcome createParameterGroup(const Model::CreateParameterGroupRequest &request)const;
+			void createParameterGroupAsync(const Model::CreateParameterGroupRequest& request, const CreateParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateParameterGroupOutcomeCallable createParameterGroupCallable(const Model::CreateParameterGroupRequest& request) const;
 			CreateReadOnlyDBInstanceOutcome createReadOnlyDBInstance(const Model::CreateReadOnlyDBInstanceRequest &request)const;
 			void createReadOnlyDBInstanceAsync(const Model::CreateReadOnlyDBInstanceRequest& request, const CreateReadOnlyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateReadOnlyDBInstanceOutcomeCallable createReadOnlyDBInstanceCallable(const Model::CreateReadOnlyDBInstanceRequest& request) const;
@@ -969,6 +1005,9 @@ namespace AlibabaCloud
 			DeleteDatabaseOutcome deleteDatabase(const Model::DeleteDatabaseRequest &request)const;
 			void deleteDatabaseAsync(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDatabaseOutcomeCallable deleteDatabaseCallable(const Model::DeleteDatabaseRequest& request) const;
+			DeleteParameterGroupOutcome deleteParameterGroup(const Model::DeleteParameterGroupRequest &request)const;
+			void deleteParameterGroupAsync(const Model::DeleteParameterGroupRequest& request, const DeleteParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteParameterGroupOutcomeCallable deleteParameterGroupCallable(const Model::DeleteParameterGroupRequest& request) const;
 			DescibeImportsFromDatabaseOutcome descibeImportsFromDatabase(const Model::DescibeImportsFromDatabaseRequest &request)const;
 			void descibeImportsFromDatabaseAsync(const Model::DescibeImportsFromDatabaseRequest& request, const DescibeImportsFromDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescibeImportsFromDatabaseOutcomeCallable descibeImportsFromDatabaseCallable(const Model::DescibeImportsFromDatabaseRequest& request) const;
@@ -1116,6 +1155,12 @@ namespace AlibabaCloud
 			DescribeOssDownloadsForSQLServerOutcome describeOssDownloadsForSQLServer(const Model::DescribeOssDownloadsForSQLServerRequest &request)const;
 			void describeOssDownloadsForSQLServerAsync(const Model::DescribeOssDownloadsForSQLServerRequest& request, const DescribeOssDownloadsForSQLServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOssDownloadsForSQLServerOutcomeCallable describeOssDownloadsForSQLServerCallable(const Model::DescribeOssDownloadsForSQLServerRequest& request) const;
+			DescribeParameterGroupOutcome describeParameterGroup(const Model::DescribeParameterGroupRequest &request)const;
+			void describeParameterGroupAsync(const Model::DescribeParameterGroupRequest& request, const DescribeParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeParameterGroupOutcomeCallable describeParameterGroupCallable(const Model::DescribeParameterGroupRequest& request) const;
+			DescribeParameterGroupsOutcome describeParameterGroups(const Model::DescribeParameterGroupsRequest &request)const;
+			void describeParameterGroupsAsync(const Model::DescribeParameterGroupsRequest& request, const DescribeParameterGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeParameterGroupsOutcomeCallable describeParameterGroupsCallable(const Model::DescribeParameterGroupsRequest& request) const;
 			DescribeParameterTemplatesOutcome describeParameterTemplates(const Model::DescribeParameterTemplatesRequest &request)const;
 			void describeParameterTemplatesAsync(const Model::DescribeParameterTemplatesRequest& request, const DescribeParameterTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeParameterTemplatesOutcomeCallable describeParameterTemplatesCallable(const Model::DescribeParameterTemplatesRequest& request) const;
@@ -1275,6 +1320,9 @@ namespace AlibabaCloud
 			ModifyParameterOutcome modifyParameter(const Model::ModifyParameterRequest &request)const;
 			void modifyParameterAsync(const Model::ModifyParameterRequest& request, const ModifyParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyParameterOutcomeCallable modifyParameterCallable(const Model::ModifyParameterRequest& request) const;
+			ModifyParameterGroupOutcome modifyParameterGroup(const Model::ModifyParameterGroupRequest &request)const;
+			void modifyParameterGroupAsync(const Model::ModifyParameterGroupRequest& request, const ModifyParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyParameterGroupOutcomeCallable modifyParameterGroupCallable(const Model::ModifyParameterGroupRequest& request) const;
 			ModifyReadWriteSplittingConnectionOutcome modifyReadWriteSplittingConnection(const Model::ModifyReadWriteSplittingConnectionRequest &request)const;
 			void modifyReadWriteSplittingConnectionAsync(const Model::ModifyReadWriteSplittingConnectionRequest& request, const ModifyReadWriteSplittingConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyReadWriteSplittingConnectionOutcomeCallable modifyReadWriteSplittingConnectionCallable(const Model::ModifyReadWriteSplittingConnectionRequest& request) const;

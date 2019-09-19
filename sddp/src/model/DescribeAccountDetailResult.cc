@@ -74,22 +74,22 @@ void DescribeAccountDetailResult::parse(const std::string &payload)
 		account_.roleNames = accountNode["RoleNames"].asString();
 	if(!accountNode["AliUid"].isNull())
 		account_.aliUid = std::stol(accountNode["AliUid"].asString());
-	auto allPrivilegeList = value["PrivilegeList"]["Privilege"];
-	for (auto value : allPrivilegeList)
+	auto allPrivilegeListNode = accountNode["PrivilegeList"]["Privilege"];
+	for (auto accountNodePrivilegeListPrivilege : allPrivilegeListNode)
 	{
 		Account::Privilege privilegeObject;
-		if(!value["ProductName"].isNull())
-			privilegeObject.productName = value["ProductName"].asString();
-		if(!value["UseAccountId"].isNull())
-			privilegeObject.useAccountId = value["UseAccountId"].asString();
-		if(!value["UseAccountType"].isNull())
-			privilegeObject.useAccountType = std::stoi(value["UseAccountType"].asString());
-		if(!value["UseAccountTypeName"].isNull())
-			privilegeObject.useAccountTypeName = value["UseAccountTypeName"].asString();
-		if(!value["UseAccountCreateTime"].isNull())
-			privilegeObject.useAccountCreateTime = std::stol(value["UseAccountCreateTime"].asString());
-		if(!value["UseAccountName"].isNull())
-			privilegeObject.useAccountName = value["UseAccountName"].asString();
+		if(!accountNodePrivilegeListPrivilege["ProductName"].isNull())
+			privilegeObject.productName = accountNodePrivilegeListPrivilege["ProductName"].asString();
+		if(!accountNodePrivilegeListPrivilege["UseAccountId"].isNull())
+			privilegeObject.useAccountId = accountNodePrivilegeListPrivilege["UseAccountId"].asString();
+		if(!accountNodePrivilegeListPrivilege["UseAccountType"].isNull())
+			privilegeObject.useAccountType = std::stoi(accountNodePrivilegeListPrivilege["UseAccountType"].asString());
+		if(!accountNodePrivilegeListPrivilege["UseAccountTypeName"].isNull())
+			privilegeObject.useAccountTypeName = accountNodePrivilegeListPrivilege["UseAccountTypeName"].asString();
+		if(!accountNodePrivilegeListPrivilege["UseAccountCreateTime"].isNull())
+			privilegeObject.useAccountCreateTime = std::stol(accountNodePrivilegeListPrivilege["UseAccountCreateTime"].asString());
+		if(!accountNodePrivilegeListPrivilege["UseAccountName"].isNull())
+			privilegeObject.useAccountName = accountNodePrivilegeListPrivilege["UseAccountName"].asString();
 		account_.privilegeList.push_back(privilegeObject);
 	}
 	auto eventCountNode = accountNode["EventCount"];

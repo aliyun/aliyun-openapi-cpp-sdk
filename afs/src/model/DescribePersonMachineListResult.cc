@@ -42,26 +42,26 @@ void DescribePersonMachineListResult::parse(const std::string &payload)
 	auto personMachineResNode = value["PersonMachineRes"];
 	if(!personMachineResNode["HasConfiguration"].isNull())
 		personMachineRes_.hasConfiguration = personMachineResNode["HasConfiguration"].asString();
-	auto allPersonMachines = value["PersonMachines"]["PersonMachine"];
-	for (auto value : allPersonMachines)
+	auto allPersonMachinesNode = personMachineResNode["PersonMachines"]["PersonMachine"];
+	for (auto personMachineResNodePersonMachinesPersonMachine : allPersonMachinesNode)
 	{
 		PersonMachineRes::PersonMachine personMachineObject;
-		if(!value["ConfigurationName"].isNull())
-			personMachineObject.configurationName = value["ConfigurationName"].asString();
-		if(!value["Appkey"].isNull())
-			personMachineObject.appkey = value["Appkey"].asString();
-		if(!value["ConfigurationMethod"].isNull())
-			personMachineObject.configurationMethod = value["ConfigurationMethod"].asString();
-		if(!value["ApplyType"].isNull())
-			personMachineObject.applyType = value["ApplyType"].asString();
-		if(!value["Scene"].isNull())
-			personMachineObject.scene = value["Scene"].asString();
-		if(!value["LastUpdate"].isNull())
-			personMachineObject.lastUpdate = value["LastUpdate"].asString();
-		if(!value["ExtId"].isNull())
-			personMachineObject.extId = value["ExtId"].asString();
-		if(!value["SceneOriginal"].isNull())
-			personMachineObject.sceneOriginal = value["SceneOriginal"].asString();
+		if(!personMachineResNodePersonMachinesPersonMachine["ConfigurationName"].isNull())
+			personMachineObject.configurationName = personMachineResNodePersonMachinesPersonMachine["ConfigurationName"].asString();
+		if(!personMachineResNodePersonMachinesPersonMachine["Appkey"].isNull())
+			personMachineObject.appkey = personMachineResNodePersonMachinesPersonMachine["Appkey"].asString();
+		if(!personMachineResNodePersonMachinesPersonMachine["ConfigurationMethod"].isNull())
+			personMachineObject.configurationMethod = personMachineResNodePersonMachinesPersonMachine["ConfigurationMethod"].asString();
+		if(!personMachineResNodePersonMachinesPersonMachine["ApplyType"].isNull())
+			personMachineObject.applyType = personMachineResNodePersonMachinesPersonMachine["ApplyType"].asString();
+		if(!personMachineResNodePersonMachinesPersonMachine["Scene"].isNull())
+			personMachineObject.scene = personMachineResNodePersonMachinesPersonMachine["Scene"].asString();
+		if(!personMachineResNodePersonMachinesPersonMachine["LastUpdate"].isNull())
+			personMachineObject.lastUpdate = personMachineResNodePersonMachinesPersonMachine["LastUpdate"].asString();
+		if(!personMachineResNodePersonMachinesPersonMachine["ExtId"].isNull())
+			personMachineObject.extId = personMachineResNodePersonMachinesPersonMachine["ExtId"].asString();
+		if(!personMachineResNodePersonMachinesPersonMachine["SceneOriginal"].isNull())
+			personMachineObject.sceneOriginal = personMachineResNodePersonMachinesPersonMachine["SceneOriginal"].asString();
 		personMachineRes_.personMachines.push_back(personMachineObject);
 	}
 	if(!value["BizCode"].isNull())

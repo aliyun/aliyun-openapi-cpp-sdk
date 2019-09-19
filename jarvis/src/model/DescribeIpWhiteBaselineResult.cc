@@ -39,24 +39,24 @@ void DescribeIpWhiteBaselineResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataList = value["DataList"]["Data"];
-	for (auto value : allDataList)
+	auto allDataListNode = value["DataList"]["Data"];
+	for (auto valueDataListData : allDataListNode)
 	{
 		Data dataListObject;
-		if(!value["Id"].isNull())
-			dataListObject.id = std::stoi(value["Id"].asString());
-		if(!value["OwnerAliUid"].isNull())
-			dataListObject.ownerAliUid = std::stoi(value["OwnerAliUid"].asString());
-		if(!value["SrcIp"].isNull())
-			dataListObject.srcIp = std::stoi(value["SrcIp"].asString());
-		if(!value["Status"].isNull())
-			dataListObject.status = value["Status"].asString();
-		if(!value["Remark"].isNull())
-			dataListObject.remark = value["Remark"].asString();
-		if(!value["BeginTime"].isNull())
-			dataListObject.beginTime = std::stoi(value["BeginTime"].asString());
-		if(!value["RealEndTime"].isNull())
-			dataListObject.realEndTime = std::stoi(value["RealEndTime"].asString());
+		if(!valueDataListData["Id"].isNull())
+			dataListObject.id = std::stoi(valueDataListData["Id"].asString());
+		if(!valueDataListData["OwnerAliUid"].isNull())
+			dataListObject.ownerAliUid = std::stoi(valueDataListData["OwnerAliUid"].asString());
+		if(!valueDataListData["SrcIp"].isNull())
+			dataListObject.srcIp = std::stoi(valueDataListData["SrcIp"].asString());
+		if(!valueDataListData["Status"].isNull())
+			dataListObject.status = valueDataListData["Status"].asString();
+		if(!valueDataListData["Remark"].isNull())
+			dataListObject.remark = valueDataListData["Remark"].asString();
+		if(!valueDataListData["BeginTime"].isNull())
+			dataListObject.beginTime = std::stoi(valueDataListData["BeginTime"].asString());
+		if(!valueDataListData["RealEndTime"].isNull())
+			dataListObject.realEndTime = std::stoi(valueDataListData["RealEndTime"].asString());
 		dataList_.push_back(dataListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

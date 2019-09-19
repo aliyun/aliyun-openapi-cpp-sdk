@@ -39,38 +39,38 @@ void DescribeIPv6TranslatorsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIpv6Translators = value["Ipv6Translators"]["Ipv6Translator"];
-	for (auto value : allIpv6Translators)
+	auto allIpv6TranslatorsNode = value["Ipv6Translators"]["Ipv6Translator"];
+	for (auto valueIpv6TranslatorsIpv6Translator : allIpv6TranslatorsNode)
 	{
 		Ipv6Translator ipv6TranslatorsObject;
-		if(!value["Ipv6TranslatorId"].isNull())
-			ipv6TranslatorsObject.ipv6TranslatorId = value["Ipv6TranslatorId"].asString();
-		if(!value["CreateTime"].isNull())
-			ipv6TranslatorsObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["EndTime"].isNull())
-			ipv6TranslatorsObject.endTime = std::stol(value["EndTime"].asString());
-		if(!value["Spec"].isNull())
-			ipv6TranslatorsObject.spec = value["Spec"].asString();
-		if(!value["Name"].isNull())
-			ipv6TranslatorsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			ipv6TranslatorsObject.description = value["Description"].asString();
-		if(!value["Status"].isNull())
-			ipv6TranslatorsObject.status = value["Status"].asString();
-		if(!value["BusinessStatus"].isNull())
-			ipv6TranslatorsObject.businessStatus = value["BusinessStatus"].asString();
-		if(!value["PayType"].isNull())
-			ipv6TranslatorsObject.payType = value["PayType"].asString();
-		if(!value["Bandwidth"].isNull())
-			ipv6TranslatorsObject.bandwidth = std::stoi(value["Bandwidth"].asString());
-		if(!value["AllocateIpv6Addr"].isNull())
-			ipv6TranslatorsObject.allocateIpv6Addr = value["AllocateIpv6Addr"].asString();
-		if(!value["AllocateIpv4Addr"].isNull())
-			ipv6TranslatorsObject.allocateIpv4Addr = value["AllocateIpv4Addr"].asString();
-		if(!value["AvailableBandwidth"].isNull())
-			ipv6TranslatorsObject.availableBandwidth = value["AvailableBandwidth"].asString();
-		if(!value["RegionId"].isNull())
-			ipv6TranslatorsObject.regionId = value["RegionId"].asString();
+		if(!valueIpv6TranslatorsIpv6Translator["Ipv6TranslatorId"].isNull())
+			ipv6TranslatorsObject.ipv6TranslatorId = valueIpv6TranslatorsIpv6Translator["Ipv6TranslatorId"].asString();
+		if(!valueIpv6TranslatorsIpv6Translator["CreateTime"].isNull())
+			ipv6TranslatorsObject.createTime = std::stol(valueIpv6TranslatorsIpv6Translator["CreateTime"].asString());
+		if(!valueIpv6TranslatorsIpv6Translator["EndTime"].isNull())
+			ipv6TranslatorsObject.endTime = std::stol(valueIpv6TranslatorsIpv6Translator["EndTime"].asString());
+		if(!valueIpv6TranslatorsIpv6Translator["Spec"].isNull())
+			ipv6TranslatorsObject.spec = valueIpv6TranslatorsIpv6Translator["Spec"].asString();
+		if(!valueIpv6TranslatorsIpv6Translator["Name"].isNull())
+			ipv6TranslatorsObject.name = valueIpv6TranslatorsIpv6Translator["Name"].asString();
+		if(!valueIpv6TranslatorsIpv6Translator["Description"].isNull())
+			ipv6TranslatorsObject.description = valueIpv6TranslatorsIpv6Translator["Description"].asString();
+		if(!valueIpv6TranslatorsIpv6Translator["Status"].isNull())
+			ipv6TranslatorsObject.status = valueIpv6TranslatorsIpv6Translator["Status"].asString();
+		if(!valueIpv6TranslatorsIpv6Translator["BusinessStatus"].isNull())
+			ipv6TranslatorsObject.businessStatus = valueIpv6TranslatorsIpv6Translator["BusinessStatus"].asString();
+		if(!valueIpv6TranslatorsIpv6Translator["PayType"].isNull())
+			ipv6TranslatorsObject.payType = valueIpv6TranslatorsIpv6Translator["PayType"].asString();
+		if(!valueIpv6TranslatorsIpv6Translator["Bandwidth"].isNull())
+			ipv6TranslatorsObject.bandwidth = std::stoi(valueIpv6TranslatorsIpv6Translator["Bandwidth"].asString());
+		if(!valueIpv6TranslatorsIpv6Translator["AllocateIpv6Addr"].isNull())
+			ipv6TranslatorsObject.allocateIpv6Addr = valueIpv6TranslatorsIpv6Translator["AllocateIpv6Addr"].asString();
+		if(!valueIpv6TranslatorsIpv6Translator["AllocateIpv4Addr"].isNull())
+			ipv6TranslatorsObject.allocateIpv4Addr = valueIpv6TranslatorsIpv6Translator["AllocateIpv4Addr"].asString();
+		if(!valueIpv6TranslatorsIpv6Translator["AvailableBandwidth"].isNull())
+			ipv6TranslatorsObject.availableBandwidth = valueIpv6TranslatorsIpv6Translator["AvailableBandwidth"].asString();
+		if(!valueIpv6TranslatorsIpv6Translator["RegionId"].isNull())
+			ipv6TranslatorsObject.regionId = valueIpv6TranslatorsIpv6Translator["RegionId"].asString();
 		auto allIpv6TranslatorEntryIds = value["Ipv6TranslatorEntryIds"]["Ipv6TranslatorEntryId"];
 		for (auto value : allIpv6TranslatorEntryIds)
 			ipv6TranslatorsObject.ipv6TranslatorEntryIds.push_back(value.asString());

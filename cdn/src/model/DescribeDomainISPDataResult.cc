@@ -39,38 +39,38 @@ void DescribeDomainISPDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allValue = value["Value"]["ISPProportionData"];
-	for (auto value : allValue)
+	auto allValueNode = value["Value"]["ISPProportionData"];
+	for (auto valueValueISPProportionData : allValueNode)
 	{
 		ISPProportionData valueObject;
-		if(!value["ISP"].isNull())
-			valueObject.iSP = value["ISP"].asString();
-		if(!value["Proportion"].isNull())
-			valueObject.proportion = value["Proportion"].asString();
-		if(!value["IspEname"].isNull())
-			valueObject.ispEname = value["IspEname"].asString();
-		if(!value["AvgObjectSize"].isNull())
-			valueObject.avgObjectSize = value["AvgObjectSize"].asString();
-		if(!value["AvgResponseTime"].isNull())
-			valueObject.avgResponseTime = value["AvgResponseTime"].asString();
-		if(!value["Bps"].isNull())
-			valueObject.bps = value["Bps"].asString();
-		if(!value["Qps"].isNull())
-			valueObject.qps = value["Qps"].asString();
-		if(!value["AvgResponseRate"].isNull())
-			valueObject.avgResponseRate = value["AvgResponseRate"].asString();
-		if(!value["ByteHitRate"].isNull())
-			valueObject.byteHitRate = value["ByteHitRate"].asString();
-		if(!value["ReqHitRate"].isNull())
-			valueObject.reqHitRate = value["ReqHitRate"].asString();
-		if(!value["ReqErrRate"].isNull())
-			valueObject.reqErrRate = value["ReqErrRate"].asString();
-		if(!value["TotalBytes"].isNull())
-			valueObject.totalBytes = value["TotalBytes"].asString();
-		if(!value["BytesProportion"].isNull())
-			valueObject.bytesProportion = value["BytesProportion"].asString();
-		if(!value["TotalQuery"].isNull())
-			valueObject.totalQuery = value["TotalQuery"].asString();
+		if(!valueValueISPProportionData["ISP"].isNull())
+			valueObject.iSP = valueValueISPProportionData["ISP"].asString();
+		if(!valueValueISPProportionData["Proportion"].isNull())
+			valueObject.proportion = valueValueISPProportionData["Proportion"].asString();
+		if(!valueValueISPProportionData["IspEname"].isNull())
+			valueObject.ispEname = valueValueISPProportionData["IspEname"].asString();
+		if(!valueValueISPProportionData["AvgObjectSize"].isNull())
+			valueObject.avgObjectSize = valueValueISPProportionData["AvgObjectSize"].asString();
+		if(!valueValueISPProportionData["AvgResponseTime"].isNull())
+			valueObject.avgResponseTime = valueValueISPProportionData["AvgResponseTime"].asString();
+		if(!valueValueISPProportionData["Bps"].isNull())
+			valueObject.bps = valueValueISPProportionData["Bps"].asString();
+		if(!valueValueISPProportionData["Qps"].isNull())
+			valueObject.qps = valueValueISPProportionData["Qps"].asString();
+		if(!valueValueISPProportionData["AvgResponseRate"].isNull())
+			valueObject.avgResponseRate = valueValueISPProportionData["AvgResponseRate"].asString();
+		if(!valueValueISPProportionData["ByteHitRate"].isNull())
+			valueObject.byteHitRate = valueValueISPProportionData["ByteHitRate"].asString();
+		if(!valueValueISPProportionData["ReqHitRate"].isNull())
+			valueObject.reqHitRate = valueValueISPProportionData["ReqHitRate"].asString();
+		if(!valueValueISPProportionData["ReqErrRate"].isNull())
+			valueObject.reqErrRate = valueValueISPProportionData["ReqErrRate"].asString();
+		if(!valueValueISPProportionData["TotalBytes"].isNull())
+			valueObject.totalBytes = valueValueISPProportionData["TotalBytes"].asString();
+		if(!valueValueISPProportionData["BytesProportion"].isNull())
+			valueObject.bytesProportion = valueValueISPProportionData["BytesProportion"].asString();
+		if(!valueValueISPProportionData["TotalQuery"].isNull())
+			valueObject.totalQuery = valueValueISPProportionData["TotalQuery"].asString();
 		value_.push_back(valueObject);
 	}
 	if(!value["DomainName"].isNull())

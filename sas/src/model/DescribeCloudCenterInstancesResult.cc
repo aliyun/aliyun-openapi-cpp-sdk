@@ -39,58 +39,58 @@ void DescribeCloudCenterInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstances = value["Instances"]["Instance"];
-	for (auto value : allInstances)
+	auto allInstancesNode = value["Instances"]["Instance"];
+	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
-		if(!value["InternetIp"].isNull())
-			instancesObject.internetIp = value["InternetIp"].asString();
-		if(!value["Os"].isNull())
-			instancesObject.os = value["Os"].asString();
-		if(!value["InstanceId"].isNull())
-			instancesObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceName"].isNull())
-			instancesObject.instanceName = value["InstanceName"].asString();
-		if(!value["RegionName"].isNull())
-			instancesObject.regionName = value["RegionName"].asString();
-		if(!value["Ip"].isNull())
-			instancesObject.ip = value["Ip"].asString();
-		if(!value["ClientStatus"].isNull())
-			instancesObject.clientStatus = value["ClientStatus"].asString();
-		if(!value["Region"].isNull())
-			instancesObject.region = value["Region"].asString();
-		if(!value["Uuid"].isNull())
-			instancesObject.uuid = value["Uuid"].asString();
-		if(!value["IntranetIp"].isNull())
-			instancesObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["AssetType"].isNull())
-			instancesObject.assetType = value["AssetType"].asString();
-		if(!value["Status"].isNull())
-			instancesObject.status = value["Status"].asString();
-		if(!value["Tag"].isNull())
-			instancesObject.tag = value["Tag"].asString();
-		if(!value["VpcInstanceId"].isNull())
-			instancesObject.vpcInstanceId = value["VpcInstanceId"].asString();
-		if(!value["OsName"].isNull())
-			instancesObject.osName = value["OsName"].asString();
-		if(!value["Flag"].isNull())
-			instancesObject.flag = std::stoi(value["Flag"].asString());
-		if(!value["HcStatus"].isNull())
-			instancesObject.hcStatus = value["HcStatus"].asString();
-		if(!value["VulStatus"].isNull())
-			instancesObject.vulStatus = value["VulStatus"].asString();
-		if(!value["AlarmStatus"].isNull())
-			instancesObject.alarmStatus = value["AlarmStatus"].asString();
-		if(!value["RiskStatus"].isNull())
-			instancesObject.riskStatus = value["RiskStatus"].asString();
-		if(!value["HealthCheckCount"].isNull())
-			instancesObject.healthCheckCount = std::stoi(value["HealthCheckCount"].asString());
-		if(!value["VulCount"].isNull())
-			instancesObject.vulCount = std::stoi(value["VulCount"].asString());
-		if(!value["SafeEventCount"].isNull())
-			instancesObject.safeEventCount = std::stoi(value["SafeEventCount"].asString());
-		if(!value["RegionId"].isNull())
-			instancesObject.regionId = value["RegionId"].asString();
+		if(!valueInstancesInstance["InternetIp"].isNull())
+			instancesObject.internetIp = valueInstancesInstance["InternetIp"].asString();
+		if(!valueInstancesInstance["Os"].isNull())
+			instancesObject.os = valueInstancesInstance["Os"].asString();
+		if(!valueInstancesInstance["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
+		if(!valueInstancesInstance["InstanceName"].isNull())
+			instancesObject.instanceName = valueInstancesInstance["InstanceName"].asString();
+		if(!valueInstancesInstance["RegionName"].isNull())
+			instancesObject.regionName = valueInstancesInstance["RegionName"].asString();
+		if(!valueInstancesInstance["Ip"].isNull())
+			instancesObject.ip = valueInstancesInstance["Ip"].asString();
+		if(!valueInstancesInstance["ClientStatus"].isNull())
+			instancesObject.clientStatus = valueInstancesInstance["ClientStatus"].asString();
+		if(!valueInstancesInstance["Region"].isNull())
+			instancesObject.region = valueInstancesInstance["Region"].asString();
+		if(!valueInstancesInstance["Uuid"].isNull())
+			instancesObject.uuid = valueInstancesInstance["Uuid"].asString();
+		if(!valueInstancesInstance["IntranetIp"].isNull())
+			instancesObject.intranetIp = valueInstancesInstance["IntranetIp"].asString();
+		if(!valueInstancesInstance["AssetType"].isNull())
+			instancesObject.assetType = valueInstancesInstance["AssetType"].asString();
+		if(!valueInstancesInstance["Status"].isNull())
+			instancesObject.status = valueInstancesInstance["Status"].asString();
+		if(!valueInstancesInstance["Tag"].isNull())
+			instancesObject.tag = valueInstancesInstance["Tag"].asString();
+		if(!valueInstancesInstance["VpcInstanceId"].isNull())
+			instancesObject.vpcInstanceId = valueInstancesInstance["VpcInstanceId"].asString();
+		if(!valueInstancesInstance["OsName"].isNull())
+			instancesObject.osName = valueInstancesInstance["OsName"].asString();
+		if(!valueInstancesInstance["Flag"].isNull())
+			instancesObject.flag = std::stoi(valueInstancesInstance["Flag"].asString());
+		if(!valueInstancesInstance["HcStatus"].isNull())
+			instancesObject.hcStatus = valueInstancesInstance["HcStatus"].asString();
+		if(!valueInstancesInstance["VulStatus"].isNull())
+			instancesObject.vulStatus = valueInstancesInstance["VulStatus"].asString();
+		if(!valueInstancesInstance["AlarmStatus"].isNull())
+			instancesObject.alarmStatus = valueInstancesInstance["AlarmStatus"].asString();
+		if(!valueInstancesInstance["RiskStatus"].isNull())
+			instancesObject.riskStatus = valueInstancesInstance["RiskStatus"].asString();
+		if(!valueInstancesInstance["HealthCheckCount"].isNull())
+			instancesObject.healthCheckCount = std::stoi(valueInstancesInstance["HealthCheckCount"].asString());
+		if(!valueInstancesInstance["VulCount"].isNull())
+			instancesObject.vulCount = std::stoi(valueInstancesInstance["VulCount"].asString());
+		if(!valueInstancesInstance["SafeEventCount"].isNull())
+			instancesObject.safeEventCount = std::stoi(valueInstancesInstance["SafeEventCount"].asString());
+		if(!valueInstancesInstance["RegionId"].isNull())
+			instancesObject.regionId = valueInstancesInstance["RegionId"].asString();
 		instances_.push_back(instancesObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

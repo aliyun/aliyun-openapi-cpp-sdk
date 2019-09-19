@@ -42,14 +42,14 @@ void GetInstanceSummaryReportByIntervalResult::parse(const std::string &payload)
 	auto instanceTimeIntervalReportNode = value["InstanceTimeIntervalReport"];
 	if(!instanceTimeIntervalReportNode["InstanceId"].isNull())
 		instanceTimeIntervalReport_.instanceId = instanceTimeIntervalReportNode["InstanceId"].asString();
-	auto allIntervalList = value["IntervalList"]["InstanceSummaryReport"];
-	for (auto value : allIntervalList)
+	auto allIntervalListNode = instanceTimeIntervalReportNode["IntervalList"]["InstanceSummaryReport"];
+	for (auto instanceTimeIntervalReportNodeIntervalListInstanceSummaryReport : allIntervalListNode)
 	{
 		InstanceTimeIntervalReport::InstanceSummaryReport instanceSummaryReportObject;
-		if(!value["Timestamp"].isNull())
-			instanceSummaryReportObject.timestamp = value["Timestamp"].asString();
-		if(!value["InstanceId"].isNull())
-			instanceSummaryReportObject.instanceId = value["InstanceId"].asString();
+		if(!instanceTimeIntervalReportNodeIntervalListInstanceSummaryReport["Timestamp"].isNull())
+			instanceSummaryReportObject.timestamp = instanceTimeIntervalReportNodeIntervalListInstanceSummaryReport["Timestamp"].asString();
+		if(!instanceTimeIntervalReportNodeIntervalListInstanceSummaryReport["InstanceId"].isNull())
+			instanceSummaryReportObject.instanceId = instanceTimeIntervalReportNodeIntervalListInstanceSummaryReport["InstanceId"].asString();
 		auto overallNode = value["Overall"];
 		if(!overallNode["TotalCalls"].isNull())
 			instanceSummaryReportObject.overall.totalCalls = std::stol(overallNode["TotalCalls"].asString());

@@ -39,18 +39,18 @@ void DescribeScdnDomainTrafficDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTrafficDataPerInterval = value["TrafficDataPerInterval"]["DataModule"];
-	for (auto value : allTrafficDataPerInterval)
+	auto allTrafficDataPerIntervalNode = value["TrafficDataPerInterval"]["DataModule"];
+	for (auto valueTrafficDataPerIntervalDataModule : allTrafficDataPerIntervalNode)
 	{
 		DataModule trafficDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			trafficDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["TrafficValue"].isNull())
-			trafficDataPerIntervalObject.trafficValue = value["TrafficValue"].asString();
-		if(!value["HttpTrafficValue"].isNull())
-			trafficDataPerIntervalObject.httpTrafficValue = value["HttpTrafficValue"].asString();
-		if(!value["HttpsTrafficValue"].isNull())
-			trafficDataPerIntervalObject.httpsTrafficValue = value["HttpsTrafficValue"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["TrafficValue"].isNull())
+			trafficDataPerIntervalObject.trafficValue = valueTrafficDataPerIntervalDataModule["TrafficValue"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["HttpTrafficValue"].isNull())
+			trafficDataPerIntervalObject.httpTrafficValue = valueTrafficDataPerIntervalDataModule["HttpTrafficValue"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["HttpsTrafficValue"].isNull())
+			trafficDataPerIntervalObject.httpsTrafficValue = valueTrafficDataPerIntervalDataModule["HttpsTrafficValue"].asString();
 		trafficDataPerInterval_.push_back(trafficDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

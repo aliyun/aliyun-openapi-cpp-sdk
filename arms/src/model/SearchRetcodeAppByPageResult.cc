@@ -46,26 +46,26 @@ void SearchRetcodeAppByPageResult::parse(const std::string &payload)
 		pageBean_.pageNumber = std::stoi(pageBeanNode["PageNumber"].asString());
 	if(!pageBeanNode["PageSize"].isNull())
 		pageBean_.pageSize = std::stoi(pageBeanNode["PageSize"].asString());
-	auto allRetcodeApps = value["RetcodeApps"]["RetcodeApp"];
-	for (auto value : allRetcodeApps)
+	auto allRetcodeAppsNode = pageBeanNode["RetcodeApps"]["RetcodeApp"];
+	for (auto pageBeanNodeRetcodeAppsRetcodeApp : allRetcodeAppsNode)
 	{
 		PageBean::RetcodeApp retcodeAppObject;
-		if(!value["AppId"].isNull())
-			retcodeAppObject.appId = std::stol(value["AppId"].asString());
-		if(!value["Pid"].isNull())
-			retcodeAppObject.pid = value["Pid"].asString();
-		if(!value["AppName"].isNull())
-			retcodeAppObject.appName = value["AppName"].asString();
-		if(!value["Type"].isNull())
-			retcodeAppObject.type = value["Type"].asString();
-		if(!value["UserId"].isNull())
-			retcodeAppObject.userId = value["UserId"].asString();
-		if(!value["RegionId"].isNull())
-			retcodeAppObject.regionId = value["RegionId"].asString();
-		if(!value["CreateTime"].isNull())
-			retcodeAppObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["UpdateTime"].isNull())
-			retcodeAppObject.updateTime = std::stol(value["UpdateTime"].asString());
+		if(!pageBeanNodeRetcodeAppsRetcodeApp["AppId"].isNull())
+			retcodeAppObject.appId = std::stol(pageBeanNodeRetcodeAppsRetcodeApp["AppId"].asString());
+		if(!pageBeanNodeRetcodeAppsRetcodeApp["Pid"].isNull())
+			retcodeAppObject.pid = pageBeanNodeRetcodeAppsRetcodeApp["Pid"].asString();
+		if(!pageBeanNodeRetcodeAppsRetcodeApp["AppName"].isNull())
+			retcodeAppObject.appName = pageBeanNodeRetcodeAppsRetcodeApp["AppName"].asString();
+		if(!pageBeanNodeRetcodeAppsRetcodeApp["Type"].isNull())
+			retcodeAppObject.type = pageBeanNodeRetcodeAppsRetcodeApp["Type"].asString();
+		if(!pageBeanNodeRetcodeAppsRetcodeApp["UserId"].isNull())
+			retcodeAppObject.userId = pageBeanNodeRetcodeAppsRetcodeApp["UserId"].asString();
+		if(!pageBeanNodeRetcodeAppsRetcodeApp["RegionId"].isNull())
+			retcodeAppObject.regionId = pageBeanNodeRetcodeAppsRetcodeApp["RegionId"].asString();
+		if(!pageBeanNodeRetcodeAppsRetcodeApp["CreateTime"].isNull())
+			retcodeAppObject.createTime = std::stol(pageBeanNodeRetcodeAppsRetcodeApp["CreateTime"].asString());
+		if(!pageBeanNodeRetcodeAppsRetcodeApp["UpdateTime"].isNull())
+			retcodeAppObject.updateTime = std::stol(pageBeanNodeRetcodeAppsRetcodeApp["UpdateTime"].asString());
 		pageBean_.retcodeApps.push_back(retcodeAppObject);
 	}
 

@@ -39,14 +39,14 @@ void DescribeCasterSyncGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSyncGroups = value["SyncGroups"]["SyncGroup"];
-	for (auto value : allSyncGroups)
+	auto allSyncGroupsNode = value["SyncGroups"]["SyncGroup"];
+	for (auto valueSyncGroupsSyncGroup : allSyncGroupsNode)
 	{
 		SyncGroup syncGroupsObject;
-		if(!value["Mode"].isNull())
-			syncGroupsObject.mode = std::stoi(value["Mode"].asString());
-		if(!value["HostResourceId"].isNull())
-			syncGroupsObject.hostResourceId = value["HostResourceId"].asString();
+		if(!valueSyncGroupsSyncGroup["Mode"].isNull())
+			syncGroupsObject.mode = std::stoi(valueSyncGroupsSyncGroup["Mode"].asString());
+		if(!valueSyncGroupsSyncGroup["HostResourceId"].isNull())
+			syncGroupsObject.hostResourceId = valueSyncGroupsSyncGroup["HostResourceId"].asString();
 		auto allResourceIds = value["ResourceIds"]["ResourceId"];
 		for (auto value : allResourceIds)
 			syncGroupsObject.resourceIds.push_back(value.asString());

@@ -39,18 +39,18 @@ void DescribeQosesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQoses = value["Qoses"]["Qos"];
-	for (auto value : allQoses)
+	auto allQosesNode = value["Qoses"]["Qos"];
+	for (auto valueQosesQos : allQosesNode)
 	{
 		Qos qosesObject;
-		if(!value["QosId"].isNull())
-			qosesObject.qosId = value["QosId"].asString();
-		if(!value["QosName"].isNull())
-			qosesObject.qosName = value["QosName"].asString();
-		if(!value["SagCount"].isNull())
-			qosesObject.sagCount = value["SagCount"].asString();
-		if(!value["SmartAGIds"].isNull())
-			qosesObject.smartAGIds = value["SmartAGIds"].asString();
+		if(!valueQosesQos["QosId"].isNull())
+			qosesObject.qosId = valueQosesQos["QosId"].asString();
+		if(!valueQosesQos["QosName"].isNull())
+			qosesObject.qosName = valueQosesQos["QosName"].asString();
+		if(!valueQosesQos["SagCount"].isNull())
+			qosesObject.sagCount = valueQosesQos["SagCount"].asString();
+		if(!valueQosesQos["SmartAGIds"].isNull())
+			qosesObject.smartAGIds = valueQosesQos["SmartAGIds"].asString();
 		qoses_.push_back(qosesObject);
 	}
 	if(!value["TotalCount"].isNull())

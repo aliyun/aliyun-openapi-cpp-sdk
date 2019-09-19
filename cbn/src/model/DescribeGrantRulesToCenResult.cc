@@ -39,20 +39,20 @@ void DescribeGrantRulesToCenResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allGrantRules = value["GrantRules"]["GrantRule"];
-	for (auto value : allGrantRules)
+	auto allGrantRulesNode = value["GrantRules"]["GrantRule"];
+	for (auto valueGrantRulesGrantRule : allGrantRulesNode)
 	{
 		GrantRule grantRulesObject;
-		if(!value["CenId"].isNull())
-			grantRulesObject.cenId = value["CenId"].asString();
-		if(!value["ChildInstanceRegionId"].isNull())
-			grantRulesObject.childInstanceRegionId = value["ChildInstanceRegionId"].asString();
-		if(!value["ChildInstanceType"].isNull())
-			grantRulesObject.childInstanceType = value["ChildInstanceType"].asString();
-		if(!value["ChildInstanceId"].isNull())
-			grantRulesObject.childInstanceId = value["ChildInstanceId"].asString();
-		if(!value["ChildInstanceOwnerId"].isNull())
-			grantRulesObject.childInstanceOwnerId = std::stol(value["ChildInstanceOwnerId"].asString());
+		if(!valueGrantRulesGrantRule["CenId"].isNull())
+			grantRulesObject.cenId = valueGrantRulesGrantRule["CenId"].asString();
+		if(!valueGrantRulesGrantRule["ChildInstanceRegionId"].isNull())
+			grantRulesObject.childInstanceRegionId = valueGrantRulesGrantRule["ChildInstanceRegionId"].asString();
+		if(!valueGrantRulesGrantRule["ChildInstanceType"].isNull())
+			grantRulesObject.childInstanceType = valueGrantRulesGrantRule["ChildInstanceType"].asString();
+		if(!valueGrantRulesGrantRule["ChildInstanceId"].isNull())
+			grantRulesObject.childInstanceId = valueGrantRulesGrantRule["ChildInstanceId"].asString();
+		if(!valueGrantRulesGrantRule["ChildInstanceOwnerId"].isNull())
+			grantRulesObject.childInstanceOwnerId = std::stol(valueGrantRulesGrantRule["ChildInstanceOwnerId"].asString());
 		grantRules_.push_back(grantRulesObject);
 	}
 

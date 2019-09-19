@@ -39,20 +39,20 @@ void DescribeAccessWhiteListEipListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEipList = value["EipList"]["Ecs"];
-	for (auto value : allEipList)
+	auto allEipListNode = value["EipList"]["Ecs"];
+	for (auto valueEipListEcs : allEipListNode)
 	{
 		Ecs eipListObject;
-		if(!value["InstanceName"].isNull())
-			eipListObject.instanceName = value["InstanceName"].asString();
-		if(!value["InstanceId"].isNull())
-			eipListObject.instanceId = value["InstanceId"].asString();
-		if(!value["IP"].isNull())
-			eipListObject.iP = value["IP"].asString();
-		if(!value["Region"].isNull())
-			eipListObject.region = value["Region"].asString();
-		if(!value["ItemSign"].isNull())
-			eipListObject.itemSign = value["ItemSign"].asString();
+		if(!valueEipListEcs["InstanceName"].isNull())
+			eipListObject.instanceName = valueEipListEcs["InstanceName"].asString();
+		if(!valueEipListEcs["InstanceId"].isNull())
+			eipListObject.instanceId = valueEipListEcs["InstanceId"].asString();
+		if(!valueEipListEcs["IP"].isNull())
+			eipListObject.iP = valueEipListEcs["IP"].asString();
+		if(!valueEipListEcs["Region"].isNull())
+			eipListObject.region = valueEipListEcs["Region"].asString();
+		if(!valueEipListEcs["ItemSign"].isNull())
+			eipListObject.itemSign = valueEipListEcs["ItemSign"].asString();
 		eipList_.push_back(eipListObject);
 	}
 	if(!value["TotalCount"].isNull())

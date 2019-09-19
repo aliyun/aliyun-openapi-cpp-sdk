@@ -39,28 +39,28 @@ void GetJobRunningTimeStatisticInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRunningTimeList = value["RunningTimeList"]["ClusterStatJobRunningTime"];
-	for (auto value : allRunningTimeList)
+	auto allRunningTimeListNode = value["RunningTimeList"]["ClusterStatJobRunningTime"];
+	for (auto valueRunningTimeListClusterStatJobRunningTime : allRunningTimeListNode)
 	{
 		ClusterStatJobRunningTime runningTimeListObject;
-		if(!value["ApplicationId"].isNull())
-			runningTimeListObject.applicationId = value["ApplicationId"].asString();
-		if(!value["JobId"].isNull())
-			runningTimeListObject.jobId = value["JobId"].asString();
-		if(!value["StartTime"].isNull())
-			runningTimeListObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["FinishTime"].isNull())
-			runningTimeListObject.finishTime = std::stol(value["FinishTime"].asString());
-		if(!value["Name"].isNull())
-			runningTimeListObject.name = value["Name"].asString();
-		if(!value["Queue"].isNull())
-			runningTimeListObject.queue = value["Queue"].asString();
-		if(!value["User"].isNull())
-			runningTimeListObject.user = value["User"].asString();
-		if(!value["State"].isNull())
-			runningTimeListObject.state = value["State"].asString();
-		if(!value["RunningTime"].isNull())
-			runningTimeListObject.runningTime = std::stol(value["RunningTime"].asString());
+		if(!valueRunningTimeListClusterStatJobRunningTime["ApplicationId"].isNull())
+			runningTimeListObject.applicationId = valueRunningTimeListClusterStatJobRunningTime["ApplicationId"].asString();
+		if(!valueRunningTimeListClusterStatJobRunningTime["JobId"].isNull())
+			runningTimeListObject.jobId = valueRunningTimeListClusterStatJobRunningTime["JobId"].asString();
+		if(!valueRunningTimeListClusterStatJobRunningTime["StartTime"].isNull())
+			runningTimeListObject.startTime = std::stol(valueRunningTimeListClusterStatJobRunningTime["StartTime"].asString());
+		if(!valueRunningTimeListClusterStatJobRunningTime["FinishTime"].isNull())
+			runningTimeListObject.finishTime = std::stol(valueRunningTimeListClusterStatJobRunningTime["FinishTime"].asString());
+		if(!valueRunningTimeListClusterStatJobRunningTime["Name"].isNull())
+			runningTimeListObject.name = valueRunningTimeListClusterStatJobRunningTime["Name"].asString();
+		if(!valueRunningTimeListClusterStatJobRunningTime["Queue"].isNull())
+			runningTimeListObject.queue = valueRunningTimeListClusterStatJobRunningTime["Queue"].asString();
+		if(!valueRunningTimeListClusterStatJobRunningTime["User"].isNull())
+			runningTimeListObject.user = valueRunningTimeListClusterStatJobRunningTime["User"].asString();
+		if(!valueRunningTimeListClusterStatJobRunningTime["State"].isNull())
+			runningTimeListObject.state = valueRunningTimeListClusterStatJobRunningTime["State"].asString();
+		if(!valueRunningTimeListClusterStatJobRunningTime["RunningTime"].isNull())
+			runningTimeListObject.runningTime = std::stol(valueRunningTimeListClusterStatJobRunningTime["RunningTime"].asString());
 		runningTimeList_.push_back(runningTimeListObject);
 	}
 	if(!value["Total"].isNull())

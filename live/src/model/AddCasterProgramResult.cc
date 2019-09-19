@@ -39,12 +39,12 @@ void AddCasterProgramResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEpisodeIds = value["EpisodeIds"]["EpisodeId"];
-	for (auto value : allEpisodeIds)
+	auto allEpisodeIdsNode = value["EpisodeIds"]["EpisodeId"];
+	for (auto valueEpisodeIdsEpisodeId : allEpisodeIdsNode)
 	{
 		EpisodeId episodeIdsObject;
-		if(!value["EpisodeId"].isNull())
-			episodeIdsObject.episodeId = value["EpisodeId"].asString();
+		if(!valueEpisodeIdsEpisodeId["EpisodeId"].isNull())
+			episodeIdsObject.episodeId = valueEpisodeIdsEpisodeId["EpisodeId"].asString();
 		episodeIds_.push_back(episodeIdsObject);
 	}
 

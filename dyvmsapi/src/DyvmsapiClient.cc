@@ -123,6 +123,42 @@ DyvmsapiClient::BatchRobotSmartCallOutcomeCallable DyvmsapiClient::batchRobotSma
 	return task->get_future();
 }
 
+DyvmsapiClient::BindNumberAndVoipIdOutcome DyvmsapiClient::bindNumberAndVoipId(const BindNumberAndVoipIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindNumberAndVoipIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindNumberAndVoipIdOutcome(BindNumberAndVoipIdResult(outcome.result()));
+	else
+		return BindNumberAndVoipIdOutcome(outcome.error());
+}
+
+void DyvmsapiClient::bindNumberAndVoipIdAsync(const BindNumberAndVoipIdRequest& request, const BindNumberAndVoipIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindNumberAndVoipId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::BindNumberAndVoipIdOutcomeCallable DyvmsapiClient::bindNumberAndVoipIdCallable(const BindNumberAndVoipIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindNumberAndVoipIdOutcome()>>(
+			[this, request]()
+			{
+			return this->bindNumberAndVoipId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyvmsapiClient::CancelCallOutcome DyvmsapiClient::cancelCall(const CancelCallRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +945,42 @@ DyvmsapiClient::StopRobotTaskOutcomeCallable DyvmsapiClient::stopRobotTaskCallab
 			[this, request]()
 			{
 			return this->stopRobotTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::UnbindNumberAndVoipIdOutcome DyvmsapiClient::unbindNumberAndVoipId(const UnbindNumberAndVoipIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindNumberAndVoipIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindNumberAndVoipIdOutcome(UnbindNumberAndVoipIdResult(outcome.result()));
+	else
+		return UnbindNumberAndVoipIdOutcome(outcome.error());
+}
+
+void DyvmsapiClient::unbindNumberAndVoipIdAsync(const UnbindNumberAndVoipIdRequest& request, const UnbindNumberAndVoipIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindNumberAndVoipId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::UnbindNumberAndVoipIdOutcomeCallable DyvmsapiClient::unbindNumberAndVoipIdCallable(const UnbindNumberAndVoipIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindNumberAndVoipIdOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindNumberAndVoipId(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

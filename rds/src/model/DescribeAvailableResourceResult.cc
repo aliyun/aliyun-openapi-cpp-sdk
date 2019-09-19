@@ -39,50 +39,50 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAvailableZones = value["AvailableZones"]["AvailableZone"];
-	for (auto value : allAvailableZones)
+	auto allAvailableZonesNode = value["AvailableZones"]["AvailableZone"];
+	for (auto valueAvailableZonesAvailableZone : allAvailableZonesNode)
 	{
 		AvailableZone availableZonesObject;
-		if(!value["RegionId"].isNull())
-			availableZonesObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			availableZonesObject.zoneId = value["ZoneId"].asString();
-		if(!value["Status"].isNull())
-			availableZonesObject.status = value["Status"].asString();
-		if(!value["NetworkTypes"].isNull())
-			availableZonesObject.networkTypes = value["NetworkTypes"].asString();
-		auto allSupportedEngines = value["SupportedEngines"]["SupportedEngine"];
-		for (auto value : allSupportedEngines)
+		if(!valueAvailableZonesAvailableZone["RegionId"].isNull())
+			availableZonesObject.regionId = valueAvailableZonesAvailableZone["RegionId"].asString();
+		if(!valueAvailableZonesAvailableZone["ZoneId"].isNull())
+			availableZonesObject.zoneId = valueAvailableZonesAvailableZone["ZoneId"].asString();
+		if(!valueAvailableZonesAvailableZone["Status"].isNull())
+			availableZonesObject.status = valueAvailableZonesAvailableZone["Status"].asString();
+		if(!valueAvailableZonesAvailableZone["NetworkTypes"].isNull())
+			availableZonesObject.networkTypes = valueAvailableZonesAvailableZone["NetworkTypes"].asString();
+		auto allSupportedEnginesNode = allAvailableZonesNode["SupportedEngines"]["SupportedEngine"];
+		for (auto allAvailableZonesNodeSupportedEnginesSupportedEngine : allSupportedEnginesNode)
 		{
 			AvailableZone::SupportedEngine supportedEnginesObject;
-			if(!value["Engine"].isNull())
-				supportedEnginesObject.engine = value["Engine"].asString();
-			auto allSupportedEngineVersions = value["SupportedEngineVersions"]["SupportedEngineVersion"];
-			for (auto value : allSupportedEngineVersions)
+			if(!allAvailableZonesNodeSupportedEnginesSupportedEngine["Engine"].isNull())
+				supportedEnginesObject.engine = allAvailableZonesNodeSupportedEnginesSupportedEngine["Engine"].asString();
+			auto allSupportedEngineVersionsNode = allSupportedEnginesNode["SupportedEngineVersions"]["SupportedEngineVersion"];
+			for (auto allSupportedEnginesNodeSupportedEngineVersionsSupportedEngineVersion : allSupportedEngineVersionsNode)
 			{
 				AvailableZone::SupportedEngine::SupportedEngineVersion supportedEngineVersionsObject;
-				if(!value["Version"].isNull())
-					supportedEngineVersionsObject.version = value["Version"].asString();
-				auto allSupportedCategorys = value["SupportedCategorys"]["SupportedCategory"];
-				for (auto value : allSupportedCategorys)
+				if(!allSupportedEnginesNodeSupportedEngineVersionsSupportedEngineVersion["Version"].isNull())
+					supportedEngineVersionsObject.version = allSupportedEnginesNodeSupportedEngineVersionsSupportedEngineVersion["Version"].asString();
+				auto allSupportedCategorysNode = allSupportedEngineVersionsNode["SupportedCategorys"]["SupportedCategory"];
+				for (auto allSupportedEngineVersionsNodeSupportedCategorysSupportedCategory : allSupportedCategorysNode)
 				{
 					AvailableZone::SupportedEngine::SupportedEngineVersion::SupportedCategory supportedCategorysObject;
-					if(!value["Category"].isNull())
-						supportedCategorysObject.category = value["Category"].asString();
-					auto allSupportedStorageTypes = value["SupportedStorageTypes"]["SupportedStorageType"];
-					for (auto value : allSupportedStorageTypes)
+					if(!allSupportedEngineVersionsNodeSupportedCategorysSupportedCategory["Category"].isNull())
+						supportedCategorysObject.category = allSupportedEngineVersionsNodeSupportedCategorysSupportedCategory["Category"].asString();
+					auto allSupportedStorageTypesNode = allSupportedCategorysNode["SupportedStorageTypes"]["SupportedStorageType"];
+					for (auto allSupportedCategorysNodeSupportedStorageTypesSupportedStorageType : allSupportedStorageTypesNode)
 					{
 						AvailableZone::SupportedEngine::SupportedEngineVersion::SupportedCategory::SupportedStorageType supportedStorageTypesObject;
-						if(!value["StorageType"].isNull())
-							supportedStorageTypesObject.storageType = value["StorageType"].asString();
-						auto allAvailableResources = value["AvailableResources"]["AvailableResource"];
-						for (auto value : allAvailableResources)
+						if(!allSupportedCategorysNodeSupportedStorageTypesSupportedStorageType["StorageType"].isNull())
+							supportedStorageTypesObject.storageType = allSupportedCategorysNodeSupportedStorageTypesSupportedStorageType["StorageType"].asString();
+						auto allAvailableResourcesNode = allSupportedStorageTypesNode["AvailableResources"]["AvailableResource"];
+						for (auto allSupportedStorageTypesNodeAvailableResourcesAvailableResource : allAvailableResourcesNode)
 						{
 							AvailableZone::SupportedEngine::SupportedEngineVersion::SupportedCategory::SupportedStorageType::AvailableResource availableResourcesObject;
-							if(!value["DBInstanceClass"].isNull())
-								availableResourcesObject.dBInstanceClass = value["DBInstanceClass"].asString();
-							if(!value["StorageRange"].isNull())
-								availableResourcesObject.storageRange = value["StorageRange"].asString();
+							if(!allSupportedStorageTypesNodeAvailableResourcesAvailableResource["DBInstanceClass"].isNull())
+								availableResourcesObject.dBInstanceClass = allSupportedStorageTypesNodeAvailableResourcesAvailableResource["DBInstanceClass"].asString();
+							if(!allSupportedStorageTypesNodeAvailableResourcesAvailableResource["StorageRange"].isNull())
+								availableResourcesObject.storageRange = allSupportedStorageTypesNodeAvailableResourcesAvailableResource["StorageRange"].asString();
 							auto dBInstanceStorageRangeNode = value["DBInstanceStorageRange"];
 							if(!dBInstanceStorageRangeNode["Max"].isNull())
 								availableResourcesObject.dBInstanceStorageRange.max = std::stoi(dBInstanceStorageRangeNode["Max"].asString());

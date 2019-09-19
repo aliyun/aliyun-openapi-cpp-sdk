@@ -39,52 +39,52 @@ void DescribeEventsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Event"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Event"];
+	for (auto valueItemsEvent : allItemsNode)
 	{
 		Event itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["UserId"].isNull())
-			itemsObject.userId = std::stol(value["UserId"].asString());
-		if(!value["LoginName"].isNull())
-			itemsObject.loginName = value["LoginName"].asString();
-		if(!value["DisplayName"].isNull())
-			itemsObject.displayName = value["DisplayName"].asString();
-		if(!value["ProductCode"].isNull())
-			itemsObject.productCode = value["ProductCode"].asString();
-		if(!value["TypeCode"].isNull())
-			itemsObject.typeCode = value["TypeCode"].asString();
-		if(!value["TypeName"].isNull())
-			itemsObject.typeName = value["TypeName"].asString();
-		if(!value["TelephoneNum"].isNull())
-			itemsObject.telephoneNum = value["TelephoneNum"].asString();
-		if(!value["SubTypeCode"].isNull())
-			itemsObject.subTypeCode = value["SubTypeCode"].asString();
-		if(!value["SubTypeName"].isNull())
-			itemsObject.subTypeName = value["SubTypeName"].asString();
-		if(!value["AlertTime"].isNull())
-			itemsObject.alertTime = std::stol(value["AlertTime"].asString());
-		if(!value["DataInstance"].isNull())
-			itemsObject.dataInstance = value["DataInstance"].asString();
-		if(!value["EventTime"].isNull())
-			itemsObject.eventTime = std::stol(value["EventTime"].asString());
-		if(!value["Status"].isNull())
-			itemsObject.status = std::stoi(value["Status"].asString());
-		if(!value["StatusName"].isNull())
-			itemsObject.statusName = value["StatusName"].asString();
-		if(!value["DealUserId"].isNull())
-			itemsObject.dealUserId = std::stol(value["DealUserId"].asString());
-		if(!value["DealLoginName"].isNull())
-			itemsObject.dealLoginName = value["DealLoginName"].asString();
-		if(!value["DealDisplayName"].isNull())
-			itemsObject.dealDisplayName = value["DealDisplayName"].asString();
-		if(!value["DealTime"].isNull())
-			itemsObject.dealTime = std::stol(value["DealTime"].asString());
-		if(!value["DepartName"].isNull())
-			itemsObject.departName = value["DepartName"].asString();
-		if(!value["Backed"].isNull())
-			itemsObject.backed = value["Backed"].asString() == "true";
+		if(!valueItemsEvent["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsEvent["Id"].asString());
+		if(!valueItemsEvent["UserId"].isNull())
+			itemsObject.userId = std::stol(valueItemsEvent["UserId"].asString());
+		if(!valueItemsEvent["LoginName"].isNull())
+			itemsObject.loginName = valueItemsEvent["LoginName"].asString();
+		if(!valueItemsEvent["DisplayName"].isNull())
+			itemsObject.displayName = valueItemsEvent["DisplayName"].asString();
+		if(!valueItemsEvent["ProductCode"].isNull())
+			itemsObject.productCode = valueItemsEvent["ProductCode"].asString();
+		if(!valueItemsEvent["TypeCode"].isNull())
+			itemsObject.typeCode = valueItemsEvent["TypeCode"].asString();
+		if(!valueItemsEvent["TypeName"].isNull())
+			itemsObject.typeName = valueItemsEvent["TypeName"].asString();
+		if(!valueItemsEvent["TelephoneNum"].isNull())
+			itemsObject.telephoneNum = valueItemsEvent["TelephoneNum"].asString();
+		if(!valueItemsEvent["SubTypeCode"].isNull())
+			itemsObject.subTypeCode = valueItemsEvent["SubTypeCode"].asString();
+		if(!valueItemsEvent["SubTypeName"].isNull())
+			itemsObject.subTypeName = valueItemsEvent["SubTypeName"].asString();
+		if(!valueItemsEvent["AlertTime"].isNull())
+			itemsObject.alertTime = std::stol(valueItemsEvent["AlertTime"].asString());
+		if(!valueItemsEvent["DataInstance"].isNull())
+			itemsObject.dataInstance = valueItemsEvent["DataInstance"].asString();
+		if(!valueItemsEvent["EventTime"].isNull())
+			itemsObject.eventTime = std::stol(valueItemsEvent["EventTime"].asString());
+		if(!valueItemsEvent["Status"].isNull())
+			itemsObject.status = std::stoi(valueItemsEvent["Status"].asString());
+		if(!valueItemsEvent["StatusName"].isNull())
+			itemsObject.statusName = valueItemsEvent["StatusName"].asString();
+		if(!valueItemsEvent["DealUserId"].isNull())
+			itemsObject.dealUserId = std::stol(valueItemsEvent["DealUserId"].asString());
+		if(!valueItemsEvent["DealLoginName"].isNull())
+			itemsObject.dealLoginName = valueItemsEvent["DealLoginName"].asString();
+		if(!valueItemsEvent["DealDisplayName"].isNull())
+			itemsObject.dealDisplayName = valueItemsEvent["DealDisplayName"].asString();
+		if(!valueItemsEvent["DealTime"].isNull())
+			itemsObject.dealTime = std::stol(valueItemsEvent["DealTime"].asString());
+		if(!valueItemsEvent["DepartName"].isNull())
+			itemsObject.departName = valueItemsEvent["DepartName"].asString();
+		if(!valueItemsEvent["Backed"].isNull())
+			itemsObject.backed = valueItemsEvent["Backed"].asString() == "true";
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

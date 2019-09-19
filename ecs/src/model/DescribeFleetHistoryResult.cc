@@ -39,26 +39,26 @@ void DescribeFleetHistoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFleetHistorys = value["FleetHistorys"]["FleetHistory"];
-	for (auto value : allFleetHistorys)
+	auto allFleetHistorysNode = value["FleetHistorys"]["FleetHistory"];
+	for (auto valueFleetHistorysFleetHistory : allFleetHistorysNode)
 	{
 		FleetHistory fleetHistorysObject;
-		if(!value["TaskId"].isNull())
-			fleetHistorysObject.taskId = value["TaskId"].asString();
-		if(!value["Status"].isNull())
-			fleetHistorysObject.status = value["Status"].asString();
-		if(!value["LastEventTime"].isNull())
-			fleetHistorysObject.lastEventTime = value["LastEventTime"].asString();
-		if(!value["StartTime"].isNull())
-			fleetHistorysObject.startTime = value["StartTime"].asString();
-		auto allActivityDetails = value["ActivityDetails"]["ActivityDetail"];
-		for (auto value : allActivityDetails)
+		if(!valueFleetHistorysFleetHistory["TaskId"].isNull())
+			fleetHistorysObject.taskId = valueFleetHistorysFleetHistory["TaskId"].asString();
+		if(!valueFleetHistorysFleetHistory["Status"].isNull())
+			fleetHistorysObject.status = valueFleetHistorysFleetHistory["Status"].asString();
+		if(!valueFleetHistorysFleetHistory["LastEventTime"].isNull())
+			fleetHistorysObject.lastEventTime = valueFleetHistorysFleetHistory["LastEventTime"].asString();
+		if(!valueFleetHistorysFleetHistory["StartTime"].isNull())
+			fleetHistorysObject.startTime = valueFleetHistorysFleetHistory["StartTime"].asString();
+		auto allActivityDetailsNode = allFleetHistorysNode["ActivityDetails"]["ActivityDetail"];
+		for (auto allFleetHistorysNodeActivityDetailsActivityDetail : allActivityDetailsNode)
 		{
 			FleetHistory::ActivityDetail activityDetailsObject;
-			if(!value["Detail"].isNull())
-				activityDetailsObject.detail = value["Detail"].asString();
-			if(!value["Status"].isNull())
-				activityDetailsObject.status = std::stof(value["Status"].asString());
+			if(!allFleetHistorysNodeActivityDetailsActivityDetail["Detail"].isNull())
+				activityDetailsObject.detail = allFleetHistorysNodeActivityDetailsActivityDetail["Detail"].asString();
+			if(!allFleetHistorysNodeActivityDetailsActivityDetail["Status"].isNull())
+				activityDetailsObject.status = std::stof(allFleetHistorysNodeActivityDetailsActivityDetail["Status"].asString());
 			fleetHistorysObject.activityDetails.push_back(activityDetailsObject);
 		}
 		fleetHistorys_.push_back(fleetHistorysObject);

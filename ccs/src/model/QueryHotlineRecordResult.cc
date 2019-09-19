@@ -39,48 +39,48 @@ void QueryHotlineRecordResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRecords = value["Records"]["HotlineRecord"];
-	for (auto value : allRecords)
+	auto allRecordsNode = value["Records"]["HotlineRecord"];
+	for (auto valueRecordsHotlineRecord : allRecordsNode)
 	{
 		HotlineRecord recordsObject;
-		if(!value["Id"].isNull())
-			recordsObject.id = value["Id"].asString();
-		if(!value["VisitorId"].isNull())
-			recordsObject.visitorId = value["VisitorId"].asString();
-		if(!value["VisitorPhone"].isNull())
-			recordsObject.visitorPhone = value["VisitorPhone"].asString();
-		if(!value["VisitorProvince"].isNull())
-			recordsObject.visitorProvince = value["VisitorProvince"].asString();
-		if(!value["CallType"].isNull())
-			recordsObject.callType = value["CallType"].asString();
-		if(!value["AgentId"].isNull())
-			recordsObject.agentId = value["AgentId"].asString();
-		if(!value["AgentName"].isNull())
-			recordsObject.agentName = value["AgentName"].asString();
-		if(!value["GroupId"].isNull())
-			recordsObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			recordsObject.groupName = value["GroupName"].asString();
-		if(!value["CreateTime"].isNull())
-			recordsObject.createTime = value["CreateTime"].asString();
-		if(!value["FinishTime"].isNull())
-			recordsObject.finishTime = value["FinishTime"].asString();
-		if(!value["Status"].isNull())
-			recordsObject.status = value["Status"].asString();
-		if(!value["Memo"].isNull())
-			recordsObject.memo = value["Memo"].asString();
-		if(!value["HangupType"].isNull())
-			recordsObject.hangupType = value["HangupType"].asString();
-		if(!value["Satisfaction"].isNull())
-			recordsObject.satisfaction = value["Satisfaction"].asString();
-		if(!value["OutboundTaskId"].isNull())
-			recordsObject.outboundTaskId = value["OutboundTaskId"].asString();
-		if(!value["Categories"].isNull())
-			recordsObject.categories = value["Categories"].asString();
-		if(!value["CcsInstanceId"].isNull())
-			recordsObject.ccsInstanceId = value["CcsInstanceId"].asString();
-		if(!value["TalkDuration"].isNull())
-			recordsObject.talkDuration = std::stol(value["TalkDuration"].asString());
+		if(!valueRecordsHotlineRecord["Id"].isNull())
+			recordsObject.id = valueRecordsHotlineRecord["Id"].asString();
+		if(!valueRecordsHotlineRecord["VisitorId"].isNull())
+			recordsObject.visitorId = valueRecordsHotlineRecord["VisitorId"].asString();
+		if(!valueRecordsHotlineRecord["VisitorPhone"].isNull())
+			recordsObject.visitorPhone = valueRecordsHotlineRecord["VisitorPhone"].asString();
+		if(!valueRecordsHotlineRecord["VisitorProvince"].isNull())
+			recordsObject.visitorProvince = valueRecordsHotlineRecord["VisitorProvince"].asString();
+		if(!valueRecordsHotlineRecord["CallType"].isNull())
+			recordsObject.callType = valueRecordsHotlineRecord["CallType"].asString();
+		if(!valueRecordsHotlineRecord["AgentId"].isNull())
+			recordsObject.agentId = valueRecordsHotlineRecord["AgentId"].asString();
+		if(!valueRecordsHotlineRecord["AgentName"].isNull())
+			recordsObject.agentName = valueRecordsHotlineRecord["AgentName"].asString();
+		if(!valueRecordsHotlineRecord["GroupId"].isNull())
+			recordsObject.groupId = valueRecordsHotlineRecord["GroupId"].asString();
+		if(!valueRecordsHotlineRecord["GroupName"].isNull())
+			recordsObject.groupName = valueRecordsHotlineRecord["GroupName"].asString();
+		if(!valueRecordsHotlineRecord["CreateTime"].isNull())
+			recordsObject.createTime = valueRecordsHotlineRecord["CreateTime"].asString();
+		if(!valueRecordsHotlineRecord["FinishTime"].isNull())
+			recordsObject.finishTime = valueRecordsHotlineRecord["FinishTime"].asString();
+		if(!valueRecordsHotlineRecord["Status"].isNull())
+			recordsObject.status = valueRecordsHotlineRecord["Status"].asString();
+		if(!valueRecordsHotlineRecord["Memo"].isNull())
+			recordsObject.memo = valueRecordsHotlineRecord["Memo"].asString();
+		if(!valueRecordsHotlineRecord["HangupType"].isNull())
+			recordsObject.hangupType = valueRecordsHotlineRecord["HangupType"].asString();
+		if(!valueRecordsHotlineRecord["Satisfaction"].isNull())
+			recordsObject.satisfaction = valueRecordsHotlineRecord["Satisfaction"].asString();
+		if(!valueRecordsHotlineRecord["OutboundTaskId"].isNull())
+			recordsObject.outboundTaskId = valueRecordsHotlineRecord["OutboundTaskId"].asString();
+		if(!valueRecordsHotlineRecord["Categories"].isNull())
+			recordsObject.categories = valueRecordsHotlineRecord["Categories"].asString();
+		if(!valueRecordsHotlineRecord["CcsInstanceId"].isNull())
+			recordsObject.ccsInstanceId = valueRecordsHotlineRecord["CcsInstanceId"].asString();
+		if(!valueRecordsHotlineRecord["TalkDuration"].isNull())
+			recordsObject.talkDuration = std::stol(valueRecordsHotlineRecord["TalkDuration"].asString());
 		records_.push_back(recordsObject);
 	}
 	if(!value["TotalCount"].isNull())

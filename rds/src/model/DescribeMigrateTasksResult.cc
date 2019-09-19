@@ -39,26 +39,26 @@ void DescribeMigrateTasksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["MigrateTask"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["MigrateTask"];
+	for (auto valueItemsMigrateTask : allItemsNode)
 	{
 		MigrateTask itemsObject;
-		if(!value["DBName"].isNull())
-			itemsObject.dBName = value["DBName"].asString();
-		if(!value["MigrateTaskId"].isNull())
-			itemsObject.migrateTaskId = value["MigrateTaskId"].asString();
-		if(!value["CreateTime"].isNull())
-			itemsObject.createTime = value["CreateTime"].asString();
-		if(!value["EndTime"].isNull())
-			itemsObject.endTime = value["EndTime"].asString();
-		if(!value["BackupMode"].isNull())
-			itemsObject.backupMode = value["BackupMode"].asString();
-		if(!value["Status"].isNull())
-			itemsObject.status = value["Status"].asString();
-		if(!value["IsDBReplaced"].isNull())
-			itemsObject.isDBReplaced = value["IsDBReplaced"].asString();
-		if(!value["Description"].isNull())
-			itemsObject.description = value["Description"].asString();
+		if(!valueItemsMigrateTask["DBName"].isNull())
+			itemsObject.dBName = valueItemsMigrateTask["DBName"].asString();
+		if(!valueItemsMigrateTask["MigrateTaskId"].isNull())
+			itemsObject.migrateTaskId = valueItemsMigrateTask["MigrateTaskId"].asString();
+		if(!valueItemsMigrateTask["CreateTime"].isNull())
+			itemsObject.createTime = valueItemsMigrateTask["CreateTime"].asString();
+		if(!valueItemsMigrateTask["EndTime"].isNull())
+			itemsObject.endTime = valueItemsMigrateTask["EndTime"].asString();
+		if(!valueItemsMigrateTask["BackupMode"].isNull())
+			itemsObject.backupMode = valueItemsMigrateTask["BackupMode"].asString();
+		if(!valueItemsMigrateTask["Status"].isNull())
+			itemsObject.status = valueItemsMigrateTask["Status"].asString();
+		if(!valueItemsMigrateTask["IsDBReplaced"].isNull())
+			itemsObject.isDBReplaced = valueItemsMigrateTask["IsDBReplaced"].asString();
+		if(!valueItemsMigrateTask["Description"].isNull())
+			itemsObject.description = valueItemsMigrateTask["Description"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceId"].isNull())

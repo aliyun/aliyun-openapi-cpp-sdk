@@ -39,22 +39,22 @@ void DescribeInstanceStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Entity"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["Entity"];
+	for (auto valueDataEntity : allDataNode)
 	{
 		Entity dataObject;
-		if(!value["Uuid"].isNull())
-			dataObject.uuid = value["Uuid"].asString();
-		if(!value["Account"].isNull())
-			dataObject.account = std::stoi(value["Account"].asString());
-		if(!value["Health"].isNull())
-			dataObject.health = std::stoi(value["Health"].asString());
-		if(!value["Trojan"].isNull())
-			dataObject.trojan = std::stoi(value["Trojan"].asString());
-		if(!value["Suspicious"].isNull())
-			dataObject.suspicious = std::stoi(value["Suspicious"].asString());
-		if(!value["Vul"].isNull())
-			dataObject.vul = std::stoi(value["Vul"].asString());
+		if(!valueDataEntity["Uuid"].isNull())
+			dataObject.uuid = valueDataEntity["Uuid"].asString();
+		if(!valueDataEntity["Account"].isNull())
+			dataObject.account = std::stoi(valueDataEntity["Account"].asString());
+		if(!valueDataEntity["Health"].isNull())
+			dataObject.health = std::stoi(valueDataEntity["Health"].asString());
+		if(!valueDataEntity["Trojan"].isNull())
+			dataObject.trojan = std::stoi(valueDataEntity["Trojan"].asString());
+		if(!valueDataEntity["Suspicious"].isNull())
+			dataObject.suspicious = std::stoi(valueDataEntity["Suspicious"].asString());
+		if(!valueDataEntity["Vul"].isNull())
+			dataObject.vul = std::stoi(valueDataEntity["Vul"].asString());
 		data_.push_back(dataObject);
 	}
 

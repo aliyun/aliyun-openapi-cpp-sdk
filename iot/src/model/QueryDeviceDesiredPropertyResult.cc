@@ -40,24 +40,24 @@ void QueryDeviceDesiredPropertyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allList = value["List"]["DesiredPropertyInfo"];
-	for (auto value : allList)
+	auto allListNode = dataNode["List"]["DesiredPropertyInfo"];
+	for (auto dataNodeListDesiredPropertyInfo : allListNode)
 	{
 		Data::DesiredPropertyInfo desiredPropertyInfoObject;
-		if(!value["Unit"].isNull())
-			desiredPropertyInfoObject.unit = value["Unit"].asString();
-		if(!value["Identifier"].isNull())
-			desiredPropertyInfoObject.identifier = value["Identifier"].asString();
-		if(!value["DataType"].isNull())
-			desiredPropertyInfoObject.dataType = value["DataType"].asString();
-		if(!value["Time"].isNull())
-			desiredPropertyInfoObject.time = value["Time"].asString();
-		if(!value["Value"].isNull())
-			desiredPropertyInfoObject.value = value["Value"].asString();
-		if(!value["Name"].isNull())
-			desiredPropertyInfoObject.name = value["Name"].asString();
-		if(!value["Version"].isNull())
-			desiredPropertyInfoObject.version = std::stol(value["Version"].asString());
+		if(!dataNodeListDesiredPropertyInfo["Unit"].isNull())
+			desiredPropertyInfoObject.unit = dataNodeListDesiredPropertyInfo["Unit"].asString();
+		if(!dataNodeListDesiredPropertyInfo["Identifier"].isNull())
+			desiredPropertyInfoObject.identifier = dataNodeListDesiredPropertyInfo["Identifier"].asString();
+		if(!dataNodeListDesiredPropertyInfo["DataType"].isNull())
+			desiredPropertyInfoObject.dataType = dataNodeListDesiredPropertyInfo["DataType"].asString();
+		if(!dataNodeListDesiredPropertyInfo["Time"].isNull())
+			desiredPropertyInfoObject.time = dataNodeListDesiredPropertyInfo["Time"].asString();
+		if(!dataNodeListDesiredPropertyInfo["Value"].isNull())
+			desiredPropertyInfoObject.value = dataNodeListDesiredPropertyInfo["Value"].asString();
+		if(!dataNodeListDesiredPropertyInfo["Name"].isNull())
+			desiredPropertyInfoObject.name = dataNodeListDesiredPropertyInfo["Name"].asString();
+		if(!dataNodeListDesiredPropertyInfo["Version"].isNull())
+			desiredPropertyInfoObject.version = std::stol(dataNodeListDesiredPropertyInfo["Version"].asString());
 		data_.list.push_back(desiredPropertyInfoObject);
 	}
 	if(!value["Success"].isNull())

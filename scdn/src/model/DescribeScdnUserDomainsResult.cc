@@ -39,40 +39,40 @@ void DescribeScdnUserDomainsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomains = value["Domains"]["PageData"];
-	for (auto value : allDomains)
+	auto allDomainsNode = value["Domains"]["PageData"];
+	for (auto valueDomainsPageData : allDomainsNode)
 	{
 		PageData domainsObject;
-		if(!value["DomainName"].isNull())
-			domainsObject.domainName = value["DomainName"].asString();
-		if(!value["Cname"].isNull())
-			domainsObject.cname = value["Cname"].asString();
-		if(!value["DomainStatus"].isNull())
-			domainsObject.domainStatus = value["DomainStatus"].asString();
-		if(!value["GmtCreated"].isNull())
-			domainsObject.gmtCreated = value["GmtCreated"].asString();
-		if(!value["GmtModified"].isNull())
-			domainsObject.gmtModified = value["GmtModified"].asString();
-		if(!value["Description"].isNull())
-			domainsObject.description = value["Description"].asString();
-		if(!value["SSLProtocol"].isNull())
-			domainsObject.sSLProtocol = value["SSLProtocol"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			domainsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["Sandbox"].isNull())
-			domainsObject.sandbox = value["Sandbox"].asString();
-		auto allSources = value["Sources"]["Source"];
-		for (auto value : allSources)
+		if(!valueDomainsPageData["DomainName"].isNull())
+			domainsObject.domainName = valueDomainsPageData["DomainName"].asString();
+		if(!valueDomainsPageData["Cname"].isNull())
+			domainsObject.cname = valueDomainsPageData["Cname"].asString();
+		if(!valueDomainsPageData["DomainStatus"].isNull())
+			domainsObject.domainStatus = valueDomainsPageData["DomainStatus"].asString();
+		if(!valueDomainsPageData["GmtCreated"].isNull())
+			domainsObject.gmtCreated = valueDomainsPageData["GmtCreated"].asString();
+		if(!valueDomainsPageData["GmtModified"].isNull())
+			domainsObject.gmtModified = valueDomainsPageData["GmtModified"].asString();
+		if(!valueDomainsPageData["Description"].isNull())
+			domainsObject.description = valueDomainsPageData["Description"].asString();
+		if(!valueDomainsPageData["SSLProtocol"].isNull())
+			domainsObject.sSLProtocol = valueDomainsPageData["SSLProtocol"].asString();
+		if(!valueDomainsPageData["ResourceGroupId"].isNull())
+			domainsObject.resourceGroupId = valueDomainsPageData["ResourceGroupId"].asString();
+		if(!valueDomainsPageData["Sandbox"].isNull())
+			domainsObject.sandbox = valueDomainsPageData["Sandbox"].asString();
+		auto allSourcesNode = allDomainsNode["Sources"]["Source"];
+		for (auto allDomainsNodeSourcesSource : allSourcesNode)
 		{
 			PageData::Source sourcesObject;
-			if(!value["Type"].isNull())
-				sourcesObject.type = value["Type"].asString();
-			if(!value["Content"].isNull())
-				sourcesObject.content = value["Content"].asString();
-			if(!value["Port"].isNull())
-				sourcesObject.port = std::stoi(value["Port"].asString());
-			if(!value["Priority"].isNull())
-				sourcesObject.priority = value["Priority"].asString();
+			if(!allDomainsNodeSourcesSource["Type"].isNull())
+				sourcesObject.type = allDomainsNodeSourcesSource["Type"].asString();
+			if(!allDomainsNodeSourcesSource["Content"].isNull())
+				sourcesObject.content = allDomainsNodeSourcesSource["Content"].asString();
+			if(!allDomainsNodeSourcesSource["Port"].isNull())
+				sourcesObject.port = std::stoi(allDomainsNodeSourcesSource["Port"].asString());
+			if(!allDomainsNodeSourcesSource["Priority"].isNull())
+				sourcesObject.priority = allDomainsNodeSourcesSource["Priority"].asString();
 			domainsObject.sources.push_back(sourcesObject);
 		}
 		domains_.push_back(domainsObject);

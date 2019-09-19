@@ -40,28 +40,28 @@ void MoPenQueryCanvasResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allCanvasList = value["CanvasList"]["Canvas"];
-	for (auto value : allCanvasList)
+	auto allCanvasListNode = dataNode["CanvasList"]["Canvas"];
+	for (auto dataNodeCanvasListCanvas : allCanvasListNode)
 	{
 		Data::Canvas canvasObject;
-		if(!value["Id"].isNull())
-			canvasObject.id = std::stol(value["Id"].asString());
-		if(!value["DeviceName"].isNull())
-			canvasObject.deviceName = value["DeviceName"].asString();
-		if(!value["Url"].isNull())
-			canvasObject.url = value["Url"].asString();
-		if(!value["PageId"].isNull())
-			canvasObject.pageId = std::stoi(value["PageId"].asString());
-		if(!value["SessionId"].isNull())
-			canvasObject.sessionId = value["SessionId"].asString();
-		if(!value["CreateTime"].isNull())
-			canvasObject.createTime = value["CreateTime"].asString();
-		if(!value["LastModified"].isNull())
-			canvasObject.lastModified = value["LastModified"].asString();
-		if(!value["Status"].isNull())
-			canvasObject.status = std::stoi(value["Status"].asString());
-		if(!value["Attribute"].isNull())
-			canvasObject.attribute = value["Attribute"].asString();
+		if(!dataNodeCanvasListCanvas["Id"].isNull())
+			canvasObject.id = std::stol(dataNodeCanvasListCanvas["Id"].asString());
+		if(!dataNodeCanvasListCanvas["DeviceName"].isNull())
+			canvasObject.deviceName = dataNodeCanvasListCanvas["DeviceName"].asString();
+		if(!dataNodeCanvasListCanvas["Url"].isNull())
+			canvasObject.url = dataNodeCanvasListCanvas["Url"].asString();
+		if(!dataNodeCanvasListCanvas["PageId"].isNull())
+			canvasObject.pageId = std::stoi(dataNodeCanvasListCanvas["PageId"].asString());
+		if(!dataNodeCanvasListCanvas["SessionId"].isNull())
+			canvasObject.sessionId = dataNodeCanvasListCanvas["SessionId"].asString();
+		if(!dataNodeCanvasListCanvas["CreateTime"].isNull())
+			canvasObject.createTime = dataNodeCanvasListCanvas["CreateTime"].asString();
+		if(!dataNodeCanvasListCanvas["LastModified"].isNull())
+			canvasObject.lastModified = dataNodeCanvasListCanvas["LastModified"].asString();
+		if(!dataNodeCanvasListCanvas["Status"].isNull())
+			canvasObject.status = std::stoi(dataNodeCanvasListCanvas["Status"].asString());
+		if(!dataNodeCanvasListCanvas["Attribute"].isNull())
+			canvasObject.attribute = dataNodeCanvasListCanvas["Attribute"].asString();
 		data_.canvasList.push_back(canvasObject);
 	}
 	if(!value["Code"].isNull())

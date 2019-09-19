@@ -39,22 +39,22 @@ void DescribeImageFromLibResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allImageFromLibList = value["ImageFromLibList"]["ImageFromLib"];
-	for (auto value : allImageFromLibList)
+	auto allImageFromLibListNode = value["ImageFromLibList"]["ImageFromLib"];
+	for (auto valueImageFromLibListImageFromLib : allImageFromLibListNode)
 	{
 		ImageFromLib imageFromLibListObject;
-		if(!value["Image"].isNull())
-			imageFromLibListObject.image = value["Image"].asString();
-		if(!value["Thumbnail"].isNull())
-			imageFromLibListObject.thumbnail = value["Thumbnail"].asString();
-		if(!value["Id"].isNull())
-			imageFromLibListObject.id = std::stol(value["Id"].asString());
-		if(!value["ImageHitCount"].isNull())
-			imageFromLibListObject.imageHitCount = std::stol(value["ImageHitCount"].asString());
-		if(!value["VideoHitCount"].isNull())
-			imageFromLibListObject.videoHitCount = std::stol(value["VideoHitCount"].asString());
-		if(!value["CreateTime"].isNull())
-			imageFromLibListObject.createTime = value["CreateTime"].asString();
+		if(!valueImageFromLibListImageFromLib["Image"].isNull())
+			imageFromLibListObject.image = valueImageFromLibListImageFromLib["Image"].asString();
+		if(!valueImageFromLibListImageFromLib["Thumbnail"].isNull())
+			imageFromLibListObject.thumbnail = valueImageFromLibListImageFromLib["Thumbnail"].asString();
+		if(!valueImageFromLibListImageFromLib["Id"].isNull())
+			imageFromLibListObject.id = std::stol(valueImageFromLibListImageFromLib["Id"].asString());
+		if(!valueImageFromLibListImageFromLib["ImageHitCount"].isNull())
+			imageFromLibListObject.imageHitCount = std::stol(valueImageFromLibListImageFromLib["ImageHitCount"].asString());
+		if(!valueImageFromLibListImageFromLib["VideoHitCount"].isNull())
+			imageFromLibListObject.videoHitCount = std::stol(valueImageFromLibListImageFromLib["VideoHitCount"].asString());
+		if(!valueImageFromLibListImageFromLib["CreateTime"].isNull())
+			imageFromLibListObject.createTime = valueImageFromLibListImageFromLib["CreateTime"].asString();
 		imageFromLibList_.push_back(imageFromLibListObject);
 	}
 	if(!value["PageSize"].isNull())

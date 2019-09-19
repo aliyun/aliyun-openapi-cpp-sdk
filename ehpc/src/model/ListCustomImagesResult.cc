@@ -39,32 +39,32 @@ void ListCustomImagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allImages = value["Images"]["ImageInfo"];
-	for (auto value : allImages)
+	auto allImagesNode = value["Images"]["ImageInfo"];
+	for (auto valueImagesImageInfo : allImagesNode)
 	{
 		ImageInfo imagesObject;
-		if(!value["Uid"].isNull())
-			imagesObject.uid = value["Uid"].asString();
-		if(!value["ImageId"].isNull())
-			imagesObject.imageId = value["ImageId"].asString();
-		if(!value["ImageName"].isNull())
-			imagesObject.imageName = value["ImageName"].asString();
-		if(!value["ImageOwnerAlias"].isNull())
-			imagesObject.imageOwnerAlias = value["ImageOwnerAlias"].asString();
-		if(!value["Description"].isNull())
-			imagesObject.description = value["Description"].asString();
-		if(!value["Status"].isNull())
-			imagesObject.status = value["Status"].asString();
-		if(!value["ProductCode"].isNull())
-			imagesObject.productCode = value["ProductCode"].asString();
-		if(!value["SkuCode"].isNull())
-			imagesObject.skuCode = value["SkuCode"].asString();
-		if(!value["PricingCycle"].isNull())
-			imagesObject.pricingCycle = value["PricingCycle"].asString();
-		if(!value["PostInstallScript"].isNull())
-			imagesObject.postInstallScript = value["PostInstallScript"].asString();
-		if(!value["Size"].isNull())
-			imagesObject.size = std::stoi(value["Size"].asString());
+		if(!valueImagesImageInfo["Uid"].isNull())
+			imagesObject.uid = valueImagesImageInfo["Uid"].asString();
+		if(!valueImagesImageInfo["ImageId"].isNull())
+			imagesObject.imageId = valueImagesImageInfo["ImageId"].asString();
+		if(!valueImagesImageInfo["ImageName"].isNull())
+			imagesObject.imageName = valueImagesImageInfo["ImageName"].asString();
+		if(!valueImagesImageInfo["ImageOwnerAlias"].isNull())
+			imagesObject.imageOwnerAlias = valueImagesImageInfo["ImageOwnerAlias"].asString();
+		if(!valueImagesImageInfo["Description"].isNull())
+			imagesObject.description = valueImagesImageInfo["Description"].asString();
+		if(!valueImagesImageInfo["Status"].isNull())
+			imagesObject.status = valueImagesImageInfo["Status"].asString();
+		if(!valueImagesImageInfo["ProductCode"].isNull())
+			imagesObject.productCode = valueImagesImageInfo["ProductCode"].asString();
+		if(!valueImagesImageInfo["SkuCode"].isNull())
+			imagesObject.skuCode = valueImagesImageInfo["SkuCode"].asString();
+		if(!valueImagesImageInfo["PricingCycle"].isNull())
+			imagesObject.pricingCycle = valueImagesImageInfo["PricingCycle"].asString();
+		if(!valueImagesImageInfo["PostInstallScript"].isNull())
+			imagesObject.postInstallScript = valueImagesImageInfo["PostInstallScript"].asString();
+		if(!valueImagesImageInfo["Size"].isNull())
+			imagesObject.size = std::stoi(valueImagesImageInfo["Size"].asString());
 		auto baseOsTagNode = value["BaseOsTag"];
 		if(!baseOsTagNode["OsTag"].isNull())
 			imagesObject.baseOsTag.osTag = baseOsTagNode["OsTag"].asString();

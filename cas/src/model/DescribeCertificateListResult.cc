@@ -39,58 +39,58 @@ void DescribeCertificateListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCertificateList = value["CertificateList"]["Certificate"];
-	for (auto value : allCertificateList)
+	auto allCertificateListNode = value["CertificateList"]["Certificate"];
+	for (auto valueCertificateListCertificate : allCertificateListNode)
 	{
 		Certificate certificateListObject;
-		if(!value["Id"].isNull())
-			certificateListObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			certificateListObject.name = value["Name"].asString();
-		if(!value["SourceType"].isNull())
-			certificateListObject.sourceType = value["SourceType"].asString();
-		if(!value["CertType"].isNull())
-			certificateListObject.certType = value["CertType"].asString();
-		if(!value["InstanceId"].isNull())
-			certificateListObject.instanceId = value["InstanceId"].asString();
-		if(!value["OrderId"].isNull())
-			certificateListObject.orderId = std::stol(value["OrderId"].asString());
-		if(!value["OrderType"].isNull())
-			certificateListObject.orderType = value["OrderType"].asString();
-		if(!value["BrandName"].isNull())
-			certificateListObject.brandName = value["BrandName"].asString();
-		if(!value["BeforeDate"].isNull())
-			certificateListObject.beforeDate = std::stol(value["BeforeDate"].asString());
-		if(!value["AfterDate"].isNull())
-			certificateListObject.afterDate = std::stol(value["AfterDate"].asString());
-		if(!value["Year"].isNull())
-			certificateListObject.year = std::stoi(value["Year"].asString());
-		if(!value["Domain"].isNull())
-			certificateListObject.domain = value["Domain"].asString();
-		if(!value["RemainingDays"].isNull())
-			certificateListObject.remainingDays = std::stoi(value["RemainingDays"].asString());
-		if(!value["DeploymentCloudProduct"].isNull())
-			certificateListObject.deploymentCloudProduct = value["DeploymentCloudProduct"].asString();
-		if(!value["StatusCode"].isNull())
-			certificateListObject.statusCode = value["StatusCode"].asString();
-		if(!value["NewBuyCertType"].isNull())
-			certificateListObject.newBuyCertType = value["NewBuyCertType"].asString();
-		if(!value["NewBuyDomainType"].isNull())
-			certificateListObject.newBuyDomainType = value["NewBuyDomainType"].asString();
-		if(!value["NewBuyBrand"].isNull())
-			certificateListObject.newBuyBrand = value["NewBuyBrand"].asString();
-		if(!value["NewBuyDomainCount"].isNull())
-			certificateListObject.newBuyDomainCount = std::stoi(value["NewBuyDomainCount"].asString());
-		if(!value["ShowDeployment"].isNull())
-			certificateListObject.showDeployment = std::stoi(value["ShowDeployment"].asString());
-		if(!value["ShowRefund"].isNull())
-			certificateListObject.showRefund = value["ShowRefund"].asString() == "true";
-		if(!value["AccessDownload"].isNull())
-			certificateListObject.accessDownload = std::stoi(value["AccessDownload"].asString());
-		if(!value["PartnerOrderId"].isNull())
-			certificateListObject.partnerOrderId = value["PartnerOrderId"].asString();
-		if(!value["IsFree"].isNull())
-			certificateListObject.isFree = value["IsFree"].asString() == "true";
+		if(!valueCertificateListCertificate["Id"].isNull())
+			certificateListObject.id = std::stol(valueCertificateListCertificate["Id"].asString());
+		if(!valueCertificateListCertificate["Name"].isNull())
+			certificateListObject.name = valueCertificateListCertificate["Name"].asString();
+		if(!valueCertificateListCertificate["SourceType"].isNull())
+			certificateListObject.sourceType = valueCertificateListCertificate["SourceType"].asString();
+		if(!valueCertificateListCertificate["CertType"].isNull())
+			certificateListObject.certType = valueCertificateListCertificate["CertType"].asString();
+		if(!valueCertificateListCertificate["InstanceId"].isNull())
+			certificateListObject.instanceId = valueCertificateListCertificate["InstanceId"].asString();
+		if(!valueCertificateListCertificate["OrderId"].isNull())
+			certificateListObject.orderId = std::stol(valueCertificateListCertificate["OrderId"].asString());
+		if(!valueCertificateListCertificate["OrderType"].isNull())
+			certificateListObject.orderType = valueCertificateListCertificate["OrderType"].asString();
+		if(!valueCertificateListCertificate["BrandName"].isNull())
+			certificateListObject.brandName = valueCertificateListCertificate["BrandName"].asString();
+		if(!valueCertificateListCertificate["BeforeDate"].isNull())
+			certificateListObject.beforeDate = std::stol(valueCertificateListCertificate["BeforeDate"].asString());
+		if(!valueCertificateListCertificate["AfterDate"].isNull())
+			certificateListObject.afterDate = std::stol(valueCertificateListCertificate["AfterDate"].asString());
+		if(!valueCertificateListCertificate["Year"].isNull())
+			certificateListObject.year = std::stoi(valueCertificateListCertificate["Year"].asString());
+		if(!valueCertificateListCertificate["Domain"].isNull())
+			certificateListObject.domain = valueCertificateListCertificate["Domain"].asString();
+		if(!valueCertificateListCertificate["RemainingDays"].isNull())
+			certificateListObject.remainingDays = std::stoi(valueCertificateListCertificate["RemainingDays"].asString());
+		if(!valueCertificateListCertificate["DeploymentCloudProduct"].isNull())
+			certificateListObject.deploymentCloudProduct = valueCertificateListCertificate["DeploymentCloudProduct"].asString();
+		if(!valueCertificateListCertificate["StatusCode"].isNull())
+			certificateListObject.statusCode = valueCertificateListCertificate["StatusCode"].asString();
+		if(!valueCertificateListCertificate["NewBuyCertType"].isNull())
+			certificateListObject.newBuyCertType = valueCertificateListCertificate["NewBuyCertType"].asString();
+		if(!valueCertificateListCertificate["NewBuyDomainType"].isNull())
+			certificateListObject.newBuyDomainType = valueCertificateListCertificate["NewBuyDomainType"].asString();
+		if(!valueCertificateListCertificate["NewBuyBrand"].isNull())
+			certificateListObject.newBuyBrand = valueCertificateListCertificate["NewBuyBrand"].asString();
+		if(!valueCertificateListCertificate["NewBuyDomainCount"].isNull())
+			certificateListObject.newBuyDomainCount = std::stoi(valueCertificateListCertificate["NewBuyDomainCount"].asString());
+		if(!valueCertificateListCertificate["ShowDeployment"].isNull())
+			certificateListObject.showDeployment = std::stoi(valueCertificateListCertificate["ShowDeployment"].asString());
+		if(!valueCertificateListCertificate["ShowRefund"].isNull())
+			certificateListObject.showRefund = valueCertificateListCertificate["ShowRefund"].asString() == "true";
+		if(!valueCertificateListCertificate["AccessDownload"].isNull())
+			certificateListObject.accessDownload = std::stoi(valueCertificateListCertificate["AccessDownload"].asString());
+		if(!valueCertificateListCertificate["PartnerOrderId"].isNull())
+			certificateListObject.partnerOrderId = valueCertificateListCertificate["PartnerOrderId"].asString();
+		if(!valueCertificateListCertificate["IsFree"].isNull())
+			certificateListObject.isFree = valueCertificateListCertificate["IsFree"].asString() == "true";
 		certificateList_.push_back(certificateListObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,34 +39,34 @@ void DescribeSpecificationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDBInstanceClass = value["DBInstanceClass"]["DBInstanceClassItem"];
-	for (auto value : allDBInstanceClass)
+	auto allDBInstanceClassNode = value["DBInstanceClass"]["DBInstanceClassItem"];
+	for (auto valueDBInstanceClassDBInstanceClassItem : allDBInstanceClassNode)
 	{
 		DBInstanceClassItem dBInstanceClassObject;
-		if(!value["Text"].isNull())
-			dBInstanceClassObject.text = value["Text"].asString();
-		if(!value["Value"].isNull())
-			dBInstanceClassObject.value = value["Value"].asString();
+		if(!valueDBInstanceClassDBInstanceClassItem["Text"].isNull())
+			dBInstanceClassObject.text = valueDBInstanceClassDBInstanceClassItem["Text"].asString();
+		if(!valueDBInstanceClassDBInstanceClassItem["Value"].isNull())
+			dBInstanceClassObject.value = valueDBInstanceClassDBInstanceClassItem["Value"].asString();
 		dBInstanceClass_.push_back(dBInstanceClassObject);
 	}
-	auto allDBInstanceGroupCount = value["DBInstanceGroupCount"]["DBInstanceGroupCountItem"];
-	for (auto value : allDBInstanceGroupCount)
+	auto allDBInstanceGroupCountNode = value["DBInstanceGroupCount"]["DBInstanceGroupCountItem"];
+	for (auto valueDBInstanceGroupCountDBInstanceGroupCountItem : allDBInstanceGroupCountNode)
 	{
 		DBInstanceGroupCountItem dBInstanceGroupCountObject;
-		if(!value["Text"].isNull())
-			dBInstanceGroupCountObject.text = value["Text"].asString();
-		if(!value["Value"].isNull())
-			dBInstanceGroupCountObject.value = value["Value"].asString();
+		if(!valueDBInstanceGroupCountDBInstanceGroupCountItem["Text"].isNull())
+			dBInstanceGroupCountObject.text = valueDBInstanceGroupCountDBInstanceGroupCountItem["Text"].asString();
+		if(!valueDBInstanceGroupCountDBInstanceGroupCountItem["Value"].isNull())
+			dBInstanceGroupCountObject.value = valueDBInstanceGroupCountDBInstanceGroupCountItem["Value"].asString();
 		dBInstanceGroupCount_.push_back(dBInstanceGroupCountObject);
 	}
-	auto allStorageNotice = value["StorageNotice"]["StorageNoticeItem"];
-	for (auto value : allStorageNotice)
+	auto allStorageNoticeNode = value["StorageNotice"]["StorageNoticeItem"];
+	for (auto valueStorageNoticeStorageNoticeItem : allStorageNoticeNode)
 	{
 		StorageNoticeItem storageNoticeObject;
-		if(!value["Text"].isNull())
-			storageNoticeObject.text = value["Text"].asString();
-		if(!value["Value"].isNull())
-			storageNoticeObject.value = value["Value"].asString();
+		if(!valueStorageNoticeStorageNoticeItem["Text"].isNull())
+			storageNoticeObject.text = valueStorageNoticeStorageNoticeItem["Text"].asString();
+		if(!valueStorageNoticeStorageNoticeItem["Value"].isNull())
+			storageNoticeObject.value = valueStorageNoticeStorageNoticeItem["Value"].asString();
 		storageNotice_.push_back(storageNoticeObject);
 	}
 

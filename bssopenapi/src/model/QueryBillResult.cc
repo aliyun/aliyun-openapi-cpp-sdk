@@ -52,64 +52,64 @@ void QueryBillResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = dataNode["Items"]["Item"];
+	for (auto dataNodeItemsItem : allItemsNode)
 	{
 		Data::Item itemObject;
-		if(!value["RecordID"].isNull())
-			itemObject.recordID = value["RecordID"].asString();
-		if(!value["Item"].isNull())
-			itemObject.item = value["Item"].asString();
-		if(!value["OwnerID"].isNull())
-			itemObject.ownerID = value["OwnerID"].asString();
-		if(!value["UsageStartTime"].isNull())
-			itemObject.usageStartTime = value["UsageStartTime"].asString();
-		if(!value["UsageEndTime"].isNull())
-			itemObject.usageEndTime = value["UsageEndTime"].asString();
-		if(!value["PaymentTime"].isNull())
-			itemObject.paymentTime = value["PaymentTime"].asString();
-		if(!value["ProductCode"].isNull())
-			itemObject.productCode = value["ProductCode"].asString();
-		if(!value["ProductType"].isNull())
-			itemObject.productType = value["ProductType"].asString();
-		if(!value["SubscriptionType"].isNull())
-			itemObject.subscriptionType = value["SubscriptionType"].asString();
-		if(!value["ProductName"].isNull())
-			itemObject.productName = value["ProductName"].asString();
-		if(!value["ProductDetail"].isNull())
-			itemObject.productDetail = value["ProductDetail"].asString();
-		if(!value["PretaxGrossAmount"].isNull())
-			itemObject.pretaxGrossAmount = std::stof(value["PretaxGrossAmount"].asString());
-		if(!value["DeductedByCoupons"].isNull())
-			itemObject.deductedByCoupons = std::stof(value["DeductedByCoupons"].asString());
-		if(!value["InvoiceDiscount"].isNull())
-			itemObject.invoiceDiscount = std::stof(value["InvoiceDiscount"].asString());
-		if(!value["PretaxAmount"].isNull())
-			itemObject.pretaxAmount = std::stof(value["PretaxAmount"].asString());
-		if(!value["Currency"].isNull())
-			itemObject.currency = value["Currency"].asString();
-		if(!value["PretaxAmountLocal"].isNull())
-			itemObject.pretaxAmountLocal = std::stof(value["PretaxAmountLocal"].asString());
-		if(!value["Tax"].isNull())
-			itemObject.tax = std::stof(value["Tax"].asString());
-		if(!value["PaymentAmount"].isNull())
-			itemObject.paymentAmount = std::stof(value["PaymentAmount"].asString());
-		if(!value["DeductedByCashCoupons"].isNull())
-			itemObject.deductedByCashCoupons = std::stof(value["DeductedByCashCoupons"].asString());
-		if(!value["DeductedByPrepaidCard"].isNull())
-			itemObject.deductedByPrepaidCard = std::stof(value["DeductedByPrepaidCard"].asString());
-		if(!value["OutstandingAmount"].isNull())
-			itemObject.outstandingAmount = std::stof(value["OutstandingAmount"].asString());
-		if(!value["AfterTaxAmount"].isNull())
-			itemObject.afterTaxAmount = std::stof(value["AfterTaxAmount"].asString());
-		if(!value["Status"].isNull())
-			itemObject.status = value["Status"].asString();
-		if(!value["PaymentCurrency"].isNull())
-			itemObject.paymentCurrency = value["PaymentCurrency"].asString();
-		if(!value["PaymentTransactionID"].isNull())
-			itemObject.paymentTransactionID = value["PaymentTransactionID"].asString();
-		if(!value["RoundDownDiscount"].isNull())
-			itemObject.roundDownDiscount = value["RoundDownDiscount"].asString();
+		if(!dataNodeItemsItem["RecordID"].isNull())
+			itemObject.recordID = dataNodeItemsItem["RecordID"].asString();
+		if(!dataNodeItemsItem["Item"].isNull())
+			itemObject.item = dataNodeItemsItem["Item"].asString();
+		if(!dataNodeItemsItem["OwnerID"].isNull())
+			itemObject.ownerID = dataNodeItemsItem["OwnerID"].asString();
+		if(!dataNodeItemsItem["UsageStartTime"].isNull())
+			itemObject.usageStartTime = dataNodeItemsItem["UsageStartTime"].asString();
+		if(!dataNodeItemsItem["UsageEndTime"].isNull())
+			itemObject.usageEndTime = dataNodeItemsItem["UsageEndTime"].asString();
+		if(!dataNodeItemsItem["PaymentTime"].isNull())
+			itemObject.paymentTime = dataNodeItemsItem["PaymentTime"].asString();
+		if(!dataNodeItemsItem["ProductCode"].isNull())
+			itemObject.productCode = dataNodeItemsItem["ProductCode"].asString();
+		if(!dataNodeItemsItem["ProductType"].isNull())
+			itemObject.productType = dataNodeItemsItem["ProductType"].asString();
+		if(!dataNodeItemsItem["SubscriptionType"].isNull())
+			itemObject.subscriptionType = dataNodeItemsItem["SubscriptionType"].asString();
+		if(!dataNodeItemsItem["ProductName"].isNull())
+			itemObject.productName = dataNodeItemsItem["ProductName"].asString();
+		if(!dataNodeItemsItem["ProductDetail"].isNull())
+			itemObject.productDetail = dataNodeItemsItem["ProductDetail"].asString();
+		if(!dataNodeItemsItem["PretaxGrossAmount"].isNull())
+			itemObject.pretaxGrossAmount = std::stof(dataNodeItemsItem["PretaxGrossAmount"].asString());
+		if(!dataNodeItemsItem["DeductedByCoupons"].isNull())
+			itemObject.deductedByCoupons = std::stof(dataNodeItemsItem["DeductedByCoupons"].asString());
+		if(!dataNodeItemsItem["InvoiceDiscount"].isNull())
+			itemObject.invoiceDiscount = std::stof(dataNodeItemsItem["InvoiceDiscount"].asString());
+		if(!dataNodeItemsItem["PretaxAmount"].isNull())
+			itemObject.pretaxAmount = std::stof(dataNodeItemsItem["PretaxAmount"].asString());
+		if(!dataNodeItemsItem["Currency"].isNull())
+			itemObject.currency = dataNodeItemsItem["Currency"].asString();
+		if(!dataNodeItemsItem["PretaxAmountLocal"].isNull())
+			itemObject.pretaxAmountLocal = std::stof(dataNodeItemsItem["PretaxAmountLocal"].asString());
+		if(!dataNodeItemsItem["Tax"].isNull())
+			itemObject.tax = std::stof(dataNodeItemsItem["Tax"].asString());
+		if(!dataNodeItemsItem["PaymentAmount"].isNull())
+			itemObject.paymentAmount = std::stof(dataNodeItemsItem["PaymentAmount"].asString());
+		if(!dataNodeItemsItem["DeductedByCashCoupons"].isNull())
+			itemObject.deductedByCashCoupons = std::stof(dataNodeItemsItem["DeductedByCashCoupons"].asString());
+		if(!dataNodeItemsItem["DeductedByPrepaidCard"].isNull())
+			itemObject.deductedByPrepaidCard = std::stof(dataNodeItemsItem["DeductedByPrepaidCard"].asString());
+		if(!dataNodeItemsItem["OutstandingAmount"].isNull())
+			itemObject.outstandingAmount = std::stof(dataNodeItemsItem["OutstandingAmount"].asString());
+		if(!dataNodeItemsItem["AfterTaxAmount"].isNull())
+			itemObject.afterTaxAmount = std::stof(dataNodeItemsItem["AfterTaxAmount"].asString());
+		if(!dataNodeItemsItem["Status"].isNull())
+			itemObject.status = dataNodeItemsItem["Status"].asString();
+		if(!dataNodeItemsItem["PaymentCurrency"].isNull())
+			itemObject.paymentCurrency = dataNodeItemsItem["PaymentCurrency"].asString();
+		if(!dataNodeItemsItem["PaymentTransactionID"].isNull())
+			itemObject.paymentTransactionID = dataNodeItemsItem["PaymentTransactionID"].asString();
+		if(!dataNodeItemsItem["RoundDownDiscount"].isNull())
+			itemObject.roundDownDiscount = dataNodeItemsItem["RoundDownDiscount"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

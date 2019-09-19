@@ -39,24 +39,24 @@ void DescribeKeyPairsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allKeyPairs = value["KeyPairs"]["KeyPair"];
-	for (auto value : allKeyPairs)
+	auto allKeyPairsNode = value["KeyPairs"]["KeyPair"];
+	for (auto valueKeyPairsKeyPair : allKeyPairsNode)
 	{
 		KeyPair keyPairsObject;
-		if(!value["KeyPairName"].isNull())
-			keyPairsObject.keyPairName = value["KeyPairName"].asString();
-		if(!value["KeyPairFingerPrint"].isNull())
-			keyPairsObject.keyPairFingerPrint = value["KeyPairFingerPrint"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			keyPairsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueKeyPairsKeyPair["KeyPairName"].isNull())
+			keyPairsObject.keyPairName = valueKeyPairsKeyPair["KeyPairName"].asString();
+		if(!valueKeyPairsKeyPair["KeyPairFingerPrint"].isNull())
+			keyPairsObject.keyPairFingerPrint = valueKeyPairsKeyPair["KeyPairFingerPrint"].asString();
+		if(!valueKeyPairsKeyPair["ResourceGroupId"].isNull())
+			keyPairsObject.resourceGroupId = valueKeyPairsKeyPair["ResourceGroupId"].asString();
+		auto allTagsNode = allKeyPairsNode["Tags"]["Tag"];
+		for (auto allKeyPairsNodeTagsTag : allTagsNode)
 		{
 			KeyPair::Tag tagsObject;
-			if(!value["TagKey"].isNull())
-				tagsObject.tagKey = value["TagKey"].asString();
-			if(!value["TagValue"].isNull())
-				tagsObject.tagValue = value["TagValue"].asString();
+			if(!allKeyPairsNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allKeyPairsNodeTagsTag["TagKey"].asString();
+			if(!allKeyPairsNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allKeyPairsNodeTagsTag["TagValue"].asString();
 			keyPairsObject.tags.push_back(tagsObject);
 		}
 		keyPairs_.push_back(keyPairsObject);

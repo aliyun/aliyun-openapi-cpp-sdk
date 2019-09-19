@@ -39,34 +39,34 @@ void DescribeScheduledTasksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allScheduledTasks = value["ScheduledTasks"]["ScheduledTask"];
-	for (auto value : allScheduledTasks)
+	auto allScheduledTasksNode = value["ScheduledTasks"]["ScheduledTask"];
+	for (auto valueScheduledTasksScheduledTask : allScheduledTasksNode)
 	{
 		ScheduledTask scheduledTasksObject;
-		if(!value["ScheduledTaskId"].isNull())
-			scheduledTasksObject.scheduledTaskId = value["ScheduledTaskId"].asString();
-		if(!value["ScheduledTaskName"].isNull())
-			scheduledTasksObject.scheduledTaskName = value["ScheduledTaskName"].asString();
-		if(!value["Description"].isNull())
-			scheduledTasksObject.description = value["Description"].asString();
-		if(!value["ScheduledAction"].isNull())
-			scheduledTasksObject.scheduledAction = value["ScheduledAction"].asString();
-		if(!value["RecurrenceEndTime"].isNull())
-			scheduledTasksObject.recurrenceEndTime = value["RecurrenceEndTime"].asString();
-		if(!value["LaunchTime"].isNull())
-			scheduledTasksObject.launchTime = value["LaunchTime"].asString();
-		if(!value["RecurrenceType"].isNull())
-			scheduledTasksObject.recurrenceType = value["RecurrenceType"].asString();
-		if(!value["RecurrenceValue"].isNull())
-			scheduledTasksObject.recurrenceValue = value["RecurrenceValue"].asString();
-		if(!value["LaunchExpirationTime"].isNull())
-			scheduledTasksObject.launchExpirationTime = std::stoi(value["LaunchExpirationTime"].asString());
-		if(!value["TaskEnabled"].isNull())
-			scheduledTasksObject.taskEnabled = value["TaskEnabled"].asString() == "true";
-		if(!value["MaxValue"].isNull())
-			scheduledTasksObject.maxValue = std::stoi(value["MaxValue"].asString());
-		if(!value["MinValue"].isNull())
-			scheduledTasksObject.minValue = std::stoi(value["MinValue"].asString());
+		if(!valueScheduledTasksScheduledTask["ScheduledTaskId"].isNull())
+			scheduledTasksObject.scheduledTaskId = valueScheduledTasksScheduledTask["ScheduledTaskId"].asString();
+		if(!valueScheduledTasksScheduledTask["ScheduledTaskName"].isNull())
+			scheduledTasksObject.scheduledTaskName = valueScheduledTasksScheduledTask["ScheduledTaskName"].asString();
+		if(!valueScheduledTasksScheduledTask["Description"].isNull())
+			scheduledTasksObject.description = valueScheduledTasksScheduledTask["Description"].asString();
+		if(!valueScheduledTasksScheduledTask["ScheduledAction"].isNull())
+			scheduledTasksObject.scheduledAction = valueScheduledTasksScheduledTask["ScheduledAction"].asString();
+		if(!valueScheduledTasksScheduledTask["RecurrenceEndTime"].isNull())
+			scheduledTasksObject.recurrenceEndTime = valueScheduledTasksScheduledTask["RecurrenceEndTime"].asString();
+		if(!valueScheduledTasksScheduledTask["LaunchTime"].isNull())
+			scheduledTasksObject.launchTime = valueScheduledTasksScheduledTask["LaunchTime"].asString();
+		if(!valueScheduledTasksScheduledTask["RecurrenceType"].isNull())
+			scheduledTasksObject.recurrenceType = valueScheduledTasksScheduledTask["RecurrenceType"].asString();
+		if(!valueScheduledTasksScheduledTask["RecurrenceValue"].isNull())
+			scheduledTasksObject.recurrenceValue = valueScheduledTasksScheduledTask["RecurrenceValue"].asString();
+		if(!valueScheduledTasksScheduledTask["LaunchExpirationTime"].isNull())
+			scheduledTasksObject.launchExpirationTime = std::stoi(valueScheduledTasksScheduledTask["LaunchExpirationTime"].asString());
+		if(!valueScheduledTasksScheduledTask["TaskEnabled"].isNull())
+			scheduledTasksObject.taskEnabled = valueScheduledTasksScheduledTask["TaskEnabled"].asString() == "true";
+		if(!valueScheduledTasksScheduledTask["MaxValue"].isNull())
+			scheduledTasksObject.maxValue = std::stoi(valueScheduledTasksScheduledTask["MaxValue"].asString());
+		if(!valueScheduledTasksScheduledTask["MinValue"].isNull())
+			scheduledTasksObject.minValue = std::stoi(valueScheduledTasksScheduledTask["MinValue"].asString());
 		scheduledTasks_.push_back(scheduledTasksObject);
 	}
 	if(!value["TotalCount"].isNull())

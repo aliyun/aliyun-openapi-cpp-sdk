@@ -39,16 +39,16 @@ void DescribeAppsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allApps = value["Apps"]["AppItem"];
-	for (auto value : allApps)
+	auto allAppsNode = value["Apps"]["AppItem"];
+	for (auto valueAppsAppItem : allAppsNode)
 	{
 		AppItem appsObject;
-		if(!value["AppId"].isNull())
-			appsObject.appId = std::stol(value["AppId"].asString());
-		if(!value["AppName"].isNull())
-			appsObject.appName = value["AppName"].asString();
-		if(!value["Description"].isNull())
-			appsObject.description = value["Description"].asString();
+		if(!valueAppsAppItem["AppId"].isNull())
+			appsObject.appId = std::stol(valueAppsAppItem["AppId"].asString());
+		if(!valueAppsAppItem["AppName"].isNull())
+			appsObject.appName = valueAppsAppItem["AppName"].asString();
+		if(!valueAppsAppItem["Description"].isNull())
+			appsObject.description = valueAppsAppItem["Description"].asString();
 		apps_.push_back(appsObject);
 	}
 	if(!value["TotalCount"].isNull())

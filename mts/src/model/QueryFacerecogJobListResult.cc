@@ -39,24 +39,24 @@ void QueryFacerecogJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFacerecogJobList = value["FacerecogJobList"]["FacerecogJob"];
-	for (auto value : allFacerecogJobList)
+	auto allFacerecogJobListNode = value["FacerecogJobList"]["FacerecogJob"];
+	for (auto valueFacerecogJobListFacerecogJob : allFacerecogJobListNode)
 	{
 		FacerecogJob facerecogJobListObject;
-		if(!value["Id"].isNull())
-			facerecogJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			facerecogJobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			facerecogJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			facerecogJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			facerecogJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			facerecogJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			facerecogJobListObject.creationTime = value["CreationTime"].asString();
+		if(!valueFacerecogJobListFacerecogJob["Id"].isNull())
+			facerecogJobListObject.id = valueFacerecogJobListFacerecogJob["Id"].asString();
+		if(!valueFacerecogJobListFacerecogJob["UserData"].isNull())
+			facerecogJobListObject.userData = valueFacerecogJobListFacerecogJob["UserData"].asString();
+		if(!valueFacerecogJobListFacerecogJob["PipelineId"].isNull())
+			facerecogJobListObject.pipelineId = valueFacerecogJobListFacerecogJob["PipelineId"].asString();
+		if(!valueFacerecogJobListFacerecogJob["State"].isNull())
+			facerecogJobListObject.state = valueFacerecogJobListFacerecogJob["State"].asString();
+		if(!valueFacerecogJobListFacerecogJob["Code"].isNull())
+			facerecogJobListObject.code = valueFacerecogJobListFacerecogJob["Code"].asString();
+		if(!valueFacerecogJobListFacerecogJob["Message"].isNull())
+			facerecogJobListObject.message = valueFacerecogJobListFacerecogJob["Message"].asString();
+		if(!valueFacerecogJobListFacerecogJob["CreationTime"].isNull())
+			facerecogJobListObject.creationTime = valueFacerecogJobListFacerecogJob["CreationTime"].asString();
 		auto inputNode = value["Input"];
 		if(!inputNode["Bucket"].isNull())
 			facerecogJobListObject.input.bucket = inputNode["Bucket"].asString();
@@ -65,22 +65,22 @@ void QueryFacerecogJobListResult::parse(const std::string &payload)
 		if(!inputNode["Object"].isNull())
 			facerecogJobListObject.input.object = inputNode["Object"].asString();
 		auto videoFacerecogResultNode = value["VideoFacerecogResult"];
-		auto allFacerecogs = value["Facerecogs"]["Facerecog"];
-		for (auto value : allFacerecogs)
+		auto allFacerecogsNode = videoFacerecogResultNode["Facerecogs"]["Facerecog"];
+		for (auto videoFacerecogResultNodeFacerecogsFacerecog : allFacerecogsNode)
 		{
 			FacerecogJob::VideoFacerecogResult::Facerecog facerecogObject;
-			if(!value["Time"].isNull())
-				facerecogObject.time = value["Time"].asString();
-			auto allFaces = value["Faces"]["Face"];
-			for (auto value : allFaces)
+			if(!videoFacerecogResultNodeFacerecogsFacerecog["Time"].isNull())
+				facerecogObject.time = videoFacerecogResultNodeFacerecogsFacerecog["Time"].asString();
+			auto allFacesNode = allFacerecogsNode["Faces"]["Face"];
+			for (auto allFacerecogsNodeFacesFace : allFacesNode)
 			{
 				FacerecogJob::VideoFacerecogResult::Facerecog::Face facesObject;
-				if(!value["Name"].isNull())
-					facesObject.name = value["Name"].asString();
-				if(!value["Score"].isNull())
-					facesObject.score = value["Score"].asString();
-				if(!value["Target"].isNull())
-					facesObject.target = value["Target"].asString();
+				if(!allFacerecogsNodeFacesFace["Name"].isNull())
+					facesObject.name = allFacerecogsNodeFacesFace["Name"].asString();
+				if(!allFacerecogsNodeFacesFace["Score"].isNull())
+					facesObject.score = allFacerecogsNodeFacesFace["Score"].asString();
+				if(!allFacerecogsNodeFacesFace["Target"].isNull())
+					facesObject.target = allFacerecogsNodeFacesFace["Target"].asString();
 				facerecogObject.faces.push_back(facesObject);
 			}
 			facerecogJobListObject.videoFacerecogResult.facerecogs.push_back(facerecogObject);

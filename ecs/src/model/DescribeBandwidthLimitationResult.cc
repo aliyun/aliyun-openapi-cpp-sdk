@@ -39,18 +39,18 @@ void DescribeBandwidthLimitationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBandwidths = value["Bandwidths"]["Bandwidth"];
-	for (auto value : allBandwidths)
+	auto allBandwidthsNode = value["Bandwidths"]["Bandwidth"];
+	for (auto valueBandwidthsBandwidth : allBandwidthsNode)
 	{
 		Bandwidth bandwidthsObject;
-		if(!value["InternetChargeType"].isNull())
-			bandwidthsObject.internetChargeType = value["InternetChargeType"].asString();
-		if(!value["Min"].isNull())
-			bandwidthsObject.min = std::stoi(value["Min"].asString());
-		if(!value["Max"].isNull())
-			bandwidthsObject.max = std::stoi(value["Max"].asString());
-		if(!value["Unit"].isNull())
-			bandwidthsObject.unit = value["Unit"].asString();
+		if(!valueBandwidthsBandwidth["InternetChargeType"].isNull())
+			bandwidthsObject.internetChargeType = valueBandwidthsBandwidth["InternetChargeType"].asString();
+		if(!valueBandwidthsBandwidth["Min"].isNull())
+			bandwidthsObject.min = std::stoi(valueBandwidthsBandwidth["Min"].asString());
+		if(!valueBandwidthsBandwidth["Max"].isNull())
+			bandwidthsObject.max = std::stoi(valueBandwidthsBandwidth["Max"].asString());
+		if(!valueBandwidthsBandwidth["Unit"].isNull())
+			bandwidthsObject.unit = valueBandwidthsBandwidth["Unit"].asString();
 		bandwidths_.push_back(bandwidthsObject);
 	}
 

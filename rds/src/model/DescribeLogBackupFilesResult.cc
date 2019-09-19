@@ -39,22 +39,22 @@ void DescribeLogBackupFilesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["BinLogFile"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["BinLogFile"];
+	for (auto valueItemsBinLogFile : allItemsNode)
 	{
 		BinLogFile itemsObject;
-		if(!value["FileSize"].isNull())
-			itemsObject.fileSize = std::stol(value["FileSize"].asString());
-		if(!value["LogBeginTime"].isNull())
-			itemsObject.logBeginTime = value["LogBeginTime"].asString();
-		if(!value["LogEndTime"].isNull())
-			itemsObject.logEndTime = value["LogEndTime"].asString();
-		if(!value["DownloadLink"].isNull())
-			itemsObject.downloadLink = value["DownloadLink"].asString();
-		if(!value["IntranetDownloadLink"].isNull())
-			itemsObject.intranetDownloadLink = value["IntranetDownloadLink"].asString();
-		if(!value["LinkExpiredTime"].isNull())
-			itemsObject.linkExpiredTime = value["LinkExpiredTime"].asString();
+		if(!valueItemsBinLogFile["FileSize"].isNull())
+			itemsObject.fileSize = std::stol(valueItemsBinLogFile["FileSize"].asString());
+		if(!valueItemsBinLogFile["LogBeginTime"].isNull())
+			itemsObject.logBeginTime = valueItemsBinLogFile["LogBeginTime"].asString();
+		if(!valueItemsBinLogFile["LogEndTime"].isNull())
+			itemsObject.logEndTime = valueItemsBinLogFile["LogEndTime"].asString();
+		if(!valueItemsBinLogFile["DownloadLink"].isNull())
+			itemsObject.downloadLink = valueItemsBinLogFile["DownloadLink"].asString();
+		if(!valueItemsBinLogFile["IntranetDownloadLink"].isNull())
+			itemsObject.intranetDownloadLink = valueItemsBinLogFile["IntranetDownloadLink"].asString();
+		if(!valueItemsBinLogFile["LinkExpiredTime"].isNull())
+			itemsObject.linkExpiredTime = valueItemsBinLogFile["LinkExpiredTime"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

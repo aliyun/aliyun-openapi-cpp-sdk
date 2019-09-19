@@ -39,14 +39,14 @@ void DescribeLiveDomainRecordDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRecordDataInfos = value["RecordDataInfos"]["RecordDataInfo"];
-	for (auto value : allRecordDataInfos)
+	auto allRecordDataInfosNode = value["RecordDataInfos"]["RecordDataInfo"];
+	for (auto valueRecordDataInfosRecordDataInfo : allRecordDataInfosNode)
 	{
 		RecordDataInfo recordDataInfosObject;
-		if(!value["Date"].isNull())
-			recordDataInfosObject.date = value["Date"].asString();
-		if(!value["Total"].isNull())
-			recordDataInfosObject.total = std::stoi(value["Total"].asString());
+		if(!valueRecordDataInfosRecordDataInfo["Date"].isNull())
+			recordDataInfosObject.date = valueRecordDataInfosRecordDataInfo["Date"].asString();
+		if(!valueRecordDataInfosRecordDataInfo["Total"].isNull())
+			recordDataInfosObject.total = std::stoi(valueRecordDataInfosRecordDataInfo["Total"].asString());
 		auto detailNode = value["Detail"];
 		if(!detailNode["MP4"].isNull())
 			recordDataInfosObject.detail.mP4 = std::stoi(detailNode["MP4"].asString());

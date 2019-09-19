@@ -42,16 +42,16 @@ void DescribeCommoditiesResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
-	auto allCommodities = value["Commodities"]["Commodity"];
-	for (auto value : allCommodities)
+	auto allCommoditiesNode = dataNode["Commodities"]["Commodity"];
+	for (auto dataNodeCommoditiesCommodity : allCommoditiesNode)
 	{
 		Data::Commodity commodityObject;
-		if(!value["CommodityId"].isNull())
-			commodityObject.commodityId = value["CommodityId"].asString();
-		if(!value["Properties"].isNull())
-			commodityObject.properties = value["Properties"].asString();
-		if(!value["ApplicationId"].isNull())
-			commodityObject.applicationId = value["ApplicationId"].asString();
+		if(!dataNodeCommoditiesCommodity["CommodityId"].isNull())
+			commodityObject.commodityId = dataNodeCommoditiesCommodity["CommodityId"].asString();
+		if(!dataNodeCommoditiesCommodity["Properties"].isNull())
+			commodityObject.properties = dataNodeCommoditiesCommodity["Properties"].asString();
+		if(!dataNodeCommoditiesCommodity["ApplicationId"].isNull())
+			commodityObject.applicationId = dataNodeCommoditiesCommodity["ApplicationId"].asString();
 		data_.commodities.push_back(commodityObject);
 	}
 	auto pageableNode = dataNode["Pageable"];

@@ -54,22 +54,22 @@ void ListCallEventDetailByContactIdResult::parse(const std::string &payload)
 		data_.releaseAgent = dataNode["ReleaseAgent"].asString();
 	if(!dataNode["ReleaseReason"].isNull())
 		data_.releaseReason = dataNode["ReleaseReason"].asString();
-	auto allEvents = value["Events"]["CallEventDetail"];
-	for (auto value : allEvents)
+	auto allEventsNode = dataNode["Events"]["CallEventDetail"];
+	for (auto dataNodeEventsCallEventDetail : allEventsNode)
 	{
 		Data::CallEventDetail callEventDetailObject;
-		if(!value["TimeStamp"].isNull())
-			callEventDetailObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Event"].isNull())
-			callEventDetailObject.event = value["Event"].asString();
-		if(!value["AgentName"].isNull())
-			callEventDetailObject.agentName = value["AgentName"].asString();
-		if(!value["Status"].isNull())
-			callEventDetailObject.status = value["Status"].asString();
-		if(!value["CallMode"].isNull())
-			callEventDetailObject.callMode = value["CallMode"].asString();
-		if(!value["Duration"].isNull())
-			callEventDetailObject.duration = std::stoi(value["Duration"].asString());
+		if(!dataNodeEventsCallEventDetail["TimeStamp"].isNull())
+			callEventDetailObject.timeStamp = dataNodeEventsCallEventDetail["TimeStamp"].asString();
+		if(!dataNodeEventsCallEventDetail["Event"].isNull())
+			callEventDetailObject.event = dataNodeEventsCallEventDetail["Event"].asString();
+		if(!dataNodeEventsCallEventDetail["AgentName"].isNull())
+			callEventDetailObject.agentName = dataNodeEventsCallEventDetail["AgentName"].asString();
+		if(!dataNodeEventsCallEventDetail["Status"].isNull())
+			callEventDetailObject.status = dataNodeEventsCallEventDetail["Status"].asString();
+		if(!dataNodeEventsCallEventDetail["CallMode"].isNull())
+			callEventDetailObject.callMode = dataNodeEventsCallEventDetail["CallMode"].asString();
+		if(!dataNodeEventsCallEventDetail["Duration"].isNull())
+			callEventDetailObject.duration = std::stoi(dataNodeEventsCallEventDetail["Duration"].asString());
 		auto detailDataNode = value["DetailData"];
 		if(!detailDataNode["EventType"].isNull())
 			callEventDetailObject.detailData.eventType = detailDataNode["EventType"].asString();

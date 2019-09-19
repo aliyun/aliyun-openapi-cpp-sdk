@@ -48,24 +48,24 @@ void QueryProductListResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["Total"].isNull())
 		data_.total = std::stoi(dataNode["Total"].asString());
-	auto allList = value["List"]["ProductInfo"];
-	for (auto value : allList)
+	auto allListNode = dataNode["List"]["ProductInfo"];
+	for (auto dataNodeListProductInfo : allListNode)
 	{
 		Data::ProductInfo productInfoObject;
-		if(!value["GmtCreate"].isNull())
-			productInfoObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["DataFormat"].isNull())
-			productInfoObject.dataFormat = std::stoi(value["DataFormat"].asString());
-		if(!value["Description"].isNull())
-			productInfoObject.description = value["Description"].asString();
-		if(!value["DeviceCount"].isNull())
-			productInfoObject.deviceCount = std::stoi(value["DeviceCount"].asString());
-		if(!value["NodeType"].isNull())
-			productInfoObject.nodeType = std::stoi(value["NodeType"].asString());
-		if(!value["ProductKey"].isNull())
-			productInfoObject.productKey = value["ProductKey"].asString();
-		if(!value["ProductName"].isNull())
-			productInfoObject.productName = value["ProductName"].asString();
+		if(!dataNodeListProductInfo["GmtCreate"].isNull())
+			productInfoObject.gmtCreate = std::stol(dataNodeListProductInfo["GmtCreate"].asString());
+		if(!dataNodeListProductInfo["DataFormat"].isNull())
+			productInfoObject.dataFormat = std::stoi(dataNodeListProductInfo["DataFormat"].asString());
+		if(!dataNodeListProductInfo["Description"].isNull())
+			productInfoObject.description = dataNodeListProductInfo["Description"].asString();
+		if(!dataNodeListProductInfo["DeviceCount"].isNull())
+			productInfoObject.deviceCount = std::stoi(dataNodeListProductInfo["DeviceCount"].asString());
+		if(!dataNodeListProductInfo["NodeType"].isNull())
+			productInfoObject.nodeType = std::stoi(dataNodeListProductInfo["NodeType"].asString());
+		if(!dataNodeListProductInfo["ProductKey"].isNull())
+			productInfoObject.productKey = dataNodeListProductInfo["ProductKey"].asString();
+		if(!dataNodeListProductInfo["ProductName"].isNull())
+			productInfoObject.productName = dataNodeListProductInfo["ProductName"].asString();
 		data_.list.push_back(productInfoObject);
 	}
 	if(!value["Success"].isNull())

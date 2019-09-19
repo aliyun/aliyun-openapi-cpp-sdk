@@ -44,22 +44,22 @@ void FindServiceStatisticalDataResult::parse(const std::string &payload)
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
 	if(!dataNode["PageNumber"].isNull())
 		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
-	auto allMonitorStatisticData = value["MonitorStatisticData"]["ServiceStatisticData"];
-	for (auto value : allMonitorStatisticData)
+	auto allMonitorStatisticDataNode = dataNode["MonitorStatisticData"]["ServiceStatisticData"];
+	for (auto dataNodeMonitorStatisticDataServiceStatisticData : allMonitorStatisticDataNode)
 	{
 		Data::ServiceStatisticData serviceStatisticDataObject;
-		if(!value["AvgRt"].isNull())
-			serviceStatisticDataObject.avgRt = std::stof(value["AvgRt"].asString());
-		if(!value["MaxRt"].isNull())
-			serviceStatisticDataObject.maxRt = std::stof(value["MaxRt"].asString());
-		if(!value["MinRt"].isNull())
-			serviceStatisticDataObject.minRt = std::stof(value["MinRt"].asString());
-		if(!value["RequestTime"].isNull())
-			serviceStatisticDataObject.requestTime = std::stol(value["RequestTime"].asString());
-		if(!value["ServiceName"].isNull())
-			serviceStatisticDataObject.serviceName = value["ServiceName"].asString();
-		if(!value["UserId"].isNull())
-			serviceStatisticDataObject.userId = value["UserId"].asString();
+		if(!dataNodeMonitorStatisticDataServiceStatisticData["AvgRt"].isNull())
+			serviceStatisticDataObject.avgRt = std::stof(dataNodeMonitorStatisticDataServiceStatisticData["AvgRt"].asString());
+		if(!dataNodeMonitorStatisticDataServiceStatisticData["MaxRt"].isNull())
+			serviceStatisticDataObject.maxRt = std::stof(dataNodeMonitorStatisticDataServiceStatisticData["MaxRt"].asString());
+		if(!dataNodeMonitorStatisticDataServiceStatisticData["MinRt"].isNull())
+			serviceStatisticDataObject.minRt = std::stof(dataNodeMonitorStatisticDataServiceStatisticData["MinRt"].asString());
+		if(!dataNodeMonitorStatisticDataServiceStatisticData["RequestTime"].isNull())
+			serviceStatisticDataObject.requestTime = std::stol(dataNodeMonitorStatisticDataServiceStatisticData["RequestTime"].asString());
+		if(!dataNodeMonitorStatisticDataServiceStatisticData["ServiceName"].isNull())
+			serviceStatisticDataObject.serviceName = dataNodeMonitorStatisticDataServiceStatisticData["ServiceName"].asString();
+		if(!dataNodeMonitorStatisticDataServiceStatisticData["UserId"].isNull())
+			serviceStatisticDataObject.userId = dataNodeMonitorStatisticDataServiceStatisticData["UserId"].asString();
 		auto totalNode = value["Total"];
 		if(!totalNode["ErrorNum"].isNull())
 			serviceStatisticDataObject.total.errorNum = std::stoi(totalNode["ErrorNum"].asString());

@@ -39,14 +39,14 @@ void ListInvocationStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInvokeInstances = value["InvokeInstances"]["InvokeInstance"];
-	for (auto value : allInvokeInstances)
+	auto allInvokeInstancesNode = value["InvokeInstances"]["InvokeInstance"];
+	for (auto valueInvokeInstancesInvokeInstance : allInvokeInstancesNode)
 	{
 		InvokeInstance invokeInstancesObject;
-		if(!value["InstanceId"].isNull())
-			invokeInstancesObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceInvokeStatus"].isNull())
-			invokeInstancesObject.instanceInvokeStatus = value["InstanceInvokeStatus"].asString();
+		if(!valueInvokeInstancesInvokeInstance["InstanceId"].isNull())
+			invokeInstancesObject.instanceId = valueInvokeInstancesInvokeInstance["InstanceId"].asString();
+		if(!valueInvokeInstancesInvokeInstance["InstanceInvokeStatus"].isNull())
+			invokeInstancesObject.instanceInvokeStatus = valueInvokeInstancesInvokeInstance["InstanceInvokeStatus"].asString();
 		invokeInstances_.push_back(invokeInstancesObject);
 	}
 	if(!value["CommandId"].isNull())

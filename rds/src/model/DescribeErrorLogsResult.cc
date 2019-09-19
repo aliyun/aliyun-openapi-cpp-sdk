@@ -39,14 +39,14 @@ void DescribeErrorLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["ErrorLog"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["ErrorLog"];
+	for (auto valueItemsErrorLog : allItemsNode)
 	{
 		ErrorLog itemsObject;
-		if(!value["ErrorInfo"].isNull())
-			itemsObject.errorInfo = value["ErrorInfo"].asString();
-		if(!value["CreateTime"].isNull())
-			itemsObject.createTime = value["CreateTime"].asString();
+		if(!valueItemsErrorLog["ErrorInfo"].isNull())
+			itemsObject.errorInfo = valueItemsErrorLog["ErrorInfo"].asString();
+		if(!valueItemsErrorLog["CreateTime"].isNull())
+			itemsObject.createTime = valueItemsErrorLog["CreateTime"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

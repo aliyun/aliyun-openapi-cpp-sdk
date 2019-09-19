@@ -39,38 +39,38 @@ void DescribeRouteTableListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRouterTableList = value["RouterTableList"]["RouterTableListType"];
-	for (auto value : allRouterTableList)
+	auto allRouterTableListNode = value["RouterTableList"]["RouterTableListType"];
+	for (auto valueRouterTableListRouterTableListType : allRouterTableListNode)
 	{
 		RouterTableListType routerTableListObject;
-		if(!value["VpcId"].isNull())
-			routerTableListObject.vpcId = value["VpcId"].asString();
-		if(!value["RouterType"].isNull())
-			routerTableListObject.routerType = value["RouterType"].asString();
-		if(!value["RouterId"].isNull())
-			routerTableListObject.routerId = value["RouterId"].asString();
-		if(!value["RouteTableId"].isNull())
-			routerTableListObject.routeTableId = value["RouteTableId"].asString();
-		if(!value["RouteTableName"].isNull())
-			routerTableListObject.routeTableName = value["RouteTableName"].asString();
-		if(!value["RouteTableType"].isNull())
-			routerTableListObject.routeTableType = value["RouteTableType"].asString();
-		if(!value["Description"].isNull())
-			routerTableListObject.description = value["Description"].asString();
-		if(!value["ResourceGroupId"].isNull())
-			routerTableListObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["CreationTime"].isNull())
-			routerTableListObject.creationTime = value["CreationTime"].asString();
-		if(!value["Status"].isNull())
-			routerTableListObject.status = value["Status"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueRouterTableListRouterTableListType["VpcId"].isNull())
+			routerTableListObject.vpcId = valueRouterTableListRouterTableListType["VpcId"].asString();
+		if(!valueRouterTableListRouterTableListType["RouterType"].isNull())
+			routerTableListObject.routerType = valueRouterTableListRouterTableListType["RouterType"].asString();
+		if(!valueRouterTableListRouterTableListType["RouterId"].isNull())
+			routerTableListObject.routerId = valueRouterTableListRouterTableListType["RouterId"].asString();
+		if(!valueRouterTableListRouterTableListType["RouteTableId"].isNull())
+			routerTableListObject.routeTableId = valueRouterTableListRouterTableListType["RouteTableId"].asString();
+		if(!valueRouterTableListRouterTableListType["RouteTableName"].isNull())
+			routerTableListObject.routeTableName = valueRouterTableListRouterTableListType["RouteTableName"].asString();
+		if(!valueRouterTableListRouterTableListType["RouteTableType"].isNull())
+			routerTableListObject.routeTableType = valueRouterTableListRouterTableListType["RouteTableType"].asString();
+		if(!valueRouterTableListRouterTableListType["Description"].isNull())
+			routerTableListObject.description = valueRouterTableListRouterTableListType["Description"].asString();
+		if(!valueRouterTableListRouterTableListType["ResourceGroupId"].isNull())
+			routerTableListObject.resourceGroupId = valueRouterTableListRouterTableListType["ResourceGroupId"].asString();
+		if(!valueRouterTableListRouterTableListType["CreationTime"].isNull())
+			routerTableListObject.creationTime = valueRouterTableListRouterTableListType["CreationTime"].asString();
+		if(!valueRouterTableListRouterTableListType["Status"].isNull())
+			routerTableListObject.status = valueRouterTableListRouterTableListType["Status"].asString();
+		auto allTagsNode = allRouterTableListNode["Tags"]["Tag"];
+		for (auto allRouterTableListNodeTagsTag : allTagsNode)
 		{
 			RouterTableListType::Tag tagsObject;
-			if(!value["Key"].isNull())
-				tagsObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				tagsObject.value = value["Value"].asString();
+			if(!allRouterTableListNodeTagsTag["Key"].isNull())
+				tagsObject.key = allRouterTableListNodeTagsTag["Key"].asString();
+			if(!allRouterTableListNodeTagsTag["Value"].isNull())
+				tagsObject.value = allRouterTableListNodeTagsTag["Value"].asString();
 			routerTableListObject.tags.push_back(tagsObject);
 		}
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];

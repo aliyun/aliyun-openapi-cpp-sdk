@@ -46,18 +46,18 @@ void ListSkillGroupSummaryReportsSinceMidnightResult::parse(const std::string &p
 		pagedSkillGroupSummaryReport_.pageNumber = std::stoi(pagedSkillGroupSummaryReportNode["PageNumber"].asString());
 	if(!pagedSkillGroupSummaryReportNode["PageSize"].isNull())
 		pagedSkillGroupSummaryReport_.pageSize = std::stoi(pagedSkillGroupSummaryReportNode["PageSize"].asString());
-	auto allList = value["List"]["SkillGroupSummaryReport"];
-	for (auto value : allList)
+	auto allListNode = pagedSkillGroupSummaryReportNode["List"]["SkillGroupSummaryReport"];
+	for (auto pagedSkillGroupSummaryReportNodeListSkillGroupSummaryReport : allListNode)
 	{
 		PagedSkillGroupSummaryReport::SkillGroupSummaryReport skillGroupSummaryReportObject;
-		if(!value["Timestamp"].isNull())
-			skillGroupSummaryReportObject.timestamp = value["Timestamp"].asString();
-		if(!value["InstanceId"].isNull())
-			skillGroupSummaryReportObject.instanceId = value["InstanceId"].asString();
-		if(!value["SkillGroupId"].isNull())
-			skillGroupSummaryReportObject.skillGroupId = value["SkillGroupId"].asString();
-		if(!value["SkillGroupName"].isNull())
-			skillGroupSummaryReportObject.skillGroupName = value["SkillGroupName"].asString();
+		if(!pagedSkillGroupSummaryReportNodeListSkillGroupSummaryReport["Timestamp"].isNull())
+			skillGroupSummaryReportObject.timestamp = pagedSkillGroupSummaryReportNodeListSkillGroupSummaryReport["Timestamp"].asString();
+		if(!pagedSkillGroupSummaryReportNodeListSkillGroupSummaryReport["InstanceId"].isNull())
+			skillGroupSummaryReportObject.instanceId = pagedSkillGroupSummaryReportNodeListSkillGroupSummaryReport["InstanceId"].asString();
+		if(!pagedSkillGroupSummaryReportNodeListSkillGroupSummaryReport["SkillGroupId"].isNull())
+			skillGroupSummaryReportObject.skillGroupId = pagedSkillGroupSummaryReportNodeListSkillGroupSummaryReport["SkillGroupId"].asString();
+		if(!pagedSkillGroupSummaryReportNodeListSkillGroupSummaryReport["SkillGroupName"].isNull())
+			skillGroupSummaryReportObject.skillGroupName = pagedSkillGroupSummaryReportNodeListSkillGroupSummaryReport["SkillGroupName"].asString();
 		auto overallNode = value["Overall"];
 		if(!overallNode["TotalCalls"].isNull())
 			skillGroupSummaryReportObject.overall.totalCalls = std::stol(overallNode["TotalCalls"].asString());

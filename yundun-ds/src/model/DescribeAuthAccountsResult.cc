@@ -39,22 +39,22 @@ void DescribeAuthAccountsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Account"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Account"];
+	for (auto valueItemsAccount : allItemsNode)
 	{
 		Account itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["LoginName"].isNull())
-			itemsObject.loginName = value["LoginName"].asString();
-		if(!value["FullName"].isNull())
-			itemsObject.fullName = value["FullName"].asString();
-		if(!value["AuthLoginName"].isNull())
-			itemsObject.authLoginName = value["AuthLoginName"].asString();
-		if(!value["AuthFullName"].isNull())
-			itemsObject.authFullName = value["AuthFullName"].asString();
-		if(!value["AuthTime"].isNull())
-			itemsObject.authTime = std::stol(value["AuthTime"].asString());
+		if(!valueItemsAccount["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsAccount["Id"].asString());
+		if(!valueItemsAccount["LoginName"].isNull())
+			itemsObject.loginName = valueItemsAccount["LoginName"].asString();
+		if(!valueItemsAccount["FullName"].isNull())
+			itemsObject.fullName = valueItemsAccount["FullName"].asString();
+		if(!valueItemsAccount["AuthLoginName"].isNull())
+			itemsObject.authLoginName = valueItemsAccount["AuthLoginName"].asString();
+		if(!valueItemsAccount["AuthFullName"].isNull())
+			itemsObject.authFullName = valueItemsAccount["AuthFullName"].asString();
+		if(!valueItemsAccount["AuthTime"].isNull())
+			itemsObject.authTime = std::stol(valueItemsAccount["AuthTime"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

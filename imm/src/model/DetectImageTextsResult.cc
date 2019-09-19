@@ -39,14 +39,14 @@ void DetectImageTextsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOCR = value["OCR"]["OCRItem"];
-	for (auto value : allOCR)
+	auto allOCRNode = value["OCR"]["OCRItem"];
+	for (auto valueOCROCRItem : allOCRNode)
 	{
 		OCRItem oCRObject;
-		if(!value["OCRContents"].isNull())
-			oCRObject.oCRContents = value["OCRContents"].asString();
-		if(!value["OCRConfidence"].isNull())
-			oCRObject.oCRConfidence = std::stof(value["OCRConfidence"].asString());
+		if(!valueOCROCRItem["OCRContents"].isNull())
+			oCRObject.oCRContents = valueOCROCRItem["OCRContents"].asString();
+		if(!valueOCROCRItem["OCRConfidence"].isNull())
+			oCRObject.oCRConfidence = std::stof(valueOCROCRItem["OCRConfidence"].asString());
 		auto oCRBoundaryNode = value["OCRBoundary"];
 		if(!oCRBoundaryNode["Left"].isNull())
 			oCRObject.oCRBoundary.left = std::stoi(oCRBoundaryNode["Left"].asString());

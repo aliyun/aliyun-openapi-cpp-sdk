@@ -39,30 +39,30 @@ void DescribeStatisticSummaryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allZoneRequestTops = value["ZoneRequestTops"]["ZoneRequestTop"];
-	for (auto value : allZoneRequestTops)
+	auto allZoneRequestTopsNode = value["ZoneRequestTops"]["ZoneRequestTop"];
+	for (auto valueZoneRequestTopsZoneRequestTop : allZoneRequestTopsNode)
 	{
 		ZoneRequestTop zoneRequestTopsObject;
-		if(!value["ZoneName"].isNull())
-			zoneRequestTopsObject.zoneName = value["ZoneName"].asString();
-		if(!value["RequestCount"].isNull())
-			zoneRequestTopsObject.requestCount = std::stol(value["RequestCount"].asString());
+		if(!valueZoneRequestTopsZoneRequestTop["ZoneName"].isNull())
+			zoneRequestTopsObject.zoneName = valueZoneRequestTopsZoneRequestTop["ZoneName"].asString();
+		if(!valueZoneRequestTopsZoneRequestTop["RequestCount"].isNull())
+			zoneRequestTopsObject.requestCount = std::stol(valueZoneRequestTopsZoneRequestTop["RequestCount"].asString());
 		zoneRequestTops_.push_back(zoneRequestTopsObject);
 	}
-	auto allVpcRequestTops = value["VpcRequestTops"]["VpcRequestTop"];
-	for (auto value : allVpcRequestTops)
+	auto allVpcRequestTopsNode = value["VpcRequestTops"]["VpcRequestTop"];
+	for (auto valueVpcRequestTopsVpcRequestTop : allVpcRequestTopsNode)
 	{
 		VpcRequestTop vpcRequestTopsObject;
-		if(!value["RegionId"].isNull())
-			vpcRequestTopsObject.regionId = value["RegionId"].asString();
-		if(!value["VpcId"].isNull())
-			vpcRequestTopsObject.vpcId = value["VpcId"].asString();
-		if(!value["TunnelId"].isNull())
-			vpcRequestTopsObject.tunnelId = value["TunnelId"].asString();
-		if(!value["RequestCount"].isNull())
-			vpcRequestTopsObject.requestCount = std::stol(value["RequestCount"].asString());
-		if(!value["RegionName"].isNull())
-			vpcRequestTopsObject.regionName = value["RegionName"].asString();
+		if(!valueVpcRequestTopsVpcRequestTop["RegionId"].isNull())
+			vpcRequestTopsObject.regionId = valueVpcRequestTopsVpcRequestTop["RegionId"].asString();
+		if(!valueVpcRequestTopsVpcRequestTop["VpcId"].isNull())
+			vpcRequestTopsObject.vpcId = valueVpcRequestTopsVpcRequestTop["VpcId"].asString();
+		if(!valueVpcRequestTopsVpcRequestTop["TunnelId"].isNull())
+			vpcRequestTopsObject.tunnelId = valueVpcRequestTopsVpcRequestTop["TunnelId"].asString();
+		if(!valueVpcRequestTopsVpcRequestTop["RequestCount"].isNull())
+			vpcRequestTopsObject.requestCount = std::stol(valueVpcRequestTopsVpcRequestTop["RequestCount"].asString());
+		if(!valueVpcRequestTopsVpcRequestTop["RegionName"].isNull())
+			vpcRequestTopsObject.regionName = valueVpcRequestTopsVpcRequestTop["RegionName"].asString();
 		vpcRequestTops_.push_back(vpcRequestTopsObject);
 	}
 	if(!value["TotalCount"].isNull())

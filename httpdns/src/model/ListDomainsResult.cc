@@ -39,20 +39,20 @@ void ListDomainsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainInfos = value["DomainInfos"]["DomainInfo"];
-	for (auto value : allDomainInfos)
+	auto allDomainInfosNode = value["DomainInfos"]["DomainInfo"];
+	for (auto valueDomainInfosDomainInfo : allDomainInfosNode)
 	{
 		DomainInfo domainInfosObject;
-		if(!value["DomainName"].isNull())
-			domainInfosObject.domainName = value["DomainName"].asString();
-		if(!value["Resolved"].isNull())
-			domainInfosObject.resolved = std::stol(value["Resolved"].asString());
-		if(!value["ResolvedHttps"].isNull())
-			domainInfosObject.resolvedHttps = std::stol(value["ResolvedHttps"].asString());
-		if(!value["Resolved6"].isNull())
-			domainInfosObject.resolved6 = std::stol(value["Resolved6"].asString());
-		if(!value["ResolvedHttps6"].isNull())
-			domainInfosObject.resolvedHttps6 = std::stol(value["ResolvedHttps6"].asString());
+		if(!valueDomainInfosDomainInfo["DomainName"].isNull())
+			domainInfosObject.domainName = valueDomainInfosDomainInfo["DomainName"].asString();
+		if(!valueDomainInfosDomainInfo["Resolved"].isNull())
+			domainInfosObject.resolved = std::stol(valueDomainInfosDomainInfo["Resolved"].asString());
+		if(!valueDomainInfosDomainInfo["ResolvedHttps"].isNull())
+			domainInfosObject.resolvedHttps = std::stol(valueDomainInfosDomainInfo["ResolvedHttps"].asString());
+		if(!valueDomainInfosDomainInfo["Resolved6"].isNull())
+			domainInfosObject.resolved6 = std::stol(valueDomainInfosDomainInfo["Resolved6"].asString());
+		if(!valueDomainInfosDomainInfo["ResolvedHttps6"].isNull())
+			domainInfosObject.resolvedHttps6 = std::stol(valueDomainInfosDomainInfo["ResolvedHttps6"].asString());
 		domainInfos_.push_back(domainInfosObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -39,12 +39,12 @@ void FuzzyMatchDomainSensitiveWordResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMatchedSentiveWords = value["MatchedSentiveWords"]["MatchedSensitiveWord"];
-	for (auto value : allMatchedSentiveWords)
+	auto allMatchedSentiveWordsNode = value["MatchedSentiveWords"]["MatchedSensitiveWord"];
+	for (auto valueMatchedSentiveWordsMatchedSensitiveWord : allMatchedSentiveWordsNode)
 	{
 		MatchedSensitiveWord matchedSentiveWordsObject;
-		if(!value["Word"].isNull())
-			matchedSentiveWordsObject.word = value["Word"].asString();
+		if(!valueMatchedSentiveWordsMatchedSensitiveWord["Word"].isNull())
+			matchedSentiveWordsObject.word = valueMatchedSentiveWordsMatchedSensitiveWord["Word"].asString();
 		matchedSentiveWords_.push_back(matchedSentiveWordsObject);
 	}
 	if(!value["Keyword"].isNull())

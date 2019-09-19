@@ -39,20 +39,20 @@ void QueryDevicePropertiesDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPropertyDataInfos = value["PropertyDataInfos"]["PropertyDataInfo"];
-	for (auto value : allPropertyDataInfos)
+	auto allPropertyDataInfosNode = value["PropertyDataInfos"]["PropertyDataInfo"];
+	for (auto valuePropertyDataInfosPropertyDataInfo : allPropertyDataInfosNode)
 	{
 		PropertyDataInfo propertyDataInfosObject;
-		if(!value["Identifier"].isNull())
-			propertyDataInfosObject.identifier = value["Identifier"].asString();
-		auto allList = value["List"]["PropertyInfo"];
-		for (auto value : allList)
+		if(!valuePropertyDataInfosPropertyDataInfo["Identifier"].isNull())
+			propertyDataInfosObject.identifier = valuePropertyDataInfosPropertyDataInfo["Identifier"].asString();
+		auto allListNode = allPropertyDataInfosNode["List"]["PropertyInfo"];
+		for (auto allPropertyDataInfosNodeListPropertyInfo : allListNode)
 		{
 			PropertyDataInfo::PropertyInfo listObject;
-			if(!value["Time"].isNull())
-				listObject.time = std::stol(value["Time"].asString());
-			if(!value["Value"].isNull())
-				listObject.value = value["Value"].asString();
+			if(!allPropertyDataInfosNodeListPropertyInfo["Time"].isNull())
+				listObject.time = std::stol(allPropertyDataInfosNodeListPropertyInfo["Time"].asString());
+			if(!allPropertyDataInfosNodeListPropertyInfo["Value"].isNull())
+				listObject.value = allPropertyDataInfosNodeListPropertyInfo["Value"].asString();
 			propertyDataInfosObject.list.push_back(listObject);
 		}
 		propertyDataInfos_.push_back(propertyDataInfosObject);

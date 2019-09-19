@@ -52,52 +52,52 @@ void CreateContactFlowResult::parse(const std::string &payload)
 		contactFlow_.type = contactFlowNode["Type"].asString();
 	if(!contactFlowNode["AppliedVersion"].isNull())
 		contactFlow_.appliedVersion = contactFlowNode["AppliedVersion"].asString();
-	auto allVersions = value["Versions"]["ContactFlowVersion"];
-	for (auto value : allVersions)
+	auto allVersionsNode = contactFlowNode["Versions"]["ContactFlowVersion"];
+	for (auto contactFlowNodeVersionsContactFlowVersion : allVersionsNode)
 	{
 		ContactFlow::ContactFlowVersion contactFlowVersionObject;
-		if(!value["ContactFlowVersionId"].isNull())
-			contactFlowVersionObject.contactFlowVersionId = value["ContactFlowVersionId"].asString();
-		if(!value["Version"].isNull())
-			contactFlowVersionObject.version = value["Version"].asString();
-		if(!value["ContactFlowVersionDescription"].isNull())
-			contactFlowVersionObject.contactFlowVersionDescription = value["ContactFlowVersionDescription"].asString();
-		if(!value["Canvas"].isNull())
-			contactFlowVersionObject.canvas = value["Canvas"].asString();
-		if(!value["Content"].isNull())
-			contactFlowVersionObject.content = value["Content"].asString();
-		if(!value["LastModified"].isNull())
-			contactFlowVersionObject.lastModified = value["LastModified"].asString();
-		if(!value["LastModifiedBy"].isNull())
-			contactFlowVersionObject.lastModifiedBy = value["LastModifiedBy"].asString();
-		if(!value["LockedBy"].isNull())
-			contactFlowVersionObject.lockedBy = value["LockedBy"].asString();
-		if(!value["Status"].isNull())
-			contactFlowVersionObject.status = value["Status"].asString();
+		if(!contactFlowNodeVersionsContactFlowVersion["ContactFlowVersionId"].isNull())
+			contactFlowVersionObject.contactFlowVersionId = contactFlowNodeVersionsContactFlowVersion["ContactFlowVersionId"].asString();
+		if(!contactFlowNodeVersionsContactFlowVersion["Version"].isNull())
+			contactFlowVersionObject.version = contactFlowNodeVersionsContactFlowVersion["Version"].asString();
+		if(!contactFlowNodeVersionsContactFlowVersion["ContactFlowVersionDescription"].isNull())
+			contactFlowVersionObject.contactFlowVersionDescription = contactFlowNodeVersionsContactFlowVersion["ContactFlowVersionDescription"].asString();
+		if(!contactFlowNodeVersionsContactFlowVersion["Canvas"].isNull())
+			contactFlowVersionObject.canvas = contactFlowNodeVersionsContactFlowVersion["Canvas"].asString();
+		if(!contactFlowNodeVersionsContactFlowVersion["Content"].isNull())
+			contactFlowVersionObject.content = contactFlowNodeVersionsContactFlowVersion["Content"].asString();
+		if(!contactFlowNodeVersionsContactFlowVersion["LastModified"].isNull())
+			contactFlowVersionObject.lastModified = contactFlowNodeVersionsContactFlowVersion["LastModified"].asString();
+		if(!contactFlowNodeVersionsContactFlowVersion["LastModifiedBy"].isNull())
+			contactFlowVersionObject.lastModifiedBy = contactFlowNodeVersionsContactFlowVersion["LastModifiedBy"].asString();
+		if(!contactFlowNodeVersionsContactFlowVersion["LockedBy"].isNull())
+			contactFlowVersionObject.lockedBy = contactFlowNodeVersionsContactFlowVersion["LockedBy"].asString();
+		if(!contactFlowNodeVersionsContactFlowVersion["Status"].isNull())
+			contactFlowVersionObject.status = contactFlowNodeVersionsContactFlowVersion["Status"].asString();
 		contactFlow_.versions.push_back(contactFlowVersionObject);
 	}
-	auto allPhoneNumbers = value["PhoneNumbers"]["PhoneNumber"];
-	for (auto value : allPhoneNumbers)
+	auto allPhoneNumbersNode = contactFlowNode["PhoneNumbers"]["PhoneNumber"];
+	for (auto contactFlowNodePhoneNumbersPhoneNumber : allPhoneNumbersNode)
 	{
 		ContactFlow::PhoneNumber phoneNumberObject;
-		if(!value["PhoneNumberId"].isNull())
-			phoneNumberObject.phoneNumberId = value["PhoneNumberId"].asString();
-		if(!value["InstanceId"].isNull())
-			phoneNumberObject.instanceId = value["InstanceId"].asString();
-		if(!value["Number"].isNull())
-			phoneNumberObject.number = value["Number"].asString();
-		if(!value["PhoneNumberDescription"].isNull())
-			phoneNumberObject.phoneNumberDescription = value["PhoneNumberDescription"].asString();
-		if(!value["TestOnly"].isNull())
-			phoneNumberObject.testOnly = value["TestOnly"].asString() == "true";
-		if(!value["RemainingTime"].isNull())
-			phoneNumberObject.remainingTime = std::stoi(value["RemainingTime"].asString());
-		if(!value["AllowOutbound"].isNull())
-			phoneNumberObject.allowOutbound = value["AllowOutbound"].asString() == "true";
-		if(!value["Usage"].isNull())
-			phoneNumberObject.usage = value["Usage"].asString();
-		if(!value["Trunks"].isNull())
-			phoneNumberObject.trunks = std::stoi(value["Trunks"].asString());
+		if(!contactFlowNodePhoneNumbersPhoneNumber["PhoneNumberId"].isNull())
+			phoneNumberObject.phoneNumberId = contactFlowNodePhoneNumbersPhoneNumber["PhoneNumberId"].asString();
+		if(!contactFlowNodePhoneNumbersPhoneNumber["InstanceId"].isNull())
+			phoneNumberObject.instanceId = contactFlowNodePhoneNumbersPhoneNumber["InstanceId"].asString();
+		if(!contactFlowNodePhoneNumbersPhoneNumber["Number"].isNull())
+			phoneNumberObject.number = contactFlowNodePhoneNumbersPhoneNumber["Number"].asString();
+		if(!contactFlowNodePhoneNumbersPhoneNumber["PhoneNumberDescription"].isNull())
+			phoneNumberObject.phoneNumberDescription = contactFlowNodePhoneNumbersPhoneNumber["PhoneNumberDescription"].asString();
+		if(!contactFlowNodePhoneNumbersPhoneNumber["TestOnly"].isNull())
+			phoneNumberObject.testOnly = contactFlowNodePhoneNumbersPhoneNumber["TestOnly"].asString() == "true";
+		if(!contactFlowNodePhoneNumbersPhoneNumber["RemainingTime"].isNull())
+			phoneNumberObject.remainingTime = std::stoi(contactFlowNodePhoneNumbersPhoneNumber["RemainingTime"].asString());
+		if(!contactFlowNodePhoneNumbersPhoneNumber["AllowOutbound"].isNull())
+			phoneNumberObject.allowOutbound = contactFlowNodePhoneNumbersPhoneNumber["AllowOutbound"].asString() == "true";
+		if(!contactFlowNodePhoneNumbersPhoneNumber["Usage"].isNull())
+			phoneNumberObject.usage = contactFlowNodePhoneNumbersPhoneNumber["Usage"].asString();
+		if(!contactFlowNodePhoneNumbersPhoneNumber["Trunks"].isNull())
+			phoneNumberObject.trunks = std::stoi(contactFlowNodePhoneNumbersPhoneNumber["Trunks"].asString());
 		contactFlow_.phoneNumbers.push_back(phoneNumberObject);
 	}
 	if(!value["Success"].isNull())

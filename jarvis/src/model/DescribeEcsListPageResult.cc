@@ -39,20 +39,20 @@ void DescribeEcsListPageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataList = value["DataList"]["Data"];
-	for (auto value : allDataList)
+	auto allDataListNode = value["DataList"]["Data"];
+	for (auto valueDataListData : allDataListNode)
 	{
 		Data dataListObject;
-		if(!value["InstanceId"].isNull())
-			dataListObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceName"].isNull())
-			dataListObject.instanceName = value["InstanceName"].asString();
-		if(!value["IP"].isNull())
-			dataListObject.iP = value["IP"].asString();
-		if(!value["Region"].isNull())
-			dataListObject.region = value["Region"].asString();
-		if(!value["ItemSign"].isNull())
-			dataListObject.itemSign = value["ItemSign"].asString();
+		if(!valueDataListData["InstanceId"].isNull())
+			dataListObject.instanceId = valueDataListData["InstanceId"].asString();
+		if(!valueDataListData["InstanceName"].isNull())
+			dataListObject.instanceName = valueDataListData["InstanceName"].asString();
+		if(!valueDataListData["IP"].isNull())
+			dataListObject.iP = valueDataListData["IP"].asString();
+		if(!valueDataListData["Region"].isNull())
+			dataListObject.region = valueDataListData["Region"].asString();
+		if(!valueDataListData["ItemSign"].isNull())
+			dataListObject.itemSign = valueDataListData["ItemSign"].asString();
 		dataList_.push_back(dataListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

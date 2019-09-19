@@ -40,50 +40,50 @@ void DescribeRdsVpcsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto vpcsNode = value["Vpcs"];
-	auto allVpc = value["Vpc"]["VpcItem"];
-	for (auto value : allVpc)
+	auto allVpcNode = vpcsNode["Vpc"]["VpcItem"];
+	for (auto vpcsNodeVpcVpcItem : allVpcNode)
 	{
 		Vpcs::VpcItem vpcItemObject;
-		if(!value["VpcId"].isNull())
-			vpcItemObject.vpcId = value["VpcId"].asString();
-		if(!value["VpcName"].isNull())
-			vpcItemObject.vpcName = value["VpcName"].asString();
-		if(!value["Bid"].isNull())
-			vpcItemObject.bid = value["Bid"].asString();
-		if(!value["AliUid"].isNull())
-			vpcItemObject.aliUid = value["AliUid"].asString();
-		if(!value["RegionNo"].isNull())
-			vpcItemObject.regionNo = value["RegionNo"].asString();
-		if(!value["CidrBlock"].isNull())
-			vpcItemObject.cidrBlock = value["CidrBlock"].asString();
-		if(!value["IsDefault"].isNull())
-			vpcItemObject.isDefault = value["IsDefault"].asString() == "true";
-		if(!value["Status"].isNull())
-			vpcItemObject.status = value["Status"].asString();
-		if(!value["GmtCreate"].isNull())
-			vpcItemObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			vpcItemObject.gmtModified = value["GmtModified"].asString();
-		auto allVSwitchs = value["VSwitchs"]["VSwitch"];
-		for (auto value : allVSwitchs)
+		if(!vpcsNodeVpcVpcItem["VpcId"].isNull())
+			vpcItemObject.vpcId = vpcsNodeVpcVpcItem["VpcId"].asString();
+		if(!vpcsNodeVpcVpcItem["VpcName"].isNull())
+			vpcItemObject.vpcName = vpcsNodeVpcVpcItem["VpcName"].asString();
+		if(!vpcsNodeVpcVpcItem["Bid"].isNull())
+			vpcItemObject.bid = vpcsNodeVpcVpcItem["Bid"].asString();
+		if(!vpcsNodeVpcVpcItem["AliUid"].isNull())
+			vpcItemObject.aliUid = vpcsNodeVpcVpcItem["AliUid"].asString();
+		if(!vpcsNodeVpcVpcItem["RegionNo"].isNull())
+			vpcItemObject.regionNo = vpcsNodeVpcVpcItem["RegionNo"].asString();
+		if(!vpcsNodeVpcVpcItem["CidrBlock"].isNull())
+			vpcItemObject.cidrBlock = vpcsNodeVpcVpcItem["CidrBlock"].asString();
+		if(!vpcsNodeVpcVpcItem["IsDefault"].isNull())
+			vpcItemObject.isDefault = vpcsNodeVpcVpcItem["IsDefault"].asString() == "true";
+		if(!vpcsNodeVpcVpcItem["Status"].isNull())
+			vpcItemObject.status = vpcsNodeVpcVpcItem["Status"].asString();
+		if(!vpcsNodeVpcVpcItem["GmtCreate"].isNull())
+			vpcItemObject.gmtCreate = vpcsNodeVpcVpcItem["GmtCreate"].asString();
+		if(!vpcsNodeVpcVpcItem["GmtModified"].isNull())
+			vpcItemObject.gmtModified = vpcsNodeVpcVpcItem["GmtModified"].asString();
+		auto allVSwitchsNode = allVpcNode["VSwitchs"]["VSwitch"];
+		for (auto allVpcNodeVSwitchsVSwitch : allVSwitchsNode)
 		{
 			Vpcs::VpcItem::VSwitch vSwitchsObject;
-			if(!value["VSwitchId"].isNull())
-				vSwitchsObject.vSwitchId = value["VSwitchId"].asString();
-			if(!value["VSwitchName"].isNull())
-				vSwitchsObject.vSwitchName = value["VSwitchName"].asString();
-			if(!value["IzNo"].isNull())
-				vSwitchsObject.izNo = value["IzNo"].asString();
-			if(!value["CidrBlock"].isNull())
-				vSwitchsObject.cidrBlock = value["CidrBlock"].asString();
-			if(!value["IsDefault"].isNull())
-				vSwitchsObject.isDefault = value["IsDefault"].asString() == "true";
-			if(!value["Status"].isNull())
-				vSwitchsObject.status = value["Status"].asString();
-			if(!value["GmtCreate"].isNull())
-				vSwitchsObject.gmtCreate = value["GmtCreate"].asString();
-			if(!value["GmtModified"].isNull())
-				vSwitchsObject.gmtModified = value["GmtModified"].asString();
+			if(!allVpcNodeVSwitchsVSwitch["VSwitchId"].isNull())
+				vSwitchsObject.vSwitchId = allVpcNodeVSwitchsVSwitch["VSwitchId"].asString();
+			if(!allVpcNodeVSwitchsVSwitch["VSwitchName"].isNull())
+				vSwitchsObject.vSwitchName = allVpcNodeVSwitchsVSwitch["VSwitchName"].asString();
+			if(!allVpcNodeVSwitchsVSwitch["IzNo"].isNull())
+				vSwitchsObject.izNo = allVpcNodeVSwitchsVSwitch["IzNo"].asString();
+			if(!allVpcNodeVSwitchsVSwitch["CidrBlock"].isNull())
+				vSwitchsObject.cidrBlock = allVpcNodeVSwitchsVSwitch["CidrBlock"].asString();
+			if(!allVpcNodeVSwitchsVSwitch["IsDefault"].isNull())
+				vSwitchsObject.isDefault = allVpcNodeVSwitchsVSwitch["IsDefault"].asString() == "true";
+			if(!allVpcNodeVSwitchsVSwitch["Status"].isNull())
+				vSwitchsObject.status = allVpcNodeVSwitchsVSwitch["Status"].asString();
+			if(!allVpcNodeVSwitchsVSwitch["GmtCreate"].isNull())
+				vSwitchsObject.gmtCreate = allVpcNodeVSwitchsVSwitch["GmtCreate"].asString();
+			if(!allVpcNodeVSwitchsVSwitch["GmtModified"].isNull())
+				vSwitchsObject.gmtModified = allVpcNodeVSwitchsVSwitch["GmtModified"].asString();
 			vpcItemObject.vSwitchs.push_back(vSwitchsObject);
 		}
 		vpcs_.vpc.push_back(vpcItemObject);

@@ -48,114 +48,114 @@ void QueryInstanceGaapCostResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
-	auto allModules = value["Modules"]["Module"];
-	for (auto value : allModules)
+	auto allModulesNode = dataNode["Modules"]["Module"];
+	for (auto dataNodeModulesModule : allModulesNode)
 	{
 		Data::Module moduleObject;
-		if(!value["BillingCycle"].isNull())
-			moduleObject.billingCycle = value["BillingCycle"].asString();
-		if(!value["InstanceID"].isNull())
-			moduleObject.instanceID = value["InstanceID"].asString();
-		if(!value["ProductCode"].isNull())
-			moduleObject.productCode = value["ProductCode"].asString();
-		if(!value["ProductType"].isNull())
-			moduleObject.productType = value["ProductType"].asString();
-		if(!value["SubscriptionType"].isNull())
-			moduleObject.subscriptionType = value["SubscriptionType"].asString();
-		if(!value["Tag"].isNull())
-			moduleObject.tag = value["Tag"].asString();
-		if(!value["ResourceGroup"].isNull())
-			moduleObject.resourceGroup = value["ResourceGroup"].asString();
-		if(!value["AccountingUnit"].isNull())
-			moduleObject.accountingUnit = value["AccountingUnit"].asString();
-		if(!value["PayerAccount"].isNull())
-			moduleObject.payerAccount = value["PayerAccount"].asString();
-		if(!value["OwnerID"].isNull())
-			moduleObject.ownerID = value["OwnerID"].asString();
-		if(!value["Region"].isNull())
-			moduleObject.region = value["Region"].asString();
-		if(!value["Currency"].isNull())
-			moduleObject.currency = value["Currency"].asString();
-		if(!value["PaymentCurrency"].isNull())
-			moduleObject.paymentCurrency = value["PaymentCurrency"].asString();
-		if(!value["OrderType"].isNull())
-			moduleObject.orderType = value["OrderType"].asString();
-		if(!value["PayTime"].isNull())
-			moduleObject.payTime = value["PayTime"].asString();
-		if(!value["PretaxGrossAmount"].isNull())
-			moduleObject.pretaxGrossAmount = value["PretaxGrossAmount"].asString();
-		if(!value["PricingDiscount"].isNull())
-			moduleObject.pricingDiscount = value["PricingDiscount"].asString();
-		if(!value["DeductedByCoupons"].isNull())
-			moduleObject.deductedByCoupons = value["DeductedByCoupons"].asString();
-		if(!value["PretaxAmount"].isNull())
-			moduleObject.pretaxAmount = value["PretaxAmount"].asString();
-		if(!value["PretaxAmountLocal"].isNull())
-			moduleObject.pretaxAmountLocal = value["PretaxAmountLocal"].asString();
-		if(!value["DeductedByCashCoupons"].isNull())
-			moduleObject.deductedByCashCoupons = value["DeductedByCashCoupons"].asString();
-		if(!value["DeductedByPrepaidCard"].isNull())
-			moduleObject.deductedByPrepaidCard = value["DeductedByPrepaidCard"].asString();
-		if(!value["PaymentAmount"].isNull())
-			moduleObject.paymentAmount = value["PaymentAmount"].asString();
-		if(!value["GaapPretaxGrossAmount"].isNull())
-			moduleObject.gaapPretaxGrossAmount = value["GaapPretaxGrossAmount"].asString();
-		if(!value["GaapPricingDiscount"].isNull())
-			moduleObject.gaapPricingDiscount = value["GaapPricingDiscount"].asString();
-		if(!value["GaapDeductedByCoupons"].isNull())
-			moduleObject.gaapDeductedByCoupons = value["GaapDeductedByCoupons"].asString();
-		if(!value["GaapPretaxAmount"].isNull())
-			moduleObject.gaapPretaxAmount = value["GaapPretaxAmount"].asString();
-		if(!value["GaapPretaxAmountLocal"].isNull())
-			moduleObject.gaapPretaxAmountLocal = value["GaapPretaxAmountLocal"].asString();
-		if(!value["GaapDeductedByCashCoupons"].isNull())
-			moduleObject.gaapDeductedByCashCoupons = value["GaapDeductedByCashCoupons"].asString();
-		if(!value["GaapDeductedByPrepaidCard"].isNull())
-			moduleObject.gaapDeductedByPrepaidCard = value["GaapDeductedByPrepaidCard"].asString();
-		if(!value["GaapPaymentAmount"].isNull())
-			moduleObject.gaapPaymentAmount = value["GaapPaymentAmount"].asString();
-		if(!value["MonthGaapPretaxGrossAmount"].isNull())
-			moduleObject.monthGaapPretaxGrossAmount = value["MonthGaapPretaxGrossAmount"].asString();
-		if(!value["MonthGaapPricingDiscount"].isNull())
-			moduleObject.monthGaapPricingDiscount = value["MonthGaapPricingDiscount"].asString();
-		if(!value["MonthGaapDeductedByCoupons"].isNull())
-			moduleObject.monthGaapDeductedByCoupons = value["MonthGaapDeductedByCoupons"].asString();
-		if(!value["MonthGaapPretaxAmount"].isNull())
-			moduleObject.monthGaapPretaxAmount = value["MonthGaapPretaxAmount"].asString();
-		if(!value["MonthGaapPretaxAmountLocal"].isNull())
-			moduleObject.monthGaapPretaxAmountLocal = value["MonthGaapPretaxAmountLocal"].asString();
-		if(!value["MonthGaapDeductedByCashCoupons"].isNull())
-			moduleObject.monthGaapDeductedByCashCoupons = value["MonthGaapDeductedByCashCoupons"].asString();
-		if(!value["MonthGaapDeductedByPrepaidCard"].isNull())
-			moduleObject.monthGaapDeductedByPrepaidCard = value["MonthGaapDeductedByPrepaidCard"].asString();
-		if(!value["MonthGaapPaymentAmount"].isNull())
-			moduleObject.monthGaapPaymentAmount = value["MonthGaapPaymentAmount"].asString();
-		if(!value["UnallocatedPaymentAmount"].isNull())
-			moduleObject.unallocatedPaymentAmount = value["UnallocatedPaymentAmount"].asString();
-		if(!value["UsageStartDate"].isNull())
-			moduleObject.usageStartDate = value["UsageStartDate"].asString();
-		if(!value["UsageEndDate"].isNull())
-			moduleObject.usageEndDate = value["UsageEndDate"].asString();
-		if(!value["BillType"].isNull())
-			moduleObject.billType = value["BillType"].asString();
-		if(!value["OrderId"].isNull())
-			moduleObject.orderId = value["OrderId"].asString();
-		if(!value["SubOrderId"].isNull())
-			moduleObject.subOrderId = value["SubOrderId"].asString();
-		if(!value["UnallocatedPretaxGrossAmount"].isNull())
-			moduleObject.unallocatedPretaxGrossAmount = value["UnallocatedPretaxGrossAmount"].asString();
-		if(!value["UnallocatedPricingDiscount"].isNull())
-			moduleObject.unallocatedPricingDiscount = value["UnallocatedPricingDiscount"].asString();
-		if(!value["UnallocatedDeductedByCoupons"].isNull())
-			moduleObject.unallocatedDeductedByCoupons = value["UnallocatedDeductedByCoupons"].asString();
-		if(!value["UnallocatedPretaxAmount"].isNull())
-			moduleObject.unallocatedPretaxAmount = value["UnallocatedPretaxAmount"].asString();
-		if(!value["UnallocatedPretaxAmountLocal"].isNull())
-			moduleObject.unallocatedPretaxAmountLocal = value["UnallocatedPretaxAmountLocal"].asString();
-		if(!value["UnallocatedDeductedByCashCoupons"].isNull())
-			moduleObject.unallocatedDeductedByCashCoupons = value["UnallocatedDeductedByCashCoupons"].asString();
-		if(!value["UnallocatedDeductedByPrepaidCard"].isNull())
-			moduleObject.unallocatedDeductedByPrepaidCard = value["UnallocatedDeductedByPrepaidCard"].asString();
+		if(!dataNodeModulesModule["BillingCycle"].isNull())
+			moduleObject.billingCycle = dataNodeModulesModule["BillingCycle"].asString();
+		if(!dataNodeModulesModule["InstanceID"].isNull())
+			moduleObject.instanceID = dataNodeModulesModule["InstanceID"].asString();
+		if(!dataNodeModulesModule["ProductCode"].isNull())
+			moduleObject.productCode = dataNodeModulesModule["ProductCode"].asString();
+		if(!dataNodeModulesModule["ProductType"].isNull())
+			moduleObject.productType = dataNodeModulesModule["ProductType"].asString();
+		if(!dataNodeModulesModule["SubscriptionType"].isNull())
+			moduleObject.subscriptionType = dataNodeModulesModule["SubscriptionType"].asString();
+		if(!dataNodeModulesModule["Tag"].isNull())
+			moduleObject.tag = dataNodeModulesModule["Tag"].asString();
+		if(!dataNodeModulesModule["ResourceGroup"].isNull())
+			moduleObject.resourceGroup = dataNodeModulesModule["ResourceGroup"].asString();
+		if(!dataNodeModulesModule["AccountingUnit"].isNull())
+			moduleObject.accountingUnit = dataNodeModulesModule["AccountingUnit"].asString();
+		if(!dataNodeModulesModule["PayerAccount"].isNull())
+			moduleObject.payerAccount = dataNodeModulesModule["PayerAccount"].asString();
+		if(!dataNodeModulesModule["OwnerID"].isNull())
+			moduleObject.ownerID = dataNodeModulesModule["OwnerID"].asString();
+		if(!dataNodeModulesModule["Region"].isNull())
+			moduleObject.region = dataNodeModulesModule["Region"].asString();
+		if(!dataNodeModulesModule["Currency"].isNull())
+			moduleObject.currency = dataNodeModulesModule["Currency"].asString();
+		if(!dataNodeModulesModule["PaymentCurrency"].isNull())
+			moduleObject.paymentCurrency = dataNodeModulesModule["PaymentCurrency"].asString();
+		if(!dataNodeModulesModule["OrderType"].isNull())
+			moduleObject.orderType = dataNodeModulesModule["OrderType"].asString();
+		if(!dataNodeModulesModule["PayTime"].isNull())
+			moduleObject.payTime = dataNodeModulesModule["PayTime"].asString();
+		if(!dataNodeModulesModule["PretaxGrossAmount"].isNull())
+			moduleObject.pretaxGrossAmount = dataNodeModulesModule["PretaxGrossAmount"].asString();
+		if(!dataNodeModulesModule["PricingDiscount"].isNull())
+			moduleObject.pricingDiscount = dataNodeModulesModule["PricingDiscount"].asString();
+		if(!dataNodeModulesModule["DeductedByCoupons"].isNull())
+			moduleObject.deductedByCoupons = dataNodeModulesModule["DeductedByCoupons"].asString();
+		if(!dataNodeModulesModule["PretaxAmount"].isNull())
+			moduleObject.pretaxAmount = dataNodeModulesModule["PretaxAmount"].asString();
+		if(!dataNodeModulesModule["PretaxAmountLocal"].isNull())
+			moduleObject.pretaxAmountLocal = dataNodeModulesModule["PretaxAmountLocal"].asString();
+		if(!dataNodeModulesModule["DeductedByCashCoupons"].isNull())
+			moduleObject.deductedByCashCoupons = dataNodeModulesModule["DeductedByCashCoupons"].asString();
+		if(!dataNodeModulesModule["DeductedByPrepaidCard"].isNull())
+			moduleObject.deductedByPrepaidCard = dataNodeModulesModule["DeductedByPrepaidCard"].asString();
+		if(!dataNodeModulesModule["PaymentAmount"].isNull())
+			moduleObject.paymentAmount = dataNodeModulesModule["PaymentAmount"].asString();
+		if(!dataNodeModulesModule["GaapPretaxGrossAmount"].isNull())
+			moduleObject.gaapPretaxGrossAmount = dataNodeModulesModule["GaapPretaxGrossAmount"].asString();
+		if(!dataNodeModulesModule["GaapPricingDiscount"].isNull())
+			moduleObject.gaapPricingDiscount = dataNodeModulesModule["GaapPricingDiscount"].asString();
+		if(!dataNodeModulesModule["GaapDeductedByCoupons"].isNull())
+			moduleObject.gaapDeductedByCoupons = dataNodeModulesModule["GaapDeductedByCoupons"].asString();
+		if(!dataNodeModulesModule["GaapPretaxAmount"].isNull())
+			moduleObject.gaapPretaxAmount = dataNodeModulesModule["GaapPretaxAmount"].asString();
+		if(!dataNodeModulesModule["GaapPretaxAmountLocal"].isNull())
+			moduleObject.gaapPretaxAmountLocal = dataNodeModulesModule["GaapPretaxAmountLocal"].asString();
+		if(!dataNodeModulesModule["GaapDeductedByCashCoupons"].isNull())
+			moduleObject.gaapDeductedByCashCoupons = dataNodeModulesModule["GaapDeductedByCashCoupons"].asString();
+		if(!dataNodeModulesModule["GaapDeductedByPrepaidCard"].isNull())
+			moduleObject.gaapDeductedByPrepaidCard = dataNodeModulesModule["GaapDeductedByPrepaidCard"].asString();
+		if(!dataNodeModulesModule["GaapPaymentAmount"].isNull())
+			moduleObject.gaapPaymentAmount = dataNodeModulesModule["GaapPaymentAmount"].asString();
+		if(!dataNodeModulesModule["MonthGaapPretaxGrossAmount"].isNull())
+			moduleObject.monthGaapPretaxGrossAmount = dataNodeModulesModule["MonthGaapPretaxGrossAmount"].asString();
+		if(!dataNodeModulesModule["MonthGaapPricingDiscount"].isNull())
+			moduleObject.monthGaapPricingDiscount = dataNodeModulesModule["MonthGaapPricingDiscount"].asString();
+		if(!dataNodeModulesModule["MonthGaapDeductedByCoupons"].isNull())
+			moduleObject.monthGaapDeductedByCoupons = dataNodeModulesModule["MonthGaapDeductedByCoupons"].asString();
+		if(!dataNodeModulesModule["MonthGaapPretaxAmount"].isNull())
+			moduleObject.monthGaapPretaxAmount = dataNodeModulesModule["MonthGaapPretaxAmount"].asString();
+		if(!dataNodeModulesModule["MonthGaapPretaxAmountLocal"].isNull())
+			moduleObject.monthGaapPretaxAmountLocal = dataNodeModulesModule["MonthGaapPretaxAmountLocal"].asString();
+		if(!dataNodeModulesModule["MonthGaapDeductedByCashCoupons"].isNull())
+			moduleObject.monthGaapDeductedByCashCoupons = dataNodeModulesModule["MonthGaapDeductedByCashCoupons"].asString();
+		if(!dataNodeModulesModule["MonthGaapDeductedByPrepaidCard"].isNull())
+			moduleObject.monthGaapDeductedByPrepaidCard = dataNodeModulesModule["MonthGaapDeductedByPrepaidCard"].asString();
+		if(!dataNodeModulesModule["MonthGaapPaymentAmount"].isNull())
+			moduleObject.monthGaapPaymentAmount = dataNodeModulesModule["MonthGaapPaymentAmount"].asString();
+		if(!dataNodeModulesModule["UnallocatedPaymentAmount"].isNull())
+			moduleObject.unallocatedPaymentAmount = dataNodeModulesModule["UnallocatedPaymentAmount"].asString();
+		if(!dataNodeModulesModule["UsageStartDate"].isNull())
+			moduleObject.usageStartDate = dataNodeModulesModule["UsageStartDate"].asString();
+		if(!dataNodeModulesModule["UsageEndDate"].isNull())
+			moduleObject.usageEndDate = dataNodeModulesModule["UsageEndDate"].asString();
+		if(!dataNodeModulesModule["BillType"].isNull())
+			moduleObject.billType = dataNodeModulesModule["BillType"].asString();
+		if(!dataNodeModulesModule["OrderId"].isNull())
+			moduleObject.orderId = dataNodeModulesModule["OrderId"].asString();
+		if(!dataNodeModulesModule["SubOrderId"].isNull())
+			moduleObject.subOrderId = dataNodeModulesModule["SubOrderId"].asString();
+		if(!dataNodeModulesModule["UnallocatedPretaxGrossAmount"].isNull())
+			moduleObject.unallocatedPretaxGrossAmount = dataNodeModulesModule["UnallocatedPretaxGrossAmount"].asString();
+		if(!dataNodeModulesModule["UnallocatedPricingDiscount"].isNull())
+			moduleObject.unallocatedPricingDiscount = dataNodeModulesModule["UnallocatedPricingDiscount"].asString();
+		if(!dataNodeModulesModule["UnallocatedDeductedByCoupons"].isNull())
+			moduleObject.unallocatedDeductedByCoupons = dataNodeModulesModule["UnallocatedDeductedByCoupons"].asString();
+		if(!dataNodeModulesModule["UnallocatedPretaxAmount"].isNull())
+			moduleObject.unallocatedPretaxAmount = dataNodeModulesModule["UnallocatedPretaxAmount"].asString();
+		if(!dataNodeModulesModule["UnallocatedPretaxAmountLocal"].isNull())
+			moduleObject.unallocatedPretaxAmountLocal = dataNodeModulesModule["UnallocatedPretaxAmountLocal"].asString();
+		if(!dataNodeModulesModule["UnallocatedDeductedByCashCoupons"].isNull())
+			moduleObject.unallocatedDeductedByCashCoupons = dataNodeModulesModule["UnallocatedDeductedByCashCoupons"].asString();
+		if(!dataNodeModulesModule["UnallocatedDeductedByPrepaidCard"].isNull())
+			moduleObject.unallocatedDeductedByPrepaidCard = dataNodeModulesModule["UnallocatedDeductedByPrepaidCard"].asString();
 		data_.modules.push_back(moduleObject);
 	}
 	if(!value["Success"].isNull())

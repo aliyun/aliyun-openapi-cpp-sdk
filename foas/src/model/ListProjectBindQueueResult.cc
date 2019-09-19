@@ -39,14 +39,14 @@ void ListProjectBindQueueResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQueues = value["Queues"]["Queue"];
-	for (auto value : allQueues)
+	auto allQueuesNode = value["Queues"]["Queue"];
+	for (auto valueQueuesQueue : allQueuesNode)
 	{
 		Queue queuesObject;
-		if(!value["ClusterId"].isNull())
-			queuesObject.clusterId = value["ClusterId"].asString();
-		if(!value["QueueName"].isNull())
-			queuesObject.queueName = value["QueueName"].asString();
+		if(!valueQueuesQueue["ClusterId"].isNull())
+			queuesObject.clusterId = valueQueuesQueue["ClusterId"].asString();
+		if(!valueQueuesQueue["QueueName"].isNull())
+			queuesObject.queueName = valueQueuesQueue["QueueName"].asString();
 		queues_.push_back(queuesObject);
 	}
 

@@ -39,34 +39,34 @@ void ListDataSourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataSourceList = value["DataSourceList"]["DataSource"];
-	for (auto value : allDataSourceList)
+	auto allDataSourceListNode = value["DataSourceList"]["DataSource"];
+	for (auto valueDataSourceListDataSource : allDataSourceListNode)
 	{
 		DataSource dataSourceListObject;
-		if(!value["Id"].isNull())
-			dataSourceListObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			dataSourceListObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			dataSourceListObject.description = value["Description"].asString();
-		if(!value["Status"].isNull())
-			dataSourceListObject.status = value["Status"].asString();
-		if(!value["SourceType"].isNull())
-			dataSourceListObject.sourceType = value["SourceType"].asString();
-		if(!value["CreateFrom"].isNull())
-			dataSourceListObject.createFrom = value["CreateFrom"].asString();
-		if(!value["Conf"].isNull())
-			dataSourceListObject.conf = value["Conf"].asString();
-		if(!value["ClusterId"].isNull())
-			dataSourceListObject.clusterId = value["ClusterId"].asString();
-		if(!value["Creator"].isNull())
-			dataSourceListObject.creator = value["Creator"].asString();
-		if(!value["Modifier"].isNull())
-			dataSourceListObject.modifier = value["Modifier"].asString();
-		if(!value["GmtCreate"].isNull())
-			dataSourceListObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			dataSourceListObject.gmtModified = std::stol(value["GmtModified"].asString());
+		if(!valueDataSourceListDataSource["Id"].isNull())
+			dataSourceListObject.id = valueDataSourceListDataSource["Id"].asString();
+		if(!valueDataSourceListDataSource["Name"].isNull())
+			dataSourceListObject.name = valueDataSourceListDataSource["Name"].asString();
+		if(!valueDataSourceListDataSource["Description"].isNull())
+			dataSourceListObject.description = valueDataSourceListDataSource["Description"].asString();
+		if(!valueDataSourceListDataSource["Status"].isNull())
+			dataSourceListObject.status = valueDataSourceListDataSource["Status"].asString();
+		if(!valueDataSourceListDataSource["SourceType"].isNull())
+			dataSourceListObject.sourceType = valueDataSourceListDataSource["SourceType"].asString();
+		if(!valueDataSourceListDataSource["CreateFrom"].isNull())
+			dataSourceListObject.createFrom = valueDataSourceListDataSource["CreateFrom"].asString();
+		if(!valueDataSourceListDataSource["Conf"].isNull())
+			dataSourceListObject.conf = valueDataSourceListDataSource["Conf"].asString();
+		if(!valueDataSourceListDataSource["ClusterId"].isNull())
+			dataSourceListObject.clusterId = valueDataSourceListDataSource["ClusterId"].asString();
+		if(!valueDataSourceListDataSource["Creator"].isNull())
+			dataSourceListObject.creator = valueDataSourceListDataSource["Creator"].asString();
+		if(!valueDataSourceListDataSource["Modifier"].isNull())
+			dataSourceListObject.modifier = valueDataSourceListDataSource["Modifier"].asString();
+		if(!valueDataSourceListDataSource["GmtCreate"].isNull())
+			dataSourceListObject.gmtCreate = std::stol(valueDataSourceListDataSource["GmtCreate"].asString());
+		if(!valueDataSourceListDataSource["GmtModified"].isNull())
+			dataSourceListObject.gmtModified = std::stol(valueDataSourceListDataSource["GmtModified"].asString());
 		dataSourceList_.push_back(dataSourceListObject);
 	}
 	if(!value["Total"].isNull())

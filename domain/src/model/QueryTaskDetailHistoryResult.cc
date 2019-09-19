@@ -39,34 +39,34 @@ void QueryTaskDetailHistoryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allObjects = value["Objects"]["TaskDetailHistory"];
-	for (auto value : allObjects)
+	auto allObjectsNode = value["Objects"]["TaskDetailHistory"];
+	for (auto valueObjectsTaskDetailHistory : allObjectsNode)
 	{
 		TaskDetailHistory objectsObject;
-		if(!value["TaskNo"].isNull())
-			objectsObject.taskNo = value["TaskNo"].asString();
-		if(!value["TaskDetailNo"].isNull())
-			objectsObject.taskDetailNo = value["TaskDetailNo"].asString();
-		if(!value["TaskType"].isNull())
-			objectsObject.taskType = value["TaskType"].asString();
-		if(!value["InstanceId"].isNull())
-			objectsObject.instanceId = value["InstanceId"].asString();
-		if(!value["DomainName"].isNull())
-			objectsObject.domainName = value["DomainName"].asString();
-		if(!value["TaskStatus"].isNull())
-			objectsObject.taskStatus = value["TaskStatus"].asString();
-		if(!value["UpdateTime"].isNull())
-			objectsObject.updateTime = value["UpdateTime"].asString();
-		if(!value["CreateTime"].isNull())
-			objectsObject.createTime = value["CreateTime"].asString();
-		if(!value["TryCount"].isNull())
-			objectsObject.tryCount = std::stoi(value["TryCount"].asString());
-		if(!value["ErrorMsg"].isNull())
-			objectsObject.errorMsg = value["ErrorMsg"].asString();
-		if(!value["TaskStatusCode"].isNull())
-			objectsObject.taskStatusCode = std::stoi(value["TaskStatusCode"].asString());
-		if(!value["TaskTypeDescription"].isNull())
-			objectsObject.taskTypeDescription = value["TaskTypeDescription"].asString();
+		if(!valueObjectsTaskDetailHistory["TaskNo"].isNull())
+			objectsObject.taskNo = valueObjectsTaskDetailHistory["TaskNo"].asString();
+		if(!valueObjectsTaskDetailHistory["TaskDetailNo"].isNull())
+			objectsObject.taskDetailNo = valueObjectsTaskDetailHistory["TaskDetailNo"].asString();
+		if(!valueObjectsTaskDetailHistory["TaskType"].isNull())
+			objectsObject.taskType = valueObjectsTaskDetailHistory["TaskType"].asString();
+		if(!valueObjectsTaskDetailHistory["InstanceId"].isNull())
+			objectsObject.instanceId = valueObjectsTaskDetailHistory["InstanceId"].asString();
+		if(!valueObjectsTaskDetailHistory["DomainName"].isNull())
+			objectsObject.domainName = valueObjectsTaskDetailHistory["DomainName"].asString();
+		if(!valueObjectsTaskDetailHistory["TaskStatus"].isNull())
+			objectsObject.taskStatus = valueObjectsTaskDetailHistory["TaskStatus"].asString();
+		if(!valueObjectsTaskDetailHistory["UpdateTime"].isNull())
+			objectsObject.updateTime = valueObjectsTaskDetailHistory["UpdateTime"].asString();
+		if(!valueObjectsTaskDetailHistory["CreateTime"].isNull())
+			objectsObject.createTime = valueObjectsTaskDetailHistory["CreateTime"].asString();
+		if(!valueObjectsTaskDetailHistory["TryCount"].isNull())
+			objectsObject.tryCount = std::stoi(valueObjectsTaskDetailHistory["TryCount"].asString());
+		if(!valueObjectsTaskDetailHistory["ErrorMsg"].isNull())
+			objectsObject.errorMsg = valueObjectsTaskDetailHistory["ErrorMsg"].asString();
+		if(!valueObjectsTaskDetailHistory["TaskStatusCode"].isNull())
+			objectsObject.taskStatusCode = std::stoi(valueObjectsTaskDetailHistory["TaskStatusCode"].asString());
+		if(!valueObjectsTaskDetailHistory["TaskTypeDescription"].isNull())
+			objectsObject.taskTypeDescription = valueObjectsTaskDetailHistory["TaskTypeDescription"].asString();
 		objects_.push_back(objectsObject);
 	}
 	auto currentPageCursorNode = value["CurrentPageCursor"];

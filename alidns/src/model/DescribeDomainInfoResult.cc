@@ -39,18 +39,18 @@ void DescribeDomainInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRecordLines = value["RecordLines"]["RecordLine"];
-	for (auto value : allRecordLines)
+	auto allRecordLinesNode = value["RecordLines"]["RecordLine"];
+	for (auto valueRecordLinesRecordLine : allRecordLinesNode)
 	{
 		RecordLine recordLinesObject;
-		if(!value["LineCode"].isNull())
-			recordLinesObject.lineCode = value["LineCode"].asString();
-		if(!value["FatherCode"].isNull())
-			recordLinesObject.fatherCode = value["FatherCode"].asString();
-		if(!value["LineName"].isNull())
-			recordLinesObject.lineName = value["LineName"].asString();
-		if(!value["LineDisplayName"].isNull())
-			recordLinesObject.lineDisplayName = value["LineDisplayName"].asString();
+		if(!valueRecordLinesRecordLine["LineCode"].isNull())
+			recordLinesObject.lineCode = valueRecordLinesRecordLine["LineCode"].asString();
+		if(!valueRecordLinesRecordLine["FatherCode"].isNull())
+			recordLinesObject.fatherCode = valueRecordLinesRecordLine["FatherCode"].asString();
+		if(!valueRecordLinesRecordLine["LineName"].isNull())
+			recordLinesObject.lineName = valueRecordLinesRecordLine["LineName"].asString();
+		if(!valueRecordLinesRecordLine["LineDisplayName"].isNull())
+			recordLinesObject.lineDisplayName = valueRecordLinesRecordLine["LineDisplayName"].asString();
 		recordLines_.push_back(recordLinesObject);
 	}
 	auto allDnsServers = value["DnsServers"]["DnsServer"];

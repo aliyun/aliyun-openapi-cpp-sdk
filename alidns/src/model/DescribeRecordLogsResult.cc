@@ -39,20 +39,20 @@ void DescribeRecordLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRecordLogs = value["RecordLogs"]["RecordLog"];
-	for (auto value : allRecordLogs)
+	auto allRecordLogsNode = value["RecordLogs"]["RecordLog"];
+	for (auto valueRecordLogsRecordLog : allRecordLogsNode)
 	{
 		RecordLog recordLogsObject;
-		if(!value["ActionTime"].isNull())
-			recordLogsObject.actionTime = value["ActionTime"].asString();
-		if(!value["ActionTimestamp"].isNull())
-			recordLogsObject.actionTimestamp = std::stol(value["ActionTimestamp"].asString());
-		if(!value["Action"].isNull())
-			recordLogsObject.action = value["Action"].asString();
-		if(!value["Message"].isNull())
-			recordLogsObject.message = value["Message"].asString();
-		if(!value["ClientIp"].isNull())
-			recordLogsObject.clientIp = value["ClientIp"].asString();
+		if(!valueRecordLogsRecordLog["ActionTime"].isNull())
+			recordLogsObject.actionTime = valueRecordLogsRecordLog["ActionTime"].asString();
+		if(!valueRecordLogsRecordLog["ActionTimestamp"].isNull())
+			recordLogsObject.actionTimestamp = std::stol(valueRecordLogsRecordLog["ActionTimestamp"].asString());
+		if(!valueRecordLogsRecordLog["Action"].isNull())
+			recordLogsObject.action = valueRecordLogsRecordLog["Action"].asString();
+		if(!valueRecordLogsRecordLog["Message"].isNull())
+			recordLogsObject.message = valueRecordLogsRecordLog["Message"].asString();
+		if(!valueRecordLogsRecordLog["ClientIp"].isNull())
+			recordLogsObject.clientIp = valueRecordLogsRecordLog["ClientIp"].asString();
 		recordLogs_.push_back(recordLogsObject);
 	}
 	if(!value["TotalCount"].isNull())

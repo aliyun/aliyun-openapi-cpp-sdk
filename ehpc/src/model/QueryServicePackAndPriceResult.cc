@@ -39,18 +39,18 @@ void QueryServicePackAndPriceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allServicePack = value["ServicePack"]["ServicePackInfo"];
-	for (auto value : allServicePack)
+	auto allServicePackNode = value["ServicePack"]["ServicePackInfo"];
+	for (auto valueServicePackServicePackInfo : allServicePackNode)
 	{
 		ServicePackInfo servicePackObject;
-		if(!value["InstanceName"].isNull())
-			servicePackObject.instanceName = value["InstanceName"].asString();
-		if(!value["Capacity"].isNull())
-			servicePackObject.capacity = std::stoi(value["Capacity"].asString());
-		if(!value["StartTime"].isNull())
-			servicePackObject.startTime = std::stoi(value["StartTime"].asString());
-		if(!value["EndTime"].isNull())
-			servicePackObject.endTime = std::stoi(value["EndTime"].asString());
+		if(!valueServicePackServicePackInfo["InstanceName"].isNull())
+			servicePackObject.instanceName = valueServicePackServicePackInfo["InstanceName"].asString();
+		if(!valueServicePackServicePackInfo["Capacity"].isNull())
+			servicePackObject.capacity = std::stoi(valueServicePackServicePackInfo["Capacity"].asString());
+		if(!valueServicePackServicePackInfo["StartTime"].isNull())
+			servicePackObject.startTime = std::stoi(valueServicePackServicePackInfo["StartTime"].asString());
+		if(!valueServicePackServicePackInfo["EndTime"].isNull())
+			servicePackObject.endTime = std::stoi(valueServicePackServicePackInfo["EndTime"].asString());
 		servicePack_.push_back(servicePackObject);
 	}
 	if(!value["RegionId"].isNull())

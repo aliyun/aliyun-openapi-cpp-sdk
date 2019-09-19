@@ -39,16 +39,16 @@ void ModifyInstanceChargeTypeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFeeOfInstances = value["FeeOfInstances"]["FeeOfInstance"];
-	for (auto value : allFeeOfInstances)
+	auto allFeeOfInstancesNode = value["FeeOfInstances"]["FeeOfInstance"];
+	for (auto valueFeeOfInstancesFeeOfInstance : allFeeOfInstancesNode)
 	{
 		FeeOfInstance feeOfInstancesObject;
-		if(!value["InstanceId"].isNull())
-			feeOfInstancesObject.instanceId = value["InstanceId"].asString();
-		if(!value["Fee"].isNull())
-			feeOfInstancesObject.fee = value["Fee"].asString();
-		if(!value["Currency"].isNull())
-			feeOfInstancesObject.currency = value["Currency"].asString();
+		if(!valueFeeOfInstancesFeeOfInstance["InstanceId"].isNull())
+			feeOfInstancesObject.instanceId = valueFeeOfInstancesFeeOfInstance["InstanceId"].asString();
+		if(!valueFeeOfInstancesFeeOfInstance["Fee"].isNull())
+			feeOfInstancesObject.fee = valueFeeOfInstancesFeeOfInstance["Fee"].asString();
+		if(!valueFeeOfInstancesFeeOfInstance["Currency"].isNull())
+			feeOfInstancesObject.currency = valueFeeOfInstancesFeeOfInstance["Currency"].asString();
 		feeOfInstances_.push_back(feeOfInstancesObject);
 	}
 	if(!value["OrderId"].isNull())

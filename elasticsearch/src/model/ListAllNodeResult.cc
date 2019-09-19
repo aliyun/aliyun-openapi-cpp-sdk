@@ -39,26 +39,26 @@ void ListAllNodeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"]["ResultItem"];
-	for (auto value : allResult)
+	auto allResultNode = value["Result"]["ResultItem"];
+	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!value["host"].isNull())
-			resultObject.host = value["host"].asString();
-		if(!value["port"].isNull())
-			resultObject.port = std::stoi(value["port"].asString());
-		if(!value["zoneId"].isNull())
-			resultObject.zoneId = value["zoneId"].asString();
-		if(!value["nodeType"].isNull())
-			resultObject.nodeType = value["nodeType"].asString();
-		if(!value["cpuPercent"].isNull())
-			resultObject.cpuPercent = value["cpuPercent"].asString();
-		if(!value["loadFiveM"].isNull())
-			resultObject.loadFiveM = value["loadFiveM"].asString();
-		if(!value["heapPercent"].isNull())
-			resultObject.heapPercent = value["heapPercent"].asString();
-		if(!value["health"].isNull())
-			resultObject.health = value["health"].asString();
+		if(!valueResultResultItem["host"].isNull())
+			resultObject.host = valueResultResultItem["host"].asString();
+		if(!valueResultResultItem["port"].isNull())
+			resultObject.port = std::stoi(valueResultResultItem["port"].asString());
+		if(!valueResultResultItem["zoneId"].isNull())
+			resultObject.zoneId = valueResultResultItem["zoneId"].asString();
+		if(!valueResultResultItem["nodeType"].isNull())
+			resultObject.nodeType = valueResultResultItem["nodeType"].asString();
+		if(!valueResultResultItem["cpuPercent"].isNull())
+			resultObject.cpuPercent = valueResultResultItem["cpuPercent"].asString();
+		if(!valueResultResultItem["loadFiveM"].isNull())
+			resultObject.loadFiveM = valueResultResultItem["loadFiveM"].asString();
+		if(!valueResultResultItem["heapPercent"].isNull())
+			resultObject.heapPercent = valueResultResultItem["heapPercent"].asString();
+		if(!valueResultResultItem["health"].isNull())
+			resultObject.health = valueResultResultItem["health"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Code"].isNull())

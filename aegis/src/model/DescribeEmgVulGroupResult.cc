@@ -39,26 +39,26 @@ void DescribeEmgVulGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEmgVulGroupList = value["EmgVulGroupList"]["EmgVulGroup"];
-	for (auto value : allEmgVulGroupList)
+	auto allEmgVulGroupListNode = value["EmgVulGroupList"]["EmgVulGroup"];
+	for (auto valueEmgVulGroupListEmgVulGroup : allEmgVulGroupListNode)
 	{
 		EmgVulGroup emgVulGroupListObject;
-		if(!value["AliasName"].isNull())
-			emgVulGroupListObject.aliasName = value["AliasName"].asString();
-		if(!value["PendingCount"].isNull())
-			emgVulGroupListObject.pendingCount = std::stoi(value["PendingCount"].asString());
-		if(!value["Name"].isNull())
-			emgVulGroupListObject.name = value["Name"].asString();
-		if(!value["GmtPublish"].isNull())
-			emgVulGroupListObject.gmtPublish = std::stol(value["GmtPublish"].asString());
-		if(!value["Description"].isNull())
-			emgVulGroupListObject.description = value["Description"].asString();
-		if(!value["Type"].isNull())
-			emgVulGroupListObject.type = value["Type"].asString();
-		if(!value["Status"].isNull())
-			emgVulGroupListObject.status = std::stoi(value["Status"].asString());
-		if(!value["Progress"].isNull())
-			emgVulGroupListObject.progress = std::stoi(value["Progress"].asString());
+		if(!valueEmgVulGroupListEmgVulGroup["AliasName"].isNull())
+			emgVulGroupListObject.aliasName = valueEmgVulGroupListEmgVulGroup["AliasName"].asString();
+		if(!valueEmgVulGroupListEmgVulGroup["PendingCount"].isNull())
+			emgVulGroupListObject.pendingCount = std::stoi(valueEmgVulGroupListEmgVulGroup["PendingCount"].asString());
+		if(!valueEmgVulGroupListEmgVulGroup["Name"].isNull())
+			emgVulGroupListObject.name = valueEmgVulGroupListEmgVulGroup["Name"].asString();
+		if(!valueEmgVulGroupListEmgVulGroup["GmtPublish"].isNull())
+			emgVulGroupListObject.gmtPublish = std::stol(valueEmgVulGroupListEmgVulGroup["GmtPublish"].asString());
+		if(!valueEmgVulGroupListEmgVulGroup["Description"].isNull())
+			emgVulGroupListObject.description = valueEmgVulGroupListEmgVulGroup["Description"].asString();
+		if(!valueEmgVulGroupListEmgVulGroup["Type"].isNull())
+			emgVulGroupListObject.type = valueEmgVulGroupListEmgVulGroup["Type"].asString();
+		if(!valueEmgVulGroupListEmgVulGroup["Status"].isNull())
+			emgVulGroupListObject.status = std::stoi(valueEmgVulGroupListEmgVulGroup["Status"].asString());
+		if(!valueEmgVulGroupListEmgVulGroup["Progress"].isNull())
+			emgVulGroupListObject.progress = std::stoi(valueEmgVulGroupListEmgVulGroup["Progress"].asString());
 		emgVulGroupList_.push_back(emgVulGroupListObject);
 	}
 	if(!value["TotalCount"].isNull())

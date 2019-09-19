@@ -39,18 +39,18 @@ void ListInstalledSoftwareResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSoftwareList = value["SoftwareList"]["SoftwareListItem"];
-	for (auto value : allSoftwareList)
+	auto allSoftwareListNode = value["SoftwareList"]["SoftwareListItem"];
+	for (auto valueSoftwareListSoftwareListItem : allSoftwareListNode)
 	{
 		SoftwareListItem softwareListObject;
-		if(!value["SoftwareId"].isNull())
-			softwareListObject.softwareId = value["SoftwareId"].asString();
-		if(!value["SoftwareName"].isNull())
-			softwareListObject.softwareName = value["SoftwareName"].asString();
-		if(!value["SoftwareVersion"].isNull())
-			softwareListObject.softwareVersion = value["SoftwareVersion"].asString();
-		if(!value["SoftwareStatus"].isNull())
-			softwareListObject.softwareStatus = value["SoftwareStatus"].asString();
+		if(!valueSoftwareListSoftwareListItem["SoftwareId"].isNull())
+			softwareListObject.softwareId = valueSoftwareListSoftwareListItem["SoftwareId"].asString();
+		if(!valueSoftwareListSoftwareListItem["SoftwareName"].isNull())
+			softwareListObject.softwareName = valueSoftwareListSoftwareListItem["SoftwareName"].asString();
+		if(!valueSoftwareListSoftwareListItem["SoftwareVersion"].isNull())
+			softwareListObject.softwareVersion = valueSoftwareListSoftwareListItem["SoftwareVersion"].asString();
+		if(!valueSoftwareListSoftwareListItem["SoftwareStatus"].isNull())
+			softwareListObject.softwareStatus = valueSoftwareListSoftwareListItem["SoftwareStatus"].asString();
 		softwareList_.push_back(softwareListObject);
 	}
 

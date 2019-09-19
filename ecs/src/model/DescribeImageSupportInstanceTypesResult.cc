@@ -39,18 +39,18 @@ void DescribeImageSupportInstanceTypesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceTypes = value["InstanceTypes"]["InstanceType"];
-	for (auto value : allInstanceTypes)
+	auto allInstanceTypesNode = value["InstanceTypes"]["InstanceType"];
+	for (auto valueInstanceTypesInstanceType : allInstanceTypesNode)
 	{
 		InstanceType instanceTypesObject;
-		if(!value["InstanceTypeId"].isNull())
-			instanceTypesObject.instanceTypeId = value["InstanceTypeId"].asString();
-		if(!value["CpuCoreCount"].isNull())
-			instanceTypesObject.cpuCoreCount = std::stoi(value["CpuCoreCount"].asString());
-		if(!value["MemorySize"].isNull())
-			instanceTypesObject.memorySize = std::stof(value["MemorySize"].asString());
-		if(!value["InstanceTypeFamily"].isNull())
-			instanceTypesObject.instanceTypeFamily = value["InstanceTypeFamily"].asString();
+		if(!valueInstanceTypesInstanceType["InstanceTypeId"].isNull())
+			instanceTypesObject.instanceTypeId = valueInstanceTypesInstanceType["InstanceTypeId"].asString();
+		if(!valueInstanceTypesInstanceType["CpuCoreCount"].isNull())
+			instanceTypesObject.cpuCoreCount = std::stoi(valueInstanceTypesInstanceType["CpuCoreCount"].asString());
+		if(!valueInstanceTypesInstanceType["MemorySize"].isNull())
+			instanceTypesObject.memorySize = std::stof(valueInstanceTypesInstanceType["MemorySize"].asString());
+		if(!valueInstanceTypesInstanceType["InstanceTypeFamily"].isNull())
+			instanceTypesObject.instanceTypeFamily = valueInstanceTypesInstanceType["InstanceTypeFamily"].asString();
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 	if(!value["RegionId"].isNull())

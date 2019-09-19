@@ -39,18 +39,18 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegions = value["Regions"]["Region"];
-	for (auto value : allRegions)
+	auto allRegionsNode = value["Regions"]["Region"];
+	for (auto valueRegionsRegion : allRegionsNode)
 	{
 		Region regionsObject;
-		if(!value["RegionId"].isNull())
-			regionsObject.regionId = value["RegionId"].asString();
-		if(!value["RegionName"].isNull())
-			regionsObject.regionName = value["RegionName"].asString();
-		if(!value["LocalName"].isNull())
-			regionsObject.localName = value["LocalName"].asString();
-		if(!value["RegionEndpoint"].isNull())
-			regionsObject.regionEndpoint = value["RegionEndpoint"].asString();
+		if(!valueRegionsRegion["RegionId"].isNull())
+			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
+		if(!valueRegionsRegion["RegionName"].isNull())
+			regionsObject.regionName = valueRegionsRegion["RegionName"].asString();
+		if(!valueRegionsRegion["LocalName"].isNull())
+			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
+		if(!valueRegionsRegion["RegionEndpoint"].isNull())
+			regionsObject.regionEndpoint = valueRegionsRegion["RegionEndpoint"].asString();
 		regions_.push_back(regionsObject);
 	}
 

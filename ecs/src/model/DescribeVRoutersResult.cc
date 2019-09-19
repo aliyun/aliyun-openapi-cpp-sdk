@@ -39,22 +39,22 @@ void DescribeVRoutersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVRouters = value["VRouters"]["VRouter"];
-	for (auto value : allVRouters)
+	auto allVRoutersNode = value["VRouters"]["VRouter"];
+	for (auto valueVRoutersVRouter : allVRoutersNode)
 	{
 		VRouter vRoutersObject;
-		if(!value["RegionId"].isNull())
-			vRoutersObject.regionId = value["RegionId"].asString();
-		if(!value["VpcId"].isNull())
-			vRoutersObject.vpcId = value["VpcId"].asString();
-		if(!value["VRouterName"].isNull())
-			vRoutersObject.vRouterName = value["VRouterName"].asString();
-		if(!value["Description"].isNull())
-			vRoutersObject.description = value["Description"].asString();
-		if(!value["VRouterId"].isNull())
-			vRoutersObject.vRouterId = value["VRouterId"].asString();
-		if(!value["CreationTime"].isNull())
-			vRoutersObject.creationTime = value["CreationTime"].asString();
+		if(!valueVRoutersVRouter["RegionId"].isNull())
+			vRoutersObject.regionId = valueVRoutersVRouter["RegionId"].asString();
+		if(!valueVRoutersVRouter["VpcId"].isNull())
+			vRoutersObject.vpcId = valueVRoutersVRouter["VpcId"].asString();
+		if(!valueVRoutersVRouter["VRouterName"].isNull())
+			vRoutersObject.vRouterName = valueVRoutersVRouter["VRouterName"].asString();
+		if(!valueVRoutersVRouter["Description"].isNull())
+			vRoutersObject.description = valueVRoutersVRouter["Description"].asString();
+		if(!valueVRoutersVRouter["VRouterId"].isNull())
+			vRoutersObject.vRouterId = valueVRoutersVRouter["VRouterId"].asString();
+		if(!valueVRoutersVRouter["CreationTime"].isNull())
+			vRoutersObject.creationTime = valueVRoutersVRouter["CreationTime"].asString();
 		auto allRouteTableIds = value["RouteTableIds"]["RouteTableId"];
 		for (auto value : allRouteTableIds)
 			vRoutersObject.routeTableIds.push_back(value.asString());

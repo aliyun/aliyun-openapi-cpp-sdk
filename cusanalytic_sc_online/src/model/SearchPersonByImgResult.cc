@@ -39,16 +39,16 @@ void SearchPersonByImgResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPersonSearchResultItems = value["PersonSearchResultItems"]["PersonSearchResultItem"];
-	for (auto value : allPersonSearchResultItems)
+	auto allPersonSearchResultItemsNode = value["PersonSearchResultItems"]["PersonSearchResultItem"];
+	for (auto valuePersonSearchResultItemsPersonSearchResultItem : allPersonSearchResultItemsNode)
 	{
 		PersonSearchResultItem personSearchResultItemsObject;
-		if(!value["FaceId"].isNull())
-			personSearchResultItemsObject.faceId = value["FaceId"].asString();
-		if(!value["UkId"].isNull())
-			personSearchResultItemsObject.ukId = value["UkId"].asString();
-		if(!value["Score"].isNull())
-			personSearchResultItemsObject.score = std::stof(value["Score"].asString());
+		if(!valuePersonSearchResultItemsPersonSearchResultItem["FaceId"].isNull())
+			personSearchResultItemsObject.faceId = valuePersonSearchResultItemsPersonSearchResultItem["FaceId"].asString();
+		if(!valuePersonSearchResultItemsPersonSearchResultItem["UkId"].isNull())
+			personSearchResultItemsObject.ukId = valuePersonSearchResultItemsPersonSearchResultItem["UkId"].asString();
+		if(!valuePersonSearchResultItemsPersonSearchResultItem["Score"].isNull())
+			personSearchResultItemsObject.score = std::stof(valuePersonSearchResultItemsPersonSearchResultItem["Score"].asString());
 		personSearchResultItems_.push_back(personSearchResultItemsObject);
 	}
 	if(!value["Success"].isNull())

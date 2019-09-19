@@ -39,20 +39,20 @@ void ListRuleActionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRuleActionList = value["RuleActionList"]["RuleActionInfo"];
-	for (auto value : allRuleActionList)
+	auto allRuleActionListNode = value["RuleActionList"]["RuleActionInfo"];
+	for (auto valueRuleActionListRuleActionInfo : allRuleActionListNode)
 	{
 		RuleActionInfo ruleActionListObject;
-		if(!value["Id"].isNull())
-			ruleActionListObject.id = std::stol(value["Id"].asString());
-		if(!value["RuleId"].isNull())
-			ruleActionListObject.ruleId = std::stol(value["RuleId"].asString());
-		if(!value["Type"].isNull())
-			ruleActionListObject.type = value["Type"].asString();
-		if(!value["Configuration"].isNull())
-			ruleActionListObject.configuration = value["Configuration"].asString();
-		if(!value["ErrorActionFlag"].isNull())
-			ruleActionListObject.errorActionFlag = value["ErrorActionFlag"].asString() == "true";
+		if(!valueRuleActionListRuleActionInfo["Id"].isNull())
+			ruleActionListObject.id = std::stol(valueRuleActionListRuleActionInfo["Id"].asString());
+		if(!valueRuleActionListRuleActionInfo["RuleId"].isNull())
+			ruleActionListObject.ruleId = std::stol(valueRuleActionListRuleActionInfo["RuleId"].asString());
+		if(!valueRuleActionListRuleActionInfo["Type"].isNull())
+			ruleActionListObject.type = valueRuleActionListRuleActionInfo["Type"].asString();
+		if(!valueRuleActionListRuleActionInfo["Configuration"].isNull())
+			ruleActionListObject.configuration = valueRuleActionListRuleActionInfo["Configuration"].asString();
+		if(!valueRuleActionListRuleActionInfo["ErrorActionFlag"].isNull())
+			ruleActionListObject.errorActionFlag = valueRuleActionListRuleActionInfo["ErrorActionFlag"].asString() == "true";
 		ruleActionList_.push_back(ruleActionListObject);
 	}
 	if(!value["Success"].isNull())

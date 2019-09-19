@@ -48,14 +48,14 @@ void ListSnapshotsResult::parse(const std::string &payload)
 		mediaSnapshot_.creationTime = mediaSnapshotNode["CreationTime"].asString();
 	if(!mediaSnapshotNode["JobId"].isNull())
 		mediaSnapshot_.jobId = mediaSnapshotNode["JobId"].asString();
-	auto allSnapshots = value["Snapshots"]["Snapshot"];
-	for (auto value : allSnapshots)
+	auto allSnapshotsNode = mediaSnapshotNode["Snapshots"]["Snapshot"];
+	for (auto mediaSnapshotNodeSnapshotsSnapshot : allSnapshotsNode)
 	{
 		MediaSnapshot::Snapshot snapshotObject;
-		if(!value["Index"].isNull())
-			snapshotObject.index = std::stol(value["Index"].asString());
-		if(!value["Url"].isNull())
-			snapshotObject.url = value["Url"].asString();
+		if(!mediaSnapshotNodeSnapshotsSnapshot["Index"].isNull())
+			snapshotObject.index = std::stol(mediaSnapshotNodeSnapshotsSnapshot["Index"].asString());
+		if(!mediaSnapshotNodeSnapshotsSnapshot["Url"].isNull())
+			snapshotObject.url = mediaSnapshotNodeSnapshotsSnapshot["Url"].asString();
 		mediaSnapshot_.snapshots.push_back(snapshotObject);
 	}
 

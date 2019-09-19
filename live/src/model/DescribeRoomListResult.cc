@@ -39,20 +39,20 @@ void DescribeRoomListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRoomList = value["RoomList"]["Room"];
-	for (auto value : allRoomList)
+	auto allRoomListNode = value["RoomList"]["Room"];
+	for (auto valueRoomListRoom : allRoomListNode)
 	{
 		Room roomListObject;
-		if(!value["RoomId"].isNull())
-			roomListObject.roomId = value["RoomId"].asString();
-		if(!value["AnchorId"].isNull())
-			roomListObject.anchorId = value["AnchorId"].asString();
-		if(!value["RoomStatus"].isNull())
-			roomListObject.roomStatus = std::stoi(value["RoomStatus"].asString());
-		if(!value["ForbidStream"].isNull())
-			roomListObject.forbidStream = value["ForbidStream"].asString();
-		if(!value["CreateTime"].isNull())
-			roomListObject.createTime = value["CreateTime"].asString();
+		if(!valueRoomListRoom["RoomId"].isNull())
+			roomListObject.roomId = valueRoomListRoom["RoomId"].asString();
+		if(!valueRoomListRoom["AnchorId"].isNull())
+			roomListObject.anchorId = valueRoomListRoom["AnchorId"].asString();
+		if(!valueRoomListRoom["RoomStatus"].isNull())
+			roomListObject.roomStatus = std::stoi(valueRoomListRoom["RoomStatus"].asString());
+		if(!valueRoomListRoom["ForbidStream"].isNull())
+			roomListObject.forbidStream = valueRoomListRoom["ForbidStream"].asString();
+		if(!valueRoomListRoom["CreateTime"].isNull())
+			roomListObject.createTime = valueRoomListRoom["CreateTime"].asString();
 		roomList_.push_back(roomListObject);
 	}
 	if(!value["TotalNum"].isNull())

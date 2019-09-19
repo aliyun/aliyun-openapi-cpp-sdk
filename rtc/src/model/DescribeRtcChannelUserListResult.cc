@@ -39,40 +39,40 @@ void DescribeRtcChannelUserListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserList = value["UserList"]["UserListItem"];
-	for (auto value : allUserList)
+	auto allUserListNode = value["UserList"]["UserListItem"];
+	for (auto valueUserListUserListItem : allUserListNode)
 	{
 		UserListItem userListObject;
-		if(!value["ChannelId"].isNull())
-			userListObject.channelId = value["ChannelId"].asString();
-		if(!value["UserId"].isNull())
-			userListObject.userId = value["UserId"].asString();
-		if(!value["StartTime"].isNull())
-			userListObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			userListObject.endTime = value["EndTime"].asString();
-		if(!value["ServiceArea"].isNull())
-			userListObject.serviceArea = value["ServiceArea"].asString();
-		if(!value["SubAudio"].isNull())
-			userListObject.subAudio = std::stoi(value["SubAudio"].asString());
-		if(!value["PubAudio"].isNull())
-			userListObject.pubAudio = std::stoi(value["PubAudio"].asString());
-		if(!value["SubVideo360"].isNull())
-			userListObject.subVideo360 = std::stoi(value["SubVideo360"].asString());
-		if(!value["PubVideo360"].isNull())
-			userListObject.pubVideo360 = std::stoi(value["PubVideo360"].asString());
-		if(!value["SubVideo720"].isNull())
-			userListObject.subVideo720 = std::stoi(value["SubVideo720"].asString());
-		if(!value["PubVideo720"].isNull())
-			userListObject.pubVideo720 = std::stoi(value["PubVideo720"].asString());
-		if(!value["SubVideo1080"].isNull())
-			userListObject.subVideo1080 = std::stoi(value["SubVideo1080"].asString());
-		if(!value["PubVideo1080"].isNull())
-			userListObject.pubVideo1080 = std::stoi(value["PubVideo1080"].asString());
-		if(!value["SubContent"].isNull())
-			userListObject.subContent = std::stoi(value["SubContent"].asString());
-		if(!value["PubContent"].isNull())
-			userListObject.pubContent = std::stoi(value["PubContent"].asString());
+		if(!valueUserListUserListItem["ChannelId"].isNull())
+			userListObject.channelId = valueUserListUserListItem["ChannelId"].asString();
+		if(!valueUserListUserListItem["UserId"].isNull())
+			userListObject.userId = valueUserListUserListItem["UserId"].asString();
+		if(!valueUserListUserListItem["StartTime"].isNull())
+			userListObject.startTime = valueUserListUserListItem["StartTime"].asString();
+		if(!valueUserListUserListItem["EndTime"].isNull())
+			userListObject.endTime = valueUserListUserListItem["EndTime"].asString();
+		if(!valueUserListUserListItem["ServiceArea"].isNull())
+			userListObject.serviceArea = valueUserListUserListItem["ServiceArea"].asString();
+		if(!valueUserListUserListItem["SubAudio"].isNull())
+			userListObject.subAudio = std::stoi(valueUserListUserListItem["SubAudio"].asString());
+		if(!valueUserListUserListItem["PubAudio"].isNull())
+			userListObject.pubAudio = std::stoi(valueUserListUserListItem["PubAudio"].asString());
+		if(!valueUserListUserListItem["SubVideo360"].isNull())
+			userListObject.subVideo360 = std::stoi(valueUserListUserListItem["SubVideo360"].asString());
+		if(!valueUserListUserListItem["PubVideo360"].isNull())
+			userListObject.pubVideo360 = std::stoi(valueUserListUserListItem["PubVideo360"].asString());
+		if(!valueUserListUserListItem["SubVideo720"].isNull())
+			userListObject.subVideo720 = std::stoi(valueUserListUserListItem["SubVideo720"].asString());
+		if(!valueUserListUserListItem["PubVideo720"].isNull())
+			userListObject.pubVideo720 = std::stoi(valueUserListUserListItem["PubVideo720"].asString());
+		if(!valueUserListUserListItem["SubVideo1080"].isNull())
+			userListObject.subVideo1080 = std::stoi(valueUserListUserListItem["SubVideo1080"].asString());
+		if(!valueUserListUserListItem["PubVideo1080"].isNull())
+			userListObject.pubVideo1080 = std::stoi(valueUserListUserListItem["PubVideo1080"].asString());
+		if(!valueUserListUserListItem["SubContent"].isNull())
+			userListObject.subContent = std::stoi(valueUserListUserListItem["SubContent"].asString());
+		if(!valueUserListUserListItem["PubContent"].isNull())
+			userListObject.pubContent = std::stoi(valueUserListUserListItem["PubContent"].asString());
 		userList_.push_back(userListObject);
 	}
 	if(!value["PageSize"].isNull())

@@ -39,18 +39,18 @@ void DescribeRtcChannelListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allChannelList = value["ChannelList"]["ChannelListItem"];
-	for (auto value : allChannelList)
+	auto allChannelListNode = value["ChannelList"]["ChannelListItem"];
+	for (auto valueChannelListChannelListItem : allChannelListNode)
 	{
 		ChannelListItem channelListObject;
-		if(!value["ChannelId"].isNull())
-			channelListObject.channelId = value["ChannelId"].asString();
-		if(!value["StartTime"].isNull())
-			channelListObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			channelListObject.endTime = value["EndTime"].asString();
-		if(!value["TotalUserCnt"].isNull())
-			channelListObject.totalUserCnt = std::stol(value["TotalUserCnt"].asString());
+		if(!valueChannelListChannelListItem["ChannelId"].isNull())
+			channelListObject.channelId = valueChannelListChannelListItem["ChannelId"].asString();
+		if(!valueChannelListChannelListItem["StartTime"].isNull())
+			channelListObject.startTime = valueChannelListChannelListItem["StartTime"].asString();
+		if(!valueChannelListChannelListItem["EndTime"].isNull())
+			channelListObject.endTime = valueChannelListChannelListItem["EndTime"].asString();
+		if(!valueChannelListChannelListItem["TotalUserCnt"].isNull())
+			channelListObject.totalUserCnt = std::stol(valueChannelListChannelListItem["TotalUserCnt"].asString());
 		auto allCallArea = value["CallArea"]["CallArea"];
 		for (auto value : allCallArea)
 			channelListObject.callArea.push_back(value.asString());

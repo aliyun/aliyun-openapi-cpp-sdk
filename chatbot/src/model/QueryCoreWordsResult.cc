@@ -39,18 +39,18 @@ void QueryCoreWordsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCoreWords = value["CoreWords"]["CoreWord"];
-	for (auto value : allCoreWords)
+	auto allCoreWordsNode = value["CoreWords"]["CoreWord"];
+	for (auto valueCoreWordsCoreWord : allCoreWordsNode)
 	{
 		CoreWord coreWordsObject;
-		if(!value["CoreWordCode"].isNull())
-			coreWordsObject.coreWordCode = value["CoreWordCode"].asString();
-		if(!value["CoreWordName"].isNull())
-			coreWordsObject.coreWordName = value["CoreWordName"].asString();
-		if(!value["ModifyTime"].isNull())
-			coreWordsObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["CreateTime"].isNull())
-			coreWordsObject.createTime = value["CreateTime"].asString();
+		if(!valueCoreWordsCoreWord["CoreWordCode"].isNull())
+			coreWordsObject.coreWordCode = valueCoreWordsCoreWord["CoreWordCode"].asString();
+		if(!valueCoreWordsCoreWord["CoreWordName"].isNull())
+			coreWordsObject.coreWordName = valueCoreWordsCoreWord["CoreWordName"].asString();
+		if(!valueCoreWordsCoreWord["ModifyTime"].isNull())
+			coreWordsObject.modifyTime = valueCoreWordsCoreWord["ModifyTime"].asString();
+		if(!valueCoreWordsCoreWord["CreateTime"].isNull())
+			coreWordsObject.createTime = valueCoreWordsCoreWord["CreateTime"].asString();
 		auto allSynonyms = value["Synonyms"]["Synonym"];
 		for (auto value : allSynonyms)
 			coreWordsObject.synonyms.push_back(value.asString());

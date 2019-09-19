@@ -39,20 +39,20 @@ void QueryTradeMarkApplicationLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DataItem"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!value["BizId"].isNull())
-			dataObject.bizId = value["BizId"].asString();
-		if(!value["Note"].isNull())
-			dataObject.note = value["Note"].asString();
-		if(!value["OperateType"].isNull())
-			dataObject.operateType = std::stoi(value["OperateType"].asString());
-		if(!value["OperateTime"].isNull())
-			dataObject.operateTime = std::stol(value["OperateTime"].asString());
-		if(!value["BizStatus"].isNull())
-			dataObject.bizStatus = std::stoi(value["BizStatus"].asString());
+		if(!valueDataDataItem["BizId"].isNull())
+			dataObject.bizId = valueDataDataItem["BizId"].asString();
+		if(!valueDataDataItem["Note"].isNull())
+			dataObject.note = valueDataDataItem["Note"].asString();
+		if(!valueDataDataItem["OperateType"].isNull())
+			dataObject.operateType = std::stoi(valueDataDataItem["OperateType"].asString());
+		if(!valueDataDataItem["OperateTime"].isNull())
+			dataObject.operateTime = std::stol(valueDataDataItem["OperateTime"].asString());
+		if(!valueDataDataItem["BizStatus"].isNull())
+			dataObject.bizStatus = std::stoi(valueDataDataItem["BizStatus"].asString());
 		data_.push_back(dataObject);
 	}
 

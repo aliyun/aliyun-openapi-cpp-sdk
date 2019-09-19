@@ -39,8 +39,8 @@ void DescribeHistogramResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["ItemsItem"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["ItemsItem"];
+	for (auto valueItemsItemsItem : allItemsNode)
 	{
 		ItemsItem itemsObject;
 		auto allData = value["Data"]["Data"];

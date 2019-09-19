@@ -39,12 +39,12 @@ void BatchGetEdgeInstanceDeviceConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDeviceConfigList = value["DeviceConfigList"]["DeviceConfig"];
-	for (auto value : allDeviceConfigList)
+	auto allDeviceConfigListNode = value["DeviceConfigList"]["DeviceConfig"];
+	for (auto valueDeviceConfigListDeviceConfig : allDeviceConfigListNode)
 	{
 		DeviceConfig deviceConfigListObject;
-		if(!value["IotId"].isNull())
-			deviceConfigListObject.iotId = value["IotId"].asString();
+		if(!valueDeviceConfigListDeviceConfig["IotId"].isNull())
+			deviceConfigListObject.iotId = valueDeviceConfigListDeviceConfig["IotId"].asString();
 		auto configNode = value["Config"];
 		if(!configNode["Format"].isNull())
 			deviceConfigListObject.config.format = configNode["Format"].asString();

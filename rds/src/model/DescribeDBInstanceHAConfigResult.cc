@@ -39,24 +39,24 @@ void DescribeDBInstanceHAConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHostInstanceInfos = value["HostInstanceInfos"]["NodeInfo"];
-	for (auto value : allHostInstanceInfos)
+	auto allHostInstanceInfosNode = value["HostInstanceInfos"]["NodeInfo"];
+	for (auto valueHostInstanceInfosNodeInfo : allHostInstanceInfosNode)
 	{
 		NodeInfo hostInstanceInfosObject;
-		if(!value["NodeId"].isNull())
-			hostInstanceInfosObject.nodeId = value["NodeId"].asString();
-		if(!value["RegionId"].isNull())
-			hostInstanceInfosObject.regionId = value["RegionId"].asString();
-		if(!value["LogSyncTime"].isNull())
-			hostInstanceInfosObject.logSyncTime = value["LogSyncTime"].asString();
-		if(!value["DataSyncTime"].isNull())
-			hostInstanceInfosObject.dataSyncTime = value["DataSyncTime"].asString();
-		if(!value["NodeType"].isNull())
-			hostInstanceInfosObject.nodeType = value["NodeType"].asString();
-		if(!value["ZoneId"].isNull())
-			hostInstanceInfosObject.zoneId = value["ZoneId"].asString();
-		if(!value["SyncStatus"].isNull())
-			hostInstanceInfosObject.syncStatus = value["SyncStatus"].asString();
+		if(!valueHostInstanceInfosNodeInfo["NodeId"].isNull())
+			hostInstanceInfosObject.nodeId = valueHostInstanceInfosNodeInfo["NodeId"].asString();
+		if(!valueHostInstanceInfosNodeInfo["RegionId"].isNull())
+			hostInstanceInfosObject.regionId = valueHostInstanceInfosNodeInfo["RegionId"].asString();
+		if(!valueHostInstanceInfosNodeInfo["LogSyncTime"].isNull())
+			hostInstanceInfosObject.logSyncTime = valueHostInstanceInfosNodeInfo["LogSyncTime"].asString();
+		if(!valueHostInstanceInfosNodeInfo["DataSyncTime"].isNull())
+			hostInstanceInfosObject.dataSyncTime = valueHostInstanceInfosNodeInfo["DataSyncTime"].asString();
+		if(!valueHostInstanceInfosNodeInfo["NodeType"].isNull())
+			hostInstanceInfosObject.nodeType = valueHostInstanceInfosNodeInfo["NodeType"].asString();
+		if(!valueHostInstanceInfosNodeInfo["ZoneId"].isNull())
+			hostInstanceInfosObject.zoneId = valueHostInstanceInfosNodeInfo["ZoneId"].asString();
+		if(!valueHostInstanceInfosNodeInfo["SyncStatus"].isNull())
+			hostInstanceInfosObject.syncStatus = valueHostInstanceInfosNodeInfo["SyncStatus"].asString();
 		hostInstanceInfos_.push_back(hostInstanceInfosObject);
 	}
 	if(!value["DBInstanceId"].isNull())

@@ -39,26 +39,26 @@ void DescribeCheckWarningsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCheckWarnings = value["CheckWarnings"]["CheckWarning"];
-	for (auto value : allCheckWarnings)
+	auto allCheckWarningsNode = value["CheckWarnings"]["CheckWarning"];
+	for (auto valueCheckWarningsCheckWarning : allCheckWarningsNode)
 	{
 		CheckWarning checkWarningsObject;
-		if(!value["Uuid"].isNull())
-			checkWarningsObject.uuid = value["Uuid"].asString();
-		if(!value["CheckId"].isNull())
-			checkWarningsObject.checkId = std::stol(value["CheckId"].asString());
-		if(!value["CheckWarningId"].isNull())
-			checkWarningsObject.checkWarningId = std::stol(value["CheckWarningId"].asString());
-		if(!value["Level"].isNull())
-			checkWarningsObject.level = value["Level"].asString();
-		if(!value["Item"].isNull())
-			checkWarningsObject.item = value["Item"].asString();
-		if(!value["Type"].isNull())
-			checkWarningsObject.type = value["Type"].asString();
-		if(!value["Status"].isNull())
-			checkWarningsObject.status = std::stoi(value["Status"].asString());
-		if(!value["Reason"].isNull())
-			checkWarningsObject.reason = value["Reason"].asString();
+		if(!valueCheckWarningsCheckWarning["Uuid"].isNull())
+			checkWarningsObject.uuid = valueCheckWarningsCheckWarning["Uuid"].asString();
+		if(!valueCheckWarningsCheckWarning["CheckId"].isNull())
+			checkWarningsObject.checkId = std::stol(valueCheckWarningsCheckWarning["CheckId"].asString());
+		if(!valueCheckWarningsCheckWarning["CheckWarningId"].isNull())
+			checkWarningsObject.checkWarningId = std::stol(valueCheckWarningsCheckWarning["CheckWarningId"].asString());
+		if(!valueCheckWarningsCheckWarning["Level"].isNull())
+			checkWarningsObject.level = valueCheckWarningsCheckWarning["Level"].asString();
+		if(!valueCheckWarningsCheckWarning["Item"].isNull())
+			checkWarningsObject.item = valueCheckWarningsCheckWarning["Item"].asString();
+		if(!valueCheckWarningsCheckWarning["Type"].isNull())
+			checkWarningsObject.type = valueCheckWarningsCheckWarning["Type"].asString();
+		if(!valueCheckWarningsCheckWarning["Status"].isNull())
+			checkWarningsObject.status = std::stoi(valueCheckWarningsCheckWarning["Status"].asString());
+		if(!valueCheckWarningsCheckWarning["Reason"].isNull())
+			checkWarningsObject.reason = valueCheckWarningsCheckWarning["Reason"].asString();
 		checkWarnings_.push_back(checkWarningsObject);
 	}
 	if(!value["Count"].isNull())

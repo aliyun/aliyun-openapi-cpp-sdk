@@ -39,30 +39,30 @@ void BatchGetJobMetricInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Job"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["Job"];
+	for (auto valueDataJob : allDataNode)
 	{
 		Job dataObject;
-		if(!value["Delay"].isNull())
-			dataObject.delay = std::stoi(value["Delay"].asString());
-		if(!value["TpsOut"].isNull())
-			dataObject.tpsOut = std::stoi(value["TpsOut"].asString());
-		if(!value["MemRequest"].isNull())
-			dataObject.memRequest = std::stoi(value["MemRequest"].asString());
-		if(!value["JobUniqKey"].isNull())
-			dataObject.jobUniqKey = value["JobUniqKey"].asString();
-		if(!value["MemUsed"].isNull())
-			dataObject.memUsed = std::stof(value["MemUsed"].asString());
-		if(!value["CpuUsed"].isNull())
-			dataObject.cpuUsed = std::stof(value["CpuUsed"].asString());
-		if(!value["CpuRequest"].isNull())
-			dataObject.cpuRequest = std::stoi(value["CpuRequest"].asString());
-		if(!value["Nickname"].isNull())
-			dataObject.nickname = value["Nickname"].asString();
-		if(!value["TpsIn"].isNull())
-			dataObject.tpsIn = std::stoi(value["TpsIn"].asString());
-		if(!value["Priority"].isNull())
-			dataObject.priority = value["Priority"].asString();
+		if(!valueDataJob["Delay"].isNull())
+			dataObject.delay = std::stoi(valueDataJob["Delay"].asString());
+		if(!valueDataJob["TpsOut"].isNull())
+			dataObject.tpsOut = std::stoi(valueDataJob["TpsOut"].asString());
+		if(!valueDataJob["MemRequest"].isNull())
+			dataObject.memRequest = std::stoi(valueDataJob["MemRequest"].asString());
+		if(!valueDataJob["JobUniqKey"].isNull())
+			dataObject.jobUniqKey = valueDataJob["JobUniqKey"].asString();
+		if(!valueDataJob["MemUsed"].isNull())
+			dataObject.memUsed = std::stof(valueDataJob["MemUsed"].asString());
+		if(!valueDataJob["CpuUsed"].isNull())
+			dataObject.cpuUsed = std::stof(valueDataJob["CpuUsed"].asString());
+		if(!valueDataJob["CpuRequest"].isNull())
+			dataObject.cpuRequest = std::stoi(valueDataJob["CpuRequest"].asString());
+		if(!valueDataJob["Nickname"].isNull())
+			dataObject.nickname = valueDataJob["Nickname"].asString();
+		if(!valueDataJob["TpsIn"].isNull())
+			dataObject.tpsIn = std::stoi(valueDataJob["TpsIn"].asString());
+		if(!valueDataJob["Priority"].isNull())
+			dataObject.priority = valueDataJob["Priority"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

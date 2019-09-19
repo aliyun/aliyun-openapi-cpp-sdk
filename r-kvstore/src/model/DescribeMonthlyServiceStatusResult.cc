@@ -39,14 +39,14 @@ void DescribeMonthlyServiceStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstanceSLAInfos = value["InstanceSLAInfos"]["InstanceSLAInfo"];
-	for (auto value : allInstanceSLAInfos)
+	auto allInstanceSLAInfosNode = value["InstanceSLAInfos"]["InstanceSLAInfo"];
+	for (auto valueInstanceSLAInfosInstanceSLAInfo : allInstanceSLAInfosNode)
 	{
 		InstanceSLAInfo instanceSLAInfosObject;
-		if(!value["InstanceId"].isNull())
-			instanceSLAInfosObject.instanceId = value["InstanceId"].asString();
-		if(!value["UptimePct"].isNull())
-			instanceSLAInfosObject.uptimePct = std::stof(value["UptimePct"].asString());
+		if(!valueInstanceSLAInfosInstanceSLAInfo["InstanceId"].isNull())
+			instanceSLAInfosObject.instanceId = valueInstanceSLAInfosInstanceSLAInfo["InstanceId"].asString();
+		if(!valueInstanceSLAInfosInstanceSLAInfo["UptimePct"].isNull())
+			instanceSLAInfosObject.uptimePct = std::stof(valueInstanceSLAInfosInstanceSLAInfo["UptimePct"].asString());
 		instanceSLAInfos_.push_back(instanceSLAInfosObject);
 	}
 	if(!value["TotalCount"].isNull())

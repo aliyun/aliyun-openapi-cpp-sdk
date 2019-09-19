@@ -39,34 +39,34 @@ void QueryDeviceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["DeviceInfo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["DeviceInfo"];
+	for (auto valueDataDeviceInfo : allDataNode)
 	{
 		DeviceInfo dataObject;
-		if(!value["DeviceId"].isNull())
-			dataObject.deviceId = value["DeviceId"].asString();
-		if(!value["DeviceSecret"].isNull())
-			dataObject.deviceSecret = value["DeviceSecret"].asString();
-		if(!value["ProductKey"].isNull())
-			dataObject.productKey = value["ProductKey"].asString();
-		if(!value["DeviceStatus"].isNull())
-			dataObject.deviceStatus = value["DeviceStatus"].asString();
-		if(!value["DeviceName"].isNull())
-			dataObject.deviceName = value["DeviceName"].asString();
-		if(!value["DeviceType"].isNull())
-			dataObject.deviceType = value["DeviceType"].asString();
-		if(!value["GmtCreate"].isNull())
-			dataObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			dataObject.gmtModified = value["GmtModified"].asString();
-		if(!value["UtcCreate"].isNull())
-			dataObject.utcCreate = value["UtcCreate"].asString();
-		if(!value["UtcModified"].isNull())
-			dataObject.utcModified = value["UtcModified"].asString();
-		if(!value["IotId"].isNull())
-			dataObject.iotId = value["IotId"].asString();
-		if(!value["Nickname"].isNull())
-			dataObject.nickname = value["Nickname"].asString();
+		if(!valueDataDeviceInfo["DeviceId"].isNull())
+			dataObject.deviceId = valueDataDeviceInfo["DeviceId"].asString();
+		if(!valueDataDeviceInfo["DeviceSecret"].isNull())
+			dataObject.deviceSecret = valueDataDeviceInfo["DeviceSecret"].asString();
+		if(!valueDataDeviceInfo["ProductKey"].isNull())
+			dataObject.productKey = valueDataDeviceInfo["ProductKey"].asString();
+		if(!valueDataDeviceInfo["DeviceStatus"].isNull())
+			dataObject.deviceStatus = valueDataDeviceInfo["DeviceStatus"].asString();
+		if(!valueDataDeviceInfo["DeviceName"].isNull())
+			dataObject.deviceName = valueDataDeviceInfo["DeviceName"].asString();
+		if(!valueDataDeviceInfo["DeviceType"].isNull())
+			dataObject.deviceType = valueDataDeviceInfo["DeviceType"].asString();
+		if(!valueDataDeviceInfo["GmtCreate"].isNull())
+			dataObject.gmtCreate = valueDataDeviceInfo["GmtCreate"].asString();
+		if(!valueDataDeviceInfo["GmtModified"].isNull())
+			dataObject.gmtModified = valueDataDeviceInfo["GmtModified"].asString();
+		if(!valueDataDeviceInfo["UtcCreate"].isNull())
+			dataObject.utcCreate = valueDataDeviceInfo["UtcCreate"].asString();
+		if(!valueDataDeviceInfo["UtcModified"].isNull())
+			dataObject.utcModified = valueDataDeviceInfo["UtcModified"].asString();
+		if(!valueDataDeviceInfo["IotId"].isNull())
+			dataObject.iotId = valueDataDeviceInfo["IotId"].asString();
+		if(!valueDataDeviceInfo["Nickname"].isNull())
+			dataObject.nickname = valueDataDeviceInfo["Nickname"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

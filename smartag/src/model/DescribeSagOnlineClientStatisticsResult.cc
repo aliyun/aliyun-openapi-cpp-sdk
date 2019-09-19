@@ -39,14 +39,14 @@ void DescribeSagOnlineClientStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSagStatistics = value["SagStatistics"]["Statistics"];
-	for (auto value : allSagStatistics)
+	auto allSagStatisticsNode = value["SagStatistics"]["Statistics"];
+	for (auto valueSagStatisticsStatistics : allSagStatisticsNode)
 	{
 		Statistics sagStatisticsObject;
-		if(!value["SmartAGId"].isNull())
-			sagStatisticsObject.smartAGId = value["SmartAGId"].asString();
-		if(!value["OnlineCount"].isNull())
-			sagStatisticsObject.onlineCount = value["OnlineCount"].asString();
+		if(!valueSagStatisticsStatistics["SmartAGId"].isNull())
+			sagStatisticsObject.smartAGId = valueSagStatisticsStatistics["SmartAGId"].asString();
+		if(!valueSagStatisticsStatistics["OnlineCount"].isNull())
+			sagStatisticsObject.onlineCount = valueSagStatisticsStatistics["OnlineCount"].asString();
 		sagStatistics_.push_back(sagStatisticsObject);
 	}
 

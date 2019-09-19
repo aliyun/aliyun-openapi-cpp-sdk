@@ -39,22 +39,22 @@ void DescribeTasksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTaskSet = value["TaskSet"]["Task"];
-	for (auto value : allTaskSet)
+	auto allTaskSetNode = value["TaskSet"]["Task"];
+	for (auto valueTaskSetTask : allTaskSetNode)
 	{
 		Task taskSetObject;
-		if(!value["TaskId"].isNull())
-			taskSetObject.taskId = value["TaskId"].asString();
-		if(!value["TaskAction"].isNull())
-			taskSetObject.taskAction = value["TaskAction"].asString();
-		if(!value["TaskStatus"].isNull())
-			taskSetObject.taskStatus = value["TaskStatus"].asString();
-		if(!value["SupportCancel"].isNull())
-			taskSetObject.supportCancel = value["SupportCancel"].asString();
-		if(!value["CreationTime"].isNull())
-			taskSetObject.creationTime = value["CreationTime"].asString();
-		if(!value["FinishedTime"].isNull())
-			taskSetObject.finishedTime = value["FinishedTime"].asString();
+		if(!valueTaskSetTask["TaskId"].isNull())
+			taskSetObject.taskId = valueTaskSetTask["TaskId"].asString();
+		if(!valueTaskSetTask["TaskAction"].isNull())
+			taskSetObject.taskAction = valueTaskSetTask["TaskAction"].asString();
+		if(!valueTaskSetTask["TaskStatus"].isNull())
+			taskSetObject.taskStatus = valueTaskSetTask["TaskStatus"].asString();
+		if(!valueTaskSetTask["SupportCancel"].isNull())
+			taskSetObject.supportCancel = valueTaskSetTask["SupportCancel"].asString();
+		if(!valueTaskSetTask["CreationTime"].isNull())
+			taskSetObject.creationTime = valueTaskSetTask["CreationTime"].asString();
+		if(!valueTaskSetTask["FinishedTime"].isNull())
+			taskSetObject.finishedTime = valueTaskSetTask["FinishedTime"].asString();
 		taskSet_.push_back(taskSetObject);
 	}
 	if(!value["RegionId"].isNull())

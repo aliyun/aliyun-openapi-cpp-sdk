@@ -46,48 +46,48 @@ void FindApproveServiceListResult::parse(const std::string &payload)
 		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
-	auto allServiceList = value["ServiceList"]["Service"];
-	for (auto value : allServiceList)
+	auto allServiceListNode = dataNode["ServiceList"]["Service"];
+	for (auto dataNodeServiceListService : allServiceListNode)
 	{
 		Data::Service serviceObject;
-		if(!value["AllVisiable"].isNull())
-			serviceObject.allVisiable = value["AllVisiable"].asString() == "true";
-		if(!value["CasTargets"].isNull())
-			serviceObject.casTargets = value["CasTargets"].asString();
-		if(!value["CreateTime"].isNull())
-			serviceObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["CsbId"].isNull())
-			serviceObject.csbId = std::stol(value["CsbId"].asString());
-		if(!value["Id"].isNull())
-			serviceObject.id = std::stol(value["Id"].asString());
-		if(!value["InterfaceName"].isNull())
-			serviceObject.interfaceName = value["InterfaceName"].asString();
-		if(!value["ModifiedTime"].isNull())
-			serviceObject.modifiedTime = std::stol(value["ModifiedTime"].asString());
-		if(!value["OwnerId"].isNull())
-			serviceObject.ownerId = value["OwnerId"].asString();
-		if(!value["PrincipalName"].isNull())
-			serviceObject.principalName = value["PrincipalName"].asString();
-		if(!value["ProjectId"].isNull())
-			serviceObject.projectId = std::stol(value["ProjectId"].asString());
-		if(!value["ProjectName"].isNull())
-			serviceObject.projectName = value["ProjectName"].asString();
-		if(!value["Qps"].isNull())
-			serviceObject.qps = std::stoi(value["Qps"].asString());
-		if(!value["Scope"].isNull())
-			serviceObject.scope = value["Scope"].asString();
-		if(!value["ServiceName"].isNull())
-			serviceObject.serviceName = value["ServiceName"].asString();
-		if(!value["ServiceVersion"].isNull())
-			serviceObject.serviceVersion = value["ServiceVersion"].asString();
-		if(!value["SkipAuth"].isNull())
-			serviceObject.skipAuth = value["SkipAuth"].asString() == "true";
-		if(!value["StatisticName"].isNull())
-			serviceObject.statisticName = value["StatisticName"].asString();
-		if(!value["Status"].isNull())
-			serviceObject.status = std::stoi(value["Status"].asString());
-		if(!value["UserId"].isNull())
-			serviceObject.userId = value["UserId"].asString();
+		if(!dataNodeServiceListService["AllVisiable"].isNull())
+			serviceObject.allVisiable = dataNodeServiceListService["AllVisiable"].asString() == "true";
+		if(!dataNodeServiceListService["CasTargets"].isNull())
+			serviceObject.casTargets = dataNodeServiceListService["CasTargets"].asString();
+		if(!dataNodeServiceListService["CreateTime"].isNull())
+			serviceObject.createTime = std::stol(dataNodeServiceListService["CreateTime"].asString());
+		if(!dataNodeServiceListService["CsbId"].isNull())
+			serviceObject.csbId = std::stol(dataNodeServiceListService["CsbId"].asString());
+		if(!dataNodeServiceListService["Id"].isNull())
+			serviceObject.id = std::stol(dataNodeServiceListService["Id"].asString());
+		if(!dataNodeServiceListService["InterfaceName"].isNull())
+			serviceObject.interfaceName = dataNodeServiceListService["InterfaceName"].asString();
+		if(!dataNodeServiceListService["ModifiedTime"].isNull())
+			serviceObject.modifiedTime = std::stol(dataNodeServiceListService["ModifiedTime"].asString());
+		if(!dataNodeServiceListService["OwnerId"].isNull())
+			serviceObject.ownerId = dataNodeServiceListService["OwnerId"].asString();
+		if(!dataNodeServiceListService["PrincipalName"].isNull())
+			serviceObject.principalName = dataNodeServiceListService["PrincipalName"].asString();
+		if(!dataNodeServiceListService["ProjectId"].isNull())
+			serviceObject.projectId = std::stol(dataNodeServiceListService["ProjectId"].asString());
+		if(!dataNodeServiceListService["ProjectName"].isNull())
+			serviceObject.projectName = dataNodeServiceListService["ProjectName"].asString();
+		if(!dataNodeServiceListService["Qps"].isNull())
+			serviceObject.qps = std::stoi(dataNodeServiceListService["Qps"].asString());
+		if(!dataNodeServiceListService["Scope"].isNull())
+			serviceObject.scope = dataNodeServiceListService["Scope"].asString();
+		if(!dataNodeServiceListService["ServiceName"].isNull())
+			serviceObject.serviceName = dataNodeServiceListService["ServiceName"].asString();
+		if(!dataNodeServiceListService["ServiceVersion"].isNull())
+			serviceObject.serviceVersion = dataNodeServiceListService["ServiceVersion"].asString();
+		if(!dataNodeServiceListService["SkipAuth"].isNull())
+			serviceObject.skipAuth = dataNodeServiceListService["SkipAuth"].asString() == "true";
+		if(!dataNodeServiceListService["StatisticName"].isNull())
+			serviceObject.statisticName = dataNodeServiceListService["StatisticName"].asString();
+		if(!dataNodeServiceListService["Status"].isNull())
+			serviceObject.status = std::stoi(dataNodeServiceListService["Status"].asString());
+		if(!dataNodeServiceListService["UserId"].isNull())
+			serviceObject.userId = dataNodeServiceListService["UserId"].asString();
 		data_.serviceList.push_back(serviceObject);
 	}
 	if(!value["Code"].isNull())

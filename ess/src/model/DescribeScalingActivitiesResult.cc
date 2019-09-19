@@ -39,36 +39,36 @@ void DescribeScalingActivitiesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allScalingActivities = value["ScalingActivities"]["ScalingActivity"];
-	for (auto value : allScalingActivities)
+	auto allScalingActivitiesNode = value["ScalingActivities"]["ScalingActivity"];
+	for (auto valueScalingActivitiesScalingActivity : allScalingActivitiesNode)
 	{
 		ScalingActivity scalingActivitiesObject;
-		if(!value["ScalingActivityId"].isNull())
-			scalingActivitiesObject.scalingActivityId = value["ScalingActivityId"].asString();
-		if(!value["ScalingGroupId"].isNull())
-			scalingActivitiesObject.scalingGroupId = value["ScalingGroupId"].asString();
-		if(!value["Description"].isNull())
-			scalingActivitiesObject.description = value["Description"].asString();
-		if(!value["Cause"].isNull())
-			scalingActivitiesObject.cause = value["Cause"].asString();
-		if(!value["StartTime"].isNull())
-			scalingActivitiesObject.startTime = value["StartTime"].asString();
-		if(!value["EndTime"].isNull())
-			scalingActivitiesObject.endTime = value["EndTime"].asString();
-		if(!value["Progress"].isNull())
-			scalingActivitiesObject.progress = std::stoi(value["Progress"].asString());
-		if(!value["StatusCode"].isNull())
-			scalingActivitiesObject.statusCode = value["StatusCode"].asString();
-		if(!value["StatusMessage"].isNull())
-			scalingActivitiesObject.statusMessage = value["StatusMessage"].asString();
-		if(!value["TotalCapacity"].isNull())
-			scalingActivitiesObject.totalCapacity = value["TotalCapacity"].asString();
-		if(!value["AttachedCapacity"].isNull())
-			scalingActivitiesObject.attachedCapacity = value["AttachedCapacity"].asString();
-		if(!value["AutoCreatedCapacity"].isNull())
-			scalingActivitiesObject.autoCreatedCapacity = value["AutoCreatedCapacity"].asString();
-		if(!value["ScalingInstanceNumber"].isNull())
-			scalingActivitiesObject.scalingInstanceNumber = std::stoi(value["ScalingInstanceNumber"].asString());
+		if(!valueScalingActivitiesScalingActivity["ScalingActivityId"].isNull())
+			scalingActivitiesObject.scalingActivityId = valueScalingActivitiesScalingActivity["ScalingActivityId"].asString();
+		if(!valueScalingActivitiesScalingActivity["ScalingGroupId"].isNull())
+			scalingActivitiesObject.scalingGroupId = valueScalingActivitiesScalingActivity["ScalingGroupId"].asString();
+		if(!valueScalingActivitiesScalingActivity["Description"].isNull())
+			scalingActivitiesObject.description = valueScalingActivitiesScalingActivity["Description"].asString();
+		if(!valueScalingActivitiesScalingActivity["Cause"].isNull())
+			scalingActivitiesObject.cause = valueScalingActivitiesScalingActivity["Cause"].asString();
+		if(!valueScalingActivitiesScalingActivity["StartTime"].isNull())
+			scalingActivitiesObject.startTime = valueScalingActivitiesScalingActivity["StartTime"].asString();
+		if(!valueScalingActivitiesScalingActivity["EndTime"].isNull())
+			scalingActivitiesObject.endTime = valueScalingActivitiesScalingActivity["EndTime"].asString();
+		if(!valueScalingActivitiesScalingActivity["Progress"].isNull())
+			scalingActivitiesObject.progress = std::stoi(valueScalingActivitiesScalingActivity["Progress"].asString());
+		if(!valueScalingActivitiesScalingActivity["StatusCode"].isNull())
+			scalingActivitiesObject.statusCode = valueScalingActivitiesScalingActivity["StatusCode"].asString();
+		if(!valueScalingActivitiesScalingActivity["StatusMessage"].isNull())
+			scalingActivitiesObject.statusMessage = valueScalingActivitiesScalingActivity["StatusMessage"].asString();
+		if(!valueScalingActivitiesScalingActivity["TotalCapacity"].isNull())
+			scalingActivitiesObject.totalCapacity = valueScalingActivitiesScalingActivity["TotalCapacity"].asString();
+		if(!valueScalingActivitiesScalingActivity["AttachedCapacity"].isNull())
+			scalingActivitiesObject.attachedCapacity = valueScalingActivitiesScalingActivity["AttachedCapacity"].asString();
+		if(!valueScalingActivitiesScalingActivity["AutoCreatedCapacity"].isNull())
+			scalingActivitiesObject.autoCreatedCapacity = valueScalingActivitiesScalingActivity["AutoCreatedCapacity"].asString();
+		if(!valueScalingActivitiesScalingActivity["ScalingInstanceNumber"].isNull())
+			scalingActivitiesObject.scalingInstanceNumber = std::stoi(valueScalingActivitiesScalingActivity["ScalingInstanceNumber"].asString());
 		scalingActivities_.push_back(scalingActivitiesObject);
 	}
 	if(!value["TotalCount"].isNull())

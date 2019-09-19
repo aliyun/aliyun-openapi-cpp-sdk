@@ -39,36 +39,36 @@ void DescribeBackupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBackups = value["Backups"]["Backup"];
-	for (auto value : allBackups)
+	auto allBackupsNode = value["Backups"]["Backup"];
+	for (auto valueBackupsBackup : allBackupsNode)
 	{
 		Backup backupsObject;
-		if(!value["BackupId"].isNull())
-			backupsObject.backupId = std::stoi(value["BackupId"].asString());
-		if(!value["BackupDBNames"].isNull())
-			backupsObject.backupDBNames = value["BackupDBNames"].asString();
-		if(!value["BackupStatus"].isNull())
-			backupsObject.backupStatus = value["BackupStatus"].asString();
-		if(!value["BackupStartTime"].isNull())
-			backupsObject.backupStartTime = value["BackupStartTime"].asString();
-		if(!value["BackupEndTime"].isNull())
-			backupsObject.backupEndTime = value["BackupEndTime"].asString();
-		if(!value["BackupType"].isNull())
-			backupsObject.backupType = value["BackupType"].asString();
-		if(!value["BackupMode"].isNull())
-			backupsObject.backupMode = value["BackupMode"].asString();
-		if(!value["BackupMethod"].isNull())
-			backupsObject.backupMethod = value["BackupMethod"].asString();
-		if(!value["BackupDownloadURL"].isNull())
-			backupsObject.backupDownloadURL = value["BackupDownloadURL"].asString();
-		if(!value["BackupSize"].isNull())
-			backupsObject.backupSize = std::stol(value["BackupSize"].asString());
-		if(!value["EngineVersion"].isNull())
-			backupsObject.engineVersion = value["EngineVersion"].asString();
-		if(!value["NodeInstanceId"].isNull())
-			backupsObject.nodeInstanceId = value["NodeInstanceId"].asString();
-		if(!value["BackupIntranetDownloadURL"].isNull())
-			backupsObject.backupIntranetDownloadURL = value["BackupIntranetDownloadURL"].asString();
+		if(!valueBackupsBackup["BackupId"].isNull())
+			backupsObject.backupId = std::stoi(valueBackupsBackup["BackupId"].asString());
+		if(!valueBackupsBackup["BackupDBNames"].isNull())
+			backupsObject.backupDBNames = valueBackupsBackup["BackupDBNames"].asString();
+		if(!valueBackupsBackup["BackupStatus"].isNull())
+			backupsObject.backupStatus = valueBackupsBackup["BackupStatus"].asString();
+		if(!valueBackupsBackup["BackupStartTime"].isNull())
+			backupsObject.backupStartTime = valueBackupsBackup["BackupStartTime"].asString();
+		if(!valueBackupsBackup["BackupEndTime"].isNull())
+			backupsObject.backupEndTime = valueBackupsBackup["BackupEndTime"].asString();
+		if(!valueBackupsBackup["BackupType"].isNull())
+			backupsObject.backupType = valueBackupsBackup["BackupType"].asString();
+		if(!valueBackupsBackup["BackupMode"].isNull())
+			backupsObject.backupMode = valueBackupsBackup["BackupMode"].asString();
+		if(!valueBackupsBackup["BackupMethod"].isNull())
+			backupsObject.backupMethod = valueBackupsBackup["BackupMethod"].asString();
+		if(!valueBackupsBackup["BackupDownloadURL"].isNull())
+			backupsObject.backupDownloadURL = valueBackupsBackup["BackupDownloadURL"].asString();
+		if(!valueBackupsBackup["BackupSize"].isNull())
+			backupsObject.backupSize = std::stol(valueBackupsBackup["BackupSize"].asString());
+		if(!valueBackupsBackup["EngineVersion"].isNull())
+			backupsObject.engineVersion = valueBackupsBackup["EngineVersion"].asString();
+		if(!valueBackupsBackup["NodeInstanceId"].isNull())
+			backupsObject.nodeInstanceId = valueBackupsBackup["NodeInstanceId"].asString();
+		if(!valueBackupsBackup["BackupIntranetDownloadURL"].isNull())
+			backupsObject.backupIntranetDownloadURL = valueBackupsBackup["BackupIntranetDownloadURL"].asString();
 		backups_.push_back(backupsObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -39,48 +39,48 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNatGateways = value["NatGateways"]["NatGateway"];
-	for (auto value : allNatGateways)
+	auto allNatGatewaysNode = value["NatGateways"]["NatGateway"];
+	for (auto valueNatGatewaysNatGateway : allNatGatewaysNode)
 	{
 		NatGateway natGatewaysObject;
-		if(!value["NatGatewayId"].isNull())
-			natGatewaysObject.natGatewayId = value["NatGatewayId"].asString();
-		if(!value["RegionId"].isNull())
-			natGatewaysObject.regionId = value["RegionId"].asString();
-		if(!value["Name"].isNull())
-			natGatewaysObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			natGatewaysObject.description = value["Description"].asString();
-		if(!value["VpcId"].isNull())
-			natGatewaysObject.vpcId = value["VpcId"].asString();
-		if(!value["Spec"].isNull())
-			natGatewaysObject.spec = value["Spec"].asString();
-		if(!value["InstanceChargeType"].isNull())
-			natGatewaysObject.instanceChargeType = value["InstanceChargeType"].asString();
-		if(!value["ExpiredTime"].isNull())
-			natGatewaysObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["AutoPay"].isNull())
-			natGatewaysObject.autoPay = value["AutoPay"].asString() == "true";
-		if(!value["BusinessStatus"].isNull())
-			natGatewaysObject.businessStatus = value["BusinessStatus"].asString();
-		if(!value["CreationTime"].isNull())
-			natGatewaysObject.creationTime = value["CreationTime"].asString();
-		if(!value["Status"].isNull())
-			natGatewaysObject.status = value["Status"].asString();
-		if(!value["DeletionProtection"].isNull())
-			natGatewaysObject.deletionProtection = value["DeletionProtection"].asString() == "true";
-		auto allIpLists = value["IpLists"]["IpList"];
-		for (auto value : allIpLists)
+		if(!valueNatGatewaysNatGateway["NatGatewayId"].isNull())
+			natGatewaysObject.natGatewayId = valueNatGatewaysNatGateway["NatGatewayId"].asString();
+		if(!valueNatGatewaysNatGateway["RegionId"].isNull())
+			natGatewaysObject.regionId = valueNatGatewaysNatGateway["RegionId"].asString();
+		if(!valueNatGatewaysNatGateway["Name"].isNull())
+			natGatewaysObject.name = valueNatGatewaysNatGateway["Name"].asString();
+		if(!valueNatGatewaysNatGateway["Description"].isNull())
+			natGatewaysObject.description = valueNatGatewaysNatGateway["Description"].asString();
+		if(!valueNatGatewaysNatGateway["VpcId"].isNull())
+			natGatewaysObject.vpcId = valueNatGatewaysNatGateway["VpcId"].asString();
+		if(!valueNatGatewaysNatGateway["Spec"].isNull())
+			natGatewaysObject.spec = valueNatGatewaysNatGateway["Spec"].asString();
+		if(!valueNatGatewaysNatGateway["InstanceChargeType"].isNull())
+			natGatewaysObject.instanceChargeType = valueNatGatewaysNatGateway["InstanceChargeType"].asString();
+		if(!valueNatGatewaysNatGateway["ExpiredTime"].isNull())
+			natGatewaysObject.expiredTime = valueNatGatewaysNatGateway["ExpiredTime"].asString();
+		if(!valueNatGatewaysNatGateway["AutoPay"].isNull())
+			natGatewaysObject.autoPay = valueNatGatewaysNatGateway["AutoPay"].asString() == "true";
+		if(!valueNatGatewaysNatGateway["BusinessStatus"].isNull())
+			natGatewaysObject.businessStatus = valueNatGatewaysNatGateway["BusinessStatus"].asString();
+		if(!valueNatGatewaysNatGateway["CreationTime"].isNull())
+			natGatewaysObject.creationTime = valueNatGatewaysNatGateway["CreationTime"].asString();
+		if(!valueNatGatewaysNatGateway["Status"].isNull())
+			natGatewaysObject.status = valueNatGatewaysNatGateway["Status"].asString();
+		if(!valueNatGatewaysNatGateway["DeletionProtection"].isNull())
+			natGatewaysObject.deletionProtection = valueNatGatewaysNatGateway["DeletionProtection"].asString() == "true";
+		auto allIpListsNode = allNatGatewaysNode["IpLists"]["IpList"];
+		for (auto allNatGatewaysNodeIpListsIpList : allIpListsNode)
 		{
 			NatGateway::IpList ipListsObject;
-			if(!value["AllocationId"].isNull())
-				ipListsObject.allocationId = value["AllocationId"].asString();
-			if(!value["IpAddress"].isNull())
-				ipListsObject.ipAddress = value["IpAddress"].asString();
-			if(!value["UsingStatus"].isNull())
-				ipListsObject.usingStatus = value["UsingStatus"].asString();
-			if(!value["ApAccessEnabled"].isNull())
-				ipListsObject.apAccessEnabled = value["ApAccessEnabled"].asString() == "true";
+			if(!allNatGatewaysNodeIpListsIpList["AllocationId"].isNull())
+				ipListsObject.allocationId = allNatGatewaysNodeIpListsIpList["AllocationId"].asString();
+			if(!allNatGatewaysNodeIpListsIpList["IpAddress"].isNull())
+				ipListsObject.ipAddress = allNatGatewaysNodeIpListsIpList["IpAddress"].asString();
+			if(!allNatGatewaysNodeIpListsIpList["UsingStatus"].isNull())
+				ipListsObject.usingStatus = allNatGatewaysNodeIpListsIpList["UsingStatus"].asString();
+			if(!allNatGatewaysNodeIpListsIpList["ApAccessEnabled"].isNull())
+				ipListsObject.apAccessEnabled = allNatGatewaysNodeIpListsIpList["ApAccessEnabled"].asString() == "true";
 			natGatewaysObject.ipLists.push_back(ipListsObject);
 		}
 		auto allForwardTableIds = value["ForwardTableIds"]["ForwardTableId"];

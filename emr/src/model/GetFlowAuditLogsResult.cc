@@ -39,28 +39,28 @@ void GetFlowAuditLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Item"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Item"];
+	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!value["Ts"].isNull())
-			itemsObject.ts = std::stol(value["Ts"].asString());
-		if(!value["UserId"].isNull())
-			itemsObject.userId = value["UserId"].asString();
-		if(!value["OperatorId"].isNull())
-			itemsObject.operatorId = value["OperatorId"].asString();
-		if(!value["EntityId"].isNull())
-			itemsObject.entityId = value["EntityId"].asString();
-		if(!value["EntityType"].isNull())
-			itemsObject.entityType = value["EntityType"].asString();
-		if(!value["EntityGroupId"].isNull())
-			itemsObject.entityGroupId = value["EntityGroupId"].asString();
-		if(!value["Operation"].isNull())
-			itemsObject.operation = value["Operation"].asString();
-		if(!value["Status"].isNull())
-			itemsObject.status = value["Status"].asString();
-		if(!value["Content"].isNull())
-			itemsObject.content = value["Content"].asString();
+		if(!valueItemsItem["Ts"].isNull())
+			itemsObject.ts = std::stol(valueItemsItem["Ts"].asString());
+		if(!valueItemsItem["UserId"].isNull())
+			itemsObject.userId = valueItemsItem["UserId"].asString();
+		if(!valueItemsItem["OperatorId"].isNull())
+			itemsObject.operatorId = valueItemsItem["OperatorId"].asString();
+		if(!valueItemsItem["EntityId"].isNull())
+			itemsObject.entityId = valueItemsItem["EntityId"].asString();
+		if(!valueItemsItem["EntityType"].isNull())
+			itemsObject.entityType = valueItemsItem["EntityType"].asString();
+		if(!valueItemsItem["EntityGroupId"].isNull())
+			itemsObject.entityGroupId = valueItemsItem["EntityGroupId"].asString();
+		if(!valueItemsItem["Operation"].isNull())
+			itemsObject.operation = valueItemsItem["Operation"].asString();
+		if(!valueItemsItem["Status"].isNull())
+			itemsObject.status = valueItemsItem["Status"].asString();
+		if(!valueItemsItem["Content"].isNull())
+			itemsObject.content = valueItemsItem["Content"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -39,14 +39,14 @@ void DescribeCertificateBrandListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBrandList = value["BrandList"]["Brand"];
-	for (auto value : allBrandList)
+	auto allBrandListNode = value["BrandList"]["Brand"];
+	for (auto valueBrandListBrand : allBrandListNode)
 	{
 		Brand brandListObject;
-		if(!value["Id"].isNull())
-			brandListObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			brandListObject.name = value["Name"].asString();
+		if(!valueBrandListBrand["Id"].isNull())
+			brandListObject.id = std::stol(valueBrandListBrand["Id"].asString());
+		if(!valueBrandListBrand["Name"].isNull())
+			brandListObject.name = valueBrandListBrand["Name"].asString();
 		brandList_.push_back(brandListObject);
 	}
 

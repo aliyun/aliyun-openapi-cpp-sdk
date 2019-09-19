@@ -40,44 +40,44 @@ void QueryCrackEventResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allList = value["List"]["Entity"];
-	for (auto value : allList)
+	auto allListNode = dataNode["List"]["Entity"];
+	for (auto dataNodeListEntity : allListNode)
 	{
 		Data::Entity entityObject;
-		if(!value["Uuid"].isNull())
-			entityObject.uuid = value["Uuid"].asString();
-		if(!value["AttackTime"].isNull())
-			entityObject.attackTime = value["AttackTime"].asString();
-		if(!value["AttackType"].isNull())
-			entityObject.attackType = std::stoi(value["AttackType"].asString());
-		if(!value["AttackTypeName"].isNull())
-			entityObject.attackTypeName = value["AttackTypeName"].asString();
-		if(!value["BuyVersion"].isNull())
-			entityObject.buyVersion = value["BuyVersion"].asString();
-		if(!value["CrackSourceIp"].isNull())
-			entityObject.crackSourceIp = value["CrackSourceIp"].asString();
-		if(!value["CrackTimes"].isNull())
-			entityObject.crackTimes = std::stoi(value["CrackTimes"].asString());
-		if(!value["GroupId"].isNull())
-			entityObject.groupId = std::stoi(value["GroupId"].asString());
-		if(!value["InstanceName"].isNull())
-			entityObject.instanceName = value["InstanceName"].asString();
-		if(!value["InstanceId"].isNull())
-			entityObject.instanceId = value["InstanceId"].asString();
-		if(!value["Ip"].isNull())
-			entityObject.ip = value["Ip"].asString();
-		if(!value["Region"].isNull())
-			entityObject.region = value["Region"].asString();
-		if(!value["Status"].isNull())
-			entityObject.status = std::stoi(value["Status"].asString());
-		if(!value["StatusName"].isNull())
-			entityObject.statusName = value["StatusName"].asString();
-		if(!value["Location"].isNull())
-			entityObject.location = value["Location"].asString();
-		if(!value["InWhite"].isNull())
-			entityObject.inWhite = std::stoi(value["InWhite"].asString());
-		if(!value["UserName"].isNull())
-			entityObject.userName = value["UserName"].asString();
+		if(!dataNodeListEntity["Uuid"].isNull())
+			entityObject.uuid = dataNodeListEntity["Uuid"].asString();
+		if(!dataNodeListEntity["AttackTime"].isNull())
+			entityObject.attackTime = dataNodeListEntity["AttackTime"].asString();
+		if(!dataNodeListEntity["AttackType"].isNull())
+			entityObject.attackType = std::stoi(dataNodeListEntity["AttackType"].asString());
+		if(!dataNodeListEntity["AttackTypeName"].isNull())
+			entityObject.attackTypeName = dataNodeListEntity["AttackTypeName"].asString();
+		if(!dataNodeListEntity["BuyVersion"].isNull())
+			entityObject.buyVersion = dataNodeListEntity["BuyVersion"].asString();
+		if(!dataNodeListEntity["CrackSourceIp"].isNull())
+			entityObject.crackSourceIp = dataNodeListEntity["CrackSourceIp"].asString();
+		if(!dataNodeListEntity["CrackTimes"].isNull())
+			entityObject.crackTimes = std::stoi(dataNodeListEntity["CrackTimes"].asString());
+		if(!dataNodeListEntity["GroupId"].isNull())
+			entityObject.groupId = std::stoi(dataNodeListEntity["GroupId"].asString());
+		if(!dataNodeListEntity["InstanceName"].isNull())
+			entityObject.instanceName = dataNodeListEntity["InstanceName"].asString();
+		if(!dataNodeListEntity["InstanceId"].isNull())
+			entityObject.instanceId = dataNodeListEntity["InstanceId"].asString();
+		if(!dataNodeListEntity["Ip"].isNull())
+			entityObject.ip = dataNodeListEntity["Ip"].asString();
+		if(!dataNodeListEntity["Region"].isNull())
+			entityObject.region = dataNodeListEntity["Region"].asString();
+		if(!dataNodeListEntity["Status"].isNull())
+			entityObject.status = std::stoi(dataNodeListEntity["Status"].asString());
+		if(!dataNodeListEntity["StatusName"].isNull())
+			entityObject.statusName = dataNodeListEntity["StatusName"].asString();
+		if(!dataNodeListEntity["Location"].isNull())
+			entityObject.location = dataNodeListEntity["Location"].asString();
+		if(!dataNodeListEntity["InWhite"].isNull())
+			entityObject.inWhite = std::stoi(dataNodeListEntity["InWhite"].asString());
+		if(!dataNodeListEntity["UserName"].isNull())
+			entityObject.userName = dataNodeListEntity["UserName"].asString();
 		data_.list.push_back(entityObject);
 	}
 	auto pageInfoNode = dataNode["PageInfo"];

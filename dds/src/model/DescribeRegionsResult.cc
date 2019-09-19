@@ -39,22 +39,22 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegions = value["Regions"]["DdsRegion"];
-	for (auto value : allRegions)
+	auto allRegionsNode = value["Regions"]["DdsRegion"];
+	for (auto valueRegionsDdsRegion : allRegionsNode)
 	{
 		DdsRegion regionsObject;
-		if(!value["RegionId"].isNull())
-			regionsObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneIds"].isNull())
-			regionsObject.zoneIds = value["ZoneIds"].asString();
-		auto allZones = value["Zones"]["Zone"];
-		for (auto value : allZones)
+		if(!valueRegionsDdsRegion["RegionId"].isNull())
+			regionsObject.regionId = valueRegionsDdsRegion["RegionId"].asString();
+		if(!valueRegionsDdsRegion["ZoneIds"].isNull())
+			regionsObject.zoneIds = valueRegionsDdsRegion["ZoneIds"].asString();
+		auto allZonesNode = allRegionsNode["Zones"]["Zone"];
+		for (auto allRegionsNodeZonesZone : allZonesNode)
 		{
 			DdsRegion::Zone zonesObject;
-			if(!value["ZoneId"].isNull())
-				zonesObject.zoneId = value["ZoneId"].asString();
-			if(!value["VpcEnabled"].isNull())
-				zonesObject.vpcEnabled = value["VpcEnabled"].asString() == "true";
+			if(!allRegionsNodeZonesZone["ZoneId"].isNull())
+				zonesObject.zoneId = allRegionsNodeZonesZone["ZoneId"].asString();
+			if(!allRegionsNodeZonesZone["VpcEnabled"].isNull())
+				zonesObject.vpcEnabled = allRegionsNodeZonesZone["VpcEnabled"].asString() == "true";
 			regionsObject.zones.push_back(zonesObject);
 		}
 		regions_.push_back(regionsObject);

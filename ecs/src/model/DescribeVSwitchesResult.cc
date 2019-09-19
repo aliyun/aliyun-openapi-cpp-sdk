@@ -39,32 +39,32 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVSwitches = value["VSwitches"]["VSwitch"];
-	for (auto value : allVSwitches)
+	auto allVSwitchesNode = value["VSwitches"]["VSwitch"];
+	for (auto valueVSwitchesVSwitch : allVSwitchesNode)
 	{
 		VSwitch vSwitchesObject;
-		if(!value["VSwitchId"].isNull())
-			vSwitchesObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["VpcId"].isNull())
-			vSwitchesObject.vpcId = value["VpcId"].asString();
-		if(!value["Status"].isNull())
-			vSwitchesObject.status = value["Status"].asString();
-		if(!value["CidrBlock"].isNull())
-			vSwitchesObject.cidrBlock = value["CidrBlock"].asString();
-		if(!value["ZoneId"].isNull())
-			vSwitchesObject.zoneId = value["ZoneId"].asString();
-		if(!value["AvailableIpAddressCount"].isNull())
-			vSwitchesObject.availableIpAddressCount = std::stol(value["AvailableIpAddressCount"].asString());
-		if(!value["Description"].isNull())
-			vSwitchesObject.description = value["Description"].asString();
-		if(!value["VSwitchName"].isNull())
-			vSwitchesObject.vSwitchName = value["VSwitchName"].asString();
-		if(!value["CreationTime"].isNull())
-			vSwitchesObject.creationTime = value["CreationTime"].asString();
-		if(!value["IsDefault"].isNull())
-			vSwitchesObject.isDefault = value["IsDefault"].asString() == "true";
-		if(!value["ResourceGroupId"].isNull())
-			vSwitchesObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!valueVSwitchesVSwitch["VSwitchId"].isNull())
+			vSwitchesObject.vSwitchId = valueVSwitchesVSwitch["VSwitchId"].asString();
+		if(!valueVSwitchesVSwitch["VpcId"].isNull())
+			vSwitchesObject.vpcId = valueVSwitchesVSwitch["VpcId"].asString();
+		if(!valueVSwitchesVSwitch["Status"].isNull())
+			vSwitchesObject.status = valueVSwitchesVSwitch["Status"].asString();
+		if(!valueVSwitchesVSwitch["CidrBlock"].isNull())
+			vSwitchesObject.cidrBlock = valueVSwitchesVSwitch["CidrBlock"].asString();
+		if(!valueVSwitchesVSwitch["ZoneId"].isNull())
+			vSwitchesObject.zoneId = valueVSwitchesVSwitch["ZoneId"].asString();
+		if(!valueVSwitchesVSwitch["AvailableIpAddressCount"].isNull())
+			vSwitchesObject.availableIpAddressCount = std::stol(valueVSwitchesVSwitch["AvailableIpAddressCount"].asString());
+		if(!valueVSwitchesVSwitch["Description"].isNull())
+			vSwitchesObject.description = valueVSwitchesVSwitch["Description"].asString();
+		if(!valueVSwitchesVSwitch["VSwitchName"].isNull())
+			vSwitchesObject.vSwitchName = valueVSwitchesVSwitch["VSwitchName"].asString();
+		if(!valueVSwitchesVSwitch["CreationTime"].isNull())
+			vSwitchesObject.creationTime = valueVSwitchesVSwitch["CreationTime"].asString();
+		if(!valueVSwitchesVSwitch["IsDefault"].isNull())
+			vSwitchesObject.isDefault = valueVSwitchesVSwitch["IsDefault"].asString() == "true";
+		if(!valueVSwitchesVSwitch["ResourceGroupId"].isNull())
+			vSwitchesObject.resourceGroupId = valueVSwitchesVSwitch["ResourceGroupId"].asString();
 		vSwitches_.push_back(vSwitchesObject);
 	}
 	if(!value["TotalCount"].isNull())

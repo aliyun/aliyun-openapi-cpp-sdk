@@ -39,26 +39,26 @@ void GetLocationsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLocationItems = value["LocationItems"]["LocationItem"];
-	for (auto value : allLocationItems)
+	auto allLocationItemsNode = value["LocationItems"]["LocationItem"];
+	for (auto valueLocationItemsLocationItem : allLocationItemsNode)
 	{
 		LocationItem locationItemsObject;
-		if(!value["Status"].isNull())
-			locationItemsObject.status = std::stoi(value["Status"].asString());
-		if(!value["StoreId"].isNull())
-			locationItemsObject.storeId = std::stol(value["StoreId"].asString());
-		if(!value["Name"].isNull())
-			locationItemsObject.name = value["Name"].asString();
-		if(!value["Link"].isNull())
-			locationItemsObject.link = value["Link"].asString() == "true";
-		if(!value["LocationType"].isNull())
-			locationItemsObject.locationType = value["LocationType"].asString();
-		if(!value["LocationId"].isNull())
-			locationItemsObject.locationId = std::stol(value["LocationId"].asString());
-		if(!value["ParentLocationId"].isNull())
-			locationItemsObject.parentLocationId = std::stol(value["ParentLocationId"].asString());
-		if(!value["LayerType"].isNull())
-			locationItemsObject.layerType = value["LayerType"].asString();
+		if(!valueLocationItemsLocationItem["Status"].isNull())
+			locationItemsObject.status = std::stoi(valueLocationItemsLocationItem["Status"].asString());
+		if(!valueLocationItemsLocationItem["StoreId"].isNull())
+			locationItemsObject.storeId = std::stol(valueLocationItemsLocationItem["StoreId"].asString());
+		if(!valueLocationItemsLocationItem["Name"].isNull())
+			locationItemsObject.name = valueLocationItemsLocationItem["Name"].asString();
+		if(!valueLocationItemsLocationItem["Link"].isNull())
+			locationItemsObject.link = valueLocationItemsLocationItem["Link"].asString() == "true";
+		if(!valueLocationItemsLocationItem["LocationType"].isNull())
+			locationItemsObject.locationType = valueLocationItemsLocationItem["LocationType"].asString();
+		if(!valueLocationItemsLocationItem["LocationId"].isNull())
+			locationItemsObject.locationId = std::stol(valueLocationItemsLocationItem["LocationId"].asString());
+		if(!valueLocationItemsLocationItem["ParentLocationId"].isNull())
+			locationItemsObject.parentLocationId = std::stol(valueLocationItemsLocationItem["ParentLocationId"].asString());
+		if(!valueLocationItemsLocationItem["LayerType"].isNull())
+			locationItemsObject.layerType = valueLocationItemsLocationItem["LayerType"].asString();
 		locationItems_.push_back(locationItemsObject);
 	}
 	if(!value["StoreId"].isNull())

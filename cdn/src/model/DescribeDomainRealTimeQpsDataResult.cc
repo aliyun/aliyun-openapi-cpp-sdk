@@ -39,14 +39,14 @@ void DescribeDomainRealTimeQpsDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["QpsModel"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["QpsModel"];
+	for (auto valueDataQpsModel : allDataNode)
 	{
 		QpsModel dataObject;
-		if(!value["Qps"].isNull())
-			dataObject.qps = std::stof(value["Qps"].asString());
-		if(!value["TimeStamp"].isNull())
-			dataObject.timeStamp = value["TimeStamp"].asString();
+		if(!valueDataQpsModel["Qps"].isNull())
+			dataObject.qps = std::stof(valueDataQpsModel["Qps"].asString());
+		if(!valueDataQpsModel["TimeStamp"].isNull())
+			dataObject.timeStamp = valueDataQpsModel["TimeStamp"].asString();
 		data_.push_back(dataObject);
 	}
 

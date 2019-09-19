@@ -39,22 +39,22 @@ void DescribeLiveRecordConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLiveAppRecordList = value["LiveAppRecordList"]["LiveAppRecord"];
-	for (auto value : allLiveAppRecordList)
+	auto allLiveAppRecordListNode = value["LiveAppRecordList"]["LiveAppRecord"];
+	for (auto valueLiveAppRecordListLiveAppRecord : allLiveAppRecordListNode)
 	{
 		LiveAppRecord liveAppRecordListObject;
-		if(!value["DomainName"].isNull())
-			liveAppRecordListObject.domainName = value["DomainName"].asString();
-		if(!value["AppName"].isNull())
-			liveAppRecordListObject.appName = value["AppName"].asString();
-		if(!value["OssEndpoint"].isNull())
-			liveAppRecordListObject.ossEndpoint = value["OssEndpoint"].asString();
-		if(!value["OssBucket"].isNull())
-			liveAppRecordListObject.ossBucket = value["OssBucket"].asString();
-		if(!value["OssObjectPrefix"].isNull())
-			liveAppRecordListObject.ossObjectPrefix = value["OssObjectPrefix"].asString();
-		if(!value["CreateTime"].isNull())
-			liveAppRecordListObject.createTime = value["CreateTime"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["DomainName"].isNull())
+			liveAppRecordListObject.domainName = valueLiveAppRecordListLiveAppRecord["DomainName"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["AppName"].isNull())
+			liveAppRecordListObject.appName = valueLiveAppRecordListLiveAppRecord["AppName"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["OssEndpoint"].isNull())
+			liveAppRecordListObject.ossEndpoint = valueLiveAppRecordListLiveAppRecord["OssEndpoint"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["OssBucket"].isNull())
+			liveAppRecordListObject.ossBucket = valueLiveAppRecordListLiveAppRecord["OssBucket"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["OssObjectPrefix"].isNull())
+			liveAppRecordListObject.ossObjectPrefix = valueLiveAppRecordListLiveAppRecord["OssObjectPrefix"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["CreateTime"].isNull())
+			liveAppRecordListObject.createTime = valueLiveAppRecordListLiveAppRecord["CreateTime"].asString();
 		liveAppRecordList_.push_back(liveAppRecordListObject);
 	}
 

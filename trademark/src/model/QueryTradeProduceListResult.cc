@@ -39,38 +39,38 @@ void QueryTradeProduceListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["TradeProduces"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["TradeProduces"];
+	for (auto valueDataTradeProduces : allDataNode)
 	{
 		TradeProduces dataObject;
-		if(!value["BizId"].isNull())
-			dataObject.bizId = value["BizId"].asString();
-		if(!value["PreOrderId"].isNull())
-			dataObject.preOrderId = value["PreOrderId"].asString();
-		if(!value["PreAmount"].isNull())
-			dataObject.preAmount = std::stoi(value["PreAmount"].asString());
-		if(!value["FinalAmount"].isNull())
-			dataObject.finalAmount = std::stoi(value["FinalAmount"].asString());
-		if(!value["RegisterNumber"].isNull())
-			dataObject.registerNumber = value["RegisterNumber"].asString();
-		if(!value["Classification"].isNull())
-			dataObject.classification = value["Classification"].asString();
-		if(!value["Icon"].isNull())
-			dataObject.icon = value["Icon"].asString();
-		if(!value["OperateNote"].isNull())
-			dataObject.operateNote = value["OperateNote"].asString();
-		if(!value["BuyerStatus"].isNull())
-			dataObject.buyerStatus = std::stoi(value["BuyerStatus"].asString());
-		if(!value["UserId"].isNull())
-			dataObject.userId = value["UserId"].asString();
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["UpdateTime"].isNull())
-			dataObject.updateTime = std::stol(value["UpdateTime"].asString());
-		if(!value["AllowCancel"].isNull())
-			dataObject.allowCancel = value["AllowCancel"].asString() == "true";
-		if(!value["FailReason"].isNull())
-			dataObject.failReason = std::stoi(value["FailReason"].asString());
+		if(!valueDataTradeProduces["BizId"].isNull())
+			dataObject.bizId = valueDataTradeProduces["BizId"].asString();
+		if(!valueDataTradeProduces["PreOrderId"].isNull())
+			dataObject.preOrderId = valueDataTradeProduces["PreOrderId"].asString();
+		if(!valueDataTradeProduces["PreAmount"].isNull())
+			dataObject.preAmount = std::stoi(valueDataTradeProduces["PreAmount"].asString());
+		if(!valueDataTradeProduces["FinalAmount"].isNull())
+			dataObject.finalAmount = std::stoi(valueDataTradeProduces["FinalAmount"].asString());
+		if(!valueDataTradeProduces["RegisterNumber"].isNull())
+			dataObject.registerNumber = valueDataTradeProduces["RegisterNumber"].asString();
+		if(!valueDataTradeProduces["Classification"].isNull())
+			dataObject.classification = valueDataTradeProduces["Classification"].asString();
+		if(!valueDataTradeProduces["Icon"].isNull())
+			dataObject.icon = valueDataTradeProduces["Icon"].asString();
+		if(!valueDataTradeProduces["OperateNote"].isNull())
+			dataObject.operateNote = valueDataTradeProduces["OperateNote"].asString();
+		if(!valueDataTradeProduces["BuyerStatus"].isNull())
+			dataObject.buyerStatus = std::stoi(valueDataTradeProduces["BuyerStatus"].asString());
+		if(!valueDataTradeProduces["UserId"].isNull())
+			dataObject.userId = valueDataTradeProduces["UserId"].asString();
+		if(!valueDataTradeProduces["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataTradeProduces["CreateTime"].asString());
+		if(!valueDataTradeProduces["UpdateTime"].isNull())
+			dataObject.updateTime = std::stol(valueDataTradeProduces["UpdateTime"].asString());
+		if(!valueDataTradeProduces["AllowCancel"].isNull())
+			dataObject.allowCancel = valueDataTradeProduces["AllowCancel"].asString() == "true";
+		if(!valueDataTradeProduces["FailReason"].isNull())
+			dataObject.failReason = std::stoi(valueDataTradeProduces["FailReason"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

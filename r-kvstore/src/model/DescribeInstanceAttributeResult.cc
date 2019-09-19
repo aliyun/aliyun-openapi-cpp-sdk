@@ -39,94 +39,94 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstances = value["Instances"]["DBInstanceAttribute"];
-	for (auto value : allInstances)
+	auto allInstancesNode = value["Instances"]["DBInstanceAttribute"];
+	for (auto valueInstancesDBInstanceAttribute : allInstancesNode)
 	{
 		DBInstanceAttribute instancesObject;
-		if(!value["InstanceId"].isNull())
-			instancesObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceName"].isNull())
-			instancesObject.instanceName = value["InstanceName"].asString();
-		if(!value["ConnectionDomain"].isNull())
-			instancesObject.connectionDomain = value["ConnectionDomain"].asString();
-		if(!value["Port"].isNull())
-			instancesObject.port = std::stol(value["Port"].asString());
-		if(!value["InstanceStatus"].isNull())
-			instancesObject.instanceStatus = value["InstanceStatus"].asString();
-		if(!value["RegionId"].isNull())
-			instancesObject.regionId = value["RegionId"].asString();
-		if(!value["Capacity"].isNull())
-			instancesObject.capacity = std::stol(value["Capacity"].asString());
-		if(!value["InstanceClass"].isNull())
-			instancesObject.instanceClass = value["InstanceClass"].asString();
-		if(!value["QPS"].isNull())
-			instancesObject.qPS = std::stol(value["QPS"].asString());
-		if(!value["Bandwidth"].isNull())
-			instancesObject.bandwidth = std::stol(value["Bandwidth"].asString());
-		if(!value["Connections"].isNull())
-			instancesObject.connections = std::stol(value["Connections"].asString());
-		if(!value["ZoneId"].isNull())
-			instancesObject.zoneId = value["ZoneId"].asString();
-		if(!value["Config"].isNull())
-			instancesObject.config = value["Config"].asString();
-		if(!value["ChargeType"].isNull())
-			instancesObject.chargeType = value["ChargeType"].asString();
-		if(!value["NodeType"].isNull())
-			instancesObject.nodeType = value["NodeType"].asString();
-		if(!value["NetworkType"].isNull())
-			instancesObject.networkType = value["NetworkType"].asString();
-		if(!value["VpcId"].isNull())
-			instancesObject.vpcId = value["VpcId"].asString();
-		if(!value["VSwitchId"].isNull())
-			instancesObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["PrivateIp"].isNull())
-			instancesObject.privateIp = value["PrivateIp"].asString();
-		if(!value["CreateTime"].isNull())
-			instancesObject.createTime = value["CreateTime"].asString();
-		if(!value["EndTime"].isNull())
-			instancesObject.endTime = value["EndTime"].asString();
-		if(!value["HasRenewChangeOrder"].isNull())
-			instancesObject.hasRenewChangeOrder = value["HasRenewChangeOrder"].asString();
-		if(!value["IsRds"].isNull())
-			instancesObject.isRds = value["IsRds"].asString() == "true";
-		if(!value["Engine"].isNull())
-			instancesObject.engine = value["Engine"].asString();
-		if(!value["EngineVersion"].isNull())
-			instancesObject.engineVersion = value["EngineVersion"].asString();
-		if(!value["MaintainStartTime"].isNull())
-			instancesObject.maintainStartTime = value["MaintainStartTime"].asString();
-		if(!value["MaintainEndTime"].isNull())
-			instancesObject.maintainEndTime = value["MaintainEndTime"].asString();
-		if(!value["AvailabilityValue"].isNull())
-			instancesObject.availabilityValue = value["AvailabilityValue"].asString();
-		if(!value["SecurityIPList"].isNull())
-			instancesObject.securityIPList = value["SecurityIPList"].asString();
-		if(!value["InstanceType"].isNull())
-			instancesObject.instanceType = value["InstanceType"].asString();
-		if(!value["ArchitectureType"].isNull())
-			instancesObject.architectureType = value["ArchitectureType"].asString();
-		if(!value["NodeType"].isNull())
-			instancesObject.nodeType1 = value["NodeType"].asString();
-		if(!value["PackageType"].isNull())
-			instancesObject.packageType = value["PackageType"].asString();
-		if(!value["ReplicaId"].isNull())
-			instancesObject.replicaId = value["ReplicaId"].asString();
-		if(!value["VpcAuthMode"].isNull())
-			instancesObject.vpcAuthMode = value["VpcAuthMode"].asString();
-		if(!value["AuditLogRetention"].isNull())
-			instancesObject.auditLogRetention = value["AuditLogRetention"].asString();
-		if(!value["ReplicationMode"].isNull())
-			instancesObject.replicationMode = value["ReplicationMode"].asString();
-		if(!value["VpcCloudInstanceId"].isNull())
-			instancesObject.vpcCloudInstanceId = value["VpcCloudInstanceId"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueInstancesDBInstanceAttribute["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesDBInstanceAttribute["InstanceId"].asString();
+		if(!valueInstancesDBInstanceAttribute["InstanceName"].isNull())
+			instancesObject.instanceName = valueInstancesDBInstanceAttribute["InstanceName"].asString();
+		if(!valueInstancesDBInstanceAttribute["ConnectionDomain"].isNull())
+			instancesObject.connectionDomain = valueInstancesDBInstanceAttribute["ConnectionDomain"].asString();
+		if(!valueInstancesDBInstanceAttribute["Port"].isNull())
+			instancesObject.port = std::stol(valueInstancesDBInstanceAttribute["Port"].asString());
+		if(!valueInstancesDBInstanceAttribute["InstanceStatus"].isNull())
+			instancesObject.instanceStatus = valueInstancesDBInstanceAttribute["InstanceStatus"].asString();
+		if(!valueInstancesDBInstanceAttribute["RegionId"].isNull())
+			instancesObject.regionId = valueInstancesDBInstanceAttribute["RegionId"].asString();
+		if(!valueInstancesDBInstanceAttribute["Capacity"].isNull())
+			instancesObject.capacity = std::stol(valueInstancesDBInstanceAttribute["Capacity"].asString());
+		if(!valueInstancesDBInstanceAttribute["InstanceClass"].isNull())
+			instancesObject.instanceClass = valueInstancesDBInstanceAttribute["InstanceClass"].asString();
+		if(!valueInstancesDBInstanceAttribute["QPS"].isNull())
+			instancesObject.qPS = std::stol(valueInstancesDBInstanceAttribute["QPS"].asString());
+		if(!valueInstancesDBInstanceAttribute["Bandwidth"].isNull())
+			instancesObject.bandwidth = std::stol(valueInstancesDBInstanceAttribute["Bandwidth"].asString());
+		if(!valueInstancesDBInstanceAttribute["Connections"].isNull())
+			instancesObject.connections = std::stol(valueInstancesDBInstanceAttribute["Connections"].asString());
+		if(!valueInstancesDBInstanceAttribute["ZoneId"].isNull())
+			instancesObject.zoneId = valueInstancesDBInstanceAttribute["ZoneId"].asString();
+		if(!valueInstancesDBInstanceAttribute["Config"].isNull())
+			instancesObject.config = valueInstancesDBInstanceAttribute["Config"].asString();
+		if(!valueInstancesDBInstanceAttribute["ChargeType"].isNull())
+			instancesObject.chargeType = valueInstancesDBInstanceAttribute["ChargeType"].asString();
+		if(!valueInstancesDBInstanceAttribute["NodeType"].isNull())
+			instancesObject.nodeType = valueInstancesDBInstanceAttribute["NodeType"].asString();
+		if(!valueInstancesDBInstanceAttribute["NetworkType"].isNull())
+			instancesObject.networkType = valueInstancesDBInstanceAttribute["NetworkType"].asString();
+		if(!valueInstancesDBInstanceAttribute["VpcId"].isNull())
+			instancesObject.vpcId = valueInstancesDBInstanceAttribute["VpcId"].asString();
+		if(!valueInstancesDBInstanceAttribute["VSwitchId"].isNull())
+			instancesObject.vSwitchId = valueInstancesDBInstanceAttribute["VSwitchId"].asString();
+		if(!valueInstancesDBInstanceAttribute["PrivateIp"].isNull())
+			instancesObject.privateIp = valueInstancesDBInstanceAttribute["PrivateIp"].asString();
+		if(!valueInstancesDBInstanceAttribute["CreateTime"].isNull())
+			instancesObject.createTime = valueInstancesDBInstanceAttribute["CreateTime"].asString();
+		if(!valueInstancesDBInstanceAttribute["EndTime"].isNull())
+			instancesObject.endTime = valueInstancesDBInstanceAttribute["EndTime"].asString();
+		if(!valueInstancesDBInstanceAttribute["HasRenewChangeOrder"].isNull())
+			instancesObject.hasRenewChangeOrder = valueInstancesDBInstanceAttribute["HasRenewChangeOrder"].asString();
+		if(!valueInstancesDBInstanceAttribute["IsRds"].isNull())
+			instancesObject.isRds = valueInstancesDBInstanceAttribute["IsRds"].asString() == "true";
+		if(!valueInstancesDBInstanceAttribute["Engine"].isNull())
+			instancesObject.engine = valueInstancesDBInstanceAttribute["Engine"].asString();
+		if(!valueInstancesDBInstanceAttribute["EngineVersion"].isNull())
+			instancesObject.engineVersion = valueInstancesDBInstanceAttribute["EngineVersion"].asString();
+		if(!valueInstancesDBInstanceAttribute["MaintainStartTime"].isNull())
+			instancesObject.maintainStartTime = valueInstancesDBInstanceAttribute["MaintainStartTime"].asString();
+		if(!valueInstancesDBInstanceAttribute["MaintainEndTime"].isNull())
+			instancesObject.maintainEndTime = valueInstancesDBInstanceAttribute["MaintainEndTime"].asString();
+		if(!valueInstancesDBInstanceAttribute["AvailabilityValue"].isNull())
+			instancesObject.availabilityValue = valueInstancesDBInstanceAttribute["AvailabilityValue"].asString();
+		if(!valueInstancesDBInstanceAttribute["SecurityIPList"].isNull())
+			instancesObject.securityIPList = valueInstancesDBInstanceAttribute["SecurityIPList"].asString();
+		if(!valueInstancesDBInstanceAttribute["InstanceType"].isNull())
+			instancesObject.instanceType = valueInstancesDBInstanceAttribute["InstanceType"].asString();
+		if(!valueInstancesDBInstanceAttribute["ArchitectureType"].isNull())
+			instancesObject.architectureType = valueInstancesDBInstanceAttribute["ArchitectureType"].asString();
+		if(!valueInstancesDBInstanceAttribute["NodeType"].isNull())
+			instancesObject.nodeType1 = valueInstancesDBInstanceAttribute["NodeType"].asString();
+		if(!valueInstancesDBInstanceAttribute["PackageType"].isNull())
+			instancesObject.packageType = valueInstancesDBInstanceAttribute["PackageType"].asString();
+		if(!valueInstancesDBInstanceAttribute["ReplicaId"].isNull())
+			instancesObject.replicaId = valueInstancesDBInstanceAttribute["ReplicaId"].asString();
+		if(!valueInstancesDBInstanceAttribute["VpcAuthMode"].isNull())
+			instancesObject.vpcAuthMode = valueInstancesDBInstanceAttribute["VpcAuthMode"].asString();
+		if(!valueInstancesDBInstanceAttribute["AuditLogRetention"].isNull())
+			instancesObject.auditLogRetention = valueInstancesDBInstanceAttribute["AuditLogRetention"].asString();
+		if(!valueInstancesDBInstanceAttribute["ReplicationMode"].isNull())
+			instancesObject.replicationMode = valueInstancesDBInstanceAttribute["ReplicationMode"].asString();
+		if(!valueInstancesDBInstanceAttribute["VpcCloudInstanceId"].isNull())
+			instancesObject.vpcCloudInstanceId = valueInstancesDBInstanceAttribute["VpcCloudInstanceId"].asString();
+		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
+		for (auto allInstancesNodeTagsTag : allTagsNode)
 		{
 			DBInstanceAttribute::Tag tagsObject;
-			if(!value["Key"].isNull())
-				tagsObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				tagsObject.value = value["Value"].asString();
+			if(!allInstancesNodeTagsTag["Key"].isNull())
+				tagsObject.key = allInstancesNodeTagsTag["Key"].asString();
+			if(!allInstancesNodeTagsTag["Value"].isNull())
+				tagsObject.value = allInstancesNodeTagsTag["Value"].asString();
 			instancesObject.tags.push_back(tagsObject);
 		}
 		instances_.push_back(instancesObject);

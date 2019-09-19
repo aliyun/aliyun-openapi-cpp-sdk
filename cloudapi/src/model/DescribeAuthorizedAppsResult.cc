@@ -39,26 +39,26 @@ void DescribeAuthorizedAppsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAuthorizedApps = value["AuthorizedApps"]["AuthorizedApp"];
-	for (auto value : allAuthorizedApps)
+	auto allAuthorizedAppsNode = value["AuthorizedApps"]["AuthorizedApp"];
+	for (auto valueAuthorizedAppsAuthorizedApp : allAuthorizedAppsNode)
 	{
 		AuthorizedApp authorizedAppsObject;
-		if(!value["StageName"].isNull())
-			authorizedAppsObject.stageName = value["StageName"].asString();
-		if(!value["AppId"].isNull())
-			authorizedAppsObject.appId = std::stol(value["AppId"].asString());
-		if(!value["AppName"].isNull())
-			authorizedAppsObject.appName = value["AppName"].asString();
-		if(!value["Operator"].isNull())
-			authorizedAppsObject._operator = value["Operator"].asString();
-		if(!value["AuthorizationSource"].isNull())
-			authorizedAppsObject.authorizationSource = value["AuthorizationSource"].asString();
-		if(!value["Description"].isNull())
-			authorizedAppsObject.description = value["Description"].asString();
-		if(!value["AuthorizedTime"].isNull())
-			authorizedAppsObject.authorizedTime = value["AuthorizedTime"].asString();
-		if(!value["AuthVaildTime"].isNull())
-			authorizedAppsObject.authVaildTime = value["AuthVaildTime"].asString();
+		if(!valueAuthorizedAppsAuthorizedApp["StageName"].isNull())
+			authorizedAppsObject.stageName = valueAuthorizedAppsAuthorizedApp["StageName"].asString();
+		if(!valueAuthorizedAppsAuthorizedApp["AppId"].isNull())
+			authorizedAppsObject.appId = std::stol(valueAuthorizedAppsAuthorizedApp["AppId"].asString());
+		if(!valueAuthorizedAppsAuthorizedApp["AppName"].isNull())
+			authorizedAppsObject.appName = valueAuthorizedAppsAuthorizedApp["AppName"].asString();
+		if(!valueAuthorizedAppsAuthorizedApp["Operator"].isNull())
+			authorizedAppsObject._operator = valueAuthorizedAppsAuthorizedApp["Operator"].asString();
+		if(!valueAuthorizedAppsAuthorizedApp["AuthorizationSource"].isNull())
+			authorizedAppsObject.authorizationSource = valueAuthorizedAppsAuthorizedApp["AuthorizationSource"].asString();
+		if(!valueAuthorizedAppsAuthorizedApp["Description"].isNull())
+			authorizedAppsObject.description = valueAuthorizedAppsAuthorizedApp["Description"].asString();
+		if(!valueAuthorizedAppsAuthorizedApp["AuthorizedTime"].isNull())
+			authorizedAppsObject.authorizedTime = valueAuthorizedAppsAuthorizedApp["AuthorizedTime"].asString();
+		if(!valueAuthorizedAppsAuthorizedApp["AuthVaildTime"].isNull())
+			authorizedAppsObject.authVaildTime = valueAuthorizedAppsAuthorizedApp["AuthVaildTime"].asString();
 		authorizedApps_.push_back(authorizedAppsObject);
 	}
 	if(!value["TotalCount"].isNull())

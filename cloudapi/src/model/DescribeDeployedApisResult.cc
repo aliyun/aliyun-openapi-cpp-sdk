@@ -39,28 +39,28 @@ void DescribeDeployedApisResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDeployedApis = value["DeployedApis"]["DeployedApiItem"];
-	for (auto value : allDeployedApis)
+	auto allDeployedApisNode = value["DeployedApis"]["DeployedApiItem"];
+	for (auto valueDeployedApisDeployedApiItem : allDeployedApisNode)
 	{
 		DeployedApiItem deployedApisObject;
-		if(!value["RegionId"].isNull())
-			deployedApisObject.regionId = value["RegionId"].asString();
-		if(!value["ApiId"].isNull())
-			deployedApisObject.apiId = value["ApiId"].asString();
-		if(!value["ApiName"].isNull())
-			deployedApisObject.apiName = value["ApiName"].asString();
-		if(!value["GroupId"].isNull())
-			deployedApisObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			deployedApisObject.groupName = value["GroupName"].asString();
-		if(!value["StageName"].isNull())
-			deployedApisObject.stageName = value["StageName"].asString();
-		if(!value["Visibility"].isNull())
-			deployedApisObject.visibility = value["Visibility"].asString();
-		if(!value["Description"].isNull())
-			deployedApisObject.description = value["Description"].asString();
-		if(!value["DeployedTime"].isNull())
-			deployedApisObject.deployedTime = value["DeployedTime"].asString();
+		if(!valueDeployedApisDeployedApiItem["RegionId"].isNull())
+			deployedApisObject.regionId = valueDeployedApisDeployedApiItem["RegionId"].asString();
+		if(!valueDeployedApisDeployedApiItem["ApiId"].isNull())
+			deployedApisObject.apiId = valueDeployedApisDeployedApiItem["ApiId"].asString();
+		if(!valueDeployedApisDeployedApiItem["ApiName"].isNull())
+			deployedApisObject.apiName = valueDeployedApisDeployedApiItem["ApiName"].asString();
+		if(!valueDeployedApisDeployedApiItem["GroupId"].isNull())
+			deployedApisObject.groupId = valueDeployedApisDeployedApiItem["GroupId"].asString();
+		if(!valueDeployedApisDeployedApiItem["GroupName"].isNull())
+			deployedApisObject.groupName = valueDeployedApisDeployedApiItem["GroupName"].asString();
+		if(!valueDeployedApisDeployedApiItem["StageName"].isNull())
+			deployedApisObject.stageName = valueDeployedApisDeployedApiItem["StageName"].asString();
+		if(!valueDeployedApisDeployedApiItem["Visibility"].isNull())
+			deployedApisObject.visibility = valueDeployedApisDeployedApiItem["Visibility"].asString();
+		if(!valueDeployedApisDeployedApiItem["Description"].isNull())
+			deployedApisObject.description = valueDeployedApisDeployedApiItem["Description"].asString();
+		if(!valueDeployedApisDeployedApiItem["DeployedTime"].isNull())
+			deployedApisObject.deployedTime = valueDeployedApisDeployedApiItem["DeployedTime"].asString();
 		deployedApis_.push_back(deployedApisObject);
 	}
 	if(!value["TotalCount"].isNull())

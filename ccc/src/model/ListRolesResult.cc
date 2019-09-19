@@ -39,18 +39,18 @@ void ListRolesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRoles = value["Roles"]["Role"];
-	for (auto value : allRoles)
+	auto allRolesNode = value["Roles"]["Role"];
+	for (auto valueRolesRole : allRolesNode)
 	{
 		Role rolesObject;
-		if(!value["RoleId"].isNull())
-			rolesObject.roleId = value["RoleId"].asString();
-		if(!value["InstanceId"].isNull())
-			rolesObject.instanceId = value["InstanceId"].asString();
-		if(!value["RoleName"].isNull())
-			rolesObject.roleName = value["RoleName"].asString();
-		if(!value["RoleDescription"].isNull())
-			rolesObject.roleDescription = value["RoleDescription"].asString();
+		if(!valueRolesRole["RoleId"].isNull())
+			rolesObject.roleId = valueRolesRole["RoleId"].asString();
+		if(!valueRolesRole["InstanceId"].isNull())
+			rolesObject.instanceId = valueRolesRole["InstanceId"].asString();
+		if(!valueRolesRole["RoleName"].isNull())
+			rolesObject.roleName = valueRolesRole["RoleName"].asString();
+		if(!valueRolesRole["RoleDescription"].isNull())
+			rolesObject.roleDescription = valueRolesRole["RoleDescription"].asString();
 		roles_.push_back(rolesObject);
 	}
 	if(!value["Success"].isNull())

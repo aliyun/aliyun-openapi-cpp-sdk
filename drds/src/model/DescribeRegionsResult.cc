@@ -39,34 +39,34 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDrdsRegions = value["DrdsRegions"]["DrdsRegion"];
-	for (auto value : allDrdsRegions)
+	auto allDrdsRegionsNode = value["DrdsRegions"]["DrdsRegion"];
+	for (auto valueDrdsRegionsDrdsRegion : allDrdsRegionsNode)
 	{
 		DrdsRegion drdsRegionsObject;
-		if(!value["RegionId"].isNull())
-			drdsRegionsObject.regionId = value["RegionId"].asString();
-		if(!value["RegionName"].isNull())
-			drdsRegionsObject.regionName = value["RegionName"].asString();
-		if(!value["ZoneId"].isNull())
-			drdsRegionsObject.zoneId = value["ZoneId"].asString();
-		if(!value["ZoneName"].isNull())
-			drdsRegionsObject.zoneName = value["ZoneName"].asString();
-		auto allInstanceSeriesList = value["InstanceSeriesList"]["InstanceSeries"];
-		for (auto value : allInstanceSeriesList)
+		if(!valueDrdsRegionsDrdsRegion["RegionId"].isNull())
+			drdsRegionsObject.regionId = valueDrdsRegionsDrdsRegion["RegionId"].asString();
+		if(!valueDrdsRegionsDrdsRegion["RegionName"].isNull())
+			drdsRegionsObject.regionName = valueDrdsRegionsDrdsRegion["RegionName"].asString();
+		if(!valueDrdsRegionsDrdsRegion["ZoneId"].isNull())
+			drdsRegionsObject.zoneId = valueDrdsRegionsDrdsRegion["ZoneId"].asString();
+		if(!valueDrdsRegionsDrdsRegion["ZoneName"].isNull())
+			drdsRegionsObject.zoneName = valueDrdsRegionsDrdsRegion["ZoneName"].asString();
+		auto allInstanceSeriesListNode = allDrdsRegionsNode["InstanceSeriesList"]["InstanceSeries"];
+		for (auto allDrdsRegionsNodeInstanceSeriesListInstanceSeries : allInstanceSeriesListNode)
 		{
 			DrdsRegion::InstanceSeries instanceSeriesListObject;
-			if(!value["SeriesId"].isNull())
-				instanceSeriesListObject.seriesId = value["SeriesId"].asString();
-			if(!value["SeriesName"].isNull())
-				instanceSeriesListObject.seriesName = value["SeriesName"].asString();
-			auto allSpecList = value["SpecList"]["Spec"];
-			for (auto value : allSpecList)
+			if(!allDrdsRegionsNodeInstanceSeriesListInstanceSeries["SeriesId"].isNull())
+				instanceSeriesListObject.seriesId = allDrdsRegionsNodeInstanceSeriesListInstanceSeries["SeriesId"].asString();
+			if(!allDrdsRegionsNodeInstanceSeriesListInstanceSeries["SeriesName"].isNull())
+				instanceSeriesListObject.seriesName = allDrdsRegionsNodeInstanceSeriesListInstanceSeries["SeriesName"].asString();
+			auto allSpecListNode = allInstanceSeriesListNode["SpecList"]["Spec"];
+			for (auto allInstanceSeriesListNodeSpecListSpec : allSpecListNode)
 			{
 				DrdsRegion::InstanceSeries::Spec specListObject;
-				if(!value["SpecId"].isNull())
-					specListObject.specId = value["SpecId"].asString();
-				if(!value["SpecName"].isNull())
-					specListObject.specName = value["SpecName"].asString();
+				if(!allInstanceSeriesListNodeSpecListSpec["SpecId"].isNull())
+					specListObject.specId = allInstanceSeriesListNodeSpecListSpec["SpecId"].asString();
+				if(!allInstanceSeriesListNodeSpecListSpec["SpecName"].isNull())
+					specListObject.specName = allInstanceSeriesListNodeSpecListSpec["SpecName"].asString();
 				instanceSeriesListObject.specList.push_back(specListObject);
 			}
 			drdsRegionsObject.instanceSeriesList.push_back(instanceSeriesListObject);

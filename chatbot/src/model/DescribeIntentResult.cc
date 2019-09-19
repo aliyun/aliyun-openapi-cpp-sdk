@@ -39,14 +39,14 @@ void DescribeIntentResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRuleCheck = value["RuleCheck"]["RuleCheckItem"];
-	for (auto value : allRuleCheck)
+	auto allRuleCheckNode = value["RuleCheck"]["RuleCheckItem"];
+	for (auto valueRuleCheckRuleCheckItem : allRuleCheckNode)
 	{
 		RuleCheckItem ruleCheckObject;
-		if(!value["Text"].isNull())
-			ruleCheckObject.text = value["Text"].asString();
-		if(!value["Strict"].isNull())
-			ruleCheckObject.strict = value["Strict"].asString() == "true";
+		if(!valueRuleCheckRuleCheckItem["Text"].isNull())
+			ruleCheckObject.text = valueRuleCheckRuleCheckItem["Text"].asString();
+		if(!valueRuleCheckRuleCheckItem["Strict"].isNull())
+			ruleCheckObject.strict = valueRuleCheckRuleCheckItem["Strict"].asString() == "true";
 		auto allWarning = value["Warning"]["Warning"];
 		for (auto value : allWarning)
 			ruleCheckObject.warning.push_back(value.asString());
@@ -55,30 +55,30 @@ void DescribeIntentResult::parse(const std::string &payload)
 			ruleCheckObject.error.push_back(value.asString());
 		ruleCheck_.push_back(ruleCheckObject);
 	}
-	auto allSlot = value["Slot"]["SlotItem"];
-	for (auto value : allSlot)
+	auto allSlotNode = value["Slot"]["SlotItem"];
+	for (auto valueSlotSlotItem : allSlotNode)
 	{
 		SlotItem slotObject;
-		if(!value["Name"].isNull())
-			slotObject.name = value["Name"].asString();
-		if(!value["Value"].isNull())
-			slotObject.value = value["Value"].asString();
-		if(!value["IsNecessary"].isNull())
-			slotObject.isNecessary = value["IsNecessary"].asString() == "true";
-		if(!value["IsArray"].isNull())
-			slotObject.isArray = value["IsArray"].asString() == "true";
-		if(!value["LifeSpan"].isNull())
-			slotObject.lifeSpan = std::stoi(value["LifeSpan"].asString());
-		if(!value["SlotId"].isNull())
-			slotObject.slotId = value["SlotId"].asString();
-		auto allTags = value["Tags"]["TagsItem"];
-		for (auto value : allTags)
+		if(!valueSlotSlotItem["Name"].isNull())
+			slotObject.name = valueSlotSlotItem["Name"].asString();
+		if(!valueSlotSlotItem["Value"].isNull())
+			slotObject.value = valueSlotSlotItem["Value"].asString();
+		if(!valueSlotSlotItem["IsNecessary"].isNull())
+			slotObject.isNecessary = valueSlotSlotItem["IsNecessary"].asString() == "true";
+		if(!valueSlotSlotItem["IsArray"].isNull())
+			slotObject.isArray = valueSlotSlotItem["IsArray"].asString() == "true";
+		if(!valueSlotSlotItem["LifeSpan"].isNull())
+			slotObject.lifeSpan = std::stoi(valueSlotSlotItem["LifeSpan"].asString());
+		if(!valueSlotSlotItem["SlotId"].isNull())
+			slotObject.slotId = valueSlotSlotItem["SlotId"].asString();
+		auto allTagsNode = allSlotNode["Tags"]["TagsItem"];
+		for (auto allSlotNodeTagsTagsItem : allTagsNode)
 		{
 			SlotItem::TagsItem tagsObject;
-			if(!value["Value"].isNull())
-				tagsObject.value = value["Value"].asString();
-			if(!value["UserSayId"].isNull())
-				tagsObject.userSayId = value["UserSayId"].asString();
+			if(!allSlotNodeTagsTagsItem["Value"].isNull())
+				tagsObject.value = allSlotNodeTagsTagsItem["Value"].asString();
+			if(!allSlotNodeTagsTagsItem["UserSayId"].isNull())
+				tagsObject.userSayId = allSlotNodeTagsTagsItem["UserSayId"].asString();
 			slotObject.tags.push_back(tagsObject);
 		}
 		auto allQuestion = value["Question"]["Question"];
@@ -86,22 +86,22 @@ void DescribeIntentResult::parse(const std::string &payload)
 			slotObject.question.push_back(value.asString());
 		slot_.push_back(slotObject);
 	}
-	auto allUserSay = value["UserSay"]["UserSayItem"];
-	for (auto value : allUserSay)
+	auto allUserSayNode = value["UserSay"]["UserSayItem"];
+	for (auto valueUserSayUserSayItem : allUserSayNode)
 	{
 		UserSayItem userSayObject;
-		if(!value["Strict"].isNull())
-			userSayObject.strict = value["Strict"].asString() == "true";
-		if(!value["UserSayId"].isNull())
-			userSayObject.userSayId = value["UserSayId"].asString();
-		auto allData = value["Data"]["DataItem"];
-		for (auto value : allData)
+		if(!valueUserSayUserSayItem["Strict"].isNull())
+			userSayObject.strict = valueUserSayUserSayItem["Strict"].asString() == "true";
+		if(!valueUserSayUserSayItem["UserSayId"].isNull())
+			userSayObject.userSayId = valueUserSayUserSayItem["UserSayId"].asString();
+		auto allDataNode = allUserSayNode["Data"]["DataItem"];
+		for (auto allUserSayNodeDataDataItem : allDataNode)
 		{
 			UserSayItem::DataItem dataObject;
-			if(!value["Text"].isNull())
-				dataObject.text = value["Text"].asString();
-			if(!value["SlotId"].isNull())
-				dataObject.slotId = value["SlotId"].asString();
+			if(!allUserSayNodeDataDataItem["Text"].isNull())
+				dataObject.text = allUserSayNodeDataDataItem["Text"].asString();
+			if(!allUserSayNodeDataDataItem["SlotId"].isNull())
+				dataObject.slotId = allUserSayNodeDataDataItem["SlotId"].asString();
 			userSayObject.data.push_back(dataObject);
 		}
 		userSay_.push_back(userSayObject);

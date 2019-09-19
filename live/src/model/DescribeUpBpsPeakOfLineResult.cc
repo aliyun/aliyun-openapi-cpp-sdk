@@ -39,18 +39,18 @@ void DescribeUpBpsPeakOfLineResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDescribeUpBpsPeakOfLines = value["DescribeUpBpsPeakOfLines"]["DescribeUpBpsPeakOfLine"];
-	for (auto value : allDescribeUpBpsPeakOfLines)
+	auto allDescribeUpBpsPeakOfLinesNode = value["DescribeUpBpsPeakOfLines"]["DescribeUpBpsPeakOfLine"];
+	for (auto valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine : allDescribeUpBpsPeakOfLinesNode)
 	{
 		DescribeUpBpsPeakOfLine describeUpBpsPeakOfLinesObject;
-		if(!value["BandWidth"].isNull())
-			describeUpBpsPeakOfLinesObject.bandWidth = std::stof(value["BandWidth"].asString());
-		if(!value["PeakTime"].isNull())
-			describeUpBpsPeakOfLinesObject.peakTime = value["PeakTime"].asString();
-		if(!value["QueryTime"].isNull())
-			describeUpBpsPeakOfLinesObject.queryTime = value["QueryTime"].asString();
-		if(!value["StatName"].isNull())
-			describeUpBpsPeakOfLinesObject.statName = value["StatName"].asString();
+		if(!valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["BandWidth"].isNull())
+			describeUpBpsPeakOfLinesObject.bandWidth = std::stof(valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["BandWidth"].asString());
+		if(!valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["PeakTime"].isNull())
+			describeUpBpsPeakOfLinesObject.peakTime = valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["PeakTime"].asString();
+		if(!valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["QueryTime"].isNull())
+			describeUpBpsPeakOfLinesObject.queryTime = valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["QueryTime"].asString();
+		if(!valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["StatName"].isNull())
+			describeUpBpsPeakOfLinesObject.statName = valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["StatName"].asString();
 		describeUpBpsPeakOfLines_.push_back(describeUpBpsPeakOfLinesObject);
 	}
 

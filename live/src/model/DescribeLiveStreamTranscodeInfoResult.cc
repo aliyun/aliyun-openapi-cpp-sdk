@@ -39,16 +39,16 @@ void DescribeLiveStreamTranscodeInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomainTranscodeList = value["DomainTranscodeList"]["DomainTranscodeInfo"];
-	for (auto value : allDomainTranscodeList)
+	auto allDomainTranscodeListNode = value["DomainTranscodeList"]["DomainTranscodeInfo"];
+	for (auto valueDomainTranscodeListDomainTranscodeInfo : allDomainTranscodeListNode)
 	{
 		DomainTranscodeInfo domainTranscodeListObject;
-		if(!value["TranscodeApp"].isNull())
-			domainTranscodeListObject.transcodeApp = value["TranscodeApp"].asString();
-		if(!value["TranscodeName"].isNull())
-			domainTranscodeListObject.transcodeName = value["TranscodeName"].asString();
-		if(!value["TranscodeTemplate"].isNull())
-			domainTranscodeListObject.transcodeTemplate = value["TranscodeTemplate"].asString();
+		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeApp"].isNull())
+			domainTranscodeListObject.transcodeApp = valueDomainTranscodeListDomainTranscodeInfo["TranscodeApp"].asString();
+		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeName"].isNull())
+			domainTranscodeListObject.transcodeName = valueDomainTranscodeListDomainTranscodeInfo["TranscodeName"].asString();
+		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeTemplate"].isNull())
+			domainTranscodeListObject.transcodeTemplate = valueDomainTranscodeListDomainTranscodeInfo["TranscodeTemplate"].asString();
 		auto customTranscodeParametersNode = value["CustomTranscodeParameters"];
 		if(!customTranscodeParametersNode["VideoBitrate"].isNull())
 			domainTranscodeListObject.customTranscodeParameters.videoBitrate = std::stoi(customTranscodeParametersNode["VideoBitrate"].asString());

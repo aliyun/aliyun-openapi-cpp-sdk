@@ -46,24 +46,24 @@ void QueryEdgeInstanceHistoricDeploymentResult::parse(const std::string &payload
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["CurrentPage"].isNull())
 		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
-	auto allDeploymentList = value["DeploymentList"]["Deployment"];
-	for (auto value : allDeploymentList)
+	auto allDeploymentListNode = dataNode["DeploymentList"]["Deployment"];
+	for (auto dataNodeDeploymentListDeployment : allDeploymentListNode)
 	{
 		Data::Deployment deploymentObject;
-		if(!value["GmtCreate"].isNull())
-			deploymentObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			deploymentObject.gmtModified = value["GmtModified"].asString();
-		if(!value["GmtCompleted"].isNull())
-			deploymentObject.gmtCompleted = value["GmtCompleted"].asString();
-		if(!value["DeploymentId"].isNull())
-			deploymentObject.deploymentId = value["DeploymentId"].asString();
-		if(!value["Description"].isNull())
-			deploymentObject.description = value["Description"].asString();
-		if(!value["Status"].isNull())
-			deploymentObject.status = std::stoi(value["Status"].asString());
-		if(!value["Type"].isNull())
-			deploymentObject.type = value["Type"].asString();
+		if(!dataNodeDeploymentListDeployment["GmtCreate"].isNull())
+			deploymentObject.gmtCreate = dataNodeDeploymentListDeployment["GmtCreate"].asString();
+		if(!dataNodeDeploymentListDeployment["GmtModified"].isNull())
+			deploymentObject.gmtModified = dataNodeDeploymentListDeployment["GmtModified"].asString();
+		if(!dataNodeDeploymentListDeployment["GmtCompleted"].isNull())
+			deploymentObject.gmtCompleted = dataNodeDeploymentListDeployment["GmtCompleted"].asString();
+		if(!dataNodeDeploymentListDeployment["DeploymentId"].isNull())
+			deploymentObject.deploymentId = dataNodeDeploymentListDeployment["DeploymentId"].asString();
+		if(!dataNodeDeploymentListDeployment["Description"].isNull())
+			deploymentObject.description = dataNodeDeploymentListDeployment["Description"].asString();
+		if(!dataNodeDeploymentListDeployment["Status"].isNull())
+			deploymentObject.status = std::stoi(dataNodeDeploymentListDeployment["Status"].asString());
+		if(!dataNodeDeploymentListDeployment["Type"].isNull())
+			deploymentObject.type = dataNodeDeploymentListDeployment["Type"].asString();
 		data_.deploymentList.push_back(deploymentObject);
 	}
 	if(!value["Success"].isNull())

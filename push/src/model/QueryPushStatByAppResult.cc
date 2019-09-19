@@ -39,32 +39,32 @@ void QueryPushStatByAppResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAppPushStats = value["AppPushStats"]["AppPushStat"];
-	for (auto value : allAppPushStats)
+	auto allAppPushStatsNode = value["AppPushStats"]["AppPushStat"];
+	for (auto valueAppPushStatsAppPushStat : allAppPushStatsNode)
 	{
 		AppPushStat appPushStatsObject;
-		if(!value["Time"].isNull())
-			appPushStatsObject.time = value["Time"].asString();
-		if(!value["AcceptCount"].isNull())
-			appPushStatsObject.acceptCount = std::stol(value["AcceptCount"].asString());
-		if(!value["SentCount"].isNull())
-			appPushStatsObject.sentCount = std::stol(value["SentCount"].asString());
-		if(!value["ReceivedCount"].isNull())
-			appPushStatsObject.receivedCount = std::stol(value["ReceivedCount"].asString());
-		if(!value["OpenedCount"].isNull())
-			appPushStatsObject.openedCount = std::stol(value["OpenedCount"].asString());
-		if(!value["DeletedCount"].isNull())
-			appPushStatsObject.deletedCount = std::stol(value["DeletedCount"].asString());
-		if(!value["SmsSentCount"].isNull())
-			appPushStatsObject.smsSentCount = std::stol(value["SmsSentCount"].asString());
-		if(!value["SmsSkipCount"].isNull())
-			appPushStatsObject.smsSkipCount = std::stol(value["SmsSkipCount"].asString());
-		if(!value["SmsFailedCount"].isNull())
-			appPushStatsObject.smsFailedCount = std::stol(value["SmsFailedCount"].asString());
-		if(!value["SmsReceiveSuccessCount"].isNull())
-			appPushStatsObject.smsReceiveSuccessCount = std::stol(value["SmsReceiveSuccessCount"].asString());
-		if(!value["SmsReceiveFailedCount"].isNull())
-			appPushStatsObject.smsReceiveFailedCount = std::stol(value["SmsReceiveFailedCount"].asString());
+		if(!valueAppPushStatsAppPushStat["Time"].isNull())
+			appPushStatsObject.time = valueAppPushStatsAppPushStat["Time"].asString();
+		if(!valueAppPushStatsAppPushStat["AcceptCount"].isNull())
+			appPushStatsObject.acceptCount = std::stol(valueAppPushStatsAppPushStat["AcceptCount"].asString());
+		if(!valueAppPushStatsAppPushStat["SentCount"].isNull())
+			appPushStatsObject.sentCount = std::stol(valueAppPushStatsAppPushStat["SentCount"].asString());
+		if(!valueAppPushStatsAppPushStat["ReceivedCount"].isNull())
+			appPushStatsObject.receivedCount = std::stol(valueAppPushStatsAppPushStat["ReceivedCount"].asString());
+		if(!valueAppPushStatsAppPushStat["OpenedCount"].isNull())
+			appPushStatsObject.openedCount = std::stol(valueAppPushStatsAppPushStat["OpenedCount"].asString());
+		if(!valueAppPushStatsAppPushStat["DeletedCount"].isNull())
+			appPushStatsObject.deletedCount = std::stol(valueAppPushStatsAppPushStat["DeletedCount"].asString());
+		if(!valueAppPushStatsAppPushStat["SmsSentCount"].isNull())
+			appPushStatsObject.smsSentCount = std::stol(valueAppPushStatsAppPushStat["SmsSentCount"].asString());
+		if(!valueAppPushStatsAppPushStat["SmsSkipCount"].isNull())
+			appPushStatsObject.smsSkipCount = std::stol(valueAppPushStatsAppPushStat["SmsSkipCount"].asString());
+		if(!valueAppPushStatsAppPushStat["SmsFailedCount"].isNull())
+			appPushStatsObject.smsFailedCount = std::stol(valueAppPushStatsAppPushStat["SmsFailedCount"].asString());
+		if(!valueAppPushStatsAppPushStat["SmsReceiveSuccessCount"].isNull())
+			appPushStatsObject.smsReceiveSuccessCount = std::stol(valueAppPushStatsAppPushStat["SmsReceiveSuccessCount"].asString());
+		if(!valueAppPushStatsAppPushStat["SmsReceiveFailedCount"].isNull())
+			appPushStatsObject.smsReceiveFailedCount = std::stol(valueAppPushStatsAppPushStat["SmsReceiveFailedCount"].asString());
 		appPushStats_.push_back(appPushStatsObject);
 	}
 

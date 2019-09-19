@@ -39,28 +39,28 @@ void QueryFpCompareJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFpCompareJobList = value["FpCompareJobList"]["FpCompareJob"];
-	for (auto value : allFpCompareJobList)
+	auto allFpCompareJobListNode = value["FpCompareJobList"]["FpCompareJob"];
+	for (auto valueFpCompareJobListFpCompareJob : allFpCompareJobListNode)
 	{
 		FpCompareJob fpCompareJobListObject;
-		if(!value["Id"].isNull())
-			fpCompareJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			fpCompareJobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			fpCompareJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["FpDBId"].isNull())
-			fpCompareJobListObject.fpDBId = value["FpDBId"].asString();
-		if(!value["State"].isNull())
-			fpCompareJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			fpCompareJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			fpCompareJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			fpCompareJobListObject.creationTime = value["CreationTime"].asString();
-		if(!value["FinishTime"].isNull())
-			fpCompareJobListObject.finishTime = value["FinishTime"].asString();
+		if(!valueFpCompareJobListFpCompareJob["Id"].isNull())
+			fpCompareJobListObject.id = valueFpCompareJobListFpCompareJob["Id"].asString();
+		if(!valueFpCompareJobListFpCompareJob["UserData"].isNull())
+			fpCompareJobListObject.userData = valueFpCompareJobListFpCompareJob["UserData"].asString();
+		if(!valueFpCompareJobListFpCompareJob["PipelineId"].isNull())
+			fpCompareJobListObject.pipelineId = valueFpCompareJobListFpCompareJob["PipelineId"].asString();
+		if(!valueFpCompareJobListFpCompareJob["FpDBId"].isNull())
+			fpCompareJobListObject.fpDBId = valueFpCompareJobListFpCompareJob["FpDBId"].asString();
+		if(!valueFpCompareJobListFpCompareJob["State"].isNull())
+			fpCompareJobListObject.state = valueFpCompareJobListFpCompareJob["State"].asString();
+		if(!valueFpCompareJobListFpCompareJob["Code"].isNull())
+			fpCompareJobListObject.code = valueFpCompareJobListFpCompareJob["Code"].asString();
+		if(!valueFpCompareJobListFpCompareJob["Message"].isNull())
+			fpCompareJobListObject.message = valueFpCompareJobListFpCompareJob["Message"].asString();
+		if(!valueFpCompareJobListFpCompareJob["CreationTime"].isNull())
+			fpCompareJobListObject.creationTime = valueFpCompareJobListFpCompareJob["CreationTime"].asString();
+		if(!valueFpCompareJobListFpCompareJob["FinishTime"].isNull())
+			fpCompareJobListObject.finishTime = valueFpCompareJobListFpCompareJob["FinishTime"].asString();
 		auto masterFileNode = value["MasterFile"];
 		if(!masterFileNode["Bucket"].isNull())
 			fpCompareJobListObject.masterFile.bucket = masterFileNode["Bucket"].asString();
@@ -98,30 +98,30 @@ void QueryFpCompareJobListResult::parse(const std::string &payload)
 		if(!matchedFramesDescFileNode["Object"].isNull())
 			fpCompareJobListObject.matchFrameStorage.matchedFramesDescFile.object = matchedFramesDescFileNode["Object"].asString();
 		auto fpCompareResultNode = value["FpCompareResult"];
-		auto allMediaMatchSegments = value["MediaMatchSegments"]["MediaMatchSegment"];
-		for (auto value : allMediaMatchSegments)
+		auto allMediaMatchSegmentsNode = fpCompareResultNode["MediaMatchSegments"]["MediaMatchSegment"];
+		for (auto fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment : allMediaMatchSegmentsNode)
 		{
 			FpCompareJob::FpCompareResult::MediaMatchSegment mediaMatchSegmentObject;
-			if(!value["QueryStartFrame"].isNull())
-				mediaMatchSegmentObject.queryStartFrame = value["QueryStartFrame"].asString();
-			if(!value["QueryEndFrame"].isNull())
-				mediaMatchSegmentObject.queryEndFrame = value["QueryEndFrame"].asString();
-			if(!value["MasterStartFrame"].isNull())
-				mediaMatchSegmentObject.masterStartFrame = value["MasterStartFrame"].asString();
-			if(!value["MasterEndFrame"].isNull())
-				mediaMatchSegmentObject.masterEndFrame = value["MasterEndFrame"].asString();
-			if(!value["QueryStartTime"].isNull())
-				mediaMatchSegmentObject.queryStartTime = value["QueryStartTime"].asString();
-			if(!value["QueryEndTime"].isNull())
-				mediaMatchSegmentObject.queryEndTime = value["QueryEndTime"].asString();
-			if(!value["MasterStartTime"].isNull())
-				mediaMatchSegmentObject.masterStartTime = value["MasterStartTime"].asString();
-			if(!value["MasterEndTime"].isNull())
-				mediaMatchSegmentObject.masterEndTime = value["MasterEndTime"].asString();
-			if(!value["TotalMatchFrameNum"].isNull())
-				mediaMatchSegmentObject.totalMatchFrameNum = value["TotalMatchFrameNum"].asString();
-			if(!value["Score"].isNull())
-				mediaMatchSegmentObject.score = value["Score"].asString();
+			if(!fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["QueryStartFrame"].isNull())
+				mediaMatchSegmentObject.queryStartFrame = fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["QueryStartFrame"].asString();
+			if(!fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["QueryEndFrame"].isNull())
+				mediaMatchSegmentObject.queryEndFrame = fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["QueryEndFrame"].asString();
+			if(!fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["MasterStartFrame"].isNull())
+				mediaMatchSegmentObject.masterStartFrame = fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["MasterStartFrame"].asString();
+			if(!fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["MasterEndFrame"].isNull())
+				mediaMatchSegmentObject.masterEndFrame = fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["MasterEndFrame"].asString();
+			if(!fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["QueryStartTime"].isNull())
+				mediaMatchSegmentObject.queryStartTime = fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["QueryStartTime"].asString();
+			if(!fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["QueryEndTime"].isNull())
+				mediaMatchSegmentObject.queryEndTime = fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["QueryEndTime"].asString();
+			if(!fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["MasterStartTime"].isNull())
+				mediaMatchSegmentObject.masterStartTime = fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["MasterStartTime"].asString();
+			if(!fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["MasterEndTime"].isNull())
+				mediaMatchSegmentObject.masterEndTime = fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["MasterEndTime"].asString();
+			if(!fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["TotalMatchFrameNum"].isNull())
+				mediaMatchSegmentObject.totalMatchFrameNum = fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["TotalMatchFrameNum"].asString();
+			if(!fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["Score"].isNull())
+				mediaMatchSegmentObject.score = fpCompareResultNodeMediaMatchSegmentsMediaMatchSegment["Score"].asString();
 			fpCompareJobListObject.fpCompareResult.mediaMatchSegments.push_back(mediaMatchSegmentObject);
 		}
 		auto masterMediaInfoNode = fpCompareResultNode["MasterMediaInfo"];

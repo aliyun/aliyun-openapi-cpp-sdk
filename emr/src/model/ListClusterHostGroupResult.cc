@@ -39,62 +39,62 @@ void ListClusterHostGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHostGroupList = value["HostGroupList"]["HostGroup"];
-	for (auto value : allHostGroupList)
+	auto allHostGroupListNode = value["HostGroupList"]["HostGroup"];
+	for (auto valueHostGroupListHostGroup : allHostGroupListNode)
 	{
 		HostGroup hostGroupListObject;
-		if(!value["HostGroupId"].isNull())
-			hostGroupListObject.hostGroupId = value["HostGroupId"].asString();
-		if(!value["HostGroupName"].isNull())
-			hostGroupListObject.hostGroupName = value["HostGroupName"].asString();
-		if(!value["HostGroupType"].isNull())
-			hostGroupListObject.hostGroupType = value["HostGroupType"].asString();
-		if(!value["HostGroupSubType"].isNull())
-			hostGroupListObject.hostGroupSubType = value["HostGroupSubType"].asString();
-		if(!value["InstanceType"].isNull())
-			hostGroupListObject.instanceType = value["InstanceType"].asString();
-		if(!value["SystemDiskType"].isNull())
-			hostGroupListObject.systemDiskType = value["SystemDiskType"].asString();
-		if(!value["SystemDiskSize"].isNull())
-			hostGroupListObject.systemDiskSize = std::stoi(value["SystemDiskSize"].asString());
-		if(!value["SystemDiskCount"].isNull())
-			hostGroupListObject.systemDiskCount = std::stoi(value["SystemDiskCount"].asString());
-		if(!value["DataDiskType"].isNull())
-			hostGroupListObject.dataDiskType = value["DataDiskType"].asString();
-		if(!value["DataDiskSize"].isNull())
-			hostGroupListObject.dataDiskSize = std::stoi(value["DataDiskSize"].asString());
-		if(!value["DataDiskCount"].isNull())
-			hostGroupListObject.dataDiskCount = std::stoi(value["DataDiskCount"].asString());
-		if(!value["Cpu"].isNull())
-			hostGroupListObject.cpu = std::stoi(value["Cpu"].asString());
-		if(!value["Memory"].isNull())
-			hostGroupListObject.memory = std::stoi(value["Memory"].asString());
-		if(!value["Status"].isNull())
-			hostGroupListObject.status = value["Status"].asString();
-		if(!value["LockType"].isNull())
-			hostGroupListObject.lockType = value["LockType"].asString();
-		if(!value["LockReason"].isNull())
-			hostGroupListObject.lockReason = value["LockReason"].asString();
-		if(!value["PayType"].isNull())
-			hostGroupListObject.payType = value["PayType"].asString();
-		if(!value["ChargeType"].isNull())
-			hostGroupListObject.chargeType = value["ChargeType"].asString();
-		if(!value["NodeCount"].isNull())
-			hostGroupListObject.nodeCount = std::stoi(value["NodeCount"].asString());
-		if(!value["VswitchId"].isNull())
-			hostGroupListObject.vswitchId = value["VswitchId"].asString();
-		if(!value["Comment"].isNull())
-			hostGroupListObject.comment = value["Comment"].asString();
-		if(!value["SecurityGroupId"].isNull())
-			hostGroupListObject.securityGroupId = value["SecurityGroupId"].asString();
-		if(!value["gmtCreate"].isNull())
-			hostGroupListObject.gmtCreate = value["gmtCreate"].asString();
-		if(!value["gmtModified"].isNull())
-			hostGroupListObject.gmtModified = value["gmtModified"].asString();
-		if(!value["HostGroupChangeType"].isNull())
-			hostGroupListObject.hostGroupChangeType = value["HostGroupChangeType"].asString();
-		if(!value["HostGroupChangeStatus"].isNull())
-			hostGroupListObject.hostGroupChangeStatus = value["HostGroupChangeStatus"].asString();
+		if(!valueHostGroupListHostGroup["HostGroupId"].isNull())
+			hostGroupListObject.hostGroupId = valueHostGroupListHostGroup["HostGroupId"].asString();
+		if(!valueHostGroupListHostGroup["HostGroupName"].isNull())
+			hostGroupListObject.hostGroupName = valueHostGroupListHostGroup["HostGroupName"].asString();
+		if(!valueHostGroupListHostGroup["HostGroupType"].isNull())
+			hostGroupListObject.hostGroupType = valueHostGroupListHostGroup["HostGroupType"].asString();
+		if(!valueHostGroupListHostGroup["HostGroupSubType"].isNull())
+			hostGroupListObject.hostGroupSubType = valueHostGroupListHostGroup["HostGroupSubType"].asString();
+		if(!valueHostGroupListHostGroup["InstanceType"].isNull())
+			hostGroupListObject.instanceType = valueHostGroupListHostGroup["InstanceType"].asString();
+		if(!valueHostGroupListHostGroup["SystemDiskType"].isNull())
+			hostGroupListObject.systemDiskType = valueHostGroupListHostGroup["SystemDiskType"].asString();
+		if(!valueHostGroupListHostGroup["SystemDiskSize"].isNull())
+			hostGroupListObject.systemDiskSize = std::stoi(valueHostGroupListHostGroup["SystemDiskSize"].asString());
+		if(!valueHostGroupListHostGroup["SystemDiskCount"].isNull())
+			hostGroupListObject.systemDiskCount = std::stoi(valueHostGroupListHostGroup["SystemDiskCount"].asString());
+		if(!valueHostGroupListHostGroup["DataDiskType"].isNull())
+			hostGroupListObject.dataDiskType = valueHostGroupListHostGroup["DataDiskType"].asString();
+		if(!valueHostGroupListHostGroup["DataDiskSize"].isNull())
+			hostGroupListObject.dataDiskSize = std::stoi(valueHostGroupListHostGroup["DataDiskSize"].asString());
+		if(!valueHostGroupListHostGroup["DataDiskCount"].isNull())
+			hostGroupListObject.dataDiskCount = std::stoi(valueHostGroupListHostGroup["DataDiskCount"].asString());
+		if(!valueHostGroupListHostGroup["Cpu"].isNull())
+			hostGroupListObject.cpu = std::stoi(valueHostGroupListHostGroup["Cpu"].asString());
+		if(!valueHostGroupListHostGroup["Memory"].isNull())
+			hostGroupListObject.memory = std::stoi(valueHostGroupListHostGroup["Memory"].asString());
+		if(!valueHostGroupListHostGroup["Status"].isNull())
+			hostGroupListObject.status = valueHostGroupListHostGroup["Status"].asString();
+		if(!valueHostGroupListHostGroup["LockType"].isNull())
+			hostGroupListObject.lockType = valueHostGroupListHostGroup["LockType"].asString();
+		if(!valueHostGroupListHostGroup["LockReason"].isNull())
+			hostGroupListObject.lockReason = valueHostGroupListHostGroup["LockReason"].asString();
+		if(!valueHostGroupListHostGroup["PayType"].isNull())
+			hostGroupListObject.payType = valueHostGroupListHostGroup["PayType"].asString();
+		if(!valueHostGroupListHostGroup["ChargeType"].isNull())
+			hostGroupListObject.chargeType = valueHostGroupListHostGroup["ChargeType"].asString();
+		if(!valueHostGroupListHostGroup["NodeCount"].isNull())
+			hostGroupListObject.nodeCount = std::stoi(valueHostGroupListHostGroup["NodeCount"].asString());
+		if(!valueHostGroupListHostGroup["VswitchId"].isNull())
+			hostGroupListObject.vswitchId = valueHostGroupListHostGroup["VswitchId"].asString();
+		if(!valueHostGroupListHostGroup["Comment"].isNull())
+			hostGroupListObject.comment = valueHostGroupListHostGroup["Comment"].asString();
+		if(!valueHostGroupListHostGroup["SecurityGroupId"].isNull())
+			hostGroupListObject.securityGroupId = valueHostGroupListHostGroup["SecurityGroupId"].asString();
+		if(!valueHostGroupListHostGroup["gmtCreate"].isNull())
+			hostGroupListObject.gmtCreate = valueHostGroupListHostGroup["gmtCreate"].asString();
+		if(!valueHostGroupListHostGroup["gmtModified"].isNull())
+			hostGroupListObject.gmtModified = valueHostGroupListHostGroup["gmtModified"].asString();
+		if(!valueHostGroupListHostGroup["HostGroupChangeType"].isNull())
+			hostGroupListObject.hostGroupChangeType = valueHostGroupListHostGroup["HostGroupChangeType"].asString();
+		if(!valueHostGroupListHostGroup["HostGroupChangeStatus"].isNull())
+			hostGroupListObject.hostGroupChangeStatus = valueHostGroupListHostGroup["HostGroupChangeStatus"].asString();
 		hostGroupList_.push_back(hostGroupListObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -39,42 +39,42 @@ void GetVideoListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allVideoList = value["VideoList"]["Video"];
-	for (auto value : allVideoList)
+	auto allVideoListNode = value["VideoList"]["Video"];
+	for (auto valueVideoListVideo : allVideoListNode)
 	{
 		Video videoListObject;
-		if(!value["VideoId"].isNull())
-			videoListObject.videoId = value["VideoId"].asString();
-		if(!value["Title"].isNull())
-			videoListObject.title = value["Title"].asString();
-		if(!value["Tags"].isNull())
-			videoListObject.tags = value["Tags"].asString();
-		if(!value["Status"].isNull())
-			videoListObject.status = value["Status"].asString();
-		if(!value["Size"].isNull())
-			videoListObject.size = std::stol(value["Size"].asString());
-		if(!value["Duration"].isNull())
-			videoListObject.duration = std::stof(value["Duration"].asString());
-		if(!value["Description"].isNull())
-			videoListObject.description = value["Description"].asString();
-		if(!value["CreateTime"].isNull())
-			videoListObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			videoListObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["ModificationTime"].isNull())
-			videoListObject.modificationTime = value["ModificationTime"].asString();
-		if(!value["CreationTime"].isNull())
-			videoListObject.creationTime = value["CreationTime"].asString();
-		if(!value["CoverURL"].isNull())
-			videoListObject.coverURL = value["CoverURL"].asString();
-		if(!value["CateId"].isNull())
-			videoListObject.cateId = std::stol(value["CateId"].asString());
-		if(!value["CateName"].isNull())
-			videoListObject.cateName = value["CateName"].asString();
-		if(!value["StorageLocation"].isNull())
-			videoListObject.storageLocation = value["StorageLocation"].asString();
-		if(!value["AppId"].isNull())
-			videoListObject.appId = value["AppId"].asString();
+		if(!valueVideoListVideo["VideoId"].isNull())
+			videoListObject.videoId = valueVideoListVideo["VideoId"].asString();
+		if(!valueVideoListVideo["Title"].isNull())
+			videoListObject.title = valueVideoListVideo["Title"].asString();
+		if(!valueVideoListVideo["Tags"].isNull())
+			videoListObject.tags = valueVideoListVideo["Tags"].asString();
+		if(!valueVideoListVideo["Status"].isNull())
+			videoListObject.status = valueVideoListVideo["Status"].asString();
+		if(!valueVideoListVideo["Size"].isNull())
+			videoListObject.size = std::stol(valueVideoListVideo["Size"].asString());
+		if(!valueVideoListVideo["Duration"].isNull())
+			videoListObject.duration = std::stof(valueVideoListVideo["Duration"].asString());
+		if(!valueVideoListVideo["Description"].isNull())
+			videoListObject.description = valueVideoListVideo["Description"].asString();
+		if(!valueVideoListVideo["CreateTime"].isNull())
+			videoListObject.createTime = valueVideoListVideo["CreateTime"].asString();
+		if(!valueVideoListVideo["ModifyTime"].isNull())
+			videoListObject.modifyTime = valueVideoListVideo["ModifyTime"].asString();
+		if(!valueVideoListVideo["ModificationTime"].isNull())
+			videoListObject.modificationTime = valueVideoListVideo["ModificationTime"].asString();
+		if(!valueVideoListVideo["CreationTime"].isNull())
+			videoListObject.creationTime = valueVideoListVideo["CreationTime"].asString();
+		if(!valueVideoListVideo["CoverURL"].isNull())
+			videoListObject.coverURL = valueVideoListVideo["CoverURL"].asString();
+		if(!valueVideoListVideo["CateId"].isNull())
+			videoListObject.cateId = std::stol(valueVideoListVideo["CateId"].asString());
+		if(!valueVideoListVideo["CateName"].isNull())
+			videoListObject.cateName = valueVideoListVideo["CateName"].asString();
+		if(!valueVideoListVideo["StorageLocation"].isNull())
+			videoListObject.storageLocation = valueVideoListVideo["StorageLocation"].asString();
+		if(!valueVideoListVideo["AppId"].isNull())
+			videoListObject.appId = valueVideoListVideo["AppId"].asString();
 		auto allSnapshots = value["Snapshots"]["Snapshot"];
 		for (auto value : allSnapshots)
 			videoListObject.snapshots.push_back(value.asString());

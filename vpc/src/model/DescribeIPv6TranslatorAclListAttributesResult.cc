@@ -39,16 +39,16 @@ void DescribeIPv6TranslatorAclListAttributesResult::parse(const std::string &pay
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAclEntries = value["AclEntries"]["AclEntry"];
-	for (auto value : allAclEntries)
+	auto allAclEntriesNode = value["AclEntries"]["AclEntry"];
+	for (auto valueAclEntriesAclEntry : allAclEntriesNode)
 	{
 		AclEntry aclEntriesObject;
-		if(!value["AclEntryId"].isNull())
-			aclEntriesObject.aclEntryId = value["AclEntryId"].asString();
-		if(!value["AclEntryIp"].isNull())
-			aclEntriesObject.aclEntryIp = value["AclEntryIp"].asString();
-		if(!value["AclEntryComment"].isNull())
-			aclEntriesObject.aclEntryComment = value["AclEntryComment"].asString();
+		if(!valueAclEntriesAclEntry["AclEntryId"].isNull())
+			aclEntriesObject.aclEntryId = valueAclEntriesAclEntry["AclEntryId"].asString();
+		if(!valueAclEntriesAclEntry["AclEntryIp"].isNull())
+			aclEntriesObject.aclEntryIp = valueAclEntriesAclEntry["AclEntryIp"].asString();
+		if(!valueAclEntriesAclEntry["AclEntryComment"].isNull())
+			aclEntriesObject.aclEntryComment = valueAclEntriesAclEntry["AclEntryComment"].asString();
 		aclEntries_.push_back(aclEntriesObject);
 	}
 	if(!value["AclId"].isNull())

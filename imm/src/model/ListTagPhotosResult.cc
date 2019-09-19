@@ -39,14 +39,14 @@ void ListTagPhotosResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPhotos = value["Photos"]["PhotosItem"];
-	for (auto value : allPhotos)
+	auto allPhotosNode = value["Photos"]["PhotosItem"];
+	for (auto valuePhotosPhotosItem : allPhotosNode)
 	{
 		PhotosItem photosObject;
-		if(!value["SrcUri"].isNull())
-			photosObject.srcUri = value["SrcUri"].asString();
-		if(!value["TagScore"].isNull())
-			photosObject.tagScore = std::stof(value["TagScore"].asString());
+		if(!valuePhotosPhotosItem["SrcUri"].isNull())
+			photosObject.srcUri = valuePhotosPhotosItem["SrcUri"].asString();
+		if(!valuePhotosPhotosItem["TagScore"].isNull())
+			photosObject.tagScore = std::stof(valuePhotosPhotosItem["TagScore"].asString());
 		photos_.push_back(photosObject);
 	}
 	if(!value["NextMarker"].isNull())

@@ -39,30 +39,30 @@ void DescribeBackupGatewayListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["BackupGateway"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["BackupGateway"];
+	for (auto valueItemsBackupGateway : allItemsNode)
 	{
 		BackupGateway itemsObject;
-		if(!value["BackupGatewayId"].isNull())
-			itemsObject.backupGatewayId = value["BackupGatewayId"].asString();
-		if(!value["SourceEndpointInternetIP"].isNull())
-			itemsObject.sourceEndpointInternetIP = value["SourceEndpointInternetIP"].asString();
-		if(!value["SourceEndpointIntranetIP"].isNull())
-			itemsObject.sourceEndpointIntranetIP = value["SourceEndpointIntranetIP"].asString();
-		if(!value["SourceEndpointHostname"].isNull())
-			itemsObject.sourceEndpointHostname = value["SourceEndpointHostname"].asString();
-		if(!value["BackupGatewayStatus"].isNull())
-			itemsObject.backupGatewayStatus = value["BackupGatewayStatus"].asString();
-		if(!value["LastHeartbeatTime"].isNull())
-			itemsObject.lastHeartbeatTime = std::stol(value["LastHeartbeatTime"].asString());
-		if(!value["BackupGatewayCreateTime"].isNull())
-			itemsObject.backupGatewayCreateTime = std::stol(value["BackupGatewayCreateTime"].asString());
-		if(!value["Region"].isNull())
-			itemsObject.region = value["Region"].asString();
-		if(!value["DisplayName"].isNull())
-			itemsObject.displayName = value["DisplayName"].asString();
-		if(!value["Identifier"].isNull())
-			itemsObject.identifier = value["Identifier"].asString();
+		if(!valueItemsBackupGateway["BackupGatewayId"].isNull())
+			itemsObject.backupGatewayId = valueItemsBackupGateway["BackupGatewayId"].asString();
+		if(!valueItemsBackupGateway["SourceEndpointInternetIP"].isNull())
+			itemsObject.sourceEndpointInternetIP = valueItemsBackupGateway["SourceEndpointInternetIP"].asString();
+		if(!valueItemsBackupGateway["SourceEndpointIntranetIP"].isNull())
+			itemsObject.sourceEndpointIntranetIP = valueItemsBackupGateway["SourceEndpointIntranetIP"].asString();
+		if(!valueItemsBackupGateway["SourceEndpointHostname"].isNull())
+			itemsObject.sourceEndpointHostname = valueItemsBackupGateway["SourceEndpointHostname"].asString();
+		if(!valueItemsBackupGateway["BackupGatewayStatus"].isNull())
+			itemsObject.backupGatewayStatus = valueItemsBackupGateway["BackupGatewayStatus"].asString();
+		if(!valueItemsBackupGateway["LastHeartbeatTime"].isNull())
+			itemsObject.lastHeartbeatTime = std::stol(valueItemsBackupGateway["LastHeartbeatTime"].asString());
+		if(!valueItemsBackupGateway["BackupGatewayCreateTime"].isNull())
+			itemsObject.backupGatewayCreateTime = std::stol(valueItemsBackupGateway["BackupGatewayCreateTime"].asString());
+		if(!valueItemsBackupGateway["Region"].isNull())
+			itemsObject.region = valueItemsBackupGateway["Region"].asString();
+		if(!valueItemsBackupGateway["DisplayName"].isNull())
+			itemsObject.displayName = valueItemsBackupGateway["DisplayName"].asString();
+		if(!valueItemsBackupGateway["Identifier"].isNull())
+			itemsObject.identifier = valueItemsBackupGateway["Identifier"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

@@ -39,44 +39,44 @@ void QueryCensorJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCensorJobList = value["CensorJobList"]["CensorJob"];
-	for (auto value : allCensorJobList)
+	auto allCensorJobListNode = value["CensorJobList"]["CensorJob"];
+	for (auto valueCensorJobListCensorJob : allCensorJobListNode)
 	{
 		CensorJob censorJobListObject;
-		if(!value["Id"].isNull())
-			censorJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			censorJobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			censorJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			censorJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			censorJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			censorJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			censorJobListObject.creationTime = value["CreationTime"].asString();
-		if(!value["TitleCensorResult"].isNull())
-			censorJobListObject.titleCensorResult = value["TitleCensorResult"].asString();
-		if(!value["DescCensorResult"].isNull())
-			censorJobListObject.descCensorResult = value["DescCensorResult"].asString();
-		if(!value["BarrageCensorResult"].isNull())
-			censorJobListObject.barrageCensorResult = value["BarrageCensorResult"].asString();
-		if(!value["ResultSaveObject"].isNull())
-			censorJobListObject.resultSaveObject = value["ResultSaveObject"].asString();
-		auto allImageCensorResults = value["ImageCensorResults"]["ImageCensorResult"];
-		for (auto value : allImageCensorResults)
+		if(!valueCensorJobListCensorJob["Id"].isNull())
+			censorJobListObject.id = valueCensorJobListCensorJob["Id"].asString();
+		if(!valueCensorJobListCensorJob["UserData"].isNull())
+			censorJobListObject.userData = valueCensorJobListCensorJob["UserData"].asString();
+		if(!valueCensorJobListCensorJob["PipelineId"].isNull())
+			censorJobListObject.pipelineId = valueCensorJobListCensorJob["PipelineId"].asString();
+		if(!valueCensorJobListCensorJob["State"].isNull())
+			censorJobListObject.state = valueCensorJobListCensorJob["State"].asString();
+		if(!valueCensorJobListCensorJob["Code"].isNull())
+			censorJobListObject.code = valueCensorJobListCensorJob["Code"].asString();
+		if(!valueCensorJobListCensorJob["Message"].isNull())
+			censorJobListObject.message = valueCensorJobListCensorJob["Message"].asString();
+		if(!valueCensorJobListCensorJob["CreationTime"].isNull())
+			censorJobListObject.creationTime = valueCensorJobListCensorJob["CreationTime"].asString();
+		if(!valueCensorJobListCensorJob["TitleCensorResult"].isNull())
+			censorJobListObject.titleCensorResult = valueCensorJobListCensorJob["TitleCensorResult"].asString();
+		if(!valueCensorJobListCensorJob["DescCensorResult"].isNull())
+			censorJobListObject.descCensorResult = valueCensorJobListCensorJob["DescCensorResult"].asString();
+		if(!valueCensorJobListCensorJob["BarrageCensorResult"].isNull())
+			censorJobListObject.barrageCensorResult = valueCensorJobListCensorJob["BarrageCensorResult"].asString();
+		if(!valueCensorJobListCensorJob["ResultSaveObject"].isNull())
+			censorJobListObject.resultSaveObject = valueCensorJobListCensorJob["ResultSaveObject"].asString();
+		auto allImageCensorResultsNode = allCensorJobListNode["ImageCensorResults"]["ImageCensorResult"];
+		for (auto allCensorJobListNodeImageCensorResultsImageCensorResult : allImageCensorResultsNode)
 		{
 			CensorJob::ImageCensorResult imageCensorResultsObject;
-			if(!value["ImageLocation"].isNull())
-				imageCensorResultsObject.imageLocation = value["ImageLocation"].asString();
-			if(!value["ImageBucket"].isNull())
-				imageCensorResultsObject.imageBucket = value["ImageBucket"].asString();
-			if(!value["ImageObject"].isNull())
-				imageCensorResultsObject.imageObject = value["ImageObject"].asString();
-			if(!value["Result"].isNull())
-				imageCensorResultsObject.result = value["Result"].asString();
+			if(!allCensorJobListNodeImageCensorResultsImageCensorResult["ImageLocation"].isNull())
+				imageCensorResultsObject.imageLocation = allCensorJobListNodeImageCensorResultsImageCensorResult["ImageLocation"].asString();
+			if(!allCensorJobListNodeImageCensorResultsImageCensorResult["ImageBucket"].isNull())
+				imageCensorResultsObject.imageBucket = allCensorJobListNodeImageCensorResultsImageCensorResult["ImageBucket"].asString();
+			if(!allCensorJobListNodeImageCensorResultsImageCensorResult["ImageObject"].isNull())
+				imageCensorResultsObject.imageObject = allCensorJobListNodeImageCensorResultsImageCensorResult["ImageObject"].asString();
+			if(!allCensorJobListNodeImageCensorResultsImageCensorResult["Result"].isNull())
+				imageCensorResultsObject.result = allCensorJobListNodeImageCensorResultsImageCensorResult["Result"].asString();
 			censorJobListObject.imageCensorResults.push_back(imageCensorResultsObject);
 		}
 		auto inputNode = value["Input"];
@@ -111,30 +111,30 @@ void QueryCensorJobListResult::parse(const std::string &payload)
 			censorJobListObject.censorPornResult.maxScore = censorPornResultNode["MaxScore"].asString();
 		if(!censorPornResultNode["AverageScore"].isNull())
 			censorJobListObject.censorPornResult.averageScore = censorPornResultNode["AverageScore"].asString();
-		auto allPornCounterList = value["PornCounterList"]["Counter"];
-		for (auto value : allPornCounterList)
+		auto allPornCounterListNode = censorPornResultNode["PornCounterList"]["Counter"];
+		for (auto censorPornResultNodePornCounterListCounter : allPornCounterListNode)
 		{
 			CensorJob::CensorPornResult::Counter counterObject;
-			if(!value["Count"].isNull())
-				counterObject.count = std::stoi(value["Count"].asString());
-			if(!value["Label"].isNull())
-				counterObject.label = value["Label"].asString();
+			if(!censorPornResultNodePornCounterListCounter["Count"].isNull())
+				counterObject.count = std::stoi(censorPornResultNodePornCounterListCounter["Count"].asString());
+			if(!censorPornResultNodePornCounterListCounter["Label"].isNull())
+				counterObject.label = censorPornResultNodePornCounterListCounter["Label"].asString();
 			censorJobListObject.censorPornResult.pornCounterList.push_back(counterObject);
 		}
-		auto allPornTopList = value["PornTopList"]["Top"];
-		for (auto value : allPornTopList)
+		auto allPornTopListNode = censorPornResultNode["PornTopList"]["Top"];
+		for (auto censorPornResultNodePornTopListTop : allPornTopListNode)
 		{
 			CensorJob::CensorPornResult::Top topObject;
-			if(!value["Label"].isNull())
-				topObject.label = value["Label"].asString();
-			if(!value["Score"].isNull())
-				topObject.score = value["Score"].asString();
-			if(!value["Timestamp"].isNull())
-				topObject.timestamp = value["Timestamp"].asString();
-			if(!value["Index"].isNull())
-				topObject.index = value["Index"].asString();
-			if(!value["Object"].isNull())
-				topObject.object = value["Object"].asString();
+			if(!censorPornResultNodePornTopListTop["Label"].isNull())
+				topObject.label = censorPornResultNodePornTopListTop["Label"].asString();
+			if(!censorPornResultNodePornTopListTop["Score"].isNull())
+				topObject.score = censorPornResultNodePornTopListTop["Score"].asString();
+			if(!censorPornResultNodePornTopListTop["Timestamp"].isNull())
+				topObject.timestamp = censorPornResultNodePornTopListTop["Timestamp"].asString();
+			if(!censorPornResultNodePornTopListTop["Index"].isNull())
+				topObject.index = censorPornResultNodePornTopListTop["Index"].asString();
+			if(!censorPornResultNodePornTopListTop["Object"].isNull())
+				topObject.object = censorPornResultNodePornTopListTop["Object"].asString();
 			censorJobListObject.censorPornResult.pornTopList.push_back(topObject);
 		}
 		auto censorTerrorismResultNode = value["CensorTerrorismResult"];
@@ -146,30 +146,30 @@ void QueryCensorJobListResult::parse(const std::string &payload)
 			censorJobListObject.censorTerrorismResult.maxScore = censorTerrorismResultNode["MaxScore"].asString();
 		if(!censorTerrorismResultNode["AverageScore"].isNull())
 			censorJobListObject.censorTerrorismResult.averageScore = censorTerrorismResultNode["AverageScore"].asString();
-		auto allTerrorismCounterList = value["TerrorismCounterList"]["Counter"];
-		for (auto value : allTerrorismCounterList)
+		auto allTerrorismCounterListNode = censorTerrorismResultNode["TerrorismCounterList"]["Counter"];
+		for (auto censorTerrorismResultNodeTerrorismCounterListCounter : allTerrorismCounterListNode)
 		{
 			CensorJob::CensorTerrorismResult::Counter1 counter1Object;
-			if(!value["Count"].isNull())
-				counter1Object.count = std::stoi(value["Count"].asString());
-			if(!value["Label"].isNull())
-				counter1Object.label = value["Label"].asString();
+			if(!censorTerrorismResultNodeTerrorismCounterListCounter["Count"].isNull())
+				counter1Object.count = std::stoi(censorTerrorismResultNodeTerrorismCounterListCounter["Count"].asString());
+			if(!censorTerrorismResultNodeTerrorismCounterListCounter["Label"].isNull())
+				counter1Object.label = censorTerrorismResultNodeTerrorismCounterListCounter["Label"].asString();
 			censorJobListObject.censorTerrorismResult.terrorismCounterList.push_back(counter1Object);
 		}
-		auto allTerrorismTopList = value["TerrorismTopList"]["Top"];
-		for (auto value : allTerrorismTopList)
+		auto allTerrorismTopListNode = censorTerrorismResultNode["TerrorismTopList"]["Top"];
+		for (auto censorTerrorismResultNodeTerrorismTopListTop : allTerrorismTopListNode)
 		{
 			CensorJob::CensorTerrorismResult::Top2 top2Object;
-			if(!value["Label"].isNull())
-				top2Object.label = value["Label"].asString();
-			if(!value["Score"].isNull())
-				top2Object.score = value["Score"].asString();
-			if(!value["Timestamp"].isNull())
-				top2Object.timestamp = value["Timestamp"].asString();
-			if(!value["Index"].isNull())
-				top2Object.index = value["Index"].asString();
-			if(!value["Object"].isNull())
-				top2Object.object = value["Object"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Label"].isNull())
+				top2Object.label = censorTerrorismResultNodeTerrorismTopListTop["Label"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Score"].isNull())
+				top2Object.score = censorTerrorismResultNodeTerrorismTopListTop["Score"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Timestamp"].isNull())
+				top2Object.timestamp = censorTerrorismResultNodeTerrorismTopListTop["Timestamp"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Index"].isNull())
+				top2Object.index = censorTerrorismResultNodeTerrorismTopListTop["Index"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Object"].isNull())
+				top2Object.object = censorTerrorismResultNodeTerrorismTopListTop["Object"].asString();
 			censorJobListObject.censorTerrorismResult.terrorismTopList.push_back(top2Object);
 		}
 		censorJobList_.push_back(censorJobListObject);

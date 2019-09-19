@@ -39,30 +39,30 @@ void QueryPrepaidCardsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["PrepaidCard"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["PrepaidCard"];
+	for (auto valueDataPrepaidCard : allDataNode)
 	{
 		PrepaidCard dataObject;
-		if(!value["PrepaidCardId"].isNull())
-			dataObject.prepaidCardId = std::stol(value["PrepaidCardId"].asString());
-		if(!value["PrepaidCardNo"].isNull())
-			dataObject.prepaidCardNo = value["PrepaidCardNo"].asString();
-		if(!value["GrantedTime"].isNull())
-			dataObject.grantedTime = value["GrantedTime"].asString();
-		if(!value["EffectiveTime"].isNull())
-			dataObject.effectiveTime = value["EffectiveTime"].asString();
-		if(!value["ExpiryTime"].isNull())
-			dataObject.expiryTime = value["ExpiryTime"].asString();
-		if(!value["ApplicableProducts"].isNull())
-			dataObject.applicableProducts = value["ApplicableProducts"].asString();
-		if(!value["ApplicableScenarios"].isNull())
-			dataObject.applicableScenarios = value["ApplicableScenarios"].asString();
-		if(!value["NominalValue"].isNull())
-			dataObject.nominalValue = value["NominalValue"].asString();
-		if(!value["Balance"].isNull())
-			dataObject.balance = value["Balance"].asString();
-		if(!value["Status"].isNull())
-			dataObject.status = value["Status"].asString();
+		if(!valueDataPrepaidCard["PrepaidCardId"].isNull())
+			dataObject.prepaidCardId = std::stol(valueDataPrepaidCard["PrepaidCardId"].asString());
+		if(!valueDataPrepaidCard["PrepaidCardNo"].isNull())
+			dataObject.prepaidCardNo = valueDataPrepaidCard["PrepaidCardNo"].asString();
+		if(!valueDataPrepaidCard["GrantedTime"].isNull())
+			dataObject.grantedTime = valueDataPrepaidCard["GrantedTime"].asString();
+		if(!valueDataPrepaidCard["EffectiveTime"].isNull())
+			dataObject.effectiveTime = valueDataPrepaidCard["EffectiveTime"].asString();
+		if(!valueDataPrepaidCard["ExpiryTime"].isNull())
+			dataObject.expiryTime = valueDataPrepaidCard["ExpiryTime"].asString();
+		if(!valueDataPrepaidCard["ApplicableProducts"].isNull())
+			dataObject.applicableProducts = valueDataPrepaidCard["ApplicableProducts"].asString();
+		if(!valueDataPrepaidCard["ApplicableScenarios"].isNull())
+			dataObject.applicableScenarios = valueDataPrepaidCard["ApplicableScenarios"].asString();
+		if(!valueDataPrepaidCard["NominalValue"].isNull())
+			dataObject.nominalValue = valueDataPrepaidCard["NominalValue"].asString();
+		if(!valueDataPrepaidCard["Balance"].isNull())
+			dataObject.balance = valueDataPrepaidCard["Balance"].asString();
+		if(!valueDataPrepaidCard["Status"].isNull())
+			dataObject.status = valueDataPrepaidCard["Status"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

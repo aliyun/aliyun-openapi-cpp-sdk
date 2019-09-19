@@ -39,24 +39,24 @@ void DescribeSslVpnClientCertsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSslVpnClientCertKeys = value["SslVpnClientCertKeys"]["SslVpnClientCertKey"];
-	for (auto value : allSslVpnClientCertKeys)
+	auto allSslVpnClientCertKeysNode = value["SslVpnClientCertKeys"]["SslVpnClientCertKey"];
+	for (auto valueSslVpnClientCertKeysSslVpnClientCertKey : allSslVpnClientCertKeysNode)
 	{
 		SslVpnClientCertKey sslVpnClientCertKeysObject;
-		if(!value["RegionId"].isNull())
-			sslVpnClientCertKeysObject.regionId = value["RegionId"].asString();
-		if(!value["SslVpnClientCertId"].isNull())
-			sslVpnClientCertKeysObject.sslVpnClientCertId = value["SslVpnClientCertId"].asString();
-		if(!value["Name"].isNull())
-			sslVpnClientCertKeysObject.name = value["Name"].asString();
-		if(!value["SslVpnServerId"].isNull())
-			sslVpnClientCertKeysObject.sslVpnServerId = value["SslVpnServerId"].asString();
-		if(!value["CreateTime"].isNull())
-			sslVpnClientCertKeysObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["EndTime"].isNull())
-			sslVpnClientCertKeysObject.endTime = std::stol(value["EndTime"].asString());
-		if(!value["Status"].isNull())
-			sslVpnClientCertKeysObject.status = value["Status"].asString();
+		if(!valueSslVpnClientCertKeysSslVpnClientCertKey["RegionId"].isNull())
+			sslVpnClientCertKeysObject.regionId = valueSslVpnClientCertKeysSslVpnClientCertKey["RegionId"].asString();
+		if(!valueSslVpnClientCertKeysSslVpnClientCertKey["SslVpnClientCertId"].isNull())
+			sslVpnClientCertKeysObject.sslVpnClientCertId = valueSslVpnClientCertKeysSslVpnClientCertKey["SslVpnClientCertId"].asString();
+		if(!valueSslVpnClientCertKeysSslVpnClientCertKey["Name"].isNull())
+			sslVpnClientCertKeysObject.name = valueSslVpnClientCertKeysSslVpnClientCertKey["Name"].asString();
+		if(!valueSslVpnClientCertKeysSslVpnClientCertKey["SslVpnServerId"].isNull())
+			sslVpnClientCertKeysObject.sslVpnServerId = valueSslVpnClientCertKeysSslVpnClientCertKey["SslVpnServerId"].asString();
+		if(!valueSslVpnClientCertKeysSslVpnClientCertKey["CreateTime"].isNull())
+			sslVpnClientCertKeysObject.createTime = std::stol(valueSslVpnClientCertKeysSslVpnClientCertKey["CreateTime"].asString());
+		if(!valueSslVpnClientCertKeysSslVpnClientCertKey["EndTime"].isNull())
+			sslVpnClientCertKeysObject.endTime = std::stol(valueSslVpnClientCertKeysSslVpnClientCertKey["EndTime"].asString());
+		if(!valueSslVpnClientCertKeysSslVpnClientCertKey["Status"].isNull())
+			sslVpnClientCertKeysObject.status = valueSslVpnClientCertKeysSslVpnClientCertKey["Status"].asString();
 		sslVpnClientCertKeys_.push_back(sslVpnClientCertKeysObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -52,52 +52,52 @@ void QueryEvaluateListResult::parse(const std::string &payload)
 		data_.totalInvoiceAmount = std::stol(dataNode["TotalInvoiceAmount"].asString());
 	if(!dataNode["TotalUnAppliedInvoiceAmount"].isNull())
 		data_.totalUnAppliedInvoiceAmount = std::stol(dataNode["TotalUnAppliedInvoiceAmount"].asString());
-	auto allEvaluateList = value["EvaluateList"]["Evaluate"];
-	for (auto value : allEvaluateList)
+	auto allEvaluateListNode = dataNode["EvaluateList"]["Evaluate"];
+	for (auto dataNodeEvaluateListEvaluate : allEvaluateListNode)
 	{
 		Data::Evaluate evaluateObject;
-		if(!value["Id"].isNull())
-			evaluateObject.id = std::stol(value["Id"].asString());
-		if(!value["GmtCreate"].isNull())
-			evaluateObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtModified"].isNull())
-			evaluateObject.gmtModified = value["GmtModified"].asString();
-		if(!value["UserId"].isNull())
-			evaluateObject.userId = std::stol(value["UserId"].asString());
-		if(!value["UserNick"].isNull())
-			evaluateObject.userNick = value["UserNick"].asString();
-		if(!value["OutBizId"].isNull())
-			evaluateObject.outBizId = value["OutBizId"].asString();
-		if(!value["BillId"].isNull())
-			evaluateObject.billId = std::stol(value["BillId"].asString());
-		if(!value["ItemId"].isNull())
-			evaluateObject.itemId = std::stol(value["ItemId"].asString());
-		if(!value["BillCycle"].isNull())
-			evaluateObject.billCycle = value["BillCycle"].asString();
-		if(!value["BizType"].isNull())
-			evaluateObject.bizType = value["BizType"].asString();
-		if(!value["OriginalAmount"].isNull())
-			evaluateObject.originalAmount = std::stol(value["OriginalAmount"].asString());
-		if(!value["PresentAmount"].isNull())
-			evaluateObject.presentAmount = std::stol(value["PresentAmount"].asString());
-		if(!value["CanInvoiceAmount"].isNull())
-			evaluateObject.canInvoiceAmount = std::stol(value["CanInvoiceAmount"].asString());
-		if(!value["InvoicedAmount"].isNull())
-			evaluateObject.invoicedAmount = std::stol(value["InvoicedAmount"].asString());
-		if(!value["OffsetCostAmount"].isNull())
-			evaluateObject.offsetCostAmount = std::stol(value["OffsetCostAmount"].asString());
-		if(!value["OffsetAcceptAmount"].isNull())
-			evaluateObject.offsetAcceptAmount = std::stol(value["OffsetAcceptAmount"].asString());
-		if(!value["Status"].isNull())
-			evaluateObject.status = std::stoi(value["Status"].asString());
-		if(!value["OpId"].isNull())
-			evaluateObject.opId = value["OpId"].asString();
-		if(!value["Name"].isNull())
-			evaluateObject.name = value["Name"].asString();
-		if(!value["BizTime"].isNull())
-			evaluateObject.bizTime = value["BizTime"].asString();
-		if(!value["Type"].isNull())
-			evaluateObject.type = std::stoi(value["Type"].asString());
+		if(!dataNodeEvaluateListEvaluate["Id"].isNull())
+			evaluateObject.id = std::stol(dataNodeEvaluateListEvaluate["Id"].asString());
+		if(!dataNodeEvaluateListEvaluate["GmtCreate"].isNull())
+			evaluateObject.gmtCreate = dataNodeEvaluateListEvaluate["GmtCreate"].asString();
+		if(!dataNodeEvaluateListEvaluate["GmtModified"].isNull())
+			evaluateObject.gmtModified = dataNodeEvaluateListEvaluate["GmtModified"].asString();
+		if(!dataNodeEvaluateListEvaluate["UserId"].isNull())
+			evaluateObject.userId = std::stol(dataNodeEvaluateListEvaluate["UserId"].asString());
+		if(!dataNodeEvaluateListEvaluate["UserNick"].isNull())
+			evaluateObject.userNick = dataNodeEvaluateListEvaluate["UserNick"].asString();
+		if(!dataNodeEvaluateListEvaluate["OutBizId"].isNull())
+			evaluateObject.outBizId = dataNodeEvaluateListEvaluate["OutBizId"].asString();
+		if(!dataNodeEvaluateListEvaluate["BillId"].isNull())
+			evaluateObject.billId = std::stol(dataNodeEvaluateListEvaluate["BillId"].asString());
+		if(!dataNodeEvaluateListEvaluate["ItemId"].isNull())
+			evaluateObject.itemId = std::stol(dataNodeEvaluateListEvaluate["ItemId"].asString());
+		if(!dataNodeEvaluateListEvaluate["BillCycle"].isNull())
+			evaluateObject.billCycle = dataNodeEvaluateListEvaluate["BillCycle"].asString();
+		if(!dataNodeEvaluateListEvaluate["BizType"].isNull())
+			evaluateObject.bizType = dataNodeEvaluateListEvaluate["BizType"].asString();
+		if(!dataNodeEvaluateListEvaluate["OriginalAmount"].isNull())
+			evaluateObject.originalAmount = std::stol(dataNodeEvaluateListEvaluate["OriginalAmount"].asString());
+		if(!dataNodeEvaluateListEvaluate["PresentAmount"].isNull())
+			evaluateObject.presentAmount = std::stol(dataNodeEvaluateListEvaluate["PresentAmount"].asString());
+		if(!dataNodeEvaluateListEvaluate["CanInvoiceAmount"].isNull())
+			evaluateObject.canInvoiceAmount = std::stol(dataNodeEvaluateListEvaluate["CanInvoiceAmount"].asString());
+		if(!dataNodeEvaluateListEvaluate["InvoicedAmount"].isNull())
+			evaluateObject.invoicedAmount = std::stol(dataNodeEvaluateListEvaluate["InvoicedAmount"].asString());
+		if(!dataNodeEvaluateListEvaluate["OffsetCostAmount"].isNull())
+			evaluateObject.offsetCostAmount = std::stol(dataNodeEvaluateListEvaluate["OffsetCostAmount"].asString());
+		if(!dataNodeEvaluateListEvaluate["OffsetAcceptAmount"].isNull())
+			evaluateObject.offsetAcceptAmount = std::stol(dataNodeEvaluateListEvaluate["OffsetAcceptAmount"].asString());
+		if(!dataNodeEvaluateListEvaluate["Status"].isNull())
+			evaluateObject.status = std::stoi(dataNodeEvaluateListEvaluate["Status"].asString());
+		if(!dataNodeEvaluateListEvaluate["OpId"].isNull())
+			evaluateObject.opId = dataNodeEvaluateListEvaluate["OpId"].asString();
+		if(!dataNodeEvaluateListEvaluate["Name"].isNull())
+			evaluateObject.name = dataNodeEvaluateListEvaluate["Name"].asString();
+		if(!dataNodeEvaluateListEvaluate["BizTime"].isNull())
+			evaluateObject.bizTime = dataNodeEvaluateListEvaluate["BizTime"].asString();
+		if(!dataNodeEvaluateListEvaluate["Type"].isNull())
+			evaluateObject.type = std::stoi(dataNodeEvaluateListEvaluate["Type"].asString());
 		data_.evaluateList.push_back(evaluateObject);
 	}
 	if(!value["Success"].isNull())

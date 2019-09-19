@@ -39,14 +39,14 @@ void DescribeScreenRequestTopTypeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTopTypes = value["TopTypes"]["TopType"];
-	for (auto value : allTopTypes)
+	auto allTopTypesNode = value["TopTypes"]["TopType"];
+	for (auto valueTopTypesTopType : allTopTypesNode)
 	{
 		TopType topTypesObject;
-		if(!value["Count"].isNull())
-			topTypesObject.count = std::stoi(value["Count"].asString());
-		if(!value["Type"].isNull())
-			topTypesObject.type = value["Type"].asString();
+		if(!valueTopTypesTopType["Count"].isNull())
+			topTypesObject.count = std::stoi(valueTopTypesTopType["Count"].asString());
+		if(!valueTopTypesTopType["Type"].isNull())
+			topTypesObject.type = valueTopTypesTopType["Type"].asString();
 		topTypes_.push_back(topTypesObject);
 	}
 	if(!value["TotalCount"].isNull())

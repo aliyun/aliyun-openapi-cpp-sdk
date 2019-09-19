@@ -39,20 +39,20 @@ void DescribeModifyParameterLogResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["ParameterChangeLog"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["ParameterChangeLog"];
+	for (auto valueItemsParameterChangeLog : allItemsNode)
 	{
 		ParameterChangeLog itemsObject;
-		if(!value["ModifyTime"].isNull())
-			itemsObject.modifyTime = value["ModifyTime"].asString();
-		if(!value["OldParameterValue"].isNull())
-			itemsObject.oldParameterValue = value["OldParameterValue"].asString();
-		if(!value["NewParameterValue"].isNull())
-			itemsObject.newParameterValue = value["NewParameterValue"].asString();
-		if(!value["ParameterName"].isNull())
-			itemsObject.parameterName = value["ParameterName"].asString();
-		if(!value["Status"].isNull())
-			itemsObject.status = value["Status"].asString();
+		if(!valueItemsParameterChangeLog["ModifyTime"].isNull())
+			itemsObject.modifyTime = valueItemsParameterChangeLog["ModifyTime"].asString();
+		if(!valueItemsParameterChangeLog["OldParameterValue"].isNull())
+			itemsObject.oldParameterValue = valueItemsParameterChangeLog["OldParameterValue"].asString();
+		if(!valueItemsParameterChangeLog["NewParameterValue"].isNull())
+			itemsObject.newParameterValue = valueItemsParameterChangeLog["NewParameterValue"].asString();
+		if(!valueItemsParameterChangeLog["ParameterName"].isNull())
+			itemsObject.parameterName = valueItemsParameterChangeLog["ParameterName"].asString();
+		if(!valueItemsParameterChangeLog["Status"].isNull())
+			itemsObject.status = valueItemsParameterChangeLog["Status"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Engine"].isNull())

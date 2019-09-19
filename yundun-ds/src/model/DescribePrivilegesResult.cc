@@ -39,48 +39,48 @@ void DescribePrivilegesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Privilege"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Privilege"];
+	for (auto valueItemsPrivilege : allItemsNode)
 	{
 		Privilege itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["AccountId"].isNull())
-			itemsObject.accountId = std::stol(value["AccountId"].asString());
-		if(!value["AccountType"].isNull())
-			itemsObject.accountType = std::stoi(value["AccountType"].asString());
-		if(!value["UseAccountId"].isNull())
-			itemsObject.useAccountId = std::stol(value["UseAccountId"].asString());
-		if(!value["UseAccountType"].isNull())
-			itemsObject.useAccountType = std::stoi(value["UseAccountType"].asString());
-		if(!value["ProductName"].isNull())
-			itemsObject.productName = value["ProductName"].asString();
-		if(!value["productCode"].isNull())
-			itemsObject.productCode = value["productCode"].asString();
-		if(!value["DataType"].isNull())
-			itemsObject.dataType = value["DataType"].asString();
-		if(!value["DataTypeId"].isNull())
-			itemsObject.dataTypeId = value["DataTypeId"].asString();
-		if(!value["DataTypeName"].isNull())
-			itemsObject.dataTypeName = value["DataTypeName"].asString();
-		if(!value["DataInstance"].isNull())
-			itemsObject.dataInstance = value["DataInstance"].asString();
-		if(!value["DataTable"].isNull())
-			itemsObject.dataTable = value["DataTable"].asString();
-		if(!value["DataColumn"].isNull())
-			itemsObject.dataColumn = value["DataColumn"].asString();
-		if(!value["DataPackage"].isNull())
-			itemsObject.dataPackage = value["DataPackage"].asString();
-		if(!value["ResourceName"].isNull())
-			itemsObject.resourceName = value["ResourceName"].asString();
-		if(!value["ResourcePath"].isNull())
-			itemsObject.resourcePath = value["ResourcePath"].asString();
-		if(!value["Operation"].isNull())
-			itemsObject.operation = value["Operation"].asString();
-		if(!value["PolicyCondition"].isNull())
-			itemsObject.policyCondition = value["PolicyCondition"].asString();
-		if(!value["Sensitive"].isNull())
-			itemsObject.sensitive = value["Sensitive"].asString();
+		if(!valueItemsPrivilege["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsPrivilege["Id"].asString());
+		if(!valueItemsPrivilege["AccountId"].isNull())
+			itemsObject.accountId = std::stol(valueItemsPrivilege["AccountId"].asString());
+		if(!valueItemsPrivilege["AccountType"].isNull())
+			itemsObject.accountType = std::stoi(valueItemsPrivilege["AccountType"].asString());
+		if(!valueItemsPrivilege["UseAccountId"].isNull())
+			itemsObject.useAccountId = std::stol(valueItemsPrivilege["UseAccountId"].asString());
+		if(!valueItemsPrivilege["UseAccountType"].isNull())
+			itemsObject.useAccountType = std::stoi(valueItemsPrivilege["UseAccountType"].asString());
+		if(!valueItemsPrivilege["ProductName"].isNull())
+			itemsObject.productName = valueItemsPrivilege["ProductName"].asString();
+		if(!valueItemsPrivilege["productCode"].isNull())
+			itemsObject.productCode = valueItemsPrivilege["productCode"].asString();
+		if(!valueItemsPrivilege["DataType"].isNull())
+			itemsObject.dataType = valueItemsPrivilege["DataType"].asString();
+		if(!valueItemsPrivilege["DataTypeId"].isNull())
+			itemsObject.dataTypeId = valueItemsPrivilege["DataTypeId"].asString();
+		if(!valueItemsPrivilege["DataTypeName"].isNull())
+			itemsObject.dataTypeName = valueItemsPrivilege["DataTypeName"].asString();
+		if(!valueItemsPrivilege["DataInstance"].isNull())
+			itemsObject.dataInstance = valueItemsPrivilege["DataInstance"].asString();
+		if(!valueItemsPrivilege["DataTable"].isNull())
+			itemsObject.dataTable = valueItemsPrivilege["DataTable"].asString();
+		if(!valueItemsPrivilege["DataColumn"].isNull())
+			itemsObject.dataColumn = valueItemsPrivilege["DataColumn"].asString();
+		if(!valueItemsPrivilege["DataPackage"].isNull())
+			itemsObject.dataPackage = valueItemsPrivilege["DataPackage"].asString();
+		if(!valueItemsPrivilege["ResourceName"].isNull())
+			itemsObject.resourceName = valueItemsPrivilege["ResourceName"].asString();
+		if(!valueItemsPrivilege["ResourcePath"].isNull())
+			itemsObject.resourcePath = valueItemsPrivilege["ResourcePath"].asString();
+		if(!valueItemsPrivilege["Operation"].isNull())
+			itemsObject.operation = valueItemsPrivilege["Operation"].asString();
+		if(!valueItemsPrivilege["PolicyCondition"].isNull())
+			itemsObject.policyCondition = valueItemsPrivilege["PolicyCondition"].asString();
+		if(!valueItemsPrivilege["Sensitive"].isNull())
+			itemsObject.sensitive = valueItemsPrivilege["Sensitive"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

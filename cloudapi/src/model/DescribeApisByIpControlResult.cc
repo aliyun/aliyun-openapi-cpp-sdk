@@ -39,28 +39,28 @@ void DescribeApisByIpControlResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allApiInfos = value["ApiInfos"]["ApiInfo"];
-	for (auto value : allApiInfos)
+	auto allApiInfosNode = value["ApiInfos"]["ApiInfo"];
+	for (auto valueApiInfosApiInfo : allApiInfosNode)
 	{
 		ApiInfo apiInfosObject;
-		if(!value["RegionId"].isNull())
-			apiInfosObject.regionId = value["RegionId"].asString();
-		if(!value["GroupId"].isNull())
-			apiInfosObject.groupId = value["GroupId"].asString();
-		if(!value["GroupName"].isNull())
-			apiInfosObject.groupName = value["GroupName"].asString();
-		if(!value["StageName"].isNull())
-			apiInfosObject.stageName = value["StageName"].asString();
-		if(!value["ApiId"].isNull())
-			apiInfosObject.apiId = value["ApiId"].asString();
-		if(!value["ApiName"].isNull())
-			apiInfosObject.apiName = value["ApiName"].asString();
-		if(!value["Description"].isNull())
-			apiInfosObject.description = value["Description"].asString();
-		if(!value["Visibility"].isNull())
-			apiInfosObject.visibility = value["Visibility"].asString();
-		if(!value["BoundTime"].isNull())
-			apiInfosObject.boundTime = value["BoundTime"].asString();
+		if(!valueApiInfosApiInfo["RegionId"].isNull())
+			apiInfosObject.regionId = valueApiInfosApiInfo["RegionId"].asString();
+		if(!valueApiInfosApiInfo["GroupId"].isNull())
+			apiInfosObject.groupId = valueApiInfosApiInfo["GroupId"].asString();
+		if(!valueApiInfosApiInfo["GroupName"].isNull())
+			apiInfosObject.groupName = valueApiInfosApiInfo["GroupName"].asString();
+		if(!valueApiInfosApiInfo["StageName"].isNull())
+			apiInfosObject.stageName = valueApiInfosApiInfo["StageName"].asString();
+		if(!valueApiInfosApiInfo["ApiId"].isNull())
+			apiInfosObject.apiId = valueApiInfosApiInfo["ApiId"].asString();
+		if(!valueApiInfosApiInfo["ApiName"].isNull())
+			apiInfosObject.apiName = valueApiInfosApiInfo["ApiName"].asString();
+		if(!valueApiInfosApiInfo["Description"].isNull())
+			apiInfosObject.description = valueApiInfosApiInfo["Description"].asString();
+		if(!valueApiInfosApiInfo["Visibility"].isNull())
+			apiInfosObject.visibility = valueApiInfosApiInfo["Visibility"].asString();
+		if(!valueApiInfosApiInfo["BoundTime"].isNull())
+			apiInfosObject.boundTime = valueApiInfosApiInfo["BoundTime"].asString();
 		apiInfos_.push_back(apiInfosObject);
 	}
 	if(!value["TotalCount"].isNull())

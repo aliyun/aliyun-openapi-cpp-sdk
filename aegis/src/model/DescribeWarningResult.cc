@@ -39,46 +39,46 @@ void DescribeWarningResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allWarnings = value["Warnings"]["Warning"];
-	for (auto value : allWarnings)
+	auto allWarningsNode = value["Warnings"]["Warning"];
+	for (auto valueWarningsWarning : allWarningsNode)
 	{
 		Warning warningsObject;
-		if(!value["RiskWarningId"].isNull())
-			warningsObject.riskWarningId = std::stol(value["RiskWarningId"].asString());
-		if(!value["RiskName"].isNull())
-			warningsObject.riskName = value["RiskName"].asString();
-		if(!value["Uuid"].isNull())
-			warningsObject.uuid = value["Uuid"].asString();
-		if(!value["RirstFoundTime"].isNull())
-			warningsObject.rirstFoundTime = value["RirstFoundTime"].asString();
-		if(!value["LastFoundTime"].isNull())
-			warningsObject.lastFoundTime = value["LastFoundTime"].asString();
-		if(!value["Level"].isNull())
-			warningsObject.level = value["Level"].asString();
-		if(!value["TypeName"].isNull())
-			warningsObject.typeName = value["TypeName"].asString();
-		if(!value["SubTypeName"].isNull())
-			warningsObject.subTypeName = value["SubTypeName"].asString();
-		if(!value["TypeAlias"].isNull())
-			warningsObject.typeAlias = value["TypeAlias"].asString();
-		if(!value["SubTypeAlias"].isNull())
-			warningsObject.subTypeAlias = value["SubTypeAlias"].asString();
-		if(!value["Status"].isNull())
-			warningsObject.status = std::stoi(value["Status"].asString());
-		auto allDetails = value["Details"]["Detail"];
-		for (auto value : allDetails)
+		if(!valueWarningsWarning["RiskWarningId"].isNull())
+			warningsObject.riskWarningId = std::stol(valueWarningsWarning["RiskWarningId"].asString());
+		if(!valueWarningsWarning["RiskName"].isNull())
+			warningsObject.riskName = valueWarningsWarning["RiskName"].asString();
+		if(!valueWarningsWarning["Uuid"].isNull())
+			warningsObject.uuid = valueWarningsWarning["Uuid"].asString();
+		if(!valueWarningsWarning["RirstFoundTime"].isNull())
+			warningsObject.rirstFoundTime = valueWarningsWarning["RirstFoundTime"].asString();
+		if(!valueWarningsWarning["LastFoundTime"].isNull())
+			warningsObject.lastFoundTime = valueWarningsWarning["LastFoundTime"].asString();
+		if(!valueWarningsWarning["Level"].isNull())
+			warningsObject.level = valueWarningsWarning["Level"].asString();
+		if(!valueWarningsWarning["TypeName"].isNull())
+			warningsObject.typeName = valueWarningsWarning["TypeName"].asString();
+		if(!valueWarningsWarning["SubTypeName"].isNull())
+			warningsObject.subTypeName = valueWarningsWarning["SubTypeName"].asString();
+		if(!valueWarningsWarning["TypeAlias"].isNull())
+			warningsObject.typeAlias = valueWarningsWarning["TypeAlias"].asString();
+		if(!valueWarningsWarning["SubTypeAlias"].isNull())
+			warningsObject.subTypeAlias = valueWarningsWarning["SubTypeAlias"].asString();
+		if(!valueWarningsWarning["Status"].isNull())
+			warningsObject.status = std::stoi(valueWarningsWarning["Status"].asString());
+		auto allDetailsNode = allWarningsNode["Details"]["Detail"];
+		for (auto allWarningsNodeDetailsDetail : allDetailsNode)
 		{
 			Warning::Detail detailsObject;
-			auto allDetailItems = value["DetailItems"]["DetailItem"];
-			for (auto value : allDetailItems)
+			auto allDetailItemsNode = allDetailsNode["DetailItems"]["DetailItem"];
+			for (auto allDetailsNodeDetailItemsDetailItem : allDetailItemsNode)
 			{
 				Warning::Detail::DetailItem detailItemsObject;
-				if(!value["name"].isNull())
-					detailItemsObject.name = value["name"].asString();
-				if(!value["value"].isNull())
-					detailItemsObject.value = value["value"].asString();
-				if(!value["type"].isNull())
-					detailItemsObject.type = value["type"].asString();
+				if(!allDetailsNodeDetailItemsDetailItem["name"].isNull())
+					detailItemsObject.name = allDetailsNodeDetailItemsDetailItem["name"].asString();
+				if(!allDetailsNodeDetailItemsDetailItem["value"].isNull())
+					detailItemsObject.value = allDetailsNodeDetailItemsDetailItem["value"].asString();
+				if(!allDetailsNodeDetailItemsDetailItem["type"].isNull())
+					detailItemsObject.type = allDetailsNodeDetailItemsDetailItem["type"].asString();
 				detailsObject.detailItems.push_back(detailItemsObject);
 			}
 			warningsObject.details.push_back(detailsObject);

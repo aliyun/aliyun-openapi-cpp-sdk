@@ -39,20 +39,20 @@ void ListProductByTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProductInfos = value["ProductInfos"]["ProductInfo"];
-	for (auto value : allProductInfos)
+	auto allProductInfosNode = value["ProductInfos"]["ProductInfo"];
+	for (auto valueProductInfosProductInfo : allProductInfosNode)
 	{
 		ProductInfo productInfosObject;
-		if(!value["ProductName"].isNull())
-			productInfosObject.productName = value["ProductName"].asString();
-		if(!value["ProductKey"].isNull())
-			productInfosObject.productKey = value["ProductKey"].asString();
-		if(!value["CreateTime"].isNull())
-			productInfosObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["Description"].isNull())
-			productInfosObject.description = value["Description"].asString();
-		if(!value["NodeType"].isNull())
-			productInfosObject.nodeType = std::stoi(value["NodeType"].asString());
+		if(!valueProductInfosProductInfo["ProductName"].isNull())
+			productInfosObject.productName = valueProductInfosProductInfo["ProductName"].asString();
+		if(!valueProductInfosProductInfo["ProductKey"].isNull())
+			productInfosObject.productKey = valueProductInfosProductInfo["ProductKey"].asString();
+		if(!valueProductInfosProductInfo["CreateTime"].isNull())
+			productInfosObject.createTime = std::stol(valueProductInfosProductInfo["CreateTime"].asString());
+		if(!valueProductInfosProductInfo["Description"].isNull())
+			productInfosObject.description = valueProductInfosProductInfo["Description"].asString();
+		if(!valueProductInfosProductInfo["NodeType"].isNull())
+			productInfosObject.nodeType = std::stoi(valueProductInfosProductInfo["NodeType"].asString());
 		productInfos_.push_back(productInfosObject);
 	}
 	if(!value["Success"].isNull())

@@ -39,48 +39,48 @@ void ListInstancesOfUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstances = value["Instances"]["CallCenterInstance"];
-	for (auto value : allInstances)
+	auto allInstancesNode = value["Instances"]["CallCenterInstance"];
+	for (auto valueInstancesCallCenterInstance : allInstancesNode)
 	{
 		CallCenterInstance instancesObject;
-		if(!value["InstanceId"].isNull())
-			instancesObject.instanceId = value["InstanceId"].asString();
-		if(!value["InstanceName"].isNull())
-			instancesObject.instanceName = value["InstanceName"].asString();
-		if(!value["InstanceDescription"].isNull())
-			instancesObject.instanceDescription = value["InstanceDescription"].asString();
-		if(!value["DomainName"].isNull())
-			instancesObject.domainName = value["DomainName"].asString();
-		if(!value["ConsoleUrl"].isNull())
-			instancesObject.consoleUrl = value["ConsoleUrl"].asString();
-		if(!value["StorageBucket"].isNull())
-			instancesObject.storageBucket = value["StorageBucket"].asString();
-		if(!value["StorageMaxDays"].isNull())
-			instancesObject.storageMaxDays = std::stoi(value["StorageMaxDays"].asString());
-		if(!value["StorageMaxSize"].isNull())
-			instancesObject.storageMaxSize = std::stoi(value["StorageMaxSize"].asString());
-		if(!value["MaxOnlineAgents"].isNull())
-			instancesObject.maxOnlineAgents = std::stoi(value["MaxOnlineAgents"].asString());
-		if(!value["TenantId"].isNull())
-			instancesObject.tenantId = value["TenantId"].asString();
-		if(!value["DirectoryId"].isNull())
-			instancesObject.directoryId = value["DirectoryId"].asString();
-		if(!value["Status"].isNull())
-			instancesObject.status = value["Status"].asString();
-		if(!value["CreatedTime"].isNull())
-			instancesObject.createdTime = std::stol(value["CreatedTime"].asString());
-		if(!value["Owner"].isNull())
-			instancesObject.owner = value["Owner"].asString();
-		auto allAdmin = value["Admin"]["User"];
-		for (auto value : allAdmin)
+		if(!valueInstancesCallCenterInstance["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesCallCenterInstance["InstanceId"].asString();
+		if(!valueInstancesCallCenterInstance["InstanceName"].isNull())
+			instancesObject.instanceName = valueInstancesCallCenterInstance["InstanceName"].asString();
+		if(!valueInstancesCallCenterInstance["InstanceDescription"].isNull())
+			instancesObject.instanceDescription = valueInstancesCallCenterInstance["InstanceDescription"].asString();
+		if(!valueInstancesCallCenterInstance["DomainName"].isNull())
+			instancesObject.domainName = valueInstancesCallCenterInstance["DomainName"].asString();
+		if(!valueInstancesCallCenterInstance["ConsoleUrl"].isNull())
+			instancesObject.consoleUrl = valueInstancesCallCenterInstance["ConsoleUrl"].asString();
+		if(!valueInstancesCallCenterInstance["StorageBucket"].isNull())
+			instancesObject.storageBucket = valueInstancesCallCenterInstance["StorageBucket"].asString();
+		if(!valueInstancesCallCenterInstance["StorageMaxDays"].isNull())
+			instancesObject.storageMaxDays = std::stoi(valueInstancesCallCenterInstance["StorageMaxDays"].asString());
+		if(!valueInstancesCallCenterInstance["StorageMaxSize"].isNull())
+			instancesObject.storageMaxSize = std::stoi(valueInstancesCallCenterInstance["StorageMaxSize"].asString());
+		if(!valueInstancesCallCenterInstance["MaxOnlineAgents"].isNull())
+			instancesObject.maxOnlineAgents = std::stoi(valueInstancesCallCenterInstance["MaxOnlineAgents"].asString());
+		if(!valueInstancesCallCenterInstance["TenantId"].isNull())
+			instancesObject.tenantId = valueInstancesCallCenterInstance["TenantId"].asString();
+		if(!valueInstancesCallCenterInstance["DirectoryId"].isNull())
+			instancesObject.directoryId = valueInstancesCallCenterInstance["DirectoryId"].asString();
+		if(!valueInstancesCallCenterInstance["Status"].isNull())
+			instancesObject.status = valueInstancesCallCenterInstance["Status"].asString();
+		if(!valueInstancesCallCenterInstance["CreatedTime"].isNull())
+			instancesObject.createdTime = std::stol(valueInstancesCallCenterInstance["CreatedTime"].asString());
+		if(!valueInstancesCallCenterInstance["Owner"].isNull())
+			instancesObject.owner = valueInstancesCallCenterInstance["Owner"].asString();
+		auto allAdminNode = allInstancesNode["Admin"]["User"];
+		for (auto allInstancesNodeAdminUser : allAdminNode)
 		{
 			CallCenterInstance::User adminObject;
-			if(!value["UserId"].isNull())
-				adminObject.userId = value["UserId"].asString();
-			if(!value["RamId"].isNull())
-				adminObject.ramId = value["RamId"].asString();
-			if(!value["InstanceId"].isNull())
-				adminObject.instanceId = value["InstanceId"].asString();
+			if(!allInstancesNodeAdminUser["UserId"].isNull())
+				adminObject.userId = allInstancesNodeAdminUser["UserId"].asString();
+			if(!allInstancesNodeAdminUser["RamId"].isNull())
+				adminObject.ramId = allInstancesNodeAdminUser["RamId"].asString();
+			if(!allInstancesNodeAdminUser["InstanceId"].isNull())
+				adminObject.instanceId = allInstancesNodeAdminUser["InstanceId"].asString();
 			auto detailNode = value["Detail"];
 			if(!detailNode["LoginName"].isNull())
 				adminObject.detail.loginName = detailNode["LoginName"].asString();
@@ -94,28 +94,28 @@ void ListInstancesOfUserResult::parse(const std::string &payload)
 				adminObject.detail.department = detailNode["Department"].asString();
 			instancesObject.admin.push_back(adminObject);
 		}
-		auto allPhoneNumbers = value["PhoneNumbers"]["PhoneNumber"];
-		for (auto value : allPhoneNumbers)
+		auto allPhoneNumbersNode = allInstancesNode["PhoneNumbers"]["PhoneNumber"];
+		for (auto allInstancesNodePhoneNumbersPhoneNumber : allPhoneNumbersNode)
 		{
 			CallCenterInstance::PhoneNumber phoneNumbersObject;
-			if(!value["PhoneNumberId"].isNull())
-				phoneNumbersObject.phoneNumberId = value["PhoneNumberId"].asString();
-			if(!value["InstanceId"].isNull())
-				phoneNumbersObject.instanceId = value["InstanceId"].asString();
-			if(!value["Number"].isNull())
-				phoneNumbersObject.number = value["Number"].asString();
-			if(!value["PhoneNumberDescription"].isNull())
-				phoneNumbersObject.phoneNumberDescription = value["PhoneNumberDescription"].asString();
-			if(!value["TestOnly"].isNull())
-				phoneNumbersObject.testOnly = value["TestOnly"].asString() == "true";
-			if(!value["RemainingTime"].isNull())
-				phoneNumbersObject.remainingTime = std::stoi(value["RemainingTime"].asString());
-			if(!value["AllowOutbound"].isNull())
-				phoneNumbersObject.allowOutbound = value["AllowOutbound"].asString() == "true";
-			if(!value["Usage"].isNull())
-				phoneNumbersObject.usage = value["Usage"].asString();
-			if(!value["Trunks"].isNull())
-				phoneNumbersObject.trunks = std::stoi(value["Trunks"].asString());
+			if(!allInstancesNodePhoneNumbersPhoneNumber["PhoneNumberId"].isNull())
+				phoneNumbersObject.phoneNumberId = allInstancesNodePhoneNumbersPhoneNumber["PhoneNumberId"].asString();
+			if(!allInstancesNodePhoneNumbersPhoneNumber["InstanceId"].isNull())
+				phoneNumbersObject.instanceId = allInstancesNodePhoneNumbersPhoneNumber["InstanceId"].asString();
+			if(!allInstancesNodePhoneNumbersPhoneNumber["Number"].isNull())
+				phoneNumbersObject.number = allInstancesNodePhoneNumbersPhoneNumber["Number"].asString();
+			if(!allInstancesNodePhoneNumbersPhoneNumber["PhoneNumberDescription"].isNull())
+				phoneNumbersObject.phoneNumberDescription = allInstancesNodePhoneNumbersPhoneNumber["PhoneNumberDescription"].asString();
+			if(!allInstancesNodePhoneNumbersPhoneNumber["TestOnly"].isNull())
+				phoneNumbersObject.testOnly = allInstancesNodePhoneNumbersPhoneNumber["TestOnly"].asString() == "true";
+			if(!allInstancesNodePhoneNumbersPhoneNumber["RemainingTime"].isNull())
+				phoneNumbersObject.remainingTime = std::stoi(allInstancesNodePhoneNumbersPhoneNumber["RemainingTime"].asString());
+			if(!allInstancesNodePhoneNumbersPhoneNumber["AllowOutbound"].isNull())
+				phoneNumbersObject.allowOutbound = allInstancesNodePhoneNumbersPhoneNumber["AllowOutbound"].asString() == "true";
+			if(!allInstancesNodePhoneNumbersPhoneNumber["Usage"].isNull())
+				phoneNumbersObject.usage = allInstancesNodePhoneNumbersPhoneNumber["Usage"].asString();
+			if(!allInstancesNodePhoneNumbersPhoneNumber["Trunks"].isNull())
+				phoneNumbersObject.trunks = std::stoi(allInstancesNodePhoneNumbersPhoneNumber["Trunks"].asString());
 			instancesObject.phoneNumbers.push_back(phoneNumbersObject);
 		}
 		instances_.push_back(instancesObject);

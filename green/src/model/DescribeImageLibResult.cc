@@ -39,30 +39,30 @@ void DescribeImageLibResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allImageLibList = value["ImageLibList"]["ImageLib"];
-	for (auto value : allImageLibList)
+	auto allImageLibListNode = value["ImageLibList"]["ImageLib"];
+	for (auto valueImageLibListImageLib : allImageLibListNode)
 	{
 		ImageLib imageLibListObject;
-		if(!value["ImageCount"].isNull())
-			imageLibListObject.imageCount = std::stoi(value["ImageCount"].asString());
-		if(!value["ModifiedTime"].isNull())
-			imageLibListObject.modifiedTime = value["ModifiedTime"].asString();
-		if(!value["Code"].isNull())
-			imageLibListObject.code = value["Code"].asString();
-		if(!value["Name"].isNull())
-			imageLibListObject.name = value["Name"].asString();
-		if(!value["Id"].isNull())
-			imageLibListObject.id = std::stoi(value["Id"].asString());
-		if(!value["Source"].isNull())
-			imageLibListObject.source = value["Source"].asString();
-		if(!value["Category"].isNull())
-			imageLibListObject.category = value["Category"].asString();
-		if(!value["ServiceModule"].isNull())
-			imageLibListObject.serviceModule = value["ServiceModule"].asString();
-		if(!value["Scene"].isNull())
-			imageLibListObject.scene = value["Scene"].asString();
-		if(!value["Enable"].isNull())
-			imageLibListObject.enable = value["Enable"].asString();
+		if(!valueImageLibListImageLib["ImageCount"].isNull())
+			imageLibListObject.imageCount = std::stoi(valueImageLibListImageLib["ImageCount"].asString());
+		if(!valueImageLibListImageLib["ModifiedTime"].isNull())
+			imageLibListObject.modifiedTime = valueImageLibListImageLib["ModifiedTime"].asString();
+		if(!valueImageLibListImageLib["Code"].isNull())
+			imageLibListObject.code = valueImageLibListImageLib["Code"].asString();
+		if(!valueImageLibListImageLib["Name"].isNull())
+			imageLibListObject.name = valueImageLibListImageLib["Name"].asString();
+		if(!valueImageLibListImageLib["Id"].isNull())
+			imageLibListObject.id = std::stoi(valueImageLibListImageLib["Id"].asString());
+		if(!valueImageLibListImageLib["Source"].isNull())
+			imageLibListObject.source = valueImageLibListImageLib["Source"].asString();
+		if(!valueImageLibListImageLib["Category"].isNull())
+			imageLibListObject.category = valueImageLibListImageLib["Category"].asString();
+		if(!valueImageLibListImageLib["ServiceModule"].isNull())
+			imageLibListObject.serviceModule = valueImageLibListImageLib["ServiceModule"].asString();
+		if(!valueImageLibListImageLib["Scene"].isNull())
+			imageLibListObject.scene = valueImageLibListImageLib["Scene"].asString();
+		if(!valueImageLibListImageLib["Enable"].isNull())
+			imageLibListObject.enable = valueImageLibListImageLib["Enable"].asString();
 		auto allBizTypes = value["BizTypes"]["StringItem"];
 		for (auto value : allBizTypes)
 			imageLibListObject.bizTypes.push_back(value.asString());

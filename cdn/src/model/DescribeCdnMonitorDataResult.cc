@@ -39,22 +39,22 @@ void DescribeCdnMonitorDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMonitorDatas = value["MonitorDatas"]["CDNMonitorData"];
-	for (auto value : allMonitorDatas)
+	auto allMonitorDatasNode = value["MonitorDatas"]["CDNMonitorData"];
+	for (auto valueMonitorDatasCDNMonitorData : allMonitorDatasNode)
 	{
 		CDNMonitorData monitorDatasObject;
-		if(!value["TimeStamp"].isNull())
-			monitorDatasObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["BytesPerSecond"].isNull())
-			monitorDatasObject.bytesPerSecond = value["BytesPerSecond"].asString();
-		if(!value["QueryPerSecond"].isNull())
-			monitorDatasObject.queryPerSecond = value["QueryPerSecond"].asString();
-		if(!value["RequestHitRate"].isNull())
-			monitorDatasObject.requestHitRate = value["RequestHitRate"].asString();
-		if(!value["BytesHitRate"].isNull())
-			monitorDatasObject.bytesHitRate = value["BytesHitRate"].asString();
-		if(!value["AverageObjectSize"].isNull())
-			monitorDatasObject.averageObjectSize = value["AverageObjectSize"].asString();
+		if(!valueMonitorDatasCDNMonitorData["TimeStamp"].isNull())
+			monitorDatasObject.timeStamp = valueMonitorDatasCDNMonitorData["TimeStamp"].asString();
+		if(!valueMonitorDatasCDNMonitorData["BytesPerSecond"].isNull())
+			monitorDatasObject.bytesPerSecond = valueMonitorDatasCDNMonitorData["BytesPerSecond"].asString();
+		if(!valueMonitorDatasCDNMonitorData["QueryPerSecond"].isNull())
+			monitorDatasObject.queryPerSecond = valueMonitorDatasCDNMonitorData["QueryPerSecond"].asString();
+		if(!valueMonitorDatasCDNMonitorData["RequestHitRate"].isNull())
+			monitorDatasObject.requestHitRate = valueMonitorDatasCDNMonitorData["RequestHitRate"].asString();
+		if(!valueMonitorDatasCDNMonitorData["BytesHitRate"].isNull())
+			monitorDatasObject.bytesHitRate = valueMonitorDatasCDNMonitorData["BytesHitRate"].asString();
+		if(!valueMonitorDatasCDNMonitorData["AverageObjectSize"].isNull())
+			monitorDatasObject.averageObjectSize = valueMonitorDatasCDNMonitorData["AverageObjectSize"].asString();
 		monitorDatas_.push_back(monitorDatasObject);
 	}
 	if(!value["DomainName"].isNull())

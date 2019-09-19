@@ -39,28 +39,28 @@ void DescribeCommandsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCommands = value["Commands"]["Command"];
-	for (auto value : allCommands)
+	auto allCommandsNode = value["Commands"]["Command"];
+	for (auto valueCommandsCommand : allCommandsNode)
 	{
 		Command commandsObject;
-		if(!value["CommandId"].isNull())
-			commandsObject.commandId = value["CommandId"].asString();
-		if(!value["Name"].isNull())
-			commandsObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			commandsObject.type = value["Type"].asString();
-		if(!value["Description"].isNull())
-			commandsObject.description = value["Description"].asString();
-		if(!value["CommandContent"].isNull())
-			commandsObject.commandContent = value["CommandContent"].asString();
-		if(!value["WorkingDir"].isNull())
-			commandsObject.workingDir = value["WorkingDir"].asString();
-		if(!value["Timeout"].isNull())
-			commandsObject.timeout = std::stol(value["Timeout"].asString());
-		if(!value["CreationTime"].isNull())
-			commandsObject.creationTime = value["CreationTime"].asString();
-		if(!value["EnableParameter"].isNull())
-			commandsObject.enableParameter = value["EnableParameter"].asString() == "true";
+		if(!valueCommandsCommand["CommandId"].isNull())
+			commandsObject.commandId = valueCommandsCommand["CommandId"].asString();
+		if(!valueCommandsCommand["Name"].isNull())
+			commandsObject.name = valueCommandsCommand["Name"].asString();
+		if(!valueCommandsCommand["Type"].isNull())
+			commandsObject.type = valueCommandsCommand["Type"].asString();
+		if(!valueCommandsCommand["Description"].isNull())
+			commandsObject.description = valueCommandsCommand["Description"].asString();
+		if(!valueCommandsCommand["CommandContent"].isNull())
+			commandsObject.commandContent = valueCommandsCommand["CommandContent"].asString();
+		if(!valueCommandsCommand["WorkingDir"].isNull())
+			commandsObject.workingDir = valueCommandsCommand["WorkingDir"].asString();
+		if(!valueCommandsCommand["Timeout"].isNull())
+			commandsObject.timeout = std::stol(valueCommandsCommand["Timeout"].asString());
+		if(!valueCommandsCommand["CreationTime"].isNull())
+			commandsObject.creationTime = valueCommandsCommand["CreationTime"].asString();
+		if(!valueCommandsCommand["EnableParameter"].isNull())
+			commandsObject.enableParameter = valueCommandsCommand["EnableParameter"].asString() == "true";
 		auto allParameterNames = value["ParameterNames"]["ParameterName"];
 		for (auto value : allParameterNames)
 			commandsObject.parameterNames.push_back(value.asString());

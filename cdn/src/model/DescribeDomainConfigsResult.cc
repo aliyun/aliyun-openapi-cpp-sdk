@@ -40,100 +40,100 @@ void DescribeDomainConfigsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto domainConfigsNode = value["DomainConfigs"];
-	auto allCacheExpiredConfigs = value["CacheExpiredConfigs"]["CacheExpiredConfig"];
-	for (auto value : allCacheExpiredConfigs)
+	auto allCacheExpiredConfigsNode = domainConfigsNode["CacheExpiredConfigs"]["CacheExpiredConfig"];
+	for (auto domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig : allCacheExpiredConfigsNode)
 	{
 		DomainConfigs::CacheExpiredConfig cacheExpiredConfigObject;
-		if(!value["ConfigId"].isNull())
-			cacheExpiredConfigObject.configId = value["ConfigId"].asString();
-		if(!value["CacheType"].isNull())
-			cacheExpiredConfigObject.cacheType = value["CacheType"].asString();
-		if(!value["CacheContent"].isNull())
-			cacheExpiredConfigObject.cacheContent = value["CacheContent"].asString();
-		if(!value["TTL"].isNull())
-			cacheExpiredConfigObject.tTL = value["TTL"].asString();
-		if(!value["Weight"].isNull())
-			cacheExpiredConfigObject.weight = value["Weight"].asString();
-		if(!value["Status"].isNull())
-			cacheExpiredConfigObject.status = value["Status"].asString();
+		if(!domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["ConfigId"].isNull())
+			cacheExpiredConfigObject.configId = domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["ConfigId"].asString();
+		if(!domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["CacheType"].isNull())
+			cacheExpiredConfigObject.cacheType = domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["CacheType"].asString();
+		if(!domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["CacheContent"].isNull())
+			cacheExpiredConfigObject.cacheContent = domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["CacheContent"].asString();
+		if(!domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["TTL"].isNull())
+			cacheExpiredConfigObject.tTL = domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["TTL"].asString();
+		if(!domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["Weight"].isNull())
+			cacheExpiredConfigObject.weight = domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["Weight"].asString();
+		if(!domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["Status"].isNull())
+			cacheExpiredConfigObject.status = domainConfigsNodeCacheExpiredConfigsCacheExpiredConfig["Status"].asString();
 		domainConfigs_.cacheExpiredConfigs.push_back(cacheExpiredConfigObject);
 	}
-	auto allHttpErrorPageConfigs = value["HttpErrorPageConfigs"]["HttpErrorPageConfig"];
-	for (auto value : allHttpErrorPageConfigs)
+	auto allHttpErrorPageConfigsNode = domainConfigsNode["HttpErrorPageConfigs"]["HttpErrorPageConfig"];
+	for (auto domainConfigsNodeHttpErrorPageConfigsHttpErrorPageConfig : allHttpErrorPageConfigsNode)
 	{
 		DomainConfigs::HttpErrorPageConfig httpErrorPageConfigObject;
-		if(!value["ConfigId"].isNull())
-			httpErrorPageConfigObject.configId = value["ConfigId"].asString();
-		if(!value["ErrorCode"].isNull())
-			httpErrorPageConfigObject.errorCode = value["ErrorCode"].asString();
-		if(!value["PageUrl"].isNull())
-			httpErrorPageConfigObject.pageUrl = value["PageUrl"].asString();
-		if(!value["Status"].isNull())
-			httpErrorPageConfigObject.status = value["Status"].asString();
+		if(!domainConfigsNodeHttpErrorPageConfigsHttpErrorPageConfig["ConfigId"].isNull())
+			httpErrorPageConfigObject.configId = domainConfigsNodeHttpErrorPageConfigsHttpErrorPageConfig["ConfigId"].asString();
+		if(!domainConfigsNodeHttpErrorPageConfigsHttpErrorPageConfig["ErrorCode"].isNull())
+			httpErrorPageConfigObject.errorCode = domainConfigsNodeHttpErrorPageConfigsHttpErrorPageConfig["ErrorCode"].asString();
+		if(!domainConfigsNodeHttpErrorPageConfigsHttpErrorPageConfig["PageUrl"].isNull())
+			httpErrorPageConfigObject.pageUrl = domainConfigsNodeHttpErrorPageConfigsHttpErrorPageConfig["PageUrl"].asString();
+		if(!domainConfigsNodeHttpErrorPageConfigsHttpErrorPageConfig["Status"].isNull())
+			httpErrorPageConfigObject.status = domainConfigsNodeHttpErrorPageConfigsHttpErrorPageConfig["Status"].asString();
 		domainConfigs_.httpErrorPageConfigs.push_back(httpErrorPageConfigObject);
 	}
-	auto allHttpHeaderConfigs = value["HttpHeaderConfigs"]["HttpHeaderConfig"];
-	for (auto value : allHttpHeaderConfigs)
+	auto allHttpHeaderConfigsNode = domainConfigsNode["HttpHeaderConfigs"]["HttpHeaderConfig"];
+	for (auto domainConfigsNodeHttpHeaderConfigsHttpHeaderConfig : allHttpHeaderConfigsNode)
 	{
 		DomainConfigs::HttpHeaderConfig httpHeaderConfigObject;
-		if(!value["ConfigId"].isNull())
-			httpHeaderConfigObject.configId = value["ConfigId"].asString();
-		if(!value["HeaderKey"].isNull())
-			httpHeaderConfigObject.headerKey = value["HeaderKey"].asString();
-		if(!value["HeaderValue"].isNull())
-			httpHeaderConfigObject.headerValue = value["HeaderValue"].asString();
-		if(!value["Status"].isNull())
-			httpHeaderConfigObject.status = value["Status"].asString();
+		if(!domainConfigsNodeHttpHeaderConfigsHttpHeaderConfig["ConfigId"].isNull())
+			httpHeaderConfigObject.configId = domainConfigsNodeHttpHeaderConfigsHttpHeaderConfig["ConfigId"].asString();
+		if(!domainConfigsNodeHttpHeaderConfigsHttpHeaderConfig["HeaderKey"].isNull())
+			httpHeaderConfigObject.headerKey = domainConfigsNodeHttpHeaderConfigsHttpHeaderConfig["HeaderKey"].asString();
+		if(!domainConfigsNodeHttpHeaderConfigsHttpHeaderConfig["HeaderValue"].isNull())
+			httpHeaderConfigObject.headerValue = domainConfigsNodeHttpHeaderConfigsHttpHeaderConfig["HeaderValue"].asString();
+		if(!domainConfigsNodeHttpHeaderConfigsHttpHeaderConfig["Status"].isNull())
+			httpHeaderConfigObject.status = domainConfigsNodeHttpHeaderConfigsHttpHeaderConfig["Status"].asString();
 		domainConfigs_.httpHeaderConfigs.push_back(httpHeaderConfigObject);
 	}
-	auto allDynamicConfigs = value["DynamicConfigs"]["DynamicConfig"];
-	for (auto value : allDynamicConfigs)
+	auto allDynamicConfigsNode = domainConfigsNode["DynamicConfigs"]["DynamicConfig"];
+	for (auto domainConfigsNodeDynamicConfigsDynamicConfig : allDynamicConfigsNode)
 	{
 		DomainConfigs::DynamicConfig dynamicConfigObject;
-		if(!value["ConfigId"].isNull())
-			dynamicConfigObject.configId = value["ConfigId"].asString();
-		if(!value["Enable"].isNull())
-			dynamicConfigObject.enable = value["Enable"].asString();
-		if(!value["DynamicOrigin"].isNull())
-			dynamicConfigObject.dynamicOrigin = value["DynamicOrigin"].asString();
-		if(!value["StaticType"].isNull())
-			dynamicConfigObject.staticType = value["StaticType"].asString();
-		if(!value["StaticUri"].isNull())
-			dynamicConfigObject.staticUri = value["StaticUri"].asString();
-		if(!value["StaticPath"].isNull())
-			dynamicConfigObject.staticPath = value["StaticPath"].asString();
-		if(!value["DynamicCacheControl"].isNull())
-			dynamicConfigObject.dynamicCacheControl = value["DynamicCacheControl"].asString();
-		if(!value["Status"].isNull())
-			dynamicConfigObject.status = value["Status"].asString();
+		if(!domainConfigsNodeDynamicConfigsDynamicConfig["ConfigId"].isNull())
+			dynamicConfigObject.configId = domainConfigsNodeDynamicConfigsDynamicConfig["ConfigId"].asString();
+		if(!domainConfigsNodeDynamicConfigsDynamicConfig["Enable"].isNull())
+			dynamicConfigObject.enable = domainConfigsNodeDynamicConfigsDynamicConfig["Enable"].asString();
+		if(!domainConfigsNodeDynamicConfigsDynamicConfig["DynamicOrigin"].isNull())
+			dynamicConfigObject.dynamicOrigin = domainConfigsNodeDynamicConfigsDynamicConfig["DynamicOrigin"].asString();
+		if(!domainConfigsNodeDynamicConfigsDynamicConfig["StaticType"].isNull())
+			dynamicConfigObject.staticType = domainConfigsNodeDynamicConfigsDynamicConfig["StaticType"].asString();
+		if(!domainConfigsNodeDynamicConfigsDynamicConfig["StaticUri"].isNull())
+			dynamicConfigObject.staticUri = domainConfigsNodeDynamicConfigsDynamicConfig["StaticUri"].asString();
+		if(!domainConfigsNodeDynamicConfigsDynamicConfig["StaticPath"].isNull())
+			dynamicConfigObject.staticPath = domainConfigsNodeDynamicConfigsDynamicConfig["StaticPath"].asString();
+		if(!domainConfigsNodeDynamicConfigsDynamicConfig["DynamicCacheControl"].isNull())
+			dynamicConfigObject.dynamicCacheControl = domainConfigsNodeDynamicConfigsDynamicConfig["DynamicCacheControl"].asString();
+		if(!domainConfigsNodeDynamicConfigsDynamicConfig["Status"].isNull())
+			dynamicConfigObject.status = domainConfigsNodeDynamicConfigsDynamicConfig["Status"].asString();
 		domainConfigs_.dynamicConfigs.push_back(dynamicConfigObject);
 	}
-	auto allReqHeaderConfigs = value["ReqHeaderConfigs"]["ReqHeaderConfig"];
-	for (auto value : allReqHeaderConfigs)
+	auto allReqHeaderConfigsNode = domainConfigsNode["ReqHeaderConfigs"]["ReqHeaderConfig"];
+	for (auto domainConfigsNodeReqHeaderConfigsReqHeaderConfig : allReqHeaderConfigsNode)
 	{
 		DomainConfigs::ReqHeaderConfig reqHeaderConfigObject;
-		if(!value["ConfigId"].isNull())
-			reqHeaderConfigObject.configId = value["ConfigId"].asString();
-		if(!value["Key"].isNull())
-			reqHeaderConfigObject.key = value["Key"].asString();
-		if(!value["Value"].isNull())
-			reqHeaderConfigObject.value = value["Value"].asString();
-		if(!value["Status"].isNull())
-			reqHeaderConfigObject.status = value["Status"].asString();
+		if(!domainConfigsNodeReqHeaderConfigsReqHeaderConfig["ConfigId"].isNull())
+			reqHeaderConfigObject.configId = domainConfigsNodeReqHeaderConfigsReqHeaderConfig["ConfigId"].asString();
+		if(!domainConfigsNodeReqHeaderConfigsReqHeaderConfig["Key"].isNull())
+			reqHeaderConfigObject.key = domainConfigsNodeReqHeaderConfigsReqHeaderConfig["Key"].asString();
+		if(!domainConfigsNodeReqHeaderConfigsReqHeaderConfig["Value"].isNull())
+			reqHeaderConfigObject.value = domainConfigsNodeReqHeaderConfigsReqHeaderConfig["Value"].asString();
+		if(!domainConfigsNodeReqHeaderConfigsReqHeaderConfig["Status"].isNull())
+			reqHeaderConfigObject.status = domainConfigsNodeReqHeaderConfigsReqHeaderConfig["Status"].asString();
 		domainConfigs_.reqHeaderConfigs.push_back(reqHeaderConfigObject);
 	}
-	auto allSetVarsConfigs = value["SetVarsConfigs"]["SetVarsConfig"];
-	for (auto value : allSetVarsConfigs)
+	auto allSetVarsConfigsNode = domainConfigsNode["SetVarsConfigs"]["SetVarsConfig"];
+	for (auto domainConfigsNodeSetVarsConfigsSetVarsConfig : allSetVarsConfigsNode)
 	{
 		DomainConfigs::SetVarsConfig setVarsConfigObject;
-		if(!value["ConfigId"].isNull())
-			setVarsConfigObject.configId = value["ConfigId"].asString();
-		if(!value["VarName"].isNull())
-			setVarsConfigObject.varName = value["VarName"].asString();
-		if(!value["VarValue"].isNull())
-			setVarsConfigObject.varValue = value["VarValue"].asString();
-		if(!value["Status"].isNull())
-			setVarsConfigObject.status = value["Status"].asString();
+		if(!domainConfigsNodeSetVarsConfigsSetVarsConfig["ConfigId"].isNull())
+			setVarsConfigObject.configId = domainConfigsNodeSetVarsConfigsSetVarsConfig["ConfigId"].asString();
+		if(!domainConfigsNodeSetVarsConfigsSetVarsConfig["VarName"].isNull())
+			setVarsConfigObject.varName = domainConfigsNodeSetVarsConfigsSetVarsConfig["VarName"].asString();
+		if(!domainConfigsNodeSetVarsConfigsSetVarsConfig["VarValue"].isNull())
+			setVarsConfigObject.varValue = domainConfigsNodeSetVarsConfigsSetVarsConfig["VarValue"].asString();
+		if(!domainConfigsNodeSetVarsConfigsSetVarsConfig["Status"].isNull())
+			setVarsConfigObject.status = domainConfigsNodeSetVarsConfigsSetVarsConfig["Status"].asString();
 		domainConfigs_.setVarsConfigs.push_back(setVarsConfigObject);
 	}
 	auto ccConfigNode = domainConfigsNode["CcConfig"];

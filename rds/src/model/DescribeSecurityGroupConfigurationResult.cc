@@ -39,16 +39,16 @@ void DescribeSecurityGroupConfigurationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["EcsSecurityGroupRelation"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["EcsSecurityGroupRelation"];
+	for (auto valueItemsEcsSecurityGroupRelation : allItemsNode)
 	{
 		EcsSecurityGroupRelation itemsObject;
-		if(!value["RegionId"].isNull())
-			itemsObject.regionId = value["RegionId"].asString();
-		if(!value["SecurityGroupId"].isNull())
-			itemsObject.securityGroupId = value["SecurityGroupId"].asString();
-		if(!value["NetworkType"].isNull())
-			itemsObject.networkType = value["NetworkType"].asString();
+		if(!valueItemsEcsSecurityGroupRelation["RegionId"].isNull())
+			itemsObject.regionId = valueItemsEcsSecurityGroupRelation["RegionId"].asString();
+		if(!valueItemsEcsSecurityGroupRelation["SecurityGroupId"].isNull())
+			itemsObject.securityGroupId = valueItemsEcsSecurityGroupRelation["SecurityGroupId"].asString();
+		if(!valueItemsEcsSecurityGroupRelation["NetworkType"].isNull())
+			itemsObject.networkType = valueItemsEcsSecurityGroupRelation["NetworkType"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceName"].isNull())

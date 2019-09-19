@@ -39,28 +39,28 @@ void DescribeActionDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allActionsMsgItems = value["ActionsMsgItems"]["ActionsMsgItem"];
-	for (auto value : allActionsMsgItems)
+	auto allActionsMsgItemsNode = value["ActionsMsgItems"]["ActionsMsgItem"];
+	for (auto valueActionsMsgItemsActionsMsgItem : allActionsMsgItemsNode)
 	{
 		ActionsMsgItem actionsMsgItemsObject;
-		if(!value["LocationId"].isNull())
-			actionsMsgItemsObject.locationId = std::stol(value["LocationId"].asString());
-		if(!value["UkId"].isNull())
-			actionsMsgItemsObject.ukId = std::stol(value["UkId"].asString());
-		if(!value["GmtModified"].isNull())
-			actionsMsgItemsObject.gmtModified = value["GmtModified"].asString();
-		if(!value["Status"].isNull())
-			actionsMsgItemsObject.status = std::stol(value["Status"].asString());
-		if(!value["GmtCreate"].isNull())
-			actionsMsgItemsObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["StoreId"].isNull())
-			actionsMsgItemsObject.storeId = std::stol(value["StoreId"].asString());
-		if(!value["Tag"].isNull())
-			actionsMsgItemsObject.tag = value["Tag"].asString();
-		if(!value["Id"].isNull())
-			actionsMsgItemsObject.id = std::stol(value["Id"].asString());
-		if(!value["LocationLayerType"].isNull())
-			actionsMsgItemsObject.locationLayerType = value["LocationLayerType"].asString();
+		if(!valueActionsMsgItemsActionsMsgItem["LocationId"].isNull())
+			actionsMsgItemsObject.locationId = std::stol(valueActionsMsgItemsActionsMsgItem["LocationId"].asString());
+		if(!valueActionsMsgItemsActionsMsgItem["UkId"].isNull())
+			actionsMsgItemsObject.ukId = std::stol(valueActionsMsgItemsActionsMsgItem["UkId"].asString());
+		if(!valueActionsMsgItemsActionsMsgItem["GmtModified"].isNull())
+			actionsMsgItemsObject.gmtModified = valueActionsMsgItemsActionsMsgItem["GmtModified"].asString();
+		if(!valueActionsMsgItemsActionsMsgItem["Status"].isNull())
+			actionsMsgItemsObject.status = std::stol(valueActionsMsgItemsActionsMsgItem["Status"].asString());
+		if(!valueActionsMsgItemsActionsMsgItem["GmtCreate"].isNull())
+			actionsMsgItemsObject.gmtCreate = valueActionsMsgItemsActionsMsgItem["GmtCreate"].asString();
+		if(!valueActionsMsgItemsActionsMsgItem["StoreId"].isNull())
+			actionsMsgItemsObject.storeId = std::stol(valueActionsMsgItemsActionsMsgItem["StoreId"].asString());
+		if(!valueActionsMsgItemsActionsMsgItem["Tag"].isNull())
+			actionsMsgItemsObject.tag = valueActionsMsgItemsActionsMsgItem["Tag"].asString();
+		if(!valueActionsMsgItemsActionsMsgItem["Id"].isNull())
+			actionsMsgItemsObject.id = std::stol(valueActionsMsgItemsActionsMsgItem["Id"].asString());
+		if(!valueActionsMsgItemsActionsMsgItem["LocationLayerType"].isNull())
+			actionsMsgItemsObject.locationLayerType = valueActionsMsgItemsActionsMsgItem["LocationLayerType"].asString();
 		auto actionInfosItemNode = value["ActionInfosItem"];
 		if(!actionInfosItemNode["Maxts"].isNull())
 			actionsMsgItemsObject.actionInfosItem.maxts = std::stol(actionInfosItemNode["Maxts"].asString());

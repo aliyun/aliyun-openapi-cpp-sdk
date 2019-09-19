@@ -39,20 +39,20 @@ void DescribeVodTranscodeDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTranscodeData = value["TranscodeData"]["TranscodeDataItem"];
-	for (auto value : allTranscodeData)
+	auto allTranscodeDataNode = value["TranscodeData"]["TranscodeDataItem"];
+	for (auto valueTranscodeDataTranscodeDataItem : allTranscodeDataNode)
 	{
 		TranscodeDataItem transcodeDataObject;
-		if(!value["TimeStamp"].isNull())
-			transcodeDataObject.timeStamp = value["TimeStamp"].asString();
-		auto allData = value["Data"]["DataItem"];
-		for (auto value : allData)
+		if(!valueTranscodeDataTranscodeDataItem["TimeStamp"].isNull())
+			transcodeDataObject.timeStamp = valueTranscodeDataTranscodeDataItem["TimeStamp"].asString();
+		auto allDataNode = allTranscodeDataNode["Data"]["DataItem"];
+		for (auto allTranscodeDataNodeDataDataItem : allDataNode)
 		{
 			TranscodeDataItem::DataItem dataObject;
-			if(!value["Name"].isNull())
-				dataObject.name = value["Name"].asString();
-			if(!value["Value"].isNull())
-				dataObject.value = value["Value"].asString();
+			if(!allTranscodeDataNodeDataDataItem["Name"].isNull())
+				dataObject.name = allTranscodeDataNodeDataDataItem["Name"].asString();
+			if(!allTranscodeDataNodeDataDataItem["Value"].isNull())
+				dataObject.value = allTranscodeDataNodeDataDataItem["Value"].asString();
 			transcodeDataObject.data.push_back(dataObject);
 		}
 		transcodeData_.push_back(transcodeDataObject);

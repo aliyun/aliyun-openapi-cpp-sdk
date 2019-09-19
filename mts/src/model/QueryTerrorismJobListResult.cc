@@ -39,24 +39,24 @@ void QueryTerrorismJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTerrorismJobList = value["TerrorismJobList"]["TerrorismJob"];
-	for (auto value : allTerrorismJobList)
+	auto allTerrorismJobListNode = value["TerrorismJobList"]["TerrorismJob"];
+	for (auto valueTerrorismJobListTerrorismJob : allTerrorismJobListNode)
 	{
 		TerrorismJob terrorismJobListObject;
-		if(!value["Id"].isNull())
-			terrorismJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			terrorismJobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			terrorismJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			terrorismJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			terrorismJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			terrorismJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			terrorismJobListObject.creationTime = value["CreationTime"].asString();
+		if(!valueTerrorismJobListTerrorismJob["Id"].isNull())
+			terrorismJobListObject.id = valueTerrorismJobListTerrorismJob["Id"].asString();
+		if(!valueTerrorismJobListTerrorismJob["UserData"].isNull())
+			terrorismJobListObject.userData = valueTerrorismJobListTerrorismJob["UserData"].asString();
+		if(!valueTerrorismJobListTerrorismJob["PipelineId"].isNull())
+			terrorismJobListObject.pipelineId = valueTerrorismJobListTerrorismJob["PipelineId"].asString();
+		if(!valueTerrorismJobListTerrorismJob["State"].isNull())
+			terrorismJobListObject.state = valueTerrorismJobListTerrorismJob["State"].asString();
+		if(!valueTerrorismJobListTerrorismJob["Code"].isNull())
+			terrorismJobListObject.code = valueTerrorismJobListTerrorismJob["Code"].asString();
+		if(!valueTerrorismJobListTerrorismJob["Message"].isNull())
+			terrorismJobListObject.message = valueTerrorismJobListTerrorismJob["Message"].asString();
+		if(!valueTerrorismJobListTerrorismJob["CreationTime"].isNull())
+			terrorismJobListObject.creationTime = valueTerrorismJobListTerrorismJob["CreationTime"].asString();
 		auto inputNode = value["Input"];
 		if(!inputNode["Bucket"].isNull())
 			terrorismJobListObject.input.bucket = inputNode["Bucket"].asString();
@@ -85,30 +85,30 @@ void QueryTerrorismJobListResult::parse(const std::string &payload)
 			terrorismJobListObject.censorTerrorismResult.maxScore = censorTerrorismResultNode["MaxScore"].asString();
 		if(!censorTerrorismResultNode["AverageScore"].isNull())
 			terrorismJobListObject.censorTerrorismResult.averageScore = censorTerrorismResultNode["AverageScore"].asString();
-		auto allTerrorismCounterList = value["TerrorismCounterList"]["Counter"];
-		for (auto value : allTerrorismCounterList)
+		auto allTerrorismCounterListNode = censorTerrorismResultNode["TerrorismCounterList"]["Counter"];
+		for (auto censorTerrorismResultNodeTerrorismCounterListCounter : allTerrorismCounterListNode)
 		{
 			TerrorismJob::CensorTerrorismResult::Counter counterObject;
-			if(!value["Count"].isNull())
-				counterObject.count = std::stoi(value["Count"].asString());
-			if(!value["Label"].isNull())
-				counterObject.label = value["Label"].asString();
+			if(!censorTerrorismResultNodeTerrorismCounterListCounter["Count"].isNull())
+				counterObject.count = std::stoi(censorTerrorismResultNodeTerrorismCounterListCounter["Count"].asString());
+			if(!censorTerrorismResultNodeTerrorismCounterListCounter["Label"].isNull())
+				counterObject.label = censorTerrorismResultNodeTerrorismCounterListCounter["Label"].asString();
 			terrorismJobListObject.censorTerrorismResult.terrorismCounterList.push_back(counterObject);
 		}
-		auto allTerrorismTopList = value["TerrorismTopList"]["Top"];
-		for (auto value : allTerrorismTopList)
+		auto allTerrorismTopListNode = censorTerrorismResultNode["TerrorismTopList"]["Top"];
+		for (auto censorTerrorismResultNodeTerrorismTopListTop : allTerrorismTopListNode)
 		{
 			TerrorismJob::CensorTerrorismResult::Top topObject;
-			if(!value["Label"].isNull())
-				topObject.label = value["Label"].asString();
-			if(!value["Score"].isNull())
-				topObject.score = value["Score"].asString();
-			if(!value["Timestamp"].isNull())
-				topObject.timestamp = value["Timestamp"].asString();
-			if(!value["Index"].isNull())
-				topObject.index = value["Index"].asString();
-			if(!value["Object"].isNull())
-				topObject.object = value["Object"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Label"].isNull())
+				topObject.label = censorTerrorismResultNodeTerrorismTopListTop["Label"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Score"].isNull())
+				topObject.score = censorTerrorismResultNodeTerrorismTopListTop["Score"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Timestamp"].isNull())
+				topObject.timestamp = censorTerrorismResultNodeTerrorismTopListTop["Timestamp"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Index"].isNull())
+				topObject.index = censorTerrorismResultNodeTerrorismTopListTop["Index"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Object"].isNull())
+				topObject.object = censorTerrorismResultNodeTerrorismTopListTop["Object"].asString();
 			terrorismJobListObject.censorTerrorismResult.terrorismTopList.push_back(topObject);
 		}
 		terrorismJobList_.push_back(terrorismJobListObject);

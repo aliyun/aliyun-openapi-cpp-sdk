@@ -39,26 +39,26 @@ void DescribeAuditRecordsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["SQL"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["SQL"];
+	for (auto valueItemsSQL : allItemsNode)
 	{
 		SQL itemsObject;
-		if(!value["HostAddress"].isNull())
-			itemsObject.hostAddress = std::stoi(value["HostAddress"].asString());
-		if(!value["DatabaseName"].isNull())
-			itemsObject.databaseName = value["DatabaseName"].asString();
-		if(!value["IPAddress"].isNull())
-			itemsObject.iPAddress = value["IPAddress"].asString();
-		if(!value["SQLText"].isNull())
-			itemsObject.sQLText = value["SQLText"].asString();
-		if(!value["SQLType"].isNull())
-			itemsObject.sQLType = value["SQLType"].asString();
-		if(!value["TotalExecutionTimes"].isNull())
-			itemsObject.totalExecutionTimes = value["TotalExecutionTimes"].asString();
-		if(!value["ExecuteTime"].isNull())
-			itemsObject.executeTime = value["ExecuteTime"].asString();
-		if(!value["AccountName"].isNull())
-			itemsObject.accountName = value["AccountName"].asString();
+		if(!valueItemsSQL["HostAddress"].isNull())
+			itemsObject.hostAddress = std::stoi(valueItemsSQL["HostAddress"].asString());
+		if(!valueItemsSQL["DatabaseName"].isNull())
+			itemsObject.databaseName = valueItemsSQL["DatabaseName"].asString();
+		if(!valueItemsSQL["IPAddress"].isNull())
+			itemsObject.iPAddress = valueItemsSQL["IPAddress"].asString();
+		if(!valueItemsSQL["SQLText"].isNull())
+			itemsObject.sQLText = valueItemsSQL["SQLText"].asString();
+		if(!valueItemsSQL["SQLType"].isNull())
+			itemsObject.sQLType = valueItemsSQL["SQLType"].asString();
+		if(!valueItemsSQL["TotalExecutionTimes"].isNull())
+			itemsObject.totalExecutionTimes = valueItemsSQL["TotalExecutionTimes"].asString();
+		if(!valueItemsSQL["ExecuteTime"].isNull())
+			itemsObject.executeTime = valueItemsSQL["ExecuteTime"].asString();
+		if(!valueItemsSQL["AccountName"].isNull())
+			itemsObject.accountName = valueItemsSQL["AccountName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

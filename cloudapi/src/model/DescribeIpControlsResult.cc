@@ -39,24 +39,24 @@ void DescribeIpControlsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIpControlInfos = value["IpControlInfos"]["IpControlInfo"];
-	for (auto value : allIpControlInfos)
+	auto allIpControlInfosNode = value["IpControlInfos"]["IpControlInfo"];
+	for (auto valueIpControlInfosIpControlInfo : allIpControlInfosNode)
 	{
 		IpControlInfo ipControlInfosObject;
-		if(!value["IpControlId"].isNull())
-			ipControlInfosObject.ipControlId = value["IpControlId"].asString();
-		if(!value["IpControlName"].isNull())
-			ipControlInfosObject.ipControlName = value["IpControlName"].asString();
-		if(!value["IpControlType"].isNull())
-			ipControlInfosObject.ipControlType = value["IpControlType"].asString();
-		if(!value["Description"].isNull())
-			ipControlInfosObject.description = value["Description"].asString();
-		if(!value["CreateTime"].isNull())
-			ipControlInfosObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifiedTime"].isNull())
-			ipControlInfosObject.modifiedTime = value["ModifiedTime"].asString();
-		if(!value["RegionId"].isNull())
-			ipControlInfosObject.regionId = value["RegionId"].asString();
+		if(!valueIpControlInfosIpControlInfo["IpControlId"].isNull())
+			ipControlInfosObject.ipControlId = valueIpControlInfosIpControlInfo["IpControlId"].asString();
+		if(!valueIpControlInfosIpControlInfo["IpControlName"].isNull())
+			ipControlInfosObject.ipControlName = valueIpControlInfosIpControlInfo["IpControlName"].asString();
+		if(!valueIpControlInfosIpControlInfo["IpControlType"].isNull())
+			ipControlInfosObject.ipControlType = valueIpControlInfosIpControlInfo["IpControlType"].asString();
+		if(!valueIpControlInfosIpControlInfo["Description"].isNull())
+			ipControlInfosObject.description = valueIpControlInfosIpControlInfo["Description"].asString();
+		if(!valueIpControlInfosIpControlInfo["CreateTime"].isNull())
+			ipControlInfosObject.createTime = valueIpControlInfosIpControlInfo["CreateTime"].asString();
+		if(!valueIpControlInfosIpControlInfo["ModifiedTime"].isNull())
+			ipControlInfosObject.modifiedTime = valueIpControlInfosIpControlInfo["ModifiedTime"].asString();
+		if(!valueIpControlInfosIpControlInfo["RegionId"].isNull())
+			ipControlInfosObject.regionId = valueIpControlInfosIpControlInfo["RegionId"].asString();
 		ipControlInfos_.push_back(ipControlInfosObject);
 	}
 	if(!value["TotalCount"].isNull())

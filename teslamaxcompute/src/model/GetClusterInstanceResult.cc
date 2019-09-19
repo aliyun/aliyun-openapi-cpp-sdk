@@ -42,52 +42,52 @@ void GetClusterInstanceResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Total"].isNull())
 		data_.total = std::stoi(dataNode["Total"].asString());
-	auto allDetail = value["Detail"]["instance"];
-	for (auto value : allDetail)
+	auto allDetailNode = dataNode["Detail"]["instance"];
+	for (auto dataNodeDetailinstance : allDetailNode)
 	{
 		Data::Instance instanceObject;
-		if(!value["Project"].isNull())
-			instanceObject.project = value["Project"].asString();
-		if(!value["InstanceId"].isNull())
-			instanceObject.instanceId = value["InstanceId"].asString();
-		if(!value["Status"].isNull())
-			instanceObject.status = value["Status"].asString();
-		if(!value["UserAccount"].isNull())
-			instanceObject.userAccount = value["UserAccount"].asString();
-		if(!value["NickName"].isNull())
-			instanceObject.nickName = value["NickName"].asString();
-		if(!value["Cluster"].isNull())
-			instanceObject.cluster = value["Cluster"].asString();
-		if(!value["RunTime"].isNull())
-			instanceObject.runTime = value["RunTime"].asString();
-		if(!value["CpuUsed"].isNull())
-			instanceObject.cpuUsed = std::stol(value["CpuUsed"].asString());
-		if(!value["CpuRequest"].isNull())
-			instanceObject.cpuRequest = std::stol(value["CpuRequest"].asString());
-		if(!value["CpuUsedTotal"].isNull())
-			instanceObject.cpuUsedTotal = std::stol(value["CpuUsedTotal"].asString());
-		if(!value["CpuUsedRatioMax"].isNull())
-			instanceObject.cpuUsedRatioMax = std::stof(value["CpuUsedRatioMax"].asString());
-		if(!value["CpuUsedRatioMin"].isNull())
-			instanceObject.cpuUsedRatioMin = std::stof(value["CpuUsedRatioMin"].asString());
-		if(!value["MemUsed"].isNull())
-			instanceObject.memUsed = std::stol(value["MemUsed"].asString());
-		if(!value["MemRequest"].isNull())
-			instanceObject.memRequest = std::stol(value["MemRequest"].asString());
-		if(!value["MemUsedTotal"].isNull())
-			instanceObject.memUsedTotal = std::stol(value["MemUsedTotal"].asString());
-		if(!value["MemUsedRatioMax"].isNull())
-			instanceObject.memUsedRatioMax = std::stof(value["MemUsedRatioMax"].asString());
-		if(!value["MemUsedRatioMin"].isNull())
-			instanceObject.memUsedRatioMin = std::stof(value["MemUsedRatioMin"].asString());
-		if(!value["TaskType"].isNull())
-			instanceObject.taskType = value["TaskType"].asString();
-		if(!value["SkynetId"].isNull())
-			instanceObject.skynetId = value["SkynetId"].asString();
-		if(!value["QuotaName"].isNull())
-			instanceObject.quotaName = value["QuotaName"].asString();
-		if(!value["QuotaId"].isNull())
-			instanceObject.quotaId = std::stoi(value["QuotaId"].asString());
+		if(!dataNodeDetailinstance["Project"].isNull())
+			instanceObject.project = dataNodeDetailinstance["Project"].asString();
+		if(!dataNodeDetailinstance["InstanceId"].isNull())
+			instanceObject.instanceId = dataNodeDetailinstance["InstanceId"].asString();
+		if(!dataNodeDetailinstance["Status"].isNull())
+			instanceObject.status = dataNodeDetailinstance["Status"].asString();
+		if(!dataNodeDetailinstance["UserAccount"].isNull())
+			instanceObject.userAccount = dataNodeDetailinstance["UserAccount"].asString();
+		if(!dataNodeDetailinstance["NickName"].isNull())
+			instanceObject.nickName = dataNodeDetailinstance["NickName"].asString();
+		if(!dataNodeDetailinstance["Cluster"].isNull())
+			instanceObject.cluster = dataNodeDetailinstance["Cluster"].asString();
+		if(!dataNodeDetailinstance["RunTime"].isNull())
+			instanceObject.runTime = dataNodeDetailinstance["RunTime"].asString();
+		if(!dataNodeDetailinstance["CpuUsed"].isNull())
+			instanceObject.cpuUsed = std::stol(dataNodeDetailinstance["CpuUsed"].asString());
+		if(!dataNodeDetailinstance["CpuRequest"].isNull())
+			instanceObject.cpuRequest = std::stol(dataNodeDetailinstance["CpuRequest"].asString());
+		if(!dataNodeDetailinstance["CpuUsedTotal"].isNull())
+			instanceObject.cpuUsedTotal = std::stol(dataNodeDetailinstance["CpuUsedTotal"].asString());
+		if(!dataNodeDetailinstance["CpuUsedRatioMax"].isNull())
+			instanceObject.cpuUsedRatioMax = std::stof(dataNodeDetailinstance["CpuUsedRatioMax"].asString());
+		if(!dataNodeDetailinstance["CpuUsedRatioMin"].isNull())
+			instanceObject.cpuUsedRatioMin = std::stof(dataNodeDetailinstance["CpuUsedRatioMin"].asString());
+		if(!dataNodeDetailinstance["MemUsed"].isNull())
+			instanceObject.memUsed = std::stol(dataNodeDetailinstance["MemUsed"].asString());
+		if(!dataNodeDetailinstance["MemRequest"].isNull())
+			instanceObject.memRequest = std::stol(dataNodeDetailinstance["MemRequest"].asString());
+		if(!dataNodeDetailinstance["MemUsedTotal"].isNull())
+			instanceObject.memUsedTotal = std::stol(dataNodeDetailinstance["MemUsedTotal"].asString());
+		if(!dataNodeDetailinstance["MemUsedRatioMax"].isNull())
+			instanceObject.memUsedRatioMax = std::stof(dataNodeDetailinstance["MemUsedRatioMax"].asString());
+		if(!dataNodeDetailinstance["MemUsedRatioMin"].isNull())
+			instanceObject.memUsedRatioMin = std::stof(dataNodeDetailinstance["MemUsedRatioMin"].asString());
+		if(!dataNodeDetailinstance["TaskType"].isNull())
+			instanceObject.taskType = dataNodeDetailinstance["TaskType"].asString();
+		if(!dataNodeDetailinstance["SkynetId"].isNull())
+			instanceObject.skynetId = dataNodeDetailinstance["SkynetId"].asString();
+		if(!dataNodeDetailinstance["QuotaName"].isNull())
+			instanceObject.quotaName = dataNodeDetailinstance["QuotaName"].asString();
+		if(!dataNodeDetailinstance["QuotaId"].isNull())
+			instanceObject.quotaId = std::stoi(dataNodeDetailinstance["QuotaId"].asString());
 		data_.detail.push_back(instanceObject);
 	}
 	if(!value["Code"].isNull())

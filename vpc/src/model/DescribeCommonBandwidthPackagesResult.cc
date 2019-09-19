@@ -39,58 +39,58 @@ void DescribeCommonBandwidthPackagesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCommonBandwidthPackages = value["CommonBandwidthPackages"]["CommonBandwidthPackage"];
-	for (auto value : allCommonBandwidthPackages)
+	auto allCommonBandwidthPackagesNode = value["CommonBandwidthPackages"]["CommonBandwidthPackage"];
+	for (auto valueCommonBandwidthPackagesCommonBandwidthPackage : allCommonBandwidthPackagesNode)
 	{
 		CommonBandwidthPackage commonBandwidthPackagesObject;
-		if(!value["BandwidthPackageId"].isNull())
-			commonBandwidthPackagesObject.bandwidthPackageId = value["BandwidthPackageId"].asString();
-		if(!value["RegionId"].isNull())
-			commonBandwidthPackagesObject.regionId = value["RegionId"].asString();
-		if(!value["Name"].isNull())
-			commonBandwidthPackagesObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			commonBandwidthPackagesObject.description = value["Description"].asString();
-		if(!value["Bandwidth"].isNull())
-			commonBandwidthPackagesObject.bandwidth = value["Bandwidth"].asString();
-		if(!value["InstanceChargeType"].isNull())
-			commonBandwidthPackagesObject.instanceChargeType = value["InstanceChargeType"].asString();
-		if(!value["InternetChargeType"].isNull())
-			commonBandwidthPackagesObject.internetChargeType = value["InternetChargeType"].asString();
-		if(!value["BusinessStatus"].isNull())
-			commonBandwidthPackagesObject.businessStatus = value["BusinessStatus"].asString();
-		if(!value["CreationTime"].isNull())
-			commonBandwidthPackagesObject.creationTime = value["CreationTime"].asString();
-		if(!value["ExpiredTime"].isNull())
-			commonBandwidthPackagesObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["Status"].isNull())
-			commonBandwidthPackagesObject.status = value["Status"].asString();
-		if(!value["Ratio"].isNull())
-			commonBandwidthPackagesObject.ratio = std::stoi(value["Ratio"].asString());
-		if(!value["ResourceGroupId"].isNull())
-			commonBandwidthPackagesObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["HasReservationData"].isNull())
-			commonBandwidthPackagesObject.hasReservationData = value["HasReservationData"].asString();
-		if(!value["ReservationBandwidth"].isNull())
-			commonBandwidthPackagesObject.reservationBandwidth = value["ReservationBandwidth"].asString();
-		if(!value["ReservationInternetChargeType"].isNull())
-			commonBandwidthPackagesObject.reservationInternetChargeType = value["ReservationInternetChargeType"].asString();
-		if(!value["ReservationActiveTime"].isNull())
-			commonBandwidthPackagesObject.reservationActiveTime = value["ReservationActiveTime"].asString();
-		if(!value["ReservationOrderType"].isNull())
-			commonBandwidthPackagesObject.reservationOrderType = value["ReservationOrderType"].asString();
-		if(!value["ISP"].isNull())
-			commonBandwidthPackagesObject.iSP = value["ISP"].asString();
-		if(!value["DeletionProtection"].isNull())
-			commonBandwidthPackagesObject.deletionProtection = value["DeletionProtection"].asString() == "true";
-		auto allPublicIpAddresses = value["PublicIpAddresses"]["PublicIpAddresse"];
-		for (auto value : allPublicIpAddresses)
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["BandwidthPackageId"].isNull())
+			commonBandwidthPackagesObject.bandwidthPackageId = valueCommonBandwidthPackagesCommonBandwidthPackage["BandwidthPackageId"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["RegionId"].isNull())
+			commonBandwidthPackagesObject.regionId = valueCommonBandwidthPackagesCommonBandwidthPackage["RegionId"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["Name"].isNull())
+			commonBandwidthPackagesObject.name = valueCommonBandwidthPackagesCommonBandwidthPackage["Name"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["Description"].isNull())
+			commonBandwidthPackagesObject.description = valueCommonBandwidthPackagesCommonBandwidthPackage["Description"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["Bandwidth"].isNull())
+			commonBandwidthPackagesObject.bandwidth = valueCommonBandwidthPackagesCommonBandwidthPackage["Bandwidth"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["InstanceChargeType"].isNull())
+			commonBandwidthPackagesObject.instanceChargeType = valueCommonBandwidthPackagesCommonBandwidthPackage["InstanceChargeType"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["InternetChargeType"].isNull())
+			commonBandwidthPackagesObject.internetChargeType = valueCommonBandwidthPackagesCommonBandwidthPackage["InternetChargeType"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["BusinessStatus"].isNull())
+			commonBandwidthPackagesObject.businessStatus = valueCommonBandwidthPackagesCommonBandwidthPackage["BusinessStatus"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["CreationTime"].isNull())
+			commonBandwidthPackagesObject.creationTime = valueCommonBandwidthPackagesCommonBandwidthPackage["CreationTime"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["ExpiredTime"].isNull())
+			commonBandwidthPackagesObject.expiredTime = valueCommonBandwidthPackagesCommonBandwidthPackage["ExpiredTime"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["Status"].isNull())
+			commonBandwidthPackagesObject.status = valueCommonBandwidthPackagesCommonBandwidthPackage["Status"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["Ratio"].isNull())
+			commonBandwidthPackagesObject.ratio = std::stoi(valueCommonBandwidthPackagesCommonBandwidthPackage["Ratio"].asString());
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["ResourceGroupId"].isNull())
+			commonBandwidthPackagesObject.resourceGroupId = valueCommonBandwidthPackagesCommonBandwidthPackage["ResourceGroupId"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["HasReservationData"].isNull())
+			commonBandwidthPackagesObject.hasReservationData = valueCommonBandwidthPackagesCommonBandwidthPackage["HasReservationData"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["ReservationBandwidth"].isNull())
+			commonBandwidthPackagesObject.reservationBandwidth = valueCommonBandwidthPackagesCommonBandwidthPackage["ReservationBandwidth"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["ReservationInternetChargeType"].isNull())
+			commonBandwidthPackagesObject.reservationInternetChargeType = valueCommonBandwidthPackagesCommonBandwidthPackage["ReservationInternetChargeType"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["ReservationActiveTime"].isNull())
+			commonBandwidthPackagesObject.reservationActiveTime = valueCommonBandwidthPackagesCommonBandwidthPackage["ReservationActiveTime"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["ReservationOrderType"].isNull())
+			commonBandwidthPackagesObject.reservationOrderType = valueCommonBandwidthPackagesCommonBandwidthPackage["ReservationOrderType"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["ISP"].isNull())
+			commonBandwidthPackagesObject.iSP = valueCommonBandwidthPackagesCommonBandwidthPackage["ISP"].asString();
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["DeletionProtection"].isNull())
+			commonBandwidthPackagesObject.deletionProtection = valueCommonBandwidthPackagesCommonBandwidthPackage["DeletionProtection"].asString() == "true";
+		auto allPublicIpAddressesNode = allCommonBandwidthPackagesNode["PublicIpAddresses"]["PublicIpAddresse"];
+		for (auto allCommonBandwidthPackagesNodePublicIpAddressesPublicIpAddresse : allPublicIpAddressesNode)
 		{
 			CommonBandwidthPackage::PublicIpAddresse publicIpAddressesObject;
-			if(!value["AllocationId"].isNull())
-				publicIpAddressesObject.allocationId = value["AllocationId"].asString();
-			if(!value["IpAddress"].isNull())
-				publicIpAddressesObject.ipAddress = value["IpAddress"].asString();
+			if(!allCommonBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["AllocationId"].isNull())
+				publicIpAddressesObject.allocationId = allCommonBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["AllocationId"].asString();
+			if(!allCommonBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["IpAddress"].isNull())
+				publicIpAddressesObject.ipAddress = allCommonBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["IpAddress"].asString();
 			commonBandwidthPackagesObject.publicIpAddresses.push_back(publicIpAddressesObject);
 		}
 		commonBandwidthPackages_.push_back(commonBandwidthPackagesObject);

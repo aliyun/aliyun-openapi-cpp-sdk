@@ -39,24 +39,24 @@ void PreviewGtmRecoveryPlanResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPreviews = value["Previews"]["Preview"];
-	for (auto value : allPreviews)
+	auto allPreviewsNode = value["Previews"]["Preview"];
+	for (auto valuePreviewsPreview : allPreviewsNode)
 	{
 		Preview previewsObject;
-		if(!value["InstanceId"].isNull())
-			previewsObject.instanceId = value["InstanceId"].asString();
-		if(!value["Name"].isNull())
-			previewsObject.name = value["Name"].asString();
-		if(!value["UserDomainName"].isNull())
-			previewsObject.userDomainName = value["UserDomainName"].asString();
-		auto allSwitchInfos = value["SwitchInfos"]["SwitchInfo"];
-		for (auto value : allSwitchInfos)
+		if(!valuePreviewsPreview["InstanceId"].isNull())
+			previewsObject.instanceId = valuePreviewsPreview["InstanceId"].asString();
+		if(!valuePreviewsPreview["Name"].isNull())
+			previewsObject.name = valuePreviewsPreview["Name"].asString();
+		if(!valuePreviewsPreview["UserDomainName"].isNull())
+			previewsObject.userDomainName = valuePreviewsPreview["UserDomainName"].asString();
+		auto allSwitchInfosNode = allPreviewsNode["SwitchInfos"]["SwitchInfo"];
+		for (auto allPreviewsNodeSwitchInfosSwitchInfo : allSwitchInfosNode)
 		{
 			Preview::SwitchInfo switchInfosObject;
-			if(!value["StrategyName"].isNull())
-				switchInfosObject.strategyName = value["StrategyName"].asString();
-			if(!value["Content"].isNull())
-				switchInfosObject.content = value["Content"].asString();
+			if(!allPreviewsNodeSwitchInfosSwitchInfo["StrategyName"].isNull())
+				switchInfosObject.strategyName = allPreviewsNodeSwitchInfosSwitchInfo["StrategyName"].asString();
+			if(!allPreviewsNodeSwitchInfosSwitchInfo["Content"].isNull())
+				switchInfosObject.content = allPreviewsNodeSwitchInfosSwitchInfo["Content"].asString();
 			previewsObject.switchInfos.push_back(switchInfosObject);
 		}
 		previews_.push_back(previewsObject);

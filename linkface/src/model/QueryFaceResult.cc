@@ -40,18 +40,18 @@ void QueryFaceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allUserFaceMetas = value["UserFaceMetas"]["UserFaceMetasItem"];
-	for (auto value : allUserFaceMetas)
+	auto allUserFaceMetasNode = dataNode["UserFaceMetas"]["UserFaceMetasItem"];
+	for (auto dataNodeUserFaceMetasUserFaceMetasItem : allUserFaceMetasNode)
 	{
 		Data::UserFaceMetasItem userFaceMetasItemObject;
-		if(!value["ClientTag"].isNull())
-			userFaceMetasItemObject.clientTag = value["ClientTag"].asString();
-		if(!value["Index"].isNull())
-			userFaceMetasItemObject.index = std::stoi(value["Index"].asString());
-		if(!value["FaceUrl"].isNull())
-			userFaceMetasItemObject.faceUrl = value["FaceUrl"].asString();
-		if(!value["UserInfo"].isNull())
-			userFaceMetasItemObject.userInfo = value["UserInfo"].asString();
+		if(!dataNodeUserFaceMetasUserFaceMetasItem["ClientTag"].isNull())
+			userFaceMetasItemObject.clientTag = dataNodeUserFaceMetasUserFaceMetasItem["ClientTag"].asString();
+		if(!dataNodeUserFaceMetasUserFaceMetasItem["Index"].isNull())
+			userFaceMetasItemObject.index = std::stoi(dataNodeUserFaceMetasUserFaceMetasItem["Index"].asString());
+		if(!dataNodeUserFaceMetasUserFaceMetasItem["FaceUrl"].isNull())
+			userFaceMetasItemObject.faceUrl = dataNodeUserFaceMetasUserFaceMetasItem["FaceUrl"].asString();
+		if(!dataNodeUserFaceMetasUserFaceMetasItem["UserInfo"].isNull())
+			userFaceMetasItemObject.userInfo = dataNodeUserFaceMetasUserFaceMetasItem["UserInfo"].asString();
 		data_.userFaceMetas.push_back(userFaceMetasItemObject);
 	}
 		auto allGroupIds = dataNode["GroupIds"]["GroupIds"];

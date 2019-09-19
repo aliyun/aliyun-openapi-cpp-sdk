@@ -39,28 +39,28 @@ void DescribeCasterStreamUrlResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCasterStreams = value["CasterStreams"]["CasterStream"];
-	for (auto value : allCasterStreams)
+	auto allCasterStreamsNode = value["CasterStreams"]["CasterStream"];
+	for (auto valueCasterStreamsCasterStream : allCasterStreamsNode)
 	{
 		CasterStream casterStreamsObject;
-		if(!value["SceneId"].isNull())
-			casterStreamsObject.sceneId = value["SceneId"].asString();
-		if(!value["StreamUrl"].isNull())
-			casterStreamsObject.streamUrl = value["StreamUrl"].asString();
-		if(!value["RtmpUrl"].isNull())
-			casterStreamsObject.rtmpUrl = value["RtmpUrl"].asString();
-		if(!value["OutputType"].isNull())
-			casterStreamsObject.outputType = std::stoi(value["OutputType"].asString());
-		auto allStreamInfos = value["StreamInfos"]["StreamInfo"];
-		for (auto value : allStreamInfos)
+		if(!valueCasterStreamsCasterStream["SceneId"].isNull())
+			casterStreamsObject.sceneId = valueCasterStreamsCasterStream["SceneId"].asString();
+		if(!valueCasterStreamsCasterStream["StreamUrl"].isNull())
+			casterStreamsObject.streamUrl = valueCasterStreamsCasterStream["StreamUrl"].asString();
+		if(!valueCasterStreamsCasterStream["RtmpUrl"].isNull())
+			casterStreamsObject.rtmpUrl = valueCasterStreamsCasterStream["RtmpUrl"].asString();
+		if(!valueCasterStreamsCasterStream["OutputType"].isNull())
+			casterStreamsObject.outputType = std::stoi(valueCasterStreamsCasterStream["OutputType"].asString());
+		auto allStreamInfosNode = allCasterStreamsNode["StreamInfos"]["StreamInfo"];
+		for (auto allCasterStreamsNodeStreamInfosStreamInfo : allStreamInfosNode)
 		{
 			CasterStream::StreamInfo streamInfosObject;
-			if(!value["TranscodeConfig"].isNull())
-				streamInfosObject.transcodeConfig = value["TranscodeConfig"].asString();
-			if(!value["VideoFormat"].isNull())
-				streamInfosObject.videoFormat = value["VideoFormat"].asString();
-			if(!value["OutputStreamUrl"].isNull())
-				streamInfosObject.outputStreamUrl = value["OutputStreamUrl"].asString();
+			if(!allCasterStreamsNodeStreamInfosStreamInfo["TranscodeConfig"].isNull())
+				streamInfosObject.transcodeConfig = allCasterStreamsNodeStreamInfosStreamInfo["TranscodeConfig"].asString();
+			if(!allCasterStreamsNodeStreamInfosStreamInfo["VideoFormat"].isNull())
+				streamInfosObject.videoFormat = allCasterStreamsNodeStreamInfosStreamInfo["VideoFormat"].asString();
+			if(!allCasterStreamsNodeStreamInfosStreamInfo["OutputStreamUrl"].isNull())
+				streamInfosObject.outputStreamUrl = allCasterStreamsNodeStreamInfosStreamInfo["OutputStreamUrl"].asString();
 			casterStreamsObject.streamInfos.push_back(streamInfosObject);
 		}
 		casterStreams_.push_back(casterStreamsObject);

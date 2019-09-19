@@ -39,56 +39,56 @@ void DescribeRestoreTaskListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["RestoreTaskDetail"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["RestoreTaskDetail"];
+	for (auto valueItemsRestoreTaskDetail : allItemsNode)
 	{
 		RestoreTaskDetail itemsObject;
-		if(!value["BackupPlanId"].isNull())
-			itemsObject.backupPlanId = value["BackupPlanId"].asString();
-		if(!value["DestinationEndpointInstanceType"].isNull())
-			itemsObject.destinationEndpointInstanceType = value["DestinationEndpointInstanceType"].asString();
-		if(!value["DestinationEndpointRegion"].isNull())
-			itemsObject.destinationEndpointRegion = value["DestinationEndpointRegion"].asString();
-		if(!value["DestinationEndpointInstanceID"].isNull())
-			itemsObject.destinationEndpointInstanceID = value["DestinationEndpointInstanceID"].asString();
-		if(!value["DestinationEndpointIpPort"].isNull())
-			itemsObject.destinationEndpointIpPort = value["DestinationEndpointIpPort"].asString();
-		if(!value["DestinationEndpointDatabaseName"].isNull())
-			itemsObject.destinationEndpointDatabaseName = value["DestinationEndpointDatabaseName"].asString();
-		if(!value["DestinationEndpointUserName"].isNull())
-			itemsObject.destinationEndpointUserName = value["DestinationEndpointUserName"].asString();
-		if(!value["DestinationEndpointOracleSID"].isNull())
-			itemsObject.destinationEndpointOracleSID = value["DestinationEndpointOracleSID"].asString();
-		if(!value["RestoreObjects"].isNull())
-			itemsObject.restoreObjects = value["RestoreObjects"].asString();
-		if(!value["BackupGatewayId"].isNull())
-			itemsObject.backupGatewayId = std::stol(value["BackupGatewayId"].asString());
-		if(!value["RestoreDir"].isNull())
-			itemsObject.restoreDir = value["RestoreDir"].asString();
-		if(!value["RestoreTaskName"].isNull())
-			itemsObject.restoreTaskName = value["RestoreTaskName"].asString();
-		if(!value["BackupSetId"].isNull())
-			itemsObject.backupSetId = value["BackupSetId"].asString();
-		if(!value["RestoreTime"].isNull())
-			itemsObject.restoreTime = std::stol(value["RestoreTime"].asString());
-		if(!value["RestoreTaskCreateTime"].isNull())
-			itemsObject.restoreTaskCreateTime = std::stol(value["RestoreTaskCreateTime"].asString());
-		if(!value["RestoreTaskFinishTime"].isNull())
-			itemsObject.restoreTaskFinishTime = std::stol(value["RestoreTaskFinishTime"].asString());
-		if(!value["RestoreStatus"].isNull())
-			itemsObject.restoreStatus = value["RestoreStatus"].asString();
-		if(!value["RestoreTaskId"].isNull())
-			itemsObject.restoreTaskId = value["RestoreTaskId"].asString();
-		if(!value["FullStruforeRestoreProgress"].isNull())
-			itemsObject.fullStruforeRestoreProgress = std::stoi(value["FullStruforeRestoreProgress"].asString());
-		if(!value["FullDataRestoreProgress"].isNull())
-			itemsObject.fullDataRestoreProgress = std::stoi(value["FullDataRestoreProgress"].asString());
-		if(!value["ContinuousRestoreProgress"].isNull())
-			itemsObject.continuousRestoreProgress = std::stoi(value["ContinuousRestoreProgress"].asString());
-		if(!value["FullStruAfterRestoreProgress"].isNull())
-			itemsObject.fullStruAfterRestoreProgress = std::stoi(value["FullStruAfterRestoreProgress"].asString());
-		if(!value["ErrMessage"].isNull())
-			itemsObject.errMessage = value["ErrMessage"].asString();
+		if(!valueItemsRestoreTaskDetail["BackupPlanId"].isNull())
+			itemsObject.backupPlanId = valueItemsRestoreTaskDetail["BackupPlanId"].asString();
+		if(!valueItemsRestoreTaskDetail["DestinationEndpointInstanceType"].isNull())
+			itemsObject.destinationEndpointInstanceType = valueItemsRestoreTaskDetail["DestinationEndpointInstanceType"].asString();
+		if(!valueItemsRestoreTaskDetail["DestinationEndpointRegion"].isNull())
+			itemsObject.destinationEndpointRegion = valueItemsRestoreTaskDetail["DestinationEndpointRegion"].asString();
+		if(!valueItemsRestoreTaskDetail["DestinationEndpointInstanceID"].isNull())
+			itemsObject.destinationEndpointInstanceID = valueItemsRestoreTaskDetail["DestinationEndpointInstanceID"].asString();
+		if(!valueItemsRestoreTaskDetail["DestinationEndpointIpPort"].isNull())
+			itemsObject.destinationEndpointIpPort = valueItemsRestoreTaskDetail["DestinationEndpointIpPort"].asString();
+		if(!valueItemsRestoreTaskDetail["DestinationEndpointDatabaseName"].isNull())
+			itemsObject.destinationEndpointDatabaseName = valueItemsRestoreTaskDetail["DestinationEndpointDatabaseName"].asString();
+		if(!valueItemsRestoreTaskDetail["DestinationEndpointUserName"].isNull())
+			itemsObject.destinationEndpointUserName = valueItemsRestoreTaskDetail["DestinationEndpointUserName"].asString();
+		if(!valueItemsRestoreTaskDetail["DestinationEndpointOracleSID"].isNull())
+			itemsObject.destinationEndpointOracleSID = valueItemsRestoreTaskDetail["DestinationEndpointOracleSID"].asString();
+		if(!valueItemsRestoreTaskDetail["RestoreObjects"].isNull())
+			itemsObject.restoreObjects = valueItemsRestoreTaskDetail["RestoreObjects"].asString();
+		if(!valueItemsRestoreTaskDetail["BackupGatewayId"].isNull())
+			itemsObject.backupGatewayId = std::stol(valueItemsRestoreTaskDetail["BackupGatewayId"].asString());
+		if(!valueItemsRestoreTaskDetail["RestoreDir"].isNull())
+			itemsObject.restoreDir = valueItemsRestoreTaskDetail["RestoreDir"].asString();
+		if(!valueItemsRestoreTaskDetail["RestoreTaskName"].isNull())
+			itemsObject.restoreTaskName = valueItemsRestoreTaskDetail["RestoreTaskName"].asString();
+		if(!valueItemsRestoreTaskDetail["BackupSetId"].isNull())
+			itemsObject.backupSetId = valueItemsRestoreTaskDetail["BackupSetId"].asString();
+		if(!valueItemsRestoreTaskDetail["RestoreTime"].isNull())
+			itemsObject.restoreTime = std::stol(valueItemsRestoreTaskDetail["RestoreTime"].asString());
+		if(!valueItemsRestoreTaskDetail["RestoreTaskCreateTime"].isNull())
+			itemsObject.restoreTaskCreateTime = std::stol(valueItemsRestoreTaskDetail["RestoreTaskCreateTime"].asString());
+		if(!valueItemsRestoreTaskDetail["RestoreTaskFinishTime"].isNull())
+			itemsObject.restoreTaskFinishTime = std::stol(valueItemsRestoreTaskDetail["RestoreTaskFinishTime"].asString());
+		if(!valueItemsRestoreTaskDetail["RestoreStatus"].isNull())
+			itemsObject.restoreStatus = valueItemsRestoreTaskDetail["RestoreStatus"].asString();
+		if(!valueItemsRestoreTaskDetail["RestoreTaskId"].isNull())
+			itemsObject.restoreTaskId = valueItemsRestoreTaskDetail["RestoreTaskId"].asString();
+		if(!valueItemsRestoreTaskDetail["FullStruforeRestoreProgress"].isNull())
+			itemsObject.fullStruforeRestoreProgress = std::stoi(valueItemsRestoreTaskDetail["FullStruforeRestoreProgress"].asString());
+		if(!valueItemsRestoreTaskDetail["FullDataRestoreProgress"].isNull())
+			itemsObject.fullDataRestoreProgress = std::stoi(valueItemsRestoreTaskDetail["FullDataRestoreProgress"].asString());
+		if(!valueItemsRestoreTaskDetail["ContinuousRestoreProgress"].isNull())
+			itemsObject.continuousRestoreProgress = std::stoi(valueItemsRestoreTaskDetail["ContinuousRestoreProgress"].asString());
+		if(!valueItemsRestoreTaskDetail["FullStruAfterRestoreProgress"].isNull())
+			itemsObject.fullStruAfterRestoreProgress = std::stoi(valueItemsRestoreTaskDetail["FullStruAfterRestoreProgress"].asString());
+		if(!valueItemsRestoreTaskDetail["ErrMessage"].isNull())
+			itemsObject.errMessage = valueItemsRestoreTaskDetail["ErrMessage"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

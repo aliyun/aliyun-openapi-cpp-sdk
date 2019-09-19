@@ -39,42 +39,42 @@ void DescribeRiskCheckResultResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allList = value["List"]["RiskCheckResultForDisplay"];
-	for (auto value : allList)
+	auto allListNode = value["List"]["RiskCheckResultForDisplay"];
+	for (auto valueListRiskCheckResultForDisplay : allListNode)
 	{
 		RiskCheckResultForDisplay listObject;
-		if(!value["ItemId"].isNull())
-			listObject.itemId = std::stol(value["ItemId"].asString());
-		if(!value["TaskId"].isNull())
-			listObject.taskId = std::stol(value["TaskId"].asString());
-		if(!value["Title"].isNull())
-			listObject.title = value["Title"].asString();
-		if(!value["RiskLevel"].isNull())
-			listObject.riskLevel = value["RiskLevel"].asString();
-		if(!value["Status"].isNull())
-			listObject.status = value["Status"].asString();
-		if(!value["AffectedCount"].isNull())
-			listObject.affectedCount = std::stoi(value["AffectedCount"].asString());
-		if(!value["CheckTime"].isNull())
-			listObject.checkTime = std::stol(value["CheckTime"].asString());
-		if(!value["RemainingTime"].isNull())
-			listObject.remainingTime = std::stoi(value["RemainingTime"].asString());
-		if(!value["Sort"].isNull())
-			listObject.sort = std::stoi(value["Sort"].asString());
-		if(!value["Type"].isNull())
-			listObject.type = value["Type"].asString();
-		if(!value["StartStatus"].isNull())
-			listObject.startStatus = value["StartStatus"].asString();
-		if(!value["RiskAssertType"].isNull())
-			listObject.riskAssertType = value["RiskAssertType"].asString();
-		auto allRiskItemResources = value["RiskItemResources"]["RiskItemResource"];
-		for (auto value : allRiskItemResources)
+		if(!valueListRiskCheckResultForDisplay["ItemId"].isNull())
+			listObject.itemId = std::stol(valueListRiskCheckResultForDisplay["ItemId"].asString());
+		if(!valueListRiskCheckResultForDisplay["TaskId"].isNull())
+			listObject.taskId = std::stol(valueListRiskCheckResultForDisplay["TaskId"].asString());
+		if(!valueListRiskCheckResultForDisplay["Title"].isNull())
+			listObject.title = valueListRiskCheckResultForDisplay["Title"].asString();
+		if(!valueListRiskCheckResultForDisplay["RiskLevel"].isNull())
+			listObject.riskLevel = valueListRiskCheckResultForDisplay["RiskLevel"].asString();
+		if(!valueListRiskCheckResultForDisplay["Status"].isNull())
+			listObject.status = valueListRiskCheckResultForDisplay["Status"].asString();
+		if(!valueListRiskCheckResultForDisplay["AffectedCount"].isNull())
+			listObject.affectedCount = std::stoi(valueListRiskCheckResultForDisplay["AffectedCount"].asString());
+		if(!valueListRiskCheckResultForDisplay["CheckTime"].isNull())
+			listObject.checkTime = std::stol(valueListRiskCheckResultForDisplay["CheckTime"].asString());
+		if(!valueListRiskCheckResultForDisplay["RemainingTime"].isNull())
+			listObject.remainingTime = std::stoi(valueListRiskCheckResultForDisplay["RemainingTime"].asString());
+		if(!valueListRiskCheckResultForDisplay["Sort"].isNull())
+			listObject.sort = std::stoi(valueListRiskCheckResultForDisplay["Sort"].asString());
+		if(!valueListRiskCheckResultForDisplay["Type"].isNull())
+			listObject.type = valueListRiskCheckResultForDisplay["Type"].asString();
+		if(!valueListRiskCheckResultForDisplay["StartStatus"].isNull())
+			listObject.startStatus = valueListRiskCheckResultForDisplay["StartStatus"].asString();
+		if(!valueListRiskCheckResultForDisplay["RiskAssertType"].isNull())
+			listObject.riskAssertType = valueListRiskCheckResultForDisplay["RiskAssertType"].asString();
+		auto allRiskItemResourcesNode = allListNode["RiskItemResources"]["RiskItemResource"];
+		for (auto allListNodeRiskItemResourcesRiskItemResource : allRiskItemResourcesNode)
 		{
 			RiskCheckResultForDisplay::RiskItemResource riskItemResourcesObject;
-			if(!value["ResourceName"].isNull())
-				riskItemResourcesObject.resourceName = value["ResourceName"].asString();
-			if(!value["ContentResource"].isNull())
-				riskItemResourcesObject.contentResource = value["ContentResource"].asString();
+			if(!allListNodeRiskItemResourcesRiskItemResource["ResourceName"].isNull())
+				riskItemResourcesObject.resourceName = allListNodeRiskItemResourcesRiskItemResource["ResourceName"].asString();
+			if(!allListNodeRiskItemResourcesRiskItemResource["ContentResource"].isNull())
+				riskItemResourcesObject.contentResource = allListNodeRiskItemResourcesRiskItemResource["ContentResource"].asString();
 			listObject.riskItemResources.push_back(riskItemResourcesObject);
 		}
 		list_.push_back(listObject);

@@ -39,58 +39,58 @@ void ListFlowJobResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobList = value["JobList"]["Job"];
-	for (auto value : allJobList)
+	auto allJobListNode = value["JobList"]["Job"];
+	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!value["Id"].isNull())
-			jobListObject.id = value["Id"].asString();
-		if(!value["GmtCreate"].isNull())
-			jobListObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			jobListObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["Name"].isNull())
-			jobListObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			jobListObject.type = value["Type"].asString();
-		if(!value["Description"].isNull())
-			jobListObject.description = value["Description"].asString();
-		if(!value["FailAct"].isNull())
-			jobListObject.failAct = value["FailAct"].asString();
-		if(!value["MaxRetry"].isNull())
-			jobListObject.maxRetry = std::stoi(value["MaxRetry"].asString());
-		if(!value["RetryInterval"].isNull())
-			jobListObject.retryInterval = std::stol(value["RetryInterval"].asString());
-		if(!value["Params"].isNull())
-			jobListObject.params = value["Params"].asString();
-		if(!value["ParamConf"].isNull())
-			jobListObject.paramConf = value["ParamConf"].asString();
-		if(!value["CustomVariables"].isNull())
-			jobListObject.customVariables = value["CustomVariables"].asString();
-		if(!value["EnvConf"].isNull())
-			jobListObject.envConf = value["EnvConf"].asString();
-		if(!value["RunConf"].isNull())
-			jobListObject.runConf = value["RunConf"].asString();
-		if(!value["MonitorConf"].isNull())
-			jobListObject.monitorConf = value["MonitorConf"].asString();
-		if(!value["CategoryId"].isNull())
-			jobListObject.categoryId = value["CategoryId"].asString();
-		if(!value["mode"].isNull())
-			jobListObject.mode = value["mode"].asString();
-		if(!value["Adhoc"].isNull())
-			jobListObject.adhoc = value["Adhoc"].asString();
-		if(!value["AlertConf"].isNull())
-			jobListObject.alertConf = value["AlertConf"].asString();
-		if(!value["LastInstanceDetail"].isNull())
-			jobListObject.lastInstanceDetail = value["LastInstanceDetail"].asString();
-		auto allResourceList = value["ResourceList"]["Resource"];
-		for (auto value : allResourceList)
+		if(!valueJobListJob["Id"].isNull())
+			jobListObject.id = valueJobListJob["Id"].asString();
+		if(!valueJobListJob["GmtCreate"].isNull())
+			jobListObject.gmtCreate = std::stol(valueJobListJob["GmtCreate"].asString());
+		if(!valueJobListJob["GmtModified"].isNull())
+			jobListObject.gmtModified = std::stol(valueJobListJob["GmtModified"].asString());
+		if(!valueJobListJob["Name"].isNull())
+			jobListObject.name = valueJobListJob["Name"].asString();
+		if(!valueJobListJob["Type"].isNull())
+			jobListObject.type = valueJobListJob["Type"].asString();
+		if(!valueJobListJob["Description"].isNull())
+			jobListObject.description = valueJobListJob["Description"].asString();
+		if(!valueJobListJob["FailAct"].isNull())
+			jobListObject.failAct = valueJobListJob["FailAct"].asString();
+		if(!valueJobListJob["MaxRetry"].isNull())
+			jobListObject.maxRetry = std::stoi(valueJobListJob["MaxRetry"].asString());
+		if(!valueJobListJob["RetryInterval"].isNull())
+			jobListObject.retryInterval = std::stol(valueJobListJob["RetryInterval"].asString());
+		if(!valueJobListJob["Params"].isNull())
+			jobListObject.params = valueJobListJob["Params"].asString();
+		if(!valueJobListJob["ParamConf"].isNull())
+			jobListObject.paramConf = valueJobListJob["ParamConf"].asString();
+		if(!valueJobListJob["CustomVariables"].isNull())
+			jobListObject.customVariables = valueJobListJob["CustomVariables"].asString();
+		if(!valueJobListJob["EnvConf"].isNull())
+			jobListObject.envConf = valueJobListJob["EnvConf"].asString();
+		if(!valueJobListJob["RunConf"].isNull())
+			jobListObject.runConf = valueJobListJob["RunConf"].asString();
+		if(!valueJobListJob["MonitorConf"].isNull())
+			jobListObject.monitorConf = valueJobListJob["MonitorConf"].asString();
+		if(!valueJobListJob["CategoryId"].isNull())
+			jobListObject.categoryId = valueJobListJob["CategoryId"].asString();
+		if(!valueJobListJob["mode"].isNull())
+			jobListObject.mode = valueJobListJob["mode"].asString();
+		if(!valueJobListJob["Adhoc"].isNull())
+			jobListObject.adhoc = valueJobListJob["Adhoc"].asString();
+		if(!valueJobListJob["AlertConf"].isNull())
+			jobListObject.alertConf = valueJobListJob["AlertConf"].asString();
+		if(!valueJobListJob["LastInstanceDetail"].isNull())
+			jobListObject.lastInstanceDetail = valueJobListJob["LastInstanceDetail"].asString();
+		auto allResourceListNode = allJobListNode["ResourceList"]["Resource"];
+		for (auto allJobListNodeResourceListResource : allResourceListNode)
 		{
 			Job::Resource resourceListObject;
-			if(!value["Path"].isNull())
-				resourceListObject.path = value["Path"].asString();
-			if(!value["Alias"].isNull())
-				resourceListObject.alias = value["Alias"].asString();
+			if(!allJobListNodeResourceListResource["Path"].isNull())
+				resourceListObject.path = allJobListNodeResourceListResource["Path"].asString();
+			if(!allJobListNodeResourceListResource["Alias"].isNull())
+				resourceListObject.alias = allJobListNodeResourceListResource["Alias"].asString();
 			jobListObject.resourceList.push_back(resourceListObject);
 		}
 		jobList_.push_back(jobListObject);

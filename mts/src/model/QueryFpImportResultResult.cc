@@ -39,22 +39,22 @@ void QueryFpImportResultResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFpResultLogInfoList = value["FpResultLogInfoList"]["FpResultLogInfo"];
-	for (auto value : allFpResultLogInfoList)
+	auto allFpResultLogInfoListNode = value["FpResultLogInfoList"]["FpResultLogInfo"];
+	for (auto valueFpResultLogInfoListFpResultLogInfo : allFpResultLogInfoListNode)
 	{
 		FpResultLogInfo fpResultLogInfoListObject;
-		if(!value["LogPath"].isNull())
-			fpResultLogInfoListObject.logPath = value["LogPath"].asString();
-		if(!value["LogName"].isNull())
-			fpResultLogInfoListObject.logName = value["LogName"].asString();
-		if(!value["LogStartTime"].isNull())
-			fpResultLogInfoListObject.logStartTime = std::stol(value["LogStartTime"].asString());
-		if(!value["LogEndTime"].isNull())
-			fpResultLogInfoListObject.logEndTime = std::stol(value["LogEndTime"].asString());
-		if(!value["LogSize"].isNull())
-			fpResultLogInfoListObject.logSize = std::stol(value["LogSize"].asString());
-		if(!value["CreateTime"].isNull())
-			fpResultLogInfoListObject.createTime = std::stol(value["CreateTime"].asString());
+		if(!valueFpResultLogInfoListFpResultLogInfo["LogPath"].isNull())
+			fpResultLogInfoListObject.logPath = valueFpResultLogInfoListFpResultLogInfo["LogPath"].asString();
+		if(!valueFpResultLogInfoListFpResultLogInfo["LogName"].isNull())
+			fpResultLogInfoListObject.logName = valueFpResultLogInfoListFpResultLogInfo["LogName"].asString();
+		if(!valueFpResultLogInfoListFpResultLogInfo["LogStartTime"].isNull())
+			fpResultLogInfoListObject.logStartTime = std::stol(valueFpResultLogInfoListFpResultLogInfo["LogStartTime"].asString());
+		if(!valueFpResultLogInfoListFpResultLogInfo["LogEndTime"].isNull())
+			fpResultLogInfoListObject.logEndTime = std::stol(valueFpResultLogInfoListFpResultLogInfo["LogEndTime"].asString());
+		if(!valueFpResultLogInfoListFpResultLogInfo["LogSize"].isNull())
+			fpResultLogInfoListObject.logSize = std::stol(valueFpResultLogInfoListFpResultLogInfo["LogSize"].asString());
+		if(!valueFpResultLogInfoListFpResultLogInfo["CreateTime"].isNull())
+			fpResultLogInfoListObject.createTime = std::stol(valueFpResultLogInfoListFpResultLogInfo["CreateTime"].asString());
 		fpResultLogInfoList_.push_back(fpResultLogInfoListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

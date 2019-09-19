@@ -39,22 +39,22 @@ void DescribeTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTags = value["Tags"]["Tag"];
-	for (auto value : allTags)
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
 	{
 		Tag tagsObject;
-		if(!value["ProjectId"].isNull())
-			tagsObject.projectId = value["ProjectId"].asString();
-		if(!value["TagId"].isNull())
-			tagsObject.tagId = value["TagId"].asString();
-		if(!value["TagName"].isNull())
-			tagsObject.tagName = value["TagName"].asString();
-		if(!value["Description"].isNull())
-			tagsObject.description = value["Description"].asString();
-		if(!value["Count"].isNull())
-			tagsObject.count = std::stoi(value["Count"].asString());
-		if(!value["CreationTime"].isNull())
-			tagsObject.creationTime = value["CreationTime"].asString();
+		if(!valueTagsTag["ProjectId"].isNull())
+			tagsObject.projectId = valueTagsTag["ProjectId"].asString();
+		if(!valueTagsTag["TagId"].isNull())
+			tagsObject.tagId = valueTagsTag["TagId"].asString();
+		if(!valueTagsTag["TagName"].isNull())
+			tagsObject.tagName = valueTagsTag["TagName"].asString();
+		if(!valueTagsTag["Description"].isNull())
+			tagsObject.description = valueTagsTag["Description"].asString();
+		if(!valueTagsTag["Count"].isNull())
+			tagsObject.count = std::stoi(valueTagsTag["Count"].asString());
+		if(!valueTagsTag["CreationTime"].isNull())
+			tagsObject.creationTime = valueTagsTag["CreationTime"].asString();
 		tags_.push_back(tagsObject);
 	}
 	if(!value["TotalNum"].isNull())

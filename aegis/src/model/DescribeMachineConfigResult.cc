@@ -39,16 +39,16 @@ void DescribeMachineConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allConfigTargets = value["ConfigTargets"]["ConfigTarget"];
-	for (auto value : allConfigTargets)
+	auto allConfigTargetsNode = value["ConfigTargets"]["ConfigTarget"];
+	for (auto valueConfigTargetsConfigTarget : allConfigTargetsNode)
 	{
 		ConfigTarget configTargetsObject;
-		if(!value["TargetType"].isNull())
-			configTargetsObject.targetType = value["TargetType"].asString();
-		if(!value["Target"].isNull())
-			configTargetsObject.target = value["Target"].asString();
-		if(!value["Flag"].isNull())
-			configTargetsObject.flag = value["Flag"].asString();
+		if(!valueConfigTargetsConfigTarget["TargetType"].isNull())
+			configTargetsObject.targetType = valueConfigTargetsConfigTarget["TargetType"].asString();
+		if(!valueConfigTargetsConfigTarget["Target"].isNull())
+			configTargetsObject.target = valueConfigTargetsConfigTarget["Target"].asString();
+		if(!valueConfigTargetsConfigTarget["Flag"].isNull())
+			configTargetsObject.flag = valueConfigTargetsConfigTarget["Flag"].asString();
 		configTargets_.push_back(configTargetsObject);
 	}
 	if(!value["Count"].isNull())

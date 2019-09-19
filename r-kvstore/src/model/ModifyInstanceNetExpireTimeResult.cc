@@ -39,20 +39,20 @@ void ModifyInstanceNetExpireTimeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNetInfoItems = value["NetInfoItems"]["NetInfoItem"];
-	for (auto value : allNetInfoItems)
+	auto allNetInfoItemsNode = value["NetInfoItems"]["NetInfoItem"];
+	for (auto valueNetInfoItemsNetInfoItem : allNetInfoItemsNode)
 	{
 		NetInfoItem netInfoItemsObject;
-		if(!value["DBInstanceNetType"].isNull())
-			netInfoItemsObject.dBInstanceNetType = value["DBInstanceNetType"].asString();
-		if(!value["Port"].isNull())
-			netInfoItemsObject.port = value["Port"].asString();
-		if(!value["ExpiredTime"].isNull())
-			netInfoItemsObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["ConnectionString"].isNull())
-			netInfoItemsObject.connectionString = value["ConnectionString"].asString();
-		if(!value["IPAddress"].isNull())
-			netInfoItemsObject.iPAddress = value["IPAddress"].asString();
+		if(!valueNetInfoItemsNetInfoItem["DBInstanceNetType"].isNull())
+			netInfoItemsObject.dBInstanceNetType = valueNetInfoItemsNetInfoItem["DBInstanceNetType"].asString();
+		if(!valueNetInfoItemsNetInfoItem["Port"].isNull())
+			netInfoItemsObject.port = valueNetInfoItemsNetInfoItem["Port"].asString();
+		if(!valueNetInfoItemsNetInfoItem["ExpiredTime"].isNull())
+			netInfoItemsObject.expiredTime = valueNetInfoItemsNetInfoItem["ExpiredTime"].asString();
+		if(!valueNetInfoItemsNetInfoItem["ConnectionString"].isNull())
+			netInfoItemsObject.connectionString = valueNetInfoItemsNetInfoItem["ConnectionString"].asString();
+		if(!valueNetInfoItemsNetInfoItem["IPAddress"].isNull())
+			netInfoItemsObject.iPAddress = valueNetInfoItemsNetInfoItem["IPAddress"].asString();
 		netInfoItems_.push_back(netInfoItemsObject);
 	}
 	if(!value["InstanceId"].isNull())

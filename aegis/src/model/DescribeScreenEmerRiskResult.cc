@@ -39,16 +39,16 @@ void DescribeScreenEmerRiskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCloudHcRiskItems = value["CloudHcRiskItems"]["CloudHcRiskItem"];
-	for (auto value : allCloudHcRiskItems)
+	auto allCloudHcRiskItemsNode = value["CloudHcRiskItems"]["CloudHcRiskItem"];
+	for (auto valueCloudHcRiskItemsCloudHcRiskItem : allCloudHcRiskItemsNode)
 	{
 		CloudHcRiskItem cloudHcRiskItemsObject;
-		if(!value["Level"].isNull())
-			cloudHcRiskItemsObject.level = value["Level"].asString();
-		if(!value["VulName"].isNull())
-			cloudHcRiskItemsObject.vulName = value["VulName"].asString();
-		if(!value["AffectCount"].isNull())
-			cloudHcRiskItemsObject.affectCount = std::stoi(value["AffectCount"].asString());
+		if(!valueCloudHcRiskItemsCloudHcRiskItem["Level"].isNull())
+			cloudHcRiskItemsObject.level = valueCloudHcRiskItemsCloudHcRiskItem["Level"].asString();
+		if(!valueCloudHcRiskItemsCloudHcRiskItem["VulName"].isNull())
+			cloudHcRiskItemsObject.vulName = valueCloudHcRiskItemsCloudHcRiskItem["VulName"].asString();
+		if(!valueCloudHcRiskItemsCloudHcRiskItem["AffectCount"].isNull())
+			cloudHcRiskItemsObject.affectCount = std::stoi(valueCloudHcRiskItemsCloudHcRiskItem["AffectCount"].asString());
 		cloudHcRiskItems_.push_back(cloudHcRiskItemsObject);
 	}
 	if(!value["Success"].isNull())

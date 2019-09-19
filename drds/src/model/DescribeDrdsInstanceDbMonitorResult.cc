@@ -39,22 +39,22 @@ void DescribeDrdsInstanceDbMonitorResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["PartialPerformanceData"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["PartialPerformanceData"];
+	for (auto valueDataPartialPerformanceData : allDataNode)
 	{
 		PartialPerformanceData dataObject;
-		if(!value["Key"].isNull())
-			dataObject.key = value["Key"].asString();
-		if(!value["Unit"].isNull())
-			dataObject.unit = value["Unit"].asString();
-		auto allValues = value["Values"]["PerformanceValue"];
-		for (auto value : allValues)
+		if(!valueDataPartialPerformanceData["Key"].isNull())
+			dataObject.key = valueDataPartialPerformanceData["Key"].asString();
+		if(!valueDataPartialPerformanceData["Unit"].isNull())
+			dataObject.unit = valueDataPartialPerformanceData["Unit"].asString();
+		auto allValuesNode = allDataNode["Values"]["PerformanceValue"];
+		for (auto allDataNodeValuesPerformanceValue : allValuesNode)
 		{
 			PartialPerformanceData::PerformanceValue valuesObject;
-			if(!value["Date"].isNull())
-				valuesObject.date = std::stol(value["Date"].asString());
-			if(!value["Value"].isNull())
-				valuesObject.value = value["Value"].asString();
+			if(!allDataNodeValuesPerformanceValue["Date"].isNull())
+				valuesObject.date = std::stol(allDataNodeValuesPerformanceValue["Date"].asString());
+			if(!allDataNodeValuesPerformanceValue["Value"].isNull())
+				valuesObject.value = allDataNodeValuesPerformanceValue["Value"].asString();
 			dataObject.values.push_back(valuesObject);
 		}
 		data_.push_back(dataObject);

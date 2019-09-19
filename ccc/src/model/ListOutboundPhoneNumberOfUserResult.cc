@@ -39,36 +39,36 @@ void ListOutboundPhoneNumberOfUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOutboundPhoneNumbers = value["OutboundPhoneNumbers"]["PhoneNumber"];
-	for (auto value : allOutboundPhoneNumbers)
+	auto allOutboundPhoneNumbersNode = value["OutboundPhoneNumbers"]["PhoneNumber"];
+	for (auto valueOutboundPhoneNumbersPhoneNumber : allOutboundPhoneNumbersNode)
 	{
 		PhoneNumber outboundPhoneNumbersObject;
-		if(!value["PhoneNumberId"].isNull())
-			outboundPhoneNumbersObject.phoneNumberId = value["PhoneNumberId"].asString();
-		if(!value["InstanceId"].isNull())
-			outboundPhoneNumbersObject.instanceId = value["InstanceId"].asString();
-		if(!value["Number"].isNull())
-			outboundPhoneNumbersObject.number = value["Number"].asString();
-		if(!value["PhoneNumberDescription"].isNull())
-			outboundPhoneNumbersObject.phoneNumberDescription = value["PhoneNumberDescription"].asString();
-		if(!value["TestOnly"].isNull())
-			outboundPhoneNumbersObject.testOnly = value["TestOnly"].asString() == "true";
-		if(!value["RemainingTime"].isNull())
-			outboundPhoneNumbersObject.remainingTime = std::stoi(value["RemainingTime"].asString());
-		if(!value["AllowOutbound"].isNull())
-			outboundPhoneNumbersObject.allowOutbound = value["AllowOutbound"].asString() == "true";
-		if(!value["Usage"].isNull())
-			outboundPhoneNumbersObject.usage = value["Usage"].asString();
-		if(!value["Trunks"].isNull())
-			outboundPhoneNumbersObject.trunks = std::stoi(value["Trunks"].asString());
-		if(!value["City"].isNull())
-			outboundPhoneNumbersObject.city = value["City"].asString();
-		if(!value["Province"].isNull())
-			outboundPhoneNumbersObject.province = value["Province"].asString();
-		if(!value["PrivateFlag"].isNull())
-			outboundPhoneNumbersObject.privateFlag = value["PrivateFlag"].asString() == "true";
-		if(!value["SipTelX"].isNull())
-			outboundPhoneNumbersObject.sipTelX = value["SipTelX"].asString();
+		if(!valueOutboundPhoneNumbersPhoneNumber["PhoneNumberId"].isNull())
+			outboundPhoneNumbersObject.phoneNumberId = valueOutboundPhoneNumbersPhoneNumber["PhoneNumberId"].asString();
+		if(!valueOutboundPhoneNumbersPhoneNumber["InstanceId"].isNull())
+			outboundPhoneNumbersObject.instanceId = valueOutboundPhoneNumbersPhoneNumber["InstanceId"].asString();
+		if(!valueOutboundPhoneNumbersPhoneNumber["Number"].isNull())
+			outboundPhoneNumbersObject.number = valueOutboundPhoneNumbersPhoneNumber["Number"].asString();
+		if(!valueOutboundPhoneNumbersPhoneNumber["PhoneNumberDescription"].isNull())
+			outboundPhoneNumbersObject.phoneNumberDescription = valueOutboundPhoneNumbersPhoneNumber["PhoneNumberDescription"].asString();
+		if(!valueOutboundPhoneNumbersPhoneNumber["TestOnly"].isNull())
+			outboundPhoneNumbersObject.testOnly = valueOutboundPhoneNumbersPhoneNumber["TestOnly"].asString() == "true";
+		if(!valueOutboundPhoneNumbersPhoneNumber["RemainingTime"].isNull())
+			outboundPhoneNumbersObject.remainingTime = std::stoi(valueOutboundPhoneNumbersPhoneNumber["RemainingTime"].asString());
+		if(!valueOutboundPhoneNumbersPhoneNumber["AllowOutbound"].isNull())
+			outboundPhoneNumbersObject.allowOutbound = valueOutboundPhoneNumbersPhoneNumber["AllowOutbound"].asString() == "true";
+		if(!valueOutboundPhoneNumbersPhoneNumber["Usage"].isNull())
+			outboundPhoneNumbersObject.usage = valueOutboundPhoneNumbersPhoneNumber["Usage"].asString();
+		if(!valueOutboundPhoneNumbersPhoneNumber["Trunks"].isNull())
+			outboundPhoneNumbersObject.trunks = std::stoi(valueOutboundPhoneNumbersPhoneNumber["Trunks"].asString());
+		if(!valueOutboundPhoneNumbersPhoneNumber["City"].isNull())
+			outboundPhoneNumbersObject.city = valueOutboundPhoneNumbersPhoneNumber["City"].asString();
+		if(!valueOutboundPhoneNumbersPhoneNumber["Province"].isNull())
+			outboundPhoneNumbersObject.province = valueOutboundPhoneNumbersPhoneNumber["Province"].asString();
+		if(!valueOutboundPhoneNumbersPhoneNumber["PrivateFlag"].isNull())
+			outboundPhoneNumbersObject.privateFlag = valueOutboundPhoneNumbersPhoneNumber["PrivateFlag"].asString() == "true";
+		if(!valueOutboundPhoneNumbersPhoneNumber["SipTelX"].isNull())
+			outboundPhoneNumbersObject.sipTelX = valueOutboundPhoneNumbersPhoneNumber["SipTelX"].asString();
 		auto privacyNumberNode = value["PrivacyNumber"];
 		if(!privacyNumberNode["PoolId"].isNull())
 			outboundPhoneNumbersObject.privacyNumber.poolId = privacyNumberNode["PoolId"].asString();

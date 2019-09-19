@@ -39,22 +39,22 @@ void DescribeAuditFilesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["LogFile"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["LogFile"];
+	for (auto valueItemsLogFile : allItemsNode)
 	{
 		LogFile itemsObject;
-		if(!value["FileID"].isNull())
-			itemsObject.fileID = std::stoi(value["FileID"].asString());
-		if(!value["LogStatus"].isNull())
-			itemsObject.logStatus = value["LogStatus"].asString();
-		if(!value["LogStartTime"].isNull())
-			itemsObject.logStartTime = value["LogStartTime"].asString();
-		if(!value["LogEndTime"].isNull())
-			itemsObject.logEndTime = value["LogEndTime"].asString();
-		if(!value["LogDownloadURL"].isNull())
-			itemsObject.logDownloadURL = value["LogDownloadURL"].asString();
-		if(!value["LogSize"].isNull())
-			itemsObject.logSize = std::stol(value["LogSize"].asString());
+		if(!valueItemsLogFile["FileID"].isNull())
+			itemsObject.fileID = std::stoi(valueItemsLogFile["FileID"].asString());
+		if(!valueItemsLogFile["LogStatus"].isNull())
+			itemsObject.logStatus = valueItemsLogFile["LogStatus"].asString();
+		if(!valueItemsLogFile["LogStartTime"].isNull())
+			itemsObject.logStartTime = valueItemsLogFile["LogStartTime"].asString();
+		if(!valueItemsLogFile["LogEndTime"].isNull())
+			itemsObject.logEndTime = valueItemsLogFile["LogEndTime"].asString();
+		if(!valueItemsLogFile["LogDownloadURL"].isNull())
+			itemsObject.logDownloadURL = valueItemsLogFile["LogDownloadURL"].asString();
+		if(!valueItemsLogFile["LogSize"].isNull())
+			itemsObject.logSize = std::stol(valueItemsLogFile["LogSize"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

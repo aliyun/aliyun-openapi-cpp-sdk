@@ -39,8 +39,8 @@ void GetMetadataTypeListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["supportedMetadataTypeDTO"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["supportedMetadataTypeDTO"];
+	for (auto valueDatasupportedMetadataTypeDTO : allDataNode)
 	{
 		SupportedMetadataTypeDTO dataObject;
 		auto allName = value["Name"]["Name"];

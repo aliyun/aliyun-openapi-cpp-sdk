@@ -39,16 +39,16 @@ void DescribeHpcClustersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHpcClusters = value["HpcClusters"]["HpcCluster"];
-	for (auto value : allHpcClusters)
+	auto allHpcClustersNode = value["HpcClusters"]["HpcCluster"];
+	for (auto valueHpcClustersHpcCluster : allHpcClustersNode)
 	{
 		HpcCluster hpcClustersObject;
-		if(!value["HpcClusterId"].isNull())
-			hpcClustersObject.hpcClusterId = value["HpcClusterId"].asString();
-		if(!value["Name"].isNull())
-			hpcClustersObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			hpcClustersObject.description = value["Description"].asString();
+		if(!valueHpcClustersHpcCluster["HpcClusterId"].isNull())
+			hpcClustersObject.hpcClusterId = valueHpcClustersHpcCluster["HpcClusterId"].asString();
+		if(!valueHpcClustersHpcCluster["Name"].isNull())
+			hpcClustersObject.name = valueHpcClustersHpcCluster["Name"].asString();
+		if(!valueHpcClustersHpcCluster["Description"].isNull())
+			hpcClustersObject.description = valueHpcClustersHpcCluster["Description"].asString();
 		hpcClusters_.push_back(hpcClustersObject);
 	}
 	if(!value["TotalCount"].isNull())

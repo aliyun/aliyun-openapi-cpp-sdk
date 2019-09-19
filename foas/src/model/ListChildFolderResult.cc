@@ -39,14 +39,14 @@ void ListChildFolderResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFolders = value["Folders"]["Folder"];
-	for (auto value : allFolders)
+	auto allFoldersNode = value["Folders"]["Folder"];
+	for (auto valueFoldersFolder : allFoldersNode)
 	{
 		Folder foldersObject;
-		if(!value["FolderId"].isNull())
-			foldersObject.folderId = std::stol(value["FolderId"].asString());
-		if(!value["Path"].isNull())
-			foldersObject.path = value["Path"].asString();
+		if(!valueFoldersFolder["FolderId"].isNull())
+			foldersObject.folderId = std::stol(valueFoldersFolder["FolderId"].asString());
+		if(!valueFoldersFolder["Path"].isNull())
+			foldersObject.path = valueFoldersFolder["Path"].asString();
 		folders_.push_back(foldersObject);
 	}
 

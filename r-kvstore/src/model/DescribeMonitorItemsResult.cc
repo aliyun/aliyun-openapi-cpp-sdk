@@ -39,14 +39,14 @@ void DescribeMonitorItemsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMonitorItems = value["MonitorItems"]["KVStoreMonitorItem"];
-	for (auto value : allMonitorItems)
+	auto allMonitorItemsNode = value["MonitorItems"]["KVStoreMonitorItem"];
+	for (auto valueMonitorItemsKVStoreMonitorItem : allMonitorItemsNode)
 	{
 		KVStoreMonitorItem monitorItemsObject;
-		if(!value["MonitorKey"].isNull())
-			monitorItemsObject.monitorKey = value["MonitorKey"].asString();
-		if(!value["Unit"].isNull())
-			monitorItemsObject.unit = value["Unit"].asString();
+		if(!valueMonitorItemsKVStoreMonitorItem["MonitorKey"].isNull())
+			monitorItemsObject.monitorKey = valueMonitorItemsKVStoreMonitorItem["MonitorKey"].asString();
+		if(!valueMonitorItemsKVStoreMonitorItem["Unit"].isNull())
+			monitorItemsObject.unit = valueMonitorItemsKVStoreMonitorItem["Unit"].asString();
 		monitorItems_.push_back(monitorItemsObject);
 	}
 

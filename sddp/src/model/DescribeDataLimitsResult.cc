@@ -39,32 +39,32 @@ void DescribeDataLimitsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataLimitList = value["DataLimitList"]["DataLimit"];
-	for (auto value : allDataLimitList)
+	auto allDataLimitListNode = value["DataLimitList"]["DataLimit"];
+	for (auto valueDataLimitListDataLimit : allDataLimitListNode)
 	{
 		DataLimit dataLimitListObject;
-		if(!value["RegionId"].isNull())
-			dataLimitListObject.regionId = value["RegionId"].asString();
-		if(!value["LocalName"].isNull())
-			dataLimitListObject.localName = value["LocalName"].asString();
-		if(!value["ParentId"].isNull())
-			dataLimitListObject.parentId = value["ParentId"].asString();
-		if(!value["Id"].isNull())
-			dataLimitListObject.id = std::stol(value["Id"].asString());
-		if(!value["UserName"].isNull())
-			dataLimitListObject.userName = value["UserName"].asString();
-		if(!value["GmtCreate"].isNull())
-			dataLimitListObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["Connector"].isNull())
-			dataLimitListObject.connector = value["Connector"].asString();
-		if(!value["CheckStatus"].isNull())
-			dataLimitListObject.checkStatus = std::stoi(value["CheckStatus"].asString());
-		if(!value["CheckStatusName"].isNull())
-			dataLimitListObject.checkStatusName = value["CheckStatusName"].asString();
-		if(!value["ResourceType"].isNull())
-			dataLimitListObject.resourceType = std::stol(value["ResourceType"].asString());
-		if(!value["ResourceTypeCode"].isNull())
-			dataLimitListObject.resourceTypeCode = value["ResourceTypeCode"].asString();
+		if(!valueDataLimitListDataLimit["RegionId"].isNull())
+			dataLimitListObject.regionId = valueDataLimitListDataLimit["RegionId"].asString();
+		if(!valueDataLimitListDataLimit["LocalName"].isNull())
+			dataLimitListObject.localName = valueDataLimitListDataLimit["LocalName"].asString();
+		if(!valueDataLimitListDataLimit["ParentId"].isNull())
+			dataLimitListObject.parentId = valueDataLimitListDataLimit["ParentId"].asString();
+		if(!valueDataLimitListDataLimit["Id"].isNull())
+			dataLimitListObject.id = std::stol(valueDataLimitListDataLimit["Id"].asString());
+		if(!valueDataLimitListDataLimit["UserName"].isNull())
+			dataLimitListObject.userName = valueDataLimitListDataLimit["UserName"].asString();
+		if(!valueDataLimitListDataLimit["GmtCreate"].isNull())
+			dataLimitListObject.gmtCreate = std::stol(valueDataLimitListDataLimit["GmtCreate"].asString());
+		if(!valueDataLimitListDataLimit["Connector"].isNull())
+			dataLimitListObject.connector = valueDataLimitListDataLimit["Connector"].asString();
+		if(!valueDataLimitListDataLimit["CheckStatus"].isNull())
+			dataLimitListObject.checkStatus = std::stoi(valueDataLimitListDataLimit["CheckStatus"].asString());
+		if(!valueDataLimitListDataLimit["CheckStatusName"].isNull())
+			dataLimitListObject.checkStatusName = valueDataLimitListDataLimit["CheckStatusName"].asString();
+		if(!valueDataLimitListDataLimit["ResourceType"].isNull())
+			dataLimitListObject.resourceType = std::stol(valueDataLimitListDataLimit["ResourceType"].asString());
+		if(!valueDataLimitListDataLimit["ResourceTypeCode"].isNull())
+			dataLimitListObject.resourceTypeCode = valueDataLimitListDataLimit["ResourceTypeCode"].asString();
 		dataLimitList_.push_back(dataLimitListObject);
 	}
 

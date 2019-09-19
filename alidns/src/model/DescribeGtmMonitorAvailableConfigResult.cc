@@ -39,22 +39,22 @@ void DescribeGtmMonitorAvailableConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIspCityNodes = value["IspCityNodes"]["IspCityNode"];
-	for (auto value : allIspCityNodes)
+	auto allIspCityNodesNode = value["IspCityNodes"]["IspCityNode"];
+	for (auto valueIspCityNodesIspCityNode : allIspCityNodesNode)
 	{
 		IspCityNode ispCityNodesObject;
-		if(!value["IspName"].isNull())
-			ispCityNodesObject.ispName = value["IspName"].asString();
-		if(!value["IspCode"].isNull())
-			ispCityNodesObject.ispCode = value["IspCode"].asString();
-		if(!value["CityName"].isNull())
-			ispCityNodesObject.cityName = value["CityName"].asString();
-		if(!value["CityCode"].isNull())
-			ispCityNodesObject.cityCode = value["CityCode"].asString();
-		if(!value["DefaultSelected"].isNull())
-			ispCityNodesObject.defaultSelected = value["DefaultSelected"].asString() == "true";
-		if(!value["Mainland"].isNull())
-			ispCityNodesObject.mainland = value["Mainland"].asString() == "true";
+		if(!valueIspCityNodesIspCityNode["IspName"].isNull())
+			ispCityNodesObject.ispName = valueIspCityNodesIspCityNode["IspName"].asString();
+		if(!valueIspCityNodesIspCityNode["IspCode"].isNull())
+			ispCityNodesObject.ispCode = valueIspCityNodesIspCityNode["IspCode"].asString();
+		if(!valueIspCityNodesIspCityNode["CityName"].isNull())
+			ispCityNodesObject.cityName = valueIspCityNodesIspCityNode["CityName"].asString();
+		if(!valueIspCityNodesIspCityNode["CityCode"].isNull())
+			ispCityNodesObject.cityCode = valueIspCityNodesIspCityNode["CityCode"].asString();
+		if(!valueIspCityNodesIspCityNode["DefaultSelected"].isNull())
+			ispCityNodesObject.defaultSelected = valueIspCityNodesIspCityNode["DefaultSelected"].asString() == "true";
+		if(!valueIspCityNodesIspCityNode["Mainland"].isNull())
+			ispCityNodesObject.mainland = valueIspCityNodesIspCityNode["Mainland"].asString() == "true";
 		ispCityNodes_.push_back(ispCityNodesObject);
 	}
 

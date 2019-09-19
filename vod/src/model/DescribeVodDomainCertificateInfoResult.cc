@@ -39,28 +39,28 @@ void DescribeVodDomainCertificateInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCertInfos = value["CertInfos"]["CertInfo"];
-	for (auto value : allCertInfos)
+	auto allCertInfosNode = value["CertInfos"]["CertInfo"];
+	for (auto valueCertInfosCertInfo : allCertInfosNode)
 	{
 		CertInfo certInfosObject;
-		if(!value["DomainName"].isNull())
-			certInfosObject.domainName = value["DomainName"].asString();
-		if(!value["CertName"].isNull())
-			certInfosObject.certName = value["CertName"].asString();
-		if(!value["CertDomainName"].isNull())
-			certInfosObject.certDomainName = value["CertDomainName"].asString();
-		if(!value["CertExpireTime"].isNull())
-			certInfosObject.certExpireTime = value["CertExpireTime"].asString();
-		if(!value["CertLife"].isNull())
-			certInfosObject.certLife = value["CertLife"].asString();
-		if(!value["CertOrg"].isNull())
-			certInfosObject.certOrg = value["CertOrg"].asString();
-		if(!value["CertType"].isNull())
-			certInfosObject.certType = value["CertType"].asString();
-		if(!value["ServerCertificateStatus"].isNull())
-			certInfosObject.serverCertificateStatus = value["ServerCertificateStatus"].asString();
-		if(!value["Status"].isNull())
-			certInfosObject.status = value["Status"].asString();
+		if(!valueCertInfosCertInfo["DomainName"].isNull())
+			certInfosObject.domainName = valueCertInfosCertInfo["DomainName"].asString();
+		if(!valueCertInfosCertInfo["CertName"].isNull())
+			certInfosObject.certName = valueCertInfosCertInfo["CertName"].asString();
+		if(!valueCertInfosCertInfo["CertDomainName"].isNull())
+			certInfosObject.certDomainName = valueCertInfosCertInfo["CertDomainName"].asString();
+		if(!valueCertInfosCertInfo["CertExpireTime"].isNull())
+			certInfosObject.certExpireTime = valueCertInfosCertInfo["CertExpireTime"].asString();
+		if(!valueCertInfosCertInfo["CertLife"].isNull())
+			certInfosObject.certLife = valueCertInfosCertInfo["CertLife"].asString();
+		if(!valueCertInfosCertInfo["CertOrg"].isNull())
+			certInfosObject.certOrg = valueCertInfosCertInfo["CertOrg"].asString();
+		if(!valueCertInfosCertInfo["CertType"].isNull())
+			certInfosObject.certType = valueCertInfosCertInfo["CertType"].asString();
+		if(!valueCertInfosCertInfo["ServerCertificateStatus"].isNull())
+			certInfosObject.serverCertificateStatus = valueCertInfosCertInfo["ServerCertificateStatus"].asString();
+		if(!valueCertInfosCertInfo["Status"].isNull())
+			certInfosObject.status = valueCertInfosCertInfo["Status"].asString();
 		certInfos_.push_back(certInfosObject);
 	}
 

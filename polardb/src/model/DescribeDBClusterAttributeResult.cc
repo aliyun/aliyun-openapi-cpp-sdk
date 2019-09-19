@@ -39,36 +39,36 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTags = value["Tags"]["Tag"];
-	for (auto value : allTags)
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
 	{
 		Tag tagsObject;
-		if(!value["Key"].isNull())
-			tagsObject.key = value["Key"].asString();
-		if(!value["Value"].isNull())
-			tagsObject.value = value["Value"].asString();
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
 		tags_.push_back(tagsObject);
 	}
-	auto allDBNodes = value["DBNodes"]["DBNode"];
-	for (auto value : allDBNodes)
+	auto allDBNodesNode = value["DBNodes"]["DBNode"];
+	for (auto valueDBNodesDBNode : allDBNodesNode)
 	{
 		DBNode dBNodesObject;
-		if(!value["DBNodeId"].isNull())
-			dBNodesObject.dBNodeId = value["DBNodeId"].asString();
-		if(!value["ZoneId"].isNull())
-			dBNodesObject.zoneId = value["ZoneId"].asString();
-		if(!value["DBNodeStatus"].isNull())
-			dBNodesObject.dBNodeStatus = value["DBNodeStatus"].asString();
-		if(!value["CreationTime"].isNull())
-			dBNodesObject.creationTime = value["CreationTime"].asString();
-		if(!value["DBNodeClass"].isNull())
-			dBNodesObject.dBNodeClass = value["DBNodeClass"].asString();
-		if(!value["DBNodeRole"].isNull())
-			dBNodesObject.dBNodeRole = value["DBNodeRole"].asString();
-		if(!value["MaxIOPS"].isNull())
-			dBNodesObject.maxIOPS = std::stoi(value["MaxIOPS"].asString());
-		if(!value["MaxConnections"].isNull())
-			dBNodesObject.maxConnections = std::stoi(value["MaxConnections"].asString());
+		if(!valueDBNodesDBNode["DBNodeId"].isNull())
+			dBNodesObject.dBNodeId = valueDBNodesDBNode["DBNodeId"].asString();
+		if(!valueDBNodesDBNode["ZoneId"].isNull())
+			dBNodesObject.zoneId = valueDBNodesDBNode["ZoneId"].asString();
+		if(!valueDBNodesDBNode["DBNodeStatus"].isNull())
+			dBNodesObject.dBNodeStatus = valueDBNodesDBNode["DBNodeStatus"].asString();
+		if(!valueDBNodesDBNode["CreationTime"].isNull())
+			dBNodesObject.creationTime = valueDBNodesDBNode["CreationTime"].asString();
+		if(!valueDBNodesDBNode["DBNodeClass"].isNull())
+			dBNodesObject.dBNodeClass = valueDBNodesDBNode["DBNodeClass"].asString();
+		if(!valueDBNodesDBNode["DBNodeRole"].isNull())
+			dBNodesObject.dBNodeRole = valueDBNodesDBNode["DBNodeRole"].asString();
+		if(!valueDBNodesDBNode["MaxIOPS"].isNull())
+			dBNodesObject.maxIOPS = std::stoi(valueDBNodesDBNode["MaxIOPS"].asString());
+		if(!valueDBNodesDBNode["MaxConnections"].isNull())
+			dBNodesObject.maxConnections = std::stoi(valueDBNodesDBNode["MaxConnections"].asString());
 		dBNodes_.push_back(dBNodesObject);
 	}
 	if(!value["RegionId"].isNull())

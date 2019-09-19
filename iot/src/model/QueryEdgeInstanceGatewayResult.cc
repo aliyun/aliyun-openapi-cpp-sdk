@@ -39,18 +39,18 @@ void QueryEdgeInstanceGatewayResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allGatewayList = value["GatewayList"]["Gateway"];
-	for (auto value : allGatewayList)
+	auto allGatewayListNode = value["GatewayList"]["Gateway"];
+	for (auto valueGatewayListGateway : allGatewayListNode)
 	{
 		Gateway gatewayListObject;
-		if(!value["ProductKey"].isNull())
-			gatewayListObject.productKey = value["ProductKey"].asString();
-		if(!value["DeviceName"].isNull())
-			gatewayListObject.deviceName = value["DeviceName"].asString();
-		if(!value["IotId"].isNull())
-			gatewayListObject.iotId = value["IotId"].asString();
-		if(!value["EdgeVersion"].isNull())
-			gatewayListObject.edgeVersion = value["EdgeVersion"].asString();
+		if(!valueGatewayListGateway["ProductKey"].isNull())
+			gatewayListObject.productKey = valueGatewayListGateway["ProductKey"].asString();
+		if(!valueGatewayListGateway["DeviceName"].isNull())
+			gatewayListObject.deviceName = valueGatewayListGateway["DeviceName"].asString();
+		if(!valueGatewayListGateway["IotId"].isNull())
+			gatewayListObject.iotId = valueGatewayListGateway["IotId"].asString();
+		if(!valueGatewayListGateway["EdgeVersion"].isNull())
+			gatewayListObject.edgeVersion = valueGatewayListGateway["EdgeVersion"].asString();
 		gatewayList_.push_back(gatewayListObject);
 	}
 	if(!value["Success"].isNull())

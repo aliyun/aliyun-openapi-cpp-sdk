@@ -39,16 +39,16 @@ void ListAliasesByKeyIdResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAliases = value["Aliases"]["Alias"];
-	for (auto value : allAliases)
+	auto allAliasesNode = value["Aliases"]["Alias"];
+	for (auto valueAliasesAlias : allAliasesNode)
 	{
 		Alias aliasesObject;
-		if(!value["KeyId"].isNull())
-			aliasesObject.keyId = value["KeyId"].asString();
-		if(!value["AliasName"].isNull())
-			aliasesObject.aliasName = value["AliasName"].asString();
-		if(!value["AliasArn"].isNull())
-			aliasesObject.aliasArn = value["AliasArn"].asString();
+		if(!valueAliasesAlias["KeyId"].isNull())
+			aliasesObject.keyId = valueAliasesAlias["KeyId"].asString();
+		if(!valueAliasesAlias["AliasName"].isNull())
+			aliasesObject.aliasName = valueAliasesAlias["AliasName"].asString();
+		if(!valueAliasesAlias["AliasArn"].isNull())
+			aliasesObject.aliasArn = valueAliasesAlias["AliasArn"].asString();
 		aliases_.push_back(aliasesObject);
 	}
 	if(!value["TotalCount"].isNull())

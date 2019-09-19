@@ -48,62 +48,62 @@ void GetOrderDetailResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
-	auto allOrderList = value["OrderList"]["Order"];
-	for (auto value : allOrderList)
+	auto allOrderListNode = dataNode["OrderList"]["Order"];
+	for (auto dataNodeOrderListOrder : allOrderListNode)
 	{
 		Data::Order orderObject;
-		if(!value["OrderId"].isNull())
-			orderObject.orderId = value["OrderId"].asString();
-		if(!value["SubOrderId"].isNull())
-			orderObject.subOrderId = value["SubOrderId"].asString();
-		if(!value["ProductCode"].isNull())
-			orderObject.productCode = value["ProductCode"].asString();
-		if(!value["ProductType"].isNull())
-			orderObject.productType = value["ProductType"].asString();
-		if(!value["SubscriptionType"].isNull())
-			orderObject.subscriptionType = value["SubscriptionType"].asString();
-		if(!value["OrderType"].isNull())
-			orderObject.orderType = value["OrderType"].asString();
-		if(!value["CreateTime"].isNull())
-			orderObject.createTime = value["CreateTime"].asString();
-		if(!value["PaymentTime"].isNull())
-			orderObject.paymentTime = value["PaymentTime"].asString();
-		if(!value["PaymentStatus"].isNull())
-			orderObject.paymentStatus = value["PaymentStatus"].asString();
-		if(!value["Region"].isNull())
-			orderObject.region = value["Region"].asString();
-		if(!value["Config"].isNull())
-			orderObject.config = value["Config"].asString();
-		if(!value["Quantity"].isNull())
-			orderObject.quantity = value["Quantity"].asString();
-		if(!value["UsageStartTime"].isNull())
-			orderObject.usageStartTime = value["UsageStartTime"].asString();
-		if(!value["UsageEndTime"].isNull())
-			orderObject.usageEndTime = value["UsageEndTime"].asString();
-		if(!value["InstanceIDs"].isNull())
-			orderObject.instanceIDs = value["InstanceIDs"].asString();
-		if(!value["PretaxGrossAmount"].isNull())
-			orderObject.pretaxGrossAmount = value["PretaxGrossAmount"].asString();
-		if(!value["PretaxAmount"].isNull())
-			orderObject.pretaxAmount = value["PretaxAmount"].asString();
-		if(!value["Currency"].isNull())
-			orderObject.currency = value["Currency"].asString();
-		if(!value["PretaxAmountLocal"].isNull())
-			orderObject.pretaxAmountLocal = value["PretaxAmountLocal"].asString();
-		if(!value["Tax"].isNull())
-			orderObject.tax = value["Tax"].asString();
-		if(!value["AfterTaxAmount"].isNull())
-			orderObject.afterTaxAmount = value["AfterTaxAmount"].asString();
-		if(!value["PaymentCurrency"].isNull())
-			orderObject.paymentCurrency = value["PaymentCurrency"].asString();
-		if(!value["Operator"].isNull())
-			orderObject._operator = value["Operator"].asString();
-		if(!value["RelatedOrderId"].isNull())
-			orderObject.relatedOrderId = value["RelatedOrderId"].asString();
-		if(!value["OrderSubType"].isNull())
-			orderObject.orderSubType = value["OrderSubType"].asString();
-		if(!value["OriginalConfig"].isNull())
-			orderObject.originalConfig = value["OriginalConfig"].asString();
+		if(!dataNodeOrderListOrder["OrderId"].isNull())
+			orderObject.orderId = dataNodeOrderListOrder["OrderId"].asString();
+		if(!dataNodeOrderListOrder["SubOrderId"].isNull())
+			orderObject.subOrderId = dataNodeOrderListOrder["SubOrderId"].asString();
+		if(!dataNodeOrderListOrder["ProductCode"].isNull())
+			orderObject.productCode = dataNodeOrderListOrder["ProductCode"].asString();
+		if(!dataNodeOrderListOrder["ProductType"].isNull())
+			orderObject.productType = dataNodeOrderListOrder["ProductType"].asString();
+		if(!dataNodeOrderListOrder["SubscriptionType"].isNull())
+			orderObject.subscriptionType = dataNodeOrderListOrder["SubscriptionType"].asString();
+		if(!dataNodeOrderListOrder["OrderType"].isNull())
+			orderObject.orderType = dataNodeOrderListOrder["OrderType"].asString();
+		if(!dataNodeOrderListOrder["CreateTime"].isNull())
+			orderObject.createTime = dataNodeOrderListOrder["CreateTime"].asString();
+		if(!dataNodeOrderListOrder["PaymentTime"].isNull())
+			orderObject.paymentTime = dataNodeOrderListOrder["PaymentTime"].asString();
+		if(!dataNodeOrderListOrder["PaymentStatus"].isNull())
+			orderObject.paymentStatus = dataNodeOrderListOrder["PaymentStatus"].asString();
+		if(!dataNodeOrderListOrder["Region"].isNull())
+			orderObject.region = dataNodeOrderListOrder["Region"].asString();
+		if(!dataNodeOrderListOrder["Config"].isNull())
+			orderObject.config = dataNodeOrderListOrder["Config"].asString();
+		if(!dataNodeOrderListOrder["Quantity"].isNull())
+			orderObject.quantity = dataNodeOrderListOrder["Quantity"].asString();
+		if(!dataNodeOrderListOrder["UsageStartTime"].isNull())
+			orderObject.usageStartTime = dataNodeOrderListOrder["UsageStartTime"].asString();
+		if(!dataNodeOrderListOrder["UsageEndTime"].isNull())
+			orderObject.usageEndTime = dataNodeOrderListOrder["UsageEndTime"].asString();
+		if(!dataNodeOrderListOrder["InstanceIDs"].isNull())
+			orderObject.instanceIDs = dataNodeOrderListOrder["InstanceIDs"].asString();
+		if(!dataNodeOrderListOrder["PretaxGrossAmount"].isNull())
+			orderObject.pretaxGrossAmount = dataNodeOrderListOrder["PretaxGrossAmount"].asString();
+		if(!dataNodeOrderListOrder["PretaxAmount"].isNull())
+			orderObject.pretaxAmount = dataNodeOrderListOrder["PretaxAmount"].asString();
+		if(!dataNodeOrderListOrder["Currency"].isNull())
+			orderObject.currency = dataNodeOrderListOrder["Currency"].asString();
+		if(!dataNodeOrderListOrder["PretaxAmountLocal"].isNull())
+			orderObject.pretaxAmountLocal = dataNodeOrderListOrder["PretaxAmountLocal"].asString();
+		if(!dataNodeOrderListOrder["Tax"].isNull())
+			orderObject.tax = dataNodeOrderListOrder["Tax"].asString();
+		if(!dataNodeOrderListOrder["AfterTaxAmount"].isNull())
+			orderObject.afterTaxAmount = dataNodeOrderListOrder["AfterTaxAmount"].asString();
+		if(!dataNodeOrderListOrder["PaymentCurrency"].isNull())
+			orderObject.paymentCurrency = dataNodeOrderListOrder["PaymentCurrency"].asString();
+		if(!dataNodeOrderListOrder["Operator"].isNull())
+			orderObject._operator = dataNodeOrderListOrder["Operator"].asString();
+		if(!dataNodeOrderListOrder["RelatedOrderId"].isNull())
+			orderObject.relatedOrderId = dataNodeOrderListOrder["RelatedOrderId"].asString();
+		if(!dataNodeOrderListOrder["OrderSubType"].isNull())
+			orderObject.orderSubType = dataNodeOrderListOrder["OrderSubType"].asString();
+		if(!dataNodeOrderListOrder["OriginalConfig"].isNull())
+			orderObject.originalConfig = dataNodeOrderListOrder["OriginalConfig"].asString();
 		data_.orderList.push_back(orderObject);
 	}
 	if(!value["Success"].isNull())

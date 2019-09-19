@@ -39,14 +39,14 @@ void ListTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTagInfos = value["TagInfos"]["TagInfo"];
-	for (auto value : allTagInfos)
+	auto allTagInfosNode = value["TagInfos"]["TagInfo"];
+	for (auto valueTagInfosTagInfo : allTagInfosNode)
 	{
 		TagInfo tagInfosObject;
-		if(!value["TagKey"].isNull())
-			tagInfosObject.tagKey = value["TagKey"].asString();
-		if(!value["TagValue"].isNull())
-			tagInfosObject.tagValue = value["TagValue"].asString();
+		if(!valueTagInfosTagInfo["TagKey"].isNull())
+			tagInfosObject.tagKey = valueTagInfosTagInfo["TagKey"].asString();
+		if(!valueTagInfosTagInfo["TagValue"].isNull())
+			tagInfosObject.tagValue = valueTagInfosTagInfo["TagValue"].asString();
 		tagInfos_.push_back(tagInfosObject);
 	}
 	if(!value["TotalCount"].isNull())

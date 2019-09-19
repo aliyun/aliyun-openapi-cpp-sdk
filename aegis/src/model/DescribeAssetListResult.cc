@@ -39,32 +39,32 @@ void DescribeAssetListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAssetList = value["AssetList"]["Asset"];
-	for (auto value : allAssetList)
+	auto allAssetListNode = value["AssetList"]["Asset"];
+	for (auto valueAssetListAsset : allAssetListNode)
 	{
 		Asset assetListObject;
-		if(!value["InternetIp"].isNull())
-			assetListObject.internetIp = value["InternetIp"].asString();
-		if(!value["IntranetIp"].isNull())
-			assetListObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["InstanceName"].isNull())
-			assetListObject.instanceName = value["InstanceName"].asString();
-		if(!value["Ip"].isNull())
-			assetListObject.ip = value["Ip"].asString();
-		if(!value["Uuid"].isNull())
-			assetListObject.uuid = value["Uuid"].asString();
-		if(!value["AssetType"].isNull())
-			assetListObject.assetType = value["AssetType"].asString();
-		if(!value["Os"].isNull())
-			assetListObject.os = value["Os"].asString();
-		if(!value["ClientStatus"].isNull())
-			assetListObject.clientStatus = value["ClientStatus"].asString();
-		if(!value["Region"].isNull())
-			assetListObject.region = value["Region"].asString();
-		if(!value["RegionName"].isNull())
-			assetListObject.regionName = value["RegionName"].asString();
-		if(!value["Status"].isNull())
-			assetListObject.status = value["Status"].asString();
+		if(!valueAssetListAsset["InternetIp"].isNull())
+			assetListObject.internetIp = valueAssetListAsset["InternetIp"].asString();
+		if(!valueAssetListAsset["IntranetIp"].isNull())
+			assetListObject.intranetIp = valueAssetListAsset["IntranetIp"].asString();
+		if(!valueAssetListAsset["InstanceName"].isNull())
+			assetListObject.instanceName = valueAssetListAsset["InstanceName"].asString();
+		if(!valueAssetListAsset["Ip"].isNull())
+			assetListObject.ip = valueAssetListAsset["Ip"].asString();
+		if(!valueAssetListAsset["Uuid"].isNull())
+			assetListObject.uuid = valueAssetListAsset["Uuid"].asString();
+		if(!valueAssetListAsset["AssetType"].isNull())
+			assetListObject.assetType = valueAssetListAsset["AssetType"].asString();
+		if(!valueAssetListAsset["Os"].isNull())
+			assetListObject.os = valueAssetListAsset["Os"].asString();
+		if(!valueAssetListAsset["ClientStatus"].isNull())
+			assetListObject.clientStatus = valueAssetListAsset["ClientStatus"].asString();
+		if(!valueAssetListAsset["Region"].isNull())
+			assetListObject.region = valueAssetListAsset["Region"].asString();
+		if(!valueAssetListAsset["RegionName"].isNull())
+			assetListObject.regionName = valueAssetListAsset["RegionName"].asString();
+		if(!valueAssetListAsset["Status"].isNull())
+			assetListObject.status = valueAssetListAsset["Status"].asString();
 		assetList_.push_back(assetListObject);
 	}
 	if(!value["PageSize"].isNull())

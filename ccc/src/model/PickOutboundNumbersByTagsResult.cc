@@ -39,8 +39,8 @@ void PickOutboundNumbersByTagsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDialNumberPairs = value["DialNumberPairs"]["DialNumberPair"];
-	for (auto value : allDialNumberPairs)
+	auto allDialNumberPairsNode = value["DialNumberPairs"]["DialNumberPair"];
+	for (auto valueDialNumberPairsDialNumberPair : allDialNumberPairsNode)
 	{
 		DialNumberPair dialNumberPairsObject;
 		auto calleeNode = value["Callee"];

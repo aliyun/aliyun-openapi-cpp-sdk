@@ -39,24 +39,24 @@ void DescribeTaskAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOperationProgressSet = value["OperationProgressSet"]["OperationProgress"];
-	for (auto value : allOperationProgressSet)
+	auto allOperationProgressSetNode = value["OperationProgressSet"]["OperationProgress"];
+	for (auto valueOperationProgressSetOperationProgress : allOperationProgressSetNode)
 	{
 		OperationProgress operationProgressSetObject;
-		if(!value["OperationStatus"].isNull())
-			operationProgressSetObject.operationStatus = value["OperationStatus"].asString();
-		if(!value["ErrorCode"].isNull())
-			operationProgressSetObject.errorCode = value["ErrorCode"].asString();
-		if(!value["ErrorMsg"].isNull())
-			operationProgressSetObject.errorMsg = value["ErrorMsg"].asString();
-		auto allRelatedItemSet = value["RelatedItemSet"]["RelatedItem"];
-		for (auto value : allRelatedItemSet)
+		if(!valueOperationProgressSetOperationProgress["OperationStatus"].isNull())
+			operationProgressSetObject.operationStatus = valueOperationProgressSetOperationProgress["OperationStatus"].asString();
+		if(!valueOperationProgressSetOperationProgress["ErrorCode"].isNull())
+			operationProgressSetObject.errorCode = valueOperationProgressSetOperationProgress["ErrorCode"].asString();
+		if(!valueOperationProgressSetOperationProgress["ErrorMsg"].isNull())
+			operationProgressSetObject.errorMsg = valueOperationProgressSetOperationProgress["ErrorMsg"].asString();
+		auto allRelatedItemSetNode = allOperationProgressSetNode["RelatedItemSet"]["RelatedItem"];
+		for (auto allOperationProgressSetNodeRelatedItemSetRelatedItem : allRelatedItemSetNode)
 		{
 			OperationProgress::RelatedItem relatedItemSetObject;
-			if(!value["Name"].isNull())
-				relatedItemSetObject.name = value["Name"].asString();
-			if(!value["Value"].isNull())
-				relatedItemSetObject.value = value["Value"].asString();
+			if(!allOperationProgressSetNodeRelatedItemSetRelatedItem["Name"].isNull())
+				relatedItemSetObject.name = allOperationProgressSetNodeRelatedItemSetRelatedItem["Name"].asString();
+			if(!allOperationProgressSetNodeRelatedItemSetRelatedItem["Value"].isNull())
+				relatedItemSetObject.value = allOperationProgressSetNodeRelatedItemSetRelatedItem["Value"].asString();
 			operationProgressSetObject.relatedItemSet.push_back(relatedItemSetObject);
 		}
 		operationProgressSet_.push_back(operationProgressSetObject);

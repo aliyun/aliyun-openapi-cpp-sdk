@@ -61,26 +61,26 @@ void GetCallMeasureSummaryReportResult::parse(const std::string &payload)
 		numberReports_.pageNumber = std::stoi(numberReportsNode["PageNumber"].asString());
 	if(!numberReportsNode["PageSize"].isNull())
 		numberReports_.pageSize = std::stoi(numberReportsNode["PageSize"].asString());
-	auto allList = value["List"]["NumberReport"];
-	for (auto value : allList)
+	auto allListNode = numberReportsNode["List"]["NumberReport"];
+	for (auto numberReportsNodeListNumberReport : allListNode)
 	{
 		NumberReports::NumberReport numberReportObject;
-		if(!value["Number"].isNull())
-			numberReportObject.number = value["Number"].asString();
-		if(!value["Year"].isNull())
-			numberReportObject.year = std::stoi(value["Year"].asString());
-		if(!value["Month"].isNull())
-			numberReportObject.month = std::stoi(value["Month"].asString());
-		if(!value["Day"].isNull())
-			numberReportObject.day = std::stoi(value["Day"].asString());
-		if(!value["InboundCount"].isNull())
-			numberReportObject.inboundCount = std::stol(value["InboundCount"].asString());
-		if(!value["OutboundCount"].isNull())
-			numberReportObject.outboundCount = std::stol(value["OutboundCount"].asString());
-		if(!value["OutboundDurationByMinute"].isNull())
-			numberReportObject.outboundDurationByMinute = std::stol(value["OutboundDurationByMinute"].asString());
-		if(!value["InboundDurationByMinute"].isNull())
-			numberReportObject.inboundDurationByMinute = std::stol(value["InboundDurationByMinute"].asString());
+		if(!numberReportsNodeListNumberReport["Number"].isNull())
+			numberReportObject.number = numberReportsNodeListNumberReport["Number"].asString();
+		if(!numberReportsNodeListNumberReport["Year"].isNull())
+			numberReportObject.year = std::stoi(numberReportsNodeListNumberReport["Year"].asString());
+		if(!numberReportsNodeListNumberReport["Month"].isNull())
+			numberReportObject.month = std::stoi(numberReportsNodeListNumberReport["Month"].asString());
+		if(!numberReportsNodeListNumberReport["Day"].isNull())
+			numberReportObject.day = std::stoi(numberReportsNodeListNumberReport["Day"].asString());
+		if(!numberReportsNodeListNumberReport["InboundCount"].isNull())
+			numberReportObject.inboundCount = std::stol(numberReportsNodeListNumberReport["InboundCount"].asString());
+		if(!numberReportsNodeListNumberReport["OutboundCount"].isNull())
+			numberReportObject.outboundCount = std::stol(numberReportsNodeListNumberReport["OutboundCount"].asString());
+		if(!numberReportsNodeListNumberReport["OutboundDurationByMinute"].isNull())
+			numberReportObject.outboundDurationByMinute = std::stol(numberReportsNodeListNumberReport["OutboundDurationByMinute"].asString());
+		if(!numberReportsNodeListNumberReport["InboundDurationByMinute"].isNull())
+			numberReportObject.inboundDurationByMinute = std::stol(numberReportsNodeListNumberReport["InboundDurationByMinute"].asString());
 		numberReports_.list.push_back(numberReportObject);
 	}
 	if(!value["Success"].isNull())

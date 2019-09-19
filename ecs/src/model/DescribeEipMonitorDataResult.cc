@@ -39,22 +39,22 @@ void DescribeEipMonitorDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEipMonitorDatas = value["EipMonitorDatas"]["EipMonitorData"];
-	for (auto value : allEipMonitorDatas)
+	auto allEipMonitorDatasNode = value["EipMonitorDatas"]["EipMonitorData"];
+	for (auto valueEipMonitorDatasEipMonitorData : allEipMonitorDatasNode)
 	{
 		EipMonitorData eipMonitorDatasObject;
-		if(!value["EipRX"].isNull())
-			eipMonitorDatasObject.eipRX = std::stoi(value["EipRX"].asString());
-		if(!value["EipTX"].isNull())
-			eipMonitorDatasObject.eipTX = std::stoi(value["EipTX"].asString());
-		if(!value["EipFlow"].isNull())
-			eipMonitorDatasObject.eipFlow = std::stoi(value["EipFlow"].asString());
-		if(!value["EipBandwidth"].isNull())
-			eipMonitorDatasObject.eipBandwidth = std::stoi(value["EipBandwidth"].asString());
-		if(!value["EipPackets"].isNull())
-			eipMonitorDatasObject.eipPackets = std::stoi(value["EipPackets"].asString());
-		if(!value["TimeStamp"].isNull())
-			eipMonitorDatasObject.timeStamp = value["TimeStamp"].asString();
+		if(!valueEipMonitorDatasEipMonitorData["EipRX"].isNull())
+			eipMonitorDatasObject.eipRX = std::stoi(valueEipMonitorDatasEipMonitorData["EipRX"].asString());
+		if(!valueEipMonitorDatasEipMonitorData["EipTX"].isNull())
+			eipMonitorDatasObject.eipTX = std::stoi(valueEipMonitorDatasEipMonitorData["EipTX"].asString());
+		if(!valueEipMonitorDatasEipMonitorData["EipFlow"].isNull())
+			eipMonitorDatasObject.eipFlow = std::stoi(valueEipMonitorDatasEipMonitorData["EipFlow"].asString());
+		if(!valueEipMonitorDatasEipMonitorData["EipBandwidth"].isNull())
+			eipMonitorDatasObject.eipBandwidth = std::stoi(valueEipMonitorDatasEipMonitorData["EipBandwidth"].asString());
+		if(!valueEipMonitorDatasEipMonitorData["EipPackets"].isNull())
+			eipMonitorDatasObject.eipPackets = std::stoi(valueEipMonitorDatasEipMonitorData["EipPackets"].asString());
+		if(!valueEipMonitorDatasEipMonitorData["TimeStamp"].isNull())
+			eipMonitorDatasObject.timeStamp = valueEipMonitorDatasEipMonitorData["TimeStamp"].asString();
 		eipMonitorDatas_.push_back(eipMonitorDatasObject);
 	}
 

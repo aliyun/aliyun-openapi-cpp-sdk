@@ -39,26 +39,26 @@ void DescribeLiveUserDomainsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDomains = value["Domains"]["PageData"];
-	for (auto value : allDomains)
+	auto allDomainsNode = value["Domains"]["PageData"];
+	for (auto valueDomainsPageData : allDomainsNode)
 	{
 		PageData domainsObject;
-		if(!value["DomainName"].isNull())
-			domainsObject.domainName = value["DomainName"].asString();
-		if(!value["Cname"].isNull())
-			domainsObject.cname = value["Cname"].asString();
-		if(!value["LiveDomainType"].isNull())
-			domainsObject.liveDomainType = value["LiveDomainType"].asString();
-		if(!value["GmtCreated"].isNull())
-			domainsObject.gmtCreated = value["GmtCreated"].asString();
-		if(!value["GmtModified"].isNull())
-			domainsObject.gmtModified = value["GmtModified"].asString();
-		if(!value["Description"].isNull())
-			domainsObject.description = value["Description"].asString();
-		if(!value["LiveDomainStatus"].isNull())
-			domainsObject.liveDomainStatus = value["LiveDomainStatus"].asString();
-		if(!value["RegionName"].isNull())
-			domainsObject.regionName = value["RegionName"].asString();
+		if(!valueDomainsPageData["DomainName"].isNull())
+			domainsObject.domainName = valueDomainsPageData["DomainName"].asString();
+		if(!valueDomainsPageData["Cname"].isNull())
+			domainsObject.cname = valueDomainsPageData["Cname"].asString();
+		if(!valueDomainsPageData["LiveDomainType"].isNull())
+			domainsObject.liveDomainType = valueDomainsPageData["LiveDomainType"].asString();
+		if(!valueDomainsPageData["GmtCreated"].isNull())
+			domainsObject.gmtCreated = valueDomainsPageData["GmtCreated"].asString();
+		if(!valueDomainsPageData["GmtModified"].isNull())
+			domainsObject.gmtModified = valueDomainsPageData["GmtModified"].asString();
+		if(!valueDomainsPageData["Description"].isNull())
+			domainsObject.description = valueDomainsPageData["Description"].asString();
+		if(!valueDomainsPageData["LiveDomainStatus"].isNull())
+			domainsObject.liveDomainStatus = valueDomainsPageData["LiveDomainStatus"].asString();
+		if(!valueDomainsPageData["RegionName"].isNull())
+			domainsObject.regionName = valueDomainsPageData["RegionName"].asString();
 		domains_.push_back(domainsObject);
 	}
 	if(!value["PageNumber"].isNull())

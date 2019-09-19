@@ -39,40 +39,40 @@ void ListClustersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allClusters = value["Clusters"]["ClusterInfo"];
-	for (auto value : allClusters)
+	auto allClustersNode = value["Clusters"]["ClusterInfo"];
+	for (auto valueClustersClusterInfo : allClustersNode)
 	{
 		ClusterInfo clustersObject;
-		if(!value["Id"].isNull())
-			clustersObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			clustersObject.name = value["Name"].asString();
-		if(!value["MachineType"].isNull())
-			clustersObject.machineType = value["MachineType"].asString();
-		if(!value["Type"].isNull())
-			clustersObject.type = value["Type"].asString();
-		if(!value["CreateTime"].isNull())
-			clustersObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["RunningTime"].isNull())
-			clustersObject.runningTime = std::stoi(value["RunningTime"].asString());
-		if(!value["Status"].isNull())
-			clustersObject.status = value["Status"].asString();
-		if(!value["ChargeType"].isNull())
-			clustersObject.chargeType = value["ChargeType"].asString();
-		if(!value["ExpiredTime"].isNull())
-			clustersObject.expiredTime = std::stol(value["ExpiredTime"].asString());
-		if(!value["Period"].isNull())
-			clustersObject.period = std::stoi(value["Period"].asString());
-		if(!value["HasUncompletedOrder"].isNull())
-			clustersObject.hasUncompletedOrder = value["HasUncompletedOrder"].asString() == "true";
-		if(!value["OrderList"].isNull())
-			clustersObject.orderList = value["OrderList"].asString();
-		if(!value["CreateResource"].isNull())
-			clustersObject.createResource = value["CreateResource"].asString();
-		if(!value["DepositType"].isNull())
-			clustersObject.depositType = value["DepositType"].asString();
-		if(!value["MetaStoreType"].isNull())
-			clustersObject.metaStoreType = value["MetaStoreType"].asString();
+		if(!valueClustersClusterInfo["Id"].isNull())
+			clustersObject.id = valueClustersClusterInfo["Id"].asString();
+		if(!valueClustersClusterInfo["Name"].isNull())
+			clustersObject.name = valueClustersClusterInfo["Name"].asString();
+		if(!valueClustersClusterInfo["MachineType"].isNull())
+			clustersObject.machineType = valueClustersClusterInfo["MachineType"].asString();
+		if(!valueClustersClusterInfo["Type"].isNull())
+			clustersObject.type = valueClustersClusterInfo["Type"].asString();
+		if(!valueClustersClusterInfo["CreateTime"].isNull())
+			clustersObject.createTime = std::stol(valueClustersClusterInfo["CreateTime"].asString());
+		if(!valueClustersClusterInfo["RunningTime"].isNull())
+			clustersObject.runningTime = std::stoi(valueClustersClusterInfo["RunningTime"].asString());
+		if(!valueClustersClusterInfo["Status"].isNull())
+			clustersObject.status = valueClustersClusterInfo["Status"].asString();
+		if(!valueClustersClusterInfo["ChargeType"].isNull())
+			clustersObject.chargeType = valueClustersClusterInfo["ChargeType"].asString();
+		if(!valueClustersClusterInfo["ExpiredTime"].isNull())
+			clustersObject.expiredTime = std::stol(valueClustersClusterInfo["ExpiredTime"].asString());
+		if(!valueClustersClusterInfo["Period"].isNull())
+			clustersObject.period = std::stoi(valueClustersClusterInfo["Period"].asString());
+		if(!valueClustersClusterInfo["HasUncompletedOrder"].isNull())
+			clustersObject.hasUncompletedOrder = valueClustersClusterInfo["HasUncompletedOrder"].asString() == "true";
+		if(!valueClustersClusterInfo["OrderList"].isNull())
+			clustersObject.orderList = valueClustersClusterInfo["OrderList"].asString();
+		if(!valueClustersClusterInfo["CreateResource"].isNull())
+			clustersObject.createResource = valueClustersClusterInfo["CreateResource"].asString();
+		if(!valueClustersClusterInfo["DepositType"].isNull())
+			clustersObject.depositType = valueClustersClusterInfo["DepositType"].asString();
+		if(!valueClustersClusterInfo["MetaStoreType"].isNull())
+			clustersObject.metaStoreType = valueClustersClusterInfo["MetaStoreType"].asString();
 		auto orderTaskInfoNode = value["OrderTaskInfo"];
 		if(!orderTaskInfoNode["TargetCount"].isNull())
 			clustersObject.orderTaskInfo.targetCount = std::stoi(orderTaskInfoNode["TargetCount"].asString());

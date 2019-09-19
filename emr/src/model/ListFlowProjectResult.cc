@@ -39,22 +39,22 @@ void ListFlowProjectResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProjects = value["Projects"]["Project"];
-	for (auto value : allProjects)
+	auto allProjectsNode = value["Projects"]["Project"];
+	for (auto valueProjectsProject : allProjectsNode)
 	{
 		Project projectsObject;
-		if(!value["Id"].isNull())
-			projectsObject.id = value["Id"].asString();
-		if(!value["GmtCreate"].isNull())
-			projectsObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["GmtModified"].isNull())
-			projectsObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["UserId"].isNull())
-			projectsObject.userId = value["UserId"].asString();
-		if(!value["Name"].isNull())
-			projectsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			projectsObject.description = value["Description"].asString();
+		if(!valueProjectsProject["Id"].isNull())
+			projectsObject.id = valueProjectsProject["Id"].asString();
+		if(!valueProjectsProject["GmtCreate"].isNull())
+			projectsObject.gmtCreate = std::stol(valueProjectsProject["GmtCreate"].asString());
+		if(!valueProjectsProject["GmtModified"].isNull())
+			projectsObject.gmtModified = std::stol(valueProjectsProject["GmtModified"].asString());
+		if(!valueProjectsProject["UserId"].isNull())
+			projectsObject.userId = valueProjectsProject["UserId"].asString();
+		if(!valueProjectsProject["Name"].isNull())
+			projectsObject.name = valueProjectsProject["Name"].asString();
+		if(!valueProjectsProject["Description"].isNull())
+			projectsObject.description = valueProjectsProject["Description"].asString();
 		projects_.push_back(projectsObject);
 	}
 	if(!value["PageNumber"].isNull())

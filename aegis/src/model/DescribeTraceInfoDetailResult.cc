@@ -40,92 +40,92 @@ void DescribeTraceInfoDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto traceInfoDetailNode = value["TraceInfoDetail"];
-	auto allEdgeList = value["EdgeList"]["Edge"];
-	for (auto value : allEdgeList)
+	auto allEdgeListNode = traceInfoDetailNode["EdgeList"]["Edge"];
+	for (auto traceInfoDetailNodeEdgeListEdge : allEdgeListNode)
 	{
 		TraceInfoDetail::Edge edgeObject;
-		if(!value["EndId"].isNull())
-			edgeObject.endId = value["EndId"].asString();
-		if(!value["StartId"].isNull())
-			edgeObject.startId = value["StartId"].asString();
-		if(!value["Count"].isNull())
-			edgeObject.count = std::stoi(value["Count"].asString());
-		if(!value["Time"].isNull())
-			edgeObject.time = value["Time"].asString();
-		if(!value["Type"].isNull())
-			edgeObject.type = value["Type"].asString();
+		if(!traceInfoDetailNodeEdgeListEdge["EndId"].isNull())
+			edgeObject.endId = traceInfoDetailNodeEdgeListEdge["EndId"].asString();
+		if(!traceInfoDetailNodeEdgeListEdge["StartId"].isNull())
+			edgeObject.startId = traceInfoDetailNodeEdgeListEdge["StartId"].asString();
+		if(!traceInfoDetailNodeEdgeListEdge["Count"].isNull())
+			edgeObject.count = std::stoi(traceInfoDetailNodeEdgeListEdge["Count"].asString());
+		if(!traceInfoDetailNodeEdgeListEdge["Time"].isNull())
+			edgeObject.time = traceInfoDetailNodeEdgeListEdge["Time"].asString();
+		if(!traceInfoDetailNodeEdgeListEdge["Type"].isNull())
+			edgeObject.type = traceInfoDetailNodeEdgeListEdge["Type"].asString();
 		traceInfoDetail_.edgeList.push_back(edgeObject);
 	}
-	auto allVertexList = value["VertexList"]["Vertex"];
-	for (auto value : allVertexList)
+	auto allVertexListNode = traceInfoDetailNode["VertexList"]["Vertex"];
+	for (auto traceInfoDetailNodeVertexListVertex : allVertexListNode)
 	{
 		TraceInfoDetail::Vertex vertexObject;
-		if(!value["Name"].isNull())
-			vertexObject.name = value["Name"].asString();
-		if(!value["Count"].isNull())
-			vertexObject.count = std::stoi(value["Count"].asString());
-		if(!value["Id"].isNull())
-			vertexObject.id = value["Id"].asString();
-		if(!value["Time"].isNull())
-			vertexObject.time = value["Time"].asString();
-		if(!value["Type"].isNull())
-			vertexObject.type = value["Type"].asString();
-		auto allNeighborList = value["NeighborList"]["Neighbor"];
-		for (auto value : allNeighborList)
+		if(!traceInfoDetailNodeVertexListVertex["Name"].isNull())
+			vertexObject.name = traceInfoDetailNodeVertexListVertex["Name"].asString();
+		if(!traceInfoDetailNodeVertexListVertex["Count"].isNull())
+			vertexObject.count = std::stoi(traceInfoDetailNodeVertexListVertex["Count"].asString());
+		if(!traceInfoDetailNodeVertexListVertex["Id"].isNull())
+			vertexObject.id = traceInfoDetailNodeVertexListVertex["Id"].asString();
+		if(!traceInfoDetailNodeVertexListVertex["Time"].isNull())
+			vertexObject.time = traceInfoDetailNodeVertexListVertex["Time"].asString();
+		if(!traceInfoDetailNodeVertexListVertex["Type"].isNull())
+			vertexObject.type = traceInfoDetailNodeVertexListVertex["Type"].asString();
+		auto allNeighborListNode = allVertexListNode["NeighborList"]["Neighbor"];
+		for (auto allVertexListNodeNeighborListNeighbor : allNeighborListNode)
 		{
 			TraceInfoDetail::Vertex::Neighbor neighborListObject;
-			if(!value["HasMore"].isNull())
-				neighborListObject.hasMore = value["HasMore"].asString() == "true";
-			if(!value["Count"].isNull())
-				neighborListObject.count = std::stoi(value["Count"].asString());
-			if(!value["Type"].isNull())
-				neighborListObject.type = value["Type"].asString();
+			if(!allVertexListNodeNeighborListNeighbor["HasMore"].isNull())
+				neighborListObject.hasMore = allVertexListNodeNeighborListNeighbor["HasMore"].asString() == "true";
+			if(!allVertexListNodeNeighborListNeighbor["Count"].isNull())
+				neighborListObject.count = std::stoi(allVertexListNodeNeighborListNeighbor["Count"].asString());
+			if(!allVertexListNodeNeighborListNeighbor["Type"].isNull())
+				neighborListObject.type = allVertexListNodeNeighborListNeighbor["Type"].asString();
 			vertexObject.neighborList.push_back(neighborListObject);
 		}
 		traceInfoDetail_.vertexList.push_back(vertexObject);
 	}
-	auto allEntityTypeList = value["EntityTypeList"]["EntityType"];
-	for (auto value : allEntityTypeList)
+	auto allEntityTypeListNode = traceInfoDetailNode["EntityTypeList"]["EntityType"];
+	for (auto traceInfoDetailNodeEntityTypeListEntityType : allEntityTypeListNode)
 	{
 		TraceInfoDetail::EntityType entityTypeObject;
-		if(!value["DisplayTemplate"].isNull())
-			entityTypeObject.displayTemplate = value["DisplayTemplate"].asString();
-		if(!value["GmtModified"].isNull())
-			entityTypeObject.gmtModified = std::stol(value["GmtModified"].asString());
-		if(!value["DisplayIcon"].isNull())
-			entityTypeObject.displayIcon = value["DisplayIcon"].asString();
-		if(!value["Offset"].isNull())
-			entityTypeObject.offset = std::stoi(value["Offset"].asString());
-		if(!value["DbId"].isNull())
-			entityTypeObject.dbId = std::stoi(value["DbId"].asString());
-		if(!value["Name"].isNull())
-			entityTypeObject.name = value["Name"].asString();
-		if(!value["Namespace"].isNull())
-			entityTypeObject._namespace = value["Namespace"].asString();
-		if(!value["Limit"].isNull())
-			entityTypeObject.limit = std::stoi(value["Limit"].asString());
-		if(!value["Id"].isNull())
-			entityTypeObject.id = value["Id"].asString();
-		if(!value["DisplayColor"].isNull())
-			entityTypeObject.displayColor = value["DisplayColor"].asString();
-		if(!value["GmtCreate"].isNull())
-			entityTypeObject.gmtCreate = std::stol(value["GmtCreate"].asString());
+		if(!traceInfoDetailNodeEntityTypeListEntityType["DisplayTemplate"].isNull())
+			entityTypeObject.displayTemplate = traceInfoDetailNodeEntityTypeListEntityType["DisplayTemplate"].asString();
+		if(!traceInfoDetailNodeEntityTypeListEntityType["GmtModified"].isNull())
+			entityTypeObject.gmtModified = std::stol(traceInfoDetailNodeEntityTypeListEntityType["GmtModified"].asString());
+		if(!traceInfoDetailNodeEntityTypeListEntityType["DisplayIcon"].isNull())
+			entityTypeObject.displayIcon = traceInfoDetailNodeEntityTypeListEntityType["DisplayIcon"].asString();
+		if(!traceInfoDetailNodeEntityTypeListEntityType["Offset"].isNull())
+			entityTypeObject.offset = std::stoi(traceInfoDetailNodeEntityTypeListEntityType["Offset"].asString());
+		if(!traceInfoDetailNodeEntityTypeListEntityType["DbId"].isNull())
+			entityTypeObject.dbId = std::stoi(traceInfoDetailNodeEntityTypeListEntityType["DbId"].asString());
+		if(!traceInfoDetailNodeEntityTypeListEntityType["Name"].isNull())
+			entityTypeObject.name = traceInfoDetailNodeEntityTypeListEntityType["Name"].asString();
+		if(!traceInfoDetailNodeEntityTypeListEntityType["Namespace"].isNull())
+			entityTypeObject._namespace = traceInfoDetailNodeEntityTypeListEntityType["Namespace"].asString();
+		if(!traceInfoDetailNodeEntityTypeListEntityType["Limit"].isNull())
+			entityTypeObject.limit = std::stoi(traceInfoDetailNodeEntityTypeListEntityType["Limit"].asString());
+		if(!traceInfoDetailNodeEntityTypeListEntityType["Id"].isNull())
+			entityTypeObject.id = traceInfoDetailNodeEntityTypeListEntityType["Id"].asString();
+		if(!traceInfoDetailNodeEntityTypeListEntityType["DisplayColor"].isNull())
+			entityTypeObject.displayColor = traceInfoDetailNodeEntityTypeListEntityType["DisplayColor"].asString();
+		if(!traceInfoDetailNodeEntityTypeListEntityType["GmtCreate"].isNull())
+			entityTypeObject.gmtCreate = std::stol(traceInfoDetailNodeEntityTypeListEntityType["GmtCreate"].asString());
 		traceInfoDetail_.entityTypeList.push_back(entityTypeObject);
 	}
-	auto allRelationTypeList = value["RelationTypeList"]["RelationType"];
-	for (auto value : allRelationTypeList)
+	auto allRelationTypeListNode = traceInfoDetailNode["RelationTypeList"]["RelationType"];
+	for (auto traceInfoDetailNodeRelationTypeListRelationType : allRelationTypeListNode)
 	{
 		TraceInfoDetail::RelationType relationTypeObject;
-		if(!value["RelationTypeId"].isNull())
-			relationTypeObject.relationTypeId = value["RelationTypeId"].asString();
-		if(!value["Name"].isNull())
-			relationTypeObject.name = value["Name"].asString();
-		if(!value["Directed"].isNull())
-			relationTypeObject.directed = std::stoi(value["Directed"].asString());
-		if(!value["DisplayColor"].isNull())
-			relationTypeObject.displayColor = value["DisplayColor"].asString();
-		if(!value["ShowType"].isNull())
-			relationTypeObject.showType = value["ShowType"].asString();
+		if(!traceInfoDetailNodeRelationTypeListRelationType["RelationTypeId"].isNull())
+			relationTypeObject.relationTypeId = traceInfoDetailNodeRelationTypeListRelationType["RelationTypeId"].asString();
+		if(!traceInfoDetailNodeRelationTypeListRelationType["Name"].isNull())
+			relationTypeObject.name = traceInfoDetailNodeRelationTypeListRelationType["Name"].asString();
+		if(!traceInfoDetailNodeRelationTypeListRelationType["Directed"].isNull())
+			relationTypeObject.directed = std::stoi(traceInfoDetailNodeRelationTypeListRelationType["Directed"].asString());
+		if(!traceInfoDetailNodeRelationTypeListRelationType["DisplayColor"].isNull())
+			relationTypeObject.displayColor = traceInfoDetailNodeRelationTypeListRelationType["DisplayColor"].asString();
+		if(!traceInfoDetailNodeRelationTypeListRelationType["ShowType"].isNull())
+			relationTypeObject.showType = traceInfoDetailNodeRelationTypeListRelationType["ShowType"].asString();
 		traceInfoDetail_.relationTypeList.push_back(relationTypeObject);
 	}
 	if(!value["Success"].isNull())

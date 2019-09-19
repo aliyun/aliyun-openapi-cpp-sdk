@@ -39,16 +39,16 @@ void ListUsersForGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUsers = value["Users"]["User"];
-	for (auto value : allUsers)
+	auto allUsersNode = value["Users"]["User"];
+	for (auto valueUsersUser : allUsersNode)
 	{
 		User usersObject;
-		if(!value["UserName"].isNull())
-			usersObject.userName = value["UserName"].asString();
-		if(!value["DisplayName"].isNull())
-			usersObject.displayName = value["DisplayName"].asString();
-		if(!value["JoinDate"].isNull())
-			usersObject.joinDate = value["JoinDate"].asString();
+		if(!valueUsersUser["UserName"].isNull())
+			usersObject.userName = valueUsersUser["UserName"].asString();
+		if(!valueUsersUser["DisplayName"].isNull())
+			usersObject.displayName = valueUsersUser["DisplayName"].asString();
+		if(!valueUsersUser["JoinDate"].isNull())
+			usersObject.joinDate = valueUsersUser["JoinDate"].asString();
 		users_.push_back(usersObject);
 	}
 	if(!value["IsTruncated"].isNull())

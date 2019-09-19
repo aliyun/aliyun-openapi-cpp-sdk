@@ -39,14 +39,14 @@ void GetResolveStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataPoints = value["DataPoints"]["DataPoint"];
-	for (auto value : allDataPoints)
+	auto allDataPointsNode = value["DataPoints"]["DataPoint"];
+	for (auto valueDataPointsDataPoint : allDataPointsNode)
 	{
 		DataPoint dataPointsObject;
-		if(!value["Time"].isNull())
-			dataPointsObject.time = std::stoi(value["Time"].asString());
-		if(!value["Count"].isNull())
-			dataPointsObject.count = std::stoi(value["Count"].asString());
+		if(!valueDataPointsDataPoint["Time"].isNull())
+			dataPointsObject.time = std::stoi(valueDataPointsDataPoint["Time"].asString());
+		if(!valueDataPointsDataPoint["Count"].isNull())
+			dataPointsObject.count = std::stoi(valueDataPointsDataPoint["Count"].asString());
 		dataPoints_.push_back(dataPointsObject);
 	}
 

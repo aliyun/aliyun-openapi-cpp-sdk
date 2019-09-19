@@ -39,52 +39,52 @@ void QueryTradeMarkApplicationsByIntentionResult::parse(const std::string &paylo
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["TmProduces"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["TmProduces"];
+	for (auto valueDataTmProduces : allDataNode)
 	{
 		TmProduces dataObject;
-		if(!value["BizId"].isNull())
-			dataObject.bizId = value["BizId"].asString();
-		if(!value["MaterialName"].isNull())
-			dataObject.materialName = value["MaterialName"].asString();
-		if(!value["TmIcon"].isNull())
-			dataObject.tmIcon = value["TmIcon"].asString();
-		if(!value["TmName"].isNull())
-			dataObject.tmName = value["TmName"].asString();
-		if(!value["TmNumber"].isNull())
-			dataObject.tmNumber = value["TmNumber"].asString();
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["Type"].isNull())
-			dataObject.type = std::stoi(value["Type"].asString());
-		if(!value["Status"].isNull())
-			dataObject.status = std::stoi(value["Status"].asString());
-		if(!value["OrderPrice"].isNull())
-			dataObject.orderPrice = std::stof(value["OrderPrice"].asString());
-		if(!value["MaterialId"].isNull())
-			dataObject.materialId = value["MaterialId"].asString();
-		if(!value["LoaUrl"].isNull())
-			dataObject.loaUrl = value["LoaUrl"].asString();
-		if(!value["Note"].isNull())
-			dataObject.note = value["Note"].asString();
-		if(!value["UpdateTime"].isNull())
-			dataObject.updateTime = std::stol(value["UpdateTime"].asString());
-		if(!value["SupplementStatus"].isNull())
-			dataObject.supplementStatus = std::stoi(value["SupplementStatus"].asString());
-		if(!value["SupplementId"].isNull())
-			dataObject.supplementId = std::stol(value["SupplementId"].asString());
-		if(!value["TotalPrice"].isNull())
-			dataObject.totalPrice = std::stof(value["TotalPrice"].asString());
-		if(!value["ServicePrice"].isNull())
-			dataObject.servicePrice = std::stof(value["ServicePrice"].asString());
-		auto allThirdClassification = value["ThirdClassification"]["ThirdClassifications"];
-		for (auto value : allThirdClassification)
+		if(!valueDataTmProduces["BizId"].isNull())
+			dataObject.bizId = valueDataTmProduces["BizId"].asString();
+		if(!valueDataTmProduces["MaterialName"].isNull())
+			dataObject.materialName = valueDataTmProduces["MaterialName"].asString();
+		if(!valueDataTmProduces["TmIcon"].isNull())
+			dataObject.tmIcon = valueDataTmProduces["TmIcon"].asString();
+		if(!valueDataTmProduces["TmName"].isNull())
+			dataObject.tmName = valueDataTmProduces["TmName"].asString();
+		if(!valueDataTmProduces["TmNumber"].isNull())
+			dataObject.tmNumber = valueDataTmProduces["TmNumber"].asString();
+		if(!valueDataTmProduces["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataTmProduces["CreateTime"].asString());
+		if(!valueDataTmProduces["Type"].isNull())
+			dataObject.type = std::stoi(valueDataTmProduces["Type"].asString());
+		if(!valueDataTmProduces["Status"].isNull())
+			dataObject.status = std::stoi(valueDataTmProduces["Status"].asString());
+		if(!valueDataTmProduces["OrderPrice"].isNull())
+			dataObject.orderPrice = std::stof(valueDataTmProduces["OrderPrice"].asString());
+		if(!valueDataTmProduces["MaterialId"].isNull())
+			dataObject.materialId = valueDataTmProduces["MaterialId"].asString();
+		if(!valueDataTmProduces["LoaUrl"].isNull())
+			dataObject.loaUrl = valueDataTmProduces["LoaUrl"].asString();
+		if(!valueDataTmProduces["Note"].isNull())
+			dataObject.note = valueDataTmProduces["Note"].asString();
+		if(!valueDataTmProduces["UpdateTime"].isNull())
+			dataObject.updateTime = std::stol(valueDataTmProduces["UpdateTime"].asString());
+		if(!valueDataTmProduces["SupplementStatus"].isNull())
+			dataObject.supplementStatus = std::stoi(valueDataTmProduces["SupplementStatus"].asString());
+		if(!valueDataTmProduces["SupplementId"].isNull())
+			dataObject.supplementId = std::stol(valueDataTmProduces["SupplementId"].asString());
+		if(!valueDataTmProduces["TotalPrice"].isNull())
+			dataObject.totalPrice = std::stof(valueDataTmProduces["TotalPrice"].asString());
+		if(!valueDataTmProduces["ServicePrice"].isNull())
+			dataObject.servicePrice = std::stof(valueDataTmProduces["ServicePrice"].asString());
+		auto allThirdClassificationNode = allDataNode["ThirdClassification"]["ThirdClassifications"];
+		for (auto allDataNodeThirdClassificationThirdClassifications : allThirdClassificationNode)
 		{
 			TmProduces::ThirdClassifications thirdClassificationObject;
-			if(!value["ClassificationCode"].isNull())
-				thirdClassificationObject.classificationCode = value["ClassificationCode"].asString();
-			if(!value["ClassificationName"].isNull())
-				thirdClassificationObject.classificationName = value["ClassificationName"].asString();
+			if(!allDataNodeThirdClassificationThirdClassifications["ClassificationCode"].isNull())
+				thirdClassificationObject.classificationCode = allDataNodeThirdClassificationThirdClassifications["ClassificationCode"].asString();
+			if(!allDataNodeThirdClassificationThirdClassifications["ClassificationName"].isNull())
+				thirdClassificationObject.classificationName = allDataNodeThirdClassificationThirdClassifications["ClassificationName"].asString();
 			dataObject.thirdClassification.push_back(thirdClassificationObject);
 		}
 		auto firstClassificationNode = value["FirstClassification"];

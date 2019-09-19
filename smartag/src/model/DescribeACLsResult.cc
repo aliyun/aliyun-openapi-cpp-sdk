@@ -39,16 +39,16 @@ void DescribeACLsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAcls = value["Acls"]["Acl"];
-	for (auto value : allAcls)
+	auto allAclsNode = value["Acls"]["Acl"];
+	for (auto valueAclsAcl : allAclsNode)
 	{
 		Acl aclsObject;
-		if(!value["AclId"].isNull())
-			aclsObject.aclId = value["AclId"].asString();
-		if(!value["Name"].isNull())
-			aclsObject.name = value["Name"].asString();
-		if(!value["SagCount"].isNull())
-			aclsObject.sagCount = value["SagCount"].asString();
+		if(!valueAclsAcl["AclId"].isNull())
+			aclsObject.aclId = valueAclsAcl["AclId"].asString();
+		if(!valueAclsAcl["Name"].isNull())
+			aclsObject.name = valueAclsAcl["Name"].asString();
+		if(!valueAclsAcl["SagCount"].isNull())
+			aclsObject.sagCount = valueAclsAcl["SagCount"].asString();
 		acls_.push_back(aclsObject);
 	}
 	if(!value["TotalCount"].isNull())

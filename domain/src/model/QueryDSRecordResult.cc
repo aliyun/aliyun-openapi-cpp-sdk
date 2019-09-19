@@ -39,18 +39,18 @@ void QueryDSRecordResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDSRecordList = value["DSRecordList"]["DSRecord"];
-	for (auto value : allDSRecordList)
+	auto allDSRecordListNode = value["DSRecordList"]["DSRecord"];
+	for (auto valueDSRecordListDSRecord : allDSRecordListNode)
 	{
 		DSRecord dSRecordListObject;
-		if(!value["KeyTag"].isNull())
-			dSRecordListObject.keyTag = std::stoi(value["KeyTag"].asString());
-		if(!value["Algorithm"].isNull())
-			dSRecordListObject.algorithm = std::stoi(value["Algorithm"].asString());
-		if(!value["DigestType"].isNull())
-			dSRecordListObject.digestType = std::stoi(value["DigestType"].asString());
-		if(!value["Digest"].isNull())
-			dSRecordListObject.digest = value["Digest"].asString();
+		if(!valueDSRecordListDSRecord["KeyTag"].isNull())
+			dSRecordListObject.keyTag = std::stoi(valueDSRecordListDSRecord["KeyTag"].asString());
+		if(!valueDSRecordListDSRecord["Algorithm"].isNull())
+			dSRecordListObject.algorithm = std::stoi(valueDSRecordListDSRecord["Algorithm"].asString());
+		if(!valueDSRecordListDSRecord["DigestType"].isNull())
+			dSRecordListObject.digestType = std::stoi(valueDSRecordListDSRecord["DigestType"].asString());
+		if(!valueDSRecordListDSRecord["Digest"].isNull())
+			dSRecordListObject.digest = valueDSRecordListDSRecord["Digest"].asString();
 		dSRecordList_.push_back(dSRecordListObject);
 	}
 

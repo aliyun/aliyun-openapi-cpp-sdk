@@ -39,22 +39,22 @@ void ListUsersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUserList = value["UserList"]["User"];
-	for (auto value : allUserList)
+	auto allUserListNode = value["UserList"]["User"];
+	for (auto valueUserListUser : allUserListNode)
 	{
 		User userListObject;
-		if(!value["UserName"].isNull())
-			userListObject.userName = value["UserName"].asString();
-		if(!value["GroupName"].isNull())
-			userListObject.groupName = value["GroupName"].asString();
-		if(!value["UserId"].isNull())
-			userListObject.userId = value["UserId"].asString();
-		if(!value["KnoxStatus"].isNull())
-			userListObject.knoxStatus = value["KnoxStatus"].asString();
-		if(!value["LinuxStatus"].isNull())
-			userListObject.linuxStatus = value["LinuxStatus"].asString();
-		if(!value["KerberosStatus"].isNull())
-			userListObject.kerberosStatus = value["KerberosStatus"].asString();
+		if(!valueUserListUser["UserName"].isNull())
+			userListObject.userName = valueUserListUser["UserName"].asString();
+		if(!valueUserListUser["GroupName"].isNull())
+			userListObject.groupName = valueUserListUser["GroupName"].asString();
+		if(!valueUserListUser["UserId"].isNull())
+			userListObject.userId = valueUserListUser["UserId"].asString();
+		if(!valueUserListUser["KnoxStatus"].isNull())
+			userListObject.knoxStatus = valueUserListUser["KnoxStatus"].asString();
+		if(!valueUserListUser["LinuxStatus"].isNull())
+			userListObject.linuxStatus = valueUserListUser["LinuxStatus"].asString();
+		if(!valueUserListUser["KerberosStatus"].isNull())
+			userListObject.kerberosStatus = valueUserListUser["KerberosStatus"].asString();
 		userList_.push_back(userListObject);
 	}
 

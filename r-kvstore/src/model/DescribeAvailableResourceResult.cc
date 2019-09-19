@@ -39,66 +39,66 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAvailableZones = value["AvailableZones"]["AvailableZone"];
-	for (auto value : allAvailableZones)
+	auto allAvailableZonesNode = value["AvailableZones"]["AvailableZone"];
+	for (auto valueAvailableZonesAvailableZone : allAvailableZonesNode)
 	{
 		AvailableZone availableZonesObject;
-		if(!value["RegionId"].isNull())
-			availableZonesObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			availableZonesObject.zoneId = value["ZoneId"].asString();
-		if(!value["Status"].isNull())
-			availableZonesObject.status = value["Status"].asString();
-		if(!value["NetworkTypes"].isNull())
-			availableZonesObject.networkTypes = value["NetworkTypes"].asString();
-		auto allSupportedEngines = value["SupportedEngines"]["SupportedEngine"];
-		for (auto value : allSupportedEngines)
+		if(!valueAvailableZonesAvailableZone["RegionId"].isNull())
+			availableZonesObject.regionId = valueAvailableZonesAvailableZone["RegionId"].asString();
+		if(!valueAvailableZonesAvailableZone["ZoneId"].isNull())
+			availableZonesObject.zoneId = valueAvailableZonesAvailableZone["ZoneId"].asString();
+		if(!valueAvailableZonesAvailableZone["Status"].isNull())
+			availableZonesObject.status = valueAvailableZonesAvailableZone["Status"].asString();
+		if(!valueAvailableZonesAvailableZone["NetworkTypes"].isNull())
+			availableZonesObject.networkTypes = valueAvailableZonesAvailableZone["NetworkTypes"].asString();
+		auto allSupportedEnginesNode = allAvailableZonesNode["SupportedEngines"]["SupportedEngine"];
+		for (auto allAvailableZonesNodeSupportedEnginesSupportedEngine : allSupportedEnginesNode)
 		{
 			AvailableZone::SupportedEngine supportedEnginesObject;
-			if(!value["Engine"].isNull())
-				supportedEnginesObject.engine = value["Engine"].asString();
-			auto allSupportedEngineVersions = value["SupportedEngineVersions"]["SupportedEngineVersion"];
-			for (auto value : allSupportedEngineVersions)
+			if(!allAvailableZonesNodeSupportedEnginesSupportedEngine["Engine"].isNull())
+				supportedEnginesObject.engine = allAvailableZonesNodeSupportedEnginesSupportedEngine["Engine"].asString();
+			auto allSupportedEngineVersionsNode = allSupportedEnginesNode["SupportedEngineVersions"]["SupportedEngineVersion"];
+			for (auto allSupportedEnginesNodeSupportedEngineVersionsSupportedEngineVersion : allSupportedEngineVersionsNode)
 			{
 				AvailableZone::SupportedEngine::SupportedEngineVersion supportedEngineVersionsObject;
-				if(!value["Version"].isNull())
-					supportedEngineVersionsObject.version = value["Version"].asString();
-				auto allSupportedArchitectureTypes = value["SupportedArchitectureTypes"]["SupportedArchitectureType"];
-				for (auto value : allSupportedArchitectureTypes)
+				if(!allSupportedEnginesNodeSupportedEngineVersionsSupportedEngineVersion["Version"].isNull())
+					supportedEngineVersionsObject.version = allSupportedEnginesNodeSupportedEngineVersionsSupportedEngineVersion["Version"].asString();
+				auto allSupportedArchitectureTypesNode = allSupportedEngineVersionsNode["SupportedArchitectureTypes"]["SupportedArchitectureType"];
+				for (auto allSupportedEngineVersionsNodeSupportedArchitectureTypesSupportedArchitectureType : allSupportedArchitectureTypesNode)
 				{
 					AvailableZone::SupportedEngine::SupportedEngineVersion::SupportedArchitectureType supportedArchitectureTypesObject;
-					if(!value["Architecture"].isNull())
-						supportedArchitectureTypesObject.architecture = value["Architecture"].asString();
-					auto allSupportedPerformanceTypes = value["SupportedPerformanceTypes"]["SupportedPerformanceType"];
-					for (auto value : allSupportedPerformanceTypes)
+					if(!allSupportedEngineVersionsNodeSupportedArchitectureTypesSupportedArchitectureType["Architecture"].isNull())
+						supportedArchitectureTypesObject.architecture = allSupportedEngineVersionsNodeSupportedArchitectureTypesSupportedArchitectureType["Architecture"].asString();
+					auto allSupportedPerformanceTypesNode = allSupportedArchitectureTypesNode["SupportedPerformanceTypes"]["SupportedPerformanceType"];
+					for (auto allSupportedArchitectureTypesNodeSupportedPerformanceTypesSupportedPerformanceType : allSupportedPerformanceTypesNode)
 					{
 						AvailableZone::SupportedEngine::SupportedEngineVersion::SupportedArchitectureType::SupportedPerformanceType supportedPerformanceTypesObject;
-						if(!value["PerformanceType"].isNull())
-							supportedPerformanceTypesObject.performanceType = value["PerformanceType"].asString();
-						auto allSupportedStorageTypes = value["SupportedStorageTypes"]["SupportedStorageType"];
-						for (auto value : allSupportedStorageTypes)
+						if(!allSupportedArchitectureTypesNodeSupportedPerformanceTypesSupportedPerformanceType["PerformanceType"].isNull())
+							supportedPerformanceTypesObject.performanceType = allSupportedArchitectureTypesNodeSupportedPerformanceTypesSupportedPerformanceType["PerformanceType"].asString();
+						auto allSupportedStorageTypesNode = allSupportedPerformanceTypesNode["SupportedStorageTypes"]["SupportedStorageType"];
+						for (auto allSupportedPerformanceTypesNodeSupportedStorageTypesSupportedStorageType : allSupportedStorageTypesNode)
 						{
 							AvailableZone::SupportedEngine::SupportedEngineVersion::SupportedArchitectureType::SupportedPerformanceType::SupportedStorageType supportedStorageTypesObject;
-							if(!value["StorageType"].isNull())
-								supportedStorageTypesObject.storageType = value["StorageType"].asString();
-							auto allSupportedNodeTypes = value["SupportedNodeTypes"]["SupportedNodeType"];
-							for (auto value : allSupportedNodeTypes)
+							if(!allSupportedPerformanceTypesNodeSupportedStorageTypesSupportedStorageType["StorageType"].isNull())
+								supportedStorageTypesObject.storageType = allSupportedPerformanceTypesNodeSupportedStorageTypesSupportedStorageType["StorageType"].asString();
+							auto allSupportedNodeTypesNode = allSupportedStorageTypesNode["SupportedNodeTypes"]["SupportedNodeType"];
+							for (auto allSupportedStorageTypesNodeSupportedNodeTypesSupportedNodeType : allSupportedNodeTypesNode)
 							{
 								AvailableZone::SupportedEngine::SupportedEngineVersion::SupportedArchitectureType::SupportedPerformanceType::SupportedStorageType::SupportedNodeType supportedNodeTypesObject;
-								if(!value["NodeType"].isNull())
-									supportedNodeTypesObject.nodeType = value["NodeType"].asString();
-								auto allSupportedPackageTypes = value["SupportedPackageTypes"]["SupportedPackageType"];
-								for (auto value : allSupportedPackageTypes)
+								if(!allSupportedStorageTypesNodeSupportedNodeTypesSupportedNodeType["NodeType"].isNull())
+									supportedNodeTypesObject.nodeType = allSupportedStorageTypesNodeSupportedNodeTypesSupportedNodeType["NodeType"].asString();
+								auto allSupportedPackageTypesNode = allSupportedNodeTypesNode["SupportedPackageTypes"]["SupportedPackageType"];
+								for (auto allSupportedNodeTypesNodeSupportedPackageTypesSupportedPackageType : allSupportedPackageTypesNode)
 								{
 									AvailableZone::SupportedEngine::SupportedEngineVersion::SupportedArchitectureType::SupportedPerformanceType::SupportedStorageType::SupportedNodeType::SupportedPackageType supportedPackageTypesObject;
-									if(!value["PackageType"].isNull())
-										supportedPackageTypesObject.packageType = value["PackageType"].asString();
-									auto allAvailableResources = value["AvailableResources"]["AvailableResource"];
-									for (auto value : allAvailableResources)
+									if(!allSupportedNodeTypesNodeSupportedPackageTypesSupportedPackageType["PackageType"].isNull())
+										supportedPackageTypesObject.packageType = allSupportedNodeTypesNodeSupportedPackageTypesSupportedPackageType["PackageType"].asString();
+									auto allAvailableResourcesNode = allSupportedPackageTypesNode["AvailableResources"]["AvailableResource"];
+									for (auto allSupportedPackageTypesNodeAvailableResourcesAvailableResource : allAvailableResourcesNode)
 									{
 										AvailableZone::SupportedEngine::SupportedEngineVersion::SupportedArchitectureType::SupportedPerformanceType::SupportedStorageType::SupportedNodeType::SupportedPackageType::AvailableResource availableResourcesObject;
-										if(!value["InstanceClass"].isNull())
-											availableResourcesObject.instanceClass = value["InstanceClass"].asString();
+										if(!allSupportedPackageTypesNodeAvailableResourcesAvailableResource["InstanceClass"].isNull())
+											availableResourcesObject.instanceClass = allSupportedPackageTypesNodeAvailableResourcesAvailableResource["InstanceClass"].asString();
 										supportedPackageTypesObject.availableResources.push_back(availableResourcesObject);
 									}
 									supportedNodeTypesObject.supportedPackageTypes.push_back(supportedPackageTypesObject);

@@ -39,28 +39,28 @@ void DescribeDataHubTopicsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Topic"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Topic"];
+	for (auto valueItemsTopic : allItemsNode)
 	{
 		Topic itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			itemsObject.description = value["Description"].asString();
-		if(!value["CreationTime"].isNull())
-			itemsObject.creationTime = std::stol(value["CreationTime"].asString());
-		if(!value["RecordType"].isNull())
-			itemsObject.recordType = value["RecordType"].asString();
-		if(!value["LifeCycle"].isNull())
-			itemsObject.lifeCycle = std::stoi(value["LifeCycle"].asString());
-		if(!value["UserId"].isNull())
-			itemsObject.userId = std::stol(value["UserId"].asString());
-		if(!value["LoginName"].isNull())
-			itemsObject.loginName = value["LoginName"].asString();
-		if(!value["DisplayName"].isNull())
-			itemsObject.displayName = value["DisplayName"].asString();
+		if(!valueItemsTopic["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsTopic["Id"].asString());
+		if(!valueItemsTopic["Name"].isNull())
+			itemsObject.name = valueItemsTopic["Name"].asString();
+		if(!valueItemsTopic["Description"].isNull())
+			itemsObject.description = valueItemsTopic["Description"].asString();
+		if(!valueItemsTopic["CreationTime"].isNull())
+			itemsObject.creationTime = std::stol(valueItemsTopic["CreationTime"].asString());
+		if(!valueItemsTopic["RecordType"].isNull())
+			itemsObject.recordType = valueItemsTopic["RecordType"].asString();
+		if(!valueItemsTopic["LifeCycle"].isNull())
+			itemsObject.lifeCycle = std::stoi(valueItemsTopic["LifeCycle"].asString());
+		if(!valueItemsTopic["UserId"].isNull())
+			itemsObject.userId = std::stol(valueItemsTopic["UserId"].asString());
+		if(!valueItemsTopic["LoginName"].isNull())
+			itemsObject.loginName = valueItemsTopic["LoginName"].asString();
+		if(!valueItemsTopic["DisplayName"].isNull())
+			itemsObject.displayName = valueItemsTopic["DisplayName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

@@ -46,79 +46,79 @@ void GetRegionConfigurationResult::parse(const std::string &payload)
 		result_.regionId = resultNode["regionId"].asString();
 	if(!resultNode["createUrl"].isNull())
 		result_.createUrl = resultNode["createUrl"].asString();
-	auto alldataDiskList = value["dataDiskList"]["dataDiskListItem"];
-	for (auto value : alldataDiskList)
+	auto alldataDiskListNode = resultNode["dataDiskList"]["dataDiskListItem"];
+	for (auto resultNodedataDiskListdataDiskListItem : alldataDiskListNode)
 	{
 		Result::DataDiskListItem dataDiskListItemObject;
-		if(!value["diskType"].isNull())
-			dataDiskListItemObject.diskType = value["diskType"].asString();
-		if(!value["minSize"].isNull())
-			dataDiskListItemObject.minSize = std::stoi(value["minSize"].asString());
-		if(!value["maxSize"].isNull())
-			dataDiskListItemObject.maxSize = std::stoi(value["maxSize"].asString());
-		if(!value["scaleLimit"].isNull())
-			dataDiskListItemObject.scaleLimit = std::stoi(value["scaleLimit"].asString());
+		if(!resultNodedataDiskListdataDiskListItem["diskType"].isNull())
+			dataDiskListItemObject.diskType = resultNodedataDiskListdataDiskListItem["diskType"].asString();
+		if(!resultNodedataDiskListdataDiskListItem["minSize"].isNull())
+			dataDiskListItemObject.minSize = std::stoi(resultNodedataDiskListdataDiskListItem["minSize"].asString());
+		if(!resultNodedataDiskListdataDiskListItem["maxSize"].isNull())
+			dataDiskListItemObject.maxSize = std::stoi(resultNodedataDiskListdataDiskListItem["maxSize"].asString());
+		if(!resultNodedataDiskListdataDiskListItem["scaleLimit"].isNull())
+			dataDiskListItemObject.scaleLimit = std::stoi(resultNodedataDiskListdataDiskListItem["scaleLimit"].asString());
 		auto allValueLimitSet = value["valueLimitSet"]["valueLimitSet"];
 		for (auto value : allValueLimitSet)
 			dataDiskListItemObject.valueLimitSet.push_back(value.asString());
 		result_.dataDiskList.push_back(dataDiskListItemObject);
 	}
-	auto allesVersionsLatestList = value["esVersionsLatestList"]["esVersionsLatestListItem"];
-	for (auto value : allesVersionsLatestList)
+	auto allesVersionsLatestListNode = resultNode["esVersionsLatestList"]["esVersionsLatestListItem"];
+	for (auto resultNodeesVersionsLatestListesVersionsLatestListItem : allesVersionsLatestListNode)
 	{
 		Result::EsVersionsLatestListItem esVersionsLatestListItemObject;
-		if(!value["key"].isNull())
-			esVersionsLatestListItemObject.key = value["key"].asString();
-		if(!value["value"].isNull())
-			esVersionsLatestListItemObject.value = value["value"].asString();
+		if(!resultNodeesVersionsLatestListesVersionsLatestListItem["key"].isNull())
+			esVersionsLatestListItemObject.key = resultNodeesVersionsLatestListesVersionsLatestListItem["key"].asString();
+		if(!resultNodeesVersionsLatestListesVersionsLatestListItem["value"].isNull())
+			esVersionsLatestListItemObject.value = resultNodeesVersionsLatestListesVersionsLatestListItem["value"].asString();
 		result_.esVersionsLatestList.push_back(esVersionsLatestListItemObject);
 	}
-	auto allnodeSpecList = value["nodeSpecList"]["nodeSpecListItem"];
-	for (auto value : allnodeSpecList)
+	auto allnodeSpecListNode = resultNode["nodeSpecList"]["nodeSpecListItem"];
+	for (auto resultNodenodeSpecListnodeSpecListItem : allnodeSpecListNode)
 	{
 		Result::NodeSpecListItem nodeSpecListItemObject;
-		if(!value["cpuCount"].isNull())
-			nodeSpecListItemObject.cpuCount = std::stoi(value["cpuCount"].asString());
-		if(!value["memorySize"].isNull())
-			nodeSpecListItemObject.memorySize = std::stoi(value["memorySize"].asString());
-		if(!value["enable"].isNull())
-			nodeSpecListItemObject.enable = value["enable"].asString() == "true";
-		if(!value["spec"].isNull())
-			nodeSpecListItemObject.spec = value["spec"].asString();
-		if(!value["diskType"].isNull())
-			nodeSpecListItemObject.diskType = value["diskType"].asString();
-		if(!value["disk"].isNull())
-			nodeSpecListItemObject.disk = std::stoi(value["disk"].asString());
-		if(!value["specGroupType"].isNull())
-			nodeSpecListItemObject.specGroupType = value["specGroupType"].asString();
+		if(!resultNodenodeSpecListnodeSpecListItem["cpuCount"].isNull())
+			nodeSpecListItemObject.cpuCount = std::stoi(resultNodenodeSpecListnodeSpecListItem["cpuCount"].asString());
+		if(!resultNodenodeSpecListnodeSpecListItem["memorySize"].isNull())
+			nodeSpecListItemObject.memorySize = std::stoi(resultNodenodeSpecListnodeSpecListItem["memorySize"].asString());
+		if(!resultNodenodeSpecListnodeSpecListItem["enable"].isNull())
+			nodeSpecListItemObject.enable = resultNodenodeSpecListnodeSpecListItem["enable"].asString() == "true";
+		if(!resultNodenodeSpecListnodeSpecListItem["spec"].isNull())
+			nodeSpecListItemObject.spec = resultNodenodeSpecListnodeSpecListItem["spec"].asString();
+		if(!resultNodenodeSpecListnodeSpecListItem["diskType"].isNull())
+			nodeSpecListItemObject.diskType = resultNodenodeSpecListnodeSpecListItem["diskType"].asString();
+		if(!resultNodenodeSpecListnodeSpecListItem["disk"].isNull())
+			nodeSpecListItemObject.disk = std::stoi(resultNodenodeSpecListnodeSpecListItem["disk"].asString());
+		if(!resultNodenodeSpecListnodeSpecListItem["specGroupType"].isNull())
+			nodeSpecListItemObject.specGroupType = resultNodenodeSpecListnodeSpecListItem["specGroupType"].asString();
 		result_.nodeSpecList.push_back(nodeSpecListItemObject);
 	}
-	auto allclientNodeDiskList = value["clientNodeDiskList"]["disk"];
-	for (auto value : allclientNodeDiskList)
+	auto allclientNodeDiskListNode = resultNode["clientNodeDiskList"]["disk"];
+	for (auto resultNodeclientNodeDiskListdisk : allclientNodeDiskListNode)
 	{
 		Result::Disk diskObject;
-		if(!value["diskType"].isNull())
-			diskObject.diskType = value["diskType"].asString();
-		if(!value["minSize"].isNull())
-			diskObject.minSize = std::stoi(value["minSize"].asString());
-		if(!value["maxSize"].isNull())
-			diskObject.maxSize = std::stoi(value["maxSize"].asString());
-		if(!value["scaleLimit"].isNull())
-			diskObject.scaleLimit = std::stoi(value["scaleLimit"].asString());
+		if(!resultNodeclientNodeDiskListdisk["diskType"].isNull())
+			diskObject.diskType = resultNodeclientNodeDiskListdisk["diskType"].asString();
+		if(!resultNodeclientNodeDiskListdisk["minSize"].isNull())
+			diskObject.minSize = std::stoi(resultNodeclientNodeDiskListdisk["minSize"].asString());
+		if(!resultNodeclientNodeDiskListdisk["maxSize"].isNull())
+			diskObject.maxSize = std::stoi(resultNodeclientNodeDiskListdisk["maxSize"].asString());
+		if(!resultNodeclientNodeDiskListdisk["scaleLimit"].isNull())
+			diskObject.scaleLimit = std::stoi(resultNodeclientNodeDiskListdisk["scaleLimit"].asString());
 		result_.clientNodeDiskList.push_back(diskObject);
 	}
-	auto allmasterDiskList = value["masterDiskList"]["disk"];
-	for (auto value : allmasterDiskList)
+	auto allmasterDiskListNode = resultNode["masterDiskList"]["disk"];
+	for (auto resultNodemasterDiskListdisk : allmasterDiskListNode)
 	{
 		Result::Disk diskObject;
-		if(!value["diskType"].isNull())
-			diskObject.diskType = value["diskType"].asString();
-		if(!value["minSize"].isNull())
-			diskObject.minSize = std::stoi(value["minSize"].asString());
-		if(!value["maxSize"].isNull())
-			diskObject.maxSize = std::stoi(value["maxSize"].asString());
-		if(!value["scaleLimit"].isNull())
-			diskObject.scaleLimit = std::stoi(value["scaleLimit"].asString());
+		if(!resultNodemasterDiskListdisk["diskType"].isNull())
+			diskObject.diskType = resultNodemasterDiskListdisk["diskType"].asString();
+		if(!resultNodemasterDiskListdisk["minSize"].isNull())
+			diskObject.minSize = std::stoi(resultNodemasterDiskListdisk["minSize"].asString());
+		if(!resultNodemasterDiskListdisk["maxSize"].isNull())
+			diskObject.maxSize = std::stoi(resultNodemasterDiskListdisk["maxSize"].asString());
+		if(!resultNodemasterDiskListdisk["scaleLimit"].isNull())
+			diskObject.scaleLimit = std::stoi(resultNodemasterDiskListdisk["scaleLimit"].asString());
 		result_.masterDiskList.push_back(diskObject);
 	}
 	auto nodeNode = resultNode["node"];
@@ -141,18 +141,18 @@ void GetRegionConfigurationResult::parse(const std::string &payload)
 	if(!clientNodeAmountRangeNode["maxAmount"].isNull())
 		result_.clientNodeAmountRange.maxAmount = std::stoi(clientNodeAmountRangeNode["maxAmount"].asString());
 	auto warmNodePropertiesNode = resultNode["warmNodeProperties"];
-	auto alldiskList = value["diskList"]["disk"];
-	for (auto value : alldiskList)
+	auto alldiskListNode = warmNodePropertiesNode["diskList"]["disk"];
+	for (auto warmNodePropertiesNodediskListdisk : alldiskListNode)
 	{
 		Result::WarmNodeProperties::Disk1 disk1Object;
-		if(!value["diskType"].isNull())
-			disk1Object.diskType = value["diskType"].asString();
-		if(!value["minSize"].isNull())
-			disk1Object.minSize = std::stoi(value["minSize"].asString());
-		if(!value["maxSize"].isNull())
-			disk1Object.maxSize = std::stoi(value["maxSize"].asString());
-		if(!value["scaleLimit"].isNull())
-			disk1Object.scaleLimit = std::stoi(value["scaleLimit"].asString());
+		if(!warmNodePropertiesNodediskListdisk["diskType"].isNull())
+			disk1Object.diskType = warmNodePropertiesNodediskListdisk["diskType"].asString();
+		if(!warmNodePropertiesNodediskListdisk["minSize"].isNull())
+			disk1Object.minSize = std::stoi(warmNodePropertiesNodediskListdisk["minSize"].asString());
+		if(!warmNodePropertiesNodediskListdisk["maxSize"].isNull())
+			disk1Object.maxSize = std::stoi(warmNodePropertiesNodediskListdisk["maxSize"].asString());
+		if(!warmNodePropertiesNodediskListdisk["scaleLimit"].isNull())
+			disk1Object.scaleLimit = std::stoi(warmNodePropertiesNodediskListdisk["scaleLimit"].asString());
 		auto allValueLimitSet2 = value["valueLimitSet"]["valueLimitSet"];
 		for (auto value : allValueLimitSet2)
 			disk1Object.valueLimitSet2.push_back(value.asString());

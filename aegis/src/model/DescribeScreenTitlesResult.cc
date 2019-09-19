@@ -39,14 +39,14 @@ void DescribeScreenTitlesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSasScreenSettingList = value["SasScreenSettingList"]["SasScreenSetting"];
-	for (auto value : allSasScreenSettingList)
+	auto allSasScreenSettingListNode = value["SasScreenSettingList"]["SasScreenSetting"];
+	for (auto valueSasScreenSettingListSasScreenSetting : allSasScreenSettingListNode)
 	{
 		SasScreenSetting sasScreenSettingListObject;
-		if(!value["ScreenID"].isNull())
-			sasScreenSettingListObject.screenID = std::stol(value["ScreenID"].asString());
-		if(!value["ScreenTitle"].isNull())
-			sasScreenSettingListObject.screenTitle = value["ScreenTitle"].asString();
+		if(!valueSasScreenSettingListSasScreenSetting["ScreenID"].isNull())
+			sasScreenSettingListObject.screenID = std::stol(valueSasScreenSettingListSasScreenSetting["ScreenID"].asString());
+		if(!valueSasScreenSettingListSasScreenSetting["ScreenTitle"].isNull())
+			sasScreenSettingListObject.screenTitle = valueSasScreenSettingListSasScreenSetting["ScreenTitle"].asString();
 		sasScreenSettingList_.push_back(sasScreenSettingListObject);
 	}
 	if(!value["Success"].isNull())

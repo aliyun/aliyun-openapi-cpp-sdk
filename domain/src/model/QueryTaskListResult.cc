@@ -39,30 +39,30 @@ void QueryTaskListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["TaskInfo"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["TaskInfo"];
+	for (auto valueDataTaskInfo : allDataNode)
 	{
 		TaskInfo dataObject;
-		if(!value["TaskType"].isNull())
-			dataObject.taskType = value["TaskType"].asString();
-		if(!value["TaskNum"].isNull())
-			dataObject.taskNum = std::stoi(value["TaskNum"].asString());
-		if(!value["TaskStatus"].isNull())
-			dataObject.taskStatus = value["TaskStatus"].asString();
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = value["CreateTime"].asString();
-		if(!value["Clientip"].isNull())
-			dataObject.clientip = value["Clientip"].asString();
-		if(!value["TaskNo"].isNull())
-			dataObject.taskNo = value["TaskNo"].asString();
-		if(!value["TaskStatusCode"].isNull())
-			dataObject.taskStatusCode = std::stoi(value["TaskStatusCode"].asString());
-		if(!value["TaskTypeDescription"].isNull())
-			dataObject.taskTypeDescription = value["TaskTypeDescription"].asString();
-		if(!value["TaskCancelStatus"].isNull())
-			dataObject.taskCancelStatus = value["TaskCancelStatus"].asString();
-		if(!value["TaskCancelStatusCode"].isNull())
-			dataObject.taskCancelStatusCode = std::stoi(value["TaskCancelStatusCode"].asString());
+		if(!valueDataTaskInfo["TaskType"].isNull())
+			dataObject.taskType = valueDataTaskInfo["TaskType"].asString();
+		if(!valueDataTaskInfo["TaskNum"].isNull())
+			dataObject.taskNum = std::stoi(valueDataTaskInfo["TaskNum"].asString());
+		if(!valueDataTaskInfo["TaskStatus"].isNull())
+			dataObject.taskStatus = valueDataTaskInfo["TaskStatus"].asString();
+		if(!valueDataTaskInfo["CreateTime"].isNull())
+			dataObject.createTime = valueDataTaskInfo["CreateTime"].asString();
+		if(!valueDataTaskInfo["Clientip"].isNull())
+			dataObject.clientip = valueDataTaskInfo["Clientip"].asString();
+		if(!valueDataTaskInfo["TaskNo"].isNull())
+			dataObject.taskNo = valueDataTaskInfo["TaskNo"].asString();
+		if(!valueDataTaskInfo["TaskStatusCode"].isNull())
+			dataObject.taskStatusCode = std::stoi(valueDataTaskInfo["TaskStatusCode"].asString());
+		if(!valueDataTaskInfo["TaskTypeDescription"].isNull())
+			dataObject.taskTypeDescription = valueDataTaskInfo["TaskTypeDescription"].asString();
+		if(!valueDataTaskInfo["TaskCancelStatus"].isNull())
+			dataObject.taskCancelStatus = valueDataTaskInfo["TaskCancelStatus"].asString();
+		if(!valueDataTaskInfo["TaskCancelStatusCode"].isNull())
+			dataObject.taskCancelStatusCode = std::stoi(valueDataTaskInfo["TaskCancelStatusCode"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

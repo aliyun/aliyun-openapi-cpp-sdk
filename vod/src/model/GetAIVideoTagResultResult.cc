@@ -40,55 +40,55 @@ void GetAIVideoTagResultResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto videoTagResultNode = value["VideoTagResult"];
-	auto allCategory = value["Category"]["CategoryItem"];
-	for (auto value : allCategory)
+	auto allCategoryNode = videoTagResultNode["Category"]["CategoryItem"];
+	for (auto videoTagResultNodeCategoryCategoryItem : allCategoryNode)
 	{
 		VideoTagResult::CategoryItem categoryItemObject;
-		if(!value["Tag"].isNull())
-			categoryItemObject.tag = value["Tag"].asString();
+		if(!videoTagResultNodeCategoryCategoryItem["Tag"].isNull())
+			categoryItemObject.tag = videoTagResultNodeCategoryCategoryItem["Tag"].asString();
 		videoTagResult_.category.push_back(categoryItemObject);
 	}
-	auto allPerson = value["Person"]["PersonItem"];
-	for (auto value : allPerson)
+	auto allPersonNode = videoTagResultNode["Person"]["PersonItem"];
+	for (auto videoTagResultNodePersonPersonItem : allPersonNode)
 	{
 		VideoTagResult::PersonItem personItemObject;
-		if(!value["FaceUrl"].isNull())
-			personItemObject.faceUrl = value["FaceUrl"].asString();
-		if(!value["Tag"].isNull())
-			personItemObject.tag = value["Tag"].asString();
+		if(!videoTagResultNodePersonPersonItem["FaceUrl"].isNull())
+			personItemObject.faceUrl = videoTagResultNodePersonPersonItem["FaceUrl"].asString();
+		if(!videoTagResultNodePersonPersonItem["Tag"].isNull())
+			personItemObject.tag = videoTagResultNodePersonPersonItem["Tag"].asString();
 		auto allTimes = value["Times"]["Times"];
 		for (auto value : allTimes)
 			personItemObject.times.push_back(value.asString());
 		videoTagResult_.person.push_back(personItemObject);
 	}
-	auto allTime = value["Time"]["TimeItem"];
-	for (auto value : allTime)
+	auto allTimeNode = videoTagResultNode["Time"]["TimeItem"];
+	for (auto videoTagResultNodeTimeTimeItem : allTimeNode)
 	{
 		VideoTagResult::TimeItem timeItemObject;
-		if(!value["Tag"].isNull())
-			timeItemObject.tag = value["Tag"].asString();
+		if(!videoTagResultNodeTimeTimeItem["Tag"].isNull())
+			timeItemObject.tag = videoTagResultNodeTimeTimeItem["Tag"].asString();
 		auto allTimes1 = value["Times"]["Times"];
 		for (auto value : allTimes1)
 			timeItemObject.times1.push_back(value.asString());
 		videoTagResult_.time.push_back(timeItemObject);
 	}
-	auto allLocation = value["Location"]["LocationItem"];
-	for (auto value : allLocation)
+	auto allLocationNode = videoTagResultNode["Location"]["LocationItem"];
+	for (auto videoTagResultNodeLocationLocationItem : allLocationNode)
 	{
 		VideoTagResult::LocationItem locationItemObject;
-		if(!value["Tag"].isNull())
-			locationItemObject.tag = value["Tag"].asString();
+		if(!videoTagResultNodeLocationLocationItem["Tag"].isNull())
+			locationItemObject.tag = videoTagResultNodeLocationLocationItem["Tag"].asString();
 		auto allTimes2 = value["Times"]["Times"];
 		for (auto value : allTimes2)
 			locationItemObject.times2.push_back(value.asString());
 		videoTagResult_.location.push_back(locationItemObject);
 	}
-	auto allKeyword = value["Keyword"]["KeywordItem"];
-	for (auto value : allKeyword)
+	auto allKeywordNode = videoTagResultNode["Keyword"]["KeywordItem"];
+	for (auto videoTagResultNodeKeywordKeywordItem : allKeywordNode)
 	{
 		VideoTagResult::KeywordItem keywordItemObject;
-		if(!value["Tag"].isNull())
-			keywordItemObject.tag = value["Tag"].asString();
+		if(!videoTagResultNodeKeywordKeywordItem["Tag"].isNull())
+			keywordItemObject.tag = videoTagResultNodeKeywordKeywordItem["Tag"].asString();
 		auto allTimes3 = value["Times"]["Times"];
 		for (auto value : allTimes3)
 			keywordItemObject.times3.push_back(value.asString());

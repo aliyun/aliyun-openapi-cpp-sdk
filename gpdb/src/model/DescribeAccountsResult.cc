@@ -39,18 +39,18 @@ void DescribeAccountsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAccounts = value["Accounts"]["DBInstanceAccount"];
-	for (auto value : allAccounts)
+	auto allAccountsNode = value["Accounts"]["DBInstanceAccount"];
+	for (auto valueAccountsDBInstanceAccount : allAccountsNode)
 	{
 		DBInstanceAccount accountsObject;
-		if(!value["DBInstanceId"].isNull())
-			accountsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["AccountName"].isNull())
-			accountsObject.accountName = value["AccountName"].asString();
-		if(!value["AccountStatus"].isNull())
-			accountsObject.accountStatus = value["AccountStatus"].asString();
-		if(!value["AccountDescription"].isNull())
-			accountsObject.accountDescription = value["AccountDescription"].asString();
+		if(!valueAccountsDBInstanceAccount["DBInstanceId"].isNull())
+			accountsObject.dBInstanceId = valueAccountsDBInstanceAccount["DBInstanceId"].asString();
+		if(!valueAccountsDBInstanceAccount["AccountName"].isNull())
+			accountsObject.accountName = valueAccountsDBInstanceAccount["AccountName"].asString();
+		if(!valueAccountsDBInstanceAccount["AccountStatus"].isNull())
+			accountsObject.accountStatus = valueAccountsDBInstanceAccount["AccountStatus"].asString();
+		if(!valueAccountsDBInstanceAccount["AccountDescription"].isNull())
+			accountsObject.accountDescription = valueAccountsDBInstanceAccount["AccountDescription"].asString();
 		accounts_.push_back(accountsObject);
 	}
 

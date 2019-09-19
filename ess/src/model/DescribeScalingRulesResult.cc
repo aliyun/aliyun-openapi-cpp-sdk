@@ -39,90 +39,90 @@ void DescribeScalingRulesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allScalingRules = value["ScalingRules"]["ScalingRule"];
-	for (auto value : allScalingRules)
+	auto allScalingRulesNode = value["ScalingRules"]["ScalingRule"];
+	for (auto valueScalingRulesScalingRule : allScalingRulesNode)
 	{
 		ScalingRule scalingRulesObject;
-		if(!value["ScalingRuleId"].isNull())
-			scalingRulesObject.scalingRuleId = value["ScalingRuleId"].asString();
-		if(!value["ScalingGroupId"].isNull())
-			scalingRulesObject.scalingGroupId = value["ScalingGroupId"].asString();
-		if(!value["ScalingRuleName"].isNull())
-			scalingRulesObject.scalingRuleName = value["ScalingRuleName"].asString();
-		if(!value["Cooldown"].isNull())
-			scalingRulesObject.cooldown = std::stoi(value["Cooldown"].asString());
-		if(!value["MinAdjustmentMagnitude"].isNull())
-			scalingRulesObject.minAdjustmentMagnitude = std::stoi(value["MinAdjustmentMagnitude"].asString());
-		if(!value["AdjustmentType"].isNull())
-			scalingRulesObject.adjustmentType = value["AdjustmentType"].asString();
-		if(!value["AdjustmentValue"].isNull())
-			scalingRulesObject.adjustmentValue = std::stoi(value["AdjustmentValue"].asString());
-		if(!value["MinSize"].isNull())
-			scalingRulesObject.minSize = std::stoi(value["MinSize"].asString());
-		if(!value["MaxSize"].isNull())
-			scalingRulesObject.maxSize = std::stoi(value["MaxSize"].asString());
-		if(!value["ScalingRuleAri"].isNull())
-			scalingRulesObject.scalingRuleAri = value["ScalingRuleAri"].asString();
-		if(!value["ScalingRuleType"].isNull())
-			scalingRulesObject.scalingRuleType = value["ScalingRuleType"].asString();
-		if(!value["EstimatedInstanceWarmup"].isNull())
-			scalingRulesObject.estimatedInstanceWarmup = std::stoi(value["EstimatedInstanceWarmup"].asString());
-		if(!value["MetricName"].isNull())
-			scalingRulesObject.metricName = value["MetricName"].asString();
-		if(!value["TargetValue"].isNull())
-			scalingRulesObject.targetValue = std::stof(value["TargetValue"].asString());
-		if(!value["DisableScaleIn"].isNull())
-			scalingRulesObject.disableScaleIn = value["DisableScaleIn"].asString() == "true";
-		if(!value["PredictiveScalingMode"].isNull())
-			scalingRulesObject.predictiveScalingMode = value["PredictiveScalingMode"].asString();
-		if(!value["PredictiveValueBehavior"].isNull())
-			scalingRulesObject.predictiveValueBehavior = value["PredictiveValueBehavior"].asString();
-		if(!value["PredictiveValueBuffer"].isNull())
-			scalingRulesObject.predictiveValueBuffer = std::stoi(value["PredictiveValueBuffer"].asString());
-		if(!value["PredictiveTaskBufferTime"].isNull())
-			scalingRulesObject.predictiveTaskBufferTime = std::stoi(value["PredictiveTaskBufferTime"].asString());
-		if(!value["InitialMaxSize"].isNull())
-			scalingRulesObject.initialMaxSize = std::stoi(value["InitialMaxSize"].asString());
-		auto allAlarms = value["Alarms"]["Alarm"];
-		for (auto value : allAlarms)
+		if(!valueScalingRulesScalingRule["ScalingRuleId"].isNull())
+			scalingRulesObject.scalingRuleId = valueScalingRulesScalingRule["ScalingRuleId"].asString();
+		if(!valueScalingRulesScalingRule["ScalingGroupId"].isNull())
+			scalingRulesObject.scalingGroupId = valueScalingRulesScalingRule["ScalingGroupId"].asString();
+		if(!valueScalingRulesScalingRule["ScalingRuleName"].isNull())
+			scalingRulesObject.scalingRuleName = valueScalingRulesScalingRule["ScalingRuleName"].asString();
+		if(!valueScalingRulesScalingRule["Cooldown"].isNull())
+			scalingRulesObject.cooldown = std::stoi(valueScalingRulesScalingRule["Cooldown"].asString());
+		if(!valueScalingRulesScalingRule["MinAdjustmentMagnitude"].isNull())
+			scalingRulesObject.minAdjustmentMagnitude = std::stoi(valueScalingRulesScalingRule["MinAdjustmentMagnitude"].asString());
+		if(!valueScalingRulesScalingRule["AdjustmentType"].isNull())
+			scalingRulesObject.adjustmentType = valueScalingRulesScalingRule["AdjustmentType"].asString();
+		if(!valueScalingRulesScalingRule["AdjustmentValue"].isNull())
+			scalingRulesObject.adjustmentValue = std::stoi(valueScalingRulesScalingRule["AdjustmentValue"].asString());
+		if(!valueScalingRulesScalingRule["MinSize"].isNull())
+			scalingRulesObject.minSize = std::stoi(valueScalingRulesScalingRule["MinSize"].asString());
+		if(!valueScalingRulesScalingRule["MaxSize"].isNull())
+			scalingRulesObject.maxSize = std::stoi(valueScalingRulesScalingRule["MaxSize"].asString());
+		if(!valueScalingRulesScalingRule["ScalingRuleAri"].isNull())
+			scalingRulesObject.scalingRuleAri = valueScalingRulesScalingRule["ScalingRuleAri"].asString();
+		if(!valueScalingRulesScalingRule["ScalingRuleType"].isNull())
+			scalingRulesObject.scalingRuleType = valueScalingRulesScalingRule["ScalingRuleType"].asString();
+		if(!valueScalingRulesScalingRule["EstimatedInstanceWarmup"].isNull())
+			scalingRulesObject.estimatedInstanceWarmup = std::stoi(valueScalingRulesScalingRule["EstimatedInstanceWarmup"].asString());
+		if(!valueScalingRulesScalingRule["MetricName"].isNull())
+			scalingRulesObject.metricName = valueScalingRulesScalingRule["MetricName"].asString();
+		if(!valueScalingRulesScalingRule["TargetValue"].isNull())
+			scalingRulesObject.targetValue = std::stof(valueScalingRulesScalingRule["TargetValue"].asString());
+		if(!valueScalingRulesScalingRule["DisableScaleIn"].isNull())
+			scalingRulesObject.disableScaleIn = valueScalingRulesScalingRule["DisableScaleIn"].asString() == "true";
+		if(!valueScalingRulesScalingRule["PredictiveScalingMode"].isNull())
+			scalingRulesObject.predictiveScalingMode = valueScalingRulesScalingRule["PredictiveScalingMode"].asString();
+		if(!valueScalingRulesScalingRule["PredictiveValueBehavior"].isNull())
+			scalingRulesObject.predictiveValueBehavior = valueScalingRulesScalingRule["PredictiveValueBehavior"].asString();
+		if(!valueScalingRulesScalingRule["PredictiveValueBuffer"].isNull())
+			scalingRulesObject.predictiveValueBuffer = std::stoi(valueScalingRulesScalingRule["PredictiveValueBuffer"].asString());
+		if(!valueScalingRulesScalingRule["PredictiveTaskBufferTime"].isNull())
+			scalingRulesObject.predictiveTaskBufferTime = std::stoi(valueScalingRulesScalingRule["PredictiveTaskBufferTime"].asString());
+		if(!valueScalingRulesScalingRule["InitialMaxSize"].isNull())
+			scalingRulesObject.initialMaxSize = std::stoi(valueScalingRulesScalingRule["InitialMaxSize"].asString());
+		auto allAlarmsNode = allScalingRulesNode["Alarms"]["Alarm"];
+		for (auto allScalingRulesNodeAlarmsAlarm : allAlarmsNode)
 		{
 			ScalingRule::Alarm alarmsObject;
-			if(!value["AlarmTaskName"].isNull())
-				alarmsObject.alarmTaskName = value["AlarmTaskName"].asString();
-			if(!value["AlarmTaskId"].isNull())
-				alarmsObject.alarmTaskId = value["AlarmTaskId"].asString();
-			if(!value["ComparisonOperator"].isNull())
-				alarmsObject.comparisonOperator = value["ComparisonOperator"].asString();
-			if(!value["Statistics"].isNull())
-				alarmsObject.statistics = value["Statistics"].asString();
-			if(!value["MetricName"].isNull())
-				alarmsObject.metricName = value["MetricName"].asString();
-			if(!value["Threshold"].isNull())
-				alarmsObject.threshold = std::stof(value["Threshold"].asString());
-			if(!value["EvaluationCount"].isNull())
-				alarmsObject.evaluationCount = std::stoi(value["EvaluationCount"].asString());
-			auto allDimensions = value["Dimensions"]["Dimension"];
-			for (auto value : allDimensions)
+			if(!allScalingRulesNodeAlarmsAlarm["AlarmTaskName"].isNull())
+				alarmsObject.alarmTaskName = allScalingRulesNodeAlarmsAlarm["AlarmTaskName"].asString();
+			if(!allScalingRulesNodeAlarmsAlarm["AlarmTaskId"].isNull())
+				alarmsObject.alarmTaskId = allScalingRulesNodeAlarmsAlarm["AlarmTaskId"].asString();
+			if(!allScalingRulesNodeAlarmsAlarm["ComparisonOperator"].isNull())
+				alarmsObject.comparisonOperator = allScalingRulesNodeAlarmsAlarm["ComparisonOperator"].asString();
+			if(!allScalingRulesNodeAlarmsAlarm["Statistics"].isNull())
+				alarmsObject.statistics = allScalingRulesNodeAlarmsAlarm["Statistics"].asString();
+			if(!allScalingRulesNodeAlarmsAlarm["MetricName"].isNull())
+				alarmsObject.metricName = allScalingRulesNodeAlarmsAlarm["MetricName"].asString();
+			if(!allScalingRulesNodeAlarmsAlarm["Threshold"].isNull())
+				alarmsObject.threshold = std::stof(allScalingRulesNodeAlarmsAlarm["Threshold"].asString());
+			if(!allScalingRulesNodeAlarmsAlarm["EvaluationCount"].isNull())
+				alarmsObject.evaluationCount = std::stoi(allScalingRulesNodeAlarmsAlarm["EvaluationCount"].asString());
+			auto allDimensionsNode = allAlarmsNode["Dimensions"]["Dimension"];
+			for (auto allAlarmsNodeDimensionsDimension : allDimensionsNode)
 			{
 				ScalingRule::Alarm::Dimension dimensionsObject;
-				if(!value["DimensionKey"].isNull())
-					dimensionsObject.dimensionKey = value["DimensionKey"].asString();
-				if(!value["DimensionValue"].isNull())
-					dimensionsObject.dimensionValue = value["DimensionValue"].asString();
+				if(!allAlarmsNodeDimensionsDimension["DimensionKey"].isNull())
+					dimensionsObject.dimensionKey = allAlarmsNodeDimensionsDimension["DimensionKey"].asString();
+				if(!allAlarmsNodeDimensionsDimension["DimensionValue"].isNull())
+					dimensionsObject.dimensionValue = allAlarmsNodeDimensionsDimension["DimensionValue"].asString();
 				alarmsObject.dimensions.push_back(dimensionsObject);
 			}
 			scalingRulesObject.alarms.push_back(alarmsObject);
 		}
-		auto allStepAdjustments = value["StepAdjustments"]["StepAdjustment"];
-		for (auto value : allStepAdjustments)
+		auto allStepAdjustmentsNode = allScalingRulesNode["StepAdjustments"]["StepAdjustment"];
+		for (auto allScalingRulesNodeStepAdjustmentsStepAdjustment : allStepAdjustmentsNode)
 		{
 			ScalingRule::StepAdjustment stepAdjustmentsObject;
-			if(!value["MetricIntervalLowerBound"].isNull())
-				stepAdjustmentsObject.metricIntervalLowerBound = std::stof(value["MetricIntervalLowerBound"].asString());
-			if(!value["MetricIntervalUpperBound"].isNull())
-				stepAdjustmentsObject.metricIntervalUpperBound = std::stof(value["MetricIntervalUpperBound"].asString());
-			if(!value["ScalingAdjustment"].isNull())
-				stepAdjustmentsObject.scalingAdjustment = std::stoi(value["ScalingAdjustment"].asString());
+			if(!allScalingRulesNodeStepAdjustmentsStepAdjustment["MetricIntervalLowerBound"].isNull())
+				stepAdjustmentsObject.metricIntervalLowerBound = std::stof(allScalingRulesNodeStepAdjustmentsStepAdjustment["MetricIntervalLowerBound"].asString());
+			if(!allScalingRulesNodeStepAdjustmentsStepAdjustment["MetricIntervalUpperBound"].isNull())
+				stepAdjustmentsObject.metricIntervalUpperBound = std::stof(allScalingRulesNodeStepAdjustmentsStepAdjustment["MetricIntervalUpperBound"].asString());
+			if(!allScalingRulesNodeStepAdjustmentsStepAdjustment["ScalingAdjustment"].isNull())
+				stepAdjustmentsObject.scalingAdjustment = std::stoi(allScalingRulesNodeStepAdjustmentsStepAdjustment["ScalingAdjustment"].asString());
 			scalingRulesObject.stepAdjustments.push_back(stepAdjustmentsObject);
 		}
 		scalingRules_.push_back(scalingRulesObject);

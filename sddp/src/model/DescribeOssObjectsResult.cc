@@ -39,26 +39,26 @@ void DescribeOssObjectsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Column"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Column"];
+	for (auto valueItemsColumn : allItemsNode)
 	{
 		Column itemsObject;
-		if(!value["Id"].isNull())
-			itemsObject.id = std::stol(value["Id"].asString());
-		if(!value["Name"].isNull())
-			itemsObject.name = value["Name"].asString();
-		if(!value["RegionId"].isNull())
-			itemsObject.regionId = value["RegionId"].asString();
-		if(!value["RiskLevelId"].isNull())
-			itemsObject.riskLevelId = std::stol(value["RiskLevelId"].asString());
-		if(!value["Category"].isNull())
-			itemsObject.category = std::stol(value["Category"].asString());
-		if(!value["InstanceId"].isNull())
-			itemsObject.instanceId = std::stol(value["InstanceId"].asString());
-		if(!value["FileId"].isNull())
-			itemsObject.fileId = value["FileId"].asString();
-		if(!value["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = std::stol(value["RiskLevelName"].asString());
+		if(!valueItemsColumn["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsColumn["Id"].asString());
+		if(!valueItemsColumn["Name"].isNull())
+			itemsObject.name = valueItemsColumn["Name"].asString();
+		if(!valueItemsColumn["RegionId"].isNull())
+			itemsObject.regionId = valueItemsColumn["RegionId"].asString();
+		if(!valueItemsColumn["RiskLevelId"].isNull())
+			itemsObject.riskLevelId = std::stol(valueItemsColumn["RiskLevelId"].asString());
+		if(!valueItemsColumn["Category"].isNull())
+			itemsObject.category = std::stol(valueItemsColumn["Category"].asString());
+		if(!valueItemsColumn["InstanceId"].isNull())
+			itemsObject.instanceId = std::stol(valueItemsColumn["InstanceId"].asString());
+		if(!valueItemsColumn["FileId"].isNull())
+			itemsObject.fileId = valueItemsColumn["FileId"].asString();
+		if(!valueItemsColumn["RiskLevelName"].isNull())
+			itemsObject.riskLevelName = std::stol(valueItemsColumn["RiskLevelName"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

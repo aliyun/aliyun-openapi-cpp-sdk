@@ -39,30 +39,30 @@ void DescribeBackupsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["Backup"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["Backup"];
+	for (auto valueItemsBackup : allItemsNode)
 	{
 		Backup itemsObject;
-		if(!value["BackupId"].isNull())
-			itemsObject.backupId = value["BackupId"].asString();
-		if(!value["DBClusterId"].isNull())
-			itemsObject.dBClusterId = value["DBClusterId"].asString();
-		if(!value["BackupStatus"].isNull())
-			itemsObject.backupStatus = value["BackupStatus"].asString();
-		if(!value["BackupStartTime"].isNull())
-			itemsObject.backupStartTime = value["BackupStartTime"].asString();
-		if(!value["BackupEndTime"].isNull())
-			itemsObject.backupEndTime = value["BackupEndTime"].asString();
-		if(!value["BackupType"].isNull())
-			itemsObject.backupType = value["BackupType"].asString();
-		if(!value["BackupMode"].isNull())
-			itemsObject.backupMode = value["BackupMode"].asString();
-		if(!value["BackupMethod"].isNull())
-			itemsObject.backupMethod = value["BackupMethod"].asString();
-		if(!value["StoreStatus"].isNull())
-			itemsObject.storeStatus = value["StoreStatus"].asString();
-		if(!value["BackupSetSize"].isNull())
-			itemsObject.backupSetSize = value["BackupSetSize"].asString();
+		if(!valueItemsBackup["BackupId"].isNull())
+			itemsObject.backupId = valueItemsBackup["BackupId"].asString();
+		if(!valueItemsBackup["DBClusterId"].isNull())
+			itemsObject.dBClusterId = valueItemsBackup["DBClusterId"].asString();
+		if(!valueItemsBackup["BackupStatus"].isNull())
+			itemsObject.backupStatus = valueItemsBackup["BackupStatus"].asString();
+		if(!valueItemsBackup["BackupStartTime"].isNull())
+			itemsObject.backupStartTime = valueItemsBackup["BackupStartTime"].asString();
+		if(!valueItemsBackup["BackupEndTime"].isNull())
+			itemsObject.backupEndTime = valueItemsBackup["BackupEndTime"].asString();
+		if(!valueItemsBackup["BackupType"].isNull())
+			itemsObject.backupType = valueItemsBackup["BackupType"].asString();
+		if(!valueItemsBackup["BackupMode"].isNull())
+			itemsObject.backupMode = valueItemsBackup["BackupMode"].asString();
+		if(!valueItemsBackup["BackupMethod"].isNull())
+			itemsObject.backupMethod = valueItemsBackup["BackupMethod"].asString();
+		if(!valueItemsBackup["StoreStatus"].isNull())
+			itemsObject.storeStatus = valueItemsBackup["StoreStatus"].asString();
+		if(!valueItemsBackup["BackupSetSize"].isNull())
+			itemsObject.backupSetSize = valueItemsBackup["BackupSetSize"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

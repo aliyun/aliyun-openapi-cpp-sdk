@@ -39,24 +39,24 @@ void DescribeAttackEventResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allEventList = value["EventList"]["Event"];
-	for (auto value : allEventList)
+	auto allEventListNode = value["EventList"]["Event"];
+	for (auto valueEventListEvent : allEventListNode)
 	{
 		Event eventListObject;
-		if(!value["VmIp"].isNull())
-			eventListObject.vmIp = value["VmIp"].asString();
-		if(!value["SourceIp"].isNull())
-			eventListObject.sourceIp = value["SourceIp"].asString();
-		if(!value["Url"].isNull())
-			eventListObject.url = value["Url"].asString();
-		if(!value["AttackType"].isNull())
-			eventListObject.attackType = value["AttackType"].asString();
-		if(!value["GmtCreate"].isNull())
-			eventListObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["GmtCreateStamp"].isNull())
-			eventListObject.gmtCreateStamp = std::stoi(value["GmtCreateStamp"].asString());
-		if(!value["GmtModified"].isNull())
-			eventListObject.gmtModified = value["GmtModified"].asString();
+		if(!valueEventListEvent["VmIp"].isNull())
+			eventListObject.vmIp = valueEventListEvent["VmIp"].asString();
+		if(!valueEventListEvent["SourceIp"].isNull())
+			eventListObject.sourceIp = valueEventListEvent["SourceIp"].asString();
+		if(!valueEventListEvent["Url"].isNull())
+			eventListObject.url = valueEventListEvent["Url"].asString();
+		if(!valueEventListEvent["AttackType"].isNull())
+			eventListObject.attackType = valueEventListEvent["AttackType"].asString();
+		if(!valueEventListEvent["GmtCreate"].isNull())
+			eventListObject.gmtCreate = valueEventListEvent["GmtCreate"].asString();
+		if(!valueEventListEvent["GmtCreateStamp"].isNull())
+			eventListObject.gmtCreateStamp = std::stoi(valueEventListEvent["GmtCreateStamp"].asString());
+		if(!valueEventListEvent["GmtModified"].isNull())
+			eventListObject.gmtModified = valueEventListEvent["GmtModified"].asString();
 		eventList_.push_back(eventListObject);
 	}
 	if(!value["Module"].isNull())

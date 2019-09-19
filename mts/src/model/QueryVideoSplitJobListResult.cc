@@ -39,24 +39,24 @@ void QueryVideoSplitJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobList = value["JobList"]["Job"];
-	for (auto value : allJobList)
+	auto allJobListNode = value["JobList"]["Job"];
+	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!value["Id"].isNull())
-			jobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			jobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			jobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			jobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			jobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			jobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			jobListObject.creationTime = value["CreationTime"].asString();
+		if(!valueJobListJob["Id"].isNull())
+			jobListObject.id = valueJobListJob["Id"].asString();
+		if(!valueJobListJob["UserData"].isNull())
+			jobListObject.userData = valueJobListJob["UserData"].asString();
+		if(!valueJobListJob["PipelineId"].isNull())
+			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
+		if(!valueJobListJob["State"].isNull())
+			jobListObject.state = valueJobListJob["State"].asString();
+		if(!valueJobListJob["Code"].isNull())
+			jobListObject.code = valueJobListJob["Code"].asString();
+		if(!valueJobListJob["Message"].isNull())
+			jobListObject.message = valueJobListJob["Message"].asString();
+		if(!valueJobListJob["CreationTime"].isNull())
+			jobListObject.creationTime = valueJobListJob["CreationTime"].asString();
 		auto inputNode = value["Input"];
 		if(!inputNode["Bucket"].isNull())
 			jobListObject.input.bucket = inputNode["Bucket"].asString();
@@ -65,16 +65,16 @@ void QueryVideoSplitJobListResult::parse(const std::string &payload)
 		if(!inputNode["Object"].isNull())
 			jobListObject.input.object = inputNode["Object"].asString();
 		auto videoSplitResultNode = value["VideoSplitResult"];
-		auto allVideoSplitList = value["VideoSplitList"]["VideoSplit"];
-		for (auto value : allVideoSplitList)
+		auto allVideoSplitListNode = videoSplitResultNode["VideoSplitList"]["VideoSplit"];
+		for (auto videoSplitResultNodeVideoSplitListVideoSplit : allVideoSplitListNode)
 		{
 			Job::VideoSplitResult::VideoSplit videoSplitObject;
-			if(!value["StartTime"].isNull())
-				videoSplitObject.startTime = value["StartTime"].asString();
-			if(!value["EndTime"].isNull())
-				videoSplitObject.endTime = value["EndTime"].asString();
-			if(!value["Path"].isNull())
-				videoSplitObject.path = value["Path"].asString();
+			if(!videoSplitResultNodeVideoSplitListVideoSplit["StartTime"].isNull())
+				videoSplitObject.startTime = videoSplitResultNodeVideoSplitListVideoSplit["StartTime"].asString();
+			if(!videoSplitResultNodeVideoSplitListVideoSplit["EndTime"].isNull())
+				videoSplitObject.endTime = videoSplitResultNodeVideoSplitListVideoSplit["EndTime"].asString();
+			if(!videoSplitResultNodeVideoSplitListVideoSplit["Path"].isNull())
+				videoSplitObject.path = videoSplitResultNodeVideoSplitListVideoSplit["Path"].asString();
 			jobListObject.videoSplitResult.videoSplitList.push_back(videoSplitObject);
 		}
 		jobList_.push_back(jobListObject);

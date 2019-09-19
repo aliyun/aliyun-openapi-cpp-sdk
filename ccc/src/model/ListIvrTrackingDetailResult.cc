@@ -46,38 +46,38 @@ void ListIvrTrackingDetailResult::parse(const std::string &payload)
 		ivrTrackingDetails_.pageNumber = std::stoi(ivrTrackingDetailsNode["PageNumber"].asString());
 	if(!ivrTrackingDetailsNode["PageSize"].isNull())
 		ivrTrackingDetails_.pageSize = std::stoi(ivrTrackingDetailsNode["PageSize"].asString());
-	auto allList = value["List"]["IvrTrackingDetail"];
-	for (auto value : allList)
+	auto allListNode = ivrTrackingDetailsNode["List"]["IvrTrackingDetail"];
+	for (auto ivrTrackingDetailsNodeListIvrTrackingDetail : allListNode)
 	{
 		IvrTrackingDetails::IvrTrackingDetail ivrTrackingDetailObject;
-		if(!value["FlowName"].isNull())
-			ivrTrackingDetailObject.flowName = value["FlowName"].asString();
-		if(!value["NodeName"].isNull())
-			ivrTrackingDetailObject.nodeName = value["NodeName"].asString();
-		if(!value["NodeType"].isNull())
-			ivrTrackingDetailObject.nodeType = value["NodeType"].asString();
-		if(!value["ContactId"].isNull())
-			ivrTrackingDetailObject.contactId = value["ContactId"].asString();
-		if(!value["CallingNumber"].isNull())
-			ivrTrackingDetailObject.callingNumber = value["CallingNumber"].asString();
-		if(!value["CalledNumber"].isNull())
-			ivrTrackingDetailObject.calledNumber = value["CalledNumber"].asString();
-		if(!value["StartTime"].isNull())
-			ivrTrackingDetailObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["StopTime"].isNull())
-			ivrTrackingDetailObject.stopTime = std::stol(value["StopTime"].asString());
-		if(!value["Status"].isNull())
-			ivrTrackingDetailObject.status = value["Status"].asString();
-		if(!value["InputData"].isNull())
-			ivrTrackingDetailObject.inputData = value["InputData"].asString();
-		if(!value["OutputData"].isNull())
-			ivrTrackingDetailObject.outputData = value["OutputData"].asString();
-		if(!value["Description"].isNull())
-			ivrTrackingDetailObject.description = value["Description"].asString();
-		if(!value["DeviceID"].isNull())
-			ivrTrackingDetailObject.deviceID = value["DeviceID"].asString();
-		if(!value["TenantId"].isNull())
-			ivrTrackingDetailObject.tenantId = value["TenantId"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["FlowName"].isNull())
+			ivrTrackingDetailObject.flowName = ivrTrackingDetailsNodeListIvrTrackingDetail["FlowName"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["NodeName"].isNull())
+			ivrTrackingDetailObject.nodeName = ivrTrackingDetailsNodeListIvrTrackingDetail["NodeName"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["NodeType"].isNull())
+			ivrTrackingDetailObject.nodeType = ivrTrackingDetailsNodeListIvrTrackingDetail["NodeType"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["ContactId"].isNull())
+			ivrTrackingDetailObject.contactId = ivrTrackingDetailsNodeListIvrTrackingDetail["ContactId"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["CallingNumber"].isNull())
+			ivrTrackingDetailObject.callingNumber = ivrTrackingDetailsNodeListIvrTrackingDetail["CallingNumber"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["CalledNumber"].isNull())
+			ivrTrackingDetailObject.calledNumber = ivrTrackingDetailsNodeListIvrTrackingDetail["CalledNumber"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["StartTime"].isNull())
+			ivrTrackingDetailObject.startTime = std::stol(ivrTrackingDetailsNodeListIvrTrackingDetail["StartTime"].asString());
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["StopTime"].isNull())
+			ivrTrackingDetailObject.stopTime = std::stol(ivrTrackingDetailsNodeListIvrTrackingDetail["StopTime"].asString());
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["Status"].isNull())
+			ivrTrackingDetailObject.status = ivrTrackingDetailsNodeListIvrTrackingDetail["Status"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["InputData"].isNull())
+			ivrTrackingDetailObject.inputData = ivrTrackingDetailsNodeListIvrTrackingDetail["InputData"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["OutputData"].isNull())
+			ivrTrackingDetailObject.outputData = ivrTrackingDetailsNodeListIvrTrackingDetail["OutputData"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["Description"].isNull())
+			ivrTrackingDetailObject.description = ivrTrackingDetailsNodeListIvrTrackingDetail["Description"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["DeviceID"].isNull())
+			ivrTrackingDetailObject.deviceID = ivrTrackingDetailsNodeListIvrTrackingDetail["DeviceID"].asString();
+		if(!ivrTrackingDetailsNodeListIvrTrackingDetail["TenantId"].isNull())
+			ivrTrackingDetailObject.tenantId = ivrTrackingDetailsNodeListIvrTrackingDetail["TenantId"].asString();
 		ivrTrackingDetails_.list.push_back(ivrTrackingDetailObject);
 	}
 	if(!value["Success"].isNull())

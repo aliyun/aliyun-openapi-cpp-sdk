@@ -39,14 +39,14 @@ void GetSuggestShrinkableNodesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"]["ResultItem"];
-	for (auto value : allResult)
+	auto allResultNode = value["Result"]["ResultItem"];
+	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!value["host"].isNull())
-			resultObject.host = value["host"].asString();
-		if(!value["port"].isNull())
-			resultObject.port = std::stoi(value["port"].asString());
+		if(!valueResultResultItem["host"].isNull())
+			resultObject.host = valueResultResultItem["host"].asString();
+		if(!valueResultResultItem["port"].isNull())
+			resultObject.port = std::stoi(valueResultResultItem["port"].asString());
 		result_.push_back(resultObject);
 	}
 	if(!value["Code"].isNull())

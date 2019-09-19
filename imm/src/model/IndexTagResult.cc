@@ -39,38 +39,38 @@ void IndexTagResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFailDetails = value["FailDetails"]["FailDetailsItem"];
-	for (auto value : allFailDetails)
+	auto allFailDetailsNode = value["FailDetails"]["FailDetailsItem"];
+	for (auto valueFailDetailsFailDetailsItem : allFailDetailsNode)
 	{
 		FailDetailsItem failDetailsObject;
-		if(!value["SrcUri"].isNull())
-			failDetailsObject.srcUri = value["SrcUri"].asString();
-		if(!value["Reason"].isNull())
-			failDetailsObject.reason = value["Reason"].asString();
+		if(!valueFailDetailsFailDetailsItem["SrcUri"].isNull())
+			failDetailsObject.srcUri = valueFailDetailsFailDetailsItem["SrcUri"].asString();
+		if(!valueFailDetailsFailDetailsItem["Reason"].isNull())
+			failDetailsObject.reason = valueFailDetailsFailDetailsItem["Reason"].asString();
 		failDetails_.push_back(failDetailsObject);
 	}
-	auto allSuccessDetails = value["SuccessDetails"]["SuccessDetailsItem"];
-	for (auto value : allSuccessDetails)
+	auto allSuccessDetailsNode = value["SuccessDetails"]["SuccessDetailsItem"];
+	for (auto valueSuccessDetailsSuccessDetailsItem : allSuccessDetailsNode)
 	{
 		SuccessDetailsItem successDetailsObject;
-		if(!value["SrcUri"].isNull())
-			successDetailsObject.srcUri = value["SrcUri"].asString();
-		auto allTags = value["Tags"]["TagsItem"];
-		for (auto value : allTags)
+		if(!valueSuccessDetailsSuccessDetailsItem["SrcUri"].isNull())
+			successDetailsObject.srcUri = valueSuccessDetailsSuccessDetailsItem["SrcUri"].asString();
+		auto allTagsNode = allSuccessDetailsNode["Tags"]["TagsItem"];
+		for (auto allSuccessDetailsNodeTagsTagsItem : allTagsNode)
 		{
 			SuccessDetailsItem::TagsItem tagsObject;
-			if(!value["TagId"].isNull())
-				tagsObject.tagId = value["TagId"].asString();
-			if(!value["TagLevel"].isNull())
-				tagsObject.tagLevel = value["TagLevel"].asString();
-			if(!value["TagName"].isNull())
-				tagsObject.tagName = value["TagName"].asString();
-			if(!value["ParentTagId"].isNull())
-				tagsObject.parentTagId = value["ParentTagId"].asString();
-			if(!value["ParentTagName"].isNull())
-				tagsObject.parentTagName = value["ParentTagName"].asString();
-			if(!value["TagScore"].isNull())
-				tagsObject.tagScore = value["TagScore"].asString();
+			if(!allSuccessDetailsNodeTagsTagsItem["TagId"].isNull())
+				tagsObject.tagId = allSuccessDetailsNodeTagsTagsItem["TagId"].asString();
+			if(!allSuccessDetailsNodeTagsTagsItem["TagLevel"].isNull())
+				tagsObject.tagLevel = allSuccessDetailsNodeTagsTagsItem["TagLevel"].asString();
+			if(!allSuccessDetailsNodeTagsTagsItem["TagName"].isNull())
+				tagsObject.tagName = allSuccessDetailsNodeTagsTagsItem["TagName"].asString();
+			if(!allSuccessDetailsNodeTagsTagsItem["ParentTagId"].isNull())
+				tagsObject.parentTagId = allSuccessDetailsNodeTagsTagsItem["ParentTagId"].asString();
+			if(!allSuccessDetailsNodeTagsTagsItem["ParentTagName"].isNull())
+				tagsObject.parentTagName = allSuccessDetailsNodeTagsTagsItem["ParentTagName"].asString();
+			if(!allSuccessDetailsNodeTagsTagsItem["TagScore"].isNull())
+				tagsObject.tagScore = allSuccessDetailsNodeTagsTagsItem["TagScore"].asString();
 			successDetailsObject.tags.push_back(tagsObject);
 		}
 		successDetails_.push_back(successDetailsObject);

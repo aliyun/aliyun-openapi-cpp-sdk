@@ -39,56 +39,56 @@ void ListScenariosResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allScenarios = value["Scenarios"]["Scenario"];
-	for (auto value : allScenarios)
+	auto allScenariosNode = value["Scenarios"]["Scenario"];
+	for (auto valueScenariosScenario : allScenariosNode)
 	{
 		Scenario scenariosObject;
-		if(!value["Id"].isNull())
-			scenariosObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			scenariosObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			scenariosObject.description = value["Description"].asString();
-		if(!value["Type"].isNull())
-			scenariosObject.type = value["Type"].asString();
-		if(!value["IsTemplate"].isNull())
-			scenariosObject.isTemplate = value["IsTemplate"].asString() == "true";
-		auto allSurveys = value["Surveys"]["Survey"];
-		for (auto value : allSurveys)
+		if(!valueScenariosScenario["Id"].isNull())
+			scenariosObject.id = valueScenariosScenario["Id"].asString();
+		if(!valueScenariosScenario["Name"].isNull())
+			scenariosObject.name = valueScenariosScenario["Name"].asString();
+		if(!valueScenariosScenario["Description"].isNull())
+			scenariosObject.description = valueScenariosScenario["Description"].asString();
+		if(!valueScenariosScenario["Type"].isNull())
+			scenariosObject.type = valueScenariosScenario["Type"].asString();
+		if(!valueScenariosScenario["IsTemplate"].isNull())
+			scenariosObject.isTemplate = valueScenariosScenario["IsTemplate"].asString() == "true";
+		auto allSurveysNode = allScenariosNode["Surveys"]["Survey"];
+		for (auto allScenariosNodeSurveysSurvey : allSurveysNode)
 		{
 			Scenario::Survey surveysObject;
-			if(!value["Id"].isNull())
-				surveysObject.id = value["Id"].asString();
-			if(!value["Name"].isNull())
-				surveysObject.name = value["Name"].asString();
-			if(!value["Description"].isNull())
-				surveysObject.description = value["Description"].asString();
-			if(!value["Role"].isNull())
-				surveysObject.role = value["Role"].asString();
-			if(!value["Round"].isNull())
-				surveysObject.round = std::stoi(value["Round"].asString());
-			if(!value["BeebotId"].isNull())
-				surveysObject.beebotId = value["BeebotId"].asString();
-			auto allIntents = value["Intents"]["IntentNode"];
-			for (auto value : allIntents)
+			if(!allScenariosNodeSurveysSurvey["Id"].isNull())
+				surveysObject.id = allScenariosNodeSurveysSurvey["Id"].asString();
+			if(!allScenariosNodeSurveysSurvey["Name"].isNull())
+				surveysObject.name = allScenariosNodeSurveysSurvey["Name"].asString();
+			if(!allScenariosNodeSurveysSurvey["Description"].isNull())
+				surveysObject.description = allScenariosNodeSurveysSurvey["Description"].asString();
+			if(!allScenariosNodeSurveysSurvey["Role"].isNull())
+				surveysObject.role = allScenariosNodeSurveysSurvey["Role"].asString();
+			if(!allScenariosNodeSurveysSurvey["Round"].isNull())
+				surveysObject.round = std::stoi(allScenariosNodeSurveysSurvey["Round"].asString());
+			if(!allScenariosNodeSurveysSurvey["BeebotId"].isNull())
+				surveysObject.beebotId = allScenariosNodeSurveysSurvey["BeebotId"].asString();
+			auto allIntentsNode = allSurveysNode["Intents"]["IntentNode"];
+			for (auto allSurveysNodeIntentsIntentNode : allIntentsNode)
 			{
 				Scenario::Survey::IntentNode intentsObject;
-				if(!value["NodeId"].isNull())
-					intentsObject.nodeId = value["NodeId"].asString();
-				if(!value["IntentId"].isNull())
-					intentsObject.intentId = value["IntentId"].asString();
+				if(!allSurveysNodeIntentsIntentNode["NodeId"].isNull())
+					intentsObject.nodeId = allSurveysNodeIntentsIntentNode["NodeId"].asString();
+				if(!allSurveysNodeIntentsIntentNode["IntentId"].isNull())
+					intentsObject.intentId = allSurveysNodeIntentsIntentNode["IntentId"].asString();
 				surveysObject.intents.push_back(intentsObject);
 			}
 			scenariosObject.surveys.push_back(surveysObject);
 		}
-		auto allVariables = value["Variables"]["KeyValuePair"];
-		for (auto value : allVariables)
+		auto allVariablesNode = allScenariosNode["Variables"]["KeyValuePair"];
+		for (auto allScenariosNodeVariablesKeyValuePair : allVariablesNode)
 		{
 			Scenario::KeyValuePair variablesObject;
-			if(!value["Key"].isNull())
-				variablesObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				variablesObject.value = value["Value"].asString();
+			if(!allScenariosNodeVariablesKeyValuePair["Key"].isNull())
+				variablesObject.key = allScenariosNodeVariablesKeyValuePair["Key"].asString();
+			if(!allScenariosNodeVariablesKeyValuePair["Value"].isNull())
+				variablesObject.value = allScenariosNodeVariablesKeyValuePair["Value"].asString();
 			scenariosObject.variables.push_back(variablesObject);
 		}
 		auto strategyNode = value["Strategy"];
@@ -118,14 +118,14 @@ void ListScenariosResult::parse(const std::string &payload)
 			scenariosObject.strategy.followUpStrategy = strategyNode["FollowUpStrategy"].asString();
 		if(!strategyNode["IsTemplate"].isNull())
 			scenariosObject.strategy.isTemplate = strategyNode["IsTemplate"].asString() == "true";
-		auto allWorkingTime = value["WorkingTime"]["TimeFrame"];
-		for (auto value : allWorkingTime)
+		auto allWorkingTimeNode = strategyNode["WorkingTime"]["TimeFrame"];
+		for (auto strategyNodeWorkingTimeTimeFrame : allWorkingTimeNode)
 		{
 			Scenario::Strategy::TimeFrame timeFrameObject;
-			if(!value["BeginTime"].isNull())
-				timeFrameObject.beginTime = value["BeginTime"].asString();
-			if(!value["EndTime"].isNull())
-				timeFrameObject.endTime = value["EndTime"].asString();
+			if(!strategyNodeWorkingTimeTimeFrame["BeginTime"].isNull())
+				timeFrameObject.beginTime = strategyNodeWorkingTimeTimeFrame["BeginTime"].asString();
+			if(!strategyNodeWorkingTimeTimeFrame["EndTime"].isNull())
+				timeFrameObject.endTime = strategyNodeWorkingTimeTimeFrame["EndTime"].asString();
 			scenariosObject.strategy.workingTime.push_back(timeFrameObject);
 		}
 			auto allRepeatDays = strategyNode["RepeatDays"]["Integer"];

@@ -39,52 +39,52 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["DBInstance"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["DBInstance"];
+	for (auto valueItemsDBInstance : allItemsNode)
 	{
 		DBInstance itemsObject;
-		if(!value["DBInstanceId"].isNull())
-			itemsObject.dBInstanceId = value["DBInstanceId"].asString();
-		if(!value["DBInstanceDescription"].isNull())
-			itemsObject.dBInstanceDescription = value["DBInstanceDescription"].asString();
-		if(!value["PayType"].isNull())
-			itemsObject.payType = value["PayType"].asString();
-		if(!value["InstanceNetworkType"].isNull())
-			itemsObject.instanceNetworkType = value["InstanceNetworkType"].asString();
-		if(!value["ConnectionMode"].isNull())
-			itemsObject.connectionMode = value["ConnectionMode"].asString();
-		if(!value["RegionId"].isNull())
-			itemsObject.regionId = value["RegionId"].asString();
-		if(!value["ZoneId"].isNull())
-			itemsObject.zoneId = value["ZoneId"].asString();
-		if(!value["ExpireTime"].isNull())
-			itemsObject.expireTime = value["ExpireTime"].asString();
-		if(!value["DBInstanceStatus"].isNull())
-			itemsObject.dBInstanceStatus = value["DBInstanceStatus"].asString();
-		if(!value["Engine"].isNull())
-			itemsObject.engine = value["Engine"].asString();
-		if(!value["EngineVersion"].isNull())
-			itemsObject.engineVersion = value["EngineVersion"].asString();
-		if(!value["DBInstanceNetType"].isNull())
-			itemsObject.dBInstanceNetType = value["DBInstanceNetType"].asString();
-		if(!value["LockMode"].isNull())
-			itemsObject.lockMode = value["LockMode"].asString();
-		if(!value["LockReason"].isNull())
-			itemsObject.lockReason = value["LockReason"].asString();
-		if(!value["CreateTime"].isNull())
-			itemsObject.createTime = value["CreateTime"].asString();
-		if(!value["VpcId"].isNull())
-			itemsObject.vpcId = value["VpcId"].asString();
-		if(!value["VSwitchId"].isNull())
-			itemsObject.vSwitchId = value["VSwitchId"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueItemsDBInstance["DBInstanceId"].isNull())
+			itemsObject.dBInstanceId = valueItemsDBInstance["DBInstanceId"].asString();
+		if(!valueItemsDBInstance["DBInstanceDescription"].isNull())
+			itemsObject.dBInstanceDescription = valueItemsDBInstance["DBInstanceDescription"].asString();
+		if(!valueItemsDBInstance["PayType"].isNull())
+			itemsObject.payType = valueItemsDBInstance["PayType"].asString();
+		if(!valueItemsDBInstance["InstanceNetworkType"].isNull())
+			itemsObject.instanceNetworkType = valueItemsDBInstance["InstanceNetworkType"].asString();
+		if(!valueItemsDBInstance["ConnectionMode"].isNull())
+			itemsObject.connectionMode = valueItemsDBInstance["ConnectionMode"].asString();
+		if(!valueItemsDBInstance["RegionId"].isNull())
+			itemsObject.regionId = valueItemsDBInstance["RegionId"].asString();
+		if(!valueItemsDBInstance["ZoneId"].isNull())
+			itemsObject.zoneId = valueItemsDBInstance["ZoneId"].asString();
+		if(!valueItemsDBInstance["ExpireTime"].isNull())
+			itemsObject.expireTime = valueItemsDBInstance["ExpireTime"].asString();
+		if(!valueItemsDBInstance["DBInstanceStatus"].isNull())
+			itemsObject.dBInstanceStatus = valueItemsDBInstance["DBInstanceStatus"].asString();
+		if(!valueItemsDBInstance["Engine"].isNull())
+			itemsObject.engine = valueItemsDBInstance["Engine"].asString();
+		if(!valueItemsDBInstance["EngineVersion"].isNull())
+			itemsObject.engineVersion = valueItemsDBInstance["EngineVersion"].asString();
+		if(!valueItemsDBInstance["DBInstanceNetType"].isNull())
+			itemsObject.dBInstanceNetType = valueItemsDBInstance["DBInstanceNetType"].asString();
+		if(!valueItemsDBInstance["LockMode"].isNull())
+			itemsObject.lockMode = valueItemsDBInstance["LockMode"].asString();
+		if(!valueItemsDBInstance["LockReason"].isNull())
+			itemsObject.lockReason = valueItemsDBInstance["LockReason"].asString();
+		if(!valueItemsDBInstance["CreateTime"].isNull())
+			itemsObject.createTime = valueItemsDBInstance["CreateTime"].asString();
+		if(!valueItemsDBInstance["VpcId"].isNull())
+			itemsObject.vpcId = valueItemsDBInstance["VpcId"].asString();
+		if(!valueItemsDBInstance["VSwitchId"].isNull())
+			itemsObject.vSwitchId = valueItemsDBInstance["VSwitchId"].asString();
+		auto allTagsNode = allItemsNode["Tags"]["Tag"];
+		for (auto allItemsNodeTagsTag : allTagsNode)
 		{
 			DBInstance::Tag tagsObject;
-			if(!value["Key"].isNull())
-				tagsObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				tagsObject.value = value["Value"].asString();
+			if(!allItemsNodeTagsTag["Key"].isNull())
+				tagsObject.key = allItemsNodeTagsTag["Key"].asString();
+			if(!allItemsNodeTagsTag["Value"].isNull())
+				tagsObject.value = allItemsNodeTagsTag["Value"].asString();
 			itemsObject.tags.push_back(tagsObject);
 		}
 		items_.push_back(itemsObject);

@@ -39,54 +39,54 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSnapshots = value["Snapshots"]["Snapshot"];
-	for (auto value : allSnapshots)
+	auto allSnapshotsNode = value["Snapshots"]["Snapshot"];
+	for (auto valueSnapshotsSnapshot : allSnapshotsNode)
 	{
 		Snapshot snapshotsObject;
-		if(!value["SnapshotId"].isNull())
-			snapshotsObject.snapshotId = value["SnapshotId"].asString();
-		if(!value["SnapshotName"].isNull())
-			snapshotsObject.snapshotName = value["SnapshotName"].asString();
-		if(!value["Progress"].isNull())
-			snapshotsObject.progress = value["Progress"].asString();
-		if(!value["ProductCode"].isNull())
-			snapshotsObject.productCode = value["ProductCode"].asString();
-		if(!value["SourceDiskId"].isNull())
-			snapshotsObject.sourceDiskId = value["SourceDiskId"].asString();
-		if(!value["SourceDiskType"].isNull())
-			snapshotsObject.sourceDiskType = value["SourceDiskType"].asString();
-		if(!value["RetentionDays"].isNull())
-			snapshotsObject.retentionDays = std::stoi(value["RetentionDays"].asString());
-		if(!value["Encrypted"].isNull())
-			snapshotsObject.encrypted = value["Encrypted"].asString() == "true";
-		if(!value["SourceDiskSize"].isNull())
-			snapshotsObject.sourceDiskSize = value["SourceDiskSize"].asString();
-		if(!value["Description"].isNull())
-			snapshotsObject.description = value["Description"].asString();
-		if(!value["CreationTime"].isNull())
-			snapshotsObject.creationTime = value["CreationTime"].asString();
-		if(!value["LastModifiedTime"].isNull())
-			snapshotsObject.lastModifiedTime = value["LastModifiedTime"].asString();
-		if(!value["Status"].isNull())
-			snapshotsObject.status = value["Status"].asString();
-		if(!value["Usage"].isNull())
-			snapshotsObject.usage = value["Usage"].asString();
-		if(!value["SourceStorageType"].isNull())
-			snapshotsObject.sourceStorageType = value["SourceStorageType"].asString();
-		if(!value["RemainTime"].isNull())
-			snapshotsObject.remainTime = std::stoi(value["RemainTime"].asString());
-		if(!value["ResourceGroupId"].isNull())
-			snapshotsObject.resourceGroupId = value["ResourceGroupId"].asString();
-		if(!value["KMSKeyId"].isNull())
-			snapshotsObject.kMSKeyId = value["KMSKeyId"].asString();
-		auto allTags = value["Tags"]["Tag"];
-		for (auto value : allTags)
+		if(!valueSnapshotsSnapshot["SnapshotId"].isNull())
+			snapshotsObject.snapshotId = valueSnapshotsSnapshot["SnapshotId"].asString();
+		if(!valueSnapshotsSnapshot["SnapshotName"].isNull())
+			snapshotsObject.snapshotName = valueSnapshotsSnapshot["SnapshotName"].asString();
+		if(!valueSnapshotsSnapshot["Progress"].isNull())
+			snapshotsObject.progress = valueSnapshotsSnapshot["Progress"].asString();
+		if(!valueSnapshotsSnapshot["ProductCode"].isNull())
+			snapshotsObject.productCode = valueSnapshotsSnapshot["ProductCode"].asString();
+		if(!valueSnapshotsSnapshot["SourceDiskId"].isNull())
+			snapshotsObject.sourceDiskId = valueSnapshotsSnapshot["SourceDiskId"].asString();
+		if(!valueSnapshotsSnapshot["SourceDiskType"].isNull())
+			snapshotsObject.sourceDiskType = valueSnapshotsSnapshot["SourceDiskType"].asString();
+		if(!valueSnapshotsSnapshot["RetentionDays"].isNull())
+			snapshotsObject.retentionDays = std::stoi(valueSnapshotsSnapshot["RetentionDays"].asString());
+		if(!valueSnapshotsSnapshot["Encrypted"].isNull())
+			snapshotsObject.encrypted = valueSnapshotsSnapshot["Encrypted"].asString() == "true";
+		if(!valueSnapshotsSnapshot["SourceDiskSize"].isNull())
+			snapshotsObject.sourceDiskSize = valueSnapshotsSnapshot["SourceDiskSize"].asString();
+		if(!valueSnapshotsSnapshot["Description"].isNull())
+			snapshotsObject.description = valueSnapshotsSnapshot["Description"].asString();
+		if(!valueSnapshotsSnapshot["CreationTime"].isNull())
+			snapshotsObject.creationTime = valueSnapshotsSnapshot["CreationTime"].asString();
+		if(!valueSnapshotsSnapshot["LastModifiedTime"].isNull())
+			snapshotsObject.lastModifiedTime = valueSnapshotsSnapshot["LastModifiedTime"].asString();
+		if(!valueSnapshotsSnapshot["Status"].isNull())
+			snapshotsObject.status = valueSnapshotsSnapshot["Status"].asString();
+		if(!valueSnapshotsSnapshot["Usage"].isNull())
+			snapshotsObject.usage = valueSnapshotsSnapshot["Usage"].asString();
+		if(!valueSnapshotsSnapshot["SourceStorageType"].isNull())
+			snapshotsObject.sourceStorageType = valueSnapshotsSnapshot["SourceStorageType"].asString();
+		if(!valueSnapshotsSnapshot["RemainTime"].isNull())
+			snapshotsObject.remainTime = std::stoi(valueSnapshotsSnapshot["RemainTime"].asString());
+		if(!valueSnapshotsSnapshot["ResourceGroupId"].isNull())
+			snapshotsObject.resourceGroupId = valueSnapshotsSnapshot["ResourceGroupId"].asString();
+		if(!valueSnapshotsSnapshot["KMSKeyId"].isNull())
+			snapshotsObject.kMSKeyId = valueSnapshotsSnapshot["KMSKeyId"].asString();
+		auto allTagsNode = allSnapshotsNode["Tags"]["Tag"];
+		for (auto allSnapshotsNodeTagsTag : allTagsNode)
 		{
 			Snapshot::Tag tagsObject;
-			if(!value["TagKey"].isNull())
-				tagsObject.tagKey = value["TagKey"].asString();
-			if(!value["TagValue"].isNull())
-				tagsObject.tagValue = value["TagValue"].asString();
+			if(!allSnapshotsNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allSnapshotsNodeTagsTag["TagKey"].asString();
+			if(!allSnapshotsNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allSnapshotsNodeTagsTag["TagValue"].asString();
 			snapshotsObject.tags.push_back(tagsObject);
 		}
 		snapshots_.push_back(snapshotsObject);

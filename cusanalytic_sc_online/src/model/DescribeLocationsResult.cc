@@ -39,44 +39,44 @@ void DescribeLocationsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLocationMsgItems = value["LocationMsgItems"]["LocationMsgItem"];
-	for (auto value : allLocationMsgItems)
+	auto allLocationMsgItemsNode = value["LocationMsgItems"]["LocationMsgItem"];
+	for (auto valueLocationMsgItemsLocationMsgItem : allLocationMsgItemsNode)
 	{
 		LocationMsgItem locationMsgItemsObject;
-		if(!value["Tag"].isNull())
-			locationMsgItemsObject.tag = value["Tag"].asString();
-		if(!value["Id"].isNull())
-			locationMsgItemsObject.id = std::stol(value["Id"].asString());
-		if(!value["ExtId"].isNull())
-			locationMsgItemsObject.extId = value["ExtId"].asString();
-		if(!value["LocationType"].isNull())
-			locationMsgItemsObject.locationType = value["LocationType"].asString();
-		if(!value["Name"].isNull())
-			locationMsgItemsObject.name = value["Name"].asString();
-		if(!value["Status"].isNull())
-			locationMsgItemsObject.status = std::stol(value["Status"].asString());
-		if(!value["GmtCreate"].isNull())
-			locationMsgItemsObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["StoreId"].isNull())
-			locationMsgItemsObject.storeId = std::stol(value["StoreId"].asString());
-		if(!value["GmtModified"].isNull())
-			locationMsgItemsObject.gmtModified = value["GmtModified"].asString();
-		if(!value["ParentLocationId"].isNull())
-			locationMsgItemsObject.parentLocationId = std::stol(value["ParentLocationId"].asString());
-		if(!value["LayerType"].isNull())
-			locationMsgItemsObject.layerType = value["LayerType"].asString();
-		auto allRectRois = value["RectRois"]["RectRoi"];
-		for (auto value : allRectRois)
+		if(!valueLocationMsgItemsLocationMsgItem["Tag"].isNull())
+			locationMsgItemsObject.tag = valueLocationMsgItemsLocationMsgItem["Tag"].asString();
+		if(!valueLocationMsgItemsLocationMsgItem["Id"].isNull())
+			locationMsgItemsObject.id = std::stol(valueLocationMsgItemsLocationMsgItem["Id"].asString());
+		if(!valueLocationMsgItemsLocationMsgItem["ExtId"].isNull())
+			locationMsgItemsObject.extId = valueLocationMsgItemsLocationMsgItem["ExtId"].asString();
+		if(!valueLocationMsgItemsLocationMsgItem["LocationType"].isNull())
+			locationMsgItemsObject.locationType = valueLocationMsgItemsLocationMsgItem["LocationType"].asString();
+		if(!valueLocationMsgItemsLocationMsgItem["Name"].isNull())
+			locationMsgItemsObject.name = valueLocationMsgItemsLocationMsgItem["Name"].asString();
+		if(!valueLocationMsgItemsLocationMsgItem["Status"].isNull())
+			locationMsgItemsObject.status = std::stol(valueLocationMsgItemsLocationMsgItem["Status"].asString());
+		if(!valueLocationMsgItemsLocationMsgItem["GmtCreate"].isNull())
+			locationMsgItemsObject.gmtCreate = valueLocationMsgItemsLocationMsgItem["GmtCreate"].asString();
+		if(!valueLocationMsgItemsLocationMsgItem["StoreId"].isNull())
+			locationMsgItemsObject.storeId = std::stol(valueLocationMsgItemsLocationMsgItem["StoreId"].asString());
+		if(!valueLocationMsgItemsLocationMsgItem["GmtModified"].isNull())
+			locationMsgItemsObject.gmtModified = valueLocationMsgItemsLocationMsgItem["GmtModified"].asString();
+		if(!valueLocationMsgItemsLocationMsgItem["ParentLocationId"].isNull())
+			locationMsgItemsObject.parentLocationId = std::stol(valueLocationMsgItemsLocationMsgItem["ParentLocationId"].asString());
+		if(!valueLocationMsgItemsLocationMsgItem["LayerType"].isNull())
+			locationMsgItemsObject.layerType = valueLocationMsgItemsLocationMsgItem["LayerType"].asString();
+		auto allRectRoisNode = allLocationMsgItemsNode["RectRois"]["RectRoi"];
+		for (auto allLocationMsgItemsNodeRectRoisRectRoi : allRectRoisNode)
 		{
 			LocationMsgItem::RectRoi rectRoisObject;
-			auto allPoints = value["Points"]["Point"];
-			for (auto value : allPoints)
+			auto allPointsNode = allRectRoisNode["Points"]["Point"];
+			for (auto allRectRoisNodePointsPoint : allPointsNode)
 			{
 				LocationMsgItem::RectRoi::Point pointsObject;
-				if(!value["X"].isNull())
-					pointsObject.x = std::stof(value["X"].asString());
-				if(!value["Y"].isNull())
-					pointsObject.y = std::stof(value["Y"].asString());
+				if(!allRectRoisNodePointsPoint["X"].isNull())
+					pointsObject.x = std::stof(allRectRoisNodePointsPoint["X"].asString());
+				if(!allRectRoisNodePointsPoint["Y"].isNull())
+					pointsObject.y = std::stof(allRectRoisNodePointsPoint["Y"].asString());
 				rectRoisObject.points.push_back(pointsObject);
 			}
 			auto leftTopNode = value["LeftTop"];

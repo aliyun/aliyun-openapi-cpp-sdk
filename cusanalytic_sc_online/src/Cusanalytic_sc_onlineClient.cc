@@ -87,6 +87,42 @@ Cusanalytic_sc_onlineClient::DescribeActionDataOutcomeCallable Cusanalytic_sc_on
 	return task->get_future();
 }
 
+Cusanalytic_sc_onlineClient::DescribeHistoryActionDataOutcome Cusanalytic_sc_onlineClient::describeHistoryActionData(const DescribeHistoryActionDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHistoryActionDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHistoryActionDataOutcome(DescribeHistoryActionDataResult(outcome.result()));
+	else
+		return DescribeHistoryActionDataOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::describeHistoryActionDataAsync(const DescribeHistoryActionDataRequest& request, const DescribeHistoryActionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHistoryActionData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::DescribeHistoryActionDataOutcomeCallable Cusanalytic_sc_onlineClient::describeHistoryActionDataCallable(const DescribeHistoryActionDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHistoryActionDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHistoryActionData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cusanalytic_sc_onlineClient::DescribeLocationsOutcome Cusanalytic_sc_onlineClient::describeLocations(const DescribeLocationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

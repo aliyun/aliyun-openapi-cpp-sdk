@@ -39,56 +39,56 @@ void ListInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstances = value["Instances"]["Instance"];
-	for (auto value : allInstances)
+	auto allInstancesNode = value["Instances"]["Instance"];
+	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
-		if(!value["Id"].isNull())
-			instancesObject.id = std::stol(value["Id"].asString());
-		if(!value["ProjectName"].isNull())
-			instancesObject.projectName = value["ProjectName"].asString();
-		if(!value["JobName"].isNull())
-			instancesObject.jobName = value["JobName"].asString();
-		if(!value["ActualState"].isNull())
-			instancesObject.actualState = value["ActualState"].asString();
-		if(!value["ExpectState"].isNull())
-			instancesObject.expectState = value["ExpectState"].asString();
-		if(!value["JobType"].isNull())
-			instancesObject.jobType = value["JobType"].asString();
-		if(!value["ApiType"].isNull())
-			instancesObject.apiType = value["ApiType"].asString();
-		if(!value["Code"].isNull())
-			instancesObject.code = value["Code"].asString();
-		if(!value["Properties"].isNull())
-			instancesObject.properties = value["Properties"].asString();
-		if(!value["Packages"].isNull())
-			instancesObject.packages = value["Packages"].asString();
-		if(!value["Starter"].isNull())
-			instancesObject.starter = value["Starter"].asString();
-		if(!value["StartTime"].isNull())
-			instancesObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["LastErrorTime"].isNull())
-			instancesObject.lastErrorTime = std::stol(value["LastErrorTime"].asString());
-		if(!value["LastErrorMessage"].isNull())
-			instancesObject.lastErrorMessage = value["LastErrorMessage"].asString();
-		if(!value["LastOperator"].isNull())
-			instancesObject.lastOperator = value["LastOperator"].asString();
-		if(!value["LastOperateTime"].isNull())
-			instancesObject.lastOperateTime = std::stol(value["LastOperateTime"].asString());
-		if(!value["PlanJson"].isNull())
-			instancesObject.planJson = value["PlanJson"].asString();
-		if(!value["EngineVersion"].isNull())
-			instancesObject.engineVersion = value["EngineVersion"].asString();
-		if(!value["EngineJobHandler"].isNull())
-			instancesObject.engineJobHandler = value["EngineJobHandler"].asString();
-		if(!value["InputDelay"].isNull())
-			instancesObject.inputDelay = std::stol(value["InputDelay"].asString());
-		if(!value["ClusterId"].isNull())
-			instancesObject.clusterId = value["ClusterId"].asString();
-		if(!value["QueueName"].isNull())
-			instancesObject.queueName = value["QueueName"].asString();
-		if(!value["EndTime"].isNull())
-			instancesObject.endTime = std::stol(value["EndTime"].asString());
+		if(!valueInstancesInstance["Id"].isNull())
+			instancesObject.id = std::stol(valueInstancesInstance["Id"].asString());
+		if(!valueInstancesInstance["ProjectName"].isNull())
+			instancesObject.projectName = valueInstancesInstance["ProjectName"].asString();
+		if(!valueInstancesInstance["JobName"].isNull())
+			instancesObject.jobName = valueInstancesInstance["JobName"].asString();
+		if(!valueInstancesInstance["ActualState"].isNull())
+			instancesObject.actualState = valueInstancesInstance["ActualState"].asString();
+		if(!valueInstancesInstance["ExpectState"].isNull())
+			instancesObject.expectState = valueInstancesInstance["ExpectState"].asString();
+		if(!valueInstancesInstance["JobType"].isNull())
+			instancesObject.jobType = valueInstancesInstance["JobType"].asString();
+		if(!valueInstancesInstance["ApiType"].isNull())
+			instancesObject.apiType = valueInstancesInstance["ApiType"].asString();
+		if(!valueInstancesInstance["Code"].isNull())
+			instancesObject.code = valueInstancesInstance["Code"].asString();
+		if(!valueInstancesInstance["Properties"].isNull())
+			instancesObject.properties = valueInstancesInstance["Properties"].asString();
+		if(!valueInstancesInstance["Packages"].isNull())
+			instancesObject.packages = valueInstancesInstance["Packages"].asString();
+		if(!valueInstancesInstance["Starter"].isNull())
+			instancesObject.starter = valueInstancesInstance["Starter"].asString();
+		if(!valueInstancesInstance["StartTime"].isNull())
+			instancesObject.startTime = std::stol(valueInstancesInstance["StartTime"].asString());
+		if(!valueInstancesInstance["LastErrorTime"].isNull())
+			instancesObject.lastErrorTime = std::stol(valueInstancesInstance["LastErrorTime"].asString());
+		if(!valueInstancesInstance["LastErrorMessage"].isNull())
+			instancesObject.lastErrorMessage = valueInstancesInstance["LastErrorMessage"].asString();
+		if(!valueInstancesInstance["LastOperator"].isNull())
+			instancesObject.lastOperator = valueInstancesInstance["LastOperator"].asString();
+		if(!valueInstancesInstance["LastOperateTime"].isNull())
+			instancesObject.lastOperateTime = std::stol(valueInstancesInstance["LastOperateTime"].asString());
+		if(!valueInstancesInstance["PlanJson"].isNull())
+			instancesObject.planJson = valueInstancesInstance["PlanJson"].asString();
+		if(!valueInstancesInstance["EngineVersion"].isNull())
+			instancesObject.engineVersion = valueInstancesInstance["EngineVersion"].asString();
+		if(!valueInstancesInstance["EngineJobHandler"].isNull())
+			instancesObject.engineJobHandler = valueInstancesInstance["EngineJobHandler"].asString();
+		if(!valueInstancesInstance["InputDelay"].isNull())
+			instancesObject.inputDelay = std::stol(valueInstancesInstance["InputDelay"].asString());
+		if(!valueInstancesInstance["ClusterId"].isNull())
+			instancesObject.clusterId = valueInstancesInstance["ClusterId"].asString();
+		if(!valueInstancesInstance["QueueName"].isNull())
+			instancesObject.queueName = valueInstancesInstance["QueueName"].asString();
+		if(!valueInstancesInstance["EndTime"].isNull())
+			instancesObject.endTime = std::stol(valueInstancesInstance["EndTime"].asString());
 		instances_.push_back(instancesObject);
 	}
 	if(!value["PageIndex"].isNull())

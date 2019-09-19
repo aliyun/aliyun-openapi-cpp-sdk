@@ -39,28 +39,28 @@ void ListAgentEventsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAgentEventList = value["AgentEventList"]["AgentEvent"];
-	for (auto value : allAgentEventList)
+	auto allAgentEventListNode = value["AgentEventList"]["AgentEvent"];
+	for (auto valueAgentEventListAgentEvent : allAgentEventListNode)
 	{
 		AgentEvent agentEventListObject;
-		if(!value["InstanceId"].isNull())
-			agentEventListObject.instanceId = value["InstanceId"].asString();
-		if(!value["RamId"].isNull())
-			agentEventListObject.ramId = std::stol(value["RamId"].asString());
-		if(!value["LoginName"].isNull())
-			agentEventListObject.loginName = value["LoginName"].asString();
-		if(!value["Event"].isNull())
-			agentEventListObject.event = value["Event"].asString();
-		if(!value["EventTime"].isNull())
-			agentEventListObject.eventTime = std::stol(value["EventTime"].asString());
-		auto allSkillGroupIds = value["SkillGroupIds"]["SkillGroup"];
-		for (auto value : allSkillGroupIds)
+		if(!valueAgentEventListAgentEvent["InstanceId"].isNull())
+			agentEventListObject.instanceId = valueAgentEventListAgentEvent["InstanceId"].asString();
+		if(!valueAgentEventListAgentEvent["RamId"].isNull())
+			agentEventListObject.ramId = std::stol(valueAgentEventListAgentEvent["RamId"].asString());
+		if(!valueAgentEventListAgentEvent["LoginName"].isNull())
+			agentEventListObject.loginName = valueAgentEventListAgentEvent["LoginName"].asString();
+		if(!valueAgentEventListAgentEvent["Event"].isNull())
+			agentEventListObject.event = valueAgentEventListAgentEvent["Event"].asString();
+		if(!valueAgentEventListAgentEvent["EventTime"].isNull())
+			agentEventListObject.eventTime = std::stol(valueAgentEventListAgentEvent["EventTime"].asString());
+		auto allSkillGroupIdsNode = allAgentEventListNode["SkillGroupIds"]["SkillGroup"];
+		for (auto allAgentEventListNodeSkillGroupIdsSkillGroup : allSkillGroupIdsNode)
 		{
 			AgentEvent::SkillGroup skillGroupIdsObject;
-			if(!value["SkillGroupId"].isNull())
-				skillGroupIdsObject.skillGroupId = value["SkillGroupId"].asString();
-			if(!value["SkillGroupName"].isNull())
-				skillGroupIdsObject.skillGroupName = value["SkillGroupName"].asString();
+			if(!allAgentEventListNodeSkillGroupIdsSkillGroup["SkillGroupId"].isNull())
+				skillGroupIdsObject.skillGroupId = allAgentEventListNodeSkillGroupIdsSkillGroup["SkillGroupId"].asString();
+			if(!allAgentEventListNodeSkillGroupIdsSkillGroup["SkillGroupName"].isNull())
+				skillGroupIdsObject.skillGroupName = allAgentEventListNodeSkillGroupIdsSkillGroup["SkillGroupName"].asString();
 			agentEventListObject.skillGroupIds.push_back(skillGroupIdsObject);
 		}
 		agentEventList_.push_back(agentEventListObject);

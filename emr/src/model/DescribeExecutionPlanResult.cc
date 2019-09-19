@@ -39,20 +39,20 @@ void DescribeExecutionPlanResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobInfoList = value["JobInfoList"]["JobInfo"];
-	for (auto value : allJobInfoList)
+	auto allJobInfoListNode = value["JobInfoList"]["JobInfo"];
+	for (auto valueJobInfoListJobInfo : allJobInfoListNode)
 	{
 		JobInfo jobInfoListObject;
-		if(!value["Id"].isNull())
-			jobInfoListObject.id = value["Id"].asString();
-		if(!value["Name"].isNull())
-			jobInfoListObject.name = value["Name"].asString();
-		if(!value["Type"].isNull())
-			jobInfoListObject.type = value["Type"].asString();
-		if(!value["RunParameter"].isNull())
-			jobInfoListObject.runParameter = value["RunParameter"].asString();
-		if(!value["FailAct"].isNull())
-			jobInfoListObject.failAct = value["FailAct"].asString();
+		if(!valueJobInfoListJobInfo["Id"].isNull())
+			jobInfoListObject.id = valueJobInfoListJobInfo["Id"].asString();
+		if(!valueJobInfoListJobInfo["Name"].isNull())
+			jobInfoListObject.name = valueJobInfoListJobInfo["Name"].asString();
+		if(!valueJobInfoListJobInfo["Type"].isNull())
+			jobInfoListObject.type = valueJobInfoListJobInfo["Type"].asString();
+		if(!valueJobInfoListJobInfo["RunParameter"].isNull())
+			jobInfoListObject.runParameter = valueJobInfoListJobInfo["RunParameter"].asString();
+		if(!valueJobInfoListJobInfo["FailAct"].isNull())
+			jobInfoListObject.failAct = valueJobInfoListJobInfo["FailAct"].asString();
 		jobInfoList_.push_back(jobInfoListObject);
 	}
 	auto clusterInfoNode = value["ClusterInfo"];
@@ -94,52 +94,52 @@ void DescribeExecutionPlanResult::parse(const std::string &payload)
 		clusterInfo_.userDefinedEmrEcsRole = clusterInfoNode["UserDefinedEmrEcsRole"].asString();
 	if(!clusterInfoNode["UseLocalMetaDb"].isNull())
 		clusterInfo_.useLocalMetaDb = clusterInfoNode["UseLocalMetaDb"].asString() == "true";
-	auto allEcsOrders = value["EcsOrders"]["EcsOrderInfo"];
-	for (auto value : allEcsOrders)
+	auto allEcsOrdersNode = clusterInfoNode["EcsOrders"]["EcsOrderInfo"];
+	for (auto clusterInfoNodeEcsOrdersEcsOrderInfo : allEcsOrdersNode)
 	{
 		ClusterInfo::EcsOrderInfo ecsOrderInfoObject;
-		if(!value["Index"].isNull())
-			ecsOrderInfoObject.index = std::stoi(value["Index"].asString());
-		if(!value["NodeCount"].isNull())
-			ecsOrderInfoObject.nodeCount = std::stoi(value["NodeCount"].asString());
-		if(!value["InstanceType"].isNull())
-			ecsOrderInfoObject.instanceType = value["InstanceType"].asString();
-		if(!value["DiskType"].isNull())
-			ecsOrderInfoObject.diskType = value["DiskType"].asString();
-		if(!value["DiskCapacity"].isNull())
-			ecsOrderInfoObject.diskCapacity = std::stoi(value["DiskCapacity"].asString());
-		if(!value["NodeType"].isNull())
-			ecsOrderInfoObject.nodeType = value["NodeType"].asString();
-		if(!value["DiskCount"].isNull())
-			ecsOrderInfoObject.diskCount = std::stoi(value["DiskCount"].asString());
+		if(!clusterInfoNodeEcsOrdersEcsOrderInfo["Index"].isNull())
+			ecsOrderInfoObject.index = std::stoi(clusterInfoNodeEcsOrdersEcsOrderInfo["Index"].asString());
+		if(!clusterInfoNodeEcsOrdersEcsOrderInfo["NodeCount"].isNull())
+			ecsOrderInfoObject.nodeCount = std::stoi(clusterInfoNodeEcsOrdersEcsOrderInfo["NodeCount"].asString());
+		if(!clusterInfoNodeEcsOrdersEcsOrderInfo["InstanceType"].isNull())
+			ecsOrderInfoObject.instanceType = clusterInfoNodeEcsOrdersEcsOrderInfo["InstanceType"].asString();
+		if(!clusterInfoNodeEcsOrdersEcsOrderInfo["DiskType"].isNull())
+			ecsOrderInfoObject.diskType = clusterInfoNodeEcsOrdersEcsOrderInfo["DiskType"].asString();
+		if(!clusterInfoNodeEcsOrdersEcsOrderInfo["DiskCapacity"].isNull())
+			ecsOrderInfoObject.diskCapacity = std::stoi(clusterInfoNodeEcsOrdersEcsOrderInfo["DiskCapacity"].asString());
+		if(!clusterInfoNodeEcsOrdersEcsOrderInfo["NodeType"].isNull())
+			ecsOrderInfoObject.nodeType = clusterInfoNodeEcsOrdersEcsOrderInfo["NodeType"].asString();
+		if(!clusterInfoNodeEcsOrdersEcsOrderInfo["DiskCount"].isNull())
+			ecsOrderInfoObject.diskCount = std::stoi(clusterInfoNodeEcsOrdersEcsOrderInfo["DiskCount"].asString());
 		clusterInfo_.ecsOrders.push_back(ecsOrderInfoObject);
 	}
-	auto allBootstrapActionList = value["BootstrapActionList"]["BootstrapAction"];
-	for (auto value : allBootstrapActionList)
+	auto allBootstrapActionListNode = clusterInfoNode["BootstrapActionList"]["BootstrapAction"];
+	for (auto clusterInfoNodeBootstrapActionListBootstrapAction : allBootstrapActionListNode)
 	{
 		ClusterInfo::BootstrapAction bootstrapActionObject;
-		if(!value["Name"].isNull())
-			bootstrapActionObject.name = value["Name"].asString();
-		if(!value["Path"].isNull())
-			bootstrapActionObject.path = value["Path"].asString();
-		if(!value["Arg"].isNull())
-			bootstrapActionObject.arg = value["Arg"].asString();
+		if(!clusterInfoNodeBootstrapActionListBootstrapAction["Name"].isNull())
+			bootstrapActionObject.name = clusterInfoNodeBootstrapActionListBootstrapAction["Name"].asString();
+		if(!clusterInfoNodeBootstrapActionListBootstrapAction["Path"].isNull())
+			bootstrapActionObject.path = clusterInfoNodeBootstrapActionListBootstrapAction["Path"].asString();
+		if(!clusterInfoNodeBootstrapActionListBootstrapAction["Arg"].isNull())
+			bootstrapActionObject.arg = clusterInfoNodeBootstrapActionListBootstrapAction["Arg"].asString();
 		clusterInfo_.bootstrapActionList.push_back(bootstrapActionObject);
 	}
-	auto allConfigList = value["ConfigList"]["Config"];
-	for (auto value : allConfigList)
+	auto allConfigListNode = clusterInfoNode["ConfigList"]["Config"];
+	for (auto clusterInfoNodeConfigListConfig : allConfigListNode)
 	{
 		ClusterInfo::Config configObject;
-		if(!value["ServiceName"].isNull())
-			configObject.serviceName = value["ServiceName"].asString();
-		if(!value["FileName"].isNull())
-			configObject.fileName = value["FileName"].asString();
-		if(!value["ConfigKey"].isNull())
-			configObject.configKey = value["ConfigKey"].asString();
-		if(!value["ConfigValue"].isNull())
-			configObject.configValue = value["ConfigValue"].asString();
-		if(!value["Encrypt"].isNull())
-			configObject.encrypt = value["Encrypt"].asString();
+		if(!clusterInfoNodeConfigListConfig["ServiceName"].isNull())
+			configObject.serviceName = clusterInfoNodeConfigListConfig["ServiceName"].asString();
+		if(!clusterInfoNodeConfigListConfig["FileName"].isNull())
+			configObject.fileName = clusterInfoNodeConfigListConfig["FileName"].asString();
+		if(!clusterInfoNodeConfigListConfig["ConfigKey"].isNull())
+			configObject.configKey = clusterInfoNodeConfigListConfig["ConfigKey"].asString();
+		if(!clusterInfoNodeConfigListConfig["ConfigValue"].isNull())
+			configObject.configValue = clusterInfoNodeConfigListConfig["ConfigValue"].asString();
+		if(!clusterInfoNodeConfigListConfig["Encrypt"].isNull())
+			configObject.encrypt = clusterInfoNodeConfigListConfig["Encrypt"].asString();
 		clusterInfo_.configList.push_back(configObject);
 	}
 	auto softwareInfoNode = clusterInfoNode["SoftwareInfo"];
@@ -147,22 +147,22 @@ void DescribeExecutionPlanResult::parse(const std::string &payload)
 		clusterInfo_.softwareInfo.emrVer = softwareInfoNode["EmrVer"].asString();
 	if(!softwareInfoNode["ClusterType"].isNull())
 		clusterInfo_.softwareInfo.clusterType = softwareInfoNode["ClusterType"].asString();
-	auto allSoftwares = value["Softwares"]["Software"];
-	for (auto value : allSoftwares)
+	auto allSoftwaresNode = softwareInfoNode["Softwares"]["Software"];
+	for (auto softwareInfoNodeSoftwaresSoftware : allSoftwaresNode)
 	{
 		ClusterInfo::SoftwareInfo::Software softwareObject;
-		if(!value["DisplayName"].isNull())
-			softwareObject.displayName = value["DisplayName"].asString();
-		if(!value["Name"].isNull())
-			softwareObject.name = value["Name"].asString();
-		if(!value["OnlyDisplay"].isNull())
-			softwareObject.onlyDisplay = value["OnlyDisplay"].asString() == "true";
-		if(!value["StartTpe"].isNull())
-			softwareObject.startTpe = std::stoi(value["StartTpe"].asString());
-		if(!value["Version"].isNull())
-			softwareObject.version = value["Version"].asString();
-		if(!value["Optional"].isNull())
-			softwareObject.optional = value["Optional"].asString() == "true";
+		if(!softwareInfoNodeSoftwaresSoftware["DisplayName"].isNull())
+			softwareObject.displayName = softwareInfoNodeSoftwaresSoftware["DisplayName"].asString();
+		if(!softwareInfoNodeSoftwaresSoftware["Name"].isNull())
+			softwareObject.name = softwareInfoNodeSoftwaresSoftware["Name"].asString();
+		if(!softwareInfoNodeSoftwaresSoftware["OnlyDisplay"].isNull())
+			softwareObject.onlyDisplay = softwareInfoNodeSoftwaresSoftware["OnlyDisplay"].asString() == "true";
+		if(!softwareInfoNodeSoftwaresSoftware["StartTpe"].isNull())
+			softwareObject.startTpe = std::stoi(softwareInfoNodeSoftwaresSoftware["StartTpe"].asString());
+		if(!softwareInfoNodeSoftwaresSoftware["Version"].isNull())
+			softwareObject.version = softwareInfoNodeSoftwaresSoftware["Version"].asString();
+		if(!softwareInfoNodeSoftwaresSoftware["Optional"].isNull())
+			softwareObject.optional = softwareInfoNodeSoftwaresSoftware["Optional"].asString() == "true";
 		clusterInfo_.softwareInfo.softwares.push_back(softwareObject);
 	}
 	if(!value["Id"].isNull())

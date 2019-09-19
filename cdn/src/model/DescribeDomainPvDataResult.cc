@@ -39,14 +39,14 @@ void DescribeDomainPvDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPvDataInterval = value["PvDataInterval"]["UsageData"];
-	for (auto value : allPvDataInterval)
+	auto allPvDataIntervalNode = value["PvDataInterval"]["UsageData"];
+	for (auto valuePvDataIntervalUsageData : allPvDataIntervalNode)
 	{
 		UsageData pvDataIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			pvDataIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			pvDataIntervalObject.value = value["Value"].asString();
+		if(!valuePvDataIntervalUsageData["TimeStamp"].isNull())
+			pvDataIntervalObject.timeStamp = valuePvDataIntervalUsageData["TimeStamp"].asString();
+		if(!valuePvDataIntervalUsageData["Value"].isNull())
+			pvDataIntervalObject.value = valuePvDataIntervalUsageData["Value"].asString();
 		pvDataInterval_.push_back(pvDataIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

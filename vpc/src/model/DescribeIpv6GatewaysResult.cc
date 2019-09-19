@@ -39,32 +39,32 @@ void DescribeIpv6GatewaysResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIpv6Gateways = value["Ipv6Gateways"]["Ipv6Gateway"];
-	for (auto value : allIpv6Gateways)
+	auto allIpv6GatewaysNode = value["Ipv6Gateways"]["Ipv6Gateway"];
+	for (auto valueIpv6GatewaysIpv6Gateway : allIpv6GatewaysNode)
 	{
 		Ipv6Gateway ipv6GatewaysObject;
-		if(!value["RegionId"].isNull())
-			ipv6GatewaysObject.regionId = value["RegionId"].asString();
-		if(!value["Ipv6GatewayId"].isNull())
-			ipv6GatewaysObject.ipv6GatewayId = value["Ipv6GatewayId"].asString();
-		if(!value["VpcId"].isNull())
-			ipv6GatewaysObject.vpcId = value["VpcId"].asString();
-		if(!value["Status"].isNull())
-			ipv6GatewaysObject.status = value["Status"].asString();
-		if(!value["Name"].isNull())
-			ipv6GatewaysObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			ipv6GatewaysObject.description = value["Description"].asString();
-		if(!value["Spec"].isNull())
-			ipv6GatewaysObject.spec = value["Spec"].asString();
-		if(!value["InstanceChargeType"].isNull())
-			ipv6GatewaysObject.instanceChargeType = value["InstanceChargeType"].asString();
-		if(!value["BusinessStatus"].isNull())
-			ipv6GatewaysObject.businessStatus = value["BusinessStatus"].asString();
-		if(!value["ExpiredTime"].isNull())
-			ipv6GatewaysObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["CreationTime"].isNull())
-			ipv6GatewaysObject.creationTime = value["CreationTime"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["RegionId"].isNull())
+			ipv6GatewaysObject.regionId = valueIpv6GatewaysIpv6Gateway["RegionId"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["Ipv6GatewayId"].isNull())
+			ipv6GatewaysObject.ipv6GatewayId = valueIpv6GatewaysIpv6Gateway["Ipv6GatewayId"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["VpcId"].isNull())
+			ipv6GatewaysObject.vpcId = valueIpv6GatewaysIpv6Gateway["VpcId"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["Status"].isNull())
+			ipv6GatewaysObject.status = valueIpv6GatewaysIpv6Gateway["Status"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["Name"].isNull())
+			ipv6GatewaysObject.name = valueIpv6GatewaysIpv6Gateway["Name"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["Description"].isNull())
+			ipv6GatewaysObject.description = valueIpv6GatewaysIpv6Gateway["Description"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["Spec"].isNull())
+			ipv6GatewaysObject.spec = valueIpv6GatewaysIpv6Gateway["Spec"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["InstanceChargeType"].isNull())
+			ipv6GatewaysObject.instanceChargeType = valueIpv6GatewaysIpv6Gateway["InstanceChargeType"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["BusinessStatus"].isNull())
+			ipv6GatewaysObject.businessStatus = valueIpv6GatewaysIpv6Gateway["BusinessStatus"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["ExpiredTime"].isNull())
+			ipv6GatewaysObject.expiredTime = valueIpv6GatewaysIpv6Gateway["ExpiredTime"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["CreationTime"].isNull())
+			ipv6GatewaysObject.creationTime = valueIpv6GatewaysIpv6Gateway["CreationTime"].asString();
 		ipv6Gateways_.push_back(ipv6GatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())

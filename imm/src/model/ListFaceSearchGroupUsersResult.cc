@@ -39,20 +39,20 @@ void ListFaceSearchGroupUsersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUsers = value["Users"]["UsersItem"];
-	for (auto value : allUsers)
+	auto allUsersNode = value["Users"]["UsersItem"];
+	for (auto valueUsersUsersItem : allUsersNode)
 	{
 		UsersItem usersObject;
-		if(!value["User"].isNull())
-			usersObject.user = value["User"].asString();
-		if(!value["Count"].isNull())
-			usersObject.count = value["Count"].asString();
-		if(!value["Status"].isNull())
-			usersObject.status = value["Status"].asString();
-		if(!value["CreateTime"].isNull())
-			usersObject.createTime = value["CreateTime"].asString();
-		if(!value["ModifyTime"].isNull())
-			usersObject.modifyTime = value["ModifyTime"].asString();
+		if(!valueUsersUsersItem["User"].isNull())
+			usersObject.user = valueUsersUsersItem["User"].asString();
+		if(!valueUsersUsersItem["Count"].isNull())
+			usersObject.count = valueUsersUsersItem["Count"].asString();
+		if(!valueUsersUsersItem["Status"].isNull())
+			usersObject.status = valueUsersUsersItem["Status"].asString();
+		if(!valueUsersUsersItem["CreateTime"].isNull())
+			usersObject.createTime = valueUsersUsersItem["CreateTime"].asString();
+		if(!valueUsersUsersItem["ModifyTime"].isNull())
+			usersObject.modifyTime = valueUsersUsersItem["ModifyTime"].asString();
 		users_.push_back(usersObject);
 	}
 	if(!value["NextMarker"].isNull())

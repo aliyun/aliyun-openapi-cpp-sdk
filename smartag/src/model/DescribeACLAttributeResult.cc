@@ -39,36 +39,36 @@ void DescribeACLAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAcrs = value["Acrs"]["Acr"];
-	for (auto value : allAcrs)
+	auto allAcrsNode = value["Acrs"]["Acr"];
+	for (auto valueAcrsAcr : allAcrsNode)
 	{
 		Acr acrsObject;
-		if(!value["AcrId"].isNull())
-			acrsObject.acrId = value["AcrId"].asString();
-		if(!value["Description"].isNull())
-			acrsObject.description = value["Description"].asString();
-		if(!value["Direction"].isNull())
-			acrsObject.direction = value["Direction"].asString();
-		if(!value["SourceCidr"].isNull())
-			acrsObject.sourceCidr = value["SourceCidr"].asString();
-		if(!value["DestCidr"].isNull())
-			acrsObject.destCidr = value["DestCidr"].asString();
-		if(!value["IpProtocol"].isNull())
-			acrsObject.ipProtocol = value["IpProtocol"].asString();
-		if(!value["SourcePortRange"].isNull())
-			acrsObject.sourcePortRange = value["SourcePortRange"].asString();
-		if(!value["DestPortRange"].isNull())
-			acrsObject.destPortRange = value["DestPortRange"].asString();
-		if(!value["Policy"].isNull())
-			acrsObject.policy = value["Policy"].asString();
-		if(!value["Priority"].isNull())
-			acrsObject.priority = std::stoi(value["Priority"].asString());
-		if(!value["GmtCreate"].isNull())
-			acrsObject.gmtCreate = std::stol(value["GmtCreate"].asString());
-		if(!value["AclId"].isNull())
-			acrsObject.aclId = value["AclId"].asString();
-		if(!value["Type"].isNull())
-			acrsObject.type = value["Type"].asString();
+		if(!valueAcrsAcr["AcrId"].isNull())
+			acrsObject.acrId = valueAcrsAcr["AcrId"].asString();
+		if(!valueAcrsAcr["Description"].isNull())
+			acrsObject.description = valueAcrsAcr["Description"].asString();
+		if(!valueAcrsAcr["Direction"].isNull())
+			acrsObject.direction = valueAcrsAcr["Direction"].asString();
+		if(!valueAcrsAcr["SourceCidr"].isNull())
+			acrsObject.sourceCidr = valueAcrsAcr["SourceCidr"].asString();
+		if(!valueAcrsAcr["DestCidr"].isNull())
+			acrsObject.destCidr = valueAcrsAcr["DestCidr"].asString();
+		if(!valueAcrsAcr["IpProtocol"].isNull())
+			acrsObject.ipProtocol = valueAcrsAcr["IpProtocol"].asString();
+		if(!valueAcrsAcr["SourcePortRange"].isNull())
+			acrsObject.sourcePortRange = valueAcrsAcr["SourcePortRange"].asString();
+		if(!valueAcrsAcr["DestPortRange"].isNull())
+			acrsObject.destPortRange = valueAcrsAcr["DestPortRange"].asString();
+		if(!valueAcrsAcr["Policy"].isNull())
+			acrsObject.policy = valueAcrsAcr["Policy"].asString();
+		if(!valueAcrsAcr["Priority"].isNull())
+			acrsObject.priority = std::stoi(valueAcrsAcr["Priority"].asString());
+		if(!valueAcrsAcr["GmtCreate"].isNull())
+			acrsObject.gmtCreate = std::stol(valueAcrsAcr["GmtCreate"].asString());
+		if(!valueAcrsAcr["AclId"].isNull())
+			acrsObject.aclId = valueAcrsAcr["AclId"].asString();
+		if(!valueAcrsAcr["Type"].isNull())
+			acrsObject.type = valueAcrsAcr["Type"].asString();
 		acrs_.push_back(acrsObject);
 	}
 	if(!value["TotalCount"].isNull())

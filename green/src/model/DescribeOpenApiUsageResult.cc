@@ -39,36 +39,36 @@ void DescribeOpenApiUsageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOpenApiUsageList = value["OpenApiUsageList"]["OpenApiUsage"];
-	for (auto value : allOpenApiUsageList)
+	auto allOpenApiUsageListNode = value["OpenApiUsageList"]["OpenApiUsage"];
+	for (auto valueOpenApiUsageListOpenApiUsage : allOpenApiUsageListNode)
 	{
 		OpenApiUsage openApiUsageListObject;
-		if(!value["Date"].isNull())
-			openApiUsageListObject.date = value["Date"].asString();
-		if(!value["ResourceType"].isNull())
-			openApiUsageListObject.resourceType = value["ResourceType"].asString();
-		if(!value["Scene"].isNull())
-			openApiUsageListObject.scene = value["Scene"].asString();
-		if(!value["TotalCount"].isNull())
-			openApiUsageListObject.totalCount = std::stoi(value["TotalCount"].asString());
-		if(!value["PassCount"].isNull())
-			openApiUsageListObject.passCount = std::stoi(value["PassCount"].asString());
-		if(!value["ReviewCount"].isNull())
-			openApiUsageListObject.reviewCount = std::stoi(value["ReviewCount"].asString());
-		if(!value["BlockCount"].isNull())
-			openApiUsageListObject.blockCount = std::stoi(value["BlockCount"].asString());
-		if(!value["InnerTotalCount"].isNull())
-			openApiUsageListObject.innerTotalCount = std::stoi(value["InnerTotalCount"].asString());
-		if(!value["OuterTotalCount"].isNull())
-			openApiUsageListObject.outerTotalCount = std::stoi(value["OuterTotalCount"].asString());
-		if(!value["TotalDuration"].isNull())
-			openApiUsageListObject.totalDuration = std::stoi(value["TotalDuration"].asString());
-		if(!value["PassDuration"].isNull())
-			openApiUsageListObject.passDuration = std::stoi(value["PassDuration"].asString());
-		if(!value["ReviewDuration"].isNull())
-			openApiUsageListObject.reviewDuration = std::stoi(value["ReviewDuration"].asString());
-		if(!value["BlockDuration"].isNull())
-			openApiUsageListObject.blockDuration = std::stoi(value["BlockDuration"].asString());
+		if(!valueOpenApiUsageListOpenApiUsage["Date"].isNull())
+			openApiUsageListObject.date = valueOpenApiUsageListOpenApiUsage["Date"].asString();
+		if(!valueOpenApiUsageListOpenApiUsage["ResourceType"].isNull())
+			openApiUsageListObject.resourceType = valueOpenApiUsageListOpenApiUsage["ResourceType"].asString();
+		if(!valueOpenApiUsageListOpenApiUsage["Scene"].isNull())
+			openApiUsageListObject.scene = valueOpenApiUsageListOpenApiUsage["Scene"].asString();
+		if(!valueOpenApiUsageListOpenApiUsage["TotalCount"].isNull())
+			openApiUsageListObject.totalCount = std::stoi(valueOpenApiUsageListOpenApiUsage["TotalCount"].asString());
+		if(!valueOpenApiUsageListOpenApiUsage["PassCount"].isNull())
+			openApiUsageListObject.passCount = std::stoi(valueOpenApiUsageListOpenApiUsage["PassCount"].asString());
+		if(!valueOpenApiUsageListOpenApiUsage["ReviewCount"].isNull())
+			openApiUsageListObject.reviewCount = std::stoi(valueOpenApiUsageListOpenApiUsage["ReviewCount"].asString());
+		if(!valueOpenApiUsageListOpenApiUsage["BlockCount"].isNull())
+			openApiUsageListObject.blockCount = std::stoi(valueOpenApiUsageListOpenApiUsage["BlockCount"].asString());
+		if(!valueOpenApiUsageListOpenApiUsage["InnerTotalCount"].isNull())
+			openApiUsageListObject.innerTotalCount = std::stoi(valueOpenApiUsageListOpenApiUsage["InnerTotalCount"].asString());
+		if(!valueOpenApiUsageListOpenApiUsage["OuterTotalCount"].isNull())
+			openApiUsageListObject.outerTotalCount = std::stoi(valueOpenApiUsageListOpenApiUsage["OuterTotalCount"].asString());
+		if(!valueOpenApiUsageListOpenApiUsage["TotalDuration"].isNull())
+			openApiUsageListObject.totalDuration = std::stoi(valueOpenApiUsageListOpenApiUsage["TotalDuration"].asString());
+		if(!valueOpenApiUsageListOpenApiUsage["PassDuration"].isNull())
+			openApiUsageListObject.passDuration = std::stoi(valueOpenApiUsageListOpenApiUsage["PassDuration"].asString());
+		if(!valueOpenApiUsageListOpenApiUsage["ReviewDuration"].isNull())
+			openApiUsageListObject.reviewDuration = std::stoi(valueOpenApiUsageListOpenApiUsage["ReviewDuration"].asString());
+		if(!valueOpenApiUsageListOpenApiUsage["BlockDuration"].isNull())
+			openApiUsageListObject.blockDuration = std::stoi(valueOpenApiUsageListOpenApiUsage["BlockDuration"].asString());
 		openApiUsageList_.push_back(openApiUsageListObject);
 	}
 	if(!value["TotalCount"].isNull())

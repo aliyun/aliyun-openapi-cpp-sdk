@@ -39,36 +39,36 @@ void DescribeFleetInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInstances = value["Instances"]["Instance"];
-	for (auto value : allInstances)
+	auto allInstancesNode = value["Instances"]["Instance"];
+	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
-		if(!value["InstanceId"].isNull())
-			instancesObject.instanceId = value["InstanceId"].asString();
-		if(!value["Status"].isNull())
-			instancesObject.status = value["Status"].asString();
-		if(!value["RegionId"].isNull())
-			instancesObject.regionId = value["RegionId"].asString();
-		if(!value["IzNo"].isNull())
-			instancesObject.izNo = value["IzNo"].asString();
-		if(!value["ZoneNo"].isNull())
-			instancesObject.zoneNo = value["ZoneNo"].asString();
-		if(!value["Cores"].isNull())
-			instancesObject.cores = std::stoi(value["Cores"].asString());
-		if(!value["Memory"].isNull())
-			instancesObject.memory = std::stoi(value["Memory"].asString());
-		if(!value["InstanceType"].isNull())
-			instancesObject.instanceType = value["InstanceType"].asString();
-		if(!value["IsSpot"].isNull())
-			instancesObject.isSpot = value["IsSpot"].asString() == "true";
-		if(!value["IoOptimized"].isNull())
-			instancesObject.ioOptimized = value["IoOptimized"].asString() == "true";
-		if(!value["NetworkType"].isNull())
-			instancesObject.networkType = value["NetworkType"].asString() == "true";
-		if(!value["OsType"].isNull())
-			instancesObject.osType = value["OsType"].asString() == "true";
-		if(!value["CreationTime"].isNull())
-			instancesObject.creationTime = value["CreationTime"].asString();
+		if(!valueInstancesInstance["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
+		if(!valueInstancesInstance["Status"].isNull())
+			instancesObject.status = valueInstancesInstance["Status"].asString();
+		if(!valueInstancesInstance["RegionId"].isNull())
+			instancesObject.regionId = valueInstancesInstance["RegionId"].asString();
+		if(!valueInstancesInstance["IzNo"].isNull())
+			instancesObject.izNo = valueInstancesInstance["IzNo"].asString();
+		if(!valueInstancesInstance["ZoneNo"].isNull())
+			instancesObject.zoneNo = valueInstancesInstance["ZoneNo"].asString();
+		if(!valueInstancesInstance["Cores"].isNull())
+			instancesObject.cores = std::stoi(valueInstancesInstance["Cores"].asString());
+		if(!valueInstancesInstance["Memory"].isNull())
+			instancesObject.memory = std::stoi(valueInstancesInstance["Memory"].asString());
+		if(!valueInstancesInstance["InstanceType"].isNull())
+			instancesObject.instanceType = valueInstancesInstance["InstanceType"].asString();
+		if(!valueInstancesInstance["IsSpot"].isNull())
+			instancesObject.isSpot = valueInstancesInstance["IsSpot"].asString() == "true";
+		if(!valueInstancesInstance["IoOptimized"].isNull())
+			instancesObject.ioOptimized = valueInstancesInstance["IoOptimized"].asString() == "true";
+		if(!valueInstancesInstance["NetworkType"].isNull())
+			instancesObject.networkType = valueInstancesInstance["NetworkType"].asString() == "true";
+		if(!valueInstancesInstance["OsType"].isNull())
+			instancesObject.osType = valueInstancesInstance["OsType"].asString() == "true";
+		if(!valueInstancesInstance["CreationTime"].isNull())
+			instancesObject.creationTime = valueInstancesInstance["CreationTime"].asString();
 		instances_.push_back(instancesObject);
 	}
 	if(!value["TotalCount"].isNull())

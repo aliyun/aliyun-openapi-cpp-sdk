@@ -39,20 +39,20 @@ void GetThumbnailsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResults = value["Results"]["Result"];
-	for (auto value : allResults)
+	auto allResultsNode = value["Results"]["Result"];
+	for (auto valueResultsResult : allResultsNode)
 	{
 		Result resultsObject;
-		if(!value["Code"].isNull())
-			resultsObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			resultsObject.message = value["Message"].asString();
-		if(!value["PhotoId"].isNull())
-			resultsObject.photoId = std::stol(value["PhotoId"].asString());
-		if(!value["PhotoIdStr"].isNull())
-			resultsObject.photoIdStr = value["PhotoIdStr"].asString();
-		if(!value["ThumbnailUrl"].isNull())
-			resultsObject.thumbnailUrl = value["ThumbnailUrl"].asString();
+		if(!valueResultsResult["Code"].isNull())
+			resultsObject.code = valueResultsResult["Code"].asString();
+		if(!valueResultsResult["Message"].isNull())
+			resultsObject.message = valueResultsResult["Message"].asString();
+		if(!valueResultsResult["PhotoId"].isNull())
+			resultsObject.photoId = std::stol(valueResultsResult["PhotoId"].asString());
+		if(!valueResultsResult["PhotoIdStr"].isNull())
+			resultsObject.photoIdStr = valueResultsResult["PhotoIdStr"].asString();
+		if(!valueResultsResult["ThumbnailUrl"].isNull())
+			resultsObject.thumbnailUrl = valueResultsResult["ThumbnailUrl"].asString();
 		results_.push_back(resultsObject);
 	}
 	if(!value["Code"].isNull())

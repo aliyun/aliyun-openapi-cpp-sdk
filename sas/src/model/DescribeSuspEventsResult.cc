@@ -39,48 +39,50 @@ void DescribeSuspEventsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSuspEvents = value["SuspEvents"]["WarningSummary"];
-	for (auto value : allSuspEvents)
+	auto allSuspEventsNode = value["SuspEvents"]["WarningSummary"];
+	for (auto valueSuspEventsWarningSummary : allSuspEventsNode)
 	{
 		WarningSummary suspEventsObject;
-		if(!value["LastTime"].isNull())
-			suspEventsObject.lastTime = value["LastTime"].asString();
-		if(!value["OccurrenceTime"].isNull())
-			suspEventsObject.occurrenceTime = value["OccurrenceTime"].asString();
-		if(!value["Id"].isNull())
-			suspEventsObject.id = std::stol(value["Id"].asString());
-		if(!value["InstanceName"].isNull())
-			suspEventsObject.instanceName = value["InstanceName"].asString();
-		if(!value["InternetIp"].isNull())
-			suspEventsObject.internetIp = value["InternetIp"].asString();
-		if(!value["IntranetIp"].isNull())
-			suspEventsObject.intranetIp = value["IntranetIp"].asString();
-		if(!value["Uuid"].isNull())
-			suspEventsObject.uuid = value["Uuid"].asString();
-		if(!value["Name"].isNull())
-			suspEventsObject.name = value["Name"].asString();
-		if(!value["EventSubType"].isNull())
-			suspEventsObject.eventSubType = value["EventSubType"].asString();
-		if(!value["Level"].isNull())
-			suspEventsObject.level = value["Level"].asString();
-		if(!value["EventStatus"].isNull())
-			suspEventsObject.eventStatus = std::stoi(value["EventStatus"].asString());
-		if(!value["Desc"].isNull())
-			suspEventsObject.desc = value["Desc"].asString();
-		if(!value["OperateMsg"].isNull())
-			suspEventsObject.operateMsg = value["OperateMsg"].asString();
-		if(!value["DataSource"].isNull())
-			suspEventsObject.dataSource = value["DataSource"].asString();
-		if(!value["CanBeDealOnLine"].isNull())
-			suspEventsObject.canBeDealOnLine = value["CanBeDealOnLine"].asString() == "true";
-		if(!value["SaleVersion"].isNull())
-			suspEventsObject.saleVersion = value["SaleVersion"].asString();
-		if(!value["AlarmEventType"].isNull())
-			suspEventsObject.alarmEventType = value["AlarmEventType"].asString();
-		if(!value["AlarmEventName"].isNull())
-			suspEventsObject.alarmEventName = value["AlarmEventName"].asString();
-		if(!value["AlarmUniqueInfo"].isNull())
-			suspEventsObject.alarmUniqueInfo = value["AlarmUniqueInfo"].asString();
+		if(!valueSuspEventsWarningSummary["LastTime"].isNull())
+			suspEventsObject.lastTime = valueSuspEventsWarningSummary["LastTime"].asString();
+		if(!valueSuspEventsWarningSummary["OccurrenceTime"].isNull())
+			suspEventsObject.occurrenceTime = valueSuspEventsWarningSummary["OccurrenceTime"].asString();
+		if(!valueSuspEventsWarningSummary["Id"].isNull())
+			suspEventsObject.id = std::stol(valueSuspEventsWarningSummary["Id"].asString());
+		if(!valueSuspEventsWarningSummary["UniqueInfo"].isNull())
+			suspEventsObject.uniqueInfo = valueSuspEventsWarningSummary["UniqueInfo"].asString();
+		if(!valueSuspEventsWarningSummary["InstanceName"].isNull())
+			suspEventsObject.instanceName = valueSuspEventsWarningSummary["InstanceName"].asString();
+		if(!valueSuspEventsWarningSummary["InternetIp"].isNull())
+			suspEventsObject.internetIp = valueSuspEventsWarningSummary["InternetIp"].asString();
+		if(!valueSuspEventsWarningSummary["IntranetIp"].isNull())
+			suspEventsObject.intranetIp = valueSuspEventsWarningSummary["IntranetIp"].asString();
+		if(!valueSuspEventsWarningSummary["Uuid"].isNull())
+			suspEventsObject.uuid = valueSuspEventsWarningSummary["Uuid"].asString();
+		if(!valueSuspEventsWarningSummary["Name"].isNull())
+			suspEventsObject.name = valueSuspEventsWarningSummary["Name"].asString();
+		if(!valueSuspEventsWarningSummary["EventSubType"].isNull())
+			suspEventsObject.eventSubType = valueSuspEventsWarningSummary["EventSubType"].asString();
+		if(!valueSuspEventsWarningSummary["Level"].isNull())
+			suspEventsObject.level = valueSuspEventsWarningSummary["Level"].asString();
+		if(!valueSuspEventsWarningSummary["EventStatus"].isNull())
+			suspEventsObject.eventStatus = std::stoi(valueSuspEventsWarningSummary["EventStatus"].asString());
+		if(!valueSuspEventsWarningSummary["Desc"].isNull())
+			suspEventsObject.desc = valueSuspEventsWarningSummary["Desc"].asString();
+		if(!valueSuspEventsWarningSummary["OperateMsg"].isNull())
+			suspEventsObject.operateMsg = valueSuspEventsWarningSummary["OperateMsg"].asString();
+		if(!valueSuspEventsWarningSummary["DataSource"].isNull())
+			suspEventsObject.dataSource = valueSuspEventsWarningSummary["DataSource"].asString();
+		if(!valueSuspEventsWarningSummary["CanBeDealOnLine"].isNull())
+			suspEventsObject.canBeDealOnLine = valueSuspEventsWarningSummary["CanBeDealOnLine"].asString() == "true";
+		if(!valueSuspEventsWarningSummary["SaleVersion"].isNull())
+			suspEventsObject.saleVersion = valueSuspEventsWarningSummary["SaleVersion"].asString();
+		if(!valueSuspEventsWarningSummary["AlarmEventType"].isNull())
+			suspEventsObject.alarmEventType = valueSuspEventsWarningSummary["AlarmEventType"].asString();
+		if(!valueSuspEventsWarningSummary["AlarmEventName"].isNull())
+			suspEventsObject.alarmEventName = valueSuspEventsWarningSummary["AlarmEventName"].asString();
+		if(!valueSuspEventsWarningSummary["AlarmUniqueInfo"].isNull())
+			suspEventsObject.alarmUniqueInfo = valueSuspEventsWarningSummary["AlarmUniqueInfo"].asString();
 		suspEvents_.push_back(suspEventsObject);
 	}
 	if(!value["Count"].isNull())

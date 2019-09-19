@@ -75,16 +75,16 @@ void GetOrderResult::parse(const std::string &payload)
 		data_.order.strictWhiteListJson = orderNode["StrictWhiteListJson"].asString();
 	if(!orderNode["UserId"].isNull())
 		data_.order.userId = orderNode["UserId"].asString();
-	auto allErrorTypeCatagoryList = value["ErrorTypeCatagoryList"]["ErrorTypeCatagory"];
-	for (auto value : allErrorTypeCatagoryList)
+	auto allErrorTypeCatagoryListNode = orderNode["ErrorTypeCatagoryList"]["ErrorTypeCatagory"];
+	for (auto orderNodeErrorTypeCatagoryListErrorTypeCatagory : allErrorTypeCatagoryListNode)
 	{
 		Data::Order::ErrorTypeCatagory errorTypeCatagoryObject;
-		if(!value["Total"].isNull())
-			errorTypeCatagoryObject.total = std::stoi(value["Total"].asString());
-		if(!value["ErrorNum"].isNull())
-			errorTypeCatagoryObject.errorNum = std::stoi(value["ErrorNum"].asString());
-		if(!value["Name"].isNull())
-			errorTypeCatagoryObject.name = value["Name"].asString();
+		if(!orderNodeErrorTypeCatagoryListErrorTypeCatagory["Total"].isNull())
+			errorTypeCatagoryObject.total = std::stoi(orderNodeErrorTypeCatagoryListErrorTypeCatagory["Total"].asString());
+		if(!orderNodeErrorTypeCatagoryListErrorTypeCatagory["ErrorNum"].isNull())
+			errorTypeCatagoryObject.errorNum = std::stoi(orderNodeErrorTypeCatagoryListErrorTypeCatagory["ErrorNum"].asString());
+		if(!orderNodeErrorTypeCatagoryListErrorTypeCatagory["Name"].isNull())
+			errorTypeCatagoryObject.name = orderNodeErrorTypeCatagoryListErrorTypeCatagory["Name"].asString();
 		data_.order.errorTypeCatagoryList.push_back(errorTypeCatagoryObject);
 	}
 	auto serviceNode = orderNode["Service"];

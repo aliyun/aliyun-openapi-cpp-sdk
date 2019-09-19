@@ -39,16 +39,16 @@ void GetHeatMapDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHeatMapItems = value["HeatMapItems"]["HeatMapItem"];
-	for (auto value : allHeatMapItems)
+	auto allHeatMapItemsNode = value["HeatMapItems"]["HeatMapItem"];
+	for (auto valueHeatMapItemsHeatMapItem : allHeatMapItemsNode)
 	{
 		HeatMapItem heatMapItemsObject;
-		if(!value["Y"].isNull())
-			heatMapItemsObject.y = std::stof(value["Y"].asString());
-		if(!value["Weight"].isNull())
-			heatMapItemsObject.weight = std::stof(value["Weight"].asString());
-		if(!value["X"].isNull())
-			heatMapItemsObject.x = std::stof(value["X"].asString());
+		if(!valueHeatMapItemsHeatMapItem["Y"].isNull())
+			heatMapItemsObject.y = std::stof(valueHeatMapItemsHeatMapItem["Y"].asString());
+		if(!valueHeatMapItemsHeatMapItem["Weight"].isNull())
+			heatMapItemsObject.weight = std::stof(valueHeatMapItemsHeatMapItem["Weight"].asString());
+		if(!valueHeatMapItemsHeatMapItem["X"].isNull())
+			heatMapItemsObject.x = std::stof(valueHeatMapItemsHeatMapItem["X"].asString());
 		heatMapItems_.push_back(heatMapItemsObject);
 	}
 	if(!value["EMapName"].isNull())
@@ -61,7 +61,16 @@ void GetHeatMapDataResult::parse(const std::string &payload)
 		storeId_ = std::stol(value["StoreId"].asString());
 	if(!value["Height"].isNull())
 		height_ = std::stof(value["Height"].asString());
+	if(!value["Msg"].isNull())
+		msg_ = value["Msg"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+std::string GetHeatMapDataResult::getMsg()const
+{
+	return msg_;
 }
 
 std::vector<GetHeatMapDataResult::HeatMapItem> GetHeatMapDataResult::getHeatMapItems()const
@@ -92,5 +101,10 @@ float GetHeatMapDataResult::getHeight()const
 float GetHeatMapDataResult::getWidth()const
 {
 	return width_;
+}
+
+bool GetHeatMapDataResult::getSuccess()const
+{
+	return success_;
 }
 

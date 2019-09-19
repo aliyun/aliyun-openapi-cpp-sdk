@@ -39,24 +39,24 @@ void QueryTagJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTagJobList = value["TagJobList"]["TagJob"];
-	for (auto value : allTagJobList)
+	auto allTagJobListNode = value["TagJobList"]["TagJob"];
+	for (auto valueTagJobListTagJob : allTagJobListNode)
 	{
 		TagJob tagJobListObject;
-		if(!value["Id"].isNull())
-			tagJobListObject.id = value["Id"].asString();
-		if(!value["UserData"].isNull())
-			tagJobListObject.userData = value["UserData"].asString();
-		if(!value["PipelineId"].isNull())
-			tagJobListObject.pipelineId = value["PipelineId"].asString();
-		if(!value["State"].isNull())
-			tagJobListObject.state = value["State"].asString();
-		if(!value["Code"].isNull())
-			tagJobListObject.code = value["Code"].asString();
-		if(!value["Message"].isNull())
-			tagJobListObject.message = value["Message"].asString();
-		if(!value["CreationTime"].isNull())
-			tagJobListObject.creationTime = value["CreationTime"].asString();
+		if(!valueTagJobListTagJob["Id"].isNull())
+			tagJobListObject.id = valueTagJobListTagJob["Id"].asString();
+		if(!valueTagJobListTagJob["UserData"].isNull())
+			tagJobListObject.userData = valueTagJobListTagJob["UserData"].asString();
+		if(!valueTagJobListTagJob["PipelineId"].isNull())
+			tagJobListObject.pipelineId = valueTagJobListTagJob["PipelineId"].asString();
+		if(!valueTagJobListTagJob["State"].isNull())
+			tagJobListObject.state = valueTagJobListTagJob["State"].asString();
+		if(!valueTagJobListTagJob["Code"].isNull())
+			tagJobListObject.code = valueTagJobListTagJob["Code"].asString();
+		if(!valueTagJobListTagJob["Message"].isNull())
+			tagJobListObject.message = valueTagJobListTagJob["Message"].asString();
+		if(!valueTagJobListTagJob["CreationTime"].isNull())
+			tagJobListObject.creationTime = valueTagJobListTagJob["CreationTime"].asString();
 		auto inputNode = value["Input"];
 		if(!inputNode["Bucket"].isNull())
 			tagJobListObject.input.bucket = inputNode["Bucket"].asString();
@@ -67,32 +67,32 @@ void QueryTagJobListResult::parse(const std::string &payload)
 		auto videoTagResultNode = value["VideoTagResult"];
 		if(!videoTagResultNode["Details"].isNull())
 			tagJobListObject.videoTagResult.details = videoTagResultNode["Details"].asString();
-		auto allTagAnResults = value["TagAnResults"]["TagAnResult"];
-		for (auto value : allTagAnResults)
+		auto allTagAnResultsNode = videoTagResultNode["TagAnResults"]["TagAnResult"];
+		for (auto videoTagResultNodeTagAnResultsTagAnResult : allTagAnResultsNode)
 		{
 			TagJob::VideoTagResult::TagAnResult tagAnResultObject;
-			if(!value["Label"].isNull())
-				tagAnResultObject.label = value["Label"].asString();
-			if(!value["Score"].isNull())
-				tagAnResultObject.score = value["Score"].asString();
+			if(!videoTagResultNodeTagAnResultsTagAnResult["Label"].isNull())
+				tagAnResultObject.label = videoTagResultNodeTagAnResultsTagAnResult["Label"].asString();
+			if(!videoTagResultNodeTagAnResultsTagAnResult["Score"].isNull())
+				tagAnResultObject.score = videoTagResultNodeTagAnResultsTagAnResult["Score"].asString();
 			tagJobListObject.videoTagResult.tagAnResults.push_back(tagAnResultObject);
 		}
-		auto allTagFrResults = value["TagFrResults"]["TagFrResult"];
-		for (auto value : allTagFrResults)
+		auto allTagFrResultsNode = videoTagResultNode["TagFrResults"]["TagFrResult"];
+		for (auto videoTagResultNodeTagFrResultsTagFrResult : allTagFrResultsNode)
 		{
 			TagJob::VideoTagResult::TagFrResult tagFrResultObject;
-			if(!value["Time"].isNull())
-				tagFrResultObject.time = value["Time"].asString();
-			auto allTagFaces = value["TagFaces"]["TagFace"];
-			for (auto value : allTagFaces)
+			if(!videoTagResultNodeTagFrResultsTagFrResult["Time"].isNull())
+				tagFrResultObject.time = videoTagResultNodeTagFrResultsTagFrResult["Time"].asString();
+			auto allTagFacesNode = allTagFrResultsNode["TagFaces"]["TagFace"];
+			for (auto allTagFrResultsNodeTagFacesTagFace : allTagFacesNode)
 			{
 				TagJob::VideoTagResult::TagFrResult::TagFace tagFacesObject;
-				if(!value["Name"].isNull())
-					tagFacesObject.name = value["Name"].asString();
-				if(!value["Score"].isNull())
-					tagFacesObject.score = value["Score"].asString();
-				if(!value["Target"].isNull())
-					tagFacesObject.target = value["Target"].asString();
+				if(!allTagFrResultsNodeTagFacesTagFace["Name"].isNull())
+					tagFacesObject.name = allTagFrResultsNodeTagFacesTagFace["Name"].asString();
+				if(!allTagFrResultsNodeTagFacesTagFace["Score"].isNull())
+					tagFacesObject.score = allTagFrResultsNodeTagFacesTagFace["Score"].asString();
+				if(!allTagFrResultsNodeTagFacesTagFace["Target"].isNull())
+					tagFacesObject.target = allTagFrResultsNodeTagFacesTagFace["Target"].asString();
 				tagFrResultObject.tagFaces.push_back(tagFacesObject);
 			}
 			tagJobListObject.videoTagResult.tagFrResults.push_back(tagFrResultObject);

@@ -39,14 +39,14 @@ void DescribeDcdnDomainRealTimeSrcBpsDataResult::parse(const std::string &payloa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRealTimeSrcBpsDataPerInterval = value["RealTimeSrcBpsDataPerInterval"]["DataModule"];
-	for (auto value : allRealTimeSrcBpsDataPerInterval)
+	auto allRealTimeSrcBpsDataPerIntervalNode = value["RealTimeSrcBpsDataPerInterval"]["DataModule"];
+	for (auto valueRealTimeSrcBpsDataPerIntervalDataModule : allRealTimeSrcBpsDataPerIntervalNode)
 	{
 		DataModule realTimeSrcBpsDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			realTimeSrcBpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			realTimeSrcBpsDataPerIntervalObject.value = value["Value"].asString();
+		if(!valueRealTimeSrcBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			realTimeSrcBpsDataPerIntervalObject.timeStamp = valueRealTimeSrcBpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueRealTimeSrcBpsDataPerIntervalDataModule["Value"].isNull())
+			realTimeSrcBpsDataPerIntervalObject.value = valueRealTimeSrcBpsDataPerIntervalDataModule["Value"].asString();
 		realTimeSrcBpsDataPerInterval_.push_back(realTimeSrcBpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

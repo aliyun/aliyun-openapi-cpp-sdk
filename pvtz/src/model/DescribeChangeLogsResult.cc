@@ -39,28 +39,28 @@ void DescribeChangeLogsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allChangeLogs = value["ChangeLogs"]["ChangeLog"];
-	for (auto value : allChangeLogs)
+	auto allChangeLogsNode = value["ChangeLogs"]["ChangeLog"];
+	for (auto valueChangeLogsChangeLog : allChangeLogsNode)
 	{
 		ChangeLog changeLogsObject;
-		if(!value["OperTime"].isNull())
-			changeLogsObject.operTime = value["OperTime"].asString();
-		if(!value["OperAction"].isNull())
-			changeLogsObject.operAction = value["OperAction"].asString();
-		if(!value["OperObject"].isNull())
-			changeLogsObject.operObject = value["OperObject"].asString();
-		if(!value["EntityId"].isNull())
-			changeLogsObject.entityId = value["EntityId"].asString();
-		if(!value["EntityName"].isNull())
-			changeLogsObject.entityName = value["EntityName"].asString();
-		if(!value["OperIp"].isNull())
-			changeLogsObject.operIp = value["OperIp"].asString();
-		if(!value["OperTimestamp"].isNull())
-			changeLogsObject.operTimestamp = std::stol(value["OperTimestamp"].asString());
-		if(!value["Id"].isNull())
-			changeLogsObject.id = std::stol(value["Id"].asString());
-		if(!value["Content"].isNull())
-			changeLogsObject.content = value["Content"].asString();
+		if(!valueChangeLogsChangeLog["OperTime"].isNull())
+			changeLogsObject.operTime = valueChangeLogsChangeLog["OperTime"].asString();
+		if(!valueChangeLogsChangeLog["OperAction"].isNull())
+			changeLogsObject.operAction = valueChangeLogsChangeLog["OperAction"].asString();
+		if(!valueChangeLogsChangeLog["OperObject"].isNull())
+			changeLogsObject.operObject = valueChangeLogsChangeLog["OperObject"].asString();
+		if(!valueChangeLogsChangeLog["EntityId"].isNull())
+			changeLogsObject.entityId = valueChangeLogsChangeLog["EntityId"].asString();
+		if(!valueChangeLogsChangeLog["EntityName"].isNull())
+			changeLogsObject.entityName = valueChangeLogsChangeLog["EntityName"].asString();
+		if(!valueChangeLogsChangeLog["OperIp"].isNull())
+			changeLogsObject.operIp = valueChangeLogsChangeLog["OperIp"].asString();
+		if(!valueChangeLogsChangeLog["OperTimestamp"].isNull())
+			changeLogsObject.operTimestamp = std::stol(valueChangeLogsChangeLog["OperTimestamp"].asString());
+		if(!valueChangeLogsChangeLog["Id"].isNull())
+			changeLogsObject.id = std::stol(valueChangeLogsChangeLog["Id"].asString());
+		if(!valueChangeLogsChangeLog["Content"].isNull())
+			changeLogsObject.content = valueChangeLogsChangeLog["Content"].asString();
 		changeLogs_.push_back(changeLogsObject);
 	}
 	if(!value["TotalItems"].isNull())

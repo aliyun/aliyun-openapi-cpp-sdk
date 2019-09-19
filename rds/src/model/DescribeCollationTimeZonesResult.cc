@@ -39,16 +39,16 @@ void DescribeCollationTimeZonesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCollationTimeZones = value["CollationTimeZones"]["CollationTimeZone"];
-	for (auto value : allCollationTimeZones)
+	auto allCollationTimeZonesNode = value["CollationTimeZones"]["CollationTimeZone"];
+	for (auto valueCollationTimeZonesCollationTimeZone : allCollationTimeZonesNode)
 	{
 		CollationTimeZone collationTimeZonesObject;
-		if(!value["TimeZone"].isNull())
-			collationTimeZonesObject.timeZone = value["TimeZone"].asString();
-		if(!value["StandardTimeOffset"].isNull())
-			collationTimeZonesObject.standardTimeOffset = value["StandardTimeOffset"].asString();
-		if(!value["Description"].isNull())
-			collationTimeZonesObject.description = value["Description"].asString();
+		if(!valueCollationTimeZonesCollationTimeZone["TimeZone"].isNull())
+			collationTimeZonesObject.timeZone = valueCollationTimeZonesCollationTimeZone["TimeZone"].asString();
+		if(!valueCollationTimeZonesCollationTimeZone["StandardTimeOffset"].isNull())
+			collationTimeZonesObject.standardTimeOffset = valueCollationTimeZonesCollationTimeZone["StandardTimeOffset"].asString();
+		if(!valueCollationTimeZonesCollationTimeZone["Description"].isNull())
+			collationTimeZonesObject.description = valueCollationTimeZonesCollationTimeZone["Description"].asString();
 		collationTimeZones_.push_back(collationTimeZonesObject);
 	}
 

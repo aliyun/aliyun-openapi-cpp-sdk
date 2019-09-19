@@ -39,24 +39,24 @@ void DescribeBackupTasksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItems = value["Items"]["BackupJob"];
-	for (auto value : allItems)
+	auto allItemsNode = value["Items"]["BackupJob"];
+	for (auto valueItemsBackupJob : allItemsNode)
 	{
 		BackupJob itemsObject;
-		if(!value["BackupProgressStatus"].isNull())
-			itemsObject.backupProgressStatus = value["BackupProgressStatus"].asString();
-		if(!value["BackupStatus"].isNull())
-			itemsObject.backupStatus = value["BackupStatus"].asString();
-		if(!value["JobMode"].isNull())
-			itemsObject.jobMode = value["JobMode"].asString();
-		if(!value["Process"].isNull())
-			itemsObject.process = value["Process"].asString();
-		if(!value["TaskAction"].isNull())
-			itemsObject.taskAction = value["TaskAction"].asString();
-		if(!value["BackupJobId"].isNull())
-			itemsObject.backupJobId = value["BackupJobId"].asString();
-		if(!value["BackupId"].isNull())
-			itemsObject.backupId = value["BackupId"].asString();
+		if(!valueItemsBackupJob["BackupProgressStatus"].isNull())
+			itemsObject.backupProgressStatus = valueItemsBackupJob["BackupProgressStatus"].asString();
+		if(!valueItemsBackupJob["BackupStatus"].isNull())
+			itemsObject.backupStatus = valueItemsBackupJob["BackupStatus"].asString();
+		if(!valueItemsBackupJob["JobMode"].isNull())
+			itemsObject.jobMode = valueItemsBackupJob["JobMode"].asString();
+		if(!valueItemsBackupJob["Process"].isNull())
+			itemsObject.process = valueItemsBackupJob["Process"].asString();
+		if(!valueItemsBackupJob["TaskAction"].isNull())
+			itemsObject.taskAction = valueItemsBackupJob["TaskAction"].asString();
+		if(!valueItemsBackupJob["BackupJobId"].isNull())
+			itemsObject.backupJobId = valueItemsBackupJob["BackupJobId"].asString();
+		if(!valueItemsBackupJob["BackupId"].isNull())
+			itemsObject.backupId = valueItemsBackupJob["BackupId"].asString();
 		items_.push_back(itemsObject);
 	}
 

@@ -39,28 +39,28 @@ void GetJobInputStatisticInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allJobInputList = value["JobInputList"]["ClusterStatJobInput"];
-	for (auto value : allJobInputList)
+	auto allJobInputListNode = value["JobInputList"]["ClusterStatJobInput"];
+	for (auto valueJobInputListClusterStatJobInput : allJobInputListNode)
 	{
 		ClusterStatJobInput jobInputListObject;
-		if(!value["ApplicationId"].isNull())
-			jobInputListObject.applicationId = value["ApplicationId"].asString();
-		if(!value["JobId"].isNull())
-			jobInputListObject.jobId = value["JobId"].asString();
-		if(!value["StartTime"].isNull())
-			jobInputListObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["FinishTime"].isNull())
-			jobInputListObject.finishTime = std::stol(value["FinishTime"].asString());
-		if(!value["Name"].isNull())
-			jobInputListObject.name = value["Name"].asString();
-		if(!value["Queue"].isNull())
-			jobInputListObject.queue = value["Queue"].asString();
-		if(!value["User"].isNull())
-			jobInputListObject.user = value["User"].asString();
-		if(!value["State"].isNull())
-			jobInputListObject.state = value["State"].asString();
-		if(!value["BytesInput"].isNull())
-			jobInputListObject.bytesInput = std::stol(value["BytesInput"].asString());
+		if(!valueJobInputListClusterStatJobInput["ApplicationId"].isNull())
+			jobInputListObject.applicationId = valueJobInputListClusterStatJobInput["ApplicationId"].asString();
+		if(!valueJobInputListClusterStatJobInput["JobId"].isNull())
+			jobInputListObject.jobId = valueJobInputListClusterStatJobInput["JobId"].asString();
+		if(!valueJobInputListClusterStatJobInput["StartTime"].isNull())
+			jobInputListObject.startTime = std::stol(valueJobInputListClusterStatJobInput["StartTime"].asString());
+		if(!valueJobInputListClusterStatJobInput["FinishTime"].isNull())
+			jobInputListObject.finishTime = std::stol(valueJobInputListClusterStatJobInput["FinishTime"].asString());
+		if(!valueJobInputListClusterStatJobInput["Name"].isNull())
+			jobInputListObject.name = valueJobInputListClusterStatJobInput["Name"].asString();
+		if(!valueJobInputListClusterStatJobInput["Queue"].isNull())
+			jobInputListObject.queue = valueJobInputListClusterStatJobInput["Queue"].asString();
+		if(!valueJobInputListClusterStatJobInput["User"].isNull())
+			jobInputListObject.user = valueJobInputListClusterStatJobInput["User"].asString();
+		if(!valueJobInputListClusterStatJobInput["State"].isNull())
+			jobInputListObject.state = valueJobInputListClusterStatJobInput["State"].asString();
+		if(!valueJobInputListClusterStatJobInput["BytesInput"].isNull())
+			jobInputListObject.bytesInput = std::stol(valueJobInputListClusterStatJobInput["BytesInput"].asString());
 		jobInputList_.push_back(jobInputListObject);
 	}
 	if(!value["Total"].isNull())

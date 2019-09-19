@@ -39,40 +39,40 @@ void ListPackageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPackages = value["Packages"]["Package"];
-	for (auto value : allPackages)
+	auto allPackagesNode = value["Packages"]["Package"];
+	for (auto valuePackagesPackage : allPackagesNode)
 	{
 		Package packagesObject;
-		if(!value["ProjectName"].isNull())
-			packagesObject.projectName = value["ProjectName"].asString();
-		if(!value["PackageName"].isNull())
-			packagesObject.packageName = value["PackageName"].asString();
-		if(!value["Creator"].isNull())
-			packagesObject.creator = value["Creator"].asString();
-		if(!value["Modifier"].isNull())
-			packagesObject.modifier = value["Modifier"].asString();
-		if(!value["CreateTime"].isNull())
-			packagesObject.createTime = std::stol(value["CreateTime"].asString());
-		if(!value["ModifyTime"].isNull())
-			packagesObject.modifyTime = std::stol(value["ModifyTime"].asString());
-		if(!value["OriginName"].isNull())
-			packagesObject.originName = value["OriginName"].asString();
-		if(!value["Type"].isNull())
-			packagesObject.type = value["Type"].asString();
-		if(!value["Md5"].isNull())
-			packagesObject.md5 = value["Md5"].asString();
-		if(!value["Description"].isNull())
-			packagesObject.description = value["Description"].asString();
-		if(!value["OssEndpoint"].isNull())
-			packagesObject.ossEndpoint = value["OssEndpoint"].asString();
-		if(!value["OssBucket"].isNull())
-			packagesObject.ossBucket = value["OssBucket"].asString();
-		if(!value["OssOwner"].isNull())
-			packagesObject.ossOwner = value["OssOwner"].asString();
-		if(!value["OssPath"].isNull())
-			packagesObject.ossPath = value["OssPath"].asString();
-		if(!value["Tag"].isNull())
-			packagesObject.tag = value["Tag"].asString();
+		if(!valuePackagesPackage["ProjectName"].isNull())
+			packagesObject.projectName = valuePackagesPackage["ProjectName"].asString();
+		if(!valuePackagesPackage["PackageName"].isNull())
+			packagesObject.packageName = valuePackagesPackage["PackageName"].asString();
+		if(!valuePackagesPackage["Creator"].isNull())
+			packagesObject.creator = valuePackagesPackage["Creator"].asString();
+		if(!valuePackagesPackage["Modifier"].isNull())
+			packagesObject.modifier = valuePackagesPackage["Modifier"].asString();
+		if(!valuePackagesPackage["CreateTime"].isNull())
+			packagesObject.createTime = std::stol(valuePackagesPackage["CreateTime"].asString());
+		if(!valuePackagesPackage["ModifyTime"].isNull())
+			packagesObject.modifyTime = std::stol(valuePackagesPackage["ModifyTime"].asString());
+		if(!valuePackagesPackage["OriginName"].isNull())
+			packagesObject.originName = valuePackagesPackage["OriginName"].asString();
+		if(!valuePackagesPackage["Type"].isNull())
+			packagesObject.type = valuePackagesPackage["Type"].asString();
+		if(!valuePackagesPackage["Md5"].isNull())
+			packagesObject.md5 = valuePackagesPackage["Md5"].asString();
+		if(!valuePackagesPackage["Description"].isNull())
+			packagesObject.description = valuePackagesPackage["Description"].asString();
+		if(!valuePackagesPackage["OssEndpoint"].isNull())
+			packagesObject.ossEndpoint = valuePackagesPackage["OssEndpoint"].asString();
+		if(!valuePackagesPackage["OssBucket"].isNull())
+			packagesObject.ossBucket = valuePackagesPackage["OssBucket"].asString();
+		if(!valuePackagesPackage["OssOwner"].isNull())
+			packagesObject.ossOwner = valuePackagesPackage["OssOwner"].asString();
+		if(!valuePackagesPackage["OssPath"].isNull())
+			packagesObject.ossPath = valuePackagesPackage["OssPath"].asString();
+		if(!valuePackagesPackage["Tag"].isNull())
+			packagesObject.tag = valuePackagesPackage["Tag"].asString();
 		packages_.push_back(packagesObject);
 	}
 	if(!value["PageIndex"].isNull())

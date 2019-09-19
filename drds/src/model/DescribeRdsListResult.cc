@@ -39,42 +39,42 @@ void DescribeRdsListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["RdsInstance"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["RdsInstance"];
+	for (auto valueDataRdsInstance : allDataNode)
 	{
 		RdsInstance dataObject;
-		if(!value["InstanceId"].isNull())
-			dataObject.instanceId = std::stoi(value["InstanceId"].asString());
-		if(!value["InstanceName"].isNull())
-			dataObject.instanceName = value["InstanceName"].asString();
-		if(!value["ConnectUrl"].isNull())
-			dataObject.connectUrl = value["ConnectUrl"].asString();
-		if(!value["Port"].isNull())
-			dataObject.port = std::stoi(value["Port"].asString());
-		if(!value["InstanceStatus"].isNull())
-			dataObject.instanceStatus = value["InstanceStatus"].asString();
-		if(!value["DbType"].isNull())
-			dataObject.dbType = value["DbType"].asString();
-		if(!value["ReadWeight"].isNull())
-			dataObject.readWeight = std::stoi(value["ReadWeight"].asString());
-		auto allReadOnlyChildren = value["ReadOnlyChildren"]["Child"];
-		for (auto value : allReadOnlyChildren)
+		if(!valueDataRdsInstance["InstanceId"].isNull())
+			dataObject.instanceId = std::stoi(valueDataRdsInstance["InstanceId"].asString());
+		if(!valueDataRdsInstance["InstanceName"].isNull())
+			dataObject.instanceName = valueDataRdsInstance["InstanceName"].asString();
+		if(!valueDataRdsInstance["ConnectUrl"].isNull())
+			dataObject.connectUrl = valueDataRdsInstance["ConnectUrl"].asString();
+		if(!valueDataRdsInstance["Port"].isNull())
+			dataObject.port = std::stoi(valueDataRdsInstance["Port"].asString());
+		if(!valueDataRdsInstance["InstanceStatus"].isNull())
+			dataObject.instanceStatus = valueDataRdsInstance["InstanceStatus"].asString();
+		if(!valueDataRdsInstance["DbType"].isNull())
+			dataObject.dbType = valueDataRdsInstance["DbType"].asString();
+		if(!valueDataRdsInstance["ReadWeight"].isNull())
+			dataObject.readWeight = std::stoi(valueDataRdsInstance["ReadWeight"].asString());
+		auto allReadOnlyChildrenNode = allDataNode["ReadOnlyChildren"]["Child"];
+		for (auto allDataNodeReadOnlyChildrenChild : allReadOnlyChildrenNode)
 		{
 			RdsInstance::Child readOnlyChildrenObject;
-			if(!value["InstanceId"].isNull())
-				readOnlyChildrenObject.instanceId = value["InstanceId"].asString();
-			if(!value["InstanceName"].isNull())
-				readOnlyChildrenObject.instanceName = value["InstanceName"].asString();
-			if(!value["ConnectUrl"].isNull())
-				readOnlyChildrenObject.connectUrl = value["ConnectUrl"].asString();
-			if(!value["port"].isNull())
-				readOnlyChildrenObject.port = std::stoi(value["port"].asString());
-			if(!value["InstanceStatus"].isNull())
-				readOnlyChildrenObject.instanceStatus = value["InstanceStatus"].asString();
-			if(!value["DbType"].isNull())
-				readOnlyChildrenObject.dbType = value["DbType"].asString();
-			if(!value["ReadWeight"].isNull())
-				readOnlyChildrenObject.readWeight = std::stoi(value["ReadWeight"].asString());
+			if(!allDataNodeReadOnlyChildrenChild["InstanceId"].isNull())
+				readOnlyChildrenObject.instanceId = allDataNodeReadOnlyChildrenChild["InstanceId"].asString();
+			if(!allDataNodeReadOnlyChildrenChild["InstanceName"].isNull())
+				readOnlyChildrenObject.instanceName = allDataNodeReadOnlyChildrenChild["InstanceName"].asString();
+			if(!allDataNodeReadOnlyChildrenChild["ConnectUrl"].isNull())
+				readOnlyChildrenObject.connectUrl = allDataNodeReadOnlyChildrenChild["ConnectUrl"].asString();
+			if(!allDataNodeReadOnlyChildrenChild["port"].isNull())
+				readOnlyChildrenObject.port = std::stoi(allDataNodeReadOnlyChildrenChild["port"].asString());
+			if(!allDataNodeReadOnlyChildrenChild["InstanceStatus"].isNull())
+				readOnlyChildrenObject.instanceStatus = allDataNodeReadOnlyChildrenChild["InstanceStatus"].asString();
+			if(!allDataNodeReadOnlyChildrenChild["DbType"].isNull())
+				readOnlyChildrenObject.dbType = allDataNodeReadOnlyChildrenChild["DbType"].asString();
+			if(!allDataNodeReadOnlyChildrenChild["ReadWeight"].isNull())
+				readOnlyChildrenObject.readWeight = std::stoi(allDataNodeReadOnlyChildrenChild["ReadWeight"].asString());
 			dataObject.readOnlyChildren.push_back(readOnlyChildrenObject);
 		}
 		data_.push_back(dataObject);

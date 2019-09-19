@@ -39,14 +39,14 @@ void DescribeNetworkOptimizationSettingsResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSettings = value["Settings"]["Setting"];
-	for (auto value : allSettings)
+	auto allSettingsNode = value["Settings"]["Setting"];
+	for (auto valueSettingsSetting : allSettingsNode)
 	{
 		Setting settingsObject;
-		if(!value["Domain"].isNull())
-			settingsObject.domain = value["Domain"].asString();
-		if(!value["Type"].isNull())
-			settingsObject.type = value["Type"].asString();
+		if(!valueSettingsSetting["Domain"].isNull())
+			settingsObject.domain = valueSettingsSetting["Domain"].asString();
+		if(!valueSettingsSetting["Type"].isNull())
+			settingsObject.type = valueSettingsSetting["Type"].asString();
 		settings_.push_back(settingsObject);
 	}
 	if(!value["TotalCount"].isNull())

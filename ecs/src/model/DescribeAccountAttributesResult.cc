@@ -39,28 +39,28 @@ void DescribeAccountAttributesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAccountAttributeItems = value["AccountAttributeItems"]["AccountAttributeItem"];
-	for (auto value : allAccountAttributeItems)
+	auto allAccountAttributeItemsNode = value["AccountAttributeItems"]["AccountAttributeItem"];
+	for (auto valueAccountAttributeItemsAccountAttributeItem : allAccountAttributeItemsNode)
 	{
 		AccountAttributeItem accountAttributeItemsObject;
-		if(!value["AttributeName"].isNull())
-			accountAttributeItemsObject.attributeName = value["AttributeName"].asString();
-		auto allAttributeValues = value["AttributeValues"]["ValueItem"];
-		for (auto value : allAttributeValues)
+		if(!valueAccountAttributeItemsAccountAttributeItem["AttributeName"].isNull())
+			accountAttributeItemsObject.attributeName = valueAccountAttributeItemsAccountAttributeItem["AttributeName"].asString();
+		auto allAttributeValuesNode = allAccountAttributeItemsNode["AttributeValues"]["ValueItem"];
+		for (auto allAccountAttributeItemsNodeAttributeValuesValueItem : allAttributeValuesNode)
 		{
 			AccountAttributeItem::ValueItem attributeValuesObject;
-			if(!value["Value"].isNull())
-				attributeValuesObject.value = value["Value"].asString();
-			if(!value["ExpiredTime"].isNull())
-				attributeValuesObject.expiredTime = value["ExpiredTime"].asString();
-			if(!value["ZoneId"].isNull())
-				attributeValuesObject.zoneId = value["ZoneId"].asString();
-			if(!value["InstanceChargeType"].isNull())
-				attributeValuesObject.instanceChargeType = value["InstanceChargeType"].asString();
-			if(!value["InstanceType"].isNull())
-				attributeValuesObject.instanceType = value["InstanceType"].asString();
-			if(!value["Count"].isNull())
-				attributeValuesObject.count = std::stoi(value["Count"].asString());
+			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["Value"].isNull())
+				attributeValuesObject.value = allAccountAttributeItemsNodeAttributeValuesValueItem["Value"].asString();
+			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["ExpiredTime"].isNull())
+				attributeValuesObject.expiredTime = allAccountAttributeItemsNodeAttributeValuesValueItem["ExpiredTime"].asString();
+			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["ZoneId"].isNull())
+				attributeValuesObject.zoneId = allAccountAttributeItemsNodeAttributeValuesValueItem["ZoneId"].asString();
+			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["InstanceChargeType"].isNull())
+				attributeValuesObject.instanceChargeType = allAccountAttributeItemsNodeAttributeValuesValueItem["InstanceChargeType"].asString();
+			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["InstanceType"].isNull())
+				attributeValuesObject.instanceType = allAccountAttributeItemsNodeAttributeValuesValueItem["InstanceType"].asString();
+			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["Count"].isNull())
+				attributeValuesObject.count = std::stoi(allAccountAttributeItemsNodeAttributeValuesValueItem["Count"].asString());
 			accountAttributeItemsObject.attributeValues.push_back(attributeValuesObject);
 		}
 		accountAttributeItems_.push_back(accountAttributeItemsObject);

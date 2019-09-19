@@ -39,24 +39,24 @@ void ListPoliciesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPolicies = value["Policies"]["Policy"];
-	for (auto value : allPolicies)
+	auto allPoliciesNode = value["Policies"]["Policy"];
+	for (auto valuePoliciesPolicy : allPoliciesNode)
 	{
 		Policy policiesObject;
-		if(!value["PolicyName"].isNull())
-			policiesObject.policyName = value["PolicyName"].asString();
-		if(!value["PolicyType"].isNull())
-			policiesObject.policyType = value["PolicyType"].asString();
-		if(!value["Description"].isNull())
-			policiesObject.description = value["Description"].asString();
-		if(!value["DefaultVersion"].isNull())
-			policiesObject.defaultVersion = value["DefaultVersion"].asString();
-		if(!value["CreateDate"].isNull())
-			policiesObject.createDate = value["CreateDate"].asString();
-		if(!value["UpdateDate"].isNull())
-			policiesObject.updateDate = value["UpdateDate"].asString();
-		if(!value["AttachmentCount"].isNull())
-			policiesObject.attachmentCount = std::stoi(value["AttachmentCount"].asString());
+		if(!valuePoliciesPolicy["PolicyName"].isNull())
+			policiesObject.policyName = valuePoliciesPolicy["PolicyName"].asString();
+		if(!valuePoliciesPolicy["PolicyType"].isNull())
+			policiesObject.policyType = valuePoliciesPolicy["PolicyType"].asString();
+		if(!valuePoliciesPolicy["Description"].isNull())
+			policiesObject.description = valuePoliciesPolicy["Description"].asString();
+		if(!valuePoliciesPolicy["DefaultVersion"].isNull())
+			policiesObject.defaultVersion = valuePoliciesPolicy["DefaultVersion"].asString();
+		if(!valuePoliciesPolicy["CreateDate"].isNull())
+			policiesObject.createDate = valuePoliciesPolicy["CreateDate"].asString();
+		if(!valuePoliciesPolicy["UpdateDate"].isNull())
+			policiesObject.updateDate = valuePoliciesPolicy["UpdateDate"].asString();
+		if(!valuePoliciesPolicy["AttachmentCount"].isNull())
+			policiesObject.attachmentCount = std::stoi(valuePoliciesPolicy["AttachmentCount"].asString());
 		policies_.push_back(policiesObject);
 	}
 	if(!value["IsTruncated"].isNull())

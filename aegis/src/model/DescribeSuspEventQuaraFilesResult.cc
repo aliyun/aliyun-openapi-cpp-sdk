@@ -39,34 +39,34 @@ void DescribeSuspEventQuaraFilesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQuaraFiles = value["QuaraFiles"]["QuaraFile"];
-	for (auto value : allQuaraFiles)
+	auto allQuaraFilesNode = value["QuaraFiles"]["QuaraFile"];
+	for (auto valueQuaraFilesQuaraFile : allQuaraFilesNode)
 	{
 		QuaraFile quaraFilesObject;
-		if(!value["Path"].isNull())
-			quaraFilesObject.path = value["Path"].asString();
-		if(!value["EventName"].isNull())
-			quaraFilesObject.eventName = value["EventName"].asString();
-		if(!value["Id"].isNull())
-			quaraFilesObject.id = std::stoi(value["Id"].asString());
-		if(!value["EventType"].isNull())
-			quaraFilesObject.eventType = value["EventType"].asString();
-		if(!value["Tag"].isNull())
-			quaraFilesObject.tag = value["Tag"].asString();
-		if(!value["Uuid"].isNull())
-			quaraFilesObject.uuid = value["Uuid"].asString();
-		if(!value["InstanceName"].isNull())
-			quaraFilesObject.instanceName = value["InstanceName"].asString();
-		if(!value["InternetIp"].isNull())
-			quaraFilesObject.internetIp = value["InternetIp"].asString();
-		if(!value["Ip"].isNull())
-			quaraFilesObject.ip = value["Ip"].asString();
-		if(!value["Status"].isNull())
-			quaraFilesObject.status = value["Status"].asString();
-		if(!value["Md5"].isNull())
-			quaraFilesObject.md5 = value["Md5"].asString();
-		if(!value["ModifyTime"].isNull())
-			quaraFilesObject.modifyTime = value["ModifyTime"].asString();
+		if(!valueQuaraFilesQuaraFile["Path"].isNull())
+			quaraFilesObject.path = valueQuaraFilesQuaraFile["Path"].asString();
+		if(!valueQuaraFilesQuaraFile["EventName"].isNull())
+			quaraFilesObject.eventName = valueQuaraFilesQuaraFile["EventName"].asString();
+		if(!valueQuaraFilesQuaraFile["Id"].isNull())
+			quaraFilesObject.id = std::stoi(valueQuaraFilesQuaraFile["Id"].asString());
+		if(!valueQuaraFilesQuaraFile["EventType"].isNull())
+			quaraFilesObject.eventType = valueQuaraFilesQuaraFile["EventType"].asString();
+		if(!valueQuaraFilesQuaraFile["Tag"].isNull())
+			quaraFilesObject.tag = valueQuaraFilesQuaraFile["Tag"].asString();
+		if(!valueQuaraFilesQuaraFile["Uuid"].isNull())
+			quaraFilesObject.uuid = valueQuaraFilesQuaraFile["Uuid"].asString();
+		if(!valueQuaraFilesQuaraFile["InstanceName"].isNull())
+			quaraFilesObject.instanceName = valueQuaraFilesQuaraFile["InstanceName"].asString();
+		if(!valueQuaraFilesQuaraFile["InternetIp"].isNull())
+			quaraFilesObject.internetIp = valueQuaraFilesQuaraFile["InternetIp"].asString();
+		if(!valueQuaraFilesQuaraFile["Ip"].isNull())
+			quaraFilesObject.ip = valueQuaraFilesQuaraFile["Ip"].asString();
+		if(!valueQuaraFilesQuaraFile["Status"].isNull())
+			quaraFilesObject.status = valueQuaraFilesQuaraFile["Status"].asString();
+		if(!valueQuaraFilesQuaraFile["Md5"].isNull())
+			quaraFilesObject.md5 = valueQuaraFilesQuaraFile["Md5"].asString();
+		if(!valueQuaraFilesQuaraFile["ModifyTime"].isNull())
+			quaraFilesObject.modifyTime = valueQuaraFilesQuaraFile["ModifyTime"].asString();
 		quaraFiles_.push_back(quaraFilesObject);
 	}
 	if(!value["Count"].isNull())

@@ -39,16 +39,16 @@ void DescribePriceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPromotionRules = value["PromotionRules"]["PromotionRule"];
-	for (auto value : allPromotionRules)
+	auto allPromotionRulesNode = value["PromotionRules"]["PromotionRule"];
+	for (auto valuePromotionRulesPromotionRule : allPromotionRulesNode)
 	{
 		PromotionRule promotionRulesObject;
-		if(!value["RuleId"].isNull())
-			promotionRulesObject.ruleId = value["RuleId"].asString();
-		if(!value["Name"].isNull())
-			promotionRulesObject.name = value["Name"].asString();
-		if(!value["Title"].isNull())
-			promotionRulesObject.title = value["Title"].asString();
+		if(!valuePromotionRulesPromotionRule["RuleId"].isNull())
+			promotionRulesObject.ruleId = valuePromotionRulesPromotionRule["RuleId"].asString();
+		if(!valuePromotionRulesPromotionRule["Name"].isNull())
+			promotionRulesObject.name = valuePromotionRulesPromotionRule["Name"].asString();
+		if(!valuePromotionRulesPromotionRule["Title"].isNull())
+			promotionRulesObject.title = valuePromotionRulesPromotionRule["Title"].asString();
 		promotionRules_.push_back(promotionRulesObject);
 	}
 	if(!value["ProductCode"].isNull())

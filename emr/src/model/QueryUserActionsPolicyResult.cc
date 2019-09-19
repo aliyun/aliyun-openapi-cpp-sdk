@@ -39,20 +39,20 @@ void QueryUserActionsPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["policyDTO"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["policyDTO"];
+	for (auto valueDatapolicyDTO : allDataNode)
 	{
 		PolicyDTO dataObject;
-		if(!value["Name"].isNull())
-			dataObject.name = value["Name"].asString();
-		if(!value["GmtCreate"].isNull())
-			dataObject.gmtCreate = value["GmtCreate"].asString();
-		if(!value["Effect"].isNull())
-			dataObject.effect = value["Effect"].asString();
-		if(!value["Action"].isNull())
-			dataObject.action = value["Action"].asString();
-		if(!value["Conditions"].isNull())
-			dataObject.conditions = value["Conditions"].asString();
+		if(!valueDatapolicyDTO["Name"].isNull())
+			dataObject.name = valueDatapolicyDTO["Name"].asString();
+		if(!valueDatapolicyDTO["GmtCreate"].isNull())
+			dataObject.gmtCreate = valueDatapolicyDTO["GmtCreate"].asString();
+		if(!valueDatapolicyDTO["Effect"].isNull())
+			dataObject.effect = valueDatapolicyDTO["Effect"].asString();
+		if(!valueDatapolicyDTO["Action"].isNull())
+			dataObject.action = valueDatapolicyDTO["Action"].asString();
+		if(!valueDatapolicyDTO["Conditions"].isNull())
+			dataObject.conditions = valueDatapolicyDTO["Conditions"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Paging"].isNull())

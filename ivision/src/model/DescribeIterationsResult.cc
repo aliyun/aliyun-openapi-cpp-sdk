@@ -39,30 +39,30 @@ void DescribeIterationsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIterations = value["Iterations"]["Iteration"];
-	for (auto value : allIterations)
+	auto allIterationsNode = value["Iterations"]["Iteration"];
+	for (auto valueIterationsIteration : allIterationsNode)
 	{
 		Iteration iterationsObject;
-		if(!value["ProjectId"].isNull())
-			iterationsObject.projectId = value["ProjectId"].asString();
-		if(!value["IterationId"].isNull())
-			iterationsObject.iterationId = value["IterationId"].asString();
-		if(!value["IterationName"].isNull())
-			iterationsObject.iterationName = value["IterationName"].asString();
-		if(!value["Status"].isNull())
-			iterationsObject.status = value["Status"].asString();
-		if(!value["CreationTime"].isNull())
-			iterationsObject.creationTime = value["CreationTime"].asString();
-		if(!value["FinishTime"].isNull())
-			iterationsObject.finishTime = value["FinishTime"].asString();
-		if(!value["ModelId"].isNull())
-			iterationsObject.modelId = value["ModelId"].asString();
-		if(!value["Precision"].isNull())
-			iterationsObject.precision = value["Precision"].asString();
-		if(!value["Recall"].isNull())
-			iterationsObject.recall = value["Recall"].asString();
-		if(!value["MAP"].isNull())
-			iterationsObject.mAP = value["MAP"].asString();
+		if(!valueIterationsIteration["ProjectId"].isNull())
+			iterationsObject.projectId = valueIterationsIteration["ProjectId"].asString();
+		if(!valueIterationsIteration["IterationId"].isNull())
+			iterationsObject.iterationId = valueIterationsIteration["IterationId"].asString();
+		if(!valueIterationsIteration["IterationName"].isNull())
+			iterationsObject.iterationName = valueIterationsIteration["IterationName"].asString();
+		if(!valueIterationsIteration["Status"].isNull())
+			iterationsObject.status = valueIterationsIteration["Status"].asString();
+		if(!valueIterationsIteration["CreationTime"].isNull())
+			iterationsObject.creationTime = valueIterationsIteration["CreationTime"].asString();
+		if(!valueIterationsIteration["FinishTime"].isNull())
+			iterationsObject.finishTime = valueIterationsIteration["FinishTime"].asString();
+		if(!valueIterationsIteration["ModelId"].isNull())
+			iterationsObject.modelId = valueIterationsIteration["ModelId"].asString();
+		if(!valueIterationsIteration["Precision"].isNull())
+			iterationsObject.precision = valueIterationsIteration["Precision"].asString();
+		if(!valueIterationsIteration["Recall"].isNull())
+			iterationsObject.recall = valueIterationsIteration["Recall"].asString();
+		if(!valueIterationsIteration["MAP"].isNull())
+			iterationsObject.mAP = valueIterationsIteration["MAP"].asString();
 		iterations_.push_back(iterationsObject);
 	}
 	if(!value["TotalNum"].isNull())

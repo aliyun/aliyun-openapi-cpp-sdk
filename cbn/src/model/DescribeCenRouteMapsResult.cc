@@ -39,42 +39,42 @@ void DescribeCenRouteMapsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRouteMaps = value["RouteMaps"]["RouteMap"];
-	for (auto value : allRouteMaps)
+	auto allRouteMapsNode = value["RouteMaps"]["RouteMap"];
+	for (auto valueRouteMapsRouteMap : allRouteMapsNode)
 	{
 		RouteMap routeMapsObject;
-		if(!value["Status"].isNull())
-			routeMapsObject.status = value["Status"].asString();
-		if(!value["RouteMapId"].isNull())
-			routeMapsObject.routeMapId = value["RouteMapId"].asString();
-		if(!value["CenId"].isNull())
-			routeMapsObject.cenId = value["CenId"].asString();
-		if(!value["CenRegionId"].isNull())
-			routeMapsObject.cenRegionId = value["CenRegionId"].asString();
-		if(!value["Description"].isNull())
-			routeMapsObject.description = value["Description"].asString();
-		if(!value["MapResult"].isNull())
-			routeMapsObject.mapResult = value["MapResult"].asString();
-		if(!value["Priority"].isNull())
-			routeMapsObject.priority = std::stoi(value["Priority"].asString());
-		if(!value["NextPriority"].isNull())
-			routeMapsObject.nextPriority = std::stoi(value["NextPriority"].asString());
-		if(!value["CidrMatchMode"].isNull())
-			routeMapsObject.cidrMatchMode = value["CidrMatchMode"].asString();
-		if(!value["AsPathMatchMode"].isNull())
-			routeMapsObject.asPathMatchMode = value["AsPathMatchMode"].asString();
-		if(!value["CommunityMatchMode"].isNull())
-			routeMapsObject.communityMatchMode = value["CommunityMatchMode"].asString();
-		if(!value["CommunityOperateMode"].isNull())
-			routeMapsObject.communityOperateMode = value["CommunityOperateMode"].asString();
-		if(!value["Preference"].isNull())
-			routeMapsObject.preference = std::stoi(value["Preference"].asString());
-		if(!value["TransmitDirection"].isNull())
-			routeMapsObject.transmitDirection = value["TransmitDirection"].asString();
-		if(!value["SourceInstanceIdsReverseMatch"].isNull())
-			routeMapsObject.sourceInstanceIdsReverseMatch = value["SourceInstanceIdsReverseMatch"].asString() == "true";
-		if(!value["DestinationInstanceIdsReverseMatch"].isNull())
-			routeMapsObject.destinationInstanceIdsReverseMatch = value["DestinationInstanceIdsReverseMatch"].asString() == "true";
+		if(!valueRouteMapsRouteMap["Status"].isNull())
+			routeMapsObject.status = valueRouteMapsRouteMap["Status"].asString();
+		if(!valueRouteMapsRouteMap["RouteMapId"].isNull())
+			routeMapsObject.routeMapId = valueRouteMapsRouteMap["RouteMapId"].asString();
+		if(!valueRouteMapsRouteMap["CenId"].isNull())
+			routeMapsObject.cenId = valueRouteMapsRouteMap["CenId"].asString();
+		if(!valueRouteMapsRouteMap["CenRegionId"].isNull())
+			routeMapsObject.cenRegionId = valueRouteMapsRouteMap["CenRegionId"].asString();
+		if(!valueRouteMapsRouteMap["Description"].isNull())
+			routeMapsObject.description = valueRouteMapsRouteMap["Description"].asString();
+		if(!valueRouteMapsRouteMap["MapResult"].isNull())
+			routeMapsObject.mapResult = valueRouteMapsRouteMap["MapResult"].asString();
+		if(!valueRouteMapsRouteMap["Priority"].isNull())
+			routeMapsObject.priority = std::stoi(valueRouteMapsRouteMap["Priority"].asString());
+		if(!valueRouteMapsRouteMap["NextPriority"].isNull())
+			routeMapsObject.nextPriority = std::stoi(valueRouteMapsRouteMap["NextPriority"].asString());
+		if(!valueRouteMapsRouteMap["CidrMatchMode"].isNull())
+			routeMapsObject.cidrMatchMode = valueRouteMapsRouteMap["CidrMatchMode"].asString();
+		if(!valueRouteMapsRouteMap["AsPathMatchMode"].isNull())
+			routeMapsObject.asPathMatchMode = valueRouteMapsRouteMap["AsPathMatchMode"].asString();
+		if(!valueRouteMapsRouteMap["CommunityMatchMode"].isNull())
+			routeMapsObject.communityMatchMode = valueRouteMapsRouteMap["CommunityMatchMode"].asString();
+		if(!valueRouteMapsRouteMap["CommunityOperateMode"].isNull())
+			routeMapsObject.communityOperateMode = valueRouteMapsRouteMap["CommunityOperateMode"].asString();
+		if(!valueRouteMapsRouteMap["Preference"].isNull())
+			routeMapsObject.preference = std::stoi(valueRouteMapsRouteMap["Preference"].asString());
+		if(!valueRouteMapsRouteMap["TransmitDirection"].isNull())
+			routeMapsObject.transmitDirection = valueRouteMapsRouteMap["TransmitDirection"].asString();
+		if(!valueRouteMapsRouteMap["SourceInstanceIdsReverseMatch"].isNull())
+			routeMapsObject.sourceInstanceIdsReverseMatch = valueRouteMapsRouteMap["SourceInstanceIdsReverseMatch"].asString() == "true";
+		if(!valueRouteMapsRouteMap["DestinationInstanceIdsReverseMatch"].isNull())
+			routeMapsObject.destinationInstanceIdsReverseMatch = valueRouteMapsRouteMap["DestinationInstanceIdsReverseMatch"].asString() == "true";
 		auto allSourceInstanceIds = value["SourceInstanceIds"]["SourceInstanceId"];
 		for (auto value : allSourceInstanceIds)
 			routeMapsObject.sourceInstanceIds.push_back(value.asString());

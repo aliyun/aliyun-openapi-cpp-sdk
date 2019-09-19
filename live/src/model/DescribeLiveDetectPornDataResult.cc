@@ -39,26 +39,26 @@ void DescribeLiveDetectPornDataResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDetectPornData = value["DetectPornData"]["DataModule"];
-	for (auto value : allDetectPornData)
+	auto allDetectPornDataNode = value["DetectPornData"]["DataModule"];
+	for (auto valueDetectPornDataDataModule : allDetectPornDataNode)
 	{
 		DataModule detectPornDataObject;
-		if(!value["TimeStamp"].isNull())
-			detectPornDataObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["App"].isNull())
-			detectPornDataObject.app = value["App"].asString();
-		if(!value["Domain"].isNull())
-			detectPornDataObject.domain = value["Domain"].asString();
-		if(!value["Stream"].isNull())
-			detectPornDataObject.stream = value["Stream"].asString();
-		if(!value["Fee"].isNull())
-			detectPornDataObject.fee = value["Fee"].asString();
-		if(!value["Scene"].isNull())
-			detectPornDataObject.scene = value["Scene"].asString();
-		if(!value["Region"].isNull())
-			detectPornDataObject.region = value["Region"].asString();
-		if(!value["Count"].isNull())
-			detectPornDataObject.count = std::stol(value["Count"].asString());
+		if(!valueDetectPornDataDataModule["TimeStamp"].isNull())
+			detectPornDataObject.timeStamp = valueDetectPornDataDataModule["TimeStamp"].asString();
+		if(!valueDetectPornDataDataModule["App"].isNull())
+			detectPornDataObject.app = valueDetectPornDataDataModule["App"].asString();
+		if(!valueDetectPornDataDataModule["Domain"].isNull())
+			detectPornDataObject.domain = valueDetectPornDataDataModule["Domain"].asString();
+		if(!valueDetectPornDataDataModule["Stream"].isNull())
+			detectPornDataObject.stream = valueDetectPornDataDataModule["Stream"].asString();
+		if(!valueDetectPornDataDataModule["Fee"].isNull())
+			detectPornDataObject.fee = valueDetectPornDataDataModule["Fee"].asString();
+		if(!valueDetectPornDataDataModule["Scene"].isNull())
+			detectPornDataObject.scene = valueDetectPornDataDataModule["Scene"].asString();
+		if(!valueDetectPornDataDataModule["Region"].isNull())
+			detectPornDataObject.region = valueDetectPornDataDataModule["Region"].asString();
+		if(!valueDetectPornDataDataModule["Count"].isNull())
+			detectPornDataObject.count = std::stol(valueDetectPornDataDataModule["Count"].asString());
 		detectPornData_.push_back(detectPornDataObject);
 	}
 

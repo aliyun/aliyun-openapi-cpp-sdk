@@ -39,40 +39,40 @@ void DescribeVulLevelStatisticsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLevelStatistics = value["LevelStatistics"]["LevelStatistic"];
-	for (auto value : allLevelStatistics)
+	auto allLevelStatisticsNode = value["LevelStatistics"]["LevelStatistic"];
+	for (auto valueLevelStatisticsLevelStatistic : allLevelStatisticsNode)
 	{
 		LevelStatistic levelStatisticsObject;
-		if(!value["Level"].isNull())
-			levelStatisticsObject.level = value["Level"].asString();
-		if(!value["CveNum"].isNull())
-			levelStatisticsObject.cveNum = std::stoi(value["CveNum"].asString());
-		if(!value["EmgNum"].isNull())
-			levelStatisticsObject.emgNum = std::stoi(value["EmgNum"].asString());
-		if(!value["SysNum"].isNull())
-			levelStatisticsObject.sysNum = std::stoi(value["SysNum"].asString());
-		if(!value["CmsNum"].isNull())
-			levelStatisticsObject.cmsNum = std::stoi(value["CmsNum"].asString());
-		if(!value["AppNum"].isNull())
-			levelStatisticsObject.appNum = std::stoi(value["AppNum"].asString());
-		if(!value["CmsDealedTotalNum"].isNull())
-			levelStatisticsObject.cmsDealedTotalNum = std::stoi(value["CmsDealedTotalNum"].asString());
-		if(!value["VulDealedTotalNum"].isNull())
-			levelStatisticsObject.vulDealedTotalNum = std::stoi(value["VulDealedTotalNum"].asString());
-		if(!value["VulAsapSum"].isNull())
-			levelStatisticsObject.vulAsapSum = std::stoi(value["VulAsapSum"].asString());
-		if(!value["VulLaterSum"].isNull())
-			levelStatisticsObject.vulLaterSum = std::stoi(value["VulLaterSum"].asString());
-		if(!value["VulNntfSum"].isNull())
-			levelStatisticsObject.vulNntfSum = std::stoi(value["VulNntfSum"].asString());
-		if(!value["VulSeriousTotal"].isNull())
-			levelStatisticsObject.vulSeriousTotal = std::stoi(value["VulSeriousTotal"].asString());
-		if(!value["VulHighTotal"].isNull())
-			levelStatisticsObject.vulHighTotal = std::stoi(value["VulHighTotal"].asString());
-		if(!value["VulMediumTotal"].isNull())
-			levelStatisticsObject.vulMediumTotal = std::stoi(value["VulMediumTotal"].asString());
-		if(!value["VulLowTotal"].isNull())
-			levelStatisticsObject.vulLowTotal = std::stoi(value["VulLowTotal"].asString());
+		if(!valueLevelStatisticsLevelStatistic["Level"].isNull())
+			levelStatisticsObject.level = valueLevelStatisticsLevelStatistic["Level"].asString();
+		if(!valueLevelStatisticsLevelStatistic["CveNum"].isNull())
+			levelStatisticsObject.cveNum = std::stoi(valueLevelStatisticsLevelStatistic["CveNum"].asString());
+		if(!valueLevelStatisticsLevelStatistic["EmgNum"].isNull())
+			levelStatisticsObject.emgNum = std::stoi(valueLevelStatisticsLevelStatistic["EmgNum"].asString());
+		if(!valueLevelStatisticsLevelStatistic["SysNum"].isNull())
+			levelStatisticsObject.sysNum = std::stoi(valueLevelStatisticsLevelStatistic["SysNum"].asString());
+		if(!valueLevelStatisticsLevelStatistic["CmsNum"].isNull())
+			levelStatisticsObject.cmsNum = std::stoi(valueLevelStatisticsLevelStatistic["CmsNum"].asString());
+		if(!valueLevelStatisticsLevelStatistic["AppNum"].isNull())
+			levelStatisticsObject.appNum = std::stoi(valueLevelStatisticsLevelStatistic["AppNum"].asString());
+		if(!valueLevelStatisticsLevelStatistic["CmsDealedTotalNum"].isNull())
+			levelStatisticsObject.cmsDealedTotalNum = std::stoi(valueLevelStatisticsLevelStatistic["CmsDealedTotalNum"].asString());
+		if(!valueLevelStatisticsLevelStatistic["VulDealedTotalNum"].isNull())
+			levelStatisticsObject.vulDealedTotalNum = std::stoi(valueLevelStatisticsLevelStatistic["VulDealedTotalNum"].asString());
+		if(!valueLevelStatisticsLevelStatistic["VulAsapSum"].isNull())
+			levelStatisticsObject.vulAsapSum = std::stoi(valueLevelStatisticsLevelStatistic["VulAsapSum"].asString());
+		if(!valueLevelStatisticsLevelStatistic["VulLaterSum"].isNull())
+			levelStatisticsObject.vulLaterSum = std::stoi(valueLevelStatisticsLevelStatistic["VulLaterSum"].asString());
+		if(!valueLevelStatisticsLevelStatistic["VulNntfSum"].isNull())
+			levelStatisticsObject.vulNntfSum = std::stoi(valueLevelStatisticsLevelStatistic["VulNntfSum"].asString());
+		if(!valueLevelStatisticsLevelStatistic["VulSeriousTotal"].isNull())
+			levelStatisticsObject.vulSeriousTotal = std::stoi(valueLevelStatisticsLevelStatistic["VulSeriousTotal"].asString());
+		if(!valueLevelStatisticsLevelStatistic["VulHighTotal"].isNull())
+			levelStatisticsObject.vulHighTotal = std::stoi(valueLevelStatisticsLevelStatistic["VulHighTotal"].asString());
+		if(!valueLevelStatisticsLevelStatistic["VulMediumTotal"].isNull())
+			levelStatisticsObject.vulMediumTotal = std::stoi(valueLevelStatisticsLevelStatistic["VulMediumTotal"].asString());
+		if(!valueLevelStatisticsLevelStatistic["VulLowTotal"].isNull())
+			levelStatisticsObject.vulLowTotal = std::stoi(valueLevelStatisticsLevelStatistic["VulLowTotal"].asString());
 		levelStatistics_.push_back(levelStatisticsObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -44,14 +44,14 @@ void DescribeTraceInfoNodeResult::parse(const std::string &payload)
 		node_.name = nodeNode["Name"].asString();
 	if(!nodeNode["Type"].isNull())
 		node_.type = nodeNode["Type"].asString();
-	auto allPropertyList = value["PropertyList"]["Property"];
-	for (auto value : allPropertyList)
+	auto allPropertyListNode = nodeNode["PropertyList"]["Property"];
+	for (auto nodeNodePropertyListProperty : allPropertyListNode)
 	{
 		Node::Property propertyObject;
-		if(!value["Name"].isNull())
-			propertyObject.name = value["Name"].asString();
-		if(!value["Value"].isNull())
-			propertyObject.value = value["Value"].asString();
+		if(!nodeNodePropertyListProperty["Name"].isNull())
+			propertyObject.name = nodeNodePropertyListProperty["Name"].asString();
+		if(!nodeNodePropertyListProperty["Value"].isNull())
+			propertyObject.value = nodeNodePropertyListProperty["Value"].asString();
 		node_.propertyList.push_back(propertyObject);
 	}
 

@@ -39,30 +39,30 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNetInfoItems = value["NetInfoItems"]["InstanceNetInfo"];
-	for (auto value : allNetInfoItems)
+	auto allNetInfoItemsNode = value["NetInfoItems"]["InstanceNetInfo"];
+	for (auto valueNetInfoItemsInstanceNetInfo : allNetInfoItemsNode)
 	{
 		InstanceNetInfo netInfoItemsObject;
-		if(!value["ConnectionString"].isNull())
-			netInfoItemsObject.connectionString = value["ConnectionString"].asString();
-		if(!value["IPAddress"].isNull())
-			netInfoItemsObject.iPAddress = value["IPAddress"].asString();
-		if(!value["Port"].isNull())
-			netInfoItemsObject.port = value["Port"].asString();
-		if(!value["VPCId"].isNull())
-			netInfoItemsObject.vPCId = value["VPCId"].asString();
-		if(!value["VSwitchId"].isNull())
-			netInfoItemsObject.vSwitchId = value["VSwitchId"].asString();
-		if(!value["DBInstanceNetType"].isNull())
-			netInfoItemsObject.dBInstanceNetType = value["DBInstanceNetType"].asString();
-		if(!value["VPCInstanceId"].isNull())
-			netInfoItemsObject.vPCInstanceId = value["VPCInstanceId"].asString();
-		if(!value["IPType"].isNull())
-			netInfoItemsObject.iPType = value["IPType"].asString();
-		if(!value["ExpiredTime"].isNull())
-			netInfoItemsObject.expiredTime = value["ExpiredTime"].asString();
-		if(!value["Upgradeable"].isNull())
-			netInfoItemsObject.upgradeable = value["Upgradeable"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["ConnectionString"].isNull())
+			netInfoItemsObject.connectionString = valueNetInfoItemsInstanceNetInfo["ConnectionString"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["IPAddress"].isNull())
+			netInfoItemsObject.iPAddress = valueNetInfoItemsInstanceNetInfo["IPAddress"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["Port"].isNull())
+			netInfoItemsObject.port = valueNetInfoItemsInstanceNetInfo["Port"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["VPCId"].isNull())
+			netInfoItemsObject.vPCId = valueNetInfoItemsInstanceNetInfo["VPCId"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["VSwitchId"].isNull())
+			netInfoItemsObject.vSwitchId = valueNetInfoItemsInstanceNetInfo["VSwitchId"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["DBInstanceNetType"].isNull())
+			netInfoItemsObject.dBInstanceNetType = valueNetInfoItemsInstanceNetInfo["DBInstanceNetType"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["VPCInstanceId"].isNull())
+			netInfoItemsObject.vPCInstanceId = valueNetInfoItemsInstanceNetInfo["VPCInstanceId"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["IPType"].isNull())
+			netInfoItemsObject.iPType = valueNetInfoItemsInstanceNetInfo["IPType"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["ExpiredTime"].isNull())
+			netInfoItemsObject.expiredTime = valueNetInfoItemsInstanceNetInfo["ExpiredTime"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["Upgradeable"].isNull())
+			netInfoItemsObject.upgradeable = valueNetInfoItemsInstanceNetInfo["Upgradeable"].asString();
 		netInfoItems_.push_back(netInfoItemsObject);
 	}
 	if(!value["InstanceNetworkType"].isNull())
