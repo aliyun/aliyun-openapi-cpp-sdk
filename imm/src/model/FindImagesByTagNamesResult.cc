@@ -105,6 +105,12 @@ void FindImagesByTagNamesResult::parse(const std::string &payload)
 			imagesObject.remarksC = valueImagesFrames["RemarksC"].asString();
 		if(!valueImagesFrames["RemarksD"].isNull())
 			imagesObject.remarksD = valueImagesFrames["RemarksD"].asString();
+		if(!valueImagesFrames["AddressModifyTime"].isNull())
+			imagesObject.addressModifyTime = valueImagesFrames["AddressModifyTime"].asString();
+		if(!valueImagesFrames["AddressStatus"].isNull())
+			imagesObject.addressStatus = valueImagesFrames["AddressStatus"].asString();
+		if(!valueImagesFrames["AddressFailReason"].isNull())
+			imagesObject.addressFailReason = valueImagesFrames["AddressFailReason"].asString();
 		auto allFacesNode = allImagesNode["Faces"]["FacesItem"];
 		for (auto allImagesNodeFacesFacesItem : allFacesNode)
 		{
@@ -235,6 +241,19 @@ void FindImagesByTagNamesResult::parse(const std::string &payload)
 				celebrityObject.celebrityBoundary.height = std::stoi(celebrityBoundaryNode["Height"].asString());
 			imagesObject.celebrity.push_back(celebrityObject);
 		}
+		auto addressNode = value["Address"];
+		if(!addressNode["AddressLine"].isNull())
+			imagesObject.address.addressLine = addressNode["AddressLine"].asString();
+		if(!addressNode["Country"].isNull())
+			imagesObject.address.country = addressNode["Country"].asString();
+		if(!addressNode["Province"].isNull())
+			imagesObject.address.province = addressNode["Province"].asString();
+		if(!addressNode["City"].isNull())
+			imagesObject.address.city = addressNode["City"].asString();
+		if(!addressNode["District"].isNull())
+			imagesObject.address.district = addressNode["District"].asString();
+		if(!addressNode["Township"].isNull())
+			imagesObject.address.township = addressNode["Township"].asString();
 		images_.push_back(imagesObject);
 	}
 	if(!value["SetId"].isNull())

@@ -25,17 +25,6 @@ FindImagesRequest::FindImagesRequest() :
 FindImagesRequest::~FindImagesRequest()
 {}
 
-std::string FindImagesRequest::getGender()const
-{
-	return gender_;
-}
-
-void FindImagesRequest::setGender(const std::string& gender)
-{
-	gender_ = gender;
-	setCoreParameter("Gender", gender);
-}
-
 std::string FindImagesRequest::getProject()const
 {
 	return project_;
@@ -67,6 +56,149 @@ void FindImagesRequest::setFacesModifyTimeRange(const std::string& facesModifyTi
 {
 	facesModifyTimeRange_ = facesModifyTimeRange;
 	setCoreParameter("FacesModifyTimeRange", facesModifyTimeRange);
+}
+
+std::string FindImagesRequest::getOCRContentsMatch()const
+{
+	return oCRContentsMatch_;
+}
+
+void FindImagesRequest::setOCRContentsMatch(const std::string& oCRContentsMatch)
+{
+	oCRContentsMatch_ = oCRContentsMatch;
+	setCoreParameter("OCRContentsMatch", oCRContentsMatch);
+}
+
+int FindImagesRequest::getLimit()const
+{
+	return limit_;
+}
+
+void FindImagesRequest::setLimit(int limit)
+{
+	limit_ = limit;
+	setCoreParameter("Limit", std::to_string(limit));
+}
+
+std::string FindImagesRequest::getRemarksDPrefix()const
+{
+	return remarksDPrefix_;
+}
+
+void FindImagesRequest::setRemarksDPrefix(const std::string& remarksDPrefix)
+{
+	remarksDPrefix_ = remarksDPrefix;
+	setCoreParameter("RemarksDPrefix", remarksDPrefix);
+}
+
+std::string FindImagesRequest::getSourceType()const
+{
+	return sourceType_;
+}
+
+void FindImagesRequest::setSourceType(const std::string& sourceType)
+{
+	sourceType_ = sourceType;
+	setCoreParameter("SourceType", sourceType);
+}
+
+std::string FindImagesRequest::getOrder()const
+{
+	return order_;
+}
+
+void FindImagesRequest::setOrder(const std::string& order)
+{
+	order_ = order;
+	setCoreParameter("Order", order);
+}
+
+std::string FindImagesRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void FindImagesRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string FindImagesRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void FindImagesRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setCoreParameter("OrderBy", orderBy);
+}
+
+std::string FindImagesRequest::getTagNames()const
+{
+	return tagNames_;
+}
+
+void FindImagesRequest::setTagNames(const std::string& tagNames)
+{
+	tagNames_ = tagNames;
+	setCoreParameter("TagNames", tagNames);
+}
+
+std::string FindImagesRequest::getMarker()const
+{
+	return marker_;
+}
+
+void FindImagesRequest::setMarker(const std::string& marker)
+{
+	marker_ = marker;
+	setCoreParameter("Marker", marker);
+}
+
+std::string FindImagesRequest::getRemarksCPrefix()const
+{
+	return remarksCPrefix_;
+}
+
+void FindImagesRequest::setRemarksCPrefix(const std::string& remarksCPrefix)
+{
+	remarksCPrefix_ = remarksCPrefix;
+	setCoreParameter("RemarksCPrefix", remarksCPrefix);
+}
+
+std::string FindImagesRequest::getModifyTimeRange()const
+{
+	return modifyTimeRange_;
+}
+
+void FindImagesRequest::setModifyTimeRange(const std::string& modifyTimeRange)
+{
+	modifyTimeRange_ = modifyTimeRange;
+	setCoreParameter("ModifyTimeRange", modifyTimeRange);
+}
+
+std::string FindImagesRequest::getAddressLineContentsMatch()const
+{
+	return addressLineContentsMatch_;
+}
+
+void FindImagesRequest::setAddressLineContentsMatch(const std::string& addressLineContentsMatch)
+{
+	addressLineContentsMatch_ = addressLineContentsMatch;
+	setCoreParameter("AddressLineContentsMatch", addressLineContentsMatch);
+}
+
+std::string FindImagesRequest::getGender()const
+{
+	return gender_;
+}
+
+void FindImagesRequest::setGender(const std::string& gender)
+{
+	gender_ = gender;
+	setCoreParameter("Gender", gender);
 }
 
 std::string FindImagesRequest::getImageSizeRange()const
@@ -124,39 +256,6 @@ void FindImagesRequest::setImageTimeRange(const std::string& imageTimeRange)
 	setCoreParameter("ImageTimeRange", imageTimeRange);
 }
 
-std::string FindImagesRequest::getOCRContentsMatch()const
-{
-	return oCRContentsMatch_;
-}
-
-void FindImagesRequest::setOCRContentsMatch(const std::string& oCRContentsMatch)
-{
-	oCRContentsMatch_ = oCRContentsMatch;
-	setCoreParameter("OCRContentsMatch", oCRContentsMatch);
-}
-
-int FindImagesRequest::getLimit()const
-{
-	return limit_;
-}
-
-void FindImagesRequest::setLimit(int limit)
-{
-	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
-}
-
-std::string FindImagesRequest::getRemarksDPrefix()const
-{
-	return remarksDPrefix_;
-}
-
-void FindImagesRequest::setRemarksDPrefix(const std::string& remarksDPrefix)
-{
-	remarksDPrefix_ = remarksDPrefix;
-	setCoreParameter("RemarksDPrefix", remarksDPrefix);
-}
-
 std::string FindImagesRequest::getTagsModifyTimeRange()const
 {
 	return tagsModifyTimeRange_;
@@ -166,17 +265,6 @@ void FindImagesRequest::setTagsModifyTimeRange(const std::string& tagsModifyTime
 {
 	tagsModifyTimeRange_ = tagsModifyTimeRange;
 	setCoreParameter("TagsModifyTimeRange", tagsModifyTimeRange);
-}
-
-std::string FindImagesRequest::getSourceType()const
-{
-	return sourceType_;
-}
-
-void FindImagesRequest::setSourceType(const std::string& sourceType)
-{
-	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
 }
 
 std::string FindImagesRequest::getAgeRange()const
@@ -190,17 +278,6 @@ void FindImagesRequest::setAgeRange(const std::string& ageRange)
 	setCoreParameter("AgeRange", ageRange);
 }
 
-std::string FindImagesRequest::getOrder()const
-{
-	return order_;
-}
-
-void FindImagesRequest::setOrder(const std::string& order)
-{
-	order_ = order;
-	setCoreParameter("Order", order);
-}
-
 std::string FindImagesRequest::getRemarksAPrefix()const
 {
 	return remarksAPrefix_;
@@ -210,39 +287,6 @@ void FindImagesRequest::setRemarksAPrefix(const std::string& remarksAPrefix)
 {
 	remarksAPrefix_ = remarksAPrefix;
 	setCoreParameter("RemarksAPrefix", remarksAPrefix);
-}
-
-std::string FindImagesRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void FindImagesRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
-std::string FindImagesRequest::getOrderBy()const
-{
-	return orderBy_;
-}
-
-void FindImagesRequest::setOrderBy(const std::string& orderBy)
-{
-	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
-}
-
-std::string FindImagesRequest::getTagNames()const
-{
-	return tagNames_;
-}
-
-void FindImagesRequest::setTagNames(const std::string& tagNames)
-{
-	tagNames_ = tagNames;
-	setCoreParameter("TagNames", tagNames);
 }
 
 std::string FindImagesRequest::getSourceUriPrefix()const
@@ -267,28 +311,6 @@ void FindImagesRequest::setEmotion(const std::string& emotion)
 	setCoreParameter("Emotion", emotion);
 }
 
-std::string FindImagesRequest::getMarker()const
-{
-	return marker_;
-}
-
-void FindImagesRequest::setMarker(const std::string& marker)
-{
-	marker_ = marker;
-	setCoreParameter("Marker", marker);
-}
-
-std::string FindImagesRequest::getRemarksCPrefix()const
-{
-	return remarksCPrefix_;
-}
-
-void FindImagesRequest::setRemarksCPrefix(const std::string& remarksCPrefix)
-{
-	remarksCPrefix_ = remarksCPrefix;
-	setCoreParameter("RemarksCPrefix", remarksCPrefix);
-}
-
 std::string FindImagesRequest::getCreateTimeRange()const
 {
 	return createTimeRange_;
@@ -309,16 +331,5 @@ void FindImagesRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
 	setCoreParameter("SetId", setId);
-}
-
-std::string FindImagesRequest::getModifyTimeRange()const
-{
-	return modifyTimeRange_;
-}
-
-void FindImagesRequest::setModifyTimeRange(const std::string& modifyTimeRange)
-{
-	modifyTimeRange_ = modifyTimeRange;
-	setCoreParameter("ModifyTimeRange", modifyTimeRange);
 }
 

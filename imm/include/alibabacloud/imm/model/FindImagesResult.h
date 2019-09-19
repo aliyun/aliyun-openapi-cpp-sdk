@@ -34,6 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct ImagesItem
 				{
+					struct Address
+					{
+						std::string township;
+						std::string addressLine;
+						std::string country;
+						std::string city;
+						std::string district;
+						std::string province;
+					};
 					struct FacesItem
 					{
 						struct EmotionDetails
@@ -121,11 +130,14 @@ namespace AlibabaCloud
 						float celebrityConfidence;
 					};
 					std::string modifyTime;
+					Address address;
 					std::string sourceType;
 					std::string sourceUri;
 					std::string facesFailReason;
 					std::string remarksA;
+					std::string addressFailReason;
 					std::string remarksB;
+					std::string addressModifyTime;
 					std::string imageFormat;
 					std::string tagsFailReason;
 					std::string facesModifyTime;
@@ -137,6 +149,7 @@ namespace AlibabaCloud
 					std::string sourcePosition;
 					std::vector<ImagesItem::FacesItem> faces;
 					std::vector<ImagesItem::TagsItem> tags;
+					std::string addressStatus;
 					std::string facesStatus;
 					std::string createTime;
 					std::string tagsModifyTime;

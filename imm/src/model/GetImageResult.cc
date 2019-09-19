@@ -167,6 +167,19 @@ void GetImageResult::parse(const std::string &payload)
 			celebrityObject.celebrityBoundary.height = std::stoi(celebrityBoundaryNode["Height"].asString());
 		celebrity_.push_back(celebrityObject);
 	}
+	auto addressNode = value["Address"];
+	if(!addressNode["AddressLine"].isNull())
+		address_.addressLine = addressNode["AddressLine"].asString();
+	if(!addressNode["Country"].isNull())
+		address_.country = addressNode["Country"].asString();
+	if(!addressNode["Province"].isNull())
+		address_.province = addressNode["Province"].asString();
+	if(!addressNode["City"].isNull())
+		address_.city = addressNode["City"].asString();
+	if(!addressNode["District"].isNull())
+		address_.district = addressNode["District"].asString();
+	if(!addressNode["Township"].isNull())
+		address_.township = addressNode["Township"].asString();
 	if(!value["SetId"].isNull())
 		setId_ = value["SetId"].asString();
 	if(!value["ImageUri"].isNull())
@@ -231,12 +244,23 @@ void GetImageResult::parse(const std::string &payload)
 		remarksD_ = value["RemarksD"].asString();
 	if(!value["ExternalId"].isNull())
 		externalId_ = value["ExternalId"].asString();
+	if(!value["AddressModifyTime"].isNull())
+		addressModifyTime_ = value["AddressModifyTime"].asString();
+	if(!value["AddressStatus"].isNull())
+		addressStatus_ = value["AddressStatus"].asString();
+	if(!value["AddressFailReason"].isNull())
+		addressFailReason_ = value["AddressFailReason"].asString();
 
 }
 
 std::string GetImageResult::getModifyTime()const
 {
 	return modifyTime_;
+}
+
+GetImageResult::Address GetImageResult::getAddress()const
+{
+	return address_;
 }
 
 std::string GetImageResult::getSourceType()const
@@ -259,9 +283,19 @@ std::string GetImageResult::getRemarksA()const
 	return remarksA_;
 }
 
+std::string GetImageResult::getAddressFailReason()const
+{
+	return addressFailReason_;
+}
+
 std::string GetImageResult::getRemarksB()const
 {
 	return remarksB_;
+}
+
+std::string GetImageResult::getAddressModifyTime()const
+{
+	return addressModifyTime_;
 }
 
 std::string GetImageResult::getImageFormat()const
@@ -317,6 +351,11 @@ std::vector<GetImageResult::FacesItem> GetImageResult::getFaces()const
 std::vector<GetImageResult::TagsItem> GetImageResult::getTags()const
 {
 	return tags_;
+}
+
+std::string GetImageResult::getAddressStatus()const
+{
+	return addressStatus_;
 }
 
 std::string GetImageResult::getFacesStatus()const

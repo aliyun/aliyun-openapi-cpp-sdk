@@ -32,6 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_IMM_EXPORT GetImageResult : public ServiceResult
 			{
 			public:
+				struct Address
+				{
+					std::string township;
+					std::string addressLine;
+					std::string country;
+					std::string city;
+					std::string district;
+					std::string province;
+				};
 				struct FacesItem
 				{
 					struct FaceAttributes
@@ -123,11 +132,14 @@ namespace AlibabaCloud
 				explicit GetImageResult(const std::string &payload);
 				~GetImageResult();
 				std::string getModifyTime()const;
+				Address getAddress()const;
 				std::string getSourceType()const;
 				std::string getSourceUri()const;
 				std::string getFacesFailReason()const;
 				std::string getRemarksA()const;
+				std::string getAddressFailReason()const;
 				std::string getRemarksB()const;
+				std::string getAddressModifyTime()const;
 				std::string getImageFormat()const;
 				std::string getTagsFailReason()const;
 				std::string getExif()const;
@@ -139,6 +151,7 @@ namespace AlibabaCloud
 				std::string getSourcePosition()const;
 				std::vector<FacesItem> getFaces()const;
 				std::vector<TagsItem> getTags()const;
+				std::string getAddressStatus()const;
 				std::string getFacesStatus()const;
 				std::string getCreateTime()const;
 				std::string getTagsModifyTime()const;
@@ -163,11 +176,14 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string modifyTime_;
+				Address address_;
 				std::string sourceType_;
 				std::string sourceUri_;
 				std::string facesFailReason_;
 				std::string remarksA_;
+				std::string addressFailReason_;
 				std::string remarksB_;
+				std::string addressModifyTime_;
 				std::string imageFormat_;
 				std::string tagsFailReason_;
 				std::string exif_;
@@ -179,6 +195,7 @@ namespace AlibabaCloud
 				std::string sourcePosition_;
 				std::vector<FacesItem> faces_;
 				std::vector<TagsItem> tags_;
+				std::string addressStatus_;
 				std::string facesStatus_;
 				std::string createTime_;
 				std::string tagsModifyTime_;
