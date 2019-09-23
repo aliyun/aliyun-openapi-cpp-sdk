@@ -50,6 +50,7 @@ namespace AlibabaCloud
 							float tradePrice;
 						};
 						float originalPrice;
+						float reservedInstanceHourPrice;
 						float discountPrice;
 						std::string currency;
 						std::vector<ResourcePriceModel> detailInfos;

@@ -135,6 +135,17 @@ void DescribePriceRequest::setInstanceNetworkType(const std::string& instanceNet
 	setCoreParameter("InstanceNetworkType", instanceNetworkType);
 }
 
+int DescribePriceRequest::getInstanceAmount()const
+{
+	return instanceAmount_;
+}
+
+void DescribePriceRequest::setInstanceAmount(int instanceAmount)
+{
+	instanceAmount_ = instanceAmount;
+	setCoreParameter("InstanceAmount", std::to_string(instanceAmount));
+}
+
 std::string DescribePriceRequest::getDataDisk3PerformanceLevel()const
 {
 	return dataDisk3PerformanceLevel_;
@@ -190,6 +201,17 @@ void DescribePriceRequest::setSystemDiskCategory(const std::string& systemDiskCa
 	setCoreParameter("SystemDiskCategory", systemDiskCategory);
 }
 
+std::string DescribePriceRequest::getPlatform()const
+{
+	return platform_;
+}
+
+void DescribePriceRequest::setPlatform(const std::string& platform)
+{
+	platform_ = platform;
+	setCoreParameter("Platform", platform);
+}
+
 std::string DescribePriceRequest::getSystemDiskPerformanceLevel()const
 {
 	return systemDiskPerformanceLevel_;
@@ -232,6 +254,17 @@ void DescribePriceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribePriceRequest::getScope()const
+{
+	return scope_;
+}
+
+void DescribePriceRequest::setScope(const std::string& scope)
+{
+	scope_ = scope;
+	setCoreParameter("Scope", scope);
 }
 
 std::string DescribePriceRequest::getInstanceType()const
@@ -353,5 +386,16 @@ void DescribePriceRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
 	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+}
+
+std::string DescribePriceRequest::getOfferingType()const
+{
+	return offeringType_;
+}
+
+void DescribePriceRequest::setOfferingType(const std::string& offeringType)
+{
+	offeringType_ = offeringType;
+	setCoreParameter("OfferingType", offeringType);
 }
 

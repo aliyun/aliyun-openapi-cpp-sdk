@@ -91,6 +91,17 @@ void DescribeCommandsRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string DescribeCommandsRequest::getContentEncoding()const
+{
+	return contentEncoding_;
+}
+
+void DescribeCommandsRequest::setContentEncoding(const std::string& contentEncoding)
+{
+	contentEncoding_ = contentEncoding;
+	setCoreParameter("ContentEncoding", contentEncoding);
+}
+
 long DescribeCommandsRequest::getPageSize()const
 {
 	return pageSize_;

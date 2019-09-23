@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setPageNumber(long pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getContentEncoding()const;
+				void setContentEncoding(const std::string& contentEncoding);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
 				std::string getInvokeId()const;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				std::string commandId_;
 				long pageNumber_;
 				std::string regionId_;
+				std::string contentEncoding_;
 				long pageSize_;
 				std::string invokeId_;
 				bool timed_;

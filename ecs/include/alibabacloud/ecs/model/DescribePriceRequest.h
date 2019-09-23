@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getInstanceNetworkType()const;
 				void setInstanceNetworkType(const std::string& instanceNetworkType);
+				int getInstanceAmount()const;
+				void setInstanceAmount(int instanceAmount);
 				std::string getDataDisk3PerformanceLevel()const;
 				void setDataDisk3PerformanceLevel(const std::string& dataDisk3PerformanceLevel);
 				std::string getImageId()const;
@@ -65,6 +67,8 @@ namespace AlibabaCloud
 				void setInternetMaxBandwidthOut(int internetMaxBandwidthOut);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
+				std::string getPlatform()const;
+				void setPlatform(const std::string& platform);
 				std::string getSystemDiskPerformanceLevel()const;
 				void setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel);
 				std::string getDataDisk4Category()const;
@@ -73,6 +77,8 @@ namespace AlibabaCloud
 				void setDataDisk4PerformanceLevel(const std::string& dataDisk4PerformanceLevel);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getScope()const;
+				void setScope(const std::string& scope);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
 				std::string getDataDisk2Category()const;
@@ -95,6 +101,8 @@ namespace AlibabaCloud
 				void setDataDisk2PerformanceLevel(const std::string& dataDisk2PerformanceLevel);
 				int getSystemDiskSize()const;
 				void setSystemDiskSize(int systemDiskSize);
+				std::string getOfferingType()const;
+				void setOfferingType(const std::string& offeringType);
 
             private:
 				int dataDisk3Size_;
@@ -107,15 +115,18 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string internetChargeType_;
 				std::string instanceNetworkType_;
+				int instanceAmount_;
 				std::string dataDisk3PerformanceLevel_;
 				std::string imageId_;
 				std::string ioOptimized_;
 				int internetMaxBandwidthOut_;
 				std::string systemDiskCategory_;
+				std::string platform_;
 				std::string systemDiskPerformanceLevel_;
 				std::string dataDisk4Category_;
 				std::string dataDisk4PerformanceLevel_;
 				std::string regionId_;
+				std::string scope_;
 				std::string instanceType_;
 				std::string dataDisk2Category_;
 				int dataDisk1Size_;
@@ -127,6 +138,7 @@ namespace AlibabaCloud
 				std::string dataDisk1Category_;
 				std::string dataDisk2PerformanceLevel_;
 				int systemDiskSize_;
+				std::string offeringType_;
 
 			};
 		}

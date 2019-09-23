@@ -57,6 +57,8 @@ void DescribePriceResult::parse(const std::string &payload)
 		priceInfo_.price.discountPrice = std::stof(priceNode["DiscountPrice"].asString());
 	if(!priceNode["TradePrice"].isNull())
 		priceInfo_.price.tradePrice = std::stof(priceNode["TradePrice"].asString());
+	if(!priceNode["ReservedInstanceHourPrice"].isNull())
+		priceInfo_.price.reservedInstanceHourPrice = std::stof(priceNode["ReservedInstanceHourPrice"].asString());
 	if(!priceNode["Currency"].isNull())
 		priceInfo_.price.currency = priceNode["Currency"].asString();
 	auto allDetailInfosNode = priceNode["DetailInfos"]["ResourcePriceModel"];

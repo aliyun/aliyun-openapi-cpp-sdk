@@ -541,6 +541,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RevokeSecurityGroupResult.h
 	include/alibabacloud/ecs/model/RevokeSecurityGroupEgressRequest.h
 	include/alibabacloud/ecs/model/RevokeSecurityGroupEgressResult.h
+	include/alibabacloud/ecs/model/RunCommandRequest.h
+	include/alibabacloud/ecs/model/RunCommandResult.h
 	include/alibabacloud/ecs/model/RunInstancesRequest.h
 	include/alibabacloud/ecs/model/RunInstancesResult.h
 	include/alibabacloud/ecs/model/StartInstanceRequest.h
@@ -1088,6 +1090,8 @@ set(ecs_src
 	src/model/RevokeSecurityGroupResult.cc
 	src/model/RevokeSecurityGroupEgressRequest.cc
 	src/model/RevokeSecurityGroupEgressResult.cc
+	src/model/RunCommandRequest.cc
+	src/model/RunCommandResult.cc
 	src/model/RunInstancesRequest.cc
 	src/model/RunInstancesResult.cc
 	src/model/StartInstanceRequest.cc

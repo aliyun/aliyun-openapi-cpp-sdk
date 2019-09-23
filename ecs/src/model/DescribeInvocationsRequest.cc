@@ -80,6 +80,17 @@ void DescribeInvocationsRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string DescribeInvocationsRequest::getContentEncoding()const
+{
+	return contentEncoding_;
+}
+
+void DescribeInvocationsRequest::setContentEncoding(const std::string& contentEncoding)
+{
+	contentEncoding_ = contentEncoding;
+	setCoreParameter("ContentEncoding", contentEncoding);
+}
+
 long DescribeInvocationsRequest::getPageSize()const
 {
 	return pageSize_;

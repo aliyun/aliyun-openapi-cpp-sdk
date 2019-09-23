@@ -542,6 +542,8 @@
 #include "model/RevokeSecurityGroupResult.h"
 #include "model/RevokeSecurityGroupEgressRequest.h"
 #include "model/RevokeSecurityGroupEgressResult.h"
+#include "model/RunCommandRequest.h"
+#include "model/RunCommandResult.h"
 #include "model/RunInstancesRequest.h"
 #include "model/RunInstancesResult.h"
 #include "model/StartInstanceRequest.h"
@@ -1355,6 +1357,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RevokeSecurityGroupEgressResult> RevokeSecurityGroupEgressOutcome;
 			typedef std::future<RevokeSecurityGroupEgressOutcome> RevokeSecurityGroupEgressOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RevokeSecurityGroupEgressRequest&, const RevokeSecurityGroupEgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokeSecurityGroupEgressAsyncHandler;
+			typedef Outcome<Error, Model::RunCommandResult> RunCommandOutcome;
+			typedef std::future<RunCommandOutcome> RunCommandOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::RunCommandRequest&, const RunCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunCommandAsyncHandler;
 			typedef Outcome<Error, Model::RunInstancesResult> RunInstancesOutcome;
 			typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RunInstancesRequest&, const RunInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunInstancesAsyncHandler;
@@ -2176,6 +2181,9 @@ namespace AlibabaCloud
 			RevokeSecurityGroupEgressOutcome revokeSecurityGroupEgress(const Model::RevokeSecurityGroupEgressRequest &request)const;
 			void revokeSecurityGroupEgressAsync(const Model::RevokeSecurityGroupEgressRequest& request, const RevokeSecurityGroupEgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RevokeSecurityGroupEgressOutcomeCallable revokeSecurityGroupEgressCallable(const Model::RevokeSecurityGroupEgressRequest& request) const;
+			RunCommandOutcome runCommand(const Model::RunCommandRequest &request)const;
+			void runCommandAsync(const Model::RunCommandRequest& request, const RunCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RunCommandOutcomeCallable runCommandCallable(const Model::RunCommandRequest& request) const;
 			RunInstancesOutcome runInstances(const Model::RunInstancesRequest &request)const;
 			void runInstancesAsync(const Model::RunInstancesRequest& request, const RunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RunInstancesOutcomeCallable runInstancesCallable(const Model::RunInstancesRequest& request) const;

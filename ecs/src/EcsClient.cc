@@ -9411,6 +9411,42 @@ EcsClient::RevokeSecurityGroupEgressOutcomeCallable EcsClient::revokeSecurityGro
 	return task->get_future();
 }
 
+EcsClient::RunCommandOutcome EcsClient::runCommand(const RunCommandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RunCommandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RunCommandOutcome(RunCommandResult(outcome.result()));
+	else
+		return RunCommandOutcome(outcome.error());
+}
+
+void EcsClient::runCommandAsync(const RunCommandRequest& request, const RunCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, runCommand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::RunCommandOutcomeCallable EcsClient::runCommandCallable(const RunCommandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RunCommandOutcome()>>(
+			[this, request]()
+			{
+			return this->runCommand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::RunInstancesOutcome EcsClient::runInstances(const RunInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
