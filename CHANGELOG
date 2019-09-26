@@ -1,3 +1,7 @@
+2019-09-26 Version 1.36.143
+- Supported RingConfig for BindAxb,BindAxn,BindAxg,BindAxnExtension.
+- Add QuerySubsId.
+
 2019-09-23 Version 1.36.142
 - Add param, DescribePrice supprot ReservedInstance.
 
