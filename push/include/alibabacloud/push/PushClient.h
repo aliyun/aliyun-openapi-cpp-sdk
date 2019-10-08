@@ -40,6 +40,8 @@
 #include "model/ListSummaryAppsResult.h"
 #include "model/ListTagsRequest.h"
 #include "model/ListTagsResult.h"
+#include "model/MassPushRequest.h"
+#include "model/MassPushResult.h"
 #include "model/PushRequest.h"
 #include "model/PushResult.h"
 #include "model/PushMessageToAndroidRequest.h"
@@ -114,6 +116,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagsResult> ListTagsOutcome;
 			typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::ListTagsRequest&, const ListTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagsAsyncHandler;
+			typedef Outcome<Error, Model::MassPushResult> MassPushOutcome;
+			typedef std::future<MassPushOutcome> MassPushOutcomeCallable;
+			typedef std::function<void(const PushClient*, const Model::MassPushRequest&, const MassPushOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MassPushAsyncHandler;
 			typedef Outcome<Error, Model::PushResult> PushOutcome;
 			typedef std::future<PushOutcome> PushOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::PushRequest&, const PushOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PushAsyncHandler;
@@ -203,6 +208,9 @@ namespace AlibabaCloud
 			ListTagsOutcome listTags(const Model::ListTagsRequest &request)const;
 			void listTagsAsync(const Model::ListTagsRequest& request, const ListTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagsOutcomeCallable listTagsCallable(const Model::ListTagsRequest& request) const;
+			MassPushOutcome massPush(const Model::MassPushRequest &request)const;
+			void massPushAsync(const Model::MassPushRequest& request, const MassPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MassPushOutcomeCallable massPushCallable(const Model::MassPushRequest& request) const;
 			PushOutcome push(const Model::PushRequest &request)const;
 			void pushAsync(const Model::PushRequest& request, const PushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PushOutcomeCallable pushCallable(const Model::PushRequest& request) const;

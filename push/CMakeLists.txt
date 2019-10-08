@@ -39,6 +39,8 @@ set(push_public_header_model
 	include/alibabacloud/push/model/ListSummaryAppsResult.h
 	include/alibabacloud/push/model/ListTagsRequest.h
 	include/alibabacloud/push/model/ListTagsResult.h
+	include/alibabacloud/push/model/MassPushRequest.h
+	include/alibabacloud/push/model/MassPushResult.h
 	include/alibabacloud/push/model/PushRequest.h
 	include/alibabacloud/push/model/PushResult.h
 	include/alibabacloud/push/model/PushMessageToAndroidRequest.h
@@ -98,6 +100,8 @@ set(push_src
 	src/model/ListSummaryAppsResult.cc
 	src/model/ListTagsRequest.cc
 	src/model/ListTagsResult.cc
+	src/model/MassPushRequest.cc
+	src/model/MassPushResult.cc
 	src/model/PushRequest.cc
 	src/model/PushResult.cc
 	src/model/PushMessageToAndroidRequest.cc
