@@ -34,6 +34,8 @@
 #include "model/CreateDocIndexTaskResult.h"
 #include "model/CreateFaceSetRequest.h"
 #include "model/CreateFaceSetResult.h"
+#include "model/CreateGrabFrameTaskRequest.h"
+#include "model/CreateGrabFrameTaskResult.h"
 #include "model/CreateGroupFacesJobRequest.h"
 #include "model/CreateGroupFacesJobResult.h"
 #include "model/CreateMediaComplexTaskRequest.h"
@@ -253,6 +255,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateFaceSetResult> CreateFaceSetOutcome;
 			typedef std::future<CreateFaceSetOutcome> CreateFaceSetOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CreateFaceSetRequest&, const CreateFaceSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFaceSetAsyncHandler;
+			typedef Outcome<Error, Model::CreateGrabFrameTaskResult> CreateGrabFrameTaskOutcome;
+			typedef std::future<CreateGrabFrameTaskOutcome> CreateGrabFrameTaskOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::CreateGrabFrameTaskRequest&, const CreateGrabFrameTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGrabFrameTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateGroupFacesJobResult> CreateGroupFacesJobOutcome;
 			typedef std::future<CreateGroupFacesJobOutcome> CreateGroupFacesJobOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CreateGroupFacesJobRequest&, const CreateGroupFacesJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupFacesJobAsyncHandler;
@@ -564,6 +569,9 @@ namespace AlibabaCloud
 			CreateFaceSetOutcome createFaceSet(const Model::CreateFaceSetRequest &request)const;
 			void createFaceSetAsync(const Model::CreateFaceSetRequest& request, const CreateFaceSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFaceSetOutcomeCallable createFaceSetCallable(const Model::CreateFaceSetRequest& request) const;
+			CreateGrabFrameTaskOutcome createGrabFrameTask(const Model::CreateGrabFrameTaskRequest &request)const;
+			void createGrabFrameTaskAsync(const Model::CreateGrabFrameTaskRequest& request, const CreateGrabFrameTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateGrabFrameTaskOutcomeCallable createGrabFrameTaskCallable(const Model::CreateGrabFrameTaskRequest& request) const;
 			CreateGroupFacesJobOutcome createGroupFacesJob(const Model::CreateGroupFacesJobRequest &request)const;
 			void createGroupFacesJobAsync(const Model::CreateGroupFacesJobRequest& request, const CreateGroupFacesJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateGroupFacesJobOutcomeCallable createGroupFacesJobCallable(const Model::CreateGroupFacesJobRequest& request) const;

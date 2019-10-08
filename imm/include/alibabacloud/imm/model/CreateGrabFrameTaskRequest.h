@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMM_MODEL_CREATEVIDEOCOMPRESSTASKREQUEST_H_
-#define ALIBABACLOUD_IMM_MODEL_CREATEVIDEOCOMPRESSTASKREQUEST_H_
+#ifndef ALIBABACLOUD_IMM_MODEL_CREATEGRABFRAMETASKREQUEST_H_
+#define ALIBABACLOUD_IMM_MODEL_CREATEGRABFRAMETASKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMM_EXPORT CreateVideoCompressTaskRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IMM_EXPORT CreateGrabFrameTaskRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateVideoCompressTaskRequest();
-				~CreateVideoCompressTaskRequest();
+				CreateGrabFrameTaskRequest();
+				~CreateGrabFrameTaskRequest();
 
 				std::string getProject()const;
 				void setProject(const std::string& project);
@@ -63,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMM_MODEL_CREATEVIDEOCOMPRESSTASKREQUEST_H_
+#endif // !ALIBABACLOUD_IMM_MODEL_CREATEGRABFRAMETASKREQUEST_H_

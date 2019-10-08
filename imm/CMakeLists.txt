@@ -33,6 +33,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/CreateDocIndexTaskResult.h
 	include/alibabacloud/imm/model/CreateFaceSetRequest.h
 	include/alibabacloud/imm/model/CreateFaceSetResult.h
+	include/alibabacloud/imm/model/CreateGrabFrameTaskRequest.h
+	include/alibabacloud/imm/model/CreateGrabFrameTaskResult.h
 	include/alibabacloud/imm/model/CreateGroupFacesJobRequest.h
 	include/alibabacloud/imm/model/CreateGroupFacesJobResult.h
 	include/alibabacloud/imm/model/CreateMediaComplexTaskRequest.h
@@ -240,6 +242,8 @@ set(imm_src
 	src/model/CreateDocIndexTaskResult.cc
 	src/model/CreateFaceSetRequest.cc
 	src/model/CreateFaceSetResult.cc
+	src/model/CreateGrabFrameTaskRequest.cc
+	src/model/CreateGrabFrameTaskResult.cc
 	src/model/CreateGroupFacesJobRequest.cc
 	src/model/CreateGroupFacesJobResult.cc
 	src/model/CreateMediaComplexTaskRequest.cc

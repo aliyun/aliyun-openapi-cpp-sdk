@@ -14,89 +14,89 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/imm/model/CreateVideoCompressTaskRequest.h>
+#include <alibabacloud/imm/model/CreateGrabFrameTaskRequest.h>
 
-using AlibabaCloud::Imm::Model::CreateVideoCompressTaskRequest;
+using AlibabaCloud::Imm::Model::CreateGrabFrameTaskRequest;
 
-CreateVideoCompressTaskRequest::CreateVideoCompressTaskRequest() :
-	RpcServiceRequest("imm", "2017-09-06", "CreateVideoCompressTask")
+CreateGrabFrameTaskRequest::CreateGrabFrameTaskRequest() :
+	RpcServiceRequest("imm", "2017-09-06", "CreateGrabFrameTask")
 {}
 
-CreateVideoCompressTaskRequest::~CreateVideoCompressTaskRequest()
+CreateGrabFrameTaskRequest::~CreateGrabFrameTaskRequest()
 {}
 
-std::string CreateVideoCompressTaskRequest::getProject()const
+std::string CreateGrabFrameTaskRequest::getProject()const
 {
 	return project_;
 }
 
-void CreateVideoCompressTaskRequest::setProject(const std::string& project)
+void CreateGrabFrameTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
 }
 
-std::string CreateVideoCompressTaskRequest::getAccessKeyId()const
+std::string CreateGrabFrameTaskRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void CreateVideoCompressTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+void CreateGrabFrameTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string CreateVideoCompressTaskRequest::getNotifyEndpoint()const
+std::string CreateGrabFrameTaskRequest::getNotifyEndpoint()const
 {
 	return notifyEndpoint_;
 }
 
-void CreateVideoCompressTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
+void CreateGrabFrameTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
 	setCoreParameter("NotifyEndpoint", notifyEndpoint);
 }
 
-std::string CreateVideoCompressTaskRequest::getCustomMessage()const
+std::string CreateGrabFrameTaskRequest::getCustomMessage()const
 {
 	return customMessage_;
 }
 
-void CreateVideoCompressTaskRequest::setCustomMessage(const std::string& customMessage)
+void CreateGrabFrameTaskRequest::setCustomMessage(const std::string& customMessage)
 {
 	customMessage_ = customMessage;
 	setCoreParameter("CustomMessage", customMessage);
 }
 
-std::string CreateVideoCompressTaskRequest::getNotifyTopicName()const
+std::string CreateGrabFrameTaskRequest::getNotifyTopicName()const
 {
 	return notifyTopicName_;
 }
 
-void CreateVideoCompressTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
+void CreateGrabFrameTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
 	setCoreParameter("NotifyTopicName", notifyTopicName);
 }
 
-std::string CreateVideoCompressTaskRequest::getTargetList()const
+std::string CreateGrabFrameTaskRequest::getTargetList()const
 {
 	return targetList_;
 }
 
-void CreateVideoCompressTaskRequest::setTargetList(const std::string& targetList)
+void CreateGrabFrameTaskRequest::setTargetList(const std::string& targetList)
 {
 	targetList_ = targetList;
 	setCoreParameter("TargetList", targetList);
 }
 
-std::string CreateVideoCompressTaskRequest::getVideoUri()const
+std::string CreateGrabFrameTaskRequest::getVideoUri()const
 {
 	return videoUri_;
 }
 
-void CreateVideoCompressTaskRequest::setVideoUri(const std::string& videoUri)
+void CreateGrabFrameTaskRequest::setVideoUri(const std::string& videoUri)
 {
 	videoUri_ = videoUri;
 	setCoreParameter("VideoUri", videoUri);
