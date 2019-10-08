@@ -69,3 +69,25 @@ void CreateKeyRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
+std::string CreateKeyRequest::getRotationInterval()const
+{
+	return rotationInterval_;
+}
+
+void CreateKeyRequest::setRotationInterval(const std::string& rotationInterval)
+{
+	rotationInterval_ = rotationInterval;
+	setCoreParameter("RotationInterval", rotationInterval);
+}
+
+bool CreateKeyRequest::getEnableAutomaticRotation()const
+{
+	return enableAutomaticRotation_;
+}
+
+void CreateKeyRequest::setEnableAutomaticRotation(bool enableAutomaticRotation)
+{
+	enableAutomaticRotation_ = enableAutomaticRotation;
+	setCoreParameter("EnableAutomaticRotation", enableAutomaticRotation ? "true" : "false");
+}
+

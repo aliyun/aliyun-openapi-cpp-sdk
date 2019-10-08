@@ -62,6 +62,16 @@ void CreateKeyResult::parse(const std::string &payload)
 		keyMetadata_.materialExpireTime = keyMetadataNode["MaterialExpireTime"].asString();
 	if(!keyMetadataNode["ProtectionLevel"].isNull())
 		keyMetadata_.protectionLevel = keyMetadataNode["ProtectionLevel"].asString();
+	if(!keyMetadataNode["PrimaryKeyVersion"].isNull())
+		keyMetadata_.primaryKeyVersion = keyMetadataNode["PrimaryKeyVersion"].asString();
+	if(!keyMetadataNode["LastRotationDate"].isNull())
+		keyMetadata_.lastRotationDate = keyMetadataNode["LastRotationDate"].asString();
+	if(!keyMetadataNode["AutomaticRotation"].isNull())
+		keyMetadata_.automaticRotation = keyMetadataNode["AutomaticRotation"].asString();
+	if(!keyMetadataNode["RotationInterval"].isNull())
+		keyMetadata_.rotationInterval = keyMetadataNode["RotationInterval"].asString();
+	if(!keyMetadataNode["NextRotationDate"].isNull())
+		keyMetadata_.nextRotationDate = keyMetadataNode["NextRotationDate"].asString();
 
 }
 

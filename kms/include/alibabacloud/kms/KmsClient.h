@@ -36,6 +36,8 @@
 #include "model/DeleteKeyMaterialResult.h"
 #include "model/DescribeKeyRequest.h"
 #include "model/DescribeKeyResult.h"
+#include "model/DescribeKeyVersionRequest.h"
+#include "model/DescribeKeyVersionResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeServiceRequest.h"
@@ -48,6 +50,8 @@
 #include "model/EncryptResult.h"
 #include "model/GenerateDataKeyRequest.h"
 #include "model/GenerateDataKeyResult.h"
+#include "model/GenerateDataKeyWithoutPlaintextRequest.h"
+#include "model/GenerateDataKeyWithoutPlaintextResult.h"
 #include "model/GetParametersForImportRequest.h"
 #include "model/GetParametersForImportResult.h"
 #include "model/ImportKeyMaterialRequest.h"
@@ -56,6 +60,8 @@
 #include "model/ListAliasesResult.h"
 #include "model/ListAliasesByKeyIdRequest.h"
 #include "model/ListAliasesByKeyIdResult.h"
+#include "model/ListKeyVersionsRequest.h"
+#include "model/ListKeyVersionsResult.h"
 #include "model/ListKeysRequest.h"
 #include "model/ListKeysResult.h"
 #include "model/ListResourceTagsRequest.h"
@@ -68,6 +74,10 @@
 #include "model/UntagResourceResult.h"
 #include "model/UpdateAliasRequest.h"
 #include "model/UpdateAliasResult.h"
+#include "model/UpdateKeyDescriptionRequest.h"
+#include "model/UpdateKeyDescriptionResult.h"
+#include "model/UpdateRotationPolicyRequest.h"
+#include "model/UpdateRotationPolicyResult.h"
 
 
 namespace AlibabaCloud
@@ -98,6 +108,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeKeyResult> DescribeKeyOutcome;
 			typedef std::future<DescribeKeyOutcome> DescribeKeyOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DescribeKeyRequest&, const DescribeKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeyAsyncHandler;
+			typedef Outcome<Error, Model::DescribeKeyVersionResult> DescribeKeyVersionOutcome;
+			typedef std::future<DescribeKeyVersionOutcome> DescribeKeyVersionOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::DescribeKeyVersionRequest&, const DescribeKeyVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeyVersionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -116,6 +129,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GenerateDataKeyResult> GenerateDataKeyOutcome;
 			typedef std::future<GenerateDataKeyOutcome> GenerateDataKeyOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::GenerateDataKeyRequest&, const GenerateDataKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDataKeyAsyncHandler;
+			typedef Outcome<Error, Model::GenerateDataKeyWithoutPlaintextResult> GenerateDataKeyWithoutPlaintextOutcome;
+			typedef std::future<GenerateDataKeyWithoutPlaintextOutcome> GenerateDataKeyWithoutPlaintextOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::GenerateDataKeyWithoutPlaintextRequest&, const GenerateDataKeyWithoutPlaintextOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDataKeyWithoutPlaintextAsyncHandler;
 			typedef Outcome<Error, Model::GetParametersForImportResult> GetParametersForImportOutcome;
 			typedef std::future<GetParametersForImportOutcome> GetParametersForImportOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::GetParametersForImportRequest&, const GetParametersForImportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetParametersForImportAsyncHandler;
@@ -128,6 +144,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAliasesByKeyIdResult> ListAliasesByKeyIdOutcome;
 			typedef std::future<ListAliasesByKeyIdOutcome> ListAliasesByKeyIdOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::ListAliasesByKeyIdRequest&, const ListAliasesByKeyIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAliasesByKeyIdAsyncHandler;
+			typedef Outcome<Error, Model::ListKeyVersionsResult> ListKeyVersionsOutcome;
+			typedef std::future<ListKeyVersionsOutcome> ListKeyVersionsOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::ListKeyVersionsRequest&, const ListKeyVersionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListKeyVersionsAsyncHandler;
 			typedef Outcome<Error, Model::ListKeysResult> ListKeysOutcome;
 			typedef std::future<ListKeysOutcome> ListKeysOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::ListKeysRequest&, const ListKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListKeysAsyncHandler;
@@ -146,6 +165,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAliasResult> UpdateAliasOutcome;
 			typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::UpdateAliasRequest&, const UpdateAliasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAliasAsyncHandler;
+			typedef Outcome<Error, Model::UpdateKeyDescriptionResult> UpdateKeyDescriptionOutcome;
+			typedef std::future<UpdateKeyDescriptionOutcome> UpdateKeyDescriptionOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::UpdateKeyDescriptionRequest&, const UpdateKeyDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateKeyDescriptionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateRotationPolicyResult> UpdateRotationPolicyOutcome;
+			typedef std::future<UpdateRotationPolicyOutcome> UpdateRotationPolicyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::UpdateRotationPolicyRequest&, const UpdateRotationPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRotationPolicyAsyncHandler;
 
 			KmsClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			KmsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -172,6 +197,9 @@ namespace AlibabaCloud
 			DescribeKeyOutcome describeKey(const Model::DescribeKeyRequest &request)const;
 			void describeKeyAsync(const Model::DescribeKeyRequest& request, const DescribeKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeKeyOutcomeCallable describeKeyCallable(const Model::DescribeKeyRequest& request) const;
+			DescribeKeyVersionOutcome describeKeyVersion(const Model::DescribeKeyVersionRequest &request)const;
+			void describeKeyVersionAsync(const Model::DescribeKeyVersionRequest& request, const DescribeKeyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeKeyVersionOutcomeCallable describeKeyVersionCallable(const Model::DescribeKeyVersionRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
@@ -190,6 +218,9 @@ namespace AlibabaCloud
 			GenerateDataKeyOutcome generateDataKey(const Model::GenerateDataKeyRequest &request)const;
 			void generateDataKeyAsync(const Model::GenerateDataKeyRequest& request, const GenerateDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateDataKeyOutcomeCallable generateDataKeyCallable(const Model::GenerateDataKeyRequest& request) const;
+			GenerateDataKeyWithoutPlaintextOutcome generateDataKeyWithoutPlaintext(const Model::GenerateDataKeyWithoutPlaintextRequest &request)const;
+			void generateDataKeyWithoutPlaintextAsync(const Model::GenerateDataKeyWithoutPlaintextRequest& request, const GenerateDataKeyWithoutPlaintextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateDataKeyWithoutPlaintextOutcomeCallable generateDataKeyWithoutPlaintextCallable(const Model::GenerateDataKeyWithoutPlaintextRequest& request) const;
 			GetParametersForImportOutcome getParametersForImport(const Model::GetParametersForImportRequest &request)const;
 			void getParametersForImportAsync(const Model::GetParametersForImportRequest& request, const GetParametersForImportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetParametersForImportOutcomeCallable getParametersForImportCallable(const Model::GetParametersForImportRequest& request) const;
@@ -202,6 +233,9 @@ namespace AlibabaCloud
 			ListAliasesByKeyIdOutcome listAliasesByKeyId(const Model::ListAliasesByKeyIdRequest &request)const;
 			void listAliasesByKeyIdAsync(const Model::ListAliasesByKeyIdRequest& request, const ListAliasesByKeyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAliasesByKeyIdOutcomeCallable listAliasesByKeyIdCallable(const Model::ListAliasesByKeyIdRequest& request) const;
+			ListKeyVersionsOutcome listKeyVersions(const Model::ListKeyVersionsRequest &request)const;
+			void listKeyVersionsAsync(const Model::ListKeyVersionsRequest& request, const ListKeyVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListKeyVersionsOutcomeCallable listKeyVersionsCallable(const Model::ListKeyVersionsRequest& request) const;
 			ListKeysOutcome listKeys(const Model::ListKeysRequest &request)const;
 			void listKeysAsync(const Model::ListKeysRequest& request, const ListKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListKeysOutcomeCallable listKeysCallable(const Model::ListKeysRequest& request) const;
@@ -220,6 +254,12 @@ namespace AlibabaCloud
 			UpdateAliasOutcome updateAlias(const Model::UpdateAliasRequest &request)const;
 			void updateAliasAsync(const Model::UpdateAliasRequest& request, const UpdateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAliasOutcomeCallable updateAliasCallable(const Model::UpdateAliasRequest& request) const;
+			UpdateKeyDescriptionOutcome updateKeyDescription(const Model::UpdateKeyDescriptionRequest &request)const;
+			void updateKeyDescriptionAsync(const Model::UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateKeyDescriptionOutcomeCallable updateKeyDescriptionCallable(const Model::UpdateKeyDescriptionRequest& request) const;
+			UpdateRotationPolicyOutcome updateRotationPolicy(const Model::UpdateRotationPolicyRequest &request)const;
+			void updateRotationPolicyAsync(const Model::UpdateRotationPolicyRequest& request, const UpdateRotationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateRotationPolicyOutcomeCallable updateRotationPolicyCallable(const Model::UpdateRotationPolicyRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

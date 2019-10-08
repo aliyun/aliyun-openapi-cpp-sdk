@@ -303,6 +303,42 @@ KmsClient::DescribeKeyOutcomeCallable KmsClient::describeKeyCallable(const Descr
 	return task->get_future();
 }
 
+KmsClient::DescribeKeyVersionOutcome KmsClient::describeKeyVersion(const DescribeKeyVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeKeyVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeKeyVersionOutcome(DescribeKeyVersionResult(outcome.result()));
+	else
+		return DescribeKeyVersionOutcome(outcome.error());
+}
+
+void KmsClient::describeKeyVersionAsync(const DescribeKeyVersionRequest& request, const DescribeKeyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeKeyVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DescribeKeyVersionOutcomeCallable KmsClient::describeKeyVersionCallable(const DescribeKeyVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeKeyVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeKeyVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::DescribeRegionsOutcome KmsClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +555,42 @@ KmsClient::GenerateDataKeyOutcomeCallable KmsClient::generateDataKeyCallable(con
 	return task->get_future();
 }
 
+KmsClient::GenerateDataKeyWithoutPlaintextOutcome KmsClient::generateDataKeyWithoutPlaintext(const GenerateDataKeyWithoutPlaintextRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateDataKeyWithoutPlaintextOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateDataKeyWithoutPlaintextOutcome(GenerateDataKeyWithoutPlaintextResult(outcome.result()));
+	else
+		return GenerateDataKeyWithoutPlaintextOutcome(outcome.error());
+}
+
+void KmsClient::generateDataKeyWithoutPlaintextAsync(const GenerateDataKeyWithoutPlaintextRequest& request, const GenerateDataKeyWithoutPlaintextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateDataKeyWithoutPlaintext(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::GenerateDataKeyWithoutPlaintextOutcomeCallable KmsClient::generateDataKeyWithoutPlaintextCallable(const GenerateDataKeyWithoutPlaintextRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateDataKeyWithoutPlaintextOutcome()>>(
+			[this, request]()
+			{
+			return this->generateDataKeyWithoutPlaintext(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::GetParametersForImportOutcome KmsClient::getParametersForImport(const GetParametersForImportRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +729,42 @@ KmsClient::ListAliasesByKeyIdOutcomeCallable KmsClient::listAliasesByKeyIdCallab
 			[this, request]()
 			{
 			return this->listAliasesByKeyId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ListKeyVersionsOutcome KmsClient::listKeyVersions(const ListKeyVersionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListKeyVersionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListKeyVersionsOutcome(ListKeyVersionsResult(outcome.result()));
+	else
+		return ListKeyVersionsOutcome(outcome.error());
+}
+
+void KmsClient::listKeyVersionsAsync(const ListKeyVersionsRequest& request, const ListKeyVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listKeyVersions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListKeyVersionsOutcomeCallable KmsClient::listKeyVersionsCallable(const ListKeyVersionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListKeyVersionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listKeyVersions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -873,6 +981,78 @@ KmsClient::UpdateAliasOutcomeCallable KmsClient::updateAliasCallable(const Updat
 			[this, request]()
 			{
 			return this->updateAlias(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UpdateKeyDescriptionOutcome KmsClient::updateKeyDescription(const UpdateKeyDescriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateKeyDescriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateKeyDescriptionOutcome(UpdateKeyDescriptionResult(outcome.result()));
+	else
+		return UpdateKeyDescriptionOutcome(outcome.error());
+}
+
+void KmsClient::updateKeyDescriptionAsync(const UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateKeyDescription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UpdateKeyDescriptionOutcomeCallable KmsClient::updateKeyDescriptionCallable(const UpdateKeyDescriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateKeyDescriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->updateKeyDescription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UpdateRotationPolicyOutcome KmsClient::updateRotationPolicy(const UpdateRotationPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateRotationPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateRotationPolicyOutcome(UpdateRotationPolicyResult(outcome.result()));
+	else
+		return UpdateRotationPolicyOutcome(outcome.error());
+}
+
+void KmsClient::updateRotationPolicyAsync(const UpdateRotationPolicyRequest& request, const UpdateRotationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateRotationPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UpdateRotationPolicyOutcomeCallable KmsClient::updateRotationPolicyCallable(const UpdateRotationPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateRotationPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->updateRotationPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

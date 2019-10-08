@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/kms/model/EncryptResult.h>
+#include <alibabacloud/kms/model/GenerateDataKeyWithoutPlaintextResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Kms;
 using namespace AlibabaCloud::Kms::Model;
 
-EncryptResult::EncryptResult() :
+GenerateDataKeyWithoutPlaintextResult::GenerateDataKeyWithoutPlaintextResult() :
 	ServiceResult()
 {}
 
-EncryptResult::EncryptResult(const std::string &payload) :
+GenerateDataKeyWithoutPlaintextResult::GenerateDataKeyWithoutPlaintextResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-EncryptResult::~EncryptResult()
+GenerateDataKeyWithoutPlaintextResult::~GenerateDataKeyWithoutPlaintextResult()
 {}
 
-void EncryptResult::parse(const std::string &payload)
+void GenerateDataKeyWithoutPlaintextResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -48,17 +48,17 @@ void EncryptResult::parse(const std::string &payload)
 
 }
 
-std::string EncryptResult::getCiphertextBlob()const
+std::string GenerateDataKeyWithoutPlaintextResult::getCiphertextBlob()const
 {
 	return ciphertextBlob_;
 }
 
-std::string EncryptResult::getKeyId()const
+std::string GenerateDataKeyWithoutPlaintextResult::getKeyId()const
 {
 	return keyId_;
 }
 
-std::string EncryptResult::getKeyVersionId()const
+std::string GenerateDataKeyWithoutPlaintextResult::getKeyVersionId()const
 {
 	return keyVersionId_;
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_CREATEKEYREQUEST_H_
-#define ALIBABACLOUD_KMS_MODEL_CREATEKEYREQUEST_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_UPDATEROTATIONPOLICYREQUEST_H_
+#define ALIBABACLOUD_KMS_MODEL_UPDATEROTATIONPOLICYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,31 +28,22 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT CreateKeyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_KMS_EXPORT UpdateRotationPolicyRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateKeyRequest();
-				~CreateKeyRequest();
+				UpdateRotationPolicyRequest();
+				~UpdateRotationPolicyRequest();
 
-				std::string getProtectionLevel()const;
-				void setProtectionLevel(const std::string& protectionLevel);
-				std::string getKeyUsage()const;
-				void setKeyUsage(const std::string& keyUsage);
-				std::string getOrigin()const;
-				void setOrigin(const std::string& origin);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
+				std::string getKeyId()const;
+				void setKeyId(const std::string& keyId);
 				std::string getRotationInterval()const;
 				void setRotationInterval(const std::string& rotationInterval);
 				bool getEnableAutomaticRotation()const;
 				void setEnableAutomaticRotation(bool enableAutomaticRotation);
 
             private:
-				std::string protectionLevel_;
-				std::string keyUsage_;
-				std::string origin_;
-				std::string description_;
+				std::string keyId_;
 				std::string rotationInterval_;
 				bool enableAutomaticRotation_;
 
@@ -60,4 +51,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_CREATEKEYREQUEST_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_UPDATEROTATIONPOLICYREQUEST_H_

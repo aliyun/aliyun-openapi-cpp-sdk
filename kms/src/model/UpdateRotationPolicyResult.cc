@@ -14,52 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/kms/model/EncryptResult.h>
+#include <alibabacloud/kms/model/UpdateRotationPolicyResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Kms;
 using namespace AlibabaCloud::Kms::Model;
 
-EncryptResult::EncryptResult() :
+UpdateRotationPolicyResult::UpdateRotationPolicyResult() :
 	ServiceResult()
 {}
 
-EncryptResult::EncryptResult(const std::string &payload) :
+UpdateRotationPolicyResult::UpdateRotationPolicyResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-EncryptResult::~EncryptResult()
+UpdateRotationPolicyResult::~UpdateRotationPolicyResult()
 {}
 
-void EncryptResult::parse(const std::string &payload)
+void UpdateRotationPolicyResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CiphertextBlob"].isNull())
-		ciphertextBlob_ = value["CiphertextBlob"].asString();
-	if(!value["KeyId"].isNull())
-		keyId_ = value["KeyId"].asString();
-	if(!value["KeyVersionId"].isNull())
-		keyVersionId_ = value["KeyVersionId"].asString();
 
-}
-
-std::string EncryptResult::getCiphertextBlob()const
-{
-	return ciphertextBlob_;
-}
-
-std::string EncryptResult::getKeyId()const
-{
-	return keyId_;
-}
-
-std::string EncryptResult::getKeyVersionId()const
-{
-	return keyVersionId_;
 }
 

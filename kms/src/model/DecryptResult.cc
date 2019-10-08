@@ -43,6 +43,8 @@ void DecryptResult::parse(const std::string &payload)
 		plaintext_ = value["Plaintext"].asString();
 	if(!value["KeyId"].isNull())
 		keyId_ = value["KeyId"].asString();
+	if(!value["KeyVersionId"].isNull())
+		keyVersionId_ = value["KeyVersionId"].asString();
 
 }
 
@@ -54,5 +56,10 @@ std::string DecryptResult::getPlaintext()const
 std::string DecryptResult::getKeyId()const
 {
 	return keyId_;
+}
+
+std::string DecryptResult::getKeyVersionId()const
+{
+	return keyVersionId_;
 }
 

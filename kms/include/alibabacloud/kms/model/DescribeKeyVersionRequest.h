@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_ENCRYPTRESULT_H_
-#define ALIBABACLOUD_KMS_MODEL_ENCRYPTRESULT_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_DESCRIBEKEYVERSIONREQUEST_H_
+#define ALIBABACLOUD_KMS_MODEL_DESCRIBEKEYVERSIONREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/kms/KmsExport.h>
 
 namespace AlibabaCloud
@@ -29,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT EncryptResult : public ServiceResult
+			class ALIBABACLOUD_KMS_EXPORT DescribeKeyVersionRequest : public RpcServiceRequest
 			{
+
 			public:
+				DescribeKeyVersionRequest();
+				~DescribeKeyVersionRequest();
 
-
-				EncryptResult();
-				explicit EncryptResult(const std::string &payload);
-				~EncryptResult();
-				std::string getCiphertextBlob()const;
-				std::string getKeyId()const;
 				std::string getKeyVersionId()const;
+				void setKeyVersionId(const std::string& keyVersionId);
+				std::string getKeyId()const;
+				void setKeyId(const std::string& keyId);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string ciphertextBlob_;
-				std::string keyId_;
+            private:
 				std::string keyVersionId_;
+				std::string keyId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_ENCRYPTRESULT_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_DESCRIBEKEYVERSIONREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_ENCRYPTRESULT_H_
-#define ALIBABACLOUD_KMS_MODEL_ENCRYPTRESULT_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_DESCRIBEKEYVERSIONRESULT_H_
+#define ALIBABACLOUD_KMS_MODEL_DESCRIBEKEYVERSIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT EncryptResult : public ServiceResult
+			class ALIBABACLOUD_KMS_EXPORT DescribeKeyVersionResult : public ServiceResult
 			{
 			public:
+				struct KeyVersion
+				{
+					std::string creationDate;
+					std::string keyId;
+					std::string keyVersionId;
+				};
 
 
-				EncryptResult();
-				explicit EncryptResult(const std::string &payload);
-				~EncryptResult();
-				std::string getCiphertextBlob()const;
-				std::string getKeyId()const;
-				std::string getKeyVersionId()const;
+				DescribeKeyVersionResult();
+				explicit DescribeKeyVersionResult(const std::string &payload);
+				~DescribeKeyVersionResult();
+				KeyVersion getKeyVersion()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string ciphertextBlob_;
-				std::string keyId_;
-				std::string keyVersionId_;
+				KeyVersion keyVersion_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_ENCRYPTRESULT_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_DESCRIBEKEYVERSIONRESULT_H_

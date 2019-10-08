@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_ENCRYPTRESULT_H_
-#define ALIBABACLOUD_KMS_MODEL_ENCRYPTRESULT_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_GENERATEDATAKEYWITHOUTPLAINTEXTRESULT_H_
+#define ALIBABACLOUD_KMS_MODEL_GENERATEDATAKEYWITHOUTPLAINTEXTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT EncryptResult : public ServiceResult
+			class ALIBABACLOUD_KMS_EXPORT GenerateDataKeyWithoutPlaintextResult : public ServiceResult
 			{
 			public:
 
 
-				EncryptResult();
-				explicit EncryptResult(const std::string &payload);
-				~EncryptResult();
+				GenerateDataKeyWithoutPlaintextResult();
+				explicit GenerateDataKeyWithoutPlaintextResult(const std::string &payload);
+				~GenerateDataKeyWithoutPlaintextResult();
 				std::string getCiphertextBlob()const;
 				std::string getKeyId()const;
 				std::string getKeyVersionId()const;
@@ -52,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_ENCRYPTRESULT_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_GENERATEDATAKEYWITHOUTPLAINTEXTRESULT_H_

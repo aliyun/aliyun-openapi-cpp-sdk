@@ -45,6 +45,8 @@ void GenerateDataKeyResult::parse(const std::string &payload)
 		keyId_ = value["KeyId"].asString();
 	if(!value["Plaintext"].isNull())
 		plaintext_ = value["Plaintext"].asString();
+	if(!value["KeyVersionId"].isNull())
+		keyVersionId_ = value["KeyVersionId"].asString();
 
 }
 
@@ -61,5 +63,10 @@ std::string GenerateDataKeyResult::getPlaintext()const
 std::string GenerateDataKeyResult::getKeyId()const
 {
 	return keyId_;
+}
+
+std::string GenerateDataKeyResult::getKeyVersionId()const
+{
+	return keyVersionId_;
 }
 

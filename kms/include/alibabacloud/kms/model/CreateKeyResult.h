@@ -38,13 +38,18 @@ namespace AlibabaCloud
 					std::string creationDate;
 					std::string protectionLevel;
 					std::string description;
-					std::string materialExpireTime;
+					std::string lastRotationDate;
+					std::string rotationInterval;
 					std::string keyUsage;
 					std::string keyId;
+					std::string primaryKeyVersion;
 					std::string creator;
+					std::string deleteDate;
+					std::string automaticRotation;
+					std::string nextRotationDate;
+					std::string materialExpireTime;
 					std::string arn;
 					std::string keyState;
-					std::string deleteDate;
 				};
 
 

@@ -35,6 +35,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/DeleteKeyMaterialResult.h
 	include/alibabacloud/kms/model/DescribeKeyRequest.h
 	include/alibabacloud/kms/model/DescribeKeyResult.h
+	include/alibabacloud/kms/model/DescribeKeyVersionRequest.h
+	include/alibabacloud/kms/model/DescribeKeyVersionResult.h
 	include/alibabacloud/kms/model/DescribeRegionsRequest.h
 	include/alibabacloud/kms/model/DescribeRegionsResult.h
 	include/alibabacloud/kms/model/DescribeServiceRequest.h
@@ -47,6 +49,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/EncryptResult.h
 	include/alibabacloud/kms/model/GenerateDataKeyRequest.h
 	include/alibabacloud/kms/model/GenerateDataKeyResult.h
+	include/alibabacloud/kms/model/GenerateDataKeyWithoutPlaintextRequest.h
+	include/alibabacloud/kms/model/GenerateDataKeyWithoutPlaintextResult.h
 	include/alibabacloud/kms/model/GetParametersForImportRequest.h
 	include/alibabacloud/kms/model/GetParametersForImportResult.h
 	include/alibabacloud/kms/model/ImportKeyMaterialRequest.h
@@ -55,6 +59,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/ListAliasesResult.h
 	include/alibabacloud/kms/model/ListAliasesByKeyIdRequest.h
 	include/alibabacloud/kms/model/ListAliasesByKeyIdResult.h
+	include/alibabacloud/kms/model/ListKeyVersionsRequest.h
+	include/alibabacloud/kms/model/ListKeyVersionsResult.h
 	include/alibabacloud/kms/model/ListKeysRequest.h
 	include/alibabacloud/kms/model/ListKeysResult.h
 	include/alibabacloud/kms/model/ListResourceTagsRequest.h
@@ -66,7 +72,11 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/UntagResourceRequest.h
 	include/alibabacloud/kms/model/UntagResourceResult.h
 	include/alibabacloud/kms/model/UpdateAliasRequest.h
-	include/alibabacloud/kms/model/UpdateAliasResult.h )
+	include/alibabacloud/kms/model/UpdateAliasResult.h
+	include/alibabacloud/kms/model/UpdateKeyDescriptionRequest.h
+	include/alibabacloud/kms/model/UpdateKeyDescriptionResult.h
+	include/alibabacloud/kms/model/UpdateRotationPolicyRequest.h
+	include/alibabacloud/kms/model/UpdateRotationPolicyResult.h )
 
 set(kms_src 
 	src/KmsClient.cc
@@ -84,6 +94,8 @@ set(kms_src
 	src/model/DeleteKeyMaterialResult.cc
 	src/model/DescribeKeyRequest.cc
 	src/model/DescribeKeyResult.cc
+	src/model/DescribeKeyVersionRequest.cc
+	src/model/DescribeKeyVersionResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeServiceRequest.cc
@@ -96,6 +108,8 @@ set(kms_src
 	src/model/EncryptResult.cc
 	src/model/GenerateDataKeyRequest.cc
 	src/model/GenerateDataKeyResult.cc
+	src/model/GenerateDataKeyWithoutPlaintextRequest.cc
+	src/model/GenerateDataKeyWithoutPlaintextResult.cc
 	src/model/GetParametersForImportRequest.cc
 	src/model/GetParametersForImportResult.cc
 	src/model/ImportKeyMaterialRequest.cc
@@ -104,6 +118,8 @@ set(kms_src
 	src/model/ListAliasesResult.cc
 	src/model/ListAliasesByKeyIdRequest.cc
 	src/model/ListAliasesByKeyIdResult.cc
+	src/model/ListKeyVersionsRequest.cc
+	src/model/ListKeyVersionsResult.cc
 	src/model/ListKeysRequest.cc
 	src/model/ListKeysResult.cc
 	src/model/ListResourceTagsRequest.cc
@@ -115,7 +131,11 @@ set(kms_src
 	src/model/UntagResourceRequest.cc
 	src/model/UntagResourceResult.cc
 	src/model/UpdateAliasRequest.cc
-	src/model/UpdateAliasResult.cc )
+	src/model/UpdateAliasResult.cc
+	src/model/UpdateKeyDescriptionRequest.cc
+	src/model/UpdateKeyDescriptionResult.cc
+	src/model/UpdateRotationPolicyRequest.cc
+	src/model/UpdateRotationPolicyResult.cc )
 
 add_library(kms ${LIB_TYPE}
 	${kms_public_header}

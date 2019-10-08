@@ -39,12 +39,14 @@ namespace AlibabaCloud
 				~DecryptResult();
 				std::string getPlaintext()const;
 				std::string getKeyId()const;
+				std::string getKeyVersionId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string plaintext_;
 				std::string keyId_;
+				std::string keyVersionId_;
 
 			};
 		}

@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getCiphertextBlob()const;
 				std::string getPlaintext()const;
 				std::string getKeyId()const;
+				std::string getKeyVersionId()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -47,6 +48,7 @@ namespace AlibabaCloud
 				std::string ciphertextBlob_;
 				std::string plaintext_;
 				std::string keyId_;
+				std::string keyVersionId_;
 
 			};
 		}
