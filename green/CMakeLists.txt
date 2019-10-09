@@ -279,6 +279,8 @@ set(green_public_header_model
 	include/alibabacloud/green/model/VideoAsyncScanResult.h
 	include/alibabacloud/green/model/VideoAsyncScanResultsRequest.h
 	include/alibabacloud/green/model/VideoAsyncScanResultsResult.h
+	include/alibabacloud/green/model/VideoCancelScanRequest.h
+	include/alibabacloud/green/model/VideoCancelScanResult.h
 	include/alibabacloud/green/model/VideoFeedbackRequest.h
 	include/alibabacloud/green/model/VideoFeedbackResult.h
 	include/alibabacloud/green/model/VideoSyncScanRequest.h
@@ -560,6 +562,8 @@ set(green_src
 	src/model/VideoAsyncScanResult.cc
 	src/model/VideoAsyncScanResultsRequest.cc
 	src/model/VideoAsyncScanResultsResult.cc
+	src/model/VideoCancelScanRequest.cc
+	src/model/VideoCancelScanResult.cc
 	src/model/VideoFeedbackRequest.cc
 	src/model/VideoFeedbackResult.cc
 	src/model/VideoSyncScanRequest.cc

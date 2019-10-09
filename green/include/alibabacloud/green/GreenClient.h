@@ -280,6 +280,8 @@
 #include "model/VideoAsyncScanResult.h"
 #include "model/VideoAsyncScanResultsRequest.h"
 #include "model/VideoAsyncScanResultsResult.h"
+#include "model/VideoCancelScanRequest.h"
+#include "model/VideoCancelScanResult.h"
 #include "model/VideoFeedbackRequest.h"
 #include "model/VideoFeedbackResult.h"
 #include "model/VideoSyncScanRequest.h"
@@ -696,6 +698,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::VideoAsyncScanResultsResult> VideoAsyncScanResultsOutcome;
 			typedef std::future<VideoAsyncScanResultsOutcome> VideoAsyncScanResultsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::VideoAsyncScanResultsRequest&, const VideoAsyncScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoAsyncScanResultsAsyncHandler;
+			typedef Outcome<Error, Model::VideoCancelScanResult> VideoCancelScanOutcome;
+			typedef std::future<VideoCancelScanOutcome> VideoCancelScanOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::VideoCancelScanRequest&, const VideoCancelScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoCancelScanAsyncHandler;
 			typedef Outcome<Error, Model::VideoFeedbackResult> VideoFeedbackOutcome;
 			typedef std::future<VideoFeedbackOutcome> VideoFeedbackOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::VideoFeedbackRequest&, const VideoFeedbackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoFeedbackAsyncHandler;
@@ -1118,6 +1123,9 @@ namespace AlibabaCloud
 			VideoAsyncScanResultsOutcome videoAsyncScanResults(const Model::VideoAsyncScanResultsRequest &request)const;
 			void videoAsyncScanResultsAsync(const Model::VideoAsyncScanResultsRequest& request, const VideoAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VideoAsyncScanResultsOutcomeCallable videoAsyncScanResultsCallable(const Model::VideoAsyncScanResultsRequest& request) const;
+			VideoCancelScanOutcome videoCancelScan(const Model::VideoCancelScanRequest &request)const;
+			void videoCancelScanAsync(const Model::VideoCancelScanRequest& request, const VideoCancelScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VideoCancelScanOutcomeCallable videoCancelScanCallable(const Model::VideoCancelScanRequest& request) const;
 			VideoFeedbackOutcome videoFeedback(const Model::VideoFeedbackRequest &request)const;
 			void videoFeedbackAsync(const Model::VideoFeedbackRequest& request, const VideoFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VideoFeedbackOutcomeCallable videoFeedbackCallable(const Model::VideoFeedbackRequest& request) const;

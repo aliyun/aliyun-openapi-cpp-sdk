@@ -4695,6 +4695,42 @@ GreenClient::VideoAsyncScanResultsOutcomeCallable GreenClient::videoAsyncScanRes
 	return task->get_future();
 }
 
+GreenClient::VideoCancelScanOutcome GreenClient::videoCancelScan(const VideoCancelScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VideoCancelScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VideoCancelScanOutcome(VideoCancelScanResult(outcome.result()));
+	else
+		return VideoCancelScanOutcome(outcome.error());
+}
+
+void GreenClient::videoCancelScanAsync(const VideoCancelScanRequest& request, const VideoCancelScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, videoCancelScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VideoCancelScanOutcomeCallable GreenClient::videoCancelScanCallable(const VideoCancelScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VideoCancelScanOutcome()>>(
+			[this, request]()
+			{
+			return this->videoCancelScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::VideoFeedbackOutcome GreenClient::videoFeedback(const VideoFeedbackRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

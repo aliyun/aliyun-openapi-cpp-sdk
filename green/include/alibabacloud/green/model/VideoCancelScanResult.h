@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_VOICEIDENTITYSTARTREGISTERREQUEST_H_
-#define ALIBABACLOUD_GREEN_MODEL_VOICEIDENTITYSTARTREGISTERREQUEST_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_VIDEOCANCELSCANRESULT_H_
+#define ALIBABACLOUD_GREEN_MODEL_VIDEOCANCELSCANRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RoaServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/green/GreenExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT VoiceIdentityStartRegisterRequest : public RoaServiceRequest
+			class ALIBABACLOUD_GREEN_EXPORT VideoCancelScanResult : public ServiceResult
 			{
-
 			public:
-				VoiceIdentityStartRegisterRequest();
-				~VoiceIdentityStartRegisterRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getClientInfo()const;
-				void setClientInfo(const std::string& clientInfo);
 
-            private:
-				std::string regionId_;
-				std::string clientInfo_;
+				VideoCancelScanResult();
+				explicit VideoCancelScanResult(const std::string &payload);
+				~VideoCancelScanResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_VOICEIDENTITYSTARTREGISTERREQUEST_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_VIDEOCANCELSCANRESULT_H_

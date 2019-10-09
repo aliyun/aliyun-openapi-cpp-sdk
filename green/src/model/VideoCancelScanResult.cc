@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/green/model/FileAsyncScanResultsResult.h>
+#include <alibabacloud/green/model/VideoCancelScanResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Green;
 using namespace AlibabaCloud::Green::Model;
 
-FileAsyncScanResultsResult::FileAsyncScanResultsResult() :
+VideoCancelScanResult::VideoCancelScanResult() :
 	ServiceResult()
 {}
 
-FileAsyncScanResultsResult::FileAsyncScanResultsResult(const std::string &payload) :
+VideoCancelScanResult::VideoCancelScanResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-FileAsyncScanResultsResult::~FileAsyncScanResultsResult()
+VideoCancelScanResult::~VideoCancelScanResult()
 {}
 
-void FileAsyncScanResultsResult::parse(const std::string &payload)
+void VideoCancelScanResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

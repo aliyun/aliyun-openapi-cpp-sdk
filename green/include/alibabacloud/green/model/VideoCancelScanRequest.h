@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_VOICEIDENTITYSTARTREGISTERREQUEST_H_
-#define ALIBABACLOUD_GREEN_MODEL_VOICEIDENTITYSTARTREGISTERREQUEST_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_VIDEOCANCELSCANREQUEST_H_
+#define ALIBABACLOUD_GREEN_MODEL_VIDEOCANCELSCANREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT VoiceIdentityStartRegisterRequest : public RoaServiceRequest
+			class ALIBABACLOUD_GREEN_EXPORT VideoCancelScanRequest : public RoaServiceRequest
 			{
 
 			public:
-				VoiceIdentityStartRegisterRequest();
-				~VoiceIdentityStartRegisterRequest();
+				VideoCancelScanRequest();
+				~VideoCancelScanRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientInfo()const;
 				void setClientInfo(const std::string& clientInfo);
 
             private:
-				std::string regionId_;
 				std::string clientInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_VOICEIDENTITYSTARTREGISTERREQUEST_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_VIDEOCANCELSCANREQUEST_H_
