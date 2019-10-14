@@ -33,6 +33,10 @@ set(push_public_header_model
 	include/alibabacloud/push/model/CheckDeviceResult.h
 	include/alibabacloud/push/model/CheckDevicesRequest.h
 	include/alibabacloud/push/model/CheckDevicesResult.h
+	include/alibabacloud/push/model/CompleteContinuouslyPushRequest.h
+	include/alibabacloud/push/model/CompleteContinuouslyPushResult.h
+	include/alibabacloud/push/model/ContinuouslyPushRequest.h
+	include/alibabacloud/push/model/ContinuouslyPushResult.h
 	include/alibabacloud/push/model/ListPushRecordsRequest.h
 	include/alibabacloud/push/model/ListPushRecordsResult.h
 	include/alibabacloud/push/model/ListSummaryAppsRequest.h
@@ -94,6 +98,10 @@ set(push_src
 	src/model/CheckDeviceResult.cc
 	src/model/CheckDevicesRequest.cc
 	src/model/CheckDevicesResult.cc
+	src/model/CompleteContinuouslyPushRequest.cc
+	src/model/CompleteContinuouslyPushResult.cc
+	src/model/ContinuouslyPushRequest.cc
+	src/model/ContinuouslyPushResult.cc
 	src/model/ListPushRecordsRequest.cc
 	src/model/ListPushRecordsResult.cc
 	src/model/ListSummaryAppsRequest.cc

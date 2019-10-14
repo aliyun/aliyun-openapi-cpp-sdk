@@ -34,6 +34,10 @@
 #include "model/CheckDeviceResult.h"
 #include "model/CheckDevicesRequest.h"
 #include "model/CheckDevicesResult.h"
+#include "model/CompleteContinuouslyPushRequest.h"
+#include "model/CompleteContinuouslyPushResult.h"
+#include "model/ContinuouslyPushRequest.h"
+#include "model/ContinuouslyPushResult.h"
 #include "model/ListPushRecordsRequest.h"
 #include "model/ListPushRecordsResult.h"
 #include "model/ListSummaryAppsRequest.h"
@@ -107,6 +111,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckDevicesResult> CheckDevicesOutcome;
 			typedef std::future<CheckDevicesOutcome> CheckDevicesOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::CheckDevicesRequest&, const CheckDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDevicesAsyncHandler;
+			typedef Outcome<Error, Model::CompleteContinuouslyPushResult> CompleteContinuouslyPushOutcome;
+			typedef std::future<CompleteContinuouslyPushOutcome> CompleteContinuouslyPushOutcomeCallable;
+			typedef std::function<void(const PushClient*, const Model::CompleteContinuouslyPushRequest&, const CompleteContinuouslyPushOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompleteContinuouslyPushAsyncHandler;
+			typedef Outcome<Error, Model::ContinuouslyPushResult> ContinuouslyPushOutcome;
+			typedef std::future<ContinuouslyPushOutcome> ContinuouslyPushOutcomeCallable;
+			typedef std::function<void(const PushClient*, const Model::ContinuouslyPushRequest&, const ContinuouslyPushOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ContinuouslyPushAsyncHandler;
 			typedef Outcome<Error, Model::ListPushRecordsResult> ListPushRecordsOutcome;
 			typedef std::future<ListPushRecordsOutcome> ListPushRecordsOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::ListPushRecordsRequest&, const ListPushRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPushRecordsAsyncHandler;
@@ -199,6 +209,12 @@ namespace AlibabaCloud
 			CheckDevicesOutcome checkDevices(const Model::CheckDevicesRequest &request)const;
 			void checkDevicesAsync(const Model::CheckDevicesRequest& request, const CheckDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDevicesOutcomeCallable checkDevicesCallable(const Model::CheckDevicesRequest& request) const;
+			CompleteContinuouslyPushOutcome completeContinuouslyPush(const Model::CompleteContinuouslyPushRequest &request)const;
+			void completeContinuouslyPushAsync(const Model::CompleteContinuouslyPushRequest& request, const CompleteContinuouslyPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CompleteContinuouslyPushOutcomeCallable completeContinuouslyPushCallable(const Model::CompleteContinuouslyPushRequest& request) const;
+			ContinuouslyPushOutcome continuouslyPush(const Model::ContinuouslyPushRequest &request)const;
+			void continuouslyPushAsync(const Model::ContinuouslyPushRequest& request, const ContinuouslyPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ContinuouslyPushOutcomeCallable continuouslyPushCallable(const Model::ContinuouslyPushRequest& request) const;
 			ListPushRecordsOutcome listPushRecords(const Model::ListPushRecordsRequest &request)const;
 			void listPushRecordsAsync(const Model::ListPushRecordsRequest& request, const ListPushRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPushRecordsOutcomeCallable listPushRecordsCallable(const Model::ListPushRecordsRequest& request) const;

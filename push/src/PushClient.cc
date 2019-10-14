@@ -267,6 +267,78 @@ PushClient::CheckDevicesOutcomeCallable PushClient::checkDevicesCallable(const C
 	return task->get_future();
 }
 
+PushClient::CompleteContinuouslyPushOutcome PushClient::completeContinuouslyPush(const CompleteContinuouslyPushRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CompleteContinuouslyPushOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CompleteContinuouslyPushOutcome(CompleteContinuouslyPushResult(outcome.result()));
+	else
+		return CompleteContinuouslyPushOutcome(outcome.error());
+}
+
+void PushClient::completeContinuouslyPushAsync(const CompleteContinuouslyPushRequest& request, const CompleteContinuouslyPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, completeContinuouslyPush(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PushClient::CompleteContinuouslyPushOutcomeCallable PushClient::completeContinuouslyPushCallable(const CompleteContinuouslyPushRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CompleteContinuouslyPushOutcome()>>(
+			[this, request]()
+			{
+			return this->completeContinuouslyPush(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PushClient::ContinuouslyPushOutcome PushClient::continuouslyPush(const ContinuouslyPushRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ContinuouslyPushOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ContinuouslyPushOutcome(ContinuouslyPushResult(outcome.result()));
+	else
+		return ContinuouslyPushOutcome(outcome.error());
+}
+
+void PushClient::continuouslyPushAsync(const ContinuouslyPushRequest& request, const ContinuouslyPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, continuouslyPush(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PushClient::ContinuouslyPushOutcomeCallable PushClient::continuouslyPushCallable(const ContinuouslyPushRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ContinuouslyPushOutcome()>>(
+			[this, request]()
+			{
+			return this->continuouslyPush(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PushClient::ListPushRecordsOutcome PushClient::listPushRecords(const ListPushRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
