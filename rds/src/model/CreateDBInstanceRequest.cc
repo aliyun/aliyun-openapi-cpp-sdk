@@ -80,6 +80,17 @@ void CreateDBInstanceRequest::setResourceGroupId(const std::string& resourceGrou
 	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
+std::string CreateDBInstanceRequest::getTargetDedicatedHostIdForMaster()const
+{
+	return targetDedicatedHostIdForMaster_;
+}
+
+void CreateDBInstanceRequest::setTargetDedicatedHostIdForMaster(const std::string& targetDedicatedHostIdForMaster)
+{
+	targetDedicatedHostIdForMaster_ = targetDedicatedHostIdForMaster;
+	setCoreParameter("TargetDedicatedHostIdForMaster", targetDedicatedHostIdForMaster);
+}
+
 std::string CreateDBInstanceRequest::getDBInstanceDescription()const
 {
 	return dBInstanceDescription_;
@@ -179,6 +190,17 @@ void CreateDBInstanceRequest::setPrivateIpAddress(const std::string& privateIpAd
 	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
+std::string CreateDBInstanceRequest::getTargetDedicatedHostIdForLog()const
+{
+	return targetDedicatedHostIdForLog_;
+}
+
+void CreateDBInstanceRequest::setTargetDedicatedHostIdForLog(const std::string& targetDedicatedHostIdForLog)
+{
+	targetDedicatedHostIdForLog_ = targetDedicatedHostIdForLog;
+	setCoreParameter("TargetDedicatedHostIdForLog", targetDedicatedHostIdForLog);
+}
+
 std::string CreateDBInstanceRequest::getAutoRenew()const
 {
 	return autoRenew_;
@@ -256,6 +278,17 @@ void CreateDBInstanceRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
+std::string CreateDBInstanceRequest::getTargetDedicatedHostIdForSlave()const
+{
+	return targetDedicatedHostIdForSlave_;
+}
+
+void CreateDBInstanceRequest::setTargetDedicatedHostIdForSlave(const std::string& targetDedicatedHostIdForSlave)
+{
+	targetDedicatedHostIdForSlave_ = targetDedicatedHostIdForSlave;
+	setCoreParameter("TargetDedicatedHostIdForSlave", targetDedicatedHostIdForSlave);
+}
+
 std::string CreateDBInstanceRequest::getZoneIdSlave1()const
 {
 	return zoneIdSlave1_;
@@ -320,6 +353,17 @@ void CreateDBInstanceRequest::setDBInstanceStorageType(const std::string& dBInst
 {
 	dBInstanceStorageType_ = dBInstanceStorageType;
 	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
+std::string CreateDBInstanceRequest::getDedicatedHostGroupId()const
+{
+	return dedicatedHostGroupId_;
+}
+
+void CreateDBInstanceRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
+{
+	dedicatedHostGroupId_ = dedicatedHostGroupId;
+	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 
 std::string CreateDBInstanceRequest::getDBInstanceNetType()const

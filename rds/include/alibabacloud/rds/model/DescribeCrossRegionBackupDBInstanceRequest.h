@@ -47,6 +47,10 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
+				int getNotEnabled()const;
+				void setNotEnabled(int notEnabled);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
@@ -59,6 +63,8 @@ namespace AlibabaCloud
 				std::string regionId_;
 				int pageSize_;
 				std::string dBInstanceId_;
+				int notEnabled_;
+				std::string product_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;
 

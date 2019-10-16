@@ -58,6 +58,17 @@ void ModifyBackupPolicyRequest::setLogBackupFrequency(const std::string& logBack
 	setCoreParameter("LogBackupFrequency", logBackupFrequency);
 }
 
+std::string ModifyBackupPolicyRequest::getArchiveBackupKeepCount()const
+{
+	return archiveBackupKeepCount_;
+}
+
+void ModifyBackupPolicyRequest::setArchiveBackupKeepCount(const std::string& archiveBackupKeepCount)
+{
+	archiveBackupKeepCount_ = archiveBackupKeepCount;
+	setCoreParameter("ArchiveBackupKeepCount", archiveBackupKeepCount);
+}
+
 std::string ModifyBackupPolicyRequest::getBackupLog()const
 {
 	return backupLog_;
@@ -201,6 +212,17 @@ void ModifyBackupPolicyRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyBackupPolicyRequest::getArchiveBackupKeepPolicy()const
+{
+	return archiveBackupKeepPolicy_;
+}
+
+void ModifyBackupPolicyRequest::setArchiveBackupKeepPolicy(const std::string& archiveBackupKeepPolicy)
+{
+	archiveBackupKeepPolicy_ = archiveBackupKeepPolicy;
+	setCoreParameter("ArchiveBackupKeepPolicy", archiveBackupKeepPolicy);
+}
+
 std::string ModifyBackupPolicyRequest::getDuplication()const
 {
 	return duplication_;
@@ -243,6 +265,17 @@ void ModifyBackupPolicyRequest::setDuplicationLocation(const std::string& duplic
 {
 	duplicationLocation_ = duplicationLocation;
 	setCoreParameter("DuplicationLocation", duplicationLocation);
+}
+
+std::string ModifyBackupPolicyRequest::getArchiveBackupRetentionPeriod()const
+{
+	return archiveBackupRetentionPeriod_;
+}
+
+void ModifyBackupPolicyRequest::setArchiveBackupRetentionPeriod(const std::string& archiveBackupRetentionPeriod)
+{
+	archiveBackupRetentionPeriod_ = archiveBackupRetentionPeriod;
+	setCoreParameter("ArchiveBackupRetentionPeriod", archiveBackupRetentionPeriod);
 }
 
 std::string ModifyBackupPolicyRequest::getLogBackupRetentionPeriod()const

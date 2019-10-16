@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setEngineVersion(const std::string& engineVersion);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getTargetDedicatedHostIdForMaster()const;
+				void setTargetDedicatedHostIdForMaster(const std::string& targetDedicatedHostIdForMaster);
 				std::string getDBInstanceDescription()const;
 				void setDBInstanceDescription(const std::string& dBInstanceDescription);
 				std::string getBusinessInfo()const;
@@ -63,6 +65,8 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPrivateIpAddress()const;
 				void setPrivateIpAddress(const std::string& privateIpAddress);
+				std::string getTargetDedicatedHostIdForLog()const;
+				void setTargetDedicatedHostIdForLog(const std::string& targetDedicatedHostIdForLog);
 				std::string getAutoRenew()const;
 				void setAutoRenew(const std::string& autoRenew);
 				std::string getRoleARN()const;
@@ -77,6 +81,8 @@ namespace AlibabaCloud
 				void setConnectionMode(const std::string& connectionMode);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getTargetDedicatedHostIdForSlave()const;
+				void setTargetDedicatedHostIdForSlave(const std::string& targetDedicatedHostIdForSlave);
 				std::string getZoneIdSlave1()const;
 				void setZoneIdSlave1(const std::string& zoneIdSlave1);
 				std::string getZoneIdSlave2()const;
@@ -89,6 +95,8 @@ namespace AlibabaCloud
 				void setEngine(const std::string& engine);
 				std::string getDBInstanceStorageType()const;
 				void setDBInstanceStorageType(const std::string& dBInstanceStorageType);
+				std::string getDedicatedHostGroupId()const;
+				void setDedicatedHostGroupId(const std::string& dedicatedHostGroupId);
 				std::string getDBInstanceNetType()const;
 				void setDBInstanceNetType(const std::string& dBInstanceNetType);
 				std::string getResourceOwnerAccount()const;
@@ -110,6 +118,7 @@ namespace AlibabaCloud
 				std::string systemDBCharset_;
 				std::string engineVersion_;
 				std::string resourceGroupId_;
+				std::string targetDedicatedHostIdForMaster_;
 				std::string dBInstanceDescription_;
 				std::string businessInfo_;
 				std::string period_;
@@ -119,6 +128,7 @@ namespace AlibabaCloud
 				std::string securityIPList_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
+				std::string targetDedicatedHostIdForLog_;
 				std::string autoRenew_;
 				std::string roleARN_;
 				std::string tunnelId_;
@@ -126,12 +136,14 @@ namespace AlibabaCloud
 				std::string instanceNetworkType_;
 				std::string connectionMode_;
 				std::string clientToken_;
+				std::string targetDedicatedHostIdForSlave_;
 				std::string zoneIdSlave1_;
 				std::string zoneIdSlave2_;
 				std::string accessKeyId_;
 				std::string regionId_;
 				std::string engine_;
 				std::string dBInstanceStorageType_;
+				std::string dedicatedHostGroupId_;
 				std::string dBInstanceNetType_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

@@ -59,8 +59,8 @@ namespace AlibabaCloud
 				void setCommodityCode(const std::string& commodityCode);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getUsedTime()const;
-				void setUsedTime(const std::string& usedTime);
+				int getUsedTime()const;
+				void setUsedTime(int usedTime);
 				std::string getDBInstanceClass()const;
 				void setDBInstanceClass(const std::string& dBInstanceClass);
 				int getInstanceUsedType()const;
@@ -87,7 +87,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string commodityCode_;
 				long ownerId_;
-				std::string usedTime_;
+				int usedTime_;
 				std::string dBInstanceClass_;
 				int instanceUsedType_;
 				std::string zoneId_;

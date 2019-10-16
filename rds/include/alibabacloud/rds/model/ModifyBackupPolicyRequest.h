@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setLocalLogRetentionHours(const std::string& localLogRetentionHours);
 				std::string getLogBackupFrequency()const;
 				void setLogBackupFrequency(const std::string& logBackupFrequency);
+				std::string getArchiveBackupKeepCount()const;
+				void setArchiveBackupKeepCount(const std::string& archiveBackupKeepCount);
 				std::string getBackupLog()const;
 				void setBackupLog(const std::string& backupLog);
 				std::string getAccessKeyId()const;
@@ -67,6 +69,8 @@ namespace AlibabaCloud
 				void setLocalLogRetentionSpace(const std::string& localLogRetentionSpace);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getArchiveBackupKeepPolicy()const;
+				void setArchiveBackupKeepPolicy(const std::string& archiveBackupKeepPolicy);
 				std::string getDuplication()const;
 				void setDuplication(const std::string& duplication);
 				std::string getPreferredBackupTime()const;
@@ -75,6 +79,8 @@ namespace AlibabaCloud
 				void setBackupRetentionPeriod(const std::string& backupRetentionPeriod);
 				std::string getDuplicationLocation()const;
 				void setDuplicationLocation(const std::string& duplicationLocation);
+				std::string getArchiveBackupRetentionPeriod()const;
+				void setArchiveBackupRetentionPeriod(const std::string& archiveBackupRetentionPeriod);
 				std::string getLogBackupRetentionPeriod()const;
 				void setLogBackupRetentionPeriod(const std::string& logBackupRetentionPeriod);
 
@@ -82,6 +88,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string localLogRetentionHours_;
 				std::string logBackupFrequency_;
+				std::string archiveBackupKeepCount_;
 				std::string backupLog_;
 				std::string accessKeyId_;
 				std::string duplicationContent_;
@@ -95,10 +102,12 @@ namespace AlibabaCloud
 				std::string compressType_;
 				std::string localLogRetentionSpace_;
 				long ownerId_;
+				std::string archiveBackupKeepPolicy_;
 				std::string duplication_;
 				std::string preferredBackupTime_;
 				std::string backupRetentionPeriod_;
 				std::string duplicationLocation_;
+				std::string archiveBackupRetentionPeriod_;
 				std::string logBackupRetentionPeriod_;
 
 			};

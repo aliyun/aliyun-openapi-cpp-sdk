@@ -80,6 +80,28 @@ void DescribeParameterTemplatesRequest::setEngine(const std::string& engine)
 	setCoreParameter("Engine", engine);
 }
 
+std::string DescribeParameterTemplatesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeParameterTemplatesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeParameterTemplatesRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeParameterTemplatesRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
 std::string DescribeParameterTemplatesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

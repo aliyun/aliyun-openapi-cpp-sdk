@@ -91,6 +91,28 @@ void DescribeCrossRegionBackupDBInstanceRequest::setDBInstanceId(const std::stri
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+int DescribeCrossRegionBackupDBInstanceRequest::getNotEnabled()const
+{
+	return notEnabled_;
+}
+
+void DescribeCrossRegionBackupDBInstanceRequest::setNotEnabled(int notEnabled)
+{
+	notEnabled_ = notEnabled;
+	setCoreParameter("NotEnabled", std::to_string(notEnabled));
+}
+
+std::string DescribeCrossRegionBackupDBInstanceRequest::getProduct()const
+{
+	return product_;
+}
+
+void DescribeCrossRegionBackupDBInstanceRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setCoreParameter("Product", product);
+}
+
 std::string DescribeCrossRegionBackupDBInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

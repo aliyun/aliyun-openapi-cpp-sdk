@@ -56,6 +56,7 @@ namespace AlibabaCloud
 					std::string masterZone;
 					std::string latestKernelVersion;
 					std::string dBInstanceType;
+					std::string consoleVersion;
 					std::string instanceNetworkType;
 					std::string dBInstanceClassType;
 					std::string tempUpgradeRecoveryMaxIOPS;
@@ -92,6 +93,7 @@ namespace AlibabaCloud
 					std::string connectionMode;
 					std::string vpcCloudInstanceId;
 					std::string readonlyInstanceSQLDelayedTime;
+					int proxyType;
 					std::string connectionString;
 					std::string expireTime;
 					std::string advancedFeatures;

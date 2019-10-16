@@ -91,6 +91,8 @@ namespace AlibabaCloud
 				void setDBInstanceStatus(const std::string& dBInstanceStatus);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getDedicatedHostGroupId()const;
+				void setDedicatedHostGroupId(const std::string& dedicatedHostGroupId);
 				std::string getTag3value()const;
 				void setTag3value(const std::string& tag3value);
 				std::string getResourceOwnerAccount()const;
@@ -137,6 +139,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::string dBInstanceStatus_;
 				std::string dBInstanceId_;
+				std::string dedicatedHostGroupId_;
 				std::string tag3value_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

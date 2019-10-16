@@ -333,6 +333,17 @@ void DescribeDBInstancesRequest::setDBInstanceId(const std::string& dBInstanceId
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string DescribeDBInstancesRequest::getDedicatedHostGroupId()const
+{
+	return dedicatedHostGroupId_;
+}
+
+void DescribeDBInstancesRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
+{
+	dedicatedHostGroupId_ = dedicatedHostGroupId;
+	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+}
+
 std::string DescribeDBInstancesRequest::getTag3value()const
 {
 	return tag3value_;

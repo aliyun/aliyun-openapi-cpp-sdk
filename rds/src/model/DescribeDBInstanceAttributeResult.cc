@@ -179,6 +179,10 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.masterZone = valueItemsDBInstanceAttribute["MasterZone"].asString();
 		if(!valueItemsDBInstanceAttribute["AutoUpgradeMinorVersion"].isNull())
 			itemsObject.autoUpgradeMinorVersion = valueItemsDBInstanceAttribute["AutoUpgradeMinorVersion"].asString();
+		if(!valueItemsDBInstanceAttribute["ProxyType"].isNull())
+			itemsObject.proxyType = std::stoi(valueItemsDBInstanceAttribute["ProxyType"].asString());
+		if(!valueItemsDBInstanceAttribute["ConsoleVersion"].isNull())
+			itemsObject.consoleVersion = valueItemsDBInstanceAttribute["ConsoleVersion"].asString();
 		auto allSlaveZonesNode = allItemsNode["SlaveZones"]["SlaveZone"];
 		for (auto allItemsNodeSlaveZonesSlaveZone : allSlaveZonesNode)
 		{

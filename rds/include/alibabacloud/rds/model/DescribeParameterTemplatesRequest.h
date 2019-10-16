@@ -45,6 +45,10 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getEngine()const;
 				void setEngine(const std::string& engine);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -60,6 +64,8 @@ namespace AlibabaCloud
 				std::string engineVersion_;
 				std::string accessKeyId_;
 				std::string engine_;
+				std::string regionId_;
+				std::string dBInstanceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

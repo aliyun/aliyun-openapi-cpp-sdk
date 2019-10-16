@@ -146,15 +146,15 @@ void DescribeRenewalPriceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeRenewalPriceRequest::getUsedTime()const
+int DescribeRenewalPriceRequest::getUsedTime()const
 {
 	return usedTime_;
 }
 
-void DescribeRenewalPriceRequest::setUsedTime(const std::string& usedTime)
+void DescribeRenewalPriceRequest::setUsedTime(int usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", usedTime);
+	setCoreParameter("UsedTime", std::to_string(usedTime));
 }
 
 std::string DescribeRenewalPriceRequest::getDBInstanceClass()const

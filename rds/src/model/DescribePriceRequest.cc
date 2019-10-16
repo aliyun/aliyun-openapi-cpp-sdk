@@ -157,15 +157,15 @@ void DescribePriceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribePriceRequest::getUsedTime()const
+int DescribePriceRequest::getUsedTime()const
 {
 	return usedTime_;
 }
 
-void DescribePriceRequest::setUsedTime(const std::string& usedTime)
+void DescribePriceRequest::setUsedTime(int usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", usedTime);
+	setCoreParameter("UsedTime", std::to_string(usedTime));
 }
 
 std::string DescribePriceRequest::getDBInstanceClass()const

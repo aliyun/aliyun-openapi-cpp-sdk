@@ -105,6 +105,20 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.resourceGroupId = valueItemsDBInstance["ResourceGroupId"].asString();
 		if(!valueItemsDBInstance["AutoUpgradeMinorVersion"].isNull())
 			itemsObject.autoUpgradeMinorVersion = valueItemsDBInstance["AutoUpgradeMinorVersion"].asString();
+		if(!valueItemsDBInstance["DedicatedHostGroupId"].isNull())
+			itemsObject.dedicatedHostGroupId = valueItemsDBInstance["DedicatedHostGroupId"].asString();
+		if(!valueItemsDBInstance["DedicatedHostIdForMaster"].isNull())
+			itemsObject.dedicatedHostIdForMaster = valueItemsDBInstance["DedicatedHostIdForMaster"].asString();
+		if(!valueItemsDBInstance["DedicatedHostIdForSlave"].isNull())
+			itemsObject.dedicatedHostIdForSlave = valueItemsDBInstance["DedicatedHostIdForSlave"].asString();
+		if(!valueItemsDBInstance["DedicatedHostIdForLog"].isNull())
+			itemsObject.dedicatedHostIdForLog = valueItemsDBInstance["DedicatedHostIdForLog"].asString();
+		if(!valueItemsDBInstance["DedicatedHostNameForMaster"].isNull())
+			itemsObject.dedicatedHostNameForMaster = valueItemsDBInstance["DedicatedHostNameForMaster"].asString();
+		if(!valueItemsDBInstance["DedicatedHostNameForSlave"].isNull())
+			itemsObject.dedicatedHostNameForSlave = valueItemsDBInstance["DedicatedHostNameForSlave"].asString();
+		if(!valueItemsDBInstance["DedicatedHostNameForLog"].isNull())
+			itemsObject.dedicatedHostNameForLog = valueItemsDBInstance["DedicatedHostNameForLog"].asString();
 		auto allReadOnlyDBInstanceIdsNode = allItemsNode["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{
