@@ -29,6 +29,7 @@ class ALIBABACLOUD_CORE_EXPORT RoaServiceRequest : public ServiceRequest {
   using ServiceRequest::setContent;
   using ServiceRequest::parameter;
   using ServiceRequest::setScheme;
+  using ServiceRequest::setResourcePath;
 };
 }  // namespace AlibabaCloud
 #endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_ROASERVICEREQUEST_H_
