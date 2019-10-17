@@ -99,7 +99,7 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
   }
 
   if (msg.parameter("Accept").empty()) {
-    request.setHeader("Accept", "application/json");
+    request.setHeader("Accept", "application/octet-stream");
   } else {
     request.setHeader("Accept", msg.parameter("Accept"));
   }
@@ -109,7 +109,7 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
     ss << msg.contentSize();
     request.setHeader("Content-Length", ss.str());
     if (msg.parameter("Content-Type").empty()) {
-      request.setHeader("Content-Type", "application/octet-stream");
+      request.setHeader("Content-Type", "application/json");
     } else {
       request.setHeader("Content-Type", msg.parameter("Content-Type"));
     }
