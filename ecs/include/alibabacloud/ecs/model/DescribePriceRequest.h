@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
 				std::string getPlatform()const;
 				void setPlatform(const std::string& platform);
+				int getCapacity()const;
+				void setCapacity(int capacity);
 				std::string getSystemDiskPerformanceLevel()const;
 				void setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel);
 				std::string getDataDisk4Category()const;
@@ -122,6 +124,7 @@ namespace AlibabaCloud
 				int internetMaxBandwidthOut_;
 				std::string systemDiskCategory_;
 				std::string platform_;
+				int capacity_;
 				std::string systemDiskPerformanceLevel_;
 				std::string dataDisk4Category_;
 				std::string dataDisk4PerformanceLevel_;

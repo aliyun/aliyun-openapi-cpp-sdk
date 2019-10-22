@@ -212,6 +212,17 @@ void DescribePriceRequest::setPlatform(const std::string& platform)
 	setCoreParameter("Platform", platform);
 }
 
+int DescribePriceRequest::getCapacity()const
+{
+	return capacity_;
+}
+
+void DescribePriceRequest::setCapacity(int capacity)
+{
+	capacity_ = capacity;
+	setCoreParameter("Capacity", std::to_string(capacity));
+}
+
 std::string DescribePriceRequest::getSystemDiskPerformanceLevel()const
 {
 	return systemDiskPerformanceLevel_;

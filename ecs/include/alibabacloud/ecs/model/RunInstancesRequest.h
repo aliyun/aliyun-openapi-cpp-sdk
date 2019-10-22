@@ -55,6 +55,7 @@ namespace AlibabaCloud
 					std::string device;
 					bool deleteWithInstance;
 					std::string performanceLevel;
+					std::string autoSnapshotPolicyId;
 				};
 
 			public:
@@ -89,6 +90,8 @@ namespace AlibabaCloud
 				void setStorageSetPartitionNumber(int storageSetPartitionNumber);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getSystemDiskAutoSnapshotPolicyId()const;
+				void setSystemDiskAutoSnapshotPolicyId(const std::string& systemDiskAutoSnapshotPolicyId);
 				int getAutoRenewPeriod()const;
 				void setAutoRenewPeriod(int autoRenewPeriod);
 				int getPeriod()const;
@@ -209,6 +212,7 @@ namespace AlibabaCloud
 				std::string password_;
 				int storageSetPartitionNumber_;
 				std::vector<Tag> tag_;
+				std::string systemDiskAutoSnapshotPolicyId_;
 				int autoRenewPeriod_;
 				int period_;
 				bool dryRun_;

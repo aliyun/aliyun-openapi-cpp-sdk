@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setDiskName(const std::string& diskName);
 				bool getDeleteAutoSnapshot()const;
 				void setDeleteAutoSnapshot(bool deleteAutoSnapshot);
+				std::vector<std::string> getDiskIds()const;
+				void setDiskIds(const std::vector<std::string>& diskIds);
 				std::string getDiskId()const;
 				void setDiskId(const std::string& diskId);
 				bool getDeleteWithInstance()const;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string diskName_;
 				bool deleteAutoSnapshot_;
+				std::vector<std::string> diskIds_;
 				std::string diskId_;
 				bool deleteWithInstance_;
 				bool enableAutoSnapshot_;

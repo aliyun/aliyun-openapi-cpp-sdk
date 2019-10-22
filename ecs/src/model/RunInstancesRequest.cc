@@ -185,6 +185,17 @@ void RunInstancesRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+std::string RunInstancesRequest::getSystemDiskAutoSnapshotPolicyId()const
+{
+	return systemDiskAutoSnapshotPolicyId_;
+}
+
+void RunInstancesRequest::setSystemDiskAutoSnapshotPolicyId(const std::string& systemDiskAutoSnapshotPolicyId)
+{
+	systemDiskAutoSnapshotPolicyId_ = systemDiskAutoSnapshotPolicyId;
+	setCoreParameter("SystemDiskAutoSnapshotPolicyId", systemDiskAutoSnapshotPolicyId);
+}
+
 int RunInstancesRequest::getAutoRenewPeriod()const
 {
 	return autoRenewPeriod_;
@@ -735,6 +746,7 @@ void RunInstancesRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setCoreParameter(str + ".Device", obj.device);
 		setCoreParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
 		setCoreParameter(str + ".PerformanceLevel", obj.performanceLevel);
+		setCoreParameter(str + ".AutoSnapshotPolicyId", obj.autoSnapshotPolicyId);
 	}
 }
 

@@ -58,6 +58,17 @@ void PurchaseReservedInstancesOfferingRequest::setDescription(const std::string&
 	setCoreParameter("Description", description);
 }
 
+std::string PurchaseReservedInstancesOfferingRequest::getPlatform()const
+{
+	return platform_;
+}
+
+void PurchaseReservedInstancesOfferingRequest::setPlatform(const std::string& platform)
+{
+	platform_ = platform;
+	setCoreParameter("Platform", platform);
+}
+
 std::string PurchaseReservedInstancesOfferingRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

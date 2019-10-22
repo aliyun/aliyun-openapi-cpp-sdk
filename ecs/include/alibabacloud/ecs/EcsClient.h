@@ -86,8 +86,6 @@
 #include "model/CreateDeploymentSetResult.h"
 #include "model/CreateDiskRequest.h"
 #include "model/CreateDiskResult.h"
-#include "model/CreateFleetRequest.h"
-#include "model/CreateFleetResult.h"
 #include "model/CreateForwardEntryRequest.h"
 #include "model/CreateForwardEntryResult.h"
 #include "model/CreateHaVipRequest.h"
@@ -144,8 +142,6 @@
 #include "model/DeleteDeploymentSetResult.h"
 #include "model/DeleteDiskRequest.h"
 #include "model/DeleteDiskResult.h"
-#include "model/DeleteFleetRequest.h"
-#include "model/DeleteFleetResult.h"
 #include "model/DeleteForwardEntryRequest.h"
 #include "model/DeleteForwardEntryResult.h"
 #include "model/DeleteHaVipRequest.h"
@@ -236,12 +232,6 @@
 #include "model/DescribeEipMonitorDataResult.h"
 #include "model/DescribeEniMonitorDataRequest.h"
 #include "model/DescribeEniMonitorDataResult.h"
-#include "model/DescribeFleetHistoryRequest.h"
-#include "model/DescribeFleetHistoryResult.h"
-#include "model/DescribeFleetInstancesRequest.h"
-#include "model/DescribeFleetInstancesResult.h"
-#include "model/DescribeFleetsRequest.h"
-#include "model/DescribeFleetsResult.h"
 #include "model/DescribeForwardTableEntriesRequest.h"
 #include "model/DescribeForwardTableEntriesResult.h"
 #include "model/DescribeHaVipsRequest.h"
@@ -434,8 +424,6 @@
 #include "model/ModifyDiskSpecResult.h"
 #include "model/ModifyEipAddressAttributeRequest.h"
 #include "model/ModifyEipAddressAttributeResult.h"
-#include "model/ModifyFleetRequest.h"
-#include "model/ModifyFleetResult.h"
 #include "model/ModifyForwardEntryRequest.h"
 #include "model/ModifyForwardEntryResult.h"
 #include "model/ModifyHaVipAttributeRequest.h"
@@ -673,9 +661,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDiskResult> CreateDiskOutcome;
 			typedef std::future<CreateDiskOutcome> CreateDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateDiskRequest&, const CreateDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiskAsyncHandler;
-			typedef Outcome<Error, Model::CreateFleetResult> CreateFleetOutcome;
-			typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::CreateFleetRequest&, const CreateFleetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFleetAsyncHandler;
 			typedef Outcome<Error, Model::CreateForwardEntryResult> CreateForwardEntryOutcome;
 			typedef std::future<CreateForwardEntryOutcome> CreateForwardEntryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateForwardEntryRequest&, const CreateForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateForwardEntryAsyncHandler;
@@ -760,9 +745,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDiskResult> DeleteDiskOutcome;
 			typedef std::future<DeleteDiskOutcome> DeleteDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteDiskRequest&, const DeleteDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiskAsyncHandler;
-			typedef Outcome<Error, Model::DeleteFleetResult> DeleteFleetOutcome;
-			typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::DeleteFleetRequest&, const DeleteFleetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFleetAsyncHandler;
 			typedef Outcome<Error, Model::DeleteForwardEntryResult> DeleteForwardEntryOutcome;
 			typedef std::future<DeleteForwardEntryOutcome> DeleteForwardEntryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteForwardEntryRequest&, const DeleteForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteForwardEntryAsyncHandler;
@@ -898,15 +880,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEniMonitorDataResult> DescribeEniMonitorDataOutcome;
 			typedef std::future<DescribeEniMonitorDataOutcome> DescribeEniMonitorDataOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeEniMonitorDataRequest&, const DescribeEniMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEniMonitorDataAsyncHandler;
-			typedef Outcome<Error, Model::DescribeFleetHistoryResult> DescribeFleetHistoryOutcome;
-			typedef std::future<DescribeFleetHistoryOutcome> DescribeFleetHistoryOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::DescribeFleetHistoryRequest&, const DescribeFleetHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetHistoryAsyncHandler;
-			typedef Outcome<Error, Model::DescribeFleetInstancesResult> DescribeFleetInstancesOutcome;
-			typedef std::future<DescribeFleetInstancesOutcome> DescribeFleetInstancesOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::DescribeFleetInstancesRequest&, const DescribeFleetInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetInstancesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeFleetsResult> DescribeFleetsOutcome;
-			typedef std::future<DescribeFleetsOutcome> DescribeFleetsOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::DescribeFleetsRequest&, const DescribeFleetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFleetsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeForwardTableEntriesResult> DescribeForwardTableEntriesOutcome;
 			typedef std::future<DescribeForwardTableEntriesOutcome> DescribeForwardTableEntriesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeForwardTableEntriesRequest&, const DescribeForwardTableEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForwardTableEntriesAsyncHandler;
@@ -1195,9 +1168,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyEipAddressAttributeResult> ModifyEipAddressAttributeOutcome;
 			typedef std::future<ModifyEipAddressAttributeOutcome> ModifyEipAddressAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyEipAddressAttributeRequest&, const ModifyEipAddressAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEipAddressAttributeAsyncHandler;
-			typedef Outcome<Error, Model::ModifyFleetResult> ModifyFleetOutcome;
-			typedef std::future<ModifyFleetOutcome> ModifyFleetOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::ModifyFleetRequest&, const ModifyFleetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFleetAsyncHandler;
 			typedef Outcome<Error, Model::ModifyForwardEntryResult> ModifyForwardEntryOutcome;
 			typedef std::future<ModifyForwardEntryOutcome> ModifyForwardEntryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyForwardEntryRequest&, const ModifyForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyForwardEntryAsyncHandler;
@@ -1497,9 +1467,6 @@ namespace AlibabaCloud
 			CreateDiskOutcome createDisk(const Model::CreateDiskRequest &request)const;
 			void createDiskAsync(const Model::CreateDiskRequest& request, const CreateDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDiskOutcomeCallable createDiskCallable(const Model::CreateDiskRequest& request) const;
-			CreateFleetOutcome createFleet(const Model::CreateFleetRequest &request)const;
-			void createFleetAsync(const Model::CreateFleetRequest& request, const CreateFleetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateFleetOutcomeCallable createFleetCallable(const Model::CreateFleetRequest& request) const;
 			CreateForwardEntryOutcome createForwardEntry(const Model::CreateForwardEntryRequest &request)const;
 			void createForwardEntryAsync(const Model::CreateForwardEntryRequest& request, const CreateForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateForwardEntryOutcomeCallable createForwardEntryCallable(const Model::CreateForwardEntryRequest& request) const;
@@ -1584,9 +1551,6 @@ namespace AlibabaCloud
 			DeleteDiskOutcome deleteDisk(const Model::DeleteDiskRequest &request)const;
 			void deleteDiskAsync(const Model::DeleteDiskRequest& request, const DeleteDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDiskOutcomeCallable deleteDiskCallable(const Model::DeleteDiskRequest& request) const;
-			DeleteFleetOutcome deleteFleet(const Model::DeleteFleetRequest &request)const;
-			void deleteFleetAsync(const Model::DeleteFleetRequest& request, const DeleteFleetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteFleetOutcomeCallable deleteFleetCallable(const Model::DeleteFleetRequest& request) const;
 			DeleteForwardEntryOutcome deleteForwardEntry(const Model::DeleteForwardEntryRequest &request)const;
 			void deleteForwardEntryAsync(const Model::DeleteForwardEntryRequest& request, const DeleteForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteForwardEntryOutcomeCallable deleteForwardEntryCallable(const Model::DeleteForwardEntryRequest& request) const;
@@ -1722,15 +1686,6 @@ namespace AlibabaCloud
 			DescribeEniMonitorDataOutcome describeEniMonitorData(const Model::DescribeEniMonitorDataRequest &request)const;
 			void describeEniMonitorDataAsync(const Model::DescribeEniMonitorDataRequest& request, const DescribeEniMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEniMonitorDataOutcomeCallable describeEniMonitorDataCallable(const Model::DescribeEniMonitorDataRequest& request) const;
-			DescribeFleetHistoryOutcome describeFleetHistory(const Model::DescribeFleetHistoryRequest &request)const;
-			void describeFleetHistoryAsync(const Model::DescribeFleetHistoryRequest& request, const DescribeFleetHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeFleetHistoryOutcomeCallable describeFleetHistoryCallable(const Model::DescribeFleetHistoryRequest& request) const;
-			DescribeFleetInstancesOutcome describeFleetInstances(const Model::DescribeFleetInstancesRequest &request)const;
-			void describeFleetInstancesAsync(const Model::DescribeFleetInstancesRequest& request, const DescribeFleetInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeFleetInstancesOutcomeCallable describeFleetInstancesCallable(const Model::DescribeFleetInstancesRequest& request) const;
-			DescribeFleetsOutcome describeFleets(const Model::DescribeFleetsRequest &request)const;
-			void describeFleetsAsync(const Model::DescribeFleetsRequest& request, const DescribeFleetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeFleetsOutcomeCallable describeFleetsCallable(const Model::DescribeFleetsRequest& request) const;
 			DescribeForwardTableEntriesOutcome describeForwardTableEntries(const Model::DescribeForwardTableEntriesRequest &request)const;
 			void describeForwardTableEntriesAsync(const Model::DescribeForwardTableEntriesRequest& request, const DescribeForwardTableEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeForwardTableEntriesOutcomeCallable describeForwardTableEntriesCallable(const Model::DescribeForwardTableEntriesRequest& request) const;
@@ -2019,9 +1974,6 @@ namespace AlibabaCloud
 			ModifyEipAddressAttributeOutcome modifyEipAddressAttribute(const Model::ModifyEipAddressAttributeRequest &request)const;
 			void modifyEipAddressAttributeAsync(const Model::ModifyEipAddressAttributeRequest& request, const ModifyEipAddressAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyEipAddressAttributeOutcomeCallable modifyEipAddressAttributeCallable(const Model::ModifyEipAddressAttributeRequest& request) const;
-			ModifyFleetOutcome modifyFleet(const Model::ModifyFleetRequest &request)const;
-			void modifyFleetAsync(const Model::ModifyFleetRequest& request, const ModifyFleetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyFleetOutcomeCallable modifyFleetCallable(const Model::ModifyFleetRequest& request) const;
 			ModifyForwardEntryOutcome modifyForwardEntry(const Model::ModifyForwardEntryRequest &request)const;
 			void modifyForwardEntryAsync(const Model::ModifyForwardEntryRequest& request, const ModifyForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyForwardEntryOutcomeCallable modifyForwardEntryCallable(const Model::ModifyForwardEntryRequest& request) const;

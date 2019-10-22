@@ -47,6 +47,17 @@ void DescribeInvocationsRequest::setInvokeStatus(const std::string& invokeStatus
 	setCoreParameter("InvokeStatus", invokeStatus);
 }
 
+bool DescribeInvocationsRequest::getIncludeOutput()const
+{
+	return includeOutput_;
+}
+
+void DescribeInvocationsRequest::setIncludeOutput(bool includeOutput)
+{
+	includeOutput_ = includeOutput;
+	setCoreParameter("IncludeOutput", includeOutput ? "true" : "false");
+}
+
 std::string DescribeInvocationsRequest::getCommandId()const
 {
 	return commandId_;

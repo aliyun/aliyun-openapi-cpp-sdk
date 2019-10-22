@@ -85,8 +85,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateDeploymentSetResult.h
 	include/alibabacloud/ecs/model/CreateDiskRequest.h
 	include/alibabacloud/ecs/model/CreateDiskResult.h
-	include/alibabacloud/ecs/model/CreateFleetRequest.h
-	include/alibabacloud/ecs/model/CreateFleetResult.h
 	include/alibabacloud/ecs/model/CreateForwardEntryRequest.h
 	include/alibabacloud/ecs/model/CreateForwardEntryResult.h
 	include/alibabacloud/ecs/model/CreateHaVipRequest.h
@@ -143,8 +141,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteDeploymentSetResult.h
 	include/alibabacloud/ecs/model/DeleteDiskRequest.h
 	include/alibabacloud/ecs/model/DeleteDiskResult.h
-	include/alibabacloud/ecs/model/DeleteFleetRequest.h
-	include/alibabacloud/ecs/model/DeleteFleetResult.h
 	include/alibabacloud/ecs/model/DeleteForwardEntryRequest.h
 	include/alibabacloud/ecs/model/DeleteForwardEntryResult.h
 	include/alibabacloud/ecs/model/DeleteHaVipRequest.h
@@ -235,12 +231,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeEipMonitorDataResult.h
 	include/alibabacloud/ecs/model/DescribeEniMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeEniMonitorDataResult.h
-	include/alibabacloud/ecs/model/DescribeFleetHistoryRequest.h
-	include/alibabacloud/ecs/model/DescribeFleetHistoryResult.h
-	include/alibabacloud/ecs/model/DescribeFleetInstancesRequest.h
-	include/alibabacloud/ecs/model/DescribeFleetInstancesResult.h
-	include/alibabacloud/ecs/model/DescribeFleetsRequest.h
-	include/alibabacloud/ecs/model/DescribeFleetsResult.h
 	include/alibabacloud/ecs/model/DescribeForwardTableEntriesRequest.h
 	include/alibabacloud/ecs/model/DescribeForwardTableEntriesResult.h
 	include/alibabacloud/ecs/model/DescribeHaVipsRequest.h
@@ -433,8 +423,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyDiskSpecResult.h
 	include/alibabacloud/ecs/model/ModifyEipAddressAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyEipAddressAttributeResult.h
-	include/alibabacloud/ecs/model/ModifyFleetRequest.h
-	include/alibabacloud/ecs/model/ModifyFleetResult.h
 	include/alibabacloud/ecs/model/ModifyForwardEntryRequest.h
 	include/alibabacloud/ecs/model/ModifyForwardEntryResult.h
 	include/alibabacloud/ecs/model/ModifyHaVipAttributeRequest.h
@@ -634,8 +622,6 @@ set(ecs_src
 	src/model/CreateDeploymentSetResult.cc
 	src/model/CreateDiskRequest.cc
 	src/model/CreateDiskResult.cc
-	src/model/CreateFleetRequest.cc
-	src/model/CreateFleetResult.cc
 	src/model/CreateForwardEntryRequest.cc
 	src/model/CreateForwardEntryResult.cc
 	src/model/CreateHaVipRequest.cc
@@ -692,8 +678,6 @@ set(ecs_src
 	src/model/DeleteDeploymentSetResult.cc
 	src/model/DeleteDiskRequest.cc
 	src/model/DeleteDiskResult.cc
-	src/model/DeleteFleetRequest.cc
-	src/model/DeleteFleetResult.cc
 	src/model/DeleteForwardEntryRequest.cc
 	src/model/DeleteForwardEntryResult.cc
 	src/model/DeleteHaVipRequest.cc
@@ -784,12 +768,6 @@ set(ecs_src
 	src/model/DescribeEipMonitorDataResult.cc
 	src/model/DescribeEniMonitorDataRequest.cc
 	src/model/DescribeEniMonitorDataResult.cc
-	src/model/DescribeFleetHistoryRequest.cc
-	src/model/DescribeFleetHistoryResult.cc
-	src/model/DescribeFleetInstancesRequest.cc
-	src/model/DescribeFleetInstancesResult.cc
-	src/model/DescribeFleetsRequest.cc
-	src/model/DescribeFleetsResult.cc
 	src/model/DescribeForwardTableEntriesRequest.cc
 	src/model/DescribeForwardTableEntriesResult.cc
 	src/model/DescribeHaVipsRequest.cc
@@ -982,8 +960,6 @@ set(ecs_src
 	src/model/ModifyDiskSpecResult.cc
 	src/model/ModifyEipAddressAttributeRequest.cc
 	src/model/ModifyEipAddressAttributeResult.cc
-	src/model/ModifyFleetRequest.cc
-	src/model/ModifyFleetResult.cc
 	src/model/ModifyForwardEntryRequest.cc
 	src/model/ModifyForwardEntryResult.cc
 	src/model/ModifyHaVipAttributeRequest.cc

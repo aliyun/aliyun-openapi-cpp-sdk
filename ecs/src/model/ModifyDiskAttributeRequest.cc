@@ -69,6 +69,18 @@ void ModifyDiskAttributeRequest::setDeleteAutoSnapshot(bool deleteAutoSnapshot)
 	setCoreParameter("DeleteAutoSnapshot", deleteAutoSnapshot ? "true" : "false");
 }
 
+std::vector<std::string> ModifyDiskAttributeRequest::getDiskIds()const
+{
+	return diskIds_;
+}
+
+void ModifyDiskAttributeRequest::setDiskIds(const std::vector<std::string>& diskIds)
+{
+	diskIds_ = diskIds;
+	for(int i = 0; i!= diskIds.size(); i++)
+		setCoreParameter("DiskIds."+ std::to_string(i), diskIds.at(i));
+}
+
 std::string ModifyDiskAttributeRequest::getDiskId()const
 {
 	return diskId_;

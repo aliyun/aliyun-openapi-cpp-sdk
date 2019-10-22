@@ -69,6 +69,10 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 				invokeInstancesObject.instanceId = allInvocationsNodeInvokeInstancesInvokeInstance["InstanceId"].asString();
 			if(!allInvocationsNodeInvokeInstancesInvokeInstance["InstanceInvokeStatus"].isNull())
 				invokeInstancesObject.instanceInvokeStatus = allInvocationsNodeInvokeInstancesInvokeInstance["InstanceInvokeStatus"].asString();
+			if(!allInvocationsNodeInvokeInstancesInvokeInstance["Output"].isNull())
+				invokeInstancesObject.output = allInvocationsNodeInvokeInstancesInvokeInstance["Output"].asString();
+			if(!allInvocationsNodeInvokeInstancesInvokeInstance["ExitCode"].isNull())
+				invokeInstancesObject.exitCode = std::stol(allInvocationsNodeInvokeInstancesInvokeInstance["ExitCode"].asString());
 			if(!allInvocationsNodeInvokeInstancesInvokeInstance["CreationTime"].isNull())
 				invokeInstancesObject.creationTime = allInvocationsNodeInvokeInstancesInvokeInstance["CreationTime"].asString();
 			if(!allInvocationsNodeInvokeInstancesInvokeInstance["StartTime"].isNull())

@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInvokeStatus()const;
 				void setInvokeStatus(const std::string& invokeStatus);
+				bool getIncludeOutput()const;
+				void setIncludeOutput(bool includeOutput);
 				std::string getCommandId()const;
 				void setCommandId(const std::string& commandId);
 				long getPageNumber()const;
@@ -69,6 +71,7 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string invokeStatus_;
+				bool includeOutput_;
 				std::string commandId_;
 				long pageNumber_;
 				std::string regionId_;
