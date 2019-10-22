@@ -49,6 +49,8 @@ void FindSimilarFacesResult::parse(const std::string &payload)
 			facesObject.imageUri = valueFacesFacesItem["ImageUri"].asString();
 		if(!valueFacesFacesItem["Similarity"].isNull())
 			facesObject.similarity = std::stof(valueFacesFacesItem["Similarity"].asString());
+		if(!valueFacesFacesItem["ExternalId"].isNull())
+			facesObject.externalId = valueFacesFacesItem["ExternalId"].asString();
 		auto allSimilarFacesNode = allFacesNode["SimilarFaces"]["SimilarFacesItem"];
 		for (auto allFacesNodeSimilarFacesSimilarFacesItem : allSimilarFacesNode)
 		{
@@ -59,6 +61,8 @@ void FindSimilarFacesResult::parse(const std::string &payload)
 				similarFacesObject.imageUri = allFacesNodeSimilarFacesSimilarFacesItem["ImageUri"].asString();
 			if(!allFacesNodeSimilarFacesSimilarFacesItem["Similarity"].isNull())
 				similarFacesObject.similarity = std::stof(allFacesNodeSimilarFacesSimilarFacesItem["Similarity"].asString());
+			if(!allFacesNodeSimilarFacesSimilarFacesItem["ExternalId"].isNull())
+				similarFacesObject.externalId = allFacesNodeSimilarFacesSimilarFacesItem["ExternalId"].asString();
 			auto faceAttributes1Node = value["FaceAttributes"];
 			auto faceBoundaryNode = faceAttributes1Node["FaceBoundary"];
 			if(!faceBoundaryNode["Left"].isNull())

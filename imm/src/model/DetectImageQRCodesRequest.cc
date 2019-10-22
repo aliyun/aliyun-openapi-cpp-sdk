@@ -14,36 +14,47 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/imm/model/CreateFaceSetRequest.h>
+#include <alibabacloud/imm/model/DetectImageQRCodesRequest.h>
 
-using AlibabaCloud::Imm::Model::CreateFaceSetRequest;
+using AlibabaCloud::Imm::Model::DetectImageQRCodesRequest;
 
-CreateFaceSetRequest::CreateFaceSetRequest() :
-	RpcServiceRequest("imm", "2017-09-06", "CreateFaceSet")
+DetectImageQRCodesRequest::DetectImageQRCodesRequest() :
+	RpcServiceRequest("imm", "2017-09-06", "DetectImageQRCodes")
 {}
 
-CreateFaceSetRequest::~CreateFaceSetRequest()
+DetectImageQRCodesRequest::~DetectImageQRCodesRequest()
 {}
 
-std::string CreateFaceSetRequest::getProject()const
+std::string DetectImageQRCodesRequest::getProject()const
 {
 	return project_;
 }
 
-void CreateFaceSetRequest::setProject(const std::string& project)
+void DetectImageQRCodesRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
 }
 
-std::string CreateFaceSetRequest::getAccessKeyId()const
+std::string DetectImageQRCodesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void CreateFaceSetRequest::setAccessKeyId(const std::string& accessKeyId)
+void DetectImageQRCodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DetectImageQRCodesRequest::getImageUri()const
+{
+	return imageUri_;
+}
+
+void DetectImageQRCodesRequest::setImageUri(const std::string& imageUri)
+{
+	imageUri_ = imageUri;
+	setCoreParameter("ImageUri", imageUri);
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMM_MODEL_DELETEFACEJOBRESULT_H_
-#define ALIBABACLOUD_IMM_MODEL_DELETEFACEJOBRESULT_H_
+#ifndef ALIBABACLOUD_IMM_MODEL_DETECTIMAGEQRCODESRESULT_H_
+#define ALIBABACLOUD_IMM_MODEL_DETECTIMAGEQRCODESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMM_EXPORT DeleteFaceJobResult : public ServiceResult
+			class ALIBABACLOUD_IMM_EXPORT DetectImageQRCodesResult : public ServiceResult
 			{
 			public:
+				struct QRCodesItem
+				{
+					struct QRCodeBoundary
+					{
+						int left;
+						int top;
+						int height;
+						int width;
+					};
+					std::string content;
+					QRCodeBoundary qRCodeBoundary;
+				};
 
 
-				DeleteFaceJobResult();
-				explicit DeleteFaceJobResult(const std::string &payload);
-				~DeleteFaceJobResult();
+				DetectImageQRCodesResult();
+				explicit DetectImageQRCodesResult(const std::string &payload);
+				~DetectImageQRCodesResult();
+				std::string getImageUri()const;
+				std::vector<QRCodesItem> getQRCodes()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string imageUri_;
+				std::vector<QRCodesItem> qRCodes_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMM_MODEL_DELETEFACEJOBRESULT_H_
+#endif // !ALIBABACLOUD_IMM_MODEL_DETECTIMAGEQRCODESRESULT_H_

@@ -61,12 +61,14 @@ namespace AlibabaCloud
 						std::string faceId;
 						float similarity;
 						FaceAttributes1 faceAttributes1;
+						std::string externalId;
 						std::string imageUri;
 					};
 					std::string faceId;
 					FaceAttributes faceAttributes;
 					std::vector<FacesItem::SimilarFacesItem> similarFaces;
 					float similarity;
+					std::string externalId;
 					std::string imageUri;
 				};
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMM_MODEL_DELETETAGBYNAMEREQUEST_H_
-#define ALIBABACLOUD_IMM_MODEL_DELETETAGBYNAMEREQUEST_H_
+#ifndef ALIBABACLOUD_IMM_MODEL_DETECTIMAGEQRCODESREQUEST_H_
+#define ALIBABACLOUD_IMM_MODEL_DETECTIMAGEQRCODESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMM_EXPORT DeleteTagByNameRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IMM_EXPORT DetectImageQRCodesRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteTagByNameRequest();
-				~DeleteTagByNameRequest();
+				DetectImageQRCodesRequest();
+				~DetectImageQRCodesRequest();
 
 				std::string getProject()const;
 				void setProject(const std::string& project);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getTagName()const;
-				void setTagName(const std::string& tagName);
-				std::string getSetId()const;
-				void setSetId(const std::string& setId);
-				std::string getSrcUri()const;
-				void setSrcUri(const std::string& srcUri);
+				std::string getImageUri()const;
+				void setImageUri(const std::string& imageUri);
 
             private:
 				std::string project_;
 				std::string accessKeyId_;
-				std::string tagName_;
-				std::string setId_;
-				std::string srcUri_;
+				std::string imageUri_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMM_MODEL_DELETETAGBYNAMEREQUEST_H_
+#endif // !ALIBABACLOUD_IMM_MODEL_DETECTIMAGEQRCODESREQUEST_H_
