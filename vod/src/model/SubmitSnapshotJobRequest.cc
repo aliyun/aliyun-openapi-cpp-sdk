@@ -157,6 +157,17 @@ void SubmitSnapshotJobRequest::setWidth(const std::string& width)
 	setCoreParameter("Width", width);
 }
 
+std::string SubmitSnapshotJobRequest::getFileUrl()const
+{
+	return fileUrl_;
+}
+
+void SubmitSnapshotJobRequest::setFileUrl(const std::string& fileUrl)
+{
+	fileUrl_ = fileUrl;
+	setCoreParameter("FileUrl", fileUrl);
+}
+
 long SubmitSnapshotJobRequest::getInterval()const
 {
 	return interval_;

@@ -14,31 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/vod/model/ModifyVodDomainSchdmByPropertyResult.h>
+#include <alibabacloud/vod/model/SubmitDynamicImageJobResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Vod;
 using namespace AlibabaCloud::Vod::Model;
 
-ModifyVodDomainSchdmByPropertyResult::ModifyVodDomainSchdmByPropertyResult() :
+SubmitDynamicImageJobResult::SubmitDynamicImageJobResult() :
 	ServiceResult()
 {}
 
-ModifyVodDomainSchdmByPropertyResult::ModifyVodDomainSchdmByPropertyResult(const std::string &payload) :
+SubmitDynamicImageJobResult::SubmitDynamicImageJobResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyVodDomainSchdmByPropertyResult::~ModifyVodDomainSchdmByPropertyResult()
+SubmitDynamicImageJobResult::~SubmitDynamicImageJobResult()
 {}
 
-void ModifyVodDomainSchdmByPropertyResult::parse(const std::string &payload)
+void SubmitDynamicImageJobResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto dynamicImageJobNode = value["DynamicImageJob"];
+	if(!dynamicImageJobNode["JobId"].isNull())
+		dynamicImageJob_.jobId = dynamicImageJobNode["JobId"].asString();
 
+}
+
+SubmitDynamicImageJobResult::DynamicImageJob SubmitDynamicImageJobResult::getDynamicImageJob()const
+{
+	return dynamicImageJob_;
 }
 

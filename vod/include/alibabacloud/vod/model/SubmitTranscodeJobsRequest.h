@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setPipelineId(const std::string& pipelineId);
 				std::string getTemplateGroupId()const;
 				void setTemplateGroupId(const std::string& templateGroupId);
+				std::string getFileUrl()const;
+				void setFileUrl(const std::string& fileUrl);
 				std::string getEncryptConfig()const;
 				void setEncryptConfig(const std::string& encryptConfig);
 
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				std::string priority_;
 				std::string pipelineId_;
 				std::string templateGroupId_;
+				std::string fileUrl_;
 				std::string encryptConfig_;
 
 			};

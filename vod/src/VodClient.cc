@@ -3327,42 +3327,6 @@ VodClient::ListWatermarkOutcomeCallable VodClient::listWatermarkCallable(const L
 	return task->get_future();
 }
 
-VodClient::ModifyVodDomainSchdmByPropertyOutcome VodClient::modifyVodDomainSchdmByProperty(const ModifyVodDomainSchdmByPropertyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyVodDomainSchdmByPropertyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyVodDomainSchdmByPropertyOutcome(ModifyVodDomainSchdmByPropertyResult(outcome.result()));
-	else
-		return ModifyVodDomainSchdmByPropertyOutcome(outcome.error());
-}
-
-void VodClient::modifyVodDomainSchdmByPropertyAsync(const ModifyVodDomainSchdmByPropertyRequest& request, const ModifyVodDomainSchdmByPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyVodDomainSchdmByProperty(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-VodClient::ModifyVodDomainSchdmByPropertyOutcomeCallable VodClient::modifyVodDomainSchdmByPropertyCallable(const ModifyVodDomainSchdmByPropertyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyVodDomainSchdmByPropertyOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyVodDomainSchdmByProperty(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 VodClient::MoveAppResourceOutcome VodClient::moveAppResource(const MoveAppResourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3975,6 +3939,42 @@ VodClient::SubmitAIMediaAuditJobOutcomeCallable VodClient::submitAIMediaAuditJob
 	return task->get_future();
 }
 
+VodClient::SubmitDynamicImageJobOutcome VodClient::submitDynamicImageJob(const SubmitDynamicImageJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitDynamicImageJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitDynamicImageJobOutcome(SubmitDynamicImageJobResult(outcome.result()));
+	else
+		return SubmitDynamicImageJobOutcome(outcome.error());
+}
+
+void VodClient::submitDynamicImageJobAsync(const SubmitDynamicImageJobRequest& request, const SubmitDynamicImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitDynamicImageJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SubmitDynamicImageJobOutcomeCallable VodClient::submitDynamicImageJobCallable(const SubmitDynamicImageJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitDynamicImageJobOutcome()>>(
+			[this, request]()
+			{
+			return this->submitDynamicImageJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::SubmitPreprocessJobsOutcome VodClient::submitPreprocessJobs(const SubmitPreprocessJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4077,6 +4077,42 @@ VodClient::SubmitTranscodeJobsOutcomeCallable VodClient::submitTranscodeJobsCall
 			[this, request]()
 			{
 			return this->submitTranscodeJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::SubmitWorkflowJobOutcome VodClient::submitWorkflowJob(const SubmitWorkflowJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitWorkflowJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitWorkflowJobOutcome(SubmitWorkflowJobResult(outcome.result()));
+	else
+		return SubmitWorkflowJobOutcome(outcome.error());
+}
+
+void VodClient::submitWorkflowJobAsync(const SubmitWorkflowJobRequest& request, const SubmitWorkflowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitWorkflowJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SubmitWorkflowJobOutcomeCallable VodClient::submitWorkflowJobCallable(const SubmitWorkflowJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitWorkflowJobOutcome()>>(
+			[this, request]()
+			{
+			return this->submitWorkflowJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

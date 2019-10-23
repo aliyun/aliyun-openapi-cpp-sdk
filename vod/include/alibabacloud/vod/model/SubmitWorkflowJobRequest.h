@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_SUBMITAIMEDIAAUDITJOBREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_SUBMITAIMEDIAAUDITJOBREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_SUBMITWORKFLOWJOBREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_SUBMITWORKFLOWJOBREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT SubmitAIMediaAuditJobRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOD_EXPORT SubmitWorkflowJobRequest : public RpcServiceRequest
 			{
 
 			public:
-				SubmitAIMediaAuditJobRequest();
-				~SubmitAIMediaAuditJobRequest();
+				SubmitWorkflowJobRequest();
+				~SubmitWorkflowJobRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
+				std::string getWorkflowId()const;
+				void setWorkflowId(const std::string& workflowId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getMediaId()const;
 				void setMediaId(const std::string& mediaId);
-				std::string getTemplateId()const;
-				void setTemplateId(const std::string& templateId);
-				std::string getMediaType()const;
-				void setMediaType(const std::string& mediaType);
+				std::string getFileUrl()const;
+				void setFileUrl(const std::string& fileUrl);
 
             private:
 				long resourceOwnerId_;
-				std::string accessKeyId_;
-				std::string userData_;
+				std::string workflowId_;
 				std::string resourceOwnerAccount_;
-				std::string ownerId_;
+				long ownerId_;
 				std::string mediaId_;
-				std::string templateId_;
-				std::string mediaType_;
+				std::string fileUrl_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_SUBMITAIMEDIAAUDITJOBREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_SUBMITWORKFLOWJOBREQUEST_H_

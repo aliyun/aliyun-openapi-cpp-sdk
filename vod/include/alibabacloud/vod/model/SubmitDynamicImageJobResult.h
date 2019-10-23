@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_MODIFYVODDOMAINSCHDMBYPROPERTYREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_MODIFYVODDOMAINSCHDMBYPROPERTYREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_SUBMITDYNAMICIMAGEJOBRESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_SUBMITDYNAMICIMAGEJOBRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/vod/VodExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT ModifyVodDomainSchdmByPropertyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOD_EXPORT SubmitDynamicImageJobResult : public ServiceResult
 			{
-
 			public:
-				ModifyVodDomainSchdmByPropertyRequest();
-				~ModifyVodDomainSchdmByPropertyRequest();
+				struct DynamicImageJob
+				{
+					std::string jobId;
+				};
 
-				std::string getProperty()const;
-				void setProperty(const std::string& property);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
-            private:
-				std::string property_;
-				std::string domainName_;
-				long ownerId_;
+				SubmitDynamicImageJobResult();
+				explicit SubmitDynamicImageJobResult(const std::string &payload);
+				~SubmitDynamicImageJobResult();
+				DynamicImageJob getDynamicImageJob()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				DynamicImageJob dynamicImageJob_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_MODIFYVODDOMAINSCHDMBYPROPERTYREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_SUBMITDYNAMICIMAGEJOBRESULT_H_

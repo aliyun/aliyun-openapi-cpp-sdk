@@ -36,6 +36,28 @@ void SubmitAIMediaAuditJobRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string SubmitAIMediaAuditJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitAIMediaAuditJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SubmitAIMediaAuditJobRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitAIMediaAuditJobRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
+}
+
 std::string SubmitAIMediaAuditJobRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -80,14 +102,14 @@ void SubmitAIMediaAuditJobRequest::setTemplateId(const std::string& templateId)
 	setCoreParameter("TemplateId", templateId);
 }
 
-std::string SubmitAIMediaAuditJobRequest::getAccessKeyId()const
+std::string SubmitAIMediaAuditJobRequest::getMediaType()const
 {
-	return accessKeyId_;
+	return mediaType_;
 }
 
-void SubmitAIMediaAuditJobRequest::setAccessKeyId(const std::string& accessKeyId)
+void SubmitAIMediaAuditJobRequest::setMediaType(const std::string& mediaType)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	mediaType_ = mediaType;
+	setCoreParameter("MediaType", mediaType);
 }
 

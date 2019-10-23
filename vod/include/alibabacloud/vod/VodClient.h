@@ -204,8 +204,6 @@
 #include "model/ListVodTemplateResult.h"
 #include "model/ListWatermarkRequest.h"
 #include "model/ListWatermarkResult.h"
-#include "model/ModifyVodDomainSchdmByPropertyRequest.h"
-#include "model/ModifyVodDomainSchdmByPropertyResult.h"
 #include "model/MoveAppResourceRequest.h"
 #include "model/MoveAppResourceResult.h"
 #include "model/PreloadVodObjectCachesRequest.h"
@@ -240,12 +238,16 @@
 #include "model/SubmitAIJobResult.h"
 #include "model/SubmitAIMediaAuditJobRequest.h"
 #include "model/SubmitAIMediaAuditJobResult.h"
+#include "model/SubmitDynamicImageJobRequest.h"
+#include "model/SubmitDynamicImageJobResult.h"
 #include "model/SubmitPreprocessJobsRequest.h"
 #include "model/SubmitPreprocessJobsResult.h"
 #include "model/SubmitSnapshotJobRequest.h"
 #include "model/SubmitSnapshotJobResult.h"
 #include "model/SubmitTranscodeJobsRequest.h"
 #include "model/SubmitTranscodeJobsResult.h"
+#include "model/SubmitWorkflowJobRequest.h"
+#include "model/SubmitWorkflowJobResult.h"
 #include "model/UpdateAITemplateRequest.h"
 #include "model/UpdateAITemplateResult.h"
 #include "model/UpdateAppInfoRequest.h"
@@ -554,9 +556,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListWatermarkResult> ListWatermarkOutcome;
 			typedef std::future<ListWatermarkOutcome> ListWatermarkOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::ListWatermarkRequest&, const ListWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWatermarkAsyncHandler;
-			typedef Outcome<Error, Model::ModifyVodDomainSchdmByPropertyResult> ModifyVodDomainSchdmByPropertyOutcome;
-			typedef std::future<ModifyVodDomainSchdmByPropertyOutcome> ModifyVodDomainSchdmByPropertyOutcomeCallable;
-			typedef std::function<void(const VodClient*, const Model::ModifyVodDomainSchdmByPropertyRequest&, const ModifyVodDomainSchdmByPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVodDomainSchdmByPropertyAsyncHandler;
 			typedef Outcome<Error, Model::MoveAppResourceResult> MoveAppResourceOutcome;
 			typedef std::future<MoveAppResourceOutcome> MoveAppResourceOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::MoveAppResourceRequest&, const MoveAppResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveAppResourceAsyncHandler;
@@ -608,6 +607,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitAIMediaAuditJobResult> SubmitAIMediaAuditJobOutcome;
 			typedef std::future<SubmitAIMediaAuditJobOutcome> SubmitAIMediaAuditJobOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SubmitAIMediaAuditJobRequest&, const SubmitAIMediaAuditJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAIMediaAuditJobAsyncHandler;
+			typedef Outcome<Error, Model::SubmitDynamicImageJobResult> SubmitDynamicImageJobOutcome;
+			typedef std::future<SubmitDynamicImageJobOutcome> SubmitDynamicImageJobOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::SubmitDynamicImageJobRequest&, const SubmitDynamicImageJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDynamicImageJobAsyncHandler;
 			typedef Outcome<Error, Model::SubmitPreprocessJobsResult> SubmitPreprocessJobsOutcome;
 			typedef std::future<SubmitPreprocessJobsOutcome> SubmitPreprocessJobsOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SubmitPreprocessJobsRequest&, const SubmitPreprocessJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitPreprocessJobsAsyncHandler;
@@ -617,6 +619,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitTranscodeJobsResult> SubmitTranscodeJobsOutcome;
 			typedef std::future<SubmitTranscodeJobsOutcome> SubmitTranscodeJobsOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SubmitTranscodeJobsRequest&, const SubmitTranscodeJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTranscodeJobsAsyncHandler;
+			typedef Outcome<Error, Model::SubmitWorkflowJobResult> SubmitWorkflowJobOutcome;
+			typedef std::future<SubmitWorkflowJobOutcome> SubmitWorkflowJobOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::SubmitWorkflowJobRequest&, const SubmitWorkflowJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitWorkflowJobAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAITemplateResult> UpdateAITemplateOutcome;
 			typedef std::future<UpdateAITemplateOutcome> UpdateAITemplateOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::UpdateAITemplateRequest&, const UpdateAITemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAITemplateAsyncHandler;
@@ -934,9 +939,6 @@ namespace AlibabaCloud
 			ListWatermarkOutcome listWatermark(const Model::ListWatermarkRequest &request)const;
 			void listWatermarkAsync(const Model::ListWatermarkRequest& request, const ListWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListWatermarkOutcomeCallable listWatermarkCallable(const Model::ListWatermarkRequest& request) const;
-			ModifyVodDomainSchdmByPropertyOutcome modifyVodDomainSchdmByProperty(const Model::ModifyVodDomainSchdmByPropertyRequest &request)const;
-			void modifyVodDomainSchdmByPropertyAsync(const Model::ModifyVodDomainSchdmByPropertyRequest& request, const ModifyVodDomainSchdmByPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyVodDomainSchdmByPropertyOutcomeCallable modifyVodDomainSchdmByPropertyCallable(const Model::ModifyVodDomainSchdmByPropertyRequest& request) const;
 			MoveAppResourceOutcome moveAppResource(const Model::MoveAppResourceRequest &request)const;
 			void moveAppResourceAsync(const Model::MoveAppResourceRequest& request, const MoveAppResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MoveAppResourceOutcomeCallable moveAppResourceCallable(const Model::MoveAppResourceRequest& request) const;
@@ -988,6 +990,9 @@ namespace AlibabaCloud
 			SubmitAIMediaAuditJobOutcome submitAIMediaAuditJob(const Model::SubmitAIMediaAuditJobRequest &request)const;
 			void submitAIMediaAuditJobAsync(const Model::SubmitAIMediaAuditJobRequest& request, const SubmitAIMediaAuditJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitAIMediaAuditJobOutcomeCallable submitAIMediaAuditJobCallable(const Model::SubmitAIMediaAuditJobRequest& request) const;
+			SubmitDynamicImageJobOutcome submitDynamicImageJob(const Model::SubmitDynamicImageJobRequest &request)const;
+			void submitDynamicImageJobAsync(const Model::SubmitDynamicImageJobRequest& request, const SubmitDynamicImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitDynamicImageJobOutcomeCallable submitDynamicImageJobCallable(const Model::SubmitDynamicImageJobRequest& request) const;
 			SubmitPreprocessJobsOutcome submitPreprocessJobs(const Model::SubmitPreprocessJobsRequest &request)const;
 			void submitPreprocessJobsAsync(const Model::SubmitPreprocessJobsRequest& request, const SubmitPreprocessJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitPreprocessJobsOutcomeCallable submitPreprocessJobsCallable(const Model::SubmitPreprocessJobsRequest& request) const;
@@ -997,6 +1002,9 @@ namespace AlibabaCloud
 			SubmitTranscodeJobsOutcome submitTranscodeJobs(const Model::SubmitTranscodeJobsRequest &request)const;
 			void submitTranscodeJobsAsync(const Model::SubmitTranscodeJobsRequest& request, const SubmitTranscodeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitTranscodeJobsOutcomeCallable submitTranscodeJobsCallable(const Model::SubmitTranscodeJobsRequest& request) const;
+			SubmitWorkflowJobOutcome submitWorkflowJob(const Model::SubmitWorkflowJobRequest &request)const;
+			void submitWorkflowJobAsync(const Model::SubmitWorkflowJobRequest& request, const SubmitWorkflowJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitWorkflowJobOutcomeCallable submitWorkflowJobCallable(const Model::SubmitWorkflowJobRequest& request) const;
 			UpdateAITemplateOutcome updateAITemplate(const Model::UpdateAITemplateRequest &request)const;
 			void updateAITemplateAsync(const Model::UpdateAITemplateRequest& request, const UpdateAITemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAITemplateOutcomeCallable updateAITemplateCallable(const Model::UpdateAITemplateRequest& request) const;

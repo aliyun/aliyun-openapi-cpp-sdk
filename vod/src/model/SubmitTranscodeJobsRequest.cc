@@ -135,6 +135,17 @@ void SubmitTranscodeJobsRequest::setTemplateGroupId(const std::string& templateG
 	setCoreParameter("TemplateGroupId", templateGroupId);
 }
 
+std::string SubmitTranscodeJobsRequest::getFileUrl()const
+{
+	return fileUrl_;
+}
+
+void SubmitTranscodeJobsRequest::setFileUrl(const std::string& fileUrl)
+{
+	fileUrl_ = fileUrl;
+	setCoreParameter("FileUrl", fileUrl);
+}
+
 std::string SubmitTranscodeJobsRequest::getEncryptConfig()const
 {
 	return encryptConfig_;

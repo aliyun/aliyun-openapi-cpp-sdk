@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::string cateName;
 					std::string uRL;
 					std::string imageType;
+					std::string auditStatus;
 					std::string appId;
 					std::string imageId;
 					std::string creationTime;

@@ -66,6 +66,8 @@ void GetImageInfoResult::parse(const std::string &payload)
 		imageInfo_.appId = imageInfoNode["AppId"].asString();
 	if(!imageInfoNode["RegionId"].isNull())
 		imageInfo_.regionId = imageInfoNode["RegionId"].asString();
+	if(!imageInfoNode["AuditStatus"].isNull())
+		imageInfo_.auditStatus = imageInfoNode["AuditStatus"].asString();
 	auto mezzanineNode = imageInfoNode["Mezzanine"];
 	if(!mezzanineNode["OriginalFileName"].isNull())
 		imageInfo_.mezzanine.originalFileName = mezzanineNode["OriginalFileName"].asString();

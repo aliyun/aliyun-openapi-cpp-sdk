@@ -58,7 +58,7 @@ void GetAttachedMediaInfoResult::parse(const std::string &payload)
 		if(!valueAttachedMediaListAttachedMedia["FileSize"].isNull())
 			attachedMediaListObject.fileSize = std::stol(valueAttachedMediaListAttachedMedia["FileSize"].asString());
 		if(!valueAttachedMediaListAttachedMedia["StorageLocation"].isNull())
-			attachedMediaListObject.storageLocation = std::stol(valueAttachedMediaListAttachedMedia["StorageLocation"].asString());
+			attachedMediaListObject.storageLocation = valueAttachedMediaListAttachedMedia["StorageLocation"].asString();
 		if(!valueAttachedMediaListAttachedMedia["CreationTime"].isNull())
 			attachedMediaListObject.creationTime = valueAttachedMediaListAttachedMedia["CreationTime"].asString();
 		if(!valueAttachedMediaListAttachedMedia["ModificationTime"].isNull())

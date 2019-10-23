@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_SUBMITSNAPSHOTJOBREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_SUBMITSNAPSHOTJOBREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_SUBMITDYNAMICIMAGEJOBREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_SUBMITDYNAMICIMAGEJOBREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,60 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT SubmitSnapshotJobRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOD_EXPORT SubmitDynamicImageJobRequest : public RpcServiceRequest
 			{
 
 			public:
-				SubmitSnapshotJobRequest();
-				~SubmitSnapshotJobRequest();
+				SubmitDynamicImageJobRequest();
+				~SubmitDynamicImageJobRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getDynamicImageTemplateId()const;
+				void setDynamicImageTemplateId(const std::string& dynamicImageTemplateId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
-				long getSpecifiedOffsetTime()const;
-				void setSpecifiedOffsetTime(long specifiedOffsetTime);
-				std::string getSpriteSnapshotConfig()const;
-				void setSpriteSnapshotConfig(const std::string& spriteSnapshotConfig);
-				std::string getSnapshotTemplateId()const;
-				void setSnapshotTemplateId(const std::string& snapshotTemplateId);
-				std::string getHeight()const;
-				void setHeight(const std::string& height);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getCount()const;
-				void setCount(long count);
 				std::string getVideoId()const;
 				void setVideoId(const std::string& videoId);
+				std::string getOverrideParams()const;
+				void setOverrideParams(const std::string& overrideParams);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getWidth()const;
-				void setWidth(const std::string& width);
-				std::string getFileUrl()const;
-				void setFileUrl(const std::string& fileUrl);
-				long getInterval()const;
-				void setInterval(long interval);
 
             private:
 				long resourceOwnerId_;
+				std::string dynamicImageTemplateId_;
 				std::string accessKeyId_;
-				std::string userData_;
-				long specifiedOffsetTime_;
-				std::string spriteSnapshotConfig_;
-				std::string snapshotTemplateId_;
-				std::string height_;
 				std::string resourceOwnerAccount_;
-				long count_;
 				std::string videoId_;
+				std::string overrideParams_;
 				long ownerId_;
-				std::string width_;
-				std::string fileUrl_;
-				long interval_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_SUBMITSNAPSHOTJOBREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_SUBMITDYNAMICIMAGEJOBREQUEST_H_

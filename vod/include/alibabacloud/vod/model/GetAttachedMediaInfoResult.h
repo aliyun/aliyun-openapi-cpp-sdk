@@ -54,7 +54,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string icon;
 					std::string regionId;
-					long storageLocation;
+					std::string storageLocation;
 					std::string tags;
 					long fileSize;
 				};

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_MODIFYVODDOMAINSCHDMBYPROPERTYRESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_MODIFYVODDOMAINSCHDMBYPROPERTYRESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_SUBMITWORKFLOWJOBRESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_SUBMITWORKFLOWJOBRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT ModifyVodDomainSchdmByPropertyResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT SubmitWorkflowJobResult : public ServiceResult
 			{
 			public:
 
 
-				ModifyVodDomainSchdmByPropertyResult();
-				explicit ModifyVodDomainSchdmByPropertyResult(const std::string &payload);
-				~ModifyVodDomainSchdmByPropertyResult();
+				SubmitWorkflowJobResult();
+				explicit SubmitWorkflowJobResult(const std::string &payload);
+				~SubmitWorkflowJobResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_MODIFYVODDOMAINSCHDMBYPROPERTYRESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_SUBMITWORKFLOWJOBRESULT_H_

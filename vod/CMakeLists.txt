@@ -203,8 +203,6 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/ListVodTemplateResult.h
 	include/alibabacloud/vod/model/ListWatermarkRequest.h
 	include/alibabacloud/vod/model/ListWatermarkResult.h
-	include/alibabacloud/vod/model/ModifyVodDomainSchdmByPropertyRequest.h
-	include/alibabacloud/vod/model/ModifyVodDomainSchdmByPropertyResult.h
 	include/alibabacloud/vod/model/MoveAppResourceRequest.h
 	include/alibabacloud/vod/model/MoveAppResourceResult.h
 	include/alibabacloud/vod/model/PreloadVodObjectCachesRequest.h
@@ -239,12 +237,16 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SubmitAIJobResult.h
 	include/alibabacloud/vod/model/SubmitAIMediaAuditJobRequest.h
 	include/alibabacloud/vod/model/SubmitAIMediaAuditJobResult.h
+	include/alibabacloud/vod/model/SubmitDynamicImageJobRequest.h
+	include/alibabacloud/vod/model/SubmitDynamicImageJobResult.h
 	include/alibabacloud/vod/model/SubmitPreprocessJobsRequest.h
 	include/alibabacloud/vod/model/SubmitPreprocessJobsResult.h
 	include/alibabacloud/vod/model/SubmitSnapshotJobRequest.h
 	include/alibabacloud/vod/model/SubmitSnapshotJobResult.h
 	include/alibabacloud/vod/model/SubmitTranscodeJobsRequest.h
 	include/alibabacloud/vod/model/SubmitTranscodeJobsResult.h
+	include/alibabacloud/vod/model/SubmitWorkflowJobRequest.h
+	include/alibabacloud/vod/model/SubmitWorkflowJobResult.h
 	include/alibabacloud/vod/model/UpdateAITemplateRequest.h
 	include/alibabacloud/vod/model/UpdateAITemplateResult.h
 	include/alibabacloud/vod/model/UpdateAppInfoRequest.h
@@ -456,8 +458,6 @@ set(vod_src
 	src/model/ListVodTemplateResult.cc
 	src/model/ListWatermarkRequest.cc
 	src/model/ListWatermarkResult.cc
-	src/model/ModifyVodDomainSchdmByPropertyRequest.cc
-	src/model/ModifyVodDomainSchdmByPropertyResult.cc
 	src/model/MoveAppResourceRequest.cc
 	src/model/MoveAppResourceResult.cc
 	src/model/PreloadVodObjectCachesRequest.cc
@@ -492,12 +492,16 @@ set(vod_src
 	src/model/SubmitAIJobResult.cc
 	src/model/SubmitAIMediaAuditJobRequest.cc
 	src/model/SubmitAIMediaAuditJobResult.cc
+	src/model/SubmitDynamicImageJobRequest.cc
+	src/model/SubmitDynamicImageJobResult.cc
 	src/model/SubmitPreprocessJobsRequest.cc
 	src/model/SubmitPreprocessJobsResult.cc
 	src/model/SubmitSnapshotJobRequest.cc
 	src/model/SubmitSnapshotJobResult.cc
 	src/model/SubmitTranscodeJobsRequest.cc
 	src/model/SubmitTranscodeJobsResult.cc
+	src/model/SubmitWorkflowJobRequest.cc
+	src/model/SubmitWorkflowJobResult.cc
 	src/model/UpdateAITemplateRequest.cc
 	src/model/UpdateAITemplateResult.cc
 	src/model/UpdateAppInfoRequest.cc
