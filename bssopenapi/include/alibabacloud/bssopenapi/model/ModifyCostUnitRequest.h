@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_MODIFYFINANCEUNITREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_MODIFYFINANCEUNITREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_MODIFYCOSTUNITREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_MODIFYCOSTUNITREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,18 +28,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT ModifyFinanceUnitRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT ModifyCostUnitRequest : public RpcServiceRequest
 			{
 				struct UnitEntityList
 				{
-					std::string unitName;
+					std::string newUnitName;
 					long unitId;
 					long ownerUid;
 				};
 
 			public:
-				ModifyFinanceUnitRequest();
-				~ModifyFinanceUnitRequest();
+				ModifyCostUnitRequest();
+				~ModifyCostUnitRequest();
 
 				std::vector<UnitEntityList> getUnitEntityList()const;
 				void setUnitEntityList(const std::vector<UnitEntityList>& unitEntityList);
@@ -51,4 +51,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_MODIFYFINANCEUNITREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_MODIFYCOSTUNITREQUEST_H_

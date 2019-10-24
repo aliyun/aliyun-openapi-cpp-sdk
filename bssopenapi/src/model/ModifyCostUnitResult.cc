@@ -14,38 +14,43 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/bssopenapi/model/DeleteFinanceUnitResult.h>
+#include <alibabacloud/bssopenapi/model/ModifyCostUnitResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::BssOpenApi;
 using namespace AlibabaCloud::BssOpenApi::Model;
 
-DeleteFinanceUnitResult::DeleteFinanceUnitResult() :
+ModifyCostUnitResult::ModifyCostUnitResult() :
 	ServiceResult()
 {}
 
-DeleteFinanceUnitResult::DeleteFinanceUnitResult(const std::string &payload) :
+ModifyCostUnitResult::ModifyCostUnitResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteFinanceUnitResult::~DeleteFinanceUnitResult()
+ModifyCostUnitResult::~ModifyCostUnitResult()
 {}
 
-void DeleteFinanceUnitResult::parse(const std::string &payload)
+void ModifyCostUnitResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["OwnerUid"].isNull())
-		data_.ownerUid = std::stol(dataNode["OwnerUid"].asString());
-	if(!dataNode["UnitId"].isNull())
-		data_.unitId = std::stol(dataNode["UnitId"].asString());
-	if(!dataNode["IsSuccess"].isNull())
-		data_.isSuccess = dataNode["IsSuccess"].asString() == "true";
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
+	{
+		DataItem dataObject;
+		if(!valueDataDataItem["OwnerUid"].isNull())
+			dataObject.ownerUid = std::stol(valueDataDataItem["OwnerUid"].asString());
+		if(!valueDataDataItem["UnitId"].isNull())
+			dataObject.unitId = std::stol(valueDataDataItem["UnitId"].asString());
+		if(!valueDataDataItem["IsSuccess"].isNull())
+			dataObject.isSuccess = valueDataDataItem["IsSuccess"].asString() == "true";
+		data_.push_back(dataObject);
+	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -55,22 +60,22 @@ void DeleteFinanceUnitResult::parse(const std::string &payload)
 
 }
 
-std::string DeleteFinanceUnitResult::getMessage()const
+std::string ModifyCostUnitResult::getMessage()const
 {
 	return message_;
 }
 
-DeleteFinanceUnitResult::Data DeleteFinanceUnitResult::getData()const
+std::vector<ModifyCostUnitResult::DataItem> ModifyCostUnitResult::getData()const
 {
 	return data_;
 }
 
-std::string DeleteFinanceUnitResult::getCode()const
+std::string ModifyCostUnitResult::getCode()const
 {
 	return code_;
 }
 
-bool DeleteFinanceUnitResult::getSuccess()const
+bool ModifyCostUnitResult::getSuccess()const
 {
 	return success_;
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_DELETEFINANCEUNITRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_DELETEFINANCEUNITRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_CREATECOSTUNITRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_CREATECOSTUNITRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,20 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT DeleteFinanceUnitResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT CreateCostUnitResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					bool isSuccess;
-					long unitId;
-					long ownerUid;
+					struct CostUnitDtoListItem
+					{
+						long unitId;
+						long ownerUid;
+						long parentUnitId;
+						std::string unitName;
+					};
+					std::vector<CostUnitDtoListItem> costUnitDtoList;
 				};
 
 
-				DeleteFinanceUnitResult();
-				explicit DeleteFinanceUnitResult(const std::string &payload);
-				~DeleteFinanceUnitResult();
+				CreateCostUnitResult();
+				explicit CreateCostUnitResult(const std::string &payload);
+				~CreateCostUnitResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -60,4 +65,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_DELETEFINANCEUNITRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_CREATECOSTUNITRESULT_H_

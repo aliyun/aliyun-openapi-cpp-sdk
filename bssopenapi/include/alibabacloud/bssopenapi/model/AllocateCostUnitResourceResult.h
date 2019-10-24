@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_MODIFYFINANCEUNITRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_MODIFYFINANCEUNITRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_ALLOCATECOSTUNITRESOURCERESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_ALLOCATECOSTUNITRESOURCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,22 +29,22 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT ModifyFinanceUnitResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT AllocateCostUnitResourceResult : public ServiceResult
 			{
 			public:
-				struct DataItem
+				struct Data
 				{
 					bool isSuccess;
-					long unitId;
-					long ownerUid;
+					long toUnitUserId;
+					long toUnitId;
 				};
 
 
-				ModifyFinanceUnitResult();
-				explicit ModifyFinanceUnitResult(const std::string &payload);
-				~ModifyFinanceUnitResult();
+				AllocateCostUnitResourceResult();
+				explicit AllocateCostUnitResourceResult(const std::string &payload);
+				~AllocateCostUnitResourceResult();
 				std::string getMessage()const;
-				std::vector<DataItem> getData()const;
+				Data getData()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -52,7 +52,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::vector<DataItem> data_;
+				Data data_;
 				std::string code_;
 				bool success_;
 
@@ -60,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_MODIFYFINANCEUNITRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_ALLOCATECOSTUNITRESOURCERESULT_H_

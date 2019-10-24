@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYFINANCEUNITRESOURCEREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYFINANCEUNITRESOURCEREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITRESOURCEREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITRESOURCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryFinanceUnitResourceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryCostUnitResourceRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryFinanceUnitResourceRequest();
-				~QueryFinanceUnitResourceRequest();
+				QueryCostUnitResourceRequest();
+				~QueryCostUnitResourceRequest();
 
 				int getPageNum()const;
 				void setPageNum(int pageNum);
@@ -54,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYFINANCEUNITRESOURCEREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITRESOURCEREQUEST_H_

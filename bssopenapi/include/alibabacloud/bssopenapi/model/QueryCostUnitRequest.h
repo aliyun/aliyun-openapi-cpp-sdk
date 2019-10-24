@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_DELETEFINANCEUNITREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_DELETEFINANCEUNITREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT DeleteFinanceUnitRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryCostUnitRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteFinanceUnitRequest();
-				~DeleteFinanceUnitRequest();
+				QueryCostUnitRequest();
+				~QueryCostUnitRequest();
 
-				long getUnitId()const;
-				void setUnitId(long unitId);
+				long getParentUnitId()const;
+				void setParentUnitId(long parentUnitId);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				long getOwnerUid()const;
 				void setOwnerUid(long ownerUid);
 
             private:
-				long unitId_;
+				long parentUnitId_;
+				int pageNum_;
+				int pageSize_;
 				long ownerUid_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_DELETEFINANCEUNITREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITREQUEST_H_

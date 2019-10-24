@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYFINANCEUNITRESOURCERESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYFINANCEUNITRESOURCERESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITRESOURCERESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITRESOURCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,19 +29,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryFinanceUnitResourceResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryCostUnitResourceResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct FinanceUnit
+					struct CostUnit
 					{
 						long unitId;
 						long ownerUid;
 						long parentUnitId;
 						std::string unitName;
 					};
-					struct FinanceUnitStatisInfo
+					struct CostUnitStatisInfo
 					{
 						long subUnitCount;
 						long totalResourceCount;
@@ -70,15 +70,15 @@ namespace AlibabaCloud
 					int totalCount;
 					int pageNum;
 					int pageSize;
-					FinanceUnit financeUnit;
-					FinanceUnitStatisInfo financeUnitStatisInfo;
+					CostUnit costUnit;
 					std::vector<ResourceInstanceList> resourceInstanceDtoList;
+					CostUnitStatisInfo costUnitStatisInfo;
 				};
 
 
-				QueryFinanceUnitResourceResult();
-				explicit QueryFinanceUnitResourceResult(const std::string &payload);
-				~QueryFinanceUnitResourceResult();
+				QueryCostUnitResourceResult();
+				explicit QueryCostUnitResourceResult(const std::string &payload);
+				~QueryCostUnitResourceResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -96,4 +96,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYFINANCEUNITRESOURCERESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITRESOURCERESULT_H_

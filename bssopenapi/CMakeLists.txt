@@ -21,8 +21,8 @@ set(bssopenapi_public_header
 	include/alibabacloud/bssopenapi/BssOpenApiExport.h )
 
 set(bssopenapi_public_header_model 
-	include/alibabacloud/bssopenapi/model/AllocateFinanceUnitResourceRequest.h
-	include/alibabacloud/bssopenapi/model/AllocateFinanceUnitResourceResult.h
+	include/alibabacloud/bssopenapi/model/AllocateCostUnitResourceRequest.h
+	include/alibabacloud/bssopenapi/model/AllocateCostUnitResourceResult.h
 	include/alibabacloud/bssopenapi/model/ApplyInvoiceRequest.h
 	include/alibabacloud/bssopenapi/model/ApplyInvoiceResult.h
 	include/alibabacloud/bssopenapi/model/CancelOrderRequest.h
@@ -33,16 +33,16 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/ConvertChargeTypeResult.h
 	include/alibabacloud/bssopenapi/model/CreateAgAccountRequest.h
 	include/alibabacloud/bssopenapi/model/CreateAgAccountResult.h
-	include/alibabacloud/bssopenapi/model/CreateFinanceUnitRequest.h
-	include/alibabacloud/bssopenapi/model/CreateFinanceUnitResult.h
+	include/alibabacloud/bssopenapi/model/CreateCostUnitRequest.h
+	include/alibabacloud/bssopenapi/model/CreateCostUnitResult.h
 	include/alibabacloud/bssopenapi/model/CreateInstanceRequest.h
 	include/alibabacloud/bssopenapi/model/CreateInstanceResult.h
 	include/alibabacloud/bssopenapi/model/CreateResellerUserQuotaRequest.h
 	include/alibabacloud/bssopenapi/model/CreateResellerUserQuotaResult.h
 	include/alibabacloud/bssopenapi/model/CreateResourcePackageRequest.h
 	include/alibabacloud/bssopenapi/model/CreateResourcePackageResult.h
-	include/alibabacloud/bssopenapi/model/DeleteFinanceUnitRequest.h
-	include/alibabacloud/bssopenapi/model/DeleteFinanceUnitResult.h
+	include/alibabacloud/bssopenapi/model/DeleteCostUnitRequest.h
+	include/alibabacloud/bssopenapi/model/DeleteCostUnitResult.h
 	include/alibabacloud/bssopenapi/model/DescribePricingModuleRequest.h
 	include/alibabacloud/bssopenapi/model/DescribePricingModuleResult.h
 	include/alibabacloud/bssopenapi/model/DescribeResourcePackageProductRequest.h
@@ -61,8 +61,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/GetResourcePackagePriceResult.h
 	include/alibabacloud/bssopenapi/model/GetSubscriptionPriceRequest.h
 	include/alibabacloud/bssopenapi/model/GetSubscriptionPriceResult.h
-	include/alibabacloud/bssopenapi/model/ModifyFinanceUnitRequest.h
-	include/alibabacloud/bssopenapi/model/ModifyFinanceUnitResult.h
+	include/alibabacloud/bssopenapi/model/ModifyCostUnitRequest.h
+	include/alibabacloud/bssopenapi/model/ModifyCostUnitResult.h
 	include/alibabacloud/bssopenapi/model/ModifyInstanceRequest.h
 	include/alibabacloud/bssopenapi/model/ModifyInstanceResult.h
 	include/alibabacloud/bssopenapi/model/QueryAccountBalanceRequest.h
@@ -77,14 +77,14 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryBillOverviewResult.h
 	include/alibabacloud/bssopenapi/model/QueryCashCouponsRequest.h
 	include/alibabacloud/bssopenapi/model/QueryCashCouponsResult.h
+	include/alibabacloud/bssopenapi/model/QueryCostUnitRequest.h
+	include/alibabacloud/bssopenapi/model/QueryCostUnitResult.h
+	include/alibabacloud/bssopenapi/model/QueryCostUnitResourceRequest.h
+	include/alibabacloud/bssopenapi/model/QueryCostUnitResourceResult.h
 	include/alibabacloud/bssopenapi/model/QueryCustomerAddressListRequest.h
 	include/alibabacloud/bssopenapi/model/QueryCustomerAddressListResult.h
 	include/alibabacloud/bssopenapi/model/QueryEvaluateListRequest.h
 	include/alibabacloud/bssopenapi/model/QueryEvaluateListResult.h
-	include/alibabacloud/bssopenapi/model/QueryFinanceUnitRequest.h
-	include/alibabacloud/bssopenapi/model/QueryFinanceUnitResult.h
-	include/alibabacloud/bssopenapi/model/QueryFinanceUnitResourceRequest.h
-	include/alibabacloud/bssopenapi/model/QueryFinanceUnitResourceResult.h
 	include/alibabacloud/bssopenapi/model/QueryInstanceBillRequest.h
 	include/alibabacloud/bssopenapi/model/QueryInstanceBillResult.h
 	include/alibabacloud/bssopenapi/model/QueryInstanceGaapCostRequest.h
@@ -132,8 +132,8 @@ set(bssopenapi_public_header_model
 
 set(bssopenapi_src 
 	src/BssOpenApiClient.cc
-	src/model/AllocateFinanceUnitResourceRequest.cc
-	src/model/AllocateFinanceUnitResourceResult.cc
+	src/model/AllocateCostUnitResourceRequest.cc
+	src/model/AllocateCostUnitResourceResult.cc
 	src/model/ApplyInvoiceRequest.cc
 	src/model/ApplyInvoiceResult.cc
 	src/model/CancelOrderRequest.cc
@@ -144,16 +144,16 @@ set(bssopenapi_src
 	src/model/ConvertChargeTypeResult.cc
 	src/model/CreateAgAccountRequest.cc
 	src/model/CreateAgAccountResult.cc
-	src/model/CreateFinanceUnitRequest.cc
-	src/model/CreateFinanceUnitResult.cc
+	src/model/CreateCostUnitRequest.cc
+	src/model/CreateCostUnitResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
 	src/model/CreateResellerUserQuotaRequest.cc
 	src/model/CreateResellerUserQuotaResult.cc
 	src/model/CreateResourcePackageRequest.cc
 	src/model/CreateResourcePackageResult.cc
-	src/model/DeleteFinanceUnitRequest.cc
-	src/model/DeleteFinanceUnitResult.cc
+	src/model/DeleteCostUnitRequest.cc
+	src/model/DeleteCostUnitResult.cc
 	src/model/DescribePricingModuleRequest.cc
 	src/model/DescribePricingModuleResult.cc
 	src/model/DescribeResourcePackageProductRequest.cc
@@ -172,8 +172,8 @@ set(bssopenapi_src
 	src/model/GetResourcePackagePriceResult.cc
 	src/model/GetSubscriptionPriceRequest.cc
 	src/model/GetSubscriptionPriceResult.cc
-	src/model/ModifyFinanceUnitRequest.cc
-	src/model/ModifyFinanceUnitResult.cc
+	src/model/ModifyCostUnitRequest.cc
+	src/model/ModifyCostUnitResult.cc
 	src/model/ModifyInstanceRequest.cc
 	src/model/ModifyInstanceResult.cc
 	src/model/QueryAccountBalanceRequest.cc
@@ -188,14 +188,14 @@ set(bssopenapi_src
 	src/model/QueryBillOverviewResult.cc
 	src/model/QueryCashCouponsRequest.cc
 	src/model/QueryCashCouponsResult.cc
+	src/model/QueryCostUnitRequest.cc
+	src/model/QueryCostUnitResult.cc
+	src/model/QueryCostUnitResourceRequest.cc
+	src/model/QueryCostUnitResourceResult.cc
 	src/model/QueryCustomerAddressListRequest.cc
 	src/model/QueryCustomerAddressListResult.cc
 	src/model/QueryEvaluateListRequest.cc
 	src/model/QueryEvaluateListResult.cc
-	src/model/QueryFinanceUnitRequest.cc
-	src/model/QueryFinanceUnitResult.cc
-	src/model/QueryFinanceUnitResourceRequest.cc
-	src/model/QueryFinanceUnitResourceResult.cc
 	src/model/QueryInstanceBillRequest.cc
 	src/model/QueryInstanceBillResult.cc
 	src/model/QueryInstanceGaapCostRequest.cc

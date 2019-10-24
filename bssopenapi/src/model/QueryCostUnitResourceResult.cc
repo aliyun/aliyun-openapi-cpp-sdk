@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/bssopenapi/model/QueryFinanceUnitResourceResult.h>
+#include <alibabacloud/bssopenapi/model/QueryCostUnitResourceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::BssOpenApi;
 using namespace AlibabaCloud::BssOpenApi::Model;
 
-QueryFinanceUnitResourceResult::QueryFinanceUnitResourceResult() :
+QueryCostUnitResourceResult::QueryCostUnitResourceResult() :
 	ServiceResult()
 {}
 
-QueryFinanceUnitResourceResult::QueryFinanceUnitResourceResult(const std::string &payload) :
+QueryCostUnitResourceResult::QueryCostUnitResourceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-QueryFinanceUnitResourceResult::~QueryFinanceUnitResourceResult()
+QueryCostUnitResourceResult::~QueryCostUnitResourceResult()
 {}
 
-void QueryFinanceUnitResourceResult::parse(const std::string &payload)
+void QueryCostUnitResourceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -78,30 +78,30 @@ void QueryFinanceUnitResourceResult::parse(const std::string &payload)
 			resourceInstanceListObject.apportionName = dataNodeResourceInstanceDtoListResourceInstanceList["ApportionName"].asString();
 		data_.resourceInstanceDtoList.push_back(resourceInstanceListObject);
 	}
-	auto financeUnitNode = dataNode["FinanceUnit"];
-	if(!financeUnitNode["OwnerUid"].isNull())
-		data_.financeUnit.ownerUid = std::stol(financeUnitNode["OwnerUid"].asString());
-	if(!financeUnitNode["ParentUnitId"].isNull())
-		data_.financeUnit.parentUnitId = std::stol(financeUnitNode["ParentUnitId"].asString());
-	if(!financeUnitNode["UnitId"].isNull())
-		data_.financeUnit.unitId = std::stol(financeUnitNode["UnitId"].asString());
-	if(!financeUnitNode["UnitName"].isNull())
-		data_.financeUnit.unitName = financeUnitNode["UnitName"].asString();
-	auto financeUnitStatisInfoNode = dataNode["FinanceUnitStatisInfo"];
-	if(!financeUnitStatisInfoNode["ResourceCount"].isNull())
-		data_.financeUnitStatisInfo.resourceCount = std::stol(financeUnitStatisInfoNode["ResourceCount"].asString());
-	if(!financeUnitStatisInfoNode["ResourceGroupCount"].isNull())
-		data_.financeUnitStatisInfo.resourceGroupCount = std::stol(financeUnitStatisInfoNode["ResourceGroupCount"].asString());
-	if(!financeUnitStatisInfoNode["SubUnitCount"].isNull())
-		data_.financeUnitStatisInfo.subUnitCount = std::stol(financeUnitStatisInfoNode["SubUnitCount"].asString());
-	if(!financeUnitStatisInfoNode["UserCount"].isNull())
-		data_.financeUnitStatisInfo.userCount = std::stol(financeUnitStatisInfoNode["UserCount"].asString());
-	if(!financeUnitStatisInfoNode["TotalResourceCount"].isNull())
-		data_.financeUnitStatisInfo.totalResourceCount = std::stol(financeUnitStatisInfoNode["TotalResourceCount"].asString());
-	if(!financeUnitStatisInfoNode["TotalUserCount"].isNull())
-		data_.financeUnitStatisInfo.totalUserCount = std::stol(financeUnitStatisInfoNode["TotalUserCount"].asString());
-	if(!financeUnitStatisInfoNode["TotalResourceGroupCount"].isNull())
-		data_.financeUnitStatisInfo.totalResourceGroupCount = std::stol(financeUnitStatisInfoNode["TotalResourceGroupCount"].asString());
+	auto costUnitNode = dataNode["CostUnit"];
+	if(!costUnitNode["OwnerUid"].isNull())
+		data_.costUnit.ownerUid = std::stol(costUnitNode["OwnerUid"].asString());
+	if(!costUnitNode["ParentUnitId"].isNull())
+		data_.costUnit.parentUnitId = std::stol(costUnitNode["ParentUnitId"].asString());
+	if(!costUnitNode["UnitId"].isNull())
+		data_.costUnit.unitId = std::stol(costUnitNode["UnitId"].asString());
+	if(!costUnitNode["UnitName"].isNull())
+		data_.costUnit.unitName = costUnitNode["UnitName"].asString();
+	auto costUnitStatisInfoNode = dataNode["CostUnitStatisInfo"];
+	if(!costUnitStatisInfoNode["ResourceCount"].isNull())
+		data_.costUnitStatisInfo.resourceCount = std::stol(costUnitStatisInfoNode["ResourceCount"].asString());
+	if(!costUnitStatisInfoNode["ResourceGroupCount"].isNull())
+		data_.costUnitStatisInfo.resourceGroupCount = std::stol(costUnitStatisInfoNode["ResourceGroupCount"].asString());
+	if(!costUnitStatisInfoNode["SubUnitCount"].isNull())
+		data_.costUnitStatisInfo.subUnitCount = std::stol(costUnitStatisInfoNode["SubUnitCount"].asString());
+	if(!costUnitStatisInfoNode["UserCount"].isNull())
+		data_.costUnitStatisInfo.userCount = std::stol(costUnitStatisInfoNode["UserCount"].asString());
+	if(!costUnitStatisInfoNode["TotalResourceCount"].isNull())
+		data_.costUnitStatisInfo.totalResourceCount = std::stol(costUnitStatisInfoNode["TotalResourceCount"].asString());
+	if(!costUnitStatisInfoNode["TotalUserCount"].isNull())
+		data_.costUnitStatisInfo.totalUserCount = std::stol(costUnitStatisInfoNode["TotalUserCount"].asString());
+	if(!costUnitStatisInfoNode["TotalResourceGroupCount"].isNull())
+		data_.costUnitStatisInfo.totalResourceGroupCount = std::stol(costUnitStatisInfoNode["TotalResourceGroupCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -111,22 +111,22 @@ void QueryFinanceUnitResourceResult::parse(const std::string &payload)
 
 }
 
-std::string QueryFinanceUnitResourceResult::getMessage()const
+std::string QueryCostUnitResourceResult::getMessage()const
 {
 	return message_;
 }
 
-QueryFinanceUnitResourceResult::Data QueryFinanceUnitResourceResult::getData()const
+QueryCostUnitResourceResult::Data QueryCostUnitResourceResult::getData()const
 {
 	return data_;
 }
 
-std::string QueryFinanceUnitResourceResult::getCode()const
+std::string QueryCostUnitResourceResult::getCode()const
 {
 	return code_;
 }
 
-bool QueryFinanceUnitResourceResult::getSuccess()const
+bool QueryCostUnitResourceResult::getSuccess()const
 {
 	return success_;
 }

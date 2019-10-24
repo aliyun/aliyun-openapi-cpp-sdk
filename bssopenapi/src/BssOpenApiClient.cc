@@ -51,36 +51,36 @@ BssOpenApiClient::BssOpenApiClient(const std::string & accessKeyId, const std::s
 BssOpenApiClient::~BssOpenApiClient()
 {}
 
-BssOpenApiClient::AllocateFinanceUnitResourceOutcome BssOpenApiClient::allocateFinanceUnitResource(const AllocateFinanceUnitResourceRequest &request) const
+BssOpenApiClient::AllocateCostUnitResourceOutcome BssOpenApiClient::allocateCostUnitResource(const AllocateCostUnitResourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AllocateFinanceUnitResourceOutcome(endpointOutcome.error());
+		return AllocateCostUnitResourceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AllocateFinanceUnitResourceOutcome(AllocateFinanceUnitResourceResult(outcome.result()));
+		return AllocateCostUnitResourceOutcome(AllocateCostUnitResourceResult(outcome.result()));
 	else
-		return AllocateFinanceUnitResourceOutcome(outcome.error());
+		return AllocateCostUnitResourceOutcome(outcome.error());
 }
 
-void BssOpenApiClient::allocateFinanceUnitResourceAsync(const AllocateFinanceUnitResourceRequest& request, const AllocateFinanceUnitResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void BssOpenApiClient::allocateCostUnitResourceAsync(const AllocateCostUnitResourceRequest& request, const AllocateCostUnitResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, allocateFinanceUnitResource(request), context);
+		handler(this, request, allocateCostUnitResource(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-BssOpenApiClient::AllocateFinanceUnitResourceOutcomeCallable BssOpenApiClient::allocateFinanceUnitResourceCallable(const AllocateFinanceUnitResourceRequest &request) const
+BssOpenApiClient::AllocateCostUnitResourceOutcomeCallable BssOpenApiClient::allocateCostUnitResourceCallable(const AllocateCostUnitResourceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AllocateFinanceUnitResourceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AllocateCostUnitResourceOutcome()>>(
 			[this, request]()
 			{
-			return this->allocateFinanceUnitResource(request);
+			return this->allocateCostUnitResource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,36 +267,36 @@ BssOpenApiClient::CreateAgAccountOutcomeCallable BssOpenApiClient::createAgAccou
 	return task->get_future();
 }
 
-BssOpenApiClient::CreateFinanceUnitOutcome BssOpenApiClient::createFinanceUnit(const CreateFinanceUnitRequest &request) const
+BssOpenApiClient::CreateCostUnitOutcome BssOpenApiClient::createCostUnit(const CreateCostUnitRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateFinanceUnitOutcome(endpointOutcome.error());
+		return CreateCostUnitOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateFinanceUnitOutcome(CreateFinanceUnitResult(outcome.result()));
+		return CreateCostUnitOutcome(CreateCostUnitResult(outcome.result()));
 	else
-		return CreateFinanceUnitOutcome(outcome.error());
+		return CreateCostUnitOutcome(outcome.error());
 }
 
-void BssOpenApiClient::createFinanceUnitAsync(const CreateFinanceUnitRequest& request, const CreateFinanceUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void BssOpenApiClient::createCostUnitAsync(const CreateCostUnitRequest& request, const CreateCostUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createFinanceUnit(request), context);
+		handler(this, request, createCostUnit(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-BssOpenApiClient::CreateFinanceUnitOutcomeCallable BssOpenApiClient::createFinanceUnitCallable(const CreateFinanceUnitRequest &request) const
+BssOpenApiClient::CreateCostUnitOutcomeCallable BssOpenApiClient::createCostUnitCallable(const CreateCostUnitRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateFinanceUnitOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateCostUnitOutcome()>>(
 			[this, request]()
 			{
-			return this->createFinanceUnit(request);
+			return this->createCostUnit(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -411,36 +411,36 @@ BssOpenApiClient::CreateResourcePackageOutcomeCallable BssOpenApiClient::createR
 	return task->get_future();
 }
 
-BssOpenApiClient::DeleteFinanceUnitOutcome BssOpenApiClient::deleteFinanceUnit(const DeleteFinanceUnitRequest &request) const
+BssOpenApiClient::DeleteCostUnitOutcome BssOpenApiClient::deleteCostUnit(const DeleteCostUnitRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteFinanceUnitOutcome(endpointOutcome.error());
+		return DeleteCostUnitOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteFinanceUnitOutcome(DeleteFinanceUnitResult(outcome.result()));
+		return DeleteCostUnitOutcome(DeleteCostUnitResult(outcome.result()));
 	else
-		return DeleteFinanceUnitOutcome(outcome.error());
+		return DeleteCostUnitOutcome(outcome.error());
 }
 
-void BssOpenApiClient::deleteFinanceUnitAsync(const DeleteFinanceUnitRequest& request, const DeleteFinanceUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void BssOpenApiClient::deleteCostUnitAsync(const DeleteCostUnitRequest& request, const DeleteCostUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteFinanceUnit(request), context);
+		handler(this, request, deleteCostUnit(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-BssOpenApiClient::DeleteFinanceUnitOutcomeCallable BssOpenApiClient::deleteFinanceUnitCallable(const DeleteFinanceUnitRequest &request) const
+BssOpenApiClient::DeleteCostUnitOutcomeCallable BssOpenApiClient::deleteCostUnitCallable(const DeleteCostUnitRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteFinanceUnitOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteCostUnitOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteFinanceUnit(request);
+			return this->deleteCostUnit(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -771,36 +771,36 @@ BssOpenApiClient::GetSubscriptionPriceOutcomeCallable BssOpenApiClient::getSubsc
 	return task->get_future();
 }
 
-BssOpenApiClient::ModifyFinanceUnitOutcome BssOpenApiClient::modifyFinanceUnit(const ModifyFinanceUnitRequest &request) const
+BssOpenApiClient::ModifyCostUnitOutcome BssOpenApiClient::modifyCostUnit(const ModifyCostUnitRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyFinanceUnitOutcome(endpointOutcome.error());
+		return ModifyCostUnitOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyFinanceUnitOutcome(ModifyFinanceUnitResult(outcome.result()));
+		return ModifyCostUnitOutcome(ModifyCostUnitResult(outcome.result()));
 	else
-		return ModifyFinanceUnitOutcome(outcome.error());
+		return ModifyCostUnitOutcome(outcome.error());
 }
 
-void BssOpenApiClient::modifyFinanceUnitAsync(const ModifyFinanceUnitRequest& request, const ModifyFinanceUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void BssOpenApiClient::modifyCostUnitAsync(const ModifyCostUnitRequest& request, const ModifyCostUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyFinanceUnit(request), context);
+		handler(this, request, modifyCostUnit(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-BssOpenApiClient::ModifyFinanceUnitOutcomeCallable BssOpenApiClient::modifyFinanceUnitCallable(const ModifyFinanceUnitRequest &request) const
+BssOpenApiClient::ModifyCostUnitOutcomeCallable BssOpenApiClient::modifyCostUnitCallable(const ModifyCostUnitRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyFinanceUnitOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyCostUnitOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyFinanceUnit(request);
+			return this->modifyCostUnit(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,6 +1059,78 @@ BssOpenApiClient::QueryCashCouponsOutcomeCallable BssOpenApiClient::queryCashCou
 	return task->get_future();
 }
 
+BssOpenApiClient::QueryCostUnitOutcome BssOpenApiClient::queryCostUnit(const QueryCostUnitRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCostUnitOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCostUnitOutcome(QueryCostUnitResult(outcome.result()));
+	else
+		return QueryCostUnitOutcome(outcome.error());
+}
+
+void BssOpenApiClient::queryCostUnitAsync(const QueryCostUnitRequest& request, const QueryCostUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCostUnit(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QueryCostUnitOutcomeCallable BssOpenApiClient::queryCostUnitCallable(const QueryCostUnitRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCostUnitOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCostUnit(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::QueryCostUnitResourceOutcome BssOpenApiClient::queryCostUnitResource(const QueryCostUnitResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCostUnitResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCostUnitResourceOutcome(QueryCostUnitResourceResult(outcome.result()));
+	else
+		return QueryCostUnitResourceOutcome(outcome.error());
+}
+
+void BssOpenApiClient::queryCostUnitResourceAsync(const QueryCostUnitResourceRequest& request, const QueryCostUnitResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCostUnitResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QueryCostUnitResourceOutcomeCallable BssOpenApiClient::queryCostUnitResourceCallable(const QueryCostUnitResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCostUnitResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCostUnitResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::QueryCustomerAddressListOutcome BssOpenApiClient::queryCustomerAddressList(const QueryCustomerAddressListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1125,78 +1197,6 @@ BssOpenApiClient::QueryEvaluateListOutcomeCallable BssOpenApiClient::queryEvalua
 			[this, request]()
 			{
 			return this->queryEvaluateList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-BssOpenApiClient::QueryFinanceUnitOutcome BssOpenApiClient::queryFinanceUnit(const QueryFinanceUnitRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryFinanceUnitOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryFinanceUnitOutcome(QueryFinanceUnitResult(outcome.result()));
-	else
-		return QueryFinanceUnitOutcome(outcome.error());
-}
-
-void BssOpenApiClient::queryFinanceUnitAsync(const QueryFinanceUnitRequest& request, const QueryFinanceUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryFinanceUnit(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-BssOpenApiClient::QueryFinanceUnitOutcomeCallable BssOpenApiClient::queryFinanceUnitCallable(const QueryFinanceUnitRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryFinanceUnitOutcome()>>(
-			[this, request]()
-			{
-			return this->queryFinanceUnit(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-BssOpenApiClient::QueryFinanceUnitResourceOutcome BssOpenApiClient::queryFinanceUnitResource(const QueryFinanceUnitResourceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryFinanceUnitResourceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryFinanceUnitResourceOutcome(QueryFinanceUnitResourceResult(outcome.result()));
-	else
-		return QueryFinanceUnitResourceOutcome(outcome.error());
-}
-
-void BssOpenApiClient::queryFinanceUnitResourceAsync(const QueryFinanceUnitResourceRequest& request, const QueryFinanceUnitResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryFinanceUnitResource(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-BssOpenApiClient::QueryFinanceUnitResourceOutcomeCallable BssOpenApiClient::queryFinanceUnitResourceCallable(const QueryFinanceUnitResourceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryFinanceUnitResourceOutcome()>>(
-			[this, request]()
-			{
-			return this->queryFinanceUnitResource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

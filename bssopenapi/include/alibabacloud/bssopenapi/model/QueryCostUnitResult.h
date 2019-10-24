@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYFINANCEUNITRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYFINANCEUNITRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,12 +29,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryFinanceUnitResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryCostUnitResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct FinanceUnitDtoListItem
+					struct CostUnitDtoListItem
 					{
 						long unitId;
 						long ownerUid;
@@ -44,13 +44,13 @@ namespace AlibabaCloud
 					int totalCount;
 					int pageNum;
 					int pageSize;
-					std::vector<FinanceUnitDtoListItem> financeUnitDtoList;
+					std::vector<CostUnitDtoListItem> costUnitDtoList;
 				};
 
 
-				QueryFinanceUnitResult();
-				explicit QueryFinanceUnitResult(const std::string &payload);
-				~QueryFinanceUnitResult();
+				QueryCostUnitResult();
+				explicit QueryCostUnitResult(const std::string &payload);
+				~QueryCostUnitResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -68,4 +68,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYFINANCEUNITRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOSTUNITRESULT_H_

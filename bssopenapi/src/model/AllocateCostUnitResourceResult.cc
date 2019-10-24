@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/bssopenapi/model/AllocateFinanceUnitResourceResult.h>
+#include <alibabacloud/bssopenapi/model/AllocateCostUnitResourceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::BssOpenApi;
 using namespace AlibabaCloud::BssOpenApi::Model;
 
-AllocateFinanceUnitResourceResult::AllocateFinanceUnitResourceResult() :
+AllocateCostUnitResourceResult::AllocateCostUnitResourceResult() :
 	ServiceResult()
 {}
 
-AllocateFinanceUnitResourceResult::AllocateFinanceUnitResourceResult(const std::string &payload) :
+AllocateCostUnitResourceResult::AllocateCostUnitResourceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-AllocateFinanceUnitResourceResult::~AllocateFinanceUnitResourceResult()
+AllocateCostUnitResourceResult::~AllocateCostUnitResourceResult()
 {}
 
-void AllocateFinanceUnitResourceResult::parse(const std::string &payload)
+void AllocateCostUnitResourceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -55,22 +55,22 @@ void AllocateFinanceUnitResourceResult::parse(const std::string &payload)
 
 }
 
-std::string AllocateFinanceUnitResourceResult::getMessage()const
+std::string AllocateCostUnitResourceResult::getMessage()const
 {
 	return message_;
 }
 
-AllocateFinanceUnitResourceResult::Data AllocateFinanceUnitResourceResult::getData()const
+AllocateCostUnitResourceResult::Data AllocateCostUnitResourceResult::getData()const
 {
 	return data_;
 }
 
-std::string AllocateFinanceUnitResourceResult::getCode()const
+std::string AllocateCostUnitResourceResult::getCode()const
 {
 	return code_;
 }
 
-bool AllocateFinanceUnitResourceResult::getSuccess()const
+bool AllocateCostUnitResourceResult::getSuccess()const
 {
 	return success_;
 }
