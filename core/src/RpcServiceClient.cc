@@ -37,9 +37,10 @@ RpcServiceClient::~RpcServiceClient() {
 }
 
 RpcServiceClient::JsonOutcome RpcServiceClient::makeRequest(
-  const std::string &endpoint,
-  const RpcServiceRequest &msg, HttpRequest::Method method)const {
-  auto outcome = AttemptRequest(endpoint, msg, method);
+    const std::string &endpoint,
+    const RpcServiceRequest &request, HttpRequest::Method method) const
+{
+  auto outcome = AttemptRequest(endpoint, request, request.method());
   if (outcome.isSuccess())
     return JsonOutcome(std::string(outcome.result().body(),
       outcome.result().bodySize()));

@@ -40,13 +40,12 @@ class ALIBABACLOUD_CORE_EXPORT RoaServiceClient : public CoreClient {
   virtual ~RoaServiceClient();
 
  protected:
-  JsonOutcome makeRequest(const std::string &endpoint,
-    const RoaServiceRequest &msg, HttpRequest::Method method =
-    HttpRequest::Method::Get)const;
-  HttpRequest buildHttpRequest(const std::string & endpoint,
-    const ServiceRequest &msg, HttpRequest::Method method)const override;
-  HttpRequest buildHttpRequest(const std::string & endpoint,
-    const RoaServiceRequest &msg, HttpRequest::Method method)const;
+   JsonOutcome makeRequest(const std::string &endpoint,
+                           const RoaServiceRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get) const;
+   HttpRequest buildHttpRequest(const std::string &endpoint,
+                                const ServiceRequest &msg, HttpRequest::Method method) const override;
+   HttpRequest buildHttpRequest(const std::string &endpoint,
+                                const RoaServiceRequest &msg, HttpRequest::Method method) const;
 
  private:
   std::shared_ptr<CredentialsProvider> credentialsProvider_;

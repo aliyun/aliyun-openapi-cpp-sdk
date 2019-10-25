@@ -21,6 +21,7 @@
 #include "Url.h"
 #include <map>
 #include <string>
+#include "HttpRequest.h"
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT ServiceRequest {
@@ -39,10 +40,12 @@ public:
   std::string resourcePath() const;
   std::string version() const;
   std::string scheme() const;
+  HttpRequest::Method method() const;
   long connectTimeout() const;
   long readTimeout() const;
   void setConnectTimeout(const long connectTimeout);
   void setReadTimeout(const long readTimeout);
+  void setMethod(const HttpRequest::Method method);
 
 protected:
   ServiceRequest(const std::string &product, const std::string &version);
@@ -80,6 +83,7 @@ private:
   std::string scheme_;
   long connectTimeout_;
   long readTimeout_;
+  HttpRequest::Method method_;
 };
 } // namespace AlibabaCloud
 
