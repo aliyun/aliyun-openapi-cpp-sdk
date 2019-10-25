@@ -30,7 +30,8 @@ ServiceRequest::ServiceRequest(const std::string &product,
                                                              version_(version),
                                                              scheme_("https"),
                                                              connectTimeout_(kInvalidTimeout),
-                                                             readTimeout_(kInvalidTimeout)
+                                                             readTimeout_(kInvalidTimeout),
+                                                             method_(HttpRequest::Method::Get)
 {
 }
 
@@ -169,6 +170,11 @@ std::string ServiceRequest::version() const
   return version_;
 }
 
+HttpRequest::Method ServiceRequest::method() const
+{
+  return method_;
+}
+
 void ServiceRequest::setVersion(const std::string &version)
 {
   version_ = version;
@@ -222,6 +228,11 @@ void ServiceRequest::setConnectTimeout(const long connectTimeout)
 void ServiceRequest::setReadTimeout(const long readTimeout)
 {
   readTimeout_ = readTimeout;
+}
+
+void ServiceRequest::setMethod(const HttpRequest::Method method)
+{
+  method_ = method;
 }
 
 } // namespace AlibabaCloud

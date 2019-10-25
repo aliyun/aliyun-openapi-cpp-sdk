@@ -28,9 +28,10 @@ class ALIBABACLOUD_CORE_EXPORT RpcServiceRequest : public ServiceRequest {
   virtual ~RpcServiceRequest();
 
   std::string actionName()const;
+  using ServiceRequest::setMethod;
   using ServiceRequest::setScheme;
 
- protected:
+protected:
   void setActionName(const std::string &name);
 };
 }  // namespace AlibabaCloud
