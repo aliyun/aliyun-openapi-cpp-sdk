@@ -31,21 +31,21 @@ PushClient::PushClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cps");
 }
 
 PushClient::PushClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cps");
 }
 
 PushClient::PushClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cps");
 }
 
 PushClient::~PushClient()
@@ -873,6 +873,42 @@ PushClient::QueryPushListOutcomeCallable PushClient::queryPushListCallable(const
 			[this, request]()
 			{
 			return this->queryPushList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PushClient::QueryPushRecordsOutcome PushClient::queryPushRecords(const QueryPushRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryPushRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryPushRecordsOutcome(QueryPushRecordsResult(outcome.result()));
+	else
+		return QueryPushRecordsOutcome(outcome.error());
+}
+
+void PushClient::queryPushRecordsAsync(const QueryPushRecordsRequest& request, const QueryPushRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryPushRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PushClient::QueryPushRecordsOutcomeCallable PushClient::queryPushRecordsCallable(const QueryPushRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryPushRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->queryPushRecords(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

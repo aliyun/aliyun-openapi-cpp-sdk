@@ -68,6 +68,8 @@
 #include "model/QueryDevicesByAliasResult.h"
 #include "model/QueryPushListRequest.h"
 #include "model/QueryPushListResult.h"
+#include "model/QueryPushRecordsRequest.h"
+#include "model/QueryPushRecordsResult.h"
 #include "model/QueryPushStatByAppRequest.h"
 #include "model/QueryPushStatByAppResult.h"
 #include "model/QueryPushStatByMsgRequest.h"
@@ -162,6 +164,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryPushListResult> QueryPushListOutcome;
 			typedef std::future<QueryPushListOutcome> QueryPushListOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::QueryPushListRequest&, const QueryPushListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPushListAsyncHandler;
+			typedef Outcome<Error, Model::QueryPushRecordsResult> QueryPushRecordsOutcome;
+			typedef std::future<QueryPushRecordsOutcome> QueryPushRecordsOutcomeCallable;
+			typedef std::function<void(const PushClient*, const Model::QueryPushRecordsRequest&, const QueryPushRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPushRecordsAsyncHandler;
 			typedef Outcome<Error, Model::QueryPushStatByAppResult> QueryPushStatByAppOutcome;
 			typedef std::future<QueryPushStatByAppOutcome> QueryPushStatByAppOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::QueryPushStatByAppRequest&, const QueryPushStatByAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPushStatByAppAsyncHandler;
@@ -260,6 +265,9 @@ namespace AlibabaCloud
 			QueryPushListOutcome queryPushList(const Model::QueryPushListRequest &request)const;
 			void queryPushListAsync(const Model::QueryPushListRequest& request, const QueryPushListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryPushListOutcomeCallable queryPushListCallable(const Model::QueryPushListRequest& request) const;
+			QueryPushRecordsOutcome queryPushRecords(const Model::QueryPushRecordsRequest &request)const;
+			void queryPushRecordsAsync(const Model::QueryPushRecordsRequest& request, const QueryPushRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryPushRecordsOutcomeCallable queryPushRecordsCallable(const Model::QueryPushRecordsRequest& request) const;
 			QueryPushStatByAppOutcome queryPushStatByApp(const Model::QueryPushStatByAppRequest &request)const;
 			void queryPushStatByAppAsync(const Model::QueryPushStatByAppRequest& request, const QueryPushStatByAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryPushStatByAppOutcomeCallable queryPushStatByAppCallable(const Model::QueryPushStatByAppRequest& request) const;
