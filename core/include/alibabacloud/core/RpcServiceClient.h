@@ -49,7 +49,9 @@ class ALIBABACLOUD_CORE_EXPORT RpcServiceClient : public CoreClient {
 
  protected:
    virtual JsonOutcome makeRequest(const std::string &endpoint,
-                                   const RpcServiceRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get) const;
+                                   const RpcServiceRequest &request, HttpRequest::Method method) const;
+   virtual JsonOutcome makeRequest(const std::string &endpoint,
+                                   const RpcServiceRequest &request) const;
    HttpRequest buildHttpRequest(const std::string &endpoint,
                                 const ServiceRequest &msg, HttpRequest::Method method) const override;
    HttpRequest buildHttpRequest(const std::string &endpoint,

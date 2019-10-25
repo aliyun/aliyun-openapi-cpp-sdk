@@ -41,7 +41,9 @@ class ALIBABACLOUD_CORE_EXPORT RoaServiceClient : public CoreClient {
 
  protected:
    JsonOutcome makeRequest(const std::string &endpoint,
-                           const RoaServiceRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get) const;
+                           const RoaServiceRequest &request, HttpRequest::Method method) const;
+   JsonOutcome makeRequest(const std::string &endpoint,
+                           const RoaServiceRequest &request) const;
    HttpRequest buildHttpRequest(const std::string &endpoint,
                                 const ServiceRequest &msg, HttpRequest::Method method) const override;
    HttpRequest buildHttpRequest(const std::string &endpoint,

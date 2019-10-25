@@ -48,6 +48,13 @@ RpcServiceClient::JsonOutcome RpcServiceClient::makeRequest(
     return JsonOutcome(outcome.error());
 }
 
+RpcServiceClient::JsonOutcome RpcServiceClient::makeRequest(
+    const std::string &endpoint,
+    const RpcServiceRequest &request) const
+{
+  return RpcServiceClient::makeRequest(endpoint, request, request.method());
+}
+
 HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
   const ServiceRequest &msg, HttpRequest::Method method)const {
   return buildHttpRequest(endpoint,

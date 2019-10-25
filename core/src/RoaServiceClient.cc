@@ -40,12 +40,19 @@ RoaServiceClient::JsonOutcome RoaServiceClient::makeRequest(
     const std::string &endpoint,
     const RoaServiceRequest &request, HttpRequest::Method method) const
 {
-  auto outcome = AttemptRequest(endpoint, request, request.method());
+  auto outcome = AttemptRequest(endpoint, request, method);
   if (outcome.isSuccess())
     return JsonOutcome(std::string(outcome.result().body(),
       outcome.result().bodySize()));
   else
     return JsonOutcome(outcome.error());
+}
+
+RoaServiceClient::JsonOutcome RoaServiceClient::makeRequest(
+    const std::string &endpoint,
+    const RoaServiceRequest &request) const
+{
+  return RoaServiceClient::makeRequest(endpoint, request, request.method());
 }
 
 HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
