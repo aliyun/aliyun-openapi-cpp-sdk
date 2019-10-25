@@ -47,17 +47,6 @@ void DescribeDBClusterMigrationRequest::setAccessKeyId(const std::string& access
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeDBClusterMigrationRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDBClusterMigrationRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeDBClusterMigrationRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

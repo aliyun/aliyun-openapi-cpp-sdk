@@ -51,42 +51,6 @@ PolardbClient::PolardbClient(const std::string & accessKeyId, const std::string 
 PolardbClient::~PolardbClient()
 {}
 
-PolardbClient::AbortDBClusterMigrationOutcome PolardbClient::abortDBClusterMigration(const AbortDBClusterMigrationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AbortDBClusterMigrationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AbortDBClusterMigrationOutcome(AbortDBClusterMigrationResult(outcome.result()));
-	else
-		return AbortDBClusterMigrationOutcome(outcome.error());
-}
-
-void PolardbClient::abortDBClusterMigrationAsync(const AbortDBClusterMigrationRequest& request, const AbortDBClusterMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, abortDBClusterMigration(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::AbortDBClusterMigrationOutcomeCallable PolardbClient::abortDBClusterMigrationCallable(const AbortDBClusterMigrationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AbortDBClusterMigrationOutcome()>>(
-			[this, request]()
-			{
-			return this->abortDBClusterMigration(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 PolardbClient::CloseDBClusterMigrationOutcome PolardbClient::closeDBClusterMigration(const CloseDBClusterMigrationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,42 +81,6 @@ PolardbClient::CloseDBClusterMigrationOutcomeCallable PolardbClient::closeDBClus
 			[this, request]()
 			{
 			return this->closeDBClusterMigration(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PolardbClient::ContinueDBClusterMigrationOutcome PolardbClient::continueDBClusterMigration(const ContinueDBClusterMigrationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ContinueDBClusterMigrationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ContinueDBClusterMigrationOutcome(ContinueDBClusterMigrationResult(outcome.result()));
-	else
-		return ContinueDBClusterMigrationOutcome(outcome.error());
-}
-
-void PolardbClient::continueDBClusterMigrationAsync(const ContinueDBClusterMigrationRequest& request, const ContinueDBClusterMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, continueDBClusterMigration(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::ContinueDBClusterMigrationOutcomeCallable PolardbClient::continueDBClusterMigrationCallable(const ContinueDBClusterMigrationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ContinueDBClusterMigrationOutcome()>>(
-			[this, request]()
-			{
-			return this->continueDBClusterMigration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,6 +915,42 @@ PolardbClient::DescribeDBClusterParametersOutcomeCallable PolardbClient::describ
 	return task->get_future();
 }
 
+PolardbClient::DescribeDBClusterPerformanceOutcome PolardbClient::describeDBClusterPerformance(const DescribeDBClusterPerformanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBClusterPerformanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBClusterPerformanceOutcome(DescribeDBClusterPerformanceResult(outcome.result()));
+	else
+		return DescribeDBClusterPerformanceOutcome(outcome.error());
+}
+
+void PolardbClient::describeDBClusterPerformanceAsync(const DescribeDBClusterPerformanceRequest& request, const DescribeDBClusterPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBClusterPerformance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeDBClusterPerformanceOutcomeCallable PolardbClient::describeDBClusterPerformanceCallable(const DescribeDBClusterPerformanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBClusterPerformanceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBClusterPerformance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeDBClustersOutcome PolardbClient::describeDBClusters(const DescribeDBClustersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,6 +981,42 @@ PolardbClient::DescribeDBClustersOutcomeCallable PolardbClient::describeDBCluste
 			[this, request]()
 			{
 			return this->describeDBClusters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeDBNodePerformanceOutcome PolardbClient::describeDBNodePerformance(const DescribeDBNodePerformanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBNodePerformanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBNodePerformanceOutcome(DescribeDBNodePerformanceResult(outcome.result()));
+	else
+		return DescribeDBNodePerformanceOutcome(outcome.error());
+}
+
+void PolardbClient::describeDBNodePerformanceAsync(const DescribeDBNodePerformanceRequest& request, const DescribeDBNodePerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBNodePerformance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeDBNodePerformanceOutcomeCallable PolardbClient::describeDBNodePerformanceCallable(const DescribeDBNodePerformanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBNodePerformanceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBNodePerformance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,6 +1095,42 @@ PolardbClient::DescribeRegionsOutcomeCallable PolardbClient::describeRegionsCall
 	return task->get_future();
 }
 
+PolardbClient::FailoverDBClusterOutcome PolardbClient::failoverDBCluster(const FailoverDBClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FailoverDBClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FailoverDBClusterOutcome(FailoverDBClusterResult(outcome.result()));
+	else
+		return FailoverDBClusterOutcome(outcome.error());
+}
+
+void PolardbClient::failoverDBClusterAsync(const FailoverDBClusterRequest& request, const FailoverDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, failoverDBCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::FailoverDBClusterOutcomeCallable PolardbClient::failoverDBClusterCallable(const FailoverDBClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FailoverDBClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->failoverDBCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::GrantAccountPrivilegeOutcome PolardbClient::grantAccountPrivilege(const GrantAccountPrivilegeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1125,78 +1161,6 @@ PolardbClient::GrantAccountPrivilegeOutcomeCallable PolardbClient::grantAccountP
 			[this, request]()
 			{
 			return this->grantAccountPrivilege(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PolardbClient::ListTagResourcesOutcome PolardbClient::listTagResources(const ListTagResourcesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListTagResourcesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
-	else
-		return ListTagResourcesOutcome(outcome.error());
-}
-
-void PolardbClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listTagResources(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::ListTagResourcesOutcomeCallable PolardbClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
-			[this, request]()
-			{
-			return this->listTagResources(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PolardbClient::LockDBClusterDeletionOutcome PolardbClient::lockDBClusterDeletion(const LockDBClusterDeletionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return LockDBClusterDeletionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return LockDBClusterDeletionOutcome(LockDBClusterDeletionResult(outcome.result()));
-	else
-		return LockDBClusterDeletionOutcome(outcome.error());
-}
-
-void PolardbClient::lockDBClusterDeletionAsync(const LockDBClusterDeletionRequest& request, const LockDBClusterDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, lockDBClusterDeletion(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::LockDBClusterDeletionOutcomeCallable PolardbClient::lockDBClusterDeletionCallable(const LockDBClusterDeletionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<LockDBClusterDeletionOutcome()>>(
-			[this, request]()
-			{
-			return this->lockDBClusterDeletion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1809,42 +1773,6 @@ PolardbClient::TagResourcesOutcomeCallable PolardbClient::tagResourcesCallable(c
 			[this, request]()
 			{
 			return this->tagResources(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PolardbClient::UnlockDBClusterDeletionOutcome PolardbClient::unlockDBClusterDeletion(const UnlockDBClusterDeletionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UnlockDBClusterDeletionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UnlockDBClusterDeletionOutcome(UnlockDBClusterDeletionResult(outcome.result()));
-	else
-		return UnlockDBClusterDeletionOutcome(outcome.error());
-}
-
-void PolardbClient::unlockDBClusterDeletionAsync(const UnlockDBClusterDeletionRequest& request, const UnlockDBClusterDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, unlockDBClusterDeletion(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::UnlockDBClusterDeletionOutcomeCallable PolardbClient::unlockDBClusterDeletionCallable(const UnlockDBClusterDeletionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UnlockDBClusterDeletionOutcome()>>(
-			[this, request]()
-			{
-			return this->unlockDBClusterDeletion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

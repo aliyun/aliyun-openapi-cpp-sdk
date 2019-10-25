@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/LockDBClusterDeletionResult.h>
+#include <alibabacloud/polardb/model/FailoverDBClusterResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Polardb;
 using namespace AlibabaCloud::Polardb::Model;
 
-LockDBClusterDeletionResult::LockDBClusterDeletionResult() :
+FailoverDBClusterResult::FailoverDBClusterResult() :
 	ServiceResult()
 {}
 
-LockDBClusterDeletionResult::LockDBClusterDeletionResult(const std::string &payload) :
+FailoverDBClusterResult::FailoverDBClusterResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-LockDBClusterDeletionResult::~LockDBClusterDeletionResult()
+FailoverDBClusterResult::~FailoverDBClusterResult()
 {}
 
-void LockDBClusterDeletionResult::parse(const std::string &payload)
+void FailoverDBClusterResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_CONTINUEDBCLUSTERMIGRATIONREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_CONTINUEDBCLUSTERMIGRATIONREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERPERFORMANCEREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERPERFORMANCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,48 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT ContinueDBClusterMigrationRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClusterPerformanceRequest : public RpcServiceRequest
 			{
 
 			public:
-				ContinueDBClusterMigrationRequest();
-				~ContinueDBClusterMigrationRequest();
+				DescribeDBClusterPerformanceRequest();
+				~DescribeDBClusterPerformanceRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
+				std::string getKey()const;
+				void setKey(const std::string& key);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
 				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getMetric()const;
+				void setMetric(const std::string& metric);
 
             private:
 				long resourceOwnerId_;
+				std::string startTime_;
 				std::string accessKeyId_;
-				std::string securityToken_;
+				std::string key_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
+				std::string endTime_;
 				long ownerId_;
+				std::string metric_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_CONTINUEDBCLUSTERMIGRATIONREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERPERFORMANCEREQUEST_H_

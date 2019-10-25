@@ -21,12 +21,8 @@ set(polardb_public_header
 	include/alibabacloud/polardb/PolardbExport.h )
 
 set(polardb_public_header_model 
-	include/alibabacloud/polardb/model/AbortDBClusterMigrationRequest.h
-	include/alibabacloud/polardb/model/AbortDBClusterMigrationResult.h
 	include/alibabacloud/polardb/model/CloseDBClusterMigrationRequest.h
 	include/alibabacloud/polardb/model/CloseDBClusterMigrationResult.h
-	include/alibabacloud/polardb/model/ContinueDBClusterMigrationRequest.h
-	include/alibabacloud/polardb/model/ContinueDBClusterMigrationResult.h
 	include/alibabacloud/polardb/model/CreateAccountRequest.h
 	include/alibabacloud/polardb/model/CreateAccountResult.h
 	include/alibabacloud/polardb/model/CreateBackupRequest.h
@@ -73,18 +69,20 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDBClusterMigrationResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterParametersRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClusterParametersResult.h
+	include/alibabacloud/polardb/model/DescribeDBClusterPerformanceRequest.h
+	include/alibabacloud/polardb/model/DescribeDBClusterPerformanceResult.h
 	include/alibabacloud/polardb/model/DescribeDBClustersRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClustersResult.h
+	include/alibabacloud/polardb/model/DescribeDBNodePerformanceRequest.h
+	include/alibabacloud/polardb/model/DescribeDBNodePerformanceResult.h
 	include/alibabacloud/polardb/model/DescribeDatabasesRequest.h
 	include/alibabacloud/polardb/model/DescribeDatabasesResult.h
 	include/alibabacloud/polardb/model/DescribeRegionsRequest.h
 	include/alibabacloud/polardb/model/DescribeRegionsResult.h
+	include/alibabacloud/polardb/model/FailoverDBClusterRequest.h
+	include/alibabacloud/polardb/model/FailoverDBClusterResult.h
 	include/alibabacloud/polardb/model/GrantAccountPrivilegeRequest.h
 	include/alibabacloud/polardb/model/GrantAccountPrivilegeResult.h
-	include/alibabacloud/polardb/model/ListTagResourcesRequest.h
-	include/alibabacloud/polardb/model/ListTagResourcesResult.h
-	include/alibabacloud/polardb/model/LockDBClusterDeletionRequest.h
-	include/alibabacloud/polardb/model/LockDBClusterDeletionResult.h
 	include/alibabacloud/polardb/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/polardb/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/polardb/model/ModifyAccountPasswordRequest.h
@@ -119,19 +117,13 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/RevokeAccountPrivilegeResult.h
 	include/alibabacloud/polardb/model/TagResourcesRequest.h
 	include/alibabacloud/polardb/model/TagResourcesResult.h
-	include/alibabacloud/polardb/model/UnlockDBClusterDeletionRequest.h
-	include/alibabacloud/polardb/model/UnlockDBClusterDeletionResult.h
 	include/alibabacloud/polardb/model/UntagResourcesRequest.h
 	include/alibabacloud/polardb/model/UntagResourcesResult.h )
 
 set(polardb_src 
 	src/PolardbClient.cc
-	src/model/AbortDBClusterMigrationRequest.cc
-	src/model/AbortDBClusterMigrationResult.cc
 	src/model/CloseDBClusterMigrationRequest.cc
 	src/model/CloseDBClusterMigrationResult.cc
-	src/model/ContinueDBClusterMigrationRequest.cc
-	src/model/ContinueDBClusterMigrationResult.cc
 	src/model/CreateAccountRequest.cc
 	src/model/CreateAccountResult.cc
 	src/model/CreateBackupRequest.cc
@@ -178,18 +170,20 @@ set(polardb_src
 	src/model/DescribeDBClusterMigrationResult.cc
 	src/model/DescribeDBClusterParametersRequest.cc
 	src/model/DescribeDBClusterParametersResult.cc
+	src/model/DescribeDBClusterPerformanceRequest.cc
+	src/model/DescribeDBClusterPerformanceResult.cc
 	src/model/DescribeDBClustersRequest.cc
 	src/model/DescribeDBClustersResult.cc
+	src/model/DescribeDBNodePerformanceRequest.cc
+	src/model/DescribeDBNodePerformanceResult.cc
 	src/model/DescribeDatabasesRequest.cc
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/FailoverDBClusterRequest.cc
+	src/model/FailoverDBClusterResult.cc
 	src/model/GrantAccountPrivilegeRequest.cc
 	src/model/GrantAccountPrivilegeResult.cc
-	src/model/ListTagResourcesRequest.cc
-	src/model/ListTagResourcesResult.cc
-	src/model/LockDBClusterDeletionRequest.cc
-	src/model/LockDBClusterDeletionResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAccountPasswordRequest.cc
@@ -224,8 +218,6 @@ set(polardb_src
 	src/model/RevokeAccountPrivilegeResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
-	src/model/UnlockDBClusterDeletionRequest.cc
-	src/model/UnlockDBClusterDeletionResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc )
 

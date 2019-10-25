@@ -69,6 +69,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			dBNodesObject.maxIOPS = std::stoi(valueDBNodesDBNode["MaxIOPS"].asString());
 		if(!valueDBNodesDBNode["MaxConnections"].isNull())
 			dBNodesObject.maxConnections = std::stoi(valueDBNodesDBNode["MaxConnections"].asString());
+		if(!valueDBNodesDBNode["FailoverPriority"].isNull())
+			dBNodesObject.failoverPriority = std::stoi(valueDBNodesDBNode["FailoverPriority"].asString());
 		dBNodes_.push_back(dBNodesObject);
 	}
 	if(!value["RegionId"].isNull())

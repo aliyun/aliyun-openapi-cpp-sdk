@@ -47,17 +47,6 @@ void CloseDBClusterMigrationRequest::setAccessKeyId(const std::string& accessKey
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string CloseDBClusterMigrationRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void CloseDBClusterMigrationRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string CloseDBClusterMigrationRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_ABORTDBCLUSTERMIGRATIONRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_ABORTDBCLUSTERMIGRATIONRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_FAILOVERDBCLUSTERRESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_FAILOVERDBCLUSTERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT AbortDBClusterMigrationResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT FailoverDBClusterResult : public ServiceResult
 			{
 			public:
 
 
-				AbortDBClusterMigrationResult();
-				explicit AbortDBClusterMigrationResult(const std::string &payload);
-				~AbortDBClusterMigrationResult();
+				FailoverDBClusterResult();
+				explicit FailoverDBClusterResult(const std::string &payload);
+				~FailoverDBClusterResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_ABORTDBCLUSTERMIGRATIONRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_FAILOVERDBCLUSTERRESULT_H_

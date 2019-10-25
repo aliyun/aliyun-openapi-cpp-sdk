@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string dBNodeRole;
 					std::string creationTime;
 					std::string dBNodeId;
+					int failoverPriority;
 					std::string dBNodeClass;
 					int maxIOPS;
 				};
