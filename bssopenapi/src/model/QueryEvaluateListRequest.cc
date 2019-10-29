@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryEvaluateListRequest;
 
 QueryEvaluateListRequest::QueryEvaluateListRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryEvaluateList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEvaluateListRequest::~QueryEvaluateListRequest()
 {}

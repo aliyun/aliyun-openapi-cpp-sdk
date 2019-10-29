@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryMonthlyInstanceConsumptionRequest;
 
 QueryMonthlyInstanceConsumptionRequest::QueryMonthlyInstanceConsumptionRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryMonthlyInstanceConsumption")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMonthlyInstanceConsumptionRequest::~QueryMonthlyInstanceConsumptionRequest()
 {}

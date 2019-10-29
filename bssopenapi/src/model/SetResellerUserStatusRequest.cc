@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::SetResellerUserStatusRequest;
 
 SetResellerUserStatusRequest::SetResellerUserStatusRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "SetResellerUserStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetResellerUserStatusRequest::~SetResellerUserStatusRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::GetOrderDetailRequest;
 
 GetOrderDetailRequest::GetOrderDetailRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "GetOrderDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetOrderDetailRequest::~GetOrderDetailRequest()
 {}

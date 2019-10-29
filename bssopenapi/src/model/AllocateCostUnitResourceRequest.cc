@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::AllocateCostUnitResourceRequest;
 
 AllocateCostUnitResourceRequest::AllocateCostUnitResourceRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "AllocateCostUnitResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AllocateCostUnitResourceRequest::~AllocateCostUnitResourceRequest()
 {}

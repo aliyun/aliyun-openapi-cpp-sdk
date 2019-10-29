@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::ModifyInstanceRequest;
 
 ModifyInstanceRequest::ModifyInstanceRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "ModifyInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceRequest::~ModifyInstanceRequest()
 {}

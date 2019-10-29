@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::ConvertChargeTypeRequest;
 
 ConvertChargeTypeRequest::ConvertChargeTypeRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "ConvertChargeType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConvertChargeTypeRequest::~ConvertChargeTypeRequest()
 {}

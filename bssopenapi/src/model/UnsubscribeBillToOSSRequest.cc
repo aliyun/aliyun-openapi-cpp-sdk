@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::UnsubscribeBillToOSSRequest;
 
 UnsubscribeBillToOSSRequest::UnsubscribeBillToOSSRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "UnsubscribeBillToOSS")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnsubscribeBillToOSSRequest::~UnsubscribeBillToOSSRequest()
 {}

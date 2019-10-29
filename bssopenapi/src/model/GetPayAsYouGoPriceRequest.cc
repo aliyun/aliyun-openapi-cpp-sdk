@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::GetPayAsYouGoPriceRequest;
 
 GetPayAsYouGoPriceRequest::GetPayAsYouGoPriceRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "GetPayAsYouGoPrice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPayAsYouGoPriceRequest::~GetPayAsYouGoPriceRequest()
 {}

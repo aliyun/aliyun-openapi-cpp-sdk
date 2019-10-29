@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::GetSubscriptionPriceRequest;
 
 GetSubscriptionPriceRequest::GetSubscriptionPriceRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "GetSubscriptionPrice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSubscriptionPriceRequest::~GetSubscriptionPriceRequest()
 {}

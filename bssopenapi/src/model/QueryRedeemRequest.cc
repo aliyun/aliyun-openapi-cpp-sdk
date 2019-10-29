@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryRedeemRequest;
 
 QueryRedeemRequest::QueryRedeemRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryRedeem")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 QueryRedeemRequest::~QueryRedeemRequest()
 {}

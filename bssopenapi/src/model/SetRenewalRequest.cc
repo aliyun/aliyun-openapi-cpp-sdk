@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::SetRenewalRequest;
 
 SetRenewalRequest::SetRenewalRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "SetRenewal")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetRenewalRequest::~SetRenewalRequest()
 {}

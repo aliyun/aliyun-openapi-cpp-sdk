@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::UpgradeResourcePackageRequest;
 
 UpgradeResourcePackageRequest::UpgradeResourcePackageRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "UpgradeResourcePackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeResourcePackageRequest::~UpgradeResourcePackageRequest()
 {}

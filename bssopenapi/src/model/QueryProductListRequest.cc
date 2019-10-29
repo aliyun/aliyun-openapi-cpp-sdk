@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryProductListRequest;
 
 QueryProductListRequest::QueryProductListRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryProductList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryProductListRequest::~QueryProductListRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QuerySettlementBillRequest;
 
 QuerySettlementBillRequest::QuerySettlementBillRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QuerySettlementBill")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySettlementBillRequest::~QuerySettlementBillRequest()
 {}

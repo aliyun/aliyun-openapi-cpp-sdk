@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::ChangeResellerConsumeAmountRequest;
 
 ChangeResellerConsumeAmountRequest::ChangeResellerConsumeAmountRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "ChangeResellerConsumeAmount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ChangeResellerConsumeAmountRequest::~ChangeResellerConsumeAmountRequest()
 {}

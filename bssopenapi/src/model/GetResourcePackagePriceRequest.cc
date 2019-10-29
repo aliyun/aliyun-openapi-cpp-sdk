@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::GetResourcePackagePriceRequest;
 
 GetResourcePackagePriceRequest::GetResourcePackagePriceRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "GetResourcePackagePrice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetResourcePackagePriceRequest::~GetResourcePackagePriceRequest()
 {}

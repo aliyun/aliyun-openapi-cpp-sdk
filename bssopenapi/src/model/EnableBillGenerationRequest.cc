@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::EnableBillGenerationRequest;
 
 EnableBillGenerationRequest::EnableBillGenerationRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "EnableBillGeneration")
-{}
+{
+	setMethod(HttpRequest::Method::Put);
+}
 
 EnableBillGenerationRequest::~EnableBillGenerationRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::GetCustomerAccountInfoRequest;
 
 GetCustomerAccountInfoRequest::GetCustomerAccountInfoRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "GetCustomerAccountInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetCustomerAccountInfoRequest::~GetCustomerAccountInfoRequest()
 {}

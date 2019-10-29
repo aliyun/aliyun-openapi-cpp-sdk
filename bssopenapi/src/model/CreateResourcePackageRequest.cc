@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::CreateResourcePackageRequest;
 
 CreateResourcePackageRequest::CreateResourcePackageRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "CreateResourcePackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateResourcePackageRequest::~CreateResourcePackageRequest()
 {}

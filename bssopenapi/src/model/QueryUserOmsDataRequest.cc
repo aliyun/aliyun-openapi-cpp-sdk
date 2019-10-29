@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryUserOmsDataRequest;
 
 QueryUserOmsDataRequest::QueryUserOmsDataRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryUserOmsData")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 QueryUserOmsDataRequest::~QueryUserOmsDataRequest()
 {}

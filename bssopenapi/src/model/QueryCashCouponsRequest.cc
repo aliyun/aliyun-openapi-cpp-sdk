@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryCashCouponsRequest;
 
 QueryCashCouponsRequest::QueryCashCouponsRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryCashCoupons")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCashCouponsRequest::~QueryCashCouponsRequest()
 {}

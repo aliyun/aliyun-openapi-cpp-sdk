@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::GetCustomerListRequest;
 
 GetCustomerListRequest::GetCustomerListRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "GetCustomerList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetCustomerListRequest::~GetCustomerListRequest()
 {}

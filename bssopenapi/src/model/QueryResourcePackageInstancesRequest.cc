@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryResourcePackageInstancesRequest;
 
 QueryResourcePackageInstancesRequest::QueryResourcePackageInstancesRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryResourcePackageInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryResourcePackageInstancesRequest::~QueryResourcePackageInstancesRequest()
 {}

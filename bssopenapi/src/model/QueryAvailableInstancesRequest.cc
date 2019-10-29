@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryAvailableInstancesRequest;
 
 QueryAvailableInstancesRequest::QueryAvailableInstancesRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryAvailableInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAvailableInstancesRequest::~QueryAvailableInstancesRequest()
 {}

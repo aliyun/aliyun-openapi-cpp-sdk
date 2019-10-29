@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::CreateResellerUserQuotaRequest;
 
 CreateResellerUserQuotaRequest::CreateResellerUserQuotaRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "CreateResellerUserQuota")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateResellerUserQuotaRequest::~CreateResellerUserQuotaRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::DescribePricingModuleRequest;
 
 DescribePricingModuleRequest::DescribePricingModuleRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "DescribePricingModule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePricingModuleRequest::~DescribePricingModuleRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::CreateCostUnitRequest;
 
 CreateCostUnitRequest::CreateCostUnitRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "CreateCostUnit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCostUnitRequest::~CreateCostUnitRequest()
 {}

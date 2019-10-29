@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryCustomerAddressListRequest;
 
 QueryCustomerAddressListRequest::QueryCustomerAddressListRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryCustomerAddressList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCustomerAddressListRequest::~QueryCustomerAddressListRequest()
 {}

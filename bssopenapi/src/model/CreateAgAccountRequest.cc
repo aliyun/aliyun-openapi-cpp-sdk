@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::CreateAgAccountRequest;
 
 CreateAgAccountRequest::CreateAgAccountRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "CreateAgAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAgAccountRequest::~CreateAgAccountRequest()
 {}

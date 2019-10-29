@@ -68,6 +68,8 @@
 #include "model/ModifyInstanceResult.h"
 #include "model/QueryAccountBalanceRequest.h"
 #include "model/QueryAccountBalanceResult.h"
+#include "model/QueryAccountBillRequest.h"
+#include "model/QueryAccountBillResult.h"
 #include "model/QueryAccountTransactionsRequest.h"
 #include "model/QueryAccountTransactionsResult.h"
 #include "model/QueryAvailableInstancesRequest.h"
@@ -208,6 +210,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryAccountBalanceResult> QueryAccountBalanceOutcome;
 			typedef std::future<QueryAccountBalanceOutcome> QueryAccountBalanceOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryAccountBalanceRequest&, const QueryAccountBalanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAccountBalanceAsyncHandler;
+			typedef Outcome<Error, Model::QueryAccountBillResult> QueryAccountBillOutcome;
+			typedef std::future<QueryAccountBillOutcome> QueryAccountBillOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QueryAccountBillRequest&, const QueryAccountBillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAccountBillAsyncHandler;
 			typedef Outcome<Error, Model::QueryAccountTransactionsResult> QueryAccountTransactionsOutcome;
 			typedef std::future<QueryAccountTransactionsOutcome> QueryAccountTransactionsOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryAccountTransactionsRequest&, const QueryAccountTransactionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAccountTransactionsAsyncHandler;
@@ -375,6 +380,9 @@ namespace AlibabaCloud
 			QueryAccountBalanceOutcome queryAccountBalance(const Model::QueryAccountBalanceRequest &request)const;
 			void queryAccountBalanceAsync(const Model::QueryAccountBalanceRequest& request, const QueryAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryAccountBalanceOutcomeCallable queryAccountBalanceCallable(const Model::QueryAccountBalanceRequest& request) const;
+			QueryAccountBillOutcome queryAccountBill(const Model::QueryAccountBillRequest &request)const;
+			void queryAccountBillAsync(const Model::QueryAccountBillRequest& request, const QueryAccountBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryAccountBillOutcomeCallable queryAccountBillCallable(const Model::QueryAccountBillRequest& request) const;
 			QueryAccountTransactionsOutcome queryAccountTransactions(const Model::QueryAccountTransactionsRequest &request)const;
 			void queryAccountTransactionsAsync(const Model::QueryAccountTransactionsRequest& request, const QueryAccountTransactionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryAccountTransactionsOutcomeCallable queryAccountTransactionsCallable(const Model::QueryAccountTransactionsRequest& request) const;

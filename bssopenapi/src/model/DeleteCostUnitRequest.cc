@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::DeleteCostUnitRequest;
 
 DeleteCostUnitRequest::DeleteCostUnitRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "DeleteCostUnit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCostUnitRequest::~DeleteCostUnitRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::SetResellerUserAlarmThresholdRequest;
 
 SetResellerUserAlarmThresholdRequest::SetResellerUserAlarmThresholdRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "SetResellerUserAlarmThreshold")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetResellerUserAlarmThresholdRequest::~SetResellerUserAlarmThresholdRequest()
 {}

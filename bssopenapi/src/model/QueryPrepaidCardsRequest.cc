@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryPrepaidCardsRequest;
 
 QueryPrepaidCardsRequest::QueryPrepaidCardsRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryPrepaidCards")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryPrepaidCardsRequest::~QueryPrepaidCardsRequest()
 {}

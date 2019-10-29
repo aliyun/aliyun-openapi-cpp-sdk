@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryAccountBalanceRequest;
 
 QueryAccountBalanceRequest::QueryAccountBalanceRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryAccountBalance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAccountBalanceRequest::~QueryAccountBalanceRequest()
 {}

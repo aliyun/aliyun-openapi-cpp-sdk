@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryBillOverviewRequest;
 
 QueryBillOverviewRequest::QueryBillOverviewRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryBillOverview")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryBillOverviewRequest::~QueryBillOverviewRequest()
 {}

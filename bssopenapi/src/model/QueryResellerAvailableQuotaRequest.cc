@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryResellerAvailableQuotaRequest;
 
 QueryResellerAvailableQuotaRequest::QueryResellerAvailableQuotaRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryResellerAvailableQuota")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryResellerAvailableQuotaRequest::~QueryResellerAvailableQuotaRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::SubscribeBillToOSSRequest;
 
 SubscribeBillToOSSRequest::SubscribeBillToOSSRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "SubscribeBillToOSS")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubscribeBillToOSSRequest::~SubscribeBillToOSSRequest()
 {}

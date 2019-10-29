@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::ApplyInvoiceRequest;
 
 ApplyInvoiceRequest::ApplyInvoiceRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "ApplyInvoice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApplyInvoiceRequest::~ApplyInvoiceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryInstanceGaapCostRequest;
 
 QueryInstanceGaapCostRequest::QueryInstanceGaapCostRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryInstanceGaapCost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryInstanceGaapCostRequest::~QueryInstanceGaapCostRequest()
 {}

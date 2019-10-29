@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::CancelOrderRequest;
 
 CancelOrderRequest::CancelOrderRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "CancelOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelOrderRequest::~CancelOrderRequest()
 {}

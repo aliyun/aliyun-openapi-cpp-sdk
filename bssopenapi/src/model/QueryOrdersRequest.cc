@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryOrdersRequest;
 
 QueryOrdersRequest::QueryOrdersRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryOrders")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryOrdersRequest::~QueryOrdersRequest()
 {}

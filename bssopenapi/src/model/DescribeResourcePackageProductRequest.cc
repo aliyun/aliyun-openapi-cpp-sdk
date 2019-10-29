@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::DescribeResourcePackageProductRequest;
 
 DescribeResourcePackageProductRequest::DescribeResourcePackageProductRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "DescribeResourcePackageProduct")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeResourcePackageProductRequest::~DescribeResourcePackageProductRequest()
 {}

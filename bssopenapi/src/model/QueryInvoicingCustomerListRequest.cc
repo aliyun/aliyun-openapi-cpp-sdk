@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryInvoicingCustomerListRequest;
 
 QueryInvoicingCustomerListRequest::QueryInvoicingCustomerListRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryInvoicingCustomerList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryInvoicingCustomerListRequest::~QueryInvoicingCustomerListRequest()
 {}

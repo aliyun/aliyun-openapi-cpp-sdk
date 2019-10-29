@@ -20,7 +20,9 @@ using AlibabaCloud::BssOpenApi::Model::QueryAccountTransactionsRequest;
 
 QueryAccountTransactionsRequest::QueryAccountTransactionsRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "QueryAccountTransactions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAccountTransactionsRequest::~QueryAccountTransactionsRequest()
 {}
