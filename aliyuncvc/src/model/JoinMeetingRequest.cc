@@ -14,38 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/DeleteUserRequest.h>
+#include <alibabacloud/aliyuncvc/model/JoinMeetingRequest.h>
 
-using AlibabaCloud::Aliyuncvc::Model::DeleteUserRequest;
+using AlibabaCloud::Aliyuncvc::Model::JoinMeetingRequest;
 
-DeleteUserRequest::DeleteUserRequest() :
-	RpcServiceRequest("aliyuncvc", "2019-10-30", "DeleteUser")
+JoinMeetingRequest::JoinMeetingRequest() :
+	RpcServiceRequest("aliyuncvc", "2019-10-30", "JoinMeeting")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteUserRequest::~DeleteUserRequest()
+JoinMeetingRequest::~JoinMeetingRequest()
 {}
 
-int DeleteUserRequest::getCount()const
+std::string JoinMeetingRequest::getMeetingCode()const
 {
-	return count_;
+	return meetingCode_;
 }
 
-void DeleteUserRequest::setCount(int count)
+void JoinMeetingRequest::setMeetingCode(const std::string& meetingCode)
 {
-	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	meetingCode_ = meetingCode;
+	setCoreParameter("MeetingCode", meetingCode);
 }
 
-std::string DeleteUserRequest::getUserInfo()const
+std::string JoinMeetingRequest::getUserId()const
 {
-	return userInfo_;
+	return userId_;
 }
 
-void DeleteUserRequest::setUserInfo(const std::string& userInfo)
+void JoinMeetingRequest::setUserId(const std::string& userId)
 {
-	userInfo_ = userInfo;
-	setCoreParameter("UserInfo", userInfo);
+	userId_ = userId;
+	setCoreParameter("UserId", userId);
 }
 

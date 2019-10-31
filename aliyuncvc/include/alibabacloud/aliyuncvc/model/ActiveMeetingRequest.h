@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_ACTIVEMEETINGREQUEST_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_ACTIVEMEETINGREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/aliyuncvc/AliyuncvcExport.h>
 
 namespace AlibabaCloud
@@ -29,29 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateUserResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT ActiveMeetingRequest : public RpcServiceRequest
 			{
+
 			public:
+				ActiveMeetingRequest();
+				~ActiveMeetingRequest();
 
+				std::string getMeetingUUID()const;
+				void setMeetingUUID(const std::string& meetingUUID);
+				std::string getMeetingCode()const;
+				void setMeetingCode(const std::string& meetingCode);
 
-				CreateUserResult();
-				explicit CreateUserResult(const std::string &payload);
-				~CreateUserResult();
-				std::string getMessage()const;
-				std::string getUserId()const;
-				int getErrorCode()const;
-				bool getSuccess()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string message_;
-				std::string userId_;
-				int errorCode_;
-				bool success_;
+            private:
+				std::string meetingUUID_;
+				std::string meetingCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_ACTIVEMEETINGREQUEST_H_

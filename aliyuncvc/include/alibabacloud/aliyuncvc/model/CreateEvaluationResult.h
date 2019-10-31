@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEEVALUATIONRESULT_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEEVALUATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateUserResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateEvaluationResult : public ServiceResult
 			{
 			public:
 
 
-				CreateUserResult();
-				explicit CreateUserResult(const std::string &payload);
-				~CreateUserResult();
+				CreateEvaluationResult();
+				explicit CreateEvaluationResult(const std::string &payload);
+				~CreateEvaluationResult();
 				std::string getMessage()const;
-				std::string getUserId()const;
-				int getErrorCode()const;
+				std::string getErrorCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string userId_;
-				int errorCode_;
+				std::string errorCode_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEEVALUATIONRESULT_H_

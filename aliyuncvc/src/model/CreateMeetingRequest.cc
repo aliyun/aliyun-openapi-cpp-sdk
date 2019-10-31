@@ -19,7 +19,7 @@
 using AlibabaCloud::Aliyuncvc::Model::CreateMeetingRequest;
 
 CreateMeetingRequest::CreateMeetingRequest() :
-	RpcServiceRequest("aliyuncvc", "2019-09-19", "CreateMeeting")
+	RpcServiceRequest("aliyuncvc", "2019-10-30", "CreateMeeting")
 {
 	setMethod(HttpRequest::Method::Post);
 }

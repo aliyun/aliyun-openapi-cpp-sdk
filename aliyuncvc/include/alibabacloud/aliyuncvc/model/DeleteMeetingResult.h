@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_DELETEMEETINGRESULT_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_DELETEMEETINGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,16 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateUserResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT DeleteMeetingResult : public ServiceResult
 			{
 			public:
 
 
-				CreateUserResult();
-				explicit CreateUserResult(const std::string &payload);
-				~CreateUserResult();
+				DeleteMeetingResult();
+				explicit DeleteMeetingResult(const std::string &payload);
+				~DeleteMeetingResult();
 				std::string getMessage()const;
-				std::string getUserId()const;
 				int getErrorCode()const;
 				bool getSuccess()const;
 
@@ -46,7 +45,6 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string userId_;
 				int errorCode_;
 				bool success_;
 
@@ -54,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_DELETEMEETINGRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_JOINMEETINGRESULT_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_JOINMEETINGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,24 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateUserResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT JoinMeetingResult : public ServiceResult
 			{
 			public:
+				struct MeetingInfo
+				{
+					struct SlsInfo
+					{
+						std::string project;
+						std::string logstore;
+						std::string logServiceEndpoint;
+					};
+					SlsInfo slsInfo;
+					std::string meetingDomain;
+					std::string meetingCode;
+					std::string memberUUID;
+					std::string meetingUUID;
+					std::string clientAppId;
+					std::string meetingAppId;
+					std::string meetingToken;
+				};
 
 
-				CreateUserResult();
-				explicit CreateUserResult(const std::string &payload);
-				~CreateUserResult();
+				JoinMeetingResult();
+				explicit JoinMeetingResult(const std::string &payload);
+				~JoinMeetingResult();
+				MeetingInfo getMeetingInfo()const;
 				std::string getMessage()const;
-				std::string getUserId()const;
 				int getErrorCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				MeetingInfo meetingInfo_;
 				std::string message_;
-				std::string userId_;
 				int errorCode_;
 				bool success_;
 
@@ -54,4 +71,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_JOINMEETINGRESULT_H_

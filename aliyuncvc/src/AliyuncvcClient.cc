@@ -51,72 +51,72 @@ AliyuncvcClient::AliyuncvcClient(const std::string & accessKeyId, const std::str
 AliyuncvcClient::~AliyuncvcClient()
 {}
 
-AliyuncvcClient::ActiveMeetingCodeOutcome AliyuncvcClient::activeMeetingCode(const ActiveMeetingCodeRequest &request) const
+AliyuncvcClient::ActiveMeetingOutcome AliyuncvcClient::activeMeeting(const ActiveMeetingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ActiveMeetingCodeOutcome(endpointOutcome.error());
+		return ActiveMeetingOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ActiveMeetingCodeOutcome(ActiveMeetingCodeResult(outcome.result()));
+		return ActiveMeetingOutcome(ActiveMeetingResult(outcome.result()));
 	else
-		return ActiveMeetingCodeOutcome(outcome.error());
+		return ActiveMeetingOutcome(outcome.error());
 }
 
-void AliyuncvcClient::activeMeetingCodeAsync(const ActiveMeetingCodeRequest& request, const ActiveMeetingCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AliyuncvcClient::activeMeetingAsync(const ActiveMeetingRequest& request, const ActiveMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, activeMeetingCode(request), context);
+		handler(this, request, activeMeeting(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AliyuncvcClient::ActiveMeetingCodeOutcomeCallable AliyuncvcClient::activeMeetingCodeCallable(const ActiveMeetingCodeRequest &request) const
+AliyuncvcClient::ActiveMeetingOutcomeCallable AliyuncvcClient::activeMeetingCallable(const ActiveMeetingRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ActiveMeetingCodeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ActiveMeetingOutcome()>>(
 			[this, request]()
 			{
-			return this->activeMeetingCode(request);
+			return this->activeMeeting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AliyuncvcClient::CheckMeetingCodeOutcome AliyuncvcClient::checkMeetingCode(const CheckMeetingCodeRequest &request) const
+AliyuncvcClient::CreateEvaluationOutcome AliyuncvcClient::createEvaluation(const CreateEvaluationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CheckMeetingCodeOutcome(endpointOutcome.error());
+		return CreateEvaluationOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CheckMeetingCodeOutcome(CheckMeetingCodeResult(outcome.result()));
+		return CreateEvaluationOutcome(CreateEvaluationResult(outcome.result()));
 	else
-		return CheckMeetingCodeOutcome(outcome.error());
+		return CreateEvaluationOutcome(outcome.error());
 }
 
-void AliyuncvcClient::checkMeetingCodeAsync(const CheckMeetingCodeRequest& request, const CheckMeetingCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AliyuncvcClient::createEvaluationAsync(const CreateEvaluationRequest& request, const CreateEvaluationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, checkMeetingCode(request), context);
+		handler(this, request, createEvaluation(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AliyuncvcClient::CheckMeetingCodeOutcomeCallable AliyuncvcClient::checkMeetingCodeCallable(const CheckMeetingCodeRequest &request) const
+AliyuncvcClient::CreateEvaluationOutcomeCallable AliyuncvcClient::createEvaluationCallable(const CreateEvaluationRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CheckMeetingCodeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateEvaluationOutcome()>>(
 			[this, request]()
 			{
-			return this->checkMeetingCode(request);
+			return this->createEvaluation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -195,36 +195,36 @@ AliyuncvcClient::CreateUserOutcomeCallable AliyuncvcClient::createUserCallable(c
 	return task->get_future();
 }
 
-AliyuncvcClient::CreateUserEvaluationsOutcome AliyuncvcClient::createUserEvaluations(const CreateUserEvaluationsRequest &request) const
+AliyuncvcClient::DeleteMeetingOutcome AliyuncvcClient::deleteMeeting(const DeleteMeetingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateUserEvaluationsOutcome(endpointOutcome.error());
+		return DeleteMeetingOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateUserEvaluationsOutcome(CreateUserEvaluationsResult(outcome.result()));
+		return DeleteMeetingOutcome(DeleteMeetingResult(outcome.result()));
 	else
-		return CreateUserEvaluationsOutcome(outcome.error());
+		return DeleteMeetingOutcome(outcome.error());
 }
 
-void AliyuncvcClient::createUserEvaluationsAsync(const CreateUserEvaluationsRequest& request, const CreateUserEvaluationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AliyuncvcClient::deleteMeetingAsync(const DeleteMeetingRequest& request, const DeleteMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createUserEvaluations(request), context);
+		handler(this, request, deleteMeeting(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AliyuncvcClient::CreateUserEvaluationsOutcomeCallable AliyuncvcClient::createUserEvaluationsCallable(const CreateUserEvaluationsRequest &request) const
+AliyuncvcClient::DeleteMeetingOutcomeCallable AliyuncvcClient::deleteMeetingCallable(const DeleteMeetingRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateUserEvaluationsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteMeetingOutcome()>>(
 			[this, request]()
 			{
-			return this->createUserEvaluations(request);
+			return this->deleteMeeting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,360 +267,216 @@ AliyuncvcClient::DeleteUserOutcomeCallable AliyuncvcClient::deleteUserCallable(c
 	return task->get_future();
 }
 
-AliyuncvcClient::ListCommoditiesOutcome AliyuncvcClient::listCommodities(const ListCommoditiesRequest &request) const
+AliyuncvcClient::GetMeetingOutcome AliyuncvcClient::getMeeting(const GetMeetingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListCommoditiesOutcome(endpointOutcome.error());
+		return GetMeetingOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListCommoditiesOutcome(ListCommoditiesResult(outcome.result()));
+		return GetMeetingOutcome(GetMeetingResult(outcome.result()));
 	else
-		return ListCommoditiesOutcome(outcome.error());
+		return GetMeetingOutcome(outcome.error());
 }
 
-void AliyuncvcClient::listCommoditiesAsync(const ListCommoditiesRequest& request, const ListCommoditiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AliyuncvcClient::getMeetingAsync(const GetMeetingRequest& request, const GetMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listCommodities(request), context);
+		handler(this, request, getMeeting(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AliyuncvcClient::ListCommoditiesOutcomeCallable AliyuncvcClient::listCommoditiesCallable(const ListCommoditiesRequest &request) const
+AliyuncvcClient::GetMeetingOutcomeCallable AliyuncvcClient::getMeetingCallable(const GetMeetingRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListCommoditiesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetMeetingOutcome()>>(
 			[this, request]()
 			{
-			return this->listCommodities(request);
+			return this->getMeeting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AliyuncvcClient::QueryIsvUserInfoOutcome AliyuncvcClient::queryIsvUserInfo(const QueryIsvUserInfoRequest &request) const
+AliyuncvcClient::GetUserOutcome AliyuncvcClient::getUser(const GetUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryIsvUserInfoOutcome(endpointOutcome.error());
+		return GetUserOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryIsvUserInfoOutcome(QueryIsvUserInfoResult(outcome.result()));
+		return GetUserOutcome(GetUserResult(outcome.result()));
 	else
-		return QueryIsvUserInfoOutcome(outcome.error());
+		return GetUserOutcome(outcome.error());
 }
 
-void AliyuncvcClient::queryIsvUserInfoAsync(const QueryIsvUserInfoRequest& request, const QueryIsvUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AliyuncvcClient::getUserAsync(const GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryIsvUserInfo(request), context);
+		handler(this, request, getUser(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AliyuncvcClient::QueryIsvUserInfoOutcomeCallable AliyuncvcClient::queryIsvUserInfoCallable(const QueryIsvUserInfoRequest &request) const
+AliyuncvcClient::GetUserOutcomeCallable AliyuncvcClient::getUserCallable(const GetUserRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryIsvUserInfoOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetUserOutcome()>>(
 			[this, request]()
 			{
-			return this->queryIsvUserInfo(request);
+			return this->getUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AliyuncvcClient::QueryMeetingInfoOutcome AliyuncvcClient::queryMeetingInfo(const QueryMeetingInfoRequest &request) const
+AliyuncvcClient::JoinMeetingOutcome AliyuncvcClient::joinMeeting(const JoinMeetingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryMeetingInfoOutcome(endpointOutcome.error());
+		return JoinMeetingOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryMeetingInfoOutcome(QueryMeetingInfoResult(outcome.result()));
+		return JoinMeetingOutcome(JoinMeetingResult(outcome.result()));
 	else
-		return QueryMeetingInfoOutcome(outcome.error());
+		return JoinMeetingOutcome(outcome.error());
 }
 
-void AliyuncvcClient::queryMeetingInfoAsync(const QueryMeetingInfoRequest& request, const QueryMeetingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AliyuncvcClient::joinMeetingAsync(const JoinMeetingRequest& request, const JoinMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryMeetingInfo(request), context);
+		handler(this, request, joinMeeting(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AliyuncvcClient::QueryMeetingInfoOutcomeCallable AliyuncvcClient::queryMeetingInfoCallable(const QueryMeetingInfoRequest &request) const
+AliyuncvcClient::JoinMeetingOutcomeCallable AliyuncvcClient::joinMeetingCallable(const JoinMeetingRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryMeetingInfoOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<JoinMeetingOutcome()>>(
 			[this, request]()
 			{
-			return this->queryMeetingInfo(request);
+			return this->joinMeeting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AliyuncvcClient::QueryMemberRecordOutcome AliyuncvcClient::queryMemberRecord(const QueryMemberRecordRequest &request) const
+AliyuncvcClient::ListEvaluationsOutcome AliyuncvcClient::listEvaluations(const ListEvaluationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryMemberRecordOutcome(endpointOutcome.error());
+		return ListEvaluationsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryMemberRecordOutcome(QueryMemberRecordResult(outcome.result()));
+		return ListEvaluationsOutcome(ListEvaluationsResult(outcome.result()));
 	else
-		return QueryMemberRecordOutcome(outcome.error());
+		return ListEvaluationsOutcome(outcome.error());
 }
 
-void AliyuncvcClient::queryMemberRecordAsync(const QueryMemberRecordRequest& request, const QueryMemberRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AliyuncvcClient::listEvaluationsAsync(const ListEvaluationsRequest& request, const ListEvaluationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryMemberRecord(request), context);
+		handler(this, request, listEvaluations(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AliyuncvcClient::QueryMemberRecordOutcomeCallable AliyuncvcClient::queryMemberRecordCallable(const QueryMemberRecordRequest &request) const
+AliyuncvcClient::ListEvaluationsOutcomeCallable AliyuncvcClient::listEvaluationsCallable(const ListEvaluationsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryMemberRecordOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListEvaluationsOutcome()>>(
 			[this, request]()
 			{
-			return this->queryMemberRecord(request);
+			return this->listEvaluations(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AliyuncvcClient::QueryStatisticsOutcome AliyuncvcClient::queryStatistics(const QueryStatisticsRequest &request) const
+AliyuncvcClient::ListMembersOutcome AliyuncvcClient::listMembers(const ListMembersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryStatisticsOutcome(endpointOutcome.error());
+		return ListMembersOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryStatisticsOutcome(QueryStatisticsResult(outcome.result()));
+		return ListMembersOutcome(ListMembersResult(outcome.result()));
 	else
-		return QueryStatisticsOutcome(outcome.error());
+		return ListMembersOutcome(outcome.error());
 }
 
-void AliyuncvcClient::queryStatisticsAsync(const QueryStatisticsRequest& request, const QueryStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AliyuncvcClient::listMembersAsync(const ListMembersRequest& request, const ListMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryStatistics(request), context);
+		handler(this, request, listMembers(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AliyuncvcClient::QueryStatisticsOutcomeCallable AliyuncvcClient::queryStatisticsCallable(const QueryStatisticsRequest &request) const
+AliyuncvcClient::ListMembersOutcomeCallable AliyuncvcClient::listMembersCallable(const ListMembersRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryStatisticsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListMembersOutcome()>>(
 			[this, request]()
 			{
-			return this->queryStatistics(request);
+			return this->listMembers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AliyuncvcClient::QueryUserBuyAttributeOutcome AliyuncvcClient::queryUserBuyAttribute(const QueryUserBuyAttributeRequest &request) const
+AliyuncvcClient::ListUsersOutcome AliyuncvcClient::listUsers(const ListUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryUserBuyAttributeOutcome(endpointOutcome.error());
+		return ListUsersOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryUserBuyAttributeOutcome(QueryUserBuyAttributeResult(outcome.result()));
+		return ListUsersOutcome(ListUsersResult(outcome.result()));
 	else
-		return QueryUserBuyAttributeOutcome(outcome.error());
+		return ListUsersOutcome(outcome.error());
 }
 
-void AliyuncvcClient::queryUserBuyAttributeAsync(const QueryUserBuyAttributeRequest& request, const QueryUserBuyAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AliyuncvcClient::listUsersAsync(const ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryUserBuyAttribute(request), context);
+		handler(this, request, listUsers(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AliyuncvcClient::QueryUserBuyAttributeOutcomeCallable AliyuncvcClient::queryUserBuyAttributeCallable(const QueryUserBuyAttributeRequest &request) const
+AliyuncvcClient::ListUsersOutcomeCallable AliyuncvcClient::listUsersCallable(const ListUsersRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryUserBuyAttributeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListUsersOutcome()>>(
 			[this, request]()
 			{
-			return this->queryUserBuyAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AliyuncvcClient::QueryUserEvaluationOutcome AliyuncvcClient::queryUserEvaluation(const QueryUserEvaluationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryUserEvaluationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryUserEvaluationOutcome(QueryUserEvaluationResult(outcome.result()));
-	else
-		return QueryUserEvaluationOutcome(outcome.error());
-}
-
-void AliyuncvcClient::queryUserEvaluationAsync(const QueryUserEvaluationRequest& request, const QueryUserEvaluationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryUserEvaluation(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AliyuncvcClient::QueryUserEvaluationOutcomeCallable AliyuncvcClient::queryUserEvaluationCallable(const QueryUserEvaluationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryUserEvaluationOutcome()>>(
-			[this, request]()
-			{
-			return this->queryUserEvaluation(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AliyuncvcClient::QueryUserInfoOutcome AliyuncvcClient::queryUserInfo(const QueryUserInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryUserInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryUserInfoOutcome(QueryUserInfoResult(outcome.result()));
-	else
-		return QueryUserInfoOutcome(outcome.error());
-}
-
-void AliyuncvcClient::queryUserInfoAsync(const QueryUserInfoRequest& request, const QueryUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryUserInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AliyuncvcClient::QueryUserInfoOutcomeCallable AliyuncvcClient::queryUserInfoCallable(const QueryUserInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryUserInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->queryUserInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AliyuncvcClient::QueryUserListOutcome AliyuncvcClient::queryUserList(const QueryUserListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryUserListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryUserListOutcome(QueryUserListResult(outcome.result()));
-	else
-		return QueryUserListOutcome(outcome.error());
-}
-
-void AliyuncvcClient::queryUserListAsync(const QueryUserListRequest& request, const QueryUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryUserList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AliyuncvcClient::QueryUserListOutcomeCallable AliyuncvcClient::queryUserListCallable(const QueryUserListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryUserListOutcome()>>(
-			[this, request]()
-			{
-			return this->queryUserList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AliyuncvcClient::RemoveMeetingOutcome AliyuncvcClient::removeMeeting(const RemoveMeetingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RemoveMeetingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RemoveMeetingOutcome(RemoveMeetingResult(outcome.result()));
-	else
-		return RemoveMeetingOutcome(outcome.error());
-}
-
-void AliyuncvcClient::removeMeetingAsync(const RemoveMeetingRequest& request, const RemoveMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, removeMeeting(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AliyuncvcClient::RemoveMeetingOutcomeCallable AliyuncvcClient::removeMeetingCallable(const RemoveMeetingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RemoveMeetingOutcome()>>(
-			[this, request]()
-			{
-			return this->removeMeeting(request);
+			return this->listUsers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

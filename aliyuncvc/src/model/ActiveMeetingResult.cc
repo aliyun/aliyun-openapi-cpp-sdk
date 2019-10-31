@@ -14,58 +14,61 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/CreateUserResult.h>
+#include <alibabacloud/aliyuncvc/model/ActiveMeetingResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Aliyuncvc;
 using namespace AlibabaCloud::Aliyuncvc::Model;
 
-CreateUserResult::CreateUserResult() :
+ActiveMeetingResult::ActiveMeetingResult() :
 	ServiceResult()
 {}
 
-CreateUserResult::CreateUserResult(const std::string &payload) :
+ActiveMeetingResult::ActiveMeetingResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateUserResult::~CreateUserResult()
+ActiveMeetingResult::~ActiveMeetingResult()
 {}
 
-void CreateUserResult::parse(const std::string &payload)
+void ActiveMeetingResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto meetingInfoNode = value["MeetingInfo"];
+	if(!meetingInfoNode["ValidTime"].isNull())
+		meetingInfo_.validTime = std::stol(meetingInfoNode["ValidTime"].asString());
+	if(!meetingInfoNode["MeetingCode"].isNull())
+		meetingInfo_.meetingCode = meetingInfoNode["MeetingCode"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = std::stoi(value["ErrorCode"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
-	if(!value["UserId"].isNull())
-		userId_ = value["UserId"].asString();
 
 }
 
-std::string CreateUserResult::getMessage()const
+ActiveMeetingResult::MeetingInfo ActiveMeetingResult::getMeetingInfo()const
+{
+	return meetingInfo_;
+}
+
+std::string ActiveMeetingResult::getMessage()const
 {
 	return message_;
 }
 
-std::string CreateUserResult::getUserId()const
-{
-	return userId_;
-}
-
-int CreateUserResult::getErrorCode()const
+int ActiveMeetingResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-bool CreateUserResult::getSuccess()const
+bool ActiveMeetingResult::getSuccess()const
 {
 	return success_;
 }

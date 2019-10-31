@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_LISTUSERSRESULT_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_LISTUSERSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,16 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateUserResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT ListUsersResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					struct UserInfo
+					{
+						std::string groupName;
+						std::string userMobile;
+						std::string userName;
+						std::string userTel;
+						long createTime;
+						std::string userAvatarUrl;
+						std::string userEmail;
+						std::string departName;
+						std::string groupId;
+						std::string departId;
+					};
+					int totalCount;
+					int pageSize;
+					int pageNumber;
+					std::vector<UserInfo> userInfos;
+				};
 
 
-				CreateUserResult();
-				explicit CreateUserResult(const std::string &payload);
-				~CreateUserResult();
+				ListUsersResult();
+				explicit ListUsersResult(const std::string &payload);
+				~ListUsersResult();
 				std::string getMessage()const;
-				std::string getUserId()const;
+				Data getData()const;
 				int getErrorCode()const;
 				bool getSuccess()const;
 
@@ -46,7 +66,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string userId_;
+				Data data_;
 				int errorCode_;
 				bool success_;
 
@@ -54,4 +74,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_LISTUSERSRESULT_H_

@@ -19,7 +19,7 @@
 using AlibabaCloud::Aliyuncvc::Model::CreateUserRequest;
 
 CreateUserRequest::CreateUserRequest() :
-	RpcServiceRequest("aliyuncvc", "2019-09-19", "CreateUser")
+	RpcServiceRequest("aliyuncvc", "2019-10-30", "CreateUser")
 {
 	setMethod(HttpRequest::Method::Post);
 }

@@ -21,73 +21,57 @@ set(aliyuncvc_public_header
 	include/alibabacloud/aliyuncvc/AliyuncvcExport.h )
 
 set(aliyuncvc_public_header_model 
-	include/alibabacloud/aliyuncvc/model/ActiveMeetingCodeRequest.h
-	include/alibabacloud/aliyuncvc/model/ActiveMeetingCodeResult.h
-	include/alibabacloud/aliyuncvc/model/CheckMeetingCodeRequest.h
-	include/alibabacloud/aliyuncvc/model/CheckMeetingCodeResult.h
+	include/alibabacloud/aliyuncvc/model/ActiveMeetingRequest.h
+	include/alibabacloud/aliyuncvc/model/ActiveMeetingResult.h
+	include/alibabacloud/aliyuncvc/model/CreateEvaluationRequest.h
+	include/alibabacloud/aliyuncvc/model/CreateEvaluationResult.h
 	include/alibabacloud/aliyuncvc/model/CreateMeetingRequest.h
 	include/alibabacloud/aliyuncvc/model/CreateMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/CreateUserRequest.h
 	include/alibabacloud/aliyuncvc/model/CreateUserResult.h
-	include/alibabacloud/aliyuncvc/model/CreateUserEvaluationsRequest.h
-	include/alibabacloud/aliyuncvc/model/CreateUserEvaluationsResult.h
+	include/alibabacloud/aliyuncvc/model/DeleteMeetingRequest.h
+	include/alibabacloud/aliyuncvc/model/DeleteMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/DeleteUserRequest.h
 	include/alibabacloud/aliyuncvc/model/DeleteUserResult.h
-	include/alibabacloud/aliyuncvc/model/ListCommoditiesRequest.h
-	include/alibabacloud/aliyuncvc/model/ListCommoditiesResult.h
-	include/alibabacloud/aliyuncvc/model/QueryIsvUserInfoRequest.h
-	include/alibabacloud/aliyuncvc/model/QueryIsvUserInfoResult.h
-	include/alibabacloud/aliyuncvc/model/QueryMeetingInfoRequest.h
-	include/alibabacloud/aliyuncvc/model/QueryMeetingInfoResult.h
-	include/alibabacloud/aliyuncvc/model/QueryMemberRecordRequest.h
-	include/alibabacloud/aliyuncvc/model/QueryMemberRecordResult.h
-	include/alibabacloud/aliyuncvc/model/QueryStatisticsRequest.h
-	include/alibabacloud/aliyuncvc/model/QueryStatisticsResult.h
-	include/alibabacloud/aliyuncvc/model/QueryUserBuyAttributeRequest.h
-	include/alibabacloud/aliyuncvc/model/QueryUserBuyAttributeResult.h
-	include/alibabacloud/aliyuncvc/model/QueryUserEvaluationRequest.h
-	include/alibabacloud/aliyuncvc/model/QueryUserEvaluationResult.h
-	include/alibabacloud/aliyuncvc/model/QueryUserInfoRequest.h
-	include/alibabacloud/aliyuncvc/model/QueryUserInfoResult.h
-	include/alibabacloud/aliyuncvc/model/QueryUserListRequest.h
-	include/alibabacloud/aliyuncvc/model/QueryUserListResult.h
-	include/alibabacloud/aliyuncvc/model/RemoveMeetingRequest.h
-	include/alibabacloud/aliyuncvc/model/RemoveMeetingResult.h )
+	include/alibabacloud/aliyuncvc/model/GetMeetingRequest.h
+	include/alibabacloud/aliyuncvc/model/GetMeetingResult.h
+	include/alibabacloud/aliyuncvc/model/GetUserRequest.h
+	include/alibabacloud/aliyuncvc/model/GetUserResult.h
+	include/alibabacloud/aliyuncvc/model/JoinMeetingRequest.h
+	include/alibabacloud/aliyuncvc/model/JoinMeetingResult.h
+	include/alibabacloud/aliyuncvc/model/ListEvaluationsRequest.h
+	include/alibabacloud/aliyuncvc/model/ListEvaluationsResult.h
+	include/alibabacloud/aliyuncvc/model/ListMembersRequest.h
+	include/alibabacloud/aliyuncvc/model/ListMembersResult.h
+	include/alibabacloud/aliyuncvc/model/ListUsersRequest.h
+	include/alibabacloud/aliyuncvc/model/ListUsersResult.h )
 
 set(aliyuncvc_src 
 	src/AliyuncvcClient.cc
-	src/model/ActiveMeetingCodeRequest.cc
-	src/model/ActiveMeetingCodeResult.cc
-	src/model/CheckMeetingCodeRequest.cc
-	src/model/CheckMeetingCodeResult.cc
+	src/model/ActiveMeetingRequest.cc
+	src/model/ActiveMeetingResult.cc
+	src/model/CreateEvaluationRequest.cc
+	src/model/CreateEvaluationResult.cc
 	src/model/CreateMeetingRequest.cc
 	src/model/CreateMeetingResult.cc
 	src/model/CreateUserRequest.cc
 	src/model/CreateUserResult.cc
-	src/model/CreateUserEvaluationsRequest.cc
-	src/model/CreateUserEvaluationsResult.cc
+	src/model/DeleteMeetingRequest.cc
+	src/model/DeleteMeetingResult.cc
 	src/model/DeleteUserRequest.cc
 	src/model/DeleteUserResult.cc
-	src/model/ListCommoditiesRequest.cc
-	src/model/ListCommoditiesResult.cc
-	src/model/QueryIsvUserInfoRequest.cc
-	src/model/QueryIsvUserInfoResult.cc
-	src/model/QueryMeetingInfoRequest.cc
-	src/model/QueryMeetingInfoResult.cc
-	src/model/QueryMemberRecordRequest.cc
-	src/model/QueryMemberRecordResult.cc
-	src/model/QueryStatisticsRequest.cc
-	src/model/QueryStatisticsResult.cc
-	src/model/QueryUserBuyAttributeRequest.cc
-	src/model/QueryUserBuyAttributeResult.cc
-	src/model/QueryUserEvaluationRequest.cc
-	src/model/QueryUserEvaluationResult.cc
-	src/model/QueryUserInfoRequest.cc
-	src/model/QueryUserInfoResult.cc
-	src/model/QueryUserListRequest.cc
-	src/model/QueryUserListResult.cc
-	src/model/RemoveMeetingRequest.cc
-	src/model/RemoveMeetingResult.cc )
+	src/model/GetMeetingRequest.cc
+	src/model/GetMeetingResult.cc
+	src/model/GetUserRequest.cc
+	src/model/GetUserResult.cc
+	src/model/JoinMeetingRequest.cc
+	src/model/JoinMeetingResult.cc
+	src/model/ListEvaluationsRequest.cc
+	src/model/ListEvaluationsResult.cc
+	src/model/ListMembersRequest.cc
+	src/model/ListMembersResult.cc
+	src/model/ListUsersRequest.cc
+	src/model/ListUsersResult.cc )
 
 add_library(aliyuncvc ${LIB_TYPE}
 	${aliyuncvc_public_header}

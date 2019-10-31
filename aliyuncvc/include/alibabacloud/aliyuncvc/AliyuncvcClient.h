@@ -22,38 +22,30 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "AliyuncvcExport.h"
-#include "model/ActiveMeetingCodeRequest.h"
-#include "model/ActiveMeetingCodeResult.h"
-#include "model/CheckMeetingCodeRequest.h"
-#include "model/CheckMeetingCodeResult.h"
+#include "model/ActiveMeetingRequest.h"
+#include "model/ActiveMeetingResult.h"
+#include "model/CreateEvaluationRequest.h"
+#include "model/CreateEvaluationResult.h"
 #include "model/CreateMeetingRequest.h"
 #include "model/CreateMeetingResult.h"
 #include "model/CreateUserRequest.h"
 #include "model/CreateUserResult.h"
-#include "model/CreateUserEvaluationsRequest.h"
-#include "model/CreateUserEvaluationsResult.h"
+#include "model/DeleteMeetingRequest.h"
+#include "model/DeleteMeetingResult.h"
 #include "model/DeleteUserRequest.h"
 #include "model/DeleteUserResult.h"
-#include "model/ListCommoditiesRequest.h"
-#include "model/ListCommoditiesResult.h"
-#include "model/QueryIsvUserInfoRequest.h"
-#include "model/QueryIsvUserInfoResult.h"
-#include "model/QueryMeetingInfoRequest.h"
-#include "model/QueryMeetingInfoResult.h"
-#include "model/QueryMemberRecordRequest.h"
-#include "model/QueryMemberRecordResult.h"
-#include "model/QueryStatisticsRequest.h"
-#include "model/QueryStatisticsResult.h"
-#include "model/QueryUserBuyAttributeRequest.h"
-#include "model/QueryUserBuyAttributeResult.h"
-#include "model/QueryUserEvaluationRequest.h"
-#include "model/QueryUserEvaluationResult.h"
-#include "model/QueryUserInfoRequest.h"
-#include "model/QueryUserInfoResult.h"
-#include "model/QueryUserListRequest.h"
-#include "model/QueryUserListResult.h"
-#include "model/RemoveMeetingRequest.h"
-#include "model/RemoveMeetingResult.h"
+#include "model/GetMeetingRequest.h"
+#include "model/GetMeetingResult.h"
+#include "model/GetUserRequest.h"
+#include "model/GetUserResult.h"
+#include "model/JoinMeetingRequest.h"
+#include "model/JoinMeetingResult.h"
+#include "model/ListEvaluationsRequest.h"
+#include "model/ListEvaluationsResult.h"
+#include "model/ListMembersRequest.h"
+#include "model/ListMembersResult.h"
+#include "model/ListUsersRequest.h"
+#include "model/ListUsersResult.h"
 
 
 namespace AlibabaCloud
@@ -63,107 +55,83 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_ALIYUNCVC_EXPORT AliyuncvcClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::ActiveMeetingCodeResult> ActiveMeetingCodeOutcome;
-			typedef std::future<ActiveMeetingCodeOutcome> ActiveMeetingCodeOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::ActiveMeetingCodeRequest&, const ActiveMeetingCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ActiveMeetingCodeAsyncHandler;
-			typedef Outcome<Error, Model::CheckMeetingCodeResult> CheckMeetingCodeOutcome;
-			typedef std::future<CheckMeetingCodeOutcome> CheckMeetingCodeOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::CheckMeetingCodeRequest&, const CheckMeetingCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckMeetingCodeAsyncHandler;
+			typedef Outcome<Error, Model::ActiveMeetingResult> ActiveMeetingOutcome;
+			typedef std::future<ActiveMeetingOutcome> ActiveMeetingOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::ActiveMeetingRequest&, const ActiveMeetingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ActiveMeetingAsyncHandler;
+			typedef Outcome<Error, Model::CreateEvaluationResult> CreateEvaluationOutcome;
+			typedef std::future<CreateEvaluationOutcome> CreateEvaluationOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::CreateEvaluationRequest&, const CreateEvaluationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEvaluationAsyncHandler;
 			typedef Outcome<Error, Model::CreateMeetingResult> CreateMeetingOutcome;
 			typedef std::future<CreateMeetingOutcome> CreateMeetingOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::CreateMeetingRequest&, const CreateMeetingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMeetingAsyncHandler;
 			typedef Outcome<Error, Model::CreateUserResult> CreateUserOutcome;
 			typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::CreateUserRequest&, const CreateUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
-			typedef Outcome<Error, Model::CreateUserEvaluationsResult> CreateUserEvaluationsOutcome;
-			typedef std::future<CreateUserEvaluationsOutcome> CreateUserEvaluationsOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::CreateUserEvaluationsRequest&, const CreateUserEvaluationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserEvaluationsAsyncHandler;
+			typedef Outcome<Error, Model::DeleteMeetingResult> DeleteMeetingOutcome;
+			typedef std::future<DeleteMeetingOutcome> DeleteMeetingOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::DeleteMeetingRequest&, const DeleteMeetingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMeetingAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUserResult> DeleteUserOutcome;
 			typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::DeleteUserRequest&, const DeleteUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
-			typedef Outcome<Error, Model::ListCommoditiesResult> ListCommoditiesOutcome;
-			typedef std::future<ListCommoditiesOutcome> ListCommoditiesOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::ListCommoditiesRequest&, const ListCommoditiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCommoditiesAsyncHandler;
-			typedef Outcome<Error, Model::QueryIsvUserInfoResult> QueryIsvUserInfoOutcome;
-			typedef std::future<QueryIsvUserInfoOutcome> QueryIsvUserInfoOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::QueryIsvUserInfoRequest&, const QueryIsvUserInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryIsvUserInfoAsyncHandler;
-			typedef Outcome<Error, Model::QueryMeetingInfoResult> QueryMeetingInfoOutcome;
-			typedef std::future<QueryMeetingInfoOutcome> QueryMeetingInfoOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::QueryMeetingInfoRequest&, const QueryMeetingInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMeetingInfoAsyncHandler;
-			typedef Outcome<Error, Model::QueryMemberRecordResult> QueryMemberRecordOutcome;
-			typedef std::future<QueryMemberRecordOutcome> QueryMemberRecordOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::QueryMemberRecordRequest&, const QueryMemberRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemberRecordAsyncHandler;
-			typedef Outcome<Error, Model::QueryStatisticsResult> QueryStatisticsOutcome;
-			typedef std::future<QueryStatisticsOutcome> QueryStatisticsOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::QueryStatisticsRequest&, const QueryStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryStatisticsAsyncHandler;
-			typedef Outcome<Error, Model::QueryUserBuyAttributeResult> QueryUserBuyAttributeOutcome;
-			typedef std::future<QueryUserBuyAttributeOutcome> QueryUserBuyAttributeOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::QueryUserBuyAttributeRequest&, const QueryUserBuyAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserBuyAttributeAsyncHandler;
-			typedef Outcome<Error, Model::QueryUserEvaluationResult> QueryUserEvaluationOutcome;
-			typedef std::future<QueryUserEvaluationOutcome> QueryUserEvaluationOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::QueryUserEvaluationRequest&, const QueryUserEvaluationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserEvaluationAsyncHandler;
-			typedef Outcome<Error, Model::QueryUserInfoResult> QueryUserInfoOutcome;
-			typedef std::future<QueryUserInfoOutcome> QueryUserInfoOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::QueryUserInfoRequest&, const QueryUserInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserInfoAsyncHandler;
-			typedef Outcome<Error, Model::QueryUserListResult> QueryUserListOutcome;
-			typedef std::future<QueryUserListOutcome> QueryUserListOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::QueryUserListRequest&, const QueryUserListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserListAsyncHandler;
-			typedef Outcome<Error, Model::RemoveMeetingResult> RemoveMeetingOutcome;
-			typedef std::future<RemoveMeetingOutcome> RemoveMeetingOutcomeCallable;
-			typedef std::function<void(const AliyuncvcClient*, const Model::RemoveMeetingRequest&, const RemoveMeetingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveMeetingAsyncHandler;
+			typedef Outcome<Error, Model::GetMeetingResult> GetMeetingOutcome;
+			typedef std::future<GetMeetingOutcome> GetMeetingOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::GetMeetingRequest&, const GetMeetingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMeetingAsyncHandler;
+			typedef Outcome<Error, Model::GetUserResult> GetUserOutcome;
+			typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::GetUserRequest&, const GetUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
+			typedef Outcome<Error, Model::JoinMeetingResult> JoinMeetingOutcome;
+			typedef std::future<JoinMeetingOutcome> JoinMeetingOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::JoinMeetingRequest&, const JoinMeetingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> JoinMeetingAsyncHandler;
+			typedef Outcome<Error, Model::ListEvaluationsResult> ListEvaluationsOutcome;
+			typedef std::future<ListEvaluationsOutcome> ListEvaluationsOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::ListEvaluationsRequest&, const ListEvaluationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEvaluationsAsyncHandler;
+			typedef Outcome<Error, Model::ListMembersResult> ListMembersOutcome;
+			typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::ListMembersRequest&, const ListMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMembersAsyncHandler;
+			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
+			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
 
 			AliyuncvcClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			AliyuncvcClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			AliyuncvcClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~AliyuncvcClient();
-			ActiveMeetingCodeOutcome activeMeetingCode(const Model::ActiveMeetingCodeRequest &request)const;
-			void activeMeetingCodeAsync(const Model::ActiveMeetingCodeRequest& request, const ActiveMeetingCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ActiveMeetingCodeOutcomeCallable activeMeetingCodeCallable(const Model::ActiveMeetingCodeRequest& request) const;
-			CheckMeetingCodeOutcome checkMeetingCode(const Model::CheckMeetingCodeRequest &request)const;
-			void checkMeetingCodeAsync(const Model::CheckMeetingCodeRequest& request, const CheckMeetingCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CheckMeetingCodeOutcomeCallable checkMeetingCodeCallable(const Model::CheckMeetingCodeRequest& request) const;
+			ActiveMeetingOutcome activeMeeting(const Model::ActiveMeetingRequest &request)const;
+			void activeMeetingAsync(const Model::ActiveMeetingRequest& request, const ActiveMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ActiveMeetingOutcomeCallable activeMeetingCallable(const Model::ActiveMeetingRequest& request) const;
+			CreateEvaluationOutcome createEvaluation(const Model::CreateEvaluationRequest &request)const;
+			void createEvaluationAsync(const Model::CreateEvaluationRequest& request, const CreateEvaluationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateEvaluationOutcomeCallable createEvaluationCallable(const Model::CreateEvaluationRequest& request) const;
 			CreateMeetingOutcome createMeeting(const Model::CreateMeetingRequest &request)const;
 			void createMeetingAsync(const Model::CreateMeetingRequest& request, const CreateMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMeetingOutcomeCallable createMeetingCallable(const Model::CreateMeetingRequest& request) const;
 			CreateUserOutcome createUser(const Model::CreateUserRequest &request)const;
 			void createUserAsync(const Model::CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUserOutcomeCallable createUserCallable(const Model::CreateUserRequest& request) const;
-			CreateUserEvaluationsOutcome createUserEvaluations(const Model::CreateUserEvaluationsRequest &request)const;
-			void createUserEvaluationsAsync(const Model::CreateUserEvaluationsRequest& request, const CreateUserEvaluationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateUserEvaluationsOutcomeCallable createUserEvaluationsCallable(const Model::CreateUserEvaluationsRequest& request) const;
+			DeleteMeetingOutcome deleteMeeting(const Model::DeleteMeetingRequest &request)const;
+			void deleteMeetingAsync(const Model::DeleteMeetingRequest& request, const DeleteMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteMeetingOutcomeCallable deleteMeetingCallable(const Model::DeleteMeetingRequest& request) const;
 			DeleteUserOutcome deleteUser(const Model::DeleteUserRequest &request)const;
 			void deleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserOutcomeCallable deleteUserCallable(const Model::DeleteUserRequest& request) const;
-			ListCommoditiesOutcome listCommodities(const Model::ListCommoditiesRequest &request)const;
-			void listCommoditiesAsync(const Model::ListCommoditiesRequest& request, const ListCommoditiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListCommoditiesOutcomeCallable listCommoditiesCallable(const Model::ListCommoditiesRequest& request) const;
-			QueryIsvUserInfoOutcome queryIsvUserInfo(const Model::QueryIsvUserInfoRequest &request)const;
-			void queryIsvUserInfoAsync(const Model::QueryIsvUserInfoRequest& request, const QueryIsvUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryIsvUserInfoOutcomeCallable queryIsvUserInfoCallable(const Model::QueryIsvUserInfoRequest& request) const;
-			QueryMeetingInfoOutcome queryMeetingInfo(const Model::QueryMeetingInfoRequest &request)const;
-			void queryMeetingInfoAsync(const Model::QueryMeetingInfoRequest& request, const QueryMeetingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryMeetingInfoOutcomeCallable queryMeetingInfoCallable(const Model::QueryMeetingInfoRequest& request) const;
-			QueryMemberRecordOutcome queryMemberRecord(const Model::QueryMemberRecordRequest &request)const;
-			void queryMemberRecordAsync(const Model::QueryMemberRecordRequest& request, const QueryMemberRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryMemberRecordOutcomeCallable queryMemberRecordCallable(const Model::QueryMemberRecordRequest& request) const;
-			QueryStatisticsOutcome queryStatistics(const Model::QueryStatisticsRequest &request)const;
-			void queryStatisticsAsync(const Model::QueryStatisticsRequest& request, const QueryStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryStatisticsOutcomeCallable queryStatisticsCallable(const Model::QueryStatisticsRequest& request) const;
-			QueryUserBuyAttributeOutcome queryUserBuyAttribute(const Model::QueryUserBuyAttributeRequest &request)const;
-			void queryUserBuyAttributeAsync(const Model::QueryUserBuyAttributeRequest& request, const QueryUserBuyAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryUserBuyAttributeOutcomeCallable queryUserBuyAttributeCallable(const Model::QueryUserBuyAttributeRequest& request) const;
-			QueryUserEvaluationOutcome queryUserEvaluation(const Model::QueryUserEvaluationRequest &request)const;
-			void queryUserEvaluationAsync(const Model::QueryUserEvaluationRequest& request, const QueryUserEvaluationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryUserEvaluationOutcomeCallable queryUserEvaluationCallable(const Model::QueryUserEvaluationRequest& request) const;
-			QueryUserInfoOutcome queryUserInfo(const Model::QueryUserInfoRequest &request)const;
-			void queryUserInfoAsync(const Model::QueryUserInfoRequest& request, const QueryUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryUserInfoOutcomeCallable queryUserInfoCallable(const Model::QueryUserInfoRequest& request) const;
-			QueryUserListOutcome queryUserList(const Model::QueryUserListRequest &request)const;
-			void queryUserListAsync(const Model::QueryUserListRequest& request, const QueryUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryUserListOutcomeCallable queryUserListCallable(const Model::QueryUserListRequest& request) const;
-			RemoveMeetingOutcome removeMeeting(const Model::RemoveMeetingRequest &request)const;
-			void removeMeetingAsync(const Model::RemoveMeetingRequest& request, const RemoveMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RemoveMeetingOutcomeCallable removeMeetingCallable(const Model::RemoveMeetingRequest& request) const;
+			GetMeetingOutcome getMeeting(const Model::GetMeetingRequest &request)const;
+			void getMeetingAsync(const Model::GetMeetingRequest& request, const GetMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMeetingOutcomeCallable getMeetingCallable(const Model::GetMeetingRequest& request) const;
+			GetUserOutcome getUser(const Model::GetUserRequest &request)const;
+			void getUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUserOutcomeCallable getUserCallable(const Model::GetUserRequest& request) const;
+			JoinMeetingOutcome joinMeeting(const Model::JoinMeetingRequest &request)const;
+			void joinMeetingAsync(const Model::JoinMeetingRequest& request, const JoinMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			JoinMeetingOutcomeCallable joinMeetingCallable(const Model::JoinMeetingRequest& request) const;
+			ListEvaluationsOutcome listEvaluations(const Model::ListEvaluationsRequest &request)const;
+			void listEvaluationsAsync(const Model::ListEvaluationsRequest& request, const ListEvaluationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListEvaluationsOutcomeCallable listEvaluationsCallable(const Model::ListEvaluationsRequest& request) const;
+			ListMembersOutcome listMembers(const Model::ListMembersRequest &request)const;
+			void listMembersAsync(const Model::ListMembersRequest& request, const ListMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMembersOutcomeCallable listMembersCallable(const Model::ListMembersRequest& request) const;
+			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
+			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

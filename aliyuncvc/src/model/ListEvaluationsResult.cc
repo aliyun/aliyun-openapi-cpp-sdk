@@ -14,58 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/CreateUserResult.h>
+#include <alibabacloud/aliyuncvc/model/ListEvaluationsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Aliyuncvc;
 using namespace AlibabaCloud::Aliyuncvc::Model;
 
-CreateUserResult::CreateUserResult() :
+ListEvaluationsResult::ListEvaluationsResult() :
 	ServiceResult()
 {}
 
-CreateUserResult::CreateUserResult(const std::string &payload) :
+ListEvaluationsResult::ListEvaluationsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateUserResult::~CreateUserResult()
+ListEvaluationsResult::~ListEvaluationsResult()
 {}
 
-void CreateUserResult::parse(const std::string &payload)
+void ListEvaluationsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["UserEvaluation"].isNull())
+		userEvaluation_ = value["UserEvaluation"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = std::stoi(value["ErrorCode"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
-	if(!value["UserId"].isNull())
-		userId_ = value["UserId"].asString();
 
 }
 
-std::string CreateUserResult::getMessage()const
+std::string ListEvaluationsResult::getMessage()const
 {
 	return message_;
 }
 
-std::string CreateUserResult::getUserId()const
-{
-	return userId_;
-}
-
-int CreateUserResult::getErrorCode()const
+int ListEvaluationsResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-bool CreateUserResult::getSuccess()const
+std::string ListEvaluationsResult::getUserEvaluation()const
+{
+	return userEvaluation_;
+}
+
+bool ListEvaluationsResult::getSuccess()const
 {
 	return success_;
 }
