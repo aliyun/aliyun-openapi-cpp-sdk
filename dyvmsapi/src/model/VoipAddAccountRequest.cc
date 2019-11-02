@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::VoipAddAccountRequest;
 
 VoipAddAccountRequest::VoipAddAccountRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "VoipAddAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VoipAddAccountRequest::~VoipAddAccountRequest()
 {}

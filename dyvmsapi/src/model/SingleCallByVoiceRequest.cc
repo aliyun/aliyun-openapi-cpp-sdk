@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::SingleCallByVoiceRequest;
 
 SingleCallByVoiceRequest::SingleCallByVoiceRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "SingleCallByVoice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SingleCallByVoiceRequest::~SingleCallByVoiceRequest()
 {}

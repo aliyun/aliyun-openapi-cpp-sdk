@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::IvrCallRequest;
 
 IvrCallRequest::IvrCallRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "IvrCall")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 IvrCallRequest::~IvrCallRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::DeleteRobotTaskRequest;
 
 DeleteRobotTaskRequest::DeleteRobotTaskRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "DeleteRobotTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRobotTaskRequest::~DeleteRobotTaskRequest()
 {}

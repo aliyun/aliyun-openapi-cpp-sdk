@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::StartRobotTaskRequest;
 
 StartRobotTaskRequest::StartRobotTaskRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "StartRobotTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartRobotTaskRequest::~StartRobotTaskRequest()
 {}

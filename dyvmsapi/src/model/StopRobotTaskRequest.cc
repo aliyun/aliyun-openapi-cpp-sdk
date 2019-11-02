@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::StopRobotTaskRequest;
 
 StopRobotTaskRequest::StopRobotTaskRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "StopRobotTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopRobotTaskRequest::~StopRobotTaskRequest()
 {}

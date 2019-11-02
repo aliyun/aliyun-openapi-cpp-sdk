@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::UploadRobotTaskCalledFileRequest;
 
 UploadRobotTaskCalledFileRequest::UploadRobotTaskCalledFileRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "UploadRobotTaskCalledFile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadRobotTaskCalledFileRequest::~UploadRobotTaskCalledFileRequest()
 {}

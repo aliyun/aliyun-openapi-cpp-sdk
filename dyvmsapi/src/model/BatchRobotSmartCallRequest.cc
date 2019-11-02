@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::BatchRobotSmartCallRequest;
 
 BatchRobotSmartCallRequest::BatchRobotSmartCallRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "BatchRobotSmartCall")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchRobotSmartCallRequest::~BatchRobotSmartCallRequest()
 {}

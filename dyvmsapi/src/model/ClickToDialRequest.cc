@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::ClickToDialRequest;
 
 ClickToDialRequest::ClickToDialRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "ClickToDial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ClickToDialRequest::~ClickToDialRequest()
 {}

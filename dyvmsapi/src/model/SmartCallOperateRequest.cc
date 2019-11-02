@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::SmartCallOperateRequest;
 
 SmartCallOperateRequest::SmartCallOperateRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "SmartCallOperate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SmartCallOperateRequest::~SmartCallOperateRequest()
 {}

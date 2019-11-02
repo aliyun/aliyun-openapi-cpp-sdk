@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::BindNumberAndVoipIdRequest;
 
 BindNumberAndVoipIdRequest::BindNumberAndVoipIdRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "BindNumberAndVoipId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindNumberAndVoipIdRequest::~BindNumberAndVoipIdRequest()
 {}

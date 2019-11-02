@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::QueryRobotTaskListRequest;
 
 QueryRobotTaskListRequest::QueryRobotTaskListRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "QueryRobotTaskList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryRobotTaskListRequest::~QueryRobotTaskListRequest()
 {}

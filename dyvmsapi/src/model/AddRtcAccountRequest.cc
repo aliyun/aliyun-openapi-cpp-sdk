@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::AddRtcAccountRequest;
 
 AddRtcAccountRequest::AddRtcAccountRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "AddRtcAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddRtcAccountRequest::~AddRtcAccountRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::SingleCallByTtsRequest;
 
 SingleCallByTtsRequest::SingleCallByTtsRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "SingleCallByTts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SingleCallByTtsRequest::~SingleCallByTtsRequest()
 {}

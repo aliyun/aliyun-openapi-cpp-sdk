@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::UnbindNumberAndVoipIdRequest;
 
 UnbindNumberAndVoipIdRequest::UnbindNumberAndVoipIdRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "UnbindNumberAndVoipId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindNumberAndVoipIdRequest::~UnbindNumberAndVoipIdRequest()
 {}

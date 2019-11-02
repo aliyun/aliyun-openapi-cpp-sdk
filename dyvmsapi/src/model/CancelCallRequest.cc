@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::CancelCallRequest;
 
 CancelCallRequest::CancelCallRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "CancelCall")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelCallRequest::~CancelCallRequest()
 {}

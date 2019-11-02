@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::VoipGetTokenRequest;
 
 VoipGetTokenRequest::VoipGetTokenRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "VoipGetToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VoipGetTokenRequest::~VoipGetTokenRequest()
 {}

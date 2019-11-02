@@ -20,7 +20,9 @@ using AlibabaCloud::Dyvmsapi::Model::QueryCallDetailByCallIdRequest;
 
 QueryCallDetailByCallIdRequest::QueryCallDetailByCallIdRequest() :
 	RpcServiceRequest("dyvmsapi", "2017-05-25", "QueryCallDetailByCallId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCallDetailByCallIdRequest::~QueryCallDetailByCallIdRequest()
 {}
