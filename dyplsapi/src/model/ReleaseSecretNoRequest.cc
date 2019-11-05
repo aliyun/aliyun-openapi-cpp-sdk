@@ -20,7 +20,9 @@ using AlibabaCloud::Dyplsapi::Model::ReleaseSecretNoRequest;
 
 ReleaseSecretNoRequest::ReleaseSecretNoRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "ReleaseSecretNo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseSecretNoRequest::~ReleaseSecretNoRequest()
 {}

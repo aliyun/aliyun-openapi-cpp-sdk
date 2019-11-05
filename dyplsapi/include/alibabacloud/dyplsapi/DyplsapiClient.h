@@ -36,6 +36,8 @@
 #include "model/CreateAxgGroupResult.h"
 #include "model/OperateAxgGroupRequest.h"
 #include "model/OperateAxgGroupResult.h"
+#include "model/OperateBlackNoRequest.h"
+#include "model/OperateBlackNoResult.h"
 #include "model/QueryCallStatusRequest.h"
 #include "model/QueryCallStatusResult.h"
 #include "model/QueryRecordFileDownloadUrlRequest.h"
@@ -82,6 +84,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OperateAxgGroupResult> OperateAxgGroupOutcome;
 			typedef std::future<OperateAxgGroupOutcome> OperateAxgGroupOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::OperateAxgGroupRequest&, const OperateAxgGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateAxgGroupAsyncHandler;
+			typedef Outcome<Error, Model::OperateBlackNoResult> OperateBlackNoOutcome;
+			typedef std::future<OperateBlackNoOutcome> OperateBlackNoOutcomeCallable;
+			typedef std::function<void(const DyplsapiClient*, const Model::OperateBlackNoRequest&, const OperateBlackNoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateBlackNoAsyncHandler;
 			typedef Outcome<Error, Model::QueryCallStatusResult> QueryCallStatusOutcome;
 			typedef std::future<QueryCallStatusOutcome> QueryCallStatusOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::QueryCallStatusRequest&, const QueryCallStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCallStatusAsyncHandler;
@@ -132,6 +137,9 @@ namespace AlibabaCloud
 			OperateAxgGroupOutcome operateAxgGroup(const Model::OperateAxgGroupRequest &request)const;
 			void operateAxgGroupAsync(const Model::OperateAxgGroupRequest& request, const OperateAxgGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateAxgGroupOutcomeCallable operateAxgGroupCallable(const Model::OperateAxgGroupRequest& request) const;
+			OperateBlackNoOutcome operateBlackNo(const Model::OperateBlackNoRequest &request)const;
+			void operateBlackNoAsync(const Model::OperateBlackNoRequest& request, const OperateBlackNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OperateBlackNoOutcomeCallable operateBlackNoCallable(const Model::OperateBlackNoRequest& request) const;
 			QueryCallStatusOutcome queryCallStatus(const Model::QueryCallStatusRequest &request)const;
 			void queryCallStatusAsync(const Model::QueryCallStatusRequest& request, const QueryCallStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCallStatusOutcomeCallable queryCallStatusCallable(const Model::QueryCallStatusRequest& request) const;

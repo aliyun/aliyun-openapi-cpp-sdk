@@ -20,7 +20,9 @@ using AlibabaCloud::Dyplsapi::Model::UnbindSubscriptionRequest;
 
 UnbindSubscriptionRequest::UnbindSubscriptionRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "UnbindSubscription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindSubscriptionRequest::~UnbindSubscriptionRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dyplsapi::Model::QueryRecordFileDownloadUrlRequest;
 
 QueryRecordFileDownloadUrlRequest::QueryRecordFileDownloadUrlRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "QueryRecordFileDownloadUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryRecordFileDownloadUrlRequest::~QueryRecordFileDownloadUrlRequest()
 {}

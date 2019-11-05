@@ -303,6 +303,42 @@ DyplsapiClient::OperateAxgGroupOutcomeCallable DyplsapiClient::operateAxgGroupCa
 	return task->get_future();
 }
 
+DyplsapiClient::OperateBlackNoOutcome DyplsapiClient::operateBlackNo(const OperateBlackNoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OperateBlackNoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OperateBlackNoOutcome(OperateBlackNoResult(outcome.result()));
+	else
+		return OperateBlackNoOutcome(outcome.error());
+}
+
+void DyplsapiClient::operateBlackNoAsync(const OperateBlackNoRequest& request, const OperateBlackNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, operateBlackNo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::OperateBlackNoOutcomeCallable DyplsapiClient::operateBlackNoCallable(const OperateBlackNoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OperateBlackNoOutcome()>>(
+			[this, request]()
+			{
+			return this->operateBlackNo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyplsapiClient::QueryCallStatusOutcome DyplsapiClient::queryCallStatus(const QueryCallStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

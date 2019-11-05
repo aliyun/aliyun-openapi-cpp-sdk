@@ -35,6 +35,8 @@ set(dyplsapi_public_header_model
 	include/alibabacloud/dyplsapi/model/CreateAxgGroupResult.h
 	include/alibabacloud/dyplsapi/model/OperateAxgGroupRequest.h
 	include/alibabacloud/dyplsapi/model/OperateAxgGroupResult.h
+	include/alibabacloud/dyplsapi/model/OperateBlackNoRequest.h
+	include/alibabacloud/dyplsapi/model/OperateBlackNoResult.h
 	include/alibabacloud/dyplsapi/model/QueryCallStatusRequest.h
 	include/alibabacloud/dyplsapi/model/QueryCallStatusResult.h
 	include/alibabacloud/dyplsapi/model/QueryRecordFileDownloadUrlRequest.h
@@ -68,6 +70,8 @@ set(dyplsapi_src
 	src/model/CreateAxgGroupResult.cc
 	src/model/OperateAxgGroupRequest.cc
 	src/model/OperateAxgGroupResult.cc
+	src/model/OperateBlackNoRequest.cc
+	src/model/OperateBlackNoResult.cc
 	src/model/QueryCallStatusRequest.cc
 	src/model/QueryCallStatusResult.cc
 	src/model/QueryRecordFileDownloadUrlRequest.cc

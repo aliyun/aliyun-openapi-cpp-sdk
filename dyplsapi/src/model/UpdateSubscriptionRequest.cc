@@ -20,7 +20,9 @@ using AlibabaCloud::Dyplsapi::Model::UpdateSubscriptionRequest;
 
 UpdateSubscriptionRequest::UpdateSubscriptionRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "UpdateSubscription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateSubscriptionRequest::~UpdateSubscriptionRequest()
 {}

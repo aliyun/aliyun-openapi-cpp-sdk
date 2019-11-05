@@ -20,7 +20,9 @@ using AlibabaCloud::Dyplsapi::Model::QuerySubscriptionDetailRequest;
 
 QuerySubscriptionDetailRequest::QuerySubscriptionDetailRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "QuerySubscriptionDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySubscriptionDetailRequest::~QuerySubscriptionDetailRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dyplsapi::Model::BindAxnExtensionRequest;
 
 BindAxnExtensionRequest::BindAxnExtensionRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "BindAxnExtension")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindAxnExtensionRequest::~BindAxnExtensionRequest()
 {}
