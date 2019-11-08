@@ -36,6 +36,8 @@
 #include "model/DescribeFullBackupListResult.h"
 #include "model/DescribeIncrementBackupListRequest.h"
 #include "model/DescribeIncrementBackupListResult.h"
+#include "model/DescribeJobErrorCodeRequest.h"
+#include "model/DescribeJobErrorCodeResult.h"
 #include "model/DescribeNodeCidrListRequest.h"
 #include "model/DescribeNodeCidrListResult.h"
 #include "model/DescribePreCheckProgressListRequest.h"
@@ -90,6 +92,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeIncrementBackupListResult> DescribeIncrementBackupListOutcome;
 			typedef std::future<DescribeIncrementBackupListOutcome> DescribeIncrementBackupListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeIncrementBackupListRequest&, const DescribeIncrementBackupListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIncrementBackupListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeJobErrorCodeResult> DescribeJobErrorCodeOutcome;
+			typedef std::future<DescribeJobErrorCodeOutcome> DescribeJobErrorCodeOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::DescribeJobErrorCodeRequest&, const DescribeJobErrorCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobErrorCodeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeNodeCidrListResult> DescribeNodeCidrListOutcome;
 			typedef std::future<DescribeNodeCidrListOutcome> DescribeNodeCidrListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeNodeCidrListRequest&, const DescribeNodeCidrListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeCidrListAsyncHandler;
@@ -152,6 +157,9 @@ namespace AlibabaCloud
 			DescribeIncrementBackupListOutcome describeIncrementBackupList(const Model::DescribeIncrementBackupListRequest &request)const;
 			void describeIncrementBackupListAsync(const Model::DescribeIncrementBackupListRequest& request, const DescribeIncrementBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeIncrementBackupListOutcomeCallable describeIncrementBackupListCallable(const Model::DescribeIncrementBackupListRequest& request) const;
+			DescribeJobErrorCodeOutcome describeJobErrorCode(const Model::DescribeJobErrorCodeRequest &request)const;
+			void describeJobErrorCodeAsync(const Model::DescribeJobErrorCodeRequest& request, const DescribeJobErrorCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeJobErrorCodeOutcomeCallable describeJobErrorCodeCallable(const Model::DescribeJobErrorCodeRequest& request) const;
 			DescribeNodeCidrListOutcome describeNodeCidrList(const Model::DescribeNodeCidrListRequest &request)const;
 			void describeNodeCidrListAsync(const Model::DescribeNodeCidrListRequest& request, const DescribeNodeCidrListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNodeCidrListOutcomeCallable describeNodeCidrListCallable(const Model::DescribeNodeCidrListRequest& request) const;

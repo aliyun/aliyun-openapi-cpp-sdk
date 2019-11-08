@@ -31,21 +31,21 @@ DbsClient::DbsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbs");
 }
 
 DbsClient::DbsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbs");
 }
 
 DbsClient::DbsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbs");
 }
 
 DbsClient::~DbsClient()
@@ -297,6 +297,42 @@ DbsClient::DescribeIncrementBackupListOutcomeCallable DbsClient::describeIncreme
 			[this, request]()
 			{
 			return this->describeIncrementBackupList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DbsClient::DescribeJobErrorCodeOutcome DbsClient::describeJobErrorCode(const DescribeJobErrorCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeJobErrorCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeJobErrorCodeOutcome(DescribeJobErrorCodeResult(outcome.result()));
+	else
+		return DescribeJobErrorCodeOutcome(outcome.error());
+}
+
+void DbsClient::describeJobErrorCodeAsync(const DescribeJobErrorCodeRequest& request, const DescribeJobErrorCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeJobErrorCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::DescribeJobErrorCodeOutcomeCallable DbsClient::describeJobErrorCodeCallable(const DescribeJobErrorCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeJobErrorCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeJobErrorCode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

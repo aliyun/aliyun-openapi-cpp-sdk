@@ -20,7 +20,9 @@ using AlibabaCloud::Dbs::Model::DescribePreCheckProgressListRequest;
 
 DescribePreCheckProgressListRequest::DescribePreCheckProgressListRequest() :
 	RpcServiceRequest("dbs", "2019-03-06", "DescribePreCheckProgressList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePreCheckProgressListRequest::~DescribePreCheckProgressListRequest()
 {}

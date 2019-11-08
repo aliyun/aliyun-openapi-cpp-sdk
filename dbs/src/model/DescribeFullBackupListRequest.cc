@@ -20,7 +20,9 @@ using AlibabaCloud::Dbs::Model::DescribeFullBackupListRequest;
 
 DescribeFullBackupListRequest::DescribeFullBackupListRequest() :
 	RpcServiceRequest("dbs", "2019-03-06", "DescribeFullBackupList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFullBackupListRequest::~DescribeFullBackupListRequest()
 {}

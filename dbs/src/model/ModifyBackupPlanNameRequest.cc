@@ -20,7 +20,9 @@ using AlibabaCloud::Dbs::Model::ModifyBackupPlanNameRequest;
 
 ModifyBackupPlanNameRequest::ModifyBackupPlanNameRequest() :
 	RpcServiceRequest("dbs", "2019-03-06", "ModifyBackupPlanName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyBackupPlanNameRequest::~ModifyBackupPlanNameRequest()
 {}

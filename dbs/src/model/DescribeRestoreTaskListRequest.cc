@@ -20,7 +20,9 @@ using AlibabaCloud::Dbs::Model::DescribeRestoreTaskListRequest;
 
 DescribeRestoreTaskListRequest::DescribeRestoreTaskListRequest() :
 	RpcServiceRequest("dbs", "2019-03-06", "DescribeRestoreTaskList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRestoreTaskListRequest::~DescribeRestoreTaskListRequest()
 {}

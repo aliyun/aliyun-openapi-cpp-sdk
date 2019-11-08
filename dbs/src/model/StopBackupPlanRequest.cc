@@ -20,7 +20,9 @@ using AlibabaCloud::Dbs::Model::StopBackupPlanRequest;
 
 StopBackupPlanRequest::StopBackupPlanRequest() :
 	RpcServiceRequest("dbs", "2019-03-06", "StopBackupPlan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopBackupPlanRequest::~StopBackupPlanRequest()
 {}

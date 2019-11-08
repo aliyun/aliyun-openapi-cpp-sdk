@@ -20,7 +20,9 @@ using AlibabaCloud::Dbs::Model::StartBackupPlanRequest;
 
 StartBackupPlanRequest::StartBackupPlanRequest() :
 	RpcServiceRequest("dbs", "2019-03-06", "StartBackupPlan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartBackupPlanRequest::~StartBackupPlanRequest()
 {}

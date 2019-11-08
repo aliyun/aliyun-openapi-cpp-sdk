@@ -20,7 +20,9 @@ using AlibabaCloud::Dbs::Model::ModifyBackupObjectsRequest;
 
 ModifyBackupObjectsRequest::ModifyBackupObjectsRequest() :
 	RpcServiceRequest("dbs", "2019-03-06", "ModifyBackupObjects")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyBackupObjectsRequest::~ModifyBackupObjectsRequest()
 {}

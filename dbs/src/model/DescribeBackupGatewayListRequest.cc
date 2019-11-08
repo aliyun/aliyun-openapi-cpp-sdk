@@ -20,7 +20,9 @@ using AlibabaCloud::Dbs::Model::DescribeBackupGatewayListRequest;
 
 DescribeBackupGatewayListRequest::DescribeBackupGatewayListRequest() :
 	RpcServiceRequest("dbs", "2019-03-06", "DescribeBackupGatewayList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBackupGatewayListRequest::~DescribeBackupGatewayListRequest()
 {}

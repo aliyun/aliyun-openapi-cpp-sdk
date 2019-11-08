@@ -20,7 +20,9 @@ using AlibabaCloud::Dbs::Model::DescribeNodeCidrListRequest;
 
 DescribeNodeCidrListRequest::DescribeNodeCidrListRequest() :
 	RpcServiceRequest("dbs", "2019-03-06", "DescribeNodeCidrList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNodeCidrListRequest::~DescribeNodeCidrListRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dbs::Model::CreateRestoreTaskRequest;
 
 CreateRestoreTaskRequest::CreateRestoreTaskRequest() :
 	RpcServiceRequest("dbs", "2019-03-06", "CreateRestoreTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRestoreTaskRequest::~CreateRestoreTaskRequest()
 {}

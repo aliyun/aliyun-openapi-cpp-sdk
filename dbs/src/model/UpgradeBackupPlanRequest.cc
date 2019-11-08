@@ -20,7 +20,9 @@ using AlibabaCloud::Dbs::Model::UpgradeBackupPlanRequest;
 
 UpgradeBackupPlanRequest::UpgradeBackupPlanRequest() :
 	RpcServiceRequest("dbs", "2019-03-06", "UpgradeBackupPlan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeBackupPlanRequest::~UpgradeBackupPlanRequest()
 {}
