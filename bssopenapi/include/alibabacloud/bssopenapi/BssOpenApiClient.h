@@ -78,6 +78,8 @@
 #include "model/QueryBillResult.h"
 #include "model/QueryBillOverviewRequest.h"
 #include "model/QueryBillOverviewResult.h"
+#include "model/QueryBillToOSSSubscriptionRequest.h"
+#include "model/QueryBillToOSSSubscriptionResult.h"
 #include "model/QueryCashCouponsRequest.h"
 #include "model/QueryCashCouponsResult.h"
 #include "model/QueryCostUnitRequest.h"
@@ -225,6 +227,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryBillOverviewResult> QueryBillOverviewOutcome;
 			typedef std::future<QueryBillOverviewOutcome> QueryBillOverviewOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryBillOverviewRequest&, const QueryBillOverviewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryBillOverviewAsyncHandler;
+			typedef Outcome<Error, Model::QueryBillToOSSSubscriptionResult> QueryBillToOSSSubscriptionOutcome;
+			typedef std::future<QueryBillToOSSSubscriptionOutcome> QueryBillToOSSSubscriptionOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QueryBillToOSSSubscriptionRequest&, const QueryBillToOSSSubscriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryBillToOSSSubscriptionAsyncHandler;
 			typedef Outcome<Error, Model::QueryCashCouponsResult> QueryCashCouponsOutcome;
 			typedef std::future<QueryCashCouponsOutcome> QueryCashCouponsOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryCashCouponsRequest&, const QueryCashCouponsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCashCouponsAsyncHandler;
@@ -395,6 +400,9 @@ namespace AlibabaCloud
 			QueryBillOverviewOutcome queryBillOverview(const Model::QueryBillOverviewRequest &request)const;
 			void queryBillOverviewAsync(const Model::QueryBillOverviewRequest& request, const QueryBillOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryBillOverviewOutcomeCallable queryBillOverviewCallable(const Model::QueryBillOverviewRequest& request) const;
+			QueryBillToOSSSubscriptionOutcome queryBillToOSSSubscription(const Model::QueryBillToOSSSubscriptionRequest &request)const;
+			void queryBillToOSSSubscriptionAsync(const Model::QueryBillToOSSSubscriptionRequest& request, const QueryBillToOSSSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryBillToOSSSubscriptionOutcomeCallable queryBillToOSSSubscriptionCallable(const Model::QueryBillToOSSSubscriptionRequest& request) const;
 			QueryCashCouponsOutcome queryCashCoupons(const Model::QueryCashCouponsRequest &request)const;
 			void queryCashCouponsAsync(const Model::QueryCashCouponsRequest& request, const QueryCashCouponsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCashCouponsOutcomeCallable queryCashCouponsCallable(const Model::QueryCashCouponsRequest& request) const;

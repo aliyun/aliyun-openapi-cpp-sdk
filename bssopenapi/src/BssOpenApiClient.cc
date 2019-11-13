@@ -1059,6 +1059,42 @@ BssOpenApiClient::QueryBillOverviewOutcomeCallable BssOpenApiClient::queryBillOv
 	return task->get_future();
 }
 
+BssOpenApiClient::QueryBillToOSSSubscriptionOutcome BssOpenApiClient::queryBillToOSSSubscription(const QueryBillToOSSSubscriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryBillToOSSSubscriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryBillToOSSSubscriptionOutcome(QueryBillToOSSSubscriptionResult(outcome.result()));
+	else
+		return QueryBillToOSSSubscriptionOutcome(outcome.error());
+}
+
+void BssOpenApiClient::queryBillToOSSSubscriptionAsync(const QueryBillToOSSSubscriptionRequest& request, const QueryBillToOSSSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryBillToOSSSubscription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QueryBillToOSSSubscriptionOutcomeCallable BssOpenApiClient::queryBillToOSSSubscriptionCallable(const QueryBillToOSSSubscriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryBillToOSSSubscriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->queryBillToOSSSubscription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::QueryCashCouponsOutcome BssOpenApiClient::queryCashCoupons(const QueryCashCouponsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

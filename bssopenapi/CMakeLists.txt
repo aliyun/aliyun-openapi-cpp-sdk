@@ -77,6 +77,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryBillResult.h
 	include/alibabacloud/bssopenapi/model/QueryBillOverviewRequest.h
 	include/alibabacloud/bssopenapi/model/QueryBillOverviewResult.h
+	include/alibabacloud/bssopenapi/model/QueryBillToOSSSubscriptionRequest.h
+	include/alibabacloud/bssopenapi/model/QueryBillToOSSSubscriptionResult.h
 	include/alibabacloud/bssopenapi/model/QueryCashCouponsRequest.h
 	include/alibabacloud/bssopenapi/model/QueryCashCouponsResult.h
 	include/alibabacloud/bssopenapi/model/QueryCostUnitRequest.h
@@ -190,6 +192,8 @@ set(bssopenapi_src
 	src/model/QueryBillResult.cc
 	src/model/QueryBillOverviewRequest.cc
 	src/model/QueryBillOverviewResult.cc
+	src/model/QueryBillToOSSSubscriptionRequest.cc
+	src/model/QueryBillToOSSSubscriptionResult.cc
 	src/model/QueryCashCouponsRequest.cc
 	src/model/QueryCashCouponsResult.cc
 	src/model/QueryCostUnitRequest.cc
