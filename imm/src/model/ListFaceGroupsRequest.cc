@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::ListFaceGroupsRequest;
 
 ListFaceGroupsRequest::ListFaceGroupsRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "ListFaceGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFaceGroupsRequest::~ListFaceGroupsRequest()
 {}

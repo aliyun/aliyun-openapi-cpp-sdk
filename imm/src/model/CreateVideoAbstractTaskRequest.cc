@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::CreateVideoAbstractTaskRequest;
 
 CreateVideoAbstractTaskRequest::CreateVideoAbstractTaskRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "CreateVideoAbstractTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVideoAbstractTaskRequest::~CreateVideoAbstractTaskRequest()
 {}

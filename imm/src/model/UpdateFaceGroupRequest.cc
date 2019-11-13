@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::UpdateFaceGroupRequest;
 
 UpdateFaceGroupRequest::UpdateFaceGroupRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "UpdateFaceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateFaceGroupRequest::~UpdateFaceGroupRequest()
 {}

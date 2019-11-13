@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::CreateOfficeConversionTaskRequest;
 
 CreateOfficeConversionTaskRequest::CreateOfficeConversionTaskRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "CreateOfficeConversionTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOfficeConversionTaskRequest::~CreateOfficeConversionTaskRequest()
 {}

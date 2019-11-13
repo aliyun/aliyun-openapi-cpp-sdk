@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DeleteDocIndexRequest;
 
 DeleteDocIndexRequest::DeleteDocIndexRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DeleteDocIndex")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDocIndexRequest::~DeleteDocIndexRequest()
 {}

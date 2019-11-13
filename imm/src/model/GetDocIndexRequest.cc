@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::GetDocIndexRequest;
 
 GetDocIndexRequest::GetDocIndexRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "GetDocIndex")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetDocIndexRequest::~GetDocIndexRequest()
 {}

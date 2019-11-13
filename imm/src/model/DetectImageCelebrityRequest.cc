@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DetectImageCelebrityRequest;
 
 DetectImageCelebrityRequest::DetectImageCelebrityRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DetectImageCelebrity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectImageCelebrityRequest::~DetectImageCelebrityRequest()
 {}

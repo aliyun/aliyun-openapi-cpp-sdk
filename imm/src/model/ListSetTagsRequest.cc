@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::ListSetTagsRequest;
 
 ListSetTagsRequest::ListSetTagsRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "ListSetTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSetTagsRequest::~ListSetTagsRequest()
 {}

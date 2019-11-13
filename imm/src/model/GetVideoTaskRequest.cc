@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::GetVideoTaskRequest;
 
 GetVideoTaskRequest::GetVideoTaskRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "GetVideoTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetVideoTaskRequest::~GetVideoTaskRequest()
 {}

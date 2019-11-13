@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DeleteSetRequest;
 
 DeleteSetRequest::DeleteSetRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DeleteSet")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSetRequest::~DeleteSetRequest()
 {}

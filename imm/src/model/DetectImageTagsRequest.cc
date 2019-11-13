@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DetectImageTagsRequest;
 
 DetectImageTagsRequest::DetectImageTagsRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DetectImageTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectImageTagsRequest::~DetectImageTagsRequest()
 {}

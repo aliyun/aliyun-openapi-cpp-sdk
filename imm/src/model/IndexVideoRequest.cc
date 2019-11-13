@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::IndexVideoRequest;
 
 IndexVideoRequest::IndexVideoRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "IndexVideo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 IndexVideoRequest::~IndexVideoRequest()
 {}

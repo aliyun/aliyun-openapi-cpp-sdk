@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::PutProjectRequest;
 
 PutProjectRequest::PutProjectRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "PutProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PutProjectRequest::~PutProjectRequest()
 {}

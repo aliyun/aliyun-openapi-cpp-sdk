@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DeleteProjectRequest;
 
 DeleteProjectRequest::DeleteProjectRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DeleteProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteProjectRequest::~DeleteProjectRequest()
 {}

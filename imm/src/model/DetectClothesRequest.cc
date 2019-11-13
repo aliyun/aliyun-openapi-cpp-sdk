@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DetectClothesRequest;
 
 DetectClothesRequest::DetectClothesRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DetectClothes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectClothesRequest::~DetectClothesRequest()
 {}

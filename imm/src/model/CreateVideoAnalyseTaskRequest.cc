@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::CreateVideoAnalyseTaskRequest;
 
 CreateVideoAnalyseTaskRequest::CreateVideoAnalyseTaskRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "CreateVideoAnalyseTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVideoAnalyseTaskRequest::~CreateVideoAnalyseTaskRequest()
 {}

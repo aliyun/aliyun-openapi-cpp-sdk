@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::ConvertOfficeFormatRequest;
 
 ConvertOfficeFormatRequest::ConvertOfficeFormatRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "ConvertOfficeFormat")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConvertOfficeFormatRequest::~ConvertOfficeFormatRequest()
 {}

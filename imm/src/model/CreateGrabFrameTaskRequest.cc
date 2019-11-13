@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::CreateGrabFrameTaskRequest;
 
 CreateGrabFrameTaskRequest::CreateGrabFrameTaskRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "CreateGrabFrameTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateGrabFrameTaskRequest::~CreateGrabFrameTaskRequest()
 {}

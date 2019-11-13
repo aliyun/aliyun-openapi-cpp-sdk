@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::CompareImageFacesRequest;
 
 CompareImageFacesRequest::CompareImageFacesRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "CompareImageFaces")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CompareImageFacesRequest::~CompareImageFacesRequest()
 {}

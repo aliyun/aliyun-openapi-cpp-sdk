@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::UpdateSetRequest;
 
 UpdateSetRequest::UpdateSetRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "UpdateSet")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateSetRequest::~UpdateSetRequest()
 {}

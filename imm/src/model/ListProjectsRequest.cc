@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::ListProjectsRequest;
 
 ListProjectsRequest::ListProjectsRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "ListProjects")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListProjectsRequest::~ListProjectsRequest()
 {}

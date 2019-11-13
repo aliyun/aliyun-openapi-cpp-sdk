@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::GetImageJobRequest;
 
 GetImageJobRequest::GetImageJobRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "GetImageJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetImageJobRequest::~GetImageJobRequest()
 {}

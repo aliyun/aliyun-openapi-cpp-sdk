@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::UpdateImageRequest;
 
 UpdateImageRequest::UpdateImageRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "UpdateImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateImageRequest::~UpdateImageRequest()
 {}

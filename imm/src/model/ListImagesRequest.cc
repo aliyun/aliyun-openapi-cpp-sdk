@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::ListImagesRequest;
 
 ListImagesRequest::ListImagesRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "ListImages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListImagesRequest::~ListImagesRequest()
 {}

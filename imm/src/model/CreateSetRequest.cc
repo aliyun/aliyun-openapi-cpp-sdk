@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::CreateSetRequest;
 
 CreateSetRequest::CreateSetRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "CreateSet")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSetRequest::~CreateSetRequest()
 {}

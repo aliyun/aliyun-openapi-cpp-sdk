@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::CreateDocIndexTaskRequest;
 
 CreateDocIndexTaskRequest::CreateDocIndexTaskRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "CreateDocIndexTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDocIndexTaskRequest::~CreateDocIndexTaskRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::IndexImageRequest;
 
 IndexImageRequest::IndexImageRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "IndexImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 IndexImageRequest::~IndexImageRequest()
 {}

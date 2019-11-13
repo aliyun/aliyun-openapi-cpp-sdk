@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::FindSimilarFacesRequest;
 
 FindSimilarFacesRequest::FindSimilarFacesRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "FindSimilarFaces")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FindSimilarFacesRequest::~FindSimilarFacesRequest()
 {}

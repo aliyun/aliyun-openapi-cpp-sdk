@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DeleteImageRequest;
 
 DeleteImageRequest::DeleteImageRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DeleteImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteImageRequest::~DeleteImageRequest()
 {}

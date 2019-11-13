@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DetectImageLogosRequest;
 
 DetectImageLogosRequest::DetectImageLogosRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DetectImageLogos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectImageLogosRequest::~DetectImageLogosRequest()
 {}

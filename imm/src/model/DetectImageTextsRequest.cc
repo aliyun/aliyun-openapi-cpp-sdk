@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DetectImageTextsRequest;
 
 DetectImageTextsRequest::DetectImageTextsRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DetectImageTexts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectImageTextsRequest::~DetectImageTextsRequest()
 {}

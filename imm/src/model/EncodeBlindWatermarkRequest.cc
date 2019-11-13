@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::EncodeBlindWatermarkRequest;
 
 EncodeBlindWatermarkRequest::EncodeBlindWatermarkRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "EncodeBlindWatermark")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EncodeBlindWatermarkRequest::~EncodeBlindWatermarkRequest()
 {}

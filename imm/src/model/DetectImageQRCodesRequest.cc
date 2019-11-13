@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DetectImageQRCodesRequest;
 
 DetectImageQRCodesRequest::DetectImageQRCodesRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DetectImageQRCodes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectImageQRCodesRequest::~DetectImageQRCodesRequest()
 {}

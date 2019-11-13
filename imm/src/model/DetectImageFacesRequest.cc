@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DetectImageFacesRequest;
 
 DetectImageFacesRequest::DetectImageFacesRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DetectImageFaces")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectImageFacesRequest::~DetectImageFacesRequest()
 {}

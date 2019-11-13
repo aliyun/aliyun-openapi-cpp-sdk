@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::GetMediaMetaRequest;
 
 GetMediaMetaRequest::GetMediaMetaRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "GetMediaMeta")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMediaMetaRequest::~GetMediaMetaRequest()
 {}

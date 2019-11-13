@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::CreateCADConversionTaskRequest;
 
 CreateCADConversionTaskRequest::CreateCADConversionTaskRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "CreateCADConversionTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCADConversionTaskRequest::~CreateCADConversionTaskRequest()
 {}

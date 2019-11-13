@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::UpdateDocIndexMetaRequest;
 
 UpdateDocIndexMetaRequest::UpdateDocIndexMetaRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "UpdateDocIndexMeta")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateDocIndexMetaRequest::~UpdateDocIndexMetaRequest()
 {}

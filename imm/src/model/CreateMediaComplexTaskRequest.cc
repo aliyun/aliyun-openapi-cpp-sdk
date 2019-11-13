@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::CreateMediaComplexTaskRequest;
 
 CreateMediaComplexTaskRequest::CreateMediaComplexTaskRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "CreateMediaComplexTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateMediaComplexTaskRequest::~CreateMediaComplexTaskRequest()
 {}

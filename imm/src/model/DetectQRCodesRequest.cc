@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DetectQRCodesRequest;
 
 DetectQRCodesRequest::DetectQRCodesRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DetectQRCodes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectQRCodesRequest::~DetectQRCodesRequest()
 {}

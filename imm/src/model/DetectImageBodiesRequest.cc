@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DetectImageBodiesRequest;
 
 DetectImageBodiesRequest::DetectImageBodiesRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DetectImageBodies")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectImageBodiesRequest::~DetectImageBodiesRequest()
 {}

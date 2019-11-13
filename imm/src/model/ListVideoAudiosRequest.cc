@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::ListVideoAudiosRequest;
 
 ListVideoAudiosRequest::ListVideoAudiosRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "ListVideoAudios")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListVideoAudiosRequest::~ListVideoAudiosRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::CreateMergeFaceGroupsJobRequest;
 
 CreateMergeFaceGroupsJobRequest::CreateMergeFaceGroupsJobRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "CreateMergeFaceGroupsJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateMergeFaceGroupsJobRequest::~CreateMergeFaceGroupsJobRequest()
 {}

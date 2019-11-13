@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DeleteOfficeConversionTaskRequest;
 
 DeleteOfficeConversionTaskRequest::DeleteOfficeConversionTaskRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DeleteOfficeConversionTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteOfficeConversionTaskRequest::~DeleteOfficeConversionTaskRequest()
 {}

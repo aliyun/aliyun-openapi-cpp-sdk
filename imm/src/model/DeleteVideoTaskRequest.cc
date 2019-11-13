@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::DeleteVideoTaskRequest;
 
 DeleteVideoTaskRequest::DeleteVideoTaskRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "DeleteVideoTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVideoTaskRequest::~DeleteVideoTaskRequest()
 {}

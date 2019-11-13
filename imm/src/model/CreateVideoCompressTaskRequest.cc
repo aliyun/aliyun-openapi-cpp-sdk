@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::CreateVideoCompressTaskRequest;
 
 CreateVideoCompressTaskRequest::CreateVideoCompressTaskRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "CreateVideoCompressTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVideoCompressTaskRequest::~CreateVideoCompressTaskRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::FindImagesByTagNamesRequest;
 
 FindImagesByTagNamesRequest::FindImagesByTagNamesRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "FindImagesByTagNames")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FindImagesByTagNamesRequest::~FindImagesByTagNamesRequest()
 {}

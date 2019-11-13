@@ -20,7 +20,9 @@ using AlibabaCloud::Imm::Model::ListTagNamesRequest;
 
 ListTagNamesRequest::ListTagNamesRequest() :
 	RpcServiceRequest("imm", "2017-09-06", "ListTagNames")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTagNamesRequest::~ListTagNamesRequest()
 {}
