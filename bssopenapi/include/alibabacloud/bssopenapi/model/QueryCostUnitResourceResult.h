@@ -60,7 +60,7 @@ namespace AlibabaCloud
 						std::string resourceTag;
 						std::string relatedResources;
 						std::string apportionName;
-						long resourceId;
+						std::string resourceId;
 						std::string commodityCode;
 						std::string resourceStatus;
 						std::string resourceUserName;

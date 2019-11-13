@@ -53,7 +53,7 @@ void QueryCostUnitResourceResult::parse(const std::string &payload)
 		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserId"].isNull())
 			resourceInstanceListObject.resourceUserId = std::stol(dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserId"].asString());
 		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceId"].isNull())
-			resourceInstanceListObject.resourceId = std::stol(dataNodeResourceInstanceDtoListResourceInstanceList["ResourceId"].asString());
+			resourceInstanceListObject.resourceId = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceId"].asString();
 		if(!dataNodeResourceInstanceDtoListResourceInstanceList["CommodityCode"].isNull())
 			resourceInstanceListObject.commodityCode = dataNodeResourceInstanceDtoListResourceInstanceList["CommodityCode"].asString();
 		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserName"].isNull())
