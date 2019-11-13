@@ -40,10 +40,6 @@
 #include "model/ChangeDomainGroupResult.h"
 #include "model/ChangeDomainOfDnsProductRequest.h"
 #include "model/ChangeDomainOfDnsProductResult.h"
-#include "model/CheckDomainRecordRequest.h"
-#include "model/CheckDomainRecordResult.h"
-#include "model/CreateInstanceRequest.h"
-#include "model/CreateInstanceResult.h"
 #include "model/DeleteDomainRequest.h"
 #include "model/DeleteDomainResult.h"
 #include "model/DeleteDomainGroupRequest.h"
@@ -138,8 +134,6 @@
 #include "model/OperateBatchDomainResult.h"
 #include "model/PreviewGtmRecoveryPlanRequest.h"
 #include "model/PreviewGtmRecoveryPlanResult.h"
-#include "model/QueryCreateInstancePriceRequest.h"
-#include "model/QueryCreateInstancePriceResult.h"
 #include "model/RollbackGtmRecoveryPlanRequest.h"
 #include "model/RollbackGtmRecoveryPlanResult.h"
 #include "model/SetDNSSLBStatusRequest.h"
@@ -156,6 +150,10 @@
 #include "model/UpdateDomainGroupResult.h"
 #include "model/UpdateDomainRecordRequest.h"
 #include "model/UpdateDomainRecordResult.h"
+#include "model/UpdateDomainRecordRemarkRequest.h"
+#include "model/UpdateDomainRecordRemarkResult.h"
+#include "model/UpdateDomainRemarkRequest.h"
+#include "model/UpdateDomainRemarkResult.h"
 #include "model/UpdateGtmAccessStrategyRequest.h"
 #include "model/UpdateGtmAccessStrategyResult.h"
 #include "model/UpdateGtmAddressPoolRequest.h"
@@ -202,12 +200,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ChangeDomainOfDnsProductResult> ChangeDomainOfDnsProductOutcome;
 			typedef std::future<ChangeDomainOfDnsProductOutcome> ChangeDomainOfDnsProductOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::ChangeDomainOfDnsProductRequest&, const ChangeDomainOfDnsProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeDomainOfDnsProductAsyncHandler;
-			typedef Outcome<Error, Model::CheckDomainRecordResult> CheckDomainRecordOutcome;
-			typedef std::future<CheckDomainRecordOutcome> CheckDomainRecordOutcomeCallable;
-			typedef std::function<void(const AlidnsClient*, const Model::CheckDomainRecordRequest&, const CheckDomainRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainRecordAsyncHandler;
-			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
-			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
-			typedef std::function<void(const AlidnsClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDomainResult> DeleteDomainOutcome;
 			typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DeleteDomainRequest&, const DeleteDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
@@ -349,9 +341,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PreviewGtmRecoveryPlanResult> PreviewGtmRecoveryPlanOutcome;
 			typedef std::future<PreviewGtmRecoveryPlanOutcome> PreviewGtmRecoveryPlanOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::PreviewGtmRecoveryPlanRequest&, const PreviewGtmRecoveryPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreviewGtmRecoveryPlanAsyncHandler;
-			typedef Outcome<Error, Model::QueryCreateInstancePriceResult> QueryCreateInstancePriceOutcome;
-			typedef std::future<QueryCreateInstancePriceOutcome> QueryCreateInstancePriceOutcomeCallable;
-			typedef std::function<void(const AlidnsClient*, const Model::QueryCreateInstancePriceRequest&, const QueryCreateInstancePriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCreateInstancePriceAsyncHandler;
 			typedef Outcome<Error, Model::RollbackGtmRecoveryPlanResult> RollbackGtmRecoveryPlanOutcome;
 			typedef std::future<RollbackGtmRecoveryPlanOutcome> RollbackGtmRecoveryPlanOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::RollbackGtmRecoveryPlanRequest&, const RollbackGtmRecoveryPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RollbackGtmRecoveryPlanAsyncHandler;
@@ -376,6 +365,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDomainRecordResult> UpdateDomainRecordOutcome;
 			typedef std::future<UpdateDomainRecordOutcome> UpdateDomainRecordOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UpdateDomainRecordRequest&, const UpdateDomainRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDomainRecordAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDomainRecordRemarkResult> UpdateDomainRecordRemarkOutcome;
+			typedef std::future<UpdateDomainRecordRemarkOutcome> UpdateDomainRecordRemarkOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::UpdateDomainRecordRemarkRequest&, const UpdateDomainRecordRemarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDomainRecordRemarkAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDomainRemarkResult> UpdateDomainRemarkOutcome;
+			typedef std::future<UpdateDomainRemarkOutcome> UpdateDomainRemarkOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::UpdateDomainRemarkRequest&, const UpdateDomainRemarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDomainRemarkAsyncHandler;
 			typedef Outcome<Error, Model::UpdateGtmAccessStrategyResult> UpdateGtmAccessStrategyOutcome;
 			typedef std::future<UpdateGtmAccessStrategyOutcome> UpdateGtmAccessStrategyOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UpdateGtmAccessStrategyRequest&, const UpdateGtmAccessStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGtmAccessStrategyAsyncHandler;
@@ -423,12 +418,6 @@ namespace AlibabaCloud
 			ChangeDomainOfDnsProductOutcome changeDomainOfDnsProduct(const Model::ChangeDomainOfDnsProductRequest &request)const;
 			void changeDomainOfDnsProductAsync(const Model::ChangeDomainOfDnsProductRequest& request, const ChangeDomainOfDnsProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeDomainOfDnsProductOutcomeCallable changeDomainOfDnsProductCallable(const Model::ChangeDomainOfDnsProductRequest& request) const;
-			CheckDomainRecordOutcome checkDomainRecord(const Model::CheckDomainRecordRequest &request)const;
-			void checkDomainRecordAsync(const Model::CheckDomainRecordRequest& request, const CheckDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CheckDomainRecordOutcomeCallable checkDomainRecordCallable(const Model::CheckDomainRecordRequest& request) const;
-			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
-			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
 			DeleteDomainOutcome deleteDomain(const Model::DeleteDomainRequest &request)const;
 			void deleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDomainOutcomeCallable deleteDomainCallable(const Model::DeleteDomainRequest& request) const;
@@ -570,9 +559,6 @@ namespace AlibabaCloud
 			PreviewGtmRecoveryPlanOutcome previewGtmRecoveryPlan(const Model::PreviewGtmRecoveryPlanRequest &request)const;
 			void previewGtmRecoveryPlanAsync(const Model::PreviewGtmRecoveryPlanRequest& request, const PreviewGtmRecoveryPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PreviewGtmRecoveryPlanOutcomeCallable previewGtmRecoveryPlanCallable(const Model::PreviewGtmRecoveryPlanRequest& request) const;
-			QueryCreateInstancePriceOutcome queryCreateInstancePrice(const Model::QueryCreateInstancePriceRequest &request)const;
-			void queryCreateInstancePriceAsync(const Model::QueryCreateInstancePriceRequest& request, const QueryCreateInstancePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryCreateInstancePriceOutcomeCallable queryCreateInstancePriceCallable(const Model::QueryCreateInstancePriceRequest& request) const;
 			RollbackGtmRecoveryPlanOutcome rollbackGtmRecoveryPlan(const Model::RollbackGtmRecoveryPlanRequest &request)const;
 			void rollbackGtmRecoveryPlanAsync(const Model::RollbackGtmRecoveryPlanRequest& request, const RollbackGtmRecoveryPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RollbackGtmRecoveryPlanOutcomeCallable rollbackGtmRecoveryPlanCallable(const Model::RollbackGtmRecoveryPlanRequest& request) const;
@@ -597,6 +583,12 @@ namespace AlibabaCloud
 			UpdateDomainRecordOutcome updateDomainRecord(const Model::UpdateDomainRecordRequest &request)const;
 			void updateDomainRecordAsync(const Model::UpdateDomainRecordRequest& request, const UpdateDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDomainRecordOutcomeCallable updateDomainRecordCallable(const Model::UpdateDomainRecordRequest& request) const;
+			UpdateDomainRecordRemarkOutcome updateDomainRecordRemark(const Model::UpdateDomainRecordRemarkRequest &request)const;
+			void updateDomainRecordRemarkAsync(const Model::UpdateDomainRecordRemarkRequest& request, const UpdateDomainRecordRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDomainRecordRemarkOutcomeCallable updateDomainRecordRemarkCallable(const Model::UpdateDomainRecordRemarkRequest& request) const;
+			UpdateDomainRemarkOutcome updateDomainRemark(const Model::UpdateDomainRemarkRequest &request)const;
+			void updateDomainRemarkAsync(const Model::UpdateDomainRemarkRequest& request, const UpdateDomainRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDomainRemarkOutcomeCallable updateDomainRemarkCallable(const Model::UpdateDomainRemarkRequest& request) const;
 			UpdateGtmAccessStrategyOutcome updateGtmAccessStrategy(const Model::UpdateGtmAccessStrategyRequest &request)const;
 			void updateGtmAccessStrategyAsync(const Model::UpdateGtmAccessStrategyRequest& request, const UpdateGtmAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateGtmAccessStrategyOutcomeCallable updateGtmAccessStrategyCallable(const Model::UpdateGtmAccessStrategyRequest& request) const;

@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DescribeDnsProductInstancesRequest;
 
 DescribeDnsProductInstancesRequest::DescribeDnsProductInstancesRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DescribeDnsProductInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDnsProductInstancesRequest::~DescribeDnsProductInstancesRequest()
 {}

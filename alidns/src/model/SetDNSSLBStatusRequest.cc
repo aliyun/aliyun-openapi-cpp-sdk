@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::SetDNSSLBStatusRequest;
 
 SetDNSSLBStatusRequest::SetDNSSLBStatusRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "SetDNSSLBStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDNSSLBStatusRequest::~SetDNSSLBStatusRequest()
 {}
@@ -34,6 +36,17 @@ void SetDNSSLBStatusRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
+}
+
+std::string SetDNSSLBStatusRequest::getType()const
+{
+	return type_;
+}
+
+void SetDNSSLBStatusRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
 }
 
 std::string SetDNSSLBStatusRequest::getAccessKeyId()const

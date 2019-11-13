@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DescribeGtmInstanceStatusRequest;
 
 DescribeGtmInstanceStatusRequest::DescribeGtmInstanceStatusRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DescribeGtmInstanceStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGtmInstanceStatusRequest::~DescribeGtmInstanceStatusRequest()
 {}

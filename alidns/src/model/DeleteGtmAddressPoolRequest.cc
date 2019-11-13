@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DeleteGtmAddressPoolRequest;
 
 DeleteGtmAddressPoolRequest::DeleteGtmAddressPoolRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DeleteGtmAddressPool")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteGtmAddressPoolRequest::~DeleteGtmAddressPoolRequest()
 {}

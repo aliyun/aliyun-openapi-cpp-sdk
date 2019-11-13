@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIDNS_MODEL_CREATEINSTANCEREQUEST_H_
-#define ALIBABACLOUD_ALIDNS_MODEL_CREATEINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_ALIDNS_MODEL_UPDATEDOMAINREMARKREQUEST_H_
+#define ALIBABACLOUD_ALIDNS_MODEL_UPDATEDOMAINREMARKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIDNS_EXPORT CreateInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIDNS_EXPORT UpdateDomainRemarkRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateInstanceRequest();
-				~CreateInstanceRequest();
+				UpdateDomainRemarkRequest();
+				~UpdateDomainRemarkRequest();
 
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getToken()const;
-				void setToken(const std::string& token);
-				int getMonth()const;
-				void setMonth(int month);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getInstanceVersion()const;
-				void setInstanceVersion(const std::string& instanceVersion);
 
             private:
 				std::string domainName_;
-				long ownerId_;
+				std::string remark_;
 				std::string accessKeyId_;
-				std::string token_;
-				int month_;
 				std::string userClientIp_;
 				std::string lang_;
-				std::string instanceVersion_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIDNS_MODEL_CREATEINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_ALIDNS_MODEL_UPDATEDOMAINREMARKREQUEST_H_

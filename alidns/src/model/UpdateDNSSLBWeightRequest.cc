@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::UpdateDNSSLBWeightRequest;
 
 UpdateDNSSLBWeightRequest::UpdateDNSSLBWeightRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "UpdateDNSSLBWeight")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateDNSSLBWeightRequest::~UpdateDNSSLBWeightRequest()
 {}

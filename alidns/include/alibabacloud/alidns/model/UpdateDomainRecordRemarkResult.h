@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIDNS_MODEL_CHECKDOMAINRECORDRESULT_H_
-#define ALIBABACLOUD_ALIDNS_MODEL_CHECKDOMAINRECORDRESULT_H_
+#ifndef ALIBABACLOUD_ALIDNS_MODEL_UPDATEDOMAINRECORDREMARKRESULT_H_
+#define ALIBABACLOUD_ALIDNS_MODEL_UPDATEDOMAINRECORDREMARKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIDNS_EXPORT CheckDomainRecordResult : public ServiceResult
+			class ALIBABACLOUD_ALIDNS_EXPORT UpdateDomainRecordRemarkResult : public ServiceResult
 			{
 			public:
 
 
-				CheckDomainRecordResult();
-				explicit CheckDomainRecordResult(const std::string &payload);
-				~CheckDomainRecordResult();
-				bool getIsExist()const;
+				UpdateDomainRecordRemarkResult();
+				explicit UpdateDomainRecordRemarkResult(const std::string &payload);
+				~UpdateDomainRecordRemarkResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool isExist_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIDNS_MODEL_CHECKDOMAINRECORDRESULT_H_
+#endif // !ALIBABACLOUD_ALIDNS_MODEL_UPDATEDOMAINRECORDREMARKRESULT_H_

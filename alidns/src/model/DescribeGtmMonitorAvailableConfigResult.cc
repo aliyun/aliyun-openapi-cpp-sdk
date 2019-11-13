@@ -55,6 +55,10 @@ void DescribeGtmMonitorAvailableConfigResult::parse(const std::string &payload)
 			ispCityNodesObject.defaultSelected = valueIspCityNodesIspCityNode["DefaultSelected"].asString() == "true";
 		if(!valueIspCityNodesIspCityNode["Mainland"].isNull())
 			ispCityNodesObject.mainland = valueIspCityNodesIspCityNode["Mainland"].asString() == "true";
+		if(!valueIspCityNodesIspCityNode["GroupType"].isNull())
+			ispCityNodesObject.groupType = valueIspCityNodesIspCityNode["GroupType"].asString();
+		if(!valueIspCityNodesIspCityNode["GroupName"].isNull())
+			ispCityNodesObject.groupName = valueIspCityNodesIspCityNode["GroupName"].asString();
 		ispCityNodes_.push_back(ispCityNodesObject);
 	}
 

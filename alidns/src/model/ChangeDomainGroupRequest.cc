@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::ChangeDomainGroupRequest;
 
 ChangeDomainGroupRequest::ChangeDomainGroupRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "ChangeDomainGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ChangeDomainGroupRequest::~ChangeDomainGroupRequest()
 {}

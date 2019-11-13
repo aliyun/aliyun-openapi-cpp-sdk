@@ -14,45 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alidns/model/CreateInstanceResult.h>
+#include <alibabacloud/alidns/model/UpdateDomainRemarkResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Alidns;
 using namespace AlibabaCloud::Alidns::Model;
 
-CreateInstanceResult::CreateInstanceResult() :
+UpdateDomainRemarkResult::UpdateDomainRemarkResult() :
 	ServiceResult()
 {}
 
-CreateInstanceResult::CreateInstanceResult(const std::string &payload) :
+UpdateDomainRemarkResult::UpdateDomainRemarkResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateInstanceResult::~CreateInstanceResult()
+UpdateDomainRemarkResult::~UpdateDomainRemarkResult()
 {}
 
-void CreateInstanceResult::parse(const std::string &payload)
+void UpdateDomainRemarkResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["OrderId"].isNull())
-		orderId_ = value["OrderId"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
 
-}
-
-std::string CreateInstanceResult::getInstanceId()const
-{
-	return instanceId_;
-}
-
-std::string CreateInstanceResult::getOrderId()const
-{
-	return orderId_;
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DescribeRecordStatisticsSummaryRequest;
 
 DescribeRecordStatisticsSummaryRequest::DescribeRecordStatisticsSummaryRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DescribeRecordStatisticsSummary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRecordStatisticsSummaryRequest::~DescribeRecordStatisticsSummaryRequest()
 {}

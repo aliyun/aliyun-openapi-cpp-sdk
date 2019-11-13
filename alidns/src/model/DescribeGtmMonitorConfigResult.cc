@@ -51,6 +51,10 @@ void DescribeGtmMonitorConfigResult::parse(const std::string &payload)
 			ispCityNodesObject.cityName = valueIspCityNodesIspCityNode["CityName"].asString();
 		if(!valueIspCityNodesIspCityNode["CityCode"].isNull())
 			ispCityNodesObject.cityCode = valueIspCityNodesIspCityNode["CityCode"].asString();
+		if(!valueIspCityNodesIspCityNode["IspCode"].isNull())
+			ispCityNodesObject.ispCode = valueIspCityNodesIspCityNode["IspCode"].asString();
+		if(!valueIspCityNodesIspCityNode["IspName"].isNull())
+			ispCityNodesObject.ispName = valueIspCityNodesIspCityNode["IspName"].asString();
 		ispCityNodes_.push_back(ispCityNodesObject);
 	}
 	if(!value["MonitorConfigId"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::AddDomainRecordRequest;
 
 AddDomainRecordRequest::AddDomainRecordRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "AddDomainRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddDomainRecordRequest::~AddDomainRecordRequest()
 {}

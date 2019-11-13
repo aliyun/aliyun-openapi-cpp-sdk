@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DescribeGtmRecoveryPlansRequest;
 
 DescribeGtmRecoveryPlansRequest::DescribeGtmRecoveryPlansRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DescribeGtmRecoveryPlans")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGtmRecoveryPlansRequest::~DescribeGtmRecoveryPlansRequest()
 {}

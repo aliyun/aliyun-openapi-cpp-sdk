@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::ChangeDomainOfDnsProductRequest;
 
 ChangeDomainOfDnsProductRequest::ChangeDomainOfDnsProductRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "ChangeDomainOfDnsProduct")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ChangeDomainOfDnsProductRequest::~ChangeDomainOfDnsProductRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DeleteGtmAccessStrategyRequest;
 
 DeleteGtmAccessStrategyRequest::DeleteGtmAccessStrategyRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DeleteGtmAccessStrategy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteGtmAccessStrategyRequest::~DeleteGtmAccessStrategyRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::SetDomainRecordStatusRequest;
 
 SetDomainRecordStatusRequest::SetDomainRecordStatusRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "SetDomainRecordStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDomainRecordStatusRequest::~SetDomainRecordStatusRequest()
 {}

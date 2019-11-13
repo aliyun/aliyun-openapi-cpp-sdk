@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::AddGtmAccessStrategyRequest;
 
 AddGtmAccessStrategyRequest::AddGtmAccessStrategyRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "AddGtmAccessStrategy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddGtmAccessStrategyRequest::~AddGtmAccessStrategyRequest()
 {}

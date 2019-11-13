@@ -39,10 +39,6 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/ChangeDomainGroupResult.h
 	include/alibabacloud/alidns/model/ChangeDomainOfDnsProductRequest.h
 	include/alibabacloud/alidns/model/ChangeDomainOfDnsProductResult.h
-	include/alibabacloud/alidns/model/CheckDomainRecordRequest.h
-	include/alibabacloud/alidns/model/CheckDomainRecordResult.h
-	include/alibabacloud/alidns/model/CreateInstanceRequest.h
-	include/alibabacloud/alidns/model/CreateInstanceResult.h
 	include/alibabacloud/alidns/model/DeleteDomainRequest.h
 	include/alibabacloud/alidns/model/DeleteDomainResult.h
 	include/alibabacloud/alidns/model/DeleteDomainGroupRequest.h
@@ -137,8 +133,6 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/OperateBatchDomainResult.h
 	include/alibabacloud/alidns/model/PreviewGtmRecoveryPlanRequest.h
 	include/alibabacloud/alidns/model/PreviewGtmRecoveryPlanResult.h
-	include/alibabacloud/alidns/model/QueryCreateInstancePriceRequest.h
-	include/alibabacloud/alidns/model/QueryCreateInstancePriceResult.h
 	include/alibabacloud/alidns/model/RollbackGtmRecoveryPlanRequest.h
 	include/alibabacloud/alidns/model/RollbackGtmRecoveryPlanResult.h
 	include/alibabacloud/alidns/model/SetDNSSLBStatusRequest.h
@@ -155,6 +149,10 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/UpdateDomainGroupResult.h
 	include/alibabacloud/alidns/model/UpdateDomainRecordRequest.h
 	include/alibabacloud/alidns/model/UpdateDomainRecordResult.h
+	include/alibabacloud/alidns/model/UpdateDomainRecordRemarkRequest.h
+	include/alibabacloud/alidns/model/UpdateDomainRecordRemarkResult.h
+	include/alibabacloud/alidns/model/UpdateDomainRemarkRequest.h
+	include/alibabacloud/alidns/model/UpdateDomainRemarkResult.h
 	include/alibabacloud/alidns/model/UpdateGtmAccessStrategyRequest.h
 	include/alibabacloud/alidns/model/UpdateGtmAccessStrategyResult.h
 	include/alibabacloud/alidns/model/UpdateGtmAddressPoolRequest.h
@@ -186,10 +184,6 @@ set(alidns_src
 	src/model/ChangeDomainGroupResult.cc
 	src/model/ChangeDomainOfDnsProductRequest.cc
 	src/model/ChangeDomainOfDnsProductResult.cc
-	src/model/CheckDomainRecordRequest.cc
-	src/model/CheckDomainRecordResult.cc
-	src/model/CreateInstanceRequest.cc
-	src/model/CreateInstanceResult.cc
 	src/model/DeleteDomainRequest.cc
 	src/model/DeleteDomainResult.cc
 	src/model/DeleteDomainGroupRequest.cc
@@ -284,8 +278,6 @@ set(alidns_src
 	src/model/OperateBatchDomainResult.cc
 	src/model/PreviewGtmRecoveryPlanRequest.cc
 	src/model/PreviewGtmRecoveryPlanResult.cc
-	src/model/QueryCreateInstancePriceRequest.cc
-	src/model/QueryCreateInstancePriceResult.cc
 	src/model/RollbackGtmRecoveryPlanRequest.cc
 	src/model/RollbackGtmRecoveryPlanResult.cc
 	src/model/SetDNSSLBStatusRequest.cc
@@ -302,6 +294,10 @@ set(alidns_src
 	src/model/UpdateDomainGroupResult.cc
 	src/model/UpdateDomainRecordRequest.cc
 	src/model/UpdateDomainRecordResult.cc
+	src/model/UpdateDomainRecordRemarkRequest.cc
+	src/model/UpdateDomainRecordRemarkResult.cc
+	src/model/UpdateDomainRemarkRequest.cc
+	src/model/UpdateDomainRemarkResult.cc
 	src/model/UpdateGtmAccessStrategyRequest.cc
 	src/model/UpdateGtmAccessStrategyResult.cc
 	src/model/UpdateGtmAddressPoolRequest.cc

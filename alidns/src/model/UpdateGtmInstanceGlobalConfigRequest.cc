@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::UpdateGtmInstanceGlobalConfigRequest;
 
 UpdateGtmInstanceGlobalConfigRequest::UpdateGtmInstanceGlobalConfigRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateGtmInstanceGlobalConfigRequest::~UpdateGtmInstanceGlobalConfigRequest()
 {}

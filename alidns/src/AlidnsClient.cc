@@ -375,78 +375,6 @@ AlidnsClient::ChangeDomainOfDnsProductOutcomeCallable AlidnsClient::changeDomain
 	return task->get_future();
 }
 
-AlidnsClient::CheckDomainRecordOutcome AlidnsClient::checkDomainRecord(const CheckDomainRecordRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CheckDomainRecordOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CheckDomainRecordOutcome(CheckDomainRecordResult(outcome.result()));
-	else
-		return CheckDomainRecordOutcome(outcome.error());
-}
-
-void AlidnsClient::checkDomainRecordAsync(const CheckDomainRecordRequest& request, const CheckDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, checkDomainRecord(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AlidnsClient::CheckDomainRecordOutcomeCallable AlidnsClient::checkDomainRecordCallable(const CheckDomainRecordRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CheckDomainRecordOutcome()>>(
-			[this, request]()
-			{
-			return this->checkDomainRecord(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AlidnsClient::CreateInstanceOutcome AlidnsClient::createInstance(const CreateInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateInstanceOutcome(CreateInstanceResult(outcome.result()));
-	else
-		return CreateInstanceOutcome(outcome.error());
-}
-
-void AlidnsClient::createInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AlidnsClient::CreateInstanceOutcomeCallable AlidnsClient::createInstanceCallable(const CreateInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->createInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AlidnsClient::DeleteDomainOutcome AlidnsClient::deleteDomain(const DeleteDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2139,42 +2067,6 @@ AlidnsClient::PreviewGtmRecoveryPlanOutcomeCallable AlidnsClient::previewGtmReco
 	return task->get_future();
 }
 
-AlidnsClient::QueryCreateInstancePriceOutcome AlidnsClient::queryCreateInstancePrice(const QueryCreateInstancePriceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryCreateInstancePriceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryCreateInstancePriceOutcome(QueryCreateInstancePriceResult(outcome.result()));
-	else
-		return QueryCreateInstancePriceOutcome(outcome.error());
-}
-
-void AlidnsClient::queryCreateInstancePriceAsync(const QueryCreateInstancePriceRequest& request, const QueryCreateInstancePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryCreateInstancePrice(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AlidnsClient::QueryCreateInstancePriceOutcomeCallable AlidnsClient::queryCreateInstancePriceCallable(const QueryCreateInstancePriceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryCreateInstancePriceOutcome()>>(
-			[this, request]()
-			{
-			return this->queryCreateInstancePrice(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AlidnsClient::RollbackGtmRecoveryPlanOutcome AlidnsClient::rollbackGtmRecoveryPlan(const RollbackGtmRecoveryPlanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2457,6 +2349,78 @@ AlidnsClient::UpdateDomainRecordOutcomeCallable AlidnsClient::updateDomainRecord
 			[this, request]()
 			{
 			return this->updateDomainRecord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UpdateDomainRecordRemarkOutcome AlidnsClient::updateDomainRecordRemark(const UpdateDomainRecordRemarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDomainRecordRemarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDomainRecordRemarkOutcome(UpdateDomainRecordRemarkResult(outcome.result()));
+	else
+		return UpdateDomainRecordRemarkOutcome(outcome.error());
+}
+
+void AlidnsClient::updateDomainRecordRemarkAsync(const UpdateDomainRecordRemarkRequest& request, const UpdateDomainRecordRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDomainRecordRemark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UpdateDomainRecordRemarkOutcomeCallable AlidnsClient::updateDomainRecordRemarkCallable(const UpdateDomainRecordRemarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDomainRecordRemarkOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDomainRecordRemark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UpdateDomainRemarkOutcome AlidnsClient::updateDomainRemark(const UpdateDomainRemarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDomainRemarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDomainRemarkOutcome(UpdateDomainRemarkResult(outcome.result()));
+	else
+		return UpdateDomainRemarkOutcome(outcome.error());
+}
+
+void AlidnsClient::updateDomainRemarkAsync(const UpdateDomainRemarkRequest& request, const UpdateDomainRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDomainRemark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UpdateDomainRemarkOutcomeCallable AlidnsClient::updateDomainRemarkCallable(const UpdateDomainRemarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDomainRemarkOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDomainRemark(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

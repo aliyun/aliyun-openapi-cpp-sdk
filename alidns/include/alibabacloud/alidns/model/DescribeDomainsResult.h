@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string punyCode;
 					std::vector<std::string> dnsServers;
+					bool starmark;
 					std::string remark;
 					std::string groupId;
 					std::string versionCode;

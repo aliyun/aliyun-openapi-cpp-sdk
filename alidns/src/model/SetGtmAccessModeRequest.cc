@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::SetGtmAccessModeRequest;
 
 SetGtmAccessModeRequest::SetGtmAccessModeRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "SetGtmAccessMode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetGtmAccessModeRequest::~SetGtmAccessModeRequest()
 {}

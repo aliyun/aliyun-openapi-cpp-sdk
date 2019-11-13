@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::OperateBatchDomainRequest;
 
 OperateBatchDomainRequest::OperateBatchDomainRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "OperateBatchDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OperateBatchDomainRequest::~OperateBatchDomainRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DeleteDomainGroupRequest;
 
 DeleteDomainGroupRequest::DeleteDomainGroupRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DeleteDomainGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDomainGroupRequest::~DeleteDomainGroupRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DescribeSubDomainRecordsRequest;
 
 DescribeSubDomainRecordsRequest::DescribeSubDomainRecordsRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DescribeSubDomainRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSubDomainRecordsRequest::~DescribeSubDomainRecordsRequest()
 {}

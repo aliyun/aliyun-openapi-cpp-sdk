@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::ModifyHichinaDomainDNSRequest;
 
 ModifyHichinaDomainDNSRequest::ModifyHichinaDomainDNSRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "ModifyHichinaDomainDNS")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyHichinaDomainDNSRequest::~ModifyHichinaDomainDNSRequest()
 {}

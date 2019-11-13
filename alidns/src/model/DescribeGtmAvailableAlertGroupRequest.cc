@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DescribeGtmAvailableAlertGroupRequest;
 
 DescribeGtmAvailableAlertGroupRequest::DescribeGtmAvailableAlertGroupRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DescribeGtmAvailableAlertGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGtmAvailableAlertGroupRequest::~DescribeGtmAvailableAlertGroupRequest()
 {}

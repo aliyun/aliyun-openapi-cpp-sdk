@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DescribeGtmInstanceAddressPoolRequest;
 
 DescribeGtmInstanceAddressPoolRequest::DescribeGtmInstanceAddressPoolRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DescribeGtmInstanceAddressPool")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGtmInstanceAddressPoolRequest::~DescribeGtmInstanceAddressPoolRequest()
 {}

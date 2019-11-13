@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIDNS_MODEL_CREATEINSTANCERESULT_H_
-#define ALIBABACLOUD_ALIDNS_MODEL_CREATEINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_ALIDNS_MODEL_UPDATEDOMAINREMARKRESULT_H_
+#define ALIBABACLOUD_ALIDNS_MODEL_UPDATEDOMAINREMARKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIDNS_EXPORT CreateInstanceResult : public ServiceResult
+			class ALIBABACLOUD_ALIDNS_EXPORT UpdateDomainRemarkResult : public ServiceResult
 			{
 			public:
 
 
-				CreateInstanceResult();
-				explicit CreateInstanceResult(const std::string &payload);
-				~CreateInstanceResult();
-				std::string getInstanceId()const;
-				std::string getOrderId()const;
+				UpdateDomainRemarkResult();
+				explicit UpdateDomainRemarkResult(const std::string &payload);
+				~UpdateDomainRemarkResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string instanceId_;
-				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIDNS_MODEL_CREATEINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_ALIDNS_MODEL_UPDATEDOMAINREMARKRESULT_H_

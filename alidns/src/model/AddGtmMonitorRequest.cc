@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::AddGtmMonitorRequest;
 
 AddGtmMonitorRequest::AddGtmMonitorRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "AddGtmMonitor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddGtmMonitorRequest::~AddGtmMonitorRequest()
 {}

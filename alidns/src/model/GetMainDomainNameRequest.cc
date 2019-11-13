@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::GetMainDomainNameRequest;
 
 GetMainDomainNameRequest::GetMainDomainNameRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "GetMainDomainName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMainDomainNameRequest::~GetMainDomainNameRequest()
 {}

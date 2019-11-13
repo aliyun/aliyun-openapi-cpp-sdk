@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alidns/model/CheckDomainRecordResult.h>
+#include <alibabacloud/alidns/model/UpdateDomainRecordRemarkResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Alidns;
 using namespace AlibabaCloud::Alidns::Model;
 
-CheckDomainRecordResult::CheckDomainRecordResult() :
+UpdateDomainRecordRemarkResult::UpdateDomainRecordRemarkResult() :
 	ServiceResult()
 {}
 
-CheckDomainRecordResult::CheckDomainRecordResult(const std::string &payload) :
+UpdateDomainRecordRemarkResult::UpdateDomainRecordRemarkResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CheckDomainRecordResult::~CheckDomainRecordResult()
+UpdateDomainRecordRemarkResult::~UpdateDomainRecordRemarkResult()
 {}
 
-void CheckDomainRecordResult::parse(const std::string &payload)
+void UpdateDomainRecordRemarkResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["IsExist"].isNull())
-		isExist_ = value["IsExist"].asString() == "true";
 
-}
-
-bool CheckDomainRecordResult::getIsExist()const
-{
-	return isExist_;
 }
 

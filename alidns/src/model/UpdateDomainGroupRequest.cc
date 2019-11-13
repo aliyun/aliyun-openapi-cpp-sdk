@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::UpdateDomainGroupRequest;
 
 UpdateDomainGroupRequest::UpdateDomainGroupRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "UpdateDomainGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateDomainGroupRequest::~UpdateDomainGroupRequest()
 {}

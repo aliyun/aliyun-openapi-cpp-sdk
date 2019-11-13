@@ -35,9 +35,11 @@ namespace AlibabaCloud
 				struct IspCityNode
 				{
 					std::string cityCode;
+					std::string ispName;
 					std::string countryName;
 					std::string cityName;
 					std::string countryCode;
+					std::string ispCode;
 				};
 
 

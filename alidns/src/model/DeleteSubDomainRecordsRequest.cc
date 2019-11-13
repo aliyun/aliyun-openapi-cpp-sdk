@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DeleteSubDomainRecordsRequest;
 
 DeleteSubDomainRecordsRequest::DeleteSubDomainRecordsRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DeleteSubDomainRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSubDomainRecordsRequest::~DeleteSubDomainRecordsRequest()
 {}

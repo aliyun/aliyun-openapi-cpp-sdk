@@ -14,58 +14,69 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alidns/model/DescribeSupportLinesRequest.h>
+#include <alibabacloud/alidns/model/UpdateDomainRemarkRequest.h>
 
-using AlibabaCloud::Alidns::Model::DescribeSupportLinesRequest;
+using AlibabaCloud::Alidns::Model::UpdateDomainRemarkRequest;
 
-DescribeSupportLinesRequest::DescribeSupportLinesRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "DescribeSupportLines")
+UpdateDomainRemarkRequest::UpdateDomainRemarkRequest() :
+	RpcServiceRequest("alidns", "2015-01-09", "UpdateDomainRemark")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSupportLinesRequest::~DescribeSupportLinesRequest()
+UpdateDomainRemarkRequest::~UpdateDomainRemarkRequest()
 {}
 
-std::string DescribeSupportLinesRequest::getDomainName()const
+std::string UpdateDomainRemarkRequest::getDomainName()const
 {
 	return domainName_;
 }
 
-void DescribeSupportLinesRequest::setDomainName(const std::string& domainName)
+void UpdateDomainRemarkRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
 }
 
-std::string DescribeSupportLinesRequest::getAccessKeyId()const
+std::string UpdateDomainRemarkRequest::getRemark()const
+{
+	return remark_;
+}
+
+void UpdateDomainRemarkRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
+std::string UpdateDomainRemarkRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void DescribeSupportLinesRequest::setAccessKeyId(const std::string& accessKeyId)
+void UpdateDomainRemarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeSupportLinesRequest::getUserClientIp()const
+std::string UpdateDomainRemarkRequest::getUserClientIp()const
 {
 	return userClientIp_;
 }
 
-void DescribeSupportLinesRequest::setUserClientIp(const std::string& userClientIp)
+void UpdateDomainRemarkRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
 	setCoreParameter("UserClientIp", userClientIp);
 }
 
-std::string DescribeSupportLinesRequest::getLang()const
+std::string UpdateDomainRemarkRequest::getLang()const
 {
 	return lang_;
 }
 
-void DescribeSupportLinesRequest::setLang(const std::string& lang)
+void UpdateDomainRemarkRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);

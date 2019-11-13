@@ -36,7 +36,9 @@ namespace AlibabaCloud
 				{
 					std::string cityCode;
 					bool mainland;
+					std::string groupName;
 					std::string ispName;
+					std::string groupType;
 					std::string cityName;
 					std::string ispCode;
 					bool defaultSelected;

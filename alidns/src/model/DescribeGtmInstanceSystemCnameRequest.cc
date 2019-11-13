@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DescribeGtmInstanceSystemCnameRequest;
 
 DescribeGtmInstanceSystemCnameRequest::DescribeGtmInstanceSystemCnameRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DescribeGtmInstanceSystemCname")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGtmInstanceSystemCnameRequest::~DescribeGtmInstanceSystemCnameRequest()
 {}

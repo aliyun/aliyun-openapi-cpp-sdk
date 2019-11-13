@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DescribeGtmLogsRequest;
 
 DescribeGtmLogsRequest::DescribeGtmLogsRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DescribeGtmLogs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGtmLogsRequest::~DescribeGtmLogsRequest()
 {}

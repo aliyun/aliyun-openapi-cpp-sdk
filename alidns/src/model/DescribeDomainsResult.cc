@@ -71,6 +71,8 @@ void DescribeDomainsResult::parse(const std::string &payload)
 			domainsObject.instanceEndTime = valueDomainsDomain["InstanceEndTime"].asString();
 		if(!valueDomainsDomain["InstanceExpired"].isNull())
 			domainsObject.instanceExpired = valueDomainsDomain["InstanceExpired"].asString() == "true";
+		if(!valueDomainsDomain["Starmark"].isNull())
+			domainsObject.starmark = valueDomainsDomain["Starmark"].asString() == "true";
 		auto allDnsServers = value["DnsServers"]["DnsServer"];
 		for (auto value : allDnsServers)
 			domainsObject.dnsServers.push_back(value.asString());

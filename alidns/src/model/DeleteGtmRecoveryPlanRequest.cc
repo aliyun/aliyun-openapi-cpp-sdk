@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DeleteGtmRecoveryPlanRequest;
 
 DeleteGtmRecoveryPlanRequest::DeleteGtmRecoveryPlanRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DeleteGtmRecoveryPlan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteGtmRecoveryPlanRequest::~DeleteGtmRecoveryPlanRequest()
 {}

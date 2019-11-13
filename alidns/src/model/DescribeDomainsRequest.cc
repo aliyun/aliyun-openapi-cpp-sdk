@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DescribeDomainsRequest;
 
 DescribeDomainsRequest::DescribeDomainsRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DescribeDomains")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainsRequest::~DescribeDomainsRequest()
 {}
@@ -80,6 +82,28 @@ void DescribeDomainsRequest::setKeyWord(const std::string& keyWord)
 	setCoreParameter("KeyWord", keyWord);
 }
 
+std::string DescribeDomainsRequest::getDirection()const
+{
+	return direction_;
+}
+
+void DescribeDomainsRequest::setDirection(const std::string& direction)
+{
+	direction_ = direction;
+	setCoreParameter("Direction", direction);
+}
+
+bool DescribeDomainsRequest::getStarmark()const
+{
+	return starmark_;
+}
+
+void DescribeDomainsRequest::setStarmark(bool starmark)
+{
+	starmark_ = starmark;
+	setCoreParameter("Starmark", starmark ? "true" : "false");
+}
+
 std::string DescribeDomainsRequest::getGroupId()const
 {
 	return groupId_;
@@ -89,6 +113,17 @@ void DescribeDomainsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string DescribeDomainsRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void DescribeDomainsRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setCoreParameter("OrderBy", orderBy);
 }
 
 std::string DescribeDomainsRequest::getUserClientIp()const

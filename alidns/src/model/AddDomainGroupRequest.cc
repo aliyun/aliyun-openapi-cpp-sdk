@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::AddDomainGroupRequest;
 
 AddDomainGroupRequest::AddDomainGroupRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "AddDomainGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddDomainGroupRequest::~AddDomainGroupRequest()
 {}

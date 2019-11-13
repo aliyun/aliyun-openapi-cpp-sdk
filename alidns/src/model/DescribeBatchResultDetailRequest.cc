@@ -20,7 +20,9 @@ using AlibabaCloud::Alidns::Model::DescribeBatchResultDetailRequest;
 
 DescribeBatchResultDetailRequest::DescribeBatchResultDetailRequest() :
 	RpcServiceRequest("alidns", "2015-01-09", "DescribeBatchResultDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBatchResultDetailRequest::~DescribeBatchResultDetailRequest()
 {}
