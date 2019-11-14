@@ -411,6 +411,42 @@ DbsClient::DescribePreCheckProgressListOutcomeCallable DbsClient::describePreChe
 	return task->get_future();
 }
 
+DbsClient::DescribeRestoreRangeInfoOutcome DbsClient::describeRestoreRangeInfo(const DescribeRestoreRangeInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRestoreRangeInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRestoreRangeInfoOutcome(DescribeRestoreRangeInfoResult(outcome.result()));
+	else
+		return DescribeRestoreRangeInfoOutcome(outcome.error());
+}
+
+void DbsClient::describeRestoreRangeInfoAsync(const DescribeRestoreRangeInfoRequest& request, const DescribeRestoreRangeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRestoreRangeInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::DescribeRestoreRangeInfoOutcomeCallable DbsClient::describeRestoreRangeInfoCallable(const DescribeRestoreRangeInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRestoreRangeInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRestoreRangeInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DbsClient::DescribeRestoreTaskListOutcome DbsClient::describeRestoreTaskList(const DescribeRestoreTaskListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

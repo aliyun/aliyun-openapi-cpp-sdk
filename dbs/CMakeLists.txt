@@ -41,6 +41,8 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/DescribeNodeCidrListResult.h
 	include/alibabacloud/dbs/model/DescribePreCheckProgressListRequest.h
 	include/alibabacloud/dbs/model/DescribePreCheckProgressListResult.h
+	include/alibabacloud/dbs/model/DescribeRestoreRangeInfoRequest.h
+	include/alibabacloud/dbs/model/DescribeRestoreRangeInfoResult.h
 	include/alibabacloud/dbs/model/DescribeRestoreTaskListRequest.h
 	include/alibabacloud/dbs/model/DescribeRestoreTaskListResult.h
 	include/alibabacloud/dbs/model/ModifyBackupObjectsRequest.h
@@ -84,6 +86,8 @@ set(dbs_src
 	src/model/DescribeNodeCidrListResult.cc
 	src/model/DescribePreCheckProgressListRequest.cc
 	src/model/DescribePreCheckProgressListResult.cc
+	src/model/DescribeRestoreRangeInfoRequest.cc
+	src/model/DescribeRestoreRangeInfoResult.cc
 	src/model/DescribeRestoreTaskListRequest.cc
 	src/model/DescribeRestoreTaskListResult.cc
 	src/model/ModifyBackupObjectsRequest.cc
