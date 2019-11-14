@@ -57,6 +57,8 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DescribeSlowLogTrendResult.h
 	include/alibabacloud/adb/model/GrantOperatorPermissionRequest.h
 	include/alibabacloud/adb/model/GrantOperatorPermissionResult.h
+	include/alibabacloud/adb/model/ListTagResourcesRequest.h
+	include/alibabacloud/adb/model/ListTagResourcesResult.h
 	include/alibabacloud/adb/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/adb/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/adb/model/ModifyAutoRenewAttributeRequest.h
@@ -72,7 +74,11 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/ResetAccountPasswordRequest.h
 	include/alibabacloud/adb/model/ResetAccountPasswordResult.h
 	include/alibabacloud/adb/model/RevokeOperatorPermissionRequest.h
-	include/alibabacloud/adb/model/RevokeOperatorPermissionResult.h )
+	include/alibabacloud/adb/model/RevokeOperatorPermissionResult.h
+	include/alibabacloud/adb/model/TagResourcesRequest.h
+	include/alibabacloud/adb/model/TagResourcesResult.h
+	include/alibabacloud/adb/model/UntagResourcesRequest.h
+	include/alibabacloud/adb/model/UntagResourcesResult.h )
 
 set(adb_src 
 	src/AdbClient.cc
@@ -112,6 +118,8 @@ set(adb_src
 	src/model/DescribeSlowLogTrendResult.cc
 	src/model/GrantOperatorPermissionRequest.cc
 	src/model/GrantOperatorPermissionResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAutoRenewAttributeRequest.cc
@@ -127,7 +135,11 @@ set(adb_src
 	src/model/ResetAccountPasswordRequest.cc
 	src/model/ResetAccountPasswordResult.cc
 	src/model/RevokeOperatorPermissionRequest.cc
-	src/model/RevokeOperatorPermissionResult.cc )
+	src/model/RevokeOperatorPermissionResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc )
 
 add_library(adb ${LIB_TYPE}
 	${adb_public_header}
