@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYSMSAPI_MODEL_ADDSMSTEMPLATEREQUEST_H_
-#define ALIBABACLOUD_DYSMSAPI_MODEL_ADDSMSTEMPLATEREQUEST_H_
+#ifndef ALIBABACLOUD_DYSMSAPI_MODEL_QUERYSMSPRODSTATUSREQUEST_H_
+#define ALIBABACLOUD_DYSMSAPI_MODEL_QUERYSMSPRODSTATUSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYSMSAPI_EXPORT AddSmsTemplateRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DYSMSAPI_EXPORT QuerySmsProdStatusRequest : public RpcServiceRequest
 			{
 
 			public:
-				AddSmsTemplateRequest();
-				~AddSmsTemplateRequest();
+				QuerySmsProdStatusRequest();
+				~QuerySmsProdStatusRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRemark()const;
-				void setRemark(const std::string& remark);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				int getTemplateType()const;
-				void setTemplateType(int templateType);
-				std::string getTemplateName()const;
-				void setTemplateName(const std::string& templateName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getTemplateContent()const;
-				void setTemplateContent(const std::string& templateContent);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				long getAliyUid()const;
+				void setAliyUid(long aliyUid);
 
             private:
 				long resourceOwnerId_;
-				std::string remark_;
-				std::string accessKeyId_;
-				int templateType_;
-				std::string templateName_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;
-				std::string templateContent_;
+				std::string accessKeyId_;
+				long aliyUid_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYSMSAPI_MODEL_ADDSMSTEMPLATEREQUEST_H_
+#endif // !ALIBABACLOUD_DYSMSAPI_MODEL_QUERYSMSPRODSTATUSREQUEST_H_

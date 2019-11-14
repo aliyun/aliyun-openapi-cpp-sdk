@@ -20,7 +20,9 @@ using AlibabaCloud::Dysmsapi::Model::ModifySmsSignRequest;
 
 ModifySmsSignRequest::ModifySmsSignRequest() :
 	RpcServiceRequest("dysmsapi", "2017-05-25", "ModifySmsSign")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySmsSignRequest::~ModifySmsSignRequest()
 {}

@@ -35,6 +35,8 @@ set(dysmsapi_public_header_model
 	include/alibabacloud/dysmsapi/model/ModifySmsTemplateResult.h
 	include/alibabacloud/dysmsapi/model/QuerySendDetailsRequest.h
 	include/alibabacloud/dysmsapi/model/QuerySendDetailsResult.h
+	include/alibabacloud/dysmsapi/model/QuerySmsProdStatusRequest.h
+	include/alibabacloud/dysmsapi/model/QuerySmsProdStatusResult.h
 	include/alibabacloud/dysmsapi/model/QuerySmsSignRequest.h
 	include/alibabacloud/dysmsapi/model/QuerySmsSignResult.h
 	include/alibabacloud/dysmsapi/model/QuerySmsTemplateRequest.h
@@ -60,6 +62,8 @@ set(dysmsapi_src
 	src/model/ModifySmsTemplateResult.cc
 	src/model/QuerySendDetailsRequest.cc
 	src/model/QuerySendDetailsResult.cc
+	src/model/QuerySmsProdStatusRequest.cc
+	src/model/QuerySmsProdStatusResult.cc
 	src/model/QuerySmsSignRequest.cc
 	src/model/QuerySmsSignResult.cc
 	src/model/QuerySmsTemplateRequest.cc

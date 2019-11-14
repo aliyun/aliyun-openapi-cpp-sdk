@@ -20,7 +20,9 @@ using AlibabaCloud::Dysmsapi::Model::QuerySmsSignRequest;
 
 QuerySmsSignRequest::QuerySmsSignRequest() :
 	RpcServiceRequest("dysmsapi", "2017-05-25", "QuerySmsSign")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySmsSignRequest::~QuerySmsSignRequest()
 {}

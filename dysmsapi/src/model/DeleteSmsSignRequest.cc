@@ -20,7 +20,9 @@ using AlibabaCloud::Dysmsapi::Model::DeleteSmsSignRequest;
 
 DeleteSmsSignRequest::DeleteSmsSignRequest() :
 	RpcServiceRequest("dysmsapi", "2017-05-25", "DeleteSmsSign")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSmsSignRequest::~DeleteSmsSignRequest()
 {}

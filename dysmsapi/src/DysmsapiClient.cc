@@ -31,21 +31,21 @@ DysmsapiClient::DysmsapiClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dysmsapi");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dysms");
 }
 
 DysmsapiClient::DysmsapiClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dysmsapi");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dysms");
 }
 
 DysmsapiClient::DysmsapiClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dysmsapi");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dysms");
 }
 
 DysmsapiClient::~DysmsapiClient()
@@ -297,6 +297,42 @@ DysmsapiClient::QuerySendDetailsOutcomeCallable DysmsapiClient::querySendDetails
 			[this, request]()
 			{
 			return this->querySendDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DysmsapiClient::QuerySmsProdStatusOutcome DysmsapiClient::querySmsProdStatus(const QuerySmsProdStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySmsProdStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySmsProdStatusOutcome(QuerySmsProdStatusResult(outcome.result()));
+	else
+		return QuerySmsProdStatusOutcome(outcome.error());
+}
+
+void DysmsapiClient::querySmsProdStatusAsync(const QuerySmsProdStatusRequest& request, const QuerySmsProdStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySmsProdStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DysmsapiClient::QuerySmsProdStatusOutcomeCallable DysmsapiClient::querySmsProdStatusCallable(const QuerySmsProdStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySmsProdStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->querySmsProdStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

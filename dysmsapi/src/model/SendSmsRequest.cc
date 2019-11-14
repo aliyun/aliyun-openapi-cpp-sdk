@@ -20,7 +20,9 @@ using AlibabaCloud::Dysmsapi::Model::SendSmsRequest;
 
 SendSmsRequest::SendSmsRequest() :
 	RpcServiceRequest("dysmsapi", "2017-05-25", "SendSms")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendSmsRequest::~SendSmsRequest()
 {}

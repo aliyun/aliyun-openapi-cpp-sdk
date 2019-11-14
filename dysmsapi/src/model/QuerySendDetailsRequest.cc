@@ -20,7 +20,9 @@ using AlibabaCloud::Dysmsapi::Model::QuerySendDetailsRequest;
 
 QuerySendDetailsRequest::QuerySendDetailsRequest() :
 	RpcServiceRequest("dysmsapi", "2017-05-25", "QuerySendDetails")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySendDetailsRequest::~QuerySendDetailsRequest()
 {}

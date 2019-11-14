@@ -20,7 +20,9 @@ using AlibabaCloud::Dysmsapi::Model::ModifySmsTemplateRequest;
 
 ModifySmsTemplateRequest::ModifySmsTemplateRequest() :
 	RpcServiceRequest("dysmsapi", "2017-05-25", "ModifySmsTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySmsTemplateRequest::~ModifySmsTemplateRequest()
 {}

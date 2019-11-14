@@ -20,7 +20,9 @@ using AlibabaCloud::Dysmsapi::Model::QuerySmsTemplateRequest;
 
 QuerySmsTemplateRequest::QuerySmsTemplateRequest() :
 	RpcServiceRequest("dysmsapi", "2017-05-25", "QuerySmsTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySmsTemplateRequest::~QuerySmsTemplateRequest()
 {}

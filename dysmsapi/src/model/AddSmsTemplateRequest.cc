@@ -20,7 +20,9 @@ using AlibabaCloud::Dysmsapi::Model::AddSmsTemplateRequest;
 
 AddSmsTemplateRequest::AddSmsTemplateRequest() :
 	RpcServiceRequest("dysmsapi", "2017-05-25", "AddSmsTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddSmsTemplateRequest::~AddSmsTemplateRequest()
 {}

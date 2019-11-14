@@ -20,7 +20,9 @@ using AlibabaCloud::Dysmsapi::Model::SendBatchSmsRequest;
 
 SendBatchSmsRequest::SendBatchSmsRequest() :
 	RpcServiceRequest("dysmsapi", "2017-05-25", "SendBatchSms")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendBatchSmsRequest::~SendBatchSmsRequest()
 {}

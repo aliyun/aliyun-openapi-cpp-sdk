@@ -14,71 +14,71 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dysmsapi/model/DeleteSmsTemplateRequest.h>
+#include <alibabacloud/dysmsapi/model/QuerySmsProdStatusRequest.h>
 
-using AlibabaCloud::Dysmsapi::Model::DeleteSmsTemplateRequest;
+using AlibabaCloud::Dysmsapi::Model::QuerySmsProdStatusRequest;
 
-DeleteSmsTemplateRequest::DeleteSmsTemplateRequest() :
-	RpcServiceRequest("dysmsapi", "2017-05-25", "DeleteSmsTemplate")
+QuerySmsProdStatusRequest::QuerySmsProdStatusRequest() :
+	RpcServiceRequest("dysmsapi", "2017-05-25", "QuerySmsProdStatus")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteSmsTemplateRequest::~DeleteSmsTemplateRequest()
+QuerySmsProdStatusRequest::~QuerySmsProdStatusRequest()
 {}
 
-long DeleteSmsTemplateRequest::getResourceOwnerId()const
+long QuerySmsProdStatusRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DeleteSmsTemplateRequest::setResourceOwnerId(long resourceOwnerId)
+void QuerySmsProdStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteSmsTemplateRequest::getResourceOwnerAccount()const
+std::string QuerySmsProdStatusRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void DeleteSmsTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void QuerySmsProdStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-long DeleteSmsTemplateRequest::getOwnerId()const
+long QuerySmsProdStatusRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DeleteSmsTemplateRequest::setOwnerId(long ownerId)
+void QuerySmsProdStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteSmsTemplateRequest::getAccessKeyId()const
+std::string QuerySmsProdStatusRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void DeleteSmsTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
+void QuerySmsProdStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DeleteSmsTemplateRequest::getTemplateCode()const
+long QuerySmsProdStatusRequest::getAliyUid()const
 {
-	return templateCode_;
+	return aliyUid_;
 }
 
-void DeleteSmsTemplateRequest::setTemplateCode(const std::string& templateCode)
+void QuerySmsProdStatusRequest::setAliyUid(long aliyUid)
 {
-	templateCode_ = templateCode;
-	setCoreParameter("TemplateCode", templateCode);
+	aliyUid_ = aliyUid;
+	setCoreParameter("AliyUid", std::to_string(aliyUid));
 }
 
