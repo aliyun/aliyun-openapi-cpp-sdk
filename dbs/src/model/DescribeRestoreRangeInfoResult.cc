@@ -48,9 +48,9 @@ void DescribeRestoreRangeInfoResult::parse(const std::string &payload)
 		if(!valueItemsDBSRecoverRange["SourceEndpointInstanceID"].isNull())
 			itemsObject.sourceEndpointInstanceID = valueItemsDBSRecoverRange["SourceEndpointInstanceID"].asString();
 		if(!valueItemsDBSRecoverRange["BeginTimestampForRestore"].isNull())
-			itemsObject.beginTimestampForRestore = valueItemsDBSRecoverRange["BeginTimestampForRestore"].asString();
+			itemsObject.beginTimestampForRestore = std::stol(valueItemsDBSRecoverRange["BeginTimestampForRestore"].asString());
 		if(!valueItemsDBSRecoverRange["EndTimestampForRestore"].isNull())
-			itemsObject.endTimestampForRestore = valueItemsDBSRecoverRange["EndTimestampForRestore"].asString();
+			itemsObject.endTimestampForRestore = std::stol(valueItemsDBSRecoverRange["EndTimestampForRestore"].asString());
 		if(!valueItemsDBSRecoverRange["RangeType"].isNull())
 			itemsObject.rangeType = valueItemsDBSRecoverRange["RangeType"].asString();
 		auto allFullBackupListNode = allItemsNode["FullBackupList"]["FullBackupDetail"];
@@ -60,9 +60,9 @@ void DescribeRestoreRangeInfoResult::parse(const std::string &payload)
 			if(!allItemsNodeFullBackupListFullBackupDetail["BackupSetId"].isNull())
 				fullBackupListObject.backupSetId = allItemsNodeFullBackupListFullBackupDetail["BackupSetId"].asString();
 			if(!allItemsNodeFullBackupListFullBackupDetail["StartTime"].isNull())
-				fullBackupListObject.startTime = allItemsNodeFullBackupListFullBackupDetail["StartTime"].asString();
+				fullBackupListObject.startTime = std::stol(allItemsNodeFullBackupListFullBackupDetail["StartTime"].asString());
 			if(!allItemsNodeFullBackupListFullBackupDetail["EndTime"].isNull())
-				fullBackupListObject.endTime = allItemsNodeFullBackupListFullBackupDetail["EndTime"].asString();
+				fullBackupListObject.endTime = std::stol(allItemsNodeFullBackupListFullBackupDetail["EndTime"].asString());
 			itemsObject.fullBackupList.push_back(fullBackupListObject);
 		}
 		items_.push_back(itemsObject);

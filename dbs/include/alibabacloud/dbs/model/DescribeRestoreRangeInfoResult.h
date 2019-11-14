@@ -36,16 +36,16 @@ namespace AlibabaCloud
 				{
 					struct FullBackupDetail
 					{
-						std::string endTime;
-						std::string startTime;
+						long endTime;
+						long startTime;
 						std::string backupSetId;
 					};
 					std::string rangeType;
 					std::vector<DBSRecoverRange::FullBackupDetail> fullBackupList;
 					std::string sourceEndpointInstanceID;
 					std::string sourceEndpointInstanceType;
-					std::string endTimestampForRestore;
-					std::string beginTimestampForRestore;
+					long endTimestampForRestore;
+					long beginTimestampForRestore;
 				};
 
 
