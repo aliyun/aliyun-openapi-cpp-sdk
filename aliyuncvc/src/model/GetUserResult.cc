@@ -62,6 +62,8 @@ void GetUserResult::parse(const std::string &payload)
 		userInfo_.departId = userInfoNode["DepartId"].asString();
 	if(!userInfoNode["DepartName"].isNull())
 		userInfo_.departName = userInfoNode["DepartName"].asString();
+	if(!userInfoNode["JobName"].isNull())
+		userInfo_.jobName = userInfoNode["JobName"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = std::stoi(value["ErrorCode"].asString());
 	if(!value["Message"].isNull())

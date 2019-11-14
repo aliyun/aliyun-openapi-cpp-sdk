@@ -42,6 +42,8 @@
 #include "model/JoinMeetingResult.h"
 #include "model/ListEvaluationsRequest.h"
 #include "model/ListEvaluationsResult.h"
+#include "model/ListIsvStatisticsRequest.h"
+#include "model/ListIsvStatisticsResult.h"
 #include "model/ListMembersRequest.h"
 #include "model/ListMembersResult.h"
 #include "model/ListUsersRequest.h"
@@ -85,6 +87,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListEvaluationsResult> ListEvaluationsOutcome;
 			typedef std::future<ListEvaluationsOutcome> ListEvaluationsOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::ListEvaluationsRequest&, const ListEvaluationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEvaluationsAsyncHandler;
+			typedef Outcome<Error, Model::ListIsvStatisticsResult> ListIsvStatisticsOutcome;
+			typedef std::future<ListIsvStatisticsOutcome> ListIsvStatisticsOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::ListIsvStatisticsRequest&, const ListIsvStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIsvStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::ListMembersResult> ListMembersOutcome;
 			typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::ListMembersRequest&, const ListMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMembersAsyncHandler;
@@ -126,6 +131,9 @@ namespace AlibabaCloud
 			ListEvaluationsOutcome listEvaluations(const Model::ListEvaluationsRequest &request)const;
 			void listEvaluationsAsync(const Model::ListEvaluationsRequest& request, const ListEvaluationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListEvaluationsOutcomeCallable listEvaluationsCallable(const Model::ListEvaluationsRequest& request) const;
+			ListIsvStatisticsOutcome listIsvStatistics(const Model::ListIsvStatisticsRequest &request)const;
+			void listIsvStatisticsAsync(const Model::ListIsvStatisticsRequest& request, const ListIsvStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListIsvStatisticsOutcomeCallable listIsvStatisticsCallable(const Model::ListIsvStatisticsRequest& request) const;
 			ListMembersOutcome listMembers(const Model::ListMembersRequest &request)const;
 			void listMembersAsync(const Model::ListMembersRequest& request, const ListMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMembersOutcomeCallable listMembersCallable(const Model::ListMembersRequest& request) const;

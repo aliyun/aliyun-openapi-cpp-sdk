@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_JOINMEETINGREQUEST_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_JOINMEETINGREQUEST_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_LISTISVSTATISTICSREQUEST_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_LISTISVSTATISTICSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT JoinMeetingRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT ListIsvStatisticsRequest : public RpcServiceRequest
 			{
 
 			public:
-				JoinMeetingRequest();
-				~JoinMeetingRequest();
+				ListIsvStatisticsRequest();
+				~ListIsvStatisticsRequest();
 
-				std::string getUserId()const;
-				void setUserId(const std::string& userId);
-				std::string getMeetingCode()const;
-				void setMeetingCode(const std::string& meetingCode);
+				long getEndTime()const;
+				void setEndTime(long endTime);
+				long getStartTime()const;
+				void setStartTime(long startTime);
 
             private:
-				std::string userId_;
-				std::string meetingCode_;
+				long endTime_;
+				long startTime_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_JOINMEETINGREQUEST_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_LISTISVSTATISTICSREQUEST_H_

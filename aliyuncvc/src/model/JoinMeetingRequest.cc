@@ -27,17 +27,6 @@ JoinMeetingRequest::JoinMeetingRequest() :
 JoinMeetingRequest::~JoinMeetingRequest()
 {}
 
-std::string JoinMeetingRequest::getMeetingCode()const
-{
-	return meetingCode_;
-}
-
-void JoinMeetingRequest::setMeetingCode(const std::string& meetingCode)
-{
-	meetingCode_ = meetingCode;
-	setCoreParameter("MeetingCode", meetingCode);
-}
-
 std::string JoinMeetingRequest::getUserId()const
 {
 	return userId_;
@@ -47,5 +36,16 @@ void JoinMeetingRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
 	setCoreParameter("UserId", userId);
+}
+
+std::string JoinMeetingRequest::getMeetingCode()const
+{
+	return meetingCode_;
+}
+
+void JoinMeetingRequest::setMeetingCode(const std::string& meetingCode)
+{
+	meetingCode_ = meetingCode;
+	setCoreParameter("MeetingCode", meetingCode);
 }
 

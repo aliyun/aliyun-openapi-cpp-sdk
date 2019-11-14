@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_LISTUSERSRESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_LISTUSERSRESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_LISTISVSTATISTICSRESULT_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_LISTISVSTATISTICSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT ListUsersResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT ListIsvStatisticsResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct UserInfo
+					struct Total
 					{
-						std::string groupName;
-						std::string userMobile;
-						std::string userName;
-						std::string userTel;
-						long createTime;
-						std::string jobName;
-						std::string userAvatarUrl;
-						std::string userEmail;
-						std::string departName;
-						std::string groupId;
-						std::string departId;
+						int meetingNumber;
+						int memberNumber;
+						int meetingLength;
 					};
-					int totalCount;
-					int pageSize;
-					int pageNumber;
-					std::vector<UserInfo> userInfos;
+					struct Statistic
+					{
+						std::string meetingNumber;
+						std::string memberNumber;
+						std::string meetingLength;
+						std::string day;
+					};
+					Total total;
+					std::vector<Statistic> statistics;
 				};
 
 
-				ListUsersResult();
-				explicit ListUsersResult(const std::string &payload);
-				~ListUsersResult();
+				ListIsvStatisticsResult();
+				explicit ListIsvStatisticsResult(const std::string &payload);
+				~ListIsvStatisticsResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getErrorCode()const;
@@ -75,4 +72,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_LISTUSERSRESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_LISTISVSTATISTICSRESULT_H_

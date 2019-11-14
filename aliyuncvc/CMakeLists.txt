@@ -41,6 +41,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/JoinMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/ListEvaluationsRequest.h
 	include/alibabacloud/aliyuncvc/model/ListEvaluationsResult.h
+	include/alibabacloud/aliyuncvc/model/ListIsvStatisticsRequest.h
+	include/alibabacloud/aliyuncvc/model/ListIsvStatisticsResult.h
 	include/alibabacloud/aliyuncvc/model/ListMembersRequest.h
 	include/alibabacloud/aliyuncvc/model/ListMembersResult.h
 	include/alibabacloud/aliyuncvc/model/ListUsersRequest.h
@@ -68,6 +70,8 @@ set(aliyuncvc_src
 	src/model/JoinMeetingResult.cc
 	src/model/ListEvaluationsRequest.cc
 	src/model/ListEvaluationsResult.cc
+	src/model/ListIsvStatisticsRequest.cc
+	src/model/ListIsvStatisticsResult.cc
 	src/model/ListMembersRequest.cc
 	src/model/ListMembersResult.cc
 	src/model/ListUsersRequest.cc

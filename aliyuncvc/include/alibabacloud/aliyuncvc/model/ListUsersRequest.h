@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				ListUsersRequest();
 				~ListUsersRequest();
 
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				int pageSize_;
 				int pageNumber_;
+				int pageSize_;
 
 			};
 		}

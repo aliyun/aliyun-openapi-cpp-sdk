@@ -411,6 +411,42 @@ AliyuncvcClient::ListEvaluationsOutcomeCallable AliyuncvcClient::listEvaluations
 	return task->get_future();
 }
 
+AliyuncvcClient::ListIsvStatisticsOutcome AliyuncvcClient::listIsvStatistics(const ListIsvStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListIsvStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListIsvStatisticsOutcome(ListIsvStatisticsResult(outcome.result()));
+	else
+		return ListIsvStatisticsOutcome(outcome.error());
+}
+
+void AliyuncvcClient::listIsvStatisticsAsync(const ListIsvStatisticsRequest& request, const ListIsvStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listIsvStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::ListIsvStatisticsOutcomeCallable AliyuncvcClient::listIsvStatisticsCallable(const ListIsvStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListIsvStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->listIsvStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::ListMembersOutcome AliyuncvcClient::listMembers(const ListMembersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

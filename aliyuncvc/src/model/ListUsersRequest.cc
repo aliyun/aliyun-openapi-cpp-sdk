@@ -27,17 +27,6 @@ ListUsersRequest::ListUsersRequest() :
 ListUsersRequest::~ListUsersRequest()
 {}
 
-int ListUsersRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListUsersRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int ListUsersRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -47,5 +36,16 @@ void ListUsersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+int ListUsersRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListUsersRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

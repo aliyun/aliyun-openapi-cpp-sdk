@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string userTel;
 					std::string userId;
 					long createTime;
+					std::string jobName;
 					std::string userAvatarUrl;
 					std::string userEmail;
 					std::string departName;
