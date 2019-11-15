@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::UpdateDcdnIpaDomainRequest;
 
 UpdateDcdnIpaDomainRequest::UpdateDcdnIpaDomainRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "UpdateDcdnIpaDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateDcdnIpaDomainRequest::~UpdateDcdnIpaDomainRequest()
 {}

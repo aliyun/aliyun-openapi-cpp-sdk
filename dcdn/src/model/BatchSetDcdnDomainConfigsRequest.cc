@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::BatchSetDcdnDomainConfigsRequest;
 
 BatchSetDcdnDomainConfigsRequest::BatchSetDcdnDomainConfigsRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "BatchSetDcdnDomainConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchSetDcdnDomainConfigsRequest::~BatchSetDcdnDomainConfigsRequest()
 {}

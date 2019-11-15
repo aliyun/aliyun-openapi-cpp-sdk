@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::DescribeDcdnDomainIpaTrafficDataRequest;
 
 DescribeDcdnDomainIpaTrafficDataRequest::DescribeDcdnDomainIpaTrafficDataRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnDomainIpaTrafficData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDcdnDomainIpaTrafficDataRequest::~DescribeDcdnDomainIpaTrafficDataRequest()
 {}

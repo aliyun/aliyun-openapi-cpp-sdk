@@ -80,6 +80,8 @@
 #include "model/DescribeDcdnDomainRealTimeBpsDataResult.h"
 #include "model/DescribeDcdnDomainRealTimeByteHitRateDataRequest.h"
 #include "model/DescribeDcdnDomainRealTimeByteHitRateDataResult.h"
+#include "model/DescribeDcdnDomainRealTimeDetailDataRequest.h"
+#include "model/DescribeDcdnDomainRealTimeDetailDataResult.h"
 #include "model/DescribeDcdnDomainRealTimeHttpCodeDataRequest.h"
 #include "model/DescribeDcdnDomainRealTimeHttpCodeDataResult.h"
 #include "model/DescribeDcdnDomainRealTimeQpsDataRequest.h"
@@ -248,6 +250,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDcdnDomainRealTimeByteHitRateDataResult> DescribeDcdnDomainRealTimeByteHitRateDataOutcome;
 			typedef std::future<DescribeDcdnDomainRealTimeByteHitRateDataOutcome> DescribeDcdnDomainRealTimeByteHitRateDataOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnDomainRealTimeByteHitRateDataRequest&, const DescribeDcdnDomainRealTimeByteHitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnDomainRealTimeByteHitRateDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnDomainRealTimeDetailDataResult> DescribeDcdnDomainRealTimeDetailDataOutcome;
+			typedef std::future<DescribeDcdnDomainRealTimeDetailDataOutcome> DescribeDcdnDomainRealTimeDetailDataOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnDomainRealTimeDetailDataRequest&, const DescribeDcdnDomainRealTimeDetailDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnDomainRealTimeDetailDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnDomainRealTimeHttpCodeDataResult> DescribeDcdnDomainRealTimeHttpCodeDataOutcome;
 			typedef std::future<DescribeDcdnDomainRealTimeHttpCodeDataOutcome> DescribeDcdnDomainRealTimeHttpCodeDataOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnDomainRealTimeHttpCodeDataRequest&, const DescribeDcdnDomainRealTimeHttpCodeDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnDomainRealTimeHttpCodeDataAsyncHandler;
@@ -448,6 +453,9 @@ namespace AlibabaCloud
 			DescribeDcdnDomainRealTimeByteHitRateDataOutcome describeDcdnDomainRealTimeByteHitRateData(const Model::DescribeDcdnDomainRealTimeByteHitRateDataRequest &request)const;
 			void describeDcdnDomainRealTimeByteHitRateDataAsync(const Model::DescribeDcdnDomainRealTimeByteHitRateDataRequest& request, const DescribeDcdnDomainRealTimeByteHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnDomainRealTimeByteHitRateDataOutcomeCallable describeDcdnDomainRealTimeByteHitRateDataCallable(const Model::DescribeDcdnDomainRealTimeByteHitRateDataRequest& request) const;
+			DescribeDcdnDomainRealTimeDetailDataOutcome describeDcdnDomainRealTimeDetailData(const Model::DescribeDcdnDomainRealTimeDetailDataRequest &request)const;
+			void describeDcdnDomainRealTimeDetailDataAsync(const Model::DescribeDcdnDomainRealTimeDetailDataRequest& request, const DescribeDcdnDomainRealTimeDetailDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnDomainRealTimeDetailDataOutcomeCallable describeDcdnDomainRealTimeDetailDataCallable(const Model::DescribeDcdnDomainRealTimeDetailDataRequest& request) const;
 			DescribeDcdnDomainRealTimeHttpCodeDataOutcome describeDcdnDomainRealTimeHttpCodeData(const Model::DescribeDcdnDomainRealTimeHttpCodeDataRequest &request)const;
 			void describeDcdnDomainRealTimeHttpCodeDataAsync(const Model::DescribeDcdnDomainRealTimeHttpCodeDataRequest& request, const DescribeDcdnDomainRealTimeHttpCodeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnDomainRealTimeHttpCodeDataOutcomeCallable describeDcdnDomainRealTimeHttpCodeDataCallable(const Model::DescribeDcdnDomainRealTimeHttpCodeDataRequest& request) const;

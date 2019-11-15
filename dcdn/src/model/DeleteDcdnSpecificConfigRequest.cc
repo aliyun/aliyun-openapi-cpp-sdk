@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::DeleteDcdnSpecificConfigRequest;
 
 DeleteDcdnSpecificConfigRequest::DeleteDcdnSpecificConfigRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "DeleteDcdnSpecificConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDcdnSpecificConfigRequest::~DeleteDcdnSpecificConfigRequest()
 {}

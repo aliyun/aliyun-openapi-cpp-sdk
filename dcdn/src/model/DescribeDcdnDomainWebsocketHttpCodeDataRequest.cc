@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::DescribeDcdnDomainWebsocketHttpCodeDataRequest;
 
 DescribeDcdnDomainWebsocketHttpCodeDataRequest::DescribeDcdnDomainWebsocketHttpCodeDataRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketHttpCodeData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDcdnDomainWebsocketHttpCodeDataRequest::~DescribeDcdnDomainWebsocketHttpCodeDataRequest()
 {}

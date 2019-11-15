@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREALTIMEBYTEHITRATEDATAREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREALTIMEBYTEHITRATEDATAREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREALTIMEDETAILDATAREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREALTIMEDETAILDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainRealTimeByteHitRateDataRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainRealTimeDetailDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDcdnDomainRealTimeByteHitRateDataRequest();
-				~DescribeDcdnDomainRealTimeByteHitRateDataRequest();
+				DescribeDcdnDomainRealTimeDetailDataRequest();
+				~DescribeDcdnDomainRealTimeDetailDataRequest();
 
+				std::string getLocationNameEn()const;
+				void setLocationNameEn(const std::string& locationNameEn);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
+				std::string getIspNameEn()const;
+				void setIspNameEn(const std::string& ispNameEn);
+				std::string getMerge()const;
+				void setMerge(const std::string& merge);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
+				std::string getMergeLocIsp()const;
+				void setMergeLocIsp(const std::string& mergeLocIsp);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getField()const;
+				void setField(const std::string& field);
 
             private:
+				std::string locationNameEn_;
 				std::string startTime_;
+				std::string ispNameEn_;
+				std::string merge_;
 				std::string domainName_;
 				std::string endTime_;
+				std::string mergeLocIsp_;
 				long ownerId_;
+				std::string field_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREALTIMEBYTEHITRATEDATAREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINREALTIMEDETAILDATAREQUEST_H_

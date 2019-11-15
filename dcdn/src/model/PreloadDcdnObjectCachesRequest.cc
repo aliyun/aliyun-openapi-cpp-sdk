@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::PreloadDcdnObjectCachesRequest;
 
 PreloadDcdnObjectCachesRequest::PreloadDcdnObjectCachesRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "PreloadDcdnObjectCaches")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PreloadDcdnObjectCachesRequest::~PreloadDcdnObjectCachesRequest()
 {}

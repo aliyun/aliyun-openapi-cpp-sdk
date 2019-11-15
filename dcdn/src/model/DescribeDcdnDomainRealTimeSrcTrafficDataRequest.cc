@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::DescribeDcdnDomainRealTimeSrcTrafficDataRequest
 
 DescribeDcdnDomainRealTimeSrcTrafficDataRequest::DescribeDcdnDomainRealTimeSrcTrafficDataRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnDomainRealTimeSrcTrafficData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDcdnDomainRealTimeSrcTrafficDataRequest::~DescribeDcdnDomainRealTimeSrcTrafficDataRequest()
 {}

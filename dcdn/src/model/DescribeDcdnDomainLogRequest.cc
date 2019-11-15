@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::DescribeDcdnDomainLogRequest;
 
 DescribeDcdnDomainLogRequest::DescribeDcdnDomainLogRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnDomainLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDcdnDomainLogRequest::~DescribeDcdnDomainLogRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::DescribeUserDcdnStatusRequest;
 
 DescribeUserDcdnStatusRequest::DescribeUserDcdnStatusRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "DescribeUserDcdnStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserDcdnStatusRequest::~DescribeUserDcdnStatusRequest()
 {}

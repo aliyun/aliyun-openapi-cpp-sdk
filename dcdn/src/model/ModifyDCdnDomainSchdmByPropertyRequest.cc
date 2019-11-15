@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::ModifyDCdnDomainSchdmByPropertyRequest;
 
 ModifyDCdnDomainSchdmByPropertyRequest::ModifyDCdnDomainSchdmByPropertyRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "ModifyDCdnDomainSchdmByProperty")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDCdnDomainSchdmByPropertyRequest::~ModifyDCdnDomainSchdmByPropertyRequest()
 {}

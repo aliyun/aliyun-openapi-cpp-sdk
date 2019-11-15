@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::AddDcdnDomainRequest;
 
 AddDcdnDomainRequest::AddDcdnDomainRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "AddDcdnDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddDcdnDomainRequest::~AddDcdnDomainRequest()
 {}

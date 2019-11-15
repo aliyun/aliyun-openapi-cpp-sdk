@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::DescribeDcdnDomainRealTimeSrcBpsDataRequest;
 
 DescribeDcdnDomainRealTimeSrcBpsDataRequest::DescribeDcdnDomainRealTimeSrcBpsDataRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnDomainRealTimeSrcBpsData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDcdnDomainRealTimeSrcBpsDataRequest::~DescribeDcdnDomainRealTimeSrcBpsDataRequest()
 {}

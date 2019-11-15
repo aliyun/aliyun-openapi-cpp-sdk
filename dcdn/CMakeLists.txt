@@ -79,6 +79,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeBpsDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeByteHitRateDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeByteHitRateDataResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeDetailDataRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeDetailDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeHttpCodeDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeHttpCodeDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeQpsDataRequest.h
@@ -212,6 +214,8 @@ set(dcdn_src
 	src/model/DescribeDcdnDomainRealTimeBpsDataResult.cc
 	src/model/DescribeDcdnDomainRealTimeByteHitRateDataRequest.cc
 	src/model/DescribeDcdnDomainRealTimeByteHitRateDataResult.cc
+	src/model/DescribeDcdnDomainRealTimeDetailDataRequest.cc
+	src/model/DescribeDcdnDomainRealTimeDetailDataResult.cc
 	src/model/DescribeDcdnDomainRealTimeHttpCodeDataRequest.cc
 	src/model/DescribeDcdnDomainRealTimeHttpCodeDataResult.cc
 	src/model/DescribeDcdnDomainRealTimeQpsDataRequest.cc

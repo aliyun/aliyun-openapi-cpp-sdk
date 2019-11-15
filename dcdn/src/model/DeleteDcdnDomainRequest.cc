@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::DeleteDcdnDomainRequest;
 
 DeleteDcdnDomainRequest::DeleteDcdnDomainRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "DeleteDcdnDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDcdnDomainRequest::~DeleteDcdnDomainRequest()
 {}

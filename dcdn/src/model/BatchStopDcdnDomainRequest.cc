@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::BatchStopDcdnDomainRequest;
 
 BatchStopDcdnDomainRequest::BatchStopDcdnDomainRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "BatchStopDcdnDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchStopDcdnDomainRequest::~BatchStopDcdnDomainRequest()
 {}

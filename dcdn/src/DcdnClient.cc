@@ -31,21 +31,21 @@ DcdnClient::DcdnClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dcdn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DcdnClient::DcdnClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dcdn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DcdnClient::DcdnClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dcdn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DcdnClient::~DcdnClient()
@@ -1089,6 +1089,42 @@ DcdnClient::DescribeDcdnDomainRealTimeByteHitRateDataOutcomeCallable DcdnClient:
 			[this, request]()
 			{
 			return this->describeDcdnDomainRealTimeByteHitRateData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnDomainRealTimeDetailDataOutcome DcdnClient::describeDcdnDomainRealTimeDetailData(const DescribeDcdnDomainRealTimeDetailDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnDomainRealTimeDetailDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnDomainRealTimeDetailDataOutcome(DescribeDcdnDomainRealTimeDetailDataResult(outcome.result()));
+	else
+		return DescribeDcdnDomainRealTimeDetailDataOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnDomainRealTimeDetailDataAsync(const DescribeDcdnDomainRealTimeDetailDataRequest& request, const DescribeDcdnDomainRealTimeDetailDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnDomainRealTimeDetailData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnDomainRealTimeDetailDataOutcomeCallable DcdnClient::describeDcdnDomainRealTimeDetailDataCallable(const DescribeDcdnDomainRealTimeDetailDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDomainRealTimeDetailDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnDomainRealTimeDetailData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

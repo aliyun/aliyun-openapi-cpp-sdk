@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::StopDcdnIpaDomainRequest;
 
 StopDcdnIpaDomainRequest::StopDcdnIpaDomainRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "StopDcdnIpaDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopDcdnIpaDomainRequest::~StopDcdnIpaDomainRequest()
 {}

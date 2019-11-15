@@ -20,7 +20,9 @@ using AlibabaCloud::Dcdn::Model::DescribeDcdnUserResourcePackageRequest;
 
 DescribeDcdnUserResourcePackageRequest::DescribeDcdnUserResourcePackageRequest() :
 	RpcServiceRequest("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDcdnUserResourcePackageRequest::~DescribeDcdnUserResourcePackageRequest()
 {}
