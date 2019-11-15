@@ -80,6 +80,12 @@ void QueryAccountBillResult::parse(const std::string &payload)
 			itemObject.currency = dataNodeItemsItem["Currency"].asString();
 		if(!dataNodeItemsItem["OwnerName"].isNull())
 			itemObject.ownerName = dataNodeItemsItem["OwnerName"].asString();
+		if(!dataNodeItemsItem["ProductCode"].isNull())
+			itemObject.productCode = dataNodeItemsItem["ProductCode"].asString();
+		if(!dataNodeItemsItem["ProductName"].isNull())
+			itemObject.productName = dataNodeItemsItem["ProductName"].asString();
+		if(!dataNodeItemsItem["SubscriptionType"].isNull())
+			itemObject.subscriptionType = dataNodeItemsItem["SubscriptionType"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

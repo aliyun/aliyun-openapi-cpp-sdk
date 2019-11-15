@@ -27,6 +27,17 @@ QueryAccountBillRequest::QueryAccountBillRequest() :
 QueryAccountBillRequest::~QueryAccountBillRequest()
 {}
 
+std::string QueryAccountBillRequest::getProductCode()const
+{
+	return productCode_;
+}
+
+void QueryAccountBillRequest::setProductCode(const std::string& productCode)
+{
+	productCode_ = productCode;
+	setCoreParameter("ProductCode", productCode);
+}
+
 std::string QueryAccountBillRequest::getBillingCycle()const
 {
 	return billingCycle_;
@@ -58,6 +69,17 @@ void QueryAccountBillRequest::setOwnerID(long ownerID)
 {
 	ownerID_ = ownerID;
 	setCoreParameter("OwnerID", std::to_string(ownerID));
+}
+
+bool QueryAccountBillRequest::getIsGroupByProduct()const
+{
+	return isGroupByProduct_;
+}
+
+void QueryAccountBillRequest::setIsGroupByProduct(bool isGroupByProduct)
+{
+	isGroupByProduct_ = isGroupByProduct;
+	setCoreParameter("IsGroupByProduct", isGroupByProduct ? "true" : "false");
 }
 
 int QueryAccountBillRequest::getPageSize()const

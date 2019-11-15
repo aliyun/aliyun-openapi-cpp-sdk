@@ -1,3 +1,6 @@
+2019-11-15 Version 1.36.179
+- Modify QueryAccountBill, support group by product.
+
 2019-11-15 Version 1.36.178
 - Modify DescribeRestoreRangeInfo.
 

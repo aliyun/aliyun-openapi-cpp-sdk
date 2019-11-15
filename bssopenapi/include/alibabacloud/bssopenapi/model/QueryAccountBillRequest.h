@@ -35,19 +35,25 @@ namespace AlibabaCloud
 				QueryAccountBillRequest();
 				~QueryAccountBillRequest();
 
+				std::string getProductCode()const;
+				void setProductCode(const std::string& productCode);
 				std::string getBillingCycle()const;
 				void setBillingCycle(const std::string& billingCycle);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				long getOwnerID()const;
 				void setOwnerID(long ownerID);
+				bool getIsGroupByProduct()const;
+				void setIsGroupByProduct(bool isGroupByProduct);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 
             private:
+				std::string productCode_;
 				std::string billingCycle_;
 				int pageNum_;
 				long ownerID_;
+				bool isGroupByProduct_;
 				int pageSize_;
 
 			};
