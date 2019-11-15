@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainRealTimeBpsDataRequest;
 
 DescribeDomainRealTimeBpsDataRequest::DescribeDomainRealTimeBpsDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainRealTimeBpsData")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainRealTimeBpsData")
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeDomainRealTimeBpsDataRequest::~DescribeDomainRealTimeBpsDataRequest()
 {}

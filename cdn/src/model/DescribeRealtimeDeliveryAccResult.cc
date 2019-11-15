@@ -35,24 +35,20 @@ DescribeRealtimeDeliveryAccResult::~DescribeRealtimeDeliveryAccResult()
 
 void DescribeRealtimeDeliveryAccResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allReatTimeDeliveryAccData = value["ReatTimeDeliveryAccData"]["AccData"];
-	for (auto value : allReatTimeDeliveryAccData)
+	auto allReatTimeDeliveryAccDataNode = value["ReatTimeDeliveryAccData"]["AccData"];
+	for (auto valueReatTimeDeliveryAccDataAccData : allReatTimeDeliveryAccDataNode)
 	{
 		AccData reatTimeDeliveryAccDataObject;
-		if(!value["TimeStamp"].isNull())
-			reatTimeDeliveryAccDataObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["SuccessNum"].isNull())
-			reatTimeDeliveryAccDataObject.successNum = std::stoi(value["SuccessNum"].asString());
-		if(!value["FailedNum"].isNull())
-			reatTimeDeliveryAccDataObject.failedNum = std::stoi(value["FailedNum"].asString());
+		if(!valueReatTimeDeliveryAccDataAccData["TimeStamp"].isNull())
+			reatTimeDeliveryAccDataObject.timeStamp = valueReatTimeDeliveryAccDataAccData["TimeStamp"].asString();
+		if(!valueReatTimeDeliveryAccDataAccData["SuccessNum"].isNull())
+			reatTimeDeliveryAccDataObject.successNum = std::stoi(valueReatTimeDeliveryAccDataAccData["SuccessNum"].asString());
+		if(!valueReatTimeDeliveryAccDataAccData["FailedNum"].isNull())
+			reatTimeDeliveryAccDataObject.failedNum = std::stoi(valueReatTimeDeliveryAccDataAccData["FailedNum"].asString());
 		reatTimeDeliveryAccData_.push_back(reatTimeDeliveryAccDataObject);
 	}
 

@@ -20,109 +20,12 @@ using AlibabaCloud::Cdn::Model::TagResourcesRequest;
 
 TagResourcesRequest::TagResourcesRequest() :
 	RpcServiceRequest("cdn", "2018-05-10", "TagResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TagResourcesRequest::~TagResourcesRequest()
 {}
-
-long TagResourcesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void TagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-long TagResourcesRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void TagResourcesRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool TagResourcesRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void TagResourcesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string TagResourcesRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void TagResourcesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string TagResourcesRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void TagResourcesRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string TagResourcesRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void TagResourcesRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string TagResourcesRequest::getHeraVersion()const
-{
-	return heraVersion_;
-}
-
-void TagResourcesRequest::setHeraVersion(const std::string& heraVersion)
-{
-	heraVersion_ = heraVersion;
-	setCoreParameter("HeraVersion", heraVersion);
-}
-
-std::string TagResourcesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void TagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string TagResourcesRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void TagResourcesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string TagResourcesRequest::getRegionId()const
 {
@@ -133,39 +36,6 @@ void TagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string TagResourcesRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void TagResourcesRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string TagResourcesRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void TagResourcesRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string TagResourcesRequest::getHeraFormat()const
-{
-	return heraFormat_;
-}
-
-void TagResourcesRequest::setHeraFormat(const std::string& heraFormat)
-{
-	heraFormat_ = heraFormat;
-	setCoreParameter("HeraFormat", heraFormat);
 }
 
 std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag()const
@@ -185,50 +55,6 @@ void TagResourcesRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
-std::string TagResourcesRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void TagResourcesRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long TagResourcesRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void TagResourcesRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string TagResourcesRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void TagResourcesRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string TagResourcesRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void TagResourcesRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
-}
-
 std::vector<std::string> TagResourcesRequest::getResourceId()const
 {
 	return resourceId_;
@@ -239,28 +65,6 @@ void TagResourcesRequest::setResourceId(const std::vector<std::string>& resource
 	resourceId_ = resourceId;
 	for(int i = 0; i!= resourceId.size(); i++)
 		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
-}
-
-std::string TagResourcesRequest::getHeraAction()const
-{
-	return heraAction_;
-}
-
-void TagResourcesRequest::setHeraAction(const std::string& heraAction)
-{
-	heraAction_ = heraAction;
-	setCoreParameter("HeraAction", heraAction);
-}
-
-std::string TagResourcesRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void TagResourcesRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
 }
 
 long TagResourcesRequest::getOwnerId()const
@@ -274,17 +78,6 @@ void TagResourcesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string TagResourcesRequest::getVersion()const
-{
-	return version_;
-}
-
-void TagResourcesRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
 std::string TagResourcesRequest::getResourceType()const
 {
 	return resourceType_;
@@ -294,82 +87,5 @@ void TagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
 	setCoreParameter("ResourceType", resourceType);
-}
-
-bool TagResourcesRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void TagResourcesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool TagResourcesRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void TagResourcesRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool TagResourcesRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void TagResourcesRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string TagResourcesRequest::getSignatureMethod()const
-{
-	return signatureMethod_;
-}
-
-void TagResourcesRequest::setSignatureMethod(const std::string& signatureMethod)
-{
-	signatureMethod_ = signatureMethod;
-	setCoreParameter("SignatureMethod", signatureMethod);
-}
-
-std::string TagResourcesRequest::getServiceCode()const
-{
-	return serviceCode_;
-}
-
-void TagResourcesRequest::setServiceCode(const std::string& serviceCode)
-{
-	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", serviceCode);
-}
-
-std::string TagResourcesRequest::getSignatureVersion()const
-{
-	return signatureVersion_;
-}
-
-void TagResourcesRequest::setSignatureVersion(const std::string& signatureVersion)
-{
-	signatureVersion_ = signatureVersion;
-	setCoreParameter("SignatureVersion", signatureVersion);
-}
-
-std::string TagResourcesRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void TagResourcesRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 

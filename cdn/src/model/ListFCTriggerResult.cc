@@ -35,30 +35,26 @@ ListFCTriggerResult::~ListFCTriggerResult()
 
 void ListFCTriggerResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFCTriggers = value["FCTriggers"]["FCTrigger"];
-	for (auto value : allFCTriggers)
+	auto allFCTriggersNode = value["FCTriggers"]["FCTrigger"];
+	for (auto valueFCTriggersFCTrigger : allFCTriggersNode)
 	{
 		FCTrigger fCTriggersObject;
-		if(!value["EventMetaName"].isNull())
-			fCTriggersObject.eventMetaName = value["EventMetaName"].asString();
-		if(!value["EventMetaVersion"].isNull())
-			fCTriggersObject.eventMetaVersion = value["EventMetaVersion"].asString();
-		if(!value["TriggerARN"].isNull())
-			fCTriggersObject.triggerARN = value["TriggerARN"].asString();
-		if(!value["RoleARN"].isNull())
-			fCTriggersObject.roleARN = value["RoleARN"].asString();
-		if(!value["SourceArn"].isNull())
-			fCTriggersObject.sourceArn = value["SourceArn"].asString();
-		if(!value["Notes"].isNull())
-			fCTriggersObject.notes = value["Notes"].asString();
+		if(!valueFCTriggersFCTrigger["EventMetaName"].isNull())
+			fCTriggersObject.eventMetaName = valueFCTriggersFCTrigger["EventMetaName"].asString();
+		if(!valueFCTriggersFCTrigger["EventMetaVersion"].isNull())
+			fCTriggersObject.eventMetaVersion = valueFCTriggersFCTrigger["EventMetaVersion"].asString();
+		if(!valueFCTriggersFCTrigger["TriggerARN"].isNull())
+			fCTriggersObject.triggerARN = valueFCTriggersFCTrigger["TriggerARN"].asString();
+		if(!valueFCTriggersFCTrigger["RoleARN"].isNull())
+			fCTriggersObject.roleARN = valueFCTriggersFCTrigger["RoleARN"].asString();
+		if(!valueFCTriggersFCTrigger["SourceArn"].isNull())
+			fCTriggersObject.sourceArn = valueFCTriggersFCTrigger["SourceArn"].asString();
+		if(!valueFCTriggersFCTrigger["Notes"].isNull())
+			fCTriggersObject.notes = valueFCTriggersFCTrigger["Notes"].asString();
 		fCTriggers_.push_back(fCTriggersObject);
 	}
 

@@ -19,11 +19,24 @@
 using AlibabaCloud::Cdn::Model::SetIgnoreQueryStringConfigRequest;
 
 SetIgnoreQueryStringConfigRequest::SetIgnoreQueryStringConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetIgnoreQueryStringConfig")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "SetIgnoreQueryStringConfig")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetIgnoreQueryStringConfigRequest::~SetIgnoreQueryStringConfigRequest()
 {}
+
+std::string SetIgnoreQueryStringConfigRequest::getEnable()const
+{
+	return enable_;
+}
+
+void SetIgnoreQueryStringConfigRequest::setEnable(const std::string& enable)
+{
+	enable_ = enable;
+	setCoreParameter("Enable", enable);
+}
 
 std::string SetIgnoreQueryStringConfigRequest::getKeepOssArgs()const
 {
@@ -69,25 +82,14 @@ void SetIgnoreQueryStringConfigRequest::setHashKeyArgs(const std::string& hashKe
 	setCoreParameter("HashKeyArgs", hashKeyArgs);
 }
 
-std::string SetIgnoreQueryStringConfigRequest::getSecurityToken()const
+long SetIgnoreQueryStringConfigRequest::getConfigId()const
 {
-	return securityToken_;
+	return configId_;
 }
 
-void SetIgnoreQueryStringConfigRequest::setSecurityToken(const std::string& securityToken)
+void SetIgnoreQueryStringConfigRequest::setConfigId(long configId)
 {
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string SetIgnoreQueryStringConfigRequest::getEnable()const
-{
-	return enable_;
-}
-
-void SetIgnoreQueryStringConfigRequest::setEnable(const std::string& enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	configId_ = configId;
+	setCoreParameter("ConfigId", std::to_string(configId));
 }
 

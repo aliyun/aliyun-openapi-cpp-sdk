@@ -20,20 +20,22 @@ using AlibabaCloud::Cdn::Model::BatchUpdateCdnDomainRequest;
 
 BatchUpdateCdnDomainRequest::BatchUpdateCdnDomainRequest() :
 	RpcServiceRequest("cdn", "2018-05-10", "BatchUpdateCdnDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchUpdateCdnDomainRequest::~BatchUpdateCdnDomainRequest()
 {}
 
-std::string BatchUpdateCdnDomainRequest::getTopLevelDomain()const
+std::string BatchUpdateCdnDomainRequest::getSources()const
 {
-	return topLevelDomain_;
+	return sources_;
 }
 
-void BatchUpdateCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+void BatchUpdateCdnDomainRequest::setSources(const std::string& sources)
 {
-	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	sources_ = sources;
+	setCoreParameter("Sources", sources);
 }
 
 std::string BatchUpdateCdnDomainRequest::getResourceGroupId()const
@@ -47,17 +49,6 @@ void BatchUpdateCdnDomainRequest::setResourceGroupId(const std::string& resource
 	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
-std::string BatchUpdateCdnDomainRequest::getSources()const
-{
-	return sources_;
-}
-
-void BatchUpdateCdnDomainRequest::setSources(const std::string& sources)
-{
-	sources_ = sources;
-	setCoreParameter("Sources", sources);
-}
-
 std::string BatchUpdateCdnDomainRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -67,6 +58,17 @@ void BatchUpdateCdnDomainRequest::setSecurityToken(const std::string& securityTo
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string BatchUpdateCdnDomainRequest::getTopLevelDomain()const
+{
+	return topLevelDomain_;
+}
+
+void BatchUpdateCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+{
+	topLevelDomain_ = topLevelDomain;
+	setCoreParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string BatchUpdateCdnDomainRequest::getDomainName()const

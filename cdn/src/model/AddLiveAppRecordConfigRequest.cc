@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::AddLiveAppRecordConfigRequest;
 
 AddLiveAppRecordConfigRequest::AddLiveAppRecordConfigRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "AddLiveAppRecordConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveAppRecordConfigRequest::~AddLiveAppRecordConfigRequest()
 {}

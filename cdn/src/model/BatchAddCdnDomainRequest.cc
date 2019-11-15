@@ -20,20 +20,22 @@ using AlibabaCloud::Cdn::Model::BatchAddCdnDomainRequest;
 
 BatchAddCdnDomainRequest::BatchAddCdnDomainRequest() :
 	RpcServiceRequest("cdn", "2018-05-10", "BatchAddCdnDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchAddCdnDomainRequest::~BatchAddCdnDomainRequest()
 {}
 
-std::string BatchAddCdnDomainRequest::getTopLevelDomain()const
+std::string BatchAddCdnDomainRequest::getSources()const
 {
-	return topLevelDomain_;
+	return sources_;
 }
 
-void BatchAddCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+void BatchAddCdnDomainRequest::setSources(const std::string& sources)
 {
-	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	sources_ = sources;
+	setCoreParameter("Sources", sources);
 }
 
 std::string BatchAddCdnDomainRequest::getResourceGroupId()const
@@ -45,17 +47,6 @@ void BatchAddCdnDomainRequest::setResourceGroupId(const std::string& resourceGro
 {
 	resourceGroupId_ = resourceGroupId;
 	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string BatchAddCdnDomainRequest::getSources()const
-{
-	return sources_;
-}
-
-void BatchAddCdnDomainRequest::setSources(const std::string& sources)
-{
-	sources_ = sources;
-	setCoreParameter("Sources", sources);
 }
 
 std::string BatchAddCdnDomainRequest::getSecurityToken()const
@@ -80,17 +71,6 @@ void BatchAddCdnDomainRequest::setCdnType(const std::string& cdnType)
 	setCoreParameter("CdnType", cdnType);
 }
 
-std::string BatchAddCdnDomainRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void BatchAddCdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string BatchAddCdnDomainRequest::getScope()const
 {
 	return scope_;
@@ -100,6 +80,28 @@ void BatchAddCdnDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
 	setCoreParameter("Scope", scope);
+}
+
+std::string BatchAddCdnDomainRequest::getTopLevelDomain()const
+{
+	return topLevelDomain_;
+}
+
+void BatchAddCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+{
+	topLevelDomain_ = topLevelDomain;
+	setCoreParameter("TopLevelDomain", topLevelDomain);
+}
+
+std::string BatchAddCdnDomainRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void BatchAddCdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string BatchAddCdnDomainRequest::getDomainName()const

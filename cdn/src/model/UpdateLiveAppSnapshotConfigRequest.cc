@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::UpdateLiveAppSnapshotConfigRequest;
 
 UpdateLiveAppSnapshotConfigRequest::UpdateLiveAppSnapshotConfigRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "UpdateLiveAppSnapshotConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateLiveAppSnapshotConfigRequest::~UpdateLiveAppSnapshotConfigRequest()
 {}

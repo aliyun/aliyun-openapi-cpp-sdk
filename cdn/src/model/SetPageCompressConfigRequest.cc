@@ -19,11 +19,24 @@
 using AlibabaCloud::Cdn::Model::SetPageCompressConfigRequest;
 
 SetPageCompressConfigRequest::SetPageCompressConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetPageCompressConfig")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "SetPageCompressConfig")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetPageCompressConfigRequest::~SetPageCompressConfigRequest()
 {}
+
+std::string SetPageCompressConfigRequest::getEnable()const
+{
+	return enable_;
+}
+
+void SetPageCompressConfigRequest::setEnable(const std::string& enable)
+{
+	enable_ = enable;
+	setCoreParameter("Enable", enable);
+}
 
 std::string SetPageCompressConfigRequest::getDomainName()const
 {
@@ -47,25 +60,14 @@ void SetPageCompressConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetPageCompressConfigRequest::getSecurityToken()const
+long SetPageCompressConfigRequest::getConfigId()const
 {
-	return securityToken_;
+	return configId_;
 }
 
-void SetPageCompressConfigRequest::setSecurityToken(const std::string& securityToken)
+void SetPageCompressConfigRequest::setConfigId(long configId)
 {
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string SetPageCompressConfigRequest::getEnable()const
-{
-	return enable_;
-}
-
-void SetPageCompressConfigRequest::setEnable(const std::string& enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	configId_ = configId;
+	setCoreParameter("ConfigId", std::to_string(configId));
 }
 

@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainFileSizeProportionDataRequest;
 
 DescribeDomainFileSizeProportionDataRequest::DescribeDomainFileSizeProportionDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainFileSizeProportionData")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainFileSizeProportionData")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainFileSizeProportionDataRequest::~DescribeDomainFileSizeProportionDataRequest()
 {}

@@ -19,11 +19,24 @@
 using AlibabaCloud::Cdn::Model::SetDomainGreenManagerConfigRequest;
 
 SetDomainGreenManagerConfigRequest::SetDomainGreenManagerConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetDomainGreenManagerConfig")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "SetDomainGreenManagerConfig")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDomainGreenManagerConfigRequest::~SetDomainGreenManagerConfigRequest()
 {}
+
+std::string SetDomainGreenManagerConfigRequest::getEnable()const
+{
+	return enable_;
+}
+
+void SetDomainGreenManagerConfigRequest::setEnable(const std::string& enable)
+{
+	enable_ = enable;
+	setCoreParameter("Enable", enable);
+}
 
 std::string SetDomainGreenManagerConfigRequest::getDomainName()const
 {
@@ -45,16 +58,5 @@ void SetDomainGreenManagerConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string SetDomainGreenManagerConfigRequest::getEnable()const
-{
-	return enable_;
-}
-
-void SetDomainGreenManagerConfigRequest::setEnable(const std::string& enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable);
 }
 

@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::UpdateFCTriggerRequest;
 
 UpdateFCTriggerRequest::UpdateFCTriggerRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "UpdateFCTrigger")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "UpdateFCTrigger")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateFCTriggerRequest::~UpdateFCTriggerRequest()
 {}

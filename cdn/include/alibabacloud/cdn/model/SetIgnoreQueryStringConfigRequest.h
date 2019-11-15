@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				SetIgnoreQueryStringConfigRequest();
 				~SetIgnoreQueryStringConfigRequest();
 
+				std::string getEnable()const;
+				void setEnable(const std::string& enable);
 				std::string getKeepOssArgs()const;
 				void setKeepOssArgs(const std::string& keepOssArgs);
 				std::string getDomainName()const;
@@ -43,18 +45,16 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getHashKeyArgs()const;
 				void setHashKeyArgs(const std::string& hashKeyArgs);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getEnable()const;
-				void setEnable(const std::string& enable);
+				long getConfigId()const;
+				void setConfigId(long configId);
 
             private:
+				std::string enable_;
 				std::string keepOssArgs_;
 				std::string domainName_;
 				long ownerId_;
 				std::string hashKeyArgs_;
-				std::string securityToken_;
-				std::string enable_;
+				long configId_;
 
 			};
 		}

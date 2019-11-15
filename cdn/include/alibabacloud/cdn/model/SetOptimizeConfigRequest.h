@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				SetOptimizeConfigRequest();
 				~SetOptimizeConfigRequest();
 
+				std::string getEnable()const;
+				void setEnable(const std::string& enable);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getEnable()const;
-				void setEnable(const std::string& enable);
+				long getConfigId()const;
+				void setConfigId(long configId);
 
             private:
+				std::string enable_;
 				std::string domainName_;
 				long ownerId_;
-				std::string securityToken_;
-				std::string enable_;
+				long configId_;
 
 			};
 		}

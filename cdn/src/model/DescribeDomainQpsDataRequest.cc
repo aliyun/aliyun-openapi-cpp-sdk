@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainQpsDataRequest;
 
 DescribeDomainQpsDataRequest::DescribeDomainQpsDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainQpsData")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainQpsData")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainQpsDataRequest::~DescribeDomainQpsDataRequest()
 {}
@@ -56,28 +58,6 @@ void DescribeDomainQpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
 	setCoreParameter("IspNameEn", ispNameEn);
-}
-
-std::string DescribeDomainQpsDataRequest::getDomainType()const
-{
-	return domainType_;
-}
-
-void DescribeDomainQpsDataRequest::setDomainType(const std::string& domainType)
-{
-	domainType_ = domainType;
-	setCoreParameter("DomainType", domainType);
-}
-
-std::string DescribeDomainQpsDataRequest::getTimeMerge()const
-{
-	return timeMerge_;
-}
-
-void DescribeDomainQpsDataRequest::setTimeMerge(const std::string& timeMerge)
-{
-	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDomainQpsDataRequest::getDomainName()const

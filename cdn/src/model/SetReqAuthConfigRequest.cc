@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::SetReqAuthConfigRequest;
 
 SetReqAuthConfigRequest::SetReqAuthConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetReqAuthConfig")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "SetReqAuthConfig")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetReqAuthConfigRequest::~SetReqAuthConfigRequest()
 {}

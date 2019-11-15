@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainUvDataRequest;
 
 DescribeDomainUvDataRequest::DescribeDomainUvDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainUvData")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainUvData")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainUvDataRequest::~DescribeDomainUvDataRequest()
 {}

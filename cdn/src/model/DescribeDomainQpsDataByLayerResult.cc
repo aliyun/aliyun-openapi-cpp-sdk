@@ -35,32 +35,28 @@ DescribeDomainQpsDataByLayerResult::~DescribeDomainQpsDataByLayerResult()
 
 void DescribeDomainQpsDataByLayerResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allQpsDataInterval = value["QpsDataInterval"]["DataModule"];
-	for (auto value : allQpsDataInterval)
+	auto allQpsDataIntervalNode = value["QpsDataInterval"]["DataModule"];
+	for (auto valueQpsDataIntervalDataModule : allQpsDataIntervalNode)
 	{
 		DataModule qpsDataIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			qpsDataIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			qpsDataIntervalObject.value = value["Value"].asString();
-		if(!value["DomesticValue"].isNull())
-			qpsDataIntervalObject.domesticValue = value["DomesticValue"].asString();
-		if(!value["OverseasValue"].isNull())
-			qpsDataIntervalObject.overseasValue = value["OverseasValue"].asString();
-		if(!value["AccValue"].isNull())
-			qpsDataIntervalObject.accValue = value["AccValue"].asString();
-		if(!value["AccDomesticValue"].isNull())
-			qpsDataIntervalObject.accDomesticValue = value["AccDomesticValue"].asString();
-		if(!value["AccOverseasValue"].isNull())
-			qpsDataIntervalObject.accOverseasValue = value["AccOverseasValue"].asString();
+		if(!valueQpsDataIntervalDataModule["TimeStamp"].isNull())
+			qpsDataIntervalObject.timeStamp = valueQpsDataIntervalDataModule["TimeStamp"].asString();
+		if(!valueQpsDataIntervalDataModule["Value"].isNull())
+			qpsDataIntervalObject.value = valueQpsDataIntervalDataModule["Value"].asString();
+		if(!valueQpsDataIntervalDataModule["DomesticValue"].isNull())
+			qpsDataIntervalObject.domesticValue = valueQpsDataIntervalDataModule["DomesticValue"].asString();
+		if(!valueQpsDataIntervalDataModule["OverseasValue"].isNull())
+			qpsDataIntervalObject.overseasValue = valueQpsDataIntervalDataModule["OverseasValue"].asString();
+		if(!valueQpsDataIntervalDataModule["AccValue"].isNull())
+			qpsDataIntervalObject.accValue = valueQpsDataIntervalDataModule["AccValue"].asString();
+		if(!valueQpsDataIntervalDataModule["AccDomesticValue"].isNull())
+			qpsDataIntervalObject.accDomesticValue = valueQpsDataIntervalDataModule["AccDomesticValue"].asString();
+		if(!valueQpsDataIntervalDataModule["AccOverseasValue"].isNull())
+			qpsDataIntervalObject.accOverseasValue = valueQpsDataIntervalDataModule["AccOverseasValue"].asString();
 		qpsDataInterval_.push_back(qpsDataIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

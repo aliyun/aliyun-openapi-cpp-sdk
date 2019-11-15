@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainAverageResponseTimeRequest;
 
 DescribeDomainAverageResponseTimeRequest::DescribeDomainAverageResponseTimeRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainAverageResponseTime")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainAverageResponseTime")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainAverageResponseTimeRequest::~DescribeDomainAverageResponseTimeRequest()
 {}
@@ -67,17 +69,6 @@ void DescribeDomainAverageResponseTimeRequest::setDomainType(const std::string& 
 {
 	domainType_ = domainType;
 	setCoreParameter("DomainType", domainType);
-}
-
-std::string DescribeDomainAverageResponseTimeRequest::getOutString()const
-{
-	return outString_;
-}
-
-void DescribeDomainAverageResponseTimeRequest::setOutString(const std::string& outString)
-{
-	outString_ = outString;
-	setCoreParameter("OutString", outString);
 }
 
 std::string DescribeDomainAverageResponseTimeRequest::getTimeMerge()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DeleteLiveAppRecordConfigRequest;
 
 DeleteLiveAppRecordConfigRequest::DeleteLiveAppRecordConfigRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DeleteLiveAppRecordConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveAppRecordConfigRequest::~DeleteLiveAppRecordConfigRequest()
 {}

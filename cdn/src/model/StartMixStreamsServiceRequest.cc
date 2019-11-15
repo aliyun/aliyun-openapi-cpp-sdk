@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::StartMixStreamsServiceRequest;
 
 StartMixStreamsServiceRequest::StartMixStreamsServiceRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "StartMixStreamsService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartMixStreamsServiceRequest::~StartMixStreamsServiceRequest()
 {}

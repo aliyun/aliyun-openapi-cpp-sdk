@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::AddLiveDomainMappingRequest;
 
 AddLiveDomainMappingRequest::AddLiveDomainMappingRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "AddLiveDomainMapping")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveDomainMappingRequest::~AddLiveDomainMappingRequest()
 {}

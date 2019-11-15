@@ -20,32 +20,12 @@ using AlibabaCloud::Cdn::Model::DescribeLiveStreamBitRateDataRequest;
 
 DescribeLiveStreamBitRateDataRequest::DescribeLiveStreamBitRateDataRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamBitRateData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamBitRateDataRequest::~DescribeLiveStreamBitRateDataRequest()
 {}
-
-std::string DescribeLiveStreamBitRateDataRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveStreamBitRateDataRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-std::string DescribeLiveStreamBitRateDataRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeLiveStreamBitRateDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
 
 std::string DescribeLiveStreamBitRateDataRequest::getStartTime()const
 {
@@ -56,17 +36,6 @@ void DescribeLiveStreamBitRateDataRequest::setStartTime(const std::string& start
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeLiveStreamBitRateDataRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeLiveStreamBitRateDataRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamBitRateDataRequest::getAppName()const
@@ -100,5 +69,38 @@ void DescribeLiveStreamBitRateDataRequest::setStreamName(const std::string& stre
 {
 	streamName_ = streamName;
 	setCoreParameter("StreamName", streamName);
+}
+
+std::string DescribeLiveStreamBitRateDataRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveStreamBitRateDataRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeLiveStreamBitRateDataRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeLiveStreamBitRateDataRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeLiveStreamBitRateDataRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeLiveStreamBitRateDataRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

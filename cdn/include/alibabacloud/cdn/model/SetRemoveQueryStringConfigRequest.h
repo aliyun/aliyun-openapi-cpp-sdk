@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				SetRemoveQueryStringConfigRequest();
 				~SetRemoveQueryStringConfigRequest();
 
+				std::string getAliRemoveArgs()const;
+				void setAliRemoveArgs(const std::string& aliRemoveArgs);
 				std::string getKeepOssArgs()const;
 				void setKeepOssArgs(const std::string& keepOssArgs);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getAliRemoveArgs()const;
-				void setAliRemoveArgs(const std::string& aliRemoveArgs);
+				long getConfigId()const;
+				void setConfigId(long configId);
 
             private:
+				std::string aliRemoveArgs_;
 				std::string keepOssArgs_;
 				std::string domainName_;
 				long ownerId_;
-				std::string securityToken_;
-				std::string aliRemoveArgs_;
+				long configId_;
 
 			};
 		}

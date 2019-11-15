@@ -49,6 +49,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/BatchUpdateCdnDomainResult.h
 	include/alibabacloud/cdn/model/CreateLiveStreamRecordIndexFilesRequest.h
 	include/alibabacloud/cdn/model/CreateLiveStreamRecordIndexFilesResult.h
+	include/alibabacloud/cdn/model/CreateRealTimeLogDeliveryRequest.h
+	include/alibabacloud/cdn/model/CreateRealTimeLogDeliveryResult.h
 	include/alibabacloud/cdn/model/CreateUsageDetailDataExportTaskRequest.h
 	include/alibabacloud/cdn/model/CreateUsageDetailDataExportTaskResult.h
 	include/alibabacloud/cdn/model/CreateUserUsageDataExportTaskRequest.h
@@ -69,10 +71,10 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DeleteLiveDomainMappingResult.h
 	include/alibabacloud/cdn/model/DeleteLiveStreamTranscodeRequest.h
 	include/alibabacloud/cdn/model/DeleteLiveStreamTranscodeResult.h
+	include/alibabacloud/cdn/model/DeleteRealtimeLogDeliveryRequest.h
+	include/alibabacloud/cdn/model/DeleteRealtimeLogDeliveryResult.h
 	include/alibabacloud/cdn/model/DeleteSpecificConfigRequest.h
 	include/alibabacloud/cdn/model/DeleteSpecificConfigResult.h
-	include/alibabacloud/cdn/model/DeleteSpecificStagingConfigRequest.h
-	include/alibabacloud/cdn/model/DeleteSpecificStagingConfigResult.h
 	include/alibabacloud/cdn/model/DeleteUsageDetailDataExportTaskRequest.h
 	include/alibabacloud/cdn/model/DeleteUsageDetailDataExportTaskResult.h
 	include/alibabacloud/cdn/model/DeleteUserUsageDataExportTaskRequest.h
@@ -99,6 +101,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeCdnServiceResult.h
 	include/alibabacloud/cdn/model/DescribeCdnTypesRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnTypesResult.h
+	include/alibabacloud/cdn/model/DescribeCdnUserBillPredictionRequest.h
+	include/alibabacloud/cdn/model/DescribeCdnUserBillPredictionResult.h
 	include/alibabacloud/cdn/model/DescribeCdnUserQuotaRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnUserQuotaResult.h
 	include/alibabacloud/cdn/model/DescribeCdnUserResourcePackageRequest.h
@@ -111,10 +115,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainBpsDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainBpsDataByTimeStampRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainBpsDataByTimeStampResult.h
-	include/alibabacloud/cdn/model/DescribeDomainCCAttackInfoRequest.h
-	include/alibabacloud/cdn/model/DescribeDomainCCAttackInfoResult.h
-	include/alibabacloud/cdn/model/DescribeDomainCCDataRequest.h
-	include/alibabacloud/cdn/model/DescribeDomainCCDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainCertificateInfoRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainCertificateInfoResult.h
 	include/alibabacloud/cdn/model/DescribeDomainCnameRequest.h
@@ -147,6 +147,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeBpsDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeByteHitRateDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeByteHitRateDataResult.h
+	include/alibabacloud/cdn/model/DescribeDomainRealTimeDetailDataRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainRealTimeDetailDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeHttpCodeDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeHttpCodeDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeQpsDataRequest.h
@@ -155,8 +157,14 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeReqHitRateDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeSrcBpsDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeSrcBpsDataResult.h
+	include/alibabacloud/cdn/model/DescribeDomainRealTimeSrcHttpCodeDataRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainRealTimeSrcHttpCodeDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeSrcTrafficDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeSrcTrafficDataResult.h
+	include/alibabacloud/cdn/model/DescribeDomainRealTimeTrafficDataRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainRealTimeTrafficDataResult.h
+	include/alibabacloud/cdn/model/DescribeDomainRealtimeLogDeliveryRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainRealtimeLogDeliveryResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRegionDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainRegionDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainReqHitRateDataRequest.h
@@ -169,8 +177,12 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainSrcFlowDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainSrcHttpCodeDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainSrcHttpCodeDataResult.h
+	include/alibabacloud/cdn/model/DescribeDomainSrcTopUrlVisitRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainSrcTopUrlVisitResult.h
 	include/alibabacloud/cdn/model/DescribeDomainSrcTrafficDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainSrcTrafficDataResult.h
+	include/alibabacloud/cdn/model/DescribeDomainTopClientIpVisitRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainTopClientIpVisitResult.h
 	include/alibabacloud/cdn/model/DescribeDomainTopReferVisitRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainTopReferVisitResult.h
 	include/alibabacloud/cdn/model/DescribeDomainTopUrlVisitRequest.h
@@ -235,8 +247,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeTagResourcesResult.h
 	include/alibabacloud/cdn/model/DescribeTopDomainsByFlowRequest.h
 	include/alibabacloud/cdn/model/DescribeTopDomainsByFlowResult.h
-	include/alibabacloud/cdn/model/DescribeUserCdnStatusRequest.h
-	include/alibabacloud/cdn/model/DescribeUserCdnStatusResult.h
 	include/alibabacloud/cdn/model/DescribeUserConfigsRequest.h
 	include/alibabacloud/cdn/model/DescribeUserConfigsResult.h
 	include/alibabacloud/cdn/model/DescribeUserCustomLogConfigRequest.h
@@ -251,12 +261,24 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeUserUsageDataExportTaskResult.h
 	include/alibabacloud/cdn/model/DescribeUserUsageDetailDataExportTaskRequest.h
 	include/alibabacloud/cdn/model/DescribeUserUsageDetailDataExportTaskResult.h
+	include/alibabacloud/cdn/model/DescribeUserVipsByDomainRequest.h
+	include/alibabacloud/cdn/model/DescribeUserVipsByDomainResult.h
+	include/alibabacloud/cdn/model/DisableRealtimeLogDeliveryRequest.h
+	include/alibabacloud/cdn/model/DisableRealtimeLogDeliveryResult.h
+	include/alibabacloud/cdn/model/EnableRealtimeLogDeliveryRequest.h
+	include/alibabacloud/cdn/model/EnableRealtimeLogDeliveryResult.h
 	include/alibabacloud/cdn/model/ForbidLiveStreamRequest.h
 	include/alibabacloud/cdn/model/ForbidLiveStreamResult.h
 	include/alibabacloud/cdn/model/ListDomainsByLogConfigIdRequest.h
 	include/alibabacloud/cdn/model/ListDomainsByLogConfigIdResult.h
 	include/alibabacloud/cdn/model/ListFCTriggerRequest.h
 	include/alibabacloud/cdn/model/ListFCTriggerResult.h
+	include/alibabacloud/cdn/model/ListRealtimeLogDeliveryDomainsRequest.h
+	include/alibabacloud/cdn/model/ListRealtimeLogDeliveryDomainsResult.h
+	include/alibabacloud/cdn/model/ListRealtimeLogDeliveryInfosRequest.h
+	include/alibabacloud/cdn/model/ListRealtimeLogDeliveryInfosResult.h
+	include/alibabacloud/cdn/model/ListUserCustomLogConfigRequest.h
+	include/alibabacloud/cdn/model/ListUserCustomLogConfigResult.h
 	include/alibabacloud/cdn/model/ModifyCdnDomainRequest.h
 	include/alibabacloud/cdn/model/ModifyCdnDomainResult.h
 	include/alibabacloud/cdn/model/ModifyCdnDomainSchdmByPropertyRequest.h
@@ -271,6 +293,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/ModifyHttpHeaderConfigResult.h
 	include/alibabacloud/cdn/model/ModifyPathCacheExpiredConfigRequest.h
 	include/alibabacloud/cdn/model/ModifyPathCacheExpiredConfigResult.h
+	include/alibabacloud/cdn/model/ModifyRealtimeLogDeliveryRequest.h
+	include/alibabacloud/cdn/model/ModifyRealtimeLogDeliveryResult.h
 	include/alibabacloud/cdn/model/ModifyUserCustomLogConfigRequest.h
 	include/alibabacloud/cdn/model/ModifyUserCustomLogConfigResult.h
 	include/alibabacloud/cdn/model/OpenCdnServiceRequest.h
@@ -386,6 +410,8 @@ set(cdn_src
 	src/model/BatchUpdateCdnDomainResult.cc
 	src/model/CreateLiveStreamRecordIndexFilesRequest.cc
 	src/model/CreateLiveStreamRecordIndexFilesResult.cc
+	src/model/CreateRealTimeLogDeliveryRequest.cc
+	src/model/CreateRealTimeLogDeliveryResult.cc
 	src/model/CreateUsageDetailDataExportTaskRequest.cc
 	src/model/CreateUsageDetailDataExportTaskResult.cc
 	src/model/CreateUserUsageDataExportTaskRequest.cc
@@ -406,10 +432,10 @@ set(cdn_src
 	src/model/DeleteLiveDomainMappingResult.cc
 	src/model/DeleteLiveStreamTranscodeRequest.cc
 	src/model/DeleteLiveStreamTranscodeResult.cc
+	src/model/DeleteRealtimeLogDeliveryRequest.cc
+	src/model/DeleteRealtimeLogDeliveryResult.cc
 	src/model/DeleteSpecificConfigRequest.cc
 	src/model/DeleteSpecificConfigResult.cc
-	src/model/DeleteSpecificStagingConfigRequest.cc
-	src/model/DeleteSpecificStagingConfigResult.cc
 	src/model/DeleteUsageDetailDataExportTaskRequest.cc
 	src/model/DeleteUsageDetailDataExportTaskResult.cc
 	src/model/DeleteUserUsageDataExportTaskRequest.cc
@@ -436,6 +462,8 @@ set(cdn_src
 	src/model/DescribeCdnServiceResult.cc
 	src/model/DescribeCdnTypesRequest.cc
 	src/model/DescribeCdnTypesResult.cc
+	src/model/DescribeCdnUserBillPredictionRequest.cc
+	src/model/DescribeCdnUserBillPredictionResult.cc
 	src/model/DescribeCdnUserQuotaRequest.cc
 	src/model/DescribeCdnUserQuotaResult.cc
 	src/model/DescribeCdnUserResourcePackageRequest.cc
@@ -448,10 +476,6 @@ set(cdn_src
 	src/model/DescribeDomainBpsDataResult.cc
 	src/model/DescribeDomainBpsDataByTimeStampRequest.cc
 	src/model/DescribeDomainBpsDataByTimeStampResult.cc
-	src/model/DescribeDomainCCAttackInfoRequest.cc
-	src/model/DescribeDomainCCAttackInfoResult.cc
-	src/model/DescribeDomainCCDataRequest.cc
-	src/model/DescribeDomainCCDataResult.cc
 	src/model/DescribeDomainCertificateInfoRequest.cc
 	src/model/DescribeDomainCertificateInfoResult.cc
 	src/model/DescribeDomainCnameRequest.cc
@@ -484,6 +508,8 @@ set(cdn_src
 	src/model/DescribeDomainRealTimeBpsDataResult.cc
 	src/model/DescribeDomainRealTimeByteHitRateDataRequest.cc
 	src/model/DescribeDomainRealTimeByteHitRateDataResult.cc
+	src/model/DescribeDomainRealTimeDetailDataRequest.cc
+	src/model/DescribeDomainRealTimeDetailDataResult.cc
 	src/model/DescribeDomainRealTimeHttpCodeDataRequest.cc
 	src/model/DescribeDomainRealTimeHttpCodeDataResult.cc
 	src/model/DescribeDomainRealTimeQpsDataRequest.cc
@@ -492,8 +518,14 @@ set(cdn_src
 	src/model/DescribeDomainRealTimeReqHitRateDataResult.cc
 	src/model/DescribeDomainRealTimeSrcBpsDataRequest.cc
 	src/model/DescribeDomainRealTimeSrcBpsDataResult.cc
+	src/model/DescribeDomainRealTimeSrcHttpCodeDataRequest.cc
+	src/model/DescribeDomainRealTimeSrcHttpCodeDataResult.cc
 	src/model/DescribeDomainRealTimeSrcTrafficDataRequest.cc
 	src/model/DescribeDomainRealTimeSrcTrafficDataResult.cc
+	src/model/DescribeDomainRealTimeTrafficDataRequest.cc
+	src/model/DescribeDomainRealTimeTrafficDataResult.cc
+	src/model/DescribeDomainRealtimeLogDeliveryRequest.cc
+	src/model/DescribeDomainRealtimeLogDeliveryResult.cc
 	src/model/DescribeDomainRegionDataRequest.cc
 	src/model/DescribeDomainRegionDataResult.cc
 	src/model/DescribeDomainReqHitRateDataRequest.cc
@@ -506,8 +538,12 @@ set(cdn_src
 	src/model/DescribeDomainSrcFlowDataResult.cc
 	src/model/DescribeDomainSrcHttpCodeDataRequest.cc
 	src/model/DescribeDomainSrcHttpCodeDataResult.cc
+	src/model/DescribeDomainSrcTopUrlVisitRequest.cc
+	src/model/DescribeDomainSrcTopUrlVisitResult.cc
 	src/model/DescribeDomainSrcTrafficDataRequest.cc
 	src/model/DescribeDomainSrcTrafficDataResult.cc
+	src/model/DescribeDomainTopClientIpVisitRequest.cc
+	src/model/DescribeDomainTopClientIpVisitResult.cc
 	src/model/DescribeDomainTopReferVisitRequest.cc
 	src/model/DescribeDomainTopReferVisitResult.cc
 	src/model/DescribeDomainTopUrlVisitRequest.cc
@@ -572,8 +608,6 @@ set(cdn_src
 	src/model/DescribeTagResourcesResult.cc
 	src/model/DescribeTopDomainsByFlowRequest.cc
 	src/model/DescribeTopDomainsByFlowResult.cc
-	src/model/DescribeUserCdnStatusRequest.cc
-	src/model/DescribeUserCdnStatusResult.cc
 	src/model/DescribeUserConfigsRequest.cc
 	src/model/DescribeUserConfigsResult.cc
 	src/model/DescribeUserCustomLogConfigRequest.cc
@@ -588,12 +622,24 @@ set(cdn_src
 	src/model/DescribeUserUsageDataExportTaskResult.cc
 	src/model/DescribeUserUsageDetailDataExportTaskRequest.cc
 	src/model/DescribeUserUsageDetailDataExportTaskResult.cc
+	src/model/DescribeUserVipsByDomainRequest.cc
+	src/model/DescribeUserVipsByDomainResult.cc
+	src/model/DisableRealtimeLogDeliveryRequest.cc
+	src/model/DisableRealtimeLogDeliveryResult.cc
+	src/model/EnableRealtimeLogDeliveryRequest.cc
+	src/model/EnableRealtimeLogDeliveryResult.cc
 	src/model/ForbidLiveStreamRequest.cc
 	src/model/ForbidLiveStreamResult.cc
 	src/model/ListDomainsByLogConfigIdRequest.cc
 	src/model/ListDomainsByLogConfigIdResult.cc
 	src/model/ListFCTriggerRequest.cc
 	src/model/ListFCTriggerResult.cc
+	src/model/ListRealtimeLogDeliveryDomainsRequest.cc
+	src/model/ListRealtimeLogDeliveryDomainsResult.cc
+	src/model/ListRealtimeLogDeliveryInfosRequest.cc
+	src/model/ListRealtimeLogDeliveryInfosResult.cc
+	src/model/ListUserCustomLogConfigRequest.cc
+	src/model/ListUserCustomLogConfigResult.cc
 	src/model/ModifyCdnDomainRequest.cc
 	src/model/ModifyCdnDomainResult.cc
 	src/model/ModifyCdnDomainSchdmByPropertyRequest.cc
@@ -608,6 +654,8 @@ set(cdn_src
 	src/model/ModifyHttpHeaderConfigResult.cc
 	src/model/ModifyPathCacheExpiredConfigRequest.cc
 	src/model/ModifyPathCacheExpiredConfigResult.cc
+	src/model/ModifyRealtimeLogDeliveryRequest.cc
+	src/model/ModifyRealtimeLogDeliveryResult.cc
 	src/model/ModifyUserCustomLogConfigRequest.cc
 	src/model/ModifyUserCustomLogConfigResult.cc
 	src/model/OpenCdnServiceRequest.cc

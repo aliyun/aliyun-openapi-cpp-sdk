@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DescribeLiveStreamRecordIndexFileRequest;
 
 DescribeLiveStreamRecordIndexFileRequest::DescribeLiveStreamRecordIndexFileRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamRecordIndexFile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamRecordIndexFileRequest::~DescribeLiveStreamRecordIndexFileRequest()
 {}

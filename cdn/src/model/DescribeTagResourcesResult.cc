@@ -35,28 +35,24 @@ DescribeTagResourcesResult::~DescribeTagResourcesResult()
 
 void DescribeTagResourcesResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTagResources = value["TagResources"]["TagResource"];
-	for (auto value : allTagResources)
+	auto allTagResourcesNode = value["TagResources"]["TagResource"];
+	for (auto valueTagResourcesTagResource : allTagResourcesNode)
 	{
 		TagResource tagResourcesObject;
-		if(!value["ResourceId"].isNull())
-			tagResourcesObject.resourceId = value["ResourceId"].asString();
-		auto allTag = value["Tag"]["TagItem"];
-		for (auto value : allTag)
+		if(!valueTagResourcesTagResource["ResourceId"].isNull())
+			tagResourcesObject.resourceId = valueTagResourcesTagResource["ResourceId"].asString();
+		auto allTagNode = allTagResourcesNode["Tag"]["TagItem"];
+		for (auto allTagResourcesNodeTagTagItem : allTagNode)
 		{
 			TagResource::TagItem tagObject;
-			if(!value["Key"].isNull())
-				tagObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				tagObject.value = value["Value"].asString();
+			if(!allTagResourcesNodeTagTagItem["Key"].isNull())
+				tagObject.key = allTagResourcesNodeTagTagItem["Key"].asString();
+			if(!allTagResourcesNodeTagTagItem["Value"].isNull())
+				tagObject.value = allTagResourcesNodeTagTagItem["Value"].asString();
 			tagResourcesObject.tag.push_back(tagObject);
 		}
 		tagResources_.push_back(tagResourcesObject);

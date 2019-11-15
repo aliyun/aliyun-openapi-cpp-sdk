@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DeleteCacheExpiredConfigRequest;
 
 DeleteCacheExpiredConfigRequest::DeleteCacheExpiredConfigRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DeleteCacheExpiredConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCacheExpiredConfigRequest::~DeleteCacheExpiredConfigRequest()
 {}

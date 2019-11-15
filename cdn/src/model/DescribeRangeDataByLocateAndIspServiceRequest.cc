@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeRangeDataByLocateAndIspServiceRequest;
 
 DescribeRangeDataByLocateAndIspServiceRequest::DescribeRangeDataByLocateAndIspServiceRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRangeDataByLocateAndIspServiceRequest::~DescribeRangeDataByLocateAndIspServiceRequest()
 {}

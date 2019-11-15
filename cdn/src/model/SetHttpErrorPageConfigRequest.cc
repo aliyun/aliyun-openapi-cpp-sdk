@@ -19,11 +19,35 @@
 using AlibabaCloud::Cdn::Model::SetHttpErrorPageConfigRequest;
 
 SetHttpErrorPageConfigRequest::SetHttpErrorPageConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetHttpErrorPageConfig")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "SetHttpErrorPageConfig")
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 SetHttpErrorPageConfigRequest::~SetHttpErrorPageConfigRequest()
 {}
+
+std::string SetHttpErrorPageConfigRequest::getPageUrl()const
+{
+	return pageUrl_;
+}
+
+void SetHttpErrorPageConfigRequest::setPageUrl(const std::string& pageUrl)
+{
+	pageUrl_ = pageUrl;
+	setCoreParameter("PageUrl", pageUrl);
+}
+
+std::string SetHttpErrorPageConfigRequest::getErrorCode()const
+{
+	return errorCode_;
+}
+
+void SetHttpErrorPageConfigRequest::setErrorCode(const std::string& errorCode)
+{
+	errorCode_ = errorCode;
+	setCoreParameter("ErrorCode", errorCode);
+}
 
 std::string SetHttpErrorPageConfigRequest::getDomainName()const
 {
@@ -47,36 +71,14 @@ void SetHttpErrorPageConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetHttpErrorPageConfigRequest::getSecurityToken()const
+long SetHttpErrorPageConfigRequest::getConfigId()const
 {
-	return securityToken_;
+	return configId_;
 }
 
-void SetHttpErrorPageConfigRequest::setSecurityToken(const std::string& securityToken)
+void SetHttpErrorPageConfigRequest::setConfigId(long configId)
 {
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string SetHttpErrorPageConfigRequest::getPageUrl()const
-{
-	return pageUrl_;
-}
-
-void SetHttpErrorPageConfigRequest::setPageUrl(const std::string& pageUrl)
-{
-	pageUrl_ = pageUrl;
-	setCoreParameter("PageUrl", pageUrl);
-}
-
-std::string SetHttpErrorPageConfigRequest::getErrorCode()const
-{
-	return errorCode_;
-}
-
-void SetHttpErrorPageConfigRequest::setErrorCode(const std::string& errorCode)
-{
-	errorCode_ = errorCode;
-	setCoreParameter("ErrorCode", errorCode);
+	configId_ = configId;
+	setCoreParameter("ConfigId", std::to_string(configId));
 }
 

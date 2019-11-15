@@ -20,32 +20,12 @@ using AlibabaCloud::Cdn::Model::DescribeLiveStreamsFrameRateAndBitRateDataReques
 
 DescribeLiveStreamsFrameRateAndBitRateDataRequest::DescribeLiveStreamsFrameRateAndBitRateDataRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamsFrameRateAndBitRateData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamsFrameRateAndBitRateDataRequest::~DescribeLiveStreamsFrameRateAndBitRateDataRequest()
 {}
-
-std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
 
 std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getStartTime()const
 {
@@ -56,17 +36,6 @@ void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setStartTime(const std::
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeLiveStreamsFrameRateAndBitRateDataRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getAppName()const
@@ -100,5 +69,38 @@ void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setStreamName(const std:
 {
 	streamName_ = streamName;
 	setCoreParameter("StreamName", streamName);
+}
+
+std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeLiveStreamsFrameRateAndBitRateDataRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DescribeDomainFlowDataRequest;
 
 DescribeDomainFlowDataRequest::DescribeDomainFlowDataRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainFlowData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainFlowDataRequest::~DescribeDomainFlowDataRequest()
 {}

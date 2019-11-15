@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::SetPathCacheExpiredConfigRequest;
 
 SetPathCacheExpiredConfigRequest::SetPathCacheExpiredConfigRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "SetPathCacheExpiredConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetPathCacheExpiredConfigRequest::~SetPathCacheExpiredConfigRequest()
 {}

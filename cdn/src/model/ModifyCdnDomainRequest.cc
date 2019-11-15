@@ -19,77 +19,13 @@
 using AlibabaCloud::Cdn::Model::ModifyCdnDomainRequest;
 
 ModifyCdnDomainRequest::ModifyCdnDomainRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "ModifyCdnDomain")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "ModifyCdnDomain")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCdnDomainRequest::~ModifyCdnDomainRequest()
 {}
-
-std::string ModifyCdnDomainRequest::getSources()const
-{
-	return sources_;
-}
-
-void ModifyCdnDomainRequest::setSources(const std::string& sources)
-{
-	sources_ = sources;
-	setCoreParameter("Sources", sources);
-}
-
-int ModifyCdnDomainRequest::getSourcePort()const
-{
-	return sourcePort_;
-}
-
-void ModifyCdnDomainRequest::setSourcePort(int sourcePort)
-{
-	sourcePort_ = sourcePort;
-	setCoreParameter("SourcePort", std::to_string(sourcePort));
-}
-
-std::string ModifyCdnDomainRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void ModifyCdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string ModifyCdnDomainRequest::getPriorities()const
-{
-	return priorities_;
-}
-
-void ModifyCdnDomainRequest::setPriorities(const std::string& priorities)
-{
-	priorities_ = priorities;
-	setCoreParameter("Priorities", priorities);
-}
-
-std::string ModifyCdnDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ModifyCdnDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string ModifyCdnDomainRequest::getSourceType()const
-{
-	return sourceType_;
-}
-
-void ModifyCdnDomainRequest::setSourceType(const std::string& sourceType)
-{
-	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
-}
 
 std::string ModifyCdnDomainRequest::getTopLevelDomain()const
 {
@@ -100,6 +36,17 @@ void ModifyCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain
 {
 	topLevelDomain_ = topLevelDomain;
 	setCoreParameter("TopLevelDomain", topLevelDomain);
+}
+
+std::string ModifyCdnDomainRequest::getSources()const
+{
+	return sources_;
+}
+
+void ModifyCdnDomainRequest::setSources(const std::string& sources)
+{
+	sources_ = sources;
+	setCoreParameter("Sources", sources);
 }
 
 std::string ModifyCdnDomainRequest::getDomainName()const
@@ -122,5 +69,27 @@ void ModifyCdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyCdnDomainRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ModifyCdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string ModifyCdnDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void ModifyCdnDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

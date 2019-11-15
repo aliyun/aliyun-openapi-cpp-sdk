@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DescribeLiveSnapshotConfigRequest;
 
 DescribeLiveSnapshotConfigRequest::DescribeLiveSnapshotConfigRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveSnapshotConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveSnapshotConfigRequest::~DescribeLiveSnapshotConfigRequest()
 {}

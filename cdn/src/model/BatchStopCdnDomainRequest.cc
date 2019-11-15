@@ -20,21 +20,12 @@ using AlibabaCloud::Cdn::Model::BatchStopCdnDomainRequest;
 
 BatchStopCdnDomainRequest::BatchStopCdnDomainRequest() :
 	RpcServiceRequest("cdn", "2018-05-10", "BatchStopCdnDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchStopCdnDomainRequest::~BatchStopCdnDomainRequest()
 {}
-
-std::string BatchStopCdnDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void BatchStopCdnDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string BatchStopCdnDomainRequest::getDomainNames()const
 {
@@ -56,5 +47,16 @@ void BatchStopCdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string BatchStopCdnDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void BatchStopCdnDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

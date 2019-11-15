@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DescribeUserCustomerLabelsRequest;
 
 DescribeUserCustomerLabelsRequest::DescribeUserCustomerLabelsRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeUserCustomerLabels")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserCustomerLabelsRequest::~DescribeUserCustomerLabelsRequest()
 {}

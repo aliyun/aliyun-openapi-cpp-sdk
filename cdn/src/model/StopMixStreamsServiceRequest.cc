@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::StopMixStreamsServiceRequest;
 
 StopMixStreamsServiceRequest::StopMixStreamsServiceRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "StopMixStreamsService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopMixStreamsServiceRequest::~StopMixStreamsServiceRequest()
 {}

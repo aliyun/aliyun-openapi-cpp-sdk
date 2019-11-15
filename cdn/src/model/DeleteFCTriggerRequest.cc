@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DeleteFCTriggerRequest;
 
 DeleteFCTriggerRequest::DeleteFCTriggerRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DeleteFCTrigger")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DeleteFCTrigger")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFCTriggerRequest::~DeleteFCTriggerRequest()
 {}

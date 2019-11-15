@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DescribeLiveStreamsPublishListRequest;
 
 DescribeLiveStreamsPublishListRequest::DescribeLiveStreamsPublishListRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeLiveStreamsPublishList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamsPublishListRequest::~DescribeLiveStreamsPublishListRequest()
 {}

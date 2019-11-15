@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeFCTriggerRequest;
 
 DescribeFCTriggerRequest::DescribeFCTriggerRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeFCTrigger")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeFCTrigger")
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeFCTriggerRequest::~DescribeFCTriggerRequest()
 {}

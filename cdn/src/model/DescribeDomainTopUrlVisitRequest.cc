@@ -19,22 +19,13 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainTopUrlVisitRequest;
 
 DescribeDomainTopUrlVisitRequest::DescribeDomainTopUrlVisitRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainTopUrlVisit")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainTopUrlVisit")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainTopUrlVisitRequest::~DescribeDomainTopUrlVisitRequest()
 {}
-
-std::string DescribeDomainTopUrlVisitRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeDomainTopUrlVisitRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
 
 std::string DescribeDomainTopUrlVisitRequest::getStartTime()const
 {
@@ -47,6 +38,28 @@ void DescribeDomainTopUrlVisitRequest::setStartTime(const std::string& startTime
 	setCoreParameter("StartTime", startTime);
 }
 
+std::string DescribeDomainTopUrlVisitRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeDomainTopUrlVisitRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeDomainTopUrlVisitRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeDomainTopUrlVisitRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
 long DescribeDomainTopUrlVisitRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -56,17 +69,6 @@ void DescribeDomainTopUrlVisitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeDomainTopUrlVisitRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDomainTopUrlVisitRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainTopUrlVisitRequest::getSortBy()const

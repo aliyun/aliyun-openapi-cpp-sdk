@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DescribeCdnTypesRequest;
 
 DescribeCdnTypesRequest::DescribeCdnTypesRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeCdnTypes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCdnTypesRequest::~DescribeCdnTypesRequest()
 {}

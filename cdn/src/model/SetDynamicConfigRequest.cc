@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::SetDynamicConfigRequest;
 
 SetDynamicConfigRequest::SetDynamicConfigRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "SetDynamicConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDynamicConfigRequest::~SetDynamicConfigRequest()
 {}

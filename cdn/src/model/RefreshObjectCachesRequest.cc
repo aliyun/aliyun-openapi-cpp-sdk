@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::RefreshObjectCachesRequest;
 
 RefreshObjectCachesRequest::RefreshObjectCachesRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "RefreshObjectCaches")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "RefreshObjectCaches")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshObjectCachesRequest::~RefreshObjectCachesRequest()
 {}

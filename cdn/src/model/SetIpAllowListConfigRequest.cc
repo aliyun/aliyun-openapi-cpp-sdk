@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::SetIpAllowListConfigRequest;
 
 SetIpAllowListConfigRequest::SetIpAllowListConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetIpAllowListConfig")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "SetIpAllowListConfig")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetIpAllowListConfigRequest::~SetIpAllowListConfigRequest()
 {}

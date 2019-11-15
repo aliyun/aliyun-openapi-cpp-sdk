@@ -35,20 +35,16 @@ DescribeUserTagsResult::~DescribeUserTagsResult()
 
 void DescribeUserTagsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTags = value["Tags"]["Tag"];
-	for (auto value : allTags)
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
 	{
 		Tag tagsObject;
-		if(!value["Key"].isNull())
-			tagsObject.key = value["Key"].asString();
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
 		auto allValue = value["Value"]["Value"];
 		for (auto value : allValue)
 			tagsObject.value.push_back(value.asString());

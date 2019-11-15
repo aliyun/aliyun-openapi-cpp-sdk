@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DescribeUserCustomLogConfigRequest;
 
 DescribeUserCustomLogConfigRequest::DescribeUserCustomLogConfigRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeUserCustomLogConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeUserCustomLogConfigRequest::~DescribeUserCustomLogConfigRequest()
 {}

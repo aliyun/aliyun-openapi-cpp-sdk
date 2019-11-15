@@ -19,22 +19,13 @@
 using AlibabaCloud::Cdn::Model::DescribeUserDomainsRequest;
 
 DescribeUserDomainsRequest::DescribeUserDomainsRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeUserDomains")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeUserDomains")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserDomainsRequest::~DescribeUserDomainsRequest()
 {}
-
-std::string DescribeUserDomainsRequest::getSources()const
-{
-	return sources_;
-}
-
-void DescribeUserDomainsRequest::setSources(const std::string& sources)
-{
-	sources_ = sources;
-	setCoreParameter("Sources", sources);
-}
 
 int DescribeUserDomainsRequest::getPageNumber()const
 {
@@ -91,6 +82,17 @@ void DescribeUserDomainsRequest::setCdnType(const std::string& cdnType)
 	setCoreParameter("CdnType", cdnType);
 }
 
+std::string DescribeUserDomainsRequest::getChangeEndTime()const
+{
+	return changeEndTime_;
+}
+
+void DescribeUserDomainsRequest::setChangeEndTime(const std::string& changeEndTime)
+{
+	changeEndTime_ = changeEndTime;
+	setCoreParameter("ChangeEndTime", changeEndTime);
+}
+
 int DescribeUserDomainsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -100,6 +102,23 @@ void DescribeUserDomainsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<DescribeUserDomainsRequest::Tag> DescribeUserDomainsRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeUserDomainsRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
 }
 
 std::string DescribeUserDomainsRequest::getFuncFilter()const
@@ -166,5 +185,16 @@ void DescribeUserDomainsRequest::setDomainSearchType(const std::string& domainSe
 {
 	domainSearchType_ = domainSearchType;
 	setCoreParameter("DomainSearchType", domainSearchType);
+}
+
+std::string DescribeUserDomainsRequest::getChangeStartTime()const
+{
+	return changeStartTime_;
+}
+
+void DescribeUserDomainsRequest::setChangeStartTime(const std::string& changeStartTime)
+{
+	changeStartTime_ = changeStartTime;
+	setCoreParameter("ChangeStartTime", changeStartTime);
 }
 

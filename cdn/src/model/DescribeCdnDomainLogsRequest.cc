@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeCdnDomainLogsRequest;
 
 DescribeCdnDomainLogsRequest::DescribeCdnDomainLogsRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeCdnDomainLogs")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeCdnDomainLogs")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCdnDomainLogsRequest::~DescribeCdnDomainLogsRequest()
 {}
@@ -45,28 +47,6 @@ void DescribeCdnDomainLogsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeCdnDomainLogsRequest::getLogDay()const
-{
-	return logDay_;
-}
-
-void DescribeCdnDomainLogsRequest::setLogDay(const std::string& logDay)
-{
-	logDay_ = logDay;
-	setCoreParameter("LogDay", logDay);
-}
-
-std::string DescribeCdnDomainLogsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeCdnDomainLogsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
 }
 
 long DescribeCdnDomainLogsRequest::getPageSize()const

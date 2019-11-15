@@ -20,21 +20,12 @@ using AlibabaCloud::Cdn::Model::DescribeCdnCertificateDetailRequest;
 
 DescribeCdnCertificateDetailRequest::DescribeCdnCertificateDetailRequest() :
 	RpcServiceRequest("cdn", "2018-05-10", "DescribeCdnCertificateDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCdnCertificateDetailRequest::~DescribeCdnCertificateDetailRequest()
 {}
-
-std::string DescribeCdnCertificateDetailRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeCdnCertificateDetailRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string DescribeCdnCertificateDetailRequest::getCertName()const
 {
@@ -56,5 +47,16 @@ void DescribeCdnCertificateDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeCdnCertificateDetailRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeCdnCertificateDetailRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

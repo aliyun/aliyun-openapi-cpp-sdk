@@ -20,32 +20,12 @@ using AlibabaCloud::Cdn::Model::CreateUserUsageDataExportTaskRequest;
 
 CreateUserUsageDataExportTaskRequest::CreateUserUsageDataExportTaskRequest() :
 	RpcServiceRequest("cdn", "2018-05-10", "CreateUserUsageDataExportTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUserUsageDataExportTaskRequest::~CreateUserUsageDataExportTaskRequest()
 {}
-
-long CreateUserUsageDataExportTaskRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool CreateUserUsageDataExportTaskRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
 
 std::string CreateUserUsageDataExportTaskRequest::getTaskName()const
 {
@@ -80,138 +60,6 @@ void CreateUserUsageDataExportTaskRequest::setStartTime(const std::string& start
 	setCoreParameter("StartTime", startTime);
 }
 
-std::string CreateUserUsageDataExportTaskRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long CreateUserUsageDataExportTaskRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getProduct()const
-{
-	return product_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setCoreParameter("Product", product);
-}
-
 std::string CreateUserUsageDataExportTaskRequest::getEndTime()const
 {
 	return endTime_;
@@ -223,17 +71,6 @@ void CreateUserUsageDataExportTaskRequest::setEndTime(const std::string& endTime
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string CreateUserUsageDataExportTaskRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long CreateUserUsageDataExportTaskRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -243,60 +80,5 @@ void CreateUserUsageDataExportTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getVersion()const
-{
-	return version_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
-bool CreateUserUsageDataExportTaskRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool CreateUserUsageDataExportTaskRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool CreateUserUsageDataExportTaskRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string CreateUserUsageDataExportTaskRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void CreateUserUsageDataExportTaskRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 

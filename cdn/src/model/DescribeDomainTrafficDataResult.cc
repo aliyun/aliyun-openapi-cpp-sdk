@@ -35,32 +35,28 @@ DescribeDomainTrafficDataResult::~DescribeDomainTrafficDataResult()
 
 void DescribeDomainTrafficDataResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTrafficDataPerInterval = value["TrafficDataPerInterval"]["DataModule"];
-	for (auto value : allTrafficDataPerInterval)
+	auto allTrafficDataPerIntervalNode = value["TrafficDataPerInterval"]["DataModule"];
+	for (auto valueTrafficDataPerIntervalDataModule : allTrafficDataPerIntervalNode)
 	{
 		DataModule trafficDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			trafficDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["Value"].isNull())
-			trafficDataPerIntervalObject.value = value["Value"].asString();
-		if(!value["DomesticValue"].isNull())
-			trafficDataPerIntervalObject.domesticValue = value["DomesticValue"].asString();
-		if(!value["OverseasValue"].isNull())
-			trafficDataPerIntervalObject.overseasValue = value["OverseasValue"].asString();
-		if(!value["HttpsValue"].isNull())
-			trafficDataPerIntervalObject.httpsValue = value["HttpsValue"].asString();
-		if(!value["HttpsDomesticValue"].isNull())
-			trafficDataPerIntervalObject.httpsDomesticValue = value["HttpsDomesticValue"].asString();
-		if(!value["HttpsOverseasValue"].isNull())
-			trafficDataPerIntervalObject.httpsOverseasValue = value["HttpsOverseasValue"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			trafficDataPerIntervalObject.timeStamp = valueTrafficDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["Value"].isNull())
+			trafficDataPerIntervalObject.value = valueTrafficDataPerIntervalDataModule["Value"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["DomesticValue"].isNull())
+			trafficDataPerIntervalObject.domesticValue = valueTrafficDataPerIntervalDataModule["DomesticValue"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["OverseasValue"].isNull())
+			trafficDataPerIntervalObject.overseasValue = valueTrafficDataPerIntervalDataModule["OverseasValue"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["HttpsValue"].isNull())
+			trafficDataPerIntervalObject.httpsValue = valueTrafficDataPerIntervalDataModule["HttpsValue"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["HttpsDomesticValue"].isNull())
+			trafficDataPerIntervalObject.httpsDomesticValue = valueTrafficDataPerIntervalDataModule["HttpsDomesticValue"].asString();
+		if(!valueTrafficDataPerIntervalDataModule["HttpsOverseasValue"].isNull())
+			trafficDataPerIntervalObject.httpsOverseasValue = valueTrafficDataPerIntervalDataModule["HttpsOverseasValue"].asString();
 		trafficDataPerInterval_.push_back(trafficDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

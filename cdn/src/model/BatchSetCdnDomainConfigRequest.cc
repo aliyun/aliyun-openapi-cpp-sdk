@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::BatchSetCdnDomainConfigRequest;
 
 BatchSetCdnDomainConfigRequest::BatchSetCdnDomainConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "BatchSetCdnDomainConfig")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "BatchSetCdnDomainConfig")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchSetCdnDomainConfigRequest::~BatchSetCdnDomainConfigRequest()
 {}

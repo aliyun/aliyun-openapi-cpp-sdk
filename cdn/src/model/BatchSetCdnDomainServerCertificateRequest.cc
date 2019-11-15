@@ -20,20 +20,22 @@ using AlibabaCloud::Cdn::Model::BatchSetCdnDomainServerCertificateRequest;
 
 BatchSetCdnDomainServerCertificateRequest::BatchSetCdnDomainServerCertificateRequest() :
 	RpcServiceRequest("cdn", "2018-05-10", "BatchSetCdnDomainServerCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchSetCdnDomainServerCertificateRequest::~BatchSetCdnDomainServerCertificateRequest()
 {}
 
-std::string BatchSetCdnDomainServerCertificateRequest::getForceSet()const
+std::string BatchSetCdnDomainServerCertificateRequest::getSSLProtocol()const
 {
-	return forceSet_;
+	return sSLProtocol_;
 }
 
-void BatchSetCdnDomainServerCertificateRequest::setForceSet(const std::string& forceSet)
+void BatchSetCdnDomainServerCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
 {
-	forceSet_ = forceSet;
-	setCoreParameter("ForceSet", forceSet);
+	sSLProtocol_ = sSLProtocol;
+	setCoreParameter("SSLProtocol", sSLProtocol);
 }
 
 std::string BatchSetCdnDomainServerCertificateRequest::getSecurityToken()const
@@ -58,15 +60,26 @@ void BatchSetCdnDomainServerCertificateRequest::setCertType(const std::string& c
 	setCoreParameter("CertType", certType);
 }
 
-std::string BatchSetCdnDomainServerCertificateRequest::getSSLPub()const
+std::string BatchSetCdnDomainServerCertificateRequest::getSSLPri()const
 {
-	return sSLPub_;
+	return sSLPri_;
 }
 
-void BatchSetCdnDomainServerCertificateRequest::setSSLPub(const std::string& sSLPub)
+void BatchSetCdnDomainServerCertificateRequest::setSSLPri(const std::string& sSLPri)
 {
-	sSLPub_ = sSLPub;
-	setCoreParameter("SSLPub", sSLPub);
+	sSLPri_ = sSLPri;
+	setCoreParameter("SSLPri", sSLPri);
+}
+
+std::string BatchSetCdnDomainServerCertificateRequest::getForceSet()const
+{
+	return forceSet_;
+}
+
+void BatchSetCdnDomainServerCertificateRequest::setForceSet(const std::string& forceSet)
+{
+	forceSet_ = forceSet;
+	setCoreParameter("ForceSet", forceSet);
 }
 
 std::string BatchSetCdnDomainServerCertificateRequest::getCertName()const
@@ -78,17 +91,6 @@ void BatchSetCdnDomainServerCertificateRequest::setCertName(const std::string& c
 {
 	certName_ = certName;
 	setCoreParameter("CertName", certName);
-}
-
-std::string BatchSetCdnDomainServerCertificateRequest::getSSLProtocol()const
-{
-	return sSLProtocol_;
-}
-
-void BatchSetCdnDomainServerCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
-{
-	sSLProtocol_ = sSLProtocol;
-	setCoreParameter("SSLProtocol", sSLProtocol);
 }
 
 std::string BatchSetCdnDomainServerCertificateRequest::getDomainName()const
@@ -113,6 +115,17 @@ void BatchSetCdnDomainServerCertificateRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string BatchSetCdnDomainServerCertificateRequest::getSSLPub()const
+{
+	return sSLPub_;
+}
+
+void BatchSetCdnDomainServerCertificateRequest::setSSLPub(const std::string& sSLPub)
+{
+	sSLPub_ = sSLPub;
+	setCoreParameter("SSLPub", sSLPub);
+}
+
 std::string BatchSetCdnDomainServerCertificateRequest::getRegion()const
 {
 	return region_;
@@ -122,16 +135,5 @@ void BatchSetCdnDomainServerCertificateRequest::setRegion(const std::string& reg
 {
 	region_ = region;
 	setCoreParameter("Region", region);
-}
-
-std::string BatchSetCdnDomainServerCertificateRequest::getSSLPri()const
-{
-	return sSLPri_;
-}
-
-void BatchSetCdnDomainServerCertificateRequest::setSSLPri(const std::string& sSLPri)
-{
-	sSLPri_ = sSLPri;
-	setCoreParameter("SSLPri", sSLPri);
 }
 

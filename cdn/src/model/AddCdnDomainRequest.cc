@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::AddCdnDomainRequest;
 
 AddCdnDomainRequest::AddCdnDomainRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "AddCdnDomain")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "AddCdnDomain")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCdnDomainRequest::~AddCdnDomainRequest()
 {}
@@ -45,28 +47,6 @@ void AddCdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
 	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
-int AddCdnDomainRequest::getSourcePort()const
-{
-	return sourcePort_;
-}
-
-void AddCdnDomainRequest::setSourcePort(int sourcePort)
-{
-	sourcePort_ = sourcePort;
-	setCoreParameter("SourcePort", std::to_string(sourcePort));
-}
-
-std::string AddCdnDomainRequest::getPriorities()const
-{
-	return priorities_;
-}
-
-void AddCdnDomainRequest::setPriorities(const std::string& priorities)
-{
-	priorities_ = priorities;
-	setCoreParameter("Priorities", priorities);
 }
 
 std::string AddCdnDomainRequest::getSecurityToken()const
@@ -100,17 +80,6 @@ void AddCdnDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
 	setCoreParameter("Scope", scope);
-}
-
-std::string AddCdnDomainRequest::getSourceType()const
-{
-	return sourceType_;
-}
-
-void AddCdnDomainRequest::setSourceType(const std::string& sourceType)
-{
-	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
 }
 
 std::string AddCdnDomainRequest::getTopLevelDomain()const
@@ -166,16 +135,5 @@ void AddCdnDomainRequest::setCheckUrl(const std::string& checkUrl)
 {
 	checkUrl_ = checkUrl;
 	setCoreParameter("CheckUrl", checkUrl);
-}
-
-std::string AddCdnDomainRequest::getRegion()const
-{
-	return region_;
-}
-
-void AddCdnDomainRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setCoreParameter("Region", region);
 }
 

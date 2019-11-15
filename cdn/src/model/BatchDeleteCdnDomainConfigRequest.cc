@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::BatchDeleteCdnDomainConfigRequest;
 
 BatchDeleteCdnDomainConfigRequest::BatchDeleteCdnDomainConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "BatchDeleteCdnDomainConfig")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "BatchDeleteCdnDomainConfig")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchDeleteCdnDomainConfigRequest::~BatchDeleteCdnDomainConfigRequest()
 {}

@@ -57,18 +57,18 @@ void DescribeDomainQpsDataResult::parse(const std::string &payload)
 			qpsDataIntervalObject.accDomesticValue = valueQpsDataIntervalDataModule["AccDomesticValue"].asString();
 		if(!valueQpsDataIntervalDataModule["AccOverseasValue"].isNull())
 			qpsDataIntervalObject.accOverseasValue = valueQpsDataIntervalDataModule["AccOverseasValue"].asString();
-		if(!valueQpsDataIntervalDataModule["DynamicValue"].isNull())
-			qpsDataIntervalObject.dynamicValue = valueQpsDataIntervalDataModule["DynamicValue"].asString();
-		if(!valueQpsDataIntervalDataModule["DynamicDomesticValue"].isNull())
-			qpsDataIntervalObject.dynamicDomesticValue = valueQpsDataIntervalDataModule["DynamicDomesticValue"].asString();
-		if(!valueQpsDataIntervalDataModule["DynamicOverseasValue"].isNull())
-			qpsDataIntervalObject.dynamicOverseasValue = valueQpsDataIntervalDataModule["DynamicOverseasValue"].asString();
-		if(!valueQpsDataIntervalDataModule["StaticValue"].isNull())
-			qpsDataIntervalObject.staticValue = valueQpsDataIntervalDataModule["StaticValue"].asString();
-		if(!valueQpsDataIntervalDataModule["StaticDomesticValue"].isNull())
-			qpsDataIntervalObject.staticDomesticValue = valueQpsDataIntervalDataModule["StaticDomesticValue"].asString();
-		if(!valueQpsDataIntervalDataModule["StaticOverseasValue"].isNull())
-			qpsDataIntervalObject.staticOverseasValue = valueQpsDataIntervalDataModule["StaticOverseasValue"].asString();
+		if(!valueQpsDataIntervalDataModule["HttpsValue"].isNull())
+			qpsDataIntervalObject.httpsValue = valueQpsDataIntervalDataModule["HttpsValue"].asString();
+		if(!valueQpsDataIntervalDataModule["HttpsDomesticValue"].isNull())
+			qpsDataIntervalObject.httpsDomesticValue = valueQpsDataIntervalDataModule["HttpsDomesticValue"].asString();
+		if(!valueQpsDataIntervalDataModule["HttpsOverseasValue"].isNull())
+			qpsDataIntervalObject.httpsOverseasValue = valueQpsDataIntervalDataModule["HttpsOverseasValue"].asString();
+		if(!valueQpsDataIntervalDataModule["HttpsAccValue"].isNull())
+			qpsDataIntervalObject.httpsAccValue = valueQpsDataIntervalDataModule["HttpsAccValue"].asString();
+		if(!valueQpsDataIntervalDataModule["HttpsAccDomesticValue"].isNull())
+			qpsDataIntervalObject.httpsAccDomesticValue = valueQpsDataIntervalDataModule["HttpsAccDomesticValue"].asString();
+		if(!valueQpsDataIntervalDataModule["HttpsAccOverseasValue"].isNull())
+			qpsDataIntervalObject.httpsAccOverseasValue = valueQpsDataIntervalDataModule["HttpsAccOverseasValue"].asString();
 		qpsDataInterval_.push_back(qpsDataIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

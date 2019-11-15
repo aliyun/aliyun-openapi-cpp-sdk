@@ -37,10 +37,6 @@ namespace AlibabaCloud
 
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				std::string getFixTimeGap()const;
-				void setFixTimeGap(const std::string& fixTimeGap);
-				std::string getTimeMerge()const;
-				void setTimeMerge(const std::string& timeMerge);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -52,8 +48,6 @@ namespace AlibabaCloud
 
             private:
 				std::string startTime_;
-				std::string fixTimeGap_;
-				std::string timeMerge_;
 				std::string domainName_;
 				std::string endTime_;
 				long ownerId_;

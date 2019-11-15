@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::SetDomainServerCertificateRequest;
 
 SetDomainServerCertificateRequest::SetDomainServerCertificateRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetDomainServerCertificate")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "SetDomainServerCertificate")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDomainServerCertificateRequest::~SetDomainServerCertificateRequest()
 {}

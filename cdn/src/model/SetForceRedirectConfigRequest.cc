@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::SetForceRedirectConfigRequest;
 
 SetForceRedirectConfigRequest::SetForceRedirectConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetForceRedirectConfig")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "SetForceRedirectConfig")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetForceRedirectConfigRequest::~SetForceRedirectConfigRequest()
 {}

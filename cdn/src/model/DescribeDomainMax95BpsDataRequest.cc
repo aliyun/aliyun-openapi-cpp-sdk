@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainMax95BpsDataRequest;
 
 DescribeDomainMax95BpsDataRequest::DescribeDomainMax95BpsDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainMax95BpsData")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainMax95BpsData")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainMax95BpsDataRequest::~DescribeDomainMax95BpsDataRequest()
 {}

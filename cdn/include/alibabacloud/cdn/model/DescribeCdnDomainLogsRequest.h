@@ -39,10 +39,6 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
-				std::string getLogDay()const;
-				void setLogDay(const std::string& logDay);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
 				std::string getDomainName()const;
@@ -55,8 +51,6 @@ namespace AlibabaCloud
             private:
 				std::string startTime_;
 				long pageNumber_;
-				std::string logDay_;
-				std::string securityToken_;
 				long pageSize_;
 				std::string domainName_;
 				std::string endTime_;

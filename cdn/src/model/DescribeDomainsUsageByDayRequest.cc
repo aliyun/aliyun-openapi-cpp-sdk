@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainsUsageByDayRequest;
 
 DescribeDomainsUsageByDayRequest::DescribeDomainsUsageByDayRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainsUsageByDay")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainsUsageByDay")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainsUsageByDayRequest::~DescribeDomainsUsageByDayRequest()
 {}

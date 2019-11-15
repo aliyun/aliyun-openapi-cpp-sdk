@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::SetL2OssKeyConfigRequest;
 
 SetL2OssKeyConfigRequest::SetL2OssKeyConfigRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "SetL2OssKeyConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetL2OssKeyConfigRequest::~SetL2OssKeyConfigRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DeleteLiveDomainMappingRequest;
 
 DeleteLiveDomainMappingRequest::DeleteLiveDomainMappingRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DeleteLiveDomainMapping")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveDomainMappingRequest::~DeleteLiveDomainMappingRequest()
 {}

@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainsBySourceRequest;
 
 DescribeDomainsBySourceRequest::DescribeDomainsBySourceRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainsBySource")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainsBySource")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainsBySourceRequest::~DescribeDomainsBySourceRequest()
 {}

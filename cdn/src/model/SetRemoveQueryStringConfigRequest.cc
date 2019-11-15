@@ -19,11 +19,24 @@
 using AlibabaCloud::Cdn::Model::SetRemoveQueryStringConfigRequest;
 
 SetRemoveQueryStringConfigRequest::SetRemoveQueryStringConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetRemoveQueryStringConfig")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "SetRemoveQueryStringConfig")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetRemoveQueryStringConfigRequest::~SetRemoveQueryStringConfigRequest()
 {}
+
+std::string SetRemoveQueryStringConfigRequest::getAliRemoveArgs()const
+{
+	return aliRemoveArgs_;
+}
+
+void SetRemoveQueryStringConfigRequest::setAliRemoveArgs(const std::string& aliRemoveArgs)
+{
+	aliRemoveArgs_ = aliRemoveArgs;
+	setCoreParameter("AliRemoveArgs", aliRemoveArgs);
+}
 
 std::string SetRemoveQueryStringConfigRequest::getKeepOssArgs()const
 {
@@ -58,25 +71,14 @@ void SetRemoveQueryStringConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetRemoveQueryStringConfigRequest::getSecurityToken()const
+long SetRemoveQueryStringConfigRequest::getConfigId()const
 {
-	return securityToken_;
+	return configId_;
 }
 
-void SetRemoveQueryStringConfigRequest::setSecurityToken(const std::string& securityToken)
+void SetRemoveQueryStringConfigRequest::setConfigId(long configId)
 {
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string SetRemoveQueryStringConfigRequest::getAliRemoveArgs()const
-{
-	return aliRemoveArgs_;
-}
-
-void SetRemoveQueryStringConfigRequest::setAliRemoveArgs(const std::string& aliRemoveArgs)
-{
-	aliRemoveArgs_ = aliRemoveArgs;
-	setCoreParameter("AliRemoveArgs", aliRemoveArgs);
+	configId_ = configId;
+	setCoreParameter("ConfigId", std::to_string(configId));
 }
 

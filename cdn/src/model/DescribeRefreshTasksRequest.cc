@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeRefreshTasksRequest;
 
 DescribeRefreshTasksRequest::DescribeRefreshTasksRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeRefreshTasks")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeRefreshTasks")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRefreshTasksRequest::~DescribeRefreshTasksRequest()
 {}

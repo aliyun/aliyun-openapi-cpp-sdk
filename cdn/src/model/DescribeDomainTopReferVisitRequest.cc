@@ -19,22 +19,13 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainTopReferVisitRequest;
 
 DescribeDomainTopReferVisitRequest::DescribeDomainTopReferVisitRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainTopReferVisit")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainTopReferVisit")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainTopReferVisitRequest::~DescribeDomainTopReferVisitRequest()
 {}
-
-std::string DescribeDomainTopReferVisitRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeDomainTopReferVisitRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
 
 std::string DescribeDomainTopReferVisitRequest::getStartTime()const
 {
@@ -47,6 +38,39 @@ void DescribeDomainTopReferVisitRequest::setStartTime(const std::string& startTi
 	setCoreParameter("StartTime", startTime);
 }
 
+std::string DescribeDomainTopReferVisitRequest::getPercent()const
+{
+	return percent_;
+}
+
+void DescribeDomainTopReferVisitRequest::setPercent(const std::string& percent)
+{
+	percent_ = percent;
+	setCoreParameter("Percent", percent);
+}
+
+std::string DescribeDomainTopReferVisitRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeDomainTopReferVisitRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeDomainTopReferVisitRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeDomainTopReferVisitRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
 long DescribeDomainTopReferVisitRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -56,17 +80,6 @@ void DescribeDomainTopReferVisitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeDomainTopReferVisitRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDomainTopReferVisitRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainTopReferVisitRequest::getSortBy()const

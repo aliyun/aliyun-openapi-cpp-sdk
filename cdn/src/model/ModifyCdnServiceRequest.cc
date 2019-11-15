@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::ModifyCdnServiceRequest;
 
 ModifyCdnServiceRequest::ModifyCdnServiceRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "ModifyCdnService")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "ModifyCdnService")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCdnServiceRequest::~ModifyCdnServiceRequest()
 {}

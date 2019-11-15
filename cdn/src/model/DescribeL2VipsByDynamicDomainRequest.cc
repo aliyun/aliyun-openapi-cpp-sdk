@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DescribeL2VipsByDynamicDomainRequest;
 
 DescribeL2VipsByDynamicDomainRequest::DescribeL2VipsByDynamicDomainRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeL2VipsByDynamicDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeL2VipsByDynamicDomainRequest::~DescribeL2VipsByDynamicDomainRequest()
 {}

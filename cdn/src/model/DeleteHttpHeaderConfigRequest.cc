@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DeleteHttpHeaderConfigRequest;
 
 DeleteHttpHeaderConfigRequest::DeleteHttpHeaderConfigRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DeleteHttpHeaderConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteHttpHeaderConfigRequest::~DeleteHttpHeaderConfigRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DescribeDomainConfigsRequest;
 
 DescribeDomainConfigsRequest::DescribeDomainConfigsRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainConfigsRequest::~DescribeDomainConfigsRequest()
 {}

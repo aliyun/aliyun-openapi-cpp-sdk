@@ -35,30 +35,26 @@ DescribeDomainSrcHttpCodeDataResult::~DescribeDomainSrcHttpCodeDataResult()
 
 void DescribeDomainSrcHttpCodeDataResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHttpCodeData = value["HttpCodeData"]["UsageData"];
-	for (auto value : allHttpCodeData)
+	auto allHttpCodeDataNode = value["HttpCodeData"]["UsageData"];
+	for (auto valueHttpCodeDataUsageData : allHttpCodeDataNode)
 	{
 		UsageData httpCodeDataObject;
-		if(!value["TimeStamp"].isNull())
-			httpCodeDataObject.timeStamp = value["TimeStamp"].asString();
-		auto allValue = value["Value"]["CodeProportionData"];
-		for (auto value : allValue)
+		if(!valueHttpCodeDataUsageData["TimeStamp"].isNull())
+			httpCodeDataObject.timeStamp = valueHttpCodeDataUsageData["TimeStamp"].asString();
+		auto allValueNode = allHttpCodeDataNode["Value"]["CodeProportionData"];
+		for (auto allHttpCodeDataNodeValueCodeProportionData : allValueNode)
 		{
 			UsageData::CodeProportionData valueObject;
-			if(!value["Code"].isNull())
-				valueObject.code = value["Code"].asString();
-			if(!value["Proportion"].isNull())
-				valueObject.proportion = value["Proportion"].asString();
-			if(!value["Count"].isNull())
-				valueObject.count = value["Count"].asString();
+			if(!allHttpCodeDataNodeValueCodeProportionData["Code"].isNull())
+				valueObject.code = allHttpCodeDataNodeValueCodeProportionData["Code"].asString();
+			if(!allHttpCodeDataNodeValueCodeProportionData["Proportion"].isNull())
+				valueObject.proportion = allHttpCodeDataNodeValueCodeProportionData["Proportion"].asString();
+			if(!allHttpCodeDataNodeValueCodeProportionData["Count"].isNull())
+				valueObject.count = allHttpCodeDataNodeValueCodeProportionData["Count"].asString();
 			httpCodeDataObject.value.push_back(valueObject);
 		}
 		httpCodeData_.push_back(httpCodeDataObject);

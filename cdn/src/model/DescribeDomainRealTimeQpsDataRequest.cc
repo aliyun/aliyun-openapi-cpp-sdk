@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainRealTimeQpsDataRequest;
 
 DescribeDomainRealTimeQpsDataRequest::DescribeDomainRealTimeQpsDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainRealTimeQpsData")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainRealTimeQpsData")
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeDomainRealTimeQpsDataRequest::~DescribeDomainRealTimeQpsDataRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DeleteLiveStreamTranscodeRequest;
 
 DeleteLiveStreamTranscodeRequest::DeleteLiveStreamTranscodeRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DeleteLiveStreamTranscode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveStreamTranscodeRequest::~DeleteLiveStreamTranscodeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cdn::Model::DescribeCdnMonitorDataRequest;
 
 DescribeCdnMonitorDataRequest::DescribeCdnMonitorDataRequest() :
 	RpcServiceRequest("cdn", "2014-11-11", "DescribeCdnMonitorData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCdnMonitorDataRequest::~DescribeCdnMonitorDataRequest()
 {}

@@ -35,34 +35,30 @@ DescribeCdnHttpsDomainListResult::~DescribeCdnHttpsDomainListResult()
 
 void DescribeCdnHttpsDomainListResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allCertInfos = value["CertInfos"]["CertInfo"];
-	for (auto value : allCertInfos)
+	auto allCertInfosNode = value["CertInfos"]["CertInfo"];
+	for (auto valueCertInfosCertInfo : allCertInfosNode)
 	{
 		CertInfo certInfosObject;
-		if(!value["CertCommonName"].isNull())
-			certInfosObject.certCommonName = value["CertCommonName"].asString();
-		if(!value["CertName"].isNull())
-			certInfosObject.certName = value["CertName"].asString();
-		if(!value["CertStartTime"].isNull())
-			certInfosObject.certStartTime = value["CertStartTime"].asString();
-		if(!value["CertExpireTime"].isNull())
-			certInfosObject.certExpireTime = value["CertExpireTime"].asString();
-		if(!value["CertStatus"].isNull())
-			certInfosObject.certStatus = value["CertStatus"].asString();
-		if(!value["CertType"].isNull())
-			certInfosObject.certType = value["CertType"].asString();
-		if(!value["DomainName"].isNull())
-			certInfosObject.domainName = value["DomainName"].asString();
-		if(!value["CertUpdateTime"].isNull())
-			certInfosObject.certUpdateTime = value["CertUpdateTime"].asString();
+		if(!valueCertInfosCertInfo["CertCommonName"].isNull())
+			certInfosObject.certCommonName = valueCertInfosCertInfo["CertCommonName"].asString();
+		if(!valueCertInfosCertInfo["CertName"].isNull())
+			certInfosObject.certName = valueCertInfosCertInfo["CertName"].asString();
+		if(!valueCertInfosCertInfo["CertStartTime"].isNull())
+			certInfosObject.certStartTime = valueCertInfosCertInfo["CertStartTime"].asString();
+		if(!valueCertInfosCertInfo["CertExpireTime"].isNull())
+			certInfosObject.certExpireTime = valueCertInfosCertInfo["CertExpireTime"].asString();
+		if(!valueCertInfosCertInfo["CertStatus"].isNull())
+			certInfosObject.certStatus = valueCertInfosCertInfo["CertStatus"].asString();
+		if(!valueCertInfosCertInfo["CertType"].isNull())
+			certInfosObject.certType = valueCertInfosCertInfo["CertType"].asString();
+		if(!valueCertInfosCertInfo["DomainName"].isNull())
+			certInfosObject.domainName = valueCertInfosCertInfo["DomainName"].asString();
+		if(!valueCertInfosCertInfo["CertUpdateTime"].isNull())
+			certInfosObject.certUpdateTime = valueCertInfosCertInfo["CertUpdateTime"].asString();
 		certInfos_.push_back(certInfosObject);
 	}
 	if(!value["TotalCount"].isNull())

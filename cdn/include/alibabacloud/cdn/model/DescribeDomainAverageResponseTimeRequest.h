@@ -43,8 +43,6 @@ namespace AlibabaCloud
 				void setIspNameEn(const std::string& ispNameEn);
 				std::string getDomainType()const;
 				void setDomainType(const std::string& domainType);
-				std::string getOutString()const;
-				void setOutString(const std::string& outString);
 				std::string getTimeMerge()const;
 				void setTimeMerge(const std::string& timeMerge);
 				std::string getDomainName()const;
@@ -61,7 +59,6 @@ namespace AlibabaCloud
 				std::string startTime_;
 				std::string ispNameEn_;
 				std::string domainType_;
-				std::string outString_;
 				std::string timeMerge_;
 				std::string domainName_;
 				std::string endTime_;

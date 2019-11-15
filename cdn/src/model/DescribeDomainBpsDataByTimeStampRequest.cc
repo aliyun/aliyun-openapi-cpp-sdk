@@ -19,8 +19,10 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainBpsDataByTimeStampRequest;
 
 DescribeDomainBpsDataByTimeStampRequest::DescribeDomainBpsDataByTimeStampRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainBpsDataByTimeStamp")
-{}
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainBpsDataByTimeStamp")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainBpsDataByTimeStampRequest::~DescribeDomainBpsDataByTimeStampRequest()
 {}

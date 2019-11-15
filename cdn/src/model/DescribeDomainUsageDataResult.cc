@@ -35,26 +35,22 @@ DescribeDomainUsageDataResult::~DescribeDomainUsageDataResult()
 
 void DescribeDomainUsageDataResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allUsageDataPerInterval = value["UsageDataPerInterval"]["DataModule"];
-	for (auto value : allUsageDataPerInterval)
+	auto allUsageDataPerIntervalNode = value["UsageDataPerInterval"]["DataModule"];
+	for (auto valueUsageDataPerIntervalDataModule : allUsageDataPerIntervalNode)
 	{
 		DataModule usageDataPerIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			usageDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
-		if(!value["PeakTime"].isNull())
-			usageDataPerIntervalObject.peakTime = value["PeakTime"].asString();
-		if(!value["Value"].isNull())
-			usageDataPerIntervalObject.value = value["Value"].asString();
-		if(!value["SpecialValue"].isNull())
-			usageDataPerIntervalObject.specialValue = value["SpecialValue"].asString();
+		if(!valueUsageDataPerIntervalDataModule["TimeStamp"].isNull())
+			usageDataPerIntervalObject.timeStamp = valueUsageDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueUsageDataPerIntervalDataModule["PeakTime"].isNull())
+			usageDataPerIntervalObject.peakTime = valueUsageDataPerIntervalDataModule["PeakTime"].asString();
+		if(!valueUsageDataPerIntervalDataModule["Value"].isNull())
+			usageDataPerIntervalObject.value = valueUsageDataPerIntervalDataModule["Value"].asString();
+		if(!valueUsageDataPerIntervalDataModule["SpecialValue"].isNull())
+			usageDataPerIntervalObject.specialValue = valueUsageDataPerIntervalDataModule["SpecialValue"].asString();
 		usageDataPerInterval_.push_back(usageDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

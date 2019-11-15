@@ -35,13 +35,9 @@ DescribeUserUsageDetailDataExportTaskResult::~DescribeUserUsageDetailDataExportT
 
 void DescribeUserUsageDetailDataExportTaskResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto usageDataPerPageNode = value["UsageDataPerPage"];
 	if(!usageDataPerPageNode["TotalCount"].isNull())
@@ -50,22 +46,22 @@ void DescribeUserUsageDetailDataExportTaskResult::parse(const std::string &paylo
 		usageDataPerPage_.pageSize = std::stoi(usageDataPerPageNode["PageSize"].asString());
 	if(!usageDataPerPageNode["PageNumber"].isNull())
 		usageDataPerPage_.pageNumber = std::stoi(usageDataPerPageNode["PageNumber"].asString());
-	auto allData = value["Data"]["DataItem"];
-	for (auto value : allData)
+	auto allDataNode = usageDataPerPageNode["Data"]["DataItem"];
+	for (auto usageDataPerPageNodeDataDataItem : allDataNode)
 	{
 		UsageDataPerPage::DataItem dataItemObject;
-		if(!value["TaskName"].isNull())
-			dataItemObject.taskName = value["TaskName"].asString();
-		if(!value["TaskId"].isNull())
-			dataItemObject.taskId = value["TaskId"].asString();
-		if(!value["CreateTime"].isNull())
-			dataItemObject.createTime = value["CreateTime"].asString();
-		if(!value["UpdateTime"].isNull())
-			dataItemObject.updateTime = value["UpdateTime"].asString();
-		if(!value["Status"].isNull())
-			dataItemObject.status = value["Status"].asString();
-		if(!value["DownloadUrl"].isNull())
-			dataItemObject.downloadUrl = value["DownloadUrl"].asString();
+		if(!usageDataPerPageNodeDataDataItem["TaskName"].isNull())
+			dataItemObject.taskName = usageDataPerPageNodeDataDataItem["TaskName"].asString();
+		if(!usageDataPerPageNodeDataDataItem["TaskId"].isNull())
+			dataItemObject.taskId = usageDataPerPageNodeDataDataItem["TaskId"].asString();
+		if(!usageDataPerPageNodeDataDataItem["CreateTime"].isNull())
+			dataItemObject.createTime = usageDataPerPageNodeDataDataItem["CreateTime"].asString();
+		if(!usageDataPerPageNodeDataDataItem["UpdateTime"].isNull())
+			dataItemObject.updateTime = usageDataPerPageNodeDataDataItem["UpdateTime"].asString();
+		if(!usageDataPerPageNodeDataDataItem["Status"].isNull())
+			dataItemObject.status = usageDataPerPageNodeDataDataItem["Status"].asString();
+		if(!usageDataPerPageNodeDataDataItem["DownloadUrl"].isNull())
+			dataItemObject.downloadUrl = usageDataPerPageNodeDataDataItem["DownloadUrl"].asString();
 		auto taskConfigNode = value["TaskConfig"];
 		if(!taskConfigNode["StartTime"].isNull())
 			dataItemObject.taskConfig.startTime = taskConfigNode["StartTime"].asString();
