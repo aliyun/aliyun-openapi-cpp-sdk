@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::DescribeScdnDomainTopReferVisitRequest;
 
 DescribeScdnDomainTopReferVisitRequest::DescribeScdnDomainTopReferVisitRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDomainTopReferVisit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScdnDomainTopReferVisitRequest::~DescribeScdnDomainTopReferVisitRequest()
 {}

@@ -89,8 +89,6 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/DescribeScdnDomainTrafficDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainUvDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainUvDataResult.h
-	include/alibabacloud/scdn/model/DescribeScdnIpInfoRequest.h
-	include/alibabacloud/scdn/model/DescribeScdnIpInfoResult.h
 	include/alibabacloud/scdn/model/DescribeScdnRefreshQuotaRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnRefreshQuotaResult.h
 	include/alibabacloud/scdn/model/DescribeScdnRefreshTasksRequest.h
@@ -190,8 +188,6 @@ set(scdn_src
 	src/model/DescribeScdnDomainTrafficDataResult.cc
 	src/model/DescribeScdnDomainUvDataRequest.cc
 	src/model/DescribeScdnDomainUvDataResult.cc
-	src/model/DescribeScdnIpInfoRequest.cc
-	src/model/DescribeScdnIpInfoResult.cc
 	src/model/DescribeScdnRefreshQuotaRequest.cc
 	src/model/DescribeScdnRefreshQuotaResult.cc
 	src/model/DescribeScdnRefreshTasksRequest.cc

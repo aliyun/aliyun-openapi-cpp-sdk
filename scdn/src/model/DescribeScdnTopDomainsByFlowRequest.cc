@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::DescribeScdnTopDomainsByFlowRequest;
 
 DescribeScdnTopDomainsByFlowRequest::DescribeScdnTopDomainsByFlowRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnTopDomainsByFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScdnTopDomainsByFlowRequest::~DescribeScdnTopDomainsByFlowRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::DescribeScdnDomainQpsDataRequest;
 
 DescribeScdnDomainQpsDataRequest::DescribeScdnDomainQpsDataRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDomainQpsData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScdnDomainQpsDataRequest::~DescribeScdnDomainQpsDataRequest()
 {}

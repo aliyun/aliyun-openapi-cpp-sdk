@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::DescribeScdnDomainIspDataRequest;
 
 DescribeScdnDomainIspDataRequest::DescribeScdnDomainIspDataRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDomainIspData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScdnDomainIspDataRequest::~DescribeScdnDomainIspDataRequest()
 {}

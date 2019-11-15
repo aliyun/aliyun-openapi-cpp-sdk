@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::DescribeScdnDomainCnameRequest;
 
 DescribeScdnDomainCnameRequest::DescribeScdnDomainCnameRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDomainCname")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeScdnDomainCnameRequest::~DescribeScdnDomainCnameRequest()
 {}

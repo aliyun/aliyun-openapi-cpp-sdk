@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::CheckScdnServiceRequest;
 
 CheckScdnServiceRequest::CheckScdnServiceRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "CheckScdnService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckScdnServiceRequest::~CheckScdnServiceRequest()
 {}

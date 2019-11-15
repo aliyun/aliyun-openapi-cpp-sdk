@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::DescribeScdnDomainRegionDataRequest;
 
 DescribeScdnDomainRegionDataRequest::DescribeScdnDomainRegionDataRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDomainRegionData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScdnDomainRegionDataRequest::~DescribeScdnDomainRegionDataRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::DescribeScdnUserQuotaRequest;
 
 DescribeScdnUserQuotaRequest::DescribeScdnUserQuotaRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnUserQuota")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScdnUserQuotaRequest::~DescribeScdnUserQuotaRequest()
 {}

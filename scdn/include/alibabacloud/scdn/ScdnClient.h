@@ -90,8 +90,6 @@
 #include "model/DescribeScdnDomainTrafficDataResult.h"
 #include "model/DescribeScdnDomainUvDataRequest.h"
 #include "model/DescribeScdnDomainUvDataResult.h"
-#include "model/DescribeScdnIpInfoRequest.h"
-#include "model/DescribeScdnIpInfoResult.h"
 #include "model/DescribeScdnRefreshQuotaRequest.h"
 #include "model/DescribeScdnRefreshQuotaResult.h"
 #include "model/DescribeScdnRefreshTasksRequest.h"
@@ -231,9 +229,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeScdnDomainUvDataResult> DescribeScdnDomainUvDataOutcome;
 			typedef std::future<DescribeScdnDomainUvDataOutcome> DescribeScdnDomainUvDataOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnDomainUvDataRequest&, const DescribeScdnDomainUvDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnDomainUvDataAsyncHandler;
-			typedef Outcome<Error, Model::DescribeScdnIpInfoResult> DescribeScdnIpInfoOutcome;
-			typedef std::future<DescribeScdnIpInfoOutcome> DescribeScdnIpInfoOutcomeCallable;
-			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnIpInfoRequest&, const DescribeScdnIpInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnIpInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScdnRefreshQuotaResult> DescribeScdnRefreshQuotaOutcome;
 			typedef std::future<DescribeScdnRefreshQuotaOutcome> DescribeScdnRefreshQuotaOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnRefreshQuotaRequest&, const DescribeScdnRefreshQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnRefreshQuotaAsyncHandler;
@@ -383,9 +378,6 @@ namespace AlibabaCloud
 			DescribeScdnDomainUvDataOutcome describeScdnDomainUvData(const Model::DescribeScdnDomainUvDataRequest &request)const;
 			void describeScdnDomainUvDataAsync(const Model::DescribeScdnDomainUvDataRequest& request, const DescribeScdnDomainUvDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnDomainUvDataOutcomeCallable describeScdnDomainUvDataCallable(const Model::DescribeScdnDomainUvDataRequest& request) const;
-			DescribeScdnIpInfoOutcome describeScdnIpInfo(const Model::DescribeScdnIpInfoRequest &request)const;
-			void describeScdnIpInfoAsync(const Model::DescribeScdnIpInfoRequest& request, const DescribeScdnIpInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeScdnIpInfoOutcomeCallable describeScdnIpInfoCallable(const Model::DescribeScdnIpInfoRequest& request) const;
 			DescribeScdnRefreshQuotaOutcome describeScdnRefreshQuota(const Model::DescribeScdnRefreshQuotaRequest &request)const;
 			void describeScdnRefreshQuotaAsync(const Model::DescribeScdnRefreshQuotaRequest& request, const DescribeScdnRefreshQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnRefreshQuotaOutcomeCallable describeScdnRefreshQuotaCallable(const Model::DescribeScdnRefreshQuotaRequest& request) const;

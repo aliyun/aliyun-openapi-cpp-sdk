@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::StartScdnDomainRequest;
 
 StartScdnDomainRequest::StartScdnDomainRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "StartScdnDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartScdnDomainRequest::~StartScdnDomainRequest()
 {}

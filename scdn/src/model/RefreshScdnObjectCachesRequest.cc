@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::RefreshScdnObjectCachesRequest;
 
 RefreshScdnObjectCachesRequest::RefreshScdnObjectCachesRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "RefreshScdnObjectCaches")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshScdnObjectCachesRequest::~RefreshScdnObjectCachesRequest()
 {}

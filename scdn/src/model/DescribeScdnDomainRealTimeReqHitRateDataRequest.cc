@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::DescribeScdnDomainRealTimeReqHitRateDataRequest
 
 DescribeScdnDomainRealTimeReqHitRateDataRequest::DescribeScdnDomainRealTimeReqHitRateDataRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDomainRealTimeReqHitRateData")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeScdnDomainRealTimeReqHitRateDataRequest::~DescribeScdnDomainRealTimeReqHitRateDataRequest()
 {}

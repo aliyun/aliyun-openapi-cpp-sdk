@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::DescribeScdnDomainCertificateInfoRequest;
 
 DescribeScdnDomainCertificateInfoRequest::DescribeScdnDomainCertificateInfoRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDomainCertificateInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScdnDomainCertificateInfoRequest::~DescribeScdnDomainCertificateInfoRequest()
 {}

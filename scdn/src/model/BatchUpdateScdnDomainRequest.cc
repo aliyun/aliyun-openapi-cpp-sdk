@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::BatchUpdateScdnDomainRequest;
 
 BatchUpdateScdnDomainRequest::BatchUpdateScdnDomainRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "BatchUpdateScdnDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchUpdateScdnDomainRequest::~BatchUpdateScdnDomainRequest()
 {}

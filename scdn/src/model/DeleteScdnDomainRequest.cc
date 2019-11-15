@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::DeleteScdnDomainRequest;
 
 DeleteScdnDomainRequest::DeleteScdnDomainRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "DeleteScdnDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteScdnDomainRequest::~DeleteScdnDomainRequest()
 {}

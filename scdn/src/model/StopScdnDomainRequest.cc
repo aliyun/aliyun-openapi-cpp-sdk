@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::StopScdnDomainRequest;
 
 StopScdnDomainRequest::StopScdnDomainRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "StopScdnDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopScdnDomainRequest::~StopScdnDomainRequest()
 {}

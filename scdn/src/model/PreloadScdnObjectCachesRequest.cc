@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::PreloadScdnObjectCachesRequest;
 
 PreloadScdnObjectCachesRequest::PreloadScdnObjectCachesRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "PreloadScdnObjectCaches")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PreloadScdnObjectCachesRequest::~PreloadScdnObjectCachesRequest()
 {}

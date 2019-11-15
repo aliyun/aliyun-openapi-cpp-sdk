@@ -31,21 +31,21 @@ ScdnClient::ScdnClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "scdn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ScdnClient::ScdnClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "scdn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ScdnClient::ScdnClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "scdn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ScdnClient::~ScdnClient()
@@ -1269,42 +1269,6 @@ ScdnClient::DescribeScdnDomainUvDataOutcomeCallable ScdnClient::describeScdnDoma
 			[this, request]()
 			{
 			return this->describeScdnDomainUvData(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ScdnClient::DescribeScdnIpInfoOutcome ScdnClient::describeScdnIpInfo(const DescribeScdnIpInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeScdnIpInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeScdnIpInfoOutcome(DescribeScdnIpInfoResult(outcome.result()));
-	else
-		return DescribeScdnIpInfoOutcome(outcome.error());
-}
-
-void ScdnClient::describeScdnIpInfoAsync(const DescribeScdnIpInfoRequest& request, const DescribeScdnIpInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeScdnIpInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ScdnClient::DescribeScdnIpInfoOutcomeCallable ScdnClient::describeScdnIpInfoCallable(const DescribeScdnIpInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeScdnIpInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeScdnIpInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

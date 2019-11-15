@@ -20,7 +20,9 @@ using AlibabaCloud::Scdn::Model::DescribeScdnRefreshTasksRequest;
 
 DescribeScdnRefreshTasksRequest::DescribeScdnRefreshTasksRequest() :
 	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnRefreshTasks")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScdnRefreshTasksRequest::~DescribeScdnRefreshTasksRequest()
 {}
