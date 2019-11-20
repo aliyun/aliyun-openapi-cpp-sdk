@@ -37,18 +37,12 @@ namespace AlibabaCloud
 				GetPredictResultResult();
 				explicit GetPredictResultResult(const std::string &payload);
 				~GetPredictResultResult();
-				std::string getMessage()const;
 				std::string getContent()const;
-				int getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
 				std::string content_;
-				int code_;
-				bool success_;
 
 			};
 		}
