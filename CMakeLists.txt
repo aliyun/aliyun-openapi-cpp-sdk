@@ -65,7 +65,7 @@ add_subdirectory(teslamaxcompute)
 add_subdirectory(push)
 add_subdirectory(csb)
 add_subdirectory(domain)
-add_subdirectory(green)
+
 add_subdirectory(hsm)
 add_subdirectory(dcdn)
 add_subdirectory(pvtz)

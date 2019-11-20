@@ -12,7 +12,7 @@ env:
 script:
   - ./unit_test.
   - ./generate_code_cov.sh
-  - ./easyinstall.sh
+  # - ./easyinstall.sh
   # - ./function_test.sh
 
 after_success:
