@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteHaVipRequest;
 
 DeleteHaVipRequest::DeleteHaVipRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteHaVip")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteHaVipRequest::~DeleteHaVipRequest()
 {}

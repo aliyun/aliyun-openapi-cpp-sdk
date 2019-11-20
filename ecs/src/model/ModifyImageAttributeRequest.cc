@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyImageAttributeRequest;
 
 ModifyImageAttributeRequest::ModifyImageAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyImageAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyImageAttributeRequest::~ModifyImageAttributeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::RenewInstanceRequest;
 
 RenewInstanceRequest::RenewInstanceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "RenewInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenewInstanceRequest::~RenewInstanceRequest()
 {}

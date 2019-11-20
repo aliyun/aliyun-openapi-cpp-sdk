@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteForwardEntryRequest;
 
 DeleteForwardEntryRequest::DeleteForwardEntryRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteForwardEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteForwardEntryRequest::~DeleteForwardEntryRequest()
 {}

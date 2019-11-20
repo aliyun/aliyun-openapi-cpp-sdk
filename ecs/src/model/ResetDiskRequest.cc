@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ResetDiskRequest;
 
 ResetDiskRequest::ResetDiskRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ResetDisk")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetDiskRequest::~ResetDiskRequest()
 {}

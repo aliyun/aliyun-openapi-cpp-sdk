@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::AttachClassicLinkVpcRequest;
 
 AttachClassicLinkVpcRequest::AttachClassicLinkVpcRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "AttachClassicLinkVpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachClassicLinkVpcRequest::~AttachClassicLinkVpcRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteVirtualBorderRouterRequest;
 
 DeleteVirtualBorderRouterRequest::DeleteVirtualBorderRouterRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteVirtualBorderRouter")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVirtualBorderRouterRequest::~DeleteVirtualBorderRouterRequest()
 {}

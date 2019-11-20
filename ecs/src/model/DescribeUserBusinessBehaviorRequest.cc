@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeUserBusinessBehaviorRequest;
 
 DescribeUserBusinessBehaviorRequest::DescribeUserBusinessBehaviorRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeUserBusinessBehavior")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserBusinessBehaviorRequest::~DescribeUserBusinessBehaviorRequest()
 {}

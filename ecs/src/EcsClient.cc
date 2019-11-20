@@ -1131,6 +1131,42 @@ EcsClient::CreateCommandOutcomeCallable EcsClient::createCommandCallable(const C
 	return task->get_future();
 }
 
+EcsClient::CreateDemandOutcome EcsClient::createDemand(const CreateDemandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDemandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDemandOutcome(CreateDemandResult(outcome.result()));
+	else
+		return CreateDemandOutcome(outcome.error());
+}
+
+void EcsClient::createDemandAsync(const CreateDemandRequest& request, const CreateDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDemand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateDemandOutcomeCallable EcsClient::createDemandCallable(const CreateDemandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDemandOutcome()>>(
+			[this, request]()
+			{
+			return this->createDemand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateDeploymentSetOutcome EcsClient::createDeploymentSet(const CreateDeploymentSetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2133,6 +2169,42 @@ EcsClient::DeleteCommandOutcomeCallable EcsClient::deleteCommandCallable(const D
 			[this, request]()
 			{
 			return this->deleteCommand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DeleteDemandOutcome EcsClient::deleteDemand(const DeleteDemandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDemandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDemandOutcome(DeleteDemandResult(outcome.result()));
+	else
+		return DeleteDemandOutcome(outcome.error());
+}
+
+void EcsClient::deleteDemandAsync(const DeleteDemandRequest& request, const DeleteDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDemand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DeleteDemandOutcomeCallable EcsClient::deleteDemandCallable(const DeleteDemandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDemandOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDemand(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7101,6 +7173,42 @@ EcsClient::ModifyDedicatedHostAutoRenewAttributeOutcomeCallable EcsClient::modif
 			[this, request]()
 			{
 			return this->modifyDedicatedHostAutoRenewAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyDemandOutcome EcsClient::modifyDemand(const ModifyDemandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDemandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDemandOutcome(ModifyDemandResult(outcome.result()));
+	else
+		return ModifyDemandOutcome(outcome.error());
+}
+
+void EcsClient::modifyDemandAsync(const ModifyDemandRequest& request, const ModifyDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDemand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyDemandOutcomeCallable EcsClient::modifyDemandCallable(const ModifyDemandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDemandOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDemand(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

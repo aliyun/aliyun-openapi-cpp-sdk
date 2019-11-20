@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifySecurityGroupRuleRequest;
 
 ModifySecurityGroupRuleRequest::ModifySecurityGroupRuleRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifySecurityGroupRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySecurityGroupRuleRequest::~ModifySecurityGroupRuleRequest()
 {}

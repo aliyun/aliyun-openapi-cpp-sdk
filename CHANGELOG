@@ -1,3 +1,7 @@
+2019-11-20 Version 1.36.186
+- Supported ecsDemand CreateDemand, ModifyDemand, DeleteDemand API.
+- Modify ecsDemand DescribesDemands API.
+
 2019-11-20 Version 1.36.185
 - Generated 2019-01-01 for `HBase`.
 

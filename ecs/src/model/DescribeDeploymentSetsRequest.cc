@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeDeploymentSetsRequest;
 
 DescribeDeploymentSetsRequest::DescribeDeploymentSetsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeDeploymentSets")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDeploymentSetsRequest::~DescribeDeploymentSetsRequest()
 {}

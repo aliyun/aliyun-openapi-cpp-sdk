@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeactivateRouterInterfaceRequest;
 
 DeactivateRouterInterfaceRequest::DeactivateRouterInterfaceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeactivateRouterInterface")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeactivateRouterInterfaceRequest::~DeactivateRouterInterfaceRequest()
 {}

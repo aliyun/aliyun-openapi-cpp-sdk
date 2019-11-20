@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteDiskRequest;
 
 DeleteDiskRequest::DeleteDiskRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteDisk")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDiskRequest::~DeleteDiskRequest()
 {}

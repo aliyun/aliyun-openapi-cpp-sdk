@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeClassicLinkInstancesRequest;
 
 DescribeClassicLinkInstancesRequest::DescribeClassicLinkInstancesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeClassicLinkInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClassicLinkInstancesRequest::~DescribeClassicLinkInstancesRequest()
 {}

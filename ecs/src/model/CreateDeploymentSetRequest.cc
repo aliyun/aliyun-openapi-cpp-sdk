@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateDeploymentSetRequest;
 
 CreateDeploymentSetRequest::CreateDeploymentSetRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateDeploymentSet")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDeploymentSetRequest::~CreateDeploymentSetRequest()
 {}

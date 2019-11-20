@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeLimitationRequest;
 
 DescribeLimitationRequest::DescribeLimitationRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeLimitation")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLimitationRequest::~DescribeLimitationRequest()
 {}

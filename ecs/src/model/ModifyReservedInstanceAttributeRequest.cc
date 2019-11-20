@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyReservedInstanceAttributeRequest;
 
 ModifyReservedInstanceAttributeRequest::ModifyReservedInstanceAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyReservedInstanceAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyReservedInstanceAttributeRequest::~ModifyReservedInstanceAttributeRequest()
 {}

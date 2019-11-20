@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteStorageSetRequest;
 
 DeleteStorageSetRequest::DeleteStorageSetRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteStorageSet")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteStorageSetRequest::~DeleteStorageSetRequest()
 {}

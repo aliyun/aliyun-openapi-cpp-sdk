@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyNetworkInterfaceAttributeRequest;
 
 ModifyNetworkInterfaceAttributeRequest::ModifyNetworkInterfaceAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyNetworkInterfaceAttributeRequest::~ModifyNetworkInterfaceAttributeRequest()
 {}
@@ -44,8 +46,9 @@ std::vector<std::string> ModifyNetworkInterfaceAttributeRequest::getSecurityGrou
 void ModifyNetworkInterfaceAttributeRequest::setSecurityGroupId(const std::vector<std::string>& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	for(int i = 0; i!= securityGroupId.size(); i++)
-		setCoreParameter("SecurityGroupId."+ std::to_string(i), securityGroupId.at(i));
+	for(int dep1 = 0; dep1!= securityGroupId.size(); dep1++) {
+		setCoreParameter("SecurityGroupId."+ std::to_string(dep1), securityGroupId.at(dep1));
+	}
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getDescription()const

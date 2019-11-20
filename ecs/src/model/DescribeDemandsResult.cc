@@ -49,6 +49,12 @@ void DescribeDemandsResult::parse(const std::string &payload)
 			demandsObject.demandTime = valueDemandsDemand["DemandTime"].asString();
 		if(!valueDemandsDemand["InstanceTypeFamily"].isNull())
 			demandsObject.instanceTypeFamily = valueDemandsDemand["InstanceTypeFamily"].asString();
+		if(!valueDemandsDemand["DemandId"].isNull())
+			demandsObject.demandId = valueDemandsDemand["DemandId"].asString();
+		if(!valueDemandsDemand["DemandName"].isNull())
+			demandsObject.demandName = valueDemandsDemand["DemandName"].asString();
+		if(!valueDemandsDemand["DemandDescription"].isNull())
+			demandsObject.demandDescription = valueDemandsDemand["DemandDescription"].asString();
 		if(!valueDemandsDemand["InstanceType"].isNull())
 			demandsObject.instanceType = valueDemandsDemand["InstanceType"].asString();
 		if(!valueDemandsDemand["InstanceChargeType"].isNull())

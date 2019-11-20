@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateHaVipRequest;
 
 CreateHaVipRequest::CreateHaVipRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateHaVip")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateHaVipRequest::~CreateHaVipRequest()
 {}

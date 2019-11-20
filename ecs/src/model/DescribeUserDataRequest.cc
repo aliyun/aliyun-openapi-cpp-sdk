@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeUserDataRequest;
 
 DescribeUserDataRequest::DescribeUserDataRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeUserData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserDataRequest::~DescribeUserDataRequest()
 {}

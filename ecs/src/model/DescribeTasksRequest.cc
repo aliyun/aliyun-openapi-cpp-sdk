@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeTasksRequest;
 
 DescribeTasksRequest::DescribeTasksRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeTasks")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTasksRequest::~DescribeTasksRequest()
 {}

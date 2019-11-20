@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::StopInstanceRequest;
 
 StopInstanceRequest::StopInstanceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "StopInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopInstanceRequest::~StopInstanceRequest()
 {}

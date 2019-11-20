@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::AddBandwidthPackageIpsRequest;
 
 AddBandwidthPackageIpsRequest::AddBandwidthPackageIpsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "AddBandwidthPackageIps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddBandwidthPackageIpsRequest::~AddBandwidthPackageIpsRequest()
 {}

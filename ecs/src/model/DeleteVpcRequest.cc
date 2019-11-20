@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteVpcRequest;
 
 DeleteVpcRequest::DeleteVpcRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteVpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVpcRequest::~DeleteVpcRequest()
 {}

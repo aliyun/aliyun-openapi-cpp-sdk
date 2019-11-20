@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::AssociateHaVipRequest;
 
 AssociateHaVipRequest::AssociateHaVipRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "AssociateHaVip")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssociateHaVipRequest::~AssociateHaVipRequest()
 {}

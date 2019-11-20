@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeImagesRequest;
 
 DescribeImagesRequest::DescribeImagesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeImages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeImagesRequest::~DescribeImagesRequest()
 {}
@@ -187,12 +189,11 @@ std::vector<DescribeImagesRequest::Tag> DescribeImagesRequest::getTag()const
 void DescribeImagesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -281,12 +282,11 @@ std::vector<DescribeImagesRequest::Filter> DescribeImagesRequest::getFilter()con
 void DescribeImagesRequest::setFilter(const std::vector<Filter>& filter)
 {
 	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
+		auto filterObj = filter.at(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1);
+		setCoreParameter(filterObjStr + ".Value", filterObj.value);
+		setCoreParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }
 

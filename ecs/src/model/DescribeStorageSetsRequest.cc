@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeStorageSetsRequest;
 
 DescribeStorageSetsRequest::DescribeStorageSetsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeStorageSets")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeStorageSetsRequest::~DescribeStorageSetsRequest()
 {}

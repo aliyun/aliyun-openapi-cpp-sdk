@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DetachNetworkInterfaceRequest;
 
 DetachNetworkInterfaceRequest::DetachNetworkInterfaceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DetachNetworkInterface")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachNetworkInterfaceRequest::~DetachNetworkInterfaceRequest()
 {}

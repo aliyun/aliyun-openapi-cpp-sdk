@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteKeyPairsRequest;
 
 DeleteKeyPairsRequest::DeleteKeyPairsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteKeyPairs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteKeyPairsRequest::~DeleteKeyPairsRequest()
 {}

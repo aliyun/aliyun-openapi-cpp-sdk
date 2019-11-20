@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ReplaceSystemDiskRequest;
 
 ReplaceSystemDiskRequest::ReplaceSystemDiskRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ReplaceSystemDisk")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReplaceSystemDiskRequest::~ReplaceSystemDiskRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateNetworkInterfaceRequest;
 
 CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateNetworkInterface")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateNetworkInterfaceRequest::~CreateNetworkInterfaceRequest()
 {}
@@ -110,12 +112,11 @@ std::vector<CreateNetworkInterfaceRequest::Tag> CreateNetworkInterfaceRequest::g
 void CreateNetworkInterfaceRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
 	}
 }
 

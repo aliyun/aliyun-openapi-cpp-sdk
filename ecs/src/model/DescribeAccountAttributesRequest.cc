@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeAccountAttributesRequest;
 
 DescribeAccountAttributesRequest::DescribeAccountAttributesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeAccountAttributes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAccountAttributesRequest::~DescribeAccountAttributesRequest()
 {}
@@ -44,8 +46,9 @@ std::vector<std::string> DescribeAccountAttributesRequest::getAttributeName()con
 void DescribeAccountAttributesRequest::setAttributeName(const std::vector<std::string>& attributeName)
 {
 	attributeName_ = attributeName;
-	for(int i = 0; i!= attributeName.size(); i++)
-		setCoreParameter("AttributeName."+ std::to_string(i), attributeName.at(i));
+	for(int dep1 = 0; dep1!= attributeName.size(); dep1++) {
+		setCoreParameter("AttributeName."+ std::to_string(dep1), attributeName.at(dep1));
+	}
 }
 
 std::string DescribeAccountAttributesRequest::getRegionId()const

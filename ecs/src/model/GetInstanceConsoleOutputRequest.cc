@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::GetInstanceConsoleOutputRequest;
 
 GetInstanceConsoleOutputRequest::GetInstanceConsoleOutputRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "GetInstanceConsoleOutput")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceConsoleOutputRequest::~GetInstanceConsoleOutputRequest()
 {}

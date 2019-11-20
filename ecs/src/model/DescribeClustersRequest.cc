@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeClustersRequest;
 
 DescribeClustersRequest::DescribeClustersRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeClusters")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClustersRequest::~DescribeClustersRequest()
 {}

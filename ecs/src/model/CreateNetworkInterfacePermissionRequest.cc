@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateNetworkInterfacePermissionRequest;
 
 CreateNetworkInterfacePermissionRequest::CreateNetworkInterfacePermissionRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateNetworkInterfacePermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateNetworkInterfacePermissionRequest::~CreateNetworkInterfacePermissionRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateLaunchTemplateRequest;
 
 CreateLaunchTemplateRequest::CreateLaunchTemplateRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateLaunchTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateLaunchTemplateRequest::~CreateLaunchTemplateRequest()
 {}
@@ -143,12 +145,11 @@ std::vector<CreateLaunchTemplateRequest::TemplateTag> CreateLaunchTemplateReques
 void CreateLaunchTemplateRequest::setTemplateTag(const std::vector<TemplateTag>& templateTag)
 {
 	templateTag_ = templateTag;
-	int i = 0;
-	for(int i = 0; i!= templateTag.size(); i++)	{
-		auto obj = templateTag.at(i);
-		std::string str ="TemplateTag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+	for(int dep1 = 0; dep1!= templateTag.size(); dep1++) {
+		auto templateTagObj = templateTag.at(dep1);
+		std::string templateTagObjStr = "TemplateTag." + std::to_string(dep1);
+		setCoreParameter(templateTagObjStr + ".Key", templateTagObj.key);
+		setCoreParameter(templateTagObjStr + ".Value", templateTagObj.value);
 	}
 }
 
@@ -160,12 +161,11 @@ std::vector<CreateLaunchTemplateRequest::Tag> CreateLaunchTemplateRequest::getTa
 void CreateLaunchTemplateRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
 	}
 }
 
@@ -419,15 +419,14 @@ std::vector<CreateLaunchTemplateRequest::NetworkInterface> CreateLaunchTemplateR
 void CreateLaunchTemplateRequest::setNetworkInterface(const std::vector<NetworkInterface>& networkInterface)
 {
 	networkInterface_ = networkInterface;
-	int i = 0;
-	for(int i = 0; i!= networkInterface.size(); i++)	{
-		auto obj = networkInterface.at(i);
-		std::string str ="NetworkInterface."+ std::to_string(i);
-		setCoreParameter(str + ".PrimaryIpAddress", obj.primaryIpAddress);
-		setCoreParameter(str + ".VSwitchId", obj.vSwitchId);
-		setCoreParameter(str + ".SecurityGroupId", obj.securityGroupId);
-		setCoreParameter(str + ".NetworkInterfaceName", obj.networkInterfaceName);
-		setCoreParameter(str + ".Description", obj.description);
+	for(int dep1 = 0; dep1!= networkInterface.size(); dep1++) {
+		auto networkInterfaceObj = networkInterface.at(dep1);
+		std::string networkInterfaceObjStr = "NetworkInterface." + std::to_string(dep1);
+		setCoreParameter(networkInterfaceObjStr + ".PrimaryIpAddress", networkInterfaceObj.primaryIpAddress);
+		setCoreParameter(networkInterfaceObjStr + ".VSwitchId", networkInterfaceObj.vSwitchId);
+		setCoreParameter(networkInterfaceObjStr + ".SecurityGroupId", networkInterfaceObj.securityGroupId);
+		setCoreParameter(networkInterfaceObjStr + ".NetworkInterfaceName", networkInterfaceObj.networkInterfaceName);
+		setCoreParameter(networkInterfaceObjStr + ".Description", networkInterfaceObj.description);
 	}
 }
 
@@ -505,18 +504,17 @@ std::vector<CreateLaunchTemplateRequest::DataDisk> CreateLaunchTemplateRequest::
 void CreateLaunchTemplateRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 {
 	dataDisk_ = dataDisk;
-	int i = 0;
-	for(int i = 0; i!= dataDisk.size(); i++)	{
-		auto obj = dataDisk.at(i);
-		std::string str ="DataDisk."+ std::to_string(i);
-		setCoreParameter(str + ".Size", std::to_string(obj.size));
-		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
-		setCoreParameter(str + ".Category", obj.category);
-		setCoreParameter(str + ".Encrypted", obj.encrypted);
-		setCoreParameter(str + ".DiskName", obj.diskName);
-		setCoreParameter(str + ".Description", obj.description);
-		setCoreParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
-		setCoreParameter(str + ".Device", obj.device);
+	for(int dep1 = 0; dep1!= dataDisk.size(); dep1++) {
+		auto dataDiskObj = dataDisk.at(dep1);
+		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1);
+		setCoreParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
+		setCoreParameter(dataDiskObjStr + ".SnapshotId", dataDiskObj.snapshotId);
+		setCoreParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
+		setCoreParameter(dataDiskObjStr + ".Encrypted", dataDiskObj.encrypted);
+		setCoreParameter(dataDiskObjStr + ".DiskName", dataDiskObj.diskName);
+		setCoreParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
+		setCoreParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
+		setCoreParameter(dataDiskObjStr + ".Device", dataDiskObj.device);
 	}
 }
 

@@ -77,6 +77,8 @@ namespace AlibabaCloud
 				void setSpotStrategy(const std::string& spotStrategy);
 				std::string getPriorityStrategy()const;
 				void setPriorityStrategy(const std::string& priorityStrategy);
+				std::string getInstanceFamilyLevel()const;
+				void setInstanceFamilyLevel(const std::string& instanceFamilyLevel);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
 
@@ -102,6 +104,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string spotStrategy_;
 				std::string priorityStrategy_;
+				std::string instanceFamilyLevel_;
 				std::string zoneId_;
 
 			};

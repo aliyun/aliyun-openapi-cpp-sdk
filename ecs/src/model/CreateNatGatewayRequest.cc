@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateNatGatewayRequest;
 
 CreateNatGatewayRequest::CreateNatGatewayRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateNatGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateNatGatewayRequest::~CreateNatGatewayRequest()
 {}
@@ -77,13 +79,12 @@ std::vector<CreateNatGatewayRequest::BandwidthPackage> CreateNatGatewayRequest::
 void CreateNatGatewayRequest::setBandwidthPackage(const std::vector<BandwidthPackage>& bandwidthPackage)
 {
 	bandwidthPackage_ = bandwidthPackage;
-	int i = 0;
-	for(int i = 0; i!= bandwidthPackage.size(); i++)	{
-		auto obj = bandwidthPackage.at(i);
-		std::string str ="BandwidthPackage."+ std::to_string(i);
-		setCoreParameter(str + ".Bandwidth", std::to_string(obj.bandwidth));
-		setCoreParameter(str + ".Zone", obj.zone);
-		setCoreParameter(str + ".IpCount", std::to_string(obj.ipCount));
+	for(int dep1 = 0; dep1!= bandwidthPackage.size(); dep1++) {
+		auto bandwidthPackageObj = bandwidthPackage.at(dep1);
+		std::string bandwidthPackageObjStr = "BandwidthPackage." + std::to_string(dep1);
+		setCoreParameter(bandwidthPackageObjStr + ".Bandwidth", std::to_string(bandwidthPackageObj.bandwidth));
+		setCoreParameter(bandwidthPackageObjStr + ".Zone", bandwidthPackageObj.zone);
+		setCoreParameter(bandwidthPackageObjStr + ".IpCount", std::to_string(bandwidthPackageObj.ipCount));
 	}
 }
 

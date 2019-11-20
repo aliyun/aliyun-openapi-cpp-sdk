@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateInstanceRequest;
 
 CreateInstanceRequest::CreateInstanceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateInstanceRequest::~CreateInstanceRequest()
 {}
@@ -143,12 +145,11 @@ std::vector<CreateInstanceRequest::Tag> CreateInstanceRequest::getTag()const
 void CreateInstanceRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -512,13 +513,12 @@ std::vector<CreateInstanceRequest::Arn> CreateInstanceRequest::getArn()const
 void CreateInstanceRequest::setArn(const std::vector<Arn>& arn)
 {
 	arn_ = arn;
-	int i = 0;
-	for(int i = 0; i!= arn.size(); i++)	{
-		auto obj = arn.at(i);
-		std::string str ="Arn."+ std::to_string(i);
-		setCoreParameter(str + ".Rolearn", obj.rolearn);
-		setCoreParameter(str + ".RoleType", obj.roleType);
-		setCoreParameter(str + ".AssumeRoleFor", std::to_string(obj.assumeRoleFor));
+	for(int dep1 = 0; dep1!= arn.size(); dep1++) {
+		auto arnObj = arn.at(dep1);
+		std::string arnObjStr = "Arn." + std::to_string(dep1);
+		setCoreParameter(arnObjStr + ".Rolearn", arnObj.rolearn);
+		setCoreParameter(arnObjStr + ".RoleType", arnObj.roleType);
+		setCoreParameter(arnObjStr + ".AssumeRoleFor", std::to_string(arnObj.assumeRoleFor));
 	}
 }
 
@@ -662,20 +662,19 @@ std::vector<CreateInstanceRequest::DataDisk> CreateInstanceRequest::getDataDisk(
 void CreateInstanceRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 {
 	dataDisk_ = dataDisk;
-	int i = 0;
-	for(int i = 0; i!= dataDisk.size(); i++)	{
-		auto obj = dataDisk.at(i);
-		std::string str ="DataDisk."+ std::to_string(i);
-		setCoreParameter(str + ".DiskName", obj.diskName);
-		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
-		setCoreParameter(str + ".Size", std::to_string(obj.size));
-		setCoreParameter(str + ".Encrypted", obj.encrypted ? "true" : "false");
-		setCoreParameter(str + ".PerformanceLevel", obj.performanceLevel);
-		setCoreParameter(str + ".Description", obj.description);
-		setCoreParameter(str + ".Category", obj.category);
-		setCoreParameter(str + ".KMSKeyId", obj.kMSKeyId);
-		setCoreParameter(str + ".Device", obj.device);
-		setCoreParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
+	for(int dep1 = 0; dep1!= dataDisk.size(); dep1++) {
+		auto dataDiskObj = dataDisk.at(dep1);
+		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1);
+		setCoreParameter(dataDiskObjStr + ".DiskName", dataDiskObj.diskName);
+		setCoreParameter(dataDiskObjStr + ".SnapshotId", dataDiskObj.snapshotId);
+		setCoreParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
+		setCoreParameter(dataDiskObjStr + ".Encrypted", dataDiskObj.encrypted ? "true" : "false");
+		setCoreParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
+		setCoreParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
+		setCoreParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
+		setCoreParameter(dataDiskObjStr + ".KMSKeyId", dataDiskObj.kMSKeyId);
+		setCoreParameter(dataDiskObjStr + ".Device", dataDiskObj.device);
+		setCoreParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
 	}
 }
 

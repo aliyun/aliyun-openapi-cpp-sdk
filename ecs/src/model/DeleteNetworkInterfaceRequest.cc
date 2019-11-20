@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteNetworkInterfaceRequest;
 
 DeleteNetworkInterfaceRequest::DeleteNetworkInterfaceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteNetworkInterface")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNetworkInterfaceRequest::~DeleteNetworkInterfaceRequest()
 {}

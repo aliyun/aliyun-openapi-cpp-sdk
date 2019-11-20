@@ -47,6 +47,8 @@ void DescribeCloudAssistantStatusResult::parse(const std::string &payload)
 			instanceCloudAssistantStatusSetObject.instanceId = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["InstanceId"].asString();
 		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["CloudAssistantStatus"].isNull())
 			instanceCloudAssistantStatusSetObject.cloudAssistantStatus = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["CloudAssistantStatus"].asString();
+		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["CloudAssistantVersion"].isNull())
+			instanceCloudAssistantStatusSetObject.cloudAssistantVersion = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["CloudAssistantVersion"].asString();
 		instanceCloudAssistantStatusSet_.push_back(instanceCloudAssistantStatusSetObject);
 	}
 

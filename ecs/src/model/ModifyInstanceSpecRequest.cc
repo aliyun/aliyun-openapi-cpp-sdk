@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyInstanceSpecRequest;
 
 ModifyInstanceSpecRequest::ModifyInstanceSpecRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceSpecRequest::~ModifyInstanceSpecRequest()
 {}

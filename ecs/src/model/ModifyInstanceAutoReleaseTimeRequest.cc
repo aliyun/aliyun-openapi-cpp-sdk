@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyInstanceAutoReleaseTimeRequest;
 
 ModifyInstanceAutoReleaseTimeRequest::ModifyInstanceAutoReleaseTimeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceAutoReleaseTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceAutoReleaseTimeRequest::~ModifyInstanceAutoReleaseTimeRequest()
 {}

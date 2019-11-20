@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeAutoProvisioningGroupInstancesRequest;
 
 DescribeAutoProvisioningGroupInstancesRequest::DescribeAutoProvisioningGroupInstancesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeAutoProvisioningGroupInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAutoProvisioningGroupInstancesRequest::~DescribeAutoProvisioningGroupInstancesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateVpcRequest;
 
 CreateVpcRequest::CreateVpcRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateVpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVpcRequest::~CreateVpcRequest()
 {}

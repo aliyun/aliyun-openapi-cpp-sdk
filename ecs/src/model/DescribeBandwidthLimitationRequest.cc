@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeBandwidthLimitationRequest;
 
 DescribeBandwidthLimitationRequest::DescribeBandwidthLimitationRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeBandwidthLimitation")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBandwidthLimitationRequest::~DescribeBandwidthLimitationRequest()
 {}

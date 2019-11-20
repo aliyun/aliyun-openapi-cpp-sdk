@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribePriceRequest;
 
 DescribePriceRequest::DescribePriceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribePrice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePriceRequest::~DescribePriceRequest()
 {}

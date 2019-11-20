@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DetachClassicLinkVpcRequest;
 
 DetachClassicLinkVpcRequest::DetachClassicLinkVpcRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DetachClassicLinkVpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachClassicLinkVpcRequest::~DetachClassicLinkVpcRequest()
 {}
