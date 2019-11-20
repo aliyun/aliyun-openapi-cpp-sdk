@@ -68,7 +68,8 @@ std::vector<std::string> GetPhotosByMd5sRequest::getMd5()const
 void GetPhotosByMd5sRequest::setMd5(const std::vector<std::string>& md5)
 {
 	md5_ = md5;
-	for(int dep1 = 0; dep1!= md5.size(); dep1++)
+	for(int dep1 = 0; dep1!= md5.size(); dep1++) {
 		setCoreParameter("Md5."+ std::to_string(dep1), md5.at(dep1));
+	}
 }
 

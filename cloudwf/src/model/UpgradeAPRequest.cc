@@ -46,7 +46,8 @@ std::vector<long> UpgradeAPRequest::getIds()const
 void UpgradeAPRequest::setIds(const std::vector<long>& ids)
 {
 	ids_ = ids;
-	for(int dep1 = 0; dep1!= ids.size(); dep1++)
+	for(int dep1 = 0; dep1!= ids.size(); dep1++) {
 		setCoreParameter("Ids."+ std::to_string(dep1), std::to_string(ids.at(dep1)));
+	}
 }
 

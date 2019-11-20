@@ -101,8 +101,9 @@ std::vector<std::string> DescribeLifecycleHooksRequest::getLifecycleHookId()cons
 void DescribeLifecycleHooksRequest::setLifecycleHookId(const std::vector<std::string>& lifecycleHookId)
 {
 	lifecycleHookId_ = lifecycleHookId;
-	for(int dep1 = 0; dep1!= lifecycleHookId.size(); dep1++)
+	for(int dep1 = 0; dep1!= lifecycleHookId.size(); dep1++) {
 		setCoreParameter("LifecycleHookId."+ std::to_string(dep1), lifecycleHookId.at(dep1));
+	}
 }
 
 std::string DescribeLifecycleHooksRequest::getOwnerAccount()const

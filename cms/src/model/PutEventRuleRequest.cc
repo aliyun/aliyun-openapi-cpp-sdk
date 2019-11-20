@@ -60,15 +60,19 @@ void PutEventRuleRequest::setEventPattern(const std::vector<EventPattern>& event
 	for(int dep1 = 0; dep1!= eventPattern.size(); dep1++) {
 		auto eventPatternObj = eventPattern.at(dep1);
 		std::string eventPatternObjStr = "EventPattern." + std::to_string(dep1);
-		for(int dep2 = 0; dep2!= levelList.size(); dep2++)
+		for(int dep2 = 0; dep2!= eventPatternObj.levelList.size(); dep2++) {
 			setCoreParameter(eventPatternObjStr + ".LevelList."+ std::to_string(dep2), eventPatternObj.levelList.at(dep2));
+		}
 		setCoreParameter(eventPatternObjStr + ".Product", eventPatternObj.product);
-		for(int dep2 = 0; dep2!= statusList.size(); dep2++)
+		for(int dep2 = 0; dep2!= eventPatternObj.statusList.size(); dep2++) {
 			setCoreParameter(eventPatternObjStr + ".StatusList."+ std::to_string(dep2), eventPatternObj.statusList.at(dep2));
-		for(int dep2 = 0; dep2!= nameList.size(); dep2++)
+		}
+		for(int dep2 = 0; dep2!= eventPatternObj.nameList.size(); dep2++) {
 			setCoreParameter(eventPatternObjStr + ".NameList."+ std::to_string(dep2), eventPatternObj.nameList.at(dep2));
-		for(int dep2 = 0; dep2!= eventTypeList.size(); dep2++)
+		}
+		for(int dep2 = 0; dep2!= eventPatternObj.eventTypeList.size(); dep2++) {
 			setCoreParameter(eventPatternObjStr + ".EventTypeList."+ std::to_string(dep2), eventPatternObj.eventTypeList.at(dep2));
+		}
 	}
 }
 

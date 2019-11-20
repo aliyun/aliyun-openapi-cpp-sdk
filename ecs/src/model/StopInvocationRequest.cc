@@ -101,7 +101,8 @@ std::vector<std::string> StopInvocationRequest::getInstanceId()const
 void StopInvocationRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int dep1 = 0; dep1!= instanceId.size(); dep1++)
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
 		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 

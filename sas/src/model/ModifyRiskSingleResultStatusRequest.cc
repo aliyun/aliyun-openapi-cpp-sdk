@@ -57,8 +57,9 @@ std::vector<std::string> ModifyRiskSingleResultStatusRequest::getIds()const
 void ModifyRiskSingleResultStatusRequest::setIds(const std::vector<std::string>& ids)
 {
 	ids_ = ids;
-	for(int dep1 = 0; dep1!= ids.size(); dep1++)
+	for(int dep1 = 0; dep1!= ids.size(); dep1++) {
 		setCoreParameter("Ids."+ std::to_string(dep1), ids.at(dep1));
+	}
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getLang()const

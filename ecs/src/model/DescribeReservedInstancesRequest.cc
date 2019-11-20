@@ -156,8 +156,9 @@ std::vector<std::string> DescribeReservedInstancesRequest::getReservedInstanceId
 void DescribeReservedInstancesRequest::setReservedInstanceId(const std::vector<std::string>& reservedInstanceId)
 {
 	reservedInstanceId_ = reservedInstanceId;
-	for(int dep1 = 0; dep1!= reservedInstanceId.size(); dep1++)
+	for(int dep1 = 0; dep1!= reservedInstanceId.size(); dep1++) {
 		setCoreParameter("ReservedInstanceId."+ std::to_string(dep1), reservedInstanceId.at(dep1));
+	}
 }
 
 std::string DescribeReservedInstancesRequest::getOfferingType()const
@@ -201,7 +202,8 @@ std::vector<std::string> DescribeReservedInstancesRequest::getStatus()const
 void DescribeReservedInstancesRequest::setStatus(const std::vector<std::string>& status)
 {
 	status_ = status;
-	for(int dep1 = 0; dep1!= status.size(); dep1++)
+	for(int dep1 = 0; dep1!= status.size(); dep1++) {
 		setCoreParameter("Status."+ std::to_string(dep1), status.at(dep1));
+	}
 }
 

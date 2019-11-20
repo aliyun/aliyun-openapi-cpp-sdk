@@ -57,8 +57,9 @@ std::vector<std::string> CreateBatchJobsRequest::getCallingNumber()const
 void CreateBatchJobsRequest::setCallingNumber(const std::vector<std::string>& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++)
+	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
 		setCoreParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
+	}
 }
 
 std::string CreateBatchJobsRequest::getInstanceId()const

@@ -392,8 +392,9 @@ std::vector<std::string> RunInstancesRequest::getIpv6Address()const
 void RunInstancesRequest::setIpv6Address(const std::vector<std::string>& ipv6Address)
 {
 	ipv6Address_ = ipv6Address;
-	for(int dep1 = 0; dep1!= ipv6Address.size(); dep1++)
+	for(int dep1 = 0; dep1!= ipv6Address.size(); dep1++) {
 		setCoreParameter("Ipv6Address."+ std::to_string(dep1), ipv6Address.at(dep1));
+	}
 }
 
 int RunInstancesRequest::getInternetMaxBandwidthIn()const
@@ -742,8 +743,9 @@ std::vector<std::string> RunInstancesRequest::getSecurityGroupIds()const
 void RunInstancesRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
 {
 	securityGroupIds_ = securityGroupIds;
-	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++) {
 		setCoreParameter("SecurityGroupIds."+ std::to_string(dep1), securityGroupIds.at(dep1));
+	}
 }
 
 int RunInstancesRequest::getSpotDuration()const

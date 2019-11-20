@@ -238,8 +238,9 @@ std::vector<std::string> ModifyScalingConfigurationRequest::getInstanceTypes()co
 void ModifyScalingConfigurationRequest::setInstanceTypes(const std::vector<std::string>& instanceTypes)
 {
 	instanceTypes_ = instanceTypes;
-	for(int dep1 = 0; dep1!= instanceTypes.size(); dep1++)
+	for(int dep1 = 0; dep1!= instanceTypes.size(); dep1++) {
 		setCoreParameter("InstanceTypes."+ std::to_string(dep1), instanceTypes.at(dep1));
+	}
 }
 
 int ModifyScalingConfigurationRequest::getInternetMaxBandwidthOut()const
@@ -393,8 +394,9 @@ std::vector<std::string> ModifyScalingConfigurationRequest::getSecurityGroupIds(
 void ModifyScalingConfigurationRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
 {
 	securityGroupIds_ = securityGroupIds;
-	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++) {
 		setCoreParameter("SecurityGroupIds."+ std::to_string(dep1), securityGroupIds.at(dep1));
+	}
 }
 
 std::vector<ModifyScalingConfigurationRequest::DataDisk> ModifyScalingConfigurationRequest::getDataDisk()const

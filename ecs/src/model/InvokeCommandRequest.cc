@@ -123,8 +123,9 @@ std::vector<std::string> InvokeCommandRequest::getInstanceId()const
 void InvokeCommandRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int dep1 = 0; dep1!= instanceId.size(); dep1++)
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
 		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 
 std::map<std::string, std::string> InvokeCommandRequest::getParameters()const

@@ -35,8 +35,9 @@ std::vector<std::string> CreateScenarioRequest::getSurveysJson()const
 void CreateScenarioRequest::setSurveysJson(const std::vector<std::string>& surveysJson)
 {
 	surveysJson_ = surveysJson;
-	for(int dep1 = 0; dep1!= surveysJson.size(); dep1++)
+	for(int dep1 = 0; dep1!= surveysJson.size(); dep1++) {
 		setCoreParameter("SurveysJson."+ std::to_string(dep1), surveysJson.at(dep1));
+	}
 }
 
 std::string CreateScenarioRequest::getDescription()const

@@ -68,8 +68,9 @@ std::vector<std::string> ModifySkillGroupOutboundNumbersRequest::getOutboundPhon
 void ModifySkillGroupOutboundNumbersRequest::setOutboundPhoneNumberId(const std::vector<std::string>& outboundPhoneNumberId)
 {
 	outboundPhoneNumberId_ = outboundPhoneNumberId;
-	for(int dep1 = 0; dep1!= outboundPhoneNumberId.size(); dep1++)
+	for(int dep1 = 0; dep1!= outboundPhoneNumberId.size(); dep1++) {
 		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(dep1), outboundPhoneNumberId.at(dep1));
+	}
 }
 
 std::string ModifySkillGroupOutboundNumbersRequest::getSkillGroupId()const

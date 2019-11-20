@@ -57,8 +57,9 @@ std::vector<long> GetFramedPhotoUrlsRequest::getPhotoId()const
 void GetFramedPhotoUrlsRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
-	for(int dep1 = 0; dep1!= photoId.size(); dep1++)
+	for(int dep1 = 0; dep1!= photoId.size(); dep1++) {
 		setCoreParameter("PhotoId."+ std::to_string(dep1), std::to_string(photoId.at(dep1)));
+	}
 }
 
 std::string GetFramedPhotoUrlsRequest::getStoreName()const

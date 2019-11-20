@@ -222,8 +222,9 @@ std::vector<std::string> DescribeRecommendInstanceTypeRequest::getInstanceTypeFa
 void DescribeRecommendInstanceTypeRequest::setInstanceTypeFamily(const std::vector<std::string>& instanceTypeFamily)
 {
 	instanceTypeFamily_ = instanceTypeFamily;
-	for(int dep1 = 0; dep1!= instanceTypeFamily.size(); dep1++)
+	for(int dep1 = 0; dep1!= instanceTypeFamily.size(); dep1++) {
 		setCoreParameter("InstanceTypeFamily."+ std::to_string(dep1), instanceTypeFamily.at(dep1));
+	}
 }
 
 long DescribeRecommendInstanceTypeRequest::getOwnerId()const

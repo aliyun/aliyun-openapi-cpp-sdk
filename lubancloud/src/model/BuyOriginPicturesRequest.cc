@@ -35,7 +35,8 @@ std::vector<long> BuyOriginPicturesRequest::getPictureId()const
 void BuyOriginPicturesRequest::setPictureId(const std::vector<long>& pictureId)
 {
 	pictureId_ = pictureId;
-	for(int dep1 = 0; dep1!= pictureId.size(); dep1++)
+	for(int dep1 = 0; dep1!= pictureId.size(); dep1++) {
 		setCoreParameter("PictureId."+ std::to_string(dep1), std::to_string(pictureId.at(dep1)));
+	}
 }
 

@@ -79,8 +79,9 @@ std::vector<std::string> DescribeNetworkInterfacePermissionsRequest::getNetworkI
 void DescribeNetworkInterfacePermissionsRequest::setNetworkInterfacePermissionId(const std::vector<std::string>& networkInterfacePermissionId)
 {
 	networkInterfacePermissionId_ = networkInterfacePermissionId;
-	for(int dep1 = 0; dep1!= networkInterfacePermissionId.size(); dep1++)
+	for(int dep1 = 0; dep1!= networkInterfacePermissionId.size(); dep1++) {
 		setCoreParameter("NetworkInterfacePermissionId."+ std::to_string(dep1), networkInterfacePermissionId.at(dep1));
+	}
 }
 
 std::string DescribeNetworkInterfacePermissionsRequest::getResourceOwnerAccount()const

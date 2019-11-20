@@ -35,8 +35,9 @@ std::vector<std::string> DescribeInstanceHistoryEventsRequest::getEventId()const
 void DescribeInstanceHistoryEventsRequest::setEventId(const std::vector<std::string>& eventId)
 {
 	eventId_ = eventId;
-	for(int dep1 = 0; dep1!= eventId.size(); dep1++)
+	for(int dep1 = 0; dep1!= eventId.size(); dep1++) {
 		setCoreParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
+	}
 }
 
 long DescribeInstanceHistoryEventsRequest::getResourceOwnerId()const
@@ -102,8 +103,9 @@ std::vector<std::string> DescribeInstanceHistoryEventsRequest::getInstanceEventC
 void DescribeInstanceHistoryEventsRequest::setInstanceEventCycleStatus(const std::vector<std::string>& instanceEventCycleStatus)
 {
 	instanceEventCycleStatus_ = instanceEventCycleStatus;
-	for(int dep1 = 0; dep1!= instanceEventCycleStatus.size(); dep1++)
+	for(int dep1 = 0; dep1!= instanceEventCycleStatus.size(); dep1++) {
 		setCoreParameter("InstanceEventCycleStatus."+ std::to_string(dep1), instanceEventCycleStatus.at(dep1));
+	}
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getEventPublishTimeEnd()const
@@ -125,8 +127,9 @@ std::vector<std::string> DescribeInstanceHistoryEventsRequest::getInstanceEventT
 void DescribeInstanceHistoryEventsRequest::setInstanceEventType(const std::vector<std::string>& instanceEventType)
 {
 	instanceEventType_ = instanceEventType;
-	for(int dep1 = 0; dep1!= instanceEventType.size(); dep1++)
+	for(int dep1 = 0; dep1!= instanceEventType.size(); dep1++) {
 		setCoreParameter("InstanceEventType."+ std::to_string(dep1), instanceEventType.at(dep1));
+	}
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getResourceOwnerAccount()const

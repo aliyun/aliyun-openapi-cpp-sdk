@@ -61,8 +61,9 @@ void InvokeDataAPIServiceRequest::setParam(const std::vector<Param>& param)
 		auto paramObj = param.at(dep1);
 		std::string paramObjStr = "Param." + std::to_string(dep1);
 		setCoreParameter(paramObjStr + ".ListParamType", paramObj.listParamType);
-		for(int dep2 = 0; dep2!= listParamValue.size(); dep2++)
+		for(int dep2 = 0; dep2!= paramObj.listParamValue.size(); dep2++) {
 			setCoreParameter(paramObjStr + ".ListParamValue."+ std::to_string(dep2), paramObj.listParamValue.at(dep2));
+		}
 		setCoreParameter(paramObjStr + ".ParamValue", paramObj.paramValue);
 		setCoreParameter(paramObjStr + ".ParamName", paramObj.paramName);
 	}

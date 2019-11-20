@@ -90,7 +90,8 @@ std::vector<std::string> ModifyPhoneNumberRequest::getSkillGroupId()const
 void ModifyPhoneNumberRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++)
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++) {
 		setCoreParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
+	}
 }
 

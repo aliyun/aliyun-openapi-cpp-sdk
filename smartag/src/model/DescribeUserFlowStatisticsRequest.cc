@@ -57,8 +57,9 @@ std::vector<std::string> DescribeUserFlowStatisticsRequest::getUserNames()const
 void DescribeUserFlowStatisticsRequest::setUserNames(const std::vector<std::string>& userNames)
 {
 	userNames_ = userNames;
-	for(int dep1 = 0; dep1!= userNames.size(); dep1++)
+	for(int dep1 = 0; dep1!= userNames.size(); dep1++) {
 		setCoreParameter("UserNames."+ std::to_string(dep1), userNames.at(dep1));
+	}
 }
 
 std::string DescribeUserFlowStatisticsRequest::getResourceOwnerAccount()const

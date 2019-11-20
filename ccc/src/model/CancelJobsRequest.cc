@@ -46,8 +46,9 @@ std::vector<std::string> CancelJobsRequest::getJobReferenceId()const
 void CancelJobsRequest::setJobReferenceId(const std::vector<std::string>& jobReferenceId)
 {
 	jobReferenceId_ = jobReferenceId;
-	for(int dep1 = 0; dep1!= jobReferenceId.size(); dep1++)
+	for(int dep1 = 0; dep1!= jobReferenceId.size(); dep1++) {
 		setCoreParameter("JobReferenceId."+ std::to_string(dep1), jobReferenceId.at(dep1));
+	}
 }
 
 std::string CancelJobsRequest::getGroupId()const
@@ -69,8 +70,9 @@ std::vector<std::string> CancelJobsRequest::getJobId()const
 void CancelJobsRequest::setJobId(const std::vector<std::string>& jobId)
 {
 	jobId_ = jobId;
-	for(int dep1 = 0; dep1!= jobId.size(); dep1++)
+	for(int dep1 = 0; dep1!= jobId.size(); dep1++) {
 		setCoreParameter("JobId."+ std::to_string(dep1), jobId.at(dep1));
+	}
 }
 
 std::string CancelJobsRequest::getInstanceId()const

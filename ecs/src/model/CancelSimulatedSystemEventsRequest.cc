@@ -35,8 +35,9 @@ std::vector<std::string> CancelSimulatedSystemEventsRequest::getEventId()const
 void CancelSimulatedSystemEventsRequest::setEventId(const std::vector<std::string>& eventId)
 {
 	eventId_ = eventId;
-	for(int dep1 = 0; dep1!= eventId.size(); dep1++)
+	for(int dep1 = 0; dep1!= eventId.size(); dep1++) {
 		setCoreParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
+	}
 }
 
 long CancelSimulatedSystemEventsRequest::getResourceOwnerId()const

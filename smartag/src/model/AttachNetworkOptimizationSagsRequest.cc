@@ -68,8 +68,9 @@ std::vector<std::string> AttachNetworkOptimizationSagsRequest::getSmartAGIds()co
 void AttachNetworkOptimizationSagsRequest::setSmartAGIds(const std::vector<std::string>& smartAGIds)
 {
 	smartAGIds_ = smartAGIds;
-	for(int dep1 = 0; dep1!= smartAGIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= smartAGIds.size(); dep1++) {
 		setCoreParameter("SmartAGIds."+ std::to_string(dep1), smartAGIds.at(dep1));
+	}
 }
 
 std::string AttachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const

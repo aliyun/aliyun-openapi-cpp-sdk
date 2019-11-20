@@ -35,8 +35,9 @@ std::vector<std::string> RunClusterServiceActionRequest::getHostGroupIdList()con
 void RunClusterServiceActionRequest::setHostGroupIdList(const std::vector<std::string>& hostGroupIdList)
 {
 	hostGroupIdList_ = hostGroupIdList;
-	for(int dep1 = 0; dep1!= hostGroupIdList.size(); dep1++)
+	for(int dep1 = 0; dep1!= hostGroupIdList.size(); dep1++) {
 		setCoreParameter("HostGroupIdList."+ std::to_string(dep1), hostGroupIdList.at(dep1));
+	}
 }
 
 long RunClusterServiceActionRequest::getResourceOwnerId()const

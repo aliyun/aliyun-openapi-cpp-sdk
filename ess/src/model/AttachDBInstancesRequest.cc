@@ -79,8 +79,9 @@ std::vector<std::string> AttachDBInstancesRequest::getDBInstance()const
 void AttachDBInstancesRequest::setDBInstance(const std::vector<std::string>& dBInstance)
 {
 	dBInstance_ = dBInstance;
-	for(int dep1 = 0; dep1!= dBInstance.size(); dep1++)
+	for(int dep1 = 0; dep1!= dBInstance.size(); dep1++) {
 		setCoreParameter("DBInstance."+ std::to_string(dep1), dBInstance.at(dep1));
+	}
 }
 
 long AttachDBInstancesRequest::getOwnerId()const

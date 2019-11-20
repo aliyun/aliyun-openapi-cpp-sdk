@@ -46,8 +46,9 @@ std::vector<long> StartBaselineSecurityCheckRequest::getItemIds()const
 void StartBaselineSecurityCheckRequest::setItemIds(const std::vector<long>& itemIds)
 {
 	itemIds_ = itemIds;
-	for(int dep1 = 0; dep1!= itemIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= itemIds.size(); dep1++) {
 		setCoreParameter("ItemIds."+ std::to_string(dep1), std::to_string(itemIds.at(dep1)));
+	}
 }
 
 std::string StartBaselineSecurityCheckRequest::getType()const
@@ -69,8 +70,9 @@ std::vector<std::string> StartBaselineSecurityCheckRequest::getAssets()const
 void StartBaselineSecurityCheckRequest::setAssets(const std::vector<std::string>& assets)
 {
 	assets_ = assets;
-	for(int dep1 = 0; dep1!= assets.size(); dep1++)
+	for(int dep1 = 0; dep1!= assets.size(); dep1++) {
 		setCoreParameter("Assets."+ std::to_string(dep1), assets.at(dep1));
+	}
 }
 
 std::string StartBaselineSecurityCheckRequest::getSourceIp()const

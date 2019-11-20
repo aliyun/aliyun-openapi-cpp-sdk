@@ -239,8 +239,9 @@ std::vector<std::string> ModifyClusterTemplateRequest::getOptionSoftWareList()co
 void ModifyClusterTemplateRequest::setOptionSoftWareList(const std::vector<std::string>& optionSoftWareList)
 {
 	optionSoftWareList_ = optionSoftWareList;
-	for(int dep1 = 0; dep1!= optionSoftWareList.size(); dep1++)
+	for(int dep1 = 0; dep1!= optionSoftWareList.size(); dep1++) {
 		setCoreParameter("OptionSoftWareList."+ std::to_string(dep1), optionSoftWareList.at(dep1));
+	}
 }
 
 std::string ModifyClusterTemplateRequest::getNetType()const

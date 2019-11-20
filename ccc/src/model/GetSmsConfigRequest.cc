@@ -46,8 +46,9 @@ std::vector<int> GetSmsConfigRequest::getScenario()const
 void GetSmsConfigRequest::setScenario(const std::vector<int>& scenario)
 {
 	scenario_ = scenario;
-	for(int dep1 = 0; dep1!= scenario.size(); dep1++)
+	for(int dep1 = 0; dep1!= scenario.size(); dep1++) {
 		setCoreParameter("Scenario."+ std::to_string(dep1), std::to_string(scenario.at(dep1)));
+	}
 }
 
 std::string GetSmsConfigRequest::getAccessKeyId()const

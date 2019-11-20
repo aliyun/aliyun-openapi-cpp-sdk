@@ -167,8 +167,9 @@ std::vector<std::string> ListBackupsRequest::getBackupId()const
 void ListBackupsRequest::setBackupId(const std::vector<std::string>& backupId)
 {
 	backupId_ = backupId;
-	for(int dep1 = 0; dep1!= backupId.size(); dep1++)
+	for(int dep1 = 0; dep1!= backupId.size(); dep1++) {
 		setCoreParameter("BackupId."+ std::to_string(dep1), backupId.at(dep1));
+	}
 }
 
 std::string ListBackupsRequest::getClusterId()const

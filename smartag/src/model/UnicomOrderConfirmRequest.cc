@@ -62,8 +62,9 @@ void UnicomOrderConfirmRequest::setOrderItem(const std::vector<OrderItem>& order
 		std::string orderItemObjStr = "OrderItem." + std::to_string(dep1);
 		setCoreParameter(orderItemObjStr + ".ScItemName", orderItemObj.scItemName);
 		setCoreParameter(orderItemObjStr + ".ItemAmount", orderItemObj.itemAmount);
-		for(int dep2 = 0; dep2!= snList.size(); dep2++)
+		for(int dep2 = 0; dep2!= orderItemObj.snList.size(); dep2++) {
 			setCoreParameter(orderItemObjStr + ".SnList."+ std::to_string(dep2), orderItemObj.snList.at(dep2));
+		}
 		setCoreParameter(orderItemObjStr + ".OrderItemId", orderItemObj.orderItemId);
 		setCoreParameter(orderItemObjStr + ".ScItemCode", orderItemObj.scItemCode);
 		setCoreParameter(orderItemObjStr + ".ItemQuantity", std::to_string(orderItemObj.itemQuantity));

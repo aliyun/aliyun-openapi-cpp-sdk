@@ -95,8 +95,9 @@ std::vector<std::string> ListTagResourcesRequest::getResourceId()const
 void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int dep1 = 0; dep1!= resourceId.size(); dep1++)
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
 		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
 }
 
 std::string ListTagResourcesRequest::getResourceOwnerAccount()const

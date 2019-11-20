@@ -57,7 +57,8 @@ std::vector<std::string> GetAlbumsByNamesRequest::getName()const
 void GetAlbumsByNamesRequest::setName(const std::vector<std::string>& name)
 {
 	name_ = name;
-	for(int dep1 = 0; dep1!= name.size(); dep1++)
+	for(int dep1 = 0; dep1!= name.size(); dep1++) {
 		setCoreParameter("Name."+ std::to_string(dep1), name.at(dep1));
+	}
 }
 

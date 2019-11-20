@@ -57,8 +57,9 @@ std::vector<std::string> DescribeSagOnlineClientStatisticsRequest::getSmartAGIds
 void DescribeSagOnlineClientStatisticsRequest::setSmartAGIds(const std::vector<std::string>& smartAGIds)
 {
 	smartAGIds_ = smartAGIds;
-	for(int dep1 = 0; dep1!= smartAGIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= smartAGIds.size(); dep1++) {
 		setCoreParameter("SmartAGIds."+ std::to_string(dep1), smartAGIds.at(dep1));
+	}
 }
 
 std::string DescribeSagOnlineClientStatisticsRequest::getResourceOwnerAccount()const

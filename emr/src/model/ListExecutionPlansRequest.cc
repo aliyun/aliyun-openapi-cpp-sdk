@@ -46,8 +46,9 @@ std::vector<std::string> ListExecutionPlansRequest::getStatusList()const
 void ListExecutionPlansRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int dep1 = 0; dep1!= statusList.size(); dep1++)
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
 		setCoreParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 bool ListExecutionPlansRequest::getIsDesc()const

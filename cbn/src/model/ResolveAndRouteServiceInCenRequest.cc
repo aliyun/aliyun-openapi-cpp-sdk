@@ -145,7 +145,8 @@ std::vector<std::string> ResolveAndRouteServiceInCenRequest::getAccessRegionIds(
 void ResolveAndRouteServiceInCenRequest::setAccessRegionIds(const std::vector<std::string>& accessRegionIds)
 {
 	accessRegionIds_ = accessRegionIds;
-	for(int dep1 = 0; dep1!= accessRegionIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= accessRegionIds.size(); dep1++) {
 		setCoreParameter("AccessRegionIds."+ std::to_string(dep1), accessRegionIds.at(dep1));
+	}
 }
 

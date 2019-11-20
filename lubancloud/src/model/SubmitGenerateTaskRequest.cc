@@ -79,8 +79,9 @@ std::vector<std::string> SubmitGenerateTaskRequest::getMajorImagePath()const
 void SubmitGenerateTaskRequest::setMajorImagePath(const std::vector<std::string>& majorImagePath)
 {
 	majorImagePath_ = majorImagePath;
-	for(int dep1 = 0; dep1!= majorImagePath.size(); dep1++)
+	for(int dep1 = 0; dep1!= majorImagePath.size(); dep1++) {
 		setCoreParameter("MajorImagePath."+ std::to_string(dep1), majorImagePath.at(dep1));
+	}
 }
 
 int SubmitGenerateTaskRequest::getWidth()const
@@ -102,8 +103,9 @@ std::vector<std::string> SubmitGenerateTaskRequest::getCopyWrite()const
 void SubmitGenerateTaskRequest::setCopyWrite(const std::vector<std::string>& copyWrite)
 {
 	copyWrite_ = copyWrite;
-	for(int dep1 = 0; dep1!= copyWrite.size(); dep1++)
+	for(int dep1 = 0; dep1!= copyWrite.size(); dep1++) {
 		setCoreParameter("CopyWrite."+ std::to_string(dep1), copyWrite.at(dep1));
+	}
 }
 
 std::vector<long> SubmitGenerateTaskRequest::getPropertyId()const
@@ -114,8 +116,9 @@ std::vector<long> SubmitGenerateTaskRequest::getPropertyId()const
 void SubmitGenerateTaskRequest::setPropertyId(const std::vector<long>& propertyId)
 {
 	propertyId_ = propertyId;
-	for(int dep1 = 0; dep1!= propertyId.size(); dep1++)
+	for(int dep1 = 0; dep1!= propertyId.size(); dep1++) {
 		setCoreParameter("PropertyId."+ std::to_string(dep1), std::to_string(propertyId.at(dep1)));
+	}
 }
 
 int SubmitGenerateTaskRequest::getHeight()const

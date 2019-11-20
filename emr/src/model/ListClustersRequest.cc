@@ -46,8 +46,9 @@ std::vector<std::string> ListClustersRequest::getStatusList()const
 void ListClustersRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int dep1 = 0; dep1!= statusList.size(); dep1++)
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
 		setCoreParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 bool ListClustersRequest::getIsDesc()const
@@ -157,7 +158,8 @@ std::vector<std::string> ListClustersRequest::getClusterTypeList()const
 void ListClustersRequest::setClusterTypeList(const std::vector<std::string>& clusterTypeList)
 {
 	clusterTypeList_ = clusterTypeList;
-	for(int dep1 = 0; dep1!= clusterTypeList.size(); dep1++)
+	for(int dep1 = 0; dep1!= clusterTypeList.size(); dep1++) {
 		setCoreParameter("ClusterTypeList."+ std::to_string(dep1), clusterTypeList.at(dep1));
+	}
 }
 

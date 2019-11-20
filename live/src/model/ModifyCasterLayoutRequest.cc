@@ -35,8 +35,9 @@ std::vector<std::string> ModifyCasterLayoutRequest::getBlendList()const
 void ModifyCasterLayoutRequest::setBlendList(const std::vector<std::string>& blendList)
 {
 	blendList_ = blendList;
-	for(int dep1 = 0; dep1!= blendList.size(); dep1++)
+	for(int dep1 = 0; dep1!= blendList.size(); dep1++) {
 		setCoreParameter("BlendList."+ std::to_string(dep1), blendList.at(dep1));
+	}
 }
 
 std::string ModifyCasterLayoutRequest::getLayoutId()const
@@ -104,8 +105,9 @@ void ModifyCasterLayoutRequest::setVideoLayer(const std::vector<VideoLayer>& vid
 		setCoreParameter(videoLayerObjStr + ".HeightNormalized", std::to_string(videoLayerObj.heightNormalized));
 		setCoreParameter(videoLayerObjStr + ".WidthNormalized", std::to_string(videoLayerObj.widthNormalized));
 		setCoreParameter(videoLayerObjStr + ".PositionRefer", videoLayerObj.positionRefer);
-		for(int dep2 = 0; dep2!= positionNormalized.size(); dep2++)
+		for(int dep2 = 0; dep2!= videoLayerObj.positionNormalized.size(); dep2++) {
 			setCoreParameter(videoLayerObjStr + ".PositionNormalized."+ std::to_string(dep2), std::to_string(videoLayerObj.positionNormalized.at(dep2)));
+		}
 		setCoreParameter(videoLayerObjStr + ".FixedDelayDuration", std::to_string(videoLayerObj.fixedDelayDuration));
 	}
 }
@@ -118,7 +120,8 @@ std::vector<std::string> ModifyCasterLayoutRequest::getMixList()const
 void ModifyCasterLayoutRequest::setMixList(const std::vector<std::string>& mixList)
 {
 	mixList_ = mixList;
-	for(int dep1 = 0; dep1!= mixList.size(); dep1++)
+	for(int dep1 = 0; dep1!= mixList.size(); dep1++) {
 		setCoreParameter("MixList."+ std::to_string(dep1), mixList.at(dep1));
+	}
 }
 

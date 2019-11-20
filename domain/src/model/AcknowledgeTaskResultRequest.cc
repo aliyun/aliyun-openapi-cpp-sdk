@@ -35,8 +35,9 @@ std::vector<std::string> AcknowledgeTaskResultRequest::getTaskDetailNo()const
 void AcknowledgeTaskResultRequest::setTaskDetailNo(const std::vector<std::string>& taskDetailNo)
 {
 	taskDetailNo_ = taskDetailNo;
-	for(int dep1 = 0; dep1!= taskDetailNo.size(); dep1++)
+	for(int dep1 = 0; dep1!= taskDetailNo.size(); dep1++) {
 		setCoreParameter("TaskDetailNo."+ std::to_string(dep1), taskDetailNo.at(dep1));
+	}
 }
 
 std::string AcknowledgeTaskResultRequest::getUserClientIp()const

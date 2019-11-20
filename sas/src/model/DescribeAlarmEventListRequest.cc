@@ -145,8 +145,9 @@ std::vector<std::string> DescribeAlarmEventListRequest::getOperateErrorCodeList(
 void DescribeAlarmEventListRequest::setOperateErrorCodeList(const std::vector<std::string>& operateErrorCodeList)
 {
 	operateErrorCodeList_ = operateErrorCodeList;
-	for(int dep1 = 0; dep1!= operateErrorCodeList.size(); dep1++)
+	for(int dep1 = 0; dep1!= operateErrorCodeList.size(); dep1++) {
 		setCoreParameter("OperateErrorCodeList."+ std::to_string(dep1), operateErrorCodeList.at(dep1));
+	}
 }
 
 std::string DescribeAlarmEventListRequest::getLevels()const

@@ -68,7 +68,8 @@ std::vector<std::string> DeleteProductTagsRequest::getProductTagKey()const
 void DeleteProductTagsRequest::setProductTagKey(const std::vector<std::string>& productTagKey)
 {
 	productTagKey_ = productTagKey;
-	for(int dep1 = 0; dep1!= productTagKey.size(); dep1++)
+	for(int dep1 = 0; dep1!= productTagKey.size(); dep1++) {
 		setCoreParameter("ProductTagKey."+ std::to_string(dep1), productTagKey.at(dep1));
+	}
 }
 

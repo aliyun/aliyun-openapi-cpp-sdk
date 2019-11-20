@@ -46,8 +46,9 @@ std::vector<std::string> TagResourcesRequest::getResourceId()const
 void TagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int dep1 = 0; dep1!= resourceId.size(); dep1++)
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
 		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
 }
 
 std::string TagResourcesRequest::getResourceOwnerAccount()const

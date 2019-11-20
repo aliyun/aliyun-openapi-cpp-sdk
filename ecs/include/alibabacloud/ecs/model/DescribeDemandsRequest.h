@@ -66,8 +66,12 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::vector<std::string> getDemandStatus()const;
 				void setDemandStatus(const std::vector<std::string>& demandStatus);
+				std::string getDemandId()const;
+				void setDemandId(const std::string& demandId);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::string getDemandType()const;
+				void setDemandType(const std::string& demandType);
 
             private:
 				long resourceOwnerId_;
@@ -83,7 +87,9 @@ namespace AlibabaCloud
 				std::string instanceTypeFamily_;
 				long ownerId_;
 				std::vector<std::string> demandStatus_;
+				std::string demandId_;
 				std::string zoneId_;
+				std::string demandType_;
 
 			};
 		}

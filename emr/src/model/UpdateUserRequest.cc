@@ -96,8 +96,9 @@ std::vector<long> UpdateUserRequest::getGroupIdList()const
 void UpdateUserRequest::setGroupIdList(const std::vector<long>& groupIdList)
 {
 	groupIdList_ = groupIdList;
-	for(int dep1 = 0; dep1!= groupIdList.size(); dep1++)
+	for(int dep1 = 0; dep1!= groupIdList.size(); dep1++) {
 		setCoreParameter("GroupIdList."+ std::to_string(dep1), std::to_string(groupIdList.at(dep1)));
+	}
 }
 
 std::string UpdateUserRequest::getRegionId()const
@@ -119,8 +120,9 @@ std::vector<long> UpdateUserRequest::getRoleIdList()const
 void UpdateUserRequest::setRoleIdList(const std::vector<long>& roleIdList)
 {
 	roleIdList_ = roleIdList;
-	for(int dep1 = 0; dep1!= roleIdList.size(); dep1++)
+	for(int dep1 = 0; dep1!= roleIdList.size(); dep1++) {
 		setCoreParameter("RoleIdList."+ std::to_string(dep1), std::to_string(roleIdList.at(dep1)));
+	}
 }
 
 std::string UpdateUserRequest::getAliyunUserId()const

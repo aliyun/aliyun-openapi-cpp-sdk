@@ -46,7 +46,8 @@ std::vector<std::string> DeleteMetricRulesRequest::getId()const
 void DeleteMetricRulesRequest::setId(const std::vector<std::string>& id)
 {
 	id_ = id;
-	for(int dep1 = 0; dep1!= id.size(); dep1++)
+	for(int dep1 = 0; dep1!= id.size(); dep1++) {
 		setCoreParameter("Id."+ std::to_string(dep1), id.at(dep1));
+	}
 }
 

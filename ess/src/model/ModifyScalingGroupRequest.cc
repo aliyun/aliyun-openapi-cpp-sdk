@@ -57,8 +57,9 @@ std::vector<std::string> ModifyScalingGroupRequest::getVSwitchIds()const
 void ModifyScalingGroupRequest::setVSwitchIds(const std::vector<std::string>& vSwitchIds)
 {
 	vSwitchIds_ = vSwitchIds;
-	for(int dep1 = 0; dep1!= vSwitchIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= vSwitchIds.size(); dep1++) {
 		setCoreParameter("VSwitchIds."+ std::to_string(dep1), vSwitchIds.at(dep1));
+	}
 }
 
 std::string ModifyScalingGroupRequest::getActiveScalingConfigurationId()const

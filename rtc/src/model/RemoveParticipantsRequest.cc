@@ -35,8 +35,9 @@ std::vector<std::string> RemoveParticipantsRequest::getParticipantIds()const
 void RemoveParticipantsRequest::setParticipantIds(const std::vector<std::string>& participantIds)
 {
 	participantIds_ = participantIds;
-	for(int dep1 = 0; dep1!= participantIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= participantIds.size(); dep1++) {
 		setCoreParameter("ParticipantIds."+ std::to_string(dep1), participantIds.at(dep1));
+	}
 }
 
 long RemoveParticipantsRequest::getOwnerId()const

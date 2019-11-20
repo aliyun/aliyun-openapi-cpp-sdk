@@ -90,7 +90,8 @@ std::vector<std::string> CreateNotificationConfigurationRequest::getNotification
 void CreateNotificationConfigurationRequest::setNotificationType(const std::vector<std::string>& notificationType)
 {
 	notificationType_ = notificationType;
-	for(int dep1 = 0; dep1!= notificationType.size(); dep1++)
+	for(int dep1 = 0; dep1!= notificationType.size(); dep1++) {
 		setCoreParameter("NotificationType."+ std::to_string(dep1), notificationType.at(dep1));
+	}
 }
 

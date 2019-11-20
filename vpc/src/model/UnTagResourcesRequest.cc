@@ -57,8 +57,9 @@ std::vector<std::string> UnTagResourcesRequest::getResourceId()const
 void UnTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int dep1 = 0; dep1!= resourceId.size(); dep1++)
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
 		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
 }
 
 std::string UnTagResourcesRequest::getResourceOwnerAccount()const
@@ -113,7 +114,8 @@ std::vector<std::string> UnTagResourcesRequest::getTagKey()const
 void UnTagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
-	for(int dep1 = 0; dep1!= tagKey.size(); dep1++)
+	for(int dep1 = 0; dep1!= tagKey.size(); dep1++) {
 		setCoreParameter("TagKey."+ std::to_string(dep1), tagKey.at(dep1));
+	}
 }
 

@@ -57,8 +57,9 @@ std::vector<std::string> ConfigAutoRenewRequest::getApList()const
 void ConfigAutoRenewRequest::setApList(const std::vector<std::string>& apList)
 {
 	apList_ = apList;
-	for(int dep1 = 0; dep1!= apList.size(); dep1++)
+	for(int dep1 = 0; dep1!= apList.size(); dep1++) {
 		setCoreParameter("ApList."+ std::to_string(dep1), apList.at(dep1));
+	}
 }
 
 std::string ConfigAutoRenewRequest::getAccessKeyId()const

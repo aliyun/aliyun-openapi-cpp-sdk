@@ -90,8 +90,9 @@ std::vector<std::string> QueryDevicePropertiesDataRequest::getIdentifier()const
 void QueryDevicePropertiesDataRequest::setIdentifier(const std::vector<std::string>& identifier)
 {
 	identifier_ = identifier;
-	for(int dep1 = 0; dep1!= identifier.size(); dep1++)
+	for(int dep1 = 0; dep1!= identifier.size(); dep1++) {
 		setCoreParameter("Identifier."+ std::to_string(dep1), identifier.at(dep1));
+	}
 }
 
 long QueryDevicePropertiesDataRequest::getEndTime()const

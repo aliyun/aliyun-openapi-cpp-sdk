@@ -81,6 +81,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateAutoSnapshotPolicyResult.h
 	include/alibabacloud/ecs/model/CreateCommandRequest.h
 	include/alibabacloud/ecs/model/CreateCommandResult.h
+	include/alibabacloud/ecs/model/CreateDemandRequest.h
+	include/alibabacloud/ecs/model/CreateDemandResult.h
 	include/alibabacloud/ecs/model/CreateDeploymentSetRequest.h
 	include/alibabacloud/ecs/model/CreateDeploymentSetResult.h
 	include/alibabacloud/ecs/model/CreateDiskRequest.h
@@ -137,6 +139,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteBandwidthPackageResult.h
 	include/alibabacloud/ecs/model/DeleteCommandRequest.h
 	include/alibabacloud/ecs/model/DeleteCommandResult.h
+	include/alibabacloud/ecs/model/DeleteDemandRequest.h
+	include/alibabacloud/ecs/model/DeleteDemandResult.h
 	include/alibabacloud/ecs/model/DeleteDeploymentSetRequest.h
 	include/alibabacloud/ecs/model/DeleteDeploymentSetResult.h
 	include/alibabacloud/ecs/model/DeleteDiskRequest.h
@@ -413,6 +417,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoReleaseTimeResult.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoRenewAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoRenewAttributeResult.h
+	include/alibabacloud/ecs/model/ModifyDemandRequest.h
+	include/alibabacloud/ecs/model/ModifyDemandResult.h
 	include/alibabacloud/ecs/model/ModifyDeploymentSetAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyDeploymentSetAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyDiskAttributeRequest.h
@@ -618,6 +624,8 @@ set(ecs_src
 	src/model/CreateAutoSnapshotPolicyResult.cc
 	src/model/CreateCommandRequest.cc
 	src/model/CreateCommandResult.cc
+	src/model/CreateDemandRequest.cc
+	src/model/CreateDemandResult.cc
 	src/model/CreateDeploymentSetRequest.cc
 	src/model/CreateDeploymentSetResult.cc
 	src/model/CreateDiskRequest.cc
@@ -674,6 +682,8 @@ set(ecs_src
 	src/model/DeleteBandwidthPackageResult.cc
 	src/model/DeleteCommandRequest.cc
 	src/model/DeleteCommandResult.cc
+	src/model/DeleteDemandRequest.cc
+	src/model/DeleteDemandResult.cc
 	src/model/DeleteDeploymentSetRequest.cc
 	src/model/DeleteDeploymentSetResult.cc
 	src/model/DeleteDiskRequest.cc
@@ -950,6 +960,8 @@ set(ecs_src
 	src/model/ModifyDedicatedHostAutoReleaseTimeResult.cc
 	src/model/ModifyDedicatedHostAutoRenewAttributeRequest.cc
 	src/model/ModifyDedicatedHostAutoRenewAttributeResult.cc
+	src/model/ModifyDemandRequest.cc
+	src/model/ModifyDemandResult.cc
 	src/model/ModifyDeploymentSetAttributeRequest.cc
 	src/model/ModifyDeploymentSetAttributeResult.cc
 	src/model/ModifyDiskAttributeRequest.cc

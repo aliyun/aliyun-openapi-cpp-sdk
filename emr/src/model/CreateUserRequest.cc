@@ -96,8 +96,9 @@ std::vector<long> CreateUserRequest::getGroupIdList()const
 void CreateUserRequest::setGroupIdList(const std::vector<long>& groupIdList)
 {
 	groupIdList_ = groupIdList;
-	for(int dep1 = 0; dep1!= groupIdList.size(); dep1++)
+	for(int dep1 = 0; dep1!= groupIdList.size(); dep1++) {
 		setCoreParameter("GroupIdList."+ std::to_string(dep1), std::to_string(groupIdList.at(dep1)));
+	}
 }
 
 std::string CreateUserRequest::getRegionId()const
@@ -119,8 +120,9 @@ std::vector<long> CreateUserRequest::getRoleIdList()const
 void CreateUserRequest::setRoleIdList(const std::vector<long>& roleIdList)
 {
 	roleIdList_ = roleIdList;
-	for(int dep1 = 0; dep1!= roleIdList.size(); dep1++)
+	for(int dep1 = 0; dep1!= roleIdList.size(); dep1++) {
 		setCoreParameter("RoleIdList."+ std::to_string(dep1), std::to_string(roleIdList.at(dep1)));
+	}
 }
 
 std::string CreateUserRequest::getAliyunUserId()const

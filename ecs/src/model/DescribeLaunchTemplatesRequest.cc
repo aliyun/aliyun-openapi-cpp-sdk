@@ -35,8 +35,9 @@ std::vector<std::string> DescribeLaunchTemplatesRequest::getLaunchTemplateName()
 void DescribeLaunchTemplatesRequest::setLaunchTemplateName(const std::vector<std::string>& launchTemplateName)
 {
 	launchTemplateName_ = launchTemplateName;
-	for(int dep1 = 0; dep1!= launchTemplateName.size(); dep1++)
+	for(int dep1 = 0; dep1!= launchTemplateName.size(); dep1++) {
 		setCoreParameter("LaunchTemplateName."+ std::to_string(dep1), launchTemplateName.at(dep1));
+	}
 }
 
 long DescribeLaunchTemplatesRequest::getResourceOwnerId()const
@@ -107,8 +108,9 @@ std::vector<std::string> DescribeLaunchTemplatesRequest::getLaunchTemplateId()co
 void DescribeLaunchTemplatesRequest::setLaunchTemplateId(const std::vector<std::string>& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	for(int dep1 = 0; dep1!= launchTemplateId.size(); dep1++)
+	for(int dep1 = 0; dep1!= launchTemplateId.size(); dep1++) {
 		setCoreParameter("LaunchTemplateId."+ std::to_string(dep1), launchTemplateId.at(dep1));
+	}
 }
 
 std::string DescribeLaunchTemplatesRequest::getResourceOwnerAccount()const

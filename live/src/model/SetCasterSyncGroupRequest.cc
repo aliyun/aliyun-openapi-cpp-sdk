@@ -62,8 +62,9 @@ void SetCasterSyncGroupRequest::setSyncGroup(const std::vector<SyncGroup>& syncG
 		std::string syncGroupObjStr = "SyncGroup." + std::to_string(dep1);
 		setCoreParameter(syncGroupObjStr + ".Mode", std::to_string(syncGroupObj.mode));
 		setCoreParameter(syncGroupObjStr + ".HostResourceId", syncGroupObj.hostResourceId);
-		for(int dep2 = 0; dep2!= resourceIds.size(); dep2++)
+		for(int dep2 = 0; dep2!= syncGroupObj.resourceIds.size(); dep2++) {
 			setCoreParameter(syncGroupObjStr + ".ResourceIds."+ std::to_string(dep2), syncGroupObj.resourceIds.at(dep2));
+		}
 	}
 }
 

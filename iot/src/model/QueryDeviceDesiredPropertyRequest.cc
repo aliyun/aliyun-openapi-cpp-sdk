@@ -35,8 +35,9 @@ std::vector<std::string> QueryDeviceDesiredPropertyRequest::getIdentifier()const
 void QueryDeviceDesiredPropertyRequest::setIdentifier(const std::vector<std::string>& identifier)
 {
 	identifier_ = identifier;
-	for(int dep1 = 0; dep1!= identifier.size(); dep1++)
+	for(int dep1 = 0; dep1!= identifier.size(); dep1++) {
 		setCoreParameter("Identifier."+ std::to_string(dep1), identifier.at(dep1));
+	}
 }
 
 std::string QueryDeviceDesiredPropertyRequest::getProductKey()const

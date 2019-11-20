@@ -35,8 +35,9 @@ std::vector<long> TaskConfigEnableRequest::getIdList()const
 void TaskConfigEnableRequest::setIdList(const std::vector<long>& idList)
 {
 	idList_ = idList;
-	for(int dep1 = 0; dep1!= idList.size(); dep1++)
+	for(int dep1 = 0; dep1!= idList.size(); dep1++) {
 		setCoreParameter("IdList."+ std::to_string(dep1), std::to_string(idList.at(dep1)));
+	}
 }
 
 bool TaskConfigEnableRequest::getEnabled()const

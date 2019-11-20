@@ -79,8 +79,9 @@ std::vector<std::string> DescribeAutoProvisioningGroupsRequest::getAutoProvision
 void DescribeAutoProvisioningGroupsRequest::setAutoProvisioningGroupStatus(const std::vector<std::string>& autoProvisioningGroupStatus)
 {
 	autoProvisioningGroupStatus_ = autoProvisioningGroupStatus;
-	for(int dep1 = 0; dep1!= autoProvisioningGroupStatus.size(); dep1++)
+	for(int dep1 = 0; dep1!= autoProvisioningGroupStatus.size(); dep1++) {
 		setCoreParameter("AutoProvisioningGroupStatus."+ std::to_string(dep1), autoProvisioningGroupStatus.at(dep1));
+	}
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getResourceOwnerAccount()const
@@ -124,8 +125,9 @@ std::vector<std::string> DescribeAutoProvisioningGroupsRequest::getAutoProvision
 void DescribeAutoProvisioningGroupsRequest::setAutoProvisioningGroupId(const std::vector<std::string>& autoProvisioningGroupId)
 {
 	autoProvisioningGroupId_ = autoProvisioningGroupId;
-	for(int dep1 = 0; dep1!= autoProvisioningGroupId.size(); dep1++)
+	for(int dep1 = 0; dep1!= autoProvisioningGroupId.size(); dep1++) {
 		setCoreParameter("AutoProvisioningGroupId."+ std::to_string(dep1), autoProvisioningGroupId.at(dep1));
+	}
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getAutoProvisioningGroupName()const

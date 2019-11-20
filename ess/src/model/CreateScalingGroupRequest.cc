@@ -35,8 +35,9 @@ std::vector<std::string> CreateScalingGroupRequest::getVSwitchIds()const
 void CreateScalingGroupRequest::setVSwitchIds(const std::vector<std::string>& vSwitchIds)
 {
 	vSwitchIds_ = vSwitchIds;
-	for(int dep1 = 0; dep1!= vSwitchIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= vSwitchIds.size(); dep1++) {
 		setCoreParameter("VSwitchIds."+ std::to_string(dep1), vSwitchIds.at(dep1));
+	}
 }
 
 bool CreateScalingGroupRequest::getSpotInstanceRemedy()const

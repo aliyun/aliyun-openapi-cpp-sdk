@@ -194,8 +194,9 @@ std::vector<std::string> DescribeNetworkInterfacesRequest::getPrivateIpAddress()
 void DescribeNetworkInterfacesRequest::setPrivateIpAddress(const std::vector<std::string>& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	for(int dep1 = 0; dep1!= privateIpAddress.size(); dep1++)
+	for(int dep1 = 0; dep1!= privateIpAddress.size(); dep1++) {
 		setCoreParameter("PrivateIpAddress."+ std::to_string(dep1), privateIpAddress.at(dep1));
+	}
 }
 
 std::string DescribeNetworkInterfacesRequest::getInstanceId()const
@@ -239,7 +240,8 @@ std::vector<std::string> DescribeNetworkInterfacesRequest::getNetworkInterfaceId
 void DescribeNetworkInterfacesRequest::setNetworkInterfaceId(const std::vector<std::string>& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	for(int dep1 = 0; dep1!= networkInterfaceId.size(); dep1++)
+	for(int dep1 = 0; dep1!= networkInterfaceId.size(); dep1++) {
 		setCoreParameter("NetworkInterfaceId."+ std::to_string(dep1), networkInterfaceId.at(dep1));
+	}
 }
 

@@ -90,7 +90,8 @@ std::vector<std::string> InvokeThingsServiceRequest::getDeviceName()const
 void InvokeThingsServiceRequest::setDeviceName(const std::vector<std::string>& deviceName)
 {
 	deviceName_ = deviceName;
-	for(int dep1 = 0; dep1!= deviceName.size(); dep1++)
+	for(int dep1 = 0; dep1!= deviceName.size(); dep1++) {
 		setCoreParameter("DeviceName."+ std::to_string(dep1), deviceName.at(dep1));
+	}
 }
 

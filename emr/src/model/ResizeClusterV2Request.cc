@@ -94,8 +94,9 @@ void ResizeClusterV2Request::setHostComponentInfo(const std::vector<HostComponen
 		auto hostComponentInfoObj = hostComponentInfo.at(dep1);
 		std::string hostComponentInfoObjStr = "HostComponentInfo." + std::to_string(dep1);
 		setCoreParameter(hostComponentInfoObjStr + ".HostName", hostComponentInfoObj.hostName);
-		for(int dep2 = 0; dep2!= componentNameList.size(); dep2++)
+		for(int dep2 = 0; dep2!= hostComponentInfoObj.componentNameList.size(); dep2++) {
 			setCoreParameter(hostComponentInfoObjStr + ".ComponentNameList."+ std::to_string(dep2), hostComponentInfoObj.componentNameList.at(dep2));
+		}
 		setCoreParameter(hostComponentInfoObjStr + ".ServiceName", hostComponentInfoObj.serviceName);
 	}
 }

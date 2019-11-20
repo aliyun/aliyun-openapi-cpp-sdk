@@ -35,8 +35,9 @@ std::vector<std::string> SaveSingleTaskForCreatingDnsHostRequest::getIp()const
 void SaveSingleTaskForCreatingDnsHostRequest::setIp(const std::vector<std::string>& ip)
 {
 	ip_ = ip;
-	for(int dep1 = 0; dep1!= ip.size(); dep1++)
+	for(int dep1 = 0; dep1!= ip.size(); dep1++) {
 		setCoreParameter("Ip."+ std::to_string(dep1), ip.at(dep1));
+	}
 }
 
 std::string SaveSingleTaskForCreatingDnsHostRequest::getInstanceId()const

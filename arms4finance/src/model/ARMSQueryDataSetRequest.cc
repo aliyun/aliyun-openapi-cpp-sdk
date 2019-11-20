@@ -68,8 +68,9 @@ std::vector<std::string> ARMSQueryDataSetRequest::getMeasures()const
 void ARMSQueryDataSetRequest::setMeasures(const std::vector<std::string>& measures)
 {
 	measures_ = measures;
-	for(int dep1 = 0; dep1!= measures.size(); dep1++)
+	for(int dep1 = 0; dep1!= measures.size(); dep1++) {
 		setCoreParameter("Measures."+ std::to_string(dep1), measures.at(dep1));
+	}
 }
 
 int ARMSQueryDataSetRequest::getIntervalInSec()const

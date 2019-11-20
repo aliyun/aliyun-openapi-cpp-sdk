@@ -90,8 +90,9 @@ std::vector<std::string> ReportInstancesStatusRequest::getDiskId()const
 void ReportInstancesStatusRequest::setDiskId(const std::vector<std::string>& diskId)
 {
 	diskId_ = diskId;
-	for(int dep1 = 0; dep1!= diskId.size(); dep1++)
+	for(int dep1 = 0; dep1!= diskId.size(); dep1++) {
 		setCoreParameter("DiskId."+ std::to_string(dep1), diskId.at(dep1));
+	}
 }
 
 std::string ReportInstancesStatusRequest::getResourceOwnerAccount()const
@@ -146,8 +147,9 @@ std::vector<std::string> ReportInstancesStatusRequest::getInstanceId()const
 void ReportInstancesStatusRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int dep1 = 0; dep1!= instanceId.size(); dep1++)
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
 		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 
 std::vector<std::string> ReportInstancesStatusRequest::getDevice()const
@@ -158,7 +160,8 @@ std::vector<std::string> ReportInstancesStatusRequest::getDevice()const
 void ReportInstancesStatusRequest::setDevice(const std::vector<std::string>& device)
 {
 	device_ = device;
-	for(int dep1 = 0; dep1!= device.size(); dep1++)
+	for(int dep1 = 0; dep1!= device.size(); dep1++) {
 		setCoreParameter("Device."+ std::to_string(dep1), device.at(dep1));
+	}
 }
 

@@ -57,8 +57,9 @@ std::vector<long> DeleteLaunchTemplateVersionRequest::getDeleteVersion()const
 void DeleteLaunchTemplateVersionRequest::setDeleteVersion(const std::vector<long>& deleteVersion)
 {
 	deleteVersion_ = deleteVersion;
-	for(int dep1 = 0; dep1!= deleteVersion.size(); dep1++)
+	for(int dep1 = 0; dep1!= deleteVersion.size(); dep1++) {
 		setCoreParameter("DeleteVersion."+ std::to_string(dep1), std::to_string(deleteVersion.at(dep1)));
+	}
 }
 
 std::string DeleteLaunchTemplateVersionRequest::getRegionId()const

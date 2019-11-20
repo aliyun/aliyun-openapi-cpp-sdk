@@ -46,8 +46,9 @@ std::vector<std::string> DeleteDBNodesRequest::getDBNodeId()const
 void DeleteDBNodesRequest::setDBNodeId(const std::vector<std::string>& dBNodeId)
 {
 	dBNodeId_ = dBNodeId;
-	for(int dep1 = 0; dep1!= dBNodeId.size(); dep1++)
+	for(int dep1 = 0; dep1!= dBNodeId.size(); dep1++) {
 		setCoreParameter("DBNodeId."+ std::to_string(dep1), dBNodeId.at(dep1));
+	}
 }
 
 std::string DeleteDBNodesRequest::getClientToken()const

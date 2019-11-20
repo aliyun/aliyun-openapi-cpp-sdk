@@ -84,8 +84,9 @@ std::vector<std::string> ListTagResourcesRequest::getResourceId()const
 void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int dep1 = 0; dep1!= resourceId.size(); dep1++)
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
 		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
 }
 
 std::string ListTagResourcesRequest::getResourceOwnerAccount()const
@@ -133,8 +134,9 @@ void ListTagResourcesRequest::setTagFilter(const std::vector<TagFilter>& tagFilt
 		auto tagFilterObj = tagFilter.at(dep1);
 		std::string tagFilterObjStr = "TagFilter." + std::to_string(dep1);
 		setCoreParameter(tagFilterObjStr + ".TagKey", tagFilterObj.tagKey);
-		for(int dep2 = 0; dep2!= tagValues.size(); dep2++)
+		for(int dep2 = 0; dep2!= tagFilterObj.tagValues.size(); dep2++) {
 			setCoreParameter(tagFilterObjStr + ".TagValues."+ std::to_string(dep2), tagFilterObj.tagValues.at(dep2));
+		}
 	}
 }
 

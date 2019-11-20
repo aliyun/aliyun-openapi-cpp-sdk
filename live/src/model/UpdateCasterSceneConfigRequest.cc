@@ -46,8 +46,9 @@ std::vector<std::string> UpdateCasterSceneConfigRequest::getComponentId()const
 void UpdateCasterSceneConfigRequest::setComponentId(const std::vector<std::string>& componentId)
 {
 	componentId_ = componentId;
-	for(int dep1 = 0; dep1!= componentId.size(); dep1++)
+	for(int dep1 = 0; dep1!= componentId.size(); dep1++) {
 		setCoreParameter("ComponentId."+ std::to_string(dep1), componentId.at(dep1));
+	}
 }
 
 std::string UpdateCasterSceneConfigRequest::getCasterId()const

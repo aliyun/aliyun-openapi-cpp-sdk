@@ -206,8 +206,9 @@ std::vector<std::string> ModifyExecutionPlanRequest::getOptionSoftWareList()cons
 void ModifyExecutionPlanRequest::setOptionSoftWareList(const std::vector<std::string>& optionSoftWareList)
 {
 	optionSoftWareList_ = optionSoftWareList;
-	for(int dep1 = 0; dep1!= optionSoftWareList.size(); dep1++)
+	for(int dep1 = 0; dep1!= optionSoftWareList.size(); dep1++) {
 		setCoreParameter("OptionSoftWareList."+ std::to_string(dep1), optionSoftWareList.at(dep1));
+	}
 }
 
 std::string ModifyExecutionPlanRequest::getNetType()const
@@ -327,8 +328,9 @@ std::vector<std::string> ModifyExecutionPlanRequest::getJobIdList()const
 void ModifyExecutionPlanRequest::setJobIdList(const std::vector<std::string>& jobIdList)
 {
 	jobIdList_ = jobIdList;
-	for(int dep1 = 0; dep1!= jobIdList.size(); dep1++)
+	for(int dep1 = 0; dep1!= jobIdList.size(); dep1++) {
 		setCoreParameter("JobIdList."+ std::to_string(dep1), jobIdList.at(dep1));
+	}
 }
 
 std::string ModifyExecutionPlanRequest::getAccessKeyId()const

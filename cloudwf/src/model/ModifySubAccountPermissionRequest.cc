@@ -35,8 +35,9 @@ std::vector<long> ModifySubAccountPermissionRequest::getShopGroupIds()const
 void ModifySubAccountPermissionRequest::setShopGroupIds(const std::vector<long>& shopGroupIds)
 {
 	shopGroupIds_ = shopGroupIds;
-	for(int dep1 = 0; dep1!= shopGroupIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= shopGroupIds.size(); dep1++) {
 		setCoreParameter("ShopGroupIds."+ std::to_string(dep1), std::to_string(shopGroupIds.at(dep1)));
+	}
 }
 
 std::string ModifySubAccountPermissionRequest::getAccessKeyId()const
@@ -58,8 +59,9 @@ std::vector<long> ModifySubAccountPermissionRequest::getShopIds()const
 void ModifySubAccountPermissionRequest::setShopIds(const std::vector<long>& shopIds)
 {
 	shopIds_ = shopIds;
-	for(int dep1 = 0; dep1!= shopIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= shopIds.size(); dep1++) {
 		setCoreParameter("ShopIds."+ std::to_string(dep1), std::to_string(shopIds.at(dep1)));
+	}
 }
 
 std::string ModifySubAccountPermissionRequest::getPagePermission()const
@@ -92,7 +94,8 @@ std::vector<long> ModifySubAccountPermissionRequest::getBusinessIds()const
 void ModifySubAccountPermissionRequest::setBusinessIds(const std::vector<long>& businessIds)
 {
 	businessIds_ = businessIds;
-	for(int dep1 = 0; dep1!= businessIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= businessIds.size(); dep1++) {
 		setCoreParameter("BusinessIds."+ std::to_string(dep1), std::to_string(businessIds.at(dep1)));
+	}
 }
 

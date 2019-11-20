@@ -271,8 +271,9 @@ std::vector<std::string> CreateScalingConfigurationRequest::getInstanceTypes()co
 void CreateScalingConfigurationRequest::setInstanceTypes(const std::vector<std::string>& instanceTypes)
 {
 	instanceTypes_ = instanceTypes;
-	for(int dep1 = 0; dep1!= instanceTypes.size(); dep1++)
+	for(int dep1 = 0; dep1!= instanceTypes.size(); dep1++) {
 		setCoreParameter("InstanceTypes."+ std::to_string(dep1), instanceTypes.at(dep1));
+	}
 }
 
 std::string CreateScalingConfigurationRequest::getIoOptimized()const
@@ -437,8 +438,9 @@ std::vector<std::string> CreateScalingConfigurationRequest::getSecurityGroupIds(
 void CreateScalingConfigurationRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
 {
 	securityGroupIds_ = securityGroupIds;
-	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++) {
 		setCoreParameter("SecurityGroupIds."+ std::to_string(dep1), securityGroupIds.at(dep1));
+	}
 }
 
 std::vector<CreateScalingConfigurationRequest::DataDisk> CreateScalingConfigurationRequest::getDataDisk()const

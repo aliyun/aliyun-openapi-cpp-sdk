@@ -57,8 +57,9 @@ std::vector<std::string> ListAgentEventsRequest::getRamId()const
 void ListAgentEventsRequest::setRamId(const std::vector<std::string>& ramId)
 {
 	ramId_ = ramId;
-	for(int dep1 = 0; dep1!= ramId.size(); dep1++)
+	for(int dep1 = 0; dep1!= ramId.size(); dep1++) {
 		setCoreParameter("RamId."+ std::to_string(dep1), ramId.at(dep1));
+	}
 }
 
 std::string ListAgentEventsRequest::getAccessKeyId()const
@@ -91,7 +92,8 @@ std::vector<std::string> ListAgentEventsRequest::getEvent()const
 void ListAgentEventsRequest::setEvent(const std::vector<std::string>& event)
 {
 	event_ = event;
-	for(int dep1 = 0; dep1!= event.size(); dep1++)
+	for(int dep1 = 0; dep1!= event.size(); dep1++) {
 		setCoreParameter("Event."+ std::to_string(dep1), event.at(dep1));
+	}
 }
 

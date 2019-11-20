@@ -41,8 +41,9 @@ void AddCasterProgramRequest::setEpisode(const std::vector<Episode>& episode)
 		setCoreParameter(episodeObjStr + ".EpisodeType", episodeObj.episodeType);
 		setCoreParameter(episodeObjStr + ".EpisodeName", episodeObj.episodeName);
 		setCoreParameter(episodeObjStr + ".ResourceId", episodeObj.resourceId);
-		for(int dep2 = 0; dep2!= componentId.size(); dep2++)
+		for(int dep2 = 0; dep2!= episodeObj.componentId.size(); dep2++) {
 			setCoreParameter(episodeObjStr + ".ComponentId."+ std::to_string(dep2), episodeObj.componentId.at(dep2));
+		}
 		setCoreParameter(episodeObjStr + ".StartTime", episodeObj.startTime);
 		setCoreParameter(episodeObjStr + ".EndTime", episodeObj.endTime);
 		setCoreParameter(episodeObjStr + ".SwitchType", episodeObj.switchType);

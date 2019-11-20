@@ -85,8 +85,9 @@ std::vector<std::string> UpdateCasterSceneAudioRequest::getMixList()const
 void UpdateCasterSceneAudioRequest::setMixList(const std::vector<std::string>& mixList)
 {
 	mixList_ = mixList;
-	for(int dep1 = 0; dep1!= mixList.size(); dep1++)
+	for(int dep1 = 0; dep1!= mixList.size(); dep1++) {
 		setCoreParameter("MixList."+ std::to_string(dep1), mixList.at(dep1));
+	}
 }
 
 int UpdateCasterSceneAudioRequest::getFollowEnable()const

@@ -68,8 +68,9 @@ std::vector<std::string> AttachLoadBalancersRequest::getLoadBalancer()const
 void AttachLoadBalancersRequest::setLoadBalancer(const std::vector<std::string>& loadBalancer)
 {
 	loadBalancer_ = loadBalancer;
-	for(int dep1 = 0; dep1!= loadBalancer.size(); dep1++)
+	for(int dep1 = 0; dep1!= loadBalancer.size(); dep1++) {
 		setCoreParameter("LoadBalancer."+ std::to_string(dep1), loadBalancer.at(dep1));
+	}
 }
 
 std::string AttachLoadBalancersRequest::getResourceOwnerAccount()const

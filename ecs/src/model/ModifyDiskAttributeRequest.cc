@@ -79,8 +79,9 @@ std::vector<std::string> ModifyDiskAttributeRequest::getDiskIds()const
 void ModifyDiskAttributeRequest::setDiskIds(const std::vector<std::string>& diskIds)
 {
 	diskIds_ = diskIds;
-	for(int dep1 = 0; dep1!= diskIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= diskIds.size(); dep1++) {
 		setCoreParameter("DiskIds."+ std::to_string(dep1), diskIds.at(dep1));
+	}
 }
 
 std::string ModifyDiskAttributeRequest::getDiskId()const

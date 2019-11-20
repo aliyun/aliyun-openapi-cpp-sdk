@@ -84,8 +84,9 @@ std::vector<std::string> QueryMetricRequest::getMeasures()const
 void QueryMetricRequest::setMeasures(const std::vector<std::string>& measures)
 {
 	measures_ = measures;
-	for(int dep1 = 0; dep1!= measures.size(); dep1++)
+	for(int dep1 = 0; dep1!= measures.size(); dep1++) {
 		setCoreParameter("Measures."+ std::to_string(dep1), measures.at(dep1));
+	}
 }
 
 int QueryMetricRequest::getIntervalInSec()const
@@ -129,8 +130,9 @@ std::vector<std::string> QueryMetricRequest::getDimensions()const
 void QueryMetricRequest::setDimensions(const std::vector<std::string>& dimensions)
 {
 	dimensions_ = dimensions;
-	for(int dep1 = 0; dep1!= dimensions.size(); dep1++)
+	for(int dep1 = 0; dep1!= dimensions.size(); dep1++) {
 		setCoreParameter("Dimensions."+ std::to_string(dep1), dimensions.at(dep1));
+	}
 }
 
 std::string QueryMetricRequest::getOrder()const

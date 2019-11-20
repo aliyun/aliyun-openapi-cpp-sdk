@@ -167,8 +167,9 @@ std::vector<long> DescribeLaunchTemplateVersionsRequest::getLaunchTemplateVersio
 void DescribeLaunchTemplateVersionsRequest::setLaunchTemplateVersion(const std::vector<long>& launchTemplateVersion)
 {
 	launchTemplateVersion_ = launchTemplateVersion;
-	for(int dep1 = 0; dep1!= launchTemplateVersion.size(); dep1++)
+	for(int dep1 = 0; dep1!= launchTemplateVersion.size(); dep1++) {
 		setCoreParameter("LaunchTemplateVersion."+ std::to_string(dep1), std::to_string(launchTemplateVersion.at(dep1)));
+	}
 }
 
 bool DescribeLaunchTemplateVersionsRequest::getDetailFlag()const

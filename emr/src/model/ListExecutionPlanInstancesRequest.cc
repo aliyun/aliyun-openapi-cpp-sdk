@@ -57,8 +57,9 @@ std::vector<std::string> ListExecutionPlanInstancesRequest::getExecutionPlanIdLi
 void ListExecutionPlanInstancesRequest::setExecutionPlanIdList(const std::vector<std::string>& executionPlanIdList)
 {
 	executionPlanIdList_ = executionPlanIdList;
-	for(int dep1 = 0; dep1!= executionPlanIdList.size(); dep1++)
+	for(int dep1 = 0; dep1!= executionPlanIdList.size(); dep1++) {
 		setCoreParameter("ExecutionPlanIdList."+ std::to_string(dep1), executionPlanIdList.at(dep1));
+	}
 }
 
 std::vector<std::string> ListExecutionPlanInstancesRequest::getStatusList()const
@@ -69,8 +70,9 @@ std::vector<std::string> ListExecutionPlanInstancesRequest::getStatusList()const
 void ListExecutionPlanInstancesRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int dep1 = 0; dep1!= statusList.size(); dep1++)
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
 		setCoreParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 bool ListExecutionPlanInstancesRequest::getIsDesc()const

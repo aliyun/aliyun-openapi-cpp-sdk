@@ -79,8 +79,9 @@ std::vector<std::string> WhereInDimQueryRequest::getMeasures()const
 void WhereInDimQueryRequest::setMeasures(const std::vector<std::string>& measures)
 {
 	measures_ = measures;
-	for(int dep1 = 0; dep1!= measures.size(); dep1++)
+	for(int dep1 = 0; dep1!= measures.size(); dep1++) {
 		setCoreParameter("Measures."+ std::to_string(dep1), measures.at(dep1));
+	}
 }
 
 int WhereInDimQueryRequest::getIntervalInSec()const
@@ -124,8 +125,9 @@ std::vector<std::string> WhereInDimQueryRequest::getWhereInValues()const
 void WhereInDimQueryRequest::setWhereInValues(const std::vector<std::string>& whereInValues)
 {
 	whereInValues_ = whereInValues;
-	for(int dep1 = 0; dep1!= whereInValues.size(); dep1++)
+	for(int dep1 = 0; dep1!= whereInValues.size(); dep1++) {
 		setCoreParameter("WhereInValues."+ std::to_string(dep1), whereInValues.at(dep1));
+	}
 }
 
 std::vector<WhereInDimQueryRequest::Dimensions> WhereInDimQueryRequest::getDimensions()const

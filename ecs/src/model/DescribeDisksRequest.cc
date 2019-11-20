@@ -205,8 +205,9 @@ std::vector<std::string> DescribeDisksRequest::getAdditionalAttributes()const
 void DescribeDisksRequest::setAdditionalAttributes(const std::vector<std::string>& additionalAttributes)
 {
 	additionalAttributes_ = additionalAttributes;
-	for(int dep1 = 0; dep1!= additionalAttributes.size(); dep1++)
+	for(int dep1 = 0; dep1!= additionalAttributes.size(); dep1++) {
 		setCoreParameter("AdditionalAttributes."+ std::to_string(dep1), additionalAttributes.at(dep1));
+	}
 }
 
 std::string DescribeDisksRequest::getInstanceId()const

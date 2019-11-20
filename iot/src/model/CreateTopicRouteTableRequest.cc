@@ -35,8 +35,9 @@ std::vector<std::string> CreateTopicRouteTableRequest::getDstTopic()const
 void CreateTopicRouteTableRequest::setDstTopic(const std::vector<std::string>& dstTopic)
 {
 	dstTopic_ = dstTopic;
-	for(int dep1 = 0; dep1!= dstTopic.size(); dep1++)
+	for(int dep1 = 0; dep1!= dstTopic.size(); dep1++) {
 		setCoreParameter("DstTopic."+ std::to_string(dep1), dstTopic.at(dep1));
+	}
 }
 
 std::string CreateTopicRouteTableRequest::getAccessKeyId()const

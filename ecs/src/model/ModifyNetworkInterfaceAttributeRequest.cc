@@ -46,8 +46,9 @@ std::vector<std::string> ModifyNetworkInterfaceAttributeRequest::getSecurityGrou
 void ModifyNetworkInterfaceAttributeRequest::setSecurityGroupId(const std::vector<std::string>& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	for(int dep1 = 0; dep1!= securityGroupId.size(); dep1++)
+	for(int dep1 = 0; dep1!= securityGroupId.size(); dep1++) {
 		setCoreParameter("SecurityGroupId."+ std::to_string(dep1), securityGroupId.at(dep1));
+	}
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getDescription()const

@@ -123,7 +123,8 @@ std::vector<long> SaveProbeDataSubscriberRequest::getResourceIds()const
 void SaveProbeDataSubscriberRequest::setResourceIds(const std::vector<long>& resourceIds)
 {
 	resourceIds_ = resourceIds;
-	for(int dep1 = 0; dep1!= resourceIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= resourceIds.size(); dep1++) {
 		setCoreParameter("ResourceIds."+ std::to_string(dep1), std::to_string(resourceIds.at(dep1)));
+	}
 }
 

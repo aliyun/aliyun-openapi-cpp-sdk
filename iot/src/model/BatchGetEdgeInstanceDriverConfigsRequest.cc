@@ -35,8 +35,9 @@ std::vector<std::string> BatchGetEdgeInstanceDriverConfigsRequest::getDriverIds(
 void BatchGetEdgeInstanceDriverConfigsRequest::setDriverIds(const std::vector<std::string>& driverIds)
 {
 	driverIds_ = driverIds;
-	for(int dep1 = 0; dep1!= driverIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= driverIds.size(); dep1++) {
 		setCoreParameter("DriverIds."+ std::to_string(dep1), driverIds.at(dep1));
+	}
 }
 
 std::string BatchGetEdgeInstanceDriverConfigsRequest::getAccessKeyId()const

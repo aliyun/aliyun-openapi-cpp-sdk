@@ -101,8 +101,9 @@ std::vector<std::string> ModifyClusterServiceConfigRequest::getGatewayClusterIdL
 void ModifyClusterServiceConfigRequest::setGatewayClusterIdList(const std::vector<std::string>& gatewayClusterIdList)
 {
 	gatewayClusterIdList_ = gatewayClusterIdList;
-	for(int dep1 = 0; dep1!= gatewayClusterIdList.size(); dep1++)
+	for(int dep1 = 0; dep1!= gatewayClusterIdList.size(); dep1++) {
 		setCoreParameter("GatewayClusterIdList."+ std::to_string(dep1), gatewayClusterIdList.at(dep1));
+	}
 }
 
 std::string ModifyClusterServiceConfigRequest::getConfigParams()const

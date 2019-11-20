@@ -35,7 +35,8 @@ std::vector<std::string> SubmitCutoutTaskRequest::getPictureUrl()const
 void SubmitCutoutTaskRequest::setPictureUrl(const std::vector<std::string>& pictureUrl)
 {
 	pictureUrl_ = pictureUrl;
-	for(int dep1 = 0; dep1!= pictureUrl.size(); dep1++)
+	for(int dep1 = 0; dep1!= pictureUrl.size(); dep1++) {
 		setCoreParameter("PictureUrl."+ std::to_string(dep1), pictureUrl.at(dep1));
+	}
 }
 

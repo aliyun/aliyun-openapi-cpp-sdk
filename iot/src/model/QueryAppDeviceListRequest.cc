@@ -62,8 +62,9 @@ std::vector<std::string> QueryAppDeviceListRequest::getProductKeyList()const
 void QueryAppDeviceListRequest::setProductKeyList(const std::vector<std::string>& productKeyList)
 {
 	productKeyList_ = productKeyList;
-	for(int dep1 = 0; dep1!= productKeyList.size(); dep1++)
+	for(int dep1 = 0; dep1!= productKeyList.size(); dep1++) {
 		setCoreParameter("ProductKeyList."+ std::to_string(dep1), productKeyList.at(dep1));
+	}
 }
 
 std::vector<std::string> QueryAppDeviceListRequest::getCategoryKeyList()const
@@ -74,8 +75,9 @@ std::vector<std::string> QueryAppDeviceListRequest::getCategoryKeyList()const
 void QueryAppDeviceListRequest::setCategoryKeyList(const std::vector<std::string>& categoryKeyList)
 {
 	categoryKeyList_ = categoryKeyList;
-	for(int dep1 = 0; dep1!= categoryKeyList.size(); dep1++)
+	for(int dep1 = 0; dep1!= categoryKeyList.size(); dep1++) {
 		setCoreParameter("CategoryKeyList."+ std::to_string(dep1), categoryKeyList.at(dep1));
+	}
 }
 
 std::string QueryAppDeviceListRequest::getIotInstanceId()const

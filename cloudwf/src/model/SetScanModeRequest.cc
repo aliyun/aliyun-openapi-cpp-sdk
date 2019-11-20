@@ -57,7 +57,8 @@ std::vector<std::string> SetScanModeRequest::getMacList()const
 void SetScanModeRequest::setMacList(const std::vector<std::string>& macList)
 {
 	macList_ = macList;
-	for(int dep1 = 0; dep1!= macList.size(); dep1++)
+	for(int dep1 = 0; dep1!= macList.size(); dep1++) {
 		setCoreParameter("MacList."+ std::to_string(dep1), macList.at(dep1));
+	}
 }
 

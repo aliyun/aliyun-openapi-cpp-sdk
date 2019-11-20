@@ -35,8 +35,9 @@ std::vector<std::string> DeleteMetricRuleTargetsRequest::getTargetIds()const
 void DeleteMetricRuleTargetsRequest::setTargetIds(const std::vector<std::string>& targetIds)
 {
 	targetIds_ = targetIds;
-	for(int dep1 = 0; dep1!= targetIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= targetIds.size(); dep1++) {
 		setCoreParameter("TargetIds."+ std::to_string(dep1), targetIds.at(dep1));
+	}
 }
 
 std::string DeleteMetricRuleTargetsRequest::getCmsUserInner()const

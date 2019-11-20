@@ -101,8 +101,9 @@ std::vector<std::string> DescribeRiskCheckResultRequest::getItemIds()const
 void DescribeRiskCheckResultRequest::setItemIds(const std::vector<std::string>& itemIds)
 {
 	itemIds_ = itemIds;
-	for(int dep1 = 0; dep1!= itemIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= itemIds.size(); dep1++) {
 		setCoreParameter("ItemIds."+ std::to_string(dep1), itemIds.at(dep1));
+	}
 }
 
 int DescribeRiskCheckResultRequest::getCurrentPage()const

@@ -57,8 +57,9 @@ std::vector<std::string> PickLocalNumberRequest::getCandidateNumber()const
 void PickLocalNumberRequest::setCandidateNumber(const std::vector<std::string>& candidateNumber)
 {
 	candidateNumber_ = candidateNumber;
-	for(int dep1 = 0; dep1!= candidateNumber.size(); dep1++)
+	for(int dep1 = 0; dep1!= candidateNumber.size(); dep1++) {
 		setCoreParameter("CandidateNumber."+ std::to_string(dep1), candidateNumber.at(dep1));
+	}
 }
 
 std::string PickLocalNumberRequest::getCalleeNumber()const

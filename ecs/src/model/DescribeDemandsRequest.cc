@@ -172,8 +172,20 @@ std::vector<std::string> DescribeDemandsRequest::getDemandStatus()const
 void DescribeDemandsRequest::setDemandStatus(const std::vector<std::string>& demandStatus)
 {
 	demandStatus_ = demandStatus;
-	for(int dep1 = 0; dep1!= demandStatus.size(); dep1++)
+	for(int dep1 = 0; dep1!= demandStatus.size(); dep1++) {
 		setCoreParameter("DemandStatus."+ std::to_string(dep1), demandStatus.at(dep1));
+	}
+}
+
+std::string DescribeDemandsRequest::getDemandId()const
+{
+	return demandId_;
+}
+
+void DescribeDemandsRequest::setDemandId(const std::string& demandId)
+{
+	demandId_ = demandId;
+	setCoreParameter("DemandId", demandId);
 }
 
 std::string DescribeDemandsRequest::getZoneId()const
@@ -185,5 +197,16 @@ void DescribeDemandsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setCoreParameter("ZoneId", zoneId);
+}
+
+std::string DescribeDemandsRequest::getDemandType()const
+{
+	return demandType_;
+}
+
+void DescribeDemandsRequest::setDemandType(const std::string& demandType)
+{
+	demandType_ = demandType;
+	setCoreParameter("DemandType", demandType);
 }
 

@@ -57,8 +57,9 @@ std::vector<std::string> BatchGetEdgeInstanceDeviceConfigRequest::getIotIds()con
 void BatchGetEdgeInstanceDeviceConfigRequest::setIotIds(const std::vector<std::string>& iotIds)
 {
 	iotIds_ = iotIds;
-	for(int dep1 = 0; dep1!= iotIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= iotIds.size(); dep1++) {
 		setCoreParameter("IotIds."+ std::to_string(dep1), iotIds.at(dep1));
+	}
 }
 
 std::string BatchGetEdgeInstanceDeviceConfigRequest::getIotInstanceId()const

@@ -57,8 +57,9 @@ std::vector<std::string> ModifyAlarmRequest::getAlarmAction()const
 void ModifyAlarmRequest::setAlarmAction(const std::vector<std::string>& alarmAction)
 {
 	alarmAction_ = alarmAction;
-	for(int dep1 = 0; dep1!= alarmAction.size(); dep1++)
+	for(int dep1 = 0; dep1!= alarmAction.size(); dep1++) {
 		setCoreParameter("AlarmAction."+ std::to_string(dep1), alarmAction.at(dep1));
+	}
 }
 
 float ModifyAlarmRequest::getThreshold()const

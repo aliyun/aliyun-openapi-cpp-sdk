@@ -74,8 +74,9 @@ std::vector<long> UpdateMPULayoutRequest::getLayoutIds()const
 void UpdateMPULayoutRequest::setLayoutIds(const std::vector<long>& layoutIds)
 {
 	layoutIds_ = layoutIds;
-	for(int dep1 = 0; dep1!= layoutIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= layoutIds.size(); dep1++) {
 		setCoreParameter("LayoutIds."+ std::to_string(dep1), std::to_string(layoutIds.at(dep1)));
+	}
 }
 
 std::string UpdateMPULayoutRequest::getTaskId()const

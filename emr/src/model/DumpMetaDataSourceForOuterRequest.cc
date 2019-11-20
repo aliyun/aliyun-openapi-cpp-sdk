@@ -112,8 +112,9 @@ std::vector<std::string> DumpMetaDataSourceForOuterRequest::getPartitionValues()
 void DumpMetaDataSourceForOuterRequest::setPartitionValues(const std::vector<std::string>& partitionValues)
 {
 	partitionValues_ = partitionValues;
-	for(int dep1 = 0; dep1!= partitionValues.size(); dep1++)
+	for(int dep1 = 0; dep1!= partitionValues.size(); dep1++) {
 		setCoreParameter("PartitionValues."+ std::to_string(dep1), partitionValues.at(dep1));
+	}
 }
 
 std::string DumpMetaDataSourceForOuterRequest::getTableId()const

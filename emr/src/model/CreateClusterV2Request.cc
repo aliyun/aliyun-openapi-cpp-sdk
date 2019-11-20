@@ -149,8 +149,9 @@ void CreateClusterV2Request::setHostComponentInfo(const std::vector<HostComponen
 		auto hostComponentInfoObj = hostComponentInfo.at(dep1);
 		std::string hostComponentInfoObjStr = "HostComponentInfo." + std::to_string(dep1);
 		setCoreParameter(hostComponentInfoObjStr + ".HostName", hostComponentInfoObj.hostName);
-		for(int dep2 = 0; dep2!= componentNameList.size(); dep2++)
+		for(int dep2 = 0; dep2!= hostComponentInfoObj.componentNameList.size(); dep2++) {
 			setCoreParameter(hostComponentInfoObjStr + ".ComponentNameList."+ std::to_string(dep2), hostComponentInfoObj.componentNameList.at(dep2));
+		}
 		setCoreParameter(hostComponentInfoObjStr + ".ServiceName", hostComponentInfoObj.serviceName);
 	}
 }
@@ -279,8 +280,9 @@ std::vector<std::string> CreateClusterV2Request::getOptionSoftWareList()const
 void CreateClusterV2Request::setOptionSoftWareList(const std::vector<std::string>& optionSoftWareList)
 {
 	optionSoftWareList_ = optionSoftWareList;
-	for(int dep1 = 0; dep1!= optionSoftWareList.size(); dep1++)
+	for(int dep1 = 0; dep1!= optionSoftWareList.size(); dep1++) {
 		setCoreParameter("OptionSoftWareList."+ std::to_string(dep1), optionSoftWareList.at(dep1));
+	}
 }
 
 std::string CreateClusterV2Request::getNetType()const

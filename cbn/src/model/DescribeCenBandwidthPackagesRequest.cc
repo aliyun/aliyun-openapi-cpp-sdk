@@ -126,8 +126,9 @@ void DescribeCenBandwidthPackagesRequest::setFilter(const std::vector<Filter>& f
 	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
 		auto filterObj = filter.at(dep1);
 		std::string filterObjStr = "Filter." + std::to_string(dep1);
-		for(int dep2 = 0; dep2!= value.size(); dep2++)
+		for(int dep2 = 0; dep2!= filterObj.value.size(); dep2++) {
 			setCoreParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
+		}
 		setCoreParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }

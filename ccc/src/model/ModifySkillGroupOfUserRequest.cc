@@ -35,8 +35,9 @@ std::vector<std::string> ModifySkillGroupOfUserRequest::getRoleId()const
 void ModifySkillGroupOfUserRequest::setRoleId(const std::vector<std::string>& roleId)
 {
 	roleId_ = roleId;
-	for(int dep1 = 0; dep1!= roleId.size(); dep1++)
+	for(int dep1 = 0; dep1!= roleId.size(); dep1++) {
 		setCoreParameter("RoleId."+ std::to_string(dep1), roleId.at(dep1));
+	}
 }
 
 std::string ModifySkillGroupOfUserRequest::getUserId()const
@@ -69,8 +70,9 @@ std::vector<int> ModifySkillGroupOfUserRequest::getSkillLevel()const
 void ModifySkillGroupOfUserRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
-	for(int dep1 = 0; dep1!= skillLevel.size(); dep1++)
+	for(int dep1 = 0; dep1!= skillLevel.size(); dep1++) {
 		setCoreParameter("SkillLevel."+ std::to_string(dep1), std::to_string(skillLevel.at(dep1)));
+	}
 }
 
 std::string ModifySkillGroupOfUserRequest::getInstanceId()const
@@ -92,7 +94,8 @@ std::vector<std::string> ModifySkillGroupOfUserRequest::getSkillGroupId()const
 void ModifySkillGroupOfUserRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++)
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++) {
 		setCoreParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
+	}
 }
 

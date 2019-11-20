@@ -46,8 +46,9 @@ std::vector<std::string> DescribeAccountAttributesRequest::getAttributeName()con
 void DescribeAccountAttributesRequest::setAttributeName(const std::vector<std::string>& attributeName)
 {
 	attributeName_ = attributeName;
-	for(int dep1 = 0; dep1!= attributeName.size(); dep1++)
+	for(int dep1 = 0; dep1!= attributeName.size(); dep1++) {
 		setCoreParameter("AttributeName."+ std::to_string(dep1), attributeName.at(dep1));
+	}
 }
 
 std::string DescribeAccountAttributesRequest::getRegionId()const

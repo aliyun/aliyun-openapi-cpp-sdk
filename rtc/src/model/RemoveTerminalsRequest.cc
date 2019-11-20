@@ -35,8 +35,9 @@ std::vector<std::string> RemoveTerminalsRequest::getTerminalIds()const
 void RemoveTerminalsRequest::setTerminalIds(const std::vector<std::string>& terminalIds)
 {
 	terminalIds_ = terminalIds;
-	for(int dep1 = 0; dep1!= terminalIds.size(); dep1++)
+	for(int dep1 = 0; dep1!= terminalIds.size(); dep1++) {
 		setCoreParameter("TerminalIds."+ std::to_string(dep1), terminalIds.at(dep1));
+	}
 }
 
 long RemoveTerminalsRequest::getOwnerId()const

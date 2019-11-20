@@ -112,8 +112,9 @@ std::vector<std::string> ChatRequest::getPerspective()const
 void ChatRequest::setPerspective(const std::vector<std::string>& perspective)
 {
 	perspective_ = perspective;
-	for(int dep1 = 0; dep1!= perspective.size(); dep1++)
+	for(int dep1 = 0; dep1!= perspective.size(); dep1++) {
 		setCoreParameter("Perspective."+ std::to_string(dep1), perspective.at(dep1));
+	}
 }
 
 std::string ChatRequest::getTag()const

@@ -109,7 +109,8 @@ std::vector<std::string> ModifyReservedInstancesRequest::getReservedInstanceId()
 void ModifyReservedInstancesRequest::setReservedInstanceId(const std::vector<std::string>& reservedInstanceId)
 {
 	reservedInstanceId_ = reservedInstanceId;
-	for(int dep1 = 0; dep1!= reservedInstanceId.size(); dep1++)
+	for(int dep1 = 0; dep1!= reservedInstanceId.size(); dep1++) {
 		setCoreParameter("ReservedInstanceId."+ std::to_string(dep1), reservedInstanceId.at(dep1));
+	}
 }
 

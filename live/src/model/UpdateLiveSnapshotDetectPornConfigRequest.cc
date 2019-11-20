@@ -57,8 +57,9 @@ std::vector<std::string> UpdateLiveSnapshotDetectPornConfigRequest::getScene()co
 void UpdateLiveSnapshotDetectPornConfigRequest::setScene(const std::vector<std::string>& scene)
 {
 	scene_ = scene;
-	for(int dep1 = 0; dep1!= scene.size(); dep1++)
+	for(int dep1 = 0; dep1!= scene.size(); dep1++) {
 		setCoreParameter("Scene."+ std::to_string(dep1), scene.at(dep1));
+	}
 }
 
 std::string UpdateLiveSnapshotDetectPornConfigRequest::getAppName()const
