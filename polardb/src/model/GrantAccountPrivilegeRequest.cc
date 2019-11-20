@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::GrantAccountPrivilegeRequest;
 
 GrantAccountPrivilegeRequest::GrantAccountPrivilegeRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "GrantAccountPrivilege")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GrantAccountPrivilegeRequest::~GrantAccountPrivilegeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForCreatingOrderRedeemRequest;
 
 SaveBatchTaskForCreatingOrderRedeemRequest::SaveBatchTaskForCreatingOrderRedeemRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRedeem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForCreatingOrderRedeemRequest::~SaveBatchTaskForCreatingOrderRedeemRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<SaveBatchTaskForCreatingOrderRedeemRequest::OrderRedeemParam> SaveBa
 void SaveBatchTaskForCreatingOrderRedeemRequest::setOrderRedeemParam(const std::vector<OrderRedeemParam>& orderRedeemParam)
 {
 	orderRedeemParam_ = orderRedeemParam;
-	int i = 0;
-	for(int i = 0; i!= orderRedeemParam.size(); i++)	{
-		auto obj = orderRedeemParam.at(i);
-		std::string str ="OrderRedeemParam."+ std::to_string(i);
-		setCoreParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
-		setCoreParameter(str + ".DomainName", obj.domainName);
+	for(int dep1 = 0; dep1!= orderRedeemParam.size(); dep1++) {
+		auto orderRedeemParamObj = orderRedeemParam.at(dep1);
+		std::string orderRedeemParamObjStr = "OrderRedeemParam." + std::to_string(dep1);
+		setCoreParameter(orderRedeemParamObjStr + ".CurrentExpirationDate", std::to_string(orderRedeemParamObj.currentExpirationDate));
+		setCoreParameter(orderRedeemParamObjStr + ".DomainName", orderRedeemParamObj.domainName);
 	}
 }
 

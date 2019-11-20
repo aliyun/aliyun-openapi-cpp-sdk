@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::UploadDocumentRequest;
 
 UploadDocumentRequest::UploadDocumentRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "UploadDocument")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadDocumentRequest::~UploadDocumentRequest()
 {}

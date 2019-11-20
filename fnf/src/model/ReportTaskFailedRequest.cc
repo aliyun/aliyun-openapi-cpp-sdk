@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::ReportTaskFailedRequest;
 
 ReportTaskFailedRequest::ReportTaskFailedRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "ReportTaskFailed")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportTaskFailedRequest::~ReportTaskFailedRequest()
 {}

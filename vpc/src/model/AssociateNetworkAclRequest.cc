@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::AssociateNetworkAclRequest;
 
 AssociateNetworkAclRequest::AssociateNetworkAclRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "AssociateNetworkAcl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssociateNetworkAclRequest::~AssociateNetworkAclRequest()
 {}
@@ -77,12 +79,11 @@ std::vector<AssociateNetworkAclRequest::Resource> AssociateNetworkAclRequest::ge
 void AssociateNetworkAclRequest::setResource(const std::vector<Resource>& resource)
 {
 	resource_ = resource;
-	int i = 0;
-	for(int i = 0; i!= resource.size(); i++)	{
-		auto obj = resource.at(i);
-		std::string str ="Resource."+ std::to_string(i);
-		setCoreParameter(str + ".ResourceType", obj.resourceType);
-		setCoreParameter(str + ".ResourceId", obj.resourceId);
+	for(int dep1 = 0; dep1!= resource.size(); dep1++) {
+		auto resourceObj = resource.at(dep1);
+		std::string resourceObjStr = "Resource." + std::to_string(dep1);
+		setCoreParameter(resourceObjStr + ".ResourceType", resourceObj.resourceType);
+		setCoreParameter(resourceObjStr + ".ResourceId", resourceObj.resourceId);
 	}
 }
 

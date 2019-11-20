@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::AddTagsRequest;
 
 AddTagsRequest::AddTagsRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "AddTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddTagsRequest::~AddTagsRequest()
 {}

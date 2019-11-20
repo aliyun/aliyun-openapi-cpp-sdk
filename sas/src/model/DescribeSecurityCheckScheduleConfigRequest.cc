@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeSecurityCheckScheduleConfigRequest;
 
 DescribeSecurityCheckScheduleConfigRequest::DescribeSecurityCheckScheduleConfigRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeSecurityCheckScheduleConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSecurityCheckScheduleConfigRequest::~DescribeSecurityCheckScheduleConfigRequest()
 {}

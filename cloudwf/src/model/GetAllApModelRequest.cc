@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetAllApModelRequest;
 
 GetAllApModelRequest::GetAllApModelRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetAllApModel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAllApModelRequest::~GetAllApModelRequest()
 {}

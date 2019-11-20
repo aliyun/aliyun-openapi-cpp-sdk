@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmIssueOrderRequest;
 
 TaobaoFilmIssueOrderRequest::TaobaoFilmIssueOrderRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmIssueOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmIssueOrderRequest::~TaobaoFilmIssueOrderRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProduceInstanceRequest;
 
 ProduceInstanceRequest::ProduceInstanceRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProduceInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProduceInstanceRequest::~ProduceInstanceRequest()
 {}

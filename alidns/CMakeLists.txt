@@ -23,6 +23,8 @@ set(alidns_public_header
 set(alidns_public_header_model 
 	include/alibabacloud/alidns/model/AddDomainRequest.h
 	include/alibabacloud/alidns/model/AddDomainResult.h
+	include/alibabacloud/alidns/model/AddDomainBackupRequest.h
+	include/alibabacloud/alidns/model/AddDomainBackupResult.h
 	include/alibabacloud/alidns/model/AddDomainGroupRequest.h
 	include/alibabacloud/alidns/model/AddDomainGroupResult.h
 	include/alibabacloud/alidns/model/AddDomainRecordRequest.h
@@ -168,6 +170,8 @@ set(alidns_src
 	src/AlidnsClient.cc
 	src/model/AddDomainRequest.cc
 	src/model/AddDomainResult.cc
+	src/model/AddDomainBackupRequest.cc
+	src/model/AddDomainBackupResult.cc
 	src/model/AddDomainGroupRequest.cc
 	src/model/AddDomainGroupResult.cc
 	src/model/AddDomainRecordRequest.cc

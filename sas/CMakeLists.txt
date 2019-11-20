@@ -93,6 +93,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeStrategyExecDetailResult.h
 	include/alibabacloud/sas/model/DescribeStratetyRequest.h
 	include/alibabacloud/sas/model/DescribeStratetyResult.h
+	include/alibabacloud/sas/model/DescribeSummaryInfoRequest.h
+	include/alibabacloud/sas/model/DescribeSummaryInfoResult.h
 	include/alibabacloud/sas/model/DescribeSuspEventDetailRequest.h
 	include/alibabacloud/sas/model/DescribeSuspEventDetailResult.h
 	include/alibabacloud/sas/model/DescribeSuspEventsRequest.h
@@ -210,6 +212,8 @@ set(sas_src
 	src/model/DescribeStrategyExecDetailResult.cc
 	src/model/DescribeStratetyRequest.cc
 	src/model/DescribeStratetyResult.cc
+	src/model/DescribeSummaryInfoRequest.cc
+	src/model/DescribeSummaryInfoResult.cc
 	src/model/DescribeSuspEventDetailRequest.cc
 	src/model/DescribeSuspEventDetailResult.cc
 	src/model/DescribeSuspEventsRequest.cc

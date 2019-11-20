@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForModifyingDomainDnsRequest;
 
 SaveBatchTaskForModifyingDomainDnsRequest::SaveBatchTaskForModifyingDomainDnsRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForModifyingDomainDns")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForModifyingDomainDnsRequest::~SaveBatchTaskForModifyingDomainDnsRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> SaveBatchTaskForModifyingDomainDnsRequest::getDomainNam
 void SaveBatchTaskForModifyingDomainDnsRequest::setDomainName(const std::vector<std::string>& domainName)
 {
 	domainName_ = domainName;
-	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+	for(int dep1 = 0; dep1!= domainName.size(); dep1++)
+		setCoreParameter("DomainName."+ std::to_string(dep1), domainName.at(dep1));
 }
 
 bool SaveBatchTaskForModifyingDomainDnsRequest::getAliyunDns()const
@@ -67,8 +69,8 @@ std::vector<std::string> SaveBatchTaskForModifyingDomainDnsRequest::getDomainNam
 void SaveBatchTaskForModifyingDomainDnsRequest::setDomainNameServer(const std::vector<std::string>& domainNameServer)
 {
 	domainNameServer_ = domainNameServer;
-	for(int i = 0; i!= domainNameServer.size(); i++)
-		setCoreParameter("DomainNameServer."+ std::to_string(i), domainNameServer.at(i));
+	for(int dep1 = 0; dep1!= domainNameServer.size(); dep1++)
+		setCoreParameter("DomainNameServer."+ std::to_string(dep1), domainNameServer.at(dep1));
 }
 
 std::string SaveBatchTaskForModifyingDomainDnsRequest::getLang()const

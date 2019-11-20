@@ -40,17 +40,23 @@ namespace AlibabaCloud
 				{
 					std::vector<std::string> categories1;
 				};
+				struct Antispam
+				{
+					std::vector<std::string> categories2;
+				};
 
 
 				DescribeBizTypeSettingResult();
 				explicit DescribeBizTypeSettingResult(const std::string &payload);
 				~DescribeBizTypeSettingResult();
+				Antispam getAntispam()const;
 				Terrorism getTerrorism()const;
 				Porn getPorn()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				Antispam antispam_;
 				Terrorism terrorism_;
 				Porn porn_;
 

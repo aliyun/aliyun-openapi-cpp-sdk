@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::RenewCredentialsRequest;
 
 RenewCredentialsRequest::RenewCredentialsRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "RenewCredentials")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenewCredentialsRequest::~RenewCredentialsRequest()
 {}

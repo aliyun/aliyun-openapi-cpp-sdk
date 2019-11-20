@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::InnerCheckOrderRequest;
 
 InnerCheckOrderRequest::InnerCheckOrderRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "InnerCheckOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InnerCheckOrderRequest::~InnerCheckOrderRequest()
 {}

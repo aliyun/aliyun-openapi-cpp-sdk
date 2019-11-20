@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::UpdateGroupRequest;
 
 UpdateGroupRequest::UpdateGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "UpdateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateGroupRequest::~UpdateGroupRequest()
 {}

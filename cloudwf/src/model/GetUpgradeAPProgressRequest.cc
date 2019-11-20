@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetUpgradeAPProgressRequest;
 
 GetUpgradeAPProgressRequest::GetUpgradeAPProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetUpgradeAPProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUpgradeAPProgressRequest::~GetUpgradeAPProgressRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::JoinSecurityGroupRequest;
 
 JoinSecurityGroupRequest::JoinSecurityGroupRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "JoinSecurityGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 JoinSecurityGroupRequest::~JoinSecurityGroupRequest()
 {}

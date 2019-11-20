@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteResourceQueueRequest;
 
 DeleteResourceQueueRequest::DeleteResourceQueueRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteResourceQueue")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteResourceQueueRequest::~DeleteResourceQueueRequest()
 {}

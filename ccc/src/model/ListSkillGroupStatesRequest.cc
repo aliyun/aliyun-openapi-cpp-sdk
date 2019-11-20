@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListSkillGroupStatesRequest;
 
 ListSkillGroupStatesRequest::ListSkillGroupStatesRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListSkillGroupStates")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSkillGroupStatesRequest::~ListSkillGroupStatesRequest()
 {}

@@ -43,8 +43,6 @@ namespace AlibabaCloud
 				void setNotify(const std::string& notify);
 				std::string getOutput()const;
 				void setOutput(const std::string& output);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
 				std::string getShowLog()const;
 				void setShowLog(const std::string& showLog);
 				std::string getStreamType()const;
@@ -69,7 +67,6 @@ namespace AlibabaCloud
 				std::string autoStart_;
 				std::string notify_;
 				std::string output_;
-				std::string userData_;
 				std::string showLog_;
 				std::string streamType_;
 				std::string faceGroupId_;

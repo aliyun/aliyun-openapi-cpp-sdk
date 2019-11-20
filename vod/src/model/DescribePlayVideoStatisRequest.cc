@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribePlayVideoStatisRequest;
 
 DescribePlayVideoStatisRequest::DescribePlayVideoStatisRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribePlayVideoStatis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePlayVideoStatisRequest::~DescribePlayVideoStatisRequest()
 {}

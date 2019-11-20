@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListStaOnoffLogRequest;
 
 ListStaOnoffLogRequest::ListStaOnoffLogRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListStaOnoffLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListStaOnoffLogRequest::~ListStaOnoffLogRequest()
 {}

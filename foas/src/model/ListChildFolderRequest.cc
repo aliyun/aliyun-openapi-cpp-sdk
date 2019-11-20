@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ListChildFolderRequest;
 
 ListChildFolderRequest::ListChildFolderRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/folders/children");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListChildFolderRequest::~ListChildFolderRequest()
 {}

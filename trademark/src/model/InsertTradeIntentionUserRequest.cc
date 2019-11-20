@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::InsertTradeIntentionUserRequest;
 
 InsertTradeIntentionUserRequest::InsertTradeIntentionUserRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "InsertTradeIntentionUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InsertTradeIntentionUserRequest::~InsertTradeIntentionUserRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateCommandRequest;
 
 CreateCommandRequest::CreateCommandRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateCommand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCommandRequest::~CreateCommandRequest()
 {}

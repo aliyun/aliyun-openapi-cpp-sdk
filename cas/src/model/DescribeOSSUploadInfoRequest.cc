@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeOSSUploadInfoRequest;
 
 DescribeOSSUploadInfoRequest::DescribeOSSUploadInfoRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeOSSUploadInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOSSUploadInfoRequest::~DescribeOSSUploadInfoRequest()
 {}

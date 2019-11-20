@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetBidRequest;
 
 GetBidRequest::GetBidRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetBid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetBidRequest::~GetBidRequest()
 {}

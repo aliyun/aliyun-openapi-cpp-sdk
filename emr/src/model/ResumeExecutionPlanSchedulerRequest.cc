@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ResumeExecutionPlanSchedulerRequest;
 
 ResumeExecutionPlanSchedulerRequest::ResumeExecutionPlanSchedulerRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ResumeExecutionPlanScheduler")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResumeExecutionPlanSchedulerRequest::~ResumeExecutionPlanSchedulerRequest()
 {}

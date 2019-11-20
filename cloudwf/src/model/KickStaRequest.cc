@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::KickStaRequest;
 
 KickStaRequest::KickStaRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "KickSta")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 KickStaRequest::~KickStaRequest()
 {}

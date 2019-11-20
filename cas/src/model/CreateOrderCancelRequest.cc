@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateOrderCancelRequest;
 
 CreateOrderCancelRequest::CreateOrderCancelRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateOrderCancel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderCancelRequest::~CreateOrderCancelRequest()
 {}

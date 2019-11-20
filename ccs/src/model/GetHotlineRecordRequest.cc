@@ -20,7 +20,9 @@ using AlibabaCloud::Ccs::Model::GetHotlineRecordRequest;
 
 GetHotlineRecordRequest::GetHotlineRecordRequest() :
 	RpcServiceRequest("ccs", "2017-10-01", "GetHotlineRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetHotlineRecordRequest::~GetHotlineRecordRequest()
 {}

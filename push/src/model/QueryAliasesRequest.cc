@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryAliasesRequest;
 
 QueryAliasesRequest::QueryAliasesRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryAliases")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAliasesRequest::~QueryAliasesRequest()
 {}

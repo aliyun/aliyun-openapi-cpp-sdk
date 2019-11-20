@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DeleteNotificationContactsRequest;
 
 DeleteNotificationContactsRequest::DeleteNotificationContactsRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DeleteNotificationContacts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNotificationContactsRequest::~DeleteNotificationContactsRequest()
 {}

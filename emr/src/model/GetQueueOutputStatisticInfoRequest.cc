@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::GetQueueOutputStatisticInfoRequest;
 
 GetQueueOutputStatisticInfoRequest::GetQueueOutputStatisticInfoRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "GetQueueOutputStatisticInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetQueueOutputStatisticInfoRequest::~GetQueueOutputStatisticInfoRequest()
 {}

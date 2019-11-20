@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeEcsListPageRequest;
 
 DescribeEcsListPageRequest::DescribeEcsListPageRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeEcsListPage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEcsListPageRequest::~DescribeEcsListPageRequest()
 {}

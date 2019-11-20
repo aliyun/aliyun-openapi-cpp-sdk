@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::DeleteTemplateRequest;
 
 DeleteTemplateRequest::DeleteTemplateRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "DeleteTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTemplateRequest::~DeleteTemplateRequest()
 {}

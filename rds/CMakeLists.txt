@@ -107,6 +107,10 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeActionEventPolicyResult.h
 	include/alibabacloud/rds/model/DescribeAvailableCrossRegionRequest.h
 	include/alibabacloud/rds/model/DescribeAvailableCrossRegionResult.h
+	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostClassesRequest.h
+	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostClassesResult.h
+	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostZonesRequest.h
+	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostZonesResult.h
 	include/alibabacloud/rds/model/DescribeAvailableInstanceClassRequest.h
 	include/alibabacloud/rds/model/DescribeAvailableInstanceClassResult.h
 	include/alibabacloud/rds/model/DescribeAvailableRecoveryTimeRequest.h
@@ -253,6 +257,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeTasksResult.h
 	include/alibabacloud/rds/model/DescribeTemplatesListRequest.h
 	include/alibabacloud/rds/model/DescribeTemplatesListResult.h
+	include/alibabacloud/rds/model/EvaluateDedicatedHostInstanceResourceRequest.h
+	include/alibabacloud/rds/model/EvaluateDedicatedHostInstanceResourceResult.h
 	include/alibabacloud/rds/model/EvaluateSupportByokShowRequest.h
 	include/alibabacloud/rds/model/EvaluateSupportByokShowResult.h
 	include/alibabacloud/rds/model/GrantAccountPrivilegeRequest.h
@@ -265,6 +271,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ImportDatabaseBetweenInstancesResult.h
 	include/alibabacloud/rds/model/ListTagResourcesRequest.h
 	include/alibabacloud/rds/model/ListTagResourcesResult.h
+	include/alibabacloud/rds/model/LockAccountRequest.h
+	include/alibabacloud/rds/model/LockAccountResult.h
 	include/alibabacloud/rds/model/MigrateDBInstanceRequest.h
 	include/alibabacloud/rds/model/MigrateDBInstanceResult.h
 	include/alibabacloud/rds/model/MigrateSecurityIPModeRequest.h
@@ -371,6 +379,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/RebuildDBInstanceResult.h
 	include/alibabacloud/rds/model/RecoveryDBInstanceRequest.h
 	include/alibabacloud/rds/model/RecoveryDBInstanceResult.h
+	include/alibabacloud/rds/model/ReleaseInstanceConnectionRequest.h
+	include/alibabacloud/rds/model/ReleaseInstanceConnectionResult.h
 	include/alibabacloud/rds/model/ReleaseInstancePublicConnectionRequest.h
 	include/alibabacloud/rds/model/ReleaseInstancePublicConnectionResult.h
 	include/alibabacloud/rds/model/ReleaseReadWriteSplittingConnectionRequest.h
@@ -409,6 +419,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/SwitchDBInstanceVpcResult.h
 	include/alibabacloud/rds/model/TagResourcesRequest.h
 	include/alibabacloud/rds/model/TagResourcesResult.h
+	include/alibabacloud/rds/model/UnlockAccountRequest.h
+	include/alibabacloud/rds/model/UnlockAccountResult.h
 	include/alibabacloud/rds/model/UntagResourcesRequest.h
 	include/alibabacloud/rds/model/UntagResourcesResult.h
 	include/alibabacloud/rds/model/UpgradeDBInstanceEngineVersionRequest.h
@@ -504,6 +516,10 @@ set(rds_src
 	src/model/DescribeActionEventPolicyResult.cc
 	src/model/DescribeAvailableCrossRegionRequest.cc
 	src/model/DescribeAvailableCrossRegionResult.cc
+	src/model/DescribeAvailableDedicatedHostClassesRequest.cc
+	src/model/DescribeAvailableDedicatedHostClassesResult.cc
+	src/model/DescribeAvailableDedicatedHostZonesRequest.cc
+	src/model/DescribeAvailableDedicatedHostZonesResult.cc
 	src/model/DescribeAvailableInstanceClassRequest.cc
 	src/model/DescribeAvailableInstanceClassResult.cc
 	src/model/DescribeAvailableRecoveryTimeRequest.cc
@@ -650,6 +666,8 @@ set(rds_src
 	src/model/DescribeTasksResult.cc
 	src/model/DescribeTemplatesListRequest.cc
 	src/model/DescribeTemplatesListResult.cc
+	src/model/EvaluateDedicatedHostInstanceResourceRequest.cc
+	src/model/EvaluateDedicatedHostInstanceResourceResult.cc
 	src/model/EvaluateSupportByokShowRequest.cc
 	src/model/EvaluateSupportByokShowResult.cc
 	src/model/GrantAccountPrivilegeRequest.cc
@@ -662,6 +680,8 @@ set(rds_src
 	src/model/ImportDatabaseBetweenInstancesResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
+	src/model/LockAccountRequest.cc
+	src/model/LockAccountResult.cc
 	src/model/MigrateDBInstanceRequest.cc
 	src/model/MigrateDBInstanceResult.cc
 	src/model/MigrateSecurityIPModeRequest.cc
@@ -768,6 +788,8 @@ set(rds_src
 	src/model/RebuildDBInstanceResult.cc
 	src/model/RecoveryDBInstanceRequest.cc
 	src/model/RecoveryDBInstanceResult.cc
+	src/model/ReleaseInstanceConnectionRequest.cc
+	src/model/ReleaseInstanceConnectionResult.cc
 	src/model/ReleaseInstancePublicConnectionRequest.cc
 	src/model/ReleaseInstancePublicConnectionResult.cc
 	src/model/ReleaseReadWriteSplittingConnectionRequest.cc
@@ -806,6 +828,8 @@ set(rds_src
 	src/model/SwitchDBInstanceVpcResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/UnlockAccountRequest.cc
+	src/model/UnlockAccountResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
 	src/model/UpgradeDBInstanceEngineVersionRequest.cc

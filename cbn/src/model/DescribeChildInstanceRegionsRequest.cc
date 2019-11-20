@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeChildInstanceRegionsRequest;
 
 DescribeChildInstanceRegionsRequest::DescribeChildInstanceRegionsRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeChildInstanceRegions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeChildInstanceRegionsRequest::~DescribeChildInstanceRegionsRequest()
 {}

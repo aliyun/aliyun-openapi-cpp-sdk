@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateUserRequest;
 
 CreateUserRequest::CreateUserRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUserRequest::~CreateUserRequest()
 {}
@@ -55,8 +57,8 @@ std::vector<std::string> CreateUserRequest::getRoleId()const
 void CreateUserRequest::setRoleId(const std::vector<std::string>& roleId)
 {
 	roleId_ = roleId;
-	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
+	for(int dep1 = 0; dep1!= roleId.size(); dep1++)
+		setCoreParameter("RoleId."+ std::to_string(dep1), roleId.at(dep1));
 }
 
 std::string CreateUserRequest::getAccessKeyId()const
@@ -78,8 +80,8 @@ std::vector<int> CreateUserRequest::getSkillLevel()const
 void CreateUserRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
-	for(int i = 0; i!= skillLevel.size(); i++)
-		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
+	for(int dep1 = 0; dep1!= skillLevel.size(); dep1++)
+		setCoreParameter("SkillLevel."+ std::to_string(dep1), std::to_string(skillLevel.at(dep1)));
 }
 
 std::string CreateUserRequest::getInstanceId()const
@@ -123,8 +125,8 @@ std::vector<std::string> CreateUserRequest::getSkillGroupId()const
 void CreateUserRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++)
+		setCoreParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
 }
 
 std::string CreateUserRequest::getEmail()const

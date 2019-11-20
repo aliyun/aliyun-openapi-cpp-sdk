@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::MobileStatusQueryRequest;
 
 MobileStatusQueryRequest::MobileStatusQueryRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "MobileStatusQuery")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MobileStatusQueryRequest::~MobileStatusQueryRequest()
 {}

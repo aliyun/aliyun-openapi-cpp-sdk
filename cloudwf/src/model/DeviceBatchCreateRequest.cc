@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeviceBatchCreateRequest;
 
 DeviceBatchCreateRequest::DeviceBatchCreateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeviceBatchCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeviceBatchCreateRequest::~DeviceBatchCreateRequest()
 {}

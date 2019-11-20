@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyParameterRequest;
 
 ModifyParameterRequest::ModifyParameterRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyParameter")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyParameterRequest::~ModifyParameterRequest()
 {}

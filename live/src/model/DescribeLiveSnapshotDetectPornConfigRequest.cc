@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveSnapshotDetectPornConfigRequest;
 
 DescribeLiveSnapshotDetectPornConfigRequest::DescribeLiveSnapshotDetectPornConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveSnapshotDetectPornConfigRequest::~DescribeLiveSnapshotDetectPornConfigRequest()
 {}

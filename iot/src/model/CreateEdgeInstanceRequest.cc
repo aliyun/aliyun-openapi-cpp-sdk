@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateEdgeInstanceRequest;
 
 CreateEdgeInstanceRequest::CreateEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateEdgeInstanceRequest::~CreateEdgeInstanceRequest()
 {}

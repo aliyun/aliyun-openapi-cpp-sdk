@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::CreateShardingDBInstanceRequest;
 
 CreateShardingDBInstanceRequest::CreateShardingDBInstanceRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "CreateShardingDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateShardingDBInstanceRequest::~CreateShardingDBInstanceRequest()
 {}
@@ -77,12 +79,11 @@ std::vector<CreateShardingDBInstanceRequest::ReplicaSet> CreateShardingDBInstanc
 void CreateShardingDBInstanceRequest::setReplicaSet(const std::vector<ReplicaSet>& replicaSet)
 {
 	replicaSet_ = replicaSet;
-	int i = 0;
-	for(int i = 0; i!= replicaSet.size(); i++)	{
-		auto obj = replicaSet.at(i);
-		std::string str ="ReplicaSet."+ std::to_string(i);
-		setCoreParameter(str + ".Storage", std::to_string(obj.storage));
-		setCoreParameter(str + ".Class", obj.class);
+	for(int dep1 = 0; dep1!= replicaSet.size(); dep1++) {
+		auto replicaSetObj = replicaSet.at(dep1);
+		std::string replicaSetObjStr = "ReplicaSet." + std::to_string(dep1);
+		setCoreParameter(replicaSetObjStr + ".Storage", std::to_string(replicaSetObj.storage));
+		setCoreParameter(replicaSetObjStr + ".Class", replicaSetObj.class);
 	}
 }
 
@@ -204,12 +205,11 @@ std::vector<CreateShardingDBInstanceRequest::ConfigServer> CreateShardingDBInsta
 void CreateShardingDBInstanceRequest::setConfigServer(const std::vector<ConfigServer>& configServer)
 {
 	configServer_ = configServer;
-	int i = 0;
-	for(int i = 0; i!= configServer.size(); i++)	{
-		auto obj = configServer.at(i);
-		std::string str ="ConfigServer."+ std::to_string(i);
-		setCoreParameter(str + ".Storage", std::to_string(obj.storage));
-		setCoreParameter(str + ".Class", obj.class);
+	for(int dep1 = 0; dep1!= configServer.size(); dep1++) {
+		auto configServerObj = configServer.at(dep1);
+		std::string configServerObjStr = "ConfigServer." + std::to_string(dep1);
+		setCoreParameter(configServerObjStr + ".Storage", std::to_string(configServerObj.storage));
+		setCoreParameter(configServerObjStr + ".Class", configServerObj.class);
 	}
 }
 
@@ -232,11 +232,10 @@ std::vector<CreateShardingDBInstanceRequest::Mongos> CreateShardingDBInstanceReq
 void CreateShardingDBInstanceRequest::setMongos(const std::vector<Mongos>& mongos)
 {
 	mongos_ = mongos;
-	int i = 0;
-	for(int i = 0; i!= mongos.size(); i++)	{
-		auto obj = mongos.at(i);
-		std::string str ="Mongos."+ std::to_string(i);
-		setCoreParameter(str + ".Class", obj.class);
+	for(int dep1 = 0; dep1!= mongos.size(); dep1++) {
+		auto mongosObj = mongos.at(dep1);
+		std::string mongosObjStr = "Mongos." + std::to_string(dep1);
+		setCoreParameter(mongosObjStr + ".Class", mongosObj.class);
 	}
 }
 

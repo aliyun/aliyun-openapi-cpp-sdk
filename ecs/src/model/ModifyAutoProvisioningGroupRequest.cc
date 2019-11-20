@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyAutoProvisioningGroupRequest;
 
 ModifyAutoProvisioningGroupRequest::ModifyAutoProvisioningGroupRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyAutoProvisioningGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAutoProvisioningGroupRequest::~ModifyAutoProvisioningGroupRequest()
 {}

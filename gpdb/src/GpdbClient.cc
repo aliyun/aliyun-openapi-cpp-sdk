@@ -447,6 +447,42 @@ GpdbClient::DescribeDBInstancePerformanceOutcomeCallable GpdbClient::describeDBI
 	return task->get_future();
 }
 
+GpdbClient::DescribeDBInstanceSSLOutcome GpdbClient::describeDBInstanceSSL(const DescribeDBInstanceSSLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceSSLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceSSLOutcome(DescribeDBInstanceSSLResult(outcome.result()));
+	else
+		return DescribeDBInstanceSSLOutcome(outcome.error());
+}
+
+void GpdbClient::describeDBInstanceSSLAsync(const DescribeDBInstanceSSLRequest& request, const DescribeDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceSSL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeDBInstanceSSLOutcomeCallable GpdbClient::describeDBInstanceSSLCallable(const DescribeDBInstanceSSLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceSSLOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceSSL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GpdbClient::DescribeDBInstancesOutcome GpdbClient::describeDBInstances(const DescribeDBInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1125,42 @@ GpdbClient::ModifyDBInstanceNetworkTypeOutcomeCallable GpdbClient::modifyDBInsta
 			[this, request]()
 			{
 			return this->modifyDBInstanceNetworkType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::ModifyDBInstanceSSLOutcome GpdbClient::modifyDBInstanceSSL(const ModifyDBInstanceSSLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBInstanceSSLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBInstanceSSLOutcome(ModifyDBInstanceSSLResult(outcome.result()));
+	else
+		return ModifyDBInstanceSSLOutcome(outcome.error());
+}
+
+void GpdbClient::modifyDBInstanceSSLAsync(const ModifyDBInstanceSSLRequest& request, const ModifyDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBInstanceSSL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::ModifyDBInstanceSSLOutcomeCallable GpdbClient::modifyDBInstanceSSLCallable(const ModifyDBInstanceSSLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSSLOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBInstanceSSL(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

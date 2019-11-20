@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::PutMetricAlarmRequest;
 
 PutMetricAlarmRequest::PutMetricAlarmRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "PutMetricAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Put);
+}
 
 PutMetricAlarmRequest::~PutMetricAlarmRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::EditEventRequest;
 
 EditEventRequest::EditEventRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "EditEvent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EditEventRequest::~EditEventRequest()
 {}

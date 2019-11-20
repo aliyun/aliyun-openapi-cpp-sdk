@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ReleasePublicIpAddressRequest;
 
 ReleasePublicIpAddressRequest::ReleasePublicIpAddressRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ReleasePublicIpAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleasePublicIpAddressRequest::~ReleasePublicIpAddressRequest()
 {}

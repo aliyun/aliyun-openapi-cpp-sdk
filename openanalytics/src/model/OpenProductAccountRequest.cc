@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::OpenProductAccountRequest;
 
 OpenProductAccountRequest::OpenProductAccountRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "OpenProductAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OpenProductAccountRequest::~OpenProductAccountRequest()
 {}

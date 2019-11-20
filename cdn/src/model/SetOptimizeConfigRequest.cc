@@ -19,24 +19,13 @@
 using AlibabaCloud::Cdn::Model::SetOptimizeConfigRequest;
 
 SetOptimizeConfigRequest::SetOptimizeConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetOptimizeConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetOptimizeConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 SetOptimizeConfigRequest::~SetOptimizeConfigRequest()
 {}
-
-std::string SetOptimizeConfigRequest::getEnable()const
-{
-	return enable_;
-}
-
-void SetOptimizeConfigRequest::setEnable(const std::string& enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable);
-}
 
 std::string SetOptimizeConfigRequest::getDomainName()const
 {
@@ -60,14 +49,25 @@ void SetOptimizeConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-long SetOptimizeConfigRequest::getConfigId()const
+std::string SetOptimizeConfigRequest::getSecurityToken()const
 {
-	return configId_;
+	return securityToken_;
 }
 
-void SetOptimizeConfigRequest::setConfigId(long configId)
+void SetOptimizeConfigRequest::setSecurityToken(const std::string& securityToken)
 {
-	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetOptimizeConfigRequest::getEnable()const
+{
+	return enable_;
+}
+
+void SetOptimizeConfigRequest::setEnable(const std::string& enable)
+{
+	enable_ = enable;
+	setCoreParameter("Enable", enable);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchUpdateDeviceNicknameRequest;
 
 BatchUpdateDeviceNicknameRequest::BatchUpdateDeviceNicknameRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchUpdateDeviceNickname")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchUpdateDeviceNicknameRequest::~BatchUpdateDeviceNicknameRequest()
 {}
@@ -33,14 +35,13 @@ std::vector<BatchUpdateDeviceNicknameRequest::DeviceNicknameInfo> BatchUpdateDev
 void BatchUpdateDeviceNicknameRequest::setDeviceNicknameInfo(const std::vector<DeviceNicknameInfo>& deviceNicknameInfo)
 {
 	deviceNicknameInfo_ = deviceNicknameInfo;
-	int i = 0;
-	for(int i = 0; i!= deviceNicknameInfo.size(); i++)	{
-		auto obj = deviceNicknameInfo.at(i);
-		std::string str ="DeviceNicknameInfo."+ std::to_string(i);
-		setCoreParameter(str + ".IotId", obj.iotId);
-		setCoreParameter(str + ".Nickname", obj.nickname);
-		setCoreParameter(str + ".DeviceName", obj.deviceName);
-		setCoreParameter(str + ".ProductKey", obj.productKey);
+	for(int dep1 = 0; dep1!= deviceNicknameInfo.size(); dep1++) {
+		auto deviceNicknameInfoObj = deviceNicknameInfo.at(dep1);
+		std::string deviceNicknameInfoObjStr = "DeviceNicknameInfo." + std::to_string(dep1);
+		setCoreParameter(deviceNicknameInfoObjStr + ".IotId", deviceNicknameInfoObj.iotId);
+		setCoreParameter(deviceNicknameInfoObjStr + ".Nickname", deviceNicknameInfoObj.nickname);
+		setCoreParameter(deviceNicknameInfoObjStr + ".DeviceName", deviceNicknameInfoObj.deviceName);
+		setCoreParameter(deviceNicknameInfoObjStr + ".ProductKey", deviceNicknameInfoObj.productKey);
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenQueryCanvasRequest;
 
 MoPenQueryCanvasRequest::MoPenQueryCanvasRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenQueryCanvas")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenQueryCanvasRequest::~MoPenQueryCanvasRequest()
 {}

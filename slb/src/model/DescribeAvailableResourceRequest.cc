@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeAvailableResourceRequest;
 
 DescribeAvailableResourceRequest::DescribeAvailableResourceRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeAvailableResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAvailableResourceRequest::~DescribeAvailableResourceRequest()
 {}

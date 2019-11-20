@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportMediaDetailJobResultRequest;
 
 ReportMediaDetailJobResultRequest::ReportMediaDetailJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportMediaDetailJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportMediaDetailJobResultRequest::~ReportMediaDetailJobResultRequest()
 {}

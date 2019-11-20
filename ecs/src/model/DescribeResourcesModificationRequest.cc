@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeResourcesModificationRequest;
 
 DescribeResourcesModificationRequest::DescribeResourcesModificationRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeResourcesModification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeResourcesModificationRequest::~DescribeResourcesModificationRequest()
 {}

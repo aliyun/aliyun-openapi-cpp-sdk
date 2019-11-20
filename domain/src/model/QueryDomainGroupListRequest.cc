@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDomainGroupListRequest;
 
 QueryDomainGroupListRequest::QueryDomainGroupListRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDomainGroupList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDomainGroupListRequest::~QueryDomainGroupListRequest()
 {}

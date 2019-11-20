@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::AreaInfoRequest;
 
 AreaInfoRequest::AreaInfoRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "AreaInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AreaInfoRequest::~AreaInfoRequest()
 {}

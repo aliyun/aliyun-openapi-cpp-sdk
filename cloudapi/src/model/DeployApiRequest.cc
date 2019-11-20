@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeployApiRequest;
 
 DeployApiRequest::DeployApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeployApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeployApiRequest::~DeployApiRequest()
 {}

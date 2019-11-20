@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::RecognizeImageColorRequest;
 
 RecognizeImageColorRequest::RecognizeImageColorRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "RecognizeImageColor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RecognizeImageColorRequest::~RecognizeImageColorRequest()
 {}

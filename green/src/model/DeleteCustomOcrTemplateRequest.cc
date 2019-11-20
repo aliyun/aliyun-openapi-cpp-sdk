@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DeleteCustomOcrTemplateRequest;
 
 DeleteCustomOcrTemplateRequest::DeleteCustomOcrTemplateRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DeleteCustomOcrTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCustomOcrTemplateRequest::~DeleteCustomOcrTemplateRequest()
 {}

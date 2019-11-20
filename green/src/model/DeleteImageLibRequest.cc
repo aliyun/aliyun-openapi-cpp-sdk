@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DeleteImageLibRequest;
 
 DeleteImageLibRequest::DeleteImageLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DeleteImageLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteImageLibRequest::~DeleteImageLibRequest()
 {}

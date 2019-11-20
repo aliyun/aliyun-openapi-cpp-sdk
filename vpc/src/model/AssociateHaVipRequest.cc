@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::AssociateHaVipRequest;
 
 AssociateHaVipRequest::AssociateHaVipRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "AssociateHaVip")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssociateHaVipRequest::~AssociateHaVipRequest()
 {}

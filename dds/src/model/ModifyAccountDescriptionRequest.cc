@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::ModifyAccountDescriptionRequest;
 
 ModifyAccountDescriptionRequest::ModifyAccountDescriptionRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "ModifyAccountDescription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAccountDescriptionRequest::~ModifyAccountDescriptionRequest()
 {}

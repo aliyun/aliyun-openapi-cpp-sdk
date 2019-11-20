@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeInstanceStatisticsRequest;
 
 DescribeInstanceStatisticsRequest::DescribeInstanceStatisticsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeInstanceStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceStatisticsRequest::~DescribeInstanceStatisticsRequest()
 {}

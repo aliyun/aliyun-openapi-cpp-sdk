@@ -103,6 +103,10 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.spotInstanceRemedy = valueScalingGroupsScalingGroup["SpotInstanceRemedy"].asString() == "true";
 		if(!valueScalingGroupsScalingGroup["SpotInstancePools"].isNull())
 			scalingGroupsObject.spotInstancePools = std::stoi(valueScalingGroupsScalingGroup["SpotInstancePools"].asString());
+		if(!valueScalingGroupsScalingGroup["DesiredCapacity"].isNull())
+			scalingGroupsObject.desiredCapacity = std::stoi(valueScalingGroupsScalingGroup["DesiredCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["GroupDeletionProtection"].isNull())
+			scalingGroupsObject.groupDeletionProtection = valueScalingGroupsScalingGroup["GroupDeletionProtection"].asString() == "true";
 		auto allVServerGroupsNode = allScalingGroupsNode["VServerGroups"]["VServerGroup"];
 		for (auto allScalingGroupsNodeVServerGroupsVServerGroup : allVServerGroupsNode)
 		{

@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS4FINANCE::Model::ARMSQueryDataSetRequest;
 
 ARMSQueryDataSetRequest::ARMSQueryDataSetRequest() :
 	RpcServiceRequest("arms4finance", "2017-11-30", "ARMSQueryDataSet")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ARMSQueryDataSetRequest::~ARMSQueryDataSetRequest()
 {}
@@ -66,8 +68,8 @@ std::vector<std::string> ARMSQueryDataSetRequest::getMeasures()const
 void ARMSQueryDataSetRequest::setMeasures(const std::vector<std::string>& measures)
 {
 	measures_ = measures;
-	for(int i = 0; i!= measures.size(); i++)
-		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
+	for(int dep1 = 0; dep1!= measures.size(); dep1++)
+		setCoreParameter("Measures."+ std::to_string(dep1), measures.at(dep1));
 }
 
 int ARMSQueryDataSetRequest::getIntervalInSec()const
@@ -111,12 +113,11 @@ std::vector<ARMSQueryDataSetRequest::Dimensions> ARMSQueryDataSetRequest::getDim
 void ARMSQueryDataSetRequest::setDimensions(const std::vector<Dimensions>& dimensions)
 {
 	dimensions_ = dimensions;
-	int i = 0;
-	for(int i = 0; i!= dimensions.size(); i++)	{
-		auto obj = dimensions.at(i);
-		std::string str ="Dimensions."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= dimensions.size(); dep1++) {
+		auto dimensionsObj = dimensions.at(dep1);
+		std::string dimensionsObjStr = "Dimensions." + std::to_string(dep1);
+		setCoreParameter(dimensionsObjStr + ".Value", dimensionsObj.value);
+		setCoreParameter(dimensionsObjStr + ".Key", dimensionsObj.key);
 	}
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetClusterMetricsRequest;
 
 GetClusterMetricsRequest::GetClusterMetricsRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/metrics");
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetClusterMetricsRequest::~GetClusterMetricsRequest()
 {}

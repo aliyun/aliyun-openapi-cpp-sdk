@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DeleteMonitoringTemplateRequest;
 
 DeleteMonitoringTemplateRequest::DeleteMonitoringTemplateRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DeleteMonitoringTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMonitoringTemplateRequest::~DeleteMonitoringTemplateRequest()
 {}

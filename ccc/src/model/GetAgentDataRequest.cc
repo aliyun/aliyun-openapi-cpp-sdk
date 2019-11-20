@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetAgentDataRequest;
 
 GetAgentDataRequest::GetAgentDataRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetAgentData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAgentDataRequest::~GetAgentDataRequest()
 {}

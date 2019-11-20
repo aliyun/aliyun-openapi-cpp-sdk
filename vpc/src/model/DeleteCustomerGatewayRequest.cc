@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteCustomerGatewayRequest;
 
 DeleteCustomerGatewayRequest::DeleteCustomerGatewayRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteCustomerGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCustomerGatewayRequest::~DeleteCustomerGatewayRequest()
 {}

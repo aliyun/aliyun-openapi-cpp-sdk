@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::StartGWSInstanceRequest;
 
 StartGWSInstanceRequest::StartGWSInstanceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StartGWSInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 StartGWSInstanceRequest::~StartGWSInstanceRequest()
 {}

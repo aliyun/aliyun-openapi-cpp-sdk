@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::ModifyLoadBalancerInstanceSpecRequest;
 
 ModifyLoadBalancerInstanceSpecRequest::ModifyLoadBalancerInstanceSpecRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "ModifyLoadBalancerInstanceSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyLoadBalancerInstanceSpecRequest::~ModifyLoadBalancerInstanceSpecRequest()
 {}

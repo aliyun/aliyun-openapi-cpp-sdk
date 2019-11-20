@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetAnalyzePlaceDataRequest;
 
 GetAnalyzePlaceDataRequest::GetAnalyzePlaceDataRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetAnalyzePlaceData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAnalyzePlaceDataRequest::~GetAnalyzePlaceDataRequest()
 {}

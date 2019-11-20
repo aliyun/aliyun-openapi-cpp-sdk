@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyForwardEntryRequest;
 
 ModifyForwardEntryRequest::ModifyForwardEntryRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyForwardEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyForwardEntryRequest::~ModifyForwardEntryRequest()
 {}

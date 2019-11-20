@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeRegions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::UpdateCoreWordRequest;
 
 UpdateCoreWordRequest::UpdateCoreWordRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "UpdateCoreWord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCoreWordRequest::~UpdateCoreWordRequest()
 {}

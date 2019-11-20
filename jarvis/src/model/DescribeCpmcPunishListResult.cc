@@ -59,6 +59,8 @@ void DescribeCpmcPunishListResult::parse(const std::string &payload)
 			dataListObject.punishResult = valueDataListData["PunishResult"].asString();
 		if(!valueDataListData["RegionId"].isNull())
 			dataListObject.regionId = valueDataListData["RegionId"].asString();
+		if(!valueDataListData["Direction"].isNull())
+			dataListObject.direction = valueDataListData["Direction"].asString();
 		if(!valueDataListData["DstPort"].isNull())
 			dataListObject.dstPort = std::stoi(valueDataListData["DstPort"].asString());
 		if(!valueDataListData["Protocol"].isNull())

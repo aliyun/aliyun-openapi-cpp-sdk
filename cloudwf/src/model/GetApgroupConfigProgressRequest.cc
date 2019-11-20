@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApgroupConfigProgressRequest;
 
 GetApgroupConfigProgressRequest::GetApgroupConfigProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApgroupConfigProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApgroupConfigProgressRequest::~GetApgroupConfigProgressRequest()
 {}

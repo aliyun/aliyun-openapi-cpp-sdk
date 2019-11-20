@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeFlowTotalCountRequest;
 
 DescribeFlowTotalCountRequest::DescribeFlowTotalCountRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeFlowTotalCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowTotalCountRequest::~DescribeFlowTotalCountRequest()
 {}

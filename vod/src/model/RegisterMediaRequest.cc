@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::RegisterMediaRequest;
 
 RegisterMediaRequest::RegisterMediaRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "RegisterMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegisterMediaRequest::~RegisterMediaRequest()
 {}

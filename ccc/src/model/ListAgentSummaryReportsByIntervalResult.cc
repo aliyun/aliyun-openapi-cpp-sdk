@@ -103,6 +103,8 @@ void ListAgentSummaryReportsByIntervalResult::parse(const std::string &payload)
 				intervalListObject.overall.satisfactionSurveysOffered = std::stol(overallNode["SatisfactionSurveysOffered"].asString());
 			if(!overallNode["SatisfactionSurveysResponded"].isNull())
 				intervalListObject.overall.satisfactionSurveysResponded = std::stol(overallNode["SatisfactionSurveysResponded"].asString());
+			if(!overallNode["OneTransferCalls"].isNull())
+				intervalListObject.overall.oneTransferCalls = std::stol(overallNode["OneTransferCalls"].asString());
 			auto inboundNode = value["Inbound"];
 			if(!inboundNode["CallsOffered"].isNull())
 				intervalListObject.inbound.callsOffered = std::stol(inboundNode["CallsOffered"].asString());

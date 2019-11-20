@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CreateDBInstanceRequest;
 
 CreateDBInstanceRequest::CreateDBInstanceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CreateDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDBInstanceRequest::~CreateDBInstanceRequest()
 {}

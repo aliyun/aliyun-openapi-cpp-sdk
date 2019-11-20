@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudauth::Model::SubmitMaterialsRequest;
 
 SubmitMaterialsRequest::SubmitMaterialsRequest() :
 	RpcServiceRequest("cloudauth", "2018-09-16", "SubmitMaterials")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitMaterialsRequest::~SubmitMaterialsRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<SubmitMaterialsRequest::Material> SubmitMaterialsRequest::getMateria
 void SubmitMaterialsRequest::setMaterial(const std::vector<Material>& material)
 {
 	material_ = material;
-	int i = 0;
-	for(int i = 0; i!= material.size(); i++)	{
-		auto obj = material.at(i);
-		std::string str ="Material."+ std::to_string(i);
-		setCoreParameter(str + ".MaterialType", obj.materialType);
-		setCoreParameter(str + ".Value", obj.value);
+	for(int dep1 = 0; dep1!= material.size(); dep1++) {
+		auto materialObj = material.at(dep1);
+		std::string materialObjStr = "Material." + std::to_string(dep1);
+		setCoreParameter(materialObjStr + ".MaterialType", materialObj.materialType);
+		setCoreParameter(materialObjStr + ".Value", materialObj.value);
 	}
 }
 

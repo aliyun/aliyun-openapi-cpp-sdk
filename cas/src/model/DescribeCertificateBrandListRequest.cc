@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeCertificateBrandListRequest;
 
 DescribeCertificateBrandListRequest::DescribeCertificateBrandListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeCertificateBrandList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCertificateBrandListRequest::~DescribeCertificateBrandListRequest()
 {}

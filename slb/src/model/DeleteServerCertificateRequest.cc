@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DeleteServerCertificateRequest;
 
 DeleteServerCertificateRequest::DeleteServerCertificateRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DeleteServerCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteServerCertificateRequest::~DeleteServerCertificateRequest()
 {}

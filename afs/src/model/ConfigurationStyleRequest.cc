@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::ConfigurationStyleRequest;
 
 ConfigurationStyleRequest::ConfigurationStyleRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "ConfigurationStyle")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConfigurationStyleRequest::~ConfigurationStyleRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeBoardEventsRequest;
 
 DescribeBoardEventsRequest::DescribeBoardEventsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeBoardEvents")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBoardEventsRequest::~DescribeBoardEventsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeVSwitchesRequest;
 
 DescribeVSwitchesRequest::DescribeVSwitchesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeVSwitches")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVSwitchesRequest::~DescribeVSwitchesRequest()
 {}

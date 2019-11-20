@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::TaskConfigCreateRequest;
 
 TaskConfigCreateRequest::TaskConfigCreateRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "TaskConfigCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaskConfigCreateRequest::~TaskConfigCreateRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> TaskConfigCreateRequest::getInstanceList()const
 void TaskConfigCreateRequest::setInstanceList(const std::vector<std::string>& instanceList)
 {
 	instanceList_ = instanceList;
-	for(int i = 0; i!= instanceList.size(); i++)
-		setCoreParameter("InstanceList."+ std::to_string(i), instanceList.at(i));
+	for(int dep1 = 0; dep1!= instanceList.size(); dep1++)
+		setCoreParameter("InstanceList."+ std::to_string(dep1), instanceList.at(dep1));
 }
 
 std::string TaskConfigCreateRequest::getJsonData()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::RoutePrivateZoneInCenToVpcRequest;
 
 RoutePrivateZoneInCenToVpcRequest::RoutePrivateZoneInCenToVpcRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RoutePrivateZoneInCenToVpcRequest::~RoutePrivateZoneInCenToVpcRequest()
 {}

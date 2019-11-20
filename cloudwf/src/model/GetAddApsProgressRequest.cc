@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetAddApsProgressRequest;
 
 GetAddApsProgressRequest::GetAddApsProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetAddApsProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAddApsProgressRequest::~GetAddApsProgressRequest()
 {}

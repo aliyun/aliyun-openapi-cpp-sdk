@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeDBInstanceSSLRequest;
 
 DescribeDBInstanceSSLRequest::DescribeDBInstanceSSLRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeDBInstanceSSL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceSSLRequest::~DescribeDBInstanceSSLRequest()
 {}

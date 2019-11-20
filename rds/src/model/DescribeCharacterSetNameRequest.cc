@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeCharacterSetNameRequest;
 
 DescribeCharacterSetNameRequest::DescribeCharacterSetNameRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeCharacterSetName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCharacterSetNameRequest::~DescribeCharacterSetNameRequest()
 {}

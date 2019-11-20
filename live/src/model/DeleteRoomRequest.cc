@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteRoomRequest;
 
 DeleteRoomRequest::DeleteRoomRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteRoom")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRoomRequest::~DeleteRoomRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteDnatEntryRequest;
 
 DeleteDnatEntryRequest::DeleteDnatEntryRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteDnatEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDnatEntryRequest::~DeleteDnatEntryRequest()
 {}

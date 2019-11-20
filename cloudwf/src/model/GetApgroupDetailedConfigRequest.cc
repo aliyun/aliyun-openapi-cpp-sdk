@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApgroupDetailedConfigRequest;
 
 GetApgroupDetailedConfigRequest::GetApgroupDetailedConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApgroupDetailedConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApgroupDetailedConfigRequest::~GetApgroupDetailedConfigRequest()
 {}

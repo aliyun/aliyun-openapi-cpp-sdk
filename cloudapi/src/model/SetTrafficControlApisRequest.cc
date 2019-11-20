@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetTrafficControlApisRequest;
 
 SetTrafficControlApisRequest::SetTrafficControlApisRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetTrafficControlApis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetTrafficControlApisRequest::~SetTrafficControlApisRequest()
 {}

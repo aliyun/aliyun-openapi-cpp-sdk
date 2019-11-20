@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeNotificationSettingRequest;
 
 DescribeNotificationSettingRequest::DescribeNotificationSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeNotificationSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNotificationSettingRequest::~DescribeNotificationSettingRequest()
 {}

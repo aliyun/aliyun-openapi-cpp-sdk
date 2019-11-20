@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitFpShotJobRequest;
 
 SubmitFpShotJobRequest::SubmitFpShotJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitFpShotJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitFpShotJobRequest::~SubmitFpShotJobRequest()
 {}

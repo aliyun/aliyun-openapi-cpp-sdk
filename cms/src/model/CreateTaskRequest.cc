@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::CreateTaskRequest;
 
 CreateTaskRequest::CreateTaskRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "CreateTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateTaskRequest::~CreateTaskRequest()
 {}

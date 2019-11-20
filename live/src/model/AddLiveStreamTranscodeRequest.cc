@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddLiveStreamTranscodeRequest;
 
 AddLiveStreamTranscodeRequest::AddLiveStreamTranscodeRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddLiveStreamTranscode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveStreamTranscodeRequest::~AddLiveStreamTranscodeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateWebsiteInstanceStatusRequest;
 
 UpdateWebsiteInstanceStatusRequest::UpdateWebsiteInstanceStatusRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateWebsiteInstanceStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateWebsiteInstanceStatusRequest::~UpdateWebsiteInstanceStatusRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeShardingNetworkAddressRequest;
 
 DescribeShardingNetworkAddressRequest::DescribeShardingNetworkAddressRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeShardingNetworkAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeShardingNetworkAddressRequest::~DescribeShardingNetworkAddressRequest()
 {}

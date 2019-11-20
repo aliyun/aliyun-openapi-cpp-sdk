@@ -2139,6 +2139,42 @@ EssClient::RemoveInstancesOutcomeCallable EssClient::removeInstancesCallable(con
 	return task->get_future();
 }
 
+EssClient::SetInstanceHealthOutcome EssClient::setInstanceHealth(const SetInstanceHealthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetInstanceHealthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetInstanceHealthOutcome(SetInstanceHealthResult(outcome.result()));
+	else
+		return SetInstanceHealthOutcome(outcome.error());
+}
+
+void EssClient::setInstanceHealthAsync(const SetInstanceHealthRequest& request, const SetInstanceHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setInstanceHealth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::SetInstanceHealthOutcomeCallable EssClient::setInstanceHealthCallable(const SetInstanceHealthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetInstanceHealthOutcome()>>(
+			[this, request]()
+			{
+			return this->setInstanceHealth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::SetInstancesProtectionOutcome EssClient::setInstancesProtection(const SetInstancesProtectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

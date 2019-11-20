@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeColumnsRequest;
 
 DescribeColumnsRequest::DescribeColumnsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeColumns")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeColumnsRequest::~DescribeColumnsRequest()
 {}

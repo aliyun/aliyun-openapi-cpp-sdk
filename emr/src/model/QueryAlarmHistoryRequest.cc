@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::QueryAlarmHistoryRequest;
 
 QueryAlarmHistoryRequest::QueryAlarmHistoryRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "QueryAlarmHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAlarmHistoryRequest::~QueryAlarmHistoryRequest()
 {}

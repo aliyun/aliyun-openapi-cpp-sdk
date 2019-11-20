@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::VerifyEmailRequest;
 
 VerifyEmailRequest::VerifyEmailRequest() :
 	RpcServiceRequest("green", "2017-08-23", "VerifyEmail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VerifyEmailRequest::~VerifyEmailRequest()
 {}

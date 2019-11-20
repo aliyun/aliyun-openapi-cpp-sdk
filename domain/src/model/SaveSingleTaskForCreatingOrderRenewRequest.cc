@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForCreatingOrderRenewRequest;
 
 SaveSingleTaskForCreatingOrderRenewRequest::SaveSingleTaskForCreatingOrderRenewRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRenew")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForCreatingOrderRenewRequest::~SaveSingleTaskForCreatingOrderRenewRequest()
 {}

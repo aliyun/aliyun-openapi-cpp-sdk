@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::CheckCloudResourceAuthorizedRequest;
 
 CheckCloudResourceAuthorizedRequest::CheckCloudResourceAuthorizedRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "CheckCloudResourceAuthorized")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckCloudResourceAuthorizedRequest::~CheckCloudResourceAuthorizedRequest()
 {}

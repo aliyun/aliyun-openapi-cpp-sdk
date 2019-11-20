@@ -81,6 +81,8 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/DescribeAvailableResourceResult.h
 	include/alibabacloud/slb/model/DescribeCACertificatesRequest.h
 	include/alibabacloud/slb/model/DescribeCACertificatesResult.h
+	include/alibabacloud/slb/model/DescribeDomainExtensionAttributeRequest.h
+	include/alibabacloud/slb/model/DescribeDomainExtensionAttributeResult.h
 	include/alibabacloud/slb/model/DescribeDomainExtensionsRequest.h
 	include/alibabacloud/slb/model/DescribeDomainExtensionsResult.h
 	include/alibabacloud/slb/model/DescribeHealthStatusRequest.h
@@ -123,6 +125,8 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/DescribeVServerGroupsResult.h
 	include/alibabacloud/slb/model/DescribeZonesRequest.h
 	include/alibabacloud/slb/model/DescribeZonesResult.h
+	include/alibabacloud/slb/model/ListTagResourcesRequest.h
+	include/alibabacloud/slb/model/ListTagResourcesResult.h
 	include/alibabacloud/slb/model/ModifyLoadBalancerInstanceSpecRequest.h
 	include/alibabacloud/slb/model/ModifyLoadBalancerInstanceSpecResult.h
 	include/alibabacloud/slb/model/ModifyLoadBalancerInternetSpecRequest.h
@@ -175,6 +179,10 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/StartLoadBalancerListenerResult.h
 	include/alibabacloud/slb/model/StopLoadBalancerListenerRequest.h
 	include/alibabacloud/slb/model/StopLoadBalancerListenerResult.h
+	include/alibabacloud/slb/model/TagResourcesRequest.h
+	include/alibabacloud/slb/model/TagResourcesResult.h
+	include/alibabacloud/slb/model/UntagResourcesRequest.h
+	include/alibabacloud/slb/model/UntagResourcesResult.h
 	include/alibabacloud/slb/model/UploadCACertificateRequest.h
 	include/alibabacloud/slb/model/UploadCACertificateResult.h
 	include/alibabacloud/slb/model/UploadServerCertificateRequest.h
@@ -242,6 +250,8 @@ set(slb_src
 	src/model/DescribeAvailableResourceResult.cc
 	src/model/DescribeCACertificatesRequest.cc
 	src/model/DescribeCACertificatesResult.cc
+	src/model/DescribeDomainExtensionAttributeRequest.cc
+	src/model/DescribeDomainExtensionAttributeResult.cc
 	src/model/DescribeDomainExtensionsRequest.cc
 	src/model/DescribeDomainExtensionsResult.cc
 	src/model/DescribeHealthStatusRequest.cc
@@ -284,6 +294,8 @@ set(slb_src
 	src/model/DescribeVServerGroupsResult.cc
 	src/model/DescribeZonesRequest.cc
 	src/model/DescribeZonesResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/ModifyLoadBalancerInstanceSpecRequest.cc
 	src/model/ModifyLoadBalancerInstanceSpecResult.cc
 	src/model/ModifyLoadBalancerInternetSpecRequest.cc
@@ -336,6 +348,10 @@ set(slb_src
 	src/model/StartLoadBalancerListenerResult.cc
 	src/model/StopLoadBalancerListenerRequest.cc
 	src/model/StopLoadBalancerListenerResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UploadCACertificateRequest.cc
 	src/model/UploadCACertificateResult.cc
 	src/model/UploadServerCertificateRequest.cc

@@ -41,6 +41,7 @@ namespace AlibabaCloud
 				};
 				struct PropertyUser
 				{
+					std::string status;
 					std::string isRoot;
 					std::vector<std::string> groupNames;
 					std::string user;

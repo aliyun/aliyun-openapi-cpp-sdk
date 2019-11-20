@@ -1095,6 +1095,42 @@ TrademarkClient::QueryMonitorKeywordsOutcomeCallable TrademarkClient::queryMonit
 	return task->get_future();
 }
 
+TrademarkClient::QueryOfficialFileCustomListOutcome TrademarkClient::queryOfficialFileCustomList(const QueryOfficialFileCustomListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryOfficialFileCustomListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryOfficialFileCustomListOutcome(QueryOfficialFileCustomListResult(outcome.result()));
+	else
+		return QueryOfficialFileCustomListOutcome(outcome.error());
+}
+
+void TrademarkClient::queryOfficialFileCustomListAsync(const QueryOfficialFileCustomListRequest& request, const QueryOfficialFileCustomListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryOfficialFileCustomList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryOfficialFileCustomListOutcomeCallable TrademarkClient::queryOfficialFileCustomListCallable(const QueryOfficialFileCustomListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryOfficialFileCustomListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryOfficialFileCustomList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 TrademarkClient::QueryOssResourcesOutcome TrademarkClient::queryOssResources(const QueryOssResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1635,6 +1671,42 @@ TrademarkClient::RefundProduceOutcomeCallable TrademarkClient::refundProduceCall
 	return task->get_future();
 }
 
+TrademarkClient::RejectApplicantOutcome TrademarkClient::rejectApplicant(const RejectApplicantRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RejectApplicantOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RejectApplicantOutcome(RejectApplicantResult(outcome.result()));
+	else
+		return RejectApplicantOutcome(outcome.error());
+}
+
+void TrademarkClient::rejectApplicantAsync(const RejectApplicantRequest& request, const RejectApplicantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rejectApplicant(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::RejectApplicantOutcomeCallable TrademarkClient::rejectApplicantCallable(const RejectApplicantRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RejectApplicantOutcome()>>(
+			[this, request]()
+			{
+			return this->rejectApplicant(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 TrademarkClient::SaveTaskOutcome TrademarkClient::saveTask(const SaveTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +1737,42 @@ TrademarkClient::SaveTaskOutcomeCallable TrademarkClient::saveTaskCallable(const
 			[this, request]()
 			{
 			return this->saveTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::SaveTaskForOfficialFileCustomOutcome TrademarkClient::saveTaskForOfficialFileCustom(const SaveTaskForOfficialFileCustomRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveTaskForOfficialFileCustomOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveTaskForOfficialFileCustomOutcome(SaveTaskForOfficialFileCustomResult(outcome.result()));
+	else
+		return SaveTaskForOfficialFileCustomOutcome(outcome.error());
+}
+
+void TrademarkClient::saveTaskForOfficialFileCustomAsync(const SaveTaskForOfficialFileCustomRequest& request, const SaveTaskForOfficialFileCustomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveTaskForOfficialFileCustom(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::SaveTaskForOfficialFileCustomOutcomeCallable TrademarkClient::saveTaskForOfficialFileCustomCallable(const SaveTaskForOfficialFileCustomRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveTaskForOfficialFileCustomOutcome()>>(
+			[this, request]()
+			{
+			return this->saveTaskForOfficialFileCustom(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

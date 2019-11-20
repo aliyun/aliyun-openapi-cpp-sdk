@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeTagsRequest;
 
 DescribeTagsRequest::DescribeTagsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTagsRequest::~DescribeTagsRequest()
 {}

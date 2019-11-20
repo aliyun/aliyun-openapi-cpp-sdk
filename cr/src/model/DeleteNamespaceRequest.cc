@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::DeleteNamespaceRequest;
 
 DeleteNamespaceRequest::DeleteNamespaceRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/namespace/[Namespace]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteNamespaceRequest::~DeleteNamespaceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsMqttGroupIdCreateRequest;
 
 OnsMqttGroupIdCreateRequest::OnsMqttGroupIdCreateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMqttGroupIdCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsMqttGroupIdCreateRequest::~OnsMqttGroupIdCreateRequest()
 {}

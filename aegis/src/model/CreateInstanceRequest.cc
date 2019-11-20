@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::CreateInstanceRequest;
 
 CreateInstanceRequest::CreateInstanceRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "CreateInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateInstanceRequest::~CreateInstanceRequest()
 {}

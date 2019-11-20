@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UserDataUpdateRequest;
 
 UserDataUpdateRequest::UserDataUpdateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UserDataUpdate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UserDataUpdateRequest::~UserDataUpdateRequest()
 {}

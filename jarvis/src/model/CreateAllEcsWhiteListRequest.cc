@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateAllEcsWhiteListRequest;
 
 CreateAllEcsWhiteListRequest::CreateAllEcsWhiteListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateAllEcsWhiteList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAllEcsWhiteListRequest::~CreateAllEcsWhiteListRequest()
 {}

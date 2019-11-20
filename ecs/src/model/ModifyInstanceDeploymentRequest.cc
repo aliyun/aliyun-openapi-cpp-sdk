@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyInstanceDeploymentRequest;
 
 ModifyInstanceDeploymentRequest::ModifyInstanceDeploymentRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceDeployment")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceDeploymentRequest::~ModifyInstanceDeploymentRequest()
 {}

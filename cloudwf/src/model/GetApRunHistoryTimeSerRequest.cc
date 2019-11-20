@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApRunHistoryTimeSerRequest;
 
 GetApRunHistoryTimeSerRequest::GetApRunHistoryTimeSerRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApRunHistoryTimeSer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApRunHistoryTimeSerRequest::~GetApRunHistoryTimeSerRequest()
 {}

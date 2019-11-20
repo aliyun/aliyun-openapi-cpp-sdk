@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DelUmengPagePermission4RootRequest;
 
 DelUmengPagePermission4RootRequest::DelUmengPagePermission4RootRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DelUmengPagePermission4Root")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DelUmengPagePermission4RootRequest::~DelUmengPagePermission4RootRequest()
 {}

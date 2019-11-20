@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GroupDetailsRequest;
 
 GroupDetailsRequest::GroupDetailsRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GroupDetails")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GroupDetailsRequest::~GroupDetailsRequest()
 {}

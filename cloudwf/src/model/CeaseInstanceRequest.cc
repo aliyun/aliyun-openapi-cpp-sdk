@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::CeaseInstanceRequest;
 
 CeaseInstanceRequest::CeaseInstanceRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "CeaseInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CeaseInstanceRequest::~CeaseInstanceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportTerrorismJobResultRequest;
 
 ReportTerrorismJobResultRequest::ReportTerrorismJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportTerrorismJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportTerrorismJobResultRequest::~ReportTerrorismJobResultRequest()
 {}

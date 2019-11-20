@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::RegistrantProfileRealNameVerificationRequest;
 
 RegistrantProfileRealNameVerificationRequest::RegistrantProfileRealNameVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "RegistrantProfileRealNameVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegistrantProfileRealNameVerificationRequest::~RegistrantProfileRealNameVerificationRequest()
 {}

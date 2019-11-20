@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::RenewInstanceRequest;
 
 RenewInstanceRequest::RenewInstanceRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "RenewInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenewInstanceRequest::~RenewInstanceRequest()
 {}

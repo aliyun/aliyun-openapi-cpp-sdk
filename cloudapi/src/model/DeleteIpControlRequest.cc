@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteIpControlRequest;
 
 DeleteIpControlRequest::DeleteIpControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteIpControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIpControlRequest::~DeleteIpControlRequest()
 {}

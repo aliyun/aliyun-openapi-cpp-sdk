@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::PullImageRequest;
 
 PullImageRequest::PullImageRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "PullImage")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 PullImageRequest::~PullImageRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::DisableKnowledgeRequest;
 
 DisableKnowledgeRequest::DisableKnowledgeRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "DisableKnowledge")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisableKnowledgeRequest::~DisableKnowledgeRequest()
 {}

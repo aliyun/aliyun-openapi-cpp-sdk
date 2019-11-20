@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::AttachVServerGroupsRequest;
 
 AttachVServerGroupsRequest::AttachVServerGroupsRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "AttachVServerGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachVServerGroupsRequest::~AttachVServerGroupsRequest()
 {}
@@ -99,12 +101,17 @@ std::vector<AttachVServerGroupsRequest::VServerGroup> AttachVServerGroupsRequest
 void AttachVServerGroupsRequest::setVServerGroup(const std::vector<VServerGroup>& vServerGroup)
 {
 	vServerGroup_ = vServerGroup;
-	int i = 0;
-	for(int i = 0; i!= vServerGroup.size(); i++)	{
-		auto obj = vServerGroup.at(i);
-		std::string str ="VServerGroup."+ std::to_string(i);
-		setCoreParameter(str + ".LoadBalancerId", obj.loadBalancerId);
-		setCoreParameter(str + ".VServerGroupAttribute", std::to_string(obj.vServerGroupAttribute));
+	for(int dep1 = 0; dep1!= vServerGroup.size(); dep1++) {
+		auto vServerGroupObj = vServerGroup.at(dep1);
+		std::string vServerGroupObjStr = "VServerGroup." + std::to_string(dep1);
+		setCoreParameter(vServerGroupObjStr + ".LoadBalancerId", vServerGroupObj.loadBalancerId);
+		for(int dep2 = 0; dep2!= vServerGroupObj.vServerGroupAttribute.size(); dep2++) {
+			auto vServerGroupAttributeObj = vServerGroupObj.vServerGroupAttribute.at(dep2);
+			std::string vServerGroupAttributeObjStr = vServerGroupObjStr + "VServerGroupAttribute." + std::to_string(dep2);
+			setCoreParameter(vServerGroupAttributeObjStr + ".VServerGroupId", vServerGroupAttributeObj.vServerGroupId);
+			setCoreParameter(vServerGroupAttributeObjStr + ".Port", std::to_string(vServerGroupAttributeObj.port));
+			setCoreParameter(vServerGroupAttributeObjStr + ".Weight", std::to_string(vServerGroupAttributeObj.weight));
+		}
 	}
 }
 

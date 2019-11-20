@@ -20,7 +20,9 @@ using AlibabaCloud::Dypnsapi::Model::CreateVerifySchemeRequest;
 
 CreateVerifySchemeRequest::CreateVerifySchemeRequest() :
 	RpcServiceRequest("dypnsapi", "2017-05-25", "CreateVerifyScheme")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVerifySchemeRequest::~CreateVerifySchemeRequest()
 {}

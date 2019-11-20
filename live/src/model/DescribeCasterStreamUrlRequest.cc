@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeCasterStreamUrlRequest;
 
 DescribeCasterStreamUrlRequest::DescribeCasterStreamUrlRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeCasterStreamUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCasterStreamUrlRequest::~DescribeCasterStreamUrlRequest()
 {}

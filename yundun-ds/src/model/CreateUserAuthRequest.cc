@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::CreateUserAuthRequest;
 
 CreateUserAuthRequest::CreateUserAuthRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "CreateUserAuth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUserAuthRequest::~CreateUserAuthRequest()
 {}

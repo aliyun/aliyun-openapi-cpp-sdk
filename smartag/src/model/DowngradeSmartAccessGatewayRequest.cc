@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DowngradeSmartAccessGatewayRequest;
 
 DowngradeSmartAccessGatewayRequest::DowngradeSmartAccessGatewayRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DowngradeSmartAccessGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DowngradeSmartAccessGatewayRequest::~DowngradeSmartAccessGatewayRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveApRadioConfigRequest;
 
 SaveApRadioConfigRequest::SaveApRadioConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveApRadioConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveApRadioConfigRequest::~SaveApRadioConfigRequest()
 {}

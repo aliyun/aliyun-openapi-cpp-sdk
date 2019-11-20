@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::CheckUmengDataAnalysisPermissionRequest;
 
 CheckUmengDataAnalysisPermissionRequest::CheckUmengDataAnalysisPermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "CheckUmengDataAnalysisPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckUmengDataAnalysisPermissionRequest::~CheckUmengDataAnalysisPermissionRequest()
 {}

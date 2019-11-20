@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CheckTransferInFeasibilityRequest;
 
 CheckTransferInFeasibilityRequest::CheckTransferInFeasibilityRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CheckTransferInFeasibility")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckTransferInFeasibilityRequest::~CheckTransferInFeasibilityRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SearchPipelineRequest;
 
 SearchPipelineRequest::SearchPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SearchPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchPipelineRequest::~SearchPipelineRequest()
 {}

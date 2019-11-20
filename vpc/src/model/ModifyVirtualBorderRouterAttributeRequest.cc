@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyVirtualBorderRouterAttributeRequest;
 
 ModifyVirtualBorderRouterAttributeRequest::ModifyVirtualBorderRouterAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyVirtualBorderRouterAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyVirtualBorderRouterAttributeRequest::~ModifyVirtualBorderRouterAttributeRequest()
 {}

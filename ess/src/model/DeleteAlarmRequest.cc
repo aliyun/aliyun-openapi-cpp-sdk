@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteAlarmRequest;
 
 DeleteAlarmRequest::DeleteAlarmRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAlarmRequest::~DeleteAlarmRequest()
 {}
@@ -34,17 +36,6 @@ void DeleteAlarmRequest::setResourceOwnerAccount(const std::string& resourceOwne
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteAlarmRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteAlarmRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 long DeleteAlarmRequest::getOwnerId()const
@@ -78,5 +69,16 @@ void DeleteAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteAlarmRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteAlarmRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

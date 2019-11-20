@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::SearchAlertContactGroupRequest;
 
 SearchAlertContactGroupRequest::SearchAlertContactGroupRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "SearchAlertContactGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchAlertContactGroupRequest::~SearchAlertContactGroupRequest()
 {}
@@ -45,5 +47,16 @@ void SearchAlertContactGroupRequest::setContactGroupName(const std::string& cont
 {
 	contactGroupName_ = contactGroupName;
 	setCoreParameter("ContactGroupName", contactGroupName);
+}
+
+std::string SearchAlertContactGroupRequest::getProxyUserId()const
+{
+	return proxyUserId_;
+}
+
+void SearchAlertContactGroupRequest::setProxyUserId(const std::string& proxyUserId)
+{
+	proxyUserId_ = proxyUserId;
+	setCoreParameter("ProxyUserId", proxyUserId);
 }
 

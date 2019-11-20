@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDBInstanceByTagsRequest;
 
 DescribeDBInstanceByTagsRequest::DescribeDBInstanceByTagsRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstanceByTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceByTagsRequest::~DescribeDBInstanceByTagsRequest()
 {}

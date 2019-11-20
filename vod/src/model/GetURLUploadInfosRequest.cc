@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetURLUploadInfosRequest;
 
 GetURLUploadInfosRequest::GetURLUploadInfosRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetURLUploadInfos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetURLUploadInfosRequest::~GetURLUploadInfosRequest()
 {}

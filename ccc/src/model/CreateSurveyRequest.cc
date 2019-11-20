@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateSurveyRequest;
 
 CreateSurveyRequest::CreateSurveyRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateSurvey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSurveyRequest::~CreateSurveyRequest()
 {}

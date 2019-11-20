@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteScalingRuleRequest;
 
 DeleteScalingRuleRequest::DeleteScalingRuleRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteScalingRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteScalingRuleRequest::~DeleteScalingRuleRequest()
 {}

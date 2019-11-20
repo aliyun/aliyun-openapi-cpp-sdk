@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateWebSignatureRequest;
 
 CreateWebSignatureRequest::CreateWebSignatureRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateWebSignature")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateWebSignatureRequest::~CreateWebSignatureRequest()
 {}

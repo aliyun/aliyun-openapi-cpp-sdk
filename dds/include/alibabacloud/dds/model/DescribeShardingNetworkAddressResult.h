@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct NetworkAddress
 				{
+					std::string role;
 					std::string networkAddress;
 					std::string vPCId;
 					std::string networkType;

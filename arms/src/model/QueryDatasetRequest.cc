@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::QueryDatasetRequest;
 
 QueryDatasetRequest::QueryDatasetRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "QueryDataset")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDatasetRequest::~QueryDatasetRequest()
 {}
@@ -77,13 +79,12 @@ std::vector<QueryDatasetRequest::OptionalDims> QueryDatasetRequest::getOptionalD
 void QueryDatasetRequest::setOptionalDims(const std::vector<OptionalDims>& optionalDims)
 {
 	optionalDims_ = optionalDims;
-	int i = 0;
-	for(int i = 0; i!= optionalDims.size(); i++)	{
-		auto obj = optionalDims.at(i);
-		std::string str ="OptionalDims."+ std::to_string(i);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= optionalDims.size(); dep1++) {
+		auto optionalDimsObj = optionalDims.at(dep1);
+		std::string optionalDimsObjStr = "OptionalDims." + std::to_string(dep1);
+		setCoreParameter(optionalDimsObjStr + ".Type", optionalDimsObj.type);
+		setCoreParameter(optionalDimsObjStr + ".Value", optionalDimsObj.value);
+		setCoreParameter(optionalDimsObjStr + ".Key", optionalDimsObj.key);
 	}
 }
 
@@ -95,8 +96,8 @@ std::vector<std::string> QueryDatasetRequest::getMeasures()const
 void QueryDatasetRequest::setMeasures(const std::vector<std::string>& measures)
 {
 	measures_ = measures;
-	for(int i = 0; i!= measures.size(); i++)
-		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
+	for(int dep1 = 0; dep1!= measures.size(); dep1++)
+		setCoreParameter("Measures."+ std::to_string(dep1), measures.at(dep1));
 }
 
 int QueryDatasetRequest::getIntervalInSec()const
@@ -173,13 +174,12 @@ std::vector<QueryDatasetRequest::RequiredDims> QueryDatasetRequest::getRequiredD
 void QueryDatasetRequest::setRequiredDims(const std::vector<RequiredDims>& requiredDims)
 {
 	requiredDims_ = requiredDims;
-	int i = 0;
-	for(int i = 0; i!= requiredDims.size(); i++)	{
-		auto obj = requiredDims.at(i);
-		std::string str ="RequiredDims."+ std::to_string(i);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= requiredDims.size(); dep1++) {
+		auto requiredDimsObj = requiredDims.at(dep1);
+		std::string requiredDimsObjStr = "RequiredDims." + std::to_string(dep1);
+		setCoreParameter(requiredDimsObjStr + ".Type", requiredDimsObj.type);
+		setCoreParameter(requiredDimsObjStr + ".Value", requiredDimsObj.value);
+		setCoreParameter(requiredDimsObjStr + ".Key", requiredDimsObj.key);
 	}
 }
 
@@ -191,13 +191,12 @@ std::vector<QueryDatasetRequest::Dimensions> QueryDatasetRequest::getDimensions(
 void QueryDatasetRequest::setDimensions(const std::vector<Dimensions>& dimensions)
 {
 	dimensions_ = dimensions;
-	int i = 0;
-	for(int i = 0; i!= dimensions.size(); i++)	{
-		auto obj = dimensions.at(i);
-		std::string str ="Dimensions."+ std::to_string(i);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= dimensions.size(); dep1++) {
+		auto dimensionsObj = dimensions.at(dep1);
+		std::string dimensionsObjStr = "Dimensions." + std::to_string(dep1);
+		setCoreParameter(dimensionsObjStr + ".Type", dimensionsObj.type);
+		setCoreParameter(dimensionsObjStr + ".Value", dimensionsObj.value);
+		setCoreParameter(dimensionsObjStr + ".Key", dimensionsObj.key);
 	}
 }
 

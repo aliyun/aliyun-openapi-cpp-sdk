@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::CommitSuccessedServicesRequest;
 
 CommitSuccessedServicesRequest::CommitSuccessedServicesRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "CommitSuccessedServices")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CommitSuccessedServicesRequest::~CommitSuccessedServicesRequest()
 {}

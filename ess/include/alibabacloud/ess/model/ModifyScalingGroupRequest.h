@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setHealthCheckType(const std::string& healthCheckType);
 				std::string getLaunchTemplateId()const;
 				void setLaunchTemplateId(const std::string& launchTemplateId);
+				int getDesiredCapacity()const;
+				void setDesiredCapacity(int desiredCapacity);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupName()const;
@@ -71,6 +73,8 @@ namespace AlibabaCloud
 				void setSpotInstancePools(int spotInstancePools);
 				int getMinSize()const;
 				void setMinSize(int minSize);
+				bool getGroupDeletionProtection()const;
+				void setGroupDeletionProtection(bool groupDeletionProtection);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getLaunchTemplateVersion()const;
@@ -92,11 +96,13 @@ namespace AlibabaCloud
 				std::string removalPolicy2_;
 				std::string healthCheckType_;
 				std::string launchTemplateId_;
+				int desiredCapacity_;
 				std::string resourceOwnerAccount_;
 				std::string scalingGroupName_;
 				std::string ownerAccount_;
 				int spotInstancePools_;
 				int minSize_;
+				bool groupDeletionProtection_;
 				long ownerId_;
 				std::string launchTemplateVersion_;
 				int maxSize_;

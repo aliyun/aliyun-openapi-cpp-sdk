@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeAutoProvisioningGroupsRequest;
 
 DescribeAutoProvisioningGroupsRequest::DescribeAutoProvisioningGroupsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeAutoProvisioningGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAutoProvisioningGroupsRequest::~DescribeAutoProvisioningGroupsRequest()
 {}
@@ -77,8 +79,8 @@ std::vector<std::string> DescribeAutoProvisioningGroupsRequest::getAutoProvision
 void DescribeAutoProvisioningGroupsRequest::setAutoProvisioningGroupStatus(const std::vector<std::string>& autoProvisioningGroupStatus)
 {
 	autoProvisioningGroupStatus_ = autoProvisioningGroupStatus;
-	for(int i = 0; i!= autoProvisioningGroupStatus.size(); i++)
-		setCoreParameter("AutoProvisioningGroupStatus."+ std::to_string(i), autoProvisioningGroupStatus.at(i));
+	for(int dep1 = 0; dep1!= autoProvisioningGroupStatus.size(); dep1++)
+		setCoreParameter("AutoProvisioningGroupStatus."+ std::to_string(dep1), autoProvisioningGroupStatus.at(dep1));
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getResourceOwnerAccount()const
@@ -122,8 +124,8 @@ std::vector<std::string> DescribeAutoProvisioningGroupsRequest::getAutoProvision
 void DescribeAutoProvisioningGroupsRequest::setAutoProvisioningGroupId(const std::vector<std::string>& autoProvisioningGroupId)
 {
 	autoProvisioningGroupId_ = autoProvisioningGroupId;
-	for(int i = 0; i!= autoProvisioningGroupId.size(); i++)
-		setCoreParameter("AutoProvisioningGroupId."+ std::to_string(i), autoProvisioningGroupId.at(i));
+	for(int dep1 = 0; dep1!= autoProvisioningGroupId.size(); dep1++)
+		setCoreParameter("AutoProvisioningGroupId."+ std::to_string(dep1), autoProvisioningGroupId.at(dep1));
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getAutoProvisioningGroupName()const

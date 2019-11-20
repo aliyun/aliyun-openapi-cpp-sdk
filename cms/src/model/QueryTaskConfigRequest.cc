@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::QueryTaskConfigRequest;
 
 QueryTaskConfigRequest::QueryTaskConfigRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "QueryTaskConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTaskConfigRequest::~QueryTaskConfigRequest()
 {}

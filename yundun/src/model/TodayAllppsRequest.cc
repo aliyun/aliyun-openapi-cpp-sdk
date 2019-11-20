@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun::Model::TodayAllppsRequest;
 
 TodayAllppsRequest::TodayAllppsRequest() :
 	RpcServiceRequest("yundun", "2015-02-27", "TodayAllpps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TodayAllppsRequest::~TodayAllppsRequest()
 {}

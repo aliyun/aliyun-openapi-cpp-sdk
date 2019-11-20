@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::ModifyAccessWhiteListAutoShareRequest;
 
 ModifyAccessWhiteListAutoShareRequest::ModifyAccessWhiteListAutoShareRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "ModifyAccessWhiteListAutoShare")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAccessWhiteListAutoShareRequest::~ModifyAccessWhiteListAutoShareRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DetachCenChildInstanceRequest;
 
 DetachCenChildInstanceRequest::DetachCenChildInstanceRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DetachCenChildInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachCenChildInstanceRequest::~DetachCenChildInstanceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddCasterVideoResourceRequest;
 
 AddCasterVideoResourceRequest::AddCasterVideoResourceRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddCasterVideoResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCasterVideoResourceRequest::~AddCasterVideoResourceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::AddClusterServiceRequest;
 
 AddClusterServiceRequest::AddClusterServiceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "AddClusterService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddClusterServiceRequest::~AddClusterServiceRequest()
 {}
@@ -77,11 +79,10 @@ std::vector<AddClusterServiceRequest::Service> AddClusterServiceRequest::getServ
 void AddClusterServiceRequest::setService(const std::vector<Service>& service)
 {
 	service_ = service;
-	int i = 0;
-	for(int i = 0; i!= service.size(); i++)	{
-		auto obj = service.at(i);
-		std::string str ="Service."+ std::to_string(i);
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+	for(int dep1 = 0; dep1!= service.size(); dep1++) {
+		auto serviceObj = service.at(dep1);
+		std::string serviceObjStr = "Service." + std::to_string(dep1);
+		setCoreParameter(serviceObjStr + ".ServiceName", serviceObj.serviceName);
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeParameterTemplatesRequest;
 
 DescribeParameterTemplatesRequest::DescribeParameterTemplatesRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeParameterTemplates")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeParameterTemplatesRequest::~DescribeParameterTemplatesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::GetIpProfileRequest;
 
 GetIpProfileRequest::GetIpProfileRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "GetIpProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetIpProfileRequest::~GetIpProfileRequest()
 {}

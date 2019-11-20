@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateCensorPipelineRequest;
 
 UpdateCensorPipelineRequest::UpdateCensorPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateCensorPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCensorPipelineRequest::~UpdateCensorPipelineRequest()
 {}

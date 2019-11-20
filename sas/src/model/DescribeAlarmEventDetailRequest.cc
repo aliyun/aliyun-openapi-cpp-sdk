@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeAlarmEventDetailRequest;
 
 DescribeAlarmEventDetailRequest::DescribeAlarmEventDetailRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeAlarmEventDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAlarmEventDetailRequest::~DescribeAlarmEventDetailRequest()
 {}

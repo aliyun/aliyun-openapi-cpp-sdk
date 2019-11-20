@@ -47,7 +47,16 @@ void DescribeBizTypeSettingResult::parse(const std::string &payload)
 		auto allCategories1 = pornNode["Categories"]["category"];
 		for (auto value : allCategories1)
 			porn_.categories1.push_back(value.asString());
+	auto antispamNode = value["Antispam"];
+		auto allCategories2 = antispamNode["Categories"]["category"];
+		for (auto value : allCategories2)
+			antispam_.categories2.push_back(value.asString());
 
+}
+
+DescribeBizTypeSettingResult::Antispam DescribeBizTypeSettingResult::getAntispam()const
+{
+	return antispam_;
 }
 
 DescribeBizTypeSettingResult::Terrorism DescribeBizTypeSettingResult::getTerrorism()const

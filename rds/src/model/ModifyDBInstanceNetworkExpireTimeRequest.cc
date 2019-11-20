@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyDBInstanceNetworkExpireTimeRequest;
 
 ModifyDBInstanceNetworkExpireTimeRequest::ModifyDBInstanceNetworkExpireTimeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceNetworkExpireTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceNetworkExpireTimeRequest::~ModifyDBInstanceNetworkExpireTimeRequest()
 {}

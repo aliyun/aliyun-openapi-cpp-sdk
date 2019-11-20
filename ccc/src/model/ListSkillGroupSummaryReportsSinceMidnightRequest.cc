@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListSkillGroupSummaryReportsSinceMidnightRequest
 
 ListSkillGroupSummaryReportsSinceMidnightRequest::ListSkillGroupSummaryReportsSinceMidnightRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListSkillGroupSummaryReportsSinceMidnight")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSkillGroupSummaryReportsSinceMidnightRequest::~ListSkillGroupSummaryReportsSinceMidnightRequest()
 {}

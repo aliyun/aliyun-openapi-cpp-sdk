@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeShardDbConnectionInfoRequest;
 
 DescribeShardDbConnectionInfoRequest::DescribeShardDbConnectionInfoRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeShardDbConnectionInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeShardDbConnectionInfoRequest::~DescribeShardDbConnectionInfoRequest()
 {}

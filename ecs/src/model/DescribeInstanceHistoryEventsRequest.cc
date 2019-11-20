@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeInstanceHistoryEventsRequest;
 
 DescribeInstanceHistoryEventsRequest::DescribeInstanceHistoryEventsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceHistoryEvents")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceHistoryEventsRequest::~DescribeInstanceHistoryEventsRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> DescribeInstanceHistoryEventsRequest::getEventId()const
 void DescribeInstanceHistoryEventsRequest::setEventId(const std::vector<std::string>& eventId)
 {
 	eventId_ = eventId;
-	for(int i = 0; i!= eventId.size(); i++)
-		setCoreParameter("EventId."+ std::to_string(i), eventId.at(i));
+	for(int dep1 = 0; dep1!= eventId.size(); dep1++)
+		setCoreParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
 }
 
 long DescribeInstanceHistoryEventsRequest::getResourceOwnerId()const
@@ -100,8 +102,8 @@ std::vector<std::string> DescribeInstanceHistoryEventsRequest::getInstanceEventC
 void DescribeInstanceHistoryEventsRequest::setInstanceEventCycleStatus(const std::vector<std::string>& instanceEventCycleStatus)
 {
 	instanceEventCycleStatus_ = instanceEventCycleStatus;
-	for(int i = 0; i!= instanceEventCycleStatus.size(); i++)
-		setCoreParameter("InstanceEventCycleStatus."+ std::to_string(i), instanceEventCycleStatus.at(i));
+	for(int dep1 = 0; dep1!= instanceEventCycleStatus.size(); dep1++)
+		setCoreParameter("InstanceEventCycleStatus."+ std::to_string(dep1), instanceEventCycleStatus.at(dep1));
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getEventPublishTimeEnd()const
@@ -123,8 +125,8 @@ std::vector<std::string> DescribeInstanceHistoryEventsRequest::getInstanceEventT
 void DescribeInstanceHistoryEventsRequest::setInstanceEventType(const std::vector<std::string>& instanceEventType)
 {
 	instanceEventType_ = instanceEventType;
-	for(int i = 0; i!= instanceEventType.size(); i++)
-		setCoreParameter("InstanceEventType."+ std::to_string(i), instanceEventType.at(i));
+	for(int dep1 = 0; dep1!= instanceEventType.size(); dep1++)
+		setCoreParameter("InstanceEventType."+ std::to_string(dep1), instanceEventType.at(dep1));
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getResourceOwnerAccount()const

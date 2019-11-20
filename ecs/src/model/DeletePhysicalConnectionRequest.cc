@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeletePhysicalConnectionRequest;
 
 DeletePhysicalConnectionRequest::DeletePhysicalConnectionRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeletePhysicalConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePhysicalConnectionRequest::~DeletePhysicalConnectionRequest()
 {}

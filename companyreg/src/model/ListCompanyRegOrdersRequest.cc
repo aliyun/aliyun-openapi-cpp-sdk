@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::ListCompanyRegOrdersRequest;
 
 ListCompanyRegOrdersRequest::ListCompanyRegOrdersRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "ListCompanyRegOrders")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListCompanyRegOrdersRequest::~ListCompanyRegOrdersRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowClusterAllHostsRequest;
 
 ListFlowClusterAllHostsRequest::ListFlowClusterAllHostsRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowClusterAllHosts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowClusterAllHostsRequest::~ListFlowClusterAllHostsRequest()
 {}

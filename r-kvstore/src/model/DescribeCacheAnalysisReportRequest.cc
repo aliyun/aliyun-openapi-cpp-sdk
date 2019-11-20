@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeCacheAnalysisReportRequest;
 
 DescribeCacheAnalysisReportRequest::DescribeCacheAnalysisReportRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeCacheAnalysisReport")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCacheAnalysisReportRequest::~DescribeCacheAnalysisReportRequest()
 {}

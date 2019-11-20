@@ -58,7 +58,7 @@ void DescribeOssObjectsResult::parse(const std::string &payload)
 		if(!valueItemsColumn["FileId"].isNull())
 			itemsObject.fileId = valueItemsColumn["FileId"].asString();
 		if(!valueItemsColumn["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = std::stol(valueItemsColumn["RiskLevelName"].asString());
+			itemsObject.riskLevelName = valueItemsColumn["RiskLevelName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

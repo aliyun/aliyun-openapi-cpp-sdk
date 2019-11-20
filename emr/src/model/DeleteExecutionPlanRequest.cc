@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteExecutionPlanRequest;
 
 DeleteExecutionPlanRequest::DeleteExecutionPlanRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteExecutionPlan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteExecutionPlanRequest::~DeleteExecutionPlanRequest()
 {}

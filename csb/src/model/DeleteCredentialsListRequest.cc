@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::DeleteCredentialsListRequest;
 
 DeleteCredentialsListRequest::DeleteCredentialsListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "DeleteCredentialsList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCredentialsListRequest::~DeleteCredentialsListRequest()
 {}

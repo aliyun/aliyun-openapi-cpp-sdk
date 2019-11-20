@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::PushObjectCacheRequest;
 
 PushObjectCacheRequest::PushObjectCacheRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "PushObjectCache")
+	RpcServiceRequest("cdn", "2014-11-11", "PushObjectCache")
 {
 	setMethod(HttpRequest::Method::Post);
 }

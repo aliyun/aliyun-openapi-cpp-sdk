@@ -34,6 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct NatGateway
 				{
+					struct NatGatewayPrivateInfo
+					{
+						std::string izNo;
+						std::string privateIpAddress;
+						int maxBandwidth;
+						int eniInstanceId;
+						std::string vswitchId;
+					};
 					struct IpList
 					{
 						std::string usingStatus;
@@ -43,6 +51,7 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string description;
+					std::string resourceGroupId;
 					std::string instanceChargeType;
 					std::vector<std::string> forwardTableIds;
 					std::vector<NatGateway::IpList> ipLists;
@@ -50,7 +59,10 @@ namespace AlibabaCloud
 					bool autoPay;
 					bool deletionProtection;
 					std::string businessStatus;
+					std::string natType;
 					std::string name;
+					std::string internetChargeType;
+					NatGatewayPrivateInfo natGatewayPrivateInfo;
 					std::string vpcId;
 					std::vector<std::string> snatTableIds;
 					std::string expiredTime;

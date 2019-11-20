@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveApMapInfoRequest;
 
 SaveApMapInfoRequest::SaveApMapInfoRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveApMapInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveApMapInfoRequest::~SaveApMapInfoRequest()
 {}

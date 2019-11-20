@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyIpv6GatewaySpecRequest;
 
 ModifyIpv6GatewaySpecRequest::ModifyIpv6GatewaySpecRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyIpv6GatewaySpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyIpv6GatewaySpecRequest::~ModifyIpv6GatewaySpecRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeDomainsResolutionRequest;
 
 DescribeDomainsResolutionRequest::DescribeDomainsResolutionRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeDomainsResolution")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainsResolutionRequest::~DescribeDomainsResolutionRequest()
 {}

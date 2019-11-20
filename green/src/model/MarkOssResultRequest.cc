@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::MarkOssResultRequest;
 
 MarkOssResultRequest::MarkOssResultRequest() :
 	RpcServiceRequest("green", "2017-08-23", "MarkOssResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MarkOssResultRequest::~MarkOssResultRequest()
 {}

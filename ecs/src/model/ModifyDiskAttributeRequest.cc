@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyDiskAttributeRequest;
 
 ModifyDiskAttributeRequest::ModifyDiskAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyDiskAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDiskAttributeRequest::~ModifyDiskAttributeRequest()
 {}
@@ -77,8 +79,8 @@ std::vector<std::string> ModifyDiskAttributeRequest::getDiskIds()const
 void ModifyDiskAttributeRequest::setDiskIds(const std::vector<std::string>& diskIds)
 {
 	diskIds_ = diskIds;
-	for(int i = 0; i!= diskIds.size(); i++)
-		setCoreParameter("DiskIds."+ std::to_string(i), diskIds.at(i));
+	for(int dep1 = 0; dep1!= diskIds.size(); dep1++)
+		setCoreParameter("DiskIds."+ std::to_string(dep1), diskIds.at(dep1));
 }
 
 std::string ModifyDiskAttributeRequest::getDiskId()const

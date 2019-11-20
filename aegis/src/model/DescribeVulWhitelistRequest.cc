@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeVulWhitelistRequest;
 
 DescribeVulWhitelistRequest::DescribeVulWhitelistRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeVulWhitelist")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVulWhitelistRequest::~DescribeVulWhitelistRequest()
 {}

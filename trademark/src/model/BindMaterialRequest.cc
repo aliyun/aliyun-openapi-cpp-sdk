@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::BindMaterialRequest;
 
 BindMaterialRequest::BindMaterialRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "BindMaterial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindMaterialRequest::~BindMaterialRequest()
 {}

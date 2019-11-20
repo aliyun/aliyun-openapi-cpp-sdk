@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteCommandRequest;
 
 DeleteCommandRequest::DeleteCommandRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteCommand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCommandRequest::~DeleteCommandRequest()
 {}

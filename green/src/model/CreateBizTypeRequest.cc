@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateBizTypeRequest;
 
 CreateBizTypeRequest::CreateBizTypeRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateBizType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBizTypeRequest::~CreateBizTypeRequest()
 {}

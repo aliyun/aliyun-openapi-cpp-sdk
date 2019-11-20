@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::CancelUpdateStackRequest;
 
 CancelUpdateStackRequest::CancelUpdateStackRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/cancel");
+	setMethod(HttpRequest::Method::Put);
+}
 
 CancelUpdateStackRequest::~CancelUpdateStackRequest()
 {}

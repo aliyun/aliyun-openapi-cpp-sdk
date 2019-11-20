@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateScenarioRequest;
 
 CreateScenarioRequest::CreateScenarioRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateScenario")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateScenarioRequest::~CreateScenarioRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> CreateScenarioRequest::getSurveysJson()const
 void CreateScenarioRequest::setSurveysJson(const std::vector<std::string>& surveysJson)
 {
 	surveysJson_ = surveysJson;
-	for(int i = 0; i!= surveysJson.size(); i++)
-		setCoreParameter("SurveysJson."+ std::to_string(i), surveysJson.at(i));
+	for(int dep1 = 0; dep1!= surveysJson.size(); dep1++)
+		setCoreParameter("SurveysJson."+ std::to_string(dep1), surveysJson.at(dep1));
 }
 
 std::string CreateScenarioRequest::getDescription()const

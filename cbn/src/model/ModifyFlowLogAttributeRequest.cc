@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::ModifyFlowLogAttributeRequest;
 
 ModifyFlowLogAttributeRequest::ModifyFlowLogAttributeRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "ModifyFlowLogAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyFlowLogAttributeRequest::~ModifyFlowLogAttributeRequest()
 {}

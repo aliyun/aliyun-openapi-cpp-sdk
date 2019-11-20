@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::DeleteFaceRequest;
 
 DeleteFaceRequest::DeleteFaceRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "DeleteFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFaceRequest::~DeleteFaceRequest()
 {}

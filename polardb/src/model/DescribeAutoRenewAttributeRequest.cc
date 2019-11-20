@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::DescribeAutoRenewAttributeRequest;
 
 DescribeAutoRenewAttributeRequest::DescribeAutoRenewAttributeRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "DescribeAutoRenewAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAutoRenewAttributeRequest::~DescribeAutoRenewAttributeRequest()
 {}

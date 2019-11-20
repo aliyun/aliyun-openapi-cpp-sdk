@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoListRequest;
 
 GetRepoListRequest::GetRepoListRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoListRequest::~GetRepoListRequest()
 {}

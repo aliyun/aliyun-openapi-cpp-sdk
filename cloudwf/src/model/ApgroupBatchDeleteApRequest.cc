@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ApgroupBatchDeleteApRequest;
 
 ApgroupBatchDeleteApRequest::ApgroupBatchDeleteApRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ApgroupBatchDeleteAp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApgroupBatchDeleteApRequest::~ApgroupBatchDeleteApRequest()
 {}

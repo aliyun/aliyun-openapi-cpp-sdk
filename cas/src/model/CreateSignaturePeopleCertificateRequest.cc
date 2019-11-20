@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateSignaturePeopleCertificateRequest;
 
 CreateSignaturePeopleCertificateRequest::CreateSignaturePeopleCertificateRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateSignaturePeopleCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSignaturePeopleCertificateRequest::~CreateSignaturePeopleCertificateRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryFpImportResultRequest;
 
 QueryFpImportResultRequest::QueryFpImportResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryFpImportResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFpImportResultRequest::~QueryFpImportResultRequest()
 {}

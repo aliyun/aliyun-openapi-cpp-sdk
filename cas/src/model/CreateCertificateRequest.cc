@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateCertificateRequest;
 
 CreateCertificateRequest::CreateCertificateRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCertificateRequest::~CreateCertificateRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeCertificateDetailRequest;
 
 DescribeCertificateDetailRequest::DescribeCertificateDetailRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeCertificateDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCertificateDetailRequest::~DescribeCertificateDetailRequest()
 {}

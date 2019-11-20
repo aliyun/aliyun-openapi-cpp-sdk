@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::MigrateDBInstanceRequest;
 
 MigrateDBInstanceRequest::MigrateDBInstanceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "MigrateDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MigrateDBInstanceRequest::~MigrateDBInstanceRequest()
 {}

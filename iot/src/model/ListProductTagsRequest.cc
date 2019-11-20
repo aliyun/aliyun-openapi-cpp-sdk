@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::ListProductTagsRequest;
 
 ListProductTagsRequest::ListProductTagsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "ListProductTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListProductTagsRequest::~ListProductTagsRequest()
 {}

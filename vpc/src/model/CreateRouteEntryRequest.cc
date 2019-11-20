@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateRouteEntryRequest;
 
 CreateRouteEntryRequest::CreateRouteEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateRouteEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRouteEntryRequest::~CreateRouteEntryRequest()
 {}
@@ -165,13 +167,12 @@ std::vector<CreateRouteEntryRequest::NextHopList> CreateRouteEntryRequest::getNe
 void CreateRouteEntryRequest::setNextHopList(const std::vector<NextHopList>& nextHopList)
 {
 	nextHopList_ = nextHopList;
-	int i = 0;
-	for(int i = 0; i!= nextHopList.size(); i++)	{
-		auto obj = nextHopList.at(i);
-		std::string str ="NextHopList."+ std::to_string(i);
-		setCoreParameter(str + ".Weight", std::to_string(obj.weight));
-		setCoreParameter(str + ".NextHopId", obj.nextHopId);
-		setCoreParameter(str + ".NextHopType", obj.nextHopType);
+	for(int dep1 = 0; dep1!= nextHopList.size(); dep1++) {
+		auto nextHopListObj = nextHopList.at(dep1);
+		std::string nextHopListObjStr = "NextHopList." + std::to_string(dep1);
+		setCoreParameter(nextHopListObjStr + ".Weight", std::to_string(nextHopListObj.weight));
+		setCoreParameter(nextHopListObjStr + ".NextHopId", nextHopListObj.nextHopId);
+		setCoreParameter(nextHopListObjStr + ".NextHopType", nextHopListObj.nextHopType);
 	}
 }
 

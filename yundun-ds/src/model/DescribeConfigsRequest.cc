@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeConfigsRequest;
 
 DescribeConfigsRequest::DescribeConfigsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeConfigsRequest::~DescribeConfigsRequest()
 {}

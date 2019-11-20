@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeCdnIpListRequest;
 
 DescribeCdnIpListRequest::DescribeCdnIpListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeCdnIpList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCdnIpListRequest::~DescribeCdnIpListRequest()
 {}

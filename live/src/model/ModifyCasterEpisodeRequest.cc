@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ModifyCasterEpisodeRequest;
 
 ModifyCasterEpisodeRequest::ModifyCasterEpisodeRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ModifyCasterEpisode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCasterEpisodeRequest::~ModifyCasterEpisodeRequest()
 {}
@@ -66,8 +68,8 @@ std::vector<std::string> ModifyCasterEpisodeRequest::getComponentId()const
 void ModifyCasterEpisodeRequest::setComponentId(const std::vector<std::string>& componentId)
 {
 	componentId_ = componentId;
-	for(int i = 0; i!= componentId.size(); i++)
-		setCoreParameter("ComponentId."+ std::to_string(i), componentId.at(i));
+	for(int dep1 = 0; dep1!= componentId.size(); dep1++)
+		setCoreParameter("ComponentId."+ std::to_string(dep1), componentId.at(dep1));
 }
 
 std::string ModifyCasterEpisodeRequest::getCasterId()const

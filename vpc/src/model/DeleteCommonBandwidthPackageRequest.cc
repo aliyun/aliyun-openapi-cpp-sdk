@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteCommonBandwidthPackageRequest;
 
 DeleteCommonBandwidthPackageRequest::DeleteCommonBandwidthPackageRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteCommonBandwidthPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCommonBandwidthPackageRequest::~DeleteCommonBandwidthPackageRequest()
 {}

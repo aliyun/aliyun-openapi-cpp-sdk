@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::StartExecutionRequest;
 
 StartExecutionRequest::StartExecutionRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "StartExecution")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartExecutionRequest::~StartExecutionRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::BatchRegisterApAssetRequest;
 
 BatchRegisterApAssetRequest::BatchRegisterApAssetRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "BatchRegisterApAsset")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchRegisterApAssetRequest::~BatchRegisterApAssetRequest()
 {}

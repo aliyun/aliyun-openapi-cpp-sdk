@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::StartNotaryRequest;
 
 StartNotaryRequest::StartNotaryRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "StartNotary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartNotaryRequest::~StartNotaryRequest()
 {}

@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				SetDomainGreenManagerConfigRequest();
 				~SetDomainGreenManagerConfigRequest();
 
-				std::string getEnable()const;
-				void setEnable(const std::string& enable);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getEnable()const;
+				void setEnable(const std::string& enable);
 
             private:
-				std::string enable_;
 				std::string domainName_;
 				long ownerId_;
+				std::string enable_;
 
 			};
 		}

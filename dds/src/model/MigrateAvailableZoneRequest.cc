@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::MigrateAvailableZoneRequest;
 
 MigrateAvailableZoneRequest::MigrateAvailableZoneRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "MigrateAvailableZone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MigrateAvailableZoneRequest::~MigrateAvailableZoneRequest()
 {}

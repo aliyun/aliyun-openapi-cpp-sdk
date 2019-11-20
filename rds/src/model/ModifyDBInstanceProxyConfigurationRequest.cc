@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyDBInstanceProxyConfigurationRequest;
 
 ModifyDBInstanceProxyConfigurationRequest::ModifyDBInstanceProxyConfigurationRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceProxyConfigurationRequest::~ModifyDBInstanceProxyConfigurationRequest()
 {}

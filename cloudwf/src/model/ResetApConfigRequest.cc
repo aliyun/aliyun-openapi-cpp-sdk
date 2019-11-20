@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ResetApConfigRequest;
 
 ResetApConfigRequest::ResetApConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ResetApConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetApConfigRequest::~ResetApConfigRequest()
 {}

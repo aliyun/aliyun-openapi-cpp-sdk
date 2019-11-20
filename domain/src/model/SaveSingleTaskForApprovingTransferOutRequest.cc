@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForApprovingTransferOutRequest;
 
 SaveSingleTaskForApprovingTransferOutRequest::SaveSingleTaskForApprovingTransferOutRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForApprovingTransferOut")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForApprovingTransferOutRequest::~SaveSingleTaskForApprovingTransferOutRequest()
 {}

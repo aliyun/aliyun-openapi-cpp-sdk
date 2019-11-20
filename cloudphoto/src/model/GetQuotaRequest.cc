@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetQuotaRequest;
 
 GetQuotaRequest::GetQuotaRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetQuota")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetQuotaRequest::~GetQuotaRequest()
 {}

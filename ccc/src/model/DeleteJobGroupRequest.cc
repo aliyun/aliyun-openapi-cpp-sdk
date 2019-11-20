@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DeleteJobGroupRequest;
 
 DeleteJobGroupRequest::DeleteJobGroupRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DeleteJobGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteJobGroupRequest::~DeleteJobGroupRequest()
 {}

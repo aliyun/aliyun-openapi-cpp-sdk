@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DeleteBizTypeRequest;
 
 DeleteBizTypeRequest::DeleteBizTypeRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DeleteBizType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteBizTypeRequest::~DeleteBizTypeRequest()
 {}

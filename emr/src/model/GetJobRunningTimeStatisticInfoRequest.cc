@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::GetJobRunningTimeStatisticInfoRequest;
 
 GetJobRunningTimeStatisticInfoRequest::GetJobRunningTimeStatisticInfoRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "GetJobRunningTimeStatisticInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobRunningTimeStatisticInfoRequest::~GetJobRunningTimeStatisticInfoRequest()
 {}

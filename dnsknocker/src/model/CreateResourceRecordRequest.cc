@@ -20,7 +20,9 @@ using AlibabaCloud::DnsKnocker::Model::CreateResourceRecordRequest;
 
 CreateResourceRecordRequest::CreateResourceRecordRequest() :
 	RpcServiceRequest("dnsknocker", "2019-09-10", "CreateResourceRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateResourceRecordRequest::~CreateResourceRecordRequest()
 {}

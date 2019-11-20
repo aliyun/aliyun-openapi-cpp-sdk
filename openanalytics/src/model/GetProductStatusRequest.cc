@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::GetProductStatusRequest;
 
 GetProductStatusRequest::GetProductStatusRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "GetProductStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetProductStatusRequest::~GetProductStatusRequest()
 {}

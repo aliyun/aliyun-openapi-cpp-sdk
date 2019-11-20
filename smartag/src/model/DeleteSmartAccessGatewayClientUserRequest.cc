@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteSmartAccessGatewayClientUserRequest;
 
 DeleteSmartAccessGatewayClientUserRequest::DeleteSmartAccessGatewayClientUserRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteSmartAccessGatewayClientUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSmartAccessGatewayClientUserRequest::~DeleteSmartAccessGatewayClientUserRequest()
 {}

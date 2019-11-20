@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::RRpcRequest;
 
 RRpcRequest::RRpcRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "RRpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RRpcRequest::~RRpcRequest()
 {}

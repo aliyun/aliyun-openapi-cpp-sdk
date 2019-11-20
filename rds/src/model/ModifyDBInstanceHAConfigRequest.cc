@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyDBInstanceHAConfigRequest;
 
 ModifyDBInstanceHAConfigRequest::ModifyDBInstanceHAConfigRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceHAConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceHAConfigRequest::~ModifyDBInstanceHAConfigRequest()
 {}

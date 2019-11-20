@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeleteAccessKeyRequest;
 
 DeleteAccessKeyRequest::DeleteAccessKeyRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeleteAccessKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAccessKeyRequest::~DeleteAccessKeyRequest()
 {}

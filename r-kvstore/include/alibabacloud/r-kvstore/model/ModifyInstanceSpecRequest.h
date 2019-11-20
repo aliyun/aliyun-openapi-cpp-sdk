@@ -63,6 +63,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				bool getForceUpgrade()const;
 				void setForceUpgrade(bool forceUpgrade);
+				std::string getOrderType()const;
+				void setOrderType(const std::string& orderType);
 
             private:
 				long resourceOwnerId_;
@@ -79,6 +81,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string instanceId_;
 				bool forceUpgrade_;
+				std::string orderType_;
 
 			};
 		}

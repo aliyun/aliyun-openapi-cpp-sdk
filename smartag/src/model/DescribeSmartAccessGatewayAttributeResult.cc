@@ -77,6 +77,15 @@ void DescribeSmartAccessGatewayAttributeResult::parse(const std::string &payload
 			devicesObject.monitorVersion = valueDevicesDevice["MonitorVersion"].asString();
 		devices_.push_back(devicesObject);
 	}
+	auto allAclIds = value["AclIds"]["AclId"];
+	for (const auto &item : allAclIds)
+		aclIds_.push_back(item.asString());
+	auto allQosIds = value["QosIds"]["QosId"];
+	for (const auto &item : allQosIds)
+		qosIds_.push_back(item.asString());
+	auto allFlowLogIds = value["FlowLogIds"]["FlowLogId"];
+	for (const auto &item : allFlowLogIds)
+		flowLogIds_.push_back(item.asString());
 	if(!value["SmartAGId"].isNull())
 		smartAGId_ = value["SmartAGId"].asString();
 	if(!value["Name"].isNull())
@@ -105,20 +114,19 @@ void DescribeSmartAccessGatewayAttributeResult::parse(const std::string &payload
 		serialNumber_ = value["SerialNumber"].asString();
 	if(!value["SecurityLockThreshold"].isNull())
 		securityLockThreshold_ = std::stoi(value["SecurityLockThreshold"].asString());
-	if(!value["AclIds"].isNull())
-		aclIds_ = value["AclIds"].asString();
 	if(!value["DataPlan"].isNull())
 		dataPlan_ = std::stol(value["DataPlan"].asString());
 	if(!value["UserCount"].isNull())
 		userCount_ = std::stoi(value["UserCount"].asString());
 	if(!value["RoutingStrategy"].isNull())
 		routingStrategy_ = value["RoutingStrategy"].asString();
+	if(!value["IpsecStatus"].isNull())
+		ipsecStatus_ = value["IpsecStatus"].asString();
+	if(!value["VpnStatus"].isNull())
+		vpnStatus_ = value["VpnStatus"].asString();
+	if(!value["TrafficMasterSn"].isNull())
+		trafficMasterSn_ = value["TrafficMasterSn"].asString();
 
-}
-
-std::string DescribeSmartAccessGatewayAttributeResult::getStatus()const
-{
-	return status_;
 }
 
 std::string DescribeSmartAccessGatewayAttributeResult::getDescription()const
@@ -146,24 +154,19 @@ std::string DescribeSmartAccessGatewayAttributeResult::getAssociatedCcnName()con
 	return associatedCcnName_;
 }
 
-long DescribeSmartAccessGatewayAttributeResult::getCreateTime()const
+std::string DescribeSmartAccessGatewayAttributeResult::getVpnStatus()const
 {
-	return createTime_;
+	return vpnStatus_;
 }
 
-long DescribeSmartAccessGatewayAttributeResult::getDataPlan()const
+std::vector<std::string> DescribeSmartAccessGatewayAttributeResult::getQosIds()const
 {
-	return dataPlan_;
+	return qosIds_;
 }
 
 std::string DescribeSmartAccessGatewayAttributeResult::getCidrBlock()const
 {
 	return cidrBlock_;
-}
-
-std::string DescribeSmartAccessGatewayAttributeResult::getCity()const
-{
-	return city_;
 }
 
 std::vector<DescribeSmartAccessGatewayAttributeResult::Device> DescribeSmartAccessGatewayAttributeResult::getDevices()const
@@ -176,9 +179,9 @@ std::string DescribeSmartAccessGatewayAttributeResult::getName()const
 	return name_;
 }
 
-std::string DescribeSmartAccessGatewayAttributeResult::getSerialNumber()const
+std::string DescribeSmartAccessGatewayAttributeResult::getIpsecStatus()const
 {
-	return serialNumber_;
+	return ipsecStatus_;
 }
 
 std::string DescribeSmartAccessGatewayAttributeResult::getRoutingStrategy()const
@@ -186,9 +189,9 @@ std::string DescribeSmartAccessGatewayAttributeResult::getRoutingStrategy()const
 	return routingStrategy_;
 }
 
-std::vector<DescribeSmartAccessGatewayAttributeResult::Link> DescribeSmartAccessGatewayAttributeResult::getLinks()const
+std::vector<std::string> DescribeSmartAccessGatewayAttributeResult::getFlowLogIds()const
 {
-	return links_;
+	return flowLogIds_;
 }
 
 std::string DescribeSmartAccessGatewayAttributeResult::getAssociatedCcnId()const
@@ -211,7 +214,42 @@ int DescribeSmartAccessGatewayAttributeResult::getSecurityLockThreshold()const
 	return securityLockThreshold_;
 }
 
-std::string DescribeSmartAccessGatewayAttributeResult::getAclIds()const
+std::string DescribeSmartAccessGatewayAttributeResult::getStatus()const
+{
+	return status_;
+}
+
+long DescribeSmartAccessGatewayAttributeResult::getCreateTime()const
+{
+	return createTime_;
+}
+
+long DescribeSmartAccessGatewayAttributeResult::getDataPlan()const
+{
+	return dataPlan_;
+}
+
+std::string DescribeSmartAccessGatewayAttributeResult::getCity()const
+{
+	return city_;
+}
+
+std::string DescribeSmartAccessGatewayAttributeResult::getSerialNumber()const
+{
+	return serialNumber_;
+}
+
+std::string DescribeSmartAccessGatewayAttributeResult::getTrafficMasterSn()const
+{
+	return trafficMasterSn_;
+}
+
+std::vector<DescribeSmartAccessGatewayAttributeResult::Link> DescribeSmartAccessGatewayAttributeResult::getLinks()const
+{
+	return links_;
+}
+
+std::vector<std::string> DescribeSmartAccessGatewayAttributeResult::getAclIds()const
 {
 	return aclIds_;
 }

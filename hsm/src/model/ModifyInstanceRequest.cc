@@ -20,7 +20,9 @@ using AlibabaCloud::Hsm::Model::ModifyInstanceRequest;
 
 ModifyInstanceRequest::ModifyInstanceRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "ModifyInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceRequest::~ModifyInstanceRequest()
 {}

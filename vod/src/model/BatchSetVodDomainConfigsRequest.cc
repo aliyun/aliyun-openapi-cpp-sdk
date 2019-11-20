@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::BatchSetVodDomainConfigsRequest;
 
 BatchSetVodDomainConfigsRequest::BatchSetVodDomainConfigsRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "BatchSetVodDomainConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchSetVodDomainConfigsRequest::~BatchSetVodDomainConfigsRequest()
 {}

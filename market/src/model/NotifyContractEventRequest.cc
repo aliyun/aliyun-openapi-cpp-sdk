@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::NotifyContractEventRequest;
 
 NotifyContractEventRequest::NotifyContractEventRequest() :
 	RpcServiceRequest("market", "2015-11-01", "NotifyContractEvent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 NotifyContractEventRequest::~NotifyContractEventRequest()
 {}

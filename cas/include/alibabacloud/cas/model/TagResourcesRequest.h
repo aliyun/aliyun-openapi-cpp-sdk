@@ -42,6 +42,8 @@ namespace AlibabaCloud
 
 				std::string getTagOwnerUid()const;
 				void setTagOwnerUid(const std::string& tagOwnerUid);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getRegionId()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 
             private:
 				std::string tagOwnerUid_;
+				std::string resourceGroupId_;
 				std::string sourceIp_;
 				std::string regionId_;
 				std::string scope_;

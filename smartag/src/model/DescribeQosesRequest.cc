@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeQosesRequest;
 
 DescribeQosesRequest::DescribeQosesRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeQoses")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeQosesRequest::~DescribeQosesRequest()
 {}

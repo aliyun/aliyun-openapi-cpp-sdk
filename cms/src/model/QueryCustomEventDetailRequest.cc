@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::QueryCustomEventDetailRequest;
 
 QueryCustomEventDetailRequest::QueryCustomEventDetailRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "QueryCustomEventDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCustomEventDetailRequest::~QueryCustomEventDetailRequest()
 {}

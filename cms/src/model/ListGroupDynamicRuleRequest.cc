@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::ListGroupDynamicRuleRequest;
 
 ListGroupDynamicRuleRequest::ListGroupDynamicRuleRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "ListGroupDynamicRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListGroupDynamicRuleRequest::~ListGroupDynamicRuleRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifySnapshotAttributeRequest;
 
 ModifySnapshotAttributeRequest::ModifySnapshotAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifySnapshotAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySnapshotAttributeRequest::~ModifySnapshotAttributeRequest()
 {}

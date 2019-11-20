@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::GetResolveCountSummaryRequest;
 
 GetResolveCountSummaryRequest::GetResolveCountSummaryRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "GetResolveCountSummary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetResolveCountSummaryRequest::~GetResolveCountSummaryRequest()
 {}

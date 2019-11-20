@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				SetHttpErrorPageConfigRequest();
 				~SetHttpErrorPageConfigRequest();
 
-				std::string getPageUrl()const;
-				void setPageUrl(const std::string& pageUrl);
-				std::string getErrorCode()const;
-				void setErrorCode(const std::string& errorCode);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				long getConfigId()const;
-				void setConfigId(long configId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getPageUrl()const;
+				void setPageUrl(const std::string& pageUrl);
+				std::string getErrorCode()const;
+				void setErrorCode(const std::string& errorCode);
 
             private:
-				std::string pageUrl_;
-				std::string errorCode_;
 				std::string domainName_;
 				long ownerId_;
-				long configId_;
+				std::string securityToken_;
+				std::string pageUrl_;
+				std::string errorCode_;
 
 			};
 		}

@@ -49,21 +49,7 @@ void GetSuggestShrinkableNodesResult::parse(const std::string &payload)
 			resultObject.port = std::stoi(valueResultResultItem["port"].asString());
 		result_.push_back(resultObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 
-}
-
-std::string GetSuggestShrinkableNodesResult::getMessage()const
-{
-	return message_;
-}
-
-std::string GetSuggestShrinkableNodesResult::getCode()const
-{
-	return code_;
 }
 
 std::vector<GetSuggestShrinkableNodesResult::ResultItem> GetSuggestShrinkableNodesResult::getResult()const

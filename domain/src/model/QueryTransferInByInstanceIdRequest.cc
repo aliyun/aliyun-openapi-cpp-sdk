@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryTransferInByInstanceIdRequest;
 
 QueryTransferInByInstanceIdRequest::QueryTransferInByInstanceIdRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryTransferInByInstanceId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTransferInByInstanceIdRequest::~QueryTransferInByInstanceIdRequest()
 {}

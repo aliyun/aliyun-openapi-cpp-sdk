@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyVSwitchAttributeRequest;
 
 ModifyVSwitchAttributeRequest::ModifyVSwitchAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyVSwitchAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyVSwitchAttributeRequest::~ModifyVSwitchAttributeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::UpdateCommodityRequest;
 
 UpdateCommodityRequest::UpdateCommodityRequest() :
 	RpcServiceRequest("market", "2015-11-01", "UpdateCommodity")
-{}
+{
+	setMethod(HttpRequest::Method::Put);
+}
 
 UpdateCommodityRequest::~UpdateCommodityRequest()
 {}

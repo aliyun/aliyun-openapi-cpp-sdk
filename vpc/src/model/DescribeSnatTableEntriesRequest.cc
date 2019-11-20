@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeSnatTableEntriesRequest;
 
 DescribeSnatTableEntriesRequest::DescribeSnatTableEntriesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeSnatTableEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSnatTableEntriesRequest::~DescribeSnatTableEntriesRequest()
 {}

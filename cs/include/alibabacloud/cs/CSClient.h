@@ -68,6 +68,8 @@
 #include "model/ScaleClusterResult.h"
 #include "model/ScaleOutClusterRequest.h"
 #include "model/ScaleOutClusterResult.h"
+#include "model/UpdateK8sClusterUserConfigExpireRequest.h"
+#include "model/UpdateK8sClusterUserConfigExpireResult.h"
 
 
 namespace AlibabaCloud
@@ -146,6 +148,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ScaleOutClusterResult> ScaleOutClusterOutcome;
 			typedef std::future<ScaleOutClusterOutcome> ScaleOutClusterOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::ScaleOutClusterRequest&, const ScaleOutClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScaleOutClusterAsyncHandler;
+			typedef Outcome<Error, Model::UpdateK8sClusterUserConfigExpireResult> UpdateK8sClusterUserConfigExpireOutcome;
+			typedef std::future<UpdateK8sClusterUserConfigExpireOutcome> UpdateK8sClusterUserConfigExpireOutcomeCallable;
+			typedef std::function<void(const CSClient*, const Model::UpdateK8sClusterUserConfigExpireRequest&, const UpdateK8sClusterUserConfigExpireOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateK8sClusterUserConfigExpireAsyncHandler;
 
 			CSClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			CSClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -220,6 +225,9 @@ namespace AlibabaCloud
 			ScaleOutClusterOutcome scaleOutCluster(const Model::ScaleOutClusterRequest &request)const;
 			void scaleOutClusterAsync(const Model::ScaleOutClusterRequest& request, const ScaleOutClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ScaleOutClusterOutcomeCallable scaleOutClusterCallable(const Model::ScaleOutClusterRequest& request) const;
+			UpdateK8sClusterUserConfigExpireOutcome updateK8sClusterUserConfigExpire(const Model::UpdateK8sClusterUserConfigExpireRequest &request)const;
+			void updateK8sClusterUserConfigExpireAsync(const Model::UpdateK8sClusterUserConfigExpireRequest& request, const UpdateK8sClusterUserConfigExpireAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateK8sClusterUserConfigExpireOutcomeCallable updateK8sClusterUserConfigExpireCallable(const Model::UpdateK8sClusterUserConfigExpireRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DeleteNodeRequest;
 
 DeleteNodeRequest::DeleteNodeRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DeleteNode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNodeRequest::~DeleteNodeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveRegistrantProfileRequest;
 
 SaveRegistrantProfileRequest::SaveRegistrantProfileRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveRegistrantProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveRegistrantProfileRequest::~SaveRegistrantProfileRequest()
 {}

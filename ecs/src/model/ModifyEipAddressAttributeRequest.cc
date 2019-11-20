@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyEipAddressAttributeRequest;
 
 ModifyEipAddressAttributeRequest::ModifyEipAddressAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyEipAddressAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyEipAddressAttributeRequest::~ModifyEipAddressAttributeRequest()
 {}

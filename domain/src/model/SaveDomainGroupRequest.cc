@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveDomainGroupRequest;
 
 SaveDomainGroupRequest::SaveDomainGroupRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveDomainGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveDomainGroupRequest::~SaveDomainGroupRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenDoRecognizeRequest;
 
 MoPenDoRecognizeRequest::MoPenDoRecognizeRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenDoRecognize")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenDoRecognizeRequest::~MoPenDoRecognizeRequest()
 {}

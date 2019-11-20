@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyClusterHostGroupRequest;
 
 ModifyClusterHostGroupRequest::ModifyClusterHostGroupRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyClusterHostGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyClusterHostGroupRequest::~ModifyClusterHostGroupRequest()
 {}

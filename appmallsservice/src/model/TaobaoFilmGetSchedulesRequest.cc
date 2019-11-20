@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmGetSchedulesRequest;
 
 TaobaoFilmGetSchedulesRequest::TaobaoFilmGetSchedulesRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmGetSchedules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmGetSchedulesRequest::~TaobaoFilmGetSchedulesRequest()
 {}

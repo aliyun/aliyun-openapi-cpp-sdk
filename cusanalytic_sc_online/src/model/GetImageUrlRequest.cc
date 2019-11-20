@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetImageUrlRequest;
 
 GetImageUrlRequest::GetImageUrlRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetImageUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetImageUrlRequest::~GetImageUrlRequest()
 {}

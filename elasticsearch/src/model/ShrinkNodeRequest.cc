@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::ShrinkNodeRequest;
 
 ShrinkNodeRequest::ShrinkNodeRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/actions/shrink");
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShrinkNodeRequest::~ShrinkNodeRequest()
 {}

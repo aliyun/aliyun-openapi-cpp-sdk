@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ModifySignatureRequest;
 
 ModifySignatureRequest::ModifySignatureRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ModifySignature")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySignatureRequest::~ModifySignatureRequest()
 {}

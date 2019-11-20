@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeSuspEventDetailRequest;
 
 DescribeSuspEventDetailRequest::DescribeSuspEventDetailRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeSuspEventDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSuspEventDetailRequest::~DescribeSuspEventDetailRequest()
 {}

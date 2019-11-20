@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopUpdateRequest;
 
 ShopUpdateRequest::ShopUpdateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopUpdate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopUpdateRequest::~ShopUpdateRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeGeographicRegionMembershipRequest;
 
 DescribeGeographicRegionMembershipRequest::DescribeGeographicRegionMembershipRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeGeographicRegionMembership")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGeographicRegionMembershipRequest::~DescribeGeographicRegionMembershipRequest()
 {}

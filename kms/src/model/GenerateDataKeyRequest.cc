@@ -20,7 +20,9 @@ using AlibabaCloud::Kms::Model::GenerateDataKeyRequest;
 
 GenerateDataKeyRequest::GenerateDataKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "GenerateDataKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GenerateDataKeyRequest::~GenerateDataKeyRequest()
 {}

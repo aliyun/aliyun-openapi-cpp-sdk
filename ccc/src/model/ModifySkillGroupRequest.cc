@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifySkillGroupRequest;
 
 ModifySkillGroupRequest::ModifySkillGroupRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifySkillGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySkillGroupRequest::~ModifySkillGroupRequest()
 {}
@@ -66,8 +68,8 @@ std::vector<std::string> ModifySkillGroupRequest::getUserId()const
 void ModifySkillGroupRequest::setUserId(const std::vector<std::string>& userId)
 {
 	userId_ = userId;
-	for(int i = 0; i!= userId.size(); i++)
-		setCoreParameter("UserId."+ std::to_string(i), userId.at(i));
+	for(int dep1 = 0; dep1!= userId.size(); dep1++)
+		setCoreParameter("UserId."+ std::to_string(dep1), userId.at(dep1));
 }
 
 std::string ModifySkillGroupRequest::getAccessKeyId()const
@@ -89,8 +91,8 @@ std::vector<int> ModifySkillGroupRequest::getSkillLevel()const
 void ModifySkillGroupRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
-	for(int i = 0; i!= skillLevel.size(); i++)
-		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
+	for(int dep1 = 0; dep1!= skillLevel.size(); dep1++)
+		setCoreParameter("SkillLevel."+ std::to_string(dep1), std::to_string(skillLevel.at(dep1)));
 }
 
 std::string ModifySkillGroupRequest::getInstanceId()const
@@ -112,8 +114,8 @@ std::vector<std::string> ModifySkillGroupRequest::getOutboundPhoneNumberId()cons
 void ModifySkillGroupRequest::setOutboundPhoneNumberId(const std::vector<std::string>& outboundPhoneNumberId)
 {
 	outboundPhoneNumberId_ = outboundPhoneNumberId;
-	for(int i = 0; i!= outboundPhoneNumberId.size(); i++)
-		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
+	for(int dep1 = 0; dep1!= outboundPhoneNumberId.size(); dep1++)
+		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(dep1), outboundPhoneNumberId.at(dep1));
 }
 
 std::string ModifySkillGroupRequest::getSkillGroupId()const

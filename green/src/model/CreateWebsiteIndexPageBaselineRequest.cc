@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateWebsiteIndexPageBaselineRequest;
 
 CreateWebsiteIndexPageBaselineRequest::CreateWebsiteIndexPageBaselineRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateWebsiteIndexPageBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateWebsiteIndexPageBaselineRequest::~CreateWebsiteIndexPageBaselineRequest()
 {}

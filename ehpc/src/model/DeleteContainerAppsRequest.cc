@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::DeleteContainerAppsRequest;
 
 DeleteContainerAppsRequest::DeleteContainerAppsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteContainerApps")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DeleteContainerAppsRequest::~DeleteContainerAppsRequest()
 {}
@@ -33,11 +35,10 @@ std::vector<DeleteContainerAppsRequest::ContainerApp> DeleteContainerAppsRequest
 void DeleteContainerAppsRequest::setContainerApp(const std::vector<ContainerApp>& containerApp)
 {
 	containerApp_ = containerApp;
-	int i = 0;
-	for(int i = 0; i!= containerApp.size(); i++)	{
-		auto obj = containerApp.at(i);
-		std::string str ="ContainerApp."+ std::to_string(i);
-		setCoreParameter(str + ".Id", obj.id);
+	for(int dep1 = 0; dep1!= containerApp.size(); dep1++) {
+		auto containerAppObj = containerApp.at(dep1);
+		std::string containerAppObjStr = "ContainerApp." + std::to_string(dep1);
+		setCoreParameter(containerAppObjStr + ".Id", containerAppObj.id);
 	}
 }
 

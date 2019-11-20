@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::ModifyNotificationConfigurationRequest;
 
 ModifyNotificationConfigurationRequest::ModifyNotificationConfigurationRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "ModifyNotificationConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyNotificationConfigurationRequest::~ModifyNotificationConfigurationRequest()
 {}
@@ -88,7 +90,7 @@ std::vector<std::string> ModifyNotificationConfigurationRequest::getNotification
 void ModifyNotificationConfigurationRequest::setNotificationType(const std::vector<std::string>& notificationType)
 {
 	notificationType_ = notificationType;
-	for(int i = 0; i!= notificationType.size(); i++)
-		setCoreParameter("NotificationType."+ std::to_string(i), notificationType.at(i));
+	for(int dep1 = 0; dep1!= notificationType.size(); dep1++)
+		setCoreParameter("NotificationType."+ std::to_string(dep1), notificationType.at(dep1));
 }
 

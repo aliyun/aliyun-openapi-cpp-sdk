@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CreateMigrateTaskRequest;
 
 CreateMigrateTaskRequest::CreateMigrateTaskRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CreateMigrateTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateMigrateTaskRequest::~CreateMigrateTaskRequest()
 {}

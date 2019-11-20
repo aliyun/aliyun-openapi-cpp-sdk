@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetLoadBalancerStatusRequest;
 
 SetLoadBalancerStatusRequest::SetLoadBalancerStatusRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLoadBalancerStatusRequest::~SetLoadBalancerStatusRequest()
 {}

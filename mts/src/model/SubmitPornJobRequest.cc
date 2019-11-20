@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitPornJobRequest;
 
 SubmitPornJobRequest::SubmitPornJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitPornJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitPornJobRequest::~SubmitPornJobRequest()
 {}

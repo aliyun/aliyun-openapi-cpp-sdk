@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AllowPushStreamRequest;
 
 AllowPushStreamRequest::AllowPushStreamRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AllowPushStream")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AllowPushStreamRequest::~AllowPushStreamRequest()
 {}

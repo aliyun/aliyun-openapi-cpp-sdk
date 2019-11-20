@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeStrategyExecDetailRequest;
 
 DescribeStrategyExecDetailRequest::DescribeStrategyExecDetailRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeStrategyExecDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeStrategyExecDetailRequest::~DescribeStrategyExecDetailRequest()
 {}

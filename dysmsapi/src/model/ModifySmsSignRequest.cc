@@ -79,12 +79,11 @@ std::vector<ModifySmsSignRequest::SignFileList> ModifySmsSignRequest::getSignFil
 void ModifySmsSignRequest::setSignFileList(const std::vector<SignFileList>& signFileList)
 {
 	signFileList_ = signFileList;
-	int i = 0;
-	for(int i = 0; i!= signFileList.size(); i++)	{
-		auto obj = signFileList.at(i);
-		std::string str ="SignFileList."+ std::to_string(i);
-		setCoreParameter(str + ".FileContents", obj.fileContents);
-		setCoreParameter(str + ".FileSuffix", obj.fileSuffix);
+	for(int dep1 = 0; dep1!= signFileList.size(); dep1++) {
+		auto signFileListObj = signFileList.at(dep1);
+		std::string signFileListObjStr = "SignFileList." + std::to_string(dep1);
+		setCoreParameter(signFileListObjStr + ".FileContents", signFileListObj.fileContents);
+		setCoreParameter(signFileListObjStr + ".FileSuffix", signFileListObj.fileSuffix);
 	}
 }
 

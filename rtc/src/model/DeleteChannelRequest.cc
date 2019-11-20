@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::DeleteChannelRequest;
 
 DeleteChannelRequest::DeleteChannelRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "DeleteChannel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteChannelRequest::~DeleteChannelRequest()
 {}

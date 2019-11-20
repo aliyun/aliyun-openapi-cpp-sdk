@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeAuthorizedAppsRequest;
 
 DescribeAuthorizedAppsRequest::DescribeAuthorizedAppsRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeAuthorizedApps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuthorizedAppsRequest::~DescribeAuthorizedAppsRequest()
 {}

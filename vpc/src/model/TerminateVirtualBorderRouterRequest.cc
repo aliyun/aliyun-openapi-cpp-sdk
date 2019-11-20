@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::TerminateVirtualBorderRouterRequest;
 
 TerminateVirtualBorderRouterRequest::TerminateVirtualBorderRouterRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "TerminateVirtualBorderRouter")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TerminateVirtualBorderRouterRequest::~TerminateVirtualBorderRouterRequest()
 {}

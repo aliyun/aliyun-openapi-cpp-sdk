@@ -20,7 +20,10 @@ using AlibabaCloud::ImageSearch::Model::SearchItemRequest;
 
 SearchItemRequest::SearchItemRequest() :
 	RoaServiceRequest("imagesearch", "2018-01-20")
-{}
+{
+	setResourcePath("/item/search");
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchItemRequest::~SearchItemRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::SetAllowIPRequest;
 
 SetAllowIPRequest::SetAllowIPRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "SetAllowIP")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetAllowIPRequest::~SetAllowIPRequest()
 {}

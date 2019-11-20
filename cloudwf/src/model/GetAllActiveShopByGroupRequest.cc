@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetAllActiveShopByGroupRequest;
 
 GetAllActiveShopByGroupRequest::GetAllActiveShopByGroupRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetAllActiveShopByGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAllActiveShopByGroupRequest::~GetAllActiveShopByGroupRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<long> GetAllActiveShopByGroupRequest::getGids()const
 void GetAllActiveShopByGroupRequest::setGids(const std::vector<long>& gids)
 {
 	gids_ = gids;
-	for(int i = 0; i!= gids.size(); i++)
-		setCoreParameter("Gids."+ std::to_string(i), std::to_string(gids.at(i)));
+	for(int dep1 = 0; dep1!= gids.size(); dep1++)
+		setCoreParameter("Gids."+ std::to_string(dep1), std::to_string(gids.at(dep1)));
 }
 
 std::string GetAllActiveShopByGroupRequest::getAccessKeyId()const

@@ -81,12 +81,12 @@ void ListRuleResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["Page"].isNull())
 		page_ = std::stoi(value["Page"].asString());
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

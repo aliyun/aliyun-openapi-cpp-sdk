@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetTURNCredentialsRequest;
 
 GetTURNCredentialsRequest::GetTURNCredentialsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetTURNCredentials")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTURNCredentialsRequest::~GetTURNCredentialsRequest()
 {}

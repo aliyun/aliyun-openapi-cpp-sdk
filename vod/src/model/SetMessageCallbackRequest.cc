@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SetMessageCallbackRequest;
 
 SetMessageCallbackRequest::SetMessageCallbackRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SetMessageCallback")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetMessageCallbackRequest::~SetMessageCallbackRequest()
 {}

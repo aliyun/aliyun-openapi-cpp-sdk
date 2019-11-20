@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::ModifyEventStatusRequest;
 
 ModifyEventStatusRequest::ModifyEventStatusRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "ModifyEventStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyEventStatusRequest::~ModifyEventStatusRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteStreamRequest;
 
 DeleteStreamRequest::DeleteStreamRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteStream")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteStreamRequest::~DeleteStreamRequest()
 {}

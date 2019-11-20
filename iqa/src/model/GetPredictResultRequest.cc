@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::GetPredictResultRequest;
 
 GetPredictResultRequest::GetPredictResultRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "GetPredictResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPredictResultRequest::~GetPredictResultRequest()
 {}

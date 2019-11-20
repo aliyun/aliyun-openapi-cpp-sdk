@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ResetSmartAccessGatewayClientUserPasswordReq
 
 ResetSmartAccessGatewayClientUserPasswordRequest::ResetSmartAccessGatewayClientUserPasswordRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ResetSmartAccessGatewayClientUserPassword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetSmartAccessGatewayClientUserPasswordRequest::~ResetSmartAccessGatewayClientUserPasswordRequest()
 {}

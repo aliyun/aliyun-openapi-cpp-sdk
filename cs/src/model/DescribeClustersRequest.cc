@@ -20,7 +20,10 @@ using AlibabaCloud::CS::Model::DescribeClustersRequest;
 
 DescribeClustersRequest::DescribeClustersRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
-{}
+{
+	setResourcePath("/clusters");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeClustersRequest::~DescribeClustersRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForSaveArtExtensionRequest;
 
 SaveSingleTaskForSaveArtExtensionRequest::SaveSingleTaskForSaveArtExtensionRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForSaveArtExtensionRequest::~SaveSingleTaskForSaveArtExtensionRequest()
 {}

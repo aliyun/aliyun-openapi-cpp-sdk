@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeRiskTrendRequest;
 
 DescribeRiskTrendRequest::DescribeRiskTrendRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeRiskTrend")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRiskTrendRequest::~DescribeRiskTrendRequest()
 {}

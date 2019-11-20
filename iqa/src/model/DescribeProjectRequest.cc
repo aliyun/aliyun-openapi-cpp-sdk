@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::DescribeProjectRequest;
 
 DescribeProjectRequest::DescribeProjectRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "DescribeProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeProjectRequest::~DescribeProjectRequest()
 {}

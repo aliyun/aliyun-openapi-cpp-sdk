@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindProjectsNameListRequest;
 
 FindProjectsNameListRequest::FindProjectsNameListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindProjectsNameList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindProjectsNameListRequest::~FindProjectsNameListRequest()
 {}

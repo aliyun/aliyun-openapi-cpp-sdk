@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::AttachInstancesRequest;
 
 AttachInstancesRequest::AttachInstancesRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "AttachInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachInstancesRequest::~AttachInstancesRequest()
 {}

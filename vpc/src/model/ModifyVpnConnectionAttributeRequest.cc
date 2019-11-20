@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyVpnConnectionAttributeRequest;
 
 ModifyVpnConnectionAttributeRequest::ModifyVpnConnectionAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyVpnConnectionAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyVpnConnectionAttributeRequest::~ModifyVpnConnectionAttributeRequest()
 {}

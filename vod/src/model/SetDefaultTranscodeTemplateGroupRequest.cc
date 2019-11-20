@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SetDefaultTranscodeTemplateGroupRequest;
 
 SetDefaultTranscodeTemplateGroupRequest::SetDefaultTranscodeTemplateGroupRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SetDefaultTranscodeTemplateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDefaultTranscodeTemplateGroupRequest::~SetDefaultTranscodeTemplateGroupRequest()
 {}

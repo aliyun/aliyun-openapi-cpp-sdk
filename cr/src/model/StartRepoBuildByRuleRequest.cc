@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::StartRepoBuildByRuleRequest;
 
 StartRepoBuildByRuleRequest::StartRepoBuildByRuleRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]/build");
+	setMethod(HttpRequest::Method::Put);
+}
 
 StartRepoBuildByRuleRequest::~StartRepoBuildByRuleRequest()
 {}

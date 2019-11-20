@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::LikePhotoRequest;
 
 LikePhotoRequest::LikePhotoRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "LikePhoto")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 LikePhotoRequest::~LikePhotoRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DownloadVpnConnectionConfigRequest;
 
 DownloadVpnConnectionConfigRequest::DownloadVpnConnectionConfigRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DownloadVpnConnectionConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DownloadVpnConnectionConfigRequest::~DownloadVpnConnectionConfigRequest()
 {}

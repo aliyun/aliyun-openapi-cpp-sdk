@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::ProfileSetRequest;
 
 ProfileSetRequest::ProfileSetRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "ProfileSet")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProfileSetRequest::~ProfileSetRequest()
 {}

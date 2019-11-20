@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::BatchDeleteLiveDomainConfigsRequest;
 
 BatchDeleteLiveDomainConfigsRequest::BatchDeleteLiveDomainConfigsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "BatchDeleteLiveDomainConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchDeleteLiveDomainConfigsRequest::~BatchDeleteLiveDomainConfigsRequest()
 {}

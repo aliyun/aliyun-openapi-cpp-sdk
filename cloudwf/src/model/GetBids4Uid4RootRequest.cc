@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetBids4Uid4RootRequest;
 
 GetBids4Uid4RootRequest::GetBids4Uid4RootRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetBids4Uid4Root")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetBids4Uid4RootRequest::~GetBids4Uid4RootRequest()
 {}

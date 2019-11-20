@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::QueryAuthenticationRequest;
 
 QueryAuthenticationRequest::QueryAuthenticationRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryAuthentication")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAuthenticationRequest::~QueryAuthenticationRequest()
 {}

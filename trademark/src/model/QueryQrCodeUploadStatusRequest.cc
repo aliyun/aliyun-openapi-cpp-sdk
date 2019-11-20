@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryQrCodeUploadStatusRequest;
 
 QueryQrCodeUploadStatusRequest::QueryQrCodeUploadStatusRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryQrCodeUploadStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryQrCodeUploadStatusRequest::~QueryQrCodeUploadStatusRequest()
 {}

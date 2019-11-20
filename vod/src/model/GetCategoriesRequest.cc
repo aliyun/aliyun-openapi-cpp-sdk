@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetCategoriesRequest;
 
 GetCategoriesRequest::GetCategoriesRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetCategories")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetCategoriesRequest::~GetCategoriesRequest()
 {}

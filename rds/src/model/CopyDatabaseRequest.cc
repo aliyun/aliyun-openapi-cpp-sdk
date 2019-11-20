@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CopyDatabaseRequest;
 
 CopyDatabaseRequest::CopyDatabaseRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CopyDatabase")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CopyDatabaseRequest::~CopyDatabaseRequest()
 {}

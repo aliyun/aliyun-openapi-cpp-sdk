@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::FetchAlbumTagPhotosRequest;
 
 FetchAlbumTagPhotosRequest::FetchAlbumTagPhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "FetchAlbumTagPhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FetchAlbumTagPhotosRequest::~FetchAlbumTagPhotosRequest()
 {}

@@ -44,6 +44,8 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				bool getSupportPrivateLink()const;
+				void setSupportPrivateLink(bool supportPrivateLink);
 				std::string getNetworkType()const;
 				void setNetworkType(const std::string& networkType);
 				std::string getAddressIPVersion()const;
@@ -98,6 +100,7 @@ namespace AlibabaCloud
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
+				bool supportPrivateLink_;
 				std::string networkType_;
 				std::string addressIPVersion_;
 				std::string masterZoneId_;

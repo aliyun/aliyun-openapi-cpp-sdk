@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StartLiveDomainRequest;
 
 StartLiveDomainRequest::StartLiveDomainRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StartLiveDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartLiveDomainRequest::~StartLiveDomainRequest()
 {}

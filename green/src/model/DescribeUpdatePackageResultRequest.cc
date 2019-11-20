@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeUpdatePackageResultRequest;
 
 DescribeUpdatePackageResultRequest::DescribeUpdatePackageResultRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeUpdatePackageResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUpdatePackageResultRequest::~DescribeUpdatePackageResultRequest()
 {}

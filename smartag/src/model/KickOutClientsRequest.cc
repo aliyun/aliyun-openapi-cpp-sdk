@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::KickOutClientsRequest;
 
 KickOutClientsRequest::KickOutClientsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "KickOutClients")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 KickOutClientsRequest::~KickOutClientsRequest()
 {}

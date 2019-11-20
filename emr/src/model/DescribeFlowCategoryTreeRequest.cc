@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeFlowCategoryTreeRequest;
 
 DescribeFlowCategoryTreeRequest::DescribeFlowCategoryTreeRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeFlowCategoryTree")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowCategoryTreeRequest::~DescribeFlowCategoryTreeRequest()
 {}
@@ -36,6 +38,17 @@ void DescribeFlowCategoryTreeRequest::setType(const std::string& type)
 	setCoreParameter("Type", type);
 }
 
+std::string DescribeFlowCategoryTreeRequest::getMode()const
+{
+	return mode_;
+}
+
+void DescribeFlowCategoryTreeRequest::setMode(const std::string& mode)
+{
+	mode_ = mode;
+	setCoreParameter("Mode", mode);
+}
+
 std::string DescribeFlowCategoryTreeRequest::getRegionId()const
 {
 	return regionId_;
@@ -47,6 +60,17 @@ void DescribeFlowCategoryTreeRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string DescribeFlowCategoryTreeRequest::getKeyword()const
+{
+	return keyword_;
+}
+
+void DescribeFlowCategoryTreeRequest::setKeyword(const std::string& keyword)
+{
+	keyword_ = keyword;
+	setCoreParameter("Keyword", keyword);
+}
+
 std::string DescribeFlowCategoryTreeRequest::getProjectId()const
 {
 	return projectId_;
@@ -56,5 +80,16 @@ void DescribeFlowCategoryTreeRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
+}
+
+std::string DescribeFlowCategoryTreeRequest::getCategoryId()const
+{
+	return categoryId_;
+}
+
+void DescribeFlowCategoryTreeRequest::setCategoryId(const std::string& categoryId)
+{
+	categoryId_ = categoryId;
+	setCoreParameter("CategoryId", categoryId);
 }
 

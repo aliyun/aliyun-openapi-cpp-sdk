@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveCertificateDetailRequest;
 
 DescribeLiveCertificateDetailRequest::DescribeLiveCertificateDetailRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveCertificateDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveCertificateDetailRequest::~DescribeLiveCertificateDetailRequest()
 {}

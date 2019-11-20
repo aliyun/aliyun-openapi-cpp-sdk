@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeleteMCTemplateRequest;
 
 DeleteMCTemplateRequest::DeleteMCTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeleteMCTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMCTemplateRequest::~DeleteMCTemplateRequest()
 {}

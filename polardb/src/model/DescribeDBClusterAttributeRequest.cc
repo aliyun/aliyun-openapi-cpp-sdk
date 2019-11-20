@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::DescribeDBClusterAttributeRequest;
 
 DescribeDBClusterAttributeRequest::DescribeDBClusterAttributeRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "DescribeDBClusterAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBClusterAttributeRequest::~DescribeDBClusterAttributeRequest()
 {}

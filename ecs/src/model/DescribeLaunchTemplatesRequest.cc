@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeLaunchTemplatesRequest;
 
 DescribeLaunchTemplatesRequest::DescribeLaunchTemplatesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeLaunchTemplates")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLaunchTemplatesRequest::~DescribeLaunchTemplatesRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> DescribeLaunchTemplatesRequest::getLaunchTemplateName()
 void DescribeLaunchTemplatesRequest::setLaunchTemplateName(const std::vector<std::string>& launchTemplateName)
 {
 	launchTemplateName_ = launchTemplateName;
-	for(int i = 0; i!= launchTemplateName.size(); i++)
-		setCoreParameter("LaunchTemplateName."+ std::to_string(i), launchTemplateName.at(i));
+	for(int dep1 = 0; dep1!= launchTemplateName.size(); dep1++)
+		setCoreParameter("LaunchTemplateName."+ std::to_string(dep1), launchTemplateName.at(dep1));
 }
 
 long DescribeLaunchTemplatesRequest::getResourceOwnerId()const
@@ -89,12 +91,11 @@ std::vector<DescribeLaunchTemplatesRequest::TemplateTag> DescribeLaunchTemplates
 void DescribeLaunchTemplatesRequest::setTemplateTag(const std::vector<TemplateTag>& templateTag)
 {
 	templateTag_ = templateTag;
-	int i = 0;
-	for(int i = 0; i!= templateTag.size(); i++)	{
-		auto obj = templateTag.at(i);
-		std::string str ="TemplateTag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+	for(int dep1 = 0; dep1!= templateTag.size(); dep1++) {
+		auto templateTagObj = templateTag.at(dep1);
+		std::string templateTagObjStr = "TemplateTag." + std::to_string(dep1);
+		setCoreParameter(templateTagObjStr + ".Key", templateTagObj.key);
+		setCoreParameter(templateTagObjStr + ".Value", templateTagObj.value);
 	}
 }
 
@@ -106,8 +107,8 @@ std::vector<std::string> DescribeLaunchTemplatesRequest::getLaunchTemplateId()co
 void DescribeLaunchTemplatesRequest::setLaunchTemplateId(const std::vector<std::string>& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	for(int i = 0; i!= launchTemplateId.size(); i++)
-		setCoreParameter("LaunchTemplateId."+ std::to_string(i), launchTemplateId.at(i));
+	for(int dep1 = 0; dep1!= launchTemplateId.size(); dep1++)
+		setCoreParameter("LaunchTemplateId."+ std::to_string(dep1), launchTemplateId.at(dep1));
 }
 
 std::string DescribeLaunchTemplatesRequest::getResourceOwnerAccount()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamsFrameRateAndBitRateDataReque
 
 DescribeLiveStreamsFrameRateAndBitRateDataRequest::DescribeLiveStreamsFrameRateAndBitRateDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamsFrameRateAndBitRateDataRequest::~DescribeLiveStreamsFrameRateAndBitRateDataRequest()
 {}

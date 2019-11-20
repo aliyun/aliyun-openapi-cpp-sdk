@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeRouteServicesInCenRequest;
 
 DescribeRouteServicesInCenRequest::DescribeRouteServicesInCenRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeRouteServicesInCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRouteServicesInCenRequest::~DescribeRouteServicesInCenRequest()
 {}

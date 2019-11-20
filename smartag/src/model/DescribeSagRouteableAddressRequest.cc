@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeSagRouteableAddressRequest;
 
 DescribeSagRouteableAddressRequest::DescribeSagRouteableAddressRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeSagRouteableAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSagRouteableAddressRequest::~DescribeSagRouteableAddressRequest()
 {}

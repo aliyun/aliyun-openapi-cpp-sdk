@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeInstanceAutoRenewalAttributeRequest;
 
 DescribeInstanceAutoRenewalAttributeRequest::DescribeInstanceAutoRenewalAttributeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeInstanceAutoRenewalAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceAutoRenewalAttributeRequest::~DescribeInstanceAutoRenewalAttributeRequest()
 {}

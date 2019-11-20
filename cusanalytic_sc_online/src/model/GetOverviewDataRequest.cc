@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetOverviewDataRequest;
 
 GetOverviewDataRequest::GetOverviewDataRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetOverviewData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetOverviewDataRequest::~GetOverviewDataRequest()
 {}

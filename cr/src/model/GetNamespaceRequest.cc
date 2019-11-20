@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetNamespaceRequest;
 
 GetNamespaceRequest::GetNamespaceRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/namespace/[Namespace]");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetNamespaceRequest::~GetNamespaceRequest()
 {}

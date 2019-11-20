@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetInstanceSummaryReportRequest;
 
 GetInstanceSummaryReportRequest::GetInstanceSummaryReportRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetInstanceSummaryReport")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceSummaryReportRequest::~GetInstanceSummaryReportRequest()
 {}

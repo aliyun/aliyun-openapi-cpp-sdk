@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::AreaDeleteRequest;
 
 AreaDeleteRequest::AreaDeleteRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "AreaDelete")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AreaDeleteRequest::~AreaDeleteRequest()
 {}

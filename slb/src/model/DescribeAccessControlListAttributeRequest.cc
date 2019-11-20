@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeAccessControlListAttributeRequest;
 
 DescribeAccessControlListAttributeRequest::DescribeAccessControlListAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeAccessControlListAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAccessControlListAttributeRequest::~DescribeAccessControlListAttributeRequest()
 {}

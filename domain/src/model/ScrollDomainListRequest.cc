@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::ScrollDomainListRequest;
 
 ScrollDomainListRequest::ScrollDomainListRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "ScrollDomainList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ScrollDomainListRequest::~ScrollDomainListRequest()
 {}

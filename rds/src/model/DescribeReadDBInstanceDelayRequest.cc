@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeReadDBInstanceDelayRequest;
 
 DescribeReadDBInstanceDelayRequest::DescribeReadDBInstanceDelayRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeReadDBInstanceDelay")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeReadDBInstanceDelayRequest::~DescribeReadDBInstanceDelayRequest()
 {}

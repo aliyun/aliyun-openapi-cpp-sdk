@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribePrivilegesRequest();
 				~DescribePrivilegesRequest();
 
+				int getAccountType()const;
+				void setAccountType(int accountType);
 				long getAccountId()const;
 				void setAccountId(long accountId);
 				std::string getSourceIp()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setDataTypeIds(const std::string& dataTypeIds);
 
             private:
+				int accountType_;
 				long accountId_;
 				std::string sourceIp_;
 				int pageSize_;

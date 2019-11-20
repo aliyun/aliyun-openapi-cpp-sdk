@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateCabInstanceRequest;
 
 CreateCabInstanceRequest::CreateCabInstanceRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateCabInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCabInstanceRequest::~CreateCabInstanceRequest()
 {}

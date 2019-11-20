@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::UpdateNetworkAclEntriesRequest;
 
 UpdateNetworkAclEntriesRequest::UpdateNetworkAclEntriesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "UpdateNetworkAclEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateNetworkAclEntriesRequest::~UpdateNetworkAclEntriesRequest()
 {}
@@ -44,18 +46,17 @@ std::vector<UpdateNetworkAclEntriesRequest::EgressAclEntries> UpdateNetworkAclEn
 void UpdateNetworkAclEntriesRequest::setEgressAclEntries(const std::vector<EgressAclEntries>& egressAclEntries)
 {
 	egressAclEntries_ = egressAclEntries;
-	int i = 0;
-	for(int i = 0; i!= egressAclEntries.size(); i++)	{
-		auto obj = egressAclEntries.at(i);
-		std::string str ="EgressAclEntries."+ std::to_string(i);
-		setCoreParameter(str + ".NetworkAclEntryName", obj.networkAclEntryName);
-		setCoreParameter(str + ".NetworkAclEntryId", obj.networkAclEntryId);
-		setCoreParameter(str + ".Policy", obj.policy);
-		setCoreParameter(str + ".Protocol", obj.protocol);
-		setCoreParameter(str + ".DestinationCidrIp", obj.destinationCidrIp);
-		setCoreParameter(str + ".Port", obj.port);
-		setCoreParameter(str + ".EntryType", obj.entryType);
-		setCoreParameter(str + ".Description", obj.description);
+	for(int dep1 = 0; dep1!= egressAclEntries.size(); dep1++) {
+		auto egressAclEntriesObj = egressAclEntries.at(dep1);
+		std::string egressAclEntriesObjStr = "EgressAclEntries." + std::to_string(dep1);
+		setCoreParameter(egressAclEntriesObjStr + ".NetworkAclEntryName", egressAclEntriesObj.networkAclEntryName);
+		setCoreParameter(egressAclEntriesObjStr + ".NetworkAclEntryId", egressAclEntriesObj.networkAclEntryId);
+		setCoreParameter(egressAclEntriesObjStr + ".Policy", egressAclEntriesObj.policy);
+		setCoreParameter(egressAclEntriesObjStr + ".Protocol", egressAclEntriesObj.protocol);
+		setCoreParameter(egressAclEntriesObjStr + ".DestinationCidrIp", egressAclEntriesObj.destinationCidrIp);
+		setCoreParameter(egressAclEntriesObjStr + ".Port", egressAclEntriesObj.port);
+		setCoreParameter(egressAclEntriesObjStr + ".EntryType", egressAclEntriesObj.entryType);
+		setCoreParameter(egressAclEntriesObjStr + ".Description", egressAclEntriesObj.description);
 	}
 }
 
@@ -144,18 +145,17 @@ std::vector<UpdateNetworkAclEntriesRequest::IngressAclEntries> UpdateNetworkAclE
 void UpdateNetworkAclEntriesRequest::setIngressAclEntries(const std::vector<IngressAclEntries>& ingressAclEntries)
 {
 	ingressAclEntries_ = ingressAclEntries;
-	int i = 0;
-	for(int i = 0; i!= ingressAclEntries.size(); i++)	{
-		auto obj = ingressAclEntries.at(i);
-		std::string str ="IngressAclEntries."+ std::to_string(i);
-		setCoreParameter(str + ".NetworkAclEntryName", obj.networkAclEntryName);
-		setCoreParameter(str + ".NetworkAclEntryId", obj.networkAclEntryId);
-		setCoreParameter(str + ".Policy", obj.policy);
-		setCoreParameter(str + ".Protocol", obj.protocol);
-		setCoreParameter(str + ".SourceCidrIp", obj.sourceCidrIp);
-		setCoreParameter(str + ".Port", obj.port);
-		setCoreParameter(str + ".EntryType", obj.entryType);
-		setCoreParameter(str + ".Description", obj.description);
+	for(int dep1 = 0; dep1!= ingressAclEntries.size(); dep1++) {
+		auto ingressAclEntriesObj = ingressAclEntries.at(dep1);
+		std::string ingressAclEntriesObjStr = "IngressAclEntries." + std::to_string(dep1);
+		setCoreParameter(ingressAclEntriesObjStr + ".NetworkAclEntryName", ingressAclEntriesObj.networkAclEntryName);
+		setCoreParameter(ingressAclEntriesObjStr + ".NetworkAclEntryId", ingressAclEntriesObj.networkAclEntryId);
+		setCoreParameter(ingressAclEntriesObjStr + ".Policy", ingressAclEntriesObj.policy);
+		setCoreParameter(ingressAclEntriesObjStr + ".Protocol", ingressAclEntriesObj.protocol);
+		setCoreParameter(ingressAclEntriesObjStr + ".SourceCidrIp", ingressAclEntriesObj.sourceCidrIp);
+		setCoreParameter(ingressAclEntriesObjStr + ".Port", ingressAclEntriesObj.port);
+		setCoreParameter(ingressAclEntriesObjStr + ".EntryType", ingressAclEntriesObj.entryType);
+		setCoreParameter(ingressAclEntriesObjStr + ".Description", ingressAclEntriesObj.description);
 	}
 }
 

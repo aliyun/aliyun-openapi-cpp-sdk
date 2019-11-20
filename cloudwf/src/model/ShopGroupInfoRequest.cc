@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopGroupInfoRequest;
 
 ShopGroupInfoRequest::ShopGroupInfoRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopGroupInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopGroupInfoRequest::~ShopGroupInfoRequest()
 {}

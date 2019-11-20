@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CancelDomainVerificationRequest;
 
 CancelDomainVerificationRequest::CancelDomainVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CancelDomainVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelDomainVerificationRequest::~CancelDomainVerificationRequest()
 {}

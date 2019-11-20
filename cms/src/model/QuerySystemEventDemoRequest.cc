@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::QuerySystemEventDemoRequest;
 
 QuerySystemEventDemoRequest::QuerySystemEventDemoRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "QuerySystemEventDemo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySystemEventDemoRequest::~QuerySystemEventDemoRequest()
 {}

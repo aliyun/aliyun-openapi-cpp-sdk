@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::GetLoraNodesTaskRequest;
 
 GetLoraNodesTaskRequest::GetLoraNodesTaskRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetLoraNodesTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetLoraNodesTaskRequest::~GetLoraNodesTaskRequest()
 {}

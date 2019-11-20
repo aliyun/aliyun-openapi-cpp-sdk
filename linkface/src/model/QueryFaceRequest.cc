@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::QueryFaceRequest;
 
 QueryFaceRequest::QueryFaceRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFaceRequest::~QueryFaceRequest()
 {}

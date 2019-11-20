@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::MoveAppResourceRequest;
 
 MoveAppResourceRequest::MoveAppResourceRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "MoveAppResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoveAppResourceRequest::~MoveAppResourceRequest()
 {}

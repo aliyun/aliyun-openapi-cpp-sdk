@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCensRequest;
 
 DescribeCensRequest::DescribeCensRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCens")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCensRequest::~DescribeCensRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<DescribeCensRequest::Tag> DescribeCensRequest::getTag()const
 void DescribeCensRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -116,12 +117,12 @@ std::vector<DescribeCensRequest::Filter> DescribeCensRequest::getFilter()const
 void DescribeCensRequest::setFilter(const std::vector<Filter>& filter)
 {
 	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
+		auto filterObj = filter.at(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1);
+		for(int dep2 = 0; dep2!= value.size(); dep2++)
+			setCoreParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
+		setCoreParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UserDataDeleteRequest;
 
 UserDataDeleteRequest::UserDataDeleteRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UserDataDelete")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UserDataDeleteRequest::~UserDataDeleteRequest()
 {}

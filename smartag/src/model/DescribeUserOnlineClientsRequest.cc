@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeUserOnlineClientsRequest;
 
 DescribeUserOnlineClientsRequest::DescribeUserOnlineClientsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeUserOnlineClients")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserOnlineClientsRequest::~DescribeUserOnlineClientsRequest()
 {}

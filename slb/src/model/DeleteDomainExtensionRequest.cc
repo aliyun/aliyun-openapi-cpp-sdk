@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DeleteDomainExtensionRequest;
 
 DeleteDomainExtensionRequest::DeleteDomainExtensionRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DeleteDomainExtension")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDomainExtensionRequest::~DeleteDomainExtensionRequest()
 {}

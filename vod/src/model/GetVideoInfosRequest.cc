@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetVideoInfosRequest;
 
 GetVideoInfosRequest::GetVideoInfosRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetVideoInfos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetVideoInfosRequest::~GetVideoInfosRequest()
 {}

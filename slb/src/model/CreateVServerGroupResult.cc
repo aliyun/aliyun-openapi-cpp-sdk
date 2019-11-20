@@ -55,6 +55,10 @@ void CreateVServerGroupResult::parse(const std::string &payload)
 			backendServersObject.serverIp = valueBackendServersBackendServer["ServerIp"].asString();
 		if(!valueBackendServersBackendServer["VpcId"].isNull())
 			backendServersObject.vpcId = valueBackendServersBackendServer["VpcId"].asString();
+		if(!valueBackendServersBackendServer["VbrId"].isNull())
+			backendServersObject.vbrId = valueBackendServersBackendServer["VbrId"].asString();
+		if(!valueBackendServersBackendServer["ServerRegionId"].isNull())
+			backendServersObject.serverRegionId = valueBackendServersBackendServer["ServerRegionId"].asString();
 		if(!valueBackendServersBackendServer["Description"].isNull())
 			backendServersObject.description = valueBackendServersBackendServer["Description"].asString();
 		backendServers_.push_back(backendServersObject);

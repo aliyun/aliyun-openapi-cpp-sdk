@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CreateDedicatedHostGroupRequest;
 
 CreateDedicatedHostGroupRequest::CreateDedicatedHostGroupRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CreateDedicatedHostGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDedicatedHostGroupRequest::~CreateDedicatedHostGroupRequest()
 {}

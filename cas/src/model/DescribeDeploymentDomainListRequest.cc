@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeDeploymentDomainListRequest;
 
 DescribeDeploymentDomainListRequest::DescribeDeploymentDomainListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeDeploymentDomainList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDeploymentDomainListRequest::~DescribeDeploymentDomainListRequest()
 {}

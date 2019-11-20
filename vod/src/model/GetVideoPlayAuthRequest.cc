@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetVideoPlayAuthRequest;
 
 GetVideoPlayAuthRequest::GetVideoPlayAuthRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetVideoPlayAuth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetVideoPlayAuthRequest::~GetVideoPlayAuthRequest()
 {}

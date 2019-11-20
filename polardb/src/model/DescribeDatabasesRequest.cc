@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::DescribeDatabasesRequest;
 
 DescribeDatabasesRequest::DescribeDatabasesRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "DescribeDatabases")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDatabasesRequest::~DescribeDatabasesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ConvertBandwidthPackageRequest;
 
 ConvertBandwidthPackageRequest::ConvertBandwidthPackageRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ConvertBandwidthPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConvertBandwidthPackageRequest::~ConvertBandwidthPackageRequest()
 {}

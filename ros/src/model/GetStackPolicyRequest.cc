@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::GetStackPolicyRequest;
 
 GetStackPolicyRequest::GetStackPolicyRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/policy");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetStackPolicyRequest::~GetStackPolicyRequest()
 {}

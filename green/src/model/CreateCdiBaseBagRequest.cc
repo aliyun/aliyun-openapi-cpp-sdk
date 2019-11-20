@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateCdiBaseBagRequest;
 
 CreateCdiBaseBagRequest::CreateCdiBaseBagRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateCdiBaseBag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCdiBaseBagRequest::~CreateCdiBaseBagRequest()
 {}

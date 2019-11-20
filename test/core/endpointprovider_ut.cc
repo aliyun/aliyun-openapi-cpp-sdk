@@ -107,19 +107,3 @@ TEST(EndpointProvider, mock_remote_error) {
   EXPECT_TRUE(out.error().errorCode() == "any-error-code");
 }
 
-TEST(EndpointProvider, serial_02) {
-  utUtils utils;
-  string key = utils.get_env("ENV_AccessKeyId");
-  string secret = utils.get_env("ENV_AccessKeySecret");
-
-  Credentials credentials(key, secret);
-  ClientConfiguration configuration("cn-hangzhou");
-  EndpointProvider ep(credentials, configuration, "cn-hangzhou", "arms", "arms");
-  EndpointProvider::EndpointOutcome out = ep.getEndpoint();
-  EXPECT_TRUE(out.result() == "arms.cn-hangzhou.aliyuncs.com");
-
-  EndpointProvider p1(credentials, configuration, "cn-shanghai", "fake-ecs", "fake-ecs");
-  EndpointProvider::EndpointOutcome out1 = p1.getEndpoint();
-  EXPECT_TRUE(out1.error().errorCode() == "InvalidProduct");
-  EXPECT_TRUE(out1.error().errorMessage() == "Prodcut[fake-ecs] does not exist.");
-}

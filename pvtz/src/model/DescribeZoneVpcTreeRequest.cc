@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::DescribeZoneVpcTreeRequest;
 
 DescribeZoneVpcTreeRequest::DescribeZoneVpcTreeRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "DescribeZoneVpcTree")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeZoneVpcTreeRequest::~DescribeZoneVpcTreeRequest()
 {}

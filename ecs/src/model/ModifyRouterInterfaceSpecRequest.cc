@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyRouterInterfaceSpecRequest;
 
 ModifyRouterInterfaceSpecRequest::ModifyRouterInterfaceSpecRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyRouterInterfaceSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRouterInterfaceSpecRequest::~ModifyRouterInterfaceSpecRequest()
 {}

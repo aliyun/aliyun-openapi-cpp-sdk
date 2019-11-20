@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryMaterialRequest;
 
 QueryMaterialRequest::QueryMaterialRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryMaterial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMaterialRequest::~QueryMaterialRequest()
 {}

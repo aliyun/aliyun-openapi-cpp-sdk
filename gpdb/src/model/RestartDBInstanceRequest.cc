@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::RestartDBInstanceRequest;
 
 RestartDBInstanceRequest::RestartDBInstanceRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "RestartDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RestartDBInstanceRequest::~RestartDBInstanceRequest()
 {}

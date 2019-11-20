@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::ExportKeywordsRequest;
 
 ExportKeywordsRequest::ExportKeywordsRequest() :
 	RpcServiceRequest("green", "2017-08-23", "ExportKeywords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ExportKeywordsRequest::~ExportKeywordsRequest()
 {}

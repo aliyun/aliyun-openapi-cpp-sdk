@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeOssObjectDetailRequest;
 
 DescribeOssObjectDetailRequest::DescribeOssObjectDetailRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeOssObjectDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssObjectDetailRequest::~DescribeOssObjectDetailRequest()
 {}

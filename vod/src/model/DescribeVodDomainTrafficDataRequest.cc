@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodDomainTrafficDataRequest;
 
 DescribeVodDomainTrafficDataRequest::DescribeVodDomainTrafficDataRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodDomainTrafficData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodDomainTrafficDataRequest::~DescribeVodDomainTrafficDataRequest()
 {}

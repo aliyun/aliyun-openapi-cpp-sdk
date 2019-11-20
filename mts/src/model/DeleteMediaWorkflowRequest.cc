@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeleteMediaWorkflowRequest;
 
 DeleteMediaWorkflowRequest::DeleteMediaWorkflowRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeleteMediaWorkflow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMediaWorkflowRequest::~DeleteMediaWorkflowRequest()
 {}

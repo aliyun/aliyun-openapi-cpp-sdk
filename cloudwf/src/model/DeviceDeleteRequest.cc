@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeviceDeleteRequest;
 
 DeviceDeleteRequest::DeviceDeleteRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeviceDelete")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeviceDeleteRequest::~DeviceDeleteRequest()
 {}

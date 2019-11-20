@@ -93,10 +93,6 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 				mongosListObject.nodeDescription = allDBInstancesNodeMongosListMongosAttribute["NodeDescription"].asString();
 			if(!allDBInstancesNodeMongosListMongosAttribute["NodeClass"].isNull())
 				mongosListObject.nodeClass = allDBInstancesNodeMongosListMongosAttribute["NodeClass"].asString();
-			if(!allDBInstancesNodeMongosListMongosAttribute["ConnectSting"].isNull())
-				mongosListObject.connectSting = allDBInstancesNodeMongosListMongosAttribute["ConnectSting"].asString();
-			if(!allDBInstancesNodeMongosListMongosAttribute["Port"].isNull())
-				mongosListObject.port = std::stoi(allDBInstancesNodeMongosListMongosAttribute["Port"].asString());
 			dBInstancesObject.mongosList.push_back(mongosListObject);
 		}
 		auto allShardListNode = allDBInstancesNode["ShardList"]["ShardAttribute"];

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetUserUmengPagePermissionRequest;
 
 GetUserUmengPagePermissionRequest::GetUserUmengPagePermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetUserUmengPagePermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUserUmengPagePermissionRequest::~GetUserUmengPagePermissionRequest()
 {}

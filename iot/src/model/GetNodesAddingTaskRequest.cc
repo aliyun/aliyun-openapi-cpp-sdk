@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::GetNodesAddingTaskRequest;
 
 GetNodesAddingTaskRequest::GetNodesAddingTaskRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetNodesAddingTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetNodesAddingTaskRequest::~GetNodesAddingTaskRequest()
 {}

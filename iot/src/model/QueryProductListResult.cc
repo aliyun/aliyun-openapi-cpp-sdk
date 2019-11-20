@@ -66,6 +66,8 @@ void QueryProductListResult::parse(const std::string &payload)
 			productInfoObject.productKey = dataNodeListProductInfo["ProductKey"].asString();
 		if(!dataNodeListProductInfo["ProductName"].isNull())
 			productInfoObject.productName = dataNodeListProductInfo["ProductName"].asString();
+		if(!dataNodeListProductInfo["AuthType"].isNull())
+			productInfoObject.authType = dataNodeListProductInfo["AuthType"].asString();
 		data_.list.push_back(productInfoObject);
 	}
 	if(!value["Success"].isNull())

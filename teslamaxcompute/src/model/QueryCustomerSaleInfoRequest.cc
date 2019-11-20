@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::QueryCustomerSaleInfoRequest;
 
 QueryCustomerSaleInfoRequest::QueryCustomerSaleInfoRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "QueryCustomerSaleInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 QueryCustomerSaleInfoRequest::~QueryCustomerSaleInfoRequest()
 {}

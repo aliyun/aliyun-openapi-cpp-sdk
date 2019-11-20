@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::PurchaseReservedInstancesOfferingRequest;
 
 PurchaseReservedInstancesOfferingRequest::PurchaseReservedInstancesOfferingRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "PurchaseReservedInstancesOffering")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PurchaseReservedInstancesOfferingRequest::~PurchaseReservedInstancesOfferingRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ConfigAutoRenewRequest;
 
 ConfigAutoRenewRequest::ConfigAutoRenewRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ConfigAutoRenew")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConfigAutoRenewRequest::~ConfigAutoRenewRequest()
 {}
@@ -55,8 +57,8 @@ std::vector<std::string> ConfigAutoRenewRequest::getApList()const
 void ConfigAutoRenewRequest::setApList(const std::vector<std::string>& apList)
 {
 	apList_ = apList;
-	for(int i = 0; i!= apList.size(); i++)
-		setCoreParameter("ApList."+ std::to_string(i), apList.at(i));
+	for(int dep1 = 0; dep1!= apList.size(); dep1++)
+		setCoreParameter("ApList."+ std::to_string(dep1), apList.at(dep1));
 }
 
 std::string ConfigAutoRenewRequest::getAccessKeyId()const

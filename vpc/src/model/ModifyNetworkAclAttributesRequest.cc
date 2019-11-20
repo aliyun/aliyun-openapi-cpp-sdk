@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyNetworkAclAttributesRequest;
 
 ModifyNetworkAclAttributesRequest::ModifyNetworkAclAttributesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyNetworkAclAttributes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyNetworkAclAttributesRequest::~ModifyNetworkAclAttributesRequest()
 {}

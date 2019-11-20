@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::TagResourcesRequest;
 
 TagResourcesRequest::TagResourcesRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "TagResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TagResourcesRequest::~TagResourcesRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag()const
 void TagResourcesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -83,8 +84,8 @@ std::vector<std::string> TagResourcesRequest::getResourceId()const
 void TagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++)
+		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
 }
 
 std::string TagResourcesRequest::getResourceOwnerAccount()const

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeDomainRequest;
 
 DescribeDomainRequest::DescribeDomainRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainRequest::~DescribeDomainRequest()
 {}

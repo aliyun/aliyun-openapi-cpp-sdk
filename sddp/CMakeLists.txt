@@ -37,6 +37,8 @@ set(sddp_public_header_model
 	include/alibabacloud/sddp/model/DescribeAccountDetailResult.h
 	include/alibabacloud/sddp/model/DescribeAccountsRequest.h
 	include/alibabacloud/sddp/model/DescribeAccountsResult.h
+	include/alibabacloud/sddp/model/DescribeAuditLogsRequest.h
+	include/alibabacloud/sddp/model/DescribeAuditLogsResult.h
 	include/alibabacloud/sddp/model/DescribeAuthAccountsRequest.h
 	include/alibabacloud/sddp/model/DescribeAuthAccountsResult.h
 	include/alibabacloud/sddp/model/DescribeCloudDatabasesRequest.h
@@ -71,6 +73,8 @@ set(sddp_public_header_model
 	include/alibabacloud/sddp/model/DescribeEventsResult.h
 	include/alibabacloud/sddp/model/DescribeInstancesRequest.h
 	include/alibabacloud/sddp/model/DescribeInstancesResult.h
+	include/alibabacloud/sddp/model/DescribeOriginalLogsRequest.h
+	include/alibabacloud/sddp/model/DescribeOriginalLogsResult.h
 	include/alibabacloud/sddp/model/DescribeOssObjectDetailRequest.h
 	include/alibabacloud/sddp/model/DescribeOssObjectDetailResult.h
 	include/alibabacloud/sddp/model/DescribeOssObjectsRequest.h
@@ -83,6 +87,8 @@ set(sddp_public_header_model
 	include/alibabacloud/sddp/model/DescribeRulesResult.h
 	include/alibabacloud/sddp/model/DescribeTablesRequest.h
 	include/alibabacloud/sddp/model/DescribeTablesResult.h
+	include/alibabacloud/sddp/model/DescribeUseFlowRequest.h
+	include/alibabacloud/sddp/model/DescribeUseFlowResult.h
 	include/alibabacloud/sddp/model/DescribeUserStatusRequest.h
 	include/alibabacloud/sddp/model/DescribeUserStatusResult.h
 	include/alibabacloud/sddp/model/ModifyDataLimitRequest.h
@@ -118,6 +124,8 @@ set(sddp_src
 	src/model/DescribeAccountDetailResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
+	src/model/DescribeAuditLogsRequest.cc
+	src/model/DescribeAuditLogsResult.cc
 	src/model/DescribeAuthAccountsRequest.cc
 	src/model/DescribeAuthAccountsResult.cc
 	src/model/DescribeCloudDatabasesRequest.cc
@@ -152,6 +160,8 @@ set(sddp_src
 	src/model/DescribeEventsResult.cc
 	src/model/DescribeInstancesRequest.cc
 	src/model/DescribeInstancesResult.cc
+	src/model/DescribeOriginalLogsRequest.cc
+	src/model/DescribeOriginalLogsResult.cc
 	src/model/DescribeOssObjectDetailRequest.cc
 	src/model/DescribeOssObjectDetailResult.cc
 	src/model/DescribeOssObjectsRequest.cc
@@ -164,6 +174,8 @@ set(sddp_src
 	src/model/DescribeRulesResult.cc
 	src/model/DescribeTablesRequest.cc
 	src/model/DescribeTablesResult.cc
+	src/model/DescribeUseFlowRequest.cc
+	src/model/DescribeUseFlowResult.cc
 	src/model/DescribeUserStatusRequest.cc
 	src/model/DescribeUserStatusResult.cc
 	src/model/ModifyDataLimitRequest.cc

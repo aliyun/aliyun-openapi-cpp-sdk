@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetConversationListRequest;
 
 GetConversationListRequest::GetConversationListRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetConversationList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetConversationListRequest::~GetConversationListRequest()
 {}

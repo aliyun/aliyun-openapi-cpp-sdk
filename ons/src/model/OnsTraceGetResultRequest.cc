@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsTraceGetResultRequest;
 
 OnsTraceGetResultRequest::OnsTraceGetResultRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsTraceGetResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsTraceGetResultRequest::~OnsTraceGetResultRequest()
 {}

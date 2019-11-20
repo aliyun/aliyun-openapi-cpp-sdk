@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateACLRequest;
 
 CreateACLRequest::CreateACLRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateACL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateACLRequest::~CreateACLRequest()
 {}

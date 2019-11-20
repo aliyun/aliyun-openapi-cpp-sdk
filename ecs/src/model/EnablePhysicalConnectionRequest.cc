@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::EnablePhysicalConnectionRequest;
 
 EnablePhysicalConnectionRequest::EnablePhysicalConnectionRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "EnablePhysicalConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EnablePhysicalConnectionRequest::~EnablePhysicalConnectionRequest()
 {}

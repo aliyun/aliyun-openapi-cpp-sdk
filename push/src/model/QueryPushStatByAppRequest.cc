@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryPushStatByAppRequest;
 
 QueryPushStatByAppRequest::QueryPushStatByAppRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryPushStatByApp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryPushStatByAppRequest::~QueryPushStatByAppRequest()
 {}

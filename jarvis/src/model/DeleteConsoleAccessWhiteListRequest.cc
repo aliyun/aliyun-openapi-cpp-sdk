@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteConsoleAccessWhiteListRequest;
 
 DeleteConsoleAccessWhiteListRequest::DeleteConsoleAccessWhiteListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteConsoleAccessWhiteList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteConsoleAccessWhiteListRequest::~DeleteConsoleAccessWhiteListRequest()
 {}

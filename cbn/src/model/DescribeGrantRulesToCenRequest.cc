@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeGrantRulesToCenRequest;
 
 DescribeGrantRulesToCenRequest::DescribeGrantRulesToCenRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeGrantRulesToCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGrantRulesToCenRequest::~DescribeGrantRulesToCenRequest()
 {}

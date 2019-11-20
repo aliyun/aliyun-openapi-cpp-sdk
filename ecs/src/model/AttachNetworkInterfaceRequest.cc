@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::AttachNetworkInterfaceRequest;
 
 AttachNetworkInterfaceRequest::AttachNetworkInterfaceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "AttachNetworkInterface")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachNetworkInterfaceRequest::~AttachNetworkInterfaceRequest()
 {}

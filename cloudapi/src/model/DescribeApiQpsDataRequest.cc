@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiQpsDataRequest;
 
 DescribeApiQpsDataRequest::DescribeApiQpsDataRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiQpsData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiQpsDataRequest::~DescribeApiQpsDataRequest()
 {}

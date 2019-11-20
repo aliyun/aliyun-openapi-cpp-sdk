@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::AbandonStackRequest;
 
 AbandonStackRequest::AbandonStackRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/abandon");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 AbandonStackRequest::~AbandonStackRequest()
 {}

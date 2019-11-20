@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::HeadquartersRankingRequest;
 
 HeadquartersRankingRequest::HeadquartersRankingRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "HeadquartersRanking")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 HeadquartersRankingRequest::~HeadquartersRankingRequest()
 {}

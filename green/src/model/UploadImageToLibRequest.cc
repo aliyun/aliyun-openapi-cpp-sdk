@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UploadImageToLibRequest;
 
 UploadImageToLibRequest::UploadImageToLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UploadImageToLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadImageToLibRequest::~UploadImageToLibRequest()
 {}

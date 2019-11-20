@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeHlsLiveStreamRealTimeBpsDataRequest;
 
 DescribeHlsLiveStreamRealTimeBpsDataRequest::DescribeHlsLiveStreamRealTimeBpsDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeHlsLiveStreamRealTimeBpsDataRequest::~DescribeHlsLiveStreamRealTimeBpsDataRequest()
 {}

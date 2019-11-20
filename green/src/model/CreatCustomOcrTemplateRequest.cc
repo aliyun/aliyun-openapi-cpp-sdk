@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreatCustomOcrTemplateRequest;
 
 CreatCustomOcrTemplateRequest::CreatCustomOcrTemplateRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreatCustomOcrTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreatCustomOcrTemplateRequest::~CreatCustomOcrTemplateRequest()
 {}

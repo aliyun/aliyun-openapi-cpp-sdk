@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::UpdateIntentRequest;
 
 UpdateIntentRequest::UpdateIntentRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "UpdateIntent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateIntentRequest::~UpdateIntentRequest()
 {}

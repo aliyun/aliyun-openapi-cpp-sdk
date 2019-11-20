@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeSignatureCapacityRequest;
 
 DescribeSignatureCapacityRequest::DescribeSignatureCapacityRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeSignatureCapacity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSignatureCapacityRequest::~DescribeSignatureCapacityRequest()
 {}

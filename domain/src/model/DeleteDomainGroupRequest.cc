@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::DeleteDomainGroupRequest;
 
 DeleteDomainGroupRequest::DeleteDomainGroupRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "DeleteDomainGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDomainGroupRequest::~DeleteDomainGroupRequest()
 {}

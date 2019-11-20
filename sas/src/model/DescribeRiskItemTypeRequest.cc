@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeRiskItemTypeRequest;
 
 DescribeRiskItemTypeRequest::DescribeRiskItemTypeRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeRiskItemType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRiskItemTypeRequest::~DescribeRiskItemTypeRequest()
 {}

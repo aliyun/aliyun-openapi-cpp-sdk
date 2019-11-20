@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SavePageConfigTemplateRequest;
 
 SavePageConfigTemplateRequest::SavePageConfigTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SavePageConfigTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SavePageConfigTemplateRequest::~SavePageConfigTemplateRequest()
 {}

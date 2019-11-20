@@ -20,7 +20,10 @@ using AlibabaCloud::CS::Model::DeleteClusterNodesRequest;
 
 DeleteClusterNodesRequest::DeleteClusterNodesRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
-{}
+{
+	setResourcePath("/clusters/[ClusterId]/nodes");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteClusterNodesRequest::~DeleteClusterNodesRequest()
 {}

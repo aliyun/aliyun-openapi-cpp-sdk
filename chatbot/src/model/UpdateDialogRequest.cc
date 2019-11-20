@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::UpdateDialogRequest;
 
 UpdateDialogRequest::UpdateDialogRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "UpdateDialog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateDialogRequest::~UpdateDialogRequest()
 {}

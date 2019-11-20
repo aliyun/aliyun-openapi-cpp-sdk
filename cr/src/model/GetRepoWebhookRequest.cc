@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoWebhookRequest;
 
 GetRepoWebhookRequest::GetRepoWebhookRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/webhooks");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoWebhookRequest::~GetRepoWebhookRequest()
 {}

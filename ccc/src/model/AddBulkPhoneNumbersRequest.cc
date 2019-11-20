@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::AddBulkPhoneNumbersRequest;
 
 AddBulkPhoneNumbersRequest::AddBulkPhoneNumbersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "AddBulkPhoneNumbers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddBulkPhoneNumbersRequest::~AddBulkPhoneNumbersRequest()
 {}
@@ -55,8 +57,8 @@ std::vector<std::string> AddBulkPhoneNumbersRequest::getPhoneNumber()const
 void AddBulkPhoneNumbersRequest::setPhoneNumber(const std::vector<std::string>& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	for(int i = 0; i!= phoneNumber.size(); i++)
-		setCoreParameter("PhoneNumber."+ std::to_string(i), phoneNumber.at(i));
+	for(int dep1 = 0; dep1!= phoneNumber.size(); dep1++)
+		setCoreParameter("PhoneNumber."+ std::to_string(dep1), phoneNumber.at(dep1));
 }
 
 std::string AddBulkPhoneNumbersRequest::getAccessKeyId()const
@@ -89,7 +91,7 @@ std::vector<std::string> AddBulkPhoneNumbersRequest::getSkillGroupId()const
 void AddBulkPhoneNumbersRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++)
+		setCoreParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
 }
 

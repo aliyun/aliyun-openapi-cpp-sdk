@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::SetAlbumCoverRequest;
 
 SetAlbumCoverRequest::SetAlbumCoverRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "SetAlbumCover")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetAlbumCoverRequest::~SetAlbumCoverRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamBitRateDataRequest;
 
 DescribeLiveStreamBitRateDataRequest::DescribeLiveStreamBitRateDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamBitRateData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamBitRateDataRequest::~DescribeLiveStreamBitRateDataRequest()
 {}

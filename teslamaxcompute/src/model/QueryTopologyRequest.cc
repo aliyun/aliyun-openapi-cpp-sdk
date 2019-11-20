@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::QueryTopologyRequest;
 
 QueryTopologyRequest::QueryTopologyRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "QueryTopology")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 QueryTopologyRequest::~QueryTopologyRequest()
 {}

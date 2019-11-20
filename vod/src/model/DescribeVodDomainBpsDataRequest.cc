@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodDomainBpsDataRequest;
 
 DescribeVodDomainBpsDataRequest::DescribeVodDomainBpsDataRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodDomainBpsData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodDomainBpsDataRequest::~DescribeVodDomainBpsDataRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ModifySecurityIpsRequest;
 
 ModifySecurityIpsRequest::ModifySecurityIpsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ModifySecurityIps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySecurityIpsRequest::~ModifySecurityIpsRequest()
 {}

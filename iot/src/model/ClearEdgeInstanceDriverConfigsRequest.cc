@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::ClearEdgeInstanceDriverConfigsRequest;
 
 ClearEdgeInstanceDriverConfigsRequest::ClearEdgeInstanceDriverConfigsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "ClearEdgeInstanceDriverConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ClearEdgeInstanceDriverConfigsRequest::~ClearEdgeInstanceDriverConfigsRequest()
 {}

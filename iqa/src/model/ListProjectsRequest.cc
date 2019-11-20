@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::ListProjectsRequest;
 
 ListProjectsRequest::ListProjectsRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "ListProjects")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListProjectsRequest::~ListProjectsRequest()
 {}

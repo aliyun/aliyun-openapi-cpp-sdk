@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListApmApplicationRequest;
 
 ListApmApplicationRequest::ListApmApplicationRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListApmApplication")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApmApplicationRequest::~ListApmApplicationRequest()
 {}

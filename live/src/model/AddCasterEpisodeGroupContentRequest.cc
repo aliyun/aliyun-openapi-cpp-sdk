@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddCasterEpisodeGroupContentRequest;
 
 AddCasterEpisodeGroupContentRequest::AddCasterEpisodeGroupContentRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddCasterEpisodeGroupContent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCasterEpisodeGroupContentRequest::~AddCasterEpisodeGroupContentRequest()
 {}

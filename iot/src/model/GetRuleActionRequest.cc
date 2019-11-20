@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::GetRuleActionRequest;
 
 GetRuleActionRequest::GetRuleActionRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetRuleAction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRuleActionRequest::~GetRuleActionRequest()
 {}

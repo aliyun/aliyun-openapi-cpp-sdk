@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::UpdateProductTopicRequest;
 
 UpdateProductTopicRequest::UpdateProductTopicRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "UpdateProductTopic")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateProductTopicRequest::~UpdateProductTopicRequest()
 {}

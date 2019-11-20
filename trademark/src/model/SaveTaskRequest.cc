@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::SaveTaskRequest;
 
 SaveTaskRequest::SaveTaskRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "SaveTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveTaskRequest::~SaveTaskRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitSnapshotJobRequest;
 
 SubmitSnapshotJobRequest::SubmitSnapshotJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitSnapshotJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitSnapshotJobRequest::~SubmitSnapshotJobRequest()
 {}

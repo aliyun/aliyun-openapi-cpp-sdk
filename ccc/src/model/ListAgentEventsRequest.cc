@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListAgentEventsRequest;
 
 ListAgentEventsRequest::ListAgentEventsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListAgentEvents")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAgentEventsRequest::~ListAgentEventsRequest()
 {}
@@ -55,8 +57,8 @@ std::vector<std::string> ListAgentEventsRequest::getRamId()const
 void ListAgentEventsRequest::setRamId(const std::vector<std::string>& ramId)
 {
 	ramId_ = ramId;
-	for(int i = 0; i!= ramId.size(); i++)
-		setCoreParameter("RamId."+ std::to_string(i), ramId.at(i));
+	for(int dep1 = 0; dep1!= ramId.size(); dep1++)
+		setCoreParameter("RamId."+ std::to_string(dep1), ramId.at(dep1));
 }
 
 std::string ListAgentEventsRequest::getAccessKeyId()const
@@ -89,7 +91,7 @@ std::vector<std::string> ListAgentEventsRequest::getEvent()const
 void ListAgentEventsRequest::setEvent(const std::vector<std::string>& event)
 {
 	event_ = event;
-	for(int i = 0; i!= event.size(); i++)
-		setCoreParameter("Event."+ std::to_string(i), event.at(i));
+	for(int dep1 = 0; dep1!= event.size(); dep1++)
+		setCoreParameter("Event."+ std::to_string(dep1), event.at(dep1));
 }
 

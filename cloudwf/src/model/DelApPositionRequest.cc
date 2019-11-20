@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DelApPositionRequest;
 
 DelApPositionRequest::DelApPositionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DelApPosition")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DelApPositionRequest::~DelApPositionRequest()
 {}

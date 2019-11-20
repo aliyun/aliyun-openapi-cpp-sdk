@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteNetworkAclRequest;
 
 DeleteNetworkAclRequest::DeleteNetworkAclRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteNetworkAcl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNetworkAclRequest::~DeleteNetworkAclRequest()
 {}

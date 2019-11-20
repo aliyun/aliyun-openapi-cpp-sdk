@@ -105,6 +105,8 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/CreateHostPoolResult.h
 	include/alibabacloud/emr/model/CreateJobRequest.h
 	include/alibabacloud/emr/model/CreateJobResult.h
+	include/alibabacloud/emr/model/CreateMetaTablePreviewTaskRequest.h
+	include/alibabacloud/emr/model/CreateMetaTablePreviewTaskResult.h
 	include/alibabacloud/emr/model/CreateNavNodeRequest.h
 	include/alibabacloud/emr/model/CreateNavNodeResult.h
 	include/alibabacloud/emr/model/CreateNoteRequest.h
@@ -279,6 +281,8 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/DescribeKafkaBrokerResult.h
 	include/alibabacloud/emr/model/DescribeKafkaReassignRequest.h
 	include/alibabacloud/emr/model/DescribeKafkaReassignResult.h
+	include/alibabacloud/emr/model/DescribeMetaTablePreviewTaskRequest.h
+	include/alibabacloud/emr/model/DescribeMetaTablePreviewTaskResult.h
 	include/alibabacloud/emr/model/DescribeNoteRequest.h
 	include/alibabacloud/emr/model/DescribeNoteResult.h
 	include/alibabacloud/emr/model/DescribeParagraphRequest.h
@@ -303,6 +307,8 @@ set(emr_public_header_model
 	include/alibabacloud/emr/model/DescribeWorkspaceResourceSettingResult.h
 	include/alibabacloud/emr/model/DetachClusterForNoteRequest.h
 	include/alibabacloud/emr/model/DetachClusterForNoteResult.h
+	include/alibabacloud/emr/model/DumpMetaDataSourceForOuterRequest.h
+	include/alibabacloud/emr/model/DumpMetaDataSourceForOuterResult.h
 	include/alibabacloud/emr/model/GetAuditLogsRequest.h
 	include/alibabacloud/emr/model/GetAuditLogsResult.h
 	include/alibabacloud/emr/model/GetBackInfoRequest.h
@@ -906,6 +912,8 @@ set(emr_src
 	src/model/CreateHostPoolResult.cc
 	src/model/CreateJobRequest.cc
 	src/model/CreateJobResult.cc
+	src/model/CreateMetaTablePreviewTaskRequest.cc
+	src/model/CreateMetaTablePreviewTaskResult.cc
 	src/model/CreateNavNodeRequest.cc
 	src/model/CreateNavNodeResult.cc
 	src/model/CreateNoteRequest.cc
@@ -1080,6 +1088,8 @@ set(emr_src
 	src/model/DescribeKafkaBrokerResult.cc
 	src/model/DescribeKafkaReassignRequest.cc
 	src/model/DescribeKafkaReassignResult.cc
+	src/model/DescribeMetaTablePreviewTaskRequest.cc
+	src/model/DescribeMetaTablePreviewTaskResult.cc
 	src/model/DescribeNoteRequest.cc
 	src/model/DescribeNoteResult.cc
 	src/model/DescribeParagraphRequest.cc
@@ -1104,6 +1114,8 @@ set(emr_src
 	src/model/DescribeWorkspaceResourceSettingResult.cc
 	src/model/DetachClusterForNoteRequest.cc
 	src/model/DetachClusterForNoteResult.cc
+	src/model/DumpMetaDataSourceForOuterRequest.cc
+	src/model/DumpMetaDataSourceForOuterResult.cc
 	src/model/GetAuditLogsRequest.cc
 	src/model/GetAuditLogsResult.cc
 	src/model/GetBackInfoRequest.cc

@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteWhiteListConditionalRequest;
 
 DeleteWhiteListConditionalRequest::DeleteWhiteListConditionalRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteWhiteListConditional")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteWhiteListConditionalRequest::~DeleteWhiteListConditionalRequest()
 {}

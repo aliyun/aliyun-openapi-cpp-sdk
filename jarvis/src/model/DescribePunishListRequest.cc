@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribePunishListRequest;
 
 DescribePunishListRequest::DescribePunishListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribePunishList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePunishListRequest::~DescribePunishListRequest()
 {}

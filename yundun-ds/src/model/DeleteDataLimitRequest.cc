@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DeleteDataLimitRequest;
 
 DeleteDataLimitRequest::DeleteDataLimitRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DeleteDataLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDataLimitRequest::~DeleteDataLimitRequest()
 {}

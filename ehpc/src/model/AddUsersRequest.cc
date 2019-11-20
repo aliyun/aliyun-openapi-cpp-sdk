@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::AddUsersRequest;
 
 AddUsersRequest::AddUsersRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "AddUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 AddUsersRequest::~AddUsersRequest()
 {}
@@ -55,13 +57,12 @@ std::vector<AddUsersRequest::User> AddUsersRequest::getUser()const
 void AddUsersRequest::setUser(const std::vector<User>& user)
 {
 	user_ = user;
-	int i = 0;
-	for(int i = 0; i!= user.size(); i++)	{
-		auto obj = user.at(i);
-		std::string str ="User."+ std::to_string(i);
-		setCoreParameter(str + ".Password", obj.password);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Group", obj.group);
+	for(int dep1 = 0; dep1!= user.size(); dep1++) {
+		auto userObj = user.at(dep1);
+		std::string userObjStr = "User." + std::to_string(dep1);
+		setCoreParameter(userObjStr + ".Password", userObj.password);
+		setCoreParameter(userObjStr + ".Name", userObj.name);
+		setCoreParameter(userObjStr + ".Group", userObj.group);
 	}
 }
 

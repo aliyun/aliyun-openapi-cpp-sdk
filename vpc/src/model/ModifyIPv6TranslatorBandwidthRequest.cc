@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyIPv6TranslatorBandwidthRequest;
 
 ModifyIPv6TranslatorBandwidthRequest::ModifyIPv6TranslatorBandwidthRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyIPv6TranslatorBandwidth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyIPv6TranslatorBandwidthRequest::~ModifyIPv6TranslatorBandwidthRequest()
 {}

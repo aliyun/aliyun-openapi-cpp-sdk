@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyGlobalAccelerationInstanceSpecRequest;
 
 ModifyGlobalAccelerationInstanceSpecRequest::ModifyGlobalAccelerationInstanceSpecRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyGlobalAccelerationInstanceSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyGlobalAccelerationInstanceSpecRequest::~ModifyGlobalAccelerationInstanceSpecRequest()
 {}

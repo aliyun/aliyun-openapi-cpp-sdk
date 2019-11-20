@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeInstanceRamRoleRequest;
 
 DescribeInstanceRamRoleRequest::DescribeInstanceRamRoleRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceRamRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceRamRoleRequest::~DescribeInstanceRamRoleRequest()
 {}

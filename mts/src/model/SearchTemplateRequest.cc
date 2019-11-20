@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SearchTemplateRequest;
 
 SearchTemplateRequest::SearchTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SearchTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchTemplateRequest::~SearchTemplateRequest()
 {}

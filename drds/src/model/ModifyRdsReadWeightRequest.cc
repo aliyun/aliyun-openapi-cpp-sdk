@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::ModifyRdsReadWeightRequest;
 
 ModifyRdsReadWeightRequest::ModifyRdsReadWeightRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "ModifyRdsReadWeight")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRdsReadWeightRequest::~ModifyRdsReadWeightRequest()
 {}

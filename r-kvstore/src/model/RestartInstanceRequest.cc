@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::RestartInstanceRequest;
 
 RestartInstanceRequest::RestartInstanceRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "RestartInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RestartInstanceRequest::~RestartInstanceRequest()
 {}

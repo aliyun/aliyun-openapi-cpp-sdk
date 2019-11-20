@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::ListNodesNoPagingRequest;
 
 ListNodesNoPagingRequest::ListNodesNoPagingRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListNodesNoPaging")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListNodesNoPagingRequest::~ListNodesNoPagingRequest()
 {}

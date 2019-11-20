@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::PollTaskResultRequest;
 
 PollTaskResultRequest::PollTaskResultRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "PollTaskResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PollTaskResultRequest::~PollTaskResultRequest()
 {}

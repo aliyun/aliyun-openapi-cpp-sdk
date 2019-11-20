@@ -20,7 +20,9 @@ using AlibabaCloud::Kms::Model::CreateKeyRequest;
 
 CreateKeyRequest::CreateKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "CreateKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateKeyRequest::~CreateKeyRequest()
 {}

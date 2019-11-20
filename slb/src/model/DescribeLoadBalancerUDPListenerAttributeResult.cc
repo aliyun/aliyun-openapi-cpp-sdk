@@ -39,6 +39,9 @@ void DescribeLoadBalancerUDPListenerAttributeResult::parse(const std::string &pa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allAclIds = value["AclIds"]["AclId"];
+	for (const auto &item : allAclIds)
+		aclIds_.push_back(item.asString());
 	if(!value["ListenerPort"].isNull())
 		listenerPort_ = std::stoi(value["ListenerPort"].asString());
 	if(!value["BackendServerPort"].isNull())
@@ -194,5 +197,10 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getMasterSlaveServer
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getAclType()const
 {
 	return aclType_;
+}
+
+std::vector<std::string> DescribeLoadBalancerUDPListenerAttributeResult::getAclIds()const
+{
+	return aclIds_;
 }
 

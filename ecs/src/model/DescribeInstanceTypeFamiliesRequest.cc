@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeInstanceTypeFamiliesRequest;
 
 DescribeInstanceTypeFamiliesRequest::DescribeInstanceTypeFamiliesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceTypeFamilies")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceTypeFamiliesRequest::~DescribeInstanceTypeFamiliesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun::Model::TodayCrackInterceptRequest;
 
 TodayCrackInterceptRequest::TodayCrackInterceptRequest() :
 	RpcServiceRequest("yundun", "2015-02-27", "TodayCrackIntercept")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TodayCrackInterceptRequest::~TodayCrackInterceptRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateStorageSetRequest;
 
 CreateStorageSetRequest::CreateStorageSetRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateStorageSet")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateStorageSetRequest::~CreateStorageSetRequest()
 {}

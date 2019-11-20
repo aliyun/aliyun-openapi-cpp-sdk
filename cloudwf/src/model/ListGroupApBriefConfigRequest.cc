@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListGroupApBriefConfigRequest;
 
 ListGroupApBriefConfigRequest::ListGroupApBriefConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListGroupApBriefConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListGroupApBriefConfigRequest::~ListGroupApBriefConfigRequest()
 {}

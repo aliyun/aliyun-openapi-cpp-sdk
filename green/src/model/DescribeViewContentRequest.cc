@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeViewContentRequest;
 
 DescribeViewContentRequest::DescribeViewContentRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeViewContent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeViewContentRequest::~DescribeViewContentRequest()
 {}

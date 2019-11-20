@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryMediaCensorJobDetailRequest;
 
 QueryMediaCensorJobDetailRequest::QueryMediaCensorJobDetailRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryMediaCensorJobDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMediaCensorJobDetailRequest::~QueryMediaCensorJobDetailRequest()
 {}

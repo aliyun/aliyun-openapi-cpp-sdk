@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetPackageRequest;
 
 GetPackageRequest::GetPackageRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/packages/[packageName]");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetPackageRequest::~GetPackageRequest()
 {}

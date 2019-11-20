@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamsBlockListRequest;
 
 DescribeLiveStreamsBlockListRequest::DescribeLiveStreamsBlockListRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamsBlockList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamsBlockListRequest::~DescribeLiveStreamsBlockListRequest()
 {}

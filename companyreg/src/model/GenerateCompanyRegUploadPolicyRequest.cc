@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::GenerateCompanyRegUploadPolicyRequest;
 
 GenerateCompanyRegUploadPolicyRequest::GenerateCompanyRegUploadPolicyRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "GenerateCompanyRegUploadPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GenerateCompanyRegUploadPolicyRequest::~GenerateCompanyRegUploadPolicyRequest()
 {}

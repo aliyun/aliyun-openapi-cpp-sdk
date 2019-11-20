@@ -59,6 +59,10 @@ void DescribeDomainRegionDataResult::parse(const std::string &payload)
 			valueObject.qps = valueValueRegionProportionData["Qps"].asString();
 		if(!valueValueRegionProportionData["AvgResponseRate"].isNull())
 			valueObject.avgResponseRate = valueValueRegionProportionData["AvgResponseRate"].asString();
+		if(!valueValueRegionProportionData["ByteHitRate"].isNull())
+			valueObject.byteHitRate = valueValueRegionProportionData["ByteHitRate"].asString();
+		if(!valueValueRegionProportionData["ReqHitRate"].isNull())
+			valueObject.reqHitRate = valueValueRegionProportionData["ReqHitRate"].asString();
 		if(!valueValueRegionProportionData["ReqErrRate"].isNull())
 			valueObject.reqErrRate = valueValueRegionProportionData["ReqErrRate"].asString();
 		if(!valueValueRegionProportionData["TotalBytes"].isNull())

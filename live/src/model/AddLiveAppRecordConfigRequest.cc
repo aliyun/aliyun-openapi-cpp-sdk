@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddLiveAppRecordConfigRequest;
 
 AddLiveAppRecordConfigRequest::AddLiveAppRecordConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddLiveAppRecordConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveAppRecordConfigRequest::~AddLiveAppRecordConfigRequest()
 {}
@@ -143,14 +145,13 @@ std::vector<AddLiveAppRecordConfigRequest::RecordFormat> AddLiveAppRecordConfigR
 void AddLiveAppRecordConfigRequest::setRecordFormat(const std::vector<RecordFormat>& recordFormat)
 {
 	recordFormat_ = recordFormat;
-	int i = 0;
-	for(int i = 0; i!= recordFormat.size(); i++)	{
-		auto obj = recordFormat.at(i);
-		std::string str ="RecordFormat."+ std::to_string(i);
-		setCoreParameter(str + ".SliceOssObjectPrefix", obj.sliceOssObjectPrefix);
-		setCoreParameter(str + ".Format", obj.format);
-		setCoreParameter(str + ".OssObjectPrefix", obj.ossObjectPrefix);
-		setCoreParameter(str + ".CycleDuration", std::to_string(obj.cycleDuration));
+	for(int dep1 = 0; dep1!= recordFormat.size(); dep1++) {
+		auto recordFormatObj = recordFormat.at(dep1);
+		std::string recordFormatObjStr = "RecordFormat." + std::to_string(dep1);
+		setCoreParameter(recordFormatObjStr + ".SliceOssObjectPrefix", recordFormatObj.sliceOssObjectPrefix);
+		setCoreParameter(recordFormatObjStr + ".Format", recordFormatObj.format);
+		setCoreParameter(recordFormatObjStr + ".OssObjectPrefix", recordFormatObj.ossObjectPrefix);
+		setCoreParameter(recordFormatObjStr + ".CycleDuration", std::to_string(recordFormatObj.cycleDuration));
 	}
 }
 

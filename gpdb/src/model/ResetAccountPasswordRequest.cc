@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ResetAccountPasswordRequest;
 
 ResetAccountPasswordRequest::ResetAccountPasswordRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ResetAccountPassword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetAccountPasswordRequest::~ResetAccountPasswordRequest()
 {}

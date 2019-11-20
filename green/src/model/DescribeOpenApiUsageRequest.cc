@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeOpenApiUsageRequest;
 
 DescribeOpenApiUsageRequest::DescribeOpenApiUsageRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeOpenApiUsage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOpenApiUsageRequest::~DescribeOpenApiUsageRequest()
 {}

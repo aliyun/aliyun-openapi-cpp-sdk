@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::UpdateLoginProfileRequest;
 
 UpdateLoginProfileRequest::UpdateLoginProfileRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "UpdateLoginProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateLoginProfileRequest::~UpdateLoginProfileRequest()
 {}

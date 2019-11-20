@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindApprovalOrderListRequest;
 
 FindApprovalOrderListRequest::FindApprovalOrderListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindApprovalOrderList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindApprovalOrderListRequest::~FindApprovalOrderListRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetConversationDetailByContactIdRequest;
 
 GetConversationDetailByContactIdRequest::GetConversationDetailByContactIdRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetConversationDetailByContactId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetConversationDetailByContactIdRequest::~GetConversationDetailByContactIdRequest()
 {}

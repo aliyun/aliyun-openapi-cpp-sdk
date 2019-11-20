@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::CheckDeviceRequest;
 
 CheckDeviceRequest::CheckDeviceRequest() :
 	RpcServiceRequest("push", "2016-08-01", "CheckDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckDeviceRequest::~CheckDeviceRequest()
 {}

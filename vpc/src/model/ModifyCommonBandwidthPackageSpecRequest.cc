@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyCommonBandwidthPackageSpecRequest;
 
 ModifyCommonBandwidthPackageSpecRequest::ModifyCommonBandwidthPackageSpecRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyCommonBandwidthPackageSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCommonBandwidthPackageSpecRequest::~ModifyCommonBandwidthPackageSpecRequest()
 {}

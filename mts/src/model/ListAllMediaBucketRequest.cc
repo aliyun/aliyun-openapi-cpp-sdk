@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListAllMediaBucketRequest;
 
 ListAllMediaBucketRequest::ListAllMediaBucketRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListAllMediaBucket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAllMediaBucketRequest::~ListAllMediaBucketRequest()
 {}

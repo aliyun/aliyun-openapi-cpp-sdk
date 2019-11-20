@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryRegistrantProfilesRequest;
 
 QueryRegistrantProfilesRequest::QueryRegistrantProfilesRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryRegistrantProfiles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryRegistrantProfilesRequest::~QueryRegistrantProfilesRequest()
 {}

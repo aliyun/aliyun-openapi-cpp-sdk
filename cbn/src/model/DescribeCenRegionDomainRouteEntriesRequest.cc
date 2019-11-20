@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenRegionDomainRouteEntriesRequest;
 
 DescribeCenRegionDomainRouteEntriesRequest::DescribeCenRegionDomainRouteEntriesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenRegionDomainRouteEntriesRequest::~DescribeCenRegionDomainRouteEntriesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeBgpNetworksRequest;
 
 DescribeBgpNetworksRequest::DescribeBgpNetworksRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeBgpNetworks")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBgpNetworksRequest::~DescribeBgpNetworksRequest()
 {}

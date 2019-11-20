@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetRawPlanJsonRequest;
 
 GetRawPlanJsonRequest::GetRawPlanJsonRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/planjson");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRawPlanJsonRequest::~GetRawPlanJsonRequest()
 {}

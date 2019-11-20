@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DescribeISPAreaCityRequest;
 
 DescribeISPAreaCityRequest::DescribeISPAreaCityRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DescribeISPAreaCity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeISPAreaCityRequest::~DescribeISPAreaCityRequest()
 {}

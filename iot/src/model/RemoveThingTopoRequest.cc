@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::RemoveThingTopoRequest;
 
 RemoveThingTopoRequest::RemoveThingTopoRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "RemoveThingTopo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveThingTopoRequest::~RemoveThingTopoRequest()
 {}

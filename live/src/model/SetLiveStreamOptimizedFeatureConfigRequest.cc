@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetLiveStreamOptimizedFeatureConfigRequest;
 
 SetLiveStreamOptimizedFeatureConfigRequest::SetLiveStreamOptimizedFeatureConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetLiveStreamOptimizedFeatureConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLiveStreamOptimizedFeatureConfigRequest::~SetLiveStreamOptimizedFeatureConfigRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeServerRelatedGlobalAccelerationInstances
 
 DescribeServerRelatedGlobalAccelerationInstancesRequest::DescribeServerRelatedGlobalAccelerationInstancesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeServerRelatedGlobalAccelerationInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeServerRelatedGlobalAccelerationInstancesRequest::~DescribeServerRelatedGlobalAccelerationInstancesRequest()
 {}

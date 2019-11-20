@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::BindVbrRequest;
 
 BindVbrRequest::BindVbrRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "BindVbr")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindVbrRequest::~BindVbrRequest()
 {}

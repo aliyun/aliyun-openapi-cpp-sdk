@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForModifyingDnsHostRequest;
 
 SaveSingleTaskForModifyingDnsHostRequest::SaveSingleTaskForModifyingDnsHostRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForModifyingDnsHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForModifyingDnsHostRequest::~SaveSingleTaskForModifyingDnsHostRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> SaveSingleTaskForModifyingDnsHostRequest::getIp()const
 void SaveSingleTaskForModifyingDnsHostRequest::setIp(const std::vector<std::string>& ip)
 {
 	ip_ = ip;
-	for(int i = 0; i!= ip.size(); i++)
-		setCoreParameter("Ip."+ std::to_string(i), ip.at(i));
+	for(int dep1 = 0; dep1!= ip.size(); dep1++)
+		setCoreParameter("Ip."+ std::to_string(dep1), ip.at(dep1));
 }
 
 std::string SaveSingleTaskForModifyingDnsHostRequest::getInstanceId()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryBatchRegisterDeviceStatusRequest;
 
 QueryBatchRegisterDeviceStatusRequest::QueryBatchRegisterDeviceStatusRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryBatchRegisterDeviceStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryBatchRegisterDeviceStatusRequest::~QueryBatchRegisterDeviceStatusRequest()
 {}

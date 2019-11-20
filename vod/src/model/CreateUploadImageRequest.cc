@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::CreateUploadImageRequest;
 
 CreateUploadImageRequest::CreateUploadImageRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "CreateUploadImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUploadImageRequest::~CreateUploadImageRequest()
 {}

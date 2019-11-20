@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::RemoveMessagesRequest;
 
 RemoveMessagesRequest::RemoveMessagesRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "RemoveMessages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveMessagesRequest::~RemoveMessagesRequest()
 {}

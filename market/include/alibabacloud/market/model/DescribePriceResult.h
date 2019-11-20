@@ -38,25 +38,50 @@ namespace AlibabaCloud
 					std::string title;
 					std::string name;
 				};
+				struct Coupon
+				{
+					std::string couponOptionNo;
+					std::string couponName;
+					std::string couponDesc;
+					float canPromFee;
+					bool isSelected;
+					std::string couponOptionCode;
+				};
 
 
 				DescribePriceResult();
 				explicit DescribePriceResult(const std::string &payload);
 				~DescribePriceResult();
-				std::vector<PromotionRule> getPromotionRules()const;
+				std::string getExpressionCode()const;
 				float getOriginalPrice()const;
 				std::string getProductCode()const;
-				float getDiscountPrice()const;
+				int getDuration()const;
 				float getTradePrice()const;
+				bool getCuxiao()const;
+				std::string getCycle()const;
+				std::string getInfoTitle()const;
+				std::vector<PromotionRule> getPromotionRules()const;
+				float getDiscountPrice()const;
+				std::string getCurrency()const;
+				std::string getExpressionMessage()const;
+				std::vector<Coupon> getCoupons()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<PromotionRule> promotionRules_;
+				std::string expressionCode_;
 				float originalPrice_;
 				std::string productCode_;
-				float discountPrice_;
+				int duration_;
 				float tradePrice_;
+				bool cuxiao_;
+				std::string cycle_;
+				std::string infoTitle_;
+				std::vector<PromotionRule> promotionRules_;
+				float discountPrice_;
+				std::string currency_;
+				std::string expressionMessage_;
+				std::vector<Coupon> coupons_;
 
 			};
 		}

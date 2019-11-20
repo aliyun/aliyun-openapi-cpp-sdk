@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::SuspendExecutionPlanSchedulerRequest;
 
 SuspendExecutionPlanSchedulerRequest::SuspendExecutionPlanSchedulerRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "SuspendExecutionPlanScheduler")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SuspendExecutionPlanSchedulerRequest::~SuspendExecutionPlanSchedulerRequest()
 {}

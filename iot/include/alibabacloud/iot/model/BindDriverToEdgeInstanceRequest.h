@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				BindDriverToEdgeInstanceRequest();
 				~BindDriverToEdgeInstanceRequest();
 
+				std::string getOrderId()const;
+				void setOrderId(const std::string& orderId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setIotInstanceId(const std::string& iotInstanceId);
 
             private:
+				std::string orderId_;
 				std::string accessKeyId_;
 				std::string instanceId_;
 				std::string driverId_;

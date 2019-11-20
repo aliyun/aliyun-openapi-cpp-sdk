@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodCertificateListRequest;
 
 DescribeVodCertificateListRequest::DescribeVodCertificateListRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodCertificateList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodCertificateListRequest::~DescribeVodCertificateListRequest()
 {}

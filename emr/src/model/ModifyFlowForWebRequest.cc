@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyFlowForWebRequest;
 
 ModifyFlowForWebRequest::ModifyFlowForWebRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyFlowForWeb")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyFlowForWebRequest::~ModifyFlowForWebRequest()
 {}

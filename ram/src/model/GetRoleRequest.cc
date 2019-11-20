@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetRoleRequest;
 
 GetRoleRequest::GetRoleRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRoleRequest::~GetRoleRequest()
 {}

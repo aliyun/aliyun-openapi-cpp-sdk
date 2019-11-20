@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::EffectCasterUrgentRequest;
 
 EffectCasterUrgentRequest::EffectCasterUrgentRequest() :
 	RpcServiceRequest("live", "2016-11-01", "EffectCasterUrgent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EffectCasterUrgentRequest::~EffectCasterUrgentRequest()
 {}

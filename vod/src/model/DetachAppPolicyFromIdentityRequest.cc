@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DetachAppPolicyFromIdentityRequest;
 
 DetachAppPolicyFromIdentityRequest::DetachAppPolicyFromIdentityRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DetachAppPolicyFromIdentity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachAppPolicyFromIdentityRequest::~DetachAppPolicyFromIdentityRequest()
 {}

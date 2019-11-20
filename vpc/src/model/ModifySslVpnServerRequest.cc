@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifySslVpnServerRequest;
 
 ModifySslVpnServerRequest::ModifySslVpnServerRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifySslVpnServer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySslVpnServerRequest::~ModifySslVpnServerRequest()
 {}

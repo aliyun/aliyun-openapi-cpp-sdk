@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::StopGWSInstanceRequest;
 
 StopGWSInstanceRequest::StopGWSInstanceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StopGWSInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 StopGWSInstanceRequest::~StopGWSInstanceRequest()
 {}

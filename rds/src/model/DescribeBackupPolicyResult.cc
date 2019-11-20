@@ -75,12 +75,28 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		logBackupFrequency_ = value["LogBackupFrequency"].asString();
 	if(!value["CompressType"].isNull())
 		compressType_ = value["CompressType"].asString();
+	if(!value["ArchiveBackupRetentionPeriod"].isNull())
+		archiveBackupRetentionPeriod_ = value["ArchiveBackupRetentionPeriod"].asString();
+	if(!value["ArchiveBackupKeepPolicy"].isNull())
+		archiveBackupKeepPolicy_ = value["ArchiveBackupKeepPolicy"].asString();
+	if(!value["ArchiveBackupKeepCount"].isNull())
+		archiveBackupKeepCount_ = value["ArchiveBackupKeepCount"].asString();
 
 }
 
 std::string DescribeBackupPolicyResult::getDuplication()const
 {
 	return duplication_;
+}
+
+std::string DescribeBackupPolicyResult::getArchiveBackupRetentionPeriod()const
+{
+	return archiveBackupRetentionPeriod_;
+}
+
+std::string DescribeBackupPolicyResult::getArchiveBackupKeepPolicy()const
+{
+	return archiveBackupKeepPolicy_;
 }
 
 std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
@@ -121,6 +137,11 @@ std::string DescribeBackupPolicyResult::getLogBackupFrequency()const
 std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
 {
 	return preferredBackupPeriod_;
+}
+
+std::string DescribeBackupPolicyResult::getArchiveBackupKeepCount()const
+{
+	return archiveBackupKeepCount_;
 }
 
 int DescribeBackupPolicyResult::getLogBackupRetentionPeriod()const

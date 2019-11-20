@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ModifySubAccountPermissionRequest;
 
 ModifySubAccountPermissionRequest::ModifySubAccountPermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ModifySubAccountPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySubAccountPermissionRequest::~ModifySubAccountPermissionRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<long> ModifySubAccountPermissionRequest::getShopGroupIds()const
 void ModifySubAccountPermissionRequest::setShopGroupIds(const std::vector<long>& shopGroupIds)
 {
 	shopGroupIds_ = shopGroupIds;
-	for(int i = 0; i!= shopGroupIds.size(); i++)
-		setCoreParameter("ShopGroupIds."+ std::to_string(i), std::to_string(shopGroupIds.at(i)));
+	for(int dep1 = 0; dep1!= shopGroupIds.size(); dep1++)
+		setCoreParameter("ShopGroupIds."+ std::to_string(dep1), std::to_string(shopGroupIds.at(dep1)));
 }
 
 std::string ModifySubAccountPermissionRequest::getAccessKeyId()const
@@ -56,8 +58,8 @@ std::vector<long> ModifySubAccountPermissionRequest::getShopIds()const
 void ModifySubAccountPermissionRequest::setShopIds(const std::vector<long>& shopIds)
 {
 	shopIds_ = shopIds;
-	for(int i = 0; i!= shopIds.size(); i++)
-		setCoreParameter("ShopIds."+ std::to_string(i), std::to_string(shopIds.at(i)));
+	for(int dep1 = 0; dep1!= shopIds.size(); dep1++)
+		setCoreParameter("ShopIds."+ std::to_string(dep1), std::to_string(shopIds.at(dep1)));
 }
 
 std::string ModifySubAccountPermissionRequest::getPagePermission()const
@@ -90,7 +92,7 @@ std::vector<long> ModifySubAccountPermissionRequest::getBusinessIds()const
 void ModifySubAccountPermissionRequest::setBusinessIds(const std::vector<long>& businessIds)
 {
 	businessIds_ = businessIds;
-	for(int i = 0; i!= businessIds.size(); i++)
-		setCoreParameter("BusinessIds."+ std::to_string(i), std::to_string(businessIds.at(i)));
+	for(int dep1 = 0; dep1!= businessIds.size(); dep1++)
+		setCoreParameter("BusinessIds."+ std::to_string(dep1), std::to_string(businessIds.at(dep1)));
 }
 

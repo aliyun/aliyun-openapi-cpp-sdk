@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetGroupApRepairProgressRequest;
 
 GetGroupApRepairProgressRequest::GetGroupApRepairProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetGroupApRepairProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetGroupApRepairProgressRequest::~GetGroupApRepairProgressRequest()
 {}

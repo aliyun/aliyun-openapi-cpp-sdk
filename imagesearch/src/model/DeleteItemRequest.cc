@@ -20,7 +20,10 @@ using AlibabaCloud::ImageSearch::Model::DeleteItemRequest;
 
 DeleteItemRequest::DeleteItemRequest() :
 	RoaServiceRequest("imagesearch", "2018-01-20")
-{}
+{
+	setResourcePath("/item/delete");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteItemRequest::~DeleteItemRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CreateOnlineDatabaseTaskRequest;
 
 CreateOnlineDatabaseTaskRequest::CreateOnlineDatabaseTaskRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CreateOnlineDatabaseTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOnlineDatabaseTaskRequest::~CreateOnlineDatabaseTaskRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetPolicyVersionRequest;
 
 GetPolicyVersionRequest::GetPolicyVersionRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetPolicyVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPolicyVersionRequest::~GetPolicyVersionRequest()
 {}

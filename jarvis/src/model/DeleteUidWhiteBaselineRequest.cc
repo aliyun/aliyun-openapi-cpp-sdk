@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteUidWhiteBaselineRequest;
 
 DeleteUidWhiteBaselineRequest::DeleteUidWhiteBaselineRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteUidWhiteBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteUidWhiteBaselineRequest::~DeleteUidWhiteBaselineRequest()
 {}

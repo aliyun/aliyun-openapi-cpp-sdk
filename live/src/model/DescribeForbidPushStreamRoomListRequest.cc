@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeForbidPushStreamRoomListRequest;
 
 DescribeForbidPushStreamRoomListRequest::DescribeForbidPushStreamRoomListRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeForbidPushStreamRoomList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeForbidPushStreamRoomListRequest::~DescribeForbidPushStreamRoomListRequest()
 {}

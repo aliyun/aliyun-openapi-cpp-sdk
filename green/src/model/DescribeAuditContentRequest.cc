@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeAuditContentRequest;
 
 DescribeAuditContentRequest::DescribeAuditContentRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeAuditContent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuditContentRequest::~DescribeAuditContentRequest()
 {}

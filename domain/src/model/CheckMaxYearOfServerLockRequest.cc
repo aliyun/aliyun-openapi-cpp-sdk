@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CheckMaxYearOfServerLockRequest;
 
 CheckMaxYearOfServerLockRequest::CheckMaxYearOfServerLockRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CheckMaxYearOfServerLock")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckMaxYearOfServerLockRequest::~CheckMaxYearOfServerLockRequest()
 {}

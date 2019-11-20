@@ -20,7 +20,9 @@ using AlibabaCloud::Ots::Model::ListTagsRequest;
 
 ListTagsRequest::ListTagsRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "ListTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTagsRequest::~ListTagsRequest()
 {}
@@ -88,12 +90,11 @@ std::vector<ListTagsRequest::TagInfo> ListTagsRequest::getTagInfo()const
 void ListTagsRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 {
 	tagInfo_ = tagInfo;
-	int i = 0;
-	for(int i = 0; i!= tagInfo.size(); i++)	{
-		auto obj = tagInfo.at(i);
-		std::string str ="TagInfo."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+	for(int dep1 = 0; dep1!= tagInfo.size(); dep1++) {
+		auto tagInfoObj = tagInfo.at(dep1);
+		std::string tagInfoObjStr = "TagInfo." + std::to_string(dep1);
+		setCoreParameter(tagInfoObjStr + ".TagValue", tagInfoObj.tagValue);
+		setCoreParameter(tagInfoObjStr + ".TagKey", tagInfoObj.tagKey);
 	}
 }
 

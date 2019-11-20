@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::DeleteRegistrantProfileRequest;
 
 DeleteRegistrantProfileRequest::DeleteRegistrantProfileRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "DeleteRegistrantProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRegistrantProfileRequest::~DeleteRegistrantProfileRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetPageConfigTemplateRequest;
 
 GetPageConfigTemplateRequest::GetPageConfigTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetPageConfigTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPageConfigTemplateRequest::~GetPageConfigTemplateRequest()
 {}

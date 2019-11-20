@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeUserFlowStatisticsRequest;
 
 DescribeUserFlowStatisticsRequest::DescribeUserFlowStatisticsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeUserFlowStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserFlowStatisticsRequest::~DescribeUserFlowStatisticsRequest()
 {}
@@ -55,8 +57,8 @@ std::vector<std::string> DescribeUserFlowStatisticsRequest::getUserNames()const
 void DescribeUserFlowStatisticsRequest::setUserNames(const std::vector<std::string>& userNames)
 {
 	userNames_ = userNames;
-	for(int i = 0; i!= userNames.size(); i++)
-		setCoreParameter("UserNames."+ std::to_string(i), userNames.at(i));
+	for(int dep1 = 0; dep1!= userNames.size(); dep1++)
+		setCoreParameter("UserNames."+ std::to_string(dep1), userNames.at(dep1));
 }
 
 std::string DescribeUserFlowStatisticsRequest::getResourceOwnerAccount()const

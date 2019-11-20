@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::RevokeInstanceFromCenRequest;
 
 RevokeInstanceFromCenRequest::RevokeInstanceFromCenRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "RevokeInstanceFromCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RevokeInstanceFromCenRequest::~RevokeInstanceFromCenRequest()
 {}

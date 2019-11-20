@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowNodeInstanceContainerStatusRequest;
 
 ListFlowNodeInstanceContainerStatusRequest::ListFlowNodeInstanceContainerStatusRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowNodeInstanceContainerStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowNodeInstanceContainerStatusRequest::~ListFlowNodeInstanceContainerStatusRequest()
 {}

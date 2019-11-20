@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateVideoInfoRequest;
 
 UpdateVideoInfoRequest::UpdateVideoInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateVideoInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateVideoInfoRequest::~UpdateVideoInfoRequest()
 {}

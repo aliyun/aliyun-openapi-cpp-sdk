@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteFlowProjectClusterSettingRequest;
 
 DeleteFlowProjectClusterSettingRequest::DeleteFlowProjectClusterSettingRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteFlowProjectClusterSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFlowProjectClusterSettingRequest::~DeleteFlowProjectClusterSettingRequest()
 {}

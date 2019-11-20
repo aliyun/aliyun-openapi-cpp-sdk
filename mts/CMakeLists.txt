@@ -187,6 +187,8 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/QueryPornJobListResult.h
 	include/alibabacloud/mts/model/QueryPornPipelineListRequest.h
 	include/alibabacloud/mts/model/QueryPornPipelineListResult.h
+	include/alibabacloud/mts/model/QuerySmarttagJobRequest.h
+	include/alibabacloud/mts/model/QuerySmarttagJobResult.h
 	include/alibabacloud/mts/model/QuerySnapshotJobListRequest.h
 	include/alibabacloud/mts/model/QuerySnapshotJobListResult.h
 	include/alibabacloud/mts/model/QuerySubtitleJobListRequest.h
@@ -287,6 +289,8 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/SubmitMediaInfoJobResult.h
 	include/alibabacloud/mts/model/SubmitPornJobRequest.h
 	include/alibabacloud/mts/model/SubmitPornJobResult.h
+	include/alibabacloud/mts/model/SubmitSmarttagJobRequest.h
+	include/alibabacloud/mts/model/SubmitSmarttagJobResult.h
 	include/alibabacloud/mts/model/SubmitSnapshotJobRequest.h
 	include/alibabacloud/mts/model/SubmitSnapshotJobResult.h
 	include/alibabacloud/mts/model/SubmitSubtitleJobRequest.h
@@ -510,6 +514,8 @@ set(mts_src
 	src/model/QueryPornJobListResult.cc
 	src/model/QueryPornPipelineListRequest.cc
 	src/model/QueryPornPipelineListResult.cc
+	src/model/QuerySmarttagJobRequest.cc
+	src/model/QuerySmarttagJobResult.cc
 	src/model/QuerySnapshotJobListRequest.cc
 	src/model/QuerySnapshotJobListResult.cc
 	src/model/QuerySubtitleJobListRequest.cc
@@ -610,6 +616,8 @@ set(mts_src
 	src/model/SubmitMediaInfoJobResult.cc
 	src/model/SubmitPornJobRequest.cc
 	src/model/SubmitPornJobResult.cc
+	src/model/SubmitSmarttagJobRequest.cc
+	src/model/SubmitSmarttagJobResult.cc
 	src/model/SubmitSnapshotJobRequest.cc
 	src/model/SubmitSnapshotJobResult.cc
 	src/model/SubmitSubtitleJobRequest.cc

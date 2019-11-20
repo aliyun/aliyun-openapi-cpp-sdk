@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateNatGatewayRequest;
 
 CreateNatGatewayRequest::CreateNatGatewayRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateNatGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateNatGatewayRequest::~CreateNatGatewayRequest()
 {}
@@ -91,6 +93,17 @@ void CreateNatGatewayRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string CreateNatGatewayRequest::getNatType()const
+{
+	return natType_;
+}
+
+void CreateNatGatewayRequest::setNatType(const std::string& natType)
+{
+	natType_ = natType;
+	setCoreParameter("NatType", natType);
+}
+
 std::vector<CreateNatGatewayRequest::BandwidthPackage> CreateNatGatewayRequest::getBandwidthPackage()const
 {
 	return bandwidthPackage_;
@@ -99,15 +112,14 @@ std::vector<CreateNatGatewayRequest::BandwidthPackage> CreateNatGatewayRequest::
 void CreateNatGatewayRequest::setBandwidthPackage(const std::vector<BandwidthPackage>& bandwidthPackage)
 {
 	bandwidthPackage_ = bandwidthPackage;
-	int i = 0;
-	for(int i = 0; i!= bandwidthPackage.size(); i++)	{
-		auto obj = bandwidthPackage.at(i);
-		std::string str ="BandwidthPackage."+ std::to_string(i);
-		setCoreParameter(str + ".Bandwidth", std::to_string(obj.bandwidth));
-		setCoreParameter(str + ".Zone", obj.zone);
-		setCoreParameter(str + ".InternetChargeType", obj.internetChargeType);
-		setCoreParameter(str + ".ISP", obj.iSP);
-		setCoreParameter(str + ".IpCount", std::to_string(obj.ipCount));
+	for(int dep1 = 0; dep1!= bandwidthPackage.size(); dep1++) {
+		auto bandwidthPackageObj = bandwidthPackage.at(dep1);
+		std::string bandwidthPackageObjStr = "BandwidthPackage." + std::to_string(dep1);
+		setCoreParameter(bandwidthPackageObjStr + ".Bandwidth", std::to_string(bandwidthPackageObj.bandwidth));
+		setCoreParameter(bandwidthPackageObjStr + ".Zone", bandwidthPackageObj.zone);
+		setCoreParameter(bandwidthPackageObjStr + ".InternetChargeType", bandwidthPackageObj.internetChargeType);
+		setCoreParameter(bandwidthPackageObjStr + ".ISP", bandwidthPackageObj.iSP);
+		setCoreParameter(bandwidthPackageObjStr + ".IpCount", std::to_string(bandwidthPackageObj.ipCount));
 	}
 }
 
@@ -164,6 +176,28 @@ void CreateNatGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateNatGatewayRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void CreateNatGatewayRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setCoreParameter("VSwitchId", vSwitchId);
+}
+
+std::string CreateNatGatewayRequest::getInternetChargeType()const
+{
+	return internetChargeType_;
+}
+
+void CreateNatGatewayRequest::setInternetChargeType(const std::string& internetChargeType)
+{
+	internetChargeType_ = internetChargeType;
+	setCoreParameter("InternetChargeType", internetChargeType);
 }
 
 std::string CreateNatGatewayRequest::getVpcId()const

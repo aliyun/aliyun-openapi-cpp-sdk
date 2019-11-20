@@ -3039,6 +3039,42 @@ MtsClient::QueryPornPipelineListOutcomeCallable MtsClient::queryPornPipelineList
 	return task->get_future();
 }
 
+MtsClient::QuerySmarttagJobOutcome MtsClient::querySmarttagJob(const QuerySmarttagJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySmarttagJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySmarttagJobOutcome(QuerySmarttagJobResult(outcome.result()));
+	else
+		return QuerySmarttagJobOutcome(outcome.error());
+}
+
+void MtsClient::querySmarttagJobAsync(const QuerySmarttagJobRequest& request, const QuerySmarttagJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySmarttagJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::QuerySmarttagJobOutcomeCallable MtsClient::querySmarttagJobCallable(const QuerySmarttagJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySmarttagJobOutcome()>>(
+			[this, request]()
+			{
+			return this->querySmarttagJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MtsClient::QuerySnapshotJobListOutcome MtsClient::querySnapshotJobList(const QuerySnapshotJobListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4833,6 +4869,42 @@ MtsClient::SubmitPornJobOutcomeCallable MtsClient::submitPornJobCallable(const S
 			[this, request]()
 			{
 			return this->submitPornJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::SubmitSmarttagJobOutcome MtsClient::submitSmarttagJob(const SubmitSmarttagJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitSmarttagJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitSmarttagJobOutcome(SubmitSmarttagJobResult(outcome.result()));
+	else
+		return SubmitSmarttagJobOutcome(outcome.error());
+}
+
+void MtsClient::submitSmarttagJobAsync(const SubmitSmarttagJobRequest& request, const SubmitSmarttagJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitSmarttagJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::SubmitSmarttagJobOutcomeCallable MtsClient::submitSmarttagJobCallable(const SubmitSmarttagJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitSmarttagJobOutcome()>>(
+			[this, request]()
+			{
+			return this->submitSmarttagJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeVpnGatewaysRequest;
 
 DescribeVpnGatewaysRequest::DescribeVpnGatewaysRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeVpnGateways")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVpnGatewaysRequest::~DescribeVpnGatewaysRequest()
 {}

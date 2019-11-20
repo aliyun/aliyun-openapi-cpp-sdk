@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteClusterTemplateRequest;
 
 DeleteClusterTemplateRequest::DeleteClusterTemplateRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteClusterTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteClusterTemplateRequest::~DeleteClusterTemplateRequest()
 {}

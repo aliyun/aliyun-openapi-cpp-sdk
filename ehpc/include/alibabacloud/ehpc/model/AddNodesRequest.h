@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setSystemDiskSize(int systemDiskSize);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getHostNamePrefix()const;
+				void setHostNamePrefix(const std::string& hostNamePrefix);
 				std::string getComputeSpotPriceLimit()const;
 				void setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit);
 				int getAutoRenewPeriod()const;
@@ -82,6 +84,7 @@ namespace AlibabaCloud
 				std::string systemDiskType_;
 				int systemDiskSize_;
 				std::string instanceType_;
+				std::string hostNamePrefix_;
 				std::string computeSpotPriceLimit_;
 				int autoRenewPeriod_;
 				int period_;

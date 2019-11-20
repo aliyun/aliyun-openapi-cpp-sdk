@@ -109,6 +109,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/EnableThingResult.h
 	include/alibabacloud/iot/model/GetDataAPIServiceDetailRequest.h
 	include/alibabacloud/iot/model/GetDataAPIServiceDetailResult.h
+	include/alibabacloud/iot/model/GetDeviceListByIotIdsRequest.h
+	include/alibabacloud/iot/model/GetDeviceListByIotIdsResult.h
 	include/alibabacloud/iot/model/GetDeviceShadowRequest.h
 	include/alibabacloud/iot/model/GetDeviceShadowResult.h
 	include/alibabacloud/iot/model/GetDeviceStatusRequest.h
@@ -123,12 +125,18 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetLoraNodesTaskResult.h
 	include/alibabacloud/iot/model/GetNodesAddingTaskRequest.h
 	include/alibabacloud/iot/model/GetNodesAddingTaskResult.h
+	include/alibabacloud/iot/model/GetProductKeyListByNameRequest.h
+	include/alibabacloud/iot/model/GetProductKeyListByNameResult.h
+	include/alibabacloud/iot/model/GetProductMetaListByNameRequest.h
+	include/alibabacloud/iot/model/GetProductMetaListByNameResult.h
 	include/alibabacloud/iot/model/GetRuleRequest.h
 	include/alibabacloud/iot/model/GetRuleResult.h
 	include/alibabacloud/iot/model/GetRuleActionRequest.h
 	include/alibabacloud/iot/model/GetRuleActionResult.h
 	include/alibabacloud/iot/model/GetThingTopoRequest.h
 	include/alibabacloud/iot/model/GetThingTopoResult.h
+	include/alibabacloud/iot/model/GisQueryDeviceLocationRequest.h
+	include/alibabacloud/iot/model/GisQueryDeviceLocationResult.h
 	include/alibabacloud/iot/model/InvokeDataAPIServiceRequest.h
 	include/alibabacloud/iot/model/InvokeDataAPIServiceResult.h
 	include/alibabacloud/iot/model/InvokeThingServiceRequest.h
@@ -153,12 +161,16 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryAppDeviceListResult.h
 	include/alibabacloud/iot/model/QueryBatchRegisterDeviceStatusRequest.h
 	include/alibabacloud/iot/model/QueryBatchRegisterDeviceStatusResult.h
+	include/alibabacloud/iot/model/QueryCertUrlByApplyIdRequest.h
+	include/alibabacloud/iot/model/QueryCertUrlByApplyIdResult.h
 	include/alibabacloud/iot/model/QueryDeviceRequest.h
 	include/alibabacloud/iot/model/QueryDeviceResult.h
 	include/alibabacloud/iot/model/QueryDeviceByDriverRequest.h
 	include/alibabacloud/iot/model/QueryDeviceByDriverResult.h
 	include/alibabacloud/iot/model/QueryDeviceByTagsRequest.h
 	include/alibabacloud/iot/model/QueryDeviceByTagsResult.h
+	include/alibabacloud/iot/model/QueryDeviceCertRequest.h
+	include/alibabacloud/iot/model/QueryDeviceCertResult.h
 	include/alibabacloud/iot/model/QueryDeviceDesiredPropertyRequest.h
 	include/alibabacloud/iot/model/QueryDeviceDesiredPropertyResult.h
 	include/alibabacloud/iot/model/QueryDeviceDetailRequest.h
@@ -350,6 +362,8 @@ set(iot_src
 	src/model/EnableThingResult.cc
 	src/model/GetDataAPIServiceDetailRequest.cc
 	src/model/GetDataAPIServiceDetailResult.cc
+	src/model/GetDeviceListByIotIdsRequest.cc
+	src/model/GetDeviceListByIotIdsResult.cc
 	src/model/GetDeviceShadowRequest.cc
 	src/model/GetDeviceShadowResult.cc
 	src/model/GetDeviceStatusRequest.cc
@@ -364,12 +378,18 @@ set(iot_src
 	src/model/GetLoraNodesTaskResult.cc
 	src/model/GetNodesAddingTaskRequest.cc
 	src/model/GetNodesAddingTaskResult.cc
+	src/model/GetProductKeyListByNameRequest.cc
+	src/model/GetProductKeyListByNameResult.cc
+	src/model/GetProductMetaListByNameRequest.cc
+	src/model/GetProductMetaListByNameResult.cc
 	src/model/GetRuleRequest.cc
 	src/model/GetRuleResult.cc
 	src/model/GetRuleActionRequest.cc
 	src/model/GetRuleActionResult.cc
 	src/model/GetThingTopoRequest.cc
 	src/model/GetThingTopoResult.cc
+	src/model/GisQueryDeviceLocationRequest.cc
+	src/model/GisQueryDeviceLocationResult.cc
 	src/model/InvokeDataAPIServiceRequest.cc
 	src/model/InvokeDataAPIServiceResult.cc
 	src/model/InvokeThingServiceRequest.cc
@@ -394,12 +414,16 @@ set(iot_src
 	src/model/QueryAppDeviceListResult.cc
 	src/model/QueryBatchRegisterDeviceStatusRequest.cc
 	src/model/QueryBatchRegisterDeviceStatusResult.cc
+	src/model/QueryCertUrlByApplyIdRequest.cc
+	src/model/QueryCertUrlByApplyIdResult.cc
 	src/model/QueryDeviceRequest.cc
 	src/model/QueryDeviceResult.cc
 	src/model/QueryDeviceByDriverRequest.cc
 	src/model/QueryDeviceByDriverResult.cc
 	src/model/QueryDeviceByTagsRequest.cc
 	src/model/QueryDeviceByTagsResult.cc
+	src/model/QueryDeviceCertRequest.cc
+	src/model/QueryDeviceCertResult.cc
 	src/model/QueryDeviceDesiredPropertyRequest.cc
 	src/model/QueryDeviceDesiredPropertyResult.cc
 	src/model/QueryDeviceDetailRequest.cc

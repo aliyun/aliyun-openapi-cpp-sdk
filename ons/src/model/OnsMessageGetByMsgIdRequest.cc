@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsMessageGetByMsgIdRequest;
 
 OnsMessageGetByMsgIdRequest::OnsMessageGetByMsgIdRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessageGetByMsgId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsMessageGetByMsgIdRequest::~OnsMessageGetByMsgIdRequest()
 {}

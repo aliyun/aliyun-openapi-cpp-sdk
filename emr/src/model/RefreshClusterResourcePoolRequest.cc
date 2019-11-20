@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::RefreshClusterResourcePoolRequest;
 
 RefreshClusterResourcePoolRequest::RefreshClusterResourcePoolRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "RefreshClusterResourcePool")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshClusterResourcePoolRequest::~RefreshClusterResourcePoolRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyDedicatedHostAttributeRequest;
 
 ModifyDedicatedHostAttributeRequest::ModifyDedicatedHostAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyDedicatedHostAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDedicatedHostAttributeRequest::~ModifyDedicatedHostAttributeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DeleteDatabaseRequest;
 
 DeleteDatabaseRequest::DeleteDatabaseRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DeleteDatabase")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDatabaseRequest::~DeleteDatabaseRequest()
 {}

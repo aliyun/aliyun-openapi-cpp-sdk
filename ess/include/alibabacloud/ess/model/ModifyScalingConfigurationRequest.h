@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string snapshotId;
 					int size;
 					std::string encrypted;
+					std::string autoSnapshotPolicyId;
 					std::string description;
 					std::string category;
 					std::string kMSKeyId;
@@ -64,6 +65,8 @@ namespace AlibabaCloud
 				void setHostName(const std::string& hostName);
 				std::string getInstanceDescription()const;
 				void setInstanceDescription(const std::string& instanceDescription);
+				std::string getSystemDiskAutoSnapshotPolicyId()const;
+				void setSystemDiskAutoSnapshotPolicyId(const std::string& systemDiskAutoSnapshotPolicyId);
 				int getCpu()const;
 				void setCpu(int cpu);
 				long getOwnerId()const;
@@ -132,6 +135,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string hostName_;
 				std::string instanceDescription_;
+				std::string systemDiskAutoSnapshotPolicyId_;
 				int cpu_;
 				long ownerId_;
 				std::string scalingConfigurationName_;

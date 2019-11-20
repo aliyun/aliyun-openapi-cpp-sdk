@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetDailyStatisticRequest;
 
 GetDailyStatisticRequest::GetDailyStatisticRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetDailyStatistic")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetDailyStatisticRequest::~GetDailyStatisticRequest()
 {}

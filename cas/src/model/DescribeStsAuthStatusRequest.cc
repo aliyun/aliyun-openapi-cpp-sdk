@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeStsAuthStatusRequest;
 
 DescribeStsAuthStatusRequest::DescribeStsAuthStatusRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeStsAuthStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeStsAuthStatusRequest::~DescribeStsAuthStatusRequest()
 {}

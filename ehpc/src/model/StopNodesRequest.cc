@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::StopNodesRequest;
 
 StopNodesRequest::StopNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StopNodes")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 StopNodesRequest::~StopNodesRequest()
 {}
@@ -44,11 +46,10 @@ std::vector<StopNodesRequest::Instance> StopNodesRequest::getInstance()const
 void StopNodesRequest::setInstance(const std::vector<Instance>& instance)
 {
 	instance_ = instance;
-	int i = 0;
-	for(int i = 0; i!= instance.size(); i++)	{
-		auto obj = instance.at(i);
-		std::string str ="Instance."+ std::to_string(i);
-		setCoreParameter(str + ".Id", obj.id);
+	for(int dep1 = 0; dep1!= instance.size(); dep1++) {
+		auto instanceObj = instance.at(dep1);
+		std::string instanceObjStr = "Instance." + std::to_string(dep1);
+		setCoreParameter(instanceObjStr + ".Id", instanceObj.id);
 	}
 }
 

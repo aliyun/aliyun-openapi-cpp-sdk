@@ -79,6 +79,8 @@ set(trademark_public_header_model
 	include/alibabacloud/trademark/model/QueryMaterialListResult.h
 	include/alibabacloud/trademark/model/QueryMonitorKeywordsRequest.h
 	include/alibabacloud/trademark/model/QueryMonitorKeywordsResult.h
+	include/alibabacloud/trademark/model/QueryOfficialFileCustomListRequest.h
+	include/alibabacloud/trademark/model/QueryOfficialFileCustomListResult.h
 	include/alibabacloud/trademark/model/QueryOssResourcesRequest.h
 	include/alibabacloud/trademark/model/QueryOssResourcesResult.h
 	include/alibabacloud/trademark/model/QueryQrCodeUploadStatusRequest.h
@@ -109,8 +111,12 @@ set(trademark_public_header_model
 	include/alibabacloud/trademark/model/QueryTrademarkPriceResult.h
 	include/alibabacloud/trademark/model/RefundProduceRequest.h
 	include/alibabacloud/trademark/model/RefundProduceResult.h
+	include/alibabacloud/trademark/model/RejectApplicantRequest.h
+	include/alibabacloud/trademark/model/RejectApplicantResult.h
 	include/alibabacloud/trademark/model/SaveTaskRequest.h
 	include/alibabacloud/trademark/model/SaveTaskResult.h
+	include/alibabacloud/trademark/model/SaveTaskForOfficialFileCustomRequest.h
+	include/alibabacloud/trademark/model/SaveTaskForOfficialFileCustomResult.h
 	include/alibabacloud/trademark/model/StartNotaryRequest.h
 	include/alibabacloud/trademark/model/StartNotaryResult.h
 	include/alibabacloud/trademark/model/StoreMaterialTemporarilyRequest.h
@@ -190,6 +196,8 @@ set(trademark_src
 	src/model/QueryMaterialListResult.cc
 	src/model/QueryMonitorKeywordsRequest.cc
 	src/model/QueryMonitorKeywordsResult.cc
+	src/model/QueryOfficialFileCustomListRequest.cc
+	src/model/QueryOfficialFileCustomListResult.cc
 	src/model/QueryOssResourcesRequest.cc
 	src/model/QueryOssResourcesResult.cc
 	src/model/QueryQrCodeUploadStatusRequest.cc
@@ -220,8 +228,12 @@ set(trademark_src
 	src/model/QueryTrademarkPriceResult.cc
 	src/model/RefundProduceRequest.cc
 	src/model/RefundProduceResult.cc
+	src/model/RejectApplicantRequest.cc
+	src/model/RejectApplicantResult.cc
 	src/model/SaveTaskRequest.cc
 	src/model/SaveTaskResult.cc
+	src/model/SaveTaskForOfficialFileCustomRequest.cc
+	src/model/SaveTaskForOfficialFileCustomResult.cc
 	src/model/StartNotaryRequest.cc
 	src/model/StartNotaryResult.cc
 	src/model/StoreMaterialTemporarilyRequest.cc

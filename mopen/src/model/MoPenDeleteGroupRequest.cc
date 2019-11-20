@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenDeleteGroupRequest;
 
 MoPenDeleteGroupRequest::MoPenDeleteGroupRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenDeleteGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenDeleteGroupRequest::~MoPenDeleteGroupRequest()
 {}

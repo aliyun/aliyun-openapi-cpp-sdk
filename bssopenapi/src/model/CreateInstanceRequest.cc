@@ -112,12 +112,11 @@ std::vector<CreateInstanceRequest::Parameter> CreateInstanceRequest::getParamete
 void CreateInstanceRequest::setParameter(const std::vector<Parameter>& parameter)
 {
 	parameter_ = parameter;
-	int i = 0;
-	for(int i = 0; i!= parameter.size(); i++)	{
-		auto obj = parameter.at(i);
-		std::string str ="Parameter."+ std::to_string(i);
-		setCoreParameter(str + ".Code", obj.code);
-		setCoreParameter(str + ".Value", obj.value);
+	for(int dep1 = 0; dep1!= parameter.size(); dep1++) {
+		auto parameterObj = parameter.at(dep1);
+		std::string parameterObjStr = "Parameter." + std::to_string(dep1);
+		setCoreParameter(parameterObjStr + ".Code", parameterObj.code);
+		setCoreParameter(parameterObjStr + ".Value", parameterObj.value);
 	}
 }
 

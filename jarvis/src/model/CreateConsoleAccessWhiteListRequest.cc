@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateConsoleAccessWhiteListRequest;
 
 CreateConsoleAccessWhiteListRequest::CreateConsoleAccessWhiteListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateConsoleAccessWhiteList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateConsoleAccessWhiteListRequest::~CreateConsoleAccessWhiteListRequest()
 {}

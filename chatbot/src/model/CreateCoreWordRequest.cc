@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::CreateCoreWordRequest;
 
 CreateCoreWordRequest::CreateCoreWordRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "CreateCoreWord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCoreWordRequest::~CreateCoreWordRequest()
 {}

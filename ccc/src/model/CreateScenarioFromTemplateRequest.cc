@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateScenarioFromTemplateRequest;
 
 CreateScenarioFromTemplateRequest::CreateScenarioFromTemplateRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateScenarioFromTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateScenarioFromTemplateRequest::~CreateScenarioFromTemplateRequest()
 {}

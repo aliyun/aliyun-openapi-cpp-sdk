@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::UnicomSignConfirmRequest;
 
 UnicomSignConfirmRequest::UnicomSignConfirmRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "UnicomSignConfirm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnicomSignConfirmRequest::~UnicomSignConfirmRequest()
 {}
@@ -66,14 +68,13 @@ std::vector<UnicomSignConfirmRequest::TmsOrder> UnicomSignConfirmRequest::getTms
 void UnicomSignConfirmRequest::setTmsOrder(const std::vector<TmsOrder>& tmsOrder)
 {
 	tmsOrder_ = tmsOrder;
-	int i = 0;
-	for(int i = 0; i!= tmsOrder.size(); i++)	{
-		auto obj = tmsOrder.at(i);
-		std::string str ="TmsOrder."+ std::to_string(i);
-		setCoreParameter(str + ".TmsCode", obj.tmsCode);
-		setCoreParameter(str + ".SigningTime", obj.signingTime);
-		setCoreParameter(str + ".TmsOrderCode", obj.tmsOrderCode);
-		setCoreParameter(str + ".TradeId", obj.tradeId);
+	for(int dep1 = 0; dep1!= tmsOrder.size(); dep1++) {
+		auto tmsOrderObj = tmsOrder.at(dep1);
+		std::string tmsOrderObjStr = "TmsOrder." + std::to_string(dep1);
+		setCoreParameter(tmsOrderObjStr + ".TmsCode", tmsOrderObj.tmsCode);
+		setCoreParameter(tmsOrderObjStr + ".SigningTime", tmsOrderObj.signingTime);
+		setCoreParameter(tmsOrderObjStr + ".TmsOrderCode", tmsOrderObj.tmsOrderCode);
+		setCoreParameter(tmsOrderObjStr + ".TradeId", tmsOrderObj.tradeId);
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopActionReturningRequest;
 
 ShopActionReturningRequest::ShopActionReturningRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopActionReturning")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopActionReturningRequest::~ShopActionReturningRequest()
 {}

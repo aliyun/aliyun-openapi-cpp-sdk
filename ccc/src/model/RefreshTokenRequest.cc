@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::RefreshTokenRequest;
 
 RefreshTokenRequest::RefreshTokenRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "RefreshToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshTokenRequest::~RefreshTokenRequest()
 {}

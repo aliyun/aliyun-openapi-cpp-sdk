@@ -20,7 +20,9 @@ using AlibabaCloud::Sts::Model::AssumeRoleRequest;
 
 AssumeRoleRequest::AssumeRoleRequest() :
 	RpcServiceRequest("sts", "2015-04-01", "AssumeRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssumeRoleRequest::~AssumeRoleRequest()
 {}

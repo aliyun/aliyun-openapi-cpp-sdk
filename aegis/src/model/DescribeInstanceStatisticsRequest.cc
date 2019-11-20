@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeInstanceStatisticsRequest;
 
 DescribeInstanceStatisticsRequest::DescribeInstanceStatisticsRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeInstanceStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceStatisticsRequest::~DescribeInstanceStatisticsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeDrdsInstanceNetInfoForInnerRequest;
 
 DescribeDrdsInstanceNetInfoForInnerRequest::DescribeDrdsInstanceNetInfoForInnerRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeDrdsInstanceNetInfoForInner")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDrdsInstanceNetInfoForInnerRequest::~DescribeDrdsInstanceNetInfoForInnerRequest()
 {}

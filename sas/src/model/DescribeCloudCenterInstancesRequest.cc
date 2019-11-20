@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeCloudCenterInstancesRequest;
 
 DescribeCloudCenterInstancesRequest::DescribeCloudCenterInstancesRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeCloudCenterInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCloudCenterInstancesRequest::~DescribeCloudCenterInstancesRequest()
 {}

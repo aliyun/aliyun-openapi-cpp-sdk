@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::GetAccountInfoRequest;
 
 GetAccountInfoRequest::GetAccountInfoRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "GetAccountInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAccountInfoRequest::~GetAccountInfoRequest()
 {}

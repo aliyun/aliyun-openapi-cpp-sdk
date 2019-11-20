@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeDBInstanceAttributeRequest;
 
 DescribeDBInstanceAttributeRequest::DescribeDBInstanceAttributeRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeDBInstanceAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceAttributeRequest::~DescribeDBInstanceAttributeRequest()
 {}

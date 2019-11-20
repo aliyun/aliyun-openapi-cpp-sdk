@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateQosRequest;
 
 CreateQosRequest::CreateQosRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateQos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateQosRequest::~CreateQosRequest()
 {}
@@ -89,5 +91,16 @@ void CreateQosRequest::setQosName(const std::string& qosName)
 {
 	qosName_ = qosName;
 	setCoreParameter("QosName", qosName);
+}
+
+std::string CreateQosRequest::getQosDescription()const
+{
+	return qosDescription_;
+}
+
+void CreateQosRequest::setQosDescription(const std::string& qosDescription)
+{
+	qosDescription_ = qosDescription;
+	setCoreParameter("QosDescription", qosDescription);
 }
 

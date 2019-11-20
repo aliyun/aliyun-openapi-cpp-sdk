@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::ModifyDefaultLevelRequest;
 
 ModifyDefaultLevelRequest::ModifyDefaultLevelRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "ModifyDefaultLevel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDefaultLevelRequest::~ModifyDefaultLevelRequest()
 {}

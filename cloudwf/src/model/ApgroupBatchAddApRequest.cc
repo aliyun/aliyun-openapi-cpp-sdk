@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ApgroupBatchAddApRequest;
 
 ApgroupBatchAddApRequest::ApgroupBatchAddApRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ApgroupBatchAddAp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApgroupBatchAddApRequest::~ApgroupBatchAddApRequest()
 {}

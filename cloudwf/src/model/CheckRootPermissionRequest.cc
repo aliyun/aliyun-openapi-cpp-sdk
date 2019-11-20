@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::CheckRootPermissionRequest;
 
 CheckRootPermissionRequest::CheckRootPermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "CheckRootPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckRootPermissionRequest::~CheckRootPermissionRequest()
 {}

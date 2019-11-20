@@ -20,7 +20,9 @@ using AlibabaCloud::Ots::Model::ListVpcInfoByInstanceRequest;
 
 ListVpcInfoByInstanceRequest::ListVpcInfoByInstanceRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "ListVpcInfoByInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListVpcInfoByInstanceRequest::~ListVpcInfoByInstanceRequest()
 {}

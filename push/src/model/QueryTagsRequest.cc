@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryTagsRequest;
 
 QueryTagsRequest::QueryTagsRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTagsRequest::~QueryTagsRequest()
 {}

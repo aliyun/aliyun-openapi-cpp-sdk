@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeSdkUrlRequest;
 
 DescribeSdkUrlRequest::DescribeSdkUrlRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeSdkUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSdkUrlRequest::~DescribeSdkUrlRequest()
 {}

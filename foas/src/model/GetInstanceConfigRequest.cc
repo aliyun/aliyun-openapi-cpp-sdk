@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetInstanceConfigRequest;
 
 GetInstanceConfigRequest::GetInstanceConfigRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/config");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceConfigRequest::~GetInstanceConfigRequest()
 {}

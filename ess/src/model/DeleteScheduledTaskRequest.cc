@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteScheduledTaskRequest;
 
 DeleteScheduledTaskRequest::DeleteScheduledTaskRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteScheduledTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteScheduledTaskRequest::~DeleteScheduledTaskRequest()
 {}

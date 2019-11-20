@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::QueryProjectMetaRequest;
 
 QueryProjectMetaRequest::QueryProjectMetaRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "QueryProjectMeta")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryProjectMetaRequest::~QueryProjectMetaRequest()
 {}

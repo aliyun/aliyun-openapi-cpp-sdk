@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::UpdateConfigNameRequest;
 
 UpdateConfigNameRequest::UpdateConfigNameRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "UpdateConfigName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateConfigNameRequest::~UpdateConfigNameRequest()
 {}

@@ -61,6 +61,8 @@ void DescribeShardingNetworkAddressResult::parse(const std::string &payload)
 			networkAddressesObject.expiredTime = valueNetworkAddressesNetworkAddress["ExpiredTime"].asString();
 		if(!valueNetworkAddressesNetworkAddress["NodeType"].isNull())
 			networkAddressesObject.nodeType = valueNetworkAddressesNetworkAddress["NodeType"].asString();
+		if(!valueNetworkAddressesNetworkAddress["Role"].isNull())
+			networkAddressesObject.role = valueNetworkAddressesNetworkAddress["Role"].asString();
 		networkAddresses_.push_back(networkAddressesObject);
 	}
 

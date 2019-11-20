@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::CreateDBClusterEndpointRequest;
 
 CreateDBClusterEndpointRequest::CreateDBClusterEndpointRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "CreateDBClusterEndpoint")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDBClusterEndpointRequest::~CreateDBClusterEndpointRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::CreateAlarmRequest;
 
 CreateAlarmRequest::CreateAlarmRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "CreateAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAlarmRequest::~CreateAlarmRequest()
 {}

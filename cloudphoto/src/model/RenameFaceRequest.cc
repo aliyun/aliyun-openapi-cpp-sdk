@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::RenameFaceRequest;
 
 RenameFaceRequest::RenameFaceRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "RenameFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenameFaceRequest::~RenameFaceRequest()
 {}

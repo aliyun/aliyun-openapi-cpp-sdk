@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetGroupApRadioConfigTemplateRequest;
 
 GetGroupApRadioConfigTemplateRequest::GetGroupApRadioConfigTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetGroupApRadioConfigTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetGroupApRadioConfigTemplateRequest::~GetGroupApRadioConfigTemplateRequest()
 {}

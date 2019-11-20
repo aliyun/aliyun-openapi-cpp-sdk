@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QuerySubtitleJobListRequest;
 
 QuerySubtitleJobListRequest::QuerySubtitleJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QuerySubtitleJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySubtitleJobListRequest::~QuerySubtitleJobListRequest()
 {}

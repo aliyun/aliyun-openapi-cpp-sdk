@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteCdnSubscriptionRequest;
 
 DeleteCdnSubscriptionRequest::DeleteCdnSubscriptionRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteCdnSubscription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCdnSubscriptionRequest::~DeleteCdnSubscriptionRequest()
 {}

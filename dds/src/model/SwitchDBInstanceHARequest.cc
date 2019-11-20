@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::SwitchDBInstanceHARequest;
 
 SwitchDBInstanceHARequest::SwitchDBInstanceHARequest() :
 	RpcServiceRequest("dds", "2015-12-01", "SwitchDBInstanceHA")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SwitchDBInstanceHARequest::~SwitchDBInstanceHARequest()
 {}
@@ -80,17 +82,6 @@ void SwitchDBInstanceHARequest::setDBInstanceId(const std::string& dBInstanceId)
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-int SwitchDBInstanceHARequest::getSourceInstanceId()const
-{
-	return sourceInstanceId_;
-}
-
-void SwitchDBInstanceHARequest::setSourceInstanceId(int sourceInstanceId)
-{
-	sourceInstanceId_ = sourceInstanceId;
-	setCoreParameter("SourceInstanceId", std::to_string(sourceInstanceId));
-}
-
 std::string SwitchDBInstanceHARequest::getNodeId()const
 {
 	return nodeId_;
@@ -133,27 +124,5 @@ void SwitchDBInstanceHARequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int SwitchDBInstanceHARequest::getTargetInstanceId()const
-{
-	return targetInstanceId_;
-}
-
-void SwitchDBInstanceHARequest::setTargetInstanceId(int targetInstanceId)
-{
-	targetInstanceId_ = targetInstanceId;
-	setCoreParameter("TargetInstanceId", std::to_string(targetInstanceId));
-}
-
-int SwitchDBInstanceHARequest::getSwitchType()const
-{
-	return switchType_;
-}
-
-void SwitchDBInstanceHARequest::setSwitchType(int switchType)
-{
-	switchType_ = switchType;
-	setCoreParameter("SwitchType", std::to_string(switchType));
 }
 

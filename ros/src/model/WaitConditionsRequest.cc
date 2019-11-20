@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::WaitConditionsRequest;
 
 WaitConditionsRequest::WaitConditionsRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/waitcondition");
+	setMethod(HttpRequest::Method::Post);
+}
 
 WaitConditionsRequest::~WaitConditionsRequest()
 {}

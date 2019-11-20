@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CancelCopyImageRequest;
 
 CancelCopyImageRequest::CancelCopyImageRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CancelCopyImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelCopyImageRequest::~CancelCopyImageRequest()
 {}

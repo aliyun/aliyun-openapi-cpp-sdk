@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDSRecordRequest;
 
 QueryDSRecordRequest::QueryDSRecordRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDSRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDSRecordRequest::~QueryDSRecordRequest()
 {}

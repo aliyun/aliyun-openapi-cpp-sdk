@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForQueryingTransferAuthorizatio
 
 SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::SaveSingleTaskForQueryingTransferAuthorizationCodeRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForQueryingTransferAuthorizationCode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::~SaveSingleTaskForQueryingTransferAuthorizationCodeRequest()
 {}

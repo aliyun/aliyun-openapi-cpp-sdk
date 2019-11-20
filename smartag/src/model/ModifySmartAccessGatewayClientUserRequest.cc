@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ModifySmartAccessGatewayClientUserRequest;
 
 ModifySmartAccessGatewayClientUserRequest::ModifySmartAccessGatewayClientUserRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ModifySmartAccessGatewayClientUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySmartAccessGatewayClientUserRequest::~ModifySmartAccessGatewayClientUserRequest()
 {}

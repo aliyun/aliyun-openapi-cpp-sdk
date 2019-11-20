@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveStreamsNotifyUrlConfigRequest;
 
 DeleteLiveStreamsNotifyUrlConfigRequest::DeleteLiveStreamsNotifyUrlConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveStreamsNotifyUrlConfigRequest::~DeleteLiveStreamsNotifyUrlConfigRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetCrowdListRequest;
 
 GetCrowdListRequest::GetCrowdListRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetCrowdList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetCrowdListRequest::~GetCrowdListRequest()
 {}

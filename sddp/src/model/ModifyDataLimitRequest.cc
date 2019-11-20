@@ -20,10 +20,23 @@ using AlibabaCloud::Sddp::Model::ModifyDataLimitRequest;
 
 ModifyDataLimitRequest::ModifyDataLimitRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "ModifyDataLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDataLimitRequest::~ModifyDataLimitRequest()
 {}
+
+bool ModifyDataLimitRequest::getModifyPassword()const
+{
+	return modifyPassword_;
+}
+
+void ModifyDataLimitRequest::setModifyPassword(bool modifyPassword)
+{
+	modifyPassword_ = modifyPassword;
+	setCoreParameter("ModifyPassword", modifyPassword ? "true" : "false");
+}
 
 std::string ModifyDataLimitRequest::getPassword()const
 {
@@ -78,6 +91,28 @@ void ModifyDataLimitRequest::setServiceRegionId(const std::string& serviceRegion
 {
 	serviceRegionId_ = serviceRegionId;
 	setCoreParameter("ServiceRegionId", serviceRegionId);
+}
+
+int ModifyDataLimitRequest::getAuditStatus()const
+{
+	return auditStatus_;
+}
+
+void ModifyDataLimitRequest::setAuditStatus(int auditStatus)
+{
+	auditStatus_ = auditStatus;
+	setCoreParameter("AuditStatus", std::to_string(auditStatus));
+}
+
+int ModifyDataLimitRequest::getLogStoreDay()const
+{
+	return logStoreDay_;
+}
+
+void ModifyDataLimitRequest::setLogStoreDay(int logStoreDay)
+{
+	logStoreDay_ = logStoreDay;
+	setCoreParameter("LogStoreDay", std::to_string(logStoreDay));
 }
 
 int ModifyDataLimitRequest::getResourceType()const

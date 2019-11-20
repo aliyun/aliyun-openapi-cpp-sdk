@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyAuditLogConfigRequest;
 
 ModifyAuditLogConfigRequest::ModifyAuditLogConfigRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyAuditLogConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAuditLogConfigRequest::~ModifyAuditLogConfigRequest()
 {}

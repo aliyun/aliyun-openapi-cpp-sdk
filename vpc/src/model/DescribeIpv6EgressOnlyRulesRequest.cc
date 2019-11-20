@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeIpv6EgressOnlyRulesRequest;
 
 DescribeIpv6EgressOnlyRulesRequest::DescribeIpv6EgressOnlyRulesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeIpv6EgressOnlyRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeIpv6EgressOnlyRulesRequest::~DescribeIpv6EgressOnlyRulesRequest()
 {}

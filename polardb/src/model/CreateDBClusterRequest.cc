@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::CreateDBClusterRequest;
 
 CreateDBClusterRequest::CreateDBClusterRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "CreateDBCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDBClusterRequest::~CreateDBClusterRequest()
 {}

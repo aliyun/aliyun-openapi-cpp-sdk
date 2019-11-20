@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::VerifyCustomOcrTemplateRequest;
 
 VerifyCustomOcrTemplateRequest::VerifyCustomOcrTemplateRequest() :
 	RpcServiceRequest("green", "2017-08-23", "VerifyCustomOcrTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VerifyCustomOcrTemplateRequest::~VerifyCustomOcrTemplateRequest()
 {}

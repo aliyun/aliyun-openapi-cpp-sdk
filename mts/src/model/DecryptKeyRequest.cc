@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DecryptKeyRequest;
 
 DecryptKeyRequest::DecryptKeyRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DecryptKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DecryptKeyRequest::~DecryptKeyRequest()
 {}

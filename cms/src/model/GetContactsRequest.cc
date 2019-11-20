@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::GetContactsRequest;
 
 GetContactsRequest::GetContactsRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "GetContacts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetContactsRequest::~GetContactsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeCrossRegionLogBackupFilesRequest;
 
 DescribeCrossRegionLogBackupFilesRequest::DescribeCrossRegionLogBackupFilesRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeCrossRegionLogBackupFiles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCrossRegionLogBackupFilesRequest::~DescribeCrossRegionLogBackupFilesRequest()
 {}

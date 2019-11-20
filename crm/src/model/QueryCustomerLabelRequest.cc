@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::QueryCustomerLabelRequest;
 
 QueryCustomerLabelRequest::QueryCustomerLabelRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "QueryCustomerLabel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCustomerLabelRequest::~QueryCustomerLabelRequest()
 {}

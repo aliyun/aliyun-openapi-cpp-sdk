@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ValidateJobRequest;
 
 ValidateJobRequest::ValidateJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/validate");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ValidateJobRequest::~ValidateJobRequest()
 {}

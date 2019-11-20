@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmUnLockSeatRequest;
 
 TaobaoFilmUnLockSeatRequest::TaobaoFilmUnLockSeatRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmUnLockSeat")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmUnLockSeatRequest::~TaobaoFilmUnLockSeatRequest()
 {}

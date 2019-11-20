@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetPhotosByMd5sRequest;
 
 GetPhotosByMd5sRequest::GetPhotosByMd5sRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetPhotosByMd5s")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPhotosByMd5sRequest::~GetPhotosByMd5sRequest()
 {}
@@ -66,7 +68,7 @@ std::vector<std::string> GetPhotosByMd5sRequest::getMd5()const
 void GetPhotosByMd5sRequest::setMd5(const std::vector<std::string>& md5)
 {
 	md5_ = md5;
-	for(int i = 0; i!= md5.size(); i++)
-		setCoreParameter("Md5."+ std::to_string(i), md5.at(i));
+	for(int dep1 = 0; dep1!= md5.size(); dep1++)
+		setCoreParameter("Md5."+ std::to_string(dep1), md5.at(dep1));
 }
 

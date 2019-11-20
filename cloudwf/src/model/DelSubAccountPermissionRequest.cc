@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DelSubAccountPermissionRequest;
 
 DelSubAccountPermissionRequest::DelSubAccountPermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DelSubAccountPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DelSubAccountPermissionRequest::~DelSubAccountPermissionRequest()
 {}

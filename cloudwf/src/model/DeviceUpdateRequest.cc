@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeviceUpdateRequest;
 
 DeviceUpdateRequest::DeviceUpdateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeviceUpdate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeviceUpdateRequest::~DeviceUpdateRequest()
 {}

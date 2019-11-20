@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteGlobalAccelerationInstanceRequest;
 
 DeleteGlobalAccelerationInstanceRequest::DeleteGlobalAccelerationInstanceRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteGlobalAccelerationInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteGlobalAccelerationInstanceRequest::~DeleteGlobalAccelerationInstanceRequest()
 {}

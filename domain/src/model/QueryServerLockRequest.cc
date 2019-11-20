@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryServerLockRequest;
 
 QueryServerLockRequest::QueryServerLockRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryServerLock")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryServerLockRequest::~QueryServerLockRequest()
 {}

@@ -66,7 +66,9 @@ set(cs_public_header_model
 	include/alibabacloud/cs/model/ScaleClusterRequest.h
 	include/alibabacloud/cs/model/ScaleClusterResult.h
 	include/alibabacloud/cs/model/ScaleOutClusterRequest.h
-	include/alibabacloud/cs/model/ScaleOutClusterResult.h )
+	include/alibabacloud/cs/model/ScaleOutClusterResult.h
+	include/alibabacloud/cs/model/UpdateK8sClusterUserConfigExpireRequest.h
+	include/alibabacloud/cs/model/UpdateK8sClusterUserConfigExpireResult.h )
 
 set(cs_src 
 	src/CSClient.cc
@@ -115,7 +117,9 @@ set(cs_src
 	src/model/ScaleClusterRequest.cc
 	src/model/ScaleClusterResult.cc
 	src/model/ScaleOutClusterRequest.cc
-	src/model/ScaleOutClusterResult.cc )
+	src/model/ScaleOutClusterResult.cc
+	src/model/UpdateK8sClusterUserConfigExpireRequest.cc
+	src/model/UpdateK8sClusterUserConfigExpireResult.cc )
 
 add_library(cs ${LIB_TYPE}
 	${cs_public_header}

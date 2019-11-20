@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForDomainNameProxyServiceReques
 
 SaveSingleTaskForDomainNameProxyServiceRequest::SaveSingleTaskForDomainNameProxyServiceRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForDomainNameProxyService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForDomainNameProxyServiceRequest::~SaveSingleTaskForDomainNameProxyServiceRequest()
 {}

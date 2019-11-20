@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDomainByInstanceIdRequest;
 
 QueryDomainByInstanceIdRequest::QueryDomainByInstanceIdRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDomainByInstanceId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDomainByInstanceIdRequest::~QueryDomainByInstanceIdRequest()
 {}

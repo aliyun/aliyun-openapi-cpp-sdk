@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ImportImageRequest;
 
 ImportImageRequest::ImportImageRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ImportImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImportImageRequest::~ImportImageRequest()
 {}
@@ -33,16 +35,15 @@ std::vector<ImportImageRequest::DiskDeviceMapping> ImportImageRequest::getDiskDe
 void ImportImageRequest::setDiskDeviceMapping(const std::vector<DiskDeviceMapping>& diskDeviceMapping)
 {
 	diskDeviceMapping_ = diskDeviceMapping;
-	int i = 0;
-	for(int i = 0; i!= diskDeviceMapping.size(); i++)	{
-		auto obj = diskDeviceMapping.at(i);
-		std::string str ="DiskDeviceMapping."+ std::to_string(i);
-		setCoreParameter(str + ".OSSBucket", obj.oSSBucket);
-		setCoreParameter(str + ".DiskImSize", std::to_string(obj.diskImSize));
-		setCoreParameter(str + ".Format", obj.format);
-		setCoreParameter(str + ".Device", obj.device);
-		setCoreParameter(str + ".OSSObject", obj.oSSObject);
-		setCoreParameter(str + ".DiskImageSize", std::to_string(obj.diskImageSize));
+	for(int dep1 = 0; dep1!= diskDeviceMapping.size(); dep1++) {
+		auto diskDeviceMappingObj = diskDeviceMapping.at(dep1);
+		std::string diskDeviceMappingObjStr = "DiskDeviceMapping." + std::to_string(dep1);
+		setCoreParameter(diskDeviceMappingObjStr + ".OSSBucket", diskDeviceMappingObj.oSSBucket);
+		setCoreParameter(diskDeviceMappingObjStr + ".DiskImSize", std::to_string(diskDeviceMappingObj.diskImSize));
+		setCoreParameter(diskDeviceMappingObjStr + ".Format", diskDeviceMappingObj.format);
+		setCoreParameter(diskDeviceMappingObjStr + ".Device", diskDeviceMappingObj.device);
+		setCoreParameter(diskDeviceMappingObjStr + ".OSSObject", diskDeviceMappingObj.oSSObject);
+		setCoreParameter(diskDeviceMappingObjStr + ".DiskImageSize", std::to_string(diskDeviceMappingObj.diskImageSize));
 	}
 }
 

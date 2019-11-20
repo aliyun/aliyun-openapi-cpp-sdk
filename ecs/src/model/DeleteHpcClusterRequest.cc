@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteHpcClusterRequest;
 
 DeleteHpcClusterRequest::DeleteHpcClusterRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteHpcCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteHpcClusterRequest::~DeleteHpcClusterRequest()
 {}

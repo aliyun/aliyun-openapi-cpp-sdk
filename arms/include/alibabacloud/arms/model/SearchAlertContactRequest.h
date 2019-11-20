@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getCurrentPage()const;
 				void setCurrentPage(const std::string& currentPage);
+				std::string getProxyUserId()const;
+				void setProxyUserId(const std::string& proxyUserId);
 				std::string getContactName()const;
 				void setContactName(const std::string& contactName);
 				std::string getPhone()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 
             private:
 				std::string currentPage_;
+				std::string proxyUserId_;
 				std::string contactName_;
 				std::string phone_;
 				std::string regionId_;

@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::InquiryStackRequest;
 
 InquiryStackRequest::InquiryStackRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/inquiry");
+	setMethod(HttpRequest::Method::Post);
+}
 
 InquiryStackRequest::~InquiryStackRequest()
 {}

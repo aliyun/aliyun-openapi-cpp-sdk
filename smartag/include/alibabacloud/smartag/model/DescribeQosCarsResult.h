@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::string percentSourceType;
 					int minBandwidthPercent;
 					std::string limitType;
+					std::string name;
 				};
 
 

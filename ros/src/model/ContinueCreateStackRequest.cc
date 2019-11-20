@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::ContinueCreateStackRequest;
 
 ContinueCreateStackRequest::ContinueCreateStackRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/continue");
+	setMethod(HttpRequest::Method::Post);
+}
 
 ContinueCreateStackRequest::~ContinueCreateStackRequest()
 {}

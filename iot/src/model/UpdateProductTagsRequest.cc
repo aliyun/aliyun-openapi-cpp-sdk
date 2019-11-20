@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::UpdateProductTagsRequest;
 
 UpdateProductTagsRequest::UpdateProductTagsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "UpdateProductTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateProductTagsRequest::~UpdateProductTagsRequest()
 {}
@@ -55,12 +57,11 @@ std::vector<UpdateProductTagsRequest::ProductTag> UpdateProductTagsRequest::getP
 void UpdateProductTagsRequest::setProductTag(const std::vector<ProductTag>& productTag)
 {
 	productTag_ = productTag;
-	int i = 0;
-	for(int i = 0; i!= productTag.size(); i++)	{
-		auto obj = productTag.at(i);
-		std::string str ="ProductTag."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+	for(int dep1 = 0; dep1!= productTag.size(); dep1++) {
+		auto productTagObj = productTag.at(dep1);
+		std::string productTagObjStr = "ProductTag." + std::to_string(dep1);
+		setCoreParameter(productTagObjStr + ".TagValue", productTagObj.tagValue);
+		setCoreParameter(productTagObjStr + ".TagKey", productTagObj.tagKey);
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetJobTemplateDownloadParamsRequest;
 
 GetJobTemplateDownloadParamsRequest::GetJobTemplateDownloadParamsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetJobTemplateDownloadParams")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobTemplateDownloadParamsRequest::~GetJobTemplateDownloadParamsRequest()
 {}

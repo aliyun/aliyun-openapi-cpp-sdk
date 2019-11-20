@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyInstanceMaintainTimeRequest;
 
 ModifyInstanceMaintainTimeRequest::ModifyInstanceMaintainTimeRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyInstanceMaintainTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceMaintainTimeRequest::~ModifyInstanceMaintainTimeRequest()
 {}

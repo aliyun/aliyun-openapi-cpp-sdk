@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::QueryTaskMonitorDataRequest;
 
 QueryTaskMonitorDataRequest::QueryTaskMonitorDataRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "QueryTaskMonitorData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTaskMonitorDataRequest::~QueryTaskMonitorDataRequest()
 {}

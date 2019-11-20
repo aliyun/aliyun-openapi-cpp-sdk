@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteResourcePoolRequest;
 
 DeleteResourcePoolRequest::DeleteResourcePoolRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteResourcePool")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteResourcePoolRequest::~DeleteResourcePoolRequest()
 {}

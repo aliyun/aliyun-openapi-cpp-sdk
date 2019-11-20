@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::UpdateDeviceGroupRequest;
 
 UpdateDeviceGroupRequest::UpdateDeviceGroupRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "UpdateDeviceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateDeviceGroupRequest::~UpdateDeviceGroupRequest()
 {}

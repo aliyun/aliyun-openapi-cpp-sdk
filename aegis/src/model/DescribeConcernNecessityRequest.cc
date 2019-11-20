@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeConcernNecessityRequest;
 
 DescribeConcernNecessityRequest::DescribeConcernNecessityRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeConcernNecessity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeConcernNecessityRequest::~DescribeConcernNecessityRequest()
 {}

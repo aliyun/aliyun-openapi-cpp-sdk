@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ModifyIpControlPolicyItemRequest;
 
 ModifyIpControlPolicyItemRequest::ModifyIpControlPolicyItemRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ModifyIpControlPolicyItem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyIpControlPolicyItemRequest::~ModifyIpControlPolicyItemRequest()
 {}

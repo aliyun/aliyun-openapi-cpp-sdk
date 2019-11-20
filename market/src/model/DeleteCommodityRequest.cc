@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DeleteCommodityRequest;
 
 DeleteCommodityRequest::DeleteCommodityRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DeleteCommodity")
-{}
+{
+	setMethod(HttpRequest::Method::Put);
+}
 
 DeleteCommodityRequest::~DeleteCommodityRequest()
 {}

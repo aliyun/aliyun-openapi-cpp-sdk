@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::InsertTmMonitorRuleRequest;
 
 InsertTmMonitorRuleRequest::InsertTmMonitorRuleRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "InsertTmMonitorRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InsertTmMonitorRuleRequest::~InsertTmMonitorRuleRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ListTagResourcesRequest;
 
 ListTagResourcesRequest::ListTagResourcesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ListTagResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTagResourcesRequest::~ListTagResourcesRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<ListTagResourcesRequest::Tag> ListTagResourcesRequest::getTag()const
 void ListTagResourcesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
 	}
 }
 
@@ -83,8 +84,8 @@ std::vector<std::string> ListTagResourcesRequest::getResourceId()const
 void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++)
+		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
 }
 
 std::string ListTagResourcesRequest::getResourceOwnerAccount()const
@@ -118,6 +119,23 @@ void ListTagResourcesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::vector<ListTagResourcesRequest::TagFilter> ListTagResourcesRequest::getTagFilter()const
+{
+	return tagFilter_;
+}
+
+void ListTagResourcesRequest::setTagFilter(const std::vector<TagFilter>& tagFilter)
+{
+	tagFilter_ = tagFilter;
+	for(int dep1 = 0; dep1!= tagFilter.size(); dep1++) {
+		auto tagFilterObj = tagFilter.at(dep1);
+		std::string tagFilterObjStr = "TagFilter." + std::to_string(dep1);
+		setCoreParameter(tagFilterObjStr + ".TagKey", tagFilterObj.tagKey);
+		for(int dep2 = 0; dep2!= tagValues.size(); dep2++)
+			setCoreParameter(tagFilterObjStr + ".TagValues."+ std::to_string(dep2), tagFilterObj.tagValues.at(dep2));
+	}
 }
 
 std::string ListTagResourcesRequest::getResourceType()const

@@ -199,6 +199,13 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.dedicatedInstanceAttribute.tenancy = dedicatedInstanceAttributeNode["Tenancy"].asString();
 		if(!dedicatedInstanceAttributeNode["Affinity"].isNull())
 			instancesObject.dedicatedInstanceAttribute.affinity = dedicatedInstanceAttributeNode["Affinity"].asString();
+		auto cpuOptionsNode = value["CpuOptions"];
+		if(!cpuOptionsNode["CoreCount"].isNull())
+			instancesObject.cpuOptions.coreCount = std::stoi(cpuOptionsNode["CoreCount"].asString());
+		if(!cpuOptionsNode["ThreadsPerCore"].isNull())
+			instancesObject.cpuOptions.threadsPerCore = std::stoi(cpuOptionsNode["ThreadsPerCore"].asString());
+		if(!cpuOptionsNode["Numa"].isNull())
+			instancesObject.cpuOptions.numa = cpuOptionsNode["Numa"].asString();
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
 			instancesObject.securityGroupIds.push_back(value.asString());

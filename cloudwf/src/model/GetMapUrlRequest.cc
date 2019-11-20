@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetMapUrlRequest;
 
 GetMapUrlRequest::GetMapUrlRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetMapUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMapUrlRequest::~GetMapUrlRequest()
 {}

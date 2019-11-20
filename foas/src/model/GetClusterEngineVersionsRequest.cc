@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetClusterEngineVersionsRequest;
 
 GetClusterEngineVersionsRequest::GetClusterEngineVersionsRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/engineversions");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetClusterEngineVersionsRequest::~GetClusterEngineVersionsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::GetRegionStatusRequest;
 
 GetRegionStatusRequest::GetRegionStatusRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "GetRegionStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRegionStatusRequest::~GetRegionStatusRequest()
 {}

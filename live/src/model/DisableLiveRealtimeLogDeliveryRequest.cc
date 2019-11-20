@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DisableLiveRealtimeLogDeliveryRequest;
 
 DisableLiveRealtimeLogDeliveryRequest::DisableLiveRealtimeLogDeliveryRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DisableLiveRealtimeLogDelivery")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DisableLiveRealtimeLogDeliveryRequest::~DisableLiveRealtimeLogDeliveryRequest()
 {}

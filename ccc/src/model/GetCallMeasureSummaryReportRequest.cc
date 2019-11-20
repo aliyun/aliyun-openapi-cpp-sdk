@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetCallMeasureSummaryReportRequest;
 
 GetCallMeasureSummaryReportRequest::GetCallMeasureSummaryReportRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetCallMeasureSummaryReport")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetCallMeasureSummaryReportRequest::~GetCallMeasureSummaryReportRequest()
 {}

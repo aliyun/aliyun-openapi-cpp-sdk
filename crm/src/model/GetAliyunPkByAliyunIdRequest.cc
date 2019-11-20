@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::GetAliyunPkByAliyunIdRequest;
 
 GetAliyunPkByAliyunIdRequest::GetAliyunPkByAliyunIdRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "GetAliyunPkByAliyunId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAliyunPkByAliyunIdRequest::~GetAliyunPkByAliyunIdRequest()
 {}

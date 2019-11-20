@@ -20,7 +20,9 @@ using AlibabaCloud::Kms::Model::DescribeKeyRequest;
 
 DescribeKeyRequest::DescribeKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DescribeKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeKeyRequest::~DescribeKeyRequest()
 {}

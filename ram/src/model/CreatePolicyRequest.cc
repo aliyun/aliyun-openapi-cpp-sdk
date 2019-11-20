@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::CreatePolicyRequest;
 
 CreatePolicyRequest::CreatePolicyRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreatePolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreatePolicyRequest::~CreatePolicyRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::InvokeThingServiceRequest;
 
 InvokeThingServiceRequest::InvokeThingServiceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "InvokeThingService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InvokeThingServiceRequest::~InvokeThingServiceRequest()
 {}

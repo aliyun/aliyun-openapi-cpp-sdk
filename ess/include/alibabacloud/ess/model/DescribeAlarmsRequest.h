@@ -35,41 +35,41 @@ namespace AlibabaCloud
 				DescribeAlarmsRequest();
 				~DescribeAlarmsRequest();
 
-				bool getIsEnable()const;
-				void setIsEnable(bool isEnable);
 				std::string getMetricType()const;
 				void setMetricType(const std::string& metricType);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getState()const;
-				void setState(const std::string& state);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getAlarmTaskId()const;
-				void setAlarmTaskId(const std::string& alarmTaskId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getState()const;
+				void setState(const std::string& state);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getAlarmTaskId()const;
+				void setAlarmTaskId(const std::string& alarmTaskId);
+				bool getIsEnable()const;
+				void setIsEnable(bool isEnable);
 
             private:
-				bool isEnable_;
 				std::string metricType_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string scalingGroupId_;
-				int pageSize_;
-				std::string state_;
-				long ownerId_;
-				std::string alarmTaskId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string regionId_;
+				int pageSize_;
+				std::string state_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
+				std::string alarmTaskId_;
+				bool isEnable_;
 
 			};
 		}

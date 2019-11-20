@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::FillLogisticsRequest;
 
 FillLogisticsRequest::FillLogisticsRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "FillLogistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FillLogisticsRequest::~FillLogisticsRequest()
 {}

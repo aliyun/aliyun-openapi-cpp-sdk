@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ModifyMasterSpecRequest;
 
 ModifyMasterSpecRequest::ModifyMasterSpecRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/specification");
+	setMethod(HttpRequest::Method::Put);
+}
 
 ModifyMasterSpecRequest::~ModifyMasterSpecRequest()
 {}

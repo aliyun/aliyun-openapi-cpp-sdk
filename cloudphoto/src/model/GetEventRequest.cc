@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetEventRequest;
 
 GetEventRequest::GetEventRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetEvent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetEventRequest::~GetEventRequest()
 {}

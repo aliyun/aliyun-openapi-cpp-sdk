@@ -20,7 +20,9 @@ using AlibabaCloud::Hsm::Model::RenewInstanceRequest;
 
 RenewInstanceRequest::RenewInstanceRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "RenewInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenewInstanceRequest::~RenewInstanceRequest()
 {}

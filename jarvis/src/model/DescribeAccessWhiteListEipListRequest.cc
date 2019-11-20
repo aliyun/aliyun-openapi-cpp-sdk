@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeAccessWhiteListEipListRequest;
 
 DescribeAccessWhiteListEipListRequest::DescribeAccessWhiteListEipListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeAccessWhiteListEipList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAccessWhiteListEipListRequest::~DescribeAccessWhiteListEipListRequest()
 {}

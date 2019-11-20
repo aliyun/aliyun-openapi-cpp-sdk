@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeVulWhitelistRequest;
 
 DescribeVulWhitelistRequest::DescribeVulWhitelistRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeVulWhitelist")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVulWhitelistRequest::~DescribeVulWhitelistRequest()
 {}

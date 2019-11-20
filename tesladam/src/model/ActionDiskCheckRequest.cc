@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaDam::Model::ActionDiskCheckRequest;
 
 ActionDiskCheckRequest::ActionDiskCheckRequest() :
 	RpcServiceRequest("tesladam", "2018-01-18", "ActionDiskCheck")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ActionDiskCheckRequest::~ActionDiskCheckRequest()
 {}

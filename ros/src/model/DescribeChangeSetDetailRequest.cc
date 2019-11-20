@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DescribeChangeSetDetailRequest;
 
 DescribeChangeSetDetailRequest::DescribeChangeSetDetailRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeChangeSetDetailRequest::~DescribeChangeSetDetailRequest()
 {}

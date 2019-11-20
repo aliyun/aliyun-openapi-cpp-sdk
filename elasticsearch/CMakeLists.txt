@@ -23,26 +23,46 @@ set(elasticsearch_public_header
 set(elasticsearch_public_header_model 
 	include/alibabacloud/elasticsearch/model/ActivateZonesRequest.h
 	include/alibabacloud/elasticsearch/model/ActivateZonesResult.h
+	include/alibabacloud/elasticsearch/model/AddConnectableClusterRequest.h
+	include/alibabacloud/elasticsearch/model/AddConnectableClusterResult.h
+	include/alibabacloud/elasticsearch/model/AddSnapshotRepoRequest.h
+	include/alibabacloud/elasticsearch/model/AddSnapshotRepoResult.h
 	include/alibabacloud/elasticsearch/model/CancelTaskRequest.h
 	include/alibabacloud/elasticsearch/model/CancelTaskResult.h
 	include/alibabacloud/elasticsearch/model/CloseHttpsRequest.h
 	include/alibabacloud/elasticsearch/model/CloseHttpsResult.h
 	include/alibabacloud/elasticsearch/model/CreateInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/CreateInstanceResult.h
+	include/alibabacloud/elasticsearch/model/CreateLogstashRequest.h
+	include/alibabacloud/elasticsearch/model/CreateLogstashResult.h
 	include/alibabacloud/elasticsearch/model/CreateProjectRequest.h
 	include/alibabacloud/elasticsearch/model/CreateProjectResult.h
 	include/alibabacloud/elasticsearch/model/DeactivateZonesRequest.h
 	include/alibabacloud/elasticsearch/model/DeactivateZonesResult.h
+	include/alibabacloud/elasticsearch/model/DeleteConnectedClusterRequest.h
+	include/alibabacloud/elasticsearch/model/DeleteConnectedClusterResult.h
 	include/alibabacloud/elasticsearch/model/DeleteInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/DeleteInstanceResult.h
+	include/alibabacloud/elasticsearch/model/DeleteLogstashRequest.h
+	include/alibabacloud/elasticsearch/model/DeleteLogstashResult.h
 	include/alibabacloud/elasticsearch/model/DeleteProjectRequest.h
 	include/alibabacloud/elasticsearch/model/DeleteProjectResult.h
+	include/alibabacloud/elasticsearch/model/DeleteSnapshotRepoRequest.h
+	include/alibabacloud/elasticsearch/model/DeleteSnapshotRepoResult.h
+	include/alibabacloud/elasticsearch/model/DescribeConnectableClustersRequest.h
+	include/alibabacloud/elasticsearch/model/DescribeConnectableClustersResult.h
 	include/alibabacloud/elasticsearch/model/DescribeElasticsearchHealthRequest.h
 	include/alibabacloud/elasticsearch/model/DescribeElasticsearchHealthResult.h
 	include/alibabacloud/elasticsearch/model/DescribeInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/DescribeInstanceResult.h
 	include/alibabacloud/elasticsearch/model/DescribeKibanaSettingsRequest.h
 	include/alibabacloud/elasticsearch/model/DescribeKibanaSettingsResult.h
+	include/alibabacloud/elasticsearch/model/DescribeLogstashRequest.h
+	include/alibabacloud/elasticsearch/model/DescribeLogstashResult.h
+	include/alibabacloud/elasticsearch/model/DescribePipelineManagementConfigRequest.h
+	include/alibabacloud/elasticsearch/model/DescribePipelineManagementConfigResult.h
+	include/alibabacloud/elasticsearch/model/DescribeRegionsRequest.h
+	include/alibabacloud/elasticsearch/model/DescribeRegionsResult.h
 	include/alibabacloud/elasticsearch/model/GetRegionConfigurationRequest.h
 	include/alibabacloud/elasticsearch/model/GetRegionConfigurationResult.h
 	include/alibabacloud/elasticsearch/model/GetSuggestShrinkableNodesRequest.h
@@ -51,26 +71,48 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/GetTransferableNodesResult.h
 	include/alibabacloud/elasticsearch/model/InstallKibanaSystemPluginRequest.h
 	include/alibabacloud/elasticsearch/model/InstallKibanaSystemPluginResult.h
+	include/alibabacloud/elasticsearch/model/InstallLogstashSystemPluginRequest.h
+	include/alibabacloud/elasticsearch/model/InstallLogstashSystemPluginResult.h
 	include/alibabacloud/elasticsearch/model/InstallSystemPluginRequest.h
 	include/alibabacloud/elasticsearch/model/InstallSystemPluginResult.h
 	include/alibabacloud/elasticsearch/model/InstallUserPluginsRequest.h
 	include/alibabacloud/elasticsearch/model/InstallUserPluginsResult.h
+	include/alibabacloud/elasticsearch/model/InterruptElasticsearchTaskRequest.h
+	include/alibabacloud/elasticsearch/model/InterruptElasticsearchTaskResult.h
+	include/alibabacloud/elasticsearch/model/InterruptLogstashTaskRequest.h
+	include/alibabacloud/elasticsearch/model/InterruptLogstashTaskResult.h
 	include/alibabacloud/elasticsearch/model/ListAllNodeRequest.h
 	include/alibabacloud/elasticsearch/model/ListAllNodeResult.h
+	include/alibabacloud/elasticsearch/model/ListAlternativeSnapshotReposRequest.h
+	include/alibabacloud/elasticsearch/model/ListAlternativeSnapshotReposResult.h
 	include/alibabacloud/elasticsearch/model/ListInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/ListInstanceResult.h
 	include/alibabacloud/elasticsearch/model/ListKibanaPluginsRequest.h
 	include/alibabacloud/elasticsearch/model/ListKibanaPluginsResult.h
+	include/alibabacloud/elasticsearch/model/ListLogstashRequest.h
+	include/alibabacloud/elasticsearch/model/ListLogstashResult.h
+	include/alibabacloud/elasticsearch/model/ListLogstashLogRequest.h
+	include/alibabacloud/elasticsearch/model/ListLogstashLogResult.h
+	include/alibabacloud/elasticsearch/model/ListLogstashPluginsRequest.h
+	include/alibabacloud/elasticsearch/model/ListLogstashPluginsResult.h
 	include/alibabacloud/elasticsearch/model/ListPluginsRequest.h
 	include/alibabacloud/elasticsearch/model/ListPluginsResult.h
 	include/alibabacloud/elasticsearch/model/ListSearchLogRequest.h
 	include/alibabacloud/elasticsearch/model/ListSearchLogResult.h
+	include/alibabacloud/elasticsearch/model/ListSnapshotReposByInstanceIdRequest.h
+	include/alibabacloud/elasticsearch/model/ListSnapshotReposByInstanceIdResult.h
 	include/alibabacloud/elasticsearch/model/MoveResourceGroupRequest.h
 	include/alibabacloud/elasticsearch/model/MoveResourceGroupResult.h
 	include/alibabacloud/elasticsearch/model/OpenHttpsRequest.h
 	include/alibabacloud/elasticsearch/model/OpenHttpsResult.h
 	include/alibabacloud/elasticsearch/model/RestartInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/RestartInstanceResult.h
+	include/alibabacloud/elasticsearch/model/RestartLogstashRequest.h
+	include/alibabacloud/elasticsearch/model/RestartLogstashResult.h
+	include/alibabacloud/elasticsearch/model/ResumeElasticsearchTaskRequest.h
+	include/alibabacloud/elasticsearch/model/ResumeElasticsearchTaskResult.h
+	include/alibabacloud/elasticsearch/model/ResumeLogstashTaskRequest.h
+	include/alibabacloud/elasticsearch/model/ResumeLogstashTaskResult.h
 	include/alibabacloud/elasticsearch/model/RollbackInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/RollbackInstanceResult.h
 	include/alibabacloud/elasticsearch/model/ShrinkNodeRequest.h
@@ -81,6 +123,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/TriggerNetworkResult.h
 	include/alibabacloud/elasticsearch/model/UninstallKibanaPluginRequest.h
 	include/alibabacloud/elasticsearch/model/UninstallKibanaPluginResult.h
+	include/alibabacloud/elasticsearch/model/UninstallLogstashPluginRequest.h
+	include/alibabacloud/elasticsearch/model/UninstallLogstashPluginResult.h
 	include/alibabacloud/elasticsearch/model/UninstallPluginRequest.h
 	include/alibabacloud/elasticsearch/model/UninstallPluginResult.h
 	include/alibabacloud/elasticsearch/model/UpdateAdminPasswordRequest.h
@@ -105,6 +149,14 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/UpdateKibanaSettingsResult.h
 	include/alibabacloud/elasticsearch/model/UpdateKibanaWhiteIpsRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateKibanaWhiteIpsResult.h
+	include/alibabacloud/elasticsearch/model/UpdateLogstashRequest.h
+	include/alibabacloud/elasticsearch/model/UpdateLogstashResult.h
+	include/alibabacloud/elasticsearch/model/UpdateLogstashDescriptionRequest.h
+	include/alibabacloud/elasticsearch/model/UpdateLogstashDescriptionResult.h
+	include/alibabacloud/elasticsearch/model/UpdateLogstashSettingsRequest.h
+	include/alibabacloud/elasticsearch/model/UpdateLogstashSettingsResult.h
+	include/alibabacloud/elasticsearch/model/UpdatePipelineManagementConfigRequest.h
+	include/alibabacloud/elasticsearch/model/UpdatePipelineManagementConfigResult.h
 	include/alibabacloud/elasticsearch/model/UpdatePrivateNetworkWhiteIpsRequest.h
 	include/alibabacloud/elasticsearch/model/UpdatePrivateNetworkWhiteIpsResult.h
 	include/alibabacloud/elasticsearch/model/UpdatePublicNetworkRequest.h
@@ -126,26 +178,46 @@ set(elasticsearch_src
 	src/ElasticsearchClient.cc
 	src/model/ActivateZonesRequest.cc
 	src/model/ActivateZonesResult.cc
+	src/model/AddConnectableClusterRequest.cc
+	src/model/AddConnectableClusterResult.cc
+	src/model/AddSnapshotRepoRequest.cc
+	src/model/AddSnapshotRepoResult.cc
 	src/model/CancelTaskRequest.cc
 	src/model/CancelTaskResult.cc
 	src/model/CloseHttpsRequest.cc
 	src/model/CloseHttpsResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
+	src/model/CreateLogstashRequest.cc
+	src/model/CreateLogstashResult.cc
 	src/model/CreateProjectRequest.cc
 	src/model/CreateProjectResult.cc
 	src/model/DeactivateZonesRequest.cc
 	src/model/DeactivateZonesResult.cc
+	src/model/DeleteConnectedClusterRequest.cc
+	src/model/DeleteConnectedClusterResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
+	src/model/DeleteLogstashRequest.cc
+	src/model/DeleteLogstashResult.cc
 	src/model/DeleteProjectRequest.cc
 	src/model/DeleteProjectResult.cc
+	src/model/DeleteSnapshotRepoRequest.cc
+	src/model/DeleteSnapshotRepoResult.cc
+	src/model/DescribeConnectableClustersRequest.cc
+	src/model/DescribeConnectableClustersResult.cc
 	src/model/DescribeElasticsearchHealthRequest.cc
 	src/model/DescribeElasticsearchHealthResult.cc
 	src/model/DescribeInstanceRequest.cc
 	src/model/DescribeInstanceResult.cc
 	src/model/DescribeKibanaSettingsRequest.cc
 	src/model/DescribeKibanaSettingsResult.cc
+	src/model/DescribeLogstashRequest.cc
+	src/model/DescribeLogstashResult.cc
+	src/model/DescribePipelineManagementConfigRequest.cc
+	src/model/DescribePipelineManagementConfigResult.cc
+	src/model/DescribeRegionsRequest.cc
+	src/model/DescribeRegionsResult.cc
 	src/model/GetRegionConfigurationRequest.cc
 	src/model/GetRegionConfigurationResult.cc
 	src/model/GetSuggestShrinkableNodesRequest.cc
@@ -154,26 +226,48 @@ set(elasticsearch_src
 	src/model/GetTransferableNodesResult.cc
 	src/model/InstallKibanaSystemPluginRequest.cc
 	src/model/InstallKibanaSystemPluginResult.cc
+	src/model/InstallLogstashSystemPluginRequest.cc
+	src/model/InstallLogstashSystemPluginResult.cc
 	src/model/InstallSystemPluginRequest.cc
 	src/model/InstallSystemPluginResult.cc
 	src/model/InstallUserPluginsRequest.cc
 	src/model/InstallUserPluginsResult.cc
+	src/model/InterruptElasticsearchTaskRequest.cc
+	src/model/InterruptElasticsearchTaskResult.cc
+	src/model/InterruptLogstashTaskRequest.cc
+	src/model/InterruptLogstashTaskResult.cc
 	src/model/ListAllNodeRequest.cc
 	src/model/ListAllNodeResult.cc
+	src/model/ListAlternativeSnapshotReposRequest.cc
+	src/model/ListAlternativeSnapshotReposResult.cc
 	src/model/ListInstanceRequest.cc
 	src/model/ListInstanceResult.cc
 	src/model/ListKibanaPluginsRequest.cc
 	src/model/ListKibanaPluginsResult.cc
+	src/model/ListLogstashRequest.cc
+	src/model/ListLogstashResult.cc
+	src/model/ListLogstashLogRequest.cc
+	src/model/ListLogstashLogResult.cc
+	src/model/ListLogstashPluginsRequest.cc
+	src/model/ListLogstashPluginsResult.cc
 	src/model/ListPluginsRequest.cc
 	src/model/ListPluginsResult.cc
 	src/model/ListSearchLogRequest.cc
 	src/model/ListSearchLogResult.cc
+	src/model/ListSnapshotReposByInstanceIdRequest.cc
+	src/model/ListSnapshotReposByInstanceIdResult.cc
 	src/model/MoveResourceGroupRequest.cc
 	src/model/MoveResourceGroupResult.cc
 	src/model/OpenHttpsRequest.cc
 	src/model/OpenHttpsResult.cc
 	src/model/RestartInstanceRequest.cc
 	src/model/RestartInstanceResult.cc
+	src/model/RestartLogstashRequest.cc
+	src/model/RestartLogstashResult.cc
+	src/model/ResumeElasticsearchTaskRequest.cc
+	src/model/ResumeElasticsearchTaskResult.cc
+	src/model/ResumeLogstashTaskRequest.cc
+	src/model/ResumeLogstashTaskResult.cc
 	src/model/RollbackInstanceRequest.cc
 	src/model/RollbackInstanceResult.cc
 	src/model/ShrinkNodeRequest.cc
@@ -184,6 +278,8 @@ set(elasticsearch_src
 	src/model/TriggerNetworkResult.cc
 	src/model/UninstallKibanaPluginRequest.cc
 	src/model/UninstallKibanaPluginResult.cc
+	src/model/UninstallLogstashPluginRequest.cc
+	src/model/UninstallLogstashPluginResult.cc
 	src/model/UninstallPluginRequest.cc
 	src/model/UninstallPluginResult.cc
 	src/model/UpdateAdminPasswordRequest.cc
@@ -208,6 +304,14 @@ set(elasticsearch_src
 	src/model/UpdateKibanaSettingsResult.cc
 	src/model/UpdateKibanaWhiteIpsRequest.cc
 	src/model/UpdateKibanaWhiteIpsResult.cc
+	src/model/UpdateLogstashRequest.cc
+	src/model/UpdateLogstashResult.cc
+	src/model/UpdateLogstashDescriptionRequest.cc
+	src/model/UpdateLogstashDescriptionResult.cc
+	src/model/UpdateLogstashSettingsRequest.cc
+	src/model/UpdateLogstashSettingsResult.cc
+	src/model/UpdatePipelineManagementConfigRequest.cc
+	src/model/UpdatePipelineManagementConfigResult.cc
 	src/model/UpdatePrivateNetworkWhiteIpsRequest.cc
 	src/model/UpdatePrivateNetworkWhiteIpsResult.cc
 	src/model/UpdatePublicNetworkRequest.cc

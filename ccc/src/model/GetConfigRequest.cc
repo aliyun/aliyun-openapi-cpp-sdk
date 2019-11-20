@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetConfigRequest;
 
 GetConfigRequest::GetConfigRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetConfigRequest::~GetConfigRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::GetPhoneProfileRequest;
 
 GetPhoneProfileRequest::GetPhoneProfileRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "GetPhoneProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPhoneProfileRequest::~GetPhoneProfileRequest()
 {}

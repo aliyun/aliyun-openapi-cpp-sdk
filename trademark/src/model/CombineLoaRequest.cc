@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::CombineLoaRequest;
 
 CombineLoaRequest::CombineLoaRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "CombineLoa")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CombineLoaRequest::~CombineLoaRequest()
 {}

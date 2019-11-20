@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteVodSpecificConfigRequest;
 
 DeleteVodSpecificConfigRequest::DeleteVodSpecificConfigRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteVodSpecificConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVodSpecificConfigRequest::~DeleteVodSpecificConfigRequest()
 {}

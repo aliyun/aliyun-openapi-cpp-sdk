@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::CreateEventRequest;
 
 CreateEventRequest::CreateEventRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "CreateEvent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateEventRequest::~CreateEventRequest()
 {}

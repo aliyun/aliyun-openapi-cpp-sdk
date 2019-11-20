@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::BatchSetLiveDomainConfigsRequest;
 
 BatchSetLiveDomainConfigsRequest::BatchSetLiveDomainConfigsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "BatchSetLiveDomainConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchSetLiveDomainConfigsRequest::~BatchSetLiveDomainConfigsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteDevicePropRequest;
 
 DeleteDevicePropRequest::DeleteDevicePropRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteDeviceProp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDevicePropRequest::~DeleteDevicePropRequest()
 {}

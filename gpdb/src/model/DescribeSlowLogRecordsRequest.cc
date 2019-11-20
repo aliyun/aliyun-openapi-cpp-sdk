@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeSlowLogRecordsRequest;
 
 DescribeSlowLogRecordsRequest::DescribeSlowLogRecordsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeSlowLogRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSlowLogRecordsRequest::~DescribeSlowLogRecordsRequest()
 {}

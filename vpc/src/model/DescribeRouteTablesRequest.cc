@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeRouteTablesRequest;
 
 DescribeRouteTablesRequest::DescribeRouteTablesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeRouteTables")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRouteTablesRequest::~DescribeRouteTablesRequest()
 {}

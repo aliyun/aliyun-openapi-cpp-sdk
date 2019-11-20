@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ModifySmartAccessGatewayUpBandwidthRequest;
 
 ModifySmartAccessGatewayUpBandwidthRequest::ModifySmartAccessGatewayUpBandwidthRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ModifySmartAccessGatewayUpBandwidth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySmartAccessGatewayUpBandwidthRequest::~ModifySmartAccessGatewayUpBandwidthRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyGroupPropertyRequest;
 
 ModifyGroupPropertyRequest::ModifyGroupPropertyRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyGroupProperty")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyGroupPropertyRequest::~ModifyGroupPropertyRequest()
 {}

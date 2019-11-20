@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeLogicInstanceTopologyRequest;
 
 DescribeLogicInstanceTopologyRequest::DescribeLogicInstanceTopologyRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeLogicInstanceTopology")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLogicInstanceTopologyRequest::~DescribeLogicInstanceTopologyRequest()
 {}

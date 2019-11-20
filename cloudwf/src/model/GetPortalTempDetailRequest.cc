@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetPortalTempDetailRequest;
 
 GetPortalTempDetailRequest::GetPortalTempDetailRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetPortalTempDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPortalTempDetailRequest::~GetPortalTempDetailRequest()
 {}

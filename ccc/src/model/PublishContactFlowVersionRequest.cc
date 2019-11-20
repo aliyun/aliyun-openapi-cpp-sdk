@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::PublishContactFlowVersionRequest;
 
 PublishContactFlowVersionRequest::PublishContactFlowVersionRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "PublishContactFlowVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PublishContactFlowVersionRequest::~PublishContactFlowVersionRequest()
 {}

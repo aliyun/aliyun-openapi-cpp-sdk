@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::ModifyReadOnlyAccountPasswordRequest;
 
 ModifyReadOnlyAccountPasswordRequest::ModifyReadOnlyAccountPasswordRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "ModifyReadOnlyAccountPassword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyReadOnlyAccountPasswordRequest::~ModifyReadOnlyAccountPasswordRequest()
 {}

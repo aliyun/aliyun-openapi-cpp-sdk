@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeCpmcPunishListRequest;
 
 DescribeCpmcPunishListRequest::DescribeCpmcPunishListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeCpmcPunishList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCpmcPunishListRequest::~DescribeCpmcPunishListRequest()
 {}
@@ -111,5 +113,16 @@ void DescribeCpmcPunishListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeCpmcPunishListRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeCpmcPunishListRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

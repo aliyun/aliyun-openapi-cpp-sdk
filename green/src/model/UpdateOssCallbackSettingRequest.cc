@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateOssCallbackSettingRequest;
 
 UpdateOssCallbackSettingRequest::UpdateOssCallbackSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateOssCallbackSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateOssCallbackSettingRequest::~UpdateOssCallbackSettingRequest()
 {}

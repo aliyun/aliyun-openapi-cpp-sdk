@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::BatchChangeGroupApNameRequest;
 
 BatchChangeGroupApNameRequest::BatchChangeGroupApNameRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "BatchChangeGroupApName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchChangeGroupApNameRequest::~BatchChangeGroupApNameRequest()
 {}

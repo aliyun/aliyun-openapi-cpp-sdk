@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::QueryMarketCategoriesRequest;
 
 QueryMarketCategoriesRequest::QueryMarketCategoriesRequest() :
 	RpcServiceRequest("market", "2015-11-01", "QueryMarketCategories")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMarketCategoriesRequest::~QueryMarketCategoriesRequest()
 {}

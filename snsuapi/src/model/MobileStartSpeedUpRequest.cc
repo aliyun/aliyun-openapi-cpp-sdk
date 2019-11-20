@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::MobileStartSpeedUpRequest;
 
 MobileStartSpeedUpRequest::MobileStartSpeedUpRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "MobileStartSpeedUp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MobileStartSpeedUpRequest::~MobileStartSpeedUpRequest()
 {}

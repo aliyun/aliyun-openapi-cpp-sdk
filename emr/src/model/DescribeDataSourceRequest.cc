@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeDataSourceRequest;
 
 DescribeDataSourceRequest::DescribeDataSourceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeDataSource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataSourceRequest::~DescribeDataSourceRequest()
 {}

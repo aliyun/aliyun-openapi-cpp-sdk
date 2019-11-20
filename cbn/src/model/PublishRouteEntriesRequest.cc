@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::PublishRouteEntriesRequest;
 
 PublishRouteEntriesRequest::PublishRouteEntriesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "PublishRouteEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PublishRouteEntriesRequest::~PublishRouteEntriesRequest()
 {}

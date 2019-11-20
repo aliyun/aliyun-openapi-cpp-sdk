@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribePropertyCountRequest;
 
 DescribePropertyCountRequest::DescribePropertyCountRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribePropertyCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePropertyCountRequest::~DescribePropertyCountRequest()
 {}

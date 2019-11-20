@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForDisassociatingEnsRequest;
 
 SaveSingleTaskForDisassociatingEnsRequest::SaveSingleTaskForDisassociatingEnsRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForDisassociatingEns")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForDisassociatingEnsRequest::~SaveSingleTaskForDisassociatingEnsRequest()
 {}

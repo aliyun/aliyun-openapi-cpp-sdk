@@ -20,21 +20,12 @@ using AlibabaCloud::Market::Model::CreateRateRequest;
 
 CreateRateRequest::CreateRateRequest() :
 	RpcServiceRequest("market", "2015-11-01", "CreateRate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRateRequest::~CreateRateRequest()
 {}
-
-std::string CreateRateRequest::getScore()const
-{
-	return score_;
-}
-
-void CreateRateRequest::setScore(const std::string& score)
-{
-	score_ = score;
-	setCoreParameter("Score", score);
-}
 
 std::string CreateRateRequest::getOrderId()const
 {
@@ -47,17 +38,6 @@ void CreateRateRequest::setOrderId(const std::string& orderId)
 	setCoreParameter("OrderId", orderId);
 }
 
-std::string CreateRateRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void CreateRateRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
 std::string CreateRateRequest::getContent()const
 {
 	return content_;
@@ -67,5 +47,27 @@ void CreateRateRequest::setContent(const std::string& content)
 {
 	content_ = content;
 	setCoreParameter("Content", content);
+}
+
+std::string CreateRateRequest::getScore()const
+{
+	return score_;
+}
+
+void CreateRateRequest::setScore(const std::string& score)
+{
+	score_ = score;
+	setCoreParameter("Score", score);
+}
+
+std::string CreateRateRequest::getRequestId()const
+{
+	return requestId_;
+}
+
+void CreateRateRequest::setRequestId(const std::string& requestId)
+{
+	requestId_ = requestId;
+	setCoreParameter("RequestId", requestId);
 }
 

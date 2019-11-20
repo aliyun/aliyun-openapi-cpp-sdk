@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::ListTagKeysRequest;
 
 ListTagKeysRequest::ListTagKeysRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "ListTagKeys")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTagKeysRequest::~ListTagKeysRequest()
 {}
@@ -45,6 +47,17 @@ void ListTagKeysRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
 	setCoreParameter("ResourceType", resourceType);
+}
+
+std::string ListTagKeysRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListTagKeysRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string ListTagKeysRequest::getSourceIp()const

@@ -188,6 +188,8 @@
 #include "model/QueryPornJobListResult.h"
 #include "model/QueryPornPipelineListRequest.h"
 #include "model/QueryPornPipelineListResult.h"
+#include "model/QuerySmarttagJobRequest.h"
+#include "model/QuerySmarttagJobResult.h"
 #include "model/QuerySnapshotJobListRequest.h"
 #include "model/QuerySnapshotJobListResult.h"
 #include "model/QuerySubtitleJobListRequest.h"
@@ -288,6 +290,8 @@
 #include "model/SubmitMediaInfoJobResult.h"
 #include "model/SubmitPornJobRequest.h"
 #include "model/SubmitPornJobResult.h"
+#include "model/SubmitSmarttagJobRequest.h"
+#include "model/SubmitSmarttagJobResult.h"
 #include "model/SubmitSnapshotJobRequest.h"
 #include "model/SubmitSnapshotJobResult.h"
 #include "model/SubmitSubtitleJobRequest.h"
@@ -600,6 +604,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryPornPipelineListResult> QueryPornPipelineListOutcome;
 			typedef std::future<QueryPornPipelineListOutcome> QueryPornPipelineListOutcomeCallable;
 			typedef std::function<void(const MtsClient*, const Model::QueryPornPipelineListRequest&, const QueryPornPipelineListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPornPipelineListAsyncHandler;
+			typedef Outcome<Error, Model::QuerySmarttagJobResult> QuerySmarttagJobOutcome;
+			typedef std::future<QuerySmarttagJobOutcome> QuerySmarttagJobOutcomeCallable;
+			typedef std::function<void(const MtsClient*, const Model::QuerySmarttagJobRequest&, const QuerySmarttagJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySmarttagJobAsyncHandler;
 			typedef Outcome<Error, Model::QuerySnapshotJobListResult> QuerySnapshotJobListOutcome;
 			typedef std::future<QuerySnapshotJobListOutcome> QuerySnapshotJobListOutcomeCallable;
 			typedef std::function<void(const MtsClient*, const Model::QuerySnapshotJobListRequest&, const QuerySnapshotJobListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySnapshotJobListAsyncHandler;
@@ -750,6 +757,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitPornJobResult> SubmitPornJobOutcome;
 			typedef std::future<SubmitPornJobOutcome> SubmitPornJobOutcomeCallable;
 			typedef std::function<void(const MtsClient*, const Model::SubmitPornJobRequest&, const SubmitPornJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitPornJobAsyncHandler;
+			typedef Outcome<Error, Model::SubmitSmarttagJobResult> SubmitSmarttagJobOutcome;
+			typedef std::future<SubmitSmarttagJobOutcome> SubmitSmarttagJobOutcomeCallable;
+			typedef std::function<void(const MtsClient*, const Model::SubmitSmarttagJobRequest&, const SubmitSmarttagJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitSmarttagJobAsyncHandler;
 			typedef Outcome<Error, Model::SubmitSnapshotJobResult> SubmitSnapshotJobOutcome;
 			typedef std::future<SubmitSnapshotJobOutcome> SubmitSnapshotJobOutcomeCallable;
 			typedef std::function<void(const MtsClient*, const Model::SubmitSnapshotJobRequest&, const SubmitSnapshotJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitSnapshotJobAsyncHandler;
@@ -1085,6 +1095,9 @@ namespace AlibabaCloud
 			QueryPornPipelineListOutcome queryPornPipelineList(const Model::QueryPornPipelineListRequest &request)const;
 			void queryPornPipelineListAsync(const Model::QueryPornPipelineListRequest& request, const QueryPornPipelineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryPornPipelineListOutcomeCallable queryPornPipelineListCallable(const Model::QueryPornPipelineListRequest& request) const;
+			QuerySmarttagJobOutcome querySmarttagJob(const Model::QuerySmarttagJobRequest &request)const;
+			void querySmarttagJobAsync(const Model::QuerySmarttagJobRequest& request, const QuerySmarttagJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySmarttagJobOutcomeCallable querySmarttagJobCallable(const Model::QuerySmarttagJobRequest& request) const;
 			QuerySnapshotJobListOutcome querySnapshotJobList(const Model::QuerySnapshotJobListRequest &request)const;
 			void querySnapshotJobListAsync(const Model::QuerySnapshotJobListRequest& request, const QuerySnapshotJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySnapshotJobListOutcomeCallable querySnapshotJobListCallable(const Model::QuerySnapshotJobListRequest& request) const;
@@ -1235,6 +1248,9 @@ namespace AlibabaCloud
 			SubmitPornJobOutcome submitPornJob(const Model::SubmitPornJobRequest &request)const;
 			void submitPornJobAsync(const Model::SubmitPornJobRequest& request, const SubmitPornJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitPornJobOutcomeCallable submitPornJobCallable(const Model::SubmitPornJobRequest& request) const;
+			SubmitSmarttagJobOutcome submitSmarttagJob(const Model::SubmitSmarttagJobRequest &request)const;
+			void submitSmarttagJobAsync(const Model::SubmitSmarttagJobRequest& request, const SubmitSmarttagJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitSmarttagJobOutcomeCallable submitSmarttagJobCallable(const Model::SubmitSmarttagJobRequest& request) const;
 			SubmitSnapshotJobOutcome submitSnapshotJob(const Model::SubmitSnapshotJobRequest &request)const;
 			void submitSnapshotJobAsync(const Model::SubmitSnapshotJobRequest& request, const SubmitSnapshotJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitSnapshotJobOutcomeCallable submitSnapshotJobCallable(const Model::SubmitSnapshotJobRequest& request) const;

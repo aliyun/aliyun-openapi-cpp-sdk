@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeGroupedVulRequest();
 				~DescribeGroupedVulRequest();
 
+				std::string getStatusList()const;
+				void setStatusList(const std::string& statusList);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getSourceIp()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setUuids(const std::string& uuids);
 
             private:
+				std::string statusList_;
 				std::string type_;
 				std::string sourceIp_;
 				int pageSize_;

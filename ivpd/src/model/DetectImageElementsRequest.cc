@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::DetectImageElementsRequest;
 
 DetectImageElementsRequest::DetectImageElementsRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "DetectImageElements")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectImageElementsRequest::~DetectImageElementsRequest()
 {}

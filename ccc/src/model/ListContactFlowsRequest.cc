@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListContactFlowsRequest;
 
 ListContactFlowsRequest::ListContactFlowsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListContactFlows")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListContactFlowsRequest::~ListContactFlowsRequest()
 {}

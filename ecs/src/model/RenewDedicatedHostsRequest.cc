@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::RenewDedicatedHostsRequest;
 
 RenewDedicatedHostsRequest::RenewDedicatedHostsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "RenewDedicatedHosts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenewDedicatedHostsRequest::~RenewDedicatedHostsRequest()
 {}

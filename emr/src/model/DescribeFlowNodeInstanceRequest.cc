@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeFlowNodeInstanceRequest;
 
 DescribeFlowNodeInstanceRequest::DescribeFlowNodeInstanceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeFlowNodeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowNodeInstanceRequest::~DescribeFlowNodeInstanceRequest()
 {}

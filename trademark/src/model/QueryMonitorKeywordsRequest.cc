@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryMonitorKeywordsRequest;
 
 QueryMonitorKeywordsRequest::QueryMonitorKeywordsRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryMonitorKeywords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMonitorKeywordsRequest::~QueryMonitorKeywordsRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> QueryMonitorKeywordsRequest::getKeywords()const
 void QueryMonitorKeywordsRequest::setKeywords(const std::vector<std::string>& keywords)
 {
 	keywords_ = keywords;
-	for(int i = 0; i!= keywords.size(); i++)
-		setCoreParameter("Keywords."+ std::to_string(i), keywords.at(i));
+	for(int dep1 = 0; dep1!= keywords.size(); dep1++)
+		setCoreParameter("Keywords."+ std::to_string(dep1), keywords.at(dep1));
 }
 
 int QueryMonitorKeywordsRequest::getRuleType()const

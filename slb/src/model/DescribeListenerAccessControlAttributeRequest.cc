@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeListenerAccessControlAttributeRequest;
 
 DescribeListenerAccessControlAttributeRequest::DescribeListenerAccessControlAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeListenerAccessControlAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeListenerAccessControlAttributeRequest::~DescribeListenerAccessControlAttributeRequest()
 {}

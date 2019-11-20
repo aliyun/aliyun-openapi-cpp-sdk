@@ -20,7 +20,9 @@ using AlibabaCloud::DnsKnocker::Model::GetDomainRequest;
 
 GetDomainRequest::GetDomainRequest() :
 	RpcServiceRequest("dnsknocker", "2019-09-10", "GetDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetDomainRequest::~GetDomainRequest()
 {}

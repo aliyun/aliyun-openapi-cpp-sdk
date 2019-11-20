@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeletePositionMapRequest;
 
 DeletePositionMapRequest::DeletePositionMapRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeletePositionMap")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePositionMapRequest::~DeletePositionMapRequest()
 {}

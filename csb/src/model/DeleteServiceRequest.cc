@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::DeleteServiceRequest;
 
 DeleteServiceRequest::DeleteServiceRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "DeleteService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteServiceRequest::~DeleteServiceRequest()
 {}

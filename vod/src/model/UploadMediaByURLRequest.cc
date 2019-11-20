@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UploadMediaByURLRequest;
 
 UploadMediaByURLRequest::UploadMediaByURLRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UploadMediaByURL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadMediaByURLRequest::~UploadMediaByURLRequest()
 {}

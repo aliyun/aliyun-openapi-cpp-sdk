@@ -20,7 +20,9 @@ using AlibabaCloud::Kms::Model::CreateAliasRequest;
 
 CreateAliasRequest::CreateAliasRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "CreateAlias")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAliasRequest::~CreateAliasRequest()
 {}

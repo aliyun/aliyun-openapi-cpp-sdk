@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteFlowCategoryRequest;
 
 DeleteFlowCategoryRequest::DeleteFlowCategoryRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteFlowCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFlowCategoryRequest::~DeleteFlowCategoryRequest()
 {}

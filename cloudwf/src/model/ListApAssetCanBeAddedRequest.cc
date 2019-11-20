@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListApAssetCanBeAddedRequest;
 
 ListApAssetCanBeAddedRequest::ListApAssetCanBeAddedRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListApAssetCanBeAdded")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApAssetCanBeAddedRequest::~ListApAssetCanBeAddedRequest()
 {}

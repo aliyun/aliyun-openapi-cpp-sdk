@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CloseEdgeInstanceDeploymentRequest;
 
 CloseEdgeInstanceDeploymentRequest::CloseEdgeInstanceDeploymentRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CloseEdgeInstanceDeployment")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CloseEdgeInstanceDeploymentRequest::~CloseEdgeInstanceDeploymentRequest()
 {}

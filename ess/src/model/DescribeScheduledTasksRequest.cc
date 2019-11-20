@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DescribeScheduledTasksRequest;
 
 DescribeScheduledTasksRequest::DescribeScheduledTasksRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DescribeScheduledTasks")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScheduledTasksRequest::~DescribeScheduledTasksRequest()
 {}

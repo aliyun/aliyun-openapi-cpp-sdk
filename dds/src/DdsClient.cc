@@ -1995,6 +1995,42 @@ DdsClient::DescribeRunningLogRecordsOutcomeCallable DdsClient::describeRunningLo
 	return task->get_future();
 }
 
+DdsClient::DescribeSecurityGroupConfigurationOutcome DdsClient::describeSecurityGroupConfiguration(const DescribeSecurityGroupConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSecurityGroupConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSecurityGroupConfigurationOutcome(DescribeSecurityGroupConfigurationResult(outcome.result()));
+	else
+		return DescribeSecurityGroupConfigurationOutcome(outcome.error());
+}
+
+void DdsClient::describeSecurityGroupConfigurationAsync(const DescribeSecurityGroupConfigurationRequest& request, const DescribeSecurityGroupConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSecurityGroupConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeSecurityGroupConfigurationOutcomeCallable DdsClient::describeSecurityGroupConfigurationCallable(const DescribeSecurityGroupConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSecurityGroupConfiguration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeSecurityIpsOutcome DdsClient::describeSecurityIps(const DescribeSecurityIpsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2169,6 +2205,42 @@ DdsClient::DescribeStrategyOutcomeCallable DdsClient::describeStrategyCallable(c
 			[this, request]()
 			{
 			return this->describeStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeTagsOutcome DdsClient::describeTags(const DescribeTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTagsOutcome(DescribeTagsResult(outcome.result()));
+	else
+		return DescribeTagsOutcome(outcome.error());
+}
+
+void DdsClient::describeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeTagsOutcomeCallable DdsClient::describeTagsCallable(const DescribeTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTags(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3039,6 +3111,42 @@ DdsClient::ModifyNodeSpecOutcomeCallable DdsClient::modifyNodeSpecCallable(const
 	return task->get_future();
 }
 
+DdsClient::ModifyParameterOutcome DdsClient::modifyParameter(const ModifyParameterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyParameterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyParameterOutcome(ModifyParameterResult(outcome.result()));
+	else
+		return ModifyParameterOutcome(outcome.error());
+}
+
+void DdsClient::modifyParameterAsync(const ModifyParameterRequest& request, const ModifyParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyParameter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifyParameterOutcomeCallable DdsClient::modifyParameterCallable(const ModifyParameterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyParameterOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::ModifyParametersOutcome DdsClient::modifyParameters(const ModifyParametersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3249,6 +3357,42 @@ DdsClient::ModifyReplicaVerificationModeOutcomeCallable DdsClient::modifyReplica
 			[this, request]()
 			{
 			return this->modifyReplicaVerificationMode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::ModifySecurityGroupConfigurationOutcome DdsClient::modifySecurityGroupConfiguration(const ModifySecurityGroupConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySecurityGroupConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySecurityGroupConfigurationOutcome(ModifySecurityGroupConfigurationResult(outcome.result()));
+	else
+		return ModifySecurityGroupConfigurationOutcome(outcome.error());
+}
+
+void DdsClient::modifySecurityGroupConfigurationAsync(const ModifySecurityGroupConfigurationRequest& request, const ModifySecurityGroupConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySecurityGroupConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifySecurityGroupConfigurationOutcomeCallable DdsClient::modifySecurityGroupConfigurationCallable(const ModifySecurityGroupConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySecurityGroupConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySecurityGroupConfiguration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateExpressCloudConnectionRequest;
 
 CreateExpressCloudConnectionRequest::CreateExpressCloudConnectionRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateExpressCloudConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateExpressCloudConnectionRequest::~CreateExpressCloudConnectionRequest()
 {}

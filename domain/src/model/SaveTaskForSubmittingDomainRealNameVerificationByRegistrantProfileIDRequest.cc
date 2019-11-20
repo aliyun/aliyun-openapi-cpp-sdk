@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveTaskForSubmittingDomainRealNameVerificati
 
 SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::~SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest()
 {}

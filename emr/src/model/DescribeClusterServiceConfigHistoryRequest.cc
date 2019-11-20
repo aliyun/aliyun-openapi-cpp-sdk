@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterServiceConfigHistoryRequest;
 
 DescribeClusterServiceConfigHistoryRequest::DescribeClusterServiceConfigHistoryRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterServiceConfigHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterServiceConfigHistoryRequest::~DescribeClusterServiceConfigHistoryRequest()
 {}

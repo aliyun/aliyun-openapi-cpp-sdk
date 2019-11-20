@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryPushListRequest;
 
 QueryPushListRequest::QueryPushListRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryPushList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryPushListRequest::~QueryPushListRequest()
 {}

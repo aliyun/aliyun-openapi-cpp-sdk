@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::MigrateToOtherZoneRequest;
 
 MigrateToOtherZoneRequest::MigrateToOtherZoneRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "MigrateToOtherZone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MigrateToOtherZoneRequest::~MigrateToOtherZoneRequest()
 {}

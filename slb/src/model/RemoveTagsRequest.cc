@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::RemoveTagsRequest;
 
 RemoveTagsRequest::RemoveTagsRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "RemoveTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveTagsRequest::~RemoveTagsRequest()
 {}

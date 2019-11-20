@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::StartTaskRequest;
 
 StartTaskRequest::StartTaskRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "StartTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartTaskRequest::~StartTaskRequest()
 {}
@@ -33,13 +35,12 @@ std::vector<StartTaskRequest::MixPanes> StartTaskRequest::getMixPanes()const
 void StartTaskRequest::setMixPanes(const std::vector<MixPanes>& mixPanes)
 {
 	mixPanes_ = mixPanes;
-	int i = 0;
-	for(int i = 0; i!= mixPanes.size(); i++)	{
-		auto obj = mixPanes.at(i);
-		std::string str ="MixPanes."+ std::to_string(i);
-		setCoreParameter(str + ".PaneId", std::to_string(obj.paneId));
-		setCoreParameter(str + ".UserId", obj.userId);
-		setCoreParameter(str + ".SourceType", obj.sourceType);
+	for(int dep1 = 0; dep1!= mixPanes.size(); dep1++) {
+		auto mixPanesObj = mixPanes.at(dep1);
+		std::string mixPanesObjStr = "MixPanes." + std::to_string(dep1);
+		setCoreParameter(mixPanesObjStr + ".PaneId", std::to_string(mixPanesObj.paneId));
+		setCoreParameter(mixPanesObjStr + ".UserId", mixPanesObj.userId);
+		setCoreParameter(mixPanesObjStr + ".SourceType", mixPanesObj.sourceType);
 	}
 }
 

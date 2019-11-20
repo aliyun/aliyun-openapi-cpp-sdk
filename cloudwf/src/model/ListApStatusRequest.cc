@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListApStatusRequest;
 
 ListApStatusRequest::ListApStatusRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListApStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApStatusRequest::~ListApStatusRequest()
 {}

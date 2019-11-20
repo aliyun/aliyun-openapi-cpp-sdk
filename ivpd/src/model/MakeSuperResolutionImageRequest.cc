@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::MakeSuperResolutionImageRequest;
 
 MakeSuperResolutionImageRequest::MakeSuperResolutionImageRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "MakeSuperResolutionImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MakeSuperResolutionImageRequest::~MakeSuperResolutionImageRequest()
 {}

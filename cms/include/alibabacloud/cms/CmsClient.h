@@ -52,6 +52,10 @@
 #include "model/DeleteEventTargetsResult.h"
 #include "model/DeleteGroupDynamicRuleRequest.h"
 #include "model/DeleteGroupDynamicRuleResult.h"
+#include "model/DeleteMetricRuleTargetsRequest.h"
+#include "model/DeleteMetricRuleTargetsResult.h"
+#include "model/DeleteMetricRulesRequest.h"
+#include "model/DeleteMetricRulesResult.h"
 #include "model/DeleteMonitoringTemplateRequest.h"
 #include "model/DeleteMonitoringTemplateResult.h"
 #include "model/DeleteMyGroupInstancesRequest.h"
@@ -76,6 +80,10 @@
 #include "model/DescribeEventRuleResult.h"
 #include "model/DescribeISPAreaCityRequest.h"
 #include "model/DescribeISPAreaCityResult.h"
+#include "model/DescribeMetricRuleCountRequest.h"
+#include "model/DescribeMetricRuleCountResult.h"
+#include "model/DescribeMetricRuleListRequest.h"
+#include "model/DescribeMetricRuleListResult.h"
 #include "model/DescribeMetricRuleTargetsRequest.h"
 #include "model/DescribeMetricRuleTargetsResult.h"
 #include "model/DescribeSiteMonitorISPAreaCityRequest.h"
@@ -172,6 +180,8 @@
 #include "model/PutMetricAlarmResult.h"
 #include "model/PutMetricRuleTargetsRequest.h"
 #include "model/PutMetricRuleTargetsResult.h"
+#include "model/PutResourceMetricRuleRequest.h"
+#include "model/PutResourceMetricRuleResult.h"
 #include "model/QueryCustomEventCountRequest.h"
 #include "model/QueryCustomEventCountResult.h"
 #include "model/QueryCustomEventDetailRequest.h"
@@ -300,6 +310,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteGroupDynamicRuleResult> DeleteGroupDynamicRuleOutcome;
 			typedef std::future<DeleteGroupDynamicRuleOutcome> DeleteGroupDynamicRuleOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DeleteGroupDynamicRuleRequest&, const DeleteGroupDynamicRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupDynamicRuleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteMetricRuleTargetsResult> DeleteMetricRuleTargetsOutcome;
+			typedef std::future<DeleteMetricRuleTargetsOutcome> DeleteMetricRuleTargetsOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DeleteMetricRuleTargetsRequest&, const DeleteMetricRuleTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMetricRuleTargetsAsyncHandler;
+			typedef Outcome<Error, Model::DeleteMetricRulesResult> DeleteMetricRulesOutcome;
+			typedef std::future<DeleteMetricRulesOutcome> DeleteMetricRulesOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DeleteMetricRulesRequest&, const DeleteMetricRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMetricRulesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteMonitoringTemplateResult> DeleteMonitoringTemplateOutcome;
 			typedef std::future<DeleteMonitoringTemplateOutcome> DeleteMonitoringTemplateOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DeleteMonitoringTemplateRequest&, const DeleteMonitoringTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMonitoringTemplateAsyncHandler;
@@ -336,6 +352,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeISPAreaCityResult> DescribeISPAreaCityOutcome;
 			typedef std::future<DescribeISPAreaCityOutcome> DescribeISPAreaCityOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeISPAreaCityRequest&, const DescribeISPAreaCityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeISPAreaCityAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMetricRuleCountResult> DescribeMetricRuleCountOutcome;
+			typedef std::future<DescribeMetricRuleCountOutcome> DescribeMetricRuleCountOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeMetricRuleCountRequest&, const DescribeMetricRuleCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricRuleCountAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMetricRuleListResult> DescribeMetricRuleListOutcome;
+			typedef std::future<DescribeMetricRuleListOutcome> DescribeMetricRuleListOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeMetricRuleListRequest&, const DescribeMetricRuleListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricRuleListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMetricRuleTargetsResult> DescribeMetricRuleTargetsOutcome;
 			typedef std::future<DescribeMetricRuleTargetsOutcome> DescribeMetricRuleTargetsOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeMetricRuleTargetsRequest&, const DescribeMetricRuleTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricRuleTargetsAsyncHandler;
@@ -480,6 +502,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PutMetricRuleTargetsResult> PutMetricRuleTargetsOutcome;
 			typedef std::future<PutMetricRuleTargetsOutcome> PutMetricRuleTargetsOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutMetricRuleTargetsRequest&, const PutMetricRuleTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutMetricRuleTargetsAsyncHandler;
+			typedef Outcome<Error, Model::PutResourceMetricRuleResult> PutResourceMetricRuleOutcome;
+			typedef std::future<PutResourceMetricRuleOutcome> PutResourceMetricRuleOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::PutResourceMetricRuleRequest&, const PutResourceMetricRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutResourceMetricRuleAsyncHandler;
 			typedef Outcome<Error, Model::QueryCustomEventCountResult> QueryCustomEventCountOutcome;
 			typedef std::future<QueryCustomEventCountOutcome> QueryCustomEventCountOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::QueryCustomEventCountRequest&, const QueryCustomEventCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomEventCountAsyncHandler;
@@ -641,6 +666,12 @@ namespace AlibabaCloud
 			DeleteGroupDynamicRuleOutcome deleteGroupDynamicRule(const Model::DeleteGroupDynamicRuleRequest &request)const;
 			void deleteGroupDynamicRuleAsync(const Model::DeleteGroupDynamicRuleRequest& request, const DeleteGroupDynamicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteGroupDynamicRuleOutcomeCallable deleteGroupDynamicRuleCallable(const Model::DeleteGroupDynamicRuleRequest& request) const;
+			DeleteMetricRuleTargetsOutcome deleteMetricRuleTargets(const Model::DeleteMetricRuleTargetsRequest &request)const;
+			void deleteMetricRuleTargetsAsync(const Model::DeleteMetricRuleTargetsRequest& request, const DeleteMetricRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteMetricRuleTargetsOutcomeCallable deleteMetricRuleTargetsCallable(const Model::DeleteMetricRuleTargetsRequest& request) const;
+			DeleteMetricRulesOutcome deleteMetricRules(const Model::DeleteMetricRulesRequest &request)const;
+			void deleteMetricRulesAsync(const Model::DeleteMetricRulesRequest& request, const DeleteMetricRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteMetricRulesOutcomeCallable deleteMetricRulesCallable(const Model::DeleteMetricRulesRequest& request) const;
 			DeleteMonitoringTemplateOutcome deleteMonitoringTemplate(const Model::DeleteMonitoringTemplateRequest &request)const;
 			void deleteMonitoringTemplateAsync(const Model::DeleteMonitoringTemplateRequest& request, const DeleteMonitoringTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteMonitoringTemplateOutcomeCallable deleteMonitoringTemplateCallable(const Model::DeleteMonitoringTemplateRequest& request) const;
@@ -677,6 +708,12 @@ namespace AlibabaCloud
 			DescribeISPAreaCityOutcome describeISPAreaCity(const Model::DescribeISPAreaCityRequest &request)const;
 			void describeISPAreaCityAsync(const Model::DescribeISPAreaCityRequest& request, const DescribeISPAreaCityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeISPAreaCityOutcomeCallable describeISPAreaCityCallable(const Model::DescribeISPAreaCityRequest& request) const;
+			DescribeMetricRuleCountOutcome describeMetricRuleCount(const Model::DescribeMetricRuleCountRequest &request)const;
+			void describeMetricRuleCountAsync(const Model::DescribeMetricRuleCountRequest& request, const DescribeMetricRuleCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMetricRuleCountOutcomeCallable describeMetricRuleCountCallable(const Model::DescribeMetricRuleCountRequest& request) const;
+			DescribeMetricRuleListOutcome describeMetricRuleList(const Model::DescribeMetricRuleListRequest &request)const;
+			void describeMetricRuleListAsync(const Model::DescribeMetricRuleListRequest& request, const DescribeMetricRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMetricRuleListOutcomeCallable describeMetricRuleListCallable(const Model::DescribeMetricRuleListRequest& request) const;
 			DescribeMetricRuleTargetsOutcome describeMetricRuleTargets(const Model::DescribeMetricRuleTargetsRequest &request)const;
 			void describeMetricRuleTargetsAsync(const Model::DescribeMetricRuleTargetsRequest& request, const DescribeMetricRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMetricRuleTargetsOutcomeCallable describeMetricRuleTargetsCallable(const Model::DescribeMetricRuleTargetsRequest& request) const;
@@ -821,6 +858,9 @@ namespace AlibabaCloud
 			PutMetricRuleTargetsOutcome putMetricRuleTargets(const Model::PutMetricRuleTargetsRequest &request)const;
 			void putMetricRuleTargetsAsync(const Model::PutMetricRuleTargetsRequest& request, const PutMetricRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutMetricRuleTargetsOutcomeCallable putMetricRuleTargetsCallable(const Model::PutMetricRuleTargetsRequest& request) const;
+			PutResourceMetricRuleOutcome putResourceMetricRule(const Model::PutResourceMetricRuleRequest &request)const;
+			void putResourceMetricRuleAsync(const Model::PutResourceMetricRuleRequest& request, const PutResourceMetricRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PutResourceMetricRuleOutcomeCallable putResourceMetricRuleCallable(const Model::PutResourceMetricRuleRequest& request) const;
 			QueryCustomEventCountOutcome queryCustomEventCount(const Model::QueryCustomEventCountRequest &request)const;
 			void queryCustomEventCountAsync(const Model::QueryCustomEventCountRequest& request, const QueryCustomEventCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCustomEventCountOutcomeCallable queryCustomEventCountCallable(const Model::QueryCustomEventCountRequest& request) const;

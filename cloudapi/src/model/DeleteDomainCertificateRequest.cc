@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteDomainCertificateRequest;
 
 DeleteDomainCertificateRequest::DeleteDomainCertificateRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteDomainCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDomainCertificateRequest::~DeleteDomainCertificateRequest()
 {}

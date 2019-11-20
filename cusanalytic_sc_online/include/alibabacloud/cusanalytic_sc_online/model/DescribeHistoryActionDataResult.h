@@ -52,6 +52,7 @@ namespace AlibabaCloud
 						long stayPeriod;
 						MapImagePoint mapImagePoint;
 						FaceImgRect faceImgRect;
+						long inStay;
 						long maxts;
 						long stayValid;
 						long mints;
@@ -84,6 +85,7 @@ namespace AlibabaCloud
 				explicit DescribeHistoryActionDataResult(const std::string &payload);
 				~DescribeHistoryActionDataResult();
 				bool getIsSuccess()const;
+				long getTotalCount()const;
 				long getTsStart()const;
 				int getPageCount()const;
 				std::string getStoreId()const;
@@ -97,6 +99,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				bool isSuccess_;
+				long totalCount_;
 				long tsStart_;
 				int pageCount_;
 				std::string storeId_;

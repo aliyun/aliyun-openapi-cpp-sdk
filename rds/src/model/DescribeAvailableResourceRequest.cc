@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeAvailableResourceRequest;
 
 DescribeAvailableResourceRequest::DescribeAvailableResourceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeAvailableResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAvailableResourceRequest::~DescribeAvailableResourceRequest()
 {}

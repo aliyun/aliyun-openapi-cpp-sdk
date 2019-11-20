@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::CreateOrderRequest;
 
 CreateOrderRequest::CreateOrderRequest() :
 	RpcServiceRequest("market", "2015-11-01", "CreateOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderRequest::~CreateOrderRequest()
 {}

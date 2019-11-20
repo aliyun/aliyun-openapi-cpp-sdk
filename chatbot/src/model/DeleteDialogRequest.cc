@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::DeleteDialogRequest;
 
 DeleteDialogRequest::DeleteDialogRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "DeleteDialog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDialogRequest::~DeleteDialogRequest()
 {}

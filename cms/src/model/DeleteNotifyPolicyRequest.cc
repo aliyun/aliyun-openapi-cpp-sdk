@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DeleteNotifyPolicyRequest;
 
 DeleteNotifyPolicyRequest::DeleteNotifyPolicyRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DeleteNotifyPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNotifyPolicyRequest::~DeleteNotifyPolicyRequest()
 {}

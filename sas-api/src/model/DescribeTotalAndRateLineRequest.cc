@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::DescribeTotalAndRateLineRequest;
 
 DescribeTotalAndRateLineRequest::DescribeTotalAndRateLineRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeTotalAndRateLine")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTotalAndRateLineRequest::~DescribeTotalAndRateLineRequest()
 {}

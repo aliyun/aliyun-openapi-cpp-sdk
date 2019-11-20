@@ -39,7 +39,7 @@ namespace AlibabaCloud
 					std::string userName;
 					std::string description;
 					std::string classification;
-					int mobile;
+					std::string mobile;
 					std::string bizId;
 				};
 

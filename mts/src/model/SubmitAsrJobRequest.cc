@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitAsrJobRequest;
 
 SubmitAsrJobRequest::SubmitAsrJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitAsrJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitAsrJobRequest::~SubmitAsrJobRequest()
 {}

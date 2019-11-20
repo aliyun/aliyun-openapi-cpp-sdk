@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::AssociateQosRequest;
 
 AssociateQosRequest::AssociateQosRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "AssociateQos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssociateQosRequest::~AssociateQosRequest()
 {}

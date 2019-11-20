@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CreateBoardRequest;
 
 CreateBoardRequest::CreateBoardRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CreateBoard")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBoardRequest::~CreateBoardRequest()
 {}

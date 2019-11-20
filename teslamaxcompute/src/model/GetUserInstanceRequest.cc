@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::GetUserInstanceRequest;
 
 GetUserInstanceRequest::GetUserInstanceRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "GetUserInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetUserInstanceRequest::~GetUserInstanceRequest()
 {}

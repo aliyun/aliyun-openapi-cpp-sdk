@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListPoliciesForUserRequest;
 
 ListPoliciesForUserRequest::ListPoliciesForUserRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListPoliciesForUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPoliciesForUserRequest::~ListPoliciesForUserRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::AllocateInstancePublicConnectionRequest;
 
 AllocateInstancePublicConnectionRequest::AllocateInstancePublicConnectionRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "AllocateInstancePublicConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AllocateInstancePublicConnectionRequest::~AllocateInstancePublicConnectionRequest()
 {}

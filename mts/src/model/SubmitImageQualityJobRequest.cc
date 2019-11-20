@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitImageQualityJobRequest;
 
 SubmitImageQualityJobRequest::SubmitImageQualityJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitImageQualityJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitImageQualityJobRequest::~SubmitImageQualityJobRequest()
 {}

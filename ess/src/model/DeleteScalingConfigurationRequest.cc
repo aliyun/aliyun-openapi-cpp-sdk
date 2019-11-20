@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteScalingConfigurationRequest;
 
 DeleteScalingConfigurationRequest::DeleteScalingConfigurationRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteScalingConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteScalingConfigurationRequest::~DeleteScalingConfigurationRequest()
 {}

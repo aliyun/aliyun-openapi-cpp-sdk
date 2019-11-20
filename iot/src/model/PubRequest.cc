@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::PubRequest;
 
 PubRequest::PubRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "Pub")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PubRequest::~PubRequest()
 {}

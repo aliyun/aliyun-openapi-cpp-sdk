@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ModifyDBInstanceMaintainTimeRequest;
 
 ModifyDBInstanceMaintainTimeRequest::ModifyDBInstanceMaintainTimeRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ModifyDBInstanceMaintainTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceMaintainTimeRequest::~ModifyDBInstanceMaintainTimeRequest()
 {}

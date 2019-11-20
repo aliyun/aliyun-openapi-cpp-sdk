@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StopLiveDomainRequest;
 
 StopLiveDomainRequest::StopLiveDomainRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StopLiveDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopLiveDomainRequest::~StopLiveDomainRequest()
 {}

@@ -24,7 +24,7 @@ using namespace AlibabaCloud::Adb::Model;
 
 namespace
 {
-	const std::string SERVICE_NAME = "adb";
+	const std::string SERVICE_NAME = "ads";
 }
 
 AdbClient::AdbClient(const Credentials &credentials, const ClientConfiguration &configuration) :

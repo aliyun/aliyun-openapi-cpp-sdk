@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UnbindOutputBucketRequest;
 
 UnbindOutputBucketRequest::UnbindOutputBucketRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UnbindOutputBucket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindOutputBucketRequest::~UnbindOutputBucketRequest()
 {}

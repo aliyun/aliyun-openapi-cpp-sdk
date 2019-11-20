@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::RegisterPhotoRequest;
 
 RegisterPhotoRequest::RegisterPhotoRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "RegisterPhoto")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegisterPhotoRequest::~RegisterPhotoRequest()
 {}

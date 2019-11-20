@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListRolesRequest;
 
 ListRolesRequest::ListRolesRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListRoles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRolesRequest::~ListRolesRequest()
 {}

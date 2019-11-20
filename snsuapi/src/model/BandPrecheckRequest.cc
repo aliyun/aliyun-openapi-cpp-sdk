@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::BandPrecheckRequest;
 
 BandPrecheckRequest::BandPrecheckRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "BandPrecheck")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BandPrecheckRequest::~BandPrecheckRequest()
 {}

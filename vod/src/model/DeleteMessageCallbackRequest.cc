@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteMessageCallbackRequest;
 
 DeleteMessageCallbackRequest::DeleteMessageCallbackRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteMessageCallback")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMessageCallbackRequest::~DeleteMessageCallbackRequest()
 {}

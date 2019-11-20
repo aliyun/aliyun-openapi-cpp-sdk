@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryCoverPipelineListRequest;
 
 QueryCoverPipelineListRequest::QueryCoverPipelineListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryCoverPipelineList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCoverPipelineListRequest::~QueryCoverPipelineListRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetTaskListRequest;
 
 GetTaskListRequest::GetTaskListRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetTaskList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTaskListRequest::~GetTaskListRequest()
 {}

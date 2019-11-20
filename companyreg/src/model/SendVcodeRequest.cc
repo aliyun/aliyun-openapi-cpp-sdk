@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::SendVcodeRequest;
 
 SendVcodeRequest::SendVcodeRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "SendVcode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendVcodeRequest::~SendVcodeRequest()
 {}

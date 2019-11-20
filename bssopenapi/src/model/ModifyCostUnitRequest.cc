@@ -35,13 +35,12 @@ std::vector<ModifyCostUnitRequest::UnitEntityList> ModifyCostUnitRequest::getUni
 void ModifyCostUnitRequest::setUnitEntityList(const std::vector<UnitEntityList>& unitEntityList)
 {
 	unitEntityList_ = unitEntityList;
-	int i = 0;
-	for(int i = 0; i!= unitEntityList.size(); i++)	{
-		auto obj = unitEntityList.at(i);
-		std::string str ="UnitEntityList."+ std::to_string(i);
-		setCoreParameter(str + ".NewUnitName", obj.newUnitName);
-		setCoreParameter(str + ".UnitId", std::to_string(obj.unitId));
-		setCoreParameter(str + ".OwnerUid", std::to_string(obj.ownerUid));
+	for(int dep1 = 0; dep1!= unitEntityList.size(); dep1++) {
+		auto unitEntityListObj = unitEntityList.at(dep1);
+		std::string unitEntityListObjStr = "UnitEntityList." + std::to_string(dep1);
+		setCoreParameter(unitEntityListObjStr + ".NewUnitName", unitEntityListObj.newUnitName);
+		setCoreParameter(unitEntityListObjStr + ".UnitId", std::to_string(unitEntityListObj.unitId));
+		setCoreParameter(unitEntityListObjStr + ".OwnerUid", std::to_string(unitEntityListObj.ownerUid));
 	}
 }
 

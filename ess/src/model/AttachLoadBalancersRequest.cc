@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::AttachLoadBalancersRequest;
 
 AttachLoadBalancersRequest::AttachLoadBalancersRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "AttachLoadBalancers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachLoadBalancersRequest::~AttachLoadBalancersRequest()
 {}
@@ -66,8 +68,8 @@ std::vector<std::string> AttachLoadBalancersRequest::getLoadBalancer()const
 void AttachLoadBalancersRequest::setLoadBalancer(const std::vector<std::string>& loadBalancer)
 {
 	loadBalancer_ = loadBalancer;
-	for(int i = 0; i!= loadBalancer.size(); i++)
-		setCoreParameter("LoadBalancer."+ std::to_string(i), loadBalancer.at(i));
+	for(int dep1 = 0; dep1!= loadBalancer.size(); dep1++)
+		setCoreParameter("LoadBalancer."+ std::to_string(dep1), loadBalancer.at(dep1));
 }
 
 std::string AttachLoadBalancersRequest::getResourceOwnerAccount()const

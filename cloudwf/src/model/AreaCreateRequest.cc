@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::AreaCreateRequest;
 
 AreaCreateRequest::AreaCreateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "AreaCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AreaCreateRequest::~AreaCreateRequest()
 {}

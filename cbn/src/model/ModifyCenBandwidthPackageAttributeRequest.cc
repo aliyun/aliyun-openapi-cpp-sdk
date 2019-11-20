@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::ModifyCenBandwidthPackageAttributeRequest;
 
 ModifyCenBandwidthPackageAttributeRequest::ModifyCenBandwidthPackageAttributeRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "ModifyCenBandwidthPackageAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCenBandwidthPackageAttributeRequest::~ModifyCenBandwidthPackageAttributeRequest()
 {}

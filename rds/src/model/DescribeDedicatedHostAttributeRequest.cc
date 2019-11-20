@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDedicatedHostAttributeRequest;
 
 DescribeDedicatedHostAttributeRequest::DescribeDedicatedHostAttributeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDedicatedHostAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDedicatedHostAttributeRequest::~DescribeDedicatedHostAttributeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeNetworkInterfacesRequest;
 
 DescribeNetworkInterfacesRequest::DescribeNetworkInterfacesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeNetworkInterfaces")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNetworkInterfacesRequest::~DescribeNetworkInterfacesRequest()
 {}
@@ -121,12 +123,11 @@ std::vector<DescribeNetworkInterfacesRequest::Tag> DescribeNetworkInterfacesRequ
 void DescribeNetworkInterfacesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
 	}
 }
 
@@ -193,8 +194,8 @@ std::vector<std::string> DescribeNetworkInterfacesRequest::getPrivateIpAddress()
 void DescribeNetworkInterfacesRequest::setPrivateIpAddress(const std::vector<std::string>& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	for(int i = 0; i!= privateIpAddress.size(); i++)
-		setCoreParameter("PrivateIpAddress."+ std::to_string(i), privateIpAddress.at(i));
+	for(int dep1 = 0; dep1!= privateIpAddress.size(); dep1++)
+		setCoreParameter("PrivateIpAddress."+ std::to_string(dep1), privateIpAddress.at(dep1));
 }
 
 std::string DescribeNetworkInterfacesRequest::getInstanceId()const
@@ -238,7 +239,7 @@ std::vector<std::string> DescribeNetworkInterfacesRequest::getNetworkInterfaceId
 void DescribeNetworkInterfacesRequest::setNetworkInterfaceId(const std::vector<std::string>& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	for(int i = 0; i!= networkInterfaceId.size(); i++)
-		setCoreParameter("NetworkInterfaceId."+ std::to_string(i), networkInterfaceId.at(i));
+	for(int dep1 = 0; dep1!= networkInterfaceId.size(); dep1++)
+		setCoreParameter("NetworkInterfaceId."+ std::to_string(dep1), networkInterfaceId.at(dep1));
 }
 

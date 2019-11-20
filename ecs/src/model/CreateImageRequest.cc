@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateImageRequest;
 
 CreateImageRequest::CreateImageRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateImageRequest::~CreateImageRequest()
 {}
@@ -33,14 +35,13 @@ std::vector<CreateImageRequest::DiskDeviceMapping> CreateImageRequest::getDiskDe
 void CreateImageRequest::setDiskDeviceMapping(const std::vector<DiskDeviceMapping>& diskDeviceMapping)
 {
 	diskDeviceMapping_ = diskDeviceMapping;
-	int i = 0;
-	for(int i = 0; i!= diskDeviceMapping.size(); i++)	{
-		auto obj = diskDeviceMapping.at(i);
-		std::string str ="DiskDeviceMapping."+ std::to_string(i);
-		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
-		setCoreParameter(str + ".Size", std::to_string(obj.size));
-		setCoreParameter(str + ".DiskType", obj.diskType);
-		setCoreParameter(str + ".Device", obj.device);
+	for(int dep1 = 0; dep1!= diskDeviceMapping.size(); dep1++) {
+		auto diskDeviceMappingObj = diskDeviceMapping.at(dep1);
+		std::string diskDeviceMappingObjStr = "DiskDeviceMapping." + std::to_string(dep1);
+		setCoreParameter(diskDeviceMappingObjStr + ".SnapshotId", diskDeviceMappingObj.snapshotId);
+		setCoreParameter(diskDeviceMappingObjStr + ".Size", std::to_string(diskDeviceMappingObj.size));
+		setCoreParameter(diskDeviceMappingObjStr + ".DiskType", diskDeviceMappingObj.diskType);
+		setCoreParameter(diskDeviceMappingObjStr + ".Device", diskDeviceMappingObj.device);
 	}
 }
 
@@ -140,12 +141,11 @@ std::vector<CreateImageRequest::Tag> CreateImageRequest::getTag()const
 void CreateImageRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

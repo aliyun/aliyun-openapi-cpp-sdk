@@ -231,6 +231,42 @@ SmartagClient::AddNetworkOptimizationSettingOutcomeCallable SmartagClient::addNe
 	return task->get_future();
 }
 
+SmartagClient::AddSagCidrOutcome SmartagClient::addSagCidr(const AddSagCidrRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddSagCidrOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddSagCidrOutcome(AddSagCidrResult(outcome.result()));
+	else
+		return AddSagCidrOutcome(outcome.error());
+}
+
+void SmartagClient::addSagCidrAsync(const AddSagCidrRequest& request, const AddSagCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addSagCidr(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::AddSagCidrOutcomeCallable SmartagClient::addSagCidrCallable(const AddSagCidrRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddSagCidrOutcome()>>(
+			[this, request]()
+			{
+			return this->addSagCidr(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SmartagClient::AddSnatEntryOutcome SmartagClient::addSnatEntry(const AddSnatEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,42 @@ SmartagClient::AttachNetworkOptimizationSagsOutcomeCallable SmartagClient::attac
 			[this, request]()
 			{
 			return this->attachNetworkOptimizationSags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::BindSerialNumberOutcome SmartagClient::bindSerialNumber(const BindSerialNumberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindSerialNumberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindSerialNumberOutcome(BindSerialNumberResult(outcome.result()));
+	else
+		return BindSerialNumberOutcome(outcome.error());
+}
+
+void SmartagClient::bindSerialNumberAsync(const BindSerialNumberRequest& request, const BindSerialNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindSerialNumber(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::BindSerialNumberOutcomeCallable SmartagClient::bindSerialNumberCallable(const BindSerialNumberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindSerialNumberOutcome()>>(
+			[this, request]()
+			{
+			return this->bindSerialNumber(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -657,6 +729,42 @@ SmartagClient::CreateFlowLogOutcomeCallable SmartagClient::createFlowLogCallable
 			[this, request]()
 			{
 			return this->createFlowLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::CreateHealthCheckOutcome SmartagClient::createHealthCheck(const CreateHealthCheckRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateHealthCheckOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateHealthCheckOutcome(CreateHealthCheckResult(outcome.result()));
+	else
+		return CreateHealthCheckOutcome(outcome.error());
+}
+
+void SmartagClient::createHealthCheckAsync(const CreateHealthCheckRequest& request, const CreateHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createHealthCheck(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::CreateHealthCheckOutcomeCallable SmartagClient::createHealthCheckCallable(const CreateHealthCheckRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateHealthCheckOutcome()>>(
+			[this, request]()
+			{
+			return this->createHealthCheck(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1203,6 +1311,42 @@ SmartagClient::DeleteFlowLogOutcomeCallable SmartagClient::deleteFlowLogCallable
 	return task->get_future();
 }
 
+SmartagClient::DeleteHealthCheckOutcome SmartagClient::deleteHealthCheck(const DeleteHealthCheckRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteHealthCheckOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteHealthCheckOutcome(DeleteHealthCheckResult(outcome.result()));
+	else
+		return DeleteHealthCheckOutcome(outcome.error());
+}
+
+void SmartagClient::deleteHealthCheckAsync(const DeleteHealthCheckRequest& request, const DeleteHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteHealthCheck(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DeleteHealthCheckOutcomeCallable SmartagClient::deleteHealthCheckCallable(const DeleteHealthCheckRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteHealthCheckOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteHealthCheck(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SmartagClient::DeleteNetworkOptimizationOutcome SmartagClient::deleteNetworkOptimization(const DeleteNetworkOptimizationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1383,6 +1527,42 @@ SmartagClient::DeleteQosPolicyOutcomeCallable SmartagClient::deleteQosPolicyCall
 	return task->get_future();
 }
 
+SmartagClient::DeleteRouteDistributionStrategyOutcome SmartagClient::deleteRouteDistributionStrategy(const DeleteRouteDistributionStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRouteDistributionStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRouteDistributionStrategyOutcome(DeleteRouteDistributionStrategyResult(outcome.result()));
+	else
+		return DeleteRouteDistributionStrategyOutcome(outcome.error());
+}
+
+void SmartagClient::deleteRouteDistributionStrategyAsync(const DeleteRouteDistributionStrategyRequest& request, const DeleteRouteDistributionStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRouteDistributionStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DeleteRouteDistributionStrategyOutcomeCallable SmartagClient::deleteRouteDistributionStrategyCallable(const DeleteRouteDistributionStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRouteDistributionStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRouteDistributionStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SmartagClient::DeleteSAGLinkLevelHaOutcome SmartagClient::deleteSAGLinkLevelHa(const DeleteSAGLinkLevelHaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1593,42 @@ SmartagClient::DeleteSAGLinkLevelHaOutcomeCallable SmartagClient::deleteSAGLinkL
 			[this, request]()
 			{
 			return this->deleteSAGLinkLevelHa(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::DeleteSagCidrOutcome SmartagClient::deleteSagCidr(const DeleteSagCidrRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSagCidrOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSagCidrOutcome(DeleteSagCidrResult(outcome.result()));
+	else
+		return DeleteSagCidrOutcome(outcome.error());
+}
+
+void SmartagClient::deleteSagCidrAsync(const DeleteSagCidrRequest& request, const DeleteSagCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSagCidr(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DeleteSagCidrOutcomeCallable SmartagClient::deleteSagCidrCallable(const DeleteSagCidrRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSagCidrOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSagCidr(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1851,6 +2067,78 @@ SmartagClient::DescribeGrantSagRulesOutcomeCallable SmartagClient::describeGrant
 	return task->get_future();
 }
 
+SmartagClient::DescribeHealthCheckAttributeOutcome SmartagClient::describeHealthCheckAttribute(const DescribeHealthCheckAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHealthCheckAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHealthCheckAttributeOutcome(DescribeHealthCheckAttributeResult(outcome.result()));
+	else
+		return DescribeHealthCheckAttributeOutcome(outcome.error());
+}
+
+void SmartagClient::describeHealthCheckAttributeAsync(const DescribeHealthCheckAttributeRequest& request, const DescribeHealthCheckAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHealthCheckAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DescribeHealthCheckAttributeOutcomeCallable SmartagClient::describeHealthCheckAttributeCallable(const DescribeHealthCheckAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHealthCheckAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHealthCheckAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::DescribeHealthChecksOutcome SmartagClient::describeHealthChecks(const DescribeHealthChecksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHealthChecksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHealthChecksOutcome(DescribeHealthChecksResult(outcome.result()));
+	else
+		return DescribeHealthChecksOutcome(outcome.error());
+}
+
+void SmartagClient::describeHealthChecksAsync(const DescribeHealthChecksRequest& request, const DescribeHealthChecksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHealthChecks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DescribeHealthChecksOutcomeCallable SmartagClient::describeHealthChecksCallable(const DescribeHealthChecksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHealthChecksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHealthChecks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SmartagClient::DescribeNetworkOptimizationSagsOutcome SmartagClient::describeNetworkOptimizationSags(const DescribeNetworkOptimizationSagsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1953,6 +2241,114 @@ SmartagClient::DescribeNetworkOptimizationsOutcomeCallable SmartagClient::descri
 			[this, request]()
 			{
 			return this->describeNetworkOptimizations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::DescribePbrInterfacesOutcome SmartagClient::describePbrInterfaces(const DescribePbrInterfacesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePbrInterfacesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePbrInterfacesOutcome(DescribePbrInterfacesResult(outcome.result()));
+	else
+		return DescribePbrInterfacesOutcome(outcome.error());
+}
+
+void SmartagClient::describePbrInterfacesAsync(const DescribePbrInterfacesRequest& request, const DescribePbrInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePbrInterfaces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DescribePbrInterfacesOutcomeCallable SmartagClient::describePbrInterfacesCallable(const DescribePbrInterfacesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePbrInterfacesOutcome()>>(
+			[this, request]()
+			{
+			return this->describePbrInterfaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::DescribePbrRulesOutcome SmartagClient::describePbrRules(const DescribePbrRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePbrRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePbrRulesOutcome(DescribePbrRulesResult(outcome.result()));
+	else
+		return DescribePbrRulesOutcome(outcome.error());
+}
+
+void SmartagClient::describePbrRulesAsync(const DescribePbrRulesRequest& request, const DescribePbrRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePbrRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DescribePbrRulesOutcomeCallable SmartagClient::describePbrRulesCallable(const DescribePbrRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePbrRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describePbrRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::DescribePolicyBasedRoutingsOutcome SmartagClient::describePolicyBasedRoutings(const DescribePolicyBasedRoutingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePolicyBasedRoutingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePolicyBasedRoutingsOutcome(DescribePolicyBasedRoutingsResult(outcome.result()));
+	else
+		return DescribePolicyBasedRoutingsOutcome(outcome.error());
+}
+
+void SmartagClient::describePolicyBasedRoutingsAsync(const DescribePolicyBasedRoutingsRequest& request, const DescribePolicyBasedRoutingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePolicyBasedRoutings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DescribePolicyBasedRoutingsOutcomeCallable SmartagClient::describePolicyBasedRoutingsCallable(const DescribePolicyBasedRoutingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePolicyBasedRoutingsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePolicyBasedRoutings(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2103,6 +2499,78 @@ SmartagClient::DescribeRegionsOutcomeCallable SmartagClient::describeRegionsCall
 	return task->get_future();
 }
 
+SmartagClient::DescribeRouteDistributionStrategiesOutcome SmartagClient::describeRouteDistributionStrategies(const DescribeRouteDistributionStrategiesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRouteDistributionStrategiesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRouteDistributionStrategiesOutcome(DescribeRouteDistributionStrategiesResult(outcome.result()));
+	else
+		return DescribeRouteDistributionStrategiesOutcome(outcome.error());
+}
+
+void SmartagClient::describeRouteDistributionStrategiesAsync(const DescribeRouteDistributionStrategiesRequest& request, const DescribeRouteDistributionStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRouteDistributionStrategies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DescribeRouteDistributionStrategiesOutcomeCallable SmartagClient::describeRouteDistributionStrategiesCallable(const DescribeRouteDistributionStrategiesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRouteDistributionStrategiesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRouteDistributionStrategies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::DescribeSagECRouteBackupAttributeOutcome SmartagClient::describeSagECRouteBackupAttribute(const DescribeSagECRouteBackupAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSagECRouteBackupAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSagECRouteBackupAttributeOutcome(DescribeSagECRouteBackupAttributeResult(outcome.result()));
+	else
+		return DescribeSagECRouteBackupAttributeOutcome(outcome.error());
+}
+
+void SmartagClient::describeSagECRouteBackupAttributeAsync(const DescribeSagECRouteBackupAttributeRequest& request, const DescribeSagECRouteBackupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSagECRouteBackupAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DescribeSagECRouteBackupAttributeOutcomeCallable SmartagClient::describeSagECRouteBackupAttributeCallable(const DescribeSagECRouteBackupAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSagECRouteBackupAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSagECRouteBackupAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SmartagClient::DescribeSagOnlineClientStatisticsOutcome SmartagClient::describeSagOnlineClientStatistics(const DescribeSagOnlineClientStatisticsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2133,6 +2601,42 @@ SmartagClient::DescribeSagOnlineClientStatisticsOutcomeCallable SmartagClient::d
 			[this, request]()
 			{
 			return this->describeSagOnlineClientStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::DescribeSagRemoteAccessOutcome SmartagClient::describeSagRemoteAccess(const DescribeSagRemoteAccessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSagRemoteAccessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSagRemoteAccessOutcome(DescribeSagRemoteAccessResult(outcome.result()));
+	else
+		return DescribeSagRemoteAccessOutcome(outcome.error());
+}
+
+void SmartagClient::describeSagRemoteAccessAsync(const DescribeSagRemoteAccessRequest& request, const DescribeSagRemoteAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSagRemoteAccess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::DescribeSagRemoteAccessOutcomeCallable SmartagClient::describeSagRemoteAccessCallable(const DescribeSagRemoteAccessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSagRemoteAccessOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSagRemoteAccess(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3219,6 +3723,42 @@ SmartagClient::ModifyFlowLogAttributeOutcomeCallable SmartagClient::modifyFlowLo
 	return task->get_future();
 }
 
+SmartagClient::ModifyHealthCheckOutcome SmartagClient::modifyHealthCheck(const ModifyHealthCheckRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyHealthCheckOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyHealthCheckOutcome(ModifyHealthCheckResult(outcome.result()));
+	else
+		return ModifyHealthCheckOutcome(outcome.error());
+}
+
+void SmartagClient::modifyHealthCheckAsync(const ModifyHealthCheckRequest& request, const ModifyHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyHealthCheck(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::ModifyHealthCheckOutcomeCallable SmartagClient::modifyHealthCheckCallable(const ModifyHealthCheckRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyHealthCheckOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyHealthCheck(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SmartagClient::ModifyNetworkOptimizationOutcome SmartagClient::modifyNetworkOptimization(const ModifyNetworkOptimizationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3357,6 +3897,114 @@ SmartagClient::ModifyQosPolicyOutcomeCallable SmartagClient::modifyQosPolicyCall
 			[this, request]()
 			{
 			return this->modifyQosPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::ModifyRouteDistributionStrategyOutcome SmartagClient::modifyRouteDistributionStrategy(const ModifyRouteDistributionStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyRouteDistributionStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyRouteDistributionStrategyOutcome(ModifyRouteDistributionStrategyResult(outcome.result()));
+	else
+		return ModifyRouteDistributionStrategyOutcome(outcome.error());
+}
+
+void SmartagClient::modifyRouteDistributionStrategyAsync(const ModifyRouteDistributionStrategyRequest& request, const ModifyRouteDistributionStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyRouteDistributionStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::ModifyRouteDistributionStrategyOutcomeCallable SmartagClient::modifyRouteDistributionStrategyCallable(const ModifyRouteDistributionStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyRouteDistributionStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyRouteDistributionStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::ModifySagCidrOutcome SmartagClient::modifySagCidr(const ModifySagCidrRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySagCidrOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySagCidrOutcome(ModifySagCidrResult(outcome.result()));
+	else
+		return ModifySagCidrOutcome(outcome.error());
+}
+
+void SmartagClient::modifySagCidrAsync(const ModifySagCidrRequest& request, const ModifySagCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySagCidr(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::ModifySagCidrOutcomeCallable SmartagClient::modifySagCidrCallable(const ModifySagCidrRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySagCidrOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySagCidr(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::ModifySagECRouteBackupOutcome SmartagClient::modifySagECRouteBackup(const ModifySagECRouteBackupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySagECRouteBackupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySagECRouteBackupOutcome(ModifySagECRouteBackupResult(outcome.result()));
+	else
+		return ModifySagECRouteBackupOutcome(outcome.error());
+}
+
+void SmartagClient::modifySagECRouteBackupAsync(const ModifySagECRouteBackupRequest& request, const ModifySagECRouteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySagECRouteBackup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::ModifySagECRouteBackupOutcomeCallable SmartagClient::modifySagECRouteBackupCallable(const ModifySagECRouteBackupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySagECRouteBackupOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySagECRouteBackup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3537,6 +4185,42 @@ SmartagClient::ModifySmartAccessGatewayUpBandwidthOutcomeCallable SmartagClient:
 			[this, request]()
 			{
 			return this->modifySmartAccessGatewayUpBandwidth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SmartagClient::OrchestrateSagECRouteBackupOutcome SmartagClient::orchestrateSagECRouteBackup(const OrchestrateSagECRouteBackupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OrchestrateSagECRouteBackupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OrchestrateSagECRouteBackupOutcome(OrchestrateSagECRouteBackupResult(outcome.result()));
+	else
+		return OrchestrateSagECRouteBackupOutcome(outcome.error());
+}
+
+void SmartagClient::orchestrateSagECRouteBackupAsync(const OrchestrateSagECRouteBackupRequest& request, const OrchestrateSagECRouteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, orchestrateSagECRouteBackup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmartagClient::OrchestrateSagECRouteBackupOutcomeCallable SmartagClient::orchestrateSagECRouteBackupCallable(const OrchestrateSagECRouteBackupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OrchestrateSagECRouteBackupOutcome()>>(
+			[this, request]()
+			{
+			return this->orchestrateSagECRouteBackup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

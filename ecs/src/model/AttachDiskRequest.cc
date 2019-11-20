@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::AttachDiskRequest;
 
 AttachDiskRequest::AttachDiskRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "AttachDisk")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachDiskRequest::~AttachDiskRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DeleteDedicatedHostGroupRequest;
 
 DeleteDedicatedHostGroupRequest::DeleteDedicatedHostGroupRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DeleteDedicatedHostGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDedicatedHostGroupRequest::~DeleteDedicatedHostGroupRequest()
 {}

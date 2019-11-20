@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyLaunchTemplateDefaultVersionRequest;
 
 ModifyLaunchTemplateDefaultVersionRequest::ModifyLaunchTemplateDefaultVersionRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyLaunchTemplateDefaultVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyLaunchTemplateDefaultVersionRequest::~ModifyLaunchTemplateDefaultVersionRequest()
 {}

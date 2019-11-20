@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::ValidateConnectorRequest;
 
 ValidateConnectorRequest::ValidateConnectorRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "ValidateConnector")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ValidateConnectorRequest::~ValidateConnectorRequest()
 {}

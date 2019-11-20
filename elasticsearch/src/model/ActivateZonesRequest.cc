@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::ActivateZonesRequest;
 
 ActivateZonesRequest::ActivateZonesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/actions/recover-zones");
+	setMethod(HttpRequest::Method::Post);
+}
 
 ActivateZonesRequest::~ActivateZonesRequest()
 {}

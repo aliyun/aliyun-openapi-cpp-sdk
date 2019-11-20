@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeZonesRequest;
 
 DescribeZonesRequest::DescribeZonesRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeZones")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeZonesRequest::~DescribeZonesRequest()
 {}

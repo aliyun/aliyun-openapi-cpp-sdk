@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetNumberRegionInfoRequest;
 
 GetNumberRegionInfoRequest::GetNumberRegionInfoRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetNumberRegionInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetNumberRegionInfoRequest::~GetNumberRegionInfoRequest()
 {}

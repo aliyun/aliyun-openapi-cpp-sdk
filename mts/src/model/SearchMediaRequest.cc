@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SearchMediaRequest;
 
 SearchMediaRequest::SearchMediaRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SearchMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchMediaRequest::~SearchMediaRequest()
 {}

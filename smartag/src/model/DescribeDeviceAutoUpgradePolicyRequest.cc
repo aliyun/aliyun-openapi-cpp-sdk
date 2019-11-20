@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeDeviceAutoUpgradePolicyRequest;
 
 DescribeDeviceAutoUpgradePolicyRequest::DescribeDeviceAutoUpgradePolicyRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeDeviceAutoUpgradePolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDeviceAutoUpgradePolicyRequest::~DescribeDeviceAutoUpgradePolicyRequest()
 {}

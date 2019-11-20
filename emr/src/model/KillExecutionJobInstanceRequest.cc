@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::KillExecutionJobInstanceRequest;
 
 KillExecutionJobInstanceRequest::KillExecutionJobInstanceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "KillExecutionJobInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 KillExecutionJobInstanceRequest::~KillExecutionJobInstanceRequest()
 {}

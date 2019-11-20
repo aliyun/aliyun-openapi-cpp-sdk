@@ -121,6 +121,24 @@ void GetRegionConfigurationResult::parse(const std::string &payload)
 			diskObject.scaleLimit = std::stoi(resultNodemasterDiskListdisk["scaleLimit"].asString());
 		result_.masterDiskList.push_back(diskObject);
 	}
+	auto allsupportVersionsNode = resultNode["supportVersions"]["CategoryEntity"];
+	for (auto resultNodesupportVersionsCategoryEntity : allsupportVersionsNode)
+	{
+		Result::CategoryEntity categoryEntityObject;
+		if(!resultNodesupportVersionsCategoryEntity["instanceCategory"].isNull())
+			categoryEntityObject.instanceCategory = resultNodesupportVersionsCategoryEntity["instanceCategory"].asString();
+		auto allsupportVersionListNode = allsupportVersionsNode["supportVersionList"]["VersionEntity"];
+		for (auto allsupportVersionsNodesupportVersionListVersionEntity : allsupportVersionListNode)
+		{
+			Result::CategoryEntity::VersionEntity supportVersionListObject;
+			if(!allsupportVersionsNodesupportVersionListVersionEntity["key"].isNull())
+				supportVersionListObject.key = allsupportVersionsNodesupportVersionListVersionEntity["key"].asString();
+			if(!allsupportVersionsNodesupportVersionListVersionEntity["value"].isNull())
+				supportVersionListObject.value = allsupportVersionsNodesupportVersionListVersionEntity["value"].asString();
+			categoryEntityObject.supportVersionList.push_back(supportVersionListObject);
+		}
+		result_.supportVersions.push_back(categoryEntityObject);
+	}
 	auto nodeNode = resultNode["node"];
 	if(!nodeNode["minAmount"].isNull())
 		result_.node.minAmount = std::stoi(nodeNode["minAmount"].asString());

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteWatermarkRequest;
 
 DeleteWatermarkRequest::DeleteWatermarkRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteWatermark")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteWatermarkRequest::~DeleteWatermarkRequest()
 {}

@@ -130,6 +130,8 @@
 #include "model/DescribeRoleZoneInfoResult.h"
 #include "model/DescribeRunningLogRecordsRequest.h"
 #include "model/DescribeRunningLogRecordsResult.h"
+#include "model/DescribeSecurityGroupConfigurationRequest.h"
+#include "model/DescribeSecurityGroupConfigurationResult.h"
 #include "model/DescribeSecurityIpsRequest.h"
 #include "model/DescribeSecurityIpsResult.h"
 #include "model/DescribeShardingNetworkAddressRequest.h"
@@ -140,6 +142,8 @@
 #include "model/DescribeStaticVerificationListResult.h"
 #include "model/DescribeStrategyRequest.h"
 #include "model/DescribeStrategyResult.h"
+#include "model/DescribeTagsRequest.h"
+#include "model/DescribeTagsResult.h"
 #include "model/DescribeVerificationListRequest.h"
 #include "model/DescribeVerificationListResult.h"
 #include "model/DestroyInstanceRequest.h"
@@ -188,6 +192,8 @@
 #include "model/ModifyInstanceVpcAuthModeResult.h"
 #include "model/ModifyNodeSpecRequest.h"
 #include "model/ModifyNodeSpecResult.h"
+#include "model/ModifyParameterRequest.h"
+#include "model/ModifyParameterResult.h"
 #include "model/ModifyParametersRequest.h"
 #include "model/ModifyParametersResult.h"
 #include "model/ModifyReplicaDescriptionRequest.h"
@@ -200,6 +206,8 @@
 #include "model/ModifyReplicaRelationResult.h"
 #include "model/ModifyReplicaVerificationModeRequest.h"
 #include "model/ModifyReplicaVerificationModeResult.h"
+#include "model/ModifySecurityGroupConfigurationRequest.h"
+#include "model/ModifySecurityGroupConfigurationResult.h"
 #include "model/ModifySecurityIpsRequest.h"
 #include "model/ModifySecurityIpsResult.h"
 #include "model/ReleaseNodePrivateNetworkAddressRequest.h"
@@ -403,6 +411,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRunningLogRecordsResult> DescribeRunningLogRecordsOutcome;
 			typedef std::future<DescribeRunningLogRecordsOutcome> DescribeRunningLogRecordsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeRunningLogRecordsRequest&, const DescribeRunningLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRunningLogRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSecurityGroupConfigurationResult> DescribeSecurityGroupConfigurationOutcome;
+			typedef std::future<DescribeSecurityGroupConfigurationOutcome> DescribeSecurityGroupConfigurationOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeSecurityGroupConfigurationRequest&, const DescribeSecurityGroupConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupConfigurationAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSecurityIpsResult> DescribeSecurityIpsOutcome;
 			typedef std::future<DescribeSecurityIpsOutcome> DescribeSecurityIpsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeSecurityIpsRequest&, const DescribeSecurityIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityIpsAsyncHandler;
@@ -418,6 +429,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeStrategyResult> DescribeStrategyOutcome;
 			typedef std::future<DescribeStrategyOutcome> DescribeStrategyOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeStrategyRequest&, const DescribeStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStrategyAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTagsResult> DescribeTagsOutcome;
+			typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeTagsRequest&, const DescribeTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVerificationListResult> DescribeVerificationListOutcome;
 			typedef std::future<DescribeVerificationListOutcome> DescribeVerificationListOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeVerificationListRequest&, const DescribeVerificationListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVerificationListAsyncHandler;
@@ -490,6 +504,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyNodeSpecResult> ModifyNodeSpecOutcome;
 			typedef std::future<ModifyNodeSpecOutcome> ModifyNodeSpecOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyNodeSpecRequest&, const ModifyNodeSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodeSpecAsyncHandler;
+			typedef Outcome<Error, Model::ModifyParameterResult> ModifyParameterOutcome;
+			typedef std::future<ModifyParameterOutcome> ModifyParameterOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::ModifyParameterRequest&, const ModifyParameterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParameterAsyncHandler;
 			typedef Outcome<Error, Model::ModifyParametersResult> ModifyParametersOutcome;
 			typedef std::future<ModifyParametersOutcome> ModifyParametersOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyParametersRequest&, const ModifyParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParametersAsyncHandler;
@@ -508,6 +525,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyReplicaVerificationModeResult> ModifyReplicaVerificationModeOutcome;
 			typedef std::future<ModifyReplicaVerificationModeOutcome> ModifyReplicaVerificationModeOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyReplicaVerificationModeRequest&, const ModifyReplicaVerificationModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReplicaVerificationModeAsyncHandler;
+			typedef Outcome<Error, Model::ModifySecurityGroupConfigurationResult> ModifySecurityGroupConfigurationOutcome;
+			typedef std::future<ModifySecurityGroupConfigurationOutcome> ModifySecurityGroupConfigurationOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::ModifySecurityGroupConfigurationRequest&, const ModifySecurityGroupConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupConfigurationAsyncHandler;
 			typedef Outcome<Error, Model::ModifySecurityIpsResult> ModifySecurityIpsOutcome;
 			typedef std::future<ModifySecurityIpsOutcome> ModifySecurityIpsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifySecurityIpsRequest&, const ModifySecurityIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityIpsAsyncHandler;
@@ -723,6 +743,9 @@ namespace AlibabaCloud
 			DescribeRunningLogRecordsOutcome describeRunningLogRecords(const Model::DescribeRunningLogRecordsRequest &request)const;
 			void describeRunningLogRecordsAsync(const Model::DescribeRunningLogRecordsRequest& request, const DescribeRunningLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRunningLogRecordsOutcomeCallable describeRunningLogRecordsCallable(const Model::DescribeRunningLogRecordsRequest& request) const;
+			DescribeSecurityGroupConfigurationOutcome describeSecurityGroupConfiguration(const Model::DescribeSecurityGroupConfigurationRequest &request)const;
+			void describeSecurityGroupConfigurationAsync(const Model::DescribeSecurityGroupConfigurationRequest& request, const DescribeSecurityGroupConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSecurityGroupConfigurationOutcomeCallable describeSecurityGroupConfigurationCallable(const Model::DescribeSecurityGroupConfigurationRequest& request) const;
 			DescribeSecurityIpsOutcome describeSecurityIps(const Model::DescribeSecurityIpsRequest &request)const;
 			void describeSecurityIpsAsync(const Model::DescribeSecurityIpsRequest& request, const DescribeSecurityIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSecurityIpsOutcomeCallable describeSecurityIpsCallable(const Model::DescribeSecurityIpsRequest& request) const;
@@ -738,6 +761,9 @@ namespace AlibabaCloud
 			DescribeStrategyOutcome describeStrategy(const Model::DescribeStrategyRequest &request)const;
 			void describeStrategyAsync(const Model::DescribeStrategyRequest& request, const DescribeStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStrategyOutcomeCallable describeStrategyCallable(const Model::DescribeStrategyRequest& request) const;
+			DescribeTagsOutcome describeTags(const Model::DescribeTagsRequest &request)const;
+			void describeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTagsOutcomeCallable describeTagsCallable(const Model::DescribeTagsRequest& request) const;
 			DescribeVerificationListOutcome describeVerificationList(const Model::DescribeVerificationListRequest &request)const;
 			void describeVerificationListAsync(const Model::DescribeVerificationListRequest& request, const DescribeVerificationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVerificationListOutcomeCallable describeVerificationListCallable(const Model::DescribeVerificationListRequest& request) const;
@@ -810,6 +836,9 @@ namespace AlibabaCloud
 			ModifyNodeSpecOutcome modifyNodeSpec(const Model::ModifyNodeSpecRequest &request)const;
 			void modifyNodeSpecAsync(const Model::ModifyNodeSpecRequest& request, const ModifyNodeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyNodeSpecOutcomeCallable modifyNodeSpecCallable(const Model::ModifyNodeSpecRequest& request) const;
+			ModifyParameterOutcome modifyParameter(const Model::ModifyParameterRequest &request)const;
+			void modifyParameterAsync(const Model::ModifyParameterRequest& request, const ModifyParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyParameterOutcomeCallable modifyParameterCallable(const Model::ModifyParameterRequest& request) const;
 			ModifyParametersOutcome modifyParameters(const Model::ModifyParametersRequest &request)const;
 			void modifyParametersAsync(const Model::ModifyParametersRequest& request, const ModifyParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyParametersOutcomeCallable modifyParametersCallable(const Model::ModifyParametersRequest& request) const;
@@ -828,6 +857,9 @@ namespace AlibabaCloud
 			ModifyReplicaVerificationModeOutcome modifyReplicaVerificationMode(const Model::ModifyReplicaVerificationModeRequest &request)const;
 			void modifyReplicaVerificationModeAsync(const Model::ModifyReplicaVerificationModeRequest& request, const ModifyReplicaVerificationModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyReplicaVerificationModeOutcomeCallable modifyReplicaVerificationModeCallable(const Model::ModifyReplicaVerificationModeRequest& request) const;
+			ModifySecurityGroupConfigurationOutcome modifySecurityGroupConfiguration(const Model::ModifySecurityGroupConfigurationRequest &request)const;
+			void modifySecurityGroupConfigurationAsync(const Model::ModifySecurityGroupConfigurationRequest& request, const ModifySecurityGroupConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifySecurityGroupConfigurationOutcomeCallable modifySecurityGroupConfigurationCallable(const Model::ModifySecurityGroupConfigurationRequest& request) const;
 			ModifySecurityIpsOutcome modifySecurityIps(const Model::ModifySecurityIpsRequest &request)const;
 			void modifySecurityIpsAsync(const Model::ModifySecurityIpsRequest& request, const ModifySecurityIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySecurityIpsOutcomeCallable modifySecurityIpsCallable(const Model::ModifySecurityIpsRequest& request) const;

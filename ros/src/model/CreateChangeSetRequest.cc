@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::CreateChangeSetRequest;
 
 CreateChangeSetRequest::CreateChangeSetRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/changeSets");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateChangeSetRequest::~CreateChangeSetRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyRouteEntryRequest;
 
 ModifyRouteEntryRequest::ModifyRouteEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyRouteEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRouteEntryRequest::~ModifyRouteEntryRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::CreateDBInstanceRequest;
 
 CreateDBInstanceRequest::CreateDBInstanceRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "CreateDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDBInstanceRequest::~CreateDBInstanceRequest()
 {}

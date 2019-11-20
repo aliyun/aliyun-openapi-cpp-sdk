@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForDeletingDnsHostRequest;
 
 SaveSingleTaskForDeletingDnsHostRequest::SaveSingleTaskForDeletingDnsHostRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForDeletingDnsHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForDeletingDnsHostRequest::~SaveSingleTaskForDeletingDnsHostRequest()
 {}

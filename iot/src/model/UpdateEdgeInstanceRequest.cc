@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::UpdateEdgeInstanceRequest;
 
 UpdateEdgeInstanceRequest::UpdateEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "UpdateEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateEdgeInstanceRequest::~UpdateEdgeInstanceRequest()
 {}

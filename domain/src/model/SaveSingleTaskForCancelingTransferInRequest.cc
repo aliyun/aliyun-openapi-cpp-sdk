@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForCancelingTransferInRequest;
 
 SaveSingleTaskForCancelingTransferInRequest::SaveSingleTaskForCancelingTransferInRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForCancelingTransferIn")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForCancelingTransferInRequest::~SaveSingleTaskForCancelingTransferInRequest()
 {}

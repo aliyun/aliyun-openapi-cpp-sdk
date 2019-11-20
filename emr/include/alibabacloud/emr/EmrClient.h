@@ -106,6 +106,8 @@
 #include "model/CreateHostPoolResult.h"
 #include "model/CreateJobRequest.h"
 #include "model/CreateJobResult.h"
+#include "model/CreateMetaTablePreviewTaskRequest.h"
+#include "model/CreateMetaTablePreviewTaskResult.h"
 #include "model/CreateNavNodeRequest.h"
 #include "model/CreateNavNodeResult.h"
 #include "model/CreateNoteRequest.h"
@@ -280,6 +282,8 @@
 #include "model/DescribeKafkaBrokerResult.h"
 #include "model/DescribeKafkaReassignRequest.h"
 #include "model/DescribeKafkaReassignResult.h"
+#include "model/DescribeMetaTablePreviewTaskRequest.h"
+#include "model/DescribeMetaTablePreviewTaskResult.h"
 #include "model/DescribeNoteRequest.h"
 #include "model/DescribeNoteResult.h"
 #include "model/DescribeParagraphRequest.h"
@@ -304,6 +308,8 @@
 #include "model/DescribeWorkspaceResourceSettingResult.h"
 #include "model/DetachClusterForNoteRequest.h"
 #include "model/DetachClusterForNoteResult.h"
+#include "model/DumpMetaDataSourceForOuterRequest.h"
+#include "model/DumpMetaDataSourceForOuterResult.h"
 #include "model/GetAuditLogsRequest.h"
 #include "model/GetAuditLogsResult.h"
 #include "model/GetBackInfoRequest.h"
@@ -955,6 +961,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateJobResult> CreateJobOutcome;
 			typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::CreateJobRequest&, const CreateJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobAsyncHandler;
+			typedef Outcome<Error, Model::CreateMetaTablePreviewTaskResult> CreateMetaTablePreviewTaskOutcome;
+			typedef std::future<CreateMetaTablePreviewTaskOutcome> CreateMetaTablePreviewTaskOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::CreateMetaTablePreviewTaskRequest&, const CreateMetaTablePreviewTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetaTablePreviewTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateNavNodeResult> CreateNavNodeOutcome;
 			typedef std::future<CreateNavNodeOutcome> CreateNavNodeOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::CreateNavNodeRequest&, const CreateNavNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNavNodeAsyncHandler;
@@ -1216,6 +1225,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeKafkaReassignResult> DescribeKafkaReassignOutcome;
 			typedef std::future<DescribeKafkaReassignOutcome> DescribeKafkaReassignOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::DescribeKafkaReassignRequest&, const DescribeKafkaReassignOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaReassignAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMetaTablePreviewTaskResult> DescribeMetaTablePreviewTaskOutcome;
+			typedef std::future<DescribeMetaTablePreviewTaskOutcome> DescribeMetaTablePreviewTaskOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DescribeMetaTablePreviewTaskRequest&, const DescribeMetaTablePreviewTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetaTablePreviewTaskAsyncHandler;
 			typedef Outcome<Error, Model::DescribeNoteResult> DescribeNoteOutcome;
 			typedef std::future<DescribeNoteOutcome> DescribeNoteOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::DescribeNoteRequest&, const DescribeNoteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNoteAsyncHandler;
@@ -1252,6 +1264,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachClusterForNoteResult> DetachClusterForNoteOutcome;
 			typedef std::future<DetachClusterForNoteOutcome> DetachClusterForNoteOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::DetachClusterForNoteRequest&, const DetachClusterForNoteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachClusterForNoteAsyncHandler;
+			typedef Outcome<Error, Model::DumpMetaDataSourceForOuterResult> DumpMetaDataSourceForOuterOutcome;
+			typedef std::future<DumpMetaDataSourceForOuterOutcome> DumpMetaDataSourceForOuterOutcomeCallable;
+			typedef std::function<void(const EmrClient*, const Model::DumpMetaDataSourceForOuterRequest&, const DumpMetaDataSourceForOuterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DumpMetaDataSourceForOuterAsyncHandler;
 			typedef Outcome<Error, Model::GetAuditLogsResult> GetAuditLogsOutcome;
 			typedef std::future<GetAuditLogsOutcome> GetAuditLogsOutcomeCallable;
 			typedef std::function<void(const EmrClient*, const Model::GetAuditLogsRequest&, const GetAuditLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAuditLogsAsyncHandler;
@@ -2157,6 +2172,9 @@ namespace AlibabaCloud
 			CreateJobOutcome createJob(const Model::CreateJobRequest &request)const;
 			void createJobAsync(const Model::CreateJobRequest& request, const CreateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateJobOutcomeCallable createJobCallable(const Model::CreateJobRequest& request) const;
+			CreateMetaTablePreviewTaskOutcome createMetaTablePreviewTask(const Model::CreateMetaTablePreviewTaskRequest &request)const;
+			void createMetaTablePreviewTaskAsync(const Model::CreateMetaTablePreviewTaskRequest& request, const CreateMetaTablePreviewTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateMetaTablePreviewTaskOutcomeCallable createMetaTablePreviewTaskCallable(const Model::CreateMetaTablePreviewTaskRequest& request) const;
 			CreateNavNodeOutcome createNavNode(const Model::CreateNavNodeRequest &request)const;
 			void createNavNodeAsync(const Model::CreateNavNodeRequest& request, const CreateNavNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNavNodeOutcomeCallable createNavNodeCallable(const Model::CreateNavNodeRequest& request) const;
@@ -2418,6 +2436,9 @@ namespace AlibabaCloud
 			DescribeKafkaReassignOutcome describeKafkaReassign(const Model::DescribeKafkaReassignRequest &request)const;
 			void describeKafkaReassignAsync(const Model::DescribeKafkaReassignRequest& request, const DescribeKafkaReassignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeKafkaReassignOutcomeCallable describeKafkaReassignCallable(const Model::DescribeKafkaReassignRequest& request) const;
+			DescribeMetaTablePreviewTaskOutcome describeMetaTablePreviewTask(const Model::DescribeMetaTablePreviewTaskRequest &request)const;
+			void describeMetaTablePreviewTaskAsync(const Model::DescribeMetaTablePreviewTaskRequest& request, const DescribeMetaTablePreviewTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMetaTablePreviewTaskOutcomeCallable describeMetaTablePreviewTaskCallable(const Model::DescribeMetaTablePreviewTaskRequest& request) const;
 			DescribeNoteOutcome describeNote(const Model::DescribeNoteRequest &request)const;
 			void describeNoteAsync(const Model::DescribeNoteRequest& request, const DescribeNoteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNoteOutcomeCallable describeNoteCallable(const Model::DescribeNoteRequest& request) const;
@@ -2454,6 +2475,9 @@ namespace AlibabaCloud
 			DetachClusterForNoteOutcome detachClusterForNote(const Model::DetachClusterForNoteRequest &request)const;
 			void detachClusterForNoteAsync(const Model::DetachClusterForNoteRequest& request, const DetachClusterForNoteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachClusterForNoteOutcomeCallable detachClusterForNoteCallable(const Model::DetachClusterForNoteRequest& request) const;
+			DumpMetaDataSourceForOuterOutcome dumpMetaDataSourceForOuter(const Model::DumpMetaDataSourceForOuterRequest &request)const;
+			void dumpMetaDataSourceForOuterAsync(const Model::DumpMetaDataSourceForOuterRequest& request, const DumpMetaDataSourceForOuterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DumpMetaDataSourceForOuterOutcomeCallable dumpMetaDataSourceForOuterCallable(const Model::DumpMetaDataSourceForOuterRequest& request) const;
 			GetAuditLogsOutcome getAuditLogs(const Model::GetAuditLogsRequest &request)const;
 			void getAuditLogsAsync(const Model::GetAuditLogsRequest& request, const GetAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAuditLogsOutcomeCallable getAuditLogsCallable(const Model::GetAuditLogsRequest& request) const;

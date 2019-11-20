@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyIPv6TranslatorAclAttributeRequest;
 
 ModifyIPv6TranslatorAclAttributeRequest::ModifyIPv6TranslatorAclAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyIPv6TranslatorAclAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyIPv6TranslatorAclAttributeRequest::~ModifyIPv6TranslatorAclAttributeRequest()
 {}

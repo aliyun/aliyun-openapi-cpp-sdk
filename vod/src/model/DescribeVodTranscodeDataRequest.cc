@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodTranscodeDataRequest;
 
 DescribeVodTranscodeDataRequest::DescribeVodTranscodeDataRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodTranscodeData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodTranscodeDataRequest::~DescribeVodTranscodeDataRequest()
 {}

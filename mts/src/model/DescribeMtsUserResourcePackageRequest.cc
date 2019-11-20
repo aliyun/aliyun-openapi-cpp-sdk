@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DescribeMtsUserResourcePackageRequest;
 
 DescribeMtsUserResourcePackageRequest::DescribeMtsUserResourcePackageRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DescribeMtsUserResourcePackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeMtsUserResourcePackageRequest::~DescribeMtsUserResourcePackageRequest()
 {}

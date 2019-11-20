@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetApisAuthoritiesRequest;
 
 SetApisAuthoritiesRequest::SetApisAuthoritiesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetApisAuthorities")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetApisAuthoritiesRequest::~SetApisAuthoritiesRequest()
 {}

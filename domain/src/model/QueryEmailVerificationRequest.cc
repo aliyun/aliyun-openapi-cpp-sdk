@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryEmailVerificationRequest;
 
 QueryEmailVerificationRequest::QueryEmailVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryEmailVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEmailVerificationRequest::~QueryEmailVerificationRequest()
 {}

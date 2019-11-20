@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ActivateMediaWorkflowRequest;
 
 ActivateMediaWorkflowRequest::ActivateMediaWorkflowRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ActivateMediaWorkflow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ActivateMediaWorkflowRequest::~ActivateMediaWorkflowRequest()
 {}

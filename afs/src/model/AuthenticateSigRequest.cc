@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::AuthenticateSigRequest;
 
 AuthenticateSigRequest::AuthenticateSigRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "AuthenticateSig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AuthenticateSigRequest::~AuthenticateSigRequest()
 {}

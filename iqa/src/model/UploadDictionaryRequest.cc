@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::UploadDictionaryRequest;
 
 UploadDictionaryRequest::UploadDictionaryRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "UploadDictionary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadDictionaryRequest::~UploadDictionaryRequest()
 {}

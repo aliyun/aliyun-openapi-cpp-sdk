@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::QuerySyncPicScheduleRequest;
 
 QuerySyncPicScheduleRequest::QuerySyncPicScheduleRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QuerySyncPicSchedule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySyncPicScheduleRequest::~QuerySyncPicScheduleRequest()
 {}

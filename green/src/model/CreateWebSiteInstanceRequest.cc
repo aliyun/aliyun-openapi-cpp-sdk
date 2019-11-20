@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateWebSiteInstanceRequest;
 
 CreateWebSiteInstanceRequest::CreateWebSiteInstanceRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateWebSiteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateWebSiteInstanceRequest::~CreateWebSiteInstanceRequest()
 {}

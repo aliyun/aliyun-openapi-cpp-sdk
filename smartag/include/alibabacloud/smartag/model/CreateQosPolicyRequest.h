@@ -65,6 +65,8 @@ namespace AlibabaCloud
 				void setPriority(int priority);
 				std::string getDestPortRange()const;
 				void setDestPortRange(const std::string& destPortRange);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				long resourceOwnerId_;
@@ -82,6 +84,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				int priority_;
 				std::string destPortRange_;
+				std::string name_;
 
 			};
 		}

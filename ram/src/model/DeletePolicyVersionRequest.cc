@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeletePolicyVersionRequest;
 
 DeletePolicyVersionRequest::DeletePolicyVersionRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeletePolicyVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePolicyVersionRequest::~DeletePolicyVersionRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::UploadServerCertificateRequest;
 
 UploadServerCertificateRequest::UploadServerCertificateRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "UploadServerCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadServerCertificateRequest::~UploadServerCertificateRequest()
 {}

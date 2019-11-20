@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudauth::Model::GetStatusRequest;
 
 GetStatusRequest::GetStatusRequest() :
 	RpcServiceRequest("cloudauth", "2018-09-16", "GetStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetStatusRequest::~GetStatusRequest()
 {}

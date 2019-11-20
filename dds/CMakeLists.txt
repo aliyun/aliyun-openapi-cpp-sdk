@@ -129,6 +129,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeRoleZoneInfoResult.h
 	include/alibabacloud/dds/model/DescribeRunningLogRecordsRequest.h
 	include/alibabacloud/dds/model/DescribeRunningLogRecordsResult.h
+	include/alibabacloud/dds/model/DescribeSecurityGroupConfigurationRequest.h
+	include/alibabacloud/dds/model/DescribeSecurityGroupConfigurationResult.h
 	include/alibabacloud/dds/model/DescribeSecurityIpsRequest.h
 	include/alibabacloud/dds/model/DescribeSecurityIpsResult.h
 	include/alibabacloud/dds/model/DescribeShardingNetworkAddressRequest.h
@@ -139,6 +141,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeStaticVerificationListResult.h
 	include/alibabacloud/dds/model/DescribeStrategyRequest.h
 	include/alibabacloud/dds/model/DescribeStrategyResult.h
+	include/alibabacloud/dds/model/DescribeTagsRequest.h
+	include/alibabacloud/dds/model/DescribeTagsResult.h
 	include/alibabacloud/dds/model/DescribeVerificationListRequest.h
 	include/alibabacloud/dds/model/DescribeVerificationListResult.h
 	include/alibabacloud/dds/model/DestroyInstanceRequest.h
@@ -187,6 +191,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifyInstanceVpcAuthModeResult.h
 	include/alibabacloud/dds/model/ModifyNodeSpecRequest.h
 	include/alibabacloud/dds/model/ModifyNodeSpecResult.h
+	include/alibabacloud/dds/model/ModifyParameterRequest.h
+	include/alibabacloud/dds/model/ModifyParameterResult.h
 	include/alibabacloud/dds/model/ModifyParametersRequest.h
 	include/alibabacloud/dds/model/ModifyParametersResult.h
 	include/alibabacloud/dds/model/ModifyReplicaDescriptionRequest.h
@@ -199,6 +205,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifyReplicaRelationResult.h
 	include/alibabacloud/dds/model/ModifyReplicaVerificationModeRequest.h
 	include/alibabacloud/dds/model/ModifyReplicaVerificationModeResult.h
+	include/alibabacloud/dds/model/ModifySecurityGroupConfigurationRequest.h
+	include/alibabacloud/dds/model/ModifySecurityGroupConfigurationResult.h
 	include/alibabacloud/dds/model/ModifySecurityIpsRequest.h
 	include/alibabacloud/dds/model/ModifySecurityIpsResult.h
 	include/alibabacloud/dds/model/ReleaseNodePrivateNetworkAddressRequest.h
@@ -342,6 +350,8 @@ set(dds_src
 	src/model/DescribeRoleZoneInfoResult.cc
 	src/model/DescribeRunningLogRecordsRequest.cc
 	src/model/DescribeRunningLogRecordsResult.cc
+	src/model/DescribeSecurityGroupConfigurationRequest.cc
+	src/model/DescribeSecurityGroupConfigurationResult.cc
 	src/model/DescribeSecurityIpsRequest.cc
 	src/model/DescribeSecurityIpsResult.cc
 	src/model/DescribeShardingNetworkAddressRequest.cc
@@ -352,6 +362,8 @@ set(dds_src
 	src/model/DescribeStaticVerificationListResult.cc
 	src/model/DescribeStrategyRequest.cc
 	src/model/DescribeStrategyResult.cc
+	src/model/DescribeTagsRequest.cc
+	src/model/DescribeTagsResult.cc
 	src/model/DescribeVerificationListRequest.cc
 	src/model/DescribeVerificationListResult.cc
 	src/model/DestroyInstanceRequest.cc
@@ -400,6 +412,8 @@ set(dds_src
 	src/model/ModifyInstanceVpcAuthModeResult.cc
 	src/model/ModifyNodeSpecRequest.cc
 	src/model/ModifyNodeSpecResult.cc
+	src/model/ModifyParameterRequest.cc
+	src/model/ModifyParameterResult.cc
 	src/model/ModifyParametersRequest.cc
 	src/model/ModifyParametersResult.cc
 	src/model/ModifyReplicaDescriptionRequest.cc
@@ -412,6 +426,8 @@ set(dds_src
 	src/model/ModifyReplicaRelationResult.cc
 	src/model/ModifyReplicaVerificationModeRequest.cc
 	src/model/ModifyReplicaVerificationModeResult.cc
+	src/model/ModifySecurityGroupConfigurationRequest.cc
+	src/model/ModifySecurityGroupConfigurationResult.cc
 	src/model/ModifySecurityIpsRequest.cc
 	src/model/ModifySecurityIpsResult.cc
 	src/model/ReleaseNodePrivateNetworkAddressRequest.cc

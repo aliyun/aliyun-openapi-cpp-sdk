@@ -68,11 +68,14 @@ namespace AlibabaCloud
 							long callsIncomingQueue;
 							long callsIncomingIVR;
 							long callsHandled;
+							long maxWaitTime;
 							long totalRingTime;
 							long satisfactionSurveysResponded;
 							float handleRate;
 							long averageRingTime;
 							long totalTalkTime;
+							long averageWaitTime;
+							long totalWaitTime;
 							std::string maxTalkTime;
 							long averageWorkTime;
 							long maxWorkTime;

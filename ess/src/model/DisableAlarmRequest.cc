@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DisableAlarmRequest;
 
 DisableAlarmRequest::DisableAlarmRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DisableAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisableAlarmRequest::~DisableAlarmRequest()
 {}
@@ -34,17 +36,6 @@ void DisableAlarmRequest::setResourceOwnerAccount(const std::string& resourceOwn
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DisableAlarmRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DisableAlarmRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 long DisableAlarmRequest::getOwnerId()const
@@ -78,5 +69,16 @@ void DisableAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DisableAlarmRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DisableAlarmRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::DeleteRepoBuildRuleRequest;
 
 DeleteRepoBuildRuleRequest::DeleteRepoBuildRuleRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteRepoBuildRuleRequest::~DeleteRepoBuildRuleRequest()
 {}

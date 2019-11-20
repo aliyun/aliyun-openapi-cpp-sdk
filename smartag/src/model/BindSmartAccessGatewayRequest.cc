@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::BindSmartAccessGatewayRequest;
 
 BindSmartAccessGatewayRequest::BindSmartAccessGatewayRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "BindSmartAccessGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindSmartAccessGatewayRequest::~BindSmartAccessGatewayRequest()
 {}

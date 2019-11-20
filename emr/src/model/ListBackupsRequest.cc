@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListBackupsRequest;
 
 ListBackupsRequest::ListBackupsRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListBackups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListBackupsRequest::~ListBackupsRequest()
 {}
@@ -157,17 +159,6 @@ void ListBackupsRequest::setCurrentSize(int currentSize)
 	setCoreParameter("CurrentSize", std::to_string(currentSize));
 }
 
-std::string ListBackupsRequest::getOrderField()const
-{
-	return orderField_;
-}
-
-void ListBackupsRequest::setOrderField(const std::string& orderField)
-{
-	orderField_ = orderField;
-	setCoreParameter("OrderField", orderField);
-}
-
 std::vector<std::string> ListBackupsRequest::getBackupId()const
 {
 	return backupId_;
@@ -176,8 +167,8 @@ std::vector<std::string> ListBackupsRequest::getBackupId()const
 void ListBackupsRequest::setBackupId(const std::vector<std::string>& backupId)
 {
 	backupId_ = backupId;
-	for(int i = 0; i!= backupId.size(); i++)
-		setCoreParameter("BackupId."+ std::to_string(i), backupId.at(i));
+	for(int dep1 = 0; dep1!= backupId.size(); dep1++)
+		setCoreParameter("BackupId."+ std::to_string(dep1), backupId.at(dep1));
 }
 
 std::string ListBackupsRequest::getClusterId()const

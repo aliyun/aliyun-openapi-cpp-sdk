@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::ReleaseNodePrivateNetworkAddressRequest;
 
 ReleaseNodePrivateNetworkAddressRequest::ReleaseNodePrivateNetworkAddressRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "ReleaseNodePrivateNetworkAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseNodePrivateNetworkAddressRequest::~ReleaseNodePrivateNetworkAddressRequest()
 {}

@@ -1563,6 +1563,42 @@ EmrClient::CreateJobOutcomeCallable EmrClient::createJobCallable(const CreateJob
 	return task->get_future();
 }
 
+EmrClient::CreateMetaTablePreviewTaskOutcome EmrClient::createMetaTablePreviewTask(const CreateMetaTablePreviewTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMetaTablePreviewTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMetaTablePreviewTaskOutcome(CreateMetaTablePreviewTaskResult(outcome.result()));
+	else
+		return CreateMetaTablePreviewTaskOutcome(outcome.error());
+}
+
+void EmrClient::createMetaTablePreviewTaskAsync(const CreateMetaTablePreviewTaskRequest& request, const CreateMetaTablePreviewTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMetaTablePreviewTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::CreateMetaTablePreviewTaskOutcomeCallable EmrClient::createMetaTablePreviewTaskCallable(const CreateMetaTablePreviewTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMetaTablePreviewTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createMetaTablePreviewTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EmrClient::CreateNavNodeOutcome EmrClient::createNavNode(const CreateNavNodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4695,6 +4731,42 @@ EmrClient::DescribeKafkaReassignOutcomeCallable EmrClient::describeKafkaReassign
 	return task->get_future();
 }
 
+EmrClient::DescribeMetaTablePreviewTaskOutcome EmrClient::describeMetaTablePreviewTask(const DescribeMetaTablePreviewTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMetaTablePreviewTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMetaTablePreviewTaskOutcome(DescribeMetaTablePreviewTaskResult(outcome.result()));
+	else
+		return DescribeMetaTablePreviewTaskOutcome(outcome.error());
+}
+
+void EmrClient::describeMetaTablePreviewTaskAsync(const DescribeMetaTablePreviewTaskRequest& request, const DescribeMetaTablePreviewTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMetaTablePreviewTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::DescribeMetaTablePreviewTaskOutcomeCallable EmrClient::describeMetaTablePreviewTaskCallable(const DescribeMetaTablePreviewTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMetaTablePreviewTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMetaTablePreviewTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EmrClient::DescribeNoteOutcome EmrClient::describeNote(const DescribeNoteRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5121,6 +5193,42 @@ EmrClient::DetachClusterForNoteOutcomeCallable EmrClient::detachClusterForNoteCa
 			[this, request]()
 			{
 			return this->detachClusterForNote(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EmrClient::DumpMetaDataSourceForOuterOutcome EmrClient::dumpMetaDataSourceForOuter(const DumpMetaDataSourceForOuterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DumpMetaDataSourceForOuterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DumpMetaDataSourceForOuterOutcome(DumpMetaDataSourceForOuterResult(outcome.result()));
+	else
+		return DumpMetaDataSourceForOuterOutcome(outcome.error());
+}
+
+void EmrClient::dumpMetaDataSourceForOuterAsync(const DumpMetaDataSourceForOuterRequest& request, const DumpMetaDataSourceForOuterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, dumpMetaDataSourceForOuter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EmrClient::DumpMetaDataSourceForOuterOutcomeCallable EmrClient::dumpMetaDataSourceForOuterCallable(const DumpMetaDataSourceForOuterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DumpMetaDataSourceForOuterOutcome()>>(
+			[this, request]()
+			{
+			return this->dumpMetaDataSourceForOuter(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::StartClusterRequest;
 
 StartClusterRequest::StartClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StartCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 StartClusterRequest::~StartClusterRequest()
 {}

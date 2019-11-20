@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DeleteTasksRequest;
 
 DeleteTasksRequest::DeleteTasksRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DeleteTasks")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTasksRequest::~DeleteTasksRequest()
 {}

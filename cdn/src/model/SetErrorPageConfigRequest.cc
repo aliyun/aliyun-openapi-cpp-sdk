@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::SetErrorPageConfigRequest;
 
 SetErrorPageConfigRequest::SetErrorPageConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetErrorPageConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetErrorPageConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }

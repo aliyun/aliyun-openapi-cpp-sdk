@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeWebsiteIndexPageBaselineRequest;
 
 DescribeWebsiteIndexPageBaselineRequest::DescribeWebsiteIndexPageBaselineRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeWebsiteIndexPageBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeWebsiteIndexPageBaselineRequest::~DescribeWebsiteIndexPageBaselineRequest()
 {}

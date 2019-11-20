@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateForwardEntryRequest;
 
 CreateForwardEntryRequest::CreateForwardEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateForwardEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateForwardEntryRequest::~CreateForwardEntryRequest()
 {}

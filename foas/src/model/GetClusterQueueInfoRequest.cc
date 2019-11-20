@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetClusterQueueInfoRequest;
 
 GetClusterQueueInfoRequest::GetClusterQueueInfoRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/queueinfo");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetClusterQueueInfoRequest::~GetClusterQueueInfoRequest()
 {}

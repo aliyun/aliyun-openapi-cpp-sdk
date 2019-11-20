@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenPrivateZoneRoutesRequest;
 
 DescribeCenPrivateZoneRoutesRequest::DescribeCenPrivateZoneRoutesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenPrivateZoneRoutesRequest::~DescribeCenPrivateZoneRoutesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Kms::Model::ImportKeyMaterialRequest;
 
 ImportKeyMaterialRequest::ImportKeyMaterialRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "ImportKeyMaterial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImportKeyMaterialRequest::~ImportKeyMaterialRequest()
 {}

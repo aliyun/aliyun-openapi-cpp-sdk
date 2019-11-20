@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DeleteLoadBalancerListenerRequest;
 
 DeleteLoadBalancerListenerRequest::DeleteLoadBalancerListenerRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DeleteLoadBalancerListener")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLoadBalancerListenerRequest::~DeleteLoadBalancerListenerRequest()
 {}

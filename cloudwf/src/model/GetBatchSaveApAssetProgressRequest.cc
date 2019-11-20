@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetBatchSaveApAssetProgressRequest;
 
 GetBatchSaveApAssetProgressRequest::GetBatchSaveApAssetProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetBatchSaveApAssetProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetBatchSaveApAssetProgressRequest::~GetBatchSaveApAssetProgressRequest()
 {}

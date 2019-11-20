@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeRenewOrderRequest;
 
 DescribeRenewOrderRequest::DescribeRenewOrderRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeRenewOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRenewOrderRequest::~DescribeRenewOrderRequest()
 {}

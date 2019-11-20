@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::PublishUnionCasServiceRequest;
 
 PublishUnionCasServiceRequest::PublishUnionCasServiceRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "PublishUnionCasService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PublishUnionCasServiceRequest::~PublishUnionCasServiceRequest()
 {}

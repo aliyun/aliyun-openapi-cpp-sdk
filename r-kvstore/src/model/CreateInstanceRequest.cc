@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::CreateInstanceRequest;
 
 CreateInstanceRequest::CreateInstanceRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "CreateInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateInstanceRequest::~CreateInstanceRequest()
 {}
@@ -34,17 +36,6 @@ void CreateInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string CreateInstanceRequest::getNodeType()const
-{
-	return nodeType_;
-}
-
-void CreateInstanceRequest::setNodeType(const std::string& nodeType)
-{
-	nodeType_ = nodeType;
-	setCoreParameter("NodeType", nodeType);
 }
 
 std::string CreateInstanceRequest::getCouponNo()const
@@ -80,48 +71,15 @@ void CreateInstanceRequest::setEngineVersion(const std::string& engineVersion)
 	setCoreParameter("EngineVersion", engineVersion);
 }
 
-std::string CreateInstanceRequest::getAutoUseCoupon()const
+std::string CreateInstanceRequest::getResourceGroupId()const
 {
-	return autoUseCoupon_;
+	return resourceGroupId_;
 }
 
-void CreateInstanceRequest::setAutoUseCoupon(const std::string& autoUseCoupon)
+void CreateInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
-	autoUseCoupon_ = autoUseCoupon;
-	setCoreParameter("AutoUseCoupon", autoUseCoupon);
-}
-
-std::string CreateInstanceRequest::getInstanceClass()const
-{
-	return instanceClass_;
-}
-
-void CreateInstanceRequest::setInstanceClass(const std::string& instanceClass)
-{
-	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", instanceClass);
-}
-
-std::string CreateInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-long CreateInstanceRequest::getCapacity()const
-{
-	return capacity_;
-}
-
-void CreateInstanceRequest::setCapacity(long capacity)
-{
-	capacity_ = capacity;
-	setCoreParameter("Capacity", std::to_string(capacity));
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateInstanceRequest::getPassword()const
@@ -144,17 +102,6 @@ void CreateInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string CreateInstanceRequest::getInstanceType()const
-{
-	return instanceType_;
-}
-
-void CreateInstanceRequest::setInstanceType(const std::string& instanceType)
-{
-	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
 }
 
 std::string CreateInstanceRequest::getBusinessInfo()const
@@ -190,39 +137,6 @@ void CreateInstanceRequest::setPeriod(const std::string& period)
 	setCoreParameter("Period", period);
 }
 
-std::string CreateInstanceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateInstanceRequest::getSrcDBInstanceId()const
-{
-	return srcDBInstanceId_;
-}
-
-void CreateInstanceRequest::setSrcDBInstanceId(const std::string& srcDBInstanceId)
-{
-	srcDBInstanceId_ = srcDBInstanceId;
-	setCoreParameter("SrcDBInstanceId", srcDBInstanceId);
-}
-
-std::string CreateInstanceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string CreateInstanceRequest::getBackupId()const
 {
 	return backupId_;
@@ -243,17 +157,6 @@ void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateInstanceRequest::getToken()const
-{
-	return token_;
-}
-
-void CreateInstanceRequest::setToken(const std::string& token)
-{
-	token_ = token;
-	setCoreParameter("Token", token);
 }
 
 std::string CreateInstanceRequest::getVSwitchId()const
@@ -300,17 +203,6 @@ void CreateInstanceRequest::setAutoRenew(const std::string& autoRenew)
 	setCoreParameter("AutoRenew", autoRenew);
 }
 
-std::string CreateInstanceRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void CreateInstanceRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
-}
-
 std::string CreateInstanceRequest::getZoneId()const
 {
 	return zoneId_;
@@ -320,6 +212,138 @@ void CreateInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setCoreParameter("ZoneId", zoneId);
+}
+
+std::string CreateInstanceRequest::getNodeType()const
+{
+	return nodeType_;
+}
+
+void CreateInstanceRequest::setNodeType(const std::string& nodeType)
+{
+	nodeType_ = nodeType;
+	setCoreParameter("NodeType", nodeType);
+}
+
+std::string CreateInstanceRequest::getAutoUseCoupon()const
+{
+	return autoUseCoupon_;
+}
+
+void CreateInstanceRequest::setAutoUseCoupon(const std::string& autoUseCoupon)
+{
+	autoUseCoupon_ = autoUseCoupon;
+	setCoreParameter("AutoUseCoupon", autoUseCoupon);
+}
+
+std::string CreateInstanceRequest::getInstanceClass()const
+{
+	return instanceClass_;
+}
+
+void CreateInstanceRequest::setInstanceClass(const std::string& instanceClass)
+{
+	instanceClass_ = instanceClass;
+	setCoreParameter("InstanceClass", instanceClass);
+}
+
+std::string CreateInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long CreateInstanceRequest::getCapacity()const
+{
+	return capacity_;
+}
+
+void CreateInstanceRequest::setCapacity(long capacity)
+{
+	capacity_ = capacity;
+	setCoreParameter("Capacity", std::to_string(capacity));
+}
+
+std::string CreateInstanceRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void CreateInstanceRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setCoreParameter("InstanceType", instanceType);
+}
+
+std::string CreateInstanceRequest::getRestoreTime()const
+{
+	return restoreTime_;
+}
+
+void CreateInstanceRequest::setRestoreTime(const std::string& restoreTime)
+{
+	restoreTime_ = restoreTime;
+	setCoreParameter("RestoreTime", restoreTime);
+}
+
+std::string CreateInstanceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateInstanceRequest::getSrcDBInstanceId()const
+{
+	return srcDBInstanceId_;
+}
+
+void CreateInstanceRequest::setSrcDBInstanceId(const std::string& srcDBInstanceId)
+{
+	srcDBInstanceId_ = srcDBInstanceId;
+	setCoreParameter("SrcDBInstanceId", srcDBInstanceId);
+}
+
+std::string CreateInstanceRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string CreateInstanceRequest::getToken()const
+{
+	return token_;
+}
+
+void CreateInstanceRequest::setToken(const std::string& token)
+{
+	token_ = token;
+	setCoreParameter("Token", token);
+}
+
+std::string CreateInstanceRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void CreateInstanceRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string CreateInstanceRequest::getChargeType()const

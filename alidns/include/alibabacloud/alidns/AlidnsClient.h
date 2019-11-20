@@ -24,6 +24,8 @@
 #include "AlidnsExport.h"
 #include "model/AddDomainRequest.h"
 #include "model/AddDomainResult.h"
+#include "model/AddDomainBackupRequest.h"
+#include "model/AddDomainBackupResult.h"
 #include "model/AddDomainGroupRequest.h"
 #include "model/AddDomainGroupResult.h"
 #include "model/AddDomainRecordRequest.h"
@@ -176,6 +178,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddDomainResult> AddDomainOutcome;
 			typedef std::future<AddDomainOutcome> AddDomainOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::AddDomainRequest&, const AddDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDomainAsyncHandler;
+			typedef Outcome<Error, Model::AddDomainBackupResult> AddDomainBackupOutcome;
+			typedef std::future<AddDomainBackupOutcome> AddDomainBackupOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::AddDomainBackupRequest&, const AddDomainBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDomainBackupAsyncHandler;
 			typedef Outcome<Error, Model::AddDomainGroupResult> AddDomainGroupOutcome;
 			typedef std::future<AddDomainGroupOutcome> AddDomainGroupOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::AddDomainGroupRequest&, const AddDomainGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDomainGroupAsyncHandler;
@@ -394,6 +399,9 @@ namespace AlibabaCloud
 			AddDomainOutcome addDomain(const Model::AddDomainRequest &request)const;
 			void addDomainAsync(const Model::AddDomainRequest& request, const AddDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddDomainOutcomeCallable addDomainCallable(const Model::AddDomainRequest& request) const;
+			AddDomainBackupOutcome addDomainBackup(const Model::AddDomainBackupRequest &request)const;
+			void addDomainBackupAsync(const Model::AddDomainBackupRequest& request, const AddDomainBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddDomainBackupOutcomeCallable addDomainBackupCallable(const Model::AddDomainBackupRequest& request) const;
 			AddDomainGroupOutcome addDomainGroup(const Model::AddDomainGroupRequest &request)const;
 			void addDomainGroupAsync(const Model::AddDomainGroupRequest& request, const AddDomainGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddDomainGroupOutcomeCallable addDomainGroupCallable(const Model::AddDomainGroupRequest& request) const;

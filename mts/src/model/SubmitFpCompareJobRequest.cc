@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitFpCompareJobRequest;
 
 SubmitFpCompareJobRequest::SubmitFpCompareJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitFpCompareJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitFpCompareJobRequest::~SubmitFpCompareJobRequest()
 {}

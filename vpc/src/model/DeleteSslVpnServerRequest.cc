@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteSslVpnServerRequest;
 
 DeleteSslVpnServerRequest::DeleteSslVpnServerRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteSslVpnServer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSslVpnServerRequest::~DeleteSslVpnServerRequest()
 {}

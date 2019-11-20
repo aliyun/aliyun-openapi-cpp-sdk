@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyJobRequest;
 
 ModifyJobRequest::ModifyJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyJobRequest::~ModifyJobRequest()
 {}

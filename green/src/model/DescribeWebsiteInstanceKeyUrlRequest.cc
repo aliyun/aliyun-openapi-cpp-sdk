@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeWebsiteInstanceKeyUrlRequest;
 
 DescribeWebsiteInstanceKeyUrlRequest::DescribeWebsiteInstanceKeyUrlRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeWebsiteInstanceKeyUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeWebsiteInstanceKeyUrlRequest::~DescribeWebsiteInstanceKeyUrlRequest()
 {}

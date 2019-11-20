@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ReleaseInstancePublicConnectionRequest;
 
 ReleaseInstancePublicConnectionRequest::ReleaseInstancePublicConnectionRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ReleaseInstancePublicConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseInstancePublicConnectionRequest::~ReleaseInstancePublicConnectionRequest()
 {}

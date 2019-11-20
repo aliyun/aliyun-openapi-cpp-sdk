@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetInstanceVertexTaskManagersRequest;
 
 GetInstanceVertexTaskManagersRequest::GetInstanceVertexTaskManagersRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/vertices/[vertexId]/taskmanagers");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceVertexTaskManagersRequest::~GetInstanceVertexTaskManagersRequest()
 {}

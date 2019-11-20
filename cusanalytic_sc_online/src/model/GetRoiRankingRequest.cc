@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetRoiRankingRequest;
 
 GetRoiRankingRequest::GetRoiRankingRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetRoiRanking")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRoiRankingRequest::~GetRoiRankingRequest()
 {}

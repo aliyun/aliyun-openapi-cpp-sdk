@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::StoreMaterialTemporarilyRequest;
 
 StoreMaterialTemporarilyRequest::StoreMaterialTemporarilyRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "StoreMaterialTemporarily")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StoreMaterialTemporarilyRequest::~StoreMaterialTemporarilyRequest()
 {}

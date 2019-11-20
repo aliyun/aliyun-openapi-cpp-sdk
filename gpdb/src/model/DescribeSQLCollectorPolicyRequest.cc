@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeSQLCollectorPolicyRequest;
 
 DescribeSQLCollectorPolicyRequest::DescribeSQLCollectorPolicyRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeSQLCollectorPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSQLCollectorPolicyRequest::~DescribeSQLCollectorPolicyRequest()
 {}

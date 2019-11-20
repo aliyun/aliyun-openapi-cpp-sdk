@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::UpdateFaceRequest;
 
 UpdateFaceRequest::UpdateFaceRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "UpdateFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateFaceRequest::~UpdateFaceRequest()
 {}

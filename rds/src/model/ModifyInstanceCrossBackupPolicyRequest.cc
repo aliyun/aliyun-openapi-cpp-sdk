@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyInstanceCrossBackupPolicyRequest;
 
 ModifyInstanceCrossBackupPolicyRequest::ModifyInstanceCrossBackupPolicyRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyInstanceCrossBackupPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceCrossBackupPolicyRequest::~ModifyInstanceCrossBackupPolicyRequest()
 {}

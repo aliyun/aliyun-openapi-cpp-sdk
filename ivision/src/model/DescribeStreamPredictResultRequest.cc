@@ -20,7 +20,9 @@ using AlibabaCloud::Ivision::Model::DescribeStreamPredictResultRequest;
 
 DescribeStreamPredictResultRequest::DescribeStreamPredictResultRequest() :
 	RpcServiceRequest("ivision", "2019-03-08", "DescribeStreamPredictResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeStreamPredictResultRequest::~DescribeStreamPredictResultRequest()
 {}

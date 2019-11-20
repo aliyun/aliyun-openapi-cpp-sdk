@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindServiceListRequest;
 
 FindServiceListRequest::FindServiceListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindServiceList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindServiceListRequest::~FindServiceListRequest()
 {}

@@ -71,6 +71,8 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 				instanceTypesObject.zoneId = allQueuesNodeInstanceTypesInstanceTypeInfo["ZoneId"].asString();
 			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["VSwitchId"].isNull())
 				instanceTypesObject.vSwitchId = allQueuesNodeInstanceTypesInstanceTypeInfo["VSwitchId"].asString();
+			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["HostNamePrefix"].isNull())
+				instanceTypesObject.hostNamePrefix = allQueuesNodeInstanceTypesInstanceTypeInfo["HostNamePrefix"].asString();
 			queuesObject.instanceTypes.push_back(instanceTypesObject);
 		}
 		queues_.push_back(queuesObject);

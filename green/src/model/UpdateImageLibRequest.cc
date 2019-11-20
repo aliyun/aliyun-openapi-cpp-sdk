@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateImageLibRequest;
 
 UpdateImageLibRequest::UpdateImageLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateImageLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateImageLibRequest::~UpdateImageLibRequest()
 {}

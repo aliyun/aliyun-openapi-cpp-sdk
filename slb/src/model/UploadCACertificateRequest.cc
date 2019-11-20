@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::UploadCACertificateRequest;
 
 UploadCACertificateRequest::UploadCACertificateRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "UploadCACertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadCACertificateRequest::~UploadCACertificateRequest()
 {}

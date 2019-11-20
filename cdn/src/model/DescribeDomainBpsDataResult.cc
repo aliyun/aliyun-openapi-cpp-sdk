@@ -51,12 +51,24 @@ void DescribeDomainBpsDataResult::parse(const std::string &payload)
 			bpsDataPerIntervalObject.domesticValue = valueBpsDataPerIntervalDataModule["DomesticValue"].asString();
 		if(!valueBpsDataPerIntervalDataModule["OverseasValue"].isNull())
 			bpsDataPerIntervalObject.overseasValue = valueBpsDataPerIntervalDataModule["OverseasValue"].asString();
-		if(!valueBpsDataPerIntervalDataModule["HttpsValue"].isNull())
-			bpsDataPerIntervalObject.httpsValue = valueBpsDataPerIntervalDataModule["HttpsValue"].asString();
-		if(!valueBpsDataPerIntervalDataModule["HttpsDomesticValue"].isNull())
-			bpsDataPerIntervalObject.httpsDomesticValue = valueBpsDataPerIntervalDataModule["HttpsDomesticValue"].asString();
-		if(!valueBpsDataPerIntervalDataModule["HttpsOverseasValue"].isNull())
-			bpsDataPerIntervalObject.httpsOverseasValue = valueBpsDataPerIntervalDataModule["HttpsOverseasValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["L2Value"].isNull())
+			bpsDataPerIntervalObject.l2Value = valueBpsDataPerIntervalDataModule["L2Value"].asString();
+		if(!valueBpsDataPerIntervalDataModule["DomesticL2Value"].isNull())
+			bpsDataPerIntervalObject.domesticL2Value = valueBpsDataPerIntervalDataModule["DomesticL2Value"].asString();
+		if(!valueBpsDataPerIntervalDataModule["OverseasL2Value"].isNull())
+			bpsDataPerIntervalObject.overseasL2Value = valueBpsDataPerIntervalDataModule["OverseasL2Value"].asString();
+		if(!valueBpsDataPerIntervalDataModule["DynamicValue"].isNull())
+			bpsDataPerIntervalObject.dynamicValue = valueBpsDataPerIntervalDataModule["DynamicValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["DynamicDomesticValue"].isNull())
+			bpsDataPerIntervalObject.dynamicDomesticValue = valueBpsDataPerIntervalDataModule["DynamicDomesticValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["DynamicOverseasValue"].isNull())
+			bpsDataPerIntervalObject.dynamicOverseasValue = valueBpsDataPerIntervalDataModule["DynamicOverseasValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["StaticValue"].isNull())
+			bpsDataPerIntervalObject.staticValue = valueBpsDataPerIntervalDataModule["StaticValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["StaticDomesticValue"].isNull())
+			bpsDataPerIntervalObject.staticDomesticValue = valueBpsDataPerIntervalDataModule["StaticDomesticValue"].asString();
+		if(!valueBpsDataPerIntervalDataModule["StaticOverseasValue"].isNull())
+			bpsDataPerIntervalObject.staticOverseasValue = valueBpsDataPerIntervalDataModule["StaticOverseasValue"].asString();
 		bpsDataPerInterval_.push_back(bpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())
@@ -69,6 +81,10 @@ void DescribeDomainBpsDataResult::parse(const std::string &payload)
 		locationNameEn_ = value["LocationNameEn"].asString();
 	if(!value["IspNameEn"].isNull())
 		ispNameEn_ = value["IspNameEn"].asString();
+	if(!value["LocationName"].isNull())
+		locationName_ = value["LocationName"].asString();
+	if(!value["IspName"].isNull())
+		ispName_ = value["IspName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 
@@ -77,6 +93,11 @@ void DescribeDomainBpsDataResult::parse(const std::string &payload)
 std::string DescribeDomainBpsDataResult::getIspNameEn()const
 {
 	return ispNameEn_;
+}
+
+std::string DescribeDomainBpsDataResult::getIspName()const
+{
+	return ispName_;
 }
 
 std::string DescribeDomainBpsDataResult::getEndTime()const
@@ -107,5 +128,10 @@ std::string DescribeDomainBpsDataResult::getDataInterval()const
 std::vector<DescribeDomainBpsDataResult::DataModule> DescribeDomainBpsDataResult::getBpsDataPerInterval()const
 {
 	return bpsDataPerInterval_;
+}
+
+std::string DescribeDomainBpsDataResult::getLocationName()const
+{
+	return locationName_;
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Lubancloud::Model::QueryCutoutTaskResultRequest;
 
 QueryCutoutTaskResultRequest::QueryCutoutTaskResultRequest() :
 	RpcServiceRequest("lubancloud", "2018-05-09", "QueryCutoutTaskResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCutoutTaskResultRequest::~QueryCutoutTaskResultRequest()
 {}

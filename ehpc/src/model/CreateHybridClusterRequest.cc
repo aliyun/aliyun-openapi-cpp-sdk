@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::CreateHybridClusterRequest;
 
 CreateHybridClusterRequest::CreateHybridClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "CreateHybridCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 CreateHybridClusterRequest::~CreateHybridClusterRequest()
 {}
@@ -242,12 +244,11 @@ std::vector<CreateHybridClusterRequest::PostInstallScript> CreateHybridClusterRe
 void CreateHybridClusterRequest::setPostInstallScript(const std::vector<PostInstallScript>& postInstallScript)
 {
 	postInstallScript_ = postInstallScript;
-	int i = 0;
-	for(int i = 0; i!= postInstallScript.size(); i++)	{
-		auto obj = postInstallScript.at(i);
-		std::string str ="PostInstallScript."+ std::to_string(i);
-		setCoreParameter(str + ".Args", obj.args);
-		setCoreParameter(str + ".Url", obj.url);
+	for(int dep1 = 0; dep1!= postInstallScript.size(); dep1++) {
+		auto postInstallScriptObj = postInstallScript.at(dep1);
+		std::string postInstallScriptObjStr = "PostInstallScript." + std::to_string(dep1);
+		setCoreParameter(postInstallScriptObjStr + ".Args", postInstallScriptObj.args);
+		setCoreParameter(postInstallScriptObjStr + ".Url", postInstallScriptObj.url);
 	}
 }
 
@@ -270,15 +271,14 @@ std::vector<CreateHybridClusterRequest::Nodes> CreateHybridClusterRequest::getNo
 void CreateHybridClusterRequest::setNodes(const std::vector<Nodes>& nodes)
 {
 	nodes_ = nodes;
-	int i = 0;
-	for(int i = 0; i!= nodes.size(); i++)	{
-		auto obj = nodes.at(i);
-		std::string str ="Nodes."+ std::to_string(i);
-		setCoreParameter(str + ".IpAddress", obj.ipAddress);
-		setCoreParameter(str + ".HostName", obj.hostName);
-		setCoreParameter(str + ".Role", obj.role);
-		setCoreParameter(str + ".AccountType", obj.accountType);
-		setCoreParameter(str + ".SchedulerType", obj.schedulerType);
+	for(int dep1 = 0; dep1!= nodes.size(); dep1++) {
+		auto nodesObj = nodes.at(dep1);
+		std::string nodesObjStr = "Nodes." + std::to_string(dep1);
+		setCoreParameter(nodesObjStr + ".IpAddress", nodesObj.ipAddress);
+		setCoreParameter(nodesObjStr + ".HostName", nodesObj.hostName);
+		setCoreParameter(nodesObjStr + ".Role", nodesObj.role);
+		setCoreParameter(nodesObjStr + ".AccountType", nodesObj.accountType);
+		setCoreParameter(nodesObjStr + ".SchedulerType", nodesObj.schedulerType);
 	}
 }
 
@@ -290,11 +290,10 @@ std::vector<CreateHybridClusterRequest::Application> CreateHybridClusterRequest:
 void CreateHybridClusterRequest::setApplication(const std::vector<Application>& application)
 {
 	application_ = application;
-	int i = 0;
-	for(int i = 0; i!= application.size(); i++)	{
-		auto obj = application.at(i);
-		std::string str ="Application."+ std::to_string(i);
-		setCoreParameter(str + ".Tag", obj.tag);
+	for(int dep1 = 0; dep1!= application.size(); dep1++) {
+		auto applicationObj = application.at(dep1);
+		std::string applicationObjStr = "Application." + std::to_string(dep1);
+		setCoreParameter(applicationObjStr + ".Tag", applicationObj.tag);
 	}
 }
 

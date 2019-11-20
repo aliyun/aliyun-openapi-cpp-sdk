@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::CreateMcuTemplateRequest;
 
 CreateMcuTemplateRequest::CreateMcuTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "CreateMcuTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateMcuTemplateRequest::~CreateMcuTemplateRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::RenewWebSiteInstanceRequest;
 
 RenewWebSiteInstanceRequest::RenewWebSiteInstanceRequest() :
 	RpcServiceRequest("green", "2017-08-23", "RenewWebSiteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenewWebSiteInstanceRequest::~RenewWebSiteInstanceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StartBoardRecordRequest;
 
 StartBoardRecordRequest::StartBoardRecordRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StartBoardRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartBoardRecordRequest::~StartBoardRecordRequest()
 {}

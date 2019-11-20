@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ClearSagRouteableAddressRequest;
 
 ClearSagRouteableAddressRequest::ClearSagRouteableAddressRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ClearSagRouteableAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ClearSagRouteableAddressRequest::~ClearSagRouteableAddressRequest()
 {}

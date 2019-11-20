@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::RemoveMetricRuleTargetsRequest;
 
 RemoveMetricRuleTargetsRequest::RemoveMetricRuleTargetsRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "RemoveMetricRuleTargets")
-{}
+{
+	setMethod(HttpRequest::Method::Put);
+}
 
 RemoveMetricRuleTargetsRequest::~RemoveMetricRuleTargetsRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> RemoveMetricRuleTargetsRequest::getTargetIds()const
 void RemoveMetricRuleTargetsRequest::setTargetIds(const std::vector<std::string>& targetIds)
 {
 	targetIds_ = targetIds;
-	for(int i = 0; i!= targetIds.size(); i++)
-		setCoreParameter("TargetIds."+ std::to_string(i), targetIds.at(i));
+	for(int dep1 = 0; dep1!= targetIds.size(); dep1++)
+		setCoreParameter("TargetIds."+ std::to_string(dep1), targetIds.at(dep1));
 }
 
 std::string RemoveMetricRuleTargetsRequest::getRuleName()const
@@ -56,8 +58,8 @@ std::vector<std::string> RemoveMetricRuleTargetsRequest::getContactGroupTargetId
 void RemoveMetricRuleTargetsRequest::setContactGroupTargetIds(const std::vector<std::string>& contactGroupTargetIds)
 {
 	contactGroupTargetIds_ = contactGroupTargetIds;
-	for(int i = 0; i!= contactGroupTargetIds.size(); i++)
-		setCoreParameter("ContactGroupTargetIds."+ std::to_string(i), contactGroupTargetIds.at(i));
+	for(int dep1 = 0; dep1!= contactGroupTargetIds.size(); dep1++)
+		setCoreParameter("ContactGroupTargetIds."+ std::to_string(dep1), contactGroupTargetIds.at(dep1));
 }
 
 std::vector<std::string> RemoveMetricRuleTargetsRequest::getWebhookTargetIds()const
@@ -68,7 +70,7 @@ std::vector<std::string> RemoveMetricRuleTargetsRequest::getWebhookTargetIds()co
 void RemoveMetricRuleTargetsRequest::setWebhookTargetIds(const std::vector<std::string>& webhookTargetIds)
 {
 	webhookTargetIds_ = webhookTargetIds;
-	for(int i = 0; i!= webhookTargetIds.size(); i++)
-		setCoreParameter("WebhookTargetIds."+ std::to_string(i), webhookTargetIds.at(i));
+	for(int dep1 = 0; dep1!= webhookTargetIds.size(); dep1++)
+		setCoreParameter("WebhookTargetIds."+ std::to_string(dep1), webhookTargetIds.at(dep1));
 }
 

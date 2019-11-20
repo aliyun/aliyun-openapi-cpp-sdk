@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoBuildListRequest;
 
 GetRepoBuildListRequest::GetRepoBuildListRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/build");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoBuildListRequest::~GetRepoBuildListRequest()
 {}

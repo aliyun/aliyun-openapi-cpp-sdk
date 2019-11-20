@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CompletePhysicalConnectionLOARequest;
 
 CompletePhysicalConnectionLOARequest::CompletePhysicalConnectionLOARequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CompletePhysicalConnectionLOA")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CompletePhysicalConnectionLOARequest::~CompletePhysicalConnectionLOARequest()
 {}

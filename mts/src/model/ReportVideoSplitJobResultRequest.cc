@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportVideoSplitJobResultRequest;
 
 ReportVideoSplitJobResultRequest::ReportVideoSplitJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportVideoSplitJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportVideoSplitJobResultRequest::~ReportVideoSplitJobResultRequest()
 {}

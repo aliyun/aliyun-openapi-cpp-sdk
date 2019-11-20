@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifySkillGroupOutboundNumbersRequest;
 
 ModifySkillGroupOutboundNumbersRequest::ModifySkillGroupOutboundNumbersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifySkillGroupOutboundNumbers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySkillGroupOutboundNumbersRequest::~ModifySkillGroupOutboundNumbersRequest()
 {}
@@ -66,8 +68,8 @@ std::vector<std::string> ModifySkillGroupOutboundNumbersRequest::getOutboundPhon
 void ModifySkillGroupOutboundNumbersRequest::setOutboundPhoneNumberId(const std::vector<std::string>& outboundPhoneNumberId)
 {
 	outboundPhoneNumberId_ = outboundPhoneNumberId;
-	for(int i = 0; i!= outboundPhoneNumberId.size(); i++)
-		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
+	for(int dep1 = 0; dep1!= outboundPhoneNumberId.size(); dep1++)
+		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(dep1), outboundPhoneNumberId.at(dep1));
 }
 
 std::string ModifySkillGroupOutboundNumbersRequest::getSkillGroupId()const

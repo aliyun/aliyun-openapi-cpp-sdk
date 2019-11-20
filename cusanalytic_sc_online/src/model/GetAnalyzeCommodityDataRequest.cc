@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetAnalyzeCommodityDataRequest
 
 GetAnalyzeCommodityDataRequest::GetAnalyzeCommodityDataRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetAnalyzeCommodityData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAnalyzeCommodityDataRequest::~GetAnalyzeCommodityDataRequest()
 {}

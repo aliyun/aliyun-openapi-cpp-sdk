@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::StartBaselineSecurityCheckRequest;
 
 StartBaselineSecurityCheckRequest::StartBaselineSecurityCheckRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "StartBaselineSecurityCheck")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartBaselineSecurityCheckRequest::~StartBaselineSecurityCheckRequest()
 {}
@@ -44,8 +46,8 @@ std::vector<long> StartBaselineSecurityCheckRequest::getItemIds()const
 void StartBaselineSecurityCheckRequest::setItemIds(const std::vector<long>& itemIds)
 {
 	itemIds_ = itemIds;
-	for(int i = 0; i!= itemIds.size(); i++)
-		setCoreParameter("ItemIds."+ std::to_string(i), std::to_string(itemIds.at(i)));
+	for(int dep1 = 0; dep1!= itemIds.size(); dep1++)
+		setCoreParameter("ItemIds."+ std::to_string(dep1), std::to_string(itemIds.at(dep1)));
 }
 
 std::string StartBaselineSecurityCheckRequest::getType()const
@@ -67,8 +69,8 @@ std::vector<std::string> StartBaselineSecurityCheckRequest::getAssets()const
 void StartBaselineSecurityCheckRequest::setAssets(const std::vector<std::string>& assets)
 {
 	assets_ = assets;
-	for(int i = 0; i!= assets.size(); i++)
-		setCoreParameter("Assets."+ std::to_string(i), assets.at(i));
+	for(int dep1 = 0; dep1!= assets.size(); dep1++)
+		setCoreParameter("Assets."+ std::to_string(dep1), assets.at(dep1));
 }
 
 std::string StartBaselineSecurityCheckRequest::getSourceIp()const

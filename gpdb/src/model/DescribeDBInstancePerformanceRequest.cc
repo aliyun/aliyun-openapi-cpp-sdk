@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeDBInstancePerformanceRequest;
 
 DescribeDBInstancePerformanceRequest::DescribeDBInstancePerformanceRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeDBInstancePerformance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstancePerformanceRequest::~DescribeDBInstancePerformanceRequest()
 {}

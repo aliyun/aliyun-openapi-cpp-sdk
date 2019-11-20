@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::RecoverVirtualBorderRouterRequest;
 
 RecoverVirtualBorderRouterRequest::RecoverVirtualBorderRouterRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "RecoverVirtualBorderRouter")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RecoverVirtualBorderRouterRequest::~RecoverVirtualBorderRouterRequest()
 {}

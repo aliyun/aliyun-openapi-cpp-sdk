@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeInstanceAttributeRequest;
 
 DescribeInstanceAttributeRequest::DescribeInstanceAttributeRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeInstanceAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceAttributeRequest::~DescribeInstanceAttributeRequest()
 {}

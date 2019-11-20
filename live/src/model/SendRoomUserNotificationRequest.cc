@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SendRoomUserNotificationRequest;
 
 SendRoomUserNotificationRequest::SendRoomUserNotificationRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SendRoomUserNotification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendRoomUserNotificationRequest::~SendRoomUserNotificationRequest()
 {}

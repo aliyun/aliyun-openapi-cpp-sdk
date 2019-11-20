@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetJobDataUploadParamsRequest;
 
 GetJobDataUploadParamsRequest::GetJobDataUploadParamsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetJobDataUploadParams")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobDataUploadParamsRequest::~GetJobDataUploadParamsRequest()
 {}

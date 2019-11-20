@@ -45,8 +45,6 @@ namespace AlibabaCloud
 				void setSecurityToken(const std::string& securityToken);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				int getSourceInstanceId()const;
-				void setSourceInstanceId(int sourceInstanceId);
 				std::string getNodeId()const;
 				void setNodeId(const std::string& nodeId);
 				std::string getResourceOwnerAccount()const;
@@ -55,10 +53,6 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getTargetInstanceId()const;
-				void setTargetInstanceId(int targetInstanceId);
-				int getSwitchType()const;
-				void setSwitchType(int switchType);
 
             private:
 				long resourceOwnerId_;
@@ -66,13 +60,10 @@ namespace AlibabaCloud
 				std::string roleIds_;
 				std::string securityToken_;
 				std::string dBInstanceId_;
-				int sourceInstanceId_;
 				std::string nodeId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				int targetInstanceId_;
-				int switchType_;
 
 			};
 		}

@@ -20,7 +20,10 @@ using AlibabaCloud::CS::Model::ScaleClusterRequest;
 
 ScaleClusterRequest::ScaleClusterRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
-{}
+{
+	setResourcePath("/clusters/[ClusterId]");
+	setMethod(HttpRequest::Method::Put);
+}
 
 ScaleClusterRequest::~ScaleClusterRequest()
 {}

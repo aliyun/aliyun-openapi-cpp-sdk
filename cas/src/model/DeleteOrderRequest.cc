@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DeleteOrderRequest;
 
 DeleteOrderRequest::DeleteOrderRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DeleteOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteOrderRequest::~DeleteOrderRequest()
 {}

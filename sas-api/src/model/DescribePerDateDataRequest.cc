@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::DescribePerDateDataRequest;
 
 DescribePerDateDataRequest::DescribePerDateDataRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribePerDateData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePerDateDataRequest::~DescribePerDateDataRequest()
 {}

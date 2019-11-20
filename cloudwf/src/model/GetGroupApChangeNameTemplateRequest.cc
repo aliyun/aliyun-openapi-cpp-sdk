@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetGroupApChangeNameTemplateRequest;
 
 GetGroupApChangeNameTemplateRequest::GetGroupApChangeNameTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetGroupApChangeNameTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetGroupApChangeNameTemplateRequest::~GetGroupApChangeNameTemplateRequest()
 {}

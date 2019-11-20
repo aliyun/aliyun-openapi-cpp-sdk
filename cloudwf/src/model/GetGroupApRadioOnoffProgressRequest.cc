@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetGroupApRadioOnoffProgressRequest;
 
 GetGroupApRadioOnoffProgressRequest::GetGroupApRadioOnoffProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetGroupApRadioOnoffProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetGroupApRadioOnoffProgressRequest::~GetGroupApRadioOnoffProgressRequest()
 {}

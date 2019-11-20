@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SavePortalTemplateRequest;
 
 SavePortalTemplateRequest::SavePortalTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SavePortalTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SavePortalTemplateRequest::~SavePortalTemplateRequest()
 {}

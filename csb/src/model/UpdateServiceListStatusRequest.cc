@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::UpdateServiceListStatusRequest;
 
 UpdateServiceListStatusRequest::UpdateServiceListStatusRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "UpdateServiceListStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateServiceListStatusRequest::~UpdateServiceListStatusRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::UpgradeDBInstanceKernelVersionRequest;
 
 UpgradeDBInstanceKernelVersionRequest::UpgradeDBInstanceKernelVersionRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "UpgradeDBInstanceKernelVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeDBInstanceKernelVersionRequest::~UpgradeDBInstanceKernelVersionRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteIpv6InternetBandwidthRequest;
 
 DeleteIpv6InternetBandwidthRequest::DeleteIpv6InternetBandwidthRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteIpv6InternetBandwidth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIpv6InternetBandwidthRequest::~DeleteIpv6InternetBandwidthRequest()
 {}

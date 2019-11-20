@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DeleteCenRouteMapRequest;
 
 DeleteCenRouteMapRequest::DeleteCenRouteMapRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DeleteCenRouteMap")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCenRouteMapRequest::~DeleteCenRouteMapRequest()
 {}

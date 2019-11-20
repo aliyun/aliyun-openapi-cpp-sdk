@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetLibraryRequest;
 
 GetLibraryRequest::GetLibraryRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetLibrary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetLibraryRequest::~GetLibraryRequest()
 {}

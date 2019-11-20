@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::ImportCredentialsRequest;
 
 ImportCredentialsRequest::ImportCredentialsRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "ImportCredentials")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImportCredentialsRequest::~ImportCredentialsRequest()
 {}

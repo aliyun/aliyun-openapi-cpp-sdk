@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateProductRequest;
 
 CreateProductRequest::CreateProductRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateProduct")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateProductRequest::~CreateProductRequest()
 {}
@@ -67,6 +69,28 @@ void CreateProductRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateProductRequest::getAuthType()const
+{
+	return authType_;
+}
+
+void CreateProductRequest::setAuthType(const std::string& authType)
+{
+	authType_ = authType;
+	setCoreParameter("AuthType", authType);
+}
+
+std::string CreateProductRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateProductRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateProductRequest::getIotInstanceId()const

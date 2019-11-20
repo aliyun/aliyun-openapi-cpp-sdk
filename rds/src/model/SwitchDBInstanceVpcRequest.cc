@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::SwitchDBInstanceVpcRequest;
 
 SwitchDBInstanceVpcRequest::SwitchDBInstanceVpcRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "SwitchDBInstanceVpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SwitchDBInstanceVpcRequest::~SwitchDBInstanceVpcRequest()
 {}

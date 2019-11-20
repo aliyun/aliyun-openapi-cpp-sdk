@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::AddAccessControlListEntryRequest;
 
 AddAccessControlListEntryRequest::AddAccessControlListEntryRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "AddAccessControlListEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddAccessControlListEntryRequest::~AddAccessControlListEntryRequest()
 {}

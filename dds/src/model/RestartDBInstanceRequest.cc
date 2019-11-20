@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::RestartDBInstanceRequest;
 
 RestartDBInstanceRequest::RestartDBInstanceRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "RestartDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RestartDBInstanceRequest::~RestartDBInstanceRequest()
 {}

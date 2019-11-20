@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetLiveLazyPullStreamInfoConfigRequest;
 
 SetLiveLazyPullStreamInfoConfigRequest::SetLiveLazyPullStreamInfoConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLiveLazyPullStreamInfoConfigRequest::~SetLiveLazyPullStreamInfoConfigRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListTerrorismPipelineRequest;
 
 ListTerrorismPipelineRequest::ListTerrorismPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListTerrorismPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTerrorismPipelineRequest::~ListTerrorismPipelineRequest()
 {}

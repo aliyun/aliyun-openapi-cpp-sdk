@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetPersonInStore5MinRequest;
 
 GetPersonInStore5MinRequest::GetPersonInStore5MinRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetPersonInStore5Min")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPersonInStore5MinRequest::~GetPersonInStore5MinRequest()
 {}

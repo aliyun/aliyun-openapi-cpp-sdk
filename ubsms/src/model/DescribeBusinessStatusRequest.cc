@@ -20,7 +20,9 @@ using AlibabaCloud::Ubsms::Model::DescribeBusinessStatusRequest;
 
 DescribeBusinessStatusRequest::DescribeBusinessStatusRequest() :
 	RpcServiceRequest("ubsms", "2015-06-23", "DescribeBusinessStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBusinessStatusRequest::~DescribeBusinessStatusRequest()
 {}

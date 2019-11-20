@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::UnassociateHaVipRequest;
 
 UnassociateHaVipRequest::UnassociateHaVipRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "UnassociateHaVip")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnassociateHaVipRequest::~UnassociateHaVipRequest()
 {}

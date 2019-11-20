@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainTrafficDataRequest;
 
 DescribeLiveDomainTrafficDataRequest::DescribeLiveDomainTrafficDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainTrafficData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainTrafficDataRequest::~DescribeLiveDomainTrafficDataRequest()
 {}

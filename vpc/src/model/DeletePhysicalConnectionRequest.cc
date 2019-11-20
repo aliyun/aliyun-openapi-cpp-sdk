@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeletePhysicalConnectionRequest;
 
 DeletePhysicalConnectionRequest::DeletePhysicalConnectionRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeletePhysicalConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePhysicalConnectionRequest::~DeletePhysicalConnectionRequest()
 {}
@@ -56,17 +58,6 @@ void DeletePhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string DeletePhysicalConnectionRequest::getUserCidr()const
-{
-	return userCidr_;
-}
-
-void DeletePhysicalConnectionRequest::setUserCidr(const std::string& userCidr)
-{
-	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
 }
 
 std::string DeletePhysicalConnectionRequest::getResourceOwnerAccount()const

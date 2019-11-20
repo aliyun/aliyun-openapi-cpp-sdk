@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteNotificationConfigurationRequest;
 
 DeleteNotificationConfigurationRequest::DeleteNotificationConfigurationRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteNotificationConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNotificationConfigurationRequest::~DeleteNotificationConfigurationRequest()
 {}

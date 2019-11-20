@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::ApplyTemplateRequest;
 
 ApplyTemplateRequest::ApplyTemplateRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "ApplyTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApplyTemplateRequest::~ApplyTemplateRequest()
 {}

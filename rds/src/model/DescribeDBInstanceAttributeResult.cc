@@ -183,6 +183,10 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.proxyType = std::stoi(valueItemsDBInstanceAttribute["ProxyType"].asString());
 		if(!valueItemsDBInstanceAttribute["ConsoleVersion"].isNull())
 			itemsObject.consoleVersion = valueItemsDBInstanceAttribute["ConsoleVersion"].asString();
+		if(!valueItemsDBInstanceAttribute["MultipleTempUpgrade"].isNull())
+			itemsObject.multipleTempUpgrade = valueItemsDBInstanceAttribute["MultipleTempUpgrade"].asString() == "true";
+		if(!valueItemsDBInstanceAttribute["OriginConfiguration"].isNull())
+			itemsObject.originConfiguration = valueItemsDBInstanceAttribute["OriginConfiguration"].asString();
 		auto allSlaveZonesNode = allItemsNode["SlaveZones"]["SlaveZone"];
 		for (auto allItemsNodeSlaveZonesSlaveZone : allSlaveZonesNode)
 		{

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryFailReasonForDomainRealNameVerificationR
 
 QueryFailReasonForDomainRealNameVerificationRequest::QueryFailReasonForDomainRealNameVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryFailReasonForDomainRealNameVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFailReasonForDomainRealNameVerificationRequest::~QueryFailReasonForDomainRealNameVerificationRequest()
 {}

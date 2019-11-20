@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ModifyLiveRealtimeLogDeliveryRequest;
 
 ModifyLiveRealtimeLogDeliveryRequest::ModifyLiveRealtimeLogDeliveryRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ModifyLiveRealtimeLogDelivery")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ModifyLiveRealtimeLogDeliveryRequest::~ModifyLiveRealtimeLogDeliveryRequest()
 {}

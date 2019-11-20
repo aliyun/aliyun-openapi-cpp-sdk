@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeVpnSslServerLogsRequest;
 
 DescribeVpnSslServerLogsRequest::DescribeVpnSslServerLogsRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeVpnSslServerLogs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVpnSslServerLogsRequest::~DescribeVpnSslServerLogsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::CreateBackupRequest;
 
 CreateBackupRequest::CreateBackupRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "CreateBackup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBackupRequest::~CreateBackupRequest()
 {}

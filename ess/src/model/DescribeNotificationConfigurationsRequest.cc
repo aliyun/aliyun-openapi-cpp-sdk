@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DescribeNotificationConfigurationsRequest;
 
 DescribeNotificationConfigurationsRequest::DescribeNotificationConfigurationsRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DescribeNotificationConfigurations")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNotificationConfigurationsRequest::~DescribeNotificationConfigurationsRequest()
 {}

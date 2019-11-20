@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryTaskDetailHistoryRequest;
 
 QueryTaskDetailHistoryRequest::QueryTaskDetailHistoryRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryTaskDetailHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTaskDetailHistoryRequest::~QueryTaskDetailHistoryRequest()
 {}

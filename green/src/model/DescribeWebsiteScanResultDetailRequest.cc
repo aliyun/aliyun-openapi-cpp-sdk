@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeWebsiteScanResultDetailRequest;
 
 DescribeWebsiteScanResultDetailRequest::DescribeWebsiteScanResultDetailRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeWebsiteScanResultDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeWebsiteScanResultDetailRequest::~DescribeWebsiteScanResultDetailRequest()
 {}

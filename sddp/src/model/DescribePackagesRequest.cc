@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribePackagesRequest;
 
 DescribePackagesRequest::DescribePackagesRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribePackages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePackagesRequest::~DescribePackagesRequest()
 {}

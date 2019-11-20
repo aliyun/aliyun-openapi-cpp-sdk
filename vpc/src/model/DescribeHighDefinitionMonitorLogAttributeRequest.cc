@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeHighDefinitionMonitorLogAttributeRequest
 
 DescribeHighDefinitionMonitorLogAttributeRequest::DescribeHighDefinitionMonitorLogAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeHighDefinitionMonitorLogAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeHighDefinitionMonitorLogAttributeRequest::~DescribeHighDefinitionMonitorLogAttributeRequest()
 {}

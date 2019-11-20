@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetCACertificateNameRequest;
 
 SetCACertificateNameRequest::SetCACertificateNameRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetCACertificateName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetCACertificateNameRequest::~SetCACertificateNameRequest()
 {}

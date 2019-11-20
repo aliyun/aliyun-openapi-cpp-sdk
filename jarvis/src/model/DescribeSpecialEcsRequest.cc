@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeSpecialEcsRequest;
 
 DescribeSpecialEcsRequest::DescribeSpecialEcsRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeSpecialEcs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSpecialEcsRequest::~DescribeSpecialEcsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::PreloadVodObjectCachesRequest;
 
 PreloadVodObjectCachesRequest::PreloadVodObjectCachesRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "PreloadVodObjectCaches")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PreloadVodObjectCachesRequest::~PreloadVodObjectCachesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeOssIncrementOverviewRequest;
 
 DescribeOssIncrementOverviewRequest::DescribeOssIncrementOverviewRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeOssIncrementOverview")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssIncrementOverviewRequest::~DescribeOssIncrementOverviewRequest()
 {}

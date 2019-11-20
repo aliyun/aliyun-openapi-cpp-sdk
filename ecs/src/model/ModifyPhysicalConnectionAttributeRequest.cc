@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyPhysicalConnectionAttributeRequest;
 
 ModifyPhysicalConnectionAttributeRequest::ModifyPhysicalConnectionAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyPhysicalConnectionAttributeRequest::~ModifyPhysicalConnectionAttributeRequest()
 {}

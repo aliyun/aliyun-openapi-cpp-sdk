@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::AssignUsersRequest;
 
 AssignUsersRequest::AssignUsersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "AssignUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssignUsersRequest::~AssignUsersRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> AssignUsersRequest::getRoleId()const
 void AssignUsersRequest::setRoleId(const std::vector<std::string>& roleId)
 {
 	roleId_ = roleId;
-	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
+	for(int dep1 = 0; dep1!= roleId.size(); dep1++)
+		setCoreParameter("RoleId."+ std::to_string(dep1), roleId.at(dep1));
 }
 
 std::string AssignUsersRequest::getAccessKeyId()const
@@ -56,8 +58,8 @@ std::vector<std::string> AssignUsersRequest::getUserRamId()const
 void AssignUsersRequest::setUserRamId(const std::vector<std::string>& userRamId)
 {
 	userRamId_ = userRamId;
-	for(int i = 0; i!= userRamId.size(); i++)
-		setCoreParameter("UserRamId."+ std::to_string(i), userRamId.at(i));
+	for(int dep1 = 0; dep1!= userRamId.size(); dep1++)
+		setCoreParameter("UserRamId."+ std::to_string(dep1), userRamId.at(dep1));
 }
 
 std::vector<int> AssignUsersRequest::getSkillLevel()const
@@ -68,8 +70,8 @@ std::vector<int> AssignUsersRequest::getSkillLevel()const
 void AssignUsersRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
-	for(int i = 0; i!= skillLevel.size(); i++)
-		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
+	for(int dep1 = 0; dep1!= skillLevel.size(); dep1++)
+		setCoreParameter("SkillLevel."+ std::to_string(dep1), std::to_string(skillLevel.at(dep1)));
 }
 
 std::string AssignUsersRequest::getInstanceId()const
@@ -91,7 +93,7 @@ std::vector<std::string> AssignUsersRequest::getSkillGroupId()const
 void AssignUsersRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++)
+		setCoreParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
 }
 

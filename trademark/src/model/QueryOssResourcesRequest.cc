@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryOssResourcesRequest;
 
 QueryOssResourcesRequest::QueryOssResourcesRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryOssResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryOssResourcesRequest::~QueryOssResourcesRequest()
 {}

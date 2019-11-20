@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::PhysicalDeleteResourceRequest;
 
 PhysicalDeleteResourceRequest::PhysicalDeleteResourceRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "PhysicalDeleteResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PhysicalDeleteResourceRequest::~PhysicalDeleteResourceRequest()
 {}

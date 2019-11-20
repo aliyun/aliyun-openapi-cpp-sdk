@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DeleteMediaRequest;
 
 DeleteMediaRequest::DeleteMediaRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DeleteMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMediaRequest::~DeleteMediaRequest()
 {}

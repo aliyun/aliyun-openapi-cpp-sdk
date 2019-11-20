@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::CheckZoneNameRequest;
 
 CheckZoneNameRequest::CheckZoneNameRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "CheckZoneName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckZoneNameRequest::~CheckZoneNameRequest()
 {}

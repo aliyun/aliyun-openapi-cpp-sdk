@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeRdsVpcsRequest;
 
 DescribeRdsVpcsRequest::DescribeRdsVpcsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeRdsVpcs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRdsVpcsRequest::~DescribeRdsVpcsRequest()
 {}

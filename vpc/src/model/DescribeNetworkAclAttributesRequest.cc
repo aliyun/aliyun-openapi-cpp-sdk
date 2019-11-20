@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeNetworkAclAttributesRequest;
 
 DescribeNetworkAclAttributesRequest::DescribeNetworkAclAttributesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeNetworkAclAttributes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNetworkAclAttributesRequest::~DescribeNetworkAclAttributesRequest()
 {}

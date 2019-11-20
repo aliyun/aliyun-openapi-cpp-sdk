@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeCasterSyncGroupRequest;
 
 DescribeCasterSyncGroupRequest::DescribeCasterSyncGroupRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeCasterSyncGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCasterSyncGroupRequest::~DescribeCasterSyncGroupRequest()
 {}

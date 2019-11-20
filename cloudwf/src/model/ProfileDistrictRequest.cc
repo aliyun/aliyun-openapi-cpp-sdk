@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProfileDistrictRequest;
 
 ProfileDistrictRequest::ProfileDistrictRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProfileDistrict")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProfileDistrictRequest::~ProfileDistrictRequest()
 {}

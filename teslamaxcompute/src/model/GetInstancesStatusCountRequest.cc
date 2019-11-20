@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::GetInstancesStatusCountRequest;
 
 GetInstancesStatusCountRequest::GetInstancesStatusCountRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "GetInstancesStatusCount")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstancesStatusCountRequest::~GetInstancesStatusCountRequest()
 {}

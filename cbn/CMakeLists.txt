@@ -91,6 +91,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/DisableCenVbrHealthCheckResult.h
 	include/alibabacloud/cbn/model/EnableCenVbrHealthCheckRequest.h
 	include/alibabacloud/cbn/model/EnableCenVbrHealthCheckResult.h
+	include/alibabacloud/cbn/model/ListTagResourcesRequest.h
+	include/alibabacloud/cbn/model/ListTagResourcesResult.h
 	include/alibabacloud/cbn/model/ModifyCenAttributeRequest.h
 	include/alibabacloud/cbn/model/ModifyCenAttributeResult.h
 	include/alibabacloud/cbn/model/ModifyCenBandwidthPackageAttributeRequest.h
@@ -109,6 +111,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/RoutePrivateZoneInCenToVpcResult.h
 	include/alibabacloud/cbn/model/SetCenInterRegionBandwidthLimitRequest.h
 	include/alibabacloud/cbn/model/SetCenInterRegionBandwidthLimitResult.h
+	include/alibabacloud/cbn/model/TagResourcesRequest.h
+	include/alibabacloud/cbn/model/TagResourcesResult.h
 	include/alibabacloud/cbn/model/UnassociateCenBandwidthPackageRequest.h
 	include/alibabacloud/cbn/model/UnassociateCenBandwidthPackageResult.h
 	include/alibabacloud/cbn/model/UnroutePrivateZoneInCenToVpcRequest.h
@@ -190,6 +194,8 @@ set(cbn_src
 	src/model/DisableCenVbrHealthCheckResult.cc
 	src/model/EnableCenVbrHealthCheckRequest.cc
 	src/model/EnableCenVbrHealthCheckResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/ModifyCenAttributeRequest.cc
 	src/model/ModifyCenAttributeResult.cc
 	src/model/ModifyCenBandwidthPackageAttributeRequest.cc
@@ -208,6 +214,8 @@ set(cbn_src
 	src/model/RoutePrivateZoneInCenToVpcResult.cc
 	src/model/SetCenInterRegionBandwidthLimitRequest.cc
 	src/model/SetCenInterRegionBandwidthLimitResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
 	src/model/UnassociateCenBandwidthPackageRequest.cc
 	src/model/UnassociateCenBandwidthPackageResult.cc
 	src/model/UnroutePrivateZoneInCenToVpcRequest.cc

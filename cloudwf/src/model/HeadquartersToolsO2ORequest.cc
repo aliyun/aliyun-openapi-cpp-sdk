@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::HeadquartersToolsO2ORequest;
 
 HeadquartersToolsO2ORequest::HeadquartersToolsO2ORequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "HeadquartersToolsO2O")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 HeadquartersToolsO2ORequest::~HeadquartersToolsO2ORequest()
 {}

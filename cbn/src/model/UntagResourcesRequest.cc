@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::UntagResourcesRequest;
 
 UntagResourcesRequest::UntagResourcesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "UntagResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UntagResourcesRequest::~UntagResourcesRequest()
 {}
@@ -36,28 +38,6 @@ void UntagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-long UntagResourcesRequest::getTagOwnerUid()const
-{
-	return tagOwnerUid_;
-}
-
-void UntagResourcesRequest::setTagOwnerUid(long tagOwnerUid)
-{
-	tagOwnerUid_ = tagOwnerUid;
-	setCoreParameter("TagOwnerUid", std::to_string(tagOwnerUid));
-}
-
-std::string UntagResourcesRequest::getTagOwnerBid()const
-{
-	return tagOwnerBid_;
-}
-
-void UntagResourcesRequest::setTagOwnerBid(const std::string& tagOwnerBid)
-{
-	tagOwnerBid_ = tagOwnerBid;
-	setCoreParameter("TagOwnerBid", tagOwnerBid);
-}
-
 std::vector<std::string> UntagResourcesRequest::getResourceId()const
 {
 	return resourceId_;
@@ -66,8 +46,8 @@ std::vector<std::string> UntagResourcesRequest::getResourceId()const
 void UntagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++)
+		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
 }
 
 std::string UntagResourcesRequest::getResourceOwnerAccount()const
@@ -122,7 +102,7 @@ std::vector<std::string> UntagResourcesRequest::getTagKey()const
 void UntagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
-	for(int i = 0; i!= tagKey.size(); i++)
-		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
+	for(int dep1 = 0; dep1!= tagKey.size(); dep1++)
+		setCoreParameter("TagKey."+ std::to_string(dep1), tagKey.at(dep1));
 }
 

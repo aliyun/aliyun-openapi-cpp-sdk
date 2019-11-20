@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyVpnPbrRouteEntryWeightRequest;
 
 ModifyVpnPbrRouteEntryWeightRequest::ModifyVpnPbrRouteEntryWeightRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyVpnPbrRouteEntryWeight")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyVpnPbrRouteEntryWeightRequest::~ModifyVpnPbrRouteEntryWeightRequest()
 {}

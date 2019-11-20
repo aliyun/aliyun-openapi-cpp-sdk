@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribePurchasedApiGroupRequest;
 
 DescribePurchasedApiGroupRequest::DescribePurchasedApiGroupRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribePurchasedApiGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePurchasedApiGroupRequest::~DescribePurchasedApiGroupRequest()
 {}

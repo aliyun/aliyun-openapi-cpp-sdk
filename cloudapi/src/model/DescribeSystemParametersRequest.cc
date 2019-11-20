@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeSystemParametersRequest;
 
 DescribeSystemParametersRequest::DescribeSystemParametersRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeSystemParameters")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSystemParametersRequest::~DescribeSystemParametersRequest()
 {}

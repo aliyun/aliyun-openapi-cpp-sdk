@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListConfigByActionRequest;
 
 ListConfigByActionRequest::ListConfigByActionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListConfigByAction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListConfigByActionRequest::~ListConfigByActionRequest()
 {}

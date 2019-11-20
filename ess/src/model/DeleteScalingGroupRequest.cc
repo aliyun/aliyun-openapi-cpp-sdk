@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteScalingGroupRequest;
 
 DeleteScalingGroupRequest::DeleteScalingGroupRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteScalingGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteScalingGroupRequest::~DeleteScalingGroupRequest()
 {}

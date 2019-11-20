@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::QueryMetricRequest;
 
 QueryMetricRequest::QueryMetricRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "QueryMetric")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMetricRequest::~QueryMetricRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<QueryMetricRequest::Filters> QueryMetricRequest::getFilters()const
 void QueryMetricRequest::setFilters(const std::vector<Filters>& filters)
 {
 	filters_ = filters;
-	int i = 0;
-	for(int i = 0; i!= filters.size(); i++)	{
-		auto obj = filters.at(i);
-		std::string str ="Filters."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= filters.size(); dep1++) {
+		auto filtersObj = filters.at(dep1);
+		std::string filtersObjStr = "Filters." + std::to_string(dep1);
+		setCoreParameter(filtersObjStr + ".Value", filtersObj.value);
+		setCoreParameter(filtersObjStr + ".Key", filtersObj.key);
 	}
 }
 
@@ -83,8 +84,8 @@ std::vector<std::string> QueryMetricRequest::getMeasures()const
 void QueryMetricRequest::setMeasures(const std::vector<std::string>& measures)
 {
 	measures_ = measures;
-	for(int i = 0; i!= measures.size(); i++)
-		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
+	for(int dep1 = 0; dep1!= measures.size(); dep1++)
+		setCoreParameter("Measures."+ std::to_string(dep1), measures.at(dep1));
 }
 
 int QueryMetricRequest::getIntervalInSec()const
@@ -128,8 +129,8 @@ std::vector<std::string> QueryMetricRequest::getDimensions()const
 void QueryMetricRequest::setDimensions(const std::vector<std::string>& dimensions)
 {
 	dimensions_ = dimensions;
-	for(int i = 0; i!= dimensions.size(); i++)
-		setCoreParameter("Dimensions."+ std::to_string(i), dimensions.at(i));
+	for(int dep1 = 0; dep1!= dimensions.size(); dep1++)
+		setCoreParameter("Dimensions."+ std::to_string(dep1), dimensions.at(dep1));
 }
 
 std::string QueryMetricRequest::getOrder()const

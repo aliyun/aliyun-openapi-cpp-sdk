@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeInstanceVncPasswdRequest;
 
 DescribeInstanceVncPasswdRequest::DescribeInstanceVncPasswdRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceVncPasswd")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceVncPasswdRequest::~DescribeInstanceVncPasswdRequest()
 {}

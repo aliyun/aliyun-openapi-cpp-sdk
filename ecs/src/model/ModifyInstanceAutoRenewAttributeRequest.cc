@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyInstanceAutoRenewAttributeRequest;
 
 ModifyInstanceAutoRenewAttributeRequest::ModifyInstanceAutoRenewAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceAutoRenewAttributeRequest::~ModifyInstanceAutoRenewAttributeRequest()
 {}

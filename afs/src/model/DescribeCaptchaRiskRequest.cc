@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribeCaptchaRiskRequest;
 
 DescribeCaptchaRiskRequest::DescribeCaptchaRiskRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribeCaptchaRisk")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCaptchaRiskRequest::~DescribeCaptchaRiskRequest()
 {}

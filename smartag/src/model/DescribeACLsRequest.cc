@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeACLsRequest;
 
 DescribeACLsRequest::DescribeACLsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeACLs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeACLsRequest::~DescribeACLsRequest()
 {}

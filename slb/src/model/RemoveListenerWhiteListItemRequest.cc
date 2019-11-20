@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::RemoveListenerWhiteListItemRequest;
 
 RemoveListenerWhiteListItemRequest::RemoveListenerWhiteListItemRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "RemoveListenerWhiteListItem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveListenerWhiteListItemRequest::~RemoveListenerWhiteListItemRequest()
 {}

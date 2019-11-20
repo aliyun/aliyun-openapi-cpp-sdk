@@ -80,6 +80,8 @@
 #include "model/QueryMaterialListResult.h"
 #include "model/QueryMonitorKeywordsRequest.h"
 #include "model/QueryMonitorKeywordsResult.h"
+#include "model/QueryOfficialFileCustomListRequest.h"
+#include "model/QueryOfficialFileCustomListResult.h"
 #include "model/QueryOssResourcesRequest.h"
 #include "model/QueryOssResourcesResult.h"
 #include "model/QueryQrCodeUploadStatusRequest.h"
@@ -110,8 +112,12 @@
 #include "model/QueryTrademarkPriceResult.h"
 #include "model/RefundProduceRequest.h"
 #include "model/RefundProduceResult.h"
+#include "model/RejectApplicantRequest.h"
+#include "model/RejectApplicantResult.h"
 #include "model/SaveTaskRequest.h"
 #include "model/SaveTaskResult.h"
+#include "model/SaveTaskForOfficialFileCustomRequest.h"
+#include "model/SaveTaskForOfficialFileCustomResult.h"
 #include "model/StartNotaryRequest.h"
 #include "model/StartNotaryResult.h"
 #include "model/StoreMaterialTemporarilyRequest.h"
@@ -226,6 +232,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryMonitorKeywordsResult> QueryMonitorKeywordsOutcome;
 			typedef std::future<QueryMonitorKeywordsOutcome> QueryMonitorKeywordsOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::QueryMonitorKeywordsRequest&, const QueryMonitorKeywordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMonitorKeywordsAsyncHandler;
+			typedef Outcome<Error, Model::QueryOfficialFileCustomListResult> QueryOfficialFileCustomListOutcome;
+			typedef std::future<QueryOfficialFileCustomListOutcome> QueryOfficialFileCustomListOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::QueryOfficialFileCustomListRequest&, const QueryOfficialFileCustomListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryOfficialFileCustomListAsyncHandler;
 			typedef Outcome<Error, Model::QueryOssResourcesResult> QueryOssResourcesOutcome;
 			typedef std::future<QueryOssResourcesOutcome> QueryOssResourcesOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::QueryOssResourcesRequest&, const QueryOssResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryOssResourcesAsyncHandler;
@@ -271,9 +280,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RefundProduceResult> RefundProduceOutcome;
 			typedef std::future<RefundProduceOutcome> RefundProduceOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::RefundProduceRequest&, const RefundProduceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefundProduceAsyncHandler;
+			typedef Outcome<Error, Model::RejectApplicantResult> RejectApplicantOutcome;
+			typedef std::future<RejectApplicantOutcome> RejectApplicantOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::RejectApplicantRequest&, const RejectApplicantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RejectApplicantAsyncHandler;
 			typedef Outcome<Error, Model::SaveTaskResult> SaveTaskOutcome;
 			typedef std::future<SaveTaskOutcome> SaveTaskOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::SaveTaskRequest&, const SaveTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveTaskAsyncHandler;
+			typedef Outcome<Error, Model::SaveTaskForOfficialFileCustomResult> SaveTaskForOfficialFileCustomOutcome;
+			typedef std::future<SaveTaskForOfficialFileCustomOutcome> SaveTaskForOfficialFileCustomOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::SaveTaskForOfficialFileCustomRequest&, const SaveTaskForOfficialFileCustomOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveTaskForOfficialFileCustomAsyncHandler;
 			typedef Outcome<Error, Model::StartNotaryResult> StartNotaryOutcome;
 			typedef std::future<StartNotaryOutcome> StartNotaryOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::StartNotaryRequest&, const StartNotaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartNotaryAsyncHandler;
@@ -393,6 +408,9 @@ namespace AlibabaCloud
 			QueryMonitorKeywordsOutcome queryMonitorKeywords(const Model::QueryMonitorKeywordsRequest &request)const;
 			void queryMonitorKeywordsAsync(const Model::QueryMonitorKeywordsRequest& request, const QueryMonitorKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryMonitorKeywordsOutcomeCallable queryMonitorKeywordsCallable(const Model::QueryMonitorKeywordsRequest& request) const;
+			QueryOfficialFileCustomListOutcome queryOfficialFileCustomList(const Model::QueryOfficialFileCustomListRequest &request)const;
+			void queryOfficialFileCustomListAsync(const Model::QueryOfficialFileCustomListRequest& request, const QueryOfficialFileCustomListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryOfficialFileCustomListOutcomeCallable queryOfficialFileCustomListCallable(const Model::QueryOfficialFileCustomListRequest& request) const;
 			QueryOssResourcesOutcome queryOssResources(const Model::QueryOssResourcesRequest &request)const;
 			void queryOssResourcesAsync(const Model::QueryOssResourcesRequest& request, const QueryOssResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryOssResourcesOutcomeCallable queryOssResourcesCallable(const Model::QueryOssResourcesRequest& request) const;
@@ -438,9 +456,15 @@ namespace AlibabaCloud
 			RefundProduceOutcome refundProduce(const Model::RefundProduceRequest &request)const;
 			void refundProduceAsync(const Model::RefundProduceRequest& request, const RefundProduceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefundProduceOutcomeCallable refundProduceCallable(const Model::RefundProduceRequest& request) const;
+			RejectApplicantOutcome rejectApplicant(const Model::RejectApplicantRequest &request)const;
+			void rejectApplicantAsync(const Model::RejectApplicantRequest& request, const RejectApplicantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RejectApplicantOutcomeCallable rejectApplicantCallable(const Model::RejectApplicantRequest& request) const;
 			SaveTaskOutcome saveTask(const Model::SaveTaskRequest &request)const;
 			void saveTaskAsync(const Model::SaveTaskRequest& request, const SaveTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveTaskOutcomeCallable saveTaskCallable(const Model::SaveTaskRequest& request) const;
+			SaveTaskForOfficialFileCustomOutcome saveTaskForOfficialFileCustom(const Model::SaveTaskForOfficialFileCustomRequest &request)const;
+			void saveTaskForOfficialFileCustomAsync(const Model::SaveTaskForOfficialFileCustomRequest& request, const SaveTaskForOfficialFileCustomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveTaskForOfficialFileCustomOutcomeCallable saveTaskForOfficialFileCustomCallable(const Model::SaveTaskForOfficialFileCustomRequest& request) const;
 			StartNotaryOutcome startNotary(const Model::StartNotaryRequest &request)const;
 			void startNotaryAsync(const Model::StartNotaryRequest& request, const StartNotaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartNotaryOutcomeCallable startNotaryCallable(const Model::StartNotaryRequest& request) const;

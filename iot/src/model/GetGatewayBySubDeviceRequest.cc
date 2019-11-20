@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::GetGatewayBySubDeviceRequest;
 
 GetGatewayBySubDeviceRequest::GetGatewayBySubDeviceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetGatewayBySubDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetGatewayBySubDeviceRequest::~GetGatewayBySubDeviceRequest()
 {}

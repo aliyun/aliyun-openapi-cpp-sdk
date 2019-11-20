@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListAgentStatesRequest;
 
 ListAgentStatesRequest::ListAgentStatesRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListAgentStates")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAgentStatesRequest::~ListAgentStatesRequest()
 {}

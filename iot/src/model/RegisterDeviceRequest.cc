@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::RegisterDeviceRequest;
 
 RegisterDeviceRequest::RegisterDeviceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "RegisterDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegisterDeviceRequest::~RegisterDeviceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForUpdatingContactInfoByNewConta
 
 SaveBatchTaskForUpdatingContactInfoByNewContactRequest::SaveBatchTaskForUpdatingContactInfoByNewContactRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByNewContact")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForUpdatingContactInfoByNewContactRequest::~SaveBatchTaskForUpdatingContactInfoByNewContactRequest()
 {}
@@ -209,8 +211,8 @@ std::vector<std::string> SaveBatchTaskForUpdatingContactInfoByNewContactRequest:
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setDomainName(const std::vector<std::string>& domainName)
 {
 	domainName_ = domainName;
-	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+	for(int dep1 = 0; dep1!= domainName.size(); dep1++)
+		setCoreParameter("DomainName."+ std::to_string(dep1), domainName.at(dep1));
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getTelephone()const

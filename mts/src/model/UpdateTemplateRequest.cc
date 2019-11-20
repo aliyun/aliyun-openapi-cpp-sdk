@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateTemplateRequest;
 
 UpdateTemplateRequest::UpdateTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateTemplateRequest::~UpdateTemplateRequest()
 {}

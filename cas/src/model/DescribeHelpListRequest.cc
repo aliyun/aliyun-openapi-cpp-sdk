@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeHelpListRequest;
 
 DescribeHelpListRequest::DescribeHelpListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeHelpList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeHelpListRequest::~DescribeHelpListRequest()
 {}

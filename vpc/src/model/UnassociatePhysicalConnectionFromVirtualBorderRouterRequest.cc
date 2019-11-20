@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::UnassociatePhysicalConnectionFromVirtualBorderRo
 
 UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::UnassociatePhysicalConnectionFromVirtualBorderRouterRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "UnassociatePhysicalConnectionFromVirtualBorderRouter")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::~UnassociatePhysicalConnectionFromVirtualBorderRouterRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateQosCarRequest;
 
 CreateQosCarRequest::CreateQosCarRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateQosCar")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateQosCarRequest::~CreateQosCarRequest()
 {}
@@ -177,5 +179,16 @@ void CreateQosCarRequest::setLimitType(const std::string& limitType)
 {
 	limitType_ = limitType;
 	setCoreParameter("LimitType", limitType);
+}
+
+std::string CreateQosCarRequest::getName()const
+{
+	return name_;
+}
+
+void CreateQosCarRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

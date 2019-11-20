@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::CreateCommodityRequest;
 
 CreateCommodityRequest::CreateCommodityRequest() :
 	RpcServiceRequest("market", "2015-11-01", "CreateCommodity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCommodityRequest::~CreateCommodityRequest()
 {}

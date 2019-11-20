@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::RevokeInstanceFromCbnRequest;
 
 RevokeInstanceFromCbnRequest::RevokeInstanceFromCbnRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "RevokeInstanceFromCbn")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RevokeInstanceFromCbnRequest::~RevokeInstanceFromCbnRequest()
 {}

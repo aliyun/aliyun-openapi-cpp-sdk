@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::RebalanceInstancesRequest;
 
 RebalanceInstancesRequest::RebalanceInstancesRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "RebalanceInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RebalanceInstancesRequest::~RebalanceInstancesRequest()
 {}

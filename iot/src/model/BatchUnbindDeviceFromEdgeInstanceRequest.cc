@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchUnbindDeviceFromEdgeInstanceRequest;
 
 BatchUnbindDeviceFromEdgeInstanceRequest::BatchUnbindDeviceFromEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchUnbindDeviceFromEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchUnbindDeviceFromEdgeInstanceRequest::~BatchUnbindDeviceFromEdgeInstanceRequest()
 {}
@@ -55,8 +57,8 @@ std::vector<std::string> BatchUnbindDeviceFromEdgeInstanceRequest::getIotIds()co
 void BatchUnbindDeviceFromEdgeInstanceRequest::setIotIds(const std::vector<std::string>& iotIds)
 {
 	iotIds_ = iotIds;
-	for(int i = 0; i!= iotIds.size(); i++)
-		setCoreParameter("IotIds."+ std::to_string(i), iotIds.at(i));
+	for(int dep1 = 0; dep1!= iotIds.size(); dep1++)
+		setCoreParameter("IotIds."+ std::to_string(dep1), iotIds.at(dep1));
 }
 
 std::string BatchUnbindDeviceFromEdgeInstanceRequest::getIotInstanceId()const

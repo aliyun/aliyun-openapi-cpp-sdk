@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteCasterSceneConfigRequest;
 
 DeleteCasterSceneConfigRequest::DeleteCasterSceneConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteCasterSceneConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCasterSceneConfigRequest::~DeleteCasterSceneConfigRequest()
 {}

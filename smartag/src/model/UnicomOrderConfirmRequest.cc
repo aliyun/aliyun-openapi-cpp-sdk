@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::UnicomOrderConfirmRequest;
 
 UnicomOrderConfirmRequest::UnicomOrderConfirmRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "UnicomOrderConfirm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnicomOrderConfirmRequest::~UnicomOrderConfirmRequest()
 {}
@@ -55,18 +57,18 @@ std::vector<UnicomOrderConfirmRequest::OrderItem> UnicomOrderConfirmRequest::get
 void UnicomOrderConfirmRequest::setOrderItem(const std::vector<OrderItem>& orderItem)
 {
 	orderItem_ = orderItem;
-	int i = 0;
-	for(int i = 0; i!= orderItem.size(); i++)	{
-		auto obj = orderItem.at(i);
-		std::string str ="OrderItem."+ std::to_string(i);
-		setCoreParameter(str + ".ScItemName", obj.scItemName);
-		setCoreParameter(str + ".ItemAmount", obj.itemAmount);
-		for(int i = 0; i!= obj.snList.size(); i++)				setCoreParameter(str + ".SnList."+ std::to_string(i), obj.snList.at(i));
-		setCoreParameter(str + ".OrderItemId", obj.orderItemId);
-		setCoreParameter(str + ".ScItemCode", obj.scItemCode);
-		setCoreParameter(str + ".ItemQuantity", std::to_string(obj.itemQuantity));
-		setCoreParameter(str + ".TradeId", obj.tradeId);
-		setCoreParameter(str + ".TradeItemId", obj.tradeItemId);
+	for(int dep1 = 0; dep1!= orderItem.size(); dep1++) {
+		auto orderItemObj = orderItem.at(dep1);
+		std::string orderItemObjStr = "OrderItem." + std::to_string(dep1);
+		setCoreParameter(orderItemObjStr + ".ScItemName", orderItemObj.scItemName);
+		setCoreParameter(orderItemObjStr + ".ItemAmount", orderItemObj.itemAmount);
+		for(int dep2 = 0; dep2!= snList.size(); dep2++)
+			setCoreParameter(orderItemObjStr + ".SnList."+ std::to_string(dep2), orderItemObj.snList.at(dep2));
+		setCoreParameter(orderItemObjStr + ".OrderItemId", orderItemObj.orderItemId);
+		setCoreParameter(orderItemObjStr + ".ScItemCode", orderItemObj.scItemCode);
+		setCoreParameter(orderItemObjStr + ".ItemQuantity", std::to_string(orderItemObj.itemQuantity));
+		setCoreParameter(orderItemObjStr + ".TradeId", orderItemObj.tradeId);
+		setCoreParameter(orderItemObjStr + ".TradeItemId", orderItemObj.tradeItemId);
 	}
 }
 

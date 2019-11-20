@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryEnsAssociationRequest;
 
 QueryEnsAssociationRequest::QueryEnsAssociationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryEnsAssociation")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEnsAssociationRequest::~QueryEnsAssociationRequest()
 {}

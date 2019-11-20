@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::RegisterMediaDetailScenarioRequest;
 
 RegisterMediaDetailScenarioRequest::RegisterMediaDetailScenarioRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "RegisterMediaDetailScenario")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegisterMediaDetailScenarioRequest::~RegisterMediaDetailScenarioRequest()
 {}

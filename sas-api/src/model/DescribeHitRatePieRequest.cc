@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::DescribeHitRatePieRequest;
 
 DescribeHitRatePieRequest::DescribeHitRatePieRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeHitRatePie")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeHitRatePieRequest::~DescribeHitRatePieRequest()
 {}

@@ -36,10 +36,8 @@ namespace AlibabaCloud
 				{
 					struct MongosAttribute
 					{
-						std::string connectSting;
 						std::string nodeClass;
 						std::string nodeDescription;
-						int port;
 						std::string nodeId;
 					};
 					struct ShardAttribute

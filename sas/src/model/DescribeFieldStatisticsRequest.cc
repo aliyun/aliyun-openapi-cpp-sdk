@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeFieldStatisticsRequest;
 
 DescribeFieldStatisticsRequest::DescribeFieldStatisticsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeFieldStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFieldStatisticsRequest::~DescribeFieldStatisticsRequest()
 {}

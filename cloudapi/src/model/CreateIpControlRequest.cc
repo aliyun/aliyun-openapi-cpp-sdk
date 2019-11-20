@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::CreateIpControlRequest;
 
 CreateIpControlRequest::CreateIpControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "CreateIpControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIpControlRequest::~CreateIpControlRequest()
 {}
@@ -44,12 +46,11 @@ std::vector<CreateIpControlRequest::IpControlPolicys> CreateIpControlRequest::ge
 void CreateIpControlRequest::setIpControlPolicys(const std::vector<IpControlPolicys>& ipControlPolicys)
 {
 	ipControlPolicys_ = ipControlPolicys;
-	int i = 0;
-	for(int i = 0; i!= ipControlPolicys.size(); i++)	{
-		auto obj = ipControlPolicys.at(i);
-		std::string str ="IpControlPolicys."+ std::to_string(i);
-		setCoreParameter(str + ".AppId", obj.appId);
-		setCoreParameter(str + ".CidrIp", obj.cidrIp);
+	for(int dep1 = 0; dep1!= ipControlPolicys.size(); dep1++) {
+		auto ipControlPolicysObj = ipControlPolicys.at(dep1);
+		std::string ipControlPolicysObjStr = "IpControlPolicys." + std::to_string(dep1);
+		setCoreParameter(ipControlPolicysObjStr + ".AppId", ipControlPolicysObj.appId);
+		setCoreParameter(ipControlPolicysObjStr + ".CidrIp", ipControlPolicysObj.cidrIp);
 	}
 }
 

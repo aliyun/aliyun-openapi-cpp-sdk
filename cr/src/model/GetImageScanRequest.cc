@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetImageScanRequest;
 
 GetImageScanRequest::GetImageScanRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/scan");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetImageScanRequest::~GetImageScanRequest()
 {}

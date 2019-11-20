@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::AddCategoryRequest;
 
 AddCategoryRequest::AddCategoryRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "AddCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCategoryRequest::~AddCategoryRequest()
 {}

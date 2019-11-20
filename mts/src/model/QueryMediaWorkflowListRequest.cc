@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryMediaWorkflowListRequest;
 
 QueryMediaWorkflowListRequest::QueryMediaWorkflowListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryMediaWorkflowList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMediaWorkflowListRequest::~QueryMediaWorkflowListRequest()
 {}

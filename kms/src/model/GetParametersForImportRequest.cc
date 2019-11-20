@@ -20,7 +20,9 @@ using AlibabaCloud::Kms::Model::GetParametersForImportRequest;
 
 GetParametersForImportRequest::GetParametersForImportRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "GetParametersForImport")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetParametersForImportRequest::~GetParametersForImportRequest()
 {}

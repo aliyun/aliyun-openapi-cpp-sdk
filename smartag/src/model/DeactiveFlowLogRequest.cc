@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeactiveFlowLogRequest;
 
 DeactiveFlowLogRequest::DeactiveFlowLogRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeactiveFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeactiveFlowLogRequest::~DeactiveFlowLogRequest()
 {}

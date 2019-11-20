@@ -41,32 +41,11 @@ void GetPredictResultResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Content"].isNull())
 		content_ = value["Content"].asString();
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
-}
-
-std::string GetPredictResultResult::getMessage()const
-{
-	return message_;
 }
 
 std::string GetPredictResultResult::getContent()const
 {
 	return content_;
-}
-
-int GetPredictResultResult::getCode()const
-{
-	return code_;
-}
-
-bool GetPredictResultResult::getSuccess()const
-{
-	return success_;
 }
 

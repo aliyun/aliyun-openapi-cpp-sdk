@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeAuditPolicyRequest;
 
 DescribeAuditPolicyRequest::DescribeAuditPolicyRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeAuditPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuditPolicyRequest::~DescribeAuditPolicyRequest()
 {}

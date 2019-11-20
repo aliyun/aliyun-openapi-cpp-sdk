@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeleteApgroupConfigRequest;
 
 DeleteApgroupConfigRequest::DeleteApgroupConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeleteApgroupConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteApgroupConfigRequest::~DeleteApgroupConfigRequest()
 {}

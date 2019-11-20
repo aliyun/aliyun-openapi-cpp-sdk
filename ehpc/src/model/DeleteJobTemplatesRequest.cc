@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::DeleteJobTemplatesRequest;
 
 DeleteJobTemplatesRequest::DeleteJobTemplatesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteJobTemplates")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DeleteJobTemplatesRequest::~DeleteJobTemplatesRequest()
 {}

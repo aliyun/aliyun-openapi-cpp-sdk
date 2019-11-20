@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListTranscodeTaskRequest;
 
 ListTranscodeTaskRequest::ListTranscodeTaskRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListTranscodeTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTranscodeTaskRequest::~ListTranscodeTaskRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateInstanceRequest;
 
 CreateInstanceRequest::CreateInstanceRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateInstanceRequest::~CreateInstanceRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> CreateInstanceRequest::getPhoneNumbers()const
 void CreateInstanceRequest::setPhoneNumbers(const std::vector<std::string>& phoneNumbers)
 {
 	phoneNumbers_ = phoneNumbers;
-	for(int i = 0; i!= phoneNumbers.size(); i++)
-		setCoreParameter("PhoneNumbers."+ std::to_string(i), phoneNumbers.at(i));
+	for(int dep1 = 0; dep1!= phoneNumbers.size(); dep1++)
+		setCoreParameter("PhoneNumbers."+ std::to_string(dep1), phoneNumbers.at(dep1));
 }
 
 std::vector<std::string> CreateInstanceRequest::getUserObject()const
@@ -45,8 +47,8 @@ std::vector<std::string> CreateInstanceRequest::getUserObject()const
 void CreateInstanceRequest::setUserObject(const std::vector<std::string>& userObject)
 {
 	userObject_ = userObject;
-	for(int i = 0; i!= userObject.size(); i++)
-		setCoreParameter("UserObject."+ std::to_string(i), userObject.at(i));
+	for(int dep1 = 0; dep1!= userObject.size(); dep1++)
+		setCoreParameter("UserObject."+ std::to_string(dep1), userObject.at(dep1));
 }
 
 std::string CreateInstanceRequest::getDomainName()const
@@ -101,8 +103,8 @@ std::vector<std::string> CreateInstanceRequest::getAdminRamId()const
 void CreateInstanceRequest::setAdminRamId(const std::vector<std::string>& adminRamId)
 {
 	adminRamId_ = adminRamId;
-	for(int i = 0; i!= adminRamId.size(); i++)
-		setCoreParameter("AdminRamId."+ std::to_string(i), adminRamId.at(i));
+	for(int dep1 = 0; dep1!= adminRamId.size(); dep1++)
+		setCoreParameter("AdminRamId."+ std::to_string(dep1), adminRamId.at(dep1));
 }
 
 std::string CreateInstanceRequest::getAccessKeyId()const

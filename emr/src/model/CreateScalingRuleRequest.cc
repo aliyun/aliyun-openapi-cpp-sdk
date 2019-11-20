@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateScalingRuleRequest;
 
 CreateScalingRuleRequest::CreateScalingRuleRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateScalingRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateScalingRuleRequest::~CreateScalingRuleRequest()
 {}
@@ -66,16 +68,15 @@ std::vector<CreateScalingRuleRequest::CloudWatchTrigger> CreateScalingRuleReques
 void CreateScalingRuleRequest::setCloudWatchTrigger(const std::vector<CloudWatchTrigger>& cloudWatchTrigger)
 {
 	cloudWatchTrigger_ = cloudWatchTrigger;
-	int i = 0;
-	for(int i = 0; i!= cloudWatchTrigger.size(); i++)	{
-		auto obj = cloudWatchTrigger.at(i);
-		std::string str ="CloudWatchTrigger."+ std::to_string(i);
-		setCoreParameter(str + ".Period", std::to_string(obj.period));
-		setCoreParameter(str + ".EvaluationCount", obj.evaluationCount);
-		setCoreParameter(str + ".Threshold", obj.threshold);
-		setCoreParameter(str + ".MetricName", obj.metricName);
-		setCoreParameter(str + ".ComparisonOperator", obj.comparisonOperator);
-		setCoreParameter(str + ".Statistics", obj.statistics);
+	for(int dep1 = 0; dep1!= cloudWatchTrigger.size(); dep1++) {
+		auto cloudWatchTriggerObj = cloudWatchTrigger.at(dep1);
+		std::string cloudWatchTriggerObjStr = "CloudWatchTrigger." + std::to_string(dep1);
+		setCoreParameter(cloudWatchTriggerObjStr + ".Period", std::to_string(cloudWatchTriggerObj.period));
+		setCoreParameter(cloudWatchTriggerObjStr + ".EvaluationCount", cloudWatchTriggerObj.evaluationCount);
+		setCoreParameter(cloudWatchTriggerObjStr + ".Threshold", cloudWatchTriggerObj.threshold);
+		setCoreParameter(cloudWatchTriggerObjStr + ".MetricName", cloudWatchTriggerObj.metricName);
+		setCoreParameter(cloudWatchTriggerObjStr + ".ComparisonOperator", cloudWatchTriggerObj.comparisonOperator);
+		setCoreParameter(cloudWatchTriggerObjStr + ".Statistics", cloudWatchTriggerObj.statistics);
 	}
 }
 
@@ -208,15 +209,14 @@ std::vector<CreateScalingRuleRequest::SchedulerTrigger> CreateScalingRuleRequest
 void CreateScalingRuleRequest::setSchedulerTrigger(const std::vector<SchedulerTrigger>& schedulerTrigger)
 {
 	schedulerTrigger_ = schedulerTrigger;
-	int i = 0;
-	for(int i = 0; i!= schedulerTrigger.size(); i++)	{
-		auto obj = schedulerTrigger.at(i);
-		std::string str ="SchedulerTrigger."+ std::to_string(i);
-		setCoreParameter(str + ".LaunchTime", obj.launchTime);
-		setCoreParameter(str + ".LaunchExpirationTime", std::to_string(obj.launchExpirationTime));
-		setCoreParameter(str + ".RecurrenceValue", obj.recurrenceValue);
-		setCoreParameter(str + ".RecurrenceEndTime", obj.recurrenceEndTime);
-		setCoreParameter(str + ".RecurrenceType", obj.recurrenceType);
+	for(int dep1 = 0; dep1!= schedulerTrigger.size(); dep1++) {
+		auto schedulerTriggerObj = schedulerTrigger.at(dep1);
+		std::string schedulerTriggerObjStr = "SchedulerTrigger." + std::to_string(dep1);
+		setCoreParameter(schedulerTriggerObjStr + ".LaunchTime", schedulerTriggerObj.launchTime);
+		setCoreParameter(schedulerTriggerObjStr + ".LaunchExpirationTime", std::to_string(schedulerTriggerObj.launchExpirationTime));
+		setCoreParameter(schedulerTriggerObjStr + ".RecurrenceValue", schedulerTriggerObj.recurrenceValue);
+		setCoreParameter(schedulerTriggerObjStr + ".RecurrenceEndTime", schedulerTriggerObj.recurrenceEndTime);
+		setCoreParameter(schedulerTriggerObjStr + ".RecurrenceType", schedulerTriggerObj.recurrenceType);
 	}
 }
 

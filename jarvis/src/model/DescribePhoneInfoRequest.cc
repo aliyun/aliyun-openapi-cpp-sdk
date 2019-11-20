@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribePhoneInfoRequest;
 
 DescribePhoneInfoRequest::DescribePhoneInfoRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribePhoneInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePhoneInfoRequest::~DescribePhoneInfoRequest()
 {}

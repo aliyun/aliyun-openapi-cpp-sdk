@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::UpgradeInstanceRequest;
 
 UpgradeInstanceRequest::UpgradeInstanceRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "UpgradeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeInstanceRequest::~UpgradeInstanceRequest()
 {}

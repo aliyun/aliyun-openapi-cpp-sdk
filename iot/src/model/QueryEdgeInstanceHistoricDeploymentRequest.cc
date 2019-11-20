@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryEdgeInstanceHistoricDeploymentRequest;
 
 QueryEdgeInstanceHistoricDeploymentRequest::QueryEdgeInstanceHistoricDeploymentRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryEdgeInstanceHistoricDeployment")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEdgeInstanceHistoricDeploymentRequest::~QueryEdgeInstanceHistoricDeploymentRequest()
 {}

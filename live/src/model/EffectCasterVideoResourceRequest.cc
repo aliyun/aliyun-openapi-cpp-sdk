@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::EffectCasterVideoResourceRequest;
 
 EffectCasterVideoResourceRequest::EffectCasterVideoResourceRequest() :
 	RpcServiceRequest("live", "2016-11-01", "EffectCasterVideoResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EffectCasterVideoResourceRequest::~EffectCasterVideoResourceRequest()
 {}

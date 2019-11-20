@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::StopExecutionRequest;
 
 StopExecutionRequest::StopExecutionRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "StopExecution")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopExecutionRequest::~StopExecutionRequest()
 {}

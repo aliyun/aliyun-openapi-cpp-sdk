@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteIpv6EgressOnlyRuleRequest;
 
 DeleteIpv6EgressOnlyRuleRequest::DeleteIpv6EgressOnlyRuleRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteIpv6EgressOnlyRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIpv6EgressOnlyRuleRequest::~DeleteIpv6EgressOnlyRuleRequest()
 {}

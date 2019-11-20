@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DeleteGroupDynamicRuleRequest;
 
 DeleteGroupDynamicRuleRequest::DeleteGroupDynamicRuleRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DeleteGroupDynamicRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteGroupDynamicRuleRequest::~DeleteGroupDynamicRuleRequest()
 {}

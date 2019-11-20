@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddTrancodeSEIRequest;
 
 AddTrancodeSEIRequest::AddTrancodeSEIRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddTrancodeSEI")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddTrancodeSEIRequest::~AddTrancodeSEIRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SetAuditSecurityIpRequest;
 
 SetAuditSecurityIpRequest::SetAuditSecurityIpRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SetAuditSecurityIp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetAuditSecurityIpRequest::~SetAuditSecurityIpRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::GetLicenseRequest;
 
 GetLicenseRequest::GetLicenseRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "GetLicense")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetLicenseRequest::~GetLicenseRequest()
 {}

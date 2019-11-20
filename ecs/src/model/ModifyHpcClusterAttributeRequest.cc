@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyHpcClusterAttributeRequest;
 
 ModifyHpcClusterAttributeRequest::ModifyHpcClusterAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyHpcClusterAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyHpcClusterAttributeRequest::~ModifyHpcClusterAttributeRequest()
 {}

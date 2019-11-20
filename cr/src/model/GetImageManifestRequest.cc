@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetImageManifestRequest;
 
 GetImageManifestRequest::GetImageManifestRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/manifest");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetImageManifestRequest::~GetImageManifestRequest()
 {}

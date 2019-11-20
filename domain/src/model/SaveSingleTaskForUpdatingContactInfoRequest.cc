@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForUpdatingContactInfoRequest;
 
 SaveSingleTaskForUpdatingContactInfoRequest::SaveSingleTaskForUpdatingContactInfoRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForUpdatingContactInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForUpdatingContactInfoRequest::~SaveSingleTaskForUpdatingContactInfoRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProfileMediaRequest;
 
 ProfileMediaRequest::ProfileMediaRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProfileMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProfileMediaRequest::~ProfileMediaRequest()
 {}

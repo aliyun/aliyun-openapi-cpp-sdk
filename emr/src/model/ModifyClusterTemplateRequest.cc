@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyClusterTemplateRequest;
 
 ModifyClusterTemplateRequest::ModifyClusterTemplateRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyClusterTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyClusterTemplateRequest::~ModifyClusterTemplateRequest()
 {}
@@ -132,13 +134,12 @@ std::vector<ModifyClusterTemplateRequest::BootstrapAction> ModifyClusterTemplate
 void ModifyClusterTemplateRequest::setBootstrapAction(const std::vector<BootstrapAction>& bootstrapAction)
 {
 	bootstrapAction_ = bootstrapAction;
-	int i = 0;
-	for(int i = 0; i!= bootstrapAction.size(); i++)	{
-		auto obj = bootstrapAction.at(i);
-		std::string str ="BootstrapAction."+ std::to_string(i);
-		setCoreParameter(str + ".Path", obj.path);
-		setCoreParameter(str + ".Arg", obj.arg);
-		setCoreParameter(str + ".Name", obj.name);
+	for(int dep1 = 0; dep1!= bootstrapAction.size(); dep1++) {
+		auto bootstrapActionObj = bootstrapAction.at(dep1);
+		std::string bootstrapActionObjStr = "BootstrapAction." + std::to_string(dep1);
+		setCoreParameter(bootstrapActionObjStr + ".Path", bootstrapActionObj.path);
+		setCoreParameter(bootstrapActionObjStr + ".Arg", bootstrapActionObj.arg);
+		setCoreParameter(bootstrapActionObjStr + ".Name", bootstrapActionObj.name);
 	}
 }
 
@@ -238,8 +239,8 @@ std::vector<std::string> ModifyClusterTemplateRequest::getOptionSoftWareList()co
 void ModifyClusterTemplateRequest::setOptionSoftWareList(const std::vector<std::string>& optionSoftWareList)
 {
 	optionSoftWareList_ = optionSoftWareList;
-	for(int i = 0; i!= optionSoftWareList.size(); i++)
-		setCoreParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
+	for(int dep1 = 0; dep1!= optionSoftWareList.size(); dep1++)
+		setCoreParameter("OptionSoftWareList."+ std::to_string(dep1), optionSoftWareList.at(dep1));
 }
 
 std::string ModifyClusterTemplateRequest::getNetType()const
@@ -415,28 +416,27 @@ std::vector<ModifyClusterTemplateRequest::HostGroup> ModifyClusterTemplateReques
 void ModifyClusterTemplateRequest::setHostGroup(const std::vector<HostGroup>& hostGroup)
 {
 	hostGroup_ = hostGroup;
-	int i = 0;
-	for(int i = 0; i!= hostGroup.size(); i++)	{
-		auto obj = hostGroup.at(i);
-		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".Period", std::to_string(obj.period));
-		setCoreParameter(str + ".SysDiskCapacity", std::to_string(obj.sysDiskCapacity));
-		setCoreParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
-		setCoreParameter(str + ".SysDiskType", obj.sysDiskType);
-		setCoreParameter(str + ".ClusterId", obj.clusterId);
-		setCoreParameter(str + ".DiskType", obj.diskType);
-		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
-		setCoreParameter(str + ".VSwitchId", obj.vSwitchId);
-		setCoreParameter(str + ".DiskCount", std::to_string(obj.diskCount));
-		setCoreParameter(str + ".AutoRenew", obj.autoRenew ? "true" : "false");
-		setCoreParameter(str + ".HostGroupId", obj.hostGroupId);
-		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".Comment", obj.comment);
-		setCoreParameter(str + ".ChargeType", obj.chargeType);
-		setCoreParameter(str + ".MultiInstanceTypes", obj.multiInstanceTypes);
-		setCoreParameter(str + ".CreateType", obj.createType);
-		setCoreParameter(str + ".HostGroupType", obj.hostGroupType);
+	for(int dep1 = 0; dep1!= hostGroup.size(); dep1++) {
+		auto hostGroupObj = hostGroup.at(dep1);
+		std::string hostGroupObjStr = "HostGroup." + std::to_string(dep1);
+		setCoreParameter(hostGroupObjStr + ".Period", std::to_string(hostGroupObj.period));
+		setCoreParameter(hostGroupObjStr + ".SysDiskCapacity", std::to_string(hostGroupObj.sysDiskCapacity));
+		setCoreParameter(hostGroupObjStr + ".DiskCapacity", std::to_string(hostGroupObj.diskCapacity));
+		setCoreParameter(hostGroupObjStr + ".SysDiskType", hostGroupObj.sysDiskType);
+		setCoreParameter(hostGroupObjStr + ".ClusterId", hostGroupObj.clusterId);
+		setCoreParameter(hostGroupObjStr + ".DiskType", hostGroupObj.diskType);
+		setCoreParameter(hostGroupObjStr + ".HostGroupName", hostGroupObj.hostGroupName);
+		setCoreParameter(hostGroupObjStr + ".VSwitchId", hostGroupObj.vSwitchId);
+		setCoreParameter(hostGroupObjStr + ".DiskCount", std::to_string(hostGroupObj.diskCount));
+		setCoreParameter(hostGroupObjStr + ".AutoRenew", hostGroupObj.autoRenew ? "true" : "false");
+		setCoreParameter(hostGroupObjStr + ".HostGroupId", hostGroupObj.hostGroupId);
+		setCoreParameter(hostGroupObjStr + ".NodeCount", std::to_string(hostGroupObj.nodeCount));
+		setCoreParameter(hostGroupObjStr + ".InstanceType", hostGroupObj.instanceType);
+		setCoreParameter(hostGroupObjStr + ".Comment", hostGroupObj.comment);
+		setCoreParameter(hostGroupObjStr + ".ChargeType", hostGroupObj.chargeType);
+		setCoreParameter(hostGroupObjStr + ".MultiInstanceTypes", hostGroupObj.multiInstanceTypes);
+		setCoreParameter(hostGroupObjStr + ".CreateType", hostGroupObj.createType);
+		setCoreParameter(hostGroupObjStr + ".HostGroupType", hostGroupObj.hostGroupType);
 	}
 }
 
@@ -459,16 +459,15 @@ std::vector<ModifyClusterTemplateRequest::Config> ModifyClusterTemplateRequest::
 void ModifyClusterTemplateRequest::setConfig(const std::vector<Config>& config)
 {
 	config_ = config;
-	int i = 0;
-	for(int i = 0; i!= config.size(); i++)	{
-		auto obj = config.at(i);
-		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", obj.configKey);
-		setCoreParameter(str + ".FileName", obj.fileName);
-		setCoreParameter(str + ".Encrypt", obj.encrypt);
-		setCoreParameter(str + ".Replace", obj.replace);
-		setCoreParameter(str + ".ConfigValue", obj.configValue);
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+	for(int dep1 = 0; dep1!= config.size(); dep1++) {
+		auto configObj = config.at(dep1);
+		std::string configObjStr = "Config." + std::to_string(dep1);
+		setCoreParameter(configObjStr + ".ConfigKey", configObj.configKey);
+		setCoreParameter(configObjStr + ".FileName", configObj.fileName);
+		setCoreParameter(configObjStr + ".Encrypt", configObj.encrypt);
+		setCoreParameter(configObjStr + ".Replace", configObj.replace);
+		setCoreParameter(configObjStr + ".ConfigValue", configObj.configValue);
+		setCoreParameter(configObjStr + ".ServiceName", configObj.serviceName);
 	}
 }
 

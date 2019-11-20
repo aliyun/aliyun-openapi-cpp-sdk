@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::SendWebsiteFeedbackRequest;
 
 SendWebsiteFeedbackRequest::SendWebsiteFeedbackRequest() :
 	RpcServiceRequest("green", "2017-08-23", "SendWebsiteFeedback")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendWebsiteFeedbackRequest::~SendWebsiteFeedbackRequest()
 {}

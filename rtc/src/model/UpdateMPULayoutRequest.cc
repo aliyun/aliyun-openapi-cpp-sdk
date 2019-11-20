@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::UpdateMPULayoutRequest;
 
 UpdateMPULayoutRequest::UpdateMPULayoutRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "UpdateMPULayout")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateMPULayoutRequest::~UpdateMPULayoutRequest()
 {}
@@ -33,13 +35,12 @@ std::vector<UpdateMPULayoutRequest::UserPanes> UpdateMPULayoutRequest::getUserPa
 void UpdateMPULayoutRequest::setUserPanes(const std::vector<UserPanes>& userPanes)
 {
 	userPanes_ = userPanes;
-	int i = 0;
-	for(int i = 0; i!= userPanes.size(); i++)	{
-		auto obj = userPanes.at(i);
-		std::string str ="UserPanes."+ std::to_string(i);
-		setCoreParameter(str + ".PaneId", std::to_string(obj.paneId));
-		setCoreParameter(str + ".UserId", obj.userId);
-		setCoreParameter(str + ".SourceType", obj.sourceType);
+	for(int dep1 = 0; dep1!= userPanes.size(); dep1++) {
+		auto userPanesObj = userPanes.at(dep1);
+		std::string userPanesObjStr = "UserPanes." + std::to_string(dep1);
+		setCoreParameter(userPanesObjStr + ".PaneId", std::to_string(userPanesObj.paneId));
+		setCoreParameter(userPanesObjStr + ".UserId", userPanesObj.userId);
+		setCoreParameter(userPanesObjStr + ".SourceType", userPanesObj.sourceType);
 	}
 }
 
@@ -73,8 +74,8 @@ std::vector<long> UpdateMPULayoutRequest::getLayoutIds()const
 void UpdateMPULayoutRequest::setLayoutIds(const std::vector<long>& layoutIds)
 {
 	layoutIds_ = layoutIds;
-	for(int i = 0; i!= layoutIds.size(); i++)
-		setCoreParameter("LayoutIds."+ std::to_string(i), std::to_string(layoutIds.at(i)));
+	for(int dep1 = 0; dep1!= layoutIds.size(); dep1++)
+		setCoreParameter("LayoutIds."+ std::to_string(dep1), std::to_string(layoutIds.at(dep1)));
 }
 
 std::string UpdateMPULayoutRequest::getTaskId()const

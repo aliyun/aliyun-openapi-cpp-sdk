@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::AddLabelRequest;
 
 AddLabelRequest::AddLabelRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "AddLabel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLabelRequest::~AddLabelRequest()
 {}

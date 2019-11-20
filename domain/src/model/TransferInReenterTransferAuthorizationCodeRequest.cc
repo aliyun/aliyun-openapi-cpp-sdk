@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::TransferInReenterTransferAuthorizationCodeReq
 
 TransferInReenterTransferAuthorizationCodeRequest::TransferInReenterTransferAuthorizationCodeRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "TransferInReenterTransferAuthorizationCode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TransferInReenterTransferAuthorizationCodeRequest::~TransferInReenterTransferAuthorizationCodeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeExpectationResultRequest;
 
 DescribeExpectationResultRequest::DescribeExpectationResultRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeExpectationResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeExpectationResultRequest::~DescribeExpectationResultRequest()
 {}

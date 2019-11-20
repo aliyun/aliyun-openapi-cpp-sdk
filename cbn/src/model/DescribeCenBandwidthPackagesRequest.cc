@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenBandwidthPackagesRequest;
 
 DescribeCenBandwidthPackagesRequest::DescribeCenBandwidthPackagesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenBandwidthPackages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenBandwidthPackagesRequest::~DescribeCenBandwidthPackagesRequest()
 {}
@@ -121,12 +123,12 @@ std::vector<DescribeCenBandwidthPackagesRequest::Filter> DescribeCenBandwidthPac
 void DescribeCenBandwidthPackagesRequest::setFilter(const std::vector<Filter>& filter)
 {
 	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
+		auto filterObj = filter.at(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1);
+		for(int dep2 = 0; dep2!= value.size(); dep2++)
+			setCoreParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
+		setCoreParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }
 

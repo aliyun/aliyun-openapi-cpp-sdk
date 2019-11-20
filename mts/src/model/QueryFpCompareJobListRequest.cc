@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryFpCompareJobListRequest;
 
 QueryFpCompareJobListRequest::QueryFpCompareJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryFpCompareJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFpCompareJobListRequest::~QueryFpCompareJobListRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::ListTraceAppsRequest;
 
 ListTraceAppsRequest::ListTraceAppsRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "ListTraceApps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTraceAppsRequest::~ListTraceAppsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiDocRequest;
 
 DescribeApiDocRequest::DescribeApiDocRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiDoc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiDocRequest::~DescribeApiDocRequest()
 {}

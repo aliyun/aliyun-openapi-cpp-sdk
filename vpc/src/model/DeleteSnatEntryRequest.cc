@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteSnatEntryRequest;
 
 DeleteSnatEntryRequest::DeleteSnatEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteSnatEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSnatEntryRequest::~DeleteSnatEntryRequest()
 {}

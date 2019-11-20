@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::CreateBackupRequest;
 
 CreateBackupRequest::CreateBackupRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "CreateBackup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBackupRequest::~CreateBackupRequest()
 {}

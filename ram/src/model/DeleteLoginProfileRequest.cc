@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeleteLoginProfileRequest;
 
 DeleteLoginProfileRequest::DeleteLoginProfileRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeleteLoginProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLoginProfileRequest::~DeleteLoginProfileRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::CreateIntranetDomainRequest;
 
 CreateIntranetDomainRequest::CreateIntranetDomainRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "CreateIntranetDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIntranetDomainRequest::~CreateIntranetDomainRequest()
 {}

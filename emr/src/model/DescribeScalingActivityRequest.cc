@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeScalingActivityRequest;
 
 DescribeScalingActivityRequest::DescribeScalingActivityRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeScalingActivity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScalingActivityRequest::~DescribeScalingActivityRequest()
 {}

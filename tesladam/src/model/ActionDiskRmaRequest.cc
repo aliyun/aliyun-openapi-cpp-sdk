@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaDam::Model::ActionDiskRmaRequest;
 
 ActionDiskRmaRequest::ActionDiskRmaRequest() :
 	RpcServiceRequest("tesladam", "2018-01-18", "ActionDiskRma")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ActionDiskRmaRequest::~ActionDiskRmaRequest()
 {}

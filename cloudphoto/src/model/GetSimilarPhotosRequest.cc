@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetSimilarPhotosRequest;
 
 GetSimilarPhotosRequest::GetSimilarPhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetSimilarPhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSimilarPhotosRequest::~GetSimilarPhotosRequest()
 {}

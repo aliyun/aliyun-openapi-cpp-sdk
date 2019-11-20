@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::ModifiyProjectRequest;
 
 ModifiyProjectRequest::ModifiyProjectRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "ModifiyProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifiyProjectRequest::~ModifiyProjectRequest()
 {}

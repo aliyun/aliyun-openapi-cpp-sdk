@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::CreateLoginProfileRequest;
 
 CreateLoginProfileRequest::CreateLoginProfileRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreateLoginProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateLoginProfileRequest::~CreateLoginProfileRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis_public::Model::DescribeAttackedIpRequest;
 
 DescribeAttackedIpRequest::DescribeAttackedIpRequest() :
 	RpcServiceRequest("jarvis-public", "2018-06-21", "DescribeAttackedIp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAttackedIpRequest::~DescribeAttackedIpRequest()
 {}

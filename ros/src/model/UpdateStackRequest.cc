@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::UpdateStackRequest;
 
 UpdateStackRequest::UpdateStackRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]");
+	setMethod(HttpRequest::Method::Put);
+}
 
 UpdateStackRequest::~UpdateStackRequest()
 {}

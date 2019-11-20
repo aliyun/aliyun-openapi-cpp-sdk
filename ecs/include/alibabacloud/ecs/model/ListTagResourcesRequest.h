@@ -35,6 +35,11 @@ namespace AlibabaCloud
 					std::string key;
 					std::string value;
 				};
+				struct TagFilter
+				{
+					std::string tagKey;
+					std::vector<std::string> tagValues;
+				};
 
 			public:
 				ListTagResourcesRequest();
@@ -56,6 +61,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::vector<TagFilter> getTagFilter()const;
+				void setTagFilter(const std::vector<TagFilter>& tagFilter);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
 
@@ -68,6 +75,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::vector<TagFilter> tagFilter_;
 				std::string resourceType_;
 
 			};

@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CheckCreateDdrDBInstanceRequest;
 
 CheckCreateDdrDBInstanceRequest::CheckCreateDdrDBInstanceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CheckCreateDdrDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckCreateDdrDBInstanceRequest::~CheckCreateDdrDBInstanceRequest()
 {}

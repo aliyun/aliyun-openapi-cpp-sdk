@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::CreateProjectRequest;
 
 CreateProjectRequest::CreateProjectRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "CreateProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateProjectRequest::~CreateProjectRequest()
 {}

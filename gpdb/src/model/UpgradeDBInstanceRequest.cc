@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::UpgradeDBInstanceRequest;
 
 UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "UpgradeDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeDBInstanceRequest::~UpgradeDBInstanceRequest()
 {}

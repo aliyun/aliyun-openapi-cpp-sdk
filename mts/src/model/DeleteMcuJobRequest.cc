@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeleteMcuJobRequest;
 
 DeleteMcuJobRequest::DeleteMcuJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeleteMcuJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMcuJobRequest::~DeleteMcuJobRequest()
 {}

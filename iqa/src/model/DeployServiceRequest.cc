@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::DeployServiceRequest;
 
 DeployServiceRequest::DeployServiceRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "DeployService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeployServiceRequest::~DeployServiceRequest()
 {}

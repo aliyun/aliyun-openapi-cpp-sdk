@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::CreateSessionRequest;
 
 CreateSessionRequest::CreateSessionRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "CreateSession")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSessionRequest::~CreateSessionRequest()
 {}

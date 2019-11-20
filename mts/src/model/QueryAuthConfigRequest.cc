@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryAuthConfigRequest;
 
 QueryAuthConfigRequest::QueryAuthConfigRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryAuthConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAuthConfigRequest::~QueryAuthConfigRequest()
 {}

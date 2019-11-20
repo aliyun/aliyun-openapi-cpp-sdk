@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::ListNotaryOrdersRequest;
 
 ListNotaryOrdersRequest::ListNotaryOrdersRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "ListNotaryOrders")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListNotaryOrdersRequest::~ListNotaryOrdersRequest()
 {}

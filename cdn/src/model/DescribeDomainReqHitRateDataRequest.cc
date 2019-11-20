@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainReqHitRateDataRequest;
 
 DescribeDomainReqHitRateDataRequest::DescribeDomainReqHitRateDataRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainReqHitRateData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainReqHitRateData")
 {
 	setMethod(HttpRequest::Method::Post);
 }

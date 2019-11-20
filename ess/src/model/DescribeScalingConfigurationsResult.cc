@@ -83,6 +83,8 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.systemDiskName = valueScalingConfigurationsScalingConfiguration["SystemDiskName"].asString();
 		if(!valueScalingConfigurationsScalingConfiguration["SystemDiskDescription"].isNull())
 			scalingConfigurationsObject.systemDiskDescription = valueScalingConfigurationsScalingConfiguration["SystemDiskDescription"].asString();
+		if(!valueScalingConfigurationsScalingConfiguration["SystemDiskAutoSnapshotPolicyId"].isNull())
+			scalingConfigurationsObject.systemDiskAutoSnapshotPolicyId = valueScalingConfigurationsScalingConfiguration["SystemDiskAutoSnapshotPolicyId"].asString();
 		if(!valueScalingConfigurationsScalingConfiguration["LifecycleState"].isNull())
 			scalingConfigurationsObject.lifecycleState = valueScalingConfigurationsScalingConfiguration["LifecycleState"].asString();
 		if(!valueScalingConfigurationsScalingConfiguration["CreationTime"].isNull())
@@ -131,6 +133,8 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 				dataDisksObject.diskName = allScalingConfigurationsNodeDataDisksDataDisk["DiskName"].asString();
 			if(!allScalingConfigurationsNodeDataDisksDataDisk["Description"].isNull())
 				dataDisksObject.description = allScalingConfigurationsNodeDataDisksDataDisk["Description"].asString();
+			if(!allScalingConfigurationsNodeDataDisksDataDisk["AutoSnapshotPolicyId"].isNull())
+				dataDisksObject.autoSnapshotPolicyId = allScalingConfigurationsNodeDataDisksDataDisk["AutoSnapshotPolicyId"].asString();
 			scalingConfigurationsObject.dataDisks.push_back(dataDisksObject);
 		}
 		auto allTagsNode = allScalingConfigurationsNode["Tags"]["Tag"];

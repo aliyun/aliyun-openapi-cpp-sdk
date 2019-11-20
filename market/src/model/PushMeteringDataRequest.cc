@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::PushMeteringDataRequest;
 
 PushMeteringDataRequest::PushMeteringDataRequest() :
 	RpcServiceRequest("market", "2015-11-01", "PushMeteringData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PushMeteringDataRequest::~PushMeteringDataRequest()
 {}

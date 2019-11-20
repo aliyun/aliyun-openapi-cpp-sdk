@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ResetAccountPasswordRequest;
 
 ResetAccountPasswordRequest::ResetAccountPasswordRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ResetAccountPassword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetAccountPasswordRequest::~ResetAccountPasswordRequest()
 {}

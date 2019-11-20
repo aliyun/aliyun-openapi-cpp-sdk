@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeL2VipsByDomainRequest;
 
 DescribeL2VipsByDomainRequest::DescribeL2VipsByDomainRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeL2VipsByDomain")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeL2VipsByDomain")
 {
 	setMethod(HttpRequest::Method::Post);
 }

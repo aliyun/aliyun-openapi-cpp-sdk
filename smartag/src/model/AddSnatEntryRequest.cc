@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::AddSnatEntryRequest;
 
 AddSnatEntryRequest::AddSnatEntryRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "AddSnatEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddSnatEntryRequest::~AddSnatEntryRequest()
 {}

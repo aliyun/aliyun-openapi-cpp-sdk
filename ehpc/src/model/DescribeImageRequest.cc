@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::DescribeImageRequest;
 
 DescribeImageRequest::DescribeImageRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeImage")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeImageRequest::~DescribeImageRequest()
 {}

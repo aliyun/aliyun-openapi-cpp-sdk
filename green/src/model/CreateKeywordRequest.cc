@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateKeywordRequest;
 
 CreateKeywordRequest::CreateKeywordRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateKeyword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateKeywordRequest::~CreateKeywordRequest()
 {}

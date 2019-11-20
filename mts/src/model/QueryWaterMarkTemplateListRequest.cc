@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryWaterMarkTemplateListRequest;
 
 QueryWaterMarkTemplateListRequest::QueryWaterMarkTemplateListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryWaterMarkTemplateList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryWaterMarkTemplateListRequest::~QueryWaterMarkTemplateListRequest()
 {}

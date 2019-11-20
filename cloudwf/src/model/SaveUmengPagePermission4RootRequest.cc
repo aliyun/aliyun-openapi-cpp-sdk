@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveUmengPagePermission4RootRequest;
 
 SaveUmengPagePermission4RootRequest::SaveUmengPagePermission4RootRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveUmengPagePermission4Root")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveUmengPagePermission4RootRequest::~SaveUmengPagePermission4RootRequest()
 {}

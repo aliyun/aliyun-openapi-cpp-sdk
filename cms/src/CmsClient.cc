@@ -591,6 +591,78 @@ CmsClient::DeleteGroupDynamicRuleOutcomeCallable CmsClient::deleteGroupDynamicRu
 	return task->get_future();
 }
 
+CmsClient::DeleteMetricRuleTargetsOutcome CmsClient::deleteMetricRuleTargets(const DeleteMetricRuleTargetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMetricRuleTargetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMetricRuleTargetsOutcome(DeleteMetricRuleTargetsResult(outcome.result()));
+	else
+		return DeleteMetricRuleTargetsOutcome(outcome.error());
+}
+
+void CmsClient::deleteMetricRuleTargetsAsync(const DeleteMetricRuleTargetsRequest& request, const DeleteMetricRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMetricRuleTargets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DeleteMetricRuleTargetsOutcomeCallable CmsClient::deleteMetricRuleTargetsCallable(const DeleteMetricRuleTargetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMetricRuleTargetsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMetricRuleTargets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DeleteMetricRulesOutcome CmsClient::deleteMetricRules(const DeleteMetricRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMetricRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMetricRulesOutcome(DeleteMetricRulesResult(outcome.result()));
+	else
+		return DeleteMetricRulesOutcome(outcome.error());
+}
+
+void CmsClient::deleteMetricRulesAsync(const DeleteMetricRulesRequest& request, const DeleteMetricRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMetricRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DeleteMetricRulesOutcomeCallable CmsClient::deleteMetricRulesCallable(const DeleteMetricRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMetricRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMetricRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CmsClient::DeleteMonitoringTemplateOutcome CmsClient::deleteMonitoringTemplate(const DeleteMonitoringTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,6 +1089,78 @@ CmsClient::DescribeISPAreaCityOutcomeCallable CmsClient::describeISPAreaCityCall
 			[this, request]()
 			{
 			return this->describeISPAreaCity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DescribeMetricRuleCountOutcome CmsClient::describeMetricRuleCount(const DescribeMetricRuleCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMetricRuleCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMetricRuleCountOutcome(DescribeMetricRuleCountResult(outcome.result()));
+	else
+		return DescribeMetricRuleCountOutcome(outcome.error());
+}
+
+void CmsClient::describeMetricRuleCountAsync(const DescribeMetricRuleCountRequest& request, const DescribeMetricRuleCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMetricRuleCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeMetricRuleCountOutcomeCallable CmsClient::describeMetricRuleCountCallable(const DescribeMetricRuleCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMetricRuleCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMetricRuleCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DescribeMetricRuleListOutcome CmsClient::describeMetricRuleList(const DescribeMetricRuleListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMetricRuleListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMetricRuleListOutcome(DescribeMetricRuleListResult(outcome.result()));
+	else
+		return DescribeMetricRuleListOutcome(outcome.error());
+}
+
+void CmsClient::describeMetricRuleListAsync(const DescribeMetricRuleListRequest& request, const DescribeMetricRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMetricRuleList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeMetricRuleListOutcomeCallable CmsClient::describeMetricRuleListCallable(const DescribeMetricRuleListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMetricRuleListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMetricRuleList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2745,6 +2889,42 @@ CmsClient::PutMetricRuleTargetsOutcomeCallable CmsClient::putMetricRuleTargetsCa
 			[this, request]()
 			{
 			return this->putMetricRuleTargets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::PutResourceMetricRuleOutcome CmsClient::putResourceMetricRule(const PutResourceMetricRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutResourceMetricRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutResourceMetricRuleOutcome(PutResourceMetricRuleResult(outcome.result()));
+	else
+		return PutResourceMetricRuleOutcome(outcome.error());
+}
+
+void CmsClient::putResourceMetricRuleAsync(const PutResourceMetricRuleRequest& request, const PutResourceMetricRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putResourceMetricRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::PutResourceMetricRuleOutcomeCallable CmsClient::putResourceMetricRuleCallable(const PutResourceMetricRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutResourceMetricRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->putResourceMetricRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

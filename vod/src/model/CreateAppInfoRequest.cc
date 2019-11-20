@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::CreateAppInfoRequest;
 
 CreateAppInfoRequest::CreateAppInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "CreateAppInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAppInfoRequest::~CreateAppInfoRequest()
 {}

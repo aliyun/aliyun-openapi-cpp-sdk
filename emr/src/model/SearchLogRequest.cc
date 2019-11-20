@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::SearchLogRequest;
 
 SearchLogRequest::SearchLogRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "SearchLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchLogRequest::~SearchLogRequest()
 {}

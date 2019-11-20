@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopSetredressRequest;
 
 ShopSetredressRequest::ShopSetredressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopSetredress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopSetredressRequest::~ShopSetredressRequest()
 {}

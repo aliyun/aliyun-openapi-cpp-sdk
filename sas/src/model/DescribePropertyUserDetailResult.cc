@@ -71,6 +71,8 @@ void DescribePropertyUserDetailResult::parse(const std::string &payload)
 			propertysObject.intranetIp = valuePropertysPropertyUser["IntranetIp"].asString();
 		if(!valuePropertysPropertyUser["InternetIp"].isNull())
 			propertysObject.internetIp = valuePropertysPropertyUser["InternetIp"].asString();
+		if(!valuePropertysPropertyUser["Status"].isNull())
+			propertysObject.status = valuePropertysPropertyUser["Status"].asString();
 		auto allGroupNames = value["GroupNames"]["GroupName"];
 		for (auto value : allGroupNames)
 			propertysObject.groupNames.push_back(value.asString());

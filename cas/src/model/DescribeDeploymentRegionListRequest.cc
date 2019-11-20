@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeDeploymentRegionListRequest;
 
 DescribeDeploymentRegionListRequest::DescribeDeploymentRegionListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeDeploymentRegionList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDeploymentRegionListRequest::~DescribeDeploymentRegionListRequest()
 {}

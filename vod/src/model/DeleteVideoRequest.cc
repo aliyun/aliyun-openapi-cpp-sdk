@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteVideoRequest;
 
 DeleteVideoRequest::DeleteVideoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteVideo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVideoRequest::~DeleteVideoRequest()
 {}

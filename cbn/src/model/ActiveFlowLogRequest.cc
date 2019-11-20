@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::ActiveFlowLogRequest;
 
 ActiveFlowLogRequest::ActiveFlowLogRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "ActiveFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ActiveFlowLogRequest::~ActiveFlowLogRequest()
 {}

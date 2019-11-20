@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateWatermarkRequest;
 
 UpdateWatermarkRequest::UpdateWatermarkRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateWatermark")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateWatermarkRequest::~UpdateWatermarkRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::RemoveReadOnlyAccountRequest;
 
 RemoveReadOnlyAccountRequest::RemoveReadOnlyAccountRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "RemoveReadOnlyAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveReadOnlyAccountRequest::~RemoveReadOnlyAccountRequest()
 {}

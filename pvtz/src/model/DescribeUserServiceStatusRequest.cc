@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::DescribeUserServiceStatusRequest;
 
 DescribeUserServiceStatusRequest::DescribeUserServiceStatusRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "DescribeUserServiceStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserServiceStatusRequest::~DescribeUserServiceStatusRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeDataHubConnectorsRequest;
 
 DescribeDataHubConnectorsRequest::DescribeDataHubConnectorsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeDataHubConnectors")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataHubConnectorsRequest::~DescribeDataHubConnectorsRequest()
 {}

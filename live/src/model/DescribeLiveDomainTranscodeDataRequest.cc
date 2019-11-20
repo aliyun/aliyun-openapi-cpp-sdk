@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainTranscodeDataRequest;
 
 DescribeLiveDomainTranscodeDataRequest::DescribeLiveDomainTranscodeDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainTranscodeData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainTranscodeDataRequest::~DescribeLiveDomainTranscodeDataRequest()
 {}

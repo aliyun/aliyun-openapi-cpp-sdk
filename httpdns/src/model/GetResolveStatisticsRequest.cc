@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::GetResolveStatisticsRequest;
 
 GetResolveStatisticsRequest::GetResolveStatisticsRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "GetResolveStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetResolveStatisticsRequest::~GetResolveStatisticsRequest()
 {}

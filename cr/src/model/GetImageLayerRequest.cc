@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetImageLayerRequest;
 
 GetImageLayerRequest::GetImageLayerRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/layers");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetImageLayerRequest::~GetImageLayerRequest()
 {}

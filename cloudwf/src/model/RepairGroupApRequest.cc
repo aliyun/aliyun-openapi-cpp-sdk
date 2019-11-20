@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::RepairGroupApRequest;
 
 RepairGroupApRequest::RepairGroupApRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "RepairGroupAp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RepairGroupApRequest::~RepairGroupApRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeOrderDocumentRequest;
 
 DescribeOrderDocumentRequest::DescribeOrderDocumentRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeOrderDocument")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOrderDocumentRequest::~DescribeOrderDocumentRequest()
 {}

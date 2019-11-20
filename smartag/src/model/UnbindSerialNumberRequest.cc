@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::UnbindSerialNumberRequest;
 
 UnbindSerialNumberRequest::UnbindSerialNumberRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "UnbindSerialNumber")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindSerialNumberRequest::~UnbindSerialNumberRequest()
 {}

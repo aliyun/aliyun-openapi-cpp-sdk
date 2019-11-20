@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::SegmentImageRequest;
 
 SegmentImageRequest::SegmentImageRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "SegmentImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SegmentImageRequest::~SegmentImageRequest()
 {}

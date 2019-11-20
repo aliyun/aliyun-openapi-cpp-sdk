@@ -20,7 +20,9 @@ using AlibabaCloud::Ots::Model::UnbindInstance2VpcRequest;
 
 UnbindInstance2VpcRequest::UnbindInstance2VpcRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "UnbindInstance2Vpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindInstance2VpcRequest::~UnbindInstance2VpcRequest()
 {}

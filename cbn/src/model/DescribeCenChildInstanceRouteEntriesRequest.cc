@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenChildInstanceRouteEntriesRequest;
 
 DescribeCenChildInstanceRouteEntriesRequest::DescribeCenChildInstanceRouteEntriesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenChildInstanceRouteEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenChildInstanceRouteEntriesRequest::~DescribeCenChildInstanceRouteEntriesRequest()
 {}

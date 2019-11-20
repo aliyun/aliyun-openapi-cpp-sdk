@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::CreateBackupRequest;
 
 CreateBackupRequest::CreateBackupRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "CreateBackup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBackupRequest::~CreateBackupRequest()
 {}

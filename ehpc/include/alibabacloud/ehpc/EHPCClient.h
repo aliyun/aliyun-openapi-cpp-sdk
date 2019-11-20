@@ -32,6 +32,8 @@
 #include "model/AddQueueResult.h"
 #include "model/AddUsersRequest.h"
 #include "model/AddUsersResult.h"
+#include "model/BindAccountToClusterUserRequest.h"
+#include "model/BindAccountToClusterUserResult.h"
 #include "model/CreateClusterRequest.h"
 #include "model/CreateClusterResult.h"
 #include "model/CreateGWSClusterRequest.h"
@@ -106,14 +108,26 @@
 #include "model/GetGWSConnectTicketResult.h"
 #include "model/GetHybridClusterConfigRequest.h"
 #include "model/GetHybridClusterConfigResult.h"
+#include "model/GetInstanceReportRequest.h"
+#include "model/GetInstanceReportResult.h"
+#include "model/GetJobReportRequest.h"
+#include "model/GetJobReportResult.h"
+#include "model/GetTotalQueueReportRequest.h"
+#include "model/GetTotalQueueReportResult.h"
+#include "model/GetTotalUserReportRequest.h"
+#include "model/GetTotalUserReportResult.h"
 #include "model/GetVisualServiceStatusRequest.h"
 #include "model/GetVisualServiceStatusResult.h"
+#include "model/GetWorkbenchTokenRequest.h"
+#include "model/GetWorkbenchTokenResult.h"
 #include "model/InstallNFSClientRequest.h"
 #include "model/InstallNFSClientResult.h"
 #include "model/InstallSoftwareRequest.h"
 #include "model/InstallSoftwareResult.h"
 #include "model/InvokeShellCommandRequest.h"
 #include "model/InvokeShellCommandResult.h"
+#include "model/ListAccountMappingRequest.h"
+#include "model/ListAccountMappingResult.h"
 #include "model/ListAvailableEcsTypesRequest.h"
 #include "model/ListAvailableEcsTypesResult.h"
 #include "model/ListAvailableFileSystemTypesRequest.h"
@@ -224,6 +238,8 @@
 #include "model/StopVisualServiceResult.h"
 #include "model/SubmitJobRequest.h"
 #include "model/SubmitJobResult.h"
+#include "model/UnbindAccountToClusterUserRequest.h"
+#include "model/UnbindAccountToClusterUserResult.h"
 #include "model/UninstallSoftwareRequest.h"
 #include "model/UninstallSoftwareResult.h"
 #include "model/UpdateClusterVolumesRequest.h"
@@ -256,6 +272,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddUsersResult> AddUsersOutcome;
 			typedef std::future<AddUsersOutcome> AddUsersOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::AddUsersRequest&, const AddUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersAsyncHandler;
+			typedef Outcome<Error, Model::BindAccountToClusterUserResult> BindAccountToClusterUserOutcome;
+			typedef std::future<BindAccountToClusterUserOutcome> BindAccountToClusterUserOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::BindAccountToClusterUserRequest&, const BindAccountToClusterUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindAccountToClusterUserAsyncHandler;
 			typedef Outcome<Error, Model::CreateClusterResult> CreateClusterOutcome;
 			typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::CreateClusterRequest&, const CreateClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
@@ -367,9 +386,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetHybridClusterConfigResult> GetHybridClusterConfigOutcome;
 			typedef std::future<GetHybridClusterConfigOutcome> GetHybridClusterConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetHybridClusterConfigRequest&, const GetHybridClusterConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetHybridClusterConfigAsyncHandler;
+			typedef Outcome<Error, Model::GetInstanceReportResult> GetInstanceReportOutcome;
+			typedef std::future<GetInstanceReportOutcome> GetInstanceReportOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::GetInstanceReportRequest&, const GetInstanceReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceReportAsyncHandler;
+			typedef Outcome<Error, Model::GetJobReportResult> GetJobReportOutcome;
+			typedef std::future<GetJobReportOutcome> GetJobReportOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::GetJobReportRequest&, const GetJobReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobReportAsyncHandler;
+			typedef Outcome<Error, Model::GetTotalQueueReportResult> GetTotalQueueReportOutcome;
+			typedef std::future<GetTotalQueueReportOutcome> GetTotalQueueReportOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::GetTotalQueueReportRequest&, const GetTotalQueueReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTotalQueueReportAsyncHandler;
+			typedef Outcome<Error, Model::GetTotalUserReportResult> GetTotalUserReportOutcome;
+			typedef std::future<GetTotalUserReportOutcome> GetTotalUserReportOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::GetTotalUserReportRequest&, const GetTotalUserReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTotalUserReportAsyncHandler;
 			typedef Outcome<Error, Model::GetVisualServiceStatusResult> GetVisualServiceStatusOutcome;
 			typedef std::future<GetVisualServiceStatusOutcome> GetVisualServiceStatusOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetVisualServiceStatusRequest&, const GetVisualServiceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVisualServiceStatusAsyncHandler;
+			typedef Outcome<Error, Model::GetWorkbenchTokenResult> GetWorkbenchTokenOutcome;
+			typedef std::future<GetWorkbenchTokenOutcome> GetWorkbenchTokenOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::GetWorkbenchTokenRequest&, const GetWorkbenchTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkbenchTokenAsyncHandler;
 			typedef Outcome<Error, Model::InstallNFSClientResult> InstallNFSClientOutcome;
 			typedef std::future<InstallNFSClientOutcome> InstallNFSClientOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::InstallNFSClientRequest&, const InstallNFSClientOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallNFSClientAsyncHandler;
@@ -379,6 +413,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InvokeShellCommandResult> InvokeShellCommandOutcome;
 			typedef std::future<InvokeShellCommandOutcome> InvokeShellCommandOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::InvokeShellCommandRequest&, const InvokeShellCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InvokeShellCommandAsyncHandler;
+			typedef Outcome<Error, Model::ListAccountMappingResult> ListAccountMappingOutcome;
+			typedef std::future<ListAccountMappingOutcome> ListAccountMappingOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ListAccountMappingRequest&, const ListAccountMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAccountMappingAsyncHandler;
 			typedef Outcome<Error, Model::ListAvailableEcsTypesResult> ListAvailableEcsTypesOutcome;
 			typedef std::future<ListAvailableEcsTypesOutcome> ListAvailableEcsTypesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListAvailableEcsTypesRequest&, const ListAvailableEcsTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAvailableEcsTypesAsyncHandler;
@@ -544,6 +581,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitJobResult> SubmitJobOutcome;
 			typedef std::future<SubmitJobOutcome> SubmitJobOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::SubmitJobRequest&, const SubmitJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitJobAsyncHandler;
+			typedef Outcome<Error, Model::UnbindAccountToClusterUserResult> UnbindAccountToClusterUserOutcome;
+			typedef std::future<UnbindAccountToClusterUserOutcome> UnbindAccountToClusterUserOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::UnbindAccountToClusterUserRequest&, const UnbindAccountToClusterUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindAccountToClusterUserAsyncHandler;
 			typedef Outcome<Error, Model::UninstallSoftwareResult> UninstallSoftwareOutcome;
 			typedef std::future<UninstallSoftwareOutcome> UninstallSoftwareOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::UninstallSoftwareRequest&, const UninstallSoftwareOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UninstallSoftwareAsyncHandler;
@@ -576,6 +616,9 @@ namespace AlibabaCloud
 			AddUsersOutcome addUsers(const Model::AddUsersRequest &request)const;
 			void addUsersAsync(const Model::AddUsersRequest& request, const AddUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUsersOutcomeCallable addUsersCallable(const Model::AddUsersRequest& request) const;
+			BindAccountToClusterUserOutcome bindAccountToClusterUser(const Model::BindAccountToClusterUserRequest &request)const;
+			void bindAccountToClusterUserAsync(const Model::BindAccountToClusterUserRequest& request, const BindAccountToClusterUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindAccountToClusterUserOutcomeCallable bindAccountToClusterUserCallable(const Model::BindAccountToClusterUserRequest& request) const;
 			CreateClusterOutcome createCluster(const Model::CreateClusterRequest &request)const;
 			void createClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateClusterOutcomeCallable createClusterCallable(const Model::CreateClusterRequest& request) const;
@@ -687,9 +730,24 @@ namespace AlibabaCloud
 			GetHybridClusterConfigOutcome getHybridClusterConfig(const Model::GetHybridClusterConfigRequest &request)const;
 			void getHybridClusterConfigAsync(const Model::GetHybridClusterConfigRequest& request, const GetHybridClusterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetHybridClusterConfigOutcomeCallable getHybridClusterConfigCallable(const Model::GetHybridClusterConfigRequest& request) const;
+			GetInstanceReportOutcome getInstanceReport(const Model::GetInstanceReportRequest &request)const;
+			void getInstanceReportAsync(const Model::GetInstanceReportRequest& request, const GetInstanceReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetInstanceReportOutcomeCallable getInstanceReportCallable(const Model::GetInstanceReportRequest& request) const;
+			GetJobReportOutcome getJobReport(const Model::GetJobReportRequest &request)const;
+			void getJobReportAsync(const Model::GetJobReportRequest& request, const GetJobReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetJobReportOutcomeCallable getJobReportCallable(const Model::GetJobReportRequest& request) const;
+			GetTotalQueueReportOutcome getTotalQueueReport(const Model::GetTotalQueueReportRequest &request)const;
+			void getTotalQueueReportAsync(const Model::GetTotalQueueReportRequest& request, const GetTotalQueueReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTotalQueueReportOutcomeCallable getTotalQueueReportCallable(const Model::GetTotalQueueReportRequest& request) const;
+			GetTotalUserReportOutcome getTotalUserReport(const Model::GetTotalUserReportRequest &request)const;
+			void getTotalUserReportAsync(const Model::GetTotalUserReportRequest& request, const GetTotalUserReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTotalUserReportOutcomeCallable getTotalUserReportCallable(const Model::GetTotalUserReportRequest& request) const;
 			GetVisualServiceStatusOutcome getVisualServiceStatus(const Model::GetVisualServiceStatusRequest &request)const;
 			void getVisualServiceStatusAsync(const Model::GetVisualServiceStatusRequest& request, const GetVisualServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVisualServiceStatusOutcomeCallable getVisualServiceStatusCallable(const Model::GetVisualServiceStatusRequest& request) const;
+			GetWorkbenchTokenOutcome getWorkbenchToken(const Model::GetWorkbenchTokenRequest &request)const;
+			void getWorkbenchTokenAsync(const Model::GetWorkbenchTokenRequest& request, const GetWorkbenchTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetWorkbenchTokenOutcomeCallable getWorkbenchTokenCallable(const Model::GetWorkbenchTokenRequest& request) const;
 			InstallNFSClientOutcome installNFSClient(const Model::InstallNFSClientRequest &request)const;
 			void installNFSClientAsync(const Model::InstallNFSClientRequest& request, const InstallNFSClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InstallNFSClientOutcomeCallable installNFSClientCallable(const Model::InstallNFSClientRequest& request) const;
@@ -699,6 +757,9 @@ namespace AlibabaCloud
 			InvokeShellCommandOutcome invokeShellCommand(const Model::InvokeShellCommandRequest &request)const;
 			void invokeShellCommandAsync(const Model::InvokeShellCommandRequest& request, const InvokeShellCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InvokeShellCommandOutcomeCallable invokeShellCommandCallable(const Model::InvokeShellCommandRequest& request) const;
+			ListAccountMappingOutcome listAccountMapping(const Model::ListAccountMappingRequest &request)const;
+			void listAccountMappingAsync(const Model::ListAccountMappingRequest& request, const ListAccountMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAccountMappingOutcomeCallable listAccountMappingCallable(const Model::ListAccountMappingRequest& request) const;
 			ListAvailableEcsTypesOutcome listAvailableEcsTypes(const Model::ListAvailableEcsTypesRequest &request)const;
 			void listAvailableEcsTypesAsync(const Model::ListAvailableEcsTypesRequest& request, const ListAvailableEcsTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAvailableEcsTypesOutcomeCallable listAvailableEcsTypesCallable(const Model::ListAvailableEcsTypesRequest& request) const;
@@ -864,6 +925,9 @@ namespace AlibabaCloud
 			SubmitJobOutcome submitJob(const Model::SubmitJobRequest &request)const;
 			void submitJobAsync(const Model::SubmitJobRequest& request, const SubmitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitJobOutcomeCallable submitJobCallable(const Model::SubmitJobRequest& request) const;
+			UnbindAccountToClusterUserOutcome unbindAccountToClusterUser(const Model::UnbindAccountToClusterUserRequest &request)const;
+			void unbindAccountToClusterUserAsync(const Model::UnbindAccountToClusterUserRequest& request, const UnbindAccountToClusterUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindAccountToClusterUserOutcomeCallable unbindAccountToClusterUserCallable(const Model::UnbindAccountToClusterUserRequest& request) const;
 			UninstallSoftwareOutcome uninstallSoftware(const Model::UninstallSoftwareRequest &request)const;
 			void uninstallSoftwareAsync(const Model::UninstallSoftwareRequest& request, const UninstallSoftwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UninstallSoftwareOutcomeCallable uninstallSoftwareCallable(const Model::UninstallSoftwareRequest& request) const;

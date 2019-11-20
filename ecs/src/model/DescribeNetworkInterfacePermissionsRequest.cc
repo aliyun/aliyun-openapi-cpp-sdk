@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeNetworkInterfacePermissionsRequest;
 
 DescribeNetworkInterfacePermissionsRequest::DescribeNetworkInterfacePermissionsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeNetworkInterfacePermissions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNetworkInterfacePermissionsRequest::~DescribeNetworkInterfacePermissionsRequest()
 {}
@@ -77,8 +79,8 @@ std::vector<std::string> DescribeNetworkInterfacePermissionsRequest::getNetworkI
 void DescribeNetworkInterfacePermissionsRequest::setNetworkInterfacePermissionId(const std::vector<std::string>& networkInterfacePermissionId)
 {
 	networkInterfacePermissionId_ = networkInterfacePermissionId;
-	for(int i = 0; i!= networkInterfacePermissionId.size(); i++)
-		setCoreParameter("NetworkInterfacePermissionId."+ std::to_string(i), networkInterfacePermissionId.at(i));
+	for(int dep1 = 0; dep1!= networkInterfacePermissionId.size(); dep1++)
+		setCoreParameter("NetworkInterfacePermissionId."+ std::to_string(dep1), networkInterfacePermissionId.at(dep1));
 }
 
 std::string DescribeNetworkInterfacePermissionsRequest::getResourceOwnerAccount()const

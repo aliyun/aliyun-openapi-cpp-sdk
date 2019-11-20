@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyRouteTableAttributesRequest;
 
 ModifyRouteTableAttributesRequest::ModifyRouteTableAttributesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyRouteTableAttributes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRouteTableAttributesRequest::~ModifyRouteTableAttributesRequest()
 {}

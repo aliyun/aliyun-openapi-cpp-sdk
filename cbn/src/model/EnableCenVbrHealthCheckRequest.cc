@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::EnableCenVbrHealthCheckRequest;
 
 EnableCenVbrHealthCheckRequest::EnableCenVbrHealthCheckRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "EnableCenVbrHealthCheck")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EnableCenVbrHealthCheckRequest::~EnableCenVbrHealthCheckRequest()
 {}

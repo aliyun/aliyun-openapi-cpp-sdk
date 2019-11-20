@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterResourcePoolSchedulerTypeRequest;
 
 DescribeClusterResourcePoolSchedulerTypeRequest::DescribeClusterResourcePoolSchedulerTypeRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterResourcePoolSchedulerType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterResourcePoolSchedulerTypeRequest::~DescribeClusterResourcePoolSchedulerTypeRequest()
 {}

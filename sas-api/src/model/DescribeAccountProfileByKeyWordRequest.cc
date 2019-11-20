@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::DescribeAccountProfileByKeyWordRequest;
 
 DescribeAccountProfileByKeyWordRequest::DescribeAccountProfileByKeyWordRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeAccountProfileByKeyWord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAccountProfileByKeyWordRequest::~DescribeAccountProfileByKeyWordRequest()
 {}

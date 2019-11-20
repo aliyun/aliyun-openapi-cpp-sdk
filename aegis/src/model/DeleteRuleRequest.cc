@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DeleteRuleRequest;
 
 DeleteRuleRequest::DeleteRuleRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DeleteRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRuleRequest::~DeleteRuleRequest()
 {}

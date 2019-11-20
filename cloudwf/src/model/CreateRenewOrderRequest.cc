@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::CreateRenewOrderRequest;
 
 CreateRenewOrderRequest::CreateRenewOrderRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "CreateRenewOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRenewOrderRequest::~CreateRenewOrderRequest()
 {}
@@ -44,8 +46,8 @@ std::vector<std::string> CreateRenewOrderRequest::getApList()const
 void CreateRenewOrderRequest::setApList(const std::vector<std::string>& apList)
 {
 	apList_ = apList;
-	for(int i = 0; i!= apList.size(); i++)
-		setCoreParameter("ApList."+ std::to_string(i), apList.at(i));
+	for(int dep1 = 0; dep1!= apList.size(); dep1++)
+		setCoreParameter("ApList."+ std::to_string(dep1), apList.at(dep1));
 }
 
 std::string CreateRenewOrderRequest::getAccessKeyId()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::MoveResourceGroupRequest;
 
 MoveResourceGroupRequest::MoveResourceGroupRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "MoveResourceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoveResourceGroupRequest::~MoveResourceGroupRequest()
 {}

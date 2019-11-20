@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ModifyDBInstanceConnectionModeRequest;
 
 ModifyDBInstanceConnectionModeRequest::ModifyDBInstanceConnectionModeRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ModifyDBInstanceConnectionMode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceConnectionModeRequest::~ModifyDBInstanceConnectionModeRequest()
 {}

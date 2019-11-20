@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeBinlogFilesRequest;
 
 DescribeBinlogFilesRequest::DescribeBinlogFilesRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeBinlogFiles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBinlogFilesRequest::~DescribeBinlogFilesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DescribeRateRequest;
 
 DescribeRateRequest::DescribeRateRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DescribeRate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRateRequest::~DescribeRateRequest()
 {}

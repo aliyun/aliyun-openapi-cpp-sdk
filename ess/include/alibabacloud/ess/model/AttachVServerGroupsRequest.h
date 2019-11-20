@@ -39,7 +39,7 @@ namespace AlibabaCloud
 						int port;
 						int weight;
 					};
-					VServerGroupAttribute vServerGroupAttribute;
+					std::vector<VServerGroupAttribute> vServerGroupAttribute;
 				};
 
 			public:

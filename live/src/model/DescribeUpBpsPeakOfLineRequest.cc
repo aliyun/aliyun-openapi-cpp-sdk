@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeUpBpsPeakOfLineRequest;
 
 DescribeUpBpsPeakOfLineRequest::DescribeUpBpsPeakOfLineRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeUpBpsPeakOfLine")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUpBpsPeakOfLineRequest::~DescribeUpBpsPeakOfLineRequest()
 {}

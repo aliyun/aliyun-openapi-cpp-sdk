@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyBgpGroupAttributeRequest;
 
 ModifyBgpGroupAttributeRequest::ModifyBgpGroupAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyBgpGroupAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyBgpGroupAttributeRequest::~ModifyBgpGroupAttributeRequest()
 {}

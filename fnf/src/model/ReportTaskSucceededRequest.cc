@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::ReportTaskSucceededRequest;
 
 ReportTaskSucceededRequest::ReportTaskSucceededRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "ReportTaskSucceeded")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportTaskSucceededRequest::~ReportTaskSucceededRequest()
 {}

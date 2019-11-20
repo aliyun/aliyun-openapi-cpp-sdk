@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::QueryMetricLastRequest;
 
 QueryMetricLastRequest::QueryMetricLastRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "QueryMetricLast")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMetricLastRequest::~QueryMetricLastRequest()
 {}

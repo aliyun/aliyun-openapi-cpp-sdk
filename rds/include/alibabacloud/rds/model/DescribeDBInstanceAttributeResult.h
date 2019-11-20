@@ -107,6 +107,7 @@ namespace AlibabaCloud
 					std::string guardDBInstanceName;
 					std::string tempUpgradeRecoveryMaxConnections;
 					std::string securityIPList;
+					std::string originConfiguration;
 					std::vector<DBInstanceAttribute::ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 					std::string securityIPMode;
 					std::string maintainTime;
@@ -120,6 +121,7 @@ namespace AlibabaCloud
 					std::vector<DBInstanceAttribute::SlaveZone> slaveZones;
 					std::string supportUpgradeAccountType;
 					Extra extra;
+					bool multipleTempUpgrade;
 					bool canTempUpgrade;
 					std::string regionId;
 				};

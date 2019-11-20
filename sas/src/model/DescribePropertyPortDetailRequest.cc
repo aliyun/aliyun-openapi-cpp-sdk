@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribePropertyPortDetailRequest;
 
 DescribePropertyPortDetailRequest::DescribePropertyPortDetailRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribePropertyPortDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePropertyPortDetailRequest::~DescribePropertyPortDetailRequest()
 {}

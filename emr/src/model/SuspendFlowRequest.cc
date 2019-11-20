@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::SuspendFlowRequest;
 
 SuspendFlowRequest::SuspendFlowRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "SuspendFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SuspendFlowRequest::~SuspendFlowRequest()
 {}

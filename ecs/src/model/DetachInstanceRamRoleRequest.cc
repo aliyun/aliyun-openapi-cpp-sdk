@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DetachInstanceRamRoleRequest;
 
 DetachInstanceRamRoleRequest::DetachInstanceRamRoleRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DetachInstanceRamRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachInstanceRamRoleRequest::~DetachInstanceRamRoleRequest()
 {}

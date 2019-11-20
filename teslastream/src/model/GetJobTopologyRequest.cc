@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaStream::Model::GetJobTopologyRequest;
 
 GetJobTopologyRequest::GetJobTopologyRequest() :
 	RpcServiceRequest("teslastream", "2018-01-15", "GetJobTopology")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetJobTopologyRequest::~GetJobTopologyRequest()
 {}

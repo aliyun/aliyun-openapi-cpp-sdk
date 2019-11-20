@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ReActivateInstancesRequest;
 
 ReActivateInstancesRequest::ReActivateInstancesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ReActivateInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReActivateInstancesRequest::~ReActivateInstancesRequest()
 {}

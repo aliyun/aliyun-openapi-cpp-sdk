@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::RunCloudMetricProfilingRequest;
 
 RunCloudMetricProfilingRequest::RunCloudMetricProfilingRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "RunCloudMetricProfiling")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 RunCloudMetricProfilingRequest::~RunCloudMetricProfilingRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::RemoveBackendServersRequest;
 
 RemoveBackendServersRequest::RemoveBackendServersRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "RemoveBackendServers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveBackendServersRequest::~RemoveBackendServersRequest()
 {}

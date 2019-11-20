@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceFileListRequest;
 
 QueryDeviceFileListRequest::QueryDeviceFileListRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceFileList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceFileListRequest::~QueryDeviceFileListRequest()
 {}

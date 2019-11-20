@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::DeleteRetcodeAppRequest;
 
 DeleteRetcodeAppRequest::DeleteRetcodeAppRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "DeleteRetcodeApp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRetcodeAppRequest::~DeleteRetcodeAppRequest()
 {}

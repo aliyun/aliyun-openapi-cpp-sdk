@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeImageSharePermissionRequest;
 
 DescribeImageSharePermissionRequest::DescribeImageSharePermissionRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeImageSharePermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeImageSharePermissionRequest::~DescribeImageSharePermissionRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::NotifyAddThingTopoRequest;
 
 NotifyAddThingTopoRequest::NotifyAddThingTopoRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "NotifyAddThingTopo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 NotifyAddThingTopoRequest::~NotifyAddThingTopoRequest()
 {}

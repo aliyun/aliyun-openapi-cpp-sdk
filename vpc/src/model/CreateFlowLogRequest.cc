@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateFlowLogRequest;
 
 CreateFlowLogRequest::CreateFlowLogRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFlowLogRequest::~CreateFlowLogRequest()
 {}

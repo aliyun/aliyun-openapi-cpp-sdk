@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeOrderCountForConsoleIndexRequest;
 
 DescribeOrderCountForConsoleIndexRequest::DescribeOrderCountForConsoleIndexRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeOrderCountForConsoleIndex")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOrderCountForConsoleIndexRequest::~DescribeOrderCountForConsoleIndexRequest()
 {}

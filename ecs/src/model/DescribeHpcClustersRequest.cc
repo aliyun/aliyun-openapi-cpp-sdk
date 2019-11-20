@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeHpcClustersRequest;
 
 DescribeHpcClustersRequest::DescribeHpcClustersRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeHpcClusters")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeHpcClustersRequest::~DescribeHpcClustersRequest()
 {}

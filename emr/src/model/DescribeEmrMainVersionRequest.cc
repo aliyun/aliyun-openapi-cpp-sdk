@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeEmrMainVersionRequest;
 
 DescribeEmrMainVersionRequest::DescribeEmrMainVersionRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeEmrMainVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEmrMainVersionRequest::~DescribeEmrMainVersionRequest()
 {}

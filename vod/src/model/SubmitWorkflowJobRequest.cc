@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitWorkflowJobRequest;
 
 SubmitWorkflowJobRequest::SubmitWorkflowJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitWorkflowJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitWorkflowJobRequest::~SubmitWorkflowJobRequest()
 {}

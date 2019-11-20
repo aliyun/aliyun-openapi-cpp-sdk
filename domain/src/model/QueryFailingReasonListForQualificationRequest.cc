@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryFailingReasonListForQualificationRequest
 
 QueryFailingReasonListForQualificationRequest::QueryFailingReasonListForQualificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryFailingReasonListForQualification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFailingReasonListForQualificationRequest::~QueryFailingReasonListForQualificationRequest()
 {}

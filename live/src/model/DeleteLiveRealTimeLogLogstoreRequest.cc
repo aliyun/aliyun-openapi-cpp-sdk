@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveRealTimeLogLogstoreRequest;
 
 DeleteLiveRealTimeLogLogstoreRequest::DeleteLiveRealTimeLogLogstoreRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveRealTimeLogLogstore")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DeleteLiveRealTimeLogLogstoreRequest::~DeleteLiveRealTimeLogLogstoreRequest()
 {}

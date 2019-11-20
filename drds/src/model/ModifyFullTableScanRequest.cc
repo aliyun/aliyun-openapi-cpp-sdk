@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::ModifyFullTableScanRequest;
 
 ModifyFullTableScanRequest::ModifyFullTableScanRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "ModifyFullTableScan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyFullTableScanRequest::~ModifyFullTableScanRequest()
 {}

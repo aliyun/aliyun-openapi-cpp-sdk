@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyInstanceMajorVersionRequest;
 
 ModifyInstanceMajorVersionRequest::ModifyInstanceMajorVersionRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyInstanceMajorVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceMajorVersionRequest::~ModifyInstanceMajorVersionRequest()
 {}

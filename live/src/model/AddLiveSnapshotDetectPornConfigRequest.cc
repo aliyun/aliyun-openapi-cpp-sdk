@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddLiveSnapshotDetectPornConfigRequest;
 
 AddLiveSnapshotDetectPornConfigRequest::AddLiveSnapshotDetectPornConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddLiveSnapshotDetectPornConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveSnapshotDetectPornConfigRequest::~AddLiveSnapshotDetectPornConfigRequest()
 {}
@@ -55,8 +57,8 @@ std::vector<std::string> AddLiveSnapshotDetectPornConfigRequest::getScene()const
 void AddLiveSnapshotDetectPornConfigRequest::setScene(const std::vector<std::string>& scene)
 {
 	scene_ = scene;
-	for(int i = 0; i!= scene.size(); i++)
-		setCoreParameter("Scene."+ std::to_string(i), scene.at(i));
+	for(int dep1 = 0; dep1!= scene.size(); dep1++)
+		setCoreParameter("Scene."+ std::to_string(dep1), scene.at(dep1));
 }
 
 std::string AddLiveSnapshotDetectPornConfigRequest::getAppName()const

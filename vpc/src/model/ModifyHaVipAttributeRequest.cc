@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyHaVipAttributeRequest;
 
 ModifyHaVipAttributeRequest::ModifyHaVipAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyHaVipAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyHaVipAttributeRequest::~ModifyHaVipAttributeRequest()
 {}

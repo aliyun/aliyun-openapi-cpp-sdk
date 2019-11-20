@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteFlowLogRequest;
 
 DeleteFlowLogRequest::DeleteFlowLogRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFlowLogRequest::~DeleteFlowLogRequest()
 {}

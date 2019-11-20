@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DeleteInstanceRequest;
 
 DeleteInstanceRequest::DeleteInstanceRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DeleteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteInstanceRequest::~DeleteInstanceRequest()
 {}

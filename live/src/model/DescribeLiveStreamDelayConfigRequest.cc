@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamDelayConfigRequest;
 
 DescribeLiveStreamDelayConfigRequest::DescribeLiveStreamDelayConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamDelayConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamDelayConfigRequest::~DescribeLiveStreamDelayConfigRequest()
 {}

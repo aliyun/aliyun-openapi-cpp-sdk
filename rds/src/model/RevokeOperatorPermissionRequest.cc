@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::RevokeOperatorPermissionRequest;
 
 RevokeOperatorPermissionRequest::RevokeOperatorPermissionRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "RevokeOperatorPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RevokeOperatorPermissionRequest::~RevokeOperatorPermissionRequest()
 {}

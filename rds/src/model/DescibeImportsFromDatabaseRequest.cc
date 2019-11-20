@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescibeImportsFromDatabaseRequest;
 
 DescibeImportsFromDatabaseRequest::DescibeImportsFromDatabaseRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescibeImportsFromDatabase")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescibeImportsFromDatabaseRequest::~DescibeImportsFromDatabaseRequest()
 {}

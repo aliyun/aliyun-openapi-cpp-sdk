@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateBgpPeerRequest;
 
 CreateBgpPeerRequest::CreateBgpPeerRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateBgpPeer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBgpPeerRequest::~CreateBgpPeerRequest()
 {}

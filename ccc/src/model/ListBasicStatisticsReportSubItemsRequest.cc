@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListBasicStatisticsReportSubItemsRequest;
 
 ListBasicStatisticsReportSubItemsRequest::ListBasicStatisticsReportSubItemsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListBasicStatisticsReportSubItems")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListBasicStatisticsReportSubItemsRequest::~ListBasicStatisticsReportSubItemsRequest()
 {}

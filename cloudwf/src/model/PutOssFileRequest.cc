@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::PutOssFileRequest;
 
 PutOssFileRequest::PutOssFileRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "PutOssFile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PutOssFileRequest::~PutOssFileRequest()
 {}

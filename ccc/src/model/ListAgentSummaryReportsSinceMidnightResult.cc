@@ -97,6 +97,8 @@ void ListAgentSummaryReportsSinceMidnightResult::parse(const std::string &payloa
 			agentSummaryReportObject.overall.satisfactionSurveysOffered = std::stol(overallNode["SatisfactionSurveysOffered"].asString());
 		if(!overallNode["SatisfactionSurveysResponded"].isNull())
 			agentSummaryReportObject.overall.satisfactionSurveysResponded = std::stol(overallNode["SatisfactionSurveysResponded"].asString());
+		if(!overallNode["OneTransferCalls"].isNull())
+			agentSummaryReportObject.overall.oneTransferCalls = std::stol(overallNode["OneTransferCalls"].asString());
 		auto inboundNode = value["Inbound"];
 		if(!inboundNode["CallsOffered"].isNull())
 			agentSummaryReportObject.inbound.callsOffered = std::stol(inboundNode["CallsOffered"].asString());

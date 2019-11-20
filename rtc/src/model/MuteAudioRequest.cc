@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::MuteAudioRequest;
 
 MuteAudioRequest::MuteAudioRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "MuteAudio")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MuteAudioRequest::~MuteAudioRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> MuteAudioRequest::getParticipantIds()const
 void MuteAudioRequest::setParticipantIds(const std::vector<std::string>& participantIds)
 {
 	participantIds_ = participantIds;
-	for(int i = 0; i!= participantIds.size(); i++)
-		setCoreParameter("ParticipantIds."+ std::to_string(i), participantIds.at(i));
+	for(int dep1 = 0; dep1!= participantIds.size(); dep1++)
+		setCoreParameter("ParticipantIds."+ std::to_string(dep1), participantIds.at(dep1));
 }
 
 std::string MuteAudioRequest::getConferenceId()const

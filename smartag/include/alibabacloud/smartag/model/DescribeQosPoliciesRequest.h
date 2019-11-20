@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getPriority()const;
+				void setPriority(int priority);
 
             private:
 				long resourceOwnerId_;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				int priority_;
 
 			};
 		}

@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::BindPhoneRequest;
 
 BindPhoneRequest::BindPhoneRequest() :
 	RpcServiceRequest("push", "2016-08-01", "BindPhone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindPhoneRequest::~BindPhoneRequest()
 {}

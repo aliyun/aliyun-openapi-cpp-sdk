@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateNetworkAclRequest;
 
 CreateNetworkAclRequest::CreateNetworkAclRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateNetworkAcl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateNetworkAclRequest::~CreateNetworkAclRequest()
 {}

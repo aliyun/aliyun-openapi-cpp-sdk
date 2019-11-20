@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListApUpgradeRequest;
 
 ListApUpgradeRequest::ListApUpgradeRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListApUpgrade")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApUpgradeRequest::~ListApUpgradeRequest()
 {}

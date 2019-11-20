@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::DescribeThreatTypeLinesRequest;
 
 DescribeThreatTypeLinesRequest::DescribeThreatTypeLinesRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeThreatTypeLines")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeThreatTypeLinesRequest::~DescribeThreatTypeLinesRequest()
 {}

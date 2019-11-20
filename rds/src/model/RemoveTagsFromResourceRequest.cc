@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::RemoveTagsFromResourceRequest;
 
 RemoveTagsFromResourceRequest::RemoveTagsFromResourceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "RemoveTagsFromResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveTagsFromResourceRequest::~RemoveTagsFromResourceRequest()
 {}

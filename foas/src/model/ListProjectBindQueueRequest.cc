@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ListProjectBindQueueRequest;
 
 ListProjectBindQueueRequest::ListProjectBindQueueRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/queues");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListProjectBindQueueRequest::~ListProjectBindQueueRequest()
 {}

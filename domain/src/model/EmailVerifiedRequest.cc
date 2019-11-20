@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::EmailVerifiedRequest;
 
 EmailVerifiedRequest::EmailVerifiedRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "EmailVerified")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EmailVerifiedRequest::~EmailVerifiedRequest()
 {}

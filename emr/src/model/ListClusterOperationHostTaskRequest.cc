@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListClusterOperationHostTaskRequest;
 
 ListClusterOperationHostTaskRequest::ListClusterOperationHostTaskRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListClusterOperationHostTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListClusterOperationHostTaskRequest::~ListClusterOperationHostTaskRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateVpnGatewayRequest;
 
 CreateVpnGatewayRequest::CreateVpnGatewayRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateVpnGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVpnGatewayRequest::~CreateVpnGatewayRequest()
 {}

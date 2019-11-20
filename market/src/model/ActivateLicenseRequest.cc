@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::ActivateLicenseRequest;
 
 ActivateLicenseRequest::ActivateLicenseRequest() :
 	RpcServiceRequest("market", "2015-11-01", "ActivateLicense")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ActivateLicenseRequest::~ActivateLicenseRequest()
 {}

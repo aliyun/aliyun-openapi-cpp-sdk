@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmGetRegionListRequest;
 
 TaobaoFilmGetRegionListRequest::TaobaoFilmGetRegionListRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmGetRegionList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmGetRegionListRequest::~TaobaoFilmGetRegionListRequest()
 {}

@@ -96,6 +96,12 @@ namespace AlibabaCloud
 						std::string imageUrl;
 						std::string time;
 					};
+					struct SubTask
+					{
+						std::string type;
+						std::string message;
+						std::string code;
+					};
 					std::vector<Job::Ocr> ocrResult;
 					Input input;
 					std::string _template;
@@ -106,6 +112,7 @@ namespace AlibabaCloud
 					std::vector<Job::Tag> tagResult;
 					std::string jobId;
 					std::string templateId;
+					std::vector<Job::SubTask> subTaskInfo;
 				};
 
 

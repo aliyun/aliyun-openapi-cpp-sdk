@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetVideoCoverRequest;
 
 GetVideoCoverRequest::GetVideoCoverRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetVideoCover")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetVideoCoverRequest::~GetVideoCoverRequest()
 {}

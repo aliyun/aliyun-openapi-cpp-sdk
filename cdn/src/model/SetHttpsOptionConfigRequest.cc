@@ -19,24 +19,13 @@
 using AlibabaCloud::Cdn::Model::SetHttpsOptionConfigRequest;
 
 SetHttpsOptionConfigRequest::SetHttpsOptionConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetHttpsOptionConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetHttpsOptionConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 SetHttpsOptionConfigRequest::~SetHttpsOptionConfigRequest()
 {}
-
-std::string SetHttpsOptionConfigRequest::getHttp2()const
-{
-	return http2_;
-}
-
-void SetHttpsOptionConfigRequest::setHttp2(const std::string& http2)
-{
-	http2_ = http2;
-	setCoreParameter("Http2", http2);
-}
 
 std::string SetHttpsOptionConfigRequest::getDomainName()const
 {
@@ -60,14 +49,25 @@ void SetHttpsOptionConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-long SetHttpsOptionConfigRequest::getConfigId()const
+std::string SetHttpsOptionConfigRequest::getSecurityToken()const
 {
-	return configId_;
+	return securityToken_;
 }
 
-void SetHttpsOptionConfigRequest::setConfigId(long configId)
+void SetHttpsOptionConfigRequest::setSecurityToken(const std::string& securityToken)
 {
-	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetHttpsOptionConfigRequest::getHttp2()const
+{
+	return http2_;
+}
+
+void SetHttpsOptionConfigRequest::setHttp2(const std::string& http2)
+{
+	http2_ = http2;
+	setCoreParameter("Http2", http2);
 }
 

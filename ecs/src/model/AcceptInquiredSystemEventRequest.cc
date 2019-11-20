@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::AcceptInquiredSystemEventRequest;
 
 AcceptInquiredSystemEventRequest::AcceptInquiredSystemEventRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "AcceptInquiredSystemEvent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AcceptInquiredSystemEventRequest::~AcceptInquiredSystemEventRequest()
 {}

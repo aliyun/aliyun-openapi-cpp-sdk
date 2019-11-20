@@ -20,7 +20,9 @@ using AlibabaCloud::Ubsms::Model::NotifyUserBusinessCommandRequest;
 
 NotifyUserBusinessCommandRequest::NotifyUserBusinessCommandRequest() :
 	RpcServiceRequest("ubsms", "2015-06-23", "NotifyUserBusinessCommand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 NotifyUserBusinessCommandRequest::~NotifyUserBusinessCommandRequest()
 {}

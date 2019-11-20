@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateCdnSubscriptionRequest;
 
 CreateCdnSubscriptionRequest::CreateCdnSubscriptionRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateCdnSubscription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCdnSubscriptionRequest::~CreateCdnSubscriptionRequest()
 {}

@@ -37,7 +37,7 @@ namespace AlibabaCloud
 					long category;
 					long instanceId;
 					std::string fileId;
-					long riskLevelName;
+					std::string riskLevelName;
 					long id;
 					std::string regionId;
 					long riskLevelId;

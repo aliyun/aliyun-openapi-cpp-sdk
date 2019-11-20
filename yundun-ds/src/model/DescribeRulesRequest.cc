@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeRulesRequest;
 
 DescribeRulesRequest::DescribeRulesRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRulesRequest::~DescribeRulesRequest()
 {}

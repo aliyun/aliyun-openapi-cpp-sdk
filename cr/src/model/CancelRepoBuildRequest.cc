@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::CancelRepoBuildRequest;
 
 CancelRepoBuildRequest::CancelRepoBuildRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/cancel");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelRepoBuildRequest::~CancelRepoBuildRequest()
 {}

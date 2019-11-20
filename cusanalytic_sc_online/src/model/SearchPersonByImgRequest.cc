@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::SearchPersonByImgRequest;
 
 SearchPersonByImgRequest::SearchPersonByImgRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "SearchPersonByImg")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchPersonByImgRequest::~SearchPersonByImgRequest()
 {}

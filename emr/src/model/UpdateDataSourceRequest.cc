@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::UpdateDataSourceRequest;
 
 UpdateDataSourceRequest::UpdateDataSourceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "UpdateDataSource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateDataSourceRequest::~UpdateDataSourceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteRouterInterfaceRequest;
 
 DeleteRouterInterfaceRequest::DeleteRouterInterfaceRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteRouterInterface")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRouterInterfaceRequest::~DeleteRouterInterfaceRequest()
 {}

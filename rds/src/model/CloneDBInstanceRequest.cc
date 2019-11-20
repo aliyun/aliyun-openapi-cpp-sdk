@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CloneDBInstanceRequest;
 
 CloneDBInstanceRequest::CloneDBInstanceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CloneDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CloneDBInstanceRequest::~CloneDBInstanceRequest()
 {}

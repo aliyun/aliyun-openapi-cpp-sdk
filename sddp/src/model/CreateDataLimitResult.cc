@@ -39,6 +39,13 @@ void CreateDataLimitResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Id"].isNull())
+		id_ = std::stoi(value["Id"].asString());
 
+}
+
+int CreateDataLimitResult::getId()const
+{
+	return id_;
 }
 

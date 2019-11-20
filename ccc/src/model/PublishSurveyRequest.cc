@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::PublishSurveyRequest;
 
 PublishSurveyRequest::PublishSurveyRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "PublishSurvey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PublishSurveyRequest::~PublishSurveyRequest()
 {}

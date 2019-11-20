@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::DescribeZonesRequest;
 
 DescribeZonesRequest::DescribeZonesRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "DescribeZones")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeZonesRequest::~DescribeZonesRequest()
 {}
@@ -69,28 +71,6 @@ void DescribeZonesRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeZonesRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void DescribeZonesRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
-std::string DescribeZonesRequest::getSearchMode()const
-{
-	return searchMode_;
-}
-
-void DescribeZonesRequest::setSearchMode(const std::string& searchMode)
-{
-	searchMode_ = searchMode;
-	setCoreParameter("SearchMode", searchMode);
-}
-
 std::string DescribeZonesRequest::getLang()const
 {
 	return lang_;
@@ -111,6 +91,50 @@ void DescribeZonesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
 	setCoreParameter("Keyword", keyword);
+}
+
+std::string DescribeZonesRequest::getDirection()const
+{
+	return direction_;
+}
+
+void DescribeZonesRequest::setDirection(const std::string& direction)
+{
+	direction_ = direction;
+	setCoreParameter("Direction", direction);
+}
+
+std::string DescribeZonesRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void DescribeZonesRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setCoreParameter("OrderBy", orderBy);
+}
+
+std::string DescribeZonesRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void DescribeZonesRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+std::string DescribeZonesRequest::getSearchMode()const
+{
+	return searchMode_;
+}
+
+void DescribeZonesRequest::setSearchMode(const std::string& searchMode)
+{
+	searchMode_ = searchMode;
+	setCoreParameter("SearchMode", searchMode);
 }
 
 std::string DescribeZonesRequest::getQueryRegionId()const

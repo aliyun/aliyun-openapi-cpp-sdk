@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeSslVpnClientCertsRequest;
 
 DescribeSslVpnClientCertsRequest::DescribeSslVpnClientCertsRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeSslVpnClientCerts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSslVpnClientCertsRequest::~DescribeSslVpnClientCertsRequest()
 {}

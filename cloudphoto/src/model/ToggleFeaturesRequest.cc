@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ToggleFeaturesRequest;
 
 ToggleFeaturesRequest::ToggleFeaturesRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ToggleFeatures")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ToggleFeaturesRequest::~ToggleFeaturesRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> ToggleFeaturesRequest::getDisabledFeatures()const
 void ToggleFeaturesRequest::setDisabledFeatures(const std::vector<std::string>& disabledFeatures)
 {
 	disabledFeatures_ = disabledFeatures;
-	for(int i = 0; i!= disabledFeatures.size(); i++)
-		setCoreParameter("DisabledFeatures."+ std::to_string(i), disabledFeatures.at(i));
+	for(int dep1 = 0; dep1!= disabledFeatures.size(); dep1++)
+		setCoreParameter("DisabledFeatures."+ std::to_string(dep1), disabledFeatures.at(dep1));
 }
 
 std::string ToggleFeaturesRequest::getStoreName()const
@@ -56,7 +58,7 @@ std::vector<std::string> ToggleFeaturesRequest::getEnabledFeatures()const
 void ToggleFeaturesRequest::setEnabledFeatures(const std::vector<std::string>& enabledFeatures)
 {
 	enabledFeatures_ = enabledFeatures;
-	for(int i = 0; i!= enabledFeatures.size(); i++)
-		setCoreParameter("EnabledFeatures."+ std::to_string(i), enabledFeatures.at(i));
+	for(int dep1 = 0; dep1!= enabledFeatures.size(); dep1++)
+		setCoreParameter("EnabledFeatures."+ std::to_string(dep1), enabledFeatures.at(dep1));
 }
 

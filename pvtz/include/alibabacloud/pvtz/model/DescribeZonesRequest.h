@@ -43,14 +43,18 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
-				std::string getSearchMode()const;
-				void setSearchMode(const std::string& searchMode);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
+				std::string getDirection()const;
+				void setDirection(const std::string& direction);
+				std::string getOrderBy()const;
+				void setOrderBy(const std::string& orderBy);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
+				std::string getSearchMode()const;
+				void setSearchMode(const std::string& searchMode);
 				std::string getQueryRegionId()const;
 				void setQueryRegionId(const std::string& queryRegionId);
 
@@ -59,10 +63,12 @@ namespace AlibabaCloud
 				int pageNumber_;
 				std::string resourceGroupId_;
 				int pageSize_;
-				std::string userClientIp_;
-				std::string searchMode_;
 				std::string lang_;
 				std::string keyword_;
+				std::string direction_;
+				std::string orderBy_;
+				std::string userClientIp_;
+				std::string searchMode_;
 				std::string queryRegionId_;
 
 			};

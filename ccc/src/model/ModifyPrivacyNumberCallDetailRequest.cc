@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifyPrivacyNumberCallDetailRequest;
 
 ModifyPrivacyNumberCallDetailRequest::ModifyPrivacyNumberCallDetailRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifyPrivacyNumberCallDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyPrivacyNumberCallDetailRequest::~ModifyPrivacyNumberCallDetailRequest()
 {}

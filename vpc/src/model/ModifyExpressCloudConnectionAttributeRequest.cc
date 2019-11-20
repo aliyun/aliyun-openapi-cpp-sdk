@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyExpressCloudConnectionAttributeRequest;
 
 ModifyExpressCloudConnectionAttributeRequest::ModifyExpressCloudConnectionAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyExpressCloudConnectionAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyExpressCloudConnectionAttributeRequest::~ModifyExpressCloudConnectionAttributeRequest()
 {}

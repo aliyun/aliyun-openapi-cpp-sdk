@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamsControlHistoryRequest;
 
 DescribeLiveStreamsControlHistoryRequest::DescribeLiveStreamsControlHistoryRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamsControlHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamsControlHistoryRequest::~DescribeLiveStreamsControlHistoryRequest()
 {}

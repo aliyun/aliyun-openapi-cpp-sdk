@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeInstanceTopologyRequest;
 
 DescribeInstanceTopologyRequest::DescribeInstanceTopologyRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceTopology")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceTopologyRequest::~DescribeInstanceTopologyRequest()
 {}

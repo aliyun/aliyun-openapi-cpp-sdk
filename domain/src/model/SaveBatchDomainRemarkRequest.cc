@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchDomainRemarkRequest;
 
 SaveBatchDomainRemarkRequest::SaveBatchDomainRemarkRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchDomainRemark")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchDomainRemarkRequest::~SaveBatchDomainRemarkRequest()
 {}

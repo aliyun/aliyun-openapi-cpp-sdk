@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeRouteConflictRequest;
 
 DescribeRouteConflictRequest::DescribeRouteConflictRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeRouteConflict")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRouteConflictRequest::~DescribeRouteConflictRequest()
 {}

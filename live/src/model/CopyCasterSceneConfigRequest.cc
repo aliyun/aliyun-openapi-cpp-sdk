@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CopyCasterSceneConfigRequest;
 
 CopyCasterSceneConfigRequest::CopyCasterSceneConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CopyCasterSceneConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CopyCasterSceneConfigRequest::~CopyCasterSceneConfigRequest()
 {}

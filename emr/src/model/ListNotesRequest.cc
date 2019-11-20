@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListNotesRequest;
 
 ListNotesRequest::ListNotesRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListNotes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListNotesRequest::~ListNotesRequest()
 {}

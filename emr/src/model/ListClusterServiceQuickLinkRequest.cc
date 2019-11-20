@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListClusterServiceQuickLinkRequest;
 
 ListClusterServiceQuickLinkRequest::ListClusterServiceQuickLinkRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListClusterServiceQuickLink")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListClusterServiceQuickLinkRequest::~ListClusterServiceQuickLinkRequest()
 {}

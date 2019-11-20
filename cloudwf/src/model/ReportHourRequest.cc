@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ReportHourRequest;
 
 ReportHourRequest::ReportHourRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ReportHour")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportHourRequest::~ReportHourRequest()
 {}

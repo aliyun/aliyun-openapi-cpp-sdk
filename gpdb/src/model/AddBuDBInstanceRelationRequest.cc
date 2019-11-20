@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::AddBuDBInstanceRelationRequest;
 
 AddBuDBInstanceRelationRequest::AddBuDBInstanceRelationRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "AddBuDBInstanceRelation")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddBuDBInstanceRelationRequest::~AddBuDBInstanceRelationRequest()
 {}

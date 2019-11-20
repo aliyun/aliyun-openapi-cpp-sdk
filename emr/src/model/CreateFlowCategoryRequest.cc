@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateFlowCategoryRequest;
 
 CreateFlowCategoryRequest::CreateFlowCategoryRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateFlowCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFlowCategoryRequest::~CreateFlowCategoryRequest()
 {}

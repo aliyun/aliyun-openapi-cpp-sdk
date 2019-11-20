@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::UnmuteAudioAllRequest;
 
 UnmuteAudioAllRequest::UnmuteAudioAllRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "UnmuteAudioAll")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnmuteAudioAllRequest::~UnmuteAudioAllRequest()
 {}

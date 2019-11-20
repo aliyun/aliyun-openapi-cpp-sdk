@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::UpdateZoneRecordRequest;
 
 UpdateZoneRecordRequest::UpdateZoneRecordRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "UpdateZoneRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateZoneRecordRequest::~UpdateZoneRecordRequest()
 {}

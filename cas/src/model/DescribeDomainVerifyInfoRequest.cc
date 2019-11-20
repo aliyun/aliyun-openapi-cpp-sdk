@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeDomainVerifyInfoRequest;
 
 DescribeDomainVerifyInfoRequest::DescribeDomainVerifyInfoRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeDomainVerifyInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainVerifyInfoRequest::~DescribeDomainVerifyInfoRequest()
 {}

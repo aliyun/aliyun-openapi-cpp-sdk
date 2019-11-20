@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryMcuJobRequest;
 
 QueryMcuJobRequest::QueryMcuJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryMcuJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMcuJobRequest::~QueryMcuJobRequest()
 {}

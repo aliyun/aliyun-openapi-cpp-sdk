@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveApRadioSsidConfigRequest;
 
 SaveApRadioSsidConfigRequest::SaveApRadioSsidConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveApRadioSsidConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveApRadioSsidConfigRequest::~SaveApRadioSsidConfigRequest()
 {}

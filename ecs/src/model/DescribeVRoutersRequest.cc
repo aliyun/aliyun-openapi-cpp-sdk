@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeVRoutersRequest;
 
 DescribeVRoutersRequest::DescribeVRoutersRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeVRouters")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVRoutersRequest::~DescribeVRoutersRequest()
 {}

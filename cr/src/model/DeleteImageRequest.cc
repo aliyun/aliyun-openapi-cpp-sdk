@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::DeleteImageRequest;
 
 DeleteImageRequest::DeleteImageRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteImageRequest::~DeleteImageRequest()
 {}

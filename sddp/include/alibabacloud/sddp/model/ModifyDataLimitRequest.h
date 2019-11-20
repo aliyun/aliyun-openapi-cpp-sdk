@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyDataLimitRequest();
 				~ModifyDataLimitRequest();
 
+				bool getModifyPassword()const;
+				void setModifyPassword(bool modifyPassword);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
 				std::string getSourceIp()const;
@@ -45,6 +47,10 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getServiceRegionId()const;
 				void setServiceRegionId(const std::string& serviceRegionId);
+				int getAuditStatus()const;
+				void setAuditStatus(int auditStatus);
+				int getLogStoreDay()const;
+				void setLogStoreDay(int logStoreDay);
 				int getResourceType()const;
 				void setResourceType(int resourceType);
 				std::string getConnector()const;
@@ -53,11 +59,14 @@ namespace AlibabaCloud
 				void setUserName(const std::string& userName);
 
             private:
+				bool modifyPassword_;
 				std::string password_;
 				std::string sourceIp_;
 				long id_;
 				std::string lang_;
 				std::string serviceRegionId_;
+				int auditStatus_;
+				int logStoreDay_;
 				int resourceType_;
 				std::string connector_;
 				std::string userName_;

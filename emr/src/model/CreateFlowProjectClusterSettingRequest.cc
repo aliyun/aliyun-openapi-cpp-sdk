@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateFlowProjectClusterSettingRequest;
 
 CreateFlowProjectClusterSettingRequest::CreateFlowProjectClusterSettingRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateFlowProjectClusterSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFlowProjectClusterSettingRequest::~CreateFlowProjectClusterSettingRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> CreateFlowProjectClusterSettingRequest::getUserList()co
 void CreateFlowProjectClusterSettingRequest::setUserList(const std::vector<std::string>& userList)
 {
 	userList_ = userList;
-	for(int i = 0; i!= userList.size(); i++)
-		setCoreParameter("UserList."+ std::to_string(i), userList.at(i));
+	for(int dep1 = 0; dep1!= userList.size(); dep1++)
+		setCoreParameter("UserList."+ std::to_string(dep1), userList.at(dep1));
 }
 
 std::vector<std::string> CreateFlowProjectClusterSettingRequest::getHostList()const
@@ -45,8 +47,8 @@ std::vector<std::string> CreateFlowProjectClusterSettingRequest::getHostList()co
 void CreateFlowProjectClusterSettingRequest::setHostList(const std::vector<std::string>& hostList)
 {
 	hostList_ = hostList;
-	for(int i = 0; i!= hostList.size(); i++)
-		setCoreParameter("HostList."+ std::to_string(i), hostList.at(i));
+	for(int dep1 = 0; dep1!= hostList.size(); dep1++)
+		setCoreParameter("HostList."+ std::to_string(dep1), hostList.at(dep1));
 }
 
 std::string CreateFlowProjectClusterSettingRequest::getClusterId()const
@@ -90,8 +92,8 @@ std::vector<std::string> CreateFlowProjectClusterSettingRequest::getQueueList()c
 void CreateFlowProjectClusterSettingRequest::setQueueList(const std::vector<std::string>& queueList)
 {
 	queueList_ = queueList;
-	for(int i = 0; i!= queueList.size(); i++)
-		setCoreParameter("QueueList."+ std::to_string(i), queueList.at(i));
+	for(int dep1 = 0; dep1!= queueList.size(); dep1++)
+		setCoreParameter("QueueList."+ std::to_string(dep1), queueList.at(dep1));
 }
 
 std::string CreateFlowProjectClusterSettingRequest::getRegionId()const

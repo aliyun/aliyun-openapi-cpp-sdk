@@ -31,21 +31,21 @@ ScdnClient::ScdnClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "scdn");
 }
 
 ScdnClient::ScdnClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "scdn");
 }
 
 ScdnClient::ScdnClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "scdn");
 }
 
 ScdnClient::~ScdnClient()
@@ -261,6 +261,42 @@ ScdnClient::DeleteScdnDomainOutcomeCallable ScdnClient::deleteScdnDomainCallable
 			[this, request]()
 			{
 			return this->deleteScdnDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::DeleteScdnSpecificConfigOutcome ScdnClient::deleteScdnSpecificConfig(const DeleteScdnSpecificConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteScdnSpecificConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteScdnSpecificConfigOutcome(DeleteScdnSpecificConfigResult(outcome.result()));
+	else
+		return DeleteScdnSpecificConfigOutcome(outcome.error());
+}
+
+void ScdnClient::deleteScdnSpecificConfigAsync(const DeleteScdnSpecificConfigRequest& request, const DeleteScdnSpecificConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteScdnSpecificConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DeleteScdnSpecificConfigOutcomeCallable ScdnClient::deleteScdnSpecificConfigCallable(const DeleteScdnSpecificConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteScdnSpecificConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteScdnSpecificConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

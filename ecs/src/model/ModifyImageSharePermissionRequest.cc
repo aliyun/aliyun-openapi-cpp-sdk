@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyImageSharePermissionRequest;
 
 ModifyImageSharePermissionRequest::ModifyImageSharePermissionRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyImageSharePermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyImageSharePermissionRequest::~ModifyImageSharePermissionRequest()
 {}
@@ -99,8 +101,8 @@ std::vector<std::string> ModifyImageSharePermissionRequest::getAddAccount()const
 void ModifyImageSharePermissionRequest::setAddAccount(const std::vector<std::string>& addAccount)
 {
 	addAccount_ = addAccount;
-	for(int i = 0; i!= addAccount.size(); i++)
-		setCoreParameter("AddAccount."+ std::to_string(i), addAccount.at(i));
+	for(int dep1 = 0; dep1!= addAccount.size(); dep1++)
+		setCoreParameter("AddAccount."+ std::to_string(dep1), addAccount.at(dep1));
 }
 
 std::vector<std::string> ModifyImageSharePermissionRequest::getRemoveAccount()const
@@ -111,7 +113,7 @@ std::vector<std::string> ModifyImageSharePermissionRequest::getRemoveAccount()co
 void ModifyImageSharePermissionRequest::setRemoveAccount(const std::vector<std::string>& removeAccount)
 {
 	removeAccount_ = removeAccount;
-	for(int i = 0; i!= removeAccount.size(); i++)
-		setCoreParameter("RemoveAccount."+ std::to_string(i), removeAccount.at(i));
+	for(int dep1 = 0; dep1!= removeAccount.size(); dep1++)
+		setCoreParameter("RemoveAccount."+ std::to_string(dep1), removeAccount.at(dep1));
 }
 

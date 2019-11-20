@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeOssDownloadsForSQLServerRequest;
 
 DescribeOssDownloadsForSQLServerRequest::DescribeOssDownloadsForSQLServerRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeOssDownloadsForSQLServer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssDownloadsForSQLServerRequest::~DescribeOssDownloadsForSQLServerRequest()
 {}

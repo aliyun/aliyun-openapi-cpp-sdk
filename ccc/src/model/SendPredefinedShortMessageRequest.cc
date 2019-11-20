@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::SendPredefinedShortMessageRequest;
 
 SendPredefinedShortMessageRequest::SendPredefinedShortMessageRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "SendPredefinedShortMessage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendPredefinedShortMessageRequest::~SendPredefinedShortMessageRequest()
 {}

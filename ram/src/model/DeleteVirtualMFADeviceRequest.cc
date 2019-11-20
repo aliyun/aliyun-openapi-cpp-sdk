@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeleteVirtualMFADeviceRequest;
 
 DeleteVirtualMFADeviceRequest::DeleteVirtualMFADeviceRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeleteVirtualMFADevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVirtualMFADeviceRequest::~DeleteVirtualMFADeviceRequest()
 {}

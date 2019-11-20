@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::BatchStopVodDomainRequest;
 
 BatchStopVodDomainRequest::BatchStopVodDomainRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "BatchStopVodDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchStopVodDomainRequest::~BatchStopVodDomainRequest()
 {}

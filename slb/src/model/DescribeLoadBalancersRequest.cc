@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeLoadBalancersRequest;
 
 DescribeLoadBalancersRequest::DescribeLoadBalancersRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeLoadBalancers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLoadBalancersRequest::~DescribeLoadBalancersRequest()
 {}
@@ -45,6 +47,17 @@ void DescribeLoadBalancersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+bool DescribeLoadBalancersRequest::getSupportPrivateLink()const
+{
+	return supportPrivateLink_;
+}
+
+void DescribeLoadBalancersRequest::setSupportPrivateLink(bool supportPrivateLink)
+{
+	supportPrivateLink_ = supportPrivateLink;
+	setCoreParameter("SupportPrivateLink", supportPrivateLink ? "true" : "false");
 }
 
 std::string DescribeLoadBalancersRequest::getNetworkType()const
@@ -165,12 +178,11 @@ std::vector<DescribeLoadBalancersRequest::Tag> DescribeLoadBalancersRequest::get
 void DescribeLoadBalancersRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

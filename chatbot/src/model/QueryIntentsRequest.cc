@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::QueryIntentsRequest;
 
 QueryIntentsRequest::QueryIntentsRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "QueryIntents")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryIntentsRequest::~QueryIntentsRequest()
 {}

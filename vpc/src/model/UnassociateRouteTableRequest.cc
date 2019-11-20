@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::UnassociateRouteTableRequest;
 
 UnassociateRouteTableRequest::UnassociateRouteTableRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "UnassociateRouteTable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnassociateRouteTableRequest::~UnassociateRouteTableRequest()
 {}

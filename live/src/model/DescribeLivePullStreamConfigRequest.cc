@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLivePullStreamConfigRequest;
 
 DescribeLivePullStreamConfigRequest::DescribeLivePullStreamConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLivePullStreamConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLivePullStreamConfigRequest::~DescribeLivePullStreamConfigRequest()
 {}

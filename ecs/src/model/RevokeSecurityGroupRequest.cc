@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::RevokeSecurityGroupRequest;
 
 RevokeSecurityGroupRequest::RevokeSecurityGroupRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "RevokeSecurityGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RevokeSecurityGroupRequest::~RevokeSecurityGroupRequest()
 {}

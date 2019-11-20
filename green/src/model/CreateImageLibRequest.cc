@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateImageLibRequest;
 
 CreateImageLibRequest::CreateImageLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateImageLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateImageLibRequest::~CreateImageLibRequest()
 {}

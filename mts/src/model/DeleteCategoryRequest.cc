@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeleteCategoryRequest;
 
 DeleteCategoryRequest::DeleteCategoryRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeleteCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCategoryRequest::~DeleteCategoryRequest()
 {}

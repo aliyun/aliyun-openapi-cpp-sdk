@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListEmrAvailableConfigRequest;
 
 ListEmrAvailableConfigRequest::ListEmrAvailableConfigRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListEmrAvailableConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListEmrAvailableConfigRequest::~ListEmrAvailableConfigRequest()
 {}

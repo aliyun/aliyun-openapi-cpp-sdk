@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::CategoryTreeRequest;
 
 CategoryTreeRequest::CategoryTreeRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "CategoryTree")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CategoryTreeRequest::~CategoryTreeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CancelSimulatedSystemEventsRequest;
 
 CancelSimulatedSystemEventsRequest::CancelSimulatedSystemEventsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CancelSimulatedSystemEvents")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelSimulatedSystemEventsRequest::~CancelSimulatedSystemEventsRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> CancelSimulatedSystemEventsRequest::getEventId()const
 void CancelSimulatedSystemEventsRequest::setEventId(const std::vector<std::string>& eventId)
 {
 	eventId_ = eventId;
-	for(int i = 0; i!= eventId.size(); i++)
-		setCoreParameter("EventId."+ std::to_string(i), eventId.at(i));
+	for(int dep1 = 0; dep1!= eventId.size(); dep1++)
+		setCoreParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
 }
 
 long CancelSimulatedSystemEventsRequest::getResourceOwnerId()const

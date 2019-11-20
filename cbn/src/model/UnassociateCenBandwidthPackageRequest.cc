@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::UnassociateCenBandwidthPackageRequest;
 
 UnassociateCenBandwidthPackageRequest::UnassociateCenBandwidthPackageRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "UnassociateCenBandwidthPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnassociateCenBandwidthPackageRequest::~UnassociateCenBandwidthPackageRequest()
 {}

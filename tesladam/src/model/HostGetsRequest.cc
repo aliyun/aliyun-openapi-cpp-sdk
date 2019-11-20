@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaDam::Model::HostGetsRequest;
 
 HostGetsRequest::HostGetsRequest() :
 	RpcServiceRequest("tesladam", "2018-01-18", "HostGets")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 HostGetsRequest::~HostGetsRequest()
 {}

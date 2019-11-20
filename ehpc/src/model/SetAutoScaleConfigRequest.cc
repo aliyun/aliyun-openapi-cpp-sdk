@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::SetAutoScaleConfigRequest;
 
 SetAutoScaleConfigRequest::SetAutoScaleConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "SetAutoScaleConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 SetAutoScaleConfigRequest::~SetAutoScaleConfigRequest()
 {}
@@ -165,17 +167,25 @@ std::vector<SetAutoScaleConfigRequest::Queues> SetAutoScaleConfigRequest::getQue
 void SetAutoScaleConfigRequest::setQueues(const std::vector<Queues>& queues)
 {
 	queues_ = queues;
-	int i = 0;
-	for(int i = 0; i!= queues.size(); i++)	{
-		auto obj = queues.at(i);
-		std::string str ="Queues."+ std::to_string(i);
-		setCoreParameter(str + ".SpotStrategy", obj.spotStrategy);
-		setCoreParameter(str + ".QueueName", obj.queueName);
-		setCoreParameter(str + ".InstanceTypes", std::to_string(obj.instanceTypes));
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".EnableAutoGrow", obj.enableAutoGrow ? "true" : "false");
-		setCoreParameter(str + ".SpotPriceLimit", std::to_string(obj.spotPriceLimit));
-		setCoreParameter(str + ".EnableAutoShrink", obj.enableAutoShrink ? "true" : "false");
+	for(int dep1 = 0; dep1!= queues.size(); dep1++) {
+		auto queuesObj = queues.at(dep1);
+		std::string queuesObjStr = "Queues." + std::to_string(dep1);
+		setCoreParameter(queuesObjStr + ".SpotStrategy", queuesObj.spotStrategy);
+		setCoreParameter(queuesObjStr + ".QueueName", queuesObj.queueName);
+		for(int dep2 = 0; dep2!= queuesObj.instanceTypes.size(); dep2++) {
+			auto instanceTypesObj = queuesObj.instanceTypes.at(dep2);
+			std::string instanceTypesObjStr = queuesObjStr + "InstanceTypes." + std::to_string(dep2);
+			setCoreParameter(instanceTypesObjStr + ".SpotStrategy", instanceTypesObj.spotStrategy);
+			setCoreParameter(instanceTypesObjStr + ".VSwitchId", instanceTypesObj.vSwitchId);
+			setCoreParameter(instanceTypesObjStr + ".InstanceType", instanceTypesObj.instanceType);
+			setCoreParameter(instanceTypesObjStr + ".ZoneId", instanceTypesObj.zoneId);
+			setCoreParameter(instanceTypesObjStr + ".HostNamePrefix", instanceTypesObj.hostNamePrefix);
+			setCoreParameter(instanceTypesObjStr + ".SpotPriceLimit", std::to_string(instanceTypesObj.spotPriceLimit));
+		}
+		setCoreParameter(queuesObjStr + ".InstanceType", queuesObj.instanceType);
+		setCoreParameter(queuesObjStr + ".EnableAutoGrow", queuesObj.enableAutoGrow ? "true" : "false");
+		setCoreParameter(queuesObjStr + ".SpotPriceLimit", std::to_string(queuesObj.spotPriceLimit));
+		setCoreParameter(queuesObjStr + ".EnableAutoShrink", queuesObj.enableAutoShrink ? "true" : "false");
 	}
 }
 

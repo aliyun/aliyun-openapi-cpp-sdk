@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteEditingProjectRequest;
 
 DeleteEditingProjectRequest::DeleteEditingProjectRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteEditingProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteEditingProjectRequest::~DeleteEditingProjectRequest()
 {}

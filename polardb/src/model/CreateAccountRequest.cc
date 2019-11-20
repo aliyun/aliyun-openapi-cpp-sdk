@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::CreateAccountRequest;
 
 CreateAccountRequest::CreateAccountRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "CreateAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAccountRequest::~CreateAccountRequest()
 {}

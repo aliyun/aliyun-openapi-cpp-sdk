@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::UpdateUserRequest;
 
 UpdateUserRequest::UpdateUserRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "UpdateUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateUserRequest::~UpdateUserRequest()
 {}
@@ -77,13 +79,12 @@ std::vector<UpdateUserRequest::UserAccountParamList> UpdateUserRequest::getUserA
 void UpdateUserRequest::setUserAccountParamList(const std::vector<UserAccountParamList>& userAccountParamList)
 {
 	userAccountParamList_ = userAccountParamList;
-	int i = 0;
-	for(int i = 0; i!= userAccountParamList.size(); i++)	{
-		auto obj = userAccountParamList.at(i);
-		std::string str ="UserAccountParamList."+ std::to_string(i);
-		setCoreParameter(str + ".AccountType", obj.accountType);
-		setCoreParameter(str + ".AuthType", obj.authType);
-		setCoreParameter(str + ".AccountPassword", obj.accountPassword);
+	for(int dep1 = 0; dep1!= userAccountParamList.size(); dep1++) {
+		auto userAccountParamListObj = userAccountParamList.at(dep1);
+		std::string userAccountParamListObjStr = "UserAccountParamList." + std::to_string(dep1);
+		setCoreParameter(userAccountParamListObjStr + ".AccountType", userAccountParamListObj.accountType);
+		setCoreParameter(userAccountParamListObjStr + ".AuthType", userAccountParamListObj.authType);
+		setCoreParameter(userAccountParamListObjStr + ".AccountPassword", userAccountParamListObj.accountPassword);
 	}
 }
 
@@ -95,8 +96,8 @@ std::vector<long> UpdateUserRequest::getGroupIdList()const
 void UpdateUserRequest::setGroupIdList(const std::vector<long>& groupIdList)
 {
 	groupIdList_ = groupIdList;
-	for(int i = 0; i!= groupIdList.size(); i++)
-		setCoreParameter("GroupIdList."+ std::to_string(i), std::to_string(groupIdList.at(i)));
+	for(int dep1 = 0; dep1!= groupIdList.size(); dep1++)
+		setCoreParameter("GroupIdList."+ std::to_string(dep1), std::to_string(groupIdList.at(dep1)));
 }
 
 std::string UpdateUserRequest::getRegionId()const
@@ -118,8 +119,8 @@ std::vector<long> UpdateUserRequest::getRoleIdList()const
 void UpdateUserRequest::setRoleIdList(const std::vector<long>& roleIdList)
 {
 	roleIdList_ = roleIdList;
-	for(int i = 0; i!= roleIdList.size(); i++)
-		setCoreParameter("RoleIdList."+ std::to_string(i), std::to_string(roleIdList.at(i)));
+	for(int dep1 = 0; dep1!= roleIdList.size(); dep1++)
+		setCoreParameter("RoleIdList."+ std::to_string(dep1), std::to_string(roleIdList.at(dep1)));
 }
 
 std::string UpdateUserRequest::getAliyunUserId()const

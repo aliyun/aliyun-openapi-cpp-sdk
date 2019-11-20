@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemSitingSelctionRequest;
 
 OemSitingSelctionRequest::OemSitingSelctionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemSitingSelction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemSitingSelctionRequest::~OemSitingSelctionRequest()
 {}

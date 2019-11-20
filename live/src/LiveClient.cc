@@ -411,6 +411,78 @@ LiveClient::AddLiveAppSnapshotConfigOutcomeCallable LiveClient::addLiveAppSnapsh
 	return task->get_future();
 }
 
+LiveClient::AddLiveAudioAuditConfigOutcome LiveClient::addLiveAudioAuditConfig(const AddLiveAudioAuditConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddLiveAudioAuditConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddLiveAudioAuditConfigOutcome(AddLiveAudioAuditConfigResult(outcome.result()));
+	else
+		return AddLiveAudioAuditConfigOutcome(outcome.error());
+}
+
+void LiveClient::addLiveAudioAuditConfigAsync(const AddLiveAudioAuditConfigRequest& request, const AddLiveAudioAuditConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addLiveAudioAuditConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::AddLiveAudioAuditConfigOutcomeCallable LiveClient::addLiveAudioAuditConfigCallable(const AddLiveAudioAuditConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddLiveAudioAuditConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->addLiveAudioAuditConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::AddLiveAudioAuditNotifyConfigOutcome LiveClient::addLiveAudioAuditNotifyConfig(const AddLiveAudioAuditNotifyConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddLiveAudioAuditNotifyConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddLiveAudioAuditNotifyConfigOutcome(AddLiveAudioAuditNotifyConfigResult(outcome.result()));
+	else
+		return AddLiveAudioAuditNotifyConfigOutcome(outcome.error());
+}
+
+void LiveClient::addLiveAudioAuditNotifyConfigAsync(const AddLiveAudioAuditNotifyConfigRequest& request, const AddLiveAudioAuditNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addLiveAudioAuditNotifyConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::AddLiveAudioAuditNotifyConfigOutcomeCallable LiveClient::addLiveAudioAuditNotifyConfigCallable(const AddLiveAudioAuditNotifyConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddLiveAudioAuditNotifyConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->addLiveAudioAuditNotifyConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::AddLiveDetectNotifyConfigOutcome LiveClient::addLiveDetectNotifyConfig(const AddLiveDetectNotifyConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1635,6 +1707,78 @@ LiveClient::DeleteLiveAppSnapshotConfigOutcomeCallable LiveClient::deleteLiveApp
 	return task->get_future();
 }
 
+LiveClient::DeleteLiveAudioAuditConfigOutcome LiveClient::deleteLiveAudioAuditConfig(const DeleteLiveAudioAuditConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveAudioAuditConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveAudioAuditConfigOutcome(DeleteLiveAudioAuditConfigResult(outcome.result()));
+	else
+		return DeleteLiveAudioAuditConfigOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveAudioAuditConfigAsync(const DeleteLiveAudioAuditConfigRequest& request, const DeleteLiveAudioAuditConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveAudioAuditConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveAudioAuditConfigOutcomeCallable LiveClient::deleteLiveAudioAuditConfigCallable(const DeleteLiveAudioAuditConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveAudioAuditConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveAudioAuditConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteLiveAudioAuditNotifyConfigOutcome LiveClient::deleteLiveAudioAuditNotifyConfig(const DeleteLiveAudioAuditNotifyConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveAudioAuditNotifyConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveAudioAuditNotifyConfigOutcome(DeleteLiveAudioAuditNotifyConfigResult(outcome.result()));
+	else
+		return DeleteLiveAudioAuditNotifyConfigOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveAudioAuditNotifyConfigAsync(const DeleteLiveAudioAuditNotifyConfigRequest& request, const DeleteLiveAudioAuditNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveAudioAuditNotifyConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveAudioAuditNotifyConfigOutcomeCallable LiveClient::deleteLiveAudioAuditNotifyConfigCallable(const DeleteLiveAudioAuditNotifyConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveAudioAuditNotifyConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveAudioAuditNotifyConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DeleteLiveDetectNotifyConfigOutcome LiveClient::deleteLiveDetectNotifyConfig(const DeleteLiveDetectNotifyConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2715,6 +2859,78 @@ LiveClient::DescribeHlsLiveStreamRealTimeBpsDataOutcomeCallable LiveClient::desc
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveAudioAuditConfigOutcome LiveClient::describeLiveAudioAuditConfig(const DescribeLiveAudioAuditConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveAudioAuditConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveAudioAuditConfigOutcome(DescribeLiveAudioAuditConfigResult(outcome.result()));
+	else
+		return DescribeLiveAudioAuditConfigOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveAudioAuditConfigAsync(const DescribeLiveAudioAuditConfigRequest& request, const DescribeLiveAudioAuditConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveAudioAuditConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveAudioAuditConfigOutcomeCallable LiveClient::describeLiveAudioAuditConfigCallable(const DescribeLiveAudioAuditConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveAudioAuditConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveAudioAuditConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveAudioAuditNotifyConfigOutcome LiveClient::describeLiveAudioAuditNotifyConfig(const DescribeLiveAudioAuditNotifyConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveAudioAuditNotifyConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveAudioAuditNotifyConfigOutcome(DescribeLiveAudioAuditNotifyConfigResult(outcome.result()));
+	else
+		return DescribeLiveAudioAuditNotifyConfigOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveAudioAuditNotifyConfigAsync(const DescribeLiveAudioAuditNotifyConfigRequest& request, const DescribeLiveAudioAuditNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveAudioAuditNotifyConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveAudioAuditNotifyConfigOutcomeCallable LiveClient::describeLiveAudioAuditNotifyConfigCallable(const DescribeLiveAudioAuditNotifyConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveAudioAuditNotifyConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveAudioAuditNotifyConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveCertificateDetailOutcome LiveClient::describeLiveCertificateDetail(const DescribeLiveCertificateDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3105,6 +3321,78 @@ LiveClient::DescribeLiveDomainOnlineUserNumOutcomeCallable LiveClient::describeL
 			[this, request]()
 			{
 			return this->describeLiveDomainOnlineUserNum(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveDomainPushBpsDataOutcome LiveClient::describeLiveDomainPushBpsData(const DescribeLiveDomainPushBpsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainPushBpsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainPushBpsDataOutcome(DescribeLiveDomainPushBpsDataResult(outcome.result()));
+	else
+		return DescribeLiveDomainPushBpsDataOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainPushBpsDataAsync(const DescribeLiveDomainPushBpsDataRequest& request, const DescribeLiveDomainPushBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainPushBpsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainPushBpsDataOutcomeCallable LiveClient::describeLiveDomainPushBpsDataCallable(const DescribeLiveDomainPushBpsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainPushBpsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainPushBpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveDomainPushTrafficDataOutcome LiveClient::describeLiveDomainPushTrafficData(const DescribeLiveDomainPushTrafficDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainPushTrafficDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainPushTrafficDataOutcome(DescribeLiveDomainPushTrafficDataResult(outcome.result()));
+	else
+		return DescribeLiveDomainPushTrafficDataOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainPushTrafficDataAsync(const DescribeLiveDomainPushTrafficDataRequest& request, const DescribeLiveDomainPushTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainPushTrafficData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainPushTrafficDataOutcomeCallable LiveClient::describeLiveDomainPushTrafficDataCallable(const DescribeLiveDomainPushTrafficDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainPushTrafficDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainPushTrafficData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6381,6 +6669,78 @@ LiveClient::UpdateLiveAppSnapshotConfigOutcomeCallable LiveClient::updateLiveApp
 			[this, request]()
 			{
 			return this->updateLiveAppSnapshotConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLiveAudioAuditConfigOutcome LiveClient::updateLiveAudioAuditConfig(const UpdateLiveAudioAuditConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveAudioAuditConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveAudioAuditConfigOutcome(UpdateLiveAudioAuditConfigResult(outcome.result()));
+	else
+		return UpdateLiveAudioAuditConfigOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveAudioAuditConfigAsync(const UpdateLiveAudioAuditConfigRequest& request, const UpdateLiveAudioAuditConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveAudioAuditConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveAudioAuditConfigOutcomeCallable LiveClient::updateLiveAudioAuditConfigCallable(const UpdateLiveAudioAuditConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveAudioAuditConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveAudioAuditConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLiveAudioAuditNotifyConfigOutcome LiveClient::updateLiveAudioAuditNotifyConfig(const UpdateLiveAudioAuditNotifyConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveAudioAuditNotifyConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveAudioAuditNotifyConfigOutcome(UpdateLiveAudioAuditNotifyConfigResult(outcome.result()));
+	else
+		return UpdateLiveAudioAuditNotifyConfigOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveAudioAuditNotifyConfigAsync(const UpdateLiveAudioAuditNotifyConfigRequest& request, const UpdateLiveAudioAuditNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveAudioAuditNotifyConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveAudioAuditNotifyConfigOutcomeCallable LiveClient::updateLiveAudioAuditNotifyConfigCallable(const UpdateLiveAudioAuditNotifyConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveAudioAuditNotifyConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveAudioAuditNotifyConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

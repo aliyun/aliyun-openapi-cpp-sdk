@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::AddPhoneNumberRequest;
 
 AddPhoneNumberRequest::AddPhoneNumberRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "AddPhoneNumber")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddPhoneNumberRequest::~AddPhoneNumberRequest()
 {}

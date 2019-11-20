@@ -65,6 +65,8 @@ void DescribeQosPoliciesResult::parse(const std::string &payload)
 			qosPoliciesObject.startTime = valueQosPoliciesQosPolicy["StartTime"].asString();
 		if(!valueQosPoliciesQosPolicy["EndTime"].isNull())
 			qosPoliciesObject.endTime = valueQosPoliciesQosPolicy["EndTime"].asString();
+		if(!valueQosPoliciesQosPolicy["Name"].isNull())
+			qosPoliciesObject.name = valueQosPoliciesQosPolicy["Name"].asString();
 		qosPolicies_.push_back(qosPoliciesObject);
 	}
 	if(!value["TotalCount"].isNull())

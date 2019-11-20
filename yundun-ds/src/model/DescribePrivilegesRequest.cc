@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribePrivilegesRequest;
 
 DescribePrivilegesRequest::DescribePrivilegesRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribePrivileges")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePrivilegesRequest::~DescribePrivilegesRequest()
 {}

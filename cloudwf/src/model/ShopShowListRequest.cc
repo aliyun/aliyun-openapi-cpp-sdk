@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopShowListRequest;
 
 ShopShowListRequest::ShopShowListRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopShowList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopShowListRequest::~ShopShowListRequest()
 {}

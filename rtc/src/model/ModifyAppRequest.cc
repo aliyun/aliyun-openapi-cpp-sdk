@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::ModifyAppRequest;
 
 ModifyAppRequest::ModifyAppRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "ModifyApp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAppRequest::~ModifyAppRequest()
 {}

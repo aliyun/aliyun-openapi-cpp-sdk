@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::GetAccountingReportRequest;
 
 GetAccountingReportRequest::GetAccountingReportRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetAccountingReport")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetAccountingReportRequest::~GetAccountingReportRequest()
 {}
@@ -45,6 +47,17 @@ void GetAccountingReportRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", std::to_string(endTime));
+}
+
+std::string GetAccountingReportRequest::getFilterValue()const
+{
+	return filterValue_;
+}
+
+void GetAccountingReportRequest::setFilterValue(const std::string& filterValue)
+{
+	filterValue_ = filterValue;
+	setCoreParameter("FilterValue", filterValue);
 }
 
 std::string GetAccountingReportRequest::getClusterId()const

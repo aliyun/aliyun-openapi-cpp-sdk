@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifyAgentDeviceRequest;
 
 ModifyAgentDeviceRequest::ModifyAgentDeviceRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifyAgentDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAgentDeviceRequest::~ModifyAgentDeviceRequest()
 {}

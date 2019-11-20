@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeLaunchTemplateVersionsRequest;
 
 DescribeLaunchTemplateVersionsRequest::DescribeLaunchTemplateVersionsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeLaunchTemplateVersions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLaunchTemplateVersionsRequest::~DescribeLaunchTemplateVersionsRequest()
 {}
@@ -165,8 +167,8 @@ std::vector<long> DescribeLaunchTemplateVersionsRequest::getLaunchTemplateVersio
 void DescribeLaunchTemplateVersionsRequest::setLaunchTemplateVersion(const std::vector<long>& launchTemplateVersion)
 {
 	launchTemplateVersion_ = launchTemplateVersion;
-	for(int i = 0; i!= launchTemplateVersion.size(); i++)
-		setCoreParameter("LaunchTemplateVersion."+ std::to_string(i), std::to_string(launchTemplateVersion.at(i)));
+	for(int dep1 = 0; dep1!= launchTemplateVersion.size(); dep1++)
+		setCoreParameter("LaunchTemplateVersion."+ std::to_string(dep1), std::to_string(launchTemplateVersion.at(dep1)));
 }
 
 bool DescribeLaunchTemplateVersionsRequest::getDetailFlag()const

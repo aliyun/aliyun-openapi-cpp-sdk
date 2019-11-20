@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::DescribeNFSClientStatusRequest;
 
 DescribeNFSClientStatusRequest::DescribeNFSClientStatusRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeNFSClientStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeNFSClientStatusRequest::~DescribeNFSClientStatusRequest()
 {}

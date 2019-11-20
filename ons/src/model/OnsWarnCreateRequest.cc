@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsWarnCreateRequest;
 
 OnsWarnCreateRequest::OnsWarnCreateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsWarnCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsWarnCreateRequest::~OnsWarnCreateRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateVoiceAppraiseRequest;
 
 CreateVoiceAppraiseRequest::CreateVoiceAppraiseRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateVoiceAppraise")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVoiceAppraiseRequest::~CreateVoiceAppraiseRequest()
 {}

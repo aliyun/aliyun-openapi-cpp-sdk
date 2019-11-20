@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::SetEarlyWarningRequest;
 
 SetEarlyWarningRequest::SetEarlyWarningRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "SetEarlyWarning")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetEarlyWarningRequest::~SetEarlyWarningRequest()
 {}

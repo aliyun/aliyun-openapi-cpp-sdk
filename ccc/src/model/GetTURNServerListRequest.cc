@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetTURNServerListRequest;
 
 GetTURNServerListRequest::GetTURNServerListRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetTURNServerList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTURNServerListRequest::~GetTURNServerListRequest()
 {}

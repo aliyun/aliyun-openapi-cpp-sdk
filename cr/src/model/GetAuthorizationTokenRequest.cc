@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetAuthorizationTokenRequest;
 
 GetAuthorizationTokenRequest::GetAuthorizationTokenRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/tokens");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetAuthorizationTokenRequest::~GetAuthorizationTokenRequest()
 {}

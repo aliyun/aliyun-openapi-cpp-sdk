@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddCasterEpisodeGroupRequest;
 
 AddCasterEpisodeGroupRequest::AddCasterEpisodeGroupRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddCasterEpisodeGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCasterEpisodeGroupRequest::~AddCasterEpisodeGroupRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<AddCasterEpisodeGroupRequest::Item> AddCasterEpisodeGroupRequest::ge
 void AddCasterEpisodeGroupRequest::setItem(const std::vector<Item>& item)
 {
 	item_ = item;
-	int i = 0;
-	for(int i = 0; i!= item.size(); i++)	{
-		auto obj = item.at(i);
-		std::string str ="Item."+ std::to_string(i);
-		setCoreParameter(str + ".ItemName", obj.itemName);
-		setCoreParameter(str + ".VodUrl", obj.vodUrl);
+	for(int dep1 = 0; dep1!= item.size(); dep1++) {
+		auto itemObj = item.at(dep1);
+		std::string itemObjStr = "Item." + std::to_string(dep1);
+		setCoreParameter(itemObjStr + ".ItemName", itemObj.itemName);
+		setCoreParameter(itemObjStr + ".VodUrl", itemObj.vodUrl);
 	}
 }
 

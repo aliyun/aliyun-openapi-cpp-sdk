@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDevicePropertyDataRequest;
 
 QueryDevicePropertyDataRequest::QueryDevicePropertyDataRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDevicePropertyData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDevicePropertyDataRequest::~QueryDevicePropertyDataRequest()
 {}

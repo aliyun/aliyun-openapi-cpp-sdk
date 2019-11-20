@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ReleaseClusterHostGroupRequest;
 
 ReleaseClusterHostGroupRequest::ReleaseClusterHostGroupRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ReleaseClusterHostGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseClusterHostGroupRequest::~ReleaseClusterHostGroupRequest()
 {}

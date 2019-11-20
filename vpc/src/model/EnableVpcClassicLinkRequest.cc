@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::EnableVpcClassicLinkRequest;
 
 EnableVpcClassicLinkRequest::EnableVpcClassicLinkRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "EnableVpcClassicLink")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EnableVpcClassicLinkRequest::~EnableVpcClassicLinkRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetLiveDomainCertificateRequest;
 
 SetLiveDomainCertificateRequest::SetLiveDomainCertificateRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetLiveDomainCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLiveDomainCertificateRequest::~SetLiveDomainCertificateRequest()
 {}

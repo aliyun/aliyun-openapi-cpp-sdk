@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListJobExecutionInstancesRequest;
 
 ListJobExecutionInstancesRequest::ListJobExecutionInstancesRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListJobExecutionInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListJobExecutionInstancesRequest::~ListJobExecutionInstancesRequest()
 {}

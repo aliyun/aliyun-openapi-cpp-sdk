@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DownloadCabRecordingRequest;
 
 DownloadCabRecordingRequest::DownloadCabRecordingRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DownloadCabRecording")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DownloadCabRecordingRequest::~DownloadCabRecordingRequest()
 {}

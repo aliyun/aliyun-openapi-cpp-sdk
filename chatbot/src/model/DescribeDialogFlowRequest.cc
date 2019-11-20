@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::DescribeDialogFlowRequest;
 
 DescribeDialogFlowRequest::DescribeDialogFlowRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "DescribeDialogFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDialogFlowRequest::~DescribeDialogFlowRequest()
 {}

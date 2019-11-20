@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::ModifyDBClusterParametersRequest;
 
 ModifyDBClusterParametersRequest::ModifyDBClusterParametersRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "ModifyDBClusterParameters")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBClusterParametersRequest::~ModifyDBClusterParametersRequest()
 {}

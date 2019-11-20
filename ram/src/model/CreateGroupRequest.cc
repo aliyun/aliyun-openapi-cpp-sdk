@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::CreateGroupRequest;
 
 CreateGroupRequest::CreateGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateGroupRequest::~CreateGroupRequest()
 {}

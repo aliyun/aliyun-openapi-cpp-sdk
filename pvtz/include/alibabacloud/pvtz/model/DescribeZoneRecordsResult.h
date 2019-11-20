@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					long recordId;
 					std::string regionId;
 					int ttl;
+					std::string remark;
 				};
 
 

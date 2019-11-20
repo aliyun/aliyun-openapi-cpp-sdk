@@ -20,7 +20,9 @@ using AlibabaCloud::Dypnsapi::Model::TwiceTelVerifyRequest;
 
 TwiceTelVerifyRequest::TwiceTelVerifyRequest() :
 	RpcServiceRequest("dypnsapi", "2017-05-25", "TwiceTelVerify")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TwiceTelVerifyRequest::~TwiceTelVerifyRequest()
 {}

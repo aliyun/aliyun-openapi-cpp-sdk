@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun::Model::WebAttackNumRequest;
 
 WebAttackNumRequest::WebAttackNumRequest() :
 	RpcServiceRequest("yundun", "2015-02-27", "WebAttackNum")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 WebAttackNumRequest::~WebAttackNumRequest()
 {}

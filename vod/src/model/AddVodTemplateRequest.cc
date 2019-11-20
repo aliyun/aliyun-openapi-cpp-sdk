@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::AddVodTemplateRequest;
 
 AddVodTemplateRequest::AddVodTemplateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "AddVodTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddVodTemplateRequest::~AddVodTemplateRequest()
 {}

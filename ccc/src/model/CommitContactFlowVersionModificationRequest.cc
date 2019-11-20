@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CommitContactFlowVersionModificationRequest;
 
 CommitContactFlowVersionModificationRequest::CommitContactFlowVersionModificationRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CommitContactFlowVersionModification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CommitContactFlowVersionModificationRequest::~CommitContactFlowVersionModificationRequest()
 {}

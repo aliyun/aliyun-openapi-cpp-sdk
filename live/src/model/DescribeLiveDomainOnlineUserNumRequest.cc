@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainOnlineUserNumRequest;
 
 DescribeLiveDomainOnlineUserNumRequest::DescribeLiveDomainOnlineUserNumRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainOnlineUserNum")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainOnlineUserNumRequest::~DescribeLiveDomainOnlineUserNumRequest()
 {}

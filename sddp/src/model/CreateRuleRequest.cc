@@ -20,10 +20,45 @@ using AlibabaCloud::Sddp::Model::CreateRuleRequest;
 
 CreateRuleRequest::CreateRuleRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "CreateRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRuleRequest::~CreateRuleRequest()
 {}
+
+int CreateRuleRequest::getWarnLevel()const
+{
+	return warnLevel_;
+}
+
+void CreateRuleRequest::setWarnLevel(int warnLevel)
+{
+	warnLevel_ = warnLevel;
+	setCoreParameter("WarnLevel", std::to_string(warnLevel));
+}
+
+std::string CreateRuleRequest::getProductCode()const
+{
+	return productCode_;
+}
+
+void CreateRuleRequest::setProductCode(const std::string& productCode)
+{
+	productCode_ = productCode;
+	setCoreParameter("ProductCode", productCode);
+}
+
+long CreateRuleRequest::getProductId()const
+{
+	return productId_;
+}
+
+void CreateRuleRequest::setProductId(long productId)
+{
+	productId_ = productId;
+	setCoreParameter("ProductId", std::to_string(productId));
+}
 
 long CreateRuleRequest::getRiskLevelId()const
 {
@@ -78,6 +113,28 @@ void CreateRuleRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
 	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+int CreateRuleRequest::getRuleType()const
+{
+	return ruleType_;
+}
+
+void CreateRuleRequest::setRuleType(int ruleType)
+{
+	ruleType_ = ruleType;
+	setCoreParameter("RuleType", std::to_string(ruleType));
+}
+
+std::string CreateRuleRequest::getStatExpress()const
+{
+	return statExpress_;
+}
+
+void CreateRuleRequest::setStatExpress(const std::string& statExpress)
+{
+	statExpress_ = statExpress;
+	setCoreParameter("StatExpress", statExpress);
 }
 
 long CreateRuleRequest::getCustomType()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeRouteEntryListRequest;
 
 DescribeRouteEntryListRequest::DescribeRouteEntryListRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeRouteEntryList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRouteEntryListRequest::~DescribeRouteEntryListRequest()
 {}

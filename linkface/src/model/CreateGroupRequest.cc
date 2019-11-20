@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::CreateGroupRequest;
 
 CreateGroupRequest::CreateGroupRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "CreateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateGroupRequest::~CreateGroupRequest()
 {}

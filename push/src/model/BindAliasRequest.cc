@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::BindAliasRequest;
 
 BindAliasRequest::BindAliasRequest() :
 	RpcServiceRequest("push", "2016-08-01", "BindAlias")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindAliasRequest::~BindAliasRequest()
 {}

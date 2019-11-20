@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::AddUserToGroupRequest;
 
 AddUserToGroupRequest::AddUserToGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "AddUserToGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddUserToGroupRequest::~AddUserToGroupRequest()
 {}

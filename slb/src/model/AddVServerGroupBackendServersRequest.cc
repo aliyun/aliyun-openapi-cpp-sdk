@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::AddVServerGroupBackendServersRequest;
 
 AddVServerGroupBackendServersRequest::AddVServerGroupBackendServersRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "AddVServerGroupBackendServers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddVServerGroupBackendServersRequest::~AddVServerGroupBackendServersRequest()
 {}

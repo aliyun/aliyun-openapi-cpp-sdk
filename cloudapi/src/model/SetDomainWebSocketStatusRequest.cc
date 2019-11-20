@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetDomainWebSocketStatusRequest;
 
 SetDomainWebSocketStatusRequest::SetDomainWebSocketStatusRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetDomainWebSocketStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDomainWebSocketStatusRequest::~SetDomainWebSocketStatusRequest()
 {}

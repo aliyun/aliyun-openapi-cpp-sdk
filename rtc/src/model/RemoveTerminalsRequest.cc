@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::RemoveTerminalsRequest;
 
 RemoveTerminalsRequest::RemoveTerminalsRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "RemoveTerminals")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveTerminalsRequest::~RemoveTerminalsRequest()
 {}
@@ -33,8 +35,8 @@ std::vector<std::string> RemoveTerminalsRequest::getTerminalIds()const
 void RemoveTerminalsRequest::setTerminalIds(const std::vector<std::string>& terminalIds)
 {
 	terminalIds_ = terminalIds;
-	for(int i = 0; i!= terminalIds.size(); i++)
-		setCoreParameter("TerminalIds."+ std::to_string(i), terminalIds.at(i));
+	for(int dep1 = 0; dep1!= terminalIds.size(); dep1++)
+		setCoreParameter("TerminalIds."+ std::to_string(dep1), terminalIds.at(dep1));
 }
 
 long RemoveTerminalsRequest::getOwnerId()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::PeripheryAnalyseRequest;
 
 PeripheryAnalyseRequest::PeripheryAnalyseRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "PeripheryAnalyse")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PeripheryAnalyseRequest::~PeripheryAnalyseRequest()
 {}

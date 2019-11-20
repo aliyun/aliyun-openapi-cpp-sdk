@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::GetThingTopoRequest;
 
 GetThingTopoRequest::GetThingTopoRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetThingTopo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetThingTopoRequest::~GetThingTopoRequest()
 {}

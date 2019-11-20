@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetMediaAuditResultTimelineRequest;
 
 GetMediaAuditResultTimelineRequest::GetMediaAuditResultTimelineRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetMediaAuditResultTimeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMediaAuditResultTimelineRequest::~GetMediaAuditResultTimelineRequest()
 {}

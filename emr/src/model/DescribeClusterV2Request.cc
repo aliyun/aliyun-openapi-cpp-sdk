@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterV2Request;
 
 DescribeClusterV2Request::DescribeClusterV2Request() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterV2")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterV2Request::~DescribeClusterV2Request()
 {}

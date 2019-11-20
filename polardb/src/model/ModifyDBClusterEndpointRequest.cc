@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::ModifyDBClusterEndpointRequest;
 
 ModifyDBClusterEndpointRequest::ModifyDBClusterEndpointRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "ModifyDBClusterEndpoint")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBClusterEndpointRequest::~ModifyDBClusterEndpointRequest()
 {}

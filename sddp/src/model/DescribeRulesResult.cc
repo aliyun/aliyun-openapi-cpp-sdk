@@ -75,6 +75,16 @@ void DescribeRulesResult::parse(const std::string &payload)
 			itemsObject.content = valueItemsRule["Content"].asString();
 		if(!valueItemsRule["DepartName"].isNull())
 			itemsObject.departName = valueItemsRule["DepartName"].asString();
+		if(!valueItemsRule["StatExpress"].isNull())
+			itemsObject.statExpress = valueItemsRule["StatExpress"].asString();
+		if(!valueItemsRule["ProductId"].isNull())
+			itemsObject.productId = std::stol(valueItemsRule["ProductId"].asString());
+		if(!valueItemsRule["HitTotalCount"].isNull())
+			itemsObject.hitTotalCount = std::stoi(valueItemsRule["HitTotalCount"].asString());
+		if(!valueItemsRule["ProductCode"].isNull())
+			itemsObject.productCode = valueItemsRule["ProductCode"].asString();
+		if(!valueItemsRule["WarnLevel"].isNull())
+			itemsObject.warnLevel = std::stoi(valueItemsRule["WarnLevel"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

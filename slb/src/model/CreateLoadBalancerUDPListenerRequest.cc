@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::CreateLoadBalancerUDPListenerRequest;
 
 CreateLoadBalancerUDPListenerRequest::CreateLoadBalancerUDPListenerRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "CreateLoadBalancerUDPListener")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateLoadBalancerUDPListenerRequest::~CreateLoadBalancerUDPListenerRequest()
 {}

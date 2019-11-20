@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::CreateRoleRequest;
 
 CreateRoleRequest::CreateRoleRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreateRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRoleRequest::~CreateRoleRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveTopDomainsByFlowRequest;
 
 DescribeLiveTopDomainsByFlowRequest::DescribeLiveTopDomainsByFlowRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveTopDomainsByFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveTopDomainsByFlowRequest::~DescribeLiveTopDomainsByFlowRequest()
 {}

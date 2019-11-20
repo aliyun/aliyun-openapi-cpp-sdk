@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyDBInstanceMonitorRequest;
 
 ModifyDBInstanceMonitorRequest::ModifyDBInstanceMonitorRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceMonitor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceMonitorRequest::~ModifyDBInstanceMonitorRequest()
 {}

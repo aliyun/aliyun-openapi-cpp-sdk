@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ForbidLiveStreamRequest;
 
 ForbidLiveStreamRequest::ForbidLiveStreamRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ForbidLiveStream")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ForbidLiveStreamRequest::~ForbidLiveStreamRequest()
 {}

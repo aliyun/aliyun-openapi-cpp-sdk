@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::GetJobOutputStatisticInfoRequest;
 
 GetJobOutputStatisticInfoRequest::GetJobOutputStatisticInfoRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "GetJobOutputStatisticInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobOutputStatisticInfoRequest::~GetJobOutputStatisticInfoRequest()
 {}

@@ -35,12 +35,18 @@ namespace AlibabaCloud
 				struct DataModule
 				{
 					std::string overseasValue;
-					std::string httpsValue;
-					std::string value;
-					std::string httpsDomesticValue;
+					std::string staticOverseasValue;
+					std::string staticValue;
+					std::string staticDomesticValue;
+					std::string overseasL2Value;
 					std::string timeStamp;
-					std::string httpsOverseasValue;
 					std::string domesticValue;
+					std::string dynamicOverseasValue;
+					std::string value;
+					std::string dynamicDomesticValue;
+					std::string domesticL2Value;
+					std::string l2Value;
+					std::string dynamicValue;
 				};
 
 
@@ -48,23 +54,27 @@ namespace AlibabaCloud
 				explicit DescribeDomainBpsDataResult(const std::string &payload);
 				~DescribeDomainBpsDataResult();
 				std::string getIspNameEn()const;
+				std::string getIspName()const;
 				std::string getEndTime()const;
 				std::string getDomainName()const;
 				std::string getLocationNameEn()const;
 				std::string getStartTime()const;
 				std::string getDataInterval()const;
 				std::vector<DataModule> getBpsDataPerInterval()const;
+				std::string getLocationName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string ispNameEn_;
+				std::string ispName_;
 				std::string endTime_;
 				std::string domainName_;
 				std::string locationNameEn_;
 				std::string startTime_;
 				std::string dataInterval_;
 				std::vector<DataModule> bpsDataPerInterval_;
+				std::string locationName_;
 
 			};
 		}

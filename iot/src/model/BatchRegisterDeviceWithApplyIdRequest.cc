@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchRegisterDeviceWithApplyIdRequest;
 
 BatchRegisterDeviceWithApplyIdRequest::BatchRegisterDeviceWithApplyIdRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchRegisterDeviceWithApplyId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchRegisterDeviceWithApplyIdRequest::~BatchRegisterDeviceWithApplyIdRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::RefreshCdnDomainConfigsCacheRequest;
 
 RefreshCdnDomainConfigsCacheRequest::RefreshCdnDomainConfigsCacheRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "RefreshCdnDomainConfigsCache")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshCdnDomainConfigsCacheRequest::~RefreshCdnDomainConfigsCacheRequest()
 {}

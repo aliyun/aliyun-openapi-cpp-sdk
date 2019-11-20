@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenCreateDeviceRequest;
 
 MoPenCreateDeviceRequest::MoPenCreateDeviceRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenCreateDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenCreateDeviceRequest::~MoPenCreateDeviceRequest()
 {}

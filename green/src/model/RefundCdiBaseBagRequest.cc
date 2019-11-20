@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::RefundCdiBaseBagRequest;
 
 RefundCdiBaseBagRequest::RefundCdiBaseBagRequest() :
 	RpcServiceRequest("green", "2017-08-23", "RefundCdiBaseBag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefundCdiBaseBagRequest::~RefundCdiBaseBagRequest()
 {}

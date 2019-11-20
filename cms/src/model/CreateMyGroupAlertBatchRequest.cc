@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::CreateMyGroupAlertBatchRequest;
 
 CreateMyGroupAlertBatchRequest::CreateMyGroupAlertBatchRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "CreateMyGroupAlertBatch")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateMyGroupAlertBatchRequest::~CreateMyGroupAlertBatchRequest()
 {}

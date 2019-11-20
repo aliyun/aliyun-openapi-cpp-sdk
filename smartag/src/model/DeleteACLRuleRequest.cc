@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteACLRuleRequest;
 
 DeleteACLRuleRequest::DeleteACLRuleRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteACLRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteACLRuleRequest::~DeleteACLRuleRequest()
 {}

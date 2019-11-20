@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::ListKibanaPluginsRequest;
 
 ListKibanaPluginsRequest::ListKibanaPluginsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/kibana-plugins");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListKibanaPluginsRequest::~ListKibanaPluginsRequest()
 {}

@@ -53,6 +53,7 @@ namespace AlibabaCloud
 						bool skipAuth;
 						std::string alias;
 						std::string userId;
+						std::string routeConfJson;
 						std::string serviceVersion;
 						std::string interfaceName;
 						long id;

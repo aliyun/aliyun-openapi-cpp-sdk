@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::CreateDataLimitRequest;
 
 CreateDataLimitRequest::CreateDataLimitRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "CreateDataLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDataLimitRequest::~CreateDataLimitRequest()
 {}
@@ -89,6 +91,28 @@ void CreateDataLimitRequest::setServiceRegionId(const std::string& serviceRegion
 {
 	serviceRegionId_ = serviceRegionId;
 	setCoreParameter("ServiceRegionId", serviceRegionId);
+}
+
+int CreateDataLimitRequest::getAuditStatus()const
+{
+	return auditStatus_;
+}
+
+void CreateDataLimitRequest::setAuditStatus(int auditStatus)
+{
+	auditStatus_ = auditStatus;
+	setCoreParameter("AuditStatus", std::to_string(auditStatus));
+}
+
+int CreateDataLimitRequest::getLogStoreDay()const
+{
+	return logStoreDay_;
+}
+
+void CreateDataLimitRequest::setLogStoreDay(int logStoreDay)
+{
+	logStoreDay_ = logStoreDay;
+	setCoreParameter("LogStoreDay", std::to_string(logStoreDay));
 }
 
 int CreateDataLimitRequest::getResourceType()const

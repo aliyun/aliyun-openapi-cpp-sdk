@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeHealthStatusRequest;
 
 DescribeHealthStatusRequest::DescribeHealthStatusRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeHealthStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeHealthStatusRequest::~DescribeHealthStatusRequest()
 {}

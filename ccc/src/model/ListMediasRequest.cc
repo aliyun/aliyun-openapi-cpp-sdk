@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListMediasRequest;
 
 ListMediasRequest::ListMediasRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListMedias")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListMediasRequest::~ListMediasRequest()
 {}

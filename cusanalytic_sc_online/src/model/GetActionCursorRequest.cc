@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetActionCursorRequest;
 
 GetActionCursorRequest::GetActionCursorRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetActionCursor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetActionCursorRequest::~GetActionCursorRequest()
 {}

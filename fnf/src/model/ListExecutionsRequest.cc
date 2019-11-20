@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::ListExecutionsRequest;
 
 ListExecutionsRequest::ListExecutionsRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "ListExecutions")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListExecutionsRequest::~ListExecutionsRequest()
 {}

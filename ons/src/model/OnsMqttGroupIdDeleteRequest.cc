@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsMqttGroupIdDeleteRequest;
 
 OnsMqttGroupIdDeleteRequest::OnsMqttGroupIdDeleteRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMqttGroupIdDelete")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsMqttGroupIdDeleteRequest::~OnsMqttGroupIdDeleteRequest()
 {}

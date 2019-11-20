@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyNatGatewaySpecRequest;
 
 ModifyNatGatewaySpecRequest::ModifyNatGatewaySpecRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyNatGatewaySpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyNatGatewaySpecRequest::~ModifyNatGatewaySpecRequest()
 {}

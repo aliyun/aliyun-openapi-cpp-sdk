@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CloneFlowRequest;
 
 CloneFlowRequest::CloneFlowRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CloneFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CloneFlowRequest::~CloneFlowRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::AttachPolicyToUserRequest;
 
 AttachPolicyToUserRequest::AttachPolicyToUserRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "AttachPolicyToUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachPolicyToUserRequest::~AttachPolicyToUserRequest()
 {}

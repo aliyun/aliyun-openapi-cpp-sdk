@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::DeleteRepoWebhookRequest;
 
 DeleteRepoWebhookRequest::DeleteRepoWebhookRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteRepoWebhookRequest::~DeleteRepoWebhookRequest()
 {}

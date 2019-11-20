@@ -43,8 +43,6 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
-				int getHostCount()const;
-				void setHostCount(int hostCount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getDedicatedHostGroupId()const;
@@ -73,7 +71,6 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string accessKeyId_;
 				std::string hostName_;
-				int hostCount_;
 				std::string regionId_;
 				std::string dedicatedHostGroupId_;
 				std::string period_;

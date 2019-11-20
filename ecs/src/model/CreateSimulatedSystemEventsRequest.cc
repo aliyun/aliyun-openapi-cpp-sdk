@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateSimulatedSystemEventsRequest;
 
 CreateSimulatedSystemEventsRequest::CreateSimulatedSystemEventsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateSimulatedSystemEvents")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSimulatedSystemEventsRequest::~CreateSimulatedSystemEventsRequest()
 {}
@@ -99,8 +101,8 @@ std::vector<std::string> CreateSimulatedSystemEventsRequest::getInstanceId()cons
 void CreateSimulatedSystemEventsRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++)
+		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
 }
 
 std::string CreateSimulatedSystemEventsRequest::getEventType()const

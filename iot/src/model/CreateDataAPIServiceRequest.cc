@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateDataAPIServiceRequest;
 
 CreateDataAPIServiceRequest::CreateDataAPIServiceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateDataAPIService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDataAPIServiceRequest::~CreateDataAPIServiceRequest()
 {}
@@ -44,15 +46,14 @@ std::vector<CreateDataAPIServiceRequest::RequestParam> CreateDataAPIServiceReque
 void CreateDataAPIServiceRequest::setRequestParam(const std::vector<RequestParam>& requestParam)
 {
 	requestParam_ = requestParam;
-	int i = 0;
-	for(int i = 0; i!= requestParam.size(); i++)	{
-		auto obj = requestParam.at(i);
-		std::string str ="RequestParam."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".Required", obj.required ? "true" : "false");
-		setCoreParameter(str + ".Desc", obj.desc);
-		setCoreParameter(str + ".Example", obj.example);
+	for(int dep1 = 0; dep1!= requestParam.size(); dep1++) {
+		auto requestParamObj = requestParam.at(dep1);
+		std::string requestParamObjStr = "RequestParam." + std::to_string(dep1);
+		setCoreParameter(requestParamObjStr + ".Name", requestParamObj.name);
+		setCoreParameter(requestParamObjStr + ".Type", requestParamObj.type);
+		setCoreParameter(requestParamObjStr + ".Required", requestParamObj.required ? "true" : "false");
+		setCoreParameter(requestParamObjStr + ".Desc", requestParamObj.desc);
+		setCoreParameter(requestParamObjStr + ".Example", requestParamObj.example);
 	}
 }
 
@@ -97,15 +98,14 @@ std::vector<CreateDataAPIServiceRequest::ResponseParam> CreateDataAPIServiceRequ
 void CreateDataAPIServiceRequest::setResponseParam(const std::vector<ResponseParam>& responseParam)
 {
 	responseParam_ = responseParam;
-	int i = 0;
-	for(int i = 0; i!= responseParam.size(); i++)	{
-		auto obj = responseParam.at(i);
-		std::string str ="ResponseParam."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".Required", obj.required ? "true" : "false");
-		setCoreParameter(str + ".Desc", obj.desc);
-		setCoreParameter(str + ".Example", obj.example);
+	for(int dep1 = 0; dep1!= responseParam.size(); dep1++) {
+		auto responseParamObj = responseParam.at(dep1);
+		std::string responseParamObjStr = "ResponseParam." + std::to_string(dep1);
+		setCoreParameter(responseParamObjStr + ".Name", responseParamObj.name);
+		setCoreParameter(responseParamObjStr + ".Type", responseParamObj.type);
+		setCoreParameter(responseParamObjStr + ".Required", responseParamObj.required ? "true" : "false");
+		setCoreParameter(responseParamObjStr + ".Desc", responseParamObj.desc);
+		setCoreParameter(responseParamObjStr + ".Example", responseParamObj.example);
 	}
 }
 

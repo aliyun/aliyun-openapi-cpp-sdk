@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::ExportOssResultRequest;
 
 ExportOssResultRequest::ExportOssResultRequest() :
 	RpcServiceRequest("green", "2017-08-23", "ExportOssResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ExportOssResultRequest::~ExportOssResultRequest()
 {}

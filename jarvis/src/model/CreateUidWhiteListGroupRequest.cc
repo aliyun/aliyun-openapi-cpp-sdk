@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateUidWhiteListGroupRequest;
 
 CreateUidWhiteListGroupRequest::CreateUidWhiteListGroupRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateUidWhiteListGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUidWhiteListGroupRequest::~CreateUidWhiteListGroupRequest()
 {}

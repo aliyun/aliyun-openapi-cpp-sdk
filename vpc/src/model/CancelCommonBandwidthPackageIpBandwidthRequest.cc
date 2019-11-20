@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CancelCommonBandwidthPackageIpBandwidthRequest;
 
 CancelCommonBandwidthPackageIpBandwidthRequest::CancelCommonBandwidthPackageIpBandwidthRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CancelCommonBandwidthPackageIpBandwidth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelCommonBandwidthPackageIpBandwidthRequest::~CancelCommonBandwidthPackageIpBandwidthRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::TransferInResendMailTokenRequest;
 
 TransferInResendMailTokenRequest::TransferInResendMailTokenRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "TransferInResendMailToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TransferInResendMailTokenRequest::~TransferInResendMailTokenRequest()
 {}

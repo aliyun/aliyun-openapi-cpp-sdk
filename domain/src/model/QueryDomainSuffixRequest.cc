@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDomainSuffixRequest;
 
 QueryDomainSuffixRequest::QueryDomainSuffixRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDomainSuffix")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDomainSuffixRequest::~QueryDomainSuffixRequest()
 {}

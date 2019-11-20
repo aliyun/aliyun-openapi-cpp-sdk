@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryCredentialsInfoRequest;
 
 QueryCredentialsInfoRequest::QueryCredentialsInfoRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryCredentialsInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCredentialsInfoRequest::~QueryCredentialsInfoRequest()
 {}

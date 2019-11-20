@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeAutoDelConfigRequest;
 
 DescribeAutoDelConfigRequest::DescribeAutoDelConfigRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeAutoDelConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAutoDelConfigRequest::~DescribeAutoDelConfigRequest()
 {}

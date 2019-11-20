@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ReInitDiskRequest;
 
 ReInitDiskRequest::ReInitDiskRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ReInitDisk")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReInitDiskRequest::~ReInitDiskRequest()
 {}

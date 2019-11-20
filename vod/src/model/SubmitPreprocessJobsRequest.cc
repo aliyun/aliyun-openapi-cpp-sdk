@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitPreprocessJobsRequest;
 
 SubmitPreprocessJobsRequest::SubmitPreprocessJobsRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitPreprocessJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitPreprocessJobsRequest::~SubmitPreprocessJobsRequest()
 {}

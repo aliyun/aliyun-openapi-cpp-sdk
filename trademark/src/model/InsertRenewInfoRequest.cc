@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::InsertRenewInfoRequest;
 
 InsertRenewInfoRequest::InsertRenewInfoRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "InsertRenewInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InsertRenewInfoRequest::~InsertRenewInfoRequest()
 {}

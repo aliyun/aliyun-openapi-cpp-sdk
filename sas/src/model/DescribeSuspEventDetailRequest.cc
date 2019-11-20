@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeSuspEventDetailRequest;
 
 DescribeSuspEventDetailRequest::DescribeSuspEventDetailRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeSuspEventDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSuspEventDetailRequest::~DescribeSuspEventDetailRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForCreatingOrderRenewRequest;
 
 SaveBatchTaskForCreatingOrderRenewRequest::SaveBatchTaskForCreatingOrderRenewRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRenew")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForCreatingOrderRenewRequest::~SaveBatchTaskForCreatingOrderRenewRequest()
 {}
@@ -77,13 +79,12 @@ std::vector<SaveBatchTaskForCreatingOrderRenewRequest::OrderRenewParam> SaveBatc
 void SaveBatchTaskForCreatingOrderRenewRequest::setOrderRenewParam(const std::vector<OrderRenewParam>& orderRenewParam)
 {
 	orderRenewParam_ = orderRenewParam;
-	int i = 0;
-	for(int i = 0; i!= orderRenewParam.size(); i++)	{
-		auto obj = orderRenewParam.at(i);
-		std::string str ="OrderRenewParam."+ std::to_string(i);
-		setCoreParameter(str + ".SubscriptionDuration", std::to_string(obj.subscriptionDuration));
-		setCoreParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
-		setCoreParameter(str + ".DomainName", obj.domainName);
+	for(int dep1 = 0; dep1!= orderRenewParam.size(); dep1++) {
+		auto orderRenewParamObj = orderRenewParam.at(dep1);
+		std::string orderRenewParamObjStr = "OrderRenewParam." + std::to_string(dep1);
+		setCoreParameter(orderRenewParamObjStr + ".SubscriptionDuration", std::to_string(orderRenewParamObj.subscriptionDuration));
+		setCoreParameter(orderRenewParamObjStr + ".CurrentExpirationDate", std::to_string(orderRenewParamObj.currentExpirationDate));
+		setCoreParameter(orderRenewParamObjStr + ".DomainName", orderRenewParamObj.domainName);
 	}
 }
 

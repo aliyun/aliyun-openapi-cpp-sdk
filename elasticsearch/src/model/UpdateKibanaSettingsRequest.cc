@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::UpdateKibanaSettingsRequest;
 
 UpdateKibanaSettingsRequest::UpdateKibanaSettingsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/actions/update-kibana-settings");
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateKibanaSettingsRequest::~UpdateKibanaSettingsRequest()
 {}

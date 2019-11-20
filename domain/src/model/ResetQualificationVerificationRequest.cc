@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::ResetQualificationVerificationRequest;
 
 ResetQualificationVerificationRequest::ResetQualificationVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "ResetQualificationVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetQualificationVerificationRequest::~ResetQualificationVerificationRequest()
 {}

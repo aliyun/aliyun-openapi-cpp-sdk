@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::BindImagePackageRequest;
 
 BindImagePackageRequest::BindImagePackageRequest() :
 	RpcServiceRequest("market", "2015-11-01", "BindImagePackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindImagePackageRequest::~BindImagePackageRequest()
 {}

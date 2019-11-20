@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApgroupSsidConfigProgressRequest;
 
 GetApgroupSsidConfigProgressRequest::GetApgroupSsidConfigProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApgroupSsidConfigProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApgroupSsidConfigProgressRequest::~GetApgroupSsidConfigProgressRequest()
 {}

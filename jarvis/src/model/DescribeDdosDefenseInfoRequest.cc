@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeDdosDefenseInfoRequest;
 
 DescribeDdosDefenseInfoRequest::DescribeDdosDefenseInfoRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeDdosDefenseInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDdosDefenseInfoRequest::~DescribeDdosDefenseInfoRequest()
 {}

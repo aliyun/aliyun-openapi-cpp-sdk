@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeDataLimitsRequest;
 
 DescribeDataLimitsRequest::DescribeDataLimitsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeDataLimits")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataLimitsRequest::~DescribeDataLimitsRequest()
 {}

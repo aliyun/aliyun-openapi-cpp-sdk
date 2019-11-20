@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryPageByApplyIdRequest;
 
 QueryPageByApplyIdRequest::QueryPageByApplyIdRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryPageByApplyId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryPageByApplyIdRequest::~QueryPageByApplyIdRequest()
 {}

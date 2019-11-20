@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeReadOnlyAccountRequest;
 
 DescribeReadOnlyAccountRequest::DescribeReadOnlyAccountRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeReadOnlyAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeReadOnlyAccountRequest::~DescribeReadOnlyAccountRequest()
 {}

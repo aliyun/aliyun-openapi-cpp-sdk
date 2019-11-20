@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::RealTimeSnapshotCommandRequest;
 
 RealTimeSnapshotCommandRequest::RealTimeSnapshotCommandRequest() :
 	RpcServiceRequest("live", "2016-11-01", "RealTimeSnapshotCommand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RealTimeSnapshotCommandRequest::~RealTimeSnapshotCommandRequest()
 {}

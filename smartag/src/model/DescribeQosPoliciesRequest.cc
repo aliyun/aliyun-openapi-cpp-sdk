@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeQosPoliciesRequest;
 
 DescribeQosPoliciesRequest::DescribeQosPoliciesRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeQosPolicies")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeQosPoliciesRequest::~DescribeQosPoliciesRequest()
 {}
@@ -133,5 +135,16 @@ void DescribeQosPoliciesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+int DescribeQosPoliciesRequest::getPriority()const
+{
+	return priority_;
+}
+
+void DescribeQosPoliciesRequest::setPriority(int priority)
+{
+	priority_ = priority;
+	setCoreParameter("Priority", std::to_string(priority));
 }
 

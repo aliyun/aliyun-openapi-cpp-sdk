@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::ModifyScalingConfigurationRequest;
 
 ModifyScalingConfigurationRequest::ModifyScalingConfigurationRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "ModifyScalingConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyScalingConfigurationRequest::~ModifyScalingConfigurationRequest()
 {}
@@ -55,12 +57,11 @@ std::vector<ModifyScalingConfigurationRequest::SpotPriceLimit> ModifyScalingConf
 void ModifyScalingConfigurationRequest::setSpotPriceLimit(const std::vector<SpotPriceLimit>& spotPriceLimit)
 {
 	spotPriceLimit_ = spotPriceLimit;
-	int i = 0;
-	for(int i = 0; i!= spotPriceLimit.size(); i++)	{
-		auto obj = spotPriceLimit.at(i);
-		std::string str ="SpotPriceLimit."+ std::to_string(i);
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".PriceLimit", std::to_string(obj.priceLimit));
+	for(int dep1 = 0; dep1!= spotPriceLimit.size(); dep1++) {
+		auto spotPriceLimitObj = spotPriceLimit.at(dep1);
+		std::string spotPriceLimitObjStr = "SpotPriceLimit." + std::to_string(dep1);
+		setCoreParameter(spotPriceLimitObjStr + ".InstanceType", spotPriceLimitObj.instanceType);
+		setCoreParameter(spotPriceLimitObjStr + ".PriceLimit", std::to_string(spotPriceLimitObj.priceLimit));
 	}
 }
 
@@ -95,6 +96,17 @@ void ModifyScalingConfigurationRequest::setInstanceDescription(const std::string
 {
 	instanceDescription_ = instanceDescription;
 	setCoreParameter("InstanceDescription", instanceDescription);
+}
+
+std::string ModifyScalingConfigurationRequest::getSystemDiskAutoSnapshotPolicyId()const
+{
+	return systemDiskAutoSnapshotPolicyId_;
+}
+
+void ModifyScalingConfigurationRequest::setSystemDiskAutoSnapshotPolicyId(const std::string& systemDiskAutoSnapshotPolicyId)
+{
+	systemDiskAutoSnapshotPolicyId_ = systemDiskAutoSnapshotPolicyId;
+	setCoreParameter("SystemDiskAutoSnapshotPolicyId", systemDiskAutoSnapshotPolicyId);
 }
 
 int ModifyScalingConfigurationRequest::getCpu()const
@@ -226,8 +238,8 @@ std::vector<std::string> ModifyScalingConfigurationRequest::getInstanceTypes()co
 void ModifyScalingConfigurationRequest::setInstanceTypes(const std::vector<std::string>& instanceTypes)
 {
 	instanceTypes_ = instanceTypes;
-	for(int i = 0; i!= instanceTypes.size(); i++)
-		setCoreParameter("InstanceTypes."+ std::to_string(i), instanceTypes.at(i));
+	for(int dep1 = 0; dep1!= instanceTypes.size(); dep1++)
+		setCoreParameter("InstanceTypes."+ std::to_string(dep1), instanceTypes.at(dep1));
 }
 
 int ModifyScalingConfigurationRequest::getInternetMaxBandwidthOut()const
@@ -381,8 +393,8 @@ std::vector<std::string> ModifyScalingConfigurationRequest::getSecurityGroupIds(
 void ModifyScalingConfigurationRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
 {
 	securityGroupIds_ = securityGroupIds;
-	for(int i = 0; i!= securityGroupIds.size(); i++)
-		setCoreParameter("SecurityGroupIds."+ std::to_string(i), securityGroupIds.at(i));
+	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++)
+		setCoreParameter("SecurityGroupIds."+ std::to_string(dep1), securityGroupIds.at(dep1));
 }
 
 std::vector<ModifyScalingConfigurationRequest::DataDisk> ModifyScalingConfigurationRequest::getDataDisk()const
@@ -393,19 +405,19 @@ std::vector<ModifyScalingConfigurationRequest::DataDisk> ModifyScalingConfigurat
 void ModifyScalingConfigurationRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 {
 	dataDisk_ = dataDisk;
-	int i = 0;
-	for(int i = 0; i!= dataDisk.size(); i++)	{
-		auto obj = dataDisk.at(i);
-		std::string str ="DataDisk."+ std::to_string(i);
-		setCoreParameter(str + ".DiskName", obj.diskName);
-		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
-		setCoreParameter(str + ".Size", std::to_string(obj.size));
-		setCoreParameter(str + ".Encrypted", obj.encrypted);
-		setCoreParameter(str + ".Description", obj.description);
-		setCoreParameter(str + ".Category", obj.category);
-		setCoreParameter(str + ".KMSKeyId", obj.kMSKeyId);
-		setCoreParameter(str + ".Device", obj.device);
-		setCoreParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
+	for(int dep1 = 0; dep1!= dataDisk.size(); dep1++) {
+		auto dataDiskObj = dataDisk.at(dep1);
+		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1);
+		setCoreParameter(dataDiskObjStr + ".DiskName", dataDiskObj.diskName);
+		setCoreParameter(dataDiskObjStr + ".SnapshotId", dataDiskObj.snapshotId);
+		setCoreParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
+		setCoreParameter(dataDiskObjStr + ".Encrypted", dataDiskObj.encrypted);
+		setCoreParameter(dataDiskObjStr + ".AutoSnapshotPolicyId", dataDiskObj.autoSnapshotPolicyId);
+		setCoreParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
+		setCoreParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
+		setCoreParameter(dataDiskObjStr + ".KMSKeyId", dataDiskObj.kMSKeyId);
+		setCoreParameter(dataDiskObjStr + ".Device", dataDiskObj.device);
+		setCoreParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
 	}
 }
 

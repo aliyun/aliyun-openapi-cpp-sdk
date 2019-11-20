@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodUserDomainsRequest;
 
 DescribeVodUserDomainsRequest::DescribeVodUserDomainsRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodUserDomains")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodUserDomainsRequest::~DescribeVodUserDomainsRequest()
 {}

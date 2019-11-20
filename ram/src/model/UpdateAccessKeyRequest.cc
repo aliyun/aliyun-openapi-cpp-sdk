@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::UpdateAccessKeyRequest;
 
 UpdateAccessKeyRequest::UpdateAccessKeyRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "UpdateAccessKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateAccessKeyRequest::~UpdateAccessKeyRequest()
 {}

@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetRefPackageJobRequest;
 
 GetRefPackageJobRequest::GetRefPackageJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/packages/[packageName]/jobs");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRefPackageJobRequest::~GetRefPackageJobRequest()
 {}

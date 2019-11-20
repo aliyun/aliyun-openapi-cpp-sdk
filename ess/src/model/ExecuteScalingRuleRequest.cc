@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::ExecuteScalingRuleRequest;
 
 ExecuteScalingRuleRequest::ExecuteScalingRuleRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "ExecuteScalingRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ExecuteScalingRuleRequest::~ExecuteScalingRuleRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsMessagePushRequest;
 
 OnsMessagePushRequest::OnsMessagePushRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessagePush")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsMessagePushRequest::~OnsMessagePushRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::SubmitSupplementRequest;
 
 SubmitSupplementRequest::SubmitSupplementRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "SubmitSupplement")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitSupplementRequest::~SubmitSupplementRequest()
 {}

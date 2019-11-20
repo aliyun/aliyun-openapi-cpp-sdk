@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetSmsConfigRequest;
 
 GetSmsConfigRequest::GetSmsConfigRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetSmsConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSmsConfigRequest::~GetSmsConfigRequest()
 {}
@@ -44,8 +46,8 @@ std::vector<int> GetSmsConfigRequest::getScenario()const
 void GetSmsConfigRequest::setScenario(const std::vector<int>& scenario)
 {
 	scenario_ = scenario;
-	for(int i = 0; i!= scenario.size(); i++)
-		setCoreParameter("Scenario."+ std::to_string(i), std::to_string(scenario.at(i)));
+	for(int dep1 = 0; dep1!= scenario.size(); dep1++)
+		setCoreParameter("Scenario."+ std::to_string(dep1), std::to_string(scenario.at(dep1)));
 }
 
 std::string GetSmsConfigRequest::getAccessKeyId()const

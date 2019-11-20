@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DownloadOriginalStatisticsReportRequest;
 
 DownloadOriginalStatisticsReportRequest::DownloadOriginalStatisticsReportRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DownloadOriginalStatisticsReport")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DownloadOriginalStatisticsReportRequest::~DownloadOriginalStatisticsReportRequest()
 {}

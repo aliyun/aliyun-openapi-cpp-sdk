@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListRecordingOfDualTrackRequest;
 
 ListRecordingOfDualTrackRequest::ListRecordingOfDualTrackRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListRecordingOfDualTrack")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRecordingOfDualTrackRequest::~ListRecordingOfDualTrackRequest()
 {}

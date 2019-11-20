@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CreateRoomRequest;
 
 CreateRoomRequest::CreateRoomRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CreateRoom")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRoomRequest::~CreateRoomRequest()
 {}

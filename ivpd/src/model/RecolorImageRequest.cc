@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::RecolorImageRequest;
 
 RecolorImageRequest::RecolorImageRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "RecolorImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RecolorImageRequest::~RecolorImageRequest()
 {}
@@ -33,11 +35,10 @@ std::vector<RecolorImageRequest::ColorTemplate> RecolorImageRequest::getColorTem
 void RecolorImageRequest::setColorTemplate(const std::vector<ColorTemplate>& colorTemplate)
 {
 	colorTemplate_ = colorTemplate;
-	int i = 0;
-	for(int i = 0; i!= colorTemplate.size(); i++)	{
-		auto obj = colorTemplate.at(i);
-		std::string str ="ColorTemplate."+ std::to_string(i);
-		setCoreParameter(str + ".Color", obj.color);
+	for(int dep1 = 0; dep1!= colorTemplate.size(); dep1++) {
+		auto colorTemplateObj = colorTemplate.at(dep1);
+		std::string colorTemplateObjStr = "ColorTemplate." + std::to_string(dep1);
+		setCoreParameter(colorTemplateObjStr + ".Color", colorTemplateObj.color);
 	}
 }
 

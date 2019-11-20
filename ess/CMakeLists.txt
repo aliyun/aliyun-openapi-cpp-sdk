@@ -137,6 +137,8 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/RecordLifecycleActionHeartbeatResult.h
 	include/alibabacloud/ess/model/RemoveInstancesRequest.h
 	include/alibabacloud/ess/model/RemoveInstancesResult.h
+	include/alibabacloud/ess/model/SetInstanceHealthRequest.h
+	include/alibabacloud/ess/model/SetInstanceHealthResult.h
 	include/alibabacloud/ess/model/SetInstancesProtectionRequest.h
 	include/alibabacloud/ess/model/SetInstancesProtectionResult.h
 	include/alibabacloud/ess/model/VerifyAuthenticationRequest.h
@@ -262,6 +264,8 @@ set(ess_src
 	src/model/RecordLifecycleActionHeartbeatResult.cc
 	src/model/RemoveInstancesRequest.cc
 	src/model/RemoveInstancesResult.cc
+	src/model/SetInstanceHealthRequest.cc
+	src/model/SetInstanceHealthResult.cc
 	src/model/SetInstancesProtectionRequest.cc
 	src/model/SetInstancesProtectionResult.cc
 	src/model/VerifyAuthenticationRequest.cc

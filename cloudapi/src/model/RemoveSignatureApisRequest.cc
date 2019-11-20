@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::RemoveSignatureApisRequest;
 
 RemoveSignatureApisRequest::RemoveSignatureApisRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "RemoveSignatureApis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveSignatureApisRequest::~RemoveSignatureApisRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DeleteDataLimitRequest;
 
 DeleteDataLimitRequest::DeleteDataLimitRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DeleteDataLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDataLimitRequest::~DeleteDataLimitRequest()
 {}

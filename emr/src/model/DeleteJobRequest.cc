@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteJobRequest;
 
 DeleteJobRequest::DeleteJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteJobRequest::~DeleteJobRequest()
 {}

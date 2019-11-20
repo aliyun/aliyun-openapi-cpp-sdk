@@ -339,6 +339,42 @@ SddpClient::DescribeAccountsOutcomeCallable SddpClient::describeAccountsCallable
 	return task->get_future();
 }
 
+SddpClient::DescribeAuditLogsOutcome SddpClient::describeAuditLogs(const DescribeAuditLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAuditLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAuditLogsOutcome(DescribeAuditLogsResult(outcome.result()));
+	else
+		return DescribeAuditLogsOutcome(outcome.error());
+}
+
+void SddpClient::describeAuditLogsAsync(const DescribeAuditLogsRequest& request, const DescribeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAuditLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeAuditLogsOutcomeCallable SddpClient::describeAuditLogsCallable(const DescribeAuditLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAuditLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAuditLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SddpClient::DescribeAuthAccountsOutcome SddpClient::describeAuthAccounts(const DescribeAuthAccountsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -951,6 +987,42 @@ SddpClient::DescribeInstancesOutcomeCallable SddpClient::describeInstancesCallab
 	return task->get_future();
 }
 
+SddpClient::DescribeOriginalLogsOutcome SddpClient::describeOriginalLogs(const DescribeOriginalLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeOriginalLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeOriginalLogsOutcome(DescribeOriginalLogsResult(outcome.result()));
+	else
+		return DescribeOriginalLogsOutcome(outcome.error());
+}
+
+void SddpClient::describeOriginalLogsAsync(const DescribeOriginalLogsRequest& request, const DescribeOriginalLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeOriginalLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeOriginalLogsOutcomeCallable SddpClient::describeOriginalLogsCallable(const DescribeOriginalLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeOriginalLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeOriginalLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SddpClient::DescribeOssObjectDetailOutcome SddpClient::describeOssObjectDetail(const DescribeOssObjectDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1233,42 @@ SddpClient::DescribeTablesOutcomeCallable SddpClient::describeTablesCallable(con
 			[this, request]()
 			{
 			return this->describeTables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeUseFlowOutcome SddpClient::describeUseFlow(const DescribeUseFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUseFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUseFlowOutcome(DescribeUseFlowResult(outcome.result()));
+	else
+		return DescribeUseFlowOutcome(outcome.error());
+}
+
+void SddpClient::describeUseFlowAsync(const DescribeUseFlowRequest& request, const DescribeUseFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUseFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeUseFlowOutcomeCallable SddpClient::describeUseFlowCallable(const DescribeUseFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUseFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUseFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

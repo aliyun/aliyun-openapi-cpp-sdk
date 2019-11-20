@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeWebsiteStatRequest;
 
 DescribeWebsiteStatRequest::DescribeWebsiteStatRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeWebsiteStat")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeWebsiteStatRequest::~DescribeWebsiteStatRequest()
 {}

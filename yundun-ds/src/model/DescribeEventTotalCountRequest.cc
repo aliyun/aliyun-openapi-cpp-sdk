@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeEventTotalCountRequest;
 
 DescribeEventTotalCountRequest::DescribeEventTotalCountRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeEventTotalCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEventTotalCountRequest::~DescribeEventTotalCountRequest()
 {}

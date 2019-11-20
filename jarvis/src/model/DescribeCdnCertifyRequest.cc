@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeCdnCertifyRequest;
 
 DescribeCdnCertifyRequest::DescribeCdnCertifyRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeCdnCertify")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCdnCertifyRequest::~DescribeCdnCertifyRequest()
 {}

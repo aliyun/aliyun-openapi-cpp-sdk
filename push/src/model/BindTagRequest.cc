@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::BindTagRequest;
 
 BindTagRequest::BindTagRequest() :
 	RpcServiceRequest("push", "2016-08-01", "BindTag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindTagRequest::~BindTagRequest()
 {}
