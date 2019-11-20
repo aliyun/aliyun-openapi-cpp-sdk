@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::QueryStaticsErrorRateRequest;
 
 QueryStaticsErrorRateRequest::QueryStaticsErrorRateRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "QueryStaticsErrorRate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryStaticsErrorRateRequest::~QueryStaticsErrorRateRequest()
 {}

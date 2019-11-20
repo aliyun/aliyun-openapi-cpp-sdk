@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceGroupInfoRequest;
 
 QueryDeviceGroupInfoRequest::QueryDeviceGroupInfoRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceGroupInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceGroupInfoRequest::~QueryDeviceGroupInfoRequest()
 {}

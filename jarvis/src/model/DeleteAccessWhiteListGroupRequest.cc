@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteAccessWhiteListGroupRequest;
 
 DeleteAccessWhiteListGroupRequest::DeleteAccessWhiteListGroupRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteAccessWhiteListGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAccessWhiteListGroupRequest::~DeleteAccessWhiteListGroupRequest()
 {}

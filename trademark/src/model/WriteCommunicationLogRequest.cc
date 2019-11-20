@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::WriteCommunicationLogRequest;
 
 WriteCommunicationLogRequest::WriteCommunicationLogRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "WriteCommunicationLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 WriteCommunicationLogRequest::~WriteCommunicationLogRequest()
 {}

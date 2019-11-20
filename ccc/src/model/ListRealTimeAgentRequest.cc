@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListRealTimeAgentRequest;
 
 ListRealTimeAgentRequest::ListRealTimeAgentRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListRealTimeAgent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRealTimeAgentRequest::~ListRealTimeAgentRequest()
 {}

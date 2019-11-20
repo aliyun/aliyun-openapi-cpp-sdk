@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::UpdateMyGroupsRequest;
 
 UpdateMyGroupsRequest::UpdateMyGroupsRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "UpdateMyGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateMyGroupsRequest::~UpdateMyGroupsRequest()
 {}

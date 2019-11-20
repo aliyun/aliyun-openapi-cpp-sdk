@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetUserRequest;
 
 GetUserRequest::GetUserRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUserRequest::~GetUserRequest()
 {}

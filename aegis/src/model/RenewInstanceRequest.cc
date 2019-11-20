@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::RenewInstanceRequest;
 
 RenewInstanceRequest::RenewInstanceRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "RenewInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenewInstanceRequest::~RenewInstanceRequest()
 {}

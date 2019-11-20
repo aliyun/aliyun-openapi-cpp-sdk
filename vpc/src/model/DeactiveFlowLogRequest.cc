@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeactiveFlowLogRequest;
 
 DeactiveFlowLogRequest::DeactiveFlowLogRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeactiveFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeactiveFlowLogRequest::~DeactiveFlowLogRequest()
 {}

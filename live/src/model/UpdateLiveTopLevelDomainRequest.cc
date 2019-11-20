@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::UpdateLiveTopLevelDomainRequest;
 
 UpdateLiveTopLevelDomainRequest::UpdateLiveTopLevelDomainRequest() :
 	RpcServiceRequest("live", "2016-11-01", "UpdateLiveTopLevelDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateLiveTopLevelDomainRequest::~UpdateLiveTopLevelDomainRequest()
 {}

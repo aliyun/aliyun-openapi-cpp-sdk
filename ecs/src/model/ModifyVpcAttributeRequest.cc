@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyVpcAttributeRequest;
 
 ModifyVpcAttributeRequest::ModifyVpcAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyVpcAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyVpcAttributeRequest::~ModifyVpcAttributeRequest()
 {}

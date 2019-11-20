@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddMediaTagRequest;
 
 AddMediaTagRequest::AddMediaTagRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddMediaTag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddMediaTagRequest::~AddMediaTagRequest()
 {}

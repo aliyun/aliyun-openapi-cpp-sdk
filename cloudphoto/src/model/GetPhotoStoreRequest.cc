@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetPhotoStoreRequest;
 
 GetPhotoStoreRequest::GetPhotoStoreRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetPhotoStore")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPhotoStoreRequest::~GetPhotoStoreRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemSitingContrastRequest;
 
 OemSitingContrastRequest::OemSitingContrastRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemSitingContrast")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemSitingContrastRequest::~OemSitingContrastRequest()
 {}

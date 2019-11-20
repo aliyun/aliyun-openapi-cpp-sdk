@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::DeletePhotoStoreRequest;
 
 DeletePhotoStoreRequest::DeletePhotoStoreRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "DeletePhotoStore")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePhotoStoreRequest::~DeletePhotoStoreRequest()
 {}

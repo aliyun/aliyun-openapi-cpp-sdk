@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ImportSwaggerRequest;
 
 ImportSwaggerRequest::ImportSwaggerRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ImportSwagger")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImportSwaggerRequest::~ImportSwaggerRequest()
 {}

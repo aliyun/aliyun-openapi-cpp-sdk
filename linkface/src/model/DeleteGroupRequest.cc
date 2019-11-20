@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::DeleteGroupRequest;
 
 DeleteGroupRequest::DeleteGroupRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "DeleteGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteGroupRequest::~DeleteGroupRequest()
 {}

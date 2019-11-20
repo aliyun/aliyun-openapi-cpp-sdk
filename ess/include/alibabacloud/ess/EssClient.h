@@ -138,6 +138,8 @@
 #include "model/RecordLifecycleActionHeartbeatResult.h"
 #include "model/RemoveInstancesRequest.h"
 #include "model/RemoveInstancesResult.h"
+#include "model/SetInstanceHealthRequest.h"
+#include "model/SetInstanceHealthResult.h"
 #include "model/SetInstancesProtectionRequest.h"
 #include "model/SetInstancesProtectionResult.h"
 #include "model/VerifyAuthenticationRequest.h"
@@ -327,6 +329,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RemoveInstancesResult> RemoveInstancesOutcome;
 			typedef std::future<RemoveInstancesOutcome> RemoveInstancesOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::RemoveInstancesRequest&, const RemoveInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveInstancesAsyncHandler;
+			typedef Outcome<Error, Model::SetInstanceHealthResult> SetInstanceHealthOutcome;
+			typedef std::future<SetInstanceHealthOutcome> SetInstanceHealthOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::SetInstanceHealthRequest&, const SetInstanceHealthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetInstanceHealthAsyncHandler;
 			typedef Outcome<Error, Model::SetInstancesProtectionResult> SetInstancesProtectionOutcome;
 			typedef std::future<SetInstancesProtectionOutcome> SetInstancesProtectionOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::SetInstancesProtectionRequest&, const SetInstancesProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetInstancesProtectionAsyncHandler;
@@ -515,6 +520,9 @@ namespace AlibabaCloud
 			RemoveInstancesOutcome removeInstances(const Model::RemoveInstancesRequest &request)const;
 			void removeInstancesAsync(const Model::RemoveInstancesRequest& request, const RemoveInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveInstancesOutcomeCallable removeInstancesCallable(const Model::RemoveInstancesRequest& request) const;
+			SetInstanceHealthOutcome setInstanceHealth(const Model::SetInstanceHealthRequest &request)const;
+			void setInstanceHealthAsync(const Model::SetInstanceHealthRequest& request, const SetInstanceHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetInstanceHealthOutcomeCallable setInstanceHealthCallable(const Model::SetInstanceHealthRequest& request) const;
 			SetInstancesProtectionOutcome setInstancesProtection(const Model::SetInstancesProtectionRequest &request)const;
 			void setInstancesProtectionAsync(const Model::SetInstancesProtectionRequest& request, const SetInstancesProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetInstancesProtectionOutcomeCallable setInstancesProtectionCallable(const Model::SetInstancesProtectionRequest& request) const;

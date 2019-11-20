@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyInstanceAttributeRequest;
 
 ModifyInstanceAttributeRequest::ModifyInstanceAttributeRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyInstanceAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceAttributeRequest::~ModifyInstanceAttributeRequest()
 {}

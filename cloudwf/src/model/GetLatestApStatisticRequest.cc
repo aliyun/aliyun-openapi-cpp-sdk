@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetLatestApStatisticRequest;
 
 GetLatestApStatisticRequest::GetLatestApStatisticRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetLatestApStatistic")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetLatestApStatisticRequest::~GetLatestApStatisticRequest()
 {}

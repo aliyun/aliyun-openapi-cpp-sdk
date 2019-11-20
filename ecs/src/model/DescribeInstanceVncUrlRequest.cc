@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeInstanceVncUrlRequest;
 
 DescribeInstanceVncUrlRequest::DescribeInstanceVncUrlRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceVncUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceVncUrlRequest::~DescribeInstanceVncUrlRequest()
 {}

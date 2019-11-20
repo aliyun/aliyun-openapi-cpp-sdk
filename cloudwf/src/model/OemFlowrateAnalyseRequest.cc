@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemFlowrateAnalyseRequest;
 
 OemFlowrateAnalyseRequest::OemFlowrateAnalyseRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemFlowrateAnalyse")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemFlowrateAnalyseRequest::~OemFlowrateAnalyseRequest()
 {}

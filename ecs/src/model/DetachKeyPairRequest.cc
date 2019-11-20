@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DetachKeyPairRequest;
 
 DetachKeyPairRequest::DetachKeyPairRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DetachKeyPair")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachKeyPairRequest::~DetachKeyPairRequest()
 {}

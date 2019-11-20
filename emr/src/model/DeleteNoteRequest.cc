@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteNoteRequest;
 
 DeleteNoteRequest::DeleteNoteRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteNote")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNoteRequest::~DeleteNoteRequest()
 {}

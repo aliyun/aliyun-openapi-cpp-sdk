@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddCasterProgramRequest;
 
 AddCasterProgramRequest::AddCasterProgramRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddCasterProgram")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCasterProgramRequest::~AddCasterProgramRequest()
 {}
@@ -33,17 +35,18 @@ std::vector<AddCasterProgramRequest::Episode> AddCasterProgramRequest::getEpisod
 void AddCasterProgramRequest::setEpisode(const std::vector<Episode>& episode)
 {
 	episode_ = episode;
-	int i = 0;
-	for(int i = 0; i!= episode.size(); i++)	{
-		auto obj = episode.at(i);
-		std::string str ="Episode."+ std::to_string(i);
-		setCoreParameter(str + ".EpisodeType", obj.episodeType);
-		setCoreParameter(str + ".EpisodeName", obj.episodeName);
-		setCoreParameter(str + ".ResourceId", obj.resourceId);
-		for(int i = 0; i!= obj.componentId.size(); i++)				setCoreParameter(str + ".ComponentId."+ std::to_string(i), obj.componentId.at(i));
-		setCoreParameter(str + ".StartTime", obj.startTime);
-		setCoreParameter(str + ".EndTime", obj.endTime);
-		setCoreParameter(str + ".SwitchType", obj.switchType);
+	for(int dep1 = 0; dep1!= episode.size(); dep1++) {
+		auto episodeObj = episode.at(dep1);
+		std::string episodeObjStr = "Episode." + std::to_string(dep1);
+		setCoreParameter(episodeObjStr + ".EpisodeType", episodeObj.episodeType);
+		setCoreParameter(episodeObjStr + ".EpisodeName", episodeObj.episodeName);
+		setCoreParameter(episodeObjStr + ".ResourceId", episodeObj.resourceId);
+		for(int dep2 = 0; dep2!= episodeObj.componentId.size(); dep2++) {
+			setCoreParameter(episodeObjStr + ".ComponentId."+ std::to_string(dep2), episodeObj.componentId.at(dep2));
+		}
+		setCoreParameter(episodeObjStr + ".StartTime", episodeObj.startTime);
+		setCoreParameter(episodeObjStr + ".EndTime", episodeObj.endTime);
+		setCoreParameter(episodeObjStr + ".SwitchType", episodeObj.switchType);
 	}
 }
 

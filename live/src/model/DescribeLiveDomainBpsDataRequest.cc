@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainBpsDataRequest;
 
 DescribeLiveDomainBpsDataRequest::DescribeLiveDomainBpsDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainBpsData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainBpsDataRequest::~DescribeLiveDomainBpsDataRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DescribeLicenseRequest;
 
 DescribeLicenseRequest::DescribeLicenseRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DescribeLicense")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLicenseRequest::~DescribeLicenseRequest()
 {}

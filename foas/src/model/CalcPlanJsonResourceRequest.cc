@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CalcPlanJsonResourceRequest;
 
 CalcPlanJsonResourceRequest::CalcPlanJsonResourceRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/planjson-resource");
+	setMethod(HttpRequest::Method::Get);
+}
 
 CalcPlanJsonResourceRequest::~CalcPlanJsonResourceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::TaskConfigEnableRequest;
 
 TaskConfigEnableRequest::TaskConfigEnableRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "TaskConfigEnable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaskConfigEnableRequest::~TaskConfigEnableRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<long> TaskConfigEnableRequest::getIdList()const
 void TaskConfigEnableRequest::setIdList(const std::vector<long>& idList)
 {
 	idList_ = idList;
-	for(int i = 0; i!= idList.size(); i++)
-		setCoreParameter("IdList."+ std::to_string(i), std::to_string(idList.at(i)));
+	for(int dep1 = 0; dep1!= idList.size(); dep1++) {
+		setCoreParameter("IdList."+ std::to_string(dep1), std::to_string(idList.at(dep1)));
+	}
 }
 
 bool TaskConfigEnableRequest::getEnabled()const

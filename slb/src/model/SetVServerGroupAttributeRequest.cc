@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetVServerGroupAttributeRequest;
 
 SetVServerGroupAttributeRequest::SetVServerGroupAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetVServerGroupAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetVServerGroupAttributeRequest::~SetVServerGroupAttributeRequest()
 {}

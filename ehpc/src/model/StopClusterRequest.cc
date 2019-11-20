@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::StopClusterRequest;
 
 StopClusterRequest::StopClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StopCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 StopClusterRequest::~StopClusterRequest()
 {}

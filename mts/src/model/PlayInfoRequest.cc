@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::PlayInfoRequest;
 
 PlayInfoRequest::PlayInfoRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "PlayInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PlayInfoRequest::~PlayInfoRequest()
 {}

@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CreateClusterRequest;
 
 CreateClusterRequest::CreateClusterRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateClusterRequest::~CreateClusterRequest()
 {}

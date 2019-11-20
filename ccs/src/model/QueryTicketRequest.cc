@@ -20,7 +20,9 @@ using AlibabaCloud::Ccs::Model::QueryTicketRequest;
 
 QueryTicketRequest::QueryTicketRequest() :
 	RpcServiceRequest("ccs", "2017-10-01", "QueryTicket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTicketRequest::~QueryTicketRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryArtExtensionRequest;
 
 QueryArtExtensionRequest::QueryArtExtensionRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryArtExtension")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryArtExtensionRequest::~QueryArtExtensionRequest()
 {}

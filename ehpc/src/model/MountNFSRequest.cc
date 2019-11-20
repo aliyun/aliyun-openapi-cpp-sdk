@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::MountNFSRequest;
 
 MountNFSRequest::MountNFSRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "MountNFS")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 MountNFSRequest::~MountNFSRequest()
 {}
@@ -67,5 +69,16 @@ void MountNFSRequest::setNfsDir(const std::string& nfsDir)
 {
 	nfsDir_ = nfsDir;
 	setCoreParameter("NfsDir", nfsDir);
+}
+
+std::string MountNFSRequest::getProtocolType()const
+{
+	return protocolType_;
+}
+
+void MountNFSRequest::setProtocolType(const std::string& protocolType)
+{
+	protocolType_ = protocolType;
+	setCoreParameter("ProtocolType", protocolType);
 }
 

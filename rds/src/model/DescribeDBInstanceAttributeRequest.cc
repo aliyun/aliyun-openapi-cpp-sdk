@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDBInstanceAttributeRequest;
 
 DescribeDBInstanceAttributeRequest::DescribeDBInstanceAttributeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstanceAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceAttributeRequest::~DescribeDBInstanceAttributeRequest()
 {}

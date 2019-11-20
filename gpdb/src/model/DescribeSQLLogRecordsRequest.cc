@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeSQLLogRecordsRequest;
 
 DescribeSQLLogRecordsRequest::DescribeSQLLogRecordsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeSQLLogRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSQLLogRecordsRequest::~DescribeSQLLogRecordsRequest()
 {}

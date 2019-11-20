@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::CreateUserRequest;
 
 CreateUserRequest::CreateUserRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreateUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUserRequest::~CreateUserRequest()
 {}

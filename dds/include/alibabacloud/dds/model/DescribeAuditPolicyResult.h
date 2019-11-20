@@ -37,13 +37,11 @@ namespace AlibabaCloud
 				DescribeAuditPolicyResult();
 				explicit DescribeAuditPolicyResult(const std::string &payload);
 				~DescribeAuditPolicyResult();
-				int getStoragePeriod()const;
 				std::string getLogAuditStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int storagePeriod_;
 				std::string logAuditStatus_;
 
 			};

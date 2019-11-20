@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetListenerAccessControlStatusRequest;
 
 SetListenerAccessControlStatusRequest::SetListenerAccessControlStatusRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetListenerAccessControlStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetListenerAccessControlStatusRequest::~SetListenerAccessControlStatusRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::EnablePhysicalConnectionRequest;
 
 EnablePhysicalConnectionRequest::EnablePhysicalConnectionRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "EnablePhysicalConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EnablePhysicalConnectionRequest::~EnablePhysicalConnectionRequest()
 {}

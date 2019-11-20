@@ -19,9 +19,9 @@
 using AlibabaCloud::Cdn::Model::SetWaitingRoomConfigRequest;
 
 SetWaitingRoomConfigRequest::SetWaitingRoomConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetWaitingRoomConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetWaitingRoomConfig")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::Get);
 }
 
 SetWaitingRoomConfigRequest::~SetWaitingRoomConfigRequest()

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::MoveAlbumPhotosRequest;
 
 MoveAlbumPhotosRequest::MoveAlbumPhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "MoveAlbumPhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoveAlbumPhotosRequest::~MoveAlbumPhotosRequest()
 {}
@@ -66,8 +68,9 @@ std::vector<long> MoveAlbumPhotosRequest::getPhotoId()const
 void MoveAlbumPhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
-	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+	for(int dep1 = 0; dep1!= photoId.size(); dep1++) {
+		setCoreParameter("PhotoId."+ std::to_string(dep1), std::to_string(photoId.at(dep1)));
+	}
 }
 
 std::string MoveAlbumPhotosRequest::getStoreName()const

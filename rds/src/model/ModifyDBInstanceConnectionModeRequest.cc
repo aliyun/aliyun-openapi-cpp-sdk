@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyDBInstanceConnectionModeRequest;
 
 ModifyDBInstanceConnectionModeRequest::ModifyDBInstanceConnectionModeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceConnectionMode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceConnectionModeRequest::~ModifyDBInstanceConnectionModeRequest()
 {}

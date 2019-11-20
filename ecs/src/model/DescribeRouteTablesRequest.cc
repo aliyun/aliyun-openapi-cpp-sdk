@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeRouteTablesRequest;
 
 DescribeRouteTablesRequest::DescribeRouteTablesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeRouteTables")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRouteTablesRequest::~DescribeRouteTablesRequest()
 {}

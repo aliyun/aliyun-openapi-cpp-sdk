@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateParagraphRequest;
 
 CreateParagraphRequest::CreateParagraphRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateParagraph")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateParagraphRequest::~CreateParagraphRequest()
 {}

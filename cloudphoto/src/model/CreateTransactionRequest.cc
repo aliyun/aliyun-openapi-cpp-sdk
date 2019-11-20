@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::CreateTransactionRequest;
 
 CreateTransactionRequest::CreateTransactionRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "CreateTransaction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateTransactionRequest::~CreateTransactionRequest()
 {}

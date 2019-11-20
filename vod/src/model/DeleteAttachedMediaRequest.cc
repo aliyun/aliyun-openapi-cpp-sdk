@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteAttachedMediaRequest;
 
 DeleteAttachedMediaRequest::DeleteAttachedMediaRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteAttachedMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAttachedMediaRequest::~DeleteAttachedMediaRequest()
 {}

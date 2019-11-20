@@ -267,6 +267,42 @@ ScdnClient::DeleteScdnDomainOutcomeCallable ScdnClient::deleteScdnDomainCallable
 	return task->get_future();
 }
 
+ScdnClient::DeleteScdnSpecificConfigOutcome ScdnClient::deleteScdnSpecificConfig(const DeleteScdnSpecificConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteScdnSpecificConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteScdnSpecificConfigOutcome(DeleteScdnSpecificConfigResult(outcome.result()));
+	else
+		return DeleteScdnSpecificConfigOutcome(outcome.error());
+}
+
+void ScdnClient::deleteScdnSpecificConfigAsync(const DeleteScdnSpecificConfigRequest& request, const DeleteScdnSpecificConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteScdnSpecificConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DeleteScdnSpecificConfigOutcomeCallable ScdnClient::deleteScdnSpecificConfigCallable(const DeleteScdnSpecificConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteScdnSpecificConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteScdnSpecificConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::DescribeScdnCertificateDetailOutcome ScdnClient::describeScdnCertificateDetail(const DescribeScdnCertificateDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

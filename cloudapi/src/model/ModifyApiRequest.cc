@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ModifyApiRequest;
 
 ModifyApiRequest::ModifyApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ModifyApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyApiRequest::~ModifyApiRequest()
 {}

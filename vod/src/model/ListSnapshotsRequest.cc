@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListSnapshotsRequest;
 
 ListSnapshotsRequest::ListSnapshotsRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListSnapshots")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSnapshotsRequest::~ListSnapshotsRequest()
 {}

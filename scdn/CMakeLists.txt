@@ -33,6 +33,8 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/CheckScdnServiceResult.h
 	include/alibabacloud/scdn/model/DeleteScdnDomainRequest.h
 	include/alibabacloud/scdn/model/DeleteScdnDomainResult.h
+	include/alibabacloud/scdn/model/DeleteScdnSpecificConfigRequest.h
+	include/alibabacloud/scdn/model/DeleteScdnSpecificConfigResult.h
 	include/alibabacloud/scdn/model/DescribeScdnCertificateDetailRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnCertificateDetailResult.h
 	include/alibabacloud/scdn/model/DescribeScdnCertificateListRequest.h
@@ -132,6 +134,8 @@ set(scdn_src
 	src/model/CheckScdnServiceResult.cc
 	src/model/DeleteScdnDomainRequest.cc
 	src/model/DeleteScdnDomainResult.cc
+	src/model/DeleteScdnSpecificConfigRequest.cc
+	src/model/DeleteScdnSpecificConfigResult.cc
 	src/model/DescribeScdnCertificateDetailRequest.cc
 	src/model/DescribeScdnCertificateDetailResult.cc
 	src/model/DescribeScdnCertificateListRequest.cc

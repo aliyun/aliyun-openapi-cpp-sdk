@@ -19,24 +19,13 @@
 using AlibabaCloud::Cdn::Model::SetIpBlackListConfigRequest;
 
 SetIpBlackListConfigRequest::SetIpBlackListConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetIpBlackListConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetIpBlackListConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 SetIpBlackListConfigRequest::~SetIpBlackListConfigRequest()
 {}
-
-std::string SetIpBlackListConfigRequest::getBlockIps()const
-{
-	return blockIps_;
-}
-
-void SetIpBlackListConfigRequest::setBlockIps(const std::string& blockIps)
-{
-	blockIps_ = blockIps;
-	setCoreParameter("BlockIps", blockIps);
-}
 
 std::string SetIpBlackListConfigRequest::getDomainName()const
 {
@@ -60,14 +49,25 @@ void SetIpBlackListConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-long SetIpBlackListConfigRequest::getConfigId()const
+std::string SetIpBlackListConfigRequest::getSecurityToken()const
 {
-	return configId_;
+	return securityToken_;
 }
 
-void SetIpBlackListConfigRequest::setConfigId(long configId)
+void SetIpBlackListConfigRequest::setSecurityToken(const std::string& securityToken)
 {
-	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetIpBlackListConfigRequest::getBlockIps()const
+{
+	return blockIps_;
+}
+
+void SetIpBlackListConfigRequest::setBlockIps(const std::string& blockIps)
+{
+	blockIps_ = blockIps;
+	setCoreParameter("BlockIps", blockIps);
 }
 

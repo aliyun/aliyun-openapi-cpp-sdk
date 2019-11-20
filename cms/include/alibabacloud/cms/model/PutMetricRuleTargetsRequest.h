@@ -45,12 +45,15 @@ namespace AlibabaCloud
 				void setRuleName(const std::string& ruleName);
 				std::vector<Targets> getTargets()const;
 				void setTargets(const std::vector<Targets>& targets);
+				std::string getCmsUserInner()const;
+				void setCmsUserInner(const std::string& cmsUserInner);
 				std::string getActions()const;
 				void setActions(const std::string& actions);
 
             private:
 				std::string ruleName_;
 				std::vector<Targets> targets_;
+				std::string cmsUserInner_;
 				std::string actions_;
 
 			};

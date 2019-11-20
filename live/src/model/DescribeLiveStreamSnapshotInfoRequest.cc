@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamSnapshotInfoRequest;
 
 DescribeLiveStreamSnapshotInfoRequest::DescribeLiveStreamSnapshotInfoRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamSnapshotInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamSnapshotInfoRequest::~DescribeLiveStreamSnapshotInfoRequest()
 {}

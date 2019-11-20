@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeDisksFullStatusRequest;
 
 DescribeDisksFullStatusRequest::DescribeDisksFullStatusRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeDisksFullStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDisksFullStatusRequest::~DescribeDisksFullStatusRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> DescribeDisksFullStatusRequest::getEventId()const
 void DescribeDisksFullStatusRequest::setEventId(const std::vector<std::string>& eventId)
 {
 	eventId_ = eventId;
-	for(int i = 0; i!= eventId.size(); i++)
-		setCoreParameter("EventId."+ std::to_string(i), eventId.at(i));
+	for(int dep1 = 0; dep1!= eventId.size(); dep1++) {
+		setCoreParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
+	}
 }
 
 long DescribeDisksFullStatusRequest::getResourceOwnerId()const
@@ -100,8 +103,9 @@ std::vector<std::string> DescribeDisksFullStatusRequest::getDiskId()const
 void DescribeDisksFullStatusRequest::setDiskId(const std::vector<std::string>& diskId)
 {
 	diskId_ = diskId;
-	for(int i = 0; i!= diskId.size(); i++)
-		setCoreParameter("DiskId."+ std::to_string(i), diskId.at(i));
+	for(int dep1 = 0; dep1!= diskId.size(); dep1++) {
+		setCoreParameter("DiskId."+ std::to_string(dep1), diskId.at(dep1));
+	}
 }
 
 std::string DescribeDisksFullStatusRequest::getResourceOwnerAccount()const

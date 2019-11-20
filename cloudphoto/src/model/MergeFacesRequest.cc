@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::MergeFacesRequest;
 
 MergeFacesRequest::MergeFacesRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "MergeFaces")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MergeFacesRequest::~MergeFacesRequest()
 {}
@@ -66,7 +68,8 @@ std::vector<long> MergeFacesRequest::getFaceId()const
 void MergeFacesRequest::setFaceId(const std::vector<long>& faceId)
 {
 	faceId_ = faceId;
-	for(int i = 0; i!= faceId.size(); i++)
-		setCoreParameter("FaceId."+ std::to_string(i), std::to_string(faceId.at(i)));
+	for(int dep1 = 0; dep1!= faceId.size(); dep1++) {
+		setCoreParameter("FaceId."+ std::to_string(dep1), std::to_string(faceId.at(dep1)));
+	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GroupTrendRequest;
 
 GroupTrendRequest::GroupTrendRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GroupTrend")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GroupTrendRequest::~GroupTrendRequest()
 {}

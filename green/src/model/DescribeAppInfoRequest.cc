@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeAppInfoRequest;
 
 DescribeAppInfoRequest::DescribeAppInfoRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeAppInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAppInfoRequest::~DescribeAppInfoRequest()
 {}

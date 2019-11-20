@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ResetAppSecretRequest;
 
 ResetAppSecretRequest::ResetAppSecretRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ResetAppSecret")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetAppSecretRequest::~ResetAppSecretRequest()
 {}

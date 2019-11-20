@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportCensorJobResultRequest;
 
 ReportCensorJobResultRequest::ReportCensorJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportCensorJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportCensorJobResultRequest::~ReportCensorJobResultRequest()
 {}

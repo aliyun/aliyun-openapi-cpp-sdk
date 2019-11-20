@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::DescribeDomainsRequest;
 
 DescribeDomainsRequest::DescribeDomainsRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "DescribeDomains")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainsRequest::~DescribeDomainsRequest()
 {}

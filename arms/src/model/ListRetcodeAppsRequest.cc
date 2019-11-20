@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::ListRetcodeAppsRequest;
 
 ListRetcodeAppsRequest::ListRetcodeAppsRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "ListRetcodeApps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRetcodeAppsRequest::~ListRetcodeAppsRequest()
 {}

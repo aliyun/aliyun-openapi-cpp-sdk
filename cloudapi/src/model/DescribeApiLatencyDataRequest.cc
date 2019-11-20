@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiLatencyDataRequest;
 
 DescribeApiLatencyDataRequest::DescribeApiLatencyDataRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiLatencyData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiLatencyDataRequest::~DescribeApiLatencyDataRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::RemoveBandwidthPackageIpsRequest;
 
 RemoveBandwidthPackageIpsRequest::RemoveBandwidthPackageIpsRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "RemoveBandwidthPackageIps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveBandwidthPackageIpsRequest::~RemoveBandwidthPackageIpsRequest()
 {}
@@ -66,8 +68,9 @@ std::vector<std::string> RemoveBandwidthPackageIpsRequest::getRemovedIpAddresses
 void RemoveBandwidthPackageIpsRequest::setRemovedIpAddresses(const std::vector<std::string>& removedIpAddresses)
 {
 	removedIpAddresses_ = removedIpAddresses;
-	for(int i = 0; i!= removedIpAddresses.size(); i++)
-		setCoreParameter("RemovedIpAddresses."+ std::to_string(i), removedIpAddresses.at(i));
+	for(int dep1 = 0; dep1!= removedIpAddresses.size(); dep1++) {
+		setCoreParameter("RemovedIpAddresses."+ std::to_string(dep1), removedIpAddresses.at(dep1));
+	}
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getBandwidthPackageId()const

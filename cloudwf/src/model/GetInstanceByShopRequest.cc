@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetInstanceByShopRequest;
 
 GetInstanceByShopRequest::GetInstanceByShopRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetInstanceByShop")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceByShopRequest::~GetInstanceByShopRequest()
 {}

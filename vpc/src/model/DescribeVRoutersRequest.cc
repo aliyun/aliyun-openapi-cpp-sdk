@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeVRoutersRequest;
 
 DescribeVRoutersRequest::DescribeVRoutersRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeVRouters")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVRoutersRequest::~DescribeVRoutersRequest()
 {}

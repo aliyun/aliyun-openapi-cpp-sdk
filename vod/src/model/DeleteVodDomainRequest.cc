@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteVodDomainRequest;
 
 DeleteVodDomainRequest::DeleteVodDomainRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteVodDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVodDomainRequest::~DeleteVodDomainRequest()
 {}

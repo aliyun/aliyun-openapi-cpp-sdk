@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyDBInstanceMaintainTimeRequest;
 
 ModifyDBInstanceMaintainTimeRequest::ModifyDBInstanceMaintainTimeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceMaintainTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceMaintainTimeRequest::~ModifyDBInstanceMaintainTimeRequest()
 {}

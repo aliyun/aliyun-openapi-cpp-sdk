@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyDBInstanceSpecRequest;
 
 ModifyDBInstanceSpecRequest::ModifyDBInstanceSpecRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceSpecRequest::~ModifyDBInstanceSpecRequest()
 {}
@@ -111,6 +113,17 @@ void ModifyDBInstanceSpecRequest::setDBInstanceStorageType(const std::string& dB
 {
 	dBInstanceStorageType_ = dBInstanceStorageType;
 	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
+std::string ModifyDBInstanceSpecRequest::getDirection()const
+{
+	return direction_;
+}
+
+void ModifyDBInstanceSpecRequest::setDirection(const std::string& direction)
+{
+	direction_ = direction;
+	setCoreParameter("Direction", direction);
 }
 
 std::string ModifyDBInstanceSpecRequest::getResourceOwnerAccount()const

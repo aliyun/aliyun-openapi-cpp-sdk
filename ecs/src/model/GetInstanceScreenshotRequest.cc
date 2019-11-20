@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::GetInstanceScreenshotRequest;
 
 GetInstanceScreenshotRequest::GetInstanceScreenshotRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "GetInstanceScreenshot")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceScreenshotRequest::~GetInstanceScreenshotRequest()
 {}

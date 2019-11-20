@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::ListPushRecordsRequest;
 
 ListPushRecordsRequest::ListPushRecordsRequest() :
 	RpcServiceRequest("push", "2016-08-01", "ListPushRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPushRecordsRequest::~ListPushRecordsRequest()
 {}

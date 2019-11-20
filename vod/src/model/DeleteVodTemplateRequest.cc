@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteVodTemplateRequest;
 
 DeleteVodTemplateRequest::DeleteVodTemplateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteVodTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVodTemplateRequest::~DeleteVodTemplateRequest()
 {}

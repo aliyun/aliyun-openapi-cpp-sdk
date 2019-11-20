@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveRecordVodConfigRequest;
 
 DeleteLiveRecordVodConfigRequest::DeleteLiveRecordVodConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveRecordVodConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveRecordVodConfigRequest::~DeleteLiveRecordVodConfigRequest()
 {}

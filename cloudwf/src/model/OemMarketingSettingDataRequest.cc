@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemMarketingSettingDataRequest;
 
 OemMarketingSettingDataRequest::OemMarketingSettingDataRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemMarketingSettingData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemMarketingSettingDataRequest::~OemMarketingSettingDataRequest()
 {}

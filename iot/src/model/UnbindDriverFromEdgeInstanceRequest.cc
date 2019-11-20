@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::UnbindDriverFromEdgeInstanceRequest;
 
 UnbindDriverFromEdgeInstanceRequest::UnbindDriverFromEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "UnbindDriverFromEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindDriverFromEdgeInstanceRequest::~UnbindDriverFromEdgeInstanceRequest()
 {}

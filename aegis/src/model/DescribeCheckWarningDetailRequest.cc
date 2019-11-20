@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeCheckWarningDetailRequest;
 
 DescribeCheckWarningDetailRequest::DescribeCheckWarningDetailRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeCheckWarningDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCheckWarningDetailRequest::~DescribeCheckWarningDetailRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeIpv6AddressesRequest;
 
 DescribeIpv6AddressesRequest::DescribeIpv6AddressesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeIpv6Addresses")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeIpv6AddressesRequest::~DescribeIpv6AddressesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeviceCreateRequest;
 
 DeviceCreateRequest::DeviceCreateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeviceCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeviceCreateRequest::~DeviceCreateRequest()
 {}

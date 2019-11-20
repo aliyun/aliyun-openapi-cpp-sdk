@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::AssociateACLRequest;
 
 AssociateACLRequest::AssociateACLRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "AssociateACL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssociateACLRequest::~AssociateACLRequest()
 {}

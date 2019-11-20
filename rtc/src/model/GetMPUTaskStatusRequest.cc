@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::GetMPUTaskStatusRequest;
 
 GetMPUTaskStatusRequest::GetMPUTaskStatusRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "GetMPUTaskStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMPUTaskStatusRequest::~GetMPUTaskStatusRequest()
 {}

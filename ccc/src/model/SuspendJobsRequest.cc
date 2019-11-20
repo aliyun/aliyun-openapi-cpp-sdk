@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::SuspendJobsRequest;
 
 SuspendJobsRequest::SuspendJobsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "SuspendJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SuspendJobsRequest::~SuspendJobsRequest()
 {}
@@ -44,8 +46,9 @@ std::vector<std::string> SuspendJobsRequest::getJobReferenceId()const
 void SuspendJobsRequest::setJobReferenceId(const std::vector<std::string>& jobReferenceId)
 {
 	jobReferenceId_ = jobReferenceId;
-	for(int i = 0; i!= jobReferenceId.size(); i++)
-		setCoreParameter("JobReferenceId."+ std::to_string(i), jobReferenceId.at(i));
+	for(int dep1 = 0; dep1!= jobReferenceId.size(); dep1++) {
+		setCoreParameter("JobReferenceId."+ std::to_string(dep1), jobReferenceId.at(dep1));
+	}
 }
 
 std::string SuspendJobsRequest::getGroupId()const
@@ -67,8 +70,9 @@ std::vector<std::string> SuspendJobsRequest::getJobId()const
 void SuspendJobsRequest::setJobId(const std::vector<std::string>& jobId)
 {
 	jobId_ = jobId;
-	for(int i = 0; i!= jobId.size(); i++)
-		setCoreParameter("JobId."+ std::to_string(i), jobId.at(i));
+	for(int dep1 = 0; dep1!= jobId.size(); dep1++) {
+		setCoreParameter("JobId."+ std::to_string(dep1), jobId.at(dep1));
+	}
 }
 
 std::string SuspendJobsRequest::getInstanceId()const

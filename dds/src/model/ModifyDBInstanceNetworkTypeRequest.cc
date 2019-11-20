@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::ModifyDBInstanceNetworkTypeRequest;
 
 ModifyDBInstanceNetworkTypeRequest::ModifyDBInstanceNetworkTypeRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "ModifyDBInstanceNetworkType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceNetworkTypeRequest::~ModifyDBInstanceNetworkTypeRequest()
 {}

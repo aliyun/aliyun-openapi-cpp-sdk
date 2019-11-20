@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteNatGatewayRequest;
 
 DeleteNatGatewayRequest::DeleteNatGatewayRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteNatGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNatGatewayRequest::~DeleteNatGatewayRequest()
 {}

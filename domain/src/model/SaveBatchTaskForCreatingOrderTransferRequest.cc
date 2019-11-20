@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForCreatingOrderTransferRequest;
 
 SaveBatchTaskForCreatingOrderTransferRequest::SaveBatchTaskForCreatingOrderTransferRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForCreatingOrderTransfer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForCreatingOrderTransferRequest::~SaveBatchTaskForCreatingOrderTransferRequest()
 {}
@@ -33,14 +35,13 @@ std::vector<SaveBatchTaskForCreatingOrderTransferRequest::OrderTransferParam> Sa
 void SaveBatchTaskForCreatingOrderTransferRequest::setOrderTransferParam(const std::vector<OrderTransferParam>& orderTransferParam)
 {
 	orderTransferParam_ = orderTransferParam;
-	int i = 0;
-	for(int i = 0; i!= orderTransferParam.size(); i++)	{
-		auto obj = orderTransferParam.at(i);
-		std::string str ="OrderTransferParam."+ std::to_string(i);
-		setCoreParameter(str + ".PermitPremiumTransfer", obj.permitPremiumTransfer ? "true" : "false");
-		setCoreParameter(str + ".AuthorizationCode", obj.authorizationCode);
-		setCoreParameter(str + ".DomainName", obj.domainName);
-		setCoreParameter(str + ".RegistrantProfileId", std::to_string(obj.registrantProfileId));
+	for(int dep1 = 0; dep1!= orderTransferParam.size(); dep1++) {
+		auto orderTransferParamObj = orderTransferParam.at(dep1);
+		std::string orderTransferParamObjStr = "OrderTransferParam." + std::to_string(dep1);
+		setCoreParameter(orderTransferParamObjStr + ".PermitPremiumTransfer", orderTransferParamObj.permitPremiumTransfer ? "true" : "false");
+		setCoreParameter(orderTransferParamObjStr + ".AuthorizationCode", orderTransferParamObj.authorizationCode);
+		setCoreParameter(orderTransferParamObjStr + ".DomainName", orderTransferParamObj.domainName);
+		setCoreParameter(orderTransferParamObjStr + ".RegistrantProfileId", std::to_string(orderTransferParamObj.registrantProfileId));
 	}
 }
 

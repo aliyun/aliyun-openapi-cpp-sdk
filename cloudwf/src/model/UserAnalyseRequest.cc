@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UserAnalyseRequest;
 
 UserAnalyseRequest::UserAnalyseRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UserAnalyse")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UserAnalyseRequest::~UserAnalyseRequest()
 {}

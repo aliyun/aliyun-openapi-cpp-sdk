@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DialExRequest;
 
 DialExRequest::DialExRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DialEx")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DialExRequest::~DialExRequest()
 {}

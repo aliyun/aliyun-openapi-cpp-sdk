@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/regions");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}

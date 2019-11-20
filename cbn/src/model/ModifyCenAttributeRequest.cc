@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::ModifyCenAttributeRequest;
 
 ModifyCenAttributeRequest::ModifyCenAttributeRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "ModifyCenAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCenAttributeRequest::~ModifyCenAttributeRequest()
 {}

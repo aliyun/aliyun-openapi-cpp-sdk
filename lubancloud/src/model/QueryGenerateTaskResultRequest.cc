@@ -20,7 +20,9 @@ using AlibabaCloud::Lubancloud::Model::QueryGenerateTaskResultRequest;
 
 QueryGenerateTaskResultRequest::QueryGenerateTaskResultRequest() :
 	RpcServiceRequest("lubancloud", "2018-05-09", "QueryGenerateTaskResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryGenerateTaskResultRequest::~QueryGenerateTaskResultRequest()
 {}

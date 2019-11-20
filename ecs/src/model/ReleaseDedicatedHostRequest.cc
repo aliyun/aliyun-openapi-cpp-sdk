@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ReleaseDedicatedHostRequest;
 
 ReleaseDedicatedHostRequest::ReleaseDedicatedHostRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ReleaseDedicatedHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseDedicatedHostRequest::~ReleaseDedicatedHostRequest()
 {}

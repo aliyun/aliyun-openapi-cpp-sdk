@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenBindIsvRequest;
 
 MoPenBindIsvRequest::MoPenBindIsvRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenBindIsv")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenBindIsvRequest::~MoPenBindIsvRequest()
 {}

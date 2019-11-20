@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeCertificateListRequest;
 
 DescribeCertificateListRequest::DescribeCertificateListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeCertificateList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCertificateListRequest::~DescribeCertificateListRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<DescribeCertificateListRequest::Tag> DescribeCertificateListRequest:
 void DescribeCertificateListRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

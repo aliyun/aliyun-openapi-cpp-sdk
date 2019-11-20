@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyInstanceChargeTypeRequest;
 
 ModifyInstanceChargeTypeRequest::ModifyInstanceChargeTypeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceChargeType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceChargeTypeRequest::~ModifyInstanceChargeTypeRequest()
 {}

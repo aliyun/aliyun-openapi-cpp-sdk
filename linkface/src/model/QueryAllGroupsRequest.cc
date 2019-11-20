@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::QueryAllGroupsRequest;
 
 QueryAllGroupsRequest::QueryAllGroupsRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryAllGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAllGroupsRequest::~QueryAllGroupsRequest()
 {}

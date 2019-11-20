@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::DeleteEmailVerificationRequest;
 
 DeleteEmailVerificationRequest::DeleteEmailVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "DeleteEmailVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteEmailVerificationRequest::~DeleteEmailVerificationRequest()
 {}

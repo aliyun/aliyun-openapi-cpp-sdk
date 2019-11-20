@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribePhysicalConnectionLOARequest;
 
 DescribePhysicalConnectionLOARequest::DescribePhysicalConnectionLOARequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribePhysicalConnectionLOA")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePhysicalConnectionLOARequest::~DescribePhysicalConnectionLOARequest()
 {}

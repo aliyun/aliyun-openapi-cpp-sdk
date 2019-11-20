@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateFlowLogRequest;
 
 CreateFlowLogRequest::CreateFlowLogRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFlowLogRequest::~CreateFlowLogRequest()
 {}

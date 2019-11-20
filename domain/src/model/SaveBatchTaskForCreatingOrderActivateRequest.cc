@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForCreatingOrderActivateRequest;
 
 SaveBatchTaskForCreatingOrderActivateRequest::SaveBatchTaskForCreatingOrderActivateRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForCreatingOrderActivate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForCreatingOrderActivateRequest::~SaveBatchTaskForCreatingOrderActivateRequest()
 {}
@@ -33,36 +35,35 @@ std::vector<SaveBatchTaskForCreatingOrderActivateRequest::OrderActivateParam> Sa
 void SaveBatchTaskForCreatingOrderActivateRequest::setOrderActivateParam(const std::vector<OrderActivateParam>& orderActivateParam)
 {
 	orderActivateParam_ = orderActivateParam;
-	int i = 0;
-	for(int i = 0; i!= orderActivateParam.size(); i++)	{
-		auto obj = orderActivateParam.at(i);
-		std::string str ="OrderActivateParam."+ std::to_string(i);
-		setCoreParameter(str + ".Country", obj.country);
-		setCoreParameter(str + ".SubscriptionDuration", std::to_string(obj.subscriptionDuration));
-		setCoreParameter(str + ".PermitPremiumActivation", obj.permitPremiumActivation ? "true" : "false");
-		setCoreParameter(str + ".City", obj.city);
-		setCoreParameter(str + ".Dns2", obj.dns2);
-		setCoreParameter(str + ".Dns1", obj.dns1);
-		setCoreParameter(str + ".RegistrantProfileId", std::to_string(obj.registrantProfileId));
-		setCoreParameter(str + ".AliyunDns", obj.aliyunDns ? "true" : "false");
-		setCoreParameter(str + ".ZhCity", obj.zhCity);
-		setCoreParameter(str + ".TelExt", obj.telExt);
-		setCoreParameter(str + ".ZhRegistrantName", obj.zhRegistrantName);
-		setCoreParameter(str + ".Province", obj.province);
-		setCoreParameter(str + ".PostalCode", obj.postalCode);
-		setCoreParameter(str + ".Email", obj.email);
-		setCoreParameter(str + ".ZhRegistrantOrganization", obj.zhRegistrantOrganization);
-		setCoreParameter(str + ".Address", obj.address);
-		setCoreParameter(str + ".TelArea", obj.telArea);
-		setCoreParameter(str + ".DomainName", obj.domainName);
-		setCoreParameter(str + ".ZhAddress", obj.zhAddress);
-		setCoreParameter(str + ".RegistrantType", obj.registrantType);
-		setCoreParameter(str + ".Telephone", obj.telephone);
-		setCoreParameter(str + ".TrademarkDomainActivation", obj.trademarkDomainActivation ? "true" : "false");
-		setCoreParameter(str + ".ZhProvince", obj.zhProvince);
-		setCoreParameter(str + ".RegistrantOrganization", obj.registrantOrganization);
-		setCoreParameter(str + ".EnableDomainProxy", obj.enableDomainProxy ? "true" : "false");
-		setCoreParameter(str + ".RegistrantName", obj.registrantName);
+	for(int dep1 = 0; dep1!= orderActivateParam.size(); dep1++) {
+		auto orderActivateParamObj = orderActivateParam.at(dep1);
+		std::string orderActivateParamObjStr = "OrderActivateParam." + std::to_string(dep1);
+		setCoreParameter(orderActivateParamObjStr + ".Country", orderActivateParamObj.country);
+		setCoreParameter(orderActivateParamObjStr + ".SubscriptionDuration", std::to_string(orderActivateParamObj.subscriptionDuration));
+		setCoreParameter(orderActivateParamObjStr + ".PermitPremiumActivation", orderActivateParamObj.permitPremiumActivation ? "true" : "false");
+		setCoreParameter(orderActivateParamObjStr + ".City", orderActivateParamObj.city);
+		setCoreParameter(orderActivateParamObjStr + ".Dns2", orderActivateParamObj.dns2);
+		setCoreParameter(orderActivateParamObjStr + ".Dns1", orderActivateParamObj.dns1);
+		setCoreParameter(orderActivateParamObjStr + ".RegistrantProfileId", std::to_string(orderActivateParamObj.registrantProfileId));
+		setCoreParameter(orderActivateParamObjStr + ".AliyunDns", orderActivateParamObj.aliyunDns ? "true" : "false");
+		setCoreParameter(orderActivateParamObjStr + ".ZhCity", orderActivateParamObj.zhCity);
+		setCoreParameter(orderActivateParamObjStr + ".TelExt", orderActivateParamObj.telExt);
+		setCoreParameter(orderActivateParamObjStr + ".ZhRegistrantName", orderActivateParamObj.zhRegistrantName);
+		setCoreParameter(orderActivateParamObjStr + ".Province", orderActivateParamObj.province);
+		setCoreParameter(orderActivateParamObjStr + ".PostalCode", orderActivateParamObj.postalCode);
+		setCoreParameter(orderActivateParamObjStr + ".Email", orderActivateParamObj.email);
+		setCoreParameter(orderActivateParamObjStr + ".ZhRegistrantOrganization", orderActivateParamObj.zhRegistrantOrganization);
+		setCoreParameter(orderActivateParamObjStr + ".Address", orderActivateParamObj.address);
+		setCoreParameter(orderActivateParamObjStr + ".TelArea", orderActivateParamObj.telArea);
+		setCoreParameter(orderActivateParamObjStr + ".DomainName", orderActivateParamObj.domainName);
+		setCoreParameter(orderActivateParamObjStr + ".ZhAddress", orderActivateParamObj.zhAddress);
+		setCoreParameter(orderActivateParamObjStr + ".RegistrantType", orderActivateParamObj.registrantType);
+		setCoreParameter(orderActivateParamObjStr + ".Telephone", orderActivateParamObj.telephone);
+		setCoreParameter(orderActivateParamObjStr + ".TrademarkDomainActivation", orderActivateParamObj.trademarkDomainActivation ? "true" : "false");
+		setCoreParameter(orderActivateParamObjStr + ".ZhProvince", orderActivateParamObj.zhProvince);
+		setCoreParameter(orderActivateParamObjStr + ".RegistrantOrganization", orderActivateParamObj.registrantOrganization);
+		setCoreParameter(orderActivateParamObjStr + ".EnableDomainProxy", orderActivateParamObj.enableDomainProxy ? "true" : "false");
+		setCoreParameter(orderActivateParamObjStr + ".RegistrantName", orderActivateParamObj.registrantName);
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProfileTagRequest;
 
 ProfileTagRequest::ProfileTagRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProfileTag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProfileTagRequest::~ProfileTagRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::SaveStatsRequest;
 
 SaveStatsRequest::SaveStatsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "SaveStats")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveStatsRequest::~SaveStatsRequest()
 {}

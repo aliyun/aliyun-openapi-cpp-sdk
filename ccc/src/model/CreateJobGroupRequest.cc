@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateJobGroupRequest;
 
 CreateJobGroupRequest::CreateJobGroupRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateJobGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateJobGroupRequest::~CreateJobGroupRequest()
 {}
@@ -44,8 +46,9 @@ std::vector<std::string> CreateJobGroupRequest::getCallingNumber()const
 void CreateJobGroupRequest::setCallingNumber(const std::vector<std::string>& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
+		setCoreParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
+	}
 }
 
 std::string CreateJobGroupRequest::getInstanceId()const

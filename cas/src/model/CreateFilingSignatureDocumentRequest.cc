@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateFilingSignatureDocumentRequest;
 
 CreateFilingSignatureDocumentRequest::CreateFilingSignatureDocumentRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateFilingSignatureDocument")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFilingSignatureDocumentRequest::~CreateFilingSignatureDocumentRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyFlowJobRequest;
 
 ModifyFlowJobRequest::ModifyFlowJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyFlowJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyFlowJobRequest::~ModifyFlowJobRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<ModifyFlowJobRequest::ResourceList> ModifyFlowJobRequest::getResourc
 void ModifyFlowJobRequest::setResourceList(const std::vector<ResourceList>& resourceList)
 {
 	resourceList_ = resourceList;
-	int i = 0;
-	for(int i = 0; i!= resourceList.size(); i++)	{
-		auto obj = resourceList.at(i);
-		std::string str ="ResourceList."+ std::to_string(i);
-		setCoreParameter(str + ".Path", obj.path);
-		setCoreParameter(str + ".Alias", obj.alias);
+	for(int dep1 = 0; dep1!= resourceList.size(); dep1++) {
+		auto resourceListObj = resourceList.at(dep1);
+		std::string resourceListObjStr = "ResourceList." + std::to_string(dep1);
+		setCoreParameter(resourceListObjStr + ".Path", resourceListObj.path);
+		setCoreParameter(resourceListObjStr + ".Alias", resourceListObj.alias);
 	}
 }
 

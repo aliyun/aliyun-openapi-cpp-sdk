@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetAIVideoTagResultRequest;
 
 GetAIVideoTagResultRequest::GetAIVideoTagResultRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetAIVideoTagResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAIVideoTagResultRequest::~GetAIVideoTagResultRequest()
 {}

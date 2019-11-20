@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::SampleRequest;
 
 SampleRequest::SampleRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "Sample")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SampleRequest::~SampleRequest()
 {}

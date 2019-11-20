@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::AbolishApiRequest;
 
 AbolishApiRequest::AbolishApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "AbolishApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AbolishApiRequest::~AbolishApiRequest()
 {}

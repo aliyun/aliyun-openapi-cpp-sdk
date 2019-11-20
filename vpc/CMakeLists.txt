@@ -55,6 +55,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/AssociateRouteTableResult.h
 	include/alibabacloud/vpc/model/CancelCommonBandwidthPackageIpBandwidthRequest.h
 	include/alibabacloud/vpc/model/CancelCommonBandwidthPackageIpBandwidthResult.h
+	include/alibabacloud/vpc/model/CancelExpressCloudConnectionRequest.h
+	include/alibabacloud/vpc/model/CancelExpressCloudConnectionResult.h
 	include/alibabacloud/vpc/model/CancelPhysicalConnectionRequest.h
 	include/alibabacloud/vpc/model/CancelPhysicalConnectionResult.h
 	include/alibabacloud/vpc/model/CompletePhysicalConnectionLOARequest.h
@@ -147,6 +149,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DeleteCommonBandwidthPackageResult.h
 	include/alibabacloud/vpc/model/DeleteCustomerGatewayRequest.h
 	include/alibabacloud/vpc/model/DeleteCustomerGatewayResult.h
+	include/alibabacloud/vpc/model/DeleteExpressCloudConnectionRequest.h
+	include/alibabacloud/vpc/model/DeleteExpressCloudConnectionResult.h
 	include/alibabacloud/vpc/model/DeleteExpressConnectRequest.h
 	include/alibabacloud/vpc/model/DeleteExpressConnectResult.h
 	include/alibabacloud/vpc/model/DeleteFlowLogRequest.h
@@ -261,6 +265,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DescribeNetworkAclAttributesResult.h
 	include/alibabacloud/vpc/model/DescribeNetworkAclsRequest.h
 	include/alibabacloud/vpc/model/DescribeNetworkAclsResult.h
+	include/alibabacloud/vpc/model/DescribeNewProjectEipMonitorDataRequest.h
+	include/alibabacloud/vpc/model/DescribeNewProjectEipMonitorDataResult.h
 	include/alibabacloud/vpc/model/DescribePhysicalConnectionLOARequest.h
 	include/alibabacloud/vpc/model/DescribePhysicalConnectionLOAResult.h
 	include/alibabacloud/vpc/model/DescribePhysicalConnectionsRequest.h
@@ -273,6 +279,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DescribeRouteTableListResult.h
 	include/alibabacloud/vpc/model/DescribeRouteTablesRequest.h
 	include/alibabacloud/vpc/model/DescribeRouteTablesResult.h
+	include/alibabacloud/vpc/model/DescribeRouterInterfaceAttributeRequest.h
+	include/alibabacloud/vpc/model/DescribeRouterInterfaceAttributeResult.h
 	include/alibabacloud/vpc/model/DescribeRouterInterfacesRequest.h
 	include/alibabacloud/vpc/model/DescribeRouterInterfacesResult.h
 	include/alibabacloud/vpc/model/DescribeServerRelatedGlobalAccelerationInstancesRequest.h
@@ -494,6 +502,8 @@ set(vpc_src
 	src/model/AssociateRouteTableResult.cc
 	src/model/CancelCommonBandwidthPackageIpBandwidthRequest.cc
 	src/model/CancelCommonBandwidthPackageIpBandwidthResult.cc
+	src/model/CancelExpressCloudConnectionRequest.cc
+	src/model/CancelExpressCloudConnectionResult.cc
 	src/model/CancelPhysicalConnectionRequest.cc
 	src/model/CancelPhysicalConnectionResult.cc
 	src/model/CompletePhysicalConnectionLOARequest.cc
@@ -586,6 +596,8 @@ set(vpc_src
 	src/model/DeleteCommonBandwidthPackageResult.cc
 	src/model/DeleteCustomerGatewayRequest.cc
 	src/model/DeleteCustomerGatewayResult.cc
+	src/model/DeleteExpressCloudConnectionRequest.cc
+	src/model/DeleteExpressCloudConnectionResult.cc
 	src/model/DeleteExpressConnectRequest.cc
 	src/model/DeleteExpressConnectResult.cc
 	src/model/DeleteFlowLogRequest.cc
@@ -700,6 +712,8 @@ set(vpc_src
 	src/model/DescribeNetworkAclAttributesResult.cc
 	src/model/DescribeNetworkAclsRequest.cc
 	src/model/DescribeNetworkAclsResult.cc
+	src/model/DescribeNewProjectEipMonitorDataRequest.cc
+	src/model/DescribeNewProjectEipMonitorDataResult.cc
 	src/model/DescribePhysicalConnectionLOARequest.cc
 	src/model/DescribePhysicalConnectionLOAResult.cc
 	src/model/DescribePhysicalConnectionsRequest.cc
@@ -712,6 +726,8 @@ set(vpc_src
 	src/model/DescribeRouteTableListResult.cc
 	src/model/DescribeRouteTablesRequest.cc
 	src/model/DescribeRouteTablesResult.cc
+	src/model/DescribeRouterInterfaceAttributeRequest.cc
+	src/model/DescribeRouterInterfaceAttributeResult.cc
 	src/model/DescribeRouterInterfacesRequest.cc
 	src/model/DescribeRouterInterfacesResult.cc
 	src/model/DescribeServerRelatedGlobalAccelerationInstancesRequest.cc

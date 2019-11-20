@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetDomainExtensionAttributeRequest;
 
 SetDomainExtensionAttributeRequest::SetDomainExtensionAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetDomainExtensionAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDomainExtensionAttributeRequest::~SetDomainExtensionAttributeRequest()
 {}

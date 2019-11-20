@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::RedeployInstanceRequest;
 
 RedeployInstanceRequest::RedeployInstanceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "RedeployInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RedeployInstanceRequest::~RedeployInstanceRequest()
 {}

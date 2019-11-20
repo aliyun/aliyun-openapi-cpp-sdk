@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddPipelineRequest;
 
 AddPipelineRequest::AddPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddPipelineRequest::~AddPipelineRequest()
 {}

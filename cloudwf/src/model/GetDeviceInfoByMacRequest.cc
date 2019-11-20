@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetDeviceInfoByMacRequest;
 
 GetDeviceInfoByMacRequest::GetDeviceInfoByMacRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetDeviceInfoByMac")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetDeviceInfoByMacRequest::~GetDeviceInfoByMacRequest()
 {}

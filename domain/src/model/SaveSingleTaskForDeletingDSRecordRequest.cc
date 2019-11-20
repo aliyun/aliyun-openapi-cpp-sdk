@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForDeletingDSRecordRequest;
 
 SaveSingleTaskForDeletingDSRecordRequest::SaveSingleTaskForDeletingDSRecordRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForDeletingDSRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForDeletingDSRecordRequest::~SaveSingleTaskForDeletingDSRecordRequest()
 {}

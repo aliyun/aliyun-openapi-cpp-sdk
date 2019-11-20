@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyDeploymentSetAttributeRequest;
 
 ModifyDeploymentSetAttributeRequest::ModifyDeploymentSetAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyDeploymentSetAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDeploymentSetAttributeRequest::~ModifyDeploymentSetAttributeRequest()
 {}

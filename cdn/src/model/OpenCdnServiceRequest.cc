@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::OpenCdnServiceRequest;
 
 OpenCdnServiceRequest::OpenCdnServiceRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "OpenCdnService")
+	RpcServiceRequest("cdn", "2014-11-11", "OpenCdnService")
 {
 	setMethod(HttpRequest::Method::Post);
 }

@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				bool getSupportPrivateLink()const;
+				void setSupportPrivateLink(bool supportPrivateLink);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getCloudType()const;
@@ -95,6 +97,7 @@ namespace AlibabaCloud
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
+				bool supportPrivateLink_;
 				std::string clientToken_;
 				std::string cloudType_;
 				std::string addressIPVersion_;

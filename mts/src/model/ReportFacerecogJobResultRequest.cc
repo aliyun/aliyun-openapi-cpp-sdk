@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportFacerecogJobResultRequest;
 
 ReportFacerecogJobResultRequest::ReportFacerecogJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportFacerecogJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportFacerecogJobResultRequest::~ReportFacerecogJobResultRequest()
 {}

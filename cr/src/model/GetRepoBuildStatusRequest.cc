@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoBuildStatusRequest;
 
 GetRepoBuildStatusRequest::GetRepoBuildStatusRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/status");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoBuildStatusRequest::~GetRepoBuildStatusRequest()
 {}

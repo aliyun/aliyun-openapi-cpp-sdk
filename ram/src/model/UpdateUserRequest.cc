@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::UpdateUserRequest;
 
 UpdateUserRequest::UpdateUserRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "UpdateUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateUserRequest::~UpdateUserRequest()
 {}

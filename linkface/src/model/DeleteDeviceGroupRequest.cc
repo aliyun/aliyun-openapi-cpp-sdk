@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::DeleteDeviceGroupRequest;
 
 DeleteDeviceGroupRequest::DeleteDeviceGroupRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "DeleteDeviceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDeviceGroupRequest::~DeleteDeviceGroupRequest()
 {}

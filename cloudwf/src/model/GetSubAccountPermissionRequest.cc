@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetSubAccountPermissionRequest;
 
 GetSubAccountPermissionRequest::GetSubAccountPermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetSubAccountPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSubAccountPermissionRequest::~GetSubAccountPermissionRequest()
 {}

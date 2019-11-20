@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeAllGroupsRequest;
 
 DescribeAllGroupsRequest::DescribeAllGroupsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeAllGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAllGroupsRequest::~DescribeAllGroupsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::UnbindSmartAccessGatewayRequest;
 
 UnbindSmartAccessGatewayRequest::UnbindSmartAccessGatewayRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "UnbindSmartAccessGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindSmartAccessGatewayRequest::~UnbindSmartAccessGatewayRequest()
 {}

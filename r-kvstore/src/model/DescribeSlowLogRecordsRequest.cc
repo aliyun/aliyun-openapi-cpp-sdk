@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeSlowLogRecordsRequest;
 
 DescribeSlowLogRecordsRequest::DescribeSlowLogRecordsRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeSlowLogRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSlowLogRecordsRequest::~DescribeSlowLogRecordsRequest()
 {}
@@ -157,6 +159,17 @@ void DescribeSlowLogRecordsRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
+std::string DescribeSlowLogRecordsRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void DescribeSlowLogRecordsRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setCoreParameter("OrderBy", orderBy);
+}
+
 long DescribeSlowLogRecordsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -199,5 +212,16 @@ void DescribeSlowLogRecordsRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
 	setCoreParameter("DBName", dBName);
+}
+
+std::string DescribeSlowLogRecordsRequest::getOrderType()const
+{
+	return orderType_;
+}
+
+void DescribeSlowLogRecordsRequest::setOrderType(const std::string& orderType)
+{
+	orderType_ = orderType;
+	setCoreParameter("OrderType", orderType);
 }
 

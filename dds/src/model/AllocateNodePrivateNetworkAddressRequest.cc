@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::AllocateNodePrivateNetworkAddressRequest;
 
 AllocateNodePrivateNetworkAddressRequest::AllocateNodePrivateNetworkAddressRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "AllocateNodePrivateNetworkAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AllocateNodePrivateNetworkAddressRequest::~AllocateNodePrivateNetworkAddressRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryTransferOutInfoRequest;
 
 QueryTransferOutInfoRequest::QueryTransferOutInfoRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryTransferOutInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTransferOutInfoRequest::~QueryTransferOutInfoRequest()
 {}

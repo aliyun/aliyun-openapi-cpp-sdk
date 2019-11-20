@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeNatGatewaysRequest;
 
 DescribeNatGatewaysRequest::DescribeNatGatewaysRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeNatGateways")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNatGatewaysRequest::~DescribeNatGatewaysRequest()
 {}
@@ -58,6 +60,17 @@ void DescribeNatGatewaysRequest::setPageNumber(int pageNumber)
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeNatGatewaysRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeNatGatewaysRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeNatGatewaysRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,6 +80,17 @@ void DescribeNatGatewaysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeNatGatewaysRequest::getNatType()const
+{
+	return natType_;
+}
+
+void DescribeNatGatewaysRequest::setNatType(const std::string& natType)
+{
+	natType_ = natType;
+	setCoreParameter("NatType", natType);
 }
 
 int DescribeNatGatewaysRequest::getPageSize()const

@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct InstanceCloudAssistantStatus
 				{
+					std::string cloudAssistantVersion;
 					std::string instanceId;
 					std::string cloudAssistantStatus;
 				};

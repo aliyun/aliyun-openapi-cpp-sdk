@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::UnlinkFaceRequest;
 
 UnlinkFaceRequest::UnlinkFaceRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "UnlinkFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnlinkFaceRequest::~UnlinkFaceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyAccountDescriptionRequest;
 
 ModifyAccountDescriptionRequest::ModifyAccountDescriptionRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyAccountDescription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAccountDescriptionRequest::~ModifyAccountDescriptionRequest()
 {}

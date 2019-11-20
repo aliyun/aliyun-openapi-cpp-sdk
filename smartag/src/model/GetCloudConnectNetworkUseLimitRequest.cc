@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::GetCloudConnectNetworkUseLimitRequest;
 
 GetCloudConnectNetworkUseLimitRequest::GetCloudConnectNetworkUseLimitRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "GetCloudConnectNetworkUseLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetCloudConnectNetworkUseLimitRequest::~GetCloudConnectNetworkUseLimitRequest()
 {}

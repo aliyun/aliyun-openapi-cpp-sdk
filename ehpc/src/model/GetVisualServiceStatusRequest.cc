@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::GetVisualServiceStatusRequest;
 
 GetVisualServiceStatusRequest::GetVisualServiceStatusRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetVisualServiceStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetVisualServiceStatusRequest::~GetVisualServiceStatusRequest()
 {}

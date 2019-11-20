@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenRouteMapsRequest;
 
 DescribeCenRouteMapsRequest::DescribeCenRouteMapsRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenRouteMaps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenRouteMapsRequest::~DescribeCenRouteMapsRequest()
 {}

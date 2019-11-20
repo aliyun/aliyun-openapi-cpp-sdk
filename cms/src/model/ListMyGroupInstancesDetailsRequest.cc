@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::ListMyGroupInstancesDetailsRequest;
 
 ListMyGroupInstancesDetailsRequest::ListMyGroupInstancesDetailsRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "ListMyGroupInstancesDetails")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListMyGroupInstancesDetailsRequest::~ListMyGroupInstancesDetailsRequest()
 {}

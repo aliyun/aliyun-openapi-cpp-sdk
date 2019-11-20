@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DescribeResourceTypeTemplateRequest;
 
 DescribeResourceTypeTemplateRequest::DescribeResourceTypeTemplateRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/resource_types/[TypeName]/template");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeResourceTypeTemplateRequest::~DescribeResourceTypeTemplateRequest()
 {}

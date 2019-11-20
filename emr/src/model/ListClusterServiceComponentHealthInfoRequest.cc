@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListClusterServiceComponentHealthInfoRequest;
 
 ListClusterServiceComponentHealthInfoRequest::ListClusterServiceComponentHealthInfoRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListClusterServiceComponentHealthInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListClusterServiceComponentHealthInfoRequest::~ListClusterServiceComponentHealthInfoRequest()
 {}

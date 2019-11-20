@@ -20,43 +20,22 @@ using AlibabaCloud::Cas::Model::UntagResourcesRequest;
 
 UntagResourcesRequest::UntagResourcesRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "UntagResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UntagResourcesRequest::~UntagResourcesRequest()
 {}
 
-bool UntagResourcesRequest::getAll()const
+std::string UntagResourcesRequest::getResourceGroupId()const
 {
-	return all_;
+	return resourceGroupId_;
 }
 
-void UntagResourcesRequest::setAll(bool all)
+void UntagResourcesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
-	all_ = all;
-	setCoreParameter("All", all ? "true" : "false");
-}
-
-std::vector<std::string> UntagResourcesRequest::getResourceId()const
-{
-	return resourceId_;
-}
-
-void UntagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
-{
-	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
-}
-
-std::string UntagResourcesRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void UntagResourcesRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UntagResourcesRequest::getSourceIp()const
@@ -81,6 +60,41 @@ void UntagResourcesRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+bool UntagResourcesRequest::getAll()const
+{
+	return all_;
+}
+
+void UntagResourcesRequest::setAll(bool all)
+{
+	all_ = all;
+	setCoreParameter("All", all ? "true" : "false");
+}
+
+std::vector<std::string> UntagResourcesRequest::getResourceId()const
+{
+	return resourceId_;
+}
+
+void UntagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
+{
+	resourceId_ = resourceId;
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
+		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
+}
+
+std::string UntagResourcesRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void UntagResourcesRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
+}
+
 std::vector<std::string> UntagResourcesRequest::getTagKey()const
 {
 	return tagKey_;
@@ -89,7 +103,8 @@ std::vector<std::string> UntagResourcesRequest::getTagKey()const
 void UntagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
-	for(int i = 0; i!= tagKey.size(); i++)
-		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
+	for(int dep1 = 0; dep1!= tagKey.size(); dep1++) {
+		setCoreParameter("TagKey."+ std::to_string(dep1), tagKey.at(dep1));
+	}
 }
 

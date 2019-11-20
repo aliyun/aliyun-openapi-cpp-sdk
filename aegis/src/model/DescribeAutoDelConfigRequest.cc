@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeAutoDelConfigRequest;
 
 DescribeAutoDelConfigRequest::DescribeAutoDelConfigRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeAutoDelConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAutoDelConfigRequest::~DescribeAutoDelConfigRequest()
 {}

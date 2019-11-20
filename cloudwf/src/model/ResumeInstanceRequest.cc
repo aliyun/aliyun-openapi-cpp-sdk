@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ResumeInstanceRequest;
 
 ResumeInstanceRequest::ResumeInstanceRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ResumeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResumeInstanceRequest::~ResumeInstanceRequest()
 {}

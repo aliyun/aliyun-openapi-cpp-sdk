@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UpgradeAPRequest;
 
 UpgradeAPRequest::UpgradeAPRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UpgradeAP")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeAPRequest::~UpgradeAPRequest()
 {}
@@ -44,7 +46,8 @@ std::vector<long> UpgradeAPRequest::getIds()const
 void UpgradeAPRequest::setIds(const std::vector<long>& ids)
 {
 	ids_ = ids;
-	for(int i = 0; i!= ids.size(); i++)
-		setCoreParameter("Ids."+ std::to_string(i), std::to_string(ids.at(i)));
+	for(int dep1 = 0; dep1!= ids.size(); dep1++) {
+		setCoreParameter("Ids."+ std::to_string(dep1), std::to_string(ids.at(dep1)));
+	}
 }
 

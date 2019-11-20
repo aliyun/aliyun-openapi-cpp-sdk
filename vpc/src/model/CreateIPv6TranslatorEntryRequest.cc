@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateIPv6TranslatorEntryRequest;
 
 CreateIPv6TranslatorEntryRequest::CreateIPv6TranslatorEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateIPv6TranslatorEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIPv6TranslatorEntryRequest::~CreateIPv6TranslatorEntryRequest()
 {}

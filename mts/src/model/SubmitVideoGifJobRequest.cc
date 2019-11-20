@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitVideoGifJobRequest;
 
 SubmitVideoGifJobRequest::SubmitVideoGifJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitVideoGifJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitVideoGifJobRequest::~SubmitVideoGifJobRequest()
 {}

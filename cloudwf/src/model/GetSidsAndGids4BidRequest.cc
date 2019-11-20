@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetSidsAndGids4BidRequest;
 
 GetSidsAndGids4BidRequest::GetSidsAndGids4BidRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetSidsAndGids4Bid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSidsAndGids4BidRequest::~GetSidsAndGids4BidRequest()
 {}

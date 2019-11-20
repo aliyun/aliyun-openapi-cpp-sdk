@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteInstancesRequest;
 
 DeleteInstancesRequest::DeleteInstancesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteInstancesRequest::~DeleteInstancesRequest()
 {}
@@ -121,8 +123,9 @@ std::vector<std::string> DeleteInstancesRequest::getInstanceId()const
 void DeleteInstancesRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 
 bool DeleteInstancesRequest::getForce()const

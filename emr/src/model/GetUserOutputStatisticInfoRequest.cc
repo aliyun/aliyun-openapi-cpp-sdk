@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::GetUserOutputStatisticInfoRequest;
 
 GetUserOutputStatisticInfoRequest::GetUserOutputStatisticInfoRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "GetUserOutputStatisticInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUserOutputStatisticInfoRequest::~GetUserOutputStatisticInfoRequest()
 {}

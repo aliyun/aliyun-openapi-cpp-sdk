@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeConcernNecessityRequest;
 
 DescribeConcernNecessityRequest::DescribeConcernNecessityRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeConcernNecessity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeConcernNecessityRequest::~DescribeConcernNecessityRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListIvrTrackingDetailRequest;
 
 ListIvrTrackingDetailRequest::ListIvrTrackingDetailRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListIvrTrackingDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListIvrTrackingDetailRequest::~ListIvrTrackingDetailRequest()
 {}

@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				long getTaskId()const;
 				void setTaskId(long taskId);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
 				std::string batchType_;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::string lang_;
 				long taskId_;
+				std::string status_;
 
 			};
 		}

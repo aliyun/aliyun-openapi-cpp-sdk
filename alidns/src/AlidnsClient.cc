@@ -87,6 +87,42 @@ AlidnsClient::AddDomainOutcomeCallable AlidnsClient::addDomainCallable(const Add
 	return task->get_future();
 }
 
+AlidnsClient::AddDomainBackupOutcome AlidnsClient::addDomainBackup(const AddDomainBackupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDomainBackupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDomainBackupOutcome(AddDomainBackupResult(outcome.result()));
+	else
+		return AddDomainBackupOutcome(outcome.error());
+}
+
+void AlidnsClient::addDomainBackupAsync(const AddDomainBackupRequest& request, const AddDomainBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDomainBackup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::AddDomainBackupOutcomeCallable AlidnsClient::addDomainBackupCallable(const AddDomainBackupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDomainBackupOutcome()>>(
+			[this, request]()
+			{
+			return this->addDomainBackup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::AddDomainGroupOutcome AlidnsClient::addDomainGroup(const AddDomainGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

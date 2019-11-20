@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::AddListenerWhiteListItemRequest;
 
 AddListenerWhiteListItemRequest::AddListenerWhiteListItemRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "AddListenerWhiteListItem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddListenerWhiteListItemRequest::~AddListenerWhiteListItemRequest()
 {}

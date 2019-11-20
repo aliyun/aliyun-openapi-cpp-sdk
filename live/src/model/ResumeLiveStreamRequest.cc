@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ResumeLiveStreamRequest;
 
 ResumeLiveStreamRequest::ResumeLiveStreamRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ResumeLiveStream")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResumeLiveStreamRequest::~ResumeLiveStreamRequest()
 {}

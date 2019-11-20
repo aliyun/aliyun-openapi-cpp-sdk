@@ -93,6 +93,7 @@ namespace AlibabaCloud
 				std::string getXForwardedFor_proto()const;
 				std::string getAclType()const;
 				std::string getEnableHttp2()const;
+				std::vector<std::string> getAclIds()const;
 				std::string getHealthCheckType()const;
 
 			protected:
@@ -140,6 +141,7 @@ namespace AlibabaCloud
 				std::string xForwardedFor_proto_;
 				std::string aclType_;
 				std::string enableHttp2_;
+				std::vector<std::string> aclIds_;
 				std::string healthCheckType_;
 
 			};

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::SaveWebRTCStatsRequest;
 
 SaveWebRTCStatsRequest::SaveWebRTCStatsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "SaveWebRTCStats")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveWebRTCStatsRequest::~SaveWebRTCStatsRequest()
 {}

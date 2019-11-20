@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateCustomOcrTemplateRequest;
 
 UpdateCustomOcrTemplateRequest::UpdateCustomOcrTemplateRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateCustomOcrTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCustomOcrTemplateRequest::~UpdateCustomOcrTemplateRequest()
 {}

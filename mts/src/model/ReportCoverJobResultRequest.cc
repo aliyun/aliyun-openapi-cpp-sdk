@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportCoverJobResultRequest;
 
 ReportCoverJobResultRequest::ReportCoverJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportCoverJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportCoverJobResultRequest::~ReportCoverJobResultRequest()
 {}

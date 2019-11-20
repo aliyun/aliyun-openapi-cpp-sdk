@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::PutEventTargetsRequest;
 
 PutEventTargetsRequest::PutEventTargetsRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "PutEventTargets")
-{}
+{
+	setMethod(HttpRequest::Method::Put);
+}
 
 PutEventTargetsRequest::~PutEventTargetsRequest()
 {}
@@ -33,14 +35,13 @@ std::vector<PutEventTargetsRequest::WebhookParameters> PutEventTargetsRequest::g
 void PutEventTargetsRequest::setWebhookParameters(const std::vector<WebhookParameters>& webhookParameters)
 {
 	webhookParameters_ = webhookParameters;
-	int i = 0;
-	for(int i = 0; i!= webhookParameters.size(); i++)	{
-		auto obj = webhookParameters.at(i);
-		std::string str ="WebhookParameters."+ std::to_string(i);
-		setCoreParameter(str + ".Protocol", obj.protocol);
-		setCoreParameter(str + ".Method", obj.method);
-		setCoreParameter(str + ".Id", obj.id);
-		setCoreParameter(str + ".Url", obj.url);
+	for(int dep1 = 0; dep1!= webhookParameters.size(); dep1++) {
+		auto webhookParametersObj = webhookParameters.at(dep1);
+		std::string webhookParametersObjStr = "WebhookParameters." + std::to_string(dep1);
+		setCoreParameter(webhookParametersObjStr + ".Protocol", webhookParametersObj.protocol);
+		setCoreParameter(webhookParametersObjStr + ".Method", webhookParametersObj.method);
+		setCoreParameter(webhookParametersObjStr + ".Id", webhookParametersObj.id);
+		setCoreParameter(webhookParametersObjStr + ".Url", webhookParametersObj.url);
 	}
 }
 
@@ -52,13 +53,12 @@ std::vector<PutEventTargetsRequest::ContactParameters> PutEventTargetsRequest::g
 void PutEventTargetsRequest::setContactParameters(const std::vector<ContactParameters>& contactParameters)
 {
 	contactParameters_ = contactParameters;
-	int i = 0;
-	for(int i = 0; i!= contactParameters.size(); i++)	{
-		auto obj = contactParameters.at(i);
-		std::string str ="ContactParameters."+ std::to_string(i);
-		setCoreParameter(str + ".Level", obj.level);
-		setCoreParameter(str + ".Id", obj.id);
-		setCoreParameter(str + ".ContactGroupName", obj.contactGroupName);
+	for(int dep1 = 0; dep1!= contactParameters.size(); dep1++) {
+		auto contactParametersObj = contactParameters.at(dep1);
+		std::string contactParametersObjStr = "ContactParameters." + std::to_string(dep1);
+		setCoreParameter(contactParametersObjStr + ".Level", contactParametersObj.level);
+		setCoreParameter(contactParametersObjStr + ".Id", contactParametersObj.id);
+		setCoreParameter(contactParametersObjStr + ".ContactGroupName", contactParametersObj.contactGroupName);
 	}
 }
 
@@ -70,14 +70,13 @@ std::vector<PutEventTargetsRequest::SlsParameters> PutEventTargetsRequest::getSl
 void PutEventTargetsRequest::setSlsParameters(const std::vector<SlsParameters>& slsParameters)
 {
 	slsParameters_ = slsParameters;
-	int i = 0;
-	for(int i = 0; i!= slsParameters.size(); i++)	{
-		auto obj = slsParameters.at(i);
-		std::string str ="SlsParameters."+ std::to_string(i);
-		setCoreParameter(str + ".Project", obj.project);
-		setCoreParameter(str + ".Id", obj.id);
-		setCoreParameter(str + ".Region", obj.region);
-		setCoreParameter(str + ".LogStore", obj.logStore);
+	for(int dep1 = 0; dep1!= slsParameters.size(); dep1++) {
+		auto slsParametersObj = slsParameters.at(dep1);
+		std::string slsParametersObjStr = "SlsParameters." + std::to_string(dep1);
+		setCoreParameter(slsParametersObjStr + ".Project", slsParametersObj.project);
+		setCoreParameter(slsParametersObjStr + ".Id", slsParametersObj.id);
+		setCoreParameter(slsParametersObjStr + ".Region", slsParametersObj.region);
+		setCoreParameter(slsParametersObjStr + ".LogStore", slsParametersObj.logStore);
 	}
 }
 
@@ -100,13 +99,12 @@ std::vector<PutEventTargetsRequest::MnsParameters> PutEventTargetsRequest::getMn
 void PutEventTargetsRequest::setMnsParameters(const std::vector<MnsParameters>& mnsParameters)
 {
 	mnsParameters_ = mnsParameters;
-	int i = 0;
-	for(int i = 0; i!= mnsParameters.size(); i++)	{
-		auto obj = mnsParameters.at(i);
-		std::string str ="MnsParameters."+ std::to_string(i);
-		setCoreParameter(str + ".Id", obj.id);
-		setCoreParameter(str + ".Region", obj.region);
-		setCoreParameter(str + ".Queue", obj.queue);
+	for(int dep1 = 0; dep1!= mnsParameters.size(); dep1++) {
+		auto mnsParametersObj = mnsParameters.at(dep1);
+		std::string mnsParametersObjStr = "MnsParameters." + std::to_string(dep1);
+		setCoreParameter(mnsParametersObjStr + ".Id", mnsParametersObj.id);
+		setCoreParameter(mnsParametersObjStr + ".Region", mnsParametersObj.region);
+		setCoreParameter(mnsParametersObjStr + ".Queue", mnsParametersObj.queue);
 	}
 }
 
@@ -118,14 +116,13 @@ std::vector<PutEventTargetsRequest::FcParameters> PutEventTargetsRequest::getFcP
 void PutEventTargetsRequest::setFcParameters(const std::vector<FcParameters>& fcParameters)
 {
 	fcParameters_ = fcParameters;
-	int i = 0;
-	for(int i = 0; i!= fcParameters.size(); i++)	{
-		auto obj = fcParameters.at(i);
-		std::string str ="FcParameters."+ std::to_string(i);
-		setCoreParameter(str + ".FunctionName", obj.functionName);
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
-		setCoreParameter(str + ".Id", obj.id);
-		setCoreParameter(str + ".Region", obj.region);
+	for(int dep1 = 0; dep1!= fcParameters.size(); dep1++) {
+		auto fcParametersObj = fcParameters.at(dep1);
+		std::string fcParametersObjStr = "FcParameters." + std::to_string(dep1);
+		setCoreParameter(fcParametersObjStr + ".FunctionName", fcParametersObj.functionName);
+		setCoreParameter(fcParametersObjStr + ".ServiceName", fcParametersObj.serviceName);
+		setCoreParameter(fcParametersObjStr + ".Id", fcParametersObj.id);
+		setCoreParameter(fcParametersObjStr + ".Region", fcParametersObj.region);
 	}
 }
 

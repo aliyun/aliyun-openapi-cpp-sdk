@@ -20,7 +20,9 @@ using AlibabaCloud::Kms::Model::DescribeKeyVersionRequest;
 
 DescribeKeyVersionRequest::DescribeKeyVersionRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DescribeKeyVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeKeyVersionRequest::~DescribeKeyVersionRequest()
 {}

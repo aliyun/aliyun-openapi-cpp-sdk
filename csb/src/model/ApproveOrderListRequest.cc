@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::ApproveOrderListRequest;
 
 ApproveOrderListRequest::ApproveOrderListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "ApproveOrderList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApproveOrderListRequest::~ApproveOrderListRequest()
 {}

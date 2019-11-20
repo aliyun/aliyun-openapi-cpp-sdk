@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDnsHostRequest;
 
 QueryDnsHostRequest::QueryDnsHostRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDnsHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDnsHostRequest::~QueryDnsHostRequest()
 {}

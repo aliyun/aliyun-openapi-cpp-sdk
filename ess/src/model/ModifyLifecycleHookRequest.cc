@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::ModifyLifecycleHookRequest;
 
 ModifyLifecycleHookRequest::ModifyLifecycleHookRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "ModifyLifecycleHook")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyLifecycleHookRequest::~ModifyLifecycleHookRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::RemoveUserFromGroupRequest;
 
 RemoveUserFromGroupRequest::RemoveUserFromGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "RemoveUserFromGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveUserFromGroupRequest::~RemoveUserFromGroupRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SdkGenerateByGroupRequest;
 
 SdkGenerateByGroupRequest::SdkGenerateByGroupRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SdkGenerateByGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SdkGenerateByGroupRequest::~SdkGenerateByGroupRequest()
 {}

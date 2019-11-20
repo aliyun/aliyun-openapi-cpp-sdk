@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ExpandClusterRequest;
 
 ExpandClusterRequest::ExpandClusterRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/expand");
+	setMethod(HttpRequest::Method::Put);
+}
 
 ExpandClusterRequest::~ExpandClusterRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateWaterMarkTemplateRequest;
 
 UpdateWaterMarkTemplateRequest::UpdateWaterMarkTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateWaterMarkTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateWaterMarkTemplateRequest::~UpdateWaterMarkTemplateRequest()
 {}

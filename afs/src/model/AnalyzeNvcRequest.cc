@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::AnalyzeNvcRequest;
 
 AnalyzeNvcRequest::AnalyzeNvcRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "AnalyzeNvc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AnalyzeNvcRequest::~AnalyzeNvcRequest()
 {}

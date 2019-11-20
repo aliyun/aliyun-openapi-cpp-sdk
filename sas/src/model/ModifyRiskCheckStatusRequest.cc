@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyRiskCheckStatusRequest;
 
 ModifyRiskCheckStatusRequest::ModifyRiskCheckStatusRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyRiskCheckStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRiskCheckStatusRequest::~ModifyRiskCheckStatusRequest()
 {}

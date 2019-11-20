@@ -20,7 +20,9 @@ using AlibabaCloud::Hsm::Model::ConfigWhiteListRequest;
 
 ConfigWhiteListRequest::ConfigWhiteListRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "ConfigWhiteList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConfigWhiteListRequest::~ConfigWhiteListRequest()
 {}

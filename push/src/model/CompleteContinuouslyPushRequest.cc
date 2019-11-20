@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::CompleteContinuouslyPushRequest;
 
 CompleteContinuouslyPushRequest::CompleteContinuouslyPushRequest() :
 	RpcServiceRequest("push", "2016-08-01", "CompleteContinuouslyPush")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CompleteContinuouslyPushRequest::~CompleteContinuouslyPushRequest()
 {}

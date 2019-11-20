@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchGetEdgeInstanceDriverConfigsRequest;
 
 BatchGetEdgeInstanceDriverConfigsRequest::BatchGetEdgeInstanceDriverConfigsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchGetEdgeInstanceDriverConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchGetEdgeInstanceDriverConfigsRequest::~BatchGetEdgeInstanceDriverConfigsRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> BatchGetEdgeInstanceDriverConfigsRequest::getDriverIds(
 void BatchGetEdgeInstanceDriverConfigsRequest::setDriverIds(const std::vector<std::string>& driverIds)
 {
 	driverIds_ = driverIds;
-	for(int i = 0; i!= driverIds.size(); i++)
-		setCoreParameter("DriverIds."+ std::to_string(i), driverIds.at(i));
+	for(int dep1 = 0; dep1!= driverIds.size(); dep1++) {
+		setCoreParameter("DriverIds."+ std::to_string(dep1), driverIds.at(dep1));
+	}
 }
 
 std::string BatchGetEdgeInstanceDriverConfigsRequest::getAccessKeyId()const

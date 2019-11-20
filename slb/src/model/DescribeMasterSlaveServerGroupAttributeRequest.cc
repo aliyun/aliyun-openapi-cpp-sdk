@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeMasterSlaveServerGroupAttributeRequest;
 
 DescribeMasterSlaveServerGroupAttributeRequest::DescribeMasterSlaveServerGroupAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeMasterSlaveServerGroupAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeMasterSlaveServerGroupAttributeRequest::~DescribeMasterSlaveServerGroupAttributeRequest()
 {}

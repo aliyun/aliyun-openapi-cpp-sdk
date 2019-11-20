@@ -39,23 +39,9 @@ void TransferNodeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Result"].isNull())
 		result_ = value["Result"].asString() == "true";
 
-}
-
-std::string TransferNodeResult::getMessage()const
-{
-	return message_;
-}
-
-std::string TransferNodeResult::getCode()const
-{
-	return code_;
 }
 
 bool TransferNodeResult::getResult()const

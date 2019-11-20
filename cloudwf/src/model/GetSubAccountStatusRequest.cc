@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetSubAccountStatusRequest;
 
 GetSubAccountStatusRequest::GetSubAccountStatusRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetSubAccountStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSubAccountStatusRequest::~GetSubAccountStatusRequest()
 {}

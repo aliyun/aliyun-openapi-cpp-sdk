@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::CreateOrderRequest;
 
 CreateOrderRequest::CreateOrderRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "CreateOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderRequest::~CreateOrderRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::CreateAccountRequest;
 
 CreateAccountRequest::CreateAccountRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "CreateAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAccountRequest::~CreateAccountRequest()
 {}

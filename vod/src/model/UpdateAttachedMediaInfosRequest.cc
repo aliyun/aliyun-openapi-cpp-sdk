@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateAttachedMediaInfosRequest;
 
 UpdateAttachedMediaInfosRequest::UpdateAttachedMediaInfosRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateAttachedMediaInfos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateAttachedMediaInfosRequest::~UpdateAttachedMediaInfosRequest()
 {}

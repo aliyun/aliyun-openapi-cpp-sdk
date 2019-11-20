@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ModifyCloudConnectNetworkRequest;
 
 ModifyCloudConnectNetworkRequest::ModifyCloudConnectNetworkRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ModifyCloudConnectNetwork")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCloudConnectNetworkRequest::~ModifyCloudConnectNetworkRequest()
 {}

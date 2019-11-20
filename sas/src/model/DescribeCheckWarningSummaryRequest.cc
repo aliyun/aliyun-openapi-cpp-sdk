@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeCheckWarningSummaryRequest;
 
 DescribeCheckWarningSummaryRequest::DescribeCheckWarningSummaryRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeCheckWarningSummary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCheckWarningSummaryRequest::~DescribeCheckWarningSummaryRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::ModifyEventTypeStatusRequest;
 
 ModifyEventTypeStatusRequest::ModifyEventTypeStatusRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "ModifyEventTypeStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyEventTypeStatusRequest::~ModifyEventTypeStatusRequest()
 {}

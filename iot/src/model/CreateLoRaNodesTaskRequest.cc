@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateLoRaNodesTaskRequest;
 
 CreateLoRaNodesTaskRequest::CreateLoRaNodesTaskRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateLoRaNodesTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateLoRaNodesTaskRequest::~CreateLoRaNodesTaskRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<CreateLoRaNodesTaskRequest::DeviceInfo> CreateLoRaNodesTaskRequest::
 void CreateLoRaNodesTaskRequest::setDeviceInfo(const std::vector<DeviceInfo>& deviceInfo)
 {
 	deviceInfo_ = deviceInfo;
-	int i = 0;
-	for(int i = 0; i!= deviceInfo.size(); i++)	{
-		auto obj = deviceInfo.at(i);
-		std::string str ="DeviceInfo."+ std::to_string(i);
-		setCoreParameter(str + ".PinCode", obj.pinCode);
-		setCoreParameter(str + ".DevEui", obj.devEui);
+	for(int dep1 = 0; dep1!= deviceInfo.size(); dep1++) {
+		auto deviceInfoObj = deviceInfo.at(dep1);
+		std::string deviceInfoObjStr = "DeviceInfo." + std::to_string(dep1);
+		setCoreParameter(deviceInfoObjStr + ".PinCode", deviceInfoObj.pinCode);
+		setCoreParameter(deviceInfoObjStr + ".DevEui", deviceInfoObj.devEui);
 	}
 }
 

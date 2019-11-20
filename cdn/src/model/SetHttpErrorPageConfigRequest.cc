@@ -19,35 +19,13 @@
 using AlibabaCloud::Cdn::Model::SetHttpErrorPageConfigRequest;
 
 SetHttpErrorPageConfigRequest::SetHttpErrorPageConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetHttpErrorPageConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetHttpErrorPageConfig")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 SetHttpErrorPageConfigRequest::~SetHttpErrorPageConfigRequest()
 {}
-
-std::string SetHttpErrorPageConfigRequest::getPageUrl()const
-{
-	return pageUrl_;
-}
-
-void SetHttpErrorPageConfigRequest::setPageUrl(const std::string& pageUrl)
-{
-	pageUrl_ = pageUrl;
-	setCoreParameter("PageUrl", pageUrl);
-}
-
-std::string SetHttpErrorPageConfigRequest::getErrorCode()const
-{
-	return errorCode_;
-}
-
-void SetHttpErrorPageConfigRequest::setErrorCode(const std::string& errorCode)
-{
-	errorCode_ = errorCode;
-	setCoreParameter("ErrorCode", errorCode);
-}
 
 std::string SetHttpErrorPageConfigRequest::getDomainName()const
 {
@@ -71,14 +49,36 @@ void SetHttpErrorPageConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-long SetHttpErrorPageConfigRequest::getConfigId()const
+std::string SetHttpErrorPageConfigRequest::getSecurityToken()const
 {
-	return configId_;
+	return securityToken_;
 }
 
-void SetHttpErrorPageConfigRequest::setConfigId(long configId)
+void SetHttpErrorPageConfigRequest::setSecurityToken(const std::string& securityToken)
 {
-	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetHttpErrorPageConfigRequest::getPageUrl()const
+{
+	return pageUrl_;
+}
+
+void SetHttpErrorPageConfigRequest::setPageUrl(const std::string& pageUrl)
+{
+	pageUrl_ = pageUrl;
+	setCoreParameter("PageUrl", pageUrl);
+}
+
+std::string SetHttpErrorPageConfigRequest::getErrorCode()const
+{
+	return errorCode_;
+}
+
+void SetHttpErrorPageConfigRequest::setErrorCode(const std::string& errorCode)
+{
+	errorCode_ = errorCode;
+	setCoreParameter("ErrorCode", errorCode);
 }
 

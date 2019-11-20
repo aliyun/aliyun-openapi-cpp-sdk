@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeDBInstanceIPArrayListRequest;
 
 DescribeDBInstanceIPArrayListRequest::DescribeDBInstanceIPArrayListRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeDBInstanceIPArrayList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceIPArrayListRequest::~DescribeDBInstanceIPArrayListRequest()
 {}

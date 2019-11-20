@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::ModifyClusterAttributesRequest;
 
 ModifyClusterAttributesRequest::ModifyClusterAttributesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyClusterAttributes")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ModifyClusterAttributesRequest::~ModifyClusterAttributesRequest()
 {}

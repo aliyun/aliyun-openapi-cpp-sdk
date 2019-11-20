@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::VerifyContactFieldRequest;
 
 VerifyContactFieldRequest::VerifyContactFieldRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "VerifyContactField")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VerifyContactFieldRequest::~VerifyContactFieldRequest()
 {}

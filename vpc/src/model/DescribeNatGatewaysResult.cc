@@ -67,6 +67,12 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 			natGatewaysObject.creationTime = valueNatGatewaysNatGateway["CreationTime"].asString();
 		if(!valueNatGatewaysNatGateway["Status"].isNull())
 			natGatewaysObject.status = valueNatGatewaysNatGateway["Status"].asString();
+		if(!valueNatGatewaysNatGateway["NatType"].isNull())
+			natGatewaysObject.natType = valueNatGatewaysNatGateway["NatType"].asString();
+		if(!valueNatGatewaysNatGateway["InternetChargeType"].isNull())
+			natGatewaysObject.internetChargeType = valueNatGatewaysNatGateway["InternetChargeType"].asString();
+		if(!valueNatGatewaysNatGateway["ResourceGroupId"].isNull())
+			natGatewaysObject.resourceGroupId = valueNatGatewaysNatGateway["ResourceGroupId"].asString();
 		if(!valueNatGatewaysNatGateway["DeletionProtection"].isNull())
 			natGatewaysObject.deletionProtection = valueNatGatewaysNatGateway["DeletionProtection"].asString() == "true";
 		auto allIpListsNode = allNatGatewaysNode["IpLists"]["IpList"];
@@ -83,6 +89,17 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 				ipListsObject.apAccessEnabled = allNatGatewaysNodeIpListsIpList["ApAccessEnabled"].asString() == "true";
 			natGatewaysObject.ipLists.push_back(ipListsObject);
 		}
+		auto natGatewayPrivateInfoNode = value["NatGatewayPrivateInfo"];
+		if(!natGatewayPrivateInfoNode["EniInstanceId"].isNull())
+			natGatewaysObject.natGatewayPrivateInfo.eniInstanceId = std::stoi(natGatewayPrivateInfoNode["EniInstanceId"].asString());
+		if(!natGatewayPrivateInfoNode["PrivateIpAddress"].isNull())
+			natGatewaysObject.natGatewayPrivateInfo.privateIpAddress = natGatewayPrivateInfoNode["PrivateIpAddress"].asString();
+		if(!natGatewayPrivateInfoNode["VswitchId"].isNull())
+			natGatewaysObject.natGatewayPrivateInfo.vswitchId = natGatewayPrivateInfoNode["VswitchId"].asString();
+		if(!natGatewayPrivateInfoNode["IzNo"].isNull())
+			natGatewaysObject.natGatewayPrivateInfo.izNo = natGatewayPrivateInfoNode["IzNo"].asString();
+		if(!natGatewayPrivateInfoNode["MaxBandwidth"].isNull())
+			natGatewaysObject.natGatewayPrivateInfo.maxBandwidth = std::stoi(natGatewayPrivateInfoNode["MaxBandwidth"].asString());
 		auto allForwardTableIds = value["ForwardTableIds"]["ForwardTableId"];
 		for (auto value : allForwardTableIds)
 			natGatewaysObject.forwardTableIds.push_back(value.asString());

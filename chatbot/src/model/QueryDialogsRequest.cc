@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::QueryDialogsRequest;
 
 QueryDialogsRequest::QueryDialogsRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "QueryDialogs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDialogsRequest::~QueryDialogsRequest()
 {}

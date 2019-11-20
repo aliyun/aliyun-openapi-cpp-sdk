@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateExecutionPlanRequest;
 
 CreateExecutionPlanRequest::CreateExecutionPlanRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateExecutionPlan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateExecutionPlanRequest::~CreateExecutionPlanRequest()
 {}
@@ -110,13 +112,12 @@ std::vector<CreateExecutionPlanRequest::BootstrapAction> CreateExecutionPlanRequ
 void CreateExecutionPlanRequest::setBootstrapAction(const std::vector<BootstrapAction>& bootstrapAction)
 {
 	bootstrapAction_ = bootstrapAction;
-	int i = 0;
-	for(int i = 0; i!= bootstrapAction.size(); i++)	{
-		auto obj = bootstrapAction.at(i);
-		std::string str ="BootstrapAction."+ std::to_string(i);
-		setCoreParameter(str + ".Path", obj.path);
-		setCoreParameter(str + ".Arg", obj.arg);
-		setCoreParameter(str + ".Name", obj.name);
+	for(int dep1 = 0; dep1!= bootstrapAction.size(); dep1++) {
+		auto bootstrapActionObj = bootstrapAction.at(dep1);
+		std::string bootstrapActionObjStr = "BootstrapAction." + std::to_string(dep1);
+		setCoreParameter(bootstrapActionObjStr + ".Path", bootstrapActionObj.path);
+		setCoreParameter(bootstrapActionObjStr + ".Arg", bootstrapActionObj.arg);
+		setCoreParameter(bootstrapActionObjStr + ".Name", bootstrapActionObj.name);
 	}
 }
 
@@ -183,8 +184,9 @@ std::vector<std::string> CreateExecutionPlanRequest::getOptionSoftWareList()cons
 void CreateExecutionPlanRequest::setOptionSoftWareList(const std::vector<std::string>& optionSoftWareList)
 {
 	optionSoftWareList_ = optionSoftWareList;
-	for(int i = 0; i!= optionSoftWareList.size(); i++)
-		setCoreParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
+	for(int dep1 = 0; dep1!= optionSoftWareList.size(); dep1++) {
+		setCoreParameter("OptionSoftWareList."+ std::to_string(dep1), optionSoftWareList.at(dep1));
+	}
 }
 
 std::string CreateExecutionPlanRequest::getNetType()const
@@ -206,17 +208,16 @@ std::vector<CreateExecutionPlanRequest::EcsOrder> CreateExecutionPlanRequest::ge
 void CreateExecutionPlanRequest::setEcsOrder(const std::vector<EcsOrder>& ecsOrder)
 {
 	ecsOrder_ = ecsOrder;
-	int i = 0;
-	for(int i = 0; i!= ecsOrder.size(); i++)	{
-		auto obj = ecsOrder.at(i);
-		std::string str ="EcsOrder."+ std::to_string(i);
-		setCoreParameter(str + ".NodeType", obj.nodeType);
-		setCoreParameter(str + ".DiskCount", std::to_string(obj.diskCount));
-		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
-		setCoreParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
-		setCoreParameter(str + ".Index", std::to_string(obj.index));
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".DiskType", obj.diskType);
+	for(int dep1 = 0; dep1!= ecsOrder.size(); dep1++) {
+		auto ecsOrderObj = ecsOrder.at(dep1);
+		std::string ecsOrderObjStr = "EcsOrder." + std::to_string(dep1);
+		setCoreParameter(ecsOrderObjStr + ".NodeType", ecsOrderObj.nodeType);
+		setCoreParameter(ecsOrderObjStr + ".DiskCount", std::to_string(ecsOrderObj.diskCount));
+		setCoreParameter(ecsOrderObjStr + ".NodeCount", std::to_string(ecsOrderObj.nodeCount));
+		setCoreParameter(ecsOrderObjStr + ".DiskCapacity", std::to_string(ecsOrderObj.diskCapacity));
+		setCoreParameter(ecsOrderObjStr + ".Index", std::to_string(ecsOrderObj.index));
+		setCoreParameter(ecsOrderObjStr + ".InstanceType", ecsOrderObj.instanceType);
+		setCoreParameter(ecsOrderObjStr + ".DiskType", ecsOrderObj.diskType);
 	}
 }
 
@@ -305,8 +306,9 @@ std::vector<std::string> CreateExecutionPlanRequest::getJobIdList()const
 void CreateExecutionPlanRequest::setJobIdList(const std::vector<std::string>& jobIdList)
 {
 	jobIdList_ = jobIdList;
-	for(int i = 0; i!= jobIdList.size(); i++)
-		setCoreParameter("JobIdList."+ std::to_string(i), jobIdList.at(i));
+	for(int dep1 = 0; dep1!= jobIdList.size(); dep1++) {
+		setCoreParameter("JobIdList."+ std::to_string(dep1), jobIdList.at(dep1));
+	}
 }
 
 std::string CreateExecutionPlanRequest::getAccessKeyId()const
@@ -438,16 +440,15 @@ std::vector<CreateExecutionPlanRequest::Config> CreateExecutionPlanRequest::getC
 void CreateExecutionPlanRequest::setConfig(const std::vector<Config>& config)
 {
 	config_ = config;
-	int i = 0;
-	for(int i = 0; i!= config.size(); i++)	{
-		auto obj = config.at(i);
-		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", obj.configKey);
-		setCoreParameter(str + ".FileName", obj.fileName);
-		setCoreParameter(str + ".Encrypt", obj.encrypt);
-		setCoreParameter(str + ".Replace", obj.replace);
-		setCoreParameter(str + ".ConfigValue", obj.configValue);
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+	for(int dep1 = 0; dep1!= config.size(); dep1++) {
+		auto configObj = config.at(dep1);
+		std::string configObjStr = "Config." + std::to_string(dep1);
+		setCoreParameter(configObjStr + ".ConfigKey", configObj.configKey);
+		setCoreParameter(configObjStr + ".FileName", configObj.fileName);
+		setCoreParameter(configObjStr + ".Encrypt", configObj.encrypt);
+		setCoreParameter(configObjStr + ".Replace", configObj.replace);
+		setCoreParameter(configObjStr + ".ConfigValue", configObj.configValue);
+		setCoreParameter(configObjStr + ".ServiceName", configObj.serviceName);
 	}
 }
 

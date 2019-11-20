@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeleteApgroupSsidConfigRequest;
 
 DeleteApgroupSsidConfigRequest::DeleteApgroupSsidConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeleteApgroupSsidConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteApgroupSsidConfigRequest::~DeleteApgroupSsidConfigRequest()
 {}

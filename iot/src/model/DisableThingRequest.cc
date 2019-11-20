@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DisableThingRequest;
 
 DisableThingRequest::DisableThingRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DisableThing")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisableThingRequest::~DisableThingRequest()
 {}

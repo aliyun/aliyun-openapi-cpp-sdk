@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDomainAdminDivisionRequest;
 
 QueryDomainAdminDivisionRequest::QueryDomainAdminDivisionRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDomainAdminDivision")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDomainAdminDivisionRequest::~QueryDomainAdminDivisionRequest()
 {}

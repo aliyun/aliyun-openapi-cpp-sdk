@@ -20,7 +20,9 @@ using AlibabaCloud::Hsm::Model::DescribeInstancesRequest;
 
 DescribeInstancesRequest::DescribeInstancesRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "DescribeInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstancesRequest::~DescribeInstancesRequest()
 {}

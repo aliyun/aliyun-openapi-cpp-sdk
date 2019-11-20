@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::InvokeDataAPIServiceRequest;
 
 InvokeDataAPIServiceRequest::InvokeDataAPIServiceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "InvokeDataAPIService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InvokeDataAPIServiceRequest::~InvokeDataAPIServiceRequest()
 {}
@@ -55,14 +57,15 @@ std::vector<InvokeDataAPIServiceRequest::Param> InvokeDataAPIServiceRequest::get
 void InvokeDataAPIServiceRequest::setParam(const std::vector<Param>& param)
 {
 	param_ = param;
-	int i = 0;
-	for(int i = 0; i!= param.size(); i++)	{
-		auto obj = param.at(i);
-		std::string str ="Param."+ std::to_string(i);
-		setCoreParameter(str + ".ListParamType", obj.listParamType);
-		for(int i = 0; i!= obj.listParamValue.size(); i++)				setCoreParameter(str + ".ListParamValue."+ std::to_string(i), obj.listParamValue.at(i));
-		setCoreParameter(str + ".ParamValue", obj.paramValue);
-		setCoreParameter(str + ".ParamName", obj.paramName);
+	for(int dep1 = 0; dep1!= param.size(); dep1++) {
+		auto paramObj = param.at(dep1);
+		std::string paramObjStr = "Param." + std::to_string(dep1);
+		setCoreParameter(paramObjStr + ".ListParamType", paramObj.listParamType);
+		for(int dep2 = 0; dep2!= paramObj.listParamValue.size(); dep2++) {
+			setCoreParameter(paramObjStr + ".ListParamValue."+ std::to_string(dep2), paramObj.listParamValue.at(dep2));
+		}
+		setCoreParameter(paramObjStr + ".ParamValue", paramObj.paramValue);
+		setCoreParameter(paramObjStr + ".ParamName", paramObj.paramName);
 	}
 }
 

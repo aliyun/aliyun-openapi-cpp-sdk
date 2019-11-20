@@ -20,32 +20,22 @@ using AlibabaCloud::Cas::Model::ListTagResourcesRequest;
 
 ListTagResourcesRequest::ListTagResourcesRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "ListTagResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTagResourcesRequest::~ListTagResourcesRequest()
 {}
 
-std::vector<std::string> ListTagResourcesRequest::getResourceId()const
+std::string ListTagResourcesRequest::getResourceGroupId()const
 {
-	return resourceId_;
+	return resourceGroupId_;
 }
 
-void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
+void ListTagResourcesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
-	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
-}
-
-std::string ListTagResourcesRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void ListTagResourcesRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string ListTagResourcesRequest::getSourceIp()const
@@ -89,12 +79,35 @@ std::vector<ListTagResourcesRequest::Tag> ListTagResourcesRequest::getTag()const
 void ListTagResourcesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
+}
+
+std::vector<std::string> ListTagResourcesRequest::getResourceId()const
+{
+	return resourceId_;
+}
+
+void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
+{
+	resourceId_ = resourceId;
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
+		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
+}
+
+std::string ListTagResourcesRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void ListTagResourcesRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
 }
 

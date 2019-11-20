@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::ModifyDrdsDBPasswdRequest;
 
 ModifyDrdsDBPasswdRequest::ModifyDrdsDBPasswdRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "ModifyDrdsDBPasswd")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDrdsDBPasswdRequest::~ModifyDrdsDBPasswdRequest()
 {}

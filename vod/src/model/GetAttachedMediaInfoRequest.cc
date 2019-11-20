@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetAttachedMediaInfoRequest;
 
 GetAttachedMediaInfoRequest::GetAttachedMediaInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetAttachedMediaInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAttachedMediaInfoRequest::~GetAttachedMediaInfoRequest()
 {}

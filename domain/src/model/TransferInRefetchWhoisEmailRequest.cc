@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::TransferInRefetchWhoisEmailRequest;
 
 TransferInRefetchWhoisEmailRequest::TransferInRefetchWhoisEmailRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "TransferInRefetchWhoisEmail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TransferInRefetchWhoisEmailRequest::~TransferInRefetchWhoisEmailRequest()
 {}

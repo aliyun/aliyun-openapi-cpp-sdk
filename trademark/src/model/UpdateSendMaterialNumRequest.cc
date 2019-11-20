@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::UpdateSendMaterialNumRequest;
 
 UpdateSendMaterialNumRequest::UpdateSendMaterialNumRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "UpdateSendMaterialNum")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateSendMaterialNumRequest::~UpdateSendMaterialNumRequest()
 {}

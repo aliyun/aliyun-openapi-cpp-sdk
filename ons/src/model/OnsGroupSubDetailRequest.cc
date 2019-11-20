@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsGroupSubDetailRequest;
 
 OnsGroupSubDetailRequest::OnsGroupSubDetailRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsGroupSubDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsGroupSubDetailRequest::~OnsGroupSubDetailRequest()
 {}

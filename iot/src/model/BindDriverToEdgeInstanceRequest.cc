@@ -20,10 +20,23 @@ using AlibabaCloud::Iot::Model::BindDriverToEdgeInstanceRequest;
 
 BindDriverToEdgeInstanceRequest::BindDriverToEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BindDriverToEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindDriverToEdgeInstanceRequest::~BindDriverToEdgeInstanceRequest()
 {}
+
+std::string BindDriverToEdgeInstanceRequest::getOrderId()const
+{
+	return orderId_;
+}
+
+void BindDriverToEdgeInstanceRequest::setOrderId(const std::string& orderId)
+{
+	orderId_ = orderId;
+	setCoreParameter("OrderId", orderId);
+}
 
 std::string BindDriverToEdgeInstanceRequest::getAccessKeyId()const
 {

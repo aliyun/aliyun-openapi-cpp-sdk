@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::CancelPushRequest;
 
 CancelPushRequest::CancelPushRequest() :
 	RpcServiceRequest("push", "2016-08-01", "CancelPush")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelPushRequest::~CancelPushRequest()
 {}

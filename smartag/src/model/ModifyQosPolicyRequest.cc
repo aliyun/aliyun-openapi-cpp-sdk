@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ModifyQosPolicyRequest;
 
 ModifyQosPolicyRequest::ModifyQosPolicyRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ModifyQosPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyQosPolicyRequest::~ModifyQosPolicyRequest()
 {}
@@ -199,5 +201,16 @@ void ModifyQosPolicyRequest::setDestPortRange(const std::string& destPortRange)
 {
 	destPortRange_ = destPortRange;
 	setCoreParameter("DestPortRange", destPortRange);
+}
+
+std::string ModifyQosPolicyRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyQosPolicyRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

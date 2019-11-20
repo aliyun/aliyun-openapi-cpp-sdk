@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListInstancesOfUserRequest;
 
 ListInstancesOfUserRequest::ListInstancesOfUserRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListInstancesOfUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListInstancesOfUserRequest::~ListInstancesOfUserRequest()
 {}

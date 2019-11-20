@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeDataAssetsRequest;
 
 DescribeDataAssetsRequest::DescribeDataAssetsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeDataAssets")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataAssetsRequest::~DescribeDataAssetsRequest()
 {}

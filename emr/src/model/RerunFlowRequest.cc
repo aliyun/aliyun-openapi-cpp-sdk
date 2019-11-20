@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::RerunFlowRequest;
 
 RerunFlowRequest::RerunFlowRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "RerunFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RerunFlowRequest::~RerunFlowRequest()
 {}

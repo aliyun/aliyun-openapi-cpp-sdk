@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindCredentialsListRequest;
 
 FindCredentialsListRequest::FindCredentialsListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindCredentialsList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindCredentialsListRequest::~FindCredentialsListRequest()
 {}

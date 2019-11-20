@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveRecordVodConfigsRequest;
 
 DescribeLiveRecordVodConfigsRequest::DescribeLiveRecordVodConfigsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveRecordVodConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveRecordVodConfigsRequest::~DescribeLiveRecordVodConfigsRequest()
 {}

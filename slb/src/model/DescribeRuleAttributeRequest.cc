@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeRuleAttributeRequest;
 
 DescribeRuleAttributeRequest::DescribeRuleAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeRuleAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRuleAttributeRequest::~DescribeRuleAttributeRequest()
 {}

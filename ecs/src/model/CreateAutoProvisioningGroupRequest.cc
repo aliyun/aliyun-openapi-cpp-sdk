@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateAutoProvisioningGroupRequest;
 
 CreateAutoProvisioningGroupRequest::CreateAutoProvisioningGroupRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateAutoProvisioningGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAutoProvisioningGroupRequest::~CreateAutoProvisioningGroupRequest()
 {}
@@ -154,15 +156,14 @@ std::vector<CreateAutoProvisioningGroupRequest::LaunchTemplateConfig> CreateAuto
 void CreateAutoProvisioningGroupRequest::setLaunchTemplateConfig(const std::vector<LaunchTemplateConfig>& launchTemplateConfig)
 {
 	launchTemplateConfig_ = launchTemplateConfig;
-	int i = 0;
-	for(int i = 0; i!= launchTemplateConfig.size(); i++)	{
-		auto obj = launchTemplateConfig.at(i);
-		std::string str ="LaunchTemplateConfig."+ std::to_string(i);
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".MaxPrice", std::to_string(obj.maxPrice));
-		setCoreParameter(str + ".VSwitchId", obj.vSwitchId);
-		setCoreParameter(str + ".WeightedCapacity", std::to_string(obj.weightedCapacity));
-		setCoreParameter(str + ".Priority", std::to_string(obj.priority));
+	for(int dep1 = 0; dep1!= launchTemplateConfig.size(); dep1++) {
+		auto launchTemplateConfigObj = launchTemplateConfig.at(dep1);
+		std::string launchTemplateConfigObjStr = "LaunchTemplateConfig." + std::to_string(dep1);
+		setCoreParameter(launchTemplateConfigObjStr + ".InstanceType", launchTemplateConfigObj.instanceType);
+		setCoreParameter(launchTemplateConfigObjStr + ".MaxPrice", std::to_string(launchTemplateConfigObj.maxPrice));
+		setCoreParameter(launchTemplateConfigObjStr + ".VSwitchId", launchTemplateConfigObj.vSwitchId);
+		setCoreParameter(launchTemplateConfigObjStr + ".WeightedCapacity", std::to_string(launchTemplateConfigObj.weightedCapacity));
+		setCoreParameter(launchTemplateConfigObjStr + ".Priority", std::to_string(launchTemplateConfigObj.priority));
 	}
 }
 

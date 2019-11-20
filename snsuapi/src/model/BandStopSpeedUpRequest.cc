@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::BandStopSpeedUpRequest;
 
 BandStopSpeedUpRequest::BandStopSpeedUpRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "BandStopSpeedUp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BandStopSpeedUpRequest::~BandStopSpeedUpRequest()
 {}

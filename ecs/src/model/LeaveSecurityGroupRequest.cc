@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::LeaveSecurityGroupRequest;
 
 LeaveSecurityGroupRequest::LeaveSecurityGroupRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "LeaveSecurityGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 LeaveSecurityGroupRequest::~LeaveSecurityGroupRequest()
 {}

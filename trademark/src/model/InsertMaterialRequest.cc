@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::InsertMaterialRequest;
 
 InsertMaterialRequest::InsertMaterialRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "InsertMaterial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InsertMaterialRequest::~InsertMaterialRequest()
 {}

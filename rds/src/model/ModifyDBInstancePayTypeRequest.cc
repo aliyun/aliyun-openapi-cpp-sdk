@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyDBInstancePayTypeRequest;
 
 ModifyDBInstancePayTypeRequest::ModifyDBInstancePayTypeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstancePayType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstancePayTypeRequest::~ModifyDBInstancePayTypeRequest()
 {}

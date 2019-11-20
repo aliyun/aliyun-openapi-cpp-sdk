@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListExecutionPlanInstancesRequest;
 
 ListExecutionPlanInstancesRequest::ListExecutionPlanInstancesRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListExecutionPlanInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListExecutionPlanInstancesRequest::~ListExecutionPlanInstancesRequest()
 {}
@@ -55,8 +57,9 @@ std::vector<std::string> ListExecutionPlanInstancesRequest::getExecutionPlanIdLi
 void ListExecutionPlanInstancesRequest::setExecutionPlanIdList(const std::vector<std::string>& executionPlanIdList)
 {
 	executionPlanIdList_ = executionPlanIdList;
-	for(int i = 0; i!= executionPlanIdList.size(); i++)
-		setCoreParameter("ExecutionPlanIdList."+ std::to_string(i), executionPlanIdList.at(i));
+	for(int dep1 = 0; dep1!= executionPlanIdList.size(); dep1++) {
+		setCoreParameter("ExecutionPlanIdList."+ std::to_string(dep1), executionPlanIdList.at(dep1));
+	}
 }
 
 std::vector<std::string> ListExecutionPlanInstancesRequest::getStatusList()const
@@ -67,8 +70,9 @@ std::vector<std::string> ListExecutionPlanInstancesRequest::getStatusList()const
 void ListExecutionPlanInstancesRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setCoreParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 bool ListExecutionPlanInstancesRequest::getIsDesc()const

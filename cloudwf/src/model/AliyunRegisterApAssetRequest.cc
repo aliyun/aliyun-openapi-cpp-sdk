@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::AliyunRegisterApAssetRequest;
 
 AliyunRegisterApAssetRequest::AliyunRegisterApAssetRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "AliyunRegisterApAsset")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AliyunRegisterApAssetRequest::~AliyunRegisterApAssetRequest()
 {}

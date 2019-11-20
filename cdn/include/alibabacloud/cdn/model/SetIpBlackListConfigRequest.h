@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				SetIpBlackListConfigRequest();
 				~SetIpBlackListConfigRequest();
 
-				std::string getBlockIps()const;
-				void setBlockIps(const std::string& blockIps);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				long getConfigId()const;
-				void setConfigId(long configId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getBlockIps()const;
+				void setBlockIps(const std::string& blockIps);
 
             private:
-				std::string blockIps_;
 				std::string domainName_;
 				long ownerId_;
-				long configId_;
+				std::string securityToken_;
+				std::string blockIps_;
 
 			};
 		}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DetachLoadBalancersRequest;
 
 DetachLoadBalancersRequest::DetachLoadBalancersRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DetachLoadBalancers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachLoadBalancersRequest::~DetachLoadBalancersRequest()
 {}
@@ -55,8 +57,9 @@ std::vector<std::string> DetachLoadBalancersRequest::getLoadBalancer()const
 void DetachLoadBalancersRequest::setLoadBalancer(const std::vector<std::string>& loadBalancer)
 {
 	loadBalancer_ = loadBalancer;
-	for(int i = 0; i!= loadBalancer.size(); i++)
-		setCoreParameter("LoadBalancer."+ std::to_string(i), loadBalancer.at(i));
+	for(int dep1 = 0; dep1!= loadBalancer.size(); dep1++) {
+		setCoreParameter("LoadBalancer."+ std::to_string(dep1), loadBalancer.at(dep1));
+	}
 }
 
 std::string DetachLoadBalancersRequest::getResourceOwnerAccount()const

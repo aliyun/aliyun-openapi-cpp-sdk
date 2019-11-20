@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getDBInstanceStorageType()const;
 				void setDBInstanceStorageType(const std::string& dBInstanceStorageType);
+				std::string getDirection()const;
+				void setDirection(const std::string& direction);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -71,6 +73,7 @@ namespace AlibabaCloud
 				std::string effectiveTime_;
 				std::string dBInstanceId_;
 				std::string dBInstanceStorageType_;
+				std::string direction_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

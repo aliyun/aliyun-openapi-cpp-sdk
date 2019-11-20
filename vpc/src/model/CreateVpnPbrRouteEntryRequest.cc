@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateVpnPbrRouteEntryRequest;
 
 CreateVpnPbrRouteEntryRequest::CreateVpnPbrRouteEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateVpnPbrRouteEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVpnPbrRouteEntryRequest::~CreateVpnPbrRouteEntryRequest()
 {}

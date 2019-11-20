@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::GetOrderRequest;
 
 GetOrderRequest::GetOrderRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "GetOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetOrderRequest::~GetOrderRequest()
 {}

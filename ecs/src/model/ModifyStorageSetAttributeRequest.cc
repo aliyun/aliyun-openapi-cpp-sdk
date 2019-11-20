@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyStorageSetAttributeRequest;
 
 ModifyStorageSetAttributeRequest::ModifyStorageSetAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyStorageSetAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyStorageSetAttributeRequest::~ModifyStorageSetAttributeRequest()
 {}

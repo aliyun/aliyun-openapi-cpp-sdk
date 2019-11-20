@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::ListCommandsRequest;
 
 ListCommandsRequest::ListCommandsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListCommands")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListCommandsRequest::~ListCommandsRequest()
 {}

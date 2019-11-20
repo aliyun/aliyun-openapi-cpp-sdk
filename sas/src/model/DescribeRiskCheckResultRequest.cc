@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeRiskCheckResultRequest;
 
 DescribeRiskCheckResultRequest::DescribeRiskCheckResultRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeRiskCheckResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRiskCheckResultRequest::~DescribeRiskCheckResultRequest()
 {}
@@ -69,6 +71,17 @@ void DescribeRiskCheckResultRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
+std::string DescribeRiskCheckResultRequest::getAssetType()const
+{
+	return assetType_;
+}
+
+void DescribeRiskCheckResultRequest::setAssetType(const std::string& assetType)
+{
+	assetType_ = assetType;
+	setCoreParameter("AssetType", assetType);
+}
+
 long DescribeRiskCheckResultRequest::getGroupId()const
 {
 	return groupId_;
@@ -88,8 +101,9 @@ std::vector<std::string> DescribeRiskCheckResultRequest::getItemIds()const
 void DescribeRiskCheckResultRequest::setItemIds(const std::vector<std::string>& itemIds)
 {
 	itemIds_ = itemIds;
-	for(int i = 0; i!= itemIds.size(); i++)
-		setCoreParameter("ItemIds."+ std::to_string(i), itemIds.at(i));
+	for(int dep1 = 0; dep1!= itemIds.size(); dep1++) {
+		setCoreParameter("ItemIds."+ std::to_string(dep1), itemIds.at(dep1));
+	}
 }
 
 int DescribeRiskCheckResultRequest::getCurrentPage()const

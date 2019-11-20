@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::PurgeDBInstanceLogRequest;
 
 PurgeDBInstanceLogRequest::PurgeDBInstanceLogRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "PurgeDBInstanceLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PurgeDBInstanceLogRequest::~PurgeDBInstanceLogRequest()
 {}

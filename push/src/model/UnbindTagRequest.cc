@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::UnbindTagRequest;
 
 UnbindTagRequest::UnbindTagRequest() :
 	RpcServiceRequest("push", "2016-08-01", "UnbindTag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindTagRequest::~UnbindTagRequest()
 {}

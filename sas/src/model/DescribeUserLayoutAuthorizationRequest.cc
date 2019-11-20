@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeUserLayoutAuthorizationRequest;
 
 DescribeUserLayoutAuthorizationRequest::DescribeUserLayoutAuthorizationRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeUserLayoutAuthorization")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserLayoutAuthorizationRequest::~DescribeUserLayoutAuthorizationRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeFlowNodeInstanceLauncherLogRequest;
 
 DescribeFlowNodeInstanceLauncherLogRequest::DescribeFlowNodeInstanceLauncherLogRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeFlowNodeInstanceLauncherLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowNodeInstanceLauncherLogRequest::~DescribeFlowNodeInstanceLauncherLogRequest()
 {}

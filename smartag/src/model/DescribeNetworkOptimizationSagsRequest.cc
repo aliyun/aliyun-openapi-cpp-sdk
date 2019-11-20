@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeNetworkOptimizationSagsRequest;
 
 DescribeNetworkOptimizationSagsRequest::DescribeNetworkOptimizationSagsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeNetworkOptimizationSags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNetworkOptimizationSagsRequest::~DescribeNetworkOptimizationSagsRequest()
 {}

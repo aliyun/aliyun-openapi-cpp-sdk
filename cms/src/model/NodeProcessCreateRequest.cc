@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::NodeProcessCreateRequest;
 
 NodeProcessCreateRequest::NodeProcessCreateRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "NodeProcessCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 NodeProcessCreateRequest::~NodeProcessCreateRequest()
 {}

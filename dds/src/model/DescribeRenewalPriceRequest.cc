@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeRenewalPriceRequest;
 
 DescribeRenewalPriceRequest::DescribeRenewalPriceRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeRenewalPrice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRenewalPriceRequest::~DescribeRenewalPriceRequest()
 {}

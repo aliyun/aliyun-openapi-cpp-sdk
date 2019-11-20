@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::NodeStatusRequest;
 
 NodeStatusRequest::NodeStatusRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "NodeStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 NodeStatusRequest::~NodeStatusRequest()
 {}

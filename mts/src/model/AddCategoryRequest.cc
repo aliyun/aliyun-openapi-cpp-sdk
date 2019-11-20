@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddCategoryRequest;
 
 AddCategoryRequest::AddCategoryRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCategoryRequest::~AddCategoryRequest()
 {}

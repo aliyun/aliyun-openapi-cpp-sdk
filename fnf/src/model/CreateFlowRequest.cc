@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::CreateFlowRequest;
 
 CreateFlowRequest::CreateFlowRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "CreateFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFlowRequest::~CreateFlowRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaStream::Model::BatchGetPluginConfigInfoRequest;
 
 BatchGetPluginConfigInfoRequest::BatchGetPluginConfigInfoRequest() :
 	RpcServiceRequest("teslastream", "2018-01-15", "BatchGetPluginConfigInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 BatchGetPluginConfigInfoRequest::~BatchGetPluginConfigInfoRequest()
 {}

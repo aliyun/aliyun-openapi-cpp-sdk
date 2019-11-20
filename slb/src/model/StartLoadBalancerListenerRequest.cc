@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::StartLoadBalancerListenerRequest;
 
 StartLoadBalancerListenerRequest::StartLoadBalancerListenerRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "StartLoadBalancerListener")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartLoadBalancerListenerRequest::~StartLoadBalancerListenerRequest()
 {}

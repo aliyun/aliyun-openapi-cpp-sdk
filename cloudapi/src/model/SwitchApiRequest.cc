@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SwitchApiRequest;
 
 SwitchApiRequest::SwitchApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SwitchApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SwitchApiRequest::~SwitchApiRequest()
 {}

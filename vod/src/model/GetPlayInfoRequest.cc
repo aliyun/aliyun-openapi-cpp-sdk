@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetPlayInfoRequest;
 
 GetPlayInfoRequest::GetPlayInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetPlayInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPlayInfoRequest::~GetPlayInfoRequest()
 {}

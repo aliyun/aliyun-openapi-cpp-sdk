@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::UnbindVbrRequest;
 
 UnbindVbrRequest::UnbindVbrRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "UnbindVbr")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindVbrRequest::~UnbindVbrRequest()
 {}

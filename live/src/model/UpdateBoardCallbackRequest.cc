@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::UpdateBoardCallbackRequest;
 
 UpdateBoardCallbackRequest::UpdateBoardCallbackRequest() :
 	RpcServiceRequest("live", "2016-11-01", "UpdateBoardCallback")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateBoardCallbackRequest::~UpdateBoardCallbackRequest()
 {}

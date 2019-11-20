@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateMediaRequest;
 
 CreateMediaRequest::CreateMediaRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateMediaRequest::~CreateMediaRequest()
 {}

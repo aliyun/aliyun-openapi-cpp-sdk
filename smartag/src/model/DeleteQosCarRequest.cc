@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteQosCarRequest;
 
 DeleteQosCarRequest::DeleteQosCarRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteQosCar")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteQosCarRequest::~DeleteQosCarRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ImportDatabaseBetweenInstancesRequest;
 
 ImportDatabaseBetweenInstancesRequest::ImportDatabaseBetweenInstancesRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ImportDatabaseBetweenInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImportDatabaseBetweenInstancesRequest::~ImportDatabaseBetweenInstancesRequest()
 {}

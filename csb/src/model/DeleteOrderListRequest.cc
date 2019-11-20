@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::DeleteOrderListRequest;
 
 DeleteOrderListRequest::DeleteOrderListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "DeleteOrderList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteOrderListRequest::~DeleteOrderListRequest()
 {}

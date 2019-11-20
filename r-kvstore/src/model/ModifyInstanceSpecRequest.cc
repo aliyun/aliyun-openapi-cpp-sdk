@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyInstanceSpecRequest;
 
 ModifyInstanceSpecRequest::ModifyInstanceSpecRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyInstanceSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceSpecRequest::~ModifyInstanceSpecRequest()
 {}
@@ -177,5 +179,16 @@ void ModifyInstanceSpecRequest::setForceUpgrade(bool forceUpgrade)
 {
 	forceUpgrade_ = forceUpgrade;
 	setCoreParameter("ForceUpgrade", forceUpgrade ? "true" : "false");
+}
+
+std::string ModifyInstanceSpecRequest::getOrderType()const
+{
+	return orderType_;
+}
+
+void ModifyInstanceSpecRequest::setOrderType(const std::string& orderType)
+{
+	orderType_ = orderType;
+	setCoreParameter("OrderType", orderType);
 }
 

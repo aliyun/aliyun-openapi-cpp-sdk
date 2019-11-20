@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ChangePasswordRequest;
 
 ChangePasswordRequest::ChangePasswordRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ChangePassword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ChangePasswordRequest::~ChangePasswordRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::ModifyRuleStatusRequest;
 
 ModifyRuleStatusRequest::ModifyRuleStatusRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "ModifyRuleStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRuleStatusRequest::~ModifyRuleStatusRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::BusinessCreateRequest;
 
 BusinessCreateRequest::BusinessCreateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "BusinessCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BusinessCreateRequest::~BusinessCreateRequest()
 {}

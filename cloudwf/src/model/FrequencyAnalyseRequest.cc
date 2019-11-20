@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::FrequencyAnalyseRequest;
 
 FrequencyAnalyseRequest::FrequencyAnalyseRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "FrequencyAnalyse")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FrequencyAnalyseRequest::~FrequencyAnalyseRequest()
 {}

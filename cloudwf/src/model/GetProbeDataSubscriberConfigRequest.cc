@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetProbeDataSubscriberConfigRequest;
 
 GetProbeDataSubscriberConfigRequest::GetProbeDataSubscriberConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetProbeDataSubscriberConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetProbeDataSubscriberConfigRequest::~GetProbeDataSubscriberConfigRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::KickAndClearPMKcacheRequest;
 
 KickAndClearPMKcacheRequest::KickAndClearPMKcacheRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "KickAndClearPMKcache")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 KickAndClearPMKcacheRequest::~KickAndClearPMKcacheRequest()
 {}

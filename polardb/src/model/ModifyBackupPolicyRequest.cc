@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::ModifyBackupPolicyRequest;
 
 ModifyBackupPolicyRequest::ModifyBackupPolicyRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "ModifyBackupPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyBackupPolicyRequest::~ModifyBackupPolicyRequest()
 {}

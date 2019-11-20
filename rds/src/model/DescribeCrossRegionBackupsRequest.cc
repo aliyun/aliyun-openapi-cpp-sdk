@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeCrossRegionBackupsRequest;
 
 DescribeCrossRegionBackupsRequest::DescribeCrossRegionBackupsRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeCrossRegionBackups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCrossRegionBackupsRequest::~DescribeCrossRegionBackupsRequest()
 {}

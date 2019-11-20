@@ -110,6 +110,8 @@
 #include "model/EnableThingResult.h"
 #include "model/GetDataAPIServiceDetailRequest.h"
 #include "model/GetDataAPIServiceDetailResult.h"
+#include "model/GetDeviceListByIotIdsRequest.h"
+#include "model/GetDeviceListByIotIdsResult.h"
 #include "model/GetDeviceShadowRequest.h"
 #include "model/GetDeviceShadowResult.h"
 #include "model/GetDeviceStatusRequest.h"
@@ -124,12 +126,18 @@
 #include "model/GetLoraNodesTaskResult.h"
 #include "model/GetNodesAddingTaskRequest.h"
 #include "model/GetNodesAddingTaskResult.h"
+#include "model/GetProductKeyListByNameRequest.h"
+#include "model/GetProductKeyListByNameResult.h"
+#include "model/GetProductMetaListByNameRequest.h"
+#include "model/GetProductMetaListByNameResult.h"
 #include "model/GetRuleRequest.h"
 #include "model/GetRuleResult.h"
 #include "model/GetRuleActionRequest.h"
 #include "model/GetRuleActionResult.h"
 #include "model/GetThingTopoRequest.h"
 #include "model/GetThingTopoResult.h"
+#include "model/GisQueryDeviceLocationRequest.h"
+#include "model/GisQueryDeviceLocationResult.h"
 #include "model/InvokeDataAPIServiceRequest.h"
 #include "model/InvokeDataAPIServiceResult.h"
 #include "model/InvokeThingServiceRequest.h"
@@ -154,12 +162,16 @@
 #include "model/QueryAppDeviceListResult.h"
 #include "model/QueryBatchRegisterDeviceStatusRequest.h"
 #include "model/QueryBatchRegisterDeviceStatusResult.h"
+#include "model/QueryCertUrlByApplyIdRequest.h"
+#include "model/QueryCertUrlByApplyIdResult.h"
 #include "model/QueryDeviceRequest.h"
 #include "model/QueryDeviceResult.h"
 #include "model/QueryDeviceByDriverRequest.h"
 #include "model/QueryDeviceByDriverResult.h"
 #include "model/QueryDeviceByTagsRequest.h"
 #include "model/QueryDeviceByTagsResult.h"
+#include "model/QueryDeviceCertRequest.h"
+#include "model/QueryDeviceCertResult.h"
 #include "model/QueryDeviceDesiredPropertyRequest.h"
 #include "model/QueryDeviceDesiredPropertyResult.h"
 #include "model/QueryDeviceDetailRequest.h"
@@ -401,6 +413,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDataAPIServiceDetailResult> GetDataAPIServiceDetailOutcome;
 			typedef std::future<GetDataAPIServiceDetailOutcome> GetDataAPIServiceDetailOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetDataAPIServiceDetailRequest&, const GetDataAPIServiceDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataAPIServiceDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetDeviceListByIotIdsResult> GetDeviceListByIotIdsOutcome;
+			typedef std::future<GetDeviceListByIotIdsOutcome> GetDeviceListByIotIdsOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GetDeviceListByIotIdsRequest&, const GetDeviceListByIotIdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceListByIotIdsAsyncHandler;
 			typedef Outcome<Error, Model::GetDeviceShadowResult> GetDeviceShadowOutcome;
 			typedef std::future<GetDeviceShadowOutcome> GetDeviceShadowOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetDeviceShadowRequest&, const GetDeviceShadowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceShadowAsyncHandler;
@@ -422,6 +437,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetNodesAddingTaskResult> GetNodesAddingTaskOutcome;
 			typedef std::future<GetNodesAddingTaskOutcome> GetNodesAddingTaskOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetNodesAddingTaskRequest&, const GetNodesAddingTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNodesAddingTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetProductKeyListByNameResult> GetProductKeyListByNameOutcome;
+			typedef std::future<GetProductKeyListByNameOutcome> GetProductKeyListByNameOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GetProductKeyListByNameRequest&, const GetProductKeyListByNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProductKeyListByNameAsyncHandler;
+			typedef Outcome<Error, Model::GetProductMetaListByNameResult> GetProductMetaListByNameOutcome;
+			typedef std::future<GetProductMetaListByNameOutcome> GetProductMetaListByNameOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GetProductMetaListByNameRequest&, const GetProductMetaListByNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProductMetaListByNameAsyncHandler;
 			typedef Outcome<Error, Model::GetRuleResult> GetRuleOutcome;
 			typedef std::future<GetRuleOutcome> GetRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetRuleRequest&, const GetRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRuleAsyncHandler;
@@ -431,6 +452,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetThingTopoResult> GetThingTopoOutcome;
 			typedef std::future<GetThingTopoOutcome> GetThingTopoOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetThingTopoRequest&, const GetThingTopoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetThingTopoAsyncHandler;
+			typedef Outcome<Error, Model::GisQueryDeviceLocationResult> GisQueryDeviceLocationOutcome;
+			typedef std::future<GisQueryDeviceLocationOutcome> GisQueryDeviceLocationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GisQueryDeviceLocationRequest&, const GisQueryDeviceLocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GisQueryDeviceLocationAsyncHandler;
 			typedef Outcome<Error, Model::InvokeDataAPIServiceResult> InvokeDataAPIServiceOutcome;
 			typedef std::future<InvokeDataAPIServiceOutcome> InvokeDataAPIServiceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::InvokeDataAPIServiceRequest&, const InvokeDataAPIServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InvokeDataAPIServiceAsyncHandler;
@@ -467,6 +491,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryBatchRegisterDeviceStatusResult> QueryBatchRegisterDeviceStatusOutcome;
 			typedef std::future<QueryBatchRegisterDeviceStatusOutcome> QueryBatchRegisterDeviceStatusOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryBatchRegisterDeviceStatusRequest&, const QueryBatchRegisterDeviceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryBatchRegisterDeviceStatusAsyncHandler;
+			typedef Outcome<Error, Model::QueryCertUrlByApplyIdResult> QueryCertUrlByApplyIdOutcome;
+			typedef std::future<QueryCertUrlByApplyIdOutcome> QueryCertUrlByApplyIdOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryCertUrlByApplyIdRequest&, const QueryCertUrlByApplyIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCertUrlByApplyIdAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceResult> QueryDeviceOutcome;
 			typedef std::future<QueryDeviceOutcome> QueryDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceRequest&, const QueryDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceAsyncHandler;
@@ -476,6 +503,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDeviceByTagsResult> QueryDeviceByTagsOutcome;
 			typedef std::future<QueryDeviceByTagsOutcome> QueryDeviceByTagsOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceByTagsRequest&, const QueryDeviceByTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceByTagsAsyncHandler;
+			typedef Outcome<Error, Model::QueryDeviceCertResult> QueryDeviceCertOutcome;
+			typedef std::future<QueryDeviceCertOutcome> QueryDeviceCertOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryDeviceCertRequest&, const QueryDeviceCertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceCertAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceDesiredPropertyResult> QueryDeviceDesiredPropertyOutcome;
 			typedef std::future<QueryDeviceDesiredPropertyOutcome> QueryDeviceDesiredPropertyOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceDesiredPropertyRequest&, const QueryDeviceDesiredPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceDesiredPropertyAsyncHandler;
@@ -763,6 +793,9 @@ namespace AlibabaCloud
 			GetDataAPIServiceDetailOutcome getDataAPIServiceDetail(const Model::GetDataAPIServiceDetailRequest &request)const;
 			void getDataAPIServiceDetailAsync(const Model::GetDataAPIServiceDetailRequest& request, const GetDataAPIServiceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataAPIServiceDetailOutcomeCallable getDataAPIServiceDetailCallable(const Model::GetDataAPIServiceDetailRequest& request) const;
+			GetDeviceListByIotIdsOutcome getDeviceListByIotIds(const Model::GetDeviceListByIotIdsRequest &request)const;
+			void getDeviceListByIotIdsAsync(const Model::GetDeviceListByIotIdsRequest& request, const GetDeviceListByIotIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDeviceListByIotIdsOutcomeCallable getDeviceListByIotIdsCallable(const Model::GetDeviceListByIotIdsRequest& request) const;
 			GetDeviceShadowOutcome getDeviceShadow(const Model::GetDeviceShadowRequest &request)const;
 			void getDeviceShadowAsync(const Model::GetDeviceShadowRequest& request, const GetDeviceShadowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeviceShadowOutcomeCallable getDeviceShadowCallable(const Model::GetDeviceShadowRequest& request) const;
@@ -784,6 +817,12 @@ namespace AlibabaCloud
 			GetNodesAddingTaskOutcome getNodesAddingTask(const Model::GetNodesAddingTaskRequest &request)const;
 			void getNodesAddingTaskAsync(const Model::GetNodesAddingTaskRequest& request, const GetNodesAddingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetNodesAddingTaskOutcomeCallable getNodesAddingTaskCallable(const Model::GetNodesAddingTaskRequest& request) const;
+			GetProductKeyListByNameOutcome getProductKeyListByName(const Model::GetProductKeyListByNameRequest &request)const;
+			void getProductKeyListByNameAsync(const Model::GetProductKeyListByNameRequest& request, const GetProductKeyListByNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetProductKeyListByNameOutcomeCallable getProductKeyListByNameCallable(const Model::GetProductKeyListByNameRequest& request) const;
+			GetProductMetaListByNameOutcome getProductMetaListByName(const Model::GetProductMetaListByNameRequest &request)const;
+			void getProductMetaListByNameAsync(const Model::GetProductMetaListByNameRequest& request, const GetProductMetaListByNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetProductMetaListByNameOutcomeCallable getProductMetaListByNameCallable(const Model::GetProductMetaListByNameRequest& request) const;
 			GetRuleOutcome getRule(const Model::GetRuleRequest &request)const;
 			void getRuleAsync(const Model::GetRuleRequest& request, const GetRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRuleOutcomeCallable getRuleCallable(const Model::GetRuleRequest& request) const;
@@ -793,6 +832,9 @@ namespace AlibabaCloud
 			GetThingTopoOutcome getThingTopo(const Model::GetThingTopoRequest &request)const;
 			void getThingTopoAsync(const Model::GetThingTopoRequest& request, const GetThingTopoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetThingTopoOutcomeCallable getThingTopoCallable(const Model::GetThingTopoRequest& request) const;
+			GisQueryDeviceLocationOutcome gisQueryDeviceLocation(const Model::GisQueryDeviceLocationRequest &request)const;
+			void gisQueryDeviceLocationAsync(const Model::GisQueryDeviceLocationRequest& request, const GisQueryDeviceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GisQueryDeviceLocationOutcomeCallable gisQueryDeviceLocationCallable(const Model::GisQueryDeviceLocationRequest& request) const;
 			InvokeDataAPIServiceOutcome invokeDataAPIService(const Model::InvokeDataAPIServiceRequest &request)const;
 			void invokeDataAPIServiceAsync(const Model::InvokeDataAPIServiceRequest& request, const InvokeDataAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InvokeDataAPIServiceOutcomeCallable invokeDataAPIServiceCallable(const Model::InvokeDataAPIServiceRequest& request) const;
@@ -829,6 +871,9 @@ namespace AlibabaCloud
 			QueryBatchRegisterDeviceStatusOutcome queryBatchRegisterDeviceStatus(const Model::QueryBatchRegisterDeviceStatusRequest &request)const;
 			void queryBatchRegisterDeviceStatusAsync(const Model::QueryBatchRegisterDeviceStatusRequest& request, const QueryBatchRegisterDeviceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryBatchRegisterDeviceStatusOutcomeCallable queryBatchRegisterDeviceStatusCallable(const Model::QueryBatchRegisterDeviceStatusRequest& request) const;
+			QueryCertUrlByApplyIdOutcome queryCertUrlByApplyId(const Model::QueryCertUrlByApplyIdRequest &request)const;
+			void queryCertUrlByApplyIdAsync(const Model::QueryCertUrlByApplyIdRequest& request, const QueryCertUrlByApplyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryCertUrlByApplyIdOutcomeCallable queryCertUrlByApplyIdCallable(const Model::QueryCertUrlByApplyIdRequest& request) const;
 			QueryDeviceOutcome queryDevice(const Model::QueryDeviceRequest &request)const;
 			void queryDeviceAsync(const Model::QueryDeviceRequest& request, const QueryDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceOutcomeCallable queryDeviceCallable(const Model::QueryDeviceRequest& request) const;
@@ -838,6 +883,9 @@ namespace AlibabaCloud
 			QueryDeviceByTagsOutcome queryDeviceByTags(const Model::QueryDeviceByTagsRequest &request)const;
 			void queryDeviceByTagsAsync(const Model::QueryDeviceByTagsRequest& request, const QueryDeviceByTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceByTagsOutcomeCallable queryDeviceByTagsCallable(const Model::QueryDeviceByTagsRequest& request) const;
+			QueryDeviceCertOutcome queryDeviceCert(const Model::QueryDeviceCertRequest &request)const;
+			void queryDeviceCertAsync(const Model::QueryDeviceCertRequest& request, const QueryDeviceCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDeviceCertOutcomeCallable queryDeviceCertCallable(const Model::QueryDeviceCertRequest& request) const;
 			QueryDeviceDesiredPropertyOutcome queryDeviceDesiredProperty(const Model::QueryDeviceDesiredPropertyRequest &request)const;
 			void queryDeviceDesiredPropertyAsync(const Model::QueryDeviceDesiredPropertyRequest& request, const QueryDeviceDesiredPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceDesiredPropertyOutcomeCallable queryDeviceDesiredPropertyCallable(const Model::QueryDeviceDesiredPropertyRequest& request) const;

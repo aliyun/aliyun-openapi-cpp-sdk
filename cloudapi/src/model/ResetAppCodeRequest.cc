@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ResetAppCodeRequest;
 
 ResetAppCodeRequest::ResetAppCodeRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ResetAppCode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetAppCodeRequest::~ResetAppCodeRequest()
 {}

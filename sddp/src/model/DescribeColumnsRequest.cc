@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeColumnsRequest;
 
 DescribeColumnsRequest::DescribeColumnsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeColumns")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeColumnsRequest::~DescribeColumnsRequest()
 {}

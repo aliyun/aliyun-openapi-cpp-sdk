@@ -20,10 +20,23 @@ using AlibabaCloud::Green::Model::UpdateBizTypeSettingRequest;
 
 UpdateBizTypeSettingRequest::UpdateBizTypeSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateBizTypeSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateBizTypeSettingRequest::~UpdateBizTypeSettingRequest()
 {}
+
+std::string UpdateBizTypeSettingRequest::getAntispam()const
+{
+	return antispam_;
+}
+
+void UpdateBizTypeSettingRequest::setAntispam(const std::string& antispam)
+{
+	antispam_ = antispam;
+	setCoreParameter("Antispam", antispam);
+}
 
 std::string UpdateBizTypeSettingRequest::getResourceType()const
 {

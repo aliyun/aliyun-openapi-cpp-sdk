@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateKeywordLibRequest;
 
 CreateKeywordLibRequest::CreateKeywordLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateKeywordLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateKeywordLibRequest::~CreateKeywordLibRequest()
 {}

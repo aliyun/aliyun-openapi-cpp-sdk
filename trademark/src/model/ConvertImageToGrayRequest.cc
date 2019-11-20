@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::ConvertImageToGrayRequest;
 
 ConvertImageToGrayRequest::ConvertImageToGrayRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "ConvertImageToGray")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConvertImageToGrayRequest::~ConvertImageToGrayRequest()
 {}

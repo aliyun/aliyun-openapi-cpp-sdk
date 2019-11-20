@@ -39,6 +39,9 @@ void DescribeLoadBalancerTCPListenerAttributeResult::parse(const std::string &pa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allAclIds = value["AclIds"]["AclId"];
+	for (const auto &item : allAclIds)
+		aclIds_.push_back(item.asString());
 	if(!value["ListenerPort"].isNull())
 		listenerPort_ = std::stoi(value["ListenerPort"].asString());
 	if(!value["BackendServerPort"].isNull())
@@ -224,6 +227,11 @@ std::string DescribeLoadBalancerTCPListenerAttributeResult::getMasterSlaveServer
 std::string DescribeLoadBalancerTCPListenerAttributeResult::getAclType()const
 {
 	return aclType_;
+}
+
+std::vector<std::string> DescribeLoadBalancerTCPListenerAttributeResult::getAclIds()const
+{
+	return aclIds_;
 }
 
 std::string DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckType()const

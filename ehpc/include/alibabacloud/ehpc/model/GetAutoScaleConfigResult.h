@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string zoneId;
 						std::string vSwitchId;
 						float spotPriceLimit;
+						std::string hostNamePrefix;
 						std::string instanceType;
 						std::string spotStrategy;
 					};

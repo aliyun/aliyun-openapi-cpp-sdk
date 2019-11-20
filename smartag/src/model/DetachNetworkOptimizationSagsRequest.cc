@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DetachNetworkOptimizationSagsRequest;
 
 DetachNetworkOptimizationSagsRequest::DetachNetworkOptimizationSagsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DetachNetworkOptimizationSags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachNetworkOptimizationSagsRequest::~DetachNetworkOptimizationSagsRequest()
 {}
@@ -66,8 +68,9 @@ std::vector<std::string> DetachNetworkOptimizationSagsRequest::getSmartAGIds()co
 void DetachNetworkOptimizationSagsRequest::setSmartAGIds(const std::vector<std::string>& smartAGIds)
 {
 	smartAGIds_ = smartAGIds;
-	for(int i = 0; i!= smartAGIds.size(); i++)
-		setCoreParameter("SmartAGIds."+ std::to_string(i), smartAGIds.at(i));
+	for(int dep1 = 0; dep1!= smartAGIds.size(); dep1++) {
+		setCoreParameter("SmartAGIds."+ std::to_string(dep1), smartAGIds.at(dep1));
+	}
 }
 
 std::string DetachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeImageSupportInstanceTypesRequest;
 
 DescribeImageSupportInstanceTypesRequest::DescribeImageSupportInstanceTypesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeImageSupportInstanceTypes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeImageSupportInstanceTypesRequest::~DescribeImageSupportInstanceTypesRequest()
 {}
@@ -99,12 +101,11 @@ std::vector<DescribeImageSupportInstanceTypesRequest::Filter> DescribeImageSuppo
 void DescribeImageSupportInstanceTypesRequest::setFilter(const std::vector<Filter>& filter)
 {
 	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
+		auto filterObj = filter.at(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1);
+		setCoreParameter(filterObjStr + ".Value", filterObj.value);
+		setCoreParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }
 

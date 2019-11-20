@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeOssIncrementCheckSettingRequest;
 
 DescribeOssIncrementCheckSettingRequest::DescribeOssIncrementCheckSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeOssIncrementCheckSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssIncrementCheckSettingRequest::~DescribeOssIncrementCheckSettingRequest()
 {}

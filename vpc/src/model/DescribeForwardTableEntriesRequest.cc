@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeForwardTableEntriesRequest;
 
 DescribeForwardTableEntriesRequest::DescribeForwardTableEntriesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeForwardTableEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeForwardTableEntriesRequest::~DescribeForwardTableEntriesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateEditingProjectRequest;
 
 UpdateEditingProjectRequest::UpdateEditingProjectRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateEditingProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateEditingProjectRequest::~UpdateEditingProjectRequest()
 {}

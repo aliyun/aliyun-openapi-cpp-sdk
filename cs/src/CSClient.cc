@@ -879,3 +879,39 @@ CSClient::ScaleOutClusterOutcomeCallable CSClient::scaleOutClusterCallable(const
 	return task->get_future();
 }
 
+CSClient::UpdateK8sClusterUserConfigExpireOutcome CSClient::updateK8sClusterUserConfigExpire(const UpdateK8sClusterUserConfigExpireRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateK8sClusterUserConfigExpireOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateK8sClusterUserConfigExpireOutcome(UpdateK8sClusterUserConfigExpireResult(outcome.result()));
+	else
+		return UpdateK8sClusterUserConfigExpireOutcome(outcome.error());
+}
+
+void CSClient::updateK8sClusterUserConfigExpireAsync(const UpdateK8sClusterUserConfigExpireRequest& request, const UpdateK8sClusterUserConfigExpireAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateK8sClusterUserConfigExpire(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::UpdateK8sClusterUserConfigExpireOutcomeCallable CSClient::updateK8sClusterUserConfigExpireCallable(const UpdateK8sClusterUserConfigExpireRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateK8sClusterUserConfigExpireOutcome()>>(
+			[this, request]()
+			{
+			return this->updateK8sClusterUserConfigExpire(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeACLAttributeRequest;
 
 DescribeACLAttributeRequest::DescribeACLAttributeRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeACLAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeACLAttributeRequest::~DescribeACLAttributeRequest()
 {}

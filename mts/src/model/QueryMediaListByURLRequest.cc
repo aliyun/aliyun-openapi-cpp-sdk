@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryMediaListByURLRequest;
 
 QueryMediaListByURLRequest::QueryMediaListByURLRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryMediaListByURL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMediaListByURLRequest::~QueryMediaListByURLRequest()
 {}

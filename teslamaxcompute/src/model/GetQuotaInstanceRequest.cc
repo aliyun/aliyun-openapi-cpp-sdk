@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::GetQuotaInstanceRequest;
 
 GetQuotaInstanceRequest::GetQuotaInstanceRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "GetQuotaInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetQuotaInstanceRequest::~GetQuotaInstanceRequest()
 {}

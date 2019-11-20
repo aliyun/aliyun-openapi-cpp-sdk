@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeExecutionPlanRequest;
 
 DescribeExecutionPlanRequest::DescribeExecutionPlanRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeExecutionPlan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeExecutionPlanRequest::~DescribeExecutionPlanRequest()
 {}

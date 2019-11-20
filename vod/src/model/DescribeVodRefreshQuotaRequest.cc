@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodRefreshQuotaRequest;
 
 DescribeVodRefreshQuotaRequest::DescribeVodRefreshQuotaRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodRefreshQuota")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodRefreshQuotaRequest::~DescribeVodRefreshQuotaRequest()
 {}

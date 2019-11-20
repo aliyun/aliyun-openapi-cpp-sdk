@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForSynchronizingDnsHostRequest;
 
 SaveSingleTaskForSynchronizingDnsHostRequest::SaveSingleTaskForSynchronizingDnsHostRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForSynchronizingDnsHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForSynchronizingDnsHostRequest::~SaveSingleTaskForSynchronizingDnsHostRequest()
 {}

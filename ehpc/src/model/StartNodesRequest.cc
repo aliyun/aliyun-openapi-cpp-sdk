@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::StartNodesRequest;
 
 StartNodesRequest::StartNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StartNodes")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 StartNodesRequest::~StartNodesRequest()
 {}
@@ -44,11 +46,10 @@ std::vector<StartNodesRequest::Instance> StartNodesRequest::getInstance()const
 void StartNodesRequest::setInstance(const std::vector<Instance>& instance)
 {
 	instance_ = instance;
-	int i = 0;
-	for(int i = 0; i!= instance.size(); i++)	{
-		auto obj = instance.at(i);
-		std::string str ="Instance."+ std::to_string(i);
-		setCoreParameter(str + ".Id", obj.id);
+	for(int dep1 = 0; dep1!= instance.size(); dep1++) {
+		auto instanceObj = instance.at(dep1);
+		std::string instanceObjStr = "Instance." + std::to_string(dep1);
+		setCoreParameter(instanceObjStr + ".Id", instanceObj.id);
 	}
 }
 

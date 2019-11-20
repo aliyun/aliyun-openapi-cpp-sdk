@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::SwitchDBInstanceNetTypeRequest;
 
 SwitchDBInstanceNetTypeRequest::SwitchDBInstanceNetTypeRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "SwitchDBInstanceNetType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SwitchDBInstanceNetTypeRequest::~SwitchDBInstanceNetTypeRequest()
 {}

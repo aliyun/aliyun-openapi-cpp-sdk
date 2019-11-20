@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::UnbindAliasRequest;
 
 UnbindAliasRequest::UnbindAliasRequest() :
 	RpcServiceRequest("push", "2016-08-01", "UnbindAlias")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindAliasRequest::~UnbindAliasRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyRouterInterfaceSpecRequest;
 
 ModifyRouterInterfaceSpecRequest::ModifyRouterInterfaceSpecRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyRouterInterfaceSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRouterInterfaceSpecRequest::~ModifyRouterInterfaceSpecRequest()
 {}

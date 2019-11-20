@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::SetQueueRequest;
 
 SetQueueRequest::SetQueueRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "SetQueue")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 SetQueueRequest::~SetQueueRequest()
 {}
@@ -66,11 +68,10 @@ std::vector<SetQueueRequest::Node> SetQueueRequest::getNode()const
 void SetQueueRequest::setNode(const std::vector<Node>& node)
 {
 	node_ = node;
-	int i = 0;
-	for(int i = 0; i!= node.size(); i++)	{
-		auto obj = node.at(i);
-		std::string str ="Node."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
+	for(int dep1 = 0; dep1!= node.size(); dep1++) {
+		auto nodeObj = node.at(dep1);
+		std::string nodeObjStr = "Node." + std::to_string(dep1);
+		setCoreParameter(nodeObjStr + ".Name", nodeObj.name);
 	}
 }
 

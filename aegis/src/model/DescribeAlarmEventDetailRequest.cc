@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeAlarmEventDetailRequest;
 
 DescribeAlarmEventDetailRequest::DescribeAlarmEventDetailRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeAlarmEventDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAlarmEventDetailRequest::~DescribeAlarmEventDetailRequest()
 {}

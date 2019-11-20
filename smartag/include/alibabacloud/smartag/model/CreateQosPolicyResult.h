@@ -48,6 +48,7 @@ namespace AlibabaCloud
 				std::string getQosId()const;
 				std::string getIpProtocol()const;
 				std::string getDestPortRange()const;
+				std::string getName()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -63,6 +64,7 @@ namespace AlibabaCloud
 				std::string qosId_;
 				std::string ipProtocol_;
 				std::string destPortRange_;
+				std::string name_;
 
 			};
 		}

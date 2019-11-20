@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeResetRecordQueryCountRequest;
 
 DescribeResetRecordQueryCountRequest::DescribeResetRecordQueryCountRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeResetRecordQueryCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeResetRecordQueryCountRequest::~DescribeResetRecordQueryCountRequest()
 {}

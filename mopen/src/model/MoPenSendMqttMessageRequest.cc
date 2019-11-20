@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenSendMqttMessageRequest;
 
 MoPenSendMqttMessageRequest::MoPenSendMqttMessageRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenSendMqttMessage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenSendMqttMessageRequest::~MoPenSendMqttMessageRequest()
 {}

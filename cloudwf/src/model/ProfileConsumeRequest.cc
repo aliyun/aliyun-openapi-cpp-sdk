@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProfileConsumeRequest;
 
 ProfileConsumeRequest::ProfileConsumeRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProfileConsume")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProfileConsumeRequest::~ProfileConsumeRequest()
 {}

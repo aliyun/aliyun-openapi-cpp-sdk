@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateDeploymentRequest;
 
 CreateDeploymentRequest::CreateDeploymentRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateDeployment")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDeploymentRequest::~CreateDeploymentRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteBgpGroupRequest;
 
 DeleteBgpGroupRequest::DeleteBgpGroupRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteBgpGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteBgpGroupRequest::~DeleteBgpGroupRequest()
 {}

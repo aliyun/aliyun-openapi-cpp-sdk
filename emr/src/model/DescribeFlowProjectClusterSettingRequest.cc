@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeFlowProjectClusterSettingRequest;
 
 DescribeFlowProjectClusterSettingRequest::DescribeFlowProjectClusterSettingRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeFlowProjectClusterSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowProjectClusterSettingRequest::~DescribeFlowProjectClusterSettingRequest()
 {}

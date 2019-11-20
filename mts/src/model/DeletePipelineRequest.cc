@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeletePipelineRequest;
 
 DeletePipelineRequest::DeletePipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeletePipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePipelineRequest::~DeletePipelineRequest()
 {}

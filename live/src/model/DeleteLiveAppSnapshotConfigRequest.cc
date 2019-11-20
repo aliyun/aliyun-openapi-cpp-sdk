@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveAppSnapshotConfigRequest;
 
 DeleteLiveAppSnapshotConfigRequest::DeleteLiveAppSnapshotConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveAppSnapshotConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveAppSnapshotConfigRequest::~DeleteLiveAppSnapshotConfigRequest()
 {}

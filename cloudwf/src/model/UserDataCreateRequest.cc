@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UserDataCreateRequest;
 
 UserDataCreateRequest::UserDataCreateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UserDataCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UserDataCreateRequest::~UserDataCreateRequest()
 {}

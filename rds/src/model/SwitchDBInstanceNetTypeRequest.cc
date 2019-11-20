@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::SwitchDBInstanceNetTypeRequest;
 
 SwitchDBInstanceNetTypeRequest::SwitchDBInstanceNetTypeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "SwitchDBInstanceNetType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SwitchDBInstanceNetTypeRequest::~SwitchDBInstanceNetTypeRequest()
 {}

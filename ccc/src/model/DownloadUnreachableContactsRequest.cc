@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DownloadUnreachableContactsRequest;
 
 DownloadUnreachableContactsRequest::DownloadUnreachableContactsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DownloadUnreachableContacts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DownloadUnreachableContactsRequest::~DownloadUnreachableContactsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchGetEdgeInstanceDeviceConfigRequest;
 
 BatchGetEdgeInstanceDeviceConfigRequest::BatchGetEdgeInstanceDeviceConfigRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchGetEdgeInstanceDeviceConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchGetEdgeInstanceDeviceConfigRequest::~BatchGetEdgeInstanceDeviceConfigRequest()
 {}
@@ -55,8 +57,9 @@ std::vector<std::string> BatchGetEdgeInstanceDeviceConfigRequest::getIotIds()con
 void BatchGetEdgeInstanceDeviceConfigRequest::setIotIds(const std::vector<std::string>& iotIds)
 {
 	iotIds_ = iotIds;
-	for(int i = 0; i!= iotIds.size(); i++)
-		setCoreParameter("IotIds."+ std::to_string(i), iotIds.at(i));
+	for(int dep1 = 0; dep1!= iotIds.size(); dep1++) {
+		setCoreParameter("IotIds."+ std::to_string(dep1), iotIds.at(dep1));
+	}
 }
 
 std::string BatchGetEdgeInstanceDeviceConfigRequest::getIotInstanceId()const

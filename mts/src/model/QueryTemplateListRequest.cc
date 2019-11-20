@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryTemplateListRequest;
 
 QueryTemplateListRequest::QueryTemplateListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryTemplateList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTemplateListRequest::~QueryTemplateListRequest()
 {}

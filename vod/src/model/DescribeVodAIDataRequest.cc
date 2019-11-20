@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodAIDataRequest;
 
 DescribeVodAIDataRequest::DescribeVodAIDataRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodAIData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodAIDataRequest::~DescribeVodAIDataRequest()
 {}

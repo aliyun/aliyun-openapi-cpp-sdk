@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::UpdateDictRequest;
 
 UpdateDictRequest::UpdateDictRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/dict");
+	setMethod(HttpRequest::Method::Put);
+}
 
 UpdateDictRequest::~UpdateDictRequest()
 {}

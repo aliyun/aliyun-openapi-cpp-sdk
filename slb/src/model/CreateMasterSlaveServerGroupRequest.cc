@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::CreateMasterSlaveServerGroupRequest;
 
 CreateMasterSlaveServerGroupRequest::CreateMasterSlaveServerGroupRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "CreateMasterSlaveServerGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateMasterSlaveServerGroupRequest::~CreateMasterSlaveServerGroupRequest()
 {}

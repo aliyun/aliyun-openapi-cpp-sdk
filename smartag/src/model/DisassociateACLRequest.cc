@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DisassociateACLRequest;
 
 DisassociateACLRequest::DisassociateACLRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DisassociateACL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisassociateACLRequest::~DisassociateACLRequest()
 {}

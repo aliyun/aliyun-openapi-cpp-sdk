@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::RunClusterServiceActionRequest;
 
 RunClusterServiceActionRequest::RunClusterServiceActionRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "RunClusterServiceAction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RunClusterServiceActionRequest::~RunClusterServiceActionRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> RunClusterServiceActionRequest::getHostGroupIdList()con
 void RunClusterServiceActionRequest::setHostGroupIdList(const std::vector<std::string>& hostGroupIdList)
 {
 	hostGroupIdList_ = hostGroupIdList;
-	for(int i = 0; i!= hostGroupIdList.size(); i++)
-		setCoreParameter("HostGroupIdList."+ std::to_string(i), hostGroupIdList.at(i));
+	for(int dep1 = 0; dep1!= hostGroupIdList.size(); dep1++) {
+		setCoreParameter("HostGroupIdList."+ std::to_string(dep1), hostGroupIdList.at(dep1));
+	}
 }
 
 long RunClusterServiceActionRequest::getResourceOwnerId()const

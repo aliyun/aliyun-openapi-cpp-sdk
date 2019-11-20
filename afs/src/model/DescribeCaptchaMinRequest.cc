@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribeCaptchaMinRequest;
 
 DescribeCaptchaMinRequest::DescribeCaptchaMinRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribeCaptchaMin")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCaptchaMinRequest::~DescribeCaptchaMinRequest()
 {}

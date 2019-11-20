@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateVirtualBorderRouterRequest;
 
 CreateVirtualBorderRouterRequest::CreateVirtualBorderRouterRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateVirtualBorderRouter")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVirtualBorderRouterRequest::~CreateVirtualBorderRouterRequest()
 {}

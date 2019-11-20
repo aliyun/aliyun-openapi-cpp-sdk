@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveApgroupConfigRequest;
 
 SaveApgroupConfigRequest::SaveApgroupConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveApgroupConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveApgroupConfigRequest::~SaveApgroupConfigRequest()
 {}

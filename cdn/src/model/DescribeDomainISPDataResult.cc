@@ -59,6 +59,10 @@ void DescribeDomainISPDataResult::parse(const std::string &payload)
 			valueObject.qps = valueValueISPProportionData["Qps"].asString();
 		if(!valueValueISPProportionData["AvgResponseRate"].isNull())
 			valueObject.avgResponseRate = valueValueISPProportionData["AvgResponseRate"].asString();
+		if(!valueValueISPProportionData["ByteHitRate"].isNull())
+			valueObject.byteHitRate = valueValueISPProportionData["ByteHitRate"].asString();
+		if(!valueValueISPProportionData["ReqHitRate"].isNull())
+			valueObject.reqHitRate = valueValueISPProportionData["ReqHitRate"].asString();
 		if(!valueValueISPProportionData["ReqErrRate"].isNull())
 			valueObject.reqErrRate = valueValueISPProportionData["ReqErrRate"].asString();
 		if(!valueValueISPProportionData["TotalBytes"].isNull())

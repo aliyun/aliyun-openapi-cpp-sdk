@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeKeywordRequest;
 
 DescribeKeywordRequest::DescribeKeywordRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeKeyword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeKeywordRequest::~DescribeKeywordRequest()
 {}

@@ -20,7 +20,10 @@ using AlibabaCloud::Xspace::Model::QueryCustomerByPhoneRequest;
 
 QueryCustomerByPhoneRequest::QueryCustomerByPhoneRequest() :
 	RoaServiceRequest("xspace", "2017-07-20")
-{}
+{
+	setResourcePath("/customerbyphone");
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCustomerByPhoneRequest::~QueryCustomerByPhoneRequest()
 {}

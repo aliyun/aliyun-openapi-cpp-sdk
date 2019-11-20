@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryProductTopicRequest;
 
 QueryProductTopicRequest::QueryProductTopicRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryProductTopic")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryProductTopicRequest::~QueryProductTopicRequest()
 {}

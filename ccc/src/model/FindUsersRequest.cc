@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::FindUsersRequest;
 
 FindUsersRequest::FindUsersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "FindUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FindUsersRequest::~FindUsersRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::EnableScalingGroupRequest;
 
 EnableScalingGroupRequest::EnableScalingGroupRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "EnableScalingGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EnableScalingGroupRequest::~EnableScalingGroupRequest()
 {}

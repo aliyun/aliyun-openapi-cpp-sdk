@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::NodeInstallRequest;
 
 NodeInstallRequest::NodeInstallRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "NodeInstall")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 NodeInstallRequest::~NodeInstallRequest()
 {}

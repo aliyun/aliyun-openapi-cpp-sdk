@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::GetMessagesRequest;
 
 GetMessagesRequest::GetMessagesRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "GetMessages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMessagesRequest::~GetMessagesRequest()
 {}

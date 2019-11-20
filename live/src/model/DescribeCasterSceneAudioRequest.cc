@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeCasterSceneAudioRequest;
 
 DescribeCasterSceneAudioRequest::DescribeCasterSceneAudioRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeCasterSceneAudio")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCasterSceneAudioRequest::~DescribeCasterSceneAudioRequest()
 {}

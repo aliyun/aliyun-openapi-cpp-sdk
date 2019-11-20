@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::CreateDataLimitRequest;
 
 CreateDataLimitRequest::CreateDataLimitRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "CreateDataLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDataLimitRequest::~CreateDataLimitRequest()
 {}

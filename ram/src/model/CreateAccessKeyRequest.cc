@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::CreateAccessKeyRequest;
 
 CreateAccessKeyRequest::CreateAccessKeyRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreateAccessKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAccessKeyRequest::~CreateAccessKeyRequest()
 {}

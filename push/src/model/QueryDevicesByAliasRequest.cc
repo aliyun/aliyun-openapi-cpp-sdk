@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryDevicesByAliasRequest;
 
 QueryDevicesByAliasRequest::QueryDevicesByAliasRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryDevicesByAlias")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDevicesByAliasRequest::~QueryDevicesByAliasRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeEipMonitorDataRequest;
 
 DescribeEipMonitorDataRequest::DescribeEipMonitorDataRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeEipMonitorData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEipMonitorDataRequest::~DescribeEipMonitorDataRequest()
 {}

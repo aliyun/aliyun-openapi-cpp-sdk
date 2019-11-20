@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setQueryKeyword(const std::string& queryKeyword);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
+				std::string getOrderBy()const;
+				void setOrderBy(const std::string& orderBy);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getSlowLogRecordType()const;
@@ -67,6 +69,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getDBName()const;
 				void setDBName(const std::string& dBName);
+				std::string getOrderType()const;
+				void setOrderType(const std::string& orderType);
 
             private:
 				long resourceOwnerId_;
@@ -81,10 +85,12 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string queryKeyword_;
 				std::string endTime_;
+				std::string orderBy_;
 				long ownerId_;
 				std::string slowLogRecordType_;
 				std::string instanceId_;
 				std::string dBName_;
+				std::string orderType_;
 
 			};
 		}

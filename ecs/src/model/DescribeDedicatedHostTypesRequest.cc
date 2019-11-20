@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeDedicatedHostTypesRequest;
 
 DescribeDedicatedHostTypesRequest::DescribeDedicatedHostTypesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeDedicatedHostTypes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDedicatedHostTypesRequest::~DescribeDedicatedHostTypesRequest()
 {}

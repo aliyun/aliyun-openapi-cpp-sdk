@@ -33,14 +33,24 @@ set(cusanalytic_sc_online_public_header_model
 	include/alibabacloud/cusanalytic_sc_online/model/GetAnalyzeCommodityDataResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetAnalyzePlaceDataRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetAnalyzePlaceDataResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetBaseAgeDataRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetBaseAgeDataResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetCameraStatisticRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetCameraStatisticResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetDailyStatisticsDataRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetDailyStatisticsDataResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetEMapRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetEMapResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetHeatMapDataRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetHeatMapDataResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetHourlyStatisticsDataRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetHourlyStatisticsDataResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetImageUrlRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetImageUrlResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetLocationsRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetLocationsResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetMin5StatisticsDataRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetMin5StatisticsDataResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetOverviewDataRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetOverviewDataResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetPersonInStore5MinRequest.h
@@ -49,10 +59,14 @@ set(cusanalytic_sc_online_public_header_model
 	include/alibabacloud/cusanalytic_sc_online/model/GetPortrayalResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetRoiRankingRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetRoiRankingResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetStayDistributionRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetStayDistributionResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetSupportStoreRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetSupportStoreResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/ListVisitorsRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/ListVisitorsResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/MemberSynchronousRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/MemberSynchronousResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/SearchPersonByImgRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/SearchPersonByImgResult.h )
 
@@ -70,14 +84,24 @@ set(cusanalytic_sc_online_src
 	src/model/GetAnalyzeCommodityDataResult.cc
 	src/model/GetAnalyzePlaceDataRequest.cc
 	src/model/GetAnalyzePlaceDataResult.cc
+	src/model/GetBaseAgeDataRequest.cc
+	src/model/GetBaseAgeDataResult.cc
+	src/model/GetCameraStatisticRequest.cc
+	src/model/GetCameraStatisticResult.cc
+	src/model/GetDailyStatisticsDataRequest.cc
+	src/model/GetDailyStatisticsDataResult.cc
 	src/model/GetEMapRequest.cc
 	src/model/GetEMapResult.cc
 	src/model/GetHeatMapDataRequest.cc
 	src/model/GetHeatMapDataResult.cc
+	src/model/GetHourlyStatisticsDataRequest.cc
+	src/model/GetHourlyStatisticsDataResult.cc
 	src/model/GetImageUrlRequest.cc
 	src/model/GetImageUrlResult.cc
 	src/model/GetLocationsRequest.cc
 	src/model/GetLocationsResult.cc
+	src/model/GetMin5StatisticsDataRequest.cc
+	src/model/GetMin5StatisticsDataResult.cc
 	src/model/GetOverviewDataRequest.cc
 	src/model/GetOverviewDataResult.cc
 	src/model/GetPersonInStore5MinRequest.cc
@@ -86,10 +110,14 @@ set(cusanalytic_sc_online_src
 	src/model/GetPortrayalResult.cc
 	src/model/GetRoiRankingRequest.cc
 	src/model/GetRoiRankingResult.cc
+	src/model/GetStayDistributionRequest.cc
+	src/model/GetStayDistributionResult.cc
 	src/model/GetSupportStoreRequest.cc
 	src/model/GetSupportStoreResult.cc
 	src/model/ListVisitorsRequest.cc
 	src/model/ListVisitorsResult.cc
+	src/model/MemberSynchronousRequest.cc
+	src/model/MemberSynchronousResult.cc
 	src/model/SearchPersonByImgRequest.cc
 	src/model/SearchPersonByImgResult.cc )
 

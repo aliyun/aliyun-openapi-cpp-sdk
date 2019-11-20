@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeLocationListRequest;
 
 DescribeLocationListRequest::DescribeLocationListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeLocationList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLocationListRequest::~DescribeLocationListRequest()
 {}

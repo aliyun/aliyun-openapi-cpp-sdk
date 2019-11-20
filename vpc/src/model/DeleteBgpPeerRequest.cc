@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteBgpPeerRequest;
 
 DeleteBgpPeerRequest::DeleteBgpPeerRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteBgpPeer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteBgpPeerRequest::~DeleteBgpPeerRequest()
 {}

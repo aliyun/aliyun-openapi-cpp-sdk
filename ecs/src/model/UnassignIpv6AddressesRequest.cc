@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::UnassignIpv6AddressesRequest;
 
 UnassignIpv6AddressesRequest::UnassignIpv6AddressesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "UnassignIpv6Addresses")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnassignIpv6AddressesRequest::~UnassignIpv6AddressesRequest()
 {}
@@ -99,7 +101,8 @@ std::vector<std::string> UnassignIpv6AddressesRequest::getIpv6Address()const
 void UnassignIpv6AddressesRequest::setIpv6Address(const std::vector<std::string>& ipv6Address)
 {
 	ipv6Address_ = ipv6Address;
-	for(int i = 0; i!= ipv6Address.size(); i++)
-		setCoreParameter("Ipv6Address."+ std::to_string(i), ipv6Address.at(i));
+	for(int dep1 = 0; dep1!= ipv6Address.size(); dep1++) {
+		setCoreParameter("Ipv6Address."+ std::to_string(dep1), ipv6Address.at(dep1));
+	}
 }
 

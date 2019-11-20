@@ -20,7 +20,10 @@ using AlibabaCloud::CS::Model::AttachInstancesRequest;
 
 AttachInstancesRequest::AttachInstancesRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
-{}
+{
+	setResourcePath("/clusters/[ClusterId]/attach");
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachInstancesRequest::~AttachInstancesRequest()
 {}

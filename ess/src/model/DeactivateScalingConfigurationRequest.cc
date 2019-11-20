@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeactivateScalingConfigurationRequest;
 
 DeactivateScalingConfigurationRequest::DeactivateScalingConfigurationRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeactivateScalingConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeactivateScalingConfigurationRequest::~DeactivateScalingConfigurationRequest()
 {}

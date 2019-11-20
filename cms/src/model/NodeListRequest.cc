@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::NodeListRequest;
 
 NodeListRequest::NodeListRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "NodeList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 NodeListRequest::~NodeListRequest()
 {}

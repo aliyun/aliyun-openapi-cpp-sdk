@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeUserStatusRequest;
 
 DescribeUserStatusRequest::DescribeUserStatusRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeUserStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserStatusRequest::~DescribeUserStatusRequest()
 {}

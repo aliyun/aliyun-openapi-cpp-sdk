@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeInstancesRequest;
 
 DescribeInstancesRequest::DescribeInstancesRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstancesRequest::~DescribeInstancesRequest()
 {}

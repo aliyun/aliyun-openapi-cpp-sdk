@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeletionProtectionRequest;
 
 DeletionProtectionRequest::DeletionProtectionRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeletionProtection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletionProtectionRequest::~DeletionProtectionRequest()
 {}

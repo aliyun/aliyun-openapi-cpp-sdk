@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForTransferProhibitionLockReque
 
 SaveSingleTaskForTransferProhibitionLockRequest::SaveSingleTaskForTransferProhibitionLockRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForTransferProhibitionLock")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForTransferProhibitionLockRequest::~SaveSingleTaskForTransferProhibitionLockRequest()
 {}

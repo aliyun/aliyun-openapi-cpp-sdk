@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DelPageConfigTemplateRequest;
 
 DelPageConfigTemplateRequest::DelPageConfigTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DelPageConfigTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DelPageConfigTemplateRequest::~DelPageConfigTemplateRequest()
 {}

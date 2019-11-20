@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::MoveKnowledgeCategoryRequest;
 
 MoveKnowledgeCategoryRequest::MoveKnowledgeCategoryRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "MoveKnowledgeCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoveKnowledgeCategoryRequest::~MoveKnowledgeCategoryRequest()
 {}

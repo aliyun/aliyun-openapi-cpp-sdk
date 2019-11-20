@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DetachPolicyFromRoleRequest;
 
 DetachPolicyFromRoleRequest::DetachPolicyFromRoleRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DetachPolicyFromRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachPolicyFromRoleRequest::~DetachPolicyFromRoleRequest()
 {}

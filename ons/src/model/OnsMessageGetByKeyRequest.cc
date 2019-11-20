@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsMessageGetByKeyRequest;
 
 OnsMessageGetByKeyRequest::OnsMessageGetByKeyRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessageGetByKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsMessageGetByKeyRequest::~OnsMessageGetByKeyRequest()
 {}

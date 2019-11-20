@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::ChangeImageSizeRequest;
 
 ChangeImageSizeRequest::ChangeImageSizeRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "ChangeImageSize")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ChangeImageSizeRequest::~ChangeImageSizeRequest()
 {}

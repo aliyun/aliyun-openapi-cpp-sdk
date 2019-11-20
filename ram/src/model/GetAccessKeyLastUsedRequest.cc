@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetAccessKeyLastUsedRequest;
 
 GetAccessKeyLastUsedRequest::GetAccessKeyLastUsedRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetAccessKeyLastUsed")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAccessKeyLastUsedRequest::~GetAccessKeyLastUsedRequest()
 {}

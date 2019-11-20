@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenAddGroupMemberRequest;
 
 MoPenAddGroupMemberRequest::MoPenAddGroupMemberRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenAddGroupMember")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenAddGroupMemberRequest::~MoPenAddGroupMemberRequest()
 {}

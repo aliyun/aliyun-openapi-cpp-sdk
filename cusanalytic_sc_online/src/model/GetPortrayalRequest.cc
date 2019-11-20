@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetPortrayalRequest;
 
 GetPortrayalRequest::GetPortrayalRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetPortrayal")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPortrayalRequest::~GetPortrayalRequest()
 {}

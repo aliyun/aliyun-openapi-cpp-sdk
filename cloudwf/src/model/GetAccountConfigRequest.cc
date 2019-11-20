@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetAccountConfigRequest;
 
 GetAccountConfigRequest::GetAccountConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetAccountConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAccountConfigRequest::~GetAccountConfigRequest()
 {}

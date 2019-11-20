@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					struct NodeSpec
 					{
 						std::string diskType;
+						bool diskEncryption;
 						std::string spec;
 						int disk;
 					};
@@ -71,9 +72,14 @@ namespace AlibabaCloud
 					struct WarmNodeConfiguration
 					{
 						std::string diskType;
+						bool diskEncryption;
 						int amount;
 						std::string spec;
 						int disk;
+					};
+					struct AdvancedSetting
+					{
+						std::string gcName;
 					};
 					struct DictListItem
 					{
@@ -94,6 +100,13 @@ namespace AlibabaCloud
 						std::string status;
 						std::string zoneId;
 					};
+					struct Dict
+					{
+						std::string type;
+						std::string sourceType;
+						std::string name;
+						long fileSize;
+					};
 					MasterConfiguration masterConfiguration;
 					std::string description;
 					bool dedicateMaster;
@@ -109,10 +122,12 @@ namespace AlibabaCloud
 					bool haveKibana;
 					std::string status;
 					std::vector<std::string> publicIpWhitelist;
+					std::vector<Dict> aliwsDicts;
 					std::string instanceId;
 					int kibanaPort;
 					bool enableKibanaPublicNetwork;
 					NetworkConfig networkConfig;
+					AdvancedSetting advancedSetting;
 					int nodeAmount;
 					std::string esVersion;
 					std::string updatedAt;

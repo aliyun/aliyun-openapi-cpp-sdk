@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteSnapshotRequest;
 
 DeleteSnapshotRequest::DeleteSnapshotRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteSnapshot")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSnapshotRequest::~DeleteSnapshotRequest()
 {}

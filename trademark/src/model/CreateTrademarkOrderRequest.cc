@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::CreateTrademarkOrderRequest;
 
 CreateTrademarkOrderRequest::CreateTrademarkOrderRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "CreateTrademarkOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateTrademarkOrderRequest::~CreateTrademarkOrderRequest()
 {}

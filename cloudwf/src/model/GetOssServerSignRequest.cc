@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetOssServerSignRequest;
 
 GetOssServerSignRequest::GetOssServerSignRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetOssServerSign")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetOssServerSignRequest::~GetOssServerSignRequest()
 {}

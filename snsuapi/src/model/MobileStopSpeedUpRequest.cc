@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::MobileStopSpeedUpRequest;
 
 MobileStopSpeedUpRequest::MobileStopSpeedUpRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "MobileStopSpeedUp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MobileStopSpeedUpRequest::~MobileStopSpeedUpRequest()
 {}

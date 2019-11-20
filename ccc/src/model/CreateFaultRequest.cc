@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateFaultRequest;
 
 CreateFaultRequest::CreateFaultRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateFault")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFaultRequest::~CreateFaultRequest()
 {}

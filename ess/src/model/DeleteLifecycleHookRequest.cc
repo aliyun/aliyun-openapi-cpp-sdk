@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteLifecycleHookRequest;
 
 DeleteLifecycleHookRequest::DeleteLifecycleHookRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteLifecycleHook")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLifecycleHookRequest::~DeleteLifecycleHookRequest()
 {}

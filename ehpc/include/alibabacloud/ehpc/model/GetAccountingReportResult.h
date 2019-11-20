@@ -38,13 +38,13 @@ namespace AlibabaCloud
 				explicit GetAccountingReportResult(const std::string &payload);
 				~GetAccountingReportResult();
 				std::string getMetrics()const;
-				std::string getData()const;
+				std::vector<std::string> getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string metrics_;
-				std::string data_;
+				std::vector<std::string> data_;
 
 			};
 		}

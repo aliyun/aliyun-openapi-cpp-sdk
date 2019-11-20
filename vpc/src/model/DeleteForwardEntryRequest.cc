@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteForwardEntryRequest;
 
 DeleteForwardEntryRequest::DeleteForwardEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteForwardEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteForwardEntryRequest::~DeleteForwardEntryRequest()
 {}

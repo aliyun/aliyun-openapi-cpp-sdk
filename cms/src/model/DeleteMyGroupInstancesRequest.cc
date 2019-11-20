@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DeleteMyGroupInstancesRequest;
 
 DeleteMyGroupInstancesRequest::DeleteMyGroupInstancesRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DeleteMyGroupInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMyGroupInstancesRequest::~DeleteMyGroupInstancesRequest()
 {}

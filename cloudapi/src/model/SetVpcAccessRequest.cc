@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetVpcAccessRequest;
 
 SetVpcAccessRequest::SetVpcAccessRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetVpcAccess")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetVpcAccessRequest::~SetVpcAccessRequest()
 {}

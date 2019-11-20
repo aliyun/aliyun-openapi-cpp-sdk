@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeEventTypesRequest;
 
 DescribeEventTypesRequest::DescribeEventTypesRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeEventTypes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEventTypesRequest::~DescribeEventTypesRequest()
 {}

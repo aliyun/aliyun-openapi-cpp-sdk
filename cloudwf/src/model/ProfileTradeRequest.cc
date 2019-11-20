@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProfileTradeRequest;
 
 ProfileTradeRequest::ProfileTradeRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProfileTrade")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProfileTradeRequest::~ProfileTradeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeleteWaterMarkTemplateRequest;
 
 DeleteWaterMarkTemplateRequest::DeleteWaterMarkTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeleteWaterMarkTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteWaterMarkTemplateRequest::~DeleteWaterMarkTemplateRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenFindGroupRequest;
 
 MoPenFindGroupRequest::MoPenFindGroupRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenFindGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenFindGroupRequest::~MoPenFindGroupRequest()
 {}

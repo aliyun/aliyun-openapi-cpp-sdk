@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeAvailableResourceRequest;
 
 DescribeAvailableResourceRequest::DescribeAvailableResourceRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeAvailableResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAvailableResourceRequest::~DescribeAvailableResourceRequest()
 {}

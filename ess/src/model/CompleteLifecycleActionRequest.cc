@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::CompleteLifecycleActionRequest;
 
 CompleteLifecycleActionRequest::CompleteLifecycleActionRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "CompleteLifecycleAction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CompleteLifecycleActionRequest::~CompleteLifecycleActionRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::CreateVirtualMFADeviceRequest;
 
 CreateVirtualMFADeviceRequest::CreateVirtualMFADeviceRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreateVirtualMFADevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVirtualMFADeviceRequest::~CreateVirtualMFADeviceRequest()
 {}

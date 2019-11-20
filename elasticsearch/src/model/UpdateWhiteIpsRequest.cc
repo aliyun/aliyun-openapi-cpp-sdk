@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::UpdateWhiteIpsRequest;
 
 UpdateWhiteIpsRequest::UpdateWhiteIpsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/white-ips");
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateWhiteIpsRequest::~UpdateWhiteIpsRequest()
 {}

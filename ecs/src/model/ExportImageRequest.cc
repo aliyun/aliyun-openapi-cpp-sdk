@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ExportImageRequest;
 
 ExportImageRequest::ExportImageRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ExportImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ExportImageRequest::~ExportImageRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::RegisterTagRequest;
 
 RegisterTagRequest::RegisterTagRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "RegisterTag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegisterTagRequest::~RegisterTagRequest()
 {}

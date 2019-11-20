@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListPoliciesForGroupRequest;
 
 ListPoliciesForGroupRequest::ListPoliciesForGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListPoliciesForGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPoliciesForGroupRequest::~ListPoliciesForGroupRequest()
 {}

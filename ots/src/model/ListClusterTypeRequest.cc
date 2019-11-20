@@ -20,7 +20,9 @@ using AlibabaCloud::Ots::Model::ListClusterTypeRequest;
 
 ListClusterTypeRequest::ListClusterTypeRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "ListClusterType")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListClusterTypeRequest::~ListClusterTypeRequest()
 {}

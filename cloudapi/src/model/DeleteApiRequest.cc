@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteApiRequest;
 
 DeleteApiRequest::DeleteApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteApiRequest::~DeleteApiRequest()
 {}

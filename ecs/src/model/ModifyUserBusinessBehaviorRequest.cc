@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyUserBusinessBehaviorRequest;
 
 ModifyUserBusinessBehaviorRequest::ModifyUserBusinessBehaviorRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyUserBusinessBehavior")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyUserBusinessBehaviorRequest::~ModifyUserBusinessBehaviorRequest()
 {}

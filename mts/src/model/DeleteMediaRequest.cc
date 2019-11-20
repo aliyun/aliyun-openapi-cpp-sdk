@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeleteMediaRequest;
 
 DeleteMediaRequest::DeleteMediaRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeleteMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMediaRequest::~DeleteMediaRequest()
 {}

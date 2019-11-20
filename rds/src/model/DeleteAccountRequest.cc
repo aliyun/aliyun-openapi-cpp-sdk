@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DeleteAccountRequest;
 
 DeleteAccountRequest::DeleteAccountRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DeleteAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAccountRequest::~DeleteAccountRequest()
 {}

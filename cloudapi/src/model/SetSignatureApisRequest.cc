@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetSignatureApisRequest;
 
 SetSignatureApisRequest::SetSignatureApisRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetSignatureApis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetSignatureApisRequest::~SetSignatureApisRequest()
 {}

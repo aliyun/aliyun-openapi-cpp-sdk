@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::GetPackageRequest;
 
 GetPackageRequest::GetPackageRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "GetPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPackageRequest::~GetPackageRequest()
 {}

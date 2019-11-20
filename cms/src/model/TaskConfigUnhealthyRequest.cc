@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::TaskConfigUnhealthyRequest;
 
 TaskConfigUnhealthyRequest::TaskConfigUnhealthyRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "TaskConfigUnhealthy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaskConfigUnhealthyRequest::~TaskConfigUnhealthyRequest()
 {}
@@ -33,7 +35,8 @@ std::vector<long> TaskConfigUnhealthyRequest::getTaskIdList()const
 void TaskConfigUnhealthyRequest::setTaskIdList(const std::vector<long>& taskIdList)
 {
 	taskIdList_ = taskIdList;
-	for(int i = 0; i!= taskIdList.size(); i++)
-		setCoreParameter("TaskIdList."+ std::to_string(i), std::to_string(taskIdList.at(i)));
+	for(int dep1 = 0; dep1!= taskIdList.size(); dep1++) {
+		setCoreParameter("TaskIdList."+ std::to_string(dep1), std::to_string(taskIdList.at(dep1)));
+	}
 }
 

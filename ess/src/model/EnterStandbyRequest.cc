@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::EnterStandbyRequest;
 
 EnterStandbyRequest::EnterStandbyRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "EnterStandby")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EnterStandbyRequest::~EnterStandbyRequest()
 {}
@@ -77,7 +79,8 @@ std::vector<std::string> EnterStandbyRequest::getInstanceId()const
 void EnterStandbyRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 

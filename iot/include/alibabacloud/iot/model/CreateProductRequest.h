@@ -43,6 +43,10 @@ namespace AlibabaCloud
 				void setJoinPermissionId(const std::string& joinPermissionId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAuthType()const;
+				void setAuthType(const std::string& authType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getProductName()const;
@@ -65,6 +69,8 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string joinPermissionId_;
 				std::string accessKeyId_;
+				std::string authType_;
+				std::string resourceGroupId_;
 				std::string iotInstanceId_;
 				std::string productName_;
 				std::string aliyunCommodityCode_;

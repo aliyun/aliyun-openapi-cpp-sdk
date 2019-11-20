@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeGrantRulesRequest;
 
 DescribeGrantRulesRequest::DescribeGrantRulesRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeGrantRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGrantRulesRequest::~DescribeGrantRulesRequest()
 {}
@@ -36,15 +38,15 @@ void DescribeGrantRulesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeGrantRulesRequest::getPageNumber()const
+int DescribeGrantRulesRequest::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeGrantRulesRequest::setPageNumber(const std::string& pageNumber)
+void DescribeGrantRulesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGrantRulesRequest::getRegionId()const
@@ -58,15 +60,15 @@ void DescribeGrantRulesRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeGrantRulesRequest::getPageSize()const
+int DescribeGrantRulesRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeGrantRulesRequest::setPageSize(const std::string& pageSize)
+void DescribeGrantRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGrantRulesRequest::getResourceOwnerAccount()const

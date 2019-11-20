@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpgradeCdiBaseBagRequest;
 
 UpgradeCdiBaseBagRequest::UpgradeCdiBaseBagRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpgradeCdiBaseBag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeCdiBaseBagRequest::~UpgradeCdiBaseBagRequest()
 {}

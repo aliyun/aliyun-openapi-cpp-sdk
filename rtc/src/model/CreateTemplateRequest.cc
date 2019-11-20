@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::CreateTemplateRequest;
 
 CreateTemplateRequest::CreateTemplateRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "CreateTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateTemplateRequest::~CreateTemplateRequest()
 {}
@@ -44,12 +46,11 @@ std::vector<CreateTemplateRequest::LiveConfig> CreateTemplateRequest::getLiveCon
 void CreateTemplateRequest::setLiveConfig(const std::vector<LiveConfig>& liveConfig)
 {
 	liveConfig_ = liveConfig;
-	int i = 0;
-	for(int i = 0; i!= liveConfig.size(); i++)	{
-		auto obj = liveConfig.at(i);
-		std::string str ="LiveConfig."+ std::to_string(i);
-		setCoreParameter(str + ".DomainName", obj.domainName);
-		setCoreParameter(str + ".AppName", obj.appName);
+	for(int dep1 = 0; dep1!= liveConfig.size(); dep1++) {
+		auto liveConfigObj = liveConfig.at(dep1);
+		std::string liveConfigObjStr = "LiveConfig." + std::to_string(dep1);
+		setCoreParameter(liveConfigObjStr + ".DomainName", liveConfigObj.domainName);
+		setCoreParameter(liveConfigObjStr + ".AppName", liveConfigObj.appName);
 	}
 }
 
@@ -83,15 +84,14 @@ std::vector<CreateTemplateRequest::RecordConfig> CreateTemplateRequest::getRecor
 void CreateTemplateRequest::setRecordConfig(const std::vector<RecordConfig>& recordConfig)
 {
 	recordConfig_ = recordConfig;
-	int i = 0;
-	for(int i = 0; i!= recordConfig.size(); i++)	{
-		auto obj = recordConfig.at(i);
-		std::string str ="RecordConfig."+ std::to_string(i);
-		setCoreParameter(str + ".StorageType", obj.storageType);
-		setCoreParameter(str + ".FileFormat", std::to_string(obj.fileFormat));
-		setCoreParameter(str + ".OssEndPoint", obj.ossEndPoint);
-		setCoreParameter(str + ".OssBucket", obj.ossBucket);
-		setCoreParameter(str + ".VodTransCodeGroupId", std::to_string(obj.vodTransCodeGroupId));
+	for(int dep1 = 0; dep1!= recordConfig.size(); dep1++) {
+		auto recordConfigObj = recordConfig.at(dep1);
+		std::string recordConfigObjStr = "RecordConfig." + std::to_string(dep1);
+		setCoreParameter(recordConfigObjStr + ".StorageType", recordConfigObj.storageType);
+		setCoreParameter(recordConfigObjStr + ".FileFormat", std::to_string(recordConfigObj.fileFormat));
+		setCoreParameter(recordConfigObjStr + ".OssEndPoint", recordConfigObj.ossEndPoint);
+		setCoreParameter(recordConfigObjStr + ".OssBucket", recordConfigObj.ossBucket);
+		setCoreParameter(recordConfigObjStr + ".VodTransCodeGroupId", std::to_string(recordConfigObj.vodTransCodeGroupId));
 	}
 }
 
@@ -114,13 +114,12 @@ std::vector<CreateTemplateRequest::LayOut> CreateTemplateRequest::getLayOut()con
 void CreateTemplateRequest::setLayOut(const std::vector<LayOut>& layOut)
 {
 	layOut_ = layOut;
-	int i = 0;
-	for(int i = 0; i!= layOut.size(); i++)	{
-		auto obj = layOut.at(i);
-		std::string str ="LayOut."+ std::to_string(i);
-		setCoreParameter(str + ".Color", obj.color);
-		setCoreParameter(str + ".CutMode", std::to_string(obj.cutMode));
-		setCoreParameter(str + ".LayOutId", std::to_string(obj.layOutId));
+	for(int dep1 = 0; dep1!= layOut.size(); dep1++) {
+		auto layOutObj = layOut.at(dep1);
+		std::string layOutObjStr = "LayOut." + std::to_string(dep1);
+		setCoreParameter(layOutObjStr + ".Color", layOutObj.color);
+		setCoreParameter(layOutObjStr + ".CutMode", std::to_string(layOutObj.cutMode));
+		setCoreParameter(layOutObjStr + ".LayOutId", std::to_string(layOutObj.layOutId));
 	}
 }
 

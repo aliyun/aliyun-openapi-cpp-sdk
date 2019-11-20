@@ -20,7 +20,9 @@ using AlibabaCloud::Sts::Model::AssumeRoleWithSAMLRequest;
 
 AssumeRoleWithSAMLRequest::AssumeRoleWithSAMLRequest() :
 	RpcServiceRequest("sts", "2015-04-01", "AssumeRoleWithSAML")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssumeRoleWithSAMLRequest::~AssumeRoleWithSAMLRequest()
 {}

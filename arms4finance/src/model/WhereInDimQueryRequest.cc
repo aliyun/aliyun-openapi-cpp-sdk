@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS4FINANCE::Model::WhereInDimQueryRequest;
 
 WhereInDimQueryRequest::WhereInDimQueryRequest() :
 	RpcServiceRequest("arms4finance", "2017-11-30", "WhereInDimQuery")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 WhereInDimQueryRequest::~WhereInDimQueryRequest()
 {}
@@ -77,8 +79,9 @@ std::vector<std::string> WhereInDimQueryRequest::getMeasures()const
 void WhereInDimQueryRequest::setMeasures(const std::vector<std::string>& measures)
 {
 	measures_ = measures;
-	for(int i = 0; i!= measures.size(); i++)
-		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
+	for(int dep1 = 0; dep1!= measures.size(); dep1++) {
+		setCoreParameter("Measures."+ std::to_string(dep1), measures.at(dep1));
+	}
 }
 
 int WhereInDimQueryRequest::getIntervalInSec()const
@@ -122,8 +125,9 @@ std::vector<std::string> WhereInDimQueryRequest::getWhereInValues()const
 void WhereInDimQueryRequest::setWhereInValues(const std::vector<std::string>& whereInValues)
 {
 	whereInValues_ = whereInValues;
-	for(int i = 0; i!= whereInValues.size(); i++)
-		setCoreParameter("WhereInValues."+ std::to_string(i), whereInValues.at(i));
+	for(int dep1 = 0; dep1!= whereInValues.size(); dep1++) {
+		setCoreParameter("WhereInValues."+ std::to_string(dep1), whereInValues.at(dep1));
+	}
 }
 
 std::vector<WhereInDimQueryRequest::Dimensions> WhereInDimQueryRequest::getDimensions()const
@@ -134,12 +138,11 @@ std::vector<WhereInDimQueryRequest::Dimensions> WhereInDimQueryRequest::getDimen
 void WhereInDimQueryRequest::setDimensions(const std::vector<Dimensions>& dimensions)
 {
 	dimensions_ = dimensions;
-	int i = 0;
-	for(int i = 0; i!= dimensions.size(); i++)	{
-		auto obj = dimensions.at(i);
-		std::string str ="Dimensions."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= dimensions.size(); dep1++) {
+		auto dimensionsObj = dimensions.at(dep1);
+		std::string dimensionsObjStr = "Dimensions." + std::to_string(dep1);
+		setCoreParameter(dimensionsObjStr + ".Value", dimensionsObj.value);
+		setCoreParameter(dimensionsObjStr + ".Key", dimensionsObj.key);
 	}
 }
 

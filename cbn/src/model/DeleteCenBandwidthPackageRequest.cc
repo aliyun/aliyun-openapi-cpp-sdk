@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DeleteCenBandwidthPackageRequest;
 
 DeleteCenBandwidthPackageRequest::DeleteCenBandwidthPackageRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DeleteCenBandwidthPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCenBandwidthPackageRequest::~DeleteCenBandwidthPackageRequest()
 {}

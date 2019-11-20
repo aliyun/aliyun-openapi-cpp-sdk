@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeHistoryMonitorValuesRequest;
 
 DescribeHistoryMonitorValuesRequest::DescribeHistoryMonitorValuesRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeHistoryMonitorValues")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeHistoryMonitorValuesRequest::~DescribeHistoryMonitorValuesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopDataAlarmRequest;
 
 ShopDataAlarmRequest::ShopDataAlarmRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopDataAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopDataAlarmRequest::~ShopDataAlarmRequest()
 {}

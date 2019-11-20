@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateRuleRequest;
 
 CreateRuleRequest::CreateRuleRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRuleRequest::~CreateRuleRequest()
 {}
@@ -47,17 +49,6 @@ void CreateRuleRequest::setRuleDesc(const std::string& ruleDesc)
 	setCoreParameter("RuleDesc", ruleDesc);
 }
 
-std::string CreateRuleRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void CreateRuleRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
-
 std::string CreateRuleRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,6 +69,17 @@ void CreateRuleRequest::setShortTopic(const std::string& shortTopic)
 {
 	shortTopic_ = shortTopic;
 	setCoreParameter("ShortTopic", shortTopic);
+}
+
+std::string CreateRuleRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateRuleRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateRuleRequest::getDataType()const
@@ -102,17 +104,6 @@ void CreateRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
 	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
-std::string CreateRuleRequest::getName()const
-{
-	return name_;
-}
-
-void CreateRuleRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string CreateRuleRequest::getWhere()const
 {
 	return where_;
@@ -133,5 +124,27 @@ void CreateRuleRequest::setTopicType(int topicType)
 {
 	topicType_ = topicType;
 	setCoreParameter("TopicType", std::to_string(topicType));
+}
+
+std::string CreateRuleRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void CreateRuleRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string CreateRuleRequest::getName()const
+{
+	return name_;
+}
+
+void CreateRuleRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

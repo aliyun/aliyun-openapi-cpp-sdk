@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeUidWhiteListGroupRequest;
 
 DescribeUidWhiteListGroupRequest::DescribeUidWhiteListGroupRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeUidWhiteListGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUidWhiteListGroupRequest::~DescribeUidWhiteListGroupRequest()
 {}

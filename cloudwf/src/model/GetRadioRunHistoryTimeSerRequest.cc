@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetRadioRunHistoryTimeSerRequest;
 
 GetRadioRunHistoryTimeSerRequest::GetRadioRunHistoryTimeSerRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetRadioRunHistoryTimeSer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRadioRunHistoryTimeSerRequest::~GetRadioRunHistoryTimeSerRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DisassociateFlowLogRequest;
 
 DisassociateFlowLogRequest::DisassociateFlowLogRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DisassociateFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisassociateFlowLogRequest::~DisassociateFlowLogRequest()
 {}

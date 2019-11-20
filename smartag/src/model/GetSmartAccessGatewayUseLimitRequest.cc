@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::GetSmartAccessGatewayUseLimitRequest;
 
 GetSmartAccessGatewayUseLimitRequest::GetSmartAccessGatewayUseLimitRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "GetSmartAccessGatewayUseLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSmartAccessGatewayUseLimitRequest::~GetSmartAccessGatewayUseLimitRequest()
 {}

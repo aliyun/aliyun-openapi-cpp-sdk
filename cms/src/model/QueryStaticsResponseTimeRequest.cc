@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::QueryStaticsResponseTimeRequest;
 
 QueryStaticsResponseTimeRequest::QueryStaticsResponseTimeRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "QueryStaticsResponseTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryStaticsResponseTimeRequest::~QueryStaticsResponseTimeRequest()
 {}

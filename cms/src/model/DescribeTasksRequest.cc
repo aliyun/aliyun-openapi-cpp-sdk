@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DescribeTasksRequest;
 
 DescribeTasksRequest::DescribeTasksRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DescribeTasks")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTasksRequest::~DescribeTasksRequest()
 {}

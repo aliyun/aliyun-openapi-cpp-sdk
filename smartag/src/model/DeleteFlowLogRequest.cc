@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteFlowLogRequest;
 
 DeleteFlowLogRequest::DeleteFlowLogRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFlowLogRequest::~DeleteFlowLogRequest()
 {}

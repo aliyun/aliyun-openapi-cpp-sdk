@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyExpressCloudConnectionBandwidthRequest;
 
 ModifyExpressCloudConnectionBandwidthRequest::ModifyExpressCloudConnectionBandwidthRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyExpressCloudConnectionBandwidth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyExpressCloudConnectionBandwidthRequest::~ModifyExpressCloudConnectionBandwidthRequest()
 {}

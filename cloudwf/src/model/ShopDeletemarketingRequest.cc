@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopDeletemarketingRequest;
 
 ShopDeletemarketingRequest::ShopDeletemarketingRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopDeletemarketing")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopDeletemarketingRequest::~ShopDeletemarketingRequest()
 {}

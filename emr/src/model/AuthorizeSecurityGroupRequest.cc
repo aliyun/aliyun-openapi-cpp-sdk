@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::AuthorizeSecurityGroupRequest;
 
 AuthorizeSecurityGroupRequest::AuthorizeSecurityGroupRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "AuthorizeSecurityGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AuthorizeSecurityGroupRequest::~AuthorizeSecurityGroupRequest()
 {}

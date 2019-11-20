@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenGeographicSpanRemainingBandwidthReque
 
 DescribeCenGeographicSpanRemainingBandwidthRequest::DescribeCenGeographicSpanRemainingBandwidthRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenGeographicSpanRemainingBandwidth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenGeographicSpanRemainingBandwidthRequest::~DescribeCenGeographicSpanRemainingBandwidthRequest()
 {}

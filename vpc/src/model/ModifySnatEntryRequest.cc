@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifySnatEntryRequest;
 
 ModifySnatEntryRequest::ModifySnatEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifySnatEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySnatEntryRequest::~ModifySnatEntryRequest()
 {}

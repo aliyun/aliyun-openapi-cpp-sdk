@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::RecordLifecycleActionHeartbeatRequest;
 
 RecordLifecycleActionHeartbeatRequest::RecordLifecycleActionHeartbeatRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "RecordLifecycleActionHeartbeat")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RecordLifecycleActionHeartbeatRequest::~RecordLifecycleActionHeartbeatRequest()
 {}

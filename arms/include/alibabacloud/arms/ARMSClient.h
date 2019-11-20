@@ -28,10 +28,14 @@
 #include "model/CreateAlertContactGroupResult.h"
 #include "model/CreateRetcodeAppRequest.h"
 #include "model/CreateRetcodeAppResult.h"
+#include "model/DeleteAlertRulesRequest.h"
+#include "model/DeleteAlertRulesResult.h"
 #include "model/DeleteRetcodeAppRequest.h"
 #include "model/DeleteRetcodeAppResult.h"
 #include "model/ImportAppAlertRulesRequest.h"
 #include "model/ImportAppAlertRulesResult.h"
+#include "model/ImportCustomAlertRulesRequest.h"
+#include "model/ImportCustomAlertRulesResult.h"
 #include "model/ListRetcodeAppsRequest.h"
 #include "model/ListRetcodeAppsResult.h"
 #include "model/ListTraceAppsRequest.h"
@@ -44,6 +48,8 @@
 #include "model/SearchAlertContactResult.h"
 #include "model/SearchAlertContactGroupRequest.h"
 #include "model/SearchAlertContactGroupResult.h"
+#include "model/SearchAlertRulesRequest.h"
+#include "model/SearchAlertRulesResult.h"
 #include "model/SearchRetcodeAppByPageRequest.h"
 #include "model/SearchRetcodeAppByPageResult.h"
 #include "model/SearchTraceAppByNameRequest.h"
@@ -68,12 +74,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRetcodeAppResult> CreateRetcodeAppOutcome;
 			typedef std::future<CreateRetcodeAppOutcome> CreateRetcodeAppOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CreateRetcodeAppRequest&, const CreateRetcodeAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRetcodeAppAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAlertRulesResult> DeleteAlertRulesOutcome;
+			typedef std::future<DeleteAlertRulesOutcome> DeleteAlertRulesOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::DeleteAlertRulesRequest&, const DeleteAlertRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlertRulesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRetcodeAppResult> DeleteRetcodeAppOutcome;
 			typedef std::future<DeleteRetcodeAppOutcome> DeleteRetcodeAppOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::DeleteRetcodeAppRequest&, const DeleteRetcodeAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRetcodeAppAsyncHandler;
 			typedef Outcome<Error, Model::ImportAppAlertRulesResult> ImportAppAlertRulesOutcome;
 			typedef std::future<ImportAppAlertRulesOutcome> ImportAppAlertRulesOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ImportAppAlertRulesRequest&, const ImportAppAlertRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportAppAlertRulesAsyncHandler;
+			typedef Outcome<Error, Model::ImportCustomAlertRulesResult> ImportCustomAlertRulesOutcome;
+			typedef std::future<ImportCustomAlertRulesOutcome> ImportCustomAlertRulesOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::ImportCustomAlertRulesRequest&, const ImportCustomAlertRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportCustomAlertRulesAsyncHandler;
 			typedef Outcome<Error, Model::ListRetcodeAppsResult> ListRetcodeAppsOutcome;
 			typedef std::future<ListRetcodeAppsOutcome> ListRetcodeAppsOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ListRetcodeAppsRequest&, const ListRetcodeAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRetcodeAppsAsyncHandler;
@@ -92,6 +104,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchAlertContactGroupResult> SearchAlertContactGroupOutcome;
 			typedef std::future<SearchAlertContactGroupOutcome> SearchAlertContactGroupOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::SearchAlertContactGroupRequest&, const SearchAlertContactGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchAlertContactGroupAsyncHandler;
+			typedef Outcome<Error, Model::SearchAlertRulesResult> SearchAlertRulesOutcome;
+			typedef std::future<SearchAlertRulesOutcome> SearchAlertRulesOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::SearchAlertRulesRequest&, const SearchAlertRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchAlertRulesAsyncHandler;
 			typedef Outcome<Error, Model::SearchRetcodeAppByPageResult> SearchRetcodeAppByPageOutcome;
 			typedef std::future<SearchRetcodeAppByPageOutcome> SearchRetcodeAppByPageOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::SearchRetcodeAppByPageRequest&, const SearchRetcodeAppByPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchRetcodeAppByPageAsyncHandler;
@@ -115,12 +130,18 @@ namespace AlibabaCloud
 			CreateRetcodeAppOutcome createRetcodeApp(const Model::CreateRetcodeAppRequest &request)const;
 			void createRetcodeAppAsync(const Model::CreateRetcodeAppRequest& request, const CreateRetcodeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRetcodeAppOutcomeCallable createRetcodeAppCallable(const Model::CreateRetcodeAppRequest& request) const;
+			DeleteAlertRulesOutcome deleteAlertRules(const Model::DeleteAlertRulesRequest &request)const;
+			void deleteAlertRulesAsync(const Model::DeleteAlertRulesRequest& request, const DeleteAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAlertRulesOutcomeCallable deleteAlertRulesCallable(const Model::DeleteAlertRulesRequest& request) const;
 			DeleteRetcodeAppOutcome deleteRetcodeApp(const Model::DeleteRetcodeAppRequest &request)const;
 			void deleteRetcodeAppAsync(const Model::DeleteRetcodeAppRequest& request, const DeleteRetcodeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRetcodeAppOutcomeCallable deleteRetcodeAppCallable(const Model::DeleteRetcodeAppRequest& request) const;
 			ImportAppAlertRulesOutcome importAppAlertRules(const Model::ImportAppAlertRulesRequest &request)const;
 			void importAppAlertRulesAsync(const Model::ImportAppAlertRulesRequest& request, const ImportAppAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportAppAlertRulesOutcomeCallable importAppAlertRulesCallable(const Model::ImportAppAlertRulesRequest& request) const;
+			ImportCustomAlertRulesOutcome importCustomAlertRules(const Model::ImportCustomAlertRulesRequest &request)const;
+			void importCustomAlertRulesAsync(const Model::ImportCustomAlertRulesRequest& request, const ImportCustomAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ImportCustomAlertRulesOutcomeCallable importCustomAlertRulesCallable(const Model::ImportCustomAlertRulesRequest& request) const;
 			ListRetcodeAppsOutcome listRetcodeApps(const Model::ListRetcodeAppsRequest &request)const;
 			void listRetcodeAppsAsync(const Model::ListRetcodeAppsRequest& request, const ListRetcodeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRetcodeAppsOutcomeCallable listRetcodeAppsCallable(const Model::ListRetcodeAppsRequest& request) const;
@@ -139,6 +160,9 @@ namespace AlibabaCloud
 			SearchAlertContactGroupOutcome searchAlertContactGroup(const Model::SearchAlertContactGroupRequest &request)const;
 			void searchAlertContactGroupAsync(const Model::SearchAlertContactGroupRequest& request, const SearchAlertContactGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchAlertContactGroupOutcomeCallable searchAlertContactGroupCallable(const Model::SearchAlertContactGroupRequest& request) const;
+			SearchAlertRulesOutcome searchAlertRules(const Model::SearchAlertRulesRequest &request)const;
+			void searchAlertRulesAsync(const Model::SearchAlertRulesRequest& request, const SearchAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchAlertRulesOutcomeCallable searchAlertRulesCallable(const Model::SearchAlertRulesRequest& request) const;
 			SearchRetcodeAppByPageOutcome searchRetcodeAppByPage(const Model::SearchRetcodeAppByPageRequest &request)const;
 			void searchRetcodeAppByPageAsync(const Model::SearchRetcodeAppByPageRequest& request, const SearchRetcodeAppByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchRetcodeAppByPageOutcomeCallable searchRetcodeAppByPageCallable(const Model::SearchRetcodeAppByPageRequest& request) const;

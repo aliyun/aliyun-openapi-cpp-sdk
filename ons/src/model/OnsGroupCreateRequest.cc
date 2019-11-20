@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsGroupCreateRequest;
 
 OnsGroupCreateRequest::OnsGroupCreateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsGroupCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsGroupCreateRequest::~OnsGroupCreateRequest()
 {}

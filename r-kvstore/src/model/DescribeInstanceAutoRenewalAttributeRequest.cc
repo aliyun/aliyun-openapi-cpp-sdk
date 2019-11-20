@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeInstanceAutoRenewalAttributeReques
 
 DescribeInstanceAutoRenewalAttributeRequest::DescribeInstanceAutoRenewalAttributeRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceAutoRenewalAttributeRequest::~DescribeInstanceAutoRenewalAttributeRequest()
 {}

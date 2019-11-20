@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::ModifyScalingGroupRequest;
 
 ModifyScalingGroupRequest::ModifyScalingGroupRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "ModifyScalingGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyScalingGroupRequest::~ModifyScalingGroupRequest()
 {}
@@ -55,8 +57,9 @@ std::vector<std::string> ModifyScalingGroupRequest::getVSwitchIds()const
 void ModifyScalingGroupRequest::setVSwitchIds(const std::vector<std::string>& vSwitchIds)
 {
 	vSwitchIds_ = vSwitchIds;
-	for(int i = 0; i!= vSwitchIds.size(); i++)
-		setCoreParameter("VSwitchIds."+ std::to_string(i), vSwitchIds.at(i));
+	for(int dep1 = 0; dep1!= vSwitchIds.size(); dep1++) {
+		setCoreParameter("VSwitchIds."+ std::to_string(dep1), vSwitchIds.at(dep1));
+	}
 }
 
 std::string ModifyScalingGroupRequest::getActiveScalingConfigurationId()const
@@ -169,6 +172,17 @@ void ModifyScalingGroupRequest::setLaunchTemplateId(const std::string& launchTem
 	setCoreParameter("LaunchTemplateId", launchTemplateId);
 }
 
+int ModifyScalingGroupRequest::getDesiredCapacity()const
+{
+	return desiredCapacity_;
+}
+
+void ModifyScalingGroupRequest::setDesiredCapacity(int desiredCapacity)
+{
+	desiredCapacity_ = desiredCapacity;
+	setCoreParameter("DesiredCapacity", std::to_string(desiredCapacity));
+}
+
 std::string ModifyScalingGroupRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -222,6 +236,17 @@ void ModifyScalingGroupRequest::setMinSize(int minSize)
 {
 	minSize_ = minSize;
 	setCoreParameter("MinSize", std::to_string(minSize));
+}
+
+bool ModifyScalingGroupRequest::getGroupDeletionProtection()const
+{
+	return groupDeletionProtection_;
+}
+
+void ModifyScalingGroupRequest::setGroupDeletionProtection(bool groupDeletionProtection)
+{
+	groupDeletionProtection_ = groupDeletionProtection;
+	setCoreParameter("GroupDeletionProtection", groupDeletionProtection ? "true" : "false");
 }
 
 long ModifyScalingGroupRequest::getOwnerId()const

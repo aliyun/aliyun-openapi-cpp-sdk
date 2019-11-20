@@ -37,35 +37,35 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getEffectiveTime()const;
 				void setEffectiveTime(const std::string& effectiveTime);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getForce()const;
-				void setForce(const std::string& force);
 				std::string getNodeId()const;
 				void setNodeId(const std::string& nodeId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getForce()const;
+				void setForce(const std::string& force);
 				std::string getOperation()const;
 				void setOperation(const std::string& operation);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
 				std::string accessKeyId_;
 				std::string effectiveTime_;
 				std::string dBInstanceId_;
-				std::string force_;
 				std::string nodeId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string force_;
 				std::string operation_;
 
 			};

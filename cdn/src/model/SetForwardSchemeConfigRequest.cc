@@ -19,35 +19,13 @@
 using AlibabaCloud::Cdn::Model::SetForwardSchemeConfigRequest;
 
 SetForwardSchemeConfigRequest::SetForwardSchemeConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetForwardSchemeConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetForwardSchemeConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 SetForwardSchemeConfigRequest::~SetForwardSchemeConfigRequest()
 {}
-
-std::string SetForwardSchemeConfigRequest::getSchemeOriginPort()const
-{
-	return schemeOriginPort_;
-}
-
-void SetForwardSchemeConfigRequest::setSchemeOriginPort(const std::string& schemeOriginPort)
-{
-	schemeOriginPort_ = schemeOriginPort;
-	setCoreParameter("SchemeOriginPort", schemeOriginPort);
-}
-
-std::string SetForwardSchemeConfigRequest::getEnable()const
-{
-	return enable_;
-}
-
-void SetForwardSchemeConfigRequest::setEnable(const std::string& enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable);
-}
 
 std::string SetForwardSchemeConfigRequest::getSchemeOrigin()const
 {
@@ -58,6 +36,17 @@ void SetForwardSchemeConfigRequest::setSchemeOrigin(const std::string& schemeOri
 {
 	schemeOrigin_ = schemeOrigin;
 	setCoreParameter("SchemeOrigin", schemeOrigin);
+}
+
+std::string SetForwardSchemeConfigRequest::getSchemeOriginPort()const
+{
+	return schemeOriginPort_;
+}
+
+void SetForwardSchemeConfigRequest::setSchemeOriginPort(const std::string& schemeOriginPort)
+{
+	schemeOriginPort_ = schemeOriginPort;
+	setCoreParameter("SchemeOriginPort", schemeOriginPort);
 }
 
 std::string SetForwardSchemeConfigRequest::getDomainName()const
@@ -82,14 +71,25 @@ void SetForwardSchemeConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-long SetForwardSchemeConfigRequest::getConfigId()const
+std::string SetForwardSchemeConfigRequest::getSecurityToken()const
 {
-	return configId_;
+	return securityToken_;
 }
 
-void SetForwardSchemeConfigRequest::setConfigId(long configId)
+void SetForwardSchemeConfigRequest::setSecurityToken(const std::string& securityToken)
 {
-	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetForwardSchemeConfigRequest::getEnable()const
+{
+	return enable_;
+}
+
+void SetForwardSchemeConfigRequest::setEnable(const std::string& enable)
+{
+	enable_ = enable;
+	setCoreParameter("Enable", enable);
 }
 

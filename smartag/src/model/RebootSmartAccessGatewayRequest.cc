@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::RebootSmartAccessGatewayRequest;
 
 RebootSmartAccessGatewayRequest::RebootSmartAccessGatewayRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "RebootSmartAccessGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RebootSmartAccessGatewayRequest::~RebootSmartAccessGatewayRequest()
 {}

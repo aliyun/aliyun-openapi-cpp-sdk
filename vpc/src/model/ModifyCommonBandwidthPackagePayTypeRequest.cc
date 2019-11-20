@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyCommonBandwidthPackagePayTypeRequest;
 
 ModifyCommonBandwidthPackagePayTypeRequest::ModifyCommonBandwidthPackagePayTypeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyCommonBandwidthPackagePayType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCommonBandwidthPackagePayTypeRequest::~ModifyCommonBandwidthPackagePayTypeRequest()
 {}

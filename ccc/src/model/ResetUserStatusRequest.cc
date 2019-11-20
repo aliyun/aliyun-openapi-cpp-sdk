@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ResetUserStatusRequest;
 
 ResetUserStatusRequest::ResetUserStatusRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ResetUserStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetUserStatusRequest::~ResetUserStatusRequest()
 {}

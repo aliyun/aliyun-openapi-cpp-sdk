@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SetDefaultAITemplateRequest;
 
 SetDefaultAITemplateRequest::SetDefaultAITemplateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SetDefaultAITemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDefaultAITemplateRequest::~SetDefaultAITemplateRequest()
 {}

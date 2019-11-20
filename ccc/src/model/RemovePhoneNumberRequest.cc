@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::RemovePhoneNumberRequest;
 
 RemovePhoneNumberRequest::RemovePhoneNumberRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "RemovePhoneNumber")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemovePhoneNumberRequest::~RemovePhoneNumberRequest()
 {}

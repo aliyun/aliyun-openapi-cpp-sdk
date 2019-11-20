@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudauth::Model::ModifyDeviceInfoRequest;
 
 ModifyDeviceInfoRequest::ModifyDeviceInfoRequest() :
 	RpcServiceRequest("cloudauth", "2018-09-16", "ModifyDeviceInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDeviceInfoRequest::~ModifyDeviceInfoRequest()
 {}

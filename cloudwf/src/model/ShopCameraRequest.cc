@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopCameraRequest;
 
 ShopCameraRequest::ShopCameraRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopCamera")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopCameraRequest::~ShopCameraRequest()
 {}

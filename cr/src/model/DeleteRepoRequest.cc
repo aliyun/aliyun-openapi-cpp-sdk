@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::DeleteRepoRequest;
 
 DeleteRepoRequest::DeleteRepoRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteRepoRequest::~DeleteRepoRequest()
 {}

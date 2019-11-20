@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::CreateConfigRequest;
 
 CreateConfigRequest::CreateConfigRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "CreateConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateConfigRequest::~CreateConfigRequest()
 {}

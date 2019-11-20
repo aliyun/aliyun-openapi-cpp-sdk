@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::AddTagsToResourceRequest;
 
 AddTagsToResourceRequest::AddTagsToResourceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "AddTagsToResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddTagsToResourceRequest::~AddTagsToResourceRequest()
 {}

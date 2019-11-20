@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeGrantSagRulesRequest;
 
 DescribeGrantSagRulesRequest::DescribeGrantSagRulesRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeGrantSagRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGrantSagRulesRequest::~DescribeGrantSagRulesRequest()
 {}

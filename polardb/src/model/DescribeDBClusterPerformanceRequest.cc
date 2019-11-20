@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::DescribeDBClusterPerformanceRequest;
 
 DescribeDBClusterPerformanceRequest::DescribeDBClusterPerformanceRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "DescribeDBClusterPerformance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBClusterPerformanceRequest::~DescribeDBClusterPerformanceRequest()
 {}

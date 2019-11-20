@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyDBInstanceConnectionStringRequest;
 
 ModifyDBInstanceConnectionStringRequest::ModifyDBInstanceConnectionStringRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceConnectionStringRequest::~ModifyDBInstanceConnectionStringRequest()
 {}

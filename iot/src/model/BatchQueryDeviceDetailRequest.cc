@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchQueryDeviceDetailRequest;
 
 BatchQueryDeviceDetailRequest::BatchQueryDeviceDetailRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchQueryDeviceDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchQueryDeviceDetailRequest::~BatchQueryDeviceDetailRequest()
 {}
@@ -55,7 +57,8 @@ std::vector<std::string> BatchQueryDeviceDetailRequest::getDeviceName()const
 void BatchQueryDeviceDetailRequest::setDeviceName(const std::vector<std::string>& deviceName)
 {
 	deviceName_ = deviceName;
-	for(int i = 0; i!= deviceName.size(); i++)
-		setCoreParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
+	for(int dep1 = 0; dep1!= deviceName.size(); dep1++) {
+		setCoreParameter("DeviceName."+ std::to_string(dep1), deviceName.at(dep1));
+	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::AssociateEipAddressRequest;
 
 AssociateEipAddressRequest::AssociateEipAddressRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "AssociateEipAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssociateEipAddressRequest::~AssociateEipAddressRequest()
 {}

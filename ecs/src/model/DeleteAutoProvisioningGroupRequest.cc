@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteAutoProvisioningGroupRequest;
 
 DeleteAutoProvisioningGroupRequest::DeleteAutoProvisioningGroupRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteAutoProvisioningGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAutoProvisioningGroupRequest::~DeleteAutoProvisioningGroupRequest()
 {}

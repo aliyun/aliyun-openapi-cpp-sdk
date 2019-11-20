@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindApproveServiceListRequest;
 
 FindApproveServiceListRequest::FindApproveServiceListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindApproveServiceList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindApproveServiceListRequest::~FindApproveServiceListRequest()
 {}

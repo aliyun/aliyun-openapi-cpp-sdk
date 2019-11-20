@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListClustersRequest;
 
 ListClustersRequest::ListClustersRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListClusters")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListClustersRequest::~ListClustersRequest()
 {}
@@ -44,8 +46,9 @@ std::vector<std::string> ListClustersRequest::getStatusList()const
 void ListClustersRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setCoreParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 bool ListClustersRequest::getIsDesc()const
@@ -155,7 +158,8 @@ std::vector<std::string> ListClustersRequest::getClusterTypeList()const
 void ListClustersRequest::setClusterTypeList(const std::vector<std::string>& clusterTypeList)
 {
 	clusterTypeList_ = clusterTypeList;
-	for(int i = 0; i!= clusterTypeList.size(); i++)
-		setCoreParameter("ClusterTypeList."+ std::to_string(i), clusterTypeList.at(i));
+	for(int dep1 = 0; dep1!= clusterTypeList.size(); dep1++) {
+		setCoreParameter("ClusterTypeList."+ std::to_string(dep1), clusterTypeList.at(dep1));
+	}
 }
 

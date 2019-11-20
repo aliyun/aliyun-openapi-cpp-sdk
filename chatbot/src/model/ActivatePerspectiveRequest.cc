@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::ActivatePerspectiveRequest;
 
 ActivatePerspectiveRequest::ActivatePerspectiveRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "ActivatePerspective")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ActivatePerspectiveRequest::~ActivatePerspectiveRequest()
 {}

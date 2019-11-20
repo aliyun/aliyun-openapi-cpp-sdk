@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::MigrateToOtherZoneRequest;
 
 MigrateToOtherZoneRequest::MigrateToOtherZoneRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "MigrateToOtherZone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MigrateToOtherZoneRequest::~MigrateToOtherZoneRequest()
 {}

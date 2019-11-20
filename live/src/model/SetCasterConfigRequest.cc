@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetCasterConfigRequest;
 
 SetCasterConfigRequest::SetCasterConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetCasterConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetCasterConfigRequest::~SetCasterConfigRequest()
 {}

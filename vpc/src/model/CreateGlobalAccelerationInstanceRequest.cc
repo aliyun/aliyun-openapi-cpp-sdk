@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateGlobalAccelerationInstanceRequest;
 
 CreateGlobalAccelerationInstanceRequest::CreateGlobalAccelerationInstanceRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateGlobalAccelerationInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateGlobalAccelerationInstanceRequest::~CreateGlobalAccelerationInstanceRequest()
 {}
@@ -133,17 +135,6 @@ void CreateGlobalAccelerationInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateGlobalAccelerationInstanceRequest::getInternetChargeType()const
-{
-	return internetChargeType_;
-}
-
-void CreateGlobalAccelerationInstanceRequest::setInternetChargeType(const std::string& internetChargeType)
-{
-	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
 }
 
 std::string CreateGlobalAccelerationInstanceRequest::getName()const

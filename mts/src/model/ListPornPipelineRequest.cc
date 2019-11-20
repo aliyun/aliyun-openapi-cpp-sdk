@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListPornPipelineRequest;
 
 ListPornPipelineRequest::ListPornPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListPornPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPornPipelineRequest::~ListPornPipelineRequest()
 {}

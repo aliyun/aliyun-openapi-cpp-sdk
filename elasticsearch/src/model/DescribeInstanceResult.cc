@@ -128,6 +128,20 @@ void DescribeInstanceResult::parse(const std::string &payload)
 			zoneInfoObject.status = resultNodezoneInfosZoneInfo["status"].asString();
 		result_.zoneInfos.push_back(zoneInfoObject);
 	}
+	auto allaliwsDictsNode = resultNode["aliwsDicts"]["Dict"];
+	for (auto resultNodealiwsDictsDict : allaliwsDictsNode)
+	{
+		Result::Dict dictObject;
+		if(!resultNodealiwsDictsDict["name"].isNull())
+			dictObject.name = resultNodealiwsDictsDict["name"].asString();
+		if(!resultNodealiwsDictsDict["fileSize"].isNull())
+			dictObject.fileSize = std::stol(resultNodealiwsDictsDict["fileSize"].asString());
+		if(!resultNodealiwsDictsDict["type"].isNull())
+			dictObject.type = resultNodealiwsDictsDict["type"].asString();
+		if(!resultNodealiwsDictsDict["sourceType"].isNull())
+			dictObject.sourceType = resultNodealiwsDictsDict["sourceType"].asString();
+		result_.aliwsDicts.push_back(dictObject);
+	}
 	auto nodeSpecNode = resultNode["nodeSpec"];
 	if(!nodeSpecNode["spec"].isNull())
 		result_.nodeSpec.spec = nodeSpecNode["spec"].asString();
@@ -135,6 +149,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.nodeSpec.disk = std::stoi(nodeSpecNode["disk"].asString());
 	if(!nodeSpecNode["diskType"].isNull())
 		result_.nodeSpec.diskType = nodeSpecNode["diskType"].asString();
+	if(!nodeSpecNode["diskEncryption"].isNull())
+		result_.nodeSpec.diskEncryption = nodeSpecNode["diskEncryption"].asString() == "true";
 	auto networkConfigNode = resultNode["networkConfig"];
 	if(!networkConfigNode["type"].isNull())
 		result_.networkConfig.type = networkConfigNode["type"].asString();
@@ -180,6 +196,11 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.warmNodeConfiguration.diskType = warmNodeConfigurationNode["diskType"].asString();
 	if(!warmNodeConfigurationNode["disk"].isNull())
 		result_.warmNodeConfiguration.disk = std::stoi(warmNodeConfigurationNode["disk"].asString());
+	if(!warmNodeConfigurationNode["diskEncryption"].isNull())
+		result_.warmNodeConfiguration.diskEncryption = warmNodeConfigurationNode["diskEncryption"].asString() == "true";
+	auto advancedSettingNode = resultNode["advancedSetting"];
+	if(!advancedSettingNode["gcName"].isNull())
+		result_.advancedSetting.gcName = advancedSettingNode["gcName"].asString();
 		auto allEsIPWhitelist = resultNode["esIPWhitelist"]["EsIPWhitelist"];
 		for (auto value : allEsIPWhitelist)
 			result_.esIPWhitelist.push_back(value.asString());

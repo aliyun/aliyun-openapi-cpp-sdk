@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsConsumerTimeSpanRequest;
 
 OnsConsumerTimeSpanRequest::OnsConsumerTimeSpanRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsConsumerTimeSpan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsConsumerTimeSpanRequest::~OnsConsumerTimeSpanRequest()
 {}

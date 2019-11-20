@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopGetfiltermacRequest;
 
 ShopGetfiltermacRequest::ShopGetfiltermacRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopGetfiltermac")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopGetfiltermacRequest::~ShopGetfiltermacRequest()
 {}

@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ModifyInstanceStateRequest;
 
 ModifyInstanceStateRequest::ModifyInstanceStateRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/expectstate");
+	setMethod(HttpRequest::Method::Put);
+}
 
 ModifyInstanceStateRequest::~ModifyInstanceStateRequest()
 {}

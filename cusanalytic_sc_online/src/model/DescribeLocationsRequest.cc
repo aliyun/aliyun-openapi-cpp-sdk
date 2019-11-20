@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::DescribeLocationsRequest;
 
 DescribeLocationsRequest::DescribeLocationsRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "DescribeLocations")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLocationsRequest::~DescribeLocationsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetLiveStreamsNotifyUrlConfigRequest;
 
 SetLiveStreamsNotifyUrlConfigRequest::SetLiveStreamsNotifyUrlConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLiveStreamsNotifyUrlConfigRequest::~SetLiveStreamsNotifyUrlConfigRequest()
 {}

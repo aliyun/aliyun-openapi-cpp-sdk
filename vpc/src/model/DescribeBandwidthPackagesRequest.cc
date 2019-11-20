@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeBandwidthPackagesRequest;
 
 DescribeBandwidthPackagesRequest::DescribeBandwidthPackagesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeBandwidthPackages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBandwidthPackagesRequest::~DescribeBandwidthPackagesRequest()
 {}

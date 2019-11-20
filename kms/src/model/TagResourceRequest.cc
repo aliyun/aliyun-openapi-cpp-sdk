@@ -20,7 +20,9 @@ using AlibabaCloud::Kms::Model::TagResourceRequest;
 
 TagResourceRequest::TagResourceRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "TagResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TagResourceRequest::~TagResourceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::ProcessCompanyRegOrderRequest;
 
 ProcessCompanyRegOrderRequest::ProcessCompanyRegOrderRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "ProcessCompanyRegOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProcessCompanyRegOrderRequest::~ProcessCompanyRegOrderRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateOrderDocumentRequest;
 
 CreateOrderDocumentRequest::CreateOrderDocumentRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateOrderDocument")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderDocumentRequest::~CreateOrderDocumentRequest()
 {}

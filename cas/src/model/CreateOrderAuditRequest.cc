@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateOrderAuditRequest;
 
 CreateOrderAuditRequest::CreateOrderAuditRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateOrderAudit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderAuditRequest::~CreateOrderAuditRequest()
 {}

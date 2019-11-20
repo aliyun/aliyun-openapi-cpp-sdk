@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddLiveRecordVodConfigRequest;
 
 AddLiveRecordVodConfigRequest::AddLiveRecordVodConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddLiveRecordVodConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveRecordVodConfigRequest::~AddLiveRecordVodConfigRequest()
 {}

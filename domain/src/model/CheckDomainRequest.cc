@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CheckDomainRequest;
 
 CheckDomainRequest::CheckDomainRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CheckDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckDomainRequest::~CheckDomainRequest()
 {}

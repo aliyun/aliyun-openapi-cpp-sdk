@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateCloudConnectNetworkRequest;
 
 CreateCloudConnectNetworkRequest::CreateCloudConnectNetworkRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateCloudConnectNetwork")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCloudConnectNetworkRequest::~CreateCloudConnectNetworkRequest()
 {}

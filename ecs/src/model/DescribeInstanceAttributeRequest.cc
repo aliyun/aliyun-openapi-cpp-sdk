@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeInstanceAttributeRequest;
 
 DescribeInstanceAttributeRequest::DescribeInstanceAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstanceAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceAttributeRequest::~DescribeInstanceAttributeRequest()
 {}

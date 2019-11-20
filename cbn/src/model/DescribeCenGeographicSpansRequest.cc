@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenGeographicSpansRequest;
 
 DescribeCenGeographicSpansRequest::DescribeCenGeographicSpansRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenGeographicSpans")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenGeographicSpansRequest::~DescribeCenGeographicSpansRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::CreateCenRequest;
 
 CreateCenRequest::CreateCenRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "CreateCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCenRequest::~CreateCenRequest()
 {}

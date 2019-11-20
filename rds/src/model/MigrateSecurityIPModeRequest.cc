@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::MigrateSecurityIPModeRequest;
 
 MigrateSecurityIPModeRequest::MigrateSecurityIPModeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "MigrateSecurityIPMode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MigrateSecurityIPModeRequest::~MigrateSecurityIPModeRequest()
 {}

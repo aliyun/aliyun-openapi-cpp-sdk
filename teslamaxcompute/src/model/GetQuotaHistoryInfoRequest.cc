@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::GetQuotaHistoryInfoRequest;
 
 GetQuotaHistoryInfoRequest::GetQuotaHistoryInfoRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "GetQuotaHistoryInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetQuotaHistoryInfoRequest::~GetQuotaHistoryInfoRequest()
 {}

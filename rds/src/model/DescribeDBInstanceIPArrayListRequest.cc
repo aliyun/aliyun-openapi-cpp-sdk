@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDBInstanceIPArrayListRequest;
 
 DescribeDBInstanceIPArrayListRequest::DescribeDBInstanceIPArrayListRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstanceIPArrayList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceIPArrayListRequest::~DescribeDBInstanceIPArrayListRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetRecordOssUploadParamRequest;
 
 GetRecordOssUploadParamRequest::GetRecordOssUploadParamRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetRecordOssUploadParam")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRecordOssUploadParamRequest::~GetRecordOssUploadParamRequest()
 {}

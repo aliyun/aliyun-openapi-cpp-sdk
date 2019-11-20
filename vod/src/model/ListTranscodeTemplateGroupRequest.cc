@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListTranscodeTemplateGroupRequest;
 
 ListTranscodeTemplateGroupRequest::ListTranscodeTemplateGroupRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListTranscodeTemplateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTranscodeTemplateGroupRequest::~ListTranscodeTemplateGroupRequest()
 {}

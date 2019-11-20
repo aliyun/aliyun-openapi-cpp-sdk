@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DetachDiskRequest;
 
 DetachDiskRequest::DetachDiskRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DetachDisk")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachDiskRequest::~DetachDiskRequest()
 {}

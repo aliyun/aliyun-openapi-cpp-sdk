@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteEdgeInstanceRequest;
 
 DeleteEdgeInstanceRequest::DeleteEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteEdgeInstanceRequest::~DeleteEdgeInstanceRequest()
 {}

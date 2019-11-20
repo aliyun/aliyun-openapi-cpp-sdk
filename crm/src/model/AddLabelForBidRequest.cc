@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::AddLabelForBidRequest;
 
 AddLabelForBidRequest::AddLabelForBidRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "AddLabelForBid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLabelForBidRequest::~AddLabelForBidRequest()
 {}

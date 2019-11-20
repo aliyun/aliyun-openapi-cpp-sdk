@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::CancelJobRequest;
 
 CancelJobRequest::CancelJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "CancelJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelJobRequest::~CancelJobRequest()
 {}

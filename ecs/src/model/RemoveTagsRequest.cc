@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::RemoveTagsRequest;
 
 RemoveTagsRequest::RemoveTagsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "RemoveTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveTagsRequest::~RemoveTagsRequest()
 {}
@@ -55,12 +57,11 @@ std::vector<RemoveTagsRequest::Tag> RemoveTagsRequest::getTag()const
 void RemoveTagsRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

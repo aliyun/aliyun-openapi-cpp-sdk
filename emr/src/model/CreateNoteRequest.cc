@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateNoteRequest;
 
 CreateNoteRequest::CreateNoteRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateNote")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateNoteRequest::~CreateNoteRequest()
 {}

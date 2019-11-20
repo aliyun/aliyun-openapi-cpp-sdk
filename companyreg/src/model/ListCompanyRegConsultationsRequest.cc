@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::ListCompanyRegConsultationsRequest;
 
 ListCompanyRegConsultationsRequest::ListCompanyRegConsultationsRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "ListCompanyRegConsultations")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListCompanyRegConsultationsRequest::~ListCompanyRegConsultationsRequest()
 {}

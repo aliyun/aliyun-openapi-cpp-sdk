@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::UnroutePrivateZoneInCenToVpcRequest;
 
 UnroutePrivateZoneInCenToVpcRequest::UnroutePrivateZoneInCenToVpcRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "UnroutePrivateZoneInCenToVpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnroutePrivateZoneInCenToVpcRequest::~UnroutePrivateZoneInCenToVpcRequest()
 {}

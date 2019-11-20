@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateOrderRefundRecordRequest;
 
 CreateOrderRefundRecordRequest::CreateOrderRefundRecordRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateOrderRefundRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderRefundRecordRequest::~CreateOrderRefundRecordRequest()
 {}

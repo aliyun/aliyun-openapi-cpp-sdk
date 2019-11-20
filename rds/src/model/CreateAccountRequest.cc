@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CreateAccountRequest;
 
 CreateAccountRequest::CreateAccountRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CreateAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAccountRequest::~CreateAccountRequest()
 {}

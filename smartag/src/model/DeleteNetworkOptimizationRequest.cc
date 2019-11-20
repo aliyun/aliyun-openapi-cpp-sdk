@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteNetworkOptimizationRequest;
 
 DeleteNetworkOptimizationRequest::DeleteNetworkOptimizationRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteNetworkOptimization")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNetworkOptimizationRequest::~DeleteNetworkOptimizationRequest()
 {}

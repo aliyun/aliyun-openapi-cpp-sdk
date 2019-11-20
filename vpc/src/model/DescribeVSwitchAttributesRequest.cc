@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeVSwitchAttributesRequest;
 
 DescribeVSwitchAttributesRequest::DescribeVSwitchAttributesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeVSwitchAttributes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVSwitchAttributesRequest::~DescribeVSwitchAttributesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::AttachDBInstancesRequest;
 
 AttachDBInstancesRequest::AttachDBInstancesRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "AttachDBInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachDBInstancesRequest::~AttachDBInstancesRequest()
 {}
@@ -77,8 +79,9 @@ std::vector<std::string> AttachDBInstancesRequest::getDBInstance()const
 void AttachDBInstancesRequest::setDBInstance(const std::vector<std::string>& dBInstance)
 {
 	dBInstance_ = dBInstance;
-	for(int i = 0; i!= dBInstance.size(); i++)
-		setCoreParameter("DBInstance."+ std::to_string(i), dBInstance.at(i));
+	for(int dep1 = 0; dep1!= dBInstance.size(); dep1++) {
+		setCoreParameter("DBInstance."+ std::to_string(dep1), dBInstance.at(dep1));
+	}
 }
 
 long AttachDBInstancesRequest::getOwnerId()const

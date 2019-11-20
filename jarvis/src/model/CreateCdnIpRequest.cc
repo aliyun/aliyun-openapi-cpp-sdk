@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateCdnIpRequest;
 
 CreateCdnIpRequest::CreateCdnIpRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateCdnIp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCdnIpRequest::~CreateCdnIpRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::AllocatePublicNetworkAddressRequest;
 
 AllocatePublicNetworkAddressRequest::AllocatePublicNetworkAddressRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "AllocatePublicNetworkAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AllocatePublicNetworkAddressRequest::~AllocatePublicNetworkAddressRequest()
 {}

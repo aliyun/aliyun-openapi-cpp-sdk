@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::UnTagResourcesRequest;
 
 UnTagResourcesRequest::UnTagResourcesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "UnTagResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnTagResourcesRequest::~UnTagResourcesRequest()
 {}
@@ -55,8 +57,9 @@ std::vector<std::string> UnTagResourcesRequest::getResourceId()const
 void UnTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
+		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
 }
 
 std::string UnTagResourcesRequest::getResourceOwnerAccount()const
@@ -111,7 +114,8 @@ std::vector<std::string> UnTagResourcesRequest::getTagKey()const
 void UnTagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
-	for(int i = 0; i!= tagKey.size(); i++)
-		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
+	for(int dep1 = 0; dep1!= tagKey.size(); dep1++) {
+		setCoreParameter("TagKey."+ std::to_string(dep1), tagKey.at(dep1));
+	}
 }
 

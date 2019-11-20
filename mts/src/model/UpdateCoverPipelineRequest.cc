@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateCoverPipelineRequest;
 
 UpdateCoverPipelineRequest::UpdateCoverPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateCoverPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCoverPipelineRequest::~UpdateCoverPipelineRequest()
 {}

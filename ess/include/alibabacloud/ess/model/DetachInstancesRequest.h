@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setScalingGroupId(const std::string& scalingGroupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				bool getDecreaseDesiredCapacity()const;
+				void setDecreaseDesiredCapacity(bool decreaseDesiredCapacity);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string scalingGroupId_;
 				std::string accessKeyId_;
+				bool decreaseDesiredCapacity_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::InstallCloudAssistantRequest;
 
 InstallCloudAssistantRequest::InstallCloudAssistantRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "InstallCloudAssistant")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InstallCloudAssistantRequest::~InstallCloudAssistantRequest()
 {}
@@ -88,7 +90,8 @@ std::vector<std::string> InstallCloudAssistantRequest::getInstanceId()const
 void InstallCloudAssistantRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 

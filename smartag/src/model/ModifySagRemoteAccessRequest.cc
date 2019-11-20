@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ModifySagRemoteAccessRequest;
 
 ModifySagRemoteAccessRequest::ModifySagRemoteAccessRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ModifySagRemoteAccess")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySagRemoteAccessRequest::~ModifySagRemoteAccessRequest()
 {}

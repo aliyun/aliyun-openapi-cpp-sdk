@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::SetSourceHostConfigRequest;
 
 SetSourceHostConfigRequest::SetSourceHostConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetSourceHostConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetSourceHostConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }

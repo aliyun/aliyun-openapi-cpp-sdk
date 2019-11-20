@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CheckAccountNameAvailableRequest;
 
 CheckAccountNameAvailableRequest::CheckAccountNameAvailableRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CheckAccountNameAvailable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckAccountNameAvailableRequest::~CheckAccountNameAvailableRequest()
 {}

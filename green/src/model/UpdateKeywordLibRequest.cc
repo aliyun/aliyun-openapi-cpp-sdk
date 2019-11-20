@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateKeywordLibRequest;
 
 UpdateKeywordLibRequest::UpdateKeywordLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateKeywordLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateKeywordLibRequest::~UpdateKeywordLibRequest()
 {}

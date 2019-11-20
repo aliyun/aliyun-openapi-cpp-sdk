@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyRiskSingleResultStatusRequest;
 
 ModifyRiskSingleResultStatusRequest::ModifyRiskSingleResultStatusRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyRiskSingleResultStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRiskSingleResultStatusRequest::~ModifyRiskSingleResultStatusRequest()
 {}
@@ -55,8 +57,9 @@ std::vector<std::string> ModifyRiskSingleResultStatusRequest::getIds()const
 void ModifyRiskSingleResultStatusRequest::setIds(const std::vector<std::string>& ids)
 {
 	ids_ = ids;
-	for(int i = 0; i!= ids.size(); i++)
-		setCoreParameter("Ids."+ std::to_string(i), ids.at(i));
+	for(int dep1 = 0; dep1!= ids.size(); dep1++) {
+		setCoreParameter("Ids."+ std::to_string(dep1), ids.at(dep1));
+	}
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getLang()const

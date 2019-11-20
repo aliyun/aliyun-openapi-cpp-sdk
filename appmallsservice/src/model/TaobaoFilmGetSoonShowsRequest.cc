@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmGetSoonShowsRequest;
 
 TaobaoFilmGetSoonShowsRequest::TaobaoFilmGetSoonShowsRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmGetSoonShows")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmGetSoonShowsRequest::~TaobaoFilmGetSoonShowsRequest()
 {}

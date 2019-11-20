@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::QuerySystemEntitiesRequest;
 
 QuerySystemEntitiesRequest::QuerySystemEntitiesRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "QuerySystemEntities")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySystemEntitiesRequest::~QuerySystemEntitiesRequest()
 {}

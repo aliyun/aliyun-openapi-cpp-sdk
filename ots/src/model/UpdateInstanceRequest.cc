@@ -20,7 +20,9 @@ using AlibabaCloud::Ots::Model::UpdateInstanceRequest;
 
 UpdateInstanceRequest::UpdateInstanceRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "UpdateInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateInstanceRequest::~UpdateInstanceRequest()
 {}

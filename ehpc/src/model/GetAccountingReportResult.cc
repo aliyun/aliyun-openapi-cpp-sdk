@@ -39,10 +39,11 @@ void GetAccountingReportResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allData = value["Data"]["Data"];
+	for (const auto &item : allData)
+		data_.push_back(item.asString());
 	if(!value["Metrics"].isNull())
 		metrics_ = value["Metrics"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
 
 }
 
@@ -51,7 +52,7 @@ std::string GetAccountingReportResult::getMetrics()const
 	return metrics_;
 }
 
-std::string GetAccountingReportResult::getData()const
+std::vector<std::string> GetAccountingReportResult::getData()const
 {
 	return data_;
 }

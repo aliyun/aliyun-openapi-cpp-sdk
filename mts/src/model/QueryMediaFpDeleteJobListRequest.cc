@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryMediaFpDeleteJobListRequest;
 
 QueryMediaFpDeleteJobListRequest::QueryMediaFpDeleteJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryMediaFpDeleteJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMediaFpDeleteJobListRequest::~QueryMediaFpDeleteJobListRequest()
 {}

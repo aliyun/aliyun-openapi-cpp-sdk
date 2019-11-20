@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::ReceiveNotifyRequest;
 
 ReceiveNotifyRequest::ReceiveNotifyRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "ReceiveNotify")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReceiveNotifyRequest::~ReceiveNotifyRequest()
 {}

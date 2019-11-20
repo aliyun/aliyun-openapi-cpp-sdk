@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::CreateApiStageVariableRequest;
 
 CreateApiStageVariableRequest::CreateApiStageVariableRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "CreateApiStageVariable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateApiStageVariableRequest::~CreateApiStageVariableRequest()
 {}

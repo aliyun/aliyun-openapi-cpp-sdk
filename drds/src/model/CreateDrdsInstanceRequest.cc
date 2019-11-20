@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::CreateDrdsInstanceRequest;
 
 CreateDrdsInstanceRequest::CreateDrdsInstanceRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "CreateDrdsInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDrdsInstanceRequest::~CreateDrdsInstanceRequest()
 {}

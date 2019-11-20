@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DisassociateQosRequest;
 
 DisassociateQosRequest::DisassociateQosRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DisassociateQos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisassociateQosRequest::~DisassociateQosRequest()
 {}

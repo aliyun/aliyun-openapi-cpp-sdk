@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetBindAp4UmengRequest;
 
 GetBindAp4UmengRequest::GetBindAp4UmengRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetBindAp4Umeng")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetBindAp4UmengRequest::~GetBindAp4UmengRequest()
 {}

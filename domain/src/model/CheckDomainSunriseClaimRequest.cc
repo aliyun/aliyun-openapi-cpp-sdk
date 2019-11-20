@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CheckDomainSunriseClaimRequest;
 
 CheckDomainSunriseClaimRequest::CheckDomainSunriseClaimRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CheckDomainSunriseClaim")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckDomainSunriseClaimRequest::~CheckDomainSunriseClaimRequest()
 {}

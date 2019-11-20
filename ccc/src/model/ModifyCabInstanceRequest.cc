@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifyCabInstanceRequest;
 
 ModifyCabInstanceRequest::ModifyCabInstanceRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifyCabInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCabInstanceRequest::~ModifyCabInstanceRequest()
 {}

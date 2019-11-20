@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryUniqueDeviceStatRequest;
 
 QueryUniqueDeviceStatRequest::QueryUniqueDeviceStatRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryUniqueDeviceStat")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryUniqueDeviceStatRequest::~QueryUniqueDeviceStatRequest()
 {}

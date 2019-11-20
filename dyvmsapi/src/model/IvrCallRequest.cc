@@ -123,13 +123,12 @@ std::vector<IvrCallRequest::MenuKeyMap> IvrCallRequest::getMenuKeyMap()const
 void IvrCallRequest::setMenuKeyMap(const std::vector<MenuKeyMap>& menuKeyMap)
 {
 	menuKeyMap_ = menuKeyMap;
-	int i = 0;
-	for(int i = 0; i!= menuKeyMap.size(); i++)	{
-		auto obj = menuKeyMap.at(i);
-		std::string str ="MenuKeyMap."+ std::to_string(i);
-		setCoreParameter(str + ".Code", obj.code);
-		setCoreParameter(str + ".TtsParams", obj.ttsParams);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= menuKeyMap.size(); dep1++) {
+		auto menuKeyMapObj = menuKeyMap.at(dep1);
+		std::string menuKeyMapObjStr = "MenuKeyMap." + std::to_string(dep1);
+		setCoreParameter(menuKeyMapObjStr + ".Code", menuKeyMapObj.code);
+		setCoreParameter(menuKeyMapObjStr + ".TtsParams", menuKeyMapObj.ttsParams);
+		setCoreParameter(menuKeyMapObjStr + ".Key", menuKeyMapObj.key);
 	}
 }
 

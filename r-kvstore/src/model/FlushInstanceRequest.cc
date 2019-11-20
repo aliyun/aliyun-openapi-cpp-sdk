@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::FlushInstanceRequest;
 
 FlushInstanceRequest::FlushInstanceRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "FlushInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FlushInstanceRequest::~FlushInstanceRequest()
 {}

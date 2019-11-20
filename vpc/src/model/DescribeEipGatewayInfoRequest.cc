@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeEipGatewayInfoRequest;
 
 DescribeEipGatewayInfoRequest::DescribeEipGatewayInfoRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeEipGatewayInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEipGatewayInfoRequest::~DescribeEipGatewayInfoRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::AddLocalNodesRequest;
 
 AddLocalNodesRequest::AddLocalNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "AddLocalNodes")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 AddLocalNodesRequest::~AddLocalNodesRequest()
 {}

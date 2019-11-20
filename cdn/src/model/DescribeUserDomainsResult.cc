@@ -57,28 +57,17 @@ void DescribeUserDomainsResult::parse(const std::string &payload)
 			domainsObject.gmtModified = valueDomainsPageData["GmtModified"].asString();
 		if(!valueDomainsPageData["Description"].isNull())
 			domainsObject.description = valueDomainsPageData["Description"].asString();
+		if(!valueDomainsPageData["SourceType"].isNull())
+			domainsObject.sourceType = valueDomainsPageData["SourceType"].asString();
 		if(!valueDomainsPageData["SslProtocol"].isNull())
 			domainsObject.sslProtocol = valueDomainsPageData["SslProtocol"].asString();
 		if(!valueDomainsPageData["ResourceGroupId"].isNull())
 			domainsObject.resourceGroupId = valueDomainsPageData["ResourceGroupId"].asString();
 		if(!valueDomainsPageData["Sandbox"].isNull())
 			domainsObject.sandbox = valueDomainsPageData["Sandbox"].asString();
-		auto allSourcesNode = allDomainsNode["Sources"]["Source"];
-		for (auto allDomainsNodeSourcesSource : allSourcesNode)
-		{
-			PageData::Source sourcesObject;
-			if(!allDomainsNodeSourcesSource["Type"].isNull())
-				sourcesObject.type = allDomainsNodeSourcesSource["Type"].asString();
-			if(!allDomainsNodeSourcesSource["Content"].isNull())
-				sourcesObject.content = allDomainsNodeSourcesSource["Content"].asString();
-			if(!allDomainsNodeSourcesSource["Port"].isNull())
-				sourcesObject.port = std::stoi(allDomainsNodeSourcesSource["Port"].asString());
-			if(!allDomainsNodeSourcesSource["Priority"].isNull())
-				sourcesObject.priority = allDomainsNodeSourcesSource["Priority"].asString();
-			if(!allDomainsNodeSourcesSource["Weight"].isNull())
-				sourcesObject.weight = allDomainsNodeSourcesSource["Weight"].asString();
-			domainsObject.sources.push_back(sourcesObject);
-		}
+		auto allSources = value["Sources"]["Source"];
+		for (auto value : allSources)
+			domainsObject.sources.push_back(value.asString());
 		domains_.push_back(domainsObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeleteApRadioSsidConfigRequest;
 
 DeleteApRadioSsidConfigRequest::DeleteApRadioSsidConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeleteApRadioSsidConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteApRadioSsidConfigRequest::~DeleteApRadioSsidConfigRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::DescribeHistoryActionDataReque
 
 DescribeHistoryActionDataRequest::DescribeHistoryActionDataRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "DescribeHistoryActionData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeHistoryActionDataRequest::~DescribeHistoryActionDataRequest()
 {}

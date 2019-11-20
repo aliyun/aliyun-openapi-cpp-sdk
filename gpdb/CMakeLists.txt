@@ -43,6 +43,8 @@ set(gpdb_public_header_model
 	include/alibabacloud/gpdb/model/DescribeDBInstanceNetInfoResult.h
 	include/alibabacloud/gpdb/model/DescribeDBInstancePerformanceRequest.h
 	include/alibabacloud/gpdb/model/DescribeDBInstancePerformanceResult.h
+	include/alibabacloud/gpdb/model/DescribeDBInstanceSSLRequest.h
+	include/alibabacloud/gpdb/model/DescribeDBInstanceSSLResult.h
 	include/alibabacloud/gpdb/model/DescribeDBInstancesRequest.h
 	include/alibabacloud/gpdb/model/DescribeDBInstancesResult.h
 	include/alibabacloud/gpdb/model/DescribeRdsVSwitchsRequest.h
@@ -79,6 +81,8 @@ set(gpdb_public_header_model
 	include/alibabacloud/gpdb/model/ModifyDBInstanceMaintainTimeResult.h
 	include/alibabacloud/gpdb/model/ModifyDBInstanceNetworkTypeRequest.h
 	include/alibabacloud/gpdb/model/ModifyDBInstanceNetworkTypeResult.h
+	include/alibabacloud/gpdb/model/ModifyDBInstanceSSLRequest.h
+	include/alibabacloud/gpdb/model/ModifyDBInstanceSSLResult.h
 	include/alibabacloud/gpdb/model/ModifySQLCollectorPolicyRequest.h
 	include/alibabacloud/gpdb/model/ModifySQLCollectorPolicyResult.h
 	include/alibabacloud/gpdb/model/ModifySecurityIpsRequest.h
@@ -124,6 +128,8 @@ set(gpdb_src
 	src/model/DescribeDBInstanceNetInfoResult.cc
 	src/model/DescribeDBInstancePerformanceRequest.cc
 	src/model/DescribeDBInstancePerformanceResult.cc
+	src/model/DescribeDBInstanceSSLRequest.cc
+	src/model/DescribeDBInstanceSSLResult.cc
 	src/model/DescribeDBInstancesRequest.cc
 	src/model/DescribeDBInstancesResult.cc
 	src/model/DescribeRdsVSwitchsRequest.cc
@@ -160,6 +166,8 @@ set(gpdb_src
 	src/model/ModifyDBInstanceMaintainTimeResult.cc
 	src/model/ModifyDBInstanceNetworkTypeRequest.cc
 	src/model/ModifyDBInstanceNetworkTypeResult.cc
+	src/model/ModifyDBInstanceSSLRequest.cc
+	src/model/ModifyDBInstanceSSLResult.cc
 	src/model/ModifySQLCollectorPolicyRequest.cc
 	src/model/ModifySQLCollectorPolicyResult.cc
 	src/model/ModifySecurityIpsRequest.cc

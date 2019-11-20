@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::RefreshUploadVideoRequest;
 
 RefreshUploadVideoRequest::RefreshUploadVideoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "RefreshUploadVideo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshUploadVideoRequest::~RefreshUploadVideoRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenInterRegionBandwidthLimitsRequest;
 
 DescribeCenInterRegionBandwidthLimitsRequest::DescribeCenInterRegionBandwidthLimitsRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenInterRegionBandwidthLimits")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenInterRegionBandwidthLimitsRequest::~DescribeCenInterRegionBandwidthLimitsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeTagsRequest;
 
 DescribeTagsRequest::DescribeTagsRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTagsRequest::~DescribeTagsRequest()
 {}

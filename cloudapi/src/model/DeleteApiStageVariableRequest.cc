@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteApiStageVariableRequest;
 
 DeleteApiStageVariableRequest::DeleteApiStageVariableRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteApiStageVariable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteApiStageVariableRequest::~DeleteApiStageVariableRequest()
 {}

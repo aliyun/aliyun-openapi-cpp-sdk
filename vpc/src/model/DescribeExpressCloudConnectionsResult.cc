@@ -95,16 +95,26 @@ void DescribeExpressCloudConnectionsResult::parse(const std::string &payload)
 			expressCloudConnectionSetObject.applicationStatus = valueExpressCloudConnectionSetExpressCloudConnectionType["ApplicationStatus"].asString();
 		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ApplicationBandwidth"].isNull())
 			expressCloudConnectionSetObject.applicationBandwidth = valueExpressCloudConnectionSetExpressCloudConnectionType["ApplicationBandwidth"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["EndTime"].isNull())
+			expressCloudConnectionSetObject.endTime = valueExpressCloudConnectionSetExpressCloudConnectionType["EndTime"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ChargeType"].isNull())
+			expressCloudConnectionSetObject.chargeType = valueExpressCloudConnectionSetExpressCloudConnectionType["ChargeType"].asString();
 		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ContactTel"].isNull())
 			expressCloudConnectionSetObject.contactTel = valueExpressCloudConnectionSetExpressCloudConnectionType["ContactTel"].asString();
 		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ContactMail"].isNull())
 			expressCloudConnectionSetObject.contactMail = valueExpressCloudConnectionSetExpressCloudConnectionType["ContactMail"].asString();
 		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["IDCardNo"].isNull())
 			expressCloudConnectionSetObject.iDCardNo = valueExpressCloudConnectionSetExpressCloudConnectionType["IDCardNo"].asString();
-		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["EndTime"].isNull())
-			expressCloudConnectionSetObject.endTime = valueExpressCloudConnectionSetExpressCloudConnectionType["EndTime"].asString();
-		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ChargeType"].isNull())
-			expressCloudConnectionSetObject.chargeType = valueExpressCloudConnectionSetExpressCloudConnectionType["ChargeType"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["EstimatedTime"].isNull())
+			expressCloudConnectionSetObject.estimatedTime = valueExpressCloudConnectionSetExpressCloudConnectionType["EstimatedTime"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["BgpAs"].isNull())
+			expressCloudConnectionSetObject.bgpAs = valueExpressCloudConnectionSetExpressCloudConnectionType["BgpAs"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["PeIp"].isNull())
+			expressCloudConnectionSetObject.peIp = valueExpressCloudConnectionSetExpressCloudConnectionType["PeIp"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["CeIp"].isNull())
+			expressCloudConnectionSetObject.ceIp = valueExpressCloudConnectionSetExpressCloudConnectionType["CeIp"].asString();
+		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ConstructionPeriod"].isNull())
+			expressCloudConnectionSetObject.constructionPeriod = valueExpressCloudConnectionSetExpressCloudConnectionType["ConstructionPeriod"].asString();
 		auto allVirtualBorderRouterModelsNode = allExpressCloudConnectionSetNode["VirtualBorderRouterModels"]["VirtualBorderRouterModel"];
 		for (auto allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel : allVirtualBorderRouterModelsNode)
 		{

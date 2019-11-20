@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CancelTaskRequest;
 
 CancelTaskRequest::CancelTaskRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CancelTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelTaskRequest::~CancelTaskRequest()
 {}

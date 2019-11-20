@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryImageSearchJobListRequest;
 
 QueryImageSearchJobListRequest::QueryImageSearchJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryImageSearchJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryImageSearchJobListRequest::~QueryImageSearchJobListRequest()
 {}

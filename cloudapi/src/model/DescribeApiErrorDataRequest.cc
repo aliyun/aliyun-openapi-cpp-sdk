@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiErrorDataRequest;
 
 DescribeApiErrorDataRequest::DescribeApiErrorDataRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiErrorData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiErrorDataRequest::~DescribeApiErrorDataRequest()
 {}

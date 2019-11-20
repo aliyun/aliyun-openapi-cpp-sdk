@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::GetAccountProfileRequest;
 
 GetAccountProfileRequest::GetAccountProfileRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "GetAccountProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAccountProfileRequest::~GetAccountProfileRequest()
 {}

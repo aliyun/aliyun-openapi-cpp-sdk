@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::ModifyScalingRuleRequest;
 
 ModifyScalingRuleRequest::ModifyScalingRuleRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "ModifyScalingRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyScalingRuleRequest::~ModifyScalingRuleRequest()
 {}
@@ -44,13 +46,12 @@ std::vector<ModifyScalingRuleRequest::StepAdjustment> ModifyScalingRuleRequest::
 void ModifyScalingRuleRequest::setStepAdjustment(const std::vector<StepAdjustment>& stepAdjustment)
 {
 	stepAdjustment_ = stepAdjustment;
-	int i = 0;
-	for(int i = 0; i!= stepAdjustment.size(); i++)	{
-		auto obj = stepAdjustment.at(i);
-		std::string str ="StepAdjustment."+ std::to_string(i);
-		setCoreParameter(str + ".MetricIntervalLowerBound", std::to_string(obj.metricIntervalLowerBound));
-		setCoreParameter(str + ".MetricIntervalUpperBound", std::to_string(obj.metricIntervalUpperBound));
-		setCoreParameter(str + ".ScalingAdjustment", std::to_string(obj.scalingAdjustment));
+	for(int dep1 = 0; dep1!= stepAdjustment.size(); dep1++) {
+		auto stepAdjustmentObj = stepAdjustment.at(dep1);
+		std::string stepAdjustmentObjStr = "StepAdjustment." + std::to_string(dep1);
+		setCoreParameter(stepAdjustmentObjStr + ".MetricIntervalLowerBound", std::to_string(stepAdjustmentObj.metricIntervalLowerBound));
+		setCoreParameter(stepAdjustmentObjStr + ".MetricIntervalUpperBound", std::to_string(stepAdjustmentObj.metricIntervalUpperBound));
+		setCoreParameter(stepAdjustmentObjStr + ".ScalingAdjustment", std::to_string(stepAdjustmentObj.scalingAdjustment));
 	}
 }
 

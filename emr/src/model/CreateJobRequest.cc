@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateJobRequest;
 
 CreateJobRequest::CreateJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateJobRequest::~CreateJobRequest()
 {}

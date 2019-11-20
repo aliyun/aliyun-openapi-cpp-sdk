@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateFlowProjectUserRequest;
 
 CreateFlowProjectUserRequest::CreateFlowProjectUserRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateFlowProjectUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFlowProjectUserRequest::~CreateFlowProjectUserRequest()
 {}
@@ -55,12 +57,11 @@ std::vector<CreateFlowProjectUserRequest::User> CreateFlowProjectUserRequest::ge
 void CreateFlowProjectUserRequest::setUser(const std::vector<User>& user)
 {
 	user_ = user;
-	int i = 0;
-	for(int i = 0; i!= user.size(); i++)	{
-		auto obj = user.at(i);
-		std::string str ="User."+ std::to_string(i);
-		setCoreParameter(str + ".UserId", obj.userId);
-		setCoreParameter(str + ".UserName", obj.userName);
+	for(int dep1 = 0; dep1!= user.size(); dep1++) {
+		auto userObj = user.at(dep1);
+		std::string userObjStr = "User." + std::to_string(dep1);
+		setCoreParameter(userObjStr + ".UserId", userObj.userId);
+		setCoreParameter(userObjStr + ".UserName", userObj.userName);
 	}
 }
 

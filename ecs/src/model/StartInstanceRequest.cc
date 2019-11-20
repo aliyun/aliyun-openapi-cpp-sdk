@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::StartInstanceRequest;
 
 StartInstanceRequest::StartInstanceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "StartInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartInstanceRequest::~StartInstanceRequest()
 {}

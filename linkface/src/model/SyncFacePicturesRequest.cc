@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::SyncFacePicturesRequest;
 
 SyncFacePicturesRequest::SyncFacePicturesRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "SyncFacePictures")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SyncFacePicturesRequest::~SyncFacePicturesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::ResetAccountRequest;
 
 ResetAccountRequest::ResetAccountRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "ResetAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetAccountRequest::~ResetAccountRequest()
 {}

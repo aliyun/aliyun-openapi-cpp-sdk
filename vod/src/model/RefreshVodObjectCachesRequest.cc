@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::RefreshVodObjectCachesRequest;
 
 RefreshVodObjectCachesRequest::RefreshVodObjectCachesRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "RefreshVodObjectCaches")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshVodObjectCachesRequest::~RefreshVodObjectCachesRequest()
 {}

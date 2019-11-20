@@ -39,6 +39,7 @@ namespace AlibabaCloud
 				~DescribeBackupPolicyResult();
 				std::string getPreferredBackupPeriod()const;
 				std::string getPreferredBackupTime()const;
+				int getEnableBackupLog()const;
 				std::string getBackupRetentionPeriod()const;
 				std::string getPreferredNextBackupTime()const;
 
@@ -47,6 +48,7 @@ namespace AlibabaCloud
 			private:
 				std::string preferredBackupPeriod_;
 				std::string preferredBackupTime_;
+				int enableBackupLog_;
 				std::string backupRetentionPeriod_;
 				std::string preferredNextBackupTime_;
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::QueryCoreWordsRequest;
 
 QueryCoreWordsRequest::QueryCoreWordsRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "QueryCoreWords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCoreWordsRequest::~QueryCoreWordsRequest()
 {}

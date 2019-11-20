@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::ListEventRulesRequest;
 
 ListEventRulesRequest::ListEventRulesRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "ListEventRules")
-{}
+{
+	setMethod(HttpRequest::Method::Put);
+}
 
 ListEventRulesRequest::~ListEventRulesRequest()
 {}

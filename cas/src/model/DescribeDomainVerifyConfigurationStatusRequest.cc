@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeDomainVerifyConfigurationStatusRequest;
 
 DescribeDomainVerifyConfigurationStatusRequest::DescribeDomainVerifyConfigurationStatusRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeDomainVerifyConfigurationStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainVerifyConfigurationStatusRequest::~DescribeDomainVerifyConfigurationStatusRequest()
 {}

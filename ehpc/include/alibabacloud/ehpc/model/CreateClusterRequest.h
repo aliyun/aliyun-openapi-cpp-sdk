@@ -40,7 +40,7 @@ namespace AlibabaCloud
 					{
 						std::string name;
 					};
-					Roles roles;
+					std::vector<Roles> roles;
 					std::string volumeId;
 					std::string volumeMountpoint;
 					std::string location;
@@ -132,6 +132,8 @@ namespace AlibabaCloud
 				void setVolumeType(const std::string& volumeType);
 				std::string getSystemDiskType()const;
 				void setSystemDiskType(const std::string& systemDiskType);
+				bool getIsComputeOnecs()const;
+				void setIsComputeOnecs(bool isComputeOnecs);
 				std::string getVolumeProtocol()const;
 				void setVolumeProtocol(const std::string& volumeProtocol);
 				std::string getClientVersion()const;
@@ -192,6 +194,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string volumeType_;
 				std::string systemDiskType_;
+				bool isComputeOnecs_;
 				std::string volumeProtocol_;
 				std::string clientVersion_;
 				std::string osTag_;

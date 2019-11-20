@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteIPv6TranslatorRequest;
 
 DeleteIPv6TranslatorRequest::DeleteIPv6TranslatorRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteIPv6Translator")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIPv6TranslatorRequest::~DeleteIPv6TranslatorRequest()
 {}

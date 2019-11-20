@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeDeploymentDetailRequest;
 
 DescribeDeploymentDetailRequest::DescribeDeploymentDetailRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeDeploymentDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDeploymentDetailRequest::~DescribeDeploymentDetailRequest()
 {}

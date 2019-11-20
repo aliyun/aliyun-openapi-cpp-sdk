@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::DeleteDomainRequest;
 
 DeleteDomainRequest::DeleteDomainRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "DeleteDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDomainRequest::~DeleteDomainRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ModifyFlowLogAttributeRequest;
 
 ModifyFlowLogAttributeRequest::ModifyFlowLogAttributeRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ModifyFlowLogAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyFlowLogAttributeRequest::~ModifyFlowLogAttributeRequest()
 {}

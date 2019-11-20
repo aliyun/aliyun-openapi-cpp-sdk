@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeCdnVendorRequest;
 
 DescribeCdnVendorRequest::DescribeCdnVendorRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeCdnVendor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCdnVendorRequest::~DescribeCdnVendorRequest()
 {}

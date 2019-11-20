@@ -93,3 +93,14 @@ void DescribeBatchResultDetailRequest::setTaskId(long taskId)
 	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
+std::string DescribeBatchResultDetailRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeBatchResultDetailRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setCoreParameter("Status", status);
+}
+

@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::GetMyGroupAlertRequest;
 
 GetMyGroupAlertRequest::GetMyGroupAlertRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "GetMyGroupAlert")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMyGroupAlertRequest::~GetMyGroupAlertRequest()
 {}

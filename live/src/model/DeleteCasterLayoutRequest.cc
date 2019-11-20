@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteCasterLayoutRequest;
 
 DeleteCasterLayoutRequest::DeleteCasterLayoutRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteCasterLayout")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCasterLayoutRequest::~DeleteCasterLayoutRequest()
 {}

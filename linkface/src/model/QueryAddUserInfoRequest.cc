@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::QueryAddUserInfoRequest;
 
 QueryAddUserInfoRequest::QueryAddUserInfoRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryAddUserInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAddUserInfoRequest::~QueryAddUserInfoRequest()
 {}

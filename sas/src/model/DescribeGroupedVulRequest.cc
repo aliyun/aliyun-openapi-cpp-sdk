@@ -20,10 +20,23 @@ using AlibabaCloud::Sas::Model::DescribeGroupedVulRequest;
 
 DescribeGroupedVulRequest::DescribeGroupedVulRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeGroupedVul")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGroupedVulRequest::~DescribeGroupedVulRequest()
 {}
+
+std::string DescribeGroupedVulRequest::getStatusList()const
+{
+	return statusList_;
+}
+
+void DescribeGroupedVulRequest::setStatusList(const std::string& statusList)
+{
+	statusList_ = statusList;
+	setCoreParameter("StatusList", statusList);
+}
 
 std::string DescribeGroupedVulRequest::getType()const
 {

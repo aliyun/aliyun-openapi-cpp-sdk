@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::CheckResourceRequest;
 
 CheckResourceRequest::CheckResourceRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "CheckResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckResourceRequest::~CheckResourceRequest()
 {}

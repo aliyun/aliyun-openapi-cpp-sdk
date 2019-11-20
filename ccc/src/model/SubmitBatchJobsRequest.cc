@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::SubmitBatchJobsRequest;
 
 SubmitBatchJobsRequest::SubmitBatchJobsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "SubmitBatchJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitBatchJobsRequest::~SubmitBatchJobsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeInstancesFullStatusRequest;
 
 DescribeInstancesFullStatusRequest::DescribeInstancesFullStatusRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeInstancesFullStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstancesFullStatusRequest::~DescribeInstancesFullStatusRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> DescribeInstancesFullStatusRequest::getEventId()const
 void DescribeInstancesFullStatusRequest::setEventId(const std::vector<std::string>& eventId)
 {
 	eventId_ = eventId;
-	for(int i = 0; i!= eventId.size(); i++)
-		setCoreParameter("EventId."+ std::to_string(i), eventId.at(i));
+	for(int dep1 = 0; dep1!= eventId.size(); dep1++) {
+		setCoreParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
+	}
 }
 
 long DescribeInstancesFullStatusRequest::getResourceOwnerId()const
@@ -100,8 +103,9 @@ std::vector<std::string> DescribeInstancesFullStatusRequest::getInstanceEventTyp
 void DescribeInstancesFullStatusRequest::setInstanceEventType(const std::vector<std::string>& instanceEventType)
 {
 	instanceEventType_ = instanceEventType;
-	for(int i = 0; i!= instanceEventType.size(); i++)
-		setCoreParameter("InstanceEventType."+ std::to_string(i), instanceEventType.at(i));
+	for(int dep1 = 0; dep1!= instanceEventType.size(); dep1++) {
+		setCoreParameter("InstanceEventType."+ std::to_string(dep1), instanceEventType.at(dep1));
+	}
 }
 
 std::string DescribeInstancesFullStatusRequest::getResourceOwnerAccount()const
@@ -167,8 +171,9 @@ std::vector<std::string> DescribeInstancesFullStatusRequest::getInstanceId()cons
 void DescribeInstancesFullStatusRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 
 std::string DescribeInstancesFullStatusRequest::getNotBeforeEnd()const

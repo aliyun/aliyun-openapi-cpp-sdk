@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::TransferInCheckMailTokenRequest;
 
 TransferInCheckMailTokenRequest::TransferInCheckMailTokenRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "TransferInCheckMailToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TransferInCheckMailTokenRequest::~TransferInCheckMailTokenRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::CheckRecoveryConditionRequest;
 
 CheckRecoveryConditionRequest::CheckRecoveryConditionRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "CheckRecoveryCondition")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckRecoveryConditionRequest::~CheckRecoveryConditionRequest()
 {}

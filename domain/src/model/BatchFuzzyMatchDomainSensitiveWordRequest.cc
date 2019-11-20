@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::BatchFuzzyMatchDomainSensitiveWordRequest;
 
 BatchFuzzyMatchDomainSensitiveWordRequest::BatchFuzzyMatchDomainSensitiveWordRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "BatchFuzzyMatchDomainSensitiveWord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchFuzzyMatchDomainSensitiveWordRequest::~BatchFuzzyMatchDomainSensitiveWordRequest()
 {}

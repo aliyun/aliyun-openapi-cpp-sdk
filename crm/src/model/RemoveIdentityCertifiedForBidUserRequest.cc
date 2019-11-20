@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::RemoveIdentityCertifiedForBidUserRequest;
 
 RemoveIdentityCertifiedForBidUserRequest::RemoveIdentityCertifiedForBidUserRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "RemoveIdentityCertifiedForBidUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveIdentityCertifiedForBidUserRequest::~RemoveIdentityCertifiedForBidUserRequest()
 {}

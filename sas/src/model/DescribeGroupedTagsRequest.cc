@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeGroupedTagsRequest;
 
 DescribeGroupedTagsRequest::DescribeGroupedTagsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeGroupedTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGroupedTagsRequest::~DescribeGroupedTagsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::ListEventTargetsByRuleRequest;
 
 ListEventTargetsByRuleRequest::ListEventTargetsByRuleRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "ListEventTargetsByRule")
-{}
+{
+	setMethod(HttpRequest::Method::Put);
+}
 
 ListEventTargetsByRuleRequest::~ListEventTargetsByRuleRequest()
 {}

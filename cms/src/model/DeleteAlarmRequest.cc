@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DeleteAlarmRequest;
 
 DeleteAlarmRequest::DeleteAlarmRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DeleteAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAlarmRequest::~DeleteAlarmRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeAuthAccountsRequest;
 
 DescribeAuthAccountsRequest::DescribeAuthAccountsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeAuthAccounts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuthAccountsRequest::~DescribeAuthAccountsRequest()
 {}

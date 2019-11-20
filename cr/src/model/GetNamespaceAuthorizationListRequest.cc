@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetNamespaceAuthorizationListRequest;
 
 GetNamespaceAuthorizationListRequest::GetNamespaceAuthorizationListRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/namespace/[Namespace]/authorizations");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetNamespaceAuthorizationListRequest::~GetNamespaceAuthorizationListRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveApgroupSsidConfigRequest;
 
 SaveApgroupSsidConfigRequest::SaveApgroupSsidConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveApgroupSsidConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveApgroupSsidConfigRequest::~SaveApgroupSsidConfigRequest()
 {}

@@ -46,6 +46,8 @@ void GetEdgeInstanceResult::parse(const std::string &payload)
 		data_.name = dataNode["Name"].asString();
 	if(!dataNode["Tags"].isNull())
 		data_.tags = dataNode["Tags"].asString();
+	if(!dataNode["Type"].isNull())
+		data_.type = dataNode["Type"].asString();
 	if(!dataNode["Spec"].isNull())
 		data_.spec = std::stoi(dataNode["Spec"].asString());
 	if(!dataNode["BizEnable"].isNull())

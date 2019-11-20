@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudauth::Model::DescribeDeviceInfoRequest;
 
 DescribeDeviceInfoRequest::DescribeDeviceInfoRequest() :
 	RpcServiceRequest("cloudauth", "2018-09-16", "DescribeDeviceInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDeviceInfoRequest::~DescribeDeviceInfoRequest()
 {}

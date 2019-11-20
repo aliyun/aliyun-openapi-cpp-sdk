@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetJobStatusByCallIdRequest;
 
 GetJobStatusByCallIdRequest::GetJobStatusByCallIdRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetJobStatusByCallId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobStatusByCallIdRequest::~GetJobStatusByCallIdRequest()
 {}

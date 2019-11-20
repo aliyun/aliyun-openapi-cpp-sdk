@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeCollationTimeZonesRequest;
 
 DescribeCollationTimeZonesRequest::DescribeCollationTimeZonesRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeCollationTimeZones")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCollationTimeZonesRequest::~DescribeCollationTimeZonesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiTrafficControlsRequest;
 
 DescribeApiTrafficControlsRequest::DescribeApiTrafficControlsRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiTrafficControls")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiTrafficControlsRequest::~DescribeApiTrafficControlsRequest()
 {}

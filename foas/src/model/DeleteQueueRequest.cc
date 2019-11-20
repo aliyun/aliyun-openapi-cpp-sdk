@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::DeleteQueueRequest;
 
 DeleteQueueRequest::DeleteQueueRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/queue");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteQueueRequest::~DeleteQueueRequest()
 {}

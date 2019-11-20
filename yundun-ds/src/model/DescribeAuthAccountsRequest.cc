@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeAuthAccountsRequest;
 
 DescribeAuthAccountsRequest::DescribeAuthAccountsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeAuthAccounts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuthAccountsRequest::~DescribeAuthAccountsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodStorageDataRequest;
 
 DescribeVodStorageDataRequest::DescribeVodStorageDataRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodStorageData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodStorageDataRequest::~DescribeVodStorageDataRequest()
 {}

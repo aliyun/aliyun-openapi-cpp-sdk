@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::UnassociateEipAddressRequest;
 
 UnassociateEipAddressRequest::UnassociateEipAddressRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "UnassociateEipAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnassociateEipAddressRequest::~UnassociateEipAddressRequest()
 {}

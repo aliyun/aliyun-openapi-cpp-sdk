@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::BatchGetInstanceRunSummaryRequest;
 
 BatchGetInstanceRunSummaryRequest::BatchGetInstanceRunSummaryRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/runsummary");
+	setMethod(HttpRequest::Method::Get);
+}
 
 BatchGetInstanceRunSummaryRequest::~BatchGetInstanceRunSummaryRequest()
 {}

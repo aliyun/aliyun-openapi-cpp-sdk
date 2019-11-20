@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteAppInfoRequest;
 
 DeleteAppInfoRequest::DeleteAppInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteAppInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAppInfoRequest::~DeleteAppInfoRequest()
 {}

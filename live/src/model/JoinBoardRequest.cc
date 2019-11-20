@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::JoinBoardRequest;
 
 JoinBoardRequest::JoinBoardRequest() :
 	RpcServiceRequest("live", "2016-11-01", "JoinBoard")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 JoinBoardRequest::~JoinBoardRequest()
 {}

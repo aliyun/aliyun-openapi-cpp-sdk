@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaDam::Model::ActionDiskMaskRequest;
 
 ActionDiskMaskRequest::ActionDiskMaskRequest() :
 	RpcServiceRequest("tesladam", "2018-01-18", "ActionDiskMask")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ActionDiskMaskRequest::~ActionDiskMaskRequest()
 {}

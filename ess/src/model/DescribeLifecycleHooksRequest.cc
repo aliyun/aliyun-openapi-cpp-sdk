@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DescribeLifecycleHooksRequest;
 
 DescribeLifecycleHooksRequest::DescribeLifecycleHooksRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DescribeLifecycleHooks")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLifecycleHooksRequest::~DescribeLifecycleHooksRequest()
 {}
@@ -99,8 +101,9 @@ std::vector<std::string> DescribeLifecycleHooksRequest::getLifecycleHookId()cons
 void DescribeLifecycleHooksRequest::setLifecycleHookId(const std::vector<std::string>& lifecycleHookId)
 {
 	lifecycleHookId_ = lifecycleHookId;
-	for(int i = 0; i!= lifecycleHookId.size(); i++)
-		setCoreParameter("LifecycleHookId."+ std::to_string(i), lifecycleHookId.at(i));
+	for(int dep1 = 0; dep1!= lifecycleHookId.size(); dep1++) {
+		setCoreParameter("LifecycleHookId."+ std::to_string(dep1), lifecycleHookId.at(dep1));
+	}
 }
 
 std::string DescribeLifecycleHooksRequest::getOwnerAccount()const

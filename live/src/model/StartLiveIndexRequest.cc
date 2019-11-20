@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StartLiveIndexRequest;
 
 StartLiveIndexRequest::StartLiveIndexRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StartLiveIndex")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartLiveIndexRequest::~StartLiveIndexRequest()
 {}

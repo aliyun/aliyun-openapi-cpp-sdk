@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::AssignPrivateIpAddressesRequest;
 
 AssignPrivateIpAddressesRequest::AssignPrivateIpAddressesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "AssignPrivateIpAddresses")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssignPrivateIpAddressesRequest::~AssignPrivateIpAddressesRequest()
 {}
@@ -99,8 +101,9 @@ std::vector<std::string> AssignPrivateIpAddressesRequest::getPrivateIpAddress()c
 void AssignPrivateIpAddressesRequest::setPrivateIpAddress(const std::vector<std::string>& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	for(int i = 0; i!= privateIpAddress.size(); i++)
-		setCoreParameter("PrivateIpAddress."+ std::to_string(i), privateIpAddress.at(i));
+	for(int dep1 = 0; dep1!= privateIpAddress.size(); dep1++) {
+		setCoreParameter("PrivateIpAddress."+ std::to_string(dep1), privateIpAddress.at(dep1));
+	}
 }
 
 std::string AssignPrivateIpAddressesRequest::getNetworkInterfaceId()const

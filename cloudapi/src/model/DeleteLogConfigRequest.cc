@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteLogConfigRequest;
 
 DeleteLogConfigRequest::DeleteLogConfigRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteLogConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLogConfigRequest::~DeleteLogConfigRequest()
 {}

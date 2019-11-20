@@ -48,6 +48,7 @@ namespace AlibabaCloud
 				int getQuantity()const;
 				long getOrderId()const;
 				std::vector<std::string> getSupplierTelephones()const;
+				std::string getComponents()const;
 				std::string getOrderStatus()const;
 				std::string getOrderType()const;
 				float getTotalPrice()const;
@@ -72,6 +73,7 @@ namespace AlibabaCloud
 				int quantity_;
 				long orderId_;
 				std::vector<std::string> supplierTelephones_;
+				std::string components_;
 				std::string orderStatus_;
 				std::string orderType_;
 				float totalPrice_;

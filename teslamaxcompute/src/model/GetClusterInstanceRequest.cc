@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::GetClusterInstanceRequest;
 
 GetClusterInstanceRequest::GetClusterInstanceRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "GetClusterInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetClusterInstanceRequest::~GetClusterInstanceRequest()
 {}

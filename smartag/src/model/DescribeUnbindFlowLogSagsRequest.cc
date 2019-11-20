@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeUnbindFlowLogSagsRequest;
 
 DescribeUnbindFlowLogSagsRequest::DescribeUnbindFlowLogSagsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeUnbindFlowLogSags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUnbindFlowLogSagsRequest::~DescribeUnbindFlowLogSagsRequest()
 {}

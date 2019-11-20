@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteTranscodeTemplateGroupRequest;
 
 DeleteTranscodeTemplateGroupRequest::DeleteTranscodeTemplateGroupRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteTranscodeTemplateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTranscodeTemplateGroupRequest::~DeleteTranscodeTemplateGroupRequest()
 {}

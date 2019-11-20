@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeAuditRecordsRequest;
 
 DescribeAuditRecordsRequest::DescribeAuditRecordsRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeAuditRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuditRecordsRequest::~DescribeAuditRecordsRequest()
 {}

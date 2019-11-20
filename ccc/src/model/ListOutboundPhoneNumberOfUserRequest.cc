@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListOutboundPhoneNumberOfUserRequest;
 
 ListOutboundPhoneNumberOfUserRequest::ListOutboundPhoneNumberOfUserRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListOutboundPhoneNumberOfUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListOutboundPhoneNumberOfUserRequest::~ListOutboundPhoneNumberOfUserRequest()
 {}

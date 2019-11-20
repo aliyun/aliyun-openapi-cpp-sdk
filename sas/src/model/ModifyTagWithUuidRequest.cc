@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyTagWithUuidRequest;
 
 ModifyTagWithUuidRequest::ModifyTagWithUuidRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyTagWithUuid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyTagWithUuidRequest::~ModifyTagWithUuidRequest()
 {}

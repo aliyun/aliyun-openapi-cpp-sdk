@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApTopRequest;
 
 GetApTopRequest::GetApTopRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApTop")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApTopRequest::~GetApTopRequest()
 {}

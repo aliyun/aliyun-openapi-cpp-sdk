@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::PlayerAuthRequest;
 
 PlayerAuthRequest::PlayerAuthRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "PlayerAuth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PlayerAuthRequest::~PlayerAuthRequest()
 {}

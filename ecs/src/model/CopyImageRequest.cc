@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CopyImageRequest;
 
 CopyImageRequest::CopyImageRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CopyImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CopyImageRequest::~CopyImageRequest()
 {}
@@ -77,12 +79,11 @@ std::vector<CopyImageRequest::Tag> CopyImageRequest::getTag()const
 void CopyImageRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

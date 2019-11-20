@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::CreateLoadBalancerHTTPSListenerRequest;
 
 CreateLoadBalancerHTTPSListenerRequest::CreateLoadBalancerHTTPSListenerRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "CreateLoadBalancerHTTPSListener")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateLoadBalancerHTTPSListenerRequest::~CreateLoadBalancerHTTPSListenerRequest()
 {}

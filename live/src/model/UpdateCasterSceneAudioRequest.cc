@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::UpdateCasterSceneAudioRequest;
 
 UpdateCasterSceneAudioRequest::UpdateCasterSceneAudioRequest() :
 	RpcServiceRequest("live", "2016-11-01", "UpdateCasterSceneAudio")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCasterSceneAudioRequest::~UpdateCasterSceneAudioRequest()
 {}
@@ -55,13 +57,12 @@ std::vector<UpdateCasterSceneAudioRequest::AudioLayer> UpdateCasterSceneAudioReq
 void UpdateCasterSceneAudioRequest::setAudioLayer(const std::vector<AudioLayer>& audioLayer)
 {
 	audioLayer_ = audioLayer;
-	int i = 0;
-	for(int i = 0; i!= audioLayer.size(); i++)	{
-		auto obj = audioLayer.at(i);
-		std::string str ="AudioLayer."+ std::to_string(i);
-		setCoreParameter(str + ".VolumeRate", std::to_string(obj.volumeRate));
-		setCoreParameter(str + ".ValidChannel", obj.validChannel);
-		setCoreParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
+	for(int dep1 = 0; dep1!= audioLayer.size(); dep1++) {
+		auto audioLayerObj = audioLayer.at(dep1);
+		std::string audioLayerObjStr = "AudioLayer." + std::to_string(dep1);
+		setCoreParameter(audioLayerObjStr + ".VolumeRate", std::to_string(audioLayerObj.volumeRate));
+		setCoreParameter(audioLayerObjStr + ".ValidChannel", audioLayerObj.validChannel);
+		setCoreParameter(audioLayerObjStr + ".FixedDelayDuration", std::to_string(audioLayerObj.fixedDelayDuration));
 	}
 }
 
@@ -84,8 +85,9 @@ std::vector<std::string> UpdateCasterSceneAudioRequest::getMixList()const
 void UpdateCasterSceneAudioRequest::setMixList(const std::vector<std::string>& mixList)
 {
 	mixList_ = mixList;
-	for(int i = 0; i!= mixList.size(); i++)
-		setCoreParameter("MixList."+ std::to_string(i), mixList.at(i));
+	for(int dep1 = 0; dep1!= mixList.size(); dep1++) {
+		setCoreParameter("MixList."+ std::to_string(dep1), mixList.at(dep1));
+	}
 }
 
 int UpdateCasterSceneAudioRequest::getFollowEnable()const

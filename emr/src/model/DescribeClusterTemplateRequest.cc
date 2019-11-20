@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterTemplateRequest;
 
 DescribeClusterTemplateRequest::DescribeClusterTemplateRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterTemplateRequest::~DescribeClusterTemplateRequest()
 {}

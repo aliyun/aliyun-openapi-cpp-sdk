@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateAutoSnapshotPolicyRequest;
 
 CreateAutoSnapshotPolicyRequest::CreateAutoSnapshotPolicyRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateAutoSnapshotPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAutoSnapshotPolicyRequest::~CreateAutoSnapshotPolicyRequest()
 {}

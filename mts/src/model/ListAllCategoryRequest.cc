@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListAllCategoryRequest;
 
 ListAllCategoryRequest::ListAllCategoryRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListAllCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAllCategoryRequest::~ListAllCategoryRequest()
 {}

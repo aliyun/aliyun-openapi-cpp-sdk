@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeConditionsRequest;
 
 DescribeConditionsRequest::DescribeConditionsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeConditions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeConditionsRequest::~DescribeConditionsRequest()
 {}

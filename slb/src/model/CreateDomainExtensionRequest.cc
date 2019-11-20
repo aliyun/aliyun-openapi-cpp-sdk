@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::CreateDomainExtensionRequest;
 
 CreateDomainExtensionRequest::CreateDomainExtensionRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "CreateDomainExtension")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDomainExtensionRequest::~CreateDomainExtensionRequest()
 {}

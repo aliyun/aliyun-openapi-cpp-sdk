@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::WithdrawPublishedRouteEntriesRequest;
 
 WithdrawPublishedRouteEntriesRequest::WithdrawPublishedRouteEntriesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "WithdrawPublishedRouteEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 WithdrawPublishedRouteEntriesRequest::~WithdrawPublishedRouteEntriesRequest()
 {}

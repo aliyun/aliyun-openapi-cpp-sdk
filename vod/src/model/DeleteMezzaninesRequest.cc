@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteMezzaninesRequest;
 
 DeleteMezzaninesRequest::DeleteMezzaninesRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteMezzanines")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMezzaninesRequest::~DeleteMezzaninesRequest()
 {}

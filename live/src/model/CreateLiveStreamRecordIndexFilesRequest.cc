@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CreateLiveStreamRecordIndexFilesRequest;
 
 CreateLiveStreamRecordIndexFilesRequest::CreateLiveStreamRecordIndexFilesRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CreateLiveStreamRecordIndexFiles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateLiveStreamRecordIndexFilesRequest::~CreateLiveStreamRecordIndexFilesRequest()
 {}

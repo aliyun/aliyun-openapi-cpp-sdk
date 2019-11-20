@@ -34,17 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string gmtCreate;
-					std::string roleName;
 					bool bizEnable;
 					std::string instanceId;
 					std::string latestDeploymentType;
 					std::string gmtModified;
-					int spec;
 					std::string roleAttachTime;
-					std::string tags;
 					std::string roleArn;
 					std::string name;
+					std::string type;
+					std::string gmtCreate;
+					std::string roleName;
+					int spec;
+					std::string tags;
 					int latestDeploymentStatus;
 				};
 

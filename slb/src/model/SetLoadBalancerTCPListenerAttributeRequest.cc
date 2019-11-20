@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetLoadBalancerTCPListenerAttributeRequest;
 
 SetLoadBalancerTCPListenerAttributeRequest::SetLoadBalancerTCPListenerAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerTCPListenerAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLoadBalancerTCPListenerAttributeRequest::~SetLoadBalancerTCPListenerAttributeRequest()
 {}

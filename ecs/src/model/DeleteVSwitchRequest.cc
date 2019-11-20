@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteVSwitchRequest;
 
 DeleteVSwitchRequest::DeleteVSwitchRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteVSwitch")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVSwitchRequest::~DeleteVSwitchRequest()
 {}

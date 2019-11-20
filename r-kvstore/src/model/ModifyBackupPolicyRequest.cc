@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyBackupPolicyRequest;
 
 ModifyBackupPolicyRequest::ModifyBackupPolicyRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyBackupPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyBackupPolicyRequest::~ModifyBackupPolicyRequest()
 {}
@@ -56,6 +58,17 @@ void ModifyBackupPolicyRequest::setSecurityToken(const std::string& securityToke
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+int ModifyBackupPolicyRequest::getEnableBackupLog()const
+{
+	return enableBackupLog_;
+}
+
+void ModifyBackupPolicyRequest::setEnableBackupLog(int enableBackupLog)
+{
+	enableBackupLog_ = enableBackupLog;
+	setCoreParameter("EnableBackupLog", std::to_string(enableBackupLog));
 }
 
 std::string ModifyBackupPolicyRequest::getPreferredBackupPeriod()const

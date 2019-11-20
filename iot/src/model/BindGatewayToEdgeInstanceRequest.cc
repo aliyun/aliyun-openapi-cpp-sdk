@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BindGatewayToEdgeInstanceRequest;
 
 BindGatewayToEdgeInstanceRequest::BindGatewayToEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BindGatewayToEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindGatewayToEdgeInstanceRequest::~BindGatewayToEdgeInstanceRequest()
 {}

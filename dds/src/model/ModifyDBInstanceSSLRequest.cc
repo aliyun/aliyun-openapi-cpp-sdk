@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::ModifyDBInstanceSSLRequest;
 
 ModifyDBInstanceSSLRequest::ModifyDBInstanceSSLRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "ModifyDBInstanceSSL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceSSLRequest::~ModifyDBInstanceSSLRequest()
 {}

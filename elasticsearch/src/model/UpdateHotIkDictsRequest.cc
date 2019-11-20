@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::UpdateHotIkDictsRequest;
 
 UpdateHotIkDictsRequest::UpdateHotIkDictsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/ik-hot-dict");
+	setMethod(HttpRequest::Method::Put);
+}
 
 UpdateHotIkDictsRequest::~UpdateHotIkDictsRequest()
 {}

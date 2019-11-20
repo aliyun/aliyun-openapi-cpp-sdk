@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyOperateVulRequest;
 
 ModifyOperateVulRequest::ModifyOperateVulRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyOperateVul")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyOperateVulRequest::~ModifyOperateVulRequest()
 {}

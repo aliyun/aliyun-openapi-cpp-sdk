@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::DescribeEntitiesRequest;
 
 DescribeEntitiesRequest::DescribeEntitiesRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "DescribeEntities")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEntitiesRequest::~DescribeEntitiesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ubsms::Model::SetUserBusinessStatusRequest;
 
 SetUserBusinessStatusRequest::SetUserBusinessStatusRequest() :
 	RpcServiceRequest("ubsms", "2015-06-23", "SetUserBusinessStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetUserBusinessStatusRequest::~SetUserBusinessStatusRequest()
 {}

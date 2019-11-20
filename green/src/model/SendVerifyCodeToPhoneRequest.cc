@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::SendVerifyCodeToPhoneRequest;
 
 SendVerifyCodeToPhoneRequest::SendVerifyCodeToPhoneRequest() :
 	RpcServiceRequest("green", "2017-08-23", "SendVerifyCodeToPhone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendVerifyCodeToPhoneRequest::~SendVerifyCodeToPhoneRequest()
 {}

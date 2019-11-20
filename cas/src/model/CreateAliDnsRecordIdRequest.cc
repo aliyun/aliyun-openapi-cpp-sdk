@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateAliDnsRecordIdRequest;
 
 CreateAliDnsRecordIdRequest::CreateAliDnsRecordIdRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateAliDnsRecordId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAliDnsRecordIdRequest::~CreateAliDnsRecordIdRequest()
 {}

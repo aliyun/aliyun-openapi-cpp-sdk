@@ -111,6 +111,9 @@ void DescribeCenRouteMapsResult::parse(const std::string &payload)
 		auto allOperateCommunitySet = value["OperateCommunitySet"]["OperateCommunity"];
 		for (auto value : allOperateCommunitySet)
 			routeMapsObject.operateCommunitySet.push_back(value.asString());
+		auto allPrependAsPath = value["PrependAsPath"]["AsPath"];
+		for (auto value : allPrependAsPath)
+			routeMapsObject.prependAsPath.push_back(value.asString());
 		routeMaps_.push_back(routeMapsObject);
 	}
 	if(!value["TotalCount"].isNull())

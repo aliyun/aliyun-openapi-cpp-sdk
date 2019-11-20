@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetRoutePointRequest;
 
 GetRoutePointRequest::GetRoutePointRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetRoutePoint")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRoutePointRequest::~GetRoutePointRequest()
 {}

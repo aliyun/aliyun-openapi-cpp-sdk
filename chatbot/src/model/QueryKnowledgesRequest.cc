@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::QueryKnowledgesRequest;
 
 QueryKnowledgesRequest::QueryKnowledgesRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "QueryKnowledges")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryKnowledgesRequest::~QueryKnowledgesRequest()
 {}

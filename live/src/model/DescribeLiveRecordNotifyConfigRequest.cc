@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveRecordNotifyConfigRequest;
 
 DescribeLiveRecordNotifyConfigRequest::DescribeLiveRecordNotifyConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveRecordNotifyConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveRecordNotifyConfigRequest::~DescribeLiveRecordNotifyConfigRequest()
 {}

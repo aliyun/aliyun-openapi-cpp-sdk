@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CancelTaskRequest;
 
 CancelTaskRequest::CancelTaskRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CancelTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelTaskRequest::~CancelTaskRequest()
 {}

@@ -20,10 +20,23 @@ using AlibabaCloud::Sddp::Model::DescribePrivilegesRequest;
 
 DescribePrivilegesRequest::DescribePrivilegesRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribePrivileges")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePrivilegesRequest::~DescribePrivilegesRequest()
 {}
+
+int DescribePrivilegesRequest::getAccountType()const
+{
+	return accountType_;
+}
+
+void DescribePrivilegesRequest::setAccountType(int accountType)
+{
+	accountType_ = accountType;
+	setCoreParameter("AccountType", std::to_string(accountType));
+}
 
 long DescribePrivilegesRequest::getAccountId()const
 {

@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DeleteCertificateRequest;
 
 DeleteCertificateRequest::DeleteCertificateRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DeleteCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCertificateRequest::~DeleteCertificateRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::GetQualificationUploadPolicyRequest;
 
 GetQualificationUploadPolicyRequest::GetQualificationUploadPolicyRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "GetQualificationUploadPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetQualificationUploadPolicyRequest::~GetQualificationUploadPolicyRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::QueryLicensesRequest;
 
 QueryLicensesRequest::QueryLicensesRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryLicenses")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryLicensesRequest::~QueryLicensesRequest()
 {}

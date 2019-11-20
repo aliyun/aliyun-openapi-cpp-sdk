@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteBoardRequest;
 
 DeleteBoardRequest::DeleteBoardRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteBoard")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteBoardRequest::~DeleteBoardRequest()
 {}

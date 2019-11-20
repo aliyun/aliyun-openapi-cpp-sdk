@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::PushMessageToAndroidRequest;
 
 PushMessageToAndroidRequest::PushMessageToAndroidRequest() :
 	RpcServiceRequest("push", "2016-08-01", "PushMessageToAndroid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PushMessageToAndroidRequest::~PushMessageToAndroidRequest()
 {}

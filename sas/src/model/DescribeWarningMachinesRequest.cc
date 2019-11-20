@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeWarningMachinesRequest;
 
 DescribeWarningMachinesRequest::DescribeWarningMachinesRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeWarningMachines")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeWarningMachinesRequest::~DescribeWarningMachinesRequest()
 {}

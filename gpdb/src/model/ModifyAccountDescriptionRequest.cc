@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ModifyAccountDescriptionRequest;
 
 ModifyAccountDescriptionRequest::ModifyAccountDescriptionRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ModifyAccountDescription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAccountDescriptionRequest::~ModifyAccountDescriptionRequest()
 {}

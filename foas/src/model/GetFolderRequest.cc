@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetFolderRequest;
 
 GetFolderRequest::GetFolderRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/folders");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetFolderRequest::~GetFolderRequest()
 {}

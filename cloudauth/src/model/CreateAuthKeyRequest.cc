@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudauth::Model::CreateAuthKeyRequest;
 
 CreateAuthKeyRequest::CreateAuthKeyRequest() :
 	RpcServiceRequest("cloudauth", "2018-09-16", "CreateAuthKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAuthKeyRequest::~CreateAuthKeyRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteCasterVideoResourceRequest;
 
 DeleteCasterVideoResourceRequest::DeleteCasterVideoResourceRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteCasterVideoResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCasterVideoResourceRequest::~DeleteCasterVideoResourceRequest()
 {}

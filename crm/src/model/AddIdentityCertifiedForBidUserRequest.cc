@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::AddIdentityCertifiedForBidUserRequest;
 
 AddIdentityCertifiedForBidUserRequest::AddIdentityCertifiedForBidUserRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "AddIdentityCertifiedForBidUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddIdentityCertifiedForBidUserRequest::~AddIdentityCertifiedForBidUserRequest()
 {}

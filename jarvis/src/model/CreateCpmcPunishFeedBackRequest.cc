@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateCpmcPunishFeedBackRequest;
 
 CreateCpmcPunishFeedBackRequest::CreateCpmcPunishFeedBackRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateCpmcPunishFeedBack")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCpmcPunishFeedBackRequest::~CreateCpmcPunishFeedBackRequest()
 {}

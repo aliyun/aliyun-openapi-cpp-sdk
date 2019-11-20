@@ -67,6 +67,8 @@ void DescribeDedicatedHostGroupsResult::parse(const std::string &payload)
 			dedicatedHostGroupsObject.instanceNumber = std::stoi(valueDedicatedHostGroupsDedicatedHostGroupsItem["InstanceNumber"].asString());
 		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["Engine"].isNull())
 			dedicatedHostGroupsObject.engine = valueDedicatedHostGroupsDedicatedHostGroupsItem["Engine"].asString();
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["Text"].isNull())
+			dedicatedHostGroupsObject.text = valueDedicatedHostGroupsDedicatedHostGroupsItem["Text"].asString();
 		dedicatedHostGroups_.push_back(dedicatedHostGroupsObject);
 	}
 

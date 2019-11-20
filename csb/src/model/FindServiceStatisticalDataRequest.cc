@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindServiceStatisticalDataRequest;
 
 FindServiceStatisticalDataRequest::FindServiceStatisticalDataRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindServiceStatisticalData")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindServiceStatisticalDataRequest::~FindServiceStatisticalDataRequest()
 {}

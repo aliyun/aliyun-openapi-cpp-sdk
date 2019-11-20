@@ -37,15 +37,24 @@ namespace AlibabaCloud
 
 				std::string getType()const;
 				void setType(const std::string& type);
+				std::string getMode()const;
+				void setMode(const std::string& mode);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getKeyword()const;
+				void setKeyword(const std::string& keyword);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
+				std::string getCategoryId()const;
+				void setCategoryId(const std::string& categoryId);
 
             private:
 				std::string type_;
+				std::string mode_;
 				std::string regionId_;
+				std::string keyword_;
 				std::string projectId_;
+				std::string categoryId_;
 
 			};
 		}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListUsersRequest;
 
 ListUsersRequest::ListUsersRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListUsersRequest::~ListUsersRequest()
 {}

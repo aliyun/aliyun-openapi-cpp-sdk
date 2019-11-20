@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeDBInstanceNetInfoRequest;
 
 DescribeDBInstanceNetInfoRequest::DescribeDBInstanceNetInfoRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeDBInstanceNetInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceNetInfoRequest::~DescribeDBInstanceNetInfoRequest()
 {}

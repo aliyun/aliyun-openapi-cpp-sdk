@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryLoRaJoinPermissionsRequest;
 
 QueryLoRaJoinPermissionsRequest::QueryLoRaJoinPermissionsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryLoRaJoinPermissions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryLoRaJoinPermissionsRequest::~QueryLoRaJoinPermissionsRequest()
 {}

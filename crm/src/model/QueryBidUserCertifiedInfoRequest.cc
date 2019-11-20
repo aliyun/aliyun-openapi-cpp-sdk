@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::QueryBidUserCertifiedInfoRequest;
 
 QueryBidUserCertifiedInfoRequest::QueryBidUserCertifiedInfoRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "QueryBidUserCertifiedInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryBidUserCertifiedInfoRequest::~QueryBidUserCertifiedInfoRequest()
 {}

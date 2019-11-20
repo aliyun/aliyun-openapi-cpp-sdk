@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::RequestLoginInfoRequest;
 
 RequestLoginInfoRequest::RequestLoginInfoRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "RequestLoginInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RequestLoginInfoRequest::~RequestLoginInfoRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DeleteRouteServiceInCenRequest;
 
 DeleteRouteServiceInCenRequest::DeleteRouteServiceInCenRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DeleteRouteServiceInCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRouteServiceInCenRequest::~DeleteRouteServiceInCenRequest()
 {}

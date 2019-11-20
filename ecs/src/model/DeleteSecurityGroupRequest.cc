@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteSecurityGroupRequest;
 
 DeleteSecurityGroupRequest::DeleteSecurityGroupRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteSecurityGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSecurityGroupRequest::~DeleteSecurityGroupRequest()
 {}

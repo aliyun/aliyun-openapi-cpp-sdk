@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DeleteSurveyRequest;
 
 DeleteSurveyRequest::DeleteSurveyRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DeleteSurvey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSurveyRequest::~DeleteSurveyRequest()
 {}

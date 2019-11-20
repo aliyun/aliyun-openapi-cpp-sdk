@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdatePornPipelineRequest;
 
 UpdatePornPipelineRequest::UpdatePornPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdatePornPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdatePornPipelineRequest::~UpdatePornPipelineRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::ListSummaryAppsRequest;
 
 ListSummaryAppsRequest::ListSummaryAppsRequest() :
 	RpcServiceRequest("push", "2016-08-01", "ListSummaryApps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSummaryAppsRequest::~ListSummaryAppsRequest()
 {}

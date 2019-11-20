@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::QueryInstanceInfoByConnRequest;
 
 QueryInstanceInfoByConnRequest::QueryInstanceInfoByConnRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "QueryInstanceInfoByConn")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryInstanceInfoByConnRequest::~QueryInstanceInfoByConnRequest()
 {}

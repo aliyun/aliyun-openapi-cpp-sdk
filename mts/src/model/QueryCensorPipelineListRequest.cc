@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryCensorPipelineListRequest;
 
 QueryCensorPipelineListRequest::QueryCensorPipelineListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryCensorPipelineList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCensorPipelineListRequest::~QueryCensorPipelineListRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dypnsapi::Model::VerifyMobileRequest;
 
 VerifyMobileRequest::VerifyMobileRequest() :
 	RpcServiceRequest("dypnsapi", "2017-05-25", "VerifyMobile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VerifyMobileRequest::~VerifyMobileRequest()
 {}

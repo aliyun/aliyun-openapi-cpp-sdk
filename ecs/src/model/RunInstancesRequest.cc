@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::RunInstancesRequest;
 
 RunInstancesRequest::RunInstancesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "RunInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RunInstancesRequest::~RunInstancesRequest()
 {}
@@ -176,12 +178,11 @@ std::vector<RunInstancesRequest::Tag> RunInstancesRequest::getTag()const
 void RunInstancesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
 	}
 }
 
@@ -205,6 +206,17 @@ void RunInstancesRequest::setAutoRenewPeriod(int autoRenewPeriod)
 {
 	autoRenewPeriod_ = autoRenewPeriod;
 	setCoreParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+}
+
+int RunInstancesRequest::getCpuOptionsCore()const
+{
+	return cpuOptionsCore_;
+}
+
+void RunInstancesRequest::setCpuOptionsCore(int cpuOptionsCore)
+{
+	cpuOptionsCore_ = cpuOptionsCore;
+	setCoreParameter("CpuOptionsCore", std::to_string(cpuOptionsCore));
 }
 
 int RunInstancesRequest::getPeriod()const
@@ -249,6 +261,17 @@ void RunInstancesRequest::setIpv6AddressCount(int ipv6AddressCount)
 {
 	ipv6AddressCount_ = ipv6AddressCount;
 	setCoreParameter("Ipv6AddressCount", std::to_string(ipv6AddressCount));
+}
+
+std::string RunInstancesRequest::getCpuOptionsNuma()const
+{
+	return cpuOptionsNuma_;
+}
+
+void RunInstancesRequest::setCpuOptionsNuma(const std::string& cpuOptionsNuma)
+{
+	cpuOptionsNuma_ = cpuOptionsNuma;
+	setCoreParameter("CpuOptionsNuma", cpuOptionsNuma);
 }
 
 long RunInstancesRequest::getOwnerId()const
@@ -369,8 +392,9 @@ std::vector<std::string> RunInstancesRequest::getIpv6Address()const
 void RunInstancesRequest::setIpv6Address(const std::vector<std::string>& ipv6Address)
 {
 	ipv6Address_ = ipv6Address;
-	for(int i = 0; i!= ipv6Address.size(); i++)
-		setCoreParameter("Ipv6Address."+ std::to_string(i), ipv6Address.at(i));
+	for(int dep1 = 0; dep1!= ipv6Address.size(); dep1++) {
+		setCoreParameter("Ipv6Address."+ std::to_string(dep1), ipv6Address.at(dep1));
+	}
 }
 
 int RunInstancesRequest::getInternetMaxBandwidthIn()const
@@ -470,6 +494,17 @@ void RunInstancesRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
+}
+
+int RunInstancesRequest::getCpuOptionsThreadsPerCore()const
+{
+	return cpuOptionsThreadsPerCore_;
+}
+
+void RunInstancesRequest::setCpuOptionsThreadsPerCore(int cpuOptionsThreadsPerCore)
+{
+	cpuOptionsThreadsPerCore_ = cpuOptionsThreadsPerCore;
+	setCoreParameter("CpuOptionsThreadsPerCore", std::to_string(cpuOptionsThreadsPerCore));
 }
 
 std::string RunInstancesRequest::getSystemDiskCategory()const
@@ -579,15 +614,14 @@ std::vector<RunInstancesRequest::NetworkInterface> RunInstancesRequest::getNetwo
 void RunInstancesRequest::setNetworkInterface(const std::vector<NetworkInterface>& networkInterface)
 {
 	networkInterface_ = networkInterface;
-	int i = 0;
-	for(int i = 0; i!= networkInterface.size(); i++)	{
-		auto obj = networkInterface.at(i);
-		std::string str ="NetworkInterface."+ std::to_string(i);
-		setCoreParameter(str + ".PrimaryIpAddress", obj.primaryIpAddress);
-		setCoreParameter(str + ".VSwitchId", obj.vSwitchId);
-		setCoreParameter(str + ".SecurityGroupId", obj.securityGroupId);
-		setCoreParameter(str + ".NetworkInterfaceName", obj.networkInterfaceName);
-		setCoreParameter(str + ".Description", obj.description);
+	for(int dep1 = 0; dep1!= networkInterface.size(); dep1++) {
+		auto networkInterfaceObj = networkInterface.at(dep1);
+		std::string networkInterfaceObjStr = "NetworkInterface." + std::to_string(dep1);
+		setCoreParameter(networkInterfaceObjStr + ".PrimaryIpAddress", networkInterfaceObj.primaryIpAddress);
+		setCoreParameter(networkInterfaceObjStr + ".VSwitchId", networkInterfaceObj.vSwitchId);
+		setCoreParameter(networkInterfaceObjStr + ".SecurityGroupId", networkInterfaceObj.securityGroupId);
+		setCoreParameter(networkInterfaceObjStr + ".NetworkInterfaceName", networkInterfaceObj.networkInterfaceName);
+		setCoreParameter(networkInterfaceObjStr + ".Description", networkInterfaceObj.description);
 	}
 }
 
@@ -709,8 +743,9 @@ std::vector<std::string> RunInstancesRequest::getSecurityGroupIds()const
 void RunInstancesRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
 {
 	securityGroupIds_ = securityGroupIds;
-	for(int i = 0; i!= securityGroupIds.size(); i++)
-		setCoreParameter("SecurityGroupIds."+ std::to_string(i), securityGroupIds.at(i));
+	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++) {
+		setCoreParameter("SecurityGroupIds."+ std::to_string(dep1), securityGroupIds.at(dep1));
+	}
 }
 
 int RunInstancesRequest::getSpotDuration()const
@@ -732,21 +767,20 @@ std::vector<RunInstancesRequest::DataDisk> RunInstancesRequest::getDataDisk()con
 void RunInstancesRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 {
 	dataDisk_ = dataDisk;
-	int i = 0;
-	for(int i = 0; i!= dataDisk.size(); i++)	{
-		auto obj = dataDisk.at(i);
-		std::string str ="DataDisk."+ std::to_string(i);
-		setCoreParameter(str + ".Size", std::to_string(obj.size));
-		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
-		setCoreParameter(str + ".Category", obj.category);
-		setCoreParameter(str + ".Encrypted", obj.encrypted);
-		setCoreParameter(str + ".KMSKeyId", obj.kMSKeyId);
-		setCoreParameter(str + ".DiskName", obj.diskName);
-		setCoreParameter(str + ".Description", obj.description);
-		setCoreParameter(str + ".Device", obj.device);
-		setCoreParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
-		setCoreParameter(str + ".PerformanceLevel", obj.performanceLevel);
-		setCoreParameter(str + ".AutoSnapshotPolicyId", obj.autoSnapshotPolicyId);
+	for(int dep1 = 0; dep1!= dataDisk.size(); dep1++) {
+		auto dataDiskObj = dataDisk.at(dep1);
+		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1);
+		setCoreParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
+		setCoreParameter(dataDiskObjStr + ".SnapshotId", dataDiskObj.snapshotId);
+		setCoreParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
+		setCoreParameter(dataDiskObjStr + ".Encrypted", dataDiskObj.encrypted);
+		setCoreParameter(dataDiskObjStr + ".KMSKeyId", dataDiskObj.kMSKeyId);
+		setCoreParameter(dataDiskObjStr + ".DiskName", dataDiskObj.diskName);
+		setCoreParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
+		setCoreParameter(dataDiskObjStr + ".Device", dataDiskObj.device);
+		setCoreParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
+		setCoreParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
+		setCoreParameter(dataDiskObjStr + ".AutoSnapshotPolicyId", dataDiskObj.autoSnapshotPolicyId);
 	}
 }
 

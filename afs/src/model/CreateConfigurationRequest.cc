@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::CreateConfigurationRequest;
 
 CreateConfigurationRequest::CreateConfigurationRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "CreateConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateConfigurationRequest::~CreateConfigurationRequest()
 {}

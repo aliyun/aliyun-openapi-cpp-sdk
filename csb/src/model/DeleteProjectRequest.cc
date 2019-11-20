@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::DeleteProjectRequest;
 
 DeleteProjectRequest::DeleteProjectRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "DeleteProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteProjectRequest::~DeleteProjectRequest()
 {}

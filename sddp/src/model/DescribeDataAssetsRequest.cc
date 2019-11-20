@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeDataAssetsRequest;
 
 DescribeDataAssetsRequest::DescribeDataAssetsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeDataAssets")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataAssetsRequest::~DescribeDataAssetsRequest()
 {}

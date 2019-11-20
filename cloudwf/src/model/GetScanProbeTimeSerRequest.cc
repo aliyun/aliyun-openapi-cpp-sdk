@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetScanProbeTimeSerRequest;
 
 GetScanProbeTimeSerRequest::GetScanProbeTimeSerRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetScanProbeTimeSer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetScanProbeTimeSerRequest::~GetScanProbeTimeSerRequest()
 {}

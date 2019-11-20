@@ -20,7 +20,9 @@ using AlibabaCloud::Hsm::Model::ReleaseInstanceRequest;
 
 ReleaseInstanceRequest::ReleaseInstanceRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "ReleaseInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseInstanceRequest::~ReleaseInstanceRequest()
 {}

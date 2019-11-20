@@ -20,7 +20,9 @@ using AlibabaCloud::Ots::Model::BindInstance2VpcRequest;
 
 BindInstance2VpcRequest::BindInstance2VpcRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "BindInstance2Vpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindInstance2VpcRequest::~BindInstance2VpcRequest()
 {}

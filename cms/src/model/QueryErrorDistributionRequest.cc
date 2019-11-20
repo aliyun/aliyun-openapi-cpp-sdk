@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::QueryErrorDistributionRequest;
 
 QueryErrorDistributionRequest::QueryErrorDistributionRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "QueryErrorDistribution")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryErrorDistributionRequest::~QueryErrorDistributionRequest()
 {}

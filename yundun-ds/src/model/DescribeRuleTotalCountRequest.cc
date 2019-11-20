@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeRuleTotalCountRequest;
 
 DescribeRuleTotalCountRequest::DescribeRuleTotalCountRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeRuleTotalCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRuleTotalCountRequest::~DescribeRuleTotalCountRequest()
 {}

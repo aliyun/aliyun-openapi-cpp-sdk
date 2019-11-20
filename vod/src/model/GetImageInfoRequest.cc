@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetImageInfoRequest;
 
 GetImageInfoRequest::GetImageInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetImageInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetImageInfoRequest::~GetImageInfoRequest()
 {}

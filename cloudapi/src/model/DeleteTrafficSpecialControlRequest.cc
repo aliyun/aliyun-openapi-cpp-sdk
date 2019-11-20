@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteTrafficSpecialControlRequest;
 
 DeleteTrafficSpecialControlRequest::DeleteTrafficSpecialControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteTrafficSpecialControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTrafficSpecialControlRequest::~DeleteTrafficSpecialControlRequest()
 {}

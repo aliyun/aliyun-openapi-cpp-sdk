@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CancelPhysicalConnectionRequest;
 
 CancelPhysicalConnectionRequest::CancelPhysicalConnectionRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CancelPhysicalConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelPhysicalConnectionRequest::~CancelPhysicalConnectionRequest()
 {}

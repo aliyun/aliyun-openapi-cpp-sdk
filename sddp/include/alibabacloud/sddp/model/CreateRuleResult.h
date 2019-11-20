@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				CreateRuleResult();
 				explicit CreateRuleResult(const std::string &payload);
 				~CreateRuleResult();
+				int getId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int id_;
 
 			};
 		}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeFlowlogsRequest;
 
 DescribeFlowlogsRequest::DescribeFlowlogsRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeFlowlogs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowlogsRequest::~DescribeFlowlogsRequest()
 {}

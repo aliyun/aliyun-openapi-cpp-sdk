@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowNodeSqlResultRequest;
 
 ListFlowNodeSqlResultRequest::ListFlowNodeSqlResultRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowNodeSqlResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowNodeSqlResultRequest::~ListFlowNodeSqlResultRequest()
 {}

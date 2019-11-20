@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetDownloadUrlRequest;
 
 GetDownloadUrlRequest::GetDownloadUrlRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetDownloadUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetDownloadUrlRequest::~GetDownloadUrlRequest()
 {}

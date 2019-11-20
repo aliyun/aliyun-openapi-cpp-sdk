@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteFlowJobRequest;
 
 DeleteFlowJobRequest::DeleteFlowJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteFlowJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFlowJobRequest::~DeleteFlowJobRequest()
 {}

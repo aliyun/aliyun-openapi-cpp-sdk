@@ -61,6 +61,8 @@ void CreateQosPolicyResult::parse(const std::string &payload)
 		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 
 }
 
@@ -117,5 +119,10 @@ std::string CreateQosPolicyResult::getIpProtocol()const
 std::string CreateQosPolicyResult::getDestPortRange()const
 {
 	return destPortRange_;
+}
+
+std::string CreateQosPolicyResult::getName()const
+{
+	return name_;
 }
 

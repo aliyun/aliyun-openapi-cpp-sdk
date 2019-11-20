@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateCooperationOrderRequest;
 
 CreateCooperationOrderRequest::CreateCooperationOrderRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateCooperationOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCooperationOrderRequest::~CreateCooperationOrderRequest()
 {}

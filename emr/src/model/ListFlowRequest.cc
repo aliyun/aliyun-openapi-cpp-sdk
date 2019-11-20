@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowRequest;
 
 ListFlowRequest::ListFlowRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowRequest::~ListFlowRequest()
 {}

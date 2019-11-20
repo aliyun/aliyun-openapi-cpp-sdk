@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::CreateClusterRequest;
 
 CreateClusterRequest::CreateClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "CreateCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 CreateClusterRequest::~CreateClusterRequest()
 {}
@@ -33,19 +35,22 @@ std::vector<CreateClusterRequest::AdditionalVolumes> CreateClusterRequest::getAd
 void CreateClusterRequest::setAdditionalVolumes(const std::vector<AdditionalVolumes>& additionalVolumes)
 {
 	additionalVolumes_ = additionalVolumes;
-	int i = 0;
-	for(int i = 0; i!= additionalVolumes.size(); i++)	{
-		auto obj = additionalVolumes.at(i);
-		std::string str ="AdditionalVolumes."+ std::to_string(i);
-		setCoreParameter(str + ".VolumeType", obj.volumeType);
-		setCoreParameter(str + ".VolumeProtocol", obj.volumeProtocol);
-		setCoreParameter(str + ".LocalDirectory", obj.localDirectory);
-		setCoreParameter(str + ".RemoteDirectory", obj.remoteDirectory);
-		setCoreParameter(str + ".Roles", std::to_string(obj.roles));
-		setCoreParameter(str + ".VolumeId", obj.volumeId);
-		setCoreParameter(str + ".VolumeMountpoint", obj.volumeMountpoint);
-		setCoreParameter(str + ".Location", obj.location);
-		setCoreParameter(str + ".JobQueue", obj.jobQueue);
+	for(int dep1 = 0; dep1!= additionalVolumes.size(); dep1++) {
+		auto additionalVolumesObj = additionalVolumes.at(dep1);
+		std::string additionalVolumesObjStr = "AdditionalVolumes." + std::to_string(dep1);
+		setCoreParameter(additionalVolumesObjStr + ".VolumeType", additionalVolumesObj.volumeType);
+		setCoreParameter(additionalVolumesObjStr + ".VolumeProtocol", additionalVolumesObj.volumeProtocol);
+		setCoreParameter(additionalVolumesObjStr + ".LocalDirectory", additionalVolumesObj.localDirectory);
+		setCoreParameter(additionalVolumesObjStr + ".RemoteDirectory", additionalVolumesObj.remoteDirectory);
+		for(int dep2 = 0; dep2!= additionalVolumesObj.roles.size(); dep2++) {
+			auto rolesObj = additionalVolumesObj.roles.at(dep2);
+			std::string rolesObjStr = additionalVolumesObjStr + "Roles." + std::to_string(dep2);
+			setCoreParameter(rolesObjStr + ".Name", rolesObj.name);
+		}
+		setCoreParameter(additionalVolumesObjStr + ".VolumeId", additionalVolumesObj.volumeId);
+		setCoreParameter(additionalVolumesObjStr + ".VolumeMountpoint", additionalVolumesObj.volumeMountpoint);
+		setCoreParameter(additionalVolumesObjStr + ".Location", additionalVolumesObj.location);
+		setCoreParameter(additionalVolumesObjStr + ".JobQueue", additionalVolumesObj.jobQueue);
 	}
 }
 
@@ -244,12 +249,11 @@ std::vector<CreateClusterRequest::PostInstallScript> CreateClusterRequest::getPo
 void CreateClusterRequest::setPostInstallScript(const std::vector<PostInstallScript>& postInstallScript)
 {
 	postInstallScript_ = postInstallScript;
-	int i = 0;
-	for(int i = 0; i!= postInstallScript.size(); i++)	{
-		auto obj = postInstallScript.at(i);
-		std::string str ="PostInstallScript."+ std::to_string(i);
-		setCoreParameter(str + ".Args", obj.args);
-		setCoreParameter(str + ".Url", obj.url);
+	for(int dep1 = 0; dep1!= postInstallScript.size(); dep1++) {
+		auto postInstallScriptObj = postInstallScript.at(dep1);
+		std::string postInstallScriptObjStr = "PostInstallScript." + std::to_string(dep1);
+		setCoreParameter(postInstallScriptObjStr + ".Args", postInstallScriptObj.args);
+		setCoreParameter(postInstallScriptObjStr + ".Url", postInstallScriptObj.url);
 	}
 }
 
@@ -440,6 +444,17 @@ void CreateClusterRequest::setSystemDiskType(const std::string& systemDiskType)
 	setCoreParameter("SystemDiskType", systemDiskType);
 }
 
+bool CreateClusterRequest::getIsComputeOnecs()const
+{
+	return isComputeOnecs_;
+}
+
+void CreateClusterRequest::setIsComputeOnecs(bool isComputeOnecs)
+{
+	isComputeOnecs_ = isComputeOnecs;
+	setCoreParameter("IsComputeOnecs", isComputeOnecs ? "true" : "false");
+}
+
 std::string CreateClusterRequest::getVolumeProtocol()const
 {
 	return volumeProtocol_;
@@ -481,11 +496,10 @@ std::vector<CreateClusterRequest::Application> CreateClusterRequest::getApplicat
 void CreateClusterRequest::setApplication(const std::vector<Application>& application)
 {
 	application_ = application;
-	int i = 0;
-	for(int i = 0; i!= application.size(); i++)	{
-		auto obj = application.at(i);
-		std::string str ="Application."+ std::to_string(i);
-		setCoreParameter(str + ".Tag", obj.tag);
+	for(int dep1 = 0; dep1!= application.size(); dep1++) {
+		auto applicationObj = application.at(dep1);
+		std::string applicationObjStr = "Application." + std::to_string(dep1);
+		setCoreParameter(applicationObjStr + ".Tag", applicationObj.tag);
 	}
 }
 

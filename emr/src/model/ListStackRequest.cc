@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListStackRequest;
 
 ListStackRequest::ListStackRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListStack")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListStackRequest::~ListStackRequest()
 {}

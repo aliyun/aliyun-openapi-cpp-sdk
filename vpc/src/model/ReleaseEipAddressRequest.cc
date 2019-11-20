@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ReleaseEipAddressRequest;
 
 ReleaseEipAddressRequest::ReleaseEipAddressRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ReleaseEipAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseEipAddressRequest::~ReleaseEipAddressRequest()
 {}

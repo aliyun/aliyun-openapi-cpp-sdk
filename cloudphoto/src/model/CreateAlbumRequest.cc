@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::CreateAlbumRequest;
 
 CreateAlbumRequest::CreateAlbumRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "CreateAlbum")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAlbumRequest::~CreateAlbumRequest()
 {}

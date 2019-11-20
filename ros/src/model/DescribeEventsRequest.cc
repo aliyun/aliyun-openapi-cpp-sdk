@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DescribeEventsRequest;
 
 DescribeEventsRequest::DescribeEventsRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/events");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeEventsRequest::~DescribeEventsRequest()
 {}

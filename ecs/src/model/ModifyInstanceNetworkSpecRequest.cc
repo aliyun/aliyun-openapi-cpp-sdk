@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyInstanceNetworkSpecRequest;
 
 ModifyInstanceNetworkSpecRequest::ModifyInstanceNetworkSpecRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyInstanceNetworkSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceNetworkSpecRequest::~ModifyInstanceNetworkSpecRequest()
 {}

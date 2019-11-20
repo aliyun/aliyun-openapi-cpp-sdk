@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DeleteSkillGroupRequest;
 
 DeleteSkillGroupRequest::DeleteSkillGroupRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DeleteSkillGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSkillGroupRequest::~DeleteSkillGroupRequest()
 {}

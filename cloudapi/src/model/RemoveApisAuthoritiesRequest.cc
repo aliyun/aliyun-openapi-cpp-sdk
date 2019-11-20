@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::RemoveApisAuthoritiesRequest;
 
 RemoveApisAuthoritiesRequest::RemoveApisAuthoritiesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "RemoveApisAuthorities")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveApisAuthoritiesRequest::~RemoveApisAuthoritiesRequest()
 {}

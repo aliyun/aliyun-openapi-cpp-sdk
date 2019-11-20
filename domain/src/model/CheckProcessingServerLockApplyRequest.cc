@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CheckProcessingServerLockApplyRequest;
 
 CheckProcessingServerLockApplyRequest::CheckProcessingServerLockApplyRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CheckProcessingServerLockApply")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckProcessingServerLockApplyRequest::~CheckProcessingServerLockApplyRequest()
 {}

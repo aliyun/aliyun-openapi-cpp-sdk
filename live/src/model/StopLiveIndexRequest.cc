@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StopLiveIndexRequest;
 
 StopLiveIndexRequest::StopLiveIndexRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StopLiveIndex")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopLiveIndexRequest::~StopLiveIndexRequest()
 {}

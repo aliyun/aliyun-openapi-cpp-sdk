@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::CreateUserInfoRequest;
 
 CreateUserInfoRequest::CreateUserInfoRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/users");
+	setMethod(HttpRequest::Method::Put);
+}
 
 CreateUserInfoRequest::~CreateUserInfoRequest()
 {}

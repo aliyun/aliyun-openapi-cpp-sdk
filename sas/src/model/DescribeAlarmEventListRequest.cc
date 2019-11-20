@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeAlarmEventListRequest;
 
 DescribeAlarmEventListRequest::DescribeAlarmEventListRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeAlarmEventList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAlarmEventListRequest::~DescribeAlarmEventListRequest()
 {}
@@ -143,8 +145,9 @@ std::vector<std::string> DescribeAlarmEventListRequest::getOperateErrorCodeList(
 void DescribeAlarmEventListRequest::setOperateErrorCodeList(const std::vector<std::string>& operateErrorCodeList)
 {
 	operateErrorCodeList_ = operateErrorCodeList;
-	for(int i = 0; i!= operateErrorCodeList.size(); i++)
-		setCoreParameter("OperateErrorCodeList."+ std::to_string(i), operateErrorCodeList.at(i));
+	for(int dep1 = 0; dep1!= operateErrorCodeList.size(); dep1++) {
+		setCoreParameter("OperateErrorCodeList."+ std::to_string(dep1), operateErrorCodeList.at(dep1));
+	}
 }
 
 std::string DescribeAlarmEventListRequest::getLevels()const

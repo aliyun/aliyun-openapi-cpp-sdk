@@ -64,6 +64,12 @@ namespace AlibabaCloud
 						std::string tenancy;
 						std::string affinity;
 					};
+					struct CpuOptions
+					{
+						int threadsPerCore;
+						std::string numa;
+						int coreCount;
+					};
 					struct NetworkInterface
 					{
 						std::string primaryIpAddress;
@@ -96,6 +102,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string instanceId;
 					std::string stoppedMode;
+					CpuOptions cpuOptions;
 					std::string startTime;
 					bool deletionProtection;
 					VpcAttributes vpcAttributes;

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ConvertNatPublicIpToEipRequest;
 
 ConvertNatPublicIpToEipRequest::ConvertNatPublicIpToEipRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ConvertNatPublicIpToEip")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConvertNatPublicIpToEipRequest::~ConvertNatPublicIpToEipRequest()
 {}

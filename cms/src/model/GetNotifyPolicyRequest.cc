@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::GetNotifyPolicyRequest;
 
 GetNotifyPolicyRequest::GetNotifyPolicyRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "GetNotifyPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetNotifyPolicyRequest::~GetNotifyPolicyRequest()
 {}

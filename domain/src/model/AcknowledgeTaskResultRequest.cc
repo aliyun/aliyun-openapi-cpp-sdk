@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::AcknowledgeTaskResultRequest;
 
 AcknowledgeTaskResultRequest::AcknowledgeTaskResultRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "AcknowledgeTaskResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AcknowledgeTaskResultRequest::~AcknowledgeTaskResultRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> AcknowledgeTaskResultRequest::getTaskDetailNo()const
 void AcknowledgeTaskResultRequest::setTaskDetailNo(const std::vector<std::string>& taskDetailNo)
 {
 	taskDetailNo_ = taskDetailNo;
-	for(int i = 0; i!= taskDetailNo.size(); i++)
-		setCoreParameter("TaskDetailNo."+ std::to_string(i), taskDetailNo.at(i));
+	for(int dep1 = 0; dep1!= taskDetailNo.size(); dep1++) {
+		setCoreParameter("TaskDetailNo."+ std::to_string(dep1), taskDetailNo.at(dep1));
+	}
 }
 
 std::string AcknowledgeTaskResultRequest::getUserClientIp()const

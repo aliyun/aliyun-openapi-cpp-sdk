@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeErrorLogsRequest;
 
 DescribeErrorLogsRequest::DescribeErrorLogsRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeErrorLogs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeErrorLogsRequest::~DescribeErrorLogsRequest()
 {}

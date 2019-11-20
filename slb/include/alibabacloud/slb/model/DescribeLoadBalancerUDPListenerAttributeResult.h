@@ -59,6 +59,7 @@ namespace AlibabaCloud
 				std::string getHealthCheckExp()const;
 				std::string getMasterSlaveServerGroupId()const;
 				std::string getAclType()const;
+				std::vector<std::string> getAclIds()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -85,6 +86,7 @@ namespace AlibabaCloud
 				std::string healthCheckExp_;
 				std::string masterSlaveServerGroupId_;
 				std::string aclType_;
+				std::vector<std::string> aclIds_;
 
 			};
 		}

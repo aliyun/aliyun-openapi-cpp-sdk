@@ -41,6 +41,7 @@ namespace AlibabaCloud
 				int getPort()const;
 				int getProcess()const;
 				int getSoftware()const;
+				int getCron()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -49,6 +50,7 @@ namespace AlibabaCloud
 				int port_;
 				int process_;
 				int software_;
+				int cron_;
 
 			};
 		}

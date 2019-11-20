@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::RemoveSynonymRequest;
 
 RemoveSynonymRequest::RemoveSynonymRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "RemoveSynonym")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveSynonymRequest::~RemoveSynonymRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribePropertyProcDetailRequest;
 
 DescribePropertyProcDetailRequest::DescribePropertyProcDetailRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribePropertyProcDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePropertyProcDetailRequest::~DescribePropertyProcDetailRequest()
 {}

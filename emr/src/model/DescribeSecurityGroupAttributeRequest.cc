@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeSecurityGroupAttributeRequest;
 
 DescribeSecurityGroupAttributeRequest::DescribeSecurityGroupAttributeRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeSecurityGroupAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSecurityGroupAttributeRequest::~DescribeSecurityGroupAttributeRequest()
 {}

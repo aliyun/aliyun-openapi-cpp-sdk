@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterMetaCollectRequest;
 
 DescribeClusterMetaCollectRequest::DescribeClusterMetaCollectRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterMetaCollect")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterMetaCollectRequest::~DescribeClusterMetaCollectRequest()
 {}

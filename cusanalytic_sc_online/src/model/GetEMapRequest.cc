@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetEMapRequest;
 
 GetEMapRequest::GetEMapRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetEMap")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetEMapRequest::~GetEMapRequest()
 {}

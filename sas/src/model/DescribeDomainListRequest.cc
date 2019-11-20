@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeDomainListRequest;
 
 DescribeDomainListRequest::DescribeDomainListRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeDomainList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainListRequest::~DescribeDomainListRequest()
 {}

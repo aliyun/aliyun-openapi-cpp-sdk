@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteRouteTableRequest;
 
 DeleteRouteTableRequest::DeleteRouteTableRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteRouteTable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRouteTableRequest::~DeleteRouteTableRequest()
 {}

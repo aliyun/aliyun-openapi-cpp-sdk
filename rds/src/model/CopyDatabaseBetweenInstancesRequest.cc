@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CopyDatabaseBetweenInstancesRequest;
 
 CopyDatabaseBetweenInstancesRequest::CopyDatabaseBetweenInstancesRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CopyDatabaseBetweenInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CopyDatabaseBetweenInstancesRequest::~CopyDatabaseBetweenInstancesRequest()
 {}

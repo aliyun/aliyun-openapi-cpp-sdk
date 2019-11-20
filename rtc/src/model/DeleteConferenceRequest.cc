@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::DeleteConferenceRequest;
 
 DeleteConferenceRequest::DeleteConferenceRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "DeleteConference")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteConferenceRequest::~DeleteConferenceRequest()
 {}

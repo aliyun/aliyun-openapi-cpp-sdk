@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis_public::Model::DescribeCountAttackEventRequest;
 
 DescribeCountAttackEventRequest::DescribeCountAttackEventRequest() :
 	RpcServiceRequest("jarvis-public", "2018-06-21", "DescribeCountAttackEvent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCountAttackEventRequest::~DescribeCountAttackEventRequest()
 {}

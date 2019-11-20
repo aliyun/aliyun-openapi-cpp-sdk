@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListCallEventDetailByContactIdRequest;
 
 ListCallEventDetailByContactIdRequest::ListCallEventDetailByContactIdRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListCallEventDetailByContactId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListCallEventDetailByContactIdRequest::~ListCallEventDetailByContactIdRequest()
 {}

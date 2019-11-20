@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::GenerateQrCodeRequest;
 
 GenerateQrCodeRequest::GenerateQrCodeRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "GenerateQrCode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GenerateQrCodeRequest::~GenerateQrCodeRequest()
 {}

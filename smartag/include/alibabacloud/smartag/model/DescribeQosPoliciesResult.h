@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string qosId;
 					std::string ipProtocol;
 					std::string destPortRange;
+					std::string name;
 				};
 
 

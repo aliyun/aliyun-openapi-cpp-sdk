@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryContactInfoRequest;
 
 QueryContactInfoRequest::QueryContactInfoRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryContactInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryContactInfoRequest::~QueryContactInfoRequest()
 {}

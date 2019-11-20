@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::CreateAlertContactRequest;
 
 CreateAlertContactRequest::CreateAlertContactRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "CreateAlertContact")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAlertContactRequest::~CreateAlertContactRequest()
 {}

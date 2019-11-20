@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SearchMediaRequest;
 
 SearchMediaRequest::SearchMediaRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SearchMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchMediaRequest::~SearchMediaRequest()
 {}

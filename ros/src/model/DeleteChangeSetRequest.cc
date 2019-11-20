@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DeleteChangeSetRequest;
 
 DeleteChangeSetRequest::DeleteChangeSetRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteChangeSetRequest::~DeleteChangeSetRequest()
 {}

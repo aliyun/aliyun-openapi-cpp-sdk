@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::EditPhotoStoreRequest;
 
 EditPhotoStoreRequest::EditPhotoStoreRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "EditPhotoStore")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EditPhotoStoreRequest::~EditPhotoStoreRequest()
 {}

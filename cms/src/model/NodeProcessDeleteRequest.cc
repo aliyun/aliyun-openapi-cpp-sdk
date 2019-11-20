@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::NodeProcessDeleteRequest;
 
 NodeProcessDeleteRequest::NodeProcessDeleteRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "NodeProcessDelete")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 NodeProcessDeleteRequest::~NodeProcessDeleteRequest()
 {}

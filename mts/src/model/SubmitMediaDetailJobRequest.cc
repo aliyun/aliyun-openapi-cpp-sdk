@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitMediaDetailJobRequest;
 
 SubmitMediaDetailJobRequest::SubmitMediaDetailJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitMediaDetailJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitMediaDetailJobRequest::~SubmitMediaDetailJobRequest()
 {}

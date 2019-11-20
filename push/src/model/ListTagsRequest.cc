@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::ListTagsRequest;
 
 ListTagsRequest::ListTagsRequest() :
 	RpcServiceRequest("push", "2016-08-01", "ListTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTagsRequest::~ListTagsRequest()
 {}

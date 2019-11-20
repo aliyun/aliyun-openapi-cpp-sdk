@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateAsrPipelineRequest;
 
 UpdateAsrPipelineRequest::UpdateAsrPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateAsrPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateAsrPipelineRequest::~UpdateAsrPipelineRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyCustomerGatewayAttributeRequest;
 
 ModifyCustomerGatewayAttributeRequest::ModifyCustomerGatewayAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyCustomerGatewayAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCustomerGatewayAttributeRequest::~ModifyCustomerGatewayAttributeRequest()
 {}

@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetClusterDetailsRequest;
 
 GetClusterDetailsRequest::GetClusterDetailsRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/details");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetClusterDetailsRequest::~GetClusterDetailsRequest()
 {}

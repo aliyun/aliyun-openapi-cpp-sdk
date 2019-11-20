@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DescribeContactRequest;
 
 DescribeContactRequest::DescribeContactRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DescribeContact")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeContactRequest::~DescribeContactRequest()
 {}

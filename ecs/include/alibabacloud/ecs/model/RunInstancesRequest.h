@@ -94,6 +94,8 @@ namespace AlibabaCloud
 				void setSystemDiskAutoSnapshotPolicyId(const std::string& systemDiskAutoSnapshotPolicyId);
 				int getAutoRenewPeriod()const;
 				void setAutoRenewPeriod(int autoRenewPeriod);
+				int getCpuOptionsCore()const;
+				void setCpuOptionsCore(int cpuOptionsCore);
 				int getPeriod()const;
 				void setPeriod(int period);
 				bool getDryRun()const;
@@ -102,6 +104,8 @@ namespace AlibabaCloud
 				void setLaunchTemplateId(const std::string& launchTemplateId);
 				int getIpv6AddressCount()const;
 				void setIpv6AddressCount(int ipv6AddressCount);
+				std::string getCpuOptionsNuma()const;
+				void setCpuOptionsNuma(const std::string& cpuOptionsNuma);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getCapacityReservationPreference()const;
@@ -142,6 +146,8 @@ namespace AlibabaCloud
 				void setInternetMaxBandwidthOut(int internetMaxBandwidthOut);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				int getCpuOptionsThreadsPerCore()const;
+				void setCpuOptionsThreadsPerCore(int cpuOptionsThreadsPerCore);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
 				std::string getCapacityReservationId()const;
@@ -214,10 +220,12 @@ namespace AlibabaCloud
 				std::vector<Tag> tag_;
 				std::string systemDiskAutoSnapshotPolicyId_;
 				int autoRenewPeriod_;
+				int cpuOptionsCore_;
 				int period_;
 				bool dryRun_;
 				std::string launchTemplateId_;
 				int ipv6AddressCount_;
+				std::string cpuOptionsNuma_;
 				long ownerId_;
 				std::string capacityReservationPreference_;
 				std::string vSwitchId_;
@@ -238,6 +246,7 @@ namespace AlibabaCloud
 				std::string securityGroupId_;
 				int internetMaxBandwidthOut_;
 				std::string description_;
+				int cpuOptionsThreadsPerCore_;
 				std::string systemDiskCategory_;
 				std::string capacityReservationId_;
 				std::string systemDiskPerformanceLevel_;

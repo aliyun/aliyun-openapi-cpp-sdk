@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeAvailableTimeRangeRequest;
 
 DescribeAvailableTimeRangeRequest::DescribeAvailableTimeRangeRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeAvailableTimeRange")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAvailableTimeRangeRequest::~DescribeAvailableTimeRangeRequest()
 {}

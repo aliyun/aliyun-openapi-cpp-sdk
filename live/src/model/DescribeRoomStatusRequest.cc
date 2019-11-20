@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeRoomStatusRequest;
 
 DescribeRoomStatusRequest::DescribeRoomStatusRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeRoomStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRoomStatusRequest::~DescribeRoomStatusRequest()
 {}

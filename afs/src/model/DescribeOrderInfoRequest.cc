@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribeOrderInfoRequest;
 
 DescribeOrderInfoRequest::DescribeOrderInfoRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribeOrderInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOrderInfoRequest::~DescribeOrderInfoRequest()
 {}

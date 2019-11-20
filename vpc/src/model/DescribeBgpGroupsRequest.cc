@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeBgpGroupsRequest;
 
 DescribeBgpGroupsRequest::DescribeBgpGroupsRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeBgpGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBgpGroupsRequest::~DescribeBgpGroupsRequest()
 {}

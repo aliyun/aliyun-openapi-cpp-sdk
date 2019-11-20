@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::UnmuteAudioRequest;
 
 UnmuteAudioRequest::UnmuteAudioRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "UnmuteAudio")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnmuteAudioRequest::~UnmuteAudioRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> UnmuteAudioRequest::getParticipantIds()const
 void UnmuteAudioRequest::setParticipantIds(const std::vector<std::string>& participantIds)
 {
 	participantIds_ = participantIds;
-	for(int i = 0; i!= participantIds.size(); i++)
-		setCoreParameter("ParticipantIds."+ std::to_string(i), participantIds.at(i));
+	for(int dep1 = 0; dep1!= participantIds.size(); dep1++) {
+		setCoreParameter("ParticipantIds."+ std::to_string(dep1), participantIds.at(dep1));
+	}
 }
 
 std::string UnmuteAudioRequest::getConferenceId()const

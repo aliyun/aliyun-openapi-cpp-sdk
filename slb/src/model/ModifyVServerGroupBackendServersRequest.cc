@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::ModifyVServerGroupBackendServersRequest;
 
 ModifyVServerGroupBackendServersRequest::ModifyVServerGroupBackendServersRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "ModifyVServerGroupBackendServers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyVServerGroupBackendServersRequest::~ModifyVServerGroupBackendServersRequest()
 {}

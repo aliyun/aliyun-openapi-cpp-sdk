@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeOssObjectsRequest;
 
 DescribeOssObjectsRequest::DescribeOssObjectsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeOssObjects")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssObjectsRequest::~DescribeOssObjectsRequest()
 {}

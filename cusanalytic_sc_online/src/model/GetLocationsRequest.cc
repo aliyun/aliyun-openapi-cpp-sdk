@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetLocationsRequest;
 
 GetLocationsRequest::GetLocationsRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetLocations")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetLocationsRequest::~GetLocationsRequest()
 {}

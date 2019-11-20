@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeNewProjectEipMonitorDataRequest;
 
 DescribeNewProjectEipMonitorDataRequest::DescribeNewProjectEipMonitorDataRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeNewProjectEipMonitorData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNewProjectEipMonitorDataRequest::~DescribeNewProjectEipMonitorDataRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::ModifyLoadBalancerPayTypeRequest;
 
 ModifyLoadBalancerPayTypeRequest::ModifyLoadBalancerPayTypeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "ModifyLoadBalancerPayType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyLoadBalancerPayTypeRequest::~ModifyLoadBalancerPayTypeRequest()
 {}

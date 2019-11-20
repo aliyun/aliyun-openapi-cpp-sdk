@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ReactivateDomainRequest;
 
 ReactivateDomainRequest::ReactivateDomainRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ReactivateDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReactivateDomainRequest::~ReactivateDomainRequest()
 {}

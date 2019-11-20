@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetOnlineApTimeSerRequest;
 
 GetOnlineApTimeSerRequest::GetOnlineApTimeSerRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetOnlineApTimeSer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetOnlineApTimeSerRequest::~GetOnlineApTimeSerRequest()
 {}

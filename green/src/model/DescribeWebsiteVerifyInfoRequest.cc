@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeWebsiteVerifyInfoRequest;
 
 DescribeWebsiteVerifyInfoRequest::DescribeWebsiteVerifyInfoRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeWebsiteVerifyInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeWebsiteVerifyInfoRequest::~DescribeWebsiteVerifyInfoRequest()
 {}

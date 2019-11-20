@@ -34,6 +34,8 @@
 #include "model/CheckScdnServiceResult.h"
 #include "model/DeleteScdnDomainRequest.h"
 #include "model/DeleteScdnDomainResult.h"
+#include "model/DeleteScdnSpecificConfigRequest.h"
+#include "model/DeleteScdnSpecificConfigResult.h"
 #include "model/DescribeScdnCertificateDetailRequest.h"
 #include "model/DescribeScdnCertificateDetailResult.h"
 #include "model/DescribeScdnCertificateListRequest.h"
@@ -145,6 +147,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteScdnDomainResult> DeleteScdnDomainOutcome;
 			typedef std::future<DeleteScdnDomainOutcome> DeleteScdnDomainOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DeleteScdnDomainRequest&, const DeleteScdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScdnDomainAsyncHandler;
+			typedef Outcome<Error, Model::DeleteScdnSpecificConfigResult> DeleteScdnSpecificConfigOutcome;
+			typedef std::future<DeleteScdnSpecificConfigOutcome> DeleteScdnSpecificConfigOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DeleteScdnSpecificConfigRequest&, const DeleteScdnSpecificConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScdnSpecificConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScdnCertificateDetailResult> DescribeScdnCertificateDetailOutcome;
 			typedef std::future<DescribeScdnCertificateDetailOutcome> DescribeScdnCertificateDetailOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnCertificateDetailRequest&, const DescribeScdnCertificateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnCertificateDetailAsyncHandler;
@@ -294,6 +299,9 @@ namespace AlibabaCloud
 			DeleteScdnDomainOutcome deleteScdnDomain(const Model::DeleteScdnDomainRequest &request)const;
 			void deleteScdnDomainAsync(const Model::DeleteScdnDomainRequest& request, const DeleteScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteScdnDomainOutcomeCallable deleteScdnDomainCallable(const Model::DeleteScdnDomainRequest& request) const;
+			DeleteScdnSpecificConfigOutcome deleteScdnSpecificConfig(const Model::DeleteScdnSpecificConfigRequest &request)const;
+			void deleteScdnSpecificConfigAsync(const Model::DeleteScdnSpecificConfigRequest& request, const DeleteScdnSpecificConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteScdnSpecificConfigOutcomeCallable deleteScdnSpecificConfigCallable(const Model::DeleteScdnSpecificConfigRequest& request) const;
 			DescribeScdnCertificateDetailOutcome describeScdnCertificateDetail(const Model::DescribeScdnCertificateDetailRequest &request)const;
 			void describeScdnCertificateDetailAsync(const Model::DescribeScdnCertificateDetailRequest& request, const DescribeScdnCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnCertificateDetailOutcomeCallable describeScdnCertificateDetailCallable(const Model::DescribeScdnCertificateDetailRequest& request) const;

@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DetachDBInstancesRequest;
 
 DetachDBInstancesRequest::DetachDBInstancesRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DetachDBInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachDBInstancesRequest::~DetachDBInstancesRequest()
 {}
@@ -66,8 +68,9 @@ std::vector<std::string> DetachDBInstancesRequest::getDBInstance()const
 void DetachDBInstancesRequest::setDBInstance(const std::vector<std::string>& dBInstance)
 {
 	dBInstance_ = dBInstance;
-	for(int i = 0; i!= dBInstance.size(); i++)
-		setCoreParameter("DBInstance."+ std::to_string(i), dBInstance.at(i));
+	for(int dep1 = 0; dep1!= dBInstance.size(); dep1++) {
+		setCoreParameter("DBInstance."+ std::to_string(dep1), dBInstance.at(dep1));
+	}
 }
 
 long DetachDBInstancesRequest::getOwnerId()const

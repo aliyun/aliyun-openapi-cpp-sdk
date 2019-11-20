@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsRegionListRequest;
 
 OnsRegionListRequest::OnsRegionListRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsRegionList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsRegionListRequest::~OnsRegionListRequest()
 {}

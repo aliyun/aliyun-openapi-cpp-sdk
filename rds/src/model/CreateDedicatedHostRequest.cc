@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CreateDedicatedHostRequest;
 
 CreateDedicatedHostRequest::CreateDedicatedHostRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CreateDedicatedHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDedicatedHostRequest::~CreateDedicatedHostRequest()
 {}
@@ -67,17 +69,6 @@ void CreateDedicatedHostRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
 	setCoreParameter("HostName", hostName);
-}
-
-int CreateDedicatedHostRequest::getHostCount()const
-{
-	return hostCount_;
-}
-
-void CreateDedicatedHostRequest::setHostCount(int hostCount)
-{
-	hostCount_ = hostCount;
-	setCoreParameter("HostCount", std::to_string(hostCount));
 }
 
 std::string CreateDedicatedHostRequest::getRegionId()const

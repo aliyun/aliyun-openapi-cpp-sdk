@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::EipNotifyPaidRequest;
 
 EipNotifyPaidRequest::EipNotifyPaidRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "EipNotifyPaid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EipNotifyPaidRequest::~EipNotifyPaidRequest()
 {}

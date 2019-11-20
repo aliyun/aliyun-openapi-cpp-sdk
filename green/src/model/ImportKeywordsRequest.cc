@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::ImportKeywordsRequest;
 
 ImportKeywordsRequest::ImportKeywordsRequest() :
 	RpcServiceRequest("green", "2017-08-23", "ImportKeywords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImportKeywordsRequest::~ImportKeywordsRequest()
 {}

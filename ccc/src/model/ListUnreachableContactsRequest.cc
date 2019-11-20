@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListUnreachableContactsRequest;
 
 ListUnreachableContactsRequest::ListUnreachableContactsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListUnreachableContacts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListUnreachableContactsRequest::~ListUnreachableContactsRequest()
 {}

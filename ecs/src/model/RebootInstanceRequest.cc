@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::RebootInstanceRequest;
 
 RebootInstanceRequest::RebootInstanceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "RebootInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RebootInstanceRequest::~RebootInstanceRequest()
 {}

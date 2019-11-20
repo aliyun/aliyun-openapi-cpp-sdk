@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::DeleteMaterialRequest;
 
 DeleteMaterialRequest::DeleteMaterialRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "DeleteMaterial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMaterialRequest::~DeleteMaterialRequest()
 {}

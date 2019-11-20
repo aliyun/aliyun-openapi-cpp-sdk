@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::EipFillParamsRequest;
 
 EipFillParamsRequest::EipFillParamsRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "EipFillParams")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EipFillParamsRequest::~EipFillParamsRequest()
 {}

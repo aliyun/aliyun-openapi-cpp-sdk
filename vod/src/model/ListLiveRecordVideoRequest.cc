@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListLiveRecordVideoRequest;
 
 ListLiveRecordVideoRequest::ListLiveRecordVideoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListLiveRecordVideo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListLiveRecordVideoRequest::~ListLiveRecordVideoRequest()
 {}

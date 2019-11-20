@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListAccountConfigRequest;
 
 ListAccountConfigRequest::ListAccountConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListAccountConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAccountConfigRequest::~ListAccountConfigRequest()
 {}

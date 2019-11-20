@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::GenerateUploadFilePolicyRequest;
 
 GenerateUploadFilePolicyRequest::GenerateUploadFilePolicyRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "GenerateUploadFilePolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GenerateUploadFilePolicyRequest::~GenerateUploadFilePolicyRequest()
 {}

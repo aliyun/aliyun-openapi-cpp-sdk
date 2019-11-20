@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ReportZoneDayRequest;
 
 ReportZoneDayRequest::ReportZoneDayRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ReportZoneDay")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportZoneDayRequest::~ReportZoneDayRequest()
 {}

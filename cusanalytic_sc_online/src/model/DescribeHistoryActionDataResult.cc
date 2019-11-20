@@ -62,6 +62,8 @@ void DescribeHistoryActionDataResult::parse(const std::string &payload)
 		if(!valueActionsMsgItemsActionsMsgItem["LocationLayerType"].isNull())
 			actionsMsgItemsObject.locationLayerType = valueActionsMsgItemsActionsMsgItem["LocationLayerType"].asString();
 		auto infosNode = value["Infos"];
+		if(!infosNode["InStay"].isNull())
+			actionsMsgItemsObject.infos.inStay = std::stol(infosNode["InStay"].asString());
 		if(!infosNode["Maxts"].isNull())
 			actionsMsgItemsObject.infos.maxts = std::stol(infosNode["Maxts"].asString());
 		if(!infosNode["StayValid"].isNull())
@@ -117,6 +119,8 @@ void DescribeHistoryActionDataResult::parse(const std::string &payload)
 		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["StoreId"].isNull())
 		storeId_ = value["StoreId"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 	if(!value["TsEnd"].isNull())
 		tsEnd_ = std::stol(value["TsEnd"].asString());
 
@@ -125,6 +129,11 @@ void DescribeHistoryActionDataResult::parse(const std::string &payload)
 bool DescribeHistoryActionDataResult::getIsSuccess()const
 {
 	return isSuccess_;
+}
+
+long DescribeHistoryActionDataResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 long DescribeHistoryActionDataResult::getTsStart()const

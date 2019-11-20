@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::RemoveDrdsInstanceRequest;
 
 RemoveDrdsInstanceRequest::RemoveDrdsInstanceRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "RemoveDrdsInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveDrdsInstanceRequest::~RemoveDrdsInstanceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchAddDeviceGroupRelationsRequest;
 
 BatchAddDeviceGroupRelationsRequest::BatchAddDeviceGroupRelationsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchAddDeviceGroupRelations")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchAddDeviceGroupRelationsRequest::~BatchAddDeviceGroupRelationsRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<BatchAddDeviceGroupRelationsRequest::Device> BatchAddDeviceGroupRela
 void BatchAddDeviceGroupRelationsRequest::setDevice(const std::vector<Device>& device)
 {
 	device_ = device;
-	int i = 0;
-	for(int i = 0; i!= device.size(); i++)	{
-		auto obj = device.at(i);
-		std::string str ="Device."+ std::to_string(i);
-		setCoreParameter(str + ".DeviceName", obj.deviceName);
-		setCoreParameter(str + ".ProductKey", obj.productKey);
+	for(int dep1 = 0; dep1!= device.size(); dep1++) {
+		auto deviceObj = device.at(dep1);
+		std::string deviceObjStr = "Device." + std::to_string(dep1);
+		setCoreParameter(deviceObjStr + ".DeviceName", deviceObj.deviceName);
+		setCoreParameter(deviceObjStr + ".ProductKey", deviceObj.productKey);
 	}
 }
 

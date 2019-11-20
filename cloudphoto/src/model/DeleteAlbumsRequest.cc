@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::DeleteAlbumsRequest;
 
 DeleteAlbumsRequest::DeleteAlbumsRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "DeleteAlbums")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAlbumsRequest::~DeleteAlbumsRequest()
 {}
@@ -44,8 +46,9 @@ std::vector<long> DeleteAlbumsRequest::getAlbumId()const
 void DeleteAlbumsRequest::setAlbumId(const std::vector<long>& albumId)
 {
 	albumId_ = albumId;
-	for(int i = 0; i!= albumId.size(); i++)
-		setCoreParameter("AlbumId."+ std::to_string(i), std::to_string(albumId.at(i)));
+	for(int dep1 = 0; dep1!= albumId.size(); dep1++) {
+		setCoreParameter("AlbumId."+ std::to_string(dep1), std::to_string(albumId.at(dep1)));
+	}
 }
 
 std::string DeleteAlbumsRequest::getStoreName()const

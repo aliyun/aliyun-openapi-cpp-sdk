@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GroupIntimeRequest;
 
 GroupIntimeRequest::GroupIntimeRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GroupIntime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GroupIntimeRequest::~GroupIntimeRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddMCTemplateRequest;
 
 AddMCTemplateRequest::AddMCTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddMCTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddMCTemplateRequest::~AddMCTemplateRequest()
 {}

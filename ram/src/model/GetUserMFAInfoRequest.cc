@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetUserMFAInfoRequest;
 
 GetUserMFAInfoRequest::GetUserMFAInfoRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetUserMFAInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUserMFAInfoRequest::~GetUserMFAInfoRequest()
 {}

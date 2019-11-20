@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SdkGenerateByAppRequest;
 
 SdkGenerateByAppRequest::SdkGenerateByAppRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SdkGenerateByApp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SdkGenerateByAppRequest::~SdkGenerateByAppRequest()
 {}

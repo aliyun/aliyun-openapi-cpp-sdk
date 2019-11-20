@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeDiskMonitorDataRequest;
 
 DescribeDiskMonitorDataRequest::DescribeDiskMonitorDataRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeDiskMonitorData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDiskMonitorDataRequest::~DescribeDiskMonitorDataRequest()
 {}

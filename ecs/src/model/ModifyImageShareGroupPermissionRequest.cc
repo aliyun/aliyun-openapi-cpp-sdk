@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyImageShareGroupPermissionRequest;
 
 ModifyImageShareGroupPermissionRequest::ModifyImageShareGroupPermissionRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyImageShareGroupPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyImageShareGroupPermissionRequest::~ModifyImageShareGroupPermissionRequest()
 {}

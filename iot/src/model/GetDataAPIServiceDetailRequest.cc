@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::GetDataAPIServiceDetailRequest;
 
 GetDataAPIServiceDetailRequest::GetDataAPIServiceDetailRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetDataAPIServiceDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetDataAPIServiceDetailRequest::~GetDataAPIServiceDetailRequest()
 {}

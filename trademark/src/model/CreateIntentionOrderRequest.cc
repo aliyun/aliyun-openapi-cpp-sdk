@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::CreateIntentionOrderRequest;
 
 CreateIntentionOrderRequest::CreateIntentionOrderRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "CreateIntentionOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIntentionOrderRequest::~CreateIntentionOrderRequest()
 {}

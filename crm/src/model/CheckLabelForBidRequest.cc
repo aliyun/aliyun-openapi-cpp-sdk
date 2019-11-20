@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::CheckLabelForBidRequest;
 
 CheckLabelForBidRequest::CheckLabelForBidRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "CheckLabelForBid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckLabelForBidRequest::~CheckLabelForBidRequest()
 {}

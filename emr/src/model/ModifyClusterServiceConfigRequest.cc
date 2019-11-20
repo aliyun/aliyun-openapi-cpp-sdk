@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyClusterServiceConfigRequest;
 
 ModifyClusterServiceConfigRequest::ModifyClusterServiceConfigRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyClusterServiceConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyClusterServiceConfigRequest::~ModifyClusterServiceConfigRequest()
 {}
@@ -99,8 +101,9 @@ std::vector<std::string> ModifyClusterServiceConfigRequest::getGatewayClusterIdL
 void ModifyClusterServiceConfigRequest::setGatewayClusterIdList(const std::vector<std::string>& gatewayClusterIdList)
 {
 	gatewayClusterIdList_ = gatewayClusterIdList;
-	for(int i = 0; i!= gatewayClusterIdList.size(); i++)
-		setCoreParameter("GatewayClusterIdList."+ std::to_string(i), gatewayClusterIdList.at(i));
+	for(int dep1 = 0; dep1!= gatewayClusterIdList.size(); dep1++) {
+		setCoreParameter("GatewayClusterIdList."+ std::to_string(dep1), gatewayClusterIdList.at(dep1));
+	}
 }
 
 std::string ModifyClusterServiceConfigRequest::getConfigParams()const

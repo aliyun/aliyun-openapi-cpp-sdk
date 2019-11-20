@@ -72,6 +72,8 @@ void QueryProductResult::parse(const std::string &payload)
 		data_.owner = dataNode["Owner"].asString() == "true";
 	if(!dataNode["NetType"].isNull())
 		data_.netType = std::stoi(dataNode["NetType"].asString());
+	if(!dataNode["AuthType"].isNull())
+		data_.authType = dataNode["AuthType"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifySurveyRequest;
 
 ModifySurveyRequest::ModifySurveyRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifySurvey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySurveyRequest::~ModifySurveyRequest()
 {}

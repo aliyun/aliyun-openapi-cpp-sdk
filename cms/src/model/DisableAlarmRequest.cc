@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DisableAlarmRequest;
 
 DisableAlarmRequest::DisableAlarmRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DisableAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisableAlarmRequest::~DisableAlarmRequest()
 {}

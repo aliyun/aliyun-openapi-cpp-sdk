@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::ListVisitorsRequest;
 
 ListVisitorsRequest::ListVisitorsRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "ListVisitors")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListVisitorsRequest::~ListVisitorsRequest()
 {}

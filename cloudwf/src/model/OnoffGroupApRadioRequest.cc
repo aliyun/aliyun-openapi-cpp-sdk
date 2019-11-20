@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OnoffGroupApRadioRequest;
 
 OnoffGroupApRadioRequest::OnoffGroupApRadioRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OnoffGroupApRadio")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnoffGroupApRadioRequest::~OnoffGroupApRadioRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::CreateDBNodesRequest;
 
 CreateDBNodesRequest::CreateDBNodesRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "CreateDBNodes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDBNodesRequest::~CreateDBNodesRequest()
 {}
@@ -110,12 +112,11 @@ std::vector<CreateDBNodesRequest::DBNode> CreateDBNodesRequest::getDBNode()const
 void CreateDBNodesRequest::setDBNode(const std::vector<DBNode>& dBNode)
 {
 	dBNode_ = dBNode;
-	int i = 0;
-	for(int i = 0; i!= dBNode.size(); i++)	{
-		auto obj = dBNode.at(i);
-		std::string str ="DBNode."+ std::to_string(i);
-		setCoreParameter(str + ".TargetClass", obj.targetClass);
-		setCoreParameter(str + ".ZoneId", obj.zoneId);
+	for(int dep1 = 0; dep1!= dBNode.size(); dep1++) {
+		auto dBNodeObj = dBNode.at(dep1);
+		std::string dBNodeObjStr = "DBNode." + std::to_string(dep1);
+		setCoreParameter(dBNodeObjStr + ".TargetClass", dBNodeObj.targetClass);
+		setCoreParameter(dBNodeObjStr + ".ZoneId", dBNodeObj.zoneId);
 	}
 }
 

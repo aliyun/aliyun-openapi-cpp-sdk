@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StartCasterRequest;
 
 StartCasterRequest::StartCasterRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StartCaster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartCasterRequest::~StartCasterRequest()
 {}

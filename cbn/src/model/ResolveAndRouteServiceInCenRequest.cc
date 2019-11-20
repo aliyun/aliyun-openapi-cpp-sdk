@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::ResolveAndRouteServiceInCenRequest;
 
 ResolveAndRouteServiceInCenRequest::ResolveAndRouteServiceInCenRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "ResolveAndRouteServiceInCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResolveAndRouteServiceInCenRequest::~ResolveAndRouteServiceInCenRequest()
 {}
@@ -143,7 +145,8 @@ std::vector<std::string> ResolveAndRouteServiceInCenRequest::getAccessRegionIds(
 void ResolveAndRouteServiceInCenRequest::setAccessRegionIds(const std::vector<std::string>& accessRegionIds)
 {
 	accessRegionIds_ = accessRegionIds;
-	for(int i = 0; i!= accessRegionIds.size(); i++)
-		setCoreParameter("AccessRegionIds."+ std::to_string(i), accessRegionIds.at(i));
+	for(int dep1 = 0; dep1!= accessRegionIds.size(); dep1++) {
+		setCoreParameter("AccessRegionIds."+ std::to_string(dep1), accessRegionIds.at(dep1));
+	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CancelOrderRequest;
 
 CancelOrderRequest::CancelOrderRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CancelOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelOrderRequest::~CancelOrderRequest()
 {}

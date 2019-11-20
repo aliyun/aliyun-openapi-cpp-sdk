@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::TransformToPrePaidRequest;
 
 TransformToPrePaidRequest::TransformToPrePaidRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "TransformToPrePaid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TransformToPrePaidRequest::~TransformToPrePaidRequest()
 {}

@@ -20,10 +20,45 @@ using AlibabaCloud::Sddp::Model::ModifyRuleRequest;
 
 ModifyRuleRequest::ModifyRuleRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "ModifyRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRuleRequest::~ModifyRuleRequest()
 {}
+
+int ModifyRuleRequest::getWarnLevel()const
+{
+	return warnLevel_;
+}
+
+void ModifyRuleRequest::setWarnLevel(int warnLevel)
+{
+	warnLevel_ = warnLevel;
+	setCoreParameter("WarnLevel", std::to_string(warnLevel));
+}
+
+std::string ModifyRuleRequest::getProductCode()const
+{
+	return productCode_;
+}
+
+void ModifyRuleRequest::setProductCode(const std::string& productCode)
+{
+	productCode_ = productCode;
+	setCoreParameter("ProductCode", productCode);
+}
+
+long ModifyRuleRequest::getProductId()const
+{
+	return productId_;
+}
+
+void ModifyRuleRequest::setProductId(long productId)
+{
+	productId_ = productId;
+	setCoreParameter("ProductId", std::to_string(productId));
+}
 
 long ModifyRuleRequest::getRiskLevelId()const
 {
@@ -89,6 +124,28 @@ void ModifyRuleRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
 	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+int ModifyRuleRequest::getRuleType()const
+{
+	return ruleType_;
+}
+
+void ModifyRuleRequest::setRuleType(int ruleType)
+{
+	ruleType_ = ruleType;
+	setCoreParameter("RuleType", std::to_string(ruleType));
+}
+
+std::string ModifyRuleRequest::getStatExpress()const
+{
+	return statExpress_;
+}
+
+void ModifyRuleRequest::setStatExpress(const std::string& statExpress)
+{
+	statExpress_ = statExpress;
+	setCoreParameter("StatExpress", statExpress);
 }
 
 int ModifyRuleRequest::getCustomType()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateCategoryRequest;
 
 UpdateCategoryRequest::UpdateCategoryRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCategoryRequest::~UpdateCategoryRequest()
 {}

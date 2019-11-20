@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::CreateLoadBalancerRequest;
 
 CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "CreateLoadBalancer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateLoadBalancerRequest::~CreateLoadBalancerRequest()
 {}
@@ -45,6 +47,17 @@ void CreateLoadBalancerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+bool CreateLoadBalancerRequest::getSupportPrivateLink()const
+{
+	return supportPrivateLink_;
+}
+
+void CreateLoadBalancerRequest::setSupportPrivateLink(bool supportPrivateLink)
+{
+	supportPrivateLink_ = supportPrivateLink;
+	setCoreParameter("SupportPrivateLink", supportPrivateLink ? "true" : "false");
 }
 
 std::string CreateLoadBalancerRequest::getClientToken()const

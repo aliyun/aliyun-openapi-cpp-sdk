@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ModifyLogConfigRequest;
 
 ModifyLogConfigRequest::ModifyLogConfigRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ModifyLogConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyLogConfigRequest::~ModifyLogConfigRequest()
 {}

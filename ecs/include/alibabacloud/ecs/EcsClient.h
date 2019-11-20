@@ -82,6 +82,8 @@
 #include "model/CreateAutoSnapshotPolicyResult.h"
 #include "model/CreateCommandRequest.h"
 #include "model/CreateCommandResult.h"
+#include "model/CreateDemandRequest.h"
+#include "model/CreateDemandResult.h"
 #include "model/CreateDeploymentSetRequest.h"
 #include "model/CreateDeploymentSetResult.h"
 #include "model/CreateDiskRequest.h"
@@ -138,6 +140,8 @@
 #include "model/DeleteBandwidthPackageResult.h"
 #include "model/DeleteCommandRequest.h"
 #include "model/DeleteCommandResult.h"
+#include "model/DeleteDemandRequest.h"
+#include "model/DeleteDemandResult.h"
 #include "model/DeleteDeploymentSetRequest.h"
 #include "model/DeleteDeploymentSetResult.h"
 #include "model/DeleteDiskRequest.h"
@@ -414,6 +418,8 @@
 #include "model/ModifyDedicatedHostAutoReleaseTimeResult.h"
 #include "model/ModifyDedicatedHostAutoRenewAttributeRequest.h"
 #include "model/ModifyDedicatedHostAutoRenewAttributeResult.h"
+#include "model/ModifyDemandRequest.h"
+#include "model/ModifyDemandResult.h"
 #include "model/ModifyDeploymentSetAttributeRequest.h"
 #include "model/ModifyDeploymentSetAttributeResult.h"
 #include "model/ModifyDiskAttributeRequest.h"
@@ -655,6 +661,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCommandResult> CreateCommandOutcome;
 			typedef std::future<CreateCommandOutcome> CreateCommandOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateCommandRequest&, const CreateCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommandAsyncHandler;
+			typedef Outcome<Error, Model::CreateDemandResult> CreateDemandOutcome;
+			typedef std::future<CreateDemandOutcome> CreateDemandOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateDemandRequest&, const CreateDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDemandAsyncHandler;
 			typedef Outcome<Error, Model::CreateDeploymentSetResult> CreateDeploymentSetOutcome;
 			typedef std::future<CreateDeploymentSetOutcome> CreateDeploymentSetOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateDeploymentSetRequest&, const CreateDeploymentSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeploymentSetAsyncHandler;
@@ -739,6 +748,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCommandResult> DeleteCommandOutcome;
 			typedef std::future<DeleteCommandOutcome> DeleteCommandOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteCommandRequest&, const DeleteCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCommandAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDemandResult> DeleteDemandOutcome;
+			typedef std::future<DeleteDemandOutcome> DeleteDemandOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DeleteDemandRequest&, const DeleteDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDemandAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDeploymentSetResult> DeleteDeploymentSetOutcome;
 			typedef std::future<DeleteDeploymentSetOutcome> DeleteDeploymentSetOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteDeploymentSetRequest&, const DeleteDeploymentSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeploymentSetAsyncHandler;
@@ -1153,6 +1165,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDedicatedHostAutoRenewAttributeResult> ModifyDedicatedHostAutoRenewAttributeOutcome;
 			typedef std::future<ModifyDedicatedHostAutoRenewAttributeOutcome> ModifyDedicatedHostAutoRenewAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDedicatedHostAutoRenewAttributeRequest&, const ModifyDedicatedHostAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDedicatedHostAutoRenewAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDemandResult> ModifyDemandOutcome;
+			typedef std::future<ModifyDemandOutcome> ModifyDemandOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyDemandRequest&, const ModifyDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDemandAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDeploymentSetAttributeResult> ModifyDeploymentSetAttributeOutcome;
 			typedef std::future<ModifyDeploymentSetAttributeOutcome> ModifyDeploymentSetAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDeploymentSetAttributeRequest&, const ModifyDeploymentSetAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeploymentSetAttributeAsyncHandler;
@@ -1461,6 +1476,9 @@ namespace AlibabaCloud
 			CreateCommandOutcome createCommand(const Model::CreateCommandRequest &request)const;
 			void createCommandAsync(const Model::CreateCommandRequest& request, const CreateCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCommandOutcomeCallable createCommandCallable(const Model::CreateCommandRequest& request) const;
+			CreateDemandOutcome createDemand(const Model::CreateDemandRequest &request)const;
+			void createDemandAsync(const Model::CreateDemandRequest& request, const CreateDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDemandOutcomeCallable createDemandCallable(const Model::CreateDemandRequest& request) const;
 			CreateDeploymentSetOutcome createDeploymentSet(const Model::CreateDeploymentSetRequest &request)const;
 			void createDeploymentSetAsync(const Model::CreateDeploymentSetRequest& request, const CreateDeploymentSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDeploymentSetOutcomeCallable createDeploymentSetCallable(const Model::CreateDeploymentSetRequest& request) const;
@@ -1545,6 +1563,9 @@ namespace AlibabaCloud
 			DeleteCommandOutcome deleteCommand(const Model::DeleteCommandRequest &request)const;
 			void deleteCommandAsync(const Model::DeleteCommandRequest& request, const DeleteCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCommandOutcomeCallable deleteCommandCallable(const Model::DeleteCommandRequest& request) const;
+			DeleteDemandOutcome deleteDemand(const Model::DeleteDemandRequest &request)const;
+			void deleteDemandAsync(const Model::DeleteDemandRequest& request, const DeleteDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDemandOutcomeCallable deleteDemandCallable(const Model::DeleteDemandRequest& request) const;
 			DeleteDeploymentSetOutcome deleteDeploymentSet(const Model::DeleteDeploymentSetRequest &request)const;
 			void deleteDeploymentSetAsync(const Model::DeleteDeploymentSetRequest& request, const DeleteDeploymentSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDeploymentSetOutcomeCallable deleteDeploymentSetCallable(const Model::DeleteDeploymentSetRequest& request) const;
@@ -1959,6 +1980,9 @@ namespace AlibabaCloud
 			ModifyDedicatedHostAutoRenewAttributeOutcome modifyDedicatedHostAutoRenewAttribute(const Model::ModifyDedicatedHostAutoRenewAttributeRequest &request)const;
 			void modifyDedicatedHostAutoRenewAttributeAsync(const Model::ModifyDedicatedHostAutoRenewAttributeRequest& request, const ModifyDedicatedHostAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDedicatedHostAutoRenewAttributeOutcomeCallable modifyDedicatedHostAutoRenewAttributeCallable(const Model::ModifyDedicatedHostAutoRenewAttributeRequest& request) const;
+			ModifyDemandOutcome modifyDemand(const Model::ModifyDemandRequest &request)const;
+			void modifyDemandAsync(const Model::ModifyDemandRequest& request, const ModifyDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDemandOutcomeCallable modifyDemandCallable(const Model::ModifyDemandRequest& request) const;
 			ModifyDeploymentSetAttributeOutcome modifyDeploymentSetAttribute(const Model::ModifyDeploymentSetAttributeRequest &request)const;
 			void modifyDeploymentSetAttributeAsync(const Model::ModifyDeploymentSetAttributeRequest& request, const ModifyDeploymentSetAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDeploymentSetAttributeOutcomeCallable modifyDeploymentSetAttributeCallable(const Model::ModifyDeploymentSetAttributeRequest& request) const;

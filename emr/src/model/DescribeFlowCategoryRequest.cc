@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeFlowCategoryRequest;
 
 DescribeFlowCategoryRequest::DescribeFlowCategoryRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeFlowCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowCategoryRequest::~DescribeFlowCategoryRequest()
 {}

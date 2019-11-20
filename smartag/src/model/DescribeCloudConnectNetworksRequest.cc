@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeCloudConnectNetworksRequest;
 
 DescribeCloudConnectNetworksRequest::DescribeCloudConnectNetworksRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeCloudConnectNetworks")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCloudConnectNetworksRequest::~DescribeCloudConnectNetworksRequest()
 {}
@@ -47,15 +49,15 @@ void DescribeCloudConnectNetworksRequest::setCcnId(const std::string& ccnId)
 	setCoreParameter("CcnId", ccnId);
 }
 
-std::string DescribeCloudConnectNetworksRequest::getPageNumber()const
+int DescribeCloudConnectNetworksRequest::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeCloudConnectNetworksRequest::setPageNumber(const std::string& pageNumber)
+void DescribeCloudConnectNetworksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeCloudConnectNetworksRequest::getRegionId()const
@@ -69,15 +71,15 @@ void DescribeCloudConnectNetworksRequest::setRegionId(const std::string& regionI
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeCloudConnectNetworksRequest::getPageSize()const
+int DescribeCloudConnectNetworksRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeCloudConnectNetworksRequest::setPageSize(const std::string& pageSize)
+void DescribeCloudConnectNetworksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeCloudConnectNetworksRequest::Tag> DescribeCloudConnectNetworksRequest::getTag()const
@@ -88,12 +90,11 @@ std::vector<DescribeCloudConnectNetworksRequest::Tag> DescribeCloudConnectNetwor
 void DescribeCloudConnectNetworksRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

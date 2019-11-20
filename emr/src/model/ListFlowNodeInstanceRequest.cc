@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowNodeInstanceRequest;
 
 ListFlowNodeInstanceRequest::ListFlowNodeInstanceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowNodeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowNodeInstanceRequest::~ListFlowNodeInstanceRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> ListFlowNodeInstanceRequest::getStatusList()const
 void ListFlowNodeInstanceRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setCoreParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 std::string ListFlowNodeInstanceRequest::getOrderBy()const

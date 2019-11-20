@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DisableSmartAccessGatewayUserRequest;
 
 DisableSmartAccessGatewayUserRequest::DisableSmartAccessGatewayUserRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DisableSmartAccessGatewayUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisableSmartAccessGatewayUserRequest::~DisableSmartAccessGatewayUserRequest()
 {}

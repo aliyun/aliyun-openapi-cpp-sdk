@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProfileHistoryRequest;
 
 ProfileHistoryRequest::ProfileHistoryRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProfileHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProfileHistoryRequest::~ProfileHistoryRequest()
 {}

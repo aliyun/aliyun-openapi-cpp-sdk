@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeUserBizTypesRequest;
 
 DescribeUserBizTypesRequest::DescribeUserBizTypesRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeUserBizTypes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserBizTypesRequest::~DescribeUserBizTypesRequest()
 {}

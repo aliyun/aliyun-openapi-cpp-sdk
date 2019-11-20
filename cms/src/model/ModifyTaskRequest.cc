@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::ModifyTaskRequest;
 
 ModifyTaskRequest::ModifyTaskRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "ModifyTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyTaskRequest::~ModifyTaskRequest()
 {}

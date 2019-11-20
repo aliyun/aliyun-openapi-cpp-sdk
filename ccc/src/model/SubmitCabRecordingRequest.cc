@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::SubmitCabRecordingRequest;
 
 SubmitCabRecordingRequest::SubmitCabRecordingRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "SubmitCabRecording")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitCabRecordingRequest::~SubmitCabRecordingRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeBackupsRequest;
 
 DescribeBackupsRequest::DescribeBackupsRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeBackups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBackupsRequest::~DescribeBackupsRequest()
 {}

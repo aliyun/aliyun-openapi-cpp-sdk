@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::FailoverDBClusterRequest;
 
 FailoverDBClusterRequest::FailoverDBClusterRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "FailoverDBCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FailoverDBClusterRequest::~FailoverDBClusterRequest()
 {}

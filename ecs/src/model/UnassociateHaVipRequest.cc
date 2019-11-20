@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::UnassociateHaVipRequest;
 
 UnassociateHaVipRequest::UnassociateHaVipRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "UnassociateHaVip")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnassociateHaVipRequest::~UnassociateHaVipRequest()
 {}

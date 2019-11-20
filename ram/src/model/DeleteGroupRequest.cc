@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeleteGroupRequest;
 
 DeleteGroupRequest::DeleteGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeleteGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteGroupRequest::~DeleteGroupRequest()
 {}

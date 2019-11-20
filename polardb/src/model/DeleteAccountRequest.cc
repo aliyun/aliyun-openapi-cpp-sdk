@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::DeleteAccountRequest;
 
 DeleteAccountRequest::DeleteAccountRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "DeleteAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAccountRequest::~DeleteAccountRequest()
 {}

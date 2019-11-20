@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopCreateRequest;
 
 ShopCreateRequest::ShopCreateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopCreateRequest::~ShopCreateRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListSkillGroupSummaryReportsByIntervalRequest;
 
 ListSkillGroupSummaryReportsByIntervalRequest::ListSkillGroupSummaryReportsByIntervalRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListSkillGroupSummaryReportsByInterval")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSkillGroupSummaryReportsByIntervalRequest::~ListSkillGroupSummaryReportsByIntervalRequest()
 {}

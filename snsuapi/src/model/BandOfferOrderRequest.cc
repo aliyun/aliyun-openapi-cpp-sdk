@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::BandOfferOrderRequest;
 
 BandOfferOrderRequest::BandOfferOrderRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "BandOfferOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BandOfferOrderRequest::~BandOfferOrderRequest()
 {}

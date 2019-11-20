@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitMediaFpDeleteJobRequest;
 
 SubmitMediaFpDeleteJobRequest::SubmitMediaFpDeleteJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitMediaFpDeleteJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitMediaFpDeleteJobRequest::~SubmitMediaFpDeleteJobRequest()
 {}

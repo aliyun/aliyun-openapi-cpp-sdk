@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyHASwitchConfigRequest;
 
 ModifyHASwitchConfigRequest::ModifyHASwitchConfigRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyHASwitchConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyHASwitchConfigRequest::~ModifyHASwitchConfigRequest()
 {}

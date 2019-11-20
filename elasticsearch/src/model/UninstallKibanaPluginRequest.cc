@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::UninstallKibanaPluginRequest;
 
 UninstallKibanaPluginRequest::UninstallKibanaPluginRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/kibana-plugins/actions/uninstall");
+	setMethod(HttpRequest::Method::Post);
+}
 
 UninstallKibanaPluginRequest::~UninstallKibanaPluginRequest()
 {}

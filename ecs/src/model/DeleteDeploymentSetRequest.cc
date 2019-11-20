@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteDeploymentSetRequest;
 
 DeleteDeploymentSetRequest::DeleteDeploymentSetRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteDeploymentSet")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDeploymentSetRequest::~DeleteDeploymentSetRequest()
 {}

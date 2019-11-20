@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::RecognizeImageStyleRequest;
 
 RecognizeImageStyleRequest::RecognizeImageStyleRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "RecognizeImageStyle")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RecognizeImageStyleRequest::~RecognizeImageStyleRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DescribeAlarmsRequest;
 
 DescribeAlarmsRequest::DescribeAlarmsRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DescribeAlarms")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAlarmsRequest::~DescribeAlarmsRequest()
 {}

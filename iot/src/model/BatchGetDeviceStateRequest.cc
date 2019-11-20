@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchGetDeviceStateRequest;
 
 BatchGetDeviceStateRequest::BatchGetDeviceStateRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchGetDeviceState")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchGetDeviceStateRequest::~BatchGetDeviceStateRequest()
 {}
@@ -55,8 +57,9 @@ std::vector<std::string> BatchGetDeviceStateRequest::getIotId()const
 void BatchGetDeviceStateRequest::setIotId(const std::vector<std::string>& iotId)
 {
 	iotId_ = iotId;
-	for(int i = 0; i!= iotId.size(); i++)
-		setCoreParameter("IotId."+ std::to_string(i), iotId.at(i));
+	for(int dep1 = 0; dep1!= iotId.size(); dep1++) {
+		setCoreParameter("IotId."+ std::to_string(dep1), iotId.at(dep1));
+	}
 }
 
 std::string BatchGetDeviceStateRequest::getIotInstanceId()const
@@ -78,7 +81,8 @@ std::vector<std::string> BatchGetDeviceStateRequest::getDeviceName()const
 void BatchGetDeviceStateRequest::setDeviceName(const std::vector<std::string>& deviceName)
 {
 	deviceName_ = deviceName;
-	for(int i = 0; i!= deviceName.size(); i++)
-		setCoreParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
+	for(int dep1 = 0; dep1!= deviceName.size(); dep1++) {
+		setCoreParameter("DeviceName."+ std::to_string(dep1), deviceName.at(dep1));
+	}
 }
 

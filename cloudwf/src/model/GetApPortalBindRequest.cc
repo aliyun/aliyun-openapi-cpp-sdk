@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApPortalBindRequest;
 
 GetApPortalBindRequest::GetApPortalBindRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApPortalBind")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApPortalBindRequest::~GetApPortalBindRequest()
 {}

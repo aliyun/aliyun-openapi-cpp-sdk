@@ -82,6 +82,8 @@
 #include "model/DescribeAvailableResourceResult.h"
 #include "model/DescribeCACertificatesRequest.h"
 #include "model/DescribeCACertificatesResult.h"
+#include "model/DescribeDomainExtensionAttributeRequest.h"
+#include "model/DescribeDomainExtensionAttributeResult.h"
 #include "model/DescribeDomainExtensionsRequest.h"
 #include "model/DescribeDomainExtensionsResult.h"
 #include "model/DescribeHealthStatusRequest.h"
@@ -124,6 +126,8 @@
 #include "model/DescribeVServerGroupsResult.h"
 #include "model/DescribeZonesRequest.h"
 #include "model/DescribeZonesResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/ModifyLoadBalancerInstanceSpecRequest.h"
 #include "model/ModifyLoadBalancerInstanceSpecResult.h"
 #include "model/ModifyLoadBalancerInternetSpecRequest.h"
@@ -176,6 +180,10 @@
 #include "model/StartLoadBalancerListenerResult.h"
 #include "model/StopLoadBalancerListenerRequest.h"
 #include "model/StopLoadBalancerListenerResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/UploadCACertificateRequest.h"
 #include "model/UploadCACertificateResult.h"
 #include "model/UploadServerCertificateRequest.h"
@@ -279,6 +287,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCACertificatesResult> DescribeCACertificatesOutcome;
 			typedef std::future<DescribeCACertificatesOutcome> DescribeCACertificatesOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeCACertificatesRequest&, const DescribeCACertificatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCACertificatesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainExtensionAttributeResult> DescribeDomainExtensionAttributeOutcome;
+			typedef std::future<DescribeDomainExtensionAttributeOutcome> DescribeDomainExtensionAttributeOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::DescribeDomainExtensionAttributeRequest&, const DescribeDomainExtensionAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainExtensionAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainExtensionsResult> DescribeDomainExtensionsOutcome;
 			typedef std::future<DescribeDomainExtensionsOutcome> DescribeDomainExtensionsOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeDomainExtensionsRequest&, const DescribeDomainExtensionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainExtensionsAsyncHandler;
@@ -342,6 +353,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeZonesResult> DescribeZonesOutcome;
 			typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeZonesRequest&, const DescribeZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyLoadBalancerInstanceSpecResult> ModifyLoadBalancerInstanceSpecOutcome;
 			typedef std::future<ModifyLoadBalancerInstanceSpecOutcome> ModifyLoadBalancerInstanceSpecOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::ModifyLoadBalancerInstanceSpecRequest&, const ModifyLoadBalancerInstanceSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerInstanceSpecAsyncHandler;
@@ -420,6 +434,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopLoadBalancerListenerResult> StopLoadBalancerListenerOutcome;
 			typedef std::future<StopLoadBalancerListenerOutcome> StopLoadBalancerListenerOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::StopLoadBalancerListenerRequest&, const StopLoadBalancerListenerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopLoadBalancerListenerAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UploadCACertificateResult> UploadCACertificateOutcome;
 			typedef std::future<UploadCACertificateOutcome> UploadCACertificateOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::UploadCACertificateRequest&, const UploadCACertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadCACertificateAsyncHandler;
@@ -521,6 +541,9 @@ namespace AlibabaCloud
 			DescribeCACertificatesOutcome describeCACertificates(const Model::DescribeCACertificatesRequest &request)const;
 			void describeCACertificatesAsync(const Model::DescribeCACertificatesRequest& request, const DescribeCACertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCACertificatesOutcomeCallable describeCACertificatesCallable(const Model::DescribeCACertificatesRequest& request) const;
+			DescribeDomainExtensionAttributeOutcome describeDomainExtensionAttribute(const Model::DescribeDomainExtensionAttributeRequest &request)const;
+			void describeDomainExtensionAttributeAsync(const Model::DescribeDomainExtensionAttributeRequest& request, const DescribeDomainExtensionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainExtensionAttributeOutcomeCallable describeDomainExtensionAttributeCallable(const Model::DescribeDomainExtensionAttributeRequest& request) const;
 			DescribeDomainExtensionsOutcome describeDomainExtensions(const Model::DescribeDomainExtensionsRequest &request)const;
 			void describeDomainExtensionsAsync(const Model::DescribeDomainExtensionsRequest& request, const DescribeDomainExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainExtensionsOutcomeCallable describeDomainExtensionsCallable(const Model::DescribeDomainExtensionsRequest& request) const;
@@ -584,6 +607,9 @@ namespace AlibabaCloud
 			DescribeZonesOutcome describeZones(const Model::DescribeZonesRequest &request)const;
 			void describeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeZonesOutcomeCallable describeZonesCallable(const Model::DescribeZonesRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			ModifyLoadBalancerInstanceSpecOutcome modifyLoadBalancerInstanceSpec(const Model::ModifyLoadBalancerInstanceSpecRequest &request)const;
 			void modifyLoadBalancerInstanceSpecAsync(const Model::ModifyLoadBalancerInstanceSpecRequest& request, const ModifyLoadBalancerInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLoadBalancerInstanceSpecOutcomeCallable modifyLoadBalancerInstanceSpecCallable(const Model::ModifyLoadBalancerInstanceSpecRequest& request) const;
@@ -662,6 +688,12 @@ namespace AlibabaCloud
 			StopLoadBalancerListenerOutcome stopLoadBalancerListener(const Model::StopLoadBalancerListenerRequest &request)const;
 			void stopLoadBalancerListenerAsync(const Model::StopLoadBalancerListenerRequest& request, const StopLoadBalancerListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopLoadBalancerListenerOutcomeCallable stopLoadBalancerListenerCallable(const Model::StopLoadBalancerListenerRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UploadCACertificateOutcome uploadCACertificate(const Model::UploadCACertificateRequest &request)const;
 			void uploadCACertificateAsync(const Model::UploadCACertificateRequest& request, const UploadCACertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UploadCACertificateOutcomeCallable uploadCACertificateCallable(const Model::UploadCACertificateRequest& request) const;

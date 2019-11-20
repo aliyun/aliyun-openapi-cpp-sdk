@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveSnapshotDetectPornConfigRequest;
 
 DeleteLiveSnapshotDetectPornConfigRequest::DeleteLiveSnapshotDetectPornConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveSnapshotDetectPornConfigRequest::~DeleteLiveSnapshotDetectPornConfigRequest()
 {}

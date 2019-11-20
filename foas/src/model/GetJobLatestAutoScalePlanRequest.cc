@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetJobLatestAutoScalePlanRequest;
 
 GetJobLatestAutoScalePlanRequest::GetJobLatestAutoScalePlanRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/autoscale/latestplanjson");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetJobLatestAutoScalePlanRequest::~GetJobLatestAutoScalePlanRequest()
 {}

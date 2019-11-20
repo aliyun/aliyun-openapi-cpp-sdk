@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeDepartsRequest;
 
 DescribeDepartsRequest::DescribeDepartsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeDeparts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDepartsRequest::~DescribeDepartsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryVideoSplitJobListRequest;
 
 QueryVideoSplitJobListRequest::QueryVideoSplitJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryVideoSplitJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryVideoSplitJobListRequest::~QueryVideoSplitJobListRequest()
 {}

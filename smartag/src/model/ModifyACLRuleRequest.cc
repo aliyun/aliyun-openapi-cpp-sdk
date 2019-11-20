@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ModifyACLRuleRequest;
 
 ModifyACLRuleRequest::ModifyACLRuleRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ModifyACLRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyACLRuleRequest::~ModifyACLRuleRequest()
 {}

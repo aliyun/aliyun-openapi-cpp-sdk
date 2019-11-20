@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetPagePropertiesRequest;
 
 GetPagePropertiesRequest::GetPagePropertiesRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetPageProperties")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPagePropertiesRequest::~GetPagePropertiesRequest()
 {}

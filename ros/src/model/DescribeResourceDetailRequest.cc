@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DescribeResourceDetailRequest;
 
 DescribeResourceDetailRequest::DescribeResourceDetailRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/resources/[ResourceName]");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeResourceDetailRequest::~DescribeResourceDetailRequest()
 {}

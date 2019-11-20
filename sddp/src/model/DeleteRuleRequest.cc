@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DeleteRuleRequest;
 
 DeleteRuleRequest::DeleteRuleRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DeleteRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRuleRequest::~DeleteRuleRequest()
 {}

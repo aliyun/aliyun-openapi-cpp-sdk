@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::ModifyDrdsIpWhiteListRequest;
 
 ModifyDrdsIpWhiteListRequest::ModifyDrdsIpWhiteListRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "ModifyDrdsIpWhiteList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDrdsIpWhiteListRequest::~ModifyDrdsIpWhiteListRequest()
 {}

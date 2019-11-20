@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyReservedInstancesRequest;
 
 ModifyReservedInstancesRequest::ModifyReservedInstancesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyReservedInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyReservedInstancesRequest::~ModifyReservedInstancesRequest()
 {}
@@ -44,15 +46,14 @@ std::vector<ModifyReservedInstancesRequest::Configuration> ModifyReservedInstanc
 void ModifyReservedInstancesRequest::setConfiguration(const std::vector<Configuration>& configuration)
 {
 	configuration_ = configuration;
-	int i = 0;
-	for(int i = 0; i!= configuration.size(); i++)	{
-		auto obj = configuration.at(i);
-		std::string str ="Configuration."+ std::to_string(i);
-		setCoreParameter(str + ".ZoneId", obj.zoneId);
-		setCoreParameter(str + ".ReservedInstanceName", obj.reservedInstanceName);
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".Scope", obj.scope);
-		setCoreParameter(str + ".InstanceAmount", std::to_string(obj.instanceAmount));
+	for(int dep1 = 0; dep1!= configuration.size(); dep1++) {
+		auto configurationObj = configuration.at(dep1);
+		std::string configurationObjStr = "Configuration." + std::to_string(dep1);
+		setCoreParameter(configurationObjStr + ".ZoneId", configurationObj.zoneId);
+		setCoreParameter(configurationObjStr + ".ReservedInstanceName", configurationObj.reservedInstanceName);
+		setCoreParameter(configurationObjStr + ".InstanceType", configurationObj.instanceType);
+		setCoreParameter(configurationObjStr + ".Scope", configurationObj.scope);
+		setCoreParameter(configurationObjStr + ".InstanceAmount", std::to_string(configurationObj.instanceAmount));
 	}
 }
 
@@ -108,7 +109,8 @@ std::vector<std::string> ModifyReservedInstancesRequest::getReservedInstanceId()
 void ModifyReservedInstancesRequest::setReservedInstanceId(const std::vector<std::string>& reservedInstanceId)
 {
 	reservedInstanceId_ = reservedInstanceId;
-	for(int i = 0; i!= reservedInstanceId.size(); i++)
-		setCoreParameter("ReservedInstanceId."+ std::to_string(i), reservedInstanceId.at(i));
+	for(int dep1 = 0; dep1!= reservedInstanceId.size(); dep1++) {
+		setCoreParameter("ReservedInstanceId."+ std::to_string(dep1), reservedInstanceId.at(dep1));
+	}
 }
 

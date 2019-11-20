@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::ModifyDefaultLevelRequest;
 
 ModifyDefaultLevelRequest::ModifyDefaultLevelRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "ModifyDefaultLevel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDefaultLevelRequest::~ModifyDefaultLevelRequest()
 {}

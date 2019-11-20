@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudauth::Model::CreateVerifySDKRequest;
 
 CreateVerifySDKRequest::CreateVerifySDKRequest() :
 	RpcServiceRequest("cloudauth", "2018-09-16", "CreateVerifySDK")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVerifySDKRequest::~CreateVerifySDKRequest()
 {}

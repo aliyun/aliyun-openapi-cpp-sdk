@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ListTagsRequest;
 
 ListTagsRequest::ListTagsRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ListTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTagsRequest::~ListTagsRequest()
 {}

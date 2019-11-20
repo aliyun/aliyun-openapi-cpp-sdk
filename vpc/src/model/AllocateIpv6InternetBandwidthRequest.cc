@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::AllocateIpv6InternetBandwidthRequest;
 
 AllocateIpv6InternetBandwidthRequest::AllocateIpv6InternetBandwidthRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "AllocateIpv6InternetBandwidth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AllocateIpv6InternetBandwidthRequest::~AllocateIpv6InternetBandwidthRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteDeviceGroupRequest;
 
 DeleteDeviceGroupRequest::DeleteDeviceGroupRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteDeviceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDeviceGroupRequest::~DeleteDeviceGroupRequest()
 {}

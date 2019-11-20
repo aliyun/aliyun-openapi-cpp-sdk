@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::ImportAppAlertRulesRequest;
 
 ImportAppAlertRulesRequest::ImportAppAlertRulesRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "ImportAppAlertRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImportAppAlertRulesRequest::~ImportAppAlertRulesRequest()
 {}

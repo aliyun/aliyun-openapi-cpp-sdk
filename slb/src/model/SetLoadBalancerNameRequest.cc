@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetLoadBalancerNameRequest;
 
 SetLoadBalancerNameRequest::SetLoadBalancerNameRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLoadBalancerNameRequest::~SetLoadBalancerNameRequest()
 {}

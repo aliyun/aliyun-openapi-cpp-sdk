@@ -48,7 +48,7 @@ void QueryTradeIntentionUserListResult::parse(const std::string &payload)
 		if(!valueDataTrademark["Classification"].isNull())
 			dataObject.classification = valueDataTrademark["Classification"].asString();
 		if(!valueDataTrademark["Mobile"].isNull())
-			dataObject.mobile = std::stoi(valueDataTrademark["Mobile"].asString());
+			dataObject.mobile = valueDataTrademark["Mobile"].asString();
 		if(!valueDataTrademark["UserName"].isNull())
 			dataObject.userName = valueDataTrademark["UserName"].asString();
 		if(!valueDataTrademark["BizId"].isNull())

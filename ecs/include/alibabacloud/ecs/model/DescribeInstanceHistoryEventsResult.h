@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					ExtendedAttribute extendedAttribute;
 					std::string eventId;
 					std::string notBefore;
+					std::string reason;
 				};
 
 

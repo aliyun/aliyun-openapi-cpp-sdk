@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveRecordNotifyConfigRequest;
 
 DeleteLiveRecordNotifyConfigRequest::DeleteLiveRecordNotifyConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveRecordNotifyConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveRecordNotifyConfigRequest::~DeleteLiveRecordNotifyConfigRequest()
 {}

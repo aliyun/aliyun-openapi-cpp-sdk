@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ReportInstancesStatusRequest;
 
 ReportInstancesStatusRequest::ReportInstancesStatusRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ReportInstancesStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportInstancesStatusRequest::~ReportInstancesStatusRequest()
 {}
@@ -88,8 +90,9 @@ std::vector<std::string> ReportInstancesStatusRequest::getDiskId()const
 void ReportInstancesStatusRequest::setDiskId(const std::vector<std::string>& diskId)
 {
 	diskId_ = diskId;
-	for(int i = 0; i!= diskId.size(); i++)
-		setCoreParameter("DiskId."+ std::to_string(i), diskId.at(i));
+	for(int dep1 = 0; dep1!= diskId.size(); dep1++) {
+		setCoreParameter("DiskId."+ std::to_string(dep1), diskId.at(dep1));
+	}
 }
 
 std::string ReportInstancesStatusRequest::getResourceOwnerAccount()const
@@ -144,8 +147,9 @@ std::vector<std::string> ReportInstancesStatusRequest::getInstanceId()const
 void ReportInstancesStatusRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 
 std::vector<std::string> ReportInstancesStatusRequest::getDevice()const
@@ -156,7 +160,8 @@ std::vector<std::string> ReportInstancesStatusRequest::getDevice()const
 void ReportInstancesStatusRequest::setDevice(const std::vector<std::string>& device)
 {
 	device_ = device;
-	for(int i = 0; i!= device.size(); i++)
-		setCoreParameter("Device."+ std::to_string(i), device.at(i));
+	for(int dep1 = 0; dep1!= device.size(); dep1++) {
+		setCoreParameter("Device."+ std::to_string(dep1), device.at(dep1));
+	}
 }
 

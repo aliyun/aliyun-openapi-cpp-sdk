@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				DeleteCdnDomainRequest();
 				~DeleteCdnDomainRequest();
 
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
@@ -47,7 +45,6 @@ namespace AlibabaCloud
 				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string ownerAccount_;
 				std::string domainName_;
 				long ownerId_;
 				std::string resourceGroupId_;

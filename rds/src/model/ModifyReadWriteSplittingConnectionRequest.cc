@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyReadWriteSplittingConnectionRequest;
 
 ModifyReadWriteSplittingConnectionRequest::ModifyReadWriteSplittingConnectionRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyReadWriteSplittingConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyReadWriteSplittingConnectionRequest::~ModifyReadWriteSplittingConnectionRequest()
 {}

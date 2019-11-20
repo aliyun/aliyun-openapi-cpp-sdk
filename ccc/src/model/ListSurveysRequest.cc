@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListSurveysRequest;
 
 ListSurveysRequest::ListSurveysRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListSurveys")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSurveysRequest::~ListSurveysRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeReservedInstancesRequest;
 
 DescribeReservedInstancesRequest::DescribeReservedInstancesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeReservedInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeReservedInstancesRequest::~DescribeReservedInstancesRequest()
 {}
@@ -154,8 +156,9 @@ std::vector<std::string> DescribeReservedInstancesRequest::getReservedInstanceId
 void DescribeReservedInstancesRequest::setReservedInstanceId(const std::vector<std::string>& reservedInstanceId)
 {
 	reservedInstanceId_ = reservedInstanceId;
-	for(int i = 0; i!= reservedInstanceId.size(); i++)
-		setCoreParameter("ReservedInstanceId."+ std::to_string(i), reservedInstanceId.at(i));
+	for(int dep1 = 0; dep1!= reservedInstanceId.size(); dep1++) {
+		setCoreParameter("ReservedInstanceId."+ std::to_string(dep1), reservedInstanceId.at(dep1));
+	}
 }
 
 std::string DescribeReservedInstancesRequest::getOfferingType()const
@@ -199,7 +202,8 @@ std::vector<std::string> DescribeReservedInstancesRequest::getStatus()const
 void DescribeReservedInstancesRequest::setStatus(const std::vector<std::string>& status)
 {
 	status_ = status;
-	for(int i = 0; i!= status.size(); i++)
-		setCoreParameter("Status."+ std::to_string(i), status.at(i));
+	for(int dep1 = 0; dep1!= status.size(); dep1++) {
+		setCoreParameter("Status."+ std::to_string(dep1), status.at(dep1));
+	}
 }
 

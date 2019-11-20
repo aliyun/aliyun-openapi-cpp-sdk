@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateIpv6GatewayRequest;
 
 CreateIpv6GatewayRequest::CreateIpv6GatewayRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateIpv6Gateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIpv6GatewayRequest::~CreateIpv6GatewayRequest()
 {}

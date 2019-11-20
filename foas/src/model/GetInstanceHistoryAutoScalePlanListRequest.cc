@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetInstanceHistoryAutoScalePlanListRequest;
 
 GetInstanceHistoryAutoScalePlanListRequest::GetInstanceHistoryAutoScalePlanListRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/planlist");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceHistoryAutoScalePlanListRequest::~GetInstanceHistoryAutoScalePlanListRequest()
 {}

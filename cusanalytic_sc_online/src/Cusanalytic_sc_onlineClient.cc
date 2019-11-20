@@ -267,6 +267,114 @@ Cusanalytic_sc_onlineClient::GetAnalyzePlaceDataOutcomeCallable Cusanalytic_sc_o
 	return task->get_future();
 }
 
+Cusanalytic_sc_onlineClient::GetBaseAgeDataOutcome Cusanalytic_sc_onlineClient::getBaseAgeData(const GetBaseAgeDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetBaseAgeDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetBaseAgeDataOutcome(GetBaseAgeDataResult(outcome.result()));
+	else
+		return GetBaseAgeDataOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getBaseAgeDataAsync(const GetBaseAgeDataRequest& request, const GetBaseAgeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getBaseAgeData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetBaseAgeDataOutcomeCallable Cusanalytic_sc_onlineClient::getBaseAgeDataCallable(const GetBaseAgeDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetBaseAgeDataOutcome()>>(
+			[this, request]()
+			{
+			return this->getBaseAgeData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::GetCameraStatisticOutcome Cusanalytic_sc_onlineClient::getCameraStatistic(const GetCameraStatisticRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCameraStatisticOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCameraStatisticOutcome(GetCameraStatisticResult(outcome.result()));
+	else
+		return GetCameraStatisticOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getCameraStatisticAsync(const GetCameraStatisticRequest& request, const GetCameraStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCameraStatistic(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetCameraStatisticOutcomeCallable Cusanalytic_sc_onlineClient::getCameraStatisticCallable(const GetCameraStatisticRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCameraStatisticOutcome()>>(
+			[this, request]()
+			{
+			return this->getCameraStatistic(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::GetDailyStatisticsDataOutcome Cusanalytic_sc_onlineClient::getDailyStatisticsData(const GetDailyStatisticsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDailyStatisticsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDailyStatisticsDataOutcome(GetDailyStatisticsDataResult(outcome.result()));
+	else
+		return GetDailyStatisticsDataOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getDailyStatisticsDataAsync(const GetDailyStatisticsDataRequest& request, const GetDailyStatisticsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDailyStatisticsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetDailyStatisticsDataOutcomeCallable Cusanalytic_sc_onlineClient::getDailyStatisticsDataCallable(const GetDailyStatisticsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDailyStatisticsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->getDailyStatisticsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cusanalytic_sc_onlineClient::GetEMapOutcome Cusanalytic_sc_onlineClient::getEMap(const GetEMapRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -339,6 +447,42 @@ Cusanalytic_sc_onlineClient::GetHeatMapDataOutcomeCallable Cusanalytic_sc_online
 	return task->get_future();
 }
 
+Cusanalytic_sc_onlineClient::GetHourlyStatisticsDataOutcome Cusanalytic_sc_onlineClient::getHourlyStatisticsData(const GetHourlyStatisticsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetHourlyStatisticsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetHourlyStatisticsDataOutcome(GetHourlyStatisticsDataResult(outcome.result()));
+	else
+		return GetHourlyStatisticsDataOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getHourlyStatisticsDataAsync(const GetHourlyStatisticsDataRequest& request, const GetHourlyStatisticsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getHourlyStatisticsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetHourlyStatisticsDataOutcomeCallable Cusanalytic_sc_onlineClient::getHourlyStatisticsDataCallable(const GetHourlyStatisticsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetHourlyStatisticsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->getHourlyStatisticsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cusanalytic_sc_onlineClient::GetImageUrlOutcome Cusanalytic_sc_onlineClient::getImageUrl(const GetImageUrlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +549,42 @@ Cusanalytic_sc_onlineClient::GetLocationsOutcomeCallable Cusanalytic_sc_onlineCl
 			[this, request]()
 			{
 			return this->getLocations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::GetMin5StatisticsDataOutcome Cusanalytic_sc_onlineClient::getMin5StatisticsData(const GetMin5StatisticsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMin5StatisticsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMin5StatisticsDataOutcome(GetMin5StatisticsDataResult(outcome.result()));
+	else
+		return GetMin5StatisticsDataOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getMin5StatisticsDataAsync(const GetMin5StatisticsDataRequest& request, const GetMin5StatisticsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMin5StatisticsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetMin5StatisticsDataOutcomeCallable Cusanalytic_sc_onlineClient::getMin5StatisticsDataCallable(const GetMin5StatisticsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMin5StatisticsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->getMin5StatisticsData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,6 +735,42 @@ Cusanalytic_sc_onlineClient::GetRoiRankingOutcomeCallable Cusanalytic_sc_onlineC
 	return task->get_future();
 }
 
+Cusanalytic_sc_onlineClient::GetStayDistributionOutcome Cusanalytic_sc_onlineClient::getStayDistribution(const GetStayDistributionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetStayDistributionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetStayDistributionOutcome(GetStayDistributionResult(outcome.result()));
+	else
+		return GetStayDistributionOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getStayDistributionAsync(const GetStayDistributionRequest& request, const GetStayDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getStayDistribution(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetStayDistributionOutcomeCallable Cusanalytic_sc_onlineClient::getStayDistributionCallable(const GetStayDistributionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetStayDistributionOutcome()>>(
+			[this, request]()
+			{
+			return this->getStayDistribution(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Cusanalytic_sc_onlineClient::GetSupportStoreOutcome Cusanalytic_sc_onlineClient::getSupportStore(const GetSupportStoreRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,6 +837,42 @@ Cusanalytic_sc_onlineClient::ListVisitorsOutcomeCallable Cusanalytic_sc_onlineCl
 			[this, request]()
 			{
 			return this->listVisitors(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::MemberSynchronousOutcome Cusanalytic_sc_onlineClient::memberSynchronous(const MemberSynchronousRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MemberSynchronousOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MemberSynchronousOutcome(MemberSynchronousResult(outcome.result()));
+	else
+		return MemberSynchronousOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::memberSynchronousAsync(const MemberSynchronousRequest& request, const MemberSynchronousAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, memberSynchronous(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::MemberSynchronousOutcomeCallable Cusanalytic_sc_onlineClient::memberSynchronousCallable(const MemberSynchronousRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MemberSynchronousOutcome()>>(
+			[this, request]()
+			{
+			return this->memberSynchronous(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

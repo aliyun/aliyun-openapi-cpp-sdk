@@ -20,7 +20,9 @@ using AlibabaCloud::Hsm::Model::ConfigNetworkRequest;
 
 ConfigNetworkRequest::ConfigNetworkRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "ConfigNetwork")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConfigNetworkRequest::~ConfigNetworkRequest()
 {}

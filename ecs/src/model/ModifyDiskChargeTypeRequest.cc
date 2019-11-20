@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyDiskChargeTypeRequest;
 
 ModifyDiskChargeTypeRequest::ModifyDiskChargeTypeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyDiskChargeType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDiskChargeTypeRequest::~ModifyDiskChargeTypeRequest()
 {}

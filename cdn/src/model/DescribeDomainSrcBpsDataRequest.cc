@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainSrcBpsDataRequest;
 
 DescribeDomainSrcBpsDataRequest::DescribeDomainSrcBpsDataRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainSrcBpsData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainSrcBpsData")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -36,6 +36,28 @@ void DescribeDomainSrcBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
+}
+
+std::string DescribeDomainSrcBpsDataRequest::getFixTimeGap()const
+{
+	return fixTimeGap_;
+}
+
+void DescribeDomainSrcBpsDataRequest::setFixTimeGap(const std::string& fixTimeGap)
+{
+	fixTimeGap_ = fixTimeGap;
+	setCoreParameter("FixTimeGap", fixTimeGap);
+}
+
+std::string DescribeDomainSrcBpsDataRequest::getTimeMerge()const
+{
+	return timeMerge_;
+}
+
+void DescribeDomainSrcBpsDataRequest::setTimeMerge(const std::string& timeMerge)
+{
+	timeMerge_ = timeMerge;
+	setCoreParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDomainSrcBpsDataRequest::getDomainName()const

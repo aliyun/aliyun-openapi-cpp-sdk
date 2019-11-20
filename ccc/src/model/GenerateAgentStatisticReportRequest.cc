@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GenerateAgentStatisticReportRequest;
 
 GenerateAgentStatisticReportRequest::GenerateAgentStatisticReportRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GenerateAgentStatisticReport")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GenerateAgentStatisticReportRequest::~GenerateAgentStatisticReportRequest()
 {}

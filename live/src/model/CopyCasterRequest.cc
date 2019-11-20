@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CopyCasterRequest;
 
 CopyCasterRequest::CopyCasterRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CopyCaster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CopyCasterRequest::~CopyCasterRequest()
 {}

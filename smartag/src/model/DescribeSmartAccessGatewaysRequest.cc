@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeSmartAccessGatewaysRequest;
 
 DescribeSmartAccessGatewaysRequest::DescribeSmartAccessGatewaysRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeSmartAccessGateways")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSmartAccessGatewaysRequest::~DescribeSmartAccessGatewaysRequest()
 {}
@@ -47,6 +49,28 @@ void DescribeSmartAccessGatewaysRequest::setAclIds(const std::string& aclIds)
 	setCoreParameter("AclIds", aclIds);
 }
 
+bool DescribeSmartAccessGatewaysRequest::getCanAssociateQos()const
+{
+	return canAssociateQos_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setCanAssociateQos(bool canAssociateQos)
+{
+	canAssociateQos_ = canAssociateQos;
+	setCoreParameter("CanAssociateQos", canAssociateQos ? "true" : "false");
+}
+
+std::string DescribeSmartAccessGatewaysRequest::getSoftwareVersion()const
+{
+	return softwareVersion_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setSoftwareVersion(const std::string& softwareVersion)
+{
+	softwareVersion_ = softwareVersion;
+	setCoreParameter("SoftwareVersion", softwareVersion);
+}
+
 std::string DescribeSmartAccessGatewaysRequest::getUnboundAclIds()const
 {
 	return unboundAclIds_;
@@ -58,15 +82,26 @@ void DescribeSmartAccessGatewaysRequest::setUnboundAclIds(const std::string& unb
 	setCoreParameter("UnboundAclIds", unboundAclIds);
 }
 
-std::string DescribeSmartAccessGatewaysRequest::getPageNumber()const
+int DescribeSmartAccessGatewaysRequest::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeSmartAccessGatewaysRequest::setPageNumber(const std::string& pageNumber)
+void DescribeSmartAccessGatewaysRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeSmartAccessGatewaysRequest::getVersionComparator()const
+{
+	return versionComparator_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setVersionComparator(const std::string& versionComparator)
+{
+	versionComparator_ = versionComparator;
+	setCoreParameter("VersionComparator", versionComparator);
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getRegionId()const
@@ -80,15 +115,15 @@ void DescribeSmartAccessGatewaysRequest::setRegionId(const std::string& regionId
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeSmartAccessGatewaysRequest::getPageSize()const
+int DescribeSmartAccessGatewaysRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeSmartAccessGatewaysRequest::setPageSize(const std::string& pageSize)
+void DescribeSmartAccessGatewaysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getInstanceType()const
@@ -100,6 +135,17 @@ void DescribeSmartAccessGatewaysRequest::setInstanceType(const std::string& inst
 {
 	instanceType_ = instanceType;
 	setCoreParameter("InstanceType", instanceType);
+}
+
+std::string DescribeSmartAccessGatewaysRequest::getHardwareType()const
+{
+	return hardwareType_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setHardwareType(const std::string& hardwareType)
+{
+	hardwareType_ = hardwareType;
+	setCoreParameter("HardwareType", hardwareType);
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getSerialNumber()const

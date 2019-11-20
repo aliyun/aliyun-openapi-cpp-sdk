@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveRealtimeLogAuthorizedRequest;
 
 DescribeLiveRealtimeLogAuthorizedRequest::DescribeLiveRealtimeLogAuthorizedRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveRealtimeLogAuthorized")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeLiveRealtimeLogAuthorizedRequest::~DescribeLiveRealtimeLogAuthorizedRequest()
 {}

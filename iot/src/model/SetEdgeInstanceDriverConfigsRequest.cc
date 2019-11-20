@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::SetEdgeInstanceDriverConfigsRequest;
 
 SetEdgeInstanceDriverConfigsRequest::SetEdgeInstanceDriverConfigsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "SetEdgeInstanceDriverConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetEdgeInstanceDriverConfigsRequest::~SetEdgeInstanceDriverConfigsRequest()
 {}
@@ -33,13 +35,12 @@ std::vector<SetEdgeInstanceDriverConfigsRequest::Configs> SetEdgeInstanceDriverC
 void SetEdgeInstanceDriverConfigsRequest::setConfigs(const std::vector<Configs>& configs)
 {
 	configs_ = configs;
-	int i = 0;
-	for(int i = 0; i!= configs.size(); i++)	{
-		auto obj = configs.at(i);
-		std::string str ="Configs."+ std::to_string(i);
-		setCoreParameter(str + ".Format", obj.format);
-		setCoreParameter(str + ".Content", obj.content);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= configs.size(); dep1++) {
+		auto configsObj = configs.at(dep1);
+		std::string configsObjStr = "Configs." + std::to_string(dep1);
+		setCoreParameter(configsObjStr + ".Format", configsObj.format);
+		setCoreParameter(configsObjStr + ".Content", configsObj.content);
+		setCoreParameter(configsObjStr + ".Key", configsObj.key);
 	}
 }
 

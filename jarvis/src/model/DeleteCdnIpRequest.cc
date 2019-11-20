@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteCdnIpRequest;
 
 DeleteCdnIpRequest::DeleteCdnIpRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteCdnIp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCdnIpRequest::~DeleteCdnIpRequest()
 {}

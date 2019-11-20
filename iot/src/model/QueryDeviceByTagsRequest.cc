@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceByTagsRequest;
 
 QueryDeviceByTagsRequest::QueryDeviceByTagsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceByTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceByTagsRequest::~QueryDeviceByTagsRequest()
 {}
@@ -77,12 +79,11 @@ std::vector<QueryDeviceByTagsRequest::Tag> QueryDeviceByTagsRequest::getTag()con
 void QueryDeviceByTagsRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".TagValue", tagObj.tagValue);
+		setCoreParameter(tagObjStr + ".TagKey", tagObj.tagKey);
 	}
 }
 

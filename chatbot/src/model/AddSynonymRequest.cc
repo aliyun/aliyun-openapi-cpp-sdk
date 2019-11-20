@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::AddSynonymRequest;
 
 AddSynonymRequest::AddSynonymRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "AddSynonym")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddSynonymRequest::~AddSynonymRequest()
 {}

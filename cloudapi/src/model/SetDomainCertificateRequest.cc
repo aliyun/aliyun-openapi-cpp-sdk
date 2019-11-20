@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetDomainCertificateRequest;
 
 SetDomainCertificateRequest::SetDomainCertificateRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetDomainCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDomainCertificateRequest::~SetDomainCertificateRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::ModifyUidWhiteBaselineRequest;
 
 ModifyUidWhiteBaselineRequest::ModifyUidWhiteBaselineRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "ModifyUidWhiteBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyUidWhiteBaselineRequest::~ModifyUidWhiteBaselineRequest()
 {}

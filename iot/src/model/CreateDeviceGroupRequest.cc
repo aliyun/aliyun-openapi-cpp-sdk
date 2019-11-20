@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateDeviceGroupRequest;
 
 CreateDeviceGroupRequest::CreateDeviceGroupRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateDeviceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDeviceGroupRequest::~CreateDeviceGroupRequest()
 {}

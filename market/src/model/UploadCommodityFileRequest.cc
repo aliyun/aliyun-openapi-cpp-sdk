@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::UploadCommodityFileRequest;
 
 UploadCommodityFileRequest::UploadCommodityFileRequest() :
 	RpcServiceRequest("market", "2015-11-01", "UploadCommodityFile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadCommodityFileRequest::~UploadCommodityFileRequest()
 {}

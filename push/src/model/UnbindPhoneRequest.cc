@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::UnbindPhoneRequest;
 
 UnbindPhoneRequest::UnbindPhoneRequest() :
 	RpcServiceRequest("push", "2016-08-01", "UnbindPhone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindPhoneRequest::~UnbindPhoneRequest()
 {}

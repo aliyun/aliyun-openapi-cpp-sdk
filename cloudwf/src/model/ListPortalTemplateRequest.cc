@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListPortalTemplateRequest;
 
 ListPortalTemplateRequest::ListPortalTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListPortalTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPortalTemplateRequest::~ListPortalTemplateRequest()
 {}

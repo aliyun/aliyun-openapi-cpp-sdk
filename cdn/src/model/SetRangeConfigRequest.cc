@@ -19,24 +19,13 @@
 using AlibabaCloud::Cdn::Model::SetRangeConfigRequest;
 
 SetRangeConfigRequest::SetRangeConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetRangeConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetRangeConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 SetRangeConfigRequest::~SetRangeConfigRequest()
 {}
-
-std::string SetRangeConfigRequest::getEnable()const
-{
-	return enable_;
-}
-
-void SetRangeConfigRequest::setEnable(const std::string& enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable);
-}
 
 std::string SetRangeConfigRequest::getDomainName()const
 {
@@ -60,14 +49,25 @@ void SetRangeConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-long SetRangeConfigRequest::getConfigId()const
+std::string SetRangeConfigRequest::getSecurityToken()const
 {
-	return configId_;
+	return securityToken_;
 }
 
-void SetRangeConfigRequest::setConfigId(long configId)
+void SetRangeConfigRequest::setSecurityToken(const std::string& securityToken)
 {
-	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetRangeConfigRequest::getEnable()const
+{
+	return enable_;
+}
+
+void SetRangeConfigRequest::setEnable(const std::string& enable)
+{
+	enable_ = enable;
+	setCoreParameter("Enable", enable);
 }
 

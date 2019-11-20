@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteCategoryRequest;
 
 DeleteCategoryRequest::DeleteCategoryRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCategoryRequest::~DeleteCategoryRequest()
 {}

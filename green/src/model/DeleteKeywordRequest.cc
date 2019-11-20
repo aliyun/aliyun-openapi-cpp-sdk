@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DeleteKeywordRequest;
 
 DeleteKeywordRequest::DeleteKeywordRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DeleteKeyword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteKeywordRequest::~DeleteKeywordRequest()
 {}

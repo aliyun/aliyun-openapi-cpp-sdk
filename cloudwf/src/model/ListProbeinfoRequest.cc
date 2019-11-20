@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListProbeinfoRequest;
 
 ListProbeinfoRequest::ListProbeinfoRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListProbeinfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListProbeinfoRequest::~ListProbeinfoRequest()
 {}

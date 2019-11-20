@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::SetUserGreenManagerConfigRequest;
 
 SetUserGreenManagerConfigRequest::SetUserGreenManagerConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetUserGreenManagerConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetUserGreenManagerConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }

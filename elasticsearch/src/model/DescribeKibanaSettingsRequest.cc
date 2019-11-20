@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::DescribeKibanaSettingsRequest;
 
 DescribeKibanaSettingsRequest::DescribeKibanaSettingsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/kibana-settings");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeKibanaSettingsRequest::~DescribeKibanaSettingsRequest()
 {}

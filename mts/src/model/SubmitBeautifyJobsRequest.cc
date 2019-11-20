@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitBeautifyJobsRequest;
 
 SubmitBeautifyJobsRequest::SubmitBeautifyJobsRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitBeautifyJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitBeautifyJobsRequest::~SubmitBeautifyJobsRequest()
 {}

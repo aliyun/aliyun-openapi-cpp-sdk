@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::SearchTraceAppByPageRequest;
 
 SearchTraceAppByPageRequest::SearchTraceAppByPageRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "SearchTraceAppByPage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchTraceAppByPageRequest::~SearchTraceAppByPageRequest()
 {}

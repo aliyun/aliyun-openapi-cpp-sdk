@@ -55,6 +55,14 @@ void DescribeDomainAverageResponseTimeResult::parse(const std::string &payload)
 		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["LocationNameEn"].isNull())
+		locationNameEn_ = value["LocationNameEn"].asString();
+	if(!value["IspNameEn"].isNull())
+		ispNameEn_ = value["IspNameEn"].asString();
+	if(!value["LocationName"].isNull())
+		locationName_ = value["LocationName"].asString();
+	if(!value["IspName"].isNull())
+		ispName_ = value["IspName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 
@@ -63,6 +71,16 @@ void DescribeDomainAverageResponseTimeResult::parse(const std::string &payload)
 std::vector<DescribeDomainAverageResponseTimeResult::DataModule> DescribeDomainAverageResponseTimeResult::getAvgRTPerInterval()const
 {
 	return avgRTPerInterval_;
+}
+
+std::string DescribeDomainAverageResponseTimeResult::getIspNameEn()const
+{
+	return ispNameEn_;
+}
+
+std::string DescribeDomainAverageResponseTimeResult::getIspName()const
+{
+	return ispName_;
 }
 
 std::string DescribeDomainAverageResponseTimeResult::getEndTime()const
@@ -75,6 +93,11 @@ std::string DescribeDomainAverageResponseTimeResult::getDomainName()const
 	return domainName_;
 }
 
+std::string DescribeDomainAverageResponseTimeResult::getLocationNameEn()const
+{
+	return locationNameEn_;
+}
+
 std::string DescribeDomainAverageResponseTimeResult::getStartTime()const
 {
 	return startTime_;
@@ -83,5 +106,10 @@ std::string DescribeDomainAverageResponseTimeResult::getStartTime()const
 std::string DescribeDomainAverageResponseTimeResult::getDataInterval()const
 {
 	return dataInterval_;
+}
+
+std::string DescribeDomainAverageResponseTimeResult::getLocationName()const
+{
+	return locationName_;
 }
 

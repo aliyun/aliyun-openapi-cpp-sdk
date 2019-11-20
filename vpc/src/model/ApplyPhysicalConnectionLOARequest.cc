@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ApplyPhysicalConnectionLOARequest;
 
 ApplyPhysicalConnectionLOARequest::ApplyPhysicalConnectionLOARequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ApplyPhysicalConnectionLOA")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApplyPhysicalConnectionLOARequest::~ApplyPhysicalConnectionLOARequest()
 {}
@@ -176,15 +178,14 @@ std::vector<ApplyPhysicalConnectionLOARequest::PMInfo> ApplyPhysicalConnectionLO
 void ApplyPhysicalConnectionLOARequest::setPMInfo(const std::vector<PMInfo>& pMInfo)
 {
 	pMInfo_ = pMInfo;
-	int i = 0;
-	for(int i = 0; i!= pMInfo.size(); i++)	{
-		auto obj = pMInfo.at(i);
-		std::string str ="PMInfo."+ std::to_string(i);
-		setCoreParameter(str + ".PMCertificateNo", obj.pMCertificateNo);
-		setCoreParameter(str + ".PMName", obj.pMName);
-		setCoreParameter(str + ".PMCertificateType", obj.pMCertificateType);
-		setCoreParameter(str + ".PMContactInfo", obj.pMContactInfo);
-		setCoreParameter(str + ".PMGender", obj.pMGender);
+	for(int dep1 = 0; dep1!= pMInfo.size(); dep1++) {
+		auto pMInfoObj = pMInfo.at(dep1);
+		std::string pMInfoObjStr = "PMInfo." + std::to_string(dep1);
+		setCoreParameter(pMInfoObjStr + ".PMCertificateNo", pMInfoObj.pMCertificateNo);
+		setCoreParameter(pMInfoObjStr + ".PMName", pMInfoObj.pMName);
+		setCoreParameter(pMInfoObjStr + ".PMCertificateType", pMInfoObj.pMCertificateType);
+		setCoreParameter(pMInfoObjStr + ".PMContactInfo", pMInfoObj.pMContactInfo);
+		setCoreParameter(pMInfoObjStr + ".PMGender", pMInfoObj.pMGender);
 	}
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::DeactivateZonesRequest;
 
 DeactivateZonesRequest::DeactivateZonesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/actions/down-zones");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeactivateZonesRequest::~DeactivateZonesRequest()
 {}

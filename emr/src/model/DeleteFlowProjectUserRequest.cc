@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteFlowProjectUserRequest;
 
 DeleteFlowProjectUserRequest::DeleteFlowProjectUserRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteFlowProjectUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFlowProjectUserRequest::~DeleteFlowProjectUserRequest()
 {}

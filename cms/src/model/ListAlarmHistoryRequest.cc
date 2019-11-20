@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::ListAlarmHistoryRequest;
 
 ListAlarmHistoryRequest::ListAlarmHistoryRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "ListAlarmHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAlarmHistoryRequest::~ListAlarmHistoryRequest()
 {}

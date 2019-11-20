@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeDBInstanceNetInfoRequest;
 
 DescribeDBInstanceNetInfoRequest::DescribeDBInstanceNetInfoRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeDBInstanceNetInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceNetInfoRequest::~DescribeDBInstanceNetInfoRequest()
 {}

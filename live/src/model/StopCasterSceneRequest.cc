@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StopCasterSceneRequest;
 
 StopCasterSceneRequest::StopCasterSceneRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StopCasterScene")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopCasterSceneRequest::~StopCasterSceneRequest()
 {}

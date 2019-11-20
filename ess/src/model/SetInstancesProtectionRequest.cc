@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::SetInstancesProtectionRequest;
 
 SetInstancesProtectionRequest::SetInstancesProtectionRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "SetInstancesProtection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetInstancesProtectionRequest::~SetInstancesProtectionRequest()
 {}
@@ -77,8 +79,9 @@ std::vector<std::string> SetInstancesProtectionRequest::getInstanceId()const
 void SetInstancesProtectionRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 
 bool SetInstancesProtectionRequest::getProtectedFromScaleIn()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreatePhysicalConnectionSetupOrderRequest;
 
 CreatePhysicalConnectionSetupOrderRequest::CreatePhysicalConnectionSetupOrderRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreatePhysicalConnectionSetupOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreatePhysicalConnectionSetupOrderRequest::~CreatePhysicalConnectionSetupOrderRequest()
 {}

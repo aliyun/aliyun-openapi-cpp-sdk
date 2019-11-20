@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::CreateUploadAttachedMediaRequest;
 
 CreateUploadAttachedMediaRequest::CreateUploadAttachedMediaRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "CreateUploadAttachedMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUploadAttachedMediaRequest::~CreateUploadAttachedMediaRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ApplyRecordTokenRequest;
 
 ApplyRecordTokenRequest::ApplyRecordTokenRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ApplyRecordToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApplyRecordTokenRequest::~ApplyRecordTokenRequest()
 {}

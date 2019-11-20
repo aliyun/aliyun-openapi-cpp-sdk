@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::GetHdfsCapacityStatisticInfoRequest;
 
 GetHdfsCapacityStatisticInfoRequest::GetHdfsCapacityStatisticInfoRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "GetHdfsCapacityStatisticInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetHdfsCapacityStatisticInfoRequest::~GetHdfsCapacityStatisticInfoRequest()
 {}

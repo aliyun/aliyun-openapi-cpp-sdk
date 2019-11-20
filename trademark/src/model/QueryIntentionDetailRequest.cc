@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryIntentionDetailRequest;
 
 QueryIntentionDetailRequest::QueryIntentionDetailRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryIntentionDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryIntentionDetailRequest::~QueryIntentionDetailRequest()
 {}

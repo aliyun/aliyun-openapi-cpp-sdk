@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SetEditingProjectMaterialsRequest;
 
 SetEditingProjectMaterialsRequest::SetEditingProjectMaterialsRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SetEditingProjectMaterials")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetEditingProjectMaterialsRequest::~SetEditingProjectMaterialsRequest()
 {}

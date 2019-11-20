@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::TaskConfigListRequest;
 
 TaskConfigListRequest::TaskConfigListRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "TaskConfigList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaskConfigListRequest::~TaskConfigListRequest()
 {}

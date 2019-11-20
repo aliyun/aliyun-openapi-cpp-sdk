@@ -37,10 +37,6 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				long getTagOwnerUid()const;
-				void setTagOwnerUid(long tagOwnerUid);
-				std::string getTagOwnerBid()const;
-				void setTagOwnerBid(const std::string& tagOwnerBid);
 				std::vector<std::string> getResourceId()const;
 				void setResourceId(const std::vector<std::string>& resourceId);
 				std::string getResourceOwnerAccount()const;
@@ -56,8 +52,6 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				long tagOwnerUid_;
-				std::string tagOwnerBid_;
 				std::vector<std::string> resourceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

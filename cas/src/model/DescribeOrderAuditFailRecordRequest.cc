@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeOrderAuditFailRecordRequest;
 
 DescribeOrderAuditFailRecordRequest::DescribeOrderAuditFailRecordRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeOrderAuditFailRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOrderAuditFailRecordRequest::~DescribeOrderAuditFailRecordRequest()
 {}

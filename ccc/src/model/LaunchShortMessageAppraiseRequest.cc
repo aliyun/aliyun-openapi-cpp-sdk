@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::LaunchShortMessageAppraiseRequest;
 
 LaunchShortMessageAppraiseRequest::LaunchShortMessageAppraiseRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "LaunchShortMessageAppraise")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 LaunchShortMessageAppraiseRequest::~LaunchShortMessageAppraiseRequest()
 {}

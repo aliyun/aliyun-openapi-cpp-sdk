@@ -67,6 +67,9 @@ void DescribeLoadBalancerHTTPSListenerAttributeResult::parse(const std::string &
 			domainExtensionsObject.serverCertificateId = valueDomainExtensionsDomainExtension["ServerCertificateId"].asString();
 		domainExtensions_.push_back(domainExtensionsObject);
 	}
+	auto allAclIds = value["AclIds"]["AclId"];
+	for (const auto &item : allAclIds)
+		aclIds_.push_back(item.asString());
 	if(!value["ListenerPort"].isNull())
 		listenerPort_ = std::stoi(value["ListenerPort"].asString());
 	if(!value["BackendServerPort"].isNull())
@@ -360,6 +363,11 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getAclType()const
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getEnableHttp2()const
 {
 	return enableHttp2_;
+}
+
+std::vector<std::string> DescribeLoadBalancerHTTPSListenerAttributeResult::getAclIds()const
+{
+	return aclIds_;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckType()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::CloseProductAccountRequest;
 
 CloseProductAccountRequest::CloseProductAccountRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "CloseProductAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CloseProductAccountRequest::~CloseProductAccountRequest()
 {}

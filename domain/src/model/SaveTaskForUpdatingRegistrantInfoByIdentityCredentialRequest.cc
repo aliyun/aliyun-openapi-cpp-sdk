@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveTaskForUpdatingRegistrantInfoByIdentityCr
 
 SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByIdentityCredential")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::~SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest()
 {}
@@ -220,8 +222,9 @@ std::vector<std::string> SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRe
 void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setDomainName(const std::vector<std::string>& domainName)
 {
 	domainName_ = domainName;
-	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+	for(int dep1 = 0; dep1!= domainName.size(); dep1++) {
+		setCoreParameter("DomainName."+ std::to_string(dep1), domainName.at(dep1));
+	}
 }
 
 std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getTelephone()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeResourceUsageRequest;
 
 DescribeResourceUsageRequest::DescribeResourceUsageRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeResourceUsage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeResourceUsageRequest::~DescribeResourceUsageRequest()
 {}

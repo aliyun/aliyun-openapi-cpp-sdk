@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::DeleteCategoryRequest;
 
 DeleteCategoryRequest::DeleteCategoryRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "DeleteCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCategoryRequest::~DeleteCategoryRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::PushMessageToiOSRequest;
 
 PushMessageToiOSRequest::PushMessageToiOSRequest() :
 	RpcServiceRequest("push", "2016-08-01", "PushMessageToiOS")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PushMessageToiOSRequest::~PushMessageToiOSRequest()
 {}

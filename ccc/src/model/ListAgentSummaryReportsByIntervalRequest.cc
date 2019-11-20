@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListAgentSummaryReportsByIntervalRequest;
 
 ListAgentSummaryReportsByIntervalRequest::ListAgentSummaryReportsByIntervalRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListAgentSummaryReportsByInterval")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAgentSummaryReportsByIntervalRequest::~ListAgentSummaryReportsByIntervalRequest()
 {}

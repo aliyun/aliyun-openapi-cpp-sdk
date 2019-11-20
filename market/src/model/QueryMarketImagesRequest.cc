@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::QueryMarketImagesRequest;
 
 QueryMarketImagesRequest::QueryMarketImagesRequest() :
 	RpcServiceRequest("market", "2015-11-01", "QueryMarketImages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMarketImagesRequest::~QueryMarketImagesRequest()
 {}

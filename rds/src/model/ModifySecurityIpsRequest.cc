@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifySecurityIpsRequest;
 
 ModifySecurityIpsRequest::ModifySecurityIpsRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifySecurityIps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySecurityIpsRequest::~ModifySecurityIpsRequest()
 {}

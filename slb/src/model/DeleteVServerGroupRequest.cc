@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DeleteVServerGroupRequest;
 
 DeleteVServerGroupRequest::DeleteVServerGroupRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DeleteVServerGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVServerGroupRequest::~DeleteVServerGroupRequest()
 {}

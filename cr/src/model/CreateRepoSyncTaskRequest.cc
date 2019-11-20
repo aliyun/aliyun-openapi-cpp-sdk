@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::CreateRepoSyncTaskRequest;
 
 CreateRepoSyncTaskRequest::CreateRepoSyncTaskRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/syncTasks");
+	setMethod(HttpRequest::Method::Put);
+}
 
 CreateRepoSyncTaskRequest::~CreateRepoSyncTaskRequest()
 {}

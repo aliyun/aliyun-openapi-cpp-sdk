@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::StartJobRequest;
 
 StartJobRequest::StartJobRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "StartJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartJobRequest::~StartJobRequest()
 {}
@@ -55,8 +57,9 @@ std::vector<std::string> StartJobRequest::getCallingNumber()const
 void StartJobRequest::setCallingNumber(const std::vector<std::string>& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
+		setCoreParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
+	}
 }
 
 std::string StartJobRequest::getInstanceId()const

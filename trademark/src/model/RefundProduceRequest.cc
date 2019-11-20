@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::RefundProduceRequest;
 
 RefundProduceRequest::RefundProduceRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "RefundProduce")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefundProduceRequest::~RefundProduceRequest()
 {}

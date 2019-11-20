@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateUnDeploymentRequest;
 
 CreateUnDeploymentRequest::CreateUnDeploymentRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateUnDeployment")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUnDeploymentRequest::~CreateUnDeploymentRequest()
 {}

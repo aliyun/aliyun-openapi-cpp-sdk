@@ -20,7 +20,9 @@ using AlibabaCloud::Dypnsapi::Model::GetMobileRequest;
 
 GetMobileRequest::GetMobileRequest() :
 	RpcServiceRequest("dypnsapi", "2017-05-25", "GetMobile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMobileRequest::~GetMobileRequest()
 {}

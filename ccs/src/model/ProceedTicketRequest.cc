@@ -20,7 +20,9 @@ using AlibabaCloud::Ccs::Model::ProceedTicketRequest;
 
 ProceedTicketRequest::ProceedTicketRequest() :
 	RpcServiceRequest("ccs", "2017-10-01", "ProceedTicket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProceedTicketRequest::~ProceedTicketRequest()
 {}

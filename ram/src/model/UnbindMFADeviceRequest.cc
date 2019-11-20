@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::UnbindMFADeviceRequest;
 
 UnbindMFADeviceRequest::UnbindMFADeviceRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "UnbindMFADevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindMFADeviceRequest::~UnbindMFADeviceRequest()
 {}

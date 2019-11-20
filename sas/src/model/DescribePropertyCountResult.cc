@@ -47,6 +47,8 @@ void DescribePropertyCountResult::parse(const std::string &payload)
 		software_ = std::stoi(value["Software"].asString());
 	if(!value["User"].isNull())
 		user_ = std::stoi(value["User"].asString());
+	if(!value["Cron"].isNull())
+		cron_ = std::stoi(value["Cron"].asString());
 
 }
 
@@ -68,5 +70,10 @@ int DescribePropertyCountResult::getProcess()const
 int DescribePropertyCountResult::getSoftware()const
 {
 	return software_;
+}
+
+int DescribePropertyCountResult::getCron()const
+{
+	return cron_;
 }
 

@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::SetCcConfigRequest;
 
 SetCcConfigRequest::SetCcConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetCcConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetCcConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }

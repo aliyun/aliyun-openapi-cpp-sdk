@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ImportKeyPairRequest;
 
 ImportKeyPairRequest::ImportKeyPairRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ImportKeyPair")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImportKeyPairRequest::~ImportKeyPairRequest()
 {}

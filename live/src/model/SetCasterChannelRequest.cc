@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetCasterChannelRequest;
 
 SetCasterChannelRequest::SetCasterChannelRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetCasterChannel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetCasterChannelRequest::~SetCasterChannelRequest()
 {}

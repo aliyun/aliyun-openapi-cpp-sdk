@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeActionEventPolicyRequest;
 
 DescribeActionEventPolicyRequest::DescribeActionEventPolicyRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeActionEventPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeActionEventPolicyRequest::~DescribeActionEventPolicyRequest()
 {}

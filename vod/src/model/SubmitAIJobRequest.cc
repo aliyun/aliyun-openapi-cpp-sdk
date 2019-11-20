@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitAIJobRequest;
 
 SubmitAIJobRequest::SubmitAIJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitAIJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitAIJobRequest::~SubmitAIJobRequest()
 {}

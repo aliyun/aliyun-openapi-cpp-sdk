@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetMezzanineInfoRequest;
 
 GetMezzanineInfoRequest::GetMezzanineInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetMezzanineInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMezzanineInfoRequest::~GetMezzanineInfoRequest()
 {}

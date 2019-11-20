@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::BindOutputBucketRequest;
 
 BindOutputBucketRequest::BindOutputBucketRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "BindOutputBucket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindOutputBucketRequest::~BindOutputBucketRequest()
 {}

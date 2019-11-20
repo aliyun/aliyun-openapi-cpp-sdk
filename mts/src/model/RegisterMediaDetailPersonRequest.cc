@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::RegisterMediaDetailPersonRequest;
 
 RegisterMediaDetailPersonRequest::RegisterMediaDetailPersonRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "RegisterMediaDetailPerson")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegisterMediaDetailPersonRequest::~RegisterMediaDetailPersonRequest()
 {}

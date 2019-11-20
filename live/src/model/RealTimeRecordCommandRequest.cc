@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::RealTimeRecordCommandRequest;
 
 RealTimeRecordCommandRequest::RealTimeRecordCommandRequest() :
 	RpcServiceRequest("live", "2016-11-01", "RealTimeRecordCommand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RealTimeRecordCommandRequest::~RealTimeRecordCommandRequest()
 {}

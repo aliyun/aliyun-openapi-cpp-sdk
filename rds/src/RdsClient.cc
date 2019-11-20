@@ -1599,6 +1599,78 @@ RdsClient::DescribeAvailableCrossRegionOutcomeCallable RdsClient::describeAvaila
 	return task->get_future();
 }
 
+RdsClient::DescribeAvailableDedicatedHostClassesOutcome RdsClient::describeAvailableDedicatedHostClasses(const DescribeAvailableDedicatedHostClassesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAvailableDedicatedHostClassesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAvailableDedicatedHostClassesOutcome(DescribeAvailableDedicatedHostClassesResult(outcome.result()));
+	else
+		return DescribeAvailableDedicatedHostClassesOutcome(outcome.error());
+}
+
+void RdsClient::describeAvailableDedicatedHostClassesAsync(const DescribeAvailableDedicatedHostClassesRequest& request, const DescribeAvailableDedicatedHostClassesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAvailableDedicatedHostClasses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeAvailableDedicatedHostClassesOutcomeCallable RdsClient::describeAvailableDedicatedHostClassesCallable(const DescribeAvailableDedicatedHostClassesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAvailableDedicatedHostClassesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAvailableDedicatedHostClasses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeAvailableDedicatedHostZonesOutcome RdsClient::describeAvailableDedicatedHostZones(const DescribeAvailableDedicatedHostZonesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAvailableDedicatedHostZonesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAvailableDedicatedHostZonesOutcome(DescribeAvailableDedicatedHostZonesResult(outcome.result()));
+	else
+		return DescribeAvailableDedicatedHostZonesOutcome(outcome.error());
+}
+
+void RdsClient::describeAvailableDedicatedHostZonesAsync(const DescribeAvailableDedicatedHostZonesRequest& request, const DescribeAvailableDedicatedHostZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAvailableDedicatedHostZones(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeAvailableDedicatedHostZonesOutcomeCallable RdsClient::describeAvailableDedicatedHostZonesCallable(const DescribeAvailableDedicatedHostZonesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAvailableDedicatedHostZonesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAvailableDedicatedHostZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeAvailableInstanceClassOutcome RdsClient::describeAvailableInstanceClass(const DescribeAvailableInstanceClassRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4227,6 +4299,42 @@ RdsClient::DescribeTemplatesListOutcomeCallable RdsClient::describeTemplatesList
 	return task->get_future();
 }
 
+RdsClient::EvaluateDedicatedHostInstanceResourceOutcome RdsClient::evaluateDedicatedHostInstanceResource(const EvaluateDedicatedHostInstanceResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EvaluateDedicatedHostInstanceResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EvaluateDedicatedHostInstanceResourceOutcome(EvaluateDedicatedHostInstanceResourceResult(outcome.result()));
+	else
+		return EvaluateDedicatedHostInstanceResourceOutcome(outcome.error());
+}
+
+void RdsClient::evaluateDedicatedHostInstanceResourceAsync(const EvaluateDedicatedHostInstanceResourceRequest& request, const EvaluateDedicatedHostInstanceResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, evaluateDedicatedHostInstanceResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::EvaluateDedicatedHostInstanceResourceOutcomeCallable RdsClient::evaluateDedicatedHostInstanceResourceCallable(const EvaluateDedicatedHostInstanceResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EvaluateDedicatedHostInstanceResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->evaluateDedicatedHostInstanceResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::EvaluateSupportByokShowOutcome RdsClient::evaluateSupportByokShow(const EvaluateSupportByokShowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4437,6 +4545,42 @@ RdsClient::ListTagResourcesOutcomeCallable RdsClient::listTagResourcesCallable(c
 			[this, request]()
 			{
 			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::LockAccountOutcome RdsClient::lockAccount(const LockAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LockAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LockAccountOutcome(LockAccountResult(outcome.result()));
+	else
+		return LockAccountOutcome(outcome.error());
+}
+
+void RdsClient::lockAccountAsync(const LockAccountRequest& request, const LockAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, lockAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::LockAccountOutcomeCallable RdsClient::lockAccountCallable(const LockAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LockAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->lockAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6351,6 +6495,42 @@ RdsClient::RecoveryDBInstanceOutcomeCallable RdsClient::recoveryDBInstanceCallab
 	return task->get_future();
 }
 
+RdsClient::ReleaseInstanceConnectionOutcome RdsClient::releaseInstanceConnection(const ReleaseInstanceConnectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReleaseInstanceConnectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReleaseInstanceConnectionOutcome(ReleaseInstanceConnectionResult(outcome.result()));
+	else
+		return ReleaseInstanceConnectionOutcome(outcome.error());
+}
+
+void RdsClient::releaseInstanceConnectionAsync(const ReleaseInstanceConnectionRequest& request, const ReleaseInstanceConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, releaseInstanceConnection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ReleaseInstanceConnectionOutcomeCallable RdsClient::releaseInstanceConnectionCallable(const ReleaseInstanceConnectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReleaseInstanceConnectionOutcome()>>(
+			[this, request]()
+			{
+			return this->releaseInstanceConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::ReleaseInstancePublicConnectionOutcome RdsClient::releaseInstancePublicConnection(const ReleaseInstancePublicConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7029,6 +7209,42 @@ RdsClient::TagResourcesOutcomeCallable RdsClient::tagResourcesCallable(const Tag
 			[this, request]()
 			{
 			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::UnlockAccountOutcome RdsClient::unlockAccount(const UnlockAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnlockAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnlockAccountOutcome(UnlockAccountResult(outcome.result()));
+	else
+		return UnlockAccountOutcome(outcome.error());
+}
+
+void RdsClient::unlockAccountAsync(const UnlockAccountRequest& request, const UnlockAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unlockAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::UnlockAccountOutcomeCallable RdsClient::unlockAccountCallable(const UnlockAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnlockAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->unlockAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

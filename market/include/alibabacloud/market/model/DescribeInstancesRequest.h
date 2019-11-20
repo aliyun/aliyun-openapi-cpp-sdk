@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DescribeInstancesRequest();
 				~DescribeInstancesRequest();
 
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getProductType()const;
 				void setProductType(const std::string& productType);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				int pageSize_;
 				int pageNumber_;
 				std::string productType_;
+				int pageSize_;
 
 			};
 		}

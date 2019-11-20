@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DialogueRequest;
 
 DialogueRequest::DialogueRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "Dialogue")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DialogueRequest::~DialogueRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeSnapshotPackageRequest;
 
 DescribeSnapshotPackageRequest::DescribeSnapshotPackageRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeSnapshotPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSnapshotPackageRequest::~DescribeSnapshotPackageRequest()
 {}

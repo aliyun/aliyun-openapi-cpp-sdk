@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ModifyLiveDomainSchdmByPropertyRequest;
 
 ModifyLiveDomainSchdmByPropertyRequest::ModifyLiveDomainSchdmByPropertyRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ModifyLiveDomainSchdmByProperty")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyLiveDomainSchdmByPropertyRequest::~ModifyLiveDomainSchdmByPropertyRequest()
 {}

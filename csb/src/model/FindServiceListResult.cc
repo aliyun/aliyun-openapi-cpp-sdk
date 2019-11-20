@@ -92,6 +92,8 @@ void FindServiceListResult::parse(const std::string &payload)
 			serviceObject.userId = dataNodeServiceListService["UserId"].asString();
 		if(!dataNodeServiceListService["CasTargets"].isNull())
 			serviceObject.casTargets = dataNodeServiceListService["CasTargets"].asString();
+		if(!dataNodeServiceListService["RouteConfJson"].isNull())
+			serviceObject.routeConfJson = dataNodeServiceListService["RouteConfJson"].asString();
 		data_.serviceList.push_back(serviceObject);
 	}
 	if(!value["Message"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateAuditSettingRequest;
 
 UpdateAuditSettingRequest::UpdateAuditSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateAuditSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateAuditSettingRequest::~UpdateAuditSettingRequest()
 {}

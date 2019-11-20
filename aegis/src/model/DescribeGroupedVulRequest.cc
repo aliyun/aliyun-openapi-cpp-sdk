@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeGroupedVulRequest;
 
 DescribeGroupedVulRequest::DescribeGroupedVulRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeGroupedVul")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGroupedVulRequest::~DescribeGroupedVulRequest()
 {}

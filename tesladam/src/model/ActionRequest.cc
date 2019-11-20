@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaDam::Model::ActionRequest;
 
 ActionRequest::ActionRequest() :
 	RpcServiceRequest("tesladam", "2018-01-18", "Action")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ActionRequest::~ActionRequest()
 {}

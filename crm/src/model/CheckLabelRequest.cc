@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::CheckLabelRequest;
 
 CheckLabelRequest::CheckLabelRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "CheckLabel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckLabelRequest::~CheckLabelRequest()
 {}

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				int getEnableBackupLog()const;
+				void setEnableBackupLog(int enableBackupLog);
 				std::string getPreferredBackupPeriod()const;
 				void setPreferredBackupPeriod(const std::string& preferredBackupPeriod);
 				std::string getResourceOwnerAccount()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string accessKeyId_;
 				std::string securityToken_;
+				int enableBackupLog_;
 				std::string preferredBackupPeriod_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

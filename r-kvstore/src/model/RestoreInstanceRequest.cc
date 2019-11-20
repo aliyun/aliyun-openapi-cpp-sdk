@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::RestoreInstanceRequest;
 
 RestoreInstanceRequest::RestoreInstanceRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "RestoreInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RestoreInstanceRequest::~RestoreInstanceRequest()
 {}
@@ -56,6 +58,17 @@ void RestoreInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string RestoreInstanceRequest::getRestoreTime()const
+{
+	return restoreTime_;
+}
+
+void RestoreInstanceRequest::setRestoreTime(const std::string& restoreTime)
+{
+	restoreTime_ = restoreTime;
+	setCoreParameter("RestoreTime", restoreTime);
 }
 
 std::string RestoreInstanceRequest::getResourceOwnerAccount()const
@@ -100,6 +113,17 @@ void RestoreInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string RestoreInstanceRequest::getRestoreType()const
+{
+	return restoreType_;
+}
+
+void RestoreInstanceRequest::setRestoreType(const std::string& restoreType)
+{
+	restoreType_ = restoreType;
+	setCoreParameter("RestoreType", restoreType);
 }
 
 std::string RestoreInstanceRequest::getInstanceId()const

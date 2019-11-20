@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::DeleteDBClusterRequest;
 
 DeleteDBClusterRequest::DeleteDBClusterRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "DeleteDBCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDBClusterRequest::~DeleteDBClusterRequest()
 {}

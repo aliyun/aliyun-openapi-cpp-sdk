@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::QueryEndPointListRequest;
 
 QueryEndPointListRequest::QueryEndPointListRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "QueryEndPointList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEndPointListRequest::~QueryEndPointListRequest()
 {}

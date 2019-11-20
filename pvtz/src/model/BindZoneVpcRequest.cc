@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::BindZoneVpcRequest;
 
 BindZoneVpcRequest::BindZoneVpcRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "BindZoneVpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindZoneVpcRequest::~BindZoneVpcRequest()
 {}
@@ -66,12 +68,11 @@ std::vector<BindZoneVpcRequest::Vpcs> BindZoneVpcRequest::getVpcs()const
 void BindZoneVpcRequest::setVpcs(const std::vector<Vpcs>& vpcs)
 {
 	vpcs_ = vpcs;
-	int i = 0;
-	for(int i = 0; i!= vpcs.size(); i++)	{
-		auto obj = vpcs.at(i);
-		std::string str ="Vpcs."+ std::to_string(i);
-		setCoreParameter(str + ".RegionId", obj.regionId);
-		setCoreParameter(str + ".VpcId", obj.vpcId);
+	for(int dep1 = 0; dep1!= vpcs.size(); dep1++) {
+		auto vpcsObj = vpcs.at(dep1);
+		std::string vpcsObjStr = "Vpcs." + std::to_string(dep1);
+		setCoreParameter(vpcsObjStr + ".RegionId", vpcsObj.regionId);
+		setCoreParameter(vpcsObjStr + ".VpcId", vpcsObj.vpcId);
 	}
 }
 

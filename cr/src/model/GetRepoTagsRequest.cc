@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoTagsRequest;
 
 GetRepoTagsRequest::GetRepoTagsRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/tags");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoTagsRequest::~GetRepoTagsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::SwitchDBInstanceHARequest;
 
 SwitchDBInstanceHARequest::SwitchDBInstanceHARequest() :
 	RpcServiceRequest("rds", "2014-08-15", "SwitchDBInstanceHA")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SwitchDBInstanceHARequest::~SwitchDBInstanceHARequest()
 {}
@@ -34,39 +36,6 @@ void SwitchDBInstanceHARequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string SwitchDBInstanceHARequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SwitchDBInstanceHARequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string SwitchDBInstanceHARequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void SwitchDBInstanceHARequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long SwitchDBInstanceHARequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SwitchDBInstanceHARequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SwitchDBInstanceHARequest::getAccessKeyId()const
@@ -102,17 +71,6 @@ void SwitchDBInstanceHARequest::setDBInstanceId(const std::string& dBInstanceId)
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-std::string SwitchDBInstanceHARequest::getForce()const
-{
-	return force_;
-}
-
-void SwitchDBInstanceHARequest::setForce(const std::string& force)
-{
-	force_ = force;
-	setCoreParameter("Force", force);
-}
-
 std::string SwitchDBInstanceHARequest::getNodeId()const
 {
 	return nodeId_;
@@ -122,6 +80,50 @@ void SwitchDBInstanceHARequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
 	setCoreParameter("NodeId", nodeId);
+}
+
+std::string SwitchDBInstanceHARequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void SwitchDBInstanceHARequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string SwitchDBInstanceHARequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void SwitchDBInstanceHARequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long SwitchDBInstanceHARequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void SwitchDBInstanceHARequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SwitchDBInstanceHARequest::getForce()const
+{
+	return force_;
+}
+
+void SwitchDBInstanceHARequest::setForce(const std::string& force)
+{
+	force_ = force;
+	setCoreParameter("Force", force);
 }
 
 std::string SwitchDBInstanceHARequest::getOperation()const

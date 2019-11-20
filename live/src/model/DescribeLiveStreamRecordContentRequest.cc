@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamRecordContentRequest;
 
 DescribeLiveStreamRecordContentRequest::DescribeLiveStreamRecordContentRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamRecordContent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamRecordContentRequest::~DescribeLiveStreamRecordContentRequest()
 {}

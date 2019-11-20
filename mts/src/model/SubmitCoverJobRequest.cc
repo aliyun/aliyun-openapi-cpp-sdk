@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitCoverJobRequest;
 
 SubmitCoverJobRequest::SubmitCoverJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitCoverJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitCoverJobRequest::~SubmitCoverJobRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateResourcePoolRequest;
 
 CreateResourcePoolRequest::CreateResourcePoolRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateResourcePool")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateResourcePoolRequest::~CreateResourcePoolRequest()
 {}
@@ -121,16 +123,15 @@ std::vector<CreateResourcePoolRequest::Config> CreateResourcePoolRequest::getCon
 void CreateResourcePoolRequest::setConfig(const std::vector<Config>& config)
 {
 	config_ = config;
-	int i = 0;
-	for(int i = 0; i!= config.size(); i++)	{
-		auto obj = config.at(i);
-		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", obj.configKey);
-		setCoreParameter(str + ".Note", obj.note);
-		setCoreParameter(str + ".configType", obj.configType);
-		setCoreParameter(str + ".TargetId", obj.targetId);
-		setCoreParameter(str + ".ConfigValue", obj.configValue);
-		setCoreParameter(str + ".Category", obj.category);
+	for(int dep1 = 0; dep1!= config.size(); dep1++) {
+		auto configObj = config.at(dep1);
+		std::string configObjStr = "Config." + std::to_string(dep1);
+		setCoreParameter(configObjStr + ".ConfigKey", configObj.configKey);
+		setCoreParameter(configObjStr + ".Note", configObj.note);
+		setCoreParameter(configObjStr + ".ConfigType", configObj.configType);
+		setCoreParameter(configObjStr + ".TargetId", configObj.targetId);
+		setCoreParameter(configObjStr + ".ConfigValue", configObj.configValue);
+		setCoreParameter(configObjStr + ".Category", configObj.category);
 	}
 }
 

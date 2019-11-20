@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ResizeClusterV2Request;
 
 ResizeClusterV2Request::ResizeClusterV2Request() :
 	RpcServiceRequest("emr", "2016-04-08", "ResizeClusterV2")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResizeClusterV2Request::~ResizeClusterV2Request()
 {}
@@ -88,13 +90,14 @@ std::vector<ResizeClusterV2Request::HostComponentInfo> ResizeClusterV2Request::g
 void ResizeClusterV2Request::setHostComponentInfo(const std::vector<HostComponentInfo>& hostComponentInfo)
 {
 	hostComponentInfo_ = hostComponentInfo;
-	int i = 0;
-	for(int i = 0; i!= hostComponentInfo.size(); i++)	{
-		auto obj = hostComponentInfo.at(i);
-		std::string str ="HostComponentInfo."+ std::to_string(i);
-		setCoreParameter(str + ".HostName", obj.hostName);
-		for(int i = 0; i!= obj.componentNameList.size(); i++)				setCoreParameter(str + ".ComponentNameList."+ std::to_string(i), obj.componentNameList.at(i));
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+	for(int dep1 = 0; dep1!= hostComponentInfo.size(); dep1++) {
+		auto hostComponentInfoObj = hostComponentInfo.at(dep1);
+		std::string hostComponentInfoObjStr = "HostComponentInfo." + std::to_string(dep1);
+		setCoreParameter(hostComponentInfoObjStr + ".HostName", hostComponentInfoObj.hostName);
+		for(int dep2 = 0; dep2!= hostComponentInfoObj.componentNameList.size(); dep2++) {
+			setCoreParameter(hostComponentInfoObjStr + ".ComponentNameList."+ std::to_string(dep2), hostComponentInfoObj.componentNameList.at(dep2));
+		}
+		setCoreParameter(hostComponentInfoObjStr + ".ServiceName", hostComponentInfoObj.serviceName);
 	}
 }
 
@@ -117,29 +120,28 @@ std::vector<ResizeClusterV2Request::HostGroup> ResizeClusterV2Request::getHostGr
 void ResizeClusterV2Request::setHostGroup(const std::vector<HostGroup>& hostGroup)
 {
 	hostGroup_ = hostGroup;
-	int i = 0;
-	for(int i = 0; i!= hostGroup.size(); i++)	{
-		auto obj = hostGroup.at(i);
-		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".Period", std::to_string(obj.period));
-		setCoreParameter(str + ".SysDiskCapacity", std::to_string(obj.sysDiskCapacity));
-		setCoreParameter(str + ".HostKeyPairName", obj.hostKeyPairName);
-		setCoreParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
-		setCoreParameter(str + ".SysDiskType", obj.sysDiskType);
-		setCoreParameter(str + ".ClusterId", obj.clusterId);
-		setCoreParameter(str + ".DiskType", obj.diskType);
-		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
-		setCoreParameter(str + ".VswitchId", std::to_string(obj.vswitchId));
-		setCoreParameter(str + ".DiskCount", std::to_string(obj.diskCount));
-		setCoreParameter(str + ".AutoRenew", obj.autoRenew ? "true" : "false");
-		setCoreParameter(str + ".HostGroupId", obj.hostGroupId);
-		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".Comment", obj.comment);
-		setCoreParameter(str + ".ChargeType", obj.chargeType);
-		setCoreParameter(str + ".CreateType", obj.createType);
-		setCoreParameter(str + ".HostPassword", obj.hostPassword);
-		setCoreParameter(str + ".HostGroupType", obj.hostGroupType);
+	for(int dep1 = 0; dep1!= hostGroup.size(); dep1++) {
+		auto hostGroupObj = hostGroup.at(dep1);
+		std::string hostGroupObjStr = "HostGroup." + std::to_string(dep1);
+		setCoreParameter(hostGroupObjStr + ".Period", std::to_string(hostGroupObj.period));
+		setCoreParameter(hostGroupObjStr + ".SysDiskCapacity", std::to_string(hostGroupObj.sysDiskCapacity));
+		setCoreParameter(hostGroupObjStr + ".HostKeyPairName", hostGroupObj.hostKeyPairName);
+		setCoreParameter(hostGroupObjStr + ".DiskCapacity", std::to_string(hostGroupObj.diskCapacity));
+		setCoreParameter(hostGroupObjStr + ".SysDiskType", hostGroupObj.sysDiskType);
+		setCoreParameter(hostGroupObjStr + ".ClusterId", hostGroupObj.clusterId);
+		setCoreParameter(hostGroupObjStr + ".DiskType", hostGroupObj.diskType);
+		setCoreParameter(hostGroupObjStr + ".HostGroupName", hostGroupObj.hostGroupName);
+		setCoreParameter(hostGroupObjStr + ".VswitchId", std::to_string(hostGroupObj.vswitchId));
+		setCoreParameter(hostGroupObjStr + ".DiskCount", std::to_string(hostGroupObj.diskCount));
+		setCoreParameter(hostGroupObjStr + ".AutoRenew", hostGroupObj.autoRenew ? "true" : "false");
+		setCoreParameter(hostGroupObjStr + ".HostGroupId", hostGroupObj.hostGroupId);
+		setCoreParameter(hostGroupObjStr + ".NodeCount", std::to_string(hostGroupObj.nodeCount));
+		setCoreParameter(hostGroupObjStr + ".InstanceType", hostGroupObj.instanceType);
+		setCoreParameter(hostGroupObjStr + ".Comment", hostGroupObj.comment);
+		setCoreParameter(hostGroupObjStr + ".ChargeType", hostGroupObj.chargeType);
+		setCoreParameter(hostGroupObjStr + ".CreateType", hostGroupObj.createType);
+		setCoreParameter(hostGroupObjStr + ".HostPassword", hostGroupObj.hostPassword);
+		setCoreParameter(hostGroupObjStr + ".HostGroupType", hostGroupObj.hostGroupType);
 	}
 }
 

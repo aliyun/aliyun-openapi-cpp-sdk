@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::QueryStaticsAvailabilityRequest;
 
 QueryStaticsAvailabilityRequest::QueryStaticsAvailabilityRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "QueryStaticsAvailability")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryStaticsAvailabilityRequest::~QueryStaticsAvailabilityRequest()
 {}

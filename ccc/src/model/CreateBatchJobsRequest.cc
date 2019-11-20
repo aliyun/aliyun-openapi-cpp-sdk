@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateBatchJobsRequest;
 
 CreateBatchJobsRequest::CreateBatchJobsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateBatchJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBatchJobsRequest::~CreateBatchJobsRequest()
 {}
@@ -55,8 +57,9 @@ std::vector<std::string> CreateBatchJobsRequest::getCallingNumber()const
 void CreateBatchJobsRequest::setCallingNumber(const std::vector<std::string>& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
+		setCoreParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
+	}
 }
 
 std::string CreateBatchJobsRequest::getInstanceId()const

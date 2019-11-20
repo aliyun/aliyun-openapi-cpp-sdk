@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::BatchStartVodDomainRequest;
 
 BatchStartVodDomainRequest::BatchStartVodDomainRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "BatchStartVodDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchStartVodDomainRequest::~BatchStartVodDomainRequest()
 {}

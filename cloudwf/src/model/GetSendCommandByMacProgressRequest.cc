@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetSendCommandByMacProgressRequest;
 
 GetSendCommandByMacProgressRequest::GetSendCommandByMacProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetSendCommandByMacProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSendCommandByMacProgressRequest::~GetSendCommandByMacProgressRequest()
 {}

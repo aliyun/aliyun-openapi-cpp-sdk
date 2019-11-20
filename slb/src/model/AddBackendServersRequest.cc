@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::AddBackendServersRequest;
 
 AddBackendServersRequest::AddBackendServersRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "AddBackendServers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddBackendServersRequest::~AddBackendServersRequest()
 {}

@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::UpdateRepoRequest;
 
 UpdateRepoRequest::UpdateRepoRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]");
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateRepoRequest::~UpdateRepoRequest()
 {}

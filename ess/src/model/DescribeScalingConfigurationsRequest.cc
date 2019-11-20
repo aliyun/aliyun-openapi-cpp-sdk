@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DescribeScalingConfigurationsRequest;
 
 DescribeScalingConfigurationsRequest::DescribeScalingConfigurationsRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DescribeScalingConfigurations")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScalingConfigurationsRequest::~DescribeScalingConfigurationsRequest()
 {}

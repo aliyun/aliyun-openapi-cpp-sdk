@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListJobStatusRequest;
 
 ListJobStatusRequest::ListJobStatusRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListJobStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListJobStatusRequest::~ListJobStatusRequest()
 {}

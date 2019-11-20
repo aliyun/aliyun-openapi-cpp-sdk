@@ -20,7 +20,9 @@ using AlibabaCloud::DnsKnocker::Model::BatchDeleteRrRequest;
 
 BatchDeleteRrRequest::BatchDeleteRrRequest() :
 	RpcServiceRequest("dnsknocker", "2019-09-10", "BatchDeleteRr")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchDeleteRrRequest::~BatchDeleteRrRequest()
 {}

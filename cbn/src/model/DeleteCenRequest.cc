@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DeleteCenRequest;
 
 DeleteCenRequest::DeleteCenRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DeleteCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCenRequest::~DeleteCenRequest()
 {}

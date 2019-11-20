@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteProductTopicRequest;
 
 DeleteProductTopicRequest::DeleteProductTopicRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteProductTopic")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteProductTopicRequest::~DeleteProductTopicRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SetUpgradeImgByModelRequest;
 
 SetUpgradeImgByModelRequest::SetUpgradeImgByModelRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SetUpgradeImgByModel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetUpgradeImgByModelRequest::~SetUpgradeImgByModelRequest()
 {}

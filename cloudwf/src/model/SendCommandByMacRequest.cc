@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SendCommandByMacRequest;
 
 SendCommandByMacRequest::SendCommandByMacRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SendCommandByMac")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendCommandByMacRequest::~SendCommandByMacRequest()
 {}
@@ -55,7 +57,8 @@ std::vector<std::string> SendCommandByMacRequest::getMacList()const
 void SendCommandByMacRequest::setMacList(const std::vector<std::string>& macList)
 {
 	macList_ = macList;
-	for(int i = 0; i!= macList.size(); i++)
-		setCoreParameter("MacList."+ std::to_string(i), macList.at(i));
+	for(int dep1 = 0; dep1!= macList.size(); dep1++) {
+		setCoreParameter("MacList."+ std::to_string(dep1), macList.at(dep1));
+	}
 }
 

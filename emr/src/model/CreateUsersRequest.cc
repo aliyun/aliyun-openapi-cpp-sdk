@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateUsersRequest;
 
 CreateUsersRequest::CreateUsersRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUsersRequest::~CreateUsersRequest()
 {}
@@ -77,13 +79,12 @@ std::vector<CreateUsersRequest::UserInfo> CreateUsersRequest::getUserInfo()const
 void CreateUsersRequest::setUserInfo(const std::vector<UserInfo>& userInfo)
 {
 	userInfo_ = userInfo;
-	int i = 0;
-	for(int i = 0; i!= userInfo.size(); i++)	{
-		auto obj = userInfo.at(i);
-		std::string str ="UserInfo."+ std::to_string(i);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".UserId", obj.userId);
-		setCoreParameter(str + ".UserName", obj.userName);
+	for(int dep1 = 0; dep1!= userInfo.size(); dep1++) {
+		auto userInfoObj = userInfo.at(dep1);
+		std::string userInfoObjStr = "UserInfo." + std::to_string(dep1);
+		setCoreParameter(userInfoObjStr + ".Type", userInfoObj.type);
+		setCoreParameter(userInfoObjStr + ".UserId", userInfoObj.userId);
+		setCoreParameter(userInfoObjStr + ".UserName", userInfoObj.userName);
 	}
 }
 

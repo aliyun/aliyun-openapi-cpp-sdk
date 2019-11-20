@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeImageFromLibRequest;
 
 DescribeImageFromLibRequest::DescribeImageFromLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeImageFromLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeImageFromLibRequest::~DescribeImageFromLibRequest()
 {}

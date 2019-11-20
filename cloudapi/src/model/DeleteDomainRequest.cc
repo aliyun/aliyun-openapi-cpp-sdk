@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteDomainRequest;
 
 DeleteDomainRequest::DeleteDomainRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDomainRequest::~DeleteDomainRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeCasterLayoutsRequest;
 
 DescribeCasterLayoutsRequest::DescribeCasterLayoutsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeCasterLayouts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCasterLayoutsRequest::~DescribeCasterLayoutsRequest()
 {}

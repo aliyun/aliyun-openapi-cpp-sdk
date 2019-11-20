@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyResourcePoolSchedulerTypeRequest;
 
 ModifyResourcePoolSchedulerTypeRequest::ModifyResourcePoolSchedulerTypeRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyResourcePoolSchedulerType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyResourcePoolSchedulerTypeRequest::~ModifyResourcePoolSchedulerTypeRequest()
 {}

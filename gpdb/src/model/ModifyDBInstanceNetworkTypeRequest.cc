@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ModifyDBInstanceNetworkTypeRequest;
 
 ModifyDBInstanceNetworkTypeRequest::ModifyDBInstanceNetworkTypeRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ModifyDBInstanceNetworkType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceNetworkTypeRequest::~ModifyDBInstanceNetworkTypeRequest()
 {}

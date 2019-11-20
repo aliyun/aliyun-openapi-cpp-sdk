@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetAppInfosRequest;
 
 GetAppInfosRequest::GetAppInfosRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetAppInfos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAppInfosRequest::~GetAppInfosRequest()
 {}

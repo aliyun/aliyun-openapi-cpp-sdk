@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateCustomerGatewayRequest;
 
 CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateCustomerGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCustomerGatewayRequest::~CreateCustomerGatewayRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetInstanceRequest;
 
 GetInstanceRequest::GetInstanceRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceRequest::~GetInstanceRequest()
 {}

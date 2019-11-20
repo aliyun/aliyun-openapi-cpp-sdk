@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ClearAccountAliasRequest;
 
 ClearAccountAliasRequest::ClearAccountAliasRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ClearAccountAlias")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ClearAccountAliasRequest::~ClearAccountAliasRequest()
 {}

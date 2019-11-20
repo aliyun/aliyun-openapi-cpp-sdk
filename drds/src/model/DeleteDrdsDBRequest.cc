@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DeleteDrdsDBRequest;
 
 DeleteDrdsDBRequest::DeleteDrdsDBRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DeleteDrdsDB")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDrdsDBRequest::~DeleteDrdsDBRequest()
 {}

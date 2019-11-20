@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeVpcAttributeRequest;
 
 DescribeVpcAttributeRequest::DescribeVpcAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeVpcAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVpcAttributeRequest::~DescribeVpcAttributeRequest()
 {}

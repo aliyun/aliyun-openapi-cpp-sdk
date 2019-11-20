@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::FilterUnavailableCodesRequest;
 
 FilterUnavailableCodesRequest::FilterUnavailableCodesRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "FilterUnavailableCodes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FilterUnavailableCodesRequest::~FilterUnavailableCodesRequest()
 {}

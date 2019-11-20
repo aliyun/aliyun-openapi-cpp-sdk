@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::ModifyInstanceVpcAuthModeRequest;
 
 ModifyInstanceVpcAuthModeRequest::ModifyInstanceVpcAuthModeRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "ModifyInstanceVpcAuthMode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceVpcAuthModeRequest::~ModifyInstanceVpcAuthModeRequest()
 {}

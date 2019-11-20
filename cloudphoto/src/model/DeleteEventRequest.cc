@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::DeleteEventRequest;
 
 DeleteEventRequest::DeleteEventRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "DeleteEvent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteEventRequest::~DeleteEventRequest()
 {}

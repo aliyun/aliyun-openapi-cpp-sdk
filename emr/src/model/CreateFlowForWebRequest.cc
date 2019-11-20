@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateFlowForWebRequest;
 
 CreateFlowForWebRequest::CreateFlowForWebRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateFlowForWeb")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFlowForWebRequest::~CreateFlowForWebRequest()
 {}

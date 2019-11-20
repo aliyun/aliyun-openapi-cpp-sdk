@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::RemoveVpcAccessRequest;
 
 RemoveVpcAccessRequest::RemoveVpcAccessRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "RemoveVpcAccess")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveVpcAccessRequest::~RemoveVpcAccessRequest()
 {}

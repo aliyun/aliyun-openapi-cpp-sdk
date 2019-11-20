@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::InnerProduceCloudWFRequest;
 
 InnerProduceCloudWFRequest::InnerProduceCloudWFRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "InnerProduceCloudWF")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InnerProduceCloudWFRequest::~InnerProduceCloudWFRequest()
 {}

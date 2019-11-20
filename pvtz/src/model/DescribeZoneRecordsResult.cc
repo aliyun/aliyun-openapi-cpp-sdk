@@ -59,6 +59,8 @@ void DescribeZoneRecordsResult::parse(const std::string &payload)
 			recordsObject.status = valueRecordsRecord["Status"].asString();
 		if(!valueRecordsRecord["RegionId"].isNull())
 			recordsObject.regionId = valueRecordsRecord["RegionId"].asString();
+		if(!valueRecordsRecord["Remark"].isNull())
+			recordsObject.remark = valueRecordsRecord["Remark"].asString();
 		records_.push_back(recordsObject);
 	}
 	if(!value["TotalItems"].isNull())

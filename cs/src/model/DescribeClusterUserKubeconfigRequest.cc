@@ -20,7 +20,10 @@ using AlibabaCloud::CS::Model::DescribeClusterUserKubeconfigRequest;
 
 DescribeClusterUserKubeconfigRequest::DescribeClusterUserKubeconfigRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
-{}
+{
+	setResourcePath("/k8s/[ClusterId]/user_config");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeClusterUserKubeconfigRequest::~DescribeClusterUserKubeconfigRequest()
 {}

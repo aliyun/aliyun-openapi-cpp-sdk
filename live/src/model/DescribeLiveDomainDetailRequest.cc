@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainDetailRequest;
 
 DescribeLiveDomainDetailRequest::DescribeLiveDomainDetailRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainDetailRequest::~DescribeLiveDomainDetailRequest()
 {}

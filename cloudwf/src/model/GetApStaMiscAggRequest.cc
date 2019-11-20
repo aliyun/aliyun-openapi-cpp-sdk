@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApStaMiscAggRequest;
 
 GetApStaMiscAggRequest::GetApStaMiscAggRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApStaMiscAgg")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApStaMiscAggRequest::~GetApStaMiscAggRequest()
 {}

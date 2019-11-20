@@ -84,6 +84,8 @@
 #include "model/DescribeApiErrorDataResult.h"
 #include "model/DescribeApiGroupRequest.h"
 #include "model/DescribeApiGroupResult.h"
+#include "model/DescribeApiGroupVpcWhitelistRequest.h"
+#include "model/DescribeApiGroupVpcWhitelistResult.h"
 #include "model/DescribeApiGroupsRequest.h"
 #include "model/DescribeApiGroupsResult.h"
 #include "model/DescribeApiHistoriesRequest.h"
@@ -170,6 +172,8 @@
 #include "model/ModifyApiResult.h"
 #include "model/ModifyApiGroupRequest.h"
 #include "model/ModifyApiGroupResult.h"
+#include "model/ModifyApiGroupVpcWhitelistRequest.h"
+#include "model/ModifyApiGroupVpcWhitelistResult.h"
 #include "model/ModifyAppRequest.h"
 #include "model/ModifyAppResult.h"
 #include "model/ModifyIpControlRequest.h"
@@ -224,6 +228,8 @@
 #include "model/SetTrafficControlApisResult.h"
 #include "model/SetVpcAccessRequest.h"
 #include "model/SetVpcAccessResult.h"
+#include "model/SetWildcardDomainPatternsRequest.h"
+#include "model/SetWildcardDomainPatternsResult.h"
 #include "model/SwitchApiRequest.h"
 #include "model/SwitchApiResult.h"
 #include "model/TagResourcesRequest.h"
@@ -332,6 +338,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeApiGroupResult> DescribeApiGroupOutcome;
 			typedef std::future<DescribeApiGroupOutcome> DescribeApiGroupOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeApiGroupRequest&, const DescribeApiGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeApiGroupVpcWhitelistResult> DescribeApiGroupVpcWhitelistOutcome;
+			typedef std::future<DescribeApiGroupVpcWhitelistOutcome> DescribeApiGroupVpcWhitelistOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::DescribeApiGroupVpcWhitelistRequest&, const DescribeApiGroupVpcWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiGroupVpcWhitelistAsyncHandler;
 			typedef Outcome<Error, Model::DescribeApiGroupsResult> DescribeApiGroupsOutcome;
 			typedef std::future<DescribeApiGroupsOutcome> DescribeApiGroupsOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeApiGroupsRequest&, const DescribeApiGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiGroupsAsyncHandler;
@@ -461,6 +470,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyApiGroupResult> ModifyApiGroupOutcome;
 			typedef std::future<ModifyApiGroupOutcome> ModifyApiGroupOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::ModifyApiGroupRequest&, const ModifyApiGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiGroupAsyncHandler;
+			typedef Outcome<Error, Model::ModifyApiGroupVpcWhitelistResult> ModifyApiGroupVpcWhitelistOutcome;
+			typedef std::future<ModifyApiGroupVpcWhitelistOutcome> ModifyApiGroupVpcWhitelistOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::ModifyApiGroupVpcWhitelistRequest&, const ModifyApiGroupVpcWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiGroupVpcWhitelistAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAppResult> ModifyAppOutcome;
 			typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::ModifyAppRequest&, const ModifyAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
@@ -542,6 +554,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetVpcAccessResult> SetVpcAccessOutcome;
 			typedef std::future<SetVpcAccessOutcome> SetVpcAccessOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::SetVpcAccessRequest&, const SetVpcAccessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetVpcAccessAsyncHandler;
+			typedef Outcome<Error, Model::SetWildcardDomainPatternsResult> SetWildcardDomainPatternsOutcome;
+			typedef std::future<SetWildcardDomainPatternsOutcome> SetWildcardDomainPatternsOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::SetWildcardDomainPatternsRequest&, const SetWildcardDomainPatternsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetWildcardDomainPatternsAsyncHandler;
 			typedef Outcome<Error, Model::SwitchApiResult> SwitchApiOutcome;
 			typedef std::future<SwitchApiOutcome> SwitchApiOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::SwitchApiRequest&, const SwitchApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchApiAsyncHandler;
@@ -649,6 +664,9 @@ namespace AlibabaCloud
 			DescribeApiGroupOutcome describeApiGroup(const Model::DescribeApiGroupRequest &request)const;
 			void describeApiGroupAsync(const Model::DescribeApiGroupRequest& request, const DescribeApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApiGroupOutcomeCallable describeApiGroupCallable(const Model::DescribeApiGroupRequest& request) const;
+			DescribeApiGroupVpcWhitelistOutcome describeApiGroupVpcWhitelist(const Model::DescribeApiGroupVpcWhitelistRequest &request)const;
+			void describeApiGroupVpcWhitelistAsync(const Model::DescribeApiGroupVpcWhitelistRequest& request, const DescribeApiGroupVpcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeApiGroupVpcWhitelistOutcomeCallable describeApiGroupVpcWhitelistCallable(const Model::DescribeApiGroupVpcWhitelistRequest& request) const;
 			DescribeApiGroupsOutcome describeApiGroups(const Model::DescribeApiGroupsRequest &request)const;
 			void describeApiGroupsAsync(const Model::DescribeApiGroupsRequest& request, const DescribeApiGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApiGroupsOutcomeCallable describeApiGroupsCallable(const Model::DescribeApiGroupsRequest& request) const;
@@ -778,6 +796,9 @@ namespace AlibabaCloud
 			ModifyApiGroupOutcome modifyApiGroup(const Model::ModifyApiGroupRequest &request)const;
 			void modifyApiGroupAsync(const Model::ModifyApiGroupRequest& request, const ModifyApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyApiGroupOutcomeCallable modifyApiGroupCallable(const Model::ModifyApiGroupRequest& request) const;
+			ModifyApiGroupVpcWhitelistOutcome modifyApiGroupVpcWhitelist(const Model::ModifyApiGroupVpcWhitelistRequest &request)const;
+			void modifyApiGroupVpcWhitelistAsync(const Model::ModifyApiGroupVpcWhitelistRequest& request, const ModifyApiGroupVpcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyApiGroupVpcWhitelistOutcomeCallable modifyApiGroupVpcWhitelistCallable(const Model::ModifyApiGroupVpcWhitelistRequest& request) const;
 			ModifyAppOutcome modifyApp(const Model::ModifyAppRequest &request)const;
 			void modifyAppAsync(const Model::ModifyAppRequest& request, const ModifyAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAppOutcomeCallable modifyAppCallable(const Model::ModifyAppRequest& request) const;
@@ -859,6 +880,9 @@ namespace AlibabaCloud
 			SetVpcAccessOutcome setVpcAccess(const Model::SetVpcAccessRequest &request)const;
 			void setVpcAccessAsync(const Model::SetVpcAccessRequest& request, const SetVpcAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetVpcAccessOutcomeCallable setVpcAccessCallable(const Model::SetVpcAccessRequest& request) const;
+			SetWildcardDomainPatternsOutcome setWildcardDomainPatterns(const Model::SetWildcardDomainPatternsRequest &request)const;
+			void setWildcardDomainPatternsAsync(const Model::SetWildcardDomainPatternsRequest& request, const SetWildcardDomainPatternsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetWildcardDomainPatternsOutcomeCallable setWildcardDomainPatternsCallable(const Model::SetWildcardDomainPatternsRequest& request) const;
 			SwitchApiOutcome switchApi(const Model::SwitchApiRequest &request)const;
 			void switchApiAsync(const Model::SwitchApiRequest& request, const SwitchApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchApiOutcomeCallable switchApiCallable(const Model::SwitchApiRequest& request) const;

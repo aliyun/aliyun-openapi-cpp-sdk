@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetRuleRequest;
 
 SetRuleRequest::SetRuleRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetRuleRequest::~SetRuleRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveTaskForSubmittingDomainDeleteRequest;
 
 SaveTaskForSubmittingDomainDeleteRequest::SaveTaskForSubmittingDomainDeleteRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveTaskForSubmittingDomainDelete")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveTaskForSubmittingDomainDeleteRequest::~SaveTaskForSubmittingDomainDeleteRequest()
 {}

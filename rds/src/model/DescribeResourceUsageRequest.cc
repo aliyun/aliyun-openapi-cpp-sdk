@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeResourceUsageRequest;
 
 DescribeResourceUsageRequest::DescribeResourceUsageRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeResourceUsage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeResourceUsageRequest::~DescribeResourceUsageRequest()
 {}

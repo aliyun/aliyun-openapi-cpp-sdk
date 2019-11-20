@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::UpdateSnapshotSettingRequest;
 
 UpdateSnapshotSettingRequest::UpdateSnapshotSettingRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/snapshot-setting");
+	setMethod(HttpRequest::Method::Put);
+}
 
 UpdateSnapshotSettingRequest::~UpdateSnapshotSettingRequest()
 {}

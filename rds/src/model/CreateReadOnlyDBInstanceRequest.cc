@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CreateReadOnlyDBInstanceRequest;
 
 CreateReadOnlyDBInstanceRequest::CreateReadOnlyDBInstanceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CreateReadOnlyDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateReadOnlyDBInstanceRequest::~CreateReadOnlyDBInstanceRequest()
 {}

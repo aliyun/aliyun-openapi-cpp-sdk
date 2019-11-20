@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifySecurityGroupConfigurationRequest;
 
 ModifySecurityGroupConfigurationRequest::ModifySecurityGroupConfigurationRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifySecurityGroupConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySecurityGroupConfigurationRequest::~ModifySecurityGroupConfigurationRequest()
 {}

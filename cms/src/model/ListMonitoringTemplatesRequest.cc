@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::ListMonitoringTemplatesRequest;
 
 ListMonitoringTemplatesRequest::ListMonitoringTemplatesRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "ListMonitoringTemplates")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListMonitoringTemplatesRequest::~ListMonitoringTemplatesRequest()
 {}

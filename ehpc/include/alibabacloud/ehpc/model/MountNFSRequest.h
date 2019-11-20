@@ -43,12 +43,15 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getNfsDir()const;
 				void setNfsDir(const std::string& nfsDir);
+				std::string getProtocolType()const;
+				void setProtocolType(const std::string& protocolType);
 
             private:
 				std::string mountDir_;
 				std::string accessKeyId_;
 				std::string instanceId_;
 				std::string nfsDir_;
+				std::string protocolType_;
 
 			};
 		}

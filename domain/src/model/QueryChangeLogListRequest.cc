@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryChangeLogListRequest;
 
 QueryChangeLogListRequest::QueryChangeLogListRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryChangeLogList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryChangeLogListRequest::~QueryChangeLogListRequest()
 {}

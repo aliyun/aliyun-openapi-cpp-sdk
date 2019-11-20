@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitDynamicImageJobRequest;
 
 SubmitDynamicImageJobRequest::SubmitDynamicImageJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitDynamicImageJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitDynamicImageJobRequest::~SubmitDynamicImageJobRequest()
 {}

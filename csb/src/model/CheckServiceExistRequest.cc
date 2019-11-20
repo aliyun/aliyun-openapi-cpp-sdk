@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::CheckServiceExistRequest;
 
 CheckServiceExistRequest::CheckServiceExistRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "CheckServiceExist")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckServiceExistRequest::~CheckServiceExistRequest()
 {}

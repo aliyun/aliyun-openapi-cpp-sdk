@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::ExtendImageStyleRequest;
 
 ExtendImageStyleRequest::ExtendImageStyleRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "ExtendImageStyle")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ExtendImageStyleRequest::~ExtendImageStyleRequest()
 {}

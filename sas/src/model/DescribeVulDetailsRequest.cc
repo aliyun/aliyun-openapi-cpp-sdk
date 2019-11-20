@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeVulDetailsRequest;
 
 DescribeVulDetailsRequest::DescribeVulDetailsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeVulDetails")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVulDetailsRequest::~DescribeVulDetailsRequest()
 {}

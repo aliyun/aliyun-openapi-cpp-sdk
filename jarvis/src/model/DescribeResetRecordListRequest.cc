@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeResetRecordListRequest;
 
 DescribeResetRecordListRequest::DescribeResetRecordListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeResetRecordList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeResetRecordListRequest::~DescribeResetRecordListRequest()
 {}

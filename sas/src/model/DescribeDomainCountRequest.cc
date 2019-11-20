@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeDomainCountRequest;
 
 DescribeDomainCountRequest::DescribeDomainCountRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeDomainCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainCountRequest::~DescribeDomainCountRequest()
 {}

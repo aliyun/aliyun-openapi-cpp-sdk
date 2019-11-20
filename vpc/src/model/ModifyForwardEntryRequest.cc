@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyForwardEntryRequest;
 
 ModifyForwardEntryRequest::ModifyForwardEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyForwardEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyForwardEntryRequest::~ModifyForwardEntryRequest()
 {}

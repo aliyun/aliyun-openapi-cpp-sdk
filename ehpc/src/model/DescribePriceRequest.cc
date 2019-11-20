@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::DescribePriceRequest;
 
 DescribePriceRequest::DescribePriceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribePrice")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribePriceRequest::~DescribePriceRequest()
 {}
@@ -33,17 +35,16 @@ std::vector<DescribePriceRequest::Commodities> DescribePriceRequest::getCommodit
 void DescribePriceRequest::setCommodities(const std::vector<Commodities>& commodities)
 {
 	commodities_ = commodities;
-	int i = 0;
-	for(int i = 0; i!= commodities.size(); i++)	{
-		auto obj = commodities.at(i);
-		std::string str ="Commodities."+ std::to_string(i);
-		setCoreParameter(str + ".Amount", std::to_string(obj.amount));
-		setCoreParameter(str + ".Period", std::to_string(obj.period));
-		setCoreParameter(str + ".NodeType", obj.nodeType);
-		setCoreParameter(str + ".SystemDiskCategory", obj.systemDiskCategory);
-		setCoreParameter(str + ".SystemDiskSize", std::to_string(obj.systemDiskSize));
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".NetworkType", obj.networkType);
+	for(int dep1 = 0; dep1!= commodities.size(); dep1++) {
+		auto commoditiesObj = commodities.at(dep1);
+		std::string commoditiesObjStr = "Commodities." + std::to_string(dep1);
+		setCoreParameter(commoditiesObjStr + ".Amount", std::to_string(commoditiesObj.amount));
+		setCoreParameter(commoditiesObjStr + ".Period", std::to_string(commoditiesObj.period));
+		setCoreParameter(commoditiesObjStr + ".NodeType", commoditiesObj.nodeType);
+		setCoreParameter(commoditiesObjStr + ".SystemDiskCategory", commoditiesObj.systemDiskCategory);
+		setCoreParameter(commoditiesObjStr + ".SystemDiskSize", std::to_string(commoditiesObj.systemDiskSize));
+		setCoreParameter(commoditiesObjStr + ".InstanceType", commoditiesObj.instanceType);
+		setCoreParameter(commoditiesObjStr + ".NetworkType", commoditiesObj.networkType);
 	}
 }
 

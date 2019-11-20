@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::GetInstanceCountRequest;
 
 GetInstanceCountRequest::GetInstanceCountRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "GetInstanceCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceCountRequest::~GetInstanceCountRequest()
 {}

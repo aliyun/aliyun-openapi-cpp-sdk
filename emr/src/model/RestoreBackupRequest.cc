@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::RestoreBackupRequest;
 
 RestoreBackupRequest::RestoreBackupRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "RestoreBackup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RestoreBackupRequest::~RestoreBackupRequest()
 {}

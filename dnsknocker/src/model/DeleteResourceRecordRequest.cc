@@ -20,7 +20,9 @@ using AlibabaCloud::DnsKnocker::Model::DeleteResourceRecordRequest;
 
 DeleteResourceRecordRequest::DeleteResourceRecordRequest() :
 	RpcServiceRequest("dnsknocker", "2019-09-10", "DeleteResourceRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteResourceRecordRequest::~DeleteResourceRecordRequest()
 {}

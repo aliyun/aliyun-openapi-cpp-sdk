@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::ListDomainsRequest;
 
 ListDomainsRequest::ListDomainsRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "ListDomains")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListDomainsRequest::~ListDomainsRequest()
 {}

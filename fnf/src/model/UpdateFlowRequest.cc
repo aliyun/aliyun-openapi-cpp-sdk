@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::UpdateFlowRequest;
 
 UpdateFlowRequest::UpdateFlowRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "UpdateFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateFlowRequest::~UpdateFlowRequest()
 {}

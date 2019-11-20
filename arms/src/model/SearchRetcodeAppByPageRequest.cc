@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::SearchRetcodeAppByPageRequest;
 
 SearchRetcodeAppByPageRequest::SearchRetcodeAppByPageRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "SearchRetcodeAppByPage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchRetcodeAppByPageRequest::~SearchRetcodeAppByPageRequest()
 {}

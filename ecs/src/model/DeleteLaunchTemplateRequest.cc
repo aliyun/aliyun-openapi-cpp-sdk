@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteLaunchTemplateRequest;
 
 DeleteLaunchTemplateRequest::DeleteLaunchTemplateRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteLaunchTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLaunchTemplateRequest::~DeleteLaunchTemplateRequest()
 {}

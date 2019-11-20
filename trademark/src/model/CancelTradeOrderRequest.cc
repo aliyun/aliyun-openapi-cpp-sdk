@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::CancelTradeOrderRequest;
 
 CancelTradeOrderRequest::CancelTradeOrderRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "CancelTradeOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelTradeOrderRequest::~CancelTradeOrderRequest()
 {}

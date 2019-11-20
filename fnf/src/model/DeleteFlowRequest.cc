@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::DeleteFlowRequest;
 
 DeleteFlowRequest::DeleteFlowRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "DeleteFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DeleteFlowRequest::~DeleteFlowRequest()
 {}

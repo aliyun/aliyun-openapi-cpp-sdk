@@ -1347,6 +1347,42 @@ SasClient::DescribeStratetyOutcomeCallable SasClient::describeStratetyCallable(c
 	return task->get_future();
 }
 
+SasClient::DescribeSummaryInfoOutcome SasClient::describeSummaryInfo(const DescribeSummaryInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSummaryInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSummaryInfoOutcome(DescribeSummaryInfoResult(outcome.result()));
+	else
+		return DescribeSummaryInfoOutcome(outcome.error());
+}
+
+void SasClient::describeSummaryInfoAsync(const DescribeSummaryInfoRequest& request, const DescribeSummaryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSummaryInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeSummaryInfoOutcomeCallable SasClient::describeSummaryInfoCallable(const DescribeSummaryInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSummaryInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSummaryInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeSuspEventDetailOutcome SasClient::describeSuspEventDetail(const DescribeSuspEventDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

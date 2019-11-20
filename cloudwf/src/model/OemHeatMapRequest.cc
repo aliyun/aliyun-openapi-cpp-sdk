@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemHeatMapRequest;
 
 OemHeatMapRequest::OemHeatMapRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemHeatMap")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemHeatMapRequest::~OemHeatMapRequest()
 {}

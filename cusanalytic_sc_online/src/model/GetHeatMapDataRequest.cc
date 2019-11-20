@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetHeatMapDataRequest;
 
 GetHeatMapDataRequest::GetHeatMapDataRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetHeatMapData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetHeatMapDataRequest::~GetHeatMapDataRequest()
 {}

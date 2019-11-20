@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyVRouterAttributeRequest;
 
 ModifyVRouterAttributeRequest::ModifyVRouterAttributeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyVRouterAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyVRouterAttributeRequest::~ModifyVRouterAttributeRequest()
 {}

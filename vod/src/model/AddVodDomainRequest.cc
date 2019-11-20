@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::AddVodDomainRequest;
 
 AddVodDomainRequest::AddVodDomainRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "AddVodDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddVodDomainRequest::~AddVodDomainRequest()
 {}

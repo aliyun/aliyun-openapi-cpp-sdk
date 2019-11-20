@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ResumeFlowRequest;
 
 ResumeFlowRequest::ResumeFlowRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ResumeFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResumeFlowRequest::~ResumeFlowRequest()
 {}

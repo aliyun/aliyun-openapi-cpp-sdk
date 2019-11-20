@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::DeleteProjectRequest;
 
 DeleteProjectRequest::DeleteProjectRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteProjectRequest::~DeleteProjectRequest()
 {}

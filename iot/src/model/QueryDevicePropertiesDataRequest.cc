@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDevicePropertiesDataRequest;
 
 QueryDevicePropertiesDataRequest::QueryDevicePropertiesDataRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDevicePropertiesData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDevicePropertiesDataRequest::~QueryDevicePropertiesDataRequest()
 {}
@@ -88,8 +90,9 @@ std::vector<std::string> QueryDevicePropertiesDataRequest::getIdentifier()const
 void QueryDevicePropertiesDataRequest::setIdentifier(const std::vector<std::string>& identifier)
 {
 	identifier_ = identifier;
-	for(int i = 0; i!= identifier.size(); i++)
-		setCoreParameter("Identifier."+ std::to_string(i), identifier.at(i));
+	for(int dep1 = 0; dep1!= identifier.size(); dep1++) {
+		setCoreParameter("Identifier."+ std::to_string(dep1), identifier.at(dep1));
+	}
 }
 
 long QueryDevicePropertiesDataRequest::getEndTime()const

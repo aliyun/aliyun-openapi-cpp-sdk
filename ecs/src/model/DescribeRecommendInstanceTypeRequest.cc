@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeRecommendInstanceTypeRequest;
 
 DescribeRecommendInstanceTypeRequest::DescribeRecommendInstanceTypeRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeRecommendInstanceType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRecommendInstanceTypeRequest::~DescribeRecommendInstanceTypeRequest()
 {}
@@ -220,8 +222,9 @@ std::vector<std::string> DescribeRecommendInstanceTypeRequest::getInstanceTypeFa
 void DescribeRecommendInstanceTypeRequest::setInstanceTypeFamily(const std::vector<std::string>& instanceTypeFamily)
 {
 	instanceTypeFamily_ = instanceTypeFamily;
-	for(int i = 0; i!= instanceTypeFamily.size(); i++)
-		setCoreParameter("InstanceTypeFamily."+ std::to_string(i), instanceTypeFamily.at(i));
+	for(int dep1 = 0; dep1!= instanceTypeFamily.size(); dep1++) {
+		setCoreParameter("InstanceTypeFamily."+ std::to_string(dep1), instanceTypeFamily.at(dep1));
+	}
 }
 
 long DescribeRecommendInstanceTypeRequest::getOwnerId()const
@@ -255,6 +258,17 @@ void DescribeRecommendInstanceTypeRequest::setPriorityStrategy(const std::string
 {
 	priorityStrategy_ = priorityStrategy;
 	setCoreParameter("PriorityStrategy", priorityStrategy);
+}
+
+std::string DescribeRecommendInstanceTypeRequest::getInstanceFamilyLevel()const
+{
+	return instanceFamilyLevel_;
+}
+
+void DescribeRecommendInstanceTypeRequest::setInstanceFamilyLevel(const std::string& instanceFamilyLevel)
+{
+	instanceFamilyLevel_ = instanceFamilyLevel;
+	setCoreParameter("InstanceFamilyLevel", instanceFamilyLevel);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getZoneId()const

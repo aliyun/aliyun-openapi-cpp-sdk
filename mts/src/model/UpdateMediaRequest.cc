@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateMediaRequest;
 
 UpdateMediaRequest::UpdateMediaRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateMediaRequest::~UpdateMediaRequest()
 {}

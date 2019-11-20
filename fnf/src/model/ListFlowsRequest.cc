@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::ListFlowsRequest;
 
 ListFlowsRequest::ListFlowsRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "ListFlows")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListFlowsRequest::~ListFlowsRequest()
 {}

@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setReportType(const std::string& reportType);
 				int getEndTime()const;
 				void setEndTime(int endTime);
+				std::string getFilterValue()const;
+				void setFilterValue(const std::string& filterValue);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				int getStartTime()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
             private:
 				std::string reportType_;
 				int endTime_;
+				std::string filterValue_;
 				std::string clusterId_;
 				int startTime_;
 				std::string accessKeyId_;

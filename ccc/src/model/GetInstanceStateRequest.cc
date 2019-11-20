@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetInstanceStateRequest;
 
 GetInstanceStateRequest::GetInstanceStateRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetInstanceState")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceStateRequest::~GetInstanceStateRequest()
 {}

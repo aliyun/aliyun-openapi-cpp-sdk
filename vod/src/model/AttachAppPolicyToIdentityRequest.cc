@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::AttachAppPolicyToIdentityRequest;
 
 AttachAppPolicyToIdentityRequest::AttachAppPolicyToIdentityRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "AttachAppPolicyToIdentity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachAppPolicyToIdentityRequest::~AttachAppPolicyToIdentityRequest()
 {}

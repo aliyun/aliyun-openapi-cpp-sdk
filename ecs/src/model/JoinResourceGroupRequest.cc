@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::JoinResourceGroupRequest;
 
 JoinResourceGroupRequest::JoinResourceGroupRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "JoinResourceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 JoinResourceGroupRequest::~JoinResourceGroupRequest()
 {}

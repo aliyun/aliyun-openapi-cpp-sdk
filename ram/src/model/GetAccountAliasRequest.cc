@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetAccountAliasRequest;
 
 GetAccountAliasRequest::GetAccountAliasRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetAccountAlias")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAccountAliasRequest::~GetAccountAliasRequest()
 {}

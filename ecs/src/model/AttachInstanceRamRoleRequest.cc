@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::AttachInstanceRamRoleRequest;
 
 AttachInstanceRamRoleRequest::AttachInstanceRamRoleRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "AttachInstanceRamRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachInstanceRamRoleRequest::~AttachInstanceRamRoleRequest()
 {}

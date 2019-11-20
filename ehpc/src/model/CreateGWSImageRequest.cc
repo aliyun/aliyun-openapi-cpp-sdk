@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::CreateGWSImageRequest;
 
 CreateGWSImageRequest::CreateGWSImageRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "CreateGWSImage")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 CreateGWSImageRequest::~CreateGWSImageRequest()
 {}

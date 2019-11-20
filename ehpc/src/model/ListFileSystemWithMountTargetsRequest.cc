@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::ListFileSystemWithMountTargetsRequest;
 
 ListFileSystemWithMountTargetsRequest::ListFileSystemWithMountTargetsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListFileSystemWithMountTargets")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListFileSystemWithMountTargetsRequest::~ListFileSystemWithMountTargetsRequest()
 {}

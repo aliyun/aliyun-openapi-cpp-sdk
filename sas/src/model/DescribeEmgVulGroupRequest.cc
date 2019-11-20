@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeEmgVulGroupRequest;
 
 DescribeEmgVulGroupRequest::DescribeEmgVulGroupRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeEmgVulGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEmgVulGroupRequest::~DescribeEmgVulGroupRequest()
 {}

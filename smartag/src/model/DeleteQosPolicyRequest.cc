@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteQosPolicyRequest;
 
 DeleteQosPolicyRequest::DeleteQosPolicyRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteQosPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteQosPolicyRequest::~DeleteQosPolicyRequest()
 {}

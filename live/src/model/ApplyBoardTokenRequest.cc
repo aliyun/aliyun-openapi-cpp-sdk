@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ApplyBoardTokenRequest;
 
 ApplyBoardTokenRequest::ApplyBoardTokenRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ApplyBoardToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApplyBoardTokenRequest::~ApplyBoardTokenRequest()
 {}

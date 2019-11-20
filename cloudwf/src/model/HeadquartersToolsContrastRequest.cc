@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::HeadquartersToolsContrastRequest;
 
 HeadquartersToolsContrastRequest::HeadquartersToolsContrastRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "HeadquartersToolsContrast")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 HeadquartersToolsContrastRequest::~HeadquartersToolsContrastRequest()
 {}

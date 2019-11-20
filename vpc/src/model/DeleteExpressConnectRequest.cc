@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteExpressConnectRequest;
 
 DeleteExpressConnectRequest::DeleteExpressConnectRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteExpressConnect")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteExpressConnectRequest::~DeleteExpressConnectRequest()
 {}

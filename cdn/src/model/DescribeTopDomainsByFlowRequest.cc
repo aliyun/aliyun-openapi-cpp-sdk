@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeTopDomainsByFlowRequest;
 
 DescribeTopDomainsByFlowRequest::DescribeTopDomainsByFlowRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeTopDomainsByFlow")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeTopDomainsByFlow")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -47,6 +47,17 @@ void DescribeTopDomainsByFlowRequest::setLimit(long limit)
 {
 	limit_ = limit;
 	setCoreParameter("Limit", std::to_string(limit));
+}
+
+std::string DescribeTopDomainsByFlowRequest::getProduct()const
+{
+	return product_;
+}
+
+void DescribeTopDomainsByFlowRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeTopDomainsByFlowRequest::getEndTime()const

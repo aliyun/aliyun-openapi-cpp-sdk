@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DoActionsRequest;
 
 DoActionsRequest::DoActionsRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/actions");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DoActionsRequest::~DoActionsRequest()
 {}

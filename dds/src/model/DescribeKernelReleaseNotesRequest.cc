@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeKernelReleaseNotesRequest;
 
 DescribeKernelReleaseNotesRequest::DescribeKernelReleaseNotesRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeKernelReleaseNotes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeKernelReleaseNotesRequest::~DescribeKernelReleaseNotesRequest()
 {}

@@ -54,8 +54,6 @@ void DescribeEventDetailResult::parse(const std::string &payload)
 		event_.typeCode = eventNode["TypeCode"].asString();
 	if(!eventNode["TypeName"].isNull())
 		event_.typeName = eventNode["TypeName"].asString();
-	if(!eventNode["TelephoneNum"].isNull())
-		event_.telephoneNum = eventNode["TelephoneNum"].asString();
 	if(!eventNode["SubTypeCode"].isNull())
 		event_.subTypeCode = eventNode["SubTypeCode"].asString();
 	if(!eventNode["SubTypeName"].isNull())

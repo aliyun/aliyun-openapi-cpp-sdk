@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListAsrPipelineRequest;
 
 ListAsrPipelineRequest::ListAsrPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListAsrPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAsrPipelineRequest::~ListAsrPipelineRequest()
 {}

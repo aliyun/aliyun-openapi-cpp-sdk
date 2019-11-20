@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::DeleteLabelRequest;
 
 DeleteLabelRequest::DeleteLabelRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "DeleteLabel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLabelRequest::~DeleteLabelRequest()
 {}

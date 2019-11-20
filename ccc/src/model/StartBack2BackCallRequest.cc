@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::StartBack2BackCallRequest;
 
 StartBack2BackCallRequest::StartBack2BackCallRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "StartBack2BackCall")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartBack2BackCallRequest::~StartBack2BackCallRequest()
 {}

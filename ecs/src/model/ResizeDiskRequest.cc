@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ResizeDiskRequest;
 
 ResizeDiskRequest::ResizeDiskRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ResizeDisk")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResizeDiskRequest::~ResizeDiskRequest()
 {}

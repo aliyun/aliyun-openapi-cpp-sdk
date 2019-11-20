@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::GetExecutionHistoryRequest;
 
 GetExecutionHistoryRequest::GetExecutionHistoryRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "GetExecutionHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetExecutionHistoryRequest::~GetExecutionHistoryRequest()
 {}

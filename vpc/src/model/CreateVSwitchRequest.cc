@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateVSwitchRequest;
 
 CreateVSwitchRequest::CreateVSwitchRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateVSwitch")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVSwitchRequest::~CreateVSwitchRequest()
 {}

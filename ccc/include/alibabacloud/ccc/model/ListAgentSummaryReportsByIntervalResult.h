@@ -45,6 +45,7 @@ namespace AlibabaCloud
 								long totalBreakTime;
 								long totalWorkTime;
 								long satisfactionSurveysOffered;
+								long oneTransferCalls;
 								float satisfactionIndex;
 								long satisfactionSurveysResponded;
 								long totalTalkTime;

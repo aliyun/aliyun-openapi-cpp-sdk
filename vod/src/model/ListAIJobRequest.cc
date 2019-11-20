@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListAIJobRequest;
 
 ListAIJobRequest::ListAIJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListAIJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAIJobRequest::~ListAIJobRequest()
 {}

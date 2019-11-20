@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::BatchSaveApPositionRequest;
 
 BatchSaveApPositionRequest::BatchSaveApPositionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "BatchSaveApPosition")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchSaveApPositionRequest::~BatchSaveApPositionRequest()
 {}

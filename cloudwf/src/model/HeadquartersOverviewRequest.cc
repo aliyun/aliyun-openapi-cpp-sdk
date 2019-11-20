@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::HeadquartersOverviewRequest;
 
 HeadquartersOverviewRequest::HeadquartersOverviewRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "HeadquartersOverview")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 HeadquartersOverviewRequest::~HeadquartersOverviewRequest()
 {}

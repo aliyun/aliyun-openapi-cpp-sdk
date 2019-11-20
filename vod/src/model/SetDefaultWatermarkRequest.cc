@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SetDefaultWatermarkRequest;
 
 SetDefaultWatermarkRequest::SetDefaultWatermarkRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SetDefaultWatermark")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDefaultWatermarkRequest::~SetDefaultWatermarkRequest()
 {}

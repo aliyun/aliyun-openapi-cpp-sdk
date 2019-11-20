@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateHaVipRequest;
 
 CreateHaVipRequest::CreateHaVipRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateHaVip")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateHaVipRequest::~CreateHaVipRequest()
 {}

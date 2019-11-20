@@ -20,7 +20,9 @@ using AlibabaCloud::Ivision::Model::CreateStreamPredictRequest;
 
 CreateStreamPredictRequest::CreateStreamPredictRequest() :
 	RpcServiceRequest("ivision", "2019-03-08", "CreateStreamPredict")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateStreamPredictRequest::~CreateStreamPredictRequest()
 {}
@@ -67,17 +69,6 @@ void CreateStreamPredictRequest::setOutput(const std::string& output)
 {
 	output_ = output;
 	setCoreParameter("Output", output);
-}
-
-std::string CreateStreamPredictRequest::getUserData()const
-{
-	return userData_;
-}
-
-void CreateStreamPredictRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setCoreParameter("UserData", userData);
 }
 
 std::string CreateStreamPredictRequest::getShowLog()const

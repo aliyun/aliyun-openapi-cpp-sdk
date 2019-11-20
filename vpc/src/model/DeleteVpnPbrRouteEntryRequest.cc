@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteVpnPbrRouteEntryRequest;
 
 DeleteVpnPbrRouteEntryRequest::DeleteVpnPbrRouteEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteVpnPbrRouteEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVpnPbrRouteEntryRequest::~DeleteVpnPbrRouteEntryRequest()
 {}

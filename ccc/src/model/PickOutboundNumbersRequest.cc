@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::PickOutboundNumbersRequest;
 
 PickOutboundNumbersRequest::PickOutboundNumbersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "PickOutboundNumbers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PickOutboundNumbersRequest::~PickOutboundNumbersRequest()
 {}
@@ -66,8 +68,9 @@ std::vector<std::string> PickOutboundNumbersRequest::getCandidateNumber()const
 void PickOutboundNumbersRequest::setCandidateNumber(const std::vector<std::string>& candidateNumber)
 {
 	candidateNumber_ = candidateNumber;
-	for(int i = 0; i!= candidateNumber.size(); i++)
-		setCoreParameter("CandidateNumber."+ std::to_string(i), candidateNumber.at(i));
+	for(int dep1 = 0; dep1!= candidateNumber.size(); dep1++) {
+		setCoreParameter("CandidateNumber."+ std::to_string(dep1), candidateNumber.at(dep1));
+	}
 }
 
 std::string PickOutboundNumbersRequest::getCalleeNumber()const

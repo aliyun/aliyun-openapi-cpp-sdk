@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemHeatLineRequest;
 
 OemHeatLineRequest::OemHeatLineRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemHeatLine")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemHeatLineRequest::~OemHeatLineRequest()
 {}

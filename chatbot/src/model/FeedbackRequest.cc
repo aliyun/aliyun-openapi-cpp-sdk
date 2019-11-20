@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::FeedbackRequest;
 
 FeedbackRequest::FeedbackRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "Feedback")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FeedbackRequest::~FeedbackRequest()
 {}

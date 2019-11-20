@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetTranscodeSummaryRequest;
 
 GetTranscodeSummaryRequest::GetTranscodeSummaryRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetTranscodeSummary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTranscodeSummaryRequest::~GetTranscodeSummaryRequest()
 {}

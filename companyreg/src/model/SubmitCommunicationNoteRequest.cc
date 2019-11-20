@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::SubmitCommunicationNoteRequest;
 
 SubmitCommunicationNoteRequest::SubmitCommunicationNoteRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "SubmitCommunicationNote")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitCommunicationNoteRequest::~SubmitCommunicationNoteRequest()
 {}

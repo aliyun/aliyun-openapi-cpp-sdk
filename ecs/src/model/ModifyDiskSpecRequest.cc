@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::ModifyDiskSpecRequest;
 
 ModifyDiskSpecRequest::ModifyDiskSpecRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "ModifyDiskSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDiskSpecRequest::~ModifyDiskSpecRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::ModifyImageGatewayConfigRequest;
 
 ModifyImageGatewayConfigRequest::ModifyImageGatewayConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyImageGatewayConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ModifyImageGatewayConfigRequest::~ModifyImageGatewayConfigRequest()
 {}
@@ -33,13 +35,12 @@ std::vector<ModifyImageGatewayConfigRequest::Repo> ModifyImageGatewayConfigReque
 void ModifyImageGatewayConfigRequest::setRepo(const std::vector<Repo>& repo)
 {
 	repo_ = repo;
-	int i = 0;
-	for(int i = 0; i!= repo.size(); i++)	{
-		auto obj = repo.at(i);
-		std::string str ="Repo."+ std::to_string(i);
-		setCoreParameter(str + ".Auth", obj.auth);
-		setCoreParameter(str + ".Location", obj.location);
-		setCoreParameter(str + ".URL", obj.uRL);
+	for(int dep1 = 0; dep1!= repo.size(); dep1++) {
+		auto repoObj = repo.at(dep1);
+		std::string repoObjStr = "Repo." + std::to_string(dep1);
+		setCoreParameter(repoObjStr + ".Auth", repoObj.auth);
+		setCoreParameter(repoObjStr + ".Location", repoObj.location);
+		setCoreParameter(repoObjStr + ".URL", repoObj.uRL);
 	}
 }
 

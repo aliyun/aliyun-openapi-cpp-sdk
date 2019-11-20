@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::BandStatusQueryRequest;
 
 BandStatusQueryRequest::BandStatusQueryRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "BandStatusQuery")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BandStatusQueryRequest::~BandStatusQueryRequest()
 {}

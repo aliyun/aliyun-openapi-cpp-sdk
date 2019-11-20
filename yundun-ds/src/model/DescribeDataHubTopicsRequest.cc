@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeDataHubTopicsRequest;
 
 DescribeDataHubTopicsRequest::DescribeDataHubTopicsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeDataHubTopics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataHubTopicsRequest::~DescribeDataHubTopicsRequest()
 {}

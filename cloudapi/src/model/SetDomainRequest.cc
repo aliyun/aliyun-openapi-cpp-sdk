@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetDomainRequest;
 
 SetDomainRequest::SetDomainRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDomainRequest::~SetDomainRequest()
 {}

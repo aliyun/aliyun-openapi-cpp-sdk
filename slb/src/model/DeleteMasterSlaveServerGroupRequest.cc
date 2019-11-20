@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DeleteMasterSlaveServerGroupRequest;
 
 DeleteMasterSlaveServerGroupRequest::DeleteMasterSlaveServerGroupRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DeleteMasterSlaveServerGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMasterSlaveServerGroupRequest::~DeleteMasterSlaveServerGroupRequest()
 {}

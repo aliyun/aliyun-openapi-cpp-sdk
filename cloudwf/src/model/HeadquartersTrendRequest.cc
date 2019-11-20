@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::HeadquartersTrendRequest;
 
 HeadquartersTrendRequest::HeadquartersTrendRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "HeadquartersTrend")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 HeadquartersTrendRequest::~HeadquartersTrendRequest()
 {}

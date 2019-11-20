@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				long getLimit()const;
 				void setLimit(long limit);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
             private:
 				std::string startTime_;
 				long limit_;
+				std::string product_;
 				std::string endTime_;
 				long ownerId_;
 

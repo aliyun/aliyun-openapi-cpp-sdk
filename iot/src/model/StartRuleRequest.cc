@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::StartRuleRequest;
 
 StartRuleRequest::StartRuleRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "StartRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartRuleRequest::~StartRuleRequest()
 {}

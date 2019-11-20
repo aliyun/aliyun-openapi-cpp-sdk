@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryAdvancedDomainListRequest;
 
 QueryAdvancedDomainListRequest::QueryAdvancedDomainListRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryAdvancedDomainList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAdvancedDomainListRequest::~QueryAdvancedDomainListRequest()
 {}

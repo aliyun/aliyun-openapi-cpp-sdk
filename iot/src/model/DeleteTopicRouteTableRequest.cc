@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteTopicRouteTableRequest;
 
 DeleteTopicRouteTableRequest::DeleteTopicRouteTableRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteTopicRouteTable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTopicRouteTableRequest::~DeleteTopicRouteTableRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> DeleteTopicRouteTableRequest::getDstTopic()const
 void DeleteTopicRouteTableRequest::setDstTopic(const std::vector<std::string>& dstTopic)
 {
 	dstTopic_ = dstTopic;
-	for(int i = 0; i!= dstTopic.size(); i++)
-		setCoreParameter("DstTopic."+ std::to_string(i), dstTopic.at(i));
+	for(int dep1 = 0; dep1!= dstTopic.size(); dep1++) {
+		setCoreParameter("DstTopic."+ std::to_string(dep1), dstTopic.at(dep1));
+	}
 }
 
 std::string DeleteTopicRouteTableRequest::getAccessKeyId()const

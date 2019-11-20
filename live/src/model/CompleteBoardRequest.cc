@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CompleteBoardRequest;
 
 CompleteBoardRequest::CompleteBoardRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CompleteBoard")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CompleteBoardRequest::~CompleteBoardRequest()
 {}

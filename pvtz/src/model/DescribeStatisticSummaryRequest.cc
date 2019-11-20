@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::DescribeStatisticSummaryRequest;
 
 DescribeStatisticSummaryRequest::DescribeStatisticSummaryRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "DescribeStatisticSummary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeStatisticSummaryRequest::~DescribeStatisticSummaryRequest()
 {}

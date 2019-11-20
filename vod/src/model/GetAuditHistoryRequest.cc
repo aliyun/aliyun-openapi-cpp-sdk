@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetAuditHistoryRequest;
 
 GetAuditHistoryRequest::GetAuditHistoryRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetAuditHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAuditHistoryRequest::~GetAuditHistoryRequest()
 {}

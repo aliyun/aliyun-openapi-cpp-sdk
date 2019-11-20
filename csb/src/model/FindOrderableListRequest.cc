@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindOrderableListRequest;
 
 FindOrderableListRequest::FindOrderableListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindOrderableList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindOrderableListRequest::~FindOrderableListRequest()
 {}

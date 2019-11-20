@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::DescribeAlarmsForResourcesRequest;
 
 DescribeAlarmsForResourcesRequest::DescribeAlarmsForResourcesRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "DescribeAlarmsForResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAlarmsForResourcesRequest::~DescribeAlarmsForResourcesRequest()
 {}

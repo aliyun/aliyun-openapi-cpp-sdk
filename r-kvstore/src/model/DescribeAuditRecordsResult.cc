@@ -44,7 +44,7 @@ void DescribeAuditRecordsResult::parse(const std::string &payload)
 	{
 		SQL itemsObject;
 		if(!valueItemsSQL["HostAddress"].isNull())
-			itemsObject.hostAddress = std::stoi(valueItemsSQL["HostAddress"].asString());
+			itemsObject.hostAddress = valueItemsSQL["HostAddress"].asString();
 		if(!valueItemsSQL["DatabaseName"].isNull())
 			itemsObject.databaseName = valueItemsSQL["DatabaseName"].asString();
 		if(!valueItemsSQL["IPAddress"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::GrantSagInstanceToCcnRequest;
 
 GrantSagInstanceToCcnRequest::GrantSagInstanceToCcnRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "GrantSagInstanceToCcn")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GrantSagInstanceToCcnRequest::~GrantSagInstanceToCcnRequest()
 {}

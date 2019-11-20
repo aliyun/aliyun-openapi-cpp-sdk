@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::SetDevicesPropertyRequest;
 
 SetDevicesPropertyRequest::SetDevicesPropertyRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "SetDevicesProperty")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDevicesPropertyRequest::~SetDevicesPropertyRequest()
 {}
@@ -66,8 +68,9 @@ std::vector<std::string> SetDevicesPropertyRequest::getDeviceName()const
 void SetDevicesPropertyRequest::setDeviceName(const std::vector<std::string>& deviceName)
 {
 	deviceName_ = deviceName;
-	for(int i = 0; i!= deviceName.size(); i++)
-		setCoreParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
+	for(int dep1 = 0; dep1!= deviceName.size(); dep1++) {
+		setCoreParameter("DeviceName."+ std::to_string(dep1), deviceName.at(dep1));
+	}
 }
 
 std::string SetDevicesPropertyRequest::getItems()const

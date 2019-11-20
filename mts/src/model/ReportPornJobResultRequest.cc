@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportPornJobResultRequest;
 
 ReportPornJobResultRequest::ReportPornJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportPornJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportPornJobResultRequest::~ReportPornJobResultRequest()
 {}

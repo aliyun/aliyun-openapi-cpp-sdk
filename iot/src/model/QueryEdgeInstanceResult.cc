@@ -56,6 +56,8 @@ void QueryEdgeInstanceResult::parse(const std::string &payload)
 			instanceObject.name = dataNodeInstanceListInstance["Name"].asString();
 		if(!dataNodeInstanceListInstance["Tags"].isNull())
 			instanceObject.tags = dataNodeInstanceListInstance["Tags"].asString();
+		if(!dataNodeInstanceListInstance["Type"].isNull())
+			instanceObject.type = std::stoi(dataNodeInstanceListInstance["Type"].asString());
 		if(!dataNodeInstanceListInstance["GmtCreate"].isNull())
 			instanceObject.gmtCreate = dataNodeInstanceListInstance["GmtCreate"].asString();
 		if(!dataNodeInstanceListInstance["GmtModified"].isNull())

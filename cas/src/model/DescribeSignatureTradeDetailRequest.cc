@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeSignatureTradeDetailRequest;
 
 DescribeSignatureTradeDetailRequest::DescribeSignatureTradeDetailRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeSignatureTradeDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSignatureTradeDetailRequest::~DescribeSignatureTradeDetailRequest()
 {}

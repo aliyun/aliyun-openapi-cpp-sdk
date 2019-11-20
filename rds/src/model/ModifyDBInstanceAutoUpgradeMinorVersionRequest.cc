@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyDBInstanceAutoUpgradeMinorVersionRequest;
 
 ModifyDBInstanceAutoUpgradeMinorVersionRequest::ModifyDBInstanceAutoUpgradeMinorVersionRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceAutoUpgradeMinorVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceAutoUpgradeMinorVersionRequest::~ModifyDBInstanceAutoUpgradeMinorVersionRequest()
 {}

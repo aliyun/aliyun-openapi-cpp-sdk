@@ -20,7 +20,9 @@ using AlibabaCloud::Ccs::Model::CreateTicketRequest;
 
 CreateTicketRequest::CreateTicketRequest() :
 	RpcServiceRequest("ccs", "2017-10-01", "CreateTicket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateTicketRequest::~CreateTicketRequest()
 {}

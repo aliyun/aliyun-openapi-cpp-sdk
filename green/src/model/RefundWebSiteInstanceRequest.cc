@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::RefundWebSiteInstanceRequest;
 
 RefundWebSiteInstanceRequest::RefundWebSiteInstanceRequest() :
 	RpcServiceRequest("green", "2017-08-23", "RefundWebSiteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefundWebSiteInstanceRequest::~RefundWebSiteInstanceRequest()
 {}

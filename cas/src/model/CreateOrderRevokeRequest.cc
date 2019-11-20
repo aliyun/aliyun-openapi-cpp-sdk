@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateOrderRevokeRequest;
 
 CreateOrderRevokeRequest::CreateOrderRevokeRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateOrderRevoke")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderRevokeRequest::~CreateOrderRevokeRequest()
 {}

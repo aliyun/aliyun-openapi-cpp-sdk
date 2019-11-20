@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeRouterInterfacesRequest;
 
 DescribeRouterInterfacesRequest::DescribeRouterInterfacesRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeRouterInterfaces")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRouterInterfacesRequest::~DescribeRouterInterfacesRequest()
 {}
@@ -99,12 +101,13 @@ std::vector<DescribeRouterInterfacesRequest::Filter> DescribeRouterInterfacesReq
 void DescribeRouterInterfacesRequest::setFilter(const std::vector<Filter>& filter)
 {
 	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
+		auto filterObj = filter.at(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1);
+		for(int dep2 = 0; dep2!= filterObj.value.size(); dep2++) {
+			setCoreParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
+		}
+		setCoreParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }
 

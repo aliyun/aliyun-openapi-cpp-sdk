@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::HeadquartersToolsCoincideRequest;
 
 HeadquartersToolsCoincideRequest::HeadquartersToolsCoincideRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "HeadquartersToolsCoincide")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 HeadquartersToolsCoincideRequest::~HeadquartersToolsCoincideRequest()
 {}

@@ -56,6 +56,8 @@
 #include "model/SetProxyPatternResult.h"
 #include "model/SetZoneRecordStatusRequest.h"
 #include "model/SetZoneRecordStatusResult.h"
+#include "model/UpdateRecordRemarkRequest.h"
+#include "model/UpdateRecordRemarkResult.h"
 #include "model/UpdateZoneRecordRequest.h"
 #include "model/UpdateZoneRecordResult.h"
 #include "model/UpdateZoneRemarkRequest.h"
@@ -120,6 +122,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetZoneRecordStatusResult> SetZoneRecordStatusOutcome;
 			typedef std::future<SetZoneRecordStatusOutcome> SetZoneRecordStatusOutcomeCallable;
 			typedef std::function<void(const PvtzClient*, const Model::SetZoneRecordStatusRequest&, const SetZoneRecordStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetZoneRecordStatusAsyncHandler;
+			typedef Outcome<Error, Model::UpdateRecordRemarkResult> UpdateRecordRemarkOutcome;
+			typedef std::future<UpdateRecordRemarkOutcome> UpdateRecordRemarkOutcomeCallable;
+			typedef std::function<void(const PvtzClient*, const Model::UpdateRecordRemarkRequest&, const UpdateRecordRemarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRecordRemarkAsyncHandler;
 			typedef Outcome<Error, Model::UpdateZoneRecordResult> UpdateZoneRecordOutcome;
 			typedef std::future<UpdateZoneRecordOutcome> UpdateZoneRecordOutcomeCallable;
 			typedef std::function<void(const PvtzClient*, const Model::UpdateZoneRecordRequest&, const UpdateZoneRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateZoneRecordAsyncHandler;
@@ -182,6 +187,9 @@ namespace AlibabaCloud
 			SetZoneRecordStatusOutcome setZoneRecordStatus(const Model::SetZoneRecordStatusRequest &request)const;
 			void setZoneRecordStatusAsync(const Model::SetZoneRecordStatusRequest& request, const SetZoneRecordStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetZoneRecordStatusOutcomeCallable setZoneRecordStatusCallable(const Model::SetZoneRecordStatusRequest& request) const;
+			UpdateRecordRemarkOutcome updateRecordRemark(const Model::UpdateRecordRemarkRequest &request)const;
+			void updateRecordRemarkAsync(const Model::UpdateRecordRemarkRequest& request, const UpdateRecordRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateRecordRemarkOutcomeCallable updateRecordRemarkCallable(const Model::UpdateRecordRemarkRequest& request) const;
 			UpdateZoneRecordOutcome updateZoneRecord(const Model::UpdateZoneRecordRequest &request)const;
 			void updateZoneRecordAsync(const Model::UpdateZoneRecordRequest& request, const UpdateZoneRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateZoneRecordOutcomeCallable updateZoneRecordCallable(const Model::UpdateZoneRecordRequest& request) const;

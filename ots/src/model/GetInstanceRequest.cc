@@ -20,7 +20,9 @@ using AlibabaCloud::Ots::Model::GetInstanceRequest;
 
 GetInstanceRequest::GetInstanceRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "GetInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceRequest::~GetInstanceRequest()
 {}

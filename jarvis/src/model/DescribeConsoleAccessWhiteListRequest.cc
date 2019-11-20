@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeConsoleAccessWhiteListRequest;
 
 DescribeConsoleAccessWhiteListRequest::DescribeConsoleAccessWhiteListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeConsoleAccessWhiteList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeConsoleAccessWhiteListRequest::~DescribeConsoleAccessWhiteListRequest()
 {}

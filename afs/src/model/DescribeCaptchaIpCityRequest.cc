@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribeCaptchaIpCityRequest;
 
 DescribeCaptchaIpCityRequest::DescribeCaptchaIpCityRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribeCaptchaIpCity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCaptchaIpCityRequest::~DescribeCaptchaIpCityRequest()
 {}

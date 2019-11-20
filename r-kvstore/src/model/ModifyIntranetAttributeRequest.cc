@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyIntranetAttributeRequest;
 
 ModifyIntranetAttributeRequest::ModifyIntranetAttributeRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyIntranetAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyIntranetAttributeRequest::~ModifyIntranetAttributeRequest()
 {}

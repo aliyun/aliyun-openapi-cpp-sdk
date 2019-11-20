@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::QueryGroupUsersRequest;
 
 QueryGroupUsersRequest::QueryGroupUsersRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryGroupUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryGroupUsersRequest::~QueryGroupUsersRequest()
 {}

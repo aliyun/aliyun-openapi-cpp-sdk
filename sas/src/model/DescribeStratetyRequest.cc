@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeStratetyRequest;
 
 DescribeStratetyRequest::DescribeStratetyRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeStratety")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeStratetyRequest::~DescribeStratetyRequest()
 {}

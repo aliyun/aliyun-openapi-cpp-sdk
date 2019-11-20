@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::FindApRequest;
 
 FindApRequest::FindApRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "FindAp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FindApRequest::~FindApRequest()
 {}

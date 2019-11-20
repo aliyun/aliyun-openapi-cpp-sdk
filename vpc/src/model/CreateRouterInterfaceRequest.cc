@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateRouterInterfaceRequest;
 
 CreateRouterInterfaceRequest::CreateRouterInterfaceRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateRouterInterface")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRouterInterfaceRequest::~CreateRouterInterfaceRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::GetEndPointByDomainRequest;
 
 GetEndPointByDomainRequest::GetEndPointByDomainRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "GetEndPointByDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetEndPointByDomainRequest::~GetEndPointByDomainRequest()
 {}

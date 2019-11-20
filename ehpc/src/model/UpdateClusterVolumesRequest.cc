@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::UpdateClusterVolumesRequest;
 
 UpdateClusterVolumesRequest::UpdateClusterVolumesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "UpdateClusterVolumes")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 UpdateClusterVolumesRequest::~UpdateClusterVolumesRequest()
 {}
@@ -33,19 +35,22 @@ std::vector<UpdateClusterVolumesRequest::AdditionalVolumes> UpdateClusterVolumes
 void UpdateClusterVolumesRequest::setAdditionalVolumes(const std::vector<AdditionalVolumes>& additionalVolumes)
 {
 	additionalVolumes_ = additionalVolumes;
-	int i = 0;
-	for(int i = 0; i!= additionalVolumes.size(); i++)	{
-		auto obj = additionalVolumes.at(i);
-		std::string str ="AdditionalVolumes."+ std::to_string(i);
-		setCoreParameter(str + ".VolumeType", obj.volumeType);
-		setCoreParameter(str + ".VolumeProtocol", obj.volumeProtocol);
-		setCoreParameter(str + ".LocalDirectory", obj.localDirectory);
-		setCoreParameter(str + ".RemoteDirectory", obj.remoteDirectory);
-		setCoreParameter(str + ".Roles", std::to_string(obj.roles));
-		setCoreParameter(str + ".VolumeId", obj.volumeId);
-		setCoreParameter(str + ".VolumeMountpoint", obj.volumeMountpoint);
-		setCoreParameter(str + ".Location", obj.location);
-		setCoreParameter(str + ".JobQueue", obj.jobQueue);
+	for(int dep1 = 0; dep1!= additionalVolumes.size(); dep1++) {
+		auto additionalVolumesObj = additionalVolumes.at(dep1);
+		std::string additionalVolumesObjStr = "AdditionalVolumes." + std::to_string(dep1);
+		setCoreParameter(additionalVolumesObjStr + ".VolumeType", additionalVolumesObj.volumeType);
+		setCoreParameter(additionalVolumesObjStr + ".VolumeProtocol", additionalVolumesObj.volumeProtocol);
+		setCoreParameter(additionalVolumesObjStr + ".LocalDirectory", additionalVolumesObj.localDirectory);
+		setCoreParameter(additionalVolumesObjStr + ".RemoteDirectory", additionalVolumesObj.remoteDirectory);
+		for(int dep2 = 0; dep2!= additionalVolumesObj.roles.size(); dep2++) {
+			auto rolesObj = additionalVolumesObj.roles.at(dep2);
+			std::string rolesObjStr = additionalVolumesObjStr + "Roles." + std::to_string(dep2);
+			setCoreParameter(rolesObjStr + ".Name", rolesObj.name);
+		}
+		setCoreParameter(additionalVolumesObjStr + ".VolumeId", additionalVolumesObj.volumeId);
+		setCoreParameter(additionalVolumesObjStr + ".VolumeMountpoint", additionalVolumesObj.volumeMountpoint);
+		setCoreParameter(additionalVolumesObjStr + ".Location", additionalVolumesObj.location);
+		setCoreParameter(additionalVolumesObjStr + ".JobQueue", additionalVolumesObj.jobQueue);
 	}
 }
 

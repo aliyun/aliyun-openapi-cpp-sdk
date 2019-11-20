@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::ModifyRuleStatusRequest;
 
 ModifyRuleStatusRequest::ModifyRuleStatusRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "ModifyRuleStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRuleStatusRequest::~ModifyRuleStatusRequest()
 {}

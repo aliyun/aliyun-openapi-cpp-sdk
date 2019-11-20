@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::SetMeRequest;
 
 SetMeRequest::SetMeRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "SetMe")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetMeRequest::~SetMeRequest()
 {}

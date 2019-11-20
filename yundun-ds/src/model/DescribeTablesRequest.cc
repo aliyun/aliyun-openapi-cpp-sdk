@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeTablesRequest;
 
 DescribeTablesRequest::DescribeTablesRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeTables")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTablesRequest::~DescribeTablesRequest()
 {}

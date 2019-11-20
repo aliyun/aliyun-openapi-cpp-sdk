@@ -51,6 +51,10 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DeleteEventTargetsResult.h
 	include/alibabacloud/cms/model/DeleteGroupDynamicRuleRequest.h
 	include/alibabacloud/cms/model/DeleteGroupDynamicRuleResult.h
+	include/alibabacloud/cms/model/DeleteMetricRuleTargetsRequest.h
+	include/alibabacloud/cms/model/DeleteMetricRuleTargetsResult.h
+	include/alibabacloud/cms/model/DeleteMetricRulesRequest.h
+	include/alibabacloud/cms/model/DeleteMetricRulesResult.h
 	include/alibabacloud/cms/model/DeleteMonitoringTemplateRequest.h
 	include/alibabacloud/cms/model/DeleteMonitoringTemplateResult.h
 	include/alibabacloud/cms/model/DeleteMyGroupInstancesRequest.h
@@ -75,6 +79,10 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DescribeEventRuleResult.h
 	include/alibabacloud/cms/model/DescribeISPAreaCityRequest.h
 	include/alibabacloud/cms/model/DescribeISPAreaCityResult.h
+	include/alibabacloud/cms/model/DescribeMetricRuleCountRequest.h
+	include/alibabacloud/cms/model/DescribeMetricRuleCountResult.h
+	include/alibabacloud/cms/model/DescribeMetricRuleListRequest.h
+	include/alibabacloud/cms/model/DescribeMetricRuleListResult.h
 	include/alibabacloud/cms/model/DescribeMetricRuleTargetsRequest.h
 	include/alibabacloud/cms/model/DescribeMetricRuleTargetsResult.h
 	include/alibabacloud/cms/model/DescribeSiteMonitorISPAreaCityRequest.h
@@ -171,6 +179,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/PutMetricAlarmResult.h
 	include/alibabacloud/cms/model/PutMetricRuleTargetsRequest.h
 	include/alibabacloud/cms/model/PutMetricRuleTargetsResult.h
+	include/alibabacloud/cms/model/PutResourceMetricRuleRequest.h
+	include/alibabacloud/cms/model/PutResourceMetricRuleResult.h
 	include/alibabacloud/cms/model/QueryCustomEventCountRequest.h
 	include/alibabacloud/cms/model/QueryCustomEventCountResult.h
 	include/alibabacloud/cms/model/QueryCustomEventDetailRequest.h
@@ -278,6 +288,10 @@ set(cms_src
 	src/model/DeleteEventTargetsResult.cc
 	src/model/DeleteGroupDynamicRuleRequest.cc
 	src/model/DeleteGroupDynamicRuleResult.cc
+	src/model/DeleteMetricRuleTargetsRequest.cc
+	src/model/DeleteMetricRuleTargetsResult.cc
+	src/model/DeleteMetricRulesRequest.cc
+	src/model/DeleteMetricRulesResult.cc
 	src/model/DeleteMonitoringTemplateRequest.cc
 	src/model/DeleteMonitoringTemplateResult.cc
 	src/model/DeleteMyGroupInstancesRequest.cc
@@ -302,6 +316,10 @@ set(cms_src
 	src/model/DescribeEventRuleResult.cc
 	src/model/DescribeISPAreaCityRequest.cc
 	src/model/DescribeISPAreaCityResult.cc
+	src/model/DescribeMetricRuleCountRequest.cc
+	src/model/DescribeMetricRuleCountResult.cc
+	src/model/DescribeMetricRuleListRequest.cc
+	src/model/DescribeMetricRuleListResult.cc
 	src/model/DescribeMetricRuleTargetsRequest.cc
 	src/model/DescribeMetricRuleTargetsResult.cc
 	src/model/DescribeSiteMonitorISPAreaCityRequest.cc
@@ -398,6 +416,8 @@ set(cms_src
 	src/model/PutMetricAlarmResult.cc
 	src/model/PutMetricRuleTargetsRequest.cc
 	src/model/PutMetricRuleTargetsResult.cc
+	src/model/PutResourceMetricRuleRequest.cc
+	src/model/PutResourceMetricRuleResult.cc
 	src/model/QueryCustomEventCountRequest.cc
 	src/model/QueryCustomEventCountResult.cc
 	src/model/QueryCustomEventDetailRequest.cc

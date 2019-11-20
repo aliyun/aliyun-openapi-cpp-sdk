@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::DeleteTmMonitorRuleRequest;
 
 DeleteTmMonitorRuleRequest::DeleteTmMonitorRuleRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "DeleteTmMonitorRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTmMonitorRuleRequest::~DeleteTmMonitorRuleRequest()
 {}

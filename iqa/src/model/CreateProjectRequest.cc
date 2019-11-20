@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::CreateProjectRequest;
 
 CreateProjectRequest::CreateProjectRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "CreateProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateProjectRequest::~CreateProjectRequest()
 {}

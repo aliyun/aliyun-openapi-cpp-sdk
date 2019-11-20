@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribePersonMachineListRequest;
 
 DescribePersonMachineListRequest::DescribePersonMachineListRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribePersonMachineList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePersonMachineListRequest::~DescribePersonMachineListRequest()
 {}

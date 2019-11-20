@@ -20,7 +20,9 @@ using AlibabaCloud::DnsKnocker::Model::ChangeResourceRecordRequest;
 
 ChangeResourceRecordRequest::ChangeResourceRecordRequest() :
 	RpcServiceRequest("dnsknocker", "2019-09-10", "ChangeResourceRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ChangeResourceRecordRequest::~ChangeResourceRecordRequest()
 {}

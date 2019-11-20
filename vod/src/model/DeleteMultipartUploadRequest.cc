@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteMultipartUploadRequest;
 
 DeleteMultipartUploadRequest::DeleteMultipartUploadRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteMultipartUpload")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMultipartUploadRequest::~DeleteMultipartUploadRequest()
 {}

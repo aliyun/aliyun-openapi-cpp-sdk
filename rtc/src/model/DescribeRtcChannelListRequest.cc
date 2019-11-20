@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::DescribeRtcChannelListRequest;
 
 DescribeRtcChannelListRequest::DescribeRtcChannelListRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "DescribeRtcChannelList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRtcChannelListRequest::~DescribeRtcChannelListRequest()
 {}

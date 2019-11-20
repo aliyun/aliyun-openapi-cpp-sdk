@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CreateJobRequest;
 
 CreateJobRequest::CreateJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateJobRequest::~CreateJobRequest()
 {}

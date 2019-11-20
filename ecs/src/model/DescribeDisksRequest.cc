@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeDisksRequest;
 
 DescribeDisksRequest::DescribeDisksRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeDisks")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDisksRequest::~DescribeDisksRequest()
 {}
@@ -132,12 +134,11 @@ std::vector<DescribeDisksRequest::Tag> DescribeDisksRequest::getTag()const
 void DescribeDisksRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -204,8 +205,9 @@ std::vector<std::string> DescribeDisksRequest::getAdditionalAttributes()const
 void DescribeDisksRequest::setAdditionalAttributes(const std::vector<std::string>& additionalAttributes)
 {
 	additionalAttributes_ = additionalAttributes;
-	for(int i = 0; i!= additionalAttributes.size(); i++)
-		setCoreParameter("AdditionalAttributes."+ std::to_string(i), additionalAttributes.at(i));
+	for(int dep1 = 0; dep1!= additionalAttributes.size(); dep1++) {
+		setCoreParameter("AdditionalAttributes."+ std::to_string(dep1), additionalAttributes.at(dep1));
+	}
 }
 
 std::string DescribeDisksRequest::getInstanceId()const

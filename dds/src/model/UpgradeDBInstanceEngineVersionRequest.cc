@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::UpgradeDBInstanceEngineVersionRequest;
 
 UpgradeDBInstanceEngineVersionRequest::UpgradeDBInstanceEngineVersionRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "UpgradeDBInstanceEngineVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeDBInstanceEngineVersionRequest::~UpgradeDBInstanceEngineVersionRequest()
 {}

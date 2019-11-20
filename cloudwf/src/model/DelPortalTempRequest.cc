@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DelPortalTempRequest;
 
 DelPortalTempRequest::DelPortalTempRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DelPortalTemp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DelPortalTempRequest::~DelPortalTempRequest()
 {}

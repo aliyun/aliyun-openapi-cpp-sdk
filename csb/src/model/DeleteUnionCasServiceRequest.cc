@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::DeleteUnionCasServiceRequest;
 
 DeleteUnionCasServiceRequest::DeleteUnionCasServiceRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "DeleteUnionCasService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteUnionCasServiceRequest::~DeleteUnionCasServiceRequest()
 {}

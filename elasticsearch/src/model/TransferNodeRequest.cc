@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::TransferNodeRequest;
 
 TransferNodeRequest::TransferNodeRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/actions/transfer");
+	setMethod(HttpRequest::Method::Post);
+}
 
 TransferNodeRequest::~TransferNodeRequest()
 {}

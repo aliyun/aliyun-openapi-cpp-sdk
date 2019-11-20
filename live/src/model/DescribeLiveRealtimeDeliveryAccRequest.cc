@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveRealtimeDeliveryAccRequest;
 
 DescribeLiveRealtimeDeliveryAccRequest::DescribeLiveRealtimeDeliveryAccRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveRealtimeDeliveryAccRequest::~DescribeLiveRealtimeDeliveryAccRequest()
 {}

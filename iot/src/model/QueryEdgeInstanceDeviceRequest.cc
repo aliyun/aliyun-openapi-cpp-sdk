@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryEdgeInstanceDeviceRequest;
 
 QueryEdgeInstanceDeviceRequest::QueryEdgeInstanceDeviceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryEdgeInstanceDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEdgeInstanceDeviceRequest::~QueryEdgeInstanceDeviceRequest()
 {}

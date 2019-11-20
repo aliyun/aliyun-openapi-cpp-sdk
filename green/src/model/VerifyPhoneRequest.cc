@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::VerifyPhoneRequest;
 
 VerifyPhoneRequest::VerifyPhoneRequest() :
 	RpcServiceRequest("green", "2017-08-23", "VerifyPhone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VerifyPhoneRequest::~VerifyPhoneRequest()
 {}

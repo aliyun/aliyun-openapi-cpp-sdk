@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeBoardSnapshotRequest;
 
 DescribeBoardSnapshotRequest::DescribeBoardSnapshotRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeBoardSnapshot")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBoardSnapshotRequest::~DescribeBoardSnapshotRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::CreateRecommendationTaskRequest;
 
 CreateRecommendationTaskRequest::CreateRecommendationTaskRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "CreateRecommendationTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRecommendationTaskRequest::~CreateRecommendationTaskRequest()
 {}

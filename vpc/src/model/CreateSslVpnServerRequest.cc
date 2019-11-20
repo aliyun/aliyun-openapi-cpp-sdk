@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateSslVpnServerRequest;
 
 CreateSslVpnServerRequest::CreateSslVpnServerRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateSslVpnServer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSslVpnServerRequest::~CreateSslVpnServerRequest()
 {}

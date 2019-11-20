@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::ListServerLockRequest;
 
 ListServerLockRequest::ListServerLockRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "ListServerLock")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListServerLockRequest::~ListServerLockRequest()
 {}

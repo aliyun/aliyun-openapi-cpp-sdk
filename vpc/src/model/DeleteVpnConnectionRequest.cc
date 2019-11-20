@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteVpnConnectionRequest;
 
 DeleteVpnConnectionRequest::DeleteVpnConnectionRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteVpnConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVpnConnectionRequest::~DeleteVpnConnectionRequest()
 {}

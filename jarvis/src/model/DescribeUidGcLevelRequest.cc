@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeUidGcLevelRequest;
 
 DescribeUidGcLevelRequest::DescribeUidGcLevelRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeUidGcLevel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUidGcLevelRequest::~DescribeUidGcLevelRequest()
 {}

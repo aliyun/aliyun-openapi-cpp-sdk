@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetMediaDNAResultRequest;
 
 GetMediaDNAResultRequest::GetMediaDNAResultRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetMediaDNAResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMediaDNAResultRequest::~GetMediaDNAResultRequest()
 {}

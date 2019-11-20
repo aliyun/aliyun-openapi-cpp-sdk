@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DescribeNatGatewaysRequest;
 
 DescribeNatGatewaysRequest::DescribeNatGatewaysRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DescribeNatGateways")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNatGatewaysRequest::~DescribeNatGatewaysRequest()
 {}

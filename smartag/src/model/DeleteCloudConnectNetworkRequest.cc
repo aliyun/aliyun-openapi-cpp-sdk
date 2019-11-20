@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteCloudConnectNetworkRequest;
 
 DeleteCloudConnectNetworkRequest::DeleteCloudConnectNetworkRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteCloudConnectNetwork")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCloudConnectNetworkRequest::~DeleteCloudConnectNetworkRequest()
 {}

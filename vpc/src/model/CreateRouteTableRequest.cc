@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateRouteTableRequest;
 
 CreateRouteTableRequest::CreateRouteTableRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateRouteTable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRouteTableRequest::~CreateRouteTableRequest()
 {}

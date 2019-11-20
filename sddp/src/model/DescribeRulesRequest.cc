@@ -20,10 +20,45 @@ using AlibabaCloud::Sddp::Model::DescribeRulesRequest;
 
 DescribeRulesRequest::DescribeRulesRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRulesRequest::~DescribeRulesRequest()
 {}
+
+int DescribeRulesRequest::getWarnLevel()const
+{
+	return warnLevel_;
+}
+
+void DescribeRulesRequest::setWarnLevel(int warnLevel)
+{
+	warnLevel_ = warnLevel;
+	setCoreParameter("WarnLevel", std::to_string(warnLevel));
+}
+
+int DescribeRulesRequest::getProductCode()const
+{
+	return productCode_;
+}
+
+void DescribeRulesRequest::setProductCode(int productCode)
+{
+	productCode_ = productCode;
+	setCoreParameter("ProductCode", std::to_string(productCode));
+}
+
+long DescribeRulesRequest::getProductId()const
+{
+	return productId_;
+}
+
+void DescribeRulesRequest::setProductId(long productId)
+{
+	productId_ = productId;
+	setCoreParameter("ProductId", std::to_string(productId));
+}
 
 long DescribeRulesRequest::getRiskLevelId()const
 {
@@ -67,6 +102,17 @@ void DescribeRulesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
+}
+
+int DescribeRulesRequest::getRuleType()const
+{
+	return ruleType_;
+}
+
+void DescribeRulesRequest::setRuleType(int ruleType)
+{
+	ruleType_ = ruleType;
+	setCoreParameter("RuleType", std::to_string(ruleType));
 }
 
 int DescribeRulesRequest::getCurrentPage()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceByDriverRequest;
 
 QueryDeviceByDriverRequest::QueryDeviceByDriverRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceByDriver")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceByDriverRequest::~QueryDeviceByDriverRequest()
 {}

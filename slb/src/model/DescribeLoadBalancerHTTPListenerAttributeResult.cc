@@ -55,6 +55,9 @@ void DescribeLoadBalancerHTTPListenerAttributeResult::parse(const std::string &p
 			rulesObject.vServerGroupId = valueRulesRule["VServerGroupId"].asString();
 		rules_.push_back(rulesObject);
 	}
+	auto allAclIds = value["AclIds"]["AclId"];
+	for (const auto &item : allAclIds)
+		aclIds_.push_back(item.asString());
 	if(!value["ListenerPort"].isNull())
 		listenerPort_ = std::stoi(value["ListenerPort"].asString());
 	if(!value["BackendServerPort"].isNull())
@@ -322,6 +325,11 @@ std::string DescribeLoadBalancerHTTPListenerAttributeResult::getXForwardedFor_pr
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getAclType()const
 {
 	return aclType_;
+}
+
+std::vector<std::string> DescribeLoadBalancerHTTPListenerAttributeResult::getAclIds()const
+{
+	return aclIds_;
 }
 
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckType()const

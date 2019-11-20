@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryCommunicationLogsRequest;
 
 QueryCommunicationLogsRequest::QueryCommunicationLogsRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryCommunicationLogs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCommunicationLogsRequest::~QueryCommunicationLogsRequest()
 {}

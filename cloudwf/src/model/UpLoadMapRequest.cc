@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UpLoadMapRequest;
 
 UpLoadMapRequest::UpLoadMapRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UpLoadMap")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpLoadMapRequest::~UpLoadMapRequest()
 {}

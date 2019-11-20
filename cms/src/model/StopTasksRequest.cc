@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::StopTasksRequest;
 
 StopTasksRequest::StopTasksRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "StopTasks")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopTasksRequest::~StopTasksRequest()
 {}

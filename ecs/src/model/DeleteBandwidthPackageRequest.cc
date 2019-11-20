@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::DeleteBandwidthPackageRequest;
 
 DeleteBandwidthPackageRequest::DeleteBandwidthPackageRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "DeleteBandwidthPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteBandwidthPackageRequest::~DeleteBandwidthPackageRequest()
 {}

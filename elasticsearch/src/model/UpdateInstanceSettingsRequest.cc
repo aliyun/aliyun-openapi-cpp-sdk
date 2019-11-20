@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::UpdateInstanceSettingsRequest;
 
 UpdateInstanceSettingsRequest::UpdateInstanceSettingsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/instance-settings");
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateInstanceSettingsRequest::~UpdateInstanceSettingsRequest()
 {}

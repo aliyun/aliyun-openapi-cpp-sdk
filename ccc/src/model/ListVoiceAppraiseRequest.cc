@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListVoiceAppraiseRequest;
 
 ListVoiceAppraiseRequest::ListVoiceAppraiseRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListVoiceAppraise")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListVoiceAppraiseRequest::~ListVoiceAppraiseRequest()
 {}

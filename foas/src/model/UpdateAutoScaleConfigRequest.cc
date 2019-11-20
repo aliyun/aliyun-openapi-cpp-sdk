@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::UpdateAutoScaleConfigRequest;
 
 UpdateAutoScaleConfigRequest::UpdateAutoScaleConfigRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/config");
+	setMethod(HttpRequest::Method::Put);
+}
 
 UpdateAutoScaleConfigRequest::~UpdateAutoScaleConfigRequest()
 {}

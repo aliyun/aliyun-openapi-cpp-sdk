@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveLazyPullStreamInfoConfigRequest;
 
 DeleteLiveLazyPullStreamInfoConfigRequest::DeleteLiveLazyPullStreamInfoConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveLazyPullStreamInfoConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveLazyPullStreamInfoConfigRequest::~DeleteLiveLazyPullStreamInfoConfigRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateAppPackageRequest;
 
 UpdateAppPackageRequest::UpdateAppPackageRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateAppPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateAppPackageRequest::~UpdateAppPackageRequest()
 {}

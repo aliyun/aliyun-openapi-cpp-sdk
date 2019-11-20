@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchSetEdgeInstanceDeviceConfigRequest;
 
 BatchSetEdgeInstanceDeviceConfigRequest::BatchSetEdgeInstanceDeviceConfigRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchSetEdgeInstanceDeviceConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchSetEdgeInstanceDeviceConfigRequest::~BatchSetEdgeInstanceDeviceConfigRequest()
 {}
@@ -55,12 +57,11 @@ std::vector<BatchSetEdgeInstanceDeviceConfigRequest::DeviceConfigs> BatchSetEdge
 void BatchSetEdgeInstanceDeviceConfigRequest::setDeviceConfigs(const std::vector<DeviceConfigs>& deviceConfigs)
 {
 	deviceConfigs_ = deviceConfigs;
-	int i = 0;
-	for(int i = 0; i!= deviceConfigs.size(); i++)	{
-		auto obj = deviceConfigs.at(i);
-		std::string str ="DeviceConfigs."+ std::to_string(i);
-		setCoreParameter(str + ".IotId", obj.iotId);
-		setCoreParameter(str + ".Content", obj.content);
+	for(int dep1 = 0; dep1!= deviceConfigs.size(); dep1++) {
+		auto deviceConfigsObj = deviceConfigs.at(dep1);
+		std::string deviceConfigsObjStr = "DeviceConfigs." + std::to_string(dep1);
+		setCoreParameter(deviceConfigsObjStr + ".IotId", deviceConfigsObj.iotId);
+		setCoreParameter(deviceConfigsObjStr + ".Content", deviceConfigsObj.content);
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::AttachKeyPairRequest;
 
 AttachKeyPairRequest::AttachKeyPairRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "AttachKeyPair")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachKeyPairRequest::~AttachKeyPairRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SetVodDomainCertificateRequest;
 
 SetVodDomainCertificateRequest::SetVodDomainCertificateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SetVodDomainCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetVodDomainCertificateRequest::~SetVodDomainCertificateRequest()
 {}

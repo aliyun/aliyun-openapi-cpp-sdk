@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyClusterNameRequest;
 
 ModifyClusterNameRequest::ModifyClusterNameRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyClusterName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyClusterNameRequest::~ModifyClusterNameRequest()
 {}

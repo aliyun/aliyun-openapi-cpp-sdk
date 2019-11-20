@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::DeleteGWSClusterRequest;
 
 DeleteGWSClusterRequest::DeleteGWSClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteGWSCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DeleteGWSClusterRequest::~DeleteGWSClusterRequest()
 {}

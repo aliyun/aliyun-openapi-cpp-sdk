@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::CreateLifecycleHookRequest;
 
 CreateLifecycleHookRequest::CreateLifecycleHookRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "CreateLifecycleHook")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateLifecycleHookRequest::~CreateLifecycleHookRequest()
 {}
@@ -154,16 +156,15 @@ std::vector<CreateLifecycleHookRequest::LifecycleHook> CreateLifecycleHookReques
 void CreateLifecycleHookRequest::setLifecycleHook(const std::vector<LifecycleHook>& lifecycleHook)
 {
 	lifecycleHook_ = lifecycleHook;
-	int i = 0;
-	for(int i = 0; i!= lifecycleHook.size(); i++)	{
-		auto obj = lifecycleHook.at(i);
-		std::string str ="LifecycleHook."+ std::to_string(i);
-		setCoreParameter(str + ".DefaultResult", obj.defaultResult);
-		setCoreParameter(str + ".LifecycleHookName", obj.lifecycleHookName);
-		setCoreParameter(str + ".HeartbeatTimeout", std::to_string(obj.heartbeatTimeout));
-		setCoreParameter(str + ".NotificationArn", obj.notificationArn);
-		setCoreParameter(str + ".NotificationMetadata", obj.notificationMetadata);
-		setCoreParameter(str + ".LifecycleTransition", obj.lifecycleTransition);
+	for(int dep1 = 0; dep1!= lifecycleHook.size(); dep1++) {
+		auto lifecycleHookObj = lifecycleHook.at(dep1);
+		std::string lifecycleHookObjStr = "LifecycleHook." + std::to_string(dep1);
+		setCoreParameter(lifecycleHookObjStr + ".DefaultResult", lifecycleHookObj.defaultResult);
+		setCoreParameter(lifecycleHookObjStr + ".LifecycleHookName", lifecycleHookObj.lifecycleHookName);
+		setCoreParameter(lifecycleHookObjStr + ".HeartbeatTimeout", std::to_string(lifecycleHookObj.heartbeatTimeout));
+		setCoreParameter(lifecycleHookObjStr + ".NotificationArn", lifecycleHookObj.notificationArn);
+		setCoreParameter(lifecycleHookObjStr + ".NotificationMetadata", lifecycleHookObj.notificationMetadata);
+		setCoreParameter(lifecycleHookObjStr + ".LifecycleTransition", lifecycleHookObj.lifecycleTransition);
 	}
 }
 

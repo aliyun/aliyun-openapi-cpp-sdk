@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmGetShowCommentsRequest;
 
 TaobaoFilmGetShowCommentsRequest::TaobaoFilmGetShowCommentsRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmGetShowComments")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmGetShowCommentsRequest::~TaobaoFilmGetShowCommentsRequest()
 {}

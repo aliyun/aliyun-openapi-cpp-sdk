@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetStaDetailedStatusRequest;
 
 GetStaDetailedStatusRequest::GetStaDetailedStatusRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetStaDetailedStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetStaDetailedStatusRequest::~GetStaDetailedStatusRequest()
 {}

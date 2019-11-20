@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetAIMediaAuditJobRequest;
 
 GetAIMediaAuditJobRequest::GetAIMediaAuditJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetAIMediaAuditJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAIMediaAuditJobRequest::~GetAIMediaAuditJobRequest()
 {}

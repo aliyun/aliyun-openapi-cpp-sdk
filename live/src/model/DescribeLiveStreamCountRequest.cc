@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamCountRequest;
 
 DescribeLiveStreamCountRequest::DescribeLiveStreamCountRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamCount")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeLiveStreamCountRequest::~DescribeLiveStreamCountRequest()
 {}

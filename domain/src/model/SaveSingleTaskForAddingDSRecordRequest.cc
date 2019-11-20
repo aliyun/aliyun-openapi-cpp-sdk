@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForAddingDSRecordRequest;
 
 SaveSingleTaskForAddingDSRecordRequest::SaveSingleTaskForAddingDSRecordRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForAddingDSRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForAddingDSRecordRequest::~SaveSingleTaskForAddingDSRecordRequest()
 {}

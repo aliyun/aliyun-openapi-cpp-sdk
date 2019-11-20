@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeOssResultItemsRequest;
 
 DescribeOssResultItemsRequest::DescribeOssResultItemsRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeOssResultItems")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssResultItemsRequest::~DescribeOssResultItemsRequest()
 {}

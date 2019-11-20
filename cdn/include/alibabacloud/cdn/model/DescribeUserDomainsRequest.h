@@ -30,16 +30,13 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CDN_EXPORT DescribeUserDomainsRequest : public RpcServiceRequest
 			{
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
 
 			public:
 				DescribeUserDomainsRequest();
 				~DescribeUserDomainsRequest();
 
+				std::string getSources()const;
+				void setSources(const std::string& sources);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				bool getCheckDomainShow()const;
@@ -50,12 +47,8 @@ namespace AlibabaCloud
 				void setSecurityToken(const std::string& securityToken);
 				std::string getCdnType()const;
 				void setCdnType(const std::string& cdnType);
-				std::string getChangeEndTime()const;
-				void setChangeEndTime(const std::string& changeEndTime);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
 				std::string getFuncFilter()const;
 				void setFuncFilter(const std::string& funcFilter);
 				std::string getDomainName()const;
@@ -68,25 +61,21 @@ namespace AlibabaCloud
 				void setDomainStatus(const std::string& domainStatus);
 				std::string getDomainSearchType()const;
 				void setDomainSearchType(const std::string& domainSearchType);
-				std::string getChangeStartTime()const;
-				void setChangeStartTime(const std::string& changeStartTime);
 
             private:
+				std::string sources_;
 				int pageNumber_;
 				bool checkDomainShow_;
 				std::string resourceGroupId_;
 				std::string securityToken_;
 				std::string cdnType_;
-				std::string changeEndTime_;
 				int pageSize_;
-				std::vector<Tag> tag_;
 				std::string funcFilter_;
 				std::string domainName_;
 				long ownerId_;
 				std::string funcId_;
 				std::string domainStatus_;
 				std::string domainSearchType_;
-				std::string changeStartTime_;
 
 			};
 		}

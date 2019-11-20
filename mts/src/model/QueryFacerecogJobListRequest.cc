@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryFacerecogJobListRequest;
 
 QueryFacerecogJobListRequest::QueryFacerecogJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryFacerecogJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFacerecogJobListRequest::~QueryFacerecogJobListRequest()
 {}

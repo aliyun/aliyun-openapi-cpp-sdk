@@ -1167,6 +1167,42 @@ CloudAPIClient::DescribeApiGroupOutcomeCallable CloudAPIClient::describeApiGroup
 	return task->get_future();
 }
 
+CloudAPIClient::DescribeApiGroupVpcWhitelistOutcome CloudAPIClient::describeApiGroupVpcWhitelist(const DescribeApiGroupVpcWhitelistRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApiGroupVpcWhitelistOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApiGroupVpcWhitelistOutcome(DescribeApiGroupVpcWhitelistResult(outcome.result()));
+	else
+		return DescribeApiGroupVpcWhitelistOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeApiGroupVpcWhitelistAsync(const DescribeApiGroupVpcWhitelistRequest& request, const DescribeApiGroupVpcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApiGroupVpcWhitelist(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeApiGroupVpcWhitelistOutcomeCallable CloudAPIClient::describeApiGroupVpcWhitelistCallable(const DescribeApiGroupVpcWhitelistRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApiGroupVpcWhitelistOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApiGroupVpcWhitelist(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::DescribeApiGroupsOutcome CloudAPIClient::describeApiGroups(const DescribeApiGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2715,6 +2751,42 @@ CloudAPIClient::ModifyApiGroupOutcomeCallable CloudAPIClient::modifyApiGroupCall
 	return task->get_future();
 }
 
+CloudAPIClient::ModifyApiGroupVpcWhitelistOutcome CloudAPIClient::modifyApiGroupVpcWhitelist(const ModifyApiGroupVpcWhitelistRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyApiGroupVpcWhitelistOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyApiGroupVpcWhitelistOutcome(ModifyApiGroupVpcWhitelistResult(outcome.result()));
+	else
+		return ModifyApiGroupVpcWhitelistOutcome(outcome.error());
+}
+
+void CloudAPIClient::modifyApiGroupVpcWhitelistAsync(const ModifyApiGroupVpcWhitelistRequest& request, const ModifyApiGroupVpcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyApiGroupVpcWhitelist(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ModifyApiGroupVpcWhitelistOutcomeCallable CloudAPIClient::modifyApiGroupVpcWhitelistCallable(const ModifyApiGroupVpcWhitelistRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyApiGroupVpcWhitelistOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyApiGroupVpcWhitelist(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::ModifyAppOutcome CloudAPIClient::modifyApp(const ModifyAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3681,6 +3753,42 @@ CloudAPIClient::SetVpcAccessOutcomeCallable CloudAPIClient::setVpcAccessCallable
 			[this, request]()
 			{
 			return this->setVpcAccess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::SetWildcardDomainPatternsOutcome CloudAPIClient::setWildcardDomainPatterns(const SetWildcardDomainPatternsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetWildcardDomainPatternsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetWildcardDomainPatternsOutcome(SetWildcardDomainPatternsResult(outcome.result()));
+	else
+		return SetWildcardDomainPatternsOutcome(outcome.error());
+}
+
+void CloudAPIClient::setWildcardDomainPatternsAsync(const SetWildcardDomainPatternsRequest& request, const SetWildcardDomainPatternsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setWildcardDomainPatterns(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::SetWildcardDomainPatternsOutcomeCallable CloudAPIClient::setWildcardDomainPatternsCallable(const SetWildcardDomainPatternsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetWildcardDomainPatternsOutcome()>>(
+			[this, request]()
+			{
+			return this->setWildcardDomainPatterns(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

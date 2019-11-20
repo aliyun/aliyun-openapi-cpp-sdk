@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CopyNetworkAclEntriesRequest;
 
 CopyNetworkAclEntriesRequest::CopyNetworkAclEntriesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CopyNetworkAclEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CopyNetworkAclEntriesRequest::~CopyNetworkAclEntriesRequest()
 {}

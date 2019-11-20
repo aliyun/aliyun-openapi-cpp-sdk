@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateCategoryNameRequest;
 
 UpdateCategoryNameRequest::UpdateCategoryNameRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateCategoryName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCategoryNameRequest::~UpdateCategoryNameRequest()
 {}

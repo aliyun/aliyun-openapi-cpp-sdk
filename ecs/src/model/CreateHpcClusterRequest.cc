@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateHpcClusterRequest;
 
 CreateHpcClusterRequest::CreateHpcClusterRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateHpcCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateHpcClusterRequest::~CreateHpcClusterRequest()
 {}

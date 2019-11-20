@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::CreateOrUpdateAssetGroupRequest;
 
 CreateOrUpdateAssetGroupRequest::CreateOrUpdateAssetGroupRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "CreateOrUpdateAssetGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrUpdateAssetGroupRequest::~CreateOrUpdateAssetGroupRequest()
 {}

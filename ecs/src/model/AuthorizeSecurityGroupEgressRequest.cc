@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::AuthorizeSecurityGroupEgressRequest;
 
 AuthorizeSecurityGroupEgressRequest::AuthorizeSecurityGroupEgressRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "AuthorizeSecurityGroupEgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AuthorizeSecurityGroupEgressRequest::~AuthorizeSecurityGroupEgressRequest()
 {}

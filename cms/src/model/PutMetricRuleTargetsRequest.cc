@@ -20,7 +20,9 @@ using AlibabaCloud::Cms::Model::PutMetricRuleTargetsRequest;
 
 PutMetricRuleTargetsRequest::PutMetricRuleTargetsRequest() :
 	RpcServiceRequest("cms", "2018-03-08", "PutMetricRuleTargets")
-{}
+{
+	setMethod(HttpRequest::Method::Put);
+}
 
 PutMetricRuleTargetsRequest::~PutMetricRuleTargetsRequest()
 {}
@@ -44,14 +46,24 @@ std::vector<PutMetricRuleTargetsRequest::Targets> PutMetricRuleTargetsRequest::g
 void PutMetricRuleTargetsRequest::setTargets(const std::vector<Targets>& targets)
 {
 	targets_ = targets;
-	int i = 0;
-	for(int i = 0; i!= targets.size(); i++)	{
-		auto obj = targets.at(i);
-		std::string str ="Targets."+ std::to_string(i);
-		setCoreParameter(str + ".Level", obj.level);
-		setCoreParameter(str + ".Id", obj.id);
-		setCoreParameter(str + ".Arn", obj.arn);
+	for(int dep1 = 0; dep1!= targets.size(); dep1++) {
+		auto targetsObj = targets.at(dep1);
+		std::string targetsObjStr = "Targets." + std::to_string(dep1);
+		setCoreParameter(targetsObjStr + ".Level", targetsObj.level);
+		setCoreParameter(targetsObjStr + ".Id", targetsObj.id);
+		setCoreParameter(targetsObjStr + ".Arn", targetsObj.arn);
 	}
+}
+
+std::string PutMetricRuleTargetsRequest::getCmsUserInner()const
+{
+	return cmsUserInner_;
+}
+
+void PutMetricRuleTargetsRequest::setCmsUserInner(const std::string& cmsUserInner)
+{
+	cmsUserInner_ = cmsUserInner;
+	setCoreParameter("CmsUserInner", cmsUserInner);
 }
 
 std::string PutMetricRuleTargetsRequest::getActions()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateMediaCategoryRequest;
 
 UpdateMediaCategoryRequest::UpdateMediaCategoryRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateMediaCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateMediaCategoryRequest::~UpdateMediaCategoryRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifyScenarioRequest;
 
 ModifyScenarioRequest::ModifyScenarioRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifyScenario")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyScenarioRequest::~ModifyScenarioRequest()
 {}

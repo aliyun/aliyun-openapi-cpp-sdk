@@ -20,7 +20,9 @@ using AlibabaCloud::Sts::Model::GetCallerIdentityRequest;
 
 GetCallerIdentityRequest::GetCallerIdentityRequest() :
 	RpcServiceRequest("sts", "2015-04-01", "GetCallerIdentity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetCallerIdentityRequest::~GetCallerIdentityRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::CreateCredentialsRequest;
 
 CreateCredentialsRequest::CreateCredentialsRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "CreateCredentials")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCredentialsRequest::~CreateCredentialsRequest()
 {}

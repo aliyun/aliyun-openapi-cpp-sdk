@@ -20,7 +20,9 @@ using AlibabaCloud::Ecs::Model::CreateRouterInterfaceRequest;
 
 CreateRouterInterfaceRequest::CreateRouterInterfaceRequest() :
 	RpcServiceRequest("ecs", "2014-05-26", "CreateRouterInterface")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRouterInterfaceRequest::~CreateRouterInterfaceRequest()
 {}

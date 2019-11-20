@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeParameterModificationHistoryRequest;
 
 DescribeParameterModificationHistoryRequest::DescribeParameterModificationHistoryRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeParameterModificationHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeParameterModificationHistoryRequest::~DescribeParameterModificationHistoryRequest()
 {}

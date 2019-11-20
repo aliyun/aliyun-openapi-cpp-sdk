@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::LookupTmchNoticeRequest;
 
 LookupTmchNoticeRequest::LookupTmchNoticeRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "LookupTmchNotice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 LookupTmchNoticeRequest::~LookupTmchNoticeRequest()
 {}

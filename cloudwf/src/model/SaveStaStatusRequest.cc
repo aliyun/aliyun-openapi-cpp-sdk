@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveStaStatusRequest;
 
 SaveStaStatusRequest::SaveStaStatusRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveStaStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveStaStatusRequest::~SaveStaStatusRequest()
 {}

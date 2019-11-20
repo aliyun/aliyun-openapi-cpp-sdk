@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeRiskListDetailRequest;
 
 DescribeRiskListDetailRequest::DescribeRiskListDetailRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeRiskListDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRiskListDetailRequest::~DescribeRiskListDetailRequest()
 {}

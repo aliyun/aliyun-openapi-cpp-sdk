@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryQualificationDetailRequest;
 
 QueryQualificationDetailRequest::QueryQualificationDetailRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryQualificationDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryQualificationDetailRequest::~QueryQualificationDetailRequest()
 {}

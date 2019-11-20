@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ExcelToJsonRequest;
 
 ExcelToJsonRequest::ExcelToJsonRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ExcelToJson")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ExcelToJsonRequest::~ExcelToJsonRequest()
 {}

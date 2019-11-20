@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::AddZoneRequest;
 
 AddZoneRequest::AddZoneRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "AddZone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddZoneRequest::~AddZoneRequest()
 {}

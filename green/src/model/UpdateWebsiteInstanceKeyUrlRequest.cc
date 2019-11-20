@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateWebsiteInstanceKeyUrlRequest;
 
 UpdateWebsiteInstanceKeyUrlRequest::UpdateWebsiteInstanceKeyUrlRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateWebsiteInstanceKeyUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateWebsiteInstanceKeyUrlRequest::~UpdateWebsiteInstanceKeyUrlRequest()
 {}

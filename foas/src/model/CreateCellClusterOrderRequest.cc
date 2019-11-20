@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CreateCellClusterOrderRequest;
 
 CreateCellClusterOrderRequest::CreateCellClusterOrderRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/realtime-compute/cell/buy");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCellClusterOrderRequest::~CreateCellClusterOrderRequest()
 {}

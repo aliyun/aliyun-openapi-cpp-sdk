@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenAttachedChildInstanceAttributeRequest
 
 DescribeCenAttachedChildInstanceAttributeRequest::DescribeCenAttachedChildInstanceAttributeRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenAttachedChildInstanceAttributeRequest::~DescribeCenAttachedChildInstanceAttributeRequest()
 {}

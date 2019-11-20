@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::UpdateServiceRequest;
 
 UpdateServiceRequest::UpdateServiceRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "UpdateService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateServiceRequest::~UpdateServiceRequest()
 {}

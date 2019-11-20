@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeleteRoleRequest;
 
 DeleteRoleRequest::DeleteRoleRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeleteRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRoleRequest::~DeleteRoleRequest()
 {}

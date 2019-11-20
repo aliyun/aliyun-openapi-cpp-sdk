@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::VerifyUserRequest;
 
 VerifyUserRequest::VerifyUserRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "VerifyUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VerifyUserRequest::~VerifyUserRequest()
 {}

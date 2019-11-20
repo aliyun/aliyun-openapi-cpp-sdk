@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::RemoveAccessControlListEntryRequest;
 
 RemoveAccessControlListEntryRequest::RemoveAccessControlListEntryRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "RemoveAccessControlListEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveAccessControlListEntryRequest::~RemoveAccessControlListEntryRequest()
 {}
