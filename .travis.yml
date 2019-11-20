@@ -10,9 +10,10 @@ env:
   - CPLUS_INCLUDE_PATH="/usr/local/include/:/usr/include/jsoncpp/:/usr/local/opt/openssl/include/:/usr/lib/"
 
 script:
-  - ./unit_test.sh
+  - ./unit_test.
   - ./generate_code_cov.sh
-  - ./function_test.sh
+  - ./easyinstall.sh
+  # - ./function_test.sh
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
