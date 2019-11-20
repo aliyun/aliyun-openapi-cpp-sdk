@@ -24,6 +24,10 @@
 #include "DypnsapiExport.h"
 #include "model/CreateVerifySchemeRequest.h"
 #include "model/CreateVerifySchemeResult.h"
+#include "model/DeleteVerifySchemeRequest.h"
+#include "model/DeleteVerifySchemeResult.h"
+#include "model/DescribeVerifySchemeRequest.h"
+#include "model/DescribeVerifySchemeResult.h"
 #include "model/GetMobileRequest.h"
 #include "model/GetMobileResult.h"
 #include "model/TwiceTelVerifyRequest.h"
@@ -42,6 +46,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateVerifySchemeResult> CreateVerifySchemeOutcome;
 			typedef std::future<CreateVerifySchemeOutcome> CreateVerifySchemeOutcomeCallable;
 			typedef std::function<void(const DypnsapiClient*, const Model::CreateVerifySchemeRequest&, const CreateVerifySchemeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVerifySchemeAsyncHandler;
+			typedef Outcome<Error, Model::DeleteVerifySchemeResult> DeleteVerifySchemeOutcome;
+			typedef std::future<DeleteVerifySchemeOutcome> DeleteVerifySchemeOutcomeCallable;
+			typedef std::function<void(const DypnsapiClient*, const Model::DeleteVerifySchemeRequest&, const DeleteVerifySchemeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVerifySchemeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVerifySchemeResult> DescribeVerifySchemeOutcome;
+			typedef std::future<DescribeVerifySchemeOutcome> DescribeVerifySchemeOutcomeCallable;
+			typedef std::function<void(const DypnsapiClient*, const Model::DescribeVerifySchemeRequest&, const DescribeVerifySchemeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVerifySchemeAsyncHandler;
 			typedef Outcome<Error, Model::GetMobileResult> GetMobileOutcome;
 			typedef std::future<GetMobileOutcome> GetMobileOutcomeCallable;
 			typedef std::function<void(const DypnsapiClient*, const Model::GetMobileRequest&, const GetMobileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMobileAsyncHandler;
@@ -59,6 +69,12 @@ namespace AlibabaCloud
 			CreateVerifySchemeOutcome createVerifyScheme(const Model::CreateVerifySchemeRequest &request)const;
 			void createVerifySchemeAsync(const Model::CreateVerifySchemeRequest& request, const CreateVerifySchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVerifySchemeOutcomeCallable createVerifySchemeCallable(const Model::CreateVerifySchemeRequest& request) const;
+			DeleteVerifySchemeOutcome deleteVerifyScheme(const Model::DeleteVerifySchemeRequest &request)const;
+			void deleteVerifySchemeAsync(const Model::DeleteVerifySchemeRequest& request, const DeleteVerifySchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteVerifySchemeOutcomeCallable deleteVerifySchemeCallable(const Model::DeleteVerifySchemeRequest& request) const;
+			DescribeVerifySchemeOutcome describeVerifyScheme(const Model::DescribeVerifySchemeRequest &request)const;
+			void describeVerifySchemeAsync(const Model::DescribeVerifySchemeRequest& request, const DescribeVerifySchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVerifySchemeOutcomeCallable describeVerifySchemeCallable(const Model::DescribeVerifySchemeRequest& request) const;
 			GetMobileOutcome getMobile(const Model::GetMobileRequest &request)const;
 			void getMobileAsync(const Model::GetMobileRequest& request, const GetMobileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMobileOutcomeCallable getMobileCallable(const Model::GetMobileRequest& request) const;

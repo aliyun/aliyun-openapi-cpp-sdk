@@ -87,6 +87,78 @@ DypnsapiClient::CreateVerifySchemeOutcomeCallable DypnsapiClient::createVerifySc
 	return task->get_future();
 }
 
+DypnsapiClient::DeleteVerifySchemeOutcome DypnsapiClient::deleteVerifyScheme(const DeleteVerifySchemeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVerifySchemeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVerifySchemeOutcome(DeleteVerifySchemeResult(outcome.result()));
+	else
+		return DeleteVerifySchemeOutcome(outcome.error());
+}
+
+void DypnsapiClient::deleteVerifySchemeAsync(const DeleteVerifySchemeRequest& request, const DeleteVerifySchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVerifyScheme(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DypnsapiClient::DeleteVerifySchemeOutcomeCallable DypnsapiClient::deleteVerifySchemeCallable(const DeleteVerifySchemeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVerifySchemeOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVerifyScheme(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DypnsapiClient::DescribeVerifySchemeOutcome DypnsapiClient::describeVerifyScheme(const DescribeVerifySchemeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVerifySchemeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVerifySchemeOutcome(DescribeVerifySchemeResult(outcome.result()));
+	else
+		return DescribeVerifySchemeOutcome(outcome.error());
+}
+
+void DypnsapiClient::describeVerifySchemeAsync(const DescribeVerifySchemeRequest& request, const DescribeVerifySchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVerifyScheme(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DypnsapiClient::DescribeVerifySchemeOutcomeCallable DypnsapiClient::describeVerifySchemeCallable(const DescribeVerifySchemeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVerifySchemeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVerifyScheme(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DypnsapiClient::GetMobileOutcome DypnsapiClient::getMobile(const GetMobileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
