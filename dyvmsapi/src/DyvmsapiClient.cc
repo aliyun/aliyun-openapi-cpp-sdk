@@ -31,21 +31,21 @@ DyvmsapiClient::DyvmsapiClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dyvms");
 }
 
 DyvmsapiClient::DyvmsapiClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dyvms");
 }
 
 DyvmsapiClient::DyvmsapiClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dyvms");
 }
 
 DyvmsapiClient::~DyvmsapiClient()
@@ -729,6 +729,78 @@ DyvmsapiClient::QueryRobotv2AllListOutcomeCallable DyvmsapiClient::queryRobotv2A
 			[this, request]()
 			{
 			return this->queryRobotv2AllList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::QueryVoipNumberBindInfosOutcome DyvmsapiClient::queryVoipNumberBindInfos(const QueryVoipNumberBindInfosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryVoipNumberBindInfosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryVoipNumberBindInfosOutcome(QueryVoipNumberBindInfosResult(outcome.result()));
+	else
+		return QueryVoipNumberBindInfosOutcome(outcome.error());
+}
+
+void DyvmsapiClient::queryVoipNumberBindInfosAsync(const QueryVoipNumberBindInfosRequest& request, const QueryVoipNumberBindInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryVoipNumberBindInfos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::QueryVoipNumberBindInfosOutcomeCallable DyvmsapiClient::queryVoipNumberBindInfosCallable(const QueryVoipNumberBindInfosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryVoipNumberBindInfosOutcome()>>(
+			[this, request]()
+			{
+			return this->queryVoipNumberBindInfos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::ReportVoipProblemsOutcome DyvmsapiClient::reportVoipProblems(const ReportVoipProblemsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReportVoipProblemsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReportVoipProblemsOutcome(ReportVoipProblemsResult(outcome.result()));
+	else
+		return ReportVoipProblemsOutcome(outcome.error());
+}
+
+void DyvmsapiClient::reportVoipProblemsAsync(const ReportVoipProblemsRequest& request, const ReportVoipProblemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reportVoipProblems(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::ReportVoipProblemsOutcomeCallable DyvmsapiClient::reportVoipProblemsCallable(const ReportVoipProblemsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReportVoipProblemsOutcome()>>(
+			[this, request]()
+			{
+			return this->reportVoipProblems(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

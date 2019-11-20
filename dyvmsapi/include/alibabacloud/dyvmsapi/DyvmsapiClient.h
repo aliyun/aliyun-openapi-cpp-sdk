@@ -60,6 +60,10 @@
 #include "model/QueryRobotTaskListResult.h"
 #include "model/QueryRobotv2AllListRequest.h"
 #include "model/QueryRobotv2AllListResult.h"
+#include "model/QueryVoipNumberBindInfosRequest.h"
+#include "model/QueryVoipNumberBindInfosResult.h"
+#include "model/ReportVoipProblemsRequest.h"
+#include "model/ReportVoipProblemsResult.h"
 #include "model/SingleCallByTtsRequest.h"
 #include "model/SingleCallByTtsResult.h"
 #include "model/SingleCallByVoiceRequest.h"
@@ -146,6 +150,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryRobotv2AllListResult> QueryRobotv2AllListOutcome;
 			typedef std::future<QueryRobotv2AllListOutcome> QueryRobotv2AllListOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::QueryRobotv2AllListRequest&, const QueryRobotv2AllListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRobotv2AllListAsyncHandler;
+			typedef Outcome<Error, Model::QueryVoipNumberBindInfosResult> QueryVoipNumberBindInfosOutcome;
+			typedef std::future<QueryVoipNumberBindInfosOutcome> QueryVoipNumberBindInfosOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::QueryVoipNumberBindInfosRequest&, const QueryVoipNumberBindInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryVoipNumberBindInfosAsyncHandler;
+			typedef Outcome<Error, Model::ReportVoipProblemsResult> ReportVoipProblemsOutcome;
+			typedef std::future<ReportVoipProblemsOutcome> ReportVoipProblemsOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::ReportVoipProblemsRequest&, const ReportVoipProblemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReportVoipProblemsAsyncHandler;
 			typedef Outcome<Error, Model::SingleCallByTtsResult> SingleCallByTtsOutcome;
 			typedef std::future<SingleCallByTtsOutcome> SingleCallByTtsOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::SingleCallByTtsRequest&, const SingleCallByTtsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SingleCallByTtsAsyncHandler;
@@ -238,6 +248,12 @@ namespace AlibabaCloud
 			QueryRobotv2AllListOutcome queryRobotv2AllList(const Model::QueryRobotv2AllListRequest &request)const;
 			void queryRobotv2AllListAsync(const Model::QueryRobotv2AllListRequest& request, const QueryRobotv2AllListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryRobotv2AllListOutcomeCallable queryRobotv2AllListCallable(const Model::QueryRobotv2AllListRequest& request) const;
+			QueryVoipNumberBindInfosOutcome queryVoipNumberBindInfos(const Model::QueryVoipNumberBindInfosRequest &request)const;
+			void queryVoipNumberBindInfosAsync(const Model::QueryVoipNumberBindInfosRequest& request, const QueryVoipNumberBindInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryVoipNumberBindInfosOutcomeCallable queryVoipNumberBindInfosCallable(const Model::QueryVoipNumberBindInfosRequest& request) const;
+			ReportVoipProblemsOutcome reportVoipProblems(const Model::ReportVoipProblemsRequest &request)const;
+			void reportVoipProblemsAsync(const Model::ReportVoipProblemsRequest& request, const ReportVoipProblemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReportVoipProblemsOutcomeCallable reportVoipProblemsCallable(const Model::ReportVoipProblemsRequest& request) const;
 			SingleCallByTtsOutcome singleCallByTts(const Model::SingleCallByTtsRequest &request)const;
 			void singleCallByTtsAsync(const Model::SingleCallByTtsRequest& request, const SingleCallByTtsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SingleCallByTtsOutcomeCallable singleCallByTtsCallable(const Model::SingleCallByTtsRequest& request) const;

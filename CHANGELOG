@@ -1,3 +1,7 @@
+2019-11-20 Version 1.36.184
+- Add API ReportVoipProblems.
+- Add API QueryVoipNumberBindINfos.
+
 2019-11-15 Version 1.36.183
 - Nlp Automl SDK.
 

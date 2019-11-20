@@ -59,6 +59,10 @@ set(dyvmsapi_public_header_model
 	include/alibabacloud/dyvmsapi/model/QueryRobotTaskListResult.h
 	include/alibabacloud/dyvmsapi/model/QueryRobotv2AllListRequest.h
 	include/alibabacloud/dyvmsapi/model/QueryRobotv2AllListResult.h
+	include/alibabacloud/dyvmsapi/model/QueryVoipNumberBindInfosRequest.h
+	include/alibabacloud/dyvmsapi/model/QueryVoipNumberBindInfosResult.h
+	include/alibabacloud/dyvmsapi/model/ReportVoipProblemsRequest.h
+	include/alibabacloud/dyvmsapi/model/ReportVoipProblemsResult.h
 	include/alibabacloud/dyvmsapi/model/SingleCallByTtsRequest.h
 	include/alibabacloud/dyvmsapi/model/SingleCallByTtsResult.h
 	include/alibabacloud/dyvmsapi/model/SingleCallByVoiceRequest.h
@@ -120,6 +124,10 @@ set(dyvmsapi_src
 	src/model/QueryRobotTaskListResult.cc
 	src/model/QueryRobotv2AllListRequest.cc
 	src/model/QueryRobotv2AllListResult.cc
+	src/model/QueryVoipNumberBindInfosRequest.cc
+	src/model/QueryVoipNumberBindInfosResult.cc
+	src/model/ReportVoipProblemsRequest.cc
+	src/model/ReportVoipProblemsResult.cc
 	src/model/SingleCallByTtsRequest.cc
 	src/model/SingleCallByTtsResult.cc
 	src/model/SingleCallByVoiceRequest.cc
