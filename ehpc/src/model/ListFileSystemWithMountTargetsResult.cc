@@ -47,6 +47,8 @@ void ListFileSystemWithMountTargetsResult::parse(const std::string &payload)
 			fileSystemListObject.regionId = valueFileSystemListFileSystems["RegionId"].asString();
 		if(!valueFileSystemListFileSystems["FileSystemId"].isNull())
 			fileSystemListObject.fileSystemId = valueFileSystemListFileSystems["FileSystemId"].asString();
+		if(!valueFileSystemListFileSystems["FileSystemType"].isNull())
+			fileSystemListObject.fileSystemType = valueFileSystemListFileSystems["FileSystemType"].asString();
 		if(!valueFileSystemListFileSystems["ProtocolType"].isNull())
 			fileSystemListObject.protocolType = valueFileSystemListFileSystems["ProtocolType"].asString();
 		if(!valueFileSystemListFileSystems["CreateTime"].isNull())
@@ -56,7 +58,15 @@ void ListFileSystemWithMountTargetsResult::parse(const std::string &payload)
 		if(!valueFileSystemListFileSystems["StorageType"].isNull())
 			fileSystemListObject.storageType = valueFileSystemListFileSystems["StorageType"].asString();
 		if(!valueFileSystemListFileSystems["MeteredSize"].isNull())
-			fileSystemListObject.meteredSize = valueFileSystemListFileSystems["MeteredSize"].asString();
+			fileSystemListObject.meteredSize = std::stoi(valueFileSystemListFileSystems["MeteredSize"].asString());
+		if(!valueFileSystemListFileSystems["Capacity"].isNull())
+			fileSystemListObject.capacity = std::stoi(valueFileSystemListFileSystems["Capacity"].asString());
+		if(!valueFileSystemListFileSystems["EncryptType"].isNull())
+			fileSystemListObject.encryptType = std::stoi(valueFileSystemListFileSystems["EncryptType"].asString());
+		if(!valueFileSystemListFileSystems["BandWidth"].isNull())
+			fileSystemListObject.bandWidth = std::stoi(valueFileSystemListFileSystems["BandWidth"].asString());
+		if(!valueFileSystemListFileSystems["Status"].isNull())
+			fileSystemListObject.status = valueFileSystemListFileSystems["Status"].asString();
 		auto allPackageListNode = allFileSystemListNode["PackageList"]["Packages"];
 		for (auto allFileSystemListNodePackageListPackages : allPackageListNode)
 		{

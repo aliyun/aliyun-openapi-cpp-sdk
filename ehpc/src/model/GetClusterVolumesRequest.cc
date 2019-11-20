@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::GetClusterVolumesRequest;
 
 GetClusterVolumesRequest::GetClusterVolumesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetClusterVolumes")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetClusterVolumesRequest::~GetClusterVolumesRequest()
 {}

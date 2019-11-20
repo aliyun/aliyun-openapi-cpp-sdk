@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::RecoverClusterRequest;
 
 RecoverClusterRequest::RecoverClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "RecoverCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 RecoverClusterRequest::~RecoverClusterRequest()
 {}

@@ -40,7 +40,7 @@ namespace AlibabaCloud
 					{
 						std::string name;
 					};
-					Roles roles;
+					std::vector<Roles> roles;
 					std::string volumeId;
 					std::string volumeMountpoint;
 					std::string location;

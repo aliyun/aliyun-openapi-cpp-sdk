@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::ListPreferredEcsTypesRequest;
 
 ListPreferredEcsTypesRequest::ListPreferredEcsTypesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListPreferredEcsTypes")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListPreferredEcsTypesRequest::~ListPreferredEcsTypesRequest()
 {}

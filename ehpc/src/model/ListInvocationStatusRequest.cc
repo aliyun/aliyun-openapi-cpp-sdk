@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::ListInvocationStatusRequest;
 
 ListInvocationStatusRequest::ListInvocationStatusRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListInvocationStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListInvocationStatusRequest::~ListInvocationStatusRequest()
 {}

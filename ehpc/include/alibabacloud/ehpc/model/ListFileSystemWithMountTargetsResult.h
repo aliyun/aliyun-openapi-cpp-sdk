@@ -47,15 +47,20 @@ namespace AlibabaCloud
 						std::string networkType;
 						std::string accessGroup;
 					};
+					std::string status;
 					std::string storageType;
+					std::string createTime;
+					int meteredSize;
+					int bandWidth;
+					int encryptType;
+					int capacity;
 					std::string protocolType;
 					std::vector<FileSystems::Packages> packageList;
-					std::string createTime;
+					std::string fileSystemType;
 					std::vector<FileSystems::MountTargets> mountTargetList;
 					std::string destription;
 					std::string fileSystemId;
 					std::string regionId;
-					std::string meteredSize;
 				};
 
 

@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::GetHybridClusterConfigRequest;
 
 GetHybridClusterConfigRequest::GetHybridClusterConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetHybridClusterConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetHybridClusterConfigRequest::~GetHybridClusterConfigRequest()
 {}

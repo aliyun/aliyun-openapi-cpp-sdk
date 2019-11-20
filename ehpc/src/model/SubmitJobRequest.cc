@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::SubmitJobRequest;
 
 SubmitJobRequest::SubmitJobRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "SubmitJob")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 SubmitJobRequest::~SubmitJobRequest()
 {}

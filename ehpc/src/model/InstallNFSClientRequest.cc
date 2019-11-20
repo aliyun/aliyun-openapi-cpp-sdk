@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::InstallNFSClientRequest;
 
 InstallNFSClientRequest::InstallNFSClientRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "InstallNFSClient")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 InstallNFSClientRequest::~InstallNFSClientRequest()
 {}

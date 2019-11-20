@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::StopVisualServiceRequest;
 
 StopVisualServiceRequest::StopVisualServiceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StopVisualService")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 StopVisualServiceRequest::~StopVisualServiceRequest()
 {}

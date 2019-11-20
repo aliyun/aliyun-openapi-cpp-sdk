@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::ModifyUserPasswordsRequest;
 
 ModifyUserPasswordsRequest::ModifyUserPasswordsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyUserPasswords")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ModifyUserPasswordsRequest::~ModifyUserPasswordsRequest()
 {}
@@ -55,12 +57,11 @@ std::vector<ModifyUserPasswordsRequest::User> ModifyUserPasswordsRequest::getUse
 void ModifyUserPasswordsRequest::setUser(const std::vector<User>& user)
 {
 	user_ = user;
-	int i = 0;
-	for(int i = 0; i!= user.size(); i++)	{
-		auto obj = user.at(i);
-		std::string str ="User."+ std::to_string(i);
-		setCoreParameter(str + ".Password", obj.password);
-		setCoreParameter(str + ".Name", obj.name);
+	for(int dep1 = 0; dep1!= user.size(); dep1++) {
+		auto userObj = user.at(dep1);
+		std::string userObjStr = "User." + std::to_string(dep1);
+		setCoreParameter(userObjStr + ".Password", userObj.password);
+		setCoreParameter(userObjStr + ".Name", userObj.name);
 	}
 }
 

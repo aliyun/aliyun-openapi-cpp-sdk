@@ -1,3 +1,6 @@
+2019-11-20 Version 1.36.187
+- Generated 2018-04-12 for `EHPC`.
+
 2019-11-20 Version 1.36.186
 - Supported ecsDemand CreateDemand, ModifyDemand, DeleteDemand API.
 - Modify ecsDemand DescribesDemands API.

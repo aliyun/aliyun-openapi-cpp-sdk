@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::ListClustersMetaRequest;
 
 ListClustersMetaRequest::ListClustersMetaRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListClustersMeta")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListClustersMetaRequest::~ListClustersMetaRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::CreateGWSInstanceRequest;
 
 CreateGWSInstanceRequest::CreateGWSInstanceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "CreateGWSInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 CreateGWSInstanceRequest::~CreateGWSInstanceRequest()
 {}

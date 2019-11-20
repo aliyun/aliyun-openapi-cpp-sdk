@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::DescribeGWSImagesRequest;
 
 DescribeGWSImagesRequest::DescribeGWSImagesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeGWSImages")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeGWSImagesRequest::~DescribeGWSImagesRequest()
 {}

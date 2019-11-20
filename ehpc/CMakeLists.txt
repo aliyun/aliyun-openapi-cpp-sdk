@@ -31,6 +31,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/AddQueueResult.h
 	include/alibabacloud/ehpc/model/AddUsersRequest.h
 	include/alibabacloud/ehpc/model/AddUsersResult.h
+	include/alibabacloud/ehpc/model/BindAccountToClusterUserRequest.h
+	include/alibabacloud/ehpc/model/BindAccountToClusterUserResult.h
 	include/alibabacloud/ehpc/model/CreateClusterRequest.h
 	include/alibabacloud/ehpc/model/CreateClusterResult.h
 	include/alibabacloud/ehpc/model/CreateGWSClusterRequest.h
@@ -105,14 +107,26 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/GetGWSConnectTicketResult.h
 	include/alibabacloud/ehpc/model/GetHybridClusterConfigRequest.h
 	include/alibabacloud/ehpc/model/GetHybridClusterConfigResult.h
+	include/alibabacloud/ehpc/model/GetInstanceReportRequest.h
+	include/alibabacloud/ehpc/model/GetInstanceReportResult.h
+	include/alibabacloud/ehpc/model/GetJobReportRequest.h
+	include/alibabacloud/ehpc/model/GetJobReportResult.h
+	include/alibabacloud/ehpc/model/GetTotalQueueReportRequest.h
+	include/alibabacloud/ehpc/model/GetTotalQueueReportResult.h
+	include/alibabacloud/ehpc/model/GetTotalUserReportRequest.h
+	include/alibabacloud/ehpc/model/GetTotalUserReportResult.h
 	include/alibabacloud/ehpc/model/GetVisualServiceStatusRequest.h
 	include/alibabacloud/ehpc/model/GetVisualServiceStatusResult.h
+	include/alibabacloud/ehpc/model/GetWorkbenchTokenRequest.h
+	include/alibabacloud/ehpc/model/GetWorkbenchTokenResult.h
 	include/alibabacloud/ehpc/model/InstallNFSClientRequest.h
 	include/alibabacloud/ehpc/model/InstallNFSClientResult.h
 	include/alibabacloud/ehpc/model/InstallSoftwareRequest.h
 	include/alibabacloud/ehpc/model/InstallSoftwareResult.h
 	include/alibabacloud/ehpc/model/InvokeShellCommandRequest.h
 	include/alibabacloud/ehpc/model/InvokeShellCommandResult.h
+	include/alibabacloud/ehpc/model/ListAccountMappingRequest.h
+	include/alibabacloud/ehpc/model/ListAccountMappingResult.h
 	include/alibabacloud/ehpc/model/ListAvailableEcsTypesRequest.h
 	include/alibabacloud/ehpc/model/ListAvailableEcsTypesResult.h
 	include/alibabacloud/ehpc/model/ListAvailableFileSystemTypesRequest.h
@@ -223,6 +237,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/StopVisualServiceResult.h
 	include/alibabacloud/ehpc/model/SubmitJobRequest.h
 	include/alibabacloud/ehpc/model/SubmitJobResult.h
+	include/alibabacloud/ehpc/model/UnbindAccountToClusterUserRequest.h
+	include/alibabacloud/ehpc/model/UnbindAccountToClusterUserResult.h
 	include/alibabacloud/ehpc/model/UninstallSoftwareRequest.h
 	include/alibabacloud/ehpc/model/UninstallSoftwareResult.h
 	include/alibabacloud/ehpc/model/UpdateClusterVolumesRequest.h
@@ -244,6 +260,8 @@ set(ehpc_src
 	src/model/AddQueueResult.cc
 	src/model/AddUsersRequest.cc
 	src/model/AddUsersResult.cc
+	src/model/BindAccountToClusterUserRequest.cc
+	src/model/BindAccountToClusterUserResult.cc
 	src/model/CreateClusterRequest.cc
 	src/model/CreateClusterResult.cc
 	src/model/CreateGWSClusterRequest.cc
@@ -318,14 +336,26 @@ set(ehpc_src
 	src/model/GetGWSConnectTicketResult.cc
 	src/model/GetHybridClusterConfigRequest.cc
 	src/model/GetHybridClusterConfigResult.cc
+	src/model/GetInstanceReportRequest.cc
+	src/model/GetInstanceReportResult.cc
+	src/model/GetJobReportRequest.cc
+	src/model/GetJobReportResult.cc
+	src/model/GetTotalQueueReportRequest.cc
+	src/model/GetTotalQueueReportResult.cc
+	src/model/GetTotalUserReportRequest.cc
+	src/model/GetTotalUserReportResult.cc
 	src/model/GetVisualServiceStatusRequest.cc
 	src/model/GetVisualServiceStatusResult.cc
+	src/model/GetWorkbenchTokenRequest.cc
+	src/model/GetWorkbenchTokenResult.cc
 	src/model/InstallNFSClientRequest.cc
 	src/model/InstallNFSClientResult.cc
 	src/model/InstallSoftwareRequest.cc
 	src/model/InstallSoftwareResult.cc
 	src/model/InvokeShellCommandRequest.cc
 	src/model/InvokeShellCommandResult.cc
+	src/model/ListAccountMappingRequest.cc
+	src/model/ListAccountMappingResult.cc
 	src/model/ListAvailableEcsTypesRequest.cc
 	src/model/ListAvailableEcsTypesResult.cc
 	src/model/ListAvailableFileSystemTypesRequest.cc
@@ -436,6 +466,8 @@ set(ehpc_src
 	src/model/StopVisualServiceResult.cc
 	src/model/SubmitJobRequest.cc
 	src/model/SubmitJobResult.cc
+	src/model/UnbindAccountToClusterUserRequest.cc
+	src/model/UnbindAccountToClusterUserResult.cc
 	src/model/UninstallSoftwareRequest.cc
 	src/model/UninstallSoftwareResult.cc
 	src/model/UpdateClusterVolumesRequest.cc

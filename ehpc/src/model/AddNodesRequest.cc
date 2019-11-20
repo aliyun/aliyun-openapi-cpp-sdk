@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::AddNodesRequest;
 
 AddNodesRequest::AddNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "AddNodes")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 AddNodesRequest::~AddNodesRequest()
 {}
@@ -100,6 +102,17 @@ void AddNodesRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
 	setCoreParameter("InstanceType", instanceType);
+}
+
+std::string AddNodesRequest::getHostNamePrefix()const
+{
+	return hostNamePrefix_;
+}
+
+void AddNodesRequest::setHostNamePrefix(const std::string& hostNamePrefix)
+{
+	hostNamePrefix_ = hostNamePrefix;
+	setCoreParameter("HostNamePrefix", hostNamePrefix);
 }
 
 std::string AddNodesRequest::getComputeSpotPriceLimit()const

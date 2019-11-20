@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::ListCloudMetricProfilingsRequest;
 
 ListCloudMetricProfilingsRequest::ListCloudMetricProfilingsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListCloudMetricProfilings")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListCloudMetricProfilingsRequest::~ListCloudMetricProfilingsRequest()
 {}

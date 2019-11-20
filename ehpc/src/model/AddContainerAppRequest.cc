@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::AddContainerAppRequest;
 
 AddContainerAppRequest::AddContainerAppRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "AddContainerApp")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 AddContainerAppRequest::~AddContainerAppRequest()
 {}

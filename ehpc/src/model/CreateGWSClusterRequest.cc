@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::CreateGWSClusterRequest;
 
 CreateGWSClusterRequest::CreateGWSClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "CreateGWSCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 CreateGWSClusterRequest::~CreateGWSClusterRequest()
 {}

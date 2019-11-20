@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::ModifyVisualServicePasswdRequest;
 
 ModifyVisualServicePasswdRequest::ModifyVisualServicePasswdRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyVisualServicePasswd")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ModifyVisualServicePasswdRequest::~ModifyVisualServicePasswdRequest()
 {}

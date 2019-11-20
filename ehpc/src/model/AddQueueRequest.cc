@@ -20,7 +20,9 @@ using AlibabaCloud::EHPC::Model::AddQueueRequest;
 
 AddQueueRequest::AddQueueRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "AddQueue")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 AddQueueRequest::~AddQueueRequest()
 {}

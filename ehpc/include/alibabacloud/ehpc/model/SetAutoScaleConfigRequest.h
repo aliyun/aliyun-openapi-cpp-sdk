@@ -40,9 +40,10 @@ namespace AlibabaCloud
 						std::string vSwitchId;
 						std::string instanceType;
 						std::string zoneId;
+						std::string hostNamePrefix;
 						float spotPriceLimit;
 					};
-					InstanceTypes instanceTypes;
+					std::vector<InstanceTypes> instanceTypes;
 					std::string instanceType;
 					bool enableAutoGrow;
 					float spotPriceLimit;
