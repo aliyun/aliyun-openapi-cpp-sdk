@@ -20,7 +20,9 @@ using AlibabaCloud::Ivision::Model::StopStreamPredictRequest;
 
 StopStreamPredictRequest::StopStreamPredictRequest() :
 	RpcServiceRequest("ivision", "2019-03-08", "StopStreamPredict")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopStreamPredictRequest::~StopStreamPredictRequest()
 {}

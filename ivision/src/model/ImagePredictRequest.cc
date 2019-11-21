@@ -20,7 +20,9 @@ using AlibabaCloud::Ivision::Model::ImagePredictRequest;
 
 ImagePredictRequest::ImagePredictRequest() :
 	RpcServiceRequest("ivision", "2019-03-08", "ImagePredict")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ImagePredictRequest::~ImagePredictRequest()
 {}

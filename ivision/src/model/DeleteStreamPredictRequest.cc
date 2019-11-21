@@ -20,7 +20,9 @@ using AlibabaCloud::Ivision::Model::DeleteStreamPredictRequest;
 
 DeleteStreamPredictRequest::DeleteStreamPredictRequest() :
 	RpcServiceRequest("ivision", "2019-03-08", "DeleteStreamPredict")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteStreamPredictRequest::~DeleteStreamPredictRequest()
 {}

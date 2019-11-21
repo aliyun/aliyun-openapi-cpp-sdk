@@ -35,24 +35,20 @@ DescribeFaceGroupsResult::~DescribeFaceGroupsResult()
 
 void DescribeFaceGroupsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allGroups = value["Groups"]["Group"];
-	for (auto value : allGroups)
+	auto allGroupsNode = value["Groups"]["Group"];
+	for (auto valueGroupsGroup : allGroupsNode)
 	{
 		Group groupsObject;
-		if(!value["GroupId"].isNull())
-			groupsObject.groupId = value["GroupId"].asString();
-		if(!value["Name"].isNull())
-			groupsObject.name = value["Name"].asString();
-		if(!value["CreationTime"].isNull())
-			groupsObject.creationTime = value["CreationTime"].asString();
+		if(!valueGroupsGroup["GroupId"].isNull())
+			groupsObject.groupId = valueGroupsGroup["GroupId"].asString();
+		if(!valueGroupsGroup["Name"].isNull())
+			groupsObject.name = valueGroupsGroup["Name"].asString();
+		if(!valueGroupsGroup["CreationTime"].isNull())
+			groupsObject.creationTime = valueGroupsGroup["CreationTime"].asString();
 		groups_.push_back(groupsObject);
 	}
 	if(!value["CurrentPage"].isNull())
