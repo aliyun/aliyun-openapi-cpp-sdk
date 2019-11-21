@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::UpdateEntityRequest;
 
 UpdateEntityRequest::UpdateEntityRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "UpdateEntity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateEntityRequest::~UpdateEntityRequest()
 {}

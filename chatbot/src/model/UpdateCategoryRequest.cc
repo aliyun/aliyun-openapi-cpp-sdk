@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::UpdateCategoryRequest;
 
 UpdateCategoryRequest::UpdateCategoryRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "UpdateCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCategoryRequest::~UpdateCategoryRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::DescribeCategoryRequest;
 
 DescribeCategoryRequest::DescribeCategoryRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "DescribeCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCategoryRequest::~DescribeCategoryRequest()
 {}

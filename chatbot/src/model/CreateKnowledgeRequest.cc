@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::CreateKnowledgeRequest;
 
 CreateKnowledgeRequest::CreateKnowledgeRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "CreateKnowledge")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateKnowledgeRequest::~CreateKnowledgeRequest()
 {}

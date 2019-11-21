@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::CreateIntentRequest;
 
 CreateIntentRequest::CreateIntentRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "CreateIntent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIntentRequest::~CreateIntentRequest()
 {}

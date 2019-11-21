@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::DeleteKnowledgeRequest;
 
 DeleteKnowledgeRequest::DeleteKnowledgeRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "DeleteKnowledge")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteKnowledgeRequest::~DeleteKnowledgeRequest()
 {}

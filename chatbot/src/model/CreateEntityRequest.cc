@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::CreateEntityRequest;
 
 CreateEntityRequest::CreateEntityRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "CreateEntity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateEntityRequest::~CreateEntityRequest()
 {}

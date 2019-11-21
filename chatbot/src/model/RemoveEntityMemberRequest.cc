@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::RemoveEntityMemberRequest;
 
 RemoveEntityMemberRequest::RemoveEntityMemberRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "RemoveEntityMember")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveEntityMemberRequest::~RemoveEntityMemberRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::ChatRequest;
 
 ChatRequest::ChatRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "Chat")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ChatRequest::~ChatRequest()
 {}
@@ -110,8 +112,9 @@ std::vector<std::string> ChatRequest::getPerspective()const
 void ChatRequest::setPerspective(const std::vector<std::string>& perspective)
 {
 	perspective_ = perspective;
-	for(int i = 0; i!= perspective.size(); i++)
-		setCoreParameter("Perspective."+ std::to_string(i), perspective.at(i));
+	for(int dep1 = 0; dep1!= perspective.size(); dep1++) {
+		setCoreParameter("Perspective."+ std::to_string(dep1), perspective.at(dep1));
+	}
 }
 
 std::string ChatRequest::getTag()const

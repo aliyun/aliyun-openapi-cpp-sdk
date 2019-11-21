@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::DeleteCoreWordRequest;
 
 DeleteCoreWordRequest::DeleteCoreWordRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "DeleteCoreWord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCoreWordRequest::~DeleteCoreWordRequest()
 {}

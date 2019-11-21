@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::AppendEntityMemberRequest;
 
 AppendEntityMemberRequest::AppendEntityMemberRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "AppendEntityMember")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AppendEntityMemberRequest::~AppendEntityMemberRequest()
 {}

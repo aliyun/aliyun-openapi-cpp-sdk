@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::QueryPerspectivesRequest;
 
 QueryPerspectivesRequest::QueryPerspectivesRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "QueryPerspectives")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryPerspectivesRequest::~QueryPerspectivesRequest()
 {}

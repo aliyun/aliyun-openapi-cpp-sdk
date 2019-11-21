@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::DeleteIntentRequest;
 
 DeleteIntentRequest::DeleteIntentRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "DeleteIntent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIntentRequest::~DeleteIntentRequest()
 {}

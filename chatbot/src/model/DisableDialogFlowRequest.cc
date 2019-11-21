@@ -20,7 +20,9 @@ using AlibabaCloud::Chatbot::Model::DisableDialogFlowRequest;
 
 DisableDialogFlowRequest::DisableDialogFlowRequest() :
 	RpcServiceRequest("chatbot", "2017-10-11", "DisableDialogFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisableDialogFlowRequest::~DisableDialogFlowRequest()
 {}
