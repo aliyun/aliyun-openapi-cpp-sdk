@@ -107,8 +107,8 @@ void DescribeDialogFlowResult::parse(const std::string &payload)
 			nodesItemObject.pluginData.function.pluginFieldDataFunction.type = pluginFieldDataFunctionNode["Type"].asString();
 		if(!pluginFieldDataFunctionNode["Params"].isNull())
 			nodesItemObject.pluginData.function.pluginFieldDataFunction.params = pluginFieldDataFunctionNode["Params"].asString();
-		auto allSwitchNode = pluginFieldDataFunctionNode["Switch"]["SwitchItem"];
-		for (auto pluginFieldDataFunctionNodeSwitchSwitchItem : allSwitchNode)
+		auto all_SwitchNode = pluginFieldDataFunctionNode["Switch"]["SwitchItem"];
+		for (auto pluginFieldDataFunctionNodeSwitchSwitchItem : all_SwitchNode)
 		{
 			ModuleDefinition::NodesItem::PluginData::Function::PluginFieldDataFunction::SwitchItem switchItemObject;
 			if(!pluginFieldDataFunctionNodeSwitchSwitchItem["Id"].isNull())
@@ -121,7 +121,7 @@ void DescribeDialogFlowResult::parse(const std::string &payload)
 				switchItemObject.value = pluginFieldDataFunctionNodeSwitchSwitchItem["Value"].asString();
 			if(!pluginFieldDataFunctionNodeSwitchSwitchItem["Name"].isNull())
 				switchItemObject.name = pluginFieldDataFunctionNodeSwitchSwitchItem["Name"].asString();
-			nodesItemObject.pluginData.function.pluginFieldDataFunction.switch.push_back(switchItemObject);
+			nodesItemObject.pluginData.function.pluginFieldDataFunction._switch.push_back(switchItemObject);
 		}
 		auto responseNode = pluginDataNode["Response"];
 		auto pluginFieldDataResponseNode = responseNode["PluginFieldDataResponse"];

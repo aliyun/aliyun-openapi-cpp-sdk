@@ -75,8 +75,8 @@ namespace AlibabaCloud
 									std::string function;
 									std::string aliyunFunction;
 									std::string type;
+									std::vector<SwitchItem> _switch;
 									std::string description;
-									std::vector<SwitchItem> switch;
 									std::string params;
 									std::string endPoint;
 									std::string code;
