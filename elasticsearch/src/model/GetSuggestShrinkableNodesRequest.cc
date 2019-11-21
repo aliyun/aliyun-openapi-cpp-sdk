@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::GetSuggestShrinkableNodesRequest;
 
 GetSuggestShrinkableNodesRequest::GetSuggestShrinkableNodesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/suggest-shrinkable-nodes");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetSuggestShrinkableNodesRequest::~GetSuggestShrinkableNodesRequest()
 {}

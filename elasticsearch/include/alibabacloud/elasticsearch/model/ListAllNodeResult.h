@@ -48,15 +48,11 @@ namespace AlibabaCloud
 				ListAllNodeResult();
 				explicit ListAllNodeResult(const std::string &payload);
 				~ListAllNodeResult();
-				std::string getMessage()const;
-				std::string getCode()const;
 				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				std::string code_;
 				std::vector<ResultItem> result_;
 
 			};

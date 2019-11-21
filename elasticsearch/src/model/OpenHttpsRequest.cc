@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::OpenHttpsRequest;
 
 OpenHttpsRequest::OpenHttpsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/actions/open-https");
+	setMethod(HttpRequest::Method::Post);
+}
 
 OpenHttpsRequest::~OpenHttpsRequest()
 {}

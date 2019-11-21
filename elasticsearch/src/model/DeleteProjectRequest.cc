@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::DeleteProjectRequest;
 
 DeleteProjectRequest::DeleteProjectRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/projects/[Id]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteProjectRequest::~DeleteProjectRequest()
 {}

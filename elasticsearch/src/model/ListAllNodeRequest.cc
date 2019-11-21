@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::ListAllNodeRequest;
 
 ListAllNodeRequest::ListAllNodeRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/nodes");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListAllNodeRequest::~ListAllNodeRequest()
 {}

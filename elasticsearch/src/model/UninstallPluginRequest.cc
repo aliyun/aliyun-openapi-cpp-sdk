@@ -20,7 +20,10 @@ using AlibabaCloud::Elasticsearch::Model::UninstallPluginRequest;
 
 UninstallPluginRequest::UninstallPluginRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
-{}
+{
+	setResourcePath("/openapi/instances/[InstanceId]/plugins/actions/uninstall");
+	setMethod(HttpRequest::Method::Post);
+}
 
 UninstallPluginRequest::~UninstallPluginRequest()
 {}

@@ -37,15 +37,11 @@ namespace AlibabaCloud
 				ValidateTransferableNodesResult();
 				explicit ValidateTransferableNodesResult(const std::string &payload);
 				~ValidateTransferableNodesResult();
-				std::string getMessage()const;
-				std::string getCode()const;
 				bool getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				std::string code_;
 				bool result_;
 
 			};

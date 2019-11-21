@@ -49,21 +49,7 @@ void GetTransferableNodesResult::parse(const std::string &payload)
 			resultObject.port = std::stoi(valueResultResultItem["port"].asString());
 		result_.push_back(resultObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 
-}
-
-std::string GetTransferableNodesResult::getMessage()const
-{
-	return message_;
-}
-
-std::string GetTransferableNodesResult::getCode()const
-{
-	return code_;
 }
 
 std::vector<GetTransferableNodesResult::ResultItem> GetTransferableNodesResult::getResult()const

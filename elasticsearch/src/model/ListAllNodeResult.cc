@@ -61,21 +61,7 @@ void ListAllNodeResult::parse(const std::string &payload)
 			resultObject.health = valueResultResultItem["health"].asString();
 		result_.push_back(resultObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 
-}
-
-std::string ListAllNodeResult::getMessage()const
-{
-	return message_;
-}
-
-std::string ListAllNodeResult::getCode()const
-{
-	return code_;
 }
 
 std::vector<ListAllNodeResult::ResultItem> ListAllNodeResult::getResult()const

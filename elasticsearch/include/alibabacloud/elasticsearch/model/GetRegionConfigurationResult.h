@@ -109,11 +109,22 @@ namespace AlibabaCloud
 						int scaleLimit;
 						int maxSize;
 					};
+					struct CategoryEntity
+					{
+						struct VersionEntity
+						{
+							std::string value;
+							std::string key;
+						};
+						std::vector<CategoryEntity::VersionEntity> supportVersionList;
+						std::string instanceCategory;
+					};
 					std::vector<DataDiskListItem> dataDiskList;
 					std::vector<NodeSpecListItem> nodeSpecList;
 					ClientNodeAmountRange clientNodeAmountRange;
 					std::vector<Disk> masterDiskList;
 					Node node;
+					std::vector<CategoryEntity> supportVersions;
 					WarmNodeProperties warmNodeProperties;
 					std::vector<Disk> clientNodeDiskList;
 					std::vector<EsVersionsLatestListItem> esVersionsLatestList;
