@@ -35,22 +35,18 @@ SearchFaceResult::~SearchFaceResult()
 
 void SearchFaceResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFaceResults = value["FaceResults"]["FaceResult"];
-	for (auto value : allFaceResults)
+	auto allFaceResultsNode = value["FaceResults"]["FaceResult"];
+	for (auto valueFaceResultsFaceResult : allFaceResultsNode)
 	{
 		FaceResult faceResultsObject;
-		if(!value["FaceToken"].isNull())
-			faceResultsObject.faceToken = value["FaceToken"].asString();
-		if(!value["Probability"].isNull())
-			faceResultsObject.probability = std::stof(value["Probability"].asString());
+		if(!valueFaceResultsFaceResult["FaceToken"].isNull())
+			faceResultsObject.faceToken = valueFaceResultsFaceResult["FaceToken"].asString();
+		if(!valueFaceResultsFaceResult["Probability"].isNull())
+			faceResultsObject.probability = std::stof(valueFaceResultsFaceResult["Probability"].asString());
 		faceResults_.push_back(faceResultsObject);
 	}
 	auto rectNode = value["Rect"];
