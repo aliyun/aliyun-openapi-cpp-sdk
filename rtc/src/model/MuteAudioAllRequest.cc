@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::MuteAudioAllRequest;
 
 MuteAudioAllRequest::MuteAudioAllRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "MuteAudioAll")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MuteAudioAllRequest::~MuteAudioAllRequest()
 {}

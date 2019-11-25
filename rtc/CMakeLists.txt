@@ -23,8 +23,6 @@ set(rtc_public_header
 set(rtc_public_header_model 
 	include/alibabacloud/rtc/model/CreateChannelRequest.h
 	include/alibabacloud/rtc/model/CreateChannelResult.h
-	include/alibabacloud/rtc/model/CreateChannelTokenRequest.h
-	include/alibabacloud/rtc/model/CreateChannelTokenResult.h
 	include/alibabacloud/rtc/model/CreateConferenceRequest.h
 	include/alibabacloud/rtc/model/CreateConferenceResult.h
 	include/alibabacloud/rtc/model/CreateTemplateRequest.h
@@ -41,14 +39,6 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DescribeChannelParticipantsResult.h
 	include/alibabacloud/rtc/model/DescribeConferenceAuthInfoRequest.h
 	include/alibabacloud/rtc/model/DescribeConferenceAuthInfoResult.h
-	include/alibabacloud/rtc/model/DescribeRealTimeRecordDetailRequest.h
-	include/alibabacloud/rtc/model/DescribeRealTimeRecordDetailResult.h
-	include/alibabacloud/rtc/model/DescribeRealTimeRecordListRequest.h
-	include/alibabacloud/rtc/model/DescribeRealTimeRecordListResult.h
-	include/alibabacloud/rtc/model/DescribeRecordDetailRequest.h
-	include/alibabacloud/rtc/model/DescribeRecordDetailResult.h
-	include/alibabacloud/rtc/model/DescribeRecordListRequest.h
-	include/alibabacloud/rtc/model/DescribeRecordListResult.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelCntDataRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelCntDataResult.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelListRequest.h
@@ -65,18 +55,10 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DescribeRtcPeakUserCntDataResult.h
 	include/alibabacloud/rtc/model/DescribeRtcUserCntDataRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcUserCntDataResult.h
-	include/alibabacloud/rtc/model/DescribeStatisRequest.h
-	include/alibabacloud/rtc/model/DescribeStatisResult.h
-	include/alibabacloud/rtc/model/GetAllTemplateRequest.h
-	include/alibabacloud/rtc/model/GetAllTemplateResult.h
 	include/alibabacloud/rtc/model/GetMPUTaskStatusRequest.h
 	include/alibabacloud/rtc/model/GetMPUTaskStatusResult.h
-	include/alibabacloud/rtc/model/GetTaskParamRequest.h
-	include/alibabacloud/rtc/model/GetTaskParamResult.h
 	include/alibabacloud/rtc/model/GetTaskStatusRequest.h
 	include/alibabacloud/rtc/model/GetTaskStatusResult.h
-	include/alibabacloud/rtc/model/GetTemplateInfoRequest.h
-	include/alibabacloud/rtc/model/GetTemplateInfoResult.h
 	include/alibabacloud/rtc/model/ModifyAppRequest.h
 	include/alibabacloud/rtc/model/ModifyAppResult.h
 	include/alibabacloud/rtc/model/ModifyConferenceRequest.h
@@ -106,16 +88,12 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/UpdateChannelRequest.h
 	include/alibabacloud/rtc/model/UpdateChannelResult.h
 	include/alibabacloud/rtc/model/UpdateMPULayoutRequest.h
-	include/alibabacloud/rtc/model/UpdateMPULayoutResult.h
-	include/alibabacloud/rtc/model/UpdateTaskParamRequest.h
-	include/alibabacloud/rtc/model/UpdateTaskParamResult.h )
+	include/alibabacloud/rtc/model/UpdateMPULayoutResult.h )
 
 set(rtc_src 
 	src/RtcClient.cc
 	src/model/CreateChannelRequest.cc
 	src/model/CreateChannelResult.cc
-	src/model/CreateChannelTokenRequest.cc
-	src/model/CreateChannelTokenResult.cc
 	src/model/CreateConferenceRequest.cc
 	src/model/CreateConferenceResult.cc
 	src/model/CreateTemplateRequest.cc
@@ -132,14 +110,6 @@ set(rtc_src
 	src/model/DescribeChannelParticipantsResult.cc
 	src/model/DescribeConferenceAuthInfoRequest.cc
 	src/model/DescribeConferenceAuthInfoResult.cc
-	src/model/DescribeRealTimeRecordDetailRequest.cc
-	src/model/DescribeRealTimeRecordDetailResult.cc
-	src/model/DescribeRealTimeRecordListRequest.cc
-	src/model/DescribeRealTimeRecordListResult.cc
-	src/model/DescribeRecordDetailRequest.cc
-	src/model/DescribeRecordDetailResult.cc
-	src/model/DescribeRecordListRequest.cc
-	src/model/DescribeRecordListResult.cc
 	src/model/DescribeRtcChannelCntDataRequest.cc
 	src/model/DescribeRtcChannelCntDataResult.cc
 	src/model/DescribeRtcChannelListRequest.cc
@@ -156,18 +126,10 @@ set(rtc_src
 	src/model/DescribeRtcPeakUserCntDataResult.cc
 	src/model/DescribeRtcUserCntDataRequest.cc
 	src/model/DescribeRtcUserCntDataResult.cc
-	src/model/DescribeStatisRequest.cc
-	src/model/DescribeStatisResult.cc
-	src/model/GetAllTemplateRequest.cc
-	src/model/GetAllTemplateResult.cc
 	src/model/GetMPUTaskStatusRequest.cc
 	src/model/GetMPUTaskStatusResult.cc
-	src/model/GetTaskParamRequest.cc
-	src/model/GetTaskParamResult.cc
 	src/model/GetTaskStatusRequest.cc
 	src/model/GetTaskStatusResult.cc
-	src/model/GetTemplateInfoRequest.cc
-	src/model/GetTemplateInfoResult.cc
 	src/model/ModifyAppRequest.cc
 	src/model/ModifyAppResult.cc
 	src/model/ModifyConferenceRequest.cc
@@ -197,9 +159,7 @@ set(rtc_src
 	src/model/UpdateChannelRequest.cc
 	src/model/UpdateChannelResult.cc
 	src/model/UpdateMPULayoutRequest.cc
-	src/model/UpdateMPULayoutResult.cc
-	src/model/UpdateTaskParamRequest.cc
-	src/model/UpdateTaskParamResult.cc )
+	src/model/UpdateMPULayoutResult.cc )
 
 add_library(rtc ${LIB_TYPE}
 	${rtc_public_header}

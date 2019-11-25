@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::GetTaskStatusRequest;
 
 GetTaskStatusRequest::GetTaskStatusRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "GetTaskStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTaskStatusRequest::~GetTaskStatusRequest()
 {}

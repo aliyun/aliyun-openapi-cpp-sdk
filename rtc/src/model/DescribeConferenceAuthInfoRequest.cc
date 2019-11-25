@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::DescribeConferenceAuthInfoRequest;
 
 DescribeConferenceAuthInfoRequest::DescribeConferenceAuthInfoRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "DescribeConferenceAuthInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeConferenceAuthInfoRequest::~DescribeConferenceAuthInfoRequest()
 {}

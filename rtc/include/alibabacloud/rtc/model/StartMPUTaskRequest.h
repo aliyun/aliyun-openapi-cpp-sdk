@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setStreamURL(const std::string& streamURL);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::vector<std::string> getSubSpecUsers()const;
+				void setSubSpecUsers(const std::vector<std::string>& subSpecUsers);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
 				int getMediaEncode()const;
@@ -73,6 +75,7 @@ namespace AlibabaCloud
 				std::string taskId_;
 				std::string streamURL_;
 				long ownerId_;
+				std::vector<std::string> subSpecUsers_;
 				std::string appId_;
 				int mediaEncode_;
 				std::string channelId_;

@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::CreateChannelRequest;
 
 CreateChannelRequest::CreateChannelRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "CreateChannel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateChannelRequest::~CreateChannelRequest()
 {}

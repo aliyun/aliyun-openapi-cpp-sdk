@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::ModifyConferenceRequest;
 
 ModifyConferenceRequest::ModifyConferenceRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "ModifyConference")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyConferenceRequest::~ModifyConferenceRequest()
 {}

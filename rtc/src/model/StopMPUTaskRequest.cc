@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::StopMPUTaskRequest;
 
 StopMPUTaskRequest::StopMPUTaskRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "StopMPUTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopMPUTaskRequest::~StopMPUTaskRequest()
 {}

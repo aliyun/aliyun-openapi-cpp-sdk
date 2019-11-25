@@ -24,8 +24,6 @@
 #include "RtcExport.h"
 #include "model/CreateChannelRequest.h"
 #include "model/CreateChannelResult.h"
-#include "model/CreateChannelTokenRequest.h"
-#include "model/CreateChannelTokenResult.h"
 #include "model/CreateConferenceRequest.h"
 #include "model/CreateConferenceResult.h"
 #include "model/CreateTemplateRequest.h"
@@ -42,14 +40,6 @@
 #include "model/DescribeChannelParticipantsResult.h"
 #include "model/DescribeConferenceAuthInfoRequest.h"
 #include "model/DescribeConferenceAuthInfoResult.h"
-#include "model/DescribeRealTimeRecordDetailRequest.h"
-#include "model/DescribeRealTimeRecordDetailResult.h"
-#include "model/DescribeRealTimeRecordListRequest.h"
-#include "model/DescribeRealTimeRecordListResult.h"
-#include "model/DescribeRecordDetailRequest.h"
-#include "model/DescribeRecordDetailResult.h"
-#include "model/DescribeRecordListRequest.h"
-#include "model/DescribeRecordListResult.h"
 #include "model/DescribeRtcChannelCntDataRequest.h"
 #include "model/DescribeRtcChannelCntDataResult.h"
 #include "model/DescribeRtcChannelListRequest.h"
@@ -66,18 +56,10 @@
 #include "model/DescribeRtcPeakUserCntDataResult.h"
 #include "model/DescribeRtcUserCntDataRequest.h"
 #include "model/DescribeRtcUserCntDataResult.h"
-#include "model/DescribeStatisRequest.h"
-#include "model/DescribeStatisResult.h"
-#include "model/GetAllTemplateRequest.h"
-#include "model/GetAllTemplateResult.h"
 #include "model/GetMPUTaskStatusRequest.h"
 #include "model/GetMPUTaskStatusResult.h"
-#include "model/GetTaskParamRequest.h"
-#include "model/GetTaskParamResult.h"
 #include "model/GetTaskStatusRequest.h"
 #include "model/GetTaskStatusResult.h"
-#include "model/GetTemplateInfoRequest.h"
-#include "model/GetTemplateInfoResult.h"
 #include "model/ModifyAppRequest.h"
 #include "model/ModifyAppResult.h"
 #include "model/ModifyConferenceRequest.h"
@@ -108,8 +90,6 @@
 #include "model/UpdateChannelResult.h"
 #include "model/UpdateMPULayoutRequest.h"
 #include "model/UpdateMPULayoutResult.h"
-#include "model/UpdateTaskParamRequest.h"
-#include "model/UpdateTaskParamResult.h"
 
 
 namespace AlibabaCloud
@@ -122,9 +102,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateChannelResult> CreateChannelOutcome;
 			typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::CreateChannelRequest&, const CreateChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateChannelAsyncHandler;
-			typedef Outcome<Error, Model::CreateChannelTokenResult> CreateChannelTokenOutcome;
-			typedef std::future<CreateChannelTokenOutcome> CreateChannelTokenOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::CreateChannelTokenRequest&, const CreateChannelTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateChannelTokenAsyncHandler;
 			typedef Outcome<Error, Model::CreateConferenceResult> CreateConferenceOutcome;
 			typedef std::future<CreateConferenceOutcome> CreateConferenceOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::CreateConferenceRequest&, const CreateConferenceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConferenceAsyncHandler;
@@ -149,18 +126,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeConferenceAuthInfoResult> DescribeConferenceAuthInfoOutcome;
 			typedef std::future<DescribeConferenceAuthInfoOutcome> DescribeConferenceAuthInfoOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeConferenceAuthInfoRequest&, const DescribeConferenceAuthInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConferenceAuthInfoAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRealTimeRecordDetailResult> DescribeRealTimeRecordDetailOutcome;
-			typedef std::future<DescribeRealTimeRecordDetailOutcome> DescribeRealTimeRecordDetailOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::DescribeRealTimeRecordDetailRequest&, const DescribeRealTimeRecordDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealTimeRecordDetailAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRealTimeRecordListResult> DescribeRealTimeRecordListOutcome;
-			typedef std::future<DescribeRealTimeRecordListOutcome> DescribeRealTimeRecordListOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::DescribeRealTimeRecordListRequest&, const DescribeRealTimeRecordListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealTimeRecordListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRecordDetailResult> DescribeRecordDetailOutcome;
-			typedef std::future<DescribeRecordDetailOutcome> DescribeRecordDetailOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::DescribeRecordDetailRequest&, const DescribeRecordDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordDetailAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRecordListResult> DescribeRecordListOutcome;
-			typedef std::future<DescribeRecordListOutcome> DescribeRecordListOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::DescribeRecordListRequest&, const DescribeRecordListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRtcChannelCntDataResult> DescribeRtcChannelCntDataOutcome;
 			typedef std::future<DescribeRtcChannelCntDataOutcome> DescribeRtcChannelCntDataOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeRtcChannelCntDataRequest&, const DescribeRtcChannelCntDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRtcChannelCntDataAsyncHandler;
@@ -185,24 +150,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRtcUserCntDataResult> DescribeRtcUserCntDataOutcome;
 			typedef std::future<DescribeRtcUserCntDataOutcome> DescribeRtcUserCntDataOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeRtcUserCntDataRequest&, const DescribeRtcUserCntDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRtcUserCntDataAsyncHandler;
-			typedef Outcome<Error, Model::DescribeStatisResult> DescribeStatisOutcome;
-			typedef std::future<DescribeStatisOutcome> DescribeStatisOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::DescribeStatisRequest&, const DescribeStatisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStatisAsyncHandler;
-			typedef Outcome<Error, Model::GetAllTemplateResult> GetAllTemplateOutcome;
-			typedef std::future<GetAllTemplateOutcome> GetAllTemplateOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::GetAllTemplateRequest&, const GetAllTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAllTemplateAsyncHandler;
 			typedef Outcome<Error, Model::GetMPUTaskStatusResult> GetMPUTaskStatusOutcome;
 			typedef std::future<GetMPUTaskStatusOutcome> GetMPUTaskStatusOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::GetMPUTaskStatusRequest&, const GetMPUTaskStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMPUTaskStatusAsyncHandler;
-			typedef Outcome<Error, Model::GetTaskParamResult> GetTaskParamOutcome;
-			typedef std::future<GetTaskParamOutcome> GetTaskParamOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::GetTaskParamRequest&, const GetTaskParamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskParamAsyncHandler;
 			typedef Outcome<Error, Model::GetTaskStatusResult> GetTaskStatusOutcome;
 			typedef std::future<GetTaskStatusOutcome> GetTaskStatusOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::GetTaskStatusRequest&, const GetTaskStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskStatusAsyncHandler;
-			typedef Outcome<Error, Model::GetTemplateInfoResult> GetTemplateInfoOutcome;
-			typedef std::future<GetTemplateInfoOutcome> GetTemplateInfoOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::GetTemplateInfoRequest&, const GetTemplateInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTemplateInfoAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAppResult> ModifyAppOutcome;
 			typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::ModifyAppRequest&, const ModifyAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
@@ -248,9 +201,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateMPULayoutResult> UpdateMPULayoutOutcome;
 			typedef std::future<UpdateMPULayoutOutcome> UpdateMPULayoutOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::UpdateMPULayoutRequest&, const UpdateMPULayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMPULayoutAsyncHandler;
-			typedef Outcome<Error, Model::UpdateTaskParamResult> UpdateTaskParamOutcome;
-			typedef std::future<UpdateTaskParamOutcome> UpdateTaskParamOutcomeCallable;
-			typedef std::function<void(const RtcClient*, const Model::UpdateTaskParamRequest&, const UpdateTaskParamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTaskParamAsyncHandler;
 
 			RtcClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			RtcClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -259,9 +209,6 @@ namespace AlibabaCloud
 			CreateChannelOutcome createChannel(const Model::CreateChannelRequest &request)const;
 			void createChannelAsync(const Model::CreateChannelRequest& request, const CreateChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateChannelOutcomeCallable createChannelCallable(const Model::CreateChannelRequest& request) const;
-			CreateChannelTokenOutcome createChannelToken(const Model::CreateChannelTokenRequest &request)const;
-			void createChannelTokenAsync(const Model::CreateChannelTokenRequest& request, const CreateChannelTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateChannelTokenOutcomeCallable createChannelTokenCallable(const Model::CreateChannelTokenRequest& request) const;
 			CreateConferenceOutcome createConference(const Model::CreateConferenceRequest &request)const;
 			void createConferenceAsync(const Model::CreateConferenceRequest& request, const CreateConferenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateConferenceOutcomeCallable createConferenceCallable(const Model::CreateConferenceRequest& request) const;
@@ -286,18 +233,6 @@ namespace AlibabaCloud
 			DescribeConferenceAuthInfoOutcome describeConferenceAuthInfo(const Model::DescribeConferenceAuthInfoRequest &request)const;
 			void describeConferenceAuthInfoAsync(const Model::DescribeConferenceAuthInfoRequest& request, const DescribeConferenceAuthInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConferenceAuthInfoOutcomeCallable describeConferenceAuthInfoCallable(const Model::DescribeConferenceAuthInfoRequest& request) const;
-			DescribeRealTimeRecordDetailOutcome describeRealTimeRecordDetail(const Model::DescribeRealTimeRecordDetailRequest &request)const;
-			void describeRealTimeRecordDetailAsync(const Model::DescribeRealTimeRecordDetailRequest& request, const DescribeRealTimeRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRealTimeRecordDetailOutcomeCallable describeRealTimeRecordDetailCallable(const Model::DescribeRealTimeRecordDetailRequest& request) const;
-			DescribeRealTimeRecordListOutcome describeRealTimeRecordList(const Model::DescribeRealTimeRecordListRequest &request)const;
-			void describeRealTimeRecordListAsync(const Model::DescribeRealTimeRecordListRequest& request, const DescribeRealTimeRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRealTimeRecordListOutcomeCallable describeRealTimeRecordListCallable(const Model::DescribeRealTimeRecordListRequest& request) const;
-			DescribeRecordDetailOutcome describeRecordDetail(const Model::DescribeRecordDetailRequest &request)const;
-			void describeRecordDetailAsync(const Model::DescribeRecordDetailRequest& request, const DescribeRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRecordDetailOutcomeCallable describeRecordDetailCallable(const Model::DescribeRecordDetailRequest& request) const;
-			DescribeRecordListOutcome describeRecordList(const Model::DescribeRecordListRequest &request)const;
-			void describeRecordListAsync(const Model::DescribeRecordListRequest& request, const DescribeRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRecordListOutcomeCallable describeRecordListCallable(const Model::DescribeRecordListRequest& request) const;
 			DescribeRtcChannelCntDataOutcome describeRtcChannelCntData(const Model::DescribeRtcChannelCntDataRequest &request)const;
 			void describeRtcChannelCntDataAsync(const Model::DescribeRtcChannelCntDataRequest& request, const DescribeRtcChannelCntDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRtcChannelCntDataOutcomeCallable describeRtcChannelCntDataCallable(const Model::DescribeRtcChannelCntDataRequest& request) const;
@@ -322,24 +257,12 @@ namespace AlibabaCloud
 			DescribeRtcUserCntDataOutcome describeRtcUserCntData(const Model::DescribeRtcUserCntDataRequest &request)const;
 			void describeRtcUserCntDataAsync(const Model::DescribeRtcUserCntDataRequest& request, const DescribeRtcUserCntDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRtcUserCntDataOutcomeCallable describeRtcUserCntDataCallable(const Model::DescribeRtcUserCntDataRequest& request) const;
-			DescribeStatisOutcome describeStatis(const Model::DescribeStatisRequest &request)const;
-			void describeStatisAsync(const Model::DescribeStatisRequest& request, const DescribeStatisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeStatisOutcomeCallable describeStatisCallable(const Model::DescribeStatisRequest& request) const;
-			GetAllTemplateOutcome getAllTemplate(const Model::GetAllTemplateRequest &request)const;
-			void getAllTemplateAsync(const Model::GetAllTemplateRequest& request, const GetAllTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetAllTemplateOutcomeCallable getAllTemplateCallable(const Model::GetAllTemplateRequest& request) const;
 			GetMPUTaskStatusOutcome getMPUTaskStatus(const Model::GetMPUTaskStatusRequest &request)const;
 			void getMPUTaskStatusAsync(const Model::GetMPUTaskStatusRequest& request, const GetMPUTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMPUTaskStatusOutcomeCallable getMPUTaskStatusCallable(const Model::GetMPUTaskStatusRequest& request) const;
-			GetTaskParamOutcome getTaskParam(const Model::GetTaskParamRequest &request)const;
-			void getTaskParamAsync(const Model::GetTaskParamRequest& request, const GetTaskParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetTaskParamOutcomeCallable getTaskParamCallable(const Model::GetTaskParamRequest& request) const;
 			GetTaskStatusOutcome getTaskStatus(const Model::GetTaskStatusRequest &request)const;
 			void getTaskStatusAsync(const Model::GetTaskStatusRequest& request, const GetTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTaskStatusOutcomeCallable getTaskStatusCallable(const Model::GetTaskStatusRequest& request) const;
-			GetTemplateInfoOutcome getTemplateInfo(const Model::GetTemplateInfoRequest &request)const;
-			void getTemplateInfoAsync(const Model::GetTemplateInfoRequest& request, const GetTemplateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetTemplateInfoOutcomeCallable getTemplateInfoCallable(const Model::GetTemplateInfoRequest& request) const;
 			ModifyAppOutcome modifyApp(const Model::ModifyAppRequest &request)const;
 			void modifyAppAsync(const Model::ModifyAppRequest& request, const ModifyAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAppOutcomeCallable modifyAppCallable(const Model::ModifyAppRequest& request) const;
@@ -385,9 +308,6 @@ namespace AlibabaCloud
 			UpdateMPULayoutOutcome updateMPULayout(const Model::UpdateMPULayoutRequest &request)const;
 			void updateMPULayoutAsync(const Model::UpdateMPULayoutRequest& request, const UpdateMPULayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateMPULayoutOutcomeCallable updateMPULayoutCallable(const Model::UpdateMPULayoutRequest& request) const;
-			UpdateTaskParamOutcome updateTaskParam(const Model::UpdateTaskParamRequest &request)const;
-			void updateTaskParamAsync(const Model::UpdateTaskParamRequest& request, const UpdateTaskParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateTaskParamOutcomeCallable updateTaskParamCallable(const Model::UpdateTaskParamRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

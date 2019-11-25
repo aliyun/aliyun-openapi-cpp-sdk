@@ -1,3 +1,6 @@
+2019-11-25 Version 1.36.196
+- One or more people can be subscribed when creating tasks.
+
 2019-11-21 Version 1.36.195
 - Add ConvertPayType.
 - Add ConvertLogstashPayType.

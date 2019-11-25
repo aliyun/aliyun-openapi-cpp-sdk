@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::DescribeRtcDurationDataRequest;
 
 DescribeRtcDurationDataRequest::DescribeRtcDurationDataRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "DescribeRtcDurationData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRtcDurationDataRequest::~DescribeRtcDurationDataRequest()
 {}

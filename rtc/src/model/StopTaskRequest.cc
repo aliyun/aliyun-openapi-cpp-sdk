@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::StopTaskRequest;
 
 StopTaskRequest::StopTaskRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "StopTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopTaskRequest::~StopTaskRequest()
 {}

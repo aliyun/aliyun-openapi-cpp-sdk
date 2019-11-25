@@ -20,7 +20,9 @@ using AlibabaCloud::Rtc::Model::UpdateChannelRequest;
 
 UpdateChannelRequest::UpdateChannelRequest() :
 	RpcServiceRequest("rtc", "2018-01-11", "UpdateChannel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateChannelRequest::~UpdateChannelRequest()
 {}
