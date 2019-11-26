@@ -123,12 +123,11 @@ std::vector<AddGtmMonitorRequest::IspCityNode> AddGtmMonitorRequest::getIspCityN
 void AddGtmMonitorRequest::setIspCityNode(const std::vector<IspCityNode>& ispCityNode)
 {
 	ispCityNode_ = ispCityNode;
-	int i = 0;
-	for(int i = 0; i!= ispCityNode.size(); i++)	{
-		auto obj = ispCityNode.at(i);
-		std::string str ="IspCityNode."+ std::to_string(i);
-		setCoreParameter(str + ".CityCode", obj.cityCode);
-		setCoreParameter(str + ".IspCode", obj.ispCode);
+	for(int dep1 = 0; dep1!= ispCityNode.size(); dep1++) {
+		auto ispCityNodeObj = ispCityNode.at(dep1);
+		std::string ispCityNodeObjStr = "IspCityNode." + std::to_string(dep1);
+		setCoreParameter(ispCityNodeObjStr + ".CityCode", ispCityNodeObj.cityCode);
+		setCoreParameter(ispCityNodeObjStr + ".IspCode", ispCityNodeObj.ispCode);
 	}
 }
 

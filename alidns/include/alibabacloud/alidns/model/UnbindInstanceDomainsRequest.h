@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEBATCHRESULTDETAILREQUEST_H_
-#define ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEBATCHRESULTDETAILREQUEST_H_
+#ifndef ALIBABACLOUD_ALIDNS_MODEL_UNBINDINSTANCEDOMAINSREQUEST_H_
+#define ALIBABACLOUD_ALIDNS_MODEL_UNBINDINSTANCEDOMAINSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIDNS_EXPORT DescribeBatchResultDetailRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIDNS_EXPORT UnbindInstanceDomainsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeBatchResultDetailRequest();
-				~DescribeBatchResultDetailRequest();
+				UnbindInstanceDomainsRequest();
+				~UnbindInstanceDomainsRequest();
 
-				std::string getBatchType()const;
-				void setBatchType(const std::string& batchType);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getDomainNames()const;
+				void setDomainNames(const std::string& domainNames);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				long getTaskId()const;
-				void setTaskId(long taskId);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 
             private:
-				std::string batchType_;
-				int pageNumber_;
+				std::string domainNames_;
+				std::string instanceId_;
 				std::string userClientIp_;
-				int pageSize_;
 				std::string lang_;
-				long taskId_;
-				std::string status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEBATCHRESULTDETAILREQUEST_H_
+#endif // !ALIBABACLOUD_ALIDNS_MODEL_UNBINDINSTANCEDOMAINSREQUEST_H_

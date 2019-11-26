@@ -51,6 +51,42 @@ AlidnsClient::AlidnsClient(const std::string & accessKeyId, const std::string & 
 AlidnsClient::~AlidnsClient()
 {}
 
+AlidnsClient::AddCustomLineOutcome AlidnsClient::addCustomLine(const AddCustomLineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddCustomLineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddCustomLineOutcome(AddCustomLineResult(outcome.result()));
+	else
+		return AddCustomLineOutcome(outcome.error());
+}
+
+void AlidnsClient::addCustomLineAsync(const AddCustomLineRequest& request, const AddCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addCustomLine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::AddCustomLineOutcomeCallable AlidnsClient::addCustomLineCallable(const AddCustomLineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddCustomLineOutcome()>>(
+			[this, request]()
+			{
+			return this->addCustomLine(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::AddDomainOutcome AlidnsClient::addDomain(const AddDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -81,6 +117,42 @@ AlidnsClient::AddDomainOutcomeCallable AlidnsClient::addDomainCallable(const Add
 			[this, request]()
 			{
 			return this->addDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::AddDomainBackupOutcome AlidnsClient::addDomainBackup(const AddDomainBackupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDomainBackupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDomainBackupOutcome(AddDomainBackupResult(outcome.result()));
+	else
+		return AddDomainBackupOutcome(outcome.error());
+}
+
+void AlidnsClient::addDomainBackupAsync(const AddDomainBackupRequest& request, const AddDomainBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDomainBackup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::AddDomainBackupOutcomeCallable AlidnsClient::addDomainBackupCallable(const AddDomainBackupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDomainBackupOutcome()>>(
+			[this, request]()
+			{
+			return this->addDomainBackup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,6 +375,42 @@ AlidnsClient::AddGtmRecoveryPlanOutcomeCallable AlidnsClient::addGtmRecoveryPlan
 	return task->get_future();
 }
 
+AlidnsClient::BindInstanceDomainsOutcome AlidnsClient::bindInstanceDomains(const BindInstanceDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindInstanceDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindInstanceDomainsOutcome(BindInstanceDomainsResult(outcome.result()));
+	else
+		return BindInstanceDomainsOutcome(outcome.error());
+}
+
+void AlidnsClient::bindInstanceDomainsAsync(const BindInstanceDomainsRequest& request, const BindInstanceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindInstanceDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::BindInstanceDomainsOutcomeCallable AlidnsClient::bindInstanceDomainsCallable(const BindInstanceDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindInstanceDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->bindInstanceDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::ChangeDomainGroupOutcome AlidnsClient::changeDomainGroup(const ChangeDomainGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +477,42 @@ AlidnsClient::ChangeDomainOfDnsProductOutcomeCallable AlidnsClient::changeDomain
 			[this, request]()
 			{
 			return this->changeDomainOfDnsProduct(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DeleteCustomLinesOutcome AlidnsClient::deleteCustomLines(const DeleteCustomLinesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCustomLinesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCustomLinesOutcome(DeleteCustomLinesResult(outcome.result()));
+	else
+		return DeleteCustomLinesOutcome(outcome.error());
+}
+
+void AlidnsClient::deleteCustomLinesAsync(const DeleteCustomLinesRequest& request, const DeleteCustomLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCustomLines(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DeleteCustomLinesOutcomeCallable AlidnsClient::deleteCustomLinesCallable(const DeleteCustomLinesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCustomLinesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCustomLines(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -693,6 +837,78 @@ AlidnsClient::DescribeBatchResultDetailOutcomeCallable AlidnsClient::describeBat
 			[this, request]()
 			{
 			return this->describeBatchResultDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeCustomLineOutcome AlidnsClient::describeCustomLine(const DescribeCustomLineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCustomLineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCustomLineOutcome(DescribeCustomLineResult(outcome.result()));
+	else
+		return DescribeCustomLineOutcome(outcome.error());
+}
+
+void AlidnsClient::describeCustomLineAsync(const DescribeCustomLineRequest& request, const DescribeCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCustomLine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeCustomLineOutcomeCallable AlidnsClient::describeCustomLineCallable(const DescribeCustomLineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCustomLineOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCustomLine(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeCustomLinesOutcome AlidnsClient::describeCustomLines(const DescribeCustomLinesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCustomLinesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCustomLinesOutcome(DescribeCustomLinesResult(outcome.result()));
+	else
+		return DescribeCustomLinesOutcome(outcome.error());
+}
+
+void AlidnsClient::describeCustomLinesAsync(const DescribeCustomLinesRequest& request, const DescribeCustomLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCustomLines(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeCustomLinesOutcomeCallable AlidnsClient::describeCustomLinesCallable(const DescribeCustomLinesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCustomLinesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCustomLines(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1887,6 +2103,42 @@ AlidnsClient::DescribeSupportLinesOutcomeCallable AlidnsClient::describeSupportL
 	return task->get_future();
 }
 
+AlidnsClient::DescribeTransferDomainsOutcome AlidnsClient::describeTransferDomains(const DescribeTransferDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTransferDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTransferDomainsOutcome(DescribeTransferDomainsResult(outcome.result()));
+	else
+		return DescribeTransferDomainsOutcome(outcome.error());
+}
+
+void AlidnsClient::describeTransferDomainsAsync(const DescribeTransferDomainsRequest& request, const DescribeTransferDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTransferDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeTransferDomainsOutcomeCallable AlidnsClient::describeTransferDomainsCallable(const DescribeTransferDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTransferDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTransferDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::ExecuteGtmRecoveryPlanOutcome AlidnsClient::executeGtmRecoveryPlan(const ExecuteGtmRecoveryPlanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2241,6 +2493,114 @@ AlidnsClient::SetGtmMonitorStatusOutcomeCallable AlidnsClient::setGtmMonitorStat
 			[this, request]()
 			{
 			return this->setGtmMonitorStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::TransferDomainOutcome AlidnsClient::transferDomain(const TransferDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TransferDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TransferDomainOutcome(TransferDomainResult(outcome.result()));
+	else
+		return TransferDomainOutcome(outcome.error());
+}
+
+void AlidnsClient::transferDomainAsync(const TransferDomainRequest& request, const TransferDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, transferDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::TransferDomainOutcomeCallable AlidnsClient::transferDomainCallable(const TransferDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TransferDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->transferDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UnbindInstanceDomainsOutcome AlidnsClient::unbindInstanceDomains(const UnbindInstanceDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindInstanceDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindInstanceDomainsOutcome(UnbindInstanceDomainsResult(outcome.result()));
+	else
+		return UnbindInstanceDomainsOutcome(outcome.error());
+}
+
+void AlidnsClient::unbindInstanceDomainsAsync(const UnbindInstanceDomainsRequest& request, const UnbindInstanceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindInstanceDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UnbindInstanceDomainsOutcomeCallable AlidnsClient::unbindInstanceDomainsCallable(const UnbindInstanceDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindInstanceDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindInstanceDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UpdateCustomLineOutcome AlidnsClient::updateCustomLine(const UpdateCustomLineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCustomLineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCustomLineOutcome(UpdateCustomLineResult(outcome.result()));
+	else
+		return UpdateCustomLineOutcome(outcome.error());
+}
+
+void AlidnsClient::updateCustomLineAsync(const UpdateCustomLineRequest& request, const UpdateCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCustomLine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UpdateCustomLineOutcomeCallable AlidnsClient::updateCustomLineCallable(const UpdateCustomLineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCustomLineOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCustomLine(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

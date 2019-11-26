@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEBATCHRESULTDETAILREQUEST_H_
-#define ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEBATCHRESULTDETAILREQUEST_H_
+#ifndef ALIBABACLOUD_ALIDNS_MODEL_UPDATECUSTOMLINEREQUEST_H_
+#define ALIBABACLOUD_ALIDNS_MODEL_UPDATECUSTOMLINEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIDNS_EXPORT DescribeBatchResultDetailRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIDNS_EXPORT UpdateCustomLineRequest : public RpcServiceRequest
 			{
+				struct IpSegment
+				{
+					std::string endIp;
+					std::string startIp;
+				};
 
 			public:
-				DescribeBatchResultDetailRequest();
-				~DescribeBatchResultDetailRequest();
+				UpdateCustomLineRequest();
+				~UpdateCustomLineRequest();
 
-				std::string getBatchType()const;
-				void setBatchType(const std::string& batchType);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				long getLineId()const;
+				void setLineId(long lineId);
+				std::vector<IpSegment> getIpSegment()const;
+				void setIpSegment(const std::vector<IpSegment>& ipSegment);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
+				std::string getLineName()const;
+				void setLineName(const std::string& lineName);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				long getTaskId()const;
-				void setTaskId(long taskId);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 
             private:
-				std::string batchType_;
-				int pageNumber_;
+				long lineId_;
+				std::vector<IpSegment> ipSegment_;
 				std::string userClientIp_;
-				int pageSize_;
+				std::string lineName_;
 				std::string lang_;
-				long taskId_;
-				std::string status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEBATCHRESULTDETAILREQUEST_H_
+#endif // !ALIBABACLOUD_ALIDNS_MODEL_UPDATECUSTOMLINEREQUEST_H_

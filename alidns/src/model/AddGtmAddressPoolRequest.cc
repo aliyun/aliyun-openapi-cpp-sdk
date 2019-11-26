@@ -101,13 +101,12 @@ std::vector<AddGtmAddressPoolRequest::Addr> AddGtmAddressPoolRequest::getAddr()c
 void AddGtmAddressPoolRequest::setAddr(const std::vector<Addr>& addr)
 {
 	addr_ = addr;
-	int i = 0;
-	for(int i = 0; i!= addr.size(); i++)	{
-		auto obj = addr.at(i);
-		std::string str ="Addr."+ std::to_string(i);
-		setCoreParameter(str + ".Mode", obj.mode);
-		setCoreParameter(str + ".LbaWeight", std::to_string(obj.lbaWeight));
-		setCoreParameter(str + ".Value", obj.value);
+	for(int dep1 = 0; dep1!= addr.size(); dep1++) {
+		auto addrObj = addr.at(dep1);
+		std::string addrObjStr = "Addr." + std::to_string(dep1);
+		setCoreParameter(addrObjStr + ".Mode", addrObj.mode);
+		setCoreParameter(addrObjStr + ".LbaWeight", std::to_string(addrObj.lbaWeight));
+		setCoreParameter(addrObjStr + ".Value", addrObj.value);
 	}
 }
 
@@ -185,12 +184,11 @@ std::vector<AddGtmAddressPoolRequest::IspCityNode> AddGtmAddressPoolRequest::get
 void AddGtmAddressPoolRequest::setIspCityNode(const std::vector<IspCityNode>& ispCityNode)
 {
 	ispCityNode_ = ispCityNode;
-	int i = 0;
-	for(int i = 0; i!= ispCityNode.size(); i++)	{
-		auto obj = ispCityNode.at(i);
-		std::string str ="IspCityNode."+ std::to_string(i);
-		setCoreParameter(str + ".CityCode", obj.cityCode);
-		setCoreParameter(str + ".IspCode", obj.ispCode);
+	for(int dep1 = 0; dep1!= ispCityNode.size(); dep1++) {
+		auto ispCityNodeObj = ispCityNode.at(dep1);
+		std::string ispCityNodeObjStr = "IspCityNode." + std::to_string(dep1);
+		setCoreParameter(ispCityNodeObjStr + ".CityCode", ispCityNodeObj.cityCode);
+		setCoreParameter(ispCityNodeObjStr + ".IspCode", ispCityNodeObj.ispCode);
 	}
 }
 

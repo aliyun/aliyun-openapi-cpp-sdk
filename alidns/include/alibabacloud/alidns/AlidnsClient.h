@@ -22,8 +22,12 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "AlidnsExport.h"
+#include "model/AddCustomLineRequest.h"
+#include "model/AddCustomLineResult.h"
 #include "model/AddDomainRequest.h"
 #include "model/AddDomainResult.h"
+#include "model/AddDomainBackupRequest.h"
+#include "model/AddDomainBackupResult.h"
 #include "model/AddDomainGroupRequest.h"
 #include "model/AddDomainGroupResult.h"
 #include "model/AddDomainRecordRequest.h"
@@ -36,10 +40,14 @@
 #include "model/AddGtmMonitorResult.h"
 #include "model/AddGtmRecoveryPlanRequest.h"
 #include "model/AddGtmRecoveryPlanResult.h"
+#include "model/BindInstanceDomainsRequest.h"
+#include "model/BindInstanceDomainsResult.h"
 #include "model/ChangeDomainGroupRequest.h"
 #include "model/ChangeDomainGroupResult.h"
 #include "model/ChangeDomainOfDnsProductRequest.h"
 #include "model/ChangeDomainOfDnsProductResult.h"
+#include "model/DeleteCustomLinesRequest.h"
+#include "model/DeleteCustomLinesResult.h"
 #include "model/DeleteDomainRequest.h"
 #include "model/DeleteDomainResult.h"
 #include "model/DeleteDomainGroupRequest.h"
@@ -58,6 +66,10 @@
 #include "model/DescribeBatchResultCountResult.h"
 #include "model/DescribeBatchResultDetailRequest.h"
 #include "model/DescribeBatchResultDetailResult.h"
+#include "model/DescribeCustomLineRequest.h"
+#include "model/DescribeCustomLineResult.h"
+#include "model/DescribeCustomLinesRequest.h"
+#include "model/DescribeCustomLinesResult.h"
 #include "model/DescribeDNSSLBSubDomainsRequest.h"
 #include "model/DescribeDNSSLBSubDomainsResult.h"
 #include "model/DescribeDnsProductInstanceRequest.h"
@@ -124,6 +136,8 @@
 #include "model/DescribeSubDomainRecordsResult.h"
 #include "model/DescribeSupportLinesRequest.h"
 #include "model/DescribeSupportLinesResult.h"
+#include "model/DescribeTransferDomainsRequest.h"
+#include "model/DescribeTransferDomainsResult.h"
 #include "model/ExecuteGtmRecoveryPlanRequest.h"
 #include "model/ExecuteGtmRecoveryPlanResult.h"
 #include "model/GetMainDomainNameRequest.h"
@@ -144,6 +158,12 @@
 #include "model/SetGtmAccessModeResult.h"
 #include "model/SetGtmMonitorStatusRequest.h"
 #include "model/SetGtmMonitorStatusResult.h"
+#include "model/TransferDomainRequest.h"
+#include "model/TransferDomainResult.h"
+#include "model/UnbindInstanceDomainsRequest.h"
+#include "model/UnbindInstanceDomainsResult.h"
+#include "model/UpdateCustomLineRequest.h"
+#include "model/UpdateCustomLineResult.h"
 #include "model/UpdateDNSSLBWeightRequest.h"
 #include "model/UpdateDNSSLBWeightResult.h"
 #include "model/UpdateDomainGroupRequest.h"
@@ -173,9 +193,15 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_ALIDNS_EXPORT AlidnsClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddCustomLineResult> AddCustomLineOutcome;
+			typedef std::future<AddCustomLineOutcome> AddCustomLineOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::AddCustomLineRequest&, const AddCustomLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomLineAsyncHandler;
 			typedef Outcome<Error, Model::AddDomainResult> AddDomainOutcome;
 			typedef std::future<AddDomainOutcome> AddDomainOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::AddDomainRequest&, const AddDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDomainAsyncHandler;
+			typedef Outcome<Error, Model::AddDomainBackupResult> AddDomainBackupOutcome;
+			typedef std::future<AddDomainBackupOutcome> AddDomainBackupOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::AddDomainBackupRequest&, const AddDomainBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDomainBackupAsyncHandler;
 			typedef Outcome<Error, Model::AddDomainGroupResult> AddDomainGroupOutcome;
 			typedef std::future<AddDomainGroupOutcome> AddDomainGroupOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::AddDomainGroupRequest&, const AddDomainGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDomainGroupAsyncHandler;
@@ -194,12 +220,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddGtmRecoveryPlanResult> AddGtmRecoveryPlanOutcome;
 			typedef std::future<AddGtmRecoveryPlanOutcome> AddGtmRecoveryPlanOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::AddGtmRecoveryPlanRequest&, const AddGtmRecoveryPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddGtmRecoveryPlanAsyncHandler;
+			typedef Outcome<Error, Model::BindInstanceDomainsResult> BindInstanceDomainsOutcome;
+			typedef std::future<BindInstanceDomainsOutcome> BindInstanceDomainsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::BindInstanceDomainsRequest&, const BindInstanceDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindInstanceDomainsAsyncHandler;
 			typedef Outcome<Error, Model::ChangeDomainGroupResult> ChangeDomainGroupOutcome;
 			typedef std::future<ChangeDomainGroupOutcome> ChangeDomainGroupOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::ChangeDomainGroupRequest&, const ChangeDomainGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeDomainGroupAsyncHandler;
 			typedef Outcome<Error, Model::ChangeDomainOfDnsProductResult> ChangeDomainOfDnsProductOutcome;
 			typedef std::future<ChangeDomainOfDnsProductOutcome> ChangeDomainOfDnsProductOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::ChangeDomainOfDnsProductRequest&, const ChangeDomainOfDnsProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeDomainOfDnsProductAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCustomLinesResult> DeleteCustomLinesOutcome;
+			typedef std::future<DeleteCustomLinesOutcome> DeleteCustomLinesOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DeleteCustomLinesRequest&, const DeleteCustomLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomLinesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDomainResult> DeleteDomainOutcome;
 			typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DeleteDomainRequest&, const DeleteDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
@@ -227,6 +259,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBatchResultDetailResult> DescribeBatchResultDetailOutcome;
 			typedef std::future<DescribeBatchResultDetailOutcome> DescribeBatchResultDetailOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeBatchResultDetailRequest&, const DescribeBatchResultDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchResultDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCustomLineResult> DescribeCustomLineOutcome;
+			typedef std::future<DescribeCustomLineOutcome> DescribeCustomLineOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeCustomLineRequest&, const DescribeCustomLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomLineAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCustomLinesResult> DescribeCustomLinesOutcome;
+			typedef std::future<DescribeCustomLinesOutcome> DescribeCustomLinesOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeCustomLinesRequest&, const DescribeCustomLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomLinesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDNSSLBSubDomainsResult> DescribeDNSSLBSubDomainsOutcome;
 			typedef std::future<DescribeDNSSLBSubDomainsOutcome> DescribeDNSSLBSubDomainsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDNSSLBSubDomainsRequest&, const DescribeDNSSLBSubDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDNSSLBSubDomainsAsyncHandler;
@@ -326,6 +364,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSupportLinesResult> DescribeSupportLinesOutcome;
 			typedef std::future<DescribeSupportLinesOutcome> DescribeSupportLinesOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeSupportLinesRequest&, const DescribeSupportLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSupportLinesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTransferDomainsResult> DescribeTransferDomainsOutcome;
+			typedef std::future<DescribeTransferDomainsOutcome> DescribeTransferDomainsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeTransferDomainsRequest&, const DescribeTransferDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTransferDomainsAsyncHandler;
 			typedef Outcome<Error, Model::ExecuteGtmRecoveryPlanResult> ExecuteGtmRecoveryPlanOutcome;
 			typedef std::future<ExecuteGtmRecoveryPlanOutcome> ExecuteGtmRecoveryPlanOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::ExecuteGtmRecoveryPlanRequest&, const ExecuteGtmRecoveryPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteGtmRecoveryPlanAsyncHandler;
@@ -356,6 +397,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetGtmMonitorStatusResult> SetGtmMonitorStatusOutcome;
 			typedef std::future<SetGtmMonitorStatusOutcome> SetGtmMonitorStatusOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::SetGtmMonitorStatusRequest&, const SetGtmMonitorStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGtmMonitorStatusAsyncHandler;
+			typedef Outcome<Error, Model::TransferDomainResult> TransferDomainOutcome;
+			typedef std::future<TransferDomainOutcome> TransferDomainOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::TransferDomainRequest&, const TransferDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransferDomainAsyncHandler;
+			typedef Outcome<Error, Model::UnbindInstanceDomainsResult> UnbindInstanceDomainsOutcome;
+			typedef std::future<UnbindInstanceDomainsOutcome> UnbindInstanceDomainsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::UnbindInstanceDomainsRequest&, const UnbindInstanceDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindInstanceDomainsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCustomLineResult> UpdateCustomLineOutcome;
+			typedef std::future<UpdateCustomLineOutcome> UpdateCustomLineOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::UpdateCustomLineRequest&, const UpdateCustomLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomLineAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDNSSLBWeightResult> UpdateDNSSLBWeightOutcome;
 			typedef std::future<UpdateDNSSLBWeightOutcome> UpdateDNSSLBWeightOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UpdateDNSSLBWeightRequest&, const UpdateDNSSLBWeightOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDNSSLBWeightAsyncHandler;
@@ -391,9 +441,15 @@ namespace AlibabaCloud
 			AlidnsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			AlidnsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~AlidnsClient();
+			AddCustomLineOutcome addCustomLine(const Model::AddCustomLineRequest &request)const;
+			void addCustomLineAsync(const Model::AddCustomLineRequest& request, const AddCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCustomLineOutcomeCallable addCustomLineCallable(const Model::AddCustomLineRequest& request) const;
 			AddDomainOutcome addDomain(const Model::AddDomainRequest &request)const;
 			void addDomainAsync(const Model::AddDomainRequest& request, const AddDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddDomainOutcomeCallable addDomainCallable(const Model::AddDomainRequest& request) const;
+			AddDomainBackupOutcome addDomainBackup(const Model::AddDomainBackupRequest &request)const;
+			void addDomainBackupAsync(const Model::AddDomainBackupRequest& request, const AddDomainBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddDomainBackupOutcomeCallable addDomainBackupCallable(const Model::AddDomainBackupRequest& request) const;
 			AddDomainGroupOutcome addDomainGroup(const Model::AddDomainGroupRequest &request)const;
 			void addDomainGroupAsync(const Model::AddDomainGroupRequest& request, const AddDomainGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddDomainGroupOutcomeCallable addDomainGroupCallable(const Model::AddDomainGroupRequest& request) const;
@@ -412,12 +468,18 @@ namespace AlibabaCloud
 			AddGtmRecoveryPlanOutcome addGtmRecoveryPlan(const Model::AddGtmRecoveryPlanRequest &request)const;
 			void addGtmRecoveryPlanAsync(const Model::AddGtmRecoveryPlanRequest& request, const AddGtmRecoveryPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddGtmRecoveryPlanOutcomeCallable addGtmRecoveryPlanCallable(const Model::AddGtmRecoveryPlanRequest& request) const;
+			BindInstanceDomainsOutcome bindInstanceDomains(const Model::BindInstanceDomainsRequest &request)const;
+			void bindInstanceDomainsAsync(const Model::BindInstanceDomainsRequest& request, const BindInstanceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindInstanceDomainsOutcomeCallable bindInstanceDomainsCallable(const Model::BindInstanceDomainsRequest& request) const;
 			ChangeDomainGroupOutcome changeDomainGroup(const Model::ChangeDomainGroupRequest &request)const;
 			void changeDomainGroupAsync(const Model::ChangeDomainGroupRequest& request, const ChangeDomainGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeDomainGroupOutcomeCallable changeDomainGroupCallable(const Model::ChangeDomainGroupRequest& request) const;
 			ChangeDomainOfDnsProductOutcome changeDomainOfDnsProduct(const Model::ChangeDomainOfDnsProductRequest &request)const;
 			void changeDomainOfDnsProductAsync(const Model::ChangeDomainOfDnsProductRequest& request, const ChangeDomainOfDnsProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeDomainOfDnsProductOutcomeCallable changeDomainOfDnsProductCallable(const Model::ChangeDomainOfDnsProductRequest& request) const;
+			DeleteCustomLinesOutcome deleteCustomLines(const Model::DeleteCustomLinesRequest &request)const;
+			void deleteCustomLinesAsync(const Model::DeleteCustomLinesRequest& request, const DeleteCustomLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCustomLinesOutcomeCallable deleteCustomLinesCallable(const Model::DeleteCustomLinesRequest& request) const;
 			DeleteDomainOutcome deleteDomain(const Model::DeleteDomainRequest &request)const;
 			void deleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDomainOutcomeCallable deleteDomainCallable(const Model::DeleteDomainRequest& request) const;
@@ -445,6 +507,12 @@ namespace AlibabaCloud
 			DescribeBatchResultDetailOutcome describeBatchResultDetail(const Model::DescribeBatchResultDetailRequest &request)const;
 			void describeBatchResultDetailAsync(const Model::DescribeBatchResultDetailRequest& request, const DescribeBatchResultDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBatchResultDetailOutcomeCallable describeBatchResultDetailCallable(const Model::DescribeBatchResultDetailRequest& request) const;
+			DescribeCustomLineOutcome describeCustomLine(const Model::DescribeCustomLineRequest &request)const;
+			void describeCustomLineAsync(const Model::DescribeCustomLineRequest& request, const DescribeCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCustomLineOutcomeCallable describeCustomLineCallable(const Model::DescribeCustomLineRequest& request) const;
+			DescribeCustomLinesOutcome describeCustomLines(const Model::DescribeCustomLinesRequest &request)const;
+			void describeCustomLinesAsync(const Model::DescribeCustomLinesRequest& request, const DescribeCustomLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCustomLinesOutcomeCallable describeCustomLinesCallable(const Model::DescribeCustomLinesRequest& request) const;
 			DescribeDNSSLBSubDomainsOutcome describeDNSSLBSubDomains(const Model::DescribeDNSSLBSubDomainsRequest &request)const;
 			void describeDNSSLBSubDomainsAsync(const Model::DescribeDNSSLBSubDomainsRequest& request, const DescribeDNSSLBSubDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDNSSLBSubDomainsOutcomeCallable describeDNSSLBSubDomainsCallable(const Model::DescribeDNSSLBSubDomainsRequest& request) const;
@@ -544,6 +612,9 @@ namespace AlibabaCloud
 			DescribeSupportLinesOutcome describeSupportLines(const Model::DescribeSupportLinesRequest &request)const;
 			void describeSupportLinesAsync(const Model::DescribeSupportLinesRequest& request, const DescribeSupportLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSupportLinesOutcomeCallable describeSupportLinesCallable(const Model::DescribeSupportLinesRequest& request) const;
+			DescribeTransferDomainsOutcome describeTransferDomains(const Model::DescribeTransferDomainsRequest &request)const;
+			void describeTransferDomainsAsync(const Model::DescribeTransferDomainsRequest& request, const DescribeTransferDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTransferDomainsOutcomeCallable describeTransferDomainsCallable(const Model::DescribeTransferDomainsRequest& request) const;
 			ExecuteGtmRecoveryPlanOutcome executeGtmRecoveryPlan(const Model::ExecuteGtmRecoveryPlanRequest &request)const;
 			void executeGtmRecoveryPlanAsync(const Model::ExecuteGtmRecoveryPlanRequest& request, const ExecuteGtmRecoveryPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExecuteGtmRecoveryPlanOutcomeCallable executeGtmRecoveryPlanCallable(const Model::ExecuteGtmRecoveryPlanRequest& request) const;
@@ -574,6 +645,15 @@ namespace AlibabaCloud
 			SetGtmMonitorStatusOutcome setGtmMonitorStatus(const Model::SetGtmMonitorStatusRequest &request)const;
 			void setGtmMonitorStatusAsync(const Model::SetGtmMonitorStatusRequest& request, const SetGtmMonitorStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetGtmMonitorStatusOutcomeCallable setGtmMonitorStatusCallable(const Model::SetGtmMonitorStatusRequest& request) const;
+			TransferDomainOutcome transferDomain(const Model::TransferDomainRequest &request)const;
+			void transferDomainAsync(const Model::TransferDomainRequest& request, const TransferDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TransferDomainOutcomeCallable transferDomainCallable(const Model::TransferDomainRequest& request) const;
+			UnbindInstanceDomainsOutcome unbindInstanceDomains(const Model::UnbindInstanceDomainsRequest &request)const;
+			void unbindInstanceDomainsAsync(const Model::UnbindInstanceDomainsRequest& request, const UnbindInstanceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindInstanceDomainsOutcomeCallable unbindInstanceDomainsCallable(const Model::UnbindInstanceDomainsRequest& request) const;
+			UpdateCustomLineOutcome updateCustomLine(const Model::UpdateCustomLineRequest &request)const;
+			void updateCustomLineAsync(const Model::UpdateCustomLineRequest& request, const UpdateCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCustomLineOutcomeCallable updateCustomLineCallable(const Model::UpdateCustomLineRequest& request) const;
 			UpdateDNSSLBWeightOutcome updateDNSSLBWeight(const Model::UpdateDNSSLBWeightRequest &request)const;
 			void updateDNSSLBWeightAsync(const Model::UpdateDNSSLBWeightRequest& request, const UpdateDNSSLBWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDNSSLBWeightOutcomeCallable updateDNSSLBWeightCallable(const Model::UpdateDNSSLBWeightRequest& request) const;
