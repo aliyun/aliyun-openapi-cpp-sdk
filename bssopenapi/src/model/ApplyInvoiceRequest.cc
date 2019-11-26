@@ -134,8 +134,9 @@ std::vector<long> ApplyInvoiceRequest::getSelectedIds()const
 void ApplyInvoiceRequest::setSelectedIds(const std::vector<long>& selectedIds)
 {
 	selectedIds_ = selectedIds;
-	for(int i = 0; i!= selectedIds.size(); i++)
-		setCoreParameter("SelectedIds."+ std::to_string(i), std::to_string(selectedIds.at(i)));
+	for(int dep1 = 0; dep1!= selectedIds.size(); dep1++) {
+		setCoreParameter("SelectedIds."+ std::to_string(dep1), std::to_string(selectedIds.at(dep1)));
+	}
 }
 
 long ApplyInvoiceRequest::getCallerUid()const

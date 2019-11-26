@@ -68,14 +68,13 @@ std::vector<GetSubscriptionPriceRequest::ModuleList> GetSubscriptionPriceRequest
 void GetSubscriptionPriceRequest::setModuleList(const std::vector<ModuleList>& moduleList)
 {
 	moduleList_ = moduleList;
-	int i = 0;
-	for(int i = 0; i!= moduleList.size(); i++)	{
-		auto obj = moduleList.at(i);
-		std::string str ="ModuleList."+ std::to_string(i);
-		setCoreParameter(str + ".ModuleCode", obj.moduleCode);
-		setCoreParameter(str + ".ModuleStatus", std::to_string(obj.moduleStatus));
-		setCoreParameter(str + ".Tag", obj.tag);
-		setCoreParameter(str + ".Config", obj.config);
+	for(int dep1 = 0; dep1!= moduleList.size(); dep1++) {
+		auto moduleListObj = moduleList.at(dep1);
+		std::string moduleListObjStr = "ModuleList." + std::to_string(dep1);
+		setCoreParameter(moduleListObjStr + ".ModuleCode", moduleListObj.moduleCode);
+		setCoreParameter(moduleListObjStr + ".ModuleStatus", std::to_string(moduleListObj.moduleStatus));
+		setCoreParameter(moduleListObjStr + ".Tag", moduleListObj.tag);
+		setCoreParameter(moduleListObjStr + ".Config", moduleListObj.config);
 	}
 }
 

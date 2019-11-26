@@ -123,8 +123,9 @@ std::vector<std::string> QueryEvaluateListRequest::getBizTypeList()const
 void QueryEvaluateListRequest::setBizTypeList(const std::vector<std::string>& bizTypeList)
 {
 	bizTypeList_ = bizTypeList;
-	for(int i = 0; i!= bizTypeList.size(); i++)
-		setCoreParameter("BizTypeList."+ std::to_string(i), bizTypeList.at(i));
+	for(int dep1 = 0; dep1!= bizTypeList.size(); dep1++) {
+		setCoreParameter("BizTypeList."+ std::to_string(dep1), bizTypeList.at(dep1));
+	}
 }
 
 long QueryEvaluateListRequest::getOwnerId()const

@@ -110,6 +110,8 @@ void QueryBillResult::parse(const std::string &payload)
 			itemObject.paymentTransactionID = dataNodeItemsItem["PaymentTransactionID"].asString();
 		if(!dataNodeItemsItem["RoundDownDiscount"].isNull())
 			itemObject.roundDownDiscount = dataNodeItemsItem["RoundDownDiscount"].asString();
+		if(!dataNodeItemsItem["SubOrderId"].isNull())
+			itemObject.subOrderId = dataNodeItemsItem["SubOrderId"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

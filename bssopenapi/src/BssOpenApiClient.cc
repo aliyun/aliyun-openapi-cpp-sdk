@@ -1563,6 +1563,42 @@ BssOpenApiClient::QueryProductListOutcomeCallable BssOpenApiClient::queryProduct
 	return task->get_future();
 }
 
+BssOpenApiClient::QueryRIUtilizationDetailOutcome BssOpenApiClient::queryRIUtilizationDetail(const QueryRIUtilizationDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryRIUtilizationDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryRIUtilizationDetailOutcome(QueryRIUtilizationDetailResult(outcome.result()));
+	else
+		return QueryRIUtilizationDetailOutcome(outcome.error());
+}
+
+void BssOpenApiClient::queryRIUtilizationDetailAsync(const QueryRIUtilizationDetailRequest& request, const QueryRIUtilizationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryRIUtilizationDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QueryRIUtilizationDetailOutcomeCallable BssOpenApiClient::queryRIUtilizationDetailCallable(const QueryRIUtilizationDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryRIUtilizationDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->queryRIUtilizationDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::QueryRedeemOutcome BssOpenApiClient::queryRedeem(const QueryRedeemRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

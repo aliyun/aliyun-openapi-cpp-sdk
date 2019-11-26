@@ -105,6 +105,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryPrepaidCardsResult.h
 	include/alibabacloud/bssopenapi/model/QueryProductListRequest.h
 	include/alibabacloud/bssopenapi/model/QueryProductListResult.h
+	include/alibabacloud/bssopenapi/model/QueryRIUtilizationDetailRequest.h
+	include/alibabacloud/bssopenapi/model/QueryRIUtilizationDetailResult.h
 	include/alibabacloud/bssopenapi/model/QueryRedeemRequest.h
 	include/alibabacloud/bssopenapi/model/QueryRedeemResult.h
 	include/alibabacloud/bssopenapi/model/QueryResellerAvailableQuotaRequest.h
@@ -220,6 +222,8 @@ set(bssopenapi_src
 	src/model/QueryPrepaidCardsResult.cc
 	src/model/QueryProductListRequest.cc
 	src/model/QueryProductListResult.cc
+	src/model/QueryRIUtilizationDetailRequest.cc
+	src/model/QueryRIUtilizationDetailResult.cc
 	src/model/QueryRedeemRequest.cc
 	src/model/QueryRedeemResult.cc
 	src/model/QueryResellerAvailableQuotaRequest.cc

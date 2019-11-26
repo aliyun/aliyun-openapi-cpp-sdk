@@ -35,13 +35,12 @@ std::vector<CreateCostUnitRequest::UnitEntityList> CreateCostUnitRequest::getUni
 void CreateCostUnitRequest::setUnitEntityList(const std::vector<UnitEntityList>& unitEntityList)
 {
 	unitEntityList_ = unitEntityList;
-	int i = 0;
-	for(int i = 0; i!= unitEntityList.size(); i++)	{
-		auto obj = unitEntityList.at(i);
-		std::string str ="UnitEntityList."+ std::to_string(i);
-		setCoreParameter(str + ".UnitName", obj.unitName);
-		setCoreParameter(str + ".ParentUnitId", std::to_string(obj.parentUnitId));
-		setCoreParameter(str + ".OwnerUid", std::to_string(obj.ownerUid));
+	for(int dep1 = 0; dep1!= unitEntityList.size(); dep1++) {
+		auto unitEntityListObj = unitEntityList.at(dep1);
+		std::string unitEntityListObjStr = "UnitEntityList." + std::to_string(dep1);
+		setCoreParameter(unitEntityListObjStr + ".UnitName", unitEntityListObj.unitName);
+		setCoreParameter(unitEntityListObjStr + ".ParentUnitId", std::to_string(unitEntityListObj.parentUnitId));
+		setCoreParameter(unitEntityListObjStr + ".OwnerUid", std::to_string(unitEntityListObj.ownerUid));
 	}
 }
 

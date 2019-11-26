@@ -106,6 +106,8 @@
 #include "model/QueryPrepaidCardsResult.h"
 #include "model/QueryProductListRequest.h"
 #include "model/QueryProductListResult.h"
+#include "model/QueryRIUtilizationDetailRequest.h"
+#include "model/QueryRIUtilizationDetailResult.h"
 #include "model/QueryRedeemRequest.h"
 #include "model/QueryRedeemResult.h"
 #include "model/QueryResellerAvailableQuotaRequest.h"
@@ -269,6 +271,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryProductListResult> QueryProductListOutcome;
 			typedef std::future<QueryProductListOutcome> QueryProductListOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryProductListRequest&, const QueryProductListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryProductListAsyncHandler;
+			typedef Outcome<Error, Model::QueryRIUtilizationDetailResult> QueryRIUtilizationDetailOutcome;
+			typedef std::future<QueryRIUtilizationDetailOutcome> QueryRIUtilizationDetailOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QueryRIUtilizationDetailRequest&, const QueryRIUtilizationDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRIUtilizationDetailAsyncHandler;
 			typedef Outcome<Error, Model::QueryRedeemResult> QueryRedeemOutcome;
 			typedef std::future<QueryRedeemOutcome> QueryRedeemOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryRedeemRequest&, const QueryRedeemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRedeemAsyncHandler;
@@ -442,6 +447,9 @@ namespace AlibabaCloud
 			QueryProductListOutcome queryProductList(const Model::QueryProductListRequest &request)const;
 			void queryProductListAsync(const Model::QueryProductListRequest& request, const QueryProductListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryProductListOutcomeCallable queryProductListCallable(const Model::QueryProductListRequest& request) const;
+			QueryRIUtilizationDetailOutcome queryRIUtilizationDetail(const Model::QueryRIUtilizationDetailRequest &request)const;
+			void queryRIUtilizationDetailAsync(const Model::QueryRIUtilizationDetailRequest& request, const QueryRIUtilizationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryRIUtilizationDetailOutcomeCallable queryRIUtilizationDetailCallable(const Model::QueryRIUtilizationDetailRequest& request) const;
 			QueryRedeemOutcome queryRedeem(const Model::QueryRedeemRequest &request)const;
 			void queryRedeemAsync(const Model::QueryRedeemRequest& request, const QueryRedeemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryRedeemOutcomeCallable queryRedeemCallable(const Model::QueryRedeemRequest& request) const;
