@@ -1,3 +1,6 @@
+2019-11-27 Version 1.36.200
+- CreateReplicationJob API supports the specified instance type.
+
 2019-11-26 Version 1.36.199
 - Modify QueryBill, add SubOrderId in item of response.
 
