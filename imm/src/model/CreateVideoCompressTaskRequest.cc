@@ -60,6 +60,17 @@ void CreateVideoCompressTaskRequest::setNotifyEndpoint(const std::string& notify
 	setCoreParameter("NotifyEndpoint", notifyEndpoint);
 }
 
+std::string CreateVideoCompressTaskRequest::getTargetContainer()const
+{
+	return targetContainer_;
+}
+
+void CreateVideoCompressTaskRequest::setTargetContainer(const std::string& targetContainer)
+{
+	targetContainer_ = targetContainer;
+	setCoreParameter("TargetContainer", targetContainer);
+}
+
 std::string CreateVideoCompressTaskRequest::getCustomMessage()const
 {
 	return customMessage_;
