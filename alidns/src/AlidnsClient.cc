@@ -2211,6 +2211,42 @@ AlidnsClient::GetMainDomainNameOutcomeCallable AlidnsClient::getMainDomainNameCa
 	return task->get_future();
 }
 
+AlidnsClient::GetTxtRecordForVerifyOutcome AlidnsClient::getTxtRecordForVerify(const GetTxtRecordForVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTxtRecordForVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTxtRecordForVerifyOutcome(GetTxtRecordForVerifyResult(outcome.result()));
+	else
+		return GetTxtRecordForVerifyOutcome(outcome.error());
+}
+
+void AlidnsClient::getTxtRecordForVerifyAsync(const GetTxtRecordForVerifyRequest& request, const GetTxtRecordForVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTxtRecordForVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::GetTxtRecordForVerifyOutcomeCallable AlidnsClient::getTxtRecordForVerifyCallable(const GetTxtRecordForVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTxtRecordForVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->getTxtRecordForVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::ModifyHichinaDomainDNSOutcome AlidnsClient::modifyHichinaDomainDNS(const ModifyHichinaDomainDNSRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2313,6 +2349,42 @@ AlidnsClient::PreviewGtmRecoveryPlanOutcomeCallable AlidnsClient::previewGtmReco
 			[this, request]()
 			{
 			return this->previewGtmRecoveryPlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::RetrieveDomainOutcome AlidnsClient::retrieveDomain(const RetrieveDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RetrieveDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RetrieveDomainOutcome(RetrieveDomainResult(outcome.result()));
+	else
+		return RetrieveDomainOutcome(outcome.error());
+}
+
+void AlidnsClient::retrieveDomainAsync(const RetrieveDomainRequest& request, const RetrieveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, retrieveDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::RetrieveDomainOutcomeCallable AlidnsClient::retrieveDomainCallable(const RetrieveDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RetrieveDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->retrieveDomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

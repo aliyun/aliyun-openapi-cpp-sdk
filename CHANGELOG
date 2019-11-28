@@ -1,3 +1,7 @@
+2019-11-28 Version 1.36.203
+- Supported API GetTxtRecordForVerify.
+- Supported API RetrieveDomain.
+
 2019-11-28 Version 1.36.202
 - Supported dash for compress.
 

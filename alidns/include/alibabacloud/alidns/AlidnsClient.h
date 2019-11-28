@@ -142,12 +142,16 @@
 #include "model/ExecuteGtmRecoveryPlanResult.h"
 #include "model/GetMainDomainNameRequest.h"
 #include "model/GetMainDomainNameResult.h"
+#include "model/GetTxtRecordForVerifyRequest.h"
+#include "model/GetTxtRecordForVerifyResult.h"
 #include "model/ModifyHichinaDomainDNSRequest.h"
 #include "model/ModifyHichinaDomainDNSResult.h"
 #include "model/OperateBatchDomainRequest.h"
 #include "model/OperateBatchDomainResult.h"
 #include "model/PreviewGtmRecoveryPlanRequest.h"
 #include "model/PreviewGtmRecoveryPlanResult.h"
+#include "model/RetrieveDomainRequest.h"
+#include "model/RetrieveDomainResult.h"
 #include "model/RollbackGtmRecoveryPlanRequest.h"
 #include "model/RollbackGtmRecoveryPlanResult.h"
 #include "model/SetDNSSLBStatusRequest.h"
@@ -373,6 +377,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetMainDomainNameResult> GetMainDomainNameOutcome;
 			typedef std::future<GetMainDomainNameOutcome> GetMainDomainNameOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::GetMainDomainNameRequest&, const GetMainDomainNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMainDomainNameAsyncHandler;
+			typedef Outcome<Error, Model::GetTxtRecordForVerifyResult> GetTxtRecordForVerifyOutcome;
+			typedef std::future<GetTxtRecordForVerifyOutcome> GetTxtRecordForVerifyOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::GetTxtRecordForVerifyRequest&, const GetTxtRecordForVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTxtRecordForVerifyAsyncHandler;
 			typedef Outcome<Error, Model::ModifyHichinaDomainDNSResult> ModifyHichinaDomainDNSOutcome;
 			typedef std::future<ModifyHichinaDomainDNSOutcome> ModifyHichinaDomainDNSOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::ModifyHichinaDomainDNSRequest&, const ModifyHichinaDomainDNSOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHichinaDomainDNSAsyncHandler;
@@ -382,6 +389,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PreviewGtmRecoveryPlanResult> PreviewGtmRecoveryPlanOutcome;
 			typedef std::future<PreviewGtmRecoveryPlanOutcome> PreviewGtmRecoveryPlanOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::PreviewGtmRecoveryPlanRequest&, const PreviewGtmRecoveryPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreviewGtmRecoveryPlanAsyncHandler;
+			typedef Outcome<Error, Model::RetrieveDomainResult> RetrieveDomainOutcome;
+			typedef std::future<RetrieveDomainOutcome> RetrieveDomainOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::RetrieveDomainRequest&, const RetrieveDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RetrieveDomainAsyncHandler;
 			typedef Outcome<Error, Model::RollbackGtmRecoveryPlanResult> RollbackGtmRecoveryPlanOutcome;
 			typedef std::future<RollbackGtmRecoveryPlanOutcome> RollbackGtmRecoveryPlanOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::RollbackGtmRecoveryPlanRequest&, const RollbackGtmRecoveryPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RollbackGtmRecoveryPlanAsyncHandler;
@@ -621,6 +631,9 @@ namespace AlibabaCloud
 			GetMainDomainNameOutcome getMainDomainName(const Model::GetMainDomainNameRequest &request)const;
 			void getMainDomainNameAsync(const Model::GetMainDomainNameRequest& request, const GetMainDomainNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMainDomainNameOutcomeCallable getMainDomainNameCallable(const Model::GetMainDomainNameRequest& request) const;
+			GetTxtRecordForVerifyOutcome getTxtRecordForVerify(const Model::GetTxtRecordForVerifyRequest &request)const;
+			void getTxtRecordForVerifyAsync(const Model::GetTxtRecordForVerifyRequest& request, const GetTxtRecordForVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTxtRecordForVerifyOutcomeCallable getTxtRecordForVerifyCallable(const Model::GetTxtRecordForVerifyRequest& request) const;
 			ModifyHichinaDomainDNSOutcome modifyHichinaDomainDNS(const Model::ModifyHichinaDomainDNSRequest &request)const;
 			void modifyHichinaDomainDNSAsync(const Model::ModifyHichinaDomainDNSRequest& request, const ModifyHichinaDomainDNSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyHichinaDomainDNSOutcomeCallable modifyHichinaDomainDNSCallable(const Model::ModifyHichinaDomainDNSRequest& request) const;
@@ -630,6 +643,9 @@ namespace AlibabaCloud
 			PreviewGtmRecoveryPlanOutcome previewGtmRecoveryPlan(const Model::PreviewGtmRecoveryPlanRequest &request)const;
 			void previewGtmRecoveryPlanAsync(const Model::PreviewGtmRecoveryPlanRequest& request, const PreviewGtmRecoveryPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PreviewGtmRecoveryPlanOutcomeCallable previewGtmRecoveryPlanCallable(const Model::PreviewGtmRecoveryPlanRequest& request) const;
+			RetrieveDomainOutcome retrieveDomain(const Model::RetrieveDomainRequest &request)const;
+			void retrieveDomainAsync(const Model::RetrieveDomainRequest& request, const RetrieveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RetrieveDomainOutcomeCallable retrieveDomainCallable(const Model::RetrieveDomainRequest& request) const;
 			RollbackGtmRecoveryPlanOutcome rollbackGtmRecoveryPlan(const Model::RollbackGtmRecoveryPlanRequest &request)const;
 			void rollbackGtmRecoveryPlanAsync(const Model::RollbackGtmRecoveryPlanRequest& request, const RollbackGtmRecoveryPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RollbackGtmRecoveryPlanOutcomeCallable rollbackGtmRecoveryPlanCallable(const Model::RollbackGtmRecoveryPlanRequest& request) const;

@@ -141,12 +141,16 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/ExecuteGtmRecoveryPlanResult.h
 	include/alibabacloud/alidns/model/GetMainDomainNameRequest.h
 	include/alibabacloud/alidns/model/GetMainDomainNameResult.h
+	include/alibabacloud/alidns/model/GetTxtRecordForVerifyRequest.h
+	include/alibabacloud/alidns/model/GetTxtRecordForVerifyResult.h
 	include/alibabacloud/alidns/model/ModifyHichinaDomainDNSRequest.h
 	include/alibabacloud/alidns/model/ModifyHichinaDomainDNSResult.h
 	include/alibabacloud/alidns/model/OperateBatchDomainRequest.h
 	include/alibabacloud/alidns/model/OperateBatchDomainResult.h
 	include/alibabacloud/alidns/model/PreviewGtmRecoveryPlanRequest.h
 	include/alibabacloud/alidns/model/PreviewGtmRecoveryPlanResult.h
+	include/alibabacloud/alidns/model/RetrieveDomainRequest.h
+	include/alibabacloud/alidns/model/RetrieveDomainResult.h
 	include/alibabacloud/alidns/model/RollbackGtmRecoveryPlanRequest.h
 	include/alibabacloud/alidns/model/RollbackGtmRecoveryPlanResult.h
 	include/alibabacloud/alidns/model/SetDNSSLBStatusRequest.h
@@ -306,12 +310,16 @@ set(alidns_src
 	src/model/ExecuteGtmRecoveryPlanResult.cc
 	src/model/GetMainDomainNameRequest.cc
 	src/model/GetMainDomainNameResult.cc
+	src/model/GetTxtRecordForVerifyRequest.cc
+	src/model/GetTxtRecordForVerifyResult.cc
 	src/model/ModifyHichinaDomainDNSRequest.cc
 	src/model/ModifyHichinaDomainDNSResult.cc
 	src/model/OperateBatchDomainRequest.cc
 	src/model/OperateBatchDomainResult.cc
 	src/model/PreviewGtmRecoveryPlanRequest.cc
 	src/model/PreviewGtmRecoveryPlanResult.cc
+	src/model/RetrieveDomainRequest.cc
+	src/model/RetrieveDomainResult.cc
 	src/model/RollbackGtmRecoveryPlanRequest.cc
 	src/model/RollbackGtmRecoveryPlanResult.cc
 	src/model/SetDNSSLBStatusRequest.cc
