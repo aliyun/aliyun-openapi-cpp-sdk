@@ -620,6 +620,9 @@ void RunInstancesRequest::setNetworkInterface(const std::vector<NetworkInterface
 		setCoreParameter(networkInterfaceObjStr + ".PrimaryIpAddress", networkInterfaceObj.primaryIpAddress);
 		setCoreParameter(networkInterfaceObjStr + ".VSwitchId", networkInterfaceObj.vSwitchId);
 		setCoreParameter(networkInterfaceObjStr + ".SecurityGroupId", networkInterfaceObj.securityGroupId);
+		for(int dep2 = 0; dep2!= networkInterfaceObj.securityGroupIds.size(); dep2++) {
+			setCoreParameter(networkInterfaceObjStr + ".SecurityGroupIds."+ std::to_string(dep2), networkInterfaceObj.securityGroupIds.at(dep2));
+		}
 		setCoreParameter(networkInterfaceObjStr + ".NetworkInterfaceName", networkInterfaceObj.networkInterfaceName);
 		setCoreParameter(networkInterfaceObjStr + ".Description", networkInterfaceObj.description);
 	}

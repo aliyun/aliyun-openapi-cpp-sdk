@@ -1527,6 +1527,42 @@ EcsClient::CreateLaunchTemplateVersionOutcomeCallable EcsClient::createLaunchTem
 	return task->get_future();
 }
 
+EcsClient::CreateMaintenancePropertyOutcome EcsClient::createMaintenanceProperty(const CreateMaintenancePropertyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMaintenancePropertyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMaintenancePropertyOutcome(CreateMaintenancePropertyResult(outcome.result()));
+	else
+		return CreateMaintenancePropertyOutcome(outcome.error());
+}
+
+void EcsClient::createMaintenancePropertyAsync(const CreateMaintenancePropertyRequest& request, const CreateMaintenancePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMaintenanceProperty(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateMaintenancePropertyOutcomeCallable EcsClient::createMaintenancePropertyCallable(const CreateMaintenancePropertyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMaintenancePropertyOutcome()>>(
+			[this, request]()
+			{
+			return this->createMaintenanceProperty(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateNatGatewayOutcome EcsClient::createNatGateway(const CreateNatGatewayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2601,6 +2637,42 @@ EcsClient::DeleteLaunchTemplateVersionOutcomeCallable EcsClient::deleteLaunchTem
 			[this, request]()
 			{
 			return this->deleteLaunchTemplateVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DeleteMaintenancePropertyOutcome EcsClient::deleteMaintenanceProperty(const DeleteMaintenancePropertyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMaintenancePropertyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMaintenancePropertyOutcome(DeleteMaintenancePropertyResult(outcome.result()));
+	else
+		return DeleteMaintenancePropertyOutcome(outcome.error());
+}
+
+void EcsClient::deleteMaintenancePropertyAsync(const DeleteMaintenancePropertyRequest& request, const DeleteMaintenancePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMaintenanceProperty(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DeleteMaintenancePropertyOutcomeCallable EcsClient::deleteMaintenancePropertyCallable(const DeleteMaintenancePropertyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMaintenancePropertyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMaintenanceProperty(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4797,6 +4869,42 @@ EcsClient::DescribeLimitationOutcomeCallable EcsClient::describeLimitationCallab
 			[this, request]()
 			{
 			return this->describeLimitation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeMaintenancePropertyOutcome EcsClient::describeMaintenanceProperty(const DescribeMaintenancePropertyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMaintenancePropertyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMaintenancePropertyOutcome(DescribeMaintenancePropertyResult(outcome.result()));
+	else
+		return DescribeMaintenancePropertyOutcome(outcome.error());
+}
+
+void EcsClient::describeMaintenancePropertyAsync(const DescribeMaintenancePropertyRequest& request, const DescribeMaintenancePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMaintenanceProperty(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeMaintenancePropertyOutcomeCallable EcsClient::describeMaintenancePropertyCallable(const DescribeMaintenancePropertyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMaintenancePropertyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMaintenanceProperty(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7965,6 +8073,42 @@ EcsClient::ModifyLaunchTemplateDefaultVersionOutcomeCallable EcsClient::modifyLa
 			[this, request]()
 			{
 			return this->modifyLaunchTemplateDefaultVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyMaintenancePropertyOutcome EcsClient::modifyMaintenanceProperty(const ModifyMaintenancePropertyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyMaintenancePropertyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyMaintenancePropertyOutcome(ModifyMaintenancePropertyResult(outcome.result()));
+	else
+		return ModifyMaintenancePropertyOutcome(outcome.error());
+}
+
+void EcsClient::modifyMaintenancePropertyAsync(const ModifyMaintenancePropertyRequest& request, const ModifyMaintenancePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyMaintenanceProperty(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyMaintenancePropertyOutcomeCallable EcsClient::modifyMaintenancePropertyCallable(const ModifyMaintenancePropertyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyMaintenancePropertyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyMaintenanceProperty(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

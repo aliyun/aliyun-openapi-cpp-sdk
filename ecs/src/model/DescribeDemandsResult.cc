@@ -53,6 +53,8 @@ void DescribeDemandsResult::parse(const std::string &payload)
 			demandsObject.demandId = valueDemandsDemand["DemandId"].asString();
 		if(!valueDemandsDemand["DemandName"].isNull())
 			demandsObject.demandName = valueDemandsDemand["DemandName"].asString();
+		if(!valueDemandsDemand["Comment"].isNull())
+			demandsObject.comment = valueDemandsDemand["Comment"].asString();
 		if(!valueDemandsDemand["DemandDescription"].isNull())
 			demandsObject.demandDescription = valueDemandsDemand["DemandDescription"].asString();
 		if(!valueDemandsDemand["InstanceType"].isNull())

@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string primaryIpAddress;
 					std::string vSwitchId;
 					std::string securityGroupId;
+					std::vector<std::string> securityGroupIds;
 					std::string networkInterfaceName;
 					std::string description;
 				};

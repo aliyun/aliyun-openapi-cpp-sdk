@@ -103,6 +103,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateLaunchTemplateResult.h
 	include/alibabacloud/ecs/model/CreateLaunchTemplateVersionRequest.h
 	include/alibabacloud/ecs/model/CreateLaunchTemplateVersionResult.h
+	include/alibabacloud/ecs/model/CreateMaintenancePropertyRequest.h
+	include/alibabacloud/ecs/model/CreateMaintenancePropertyResult.h
 	include/alibabacloud/ecs/model/CreateNatGatewayRequest.h
 	include/alibabacloud/ecs/model/CreateNatGatewayResult.h
 	include/alibabacloud/ecs/model/CreateNetworkInterfaceRequest.h
@@ -163,6 +165,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteLaunchTemplateResult.h
 	include/alibabacloud/ecs/model/DeleteLaunchTemplateVersionRequest.h
 	include/alibabacloud/ecs/model/DeleteLaunchTemplateVersionResult.h
+	include/alibabacloud/ecs/model/DeleteMaintenancePropertyRequest.h
+	include/alibabacloud/ecs/model/DeleteMaintenancePropertyResult.h
 	include/alibabacloud/ecs/model/DeleteNatGatewayRequest.h
 	include/alibabacloud/ecs/model/DeleteNatGatewayResult.h
 	include/alibabacloud/ecs/model/DeleteNetworkInterfaceRequest.h
@@ -285,6 +289,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeLaunchTemplatesResult.h
 	include/alibabacloud/ecs/model/DescribeLimitationRequest.h
 	include/alibabacloud/ecs/model/DescribeLimitationResult.h
+	include/alibabacloud/ecs/model/DescribeMaintenancePropertyRequest.h
+	include/alibabacloud/ecs/model/DescribeMaintenancePropertyResult.h
 	include/alibabacloud/ecs/model/DescribeNatGatewaysRequest.h
 	include/alibabacloud/ecs/model/DescribeNatGatewaysResult.h
 	include/alibabacloud/ecs/model/DescribeNetworkInterfacePermissionsRequest.h
@@ -461,6 +467,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyInstanceVpcAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyLaunchTemplateDefaultVersionRequest.h
 	include/alibabacloud/ecs/model/ModifyLaunchTemplateDefaultVersionResult.h
+	include/alibabacloud/ecs/model/ModifyMaintenancePropertyRequest.h
+	include/alibabacloud/ecs/model/ModifyMaintenancePropertyResult.h
 	include/alibabacloud/ecs/model/ModifyNetworkInterfaceAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyNetworkInterfaceAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyPhysicalConnectionAttributeRequest.h
@@ -646,6 +654,8 @@ set(ecs_src
 	src/model/CreateLaunchTemplateResult.cc
 	src/model/CreateLaunchTemplateVersionRequest.cc
 	src/model/CreateLaunchTemplateVersionResult.cc
+	src/model/CreateMaintenancePropertyRequest.cc
+	src/model/CreateMaintenancePropertyResult.cc
 	src/model/CreateNatGatewayRequest.cc
 	src/model/CreateNatGatewayResult.cc
 	src/model/CreateNetworkInterfaceRequest.cc
@@ -706,6 +716,8 @@ set(ecs_src
 	src/model/DeleteLaunchTemplateResult.cc
 	src/model/DeleteLaunchTemplateVersionRequest.cc
 	src/model/DeleteLaunchTemplateVersionResult.cc
+	src/model/DeleteMaintenancePropertyRequest.cc
+	src/model/DeleteMaintenancePropertyResult.cc
 	src/model/DeleteNatGatewayRequest.cc
 	src/model/DeleteNatGatewayResult.cc
 	src/model/DeleteNetworkInterfaceRequest.cc
@@ -828,6 +840,8 @@ set(ecs_src
 	src/model/DescribeLaunchTemplatesResult.cc
 	src/model/DescribeLimitationRequest.cc
 	src/model/DescribeLimitationResult.cc
+	src/model/DescribeMaintenancePropertyRequest.cc
+	src/model/DescribeMaintenancePropertyResult.cc
 	src/model/DescribeNatGatewaysRequest.cc
 	src/model/DescribeNatGatewaysResult.cc
 	src/model/DescribeNetworkInterfacePermissionsRequest.cc
@@ -1004,6 +1018,8 @@ set(ecs_src
 	src/model/ModifyInstanceVpcAttributeResult.cc
 	src/model/ModifyLaunchTemplateDefaultVersionRequest.cc
 	src/model/ModifyLaunchTemplateDefaultVersionResult.cc
+	src/model/ModifyMaintenancePropertyRequest.cc
+	src/model/ModifyMaintenancePropertyResult.cc
 	src/model/ModifyNetworkInterfaceAttributeRequest.cc
 	src/model/ModifyNetworkInterfaceAttributeResult.cc
 	src/model/ModifyPhysicalConnectionAttributeRequest.cc

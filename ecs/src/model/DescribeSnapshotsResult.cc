@@ -45,6 +45,8 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 		Snapshot snapshotsObject;
 		if(!valueSnapshotsSnapshot["SnapshotId"].isNull())
 			snapshotsObject.snapshotId = valueSnapshotsSnapshot["SnapshotId"].asString();
+		if(!valueSnapshotsSnapshot["SnapshotSN"].isNull())
+			snapshotsObject.snapshotSN = valueSnapshotsSnapshot["SnapshotSN"].asString();
 		if(!valueSnapshotsSnapshot["SnapshotName"].isNull())
 			snapshotsObject.snapshotName = valueSnapshotsSnapshot["SnapshotName"].asString();
 		if(!valueSnapshotsSnapshot["Progress"].isNull())

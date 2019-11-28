@@ -66,6 +66,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::vector<std::string> getSecurityGroupIds()const;
+				void setSecurityGroupIds(const std::vector<std::string>& securityGroupIds);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPrimaryIpAddress()const;
@@ -85,6 +87,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::vector<std::string> securityGroupIds_;
 				std::string vSwitchId_;
 				std::string primaryIpAddress_;
 

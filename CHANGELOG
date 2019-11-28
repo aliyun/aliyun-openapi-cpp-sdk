@@ -1,3 +1,6 @@
+2019-11-28 Version 1.36.201
+- Eni Supports Multi-SecurityGroup.
+
 2019-11-27 Version 1.36.200
 - CreateReplicationJob API supports the specified instance type.
 

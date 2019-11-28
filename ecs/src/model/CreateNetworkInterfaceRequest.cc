@@ -175,6 +175,19 @@ void CreateNetworkInterfaceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::vector<std::string> CreateNetworkInterfaceRequest::getSecurityGroupIds()const
+{
+	return securityGroupIds_;
+}
+
+void CreateNetworkInterfaceRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
+{
+	securityGroupIds_ = securityGroupIds;
+	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++) {
+		setCoreParameter("SecurityGroupIds."+ std::to_string(dep1), securityGroupIds.at(dep1));
+	}
+}
+
 std::string CreateNetworkInterfaceRequest::getVSwitchId()const
 {
 	return vSwitchId_;
