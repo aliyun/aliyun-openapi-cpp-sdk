@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/ConvertLogstashPayTypeResult.h>
+#include <alibabacloud/elasticsearch/model/RenewLogstashResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Elasticsearch;
 using namespace AlibabaCloud::Elasticsearch::Model;
 
-ConvertLogstashPayTypeResult::ConvertLogstashPayTypeResult() :
+RenewLogstashResult::RenewLogstashResult() :
 	ServiceResult()
 {}
 
-ConvertLogstashPayTypeResult::ConvertLogstashPayTypeResult(const std::string &payload) :
+RenewLogstashResult::RenewLogstashResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ConvertLogstashPayTypeResult::~ConvertLogstashPayTypeResult()
+RenewLogstashResult::~RenewLogstashResult()
 {}
 
-void ConvertLogstashPayTypeResult::parse(const std::string &payload)
+void RenewLogstashResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -44,7 +44,7 @@ void ConvertLogstashPayTypeResult::parse(const std::string &payload)
 
 }
 
-bool ConvertLogstashPayTypeResult::getResult()const
+bool RenewLogstashResult::getResult()const
 {
 	return result_;
 }

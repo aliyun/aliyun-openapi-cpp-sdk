@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_CONVERTLOGSTASHPAYTYPEREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_CONVERTLOGSTASHPAYTYPEREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_RENEWLOGSTASHRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_RENEWLOGSTASHRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RoaServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/elasticsearch/ElasticsearchExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ConvertLogstashPayTypeRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT RenewLogstashResult : public ServiceResult
 			{
-
 			public:
-				ConvertLogstashPayTypeRequest();
-				~ConvertLogstashPayTypeRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 
-            private:
-				std::string instanceId_;
-				std::string clientToken_;
+				RenewLogstashResult();
+				explicit RenewLogstashResult(const std::string &payload);
+				~RenewLogstashResult();
+				bool getResult()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				bool result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_CONVERTLOGSTASHPAYTYPEREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_RENEWLOGSTASHRESULT_H_

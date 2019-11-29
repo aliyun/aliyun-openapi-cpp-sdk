@@ -32,10 +32,6 @@
 #include "model/CancelTaskResult.h"
 #include "model/CloseHttpsRequest.h"
 #include "model/CloseHttpsResult.h"
-#include "model/ConvertLogstashPayTypeRequest.h"
-#include "model/ConvertLogstashPayTypeResult.h"
-#include "model/ConvertPayTypeRequest.h"
-#include "model/ConvertPayTypeResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
 #include "model/CreateLogstashRequest.h"
@@ -110,6 +106,10 @@
 #include "model/MoveResourceGroupResult.h"
 #include "model/OpenHttpsRequest.h"
 #include "model/OpenHttpsResult.h"
+#include "model/RenewInstanceRequest.h"
+#include "model/RenewInstanceResult.h"
+#include "model/RenewLogstashRequest.h"
+#include "model/RenewLogstashResult.h"
 #include "model/RestartInstanceRequest.h"
 #include "model/RestartInstanceResult.h"
 #include "model/RestartLogstashRequest.h"
@@ -148,6 +148,8 @@
 #include "model/UpdateHotIkDictsResult.h"
 #include "model/UpdateInstanceRequest.h"
 #include "model/UpdateInstanceResult.h"
+#include "model/UpdateInstanceChargeTypeRequest.h"
+#include "model/UpdateInstanceChargeTypeResult.h"
 #include "model/UpdateInstanceSettingsRequest.h"
 #include "model/UpdateInstanceSettingsResult.h"
 #include "model/UpdateKibanaSettingsRequest.h"
@@ -156,6 +158,8 @@
 #include "model/UpdateKibanaWhiteIpsResult.h"
 #include "model/UpdateLogstashRequest.h"
 #include "model/UpdateLogstashResult.h"
+#include "model/UpdateLogstashChargeTypeRequest.h"
+#include "model/UpdateLogstashChargeTypeResult.h"
 #include "model/UpdateLogstashDescriptionRequest.h"
 #include "model/UpdateLogstashDescriptionResult.h"
 #include "model/UpdateLogstashSettingsRequest.h"
@@ -202,12 +206,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CloseHttpsResult> CloseHttpsOutcome;
 			typedef std::future<CloseHttpsOutcome> CloseHttpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CloseHttpsRequest&, const CloseHttpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseHttpsAsyncHandler;
-			typedef Outcome<Error, Model::ConvertLogstashPayTypeResult> ConvertLogstashPayTypeOutcome;
-			typedef std::future<ConvertLogstashPayTypeOutcome> ConvertLogstashPayTypeOutcomeCallable;
-			typedef std::function<void(const ElasticsearchClient*, const Model::ConvertLogstashPayTypeRequest&, const ConvertLogstashPayTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConvertLogstashPayTypeAsyncHandler;
-			typedef Outcome<Error, Model::ConvertPayTypeResult> ConvertPayTypeOutcome;
-			typedef std::future<ConvertPayTypeOutcome> ConvertPayTypeOutcomeCallable;
-			typedef std::function<void(const ElasticsearchClient*, const Model::ConvertPayTypeRequest&, const ConvertPayTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConvertPayTypeAsyncHandler;
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
@@ -319,6 +317,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OpenHttpsResult> OpenHttpsOutcome;
 			typedef std::future<OpenHttpsOutcome> OpenHttpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::OpenHttpsRequest&, const OpenHttpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenHttpsAsyncHandler;
+			typedef Outcome<Error, Model::RenewInstanceResult> RenewInstanceOutcome;
+			typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::RenewInstanceRequest&, const RenewInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RenewLogstashResult> RenewLogstashOutcome;
+			typedef std::future<RenewLogstashOutcome> RenewLogstashOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::RenewLogstashRequest&, const RenewLogstashOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewLogstashAsyncHandler;
 			typedef Outcome<Error, Model::RestartInstanceResult> RestartInstanceOutcome;
 			typedef std::future<RestartInstanceOutcome> RestartInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::RestartInstanceRequest&, const RestartInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstanceAsyncHandler;
@@ -376,6 +380,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateInstanceResult> UpdateInstanceOutcome;
 			typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateInstanceRequest&, const UpdateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateInstanceChargeTypeResult> UpdateInstanceChargeTypeOutcome;
+			typedef std::future<UpdateInstanceChargeTypeOutcome> UpdateInstanceChargeTypeOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateInstanceChargeTypeRequest&, const UpdateInstanceChargeTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceChargeTypeAsyncHandler;
 			typedef Outcome<Error, Model::UpdateInstanceSettingsResult> UpdateInstanceSettingsOutcome;
 			typedef std::future<UpdateInstanceSettingsOutcome> UpdateInstanceSettingsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateInstanceSettingsRequest&, const UpdateInstanceSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceSettingsAsyncHandler;
@@ -388,6 +395,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateLogstashResult> UpdateLogstashOutcome;
 			typedef std::future<UpdateLogstashOutcome> UpdateLogstashOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateLogstashRequest&, const UpdateLogstashOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLogstashAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLogstashChargeTypeResult> UpdateLogstashChargeTypeOutcome;
+			typedef std::future<UpdateLogstashChargeTypeOutcome> UpdateLogstashChargeTypeOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateLogstashChargeTypeRequest&, const UpdateLogstashChargeTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLogstashChargeTypeAsyncHandler;
 			typedef Outcome<Error, Model::UpdateLogstashDescriptionResult> UpdateLogstashDescriptionOutcome;
 			typedef std::future<UpdateLogstashDescriptionOutcome> UpdateLogstashDescriptionOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateLogstashDescriptionRequest&, const UpdateLogstashDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLogstashDescriptionAsyncHandler;
@@ -441,12 +451,6 @@ namespace AlibabaCloud
 			CloseHttpsOutcome closeHttps(const Model::CloseHttpsRequest &request)const;
 			void closeHttpsAsync(const Model::CloseHttpsRequest& request, const CloseHttpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseHttpsOutcomeCallable closeHttpsCallable(const Model::CloseHttpsRequest& request) const;
-			ConvertLogstashPayTypeOutcome convertLogstashPayType(const Model::ConvertLogstashPayTypeRequest &request)const;
-			void convertLogstashPayTypeAsync(const Model::ConvertLogstashPayTypeRequest& request, const ConvertLogstashPayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ConvertLogstashPayTypeOutcomeCallable convertLogstashPayTypeCallable(const Model::ConvertLogstashPayTypeRequest& request) const;
-			ConvertPayTypeOutcome convertPayType(const Model::ConvertPayTypeRequest &request)const;
-			void convertPayTypeAsync(const Model::ConvertPayTypeRequest& request, const ConvertPayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ConvertPayTypeOutcomeCallable convertPayTypeCallable(const Model::ConvertPayTypeRequest& request) const;
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
@@ -558,6 +562,12 @@ namespace AlibabaCloud
 			OpenHttpsOutcome openHttps(const Model::OpenHttpsRequest &request)const;
 			void openHttpsAsync(const Model::OpenHttpsRequest& request, const OpenHttpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenHttpsOutcomeCallable openHttpsCallable(const Model::OpenHttpsRequest& request) const;
+			RenewInstanceOutcome renewInstance(const Model::RenewInstanceRequest &request)const;
+			void renewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RenewInstanceOutcomeCallable renewInstanceCallable(const Model::RenewInstanceRequest& request) const;
+			RenewLogstashOutcome renewLogstash(const Model::RenewLogstashRequest &request)const;
+			void renewLogstashAsync(const Model::RenewLogstashRequest& request, const RenewLogstashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RenewLogstashOutcomeCallable renewLogstashCallable(const Model::RenewLogstashRequest& request) const;
 			RestartInstanceOutcome restartInstance(const Model::RestartInstanceRequest &request)const;
 			void restartInstanceAsync(const Model::RestartInstanceRequest& request, const RestartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartInstanceOutcomeCallable restartInstanceCallable(const Model::RestartInstanceRequest& request) const;
@@ -615,6 +625,9 @@ namespace AlibabaCloud
 			UpdateInstanceOutcome updateInstance(const Model::UpdateInstanceRequest &request)const;
 			void updateInstanceAsync(const Model::UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateInstanceOutcomeCallable updateInstanceCallable(const Model::UpdateInstanceRequest& request) const;
+			UpdateInstanceChargeTypeOutcome updateInstanceChargeType(const Model::UpdateInstanceChargeTypeRequest &request)const;
+			void updateInstanceChargeTypeAsync(const Model::UpdateInstanceChargeTypeRequest& request, const UpdateInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateInstanceChargeTypeOutcomeCallable updateInstanceChargeTypeCallable(const Model::UpdateInstanceChargeTypeRequest& request) const;
 			UpdateInstanceSettingsOutcome updateInstanceSettings(const Model::UpdateInstanceSettingsRequest &request)const;
 			void updateInstanceSettingsAsync(const Model::UpdateInstanceSettingsRequest& request, const UpdateInstanceSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateInstanceSettingsOutcomeCallable updateInstanceSettingsCallable(const Model::UpdateInstanceSettingsRequest& request) const;
@@ -627,6 +640,9 @@ namespace AlibabaCloud
 			UpdateLogstashOutcome updateLogstash(const Model::UpdateLogstashRequest &request)const;
 			void updateLogstashAsync(const Model::UpdateLogstashRequest& request, const UpdateLogstashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLogstashOutcomeCallable updateLogstashCallable(const Model::UpdateLogstashRequest& request) const;
+			UpdateLogstashChargeTypeOutcome updateLogstashChargeType(const Model::UpdateLogstashChargeTypeRequest &request)const;
+			void updateLogstashChargeTypeAsync(const Model::UpdateLogstashChargeTypeRequest& request, const UpdateLogstashChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLogstashChargeTypeOutcomeCallable updateLogstashChargeTypeCallable(const Model::UpdateLogstashChargeTypeRequest& request) const;
 			UpdateLogstashDescriptionOutcome updateLogstashDescription(const Model::UpdateLogstashDescriptionRequest &request)const;
 			void updateLogstashDescriptionAsync(const Model::UpdateLogstashDescriptionRequest& request, const UpdateLogstashDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLogstashDescriptionOutcomeCallable updateLogstashDescriptionCallable(const Model::UpdateLogstashDescriptionRequest& request) const;

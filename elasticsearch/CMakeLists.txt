@@ -31,10 +31,6 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/CancelTaskResult.h
 	include/alibabacloud/elasticsearch/model/CloseHttpsRequest.h
 	include/alibabacloud/elasticsearch/model/CloseHttpsResult.h
-	include/alibabacloud/elasticsearch/model/ConvertLogstashPayTypeRequest.h
-	include/alibabacloud/elasticsearch/model/ConvertLogstashPayTypeResult.h
-	include/alibabacloud/elasticsearch/model/ConvertPayTypeRequest.h
-	include/alibabacloud/elasticsearch/model/ConvertPayTypeResult.h
 	include/alibabacloud/elasticsearch/model/CreateInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/CreateInstanceResult.h
 	include/alibabacloud/elasticsearch/model/CreateLogstashRequest.h
@@ -109,6 +105,10 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/MoveResourceGroupResult.h
 	include/alibabacloud/elasticsearch/model/OpenHttpsRequest.h
 	include/alibabacloud/elasticsearch/model/OpenHttpsResult.h
+	include/alibabacloud/elasticsearch/model/RenewInstanceRequest.h
+	include/alibabacloud/elasticsearch/model/RenewInstanceResult.h
+	include/alibabacloud/elasticsearch/model/RenewLogstashRequest.h
+	include/alibabacloud/elasticsearch/model/RenewLogstashResult.h
 	include/alibabacloud/elasticsearch/model/RestartInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/RestartInstanceResult.h
 	include/alibabacloud/elasticsearch/model/RestartLogstashRequest.h
@@ -147,6 +147,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/UpdateHotIkDictsResult.h
 	include/alibabacloud/elasticsearch/model/UpdateInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateInstanceResult.h
+	include/alibabacloud/elasticsearch/model/UpdateInstanceChargeTypeRequest.h
+	include/alibabacloud/elasticsearch/model/UpdateInstanceChargeTypeResult.h
 	include/alibabacloud/elasticsearch/model/UpdateInstanceSettingsRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateInstanceSettingsResult.h
 	include/alibabacloud/elasticsearch/model/UpdateKibanaSettingsRequest.h
@@ -155,6 +157,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/UpdateKibanaWhiteIpsResult.h
 	include/alibabacloud/elasticsearch/model/UpdateLogstashRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateLogstashResult.h
+	include/alibabacloud/elasticsearch/model/UpdateLogstashChargeTypeRequest.h
+	include/alibabacloud/elasticsearch/model/UpdateLogstashChargeTypeResult.h
 	include/alibabacloud/elasticsearch/model/UpdateLogstashDescriptionRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateLogstashDescriptionResult.h
 	include/alibabacloud/elasticsearch/model/UpdateLogstashSettingsRequest.h
@@ -190,10 +194,6 @@ set(elasticsearch_src
 	src/model/CancelTaskResult.cc
 	src/model/CloseHttpsRequest.cc
 	src/model/CloseHttpsResult.cc
-	src/model/ConvertLogstashPayTypeRequest.cc
-	src/model/ConvertLogstashPayTypeResult.cc
-	src/model/ConvertPayTypeRequest.cc
-	src/model/ConvertPayTypeResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
 	src/model/CreateLogstashRequest.cc
@@ -268,6 +268,10 @@ set(elasticsearch_src
 	src/model/MoveResourceGroupResult.cc
 	src/model/OpenHttpsRequest.cc
 	src/model/OpenHttpsResult.cc
+	src/model/RenewInstanceRequest.cc
+	src/model/RenewInstanceResult.cc
+	src/model/RenewLogstashRequest.cc
+	src/model/RenewLogstashResult.cc
 	src/model/RestartInstanceRequest.cc
 	src/model/RestartInstanceResult.cc
 	src/model/RestartLogstashRequest.cc
@@ -306,6 +310,8 @@ set(elasticsearch_src
 	src/model/UpdateHotIkDictsResult.cc
 	src/model/UpdateInstanceRequest.cc
 	src/model/UpdateInstanceResult.cc
+	src/model/UpdateInstanceChargeTypeRequest.cc
+	src/model/UpdateInstanceChargeTypeResult.cc
 	src/model/UpdateInstanceSettingsRequest.cc
 	src/model/UpdateInstanceSettingsResult.cc
 	src/model/UpdateKibanaSettingsRequest.cc
@@ -314,6 +320,8 @@ set(elasticsearch_src
 	src/model/UpdateKibanaWhiteIpsResult.cc
 	src/model/UpdateLogstashRequest.cc
 	src/model/UpdateLogstashResult.cc
+	src/model/UpdateLogstashChargeTypeRequest.cc
+	src/model/UpdateLogstashChargeTypeResult.cc
 	src/model/UpdateLogstashDescriptionRequest.cc
 	src/model/UpdateLogstashDescriptionResult.cc
 	src/model/UpdateLogstashSettingsRequest.cc

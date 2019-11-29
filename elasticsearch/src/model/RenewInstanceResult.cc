@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/ConvertPayTypeResult.h>
+#include <alibabacloud/elasticsearch/model/RenewInstanceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Elasticsearch;
 using namespace AlibabaCloud::Elasticsearch::Model;
 
-ConvertPayTypeResult::ConvertPayTypeResult() :
+RenewInstanceResult::RenewInstanceResult() :
 	ServiceResult()
 {}
 
-ConvertPayTypeResult::ConvertPayTypeResult(const std::string &payload) :
+RenewInstanceResult::RenewInstanceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ConvertPayTypeResult::~ConvertPayTypeResult()
+RenewInstanceResult::~RenewInstanceResult()
 {}
 
-void ConvertPayTypeResult::parse(const std::string &payload)
+void RenewInstanceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -44,7 +44,7 @@ void ConvertPayTypeResult::parse(const std::string &payload)
 
 }
 
-bool ConvertPayTypeResult::getResult()const
+bool RenewInstanceResult::getResult()const
 {
 	return result_;
 }

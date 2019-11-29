@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_CONVERTPAYTYPEREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_CONVERTPAYTYPEREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEINSTANCECHARGETYPEREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEINSTANCECHARGETYPEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ConvertPayTypeRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateInstanceChargeTypeRequest : public RoaServiceRequest
 			{
 
 			public:
-				ConvertPayTypeRequest();
-				~ConvertPayTypeRequest();
+				UpdateInstanceChargeTypeRequest();
+				~UpdateInstanceChargeTypeRequest();
 
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
@@ -48,4 +48,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_CONVERTPAYTYPEREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEINSTANCECHARGETYPEREQUEST_H_

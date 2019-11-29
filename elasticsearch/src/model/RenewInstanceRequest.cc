@@ -14,37 +14,37 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/ConvertPayTypeRequest.h>
+#include <alibabacloud/elasticsearch/model/RenewInstanceRequest.h>
 
-using AlibabaCloud::Elasticsearch::Model::ConvertPayTypeRequest;
+using AlibabaCloud::Elasticsearch::Model::RenewInstanceRequest;
 
-ConvertPayTypeRequest::ConvertPayTypeRequest() :
+RenewInstanceRequest::RenewInstanceRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/convert-pay-type");
+	setResourcePath("/openapi/instances/[InstanceId]/actions/renew");
 	setMethod(HttpRequest::Method::Post);
 }
 
-ConvertPayTypeRequest::~ConvertPayTypeRequest()
+RenewInstanceRequest::~RenewInstanceRequest()
 {}
 
-std::string ConvertPayTypeRequest::getInstanceId()const
+std::string RenewInstanceRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void ConvertPayTypeRequest::setInstanceId(const std::string& instanceId)
+void RenewInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setCoreParameter("InstanceId", instanceId);
 }
 
-std::string ConvertPayTypeRequest::getClientToken()const
+std::string RenewInstanceRequest::getClientToken()const
 {
 	return clientToken_;
 }
 
-void ConvertPayTypeRequest::setClientToken(const std::string& clientToken)
+void RenewInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);

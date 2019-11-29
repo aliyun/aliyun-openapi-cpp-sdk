@@ -231,78 +231,6 @@ ElasticsearchClient::CloseHttpsOutcomeCallable ElasticsearchClient::closeHttpsCa
 	return task->get_future();
 }
 
-ElasticsearchClient::ConvertLogstashPayTypeOutcome ElasticsearchClient::convertLogstashPayType(const ConvertLogstashPayTypeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ConvertLogstashPayTypeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ConvertLogstashPayTypeOutcome(ConvertLogstashPayTypeResult(outcome.result()));
-	else
-		return ConvertLogstashPayTypeOutcome(outcome.error());
-}
-
-void ElasticsearchClient::convertLogstashPayTypeAsync(const ConvertLogstashPayTypeRequest& request, const ConvertLogstashPayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, convertLogstashPayType(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ElasticsearchClient::ConvertLogstashPayTypeOutcomeCallable ElasticsearchClient::convertLogstashPayTypeCallable(const ConvertLogstashPayTypeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ConvertLogstashPayTypeOutcome()>>(
-			[this, request]()
-			{
-			return this->convertLogstashPayType(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ElasticsearchClient::ConvertPayTypeOutcome ElasticsearchClient::convertPayType(const ConvertPayTypeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ConvertPayTypeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ConvertPayTypeOutcome(ConvertPayTypeResult(outcome.result()));
-	else
-		return ConvertPayTypeOutcome(outcome.error());
-}
-
-void ElasticsearchClient::convertPayTypeAsync(const ConvertPayTypeRequest& request, const ConvertPayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, convertPayType(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ElasticsearchClient::ConvertPayTypeOutcomeCallable ElasticsearchClient::convertPayTypeCallable(const ConvertPayTypeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ConvertPayTypeOutcome()>>(
-			[this, request]()
-			{
-			return this->convertPayType(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ElasticsearchClient::CreateInstanceOutcome ElasticsearchClient::createInstance(const CreateInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1635,6 +1563,78 @@ ElasticsearchClient::OpenHttpsOutcomeCallable ElasticsearchClient::openHttpsCall
 	return task->get_future();
 }
 
+ElasticsearchClient::RenewInstanceOutcome ElasticsearchClient::renewInstance(const RenewInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RenewInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RenewInstanceOutcome(RenewInstanceResult(outcome.result()));
+	else
+		return RenewInstanceOutcome(outcome.error());
+}
+
+void ElasticsearchClient::renewInstanceAsync(const RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, renewInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::RenewInstanceOutcomeCallable ElasticsearchClient::renewInstanceCallable(const RenewInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RenewInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->renewInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::RenewLogstashOutcome ElasticsearchClient::renewLogstash(const RenewLogstashRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RenewLogstashOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RenewLogstashOutcome(RenewLogstashResult(outcome.result()));
+	else
+		return RenewLogstashOutcome(outcome.error());
+}
+
+void ElasticsearchClient::renewLogstashAsync(const RenewLogstashRequest& request, const RenewLogstashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, renewLogstash(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::RenewLogstashOutcomeCallable ElasticsearchClient::renewLogstashCallable(const RenewLogstashRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RenewLogstashOutcome()>>(
+			[this, request]()
+			{
+			return this->renewLogstash(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::RestartInstanceOutcome ElasticsearchClient::restartInstance(const RestartInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2319,6 +2319,42 @@ ElasticsearchClient::UpdateInstanceOutcomeCallable ElasticsearchClient::updateIn
 	return task->get_future();
 }
 
+ElasticsearchClient::UpdateInstanceChargeTypeOutcome ElasticsearchClient::updateInstanceChargeType(const UpdateInstanceChargeTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateInstanceChargeTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateInstanceChargeTypeOutcome(UpdateInstanceChargeTypeResult(outcome.result()));
+	else
+		return UpdateInstanceChargeTypeOutcome(outcome.error());
+}
+
+void ElasticsearchClient::updateInstanceChargeTypeAsync(const UpdateInstanceChargeTypeRequest& request, const UpdateInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateInstanceChargeType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::UpdateInstanceChargeTypeOutcomeCallable ElasticsearchClient::updateInstanceChargeTypeCallable(const UpdateInstanceChargeTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateInstanceChargeTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateInstanceChargeType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::UpdateInstanceSettingsOutcome ElasticsearchClient::updateInstanceSettings(const UpdateInstanceSettingsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2457,6 +2493,42 @@ ElasticsearchClient::UpdateLogstashOutcomeCallable ElasticsearchClient::updateLo
 			[this, request]()
 			{
 			return this->updateLogstash(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::UpdateLogstashChargeTypeOutcome ElasticsearchClient::updateLogstashChargeType(const UpdateLogstashChargeTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLogstashChargeTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLogstashChargeTypeOutcome(UpdateLogstashChargeTypeResult(outcome.result()));
+	else
+		return UpdateLogstashChargeTypeOutcome(outcome.error());
+}
+
+void ElasticsearchClient::updateLogstashChargeTypeAsync(const UpdateLogstashChargeTypeRequest& request, const UpdateLogstashChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLogstashChargeType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::UpdateLogstashChargeTypeOutcomeCallable ElasticsearchClient::updateLogstashChargeTypeCallable(const UpdateLogstashChargeTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLogstashChargeTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLogstashChargeType(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

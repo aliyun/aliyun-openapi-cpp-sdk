@@ -14,37 +14,37 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/ConvertLogstashPayTypeRequest.h>
+#include <alibabacloud/elasticsearch/model/UpdateInstanceChargeTypeRequest.h>
 
-using AlibabaCloud::Elasticsearch::Model::ConvertLogstashPayTypeRequest;
+using AlibabaCloud::Elasticsearch::Model::UpdateInstanceChargeTypeRequest;
 
-ConvertLogstashPayTypeRequest::ConvertLogstashPayTypeRequest() :
+UpdateInstanceChargeTypeRequest::UpdateInstanceChargeTypeRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
-	setResourcePath("/openapi/logstashes/[InstanceId]/convert-pay-type");
+	setResourcePath("/openapi/instances/[InstanceId]/actions/convert-pay-type");
 	setMethod(HttpRequest::Method::Post);
 }
 
-ConvertLogstashPayTypeRequest::~ConvertLogstashPayTypeRequest()
+UpdateInstanceChargeTypeRequest::~UpdateInstanceChargeTypeRequest()
 {}
 
-std::string ConvertLogstashPayTypeRequest::getInstanceId()const
+std::string UpdateInstanceChargeTypeRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void ConvertLogstashPayTypeRequest::setInstanceId(const std::string& instanceId)
+void UpdateInstanceChargeTypeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setCoreParameter("InstanceId", instanceId);
 }
 
-std::string ConvertLogstashPayTypeRequest::getClientToken()const
+std::string UpdateInstanceChargeTypeRequest::getClientToken()const
 {
 	return clientToken_;
 }
 
-void ConvertLogstashPayTypeRequest::setClientToken(const std::string& clientToken)
+void UpdateInstanceChargeTypeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
