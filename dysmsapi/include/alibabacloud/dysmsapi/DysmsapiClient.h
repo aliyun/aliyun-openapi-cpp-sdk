@@ -36,8 +36,6 @@
 #include "model/ModifySmsTemplateResult.h"
 #include "model/QuerySendDetailsRequest.h"
 #include "model/QuerySendDetailsResult.h"
-#include "model/QuerySmsProdStatusRequest.h"
-#include "model/QuerySmsProdStatusResult.h"
 #include "model/QuerySmsSignRequest.h"
 #include "model/QuerySmsSignResult.h"
 #include "model/QuerySmsTemplateRequest.h"
@@ -76,9 +74,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QuerySendDetailsResult> QuerySendDetailsOutcome;
 			typedef std::future<QuerySendDetailsOutcome> QuerySendDetailsOutcomeCallable;
 			typedef std::function<void(const DysmsapiClient*, const Model::QuerySendDetailsRequest&, const QuerySendDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySendDetailsAsyncHandler;
-			typedef Outcome<Error, Model::QuerySmsProdStatusResult> QuerySmsProdStatusOutcome;
-			typedef std::future<QuerySmsProdStatusOutcome> QuerySmsProdStatusOutcomeCallable;
-			typedef std::function<void(const DysmsapiClient*, const Model::QuerySmsProdStatusRequest&, const QuerySmsProdStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySmsProdStatusAsyncHandler;
 			typedef Outcome<Error, Model::QuerySmsSignResult> QuerySmsSignOutcome;
 			typedef std::future<QuerySmsSignOutcome> QuerySmsSignOutcomeCallable;
 			typedef std::function<void(const DysmsapiClient*, const Model::QuerySmsSignRequest&, const QuerySmsSignOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySmsSignAsyncHandler;
@@ -117,9 +112,6 @@ namespace AlibabaCloud
 			QuerySendDetailsOutcome querySendDetails(const Model::QuerySendDetailsRequest &request)const;
 			void querySendDetailsAsync(const Model::QuerySendDetailsRequest& request, const QuerySendDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySendDetailsOutcomeCallable querySendDetailsCallable(const Model::QuerySendDetailsRequest& request) const;
-			QuerySmsProdStatusOutcome querySmsProdStatus(const Model::QuerySmsProdStatusRequest &request)const;
-			void querySmsProdStatusAsync(const Model::QuerySmsProdStatusRequest& request, const QuerySmsProdStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QuerySmsProdStatusOutcomeCallable querySmsProdStatusCallable(const Model::QuerySmsProdStatusRequest& request) const;
 			QuerySmsSignOutcome querySmsSign(const Model::QuerySmsSignRequest &request)const;
 			void querySmsSignAsync(const Model::QuerySmsSignRequest& request, const QuerySmsSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySmsSignOutcomeCallable querySmsSignCallable(const Model::QuerySmsSignRequest& request) const;
