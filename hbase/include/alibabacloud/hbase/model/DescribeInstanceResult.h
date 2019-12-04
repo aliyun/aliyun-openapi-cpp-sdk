@@ -45,11 +45,13 @@ namespace AlibabaCloud
 				bool getIsHa()const;
 				std::string getCreatedTime()const;
 				std::string getMasterInstanceType()const;
+				std::string getMaintainEndTime()const;
 				std::string getNetworkType()const;
 				std::string getCoreInstanceType()const;
 				std::string getMasterDiskType()const;
 				std::vector<Tag> getTags()const;
 				std::string getEngine()const;
+				std::string getMaintainStartTime()const;
 				std::string getStatus()const;
 				std::string getMajorVersion()const;
 				std::string getCoreDiskCount()const;
@@ -76,11 +78,13 @@ namespace AlibabaCloud
 				bool isHa_;
 				std::string createdTime_;
 				std::string masterInstanceType_;
+				std::string maintainEndTime_;
 				std::string networkType_;
 				std::string coreInstanceType_;
 				std::string masterDiskType_;
 				std::vector<Tag> tags_;
 				std::string engine_;
+				std::string maintainStartTime_;
 				std::string status_;
 				std::string majorVersion_;
 				std::string coreDiskCount_;

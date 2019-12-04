@@ -123,6 +123,42 @@ HBaseClient::ConvertInstanceOutcomeCallable HBaseClient::convertInstanceCallable
 	return task->get_future();
 }
 
+HBaseClient::CreateHbaseHaSlbOutcome HBaseClient::createHbaseHaSlb(const CreateHbaseHaSlbRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateHbaseHaSlbOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateHbaseHaSlbOutcome(CreateHbaseHaSlbResult(outcome.result()));
+	else
+		return CreateHbaseHaSlbOutcome(outcome.error());
+}
+
+void HBaseClient::createHbaseHaSlbAsync(const CreateHbaseHaSlbRequest& request, const CreateHbaseHaSlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createHbaseHaSlb(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::CreateHbaseHaSlbOutcomeCallable HBaseClient::createHbaseHaSlbCallable(const CreateHbaseHaSlbRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateHbaseHaSlbOutcome()>>(
+			[this, request]()
+			{
+			return this->createHbaseHaSlb(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::CreateInstanceOutcome HBaseClient::createInstance(const CreateInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +189,42 @@ HBaseClient::CreateInstanceOutcomeCallable HBaseClient::createInstanceCallable(c
 			[this, request]()
 			{
 			return this->createInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::DeleteHbaseHaSlbOutcome HBaseClient::deleteHbaseHaSlb(const DeleteHbaseHaSlbRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteHbaseHaSlbOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteHbaseHaSlbOutcome(DeleteHbaseHaSlbResult(outcome.result()));
+	else
+		return DeleteHbaseHaSlbOutcome(outcome.error());
+}
+
+void HBaseClient::deleteHbaseHaSlbAsync(const DeleteHbaseHaSlbRequest& request, const DeleteHbaseHaSlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteHbaseHaSlb(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DeleteHbaseHaSlbOutcomeCallable HBaseClient::deleteHbaseHaSlbCallable(const DeleteHbaseHaSlbRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteHbaseHaSlbOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteHbaseHaSlb(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -231,6 +303,42 @@ HBaseClient::DeleteUserHdfsInfoOutcomeCallable HBaseClient::deleteUserHdfsInfoCa
 	return task->get_future();
 }
 
+HBaseClient::DescribeDBInstanceUsageOutcome HBaseClient::describeDBInstanceUsage(const DescribeDBInstanceUsageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceUsageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceUsageOutcome(DescribeDBInstanceUsageResult(outcome.result()));
+	else
+		return DescribeDBInstanceUsageOutcome(outcome.error());
+}
+
+void HBaseClient::describeDBInstanceUsageAsync(const DescribeDBInstanceUsageRequest& request, const DescribeDBInstanceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceUsage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeDBInstanceUsageOutcomeCallable HBaseClient::describeDBInstanceUsageCallable(const DescribeDBInstanceUsageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceUsageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceUsage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::DescribeEndpointsOutcome HBaseClient::describeEndpoints(const DescribeEndpointsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +405,42 @@ HBaseClient::DescribeInstanceOutcomeCallable HBaseClient::describeInstanceCallab
 			[this, request]()
 			{
 			return this->describeInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::DescribeInstanceTypeOutcome HBaseClient::describeInstanceType(const DescribeInstanceTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceTypeOutcome(DescribeInstanceTypeResult(outcome.result()));
+	else
+		return DescribeInstanceTypeOutcome(outcome.error());
+}
+
+void HBaseClient::describeInstanceTypeAsync(const DescribeInstanceTypeRequest& request, const DescribeInstanceTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeInstanceTypeOutcomeCallable HBaseClient::describeInstanceTypeCallable(const DescribeInstanceTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceType(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -447,6 +591,78 @@ HBaseClient::DescribeSecurityGroupsOutcomeCallable HBaseClient::describeSecurity
 	return task->get_future();
 }
 
+HBaseClient::ListTagResourcesOutcome HBaseClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void HBaseClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::ListTagResourcesOutcomeCallable HBaseClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::ModifyInstanceMaintainTimeOutcome HBaseClient::modifyInstanceMaintainTime(const ModifyInstanceMaintainTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceMaintainTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceMaintainTimeOutcome(ModifyInstanceMaintainTimeResult(outcome.result()));
+	else
+		return ModifyInstanceMaintainTimeOutcome(outcome.error());
+}
+
+void HBaseClient::modifyInstanceMaintainTimeAsync(const ModifyInstanceMaintainTimeRequest& request, const ModifyInstanceMaintainTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceMaintainTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::ModifyInstanceMaintainTimeOutcomeCallable HBaseClient::modifyInstanceMaintainTimeCallable(const ModifyInstanceMaintainTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceMaintainTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceMaintainTime(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::ModifyInstanceNameOutcome HBaseClient::modifyInstanceName(const ModifyInstanceNameRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +801,42 @@ HBaseClient::ModifyUIAccountPasswordOutcomeCallable HBaseClient::modifyUIAccount
 			[this, request]()
 			{
 			return this->modifyUIAccountPassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::QueryHBaseHaDBOutcome HBaseClient::queryHBaseHaDB(const QueryHBaseHaDBRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryHBaseHaDBOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryHBaseHaDBOutcome(QueryHBaseHaDBResult(outcome.result()));
+	else
+		return QueryHBaseHaDBOutcome(outcome.error());
+}
+
+void HBaseClient::queryHBaseHaDBAsync(const QueryHBaseHaDBRequest& request, const QueryHBaseHaDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryHBaseHaDB(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::QueryHBaseHaDBOutcomeCallable HBaseClient::queryHBaseHaDBCallable(const QueryHBaseHaDBRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryHBaseHaDBOutcome()>>(
+			[this, request]()
+			{
+			return this->queryHBaseHaDB(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -765,6 +1017,114 @@ HBaseClient::RestartInstanceOutcomeCallable HBaseClient::restartInstanceCallable
 			[this, request]()
 			{
 			return this->restartInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::SwitchHbaseHaSlbOutcome HBaseClient::switchHbaseHaSlb(const SwitchHbaseHaSlbRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SwitchHbaseHaSlbOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SwitchHbaseHaSlbOutcome(SwitchHbaseHaSlbResult(outcome.result()));
+	else
+		return SwitchHbaseHaSlbOutcome(outcome.error());
+}
+
+void HBaseClient::switchHbaseHaSlbAsync(const SwitchHbaseHaSlbRequest& request, const SwitchHbaseHaSlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, switchHbaseHaSlb(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::SwitchHbaseHaSlbOutcomeCallable HBaseClient::switchHbaseHaSlbCallable(const SwitchHbaseHaSlbRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SwitchHbaseHaSlbOutcome()>>(
+			[this, request]()
+			{
+			return this->switchHbaseHaSlb(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::TagResourcesOutcome HBaseClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void HBaseClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::TagResourcesOutcomeCallable HBaseClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::UnTagResourcesOutcome HBaseClient::unTagResources(const UnTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnTagResourcesOutcome(UnTagResourcesResult(outcome.result()));
+	else
+		return UnTagResourcesOutcome(outcome.error());
+}
+
+void HBaseClient::unTagResourcesAsync(const UnTagResourcesRequest& request, const UnTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::UnTagResourcesOutcomeCallable HBaseClient::unTagResourcesCallable(const UnTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->unTagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

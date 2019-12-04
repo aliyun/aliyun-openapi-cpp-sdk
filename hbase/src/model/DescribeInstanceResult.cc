@@ -101,6 +101,10 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		backupStatus_ = value["BackupStatus"].asString();
 	if(!value["CoreDiskCount"].isNull())
 		coreDiskCount_ = value["CoreDiskCount"].asString();
+	if(!value["MaintainStartTime"].isNull())
+		maintainStartTime_ = value["MaintainStartTime"].asString();
+	if(!value["MaintainEndTime"].isNull())
+		maintainEndTime_ = value["MaintainEndTime"].asString();
 
 }
 
@@ -117,6 +121,11 @@ std::string DescribeInstanceResult::getCreatedTime()const
 std::string DescribeInstanceResult::getMasterInstanceType()const
 {
 	return masterInstanceType_;
+}
+
+std::string DescribeInstanceResult::getMaintainEndTime()const
+{
+	return maintainEndTime_;
 }
 
 std::string DescribeInstanceResult::getNetworkType()const
@@ -142,6 +151,11 @@ std::vector<DescribeInstanceResult::Tag> DescribeInstanceResult::getTags()const
 std::string DescribeInstanceResult::getEngine()const
 {
 	return engine_;
+}
+
+std::string DescribeInstanceResult::getMaintainStartTime()const
+{
+	return maintainStartTime_;
 }
 
 std::string DescribeInstanceResult::getStatus()const
