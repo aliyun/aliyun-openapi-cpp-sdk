@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDBInstancesByExpireTimeRequest;
 
 DescribeDBInstancesByExpireTimeRequest::DescribeDBInstancesByExpireTimeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstancesByExpireTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstancesByExpireTimeRequest::~DescribeDBInstancesByExpireTimeRequest()
 {}

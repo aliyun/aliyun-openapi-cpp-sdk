@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CreateParameterGroupRequest;
 
 CreateParameterGroupRequest::CreateParameterGroupRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CreateParameterGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateParameterGroupRequest::~CreateParameterGroupRequest()
 {}

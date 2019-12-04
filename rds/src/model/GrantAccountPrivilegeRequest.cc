@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::GrantAccountPrivilegeRequest;
 
 GrantAccountPrivilegeRequest::GrantAccountPrivilegeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "GrantAccountPrivilege")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GrantAccountPrivilegeRequest::~GrantAccountPrivilegeRequest()
 {}

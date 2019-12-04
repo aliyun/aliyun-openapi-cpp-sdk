@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CheckInstanceExistRequest;
 
 CheckInstanceExistRequest::CheckInstanceExistRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CheckInstanceExist")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckInstanceExistRequest::~CheckInstanceExistRequest()
 {}

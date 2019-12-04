@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ClearDedicatedHostRequest;
 
 ClearDedicatedHostRequest::ClearDedicatedHostRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ClearDedicatedHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ClearDedicatedHostRequest::~ClearDedicatedHostRequest()
 {}

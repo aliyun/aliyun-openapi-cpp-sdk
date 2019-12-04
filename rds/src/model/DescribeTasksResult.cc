@@ -65,6 +65,14 @@ void DescribeTasksResult::parse(const std::string &payload)
 			itemsObject.taskErrorCode = valueItemsTaskProgressInfo["TaskErrorCode"].asString();
 		if(!valueItemsTaskProgressInfo["TaskErrorMessage"].isNull())
 			itemsObject.taskErrorMessage = valueItemsTaskProgressInfo["TaskErrorMessage"].asString();
+		if(!valueItemsTaskProgressInfo["StepsInfo"].isNull())
+			itemsObject.stepsInfo = valueItemsTaskProgressInfo["StepsInfo"].asString();
+		if(!valueItemsTaskProgressInfo["Remain"].isNull())
+			itemsObject.remain = std::stoi(valueItemsTaskProgressInfo["Remain"].asString());
+		if(!valueItemsTaskProgressInfo["StepProgressInfo"].isNull())
+			itemsObject.stepProgressInfo = valueItemsTaskProgressInfo["StepProgressInfo"].asString();
+		if(!valueItemsTaskProgressInfo["CurrentStepName"].isNull())
+			itemsObject.currentStepName = valueItemsTaskProgressInfo["CurrentStepName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDBInstanceIpHostnameRequest;
 
 DescribeDBInstanceIpHostnameRequest::DescribeDBInstanceIpHostnameRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstanceIpHostname")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceIpHostnameRequest::~DescribeDBInstanceIpHostnameRequest()
 {}

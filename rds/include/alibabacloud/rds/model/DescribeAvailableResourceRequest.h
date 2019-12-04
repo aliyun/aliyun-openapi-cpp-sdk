@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeAvailableResourceRequest();
 				~DescribeAvailableResourceRequest();
 
+				std::string getDBInstanceName()const;
+				void setDBInstanceName(const std::string& dBInstanceName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getEngineVersion()const;
@@ -55,6 +57,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getCommodityCode()const;
+				void setCommodityCode(const std::string& commodityCode);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getDBInstanceClass()const;
@@ -65,6 +69,7 @@ namespace AlibabaCloud
 				void setOrderType(const std::string& orderType);
 
             private:
+				std::string dBInstanceName_;
 				long resourceOwnerId_;
 				std::string engineVersion_;
 				std::string accessKeyId_;
@@ -75,6 +80,7 @@ namespace AlibabaCloud
 				std::string instanceChargeType_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string commodityCode_;
 				long ownerId_;
 				std::string dBInstanceClass_;
 				std::string zoneId_;

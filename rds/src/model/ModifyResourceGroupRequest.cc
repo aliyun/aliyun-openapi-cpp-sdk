@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyResourceGroupRequest;
 
 ModifyResourceGroupRequest::ModifyResourceGroupRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyResourceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyResourceGroupRequest::~ModifyResourceGroupRequest()
 {}

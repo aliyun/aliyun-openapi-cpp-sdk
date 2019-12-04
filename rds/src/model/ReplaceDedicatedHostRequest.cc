@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ReplaceDedicatedHostRequest;
 
 ReplaceDedicatedHostRequest::ReplaceDedicatedHostRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ReplaceDedicatedHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReplaceDedicatedHostRequest::~ReplaceDedicatedHostRequest()
 {}

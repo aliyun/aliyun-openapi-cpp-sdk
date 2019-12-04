@@ -20,10 +20,23 @@ using AlibabaCloud::Rds::Model::DescribeAvailableResourceRequest;
 
 DescribeAvailableResourceRequest::DescribeAvailableResourceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeAvailableResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAvailableResourceRequest::~DescribeAvailableResourceRequest()
 {}
+
+std::string DescribeAvailableResourceRequest::getDBInstanceName()const
+{
+	return dBInstanceName_;
+}
+
+void DescribeAvailableResourceRequest::setDBInstanceName(const std::string& dBInstanceName)
+{
+	dBInstanceName_ = dBInstanceName;
+	setCoreParameter("DBInstanceName", dBInstanceName);
+}
 
 long DescribeAvailableResourceRequest::getResourceOwnerId()const
 {
@@ -133,6 +146,17 @@ void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerA
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeAvailableResourceRequest::getCommodityCode()const
+{
+	return commodityCode_;
+}
+
+void DescribeAvailableResourceRequest::setCommodityCode(const std::string& commodityCode)
+{
+	commodityCode_ = commodityCode;
+	setCoreParameter("CommodityCode", commodityCode);
 }
 
 long DescribeAvailableResourceRequest::getOwnerId()const

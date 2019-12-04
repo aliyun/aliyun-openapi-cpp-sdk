@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDBInstancesAsCsvRequest;
 
 DescribeDBInstancesAsCsvRequest::DescribeDBInstancesAsCsvRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstancesAsCsv")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstancesAsCsvRequest::~DescribeDBInstancesAsCsvRequest()
 {}

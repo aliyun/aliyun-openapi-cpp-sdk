@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setBackupPolicyMode(const std::string& backupPolicyMode);
 				std::string getPreferredBackupPeriod()const;
 				void setPreferredBackupPeriod(const std::string& preferredBackupPeriod);
+				std::string getReleasedKeepPolicy()const;
+				void setReleasedKeepPolicy(const std::string& releasedKeepPolicy);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -97,6 +99,7 @@ namespace AlibabaCloud
 				std::string enableBackupLog_;
 				std::string backupPolicyMode_;
 				std::string preferredBackupPeriod_;
+				std::string releasedKeepPolicy_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string compressType_;

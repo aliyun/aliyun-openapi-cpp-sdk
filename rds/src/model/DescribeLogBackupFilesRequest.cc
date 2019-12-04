@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeLogBackupFilesRequest;
 
 DescribeLogBackupFilesRequest::DescribeLogBackupFilesRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeLogBackupFiles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLogBackupFilesRequest::~DescribeLogBackupFilesRequest()
 {}

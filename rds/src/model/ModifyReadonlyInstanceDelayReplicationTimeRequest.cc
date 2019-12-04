@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyReadonlyInstanceDelayReplicationTimeReques
 
 ModifyReadonlyInstanceDelayReplicationTimeRequest::ModifyReadonlyInstanceDelayReplicationTimeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyReadonlyInstanceDelayReplicationTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyReadonlyInstanceDelayReplicationTimeRequest::~ModifyReadonlyInstanceDelayReplicationTimeRequest()
 {}

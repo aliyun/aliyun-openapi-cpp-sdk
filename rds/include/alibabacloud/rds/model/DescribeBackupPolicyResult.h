@@ -48,6 +48,9 @@ namespace AlibabaCloud
 				explicit DescribeBackupPolicyResult(const std::string &payload);
 				~DescribeBackupPolicyResult();
 				std::string getDuplication()const;
+				std::string getArchiveBackupRetentionPeriod()const;
+				std::string getArchiveBackupKeepPolicy()const;
+				std::string getReleasedKeepPolicy()const;
 				std::string getPreferredBackupTime()const;
 				int getLocalLogRetentionHours()const;
 				DuplicationLocation getDuplicationLocation()const;
@@ -56,6 +59,7 @@ namespace AlibabaCloud
 				std::string getCompressType()const;
 				std::string getLogBackupFrequency()const;
 				std::string getPreferredBackupPeriod()const;
+				std::string getArchiveBackupKeepCount()const;
 				int getLogBackupRetentionPeriod()const;
 				std::string getBackupLog()const;
 				std::string getEnableBackupLog()const;
@@ -67,6 +71,9 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string duplication_;
+				std::string archiveBackupRetentionPeriod_;
+				std::string archiveBackupKeepPolicy_;
+				std::string releasedKeepPolicy_;
 				std::string preferredBackupTime_;
 				int localLogRetentionHours_;
 				DuplicationLocation duplicationLocation_;
@@ -75,6 +82,7 @@ namespace AlibabaCloud
 				std::string compressType_;
 				std::string logBackupFrequency_;
 				std::string preferredBackupPeriod_;
+				std::string archiveBackupKeepCount_;
 				int logBackupRetentionPeriod_;
 				std::string backupLog_;
 				std::string enableBackupLog_;

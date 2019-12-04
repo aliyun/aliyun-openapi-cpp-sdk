@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifySQLCollectorPolicyRequest;
 
 ModifySQLCollectorPolicyRequest::ModifySQLCollectorPolicyRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifySQLCollectorPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySQLCollectorPolicyRequest::~ModifySQLCollectorPolicyRequest()
 {}

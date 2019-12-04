@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::RevokeAccountPrivilegeRequest;
 
 RevokeAccountPrivilegeRequest::RevokeAccountPrivilegeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "RevokeAccountPrivilege")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RevokeAccountPrivilegeRequest::~RevokeAccountPrivilegeRequest()
 {}

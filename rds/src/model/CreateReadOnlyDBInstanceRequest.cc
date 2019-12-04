@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CreateReadOnlyDBInstanceRequest;
 
 CreateReadOnlyDBInstanceRequest::CreateReadOnlyDBInstanceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CreateReadOnlyDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateReadOnlyDBInstanceRequest::~CreateReadOnlyDBInstanceRequest()
 {}
@@ -133,6 +135,17 @@ void CreateReadOnlyDBInstanceRequest::setDBInstanceStorageType(const std::string
 {
 	dBInstanceStorageType_ = dBInstanceStorageType;
 	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getDedicatedHostGroupId()const
+{
+	return dedicatedHostGroupId_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
+{
+	dedicatedHostGroupId_ = dedicatedHostGroupId;
+	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 
 std::string CreateReadOnlyDBInstanceRequest::getResourceOwnerAccount()const

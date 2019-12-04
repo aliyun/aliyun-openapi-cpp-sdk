@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeSQLLogFilesRequest;
 
 DescribeSQLLogFilesRequest::DescribeSQLLogFilesRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeSQLLogFiles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSQLLogFilesRequest::~DescribeSQLLogFilesRequest()
 {}

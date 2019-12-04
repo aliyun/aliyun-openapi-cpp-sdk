@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::RestartDedicatedHostRequest;
 
 RestartDedicatedHostRequest::RestartDedicatedHostRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "RestartDedicatedHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RestartDedicatedHostRequest::~RestartDedicatedHostRequest()
 {}

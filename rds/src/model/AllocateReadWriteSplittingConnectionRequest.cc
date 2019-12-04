@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::AllocateReadWriteSplittingConnectionRequest;
 
 AllocateReadWriteSplittingConnectionRequest::AllocateReadWriteSplittingConnectionRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "AllocateReadWriteSplittingConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AllocateReadWriteSplittingConnectionRequest::~AllocateReadWriteSplittingConnectionRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CancelImportRequest;
 
 CancelImportRequest::CancelImportRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CancelImport")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelImportRequest::~CancelImportRequest()
 {}

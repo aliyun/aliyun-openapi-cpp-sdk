@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDBInstancePerformanceRequest;
 
 DescribeDBInstancePerformanceRequest::DescribeDBInstancePerformanceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstancePerformance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstancePerformanceRequest::~DescribeDBInstancePerformanceRequest()
 {}

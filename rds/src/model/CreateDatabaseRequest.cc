@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CreateDatabaseRequest;
 
 CreateDatabaseRequest::CreateDatabaseRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CreateDatabase")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDatabaseRequest::~CreateDatabaseRequest()
 {}

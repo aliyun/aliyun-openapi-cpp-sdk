@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeBackupsRequest;
 
 DescribeBackupsRequest::DescribeBackupsRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeBackups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBackupsRequest::~DescribeBackupsRequest()
 {}

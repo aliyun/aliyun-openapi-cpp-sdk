@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::GrantOperatorPermissionRequest;
 
 GrantOperatorPermissionRequest::GrantOperatorPermissionRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "GrantOperatorPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GrantOperatorPermissionRequest::~GrantOperatorPermissionRequest()
 {}

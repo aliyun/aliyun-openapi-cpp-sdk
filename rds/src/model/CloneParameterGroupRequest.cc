@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CloneParameterGroupRequest;
 
 CloneParameterGroupRequest::CloneParameterGroupRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CloneParameterGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CloneParameterGroupRequest::~CloneParameterGroupRequest()
 {}

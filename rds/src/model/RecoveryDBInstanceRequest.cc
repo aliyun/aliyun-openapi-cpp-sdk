@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::RecoveryDBInstanceRequest;
 
 RecoveryDBInstanceRequest::RecoveryDBInstanceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "RecoveryDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RecoveryDBInstanceRequest::~RecoveryDBInstanceRequest()
 {}

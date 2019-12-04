@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DeleteBackupRequest;
 
 DeleteBackupRequest::DeleteBackupRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DeleteBackup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteBackupRequest::~DeleteBackupRequest()
 {}

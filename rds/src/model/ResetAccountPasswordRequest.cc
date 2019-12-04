@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ResetAccountPasswordRequest;
 
 ResetAccountPasswordRequest::ResetAccountPasswordRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ResetAccountPassword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetAccountPasswordRequest::~ResetAccountPasswordRequest()
 {}

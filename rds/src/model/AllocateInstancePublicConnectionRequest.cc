@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::AllocateInstancePublicConnectionRequest;
 
 AllocateInstancePublicConnectionRequest::AllocateInstancePublicConnectionRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "AllocateInstancePublicConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AllocateInstancePublicConnectionRequest::~AllocateInstancePublicConnectionRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDTCSecurityIpHostsForSQLServerRequest;
 
 DescribeDTCSecurityIpHostsForSQLServerRequest::DescribeDTCSecurityIpHostsForSQLServerRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDTCSecurityIpHostsForSQLServer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDTCSecurityIpHostsForSQLServerRequest::~DescribeDTCSecurityIpHostsForSQLServerRequest()
 {}

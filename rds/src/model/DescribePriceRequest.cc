@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribePriceRequest;
 
 DescribePriceRequest::DescribePriceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribePrice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePriceRequest::~DescribePriceRequest()
 {}

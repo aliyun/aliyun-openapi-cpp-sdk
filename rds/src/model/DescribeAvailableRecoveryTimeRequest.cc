@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeAvailableRecoveryTimeRequest;
 
 DescribeAvailableRecoveryTimeRequest::DescribeAvailableRecoveryTimeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeAvailableRecoveryTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAvailableRecoveryTimeRequest::~DescribeAvailableRecoveryTimeRequest()
 {}

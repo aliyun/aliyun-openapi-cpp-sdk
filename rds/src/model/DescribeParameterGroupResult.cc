@@ -58,7 +58,7 @@ void DescribeParameterGroupResult::parse(const std::string &payload)
 		if(!valueParamGroupParameterGroup["EngineVersion"].isNull())
 			paramGroupObject.engineVersion = valueParamGroupParameterGroup["EngineVersion"].asString();
 		if(!valueParamGroupParameterGroup["ParameterGroupId"].isNull())
-			paramGroupObject.parameterGroupId = std::stoi(valueParamGroupParameterGroup["ParameterGroupId"].asString());
+			paramGroupObject.parameterGroupId = valueParamGroupParameterGroup["ParameterGroupId"].asString();
 		if(!valueParamGroupParameterGroup["CreateTime"].isNull())
 			paramGroupObject.createTime = valueParamGroupParameterGroup["CreateTime"].asString();
 		if(!valueParamGroupParameterGroup["UpdateTime"].isNull())

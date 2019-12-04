@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDBInstancesRequest;
 
 DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstancesRequest::~DescribeDBInstancesRequest()
 {}
@@ -375,6 +377,17 @@ void DescribeDBInstancesRequest::setOwnerAccount(const std::string& ownerAccount
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeDBInstancesRequest::getDedicatedHostId()const
+{
+	return dedicatedHostId_;
+}
+
+void DescribeDBInstancesRequest::setDedicatedHostId(const std::string& dedicatedHostId)
+{
+	dedicatedHostId_ = dedicatedHostId;
+	setCoreParameter("DedicatedHostId", dedicatedHostId);
 }
 
 std::string DescribeDBInstancesRequest::getTag5value()const

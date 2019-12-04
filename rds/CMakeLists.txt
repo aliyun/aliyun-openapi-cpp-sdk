@@ -23,12 +23,8 @@ set(rds_public_header
 set(rds_public_header_model 
 	include/alibabacloud/rds/model/AddTagsToResourceRequest.h
 	include/alibabacloud/rds/model/AddTagsToResourceResult.h
-	include/alibabacloud/rds/model/AllocateInstancePrivateConnectionRequest.h
-	include/alibabacloud/rds/model/AllocateInstancePrivateConnectionResult.h
 	include/alibabacloud/rds/model/AllocateInstancePublicConnectionRequest.h
 	include/alibabacloud/rds/model/AllocateInstancePublicConnectionResult.h
-	include/alibabacloud/rds/model/AllocateInstanceVpcNetworkTypeRequest.h
-	include/alibabacloud/rds/model/AllocateInstanceVpcNetworkTypeResult.h
 	include/alibabacloud/rds/model/AllocateReadWriteSplittingConnectionRequest.h
 	include/alibabacloud/rds/model/AllocateReadWriteSplittingConnectionResult.h
 	include/alibabacloud/rds/model/CalculateDBInstanceWeightRequest.h
@@ -39,12 +35,12 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CheckAccountNameAvailableResult.h
 	include/alibabacloud/rds/model/CheckCreateDdrDBInstanceRequest.h
 	include/alibabacloud/rds/model/CheckCreateDdrDBInstanceResult.h
+	include/alibabacloud/rds/model/CheckDBNameAvailableRequest.h
+	include/alibabacloud/rds/model/CheckDBNameAvailableResult.h
 	include/alibabacloud/rds/model/CheckInstanceExistRequest.h
 	include/alibabacloud/rds/model/CheckInstanceExistResult.h
 	include/alibabacloud/rds/model/CheckRecoveryConditionsRequest.h
 	include/alibabacloud/rds/model/CheckRecoveryConditionsResult.h
-	include/alibabacloud/rds/model/CheckResourceRequest.h
-	include/alibabacloud/rds/model/CheckResourceResult.h
 	include/alibabacloud/rds/model/ClearDedicatedHostRequest.h
 	include/alibabacloud/rds/model/ClearDedicatedHostResult.h
 	include/alibabacloud/rds/model/CloneDBInstanceRequest.h
@@ -93,8 +89,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DeleteDBInstanceResult.h
 	include/alibabacloud/rds/model/DeleteDatabaseRequest.h
 	include/alibabacloud/rds/model/DeleteDatabaseResult.h
-	include/alibabacloud/rds/model/DeleteDedicatedHostRequest.h
-	include/alibabacloud/rds/model/DeleteDedicatedHostResult.h
 	include/alibabacloud/rds/model/DeleteDedicatedHostGroupRequest.h
 	include/alibabacloud/rds/model/DeleteDedicatedHostGroupResult.h
 	include/alibabacloud/rds/model/DeleteParameterGroupRequest.h
@@ -107,8 +101,10 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeActionEventPolicyResult.h
 	include/alibabacloud/rds/model/DescribeAvailableCrossRegionRequest.h
 	include/alibabacloud/rds/model/DescribeAvailableCrossRegionResult.h
-	include/alibabacloud/rds/model/DescribeAvailableInstanceClassRequest.h
-	include/alibabacloud/rds/model/DescribeAvailableInstanceClassResult.h
+	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostClassesRequest.h
+	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostClassesResult.h
+	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostZonesRequest.h
+	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostZonesResult.h
 	include/alibabacloud/rds/model/DescribeAvailableRecoveryTimeRequest.h
 	include/alibabacloud/rds/model/DescribeAvailableRecoveryTimeResult.h
 	include/alibabacloud/rds/model/DescribeAvailableResourceRequest.h
@@ -125,8 +121,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeBinlogFilesResult.h
 	include/alibabacloud/rds/model/DescribeCharacterSetNameRequest.h
 	include/alibabacloud/rds/model/DescribeCharacterSetNameResult.h
-	include/alibabacloud/rds/model/DescribeCloudDbExpertServiceRequest.h
-	include/alibabacloud/rds/model/DescribeCloudDbExpertServiceResult.h
 	include/alibabacloud/rds/model/DescribeCollationTimeZonesRequest.h
 	include/alibabacloud/rds/model/DescribeCollationTimeZonesResult.h
 	include/alibabacloud/rds/model/DescribeCrossRegionBackupDBInstanceRequest.h
@@ -165,12 +159,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeDBInstancesByExpireTimeResult.h
 	include/alibabacloud/rds/model/DescribeDBInstancesByPerformanceRequest.h
 	include/alibabacloud/rds/model/DescribeDBInstancesByPerformanceResult.h
-	include/alibabacloud/rds/model/DescribeDBProxyRequest.h
-	include/alibabacloud/rds/model/DescribeDBProxyResult.h
-	include/alibabacloud/rds/model/DescribeDBProxyEndpointRequest.h
-	include/alibabacloud/rds/model/DescribeDBProxyEndpointResult.h
-	include/alibabacloud/rds/model/DescribeDBProxyPerformanceRequest.h
-	include/alibabacloud/rds/model/DescribeDBProxyPerformanceResult.h
+	include/alibabacloud/rds/model/DescribeDBInstancesForCloneRequest.h
+	include/alibabacloud/rds/model/DescribeDBInstancesForCloneResult.h
 	include/alibabacloud/rds/model/DescribeDTCSecurityIpHostsForSQLServerRequest.h
 	include/alibabacloud/rds/model/DescribeDTCSecurityIpHostsForSQLServerResult.h
 	include/alibabacloud/rds/model/DescribeDatabasesRequest.h
@@ -181,6 +171,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeDedicatedHostGroupsResult.h
 	include/alibabacloud/rds/model/DescribeDedicatedHostsRequest.h
 	include/alibabacloud/rds/model/DescribeDedicatedHostsResult.h
+	include/alibabacloud/rds/model/DescribeDetachedBackupsRequest.h
+	include/alibabacloud/rds/model/DescribeDetachedBackupsResult.h
 	include/alibabacloud/rds/model/DescribeDiagnosticReportListRequest.h
 	include/alibabacloud/rds/model/DescribeDiagnosticReportListResult.h
 	include/alibabacloud/rds/model/DescribeErrorLogsRequest.h
@@ -193,12 +185,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeInstanceAutoRenewalAttributeResult.h
 	include/alibabacloud/rds/model/DescribeInstanceCrossBackupPolicyRequest.h
 	include/alibabacloud/rds/model/DescribeInstanceCrossBackupPolicyResult.h
-	include/alibabacloud/rds/model/DescribeInstanceVpcMigrateInfoRequest.h
-	include/alibabacloud/rds/model/DescribeInstanceVpcMigrateInfoResult.h
 	include/alibabacloud/rds/model/DescribeLogBackupFilesRequest.h
 	include/alibabacloud/rds/model/DescribeLogBackupFilesResult.h
-	include/alibabacloud/rds/model/DescribeMetaListRequest.h
-	include/alibabacloud/rds/model/DescribeMetaListResult.h
 	include/alibabacloud/rds/model/DescribeMigrateTasksRequest.h
 	include/alibabacloud/rds/model/DescribeMigrateTasksResult.h
 	include/alibabacloud/rds/model/DescribeMigrateTasksForSQLServerRequest.h
@@ -219,8 +207,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeParametersResult.h
 	include/alibabacloud/rds/model/DescribePriceRequest.h
 	include/alibabacloud/rds/model/DescribePriceResult.h
-	include/alibabacloud/rds/model/DescribeProxyFunctionSupportRequest.h
-	include/alibabacloud/rds/model/DescribeProxyFunctionSupportResult.h
 	include/alibabacloud/rds/model/DescribeReadDBInstanceDelayRequest.h
 	include/alibabacloud/rds/model/DescribeReadDBInstanceDelayResult.h
 	include/alibabacloud/rds/model/DescribeRegionsRequest.h
@@ -247,30 +233,26 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeSlowLogsResult.h
 	include/alibabacloud/rds/model/DescribeTagsRequest.h
 	include/alibabacloud/rds/model/DescribeTagsResult.h
-	include/alibabacloud/rds/model/DescribeTaskInfoRequest.h
-	include/alibabacloud/rds/model/DescribeTaskInfoResult.h
 	include/alibabacloud/rds/model/DescribeTasksRequest.h
 	include/alibabacloud/rds/model/DescribeTasksResult.h
-	include/alibabacloud/rds/model/DescribeTemplatesListRequest.h
-	include/alibabacloud/rds/model/DescribeTemplatesListResult.h
-	include/alibabacloud/rds/model/EvaluateSupportByokShowRequest.h
-	include/alibabacloud/rds/model/EvaluateSupportByokShowResult.h
+	include/alibabacloud/rds/model/DestroyDBInstanceRequest.h
+	include/alibabacloud/rds/model/DestroyDBInstanceResult.h
+	include/alibabacloud/rds/model/EvaluateDedicatedHostInstanceResourceRequest.h
+	include/alibabacloud/rds/model/EvaluateDedicatedHostInstanceResourceResult.h
 	include/alibabacloud/rds/model/GrantAccountPrivilegeRequest.h
 	include/alibabacloud/rds/model/GrantAccountPrivilegeResult.h
 	include/alibabacloud/rds/model/GrantOperatorPermissionRequest.h
 	include/alibabacloud/rds/model/GrantOperatorPermissionResult.h
-	include/alibabacloud/rds/model/ImportDataForSQLServerRequest.h
-	include/alibabacloud/rds/model/ImportDataForSQLServerResult.h
 	include/alibabacloud/rds/model/ImportDatabaseBetweenInstancesRequest.h
 	include/alibabacloud/rds/model/ImportDatabaseBetweenInstancesResult.h
 	include/alibabacloud/rds/model/ListTagResourcesRequest.h
 	include/alibabacloud/rds/model/ListTagResourcesResult.h
+	include/alibabacloud/rds/model/LockAccountRequest.h
+	include/alibabacloud/rds/model/LockAccountResult.h
 	include/alibabacloud/rds/model/MigrateDBInstanceRequest.h
 	include/alibabacloud/rds/model/MigrateDBInstanceResult.h
 	include/alibabacloud/rds/model/MigrateSecurityIPModeRequest.h
 	include/alibabacloud/rds/model/MigrateSecurityIPModeResult.h
-	include/alibabacloud/rds/model/MigrateToOtherRegionRequest.h
-	include/alibabacloud/rds/model/MigrateToOtherRegionResult.h
 	include/alibabacloud/rds/model/MigrateToOtherZoneRequest.h
 	include/alibabacloud/rds/model/MigrateToOtherZoneResult.h
 	include/alibabacloud/rds/model/ModifyAccountDescriptionRequest.h
@@ -311,12 +293,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyDBInstanceSpecResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceTDERequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceTDEResult.h
-	include/alibabacloud/rds/model/ModifyDBProxyRequest.h
-	include/alibabacloud/rds/model/ModifyDBProxyResult.h
-	include/alibabacloud/rds/model/ModifyDBProxyEndpointRequest.h
-	include/alibabacloud/rds/model/ModifyDBProxyEndpointResult.h
-	include/alibabacloud/rds/model/ModifyDBProxyInstanceRequest.h
-	include/alibabacloud/rds/model/ModifyDBProxyInstanceResult.h
 	include/alibabacloud/rds/model/ModifyDTCSecurityIpHostsForSQLServerRequest.h
 	include/alibabacloud/rds/model/ModifyDTCSecurityIpHostsForSQLServerResult.h
 	include/alibabacloud/rds/model/ModifyDedicatedHostAttributeRequest.h
@@ -329,8 +305,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyInstanceAutoRenewalAttributeResult.h
 	include/alibabacloud/rds/model/ModifyInstanceCrossBackupPolicyRequest.h
 	include/alibabacloud/rds/model/ModifyInstanceCrossBackupPolicyResult.h
-	include/alibabacloud/rds/model/ModifyMySQLDBInstanceDelayRequest.h
-	include/alibabacloud/rds/model/ModifyMySQLDBInstanceDelayResult.h
 	include/alibabacloud/rds/model/ModifyParameterRequest.h
 	include/alibabacloud/rds/model/ModifyParameterResult.h
 	include/alibabacloud/rds/model/ModifyParameterGroupRequest.h
@@ -349,28 +323,14 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifySecurityGroupConfigurationResult.h
 	include/alibabacloud/rds/model/ModifySecurityIpsRequest.h
 	include/alibabacloud/rds/model/ModifySecurityIpsResult.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderRequest.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderResult.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForCloneRequest.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForCloneResult.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForDeferRequest.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForDeferResult.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForDegradeRequest.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForDegradeResult.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForModifyRequest.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForModifyResult.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForRebuildRequest.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForRebuildResult.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForTempUpgradeRequest.h
-	include/alibabacloud/rds/model/PreCheckCreateOrderForTempUpgradeResult.h
-	include/alibabacloud/rds/model/PreCheckDBInstanceOperationRequest.h
-	include/alibabacloud/rds/model/PreCheckDBInstanceOperationResult.h
 	include/alibabacloud/rds/model/PurgeDBInstanceLogRequest.h
 	include/alibabacloud/rds/model/PurgeDBInstanceLogResult.h
 	include/alibabacloud/rds/model/RebuildDBInstanceRequest.h
 	include/alibabacloud/rds/model/RebuildDBInstanceResult.h
 	include/alibabacloud/rds/model/RecoveryDBInstanceRequest.h
 	include/alibabacloud/rds/model/RecoveryDBInstanceResult.h
+	include/alibabacloud/rds/model/ReleaseInstanceConnectionRequest.h
+	include/alibabacloud/rds/model/ReleaseInstanceConnectionResult.h
 	include/alibabacloud/rds/model/ReleaseInstancePublicConnectionRequest.h
 	include/alibabacloud/rds/model/ReleaseInstancePublicConnectionResult.h
 	include/alibabacloud/rds/model/ReleaseReadWriteSplittingConnectionRequest.h
@@ -381,8 +341,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/RenewInstanceResult.h
 	include/alibabacloud/rds/model/ReplaceDedicatedHostRequest.h
 	include/alibabacloud/rds/model/ReplaceDedicatedHostResult.h
-	include/alibabacloud/rds/model/RequestServiceOfCloudDBExpertRequest.h
-	include/alibabacloud/rds/model/RequestServiceOfCloudDBExpertResult.h
 	include/alibabacloud/rds/model/ResetAccountRequest.h
 	include/alibabacloud/rds/model/ResetAccountResult.h
 	include/alibabacloud/rds/model/ResetAccountForPGRequest.h
@@ -409,6 +367,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/SwitchDBInstanceVpcResult.h
 	include/alibabacloud/rds/model/TagResourcesRequest.h
 	include/alibabacloud/rds/model/TagResourcesResult.h
+	include/alibabacloud/rds/model/UnlockAccountRequest.h
+	include/alibabacloud/rds/model/UnlockAccountResult.h
 	include/alibabacloud/rds/model/UntagResourcesRequest.h
 	include/alibabacloud/rds/model/UntagResourcesResult.h
 	include/alibabacloud/rds/model/UpgradeDBInstanceEngineVersionRequest.h
@@ -420,12 +380,8 @@ set(rds_src
 	src/RdsClient.cc
 	src/model/AddTagsToResourceRequest.cc
 	src/model/AddTagsToResourceResult.cc
-	src/model/AllocateInstancePrivateConnectionRequest.cc
-	src/model/AllocateInstancePrivateConnectionResult.cc
 	src/model/AllocateInstancePublicConnectionRequest.cc
 	src/model/AllocateInstancePublicConnectionResult.cc
-	src/model/AllocateInstanceVpcNetworkTypeRequest.cc
-	src/model/AllocateInstanceVpcNetworkTypeResult.cc
 	src/model/AllocateReadWriteSplittingConnectionRequest.cc
 	src/model/AllocateReadWriteSplittingConnectionResult.cc
 	src/model/CalculateDBInstanceWeightRequest.cc
@@ -436,12 +392,12 @@ set(rds_src
 	src/model/CheckAccountNameAvailableResult.cc
 	src/model/CheckCreateDdrDBInstanceRequest.cc
 	src/model/CheckCreateDdrDBInstanceResult.cc
+	src/model/CheckDBNameAvailableRequest.cc
+	src/model/CheckDBNameAvailableResult.cc
 	src/model/CheckInstanceExistRequest.cc
 	src/model/CheckInstanceExistResult.cc
 	src/model/CheckRecoveryConditionsRequest.cc
 	src/model/CheckRecoveryConditionsResult.cc
-	src/model/CheckResourceRequest.cc
-	src/model/CheckResourceResult.cc
 	src/model/ClearDedicatedHostRequest.cc
 	src/model/ClearDedicatedHostResult.cc
 	src/model/CloneDBInstanceRequest.cc
@@ -490,8 +446,6 @@ set(rds_src
 	src/model/DeleteDBInstanceResult.cc
 	src/model/DeleteDatabaseRequest.cc
 	src/model/DeleteDatabaseResult.cc
-	src/model/DeleteDedicatedHostRequest.cc
-	src/model/DeleteDedicatedHostResult.cc
 	src/model/DeleteDedicatedHostGroupRequest.cc
 	src/model/DeleteDedicatedHostGroupResult.cc
 	src/model/DeleteParameterGroupRequest.cc
@@ -504,8 +458,10 @@ set(rds_src
 	src/model/DescribeActionEventPolicyResult.cc
 	src/model/DescribeAvailableCrossRegionRequest.cc
 	src/model/DescribeAvailableCrossRegionResult.cc
-	src/model/DescribeAvailableInstanceClassRequest.cc
-	src/model/DescribeAvailableInstanceClassResult.cc
+	src/model/DescribeAvailableDedicatedHostClassesRequest.cc
+	src/model/DescribeAvailableDedicatedHostClassesResult.cc
+	src/model/DescribeAvailableDedicatedHostZonesRequest.cc
+	src/model/DescribeAvailableDedicatedHostZonesResult.cc
 	src/model/DescribeAvailableRecoveryTimeRequest.cc
 	src/model/DescribeAvailableRecoveryTimeResult.cc
 	src/model/DescribeAvailableResourceRequest.cc
@@ -522,8 +478,6 @@ set(rds_src
 	src/model/DescribeBinlogFilesResult.cc
 	src/model/DescribeCharacterSetNameRequest.cc
 	src/model/DescribeCharacterSetNameResult.cc
-	src/model/DescribeCloudDbExpertServiceRequest.cc
-	src/model/DescribeCloudDbExpertServiceResult.cc
 	src/model/DescribeCollationTimeZonesRequest.cc
 	src/model/DescribeCollationTimeZonesResult.cc
 	src/model/DescribeCrossRegionBackupDBInstanceRequest.cc
@@ -562,12 +516,8 @@ set(rds_src
 	src/model/DescribeDBInstancesByExpireTimeResult.cc
 	src/model/DescribeDBInstancesByPerformanceRequest.cc
 	src/model/DescribeDBInstancesByPerformanceResult.cc
-	src/model/DescribeDBProxyRequest.cc
-	src/model/DescribeDBProxyResult.cc
-	src/model/DescribeDBProxyEndpointRequest.cc
-	src/model/DescribeDBProxyEndpointResult.cc
-	src/model/DescribeDBProxyPerformanceRequest.cc
-	src/model/DescribeDBProxyPerformanceResult.cc
+	src/model/DescribeDBInstancesForCloneRequest.cc
+	src/model/DescribeDBInstancesForCloneResult.cc
 	src/model/DescribeDTCSecurityIpHostsForSQLServerRequest.cc
 	src/model/DescribeDTCSecurityIpHostsForSQLServerResult.cc
 	src/model/DescribeDatabasesRequest.cc
@@ -578,6 +528,8 @@ set(rds_src
 	src/model/DescribeDedicatedHostGroupsResult.cc
 	src/model/DescribeDedicatedHostsRequest.cc
 	src/model/DescribeDedicatedHostsResult.cc
+	src/model/DescribeDetachedBackupsRequest.cc
+	src/model/DescribeDetachedBackupsResult.cc
 	src/model/DescribeDiagnosticReportListRequest.cc
 	src/model/DescribeDiagnosticReportListResult.cc
 	src/model/DescribeErrorLogsRequest.cc
@@ -590,12 +542,8 @@ set(rds_src
 	src/model/DescribeInstanceAutoRenewalAttributeResult.cc
 	src/model/DescribeInstanceCrossBackupPolicyRequest.cc
 	src/model/DescribeInstanceCrossBackupPolicyResult.cc
-	src/model/DescribeInstanceVpcMigrateInfoRequest.cc
-	src/model/DescribeInstanceVpcMigrateInfoResult.cc
 	src/model/DescribeLogBackupFilesRequest.cc
 	src/model/DescribeLogBackupFilesResult.cc
-	src/model/DescribeMetaListRequest.cc
-	src/model/DescribeMetaListResult.cc
 	src/model/DescribeMigrateTasksRequest.cc
 	src/model/DescribeMigrateTasksResult.cc
 	src/model/DescribeMigrateTasksForSQLServerRequest.cc
@@ -616,8 +564,6 @@ set(rds_src
 	src/model/DescribeParametersResult.cc
 	src/model/DescribePriceRequest.cc
 	src/model/DescribePriceResult.cc
-	src/model/DescribeProxyFunctionSupportRequest.cc
-	src/model/DescribeProxyFunctionSupportResult.cc
 	src/model/DescribeReadDBInstanceDelayRequest.cc
 	src/model/DescribeReadDBInstanceDelayResult.cc
 	src/model/DescribeRegionsRequest.cc
@@ -644,30 +590,26 @@ set(rds_src
 	src/model/DescribeSlowLogsResult.cc
 	src/model/DescribeTagsRequest.cc
 	src/model/DescribeTagsResult.cc
-	src/model/DescribeTaskInfoRequest.cc
-	src/model/DescribeTaskInfoResult.cc
 	src/model/DescribeTasksRequest.cc
 	src/model/DescribeTasksResult.cc
-	src/model/DescribeTemplatesListRequest.cc
-	src/model/DescribeTemplatesListResult.cc
-	src/model/EvaluateSupportByokShowRequest.cc
-	src/model/EvaluateSupportByokShowResult.cc
+	src/model/DestroyDBInstanceRequest.cc
+	src/model/DestroyDBInstanceResult.cc
+	src/model/EvaluateDedicatedHostInstanceResourceRequest.cc
+	src/model/EvaluateDedicatedHostInstanceResourceResult.cc
 	src/model/GrantAccountPrivilegeRequest.cc
 	src/model/GrantAccountPrivilegeResult.cc
 	src/model/GrantOperatorPermissionRequest.cc
 	src/model/GrantOperatorPermissionResult.cc
-	src/model/ImportDataForSQLServerRequest.cc
-	src/model/ImportDataForSQLServerResult.cc
 	src/model/ImportDatabaseBetweenInstancesRequest.cc
 	src/model/ImportDatabaseBetweenInstancesResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
+	src/model/LockAccountRequest.cc
+	src/model/LockAccountResult.cc
 	src/model/MigrateDBInstanceRequest.cc
 	src/model/MigrateDBInstanceResult.cc
 	src/model/MigrateSecurityIPModeRequest.cc
 	src/model/MigrateSecurityIPModeResult.cc
-	src/model/MigrateToOtherRegionRequest.cc
-	src/model/MigrateToOtherRegionResult.cc
 	src/model/MigrateToOtherZoneRequest.cc
 	src/model/MigrateToOtherZoneResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
@@ -708,12 +650,6 @@ set(rds_src
 	src/model/ModifyDBInstanceSpecResult.cc
 	src/model/ModifyDBInstanceTDERequest.cc
 	src/model/ModifyDBInstanceTDEResult.cc
-	src/model/ModifyDBProxyRequest.cc
-	src/model/ModifyDBProxyResult.cc
-	src/model/ModifyDBProxyEndpointRequest.cc
-	src/model/ModifyDBProxyEndpointResult.cc
-	src/model/ModifyDBProxyInstanceRequest.cc
-	src/model/ModifyDBProxyInstanceResult.cc
 	src/model/ModifyDTCSecurityIpHostsForSQLServerRequest.cc
 	src/model/ModifyDTCSecurityIpHostsForSQLServerResult.cc
 	src/model/ModifyDedicatedHostAttributeRequest.cc
@@ -726,8 +662,6 @@ set(rds_src
 	src/model/ModifyInstanceAutoRenewalAttributeResult.cc
 	src/model/ModifyInstanceCrossBackupPolicyRequest.cc
 	src/model/ModifyInstanceCrossBackupPolicyResult.cc
-	src/model/ModifyMySQLDBInstanceDelayRequest.cc
-	src/model/ModifyMySQLDBInstanceDelayResult.cc
 	src/model/ModifyParameterRequest.cc
 	src/model/ModifyParameterResult.cc
 	src/model/ModifyParameterGroupRequest.cc
@@ -746,28 +680,14 @@ set(rds_src
 	src/model/ModifySecurityGroupConfigurationResult.cc
 	src/model/ModifySecurityIpsRequest.cc
 	src/model/ModifySecurityIpsResult.cc
-	src/model/PreCheckCreateOrderRequest.cc
-	src/model/PreCheckCreateOrderResult.cc
-	src/model/PreCheckCreateOrderForCloneRequest.cc
-	src/model/PreCheckCreateOrderForCloneResult.cc
-	src/model/PreCheckCreateOrderForDeferRequest.cc
-	src/model/PreCheckCreateOrderForDeferResult.cc
-	src/model/PreCheckCreateOrderForDegradeRequest.cc
-	src/model/PreCheckCreateOrderForDegradeResult.cc
-	src/model/PreCheckCreateOrderForModifyRequest.cc
-	src/model/PreCheckCreateOrderForModifyResult.cc
-	src/model/PreCheckCreateOrderForRebuildRequest.cc
-	src/model/PreCheckCreateOrderForRebuildResult.cc
-	src/model/PreCheckCreateOrderForTempUpgradeRequest.cc
-	src/model/PreCheckCreateOrderForTempUpgradeResult.cc
-	src/model/PreCheckDBInstanceOperationRequest.cc
-	src/model/PreCheckDBInstanceOperationResult.cc
 	src/model/PurgeDBInstanceLogRequest.cc
 	src/model/PurgeDBInstanceLogResult.cc
 	src/model/RebuildDBInstanceRequest.cc
 	src/model/RebuildDBInstanceResult.cc
 	src/model/RecoveryDBInstanceRequest.cc
 	src/model/RecoveryDBInstanceResult.cc
+	src/model/ReleaseInstanceConnectionRequest.cc
+	src/model/ReleaseInstanceConnectionResult.cc
 	src/model/ReleaseInstancePublicConnectionRequest.cc
 	src/model/ReleaseInstancePublicConnectionResult.cc
 	src/model/ReleaseReadWriteSplittingConnectionRequest.cc
@@ -778,8 +698,6 @@ set(rds_src
 	src/model/RenewInstanceResult.cc
 	src/model/ReplaceDedicatedHostRequest.cc
 	src/model/ReplaceDedicatedHostResult.cc
-	src/model/RequestServiceOfCloudDBExpertRequest.cc
-	src/model/RequestServiceOfCloudDBExpertResult.cc
 	src/model/ResetAccountRequest.cc
 	src/model/ResetAccountResult.cc
 	src/model/ResetAccountForPGRequest.cc
@@ -806,6 +724,8 @@ set(rds_src
 	src/model/SwitchDBInstanceVpcResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/UnlockAccountRequest.cc
+	src/model/UnlockAccountResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
 	src/model/UpgradeDBInstanceEngineVersionRequest.cc

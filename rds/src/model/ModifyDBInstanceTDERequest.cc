@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyDBInstanceTDERequest;
 
 ModifyDBInstanceTDERequest::ModifyDBInstanceTDERequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyDBInstanceTDE")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceTDERequest::~ModifyDBInstanceTDERequest()
 {}

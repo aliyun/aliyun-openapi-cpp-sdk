@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DeleteParameterGroupRequest;
 
 DeleteParameterGroupRequest::DeleteParameterGroupRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DeleteParameterGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteParameterGroupRequest::~DeleteParameterGroupRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CloneDBInstanceRequest;
 
 CloneDBInstanceRequest::CloneDBInstanceRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CloneDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CloneDBInstanceRequest::~CloneDBInstanceRequest()
 {}
@@ -155,6 +157,17 @@ void CloneDBInstanceRequest::setDBInstanceStorageType(const std::string& dBInsta
 {
 	dBInstanceStorageType_ = dBInstanceStorageType;
 	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
+std::string CloneDBInstanceRequest::getDedicatedHostGroupId()const
+{
+	return dedicatedHostGroupId_;
+}
+
+void CloneDBInstanceRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
+{
+	dedicatedHostGroupId_ = dedicatedHostGroupId;
+	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 
 std::string CloneDBInstanceRequest::getRestoreTime()const

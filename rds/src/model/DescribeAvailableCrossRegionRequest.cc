@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeAvailableCrossRegionRequest;
 
 DescribeAvailableCrossRegionRequest::DescribeAvailableCrossRegionRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeAvailableCrossRegion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAvailableCrossRegionRequest::~DescribeAvailableCrossRegionRequest()
 {}

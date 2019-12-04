@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDBInstanceNetInfoRequest;
 
 DescribeDBInstanceNetInfoRequest::DescribeDBInstanceNetInfoRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDBInstanceNetInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceNetInfoRequest::~DescribeDBInstanceNetInfoRequest()
 {}

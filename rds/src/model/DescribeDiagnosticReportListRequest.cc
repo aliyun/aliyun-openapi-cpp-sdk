@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::DescribeDiagnosticReportListRequest;
 
 DescribeDiagnosticReportListRequest::DescribeDiagnosticReportListRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeDiagnosticReportList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDiagnosticReportListRequest::~DescribeDiagnosticReportListRequest()
 {}

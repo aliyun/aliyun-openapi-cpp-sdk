@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::ModifyBackupPolicyRequest;
 
 ModifyBackupPolicyRequest::ModifyBackupPolicyRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "ModifyBackupPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyBackupPolicyRequest::~ModifyBackupPolicyRequest()
 {}
@@ -155,6 +157,17 @@ void ModifyBackupPolicyRequest::setPreferredBackupPeriod(const std::string& pref
 {
 	preferredBackupPeriod_ = preferredBackupPeriod;
 	setCoreParameter("PreferredBackupPeriod", preferredBackupPeriod);
+}
+
+std::string ModifyBackupPolicyRequest::getReleasedKeepPolicy()const
+{
+	return releasedKeepPolicy_;
+}
+
+void ModifyBackupPolicyRequest::setReleasedKeepPolicy(const std::string& releasedKeepPolicy)
+{
+	releasedKeepPolicy_ = releasedKeepPolicy;
+	setCoreParameter("ReleasedKeepPolicy", releasedKeepPolicy);
 }
 
 std::string ModifyBackupPolicyRequest::getResourceOwnerAccount()const

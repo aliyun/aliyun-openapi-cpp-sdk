@@ -99,6 +99,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getDedicatedHostId()const;
+				void setDedicatedHostId(const std::string& dedicatedHostId);
 				std::string getTag5value()const;
 				void setTag5value(const std::string& tag5value);
 				std::string getTag1key()const;
@@ -143,6 +145,7 @@ namespace AlibabaCloud
 				std::string tag3value_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string dedicatedHostId_;
 				std::string tag5value_;
 				std::string tag1key_;
 				std::string vpcId_;

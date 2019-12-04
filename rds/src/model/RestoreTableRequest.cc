@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::RestoreTableRequest;
 
 RestoreTableRequest::RestoreTableRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "RestoreTable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RestoreTableRequest::~RestoreTableRequest()
 {}

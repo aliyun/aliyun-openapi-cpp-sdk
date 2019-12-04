@@ -20,7 +20,9 @@ using AlibabaCloud::Rds::Model::CalculateDBInstanceWeightRequest;
 
 CalculateDBInstanceWeightRequest::CalculateDBInstanceWeightRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "CalculateDBInstanceWeight")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CalculateDBInstanceWeightRequest::~CalculateDBInstanceWeightRequest()
 {}
