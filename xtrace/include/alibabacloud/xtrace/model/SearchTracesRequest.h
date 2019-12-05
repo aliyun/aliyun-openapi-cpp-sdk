@@ -40,44 +40,44 @@ namespace AlibabaCloud
 				SearchTracesRequest();
 				~SearchTracesRequest();
 
-				std::string getServiceIp()const;
-				void setServiceIp(const std::string& serviceIp);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOperationName()const;
-				void setOperationName(const std::string& operationName);
 				std::string getAppType()const;
 				void setAppType(const std::string& appType);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getEndTime()const;
 				void setEndTime(long endTime);
-				std::string getServiceName()const;
-				void setServiceName(const std::string& serviceName);
 				long getStartTime()const;
 				void setStartTime(long startTime);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
 				bool getReverse()const;
 				void setReverse(bool reverse);
 				long getMinDuration()const;
 				void setMinDuration(long minDuration);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getServiceIp()const;
+				void setServiceIp(const std::string& serviceIp);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getOperationName()const;
+				void setOperationName(const std::string& operationName);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getServiceName()const;
+				void setServiceName(const std::string& serviceName);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
-				std::string serviceIp_;
-				std::string regionId_;
-				std::string operationName_;
 				std::string appType_;
-				int pageSize_;
 				long endTime_;
-				std::string serviceName_;
 				long startTime_;
-				std::vector<Tag> tag_;
 				bool reverse_;
 				long minDuration_;
 				int pageNumber_;
+				std::string serviceIp_;
+				std::string regionId_;
+				std::string operationName_;
+				int pageSize_;
+				std::string serviceName_;
+				std::vector<Tag> tag_;
 
 			};
 		}

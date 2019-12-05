@@ -20,7 +20,9 @@ using AlibabaCloud::Xtrace::Model::ListIpOrHostsRequest;
 
 ListIpOrHostsRequest::ListIpOrHostsRequest() :
 	RpcServiceRequest("xtrace", "2019-08-08", "ListIpOrHosts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListIpOrHostsRequest::~ListIpOrHostsRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Xtrace::Model::ListSpanNamesRequest;
 
 ListSpanNamesRequest::ListSpanNamesRequest() :
 	RpcServiceRequest("xtrace", "2019-08-08", "ListSpanNames")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSpanNamesRequest::~ListSpanNamesRequest()
 {}

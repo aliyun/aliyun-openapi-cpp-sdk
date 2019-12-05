@@ -35,60 +35,56 @@ GetTraceResult::~GetTraceResult()
 
 void GetTraceResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSpans = value["Spans"]["Span"];
-	for (auto value : allSpans)
+	auto allSpansNode = value["Spans"]["Span"];
+	for (auto valueSpansSpan : allSpansNode)
 	{
 		Span spansObject;
-		if(!value["TraceID"].isNull())
-			spansObject.traceID = value["TraceID"].asString();
-		if(!value["OperationName"].isNull())
-			spansObject.operationName = value["OperationName"].asString();
-		if(!value["Duration"].isNull())
-			spansObject.duration = std::stol(value["Duration"].asString());
-		if(!value["ServiceName"].isNull())
-			spansObject.serviceName = value["ServiceName"].asString();
-		if(!value["ServiceIp"].isNull())
-			spansObject.serviceIp = value["ServiceIp"].asString();
-		if(!value["Timestamp"].isNull())
-			spansObject.timestamp = std::stol(value["Timestamp"].asString());
-		if(!value["RpcId"].isNull())
-			spansObject.rpcId = value["RpcId"].asString();
-		if(!value["ResultCode"].isNull())
-			spansObject.resultCode = value["ResultCode"].asString();
-		if(!value["HaveStack"].isNull())
-			spansObject.haveStack = value["HaveStack"].asString() == "true";
-		auto allTagEntryList = value["TagEntryList"]["TagEntry"];
-		for (auto value : allTagEntryList)
+		if(!valueSpansSpan["TraceID"].isNull())
+			spansObject.traceID = valueSpansSpan["TraceID"].asString();
+		if(!valueSpansSpan["OperationName"].isNull())
+			spansObject.operationName = valueSpansSpan["OperationName"].asString();
+		if(!valueSpansSpan["Duration"].isNull())
+			spansObject.duration = std::stol(valueSpansSpan["Duration"].asString());
+		if(!valueSpansSpan["ServiceName"].isNull())
+			spansObject.serviceName = valueSpansSpan["ServiceName"].asString();
+		if(!valueSpansSpan["ServiceIp"].isNull())
+			spansObject.serviceIp = valueSpansSpan["ServiceIp"].asString();
+		if(!valueSpansSpan["Timestamp"].isNull())
+			spansObject.timestamp = std::stol(valueSpansSpan["Timestamp"].asString());
+		if(!valueSpansSpan["RpcId"].isNull())
+			spansObject.rpcId = valueSpansSpan["RpcId"].asString();
+		if(!valueSpansSpan["ResultCode"].isNull())
+			spansObject.resultCode = valueSpansSpan["ResultCode"].asString();
+		if(!valueSpansSpan["HaveStack"].isNull())
+			spansObject.haveStack = valueSpansSpan["HaveStack"].asString() == "true";
+		auto allTagEntryListNode = allSpansNode["TagEntryList"]["TagEntry"];
+		for (auto allSpansNodeTagEntryListTagEntry : allTagEntryListNode)
 		{
 			Span::TagEntry tagEntryListObject;
-			if(!value["Key"].isNull())
-				tagEntryListObject.key = value["Key"].asString();
-			if(!value["Value"].isNull())
-				tagEntryListObject.value = value["Value"].asString();
+			if(!allSpansNodeTagEntryListTagEntry["Key"].isNull())
+				tagEntryListObject.key = allSpansNodeTagEntryListTagEntry["Key"].asString();
+			if(!allSpansNodeTagEntryListTagEntry["Value"].isNull())
+				tagEntryListObject.value = allSpansNodeTagEntryListTagEntry["Value"].asString();
 			spansObject.tagEntryList.push_back(tagEntryListObject);
 		}
-		auto allLogEventList = value["LogEventList"]["LogEvent"];
-		for (auto value : allLogEventList)
+		auto allLogEventListNode = allSpansNode["LogEventList"]["LogEvent"];
+		for (auto allSpansNodeLogEventListLogEvent : allLogEventListNode)
 		{
 			Span::LogEvent logEventListObject;
-			if(!value["Timestamp"].isNull())
-				logEventListObject.timestamp = std::stol(value["Timestamp"].asString());
-			auto allTagEntryList1 = value["TagEntryList"]["TagEntry"];
-			for (auto value : allTagEntryList1)
+			if(!allSpansNodeLogEventListLogEvent["Timestamp"].isNull())
+				logEventListObject.timestamp = std::stol(allSpansNodeLogEventListLogEvent["Timestamp"].asString());
+			auto allTagEntryList1Node = allLogEventListNode["TagEntryList"]["TagEntry"];
+			for (auto allLogEventListNodeTagEntryListTagEntry : allTagEntryList1Node)
 			{
 				Span::LogEvent::TagEntry2 tagEntryList1Object;
-				if(!value["Key"].isNull())
-					tagEntryList1Object.key = value["Key"].asString();
-				if(!value["Value"].isNull())
-					tagEntryList1Object.value = value["Value"].asString();
+				if(!allLogEventListNodeTagEntryListTagEntry["Key"].isNull())
+					tagEntryList1Object.key = allLogEventListNodeTagEntryListTagEntry["Key"].asString();
+				if(!allLogEventListNodeTagEntryListTagEntry["Value"].isNull())
+					tagEntryList1Object.value = allLogEventListNodeTagEntryListTagEntry["Value"].asString();
 				logEventListObject.tagEntryList1.push_back(tagEntryList1Object);
 			}
 			spansObject.logEventList.push_back(logEventListObject);

@@ -20,7 +20,9 @@ using AlibabaCloud::Xtrace::Model::GetTokenRequest;
 
 GetTokenRequest::GetTokenRequest() :
 	RpcServiceRequest("xtrace", "2019-08-08", "GetToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTokenRequest::~GetTokenRequest()
 {}

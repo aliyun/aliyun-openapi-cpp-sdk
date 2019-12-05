@@ -20,10 +20,78 @@ using AlibabaCloud::Xtrace::Model::SearchTracesRequest;
 
 SearchTracesRequest::SearchTracesRequest() :
 	RpcServiceRequest("xtrace", "2019-08-08", "SearchTraces")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchTracesRequest::~SearchTracesRequest()
 {}
+
+std::string SearchTracesRequest::getAppType()const
+{
+	return appType_;
+}
+
+void SearchTracesRequest::setAppType(const std::string& appType)
+{
+	appType_ = appType;
+	setCoreParameter("AppType", appType);
+}
+
+long SearchTracesRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void SearchTracesRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", std::to_string(endTime));
+}
+
+long SearchTracesRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void SearchTracesRequest::setStartTime(long startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", std::to_string(startTime));
+}
+
+bool SearchTracesRequest::getReverse()const
+{
+	return reverse_;
+}
+
+void SearchTracesRequest::setReverse(bool reverse)
+{
+	reverse_ = reverse;
+	setCoreParameter("Reverse", reverse ? "true" : "false");
+}
+
+long SearchTracesRequest::getMinDuration()const
+{
+	return minDuration_;
+}
+
+void SearchTracesRequest::setMinDuration(long minDuration)
+{
+	minDuration_ = minDuration;
+	setCoreParameter("MinDuration", std::to_string(minDuration));
+}
+
+int SearchTracesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void SearchTracesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
 
 std::string SearchTracesRequest::getServiceIp()const
 {
@@ -58,17 +126,6 @@ void SearchTracesRequest::setOperationName(const std::string& operationName)
 	setCoreParameter("OperationName", operationName);
 }
 
-std::string SearchTracesRequest::getAppType()const
-{
-	return appType_;
-}
-
-void SearchTracesRequest::setAppType(const std::string& appType)
-{
-	appType_ = appType;
-	setCoreParameter("AppType", appType);
-}
-
 int SearchTracesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -78,17 +135,6 @@ void SearchTracesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long SearchTracesRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void SearchTracesRequest::setEndTime(long endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string SearchTracesRequest::getServiceName()const
@@ -102,17 +148,6 @@ void SearchTracesRequest::setServiceName(const std::string& serviceName)
 	setCoreParameter("ServiceName", serviceName);
 }
 
-long SearchTracesRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void SearchTracesRequest::setStartTime(long startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
-}
-
 std::vector<SearchTracesRequest::Tag> SearchTracesRequest::getTag()const
 {
 	return tag_;
@@ -121,45 +156,11 @@ std::vector<SearchTracesRequest::Tag> SearchTracesRequest::getTag()const
 void SearchTracesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
 	}
-}
-
-bool SearchTracesRequest::getReverse()const
-{
-	return reverse_;
-}
-
-void SearchTracesRequest::setReverse(bool reverse)
-{
-	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse ? "true" : "false");
-}
-
-long SearchTracesRequest::getMinDuration()const
-{
-	return minDuration_;
-}
-
-void SearchTracesRequest::setMinDuration(long minDuration)
-{
-	minDuration_ = minDuration;
-	setCoreParameter("MinDuration", std::to_string(minDuration));
-}
-
-int SearchTracesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void SearchTracesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

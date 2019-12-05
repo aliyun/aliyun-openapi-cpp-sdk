@@ -20,7 +20,9 @@ using AlibabaCloud::Xtrace::Model::ListServicesRequest;
 
 ListServicesRequest::ListServicesRequest() :
 	RpcServiceRequest("xtrace", "2019-08-08", "ListServices")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListServicesRequest::~ListServicesRequest()
 {}

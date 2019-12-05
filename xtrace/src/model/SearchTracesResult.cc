@@ -35,13 +35,9 @@ SearchTracesResult::~SearchTracesResult()
 
 void SearchTracesResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto pageBeanNode = value["PageBean"];
 	if(!pageBeanNode["TotalCount"].isNull())
@@ -50,22 +46,22 @@ void SearchTracesResult::parse(const std::string &payload)
 		pageBean_.pageSize = std::stoi(pageBeanNode["PageSize"].asString());
 	if(!pageBeanNode["PageNumber"].isNull())
 		pageBean_.pageNumber = std::stoi(pageBeanNode["PageNumber"].asString());
-	auto allTraceInfos = value["TraceInfos"]["TraceInfo"];
-	for (auto value : allTraceInfos)
+	auto allTraceInfosNode = pageBeanNode["TraceInfos"]["TraceInfo"];
+	for (auto pageBeanNodeTraceInfosTraceInfo : allTraceInfosNode)
 	{
 		PageBean::TraceInfo traceInfoObject;
-		if(!value["TraceID"].isNull())
-			traceInfoObject.traceID = value["TraceID"].asString();
-		if(!value["OperationName"].isNull())
-			traceInfoObject.operationName = value["OperationName"].asString();
-		if(!value["ServiceName"].isNull())
-			traceInfoObject.serviceName = value["ServiceName"].asString();
-		if(!value["ServiceIp"].isNull())
-			traceInfoObject.serviceIp = value["ServiceIp"].asString();
-		if(!value["Duration"].isNull())
-			traceInfoObject.duration = std::stol(value["Duration"].asString());
-		if(!value["Timestamp"].isNull())
-			traceInfoObject.timestamp = std::stol(value["Timestamp"].asString());
+		if(!pageBeanNodeTraceInfosTraceInfo["TraceID"].isNull())
+			traceInfoObject.traceID = pageBeanNodeTraceInfosTraceInfo["TraceID"].asString();
+		if(!pageBeanNodeTraceInfosTraceInfo["OperationName"].isNull())
+			traceInfoObject.operationName = pageBeanNodeTraceInfosTraceInfo["OperationName"].asString();
+		if(!pageBeanNodeTraceInfosTraceInfo["ServiceName"].isNull())
+			traceInfoObject.serviceName = pageBeanNodeTraceInfosTraceInfo["ServiceName"].asString();
+		if(!pageBeanNodeTraceInfosTraceInfo["ServiceIp"].isNull())
+			traceInfoObject.serviceIp = pageBeanNodeTraceInfosTraceInfo["ServiceIp"].asString();
+		if(!pageBeanNodeTraceInfosTraceInfo["Duration"].isNull())
+			traceInfoObject.duration = std::stol(pageBeanNodeTraceInfosTraceInfo["Duration"].asString());
+		if(!pageBeanNodeTraceInfosTraceInfo["Timestamp"].isNull())
+			traceInfoObject.timestamp = std::stol(pageBeanNodeTraceInfosTraceInfo["Timestamp"].asString());
 		pageBean_.traceInfos.push_back(traceInfoObject);
 	}
 

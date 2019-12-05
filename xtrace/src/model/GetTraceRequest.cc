@@ -20,7 +20,9 @@ using AlibabaCloud::Xtrace::Model::GetTraceRequest;
 
 GetTraceRequest::GetTraceRequest() :
 	RpcServiceRequest("xtrace", "2019-08-08", "GetTrace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTraceRequest::~GetTraceRequest()
 {}

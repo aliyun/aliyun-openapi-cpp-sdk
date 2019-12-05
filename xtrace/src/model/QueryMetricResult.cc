@@ -14,39 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/xtrace/model/GetTagValResult.h>
+#include <alibabacloud/xtrace/model/QueryMetricResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Xtrace;
 using namespace AlibabaCloud::Xtrace::Model;
 
-GetTagValResult::GetTagValResult() :
+QueryMetricResult::QueryMetricResult() :
 	ServiceResult()
 {}
 
-GetTagValResult::GetTagValResult(const std::string &payload) :
+QueryMetricResult::QueryMetricResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetTagValResult::~GetTagValResult()
+QueryMetricResult::~QueryMetricResult()
 {}
 
-void GetTagValResult::parse(const std::string &payload)
+void QueryMetricResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTagValues = value["TagValues"]["TagValue"];
-	for (const auto &item : allTagValues)
-		tagValues_.push_back(item.asString());
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
 }
 
-std::vector<std::string> GetTagValResult::getTagValues()const
+std::string QueryMetricResult::getData()const
 {
-	return tagValues_;
+	return data_;
 }
 

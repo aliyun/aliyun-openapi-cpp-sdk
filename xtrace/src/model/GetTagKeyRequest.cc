@@ -20,7 +20,9 @@ using AlibabaCloud::Xtrace::Model::GetTagKeyRequest;
 
 GetTagKeyRequest::GetTagKeyRequest() :
 	RpcServiceRequest("xtrace", "2019-08-08", "GetTagKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTagKeyRequest::~GetTagKeyRequest()
 {}

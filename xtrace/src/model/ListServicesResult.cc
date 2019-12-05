@@ -35,24 +35,20 @@ ListServicesResult::~ListServicesResult()
 
 void ListServicesResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allServices = value["Services"]["Service"];
-	for (auto value : allServices)
+	auto allServicesNode = value["Services"]["Service"];
+	for (auto valueServicesService : allServicesNode)
 	{
 		Service servicesObject;
-		if(!value["ServiceName"].isNull())
-			servicesObject.serviceName = value["ServiceName"].asString();
-		if(!value["Pid"].isNull())
-			servicesObject.pid = value["Pid"].asString();
-		if(!value["RegionId"].isNull())
-			servicesObject.regionId = value["RegionId"].asString();
+		if(!valueServicesService["ServiceName"].isNull())
+			servicesObject.serviceName = valueServicesService["ServiceName"].asString();
+		if(!valueServicesService["Pid"].isNull())
+			servicesObject.pid = valueServicesService["Pid"].asString();
+		if(!valueServicesService["RegionId"].isNull())
+			servicesObject.regionId = valueServicesService["RegionId"].asString();
 		services_.push_back(servicesObject);
 	}
 
