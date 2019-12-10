@@ -41,39 +41,43 @@ If you have any problem while using Alibaba Cloud SDK for C++, please submit an 
 
 1. Install third-party libraries on the Linux platform, including `libcurl`, `libopenssl`, `libuuid`, and `libjsoncpp`.
 
-	- Run the following commands on the `Redhat/Fedora` system
-	```
-    sudo dnf install libcurl-devel openssl-devel libuuid-devel libjsoncpp-devel
-    ```
-	- Run the following commands on the `Debian/Ubuntu` system
-    ```
-    sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev
-    ```
+- Run the following commands on the `Redhat/Fedora` system
+
+```
+sudo dnf install libcurl-devel openssl-devel libuuid-devel libjsoncpp-devel
+```
+
+- Run the following commands on the `Debian/Ubuntu` system
+
+```
+sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev
+```
+
 2. Run the following commands to clone source codes from GitHub.
 
-    ```bash
-    git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
-    ```
+```bash
+git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
+```
 
 3. Build and install SDK
 
-  - Manually build and install
+- Manually build and install
 
-  ```bash
-    cd aliyun-openapi-cpp-sdk
-    mkdir sdk_build
-    cd sdk_build
-    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
-    make
-    sudo make install
-  ```
+```bash
+cd aliyun-openapi-cpp-sdk
+mkdir sdk_build
+cd sdk_build
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
+make
+sudo make install
+```
 
-  - Or you may do this with `easyinstall.sh` in the source directory
+- Or you may do this with `easyinstall.sh` in the source directory
 
-  ```shell
-    cd aliyun-openapi-cpp-sdk
-    sudo sh easyinstall.sh
-   ```
+```bash
+cd aliyun-openapi-cpp-sdk
+sudo sh easyinstall.sh
+```
 
 **The Alibaba Cloud SDK for C++ will be installed to `/usr`.**
 
@@ -83,11 +87,11 @@ If you have any problem while using Alibaba Cloud SDK for C++, please submit an 
 
 2. Run the following command to clone code from Github via git-bash:
 
-  ```bash
-  git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
-  ```
+```bash
+git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
+```
 
-2. Build Visual Studio solution
+3. Build Visual Studio solution
 
 - Change directory to source code and make directory sdk_build
 
@@ -101,7 +105,7 @@ If you have any problem while using Alibaba Cloud SDK for C++, please submit an 
 
   - `Generate`
 
-3. Build and Install C++ SDK
+4. Build and Install C++ SDK
 
 - Open `aliyun-openapi-cpp-sdk\\sdk_build\\alibabacloud-sdk.sln` with Visual Studio
 
@@ -113,6 +117,7 @@ If you have any problem while using Alibaba Cloud SDK for C++, please submit an 
 
 **Alibaba Cloud SDK for C++ will be installed to `C:\Program File (x86)\alibabacloud-sdk`**
 
+---
 
 ## Quick Examples
 
