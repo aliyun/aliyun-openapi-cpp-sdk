@@ -12,3 +12,4 @@ test/httpserver/node_modules
 test/httpserver/package-lock.json
 test/httpserver/nohup.out
 .idea
+build/

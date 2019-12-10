@@ -37,85 +37,80 @@ Alibaba Cloud SDK for C++ 让您不用复杂编程即可访问云服务器、负
 
 ## 安装 (从源代码构建)
 
-1. 从 GitHub 下载或 Git 克隆 [aliyun-openapi-cpp-sdk](https://github.com/aliyun/aliyun-openapi-cpp-sdk)
-
-* 直接下载 https://github.com/aliyun/aliyun-openapi-cpp-sdk/archive/master.zip
-* 使用 Git 命令获取
-
-```
-git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
-```
-
-2. 创建生成必要的构建文件
-
-```bash
-cd <path/to/aliyun-openapi-cpp-sdk>
-mkdir sdk_build
-cd sdk_build
-cmake ..
-```
-
 ### Linux
 
-要在 Linux 平台进行编译, 您必须安装依赖的外部库文件 libcurl、libopenssl、libuuid、libjsoncpp, 通常情况下，系统的包管理器中的会有提供。
+1. 要在 Linux 平台进行编译, 您必须安装依赖的外部库文件 libcurl、libopenssl、libuuid、libjsoncpp, 通常情况下，系统的包管理器中的会有提供。
 
-例如：在基于 Redhat / Fedora 的系统上安装这些软件包
+- 例如：在基于 Redhat / Fedora 的系统上安装这些软件包
 
 ```bash
 sudo dnf install libcurl-devel openssl-devel libuuid-devel libjsoncpp-devel
 ```
 
-在基于 Debian/Ubuntu 的系统
+- 在基于 Debian/Ubuntu 的系统
 ```bash
 sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev
 ```
 
-在安装依赖库后执行以下命令编译并安装：
+2. 执行以下命令，从 Github 克隆源码
 
-手动编译安装
-```bash
-  cd aliyun-openapi-cpp-sdk
-  mkdir sdk_build
-  cd sdk_build
-  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
-  make
-  sudo make install
+```
+git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
 ```
 
-或者通过 `easyinstall.sh`一键式安装
+3. 编译安装
+
+- 手动编译安装
 
 ```bash
-  cd aliyun-openapi-cpp-sdk
-  sudo sh easyinstall.sh
+cd aliyun-openapi-cpp-sdk
+mkdir sdk_build
+cd sdk_build
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
+make
+sudo make install
 ```
 
-**Alibaba Cloud SDK for C++ 将被安装在 `/usr`.**
+- 或者通过 `easyinstall.sh`一键式安装
 
+```bash
+cd aliyun-openapi-cpp-sdk
+sudo sh easyinstall.sh
+```
+
+**Alibaba Cloud SDK for C++ 将被安装在 `/usr` .**
 
 ### Windows
 
-通过 cmake 生成 Visual Studio 解决方案:
+1. 安装 [perl](https://www.perl.org/get.html#win32)
 
-在 aliyun-openapi-cpp-sdk 下创建 sdk_build 目录
+2. 使用 git-bash 执行以下命令，从 Github 克隆源码
 
-打开 cmake-ui 选择源代码目录和构建目录，点击 `配置(configure)` 和 `生成(generate)` 构建 VS 解决方案。
-
-进入 sdk_build 目录使用 Visual Studio 打开 alibabacloud-sdk.sln 解决方案。
-
-选择构建 `Release` 输出，并打开配置管理器勾选 `INSTALL`。
-
-构建 -> 生成解决方案。
-
-或者您也可以使用 VS 的开发人员命令提示符，执行以下命令编译并安装：
-
+```bash
+git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
 ```
-msbuild ALL_BUILD.vcxproj
-msbuild INSTALL.vcxproj
-```
+
+3. 使用 Visual Studio 进行编译:
+
+- 在 aliyun-openapi-cpp-sdk 下创建 sdk_build 目录
+- 打开 cmake-ui , 然后进行以下操作
+  - 选择 `源代码目录(Browse Source)`
+  - 选择 `构建目录(Browse build)` 为 `sdk_build`
+  - 点击 `配置(configure)`
+  - 点击 `生成(generate)`, 构建 VS 解决方案。
+
+4. 编译安装 C++ SDK
+
+- 进入 sdk_build 目录，使用 Visual Studio 打开 alibabacloud-sdk.sln 解决方案
+- 选择构建 `Release` 输出
+- 并打开配置管理器勾选 `INSTALL`
+- 构建 -> 生成解决方案
 
 **Alibaba Cloud SDK for C++ 将安装在 `C:\Program File (x86)\alibabacloud-sdk` 目录**
 
 **注意：请以管理员身份运行 Visual Studio，否则无法安装 SDK**
+
+---
 
 ## 快速使用
 
@@ -125,7 +120,7 @@ msbuild INSTALL.vcxproj
 
 > **说明：** 您需要替换示例中的 your-region-id、your-access-key-id 和 your-access-key-secret 的值。
 
-```
+```cpp
 #include <iostream>
 #include <alibabacloud/core/AlibabaCloud.h>
 #include <alibabacloud/ecs/EcsClient.h>
