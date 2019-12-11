@@ -35,11 +35,15 @@ namespace AlibabaCloud
 				struct IspCity
 				{
 					std::string ispNamezh_CN;
+					std::string ispNameen;
 					std::string cityNamezh_CN;
 					std::string isp;
 					std::string regionzh_CN;
 					std::string countryzh_CN;
+					std::string cityNameen;
+					std::string regionen;
 					std::string city;
+					std::string countryen;
 				};
 
 

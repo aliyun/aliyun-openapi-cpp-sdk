@@ -30,16 +30,26 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT PutCustomMetricRequest : public RpcServiceRequest
 			{
+				struct MetricList
+				{
+					std::string period;
+					std::string groupId;
+					std::string values;
+					std::string time;
+					std::string metricName;
+					std::string type;
+					std::string dimensions;
+				};
 
 			public:
 				PutCustomMetricRequest();
 				~PutCustomMetricRequest();
 
-				std::string getMetricList()const;
-				void setMetricList(const std::string& metricList);
+				std::vector<MetricList> getMetricList()const;
+				void setMetricList(const std::vector<MetricList>& metricList);
 
             private:
-				std::string metricList_;
+				std::vector<MetricList> metricList_;
 
 			};
 		}

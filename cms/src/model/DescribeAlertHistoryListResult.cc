@@ -43,8 +43,8 @@ void DescribeAlertHistoryListResult::parse(const std::string &payload)
 	for (auto valueAlarmHistoryListAlarmHistory : allAlarmHistoryListNode)
 	{
 		AlarmHistory alarmHistoryListObject;
-		if(!valueAlarmHistoryListAlarmHistory["Id"].isNull())
-			alarmHistoryListObject.id = valueAlarmHistoryListAlarmHistory["Id"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["RuleId"].isNull())
+			alarmHistoryListObject.ruleId = valueAlarmHistoryListAlarmHistory["RuleId"].asString();
 		if(!valueAlarmHistoryListAlarmHistory["AlertName"].isNull())
 			alarmHistoryListObject.alertName = valueAlarmHistoryListAlarmHistory["AlertName"].asString();
 		if(!valueAlarmHistoryListAlarmHistory["GroupId"].isNull())
@@ -67,16 +67,12 @@ void DescribeAlertHistoryListResult::parse(const std::string &payload)
 			alarmHistoryListObject.lastTime = std::stol(valueAlarmHistoryListAlarmHistory["LastTime"].asString());
 		if(!valueAlarmHistoryListAlarmHistory["Level"].isNull())
 			alarmHistoryListObject.level = valueAlarmHistoryListAlarmHistory["Level"].asString();
-		if(!valueAlarmHistoryListAlarmHistory["PreLevel"].isNull())
-			alarmHistoryListObject.preLevel = valueAlarmHistoryListAlarmHistory["PreLevel"].asString();
 		if(!valueAlarmHistoryListAlarmHistory["RuleName"].isNull())
 			alarmHistoryListObject.ruleName = valueAlarmHistoryListAlarmHistory["RuleName"].asString();
-		if(!valueAlarmHistoryListAlarmHistory["State"].isNull())
-			alarmHistoryListObject.state = valueAlarmHistoryListAlarmHistory["State"].asString();
+		if(!valueAlarmHistoryListAlarmHistory["AlertState"].isNull())
+			alarmHistoryListObject.alertState = valueAlarmHistoryListAlarmHistory["AlertState"].asString();
 		if(!valueAlarmHistoryListAlarmHistory["Status"].isNull())
 			alarmHistoryListObject.status = std::stoi(valueAlarmHistoryListAlarmHistory["Status"].asString());
-		if(!valueAlarmHistoryListAlarmHistory["UserId"].isNull())
-			alarmHistoryListObject.userId = valueAlarmHistoryListAlarmHistory["UserId"].asString();
 		if(!valueAlarmHistoryListAlarmHistory["Webhooks"].isNull())
 			alarmHistoryListObject.webhooks = valueAlarmHistoryListAlarmHistory["Webhooks"].asString();
 		if(!valueAlarmHistoryListAlarmHistory["InstanceName"].isNull())

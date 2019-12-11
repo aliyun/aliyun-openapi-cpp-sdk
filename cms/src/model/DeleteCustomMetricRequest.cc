@@ -19,8 +19,10 @@
 using AlibabaCloud::Cms::Model::DeleteCustomMetricRequest;
 
 DeleteCustomMetricRequest::DeleteCustomMetricRequest() :
-	RpcServiceRequest("cms", "2018-03-08", "DeleteCustomMetric")
-{}
+	RpcServiceRequest("cms", "2019-01-01", "DeleteCustomMetric")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCustomMetricRequest::~DeleteCustomMetricRequest()
 {}

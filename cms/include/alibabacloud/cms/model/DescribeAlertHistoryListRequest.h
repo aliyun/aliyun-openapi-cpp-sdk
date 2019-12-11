@@ -35,16 +35,12 @@ namespace AlibabaCloud
 				DescribeAlertHistoryListRequest();
 				~DescribeAlertHistoryListRequest();
 
-				std::string getAlertName()const;
-				void setAlertName(const std::string& alertName);
+				std::string getAlertStatus()const;
+				void setAlertStatus(const std::string& alertStatus);
 				std::string getRuleName()const;
 				void setRuleName(const std::string& ruleName);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				bool getOnlyCount()const;
-				void setOnlyCount(bool onlyCount);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getState()const;
@@ -61,15 +57,13 @@ namespace AlibabaCloud
 				void set_Namespace(const std::string& _namespace);
 				int getPage()const;
 				void setPage(int page);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
+				std::string getRuleId()const;
+				void setRuleId(const std::string& ruleId);
 
             private:
-				std::string alertName_;
+				std::string alertStatus_;
 				std::string ruleName_;
 				std::string startTime_;
-				std::string accessKeyId_;
-				bool onlyCount_;
 				int pageSize_;
 				std::string state_;
 				std::string metricName_;
@@ -78,7 +72,7 @@ namespace AlibabaCloud
 				bool ascending_;
 				std::string _namespace_;
 				int page_;
-				std::string status_;
+				std::string ruleId_;
 
 			};
 		}

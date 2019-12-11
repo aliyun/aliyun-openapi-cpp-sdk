@@ -19,20 +19,22 @@
 using AlibabaCloud::Cms::Model::DescribeMetricRuleTargetsRequest;
 
 DescribeMetricRuleTargetsRequest::DescribeMetricRuleTargetsRequest() :
-	RpcServiceRequest("cms", "2018-03-08", "DescribeMetricRuleTargets")
-{}
+	RpcServiceRequest("cms", "2019-01-01", "DescribeMetricRuleTargets")
+{
+	setMethod(HttpRequest::Method::Put);
+}
 
 DescribeMetricRuleTargetsRequest::~DescribeMetricRuleTargetsRequest()
 {}
 
-std::string DescribeMetricRuleTargetsRequest::getRuleName()const
+std::string DescribeMetricRuleTargetsRequest::getRuleId()const
 {
-	return ruleName_;
+	return ruleId_;
 }
 
-void DescribeMetricRuleTargetsRequest::setRuleName(const std::string& ruleName)
+void DescribeMetricRuleTargetsRequest::setRuleId(const std::string& ruleId)
 {
-	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	ruleId_ = ruleId;
+	setCoreParameter("RuleId", ruleId);
 }
 

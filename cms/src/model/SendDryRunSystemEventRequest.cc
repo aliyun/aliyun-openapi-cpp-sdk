@@ -19,8 +19,10 @@
 using AlibabaCloud::Cms::Model::SendDryRunSystemEventRequest;
 
 SendDryRunSystemEventRequest::SendDryRunSystemEventRequest() :
-	RpcServiceRequest("cms", "2018-03-08", "SendDryRunSystemEvent")
-{}
+	RpcServiceRequest("cms", "2019-01-01", "SendDryRunSystemEvent")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendDryRunSystemEventRequest::~SendDryRunSystemEventRequest()
 {}

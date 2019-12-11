@@ -1,3 +1,8 @@
+2019-12-11 Version 1.36.209
+- Add tag API.
+- Add group process monitoring API.
+- Add API for batch setting alarm rules.
+
 2019-12-05 Version 1.36.208
 - Add api QueryMetric.
 

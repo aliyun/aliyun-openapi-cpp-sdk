@@ -43,19 +43,12 @@ void PutCustomMetricResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
 
 }
 
 std::string PutCustomMetricResult::getMessage()const
 {
 	return message_;
-}
-
-std::string PutCustomMetricResult::getData()const
-{
-	return data_;
 }
 
 std::string PutCustomMetricResult::getCode()const

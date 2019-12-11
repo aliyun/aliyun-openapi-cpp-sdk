@@ -19,8 +19,10 @@
 using AlibabaCloud::Cms::Model::DescribeSiteMonitorISPCityListRequest;
 
 DescribeSiteMonitorISPCityListRequest::DescribeSiteMonitorISPCityListRequest() :
-	RpcServiceRequest("cms", "2018-03-08", "DescribeSiteMonitorISPCityList")
-{}
+	RpcServiceRequest("cms", "2019-01-01", "DescribeSiteMonitorISPCityList")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSiteMonitorISPCityListRequest::~DescribeSiteMonitorISPCityListRequest()
 {}

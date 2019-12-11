@@ -43,8 +43,6 @@ void SendDryRunSystemEventResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
 
@@ -53,11 +51,6 @@ void SendDryRunSystemEventResult::parse(const std::string &payload)
 std::string SendDryRunSystemEventResult::getMessage()const
 {
 	return message_;
-}
-
-std::string SendDryRunSystemEventResult::getData()const
-{
-	return data_;
 }
 
 std::string SendDryRunSystemEventResult::getCode()const

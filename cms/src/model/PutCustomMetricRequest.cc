@@ -19,20 +19,32 @@
 using AlibabaCloud::Cms::Model::PutCustomMetricRequest;
 
 PutCustomMetricRequest::PutCustomMetricRequest() :
-	RpcServiceRequest("cms", "2018-03-08", "PutCustomMetric")
-{}
+	RpcServiceRequest("cms", "2019-01-01", "PutCustomMetric")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PutCustomMetricRequest::~PutCustomMetricRequest()
 {}
 
-std::string PutCustomMetricRequest::getMetricList()const
+std::vector<PutCustomMetricRequest::MetricList> PutCustomMetricRequest::getMetricList()const
 {
 	return metricList_;
 }
 
-void PutCustomMetricRequest::setMetricList(const std::string& metricList)
+void PutCustomMetricRequest::setMetricList(const std::vector<MetricList>& metricList)
 {
 	metricList_ = metricList;
-	setCoreParameter("MetricList", metricList);
+	for(int dep1 = 0; dep1!= metricList.size(); dep1++) {
+		auto metricListObj = metricList.at(dep1);
+		std::string metricListObjStr = "MetricList." + std::to_string(dep1);
+		setCoreParameter(metricListObjStr + ".Period", metricListObj.period);
+		setCoreParameter(metricListObjStr + ".GroupId", metricListObj.groupId);
+		setCoreParameter(metricListObjStr + ".Values", metricListObj.values);
+		setCoreParameter(metricListObjStr + ".Time", metricListObj.time);
+		setCoreParameter(metricListObjStr + ".MetricName", metricListObj.metricName);
+		setCoreParameter(metricListObjStr + ".Type", metricListObj.type);
+		setCoreParameter(metricListObjStr + ".Dimensions", metricListObj.dimensions);
+	}
 }
 

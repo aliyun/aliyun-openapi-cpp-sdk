@@ -1,0 +1,82 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/cms/model/DescribeSystemEventHistogramResult.h>
+#include <json/json.h>
+
+using namespace AlibabaCloud::Cms;
+using namespace AlibabaCloud::Cms::Model;
+
+DescribeSystemEventHistogramResult::DescribeSystemEventHistogramResult() :
+	ServiceResult()
+{}
+
+DescribeSystemEventHistogramResult::DescribeSystemEventHistogramResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+DescribeSystemEventHistogramResult::~DescribeSystemEventHistogramResult()
+{}
+
+void DescribeSystemEventHistogramResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+	setRequestId(value["RequestId"].asString());
+	auto allSystemEventHistogramsNode = value["SystemEventHistograms"]["SystemEventHistogram"];
+	for (auto valueSystemEventHistogramsSystemEventHistogram : allSystemEventHistogramsNode)
+	{
+		SystemEventHistogram systemEventHistogramsObject;
+		if(!valueSystemEventHistogramsSystemEventHistogram["Count"].isNull())
+			systemEventHistogramsObject.count = std::stol(valueSystemEventHistogramsSystemEventHistogram["Count"].asString());
+		if(!valueSystemEventHistogramsSystemEventHistogram["StartTime"].isNull())
+			systemEventHistogramsObject.startTime = std::stol(valueSystemEventHistogramsSystemEventHistogram["StartTime"].asString());
+		if(!valueSystemEventHistogramsSystemEventHistogram["EndTime"].isNull())
+			systemEventHistogramsObject.endTime = std::stol(valueSystemEventHistogramsSystemEventHistogram["EndTime"].asString());
+		systemEventHistograms_.push_back(systemEventHistogramsObject);
+	}
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
+
+}
+
+std::vector<DescribeSystemEventHistogramResult::SystemEventHistogram> DescribeSystemEventHistogramResult::getSystemEventHistograms()const
+{
+	return systemEventHistograms_;
+}
+
+std::string DescribeSystemEventHistogramResult::getMessage()const
+{
+	return message_;
+}
+
+std::string DescribeSystemEventHistogramResult::getCode()const
+{
+	return code_;
+}
+
+std::string DescribeSystemEventHistogramResult::getSuccess()const
+{
+	return success_;
+}
+

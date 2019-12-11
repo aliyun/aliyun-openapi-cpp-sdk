@@ -55,6 +55,14 @@ void DescribeSiteMonitorISPCityListResult::parse(const std::string &payload)
 			ispCityListObject.regionzh_CN = valueIspCityListIspCity["Region.zh_CN"].asString();
 		if(!valueIspCityListIspCity["Country.zh_CN"].isNull())
 			ispCityListObject.countryzh_CN = valueIspCityListIspCity["Country.zh_CN"].asString();
+		if(!valueIspCityListIspCity["IspName.en"].isNull())
+			ispCityListObject.ispNameen = valueIspCityListIspCity["IspName.en"].asString();
+		if(!valueIspCityListIspCity["CityName.en"].isNull())
+			ispCityListObject.cityNameen = valueIspCityListIspCity["CityName.en"].asString();
+		if(!valueIspCityListIspCity["Region.en"].isNull())
+			ispCityListObject.regionen = valueIspCityListIspCity["Region.en"].asString();
+		if(!valueIspCityListIspCity["Country.en"].isNull())
+			ispCityListObject.countryen = valueIspCityListIspCity["Country.en"].asString();
 		ispCityList_.push_back(ispCityListObject);
 	}
 	if(!value["Code"].isNull())

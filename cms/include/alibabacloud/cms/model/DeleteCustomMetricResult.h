@@ -39,14 +39,12 @@ namespace AlibabaCloud
 				~DeleteCustomMetricResult();
 				std::string getMessage()const;
 				std::string getCode()const;
-				std::string getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
 				std::string code_;
-				std::string result_;
 
 			};
 		}

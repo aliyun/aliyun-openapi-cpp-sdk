@@ -19,8 +19,10 @@
 using AlibabaCloud::Cms::Model::PutEventRuleRequest;
 
 PutEventRuleRequest::PutEventRuleRequest() :
-	RpcServiceRequest("cms", "2018-03-08", "PutEventRule")
-{}
+	RpcServiceRequest("cms", "2019-01-01", "PutEventRule")
+{
+	setMethod(HttpRequest::Method::Put);
+}
 
 PutEventRuleRequest::~PutEventRuleRequest()
 {}
@@ -47,6 +49,17 @@ void PutEventRuleRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
+std::string PutEventRuleRequest::getRuleName()const
+{
+	return ruleName_;
+}
+
+void PutEventRuleRequest::setRuleName(const std::string& ruleName)
+{
+	ruleName_ = ruleName;
+	setCoreParameter("RuleName", ruleName);
+}
+
 std::vector<PutEventRuleRequest::EventPattern> PutEventRuleRequest::getEventPattern()const
 {
 	return eventPattern_;
@@ -55,27 +68,23 @@ std::vector<PutEventRuleRequest::EventPattern> PutEventRuleRequest::getEventPatt
 void PutEventRuleRequest::setEventPattern(const std::vector<EventPattern>& eventPattern)
 {
 	eventPattern_ = eventPattern;
-	int i = 0;
-	for(int i = 0; i!= eventPattern.size(); i++)	{
-		auto obj = eventPattern.at(i);
-		std::string str ="EventPattern."+ std::to_string(i);
-		for(int i = 0; i!= obj.levelList.size(); i++)				setCoreParameter(str + ".LevelList."+ std::to_string(i), obj.levelList.at(i));
-		setCoreParameter(str + ".Product", obj.product);
-		for(int i = 0; i!= obj.statusList.size(); i++)				setCoreParameter(str + ".StatusList."+ std::to_string(i), obj.statusList.at(i));
-		for(int i = 0; i!= obj.nameList.size(); i++)				setCoreParameter(str + ".NameList."+ std::to_string(i), obj.nameList.at(i));
-		for(int i = 0; i!= obj.eventTypeList.size(); i++)				setCoreParameter(str + ".EventTypeList."+ std::to_string(i), obj.eventTypeList.at(i));
+	for(int dep1 = 0; dep1!= eventPattern.size(); dep1++) {
+		auto eventPatternObj = eventPattern.at(dep1);
+		std::string eventPatternObjStr = "EventPattern." + std::to_string(dep1);
+		for(int dep2 = 0; dep2!= eventPatternObj.levelList.size(); dep2++) {
+			setCoreParameter(eventPatternObjStr + ".LevelList."+ std::to_string(dep2), eventPatternObj.levelList.at(dep2));
+		}
+		setCoreParameter(eventPatternObjStr + ".Product", eventPatternObj.product);
+		for(int dep2 = 0; dep2!= eventPatternObj.statusList.size(); dep2++) {
+			setCoreParameter(eventPatternObjStr + ".StatusList."+ std::to_string(dep2), eventPatternObj.statusList.at(dep2));
+		}
+		for(int dep2 = 0; dep2!= eventPatternObj.nameList.size(); dep2++) {
+			setCoreParameter(eventPatternObjStr + ".NameList."+ std::to_string(dep2), eventPatternObj.nameList.at(dep2));
+		}
+		for(int dep2 = 0; dep2!= eventPatternObj.eventTypeList.size(); dep2++) {
+			setCoreParameter(eventPatternObjStr + ".EventTypeList."+ std::to_string(dep2), eventPatternObj.eventTypeList.at(dep2));
+		}
 	}
-}
-
-std::string PutEventRuleRequest::getName()const
-{
-	return name_;
-}
-
-void PutEventRuleRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 std::string PutEventRuleRequest::getEventType()const

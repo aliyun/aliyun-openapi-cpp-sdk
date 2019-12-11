@@ -43,8 +43,6 @@ void DeleteCustomMetricResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Result"].isNull())
-		result_ = value["Result"].asString();
 
 }
 
@@ -56,10 +54,5 @@ std::string DeleteCustomMetricResult::getMessage()const
 std::string DeleteCustomMetricResult::getCode()const
 {
 	return code_;
-}
-
-std::string DeleteCustomMetricResult::getResult()const
-{
-	return result_;
 }
 

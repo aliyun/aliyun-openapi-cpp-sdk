@@ -38,14 +38,12 @@ namespace AlibabaCloud
 				explicit PutCustomMetricResult(const std::string &payload);
 				~PutCustomMetricResult();
 				std::string getMessage()const;
-				std::string getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string data_;
 				std::string code_;
 
 			};

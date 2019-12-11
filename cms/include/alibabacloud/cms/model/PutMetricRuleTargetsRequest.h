@@ -41,17 +41,14 @@ namespace AlibabaCloud
 				PutMetricRuleTargetsRequest();
 				~PutMetricRuleTargetsRequest();
 
-				std::string getRuleName()const;
-				void setRuleName(const std::string& ruleName);
 				std::vector<Targets> getTargets()const;
 				void setTargets(const std::vector<Targets>& targets);
-				std::string getActions()const;
-				void setActions(const std::string& actions);
+				std::string getRuleId()const;
+				void setRuleId(const std::string& ruleId);
 
             private:
-				std::string ruleName_;
 				std::vector<Targets> targets_;
-				std::string actions_;
+				std::string ruleId_;
 
 			};
 		}

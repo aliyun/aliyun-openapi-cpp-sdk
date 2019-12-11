@@ -38,7 +38,6 @@ namespace AlibabaCloud
 				explicit SendDryRunSystemEventResult(const std::string &payload);
 				~SendDryRunSystemEventResult();
 				std::string getMessage()const;
-				std::string getData()const;
 				std::string getCode()const;
 				std::string getSuccess()const;
 
@@ -46,7 +45,6 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string data_;
 				std::string code_;
 				std::string success_;
 

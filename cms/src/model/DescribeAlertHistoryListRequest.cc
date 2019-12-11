@@ -19,21 +19,23 @@
 using AlibabaCloud::Cms::Model::DescribeAlertHistoryListRequest;
 
 DescribeAlertHistoryListRequest::DescribeAlertHistoryListRequest() :
-	RpcServiceRequest("cms", "2018-03-08", "DescribeAlertHistoryList")
-{}
+	RpcServiceRequest("cms", "2019-01-01", "DescribeAlertHistoryList")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAlertHistoryListRequest::~DescribeAlertHistoryListRequest()
 {}
 
-std::string DescribeAlertHistoryListRequest::getAlertName()const
+std::string DescribeAlertHistoryListRequest::getAlertStatus()const
 {
-	return alertName_;
+	return alertStatus_;
 }
 
-void DescribeAlertHistoryListRequest::setAlertName(const std::string& alertName)
+void DescribeAlertHistoryListRequest::setAlertStatus(const std::string& alertStatus)
 {
-	alertName_ = alertName;
-	setCoreParameter("AlertName", alertName);
+	alertStatus_ = alertStatus;
+	setCoreParameter("AlertStatus", alertStatus);
 }
 
 std::string DescribeAlertHistoryListRequest::getRuleName()const
@@ -56,28 +58,6 @@ void DescribeAlertHistoryListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-std::string DescribeAlertHistoryListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeAlertHistoryListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-bool DescribeAlertHistoryListRequest::getOnlyCount()const
-{
-	return onlyCount_;
-}
-
-void DescribeAlertHistoryListRequest::setOnlyCount(bool onlyCount)
-{
-	onlyCount_ = onlyCount;
-	setCoreParameter("OnlyCount", onlyCount ? "true" : "false");
 }
 
 int DescribeAlertHistoryListRequest::getPageSize()const
@@ -168,14 +148,14 @@ void DescribeAlertHistoryListRequest::setPage(int page)
 	setCoreParameter("Page", std::to_string(page));
 }
 
-std::string DescribeAlertHistoryListRequest::getStatus()const
+std::string DescribeAlertHistoryListRequest::getRuleId()const
 {
-	return status_;
+	return ruleId_;
 }
 
-void DescribeAlertHistoryListRequest::setStatus(const std::string& status)
+void DescribeAlertHistoryListRequest::setRuleId(const std::string& ruleId)
 {
-	status_ = status;
-	setCoreParameter("Status", status);
+	ruleId_ = ruleId;
+	setCoreParameter("RuleId", ruleId);
 }
 
