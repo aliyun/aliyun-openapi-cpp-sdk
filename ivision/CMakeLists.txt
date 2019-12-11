@@ -46,7 +46,9 @@ set(ivision_public_header_model
 	include/alibabacloud/ivision/model/StopStreamPredictRequest.h
 	include/alibabacloud/ivision/model/StopStreamPredictResult.h
 	include/alibabacloud/ivision/model/UnregisterFaceRequest.h
-	include/alibabacloud/ivision/model/UnregisterFaceResult.h )
+	include/alibabacloud/ivision/model/UnregisterFaceResult.h
+	include/alibabacloud/ivision/model/VideoPredictRequest.h
+	include/alibabacloud/ivision/model/VideoPredictResult.h )
 
 set(ivision_src 
 	src/IvisionClient.cc
@@ -75,7 +77,9 @@ set(ivision_src
 	src/model/StopStreamPredictRequest.cc
 	src/model/StopStreamPredictResult.cc
 	src/model/UnregisterFaceRequest.cc
-	src/model/UnregisterFaceResult.cc )
+	src/model/UnregisterFaceResult.cc
+	src/model/VideoPredictRequest.cc
+	src/model/VideoPredictResult.cc )
 
 add_library(ivision ${LIB_TYPE}
 	${ivision_public_header}

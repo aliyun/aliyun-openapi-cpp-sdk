@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IVISION_MODEL_IMAGEPREDICTREQUEST_H_
-#define ALIBABACLOUD_IVISION_MODEL_IMAGEPREDICTREQUEST_H_
+#ifndef ALIBABACLOUD_IVISION_MODEL_VIDEOPREDICTRESULT_H_
+#define ALIBABACLOUD_IVISION_MODEL_VIDEOPREDICTRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/ivision/IvisionExport.h>
 
 namespace AlibabaCloud
@@ -28,30 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IVISION_EXPORT ImagePredictRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IVISION_EXPORT VideoPredictResult : public ServiceResult
 			{
-
 			public:
-				ImagePredictRequest();
-				~ImagePredictRequest();
 
-				std::string getDataUrl()const;
-				void setDataUrl(const std::string& dataUrl);
-				std::string getShowLog()const;
-				void setShowLog(const std::string& showLog);
-				std::string getModelId()const;
-				void setModelId(const std::string& modelId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
-            private:
-				std::string dataUrl_;
-				std::string showLog_;
-				std::string modelId_;
-				long ownerId_;
+				VideoPredictResult();
+				explicit VideoPredictResult(const std::string &payload);
+				~VideoPredictResult();
+				std::string getPredictId()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string predictId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IVISION_MODEL_IMAGEPREDICTREQUEST_H_
+#endif // !ALIBABACLOUD_IVISION_MODEL_VIDEOPREDICTRESULT_H_

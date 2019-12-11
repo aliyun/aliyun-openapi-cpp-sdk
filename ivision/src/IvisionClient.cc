@@ -519,3 +519,39 @@ IvisionClient::UnregisterFaceOutcomeCallable IvisionClient::unregisterFaceCallab
 	return task->get_future();
 }
 
+IvisionClient::VideoPredictOutcome IvisionClient::videoPredict(const VideoPredictRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VideoPredictOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VideoPredictOutcome(VideoPredictResult(outcome.result()));
+	else
+		return VideoPredictOutcome(outcome.error());
+}
+
+void IvisionClient::videoPredictAsync(const VideoPredictRequest& request, const VideoPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, videoPredict(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::VideoPredictOutcomeCallable IvisionClient::videoPredictCallable(const VideoPredictRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VideoPredictOutcome()>>(
+			[this, request]()
+			{
+			return this->videoPredict(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

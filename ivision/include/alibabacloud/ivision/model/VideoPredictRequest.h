@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IVISION_MODEL_IMAGEPREDICTREQUEST_H_
-#define ALIBABACLOUD_IVISION_MODEL_IMAGEPREDICTREQUEST_H_
+#ifndef ALIBABACLOUD_IVISION_MODEL_VIDEOPREDICTREQUEST_H_
+#define ALIBABACLOUD_IVISION_MODEL_VIDEOPREDICTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IVISION_EXPORT ImagePredictRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IVISION_EXPORT VideoPredictRequest : public RpcServiceRequest
 			{
 
 			public:
-				ImagePredictRequest();
-				~ImagePredictRequest();
+				VideoPredictRequest();
+				~VideoPredictRequest();
 
 				std::string getDataUrl()const;
 				void setDataUrl(const std::string& dataUrl);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getNotify()const;
+				void setNotify(const std::string& notify);
+				std::string getOutput()const;
+				void setOutput(const std::string& output);
 				std::string getShowLog()const;
 				void setShowLog(const std::string& showLog);
-				std::string getModelId()const;
-				void setModelId(const std::string& modelId);
+				std::string getModels()const;
+				void setModels(const std::string& models);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
 				std::string dataUrl_;
+				std::string clientToken_;
+				std::string notify_;
+				std::string output_;
 				std::string showLog_;
-				std::string modelId_;
+				std::string models_;
 				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IVISION_MODEL_IMAGEPREDICTREQUEST_H_
+#endif // !ALIBABACLOUD_IVISION_MODEL_VIDEOPREDICTREQUEST_H_
