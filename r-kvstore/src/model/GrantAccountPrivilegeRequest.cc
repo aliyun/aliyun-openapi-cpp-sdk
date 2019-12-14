@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::GrantAccountPrivilegeRequest;
 
 GrantAccountPrivilegeRequest::GrantAccountPrivilegeRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "GrantAccountPrivilege")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GrantAccountPrivilegeRequest::~GrantAccountPrivilegeRequest()
 {}

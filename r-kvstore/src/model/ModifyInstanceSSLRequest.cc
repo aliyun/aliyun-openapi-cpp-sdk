@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyInstanceSSLRequest;
 
 ModifyInstanceSSLRequest::ModifyInstanceSSLRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyInstanceSSL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceSSLRequest::~ModifyInstanceSSLRequest()
 {}

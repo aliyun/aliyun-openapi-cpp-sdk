@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::SwitchNetworkRequest;
 
 SwitchNetworkRequest::SwitchNetworkRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "SwitchNetwork")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SwitchNetworkRequest::~SwitchNetworkRequest()
 {}

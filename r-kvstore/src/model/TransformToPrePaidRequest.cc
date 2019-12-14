@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::TransformToPrePaidRequest;
 
 TransformToPrePaidRequest::TransformToPrePaidRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "TransformToPrePaid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TransformToPrePaidRequest::~TransformToPrePaidRequest()
 {}

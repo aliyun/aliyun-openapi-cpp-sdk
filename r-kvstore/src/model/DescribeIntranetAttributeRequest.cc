@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeIntranetAttributeRequest;
 
 DescribeIntranetAttributeRequest::DescribeIntranetAttributeRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeIntranetAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeIntranetAttributeRequest::~DescribeIntranetAttributeRequest()
 {}

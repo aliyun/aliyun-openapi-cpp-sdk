@@ -14,91 +14,102 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/r-kvstore/model/DescribeLogicInstanceTopologyRequest.h>
+#include <alibabacloud/r-kvstore/model/FlushExpireKeysRequest.h>
 
-using AlibabaCloud::R_kvstore::Model::DescribeLogicInstanceTopologyRequest;
+using AlibabaCloud::R_kvstore::Model::FlushExpireKeysRequest;
 
-DescribeLogicInstanceTopologyRequest::DescribeLogicInstanceTopologyRequest() :
-	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeLogicInstanceTopology")
+FlushExpireKeysRequest::FlushExpireKeysRequest() :
+	RpcServiceRequest("r-kvstore", "2015-01-01", "FlushExpireKeys")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeLogicInstanceTopologyRequest::~DescribeLogicInstanceTopologyRequest()
+FlushExpireKeysRequest::~FlushExpireKeysRequest()
 {}
 
-long DescribeLogicInstanceTopologyRequest::getResourceOwnerId()const
+long FlushExpireKeysRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeLogicInstanceTopologyRequest::setResourceOwnerId(long resourceOwnerId)
+void FlushExpireKeysRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeLogicInstanceTopologyRequest::getAccessKeyId()const
+std::string FlushExpireKeysRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void DescribeLogicInstanceTopologyRequest::setAccessKeyId(const std::string& accessKeyId)
+void FlushExpireKeysRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeLogicInstanceTopologyRequest::getSecurityToken()const
+std::string FlushExpireKeysRequest::getSecurityToken()const
 {
 	return securityToken_;
 }
 
-void DescribeLogicInstanceTopologyRequest::setSecurityToken(const std::string& securityToken)
+void FlushExpireKeysRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeLogicInstanceTopologyRequest::getResourceOwnerAccount()const
+std::string FlushExpireKeysRequest::getEffectiveTime()const
+{
+	return effectiveTime_;
+}
+
+void FlushExpireKeysRequest::setEffectiveTime(const std::string& effectiveTime)
+{
+	effectiveTime_ = effectiveTime;
+	setCoreParameter("EffectiveTime", effectiveTime);
+}
+
+std::string FlushExpireKeysRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void DescribeLogicInstanceTopologyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void FlushExpireKeysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeLogicInstanceTopologyRequest::getOwnerAccount()const
+std::string FlushExpireKeysRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
 }
 
-void DescribeLogicInstanceTopologyRequest::setOwnerAccount(const std::string& ownerAccount)
+void FlushExpireKeysRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeLogicInstanceTopologyRequest::getOwnerId()const
+long FlushExpireKeysRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeLogicInstanceTopologyRequest::setOwnerId(long ownerId)
+void FlushExpireKeysRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeLogicInstanceTopologyRequest::getInstanceId()const
+std::string FlushExpireKeysRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void DescribeLogicInstanceTopologyRequest::setInstanceId(const std::string& instanceId)
+void FlushExpireKeysRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setCoreParameter("InstanceId", instanceId);

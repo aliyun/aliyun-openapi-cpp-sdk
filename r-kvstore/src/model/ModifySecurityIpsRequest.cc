@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifySecurityIpsRequest;
 
 ModifySecurityIpsRequest::ModifySecurityIpsRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifySecurityIps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySecurityIpsRequest::~ModifySecurityIpsRequest()
 {}

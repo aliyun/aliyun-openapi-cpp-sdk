@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DeleteAccountRequest;
 
 DeleteAccountRequest::DeleteAccountRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DeleteAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAccountRequest::~DeleteAccountRequest()
 {}

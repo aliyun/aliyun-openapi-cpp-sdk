@@ -14,31 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/r-kvstore/model/DeleteSnapshotSettingsResult.h>
+#include <alibabacloud/r-kvstore/model/FlushExpireKeysResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::R_kvstore;
 using namespace AlibabaCloud::R_kvstore::Model;
 
-DeleteSnapshotSettingsResult::DeleteSnapshotSettingsResult() :
+FlushExpireKeysResult::FlushExpireKeysResult() :
 	ServiceResult()
 {}
 
-DeleteSnapshotSettingsResult::DeleteSnapshotSettingsResult(const std::string &payload) :
+FlushExpireKeysResult::FlushExpireKeysResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteSnapshotSettingsResult::~DeleteSnapshotSettingsResult()
+FlushExpireKeysResult::~FlushExpireKeysResult()
 {}
 
-void DeleteSnapshotSettingsResult::parse(const std::string &payload)
+void FlushExpireKeysResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
+}
+
+std::string FlushExpireKeysResult::getTaskId()const
+{
+	return taskId_;
+}
+
+std::string FlushExpireKeysResult::getInstanceId()const
+{
+	return instanceId_;
 }
 

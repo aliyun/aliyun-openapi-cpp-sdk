@@ -36,44 +36,45 @@ namespace AlibabaCloud
 				{
 					struct SupportedEngine
 					{
-						struct SupportedEngineVersion
+						struct SupportedEditionType
 						{
-							struct SupportedArchitectureType
+							struct SupportedSeriesType
 							{
-								struct SupportedPerformanceType
+								struct SupportedEngineVersion
 								{
-									struct SupportedStorageType
+									struct SupportedArchitectureType
 									{
-										struct SupportedNodeType
+										struct SupportedShardNumber
 										{
-											struct SupportedPackageType
+											struct SupportedNodeType
 											{
 												struct AvailableResource
 												{
 													std::string instanceClass;
 												};
-												std::string packageType;
-												std::vector<SupportedPackageType::AvailableResource> availableResources;
+												std::vector<SupportedNodeType::AvailableResource> availableResources;
+												std::string supportedNodeType;
 											};
-											std::vector<SupportedNodeType::SupportedPackageType> supportedPackageTypes;
-											std::string nodeType;
+											std::vector<SupportedShardNumber::SupportedNodeType> supportedNodeTypes;
+											std::string shardNumber;
 										};
-										std::vector<SupportedStorageType::SupportedNodeType> supportedNodeTypes;
-										std::string storageType;
+										std::string architecture;
+										std::vector<SupportedArchitectureType::SupportedShardNumber> supportedShardNumbers;
 									};
-									std::string performanceType;
-									std::vector<SupportedPerformanceType::SupportedStorageType> supportedStorageTypes;
+									std::vector<SupportedEngineVersion::SupportedArchitectureType> supportedArchitectureTypes;
+									std::string version;
 								};
-								std::string architecture;
-								std::vector<SupportedArchitectureType::SupportedPerformanceType> supportedPerformanceTypes;
+								std::string seriesType;
+								std::vector<SupportedSeriesType::SupportedEngineVersion> supportedEngineVersions;
 							};
-							std::vector<SupportedEngineVersion::SupportedArchitectureType> supportedArchitectureTypes;
-							std::string version;
+							std::vector<SupportedEditionType::SupportedSeriesType> supportedSeriesTypes;
+							std::string editionType;
 						};
-						std::vector<SupportedEngine::SupportedEngineVersion> supportedEngineVersions;
+						std::vector<SupportedEngine::SupportedEditionType> supportedEditionTypes;
 						std::string engine;
 					};
 					std::string status;
+					std::string zoneName;
 					std::string networkTypes;
 					std::string zoneId;
 					std::vector<AvailableZone::SupportedEngine> supportedEngines;

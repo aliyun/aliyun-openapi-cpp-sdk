@@ -31,34 +31,12 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/CreateCacheAnalysisTaskResult.h
 	include/alibabacloud/r-kvstore/model/CreateInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/CreateInstanceResult.h
-	include/alibabacloud/r-kvstore/model/CreateShardingInstanceRequest.h
-	include/alibabacloud/r-kvstore/model/CreateShardingInstanceResult.h
-	include/alibabacloud/r-kvstore/model/CreateSnapshotRequest.h
-	include/alibabacloud/r-kvstore/model/CreateSnapshotResult.h
-	include/alibabacloud/r-kvstore/model/CreateStaticVerificationRequest.h
-	include/alibabacloud/r-kvstore/model/CreateStaticVerificationResult.h
-	include/alibabacloud/r-kvstore/model/CreateTempInstanceRequest.h
-	include/alibabacloud/r-kvstore/model/CreateTempInstanceResult.h
 	include/alibabacloud/r-kvstore/model/DeleteAccountRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteAccountResult.h
 	include/alibabacloud/r-kvstore/model/DeleteInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteInstanceResult.h
-	include/alibabacloud/r-kvstore/model/DeleteSnapshotRequest.h
-	include/alibabacloud/r-kvstore/model/DeleteSnapshotResult.h
-	include/alibabacloud/r-kvstore/model/DeleteSnapshotSettingsRequest.h
-	include/alibabacloud/r-kvstore/model/DeleteSnapshotSettingsResult.h
-	include/alibabacloud/r-kvstore/model/DeleteTempInstanceRequest.h
-	include/alibabacloud/r-kvstore/model/DeleteTempInstanceResult.h
 	include/alibabacloud/r-kvstore/model/DescribeAccountsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeAccountsResult.h
-	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskResult.h
-	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskCountRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskCountResult.h
-	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskRegionRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskRegionResult.h
-	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskTypeRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskTypeResult.h
 	include/alibabacloud/r-kvstore/model/DescribeAuditRecordsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeAuditRecordsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeAvailableResourceRequest.h
@@ -71,90 +49,40 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeCacheAnalysisReportResult.h
 	include/alibabacloud/r-kvstore/model/DescribeCacheAnalysisReportListRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeCacheAnalysisReportListResult.h
-	include/alibabacloud/r-kvstore/model/DescribeCertificationRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeCertificationResult.h
-	include/alibabacloud/r-kvstore/model/DescribeDBInstanceMonitorRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeDBInstanceMonitorResult.h
 	include/alibabacloud/r-kvstore/model/DescribeDBInstanceNetInfoRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeDBInstanceNetInfoResult.h
-	include/alibabacloud/r-kvstore/model/DescribeErrorLogRecordsRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeErrorLogRecordsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeHistoryMonitorValuesRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeHistoryMonitorValuesResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceAttributeResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceAutoRenewalAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceAutoRenewalAttributeResult.h
-	include/alibabacloud/r-kvstore/model/DescribeInstanceConfigRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeInstanceConfigResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceSSLRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceSSLResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstancesRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeInstancesResult.h
-	include/alibabacloud/r-kvstore/model/DescribeInstancesByExpireTimeRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeInstancesByExpireTimeResult.h
 	include/alibabacloud/r-kvstore/model/DescribeIntranetAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeIntranetAttributeResult.h
 	include/alibabacloud/r-kvstore/model/DescribeLogicInstanceTopologyRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeLogicInstanceTopologyResult.h
 	include/alibabacloud/r-kvstore/model/DescribeMonitorItemsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeMonitorItemsResult.h
-	include/alibabacloud/r-kvstore/model/DescribeMonthlyServiceStatusRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeMonthlyServiceStatusResult.h
-	include/alibabacloud/r-kvstore/model/DescribeMonthlyServiceStatusDetailRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeMonthlyServiceStatusDetailResult.h
-	include/alibabacloud/r-kvstore/model/DescribeParameterModificationHistoryRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeParameterModificationHistoryResult.h
-	include/alibabacloud/r-kvstore/model/DescribeParameterTemplatesRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeParameterTemplatesResult.h
 	include/alibabacloud/r-kvstore/model/DescribeParametersRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeParametersResult.h
-	include/alibabacloud/r-kvstore/model/DescribeRdsVSwitchsRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeRdsVSwitchsResult.h
-	include/alibabacloud/r-kvstore/model/DescribeRdsVpcsRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeRdsVpcsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeRegionsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeRegionsResult.h
-	include/alibabacloud/r-kvstore/model/DescribeReplicaConflictInfoRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeReplicaConflictInfoResult.h
-	include/alibabacloud/r-kvstore/model/DescribeReplicaInitializeProgressRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeReplicaInitializeProgressResult.h
-	include/alibabacloud/r-kvstore/model/DescribeReplicaPerformanceRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeReplicaPerformanceResult.h
-	include/alibabacloud/r-kvstore/model/DescribeReplicaUsageRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeReplicaUsageResult.h
-	include/alibabacloud/r-kvstore/model/DescribeReplicasRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeReplicasResult.h
 	include/alibabacloud/r-kvstore/model/DescribeRunningLogRecordsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeRunningLogRecordsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeSecurityIpsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeSecurityIpsResult.h
-	include/alibabacloud/r-kvstore/model/DescribeShardingInstancesRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeShardingInstancesResult.h
 	include/alibabacloud/r-kvstore/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeSlowLogRecordsResult.h
-	include/alibabacloud/r-kvstore/model/DescribeSnapshotsRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeSnapshotsResult.h
-	include/alibabacloud/r-kvstore/model/DescribeStaticVerificationListRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeStaticVerificationListResult.h
-	include/alibabacloud/r-kvstore/model/DescribeStrategyRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeStrategyResult.h
-	include/alibabacloud/r-kvstore/model/DescribeTagsRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeTagsResult.h
-	include/alibabacloud/r-kvstore/model/DescribeTempInstanceRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeTempInstanceResult.h
-	include/alibabacloud/r-kvstore/model/DescribeVerificationListRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeVerificationListResult.h
 	include/alibabacloud/r-kvstore/model/DescribeZonesRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeZonesResult.h
-	include/alibabacloud/r-kvstore/model/DestroyInstanceRequest.h
-	include/alibabacloud/r-kvstore/model/DestroyInstanceResult.h
-	include/alibabacloud/r-kvstore/model/EvaluateFailOverSwitchRequest.h
-	include/alibabacloud/r-kvstore/model/EvaluateFailOverSwitchResult.h
+	include/alibabacloud/r-kvstore/model/FlushExpireKeysRequest.h
+	include/alibabacloud/r-kvstore/model/FlushExpireKeysResult.h
 	include/alibabacloud/r-kvstore/model/FlushInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/FlushInstanceResult.h
-	include/alibabacloud/r-kvstore/model/GetSnapshotSettingsRequest.h
-	include/alibabacloud/r-kvstore/model/GetSnapshotSettingsResult.h
 	include/alibabacloud/r-kvstore/model/GrantAccountPrivilegeRequest.h
 	include/alibabacloud/r-kvstore/model/GrantAccountPrivilegeResult.h
 	include/alibabacloud/r-kvstore/model/ListTagResourcesRequest.h
@@ -163,20 +91,12 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/MigrateToOtherZoneResult.h
 	include/alibabacloud/r-kvstore/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyAccountDescriptionResult.h
-	include/alibabacloud/r-kvstore/model/ModifyActiveOperationTaskRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyActiveOperationTaskResult.h
 	include/alibabacloud/r-kvstore/model/ModifyAuditLogConfigRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyAuditLogConfigResult.h
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyResult.h
-	include/alibabacloud/r-kvstore/model/ModifyCertificationRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyCertificationResult.h
 	include/alibabacloud/r-kvstore/model/ModifyDBInstanceConnectionStringRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyDBInstanceConnectionStringResult.h
-	include/alibabacloud/r-kvstore/model/ModifyDBInstanceMonitorRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyDBInstanceMonitorResult.h
-	include/alibabacloud/r-kvstore/model/ModifyGuardDomainModeRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyGuardDomainModeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAttributeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAutoRenewalAttributeRequest.h
@@ -195,62 +115,30 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyInstanceSSLResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceSpecRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceSpecResult.h
-	include/alibabacloud/r-kvstore/model/ModifyInstanceSpecPreCheckRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyInstanceSpecPreCheckResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceVpcAuthModeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceVpcAuthModeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyIntranetAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyIntranetAttributeResult.h
-	include/alibabacloud/r-kvstore/model/ModifyReplicaDescriptionRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyReplicaDescriptionResult.h
-	include/alibabacloud/r-kvstore/model/ModifyReplicaModeRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyReplicaModeResult.h
-	include/alibabacloud/r-kvstore/model/ModifyReplicaRecoveryModeRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyReplicaRecoveryModeResult.h
-	include/alibabacloud/r-kvstore/model/ModifyReplicaRelationRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyReplicaRelationResult.h
-	include/alibabacloud/r-kvstore/model/ModifyReplicaVerificationModeRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyReplicaVerificationModeResult.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityIpsRequest.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityIpsResult.h
-	include/alibabacloud/r-kvstore/model/QueryTaskRequest.h
-	include/alibabacloud/r-kvstore/model/QueryTaskResult.h
 	include/alibabacloud/r-kvstore/model/ReleaseInstancePublicConnectionRequest.h
 	include/alibabacloud/r-kvstore/model/ReleaseInstancePublicConnectionResult.h
-	include/alibabacloud/r-kvstore/model/ReleaseReplicaRequest.h
-	include/alibabacloud/r-kvstore/model/ReleaseReplicaResult.h
 	include/alibabacloud/r-kvstore/model/RenewInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/RenewInstanceResult.h
-	include/alibabacloud/r-kvstore/model/RenewMultiInstanceRequest.h
-	include/alibabacloud/r-kvstore/model/RenewMultiInstanceResult.h
-	include/alibabacloud/r-kvstore/model/ResetAccountRequest.h
-	include/alibabacloud/r-kvstore/model/ResetAccountResult.h
 	include/alibabacloud/r-kvstore/model/ResetAccountPasswordRequest.h
 	include/alibabacloud/r-kvstore/model/ResetAccountPasswordResult.h
 	include/alibabacloud/r-kvstore/model/RestartInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/RestartInstanceResult.h
 	include/alibabacloud/r-kvstore/model/RestoreInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/RestoreInstanceResult.h
-	include/alibabacloud/r-kvstore/model/RestoreSnapshotRequest.h
-	include/alibabacloud/r-kvstore/model/RestoreSnapshotResult.h
-	include/alibabacloud/r-kvstore/model/RevokeAccountPrivilegeRequest.h
-	include/alibabacloud/r-kvstore/model/RevokeAccountPrivilegeResult.h
-	include/alibabacloud/r-kvstore/model/SetSnapshotSettingsRequest.h
-	include/alibabacloud/r-kvstore/model/SetSnapshotSettingsResult.h
 	include/alibabacloud/r-kvstore/model/SwitchNetworkRequest.h
 	include/alibabacloud/r-kvstore/model/SwitchNetworkResult.h
-	include/alibabacloud/r-kvstore/model/SwitchTempInstanceRequest.h
-	include/alibabacloud/r-kvstore/model/SwitchTempInstanceResult.h
 	include/alibabacloud/r-kvstore/model/TagResourcesRequest.h
 	include/alibabacloud/r-kvstore/model/TagResourcesResult.h
 	include/alibabacloud/r-kvstore/model/TransformToPrePaidRequest.h
 	include/alibabacloud/r-kvstore/model/TransformToPrePaidResult.h
-	include/alibabacloud/r-kvstore/model/UnlinkReplicaInstanceRequest.h
-	include/alibabacloud/r-kvstore/model/UnlinkReplicaInstanceResult.h
 	include/alibabacloud/r-kvstore/model/UntagResourcesRequest.h
-	include/alibabacloud/r-kvstore/model/UntagResourcesResult.h
-	include/alibabacloud/r-kvstore/model/VerifyPasswordRequest.h
-	include/alibabacloud/r-kvstore/model/VerifyPasswordResult.h )
+	include/alibabacloud/r-kvstore/model/UntagResourcesResult.h )
 
 set(r-kvstore_src 
 	src/R-kvstoreClient.cc
@@ -264,34 +152,12 @@ set(r-kvstore_src
 	src/model/CreateCacheAnalysisTaskResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
-	src/model/CreateShardingInstanceRequest.cc
-	src/model/CreateShardingInstanceResult.cc
-	src/model/CreateSnapshotRequest.cc
-	src/model/CreateSnapshotResult.cc
-	src/model/CreateStaticVerificationRequest.cc
-	src/model/CreateStaticVerificationResult.cc
-	src/model/CreateTempInstanceRequest.cc
-	src/model/CreateTempInstanceResult.cc
 	src/model/DeleteAccountRequest.cc
 	src/model/DeleteAccountResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
-	src/model/DeleteSnapshotRequest.cc
-	src/model/DeleteSnapshotResult.cc
-	src/model/DeleteSnapshotSettingsRequest.cc
-	src/model/DeleteSnapshotSettingsResult.cc
-	src/model/DeleteTempInstanceRequest.cc
-	src/model/DeleteTempInstanceResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
-	src/model/DescribeActiveOperationTaskRequest.cc
-	src/model/DescribeActiveOperationTaskResult.cc
-	src/model/DescribeActiveOperationTaskCountRequest.cc
-	src/model/DescribeActiveOperationTaskCountResult.cc
-	src/model/DescribeActiveOperationTaskRegionRequest.cc
-	src/model/DescribeActiveOperationTaskRegionResult.cc
-	src/model/DescribeActiveOperationTaskTypeRequest.cc
-	src/model/DescribeActiveOperationTaskTypeResult.cc
 	src/model/DescribeAuditRecordsRequest.cc
 	src/model/DescribeAuditRecordsResult.cc
 	src/model/DescribeAvailableResourceRequest.cc
@@ -304,90 +170,40 @@ set(r-kvstore_src
 	src/model/DescribeCacheAnalysisReportResult.cc
 	src/model/DescribeCacheAnalysisReportListRequest.cc
 	src/model/DescribeCacheAnalysisReportListResult.cc
-	src/model/DescribeCertificationRequest.cc
-	src/model/DescribeCertificationResult.cc
-	src/model/DescribeDBInstanceMonitorRequest.cc
-	src/model/DescribeDBInstanceMonitorResult.cc
 	src/model/DescribeDBInstanceNetInfoRequest.cc
 	src/model/DescribeDBInstanceNetInfoResult.cc
-	src/model/DescribeErrorLogRecordsRequest.cc
-	src/model/DescribeErrorLogRecordsResult.cc
 	src/model/DescribeHistoryMonitorValuesRequest.cc
 	src/model/DescribeHistoryMonitorValuesResult.cc
 	src/model/DescribeInstanceAttributeRequest.cc
 	src/model/DescribeInstanceAttributeResult.cc
 	src/model/DescribeInstanceAutoRenewalAttributeRequest.cc
 	src/model/DescribeInstanceAutoRenewalAttributeResult.cc
-	src/model/DescribeInstanceConfigRequest.cc
-	src/model/DescribeInstanceConfigResult.cc
 	src/model/DescribeInstanceSSLRequest.cc
 	src/model/DescribeInstanceSSLResult.cc
 	src/model/DescribeInstancesRequest.cc
 	src/model/DescribeInstancesResult.cc
-	src/model/DescribeInstancesByExpireTimeRequest.cc
-	src/model/DescribeInstancesByExpireTimeResult.cc
 	src/model/DescribeIntranetAttributeRequest.cc
 	src/model/DescribeIntranetAttributeResult.cc
 	src/model/DescribeLogicInstanceTopologyRequest.cc
 	src/model/DescribeLogicInstanceTopologyResult.cc
 	src/model/DescribeMonitorItemsRequest.cc
 	src/model/DescribeMonitorItemsResult.cc
-	src/model/DescribeMonthlyServiceStatusRequest.cc
-	src/model/DescribeMonthlyServiceStatusResult.cc
-	src/model/DescribeMonthlyServiceStatusDetailRequest.cc
-	src/model/DescribeMonthlyServiceStatusDetailResult.cc
-	src/model/DescribeParameterModificationHistoryRequest.cc
-	src/model/DescribeParameterModificationHistoryResult.cc
-	src/model/DescribeParameterTemplatesRequest.cc
-	src/model/DescribeParameterTemplatesResult.cc
 	src/model/DescribeParametersRequest.cc
 	src/model/DescribeParametersResult.cc
-	src/model/DescribeRdsVSwitchsRequest.cc
-	src/model/DescribeRdsVSwitchsResult.cc
-	src/model/DescribeRdsVpcsRequest.cc
-	src/model/DescribeRdsVpcsResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
-	src/model/DescribeReplicaConflictInfoRequest.cc
-	src/model/DescribeReplicaConflictInfoResult.cc
-	src/model/DescribeReplicaInitializeProgressRequest.cc
-	src/model/DescribeReplicaInitializeProgressResult.cc
-	src/model/DescribeReplicaPerformanceRequest.cc
-	src/model/DescribeReplicaPerformanceResult.cc
-	src/model/DescribeReplicaUsageRequest.cc
-	src/model/DescribeReplicaUsageResult.cc
-	src/model/DescribeReplicasRequest.cc
-	src/model/DescribeReplicasResult.cc
 	src/model/DescribeRunningLogRecordsRequest.cc
 	src/model/DescribeRunningLogRecordsResult.cc
 	src/model/DescribeSecurityIpsRequest.cc
 	src/model/DescribeSecurityIpsResult.cc
-	src/model/DescribeShardingInstancesRequest.cc
-	src/model/DescribeShardingInstancesResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
-	src/model/DescribeSnapshotsRequest.cc
-	src/model/DescribeSnapshotsResult.cc
-	src/model/DescribeStaticVerificationListRequest.cc
-	src/model/DescribeStaticVerificationListResult.cc
-	src/model/DescribeStrategyRequest.cc
-	src/model/DescribeStrategyResult.cc
-	src/model/DescribeTagsRequest.cc
-	src/model/DescribeTagsResult.cc
-	src/model/DescribeTempInstanceRequest.cc
-	src/model/DescribeTempInstanceResult.cc
-	src/model/DescribeVerificationListRequest.cc
-	src/model/DescribeVerificationListResult.cc
 	src/model/DescribeZonesRequest.cc
 	src/model/DescribeZonesResult.cc
-	src/model/DestroyInstanceRequest.cc
-	src/model/DestroyInstanceResult.cc
-	src/model/EvaluateFailOverSwitchRequest.cc
-	src/model/EvaluateFailOverSwitchResult.cc
+	src/model/FlushExpireKeysRequest.cc
+	src/model/FlushExpireKeysResult.cc
 	src/model/FlushInstanceRequest.cc
 	src/model/FlushInstanceResult.cc
-	src/model/GetSnapshotSettingsRequest.cc
-	src/model/GetSnapshotSettingsResult.cc
 	src/model/GrantAccountPrivilegeRequest.cc
 	src/model/GrantAccountPrivilegeResult.cc
 	src/model/ListTagResourcesRequest.cc
@@ -396,20 +212,12 @@ set(r-kvstore_src
 	src/model/MigrateToOtherZoneResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
-	src/model/ModifyActiveOperationTaskRequest.cc
-	src/model/ModifyActiveOperationTaskResult.cc
 	src/model/ModifyAuditLogConfigRequest.cc
 	src/model/ModifyAuditLogConfigResult.cc
 	src/model/ModifyBackupPolicyRequest.cc
 	src/model/ModifyBackupPolicyResult.cc
-	src/model/ModifyCertificationRequest.cc
-	src/model/ModifyCertificationResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc
 	src/model/ModifyDBInstanceConnectionStringResult.cc
-	src/model/ModifyDBInstanceMonitorRequest.cc
-	src/model/ModifyDBInstanceMonitorResult.cc
-	src/model/ModifyGuardDomainModeRequest.cc
-	src/model/ModifyGuardDomainModeResult.cc
 	src/model/ModifyInstanceAttributeRequest.cc
 	src/model/ModifyInstanceAttributeResult.cc
 	src/model/ModifyInstanceAutoRenewalAttributeRequest.cc
@@ -428,62 +236,30 @@ set(r-kvstore_src
 	src/model/ModifyInstanceSSLResult.cc
 	src/model/ModifyInstanceSpecRequest.cc
 	src/model/ModifyInstanceSpecResult.cc
-	src/model/ModifyInstanceSpecPreCheckRequest.cc
-	src/model/ModifyInstanceSpecPreCheckResult.cc
 	src/model/ModifyInstanceVpcAuthModeRequest.cc
 	src/model/ModifyInstanceVpcAuthModeResult.cc
 	src/model/ModifyIntranetAttributeRequest.cc
 	src/model/ModifyIntranetAttributeResult.cc
-	src/model/ModifyReplicaDescriptionRequest.cc
-	src/model/ModifyReplicaDescriptionResult.cc
-	src/model/ModifyReplicaModeRequest.cc
-	src/model/ModifyReplicaModeResult.cc
-	src/model/ModifyReplicaRecoveryModeRequest.cc
-	src/model/ModifyReplicaRecoveryModeResult.cc
-	src/model/ModifyReplicaRelationRequest.cc
-	src/model/ModifyReplicaRelationResult.cc
-	src/model/ModifyReplicaVerificationModeRequest.cc
-	src/model/ModifyReplicaVerificationModeResult.cc
 	src/model/ModifySecurityIpsRequest.cc
 	src/model/ModifySecurityIpsResult.cc
-	src/model/QueryTaskRequest.cc
-	src/model/QueryTaskResult.cc
 	src/model/ReleaseInstancePublicConnectionRequest.cc
 	src/model/ReleaseInstancePublicConnectionResult.cc
-	src/model/ReleaseReplicaRequest.cc
-	src/model/ReleaseReplicaResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
-	src/model/RenewMultiInstanceRequest.cc
-	src/model/RenewMultiInstanceResult.cc
-	src/model/ResetAccountRequest.cc
-	src/model/ResetAccountResult.cc
 	src/model/ResetAccountPasswordRequest.cc
 	src/model/ResetAccountPasswordResult.cc
 	src/model/RestartInstanceRequest.cc
 	src/model/RestartInstanceResult.cc
 	src/model/RestoreInstanceRequest.cc
 	src/model/RestoreInstanceResult.cc
-	src/model/RestoreSnapshotRequest.cc
-	src/model/RestoreSnapshotResult.cc
-	src/model/RevokeAccountPrivilegeRequest.cc
-	src/model/RevokeAccountPrivilegeResult.cc
-	src/model/SetSnapshotSettingsRequest.cc
-	src/model/SetSnapshotSettingsResult.cc
 	src/model/SwitchNetworkRequest.cc
 	src/model/SwitchNetworkResult.cc
-	src/model/SwitchTempInstanceRequest.cc
-	src/model/SwitchTempInstanceResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/TransformToPrePaidRequest.cc
 	src/model/TransformToPrePaidResult.cc
-	src/model/UnlinkReplicaInstanceRequest.cc
-	src/model/UnlinkReplicaInstanceResult.cc
 	src/model/UntagResourcesRequest.cc
-	src/model/UntagResourcesResult.cc
-	src/model/VerifyPasswordRequest.cc
-	src/model/VerifyPasswordResult.cc )
+	src/model/UntagResourcesResult.cc )
 
 add_library(r-kvstore ${LIB_TYPE}
 	${r-kvstore_public_header}

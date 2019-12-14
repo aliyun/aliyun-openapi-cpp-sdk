@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeParametersRequest;
 
 DescribeParametersRequest::DescribeParametersRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeParameters")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeParametersRequest::~DescribeParametersRequest()
 {}

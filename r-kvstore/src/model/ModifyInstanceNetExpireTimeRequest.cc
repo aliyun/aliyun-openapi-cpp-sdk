@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyInstanceNetExpireTimeRequest;
 
 ModifyInstanceNetExpireTimeRequest::ModifyInstanceNetExpireTimeRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceNetExpireTimeRequest::~ModifyInstanceNetExpireTimeRequest()
 {}

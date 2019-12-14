@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::DescribeAvailableResourceRequest;
 
 DescribeAvailableResourceRequest::DescribeAvailableResourceRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "DescribeAvailableResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAvailableResourceRequest::~DescribeAvailableResourceRequest()
 {}
@@ -58,6 +60,17 @@ void DescribeAvailableResourceRequest::setSecurityToken(const std::string& secur
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeAvailableResourceRequest::getEngine()const
+{
+	return engine_;
+}
+
+void DescribeAvailableResourceRequest::setEngine(const std::string& engine)
+{
+	engine_ = engine;
+	setCoreParameter("Engine", engine);
+}
+
 std::string DescribeAvailableResourceRequest::getInstanceChargeType()const
 {
 	return instanceChargeType_;
@@ -78,6 +91,17 @@ void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeAvailableResourceRequest::getLevel()const
+{
+	return level_;
+}
+
+void DescribeAvailableResourceRequest::setLevel(const std::string& level)
+{
+	level_ = level;
+	setCoreParameter("Level", level);
 }
 
 std::string DescribeAvailableResourceRequest::getOwnerAccount()const

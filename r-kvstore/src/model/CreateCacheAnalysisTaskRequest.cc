@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::CreateCacheAnalysisTaskRequest;
 
 CreateCacheAnalysisTaskRequest::CreateCacheAnalysisTaskRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "CreateCacheAnalysisTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCacheAnalysisTaskRequest::~CreateCacheAnalysisTaskRequest()
 {}

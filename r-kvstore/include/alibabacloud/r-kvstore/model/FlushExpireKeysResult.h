@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_RESETACCOUNTRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_RESETACCOUNTRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_FLUSHEXPIREKEYSRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_FLUSHEXPIREKEYSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT ResetAccountResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT FlushExpireKeysResult : public ServiceResult
 			{
 			public:
 
 
-				ResetAccountResult();
-				explicit ResetAccountResult(const std::string &payload);
-				~ResetAccountResult();
+				FlushExpireKeysResult();
+				explicit FlushExpireKeysResult(const std::string &payload);
+				~FlushExpireKeysResult();
+				std::string getTaskId()const;
+				std::string getInstanceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskId_;
+				std::string instanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_RESETACCOUNTRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_FLUSHEXPIREKEYSRESULT_H_

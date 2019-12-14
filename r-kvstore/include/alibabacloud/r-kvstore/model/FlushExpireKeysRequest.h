@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEREPLICASREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEREPLICASREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_FLUSHEXPIREKEYSREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_FLUSHEXPIREKEYSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeReplicasRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT FlushExpireKeysRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeReplicasRequest();
-				~DescribeReplicasRequest();
+				FlushExpireKeysRequest();
+				~FlushExpireKeysRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getReplicaId()const;
-				void setReplicaId(const std::string& replicaId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
+				std::string getEffectiveTime()const;
+				void setEffectiveTime(const std::string& effectiveTime);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				bool getAttachDbInstanceData()const;
-				void setAttachDbInstanceData(bool attachDbInstanceData);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
 				long resourceOwnerId_;
-				int pageNumber_;
 				std::string accessKeyId_;
 				std::string securityToken_;
-				std::string replicaId_;
-				int pageSize_;
+				std::string effectiveTime_;
 				std::string resourceOwnerAccount_;
-				bool attachDbInstanceData_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string instanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEREPLICASREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_FLUSHEXPIREKEYSREQUEST_H_

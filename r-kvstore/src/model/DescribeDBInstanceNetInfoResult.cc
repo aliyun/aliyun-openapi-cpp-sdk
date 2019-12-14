@@ -63,6 +63,8 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 			netInfoItemsObject.expiredTime = valueNetInfoItemsInstanceNetInfo["ExpiredTime"].asString();
 		if(!valueNetInfoItemsInstanceNetInfo["Upgradeable"].isNull())
 			netInfoItemsObject.upgradeable = valueNetInfoItemsInstanceNetInfo["Upgradeable"].asString();
+		if(!valueNetInfoItemsInstanceNetInfo["DirectConnection"].isNull())
+			netInfoItemsObject.directConnection = std::stoi(valueNetInfoItemsInstanceNetInfo["DirectConnection"].asString());
 		netInfoItems_.push_back(netInfoItemsObject);
 	}
 	if(!value["InstanceNetworkType"].isNull())

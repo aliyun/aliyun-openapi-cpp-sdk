@@ -20,7 +20,9 @@ using AlibabaCloud::R_kvstore::Model::ModifyInstanceVpcAuthModeRequest;
 
 ModifyInstanceVpcAuthModeRequest::ModifyInstanceVpcAuthModeRequest() :
 	RpcServiceRequest("r-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceVpcAuthModeRequest::~ModifyInstanceVpcAuthModeRequest()
 {}
