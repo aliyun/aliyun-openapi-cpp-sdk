@@ -116,10 +116,10 @@ TEST(EndpointProvider, serial_02) {
   ClientConfiguration configuration("cn-hangzhou");
   EndpointProvider ep(credentials, configuration, "cn-hangzhou", "arms", "arms");
   EndpointProvider::EndpointOutcome out = ep.getEndpoint();
-  EXPECT_TRUE(out.result() == "arms.cn-hangzhou.aliyuncs.com");
+  EXPECT_EQ("arms.cn-hangzhou.aliyuncs.com", out.result());
 
   EndpointProvider p1(credentials, configuration, "cn-shanghai", "fake-ecs", "fake-ecs");
   EndpointProvider::EndpointOutcome out1 = p1.getEndpoint();
-  EXPECT_TRUE(out1.error().errorCode() == "InvalidProduct");
-  EXPECT_TRUE(out1.error().errorMessage() == "Prodcut[fake-ecs] does not exist.");
+  EXPECT_EQ("InvalidProduct", out1.error().errorCode());
+  EXPECT_EQ("Prodcut[fake-ecs] does not exist.", out1.error().errorMessage());
 }
