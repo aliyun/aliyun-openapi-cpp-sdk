@@ -235,4 +235,25 @@ void ServiceRequest::setMethod(const HttpRequest::Method method)
   method_ = method;
 }
 
+void ServiceRequest::setHeader(const ServiceRequest::ParameterNameType &name,
+                               const ServiceRequest::ParameterValueType &value)
+{
+  headers_[name] = value;
+}
+
+ServiceRequest::ParameterValueType ServiceRequest::getHeader(const ServiceRequest::ParameterNameType &name)
+{
+  return headers_[name];
+}
+
+void ServiceRequest::removeHeader(const ServiceRequest::ParameterNameType &name)
+{
+  headers_.erase(name);
+}
+
+ServiceRequest::ParameterCollection ServiceRequest::headers() const
+{
+  return headers_;
+}
+
 } // namespace AlibabaCloud

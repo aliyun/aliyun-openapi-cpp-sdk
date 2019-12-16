@@ -102,6 +102,12 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
     request.setReadTimeout(configuration().readTimeout());
   }
 
+  for(const auto &h : msg.headers()){
+      if(!h.second.empty()){
+          request.setHeader(h.first, h.second);
+      }
+  }
+
   if (msg.parameter("Accept").empty()) {
     request.setHeader("Accept", "application/json");
   } else {

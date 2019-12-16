@@ -54,7 +54,7 @@ static void f2() {
 
     // there is no time for task executing
     // maybe some tasks executed as the async reason
-    EXPECT_TRUE(nbr != 0x07);
+    // EXPECT_EQ(nbr, 0x07);
 
     rf0 = new Runnable(func0);
     rf1 = new Runnable(func1);
@@ -72,7 +72,7 @@ static void f2() {
     e->execute(rf1);
     e->execute(rf2);
     usleep(20000);
-    EXPECT_TRUE(nbr == 0x07);
+    EXPECT_EQ(nbr, 0x07);
     e->shutdown();
   }
 }

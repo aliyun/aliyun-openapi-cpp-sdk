@@ -119,6 +119,14 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
     request.setConnectTimeout(configuration().connectTimeout());
   }
 
+  for (const auto &h : msg.headers())
+  {
+    if (!h.second.empty())
+    {
+      request.setHeader(h.first, h.second);
+    }
+  }
+
   if (msg.readTimeout() != kInvalidTimeout) {
     request.setReadTimeout(msg.readTimeout());
   } else {

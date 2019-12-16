@@ -46,6 +46,10 @@ public:
   void setConnectTimeout(const long connectTimeout);
   void setReadTimeout(const long readTimeout);
   void setMethod(const HttpRequest::Method method);
+  void setHeader(const ParameterNameType &name, const ParameterValueType &value);
+  ParameterValueType getHeader(const ParameterNameType &name);
+  void removeHeader(const ParameterNameType &name);
+  ParameterCollection headers() const;
 
 protected:
   ServiceRequest(const std::string &product, const std::string &version);
@@ -77,6 +81,7 @@ private:
   char *content_;
   size_t contentSize_;
   ParameterCollection params_;
+  ParameterCollection headers_;
   std::string product_;
   std::string resourcePath_;
   std::string version_;
