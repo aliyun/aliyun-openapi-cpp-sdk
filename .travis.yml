@@ -12,7 +12,6 @@ env:
 script:
   - ./unit_test.sh
   - ./generate_code_cov.sh
-  - ./function_test.sh
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
