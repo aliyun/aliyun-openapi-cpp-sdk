@@ -165,8 +165,8 @@ void cb(const LocationClient *client,
         const std::shared_ptr<const AsyncCallerContext> &contex)
 {
 
-  EXPECT_TRUE(out.error().errorCode() == "");
-  EXPECT_TRUE(out.result().endpoints().size() == 1);
+  EXPECT_EQ(out.error().errorCode(), "");
+  EXPECT_EQ(out.result().endpoints().size(), 1);
   Model::DescribeEndpointsResult::Endpoint ep = out.result().endpoints()[0];
   EXPECT_TRUE(ep.endpoint == "ecs-cn-hangzhou.aliyuncs.com");
   EXPECT_TRUE(ep.id == "cn-hangzhou");
