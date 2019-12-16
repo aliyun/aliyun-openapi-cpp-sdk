@@ -27,6 +27,17 @@ DescribeTransferDomainsRequest::DescribeTransferDomainsRequest() :
 DescribeTransferDomainsRequest::~DescribeTransferDomainsRequest()
 {}
 
+long DescribeTransferDomainsRequest::getFromUserId()const
+{
+	return fromUserId_;
+}
+
+void DescribeTransferDomainsRequest::setFromUserId(long fromUserId)
+{
+	fromUserId_ = fromUserId;
+	setCoreParameter("FromUserId", std::to_string(fromUserId));
+}
+
 long DescribeTransferDomainsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -38,26 +49,15 @@ void DescribeTransferDomainsRequest::setPageNumber(long pageNumber)
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeTransferDomainsRequest::getTransferType()const
+long DescribeTransferDomainsRequest::getTargetUserId()const
 {
-	return transferType_;
+	return targetUserId_;
 }
 
-void DescribeTransferDomainsRequest::setTransferType(const std::string& transferType)
+void DescribeTransferDomainsRequest::setTargetUserId(long targetUserId)
 {
-	transferType_ = transferType;
-	setCoreParameter("TransferType", transferType);
-}
-
-std::string DescribeTransferDomainsRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void DescribeTransferDomainsRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	targetUserId_ = targetUserId;
+	setCoreParameter("TargetUserId", std::to_string(targetUserId));
 }
 
 long DescribeTransferDomainsRequest::getPageSize()const
@@ -80,5 +80,38 @@ void DescribeTransferDomainsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
+}
+
+std::string DescribeTransferDomainsRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeTransferDomainsRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeTransferDomainsRequest::getTransferType()const
+{
+	return transferType_;
+}
+
+void DescribeTransferDomainsRequest::setTransferType(const std::string& transferType)
+{
+	transferType_ = transferType;
+	setCoreParameter("TransferType", transferType);
+}
+
+std::string DescribeTransferDomainsRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void DescribeTransferDomainsRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 

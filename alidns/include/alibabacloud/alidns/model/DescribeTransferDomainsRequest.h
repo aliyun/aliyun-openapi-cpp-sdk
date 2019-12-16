@@ -35,23 +35,32 @@ namespace AlibabaCloud
 				DescribeTransferDomainsRequest();
 				~DescribeTransferDomainsRequest();
 
+				long getFromUserId()const;
+				void setFromUserId(long fromUserId);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
-				std::string getTransferType()const;
-				void setTransferType(const std::string& transferType);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
+				long getTargetUserId()const;
+				void setTargetUserId(long targetUserId);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getTransferType()const;
+				void setTransferType(const std::string& transferType);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 
             private:
+				long fromUserId_;
 				long pageNumber_;
-				std::string transferType_;
-				std::string userClientIp_;
+				long targetUserId_;
 				long pageSize_;
 				std::string lang_;
+				std::string domainName_;
+				std::string transferType_;
+				std::string userClientIp_;
 
 			};
 		}
