@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERSREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERSREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBESLOWLOGRECORDSREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBESLOWLOGRECORDSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,65 +28,57 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClustersRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeSlowLogRecordsRequest : public RpcServiceRequest
 			{
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
 
 			public:
-				DescribeDBClustersRequest();
-				~DescribeDBClustersRequest();
+				DescribeSlowLogRecordsRequest();
+				~DescribeSlowLogRecordsRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getDBClusterDescription()const;
-				void setDBClusterDescription(const std::string& dBClusterDescription);
-				std::string getDBClusterStatus()const;
-				void setDBClusterStatus(const std::string& dBClusterStatus);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getDBClusterId()const;
+				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getDBType()const;
-				void setDBType(const std::string& dBType);
-				std::string getDBClusterIds()const;
-				void setDBClusterIds(const std::string& dBClusterIds);
+				std::string getDBName()const;
+				void setDBName(const std::string& dBName);
+				std::string getSQLHASH()const;
+				void setSQLHASH(const std::string& sQLHASH);
 
             private:
 				long resourceOwnerId_;
-				std::string dBClusterDescription_;
-				std::string dBClusterStatus_;
+				std::string startTime_;
 				int pageNumber_;
 				std::string accessKeyId_;
-				std::string resourceGroupId_;
 				std::string regionId_;
 				int pageSize_;
-				std::vector<Tag> tag_;
 				std::string resourceOwnerAccount_;
+				std::string dBClusterId_;
 				std::string ownerAccount_;
+				std::string endTime_;
 				long ownerId_;
-				std::string dBType_;
-				std::string dBClusterIds_;
+				std::string dBName_;
+				std::string sQLHASH_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERSREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBESLOWLOGRECORDSREQUEST_H_

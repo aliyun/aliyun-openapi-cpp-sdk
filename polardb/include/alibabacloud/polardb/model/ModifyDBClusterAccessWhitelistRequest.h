@@ -49,8 +49,12 @@ namespace AlibabaCloud
 				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getWhiteListType()const;
+				void setWhiteListType(const std::string& whiteListType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSecurityGroupIds()const;
+				void setSecurityGroupIds(const std::string& securityGroupIds);
 				std::string getDBClusterIPArrayName()const;
 				void setDBClusterIPArrayName(const std::string& dBClusterIPArrayName);
 
@@ -62,7 +66,9 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
+				std::string whiteListType_;
 				long ownerId_;
+				std::string securityGroupIds_;
 				std::string dBClusterIPArrayName_;
 
 			};

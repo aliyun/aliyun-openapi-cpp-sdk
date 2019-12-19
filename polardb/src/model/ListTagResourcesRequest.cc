@@ -14,58 +14,69 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/TagResourcesRequest.h>
+#include <alibabacloud/polardb/model/ListTagResourcesRequest.h>
 
-using AlibabaCloud::Polardb::Model::TagResourcesRequest;
+using AlibabaCloud::Polardb::Model::ListTagResourcesRequest;
 
-TagResourcesRequest::TagResourcesRequest() :
-	RpcServiceRequest("polardb", "2017-08-01", "TagResources")
+ListTagResourcesRequest::ListTagResourcesRequest() :
+	RpcServiceRequest("polardb", "2017-08-01", "ListTagResources")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-TagResourcesRequest::~TagResourcesRequest()
+ListTagResourcesRequest::~ListTagResourcesRequest()
 {}
 
-long TagResourcesRequest::getResourceOwnerId()const
+long ListTagResourcesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void TagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
+void ListTagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string TagResourcesRequest::getAccessKeyId()const
+std::string ListTagResourcesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void TagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
+void ListTagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string TagResourcesRequest::getRegionId()const
+std::string ListTagResourcesRequest::getRegionId()const
 {
 	return regionId_;
 }
 
-void TagResourcesRequest::setRegionId(const std::string& regionId)
+void ListTagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
 }
 
-std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag()const
+std::string ListTagResourcesRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void ListTagResourcesRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setCoreParameter("NextToken", nextToken);
+}
+
+std::vector<ListTagResourcesRequest::Tag> ListTagResourcesRequest::getTag()const
 {
 	return tag_;
 }
 
-void TagResourcesRequest::setTag(const std::vector<Tag>& tag)
+void ListTagResourcesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
@@ -76,12 +87,12 @@ void TagResourcesRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
-std::vector<std::string> TagResourcesRequest::getResourceId()const
+std::vector<std::string> ListTagResourcesRequest::getResourceId()const
 {
 	return resourceId_;
 }
 
-void TagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
+void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
 	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
@@ -89,45 +100,45 @@ void TagResourcesRequest::setResourceId(const std::vector<std::string>& resource
 	}
 }
 
-std::string TagResourcesRequest::getResourceOwnerAccount()const
+std::string ListTagResourcesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void TagResourcesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ListTagResourcesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string TagResourcesRequest::getOwnerAccount()const
+std::string ListTagResourcesRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
 }
 
-void TagResourcesRequest::setOwnerAccount(const std::string& ownerAccount)
+void ListTagResourcesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-long TagResourcesRequest::getOwnerId()const
+long ListTagResourcesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void TagResourcesRequest::setOwnerId(long ownerId)
+void ListTagResourcesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string TagResourcesRequest::getResourceType()const
+std::string ListTagResourcesRequest::getResourceType()const
 {
 	return resourceType_;
 }
 
-void TagResourcesRequest::setResourceType(const std::string& resourceType)
+void ListTagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
 	setCoreParameter("ResourceType", resourceType);

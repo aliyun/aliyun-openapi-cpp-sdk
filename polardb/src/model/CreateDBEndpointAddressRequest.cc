@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::CreateDBEndpointAddressRequest;
 
 CreateDBEndpointAddressRequest::CreateDBEndpointAddressRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "CreateDBEndpointAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDBEndpointAddressRequest::~CreateDBEndpointAddressRequest()
 {}

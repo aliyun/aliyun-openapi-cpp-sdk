@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					};
 					int deletionLock;
 					std::string zoneId;
+					std::string resourceGroupId;
 					std::string dBClusterStatus;
 					std::string createTime;
 					std::string dBClusterId;

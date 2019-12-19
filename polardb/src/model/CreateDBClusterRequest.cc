@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::CreateDBClusterRequest;
 
 CreateDBClusterRequest::CreateDBClusterRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "CreateDBCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDBClusterRequest::~CreateDBClusterRequest()
 {}
@@ -78,6 +80,17 @@ void CreateDBClusterRequest::setClusterNetworkType(const std::string& clusterNet
 {
 	clusterNetworkType_ = clusterNetworkType;
 	setCoreParameter("ClusterNetworkType", clusterNetworkType);
+}
+
+std::string CreateDBClusterRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateDBClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateDBClusterRequest::getDBNodeClass()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::ModifyDBDescriptionRequest;
 
 ModifyDBDescriptionRequest::ModifyDBDescriptionRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "ModifyDBDescription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBDescriptionRequest::~ModifyDBDescriptionRequest()
 {}

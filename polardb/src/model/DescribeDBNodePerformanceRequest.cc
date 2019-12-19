@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::DescribeDBNodePerformanceRequest;
 
 DescribeDBNodePerformanceRequest::DescribeDBNodePerformanceRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "DescribeDBNodePerformance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBNodePerformanceRequest::~DescribeDBNodePerformanceRequest()
 {}

@@ -117,6 +117,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		sQLSize_ = std::stol(value["SQLSize"].asString());
 	if(!value["IsLatestVersion"].isNull())
 		isLatestVersion_ = value["IsLatestVersion"].asString() == "true";
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -125,19 +127,9 @@ int DescribeDBClusterAttributeResult::getDeletionLock()const
 	return deletionLock_;
 }
 
-std::string DescribeDBClusterAttributeResult::getVPCId()const
+std::string DescribeDBClusterAttributeResult::getResourceGroupId()const
 {
-	return vPCId_;
-}
-
-std::string DescribeDBClusterAttributeResult::getDBClusterStatus()const
-{
-	return dBClusterStatus_;
-}
-
-std::string DescribeDBClusterAttributeResult::getVSwitchId()const
-{
-	return vSwitchId_;
+	return resourceGroupId_;
 }
 
 std::string DescribeDBClusterAttributeResult::getDBClusterId()const
@@ -145,39 +137,14 @@ std::string DescribeDBClusterAttributeResult::getDBClusterId()const
 	return dBClusterId_;
 }
 
-std::string DescribeDBClusterAttributeResult::getDBClusterDescription()const
-{
-	return dBClusterDescription_;
-}
-
-std::string DescribeDBClusterAttributeResult::getExpired()const
-{
-	return expired_;
-}
-
 std::string DescribeDBClusterAttributeResult::getDBClusterNetworkType()const
 {
 	return dBClusterNetworkType_;
 }
 
-std::string DescribeDBClusterAttributeResult::getPayType()const
-{
-	return payType_;
-}
-
 std::string DescribeDBClusterAttributeResult::getDBType()const
 {
 	return dBType_;
-}
-
-std::string DescribeDBClusterAttributeResult::getLockMode()const
-{
-	return lockMode_;
-}
-
-long DescribeDBClusterAttributeResult::getStorageUsed()const
-{
-	return storageUsed_;
 }
 
 bool DescribeDBClusterAttributeResult::getIsLatestVersion()const
@@ -200,29 +167,9 @@ std::vector<DescribeDBClusterAttributeResult::DBNode> DescribeDBClusterAttribute
 	return dBNodes_;
 }
 
-std::string DescribeDBClusterAttributeResult::getCreationTime()const
-{
-	return creationTime_;
-}
-
-std::string DescribeDBClusterAttributeResult::getRegionId()const
-{
-	return regionId_;
-}
-
 std::string DescribeDBClusterAttributeResult::getZoneIds()const
 {
 	return zoneIds_;
-}
-
-long DescribeDBClusterAttributeResult::getSQLSize()const
-{
-	return sQLSize_;
-}
-
-std::string DescribeDBClusterAttributeResult::getExpireTime()const
-{
-	return expireTime_;
 }
 
 std::string DescribeDBClusterAttributeResult::getMaintainTime()const
@@ -238,5 +185,65 @@ std::vector<DescribeDBClusterAttributeResult::Tag> DescribeDBClusterAttributeRes
 std::string DescribeDBClusterAttributeResult::getEngine()const
 {
 	return engine_;
+}
+
+std::string DescribeDBClusterAttributeResult::getVPCId()const
+{
+	return vPCId_;
+}
+
+std::string DescribeDBClusterAttributeResult::getDBClusterStatus()const
+{
+	return dBClusterStatus_;
+}
+
+std::string DescribeDBClusterAttributeResult::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+std::string DescribeDBClusterAttributeResult::getDBClusterDescription()const
+{
+	return dBClusterDescription_;
+}
+
+std::string DescribeDBClusterAttributeResult::getExpired()const
+{
+	return expired_;
+}
+
+std::string DescribeDBClusterAttributeResult::getPayType()const
+{
+	return payType_;
+}
+
+std::string DescribeDBClusterAttributeResult::getLockMode()const
+{
+	return lockMode_;
+}
+
+long DescribeDBClusterAttributeResult::getStorageUsed()const
+{
+	return storageUsed_;
+}
+
+std::string DescribeDBClusterAttributeResult::getCreationTime()const
+{
+	return creationTime_;
+}
+
+std::string DescribeDBClusterAttributeResult::getRegionId()const
+{
+	return regionId_;
+}
+
+long DescribeDBClusterAttributeResult::getSQLSize()const
+{
+	return sQLSize_;
+}
+
+std::string DescribeDBClusterAttributeResult::getExpireTime()const
+{
+	return expireTime_;
 }
 

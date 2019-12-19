@@ -1095,6 +1095,78 @@ PolardbClient::DescribeRegionsOutcomeCallable PolardbClient::describeRegionsCall
 	return task->get_future();
 }
 
+PolardbClient::DescribeSlowLogRecordsOutcome PolardbClient::describeSlowLogRecords(const DescribeSlowLogRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSlowLogRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSlowLogRecordsOutcome(DescribeSlowLogRecordsResult(outcome.result()));
+	else
+		return DescribeSlowLogRecordsOutcome(outcome.error());
+}
+
+void PolardbClient::describeSlowLogRecordsAsync(const DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSlowLogRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeSlowLogRecordsOutcomeCallable PolardbClient::describeSlowLogRecordsCallable(const DescribeSlowLogRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSlowLogRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSlowLogRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeSlowLogsOutcome PolardbClient::describeSlowLogs(const DescribeSlowLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSlowLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSlowLogsOutcome(DescribeSlowLogsResult(outcome.result()));
+	else
+		return DescribeSlowLogsOutcome(outcome.error());
+}
+
+void PolardbClient::describeSlowLogsAsync(const DescribeSlowLogsRequest& request, const DescribeSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSlowLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeSlowLogsOutcomeCallable PolardbClient::describeSlowLogsCallable(const DescribeSlowLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSlowLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSlowLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::FailoverDBClusterOutcome PolardbClient::failoverDBCluster(const FailoverDBClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1233,42 @@ PolardbClient::GrantAccountPrivilegeOutcomeCallable PolardbClient::grantAccountP
 			[this, request]()
 			{
 			return this->grantAccountPrivilege(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::ListTagResourcesOutcome PolardbClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void PolardbClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::ListTagResourcesOutcomeCallable PolardbClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

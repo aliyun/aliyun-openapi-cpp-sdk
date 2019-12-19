@@ -55,6 +55,8 @@ void DescribeAccountsResult::parse(const std::string &payload)
 			accountsObject.accountLockState = valueAccountsDBAccount["AccountLockState"].asString();
 		if(!valueAccountsDBAccount["PrivilegeExceeded"].isNull())
 			accountsObject.privilegeExceeded = valueAccountsDBAccount["PrivilegeExceeded"].asString();
+		if(!valueAccountsDBAccount["AccountPasswordValidTime"].isNull())
+			accountsObject.accountPasswordValidTime = valueAccountsDBAccount["AccountPasswordValidTime"].asString();
 		auto allDatabasePrivilegesNode = allAccountsNode["DatabasePrivileges"]["DatabasePrivilege"];
 		for (auto allAccountsNodeDatabasePrivilegesDatabasePrivilege : allDatabasePrivilegesNode)
 		{

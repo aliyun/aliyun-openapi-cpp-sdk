@@ -51,11 +51,26 @@ void DescribeDBClusterAccessWhitelistResult::parse(const std::string &payload)
 			itemsObject.securityIps = valueItemsDBClusterIPArray["SecurityIps"].asString();
 		items_.push_back(itemsObject);
 	}
+	auto allDBClusterSecurityGroupsNode = value["DBClusterSecurityGroups"]["DBClusterSecurityGroup"];
+	for (auto valueDBClusterSecurityGroupsDBClusterSecurityGroup : allDBClusterSecurityGroupsNode)
+	{
+		DBClusterSecurityGroup dBClusterSecurityGroupsObject;
+		if(!valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupId"].isNull())
+			dBClusterSecurityGroupsObject.securityGroupId = valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupId"].asString();
+		if(!valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupName"].isNull())
+			dBClusterSecurityGroupsObject.securityGroupName = valueDBClusterSecurityGroupsDBClusterSecurityGroup["SecurityGroupName"].asString();
+		dBClusterSecurityGroups_.push_back(dBClusterSecurityGroupsObject);
+	}
 
 }
 
 std::vector<DescribeDBClusterAccessWhitelistResult::DBClusterIPArray> DescribeDBClusterAccessWhitelistResult::getItems()const
 {
 	return items_;
+}
+
+std::vector<DescribeDBClusterAccessWhitelistResult::DBClusterSecurityGroup> DescribeDBClusterAccessWhitelistResult::getDBClusterSecurityGroups()const
+{
+	return dBClusterSecurityGroups_;
 }
 

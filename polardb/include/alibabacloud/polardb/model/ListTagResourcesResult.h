@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACCOUNTSRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACCOUNTSRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_LISTTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_LISTTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeAccountsResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT ListTagResourcesResult : public ServiceResult
 			{
 			public:
-				struct DBAccount
+				struct TagResource
 				{
-					struct DatabasePrivilege
-					{
-						std::string accountPrivilege;
-						std::string dBName;
-					};
-					std::string accountDescription;
-					std::string accountStatus;
-					std::string privilegeExceeded;
-					std::string accountLockState;
-					std::string accountPasswordValidTime;
-					std::string accountType;
-					std::vector<DBAccount::DatabasePrivilege> databasePrivileges;
-					std::string accountName;
+					std::string resourceId;
+					std::string tagKey;
+					std::string resourceType;
+					std::string tagValue;
 				};
 
 
-				DescribeAccountsResult();
-				explicit DescribeAccountsResult(const std::string &payload);
-				~DescribeAccountsResult();
-				std::vector<DBAccount> getAccounts()const;
+				ListTagResourcesResult();
+				explicit ListTagResourcesResult(const std::string &payload);
+				~ListTagResourcesResult();
+				std::string getNextToken()const;
+				std::vector<TagResource> getTagResources()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DBAccount> accounts_;
+				std::string nextToken_;
+				std::vector<TagResource> tagResources_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACCOUNTSRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_LISTTAGRESOURCESRESULT_H_

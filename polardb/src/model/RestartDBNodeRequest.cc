@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::RestartDBNodeRequest;
 
 RestartDBNodeRequest::RestartDBNodeRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "RestartDBNode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RestartDBNodeRequest::~RestartDBNodeRequest()
 {}

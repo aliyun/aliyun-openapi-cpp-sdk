@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::ModifyDBClusterAccessWhitelistRequest;
 
 ModifyDBClusterAccessWhitelistRequest::ModifyDBClusterAccessWhitelistRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "ModifyDBClusterAccessWhitelist")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBClusterAccessWhitelistRequest::~ModifyDBClusterAccessWhitelistRequest()
 {}
@@ -102,6 +104,17 @@ void ModifyDBClusterAccessWhitelistRequest::setOwnerAccount(const std::string& o
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
+std::string ModifyDBClusterAccessWhitelistRequest::getWhiteListType()const
+{
+	return whiteListType_;
+}
+
+void ModifyDBClusterAccessWhitelistRequest::setWhiteListType(const std::string& whiteListType)
+{
+	whiteListType_ = whiteListType;
+	setCoreParameter("WhiteListType", whiteListType);
+}
+
 long ModifyDBClusterAccessWhitelistRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,6 +124,17 @@ void ModifyDBClusterAccessWhitelistRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyDBClusterAccessWhitelistRequest::getSecurityGroupIds()const
+{
+	return securityGroupIds_;
+}
+
+void ModifyDBClusterAccessWhitelistRequest::setSecurityGroupIds(const std::string& securityGroupIds)
+{
+	securityGroupIds_ = securityGroupIds;
+	setCoreParameter("SecurityGroupIds", securityGroupIds);
 }
 
 std::string ModifyDBClusterAccessWhitelistRequest::getDBClusterIPArrayName()const

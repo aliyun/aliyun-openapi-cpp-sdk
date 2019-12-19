@@ -79,10 +79,16 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDatabasesResult.h
 	include/alibabacloud/polardb/model/DescribeRegionsRequest.h
 	include/alibabacloud/polardb/model/DescribeRegionsResult.h
+	include/alibabacloud/polardb/model/DescribeSlowLogRecordsRequest.h
+	include/alibabacloud/polardb/model/DescribeSlowLogRecordsResult.h
+	include/alibabacloud/polardb/model/DescribeSlowLogsRequest.h
+	include/alibabacloud/polardb/model/DescribeSlowLogsResult.h
 	include/alibabacloud/polardb/model/FailoverDBClusterRequest.h
 	include/alibabacloud/polardb/model/FailoverDBClusterResult.h
 	include/alibabacloud/polardb/model/GrantAccountPrivilegeRequest.h
 	include/alibabacloud/polardb/model/GrantAccountPrivilegeResult.h
+	include/alibabacloud/polardb/model/ListTagResourcesRequest.h
+	include/alibabacloud/polardb/model/ListTagResourcesResult.h
 	include/alibabacloud/polardb/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/polardb/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/polardb/model/ModifyAccountPasswordRequest.h
@@ -180,10 +186,16 @@ set(polardb_src
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeSlowLogRecordsRequest.cc
+	src/model/DescribeSlowLogRecordsResult.cc
+	src/model/DescribeSlowLogsRequest.cc
+	src/model/DescribeSlowLogsResult.cc
 	src/model/FailoverDBClusterRequest.cc
 	src/model/FailoverDBClusterResult.cc
 	src/model/GrantAccountPrivilegeRequest.cc
 	src/model/GrantAccountPrivilegeResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAccountPasswordRequest.cc

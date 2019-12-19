@@ -81,6 +81,8 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.dBNodeClass = valueItemsDBCluster["DBNodeClass"].asString();
 		if(!valueItemsDBCluster["StorageUsed"].isNull())
 			itemsObject.storageUsed = std::stol(valueItemsDBCluster["StorageUsed"].asString());
+		if(!valueItemsDBCluster["ResourceGroupId"].isNull())
+			itemsObject.resourceGroupId = valueItemsDBCluster["ResourceGroupId"].asString();
 		auto allDBNodesNode = allItemsNode["DBNodes"]["DBNode"];
 		for (auto allItemsNodeDBNodesDBNode : allDBNodesNode)
 		{

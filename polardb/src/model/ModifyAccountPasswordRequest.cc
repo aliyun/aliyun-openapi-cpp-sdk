@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::ModifyAccountPasswordRequest;
 
 ModifyAccountPasswordRequest::ModifyAccountPasswordRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "ModifyAccountPassword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAccountPasswordRequest::~ModifyAccountPasswordRequest()
 {}

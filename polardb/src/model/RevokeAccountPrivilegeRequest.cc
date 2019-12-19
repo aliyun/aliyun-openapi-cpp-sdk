@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::RevokeAccountPrivilegeRequest;
 
 RevokeAccountPrivilegeRequest::RevokeAccountPrivilegeRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "RevokeAccountPrivilege")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RevokeAccountPrivilegeRequest::~RevokeAccountPrivilegeRequest()
 {}

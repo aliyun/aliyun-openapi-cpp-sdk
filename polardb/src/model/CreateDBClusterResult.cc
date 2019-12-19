@@ -43,7 +43,14 @@ void CreateDBClusterResult::parse(const std::string &payload)
 		dBClusterId_ = value["DBClusterId"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
+}
+
+std::string CreateDBClusterResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string CreateDBClusterResult::getDBClusterId()const

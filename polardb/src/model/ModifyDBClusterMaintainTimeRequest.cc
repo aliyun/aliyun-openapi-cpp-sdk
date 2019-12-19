@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::ModifyDBClusterMaintainTimeRequest;
 
 ModifyDBClusterMaintainTimeRequest::ModifyDBClusterMaintainTimeRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "ModifyDBClusterMaintainTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBClusterMaintainTimeRequest::~ModifyDBClusterMaintainTimeRequest()
 {}

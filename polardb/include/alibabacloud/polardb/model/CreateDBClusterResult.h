@@ -37,12 +37,14 @@ namespace AlibabaCloud
 				CreateDBClusterResult();
 				explicit CreateDBClusterResult(const std::string &payload);
 				~CreateDBClusterResult();
+				std::string getResourceGroupId()const;
 				std::string getDBClusterId()const;
 				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string resourceGroupId_;
 				std::string dBClusterId_;
 				std::string orderId_;
 

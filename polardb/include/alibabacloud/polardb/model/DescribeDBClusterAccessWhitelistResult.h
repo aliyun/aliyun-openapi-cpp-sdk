@@ -38,17 +38,24 @@ namespace AlibabaCloud
 					std::string dBClusterIPArrayName;
 					std::string dBClusterIPArrayAttribute;
 				};
+				struct DBClusterSecurityGroup
+				{
+					std::string securityGroupName;
+					std::string securityGroupId;
+				};
 
 
 				DescribeDBClusterAccessWhitelistResult();
 				explicit DescribeDBClusterAccessWhitelistResult(const std::string &payload);
 				~DescribeDBClusterAccessWhitelistResult();
 				std::vector<DBClusterIPArray> getItems()const;
+				std::vector<DBClusterSecurityGroup> getDBClusterSecurityGroups()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<DBClusterIPArray> items_;
+				std::vector<DBClusterSecurityGroup> dBClusterSecurityGroups_;
 
 			};
 		}

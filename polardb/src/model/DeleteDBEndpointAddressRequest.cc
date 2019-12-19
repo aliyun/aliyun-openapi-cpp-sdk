@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::DeleteDBEndpointAddressRequest;
 
 DeleteDBEndpointAddressRequest::DeleteDBEndpointAddressRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "DeleteDBEndpointAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDBEndpointAddressRequest::~DeleteDBEndpointAddressRequest()
 {}

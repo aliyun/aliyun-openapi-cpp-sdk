@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::ModifyDBNodeClassRequest;
 
 ModifyDBNodeClassRequest::ModifyDBNodeClassRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "ModifyDBNodeClass")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBNodeClassRequest::~ModifyDBNodeClassRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Polardb::Model::DescribeDBClusterAccessWhitelistRequest;
 
 DescribeDBClusterAccessWhitelistRequest::DescribeDBClusterAccessWhitelistRequest() :
 	RpcServiceRequest("polardb", "2017-08-01", "DescribeDBClusterAccessWhitelist")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBClusterAccessWhitelistRequest::~DescribeDBClusterAccessWhitelistRequest()
 {}
