@@ -104,6 +104,17 @@ void DescribeNetworkInterfacesRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string DescribeNetworkInterfacesRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void DescribeNetworkInterfacesRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setCoreParameter("NextToken", nextToken);
+}
+
 int DescribeNetworkInterfacesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -230,6 +241,17 @@ void DescribeNetworkInterfacesRequest::setPrimaryIpAddress(const std::string& pr
 {
 	primaryIpAddress_ = primaryIpAddress;
 	setCoreParameter("PrimaryIpAddress", primaryIpAddress);
+}
+
+int DescribeNetworkInterfacesRequest::getMaxResults()const
+{
+	return maxResults_;
+}
+
+void DescribeNetworkInterfacesRequest::setMaxResults(int maxResults)
+{
+	maxResults_ = maxResults;
+	setCoreParameter("MaxResults", std::to_string(maxResults));
 }
 
 std::vector<std::string> DescribeNetworkInterfacesRequest::getNetworkInterfaceId()const

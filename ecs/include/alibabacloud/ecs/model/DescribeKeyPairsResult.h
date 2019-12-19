@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string keyPairFingerPrint;
 					std::string keyPairName;
 					std::string resourceGroupId;
+					std::string creationTime;
 					std::vector<KeyPair::Tag> tags;
 				};
 

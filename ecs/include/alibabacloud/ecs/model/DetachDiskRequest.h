@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getDiskId()const;
 				void setDiskId(const std::string& diskId);
+				bool getDeleteWithInstance()const;
+				void setDeleteWithInstance(bool deleteWithInstance);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string diskId_;
+				bool deleteWithInstance_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

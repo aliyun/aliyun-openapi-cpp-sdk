@@ -49,6 +49,17 @@ void ModifyInstanceDeploymentRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string ModifyInstanceDeploymentRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void ModifyInstanceDeploymentRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setCoreParameter("InstanceType", instanceType);
+}
+
 std::string ModifyInstanceDeploymentRequest::getDeploymentSetId()const
 {
 	return deploymentSetId_;

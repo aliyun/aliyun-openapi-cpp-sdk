@@ -49,6 +49,17 @@ void DetachDiskRequest::setDiskId(const std::string& diskId)
 	setCoreParameter("DiskId", diskId);
 }
 
+bool DetachDiskRequest::getDeleteWithInstance()const
+{
+	return deleteWithInstance_;
+}
+
+void DetachDiskRequest::setDeleteWithInstance(bool deleteWithInstance)
+{
+	deleteWithInstance_ = deleteWithInstance;
+	setCoreParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
+}
+
 std::string DetachDiskRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

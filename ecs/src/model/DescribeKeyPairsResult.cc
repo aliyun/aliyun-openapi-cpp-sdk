@@ -47,6 +47,8 @@ void DescribeKeyPairsResult::parse(const std::string &payload)
 			keyPairsObject.keyPairName = valueKeyPairsKeyPair["KeyPairName"].asString();
 		if(!valueKeyPairsKeyPair["KeyPairFingerPrint"].isNull())
 			keyPairsObject.keyPairFingerPrint = valueKeyPairsKeyPair["KeyPairFingerPrint"].asString();
+		if(!valueKeyPairsKeyPair["CreationTime"].isNull())
+			keyPairsObject.creationTime = valueKeyPairsKeyPair["CreationTime"].asString();
 		if(!valueKeyPairsKeyPair["ResourceGroupId"].isNull())
 			keyPairsObject.resourceGroupId = valueKeyPairsKeyPair["ResourceGroupId"].asString();
 		auto allTagsNode = allKeyPairsNode["Tags"]["Tag"];

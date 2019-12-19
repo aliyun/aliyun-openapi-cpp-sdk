@@ -54,6 +54,8 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
@@ -76,6 +78,8 @@ namespace AlibabaCloud
 				void setVpcId(const std::string& vpcId);
 				std::string getPrimaryIpAddress()const;
 				void setPrimaryIpAddress(const std::string& primaryIpAddress);
+				int getMaxResults()const;
+				void setMaxResults(int maxResults);
 				std::vector<std::string> getNetworkInterfaceId()const;
 				void setNetworkInterfaceId(const std::vector<std::string>& networkInterfaceId);
 
@@ -87,6 +91,7 @@ namespace AlibabaCloud
 				int pageNumber_;
 				std::string resourceGroupId_;
 				std::string regionId_;
+				std::string nextToken_;
 				int pageSize_;
 				std::vector<Tag> tag_;
 				std::string networkInterfaceName_;
@@ -98,6 +103,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string vpcId_;
 				std::string primaryIpAddress_;
+				int maxResults_;
 				std::vector<std::string> networkInterfaceId_;
 
 			};

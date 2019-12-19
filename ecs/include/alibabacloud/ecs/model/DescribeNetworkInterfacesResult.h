@@ -87,6 +87,7 @@ namespace AlibabaCloud
 				~DescribeNetworkInterfacesResult();
 				int getTotalCount()const;
 				int getPageSize()const;
+				std::string getNextToken()const;
 				int getPageNumber()const;
 				std::vector<NetworkInterfaceSet> getNetworkInterfaceSets()const;
 
@@ -95,6 +96,7 @@ namespace AlibabaCloud
 			private:
 				int totalCount_;
 				int pageSize_;
+				std::string nextToken_;
 				int pageNumber_;
 				std::vector<NetworkInterfaceSet> networkInterfaceSets_;
 

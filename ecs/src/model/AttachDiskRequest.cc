@@ -38,6 +38,39 @@ void AttachDiskRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AttachDiskRequest::getKeyPairName()const
+{
+	return keyPairName_;
+}
+
+void AttachDiskRequest::setKeyPairName(const std::string& keyPairName)
+{
+	keyPairName_ = keyPairName;
+	setCoreParameter("KeyPairName", keyPairName);
+}
+
+bool AttachDiskRequest::getBootable()const
+{
+	return bootable_;
+}
+
+void AttachDiskRequest::setBootable(bool bootable)
+{
+	bootable_ = bootable;
+	setCoreParameter("Bootable", bootable ? "true" : "false");
+}
+
+std::string AttachDiskRequest::getPassword()const
+{
+	return password_;
+}
+
+void AttachDiskRequest::setPassword(const std::string& password)
+{
+	password_ = password;
+	setCoreParameter("Password", password);
+}
+
 std::string AttachDiskRequest::getDiskId()const
 {
 	return diskId_;
