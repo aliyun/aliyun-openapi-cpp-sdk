@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsMqttQueryMsgTransTrendRequest;
 
 OnsMqttQueryMsgTransTrendRequest::OnsMqttQueryMsgTransTrendRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMqttQueryMsgTransTrend")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsMqttQueryMsgTransTrendRequest::~OnsMqttQueryMsgTransTrendRequest()
 {}

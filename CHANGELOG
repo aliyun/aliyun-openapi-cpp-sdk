@@ -1,3 +1,6 @@
+2019-12-20 Version 1.36.219
+- Add result value for OnsConsumerStatus.
+
 2019-12-19 Version 1.36.218
 - Add DescribeSlowLogRecords,DescribeSlowLogs for SlowLog.
 

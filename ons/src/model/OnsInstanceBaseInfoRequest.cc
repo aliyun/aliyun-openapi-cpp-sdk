@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsInstanceBaseInfoRequest;
 
 OnsInstanceBaseInfoRequest::OnsInstanceBaseInfoRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsInstanceBaseInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsInstanceBaseInfoRequest::~OnsInstanceBaseInfoRequest()
 {}

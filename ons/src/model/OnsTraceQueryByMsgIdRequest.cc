@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsTraceQueryByMsgIdRequest;
 
 OnsTraceQueryByMsgIdRequest::OnsTraceQueryByMsgIdRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsTraceQueryByMsgId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsTraceQueryByMsgIdRequest::~OnsTraceQueryByMsgIdRequest()
 {}

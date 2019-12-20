@@ -20,7 +20,9 @@ using AlibabaCloud::Ons::Model::OnsConsumerGetConnectionRequest;
 
 OnsConsumerGetConnectionRequest::OnsConsumerGetConnectionRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsConsumerGetConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnsConsumerGetConnectionRequest::~OnsConsumerGetConnectionRequest()
 {}
