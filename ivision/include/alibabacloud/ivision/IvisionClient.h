@@ -48,8 +48,6 @@
 #include "model/StopStreamPredictResult.h"
 #include "model/UnregisterFaceRequest.h"
 #include "model/UnregisterFaceResult.h"
-#include "model/VideoPredictRequest.h"
-#include "model/VideoPredictResult.h"
 
 
 namespace AlibabaCloud
@@ -98,9 +96,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnregisterFaceResult> UnregisterFaceOutcome;
 			typedef std::future<UnregisterFaceOutcome> UnregisterFaceOutcomeCallable;
 			typedef std::function<void(const IvisionClient*, const Model::UnregisterFaceRequest&, const UnregisterFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnregisterFaceAsyncHandler;
-			typedef Outcome<Error, Model::VideoPredictResult> VideoPredictOutcome;
-			typedef std::future<VideoPredictOutcome> VideoPredictOutcomeCallable;
-			typedef std::function<void(const IvisionClient*, const Model::VideoPredictRequest&, const VideoPredictOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoPredictAsyncHandler;
 
 			IvisionClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			IvisionClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -145,9 +140,6 @@ namespace AlibabaCloud
 			UnregisterFaceOutcome unregisterFace(const Model::UnregisterFaceRequest &request)const;
 			void unregisterFaceAsync(const Model::UnregisterFaceRequest& request, const UnregisterFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnregisterFaceOutcomeCallable unregisterFaceCallable(const Model::UnregisterFaceRequest& request) const;
-			VideoPredictOutcome videoPredict(const Model::VideoPredictRequest &request)const;
-			void videoPredictAsync(const Model::VideoPredictRequest& request, const VideoPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			VideoPredictOutcomeCallable videoPredictCallable(const Model::VideoPredictRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

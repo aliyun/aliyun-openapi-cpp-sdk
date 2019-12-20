@@ -71,6 +71,17 @@ void DescribeStreamPredictsRequest::setShowLog(const std::string& showLog)
 	setCoreParameter("ShowLog", showLog);
 }
 
+std::string DescribeStreamPredictsRequest::getModelId()const
+{
+	return modelId_;
+}
+
+void DescribeStreamPredictsRequest::setModelId(const std::string& modelId)
+{
+	modelId_ = modelId;
+	setCoreParameter("ModelId", modelId);
+}
+
 long DescribeStreamPredictsRequest::getCurrentPage()const
 {
 	return currentPage_;
