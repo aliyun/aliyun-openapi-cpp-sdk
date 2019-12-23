@@ -1,6 +1,5 @@
 English | [简体中文](./README-CN.md)
 
-
 <p align="center">
 <a href="https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg"></a>
 </p>
@@ -11,7 +10,6 @@ English | [简体中文](./README-CN.md)
 <a href="https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk"><img src="https://travis-ci.org/aliyun/aliyun-openapi-cpp-sdk.svg?branch=master" alt="Travis Build Status"></a>
 <a href="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk/branch/master/graph/badge.svg" alt="codecov"></a>
 </p>
-
 
 Alibaba Cloud SDK for C++ allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
@@ -43,13 +41,13 @@ If you have any problem while using Alibaba Cloud SDK for C++, please submit an 
 
 - Run the following commands on the `Redhat/Fedora` system
 
-```
+```bash
 sudo dnf install libcurl-devel openssl-devel libuuid-devel libjsoncpp-devel
 ```
 
 - Run the following commands on the `Debian/Ubuntu` system
 
-```
+```bash
 sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev
 ```
 
@@ -99,7 +97,7 @@ git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
 
   - `Browse Source` to open source code directory.
 
-  - `Browse build`  to open the created sdk_build directory
+  - `Browse build`  to open the created `sdk_build` directory
 
   - `Configure`
 
