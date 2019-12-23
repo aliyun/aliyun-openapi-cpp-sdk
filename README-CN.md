@@ -1,6 +1,5 @@
 [English](./README.md) | 简体中文
 
-
 <p align="center">
 <a href="https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/Aliyun.svg"></a>
 </p>
@@ -12,11 +11,9 @@
 <a href="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-cpp-sdk/branch/master/graph/badge.svg" alt="codecov"></a>
 </p>
 
-
 Alibaba Cloud SDK for C++ 让您不用复杂编程即可访问云服务器、负载均衡、云监控等阿里云服务。这里向您介绍如何获取 Alibaba Cloud SDK for C++ 并开始调用。
 
 如果您在使用的过程中遇到任何问题，欢迎前往[阿里云SDK问答社区](https://yq.aliyun.com/tags/type_ask-tagid_23350)提问，提问前请阅读[提问引导](https://help.aliyun.com/document_detail/93957.html)。亦可在当前 GitHub [提交 Issues](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new)。
-
 
 ## 环境要求
 
@@ -29,8 +26,8 @@ Alibaba Cloud SDK for C++ 让您不用复杂编程即可访问云服务器、负
 * 开通了云产品服务。有些云产品如对象存储（OSS）需要先在[阿里云控制台](https://home.console.aliyun.com)开通服务。
 
 * 安装支持 C++ 11 或更高版本的编译器：
-	* Windows: Visual Studio 2015 或以上版本
-	* Linux: GCC 4.9 或以上版本
+  * Windows: Visual Studio 2015 或以上版本
+  * Linux: GCC 4.9 或以上版本
 
 * 安装 CMake 3.0 或以上版本
 * 建议 4G 或以上内存
@@ -41,26 +38,27 @@ Alibaba Cloud SDK for C++ 让您不用复杂编程即可访问云服务器、负
 
 1. 要在 Linux 平台进行编译, 您必须安装依赖的外部库文件 libcurl、libopenssl、libuuid、libjsoncpp, 通常情况下，系统的包管理器中的会有提供。
 
-- 例如：在基于 Redhat / Fedora 的系统上安装这些软件包
+* 例如：在基于 Redhat / Fedora 的系统上安装这些软件包
 
 ```bash
 sudo dnf install libcurl-devel openssl-devel libuuid-devel libjsoncpp-devel
 ```
 
-- 在基于 Debian/Ubuntu 的系统
+* 在基于 Debian/Ubuntu 的系统
+
 ```bash
 sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev libjsoncpp-dev
 ```
 
 2. 执行以下命令，从 Github 克隆源码
 
-```
+```bash
 git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
 ```
 
 3. 编译安装
 
-- 手动编译安装
+* 手动编译安装
 
 ```bash
 cd aliyun-openapi-cpp-sdk
@@ -71,7 +69,7 @@ make
 sudo make install
 ```
 
-- 或者通过 `easyinstall.sh`一键式安装
+* 或者通过 `easyinstall.sh`一键式安装
 
 ```bash
 cd aliyun-openapi-cpp-sdk
@@ -86,29 +84,29 @@ sudo sh easyinstall.sh
 
 2. 使用 git-bash 执行以下命令，从 Github 克隆源码
 
-```bash
-git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
-```
+  ```bash
+  git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
+  ```
 
 3. 使用 Visual Studio 进行编译:
 
-- 在 aliyun-openapi-cpp-sdk 下创建 sdk_build 目录
-- 打开 cmake-ui , 然后进行以下操作
-  - 选择 `源代码目录(Browse Source)`
-  - 选择 `构建目录(Browse build)` 为 `sdk_build`
-  - 点击 `配置(configure)`
-  - 点击 `生成(generate)`, 构建 VS 解决方案。
+* 在 aliyun-openapi-cpp-sdk 下创建 `sdk_build` 目录
+* 打开 cmake-gui , 然后进行以下操作
+  * 选择 `Browse Source` 为 `源代码目录(aliyun-openapi-cpp-sdk)`
+  * 选择 `Browse build` 为 `构建目录(sdk_build)`
+  * 点击 `configure`
+  * 点击 `generate`, 构建 VS 解决方案。
 
 4. 编译安装 C++ SDK
 
-- 进入 sdk_build 目录，使用 Visual Studio 打开 alibabacloud-sdk.sln 解决方案
-- 选择构建 `Release` 输出
-- 并打开配置管理器勾选 `INSTALL`
-- 构建 -> 生成解决方案
+* 进入 sdk_build 目录，使用 Visual Studio 打开 alibabacloud-sdk.sln 解决方案
+* 选择构建 `Release` 输出
+* 并打开配置管理器勾选 `INSTALL`
+* 构建 -> 生成解决方案
 
 **Alibaba Cloud SDK for C++ 将安装在 `C:\Program File (x86)\alibabacloud-sdk` 目录**
 
-**注意：请以管理员身份运行 Visual Studio，否则无法安装 SDK**
+**注意：请以管理员身份运行 Visual Studio 和 cmake-gui，否则无法安装 SDK**
 
 ---
 
@@ -171,23 +169,19 @@ Linux 下
 
 CPP SDK 使用 libcurl 作为底层 HTTP 传输库。
 
-- 下面两个参数用来传递超时参数到 libcurl。
+* 下面两个参数用来传递超时参数到 libcurl。
+  * `connectTimeout`: 连接超时设置。 [参考](https://curl.haxx.se/libcurl/c/CURLOPT_CONNECTTIMEOUT_MS.html).
+  * `readTimeout`: 传输超时设置。[参考](https://curl.haxx.se/libcurl/c/CURLOPT_TIMEOUT_MS.html)
 
- - `connectTimeout`: 连接超时设置。 [参考](https://curl.haxx.se/libcurl/c/CURLOPT_CONNECTTIMEOUT_MS.html).
+* 默认值
+  * connectTimeout: 5000ms
+  * readTimeout: 10000ms
 
- - `readTimeout`: 传输超时设置。[参考](https://curl.haxx.se/libcurl/c/CURLOPT_TIMEOUT_MS.html)
+* 可以在创建 Client 或者发 Requst 设置超时参数。
 
-- 默认值
+* Requst 设置优先级高于 Client 设置。
 
-  - connectTimeout: 5000ms
-
-  - readTimeout: 10000ms
-
-- 可以在创建 Client 或者发 Requst 设置超时参数。
-
--  Requst 设置优先级高于 Client 设置。
-
-- 输入 0 或者 -1 到 `setConnectTimeout` 和 `setReadTimeout` 可以禁用此功能。
+* 输入 0 或者 -1 到 `setConnectTimeout` 和 `setReadTimeout` 可以禁用此功能。
 
 下面代码是设置超时参数的例子，由于 Request 优先级高于 Client，所以最终 `ConnectTimeout` 为 `1000ms`， `readTimeout` 为 `6000ms`。
 
@@ -235,19 +229,24 @@ int main(int argc, char** argv) {
 
 ```
 
+---
 
 **更多 [例程](https://github.com/aliyun/aliyun-openapi-cpp-sdk/tree/master/examples)**
 
 ## 问题
+
 [提交 Issue](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new/choose), 不符合指南的问题可能会立即关闭。
 
 ## 发行说明
+
 每个版本的详细更改记录在[发行说明](CHANGELOG)中。
 
 ## 贡献
+
 提交 Pull Request 之前请阅读[贡献指南](CONTRIBUTING.md)。
 
 ## 许可证
+
 [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 版权所有 1999-2019 阿里巴巴集团
