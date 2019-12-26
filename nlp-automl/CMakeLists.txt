@@ -21,6 +21,10 @@ set(nlp-automl_public_header
 	include/alibabacloud/nlp-automl/Nlp_automlExport.h )
 
 set(nlp-automl_public_header_model 
+	include/alibabacloud/nlp-automl/model/CreateAsyncPredictRequest.h
+	include/alibabacloud/nlp-automl/model/CreateAsyncPredictResult.h
+	include/alibabacloud/nlp-automl/model/GetAsyncPredictRequest.h
+	include/alibabacloud/nlp-automl/model/GetAsyncPredictResult.h
 	include/alibabacloud/nlp-automl/model/GetPredictResultRequest.h
 	include/alibabacloud/nlp-automl/model/GetPredictResultResult.h
 	include/alibabacloud/nlp-automl/model/RunContactReviewRequest.h
@@ -28,6 +32,10 @@ set(nlp-automl_public_header_model
 
 set(nlp-automl_src 
 	src/Nlp-automlClient.cc
+	src/model/CreateAsyncPredictRequest.cc
+	src/model/CreateAsyncPredictResult.cc
+	src/model/GetAsyncPredictRequest.cc
+	src/model/GetAsyncPredictResult.cc
 	src/model/GetPredictResultRequest.cc
 	src/model/GetPredictResultResult.cc
 	src/model/RunContactReviewRequest.cc

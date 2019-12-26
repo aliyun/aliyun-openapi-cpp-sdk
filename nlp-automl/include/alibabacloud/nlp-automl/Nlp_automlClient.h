@@ -22,6 +22,10 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "Nlp_automlExport.h"
+#include "model/CreateAsyncPredictRequest.h"
+#include "model/CreateAsyncPredictResult.h"
+#include "model/GetAsyncPredictRequest.h"
+#include "model/GetAsyncPredictResult.h"
 #include "model/GetPredictResultRequest.h"
 #include "model/GetPredictResultResult.h"
 #include "model/RunContactReviewRequest.h"
@@ -35,6 +39,12 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_NLP_AUTOML_EXPORT Nlp_automlClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CreateAsyncPredictResult> CreateAsyncPredictOutcome;
+			typedef std::future<CreateAsyncPredictOutcome> CreateAsyncPredictOutcomeCallable;
+			typedef std::function<void(const Nlp_automlClient*, const Model::CreateAsyncPredictRequest&, const CreateAsyncPredictOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsyncPredictAsyncHandler;
+			typedef Outcome<Error, Model::GetAsyncPredictResult> GetAsyncPredictOutcome;
+			typedef std::future<GetAsyncPredictOutcome> GetAsyncPredictOutcomeCallable;
+			typedef std::function<void(const Nlp_automlClient*, const Model::GetAsyncPredictRequest&, const GetAsyncPredictOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncPredictAsyncHandler;
 			typedef Outcome<Error, Model::GetPredictResultResult> GetPredictResultOutcome;
 			typedef std::future<GetPredictResultOutcome> GetPredictResultOutcomeCallable;
 			typedef std::function<void(const Nlp_automlClient*, const Model::GetPredictResultRequest&, const GetPredictResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPredictResultAsyncHandler;
@@ -46,6 +56,12 @@ namespace AlibabaCloud
 			Nlp_automlClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			Nlp_automlClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~Nlp_automlClient();
+			CreateAsyncPredictOutcome createAsyncPredict(const Model::CreateAsyncPredictRequest &request)const;
+			void createAsyncPredictAsync(const Model::CreateAsyncPredictRequest& request, const CreateAsyncPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAsyncPredictOutcomeCallable createAsyncPredictCallable(const Model::CreateAsyncPredictRequest& request) const;
+			GetAsyncPredictOutcome getAsyncPredict(const Model::GetAsyncPredictRequest &request)const;
+			void getAsyncPredictAsync(const Model::GetAsyncPredictRequest& request, const GetAsyncPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAsyncPredictOutcomeCallable getAsyncPredictCallable(const Model::GetAsyncPredictRequest& request) const;
 			GetPredictResultOutcome getPredictResult(const Model::GetPredictResultRequest &request)const;
 			void getPredictResultAsync(const Model::GetPredictResultRequest& request, const GetPredictResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPredictResultOutcomeCallable getPredictResultCallable(const Model::GetPredictResultRequest& request) const;

@@ -51,6 +51,78 @@ Nlp_automlClient::Nlp_automlClient(const std::string & accessKeyId, const std::s
 Nlp_automlClient::~Nlp_automlClient()
 {}
 
+Nlp_automlClient::CreateAsyncPredictOutcome Nlp_automlClient::createAsyncPredict(const CreateAsyncPredictRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAsyncPredictOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAsyncPredictOutcome(CreateAsyncPredictResult(outcome.result()));
+	else
+		return CreateAsyncPredictOutcome(outcome.error());
+}
+
+void Nlp_automlClient::createAsyncPredictAsync(const CreateAsyncPredictRequest& request, const CreateAsyncPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAsyncPredict(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Nlp_automlClient::CreateAsyncPredictOutcomeCallable Nlp_automlClient::createAsyncPredictCallable(const CreateAsyncPredictRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAsyncPredictOutcome()>>(
+			[this, request]()
+			{
+			return this->createAsyncPredict(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Nlp_automlClient::GetAsyncPredictOutcome Nlp_automlClient::getAsyncPredict(const GetAsyncPredictRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAsyncPredictOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAsyncPredictOutcome(GetAsyncPredictResult(outcome.result()));
+	else
+		return GetAsyncPredictOutcome(outcome.error());
+}
+
+void Nlp_automlClient::getAsyncPredictAsync(const GetAsyncPredictRequest& request, const GetAsyncPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAsyncPredict(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Nlp_automlClient::GetAsyncPredictOutcomeCallable Nlp_automlClient::getAsyncPredictCallable(const GetAsyncPredictRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAsyncPredictOutcome()>>(
+			[this, request]()
+			{
+			return this->getAsyncPredict(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Nlp_automlClient::GetPredictResultOutcome Nlp_automlClient::getPredictResult(const GetPredictResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
