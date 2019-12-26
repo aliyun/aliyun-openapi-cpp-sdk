@@ -115,6 +115,17 @@ void CreateRestoreTaskRequest::setRestoreTaskName(const std::string& restoreTask
 	setCoreParameter("RestoreTaskName", restoreTaskName);
 }
 
+std::string CreateRestoreTaskRequest::getRestoreHome()const
+{
+	return restoreHome_;
+}
+
+void CreateRestoreTaskRequest::setRestoreHome(const std::string& restoreHome)
+{
+	restoreHome_ = restoreHome;
+	setCoreParameter("RestoreHome", restoreHome);
+}
+
 std::string CreateRestoreTaskRequest::getDestinationEndpointOracleSID()const
 {
 	return destinationEndpointOracleSID_;

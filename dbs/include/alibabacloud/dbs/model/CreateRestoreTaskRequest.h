@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setRestoreObjects(const std::string& restoreObjects);
 				std::string getRestoreTaskName()const;
 				void setRestoreTaskName(const std::string& restoreTaskName);
+				std::string getRestoreHome()const;
+				void setRestoreHome(const std::string& restoreHome);
 				std::string getDestinationEndpointOracleSID()const;
 				void setDestinationEndpointOracleSID(const std::string& destinationEndpointOracleSID);
 				long getRestoreTime()const;
@@ -83,6 +85,7 @@ namespace AlibabaCloud
 				std::string destinationEndpointUserName_;
 				std::string restoreObjects_;
 				std::string restoreTaskName_;
+				std::string restoreHome_;
 				std::string destinationEndpointOracleSID_;
 				long restoreTime_;
 				std::string destinationEndpointInstanceID_;
