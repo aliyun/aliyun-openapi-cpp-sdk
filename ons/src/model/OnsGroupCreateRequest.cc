@@ -60,3 +60,14 @@ void OnsGroupCreateRequest::setInstanceId(const std::string& instanceId)
 	setCoreParameter("InstanceId", instanceId);
 }
 
+std::string OnsGroupCreateRequest::getGroupType()const
+{
+	return groupType_;
+}
+
+void OnsGroupCreateRequest::setGroupType(const std::string& groupType)
+{
+	groupType_ = groupType;
+	setCoreParameter("GroupType", groupType);
+}
+
