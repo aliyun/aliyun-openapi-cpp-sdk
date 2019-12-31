@@ -159,6 +159,42 @@ ReidClient::DescribeCustomerFlowByLocationOutcomeCallable ReidClient::describeCu
 	return task->get_future();
 }
 
+ReidClient::DescribeDevicesOutcome ReidClient::describeDevices(const DescribeDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDevicesOutcome(DescribeDevicesResult(outcome.result()));
+	else
+		return DescribeDevicesOutcome(outcome.error());
+}
+
+void ReidClient::describeDevicesAsync(const DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ReidClient::DescribeDevicesOutcomeCallable ReidClient::describeDevicesCallable(const DescribeDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ReidClient::DescribeHeatMapOutcome ReidClient::describeHeatMap(const DescribeHeatMapRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

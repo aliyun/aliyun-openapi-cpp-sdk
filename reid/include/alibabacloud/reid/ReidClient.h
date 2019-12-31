@@ -28,6 +28,8 @@
 #include "model/DescribeCursorResult.h"
 #include "model/DescribeCustomerFlowByLocationRequest.h"
 #include "model/DescribeCustomerFlowByLocationResult.h"
+#include "model/DescribeDevicesRequest.h"
+#include "model/DescribeDevicesResult.h"
 #include "model/DescribeHeatMapRequest.h"
 #include "model/DescribeHeatMapResult.h"
 #include "model/DescribeImageUrlsRequest.h"
@@ -66,6 +68,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCustomerFlowByLocationResult> DescribeCustomerFlowByLocationOutcome;
 			typedef std::future<DescribeCustomerFlowByLocationOutcome> DescribeCustomerFlowByLocationOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::DescribeCustomerFlowByLocationRequest&, const DescribeCustomerFlowByLocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerFlowByLocationAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDevicesResult> DescribeDevicesOutcome;
+			typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
+			typedef std::function<void(const ReidClient*, const Model::DescribeDevicesRequest&, const DescribeDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeHeatMapResult> DescribeHeatMapOutcome;
 			typedef std::future<DescribeHeatMapOutcome> DescribeHeatMapOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::DescribeHeatMapRequest&, const DescribeHeatMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHeatMapAsyncHandler;
@@ -110,6 +115,9 @@ namespace AlibabaCloud
 			DescribeCustomerFlowByLocationOutcome describeCustomerFlowByLocation(const Model::DescribeCustomerFlowByLocationRequest &request)const;
 			void describeCustomerFlowByLocationAsync(const Model::DescribeCustomerFlowByLocationRequest& request, const DescribeCustomerFlowByLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCustomerFlowByLocationOutcomeCallable describeCustomerFlowByLocationCallable(const Model::DescribeCustomerFlowByLocationRequest& request) const;
+			DescribeDevicesOutcome describeDevices(const Model::DescribeDevicesRequest &request)const;
+			void describeDevicesAsync(const Model::DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDevicesOutcomeCallable describeDevicesCallable(const Model::DescribeDevicesRequest& request) const;
 			DescribeHeatMapOutcome describeHeatMap(const Model::DescribeHeatMapRequest &request)const;
 			void describeHeatMapAsync(const Model::DescribeHeatMapRequest& request, const DescribeHeatMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHeatMapOutcomeCallable describeHeatMapCallable(const Model::DescribeHeatMapRequest& request) const;

@@ -60,12 +60,41 @@ void DescribeOverviewDataResult::parse(const std::string &payload)
 		overviewDetail_.uvAvg = std::stof(overviewDetailNode["UvAvg"].asString());
 	if(!overviewDetailNode["StayAvgPeriod"].isNull())
 		overviewDetail_.stayAvgPeriod = std::stof(overviewDetailNode["StayAvgPeriod"].asString());
+	auto accurateOverviewDetailNode = value["AccurateOverviewDetail"];
+	if(!accurateOverviewDetailNode["StayDeepAvgWOWPercent"].isNull())
+		accurateOverviewDetail_.stayDeepAvgWOWPercent = accurateOverviewDetailNode["StayDeepAvgWOWPercent"].asString();
+	if(!accurateOverviewDetailNode["StayDeepAvg"].isNull())
+		accurateOverviewDetail_.stayDeepAvg = accurateOverviewDetailNode["StayDeepAvg"].asString();
+	if(!accurateOverviewDetailNode["UvAvgWOWPercent"].isNull())
+		accurateOverviewDetail_.uvAvgWOWPercent = accurateOverviewDetailNode["UvAvgWOWPercent"].asString();
+	if(!accurateOverviewDetailNode["StayAvgPeriodWOWPercent"].isNull())
+		accurateOverviewDetail_.stayAvgPeriodWOWPercent = accurateOverviewDetailNode["StayAvgPeriodWOWPercent"].asString();
+	if(!accurateOverviewDetailNode["UvWOWPercent"].isNull())
+		accurateOverviewDetail_.uvWOWPercent = accurateOverviewDetailNode["UvWOWPercent"].asString();
+	if(!accurateOverviewDetailNode["UvEverySqmGrowthWOWPercent"].isNull())
+		accurateOverviewDetail_.uvEverySqmGrowthWOWPercent = accurateOverviewDetailNode["UvEverySqmGrowthWOWPercent"].asString();
+	if(!accurateOverviewDetailNode["Uv"].isNull())
+		accurateOverviewDetail_.uv = std::stol(accurateOverviewDetailNode["Uv"].asString());
+	if(!accurateOverviewDetailNode["UvEverySqm"].isNull())
+		accurateOverviewDetail_.uvEverySqm = accurateOverviewDetailNode["UvEverySqm"].asString();
+	if(!accurateOverviewDetailNode["UvAvg"].isNull())
+		accurateOverviewDetail_.uvAvg = accurateOverviewDetailNode["UvAvg"].asString();
+	if(!accurateOverviewDetailNode["StayAvgPeriod"].isNull())
+		accurateOverviewDetail_.stayAvgPeriod = accurateOverviewDetailNode["StayAvgPeriod"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
 
 }
 
@@ -74,14 +103,39 @@ DescribeOverviewDataResult::OverviewDetail DescribeOverviewDataResult::getOvervi
 	return overviewDetail_;
 }
 
+std::string DescribeOverviewDataResult::getMessage()const
+{
+	return message_;
+}
+
+DescribeOverviewDataResult::AccurateOverviewDetail DescribeOverviewDataResult::getAccurateOverviewDetail()const
+{
+	return accurateOverviewDetail_;
+}
+
+std::string DescribeOverviewDataResult::getDynamicCode()const
+{
+	return dynamicCode_;
+}
+
 std::string DescribeOverviewDataResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
+std::string DescribeOverviewDataResult::getDynamicMessage()const
+{
+	return dynamicMessage_;
+}
+
 std::string DescribeOverviewDataResult::getErrorMessage()const
 {
 	return errorMessage_;
+}
+
+std::string DescribeOverviewDataResult::getCode()const
+{
+	return code_;
 }
 
 bool DescribeOverviewDataResult::getSuccess()const

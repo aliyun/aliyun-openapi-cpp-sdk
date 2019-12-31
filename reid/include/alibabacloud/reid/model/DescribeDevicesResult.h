@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_REID_MODEL_DESCRIBEOVERVIEWDATARESULT_H_
-#define ALIBABACLOUD_REID_MODEL_DESCRIBEOVERVIEWDATARESULT_H_
+#ifndef ALIBABACLOUD_REID_MODEL_DESCRIBEDEVICESRESULT_H_
+#define ALIBABACLOUD_REID_MODEL_DESCRIBEDEVICESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,46 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_REID_EXPORT DescribeOverviewDataResult : public ServiceResult
+			class ALIBABACLOUD_REID_EXPORT DescribeDevicesResult : public ServiceResult
 			{
 			public:
-				struct OverviewDetail
+				struct Device
 				{
-					float stayDeepAvg;
-					long uv;
-					float uvEverySqm;
-					float uvEverySqmGrowthWOWPercent;
-					float uvAvg;
-					float uvWOWPercent;
-					float stayAvgPeriod;
-					float stayDeepAvgWOWPercent;
-					float stayAvgPeriodWOWPercent;
-					float uvAvgWOWPercent;
-				};
-				struct AccurateOverviewDetail
-				{
-					std::string stayDeepAvg;
-					long uv;
-					std::string uvEverySqm;
-					std::string uvEverySqmGrowthWOWPercent;
-					std::string uvAvg;
-					std::string uvWOWPercent;
-					std::string stayAvgPeriod;
-					std::string stayDeepAvgWOWPercent;
-					std::string stayAvgPeriodWOWPercent;
-					std::string uvAvgWOWPercent;
+					std::string agentMac;
+					std::string agentStatus;
+					std::string agentIp;
+					std::string ipcIp;
+					long ipcReceiveTime;
+					std::string ipcStatus;
+					long agentReceiveTime;
 				};
 
 
-				DescribeOverviewDataResult();
-				explicit DescribeOverviewDataResult(const std::string &payload);
-				~DescribeOverviewDataResult();
-				OverviewDetail getOverviewDetail()const;
+				DescribeDevicesResult();
+				explicit DescribeDevicesResult(const std::string &payload);
+				~DescribeDevicesResult();
 				std::string getMessage()const;
-				AccurateOverviewDetail getAccurateOverviewDetail()const;
 				std::string getDynamicCode()const;
 				std::string getErrorCode()const;
 				std::string getDynamicMessage()const;
+				std::vector<Device> getDevices()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -76,12 +59,11 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				OverviewDetail overviewDetail_;
 				std::string message_;
-				AccurateOverviewDetail accurateOverviewDetail_;
 				std::string dynamicCode_;
 				std::string errorCode_;
 				std::string dynamicMessage_;
+				std::vector<Device> devices_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -90,4 +72,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_REID_MODEL_DESCRIBEOVERVIEWDATARESULT_H_
+#endif // !ALIBABACLOUD_REID_MODEL_DESCRIBEDEVICESRESULT_H_
