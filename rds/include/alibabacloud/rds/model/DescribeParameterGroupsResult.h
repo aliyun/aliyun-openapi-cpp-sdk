@@ -51,11 +51,13 @@ namespace AlibabaCloud
 				explicit DescribeParameterGroupsResult(const std::string &payload);
 				~DescribeParameterGroupsResult();
 				std::vector<ParameterGroup> getParameterGroups()const;
+				bool getSignalForOptimizeParams()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<ParameterGroup> parameterGroups_;
+				bool signalForOptimizeParams_;
 
 			};
 		}

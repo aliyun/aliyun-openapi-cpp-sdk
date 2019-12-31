@@ -1203,6 +1203,42 @@ RdsClient::DeleteBackupOutcomeCallable RdsClient::deleteBackupCallable(const Del
 	return task->get_future();
 }
 
+RdsClient::DeleteBackupFileOutcome RdsClient::deleteBackupFile(const DeleteBackupFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBackupFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBackupFileOutcome(DeleteBackupFileResult(outcome.result()));
+	else
+		return DeleteBackupFileOutcome(outcome.error());
+}
+
+void RdsClient::deleteBackupFileAsync(const DeleteBackupFileRequest& request, const DeleteBackupFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBackupFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DeleteBackupFileOutcomeCallable RdsClient::deleteBackupFileCallable(const DeleteBackupFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBackupFileOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBackupFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DeleteDBInstanceOutcome RdsClient::deleteDBInstance(const DeleteDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2571,6 +2607,114 @@ RdsClient::DescribeDBInstancesForCloneOutcomeCallable RdsClient::describeDBInsta
 	return task->get_future();
 }
 
+RdsClient::DescribeDBProxyOutcome RdsClient::describeDBProxy(const DescribeDBProxyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBProxyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBProxyOutcome(DescribeDBProxyResult(outcome.result()));
+	else
+		return DescribeDBProxyOutcome(outcome.error());
+}
+
+void RdsClient::describeDBProxyAsync(const DescribeDBProxyRequest& request, const DescribeDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBProxy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeDBProxyOutcomeCallable RdsClient::describeDBProxyCallable(const DescribeDBProxyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBProxyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBProxy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeDBProxyEndpointOutcome RdsClient::describeDBProxyEndpoint(const DescribeDBProxyEndpointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBProxyEndpointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBProxyEndpointOutcome(DescribeDBProxyEndpointResult(outcome.result()));
+	else
+		return DescribeDBProxyEndpointOutcome(outcome.error());
+}
+
+void RdsClient::describeDBProxyEndpointAsync(const DescribeDBProxyEndpointRequest& request, const DescribeDBProxyEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBProxyEndpoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeDBProxyEndpointOutcomeCallable RdsClient::describeDBProxyEndpointCallable(const DescribeDBProxyEndpointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBProxyEndpointOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBProxyEndpoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeDBProxyPerformanceOutcome RdsClient::describeDBProxyPerformance(const DescribeDBProxyPerformanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBProxyPerformanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBProxyPerformanceOutcome(DescribeDBProxyPerformanceResult(outcome.result()));
+	else
+		return DescribeDBProxyPerformanceOutcome(outcome.error());
+}
+
+void RdsClient::describeDBProxyPerformanceAsync(const DescribeDBProxyPerformanceRequest& request, const DescribeDBProxyPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBProxyPerformance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeDBProxyPerformanceOutcomeCallable RdsClient::describeDBProxyPerformanceCallable(const DescribeDBProxyPerformanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBProxyPerformanceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBProxyPerformance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeDTCSecurityIpHostsForSQLServerOutcome RdsClient::describeDTCSecurityIpHostsForSQLServer(const DescribeDTCSecurityIpHostsForSQLServerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3033,6 +3177,42 @@ RdsClient::DescribeLogBackupFilesOutcomeCallable RdsClient::describeLogBackupFil
 			[this, request]()
 			{
 			return this->describeLogBackupFiles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeMigrateTaskByIdOutcome RdsClient::describeMigrateTaskById(const DescribeMigrateTaskByIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMigrateTaskByIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMigrateTaskByIdOutcome(DescribeMigrateTaskByIdResult(outcome.result()));
+	else
+		return DescribeMigrateTaskByIdOutcome(outcome.error());
+}
+
+void RdsClient::describeMigrateTaskByIdAsync(const DescribeMigrateTaskByIdRequest& request, const DescribeMigrateTaskByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMigrateTaskById(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeMigrateTaskByIdOutcomeCallable RdsClient::describeMigrateTaskByIdCallable(const DescribeMigrateTaskByIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMigrateTaskByIdOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMigrateTaskById(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4941,6 +5121,114 @@ RdsClient::ModifyDBInstanceTDEOutcomeCallable RdsClient::modifyDBInstanceTDECall
 			[this, request]()
 			{
 			return this->modifyDBInstanceTDE(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyDBProxyOutcome RdsClient::modifyDBProxy(const ModifyDBProxyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBProxyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBProxyOutcome(ModifyDBProxyResult(outcome.result()));
+	else
+		return ModifyDBProxyOutcome(outcome.error());
+}
+
+void RdsClient::modifyDBProxyAsync(const ModifyDBProxyRequest& request, const ModifyDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBProxy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyDBProxyOutcomeCallable RdsClient::modifyDBProxyCallable(const ModifyDBProxyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBProxyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBProxy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyDBProxyEndpointOutcome RdsClient::modifyDBProxyEndpoint(const ModifyDBProxyEndpointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBProxyEndpointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBProxyEndpointOutcome(ModifyDBProxyEndpointResult(outcome.result()));
+	else
+		return ModifyDBProxyEndpointOutcome(outcome.error());
+}
+
+void RdsClient::modifyDBProxyEndpointAsync(const ModifyDBProxyEndpointRequest& request, const ModifyDBProxyEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBProxyEndpoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyDBProxyEndpointOutcomeCallable RdsClient::modifyDBProxyEndpointCallable(const ModifyDBProxyEndpointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBProxyEndpointOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBProxyEndpoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyDBProxyInstanceOutcome RdsClient::modifyDBProxyInstance(const ModifyDBProxyInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBProxyInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBProxyInstanceOutcome(ModifyDBProxyInstanceResult(outcome.result()));
+	else
+		return ModifyDBProxyInstanceOutcome(outcome.error());
+}
+
+void RdsClient::modifyDBProxyInstanceAsync(const ModifyDBProxyInstanceRequest& request, const ModifyDBProxyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBProxyInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyDBProxyInstanceOutcomeCallable RdsClient::modifyDBProxyInstanceCallable(const ModifyDBProxyInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBProxyInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBProxyInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

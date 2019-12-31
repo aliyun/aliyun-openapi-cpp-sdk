@@ -101,6 +101,7 @@ namespace AlibabaCloud
 					std::string category;
 					std::string dBInstanceNetType;
 					int tempUpgradeRecoveryCpu;
+					std::string dedicatedHostGroupId;
 					std::string tempDBInstanceId;
 					std::string dBInstanceCPU;
 					int tempUpgradeRecoveryMemory;

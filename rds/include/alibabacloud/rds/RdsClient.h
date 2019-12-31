@@ -86,6 +86,8 @@
 #include "model/DeleteAccountResult.h"
 #include "model/DeleteBackupRequest.h"
 #include "model/DeleteBackupResult.h"
+#include "model/DeleteBackupFileRequest.h"
+#include "model/DeleteBackupFileResult.h"
 #include "model/DeleteDBInstanceRequest.h"
 #include "model/DeleteDBInstanceResult.h"
 #include "model/DeleteDatabaseRequest.h"
@@ -162,6 +164,12 @@
 #include "model/DescribeDBInstancesByPerformanceResult.h"
 #include "model/DescribeDBInstancesForCloneRequest.h"
 #include "model/DescribeDBInstancesForCloneResult.h"
+#include "model/DescribeDBProxyRequest.h"
+#include "model/DescribeDBProxyResult.h"
+#include "model/DescribeDBProxyEndpointRequest.h"
+#include "model/DescribeDBProxyEndpointResult.h"
+#include "model/DescribeDBProxyPerformanceRequest.h"
+#include "model/DescribeDBProxyPerformanceResult.h"
 #include "model/DescribeDTCSecurityIpHostsForSQLServerRequest.h"
 #include "model/DescribeDTCSecurityIpHostsForSQLServerResult.h"
 #include "model/DescribeDatabasesRequest.h"
@@ -188,6 +196,8 @@
 #include "model/DescribeInstanceCrossBackupPolicyResult.h"
 #include "model/DescribeLogBackupFilesRequest.h"
 #include "model/DescribeLogBackupFilesResult.h"
+#include "model/DescribeMigrateTaskByIdRequest.h"
+#include "model/DescribeMigrateTaskByIdResult.h"
 #include "model/DescribeMigrateTasksRequest.h"
 #include "model/DescribeMigrateTasksResult.h"
 #include "model/DescribeMigrateTasksForSQLServerRequest.h"
@@ -294,6 +304,12 @@
 #include "model/ModifyDBInstanceSpecResult.h"
 #include "model/ModifyDBInstanceTDERequest.h"
 #include "model/ModifyDBInstanceTDEResult.h"
+#include "model/ModifyDBProxyRequest.h"
+#include "model/ModifyDBProxyResult.h"
+#include "model/ModifyDBProxyEndpointRequest.h"
+#include "model/ModifyDBProxyEndpointResult.h"
+#include "model/ModifyDBProxyInstanceRequest.h"
+#include "model/ModifyDBProxyInstanceResult.h"
 #include "model/ModifyDTCSecurityIpHostsForSQLServerRequest.h"
 #include "model/ModifyDTCSecurityIpHostsForSQLServerResult.h"
 #include "model/ModifyDedicatedHostAttributeRequest.h"
@@ -481,6 +497,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteBackupResult> DeleteBackupOutcome;
 			typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteBackupRequest&, const DeleteBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupAsyncHandler;
+			typedef Outcome<Error, Model::DeleteBackupFileResult> DeleteBackupFileOutcome;
+			typedef std::future<DeleteBackupFileOutcome> DeleteBackupFileOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteBackupFileRequest&, const DeleteBackupFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupFileAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDBInstanceResult> DeleteDBInstanceOutcome;
 			typedef std::future<DeleteDBInstanceOutcome> DeleteDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteDBInstanceRequest&, const DeleteDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBInstanceAsyncHandler;
@@ -595,6 +614,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBInstancesForCloneResult> DescribeDBInstancesForCloneOutcome;
 			typedef std::future<DescribeDBInstancesForCloneOutcome> DescribeDBInstancesForCloneOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeDBInstancesForCloneRequest&, const DescribeDBInstancesForCloneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesForCloneAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBProxyResult> DescribeDBProxyOutcome;
+			typedef std::future<DescribeDBProxyOutcome> DescribeDBProxyOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeDBProxyRequest&, const DescribeDBProxyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBProxyAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBProxyEndpointResult> DescribeDBProxyEndpointOutcome;
+			typedef std::future<DescribeDBProxyEndpointOutcome> DescribeDBProxyEndpointOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeDBProxyEndpointRequest&, const DescribeDBProxyEndpointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBProxyEndpointAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBProxyPerformanceResult> DescribeDBProxyPerformanceOutcome;
+			typedef std::future<DescribeDBProxyPerformanceOutcome> DescribeDBProxyPerformanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeDBProxyPerformanceRequest&, const DescribeDBProxyPerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBProxyPerformanceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDTCSecurityIpHostsForSQLServerResult> DescribeDTCSecurityIpHostsForSQLServerOutcome;
 			typedef std::future<DescribeDTCSecurityIpHostsForSQLServerOutcome> DescribeDTCSecurityIpHostsForSQLServerOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeDTCSecurityIpHostsForSQLServerRequest&, const DescribeDTCSecurityIpHostsForSQLServerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDTCSecurityIpHostsForSQLServerAsyncHandler;
@@ -634,6 +662,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLogBackupFilesResult> DescribeLogBackupFilesOutcome;
 			typedef std::future<DescribeLogBackupFilesOutcome> DescribeLogBackupFilesOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeLogBackupFilesRequest&, const DescribeLogBackupFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogBackupFilesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMigrateTaskByIdResult> DescribeMigrateTaskByIdOutcome;
+			typedef std::future<DescribeMigrateTaskByIdOutcome> DescribeMigrateTaskByIdOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeMigrateTaskByIdRequest&, const DescribeMigrateTaskByIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrateTaskByIdAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMigrateTasksResult> DescribeMigrateTasksOutcome;
 			typedef std::future<DescribeMigrateTasksOutcome> DescribeMigrateTasksOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeMigrateTasksRequest&, const DescribeMigrateTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrateTasksAsyncHandler;
@@ -793,6 +824,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBInstanceTDEResult> ModifyDBInstanceTDEOutcome;
 			typedef std::future<ModifyDBInstanceTDEOutcome> ModifyDBInstanceTDEOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDBInstanceTDERequest&, const ModifyDBInstanceTDEOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceTDEAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBProxyResult> ModifyDBProxyOutcome;
+			typedef std::future<ModifyDBProxyOutcome> ModifyDBProxyOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyDBProxyRequest&, const ModifyDBProxyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBProxyAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBProxyEndpointResult> ModifyDBProxyEndpointOutcome;
+			typedef std::future<ModifyDBProxyEndpointOutcome> ModifyDBProxyEndpointOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyDBProxyEndpointRequest&, const ModifyDBProxyEndpointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBProxyEndpointAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBProxyInstanceResult> ModifyDBProxyInstanceOutcome;
+			typedef std::future<ModifyDBProxyInstanceOutcome> ModifyDBProxyInstanceOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyDBProxyInstanceRequest&, const ModifyDBProxyInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBProxyInstanceAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDTCSecurityIpHostsForSQLServerResult> ModifyDTCSecurityIpHostsForSQLServerOutcome;
 			typedef std::future<ModifyDTCSecurityIpHostsForSQLServerOutcome> ModifyDTCSecurityIpHostsForSQLServerOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDTCSecurityIpHostsForSQLServerRequest&, const ModifyDTCSecurityIpHostsForSQLServerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDTCSecurityIpHostsForSQLServerAsyncHandler;
@@ -1017,6 +1057,9 @@ namespace AlibabaCloud
 			DeleteBackupOutcome deleteBackup(const Model::DeleteBackupRequest &request)const;
 			void deleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteBackupOutcomeCallable deleteBackupCallable(const Model::DeleteBackupRequest& request) const;
+			DeleteBackupFileOutcome deleteBackupFile(const Model::DeleteBackupFileRequest &request)const;
+			void deleteBackupFileAsync(const Model::DeleteBackupFileRequest& request, const DeleteBackupFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteBackupFileOutcomeCallable deleteBackupFileCallable(const Model::DeleteBackupFileRequest& request) const;
 			DeleteDBInstanceOutcome deleteDBInstance(const Model::DeleteDBInstanceRequest &request)const;
 			void deleteDBInstanceAsync(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDBInstanceOutcomeCallable deleteDBInstanceCallable(const Model::DeleteDBInstanceRequest& request) const;
@@ -1131,6 +1174,15 @@ namespace AlibabaCloud
 			DescribeDBInstancesForCloneOutcome describeDBInstancesForClone(const Model::DescribeDBInstancesForCloneRequest &request)const;
 			void describeDBInstancesForCloneAsync(const Model::DescribeDBInstancesForCloneRequest& request, const DescribeDBInstancesForCloneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstancesForCloneOutcomeCallable describeDBInstancesForCloneCallable(const Model::DescribeDBInstancesForCloneRequest& request) const;
+			DescribeDBProxyOutcome describeDBProxy(const Model::DescribeDBProxyRequest &request)const;
+			void describeDBProxyAsync(const Model::DescribeDBProxyRequest& request, const DescribeDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBProxyOutcomeCallable describeDBProxyCallable(const Model::DescribeDBProxyRequest& request) const;
+			DescribeDBProxyEndpointOutcome describeDBProxyEndpoint(const Model::DescribeDBProxyEndpointRequest &request)const;
+			void describeDBProxyEndpointAsync(const Model::DescribeDBProxyEndpointRequest& request, const DescribeDBProxyEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBProxyEndpointOutcomeCallable describeDBProxyEndpointCallable(const Model::DescribeDBProxyEndpointRequest& request) const;
+			DescribeDBProxyPerformanceOutcome describeDBProxyPerformance(const Model::DescribeDBProxyPerformanceRequest &request)const;
+			void describeDBProxyPerformanceAsync(const Model::DescribeDBProxyPerformanceRequest& request, const DescribeDBProxyPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBProxyPerformanceOutcomeCallable describeDBProxyPerformanceCallable(const Model::DescribeDBProxyPerformanceRequest& request) const;
 			DescribeDTCSecurityIpHostsForSQLServerOutcome describeDTCSecurityIpHostsForSQLServer(const Model::DescribeDTCSecurityIpHostsForSQLServerRequest &request)const;
 			void describeDTCSecurityIpHostsForSQLServerAsync(const Model::DescribeDTCSecurityIpHostsForSQLServerRequest& request, const DescribeDTCSecurityIpHostsForSQLServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDTCSecurityIpHostsForSQLServerOutcomeCallable describeDTCSecurityIpHostsForSQLServerCallable(const Model::DescribeDTCSecurityIpHostsForSQLServerRequest& request) const;
@@ -1170,6 +1222,9 @@ namespace AlibabaCloud
 			DescribeLogBackupFilesOutcome describeLogBackupFiles(const Model::DescribeLogBackupFilesRequest &request)const;
 			void describeLogBackupFilesAsync(const Model::DescribeLogBackupFilesRequest& request, const DescribeLogBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLogBackupFilesOutcomeCallable describeLogBackupFilesCallable(const Model::DescribeLogBackupFilesRequest& request) const;
+			DescribeMigrateTaskByIdOutcome describeMigrateTaskById(const Model::DescribeMigrateTaskByIdRequest &request)const;
+			void describeMigrateTaskByIdAsync(const Model::DescribeMigrateTaskByIdRequest& request, const DescribeMigrateTaskByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMigrateTaskByIdOutcomeCallable describeMigrateTaskByIdCallable(const Model::DescribeMigrateTaskByIdRequest& request) const;
 			DescribeMigrateTasksOutcome describeMigrateTasks(const Model::DescribeMigrateTasksRequest &request)const;
 			void describeMigrateTasksAsync(const Model::DescribeMigrateTasksRequest& request, const DescribeMigrateTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMigrateTasksOutcomeCallable describeMigrateTasksCallable(const Model::DescribeMigrateTasksRequest& request) const;
@@ -1329,6 +1384,15 @@ namespace AlibabaCloud
 			ModifyDBInstanceTDEOutcome modifyDBInstanceTDE(const Model::ModifyDBInstanceTDERequest &request)const;
 			void modifyDBInstanceTDEAsync(const Model::ModifyDBInstanceTDERequest& request, const ModifyDBInstanceTDEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstanceTDEOutcomeCallable modifyDBInstanceTDECallable(const Model::ModifyDBInstanceTDERequest& request) const;
+			ModifyDBProxyOutcome modifyDBProxy(const Model::ModifyDBProxyRequest &request)const;
+			void modifyDBProxyAsync(const Model::ModifyDBProxyRequest& request, const ModifyDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBProxyOutcomeCallable modifyDBProxyCallable(const Model::ModifyDBProxyRequest& request) const;
+			ModifyDBProxyEndpointOutcome modifyDBProxyEndpoint(const Model::ModifyDBProxyEndpointRequest &request)const;
+			void modifyDBProxyEndpointAsync(const Model::ModifyDBProxyEndpointRequest& request, const ModifyDBProxyEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBProxyEndpointOutcomeCallable modifyDBProxyEndpointCallable(const Model::ModifyDBProxyEndpointRequest& request) const;
+			ModifyDBProxyInstanceOutcome modifyDBProxyInstance(const Model::ModifyDBProxyInstanceRequest &request)const;
+			void modifyDBProxyInstanceAsync(const Model::ModifyDBProxyInstanceRequest& request, const ModifyDBProxyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBProxyInstanceOutcomeCallable modifyDBProxyInstanceCallable(const Model::ModifyDBProxyInstanceRequest& request) const;
 			ModifyDTCSecurityIpHostsForSQLServerOutcome modifyDTCSecurityIpHostsForSQLServer(const Model::ModifyDTCSecurityIpHostsForSQLServerRequest &request)const;
 			void modifyDTCSecurityIpHostsForSQLServerAsync(const Model::ModifyDTCSecurityIpHostsForSQLServerRequest& request, const ModifyDTCSecurityIpHostsForSQLServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDTCSecurityIpHostsForSQLServerOutcomeCallable modifyDTCSecurityIpHostsForSQLServerCallable(const Model::ModifyDTCSecurityIpHostsForSQLServerRequest& request) const;

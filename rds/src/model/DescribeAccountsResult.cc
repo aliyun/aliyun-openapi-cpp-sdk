@@ -69,11 +69,25 @@ void DescribeAccountsResult::parse(const std::string &payload)
 		}
 		accounts_.push_back(accountsObject);
 	}
+	if(!value["SystemAdminAccountStatus"].isNull())
+		systemAdminAccountStatus_ = value["SystemAdminAccountStatus"].asString();
+	if(!value["SystemAdminAccountFirstActivationTime"].isNull())
+		systemAdminAccountFirstActivationTime_ = value["SystemAdminAccountFirstActivationTime"].asString();
 
+}
+
+std::string DescribeAccountsResult::getSystemAdminAccountStatus()const
+{
+	return systemAdminAccountStatus_;
 }
 
 std::vector<DescribeAccountsResult::DBInstanceAccount> DescribeAccountsResult::getAccounts()const
 {
 	return accounts_;
+}
+
+std::string DescribeAccountsResult::getSystemAdminAccountFirstActivationTime()const
+{
+	return systemAdminAccountFirstActivationTime_;
 }
 

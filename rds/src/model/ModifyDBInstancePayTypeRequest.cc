@@ -104,15 +104,15 @@ void ModifyDBInstancePayTypeRequest::setAgentId(const std::string& agentId)
 	setCoreParameter("AgentId", agentId);
 }
 
-std::string ModifyDBInstancePayTypeRequest::getAutoPay()const
+bool ModifyDBInstancePayTypeRequest::getAutoPay()const
 {
 	return autoPay_;
 }
 
-void ModifyDBInstancePayTypeRequest::setAutoPay(const std::string& autoPay)
+void ModifyDBInstancePayTypeRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyDBInstancePayTypeRequest::getResourceOwnerAccount()const

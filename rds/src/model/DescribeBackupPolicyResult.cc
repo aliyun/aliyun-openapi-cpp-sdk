@@ -83,6 +83,8 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		archiveBackupKeepCount_ = value["ArchiveBackupKeepCount"].asString();
 	if(!value["ReleasedKeepPolicy"].isNull())
 		releasedKeepPolicy_ = value["ReleasedKeepPolicy"].asString();
+	if(!value["LogBackupLocalRetentionNumber"].isNull())
+		logBackupLocalRetentionNumber_ = std::stoi(value["LogBackupLocalRetentionNumber"].asString());
 
 }
 
@@ -154,6 +156,11 @@ std::string DescribeBackupPolicyResult::getArchiveBackupKeepCount()const
 int DescribeBackupPolicyResult::getLogBackupRetentionPeriod()const
 {
 	return logBackupRetentionPeriod_;
+}
+
+int DescribeBackupPolicyResult::getLogBackupLocalRetentionNumber()const
+{
+	return logBackupLocalRetentionNumber_;
 }
 
 std::string DescribeBackupPolicyResult::getBackupLog()const

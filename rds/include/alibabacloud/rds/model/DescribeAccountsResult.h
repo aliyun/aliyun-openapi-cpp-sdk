@@ -53,12 +53,16 @@ namespace AlibabaCloud
 				DescribeAccountsResult();
 				explicit DescribeAccountsResult(const std::string &payload);
 				~DescribeAccountsResult();
+				std::string getSystemAdminAccountStatus()const;
 				std::vector<DBInstanceAccount> getAccounts()const;
+				std::string getSystemAdminAccountFirstActivationTime()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string systemAdminAccountStatus_;
 				std::vector<DBInstanceAccount> accounts_;
+				std::string systemAdminAccountFirstActivationTime_;
 
 			};
 		}

@@ -115,6 +115,17 @@ void ModifyBackupPolicyRequest::setHighSpaceUsageProtection(const std::string& h
 	setCoreParameter("HighSpaceUsageProtection", highSpaceUsageProtection);
 }
 
+int ModifyBackupPolicyRequest::getLogBackupLocalRetentionNumber()const
+{
+	return logBackupLocalRetentionNumber_;
+}
+
+void ModifyBackupPolicyRequest::setLogBackupLocalRetentionNumber(int logBackupLocalRetentionNumber)
+{
+	logBackupLocalRetentionNumber_ = logBackupLocalRetentionNumber;
+	setCoreParameter("LogBackupLocalRetentionNumber", std::to_string(logBackupLocalRetentionNumber));
+}
+
 std::string ModifyBackupPolicyRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;

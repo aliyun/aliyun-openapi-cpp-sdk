@@ -61,6 +61,7 @@ namespace AlibabaCloud
 				std::string getPreferredBackupPeriod()const;
 				std::string getArchiveBackupKeepCount()const;
 				int getLogBackupRetentionPeriod()const;
+				int getLogBackupLocalRetentionNumber()const;
 				std::string getBackupLog()const;
 				std::string getEnableBackupLog()const;
 				std::string getLocalLogRetentionSpace()const;
@@ -84,6 +85,7 @@ namespace AlibabaCloud
 				std::string preferredBackupPeriod_;
 				std::string archiveBackupKeepCount_;
 				int logBackupRetentionPeriod_;
+				int logBackupLocalRetentionNumber_;
 				std::string backupLog_;
 				std::string enableBackupLog_;
 				std::string localLogRetentionSpace_;

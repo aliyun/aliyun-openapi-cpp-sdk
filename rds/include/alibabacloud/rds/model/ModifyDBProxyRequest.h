@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEPAYTYPEREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEPAYTYPEREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYDBPROXYREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_MODIFYDBPROXYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,60 +28,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT ModifyDBInstancePayTypeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT ModifyDBProxyRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyDBInstancePayTypeRequest();
-				~ModifyDBInstancePayTypeRequest();
+				ModifyDBProxyRequest();
+				~ModifyDBProxyRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getBusinessInfo()const;
-				void setBusinessInfo(const std::string& businessInfo);
-				std::string getPeriod()const;
-				void setPeriod(const std::string& period);
-				std::string getAgentId()const;
-				void setAgentId(const std::string& agentId);
-				bool getAutoPay()const;
-				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getResource()const;
-				void setResource(const std::string& resource);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getUsedTime()const;
-				void setUsedTime(int usedTime);
-				std::string getPayType()const;
-				void setPayType(const std::string& payType);
+				std::string getDBProxyInstanceNum()const;
+				void setDBProxyInstanceNum(const std::string& dBProxyInstanceNum);
+				std::string getConfigDBProxyService()const;
+				void setConfigDBProxyService(const std::string& configDBProxyService);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
+				std::string getVPCId()const;
+				void setVPCId(const std::string& vPCId);
+				std::string getInstanceNetworkType()const;
+				void setInstanceNetworkType(const std::string& instanceNetworkType);
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
 				std::string accessKeyId_;
+				std::string regionId_;
 				std::string dBInstanceId_;
-				std::string businessInfo_;
-				std::string period_;
-				std::string agentId_;
-				bool autoPay_;
 				std::string resourceOwnerAccount_;
-				std::string resource_;
-				std::string ownerAccount_;
 				long ownerId_;
-				int usedTime_;
-				std::string payType_;
+				std::string dBProxyInstanceNum_;
+				std::string configDBProxyService_;
+				std::string vSwitchId_;
+				std::string vPCId_;
+				std::string instanceNetworkType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEPAYTYPEREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYDBPROXYREQUEST_H_

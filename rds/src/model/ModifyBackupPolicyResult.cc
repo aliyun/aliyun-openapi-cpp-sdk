@@ -51,7 +51,14 @@ void ModifyBackupPolicyResult::parse(const std::string &payload)
 		highSpaceUsageProtection_ = value["HighSpaceUsageProtection"].asString();
 	if(!value["CompressType"].isNull())
 		compressType_ = value["CompressType"].asString();
+	if(!value["LogBackupLocalRetentionNumber"].isNull())
+		logBackupLocalRetentionNumber_ = std::stoi(value["LogBackupLocalRetentionNumber"].asString());
 
+}
+
+int ModifyBackupPolicyResult::getLogBackupLocalRetentionNumber()const
+{
+	return logBackupLocalRetentionNumber_;
 }
 
 std::string ModifyBackupPolicyResult::getDBInstanceID()const

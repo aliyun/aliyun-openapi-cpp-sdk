@@ -85,6 +85,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DeleteAccountResult.h
 	include/alibabacloud/rds/model/DeleteBackupRequest.h
 	include/alibabacloud/rds/model/DeleteBackupResult.h
+	include/alibabacloud/rds/model/DeleteBackupFileRequest.h
+	include/alibabacloud/rds/model/DeleteBackupFileResult.h
 	include/alibabacloud/rds/model/DeleteDBInstanceRequest.h
 	include/alibabacloud/rds/model/DeleteDBInstanceResult.h
 	include/alibabacloud/rds/model/DeleteDatabaseRequest.h
@@ -161,6 +163,12 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeDBInstancesByPerformanceResult.h
 	include/alibabacloud/rds/model/DescribeDBInstancesForCloneRequest.h
 	include/alibabacloud/rds/model/DescribeDBInstancesForCloneResult.h
+	include/alibabacloud/rds/model/DescribeDBProxyRequest.h
+	include/alibabacloud/rds/model/DescribeDBProxyResult.h
+	include/alibabacloud/rds/model/DescribeDBProxyEndpointRequest.h
+	include/alibabacloud/rds/model/DescribeDBProxyEndpointResult.h
+	include/alibabacloud/rds/model/DescribeDBProxyPerformanceRequest.h
+	include/alibabacloud/rds/model/DescribeDBProxyPerformanceResult.h
 	include/alibabacloud/rds/model/DescribeDTCSecurityIpHostsForSQLServerRequest.h
 	include/alibabacloud/rds/model/DescribeDTCSecurityIpHostsForSQLServerResult.h
 	include/alibabacloud/rds/model/DescribeDatabasesRequest.h
@@ -187,6 +195,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeInstanceCrossBackupPolicyResult.h
 	include/alibabacloud/rds/model/DescribeLogBackupFilesRequest.h
 	include/alibabacloud/rds/model/DescribeLogBackupFilesResult.h
+	include/alibabacloud/rds/model/DescribeMigrateTaskByIdRequest.h
+	include/alibabacloud/rds/model/DescribeMigrateTaskByIdResult.h
 	include/alibabacloud/rds/model/DescribeMigrateTasksRequest.h
 	include/alibabacloud/rds/model/DescribeMigrateTasksResult.h
 	include/alibabacloud/rds/model/DescribeMigrateTasksForSQLServerRequest.h
@@ -293,6 +303,12 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyDBInstanceSpecResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceTDERequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceTDEResult.h
+	include/alibabacloud/rds/model/ModifyDBProxyRequest.h
+	include/alibabacloud/rds/model/ModifyDBProxyResult.h
+	include/alibabacloud/rds/model/ModifyDBProxyEndpointRequest.h
+	include/alibabacloud/rds/model/ModifyDBProxyEndpointResult.h
+	include/alibabacloud/rds/model/ModifyDBProxyInstanceRequest.h
+	include/alibabacloud/rds/model/ModifyDBProxyInstanceResult.h
 	include/alibabacloud/rds/model/ModifyDTCSecurityIpHostsForSQLServerRequest.h
 	include/alibabacloud/rds/model/ModifyDTCSecurityIpHostsForSQLServerResult.h
 	include/alibabacloud/rds/model/ModifyDedicatedHostAttributeRequest.h
@@ -442,6 +458,8 @@ set(rds_src
 	src/model/DeleteAccountResult.cc
 	src/model/DeleteBackupRequest.cc
 	src/model/DeleteBackupResult.cc
+	src/model/DeleteBackupFileRequest.cc
+	src/model/DeleteBackupFileResult.cc
 	src/model/DeleteDBInstanceRequest.cc
 	src/model/DeleteDBInstanceResult.cc
 	src/model/DeleteDatabaseRequest.cc
@@ -518,6 +536,12 @@ set(rds_src
 	src/model/DescribeDBInstancesByPerformanceResult.cc
 	src/model/DescribeDBInstancesForCloneRequest.cc
 	src/model/DescribeDBInstancesForCloneResult.cc
+	src/model/DescribeDBProxyRequest.cc
+	src/model/DescribeDBProxyResult.cc
+	src/model/DescribeDBProxyEndpointRequest.cc
+	src/model/DescribeDBProxyEndpointResult.cc
+	src/model/DescribeDBProxyPerformanceRequest.cc
+	src/model/DescribeDBProxyPerformanceResult.cc
 	src/model/DescribeDTCSecurityIpHostsForSQLServerRequest.cc
 	src/model/DescribeDTCSecurityIpHostsForSQLServerResult.cc
 	src/model/DescribeDatabasesRequest.cc
@@ -544,6 +568,8 @@ set(rds_src
 	src/model/DescribeInstanceCrossBackupPolicyResult.cc
 	src/model/DescribeLogBackupFilesRequest.cc
 	src/model/DescribeLogBackupFilesResult.cc
+	src/model/DescribeMigrateTaskByIdRequest.cc
+	src/model/DescribeMigrateTaskByIdResult.cc
 	src/model/DescribeMigrateTasksRequest.cc
 	src/model/DescribeMigrateTasksResult.cc
 	src/model/DescribeMigrateTasksForSQLServerRequest.cc
@@ -650,6 +676,12 @@ set(rds_src
 	src/model/ModifyDBInstanceSpecResult.cc
 	src/model/ModifyDBInstanceTDERequest.cc
 	src/model/ModifyDBInstanceTDEResult.cc
+	src/model/ModifyDBProxyRequest.cc
+	src/model/ModifyDBProxyResult.cc
+	src/model/ModifyDBProxyEndpointRequest.cc
+	src/model/ModifyDBProxyEndpointResult.cc
+	src/model/ModifyDBProxyInstanceRequest.cc
+	src/model/ModifyDBProxyInstanceResult.cc
 	src/model/ModifyDTCSecurityIpHostsForSQLServerRequest.cc
 	src/model/ModifyDTCSecurityIpHostsForSQLServerResult.cc
 	src/model/ModifyDedicatedHostAttributeRequest.cc

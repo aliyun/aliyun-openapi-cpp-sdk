@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEPAYTYPEREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEPAYTYPEREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DELETEBACKUPFILEREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_DELETEBACKUPFILEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,60 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT ModifyDBInstancePayTypeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT DeleteBackupFileRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyDBInstancePayTypeRequest();
-				~ModifyDBInstancePayTypeRequest();
+				DeleteBackupFileRequest();
+				~DeleteBackupFileRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getBusinessInfo()const;
-				void setBusinessInfo(const std::string& businessInfo);
-				std::string getPeriod()const;
-				void setPeriod(const std::string& period);
-				std::string getAgentId()const;
-				void setAgentId(const std::string& agentId);
-				bool getAutoPay()const;
-				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getResource()const;
-				void setResource(const std::string& resource);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getBackupId()const;
+				void setBackupId(const std::string& backupId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getUsedTime()const;
-				void setUsedTime(int usedTime);
-				std::string getPayType()const;
-				void setPayType(const std::string& payType);
+				std::string getBackupTime()const;
+				void setBackupTime(const std::string& backupTime);
+				std::string getDBName()const;
+				void setDBName(const std::string& dBName);
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
 				std::string accessKeyId_;
+				std::string regionId_;
 				std::string dBInstanceId_;
-				std::string businessInfo_;
-				std::string period_;
-				std::string agentId_;
-				bool autoPay_;
 				std::string resourceOwnerAccount_;
-				std::string resource_;
-				std::string ownerAccount_;
+				std::string backupId_;
 				long ownerId_;
-				int usedTime_;
-				std::string payType_;
+				std::string backupTime_;
+				std::string dBName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEPAYTYPEREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DELETEBACKUPFILEREQUEST_H_

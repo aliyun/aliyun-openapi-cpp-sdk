@@ -187,6 +187,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.multipleTempUpgrade = valueItemsDBInstanceAttribute["MultipleTempUpgrade"].asString() == "true";
 		if(!valueItemsDBInstanceAttribute["OriginConfiguration"].isNull())
 			itemsObject.originConfiguration = valueItemsDBInstanceAttribute["OriginConfiguration"].asString();
+		if(!valueItemsDBInstanceAttribute["DedicatedHostGroupId"].isNull())
+			itemsObject.dedicatedHostGroupId = valueItemsDBInstanceAttribute["DedicatedHostGroupId"].asString();
 		auto allSlaveZonesNode = allItemsNode["SlaveZones"]["SlaveZone"];
 		for (auto allItemsNodeSlaveZonesSlaveZone : allSlaveZonesNode)
 		{

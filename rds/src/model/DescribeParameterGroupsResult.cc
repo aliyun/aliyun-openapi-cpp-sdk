@@ -65,11 +65,18 @@ void DescribeParameterGroupsResult::parse(const std::string &payload)
 			parameterGroupsObject.parameterGroupId = valueParameterGroupsParameterGroup["ParameterGroupId"].asString();
 		parameterGroups_.push_back(parameterGroupsObject);
 	}
+	if(!value["SignalForOptimizeParams"].isNull())
+		signalForOptimizeParams_ = value["SignalForOptimizeParams"].asString() == "true";
 
 }
 
 std::vector<DescribeParameterGroupsResult::ParameterGroup> DescribeParameterGroupsResult::getParameterGroups()const
 {
 	return parameterGroups_;
+}
+
+bool DescribeParameterGroupsResult::getSignalForOptimizeParams()const
+{
+	return signalForOptimizeParams_;
 }
 

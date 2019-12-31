@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setDuplicationContent(const std::string& duplicationContent);
 				std::string getHighSpaceUsageProtection()const;
 				void setHighSpaceUsageProtection(const std::string& highSpaceUsageProtection);
+				int getLogBackupLocalRetentionNumber()const;
+				void setLogBackupLocalRetentionNumber(int logBackupLocalRetentionNumber);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getEnableBackupLog()const;
@@ -95,6 +97,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string duplicationContent_;
 				std::string highSpaceUsageProtection_;
+				int logBackupLocalRetentionNumber_;
 				std::string dBInstanceId_;
 				std::string enableBackupLog_;
 				std::string backupPolicyMode_;

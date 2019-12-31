@@ -104,6 +104,28 @@ void DescribePriceRequest::setEngine(const std::string& engine)
 	setCoreParameter("Engine", engine);
 }
 
+std::string DescribePriceRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribePriceRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescribePriceRequest::getDBInstanceStorageType()const
+{
+	return dBInstanceStorageType_;
+}
+
+void DescribePriceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
+{
+	dBInstanceStorageType_ = dBInstanceStorageType;
+	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
 int DescribePriceRequest::getQuantity()const
 {
 	return quantity_;
