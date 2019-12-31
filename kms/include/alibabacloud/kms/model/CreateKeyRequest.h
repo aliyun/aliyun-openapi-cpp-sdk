@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setOrigin(const std::string& origin);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getKeySpec()const;
+				void setKeySpec(const std::string& keySpec);
 				std::string getRotationInterval()const;
 				void setRotationInterval(const std::string& rotationInterval);
 				bool getEnableAutomaticRotation()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				std::string keyUsage_;
 				std::string origin_;
 				std::string description_;
+				std::string keySpec_;
 				std::string rotationInterval_;
 				bool enableAutomaticRotation_;
 

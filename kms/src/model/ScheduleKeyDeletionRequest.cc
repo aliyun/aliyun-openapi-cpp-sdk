@@ -20,7 +20,9 @@ using AlibabaCloud::Kms::Model::ScheduleKeyDeletionRequest;
 
 ScheduleKeyDeletionRequest::ScheduleKeyDeletionRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "ScheduleKeyDeletion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ScheduleKeyDeletionRequest::~ScheduleKeyDeletionRequest()
 {}

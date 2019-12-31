@@ -20,7 +20,9 @@ using AlibabaCloud::Kms::Model::UntagResourceRequest;
 
 UntagResourceRequest::UntagResourceRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "UntagResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UntagResourceRequest::~UntagResourceRequest()
 {}

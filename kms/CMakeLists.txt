@@ -21,12 +21,22 @@ set(kms_public_header
 	include/alibabacloud/kms/KmsExport.h )
 
 set(kms_public_header_model 
+	include/alibabacloud/kms/model/AsymmetricDecryptRequest.h
+	include/alibabacloud/kms/model/AsymmetricDecryptResult.h
+	include/alibabacloud/kms/model/AsymmetricEncryptRequest.h
+	include/alibabacloud/kms/model/AsymmetricEncryptResult.h
+	include/alibabacloud/kms/model/AsymmetricSignRequest.h
+	include/alibabacloud/kms/model/AsymmetricSignResult.h
+	include/alibabacloud/kms/model/AsymmetricVerifyRequest.h
+	include/alibabacloud/kms/model/AsymmetricVerifyResult.h
 	include/alibabacloud/kms/model/CancelKeyDeletionRequest.h
 	include/alibabacloud/kms/model/CancelKeyDeletionResult.h
 	include/alibabacloud/kms/model/CreateAliasRequest.h
 	include/alibabacloud/kms/model/CreateAliasResult.h
 	include/alibabacloud/kms/model/CreateKeyRequest.h
 	include/alibabacloud/kms/model/CreateKeyResult.h
+	include/alibabacloud/kms/model/CreateKeyVersionRequest.h
+	include/alibabacloud/kms/model/CreateKeyVersionResult.h
 	include/alibabacloud/kms/model/DecryptRequest.h
 	include/alibabacloud/kms/model/DecryptResult.h
 	include/alibabacloud/kms/model/DeleteAliasRequest.h
@@ -53,6 +63,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/GenerateDataKeyWithoutPlaintextResult.h
 	include/alibabacloud/kms/model/GetParametersForImportRequest.h
 	include/alibabacloud/kms/model/GetParametersForImportResult.h
+	include/alibabacloud/kms/model/GetPublicKeyRequest.h
+	include/alibabacloud/kms/model/GetPublicKeyResult.h
 	include/alibabacloud/kms/model/ImportKeyMaterialRequest.h
 	include/alibabacloud/kms/model/ImportKeyMaterialResult.h
 	include/alibabacloud/kms/model/ListAliasesRequest.h
@@ -80,12 +92,22 @@ set(kms_public_header_model
 
 set(kms_src 
 	src/KmsClient.cc
+	src/model/AsymmetricDecryptRequest.cc
+	src/model/AsymmetricDecryptResult.cc
+	src/model/AsymmetricEncryptRequest.cc
+	src/model/AsymmetricEncryptResult.cc
+	src/model/AsymmetricSignRequest.cc
+	src/model/AsymmetricSignResult.cc
+	src/model/AsymmetricVerifyRequest.cc
+	src/model/AsymmetricVerifyResult.cc
 	src/model/CancelKeyDeletionRequest.cc
 	src/model/CancelKeyDeletionResult.cc
 	src/model/CreateAliasRequest.cc
 	src/model/CreateAliasResult.cc
 	src/model/CreateKeyRequest.cc
 	src/model/CreateKeyResult.cc
+	src/model/CreateKeyVersionRequest.cc
+	src/model/CreateKeyVersionResult.cc
 	src/model/DecryptRequest.cc
 	src/model/DecryptResult.cc
 	src/model/DeleteAliasRequest.cc
@@ -112,6 +134,8 @@ set(kms_src
 	src/model/GenerateDataKeyWithoutPlaintextResult.cc
 	src/model/GetParametersForImportRequest.cc
 	src/model/GetParametersForImportResult.cc
+	src/model/GetPublicKeyRequest.cc
+	src/model/GetPublicKeyResult.cc
 	src/model/ImportKeyMaterialRequest.cc
 	src/model/ImportKeyMaterialResult.cc
 	src/model/ListAliasesRequest.cc

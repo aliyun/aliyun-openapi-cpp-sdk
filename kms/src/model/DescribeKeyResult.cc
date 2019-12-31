@@ -72,6 +72,8 @@ void DescribeKeyResult::parse(const std::string &payload)
 		keyMetadata_.rotationInterval = keyMetadataNode["RotationInterval"].asString();
 	if(!keyMetadataNode["NextRotationDate"].isNull())
 		keyMetadata_.nextRotationDate = keyMetadataNode["NextRotationDate"].asString();
+	if(!keyMetadataNode["KeySpec"].isNull())
+		keyMetadata_.keySpec = keyMetadataNode["KeySpec"].asString();
 
 }
 

@@ -14,27 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/kms/model/DeleteAliasRequest.h>
+#include <alibabacloud/kms/model/GetPublicKeyRequest.h>
 
-using AlibabaCloud::Kms::Model::DeleteAliasRequest;
+using AlibabaCloud::Kms::Model::GetPublicKeyRequest;
 
-DeleteAliasRequest::DeleteAliasRequest() :
-	RpcServiceRequest("kms", "2016-01-20", "DeleteAlias")
+GetPublicKeyRequest::GetPublicKeyRequest() :
+	RpcServiceRequest("kms", "2016-01-20", "GetPublicKey")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteAliasRequest::~DeleteAliasRequest()
+GetPublicKeyRequest::~GetPublicKeyRequest()
 {}
 
-std::string DeleteAliasRequest::getAliasName()const
+std::string GetPublicKeyRequest::getKeyVersionId()const
 {
-	return aliasName_;
+	return keyVersionId_;
 }
 
-void DeleteAliasRequest::setAliasName(const std::string& aliasName)
+void GetPublicKeyRequest::setKeyVersionId(const std::string& keyVersionId)
 {
-	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	keyVersionId_ = keyVersionId;
+	setCoreParameter("KeyVersionId", keyVersionId);
+}
+
+std::string GetPublicKeyRequest::getKeyId()const
+{
+	return keyId_;
+}
+
+void GetPublicKeyRequest::setKeyId(const std::string& keyId)
+{
+	keyId_ = keyId;
+	setCoreParameter("KeyId", keyId);
 }
 

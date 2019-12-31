@@ -20,7 +20,9 @@ using AlibabaCloud::Kms::Model::CreateKeyRequest;
 
 CreateKeyRequest::CreateKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "CreateKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateKeyRequest::~CreateKeyRequest()
 {}
@@ -67,6 +69,17 @@ void CreateKeyRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
+}
+
+std::string CreateKeyRequest::getKeySpec()const
+{
+	return keySpec_;
+}
+
+void CreateKeyRequest::setKeySpec(const std::string& keySpec)
+{
+	keySpec_ = keySpec;
+	setCoreParameter("KeySpec", keySpec);
 }
 
 std::string CreateKeyRequest::getRotationInterval()const

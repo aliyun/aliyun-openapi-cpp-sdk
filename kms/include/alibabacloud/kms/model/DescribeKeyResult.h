@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string lastRotationDate;
 					std::string rotationInterval;
+					std::string keySpec;
 					std::string keyUsage;
 					std::string keyId;
 					std::string primaryKeyVersion;

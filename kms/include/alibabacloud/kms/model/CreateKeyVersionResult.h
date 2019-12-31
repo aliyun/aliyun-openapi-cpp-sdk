@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_CREATEKEYRESULT_H_
-#define ALIBABACLOUD_KMS_MODEL_CREATEKEYRESULT_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_CREATEKEYVERSIONRESULT_H_
+#define ALIBABACLOUD_KMS_MODEL_CREATEKEYVERSIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT CreateKeyResult : public ServiceResult
+			class ALIBABACLOUD_KMS_EXPORT CreateKeyVersionResult : public ServiceResult
 			{
 			public:
-				struct KeyMetadata
+				struct KeyVersion
 				{
-					std::string origin;
 					std::string creationDate;
-					std::string protectionLevel;
-					std::string description;
-					std::string lastRotationDate;
-					std::string rotationInterval;
-					std::string keySpec;
-					std::string keyUsage;
 					std::string keyId;
-					std::string primaryKeyVersion;
-					std::string creator;
-					std::string deleteDate;
-					std::string automaticRotation;
-					std::string nextRotationDate;
-					std::string materialExpireTime;
-					std::string arn;
-					std::string keyState;
+					std::string keyVersionId;
 				};
 
 
-				CreateKeyResult();
-				explicit CreateKeyResult(const std::string &payload);
-				~CreateKeyResult();
-				KeyMetadata getKeyMetadata()const;
+				CreateKeyVersionResult();
+				explicit CreateKeyVersionResult(const std::string &payload);
+				~CreateKeyVersionResult();
+				KeyVersion getKeyVersion()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				KeyMetadata keyMetadata_;
+				KeyVersion keyVersion_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_CREATEKEYRESULT_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_CREATEKEYVERSIONRESULT_H_

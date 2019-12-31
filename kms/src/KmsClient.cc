@@ -51,6 +51,150 @@ KmsClient::KmsClient(const std::string & accessKeyId, const std::string & access
 KmsClient::~KmsClient()
 {}
 
+KmsClient::AsymmetricDecryptOutcome KmsClient::asymmetricDecrypt(const AsymmetricDecryptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AsymmetricDecryptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AsymmetricDecryptOutcome(AsymmetricDecryptResult(outcome.result()));
+	else
+		return AsymmetricDecryptOutcome(outcome.error());
+}
+
+void KmsClient::asymmetricDecryptAsync(const AsymmetricDecryptRequest& request, const AsymmetricDecryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, asymmetricDecrypt(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::AsymmetricDecryptOutcomeCallable KmsClient::asymmetricDecryptCallable(const AsymmetricDecryptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AsymmetricDecryptOutcome()>>(
+			[this, request]()
+			{
+			return this->asymmetricDecrypt(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::AsymmetricEncryptOutcome KmsClient::asymmetricEncrypt(const AsymmetricEncryptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AsymmetricEncryptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AsymmetricEncryptOutcome(AsymmetricEncryptResult(outcome.result()));
+	else
+		return AsymmetricEncryptOutcome(outcome.error());
+}
+
+void KmsClient::asymmetricEncryptAsync(const AsymmetricEncryptRequest& request, const AsymmetricEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, asymmetricEncrypt(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::AsymmetricEncryptOutcomeCallable KmsClient::asymmetricEncryptCallable(const AsymmetricEncryptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AsymmetricEncryptOutcome()>>(
+			[this, request]()
+			{
+			return this->asymmetricEncrypt(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::AsymmetricSignOutcome KmsClient::asymmetricSign(const AsymmetricSignRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AsymmetricSignOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AsymmetricSignOutcome(AsymmetricSignResult(outcome.result()));
+	else
+		return AsymmetricSignOutcome(outcome.error());
+}
+
+void KmsClient::asymmetricSignAsync(const AsymmetricSignRequest& request, const AsymmetricSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, asymmetricSign(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::AsymmetricSignOutcomeCallable KmsClient::asymmetricSignCallable(const AsymmetricSignRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AsymmetricSignOutcome()>>(
+			[this, request]()
+			{
+			return this->asymmetricSign(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::AsymmetricVerifyOutcome KmsClient::asymmetricVerify(const AsymmetricVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AsymmetricVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AsymmetricVerifyOutcome(AsymmetricVerifyResult(outcome.result()));
+	else
+		return AsymmetricVerifyOutcome(outcome.error());
+}
+
+void KmsClient::asymmetricVerifyAsync(const AsymmetricVerifyRequest& request, const AsymmetricVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, asymmetricVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::AsymmetricVerifyOutcomeCallable KmsClient::asymmetricVerifyCallable(const AsymmetricVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AsymmetricVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->asymmetricVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::CancelKeyDeletionOutcome KmsClient::cancelKeyDeletion(const CancelKeyDeletionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +297,42 @@ KmsClient::CreateKeyOutcomeCallable KmsClient::createKeyCallable(const CreateKey
 			[this, request]()
 			{
 			return this->createKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::CreateKeyVersionOutcome KmsClient::createKeyVersion(const CreateKeyVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateKeyVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateKeyVersionOutcome(CreateKeyVersionResult(outcome.result()));
+	else
+		return CreateKeyVersionOutcome(outcome.error());
+}
+
+void KmsClient::createKeyVersionAsync(const CreateKeyVersionRequest& request, const CreateKeyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createKeyVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::CreateKeyVersionOutcomeCallable KmsClient::createKeyVersionCallable(const CreateKeyVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateKeyVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->createKeyVersion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -621,6 +801,42 @@ KmsClient::GetParametersForImportOutcomeCallable KmsClient::getParametersForImpo
 			[this, request]()
 			{
 			return this->getParametersForImport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::GetPublicKeyOutcome KmsClient::getPublicKey(const GetPublicKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPublicKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPublicKeyOutcome(GetPublicKeyResult(outcome.result()));
+	else
+		return GetPublicKeyOutcome(outcome.error());
+}
+
+void KmsClient::getPublicKeyAsync(const GetPublicKeyRequest& request, const GetPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPublicKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::GetPublicKeyOutcomeCallable KmsClient::getPublicKeyCallable(const GetPublicKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPublicKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->getPublicKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
