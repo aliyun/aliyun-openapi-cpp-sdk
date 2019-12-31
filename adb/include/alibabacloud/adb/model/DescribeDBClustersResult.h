@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string key;
 					};
 					long dBNodeStorage;
+					std::string category;
 					std::string dBClusterStatus;
 					std::string createTime;
 					std::string dBClusterId;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBETABLESRESULT_H_
+#define ALIBABACLOUD_ADB_MODEL_DESCRIBETABLESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DescribeRegionsResult : public ServiceResult
+			class ALIBABACLOUD_ADB_EXPORT DescribeTablesResult : public ServiceResult
 			{
 			public:
-				struct Region
+				struct Table
 				{
-					struct Zone
-					{
-						bool vpcEnabled;
-						std::string zoneId;
-						std::string localName;
-					};
-					std::string regionId;
-					std::string regionEndpoint;
-					std::vector<Region::Zone> zones;
-					std::string localName;
+					std::string tableName;
+					std::string dBClusterId;
+					std::string schemaName;
 				};
 
 
-				DescribeRegionsResult();
-				explicit DescribeRegionsResult(const std::string &payload);
-				~DescribeRegionsResult();
-				std::vector<Region> getRegions()const;
+				DescribeTablesResult();
+				explicit DescribeTablesResult(const std::string &payload);
+				~DescribeTablesResult();
+				std::vector<Table> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Region> regions_;
+				std::vector<Table> items_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBETABLESRESULT_H_

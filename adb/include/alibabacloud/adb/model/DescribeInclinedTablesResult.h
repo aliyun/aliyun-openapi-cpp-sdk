@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEINCLINEDTABLESRESULT_H_
+#define ALIBABACLOUD_ADB_MODEL_DESCRIBEINCLINEDTABLESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DescribeRegionsResult : public ServiceResult
+			class ALIBABACLOUD_ADB_EXPORT DescribeInclinedTablesResult : public ServiceResult
 			{
 			public:
-				struct Region
+				struct Table
 				{
-					struct Zone
-					{
-						bool vpcEnabled;
-						std::string zoneId;
-						std::string localName;
-					};
-					std::string regionId;
-					std::string regionEndpoint;
-					std::vector<Region::Zone> zones;
-					std::string localName;
+					std::string type;
+					bool isIncline;
+					long size;
+					std::string schema;
+					std::string name;
 				};
 
 
-				DescribeRegionsResult();
-				explicit DescribeRegionsResult(const std::string &payload);
-				~DescribeRegionsResult();
-				std::vector<Region> getRegions()const;
+				DescribeInclinedTablesResult();
+				explicit DescribeInclinedTablesResult(const std::string &payload);
+				~DescribeInclinedTablesResult();
+				std::string getTotalCount()const;
+				std::string getPageSize()const;
+				std::string getPageNumber()const;
+				std::vector<Table> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Region> regions_;
+				std::string totalCount_;
+				std::string pageSize_;
+				std::string pageNumber_;
+				std::vector<Table> items_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEINCLINEDTABLESRESULT_H_

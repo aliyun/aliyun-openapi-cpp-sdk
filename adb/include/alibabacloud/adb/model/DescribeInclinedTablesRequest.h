@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEINCLINEDTABLESREQUEST_H_
+#define ALIBABACLOUD_ADB_MODEL_DESCRIBEINCLINEDTABLESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,48 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DescribeRegionsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ADB_EXPORT DescribeInclinedTablesRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeRegionsRequest();
-				~DescribeRegionsRequest();
+				DescribeInclinedTablesRequest();
+				~DescribeInclinedTablesRequest();
 
+				std::string getTableType()const;
+				void setTableType(const std::string& tableType);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getOrder()const;
+				void setOrder(const std::string& order);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getDBClusterId()const;
+				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAcceptLanguage()const;
-				void setAcceptLanguage(const std::string& acceptLanguage);
 
             private:
+				std::string tableType_;
 				long resourceOwnerId_;
+				int pageNumber_;
 				std::string accessKeyId_;
+				int pageSize_;
+				std::string order_;
 				std::string resourceOwnerAccount_;
+				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string acceptLanguage_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEINCLINEDTABLESREQUEST_H_

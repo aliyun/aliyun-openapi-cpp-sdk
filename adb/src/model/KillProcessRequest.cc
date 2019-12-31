@@ -14,82 +14,93 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/adb/model/DescribeRegionsRequest.h>
+#include <alibabacloud/adb/model/KillProcessRequest.h>
 
-using AlibabaCloud::Adb::Model::DescribeRegionsRequest;
+using AlibabaCloud::Adb::Model::KillProcessRequest;
 
-DescribeRegionsRequest::DescribeRegionsRequest() :
-	RpcServiceRequest("adb", "2019-03-15", "DescribeRegions")
+KillProcessRequest::KillProcessRequest() :
+	RpcServiceRequest("adb", "2019-03-15", "KillProcess")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeRegionsRequest::~DescribeRegionsRequest()
+KillProcessRequest::~KillProcessRequest()
 {}
 
-long DescribeRegionsRequest::getResourceOwnerId()const
+long KillProcessRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
+void KillProcessRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeRegionsRequest::getAccessKeyId()const
+std::string KillProcessRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
+void KillProcessRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeRegionsRequest::getResourceOwnerAccount()const
+std::string KillProcessRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void DescribeRegionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void KillProcessRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeRegionsRequest::getOwnerAccount()const
+std::string KillProcessRequest::getDBClusterId()const
+{
+	return dBClusterId_;
+}
+
+void KillProcessRequest::setDBClusterId(const std::string& dBClusterId)
+{
+	dBClusterId_ = dBClusterId;
+	setCoreParameter("DBClusterId", dBClusterId);
+}
+
+std::string KillProcessRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
 }
 
-void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
+void KillProcessRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeRegionsRequest::getOwnerId()const
+long KillProcessRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeRegionsRequest::setOwnerId(long ownerId)
+void KillProcessRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeRegionsRequest::getAcceptLanguage()const
+std::string KillProcessRequest::getProcessId()const
 {
-	return acceptLanguage_;
+	return processId_;
 }
 
-void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
+void KillProcessRequest::setProcessId(const std::string& processId)
 {
-	acceptLanguage_ = acceptLanguage;
-	setCoreParameter("AcceptLanguage", acceptLanguage);
+	processId_ = processId;
+	setCoreParameter("ProcessId", processId);
 }
 

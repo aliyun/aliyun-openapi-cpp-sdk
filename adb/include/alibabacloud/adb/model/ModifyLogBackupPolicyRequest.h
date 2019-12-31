@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_MODIFYLOGBACKUPPOLICYREQUEST_H_
+#define ALIBABACLOUD_ADB_MODEL_MODIFYLOGBACKUPPOLICYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DescribeRegionsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ADB_EXPORT ModifyLogBackupPolicyRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeRegionsRequest();
-				~DescribeRegionsRequest();
+				ModifyLogBackupPolicyRequest();
+				~ModifyLogBackupPolicyRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getEnableBackupLog()const;
+				void setEnableBackupLog(const std::string& enableBackupLog);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getDBClusterId()const;
+				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAcceptLanguage()const;
-				void setAcceptLanguage(const std::string& acceptLanguage);
+				std::string getLogBackupRetentionPeriod()const;
+				void setLogBackupRetentionPeriod(const std::string& logBackupRetentionPeriod);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
+				std::string enableBackupLog_;
 				std::string resourceOwnerAccount_;
+				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string acceptLanguage_;
+				std::string logBackupRetentionPeriod_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_MODIFYLOGBACKUPPOLICYREQUEST_H_

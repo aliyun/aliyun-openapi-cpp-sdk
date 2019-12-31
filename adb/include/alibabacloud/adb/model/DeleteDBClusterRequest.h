@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DELETEDBCLUSTERREQUEST_H_
+#define ALIBABACLOUD_ADB_MODEL_DELETEDBCLUSTERREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DescribeRegionsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ADB_EXPORT DeleteDBClusterRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeRegionsRequest();
-				~DescribeRegionsRequest();
+				DeleteDBClusterRequest();
+				~DeleteDBClusterRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
@@ -41,23 +41,23 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getDBClusterId()const;
+				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAcceptLanguage()const;
-				void setAcceptLanguage(const std::string& acceptLanguage);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
 				std::string resourceOwnerAccount_;
+				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string acceptLanguage_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DELETEDBCLUSTERREQUEST_H_

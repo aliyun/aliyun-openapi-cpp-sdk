@@ -75,6 +75,8 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.dBNodeCount = std::stol(valueItemsDBCluster["DBNodeCount"].asString());
 		if(!valueItemsDBCluster["CommodityCode"].isNull())
 			itemsObject.commodityCode = valueItemsDBCluster["CommodityCode"].asString();
+		if(!valueItemsDBCluster["Category"].isNull())
+			itemsObject.category = valueItemsDBCluster["Category"].asString();
 		auto allTagsNode = allItemsNode["Tags"]["Tag"];
 		for (auto allItemsNodeTagsTag : allTagsNode)
 		{

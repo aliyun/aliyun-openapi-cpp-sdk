@@ -29,14 +29,22 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/CreateDBClusterResult.h
 	include/alibabacloud/adb/model/DeleteAccountRequest.h
 	include/alibabacloud/adb/model/DeleteAccountResult.h
+	include/alibabacloud/adb/model/DeleteDBClusterRequest.h
+	include/alibabacloud/adb/model/DeleteDBClusterResult.h
 	include/alibabacloud/adb/model/DescribeAccountsRequest.h
 	include/alibabacloud/adb/model/DescribeAccountsResult.h
+	include/alibabacloud/adb/model/DescribeAllDataSourceRequest.h
+	include/alibabacloud/adb/model/DescribeAllDataSourceResult.h
 	include/alibabacloud/adb/model/DescribeAutoRenewAttributeRequest.h
 	include/alibabacloud/adb/model/DescribeAutoRenewAttributeResult.h
+	include/alibabacloud/adb/model/DescribeAvailableResourceRequest.h
+	include/alibabacloud/adb/model/DescribeAvailableResourceResult.h
 	include/alibabacloud/adb/model/DescribeBackupPolicyRequest.h
 	include/alibabacloud/adb/model/DescribeBackupPolicyResult.h
 	include/alibabacloud/adb/model/DescribeBackupsRequest.h
 	include/alibabacloud/adb/model/DescribeBackupsResult.h
+	include/alibabacloud/adb/model/DescribeColumnsRequest.h
+	include/alibabacloud/adb/model/DescribeColumnsResult.h
 	include/alibabacloud/adb/model/DescribeDBClusterAccessWhiteListRequest.h
 	include/alibabacloud/adb/model/DescribeDBClusterAccessWhiteListResult.h
 	include/alibabacloud/adb/model/DescribeDBClusterAttributeRequest.h
@@ -47,28 +55,50 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DescribeDBClusterPerformanceResult.h
 	include/alibabacloud/adb/model/DescribeDBClustersRequest.h
 	include/alibabacloud/adb/model/DescribeDBClustersResult.h
+	include/alibabacloud/adb/model/DescribeInclinedTablesRequest.h
+	include/alibabacloud/adb/model/DescribeInclinedTablesResult.h
+	include/alibabacloud/adb/model/DescribeLogStoreKeysRequest.h
+	include/alibabacloud/adb/model/DescribeLogStoreKeysResult.h
+	include/alibabacloud/adb/model/DescribeLoghubDetailRequest.h
+	include/alibabacloud/adb/model/DescribeLoghubDetailResult.h
 	include/alibabacloud/adb/model/DescribeOperatorPermissionRequest.h
 	include/alibabacloud/adb/model/DescribeOperatorPermissionResult.h
+	include/alibabacloud/adb/model/DescribeProcessListRequest.h
+	include/alibabacloud/adb/model/DescribeProcessListResult.h
 	include/alibabacloud/adb/model/DescribeRegionsRequest.h
 	include/alibabacloud/adb/model/DescribeRegionsResult.h
+	include/alibabacloud/adb/model/DescribeSchemasRequest.h
+	include/alibabacloud/adb/model/DescribeSchemasResult.h
 	include/alibabacloud/adb/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/adb/model/DescribeSlowLogRecordsResult.h
 	include/alibabacloud/adb/model/DescribeSlowLogTrendRequest.h
 	include/alibabacloud/adb/model/DescribeSlowLogTrendResult.h
+	include/alibabacloud/adb/model/DescribeTableDetailRequest.h
+	include/alibabacloud/adb/model/DescribeTableDetailResult.h
+	include/alibabacloud/adb/model/DescribeTablesRequest.h
+	include/alibabacloud/adb/model/DescribeTablesResult.h
 	include/alibabacloud/adb/model/GrantOperatorPermissionRequest.h
 	include/alibabacloud/adb/model/GrantOperatorPermissionResult.h
+	include/alibabacloud/adb/model/KillProcessRequest.h
+	include/alibabacloud/adb/model/KillProcessResult.h
 	include/alibabacloud/adb/model/ListTagResourcesRequest.h
 	include/alibabacloud/adb/model/ListTagResourcesResult.h
 	include/alibabacloud/adb/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/adb/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/adb/model/ModifyAutoRenewAttributeRequest.h
 	include/alibabacloud/adb/model/ModifyAutoRenewAttributeResult.h
+	include/alibabacloud/adb/model/ModifyBackupPolicyRequest.h
+	include/alibabacloud/adb/model/ModifyBackupPolicyResult.h
+	include/alibabacloud/adb/model/ModifyDBClusterRequest.h
+	include/alibabacloud/adb/model/ModifyDBClusterResult.h
 	include/alibabacloud/adb/model/ModifyDBClusterAccessWhiteListRequest.h
 	include/alibabacloud/adb/model/ModifyDBClusterAccessWhiteListResult.h
 	include/alibabacloud/adb/model/ModifyDBClusterDescriptionRequest.h
 	include/alibabacloud/adb/model/ModifyDBClusterDescriptionResult.h
 	include/alibabacloud/adb/model/ModifyDBClusterMaintainTimeRequest.h
 	include/alibabacloud/adb/model/ModifyDBClusterMaintainTimeResult.h
+	include/alibabacloud/adb/model/ModifyLogBackupPolicyRequest.h
+	include/alibabacloud/adb/model/ModifyLogBackupPolicyResult.h
 	include/alibabacloud/adb/model/ReleaseClusterPublicConnectionRequest.h
 	include/alibabacloud/adb/model/ReleaseClusterPublicConnectionResult.h
 	include/alibabacloud/adb/model/ResetAccountPasswordRequest.h
@@ -90,14 +120,22 @@ set(adb_src
 	src/model/CreateDBClusterResult.cc
 	src/model/DeleteAccountRequest.cc
 	src/model/DeleteAccountResult.cc
+	src/model/DeleteDBClusterRequest.cc
+	src/model/DeleteDBClusterResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
+	src/model/DescribeAllDataSourceRequest.cc
+	src/model/DescribeAllDataSourceResult.cc
 	src/model/DescribeAutoRenewAttributeRequest.cc
 	src/model/DescribeAutoRenewAttributeResult.cc
+	src/model/DescribeAvailableResourceRequest.cc
+	src/model/DescribeAvailableResourceResult.cc
 	src/model/DescribeBackupPolicyRequest.cc
 	src/model/DescribeBackupPolicyResult.cc
 	src/model/DescribeBackupsRequest.cc
 	src/model/DescribeBackupsResult.cc
+	src/model/DescribeColumnsRequest.cc
+	src/model/DescribeColumnsResult.cc
 	src/model/DescribeDBClusterAccessWhiteListRequest.cc
 	src/model/DescribeDBClusterAccessWhiteListResult.cc
 	src/model/DescribeDBClusterAttributeRequest.cc
@@ -108,28 +146,50 @@ set(adb_src
 	src/model/DescribeDBClusterPerformanceResult.cc
 	src/model/DescribeDBClustersRequest.cc
 	src/model/DescribeDBClustersResult.cc
+	src/model/DescribeInclinedTablesRequest.cc
+	src/model/DescribeInclinedTablesResult.cc
+	src/model/DescribeLogStoreKeysRequest.cc
+	src/model/DescribeLogStoreKeysResult.cc
+	src/model/DescribeLoghubDetailRequest.cc
+	src/model/DescribeLoghubDetailResult.cc
 	src/model/DescribeOperatorPermissionRequest.cc
 	src/model/DescribeOperatorPermissionResult.cc
+	src/model/DescribeProcessListRequest.cc
+	src/model/DescribeProcessListResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeSchemasRequest.cc
+	src/model/DescribeSchemasResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
 	src/model/DescribeSlowLogTrendRequest.cc
 	src/model/DescribeSlowLogTrendResult.cc
+	src/model/DescribeTableDetailRequest.cc
+	src/model/DescribeTableDetailResult.cc
+	src/model/DescribeTablesRequest.cc
+	src/model/DescribeTablesResult.cc
 	src/model/GrantOperatorPermissionRequest.cc
 	src/model/GrantOperatorPermissionResult.cc
+	src/model/KillProcessRequest.cc
+	src/model/KillProcessResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAutoRenewAttributeRequest.cc
 	src/model/ModifyAutoRenewAttributeResult.cc
+	src/model/ModifyBackupPolicyRequest.cc
+	src/model/ModifyBackupPolicyResult.cc
+	src/model/ModifyDBClusterRequest.cc
+	src/model/ModifyDBClusterResult.cc
 	src/model/ModifyDBClusterAccessWhiteListRequest.cc
 	src/model/ModifyDBClusterAccessWhiteListResult.cc
 	src/model/ModifyDBClusterDescriptionRequest.cc
 	src/model/ModifyDBClusterDescriptionResult.cc
 	src/model/ModifyDBClusterMaintainTimeRequest.cc
 	src/model/ModifyDBClusterMaintainTimeResult.cc
+	src/model/ModifyLogBackupPolicyRequest.cc
+	src/model/ModifyLogBackupPolicyResult.cc
 	src/model/ReleaseClusterPublicConnectionRequest.cc
 	src/model/ReleaseClusterPublicConnectionResult.cc
 	src/model/ResetAccountPasswordRequest.cc

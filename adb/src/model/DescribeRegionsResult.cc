@@ -45,6 +45,10 @@ void DescribeRegionsResult::parse(const std::string &payload)
 		Region regionsObject;
 		if(!valueRegionsRegion["RegionId"].isNull())
 			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
+		if(!valueRegionsRegion["LocalName"].isNull())
+			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
+		if(!valueRegionsRegion["RegionEndpoint"].isNull())
+			regionsObject.regionEndpoint = valueRegionsRegion["RegionEndpoint"].asString();
 		auto allZonesNode = allRegionsNode["Zones"]["Zone"];
 		for (auto allRegionsNodeZonesZone : allZonesNode)
 		{
@@ -53,6 +57,8 @@ void DescribeRegionsResult::parse(const std::string &payload)
 				zonesObject.zoneId = allRegionsNodeZonesZone["ZoneId"].asString();
 			if(!allRegionsNodeZonesZone["VpcEnabled"].isNull())
 				zonesObject.vpcEnabled = allRegionsNodeZonesZone["VpcEnabled"].asString() == "true";
+			if(!allRegionsNodeZonesZone["LocalName"].isNull())
+				zonesObject.localName = allRegionsNodeZonesZone["LocalName"].asString();
 			regionsObject.zones.push_back(zonesObject);
 		}
 		regions_.push_back(regionsObject);

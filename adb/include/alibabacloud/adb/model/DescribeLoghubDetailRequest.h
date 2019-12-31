@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBELOGHUBDETAILREQUEST_H_
+#define ALIBABACLOUD_ADB_MODEL_DESCRIBELOGHUBDETAILREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DescribeRegionsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ADB_EXPORT DescribeLoghubDetailRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeRegionsRequest();
-				~DescribeRegionsRequest();
+				DescribeLoghubDetailRequest();
+				~DescribeLoghubDetailRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getProjectName()const;
+				void setProjectName(const std::string& projectName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAcceptLanguage()const;
-				void setAcceptLanguage(const std::string& acceptLanguage);
+				std::string getExportName()const;
+				void setExportName(const std::string& exportName);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
+				std::string regionId_;
+				std::string projectName_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string acceptLanguage_;
+				std::string exportName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSREQUEST_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBELOGHUBDETAILREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEPROCESSLISTRESULT_H_
+#define ALIBABACLOUD_ADB_MODEL_DESCRIBEPROCESSLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DescribeRegionsResult : public ServiceResult
+			class ALIBABACLOUD_ADB_EXPORT DescribeProcessListResult : public ServiceResult
 			{
 			public:
-				struct Region
+				struct Process
 				{
-					struct Zone
-					{
-						bool vpcEnabled;
-						std::string zoneId;
-						std::string localName;
-					};
-					std::string regionId;
-					std::string regionEndpoint;
-					std::vector<Region::Zone> zones;
-					std::string localName;
+					std::string user;
+					std::string command;
+					std::string startTime;
+					std::string host;
+					int time;
+					int id;
+					std::string processId;
+					std::string info;
+					std::string dB;
 				};
 
 
-				DescribeRegionsResult();
-				explicit DescribeRegionsResult(const std::string &payload);
-				~DescribeRegionsResult();
-				std::vector<Region> getRegions()const;
+				DescribeProcessListResult();
+				explicit DescribeProcessListResult(const std::string &payload);
+				~DescribeProcessListResult();
+				std::string getTotalCount()const;
+				std::string getPageSize()const;
+				std::string getPageNumber()const;
+				std::vector<Process> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Region> regions_;
+				std::string totalCount_;
+				std::string pageSize_;
+				std::string pageNumber_;
+				std::vector<Process> items_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEPROCESSLISTRESULT_H_

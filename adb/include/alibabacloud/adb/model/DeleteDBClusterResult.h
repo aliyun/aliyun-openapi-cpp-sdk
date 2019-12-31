@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DELETEDBCLUSTERRESULT_H_
+#define ALIBABACLOUD_ADB_MODEL_DELETEDBCLUSTERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DescribeRegionsResult : public ServiceResult
+			class ALIBABACLOUD_ADB_EXPORT DeleteDBClusterResult : public ServiceResult
 			{
 			public:
-				struct Region
-				{
-					struct Zone
-					{
-						bool vpcEnabled;
-						std::string zoneId;
-						std::string localName;
-					};
-					std::string regionId;
-					std::string regionEndpoint;
-					std::vector<Region::Zone> zones;
-					std::string localName;
-				};
 
 
-				DescribeRegionsResult();
-				explicit DescribeRegionsResult(const std::string &payload);
-				~DescribeRegionsResult();
-				std::vector<Region> getRegions()const;
+				DeleteDBClusterResult();
+				explicit DeleteDBClusterResult(const std::string &payload);
+				~DeleteDBClusterResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Region> regions_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEREGIONSRESULT_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DELETEDBCLUSTERRESULT_H_
