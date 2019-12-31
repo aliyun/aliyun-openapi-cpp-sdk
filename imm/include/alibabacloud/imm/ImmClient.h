@@ -36,6 +36,8 @@
 #include "model/CreateGrabFrameTaskResult.h"
 #include "model/CreateGroupFacesJobRequest.h"
 #include "model/CreateGroupFacesJobResult.h"
+#include "model/CreateImageProcessTaskRequest.h"
+#include "model/CreateImageProcessTaskResult.h"
 #include "model/CreateMediaComplexTaskRequest.h"
 #include "model/CreateMediaComplexTaskResult.h"
 #include "model/CreateMergeFaceGroupsJobRequest.h"
@@ -110,6 +112,8 @@
 #include "model/GetMediaMetaResult.h"
 #include "model/GetOfficeConversionTaskRequest.h"
 #include "model/GetOfficeConversionTaskResult.h"
+#include "model/GetOfficePreviewURLRequest.h"
+#include "model/GetOfficePreviewURLResult.h"
 #include "model/GetProjectRequest.h"
 #include "model/GetProjectResult.h"
 #include "model/GetSetRequest.h"
@@ -192,6 +196,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateGroupFacesJobResult> CreateGroupFacesJobOutcome;
 			typedef std::future<CreateGroupFacesJobOutcome> CreateGroupFacesJobOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CreateGroupFacesJobRequest&, const CreateGroupFacesJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupFacesJobAsyncHandler;
+			typedef Outcome<Error, Model::CreateImageProcessTaskResult> CreateImageProcessTaskOutcome;
+			typedef std::future<CreateImageProcessTaskOutcome> CreateImageProcessTaskOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::CreateImageProcessTaskRequest&, const CreateImageProcessTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageProcessTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateMediaComplexTaskResult> CreateMediaComplexTaskOutcome;
 			typedef std::future<CreateMediaComplexTaskOutcome> CreateMediaComplexTaskOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CreateMediaComplexTaskRequest&, const CreateMediaComplexTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMediaComplexTaskAsyncHandler;
@@ -303,6 +310,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetOfficeConversionTaskResult> GetOfficeConversionTaskOutcome;
 			typedef std::future<GetOfficeConversionTaskOutcome> GetOfficeConversionTaskOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetOfficeConversionTaskRequest&, const GetOfficeConversionTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOfficeConversionTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetOfficePreviewURLResult> GetOfficePreviewURLOutcome;
+			typedef std::future<GetOfficePreviewURLOutcome> GetOfficePreviewURLOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::GetOfficePreviewURLRequest&, const GetOfficePreviewURLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOfficePreviewURLAsyncHandler;
 			typedef Outcome<Error, Model::GetProjectResult> GetProjectOutcome;
 			typedef std::future<GetProjectOutcome> GetProjectOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetProjectRequest&, const GetProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectAsyncHandler;
@@ -407,6 +417,9 @@ namespace AlibabaCloud
 			CreateGroupFacesJobOutcome createGroupFacesJob(const Model::CreateGroupFacesJobRequest &request)const;
 			void createGroupFacesJobAsync(const Model::CreateGroupFacesJobRequest& request, const CreateGroupFacesJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateGroupFacesJobOutcomeCallable createGroupFacesJobCallable(const Model::CreateGroupFacesJobRequest& request) const;
+			CreateImageProcessTaskOutcome createImageProcessTask(const Model::CreateImageProcessTaskRequest &request)const;
+			void createImageProcessTaskAsync(const Model::CreateImageProcessTaskRequest& request, const CreateImageProcessTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateImageProcessTaskOutcomeCallable createImageProcessTaskCallable(const Model::CreateImageProcessTaskRequest& request) const;
 			CreateMediaComplexTaskOutcome createMediaComplexTask(const Model::CreateMediaComplexTaskRequest &request)const;
 			void createMediaComplexTaskAsync(const Model::CreateMediaComplexTaskRequest& request, const CreateMediaComplexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMediaComplexTaskOutcomeCallable createMediaComplexTaskCallable(const Model::CreateMediaComplexTaskRequest& request) const;
@@ -518,6 +531,9 @@ namespace AlibabaCloud
 			GetOfficeConversionTaskOutcome getOfficeConversionTask(const Model::GetOfficeConversionTaskRequest &request)const;
 			void getOfficeConversionTaskAsync(const Model::GetOfficeConversionTaskRequest& request, const GetOfficeConversionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOfficeConversionTaskOutcomeCallable getOfficeConversionTaskCallable(const Model::GetOfficeConversionTaskRequest& request) const;
+			GetOfficePreviewURLOutcome getOfficePreviewURL(const Model::GetOfficePreviewURLRequest &request)const;
+			void getOfficePreviewURLAsync(const Model::GetOfficePreviewURLRequest& request, const GetOfficePreviewURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOfficePreviewURLOutcomeCallable getOfficePreviewURLCallable(const Model::GetOfficePreviewURLRequest& request) const;
 			GetProjectOutcome getProject(const Model::GetProjectRequest &request)const;
 			void getProjectAsync(const Model::GetProjectRequest& request, const GetProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetProjectOutcomeCallable getProjectCallable(const Model::GetProjectRequest& request) const;

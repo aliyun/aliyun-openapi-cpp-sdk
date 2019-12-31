@@ -303,6 +303,42 @@ ImmClient::CreateGroupFacesJobOutcomeCallable ImmClient::createGroupFacesJobCall
 	return task->get_future();
 }
 
+ImmClient::CreateImageProcessTaskOutcome ImmClient::createImageProcessTask(const CreateImageProcessTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateImageProcessTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateImageProcessTaskOutcome(CreateImageProcessTaskResult(outcome.result()));
+	else
+		return CreateImageProcessTaskOutcome(outcome.error());
+}
+
+void ImmClient::createImageProcessTaskAsync(const CreateImageProcessTaskRequest& request, const CreateImageProcessTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createImageProcessTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::CreateImageProcessTaskOutcomeCallable ImmClient::createImageProcessTaskCallable(const CreateImageProcessTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateImageProcessTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createImageProcessTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::CreateMediaComplexTaskOutcome ImmClient::createMediaComplexTask(const CreateMediaComplexTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +1665,42 @@ ImmClient::GetOfficeConversionTaskOutcomeCallable ImmClient::getOfficeConversion
 			[this, request]()
 			{
 			return this->getOfficeConversionTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::GetOfficePreviewURLOutcome ImmClient::getOfficePreviewURL(const GetOfficePreviewURLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOfficePreviewURLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOfficePreviewURLOutcome(GetOfficePreviewURLResult(outcome.result()));
+	else
+		return GetOfficePreviewURLOutcome(outcome.error());
+}
+
+void ImmClient::getOfficePreviewURLAsync(const GetOfficePreviewURLRequest& request, const GetOfficePreviewURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOfficePreviewURL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::GetOfficePreviewURLOutcomeCallable ImmClient::getOfficePreviewURLCallable(const GetOfficePreviewURLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOfficePreviewURLOutcome()>>(
+			[this, request]()
+			{
+			return this->getOfficePreviewURL(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

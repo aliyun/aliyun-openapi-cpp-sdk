@@ -35,6 +35,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/CreateGrabFrameTaskResult.h
 	include/alibabacloud/imm/model/CreateGroupFacesJobRequest.h
 	include/alibabacloud/imm/model/CreateGroupFacesJobResult.h
+	include/alibabacloud/imm/model/CreateImageProcessTaskRequest.h
+	include/alibabacloud/imm/model/CreateImageProcessTaskResult.h
 	include/alibabacloud/imm/model/CreateMediaComplexTaskRequest.h
 	include/alibabacloud/imm/model/CreateMediaComplexTaskResult.h
 	include/alibabacloud/imm/model/CreateMergeFaceGroupsJobRequest.h
@@ -109,6 +111,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/GetMediaMetaResult.h
 	include/alibabacloud/imm/model/GetOfficeConversionTaskRequest.h
 	include/alibabacloud/imm/model/GetOfficeConversionTaskResult.h
+	include/alibabacloud/imm/model/GetOfficePreviewURLRequest.h
+	include/alibabacloud/imm/model/GetOfficePreviewURLResult.h
 	include/alibabacloud/imm/model/GetProjectRequest.h
 	include/alibabacloud/imm/model/GetProjectResult.h
 	include/alibabacloud/imm/model/GetSetRequest.h
@@ -178,6 +182,8 @@ set(imm_src
 	src/model/CreateGrabFrameTaskResult.cc
 	src/model/CreateGroupFacesJobRequest.cc
 	src/model/CreateGroupFacesJobResult.cc
+	src/model/CreateImageProcessTaskRequest.cc
+	src/model/CreateImageProcessTaskResult.cc
 	src/model/CreateMediaComplexTaskRequest.cc
 	src/model/CreateMediaComplexTaskResult.cc
 	src/model/CreateMergeFaceGroupsJobRequest.cc
@@ -252,6 +258,8 @@ set(imm_src
 	src/model/GetMediaMetaResult.cc
 	src/model/GetOfficeConversionTaskRequest.cc
 	src/model/GetOfficeConversionTaskResult.cc
+	src/model/GetOfficePreviewURLRequest.cc
+	src/model/GetOfficePreviewURLResult.cc
 	src/model/GetProjectRequest.cc
 	src/model/GetProjectResult.cc
 	src/model/GetSetRequest.cc
