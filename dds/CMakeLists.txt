@@ -41,22 +41,12 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/CreateRecommendationTaskResult.h
 	include/alibabacloud/dds/model/CreateShardingDBInstanceRequest.h
 	include/alibabacloud/dds/model/CreateShardingDBInstanceResult.h
-	include/alibabacloud/dds/model/CreateStaticVerificationRequest.h
-	include/alibabacloud/dds/model/CreateStaticVerificationResult.h
 	include/alibabacloud/dds/model/DeleteDBInstanceRequest.h
 	include/alibabacloud/dds/model/DeleteDBInstanceResult.h
 	include/alibabacloud/dds/model/DeleteNodeRequest.h
 	include/alibabacloud/dds/model/DeleteNodeResult.h
 	include/alibabacloud/dds/model/DescribeAccountsRequest.h
 	include/alibabacloud/dds/model/DescribeAccountsResult.h
-	include/alibabacloud/dds/model/DescribeActiveOperationTaskRequest.h
-	include/alibabacloud/dds/model/DescribeActiveOperationTaskResult.h
-	include/alibabacloud/dds/model/DescribeActiveOperationTaskCountRequest.h
-	include/alibabacloud/dds/model/DescribeActiveOperationTaskCountResult.h
-	include/alibabacloud/dds/model/DescribeActiveOperationTaskRegionRequest.h
-	include/alibabacloud/dds/model/DescribeActiveOperationTaskRegionResult.h
-	include/alibabacloud/dds/model/DescribeActiveOperationTaskTypeRequest.h
-	include/alibabacloud/dds/model/DescribeActiveOperationTaskTypeResult.h
 	include/alibabacloud/dds/model/DescribeAuditFilesRequest.h
 	include/alibabacloud/dds/model/DescribeAuditFilesResult.h
 	include/alibabacloud/dds/model/DescribeAuditLogFilterRequest.h
@@ -67,10 +57,10 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeAuditRecordsResult.h
 	include/alibabacloud/dds/model/DescribeAvailableEngineVersionRequest.h
 	include/alibabacloud/dds/model/DescribeAvailableEngineVersionResult.h
+	include/alibabacloud/dds/model/DescribeAvailableResourceRequest.h
+	include/alibabacloud/dds/model/DescribeAvailableResourceResult.h
 	include/alibabacloud/dds/model/DescribeAvailableTimeRangeRequest.h
 	include/alibabacloud/dds/model/DescribeAvailableTimeRangeResult.h
-	include/alibabacloud/dds/model/DescribeAvaliableTimeRangeRequest.h
-	include/alibabacloud/dds/model/DescribeAvaliableTimeRangeResult.h
 	include/alibabacloud/dds/model/DescribeBackupDBsRequest.h
 	include/alibabacloud/dds/model/DescribeBackupDBsResult.h
 	include/alibabacloud/dds/model/DescribeBackupPolicyRequest.h
@@ -103,48 +93,28 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeParameterTemplatesResult.h
 	include/alibabacloud/dds/model/DescribeParametersRequest.h
 	include/alibabacloud/dds/model/DescribeParametersResult.h
-	include/alibabacloud/dds/model/DescribeRdsVSwitchsRequest.h
-	include/alibabacloud/dds/model/DescribeRdsVSwitchsResult.h
-	include/alibabacloud/dds/model/DescribeRdsVpcsRequest.h
-	include/alibabacloud/dds/model/DescribeRdsVpcsResult.h
 	include/alibabacloud/dds/model/DescribeRegionsRequest.h
 	include/alibabacloud/dds/model/DescribeRegionsResult.h
 	include/alibabacloud/dds/model/DescribeRenewalPriceRequest.h
 	include/alibabacloud/dds/model/DescribeRenewalPriceResult.h
-	include/alibabacloud/dds/model/DescribeReplicaConflictInfoRequest.h
-	include/alibabacloud/dds/model/DescribeReplicaConflictInfoResult.h
-	include/alibabacloud/dds/model/DescribeReplicaInitializeProgressRequest.h
-	include/alibabacloud/dds/model/DescribeReplicaInitializeProgressResult.h
-	include/alibabacloud/dds/model/DescribeReplicaPerformanceRequest.h
-	include/alibabacloud/dds/model/DescribeReplicaPerformanceResult.h
 	include/alibabacloud/dds/model/DescribeReplicaSetRoleRequest.h
 	include/alibabacloud/dds/model/DescribeReplicaSetRoleResult.h
-	include/alibabacloud/dds/model/DescribeReplicaUsageRequest.h
-	include/alibabacloud/dds/model/DescribeReplicaUsageResult.h
-	include/alibabacloud/dds/model/DescribeReplicasRequest.h
-	include/alibabacloud/dds/model/DescribeReplicasResult.h
-	include/alibabacloud/dds/model/DescribeReplicationGroupRequest.h
-	include/alibabacloud/dds/model/DescribeReplicationGroupResult.h
 	include/alibabacloud/dds/model/DescribeRoleZoneInfoRequest.h
 	include/alibabacloud/dds/model/DescribeRoleZoneInfoResult.h
 	include/alibabacloud/dds/model/DescribeRunningLogRecordsRequest.h
 	include/alibabacloud/dds/model/DescribeRunningLogRecordsResult.h
+	include/alibabacloud/dds/model/DescribeSecurityGroupConfigurationRequest.h
+	include/alibabacloud/dds/model/DescribeSecurityGroupConfigurationResult.h
 	include/alibabacloud/dds/model/DescribeSecurityIpsRequest.h
 	include/alibabacloud/dds/model/DescribeSecurityIpsResult.h
 	include/alibabacloud/dds/model/DescribeShardingNetworkAddressRequest.h
 	include/alibabacloud/dds/model/DescribeShardingNetworkAddressResult.h
 	include/alibabacloud/dds/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/dds/model/DescribeSlowLogRecordsResult.h
-	include/alibabacloud/dds/model/DescribeStaticVerificationListRequest.h
-	include/alibabacloud/dds/model/DescribeStaticVerificationListResult.h
-	include/alibabacloud/dds/model/DescribeStrategyRequest.h
-	include/alibabacloud/dds/model/DescribeStrategyResult.h
-	include/alibabacloud/dds/model/DescribeVerificationListRequest.h
-	include/alibabacloud/dds/model/DescribeVerificationListResult.h
+	include/alibabacloud/dds/model/DescribeTagsRequest.h
+	include/alibabacloud/dds/model/DescribeTagsResult.h
 	include/alibabacloud/dds/model/DestroyInstanceRequest.h
 	include/alibabacloud/dds/model/DestroyInstanceResult.h
-	include/alibabacloud/dds/model/EvaluateFailOverSwitchRequest.h
-	include/alibabacloud/dds/model/EvaluateFailOverSwitchResult.h
 	include/alibabacloud/dds/model/ListTagResourcesRequest.h
 	include/alibabacloud/dds/model/ListTagResourcesResult.h
 	include/alibabacloud/dds/model/MigrateAvailableZoneRequest.h
@@ -153,8 +123,6 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/MigrateToOtherZoneResult.h
 	include/alibabacloud/dds/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/dds/model/ModifyAccountDescriptionResult.h
-	include/alibabacloud/dds/model/ModifyActiveOperationTaskRequest.h
-	include/alibabacloud/dds/model/ModifyActiveOperationTaskResult.h
 	include/alibabacloud/dds/model/ModifyAuditLogFilterRequest.h
 	include/alibabacloud/dds/model/ModifyAuditLogFilterResult.h
 	include/alibabacloud/dds/model/ModifyAuditPolicyRequest.h
@@ -179,8 +147,6 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifyDBInstanceSpecResult.h
 	include/alibabacloud/dds/model/ModifyDBInstanceTDERequest.h
 	include/alibabacloud/dds/model/ModifyDBInstanceTDEResult.h
-	include/alibabacloud/dds/model/ModifyGuardDomainModeRequest.h
-	include/alibabacloud/dds/model/ModifyGuardDomainModeResult.h
 	include/alibabacloud/dds/model/ModifyInstanceAutoRenewalAttributeRequest.h
 	include/alibabacloud/dds/model/ModifyInstanceAutoRenewalAttributeResult.h
 	include/alibabacloud/dds/model/ModifyInstanceVpcAuthModeRequest.h
@@ -189,24 +155,14 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifyNodeSpecResult.h
 	include/alibabacloud/dds/model/ModifyParametersRequest.h
 	include/alibabacloud/dds/model/ModifyParametersResult.h
-	include/alibabacloud/dds/model/ModifyReplicaDescriptionRequest.h
-	include/alibabacloud/dds/model/ModifyReplicaDescriptionResult.h
-	include/alibabacloud/dds/model/ModifyReplicaModeRequest.h
-	include/alibabacloud/dds/model/ModifyReplicaModeResult.h
-	include/alibabacloud/dds/model/ModifyReplicaRecoveryModeRequest.h
-	include/alibabacloud/dds/model/ModifyReplicaRecoveryModeResult.h
-	include/alibabacloud/dds/model/ModifyReplicaRelationRequest.h
-	include/alibabacloud/dds/model/ModifyReplicaRelationResult.h
-	include/alibabacloud/dds/model/ModifyReplicaVerificationModeRequest.h
-	include/alibabacloud/dds/model/ModifyReplicaVerificationModeResult.h
+	include/alibabacloud/dds/model/ModifySecurityGroupConfigurationRequest.h
+	include/alibabacloud/dds/model/ModifySecurityGroupConfigurationResult.h
 	include/alibabacloud/dds/model/ModifySecurityIpsRequest.h
 	include/alibabacloud/dds/model/ModifySecurityIpsResult.h
 	include/alibabacloud/dds/model/ReleaseNodePrivateNetworkAddressRequest.h
 	include/alibabacloud/dds/model/ReleaseNodePrivateNetworkAddressResult.h
 	include/alibabacloud/dds/model/ReleasePublicNetworkAddressRequest.h
 	include/alibabacloud/dds/model/ReleasePublicNetworkAddressResult.h
-	include/alibabacloud/dds/model/ReleaseReplicaRequest.h
-	include/alibabacloud/dds/model/ReleaseReplicaResult.h
 	include/alibabacloud/dds/model/RenewDBInstanceRequest.h
 	include/alibabacloud/dds/model/RenewDBInstanceResult.h
 	include/alibabacloud/dds/model/ResetAccountPasswordRequest.h
@@ -215,12 +171,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/RestartDBInstanceResult.h
 	include/alibabacloud/dds/model/RestoreDBInstanceRequest.h
 	include/alibabacloud/dds/model/RestoreDBInstanceResult.h
-	include/alibabacloud/dds/model/SampleRequest.h
-	include/alibabacloud/dds/model/SampleResult.h
 	include/alibabacloud/dds/model/SwitchDBInstanceHARequest.h
 	include/alibabacloud/dds/model/SwitchDBInstanceHAResult.h
-	include/alibabacloud/dds/model/SwithcDBInstanceHARequest.h
-	include/alibabacloud/dds/model/SwithcDBInstanceHAResult.h
 	include/alibabacloud/dds/model/TagResourcesRequest.h
 	include/alibabacloud/dds/model/TagResourcesResult.h
 	include/alibabacloud/dds/model/TransformToPrePaidRequest.h
@@ -254,22 +206,12 @@ set(dds_src
 	src/model/CreateRecommendationTaskResult.cc
 	src/model/CreateShardingDBInstanceRequest.cc
 	src/model/CreateShardingDBInstanceResult.cc
-	src/model/CreateStaticVerificationRequest.cc
-	src/model/CreateStaticVerificationResult.cc
 	src/model/DeleteDBInstanceRequest.cc
 	src/model/DeleteDBInstanceResult.cc
 	src/model/DeleteNodeRequest.cc
 	src/model/DeleteNodeResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
-	src/model/DescribeActiveOperationTaskRequest.cc
-	src/model/DescribeActiveOperationTaskResult.cc
-	src/model/DescribeActiveOperationTaskCountRequest.cc
-	src/model/DescribeActiveOperationTaskCountResult.cc
-	src/model/DescribeActiveOperationTaskRegionRequest.cc
-	src/model/DescribeActiveOperationTaskRegionResult.cc
-	src/model/DescribeActiveOperationTaskTypeRequest.cc
-	src/model/DescribeActiveOperationTaskTypeResult.cc
 	src/model/DescribeAuditFilesRequest.cc
 	src/model/DescribeAuditFilesResult.cc
 	src/model/DescribeAuditLogFilterRequest.cc
@@ -280,10 +222,10 @@ set(dds_src
 	src/model/DescribeAuditRecordsResult.cc
 	src/model/DescribeAvailableEngineVersionRequest.cc
 	src/model/DescribeAvailableEngineVersionResult.cc
+	src/model/DescribeAvailableResourceRequest.cc
+	src/model/DescribeAvailableResourceResult.cc
 	src/model/DescribeAvailableTimeRangeRequest.cc
 	src/model/DescribeAvailableTimeRangeResult.cc
-	src/model/DescribeAvaliableTimeRangeRequest.cc
-	src/model/DescribeAvaliableTimeRangeResult.cc
 	src/model/DescribeBackupDBsRequest.cc
 	src/model/DescribeBackupDBsResult.cc
 	src/model/DescribeBackupPolicyRequest.cc
@@ -316,48 +258,28 @@ set(dds_src
 	src/model/DescribeParameterTemplatesResult.cc
 	src/model/DescribeParametersRequest.cc
 	src/model/DescribeParametersResult.cc
-	src/model/DescribeRdsVSwitchsRequest.cc
-	src/model/DescribeRdsVSwitchsResult.cc
-	src/model/DescribeRdsVpcsRequest.cc
-	src/model/DescribeRdsVpcsResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeRenewalPriceRequest.cc
 	src/model/DescribeRenewalPriceResult.cc
-	src/model/DescribeReplicaConflictInfoRequest.cc
-	src/model/DescribeReplicaConflictInfoResult.cc
-	src/model/DescribeReplicaInitializeProgressRequest.cc
-	src/model/DescribeReplicaInitializeProgressResult.cc
-	src/model/DescribeReplicaPerformanceRequest.cc
-	src/model/DescribeReplicaPerformanceResult.cc
 	src/model/DescribeReplicaSetRoleRequest.cc
 	src/model/DescribeReplicaSetRoleResult.cc
-	src/model/DescribeReplicaUsageRequest.cc
-	src/model/DescribeReplicaUsageResult.cc
-	src/model/DescribeReplicasRequest.cc
-	src/model/DescribeReplicasResult.cc
-	src/model/DescribeReplicationGroupRequest.cc
-	src/model/DescribeReplicationGroupResult.cc
 	src/model/DescribeRoleZoneInfoRequest.cc
 	src/model/DescribeRoleZoneInfoResult.cc
 	src/model/DescribeRunningLogRecordsRequest.cc
 	src/model/DescribeRunningLogRecordsResult.cc
+	src/model/DescribeSecurityGroupConfigurationRequest.cc
+	src/model/DescribeSecurityGroupConfigurationResult.cc
 	src/model/DescribeSecurityIpsRequest.cc
 	src/model/DescribeSecurityIpsResult.cc
 	src/model/DescribeShardingNetworkAddressRequest.cc
 	src/model/DescribeShardingNetworkAddressResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
-	src/model/DescribeStaticVerificationListRequest.cc
-	src/model/DescribeStaticVerificationListResult.cc
-	src/model/DescribeStrategyRequest.cc
-	src/model/DescribeStrategyResult.cc
-	src/model/DescribeVerificationListRequest.cc
-	src/model/DescribeVerificationListResult.cc
+	src/model/DescribeTagsRequest.cc
+	src/model/DescribeTagsResult.cc
 	src/model/DestroyInstanceRequest.cc
 	src/model/DestroyInstanceResult.cc
-	src/model/EvaluateFailOverSwitchRequest.cc
-	src/model/EvaluateFailOverSwitchResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/MigrateAvailableZoneRequest.cc
@@ -366,8 +288,6 @@ set(dds_src
 	src/model/MigrateToOtherZoneResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
-	src/model/ModifyActiveOperationTaskRequest.cc
-	src/model/ModifyActiveOperationTaskResult.cc
 	src/model/ModifyAuditLogFilterRequest.cc
 	src/model/ModifyAuditLogFilterResult.cc
 	src/model/ModifyAuditPolicyRequest.cc
@@ -392,8 +312,6 @@ set(dds_src
 	src/model/ModifyDBInstanceSpecResult.cc
 	src/model/ModifyDBInstanceTDERequest.cc
 	src/model/ModifyDBInstanceTDEResult.cc
-	src/model/ModifyGuardDomainModeRequest.cc
-	src/model/ModifyGuardDomainModeResult.cc
 	src/model/ModifyInstanceAutoRenewalAttributeRequest.cc
 	src/model/ModifyInstanceAutoRenewalAttributeResult.cc
 	src/model/ModifyInstanceVpcAuthModeRequest.cc
@@ -402,24 +320,14 @@ set(dds_src
 	src/model/ModifyNodeSpecResult.cc
 	src/model/ModifyParametersRequest.cc
 	src/model/ModifyParametersResult.cc
-	src/model/ModifyReplicaDescriptionRequest.cc
-	src/model/ModifyReplicaDescriptionResult.cc
-	src/model/ModifyReplicaModeRequest.cc
-	src/model/ModifyReplicaModeResult.cc
-	src/model/ModifyReplicaRecoveryModeRequest.cc
-	src/model/ModifyReplicaRecoveryModeResult.cc
-	src/model/ModifyReplicaRelationRequest.cc
-	src/model/ModifyReplicaRelationResult.cc
-	src/model/ModifyReplicaVerificationModeRequest.cc
-	src/model/ModifyReplicaVerificationModeResult.cc
+	src/model/ModifySecurityGroupConfigurationRequest.cc
+	src/model/ModifySecurityGroupConfigurationResult.cc
 	src/model/ModifySecurityIpsRequest.cc
 	src/model/ModifySecurityIpsResult.cc
 	src/model/ReleaseNodePrivateNetworkAddressRequest.cc
 	src/model/ReleaseNodePrivateNetworkAddressResult.cc
 	src/model/ReleasePublicNetworkAddressRequest.cc
 	src/model/ReleasePublicNetworkAddressResult.cc
-	src/model/ReleaseReplicaRequest.cc
-	src/model/ReleaseReplicaResult.cc
 	src/model/RenewDBInstanceRequest.cc
 	src/model/RenewDBInstanceResult.cc
 	src/model/ResetAccountPasswordRequest.cc
@@ -428,12 +336,8 @@ set(dds_src
 	src/model/RestartDBInstanceResult.cc
 	src/model/RestoreDBInstanceRequest.cc
 	src/model/RestoreDBInstanceResult.cc
-	src/model/SampleRequest.cc
-	src/model/SampleResult.cc
 	src/model/SwitchDBInstanceHARequest.cc
 	src/model/SwitchDBInstanceHAResult.cc
-	src/model/SwithcDBInstanceHARequest.cc
-	src/model/SwithcDBInstanceHAResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/TransformToPrePaidRequest.cc

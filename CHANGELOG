@@ -1,3 +1,6 @@
+2020-01-03 Version 1.36.231
+- New API DescribeAvailableResource.
+
 2020-01-03 Version 1.36.230
 - ImmediateDelete.
 - DescribeInstance CreateTimeUTC ExpireTimeUTC.

@@ -33,16 +33,16 @@ namespace AlibabaCloud
 				struct ReplicaSet
 				{
 					int storage;
-					std::string class;
+					std::string _class;
 				};
 				struct ConfigServer
 				{
 					int storage;
-					std::string class;
+					std::string _class;
 				};
 				struct Mongos
 				{
-					std::string class;
+					std::string _class;
 				};
 
 			public:

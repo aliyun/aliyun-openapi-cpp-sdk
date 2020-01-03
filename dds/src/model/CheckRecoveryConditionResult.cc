@@ -40,13 +40,13 @@ void CheckRecoveryConditionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	if(!value["DBInstanceName"].isNull())
-		dBInstanceName_ = std::stoi(value["DBInstanceName"].asString());
+		dBInstanceName_ = value["DBInstanceName"].asString();
 	if(!value["IsValid"].isNull())
 		isValid_ = value["IsValid"].asString() == "true";
 
 }
 
-int CheckRecoveryConditionResult::getDBInstanceName()const
+std::string CheckRecoveryConditionResult::getDBInstanceName()const
 {
 	return dBInstanceName_;
 }

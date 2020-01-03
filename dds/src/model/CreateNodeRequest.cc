@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::CreateNodeRequest;
 
 CreateNodeRequest::CreateNodeRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "CreateNode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateNodeRequest::~CreateNodeRequest()
 {}

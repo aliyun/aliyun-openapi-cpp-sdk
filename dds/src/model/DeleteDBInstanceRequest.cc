@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DeleteDBInstanceRequest;
 
 DeleteDBInstanceRequest::DeleteDBInstanceRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DeleteDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDBInstanceRequest::~DeleteDBInstanceRequest()
 {}

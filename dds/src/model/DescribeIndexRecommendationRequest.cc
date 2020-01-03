@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeIndexRecommendationRequest;
 
 DescribeIndexRecommendationRequest::DescribeIndexRecommendationRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeIndexRecommendation")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeIndexRecommendationRequest::~DescribeIndexRecommendationRequest()
 {}

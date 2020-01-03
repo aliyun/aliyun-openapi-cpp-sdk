@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeReplicaSetRoleRequest;
 
 DescribeReplicaSetRoleRequest::DescribeReplicaSetRoleRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeReplicaSetRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeReplicaSetRoleRequest::~DescribeReplicaSetRoleRequest()
 {}

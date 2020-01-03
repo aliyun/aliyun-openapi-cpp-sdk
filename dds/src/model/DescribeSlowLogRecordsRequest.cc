@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeSlowLogRecordsRequest;
 
 DescribeSlowLogRecordsRequest::DescribeSlowLogRecordsRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeSlowLogRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSlowLogRecordsRequest::~DescribeSlowLogRecordsRequest()
 {}

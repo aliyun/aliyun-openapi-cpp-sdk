@@ -41,14 +41,7 @@ void DescribeAuditPolicyResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["LogAuditStatus"].isNull())
 		logAuditStatus_ = value["LogAuditStatus"].asString();
-	if(!value["StoragePeriod"].isNull())
-		storagePeriod_ = std::stoi(value["StoragePeriod"].asString());
 
-}
-
-int DescribeAuditPolicyResult::getStoragePeriod()const
-{
-	return storagePeriod_;
 }
 
 std::string DescribeAuditPolicyResult::getLogAuditStatus()const

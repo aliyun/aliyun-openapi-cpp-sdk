@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::ModifyAuditLogFilterRequest;
 
 ModifyAuditLogFilterRequest::ModifyAuditLogFilterRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "ModifyAuditLogFilter")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAuditLogFilterRequest::~ModifyAuditLogFilterRequest()
 {}

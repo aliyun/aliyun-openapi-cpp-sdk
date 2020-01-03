@@ -31,21 +31,21 @@ DdsClient::DdsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Dds");
 }
 
 DdsClient::DdsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Dds");
 }
 
 DdsClient::DdsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Dds");
 }
 
 DdsClient::~DdsClient()
@@ -411,42 +411,6 @@ DdsClient::CreateShardingDBInstanceOutcomeCallable DdsClient::createShardingDBIn
 	return task->get_future();
 }
 
-DdsClient::CreateStaticVerificationOutcome DdsClient::createStaticVerification(const CreateStaticVerificationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateStaticVerificationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateStaticVerificationOutcome(CreateStaticVerificationResult(outcome.result()));
-	else
-		return CreateStaticVerificationOutcome(outcome.error());
-}
-
-void DdsClient::createStaticVerificationAsync(const CreateStaticVerificationRequest& request, const CreateStaticVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createStaticVerification(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::CreateStaticVerificationOutcomeCallable DdsClient::createStaticVerificationCallable(const CreateStaticVerificationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateStaticVerificationOutcome()>>(
-			[this, request]()
-			{
-			return this->createStaticVerification(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DdsClient::DeleteDBInstanceOutcome DdsClient::deleteDBInstance(const DeleteDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,150 +513,6 @@ DdsClient::DescribeAccountsOutcomeCallable DdsClient::describeAccountsCallable(c
 			[this, request]()
 			{
 			return this->describeAccounts(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeActiveOperationTaskOutcome DdsClient::describeActiveOperationTask(const DescribeActiveOperationTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeActiveOperationTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeActiveOperationTaskOutcome(DescribeActiveOperationTaskResult(outcome.result()));
-	else
-		return DescribeActiveOperationTaskOutcome(outcome.error());
-}
-
-void DdsClient::describeActiveOperationTaskAsync(const DescribeActiveOperationTaskRequest& request, const DescribeActiveOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeActiveOperationTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeActiveOperationTaskOutcomeCallable DdsClient::describeActiveOperationTaskCallable(const DescribeActiveOperationTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeActiveOperationTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->describeActiveOperationTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeActiveOperationTaskCountOutcome DdsClient::describeActiveOperationTaskCount(const DescribeActiveOperationTaskCountRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeActiveOperationTaskCountOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeActiveOperationTaskCountOutcome(DescribeActiveOperationTaskCountResult(outcome.result()));
-	else
-		return DescribeActiveOperationTaskCountOutcome(outcome.error());
-}
-
-void DdsClient::describeActiveOperationTaskCountAsync(const DescribeActiveOperationTaskCountRequest& request, const DescribeActiveOperationTaskCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeActiveOperationTaskCount(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeActiveOperationTaskCountOutcomeCallable DdsClient::describeActiveOperationTaskCountCallable(const DescribeActiveOperationTaskCountRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeActiveOperationTaskCountOutcome()>>(
-			[this, request]()
-			{
-			return this->describeActiveOperationTaskCount(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeActiveOperationTaskRegionOutcome DdsClient::describeActiveOperationTaskRegion(const DescribeActiveOperationTaskRegionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeActiveOperationTaskRegionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeActiveOperationTaskRegionOutcome(DescribeActiveOperationTaskRegionResult(outcome.result()));
-	else
-		return DescribeActiveOperationTaskRegionOutcome(outcome.error());
-}
-
-void DdsClient::describeActiveOperationTaskRegionAsync(const DescribeActiveOperationTaskRegionRequest& request, const DescribeActiveOperationTaskRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeActiveOperationTaskRegion(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeActiveOperationTaskRegionOutcomeCallable DdsClient::describeActiveOperationTaskRegionCallable(const DescribeActiveOperationTaskRegionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeActiveOperationTaskRegionOutcome()>>(
-			[this, request]()
-			{
-			return this->describeActiveOperationTaskRegion(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeActiveOperationTaskTypeOutcome DdsClient::describeActiveOperationTaskType(const DescribeActiveOperationTaskTypeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeActiveOperationTaskTypeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeActiveOperationTaskTypeOutcome(DescribeActiveOperationTaskTypeResult(outcome.result()));
-	else
-		return DescribeActiveOperationTaskTypeOutcome(outcome.error());
-}
-
-void DdsClient::describeActiveOperationTaskTypeAsync(const DescribeActiveOperationTaskTypeRequest& request, const DescribeActiveOperationTaskTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeActiveOperationTaskType(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeActiveOperationTaskTypeOutcomeCallable DdsClient::describeActiveOperationTaskTypeCallable(const DescribeActiveOperationTaskTypeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeActiveOperationTaskTypeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeActiveOperationTaskType(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -879,6 +699,42 @@ DdsClient::DescribeAvailableEngineVersionOutcomeCallable DdsClient::describeAvai
 	return task->get_future();
 }
 
+DdsClient::DescribeAvailableResourceOutcome DdsClient::describeAvailableResource(const DescribeAvailableResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAvailableResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAvailableResourceOutcome(DescribeAvailableResourceResult(outcome.result()));
+	else
+		return DescribeAvailableResourceOutcome(outcome.error());
+}
+
+void DdsClient::describeAvailableResourceAsync(const DescribeAvailableResourceRequest& request, const DescribeAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAvailableResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeAvailableResourceOutcomeCallable DdsClient::describeAvailableResourceCallable(const DescribeAvailableResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAvailableResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAvailableResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeAvailableTimeRangeOutcome DdsClient::describeAvailableTimeRange(const DescribeAvailableTimeRangeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,42 +765,6 @@ DdsClient::DescribeAvailableTimeRangeOutcomeCallable DdsClient::describeAvailabl
 			[this, request]()
 			{
 			return this->describeAvailableTimeRange(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeAvaliableTimeRangeOutcome DdsClient::describeAvaliableTimeRange(const DescribeAvaliableTimeRangeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAvaliableTimeRangeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAvaliableTimeRangeOutcome(DescribeAvaliableTimeRangeResult(outcome.result()));
-	else
-		return DescribeAvaliableTimeRangeOutcome(outcome.error());
-}
-
-void DdsClient::describeAvaliableTimeRangeAsync(const DescribeAvaliableTimeRangeRequest& request, const DescribeAvaliableTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAvaliableTimeRange(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeAvaliableTimeRangeOutcomeCallable DdsClient::describeAvaliableTimeRangeCallable(const DescribeAvaliableTimeRangeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAvaliableTimeRangeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAvaliableTimeRange(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1527,78 +1347,6 @@ DdsClient::DescribeParametersOutcomeCallable DdsClient::describeParametersCallab
 	return task->get_future();
 }
 
-DdsClient::DescribeRdsVSwitchsOutcome DdsClient::describeRdsVSwitchs(const DescribeRdsVSwitchsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRdsVSwitchsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRdsVSwitchsOutcome(DescribeRdsVSwitchsResult(outcome.result()));
-	else
-		return DescribeRdsVSwitchsOutcome(outcome.error());
-}
-
-void DdsClient::describeRdsVSwitchsAsync(const DescribeRdsVSwitchsRequest& request, const DescribeRdsVSwitchsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRdsVSwitchs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeRdsVSwitchsOutcomeCallable DdsClient::describeRdsVSwitchsCallable(const DescribeRdsVSwitchsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRdsVSwitchsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRdsVSwitchs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeRdsVpcsOutcome DdsClient::describeRdsVpcs(const DescribeRdsVpcsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRdsVpcsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRdsVpcsOutcome(DescribeRdsVpcsResult(outcome.result()));
-	else
-		return DescribeRdsVpcsOutcome(outcome.error());
-}
-
-void DdsClient::describeRdsVpcsAsync(const DescribeRdsVpcsRequest& request, const DescribeRdsVpcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRdsVpcs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeRdsVpcsOutcomeCallable DdsClient::describeRdsVpcsCallable(const DescribeRdsVpcsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRdsVpcsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRdsVpcs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DdsClient::DescribeRegionsOutcome DdsClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1671,114 +1419,6 @@ DdsClient::DescribeRenewalPriceOutcomeCallable DdsClient::describeRenewalPriceCa
 	return task->get_future();
 }
 
-DdsClient::DescribeReplicaConflictInfoOutcome DdsClient::describeReplicaConflictInfo(const DescribeReplicaConflictInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeReplicaConflictInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeReplicaConflictInfoOutcome(DescribeReplicaConflictInfoResult(outcome.result()));
-	else
-		return DescribeReplicaConflictInfoOutcome(outcome.error());
-}
-
-void DdsClient::describeReplicaConflictInfoAsync(const DescribeReplicaConflictInfoRequest& request, const DescribeReplicaConflictInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeReplicaConflictInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeReplicaConflictInfoOutcomeCallable DdsClient::describeReplicaConflictInfoCallable(const DescribeReplicaConflictInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeReplicaConflictInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeReplicaConflictInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeReplicaInitializeProgressOutcome DdsClient::describeReplicaInitializeProgress(const DescribeReplicaInitializeProgressRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeReplicaInitializeProgressOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeReplicaInitializeProgressOutcome(DescribeReplicaInitializeProgressResult(outcome.result()));
-	else
-		return DescribeReplicaInitializeProgressOutcome(outcome.error());
-}
-
-void DdsClient::describeReplicaInitializeProgressAsync(const DescribeReplicaInitializeProgressRequest& request, const DescribeReplicaInitializeProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeReplicaInitializeProgress(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeReplicaInitializeProgressOutcomeCallable DdsClient::describeReplicaInitializeProgressCallable(const DescribeReplicaInitializeProgressRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeReplicaInitializeProgressOutcome()>>(
-			[this, request]()
-			{
-			return this->describeReplicaInitializeProgress(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeReplicaPerformanceOutcome DdsClient::describeReplicaPerformance(const DescribeReplicaPerformanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeReplicaPerformanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeReplicaPerformanceOutcome(DescribeReplicaPerformanceResult(outcome.result()));
-	else
-		return DescribeReplicaPerformanceOutcome(outcome.error());
-}
-
-void DdsClient::describeReplicaPerformanceAsync(const DescribeReplicaPerformanceRequest& request, const DescribeReplicaPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeReplicaPerformance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeReplicaPerformanceOutcomeCallable DdsClient::describeReplicaPerformanceCallable(const DescribeReplicaPerformanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeReplicaPerformanceOutcome()>>(
-			[this, request]()
-			{
-			return this->describeReplicaPerformance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DdsClient::DescribeReplicaSetRoleOutcome DdsClient::describeReplicaSetRole(const DescribeReplicaSetRoleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1809,114 +1449,6 @@ DdsClient::DescribeReplicaSetRoleOutcomeCallable DdsClient::describeReplicaSetRo
 			[this, request]()
 			{
 			return this->describeReplicaSetRole(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeReplicaUsageOutcome DdsClient::describeReplicaUsage(const DescribeReplicaUsageRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeReplicaUsageOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeReplicaUsageOutcome(DescribeReplicaUsageResult(outcome.result()));
-	else
-		return DescribeReplicaUsageOutcome(outcome.error());
-}
-
-void DdsClient::describeReplicaUsageAsync(const DescribeReplicaUsageRequest& request, const DescribeReplicaUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeReplicaUsage(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeReplicaUsageOutcomeCallable DdsClient::describeReplicaUsageCallable(const DescribeReplicaUsageRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeReplicaUsageOutcome()>>(
-			[this, request]()
-			{
-			return this->describeReplicaUsage(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeReplicasOutcome DdsClient::describeReplicas(const DescribeReplicasRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeReplicasOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeReplicasOutcome(DescribeReplicasResult(outcome.result()));
-	else
-		return DescribeReplicasOutcome(outcome.error());
-}
-
-void DdsClient::describeReplicasAsync(const DescribeReplicasRequest& request, const DescribeReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeReplicas(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeReplicasOutcomeCallable DdsClient::describeReplicasCallable(const DescribeReplicasRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeReplicasOutcome()>>(
-			[this, request]()
-			{
-			return this->describeReplicas(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeReplicationGroupOutcome DdsClient::describeReplicationGroup(const DescribeReplicationGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeReplicationGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeReplicationGroupOutcome(DescribeReplicationGroupResult(outcome.result()));
-	else
-		return DescribeReplicationGroupOutcome(outcome.error());
-}
-
-void DdsClient::describeReplicationGroupAsync(const DescribeReplicationGroupRequest& request, const DescribeReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeReplicationGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeReplicationGroupOutcomeCallable DdsClient::describeReplicationGroupCallable(const DescribeReplicationGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeReplicationGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->describeReplicationGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1989,6 +1521,42 @@ DdsClient::DescribeRunningLogRecordsOutcomeCallable DdsClient::describeRunningLo
 			[this, request]()
 			{
 			return this->describeRunningLogRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeSecurityGroupConfigurationOutcome DdsClient::describeSecurityGroupConfiguration(const DescribeSecurityGroupConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSecurityGroupConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSecurityGroupConfigurationOutcome(DescribeSecurityGroupConfigurationResult(outcome.result()));
+	else
+		return DescribeSecurityGroupConfigurationOutcome(outcome.error());
+}
+
+void DdsClient::describeSecurityGroupConfigurationAsync(const DescribeSecurityGroupConfigurationRequest& request, const DescribeSecurityGroupConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSecurityGroupConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeSecurityGroupConfigurationOutcomeCallable DdsClient::describeSecurityGroupConfigurationCallable(const DescribeSecurityGroupConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSecurityGroupConfiguration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2103,108 +1671,36 @@ DdsClient::DescribeSlowLogRecordsOutcomeCallable DdsClient::describeSlowLogRecor
 	return task->get_future();
 }
 
-DdsClient::DescribeStaticVerificationListOutcome DdsClient::describeStaticVerificationList(const DescribeStaticVerificationListRequest &request) const
+DdsClient::DescribeTagsOutcome DdsClient::describeTags(const DescribeTagsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeStaticVerificationListOutcome(endpointOutcome.error());
+		return DescribeTagsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeStaticVerificationListOutcome(DescribeStaticVerificationListResult(outcome.result()));
+		return DescribeTagsOutcome(DescribeTagsResult(outcome.result()));
 	else
-		return DescribeStaticVerificationListOutcome(outcome.error());
+		return DescribeTagsOutcome(outcome.error());
 }
 
-void DdsClient::describeStaticVerificationListAsync(const DescribeStaticVerificationListRequest& request, const DescribeStaticVerificationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DdsClient::describeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeStaticVerificationList(request), context);
+		handler(this, request, describeTags(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DdsClient::DescribeStaticVerificationListOutcomeCallable DdsClient::describeStaticVerificationListCallable(const DescribeStaticVerificationListRequest &request) const
+DdsClient::DescribeTagsOutcomeCallable DdsClient::describeTagsCallable(const DescribeTagsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeStaticVerificationListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeStaticVerificationList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeStrategyOutcome DdsClient::describeStrategy(const DescribeStrategyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeStrategyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeStrategyOutcome(DescribeStrategyResult(outcome.result()));
-	else
-		return DescribeStrategyOutcome(outcome.error());
-}
-
-void DdsClient::describeStrategyAsync(const DescribeStrategyRequest& request, const DescribeStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeStrategy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeStrategyOutcomeCallable DdsClient::describeStrategyCallable(const DescribeStrategyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeStrategyOutcome()>>(
-			[this, request]()
-			{
-			return this->describeStrategy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::DescribeVerificationListOutcome DdsClient::describeVerificationList(const DescribeVerificationListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeVerificationListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeVerificationListOutcome(DescribeVerificationListResult(outcome.result()));
-	else
-		return DescribeVerificationListOutcome(outcome.error());
-}
-
-void DdsClient::describeVerificationListAsync(const DescribeVerificationListRequest& request, const DescribeVerificationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeVerificationList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeVerificationListOutcomeCallable DdsClient::describeVerificationListCallable(const DescribeVerificationListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeVerificationListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeVerificationList(request);
+			return this->describeTags(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2241,42 +1737,6 @@ DdsClient::DestroyInstanceOutcomeCallable DdsClient::destroyInstanceCallable(con
 			[this, request]()
 			{
 			return this->destroyInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::EvaluateFailOverSwitchOutcome DdsClient::evaluateFailOverSwitch(const EvaluateFailOverSwitchRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return EvaluateFailOverSwitchOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return EvaluateFailOverSwitchOutcome(EvaluateFailOverSwitchResult(outcome.result()));
-	else
-		return EvaluateFailOverSwitchOutcome(outcome.error());
-}
-
-void DdsClient::evaluateFailOverSwitchAsync(const EvaluateFailOverSwitchRequest& request, const EvaluateFailOverSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, evaluateFailOverSwitch(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::EvaluateFailOverSwitchOutcomeCallable DdsClient::evaluateFailOverSwitchCallable(const EvaluateFailOverSwitchRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<EvaluateFailOverSwitchOutcome()>>(
-			[this, request]()
-			{
-			return this->evaluateFailOverSwitch(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2421,42 +1881,6 @@ DdsClient::ModifyAccountDescriptionOutcomeCallable DdsClient::modifyAccountDescr
 			[this, request]()
 			{
 			return this->modifyAccountDescription(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::ModifyActiveOperationTaskOutcome DdsClient::modifyActiveOperationTask(const ModifyActiveOperationTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyActiveOperationTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyActiveOperationTaskOutcome(ModifyActiveOperationTaskResult(outcome.result()));
-	else
-		return ModifyActiveOperationTaskOutcome(outcome.error());
-}
-
-void DdsClient::modifyActiveOperationTaskAsync(const ModifyActiveOperationTaskRequest& request, const ModifyActiveOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyActiveOperationTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::ModifyActiveOperationTaskOutcomeCallable DdsClient::modifyActiveOperationTaskCallable(const ModifyActiveOperationTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyActiveOperationTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyActiveOperationTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2895,42 +2319,6 @@ DdsClient::ModifyDBInstanceTDEOutcomeCallable DdsClient::modifyDBInstanceTDECall
 	return task->get_future();
 }
 
-DdsClient::ModifyGuardDomainModeOutcome DdsClient::modifyGuardDomainMode(const ModifyGuardDomainModeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyGuardDomainModeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyGuardDomainModeOutcome(ModifyGuardDomainModeResult(outcome.result()));
-	else
-		return ModifyGuardDomainModeOutcome(outcome.error());
-}
-
-void DdsClient::modifyGuardDomainModeAsync(const ModifyGuardDomainModeRequest& request, const ModifyGuardDomainModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyGuardDomainMode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::ModifyGuardDomainModeOutcomeCallable DdsClient::modifyGuardDomainModeCallable(const ModifyGuardDomainModeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyGuardDomainModeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyGuardDomainMode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DdsClient::ModifyInstanceAutoRenewalAttributeOutcome DdsClient::modifyInstanceAutoRenewalAttribute(const ModifyInstanceAutoRenewalAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3075,180 +2463,36 @@ DdsClient::ModifyParametersOutcomeCallable DdsClient::modifyParametersCallable(c
 	return task->get_future();
 }
 
-DdsClient::ModifyReplicaDescriptionOutcome DdsClient::modifyReplicaDescription(const ModifyReplicaDescriptionRequest &request) const
+DdsClient::ModifySecurityGroupConfigurationOutcome DdsClient::modifySecurityGroupConfiguration(const ModifySecurityGroupConfigurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyReplicaDescriptionOutcome(endpointOutcome.error());
+		return ModifySecurityGroupConfigurationOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyReplicaDescriptionOutcome(ModifyReplicaDescriptionResult(outcome.result()));
+		return ModifySecurityGroupConfigurationOutcome(ModifySecurityGroupConfigurationResult(outcome.result()));
 	else
-		return ModifyReplicaDescriptionOutcome(outcome.error());
+		return ModifySecurityGroupConfigurationOutcome(outcome.error());
 }
 
-void DdsClient::modifyReplicaDescriptionAsync(const ModifyReplicaDescriptionRequest& request, const ModifyReplicaDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DdsClient::modifySecurityGroupConfigurationAsync(const ModifySecurityGroupConfigurationRequest& request, const ModifySecurityGroupConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyReplicaDescription(request), context);
+		handler(this, request, modifySecurityGroupConfiguration(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DdsClient::ModifyReplicaDescriptionOutcomeCallable DdsClient::modifyReplicaDescriptionCallable(const ModifyReplicaDescriptionRequest &request) const
+DdsClient::ModifySecurityGroupConfigurationOutcomeCallable DdsClient::modifySecurityGroupConfigurationCallable(const ModifySecurityGroupConfigurationRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyReplicaDescriptionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifySecurityGroupConfigurationOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyReplicaDescription(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::ModifyReplicaModeOutcome DdsClient::modifyReplicaMode(const ModifyReplicaModeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyReplicaModeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyReplicaModeOutcome(ModifyReplicaModeResult(outcome.result()));
-	else
-		return ModifyReplicaModeOutcome(outcome.error());
-}
-
-void DdsClient::modifyReplicaModeAsync(const ModifyReplicaModeRequest& request, const ModifyReplicaModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyReplicaMode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::ModifyReplicaModeOutcomeCallable DdsClient::modifyReplicaModeCallable(const ModifyReplicaModeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyReplicaModeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyReplicaMode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::ModifyReplicaRecoveryModeOutcome DdsClient::modifyReplicaRecoveryMode(const ModifyReplicaRecoveryModeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyReplicaRecoveryModeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyReplicaRecoveryModeOutcome(ModifyReplicaRecoveryModeResult(outcome.result()));
-	else
-		return ModifyReplicaRecoveryModeOutcome(outcome.error());
-}
-
-void DdsClient::modifyReplicaRecoveryModeAsync(const ModifyReplicaRecoveryModeRequest& request, const ModifyReplicaRecoveryModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyReplicaRecoveryMode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::ModifyReplicaRecoveryModeOutcomeCallable DdsClient::modifyReplicaRecoveryModeCallable(const ModifyReplicaRecoveryModeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyReplicaRecoveryModeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyReplicaRecoveryMode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::ModifyReplicaRelationOutcome DdsClient::modifyReplicaRelation(const ModifyReplicaRelationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyReplicaRelationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyReplicaRelationOutcome(ModifyReplicaRelationResult(outcome.result()));
-	else
-		return ModifyReplicaRelationOutcome(outcome.error());
-}
-
-void DdsClient::modifyReplicaRelationAsync(const ModifyReplicaRelationRequest& request, const ModifyReplicaRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyReplicaRelation(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::ModifyReplicaRelationOutcomeCallable DdsClient::modifyReplicaRelationCallable(const ModifyReplicaRelationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyReplicaRelationOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyReplicaRelation(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::ModifyReplicaVerificationModeOutcome DdsClient::modifyReplicaVerificationMode(const ModifyReplicaVerificationModeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyReplicaVerificationModeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyReplicaVerificationModeOutcome(ModifyReplicaVerificationModeResult(outcome.result()));
-	else
-		return ModifyReplicaVerificationModeOutcome(outcome.error());
-}
-
-void DdsClient::modifyReplicaVerificationModeAsync(const ModifyReplicaVerificationModeRequest& request, const ModifyReplicaVerificationModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyReplicaVerificationMode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::ModifyReplicaVerificationModeOutcomeCallable DdsClient::modifyReplicaVerificationModeCallable(const ModifyReplicaVerificationModeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyReplicaVerificationModeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyReplicaVerificationMode(request);
+			return this->modifySecurityGroupConfiguration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3357,42 +2601,6 @@ DdsClient::ReleasePublicNetworkAddressOutcomeCallable DdsClient::releasePublicNe
 			[this, request]()
 			{
 			return this->releasePublicNetworkAddress(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::ReleaseReplicaOutcome DdsClient::releaseReplica(const ReleaseReplicaRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReleaseReplicaOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReleaseReplicaOutcome(ReleaseReplicaResult(outcome.result()));
-	else
-		return ReleaseReplicaOutcome(outcome.error());
-}
-
-void DdsClient::releaseReplicaAsync(const ReleaseReplicaRequest& request, const ReleaseReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, releaseReplica(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::ReleaseReplicaOutcomeCallable DdsClient::releaseReplicaCallable(const ReleaseReplicaRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReleaseReplicaOutcome()>>(
-			[this, request]()
-			{
-			return this->releaseReplica(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3543,42 +2751,6 @@ DdsClient::RestoreDBInstanceOutcomeCallable DdsClient::restoreDBInstanceCallable
 	return task->get_future();
 }
 
-DdsClient::SampleOutcome DdsClient::sample(const SampleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SampleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SampleOutcome(SampleResult(outcome.result()));
-	else
-		return SampleOutcome(outcome.error());
-}
-
-void DdsClient::sampleAsync(const SampleRequest& request, const SampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, sample(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::SampleOutcomeCallable DdsClient::sampleCallable(const SampleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SampleOutcome()>>(
-			[this, request]()
-			{
-			return this->sample(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DdsClient::SwitchDBInstanceHAOutcome DdsClient::switchDBInstanceHA(const SwitchDBInstanceHARequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3609,42 +2781,6 @@ DdsClient::SwitchDBInstanceHAOutcomeCallable DdsClient::switchDBInstanceHACallab
 			[this, request]()
 			{
 			return this->switchDBInstanceHA(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::SwithcDBInstanceHAOutcome DdsClient::swithcDBInstanceHA(const SwithcDBInstanceHARequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SwithcDBInstanceHAOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SwithcDBInstanceHAOutcome(SwithcDBInstanceHAResult(outcome.result()));
-	else
-		return SwithcDBInstanceHAOutcome(outcome.error());
-}
-
-void DdsClient::swithcDBInstanceHAAsync(const SwithcDBInstanceHARequest& request, const SwithcDBInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, swithcDBInstanceHA(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::SwithcDBInstanceHAOutcomeCallable DdsClient::swithcDBInstanceHACallable(const SwithcDBInstanceHARequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SwithcDBInstanceHAOutcome()>>(
-			[this, request]()
-			{
-			return this->swithcDBInstanceHA(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

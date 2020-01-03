@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeAuditFilesRequest;
 
 DescribeAuditFilesRequest::DescribeAuditFilesRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeAuditFiles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuditFilesRequest::~DescribeAuditFilesRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeAvailableEngineVersionRequest;
 
 DescribeAvailableEngineVersionRequest::DescribeAvailableEngineVersionRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeAvailableEngineVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAvailableEngineVersionRequest::~DescribeAvailableEngineVersionRequest()
 {}

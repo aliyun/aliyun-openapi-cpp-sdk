@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DescribeRoleZoneInfoRequest;
 
 DescribeRoleZoneInfoRequest::DescribeRoleZoneInfoRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DescribeRoleZoneInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRoleZoneInfoRequest::~DescribeRoleZoneInfoRequest()
 {}

@@ -45,8 +45,6 @@ void DescribeRegionsResult::parse(const std::string &payload)
 		DdsRegion regionsObject;
 		if(!valueRegionsDdsRegion["RegionId"].isNull())
 			regionsObject.regionId = valueRegionsDdsRegion["RegionId"].asString();
-		if(!valueRegionsDdsRegion["ZoneIds"].isNull())
-			regionsObject.zoneIds = valueRegionsDdsRegion["ZoneIds"].asString();
 		auto allZonesNode = allRegionsNode["Zones"]["Zone"];
 		for (auto allRegionsNodeZonesZone : allZonesNode)
 		{

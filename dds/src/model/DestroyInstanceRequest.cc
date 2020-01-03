@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::DestroyInstanceRequest;
 
 DestroyInstanceRequest::DestroyInstanceRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "DestroyInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DestroyInstanceRequest::~DestroyInstanceRequest()
 {}

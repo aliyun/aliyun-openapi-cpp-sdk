@@ -20,7 +20,9 @@ using AlibabaCloud::Dds::Model::ModifyNodeSpecRequest;
 
 ModifyNodeSpecRequest::ModifyNodeSpecRequest() :
 	RpcServiceRequest("dds", "2015-12-01", "ModifyNodeSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyNodeSpecRequest::~ModifyNodeSpecRequest()
 {}
