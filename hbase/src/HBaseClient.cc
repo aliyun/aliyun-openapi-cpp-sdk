@@ -627,6 +627,42 @@ HBaseClient::ListTagResourcesOutcomeCallable HBaseClient::listTagResourcesCallab
 	return task->get_future();
 }
 
+HBaseClient::ListTagsOutcome HBaseClient::listTags(const ListTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagsOutcome(ListTagsResult(outcome.result()));
+	else
+		return ListTagsOutcome(outcome.error());
+}
+
+void HBaseClient::listTagsAsync(const ListTagsRequest& request, const ListTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::ListTagsOutcomeCallable HBaseClient::listTagsCallable(const ListTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::ModifyInstanceMaintainTimeOutcome HBaseClient::modifyInstanceMaintainTime(const ModifyInstanceMaintainTimeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

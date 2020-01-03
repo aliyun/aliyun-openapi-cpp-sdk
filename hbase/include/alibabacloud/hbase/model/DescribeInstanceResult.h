@@ -56,11 +56,13 @@ namespace AlibabaCloud
 				std::string getMajorVersion()const;
 				std::string getCoreDiskCount()const;
 				int getMasterDiskSize()const;
+				std::string getExpireTimeUTC()const;
 				std::string getZoneId()const;
 				std::string getInstanceId()const;
 				int getCoreNodeCount()const;
 				std::string getColdStorageStatus()const;
 				std::string getMinorVersion()const;
+				std::string getCreatedTimeUTC()const;
 				std::string getPayType()const;
 				std::string getVswitchId()const;
 				std::string getInstanceName()const;
@@ -89,11 +91,13 @@ namespace AlibabaCloud
 				std::string majorVersion_;
 				std::string coreDiskCount_;
 				int masterDiskSize_;
+				std::string expireTimeUTC_;
 				std::string zoneId_;
 				std::string instanceId_;
 				int coreNodeCount_;
 				std::string coldStorageStatus_;
 				std::string minorVersion_;
+				std::string createdTimeUTC_;
 				std::string payType_;
 				std::string vswitchId_;
 				std::string instanceName_;

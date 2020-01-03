@@ -30,22 +30,36 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_HBASE_EXPORT DescribeInstancesRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeInstancesRequest();
 				~DescribeInstancesRequest();
 
+				std::string getClusterName()const;
+				void setClusterName(const std::string& clusterName);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
+				std::string getDbType()const;
+				void setDbType(const std::string& dbType);
 
             private:
+				std::string clusterName_;
 				int pageNumber_;
 				std::string regionId_;
 				int pageSize_;
+				std::vector<Tag> tag_;
+				std::string dbType_;
 
 			};
 		}

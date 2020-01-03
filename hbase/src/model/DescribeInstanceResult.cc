@@ -105,6 +105,10 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		maintainStartTime_ = value["MaintainStartTime"].asString();
 	if(!value["MaintainEndTime"].isNull())
 		maintainEndTime_ = value["MaintainEndTime"].asString();
+	if(!value["CreatedTimeUTC"].isNull())
+		createdTimeUTC_ = value["CreatedTimeUTC"].asString();
+	if(!value["ExpireTimeUTC"].isNull())
+		expireTimeUTC_ = value["ExpireTimeUTC"].asString();
 
 }
 
@@ -178,6 +182,11 @@ int DescribeInstanceResult::getMasterDiskSize()const
 	return masterDiskSize_;
 }
 
+std::string DescribeInstanceResult::getExpireTimeUTC()const
+{
+	return expireTimeUTC_;
+}
+
 std::string DescribeInstanceResult::getZoneId()const
 {
 	return zoneId_;
@@ -201,6 +210,11 @@ std::string DescribeInstanceResult::getColdStorageStatus()const
 std::string DescribeInstanceResult::getMinorVersion()const
 {
 	return minorVersion_;
+}
+
+std::string DescribeInstanceResult::getCreatedTimeUTC()const
+{
+	return createdTimeUTC_;
 }
 
 std::string DescribeInstanceResult::getPayType()const

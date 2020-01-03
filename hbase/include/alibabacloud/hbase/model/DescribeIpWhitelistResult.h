@@ -32,17 +32,23 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_HBASE_EXPORT DescribeIpWhitelistResult : public ServiceResult
 			{
 			public:
+				struct Group
+				{
+					std::string groupName;
+					int ipVersion;
+					std::vector<std::string> ipList;
+				};
 
 
 				DescribeIpWhitelistResult();
 				explicit DescribeIpWhitelistResult(const std::string &payload);
 				~DescribeIpWhitelistResult();
-				std::vector<std::string> getIpList()const;
+				std::vector<Group> getGroups()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<std::string> ipList_;
+				std::vector<Group> groups_;
 
 			};
 		}

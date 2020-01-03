@@ -53,6 +53,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DescribeSecurityGroupsResult.h
 	include/alibabacloud/hbase/model/ListTagResourcesRequest.h
 	include/alibabacloud/hbase/model/ListTagResourcesResult.h
+	include/alibabacloud/hbase/model/ListTagsRequest.h
+	include/alibabacloud/hbase/model/ListTagsResult.h
 	include/alibabacloud/hbase/model/ModifyInstanceMaintainTimeRequest.h
 	include/alibabacloud/hbase/model/ModifyInstanceMaintainTimeResult.h
 	include/alibabacloud/hbase/model/ModifyInstanceNameRequest.h
@@ -118,6 +120,8 @@ set(hbase_src
 	src/model/DescribeSecurityGroupsResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
+	src/model/ListTagsRequest.cc
+	src/model/ListTagsResult.cc
 	src/model/ModifyInstanceMaintainTimeRequest.cc
 	src/model/ModifyInstanceMaintainTimeResult.cc
 	src/model/ModifyInstanceNameRequest.cc

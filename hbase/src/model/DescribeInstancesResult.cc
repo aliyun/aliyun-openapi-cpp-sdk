@@ -91,6 +91,22 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.coldStorageStatus = valueInstancesInstance["ColdStorageStatus"].asString();
 		if(!valueInstancesInstance["BackupStatus"].isNull())
 			instancesObject.backupStatus = valueInstancesInstance["BackupStatus"].asString();
+		if(!valueInstancesInstance["ClusterType"].isNull())
+			instancesObject.clusterType = valueInstancesInstance["ClusterType"].asString();
+		if(!valueInstancesInstance["CreatedTimeUTC"].isNull())
+			instancesObject.createdTimeUTC = valueInstancesInstance["CreatedTimeUTC"].asString();
+		if(!valueInstancesInstance["ExpireTimeUTC"].isNull())
+			instancesObject.expireTimeUTC = valueInstancesInstance["ExpireTimeUTC"].asString();
+		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
+		for (auto allInstancesNodeTagsTag : allTagsNode)
+		{
+			Instance::Tag tagsObject;
+			if(!allInstancesNodeTagsTag["Key"].isNull())
+				tagsObject.key = allInstancesNodeTagsTag["Key"].asString();
+			if(!allInstancesNodeTagsTag["Value"].isNull())
+				tagsObject.value = allInstancesNodeTagsTag["Value"].asString();
+			instancesObject.tags.push_back(tagsObject);
+		}
 		instances_.push_back(instancesObject);
 	}
 	if(!value["TotalCount"].isNull())

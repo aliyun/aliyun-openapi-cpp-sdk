@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_DELETEINSTANCEREQUEST_H_
-#define ALIBABACLOUD_HBASE_MODEL_DELETEINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_LISTTAGSREQUEST_H_
+#define ALIBABACLOUD_HBASE_MODEL_LISTTAGSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT DeleteInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HBASE_EXPORT ListTagsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteInstanceRequest();
-				~DeleteInstanceRequest();
+				ListTagsRequest();
+				~ListTagsRequest();
 
-				bool getImmediateDeleteFlag()const;
-				void setImmediateDeleteFlag(bool immediateDeleteFlag);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 
             private:
-				bool immediateDeleteFlag_;
-				std::string clusterId_;
+				std::string regionId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_DELETEINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_LISTTAGSREQUEST_H_

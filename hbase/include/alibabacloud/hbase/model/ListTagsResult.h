@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_DELETEINSTANCEREQUEST_H_
-#define ALIBABACLOUD_HBASE_MODEL_DELETEINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_LISTTAGSRESULT_H_
+#define ALIBABACLOUD_HBASE_MODEL_LISTTAGSRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/hbase/HBaseExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT DeleteInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HBASE_EXPORT ListTagsResult : public ServiceResult
 			{
-
 			public:
-				DeleteInstanceRequest();
-				~DeleteInstanceRequest();
+				struct Tag
+				{
+					std::string tagKey;
+					std::string tagValue;
+				};
 
-				bool getImmediateDeleteFlag()const;
-				void setImmediateDeleteFlag(bool immediateDeleteFlag);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 
-            private:
-				bool immediateDeleteFlag_;
-				std::string clusterId_;
+				ListTagsResult();
+				explicit ListTagsResult(const std::string &payload);
+				~ListTagsResult();
+				std::vector<Tag> getTags()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<Tag> tags_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_DELETEINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_LISTTAGSRESULT_H_

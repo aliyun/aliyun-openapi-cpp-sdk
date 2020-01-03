@@ -34,28 +34,37 @@ namespace AlibabaCloud
 			public:
 				struct Instance
 				{
-					std::string status;
-					std::string majorVersion;
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					bool isHa;
 					std::string createdTime;
+					std::string masterInstanceType;
+					std::string networkType;
+					std::string coreInstanceType;
+					std::string masterDiskType;
+					std::vector<Instance::Tag> tags;
+					std::string engine;
+					std::string status;
+					std::string majorVersion;
 					int masterDiskSize;
+					std::string expireTimeUTC;
 					std::string zoneId;
 					std::string instanceId;
 					int coreNodeCount;
 					std::string coldStorageStatus;
+					std::string createdTimeUTC;
 					std::string payType;
-					std::string masterInstanceType;
+					std::string clusterType;
 					std::string vswitchId;
 					std::string instanceName;
 					int masterNodeCount;
 					std::string vpcId;
 					std::string coreDiskType;
-					std::string networkType;
-					std::string coreInstanceType;
-					std::string masterDiskType;
 					std::string regionId;
 					std::string expireTime;
-					std::string engine;
 					int coreDiskSize;
 					std::string backupStatus;
 				};

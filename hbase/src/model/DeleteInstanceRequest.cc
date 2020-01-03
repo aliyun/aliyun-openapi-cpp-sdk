@@ -27,6 +27,17 @@ DeleteInstanceRequest::DeleteInstanceRequest() :
 DeleteInstanceRequest::~DeleteInstanceRequest()
 {}
 
+bool DeleteInstanceRequest::getImmediateDeleteFlag()const
+{
+	return immediateDeleteFlag_;
+}
+
+void DeleteInstanceRequest::setImmediateDeleteFlag(bool immediateDeleteFlag)
+{
+	immediateDeleteFlag_ = immediateDeleteFlag;
+	setCoreParameter("ImmediateDeleteFlag", immediateDeleteFlag ? "true" : "false");
+}
+
 std::string DeleteInstanceRequest::getClusterId()const
 {
 	return clusterId_;

@@ -39,14 +39,24 @@ void DescribeIpWhitelistResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIpList = value["IpList"]["IP"];
-	for (const auto &item : allIpList)
-		ipList_.push_back(item.asString());
+	auto allGroupsNode = value["Groups"]["Group"];
+	for (auto valueGroupsGroup : allGroupsNode)
+	{
+		Group groupsObject;
+		if(!valueGroupsGroup["GroupName"].isNull())
+			groupsObject.groupName = valueGroupsGroup["GroupName"].asString();
+		if(!valueGroupsGroup["IpVersion"].isNull())
+			groupsObject.ipVersion = std::stoi(valueGroupsGroup["IpVersion"].asString());
+		auto allIpList = value["IpList"]["Ip"];
+		for (auto value : allIpList)
+			groupsObject.ipList.push_back(value.asString());
+		groups_.push_back(groupsObject);
+	}
 
 }
 
-std::vector<std::string> DescribeIpWhitelistResult::getIpList()const
+std::vector<DescribeIpWhitelistResult::Group> DescribeIpWhitelistResult::getGroups()const
 {
-	return ipList_;
+	return groups_;
 }
 

@@ -27,6 +27,17 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
 DescribeInstancesRequest::~DescribeInstancesRequest()
 {}
 
+std::string DescribeInstancesRequest::getClusterName()const
+{
+	return clusterName_;
+}
+
+void DescribeInstancesRequest::setClusterName(const std::string& clusterName)
+{
+	clusterName_ = clusterName;
+	setCoreParameter("ClusterName", clusterName);
+}
+
 int DescribeInstancesRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -58,5 +69,32 @@ void DescribeInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<DescribeInstancesRequest::Tag> DescribeInstancesRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeInstancesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1);
+		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
+std::string DescribeInstancesRequest::getDbType()const
+{
+	return dbType_;
+}
+
+void DescribeInstancesRequest::setDbType(const std::string& dbType)
+{
+	dbType_ = dbType;
+	setCoreParameter("DbType", dbType);
 }
 
