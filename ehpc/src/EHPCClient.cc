@@ -1599,6 +1599,42 @@ EHPCClient::GetHybridClusterConfigOutcomeCallable EHPCClient::getHybridClusterCo
 	return task->get_future();
 }
 
+EHPCClient::GetIfEcsTypeSupportHtConfigOutcome EHPCClient::getIfEcsTypeSupportHtConfig(const GetIfEcsTypeSupportHtConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetIfEcsTypeSupportHtConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetIfEcsTypeSupportHtConfigOutcome(GetIfEcsTypeSupportHtConfigResult(outcome.result()));
+	else
+		return GetIfEcsTypeSupportHtConfigOutcome(outcome.error());
+}
+
+void EHPCClient::getIfEcsTypeSupportHtConfigAsync(const GetIfEcsTypeSupportHtConfigRequest& request, const GetIfEcsTypeSupportHtConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getIfEcsTypeSupportHtConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::GetIfEcsTypeSupportHtConfigOutcomeCallable EHPCClient::getIfEcsTypeSupportHtConfigCallable(const GetIfEcsTypeSupportHtConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetIfEcsTypeSupportHtConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getIfEcsTypeSupportHtConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::GetInstanceReportOutcome EHPCClient::getInstanceReport(const GetInstanceReportRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3465,6 +3501,42 @@ EHPCClient::SetAutoScaleConfigOutcomeCallable EHPCClient::setAutoScaleConfigCall
 			[this, request]()
 			{
 			return this->setAutoScaleConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::SetGWSInstanceNameOutcome EHPCClient::setGWSInstanceName(const SetGWSInstanceNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetGWSInstanceNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetGWSInstanceNameOutcome(SetGWSInstanceNameResult(outcome.result()));
+	else
+		return SetGWSInstanceNameOutcome(outcome.error());
+}
+
+void EHPCClient::setGWSInstanceNameAsync(const SetGWSInstanceNameRequest& request, const SetGWSInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setGWSInstanceName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::SetGWSInstanceNameOutcomeCallable EHPCClient::setGWSInstanceNameCallable(const SetGWSInstanceNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetGWSInstanceNameOutcome()>>(
+			[this, request]()
+			{
+			return this->setGWSInstanceName(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

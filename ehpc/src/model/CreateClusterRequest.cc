@@ -279,6 +279,17 @@ void CreateClusterRequest::setPeriodUnit(const std::string& periodUnit)
 	setCoreParameter("PeriodUnit", periodUnit);
 }
 
+bool CreateClusterRequest::getComputeEnableHt()const
+{
+	return computeEnableHt_;
+}
+
+void CreateClusterRequest::setComputeEnableHt(bool computeEnableHt)
+{
+	computeEnableHt_ = computeEnableHt;
+	setCoreParameter("ComputeEnableHt", computeEnableHt ? "true" : "false");
+}
+
 std::string CreateClusterRequest::getAutoRenew()const
 {
 	return autoRenew_;
@@ -442,17 +453,6 @@ void CreateClusterRequest::setSystemDiskType(const std::string& systemDiskType)
 {
 	systemDiskType_ = systemDiskType;
 	setCoreParameter("SystemDiskType", systemDiskType);
-}
-
-bool CreateClusterRequest::getIsComputeOnecs()const
-{
-	return isComputeOnecs_;
-}
-
-void CreateClusterRequest::setIsComputeOnecs(bool isComputeOnecs)
-{
-	isComputeOnecs_ = isComputeOnecs;
-	setCoreParameter("IsComputeOnecs", isComputeOnecs ? "true" : "false");
 }
 
 std::string CreateClusterRequest::getVolumeProtocol()const

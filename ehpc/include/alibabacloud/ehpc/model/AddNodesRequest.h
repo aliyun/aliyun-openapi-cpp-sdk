@@ -63,10 +63,14 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				std::string getComputeSpotStrategy()const;
 				void setComputeSpotStrategy(const std::string& computeSpotStrategy);
+				std::string getHostNameSuffix()const;
+				void setHostNameSuffix(const std::string& hostNameSuffix);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPeriodUnit()const;
 				void setPeriodUnit(const std::string& periodUnit);
+				bool getComputeEnableHt()const;
+				void setComputeEnableHt(bool computeEnableHt);
 				std::string getAutoRenew()const;
 				void setAutoRenew(const std::string& autoRenew);
 				std::string getEcsChargeType()const;
@@ -91,8 +95,10 @@ namespace AlibabaCloud
 				int count_;
 				std::string clusterId_;
 				std::string computeSpotStrategy_;
+				std::string hostNameSuffix_;
 				std::string vSwitchId_;
 				std::string periodUnit_;
+				bool computeEnableHt_;
 				std::string autoRenew_;
 				std::string ecsChargeType_;
 				std::string createMode_;

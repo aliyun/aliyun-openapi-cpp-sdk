@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_MOUNTNFSREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_MOUNTNFSREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_SETGWSINSTANCENAMEREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_SETGWSINSTANCENAMEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT MountNFSRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EHPC_EXPORT SetGWSInstanceNameRequest : public RpcServiceRequest
 			{
 
 			public:
-				MountNFSRequest();
-				~MountNFSRequest();
+				SetGWSInstanceNameRequest();
+				~SetGWSInstanceNameRequest();
 
-				std::string getMountDir()const;
-				void setMountDir(const std::string& mountDir);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getRemoteDir()const;
-				void setRemoteDir(const std::string& remoteDir);
-				std::string getNfsDir()const;
-				void setNfsDir(const std::string& nfsDir);
-				std::string getProtocolType()const;
-				void setProtocolType(const std::string& protocolType);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::string mountDir_;
 				std::string accessKeyId_;
 				std::string instanceId_;
-				std::string remoteDir_;
-				std::string nfsDir_;
-				std::string protocolType_;
+				std::string name_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_MOUNTNFSREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_SETGWSINSTANCENAMEREQUEST_H_

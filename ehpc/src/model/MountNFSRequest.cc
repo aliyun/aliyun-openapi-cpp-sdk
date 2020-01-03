@@ -60,6 +60,17 @@ void MountNFSRequest::setInstanceId(const std::string& instanceId)
 	setCoreParameter("InstanceId", instanceId);
 }
 
+std::string MountNFSRequest::getRemoteDir()const
+{
+	return remoteDir_;
+}
+
+void MountNFSRequest::setRemoteDir(const std::string& remoteDir)
+{
+	remoteDir_ = remoteDir;
+	setCoreParameter("RemoteDir", remoteDir);
+}
+
 std::string MountNFSRequest::getNfsDir()const
 {
 	return nfsDir_;

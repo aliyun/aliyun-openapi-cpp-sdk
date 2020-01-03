@@ -83,6 +83,10 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.location = valueClustersClusterInfoSimple["Location"].asString();
 		if(!valueClustersClusterInfoSimple["EhpcVersion"].isNull())
 			clustersObject.ehpcVersion = valueClustersClusterInfoSimple["EhpcVersion"].asString();
+		if(!valueClustersClusterInfoSimple["NodePrefix"].isNull())
+			clustersObject.nodePrefix = valueClustersClusterInfoSimple["NodePrefix"].asString();
+		if(!valueClustersClusterInfoSimple["NodeSuffix"].isNull())
+			clustersObject.nodeSuffix = valueClustersClusterInfoSimple["NodeSuffix"].asString();
 		auto managersNode = value["Managers"];
 		if(!managersNode["Total"].isNull())
 			clustersObject.managers.total = std::stoi(managersNode["Total"].asString());

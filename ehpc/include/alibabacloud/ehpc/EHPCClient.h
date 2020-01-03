@@ -108,6 +108,8 @@
 #include "model/GetGWSConnectTicketResult.h"
 #include "model/GetHybridClusterConfigRequest.h"
 #include "model/GetHybridClusterConfigResult.h"
+#include "model/GetIfEcsTypeSupportHtConfigRequest.h"
+#include "model/GetIfEcsTypeSupportHtConfigResult.h"
 #include "model/GetInstanceReportRequest.h"
 #include "model/GetInstanceReportResult.h"
 #include "model/GetJobReportRequest.h"
@@ -212,6 +214,8 @@
 #include "model/RunCloudMetricProfilingResult.h"
 #include "model/SetAutoScaleConfigRequest.h"
 #include "model/SetAutoScaleConfigResult.h"
+#include "model/SetGWSInstanceNameRequest.h"
+#include "model/SetGWSInstanceNameResult.h"
 #include "model/SetGWSInstanceUserRequest.h"
 #include "model/SetGWSInstanceUserResult.h"
 #include "model/SetJobUserRequest.h"
@@ -386,6 +390,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetHybridClusterConfigResult> GetHybridClusterConfigOutcome;
 			typedef std::future<GetHybridClusterConfigOutcome> GetHybridClusterConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetHybridClusterConfigRequest&, const GetHybridClusterConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetHybridClusterConfigAsyncHandler;
+			typedef Outcome<Error, Model::GetIfEcsTypeSupportHtConfigResult> GetIfEcsTypeSupportHtConfigOutcome;
+			typedef std::future<GetIfEcsTypeSupportHtConfigOutcome> GetIfEcsTypeSupportHtConfigOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::GetIfEcsTypeSupportHtConfigRequest&, const GetIfEcsTypeSupportHtConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetIfEcsTypeSupportHtConfigAsyncHandler;
 			typedef Outcome<Error, Model::GetInstanceReportResult> GetInstanceReportOutcome;
 			typedef std::future<GetInstanceReportOutcome> GetInstanceReportOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetInstanceReportRequest&, const GetInstanceReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceReportAsyncHandler;
@@ -542,6 +549,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetAutoScaleConfigResult> SetAutoScaleConfigOutcome;
 			typedef std::future<SetAutoScaleConfigOutcome> SetAutoScaleConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::SetAutoScaleConfigRequest&, const SetAutoScaleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoScaleConfigAsyncHandler;
+			typedef Outcome<Error, Model::SetGWSInstanceNameResult> SetGWSInstanceNameOutcome;
+			typedef std::future<SetGWSInstanceNameOutcome> SetGWSInstanceNameOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::SetGWSInstanceNameRequest&, const SetGWSInstanceNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGWSInstanceNameAsyncHandler;
 			typedef Outcome<Error, Model::SetGWSInstanceUserResult> SetGWSInstanceUserOutcome;
 			typedef std::future<SetGWSInstanceUserOutcome> SetGWSInstanceUserOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::SetGWSInstanceUserRequest&, const SetGWSInstanceUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGWSInstanceUserAsyncHandler;
@@ -730,6 +740,9 @@ namespace AlibabaCloud
 			GetHybridClusterConfigOutcome getHybridClusterConfig(const Model::GetHybridClusterConfigRequest &request)const;
 			void getHybridClusterConfigAsync(const Model::GetHybridClusterConfigRequest& request, const GetHybridClusterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetHybridClusterConfigOutcomeCallable getHybridClusterConfigCallable(const Model::GetHybridClusterConfigRequest& request) const;
+			GetIfEcsTypeSupportHtConfigOutcome getIfEcsTypeSupportHtConfig(const Model::GetIfEcsTypeSupportHtConfigRequest &request)const;
+			void getIfEcsTypeSupportHtConfigAsync(const Model::GetIfEcsTypeSupportHtConfigRequest& request, const GetIfEcsTypeSupportHtConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetIfEcsTypeSupportHtConfigOutcomeCallable getIfEcsTypeSupportHtConfigCallable(const Model::GetIfEcsTypeSupportHtConfigRequest& request) const;
 			GetInstanceReportOutcome getInstanceReport(const Model::GetInstanceReportRequest &request)const;
 			void getInstanceReportAsync(const Model::GetInstanceReportRequest& request, const GetInstanceReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceReportOutcomeCallable getInstanceReportCallable(const Model::GetInstanceReportRequest& request) const;
@@ -886,6 +899,9 @@ namespace AlibabaCloud
 			SetAutoScaleConfigOutcome setAutoScaleConfig(const Model::SetAutoScaleConfigRequest &request)const;
 			void setAutoScaleConfigAsync(const Model::SetAutoScaleConfigRequest& request, const SetAutoScaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetAutoScaleConfigOutcomeCallable setAutoScaleConfigCallable(const Model::SetAutoScaleConfigRequest& request) const;
+			SetGWSInstanceNameOutcome setGWSInstanceName(const Model::SetGWSInstanceNameRequest &request)const;
+			void setGWSInstanceNameAsync(const Model::SetGWSInstanceNameRequest& request, const SetGWSInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetGWSInstanceNameOutcomeCallable setGWSInstanceNameCallable(const Model::SetGWSInstanceNameRequest& request) const;
 			SetGWSInstanceUserOutcome setGWSInstanceUser(const Model::SetGWSInstanceUserRequest &request)const;
 			void setGWSInstanceUserAsync(const Model::SetGWSInstanceUserRequest& request, const SetGWSInstanceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetGWSInstanceUserOutcomeCallable setGWSInstanceUserCallable(const Model::SetGWSInstanceUserRequest& request) const;

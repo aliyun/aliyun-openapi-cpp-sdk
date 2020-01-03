@@ -181,6 +181,17 @@ void AddNodesRequest::setComputeSpotStrategy(const std::string& computeSpotStrat
 	setCoreParameter("ComputeSpotStrategy", computeSpotStrategy);
 }
 
+std::string AddNodesRequest::getHostNameSuffix()const
+{
+	return hostNameSuffix_;
+}
+
+void AddNodesRequest::setHostNameSuffix(const std::string& hostNameSuffix)
+{
+	hostNameSuffix_ = hostNameSuffix;
+	setCoreParameter("HostNameSuffix", hostNameSuffix);
+}
+
 std::string AddNodesRequest::getVSwitchId()const
 {
 	return vSwitchId_;
@@ -201,6 +212,17 @@ void AddNodesRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
 	setCoreParameter("PeriodUnit", periodUnit);
+}
+
+bool AddNodesRequest::getComputeEnableHt()const
+{
+	return computeEnableHt_;
+}
+
+void AddNodesRequest::setComputeEnableHt(bool computeEnableHt)
+{
+	computeEnableHt_ = computeEnableHt;
+	setCoreParameter("ComputeEnableHt", computeEnableHt ? "true" : "false");
 }
 
 std::string AddNodesRequest::getAutoRenew()const

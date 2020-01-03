@@ -52,7 +52,7 @@ void ListJobsResult::parse(const std::string &payload)
 		if(!valueJobsJobInfo["NodeList"].isNull())
 			jobsObject.nodeList = valueJobsJobInfo["NodeList"].asString();
 		if(!valueJobsJobInfo["Priority"].isNull())
-			jobsObject.priority = std::stoi(valueJobsJobInfo["Priority"].asString());
+			jobsObject.priority = valueJobsJobInfo["Priority"].asString();
 		if(!valueJobsJobInfo["State"].isNull())
 			jobsObject.state = valueJobsJobInfo["State"].asString();
 		if(!valueJobsJobInfo["SubmitTime"].isNull())

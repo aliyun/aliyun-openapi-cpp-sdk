@@ -102,6 +102,8 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPeriodUnit()const;
 				void setPeriodUnit(const std::string& periodUnit);
+				bool getComputeEnableHt()const;
+				void setComputeEnableHt(bool computeEnableHt);
 				std::string getAutoRenew()const;
 				void setAutoRenew(const std::string& autoRenew);
 				std::string getName()const;
@@ -132,8 +134,6 @@ namespace AlibabaCloud
 				void setVolumeType(const std::string& volumeType);
 				std::string getSystemDiskType()const;
 				void setSystemDiskType(const std::string& systemDiskType);
-				bool getIsComputeOnecs()const;
-				void setIsComputeOnecs(bool isComputeOnecs);
 				std::string getVolumeProtocol()const;
 				void setVolumeProtocol(const std::string& volumeProtocol);
 				std::string getClientVersion()const;
@@ -179,6 +179,7 @@ namespace AlibabaCloud
 				std::vector<PostInstallScript> postInstallScript_;
 				std::string vSwitchId_;
 				std::string periodUnit_;
+				bool computeEnableHt_;
 				std::string autoRenew_;
 				std::string name_;
 				std::string volumeId_;
@@ -194,7 +195,6 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string volumeType_;
 				std::string systemDiskType_;
-				bool isComputeOnecs_;
 				std::string volumeProtocol_;
 				std::string clientVersion_;
 				std::string osTag_;

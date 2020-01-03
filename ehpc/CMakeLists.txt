@@ -107,6 +107,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/GetGWSConnectTicketResult.h
 	include/alibabacloud/ehpc/model/GetHybridClusterConfigRequest.h
 	include/alibabacloud/ehpc/model/GetHybridClusterConfigResult.h
+	include/alibabacloud/ehpc/model/GetIfEcsTypeSupportHtConfigRequest.h
+	include/alibabacloud/ehpc/model/GetIfEcsTypeSupportHtConfigResult.h
 	include/alibabacloud/ehpc/model/GetInstanceReportRequest.h
 	include/alibabacloud/ehpc/model/GetInstanceReportResult.h
 	include/alibabacloud/ehpc/model/GetJobReportRequest.h
@@ -211,6 +213,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/RunCloudMetricProfilingResult.h
 	include/alibabacloud/ehpc/model/SetAutoScaleConfigRequest.h
 	include/alibabacloud/ehpc/model/SetAutoScaleConfigResult.h
+	include/alibabacloud/ehpc/model/SetGWSInstanceNameRequest.h
+	include/alibabacloud/ehpc/model/SetGWSInstanceNameResult.h
 	include/alibabacloud/ehpc/model/SetGWSInstanceUserRequest.h
 	include/alibabacloud/ehpc/model/SetGWSInstanceUserResult.h
 	include/alibabacloud/ehpc/model/SetJobUserRequest.h
@@ -336,6 +340,8 @@ set(ehpc_src
 	src/model/GetGWSConnectTicketResult.cc
 	src/model/GetHybridClusterConfigRequest.cc
 	src/model/GetHybridClusterConfigResult.cc
+	src/model/GetIfEcsTypeSupportHtConfigRequest.cc
+	src/model/GetIfEcsTypeSupportHtConfigResult.cc
 	src/model/GetInstanceReportRequest.cc
 	src/model/GetInstanceReportResult.cc
 	src/model/GetJobReportRequest.cc
@@ -440,6 +446,8 @@ set(ehpc_src
 	src/model/RunCloudMetricProfilingResult.cc
 	src/model/SetAutoScaleConfigRequest.cc
 	src/model/SetAutoScaleConfigResult.cc
+	src/model/SetGWSInstanceNameRequest.cc
+	src/model/SetGWSInstanceNameResult.cc
 	src/model/SetGWSInstanceUserRequest.cc
 	src/model/SetGWSInstanceUserResult.cc
 	src/model/SetJobUserRequest.cc
