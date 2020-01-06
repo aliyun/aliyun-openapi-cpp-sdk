@@ -61,6 +61,7 @@ TEST(LocationClient, credentials)
   req.setId("cn-hangzhou");
   req.setServiceCode("ecs");
   req.setType("openAPI");
+  req.setMethod(HttpRequest::Post);
 
   LocationClient client(credentials, configuration);
 
@@ -127,6 +128,8 @@ TEST(LocationClient, callable)
 {
   InitializeSdk();
   ClientConfiguration configuration("cn-hangzhou");
+  configuration.setConnectTimeout(100000);
+  configuration.setReadTimeout(100000);
   Model::DescribeEndpointsRequest req;
   req.setId("cn-hangzhou");
   req.setServiceCode("ecs");
@@ -136,8 +139,8 @@ TEST(LocationClient, callable)
   LocationClient::DescribeEndpointsOutcomeCallable cb = client.describeEndpointsCallable(req);
   LocationClient::DescribeEndpointsOutcome out = cb.get();
 
-  EXPECT_TRUE(out.error().errorCode() == "");
-  EXPECT_TRUE(out.result().endpoints().size() == 1);
+  EXPECT_EQ("", out.error().errorCode());
+  EXPECT_EQ(1, out.result().endpoints().size());
   Model::DescribeEndpointsResult::Endpoint ep = out.result().endpoints()[0];
   EXPECT_TRUE(ep.endpoint == "ecs-cn-hangzhou.aliyuncs.com");
   EXPECT_TRUE(ep.id == "cn-hangzhou");
