@@ -126,6 +126,17 @@ void ModifyPrepayInstanceSpecRequest::setAutoPay(bool autoPay)
 	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
+bool ModifyPrepayInstanceSpecRequest::getRebootWhenFinished()const
+{
+	return rebootWhenFinished_;
+}
+
+void ModifyPrepayInstanceSpecRequest::setRebootWhenFinished(bool rebootWhenFinished)
+{
+	rebootWhenFinished_ = rebootWhenFinished;
+	setCoreParameter("RebootWhenFinished", rebootWhenFinished ? "true" : "false");
+}
+
 std::string ModifyPrepayInstanceSpecRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

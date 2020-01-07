@@ -70,6 +70,22 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 			instanceSystemEventSetObject.extendedAttribute.diskId = extendedAttributeNode["DiskId"].asString();
 		if(!extendedAttributeNode["Device"].isNull())
 			instanceSystemEventSetObject.extendedAttribute.device = extendedAttributeNode["Device"].asString();
+		auto allInactiveDisksNode = extendedAttributeNode["InactiveDisks"]["InactiveDisk"];
+		for (auto extendedAttributeNodeInactiveDisksInactiveDisk : allInactiveDisksNode)
+		{
+			InstanceSystemEventType::ExtendedAttribute::InactiveDisk inactiveDiskObject;
+			if(!extendedAttributeNodeInactiveDisksInactiveDisk["CreationTime"].isNull())
+				inactiveDiskObject.creationTime = extendedAttributeNodeInactiveDisksInactiveDisk["CreationTime"].asString();
+			if(!extendedAttributeNodeInactiveDisksInactiveDisk["ReleaseTime"].isNull())
+				inactiveDiskObject.releaseTime = extendedAttributeNodeInactiveDisksInactiveDisk["ReleaseTime"].asString();
+			if(!extendedAttributeNodeInactiveDisksInactiveDisk["DeviceType"].isNull())
+				inactiveDiskObject.deviceType = extendedAttributeNodeInactiveDisksInactiveDisk["DeviceType"].asString();
+			if(!extendedAttributeNodeInactiveDisksInactiveDisk["DeviceCategory"].isNull())
+				inactiveDiskObject.deviceCategory = extendedAttributeNodeInactiveDisksInactiveDisk["DeviceCategory"].asString();
+			if(!extendedAttributeNodeInactiveDisksInactiveDisk["DeviceSize"].isNull())
+				inactiveDiskObject.deviceSize = extendedAttributeNodeInactiveDisksInactiveDisk["DeviceSize"].asString();
+			instanceSystemEventSetObject.extendedAttribute.inactiveDisks.push_back(inactiveDiskObject);
+		}
 		instanceSystemEventSet_.push_back(instanceSystemEventSetObject);
 	}
 	if(!value["TotalCount"].isNull())

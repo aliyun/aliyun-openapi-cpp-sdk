@@ -57,6 +57,8 @@ void DescribeCommandsResult::parse(const std::string &payload)
 			commandsObject.workingDir = valueCommandsCommand["WorkingDir"].asString();
 		if(!valueCommandsCommand["Timeout"].isNull())
 			commandsObject.timeout = std::stol(valueCommandsCommand["Timeout"].asString());
+		if(!valueCommandsCommand["InvokeTimes"].isNull())
+			commandsObject.invokeTimes = std::stoi(valueCommandsCommand["InvokeTimes"].asString());
 		if(!valueCommandsCommand["CreationTime"].isNull())
 			commandsObject.creationTime = valueCommandsCommand["CreationTime"].asString();
 		if(!valueCommandsCommand["EnableParameter"].isNull())

@@ -58,7 +58,16 @@ namespace AlibabaCloud
 						};
 						struct ExtendedAttribute
 						{
+							struct InactiveDisk
+							{
+								std::string deviceType;
+								std::string releaseTime;
+								std::string deviceSize;
+								std::string creationTime;
+								std::string deviceCategory;
+							};
 							std::string device;
+							std::vector<InactiveDisk> inactiveDisks;
 							std::string diskId;
 						};
 						EventCycleStatus eventCycleStatus;

@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setInstanceType(const std::string& instanceType);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
+				bool getRebootWhenFinished()const;
+				void setRebootWhenFinished(bool rebootWhenFinished);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -74,6 +76,7 @@ namespace AlibabaCloud
 				bool migrateAcrossZone_;
 				std::string instanceType_;
 				bool autoPay_;
+				bool rebootWhenFinished_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string endTime_;

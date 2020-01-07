@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::vector<std::string> parameterNames;
 					long timeout;
+					int invokeTimes;
 					std::string creationTime;
 					bool enableParameter;
 					std::string commandId;
