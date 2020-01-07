@@ -86,6 +86,8 @@
 #include "model/ListAllNodeResult.h"
 #include "model/ListAlternativeSnapshotReposRequest.h"
 #include "model/ListAlternativeSnapshotReposResult.h"
+#include "model/ListConnectedClustersRequest.h"
+#include "model/ListConnectedClustersResult.h"
 #include "model/ListInstanceRequest.h"
 #include "model/ListInstanceResult.h"
 #include "model/ListKibanaPluginsRequest.h"
@@ -102,6 +104,8 @@
 #include "model/ListSearchLogResult.h"
 #include "model/ListSnapshotReposByInstanceIdRequest.h"
 #include "model/ListSnapshotReposByInstanceIdResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/MoveResourceGroupRequest.h"
 #include "model/MoveResourceGroupResult.h"
 #include "model/OpenHttpsRequest.h"
@@ -122,6 +126,8 @@
 #include "model/RollbackInstanceResult.h"
 #include "model/ShrinkNodeRequest.h"
 #include "model/ShrinkNodeResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
 #include "model/TransferNodeRequest.h"
 #include "model/TransferNodeResult.h"
 #include "model/TriggerNetworkRequest.h"
@@ -132,6 +138,8 @@
 #include "model/UninstallLogstashPluginResult.h"
 #include "model/UninstallPluginRequest.h"
 #include "model/UninstallPluginResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/UpdateAdminPasswordRequest.h"
 #include "model/UpdateAdminPasswordResult.h"
 #include "model/UpdateAdvancedSettingRequest.h"
@@ -287,6 +295,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAlternativeSnapshotReposResult> ListAlternativeSnapshotReposOutcome;
 			typedef std::future<ListAlternativeSnapshotReposOutcome> ListAlternativeSnapshotReposOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListAlternativeSnapshotReposRequest&, const ListAlternativeSnapshotReposOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAlternativeSnapshotReposAsyncHandler;
+			typedef Outcome<Error, Model::ListConnectedClustersResult> ListConnectedClustersOutcome;
+			typedef std::future<ListConnectedClustersOutcome> ListConnectedClustersOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListConnectedClustersRequest&, const ListConnectedClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConnectedClustersAsyncHandler;
 			typedef Outcome<Error, Model::ListInstanceResult> ListInstanceOutcome;
 			typedef std::future<ListInstanceOutcome> ListInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListInstanceRequest&, const ListInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceAsyncHandler;
@@ -311,6 +322,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSnapshotReposByInstanceIdResult> ListSnapshotReposByInstanceIdOutcome;
 			typedef std::future<ListSnapshotReposByInstanceIdOutcome> ListSnapshotReposByInstanceIdOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListSnapshotReposByInstanceIdRequest&, const ListSnapshotReposByInstanceIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSnapshotReposByInstanceIdAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::MoveResourceGroupResult> MoveResourceGroupOutcome;
 			typedef std::future<MoveResourceGroupOutcome> MoveResourceGroupOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::MoveResourceGroupRequest&, const MoveResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveResourceGroupAsyncHandler;
@@ -341,6 +355,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ShrinkNodeResult> ShrinkNodeOutcome;
 			typedef std::future<ShrinkNodeOutcome> ShrinkNodeOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ShrinkNodeRequest&, const ShrinkNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShrinkNodeAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::TransferNodeResult> TransferNodeOutcome;
 			typedef std::future<TransferNodeOutcome> TransferNodeOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::TransferNodeRequest&, const TransferNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransferNodeAsyncHandler;
@@ -356,6 +373,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UninstallPluginResult> UninstallPluginOutcome;
 			typedef std::future<UninstallPluginOutcome> UninstallPluginOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UninstallPluginRequest&, const UninstallPluginOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UninstallPluginAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAdminPasswordResult> UpdateAdminPasswordOutcome;
 			typedef std::future<UpdateAdminPasswordOutcome> UpdateAdminPasswordOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateAdminPasswordRequest&, const UpdateAdminPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAdminPasswordAsyncHandler;
@@ -532,6 +552,9 @@ namespace AlibabaCloud
 			ListAlternativeSnapshotReposOutcome listAlternativeSnapshotRepos(const Model::ListAlternativeSnapshotReposRequest &request)const;
 			void listAlternativeSnapshotReposAsync(const Model::ListAlternativeSnapshotReposRequest& request, const ListAlternativeSnapshotReposAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAlternativeSnapshotReposOutcomeCallable listAlternativeSnapshotReposCallable(const Model::ListAlternativeSnapshotReposRequest& request) const;
+			ListConnectedClustersOutcome listConnectedClusters(const Model::ListConnectedClustersRequest &request)const;
+			void listConnectedClustersAsync(const Model::ListConnectedClustersRequest& request, const ListConnectedClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListConnectedClustersOutcomeCallable listConnectedClustersCallable(const Model::ListConnectedClustersRequest& request) const;
 			ListInstanceOutcome listInstance(const Model::ListInstanceRequest &request)const;
 			void listInstanceAsync(const Model::ListInstanceRequest& request, const ListInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstanceOutcomeCallable listInstanceCallable(const Model::ListInstanceRequest& request) const;
@@ -556,6 +579,9 @@ namespace AlibabaCloud
 			ListSnapshotReposByInstanceIdOutcome listSnapshotReposByInstanceId(const Model::ListSnapshotReposByInstanceIdRequest &request)const;
 			void listSnapshotReposByInstanceIdAsync(const Model::ListSnapshotReposByInstanceIdRequest& request, const ListSnapshotReposByInstanceIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSnapshotReposByInstanceIdOutcomeCallable listSnapshotReposByInstanceIdCallable(const Model::ListSnapshotReposByInstanceIdRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			MoveResourceGroupOutcome moveResourceGroup(const Model::MoveResourceGroupRequest &request)const;
 			void moveResourceGroupAsync(const Model::MoveResourceGroupRequest& request, const MoveResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MoveResourceGroupOutcomeCallable moveResourceGroupCallable(const Model::MoveResourceGroupRequest& request) const;
@@ -586,6 +612,9 @@ namespace AlibabaCloud
 			ShrinkNodeOutcome shrinkNode(const Model::ShrinkNodeRequest &request)const;
 			void shrinkNodeAsync(const Model::ShrinkNodeRequest& request, const ShrinkNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ShrinkNodeOutcomeCallable shrinkNodeCallable(const Model::ShrinkNodeRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
 			TransferNodeOutcome transferNode(const Model::TransferNodeRequest &request)const;
 			void transferNodeAsync(const Model::TransferNodeRequest& request, const TransferNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TransferNodeOutcomeCallable transferNodeCallable(const Model::TransferNodeRequest& request) const;
@@ -601,6 +630,9 @@ namespace AlibabaCloud
 			UninstallPluginOutcome uninstallPlugin(const Model::UninstallPluginRequest &request)const;
 			void uninstallPluginAsync(const Model::UninstallPluginRequest& request, const UninstallPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UninstallPluginOutcomeCallable uninstallPluginCallable(const Model::UninstallPluginRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UpdateAdminPasswordOutcome updateAdminPassword(const Model::UpdateAdminPasswordRequest &request)const;
 			void updateAdminPasswordAsync(const Model::UpdateAdminPasswordRequest& request, const UpdateAdminPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAdminPasswordOutcomeCallable updateAdminPasswordCallable(const Model::UpdateAdminPasswordRequest& request) const;

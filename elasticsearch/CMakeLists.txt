@@ -85,6 +85,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ListAllNodeResult.h
 	include/alibabacloud/elasticsearch/model/ListAlternativeSnapshotReposRequest.h
 	include/alibabacloud/elasticsearch/model/ListAlternativeSnapshotReposResult.h
+	include/alibabacloud/elasticsearch/model/ListConnectedClustersRequest.h
+	include/alibabacloud/elasticsearch/model/ListConnectedClustersResult.h
 	include/alibabacloud/elasticsearch/model/ListInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/ListInstanceResult.h
 	include/alibabacloud/elasticsearch/model/ListKibanaPluginsRequest.h
@@ -101,6 +103,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ListSearchLogResult.h
 	include/alibabacloud/elasticsearch/model/ListSnapshotReposByInstanceIdRequest.h
 	include/alibabacloud/elasticsearch/model/ListSnapshotReposByInstanceIdResult.h
+	include/alibabacloud/elasticsearch/model/ListTagResourcesRequest.h
+	include/alibabacloud/elasticsearch/model/ListTagResourcesResult.h
 	include/alibabacloud/elasticsearch/model/MoveResourceGroupRequest.h
 	include/alibabacloud/elasticsearch/model/MoveResourceGroupResult.h
 	include/alibabacloud/elasticsearch/model/OpenHttpsRequest.h
@@ -121,6 +125,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/RollbackInstanceResult.h
 	include/alibabacloud/elasticsearch/model/ShrinkNodeRequest.h
 	include/alibabacloud/elasticsearch/model/ShrinkNodeResult.h
+	include/alibabacloud/elasticsearch/model/TagResourcesRequest.h
+	include/alibabacloud/elasticsearch/model/TagResourcesResult.h
 	include/alibabacloud/elasticsearch/model/TransferNodeRequest.h
 	include/alibabacloud/elasticsearch/model/TransferNodeResult.h
 	include/alibabacloud/elasticsearch/model/TriggerNetworkRequest.h
@@ -131,6 +137,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/UninstallLogstashPluginResult.h
 	include/alibabacloud/elasticsearch/model/UninstallPluginRequest.h
 	include/alibabacloud/elasticsearch/model/UninstallPluginResult.h
+	include/alibabacloud/elasticsearch/model/UntagResourcesRequest.h
+	include/alibabacloud/elasticsearch/model/UntagResourcesResult.h
 	include/alibabacloud/elasticsearch/model/UpdateAdminPasswordRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateAdminPasswordResult.h
 	include/alibabacloud/elasticsearch/model/UpdateAdvancedSettingRequest.h
@@ -248,6 +256,8 @@ set(elasticsearch_src
 	src/model/ListAllNodeResult.cc
 	src/model/ListAlternativeSnapshotReposRequest.cc
 	src/model/ListAlternativeSnapshotReposResult.cc
+	src/model/ListConnectedClustersRequest.cc
+	src/model/ListConnectedClustersResult.cc
 	src/model/ListInstanceRequest.cc
 	src/model/ListInstanceResult.cc
 	src/model/ListKibanaPluginsRequest.cc
@@ -264,6 +274,8 @@ set(elasticsearch_src
 	src/model/ListSearchLogResult.cc
 	src/model/ListSnapshotReposByInstanceIdRequest.cc
 	src/model/ListSnapshotReposByInstanceIdResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/MoveResourceGroupRequest.cc
 	src/model/MoveResourceGroupResult.cc
 	src/model/OpenHttpsRequest.cc
@@ -284,6 +296,8 @@ set(elasticsearch_src
 	src/model/RollbackInstanceResult.cc
 	src/model/ShrinkNodeRequest.cc
 	src/model/ShrinkNodeResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
 	src/model/TransferNodeRequest.cc
 	src/model/TransferNodeResult.cc
 	src/model/TriggerNetworkRequest.cc
@@ -294,6 +308,8 @@ set(elasticsearch_src
 	src/model/UninstallLogstashPluginResult.cc
 	src/model/UninstallPluginRequest.cc
 	src/model/UninstallPluginResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UpdateAdminPasswordRequest.cc
 	src/model/UpdateAdminPasswordResult.cc
 	src/model/UpdateAdvancedSettingRequest.cc

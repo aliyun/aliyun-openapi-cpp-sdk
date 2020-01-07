@@ -165,10 +165,6 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.kibanaConfiguration.spec = kibanaConfigurationNode["spec"].asString();
 	if(!kibanaConfigurationNode["amount"].isNull())
 		result_.kibanaConfiguration.amount = std::stoi(kibanaConfigurationNode["amount"].asString());
-	if(!kibanaConfigurationNode["diskType"].isNull())
-		result_.kibanaConfiguration.diskType = kibanaConfigurationNode["diskType"].asString();
-	if(!kibanaConfigurationNode["disk"].isNull())
-		result_.kibanaConfiguration.disk = std::stoi(kibanaConfigurationNode["disk"].asString());
 	auto masterConfigurationNode = resultNode["masterConfiguration"];
 	if(!masterConfigurationNode["spec"].isNull())
 		result_.masterConfiguration.spec = masterConfigurationNode["spec"].asString();

@@ -50,10 +50,8 @@ namespace AlibabaCloud
 					};
 					struct KibanaConfiguration
 					{
-						std::string diskType;
 						int amount;
 						std::string spec;
-						int disk;
 					};
 					struct MasterConfiguration
 					{

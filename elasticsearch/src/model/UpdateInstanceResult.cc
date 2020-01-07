@@ -66,32 +66,32 @@ void UpdateInstanceResult::parse(const std::string &payload)
 		result_.publicDomain = resultNode["publicDomain"].asString();
 	if(!resultNode["publicPort"].isNull())
 		result_.publicPort = std::stoi(resultNode["publicPort"].asString());
-	auto alldictListNode = resultNode["dictList"]["dictListItem"];
-	for (auto resultNodedictListdictListItem : alldictListNode)
+	auto alldictListNode = resultNode["dictList"]["DictListItem"];
+	for (auto resultNodedictListDictListItem : alldictListNode)
 	{
 		Result::DictListItem dictListItemObject;
-		if(!resultNodedictListdictListItem["name"].isNull())
-			dictListItemObject.name = resultNodedictListdictListItem["name"].asString();
-		if(!resultNodedictListdictListItem["fileSize"].isNull())
-			dictListItemObject.fileSize = std::stol(resultNodedictListdictListItem["fileSize"].asString());
-		if(!resultNodedictListdictListItem["type"].isNull())
-			dictListItemObject.type = resultNodedictListdictListItem["type"].asString();
-		if(!resultNodedictListdictListItem["sourceType"].isNull())
-			dictListItemObject.sourceType = resultNodedictListdictListItem["sourceType"].asString();
+		if(!resultNodedictListDictListItem["name"].isNull())
+			dictListItemObject.name = resultNodedictListDictListItem["name"].asString();
+		if(!resultNodedictListDictListItem["fileSize"].isNull())
+			dictListItemObject.fileSize = std::stol(resultNodedictListDictListItem["fileSize"].asString());
+		if(!resultNodedictListDictListItem["type"].isNull())
+			dictListItemObject.type = resultNodedictListDictListItem["type"].asString();
+		if(!resultNodedictListDictListItem["sourceType"].isNull())
+			dictListItemObject.sourceType = resultNodedictListDictListItem["sourceType"].asString();
 		result_.dictList.push_back(dictListItemObject);
 	}
-	auto allsynonymsDictsNode = resultNode["synonymsDicts"]["synonymsDictsItem"];
-	for (auto resultNodesynonymsDictssynonymsDictsItem : allsynonymsDictsNode)
+	auto allsynonymsDictsNode = resultNode["synonymsDicts"]["SynonymsDictsItem"];
+	for (auto resultNodesynonymsDictsSynonymsDictsItem : allsynonymsDictsNode)
 	{
 		Result::SynonymsDictsItem synonymsDictsItemObject;
-		if(!resultNodesynonymsDictssynonymsDictsItem["name"].isNull())
-			synonymsDictsItemObject.name = resultNodesynonymsDictssynonymsDictsItem["name"].asString();
-		if(!resultNodesynonymsDictssynonymsDictsItem["fileSize"].isNull())
-			synonymsDictsItemObject.fileSize = std::stol(resultNodesynonymsDictssynonymsDictsItem["fileSize"].asString());
-		if(!resultNodesynonymsDictssynonymsDictsItem["type"].isNull())
-			synonymsDictsItemObject.type = resultNodesynonymsDictssynonymsDictsItem["type"].asString();
-		if(!resultNodesynonymsDictssynonymsDictsItem["sourceType"].isNull())
-			synonymsDictsItemObject.sourceType = resultNodesynonymsDictssynonymsDictsItem["sourceType"].asString();
+		if(!resultNodesynonymsDictsSynonymsDictsItem["name"].isNull())
+			synonymsDictsItemObject.name = resultNodesynonymsDictsSynonymsDictsItem["name"].asString();
+		if(!resultNodesynonymsDictsSynonymsDictsItem["fileSize"].isNull())
+			synonymsDictsItemObject.fileSize = std::stol(resultNodesynonymsDictsSynonymsDictsItem["fileSize"].asString());
+		if(!resultNodesynonymsDictsSynonymsDictsItem["type"].isNull())
+			synonymsDictsItemObject.type = resultNodesynonymsDictsSynonymsDictsItem["type"].asString();
+		if(!resultNodesynonymsDictsSynonymsDictsItem["sourceType"].isNull())
+			synonymsDictsItemObject.sourceType = resultNodesynonymsDictsSynonymsDictsItem["sourceType"].asString();
 		result_.synonymsDicts.push_back(synonymsDictsItemObject);
 	}
 	auto nodeSpecNode = resultNode["nodeSpec"];
