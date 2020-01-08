@@ -47,6 +47,8 @@ void ListSetTagsResult::parse(const std::string &payload)
 			tagsObject.tagName = valueTagsTagsItem["TagName"].asString();
 		if(!valueTagsTagsItem["TagCount"].isNull())
 			tagsObject.tagCount = std::stoi(valueTagsTagsItem["TagCount"].asString());
+		if(!valueTagsTagsItem["TagLevel"].isNull())
+			tagsObject.tagLevel = std::stoi(valueTagsTagsItem["TagLevel"].asString());
 		tags_.push_back(tagsObject);
 	}
 	if(!value["SetId"].isNull())

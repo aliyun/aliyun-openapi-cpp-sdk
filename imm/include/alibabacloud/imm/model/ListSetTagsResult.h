@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					int tagCount;
 					std::string tagName;
+					int tagLevel;
 				};
 
 
