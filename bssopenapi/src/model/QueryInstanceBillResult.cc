@@ -126,6 +126,8 @@ void QueryInstanceBillResult::parse(const std::string &payload)
 			itemObject.item = dataNodeItemsItem["Item"].asString();
 		if(!dataNodeItemsItem["ServicePeriod"].isNull())
 			itemObject.servicePeriod = dataNodeItemsItem["ServicePeriod"].asString();
+		if(!dataNodeItemsItem["BillingDate"].isNull())
+			itemObject.billingDate = dataNodeItemsItem["BillingDate"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

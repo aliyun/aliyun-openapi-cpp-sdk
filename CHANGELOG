@@ -1,3 +1,6 @@
+2020-01-09 Version 1.36.236
+- Support DAILY report in QueryInstanBill.
+
 2020-01-08 Version 1.36.235
 - Add TagLevel to ListSetTags.
 

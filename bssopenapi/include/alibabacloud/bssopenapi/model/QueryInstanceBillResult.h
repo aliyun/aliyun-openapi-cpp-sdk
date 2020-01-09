@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						std::string instanceID;
 						float deductedByCashCoupons;
 						std::string listPriceUnit;
+						std::string billingDate;
 						std::string listPrice;
 						float paymentAmount;
 						float deductedByPrepaidCard;

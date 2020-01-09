@@ -93,6 +93,17 @@ void QueryInstanceBillRequest::setPageNum(int pageNum)
 	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
+std::string QueryInstanceBillRequest::getBillingDate()const
+{
+	return billingDate_;
+}
+
+void QueryInstanceBillRequest::setBillingDate(const std::string& billingDate)
+{
+	billingDate_ = billingDate;
+	setCoreParameter("BillingDate", billingDate);
+}
+
 std::string QueryInstanceBillRequest::getProductType()const
 {
 	return productType_;
@@ -113,6 +124,17 @@ void QueryInstanceBillRequest::setIsBillingItem(bool isBillingItem)
 {
 	isBillingItem_ = isBillingItem;
 	setCoreParameter("IsBillingItem", isBillingItem ? "true" : "false");
+}
+
+std::string QueryInstanceBillRequest::getGranularity()const
+{
+	return granularity_;
+}
+
+void QueryInstanceBillRequest::setGranularity(const std::string& granularity)
+{
+	granularity_ = granularity;
+	setCoreParameter("Granularity", granularity);
 }
 
 int QueryInstanceBillRequest::getPageSize()const
