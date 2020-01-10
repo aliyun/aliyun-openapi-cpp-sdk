@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string backupMode;
 					std::string dBClusterId;
 					std::string backupStartTime;
+					std::string consistentTime;
 					std::string backupId;
 					std::string backupType;
 					std::string backupSetSize;

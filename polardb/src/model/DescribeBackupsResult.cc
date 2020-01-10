@@ -63,6 +63,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.storeStatus = valueItemsBackup["StoreStatus"].asString();
 		if(!valueItemsBackup["BackupSetSize"].isNull())
 			itemsObject.backupSetSize = valueItemsBackup["BackupSetSize"].asString();
+		if(!valueItemsBackup["ConsistentTime"].isNull())
+			itemsObject.consistentTime = valueItemsBackup["ConsistentTime"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

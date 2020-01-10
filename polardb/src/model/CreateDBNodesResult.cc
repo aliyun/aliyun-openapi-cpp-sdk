@@ -39,11 +39,19 @@ void CreateDBNodesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allDBNodeIds = value["DBNodeIds"]["DBNodeId"];
+	for (const auto &item : allDBNodeIds)
+		dBNodeIds_.push_back(item.asString());
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
 
+}
+
+std::vector<std::string> CreateDBNodesResult::getDBNodeIds()const
+{
+	return dBNodeIds_;
 }
 
 std::string CreateDBNodesResult::getDBClusterId()const

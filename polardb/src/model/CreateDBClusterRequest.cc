@@ -203,6 +203,17 @@ void CreateDBClusterRequest::setVSwitchId(const std::string& vSwitchId)
 	setCoreParameter("VSwitchId", vSwitchId);
 }
 
+std::string CreateDBClusterRequest::getSecurityIPList()const
+{
+	return securityIPList_;
+}
+
+void CreateDBClusterRequest::setSecurityIPList(const std::string& securityIPList)
+{
+	securityIPList_ = securityIPList;
+	setCoreParameter("SecurityIPList", securityIPList);
+}
+
 bool CreateDBClusterRequest::getAutoRenew()const
 {
 	return autoRenew_;

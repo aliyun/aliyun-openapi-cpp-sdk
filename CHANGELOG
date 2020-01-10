@@ -1,3 +1,7 @@
+2020-01-10 Version 1.36.237
+- Return `ConsistentTime` for DescribeBackups.
+- Return `DBNodeIds` for CreateDBNodes.
+
 2020-01-09 Version 1.36.236
 - Support DAILY report in QueryInstanBill.
 

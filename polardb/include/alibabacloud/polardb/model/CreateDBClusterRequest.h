@@ -67,6 +67,8 @@ namespace AlibabaCloud
 				void setUsedTime(const std::string& usedTime);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
+				std::string getSecurityIPList()const;
+				void setSecurityIPList(const std::string& securityIPList);
 				bool getAutoRenew()const;
 				void setAutoRenew(bool autoRenew);
 				std::string getVPCId()const;
@@ -99,6 +101,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string usedTime_;
 				std::string vSwitchId_;
+				std::string securityIPList_;
 				bool autoRenew_;
 				std::string vPCId_;
 				std::string dBType_;

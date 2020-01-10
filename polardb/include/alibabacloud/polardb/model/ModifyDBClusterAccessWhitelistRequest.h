@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setDBClusterIPArrayAttribute(const std::string& dBClusterIPArrayAttribute);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getModifyMode()const;
+				void setModifyMode(const std::string& modifyMode);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				std::string securityIps_;
 				std::string dBClusterIPArrayAttribute_;
 				std::string accessKeyId_;
+				std::string modifyMode_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;

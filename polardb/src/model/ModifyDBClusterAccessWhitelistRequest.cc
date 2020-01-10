@@ -71,6 +71,17 @@ void ModifyDBClusterAccessWhitelistRequest::setAccessKeyId(const std::string& ac
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyDBClusterAccessWhitelistRequest::getModifyMode()const
+{
+	return modifyMode_;
+}
+
+void ModifyDBClusterAccessWhitelistRequest::setModifyMode(const std::string& modifyMode)
+{
+	modifyMode_ = modifyMode;
+	setCoreParameter("ModifyMode", modifyMode);
+}
+
 std::string ModifyDBClusterAccessWhitelistRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
