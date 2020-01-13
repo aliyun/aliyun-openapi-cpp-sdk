@@ -60,6 +60,17 @@ void DescribeAvailableResourceRequest::setSecurityToken(const std::string& secur
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeAvailableResourceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeAvailableResourceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string DescribeAvailableResourceRequest::getInstanceChargeType()const
 {
 	return instanceChargeType_;
