@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/DeleteMaintenancePropertyResult.h>
+#include <alibabacloud/ecs/model/ModifyInstanceMaintenanceAttributesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-DeleteMaintenancePropertyResult::DeleteMaintenancePropertyResult() :
+ModifyInstanceMaintenanceAttributesResult::ModifyInstanceMaintenanceAttributesResult() :
 	ServiceResult()
 {}
 
-DeleteMaintenancePropertyResult::DeleteMaintenancePropertyResult(const std::string &payload) :
+ModifyInstanceMaintenanceAttributesResult::ModifyInstanceMaintenanceAttributesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteMaintenancePropertyResult::~DeleteMaintenancePropertyResult()
+ModifyInstanceMaintenanceAttributesResult::~ModifyInstanceMaintenanceAttributesResult()
 {}
 
-void DeleteMaintenancePropertyResult::parse(const std::string &payload)
+void ModifyInstanceMaintenanceAttributesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

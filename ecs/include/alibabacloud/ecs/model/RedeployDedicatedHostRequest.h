@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEMAINTENANCEPROPERTYREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEMAINTENANCEPROPERTYREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_REDEPLOYDEDICATEDHOSTREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_REDEPLOYDEDICATEDHOSTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeMaintenancePropertyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT RedeployDedicatedHostRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeMaintenancePropertyRequest();
-				~DescribeMaintenancePropertyRequest();
+				RedeployDedicatedHostRequest();
+				~RedeployDedicatedHostRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				long getPageSize()const;
-				void setPageSize(long pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getDedicatedHostId()const;
+				void setDedicatedHostId(const std::string& dedicatedHostId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::vector<std::string> getInstanceId()const;
-				void setInstanceId(const std::vector<std::string>& instanceId);
 
             private:
 				long resourceOwnerId_;
-				long pageNumber_;
 				std::string regionId_;
-				long pageSize_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string dedicatedHostId_;
 				long ownerId_;
-				std::vector<std::string> instanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEMAINTENANCEPROPERTYREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_REDEPLOYDEDICATEDHOSTREQUEST_H_

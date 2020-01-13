@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_CREATEMAINTENANCEPROPERTYRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_CREATEMAINTENANCEPROPERTYRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEMAINTENANCEATTRIBUTESRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEMAINTENANCEATTRIBUTESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT CreateMaintenancePropertyResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT ModifyInstanceMaintenanceAttributesResult : public ServiceResult
 			{
 			public:
 
 
-				CreateMaintenancePropertyResult();
-				explicit CreateMaintenancePropertyResult(const std::string &payload);
-				~CreateMaintenancePropertyResult();
+				ModifyInstanceMaintenanceAttributesResult();
+				explicit ModifyInstanceMaintenanceAttributesResult(const std::string &payload);
+				~ModifyInstanceMaintenanceAttributesResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_CREATEMAINTENANCEPROPERTYRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEMAINTENANCEATTRIBUTESRESULT_H_

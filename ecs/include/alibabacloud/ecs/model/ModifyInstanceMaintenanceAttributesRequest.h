@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DELETEMAINTENANCEPROPERTYREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DELETEMAINTENANCEPROPERTYREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEMAINTENANCEATTRIBUTESREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEMAINTENANCEATTRIBUTESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DeleteMaintenancePropertyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT ModifyInstanceMaintenanceAttributesRequest : public RpcServiceRequest
 			{
+				struct MaintenanceWindow
+				{
+					std::string startTime;
+					std::string endTime;
+				};
 
 			public:
-				DeleteMaintenancePropertyRequest();
-				~DeleteMaintenancePropertyRequest();
+				ModifyInstanceMaintenanceAttributesRequest();
+				~ModifyInstanceMaintenanceAttributesRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::vector<MaintenanceWindow> getMaintenanceWindow()const;
+				void setMaintenanceWindow(const std::vector<MaintenanceWindow>& maintenanceWindow);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getActionOnMaintenance()const;
+				void setActionOnMaintenance(const std::string& actionOnMaintenance);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -50,7 +59,9 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::vector<MaintenanceWindow> maintenanceWindow_;
 				std::string regionId_;
+				std::string actionOnMaintenance_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
@@ -60,4 +71,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DELETEMAINTENANCEPROPERTYREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEMAINTENANCEATTRIBUTESREQUEST_H_

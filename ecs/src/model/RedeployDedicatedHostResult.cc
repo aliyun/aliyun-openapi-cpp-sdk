@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/ModifyMaintenancePropertyResult.h>
+#include <alibabacloud/ecs/model/RedeployDedicatedHostResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-ModifyMaintenancePropertyResult::ModifyMaintenancePropertyResult() :
+RedeployDedicatedHostResult::RedeployDedicatedHostResult() :
 	ServiceResult()
 {}
 
-ModifyMaintenancePropertyResult::ModifyMaintenancePropertyResult(const std::string &payload) :
+RedeployDedicatedHostResult::RedeployDedicatedHostResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyMaintenancePropertyResult::~ModifyMaintenancePropertyResult()
+RedeployDedicatedHostResult::~RedeployDedicatedHostResult()
 {}
 
-void ModifyMaintenancePropertyResult::parse(const std::string &payload)
+void RedeployDedicatedHostResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

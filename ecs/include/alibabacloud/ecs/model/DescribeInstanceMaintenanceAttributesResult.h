@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEMAINTENANCEPROPERTYRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEMAINTENANCEPROPERTYRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMAINTENANCEATTRIBUTESRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMAINTENANCEATTRIBUTESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeMaintenancePropertyResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT DescribeInstanceMaintenanceAttributesResult : public ServiceResult
 			{
 			public:
-				struct MaintenanceProperty
+				struct MaintenanceAttribute
 				{
-					std::string endTime;
+					struct ActionOnMaintenance
+					{
+						std::string defaultValue;
+						std::string value;
+						std::vector<std::string> supportedValues;
+					};
+					struct MaintenanceWindow
+					{
+						std::string endTime;
+						std::string startTime;
+					};
 					std::string instanceId;
-					std::string startTime;
-					std::string actionOnMaintenance;
+					ActionOnMaintenance actionOnMaintenance;
+					std::vector<MaintenanceAttribute::MaintenanceWindow> maintenanceWindows;
 				};
 
 
-				DescribeMaintenancePropertyResult();
-				explicit DescribeMaintenancePropertyResult(const std::string &payload);
-				~DescribeMaintenancePropertyResult();
+				DescribeInstanceMaintenanceAttributesResult();
+				explicit DescribeInstanceMaintenanceAttributesResult(const std::string &payload);
+				~DescribeInstanceMaintenanceAttributesResult();
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::vector<MaintenanceProperty> getMaintenancePropertySet()const;
+				std::vector<MaintenanceAttribute> getMaintenanceAttributes()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -55,10 +65,10 @@ namespace AlibabaCloud
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::vector<MaintenanceProperty> maintenancePropertySet_;
+				std::vector<MaintenanceAttribute> maintenanceAttributes_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEMAINTENANCEPROPERTYRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMAINTENANCEATTRIBUTESRESULT_H_

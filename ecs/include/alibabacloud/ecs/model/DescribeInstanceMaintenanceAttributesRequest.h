@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_CREATEMAINTENANCEPROPERTYREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_CREATEMAINTENANCEPROPERTYREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMAINTENANCEATTRIBUTESREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMAINTENANCEATTRIBUTESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT CreateMaintenancePropertyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeInstanceMaintenanceAttributesRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateMaintenancePropertyRequest();
-				~CreateMaintenancePropertyRequest();
+				DescribeInstanceMaintenanceAttributesRequest();
+				~DescribeInstanceMaintenanceAttributesRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getActionOnMaintenance()const;
-				void setActionOnMaintenance(const std::string& actionOnMaintenance);
+				long getPageSize()const;
+				void setPageSize(long pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::vector<std::string> getInstanceId()const;
@@ -56,12 +54,11 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				std::string startTime_;
+				long pageNumber_;
 				std::string regionId_;
-				std::string actionOnMaintenance_;
+				long pageSize_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string endTime_;
 				long ownerId_;
 				std::vector<std::string> instanceId_;
 
@@ -69,4 +66,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_CREATEMAINTENANCEPROPERTYREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMAINTENANCEATTRIBUTESREQUEST_H_

@@ -71,6 +71,17 @@ void CreateNetworkInterfaceRequest::setDescription(const std::string& descriptio
 	setCoreParameter("Description", description);
 }
 
+int CreateNetworkInterfaceRequest::getSecondaryPrivateIpAddressCount()const
+{
+	return secondaryPrivateIpAddressCount_;
+}
+
+void CreateNetworkInterfaceRequest::setSecondaryPrivateIpAddressCount(int secondaryPrivateIpAddressCount)
+{
+	secondaryPrivateIpAddressCount_ = secondaryPrivateIpAddressCount;
+	setCoreParameter("SecondaryPrivateIpAddressCount", std::to_string(secondaryPrivateIpAddressCount));
+}
+
 std::string CreateNetworkInterfaceRequest::getBusinessType()const
 {
 	return businessType_;
@@ -197,6 +208,19 @@ void CreateNetworkInterfaceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
 	setCoreParameter("VSwitchId", vSwitchId);
+}
+
+std::vector<std::string> CreateNetworkInterfaceRequest::getPrivateIpAddress()const
+{
+	return privateIpAddress_;
+}
+
+void CreateNetworkInterfaceRequest::setPrivateIpAddress(const std::vector<std::string>& privateIpAddress)
+{
+	privateIpAddress_ = privateIpAddress;
+	for(int dep1 = 0; dep1!= privateIpAddress.size(); dep1++) {
+		setCoreParameter("PrivateIpAddress."+ std::to_string(dep1), privateIpAddress.at(dep1));
+	}
 }
 
 std::string CreateNetworkInterfaceRequest::getPrimaryIpAddress()const

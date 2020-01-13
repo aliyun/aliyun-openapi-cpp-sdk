@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DELETEMAINTENANCEPROPERTYRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_DELETEMAINTENANCEPROPERTYRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_REDEPLOYDEDICATEDHOSTRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_REDEPLOYDEDICATEDHOSTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DeleteMaintenancePropertyResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT RedeployDedicatedHostResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteMaintenancePropertyResult();
-				explicit DeleteMaintenancePropertyResult(const std::string &payload);
-				~DeleteMaintenancePropertyResult();
+				RedeployDedicatedHostResult();
+				explicit RedeployDedicatedHostResult(const std::string &payload);
+				~RedeployDedicatedHostResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DELETEMAINTENANCEPROPERTYRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_REDEPLOYDEDICATEDHOSTRESULT_H_

@@ -104,8 +104,6 @@
 #include "model/CreateLaunchTemplateResult.h"
 #include "model/CreateLaunchTemplateVersionRequest.h"
 #include "model/CreateLaunchTemplateVersionResult.h"
-#include "model/CreateMaintenancePropertyRequest.h"
-#include "model/CreateMaintenancePropertyResult.h"
 #include "model/CreateNatGatewayRequest.h"
 #include "model/CreateNatGatewayResult.h"
 #include "model/CreateNetworkInterfaceRequest.h"
@@ -166,8 +164,6 @@
 #include "model/DeleteLaunchTemplateResult.h"
 #include "model/DeleteLaunchTemplateVersionRequest.h"
 #include "model/DeleteLaunchTemplateVersionResult.h"
-#include "model/DeleteMaintenancePropertyRequest.h"
-#include "model/DeleteMaintenancePropertyResult.h"
 #include "model/DeleteNatGatewayRequest.h"
 #include "model/DeleteNatGatewayResult.h"
 #include "model/DeleteNetworkInterfaceRequest.h"
@@ -258,6 +254,8 @@
 #include "model/DescribeInstanceAutoRenewAttributeResult.h"
 #include "model/DescribeInstanceHistoryEventsRequest.h"
 #include "model/DescribeInstanceHistoryEventsResult.h"
+#include "model/DescribeInstanceMaintenanceAttributesRequest.h"
+#include "model/DescribeInstanceMaintenanceAttributesResult.h"
 #include "model/DescribeInstanceMonitorDataRequest.h"
 #include "model/DescribeInstanceMonitorDataResult.h"
 #include "model/DescribeInstanceRamRoleRequest.h"
@@ -290,8 +288,6 @@
 #include "model/DescribeLaunchTemplatesResult.h"
 #include "model/DescribeLimitationRequest.h"
 #include "model/DescribeLimitationResult.h"
-#include "model/DescribeMaintenancePropertyRequest.h"
-#include "model/DescribeMaintenancePropertyResult.h"
 #include "model/DescribeNatGatewaysRequest.h"
 #include "model/DescribeNatGatewaysResult.h"
 #include "model/DescribeNetworkInterfacePermissionsRequest.h"
@@ -458,6 +454,8 @@
 #include "model/ModifyInstanceChargeTypeResult.h"
 #include "model/ModifyInstanceDeploymentRequest.h"
 #include "model/ModifyInstanceDeploymentResult.h"
+#include "model/ModifyInstanceMaintenanceAttributesRequest.h"
+#include "model/ModifyInstanceMaintenanceAttributesResult.h"
 #include "model/ModifyInstanceNetworkSpecRequest.h"
 #include "model/ModifyInstanceNetworkSpecResult.h"
 #include "model/ModifyInstanceSpecRequest.h"
@@ -468,8 +466,6 @@
 #include "model/ModifyInstanceVpcAttributeResult.h"
 #include "model/ModifyLaunchTemplateDefaultVersionRequest.h"
 #include "model/ModifyLaunchTemplateDefaultVersionResult.h"
-#include "model/ModifyMaintenancePropertyRequest.h"
-#include "model/ModifyMaintenancePropertyResult.h"
 #include "model/ModifyNetworkInterfaceAttributeRequest.h"
 #include "model/ModifyNetworkInterfaceAttributeResult.h"
 #include "model/ModifyPhysicalConnectionAttributeRequest.h"
@@ -516,6 +512,8 @@
 #include "model/RebootInstanceResult.h"
 #include "model/RecoverVirtualBorderRouterRequest.h"
 #include "model/RecoverVirtualBorderRouterResult.h"
+#include "model/RedeployDedicatedHostRequest.h"
+#include "model/RedeployDedicatedHostResult.h"
 #include "model/RedeployInstanceRequest.h"
 #include "model/RedeployInstanceResult.h"
 #include "model/ReleaseDedicatedHostRequest.h"
@@ -702,9 +700,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateLaunchTemplateVersionResult> CreateLaunchTemplateVersionOutcome;
 			typedef std::future<CreateLaunchTemplateVersionOutcome> CreateLaunchTemplateVersionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateLaunchTemplateVersionRequest&, const CreateLaunchTemplateVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLaunchTemplateVersionAsyncHandler;
-			typedef Outcome<Error, Model::CreateMaintenancePropertyResult> CreateMaintenancePropertyOutcome;
-			typedef std::future<CreateMaintenancePropertyOutcome> CreateMaintenancePropertyOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::CreateMaintenancePropertyRequest&, const CreateMaintenancePropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMaintenancePropertyAsyncHandler;
 			typedef Outcome<Error, Model::CreateNatGatewayResult> CreateNatGatewayOutcome;
 			typedef std::future<CreateNatGatewayOutcome> CreateNatGatewayOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateNatGatewayRequest&, const CreateNatGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatGatewayAsyncHandler;
@@ -795,9 +790,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteLaunchTemplateVersionResult> DeleteLaunchTemplateVersionOutcome;
 			typedef std::future<DeleteLaunchTemplateVersionOutcome> DeleteLaunchTemplateVersionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteLaunchTemplateVersionRequest&, const DeleteLaunchTemplateVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLaunchTemplateVersionAsyncHandler;
-			typedef Outcome<Error, Model::DeleteMaintenancePropertyResult> DeleteMaintenancePropertyOutcome;
-			typedef std::future<DeleteMaintenancePropertyOutcome> DeleteMaintenancePropertyOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::DeleteMaintenancePropertyRequest&, const DeleteMaintenancePropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMaintenancePropertyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteNatGatewayResult> DeleteNatGatewayOutcome;
 			typedef std::future<DeleteNatGatewayOutcome> DeleteNatGatewayOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteNatGatewayRequest&, const DeleteNatGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNatGatewayAsyncHandler;
@@ -933,6 +925,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceHistoryEventsResult> DescribeInstanceHistoryEventsOutcome;
 			typedef std::future<DescribeInstanceHistoryEventsOutcome> DescribeInstanceHistoryEventsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceHistoryEventsRequest&, const DescribeInstanceHistoryEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceHistoryEventsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceMaintenanceAttributesResult> DescribeInstanceMaintenanceAttributesOutcome;
+			typedef std::future<DescribeInstanceMaintenanceAttributesOutcome> DescribeInstanceMaintenanceAttributesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceMaintenanceAttributesRequest&, const DescribeInstanceMaintenanceAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMaintenanceAttributesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceMonitorDataResult> DescribeInstanceMonitorDataOutcome;
 			typedef std::future<DescribeInstanceMonitorDataOutcome> DescribeInstanceMonitorDataOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceMonitorDataRequest&, const DescribeInstanceMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorDataAsyncHandler;
@@ -981,9 +976,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLimitationResult> DescribeLimitationOutcome;
 			typedef std::future<DescribeLimitationOutcome> DescribeLimitationOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeLimitationRequest&, const DescribeLimitationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLimitationAsyncHandler;
-			typedef Outcome<Error, Model::DescribeMaintenancePropertyResult> DescribeMaintenancePropertyOutcome;
-			typedef std::future<DescribeMaintenancePropertyOutcome> DescribeMaintenancePropertyOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::DescribeMaintenancePropertyRequest&, const DescribeMaintenancePropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintenancePropertyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeNatGatewaysResult> DescribeNatGatewaysOutcome;
 			typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeNatGatewaysRequest&, const DescribeNatGatewaysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaysAsyncHandler;
@@ -1233,6 +1225,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyInstanceDeploymentResult> ModifyInstanceDeploymentOutcome;
 			typedef std::future<ModifyInstanceDeploymentOutcome> ModifyInstanceDeploymentOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyInstanceDeploymentRequest&, const ModifyInstanceDeploymentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceDeploymentAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstanceMaintenanceAttributesResult> ModifyInstanceMaintenanceAttributesOutcome;
+			typedef std::future<ModifyInstanceMaintenanceAttributesOutcome> ModifyInstanceMaintenanceAttributesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyInstanceMaintenanceAttributesRequest&, const ModifyInstanceMaintenanceAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceMaintenanceAttributesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceNetworkSpecResult> ModifyInstanceNetworkSpecOutcome;
 			typedef std::future<ModifyInstanceNetworkSpecOutcome> ModifyInstanceNetworkSpecOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyInstanceNetworkSpecRequest&, const ModifyInstanceNetworkSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNetworkSpecAsyncHandler;
@@ -1248,9 +1243,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyLaunchTemplateDefaultVersionResult> ModifyLaunchTemplateDefaultVersionOutcome;
 			typedef std::future<ModifyLaunchTemplateDefaultVersionOutcome> ModifyLaunchTemplateDefaultVersionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyLaunchTemplateDefaultVersionRequest&, const ModifyLaunchTemplateDefaultVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLaunchTemplateDefaultVersionAsyncHandler;
-			typedef Outcome<Error, Model::ModifyMaintenancePropertyResult> ModifyMaintenancePropertyOutcome;
-			typedef std::future<ModifyMaintenancePropertyOutcome> ModifyMaintenancePropertyOutcomeCallable;
-			typedef std::function<void(const EcsClient*, const Model::ModifyMaintenancePropertyRequest&, const ModifyMaintenancePropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintenancePropertyAsyncHandler;
 			typedef Outcome<Error, Model::ModifyNetworkInterfaceAttributeResult> ModifyNetworkInterfaceAttributeOutcome;
 			typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyNetworkInterfaceAttributeRequest&, const ModifyNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkInterfaceAttributeAsyncHandler;
@@ -1320,6 +1312,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecoverVirtualBorderRouterResult> RecoverVirtualBorderRouterOutcome;
 			typedef std::future<RecoverVirtualBorderRouterOutcome> RecoverVirtualBorderRouterOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RecoverVirtualBorderRouterRequest&, const RecoverVirtualBorderRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecoverVirtualBorderRouterAsyncHandler;
+			typedef Outcome<Error, Model::RedeployDedicatedHostResult> RedeployDedicatedHostOutcome;
+			typedef std::future<RedeployDedicatedHostOutcome> RedeployDedicatedHostOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::RedeployDedicatedHostRequest&, const RedeployDedicatedHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RedeployDedicatedHostAsyncHandler;
 			typedef Outcome<Error, Model::RedeployInstanceResult> RedeployInstanceOutcome;
 			typedef std::future<RedeployInstanceOutcome> RedeployInstanceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RedeployInstanceRequest&, const RedeployInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RedeployInstanceAsyncHandler;
@@ -1529,9 +1524,6 @@ namespace AlibabaCloud
 			CreateLaunchTemplateVersionOutcome createLaunchTemplateVersion(const Model::CreateLaunchTemplateVersionRequest &request)const;
 			void createLaunchTemplateVersionAsync(const Model::CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLaunchTemplateVersionOutcomeCallable createLaunchTemplateVersionCallable(const Model::CreateLaunchTemplateVersionRequest& request) const;
-			CreateMaintenancePropertyOutcome createMaintenanceProperty(const Model::CreateMaintenancePropertyRequest &request)const;
-			void createMaintenancePropertyAsync(const Model::CreateMaintenancePropertyRequest& request, const CreateMaintenancePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateMaintenancePropertyOutcomeCallable createMaintenancePropertyCallable(const Model::CreateMaintenancePropertyRequest& request) const;
 			CreateNatGatewayOutcome createNatGateway(const Model::CreateNatGatewayRequest &request)const;
 			void createNatGatewayAsync(const Model::CreateNatGatewayRequest& request, const CreateNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNatGatewayOutcomeCallable createNatGatewayCallable(const Model::CreateNatGatewayRequest& request) const;
@@ -1622,9 +1614,6 @@ namespace AlibabaCloud
 			DeleteLaunchTemplateVersionOutcome deleteLaunchTemplateVersion(const Model::DeleteLaunchTemplateVersionRequest &request)const;
 			void deleteLaunchTemplateVersionAsync(const Model::DeleteLaunchTemplateVersionRequest& request, const DeleteLaunchTemplateVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLaunchTemplateVersionOutcomeCallable deleteLaunchTemplateVersionCallable(const Model::DeleteLaunchTemplateVersionRequest& request) const;
-			DeleteMaintenancePropertyOutcome deleteMaintenanceProperty(const Model::DeleteMaintenancePropertyRequest &request)const;
-			void deleteMaintenancePropertyAsync(const Model::DeleteMaintenancePropertyRequest& request, const DeleteMaintenancePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteMaintenancePropertyOutcomeCallable deleteMaintenancePropertyCallable(const Model::DeleteMaintenancePropertyRequest& request) const;
 			DeleteNatGatewayOutcome deleteNatGateway(const Model::DeleteNatGatewayRequest &request)const;
 			void deleteNatGatewayAsync(const Model::DeleteNatGatewayRequest& request, const DeleteNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteNatGatewayOutcomeCallable deleteNatGatewayCallable(const Model::DeleteNatGatewayRequest& request) const;
@@ -1760,6 +1749,9 @@ namespace AlibabaCloud
 			DescribeInstanceHistoryEventsOutcome describeInstanceHistoryEvents(const Model::DescribeInstanceHistoryEventsRequest &request)const;
 			void describeInstanceHistoryEventsAsync(const Model::DescribeInstanceHistoryEventsRequest& request, const DescribeInstanceHistoryEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceHistoryEventsOutcomeCallable describeInstanceHistoryEventsCallable(const Model::DescribeInstanceHistoryEventsRequest& request) const;
+			DescribeInstanceMaintenanceAttributesOutcome describeInstanceMaintenanceAttributes(const Model::DescribeInstanceMaintenanceAttributesRequest &request)const;
+			void describeInstanceMaintenanceAttributesAsync(const Model::DescribeInstanceMaintenanceAttributesRequest& request, const DescribeInstanceMaintenanceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceMaintenanceAttributesOutcomeCallable describeInstanceMaintenanceAttributesCallable(const Model::DescribeInstanceMaintenanceAttributesRequest& request) const;
 			DescribeInstanceMonitorDataOutcome describeInstanceMonitorData(const Model::DescribeInstanceMonitorDataRequest &request)const;
 			void describeInstanceMonitorDataAsync(const Model::DescribeInstanceMonitorDataRequest& request, const DescribeInstanceMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceMonitorDataOutcomeCallable describeInstanceMonitorDataCallable(const Model::DescribeInstanceMonitorDataRequest& request) const;
@@ -1808,9 +1800,6 @@ namespace AlibabaCloud
 			DescribeLimitationOutcome describeLimitation(const Model::DescribeLimitationRequest &request)const;
 			void describeLimitationAsync(const Model::DescribeLimitationRequest& request, const DescribeLimitationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLimitationOutcomeCallable describeLimitationCallable(const Model::DescribeLimitationRequest& request) const;
-			DescribeMaintenancePropertyOutcome describeMaintenanceProperty(const Model::DescribeMaintenancePropertyRequest &request)const;
-			void describeMaintenancePropertyAsync(const Model::DescribeMaintenancePropertyRequest& request, const DescribeMaintenancePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeMaintenancePropertyOutcomeCallable describeMaintenancePropertyCallable(const Model::DescribeMaintenancePropertyRequest& request) const;
 			DescribeNatGatewaysOutcome describeNatGateways(const Model::DescribeNatGatewaysRequest &request)const;
 			void describeNatGatewaysAsync(const Model::DescribeNatGatewaysRequest& request, const DescribeNatGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNatGatewaysOutcomeCallable describeNatGatewaysCallable(const Model::DescribeNatGatewaysRequest& request) const;
@@ -2060,6 +2049,9 @@ namespace AlibabaCloud
 			ModifyInstanceDeploymentOutcome modifyInstanceDeployment(const Model::ModifyInstanceDeploymentRequest &request)const;
 			void modifyInstanceDeploymentAsync(const Model::ModifyInstanceDeploymentRequest& request, const ModifyInstanceDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceDeploymentOutcomeCallable modifyInstanceDeploymentCallable(const Model::ModifyInstanceDeploymentRequest& request) const;
+			ModifyInstanceMaintenanceAttributesOutcome modifyInstanceMaintenanceAttributes(const Model::ModifyInstanceMaintenanceAttributesRequest &request)const;
+			void modifyInstanceMaintenanceAttributesAsync(const Model::ModifyInstanceMaintenanceAttributesRequest& request, const ModifyInstanceMaintenanceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstanceMaintenanceAttributesOutcomeCallable modifyInstanceMaintenanceAttributesCallable(const Model::ModifyInstanceMaintenanceAttributesRequest& request) const;
 			ModifyInstanceNetworkSpecOutcome modifyInstanceNetworkSpec(const Model::ModifyInstanceNetworkSpecRequest &request)const;
 			void modifyInstanceNetworkSpecAsync(const Model::ModifyInstanceNetworkSpecRequest& request, const ModifyInstanceNetworkSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceNetworkSpecOutcomeCallable modifyInstanceNetworkSpecCallable(const Model::ModifyInstanceNetworkSpecRequest& request) const;
@@ -2075,9 +2067,6 @@ namespace AlibabaCloud
 			ModifyLaunchTemplateDefaultVersionOutcome modifyLaunchTemplateDefaultVersion(const Model::ModifyLaunchTemplateDefaultVersionRequest &request)const;
 			void modifyLaunchTemplateDefaultVersionAsync(const Model::ModifyLaunchTemplateDefaultVersionRequest& request, const ModifyLaunchTemplateDefaultVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLaunchTemplateDefaultVersionOutcomeCallable modifyLaunchTemplateDefaultVersionCallable(const Model::ModifyLaunchTemplateDefaultVersionRequest& request) const;
-			ModifyMaintenancePropertyOutcome modifyMaintenanceProperty(const Model::ModifyMaintenancePropertyRequest &request)const;
-			void modifyMaintenancePropertyAsync(const Model::ModifyMaintenancePropertyRequest& request, const ModifyMaintenancePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyMaintenancePropertyOutcomeCallable modifyMaintenancePropertyCallable(const Model::ModifyMaintenancePropertyRequest& request) const;
 			ModifyNetworkInterfaceAttributeOutcome modifyNetworkInterfaceAttribute(const Model::ModifyNetworkInterfaceAttributeRequest &request)const;
 			void modifyNetworkInterfaceAttributeAsync(const Model::ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyNetworkInterfaceAttributeOutcomeCallable modifyNetworkInterfaceAttributeCallable(const Model::ModifyNetworkInterfaceAttributeRequest& request) const;
@@ -2147,6 +2136,9 @@ namespace AlibabaCloud
 			RecoverVirtualBorderRouterOutcome recoverVirtualBorderRouter(const Model::RecoverVirtualBorderRouterRequest &request)const;
 			void recoverVirtualBorderRouterAsync(const Model::RecoverVirtualBorderRouterRequest& request, const RecoverVirtualBorderRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecoverVirtualBorderRouterOutcomeCallable recoverVirtualBorderRouterCallable(const Model::RecoverVirtualBorderRouterRequest& request) const;
+			RedeployDedicatedHostOutcome redeployDedicatedHost(const Model::RedeployDedicatedHostRequest &request)const;
+			void redeployDedicatedHostAsync(const Model::RedeployDedicatedHostRequest& request, const RedeployDedicatedHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RedeployDedicatedHostOutcomeCallable redeployDedicatedHostCallable(const Model::RedeployDedicatedHostRequest& request) const;
 			RedeployInstanceOutcome redeployInstance(const Model::RedeployInstanceRequest &request)const;
 			void redeployInstanceAsync(const Model::RedeployInstanceRequest& request, const RedeployInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RedeployInstanceOutcomeCallable redeployInstanceCallable(const Model::RedeployInstanceRequest& request) const;

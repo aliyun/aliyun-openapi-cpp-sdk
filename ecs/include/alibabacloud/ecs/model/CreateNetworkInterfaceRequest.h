@@ -48,6 +48,8 @@ namespace AlibabaCloud
 				void setSecurityGroupId(const std::string& securityGroupId);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				int getSecondaryPrivateIpAddressCount()const;
+				void setSecondaryPrivateIpAddressCount(int secondaryPrivateIpAddressCount);
 				std::string getBusinessType()const;
 				void setBusinessType(const std::string& businessType);
 				std::string getResourceGroupId()const;
@@ -70,6 +72,8 @@ namespace AlibabaCloud
 				void setSecurityGroupIds(const std::vector<std::string>& securityGroupIds);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
+				std::vector<std::string> getPrivateIpAddress()const;
+				void setPrivateIpAddress(const std::vector<std::string>& privateIpAddress);
 				std::string getPrimaryIpAddress()const;
 				void setPrimaryIpAddress(const std::string& primaryIpAddress);
 
@@ -78,6 +82,7 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string securityGroupId_;
 				std::string description_;
+				int secondaryPrivateIpAddressCount_;
 				std::string businessType_;
 				std::string resourceGroupId_;
 				std::string regionId_;
@@ -89,6 +94,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::vector<std::string> securityGroupIds_;
 				std::string vSwitchId_;
+				std::vector<std::string> privateIpAddress_;
 				std::string primaryIpAddress_;
 
 			};
