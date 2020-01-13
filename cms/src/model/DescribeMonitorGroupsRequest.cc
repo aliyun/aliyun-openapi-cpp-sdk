@@ -60,17 +60,6 @@ void DescribeMonitorGroupsRequest::setType(const std::string& type)
 	setCoreParameter("Type", type);
 }
 
-std::string DescribeMonitorGroupsRequest::getGroupName()const
-{
-	return groupName_;
-}
-
-void DescribeMonitorGroupsRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
-}
-
 int DescribeMonitorGroupsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -80,17 +69,6 @@ void DescribeMonitorGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeMonitorGroupsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeMonitorGroupsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
 }
 
 int DescribeMonitorGroupsRequest::getPageSize()const
@@ -129,5 +107,49 @@ void DescribeMonitorGroupsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
 	setCoreParameter("Keyword", keyword);
+}
+
+std::string DescribeMonitorGroupsRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeMonitorGroupsRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string DescribeMonitorGroupsRequest::getGroupName()const
+{
+	return groupName_;
+}
+
+void DescribeMonitorGroupsRequest::setGroupName(const std::string& groupName)
+{
+	groupName_ = groupName;
+	setCoreParameter("GroupName", groupName);
+}
+
+std::string DescribeMonitorGroupsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeMonitorGroupsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string DescribeMonitorGroupsRequest::getDynamicTagGroupId()const
+{
+	return dynamicTagGroupId_;
+}
+
+void DescribeMonitorGroupsRequest::setDynamicTagGroupId(const std::string& dynamicTagGroupId)
+{
+	dynamicTagGroupId_ = dynamicTagGroupId;
+	setCoreParameter("DynamicTagGroupId", dynamicTagGroupId);
 }
 

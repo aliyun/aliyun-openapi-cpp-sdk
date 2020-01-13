@@ -57,6 +57,8 @@ void DescribeMonitorGroupsResult::parse(const std::string &payload)
 			resourcesObject.gmtCreate = std::stol(valueResourcesResource["GmtCreate"].asString());
 		if(!valueResourcesResource["BindUrl"].isNull())
 			resourcesObject.bindUrl = valueResourcesResource["BindUrl"].asString();
+		if(!valueResourcesResource["DynamicTagGroupId"].isNull())
+			resourcesObject.dynamicTagGroupId = std::stol(valueResourcesResource["DynamicTagGroupId"].asString());
 		auto allContactGroupsNode = allResourcesNode["ContactGroups"]["ContactGroup"];
 		for (auto allResourcesNodeContactGroupsContactGroup : allContactGroupsNode)
 		{

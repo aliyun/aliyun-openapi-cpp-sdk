@@ -123,6 +123,42 @@ CmsClient::ApplyMetricRuleTemplateOutcomeCallable CmsClient::applyMetricRuleTemp
 	return task->get_future();
 }
 
+CmsClient::CreateDynamicTagGroupOutcome CmsClient::createDynamicTagGroup(const CreateDynamicTagGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDynamicTagGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDynamicTagGroupOutcome(CreateDynamicTagGroupResult(outcome.result()));
+	else
+		return CreateDynamicTagGroupOutcome(outcome.error());
+}
+
+void CmsClient::createDynamicTagGroupAsync(const CreateDynamicTagGroupRequest& request, const CreateDynamicTagGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDynamicTagGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::CreateDynamicTagGroupOutcomeCallable CmsClient::createDynamicTagGroupCallable(const CreateDynamicTagGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDynamicTagGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createDynamicTagGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CmsClient::CreateGroupMetricRulesOutcome CmsClient::createGroupMetricRules(const CreateGroupMetricRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,6 +657,42 @@ CmsClient::DeleteCustomMetricOutcomeCallable CmsClient::deleteCustomMetricCallab
 			[this, request]()
 			{
 			return this->deleteCustomMetric(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DeleteDynamicTagGroupOutcome CmsClient::deleteDynamicTagGroup(const DeleteDynamicTagGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDynamicTagGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDynamicTagGroupOutcome(DeleteDynamicTagGroupResult(outcome.result()));
+	else
+		return DeleteDynamicTagGroupOutcome(outcome.error());
+}
+
+void CmsClient::deleteDynamicTagGroupAsync(const DeleteDynamicTagGroupRequest& request, const DeleteDynamicTagGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDynamicTagGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DeleteDynamicTagGroupOutcomeCallable CmsClient::deleteDynamicTagGroupCallable(const DeleteDynamicTagGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDynamicTagGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDynamicTagGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1485,6 +1557,42 @@ CmsClient::DescribeCustomMetricListOutcomeCallable CmsClient::describeCustomMetr
 			[this, request]()
 			{
 			return this->describeCustomMetricList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DescribeDynamicTagRuleListOutcome CmsClient::describeDynamicTagRuleList(const DescribeDynamicTagRuleListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDynamicTagRuleListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDynamicTagRuleListOutcome(DescribeDynamicTagRuleListResult(outcome.result()));
+	else
+		return DescribeDynamicTagRuleListOutcome(outcome.error());
+}
+
+void CmsClient::describeDynamicTagRuleListAsync(const DescribeDynamicTagRuleListRequest& request, const DescribeDynamicTagRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDynamicTagRuleList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeDynamicTagRuleListOutcomeCallable CmsClient::describeDynamicTagRuleListCallable(const DescribeDynamicTagRuleListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDynamicTagRuleListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDynamicTagRuleList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2457,6 +2565,42 @@ CmsClient::DescribeMonitoringConfigOutcomeCallable CmsClient::describeMonitoring
 			[this, request]()
 			{
 			return this->describeMonitoringConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DescribeProductResourceTagKeyListOutcome CmsClient::describeProductResourceTagKeyList(const DescribeProductResourceTagKeyListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeProductResourceTagKeyListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeProductResourceTagKeyListOutcome(DescribeProductResourceTagKeyListResult(outcome.result()));
+	else
+		return DescribeProductResourceTagKeyListOutcome(outcome.error());
+}
+
+void CmsClient::describeProductResourceTagKeyListAsync(const DescribeProductResourceTagKeyListRequest& request, const DescribeProductResourceTagKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeProductResourceTagKeyList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeProductResourceTagKeyListOutcomeCallable CmsClient::describeProductResourceTagKeyListCallable(const DescribeProductResourceTagKeyListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeProductResourceTagKeyListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeProductResourceTagKeyList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

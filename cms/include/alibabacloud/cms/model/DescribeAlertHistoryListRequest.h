@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				DescribeAlertHistoryListRequest();
 				~DescribeAlertHistoryListRequest();
 
-				std::string getAlertStatus()const;
-				void setAlertStatus(const std::string& alertStatus);
 				std::string getRuleName()const;
 				void setRuleName(const std::string& ruleName);
 				std::string getStartTime()const;
@@ -59,9 +57,10 @@ namespace AlibabaCloud
 				void setPage(int page);
 				std::string getRuleId()const;
 				void setRuleId(const std::string& ruleId);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
-				std::string alertStatus_;
 				std::string ruleName_;
 				std::string startTime_;
 				int pageSize_;
@@ -73,6 +72,7 @@ namespace AlibabaCloud
 				std::string _namespace_;
 				int page_;
 				std::string ruleId_;
+				std::string status_;
 
 			};
 		}

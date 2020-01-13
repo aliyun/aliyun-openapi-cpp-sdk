@@ -25,6 +25,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/AddTagsResult.h
 	include/alibabacloud/cms/model/ApplyMetricRuleTemplateRequest.h
 	include/alibabacloud/cms/model/ApplyMetricRuleTemplateResult.h
+	include/alibabacloud/cms/model/CreateDynamicTagGroupRequest.h
+	include/alibabacloud/cms/model/CreateDynamicTagGroupResult.h
 	include/alibabacloud/cms/model/CreateGroupMetricRulesRequest.h
 	include/alibabacloud/cms/model/CreateGroupMetricRulesResult.h
 	include/alibabacloud/cms/model/CreateGroupMonitoringAgentProcessRequest.h
@@ -53,6 +55,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DeleteContactGroupResult.h
 	include/alibabacloud/cms/model/DeleteCustomMetricRequest.h
 	include/alibabacloud/cms/model/DeleteCustomMetricResult.h
+	include/alibabacloud/cms/model/DeleteDynamicTagGroupRequest.h
+	include/alibabacloud/cms/model/DeleteDynamicTagGroupResult.h
 	include/alibabacloud/cms/model/DeleteEventRuleTargetsRequest.h
 	include/alibabacloud/cms/model/DeleteEventRuleTargetsResult.h
 	include/alibabacloud/cms/model/DeleteEventRulesRequest.h
@@ -101,6 +105,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DescribeCustomEventHistogramResult.h
 	include/alibabacloud/cms/model/DescribeCustomMetricListRequest.h
 	include/alibabacloud/cms/model/DescribeCustomMetricListResult.h
+	include/alibabacloud/cms/model/DescribeDynamicTagRuleListRequest.h
+	include/alibabacloud/cms/model/DescribeDynamicTagRuleListResult.h
 	include/alibabacloud/cms/model/DescribeEventRuleAttributeRequest.h
 	include/alibabacloud/cms/model/DescribeEventRuleAttributeResult.h
 	include/alibabacloud/cms/model/DescribeEventRuleListRequest.h
@@ -155,6 +161,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DescribeMonitoringAgentStatusesResult.h
 	include/alibabacloud/cms/model/DescribeMonitoringConfigRequest.h
 	include/alibabacloud/cms/model/DescribeMonitoringConfigResult.h
+	include/alibabacloud/cms/model/DescribeProductResourceTagKeyListRequest.h
+	include/alibabacloud/cms/model/DescribeProductResourceTagKeyListResult.h
 	include/alibabacloud/cms/model/DescribeProductsOfActiveMetricRuleRequest.h
 	include/alibabacloud/cms/model/DescribeProductsOfActiveMetricRuleResult.h
 	include/alibabacloud/cms/model/DescribeProjectMetaRequest.h
@@ -256,6 +264,8 @@ set(cms_src
 	src/model/AddTagsResult.cc
 	src/model/ApplyMetricRuleTemplateRequest.cc
 	src/model/ApplyMetricRuleTemplateResult.cc
+	src/model/CreateDynamicTagGroupRequest.cc
+	src/model/CreateDynamicTagGroupResult.cc
 	src/model/CreateGroupMetricRulesRequest.cc
 	src/model/CreateGroupMetricRulesResult.cc
 	src/model/CreateGroupMonitoringAgentProcessRequest.cc
@@ -284,6 +294,8 @@ set(cms_src
 	src/model/DeleteContactGroupResult.cc
 	src/model/DeleteCustomMetricRequest.cc
 	src/model/DeleteCustomMetricResult.cc
+	src/model/DeleteDynamicTagGroupRequest.cc
+	src/model/DeleteDynamicTagGroupResult.cc
 	src/model/DeleteEventRuleTargetsRequest.cc
 	src/model/DeleteEventRuleTargetsResult.cc
 	src/model/DeleteEventRulesRequest.cc
@@ -332,6 +344,8 @@ set(cms_src
 	src/model/DescribeCustomEventHistogramResult.cc
 	src/model/DescribeCustomMetricListRequest.cc
 	src/model/DescribeCustomMetricListResult.cc
+	src/model/DescribeDynamicTagRuleListRequest.cc
+	src/model/DescribeDynamicTagRuleListResult.cc
 	src/model/DescribeEventRuleAttributeRequest.cc
 	src/model/DescribeEventRuleAttributeResult.cc
 	src/model/DescribeEventRuleListRequest.cc
@@ -386,6 +400,8 @@ set(cms_src
 	src/model/DescribeMonitoringAgentStatusesResult.cc
 	src/model/DescribeMonitoringConfigRequest.cc
 	src/model/DescribeMonitoringConfigResult.cc
+	src/model/DescribeProductResourceTagKeyListRequest.cc
+	src/model/DescribeProductResourceTagKeyListResult.cc
 	src/model/DescribeProductsOfActiveMetricRuleRequest.cc
 	src/model/DescribeProductsOfActiveMetricRuleResult.cc
 	src/model/DescribeProjectMetaRequest.cc

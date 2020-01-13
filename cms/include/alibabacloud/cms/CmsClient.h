@@ -26,6 +26,8 @@
 #include "model/AddTagsResult.h"
 #include "model/ApplyMetricRuleTemplateRequest.h"
 #include "model/ApplyMetricRuleTemplateResult.h"
+#include "model/CreateDynamicTagGroupRequest.h"
+#include "model/CreateDynamicTagGroupResult.h"
 #include "model/CreateGroupMetricRulesRequest.h"
 #include "model/CreateGroupMetricRulesResult.h"
 #include "model/CreateGroupMonitoringAgentProcessRequest.h"
@@ -54,6 +56,8 @@
 #include "model/DeleteContactGroupResult.h"
 #include "model/DeleteCustomMetricRequest.h"
 #include "model/DeleteCustomMetricResult.h"
+#include "model/DeleteDynamicTagGroupRequest.h"
+#include "model/DeleteDynamicTagGroupResult.h"
 #include "model/DeleteEventRuleTargetsRequest.h"
 #include "model/DeleteEventRuleTargetsResult.h"
 #include "model/DeleteEventRulesRequest.h"
@@ -102,6 +106,8 @@
 #include "model/DescribeCustomEventHistogramResult.h"
 #include "model/DescribeCustomMetricListRequest.h"
 #include "model/DescribeCustomMetricListResult.h"
+#include "model/DescribeDynamicTagRuleListRequest.h"
+#include "model/DescribeDynamicTagRuleListResult.h"
 #include "model/DescribeEventRuleAttributeRequest.h"
 #include "model/DescribeEventRuleAttributeResult.h"
 #include "model/DescribeEventRuleListRequest.h"
@@ -156,6 +162,8 @@
 #include "model/DescribeMonitoringAgentStatusesResult.h"
 #include "model/DescribeMonitoringConfigRequest.h"
 #include "model/DescribeMonitoringConfigResult.h"
+#include "model/DescribeProductResourceTagKeyListRequest.h"
+#include "model/DescribeProductResourceTagKeyListResult.h"
 #include "model/DescribeProductsOfActiveMetricRuleRequest.h"
 #include "model/DescribeProductsOfActiveMetricRuleResult.h"
 #include "model/DescribeProjectMetaRequest.h"
@@ -265,6 +273,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ApplyMetricRuleTemplateResult> ApplyMetricRuleTemplateOutcome;
 			typedef std::future<ApplyMetricRuleTemplateOutcome> ApplyMetricRuleTemplateOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ApplyMetricRuleTemplateRequest&, const ApplyMetricRuleTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyMetricRuleTemplateAsyncHandler;
+			typedef Outcome<Error, Model::CreateDynamicTagGroupResult> CreateDynamicTagGroupOutcome;
+			typedef std::future<CreateDynamicTagGroupOutcome> CreateDynamicTagGroupOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::CreateDynamicTagGroupRequest&, const CreateDynamicTagGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDynamicTagGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateGroupMetricRulesResult> CreateGroupMetricRulesOutcome;
 			typedef std::future<CreateGroupMetricRulesOutcome> CreateGroupMetricRulesOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::CreateGroupMetricRulesRequest&, const CreateGroupMetricRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupMetricRulesAsyncHandler;
@@ -307,6 +318,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCustomMetricResult> DeleteCustomMetricOutcome;
 			typedef std::future<DeleteCustomMetricOutcome> DeleteCustomMetricOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DeleteCustomMetricRequest&, const DeleteCustomMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomMetricAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDynamicTagGroupResult> DeleteDynamicTagGroupOutcome;
+			typedef std::future<DeleteDynamicTagGroupOutcome> DeleteDynamicTagGroupOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DeleteDynamicTagGroupRequest&, const DeleteDynamicTagGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDynamicTagGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteEventRuleTargetsResult> DeleteEventRuleTargetsOutcome;
 			typedef std::future<DeleteEventRuleTargetsOutcome> DeleteEventRuleTargetsOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DeleteEventRuleTargetsRequest&, const DeleteEventRuleTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEventRuleTargetsAsyncHandler;
@@ -379,6 +393,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCustomMetricListResult> DescribeCustomMetricListOutcome;
 			typedef std::future<DescribeCustomMetricListOutcome> DescribeCustomMetricListOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeCustomMetricListRequest&, const DescribeCustomMetricListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomMetricListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDynamicTagRuleListResult> DescribeDynamicTagRuleListOutcome;
+			typedef std::future<DescribeDynamicTagRuleListOutcome> DescribeDynamicTagRuleListOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeDynamicTagRuleListRequest&, const DescribeDynamicTagRuleListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDynamicTagRuleListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEventRuleAttributeResult> DescribeEventRuleAttributeOutcome;
 			typedef std::future<DescribeEventRuleAttributeOutcome> DescribeEventRuleAttributeOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeEventRuleAttributeRequest&, const DescribeEventRuleAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventRuleAttributeAsyncHandler;
@@ -460,6 +477,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeMonitoringConfigResult> DescribeMonitoringConfigOutcome;
 			typedef std::future<DescribeMonitoringConfigOutcome> DescribeMonitoringConfigOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeMonitoringConfigRequest&, const DescribeMonitoringConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitoringConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeProductResourceTagKeyListResult> DescribeProductResourceTagKeyListOutcome;
+			typedef std::future<DescribeProductResourceTagKeyListOutcome> DescribeProductResourceTagKeyListOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeProductResourceTagKeyListRequest&, const DescribeProductResourceTagKeyListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductResourceTagKeyListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProductsOfActiveMetricRuleResult> DescribeProductsOfActiveMetricRuleOutcome;
 			typedef std::future<DescribeProductsOfActiveMetricRuleOutcome> DescribeProductsOfActiveMetricRuleOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeProductsOfActiveMetricRuleRequest&, const DescribeProductsOfActiveMetricRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductsOfActiveMetricRuleAsyncHandler;
@@ -612,6 +632,9 @@ namespace AlibabaCloud
 			ApplyMetricRuleTemplateOutcome applyMetricRuleTemplate(const Model::ApplyMetricRuleTemplateRequest &request)const;
 			void applyMetricRuleTemplateAsync(const Model::ApplyMetricRuleTemplateRequest& request, const ApplyMetricRuleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApplyMetricRuleTemplateOutcomeCallable applyMetricRuleTemplateCallable(const Model::ApplyMetricRuleTemplateRequest& request) const;
+			CreateDynamicTagGroupOutcome createDynamicTagGroup(const Model::CreateDynamicTagGroupRequest &request)const;
+			void createDynamicTagGroupAsync(const Model::CreateDynamicTagGroupRequest& request, const CreateDynamicTagGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDynamicTagGroupOutcomeCallable createDynamicTagGroupCallable(const Model::CreateDynamicTagGroupRequest& request) const;
 			CreateGroupMetricRulesOutcome createGroupMetricRules(const Model::CreateGroupMetricRulesRequest &request)const;
 			void createGroupMetricRulesAsync(const Model::CreateGroupMetricRulesRequest& request, const CreateGroupMetricRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateGroupMetricRulesOutcomeCallable createGroupMetricRulesCallable(const Model::CreateGroupMetricRulesRequest& request) const;
@@ -654,6 +677,9 @@ namespace AlibabaCloud
 			DeleteCustomMetricOutcome deleteCustomMetric(const Model::DeleteCustomMetricRequest &request)const;
 			void deleteCustomMetricAsync(const Model::DeleteCustomMetricRequest& request, const DeleteCustomMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCustomMetricOutcomeCallable deleteCustomMetricCallable(const Model::DeleteCustomMetricRequest& request) const;
+			DeleteDynamicTagGroupOutcome deleteDynamicTagGroup(const Model::DeleteDynamicTagGroupRequest &request)const;
+			void deleteDynamicTagGroupAsync(const Model::DeleteDynamicTagGroupRequest& request, const DeleteDynamicTagGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDynamicTagGroupOutcomeCallable deleteDynamicTagGroupCallable(const Model::DeleteDynamicTagGroupRequest& request) const;
 			DeleteEventRuleTargetsOutcome deleteEventRuleTargets(const Model::DeleteEventRuleTargetsRequest &request)const;
 			void deleteEventRuleTargetsAsync(const Model::DeleteEventRuleTargetsRequest& request, const DeleteEventRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteEventRuleTargetsOutcomeCallable deleteEventRuleTargetsCallable(const Model::DeleteEventRuleTargetsRequest& request) const;
@@ -726,6 +752,9 @@ namespace AlibabaCloud
 			DescribeCustomMetricListOutcome describeCustomMetricList(const Model::DescribeCustomMetricListRequest &request)const;
 			void describeCustomMetricListAsync(const Model::DescribeCustomMetricListRequest& request, const DescribeCustomMetricListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCustomMetricListOutcomeCallable describeCustomMetricListCallable(const Model::DescribeCustomMetricListRequest& request) const;
+			DescribeDynamicTagRuleListOutcome describeDynamicTagRuleList(const Model::DescribeDynamicTagRuleListRequest &request)const;
+			void describeDynamicTagRuleListAsync(const Model::DescribeDynamicTagRuleListRequest& request, const DescribeDynamicTagRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDynamicTagRuleListOutcomeCallable describeDynamicTagRuleListCallable(const Model::DescribeDynamicTagRuleListRequest& request) const;
 			DescribeEventRuleAttributeOutcome describeEventRuleAttribute(const Model::DescribeEventRuleAttributeRequest &request)const;
 			void describeEventRuleAttributeAsync(const Model::DescribeEventRuleAttributeRequest& request, const DescribeEventRuleAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEventRuleAttributeOutcomeCallable describeEventRuleAttributeCallable(const Model::DescribeEventRuleAttributeRequest& request) const;
@@ -807,6 +836,9 @@ namespace AlibabaCloud
 			DescribeMonitoringConfigOutcome describeMonitoringConfig(const Model::DescribeMonitoringConfigRequest &request)const;
 			void describeMonitoringConfigAsync(const Model::DescribeMonitoringConfigRequest& request, const DescribeMonitoringConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMonitoringConfigOutcomeCallable describeMonitoringConfigCallable(const Model::DescribeMonitoringConfigRequest& request) const;
+			DescribeProductResourceTagKeyListOutcome describeProductResourceTagKeyList(const Model::DescribeProductResourceTagKeyListRequest &request)const;
+			void describeProductResourceTagKeyListAsync(const Model::DescribeProductResourceTagKeyListRequest& request, const DescribeProductResourceTagKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeProductResourceTagKeyListOutcomeCallable describeProductResourceTagKeyListCallable(const Model::DescribeProductResourceTagKeyListRequest& request) const;
 			DescribeProductsOfActiveMetricRuleOutcome describeProductsOfActiveMetricRule(const Model::DescribeProductsOfActiveMetricRuleRequest &request)const;
 			void describeProductsOfActiveMetricRuleAsync(const Model::DescribeProductsOfActiveMetricRuleRequest& request, const DescribeProductsOfActiveMetricRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProductsOfActiveMetricRuleOutcomeCallable describeProductsOfActiveMetricRuleCallable(const Model::DescribeProductsOfActiveMetricRuleRequest& request) const;

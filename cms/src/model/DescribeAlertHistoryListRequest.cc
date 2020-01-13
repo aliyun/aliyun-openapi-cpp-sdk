@@ -27,17 +27,6 @@ DescribeAlertHistoryListRequest::DescribeAlertHistoryListRequest() :
 DescribeAlertHistoryListRequest::~DescribeAlertHistoryListRequest()
 {}
 
-std::string DescribeAlertHistoryListRequest::getAlertStatus()const
-{
-	return alertStatus_;
-}
-
-void DescribeAlertHistoryListRequest::setAlertStatus(const std::string& alertStatus)
-{
-	alertStatus_ = alertStatus;
-	setCoreParameter("AlertStatus", alertStatus);
-}
-
 std::string DescribeAlertHistoryListRequest::getRuleName()const
 {
 	return ruleName_;
@@ -157,5 +146,16 @@ void DescribeAlertHistoryListRequest::setRuleId(const std::string& ruleId)
 {
 	ruleId_ = ruleId;
 	setCoreParameter("RuleId", ruleId);
+}
+
+std::string DescribeAlertHistoryListRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeAlertHistoryListRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setCoreParameter("Status", status);
 }
 
