@@ -82,7 +82,6 @@ void CreateDynamicTagGroupRequest::setMatchExpress(const std::vector<MatchExpres
 	for(int dep1 = 0; dep1!= matchExpress.size(); dep1++) {
 		auto matchExpressObj = matchExpress.at(dep1);
 		std::string matchExpressObjStr = "MatchExpress." + std::to_string(dep1);
-		setCoreParameter(matchExpressObjStr + ".TagName", matchExpressObj.tagName);
 		setCoreParameter(matchExpressObjStr + ".TagValue", matchExpressObj.tagValue);
 		setCoreParameter(matchExpressObjStr + ".TagValueMatchFunction", matchExpressObj.tagValueMatchFunction);
 	}

@@ -44,6 +44,8 @@ namespace AlibabaCloud
 				void setSelectContactGroups(bool selectContactGroups);
 				bool getIncludeTemplateHistory()const;
 				void setIncludeTemplateHistory(bool includeTemplateHistory);
+				std::string getDynamicTagRuleId()const;
+				void setDynamicTagRuleId(const std::string& dynamicTagRuleId);
 				std::string getType()const;
 				void setType(const std::string& type);
 				int getPageNumber()const;
@@ -60,12 +62,11 @@ namespace AlibabaCloud
 				void setGroupName(const std::string& groupName);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getDynamicTagGroupId()const;
-				void setDynamicTagGroupId(const std::string& dynamicTagGroupId);
 
             private:
 				bool selectContactGroups_;
 				bool includeTemplateHistory_;
+				std::string dynamicTagRuleId_;
 				std::string type_;
 				int pageNumber_;
 				int pageSize_;
@@ -74,7 +75,6 @@ namespace AlibabaCloud
 				std::string groupId_;
 				std::string groupName_;
 				std::string instanceId_;
-				std::string dynamicTagGroupId_;
 
 			};
 		}

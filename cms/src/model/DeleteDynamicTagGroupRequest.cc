@@ -27,14 +27,14 @@ DeleteDynamicTagGroupRequest::DeleteDynamicTagGroupRequest() :
 DeleteDynamicTagGroupRequest::~DeleteDynamicTagGroupRequest()
 {}
 
-std::string DeleteDynamicTagGroupRequest::getDynamicTagGroupId()const
+std::string DeleteDynamicTagGroupRequest::getDynamicTagRuleId()const
 {
-	return dynamicTagGroupId_;
+	return dynamicTagRuleId_;
 }
 
-void DeleteDynamicTagGroupRequest::setDynamicTagGroupId(const std::string& dynamicTagGroupId)
+void DeleteDynamicTagGroupRequest::setDynamicTagRuleId(const std::string& dynamicTagRuleId)
 {
-	dynamicTagGroupId_ = dynamicTagGroupId;
-	setCoreParameter("DynamicTagGroupId", dynamicTagGroupId);
+	dynamicTagRuleId_ = dynamicTagRuleId;
+	setCoreParameter("DynamicTagRuleId", dynamicTagRuleId);
 }
 

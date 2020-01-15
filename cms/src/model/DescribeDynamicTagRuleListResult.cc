@@ -43,8 +43,8 @@ void DescribeDynamicTagRuleListResult::parse(const std::string &payload)
 	for (auto valueTagGroupListTagGroup : allTagGroupListNode)
 	{
 		TagGroup tagGroupListObject;
-		if(!valueTagGroupListTagGroup["DynamicTagGroupId"].isNull())
-			tagGroupListObject.dynamicTagGroupId = valueTagGroupListTagGroup["DynamicTagGroupId"].asString();
+		if(!valueTagGroupListTagGroup["DynamicTagRuleId"].isNull())
+			tagGroupListObject.dynamicTagRuleId = valueTagGroupListTagGroup["DynamicTagRuleId"].asString();
 		if(!valueTagGroupListTagGroup["TagKey"].isNull())
 			tagGroupListObject.tagKey = valueTagGroupListTagGroup["TagKey"].asString();
 		if(!valueTagGroupListTagGroup["RegionId"].isNull())
@@ -57,8 +57,6 @@ void DescribeDynamicTagRuleListResult::parse(const std::string &payload)
 		for (auto allTagGroupListNodeMatchExpressMatchExpressItem : allMatchExpressNode)
 		{
 			TagGroup::MatchExpressItem matchExpressObject;
-			if(!allTagGroupListNodeMatchExpressMatchExpressItem["TagName"].isNull())
-				matchExpressObject.tagName = allTagGroupListNodeMatchExpressMatchExpressItem["TagName"].asString();
 			if(!allTagGroupListNodeMatchExpressMatchExpressItem["TagValueMatchFunction"].isNull())
 				matchExpressObject.tagValueMatchFunction = allTagGroupListNodeMatchExpressMatchExpressItem["TagValueMatchFunction"].asString();
 			if(!allTagGroupListNodeMatchExpressMatchExpressItem["TagValue"].isNull())

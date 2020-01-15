@@ -36,13 +36,12 @@ namespace AlibabaCloud
 				{
 					struct MatchExpressItem
 					{
-						std::string tagName;
 						std::string tagValue;
 						std::string tagValueMatchFunction;
 					};
-					std::string dynamicTagGroupId;
 					std::string status;
 					std::string matchExpressFilterRelation;
+					std::string dynamicTagRuleId;
 					std::vector<std::string> templateIdList;
 					std::string tagKey;
 					std::vector<TagGroup::MatchExpressItem> matchExpress;

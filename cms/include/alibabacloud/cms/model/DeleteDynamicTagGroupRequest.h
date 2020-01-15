@@ -35,11 +35,11 @@ namespace AlibabaCloud
 				DeleteDynamicTagGroupRequest();
 				~DeleteDynamicTagGroupRequest();
 
-				std::string getDynamicTagGroupId()const;
-				void setDynamicTagGroupId(const std::string& dynamicTagGroupId);
+				std::string getDynamicTagRuleId()const;
+				void setDynamicTagRuleId(const std::string& dynamicTagRuleId);
 
             private:
-				std::string dynamicTagGroupId_;
+				std::string dynamicTagRuleId_;
 
 			};
 		}

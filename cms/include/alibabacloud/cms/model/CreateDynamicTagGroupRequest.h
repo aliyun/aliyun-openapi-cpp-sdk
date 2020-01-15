@@ -32,7 +32,6 @@ namespace AlibabaCloud
 			{
 				struct MatchExpress
 				{
-					std::string tagName;
 					std::string tagValue;
 					std::string tagValueMatchFunction;
 				};

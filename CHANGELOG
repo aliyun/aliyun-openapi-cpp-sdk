@@ -1,3 +1,6 @@
+2020-01-15 Version 1.36.241
+- Fix parameter issues for label synchronization group.
+
 2020-01-13 Version 1.36.240
 - New API DescribeAvailableResource.
 

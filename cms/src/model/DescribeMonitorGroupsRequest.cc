@@ -49,6 +49,17 @@ void DescribeMonitorGroupsRequest::setIncludeTemplateHistory(bool includeTemplat
 	setCoreParameter("IncludeTemplateHistory", includeTemplateHistory ? "true" : "false");
 }
 
+std::string DescribeMonitorGroupsRequest::getDynamicTagRuleId()const
+{
+	return dynamicTagRuleId_;
+}
+
+void DescribeMonitorGroupsRequest::setDynamicTagRuleId(const std::string& dynamicTagRuleId)
+{
+	dynamicTagRuleId_ = dynamicTagRuleId;
+	setCoreParameter("DynamicTagRuleId", dynamicTagRuleId);
+}
+
 std::string DescribeMonitorGroupsRequest::getType()const
 {
 	return type_;
@@ -140,16 +151,5 @@ void DescribeMonitorGroupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string DescribeMonitorGroupsRequest::getDynamicTagGroupId()const
-{
-	return dynamicTagGroupId_;
-}
-
-void DescribeMonitorGroupsRequest::setDynamicTagGroupId(const std::string& dynamicTagGroupId)
-{
-	dynamicTagGroupId_ = dynamicTagGroupId;
-	setCoreParameter("DynamicTagGroupId", dynamicTagGroupId);
 }
 
