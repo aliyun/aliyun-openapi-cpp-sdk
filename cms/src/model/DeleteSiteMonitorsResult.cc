@@ -39,14 +39,15 @@ void DeleteSiteMonitorsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["count"].isNull())
+		data_.count = std::stoi(dataNode["count"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
 
 }
 
@@ -55,7 +56,7 @@ std::string DeleteSiteMonitorsResult::getMessage()const
 	return message_;
 }
 
-std::string DeleteSiteMonitorsResult::getData()const
+DeleteSiteMonitorsResult::Data DeleteSiteMonitorsResult::getData()const
 {
 	return data_;
 }

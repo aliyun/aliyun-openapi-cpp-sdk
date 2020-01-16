@@ -44,16 +44,18 @@ namespace AlibabaCloud
 						std::string key;
 					};
 					std::string groupName;
-					long dynamicTagGroupId;
 					std::vector<Resource::ContactGroup> contactGroups;
+					std::string dynamicTagRuleId;
+					long gmtModified;
+					std::string groupFounderTagValue;
+					long groupId;
+					std::string serviceId;
 					std::string type;
 					long gmtCreate;
 					std::string bindUrl;
-					long gmtModified;
+					std::string groupFounderTagKey;
 					std::vector<std::string> templateIds;
 					std::vector<Resource::Tag> tags;
-					long groupId;
-					std::string serviceId;
 				};
 
 
