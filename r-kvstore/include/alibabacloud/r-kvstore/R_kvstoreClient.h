@@ -30,12 +30,24 @@
 #include "model/CreateBackupResult.h"
 #include "model/CreateCacheAnalysisTaskRequest.h"
 #include "model/CreateCacheAnalysisTaskResult.h"
+#include "model/CreateDedicatedInstanceRequest.h"
+#include "model/CreateDedicatedInstanceResult.h"
+#include "model/CreateDedicatedUserClusterRequest.h"
+#include "model/CreateDedicatedUserClusterResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
+#include "model/CreateUserClusterHostRequest.h"
+#include "model/CreateUserClusterHostResult.h"
 #include "model/DeleteAccountRequest.h"
 #include "model/DeleteAccountResult.h"
+#include "model/DeleteDedicatedInstanceRequest.h"
+#include "model/DeleteDedicatedInstanceResult.h"
+#include "model/DeleteDedicatedUserClusterRequest.h"
+#include "model/DeleteDedicatedUserClusterResult.h"
 #include "model/DeleteInstanceRequest.h"
 #include "model/DeleteInstanceResult.h"
+#include "model/DeleteUserClusterHostRequest.h"
+#include "model/DeleteUserClusterHostResult.h"
 #include "model/DescribeAccountsRequest.h"
 #include "model/DescribeAccountsResult.h"
 #include "model/DescribeAuditRecordsRequest.h"
@@ -52,6 +64,8 @@
 #include "model/DescribeCacheAnalysisReportListResult.h"
 #include "model/DescribeDBInstanceNetInfoRequest.h"
 #include "model/DescribeDBInstanceNetInfoResult.h"
+#include "model/DescribeDedicatedUserClusterRequest.h"
+#include "model/DescribeDedicatedUserClusterResult.h"
 #include "model/DescribeHistoryMonitorValuesRequest.h"
 #include "model/DescribeHistoryMonitorValuesResult.h"
 #include "model/DescribeInstanceAttributeRequest.h"
@@ -70,6 +84,8 @@
 #include "model/DescribeMonitorItemsResult.h"
 #include "model/DescribeParametersRequest.h"
 #include "model/DescribeParametersResult.h"
+#include "model/DescribeRedisLogConfigRequest.h"
+#include "model/DescribeRedisLogConfigResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeRunningLogRecordsRequest.h"
@@ -78,6 +94,10 @@
 #include "model/DescribeSecurityIpsResult.h"
 #include "model/DescribeSlowLogRecordsRequest.h"
 #include "model/DescribeSlowLogRecordsResult.h"
+#include "model/DescribeUserClusterHostRequest.h"
+#include "model/DescribeUserClusterHostResult.h"
+#include "model/DescribeUserClusterHostInstanceRequest.h"
+#include "model/DescribeUserClusterHostInstanceResult.h"
 #include "model/DescribeZonesRequest.h"
 #include "model/DescribeZonesResult.h"
 #include "model/FlushExpireKeysRequest.h"
@@ -98,6 +118,10 @@
 #include "model/ModifyBackupPolicyResult.h"
 #include "model/ModifyDBInstanceConnectionStringRequest.h"
 #include "model/ModifyDBInstanceConnectionStringResult.h"
+#include "model/ModifyDedicatedInstanceSpecRequest.h"
+#include "model/ModifyDedicatedInstanceSpecResult.h"
+#include "model/ModifyDedicatedUserClusterRequest.h"
+#include "model/ModifyDedicatedUserClusterResult.h"
 #include "model/ModifyInstanceAttributeRequest.h"
 #include "model/ModifyInstanceAttributeResult.h"
 #include "model/ModifyInstanceAutoRenewalAttributeRequest.h"
@@ -122,10 +146,14 @@
 #include "model/ModifyIntranetAttributeResult.h"
 #include "model/ModifySecurityIpsRequest.h"
 #include "model/ModifySecurityIpsResult.h"
+#include "model/ModifyUserClusterHostRequest.h"
+#include "model/ModifyUserClusterHostResult.h"
 #include "model/ReleaseInstancePublicConnectionRequest.h"
 #include "model/ReleaseInstancePublicConnectionResult.h"
 #include "model/RenewInstanceRequest.h"
 #include "model/RenewInstanceResult.h"
+#include "model/ReplaceUserClusterHostRequest.h"
+#include "model/ReplaceUserClusterHostResult.h"
 #include "model/ResetAccountPasswordRequest.h"
 #include "model/ResetAccountPasswordResult.h"
 #include "model/RestartInstanceRequest.h"
@@ -161,15 +189,33 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCacheAnalysisTaskResult> CreateCacheAnalysisTaskOutcome;
 			typedef std::future<CreateCacheAnalysisTaskOutcome> CreateCacheAnalysisTaskOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::CreateCacheAnalysisTaskRequest&, const CreateCacheAnalysisTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCacheAnalysisTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateDedicatedInstanceResult> CreateDedicatedInstanceOutcome;
+			typedef std::future<CreateDedicatedInstanceOutcome> CreateDedicatedInstanceOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::CreateDedicatedInstanceRequest&, const CreateDedicatedInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateDedicatedUserClusterResult> CreateDedicatedUserClusterOutcome;
+			typedef std::future<CreateDedicatedUserClusterOutcome> CreateDedicatedUserClusterOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::CreateDedicatedUserClusterRequest&, const CreateDedicatedUserClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedUserClusterAsyncHandler;
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateUserClusterHostResult> CreateUserClusterHostOutcome;
+			typedef std::future<CreateUserClusterHostOutcome> CreateUserClusterHostOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::CreateUserClusterHostRequest&, const CreateUserClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserClusterHostAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAccountResult> DeleteAccountOutcome;
 			typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DeleteAccountRequest&, const DeleteAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDedicatedInstanceResult> DeleteDedicatedInstanceOutcome;
+			typedef std::future<DeleteDedicatedInstanceOutcome> DeleteDedicatedInstanceOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DeleteDedicatedInstanceRequest&, const DeleteDedicatedInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDedicatedInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDedicatedUserClusterResult> DeleteDedicatedUserClusterOutcome;
+			typedef std::future<DeleteDedicatedUserClusterOutcome> DeleteDedicatedUserClusterOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DeleteDedicatedUserClusterRequest&, const DeleteDedicatedUserClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDedicatedUserClusterAsyncHandler;
 			typedef Outcome<Error, Model::DeleteInstanceResult> DeleteInstanceOutcome;
 			typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DeleteInstanceRequest&, const DeleteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteUserClusterHostResult> DeleteUserClusterHostOutcome;
+			typedef std::future<DeleteUserClusterHostOutcome> DeleteUserClusterHostOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DeleteUserClusterHostRequest&, const DeleteUserClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserClusterHostAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccountsResult> DescribeAccountsOutcome;
 			typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeAccountsRequest&, const DescribeAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
@@ -194,6 +240,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBInstanceNetInfoResult> DescribeDBInstanceNetInfoOutcome;
 			typedef std::future<DescribeDBInstanceNetInfoOutcome> DescribeDBInstanceNetInfoOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeDBInstanceNetInfoRequest&, const DescribeDBInstanceNetInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceNetInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDedicatedUserClusterResult> DescribeDedicatedUserClusterOutcome;
+			typedef std::future<DescribeDedicatedUserClusterOutcome> DescribeDedicatedUserClusterOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeDedicatedUserClusterRequest&, const DescribeDedicatedUserClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedUserClusterAsyncHandler;
 			typedef Outcome<Error, Model::DescribeHistoryMonitorValuesResult> DescribeHistoryMonitorValuesOutcome;
 			typedef std::future<DescribeHistoryMonitorValuesOutcome> DescribeHistoryMonitorValuesOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeHistoryMonitorValuesRequest&, const DescribeHistoryMonitorValuesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryMonitorValuesAsyncHandler;
@@ -221,6 +270,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeParametersResult> DescribeParametersOutcome;
 			typedef std::future<DescribeParametersOutcome> DescribeParametersOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeParametersRequest&, const DescribeParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParametersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRedisLogConfigResult> DescribeRedisLogConfigOutcome;
+			typedef std::future<DescribeRedisLogConfigOutcome> DescribeRedisLogConfigOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeRedisLogConfigRequest&, const DescribeRedisLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisLogConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -233,6 +285,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSlowLogRecordsResult> DescribeSlowLogRecordsOutcome;
 			typedef std::future<DescribeSlowLogRecordsOutcome> DescribeSlowLogRecordsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeSlowLogRecordsRequest&, const DescribeSlowLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUserClusterHostResult> DescribeUserClusterHostOutcome;
+			typedef std::future<DescribeUserClusterHostOutcome> DescribeUserClusterHostOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeUserClusterHostRequest&, const DescribeUserClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserClusterHostAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUserClusterHostInstanceResult> DescribeUserClusterHostInstanceOutcome;
+			typedef std::future<DescribeUserClusterHostInstanceOutcome> DescribeUserClusterHostInstanceOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeUserClusterHostInstanceRequest&, const DescribeUserClusterHostInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserClusterHostInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeZonesResult> DescribeZonesOutcome;
 			typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeZonesRequest&, const DescribeZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
@@ -263,6 +321,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBInstanceConnectionStringResult> ModifyDBInstanceConnectionStringOutcome;
 			typedef std::future<ModifyDBInstanceConnectionStringOutcome> ModifyDBInstanceConnectionStringOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyDBInstanceConnectionStringRequest&, const ModifyDBInstanceConnectionStringOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceConnectionStringAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDedicatedInstanceSpecResult> ModifyDedicatedInstanceSpecOutcome;
+			typedef std::future<ModifyDedicatedInstanceSpecOutcome> ModifyDedicatedInstanceSpecOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyDedicatedInstanceSpecRequest&, const ModifyDedicatedInstanceSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDedicatedInstanceSpecAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDedicatedUserClusterResult> ModifyDedicatedUserClusterOutcome;
+			typedef std::future<ModifyDedicatedUserClusterOutcome> ModifyDedicatedUserClusterOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyDedicatedUserClusterRequest&, const ModifyDedicatedUserClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDedicatedUserClusterAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceAttributeResult> ModifyInstanceAttributeOutcome;
 			typedef std::future<ModifyInstanceAttributeOutcome> ModifyInstanceAttributeOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyInstanceAttributeRequest&, const ModifyInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAttributeAsyncHandler;
@@ -299,12 +363,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySecurityIpsResult> ModifySecurityIpsOutcome;
 			typedef std::future<ModifySecurityIpsOutcome> ModifySecurityIpsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifySecurityIpsRequest&, const ModifySecurityIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityIpsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyUserClusterHostResult> ModifyUserClusterHostOutcome;
+			typedef std::future<ModifyUserClusterHostOutcome> ModifyUserClusterHostOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyUserClusterHostRequest&, const ModifyUserClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserClusterHostAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseInstancePublicConnectionResult> ReleaseInstancePublicConnectionOutcome;
 			typedef std::future<ReleaseInstancePublicConnectionOutcome> ReleaseInstancePublicConnectionOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ReleaseInstancePublicConnectionRequest&, const ReleaseInstancePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstancePublicConnectionAsyncHandler;
 			typedef Outcome<Error, Model::RenewInstanceResult> RenewInstanceOutcome;
 			typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::RenewInstanceRequest&, const RenewInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ReplaceUserClusterHostResult> ReplaceUserClusterHostOutcome;
+			typedef std::future<ReplaceUserClusterHostOutcome> ReplaceUserClusterHostOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ReplaceUserClusterHostRequest&, const ReplaceUserClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceUserClusterHostAsyncHandler;
 			typedef Outcome<Error, Model::ResetAccountPasswordResult> ResetAccountPasswordOutcome;
 			typedef std::future<ResetAccountPasswordOutcome> ResetAccountPasswordOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ResetAccountPasswordRequest&, const ResetAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountPasswordAsyncHandler;
@@ -343,15 +413,33 @@ namespace AlibabaCloud
 			CreateCacheAnalysisTaskOutcome createCacheAnalysisTask(const Model::CreateCacheAnalysisTaskRequest &request)const;
 			void createCacheAnalysisTaskAsync(const Model::CreateCacheAnalysisTaskRequest& request, const CreateCacheAnalysisTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCacheAnalysisTaskOutcomeCallable createCacheAnalysisTaskCallable(const Model::CreateCacheAnalysisTaskRequest& request) const;
+			CreateDedicatedInstanceOutcome createDedicatedInstance(const Model::CreateDedicatedInstanceRequest &request)const;
+			void createDedicatedInstanceAsync(const Model::CreateDedicatedInstanceRequest& request, const CreateDedicatedInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDedicatedInstanceOutcomeCallable createDedicatedInstanceCallable(const Model::CreateDedicatedInstanceRequest& request) const;
+			CreateDedicatedUserClusterOutcome createDedicatedUserCluster(const Model::CreateDedicatedUserClusterRequest &request)const;
+			void createDedicatedUserClusterAsync(const Model::CreateDedicatedUserClusterRequest& request, const CreateDedicatedUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDedicatedUserClusterOutcomeCallable createDedicatedUserClusterCallable(const Model::CreateDedicatedUserClusterRequest& request) const;
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
+			CreateUserClusterHostOutcome createUserClusterHost(const Model::CreateUserClusterHostRequest &request)const;
+			void createUserClusterHostAsync(const Model::CreateUserClusterHostRequest& request, const CreateUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateUserClusterHostOutcomeCallable createUserClusterHostCallable(const Model::CreateUserClusterHostRequest& request) const;
 			DeleteAccountOutcome deleteAccount(const Model::DeleteAccountRequest &request)const;
 			void deleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccountOutcomeCallable deleteAccountCallable(const Model::DeleteAccountRequest& request) const;
+			DeleteDedicatedInstanceOutcome deleteDedicatedInstance(const Model::DeleteDedicatedInstanceRequest &request)const;
+			void deleteDedicatedInstanceAsync(const Model::DeleteDedicatedInstanceRequest& request, const DeleteDedicatedInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDedicatedInstanceOutcomeCallable deleteDedicatedInstanceCallable(const Model::DeleteDedicatedInstanceRequest& request) const;
+			DeleteDedicatedUserClusterOutcome deleteDedicatedUserCluster(const Model::DeleteDedicatedUserClusterRequest &request)const;
+			void deleteDedicatedUserClusterAsync(const Model::DeleteDedicatedUserClusterRequest& request, const DeleteDedicatedUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDedicatedUserClusterOutcomeCallable deleteDedicatedUserClusterCallable(const Model::DeleteDedicatedUserClusterRequest& request) const;
 			DeleteInstanceOutcome deleteInstance(const Model::DeleteInstanceRequest &request)const;
 			void deleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstanceOutcomeCallable deleteInstanceCallable(const Model::DeleteInstanceRequest& request) const;
+			DeleteUserClusterHostOutcome deleteUserClusterHost(const Model::DeleteUserClusterHostRequest &request)const;
+			void deleteUserClusterHostAsync(const Model::DeleteUserClusterHostRequest& request, const DeleteUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteUserClusterHostOutcomeCallable deleteUserClusterHostCallable(const Model::DeleteUserClusterHostRequest& request) const;
 			DescribeAccountsOutcome describeAccounts(const Model::DescribeAccountsRequest &request)const;
 			void describeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountsOutcomeCallable describeAccountsCallable(const Model::DescribeAccountsRequest& request) const;
@@ -376,6 +464,9 @@ namespace AlibabaCloud
 			DescribeDBInstanceNetInfoOutcome describeDBInstanceNetInfo(const Model::DescribeDBInstanceNetInfoRequest &request)const;
 			void describeDBInstanceNetInfoAsync(const Model::DescribeDBInstanceNetInfoRequest& request, const DescribeDBInstanceNetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceNetInfoOutcomeCallable describeDBInstanceNetInfoCallable(const Model::DescribeDBInstanceNetInfoRequest& request) const;
+			DescribeDedicatedUserClusterOutcome describeDedicatedUserCluster(const Model::DescribeDedicatedUserClusterRequest &request)const;
+			void describeDedicatedUserClusterAsync(const Model::DescribeDedicatedUserClusterRequest& request, const DescribeDedicatedUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDedicatedUserClusterOutcomeCallable describeDedicatedUserClusterCallable(const Model::DescribeDedicatedUserClusterRequest& request) const;
 			DescribeHistoryMonitorValuesOutcome describeHistoryMonitorValues(const Model::DescribeHistoryMonitorValuesRequest &request)const;
 			void describeHistoryMonitorValuesAsync(const Model::DescribeHistoryMonitorValuesRequest& request, const DescribeHistoryMonitorValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHistoryMonitorValuesOutcomeCallable describeHistoryMonitorValuesCallable(const Model::DescribeHistoryMonitorValuesRequest& request) const;
@@ -403,6 +494,9 @@ namespace AlibabaCloud
 			DescribeParametersOutcome describeParameters(const Model::DescribeParametersRequest &request)const;
 			void describeParametersAsync(const Model::DescribeParametersRequest& request, const DescribeParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeParametersOutcomeCallable describeParametersCallable(const Model::DescribeParametersRequest& request) const;
+			DescribeRedisLogConfigOutcome describeRedisLogConfig(const Model::DescribeRedisLogConfigRequest &request)const;
+			void describeRedisLogConfigAsync(const Model::DescribeRedisLogConfigRequest& request, const DescribeRedisLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRedisLogConfigOutcomeCallable describeRedisLogConfigCallable(const Model::DescribeRedisLogConfigRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
@@ -415,6 +509,12 @@ namespace AlibabaCloud
 			DescribeSlowLogRecordsOutcome describeSlowLogRecords(const Model::DescribeSlowLogRecordsRequest &request)const;
 			void describeSlowLogRecordsAsync(const Model::DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowLogRecordsOutcomeCallable describeSlowLogRecordsCallable(const Model::DescribeSlowLogRecordsRequest& request) const;
+			DescribeUserClusterHostOutcome describeUserClusterHost(const Model::DescribeUserClusterHostRequest &request)const;
+			void describeUserClusterHostAsync(const Model::DescribeUserClusterHostRequest& request, const DescribeUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUserClusterHostOutcomeCallable describeUserClusterHostCallable(const Model::DescribeUserClusterHostRequest& request) const;
+			DescribeUserClusterHostInstanceOutcome describeUserClusterHostInstance(const Model::DescribeUserClusterHostInstanceRequest &request)const;
+			void describeUserClusterHostInstanceAsync(const Model::DescribeUserClusterHostInstanceRequest& request, const DescribeUserClusterHostInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUserClusterHostInstanceOutcomeCallable describeUserClusterHostInstanceCallable(const Model::DescribeUserClusterHostInstanceRequest& request) const;
 			DescribeZonesOutcome describeZones(const Model::DescribeZonesRequest &request)const;
 			void describeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeZonesOutcomeCallable describeZonesCallable(const Model::DescribeZonesRequest& request) const;
@@ -445,6 +545,12 @@ namespace AlibabaCloud
 			ModifyDBInstanceConnectionStringOutcome modifyDBInstanceConnectionString(const Model::ModifyDBInstanceConnectionStringRequest &request)const;
 			void modifyDBInstanceConnectionStringAsync(const Model::ModifyDBInstanceConnectionStringRequest& request, const ModifyDBInstanceConnectionStringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBInstanceConnectionStringOutcomeCallable modifyDBInstanceConnectionStringCallable(const Model::ModifyDBInstanceConnectionStringRequest& request) const;
+			ModifyDedicatedInstanceSpecOutcome modifyDedicatedInstanceSpec(const Model::ModifyDedicatedInstanceSpecRequest &request)const;
+			void modifyDedicatedInstanceSpecAsync(const Model::ModifyDedicatedInstanceSpecRequest& request, const ModifyDedicatedInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDedicatedInstanceSpecOutcomeCallable modifyDedicatedInstanceSpecCallable(const Model::ModifyDedicatedInstanceSpecRequest& request) const;
+			ModifyDedicatedUserClusterOutcome modifyDedicatedUserCluster(const Model::ModifyDedicatedUserClusterRequest &request)const;
+			void modifyDedicatedUserClusterAsync(const Model::ModifyDedicatedUserClusterRequest& request, const ModifyDedicatedUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDedicatedUserClusterOutcomeCallable modifyDedicatedUserClusterCallable(const Model::ModifyDedicatedUserClusterRequest& request) const;
 			ModifyInstanceAttributeOutcome modifyInstanceAttribute(const Model::ModifyInstanceAttributeRequest &request)const;
 			void modifyInstanceAttributeAsync(const Model::ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceAttributeOutcomeCallable modifyInstanceAttributeCallable(const Model::ModifyInstanceAttributeRequest& request) const;
@@ -481,12 +587,18 @@ namespace AlibabaCloud
 			ModifySecurityIpsOutcome modifySecurityIps(const Model::ModifySecurityIpsRequest &request)const;
 			void modifySecurityIpsAsync(const Model::ModifySecurityIpsRequest& request, const ModifySecurityIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySecurityIpsOutcomeCallable modifySecurityIpsCallable(const Model::ModifySecurityIpsRequest& request) const;
+			ModifyUserClusterHostOutcome modifyUserClusterHost(const Model::ModifyUserClusterHostRequest &request)const;
+			void modifyUserClusterHostAsync(const Model::ModifyUserClusterHostRequest& request, const ModifyUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyUserClusterHostOutcomeCallable modifyUserClusterHostCallable(const Model::ModifyUserClusterHostRequest& request) const;
 			ReleaseInstancePublicConnectionOutcome releaseInstancePublicConnection(const Model::ReleaseInstancePublicConnectionRequest &request)const;
 			void releaseInstancePublicConnectionAsync(const Model::ReleaseInstancePublicConnectionRequest& request, const ReleaseInstancePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseInstancePublicConnectionOutcomeCallable releaseInstancePublicConnectionCallable(const Model::ReleaseInstancePublicConnectionRequest& request) const;
 			RenewInstanceOutcome renewInstance(const Model::RenewInstanceRequest &request)const;
 			void renewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewInstanceOutcomeCallable renewInstanceCallable(const Model::RenewInstanceRequest& request) const;
+			ReplaceUserClusterHostOutcome replaceUserClusterHost(const Model::ReplaceUserClusterHostRequest &request)const;
+			void replaceUserClusterHostAsync(const Model::ReplaceUserClusterHostRequest& request, const ReplaceUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReplaceUserClusterHostOutcomeCallable replaceUserClusterHostCallable(const Model::ReplaceUserClusterHostRequest& request) const;
 			ResetAccountPasswordOutcome resetAccountPassword(const Model::ResetAccountPasswordRequest &request)const;
 			void resetAccountPasswordAsync(const Model::ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAccountPasswordOutcomeCallable resetAccountPasswordCallable(const Model::ResetAccountPasswordRequest& request) const;

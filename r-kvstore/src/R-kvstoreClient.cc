@@ -31,21 +31,21 @@ R_kvstoreClient::R_kvstoreClient(const Credentials &credentials, const ClientCon
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "R-kvstore");
 }
 
 R_kvstoreClient::R_kvstoreClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "R-kvstore");
 }
 
 R_kvstoreClient::R_kvstoreClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "R-kvstore");
 }
 
 R_kvstoreClient::~R_kvstoreClient()
@@ -195,6 +195,78 @@ R_kvstoreClient::CreateCacheAnalysisTaskOutcomeCallable R_kvstoreClient::createC
 	return task->get_future();
 }
 
+R_kvstoreClient::CreateDedicatedInstanceOutcome R_kvstoreClient::createDedicatedInstance(const CreateDedicatedInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDedicatedInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDedicatedInstanceOutcome(CreateDedicatedInstanceResult(outcome.result()));
+	else
+		return CreateDedicatedInstanceOutcome(outcome.error());
+}
+
+void R_kvstoreClient::createDedicatedInstanceAsync(const CreateDedicatedInstanceRequest& request, const CreateDedicatedInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDedicatedInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::CreateDedicatedInstanceOutcomeCallable R_kvstoreClient::createDedicatedInstanceCallable(const CreateDedicatedInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDedicatedInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->createDedicatedInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::CreateDedicatedUserClusterOutcome R_kvstoreClient::createDedicatedUserCluster(const CreateDedicatedUserClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDedicatedUserClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDedicatedUserClusterOutcome(CreateDedicatedUserClusterResult(outcome.result()));
+	else
+		return CreateDedicatedUserClusterOutcome(outcome.error());
+}
+
+void R_kvstoreClient::createDedicatedUserClusterAsync(const CreateDedicatedUserClusterRequest& request, const CreateDedicatedUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDedicatedUserCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::CreateDedicatedUserClusterOutcomeCallable R_kvstoreClient::createDedicatedUserClusterCallable(const CreateDedicatedUserClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDedicatedUserClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->createDedicatedUserCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::CreateInstanceOutcome R_kvstoreClient::createInstance(const CreateInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +297,42 @@ R_kvstoreClient::CreateInstanceOutcomeCallable R_kvstoreClient::createInstanceCa
 			[this, request]()
 			{
 			return this->createInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::CreateUserClusterHostOutcome R_kvstoreClient::createUserClusterHost(const CreateUserClusterHostRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateUserClusterHostOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateUserClusterHostOutcome(CreateUserClusterHostResult(outcome.result()));
+	else
+		return CreateUserClusterHostOutcome(outcome.error());
+}
+
+void R_kvstoreClient::createUserClusterHostAsync(const CreateUserClusterHostRequest& request, const CreateUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createUserClusterHost(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::CreateUserClusterHostOutcomeCallable R_kvstoreClient::createUserClusterHostCallable(const CreateUserClusterHostRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateUserClusterHostOutcome()>>(
+			[this, request]()
+			{
+			return this->createUserClusterHost(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,6 +375,78 @@ R_kvstoreClient::DeleteAccountOutcomeCallable R_kvstoreClient::deleteAccountCall
 	return task->get_future();
 }
 
+R_kvstoreClient::DeleteDedicatedInstanceOutcome R_kvstoreClient::deleteDedicatedInstance(const DeleteDedicatedInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDedicatedInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDedicatedInstanceOutcome(DeleteDedicatedInstanceResult(outcome.result()));
+	else
+		return DeleteDedicatedInstanceOutcome(outcome.error());
+}
+
+void R_kvstoreClient::deleteDedicatedInstanceAsync(const DeleteDedicatedInstanceRequest& request, const DeleteDedicatedInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDedicatedInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DeleteDedicatedInstanceOutcomeCallable R_kvstoreClient::deleteDedicatedInstanceCallable(const DeleteDedicatedInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDedicatedInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDedicatedInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DeleteDedicatedUserClusterOutcome R_kvstoreClient::deleteDedicatedUserCluster(const DeleteDedicatedUserClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDedicatedUserClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDedicatedUserClusterOutcome(DeleteDedicatedUserClusterResult(outcome.result()));
+	else
+		return DeleteDedicatedUserClusterOutcome(outcome.error());
+}
+
+void R_kvstoreClient::deleteDedicatedUserClusterAsync(const DeleteDedicatedUserClusterRequest& request, const DeleteDedicatedUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDedicatedUserCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DeleteDedicatedUserClusterOutcomeCallable R_kvstoreClient::deleteDedicatedUserClusterCallable(const DeleteDedicatedUserClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDedicatedUserClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDedicatedUserCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DeleteInstanceOutcome R_kvstoreClient::deleteInstance(const DeleteInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +477,42 @@ R_kvstoreClient::DeleteInstanceOutcomeCallable R_kvstoreClient::deleteInstanceCa
 			[this, request]()
 			{
 			return this->deleteInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DeleteUserClusterHostOutcome R_kvstoreClient::deleteUserClusterHost(const DeleteUserClusterHostRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteUserClusterHostOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteUserClusterHostOutcome(DeleteUserClusterHostResult(outcome.result()));
+	else
+		return DeleteUserClusterHostOutcome(outcome.error());
+}
+
+void R_kvstoreClient::deleteUserClusterHostAsync(const DeleteUserClusterHostRequest& request, const DeleteUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteUserClusterHost(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DeleteUserClusterHostOutcomeCallable R_kvstoreClient::deleteUserClusterHostCallable(const DeleteUserClusterHostRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteUserClusterHostOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteUserClusterHost(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -585,6 +801,42 @@ R_kvstoreClient::DescribeDBInstanceNetInfoOutcomeCallable R_kvstoreClient::descr
 			[this, request]()
 			{
 			return this->describeDBInstanceNetInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeDedicatedUserClusterOutcome R_kvstoreClient::describeDedicatedUserCluster(const DescribeDedicatedUserClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDedicatedUserClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDedicatedUserClusterOutcome(DescribeDedicatedUserClusterResult(outcome.result()));
+	else
+		return DescribeDedicatedUserClusterOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeDedicatedUserClusterAsync(const DescribeDedicatedUserClusterRequest& request, const DescribeDedicatedUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDedicatedUserCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeDedicatedUserClusterOutcomeCallable R_kvstoreClient::describeDedicatedUserClusterCallable(const DescribeDedicatedUserClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDedicatedUserClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDedicatedUserCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -915,6 +1167,42 @@ R_kvstoreClient::DescribeParametersOutcomeCallable R_kvstoreClient::describePara
 	return task->get_future();
 }
 
+R_kvstoreClient::DescribeRedisLogConfigOutcome R_kvstoreClient::describeRedisLogConfig(const DescribeRedisLogConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRedisLogConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRedisLogConfigOutcome(DescribeRedisLogConfigResult(outcome.result()));
+	else
+		return DescribeRedisLogConfigOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeRedisLogConfigAsync(const DescribeRedisLogConfigRequest& request, const DescribeRedisLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRedisLogConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeRedisLogConfigOutcomeCallable R_kvstoreClient::describeRedisLogConfigCallable(const DescribeRedisLogConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRedisLogConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRedisLogConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DescribeRegionsOutcome R_kvstoreClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1341,78 @@ R_kvstoreClient::DescribeSlowLogRecordsOutcomeCallable R_kvstoreClient::describe
 			[this, request]()
 			{
 			return this->describeSlowLogRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeUserClusterHostOutcome R_kvstoreClient::describeUserClusterHost(const DescribeUserClusterHostRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserClusterHostOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserClusterHostOutcome(DescribeUserClusterHostResult(outcome.result()));
+	else
+		return DescribeUserClusterHostOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeUserClusterHostAsync(const DescribeUserClusterHostRequest& request, const DescribeUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserClusterHost(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeUserClusterHostOutcomeCallable R_kvstoreClient::describeUserClusterHostCallable(const DescribeUserClusterHostRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserClusterHostOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserClusterHost(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeUserClusterHostInstanceOutcome R_kvstoreClient::describeUserClusterHostInstance(const DescribeUserClusterHostInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserClusterHostInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserClusterHostInstanceOutcome(DescribeUserClusterHostInstanceResult(outcome.result()));
+	else
+		return DescribeUserClusterHostInstanceOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeUserClusterHostInstanceAsync(const DescribeUserClusterHostInstanceRequest& request, const DescribeUserClusterHostInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserClusterHostInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeUserClusterHostInstanceOutcomeCallable R_kvstoreClient::describeUserClusterHostInstanceCallable(const DescribeUserClusterHostInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserClusterHostInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserClusterHostInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1413,6 +1773,78 @@ R_kvstoreClient::ModifyDBInstanceConnectionStringOutcomeCallable R_kvstoreClient
 			[this, request]()
 			{
 			return this->modifyDBInstanceConnectionString(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ModifyDedicatedInstanceSpecOutcome R_kvstoreClient::modifyDedicatedInstanceSpec(const ModifyDedicatedInstanceSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDedicatedInstanceSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDedicatedInstanceSpecOutcome(ModifyDedicatedInstanceSpecResult(outcome.result()));
+	else
+		return ModifyDedicatedInstanceSpecOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyDedicatedInstanceSpecAsync(const ModifyDedicatedInstanceSpecRequest& request, const ModifyDedicatedInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDedicatedInstanceSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyDedicatedInstanceSpecOutcomeCallable R_kvstoreClient::modifyDedicatedInstanceSpecCallable(const ModifyDedicatedInstanceSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDedicatedInstanceSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDedicatedInstanceSpec(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ModifyDedicatedUserClusterOutcome R_kvstoreClient::modifyDedicatedUserCluster(const ModifyDedicatedUserClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDedicatedUserClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDedicatedUserClusterOutcome(ModifyDedicatedUserClusterResult(outcome.result()));
+	else
+		return ModifyDedicatedUserClusterOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyDedicatedUserClusterAsync(const ModifyDedicatedUserClusterRequest& request, const ModifyDedicatedUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDedicatedUserCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyDedicatedUserClusterOutcomeCallable R_kvstoreClient::modifyDedicatedUserClusterCallable(const ModifyDedicatedUserClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDedicatedUserClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDedicatedUserCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1851,6 +2283,42 @@ R_kvstoreClient::ModifySecurityIpsOutcomeCallable R_kvstoreClient::modifySecurit
 	return task->get_future();
 }
 
+R_kvstoreClient::ModifyUserClusterHostOutcome R_kvstoreClient::modifyUserClusterHost(const ModifyUserClusterHostRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyUserClusterHostOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyUserClusterHostOutcome(ModifyUserClusterHostResult(outcome.result()));
+	else
+		return ModifyUserClusterHostOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyUserClusterHostAsync(const ModifyUserClusterHostRequest& request, const ModifyUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyUserClusterHost(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyUserClusterHostOutcomeCallable R_kvstoreClient::modifyUserClusterHostCallable(const ModifyUserClusterHostRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyUserClusterHostOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyUserClusterHost(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::ReleaseInstancePublicConnectionOutcome R_kvstoreClient::releaseInstancePublicConnection(const ReleaseInstancePublicConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1917,6 +2385,42 @@ R_kvstoreClient::RenewInstanceOutcomeCallable R_kvstoreClient::renewInstanceCall
 			[this, request]()
 			{
 			return this->renewInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ReplaceUserClusterHostOutcome R_kvstoreClient::replaceUserClusterHost(const ReplaceUserClusterHostRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReplaceUserClusterHostOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReplaceUserClusterHostOutcome(ReplaceUserClusterHostResult(outcome.result()));
+	else
+		return ReplaceUserClusterHostOutcome(outcome.error());
+}
+
+void R_kvstoreClient::replaceUserClusterHostAsync(const ReplaceUserClusterHostRequest& request, const ReplaceUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, replaceUserClusterHost(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ReplaceUserClusterHostOutcomeCallable R_kvstoreClient::replaceUserClusterHostCallable(const ReplaceUserClusterHostRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReplaceUserClusterHostOutcome()>>(
+			[this, request]()
+			{
+			return this->replaceUserClusterHost(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

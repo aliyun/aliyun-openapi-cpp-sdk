@@ -101,6 +101,8 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 										AvailableZone::SupportedEngine::SupportedEditionType::SupportedSeriesType::SupportedEngineVersion::SupportedArchitectureType::SupportedShardNumber::SupportedNodeType::AvailableResource availableResourcesObject;
 										if(!allSupportedNodeTypesNodeAvailableResourcesAvailableResource["InstanceClass"].isNull())
 											availableResourcesObject.instanceClass = allSupportedNodeTypesNodeAvailableResourcesAvailableResource["InstanceClass"].asString();
+										if(!allSupportedNodeTypesNodeAvailableResourcesAvailableResource["InstanceClassRemark"].isNull())
+											availableResourcesObject.instanceClassRemark = allSupportedNodeTypesNodeAvailableResourcesAvailableResource["InstanceClassRemark"].asString();
 										supportedNodeTypesObject.availableResources.push_back(availableResourcesObject);
 									}
 									supportedShardNumbersObject.supportedNodeTypes.push_back(supportedNodeTypesObject);

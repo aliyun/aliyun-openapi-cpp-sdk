@@ -50,6 +50,7 @@ namespace AlibabaCloud
 											{
 												struct AvailableResource
 												{
+													std::string instanceClassRemark;
 													std::string instanceClass;
 												};
 												std::vector<SupportedNodeType::AvailableResource> availableResources;
