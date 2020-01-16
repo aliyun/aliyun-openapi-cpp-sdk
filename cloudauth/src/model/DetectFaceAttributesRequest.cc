@@ -19,8 +19,10 @@
 using AlibabaCloud::Cloudauth::Model::DetectFaceAttributesRequest;
 
 DetectFaceAttributesRequest::DetectFaceAttributesRequest() :
-	RpcServiceRequest("cloudauth", "2018-09-16", "DetectFaceAttributes")
-{}
+	RpcServiceRequest("cloudauth", "2019-03-07", "DetectFaceAttributes")
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectFaceAttributesRequest::~DetectFaceAttributesRequest()
 {}

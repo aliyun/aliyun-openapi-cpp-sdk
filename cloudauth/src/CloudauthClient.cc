@@ -123,6 +123,42 @@ CloudauthClient::CreateAuthKeyOutcomeCallable CloudauthClient::createAuthKeyCall
 	return task->get_future();
 }
 
+CloudauthClient::CreateRPSDKOutcome CloudauthClient::createRPSDK(const CreateRPSDKRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRPSDKOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRPSDKOutcome(CreateRPSDKResult(outcome.result()));
+	else
+		return CreateRPSDKOutcome(outcome.error());
+}
+
+void CloudauthClient::createRPSDKAsync(const CreateRPSDKRequest& request, const CreateRPSDKAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRPSDK(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::CreateRPSDKOutcomeCallable CloudauthClient::createRPSDKCallable(const CreateRPSDKRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRPSDKOutcome()>>(
+			[this, request]()
+			{
+			return this->createRPSDK(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::CreateVerifySDKOutcome CloudauthClient::createVerifySDK(const CreateVerifySDKRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +189,42 @@ CloudauthClient::CreateVerifySDKOutcomeCallable CloudauthClient::createVerifySDK
 			[this, request]()
 			{
 			return this->createVerifySDK(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::CreateVerifySettingOutcome CloudauthClient::createVerifySetting(const CreateVerifySettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVerifySettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVerifySettingOutcome(CreateVerifySettingResult(outcome.result()));
+	else
+		return CreateVerifySettingOutcome(outcome.error());
+}
+
+void CloudauthClient::createVerifySettingAsync(const CreateVerifySettingRequest& request, const CreateVerifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVerifySetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::CreateVerifySettingOutcomeCallable CloudauthClient::createVerifySettingCallable(const CreateVerifySettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVerifySettingOutcome()>>(
+			[this, request]()
+			{
+			return this->createVerifySetting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -195,6 +267,258 @@ CloudauthClient::DescribeDeviceInfoOutcomeCallable CloudauthClient::describeDevi
 	return task->get_future();
 }
 
+CloudauthClient::DescribeFaceUsageOutcome CloudauthClient::describeFaceUsage(const DescribeFaceUsageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFaceUsageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFaceUsageOutcome(DescribeFaceUsageResult(outcome.result()));
+	else
+		return DescribeFaceUsageOutcome(outcome.error());
+}
+
+void CloudauthClient::describeFaceUsageAsync(const DescribeFaceUsageRequest& request, const DescribeFaceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFaceUsage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeFaceUsageOutcomeCallable CloudauthClient::describeFaceUsageCallable(const DescribeFaceUsageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFaceUsageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFaceUsage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeOssUploadTokenOutcome CloudauthClient::describeOssUploadToken(const DescribeOssUploadTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeOssUploadTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeOssUploadTokenOutcome(DescribeOssUploadTokenResult(outcome.result()));
+	else
+		return DescribeOssUploadTokenOutcome(outcome.error());
+}
+
+void CloudauthClient::describeOssUploadTokenAsync(const DescribeOssUploadTokenRequest& request, const DescribeOssUploadTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeOssUploadToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeOssUploadTokenOutcomeCallable CloudauthClient::describeOssUploadTokenCallable(const DescribeOssUploadTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeOssUploadTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->describeOssUploadToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeRPSDKOutcome CloudauthClient::describeRPSDK(const DescribeRPSDKRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRPSDKOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRPSDKOutcome(DescribeRPSDKResult(outcome.result()));
+	else
+		return DescribeRPSDKOutcome(outcome.error());
+}
+
+void CloudauthClient::describeRPSDKAsync(const DescribeRPSDKRequest& request, const DescribeRPSDKAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRPSDK(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeRPSDKOutcomeCallable CloudauthClient::describeRPSDKCallable(const DescribeRPSDKRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRPSDKOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRPSDK(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeUploadInfoOutcome CloudauthClient::describeUploadInfo(const DescribeUploadInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUploadInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUploadInfoOutcome(DescribeUploadInfoResult(outcome.result()));
+	else
+		return DescribeUploadInfoOutcome(outcome.error());
+}
+
+void CloudauthClient::describeUploadInfoAsync(const DescribeUploadInfoRequest& request, const DescribeUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUploadInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeUploadInfoOutcomeCallable CloudauthClient::describeUploadInfoCallable(const DescribeUploadInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUploadInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUploadInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeUserStatusOutcome CloudauthClient::describeUserStatus(const DescribeUserStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserStatusOutcome(DescribeUserStatusResult(outcome.result()));
+	else
+		return DescribeUserStatusOutcome(outcome.error());
+}
+
+void CloudauthClient::describeUserStatusAsync(const DescribeUserStatusRequest& request, const DescribeUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeUserStatusOutcomeCallable CloudauthClient::describeUserStatusCallable(const DescribeUserStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeVerifyRecordsOutcome CloudauthClient::describeVerifyRecords(const DescribeVerifyRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVerifyRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVerifyRecordsOutcome(DescribeVerifyRecordsResult(outcome.result()));
+	else
+		return DescribeVerifyRecordsOutcome(outcome.error());
+}
+
+void CloudauthClient::describeVerifyRecordsAsync(const DescribeVerifyRecordsRequest& request, const DescribeVerifyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVerifyRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeVerifyRecordsOutcomeCallable CloudauthClient::describeVerifyRecordsCallable(const DescribeVerifyRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVerifyRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVerifyRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeVerifyResultOutcome CloudauthClient::describeVerifyResult(const DescribeVerifyResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVerifyResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVerifyResultOutcome(DescribeVerifyResultResult(outcome.result()));
+	else
+		return DescribeVerifyResultOutcome(outcome.error());
+}
+
+void CloudauthClient::describeVerifyResultAsync(const DescribeVerifyResultRequest& request, const DescribeVerifyResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVerifyResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeVerifyResultOutcomeCallable CloudauthClient::describeVerifyResultCallable(const DescribeVerifyResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVerifyResultOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVerifyResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::DescribeVerifySDKOutcome CloudauthClient::describeVerifySDK(const DescribeVerifySDKRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +549,114 @@ CloudauthClient::DescribeVerifySDKOutcomeCallable CloudauthClient::describeVerif
 			[this, request]()
 			{
 			return this->describeVerifySDK(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeVerifySettingOutcome CloudauthClient::describeVerifySetting(const DescribeVerifySettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVerifySettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVerifySettingOutcome(DescribeVerifySettingResult(outcome.result()));
+	else
+		return DescribeVerifySettingOutcome(outcome.error());
+}
+
+void CloudauthClient::describeVerifySettingAsync(const DescribeVerifySettingRequest& request, const DescribeVerifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVerifySetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeVerifySettingOutcomeCallable CloudauthClient::describeVerifySettingCallable(const DescribeVerifySettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVerifySettingOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVerifySetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeVerifyTokenOutcome CloudauthClient::describeVerifyToken(const DescribeVerifyTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVerifyTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVerifyTokenOutcome(DescribeVerifyTokenResult(outcome.result()));
+	else
+		return DescribeVerifyTokenOutcome(outcome.error());
+}
+
+void CloudauthClient::describeVerifyTokenAsync(const DescribeVerifyTokenRequest& request, const DescribeVerifyTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVerifyToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeVerifyTokenOutcomeCallable CloudauthClient::describeVerifyTokenCallable(const DescribeVerifyTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVerifyTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVerifyToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeVerifyUsageOutcome CloudauthClient::describeVerifyUsage(const DescribeVerifyUsageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVerifyUsageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVerifyUsageOutcome(DescribeVerifyUsageResult(outcome.result()));
+	else
+		return DescribeVerifyUsageOutcome(outcome.error());
+}
+
+void CloudauthClient::describeVerifyUsageAsync(const DescribeVerifyUsageRequest& request, const DescribeVerifyUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVerifyUsage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeVerifyUsageOutcomeCallable CloudauthClient::describeVerifyUsageCallable(const DescribeVerifyUsageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVerifyUsageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVerifyUsage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,114 +699,6 @@ CloudauthClient::DetectFaceAttributesOutcomeCallable CloudauthClient::detectFace
 	return task->get_future();
 }
 
-CloudauthClient::GetMaterialsOutcome CloudauthClient::getMaterials(const GetMaterialsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetMaterialsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetMaterialsOutcome(GetMaterialsResult(outcome.result()));
-	else
-		return GetMaterialsOutcome(outcome.error());
-}
-
-void CloudauthClient::getMaterialsAsync(const GetMaterialsRequest& request, const GetMaterialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getMaterials(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudauthClient::GetMaterialsOutcomeCallable CloudauthClient::getMaterialsCallable(const GetMaterialsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetMaterialsOutcome()>>(
-			[this, request]()
-			{
-			return this->getMaterials(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudauthClient::GetStatusOutcome CloudauthClient::getStatus(const GetStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetStatusOutcome(GetStatusResult(outcome.result()));
-	else
-		return GetStatusOutcome(outcome.error());
-}
-
-void CloudauthClient::getStatusAsync(const GetStatusRequest& request, const GetStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudauthClient::GetStatusOutcomeCallable CloudauthClient::getStatusCallable(const GetStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->getStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudauthClient::GetVerifyTokenOutcome CloudauthClient::getVerifyToken(const GetVerifyTokenRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetVerifyTokenOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetVerifyTokenOutcome(GetVerifyTokenResult(outcome.result()));
-	else
-		return GetVerifyTokenOutcome(outcome.error());
-}
-
-void CloudauthClient::getVerifyTokenAsync(const GetVerifyTokenRequest& request, const GetVerifyTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getVerifyToken(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudauthClient::GetVerifyTokenOutcomeCallable CloudauthClient::getVerifyTokenCallable(const GetVerifyTokenRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetVerifyTokenOutcome()>>(
-			[this, request]()
-			{
-			return this->getVerifyToken(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudauthClient::ModifyDeviceInfoOutcome CloudauthClient::modifyDeviceInfo(const ModifyDeviceInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -411,72 +735,72 @@ CloudauthClient::ModifyDeviceInfoOutcomeCallable CloudauthClient::modifyDeviceIn
 	return task->get_future();
 }
 
-CloudauthClient::SubmitMaterialsOutcome CloudauthClient::submitMaterials(const SubmitMaterialsRequest &request) const
+CloudauthClient::UpdateVerifySettingOutcome CloudauthClient::updateVerifySetting(const UpdateVerifySettingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SubmitMaterialsOutcome(endpointOutcome.error());
+		return UpdateVerifySettingOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SubmitMaterialsOutcome(SubmitMaterialsResult(outcome.result()));
+		return UpdateVerifySettingOutcome(UpdateVerifySettingResult(outcome.result()));
 	else
-		return SubmitMaterialsOutcome(outcome.error());
+		return UpdateVerifySettingOutcome(outcome.error());
 }
 
-void CloudauthClient::submitMaterialsAsync(const SubmitMaterialsRequest& request, const SubmitMaterialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CloudauthClient::updateVerifySettingAsync(const UpdateVerifySettingRequest& request, const UpdateVerifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, submitMaterials(request), context);
+		handler(this, request, updateVerifySetting(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CloudauthClient::SubmitMaterialsOutcomeCallable CloudauthClient::submitMaterialsCallable(const SubmitMaterialsRequest &request) const
+CloudauthClient::UpdateVerifySettingOutcomeCallable CloudauthClient::updateVerifySettingCallable(const UpdateVerifySettingRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SubmitMaterialsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UpdateVerifySettingOutcome()>>(
 			[this, request]()
 			{
-			return this->submitMaterials(request);
+			return this->updateVerifySetting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CloudauthClient::SubmitVerificationOutcome CloudauthClient::submitVerification(const SubmitVerificationRequest &request) const
+CloudauthClient::VerifyMaterialOutcome CloudauthClient::verifyMaterial(const VerifyMaterialRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SubmitVerificationOutcome(endpointOutcome.error());
+		return VerifyMaterialOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SubmitVerificationOutcome(SubmitVerificationResult(outcome.result()));
+		return VerifyMaterialOutcome(VerifyMaterialResult(outcome.result()));
 	else
-		return SubmitVerificationOutcome(outcome.error());
+		return VerifyMaterialOutcome(outcome.error());
 }
 
-void CloudauthClient::submitVerificationAsync(const SubmitVerificationRequest& request, const SubmitVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CloudauthClient::verifyMaterialAsync(const VerifyMaterialRequest& request, const VerifyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, submitVerification(request), context);
+		handler(this, request, verifyMaterial(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CloudauthClient::SubmitVerificationOutcomeCallable CloudauthClient::submitVerificationCallable(const SubmitVerificationRequest &request) const
+CloudauthClient::VerifyMaterialOutcomeCallable CloudauthClient::verifyMaterialCallable(const VerifyMaterialRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SubmitVerificationOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<VerifyMaterialOutcome()>>(
 			[this, request]()
 			{
-			return this->submitVerification(request);
+			return this->verifyMaterial(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

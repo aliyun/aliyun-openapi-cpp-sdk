@@ -14,58 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/CreateVerifySDKRequest.h>
+#include <alibabacloud/cloudauth/model/CreateRPSDKRequest.h>
 
-using AlibabaCloud::Cloudauth::Model::CreateVerifySDKRequest;
+using AlibabaCloud::Cloudauth::Model::CreateRPSDKRequest;
 
-CreateVerifySDKRequest::CreateVerifySDKRequest() :
-	RpcServiceRequest("cloudauth", "2019-03-07", "CreateVerifySDK")
+CreateRPSDKRequest::CreateRPSDKRequest() :
+	RpcServiceRequest("cloudauth", "2019-03-07", "CreateRPSDK")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-CreateVerifySDKRequest::~CreateVerifySDKRequest()
+CreateRPSDKRequest::~CreateRPSDKRequest()
 {}
 
-std::string CreateVerifySDKRequest::getAppUrl()const
+std::string CreateRPSDKRequest::getAppUrl()const
 {
 	return appUrl_;
 }
 
-void CreateVerifySDKRequest::setAppUrl(const std::string& appUrl)
+void CreateRPSDKRequest::setAppUrl(const std::string& appUrl)
 {
 	appUrl_ = appUrl;
 	setCoreParameter("AppUrl", appUrl);
 }
 
-std::string CreateVerifySDKRequest::getPlatform()const
+std::string CreateRPSDKRequest::getPlatform()const
 {
 	return platform_;
 }
 
-void CreateVerifySDKRequest::setPlatform(const std::string& platform)
+void CreateRPSDKRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
 	setCoreParameter("Platform", platform);
 }
 
-std::string CreateVerifySDKRequest::getSourceIp()const
+std::string CreateRPSDKRequest::getSourceIp()const
 {
 	return sourceIp_;
 }
 
-void CreateVerifySDKRequest::setSourceIp(const std::string& sourceIp)
+void CreateRPSDKRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string CreateVerifySDKRequest::getLang()const
+std::string CreateRPSDKRequest::getLang()const
 {
 	return lang_;
 }
 
-void CreateVerifySDKRequest::setLang(const std::string& lang)
+void CreateRPSDKRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);

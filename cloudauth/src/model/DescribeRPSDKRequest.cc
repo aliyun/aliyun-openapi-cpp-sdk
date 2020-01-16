@@ -14,47 +14,47 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/DescribeVerifySDKRequest.h>
+#include <alibabacloud/cloudauth/model/DescribeRPSDKRequest.h>
 
-using AlibabaCloud::Cloudauth::Model::DescribeVerifySDKRequest;
+using AlibabaCloud::Cloudauth::Model::DescribeRPSDKRequest;
 
-DescribeVerifySDKRequest::DescribeVerifySDKRequest() :
-	RpcServiceRequest("cloudauth", "2019-03-07", "DescribeVerifySDK")
+DescribeRPSDKRequest::DescribeRPSDKRequest() :
+	RpcServiceRequest("cloudauth", "2019-03-07", "DescribeRPSDK")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeVerifySDKRequest::~DescribeVerifySDKRequest()
+DescribeRPSDKRequest::~DescribeRPSDKRequest()
 {}
 
-std::string DescribeVerifySDKRequest::getSourceIp()const
+std::string DescribeRPSDKRequest::getSourceIp()const
 {
 	return sourceIp_;
 }
 
-void DescribeVerifySDKRequest::setSourceIp(const std::string& sourceIp)
+void DescribeRPSDKRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeVerifySDKRequest::getLang()const
+std::string DescribeRPSDKRequest::getLang()const
 {
 	return lang_;
 }
 
-void DescribeVerifySDKRequest::setLang(const std::string& lang)
+void DescribeRPSDKRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
 }
 
-std::string DescribeVerifySDKRequest::getTaskId()const
+std::string DescribeRPSDKRequest::getTaskId()const
 {
 	return taskId_;
 }
 
-void DescribeVerifySDKRequest::setTaskId(const std::string& taskId)
+void DescribeRPSDKRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setCoreParameter("TaskId", taskId);
