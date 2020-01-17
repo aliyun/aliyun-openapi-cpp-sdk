@@ -22,18 +22,20 @@
 #include <sstream>
 #include <alibabacloud/core/Utils.h>
 
-namespace AlibabaCloud {
+namespace AlibabaCloud
+{
 
-RpcServiceClient::RpcServiceClient(const std::string & servicename,
-  const std::shared_ptr<CredentialsProvider> &credentialsProvider,
-  const ClientConfiguration &configuration,
-  const std::shared_ptr<Signer> &signer) :
-  CoreClient(servicename, configuration),
-  credentialsProvider_(credentialsProvider),
-  signer_(signer) {
+RpcServiceClient::RpcServiceClient(const std::string &servicename,
+                                   const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+                                   const ClientConfiguration &configuration,
+                                   const std::shared_ptr<Signer> &signer) : CoreClient(servicename, configuration),
+                                                                            credentialsProvider_(credentialsProvider),
+                                                                            signer_(signer)
+{
 }
 
-RpcServiceClient::~RpcServiceClient() {
+RpcServiceClient::~RpcServiceClient()
+{
 }
 
 RpcServiceClient::JsonOutcome RpcServiceClient::makeRequest(
@@ -47,33 +49,39 @@ RpcServiceClient::JsonOutcome RpcServiceClient::makeRequest(
   auto outcome = AttemptRequest(endpoint, request, method);
   if (outcome.isSuccess())
     return JsonOutcome(std::string(outcome.result().body(),
-      outcome.result().bodySize()));
+                                   outcome.result().bodySize()));
   else
     return JsonOutcome(outcome.error());
 }
 
-HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
-  const ServiceRequest &msg, HttpRequest::Method method)const {
+HttpRequest RpcServiceClient::buildHttpRequest(const std::string &endpoint,
+                                               const ServiceRequest &msg, HttpRequest::Method method) const
+{
   return buildHttpRequest(endpoint,
-    dynamic_cast<const RpcServiceRequest& >(msg), method);
+                          dynamic_cast<const RpcServiceRequest &>(msg), method);
 }
 
-HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
-  const RpcServiceRequest &msg, HttpRequest::Method method) const {
+HttpRequest RpcServiceClient::buildHttpRequest(const std::string &endpoint,
+                                               const RpcServiceRequest &msg, HttpRequest::Method method) const
+{
   const Credentials credentials = credentialsProvider_->getCredentials();
 
   Url url;
-  if (msg.scheme().empty()) {
+  if (msg.scheme().empty())
+  {
     url.setScheme("https");
-  } else {
+  }
+  else
+  {
     url.setScheme(msg.scheme());
   }
   url.setHost(endpoint);
   url.setPath(msg.resourcePath());
 
   auto params = msg.parameters();
-  std::map <std::string, std::string> queryParams;
-  for (const auto &p : params) {
+  std::map<std::string, std::string> queryParams;
+  for (const auto &p : params)
+  {
     if (!p.second.empty())
       queryParams[p.first] = p.second;
   }
@@ -97,25 +105,39 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
   queryParams["Timestamp"] = ss.str();
   queryParams["Version"] = msg.version();
 
+  std::map<std::string, std::string> query;
+  for (const auto &p : queryParams)
+  {
+    query[p.first] = p.second;
+  }
+
+  auto body_params = msg.coreParameters();
+  for (const auto &p : body_params)
+  {
+    queryParams[p.first] = p.second;
+  }
+
   std::stringstream plaintext;
   plaintext << HttpMethodToString(method)
-    << "&"
-    << UrlEncode(url.path())
-    << "&"
-    << UrlEncode(canonicalizedQuery(queryParams));
-
-  queryParams["Signature"] = signer_->generate(plaintext.str(),
-    credentials.accessKeySecret() + "&");
+            << "&"
+            << UrlEncode(url.path())
+            << "&"
+            << UrlEncode(canonicalizedQuery(queryParams));
+  query["Signature"] = signer_->generate(plaintext.str(),
+                                         credentials.accessKeySecret() + "&");
 
   std::stringstream queryString;
-  for (const auto &p : queryParams)
+  for (const auto &p : query)
     queryString << "&" << p.first << "=" << UrlEncode(p.second);
   url.setQuery(queryString.str().substr(1));
 
   HttpRequest request(url);
-  if (msg.connectTimeout() != kInvalidTimeout) {
+  if (msg.connectTimeout() != kInvalidTimeout)
+  {
     request.setConnectTimeout(msg.connectTimeout());
-  } else {
+  }
+  else
+  {
     request.setConnectTimeout(configuration().connectTimeout());
   }
 
@@ -127,17 +149,25 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
     }
   }
 
-  if (msg.readTimeout() != kInvalidTimeout) {
+  if (msg.readTimeout() != kInvalidTimeout)
+  {
     request.setReadTimeout(msg.readTimeout());
-  } else {
+  }
+  else
+  {
     request.setReadTimeout(configuration().readTimeout());
   }
 
   request.setMethod(method);
   request.setHeader("Host", url.host());
   request.setHeader("x-sdk-client",
-    std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
+                    std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
+  std::stringstream tmp;
+  for (const auto &p : body_params)
+    tmp << "&" << p.first << "=" << UrlEncode(p.second);
+  std::string body = tmp.str().substr(1);
+  request.setBody(body.c_str(), body.length());
   return request;
 }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

@@ -36,6 +36,7 @@ public:
   size_t contentSize() const;
   bool hasContent() const;
   ParameterCollection parameters() const;
+  ParameterCollection coreParameters() const;
   std::string product() const;
   std::string resourcePath() const;
   std::string version() const;
@@ -81,6 +82,7 @@ private:
   char *content_;
   size_t contentSize_;
   ParameterCollection params_;
+  ParameterCollection body_params_;
   ParameterCollection headers_;
   std::string product_;
   std::string resourcePath_;

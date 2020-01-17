@@ -137,6 +137,11 @@ ServiceRequest::ParameterCollection ServiceRequest::parameters() const
   return params_;
 }
 
+ServiceRequest::ParameterCollection ServiceRequest::coreParameters() const
+{
+  return body_params_;
+}
+
 void ServiceRequest::removeParameter(const ParameterNameType &name)
 {
   params_.erase(name);
@@ -150,7 +155,7 @@ void ServiceRequest::setParameter(const ParameterNameType &name,
 
 void ServiceRequest::setCoreParameter(const ParameterNameType &name, const ParameterValueType &value)
 {
-  setParameter(name, value);
+  body_params_[name] = value;
 }
 
 void ServiceRequest::setParameters(const ParameterCollection &params)
