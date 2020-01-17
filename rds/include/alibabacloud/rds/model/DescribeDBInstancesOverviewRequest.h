@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCESPECREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCESPECREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEDBINSTANCESOVERVIEWREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEDBINSTANCESOVERVIEWREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,63 +28,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT ModifyDBInstanceSpecRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT DescribeDBInstancesOverviewRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyDBInstanceSpecRequest();
-				~ModifyDBInstanceSpecRequest();
+				DescribeDBInstancesOverviewRequest();
+				~DescribeDBInstancesOverviewRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getDBInstanceStorage()const;
-				void setDBInstanceStorage(int dBInstanceStorage);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getEngineVersion()const;
-				void setEngineVersion(const std::string& engineVersion);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getEffectiveTime()const;
-				void setEffectiveTime(const std::string& effectiveTime);
+				std::string getExpired()const;
+				void setExpired(const std::string& expired);
+				std::string getEngine()const;
+				void setEngine(const std::string& engine);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getDBInstanceStorageType()const;
-				void setDBInstanceStorageType(const std::string& dBInstanceStorageType);
-				std::string getSourceBiz()const;
-				void setSourceBiz(const std::string& sourceBiz);
-				std::string getDirection()const;
-				void setDirection(const std::string& direction);
+				std::string getProxyId()const;
+				void setProxyId(const std::string& proxyId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getDBInstanceClass()const;
-				void setDBInstanceClass(const std::string& dBInstanceClass);
-				std::string getPayType()const;
-				void setPayType(const std::string& payType);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 
             private:
 				long resourceOwnerId_;
-				int dBInstanceStorage_;
 				std::string clientToken_;
-				std::string engineVersion_;
 				std::string accessKeyId_;
-				std::string effectiveTime_;
+				std::string expired_;
+				std::string engine_;
+				std::string regionId_;
 				std::string dBInstanceId_;
-				std::string dBInstanceStorageType_;
-				std::string sourceBiz_;
-				std::string direction_;
+				std::string proxyId_;
 				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
 				long ownerId_;
-				std::string dBInstanceClass_;
-				std::string payType_;
+				std::string zoneId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCESPECREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEDBINSTANCESOVERVIEWREQUEST_H_

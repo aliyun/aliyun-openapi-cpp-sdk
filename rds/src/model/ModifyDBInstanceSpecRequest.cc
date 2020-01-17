@@ -115,6 +115,17 @@ void ModifyDBInstanceSpecRequest::setDBInstanceStorageType(const std::string& dB
 	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
 }
 
+std::string ModifyDBInstanceSpecRequest::getSourceBiz()const
+{
+	return sourceBiz_;
+}
+
+void ModifyDBInstanceSpecRequest::setSourceBiz(const std::string& sourceBiz)
+{
+	sourceBiz_ = sourceBiz;
+	setCoreParameter("SourceBiz", sourceBiz);
+}
+
 std::string ModifyDBInstanceSpecRequest::getDirection()const
 {
 	return direction_;

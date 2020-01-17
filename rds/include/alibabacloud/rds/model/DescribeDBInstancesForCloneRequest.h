@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setEngine(const std::string& engine);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getCurrentInstanceId()const;
+				void setCurrentInstanceId(const std::string& currentInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getDBInstanceStatus()const;
@@ -98,6 +100,7 @@ namespace AlibabaCloud
 				std::string expired_;
 				std::string engine_;
 				std::string regionId_;
+				std::string currentInstanceId_;
 				int pageSize_;
 				std::string dBInstanceStatus_;
 				std::string dBInstanceId_;

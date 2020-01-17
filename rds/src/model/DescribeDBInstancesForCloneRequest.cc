@@ -148,6 +148,17 @@ void DescribeDBInstancesForCloneRequest::setRegionId(const std::string& regionId
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string DescribeDBInstancesForCloneRequest::getCurrentInstanceId()const
+{
+	return currentInstanceId_;
+}
+
+void DescribeDBInstancesForCloneRequest::setCurrentInstanceId(const std::string& currentInstanceId)
+{
+	currentInstanceId_ = currentInstanceId;
+	setCoreParameter("CurrentInstanceId", currentInstanceId);
+}
+
 int DescribeDBInstancesForCloneRequest::getPageSize()const
 {
 	return pageSize_;

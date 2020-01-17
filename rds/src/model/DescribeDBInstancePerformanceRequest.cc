@@ -126,3 +126,14 @@ void DescribeDBInstancePerformanceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+bool DescribeDBInstancePerformanceRequest::getUseNullWhenMissingPoint()const
+{
+	return useNullWhenMissingPoint_;
+}
+
+void DescribeDBInstancePerformanceRequest::setUseNullWhenMissingPoint(bool useNullWhenMissingPoint)
+{
+	useNullWhenMissingPoint_ = useNullWhenMissingPoint;
+	setCoreParameter("UseNullWhenMissingPoint", useNullWhenMissingPoint ? "true" : "false");
+}
+

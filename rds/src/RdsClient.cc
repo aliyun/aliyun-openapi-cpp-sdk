@@ -2607,6 +2607,42 @@ RdsClient::DescribeDBInstancesForCloneOutcomeCallable RdsClient::describeDBInsta
 	return task->get_future();
 }
 
+RdsClient::DescribeDBInstancesOverviewOutcome RdsClient::describeDBInstancesOverview(const DescribeDBInstancesOverviewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstancesOverviewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstancesOverviewOutcome(DescribeDBInstancesOverviewResult(outcome.result()));
+	else
+		return DescribeDBInstancesOverviewOutcome(outcome.error());
+}
+
+void RdsClient::describeDBInstancesOverviewAsync(const DescribeDBInstancesOverviewRequest& request, const DescribeDBInstancesOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstancesOverview(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeDBInstancesOverviewOutcomeCallable RdsClient::describeDBInstancesOverviewCallable(const DescribeDBInstancesOverviewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstancesOverviewOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstancesOverview(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeDBProxyOutcome RdsClient::describeDBProxy(const DescribeDBProxyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3327,6 +3363,42 @@ RdsClient::DescribeModifyParameterLogOutcomeCallable RdsClient::describeModifyPa
 	return task->get_future();
 }
 
+RdsClient::DescribeNextEventForSignOutcome RdsClient::describeNextEventForSign(const DescribeNextEventForSignRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNextEventForSignOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNextEventForSignOutcome(DescribeNextEventForSignResult(outcome.result()));
+	else
+		return DescribeNextEventForSignOutcome(outcome.error());
+}
+
+void RdsClient::describeNextEventForSignAsync(const DescribeNextEventForSignRequest& request, const DescribeNextEventForSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNextEventForSign(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeNextEventForSignOutcomeCallable RdsClient::describeNextEventForSignCallable(const DescribeNextEventForSignRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNextEventForSignOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNextEventForSign(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeOssDownloadsOutcome RdsClient::describeOssDownloads(const DescribeOssDownloadsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3723,6 +3795,78 @@ RdsClient::DescribeResourceUsageOutcomeCallable RdsClient::describeResourceUsage
 	return task->get_future();
 }
 
+RdsClient::DescribeSQLCollectorPolicyOutcome RdsClient::describeSQLCollectorPolicy(const DescribeSQLCollectorPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSQLCollectorPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSQLCollectorPolicyOutcome(DescribeSQLCollectorPolicyResult(outcome.result()));
+	else
+		return DescribeSQLCollectorPolicyOutcome(outcome.error());
+}
+
+void RdsClient::describeSQLCollectorPolicyAsync(const DescribeSQLCollectorPolicyRequest& request, const DescribeSQLCollectorPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSQLCollectorPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeSQLCollectorPolicyOutcomeCallable RdsClient::describeSQLCollectorPolicyCallable(const DescribeSQLCollectorPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSQLCollectorPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSQLCollectorPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeSQLCollectorRetentionOutcome RdsClient::describeSQLCollectorRetention(const DescribeSQLCollectorRetentionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSQLCollectorRetentionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSQLCollectorRetentionOutcome(DescribeSQLCollectorRetentionResult(outcome.result()));
+	else
+		return DescribeSQLCollectorRetentionOutcome(outcome.error());
+}
+
+void RdsClient::describeSQLCollectorRetentionAsync(const DescribeSQLCollectorRetentionRequest& request, const DescribeSQLCollectorRetentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSQLCollectorRetention(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeSQLCollectorRetentionOutcomeCallable RdsClient::describeSQLCollectorRetentionCallable(const DescribeSQLCollectorRetentionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSQLCollectorRetentionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSQLCollectorRetention(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeSQLLogFilesOutcome RdsClient::describeSQLLogFiles(const DescribeSQLLogFilesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3933,6 +4077,42 @@ RdsClient::DescribeSecurityGroupConfigurationOutcomeCallable RdsClient::describe
 			[this, request]()
 			{
 			return this->describeSecurityGroupConfiguration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeSignedEventActionsOutcome RdsClient::describeSignedEventActions(const DescribeSignedEventActionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSignedEventActionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSignedEventActionsOutcome(DescribeSignedEventActionsResult(outcome.result()));
+	else
+		return DescribeSignedEventActionsOutcome(outcome.error());
+}
+
+void RdsClient::describeSignedEventActionsAsync(const DescribeSignedEventActionsRequest& request, const DescribeSignedEventActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSignedEventActions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeSignedEventActionsOutcomeCallable RdsClient::describeSignedEventActionsCallable(const DescribeSignedEventActionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSignedEventActionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSignedEventActions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4509,6 +4689,42 @@ RdsClient::ModifyActionEventPolicyOutcomeCallable RdsClient::modifyActionEventPo
 			[this, request]()
 			{
 			return this->modifyActionEventPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyActionEventVerifyPolicyOutcome RdsClient::modifyActionEventVerifyPolicy(const ModifyActionEventVerifyPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyActionEventVerifyPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyActionEventVerifyPolicyOutcome(ModifyActionEventVerifyPolicyResult(outcome.result()));
+	else
+		return ModifyActionEventVerifyPolicyOutcome(outcome.error());
+}
+
+void RdsClient::modifyActionEventVerifyPolicyAsync(const ModifyActionEventVerifyPolicyRequest& request, const ModifyActionEventVerifyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyActionEventVerifyPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyActionEventVerifyPolicyOutcomeCallable RdsClient::modifyActionEventVerifyPolicyCallable(const ModifyActionEventVerifyPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyActionEventVerifyPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyActionEventVerifyPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5703,6 +5919,42 @@ RdsClient::ModifySQLCollectorPolicyOutcomeCallable RdsClient::modifySQLCollector
 	return task->get_future();
 }
 
+RdsClient::ModifySQLCollectorRetentionOutcome RdsClient::modifySQLCollectorRetention(const ModifySQLCollectorRetentionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySQLCollectorRetentionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySQLCollectorRetentionOutcome(ModifySQLCollectorRetentionResult(outcome.result()));
+	else
+		return ModifySQLCollectorRetentionOutcome(outcome.error());
+}
+
+void RdsClient::modifySQLCollectorRetentionAsync(const ModifySQLCollectorRetentionRequest& request, const ModifySQLCollectorRetentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySQLCollectorRetention(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifySQLCollectorRetentionOutcomeCallable RdsClient::modifySQLCollectorRetentionCallable(const ModifySQLCollectorRetentionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySQLCollectorRetentionOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySQLCollectorRetention(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::ModifySecurityGroupConfigurationOutcome RdsClient::modifySecurityGroupConfiguration(const ModifySecurityGroupConfigurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6417,6 +6669,42 @@ RdsClient::RevokeOperatorPermissionOutcomeCallable RdsClient::revokeOperatorPerm
 			[this, request]()
 			{
 			return this->revokeOperatorPermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::SignEventActionOutcome RdsClient::signEventAction(const SignEventActionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SignEventActionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SignEventActionOutcome(SignEventActionResult(outcome.result()));
+	else
+		return SignEventActionOutcome(outcome.error());
+}
+
+void RdsClient::signEventActionAsync(const SignEventActionRequest& request, const SignEventActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, signEventAction(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::SignEventActionOutcomeCallable RdsClient::signEventActionCallable(const SignEventActionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SignEventActionOutcome()>>(
+			[this, request]()
+			{
+			return this->signEventAction(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
