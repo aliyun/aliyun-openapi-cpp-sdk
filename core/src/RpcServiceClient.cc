@@ -63,28 +63,33 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
   const Credentials credentials = credentialsProvider_->getCredentials();
 
   Url url;
-  if (msg.scheme().empty()) {
+  if (msg.scheme().empty())
+  {
     url.setScheme("https");
-  } else {
+  }
+  else
+  {
     url.setScheme(msg.scheme());
   }
   url.setHost(endpoint);
   url.setPath(msg.resourcePath());
 
+  std::map<std::string, std::string> signParams;
+
   auto params = msg.parameters();
-  std::map <std::string, std::string> queryParams;
-  for (const auto &p : params) {
+  for (const auto &p : params)
+  {
     if (!p.second.empty())
-      queryParams[p.first] = p.second;
+      signParams[p.first] = p.second;
   }
 
-  queryParams["AccessKeyId"] = credentials.accessKeyId();
-  queryParams["Format"] = "JSON";
-  queryParams["RegionId"] = configuration().regionId();
-  queryParams["SecurityToken"] = credentials.sessionToken();
-  queryParams["SignatureMethod"] = signer_->name();
-  queryParams["SignatureNonce"] = GenerateUuid();
-  queryParams["SignatureVersion"] = signer_->version();
+  signParams["AccessKeyId"] = credentials.accessKeyId();
+  signParams["Format"] = "JSON";
+  signParams["RegionId"] = configuration().regionId();
+  signParams["SecurityToken"] = credentials.sessionToken();
+  signParams["SignatureMethod"] = signer_->name();
+  signParams["SignatureNonce"] = GenerateUuid();
+  signParams["SignatureVersion"] = signer_->version();
   std::time_t t = std::time(nullptr);
   std::stringstream ss;
 #if defined(__GNUG__) && __GNUC__ < 5
@@ -94,28 +99,42 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
 #else
   ss << std::put_time(std::gmtime(&t), "%FT%TZ");
 #endif
-  queryParams["Timestamp"] = ss.str();
-  queryParams["Version"] = msg.version();
+  signParams["Timestamp"] = ss.str();
+  signParams["Version"] = msg.version();
+
+  std::map<std::string, std::string> query;
+  for (const auto &p : signParams)
+  {
+    query[p.first] = p.second;
+  }
+
+  auto body_params = msg.bodyParameters();
+  for (const auto &p : body_params)
+  {
+    signParams[p.first] = p.second;
+  }
 
   std::stringstream plaintext;
   plaintext << HttpMethodToString(method)
-    << "&"
-    << UrlEncode(url.path())
-    << "&"
-    << UrlEncode(canonicalizedQuery(queryParams));
-
-  queryParams["Signature"] = signer_->generate(plaintext.str(),
-    credentials.accessKeySecret() + "&");
+            << "&"
+            << UrlEncode(url.path())
+            << "&"
+            << UrlEncode(canonicalizedQuery(signParams));
+  query["Signature"] = signer_->generate(plaintext.str(),
+                                         credentials.accessKeySecret() + "&");
 
   std::stringstream queryString;
-  for (const auto &p : queryParams)
+  for (const auto &p : query)
     queryString << "&" << p.first << "=" << UrlEncode(p.second);
   url.setQuery(queryString.str().substr(1));
 
   HttpRequest request(url);
-  if (msg.connectTimeout() != kInvalidTimeout) {
+  if (msg.connectTimeout() != kInvalidTimeout)
+  {
     request.setConnectTimeout(msg.connectTimeout());
-  } else {
+  }
+  else
+  {
     request.setConnectTimeout(configuration().connectTimeout());
   }
 
@@ -127,16 +146,26 @@ HttpRequest RpcServiceClient::buildHttpRequest(const std::string & endpoint,
     }
   }
 
-  if (msg.readTimeout() != kInvalidTimeout) {
+  if (msg.readTimeout() != kInvalidTimeout)
+  {
     request.setReadTimeout(msg.readTimeout());
-  } else {
+  }
+  else
+  {
     request.setReadTimeout(configuration().readTimeout());
   }
 
   request.setMethod(method);
   request.setHeader("Host", url.host());
   request.setHeader("x-sdk-client",
-    std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
+                    std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
+  std::stringstream tmp;
+  for (const auto &p : body_params)
+    tmp << "&" << p.first << "=" << UrlEncode(p.second);
+  if(tmp.str().length() > 0){
+    std::string body = tmp.str().substr(1);
+    request.setBody(body.c_str(), body.length());
+  }
   return request;
 }
 

@@ -36,6 +36,7 @@ public:
   size_t contentSize() const;
   bool hasContent() const;
   ParameterCollection parameters() const;
+  ParameterCollection bodyParameters() const;
   std::string product() const;
   std::string resourcePath() const;
   std::string version() const;
@@ -50,6 +51,7 @@ public:
   ParameterValueType getHeader(const ParameterNameType &name);
   void removeHeader(const ParameterNameType &name);
   ParameterCollection headers() const;
+  void setBodyParameter(const ParameterNameType &name, const ParameterValueType &value);
 
 protected:
   ServiceRequest(const std::string &product, const std::string &version);
@@ -81,6 +83,7 @@ private:
   char *content_;
   size_t contentSize_;
   ParameterCollection params_;
+  ParameterCollection body_params_;
   ParameterCollection headers_;
   std::string product_;
   std::string resourcePath_;
