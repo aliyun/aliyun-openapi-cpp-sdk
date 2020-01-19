@@ -155,7 +155,7 @@ namespace {
     EXPECT_TRUE(nbr == 0);
     client->asyncExecute(rf);
     usleep(10000);
-    EXPECT_TRUE(nbr == 1);
+    EXPECT_EQ(nbr, 1);
     ShutdownSdk();
   }
 
