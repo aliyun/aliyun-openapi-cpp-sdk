@@ -137,6 +137,12 @@ ServiceRequest::ParameterCollection ServiceRequest::parameters() const
   return params_;
 }
 
+
+ServiceRequest::ParameterCollection ServiceRequest::bodyParameters() const
+{
+  return body_params_;
+}
+
 void ServiceRequest::removeParameter(const ParameterNameType &name)
 {
   params_.erase(name);
@@ -153,6 +159,11 @@ void ServiceRequest::setCoreParameter(const ParameterNameType &name, const Param
   setParameter(name, value);
 }
 
+void ServiceRequest::setBodyParameter(const ParameterNameType &name, const ParameterValueType &value)
+{
+  body_params_[name] = value;
+}
+
 void ServiceRequest::setParameters(const ParameterCollection &params)
 {
   params_ = params;
@@ -162,7 +173,7 @@ void ServiceRequest::setJsonParameters(const ParameterNameType &name, const Para
 {
   params_ = params;
   params_ = params;
-  setCoreParameter(name, AlibabaCloud::MapToJson(params));
+  setParameter(name, AlibabaCloud::MapToJson(params));
 }
 
 std::string ServiceRequest::version() const
