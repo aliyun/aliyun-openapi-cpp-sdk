@@ -95,5 +95,4 @@ TEST(RoaServiceClient, basic) {
   req.setParameter("Content-Type", "test-content-type");
   http_req = client.buildHttpRequest("cn-shanghai", req, HttpRequest::Method::Get);
   EXPECT_TRUE(http_req.url().toString() == "http://cn-shanghai/?Accept=tets-accept&Content-Type=test-content-type&a=b");
-
 }

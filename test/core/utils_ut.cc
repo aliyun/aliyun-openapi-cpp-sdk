@@ -61,6 +61,23 @@ namespace {
     EXPECT_TRUE(decoded == url);
   }
 
+  TEST(UtilsTest, MapToJson){
+    std::map<std::string, std::string> maps;
+    maps.insert(std::make_pair("foo", "bar"));
+    std::string jsonStr = MapToJson(maps);
+    EXPECT_EQ(jsonStr, "{\"foo\":\"bar\"}");
+  }
+
+  TEST(UtilsTest, JsonToMap){
+    std::map<std::string, std::string> targetMaps;
+    targetMaps.insert(std::make_pair("foo", "bar"));
+    targetMaps.insert(std::make_pair("int", "1"));
+    targetMaps.insert(std::make_pair("array","foo,bar"));
+    std::string jsonStr = "{\"foo\":\"bar\",\"int\":1,\"array\":[\"foo\",\"bar\"]}";
+    std::map<std::string, std::string> maps = JsonToMap(jsonStr);
+    EXPECT_EQ(targetMaps, maps);
+  }
+
   TEST(Utils, GetEnv) {
     const std::string var1 = GetEnv("PATH");
     EXPECT_FALSE(var1.empty());

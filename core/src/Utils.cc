@@ -235,11 +235,13 @@ std::string AlibabaCloud::GetEnv(const std::string env)
 std::string AlibabaCloud::MapToJson(const std::map<std::string, std::string> &maps)
 {
   Json::Value jsonObject;
+  Json::FastWriter writer; 
   for (std::map<std::string, std::string>::const_iterator iter = maps.begin(); iter != maps.end(); ++iter)
   {
     jsonObject[iter->first] = iter->second;
   }
-  return jsonObject.toStyledString();
+  std::string unformat_str = writer.write(jsonObject);
+  return unformat_str.substr(0, unformat_str.length() - 1);
 }
 
 std::map<std::string, std::string> AlibabaCloud::JsonToMap(const std::string &json)

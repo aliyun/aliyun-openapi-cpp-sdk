@@ -23,16 +23,17 @@ namespace {
     {}
 
     using ServiceRequest::addParameter;
-    using ServiceRequest::removeParameter;
+    using ServiceRequest::coreParameter;
     using ServiceRequest::parameter;
+    using ServiceRequest::removeParameter;
+    using ServiceRequest::setBodyParameter;
     using ServiceRequest::setContent;
+    using ServiceRequest::setCoreParameter;
     using ServiceRequest::setParameter;
     using ServiceRequest::setParameters;
-    using ServiceRequest::setResourcePath;
     using ServiceRequest::setProduct;
+    using ServiceRequest::setResourcePath;
     using ServiceRequest::setVersion;
-    using ServiceRequest::setCoreParameter;
-    using ServiceRequest::coreParameter;
   };
 
   TEST(ServiceRequest, basic) {
@@ -63,6 +64,8 @@ namespace {
     EXPECT_TRUE(sr1.parameter("ka") == "va");
     EXPECT_TRUE(sr1.coreParameter("ka") == "va");
 
+    sr1.setBodyParameter("name", "value");
+
     sr1.setContent("123456", 6);
     EXPECT_TRUE(sr1.contentSize() == 6);
     EXPECT_TRUE(sr1.hasContent() == true);
@@ -89,6 +92,9 @@ namespace {
     ServiceRequest::ParameterCollection pc = sr1.parameters();
     EXPECT_TRUE(pc.at("km") == "vm");
     EXPECT_TRUE(pc.at("kn") == "vn");
+
+    ServiceRequest::ParameterCollection bp = sr1.bodyParameters();
+    EXPECT_EQ(bp.at("name"), "value");
 
     EXPECT_TRUE(sr1.connectTimeout() == kInvalidTimeout);
     EXPECT_TRUE(sr1.readTimeout() == kInvalidTimeout);
