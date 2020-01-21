@@ -131,9 +131,11 @@ TEST(LocationClient, callable)
   configuration.setConnectTimeout(100000);
   configuration.setReadTimeout(100000);
   Model::DescribeEndpointsRequest req;
+  req.setMethod(HttpRequest::Method::Get);
   req.setId("cn-hangzhou");
   req.setServiceCode("ecs");
   req.setType("openAPI");
+  req.setBodyParameter("foo", "var");
 
   LocationClient client(key, secret, configuration);
   LocationClient::DescribeEndpointsOutcomeCallable cb = client.describeEndpointsCallable(req);

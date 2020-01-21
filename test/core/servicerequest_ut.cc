@@ -17,10 +17,12 @@ namespace {
     {}
     explicit TestServiceRequest(const ServiceRequest &other):
       ServiceRequest(other)
-    {}
+    {
+    }
     explicit TestServiceRequest(ServiceRequest &&other):
       ServiceRequest(other)
-    {}
+    {
+    }
 
     using ServiceRequest::addParameter;
     using ServiceRequest::coreParameter;
@@ -102,5 +104,22 @@ namespace {
     sr1.setReadTimeout(22233);
     EXPECT_TRUE(sr1.connectTimeout() == 1234);
     EXPECT_TRUE(sr1.readTimeout() == 22233);
+  }
+
+  TEST(ServiceRequest, other){
+    ServiceRequest one("one", "1.0");
+    EXPECT_EQ("one", one.product());
+
+    ServiceRequest two("two", "1.0");
+    EXPECT_EQ("two", two.product());
+
+    ServiceRequest three = one;
+    EXPECT_EQ("one", three.product());
+
+    ServiceRequest four(two);
+    EXPECT_EQ("two" , four.product());
+
+    ServiceRequest &&five(move(two));
+    EXPECT_EQ("two" , five.product());
   }
 }

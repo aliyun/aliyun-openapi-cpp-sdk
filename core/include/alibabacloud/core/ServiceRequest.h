@@ -30,6 +30,11 @@ public:
   typedef std::string ParameterValueType;
   typedef std::map<ParameterNameType, ParameterValueType> ParameterCollection;
 
+  ServiceRequest(const std::string &product, const std::string &version);
+  ServiceRequest(const ServiceRequest &other);
+  ServiceRequest(ServiceRequest &&other);
+  ServiceRequest &operator=(const ServiceRequest &other);
+  ServiceRequest &operator=(ServiceRequest &&other);
   virtual ~ServiceRequest();
 
   const char *content() const;
@@ -54,12 +59,6 @@ public:
   void setBodyParameter(const ParameterNameType &name, const ParameterValueType &value);
 
 protected:
-  ServiceRequest(const std::string &product, const std::string &version);
-  ServiceRequest(const ServiceRequest &other);
-  ServiceRequest(ServiceRequest &&other);
-  ServiceRequest &operator=(const ServiceRequest &other);
-  ServiceRequest &operator=(ServiceRequest &&other);
-
   void addParameter(const ParameterNameType &name,
                     const ParameterValueType &value);
   ParameterValueType parameter(const ParameterNameType &name) const;
