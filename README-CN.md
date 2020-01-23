@@ -41,6 +41,10 @@ Alibaba Cloud SDK for C++ 让您不用复杂编程即可访问云服务器、负
 * 例如：在基于 Redhat / Fedora 的系统上安装这些软件包
 
 ```bash
+# use yum
+yum install jsoncpp-devel openssl-devel uuid-devel libcurl-devel
+
+# use dnf
 sudo dnf install libcurl-devel openssl-devel libuuid-devel libjsoncpp-devel
 ```
 
