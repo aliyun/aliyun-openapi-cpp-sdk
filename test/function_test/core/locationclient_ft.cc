@@ -128,8 +128,8 @@ TEST(LocationClient, callable)
 {
   InitializeSdk();
   ClientConfiguration configuration("cn-hangzhou");
-  configuration.setConnectTimeout(100000);
-  configuration.setReadTimeout(100000);
+  configuration.setConnectTimeout(300000);
+  configuration.setReadTimeout(300000);
   Model::DescribeEndpointsRequest req;
   req.setId("cn-hangzhou");
   req.setServiceCode("ecs");
