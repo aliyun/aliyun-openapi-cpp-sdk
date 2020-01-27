@@ -93,6 +93,8 @@ TEST(LocationClient, credentials_another)
 {
   Credentials credentials(key, secret);
   ClientConfiguration configuration("cn-hangzhou");
+  configuration.setConnectTimeout(300000);
+  configuration.setReadTimeout(300000);
 
   Model::DescribeEndpointsRequest req;
   req.setId("cn-hangzhou");
@@ -102,8 +104,8 @@ TEST(LocationClient, credentials_another)
   LocationClient client(std::make_shared<SimpleCredentialsProvider>(credentials), configuration);
 
   LocationClient::DescribeEndpointsOutcome out = client.describeEndpoints(req);
-  EXPECT_TRUE(out.error().errorCode() == "");
-  EXPECT_TRUE(out.result().endpoints().size() == 1);
+  EXPECT_EQ(out.error().errorCode(), "");
+  EXPECT_EQ(out.result().endpoints().size(), 1);
   Model::DescribeEndpointsResult::Endpoint ep = out.result().endpoints()[0];
   EXPECT_TRUE(ep.endpoint == "ecs-cn-hangzhou.aliyuncs.com");
   EXPECT_TRUE(ep.id == "cn-hangzhou");
