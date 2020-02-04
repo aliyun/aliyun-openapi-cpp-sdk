@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					bool aliDomain;
 					std::string domainName;
 					std::string instanceId;
+					std::string createTime;
 					std::string punyCode;
 					std::vector<std::string> dnsServers;
 					bool starmark;
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 					std::string instanceEndTime;
 					bool instanceExpired;
 					long recordCount;
+					long createTimestamp;
 				};
 
 

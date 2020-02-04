@@ -27,6 +27,17 @@ DescribeDomainsRequest::DescribeDomainsRequest() :
 DescribeDomainsRequest::~DescribeDomainsRequest()
 {}
 
+std::string DescribeDomainsRequest::getStartDate()const
+{
+	return startDate_;
+}
+
+void DescribeDomainsRequest::setStartDate(const std::string& startDate)
+{
+	startDate_ = startDate;
+	setCoreParameter("StartDate", startDate);
+}
+
 long DescribeDomainsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -124,6 +135,17 @@ void DescribeDomainsRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
 	setCoreParameter("OrderBy", orderBy);
+}
+
+std::string DescribeDomainsRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void DescribeDomainsRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string DescribeDomainsRequest::getUserClientIp()const

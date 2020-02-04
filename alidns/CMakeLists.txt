@@ -75,6 +75,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/DescribeDnsProductInstanceResult.h
 	include/alibabacloud/alidns/model/DescribeDnsProductInstancesRequest.h
 	include/alibabacloud/alidns/model/DescribeDnsProductInstancesResult.h
+	include/alibabacloud/alidns/model/DescribeDomainDnssecInfoRequest.h
+	include/alibabacloud/alidns/model/DescribeDomainDnssecInfoResult.h
 	include/alibabacloud/alidns/model/DescribeDomainGroupsRequest.h
 	include/alibabacloud/alidns/model/DescribeDomainGroupsResult.h
 	include/alibabacloud/alidns/model/DescribeDomainInfoRequest.h
@@ -155,6 +157,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/RollbackGtmRecoveryPlanResult.h
 	include/alibabacloud/alidns/model/SetDNSSLBStatusRequest.h
 	include/alibabacloud/alidns/model/SetDNSSLBStatusResult.h
+	include/alibabacloud/alidns/model/SetDomainDnssecStatusRequest.h
+	include/alibabacloud/alidns/model/SetDomainDnssecStatusResult.h
 	include/alibabacloud/alidns/model/SetDomainRecordStatusRequest.h
 	include/alibabacloud/alidns/model/SetDomainRecordStatusResult.h
 	include/alibabacloud/alidns/model/SetGtmAccessModeRequest.h
@@ -244,6 +248,8 @@ set(alidns_src
 	src/model/DescribeDnsProductInstanceResult.cc
 	src/model/DescribeDnsProductInstancesRequest.cc
 	src/model/DescribeDnsProductInstancesResult.cc
+	src/model/DescribeDomainDnssecInfoRequest.cc
+	src/model/DescribeDomainDnssecInfoResult.cc
 	src/model/DescribeDomainGroupsRequest.cc
 	src/model/DescribeDomainGroupsResult.cc
 	src/model/DescribeDomainInfoRequest.cc
@@ -324,6 +330,8 @@ set(alidns_src
 	src/model/RollbackGtmRecoveryPlanResult.cc
 	src/model/SetDNSSLBStatusRequest.cc
 	src/model/SetDNSSLBStatusResult.cc
+	src/model/SetDomainDnssecStatusRequest.cc
+	src/model/SetDomainDnssecStatusResult.cc
 	src/model/SetDomainRecordStatusRequest.cc
 	src/model/SetDomainRecordStatusResult.cc
 	src/model/SetGtmAccessModeRequest.cc

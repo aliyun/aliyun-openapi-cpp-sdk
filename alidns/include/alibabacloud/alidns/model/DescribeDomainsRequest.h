@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeDomainsRequest();
 				~DescribeDomainsRequest();
 
+				std::string getStartDate()const;
+				void setStartDate(const std::string& startDate);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
 				std::string getResourceGroupId()const;
@@ -53,12 +55,15 @@ namespace AlibabaCloud
 				void setGroupId(const std::string& groupId);
 				std::string getOrderBy()const;
 				void setOrderBy(const std::string& orderBy);
+				std::string getEndDate()const;
+				void setEndDate(const std::string& endDate);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getSearchMode()const;
 				void setSearchMode(const std::string& searchMode);
 
             private:
+				std::string startDate_;
 				long pageNumber_;
 				std::string resourceGroupId_;
 				long pageSize_;
@@ -68,6 +73,7 @@ namespace AlibabaCloud
 				bool starmark_;
 				std::string groupId_;
 				std::string orderBy_;
+				std::string endDate_;
 				std::string userClientIp_;
 				std::string searchMode_;
 

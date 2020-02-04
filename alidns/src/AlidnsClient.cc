@@ -1023,6 +1023,42 @@ AlidnsClient::DescribeDnsProductInstancesOutcomeCallable AlidnsClient::describeD
 	return task->get_future();
 }
 
+AlidnsClient::DescribeDomainDnssecInfoOutcome AlidnsClient::describeDomainDnssecInfo(const DescribeDomainDnssecInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainDnssecInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainDnssecInfoOutcome(DescribeDomainDnssecInfoResult(outcome.result()));
+	else
+		return DescribeDomainDnssecInfoOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDomainDnssecInfoAsync(const DescribeDomainDnssecInfoRequest& request, const DescribeDomainDnssecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainDnssecInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDomainDnssecInfoOutcomeCallable AlidnsClient::describeDomainDnssecInfoCallable(const DescribeDomainDnssecInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainDnssecInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainDnssecInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::DescribeDomainGroupsOutcome AlidnsClient::describeDomainGroups(const DescribeDomainGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2457,6 +2493,42 @@ AlidnsClient::SetDNSSLBStatusOutcomeCallable AlidnsClient::setDNSSLBStatusCallab
 			[this, request]()
 			{
 			return this->setDNSSLBStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::SetDomainDnssecStatusOutcome AlidnsClient::setDomainDnssecStatus(const SetDomainDnssecStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDomainDnssecStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDomainDnssecStatusOutcome(SetDomainDnssecStatusResult(outcome.result()));
+	else
+		return SetDomainDnssecStatusOutcome(outcome.error());
+}
+
+void AlidnsClient::setDomainDnssecStatusAsync(const SetDomainDnssecStatusRequest& request, const SetDomainDnssecStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDomainDnssecStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::SetDomainDnssecStatusOutcomeCallable AlidnsClient::setDomainDnssecStatusCallable(const SetDomainDnssecStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDomainDnssecStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->setDomainDnssecStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

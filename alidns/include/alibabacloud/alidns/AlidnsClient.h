@@ -76,6 +76,8 @@
 #include "model/DescribeDnsProductInstanceResult.h"
 #include "model/DescribeDnsProductInstancesRequest.h"
 #include "model/DescribeDnsProductInstancesResult.h"
+#include "model/DescribeDomainDnssecInfoRequest.h"
+#include "model/DescribeDomainDnssecInfoResult.h"
 #include "model/DescribeDomainGroupsRequest.h"
 #include "model/DescribeDomainGroupsResult.h"
 #include "model/DescribeDomainInfoRequest.h"
@@ -156,6 +158,8 @@
 #include "model/RollbackGtmRecoveryPlanResult.h"
 #include "model/SetDNSSLBStatusRequest.h"
 #include "model/SetDNSSLBStatusResult.h"
+#include "model/SetDomainDnssecStatusRequest.h"
+#include "model/SetDomainDnssecStatusResult.h"
 #include "model/SetDomainRecordStatusRequest.h"
 #include "model/SetDomainRecordStatusResult.h"
 #include "model/SetGtmAccessModeRequest.h"
@@ -278,6 +282,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDnsProductInstancesResult> DescribeDnsProductInstancesOutcome;
 			typedef std::future<DescribeDnsProductInstancesOutcome> DescribeDnsProductInstancesOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDnsProductInstancesRequest&, const DescribeDnsProductInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDnsProductInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainDnssecInfoResult> DescribeDomainDnssecInfoOutcome;
+			typedef std::future<DescribeDomainDnssecInfoOutcome> DescribeDomainDnssecInfoOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainDnssecInfoRequest&, const DescribeDomainDnssecInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainDnssecInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainGroupsResult> DescribeDomainGroupsOutcome;
 			typedef std::future<DescribeDomainGroupsOutcome> DescribeDomainGroupsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainGroupsRequest&, const DescribeDomainGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainGroupsAsyncHandler;
@@ -398,6 +405,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDNSSLBStatusResult> SetDNSSLBStatusOutcome;
 			typedef std::future<SetDNSSLBStatusOutcome> SetDNSSLBStatusOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::SetDNSSLBStatusRequest&, const SetDNSSLBStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDNSSLBStatusAsyncHandler;
+			typedef Outcome<Error, Model::SetDomainDnssecStatusResult> SetDomainDnssecStatusOutcome;
+			typedef std::future<SetDomainDnssecStatusOutcome> SetDomainDnssecStatusOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::SetDomainDnssecStatusRequest&, const SetDomainDnssecStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainDnssecStatusAsyncHandler;
 			typedef Outcome<Error, Model::SetDomainRecordStatusResult> SetDomainRecordStatusOutcome;
 			typedef std::future<SetDomainRecordStatusOutcome> SetDomainRecordStatusOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::SetDomainRecordStatusRequest&, const SetDomainRecordStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainRecordStatusAsyncHandler;
@@ -532,6 +542,9 @@ namespace AlibabaCloud
 			DescribeDnsProductInstancesOutcome describeDnsProductInstances(const Model::DescribeDnsProductInstancesRequest &request)const;
 			void describeDnsProductInstancesAsync(const Model::DescribeDnsProductInstancesRequest& request, const DescribeDnsProductInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDnsProductInstancesOutcomeCallable describeDnsProductInstancesCallable(const Model::DescribeDnsProductInstancesRequest& request) const;
+			DescribeDomainDnssecInfoOutcome describeDomainDnssecInfo(const Model::DescribeDomainDnssecInfoRequest &request)const;
+			void describeDomainDnssecInfoAsync(const Model::DescribeDomainDnssecInfoRequest& request, const DescribeDomainDnssecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainDnssecInfoOutcomeCallable describeDomainDnssecInfoCallable(const Model::DescribeDomainDnssecInfoRequest& request) const;
 			DescribeDomainGroupsOutcome describeDomainGroups(const Model::DescribeDomainGroupsRequest &request)const;
 			void describeDomainGroupsAsync(const Model::DescribeDomainGroupsRequest& request, const DescribeDomainGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainGroupsOutcomeCallable describeDomainGroupsCallable(const Model::DescribeDomainGroupsRequest& request) const;
@@ -652,6 +665,9 @@ namespace AlibabaCloud
 			SetDNSSLBStatusOutcome setDNSSLBStatus(const Model::SetDNSSLBStatusRequest &request)const;
 			void setDNSSLBStatusAsync(const Model::SetDNSSLBStatusRequest& request, const SetDNSSLBStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDNSSLBStatusOutcomeCallable setDNSSLBStatusCallable(const Model::SetDNSSLBStatusRequest& request) const;
+			SetDomainDnssecStatusOutcome setDomainDnssecStatus(const Model::SetDomainDnssecStatusRequest &request)const;
+			void setDomainDnssecStatusAsync(const Model::SetDomainDnssecStatusRequest& request, const SetDomainDnssecStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDomainDnssecStatusOutcomeCallable setDomainDnssecStatusCallable(const Model::SetDomainDnssecStatusRequest& request) const;
 			SetDomainRecordStatusOutcome setDomainRecordStatus(const Model::SetDomainRecordStatusRequest &request)const;
 			void setDomainRecordStatusAsync(const Model::SetDomainRecordStatusRequest& request, const SetDomainRecordStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDomainRecordStatusOutcomeCallable setDomainRecordStatusCallable(const Model::SetDomainRecordStatusRequest& request) const;

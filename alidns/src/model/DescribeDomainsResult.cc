@@ -73,6 +73,10 @@ void DescribeDomainsResult::parse(const std::string &payload)
 			domainsObject.instanceExpired = valueDomainsDomain["InstanceExpired"].asString() == "true";
 		if(!valueDomainsDomain["Starmark"].isNull())
 			domainsObject.starmark = valueDomainsDomain["Starmark"].asString() == "true";
+		if(!valueDomainsDomain["CreateTime"].isNull())
+			domainsObject.createTime = valueDomainsDomain["CreateTime"].asString();
+		if(!valueDomainsDomain["CreateTimestamp"].isNull())
+			domainsObject.createTimestamp = std::stol(valueDomainsDomain["CreateTimestamp"].asString());
 		auto allDnsServers = value["DnsServers"]["DnsServer"];
 		for (auto value : allDnsServers)
 			domainsObject.dnsServers.push_back(value.asString());
