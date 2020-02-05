@@ -153,6 +153,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/ListVideosResult.h
 	include/alibabacloud/imm/model/PutProjectRequest.h
 	include/alibabacloud/imm/model/PutProjectResult.h
+	include/alibabacloud/imm/model/RefreshOfficePreviewTokenRequest.h
+	include/alibabacloud/imm/model/RefreshOfficePreviewTokenResult.h
 	include/alibabacloud/imm/model/SearchDocIndexRequest.h
 	include/alibabacloud/imm/model/SearchDocIndexResult.h
 	include/alibabacloud/imm/model/UpdateDocIndexMetaRequest.h
@@ -300,6 +302,8 @@ set(imm_src
 	src/model/ListVideosResult.cc
 	src/model/PutProjectRequest.cc
 	src/model/PutProjectResult.cc
+	src/model/RefreshOfficePreviewTokenRequest.cc
+	src/model/RefreshOfficePreviewTokenResult.cc
 	src/model/SearchDocIndexRequest.cc
 	src/model/SearchDocIndexResult.cc
 	src/model/UpdateDocIndexMetaRequest.cc

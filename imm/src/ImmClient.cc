@@ -2427,6 +2427,42 @@ ImmClient::PutProjectOutcomeCallable ImmClient::putProjectCallable(const PutProj
 	return task->get_future();
 }
 
+ImmClient::RefreshOfficePreviewTokenOutcome ImmClient::refreshOfficePreviewToken(const RefreshOfficePreviewTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshOfficePreviewTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshOfficePreviewTokenOutcome(RefreshOfficePreviewTokenResult(outcome.result()));
+	else
+		return RefreshOfficePreviewTokenOutcome(outcome.error());
+}
+
+void ImmClient::refreshOfficePreviewTokenAsync(const RefreshOfficePreviewTokenRequest& request, const RefreshOfficePreviewTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshOfficePreviewToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::RefreshOfficePreviewTokenOutcomeCallable ImmClient::refreshOfficePreviewTokenCallable(const RefreshOfficePreviewTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshOfficePreviewTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshOfficePreviewToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::SearchDocIndexOutcome ImmClient::searchDocIndex(const SearchDocIndexRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

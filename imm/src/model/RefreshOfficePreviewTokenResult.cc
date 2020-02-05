@@ -14,65 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/imm/model/GetOfficePreviewURLResult.h>
+#include <alibabacloud/imm/model/RefreshOfficePreviewTokenResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Imm;
 using namespace AlibabaCloud::Imm::Model;
 
-GetOfficePreviewURLResult::GetOfficePreviewURLResult() :
+RefreshOfficePreviewTokenResult::RefreshOfficePreviewTokenResult() :
 	ServiceResult()
 {}
 
-GetOfficePreviewURLResult::GetOfficePreviewURLResult(const std::string &payload) :
+RefreshOfficePreviewTokenResult::RefreshOfficePreviewTokenResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetOfficePreviewURLResult::~GetOfficePreviewURLResult()
+RefreshOfficePreviewTokenResult::~RefreshOfficePreviewTokenResult()
 {}
 
-void GetOfficePreviewURLResult::parse(const std::string &payload)
+void RefreshOfficePreviewTokenResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["PreviewURL"].isNull())
-		previewURL_ = value["PreviewURL"].asString();
 	if(!value["AccessToken"].isNull())
 		accessToken_ = value["AccessToken"].asString();
-	if(!value["RefreshToken"].isNull())
-		refreshToken_ = value["RefreshToken"].asString();
 	if(!value["AccessTokenExpiredTime"].isNull())
 		accessTokenExpiredTime_ = value["AccessTokenExpiredTime"].asString();
+	if(!value["RefreshToken"].isNull())
+		refreshToken_ = value["RefreshToken"].asString();
 	if(!value["RefreshTokenExpiredTime"].isNull())
 		refreshTokenExpiredTime_ = value["RefreshTokenExpiredTime"].asString();
 
 }
 
-std::string GetOfficePreviewURLResult::getPreviewURL()const
-{
-	return previewURL_;
-}
-
-std::string GetOfficePreviewURLResult::getRefreshToken()const
+std::string RefreshOfficePreviewTokenResult::getRefreshToken()const
 {
 	return refreshToken_;
 }
 
-std::string GetOfficePreviewURLResult::getAccessToken()const
+std::string RefreshOfficePreviewTokenResult::getAccessToken()const
 {
 	return accessToken_;
 }
 
-std::string GetOfficePreviewURLResult::getRefreshTokenExpiredTime()const
+std::string RefreshOfficePreviewTokenResult::getRefreshTokenExpiredTime()const
 {
 	return refreshTokenExpiredTime_;
 }
 
-std::string GetOfficePreviewURLResult::getAccessTokenExpiredTime()const
+std::string RefreshOfficePreviewTokenResult::getAccessTokenExpiredTime()const
 {
 	return accessTokenExpiredTime_;
 }

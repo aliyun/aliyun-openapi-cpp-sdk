@@ -154,6 +154,8 @@
 #include "model/ListVideosResult.h"
 #include "model/PutProjectRequest.h"
 #include "model/PutProjectResult.h"
+#include "model/RefreshOfficePreviewTokenRequest.h"
+#include "model/RefreshOfficePreviewTokenResult.h"
 #include "model/SearchDocIndexRequest.h"
 #include "model/SearchDocIndexResult.h"
 #include "model/UpdateDocIndexMetaRequest.h"
@@ -373,6 +375,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PutProjectResult> PutProjectOutcome;
 			typedef std::future<PutProjectOutcome> PutProjectOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::PutProjectRequest&, const PutProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutProjectAsyncHandler;
+			typedef Outcome<Error, Model::RefreshOfficePreviewTokenResult> RefreshOfficePreviewTokenOutcome;
+			typedef std::future<RefreshOfficePreviewTokenOutcome> RefreshOfficePreviewTokenOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::RefreshOfficePreviewTokenRequest&, const RefreshOfficePreviewTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshOfficePreviewTokenAsyncHandler;
 			typedef Outcome<Error, Model::SearchDocIndexResult> SearchDocIndexOutcome;
 			typedef std::future<SearchDocIndexOutcome> SearchDocIndexOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::SearchDocIndexRequest&, const SearchDocIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchDocIndexAsyncHandler;
@@ -594,6 +599,9 @@ namespace AlibabaCloud
 			PutProjectOutcome putProject(const Model::PutProjectRequest &request)const;
 			void putProjectAsync(const Model::PutProjectRequest& request, const PutProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutProjectOutcomeCallable putProjectCallable(const Model::PutProjectRequest& request) const;
+			RefreshOfficePreviewTokenOutcome refreshOfficePreviewToken(const Model::RefreshOfficePreviewTokenRequest &request)const;
+			void refreshOfficePreviewTokenAsync(const Model::RefreshOfficePreviewTokenRequest& request, const RefreshOfficePreviewTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefreshOfficePreviewTokenOutcomeCallable refreshOfficePreviewTokenCallable(const Model::RefreshOfficePreviewTokenRequest& request) const;
 			SearchDocIndexOutcome searchDocIndex(const Model::SearchDocIndexRequest &request)const;
 			void searchDocIndexAsync(const Model::SearchDocIndexRequest& request, const SearchDocIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchDocIndexOutcomeCallable searchDocIndexCallable(const Model::SearchDocIndexRequest& request) const;

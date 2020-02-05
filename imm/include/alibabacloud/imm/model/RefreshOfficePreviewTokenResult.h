@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMM_MODEL_GETOFFICEPREVIEWURLRESULT_H_
-#define ALIBABACLOUD_IMM_MODEL_GETOFFICEPREVIEWURLRESULT_H_
+#ifndef ALIBABACLOUD_IMM_MODEL_REFRESHOFFICEPREVIEWTOKENRESULT_H_
+#define ALIBABACLOUD_IMM_MODEL_REFRESHOFFICEPREVIEWTOKENRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,15 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMM_EXPORT GetOfficePreviewURLResult : public ServiceResult
+			class ALIBABACLOUD_IMM_EXPORT RefreshOfficePreviewTokenResult : public ServiceResult
 			{
 			public:
 
 
-				GetOfficePreviewURLResult();
-				explicit GetOfficePreviewURLResult(const std::string &payload);
-				~GetOfficePreviewURLResult();
-				std::string getPreviewURL()const;
+				RefreshOfficePreviewTokenResult();
+				explicit RefreshOfficePreviewTokenResult(const std::string &payload);
+				~RefreshOfficePreviewTokenResult();
 				std::string getRefreshToken()const;
 				std::string getAccessToken()const;
 				std::string getRefreshTokenExpiredTime()const;
@@ -46,7 +45,6 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string previewURL_;
 				std::string refreshToken_;
 				std::string accessToken_;
 				std::string refreshTokenExpiredTime_;
@@ -56,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMM_MODEL_GETOFFICEPREVIEWURLRESULT_H_
+#endif // !ALIBABACLOUD_IMM_MODEL_REFRESHOFFICEPREVIEWTOKENRESULT_H_

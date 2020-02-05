@@ -38,17 +38,6 @@ void GetOfficePreviewURLRequest::setSrcType(const std::string& srcType)
 	setCoreParameter("SrcType", srcType);
 }
 
-int GetOfficePreviewURLRequest::getExpires()const
-{
-	return expires_;
-}
-
-void GetOfficePreviewURLRequest::setExpires(int expires)
-{
-	expires_ = expires;
-	setCoreParameter("Expires", std::to_string(expires));
-}
-
 std::string GetOfficePreviewURLRequest::getProject()const
 {
 	return project_;
