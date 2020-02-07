@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::DeleteZoneRequest;
 
 DeleteZoneRequest::DeleteZoneRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "DeleteZone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteZoneRequest::~DeleteZoneRequest()
 {}

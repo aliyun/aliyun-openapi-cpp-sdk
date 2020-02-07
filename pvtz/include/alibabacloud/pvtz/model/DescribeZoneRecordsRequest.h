@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeZoneRecordsRequest();
 				~DescribeZoneRecordsRequest();
 
+				std::string getOrderBy()const;
+				void setOrderBy(const std::string& orderBy);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				int getPageSize()const;
@@ -51,8 +53,11 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
+				std::string getDirection()const;
+				void setDirection(const std::string& direction);
 
             private:
+				std::string orderBy_;
 				int pageNumber_;
 				int pageSize_;
 				std::string userClientIp_;
@@ -61,6 +66,7 @@ namespace AlibabaCloud
 				std::string tag_;
 				std::string lang_;
 				std::string keyword_;
+				std::string direction_;
 
 			};
 		}

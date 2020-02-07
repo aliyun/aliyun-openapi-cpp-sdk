@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::SetProxyPatternRequest;
 
 SetProxyPatternRequest::SetProxyPatternRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "SetProxyPattern")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetProxyPatternRequest::~SetProxyPatternRequest()
 {}

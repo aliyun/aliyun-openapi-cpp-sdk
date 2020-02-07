@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PVTZ_MODEL_DESCRIBEZONERECORDSRESULT_H_
-#define ALIBABACLOUD_PVTZ_MODEL_DESCRIBEZONERECORDSRESULT_H_
+#ifndef ALIBABACLOUD_PVTZ_MODEL_UPDATERECORDREMARKRESULT_H_
+#define ALIBABACLOUD_PVTZ_MODEL_UPDATERECORDREMARKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PVTZ_EXPORT DescribeZoneRecordsResult : public ServiceResult
+			class ALIBABACLOUD_PVTZ_EXPORT UpdateRecordRemarkResult : public ServiceResult
 			{
 			public:
-				struct Record
-				{
-					std::string rr;
-					std::string status;
-					std::string type;
-					int priority;
-					std::string value;
-					long recordId;
-					std::string regionId;
-					int ttl;
-					std::string remark;
-				};
 
 
-				DescribeZoneRecordsResult();
-				explicit DescribeZoneRecordsResult(const std::string &payload);
-				~DescribeZoneRecordsResult();
-				int getPageSize()const;
-				int getPageNumber()const;
-				int getTotalPages()const;
-				int getTotalItems()const;
-				std::vector<Record> getRecords()const;
+				UpdateRecordRemarkResult();
+				explicit UpdateRecordRemarkResult(const std::string &payload);
+				~UpdateRecordRemarkResult();
+				long getRecordId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
-				int pageNumber_;
-				int totalPages_;
-				int totalItems_;
-				std::vector<Record> records_;
+				long recordId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PVTZ_MODEL_DESCRIBEZONERECORDSRESULT_H_
+#endif // !ALIBABACLOUD_PVTZ_MODEL_UPDATERECORDREMARKRESULT_H_

@@ -34,7 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct Vpc
 				{
-					std::string reionId;
 					std::string vpcId;
 					std::string regionName;
 					std::string vpcName;

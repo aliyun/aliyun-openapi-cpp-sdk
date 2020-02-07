@@ -20,10 +20,23 @@ using AlibabaCloud::Pvtz::Model::DescribeZoneRecordsRequest;
 
 DescribeZoneRecordsRequest::DescribeZoneRecordsRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "DescribeZoneRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeZoneRecordsRequest::~DescribeZoneRecordsRequest()
 {}
+
+std::string DescribeZoneRecordsRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void DescribeZoneRecordsRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setCoreParameter("OrderBy", orderBy);
+}
 
 int DescribeZoneRecordsRequest::getPageNumber()const
 {
@@ -111,5 +124,16 @@ void DescribeZoneRecordsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
 	setCoreParameter("Keyword", keyword);
+}
+
+std::string DescribeZoneRecordsRequest::getDirection()const
+{
+	return direction_;
+}
+
+void DescribeZoneRecordsRequest::setDirection(const std::string& direction)
+{
+	direction_ = direction;
+	setCoreParameter("Direction", direction);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::DescribeRequestGraphRequest;
 
 DescribeRequestGraphRequest::DescribeRequestGraphRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "DescribeRequestGraph")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRequestGraphRequest::~DescribeRequestGraphRequest()
 {}

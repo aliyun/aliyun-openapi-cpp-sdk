@@ -20,10 +20,23 @@ using AlibabaCloud::Pvtz::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "DescribeRegions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
+
+long DescribeRegionsRequest::getAuthorizedUserId()const
+{
+	return authorizedUserId_;
+}
+
+void DescribeRegionsRequest::setAuthorizedUserId(long authorizedUserId)
+{
+	authorizedUserId_ = authorizedUserId;
+	setCoreParameter("AuthorizedUserId", std::to_string(authorizedUserId));
+}
 
 std::string DescribeRegionsRequest::getUserClientIp()const
 {

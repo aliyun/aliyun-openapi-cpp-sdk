@@ -663,6 +663,42 @@ PvtzClient::SetZoneRecordStatusOutcomeCallable PvtzClient::setZoneRecordStatusCa
 	return task->get_future();
 }
 
+PvtzClient::UpdateRecordRemarkOutcome PvtzClient::updateRecordRemark(const UpdateRecordRemarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateRecordRemarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateRecordRemarkOutcome(UpdateRecordRemarkResult(outcome.result()));
+	else
+		return UpdateRecordRemarkOutcome(outcome.error());
+}
+
+void PvtzClient::updateRecordRemarkAsync(const UpdateRecordRemarkRequest& request, const UpdateRecordRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateRecordRemark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PvtzClient::UpdateRecordRemarkOutcomeCallable PvtzClient::updateRecordRemarkCallable(const UpdateRecordRemarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateRecordRemarkOutcome()>>(
+			[this, request]()
+			{
+			return this->updateRecordRemark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PvtzClient::UpdateZoneRecordOutcome PvtzClient::updateZoneRecord(const UpdateZoneRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

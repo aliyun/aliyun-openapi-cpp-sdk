@@ -20,7 +20,9 @@ using AlibabaCloud::Pvtz::Model::DescribeChangeLogsRequest;
 
 DescribeChangeLogsRequest::DescribeChangeLogsRequest() :
 	RpcServiceRequest("pvtz", "2018-01-01", "DescribeChangeLogs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeChangeLogsRequest::~DescribeChangeLogsRequest()
 {}

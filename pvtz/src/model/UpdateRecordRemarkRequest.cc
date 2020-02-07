@@ -14,47 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/pvtz/model/DeleteZoneRecordRequest.h>
+#include <alibabacloud/pvtz/model/UpdateRecordRemarkRequest.h>
 
-using AlibabaCloud::Pvtz::Model::DeleteZoneRecordRequest;
+using AlibabaCloud::Pvtz::Model::UpdateRecordRemarkRequest;
 
-DeleteZoneRecordRequest::DeleteZoneRecordRequest() :
-	RpcServiceRequest("pvtz", "2018-01-01", "DeleteZoneRecord")
+UpdateRecordRemarkRequest::UpdateRecordRemarkRequest() :
+	RpcServiceRequest("pvtz", "2018-01-01", "UpdateRecordRemark")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteZoneRecordRequest::~DeleteZoneRecordRequest()
+UpdateRecordRemarkRequest::~UpdateRecordRemarkRequest()
 {}
 
-long DeleteZoneRecordRequest::getRecordId()const
+std::string UpdateRecordRemarkRequest::getRemark()const
+{
+	return remark_;
+}
+
+void UpdateRecordRemarkRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
+long UpdateRecordRemarkRequest::getRecordId()const
 {
 	return recordId_;
 }
 
-void DeleteZoneRecordRequest::setRecordId(long recordId)
+void UpdateRecordRemarkRequest::setRecordId(long recordId)
 {
 	recordId_ = recordId;
 	setCoreParameter("RecordId", std::to_string(recordId));
 }
 
-std::string DeleteZoneRecordRequest::getUserClientIp()const
+std::string UpdateRecordRemarkRequest::getUserClientIp()const
 {
 	return userClientIp_;
 }
 
-void DeleteZoneRecordRequest::setUserClientIp(const std::string& userClientIp)
+void UpdateRecordRemarkRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
 	setCoreParameter("UserClientIp", userClientIp);
 }
 
-std::string DeleteZoneRecordRequest::getLang()const
+std::string UpdateRecordRemarkRequest::getLang()const
 {
 	return lang_;
 }
 
-void DeleteZoneRecordRequest::setLang(const std::string& lang)
+void UpdateRecordRemarkRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);

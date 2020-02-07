@@ -43,8 +43,6 @@ void DescribeZoneInfoResult::parse(const std::string &payload)
 	for (auto valueBindVpcsVpc : allBindVpcsNode)
 	{
 		Vpc bindVpcsObject;
-		if(!valueBindVpcsVpc["ReionId"].isNull())
-			bindVpcsObject.reionId = valueBindVpcsVpc["ReionId"].asString();
 		if(!valueBindVpcsVpc["VpcId"].isNull())
 			bindVpcsObject.vpcId = valueBindVpcsVpc["VpcId"].asString();
 		if(!valueBindVpcsVpc["VpcName"].isNull())
