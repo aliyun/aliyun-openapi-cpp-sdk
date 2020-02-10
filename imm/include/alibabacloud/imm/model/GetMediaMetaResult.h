@@ -36,6 +36,16 @@ namespace AlibabaCloud
 				{
 					struct MediaFormat
 					{
+						struct Address
+						{
+							std::string township;
+							std::string addressLine;
+							std::string country;
+							std::string city;
+							std::string district;
+							std::string province;
+						};
+						Address address;
 						int numberStreams;
 						std::string size;
 						std::string formatLongName;

@@ -61,6 +61,19 @@ void GetMediaMetaResult::parse(const std::string &payload)
 		mediaMeta_.mediaFormat.creationTime = mediaFormatNode["CreationTime"].asString();
 	if(!mediaFormatNode["Location"].isNull())
 		mediaMeta_.mediaFormat.location = mediaFormatNode["Location"].asString();
+	auto addressNode = mediaFormatNode["Address"];
+	if(!addressNode["AddressLine"].isNull())
+		mediaMeta_.mediaFormat.address.addressLine = addressNode["AddressLine"].asString();
+	if(!addressNode["Country"].isNull())
+		mediaMeta_.mediaFormat.address.country = addressNode["Country"].asString();
+	if(!addressNode["Province"].isNull())
+		mediaMeta_.mediaFormat.address.province = addressNode["Province"].asString();
+	if(!addressNode["City"].isNull())
+		mediaMeta_.mediaFormat.address.city = addressNode["City"].asString();
+	if(!addressNode["District"].isNull())
+		mediaMeta_.mediaFormat.address.district = addressNode["District"].asString();
+	if(!addressNode["Township"].isNull())
+		mediaMeta_.mediaFormat.address.township = addressNode["Township"].asString();
 	auto mediaStreamsNode = mediaMetaNode["MediaStreams"];
 	auto allVideoStreamsNode = mediaStreamsNode["VideoStreams"]["VideoStream"];
 	for (auto mediaStreamsNodeVideoStreamsVideoStream : allVideoStreamsNode)
