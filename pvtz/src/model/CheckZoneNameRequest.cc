@@ -35,7 +35,7 @@ std::string CheckZoneNameRequest::getZoneName()const
 void CheckZoneNameRequest::setZoneName(const std::string& zoneName)
 {
 	zoneName_ = zoneName;
-	setCoreParameter("ZoneName", zoneName);
+	setParameter("ZoneName", zoneName);
 }
 
 std::string CheckZoneNameRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string CheckZoneNameRequest::getUserClientIp()const
 void CheckZoneNameRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string CheckZoneNameRequest::getLang()const
@@ -57,6 +57,6 @@ std::string CheckZoneNameRequest::getLang()const
 void CheckZoneNameRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

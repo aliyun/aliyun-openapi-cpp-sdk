@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_PVTZ_EXPORT BindZoneVpcRequest : public RpcServiceRequest
 			{
+			public:
 				struct Vpcs
 				{
 					std::string regionId;

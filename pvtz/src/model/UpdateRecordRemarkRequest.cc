@@ -35,7 +35,7 @@ std::string UpdateRecordRemarkRequest::getRemark()const
 void UpdateRecordRemarkRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 long UpdateRecordRemarkRequest::getRecordId()const
@@ -46,7 +46,7 @@ long UpdateRecordRemarkRequest::getRecordId()const
 void UpdateRecordRemarkRequest::setRecordId(long recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", std::to_string(recordId));
+	setParameter("RecordId", std::to_string(recordId));
 }
 
 std::string UpdateRecordRemarkRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string UpdateRecordRemarkRequest::getUserClientIp()const
 void UpdateRecordRemarkRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string UpdateRecordRemarkRequest::getLang()const
@@ -68,6 +68,6 @@ std::string UpdateRecordRemarkRequest::getLang()const
 void UpdateRecordRemarkRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

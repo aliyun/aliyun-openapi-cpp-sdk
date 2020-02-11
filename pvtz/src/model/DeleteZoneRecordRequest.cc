@@ -35,7 +35,7 @@ long DeleteZoneRecordRequest::getRecordId()const
 void DeleteZoneRecordRequest::setRecordId(long recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", std::to_string(recordId));
+	setParameter("RecordId", std::to_string(recordId));
 }
 
 std::string DeleteZoneRecordRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string DeleteZoneRecordRequest::getUserClientIp()const
 void DeleteZoneRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteZoneRecordRequest::getLang()const
@@ -57,6 +57,6 @@ std::string DeleteZoneRecordRequest::getLang()const
 void DeleteZoneRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

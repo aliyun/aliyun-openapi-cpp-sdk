@@ -35,7 +35,7 @@ std::string UpdateZoneRecordRequest::getRr()const
 void UpdateZoneRecordRequest::setRr(const std::string& rr)
 {
 	rr_ = rr;
-	setCoreParameter("Rr", rr);
+	setParameter("Rr", rr);
 }
 
 std::string UpdateZoneRecordRequest::getType()const
@@ -46,7 +46,7 @@ std::string UpdateZoneRecordRequest::getType()const
 void UpdateZoneRecordRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 int UpdateZoneRecordRequest::getPriority()const
@@ -57,7 +57,7 @@ int UpdateZoneRecordRequest::getPriority()const
 void UpdateZoneRecordRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 int UpdateZoneRecordRequest::getTtl()const
@@ -68,7 +68,7 @@ int UpdateZoneRecordRequest::getTtl()const
 void UpdateZoneRecordRequest::setTtl(int ttl)
 {
 	ttl_ = ttl;
-	setCoreParameter("Ttl", std::to_string(ttl));
+	setParameter("Ttl", std::to_string(ttl));
 }
 
 long UpdateZoneRecordRequest::getRecordId()const
@@ -79,7 +79,7 @@ long UpdateZoneRecordRequest::getRecordId()const
 void UpdateZoneRecordRequest::setRecordId(long recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", std::to_string(recordId));
+	setParameter("RecordId", std::to_string(recordId));
 }
 
 std::string UpdateZoneRecordRequest::getUserClientIp()const
@@ -90,7 +90,7 @@ std::string UpdateZoneRecordRequest::getUserClientIp()const
 void UpdateZoneRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string UpdateZoneRecordRequest::getLang()const
@@ -101,7 +101,7 @@ std::string UpdateZoneRecordRequest::getLang()const
 void UpdateZoneRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string UpdateZoneRecordRequest::getValue()const
@@ -112,6 +112,6 @@ std::string UpdateZoneRecordRequest::getValue()const
 void UpdateZoneRecordRequest::setValue(const std::string& value)
 {
 	value_ = value;
-	setCoreParameter("Value", value);
+	setParameter("Value", value);
 }
 

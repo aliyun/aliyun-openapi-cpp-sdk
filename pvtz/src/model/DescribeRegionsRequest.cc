@@ -35,7 +35,7 @@ long DescribeRegionsRequest::getAuthorizedUserId()const
 void DescribeRegionsRequest::setAuthorizedUserId(long authorizedUserId)
 {
 	authorizedUserId_ = authorizedUserId;
-	setCoreParameter("AuthorizedUserId", std::to_string(authorizedUserId));
+	setParameter("AuthorizedUserId", std::to_string(authorizedUserId));
 }
 
 std::string DescribeRegionsRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string DescribeRegionsRequest::getUserClientIp()const
 void DescribeRegionsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeRegionsRequest::getAcceptLanguage()const
@@ -57,7 +57,7 @@ std::string DescribeRegionsRequest::getAcceptLanguage()const
 void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
 	acceptLanguage_ = acceptLanguage;
-	setCoreParameter("AcceptLanguage", acceptLanguage);
+	setParameter("AcceptLanguage", acceptLanguage);
 }
 
 std::string DescribeRegionsRequest::getLang()const
@@ -68,6 +68,6 @@ std::string DescribeRegionsRequest::getLang()const
 void DescribeRegionsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

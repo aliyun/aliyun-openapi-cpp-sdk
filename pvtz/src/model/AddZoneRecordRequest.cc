@@ -35,7 +35,7 @@ std::string AddZoneRecordRequest::getRr()const
 void AddZoneRecordRequest::setRr(const std::string& rr)
 {
 	rr_ = rr;
-	setCoreParameter("Rr", rr);
+	setParameter("Rr", rr);
 }
 
 std::string AddZoneRecordRequest::getType()const
@@ -46,7 +46,7 @@ std::string AddZoneRecordRequest::getType()const
 void AddZoneRecordRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 int AddZoneRecordRequest::getPriority()const
@@ -57,7 +57,7 @@ int AddZoneRecordRequest::getPriority()const
 void AddZoneRecordRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 int AddZoneRecordRequest::getTtl()const
@@ -68,7 +68,7 @@ int AddZoneRecordRequest::getTtl()const
 void AddZoneRecordRequest::setTtl(int ttl)
 {
 	ttl_ = ttl;
-	setCoreParameter("Ttl", std::to_string(ttl));
+	setParameter("Ttl", std::to_string(ttl));
 }
 
 std::string AddZoneRecordRequest::getUserClientIp()const
@@ -79,7 +79,7 @@ std::string AddZoneRecordRequest::getUserClientIp()const
 void AddZoneRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string AddZoneRecordRequest::getZoneId()const
@@ -90,7 +90,7 @@ std::string AddZoneRecordRequest::getZoneId()const
 void AddZoneRecordRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string AddZoneRecordRequest::getLang()const
@@ -101,7 +101,7 @@ std::string AddZoneRecordRequest::getLang()const
 void AddZoneRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string AddZoneRecordRequest::getValue()const
@@ -112,6 +112,6 @@ std::string AddZoneRecordRequest::getValue()const
 void AddZoneRecordRequest::setValue(const std::string& value)
 {
 	value_ = value;
-	setCoreParameter("Value", value);
+	setParameter("Value", value);
 }
 

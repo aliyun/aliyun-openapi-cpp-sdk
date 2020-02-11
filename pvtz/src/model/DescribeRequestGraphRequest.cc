@@ -35,7 +35,7 @@ long DescribeRequestGraphRequest::getStartTimestamp()const
 void DescribeRequestGraphRequest::setStartTimestamp(long startTimestamp)
 {
 	startTimestamp_ = startTimestamp;
-	setCoreParameter("StartTimestamp", std::to_string(startTimestamp));
+	setParameter("StartTimestamp", std::to_string(startTimestamp));
 }
 
 long DescribeRequestGraphRequest::getEndTimestamp()const
@@ -46,7 +46,7 @@ long DescribeRequestGraphRequest::getEndTimestamp()const
 void DescribeRequestGraphRequest::setEndTimestamp(long endTimestamp)
 {
 	endTimestamp_ = endTimestamp;
-	setCoreParameter("EndTimestamp", std::to_string(endTimestamp));
+	setParameter("EndTimestamp", std::to_string(endTimestamp));
 }
 
 std::string DescribeRequestGraphRequest::getVpcId()const
@@ -57,7 +57,7 @@ std::string DescribeRequestGraphRequest::getVpcId()const
 void DescribeRequestGraphRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string DescribeRequestGraphRequest::getUserClientIp()const
@@ -68,7 +68,7 @@ std::string DescribeRequestGraphRequest::getUserClientIp()const
 void DescribeRequestGraphRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeRequestGraphRequest::getZoneId()const
@@ -79,7 +79,7 @@ std::string DescribeRequestGraphRequest::getZoneId()const
 void DescribeRequestGraphRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string DescribeRequestGraphRequest::getLang()const
@@ -90,6 +90,6 @@ std::string DescribeRequestGraphRequest::getLang()const
 void DescribeRequestGraphRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

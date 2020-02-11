@@ -35,7 +35,7 @@ std::string DescribeUserServiceStatusRequest::getUserClientIp()const
 void DescribeUserServiceStatusRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeUserServiceStatusRequest::getLang()const
@@ -46,6 +46,6 @@ std::string DescribeUserServiceStatusRequest::getLang()const
 void DescribeUserServiceStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

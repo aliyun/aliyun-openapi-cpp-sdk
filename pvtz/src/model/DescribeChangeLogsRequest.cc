@@ -35,7 +35,7 @@ long DescribeChangeLogsRequest::getStartTimestamp()const
 void DescribeChangeLogsRequest::setStartTimestamp(long startTimestamp)
 {
 	startTimestamp_ = startTimestamp;
-	setCoreParameter("StartTimestamp", std::to_string(startTimestamp));
+	setParameter("StartTimestamp", std::to_string(startTimestamp));
 }
 
 int DescribeChangeLogsRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeChangeLogsRequest::getPageNumber()const
 void DescribeChangeLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 long DescribeChangeLogsRequest::getEndTimestamp()const
@@ -57,7 +57,7 @@ long DescribeChangeLogsRequest::getEndTimestamp()const
 void DescribeChangeLogsRequest::setEndTimestamp(long endTimestamp)
 {
 	endTimestamp_ = endTimestamp;
-	setCoreParameter("EndTimestamp", std::to_string(endTimestamp));
+	setParameter("EndTimestamp", std::to_string(endTimestamp));
 }
 
 std::string DescribeChangeLogsRequest::getEntityType()const
@@ -68,7 +68,7 @@ std::string DescribeChangeLogsRequest::getEntityType()const
 void DescribeChangeLogsRequest::setEntityType(const std::string& entityType)
 {
 	entityType_ = entityType;
-	setCoreParameter("EntityType", entityType);
+	setParameter("EntityType", entityType);
 }
 
 int DescribeChangeLogsRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribeChangeLogsRequest::getPageSize()const
 void DescribeChangeLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeChangeLogsRequest::getUserClientIp()const
@@ -90,7 +90,7 @@ std::string DescribeChangeLogsRequest::getUserClientIp()const
 void DescribeChangeLogsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeChangeLogsRequest::getZoneId()const
@@ -101,7 +101,7 @@ std::string DescribeChangeLogsRequest::getZoneId()const
 void DescribeChangeLogsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string DescribeChangeLogsRequest::getKeyword()const
@@ -112,7 +112,7 @@ std::string DescribeChangeLogsRequest::getKeyword()const
 void DescribeChangeLogsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 std::string DescribeChangeLogsRequest::getLang()const
@@ -123,6 +123,6 @@ std::string DescribeChangeLogsRequest::getLang()const
 void DescribeChangeLogsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

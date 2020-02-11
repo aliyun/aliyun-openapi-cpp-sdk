@@ -35,7 +35,7 @@ std::string DescribeZoneVpcTreeRequest::getUserClientIp()const
 void DescribeZoneVpcTreeRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeZoneVpcTreeRequest::getLang()const
@@ -46,6 +46,6 @@ std::string DescribeZoneVpcTreeRequest::getLang()const
 void DescribeZoneVpcTreeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -35,7 +35,7 @@ std::string DescribeStatisticSummaryRequest::getUserClientIp()const
 void DescribeStatisticSummaryRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeStatisticSummaryRequest::getLang()const
@@ -46,6 +46,6 @@ std::string DescribeStatisticSummaryRequest::getLang()const
 void DescribeStatisticSummaryRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
