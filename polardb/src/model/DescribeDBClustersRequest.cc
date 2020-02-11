@@ -35,7 +35,7 @@ long DescribeDBClustersRequest::getResourceOwnerId()const
 void DescribeDBClustersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBClustersRequest::getDBClusterDescription()const
@@ -46,7 +46,7 @@ std::string DescribeDBClustersRequest::getDBClusterDescription()const
 void DescribeDBClustersRequest::setDBClusterDescription(const std::string& dBClusterDescription)
 {
 	dBClusterDescription_ = dBClusterDescription;
-	setCoreParameter("DBClusterDescription", dBClusterDescription);
+	setParameter("DBClusterDescription", dBClusterDescription);
 }
 
 std::string DescribeDBClustersRequest::getDBClusterStatus()const
@@ -57,7 +57,7 @@ std::string DescribeDBClustersRequest::getDBClusterStatus()const
 void DescribeDBClustersRequest::setDBClusterStatus(const std::string& dBClusterStatus)
 {
 	dBClusterStatus_ = dBClusterStatus;
-	setCoreParameter("DBClusterStatus", dBClusterStatus);
+	setParameter("DBClusterStatus", dBClusterStatus);
 }
 
 int DescribeDBClustersRequest::getPageNumber()const
@@ -68,7 +68,7 @@ int DescribeDBClustersRequest::getPageNumber()const
 void DescribeDBClustersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDBClustersRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string DescribeDBClustersRequest::getAccessKeyId()const
 void DescribeDBClustersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBClustersRequest::getResourceGroupId()const
@@ -90,7 +90,7 @@ std::string DescribeDBClustersRequest::getResourceGroupId()const
 void DescribeDBClustersRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeDBClustersRequest::getRegionId()const
@@ -101,7 +101,7 @@ std::string DescribeDBClustersRequest::getRegionId()const
 void DescribeDBClustersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeDBClustersRequest::getPageSize()const
@@ -112,7 +112,7 @@ int DescribeDBClustersRequest::getPageSize()const
 void DescribeDBClustersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeDBClustersRequest::Tag> DescribeDBClustersRequest::getTag()const
@@ -125,9 +125,9 @@ void DescribeDBClustersRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -139,7 +139,7 @@ std::string DescribeDBClustersRequest::getResourceOwnerAccount()const
 void DescribeDBClustersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBClustersRequest::getOwnerAccount()const
@@ -150,7 +150,7 @@ std::string DescribeDBClustersRequest::getOwnerAccount()const
 void DescribeDBClustersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBClustersRequest::getOwnerId()const
@@ -161,7 +161,7 @@ long DescribeDBClustersRequest::getOwnerId()const
 void DescribeDBClustersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBClustersRequest::getDBType()const
@@ -172,7 +172,7 @@ std::string DescribeDBClustersRequest::getDBType()const
 void DescribeDBClustersRequest::setDBType(const std::string& dBType)
 {
 	dBType_ = dBType;
-	setCoreParameter("DBType", dBType);
+	setParameter("DBType", dBType);
 }
 
 std::string DescribeDBClustersRequest::getDBClusterIds()const
@@ -183,6 +183,6 @@ std::string DescribeDBClustersRequest::getDBClusterIds()const
 void DescribeDBClustersRequest::setDBClusterIds(const std::string& dBClusterIds)
 {
 	dBClusterIds_ = dBClusterIds;
-	setCoreParameter("DBClusterIds", dBClusterIds);
+	setParameter("DBClusterIds", dBClusterIds);
 }
 

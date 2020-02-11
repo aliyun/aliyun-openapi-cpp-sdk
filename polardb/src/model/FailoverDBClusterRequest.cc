@@ -35,7 +35,7 @@ long FailoverDBClusterRequest::getResourceOwnerId()const
 void FailoverDBClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string FailoverDBClusterRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string FailoverDBClusterRequest::getClientToken()const
 void FailoverDBClusterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string FailoverDBClusterRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string FailoverDBClusterRequest::getAccessKeyId()const
 void FailoverDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string FailoverDBClusterRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string FailoverDBClusterRequest::getResourceOwnerAccount()const
 void FailoverDBClusterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string FailoverDBClusterRequest::getDBClusterId()const
@@ -79,7 +79,7 @@ std::string FailoverDBClusterRequest::getDBClusterId()const
 void FailoverDBClusterRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string FailoverDBClusterRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string FailoverDBClusterRequest::getOwnerAccount()const
 void FailoverDBClusterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long FailoverDBClusterRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long FailoverDBClusterRequest::getOwnerId()const
 void FailoverDBClusterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string FailoverDBClusterRequest::getTargetDBNodeId()const
@@ -112,6 +112,6 @@ std::string FailoverDBClusterRequest::getTargetDBNodeId()const
 void FailoverDBClusterRequest::setTargetDBNodeId(const std::string& targetDBNodeId)
 {
 	targetDBNodeId_ = targetDBNodeId;
-	setCoreParameter("TargetDBNodeId", targetDBNodeId);
+	setParameter("TargetDBNodeId", targetDBNodeId);
 }
 

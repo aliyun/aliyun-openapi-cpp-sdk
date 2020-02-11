@@ -35,7 +35,7 @@ long ModifyAccountPasswordRequest::getResourceOwnerId()const
 void ModifyAccountPasswordRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyAccountPasswordRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyAccountPasswordRequest::getAccessKeyId()const
 void ModifyAccountPasswordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyAccountPasswordRequest::getAccountName()const
@@ -57,7 +57,7 @@ std::string ModifyAccountPasswordRequest::getAccountName()const
 void ModifyAccountPasswordRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setParameter("AccountName", accountName);
 }
 
 std::string ModifyAccountPasswordRequest::getNewAccountPassword()const
@@ -68,7 +68,7 @@ std::string ModifyAccountPasswordRequest::getNewAccountPassword()const
 void ModifyAccountPasswordRequest::setNewAccountPassword(const std::string& newAccountPassword)
 {
 	newAccountPassword_ = newAccountPassword;
-	setCoreParameter("NewAccountPassword", newAccountPassword);
+	setParameter("NewAccountPassword", newAccountPassword);
 }
 
 std::string ModifyAccountPasswordRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyAccountPasswordRequest::getResourceOwnerAccount()const
 void ModifyAccountPasswordRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyAccountPasswordRequest::getDBClusterId()const
@@ -90,7 +90,7 @@ std::string ModifyAccountPasswordRequest::getDBClusterId()const
 void ModifyAccountPasswordRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string ModifyAccountPasswordRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyAccountPasswordRequest::getOwnerAccount()const
 void ModifyAccountPasswordRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyAccountPasswordRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long ModifyAccountPasswordRequest::getOwnerId()const
 void ModifyAccountPasswordRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

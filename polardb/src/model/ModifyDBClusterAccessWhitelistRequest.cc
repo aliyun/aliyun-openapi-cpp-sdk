@@ -35,7 +35,7 @@ long ModifyDBClusterAccessWhitelistRequest::getResourceOwnerId()const
 void ModifyDBClusterAccessWhitelistRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBClusterAccessWhitelistRequest::getSecurityIps()const
@@ -46,7 +46,7 @@ std::string ModifyDBClusterAccessWhitelistRequest::getSecurityIps()const
 void ModifyDBClusterAccessWhitelistRequest::setSecurityIps(const std::string& securityIps)
 {
 	securityIps_ = securityIps;
-	setCoreParameter("SecurityIps", securityIps);
+	setParameter("SecurityIps", securityIps);
 }
 
 std::string ModifyDBClusterAccessWhitelistRequest::getDBClusterIPArrayAttribute()const
@@ -57,7 +57,7 @@ std::string ModifyDBClusterAccessWhitelistRequest::getDBClusterIPArrayAttribute(
 void ModifyDBClusterAccessWhitelistRequest::setDBClusterIPArrayAttribute(const std::string& dBClusterIPArrayAttribute)
 {
 	dBClusterIPArrayAttribute_ = dBClusterIPArrayAttribute;
-	setCoreParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
+	setParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
 }
 
 std::string ModifyDBClusterAccessWhitelistRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string ModifyDBClusterAccessWhitelistRequest::getAccessKeyId()const
 void ModifyDBClusterAccessWhitelistRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBClusterAccessWhitelistRequest::getModifyMode()const
@@ -79,7 +79,7 @@ std::string ModifyDBClusterAccessWhitelistRequest::getModifyMode()const
 void ModifyDBClusterAccessWhitelistRequest::setModifyMode(const std::string& modifyMode)
 {
 	modifyMode_ = modifyMode;
-	setCoreParameter("ModifyMode", modifyMode);
+	setParameter("ModifyMode", modifyMode);
 }
 
 std::string ModifyDBClusterAccessWhitelistRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyDBClusterAccessWhitelistRequest::getResourceOwnerAccount()cons
 void ModifyDBClusterAccessWhitelistRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBClusterAccessWhitelistRequest::getDBClusterId()const
@@ -101,7 +101,7 @@ std::string ModifyDBClusterAccessWhitelistRequest::getDBClusterId()const
 void ModifyDBClusterAccessWhitelistRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string ModifyDBClusterAccessWhitelistRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyDBClusterAccessWhitelistRequest::getOwnerAccount()const
 void ModifyDBClusterAccessWhitelistRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDBClusterAccessWhitelistRequest::getWhiteListType()const
@@ -123,7 +123,7 @@ std::string ModifyDBClusterAccessWhitelistRequest::getWhiteListType()const
 void ModifyDBClusterAccessWhitelistRequest::setWhiteListType(const std::string& whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", whiteListType);
+	setParameter("WhiteListType", whiteListType);
 }
 
 long ModifyDBClusterAccessWhitelistRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long ModifyDBClusterAccessWhitelistRequest::getOwnerId()const
 void ModifyDBClusterAccessWhitelistRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBClusterAccessWhitelistRequest::getSecurityGroupIds()const
@@ -145,7 +145,7 @@ std::string ModifyDBClusterAccessWhitelistRequest::getSecurityGroupIds()const
 void ModifyDBClusterAccessWhitelistRequest::setSecurityGroupIds(const std::string& securityGroupIds)
 {
 	securityGroupIds_ = securityGroupIds;
-	setCoreParameter("SecurityGroupIds", securityGroupIds);
+	setParameter("SecurityGroupIds", securityGroupIds);
 }
 
 std::string ModifyDBClusterAccessWhitelistRequest::getDBClusterIPArrayName()const
@@ -156,6 +156,6 @@ std::string ModifyDBClusterAccessWhitelistRequest::getDBClusterIPArrayName()cons
 void ModifyDBClusterAccessWhitelistRequest::setDBClusterIPArrayName(const std::string& dBClusterIPArrayName)
 {
 	dBClusterIPArrayName_ = dBClusterIPArrayName;
-	setCoreParameter("DBClusterIPArrayName", dBClusterIPArrayName);
+	setParameter("DBClusterIPArrayName", dBClusterIPArrayName);
 }
 

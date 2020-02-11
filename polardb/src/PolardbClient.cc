@@ -663,6 +663,42 @@ PolardbClient::DescribeAutoRenewAttributeOutcomeCallable PolardbClient::describe
 	return task->get_future();
 }
 
+PolardbClient::DescribeBackupLogsOutcome PolardbClient::describeBackupLogs(const DescribeBackupLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupLogsOutcome(DescribeBackupLogsResult(outcome.result()));
+	else
+		return DescribeBackupLogsOutcome(outcome.error());
+}
+
+void PolardbClient::describeBackupLogsAsync(const DescribeBackupLogsRequest& request, const DescribeBackupLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeBackupLogsOutcomeCallable PolardbClient::describeBackupLogsCallable(const DescribeBackupLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeBackupPolicyOutcome PolardbClient::describeBackupPolicy(const DescribeBackupPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

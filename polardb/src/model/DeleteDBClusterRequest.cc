@@ -35,7 +35,7 @@ long DeleteDBClusterRequest::getResourceOwnerId()const
 void DeleteDBClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteDBClusterRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DeleteDBClusterRequest::getAccessKeyId()const
 void DeleteDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDBClusterRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DeleteDBClusterRequest::getResourceOwnerAccount()const
 void DeleteDBClusterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteDBClusterRequest::getDBClusterId()const
@@ -68,7 +68,7 @@ std::string DeleteDBClusterRequest::getDBClusterId()const
 void DeleteDBClusterRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DeleteDBClusterRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteDBClusterRequest::getOwnerAccount()const
 void DeleteDBClusterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteDBClusterRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DeleteDBClusterRequest::getOwnerId()const
 void DeleteDBClusterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

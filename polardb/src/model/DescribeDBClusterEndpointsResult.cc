@@ -71,6 +71,8 @@ void DescribeDBClusterEndpointsResult::parse(const std::string &payload)
 				addressItemsObject.vPCId = allItemsNodeAddressItemsAddress["VPCId"].asString();
 			if(!allItemsNodeAddressItemsAddress["VSwitchId"].isNull())
 				addressItemsObject.vSwitchId = allItemsNodeAddressItemsAddress["VSwitchId"].asString();
+			if(!allItemsNodeAddressItemsAddress["VpcInstanceId"].isNull())
+				addressItemsObject.vpcInstanceId = allItemsNodeAddressItemsAddress["VpcInstanceId"].asString();
 			itemsObject.addressItems.push_back(addressItemsObject);
 		}
 		items_.push_back(itemsObject);

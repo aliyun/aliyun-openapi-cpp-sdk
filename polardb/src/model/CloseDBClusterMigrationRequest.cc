@@ -35,7 +35,7 @@ long CloseDBClusterMigrationRequest::getResourceOwnerId()const
 void CloseDBClusterMigrationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CloseDBClusterMigrationRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string CloseDBClusterMigrationRequest::getAccessKeyId()const
 void CloseDBClusterMigrationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CloseDBClusterMigrationRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string CloseDBClusterMigrationRequest::getResourceOwnerAccount()const
 void CloseDBClusterMigrationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CloseDBClusterMigrationRequest::getDBClusterId()const
@@ -68,7 +68,7 @@ std::string CloseDBClusterMigrationRequest::getDBClusterId()const
 void CloseDBClusterMigrationRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string CloseDBClusterMigrationRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string CloseDBClusterMigrationRequest::getOwnerAccount()const
 void CloseDBClusterMigrationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CloseDBClusterMigrationRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long CloseDBClusterMigrationRequest::getOwnerId()const
 void CloseDBClusterMigrationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool CloseDBClusterMigrationRequest::getContinueEnableBinlog()const
@@ -101,6 +101,6 @@ bool CloseDBClusterMigrationRequest::getContinueEnableBinlog()const
 void CloseDBClusterMigrationRequest::setContinueEnableBinlog(bool continueEnableBinlog)
 {
 	continueEnableBinlog_ = continueEnableBinlog;
-	setCoreParameter("ContinueEnableBinlog", continueEnableBinlog ? "true" : "false");
+	setParameter("ContinueEnableBinlog", continueEnableBinlog ? "true" : "false");
 }
 

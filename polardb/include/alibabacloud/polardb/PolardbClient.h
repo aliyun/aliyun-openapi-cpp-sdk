@@ -56,6 +56,8 @@
 #include "model/DescribeAccountsResult.h"
 #include "model/DescribeAutoRenewAttributeRequest.h"
 #include "model/DescribeAutoRenewAttributeResult.h"
+#include "model/DescribeBackupLogsRequest.h"
+#include "model/DescribeBackupLogsResult.h"
 #include "model/DescribeBackupPolicyRequest.h"
 #include "model/DescribeBackupPolicyResult.h"
 #include "model/DescribeBackupsRequest.h"
@@ -186,6 +188,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAutoRenewAttributeResult> DescribeAutoRenewAttributeOutcome;
 			typedef std::future<DescribeAutoRenewAttributeOutcome> DescribeAutoRenewAttributeOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeAutoRenewAttributeRequest&, const DescribeAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoRenewAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBackupLogsResult> DescribeBackupLogsOutcome;
+			typedef std::future<DescribeBackupLogsOutcome> DescribeBackupLogsOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeBackupLogsRequest&, const DescribeBackupLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupLogsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBackupPolicyResult> DescribeBackupPolicyOutcome;
 			typedef std::future<DescribeBackupPolicyOutcome> DescribeBackupPolicyOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeBackupPolicyRequest&, const DescribeBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupPolicyAsyncHandler;
@@ -347,6 +352,9 @@ namespace AlibabaCloud
 			DescribeAutoRenewAttributeOutcome describeAutoRenewAttribute(const Model::DescribeAutoRenewAttributeRequest &request)const;
 			void describeAutoRenewAttributeAsync(const Model::DescribeAutoRenewAttributeRequest& request, const DescribeAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAutoRenewAttributeOutcomeCallable describeAutoRenewAttributeCallable(const Model::DescribeAutoRenewAttributeRequest& request) const;
+			DescribeBackupLogsOutcome describeBackupLogs(const Model::DescribeBackupLogsRequest &request)const;
+			void describeBackupLogsAsync(const Model::DescribeBackupLogsRequest& request, const DescribeBackupLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBackupLogsOutcomeCallable describeBackupLogsCallable(const Model::DescribeBackupLogsRequest& request) const;
 			DescribeBackupPolicyOutcome describeBackupPolicy(const Model::DescribeBackupPolicyRequest &request)const;
 			void describeBackupPolicyAsync(const Model::DescribeBackupPolicyRequest& request, const DescribeBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupPolicyOutcomeCallable describeBackupPolicyCallable(const Model::DescribeBackupPolicyRequest& request) const;

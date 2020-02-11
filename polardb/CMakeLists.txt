@@ -55,6 +55,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeAccountsResult.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeRequest.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeResult.h
+	include/alibabacloud/polardb/model/DescribeBackupLogsRequest.h
+	include/alibabacloud/polardb/model/DescribeBackupLogsResult.h
 	include/alibabacloud/polardb/model/DescribeBackupPolicyRequest.h
 	include/alibabacloud/polardb/model/DescribeBackupPolicyResult.h
 	include/alibabacloud/polardb/model/DescribeBackupsRequest.h
@@ -162,6 +164,8 @@ set(polardb_src
 	src/model/DescribeAccountsResult.cc
 	src/model/DescribeAutoRenewAttributeRequest.cc
 	src/model/DescribeAutoRenewAttributeResult.cc
+	src/model/DescribeBackupLogsRequest.cc
+	src/model/DescribeBackupLogsResult.cc
 	src/model/DescribeBackupPolicyRequest.cc
 	src/model/DescribeBackupPolicyResult.cc
 	src/model/DescribeBackupsRequest.cc

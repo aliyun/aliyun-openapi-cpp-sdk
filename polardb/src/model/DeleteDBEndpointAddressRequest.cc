@@ -35,7 +35,7 @@ long DeleteDBEndpointAddressRequest::getResourceOwnerId()const
 void DeleteDBEndpointAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteDBEndpointAddressRequest::getDBEndpointId()const
@@ -46,7 +46,7 @@ std::string DeleteDBEndpointAddressRequest::getDBEndpointId()const
 void DeleteDBEndpointAddressRequest::setDBEndpointId(const std::string& dBEndpointId)
 {
 	dBEndpointId_ = dBEndpointId;
-	setCoreParameter("DBEndpointId", dBEndpointId);
+	setParameter("DBEndpointId", dBEndpointId);
 }
 
 std::string DeleteDBEndpointAddressRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DeleteDBEndpointAddressRequest::getAccessKeyId()const
 void DeleteDBEndpointAddressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDBEndpointAddressRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DeleteDBEndpointAddressRequest::getResourceOwnerAccount()const
 void DeleteDBEndpointAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteDBEndpointAddressRequest::getDBClusterId()const
@@ -79,7 +79,7 @@ std::string DeleteDBEndpointAddressRequest::getDBClusterId()const
 void DeleteDBEndpointAddressRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DeleteDBEndpointAddressRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DeleteDBEndpointAddressRequest::getOwnerAccount()const
 void DeleteDBEndpointAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteDBEndpointAddressRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long DeleteDBEndpointAddressRequest::getOwnerId()const
 void DeleteDBEndpointAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteDBEndpointAddressRequest::getNetType()const
@@ -112,6 +112,6 @@ std::string DeleteDBEndpointAddressRequest::getNetType()const
 void DeleteDBEndpointAddressRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", netType);
+	setParameter("NetType", netType);
 }
 

@@ -35,7 +35,7 @@ long DescribeDBNodePerformanceRequest::getResourceOwnerId()const
 void DescribeDBNodePerformanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBNodePerformanceRequest::getDBNodeId()const
@@ -46,7 +46,7 @@ std::string DescribeDBNodePerformanceRequest::getDBNodeId()const
 void DescribeDBNodePerformanceRequest::setDBNodeId(const std::string& dBNodeId)
 {
 	dBNodeId_ = dBNodeId;
-	setCoreParameter("DBNodeId", dBNodeId);
+	setParameter("DBNodeId", dBNodeId);
 }
 
 std::string DescribeDBNodePerformanceRequest::getStartTime()const
@@ -57,7 +57,7 @@ std::string DescribeDBNodePerformanceRequest::getStartTime()const
 void DescribeDBNodePerformanceRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDBNodePerformanceRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeDBNodePerformanceRequest::getAccessKeyId()const
 void DescribeDBNodePerformanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBNodePerformanceRequest::getKey()const
@@ -79,7 +79,7 @@ std::string DescribeDBNodePerformanceRequest::getKey()const
 void DescribeDBNodePerformanceRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 
 std::string DescribeDBNodePerformanceRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeDBNodePerformanceRequest::getResourceOwnerAccount()const
 void DescribeDBNodePerformanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBNodePerformanceRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeDBNodePerformanceRequest::getOwnerAccount()const
 void DescribeDBNodePerformanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDBNodePerformanceRequest::getEndTime()const
@@ -112,7 +112,7 @@ std::string DescribeDBNodePerformanceRequest::getEndTime()const
 void DescribeDBNodePerformanceRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDBNodePerformanceRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long DescribeDBNodePerformanceRequest::getOwnerId()const
 void DescribeDBNodePerformanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBNodePerformanceRequest::getMetric()const
@@ -134,6 +134,6 @@ std::string DescribeDBNodePerformanceRequest::getMetric()const
 void DescribeDBNodePerformanceRequest::setMetric(const std::string& metric)
 {
 	metric_ = metric;
-	setCoreParameter("Metric", metric);
+	setParameter("Metric", metric);
 }
 
