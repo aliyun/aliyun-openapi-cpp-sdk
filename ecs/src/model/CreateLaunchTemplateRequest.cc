@@ -35,7 +35,7 @@ std::string CreateLaunchTemplateRequest::getLaunchTemplateName()const
 void CreateLaunchTemplateRequest::setLaunchTemplateName(const std::string& launchTemplateName)
 {
 	launchTemplateName_ = launchTemplateName;
-	setCoreParameter("LaunchTemplateName", launchTemplateName);
+	setParameter("LaunchTemplateName", launchTemplateName);
 }
 
 long CreateLaunchTemplateRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long CreateLaunchTemplateRequest::getResourceOwnerId()const
 void CreateLaunchTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateLaunchTemplateRequest::getSecurityEnhancementStrategy()const
@@ -57,7 +57,7 @@ std::string CreateLaunchTemplateRequest::getSecurityEnhancementStrategy()const
 void CreateLaunchTemplateRequest::setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy)
 {
 	securityEnhancementStrategy_ = securityEnhancementStrategy;
-	setCoreParameter("SecurityEnhancementStrategy", securityEnhancementStrategy);
+	setParameter("SecurityEnhancementStrategy", securityEnhancementStrategy);
 }
 
 std::string CreateLaunchTemplateRequest::getNetworkType()const
@@ -68,7 +68,7 @@ std::string CreateLaunchTemplateRequest::getNetworkType()const
 void CreateLaunchTemplateRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setParameter("NetworkType", networkType);
 }
 
 std::string CreateLaunchTemplateRequest::getKeyPairName()const
@@ -79,7 +79,7 @@ std::string CreateLaunchTemplateRequest::getKeyPairName()const
 void CreateLaunchTemplateRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setParameter("KeyPairName", keyPairName);
 }
 
 float CreateLaunchTemplateRequest::getSpotPriceLimit()const
@@ -90,7 +90,7 @@ float CreateLaunchTemplateRequest::getSpotPriceLimit()const
 void CreateLaunchTemplateRequest::setSpotPriceLimit(float spotPriceLimit)
 {
 	spotPriceLimit_ = spotPriceLimit;
-	setCoreParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
+	setParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
 }
 
 std::string CreateLaunchTemplateRequest::getImageOwnerAlias()const
@@ -101,7 +101,7 @@ std::string CreateLaunchTemplateRequest::getImageOwnerAlias()const
 void CreateLaunchTemplateRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
 {
 	imageOwnerAlias_ = imageOwnerAlias;
-	setCoreParameter("ImageOwnerAlias", imageOwnerAlias);
+	setParameter("ImageOwnerAlias", imageOwnerAlias);
 }
 
 std::string CreateLaunchTemplateRequest::getResourceGroupId()const
@@ -112,7 +112,7 @@ std::string CreateLaunchTemplateRequest::getResourceGroupId()const
 void CreateLaunchTemplateRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateLaunchTemplateRequest::getHostName()const
@@ -123,7 +123,7 @@ std::string CreateLaunchTemplateRequest::getHostName()const
 void CreateLaunchTemplateRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setParameter("HostName", hostName);
 }
 
 int CreateLaunchTemplateRequest::getSystemDiskIops()const
@@ -134,7 +134,7 @@ int CreateLaunchTemplateRequest::getSystemDiskIops()const
 void CreateLaunchTemplateRequest::setSystemDiskIops(int systemDiskIops)
 {
 	systemDiskIops_ = systemDiskIops;
-	setCoreParameter("SystemDiskIops", std::to_string(systemDiskIops));
+	setParameter("SystemDiskIops", std::to_string(systemDiskIops));
 }
 
 std::vector<CreateLaunchTemplateRequest::TemplateTag> CreateLaunchTemplateRequest::getTemplateTag()const
@@ -147,9 +147,9 @@ void CreateLaunchTemplateRequest::setTemplateTag(const std::vector<TemplateTag>&
 	templateTag_ = templateTag;
 	for(int dep1 = 0; dep1!= templateTag.size(); dep1++) {
 		auto templateTagObj = templateTag.at(dep1);
-		std::string templateTagObjStr = "TemplateTag." + std::to_string(dep1);
-		setCoreParameter(templateTagObjStr + ".Key", templateTagObj.key);
-		setCoreParameter(templateTagObjStr + ".Value", templateTagObj.value);
+		std::string templateTagObjStr = "TemplateTag." + std::to_string(dep1 + 1);
+		setParameter(templateTagObjStr + ".Key", templateTagObj.key);
+		setParameter(templateTagObjStr + ".Value", templateTagObj.value);
 	}
 }
 
@@ -163,9 +163,9 @@ void CreateLaunchTemplateRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
 	}
 }
 
@@ -177,7 +177,7 @@ int CreateLaunchTemplateRequest::getPeriod()const
 void CreateLaunchTemplateRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string CreateLaunchTemplateRequest::getTemplateResourceGroupId()const
@@ -188,7 +188,7 @@ std::string CreateLaunchTemplateRequest::getTemplateResourceGroupId()const
 void CreateLaunchTemplateRequest::setTemplateResourceGroupId(const std::string& templateResourceGroupId)
 {
 	templateResourceGroupId_ = templateResourceGroupId;
-	setCoreParameter("TemplateResourceGroupId", templateResourceGroupId);
+	setParameter("TemplateResourceGroupId", templateResourceGroupId);
 }
 
 long CreateLaunchTemplateRequest::getOwnerId()const
@@ -199,7 +199,7 @@ long CreateLaunchTemplateRequest::getOwnerId()const
 void CreateLaunchTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateLaunchTemplateRequest::getVSwitchId()const
@@ -210,7 +210,7 @@ std::string CreateLaunchTemplateRequest::getVSwitchId()const
 void CreateLaunchTemplateRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateLaunchTemplateRequest::getSpotStrategy()const
@@ -221,7 +221,7 @@ std::string CreateLaunchTemplateRequest::getSpotStrategy()const
 void CreateLaunchTemplateRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setCoreParameter("SpotStrategy", spotStrategy);
+	setParameter("SpotStrategy", spotStrategy);
 }
 
 std::string CreateLaunchTemplateRequest::getInstanceName()const
@@ -232,7 +232,7 @@ std::string CreateLaunchTemplateRequest::getInstanceName()const
 void CreateLaunchTemplateRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 
 std::string CreateLaunchTemplateRequest::getInternetChargeType()const
@@ -243,7 +243,7 @@ std::string CreateLaunchTemplateRequest::getInternetChargeType()const
 void CreateLaunchTemplateRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
+	setParameter("InternetChargeType", internetChargeType);
 }
 
 std::string CreateLaunchTemplateRequest::getZoneId()const
@@ -254,7 +254,7 @@ std::string CreateLaunchTemplateRequest::getZoneId()const
 void CreateLaunchTemplateRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 int CreateLaunchTemplateRequest::getInternetMaxBandwidthIn()const
@@ -265,7 +265,7 @@ int CreateLaunchTemplateRequest::getInternetMaxBandwidthIn()const
 void CreateLaunchTemplateRequest::setInternetMaxBandwidthIn(int internetMaxBandwidthIn)
 {
 	internetMaxBandwidthIn_ = internetMaxBandwidthIn;
-	setCoreParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
+	setParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
 }
 
 std::string CreateLaunchTemplateRequest::getVersionDescription()const
@@ -276,7 +276,7 @@ std::string CreateLaunchTemplateRequest::getVersionDescription()const
 void CreateLaunchTemplateRequest::setVersionDescription(const std::string& versionDescription)
 {
 	versionDescription_ = versionDescription;
-	setCoreParameter("VersionDescription", versionDescription);
+	setParameter("VersionDescription", versionDescription);
 }
 
 std::string CreateLaunchTemplateRequest::getImageId()const
@@ -287,7 +287,7 @@ std::string CreateLaunchTemplateRequest::getImageId()const
 void CreateLaunchTemplateRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setParameter("ImageId", imageId);
 }
 
 std::string CreateLaunchTemplateRequest::getIoOptimized()const
@@ -298,7 +298,7 @@ std::string CreateLaunchTemplateRequest::getIoOptimized()const
 void CreateLaunchTemplateRequest::setIoOptimized(const std::string& ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized);
+	setParameter("IoOptimized", ioOptimized);
 }
 
 std::string CreateLaunchTemplateRequest::getSecurityGroupId()const
@@ -309,7 +309,7 @@ std::string CreateLaunchTemplateRequest::getSecurityGroupId()const
 void CreateLaunchTemplateRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
 int CreateLaunchTemplateRequest::getInternetMaxBandwidthOut()const
@@ -320,7 +320,7 @@ int CreateLaunchTemplateRequest::getInternetMaxBandwidthOut()const
 void CreateLaunchTemplateRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
 {
 	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
-	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
+	setParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
 }
 
 std::string CreateLaunchTemplateRequest::getDescription()const
@@ -331,7 +331,7 @@ std::string CreateLaunchTemplateRequest::getDescription()const
 void CreateLaunchTemplateRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateLaunchTemplateRequest::getSystemDiskCategory()const
@@ -342,7 +342,7 @@ std::string CreateLaunchTemplateRequest::getSystemDiskCategory()const
 void CreateLaunchTemplateRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
 {
 	systemDiskCategory_ = systemDiskCategory;
-	setCoreParameter("SystemDiskCategory", systemDiskCategory);
+	setParameter("SystemDiskCategory", systemDiskCategory);
 }
 
 std::string CreateLaunchTemplateRequest::getUserData()const
@@ -353,7 +353,7 @@ std::string CreateLaunchTemplateRequest::getUserData()const
 void CreateLaunchTemplateRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 bool CreateLaunchTemplateRequest::getPasswordInherit()const
@@ -364,7 +364,7 @@ bool CreateLaunchTemplateRequest::getPasswordInherit()const
 void CreateLaunchTemplateRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setCoreParameter("PasswordInherit", passwordInherit ? "true" : "false");
+	setParameter("PasswordInherit", passwordInherit ? "true" : "false");
 }
 
 std::string CreateLaunchTemplateRequest::getRegionId()const
@@ -375,7 +375,7 @@ std::string CreateLaunchTemplateRequest::getRegionId()const
 void CreateLaunchTemplateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateLaunchTemplateRequest::getInstanceType()const
@@ -386,7 +386,7 @@ std::string CreateLaunchTemplateRequest::getInstanceType()const
 void CreateLaunchTemplateRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string CreateLaunchTemplateRequest::getInstanceChargeType()const
@@ -397,7 +397,7 @@ std::string CreateLaunchTemplateRequest::getInstanceChargeType()const
 void CreateLaunchTemplateRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 bool CreateLaunchTemplateRequest::getEnableVmOsConfig()const
@@ -408,7 +408,7 @@ bool CreateLaunchTemplateRequest::getEnableVmOsConfig()const
 void CreateLaunchTemplateRequest::setEnableVmOsConfig(bool enableVmOsConfig)
 {
 	enableVmOsConfig_ = enableVmOsConfig;
-	setCoreParameter("EnableVmOsConfig", enableVmOsConfig ? "true" : "false");
+	setParameter("EnableVmOsConfig", enableVmOsConfig ? "true" : "false");
 }
 
 std::vector<CreateLaunchTemplateRequest::NetworkInterface> CreateLaunchTemplateRequest::getNetworkInterface()const
@@ -421,12 +421,12 @@ void CreateLaunchTemplateRequest::setNetworkInterface(const std::vector<NetworkI
 	networkInterface_ = networkInterface;
 	for(int dep1 = 0; dep1!= networkInterface.size(); dep1++) {
 		auto networkInterfaceObj = networkInterface.at(dep1);
-		std::string networkInterfaceObjStr = "NetworkInterface." + std::to_string(dep1);
-		setCoreParameter(networkInterfaceObjStr + ".PrimaryIpAddress", networkInterfaceObj.primaryIpAddress);
-		setCoreParameter(networkInterfaceObjStr + ".VSwitchId", networkInterfaceObj.vSwitchId);
-		setCoreParameter(networkInterfaceObjStr + ".SecurityGroupId", networkInterfaceObj.securityGroupId);
-		setCoreParameter(networkInterfaceObjStr + ".NetworkInterfaceName", networkInterfaceObj.networkInterfaceName);
-		setCoreParameter(networkInterfaceObjStr + ".Description", networkInterfaceObj.description);
+		std::string networkInterfaceObjStr = "NetworkInterface." + std::to_string(dep1 + 1);
+		setParameter(networkInterfaceObjStr + ".PrimaryIpAddress", networkInterfaceObj.primaryIpAddress);
+		setParameter(networkInterfaceObjStr + ".VSwitchId", networkInterfaceObj.vSwitchId);
+		setParameter(networkInterfaceObjStr + ".SecurityGroupId", networkInterfaceObj.securityGroupId);
+		setParameter(networkInterfaceObjStr + ".NetworkInterfaceName", networkInterfaceObj.networkInterfaceName);
+		setParameter(networkInterfaceObjStr + ".Description", networkInterfaceObj.description);
 	}
 }
 
@@ -438,7 +438,7 @@ std::string CreateLaunchTemplateRequest::getResourceOwnerAccount()const
 void CreateLaunchTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateLaunchTemplateRequest::getOwnerAccount()const
@@ -449,7 +449,7 @@ std::string CreateLaunchTemplateRequest::getOwnerAccount()const
 void CreateLaunchTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateLaunchTemplateRequest::getSystemDiskDiskName()const
@@ -460,7 +460,7 @@ std::string CreateLaunchTemplateRequest::getSystemDiskDiskName()const
 void CreateLaunchTemplateRequest::setSystemDiskDiskName(const std::string& systemDiskDiskName)
 {
 	systemDiskDiskName_ = systemDiskDiskName;
-	setCoreParameter("SystemDiskDiskName", systemDiskDiskName);
+	setParameter("SystemDiskDiskName", systemDiskDiskName);
 }
 
 std::string CreateLaunchTemplateRequest::getRamRoleName()const
@@ -471,7 +471,7 @@ std::string CreateLaunchTemplateRequest::getRamRoleName()const
 void CreateLaunchTemplateRequest::setRamRoleName(const std::string& ramRoleName)
 {
 	ramRoleName_ = ramRoleName;
-	setCoreParameter("RamRoleName", ramRoleName);
+	setParameter("RamRoleName", ramRoleName);
 }
 
 std::string CreateLaunchTemplateRequest::getAutoReleaseTime()const
@@ -482,7 +482,7 @@ std::string CreateLaunchTemplateRequest::getAutoReleaseTime()const
 void CreateLaunchTemplateRequest::setAutoReleaseTime(const std::string& autoReleaseTime)
 {
 	autoReleaseTime_ = autoReleaseTime;
-	setCoreParameter("AutoReleaseTime", autoReleaseTime);
+	setParameter("AutoReleaseTime", autoReleaseTime);
 }
 
 int CreateLaunchTemplateRequest::getSpotDuration()const
@@ -493,7 +493,7 @@ int CreateLaunchTemplateRequest::getSpotDuration()const
 void CreateLaunchTemplateRequest::setSpotDuration(int spotDuration)
 {
 	spotDuration_ = spotDuration;
-	setCoreParameter("SpotDuration", std::to_string(spotDuration));
+	setParameter("SpotDuration", std::to_string(spotDuration));
 }
 
 std::vector<CreateLaunchTemplateRequest::DataDisk> CreateLaunchTemplateRequest::getDataDisk()const
@@ -506,15 +506,15 @@ void CreateLaunchTemplateRequest::setDataDisk(const std::vector<DataDisk>& dataD
 	dataDisk_ = dataDisk;
 	for(int dep1 = 0; dep1!= dataDisk.size(); dep1++) {
 		auto dataDiskObj = dataDisk.at(dep1);
-		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1);
-		setCoreParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
-		setCoreParameter(dataDiskObjStr + ".SnapshotId", dataDiskObj.snapshotId);
-		setCoreParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
-		setCoreParameter(dataDiskObjStr + ".Encrypted", dataDiskObj.encrypted);
-		setCoreParameter(dataDiskObjStr + ".DiskName", dataDiskObj.diskName);
-		setCoreParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
-		setCoreParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
-		setCoreParameter(dataDiskObjStr + ".Device", dataDiskObj.device);
+		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1 + 1);
+		setParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
+		setParameter(dataDiskObjStr + ".SnapshotId", dataDiskObj.snapshotId);
+		setParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
+		setParameter(dataDiskObjStr + ".Encrypted", dataDiskObj.encrypted);
+		setParameter(dataDiskObjStr + ".DiskName", dataDiskObj.diskName);
+		setParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
+		setParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
+		setParameter(dataDiskObjStr + ".Device", dataDiskObj.device);
 	}
 }
 
@@ -526,7 +526,7 @@ int CreateLaunchTemplateRequest::getSystemDiskSize()const
 void CreateLaunchTemplateRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+	setParameter("SystemDiskSize", std::to_string(systemDiskSize));
 }
 
 std::string CreateLaunchTemplateRequest::getVpcId()const
@@ -537,7 +537,7 @@ std::string CreateLaunchTemplateRequest::getVpcId()const
 void CreateLaunchTemplateRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string CreateLaunchTemplateRequest::getSystemDiskDescription()const
@@ -548,6 +548,6 @@ std::string CreateLaunchTemplateRequest::getSystemDiskDescription()const
 void CreateLaunchTemplateRequest::setSystemDiskDescription(const std::string& systemDiskDescription)
 {
 	systemDiskDescription_ = systemDiskDescription;
-	setCoreParameter("SystemDiskDescription", systemDiskDescription);
+	setParameter("SystemDiskDescription", systemDiskDescription);
 }
 

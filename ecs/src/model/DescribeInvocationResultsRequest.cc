@@ -35,7 +35,7 @@ long DescribeInvocationResultsRequest::getResourceOwnerId()const
 void DescribeInvocationResultsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeInvocationResultsRequest::getCommandId()const
@@ -46,7 +46,7 @@ std::string DescribeInvocationResultsRequest::getCommandId()const
 void DescribeInvocationResultsRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", commandId);
+	setParameter("CommandId", commandId);
 }
 
 long DescribeInvocationResultsRequest::getPageNumber()const
@@ -57,7 +57,7 @@ long DescribeInvocationResultsRequest::getPageNumber()const
 void DescribeInvocationResultsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeInvocationResultsRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribeInvocationResultsRequest::getRegionId()const
 void DescribeInvocationResultsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 long DescribeInvocationResultsRequest::getPageSize()const
@@ -79,7 +79,7 @@ long DescribeInvocationResultsRequest::getPageSize()const
 void DescribeInvocationResultsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeInvocationResultsRequest::getInvokeId()const
@@ -90,7 +90,7 @@ std::string DescribeInvocationResultsRequest::getInvokeId()const
 void DescribeInvocationResultsRequest::setInvokeId(const std::string& invokeId)
 {
 	invokeId_ = invokeId;
-	setCoreParameter("InvokeId", invokeId);
+	setParameter("InvokeId", invokeId);
 }
 
 std::string DescribeInvocationResultsRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeInvocationResultsRequest::getResourceOwnerAccount()const
 void DescribeInvocationResultsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInvocationResultsRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribeInvocationResultsRequest::getOwnerAccount()const
 void DescribeInvocationResultsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeInvocationResultsRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long DescribeInvocationResultsRequest::getOwnerId()const
 void DescribeInvocationResultsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeInvocationResultsRequest::getInstanceId()const
@@ -134,7 +134,7 @@ std::string DescribeInvocationResultsRequest::getInstanceId()const
 void DescribeInvocationResultsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeInvocationResultsRequest::getInvokeRecordStatus()const
@@ -145,7 +145,7 @@ std::string DescribeInvocationResultsRequest::getInvokeRecordStatus()const
 void DescribeInvocationResultsRequest::setInvokeRecordStatus(const std::string& invokeRecordStatus)
 {
 	invokeRecordStatus_ = invokeRecordStatus;
-	setCoreParameter("InvokeRecordStatus", invokeRecordStatus);
+	setParameter("InvokeRecordStatus", invokeRecordStatus);
 }
 
 bool DescribeInvocationResultsRequest::getIncludeHistory()const
@@ -156,6 +156,6 @@ bool DescribeInvocationResultsRequest::getIncludeHistory()const
 void DescribeInvocationResultsRequest::setIncludeHistory(bool includeHistory)
 {
 	includeHistory_ = includeHistory;
-	setCoreParameter("IncludeHistory", includeHistory ? "true" : "false");
+	setParameter("IncludeHistory", includeHistory ? "true" : "false");
 }
 

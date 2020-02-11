@@ -35,7 +35,7 @@ long DescribeDiskMonitorDataRequest::getResourceOwnerId()const
 void DescribeDiskMonitorDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDiskMonitorDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDiskMonitorDataRequest::getStartTime()const
 void DescribeDiskMonitorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDiskMonitorDataRequest::getDiskId()const
@@ -57,7 +57,7 @@ std::string DescribeDiskMonitorDataRequest::getDiskId()const
 void DescribeDiskMonitorDataRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
+	setParameter("DiskId", diskId);
 }
 
 int DescribeDiskMonitorDataRequest::getPeriod()const
@@ -68,7 +68,7 @@ int DescribeDiskMonitorDataRequest::getPeriod()const
 void DescribeDiskMonitorDataRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string DescribeDiskMonitorDataRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeDiskMonitorDataRequest::getResourceOwnerAccount()const
 void DescribeDiskMonitorDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDiskMonitorDataRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeDiskMonitorDataRequest::getOwnerAccount()const
 void DescribeDiskMonitorDataRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDiskMonitorDataRequest::getEndTime()const
@@ -101,7 +101,7 @@ std::string DescribeDiskMonitorDataRequest::getEndTime()const
 void DescribeDiskMonitorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDiskMonitorDataRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DescribeDiskMonitorDataRequest::getOwnerId()const
 void DescribeDiskMonitorDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

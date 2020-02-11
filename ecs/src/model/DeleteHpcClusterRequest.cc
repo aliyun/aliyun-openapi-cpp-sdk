@@ -35,7 +35,7 @@ long DeleteHpcClusterRequest::getResourceOwnerId()const
 void DeleteHpcClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteHpcClusterRequest::getHpcClusterId()const
@@ -46,7 +46,7 @@ std::string DeleteHpcClusterRequest::getHpcClusterId()const
 void DeleteHpcClusterRequest::setHpcClusterId(const std::string& hpcClusterId)
 {
 	hpcClusterId_ = hpcClusterId;
-	setCoreParameter("HpcClusterId", hpcClusterId);
+	setParameter("HpcClusterId", hpcClusterId);
 }
 
 std::string DeleteHpcClusterRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string DeleteHpcClusterRequest::getClientToken()const
 void DeleteHpcClusterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteHpcClusterRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DeleteHpcClusterRequest::getRegionId()const
 void DeleteHpcClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteHpcClusterRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteHpcClusterRequest::getResourceOwnerAccount()const
 void DeleteHpcClusterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteHpcClusterRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DeleteHpcClusterRequest::getOwnerAccount()const
 void DeleteHpcClusterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteHpcClusterRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DeleteHpcClusterRequest::getOwnerId()const
 void DeleteHpcClusterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

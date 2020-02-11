@@ -59,6 +59,8 @@ void DescribeSnapshotLinksResult::parse(const std::string &payload)
 			snapshotLinksObject.sourceDiskSize = std::stoi(valueSnapshotLinksSnapshotLink["SourceDiskSize"].asString());
 		if(!valueSnapshotLinksSnapshotLink["SourceDiskType"].isNull())
 			snapshotLinksObject.sourceDiskType = valueSnapshotLinksSnapshotLink["SourceDiskType"].asString();
+		if(!valueSnapshotLinksSnapshotLink["Category"].isNull())
+			snapshotLinksObject.category = valueSnapshotLinksSnapshotLink["Category"].asString();
 		if(!valueSnapshotLinksSnapshotLink["TotalSize"].isNull())
 			snapshotLinksObject.totalSize = std::stol(valueSnapshotLinksSnapshotLink["TotalSize"].asString());
 		if(!valueSnapshotLinksSnapshotLink["TotalCount"].isNull())

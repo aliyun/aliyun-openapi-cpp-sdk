@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateNatGatewayRequest : public RpcServiceRequest
 			{
+			public:
 				struct BandwidthPackage
 				{
 					int bandwidth;

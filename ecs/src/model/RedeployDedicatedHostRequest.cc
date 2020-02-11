@@ -35,7 +35,7 @@ long RedeployDedicatedHostRequest::getResourceOwnerId()const
 void RedeployDedicatedHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RedeployDedicatedHostRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string RedeployDedicatedHostRequest::getRegionId()const
 void RedeployDedicatedHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string RedeployDedicatedHostRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string RedeployDedicatedHostRequest::getResourceOwnerAccount()const
 void RedeployDedicatedHostRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RedeployDedicatedHostRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string RedeployDedicatedHostRequest::getOwnerAccount()const
 void RedeployDedicatedHostRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RedeployDedicatedHostRequest::getDedicatedHostId()const
@@ -79,7 +79,7 @@ std::string RedeployDedicatedHostRequest::getDedicatedHostId()const
 void RedeployDedicatedHostRequest::setDedicatedHostId(const std::string& dedicatedHostId)
 {
 	dedicatedHostId_ = dedicatedHostId;
-	setCoreParameter("DedicatedHostId", dedicatedHostId);
+	setParameter("DedicatedHostId", dedicatedHostId);
 }
 
 long RedeployDedicatedHostRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long RedeployDedicatedHostRequest::getOwnerId()const
 void RedeployDedicatedHostRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

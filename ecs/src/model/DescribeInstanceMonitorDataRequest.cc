@@ -35,7 +35,7 @@ long DescribeInstanceMonitorDataRequest::getResourceOwnerId()const
 void DescribeInstanceMonitorDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeInstanceMonitorDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeInstanceMonitorDataRequest::getStartTime()const
 void DescribeInstanceMonitorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int DescribeInstanceMonitorDataRequest::getPeriod()const
@@ -57,7 +57,7 @@ int DescribeInstanceMonitorDataRequest::getPeriod()const
 void DescribeInstanceMonitorDataRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string DescribeInstanceMonitorDataRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DescribeInstanceMonitorDataRequest::getResourceOwnerAccount()const
 void DescribeInstanceMonitorDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeInstanceMonitorDataRequest::getOwnerAccount()const
 void DescribeInstanceMonitorDataRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeInstanceMonitorDataRequest::getEndTime()const
@@ -90,7 +90,7 @@ std::string DescribeInstanceMonitorDataRequest::getEndTime()const
 void DescribeInstanceMonitorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeInstanceMonitorDataRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long DescribeInstanceMonitorDataRequest::getOwnerId()const
 void DescribeInstanceMonitorDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeInstanceMonitorDataRequest::getInstanceId()const
@@ -112,6 +112,6 @@ std::string DescribeInstanceMonitorDataRequest::getInstanceId()const
 void DescribeInstanceMonitorDataRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

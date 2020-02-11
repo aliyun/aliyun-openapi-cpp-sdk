@@ -35,7 +35,7 @@ long RunCommandRequest::getResourceOwnerId()const
 void RunCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RunCommandRequest::getWorkingDir()const
@@ -46,7 +46,7 @@ std::string RunCommandRequest::getWorkingDir()const
 void RunCommandRequest::setWorkingDir(const std::string& workingDir)
 {
 	workingDir_ = workingDir;
-	setCoreParameter("WorkingDir", workingDir);
+	setParameter("WorkingDir", workingDir);
 }
 
 std::string RunCommandRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string RunCommandRequest::getDescription()const
 void RunCommandRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string RunCommandRequest::getType()const
@@ -68,7 +68,7 @@ std::string RunCommandRequest::getType()const
 void RunCommandRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string RunCommandRequest::getCommandContent()const
@@ -79,7 +79,7 @@ std::string RunCommandRequest::getCommandContent()const
 void RunCommandRequest::setCommandContent(const std::string& commandContent)
 {
 	commandContent_ = commandContent;
-	setCoreParameter("CommandContent", commandContent);
+	setParameter("CommandContent", commandContent);
 }
 
 long RunCommandRequest::getTimeout()const
@@ -90,7 +90,7 @@ long RunCommandRequest::getTimeout()const
 void RunCommandRequest::setTimeout(long timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", std::to_string(timeout));
+	setParameter("Timeout", std::to_string(timeout));
 }
 
 std::string RunCommandRequest::getFrequency()const
@@ -101,7 +101,7 @@ std::string RunCommandRequest::getFrequency()const
 void RunCommandRequest::setFrequency(const std::string& frequency)
 {
 	frequency_ = frequency;
-	setCoreParameter("Frequency", frequency);
+	setParameter("Frequency", frequency);
 }
 
 std::string RunCommandRequest::getRegionId()const
@@ -112,7 +112,7 @@ std::string RunCommandRequest::getRegionId()const
 void RunCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string RunCommandRequest::getContentEncoding()const
@@ -123,7 +123,7 @@ std::string RunCommandRequest::getContentEncoding()const
 void RunCommandRequest::setContentEncoding(const std::string& contentEncoding)
 {
 	contentEncoding_ = contentEncoding;
-	setCoreParameter("ContentEncoding", contentEncoding);
+	setParameter("ContentEncoding", contentEncoding);
 }
 
 bool RunCommandRequest::getKeepCommand()const
@@ -134,7 +134,7 @@ bool RunCommandRequest::getKeepCommand()const
 void RunCommandRequest::setKeepCommand(bool keepCommand)
 {
 	keepCommand_ = keepCommand;
-	setCoreParameter("KeepCommand", keepCommand ? "true" : "false");
+	setParameter("KeepCommand", keepCommand ? "true" : "false");
 }
 
 bool RunCommandRequest::getTimed()const
@@ -145,7 +145,7 @@ bool RunCommandRequest::getTimed()const
 void RunCommandRequest::setTimed(bool timed)
 {
 	timed_ = timed;
-	setCoreParameter("Timed", timed ? "true" : "false");
+	setParameter("Timed", timed ? "true" : "false");
 }
 
 std::string RunCommandRequest::getResourceOwnerAccount()const
@@ -156,7 +156,7 @@ std::string RunCommandRequest::getResourceOwnerAccount()const
 void RunCommandRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RunCommandRequest::getOwnerAccount()const
@@ -167,7 +167,7 @@ std::string RunCommandRequest::getOwnerAccount()const
 void RunCommandRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RunCommandRequest::getOwnerId()const
@@ -178,7 +178,7 @@ long RunCommandRequest::getOwnerId()const
 void RunCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> RunCommandRequest::getInstanceId()const
@@ -190,7 +190,7 @@ void RunCommandRequest::setInstanceId(const std::vector<std::string>& instanceId
 {
 	instanceId_ = instanceId;
 	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
-		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
 	}
 }
 
@@ -202,7 +202,7 @@ std::string RunCommandRequest::getName()const
 void RunCommandRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::map<std::string, std::string> RunCommandRequest::getParameters()const
@@ -224,6 +224,6 @@ bool RunCommandRequest::getEnableParameter()const
 void RunCommandRequest::setEnableParameter(bool enableParameter)
 {
 	enableParameter_ = enableParameter;
-	setCoreParameter("EnableParameter", enableParameter ? "true" : "false");
+	setParameter("EnableParameter", enableParameter ? "true" : "false");
 }
 

@@ -35,7 +35,7 @@ long CreateStorageSetRequest::getResourceOwnerId()const
 void CreateStorageSetRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateStorageSetRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string CreateStorageSetRequest::getClientToken()const
 void CreateStorageSetRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 int CreateStorageSetRequest::getMaxPartitionNumber()const
@@ -57,7 +57,7 @@ int CreateStorageSetRequest::getMaxPartitionNumber()const
 void CreateStorageSetRequest::setMaxPartitionNumber(int maxPartitionNumber)
 {
 	maxPartitionNumber_ = maxPartitionNumber;
-	setCoreParameter("MaxPartitionNumber", std::to_string(maxPartitionNumber));
+	setParameter("MaxPartitionNumber", std::to_string(maxPartitionNumber));
 }
 
 std::string CreateStorageSetRequest::getDescription()const
@@ -68,7 +68,7 @@ std::string CreateStorageSetRequest::getDescription()const
 void CreateStorageSetRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateStorageSetRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string CreateStorageSetRequest::getRegionId()const
 void CreateStorageSetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateStorageSetRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string CreateStorageSetRequest::getResourceOwnerAccount()const
 void CreateStorageSetRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateStorageSetRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string CreateStorageSetRequest::getOwnerAccount()const
 void CreateStorageSetRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateStorageSetRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long CreateStorageSetRequest::getOwnerId()const
 void CreateStorageSetRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateStorageSetRequest::getZoneId()const
@@ -123,7 +123,7 @@ std::string CreateStorageSetRequest::getZoneId()const
 void CreateStorageSetRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string CreateStorageSetRequest::getStorageSetName()const
@@ -134,6 +134,6 @@ std::string CreateStorageSetRequest::getStorageSetName()const
 void CreateStorageSetRequest::setStorageSetName(const std::string& storageSetName)
 {
 	storageSetName_ = storageSetName;
-	setCoreParameter("StorageSetName", storageSetName);
+	setParameter("StorageSetName", storageSetName);
 }
 

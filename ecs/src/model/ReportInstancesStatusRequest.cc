@@ -35,7 +35,7 @@ std::string ReportInstancesStatusRequest::getReason()const
 void ReportInstancesStatusRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", reason);
+	setParameter("Reason", reason);
 }
 
 long ReportInstancesStatusRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long ReportInstancesStatusRequest::getResourceOwnerId()const
 void ReportInstancesStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportInstancesStatusRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string ReportInstancesStatusRequest::getDescription()const
 void ReportInstancesStatusRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ReportInstancesStatusRequest::getStartTime()const
@@ -68,7 +68,7 @@ std::string ReportInstancesStatusRequest::getStartTime()const
 void ReportInstancesStatusRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string ReportInstancesStatusRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string ReportInstancesStatusRequest::getRegionId()const
 void ReportInstancesStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<std::string> ReportInstancesStatusRequest::getDiskId()const
@@ -91,7 +91,7 @@ void ReportInstancesStatusRequest::setDiskId(const std::vector<std::string>& dis
 {
 	diskId_ = diskId;
 	for(int dep1 = 0; dep1!= diskId.size(); dep1++) {
-		setCoreParameter("DiskId."+ std::to_string(dep1), diskId.at(dep1));
+		setParameter("DiskId."+ std::to_string(dep1), diskId.at(dep1));
 	}
 }
 
@@ -103,7 +103,7 @@ std::string ReportInstancesStatusRequest::getResourceOwnerAccount()const
 void ReportInstancesStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportInstancesStatusRequest::getOwnerAccount()const
@@ -114,7 +114,7 @@ std::string ReportInstancesStatusRequest::getOwnerAccount()const
 void ReportInstancesStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReportInstancesStatusRequest::getEndTime()const
@@ -125,7 +125,7 @@ std::string ReportInstancesStatusRequest::getEndTime()const
 void ReportInstancesStatusRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long ReportInstancesStatusRequest::getOwnerId()const
@@ -136,7 +136,7 @@ long ReportInstancesStatusRequest::getOwnerId()const
 void ReportInstancesStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> ReportInstancesStatusRequest::getInstanceId()const
@@ -148,7 +148,7 @@ void ReportInstancesStatusRequest::setInstanceId(const std::vector<std::string>&
 {
 	instanceId_ = instanceId;
 	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
-		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
 	}
 }
 
@@ -161,7 +161,7 @@ void ReportInstancesStatusRequest::setDevice(const std::vector<std::string>& dev
 {
 	device_ = device;
 	for(int dep1 = 0; dep1!= device.size(); dep1++) {
-		setCoreParameter("Device."+ std::to_string(dep1), device.at(dep1));
+		setParameter("Device."+ std::to_string(dep1), device.at(dep1));
 	}
 }
 

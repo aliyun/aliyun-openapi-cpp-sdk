@@ -35,7 +35,7 @@ long UnassignPrivateIpAddressesRequest::getResourceOwnerId()const
 void UnassignPrivateIpAddressesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnassignPrivateIpAddressesRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string UnassignPrivateIpAddressesRequest::getRegionId()const
 void UnassignPrivateIpAddressesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string UnassignPrivateIpAddressesRequest::getResourceOwnerAccount()const
 void UnassignPrivateIpAddressesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnassignPrivateIpAddressesRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string UnassignPrivateIpAddressesRequest::getOwnerAccount()const
 void UnassignPrivateIpAddressesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UnassignPrivateIpAddressesRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long UnassignPrivateIpAddressesRequest::getOwnerId()const
 void UnassignPrivateIpAddressesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> UnassignPrivateIpAddressesRequest::getPrivateIpAddress()const
@@ -91,7 +91,7 @@ void UnassignPrivateIpAddressesRequest::setPrivateIpAddress(const std::vector<st
 {
 	privateIpAddress_ = privateIpAddress;
 	for(int dep1 = 0; dep1!= privateIpAddress.size(); dep1++) {
-		setCoreParameter("PrivateIpAddress."+ std::to_string(dep1), privateIpAddress.at(dep1));
+		setParameter("PrivateIpAddress."+ std::to_string(dep1), privateIpAddress.at(dep1));
 	}
 }
 
@@ -103,6 +103,6 @@ std::string UnassignPrivateIpAddressesRequest::getNetworkInterfaceId()const
 void UnassignPrivateIpAddressesRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	setCoreParameter("NetworkInterfaceId", networkInterfaceId);
+	setParameter("NetworkInterfaceId", networkInterfaceId);
 }
 

@@ -35,7 +35,7 @@ long EipNotifyPaidRequest::getResourceOwnerId()const
 void EipNotifyPaidRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string EipNotifyPaidRequest::getData()const
@@ -46,7 +46,7 @@ std::string EipNotifyPaidRequest::getData()const
 void EipNotifyPaidRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setParameter("Data", data);
 }
 
 std::string EipNotifyPaidRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string EipNotifyPaidRequest::getClientToken()const
 void EipNotifyPaidRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string EipNotifyPaidRequest::getUserCidr()const
@@ -68,7 +68,7 @@ std::string EipNotifyPaidRequest::getUserCidr()const
 void EipNotifyPaidRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setParameter("UserCidr", userCidr);
 }
 
 std::string EipNotifyPaidRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string EipNotifyPaidRequest::getResourceOwnerAccount()const
 void EipNotifyPaidRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string EipNotifyPaidRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string EipNotifyPaidRequest::getOwnerAccount()const
 void EipNotifyPaidRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long EipNotifyPaidRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long EipNotifyPaidRequest::getOwnerId()const
 void EipNotifyPaidRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

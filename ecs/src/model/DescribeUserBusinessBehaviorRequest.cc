@@ -35,7 +35,7 @@ long DescribeUserBusinessBehaviorRequest::getResourceOwnerId()const
 void DescribeUserBusinessBehaviorRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string DescribeUserBusinessBehaviorRequest::getRegionId()const
 void DescribeUserBusinessBehaviorRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeUserBusinessBehaviorRequest::getResourceOwnerAccount()const
 void DescribeUserBusinessBehaviorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DescribeUserBusinessBehaviorRequest::getOwnerAccount()const
 void DescribeUserBusinessBehaviorRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeUserBusinessBehaviorRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long DescribeUserBusinessBehaviorRequest::getOwnerId()const
 void DescribeUserBusinessBehaviorRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getStatusKey()const
@@ -90,6 +90,6 @@ std::string DescribeUserBusinessBehaviorRequest::getStatusKey()const
 void DescribeUserBusinessBehaviorRequest::setStatusKey(const std::string& statusKey)
 {
 	statusKey_ = statusKey;
-	setCoreParameter("StatusKey", statusKey);
+	setParameter("StatusKey", statusKey);
 }
 

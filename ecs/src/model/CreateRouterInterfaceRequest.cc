@@ -35,7 +35,7 @@ std::string CreateRouterInterfaceRequest::getAccessPointId()const
 void CreateRouterInterfaceRequest::setAccessPointId(const std::string& accessPointId)
 {
 	accessPointId_ = accessPointId;
-	setCoreParameter("AccessPointId", accessPointId);
+	setParameter("AccessPointId", accessPointId);
 }
 
 std::string CreateRouterInterfaceRequest::getOppositeRouterId()const
@@ -46,7 +46,7 @@ std::string CreateRouterInterfaceRequest::getOppositeRouterId()const
 void CreateRouterInterfaceRequest::setOppositeRouterId(const std::string& oppositeRouterId)
 {
 	oppositeRouterId_ = oppositeRouterId;
-	setCoreParameter("OppositeRouterId", oppositeRouterId);
+	setParameter("OppositeRouterId", oppositeRouterId);
 }
 
 std::string CreateRouterInterfaceRequest::getOppositeAccessPointId()const
@@ -57,7 +57,7 @@ std::string CreateRouterInterfaceRequest::getOppositeAccessPointId()const
 void CreateRouterInterfaceRequest::setOppositeAccessPointId(const std::string& oppositeAccessPointId)
 {
 	oppositeAccessPointId_ = oppositeAccessPointId;
-	setCoreParameter("OppositeAccessPointId", oppositeAccessPointId);
+	setParameter("OppositeAccessPointId", oppositeAccessPointId);
 }
 
 long CreateRouterInterfaceRequest::getResourceOwnerId()const
@@ -68,7 +68,7 @@ long CreateRouterInterfaceRequest::getResourceOwnerId()const
 void CreateRouterInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateRouterInterfaceRequest::getRole()const
@@ -79,7 +79,7 @@ std::string CreateRouterInterfaceRequest::getRole()const
 void CreateRouterInterfaceRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setParameter("Role", role);
 }
 
 std::string CreateRouterInterfaceRequest::getClientToken()const
@@ -90,7 +90,7 @@ std::string CreateRouterInterfaceRequest::getClientToken()const
 void CreateRouterInterfaceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateRouterInterfaceRequest::getHealthCheckTargetIp()const
@@ -101,7 +101,7 @@ std::string CreateRouterInterfaceRequest::getHealthCheckTargetIp()const
 void CreateRouterInterfaceRequest::setHealthCheckTargetIp(const std::string& healthCheckTargetIp)
 {
 	healthCheckTargetIp_ = healthCheckTargetIp;
-	setCoreParameter("HealthCheckTargetIp", healthCheckTargetIp);
+	setParameter("HealthCheckTargetIp", healthCheckTargetIp);
 }
 
 std::string CreateRouterInterfaceRequest::getDescription()const
@@ -112,7 +112,7 @@ std::string CreateRouterInterfaceRequest::getDescription()const
 void CreateRouterInterfaceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateRouterInterfaceRequest::getSpec()const
@@ -123,7 +123,7 @@ std::string CreateRouterInterfaceRequest::getSpec()const
 void CreateRouterInterfaceRequest::setSpec(const std::string& spec)
 {
 	spec_ = spec;
-	setCoreParameter("Spec", spec);
+	setParameter("Spec", spec);
 }
 
 std::string CreateRouterInterfaceRequest::getRegionId()const
@@ -134,7 +134,7 @@ std::string CreateRouterInterfaceRequest::getRegionId()const
 void CreateRouterInterfaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateRouterInterfaceRequest::getUserCidr()const
@@ -145,7 +145,7 @@ std::string CreateRouterInterfaceRequest::getUserCidr()const
 void CreateRouterInterfaceRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setParameter("UserCidr", userCidr);
 }
 
 std::string CreateRouterInterfaceRequest::getOppositeInterfaceId()const
@@ -156,7 +156,7 @@ std::string CreateRouterInterfaceRequest::getOppositeInterfaceId()const
 void CreateRouterInterfaceRequest::setOppositeInterfaceId(const std::string& oppositeInterfaceId)
 {
 	oppositeInterfaceId_ = oppositeInterfaceId;
-	setCoreParameter("OppositeInterfaceId", oppositeInterfaceId);
+	setParameter("OppositeInterfaceId", oppositeInterfaceId);
 }
 
 std::string CreateRouterInterfaceRequest::getInstanceChargeType()const
@@ -167,7 +167,7 @@ std::string CreateRouterInterfaceRequest::getInstanceChargeType()const
 void CreateRouterInterfaceRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 int CreateRouterInterfaceRequest::getPeriod()const
@@ -178,7 +178,7 @@ int CreateRouterInterfaceRequest::getPeriod()const
 void CreateRouterInterfaceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 bool CreateRouterInterfaceRequest::getAutoPay()const
@@ -189,7 +189,7 @@ bool CreateRouterInterfaceRequest::getAutoPay()const
 void CreateRouterInterfaceRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateRouterInterfaceRequest::getResourceOwnerAccount()const
@@ -200,7 +200,7 @@ std::string CreateRouterInterfaceRequest::getResourceOwnerAccount()const
 void CreateRouterInterfaceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateRouterInterfaceRequest::getOppositeRegionId()const
@@ -211,7 +211,7 @@ std::string CreateRouterInterfaceRequest::getOppositeRegionId()const
 void CreateRouterInterfaceRequest::setOppositeRegionId(const std::string& oppositeRegionId)
 {
 	oppositeRegionId_ = oppositeRegionId;
-	setCoreParameter("OppositeRegionId", oppositeRegionId);
+	setParameter("OppositeRegionId", oppositeRegionId);
 }
 
 std::string CreateRouterInterfaceRequest::getOwnerAccount()const
@@ -222,7 +222,7 @@ std::string CreateRouterInterfaceRequest::getOwnerAccount()const
 void CreateRouterInterfaceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateRouterInterfaceRequest::getOwnerId()const
@@ -233,7 +233,7 @@ long CreateRouterInterfaceRequest::getOwnerId()const
 void CreateRouterInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateRouterInterfaceRequest::getOppositeInterfaceOwnerId()const
@@ -244,7 +244,7 @@ std::string CreateRouterInterfaceRequest::getOppositeInterfaceOwnerId()const
 void CreateRouterInterfaceRequest::setOppositeInterfaceOwnerId(const std::string& oppositeInterfaceOwnerId)
 {
 	oppositeInterfaceOwnerId_ = oppositeInterfaceOwnerId;
-	setCoreParameter("OppositeInterfaceOwnerId", oppositeInterfaceOwnerId);
+	setParameter("OppositeInterfaceOwnerId", oppositeInterfaceOwnerId);
 }
 
 std::string CreateRouterInterfaceRequest::getRouterType()const
@@ -255,7 +255,7 @@ std::string CreateRouterInterfaceRequest::getRouterType()const
 void CreateRouterInterfaceRequest::setRouterType(const std::string& routerType)
 {
 	routerType_ = routerType;
-	setCoreParameter("RouterType", routerType);
+	setParameter("RouterType", routerType);
 }
 
 std::string CreateRouterInterfaceRequest::getHealthCheckSourceIp()const
@@ -266,7 +266,7 @@ std::string CreateRouterInterfaceRequest::getHealthCheckSourceIp()const
 void CreateRouterInterfaceRequest::setHealthCheckSourceIp(const std::string& healthCheckSourceIp)
 {
 	healthCheckSourceIp_ = healthCheckSourceIp;
-	setCoreParameter("HealthCheckSourceIp", healthCheckSourceIp);
+	setParameter("HealthCheckSourceIp", healthCheckSourceIp);
 }
 
 std::string CreateRouterInterfaceRequest::getRouterId()const
@@ -277,7 +277,7 @@ std::string CreateRouterInterfaceRequest::getRouterId()const
 void CreateRouterInterfaceRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setCoreParameter("RouterId", routerId);
+	setParameter("RouterId", routerId);
 }
 
 std::string CreateRouterInterfaceRequest::getOppositeRouterType()const
@@ -288,7 +288,7 @@ std::string CreateRouterInterfaceRequest::getOppositeRouterType()const
 void CreateRouterInterfaceRequest::setOppositeRouterType(const std::string& oppositeRouterType)
 {
 	oppositeRouterType_ = oppositeRouterType;
-	setCoreParameter("OppositeRouterType", oppositeRouterType);
+	setParameter("OppositeRouterType", oppositeRouterType);
 }
 
 std::string CreateRouterInterfaceRequest::getName()const
@@ -299,7 +299,7 @@ std::string CreateRouterInterfaceRequest::getName()const
 void CreateRouterInterfaceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateRouterInterfaceRequest::getPricingCycle()const
@@ -310,6 +310,6 @@ std::string CreateRouterInterfaceRequest::getPricingCycle()const
 void CreateRouterInterfaceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setParameter("PricingCycle", pricingCycle);
 }
 

@@ -35,7 +35,7 @@ std::string DeleteLaunchTemplateVersionRequest::getLaunchTemplateName()const
 void DeleteLaunchTemplateVersionRequest::setLaunchTemplateName(const std::string& launchTemplateName)
 {
 	launchTemplateName_ = launchTemplateName;
-	setCoreParameter("LaunchTemplateName", launchTemplateName);
+	setParameter("LaunchTemplateName", launchTemplateName);
 }
 
 long DeleteLaunchTemplateVersionRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long DeleteLaunchTemplateVersionRequest::getResourceOwnerId()const
 void DeleteLaunchTemplateVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<long> DeleteLaunchTemplateVersionRequest::getDeleteVersion()const
@@ -58,7 +58,7 @@ void DeleteLaunchTemplateVersionRequest::setDeleteVersion(const std::vector<long
 {
 	deleteVersion_ = deleteVersion;
 	for(int dep1 = 0; dep1!= deleteVersion.size(); dep1++) {
-		setCoreParameter("DeleteVersion."+ std::to_string(dep1), std::to_string(deleteVersion.at(dep1)));
+		setParameter("DeleteVersion."+ std::to_string(dep1), std::to_string(deleteVersion.at(dep1)));
 	}
 }
 
@@ -70,7 +70,7 @@ std::string DeleteLaunchTemplateVersionRequest::getRegionId()const
 void DeleteLaunchTemplateVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteLaunchTemplateVersionRequest::getLaunchTemplateId()const
@@ -81,7 +81,7 @@ std::string DeleteLaunchTemplateVersionRequest::getLaunchTemplateId()const
 void DeleteLaunchTemplateVersionRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setCoreParameter("LaunchTemplateId", launchTemplateId);
+	setParameter("LaunchTemplateId", launchTemplateId);
 }
 
 std::string DeleteLaunchTemplateVersionRequest::getResourceOwnerAccount()const
@@ -92,7 +92,7 @@ std::string DeleteLaunchTemplateVersionRequest::getResourceOwnerAccount()const
 void DeleteLaunchTemplateVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteLaunchTemplateVersionRequest::getOwnerAccount()const
@@ -103,7 +103,7 @@ std::string DeleteLaunchTemplateVersionRequest::getOwnerAccount()const
 void DeleteLaunchTemplateVersionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteLaunchTemplateVersionRequest::getOwnerId()const
@@ -114,6 +114,6 @@ long DeleteLaunchTemplateVersionRequest::getOwnerId()const
 void DeleteLaunchTemplateVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

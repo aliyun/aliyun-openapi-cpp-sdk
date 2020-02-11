@@ -35,7 +35,7 @@ long InvokeCommandRequest::getResourceOwnerId()const
 void InvokeCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string InvokeCommandRequest::getCommandId()const
@@ -46,7 +46,7 @@ std::string InvokeCommandRequest::getCommandId()const
 void InvokeCommandRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", commandId);
+	setParameter("CommandId", commandId);
 }
 
 std::string InvokeCommandRequest::getFrequency()const
@@ -57,7 +57,7 @@ std::string InvokeCommandRequest::getFrequency()const
 void InvokeCommandRequest::setFrequency(const std::string& frequency)
 {
 	frequency_ = frequency;
-	setCoreParameter("Frequency", frequency);
+	setParameter("Frequency", frequency);
 }
 
 std::string InvokeCommandRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string InvokeCommandRequest::getRegionId()const
 void InvokeCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool InvokeCommandRequest::getTimed()const
@@ -79,7 +79,7 @@ bool InvokeCommandRequest::getTimed()const
 void InvokeCommandRequest::setTimed(bool timed)
 {
 	timed_ = timed;
-	setCoreParameter("Timed", timed ? "true" : "false");
+	setParameter("Timed", timed ? "true" : "false");
 }
 
 std::string InvokeCommandRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string InvokeCommandRequest::getResourceOwnerAccount()const
 void InvokeCommandRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string InvokeCommandRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string InvokeCommandRequest::getOwnerAccount()const
 void InvokeCommandRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long InvokeCommandRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long InvokeCommandRequest::getOwnerId()const
 void InvokeCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> InvokeCommandRequest::getInstanceId()const
@@ -124,7 +124,7 @@ void InvokeCommandRequest::setInstanceId(const std::vector<std::string>& instanc
 {
 	instanceId_ = instanceId;
 	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
-		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
 	}
 }
 

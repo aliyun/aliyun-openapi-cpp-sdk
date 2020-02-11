@@ -35,7 +35,7 @@ long DescribeSnapshotsRequest::getResourceOwnerId()const
 void DescribeSnapshotsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSnapshotsRequest::getFilter2Value()const
@@ -46,7 +46,7 @@ std::string DescribeSnapshotsRequest::getFilter2Value()const
 void DescribeSnapshotsRequest::setFilter2Value(const std::string& filter2Value)
 {
 	filter2Value_ = filter2Value;
-	setCoreParameter("Filter2Value", filter2Value);
+	setParameter("Filter2Value", filter2Value);
 }
 
 std::string DescribeSnapshotsRequest::getSnapshotIds()const
@@ -57,7 +57,7 @@ std::string DescribeSnapshotsRequest::getSnapshotIds()const
 void DescribeSnapshotsRequest::setSnapshotIds(const std::string& snapshotIds)
 {
 	snapshotIds_ = snapshotIds;
-	setCoreParameter("SnapshotIds", snapshotIds);
+	setParameter("SnapshotIds", snapshotIds);
 }
 
 std::string DescribeSnapshotsRequest::getUsage()const
@@ -68,7 +68,7 @@ std::string DescribeSnapshotsRequest::getUsage()const
 void DescribeSnapshotsRequest::setUsage(const std::string& usage)
 {
 	usage_ = usage;
-	setCoreParameter("Usage", usage);
+	setParameter("Usage", usage);
 }
 
 std::string DescribeSnapshotsRequest::getSnapshotLinkId()const
@@ -79,7 +79,7 @@ std::string DescribeSnapshotsRequest::getSnapshotLinkId()const
 void DescribeSnapshotsRequest::setSnapshotLinkId(const std::string& snapshotLinkId)
 {
 	snapshotLinkId_ = snapshotLinkId;
-	setCoreParameter("SnapshotLinkId", snapshotLinkId);
+	setParameter("SnapshotLinkId", snapshotLinkId);
 }
 
 std::string DescribeSnapshotsRequest::getSnapshotName()const
@@ -90,7 +90,7 @@ std::string DescribeSnapshotsRequest::getSnapshotName()const
 void DescribeSnapshotsRequest::setSnapshotName(const std::string& snapshotName)
 {
 	snapshotName_ = snapshotName;
-	setCoreParameter("SnapshotName", snapshotName);
+	setParameter("SnapshotName", snapshotName);
 }
 
 int DescribeSnapshotsRequest::getPageNumber()const
@@ -101,7 +101,7 @@ int DescribeSnapshotsRequest::getPageNumber()const
 void DescribeSnapshotsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSnapshotsRequest::getResourceGroupId()const
@@ -112,7 +112,7 @@ std::string DescribeSnapshotsRequest::getResourceGroupId()const
 void DescribeSnapshotsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeSnapshotsRequest::getFilter1Key()const
@@ -123,7 +123,7 @@ std::string DescribeSnapshotsRequest::getFilter1Key()const
 void DescribeSnapshotsRequest::setFilter1Key(const std::string& filter1Key)
 {
 	filter1Key_ = filter1Key;
-	setCoreParameter("Filter1Key", filter1Key);
+	setParameter("Filter1Key", filter1Key);
 }
 
 std::string DescribeSnapshotsRequest::getRegionId()const
@@ -134,7 +134,7 @@ std::string DescribeSnapshotsRequest::getRegionId()const
 void DescribeSnapshotsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeSnapshotsRequest::getPageSize()const
@@ -145,7 +145,7 @@ int DescribeSnapshotsRequest::getPageSize()const
 void DescribeSnapshotsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSnapshotsRequest::getDiskId()const
@@ -156,7 +156,7 @@ std::string DescribeSnapshotsRequest::getDiskId()const
 void DescribeSnapshotsRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
+	setParameter("DiskId", diskId);
 }
 
 std::vector<DescribeSnapshotsRequest::Tag> DescribeSnapshotsRequest::getTag()const
@@ -169,9 +169,9 @@ void DescribeSnapshotsRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -183,7 +183,7 @@ bool DescribeSnapshotsRequest::getDryRun()const
 void DescribeSnapshotsRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeSnapshotsRequest::getResourceOwnerAccount()const
@@ -194,7 +194,7 @@ std::string DescribeSnapshotsRequest::getResourceOwnerAccount()const
 void DescribeSnapshotsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSnapshotsRequest::getOwnerAccount()const
@@ -205,7 +205,7 @@ std::string DescribeSnapshotsRequest::getOwnerAccount()const
 void DescribeSnapshotsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeSnapshotsRequest::getSourceDiskType()const
@@ -216,7 +216,7 @@ std::string DescribeSnapshotsRequest::getSourceDiskType()const
 void DescribeSnapshotsRequest::setSourceDiskType(const std::string& sourceDiskType)
 {
 	sourceDiskType_ = sourceDiskType;
-	setCoreParameter("SourceDiskType", sourceDiskType);
+	setParameter("SourceDiskType", sourceDiskType);
 }
 
 std::string DescribeSnapshotsRequest::getFilter1Value()const
@@ -227,7 +227,7 @@ std::string DescribeSnapshotsRequest::getFilter1Value()const
 void DescribeSnapshotsRequest::setFilter1Value(const std::string& filter1Value)
 {
 	filter1Value_ = filter1Value;
-	setCoreParameter("Filter1Value", filter1Value);
+	setParameter("Filter1Value", filter1Value);
 }
 
 std::string DescribeSnapshotsRequest::getFilter2Key()const
@@ -238,7 +238,7 @@ std::string DescribeSnapshotsRequest::getFilter2Key()const
 void DescribeSnapshotsRequest::setFilter2Key(const std::string& filter2Key)
 {
 	filter2Key_ = filter2Key;
-	setCoreParameter("Filter2Key", filter2Key);
+	setParameter("Filter2Key", filter2Key);
 }
 
 long DescribeSnapshotsRequest::getOwnerId()const
@@ -249,7 +249,7 @@ long DescribeSnapshotsRequest::getOwnerId()const
 void DescribeSnapshotsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSnapshotsRequest::getInstanceId()const
@@ -260,7 +260,7 @@ std::string DescribeSnapshotsRequest::getInstanceId()const
 void DescribeSnapshotsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 bool DescribeSnapshotsRequest::getEncrypted()const
@@ -271,7 +271,7 @@ bool DescribeSnapshotsRequest::getEncrypted()const
 void DescribeSnapshotsRequest::setEncrypted(bool encrypted)
 {
 	encrypted_ = encrypted;
-	setCoreParameter("Encrypted", encrypted ? "true" : "false");
+	setParameter("Encrypted", encrypted ? "true" : "false");
 }
 
 std::string DescribeSnapshotsRequest::getSnapshotType()const
@@ -282,7 +282,7 @@ std::string DescribeSnapshotsRequest::getSnapshotType()const
 void DescribeSnapshotsRequest::setSnapshotType(const std::string& snapshotType)
 {
 	snapshotType_ = snapshotType;
-	setCoreParameter("SnapshotType", snapshotType);
+	setParameter("SnapshotType", snapshotType);
 }
 
 std::string DescribeSnapshotsRequest::getKMSKeyId()const
@@ -293,7 +293,7 @@ std::string DescribeSnapshotsRequest::getKMSKeyId()const
 void DescribeSnapshotsRequest::setKMSKeyId(const std::string& kMSKeyId)
 {
 	kMSKeyId_ = kMSKeyId;
-	setCoreParameter("KMSKeyId", kMSKeyId);
+	setParameter("KMSKeyId", kMSKeyId);
 }
 
 std::string DescribeSnapshotsRequest::getStatus()const
@@ -304,6 +304,6 @@ std::string DescribeSnapshotsRequest::getStatus()const
 void DescribeSnapshotsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

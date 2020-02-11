@@ -35,7 +35,7 @@ long ImportSnapshotRequest::getResourceOwnerId()const
 void ImportSnapshotRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ImportSnapshotRequest::getSnapshotName()const
@@ -46,7 +46,7 @@ std::string ImportSnapshotRequest::getSnapshotName()const
 void ImportSnapshotRequest::setSnapshotName(const std::string& snapshotName)
 {
 	snapshotName_ = snapshotName;
-	setCoreParameter("SnapshotName", snapshotName);
+	setParameter("SnapshotName", snapshotName);
 }
 
 std::string ImportSnapshotRequest::getOssObject()const
@@ -57,7 +57,7 @@ std::string ImportSnapshotRequest::getOssObject()const
 void ImportSnapshotRequest::setOssObject(const std::string& ossObject)
 {
 	ossObject_ = ossObject;
-	setCoreParameter("OssObject", ossObject);
+	setParameter("OssObject", ossObject);
 }
 
 std::string ImportSnapshotRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string ImportSnapshotRequest::getRegionId()const
 void ImportSnapshotRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ImportSnapshotRequest::getOssBucket()const
@@ -79,7 +79,7 @@ std::string ImportSnapshotRequest::getOssBucket()const
 void ImportSnapshotRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", ossBucket);
+	setParameter("OssBucket", ossBucket);
 }
 
 std::string ImportSnapshotRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ImportSnapshotRequest::getResourceOwnerAccount()const
 void ImportSnapshotRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ImportSnapshotRequest::getRoleName()const
@@ -101,7 +101,7 @@ std::string ImportSnapshotRequest::getRoleName()const
 void ImportSnapshotRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
+	setParameter("RoleName", roleName);
 }
 
 long ImportSnapshotRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long ImportSnapshotRequest::getOwnerId()const
 void ImportSnapshotRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,7 +35,7 @@ long DeleteNetworkInterfacePermissionRequest::getResourceOwnerId()const
 void DeleteNetworkInterfacePermissionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteNetworkInterfacePermissionRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string DeleteNetworkInterfacePermissionRequest::getRegionId()const
 void DeleteNetworkInterfacePermissionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteNetworkInterfacePermissionRequest::getNetworkInterfacePermissionId()const
@@ -57,7 +57,7 @@ std::string DeleteNetworkInterfacePermissionRequest::getNetworkInterfacePermissi
 void DeleteNetworkInterfacePermissionRequest::setNetworkInterfacePermissionId(const std::string& networkInterfacePermissionId)
 {
 	networkInterfacePermissionId_ = networkInterfacePermissionId;
-	setCoreParameter("NetworkInterfacePermissionId", networkInterfacePermissionId);
+	setParameter("NetworkInterfacePermissionId", networkInterfacePermissionId);
 }
 
 std::string DeleteNetworkInterfacePermissionRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DeleteNetworkInterfacePermissionRequest::getResourceOwnerAccount()co
 void DeleteNetworkInterfacePermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteNetworkInterfacePermissionRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteNetworkInterfacePermissionRequest::getOwnerAccount()const
 void DeleteNetworkInterfacePermissionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteNetworkInterfacePermissionRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DeleteNetworkInterfacePermissionRequest::getOwnerId()const
 void DeleteNetworkInterfacePermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DeleteNetworkInterfacePermissionRequest::getForce()const
@@ -101,6 +101,6 @@ bool DeleteNetworkInterfacePermissionRequest::getForce()const
 void DeleteNetworkInterfacePermissionRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setParameter("Force", force ? "true" : "false");
 }
 

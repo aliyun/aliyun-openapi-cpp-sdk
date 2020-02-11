@@ -35,7 +35,7 @@ long PurchaseReservedInstancesOfferingRequest::getResourceOwnerId()const
 void PurchaseReservedInstancesOfferingRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getClientToken()const
 void PurchaseReservedInstancesOfferingRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getDescription()const
 void PurchaseReservedInstancesOfferingRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getPlatform()const
@@ -68,7 +68,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getPlatform()const
 void PurchaseReservedInstancesOfferingRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
-	setCoreParameter("Platform", platform);
+	setParameter("Platform", platform);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getResourceGroupId()const
@@ -79,7 +79,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getResourceGroupId()const
 void PurchaseReservedInstancesOfferingRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getRegionId()const
@@ -90,7 +90,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getRegionId()const
 void PurchaseReservedInstancesOfferingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getScope()const
@@ -101,7 +101,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getScope()const
 void PurchaseReservedInstancesOfferingRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", scope);
+	setParameter("Scope", scope);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getInstanceType()const
@@ -112,7 +112,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getInstanceType()const
 void PurchaseReservedInstancesOfferingRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 int PurchaseReservedInstancesOfferingRequest::getPeriod()const
@@ -123,7 +123,7 @@ int PurchaseReservedInstancesOfferingRequest::getPeriod()const
 void PurchaseReservedInstancesOfferingRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getResourceOwnerAccount()const
@@ -134,7 +134,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getResourceOwnerAccount()c
 void PurchaseReservedInstancesOfferingRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getOwnerAccount()const
@@ -145,7 +145,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getOwnerAccount()const
 void PurchaseReservedInstancesOfferingRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long PurchaseReservedInstancesOfferingRequest::getOwnerId()const
@@ -156,7 +156,7 @@ long PurchaseReservedInstancesOfferingRequest::getOwnerId()const
 void PurchaseReservedInstancesOfferingRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getPeriodUnit()const
@@ -167,7 +167,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getPeriodUnit()const
 void PurchaseReservedInstancesOfferingRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
+	setParameter("PeriodUnit", periodUnit);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getOfferingType()const
@@ -178,7 +178,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getOfferingType()const
 void PurchaseReservedInstancesOfferingRequest::setOfferingType(const std::string& offeringType)
 {
 	offeringType_ = offeringType;
-	setCoreParameter("OfferingType", offeringType);
+	setParameter("OfferingType", offeringType);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getZoneId()const
@@ -189,7 +189,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getZoneId()const
 void PurchaseReservedInstancesOfferingRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getReservedInstanceName()const
@@ -200,7 +200,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getReservedInstanceName()c
 void PurchaseReservedInstancesOfferingRequest::setReservedInstanceName(const std::string& reservedInstanceName)
 {
 	reservedInstanceName_ = reservedInstanceName;
-	setCoreParameter("ReservedInstanceName", reservedInstanceName);
+	setParameter("ReservedInstanceName", reservedInstanceName);
 }
 
 int PurchaseReservedInstancesOfferingRequest::getInstanceAmount()const
@@ -211,6 +211,6 @@ int PurchaseReservedInstancesOfferingRequest::getInstanceAmount()const
 void PurchaseReservedInstancesOfferingRequest::setInstanceAmount(int instanceAmount)
 {
 	instanceAmount_ = instanceAmount;
-	setCoreParameter("InstanceAmount", std::to_string(instanceAmount));
+	setParameter("InstanceAmount", std::to_string(instanceAmount));
 }
 

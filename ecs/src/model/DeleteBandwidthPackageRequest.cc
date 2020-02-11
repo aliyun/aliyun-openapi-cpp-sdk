@@ -35,7 +35,7 @@ long DeleteBandwidthPackageRequest::getResourceOwnerId()const
 void DeleteBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteBandwidthPackageRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string DeleteBandwidthPackageRequest::getRegionId()const
 void DeleteBandwidthPackageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteBandwidthPackageRequest::getBandwidthPackageId()const
@@ -57,7 +57,7 @@ std::string DeleteBandwidthPackageRequest::getBandwidthPackageId()const
 void DeleteBandwidthPackageRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setParameter("BandwidthPackageId", bandwidthPackageId);
 }
 
 std::string DeleteBandwidthPackageRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DeleteBandwidthPackageRequest::getResourceOwnerAccount()const
 void DeleteBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteBandwidthPackageRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteBandwidthPackageRequest::getOwnerAccount()const
 void DeleteBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteBandwidthPackageRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DeleteBandwidthPackageRequest::getOwnerId()const
 void DeleteBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

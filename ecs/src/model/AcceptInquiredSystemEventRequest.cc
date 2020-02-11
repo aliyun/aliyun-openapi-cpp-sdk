@@ -35,7 +35,7 @@ std::string AcceptInquiredSystemEventRequest::getEventId()const
 void AcceptInquiredSystemEventRequest::setEventId(const std::string& eventId)
 {
 	eventId_ = eventId;
-	setCoreParameter("EventId", eventId);
+	setParameter("EventId", eventId);
 }
 
 long AcceptInquiredSystemEventRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long AcceptInquiredSystemEventRequest::getResourceOwnerId()const
 void AcceptInquiredSystemEventRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AcceptInquiredSystemEventRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string AcceptInquiredSystemEventRequest::getRegionId()const
 void AcceptInquiredSystemEventRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AcceptInquiredSystemEventRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string AcceptInquiredSystemEventRequest::getResourceOwnerAccount()const
 void AcceptInquiredSystemEventRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AcceptInquiredSystemEventRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string AcceptInquiredSystemEventRequest::getOwnerAccount()const
 void AcceptInquiredSystemEventRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AcceptInquiredSystemEventRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long AcceptInquiredSystemEventRequest::getOwnerId()const
 void AcceptInquiredSystemEventRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

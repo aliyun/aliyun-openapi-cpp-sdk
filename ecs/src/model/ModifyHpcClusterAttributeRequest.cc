@@ -35,7 +35,7 @@ long ModifyHpcClusterAttributeRequest::getResourceOwnerId()const
 void ModifyHpcClusterAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getHpcClusterId()const
@@ -46,7 +46,7 @@ std::string ModifyHpcClusterAttributeRequest::getHpcClusterId()const
 void ModifyHpcClusterAttributeRequest::setHpcClusterId(const std::string& hpcClusterId)
 {
 	hpcClusterId_ = hpcClusterId;
-	setCoreParameter("HpcClusterId", hpcClusterId);
+	setParameter("HpcClusterId", hpcClusterId);
 }
 
 std::string ModifyHpcClusterAttributeRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string ModifyHpcClusterAttributeRequest::getClientToken()const
 void ModifyHpcClusterAttributeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyHpcClusterAttributeRequest::getDescription()const
@@ -68,7 +68,7 @@ std::string ModifyHpcClusterAttributeRequest::getDescription()const
 void ModifyHpcClusterAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyHpcClusterAttributeRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string ModifyHpcClusterAttributeRequest::getRegionId()const
 void ModifyHpcClusterAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyHpcClusterAttributeRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyHpcClusterAttributeRequest::getResourceOwnerAccount()const
 void ModifyHpcClusterAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyHpcClusterAttributeRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyHpcClusterAttributeRequest::getOwnerAccount()const
 void ModifyHpcClusterAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyHpcClusterAttributeRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long ModifyHpcClusterAttributeRequest::getOwnerId()const
 void ModifyHpcClusterAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getName()const
@@ -123,6 +123,6 @@ std::string ModifyHpcClusterAttributeRequest::getName()const
 void ModifyHpcClusterAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

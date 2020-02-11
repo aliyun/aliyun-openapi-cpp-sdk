@@ -35,7 +35,7 @@ long DeletePhysicalConnectionRequest::getResourceOwnerId()const
 void DeletePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeletePhysicalConnectionRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string DeletePhysicalConnectionRequest::getClientToken()const
 void DeletePhysicalConnectionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeletePhysicalConnectionRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DeletePhysicalConnectionRequest::getRegionId()const
 void DeletePhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeletePhysicalConnectionRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DeletePhysicalConnectionRequest::getResourceOwnerAccount()const
 void DeletePhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeletePhysicalConnectionRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeletePhysicalConnectionRequest::getOwnerAccount()const
 void DeletePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeletePhysicalConnectionRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DeletePhysicalConnectionRequest::getOwnerId()const
 void DeletePhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeletePhysicalConnectionRequest::getPhysicalConnectionId()const
@@ -101,6 +101,6 @@ std::string DeletePhysicalConnectionRequest::getPhysicalConnectionId()const
 void DeletePhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
+	setParameter("PhysicalConnectionId", physicalConnectionId);
 }
 

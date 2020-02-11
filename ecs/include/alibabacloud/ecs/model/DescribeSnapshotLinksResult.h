@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string instanceName;
 					int totalCount;
+					std::string category;
 					int sourceDiskSize;
 					std::string instanceId;
 					std::string snapshotLinkId;

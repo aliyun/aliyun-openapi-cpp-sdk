@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT DescribeLaunchTemplatesRequest : public RpcServiceRequest
 			{
+			public:
 				struct TemplateTag
 				{
 					std::string key;

@@ -35,7 +35,7 @@ long DescribeSpotPriceHistoryRequest::getResourceOwnerId()const
 void DescribeSpotPriceHistoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSpotPriceHistoryRequest::getIoOptimized()const
@@ -46,7 +46,7 @@ std::string DescribeSpotPriceHistoryRequest::getIoOptimized()const
 void DescribeSpotPriceHistoryRequest::setIoOptimized(const std::string& ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized);
+	setParameter("IoOptimized", ioOptimized);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getNetworkType()const
@@ -57,7 +57,7 @@ std::string DescribeSpotPriceHistoryRequest::getNetworkType()const
 void DescribeSpotPriceHistoryRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setParameter("NetworkType", networkType);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getStartTime()const
@@ -68,7 +68,7 @@ std::string DescribeSpotPriceHistoryRequest::getStartTime()const
 void DescribeSpotPriceHistoryRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string DescribeSpotPriceHistoryRequest::getRegionId()const
 void DescribeSpotPriceHistoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getInstanceType()const
@@ -90,7 +90,7 @@ std::string DescribeSpotPriceHistoryRequest::getInstanceType()const
 void DescribeSpotPriceHistoryRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 int DescribeSpotPriceHistoryRequest::getOffset()const
@@ -101,7 +101,7 @@ int DescribeSpotPriceHistoryRequest::getOffset()const
 void DescribeSpotPriceHistoryRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", std::to_string(offset));
+	setParameter("Offset", std::to_string(offset));
 }
 
 std::string DescribeSpotPriceHistoryRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribeSpotPriceHistoryRequest::getResourceOwnerAccount()const
 void DescribeSpotPriceHistoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string DescribeSpotPriceHistoryRequest::getOwnerAccount()const
 void DescribeSpotPriceHistoryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getEndTime()const
@@ -134,7 +134,7 @@ std::string DescribeSpotPriceHistoryRequest::getEndTime()const
 void DescribeSpotPriceHistoryRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getOSType()const
@@ -145,7 +145,7 @@ std::string DescribeSpotPriceHistoryRequest::getOSType()const
 void DescribeSpotPriceHistoryRequest::setOSType(const std::string& oSType)
 {
 	oSType_ = oSType;
-	setCoreParameter("OSType", oSType);
+	setParameter("OSType", oSType);
 }
 
 long DescribeSpotPriceHistoryRequest::getOwnerId()const
@@ -156,7 +156,7 @@ long DescribeSpotPriceHistoryRequest::getOwnerId()const
 void DescribeSpotPriceHistoryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeSpotPriceHistoryRequest::getSpotDuration()const
@@ -167,7 +167,7 @@ int DescribeSpotPriceHistoryRequest::getSpotDuration()const
 void DescribeSpotPriceHistoryRequest::setSpotDuration(int spotDuration)
 {
 	spotDuration_ = spotDuration;
-	setCoreParameter("SpotDuration", std::to_string(spotDuration));
+	setParameter("SpotDuration", std::to_string(spotDuration));
 }
 
 std::string DescribeSpotPriceHistoryRequest::getZoneId()const
@@ -178,6 +178,6 @@ std::string DescribeSpotPriceHistoryRequest::getZoneId()const
 void DescribeSpotPriceHistoryRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

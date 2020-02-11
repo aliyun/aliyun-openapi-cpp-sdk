@@ -35,7 +35,7 @@ long RedeployInstanceRequest::getResourceOwnerId()const
 void RedeployInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool RedeployInstanceRequest::getForceStop()const
@@ -46,7 +46,7 @@ bool RedeployInstanceRequest::getForceStop()const
 void RedeployInstanceRequest::setForceStop(bool forceStop)
 {
 	forceStop_ = forceStop;
-	setCoreParameter("ForceStop", forceStop ? "true" : "false");
+	setParameter("ForceStop", forceStop ? "true" : "false");
 }
 
 std::string RedeployInstanceRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string RedeployInstanceRequest::getResourceOwnerAccount()const
 void RedeployInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RedeployInstanceRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string RedeployInstanceRequest::getOwnerAccount()const
 void RedeployInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RedeployInstanceRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long RedeployInstanceRequest::getOwnerId()const
 void RedeployInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RedeployInstanceRequest::getInstanceId()const
@@ -90,6 +90,6 @@ std::string RedeployInstanceRequest::getInstanceId()const
 void RedeployInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

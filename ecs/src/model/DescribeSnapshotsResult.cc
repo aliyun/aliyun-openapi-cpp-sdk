@@ -81,6 +81,8 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.resourceGroupId = valueSnapshotsSnapshot["ResourceGroupId"].asString();
 		if(!valueSnapshotsSnapshot["KMSKeyId"].isNull())
 			snapshotsObject.kMSKeyId = valueSnapshotsSnapshot["KMSKeyId"].asString();
+		if(!valueSnapshotsSnapshot["Category"].isNull())
+			snapshotsObject.category = valueSnapshotsSnapshot["Category"].asString();
 		auto allTagsNode = allSnapshotsNode["Tags"]["Tag"];
 		for (auto allSnapshotsNodeTagsTag : allTagsNode)
 		{

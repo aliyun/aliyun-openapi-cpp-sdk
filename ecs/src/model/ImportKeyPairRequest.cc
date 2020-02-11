@@ -35,7 +35,7 @@ long ImportKeyPairRequest::getResourceOwnerId()const
 void ImportKeyPairRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ImportKeyPairRequest::getKeyPairName()const
@@ -46,7 +46,7 @@ std::string ImportKeyPairRequest::getKeyPairName()const
 void ImportKeyPairRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setParameter("KeyPairName", keyPairName);
 }
 
 std::string ImportKeyPairRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string ImportKeyPairRequest::getRegionId()const
 void ImportKeyPairRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ImportKeyPairRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string ImportKeyPairRequest::getResourceOwnerAccount()const
 void ImportKeyPairRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ImportKeyPairRequest::getPublicKeyBody()const
@@ -79,7 +79,7 @@ std::string ImportKeyPairRequest::getPublicKeyBody()const
 void ImportKeyPairRequest::setPublicKeyBody(const std::string& publicKeyBody)
 {
 	publicKeyBody_ = publicKeyBody;
-	setCoreParameter("PublicKeyBody", publicKeyBody);
+	setParameter("PublicKeyBody", publicKeyBody);
 }
 
 long ImportKeyPairRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long ImportKeyPairRequest::getOwnerId()const
 void ImportKeyPairRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,7 +35,7 @@ long ModifyUserBusinessBehaviorRequest::getResourceOwnerId()const
 void ModifyUserBusinessBehaviorRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyUserBusinessBehaviorRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string ModifyUserBusinessBehaviorRequest::getRegionId()const
 void ModifyUserBusinessBehaviorRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyUserBusinessBehaviorRequest::getStatusValue()const
@@ -57,7 +57,7 @@ std::string ModifyUserBusinessBehaviorRequest::getStatusValue()const
 void ModifyUserBusinessBehaviorRequest::setStatusValue(const std::string& statusValue)
 {
 	statusValue_ = statusValue;
-	setCoreParameter("StatusValue", statusValue);
+	setParameter("StatusValue", statusValue);
 }
 
 std::string ModifyUserBusinessBehaviorRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string ModifyUserBusinessBehaviorRequest::getResourceOwnerAccount()const
 void ModifyUserBusinessBehaviorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyUserBusinessBehaviorRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyUserBusinessBehaviorRequest::getOwnerAccount()const
 void ModifyUserBusinessBehaviorRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyUserBusinessBehaviorRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long ModifyUserBusinessBehaviorRequest::getOwnerId()const
 void ModifyUserBusinessBehaviorRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyUserBusinessBehaviorRequest::getStatusKey()const
@@ -101,6 +101,6 @@ std::string ModifyUserBusinessBehaviorRequest::getStatusKey()const
 void ModifyUserBusinessBehaviorRequest::setStatusKey(const std::string& statusKey)
 {
 	statusKey_ = statusKey;
-	setCoreParameter("StatusKey", statusKey);
+	setParameter("StatusKey", statusKey);
 }
 

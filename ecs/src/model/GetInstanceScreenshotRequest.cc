@@ -35,7 +35,7 @@ long GetInstanceScreenshotRequest::getResourceOwnerId()const
 void GetInstanceScreenshotRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetInstanceScreenshotRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string GetInstanceScreenshotRequest::getRegionId()const
 void GetInstanceScreenshotRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string GetInstanceScreenshotRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string GetInstanceScreenshotRequest::getResourceOwnerAccount()const
 void GetInstanceScreenshotRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 bool GetInstanceScreenshotRequest::getWakeUp()const
@@ -68,7 +68,7 @@ bool GetInstanceScreenshotRequest::getWakeUp()const
 void GetInstanceScreenshotRequest::setWakeUp(bool wakeUp)
 {
 	wakeUp_ = wakeUp;
-	setCoreParameter("WakeUp", wakeUp ? "true" : "false");
+	setParameter("WakeUp", wakeUp ? "true" : "false");
 }
 
 std::string GetInstanceScreenshotRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string GetInstanceScreenshotRequest::getOwnerAccount()const
 void GetInstanceScreenshotRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long GetInstanceScreenshotRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long GetInstanceScreenshotRequest::getOwnerId()const
 void GetInstanceScreenshotRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetInstanceScreenshotRequest::getInstanceId()const
@@ -101,6 +101,6 @@ std::string GetInstanceScreenshotRequest::getInstanceId()const
 void GetInstanceScreenshotRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

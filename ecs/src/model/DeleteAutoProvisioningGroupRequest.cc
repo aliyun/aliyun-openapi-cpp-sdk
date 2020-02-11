@@ -35,7 +35,7 @@ long DeleteAutoProvisioningGroupRequest::getResourceOwnerId()const
 void DeleteAutoProvisioningGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteAutoProvisioningGroupRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string DeleteAutoProvisioningGroupRequest::getRegionId()const
 void DeleteAutoProvisioningGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool DeleteAutoProvisioningGroupRequest::getTerminateInstances()const
@@ -57,7 +57,7 @@ bool DeleteAutoProvisioningGroupRequest::getTerminateInstances()const
 void DeleteAutoProvisioningGroupRequest::setTerminateInstances(bool terminateInstances)
 {
 	terminateInstances_ = terminateInstances;
-	setCoreParameter("TerminateInstances", terminateInstances ? "true" : "false");
+	setParameter("TerminateInstances", terminateInstances ? "true" : "false");
 }
 
 std::string DeleteAutoProvisioningGroupRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DeleteAutoProvisioningGroupRequest::getResourceOwnerAccount()const
 void DeleteAutoProvisioningGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteAutoProvisioningGroupRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteAutoProvisioningGroupRequest::getOwnerAccount()const
 void DeleteAutoProvisioningGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteAutoProvisioningGroupRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DeleteAutoProvisioningGroupRequest::getOwnerId()const
 void DeleteAutoProvisioningGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteAutoProvisioningGroupRequest::getAutoProvisioningGroupId()const
@@ -101,6 +101,6 @@ std::string DeleteAutoProvisioningGroupRequest::getAutoProvisioningGroupId()cons
 void DeleteAutoProvisioningGroupRequest::setAutoProvisioningGroupId(const std::string& autoProvisioningGroupId)
 {
 	autoProvisioningGroupId_ = autoProvisioningGroupId;
-	setCoreParameter("AutoProvisioningGroupId", autoProvisioningGroupId);
+	setParameter("AutoProvisioningGroupId", autoProvisioningGroupId);
 }
 

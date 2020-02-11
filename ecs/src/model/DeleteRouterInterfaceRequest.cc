@@ -35,7 +35,7 @@ long DeleteRouterInterfaceRequest::getResourceOwnerId()const
 void DeleteRouterInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteRouterInterfaceRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string DeleteRouterInterfaceRequest::getClientToken()const
 void DeleteRouterInterfaceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteRouterInterfaceRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DeleteRouterInterfaceRequest::getRegionId()const
 void DeleteRouterInterfaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteRouterInterfaceRequest::getUserCidr()const
@@ -68,7 +68,7 @@ std::string DeleteRouterInterfaceRequest::getUserCidr()const
 void DeleteRouterInterfaceRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setParameter("UserCidr", userCidr);
 }
 
 std::string DeleteRouterInterfaceRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteRouterInterfaceRequest::getResourceOwnerAccount()const
 void DeleteRouterInterfaceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteRouterInterfaceRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DeleteRouterInterfaceRequest::getOwnerAccount()const
 void DeleteRouterInterfaceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteRouterInterfaceRequest::getRouterInterfaceId()const
@@ -101,7 +101,7 @@ std::string DeleteRouterInterfaceRequest::getRouterInterfaceId()const
 void DeleteRouterInterfaceRequest::setRouterInterfaceId(const std::string& routerInterfaceId)
 {
 	routerInterfaceId_ = routerInterfaceId;
-	setCoreParameter("RouterInterfaceId", routerInterfaceId);
+	setParameter("RouterInterfaceId", routerInterfaceId);
 }
 
 long DeleteRouterInterfaceRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DeleteRouterInterfaceRequest::getOwnerId()const
 void DeleteRouterInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

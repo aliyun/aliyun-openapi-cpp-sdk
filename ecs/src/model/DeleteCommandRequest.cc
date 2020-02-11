@@ -35,7 +35,7 @@ long DeleteCommandRequest::getResourceOwnerId()const
 void DeleteCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCommandRequest::getCommandId()const
@@ -46,7 +46,7 @@ std::string DeleteCommandRequest::getCommandId()const
 void DeleteCommandRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", commandId);
+	setParameter("CommandId", commandId);
 }
 
 std::string DeleteCommandRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DeleteCommandRequest::getRegionId()const
 void DeleteCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteCommandRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DeleteCommandRequest::getResourceOwnerAccount()const
 void DeleteCommandRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCommandRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteCommandRequest::getOwnerAccount()const
 void DeleteCommandRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteCommandRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DeleteCommandRequest::getOwnerId()const
 void DeleteCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

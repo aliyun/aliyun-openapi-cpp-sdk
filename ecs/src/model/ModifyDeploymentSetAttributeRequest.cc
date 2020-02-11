@@ -35,7 +35,7 @@ long ModifyDeploymentSetAttributeRequest::getResourceOwnerId()const
 void ModifyDeploymentSetAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getDescription()const
@@ -46,7 +46,7 @@ std::string ModifyDeploymentSetAttributeRequest::getDescription()const
 void ModifyDeploymentSetAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string ModifyDeploymentSetAttributeRequest::getRegionId()const
 void ModifyDeploymentSetAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getDeploymentSetId()const
@@ -68,7 +68,7 @@ std::string ModifyDeploymentSetAttributeRequest::getDeploymentSetId()const
 void ModifyDeploymentSetAttributeRequest::setDeploymentSetId(const std::string& deploymentSetId)
 {
 	deploymentSetId_ = deploymentSetId;
-	setCoreParameter("DeploymentSetId", deploymentSetId);
+	setParameter("DeploymentSetId", deploymentSetId);
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyDeploymentSetAttributeRequest::getResourceOwnerAccount()const
 void ModifyDeploymentSetAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyDeploymentSetAttributeRequest::getOwnerAccount()const
 void ModifyDeploymentSetAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getDeploymentSetName()const
@@ -101,7 +101,7 @@ std::string ModifyDeploymentSetAttributeRequest::getDeploymentSetName()const
 void ModifyDeploymentSetAttributeRequest::setDeploymentSetName(const std::string& deploymentSetName)
 {
 	deploymentSetName_ = deploymentSetName;
-	setCoreParameter("DeploymentSetName", deploymentSetName);
+	setParameter("DeploymentSetName", deploymentSetName);
 }
 
 long ModifyDeploymentSetAttributeRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long ModifyDeploymentSetAttributeRequest::getOwnerId()const
 void ModifyDeploymentSetAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

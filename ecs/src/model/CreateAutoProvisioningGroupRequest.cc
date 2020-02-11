@@ -35,7 +35,7 @@ long CreateAutoProvisioningGroupRequest::getResourceOwnerId()const
 void CreateAutoProvisioningGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getAutoProvisioningGroupType()const
@@ -46,7 +46,7 @@ std::string CreateAutoProvisioningGroupRequest::getAutoProvisioningGroupType()co
 void CreateAutoProvisioningGroupRequest::setAutoProvisioningGroupType(const std::string& autoProvisioningGroupType)
 {
 	autoProvisioningGroupType_ = autoProvisioningGroupType;
-	setCoreParameter("AutoProvisioningGroupType", autoProvisioningGroupType);
+	setParameter("AutoProvisioningGroupType", autoProvisioningGroupType);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string CreateAutoProvisioningGroupRequest::getDescription()const
 void CreateAutoProvisioningGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 bool CreateAutoProvisioningGroupRequest::getTerminateInstancesWithExpiration()const
@@ -68,7 +68,7 @@ bool CreateAutoProvisioningGroupRequest::getTerminateInstancesWithExpiration()co
 void CreateAutoProvisioningGroupRequest::setTerminateInstancesWithExpiration(bool terminateInstancesWithExpiration)
 {
 	terminateInstancesWithExpiration_ = terminateInstancesWithExpiration;
-	setCoreParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration ? "true" : "false");
+	setParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration ? "true" : "false");
 }
 
 std::string CreateAutoProvisioningGroupRequest::getResourceGroupId()const
@@ -79,7 +79,7 @@ std::string CreateAutoProvisioningGroupRequest::getResourceGroupId()const
 void CreateAutoProvisioningGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getSpotAllocationStrategy()const
@@ -90,7 +90,7 @@ std::string CreateAutoProvisioningGroupRequest::getSpotAllocationStrategy()const
 void CreateAutoProvisioningGroupRequest::setSpotAllocationStrategy(const std::string& spotAllocationStrategy)
 {
 	spotAllocationStrategy_ = spotAllocationStrategy;
-	setCoreParameter("SpotAllocationStrategy", spotAllocationStrategy);
+	setParameter("SpotAllocationStrategy", spotAllocationStrategy);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getRegionId()const
@@ -101,7 +101,7 @@ std::string CreateAutoProvisioningGroupRequest::getRegionId()const
 void CreateAutoProvisioningGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool CreateAutoProvisioningGroupRequest::getTerminateInstances()const
@@ -112,7 +112,7 @@ bool CreateAutoProvisioningGroupRequest::getTerminateInstances()const
 void CreateAutoProvisioningGroupRequest::setTerminateInstances(bool terminateInstances)
 {
 	terminateInstances_ = terminateInstances;
-	setCoreParameter("TerminateInstances", terminateInstances ? "true" : "false");
+	setParameter("TerminateInstances", terminateInstances ? "true" : "false");
 }
 
 std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoAllocationStrategy()const
@@ -123,7 +123,7 @@ std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoAllocationStrategy(
 void CreateAutoProvisioningGroupRequest::setPayAsYouGoAllocationStrategy(const std::string& payAsYouGoAllocationStrategy)
 {
 	payAsYouGoAllocationStrategy_ = payAsYouGoAllocationStrategy;
-	setCoreParameter("PayAsYouGoAllocationStrategy", payAsYouGoAllocationStrategy);
+	setParameter("PayAsYouGoAllocationStrategy", payAsYouGoAllocationStrategy);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getDefaultTargetCapacityType()const
@@ -134,7 +134,7 @@ std::string CreateAutoProvisioningGroupRequest::getDefaultTargetCapacityType()co
 void CreateAutoProvisioningGroupRequest::setDefaultTargetCapacityType(const std::string& defaultTargetCapacityType)
 {
 	defaultTargetCapacityType_ = defaultTargetCapacityType;
-	setCoreParameter("DefaultTargetCapacityType", defaultTargetCapacityType);
+	setParameter("DefaultTargetCapacityType", defaultTargetCapacityType);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getExcessCapacityTerminationPolicy()const
@@ -145,7 +145,7 @@ std::string CreateAutoProvisioningGroupRequest::getExcessCapacityTerminationPoli
 void CreateAutoProvisioningGroupRequest::setExcessCapacityTerminationPolicy(const std::string& excessCapacityTerminationPolicy)
 {
 	excessCapacityTerminationPolicy_ = excessCapacityTerminationPolicy;
-	setCoreParameter("ExcessCapacityTerminationPolicy", excessCapacityTerminationPolicy);
+	setParameter("ExcessCapacityTerminationPolicy", excessCapacityTerminationPolicy);
 }
 
 std::vector<CreateAutoProvisioningGroupRequest::LaunchTemplateConfig> CreateAutoProvisioningGroupRequest::getLaunchTemplateConfig()const
@@ -158,12 +158,12 @@ void CreateAutoProvisioningGroupRequest::setLaunchTemplateConfig(const std::vect
 	launchTemplateConfig_ = launchTemplateConfig;
 	for(int dep1 = 0; dep1!= launchTemplateConfig.size(); dep1++) {
 		auto launchTemplateConfigObj = launchTemplateConfig.at(dep1);
-		std::string launchTemplateConfigObjStr = "LaunchTemplateConfig." + std::to_string(dep1);
-		setCoreParameter(launchTemplateConfigObjStr + ".InstanceType", launchTemplateConfigObj.instanceType);
-		setCoreParameter(launchTemplateConfigObjStr + ".MaxPrice", std::to_string(launchTemplateConfigObj.maxPrice));
-		setCoreParameter(launchTemplateConfigObjStr + ".VSwitchId", launchTemplateConfigObj.vSwitchId);
-		setCoreParameter(launchTemplateConfigObjStr + ".WeightedCapacity", std::to_string(launchTemplateConfigObj.weightedCapacity));
-		setCoreParameter(launchTemplateConfigObjStr + ".Priority", std::to_string(launchTemplateConfigObj.priority));
+		std::string launchTemplateConfigObjStr = "LaunchTemplateConfig." + std::to_string(dep1 + 1);
+		setParameter(launchTemplateConfigObjStr + ".InstanceType", launchTemplateConfigObj.instanceType);
+		setParameter(launchTemplateConfigObjStr + ".MaxPrice", std::to_string(launchTemplateConfigObj.maxPrice));
+		setParameter(launchTemplateConfigObjStr + ".VSwitchId", launchTemplateConfigObj.vSwitchId);
+		setParameter(launchTemplateConfigObjStr + ".WeightedCapacity", std::to_string(launchTemplateConfigObj.weightedCapacity));
+		setParameter(launchTemplateConfigObjStr + ".Priority", std::to_string(launchTemplateConfigObj.priority));
 	}
 }
 
@@ -175,7 +175,7 @@ std::string CreateAutoProvisioningGroupRequest::getValidUntil()const
 void CreateAutoProvisioningGroupRequest::setValidUntil(const std::string& validUntil)
 {
 	validUntil_ = validUntil;
-	setCoreParameter("ValidUntil", validUntil);
+	setParameter("ValidUntil", validUntil);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getSpotInstanceInterruptionBehavior()const
@@ -186,7 +186,7 @@ std::string CreateAutoProvisioningGroupRequest::getSpotInstanceInterruptionBehav
 void CreateAutoProvisioningGroupRequest::setSpotInstanceInterruptionBehavior(const std::string& spotInstanceInterruptionBehavior)
 {
 	spotInstanceInterruptionBehavior_ = spotInstanceInterruptionBehavior;
-	setCoreParameter("SpotInstanceInterruptionBehavior", spotInstanceInterruptionBehavior);
+	setParameter("SpotInstanceInterruptionBehavior", spotInstanceInterruptionBehavior);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getLaunchTemplateId()const
@@ -197,7 +197,7 @@ std::string CreateAutoProvisioningGroupRequest::getLaunchTemplateId()const
 void CreateAutoProvisioningGroupRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setCoreParameter("LaunchTemplateId", launchTemplateId);
+	setParameter("LaunchTemplateId", launchTemplateId);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getResourceOwnerAccount()const
@@ -208,7 +208,7 @@ std::string CreateAutoProvisioningGroupRequest::getResourceOwnerAccount()const
 void CreateAutoProvisioningGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getOwnerAccount()const
@@ -219,7 +219,7 @@ std::string CreateAutoProvisioningGroupRequest::getOwnerAccount()const
 void CreateAutoProvisioningGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 int CreateAutoProvisioningGroupRequest::getSpotInstancePoolsToUseCount()const
@@ -230,7 +230,7 @@ int CreateAutoProvisioningGroupRequest::getSpotInstancePoolsToUseCount()const
 void CreateAutoProvisioningGroupRequest::setSpotInstancePoolsToUseCount(int spotInstancePoolsToUseCount)
 {
 	spotInstancePoolsToUseCount_ = spotInstancePoolsToUseCount;
-	setCoreParameter("SpotInstancePoolsToUseCount", std::to_string(spotInstancePoolsToUseCount));
+	setParameter("SpotInstancePoolsToUseCount", std::to_string(spotInstancePoolsToUseCount));
 }
 
 long CreateAutoProvisioningGroupRequest::getOwnerId()const
@@ -241,7 +241,7 @@ long CreateAutoProvisioningGroupRequest::getOwnerId()const
 void CreateAutoProvisioningGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getLaunchTemplateVersion()const
@@ -252,7 +252,7 @@ std::string CreateAutoProvisioningGroupRequest::getLaunchTemplateVersion()const
 void CreateAutoProvisioningGroupRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
 {
 	launchTemplateVersion_ = launchTemplateVersion;
-	setCoreParameter("LaunchTemplateVersion", launchTemplateVersion);
+	setParameter("LaunchTemplateVersion", launchTemplateVersion);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoTargetCapacity()const
@@ -263,7 +263,7 @@ std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoTargetCapacity()con
 void CreateAutoProvisioningGroupRequest::setPayAsYouGoTargetCapacity(const std::string& payAsYouGoTargetCapacity)
 {
 	payAsYouGoTargetCapacity_ = payAsYouGoTargetCapacity;
-	setCoreParameter("PayAsYouGoTargetCapacity", payAsYouGoTargetCapacity);
+	setParameter("PayAsYouGoTargetCapacity", payAsYouGoTargetCapacity);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getTotalTargetCapacity()const
@@ -274,7 +274,7 @@ std::string CreateAutoProvisioningGroupRequest::getTotalTargetCapacity()const
 void CreateAutoProvisioningGroupRequest::setTotalTargetCapacity(const std::string& totalTargetCapacity)
 {
 	totalTargetCapacity_ = totalTargetCapacity;
-	setCoreParameter("TotalTargetCapacity", totalTargetCapacity);
+	setParameter("TotalTargetCapacity", totalTargetCapacity);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getSpotTargetCapacity()const
@@ -285,7 +285,7 @@ std::string CreateAutoProvisioningGroupRequest::getSpotTargetCapacity()const
 void CreateAutoProvisioningGroupRequest::setSpotTargetCapacity(const std::string& spotTargetCapacity)
 {
 	spotTargetCapacity_ = spotTargetCapacity;
-	setCoreParameter("SpotTargetCapacity", spotTargetCapacity);
+	setParameter("SpotTargetCapacity", spotTargetCapacity);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getValidFrom()const
@@ -296,7 +296,7 @@ std::string CreateAutoProvisioningGroupRequest::getValidFrom()const
 void CreateAutoProvisioningGroupRequest::setValidFrom(const std::string& validFrom)
 {
 	validFrom_ = validFrom;
-	setCoreParameter("ValidFrom", validFrom);
+	setParameter("ValidFrom", validFrom);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getAutoProvisioningGroupName()const
@@ -307,7 +307,7 @@ std::string CreateAutoProvisioningGroupRequest::getAutoProvisioningGroupName()co
 void CreateAutoProvisioningGroupRequest::setAutoProvisioningGroupName(const std::string& autoProvisioningGroupName)
 {
 	autoProvisioningGroupName_ = autoProvisioningGroupName;
-	setCoreParameter("AutoProvisioningGroupName", autoProvisioningGroupName);
+	setParameter("AutoProvisioningGroupName", autoProvisioningGroupName);
 }
 
 float CreateAutoProvisioningGroupRequest::getMaxSpotPrice()const
@@ -318,6 +318,6 @@ float CreateAutoProvisioningGroupRequest::getMaxSpotPrice()const
 void CreateAutoProvisioningGroupRequest::setMaxSpotPrice(float maxSpotPrice)
 {
 	maxSpotPrice_ = maxSpotPrice;
-	setCoreParameter("MaxSpotPrice", std::to_string(maxSpotPrice));
+	setParameter("MaxSpotPrice", std::to_string(maxSpotPrice));
 }
 

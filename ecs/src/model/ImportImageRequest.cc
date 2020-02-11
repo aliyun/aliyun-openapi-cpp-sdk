@@ -37,13 +37,13 @@ void ImportImageRequest::setDiskDeviceMapping(const std::vector<DiskDeviceMappin
 	diskDeviceMapping_ = diskDeviceMapping;
 	for(int dep1 = 0; dep1!= diskDeviceMapping.size(); dep1++) {
 		auto diskDeviceMappingObj = diskDeviceMapping.at(dep1);
-		std::string diskDeviceMappingObjStr = "DiskDeviceMapping." + std::to_string(dep1);
-		setCoreParameter(diskDeviceMappingObjStr + ".OSSBucket", diskDeviceMappingObj.oSSBucket);
-		setCoreParameter(diskDeviceMappingObjStr + ".DiskImSize", std::to_string(diskDeviceMappingObj.diskImSize));
-		setCoreParameter(diskDeviceMappingObjStr + ".Format", diskDeviceMappingObj.format);
-		setCoreParameter(diskDeviceMappingObjStr + ".Device", diskDeviceMappingObj.device);
-		setCoreParameter(diskDeviceMappingObjStr + ".OSSObject", diskDeviceMappingObj.oSSObject);
-		setCoreParameter(diskDeviceMappingObjStr + ".DiskImageSize", std::to_string(diskDeviceMappingObj.diskImageSize));
+		std::string diskDeviceMappingObjStr = "DiskDeviceMapping." + std::to_string(dep1 + 1);
+		setParameter(diskDeviceMappingObjStr + ".OSSBucket", diskDeviceMappingObj.oSSBucket);
+		setParameter(diskDeviceMappingObjStr + ".DiskImSize", std::to_string(diskDeviceMappingObj.diskImSize));
+		setParameter(diskDeviceMappingObjStr + ".Format", diskDeviceMappingObj.format);
+		setParameter(diskDeviceMappingObjStr + ".Device", diskDeviceMappingObj.device);
+		setParameter(diskDeviceMappingObjStr + ".OSSObject", diskDeviceMappingObj.oSSObject);
+		setParameter(diskDeviceMappingObjStr + ".DiskImageSize", std::to_string(diskDeviceMappingObj.diskImageSize));
 	}
 }
 
@@ -55,7 +55,7 @@ long ImportImageRequest::getResourceOwnerId()const
 void ImportImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ImportImageRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string ImportImageRequest::getDescription()const
 void ImportImageRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ImportImageRequest::getPlatform()const
@@ -77,7 +77,7 @@ std::string ImportImageRequest::getPlatform()const
 void ImportImageRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
-	setCoreParameter("Platform", platform);
+	setParameter("Platform", platform);
 }
 
 std::string ImportImageRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string ImportImageRequest::getRegionId()const
 void ImportImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ImportImageRequest::getImageName()const
@@ -99,7 +99,7 @@ std::string ImportImageRequest::getImageName()const
 void ImportImageRequest::setImageName(const std::string& imageName)
 {
 	imageName_ = imageName;
-	setCoreParameter("ImageName", imageName);
+	setParameter("ImageName", imageName);
 }
 
 std::string ImportImageRequest::getArchitecture()const
@@ -110,7 +110,7 @@ std::string ImportImageRequest::getArchitecture()const
 void ImportImageRequest::setArchitecture(const std::string& architecture)
 {
 	architecture_ = architecture;
-	setCoreParameter("Architecture", architecture);
+	setParameter("Architecture", architecture);
 }
 
 std::string ImportImageRequest::getLicenseType()const
@@ -121,7 +121,7 @@ std::string ImportImageRequest::getLicenseType()const
 void ImportImageRequest::setLicenseType(const std::string& licenseType)
 {
 	licenseType_ = licenseType;
-	setCoreParameter("LicenseType", licenseType);
+	setParameter("LicenseType", licenseType);
 }
 
 std::string ImportImageRequest::getResourceOwnerAccount()const
@@ -132,7 +132,7 @@ std::string ImportImageRequest::getResourceOwnerAccount()const
 void ImportImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ImportImageRequest::getRoleName()const
@@ -143,7 +143,7 @@ std::string ImportImageRequest::getRoleName()const
 void ImportImageRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
+	setParameter("RoleName", roleName);
 }
 
 std::string ImportImageRequest::getOSType()const
@@ -154,7 +154,7 @@ std::string ImportImageRequest::getOSType()const
 void ImportImageRequest::setOSType(const std::string& oSType)
 {
 	oSType_ = oSType;
-	setCoreParameter("OSType", oSType);
+	setParameter("OSType", oSType);
 }
 
 long ImportImageRequest::getOwnerId()const
@@ -165,6 +165,6 @@ long ImportImageRequest::getOwnerId()const
 void ImportImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

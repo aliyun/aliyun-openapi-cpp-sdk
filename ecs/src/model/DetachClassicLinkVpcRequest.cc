@@ -35,7 +35,7 @@ long DetachClassicLinkVpcRequest::getResourceOwnerId()const
 void DetachClassicLinkVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DetachClassicLinkVpcRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string DetachClassicLinkVpcRequest::getRegionId()const
 void DetachClassicLinkVpcRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DetachClassicLinkVpcRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DetachClassicLinkVpcRequest::getResourceOwnerAccount()const
 void DetachClassicLinkVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DetachClassicLinkVpcRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DetachClassicLinkVpcRequest::getOwnerId()const
 void DetachClassicLinkVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DetachClassicLinkVpcRequest::getInstanceId()const
@@ -79,7 +79,7 @@ std::string DetachClassicLinkVpcRequest::getInstanceId()const
 void DetachClassicLinkVpcRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DetachClassicLinkVpcRequest::getVpcId()const
@@ -90,6 +90,6 @@ std::string DetachClassicLinkVpcRequest::getVpcId()const
 void DetachClassicLinkVpcRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

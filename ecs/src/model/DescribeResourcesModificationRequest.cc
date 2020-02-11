@@ -35,7 +35,7 @@ long DescribeResourcesModificationRequest::getResourceOwnerId()const
 void DescribeResourcesModificationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 float DescribeResourcesModificationRequest::getMemory()const
@@ -46,7 +46,7 @@ float DescribeResourcesModificationRequest::getMemory()const
 void DescribeResourcesModificationRequest::setMemory(float memory)
 {
 	memory_ = memory;
-	setCoreParameter("Memory", std::to_string(memory));
+	setParameter("Memory", std::to_string(memory));
 }
 
 int DescribeResourcesModificationRequest::getCores()const
@@ -57,7 +57,7 @@ int DescribeResourcesModificationRequest::getCores()const
 void DescribeResourcesModificationRequest::setCores(int cores)
 {
 	cores_ = cores;
-	setCoreParameter("Cores", std::to_string(cores));
+	setParameter("Cores", std::to_string(cores));
 }
 
 std::string DescribeResourcesModificationRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribeResourcesModificationRequest::getRegionId()const
 void DescribeResourcesModificationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool DescribeResourcesModificationRequest::getMigrateAcrossZone()const
@@ -79,7 +79,7 @@ bool DescribeResourcesModificationRequest::getMigrateAcrossZone()const
 void DescribeResourcesModificationRequest::setMigrateAcrossZone(bool migrateAcrossZone)
 {
 	migrateAcrossZone_ = migrateAcrossZone;
-	setCoreParameter("MigrateAcrossZone", migrateAcrossZone ? "true" : "false");
+	setParameter("MigrateAcrossZone", migrateAcrossZone ? "true" : "false");
 }
 
 std::string DescribeResourcesModificationRequest::getInstanceType()const
@@ -90,7 +90,7 @@ std::string DescribeResourcesModificationRequest::getInstanceType()const
 void DescribeResourcesModificationRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string DescribeResourcesModificationRequest::getResourceId()const
@@ -101,7 +101,7 @@ std::string DescribeResourcesModificationRequest::getResourceId()const
 void DescribeResourcesModificationRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setParameter("ResourceId", resourceId);
 }
 
 std::string DescribeResourcesModificationRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribeResourcesModificationRequest::getResourceOwnerAccount()const
 void DescribeResourcesModificationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeResourcesModificationRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string DescribeResourcesModificationRequest::getOwnerAccount()const
 void DescribeResourcesModificationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeResourcesModificationRequest::getOperationType()const
@@ -134,7 +134,7 @@ std::string DescribeResourcesModificationRequest::getOperationType()const
 void DescribeResourcesModificationRequest::setOperationType(const std::string& operationType)
 {
 	operationType_ = operationType;
-	setCoreParameter("OperationType", operationType);
+	setParameter("OperationType", operationType);
 }
 
 long DescribeResourcesModificationRequest::getOwnerId()const
@@ -145,7 +145,7 @@ long DescribeResourcesModificationRequest::getOwnerId()const
 void DescribeResourcesModificationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeResourcesModificationRequest::getDestinationResource()const
@@ -156,6 +156,6 @@ std::string DescribeResourcesModificationRequest::getDestinationResource()const
 void DescribeResourcesModificationRequest::setDestinationResource(const std::string& destinationResource)
 {
 	destinationResource_ = destinationResource;
-	setCoreParameter("DestinationResource", destinationResource);
+	setParameter("DestinationResource", destinationResource);
 }
 

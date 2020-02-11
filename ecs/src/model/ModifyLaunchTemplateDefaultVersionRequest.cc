@@ -35,7 +35,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getLaunchTemplateName()co
 void ModifyLaunchTemplateDefaultVersionRequest::setLaunchTemplateName(const std::string& launchTemplateName)
 {
 	launchTemplateName_ = launchTemplateName;
-	setCoreParameter("LaunchTemplateName", launchTemplateName);
+	setParameter("LaunchTemplateName", launchTemplateName);
 }
 
 long ModifyLaunchTemplateDefaultVersionRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long ModifyLaunchTemplateDefaultVersionRequest::getResourceOwnerId()const
 void ModifyLaunchTemplateDefaultVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getRegionId()const
 void ModifyLaunchTemplateDefaultVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getLaunchTemplateId()const
@@ -68,7 +68,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getLaunchTemplateId()cons
 void ModifyLaunchTemplateDefaultVersionRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setCoreParameter("LaunchTemplateId", launchTemplateId);
+	setParameter("LaunchTemplateId", launchTemplateId);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getResourceOwnerAccount()
 void ModifyLaunchTemplateDefaultVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getOwnerAccount()const
 void ModifyLaunchTemplateDefaultVersionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyLaunchTemplateDefaultVersionRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long ModifyLaunchTemplateDefaultVersionRequest::getOwnerId()const
 void ModifyLaunchTemplateDefaultVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long ModifyLaunchTemplateDefaultVersionRequest::getDefaultVersionNumber()const
@@ -112,6 +112,6 @@ long ModifyLaunchTemplateDefaultVersionRequest::getDefaultVersionNumber()const
 void ModifyLaunchTemplateDefaultVersionRequest::setDefaultVersionNumber(long defaultVersionNumber)
 {
 	defaultVersionNumber_ = defaultVersionNumber;
-	setCoreParameter("DefaultVersionNumber", std::to_string(defaultVersionNumber));
+	setParameter("DefaultVersionNumber", std::to_string(defaultVersionNumber));
 }
 

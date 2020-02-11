@@ -35,7 +35,7 @@ long DescribeInstanceVncUrlRequest::getResourceOwnerId()const
 void DescribeInstanceVncUrlRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeInstanceVncUrlRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string DescribeInstanceVncUrlRequest::getRegionId()const
 void DescribeInstanceVncUrlRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeInstanceVncUrlRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeInstanceVncUrlRequest::getResourceOwnerAccount()const
 void DescribeInstanceVncUrlRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstanceVncUrlRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DescribeInstanceVncUrlRequest::getOwnerAccount()const
 void DescribeInstanceVncUrlRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeInstanceVncUrlRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long DescribeInstanceVncUrlRequest::getOwnerId()const
 void DescribeInstanceVncUrlRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeInstanceVncUrlRequest::getInstanceId()const
@@ -90,6 +90,6 @@ std::string DescribeInstanceVncUrlRequest::getInstanceId()const
 void DescribeInstanceVncUrlRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

@@ -35,7 +35,7 @@ long ModifyDiskAttributeRequest::getResourceOwnerId()const
 void ModifyDiskAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDiskAttributeRequest::getDescription()const
@@ -46,7 +46,7 @@ std::string ModifyDiskAttributeRequest::getDescription()const
 void ModifyDiskAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyDiskAttributeRequest::getDiskName()const
@@ -57,7 +57,7 @@ std::string ModifyDiskAttributeRequest::getDiskName()const
 void ModifyDiskAttributeRequest::setDiskName(const std::string& diskName)
 {
 	diskName_ = diskName;
-	setCoreParameter("DiskName", diskName);
+	setParameter("DiskName", diskName);
 }
 
 bool ModifyDiskAttributeRequest::getDeleteAutoSnapshot()const
@@ -68,7 +68,7 @@ bool ModifyDiskAttributeRequest::getDeleteAutoSnapshot()const
 void ModifyDiskAttributeRequest::setDeleteAutoSnapshot(bool deleteAutoSnapshot)
 {
 	deleteAutoSnapshot_ = deleteAutoSnapshot;
-	setCoreParameter("DeleteAutoSnapshot", deleteAutoSnapshot ? "true" : "false");
+	setParameter("DeleteAutoSnapshot", deleteAutoSnapshot ? "true" : "false");
 }
 
 std::vector<std::string> ModifyDiskAttributeRequest::getDiskIds()const
@@ -80,7 +80,7 @@ void ModifyDiskAttributeRequest::setDiskIds(const std::vector<std::string>& disk
 {
 	diskIds_ = diskIds;
 	for(int dep1 = 0; dep1!= diskIds.size(); dep1++) {
-		setCoreParameter("DiskIds."+ std::to_string(dep1), diskIds.at(dep1));
+		setParameter("DiskIds."+ std::to_string(dep1), diskIds.at(dep1));
 	}
 }
 
@@ -92,7 +92,7 @@ std::string ModifyDiskAttributeRequest::getDiskId()const
 void ModifyDiskAttributeRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
+	setParameter("DiskId", diskId);
 }
 
 bool ModifyDiskAttributeRequest::getDeleteWithInstance()const
@@ -103,7 +103,7 @@ bool ModifyDiskAttributeRequest::getDeleteWithInstance()const
 void ModifyDiskAttributeRequest::setDeleteWithInstance(bool deleteWithInstance)
 {
 	deleteWithInstance_ = deleteWithInstance;
-	setCoreParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
+	setParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
 }
 
 bool ModifyDiskAttributeRequest::getEnableAutoSnapshot()const
@@ -114,7 +114,7 @@ bool ModifyDiskAttributeRequest::getEnableAutoSnapshot()const
 void ModifyDiskAttributeRequest::setEnableAutoSnapshot(bool enableAutoSnapshot)
 {
 	enableAutoSnapshot_ = enableAutoSnapshot;
-	setCoreParameter("EnableAutoSnapshot", enableAutoSnapshot ? "true" : "false");
+	setParameter("EnableAutoSnapshot", enableAutoSnapshot ? "true" : "false");
 }
 
 std::string ModifyDiskAttributeRequest::getResourceOwnerAccount()const
@@ -125,7 +125,7 @@ std::string ModifyDiskAttributeRequest::getResourceOwnerAccount()const
 void ModifyDiskAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDiskAttributeRequest::getOwnerAccount()const
@@ -136,7 +136,7 @@ std::string ModifyDiskAttributeRequest::getOwnerAccount()const
 void ModifyDiskAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyDiskAttributeRequest::getOwnerId()const
@@ -147,6 +147,6 @@ long ModifyDiskAttributeRequest::getOwnerId()const
 void ModifyDiskAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

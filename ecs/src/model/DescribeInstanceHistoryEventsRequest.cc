@@ -36,7 +36,7 @@ void DescribeInstanceHistoryEventsRequest::setEventId(const std::vector<std::str
 {
 	eventId_ = eventId;
 	for(int dep1 = 0; dep1!= eventId.size(); dep1++) {
-		setCoreParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
+		setParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
 	}
 }
 
@@ -48,7 +48,7 @@ long DescribeInstanceHistoryEventsRequest::getResourceOwnerId()const
 void DescribeInstanceHistoryEventsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getEventCycleStatus()const
@@ -59,7 +59,7 @@ std::string DescribeInstanceHistoryEventsRequest::getEventCycleStatus()const
 void DescribeInstanceHistoryEventsRequest::setEventCycleStatus(const std::string& eventCycleStatus)
 {
 	eventCycleStatus_ = eventCycleStatus;
-	setCoreParameter("EventCycleStatus", eventCycleStatus);
+	setParameter("EventCycleStatus", eventCycleStatus);
 }
 
 int DescribeInstanceHistoryEventsRequest::getPageNumber()const
@@ -70,7 +70,7 @@ int DescribeInstanceHistoryEventsRequest::getPageNumber()const
 void DescribeInstanceHistoryEventsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getRegionId()const
@@ -81,7 +81,7 @@ std::string DescribeInstanceHistoryEventsRequest::getRegionId()const
 void DescribeInstanceHistoryEventsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeInstanceHistoryEventsRequest::getPageSize()const
@@ -92,7 +92,7 @@ int DescribeInstanceHistoryEventsRequest::getPageSize()const
 void DescribeInstanceHistoryEventsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<std::string> DescribeInstanceHistoryEventsRequest::getInstanceEventCycleStatus()const
@@ -104,7 +104,7 @@ void DescribeInstanceHistoryEventsRequest::setInstanceEventCycleStatus(const std
 {
 	instanceEventCycleStatus_ = instanceEventCycleStatus;
 	for(int dep1 = 0; dep1!= instanceEventCycleStatus.size(); dep1++) {
-		setCoreParameter("InstanceEventCycleStatus."+ std::to_string(dep1), instanceEventCycleStatus.at(dep1));
+		setParameter("InstanceEventCycleStatus."+ std::to_string(dep1), instanceEventCycleStatus.at(dep1));
 	}
 }
 
@@ -116,7 +116,7 @@ std::string DescribeInstanceHistoryEventsRequest::getEventPublishTimeEnd()const
 void DescribeInstanceHistoryEventsRequest::setEventPublishTimeEnd(const std::string& eventPublishTimeEnd)
 {
 	eventPublishTimeEnd_ = eventPublishTimeEnd;
-	setCoreParameter("EventPublishTimeEnd", eventPublishTimeEnd);
+	setParameter("EventPublishTimeEnd", eventPublishTimeEnd);
 }
 
 std::vector<std::string> DescribeInstanceHistoryEventsRequest::getInstanceEventType()const
@@ -128,7 +128,7 @@ void DescribeInstanceHistoryEventsRequest::setInstanceEventType(const std::vecto
 {
 	instanceEventType_ = instanceEventType;
 	for(int dep1 = 0; dep1!= instanceEventType.size(); dep1++) {
-		setCoreParameter("InstanceEventType."+ std::to_string(dep1), instanceEventType.at(dep1));
+		setParameter("InstanceEventType."+ std::to_string(dep1), instanceEventType.at(dep1));
 	}
 }
 
@@ -140,7 +140,7 @@ std::string DescribeInstanceHistoryEventsRequest::getResourceOwnerAccount()const
 void DescribeInstanceHistoryEventsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getOwnerAccount()const
@@ -151,7 +151,7 @@ std::string DescribeInstanceHistoryEventsRequest::getOwnerAccount()const
 void DescribeInstanceHistoryEventsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getNotBeforeStart()const
@@ -162,7 +162,7 @@ std::string DescribeInstanceHistoryEventsRequest::getNotBeforeStart()const
 void DescribeInstanceHistoryEventsRequest::setNotBeforeStart(const std::string& notBeforeStart)
 {
 	notBeforeStart_ = notBeforeStart;
-	setCoreParameter("NotBeforeStart", notBeforeStart);
+	setParameter("NotBeforeStart", notBeforeStart);
 }
 
 long DescribeInstanceHistoryEventsRequest::getOwnerId()const
@@ -173,7 +173,7 @@ long DescribeInstanceHistoryEventsRequest::getOwnerId()const
 void DescribeInstanceHistoryEventsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getEventPublishTimeStart()const
@@ -184,7 +184,7 @@ std::string DescribeInstanceHistoryEventsRequest::getEventPublishTimeStart()cons
 void DescribeInstanceHistoryEventsRequest::setEventPublishTimeStart(const std::string& eventPublishTimeStart)
 {
 	eventPublishTimeStart_ = eventPublishTimeStart;
-	setCoreParameter("EventPublishTimeStart", eventPublishTimeStart);
+	setParameter("EventPublishTimeStart", eventPublishTimeStart);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getInstanceId()const
@@ -195,7 +195,7 @@ std::string DescribeInstanceHistoryEventsRequest::getInstanceId()const
 void DescribeInstanceHistoryEventsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getNotBeforeEnd()const
@@ -206,7 +206,7 @@ std::string DescribeInstanceHistoryEventsRequest::getNotBeforeEnd()const
 void DescribeInstanceHistoryEventsRequest::setNotBeforeEnd(const std::string& notBeforeEnd)
 {
 	notBeforeEnd_ = notBeforeEnd;
-	setCoreParameter("NotBeforeEnd", notBeforeEnd);
+	setParameter("NotBeforeEnd", notBeforeEnd);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getEventType()const
@@ -217,6 +217,6 @@ std::string DescribeInstanceHistoryEventsRequest::getEventType()const
 void DescribeInstanceHistoryEventsRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setParameter("EventType", eventType);
 }
 

@@ -35,7 +35,7 @@ long DescribeDedicatedHostTypesRequest::getResourceOwnerId()const
 void DescribeDedicatedHostTypesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDedicatedHostTypesRequest::getSupportedInstanceTypeFamily()const
@@ -46,7 +46,7 @@ std::string DescribeDedicatedHostTypesRequest::getSupportedInstanceTypeFamily()c
 void DescribeDedicatedHostTypesRequest::setSupportedInstanceTypeFamily(const std::string& supportedInstanceTypeFamily)
 {
 	supportedInstanceTypeFamily_ = supportedInstanceTypeFamily;
-	setCoreParameter("SupportedInstanceTypeFamily", supportedInstanceTypeFamily);
+	setParameter("SupportedInstanceTypeFamily", supportedInstanceTypeFamily);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DescribeDedicatedHostTypesRequest::getRegionId()const
 void DescribeDedicatedHostTypesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getDedicatedHostType()const
@@ -68,7 +68,7 @@ std::string DescribeDedicatedHostTypesRequest::getDedicatedHostType()const
 void DescribeDedicatedHostTypesRequest::setDedicatedHostType(const std::string& dedicatedHostType)
 {
 	dedicatedHostType_ = dedicatedHostType;
-	setCoreParameter("DedicatedHostType", dedicatedHostType);
+	setParameter("DedicatedHostType", dedicatedHostType);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeDedicatedHostTypesRequest::getResourceOwnerAccount()const
 void DescribeDedicatedHostTypesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeDedicatedHostTypesRequest::getOwnerAccount()const
 void DescribeDedicatedHostTypesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDedicatedHostTypesRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DescribeDedicatedHostTypesRequest::getOwnerId()const
 void DescribeDedicatedHostTypesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

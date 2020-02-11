@@ -35,7 +35,7 @@ long ModifyReservedInstancesRequest::getResourceOwnerId()const
 void ModifyReservedInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<ModifyReservedInstancesRequest::Configuration> ModifyReservedInstancesRequest::getConfiguration()const
@@ -48,12 +48,12 @@ void ModifyReservedInstancesRequest::setConfiguration(const std::vector<Configur
 	configuration_ = configuration;
 	for(int dep1 = 0; dep1!= configuration.size(); dep1++) {
 		auto configurationObj = configuration.at(dep1);
-		std::string configurationObjStr = "Configuration." + std::to_string(dep1);
-		setCoreParameter(configurationObjStr + ".ZoneId", configurationObj.zoneId);
-		setCoreParameter(configurationObjStr + ".ReservedInstanceName", configurationObj.reservedInstanceName);
-		setCoreParameter(configurationObjStr + ".InstanceType", configurationObj.instanceType);
-		setCoreParameter(configurationObjStr + ".Scope", configurationObj.scope);
-		setCoreParameter(configurationObjStr + ".InstanceAmount", std::to_string(configurationObj.instanceAmount));
+		std::string configurationObjStr = "Configuration." + std::to_string(dep1 + 1);
+		setParameter(configurationObjStr + ".ZoneId", configurationObj.zoneId);
+		setParameter(configurationObjStr + ".ReservedInstanceName", configurationObj.reservedInstanceName);
+		setParameter(configurationObjStr + ".InstanceType", configurationObj.instanceType);
+		setParameter(configurationObjStr + ".Scope", configurationObj.scope);
+		setParameter(configurationObjStr + ".InstanceAmount", std::to_string(configurationObj.instanceAmount));
 	}
 }
 
@@ -65,7 +65,7 @@ std::string ModifyReservedInstancesRequest::getRegionId()const
 void ModifyReservedInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyReservedInstancesRequest::getResourceOwnerAccount()const
@@ -76,7 +76,7 @@ std::string ModifyReservedInstancesRequest::getResourceOwnerAccount()const
 void ModifyReservedInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyReservedInstancesRequest::getOwnerAccount()const
@@ -87,7 +87,7 @@ std::string ModifyReservedInstancesRequest::getOwnerAccount()const
 void ModifyReservedInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyReservedInstancesRequest::getOwnerId()const
@@ -98,7 +98,7 @@ long ModifyReservedInstancesRequest::getOwnerId()const
 void ModifyReservedInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> ModifyReservedInstancesRequest::getReservedInstanceId()const
@@ -110,7 +110,7 @@ void ModifyReservedInstancesRequest::setReservedInstanceId(const std::vector<std
 {
 	reservedInstanceId_ = reservedInstanceId;
 	for(int dep1 = 0; dep1!= reservedInstanceId.size(); dep1++) {
-		setCoreParameter("ReservedInstanceId."+ std::to_string(dep1), reservedInstanceId.at(dep1));
+		setParameter("ReservedInstanceId."+ std::to_string(dep1), reservedInstanceId.at(dep1));
 	}
 }
 

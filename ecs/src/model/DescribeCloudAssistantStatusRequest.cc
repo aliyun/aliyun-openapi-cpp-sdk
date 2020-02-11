@@ -35,7 +35,7 @@ long DescribeCloudAssistantStatusRequest::getResourceOwnerId()const
 void DescribeCloudAssistantStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCloudAssistantStatusRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string DescribeCloudAssistantStatusRequest::getRegionId()const
 void DescribeCloudAssistantStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeCloudAssistantStatusRequest::getResourceOwnerAccount()const
 void DescribeCloudAssistantStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCloudAssistantStatusRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DescribeCloudAssistantStatusRequest::getOwnerAccount()const
 void DescribeCloudAssistantStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCloudAssistantStatusRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long DescribeCloudAssistantStatusRequest::getOwnerId()const
 void DescribeCloudAssistantStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> DescribeCloudAssistantStatusRequest::getInstanceId()const
@@ -91,7 +91,7 @@ void DescribeCloudAssistantStatusRequest::setInstanceId(const std::vector<std::s
 {
 	instanceId_ = instanceId;
 	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
-		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
 	}
 }
 

@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateDiskRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;

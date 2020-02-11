@@ -36,7 +36,7 @@ void DescribeLaunchTemplatesRequest::setLaunchTemplateName(const std::vector<std
 {
 	launchTemplateName_ = launchTemplateName;
 	for(int dep1 = 0; dep1!= launchTemplateName.size(); dep1++) {
-		setCoreParameter("LaunchTemplateName."+ std::to_string(dep1), launchTemplateName.at(dep1));
+		setParameter("LaunchTemplateName."+ std::to_string(dep1), launchTemplateName.at(dep1));
 	}
 }
 
@@ -48,7 +48,7 @@ long DescribeLaunchTemplatesRequest::getResourceOwnerId()const
 void DescribeLaunchTemplatesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeLaunchTemplatesRequest::getPageNumber()const
@@ -59,7 +59,7 @@ int DescribeLaunchTemplatesRequest::getPageNumber()const
 void DescribeLaunchTemplatesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeLaunchTemplatesRequest::getRegionId()const
@@ -70,7 +70,7 @@ std::string DescribeLaunchTemplatesRequest::getRegionId()const
 void DescribeLaunchTemplatesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeLaunchTemplatesRequest::getPageSize()const
@@ -81,7 +81,7 @@ int DescribeLaunchTemplatesRequest::getPageSize()const
 void DescribeLaunchTemplatesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeLaunchTemplatesRequest::TemplateTag> DescribeLaunchTemplatesRequest::getTemplateTag()const
@@ -94,9 +94,9 @@ void DescribeLaunchTemplatesRequest::setTemplateTag(const std::vector<TemplateTa
 	templateTag_ = templateTag;
 	for(int dep1 = 0; dep1!= templateTag.size(); dep1++) {
 		auto templateTagObj = templateTag.at(dep1);
-		std::string templateTagObjStr = "TemplateTag." + std::to_string(dep1);
-		setCoreParameter(templateTagObjStr + ".Key", templateTagObj.key);
-		setCoreParameter(templateTagObjStr + ".Value", templateTagObj.value);
+		std::string templateTagObjStr = "TemplateTag." + std::to_string(dep1 + 1);
+		setParameter(templateTagObjStr + ".Key", templateTagObj.key);
+		setParameter(templateTagObjStr + ".Value", templateTagObj.value);
 	}
 }
 
@@ -109,7 +109,7 @@ void DescribeLaunchTemplatesRequest::setLaunchTemplateId(const std::vector<std::
 {
 	launchTemplateId_ = launchTemplateId;
 	for(int dep1 = 0; dep1!= launchTemplateId.size(); dep1++) {
-		setCoreParameter("LaunchTemplateId."+ std::to_string(dep1), launchTemplateId.at(dep1));
+		setParameter("LaunchTemplateId."+ std::to_string(dep1), launchTemplateId.at(dep1));
 	}
 }
 
@@ -121,7 +121,7 @@ std::string DescribeLaunchTemplatesRequest::getResourceOwnerAccount()const
 void DescribeLaunchTemplatesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeLaunchTemplatesRequest::getOwnerAccount()const
@@ -132,7 +132,7 @@ std::string DescribeLaunchTemplatesRequest::getOwnerAccount()const
 void DescribeLaunchTemplatesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeLaunchTemplatesRequest::getTemplateResourceGroupId()const
@@ -143,7 +143,7 @@ std::string DescribeLaunchTemplatesRequest::getTemplateResourceGroupId()const
 void DescribeLaunchTemplatesRequest::setTemplateResourceGroupId(const std::string& templateResourceGroupId)
 {
 	templateResourceGroupId_ = templateResourceGroupId;
-	setCoreParameter("TemplateResourceGroupId", templateResourceGroupId);
+	setParameter("TemplateResourceGroupId", templateResourceGroupId);
 }
 
 long DescribeLaunchTemplatesRequest::getOwnerId()const
@@ -154,6 +154,6 @@ long DescribeLaunchTemplatesRequest::getOwnerId()const
 void DescribeLaunchTemplatesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

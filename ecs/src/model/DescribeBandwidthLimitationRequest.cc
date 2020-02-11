@@ -35,7 +35,7 @@ long DescribeBandwidthLimitationRequest::getResourceOwnerId()const
 void DescribeBandwidthLimitationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeBandwidthLimitationRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string DescribeBandwidthLimitationRequest::getRegionId()const
 void DescribeBandwidthLimitationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeBandwidthLimitationRequest::getInstanceType()const
@@ -57,7 +57,7 @@ std::string DescribeBandwidthLimitationRequest::getInstanceType()const
 void DescribeBandwidthLimitationRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string DescribeBandwidthLimitationRequest::getInstanceChargeType()const
@@ -68,7 +68,7 @@ std::string DescribeBandwidthLimitationRequest::getInstanceChargeType()const
 void DescribeBandwidthLimitationRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string DescribeBandwidthLimitationRequest::getResourceId()const
@@ -79,7 +79,7 @@ std::string DescribeBandwidthLimitationRequest::getResourceId()const
 void DescribeBandwidthLimitationRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setParameter("ResourceId", resourceId);
 }
 
 std::string DescribeBandwidthLimitationRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeBandwidthLimitationRequest::getResourceOwnerAccount()const
 void DescribeBandwidthLimitationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeBandwidthLimitationRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeBandwidthLimitationRequest::getOwnerAccount()const
 void DescribeBandwidthLimitationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeBandwidthLimitationRequest::getOperationType()const
@@ -112,7 +112,7 @@ std::string DescribeBandwidthLimitationRequest::getOperationType()const
 void DescribeBandwidthLimitationRequest::setOperationType(const std::string& operationType)
 {
 	operationType_ = operationType;
-	setCoreParameter("OperationType", operationType);
+	setParameter("OperationType", operationType);
 }
 
 long DescribeBandwidthLimitationRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long DescribeBandwidthLimitationRequest::getOwnerId()const
 void DescribeBandwidthLimitationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeBandwidthLimitationRequest::getSpotStrategy()const
@@ -134,6 +134,6 @@ std::string DescribeBandwidthLimitationRequest::getSpotStrategy()const
 void DescribeBandwidthLimitationRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setCoreParameter("SpotStrategy", spotStrategy);
+	setParameter("SpotStrategy", spotStrategy);
 }
 

@@ -35,7 +35,7 @@ long ModifyInstanceMaintenanceAttributesRequest::getResourceOwnerId()const
 void ModifyInstanceMaintenanceAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<ModifyInstanceMaintenanceAttributesRequest::MaintenanceWindow> ModifyInstanceMaintenanceAttributesRequest::getMaintenanceWindow()const
@@ -48,9 +48,9 @@ void ModifyInstanceMaintenanceAttributesRequest::setMaintenanceWindow(const std:
 	maintenanceWindow_ = maintenanceWindow;
 	for(int dep1 = 0; dep1!= maintenanceWindow.size(); dep1++) {
 		auto maintenanceWindowObj = maintenanceWindow.at(dep1);
-		std::string maintenanceWindowObjStr = "MaintenanceWindow." + std::to_string(dep1);
-		setCoreParameter(maintenanceWindowObjStr + ".StartTime", maintenanceWindowObj.startTime);
-		setCoreParameter(maintenanceWindowObjStr + ".EndTime", maintenanceWindowObj.endTime);
+		std::string maintenanceWindowObjStr = "MaintenanceWindow." + std::to_string(dep1 + 1);
+		setParameter(maintenanceWindowObjStr + ".StartTime", maintenanceWindowObj.startTime);
+		setParameter(maintenanceWindowObjStr + ".EndTime", maintenanceWindowObj.endTime);
 	}
 }
 
@@ -62,7 +62,7 @@ std::string ModifyInstanceMaintenanceAttributesRequest::getRegionId()const
 void ModifyInstanceMaintenanceAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyInstanceMaintenanceAttributesRequest::getActionOnMaintenance()const
@@ -73,7 +73,7 @@ std::string ModifyInstanceMaintenanceAttributesRequest::getActionOnMaintenance()
 void ModifyInstanceMaintenanceAttributesRequest::setActionOnMaintenance(const std::string& actionOnMaintenance)
 {
 	actionOnMaintenance_ = actionOnMaintenance;
-	setCoreParameter("ActionOnMaintenance", actionOnMaintenance);
+	setParameter("ActionOnMaintenance", actionOnMaintenance);
 }
 
 std::string ModifyInstanceMaintenanceAttributesRequest::getResourceOwnerAccount()const
@@ -84,7 +84,7 @@ std::string ModifyInstanceMaintenanceAttributesRequest::getResourceOwnerAccount(
 void ModifyInstanceMaintenanceAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceMaintenanceAttributesRequest::getOwnerAccount()const
@@ -95,7 +95,7 @@ std::string ModifyInstanceMaintenanceAttributesRequest::getOwnerAccount()const
 void ModifyInstanceMaintenanceAttributesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyInstanceMaintenanceAttributesRequest::getOwnerId()const
@@ -106,7 +106,7 @@ long ModifyInstanceMaintenanceAttributesRequest::getOwnerId()const
 void ModifyInstanceMaintenanceAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> ModifyInstanceMaintenanceAttributesRequest::getInstanceId()const
@@ -118,7 +118,7 @@ void ModifyInstanceMaintenanceAttributesRequest::setInstanceId(const std::vector
 {
 	instanceId_ = instanceId;
 	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
-		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
 	}
 }
 

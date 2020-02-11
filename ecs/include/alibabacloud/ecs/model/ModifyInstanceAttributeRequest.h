@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setCreditSpecification(const std::string& creditSpecification);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::vector<std::string> getSecurityGroupIds()const;
+				void setSecurityGroupIds(const std::vector<std::string>& securityGroupIds);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getInstanceName()const;
@@ -74,6 +76,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string creditSpecification_;
 				long ownerId_;
+				std::vector<std::string> securityGroupIds_;
 				std::string instanceId_;
 				std::string instanceName_;
 

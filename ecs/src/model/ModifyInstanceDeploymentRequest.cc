@@ -35,7 +35,7 @@ long ModifyInstanceDeploymentRequest::getResourceOwnerId()const
 void ModifyInstanceDeploymentRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyInstanceDeploymentRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string ModifyInstanceDeploymentRequest::getRegionId()const
 void ModifyInstanceDeploymentRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyInstanceDeploymentRequest::getInstanceType()const
@@ -57,7 +57,7 @@ std::string ModifyInstanceDeploymentRequest::getInstanceType()const
 void ModifyInstanceDeploymentRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string ModifyInstanceDeploymentRequest::getDeploymentSetId()const
@@ -68,7 +68,7 @@ std::string ModifyInstanceDeploymentRequest::getDeploymentSetId()const
 void ModifyInstanceDeploymentRequest::setDeploymentSetId(const std::string& deploymentSetId)
 {
 	deploymentSetId_ = deploymentSetId;
-	setCoreParameter("DeploymentSetId", deploymentSetId);
+	setParameter("DeploymentSetId", deploymentSetId);
 }
 
 std::string ModifyInstanceDeploymentRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyInstanceDeploymentRequest::getResourceOwnerAccount()const
 void ModifyInstanceDeploymentRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceDeploymentRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyInstanceDeploymentRequest::getOwnerAccount()const
 void ModifyInstanceDeploymentRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyInstanceDeploymentRequest::getTenancy()const
@@ -101,7 +101,7 @@ std::string ModifyInstanceDeploymentRequest::getTenancy()const
 void ModifyInstanceDeploymentRequest::setTenancy(const std::string& tenancy)
 {
 	tenancy_ = tenancy;
-	setCoreParameter("Tenancy", tenancy);
+	setParameter("Tenancy", tenancy);
 }
 
 std::string ModifyInstanceDeploymentRequest::getDedicatedHostId()const
@@ -112,7 +112,7 @@ std::string ModifyInstanceDeploymentRequest::getDedicatedHostId()const
 void ModifyInstanceDeploymentRequest::setDedicatedHostId(const std::string& dedicatedHostId)
 {
 	dedicatedHostId_ = dedicatedHostId;
-	setCoreParameter("DedicatedHostId", dedicatedHostId);
+	setParameter("DedicatedHostId", dedicatedHostId);
 }
 
 long ModifyInstanceDeploymentRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long ModifyInstanceDeploymentRequest::getOwnerId()const
 void ModifyInstanceDeploymentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyInstanceDeploymentRequest::getInstanceId()const
@@ -134,7 +134,7 @@ std::string ModifyInstanceDeploymentRequest::getInstanceId()const
 void ModifyInstanceDeploymentRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 bool ModifyInstanceDeploymentRequest::getForce()const
@@ -145,7 +145,7 @@ bool ModifyInstanceDeploymentRequest::getForce()const
 void ModifyInstanceDeploymentRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setParameter("Force", force ? "true" : "false");
 }
 
 std::string ModifyInstanceDeploymentRequest::getMigrationType()const
@@ -156,7 +156,7 @@ std::string ModifyInstanceDeploymentRequest::getMigrationType()const
 void ModifyInstanceDeploymentRequest::setMigrationType(const std::string& migrationType)
 {
 	migrationType_ = migrationType;
-	setCoreParameter("MigrationType", migrationType);
+	setParameter("MigrationType", migrationType);
 }
 
 std::string ModifyInstanceDeploymentRequest::getAffinity()const
@@ -167,6 +167,6 @@ std::string ModifyInstanceDeploymentRequest::getAffinity()const
 void ModifyInstanceDeploymentRequest::setAffinity(const std::string& affinity)
 {
 	affinity_ = affinity;
-	setCoreParameter("Affinity", affinity);
+	setParameter("Affinity", affinity);
 }
 

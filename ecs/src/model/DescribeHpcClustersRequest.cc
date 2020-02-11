@@ -35,7 +35,7 @@ long DescribeHpcClustersRequest::getResourceOwnerId()const
 void DescribeHpcClustersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeHpcClustersRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string DescribeHpcClustersRequest::getClientToken()const
 void DescribeHpcClustersRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 int DescribeHpcClustersRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeHpcClustersRequest::getPageNumber()const
 void DescribeHpcClustersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeHpcClustersRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribeHpcClustersRequest::getRegionId()const
 void DescribeHpcClustersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeHpcClustersRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribeHpcClustersRequest::getPageSize()const
 void DescribeHpcClustersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeHpcClustersRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeHpcClustersRequest::getResourceOwnerAccount()const
 void DescribeHpcClustersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeHpcClustersRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeHpcClustersRequest::getOwnerAccount()const
 void DescribeHpcClustersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeHpcClustersRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long DescribeHpcClustersRequest::getOwnerId()const
 void DescribeHpcClustersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeHpcClustersRequest::getHpcClusterIds()const
@@ -123,6 +123,6 @@ std::string DescribeHpcClustersRequest::getHpcClusterIds()const
 void DescribeHpcClustersRequest::setHpcClusterIds(const std::string& hpcClusterIds)
 {
 	hpcClusterIds_ = hpcClusterIds;
-	setCoreParameter("HpcClusterIds", hpcClusterIds);
+	setParameter("HpcClusterIds", hpcClusterIds);
 }
 

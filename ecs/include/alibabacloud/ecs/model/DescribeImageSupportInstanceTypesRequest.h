@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT DescribeImageSupportInstanceTypesRequest : public RpcServiceRequest
 			{
+			public:
 				struct Filter
 				{
 					std::string value;

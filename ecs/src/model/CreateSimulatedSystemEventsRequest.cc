@@ -35,7 +35,7 @@ long CreateSimulatedSystemEventsRequest::getResourceOwnerId()const
 void CreateSimulatedSystemEventsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateSimulatedSystemEventsRequest::getNotBefore()const
@@ -46,7 +46,7 @@ std::string CreateSimulatedSystemEventsRequest::getNotBefore()const
 void CreateSimulatedSystemEventsRequest::setNotBefore(const std::string& notBefore)
 {
 	notBefore_ = notBefore;
-	setCoreParameter("NotBefore", notBefore);
+	setParameter("NotBefore", notBefore);
 }
 
 std::string CreateSimulatedSystemEventsRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string CreateSimulatedSystemEventsRequest::getRegionId()const
 void CreateSimulatedSystemEventsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateSimulatedSystemEventsRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string CreateSimulatedSystemEventsRequest::getResourceOwnerAccount()const
 void CreateSimulatedSystemEventsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateSimulatedSystemEventsRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string CreateSimulatedSystemEventsRequest::getOwnerAccount()const
 void CreateSimulatedSystemEventsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateSimulatedSystemEventsRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long CreateSimulatedSystemEventsRequest::getOwnerId()const
 void CreateSimulatedSystemEventsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> CreateSimulatedSystemEventsRequest::getInstanceId()const
@@ -102,7 +102,7 @@ void CreateSimulatedSystemEventsRequest::setInstanceId(const std::vector<std::st
 {
 	instanceId_ = instanceId;
 	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
-		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
 	}
 }
 
@@ -114,6 +114,6 @@ std::string CreateSimulatedSystemEventsRequest::getEventType()const
 void CreateSimulatedSystemEventsRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setParameter("EventType", eventType);
 }
 

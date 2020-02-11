@@ -35,7 +35,7 @@ long ModifyDiskSpecRequest::getResourceOwnerId()const
 void ModifyDiskSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDiskSpecRequest::getDiskId()const
@@ -46,7 +46,7 @@ std::string ModifyDiskSpecRequest::getDiskId()const
 void ModifyDiskSpecRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
+	setParameter("DiskId", diskId);
 }
 
 std::string ModifyDiskSpecRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string ModifyDiskSpecRequest::getResourceOwnerAccount()const
 void ModifyDiskSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDiskSpecRequest::getPerformanceLevel()const
@@ -68,7 +68,7 @@ std::string ModifyDiskSpecRequest::getPerformanceLevel()const
 void ModifyDiskSpecRequest::setPerformanceLevel(const std::string& performanceLevel)
 {
 	performanceLevel_ = performanceLevel;
-	setCoreParameter("PerformanceLevel", performanceLevel);
+	setParameter("PerformanceLevel", performanceLevel);
 }
 
 std::string ModifyDiskSpecRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyDiskSpecRequest::getOwnerAccount()const
 void ModifyDiskSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyDiskSpecRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long ModifyDiskSpecRequest::getOwnerId()const
 void ModifyDiskSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

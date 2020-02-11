@@ -35,7 +35,7 @@ long ConvertNatPublicIpToEipRequest::getResourceOwnerId()const
 void ConvertNatPublicIpToEipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ConvertNatPublicIpToEipRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string ConvertNatPublicIpToEipRequest::getRegionId()const
 void ConvertNatPublicIpToEipRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ConvertNatPublicIpToEipRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string ConvertNatPublicIpToEipRequest::getResourceOwnerAccount()const
 void ConvertNatPublicIpToEipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ConvertNatPublicIpToEipRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long ConvertNatPublicIpToEipRequest::getOwnerId()const
 void ConvertNatPublicIpToEipRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ConvertNatPublicIpToEipRequest::getInstanceId()const
@@ -79,6 +79,6 @@ std::string ConvertNatPublicIpToEipRequest::getInstanceId()const
 void ConvertNatPublicIpToEipRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

@@ -35,7 +35,7 @@ long DescribeCommandsRequest::getResourceOwnerId()const
 void DescribeCommandsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCommandsRequest::getDescription()const
@@ -46,7 +46,7 @@ std::string DescribeCommandsRequest::getDescription()const
 void DescribeCommandsRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string DescribeCommandsRequest::getType()const
@@ -57,7 +57,7 @@ std::string DescribeCommandsRequest::getType()const
 void DescribeCommandsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribeCommandsRequest::getCommandId()const
@@ -68,7 +68,7 @@ std::string DescribeCommandsRequest::getCommandId()const
 void DescribeCommandsRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", commandId);
+	setParameter("CommandId", commandId);
 }
 
 long DescribeCommandsRequest::getPageNumber()const
@@ -79,7 +79,7 @@ long DescribeCommandsRequest::getPageNumber()const
 void DescribeCommandsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeCommandsRequest::getRegionId()const
@@ -90,7 +90,7 @@ std::string DescribeCommandsRequest::getRegionId()const
 void DescribeCommandsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeCommandsRequest::getContentEncoding()const
@@ -101,7 +101,7 @@ std::string DescribeCommandsRequest::getContentEncoding()const
 void DescribeCommandsRequest::setContentEncoding(const std::string& contentEncoding)
 {
 	contentEncoding_ = contentEncoding;
-	setCoreParameter("ContentEncoding", contentEncoding);
+	setParameter("ContentEncoding", contentEncoding);
 }
 
 long DescribeCommandsRequest::getPageSize()const
@@ -112,7 +112,7 @@ long DescribeCommandsRequest::getPageSize()const
 void DescribeCommandsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCommandsRequest::getResourceOwnerAccount()const
@@ -123,7 +123,7 @@ std::string DescribeCommandsRequest::getResourceOwnerAccount()const
 void DescribeCommandsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCommandsRequest::getOwnerAccount()const
@@ -134,7 +134,7 @@ std::string DescribeCommandsRequest::getOwnerAccount()const
 void DescribeCommandsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCommandsRequest::getOwnerId()const
@@ -145,7 +145,7 @@ long DescribeCommandsRequest::getOwnerId()const
 void DescribeCommandsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCommandsRequest::getName()const
@@ -156,6 +156,6 @@ std::string DescribeCommandsRequest::getName()const
 void DescribeCommandsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

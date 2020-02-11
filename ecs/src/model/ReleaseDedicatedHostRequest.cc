@@ -35,7 +35,7 @@ long ReleaseDedicatedHostRequest::getResourceOwnerId()const
 void ReleaseDedicatedHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleaseDedicatedHostRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string ReleaseDedicatedHostRequest::getRegionId()const
 void ReleaseDedicatedHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ReleaseDedicatedHostRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string ReleaseDedicatedHostRequest::getResourceOwnerAccount()const
 void ReleaseDedicatedHostRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReleaseDedicatedHostRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string ReleaseDedicatedHostRequest::getOwnerAccount()const
 void ReleaseDedicatedHostRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReleaseDedicatedHostRequest::getDedicatedHostId()const
@@ -79,7 +79,7 @@ std::string ReleaseDedicatedHostRequest::getDedicatedHostId()const
 void ReleaseDedicatedHostRequest::setDedicatedHostId(const std::string& dedicatedHostId)
 {
 	dedicatedHostId_ = dedicatedHostId;
-	setCoreParameter("DedicatedHostId", dedicatedHostId);
+	setParameter("DedicatedHostId", dedicatedHostId);
 }
 
 long ReleaseDedicatedHostRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long ReleaseDedicatedHostRequest::getOwnerId()const
 void ReleaseDedicatedHostRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

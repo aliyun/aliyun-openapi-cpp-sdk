@@ -35,7 +35,7 @@ long CreateSecurityGroupRequest::getResourceOwnerId()const
 void CreateSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateSecurityGroupRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string CreateSecurityGroupRequest::getClientToken()const
 void CreateSecurityGroupRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateSecurityGroupRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string CreateSecurityGroupRequest::getDescription()const
 void CreateSecurityGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateSecurityGroupRequest::getSecurityGroupName()const
@@ -68,7 +68,7 @@ std::string CreateSecurityGroupRequest::getSecurityGroupName()const
 void CreateSecurityGroupRequest::setSecurityGroupName(const std::string& securityGroupName)
 {
 	securityGroupName_ = securityGroupName;
-	setCoreParameter("SecurityGroupName", securityGroupName);
+	setParameter("SecurityGroupName", securityGroupName);
 }
 
 std::string CreateSecurityGroupRequest::getResourceGroupId()const
@@ -79,7 +79,7 @@ std::string CreateSecurityGroupRequest::getResourceGroupId()const
 void CreateSecurityGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateSecurityGroupRequest::getRegionId()const
@@ -90,7 +90,7 @@ std::string CreateSecurityGroupRequest::getRegionId()const
 void CreateSecurityGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<CreateSecurityGroupRequest::Tag> CreateSecurityGroupRequest::getTag()const
@@ -103,9 +103,9 @@ void CreateSecurityGroupRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -117,7 +117,7 @@ std::string CreateSecurityGroupRequest::getResourceOwnerAccount()const
 void CreateSecurityGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateSecurityGroupRequest::getOwnerAccount()const
@@ -128,7 +128,7 @@ std::string CreateSecurityGroupRequest::getOwnerAccount()const
 void CreateSecurityGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateSecurityGroupRequest::getOwnerId()const
@@ -139,7 +139,7 @@ long CreateSecurityGroupRequest::getOwnerId()const
 void CreateSecurityGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateSecurityGroupRequest::getSecurityGroupType()const
@@ -150,7 +150,7 @@ std::string CreateSecurityGroupRequest::getSecurityGroupType()const
 void CreateSecurityGroupRequest::setSecurityGroupType(const std::string& securityGroupType)
 {
 	securityGroupType_ = securityGroupType;
-	setCoreParameter("SecurityGroupType", securityGroupType);
+	setParameter("SecurityGroupType", securityGroupType);
 }
 
 std::string CreateSecurityGroupRequest::getVpcId()const
@@ -161,6 +161,6 @@ std::string CreateSecurityGroupRequest::getVpcId()const
 void CreateSecurityGroupRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

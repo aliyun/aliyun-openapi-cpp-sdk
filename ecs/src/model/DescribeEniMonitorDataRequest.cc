@@ -35,7 +35,7 @@ long DescribeEniMonitorDataRequest::getResourceOwnerId()const
 void DescribeEniMonitorDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeEniMonitorDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeEniMonitorDataRequest::getStartTime()const
 void DescribeEniMonitorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeEniMonitorDataRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DescribeEniMonitorDataRequest::getRegionId()const
 void DescribeEniMonitorDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeEniMonitorDataRequest::getPeriod()const
@@ -68,7 +68,7 @@ int DescribeEniMonitorDataRequest::getPeriod()const
 void DescribeEniMonitorDataRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string DescribeEniMonitorDataRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeEniMonitorDataRequest::getResourceOwnerAccount()const
 void DescribeEniMonitorDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeEniMonitorDataRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeEniMonitorDataRequest::getOwnerAccount()const
 void DescribeEniMonitorDataRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeEniMonitorDataRequest::getEndTime()const
@@ -101,7 +101,7 @@ std::string DescribeEniMonitorDataRequest::getEndTime()const
 void DescribeEniMonitorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeEniMonitorDataRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long DescribeEniMonitorDataRequest::getOwnerId()const
 void DescribeEniMonitorDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeEniMonitorDataRequest::getInstanceId()const
@@ -123,7 +123,7 @@ std::string DescribeEniMonitorDataRequest::getInstanceId()const
 void DescribeEniMonitorDataRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeEniMonitorDataRequest::getEniId()const
@@ -134,6 +134,6 @@ std::string DescribeEniMonitorDataRequest::getEniId()const
 void DescribeEniMonitorDataRequest::setEniId(const std::string& eniId)
 {
 	eniId_ = eniId;
-	setCoreParameter("EniId", eniId);
+	setParameter("EniId", eniId);
 }
 

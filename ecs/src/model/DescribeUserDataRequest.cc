@@ -35,7 +35,7 @@ long DescribeUserDataRequest::getResourceOwnerId()const
 void DescribeUserDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUserDataRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string DescribeUserDataRequest::getRegionId()const
 void DescribeUserDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeUserDataRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeUserDataRequest::getResourceOwnerAccount()const
 void DescribeUserDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeUserDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeUserDataRequest::getOwnerId()const
 void DescribeUserDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUserDataRequest::getInstanceId()const
@@ -79,6 +79,6 @@ std::string DescribeUserDataRequest::getInstanceId()const
 void DescribeUserDataRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

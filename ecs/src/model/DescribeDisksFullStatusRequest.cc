@@ -36,7 +36,7 @@ void DescribeDisksFullStatusRequest::setEventId(const std::vector<std::string>& 
 {
 	eventId_ = eventId;
 	for(int dep1 = 0; dep1!= eventId.size(); dep1++) {
-		setCoreParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
+		setParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
 	}
 }
 
@@ -48,7 +48,7 @@ long DescribeDisksFullStatusRequest::getResourceOwnerId()const
 void DescribeDisksFullStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeDisksFullStatusRequest::getPageNumber()const
@@ -59,7 +59,7 @@ int DescribeDisksFullStatusRequest::getPageNumber()const
 void DescribeDisksFullStatusRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDisksFullStatusRequest::getEventTimeStart()const
@@ -70,7 +70,7 @@ std::string DescribeDisksFullStatusRequest::getEventTimeStart()const
 void DescribeDisksFullStatusRequest::setEventTimeStart(const std::string& eventTimeStart)
 {
 	eventTimeStart_ = eventTimeStart;
-	setCoreParameter("EventTimeStart", eventTimeStart);
+	setParameter("EventTimeStart", eventTimeStart);
 }
 
 std::string DescribeDisksFullStatusRequest::getRegionId()const
@@ -81,7 +81,7 @@ std::string DescribeDisksFullStatusRequest::getRegionId()const
 void DescribeDisksFullStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeDisksFullStatusRequest::getPageSize()const
@@ -92,7 +92,7 @@ int DescribeDisksFullStatusRequest::getPageSize()const
 void DescribeDisksFullStatusRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<std::string> DescribeDisksFullStatusRequest::getDiskId()const
@@ -104,7 +104,7 @@ void DescribeDisksFullStatusRequest::setDiskId(const std::vector<std::string>& d
 {
 	diskId_ = diskId;
 	for(int dep1 = 0; dep1!= diskId.size(); dep1++) {
-		setCoreParameter("DiskId."+ std::to_string(dep1), diskId.at(dep1));
+		setParameter("DiskId."+ std::to_string(dep1), diskId.at(dep1));
 	}
 }
 
@@ -116,7 +116,7 @@ std::string DescribeDisksFullStatusRequest::getResourceOwnerAccount()const
 void DescribeDisksFullStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDisksFullStatusRequest::getOwnerAccount()const
@@ -127,7 +127,7 @@ std::string DescribeDisksFullStatusRequest::getOwnerAccount()const
 void DescribeDisksFullStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDisksFullStatusRequest::getOwnerId()const
@@ -138,7 +138,7 @@ long DescribeDisksFullStatusRequest::getOwnerId()const
 void DescribeDisksFullStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDisksFullStatusRequest::getEventTimeEnd()const
@@ -149,7 +149,7 @@ std::string DescribeDisksFullStatusRequest::getEventTimeEnd()const
 void DescribeDisksFullStatusRequest::setEventTimeEnd(const std::string& eventTimeEnd)
 {
 	eventTimeEnd_ = eventTimeEnd;
-	setCoreParameter("EventTimeEnd", eventTimeEnd);
+	setParameter("EventTimeEnd", eventTimeEnd);
 }
 
 std::string DescribeDisksFullStatusRequest::getHealthStatus()const
@@ -160,7 +160,7 @@ std::string DescribeDisksFullStatusRequest::getHealthStatus()const
 void DescribeDisksFullStatusRequest::setHealthStatus(const std::string& healthStatus)
 {
 	healthStatus_ = healthStatus;
-	setCoreParameter("HealthStatus", healthStatus);
+	setParameter("HealthStatus", healthStatus);
 }
 
 std::string DescribeDisksFullStatusRequest::getEventType()const
@@ -171,7 +171,7 @@ std::string DescribeDisksFullStatusRequest::getEventType()const
 void DescribeDisksFullStatusRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setParameter("EventType", eventType);
 }
 
 std::string DescribeDisksFullStatusRequest::getStatus()const
@@ -182,6 +182,6 @@ std::string DescribeDisksFullStatusRequest::getStatus()const
 void DescribeDisksFullStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

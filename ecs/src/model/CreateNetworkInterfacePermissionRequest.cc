@@ -35,7 +35,7 @@ long CreateNetworkInterfacePermissionRequest::getResourceOwnerId()const
 void CreateNetworkInterfacePermissionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long CreateNetworkInterfacePermissionRequest::getAccountId()const
@@ -46,7 +46,7 @@ long CreateNetworkInterfacePermissionRequest::getAccountId()const
 void CreateNetworkInterfacePermissionRequest::setAccountId(long accountId)
 {
 	accountId_ = accountId;
-	setCoreParameter("AccountId", std::to_string(accountId));
+	setParameter("AccountId", std::to_string(accountId));
 }
 
 std::string CreateNetworkInterfacePermissionRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string CreateNetworkInterfacePermissionRequest::getRegionId()const
 void CreateNetworkInterfacePermissionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateNetworkInterfacePermissionRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string CreateNetworkInterfacePermissionRequest::getResourceOwnerAccount()co
 void CreateNetworkInterfacePermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateNetworkInterfacePermissionRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string CreateNetworkInterfacePermissionRequest::getOwnerAccount()const
 void CreateNetworkInterfacePermissionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateNetworkInterfacePermissionRequest::getPermission()const
@@ -90,7 +90,7 @@ std::string CreateNetworkInterfacePermissionRequest::getPermission()const
 void CreateNetworkInterfacePermissionRequest::setPermission(const std::string& permission)
 {
 	permission_ = permission;
-	setCoreParameter("Permission", permission);
+	setParameter("Permission", permission);
 }
 
 long CreateNetworkInterfacePermissionRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long CreateNetworkInterfacePermissionRequest::getOwnerId()const
 void CreateNetworkInterfacePermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateNetworkInterfacePermissionRequest::getNetworkInterfaceId()const
@@ -112,6 +112,6 @@ std::string CreateNetworkInterfacePermissionRequest::getNetworkInterfaceId()cons
 void CreateNetworkInterfacePermissionRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	setCoreParameter("NetworkInterfaceId", networkInterfaceId);
+	setParameter("NetworkInterfaceId", networkInterfaceId);
 }
 

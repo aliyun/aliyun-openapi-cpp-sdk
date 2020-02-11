@@ -35,7 +35,7 @@ long AssignPrivateIpAddressesRequest::getResourceOwnerId()const
 void AssignPrivateIpAddressesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int AssignPrivateIpAddressesRequest::getSecondaryPrivateIpAddressCount()const
@@ -46,7 +46,7 @@ int AssignPrivateIpAddressesRequest::getSecondaryPrivateIpAddressCount()const
 void AssignPrivateIpAddressesRequest::setSecondaryPrivateIpAddressCount(int secondaryPrivateIpAddressCount)
 {
 	secondaryPrivateIpAddressCount_ = secondaryPrivateIpAddressCount;
-	setCoreParameter("SecondaryPrivateIpAddressCount", std::to_string(secondaryPrivateIpAddressCount));
+	setParameter("SecondaryPrivateIpAddressCount", std::to_string(secondaryPrivateIpAddressCount));
 }
 
 std::string AssignPrivateIpAddressesRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string AssignPrivateIpAddressesRequest::getRegionId()const
 void AssignPrivateIpAddressesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AssignPrivateIpAddressesRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string AssignPrivateIpAddressesRequest::getResourceOwnerAccount()const
 void AssignPrivateIpAddressesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AssignPrivateIpAddressesRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string AssignPrivateIpAddressesRequest::getOwnerAccount()const
 void AssignPrivateIpAddressesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AssignPrivateIpAddressesRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long AssignPrivateIpAddressesRequest::getOwnerId()const
 void AssignPrivateIpAddressesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> AssignPrivateIpAddressesRequest::getPrivateIpAddress()const
@@ -102,7 +102,7 @@ void AssignPrivateIpAddressesRequest::setPrivateIpAddress(const std::vector<std:
 {
 	privateIpAddress_ = privateIpAddress;
 	for(int dep1 = 0; dep1!= privateIpAddress.size(); dep1++) {
-		setCoreParameter("PrivateIpAddress."+ std::to_string(dep1), privateIpAddress.at(dep1));
+		setParameter("PrivateIpAddress."+ std::to_string(dep1), privateIpAddress.at(dep1));
 	}
 }
 
@@ -114,6 +114,6 @@ std::string AssignPrivateIpAddressesRequest::getNetworkInterfaceId()const
 void AssignPrivateIpAddressesRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	setCoreParameter("NetworkInterfaceId", networkInterfaceId);
+	setParameter("NetworkInterfaceId", networkInterfaceId);
 }
 

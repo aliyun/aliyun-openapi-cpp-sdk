@@ -35,7 +35,7 @@ std::string DeleteLaunchTemplateRequest::getLaunchTemplateName()const
 void DeleteLaunchTemplateRequest::setLaunchTemplateName(const std::string& launchTemplateName)
 {
 	launchTemplateName_ = launchTemplateName;
-	setCoreParameter("LaunchTemplateName", launchTemplateName);
+	setParameter("LaunchTemplateName", launchTemplateName);
 }
 
 long DeleteLaunchTemplateRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long DeleteLaunchTemplateRequest::getResourceOwnerId()const
 void DeleteLaunchTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteLaunchTemplateRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DeleteLaunchTemplateRequest::getRegionId()const
 void DeleteLaunchTemplateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteLaunchTemplateRequest::getLaunchTemplateId()const
@@ -68,7 +68,7 @@ std::string DeleteLaunchTemplateRequest::getLaunchTemplateId()const
 void DeleteLaunchTemplateRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setCoreParameter("LaunchTemplateId", launchTemplateId);
+	setParameter("LaunchTemplateId", launchTemplateId);
 }
 
 std::string DeleteLaunchTemplateRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteLaunchTemplateRequest::getResourceOwnerAccount()const
 void DeleteLaunchTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteLaunchTemplateRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DeleteLaunchTemplateRequest::getOwnerAccount()const
 void DeleteLaunchTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteLaunchTemplateRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DeleteLaunchTemplateRequest::getOwnerId()const
 void DeleteLaunchTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

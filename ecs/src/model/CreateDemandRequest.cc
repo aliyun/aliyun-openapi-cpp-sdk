@@ -35,7 +35,7 @@ long CreateDemandRequest::getResourceOwnerId()const
 void CreateDemandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateDemandRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string CreateDemandRequest::getClientToken()const
 void CreateDemandRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateDemandRequest::getStartTime()const
@@ -57,7 +57,7 @@ std::string CreateDemandRequest::getStartTime()const
 void CreateDemandRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string CreateDemandRequest::getDemandDescription()const
@@ -68,7 +68,7 @@ std::string CreateDemandRequest::getDemandDescription()const
 void CreateDemandRequest::setDemandDescription(const std::string& demandDescription)
 {
 	demandDescription_ = demandDescription;
-	setCoreParameter("DemandDescription", demandDescription);
+	setParameter("DemandDescription", demandDescription);
 }
 
 std::string CreateDemandRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string CreateDemandRequest::getRegionId()const
 void CreateDemandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateDemandRequest::getInstanceType()const
@@ -90,7 +90,7 @@ std::string CreateDemandRequest::getInstanceType()const
 void CreateDemandRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string CreateDemandRequest::getInstanceChargeType()const
@@ -101,7 +101,7 @@ std::string CreateDemandRequest::getInstanceChargeType()const
 void CreateDemandRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string CreateDemandRequest::getDemandName()const
@@ -112,7 +112,7 @@ std::string CreateDemandRequest::getDemandName()const
 void CreateDemandRequest::setDemandName(const std::string& demandName)
 {
 	demandName_ = demandName;
-	setCoreParameter("DemandName", demandName);
+	setParameter("DemandName", demandName);
 }
 
 int CreateDemandRequest::getAmount()const
@@ -123,7 +123,7 @@ int CreateDemandRequest::getAmount()const
 void CreateDemandRequest::setAmount(int amount)
 {
 	amount_ = amount;
-	setCoreParameter("Amount", std::to_string(amount));
+	setParameter("Amount", std::to_string(amount));
 }
 
 int CreateDemandRequest::getPeriod()const
@@ -134,7 +134,7 @@ int CreateDemandRequest::getPeriod()const
 void CreateDemandRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string CreateDemandRequest::getResourceOwnerAccount()const
@@ -145,7 +145,7 @@ std::string CreateDemandRequest::getResourceOwnerAccount()const
 void CreateDemandRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateDemandRequest::getOwnerAccount()const
@@ -156,7 +156,7 @@ std::string CreateDemandRequest::getOwnerAccount()const
 void CreateDemandRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateDemandRequest::getEndTime()const
@@ -167,7 +167,7 @@ std::string CreateDemandRequest::getEndTime()const
 void CreateDemandRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long CreateDemandRequest::getOwnerId()const
@@ -178,7 +178,7 @@ long CreateDemandRequest::getOwnerId()const
 void CreateDemandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateDemandRequest::getPeriodUnit()const
@@ -189,7 +189,7 @@ std::string CreateDemandRequest::getPeriodUnit()const
 void CreateDemandRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
+	setParameter("PeriodUnit", periodUnit);
 }
 
 std::string CreateDemandRequest::getZoneId()const
@@ -200,6 +200,6 @@ std::string CreateDemandRequest::getZoneId()const
 void CreateDemandRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

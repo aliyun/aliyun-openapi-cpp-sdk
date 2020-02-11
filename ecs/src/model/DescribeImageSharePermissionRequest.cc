@@ -35,7 +35,7 @@ long DescribeImageSharePermissionRequest::getResourceOwnerId()const
 void DescribeImageSharePermissionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeImageSharePermissionRequest::getImageId()const
@@ -46,7 +46,7 @@ std::string DescribeImageSharePermissionRequest::getImageId()const
 void DescribeImageSharePermissionRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setParameter("ImageId", imageId);
 }
 
 int DescribeImageSharePermissionRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeImageSharePermissionRequest::getPageNumber()const
 void DescribeImageSharePermissionRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeImageSharePermissionRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribeImageSharePermissionRequest::getRegionId()const
 void DescribeImageSharePermissionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeImageSharePermissionRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribeImageSharePermissionRequest::getPageSize()const
 void DescribeImageSharePermissionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeImageSharePermissionRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeImageSharePermissionRequest::getResourceOwnerAccount()const
 void DescribeImageSharePermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeImageSharePermissionRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeImageSharePermissionRequest::getOwnerAccount()const
 void DescribeImageSharePermissionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeImageSharePermissionRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DescribeImageSharePermissionRequest::getOwnerId()const
 void DescribeImageSharePermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

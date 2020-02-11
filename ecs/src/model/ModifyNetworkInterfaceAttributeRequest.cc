@@ -35,7 +35,7 @@ long ModifyNetworkInterfaceAttributeRequest::getResourceOwnerId()const
 void ModifyNetworkInterfaceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<std::string> ModifyNetworkInterfaceAttributeRequest::getSecurityGroupId()const
@@ -47,7 +47,7 @@ void ModifyNetworkInterfaceAttributeRequest::setSecurityGroupId(const std::vecto
 {
 	securityGroupId_ = securityGroupId;
 	for(int dep1 = 0; dep1!= securityGroupId.size(); dep1++) {
-		setCoreParameter("SecurityGroupId."+ std::to_string(dep1), securityGroupId.at(dep1));
+		setParameter("SecurityGroupId."+ std::to_string(dep1), securityGroupId.at(dep1));
 	}
 }
 
@@ -59,7 +59,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getDescription()const
 void ModifyNetworkInterfaceAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getRegionId()const
@@ -70,7 +70,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getRegionId()const
 void ModifyNetworkInterfaceAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getNetworkInterfaceName()const
@@ -81,7 +81,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getNetworkInterfaceName()con
 void ModifyNetworkInterfaceAttributeRequest::setNetworkInterfaceName(const std::string& networkInterfaceName)
 {
 	networkInterfaceName_ = networkInterfaceName;
-	setCoreParameter("NetworkInterfaceName", networkInterfaceName);
+	setParameter("NetworkInterfaceName", networkInterfaceName);
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getResourceOwnerAccount()const
@@ -92,7 +92,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getResourceOwnerAccount()con
 void ModifyNetworkInterfaceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getOwnerAccount()const
@@ -103,7 +103,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getOwnerAccount()const
 void ModifyNetworkInterfaceAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyNetworkInterfaceAttributeRequest::getOwnerId()const
@@ -114,7 +114,7 @@ long ModifyNetworkInterfaceAttributeRequest::getOwnerId()const
 void ModifyNetworkInterfaceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getNetworkInterfaceId()const
@@ -125,6 +125,6 @@ std::string ModifyNetworkInterfaceAttributeRequest::getNetworkInterfaceId()const
 void ModifyNetworkInterfaceAttributeRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	setCoreParameter("NetworkInterfaceId", networkInterfaceId);
+	setParameter("NetworkInterfaceId", networkInterfaceId);
 }
 

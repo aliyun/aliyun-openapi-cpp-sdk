@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateSnapshotRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;
@@ -60,6 +61,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				int getRetentionDays()const;
 				void setRetentionDays(int retentionDays);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
 				long resourceOwnerId_;
@@ -72,6 +75,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				int retentionDays_;
+				std::string category_;
 
 			};
 		}

@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT ImportImageRequest : public RpcServiceRequest
 			{
+			public:
 				struct DiskDeviceMapping
 				{
 					std::string oSSBucket;

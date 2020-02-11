@@ -35,7 +35,7 @@ std::string RenewDedicatedHostsRequest::getDedicatedHostIds()const
 void RenewDedicatedHostsRequest::setDedicatedHostIds(const std::string& dedicatedHostIds)
 {
 	dedicatedHostIds_ = dedicatedHostIds;
-	setCoreParameter("DedicatedHostIds", dedicatedHostIds);
+	setParameter("DedicatedHostIds", dedicatedHostIds);
 }
 
 long RenewDedicatedHostsRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long RenewDedicatedHostsRequest::getResourceOwnerId()const
 void RenewDedicatedHostsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RenewDedicatedHostsRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string RenewDedicatedHostsRequest::getClientToken()const
 void RenewDedicatedHostsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string RenewDedicatedHostsRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string RenewDedicatedHostsRequest::getRegionId()const
 void RenewDedicatedHostsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int RenewDedicatedHostsRequest::getPeriod()const
@@ -79,7 +79,7 @@ int RenewDedicatedHostsRequest::getPeriod()const
 void RenewDedicatedHostsRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string RenewDedicatedHostsRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string RenewDedicatedHostsRequest::getResourceOwnerAccount()const
 void RenewDedicatedHostsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RenewDedicatedHostsRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string RenewDedicatedHostsRequest::getOwnerAccount()const
 void RenewDedicatedHostsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RenewDedicatedHostsRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long RenewDedicatedHostsRequest::getOwnerId()const
 void RenewDedicatedHostsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RenewDedicatedHostsRequest::getPeriodUnit()const
@@ -123,6 +123,6 @@ std::string RenewDedicatedHostsRequest::getPeriodUnit()const
 void RenewDedicatedHostsRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
+	setParameter("PeriodUnit", periodUnit);
 }
 

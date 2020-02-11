@@ -35,7 +35,7 @@ long CreateNatGatewayRequest::getResourceOwnerId()const
 void CreateNatGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateNatGatewayRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string CreateNatGatewayRequest::getClientToken()const
 void CreateNatGatewayRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateNatGatewayRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string CreateNatGatewayRequest::getDescription()const
 void CreateNatGatewayRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateNatGatewayRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string CreateNatGatewayRequest::getRegionId()const
 void CreateNatGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<CreateNatGatewayRequest::BandwidthPackage> CreateNatGatewayRequest::getBandwidthPackage()const
@@ -81,10 +81,10 @@ void CreateNatGatewayRequest::setBandwidthPackage(const std::vector<BandwidthPac
 	bandwidthPackage_ = bandwidthPackage;
 	for(int dep1 = 0; dep1!= bandwidthPackage.size(); dep1++) {
 		auto bandwidthPackageObj = bandwidthPackage.at(dep1);
-		std::string bandwidthPackageObjStr = "BandwidthPackage." + std::to_string(dep1);
-		setCoreParameter(bandwidthPackageObjStr + ".Bandwidth", std::to_string(bandwidthPackageObj.bandwidth));
-		setCoreParameter(bandwidthPackageObjStr + ".Zone", bandwidthPackageObj.zone);
-		setCoreParameter(bandwidthPackageObjStr + ".IpCount", std::to_string(bandwidthPackageObj.ipCount));
+		std::string bandwidthPackageObjStr = "BandwidthPackage." + std::to_string(dep1 + 1);
+		setParameter(bandwidthPackageObjStr + ".Bandwidth", std::to_string(bandwidthPackageObj.bandwidth));
+		setParameter(bandwidthPackageObjStr + ".Zone", bandwidthPackageObj.zone);
+		setParameter(bandwidthPackageObjStr + ".IpCount", std::to_string(bandwidthPackageObj.ipCount));
 	}
 }
 
@@ -96,7 +96,7 @@ std::string CreateNatGatewayRequest::getResourceOwnerAccount()const
 void CreateNatGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateNatGatewayRequest::getOwnerAccount()const
@@ -107,7 +107,7 @@ std::string CreateNatGatewayRequest::getOwnerAccount()const
 void CreateNatGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateNatGatewayRequest::getOwnerId()const
@@ -118,7 +118,7 @@ long CreateNatGatewayRequest::getOwnerId()const
 void CreateNatGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateNatGatewayRequest::getVpcId()const
@@ -129,7 +129,7 @@ std::string CreateNatGatewayRequest::getVpcId()const
 void CreateNatGatewayRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string CreateNatGatewayRequest::getName()const
@@ -140,6 +140,6 @@ std::string CreateNatGatewayRequest::getName()const
 void CreateNatGatewayRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

@@ -35,7 +35,7 @@ long AttachNetworkInterfaceRequest::getResourceOwnerId()const
 void AttachNetworkInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AttachNetworkInterfaceRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string AttachNetworkInterfaceRequest::getRegionId()const
 void AttachNetworkInterfaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AttachNetworkInterfaceRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string AttachNetworkInterfaceRequest::getResourceOwnerAccount()const
 void AttachNetworkInterfaceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AttachNetworkInterfaceRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string AttachNetworkInterfaceRequest::getOwnerAccount()const
 void AttachNetworkInterfaceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AttachNetworkInterfaceRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long AttachNetworkInterfaceRequest::getOwnerId()const
 void AttachNetworkInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AttachNetworkInterfaceRequest::getInstanceId()const
@@ -90,7 +90,7 @@ std::string AttachNetworkInterfaceRequest::getInstanceId()const
 void AttachNetworkInterfaceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string AttachNetworkInterfaceRequest::getNetworkInterfaceId()const
@@ -101,6 +101,6 @@ std::string AttachNetworkInterfaceRequest::getNetworkInterfaceId()const
 void AttachNetworkInterfaceRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	setCoreParameter("NetworkInterfaceId", networkInterfaceId);
+	setParameter("NetworkInterfaceId", networkInterfaceId);
 }
 

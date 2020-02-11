@@ -35,7 +35,7 @@ std::string DeleteDemandRequest::getReason()const
 void DeleteDemandRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", reason);
+	setParameter("Reason", reason);
 }
 
 long DeleteDemandRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long DeleteDemandRequest::getResourceOwnerId()const
 void DeleteDemandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteDemandRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string DeleteDemandRequest::getClientToken()const
 void DeleteDemandRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteDemandRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DeleteDemandRequest::getRegionId()const
 void DeleteDemandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteDemandRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteDemandRequest::getResourceOwnerAccount()const
 void DeleteDemandRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteDemandRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DeleteDemandRequest::getOwnerAccount()const
 void DeleteDemandRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteDemandRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long DeleteDemandRequest::getOwnerId()const
 void DeleteDemandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteDemandRequest::getDemandId()const
@@ -112,6 +112,6 @@ std::string DeleteDemandRequest::getDemandId()const
 void DeleteDemandRequest::setDemandId(const std::string& demandId)
 {
 	demandId_ = demandId;
-	setCoreParameter("DemandId", demandId);
+	setParameter("DemandId", demandId);
 }
 

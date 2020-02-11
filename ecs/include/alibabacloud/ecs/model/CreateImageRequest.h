@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateImageRequest : public RpcServiceRequest
 			{
+			public:
 				struct DiskDeviceMapping
 				{
 					std::string snapshotId;

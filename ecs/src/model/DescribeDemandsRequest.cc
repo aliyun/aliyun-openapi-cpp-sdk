@@ -35,7 +35,7 @@ long DescribeDemandsRequest::getResourceOwnerId()const
 void DescribeDemandsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeDemandsRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeDemandsRequest::getPageNumber()const
 void DescribeDemandsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDemandsRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DescribeDemandsRequest::getRegionId()const
 void DescribeDemandsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeDemandsRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeDemandsRequest::getPageSize()const
 void DescribeDemandsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDemandsRequest::getInstanceType()const
@@ -79,7 +79,7 @@ std::string DescribeDemandsRequest::getInstanceType()const
 void DescribeDemandsRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::vector<DescribeDemandsRequest::Tag> DescribeDemandsRequest::getTag()const
@@ -92,9 +92,9 @@ void DescribeDemandsRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
 	}
 }
 
@@ -106,7 +106,7 @@ std::string DescribeDemandsRequest::getInstanceChargeType()const
 void DescribeDemandsRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 bool DescribeDemandsRequest::getDryRun()const
@@ -117,7 +117,7 @@ bool DescribeDemandsRequest::getDryRun()const
 void DescribeDemandsRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeDemandsRequest::getResourceOwnerAccount()const
@@ -128,7 +128,7 @@ std::string DescribeDemandsRequest::getResourceOwnerAccount()const
 void DescribeDemandsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDemandsRequest::getOwnerAccount()const
@@ -139,7 +139,7 @@ std::string DescribeDemandsRequest::getOwnerAccount()const
 void DescribeDemandsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDemandsRequest::getInstanceTypeFamily()const
@@ -150,7 +150,7 @@ std::string DescribeDemandsRequest::getInstanceTypeFamily()const
 void DescribeDemandsRequest::setInstanceTypeFamily(const std::string& instanceTypeFamily)
 {
 	instanceTypeFamily_ = instanceTypeFamily;
-	setCoreParameter("InstanceTypeFamily", instanceTypeFamily);
+	setParameter("InstanceTypeFamily", instanceTypeFamily);
 }
 
 long DescribeDemandsRequest::getOwnerId()const
@@ -161,7 +161,7 @@ long DescribeDemandsRequest::getOwnerId()const
 void DescribeDemandsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> DescribeDemandsRequest::getDemandStatus()const
@@ -173,7 +173,7 @@ void DescribeDemandsRequest::setDemandStatus(const std::vector<std::string>& dem
 {
 	demandStatus_ = demandStatus;
 	for(int dep1 = 0; dep1!= demandStatus.size(); dep1++) {
-		setCoreParameter("DemandStatus."+ std::to_string(dep1), demandStatus.at(dep1));
+		setParameter("DemandStatus."+ std::to_string(dep1), demandStatus.at(dep1));
 	}
 }
 
@@ -185,7 +185,7 @@ std::string DescribeDemandsRequest::getDemandId()const
 void DescribeDemandsRequest::setDemandId(const std::string& demandId)
 {
 	demandId_ = demandId;
-	setCoreParameter("DemandId", demandId);
+	setParameter("DemandId", demandId);
 }
 
 std::string DescribeDemandsRequest::getZoneId()const
@@ -196,7 +196,7 @@ std::string DescribeDemandsRequest::getZoneId()const
 void DescribeDemandsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string DescribeDemandsRequest::getDemandType()const
@@ -207,6 +207,6 @@ std::string DescribeDemandsRequest::getDemandType()const
 void DescribeDemandsRequest::setDemandType(const std::string& demandType)
 {
 	demandType_ = demandType;
-	setCoreParameter("DemandType", demandType);
+	setParameter("DemandType", demandType);
 }
 

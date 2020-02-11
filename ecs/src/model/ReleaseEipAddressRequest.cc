@@ -35,7 +35,7 @@ long ReleaseEipAddressRequest::getResourceOwnerId()const
 void ReleaseEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleaseEipAddressRequest::getAllocationId()const
@@ -46,7 +46,7 @@ std::string ReleaseEipAddressRequest::getAllocationId()const
 void ReleaseEipAddressRequest::setAllocationId(const std::string& allocationId)
 {
 	allocationId_ = allocationId;
-	setCoreParameter("AllocationId", allocationId);
+	setParameter("AllocationId", allocationId);
 }
 
 std::string ReleaseEipAddressRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string ReleaseEipAddressRequest::getRegionId()const
 void ReleaseEipAddressRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ReleaseEipAddressRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string ReleaseEipAddressRequest::getResourceOwnerAccount()const
 void ReleaseEipAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReleaseEipAddressRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ReleaseEipAddressRequest::getOwnerAccount()const
 void ReleaseEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ReleaseEipAddressRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long ReleaseEipAddressRequest::getOwnerId()const
 void ReleaseEipAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

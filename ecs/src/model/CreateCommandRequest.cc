@@ -35,7 +35,7 @@ long CreateCommandRequest::getResourceOwnerId()const
 void CreateCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateCommandRequest::getWorkingDir()const
@@ -46,7 +46,7 @@ std::string CreateCommandRequest::getWorkingDir()const
 void CreateCommandRequest::setWorkingDir(const std::string& workingDir)
 {
 	workingDir_ = workingDir;
-	setCoreParameter("WorkingDir", workingDir);
+	setParameter("WorkingDir", workingDir);
 }
 
 std::string CreateCommandRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string CreateCommandRequest::getDescription()const
 void CreateCommandRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateCommandRequest::getType()const
@@ -68,7 +68,7 @@ std::string CreateCommandRequest::getType()const
 void CreateCommandRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateCommandRequest::getCommandContent()const
@@ -79,7 +79,7 @@ std::string CreateCommandRequest::getCommandContent()const
 void CreateCommandRequest::setCommandContent(const std::string& commandContent)
 {
 	commandContent_ = commandContent;
-	setCoreParameter("CommandContent", commandContent);
+	setParameter("CommandContent", commandContent);
 }
 
 long CreateCommandRequest::getTimeout()const
@@ -90,7 +90,7 @@ long CreateCommandRequest::getTimeout()const
 void CreateCommandRequest::setTimeout(long timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", std::to_string(timeout));
+	setParameter("Timeout", std::to_string(timeout));
 }
 
 std::string CreateCommandRequest::getRegionId()const
@@ -101,7 +101,7 @@ std::string CreateCommandRequest::getRegionId()const
 void CreateCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateCommandRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string CreateCommandRequest::getResourceOwnerAccount()const
 void CreateCommandRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateCommandRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string CreateCommandRequest::getOwnerAccount()const
 void CreateCommandRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateCommandRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long CreateCommandRequest::getOwnerId()const
 void CreateCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateCommandRequest::getName()const
@@ -145,7 +145,7 @@ std::string CreateCommandRequest::getName()const
 void CreateCommandRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 bool CreateCommandRequest::getEnableParameter()const
@@ -156,6 +156,6 @@ bool CreateCommandRequest::getEnableParameter()const
 void CreateCommandRequest::setEnableParameter(bool enableParameter)
 {
 	enableParameter_ = enableParameter;
-	setCoreParameter("EnableParameter", enableParameter ? "true" : "false");
+	setParameter("EnableParameter", enableParameter ? "true" : "false");
 }
 

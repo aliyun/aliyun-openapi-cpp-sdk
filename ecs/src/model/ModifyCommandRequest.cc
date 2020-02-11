@@ -35,7 +35,7 @@ long ModifyCommandRequest::getResourceOwnerId()const
 void ModifyCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyCommandRequest::getWorkingDir()const
@@ -46,7 +46,7 @@ std::string ModifyCommandRequest::getWorkingDir()const
 void ModifyCommandRequest::setWorkingDir(const std::string& workingDir)
 {
 	workingDir_ = workingDir;
-	setCoreParameter("WorkingDir", workingDir);
+	setParameter("WorkingDir", workingDir);
 }
 
 std::string ModifyCommandRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string ModifyCommandRequest::getDescription()const
 void ModifyCommandRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyCommandRequest::getCommandId()const
@@ -68,7 +68,7 @@ std::string ModifyCommandRequest::getCommandId()const
 void ModifyCommandRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", commandId);
+	setParameter("CommandId", commandId);
 }
 
 std::string ModifyCommandRequest::getCommandContent()const
@@ -79,7 +79,7 @@ std::string ModifyCommandRequest::getCommandContent()const
 void ModifyCommandRequest::setCommandContent(const std::string& commandContent)
 {
 	commandContent_ = commandContent;
-	setCoreParameter("CommandContent", commandContent);
+	setParameter("CommandContent", commandContent);
 }
 
 long ModifyCommandRequest::getTimeout()const
@@ -90,7 +90,7 @@ long ModifyCommandRequest::getTimeout()const
 void ModifyCommandRequest::setTimeout(long timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", std::to_string(timeout));
+	setParameter("Timeout", std::to_string(timeout));
 }
 
 std::string ModifyCommandRequest::getRegionId()const
@@ -101,7 +101,7 @@ std::string ModifyCommandRequest::getRegionId()const
 void ModifyCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyCommandRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyCommandRequest::getResourceOwnerAccount()const
 void ModifyCommandRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyCommandRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string ModifyCommandRequest::getOwnerAccount()const
 void ModifyCommandRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyCommandRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long ModifyCommandRequest::getOwnerId()const
 void ModifyCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyCommandRequest::getName()const
@@ -145,6 +145,6 @@ std::string ModifyCommandRequest::getName()const
 void ModifyCommandRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

@@ -35,7 +35,7 @@ long DescribeReservedInstancesRequest::getResourceOwnerId()const
 void DescribeReservedInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeReservedInstancesRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeReservedInstancesRequest::getPageNumber()const
 void DescribeReservedInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeReservedInstancesRequest::getLockReason()const
@@ -57,7 +57,7 @@ std::string DescribeReservedInstancesRequest::getLockReason()const
 void DescribeReservedInstancesRequest::setLockReason(const std::string& lockReason)
 {
 	lockReason_ = lockReason;
-	setCoreParameter("LockReason", lockReason);
+	setParameter("LockReason", lockReason);
 }
 
 std::string DescribeReservedInstancesRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribeReservedInstancesRequest::getRegionId()const
 void DescribeReservedInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeReservedInstancesRequest::getScope()const
@@ -79,7 +79,7 @@ std::string DescribeReservedInstancesRequest::getScope()const
 void DescribeReservedInstancesRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", scope);
+	setParameter("Scope", scope);
 }
 
 int DescribeReservedInstancesRequest::getPageSize()const
@@ -90,7 +90,7 @@ int DescribeReservedInstancesRequest::getPageSize()const
 void DescribeReservedInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeReservedInstancesRequest::getInstanceType()const
@@ -101,7 +101,7 @@ std::string DescribeReservedInstancesRequest::getInstanceType()const
 void DescribeReservedInstancesRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string DescribeReservedInstancesRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribeReservedInstancesRequest::getResourceOwnerAccount()const
 void DescribeReservedInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeReservedInstancesRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string DescribeReservedInstancesRequest::getOwnerAccount()const
 void DescribeReservedInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeReservedInstancesRequest::getInstanceTypeFamily()const
@@ -134,7 +134,7 @@ std::string DescribeReservedInstancesRequest::getInstanceTypeFamily()const
 void DescribeReservedInstancesRequest::setInstanceTypeFamily(const std::string& instanceTypeFamily)
 {
 	instanceTypeFamily_ = instanceTypeFamily;
-	setCoreParameter("InstanceTypeFamily", instanceTypeFamily);
+	setParameter("InstanceTypeFamily", instanceTypeFamily);
 }
 
 long DescribeReservedInstancesRequest::getOwnerId()const
@@ -145,7 +145,7 @@ long DescribeReservedInstancesRequest::getOwnerId()const
 void DescribeReservedInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> DescribeReservedInstancesRequest::getReservedInstanceId()const
@@ -157,7 +157,7 @@ void DescribeReservedInstancesRequest::setReservedInstanceId(const std::vector<s
 {
 	reservedInstanceId_ = reservedInstanceId;
 	for(int dep1 = 0; dep1!= reservedInstanceId.size(); dep1++) {
-		setCoreParameter("ReservedInstanceId."+ std::to_string(dep1), reservedInstanceId.at(dep1));
+		setParameter("ReservedInstanceId."+ std::to_string(dep1), reservedInstanceId.at(dep1));
 	}
 }
 
@@ -169,7 +169,7 @@ std::string DescribeReservedInstancesRequest::getOfferingType()const
 void DescribeReservedInstancesRequest::setOfferingType(const std::string& offeringType)
 {
 	offeringType_ = offeringType;
-	setCoreParameter("OfferingType", offeringType);
+	setParameter("OfferingType", offeringType);
 }
 
 std::string DescribeReservedInstancesRequest::getZoneId()const
@@ -180,7 +180,7 @@ std::string DescribeReservedInstancesRequest::getZoneId()const
 void DescribeReservedInstancesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string DescribeReservedInstancesRequest::getReservedInstanceName()const
@@ -191,7 +191,7 @@ std::string DescribeReservedInstancesRequest::getReservedInstanceName()const
 void DescribeReservedInstancesRequest::setReservedInstanceName(const std::string& reservedInstanceName)
 {
 	reservedInstanceName_ = reservedInstanceName;
-	setCoreParameter("ReservedInstanceName", reservedInstanceName);
+	setParameter("ReservedInstanceName", reservedInstanceName);
 }
 
 std::vector<std::string> DescribeReservedInstancesRequest::getStatus()const
@@ -203,7 +203,18 @@ void DescribeReservedInstancesRequest::setStatus(const std::vector<std::string>&
 {
 	status_ = status;
 	for(int dep1 = 0; dep1!= status.size(); dep1++) {
-		setCoreParameter("Status."+ std::to_string(dep1), status.at(dep1));
+		setParameter("Status."+ std::to_string(dep1), status.at(dep1));
 	}
+}
+
+std::string DescribeReservedInstancesRequest::getAllocationType()const
+{
+	return allocationType_;
+}
+
+void DescribeReservedInstancesRequest::setAllocationType(const std::string& allocationType)
+{
+	allocationType_ = allocationType;
+	setParameter("AllocationType", allocationType);
 }
 

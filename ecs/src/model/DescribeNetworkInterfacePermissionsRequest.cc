@@ -35,7 +35,7 @@ long DescribeNetworkInterfacePermissionsRequest::getResourceOwnerId()const
 void DescribeNetworkInterfacePermissionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeNetworkInterfacePermissionsRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeNetworkInterfacePermissionsRequest::getPageNumber()const
 void DescribeNetworkInterfacePermissionsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeNetworkInterfacePermissionsRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DescribeNetworkInterfacePermissionsRequest::getRegionId()const
 void DescribeNetworkInterfacePermissionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeNetworkInterfacePermissionsRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeNetworkInterfacePermissionsRequest::getPageSize()const
 void DescribeNetworkInterfacePermissionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<std::string> DescribeNetworkInterfacePermissionsRequest::getNetworkInterfacePermissionId()const
@@ -80,7 +80,7 @@ void DescribeNetworkInterfacePermissionsRequest::setNetworkInterfacePermissionId
 {
 	networkInterfacePermissionId_ = networkInterfacePermissionId;
 	for(int dep1 = 0; dep1!= networkInterfacePermissionId.size(); dep1++) {
-		setCoreParameter("NetworkInterfacePermissionId."+ std::to_string(dep1), networkInterfacePermissionId.at(dep1));
+		setParameter("NetworkInterfacePermissionId."+ std::to_string(dep1), networkInterfacePermissionId.at(dep1));
 	}
 }
 
@@ -92,7 +92,7 @@ std::string DescribeNetworkInterfacePermissionsRequest::getResourceOwnerAccount(
 void DescribeNetworkInterfacePermissionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeNetworkInterfacePermissionsRequest::getOwnerAccount()const
@@ -103,7 +103,7 @@ std::string DescribeNetworkInterfacePermissionsRequest::getOwnerAccount()const
 void DescribeNetworkInterfacePermissionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeNetworkInterfacePermissionsRequest::getOwnerId()const
@@ -114,7 +114,7 @@ long DescribeNetworkInterfacePermissionsRequest::getOwnerId()const
 void DescribeNetworkInterfacePermissionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeNetworkInterfacePermissionsRequest::getNetworkInterfaceId()const
@@ -125,6 +125,6 @@ std::string DescribeNetworkInterfacePermissionsRequest::getNetworkInterfaceId()c
 void DescribeNetworkInterfacePermissionsRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	setCoreParameter("NetworkInterfaceId", networkInterfaceId);
+	setParameter("NetworkInterfaceId", networkInterfaceId);
 }
 

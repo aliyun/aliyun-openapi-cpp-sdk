@@ -35,7 +35,7 @@ long CreateRouteEntryRequest::getResourceOwnerId()const
 void CreateRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateRouteEntryRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string CreateRouteEntryRequest::getClientToken()const
 void CreateRouteEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateRouteEntryRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string CreateRouteEntryRequest::getRegionId()const
 void CreateRouteEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateRouteEntryRequest::getNextHopId()const
@@ -68,7 +68,7 @@ std::string CreateRouteEntryRequest::getNextHopId()const
 void CreateRouteEntryRequest::setNextHopId(const std::string& nextHopId)
 {
 	nextHopId_ = nextHopId;
-	setCoreParameter("NextHopId", nextHopId);
+	setParameter("NextHopId", nextHopId);
 }
 
 std::string CreateRouteEntryRequest::getNextHopType()const
@@ -79,7 +79,7 @@ std::string CreateRouteEntryRequest::getNextHopType()const
 void CreateRouteEntryRequest::setNextHopType(const std::string& nextHopType)
 {
 	nextHopType_ = nextHopType;
-	setCoreParameter("NextHopType", nextHopType);
+	setParameter("NextHopType", nextHopType);
 }
 
 std::string CreateRouteEntryRequest::getRouteTableId()const
@@ -90,7 +90,7 @@ std::string CreateRouteEntryRequest::getRouteTableId()const
 void CreateRouteEntryRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
+	setParameter("RouteTableId", routeTableId);
 }
 
 std::string CreateRouteEntryRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string CreateRouteEntryRequest::getResourceOwnerAccount()const
 void CreateRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateRouteEntryRequest::getDestinationCidrBlock()const
@@ -112,7 +112,7 @@ std::string CreateRouteEntryRequest::getDestinationCidrBlock()const
 void CreateRouteEntryRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
 {
 	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+	setParameter("DestinationCidrBlock", destinationCidrBlock);
 }
 
 std::string CreateRouteEntryRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string CreateRouteEntryRequest::getOwnerAccount()const
 void CreateRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateRouteEntryRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long CreateRouteEntryRequest::getOwnerId()const
 void CreateRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<CreateRouteEntryRequest::NextHopList> CreateRouteEntryRequest::getNextHopList()const
@@ -147,9 +147,9 @@ void CreateRouteEntryRequest::setNextHopList(const std::vector<NextHopList>& nex
 	nextHopList_ = nextHopList;
 	for(int dep1 = 0; dep1!= nextHopList.size(); dep1++) {
 		auto nextHopListObj = nextHopList.at(dep1);
-		std::string nextHopListObjStr = "NextHopList." + std::to_string(dep1);
-		setCoreParameter(nextHopListObjStr + ".NextHopId", nextHopListObj.nextHopId);
-		setCoreParameter(nextHopListObjStr + ".NextHopType", nextHopListObj.nextHopType);
+		std::string nextHopListObjStr = "NextHopList." + std::to_string(dep1 + 1);
+		setParameter(nextHopListObjStr + ".NextHopId", nextHopListObj.nextHopId);
+		setParameter(nextHopListObjStr + ".NextHopType", nextHopListObj.nextHopType);
 	}
 }
 

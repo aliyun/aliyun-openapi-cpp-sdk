@@ -35,7 +35,7 @@ std::string ModifySecurityGroupRuleRequest::getNicType()const
 void ModifySecurityGroupRuleRequest::setNicType(const std::string& nicType)
 {
 	nicType_ = nicType;
-	setCoreParameter("NicType", nicType);
+	setParameter("NicType", nicType);
 }
 
 long ModifySecurityGroupRuleRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long ModifySecurityGroupRuleRequest::getResourceOwnerId()const
 void ModifySecurityGroupRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySecurityGroupRuleRequest::getSourcePortRange()const
@@ -57,7 +57,7 @@ std::string ModifySecurityGroupRuleRequest::getSourcePortRange()const
 void ModifySecurityGroupRuleRequest::setSourcePortRange(const std::string& sourcePortRange)
 {
 	sourcePortRange_ = sourcePortRange;
-	setCoreParameter("SourcePortRange", sourcePortRange);
+	setParameter("SourcePortRange", sourcePortRange);
 }
 
 std::string ModifySecurityGroupRuleRequest::getClientToken()const
@@ -68,7 +68,7 @@ std::string ModifySecurityGroupRuleRequest::getClientToken()const
 void ModifySecurityGroupRuleRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifySecurityGroupRuleRequest::getSecurityGroupId()const
@@ -79,7 +79,7 @@ std::string ModifySecurityGroupRuleRequest::getSecurityGroupId()const
 void ModifySecurityGroupRuleRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
 std::string ModifySecurityGroupRuleRequest::getDescription()const
@@ -90,7 +90,7 @@ std::string ModifySecurityGroupRuleRequest::getDescription()const
 void ModifySecurityGroupRuleRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 long ModifySecurityGroupRuleRequest::getSourceGroupOwnerId()const
@@ -101,7 +101,7 @@ long ModifySecurityGroupRuleRequest::getSourceGroupOwnerId()const
 void ModifySecurityGroupRuleRequest::setSourceGroupOwnerId(long sourceGroupOwnerId)
 {
 	sourceGroupOwnerId_ = sourceGroupOwnerId;
-	setCoreParameter("SourceGroupOwnerId", std::to_string(sourceGroupOwnerId));
+	setParameter("SourceGroupOwnerId", std::to_string(sourceGroupOwnerId));
 }
 
 std::string ModifySecurityGroupRuleRequest::getSourceGroupOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifySecurityGroupRuleRequest::getSourceGroupOwnerAccount()const
 void ModifySecurityGroupRuleRequest::setSourceGroupOwnerAccount(const std::string& sourceGroupOwnerAccount)
 {
 	sourceGroupOwnerAccount_ = sourceGroupOwnerAccount;
-	setCoreParameter("SourceGroupOwnerAccount", sourceGroupOwnerAccount);
+	setParameter("SourceGroupOwnerAccount", sourceGroupOwnerAccount);
 }
 
 std::string ModifySecurityGroupRuleRequest::getRegionId()const
@@ -123,7 +123,7 @@ std::string ModifySecurityGroupRuleRequest::getRegionId()const
 void ModifySecurityGroupRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifySecurityGroupRuleRequest::getIpv6SourceCidrIp()const
@@ -134,7 +134,7 @@ std::string ModifySecurityGroupRuleRequest::getIpv6SourceCidrIp()const
 void ModifySecurityGroupRuleRequest::setIpv6SourceCidrIp(const std::string& ipv6SourceCidrIp)
 {
 	ipv6SourceCidrIp_ = ipv6SourceCidrIp;
-	setCoreParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
+	setParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
 }
 
 std::string ModifySecurityGroupRuleRequest::getIpv6DestCidrIp()const
@@ -145,7 +145,7 @@ std::string ModifySecurityGroupRuleRequest::getIpv6DestCidrIp()const
 void ModifySecurityGroupRuleRequest::setIpv6DestCidrIp(const std::string& ipv6DestCidrIp)
 {
 	ipv6DestCidrIp_ = ipv6DestCidrIp;
-	setCoreParameter("Ipv6DestCidrIp", ipv6DestCidrIp);
+	setParameter("Ipv6DestCidrIp", ipv6DestCidrIp);
 }
 
 std::string ModifySecurityGroupRuleRequest::getPolicy()const
@@ -156,7 +156,7 @@ std::string ModifySecurityGroupRuleRequest::getPolicy()const
 void ModifySecurityGroupRuleRequest::setPolicy(const std::string& policy)
 {
 	policy_ = policy;
-	setCoreParameter("Policy", policy);
+	setParameter("Policy", policy);
 }
 
 std::string ModifySecurityGroupRuleRequest::getPortRange()const
@@ -167,7 +167,7 @@ std::string ModifySecurityGroupRuleRequest::getPortRange()const
 void ModifySecurityGroupRuleRequest::setPortRange(const std::string& portRange)
 {
 	portRange_ = portRange;
-	setCoreParameter("PortRange", portRange);
+	setParameter("PortRange", portRange);
 }
 
 std::string ModifySecurityGroupRuleRequest::getResourceOwnerAccount()const
@@ -178,7 +178,7 @@ std::string ModifySecurityGroupRuleRequest::getResourceOwnerAccount()const
 void ModifySecurityGroupRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifySecurityGroupRuleRequest::getIpProtocol()const
@@ -189,7 +189,7 @@ std::string ModifySecurityGroupRuleRequest::getIpProtocol()const
 void ModifySecurityGroupRuleRequest::setIpProtocol(const std::string& ipProtocol)
 {
 	ipProtocol_ = ipProtocol;
-	setCoreParameter("IpProtocol", ipProtocol);
+	setParameter("IpProtocol", ipProtocol);
 }
 
 std::string ModifySecurityGroupRuleRequest::getOwnerAccount()const
@@ -200,7 +200,7 @@ std::string ModifySecurityGroupRuleRequest::getOwnerAccount()const
 void ModifySecurityGroupRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifySecurityGroupRuleRequest::getSourceCidrIp()const
@@ -211,7 +211,7 @@ std::string ModifySecurityGroupRuleRequest::getSourceCidrIp()const
 void ModifySecurityGroupRuleRequest::setSourceCidrIp(const std::string& sourceCidrIp)
 {
 	sourceCidrIp_ = sourceCidrIp;
-	setCoreParameter("SourceCidrIp", sourceCidrIp);
+	setParameter("SourceCidrIp", sourceCidrIp);
 }
 
 long ModifySecurityGroupRuleRequest::getOwnerId()const
@@ -222,7 +222,7 @@ long ModifySecurityGroupRuleRequest::getOwnerId()const
 void ModifySecurityGroupRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifySecurityGroupRuleRequest::getPriority()const
@@ -233,7 +233,7 @@ std::string ModifySecurityGroupRuleRequest::getPriority()const
 void ModifySecurityGroupRuleRequest::setPriority(const std::string& priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", priority);
+	setParameter("Priority", priority);
 }
 
 std::string ModifySecurityGroupRuleRequest::getDestCidrIp()const
@@ -244,7 +244,7 @@ std::string ModifySecurityGroupRuleRequest::getDestCidrIp()const
 void ModifySecurityGroupRuleRequest::setDestCidrIp(const std::string& destCidrIp)
 {
 	destCidrIp_ = destCidrIp;
-	setCoreParameter("DestCidrIp", destCidrIp);
+	setParameter("DestCidrIp", destCidrIp);
 }
 
 std::string ModifySecurityGroupRuleRequest::getSourceGroupId()const
@@ -255,6 +255,6 @@ std::string ModifySecurityGroupRuleRequest::getSourceGroupId()const
 void ModifySecurityGroupRuleRequest::setSourceGroupId(const std::string& sourceGroupId)
 {
 	sourceGroupId_ = sourceGroupId;
-	setCoreParameter("SourceGroupId", sourceGroupId);
+	setParameter("SourceGroupId", sourceGroupId);
 }
 

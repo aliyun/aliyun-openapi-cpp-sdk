@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateAutoProvisioningGroupRequest : public RpcServiceRequest
 			{
+			public:
 				struct LaunchTemplateConfig
 				{
 					std::string instanceType;

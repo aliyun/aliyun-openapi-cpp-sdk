@@ -35,7 +35,7 @@ long ModifyVSwitchAttributeRequest::getResourceOwnerId()const
 void ModifyVSwitchAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyVSwitchAttributeRequest::getDescription()const
@@ -46,7 +46,7 @@ std::string ModifyVSwitchAttributeRequest::getDescription()const
 void ModifyVSwitchAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyVSwitchAttributeRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string ModifyVSwitchAttributeRequest::getRegionId()const
 void ModifyVSwitchAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyVSwitchAttributeRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string ModifyVSwitchAttributeRequest::getResourceOwnerAccount()const
 void ModifyVSwitchAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyVSwitchAttributeRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyVSwitchAttributeRequest::getOwnerAccount()const
 void ModifyVSwitchAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyVSwitchAttributeRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long ModifyVSwitchAttributeRequest::getOwnerId()const
 void ModifyVSwitchAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyVSwitchAttributeRequest::getVSwitchId()const
@@ -101,7 +101,7 @@ std::string ModifyVSwitchAttributeRequest::getVSwitchId()const
 void ModifyVSwitchAttributeRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string ModifyVSwitchAttributeRequest::getVSwitchName()const
@@ -112,6 +112,6 @@ std::string ModifyVSwitchAttributeRequest::getVSwitchName()const
 void ModifyVSwitchAttributeRequest::setVSwitchName(const std::string& vSwitchName)
 {
 	vSwitchName_ = vSwitchName;
-	setCoreParameter("VSwitchName", vSwitchName);
+	setParameter("VSwitchName", vSwitchName);
 }
 

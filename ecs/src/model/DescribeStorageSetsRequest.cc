@@ -35,7 +35,7 @@ long DescribeStorageSetsRequest::getResourceOwnerId()const
 void DescribeStorageSetsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeStorageSetsRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string DescribeStorageSetsRequest::getClientToken()const
 void DescribeStorageSetsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeStorageSetsRequest::getStorageSetIds()const
@@ -57,7 +57,7 @@ std::string DescribeStorageSetsRequest::getStorageSetIds()const
 void DescribeStorageSetsRequest::setStorageSetIds(const std::string& storageSetIds)
 {
 	storageSetIds_ = storageSetIds;
-	setCoreParameter("StorageSetIds", storageSetIds);
+	setParameter("StorageSetIds", storageSetIds);
 }
 
 int DescribeStorageSetsRequest::getPageNumber()const
@@ -68,7 +68,7 @@ int DescribeStorageSetsRequest::getPageNumber()const
 void DescribeStorageSetsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeStorageSetsRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string DescribeStorageSetsRequest::getRegionId()const
 void DescribeStorageSetsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeStorageSetsRequest::getPageSize()const
@@ -90,7 +90,7 @@ int DescribeStorageSetsRequest::getPageSize()const
 void DescribeStorageSetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeStorageSetsRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeStorageSetsRequest::getResourceOwnerAccount()const
 void DescribeStorageSetsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeStorageSetsRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribeStorageSetsRequest::getOwnerAccount()const
 void DescribeStorageSetsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeStorageSetsRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long DescribeStorageSetsRequest::getOwnerId()const
 void DescribeStorageSetsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeStorageSetsRequest::getZoneId()const
@@ -134,7 +134,7 @@ std::string DescribeStorageSetsRequest::getZoneId()const
 void DescribeStorageSetsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string DescribeStorageSetsRequest::getStorageSetName()const
@@ -145,6 +145,6 @@ std::string DescribeStorageSetsRequest::getStorageSetName()const
 void DescribeStorageSetsRequest::setStorageSetName(const std::string& storageSetName)
 {
 	storageSetName_ = storageSetName;
-	setCoreParameter("StorageSetName", storageSetName);
+	setParameter("StorageSetName", storageSetName);
 }
 

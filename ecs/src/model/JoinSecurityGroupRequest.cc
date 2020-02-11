@@ -35,7 +35,7 @@ long JoinSecurityGroupRequest::getResourceOwnerId()const
 void JoinSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string JoinSecurityGroupRequest::getSecurityGroupId()const
@@ -46,7 +46,7 @@ std::string JoinSecurityGroupRequest::getSecurityGroupId()const
 void JoinSecurityGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
 std::string JoinSecurityGroupRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string JoinSecurityGroupRequest::getResourceOwnerAccount()const
 void JoinSecurityGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string JoinSecurityGroupRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string JoinSecurityGroupRequest::getOwnerAccount()const
 void JoinSecurityGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long JoinSecurityGroupRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long JoinSecurityGroupRequest::getOwnerId()const
 void JoinSecurityGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string JoinSecurityGroupRequest::getInstanceId()const
@@ -90,6 +90,6 @@ std::string JoinSecurityGroupRequest::getInstanceId()const
 void JoinSecurityGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

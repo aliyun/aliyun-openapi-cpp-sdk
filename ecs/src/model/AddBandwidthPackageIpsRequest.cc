@@ -35,7 +35,7 @@ long AddBandwidthPackageIpsRequest::getResourceOwnerId()const
 void AddBandwidthPackageIpsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddBandwidthPackageIpsRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string AddBandwidthPackageIpsRequest::getClientToken()const
 void AddBandwidthPackageIpsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string AddBandwidthPackageIpsRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string AddBandwidthPackageIpsRequest::getRegionId()const
 void AddBandwidthPackageIpsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AddBandwidthPackageIpsRequest::getBandwidthPackageId()const
@@ -68,7 +68,7 @@ std::string AddBandwidthPackageIpsRequest::getBandwidthPackageId()const
 void AddBandwidthPackageIpsRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setParameter("BandwidthPackageId", bandwidthPackageId);
 }
 
 std::string AddBandwidthPackageIpsRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string AddBandwidthPackageIpsRequest::getResourceOwnerAccount()const
 void AddBandwidthPackageIpsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddBandwidthPackageIpsRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string AddBandwidthPackageIpsRequest::getOwnerAccount()const
 void AddBandwidthPackageIpsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddBandwidthPackageIpsRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long AddBandwidthPackageIpsRequest::getOwnerId()const
 void AddBandwidthPackageIpsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddBandwidthPackageIpsRequest::getIpCount()const
@@ -112,6 +112,6 @@ std::string AddBandwidthPackageIpsRequest::getIpCount()const
 void AddBandwidthPackageIpsRequest::setIpCount(const std::string& ipCount)
 {
 	ipCount_ = ipCount;
-	setCoreParameter("IpCount", ipCount);
+	setParameter("IpCount", ipCount);
 }
 

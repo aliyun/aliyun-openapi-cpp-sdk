@@ -73,6 +73,8 @@ void DescribeReservedInstancesResult::parse(const std::string &payload)
 			reservedInstancesObject.startTime = valueReservedInstancesReservedInstance["StartTime"].asString();
 		if(!valueReservedInstancesReservedInstance["ResourceGroupId"].isNull())
 			reservedInstancesObject.resourceGroupId = valueReservedInstancesReservedInstance["ResourceGroupId"].asString();
+		if(!valueReservedInstancesReservedInstance["AllocationStatus"].isNull())
+			reservedInstancesObject.allocationStatus = valueReservedInstancesReservedInstance["AllocationStatus"].asString();
 		auto allOperationLocksNode = allReservedInstancesNode["OperationLocks"]["OperationLock"];
 		for (auto allReservedInstancesNodeOperationLocksOperationLock : allOperationLocksNode)
 		{

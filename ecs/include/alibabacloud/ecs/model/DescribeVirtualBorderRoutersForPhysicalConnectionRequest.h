@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT DescribeVirtualBorderRoutersForPhysicalConnectionRequest : public RpcServiceRequest
 			{
+			public:
 				struct Filter
 				{
 					std::vector<std::string> value;

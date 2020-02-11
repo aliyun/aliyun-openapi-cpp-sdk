@@ -67,6 +67,8 @@ namespace AlibabaCloud
 				void setReservedInstanceName(const std::string& reservedInstanceName);
 				std::vector<std::string> getStatus()const;
 				void setStatus(const std::vector<std::string>& status);
+				std::string getAllocationType()const;
+				void setAllocationType(const std::string& allocationType);
 
             private:
 				long resourceOwnerId_;
@@ -85,6 +87,7 @@ namespace AlibabaCloud
 				std::string zoneId_;
 				std::string reservedInstanceName_;
 				std::vector<std::string> status_;
+				std::string allocationType_;
 
 			};
 		}

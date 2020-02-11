@@ -35,7 +35,7 @@ long DescribeAutoProvisioningGroupHistoryRequest::getResourceOwnerId()const
 void DescribeAutoProvisioningGroupHistoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getStartTime()const
 void DescribeAutoProvisioningGroupHistoryRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int DescribeAutoProvisioningGroupHistoryRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeAutoProvisioningGroupHistoryRequest::getPageNumber()const
 void DescribeAutoProvisioningGroupHistoryRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getRegionId()const
 void DescribeAutoProvisioningGroupHistoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeAutoProvisioningGroupHistoryRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribeAutoProvisioningGroupHistoryRequest::getPageSize()const
 void DescribeAutoProvisioningGroupHistoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getResourceOwnerAccount
 void DescribeAutoProvisioningGroupHistoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getOwnerAccount()const
 void DescribeAutoProvisioningGroupHistoryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getEndTime()const
@@ -112,7 +112,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getEndTime()const
 void DescribeAutoProvisioningGroupHistoryRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeAutoProvisioningGroupHistoryRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long DescribeAutoProvisioningGroupHistoryRequest::getOwnerId()const
 void DescribeAutoProvisioningGroupHistoryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getAutoProvisioningGroupId()const
@@ -134,6 +134,6 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getAutoProvisioningGrou
 void DescribeAutoProvisioningGroupHistoryRequest::setAutoProvisioningGroupId(const std::string& autoProvisioningGroupId)
 {
 	autoProvisioningGroupId_ = autoProvisioningGroupId;
-	setCoreParameter("AutoProvisioningGroupId", autoProvisioningGroupId);
+	setParameter("AutoProvisioningGroupId", autoProvisioningGroupId);
 }
 

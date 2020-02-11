@@ -35,7 +35,7 @@ long DescribePhysicalConnectionsRequest::getResourceOwnerId()const
 void DescribePhysicalConnectionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribePhysicalConnectionsRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string DescribePhysicalConnectionsRequest::getClientToken()const
 void DescribePhysicalConnectionsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 int DescribePhysicalConnectionsRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribePhysicalConnectionsRequest::getPageNumber()const
 void DescribePhysicalConnectionsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribePhysicalConnectionsRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribePhysicalConnectionsRequest::getRegionId()const
 void DescribePhysicalConnectionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribePhysicalConnectionsRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribePhysicalConnectionsRequest::getPageSize()const
 void DescribePhysicalConnectionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribePhysicalConnectionsRequest::getUserCidr()const
@@ -90,7 +90,7 @@ std::string DescribePhysicalConnectionsRequest::getUserCidr()const
 void DescribePhysicalConnectionsRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setParameter("UserCidr", userCidr);
 }
 
 std::string DescribePhysicalConnectionsRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribePhysicalConnectionsRequest::getResourceOwnerAccount()const
 void DescribePhysicalConnectionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribePhysicalConnectionsRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribePhysicalConnectionsRequest::getOwnerAccount()const
 void DescribePhysicalConnectionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribePhysicalConnectionsRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long DescribePhysicalConnectionsRequest::getOwnerId()const
 void DescribePhysicalConnectionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<DescribePhysicalConnectionsRequest::Filter> DescribePhysicalConnectionsRequest::getFilter()const
@@ -136,11 +136,11 @@ void DescribePhysicalConnectionsRequest::setFilter(const std::vector<Filter>& fi
 	filter_ = filter;
 	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
 		auto filterObj = filter.at(dep1);
-		std::string filterObjStr = "Filter." + std::to_string(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1 + 1);
 		for(int dep2 = 0; dep2!= filterObj.value.size(); dep2++) {
-			setCoreParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
+			setParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
 		}
-		setCoreParameter(filterObjStr + ".Key", filterObj.key);
+		setParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }
 

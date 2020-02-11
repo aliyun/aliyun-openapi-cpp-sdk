@@ -35,7 +35,7 @@ long ModifyAutoProvisioningGroupRequest::getResourceOwnerId()const
 void ModifyAutoProvisioningGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool ModifyAutoProvisioningGroupRequest::getTerminateInstancesWithExpiration()const
@@ -46,7 +46,7 @@ bool ModifyAutoProvisioningGroupRequest::getTerminateInstancesWithExpiration()co
 void ModifyAutoProvisioningGroupRequest::setTerminateInstancesWithExpiration(bool terminateInstancesWithExpiration)
 {
 	terminateInstancesWithExpiration_ = terminateInstancesWithExpiration;
-	setCoreParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration ? "true" : "false");
+	setParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration ? "true" : "false");
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string ModifyAutoProvisioningGroupRequest::getRegionId()const
 void ModifyAutoProvisioningGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getDefaultTargetCapacityType()const
@@ -68,7 +68,7 @@ std::string ModifyAutoProvisioningGroupRequest::getDefaultTargetCapacityType()co
 void ModifyAutoProvisioningGroupRequest::setDefaultTargetCapacityType(const std::string& defaultTargetCapacityType)
 {
 	defaultTargetCapacityType_ = defaultTargetCapacityType;
-	setCoreParameter("DefaultTargetCapacityType", defaultTargetCapacityType);
+	setParameter("DefaultTargetCapacityType", defaultTargetCapacityType);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getExcessCapacityTerminationPolicy()const
@@ -79,7 +79,7 @@ std::string ModifyAutoProvisioningGroupRequest::getExcessCapacityTerminationPoli
 void ModifyAutoProvisioningGroupRequest::setExcessCapacityTerminationPolicy(const std::string& excessCapacityTerminationPolicy)
 {
 	excessCapacityTerminationPolicy_ = excessCapacityTerminationPolicy;
-	setCoreParameter("ExcessCapacityTerminationPolicy", excessCapacityTerminationPolicy);
+	setParameter("ExcessCapacityTerminationPolicy", excessCapacityTerminationPolicy);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyAutoProvisioningGroupRequest::getResourceOwnerAccount()const
 void ModifyAutoProvisioningGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyAutoProvisioningGroupRequest::getOwnerAccount()const
 void ModifyAutoProvisioningGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyAutoProvisioningGroupRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long ModifyAutoProvisioningGroupRequest::getOwnerId()const
 void ModifyAutoProvisioningGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getAutoProvisioningGroupId()const
@@ -123,7 +123,7 @@ std::string ModifyAutoProvisioningGroupRequest::getAutoProvisioningGroupId()cons
 void ModifyAutoProvisioningGroupRequest::setAutoProvisioningGroupId(const std::string& autoProvisioningGroupId)
 {
 	autoProvisioningGroupId_ = autoProvisioningGroupId;
-	setCoreParameter("AutoProvisioningGroupId", autoProvisioningGroupId);
+	setParameter("AutoProvisioningGroupId", autoProvisioningGroupId);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getPayAsYouGoTargetCapacity()const
@@ -134,7 +134,7 @@ std::string ModifyAutoProvisioningGroupRequest::getPayAsYouGoTargetCapacity()con
 void ModifyAutoProvisioningGroupRequest::setPayAsYouGoTargetCapacity(const std::string& payAsYouGoTargetCapacity)
 {
 	payAsYouGoTargetCapacity_ = payAsYouGoTargetCapacity;
-	setCoreParameter("PayAsYouGoTargetCapacity", payAsYouGoTargetCapacity);
+	setParameter("PayAsYouGoTargetCapacity", payAsYouGoTargetCapacity);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getTotalTargetCapacity()const
@@ -145,7 +145,7 @@ std::string ModifyAutoProvisioningGroupRequest::getTotalTargetCapacity()const
 void ModifyAutoProvisioningGroupRequest::setTotalTargetCapacity(const std::string& totalTargetCapacity)
 {
 	totalTargetCapacity_ = totalTargetCapacity;
-	setCoreParameter("TotalTargetCapacity", totalTargetCapacity);
+	setParameter("TotalTargetCapacity", totalTargetCapacity);
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getSpotTargetCapacity()const
@@ -156,7 +156,7 @@ std::string ModifyAutoProvisioningGroupRequest::getSpotTargetCapacity()const
 void ModifyAutoProvisioningGroupRequest::setSpotTargetCapacity(const std::string& spotTargetCapacity)
 {
 	spotTargetCapacity_ = spotTargetCapacity;
-	setCoreParameter("SpotTargetCapacity", spotTargetCapacity);
+	setParameter("SpotTargetCapacity", spotTargetCapacity);
 }
 
 float ModifyAutoProvisioningGroupRequest::getMaxSpotPrice()const
@@ -167,7 +167,7 @@ float ModifyAutoProvisioningGroupRequest::getMaxSpotPrice()const
 void ModifyAutoProvisioningGroupRequest::setMaxSpotPrice(float maxSpotPrice)
 {
 	maxSpotPrice_ = maxSpotPrice;
-	setCoreParameter("MaxSpotPrice", std::to_string(maxSpotPrice));
+	setParameter("MaxSpotPrice", std::to_string(maxSpotPrice));
 }
 
 std::string ModifyAutoProvisioningGroupRequest::getAutoProvisioningGroupName()const
@@ -178,6 +178,6 @@ std::string ModifyAutoProvisioningGroupRequest::getAutoProvisioningGroupName()co
 void ModifyAutoProvisioningGroupRequest::setAutoProvisioningGroupName(const std::string& autoProvisioningGroupName)
 {
 	autoProvisioningGroupName_ = autoProvisioningGroupName;
-	setCoreParameter("AutoProvisioningGroupName", autoProvisioningGroupName);
+	setParameter("AutoProvisioningGroupName", autoProvisioningGroupName);
 }
 

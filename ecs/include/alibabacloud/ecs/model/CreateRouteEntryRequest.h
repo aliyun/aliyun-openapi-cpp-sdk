@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateRouteEntryRequest : public RpcServiceRequest
 			{
+			public:
 				struct NextHopList
 				{
 					std::string nextHopId;

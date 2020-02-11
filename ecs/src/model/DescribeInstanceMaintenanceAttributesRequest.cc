@@ -35,7 +35,7 @@ long DescribeInstanceMaintenanceAttributesRequest::getResourceOwnerId()const
 void DescribeInstanceMaintenanceAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeInstanceMaintenanceAttributesRequest::getPageNumber()const
@@ -46,7 +46,7 @@ long DescribeInstanceMaintenanceAttributesRequest::getPageNumber()const
 void DescribeInstanceMaintenanceAttributesRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeInstanceMaintenanceAttributesRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DescribeInstanceMaintenanceAttributesRequest::getRegionId()const
 void DescribeInstanceMaintenanceAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 long DescribeInstanceMaintenanceAttributesRequest::getPageSize()const
@@ -68,7 +68,7 @@ long DescribeInstanceMaintenanceAttributesRequest::getPageSize()const
 void DescribeInstanceMaintenanceAttributesRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeInstanceMaintenanceAttributesRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeInstanceMaintenanceAttributesRequest::getResourceOwnerAccoun
 void DescribeInstanceMaintenanceAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstanceMaintenanceAttributesRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeInstanceMaintenanceAttributesRequest::getOwnerAccount()const
 void DescribeInstanceMaintenanceAttributesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeInstanceMaintenanceAttributesRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long DescribeInstanceMaintenanceAttributesRequest::getOwnerId()const
 void DescribeInstanceMaintenanceAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> DescribeInstanceMaintenanceAttributesRequest::getInstanceId()const
@@ -113,7 +113,7 @@ void DescribeInstanceMaintenanceAttributesRequest::setInstanceId(const std::vect
 {
 	instanceId_ = instanceId;
 	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
-		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
 	}
 }
 

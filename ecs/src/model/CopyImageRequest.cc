@@ -35,7 +35,7 @@ long CopyImageRequest::getResourceOwnerId()const
 void CopyImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CopyImageRequest::getImageId()const
@@ -46,7 +46,7 @@ std::string CopyImageRequest::getImageId()const
 void CopyImageRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setParameter("ImageId", imageId);
 }
 
 std::string CopyImageRequest::getDestinationRegionId()const
@@ -57,7 +57,7 @@ std::string CopyImageRequest::getDestinationRegionId()const
 void CopyImageRequest::setDestinationRegionId(const std::string& destinationRegionId)
 {
 	destinationRegionId_ = destinationRegionId;
-	setCoreParameter("DestinationRegionId", destinationRegionId);
+	setParameter("DestinationRegionId", destinationRegionId);
 }
 
 std::string CopyImageRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string CopyImageRequest::getRegionId()const
 void CopyImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<CopyImageRequest::Tag> CopyImageRequest::getTag()const
@@ -81,9 +81,9 @@ void CopyImageRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -95,7 +95,7 @@ std::string CopyImageRequest::getResourceOwnerAccount()const
 void CopyImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CopyImageRequest::getDestinationImageName()const
@@ -106,7 +106,7 @@ std::string CopyImageRequest::getDestinationImageName()const
 void CopyImageRequest::setDestinationImageName(const std::string& destinationImageName)
 {
 	destinationImageName_ = destinationImageName;
-	setCoreParameter("DestinationImageName", destinationImageName);
+	setParameter("DestinationImageName", destinationImageName);
 }
 
 std::string CopyImageRequest::getOwnerAccount()const
@@ -117,7 +117,7 @@ std::string CopyImageRequest::getOwnerAccount()const
 void CopyImageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CopyImageRequest::getOwnerId()const
@@ -128,7 +128,7 @@ long CopyImageRequest::getOwnerId()const
 void CopyImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool CopyImageRequest::getEncrypted()const
@@ -139,7 +139,7 @@ bool CopyImageRequest::getEncrypted()const
 void CopyImageRequest::setEncrypted(bool encrypted)
 {
 	encrypted_ = encrypted;
-	setCoreParameter("Encrypted", encrypted ? "true" : "false");
+	setParameter("Encrypted", encrypted ? "true" : "false");
 }
 
 std::string CopyImageRequest::getKMSKeyId()const
@@ -150,7 +150,7 @@ std::string CopyImageRequest::getKMSKeyId()const
 void CopyImageRequest::setKMSKeyId(const std::string& kMSKeyId)
 {
 	kMSKeyId_ = kMSKeyId;
-	setCoreParameter("KMSKeyId", kMSKeyId);
+	setParameter("KMSKeyId", kMSKeyId);
 }
 
 std::string CopyImageRequest::getDestinationDescription()const
@@ -161,6 +161,6 @@ std::string CopyImageRequest::getDestinationDescription()const
 void CopyImageRequest::setDestinationDescription(const std::string& destinationDescription)
 {
 	destinationDescription_ = destinationDescription;
-	setCoreParameter("DestinationDescription", destinationDescription);
+	setParameter("DestinationDescription", destinationDescription);
 }
 

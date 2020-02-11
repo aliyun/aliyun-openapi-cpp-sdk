@@ -35,7 +35,7 @@ long AssignIpv6AddressesRequest::getResourceOwnerId()const
 void AssignIpv6AddressesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AssignIpv6AddressesRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string AssignIpv6AddressesRequest::getRegionId()const
 void AssignIpv6AddressesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AssignIpv6AddressesRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string AssignIpv6AddressesRequest::getResourceOwnerAccount()const
 void AssignIpv6AddressesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int AssignIpv6AddressesRequest::getIpv6AddressCount()const
@@ -68,7 +68,7 @@ int AssignIpv6AddressesRequest::getIpv6AddressCount()const
 void AssignIpv6AddressesRequest::setIpv6AddressCount(int ipv6AddressCount)
 {
 	ipv6AddressCount_ = ipv6AddressCount;
-	setCoreParameter("Ipv6AddressCount", std::to_string(ipv6AddressCount));
+	setParameter("Ipv6AddressCount", std::to_string(ipv6AddressCount));
 }
 
 std::string AssignIpv6AddressesRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string AssignIpv6AddressesRequest::getOwnerAccount()const
 void AssignIpv6AddressesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AssignIpv6AddressesRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long AssignIpv6AddressesRequest::getOwnerId()const
 void AssignIpv6AddressesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AssignIpv6AddressesRequest::getNetworkInterfaceId()const
@@ -101,7 +101,7 @@ std::string AssignIpv6AddressesRequest::getNetworkInterfaceId()const
 void AssignIpv6AddressesRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	setCoreParameter("NetworkInterfaceId", networkInterfaceId);
+	setParameter("NetworkInterfaceId", networkInterfaceId);
 }
 
 std::vector<std::string> AssignIpv6AddressesRequest::getIpv6Address()const
@@ -113,7 +113,7 @@ void AssignIpv6AddressesRequest::setIpv6Address(const std::vector<std::string>& 
 {
 	ipv6Address_ = ipv6Address;
 	for(int dep1 = 0; dep1!= ipv6Address.size(); dep1++) {
-		setCoreParameter("Ipv6Address."+ std::to_string(dep1), ipv6Address.at(dep1));
+		setParameter("Ipv6Address."+ std::to_string(dep1), ipv6Address.at(dep1));
 	}
 }
 

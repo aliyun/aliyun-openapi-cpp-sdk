@@ -35,7 +35,7 @@ long AttachInstanceRamRoleRequest::getResourceOwnerId()const
 void AttachInstanceRamRoleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AttachInstanceRamRoleRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string AttachInstanceRamRoleRequest::getRegionId()const
 void AttachInstanceRamRoleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AttachInstanceRamRoleRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string AttachInstanceRamRoleRequest::getResourceOwnerAccount()const
 void AttachInstanceRamRoleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AttachInstanceRamRoleRequest::getRamRoleName()const
@@ -68,7 +68,7 @@ std::string AttachInstanceRamRoleRequest::getRamRoleName()const
 void AttachInstanceRamRoleRequest::setRamRoleName(const std::string& ramRoleName)
 {
 	ramRoleName_ = ramRoleName;
-	setCoreParameter("RamRoleName", ramRoleName);
+	setParameter("RamRoleName", ramRoleName);
 }
 
 long AttachInstanceRamRoleRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long AttachInstanceRamRoleRequest::getOwnerId()const
 void AttachInstanceRamRoleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AttachInstanceRamRoleRequest::getInstanceIds()const
@@ -90,6 +90,6 @@ std::string AttachInstanceRamRoleRequest::getInstanceIds()const
 void AttachInstanceRamRoleRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setParameter("InstanceIds", instanceIds);
 }
 

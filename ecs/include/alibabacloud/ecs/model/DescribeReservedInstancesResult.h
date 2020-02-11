@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string description;
+					std::string allocationStatus;
 					std::string zoneId;
 					std::string platform;
 					std::string resourceGroupId;

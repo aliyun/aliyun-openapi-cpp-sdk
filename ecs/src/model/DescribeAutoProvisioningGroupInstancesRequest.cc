@@ -35,7 +35,7 @@ long DescribeAutoProvisioningGroupInstancesRequest::getResourceOwnerId()const
 void DescribeAutoProvisioningGroupInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeAutoProvisioningGroupInstancesRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeAutoProvisioningGroupInstancesRequest::getPageNumber()const
 void DescribeAutoProvisioningGroupInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAutoProvisioningGroupInstancesRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DescribeAutoProvisioningGroupInstancesRequest::getRegionId()const
 void DescribeAutoProvisioningGroupInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeAutoProvisioningGroupInstancesRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeAutoProvisioningGroupInstancesRequest::getPageSize()const
 void DescribeAutoProvisioningGroupInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAutoProvisioningGroupInstancesRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeAutoProvisioningGroupInstancesRequest::getResourceOwnerAccou
 void DescribeAutoProvisioningGroupInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAutoProvisioningGroupInstancesRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeAutoProvisioningGroupInstancesRequest::getOwnerAccount()cons
 void DescribeAutoProvisioningGroupInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeAutoProvisioningGroupInstancesRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long DescribeAutoProvisioningGroupInstancesRequest::getOwnerId()const
 void DescribeAutoProvisioningGroupInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAutoProvisioningGroupInstancesRequest::getAutoProvisioningGroupId()const
@@ -112,6 +112,6 @@ std::string DescribeAutoProvisioningGroupInstancesRequest::getAutoProvisioningGr
 void DescribeAutoProvisioningGroupInstancesRequest::setAutoProvisioningGroupId(const std::string& autoProvisioningGroupId)
 {
 	autoProvisioningGroupId_ = autoProvisioningGroupId;
-	setCoreParameter("AutoProvisioningGroupId", autoProvisioningGroupId);
+	setParameter("AutoProvisioningGroupId", autoProvisioningGroupId);
 }
 

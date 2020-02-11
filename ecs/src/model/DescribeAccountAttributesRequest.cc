@@ -35,7 +35,7 @@ long DescribeAccountAttributesRequest::getResourceOwnerId()const
 void DescribeAccountAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<std::string> DescribeAccountAttributesRequest::getAttributeName()const
@@ -47,7 +47,7 @@ void DescribeAccountAttributesRequest::setAttributeName(const std::vector<std::s
 {
 	attributeName_ = attributeName;
 	for(int dep1 = 0; dep1!= attributeName.size(); dep1++) {
-		setCoreParameter("AttributeName."+ std::to_string(dep1), attributeName.at(dep1));
+		setParameter("AttributeName."+ std::to_string(dep1), attributeName.at(dep1));
 	}
 }
 
@@ -59,7 +59,7 @@ std::string DescribeAccountAttributesRequest::getRegionId()const
 void DescribeAccountAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeAccountAttributesRequest::getResourceOwnerAccount()const
@@ -70,7 +70,7 @@ std::string DescribeAccountAttributesRequest::getResourceOwnerAccount()const
 void DescribeAccountAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeAccountAttributesRequest::getOwnerId()const
@@ -81,7 +81,7 @@ long DescribeAccountAttributesRequest::getOwnerId()const
 void DescribeAccountAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAccountAttributesRequest::getZoneId()const
@@ -92,6 +92,6 @@ std::string DescribeAccountAttributesRequest::getZoneId()const
 void DescribeAccountAttributesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

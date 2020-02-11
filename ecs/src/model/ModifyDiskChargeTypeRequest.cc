@@ -35,7 +35,7 @@ long ModifyDiskChargeTypeRequest::getResourceOwnerId()const
 void ModifyDiskChargeTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDiskChargeTypeRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string ModifyDiskChargeTypeRequest::getClientToken()const
 void ModifyDiskChargeTypeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyDiskChargeTypeRequest::getDiskChargeType()const
@@ -57,7 +57,7 @@ std::string ModifyDiskChargeTypeRequest::getDiskChargeType()const
 void ModifyDiskChargeTypeRequest::setDiskChargeType(const std::string& diskChargeType)
 {
 	diskChargeType_ = diskChargeType;
-	setCoreParameter("DiskChargeType", diskChargeType);
+	setParameter("DiskChargeType", diskChargeType);
 }
 
 std::string ModifyDiskChargeTypeRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string ModifyDiskChargeTypeRequest::getRegionId()const
 void ModifyDiskChargeTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDiskChargeTypeRequest::getDiskIds()const
@@ -79,7 +79,7 @@ std::string ModifyDiskChargeTypeRequest::getDiskIds()const
 void ModifyDiskChargeTypeRequest::setDiskIds(const std::string& diskIds)
 {
 	diskIds_ = diskIds;
-	setCoreParameter("DiskIds", diskIds);
+	setParameter("DiskIds", diskIds);
 }
 
 bool ModifyDiskChargeTypeRequest::getAutoPay()const
@@ -90,7 +90,7 @@ bool ModifyDiskChargeTypeRequest::getAutoPay()const
 void ModifyDiskChargeTypeRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyDiskChargeTypeRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyDiskChargeTypeRequest::getResourceOwnerAccount()const
 void ModifyDiskChargeTypeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDiskChargeTypeRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyDiskChargeTypeRequest::getOwnerAccount()const
 void ModifyDiskChargeTypeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyDiskChargeTypeRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long ModifyDiskChargeTypeRequest::getOwnerId()const
 void ModifyDiskChargeTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDiskChargeTypeRequest::getInstanceId()const
@@ -134,6 +134,6 @@ std::string ModifyDiskChargeTypeRequest::getInstanceId()const
 void ModifyDiskChargeTypeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

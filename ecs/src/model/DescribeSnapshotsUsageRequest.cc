@@ -35,7 +35,7 @@ long DescribeSnapshotsUsageRequest::getResourceOwnerId()const
 void DescribeSnapshotsUsageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSnapshotsUsageRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string DescribeSnapshotsUsageRequest::getRegionId()const
 void DescribeSnapshotsUsageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeSnapshotsUsageRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeSnapshotsUsageRequest::getResourceOwnerAccount()const
 void DescribeSnapshotsUsageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSnapshotsUsageRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DescribeSnapshotsUsageRequest::getOwnerAccount()const
 void DescribeSnapshotsUsageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeSnapshotsUsageRequest::getOwnerId()const
@@ -79,6 +79,6 @@ long DescribeSnapshotsUsageRequest::getOwnerId()const
 void DescribeSnapshotsUsageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

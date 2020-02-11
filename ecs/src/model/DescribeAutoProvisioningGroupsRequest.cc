@@ -35,7 +35,7 @@ long DescribeAutoProvisioningGroupsRequest::getResourceOwnerId()const
 void DescribeAutoProvisioningGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeAutoProvisioningGroupsRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeAutoProvisioningGroupsRequest::getPageNumber()const
 void DescribeAutoProvisioningGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DescribeAutoProvisioningGroupsRequest::getRegionId()const
 void DescribeAutoProvisioningGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeAutoProvisioningGroupsRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeAutoProvisioningGroupsRequest::getPageSize()const
 void DescribeAutoProvisioningGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<std::string> DescribeAutoProvisioningGroupsRequest::getAutoProvisioningGroupStatus()const
@@ -80,7 +80,7 @@ void DescribeAutoProvisioningGroupsRequest::setAutoProvisioningGroupStatus(const
 {
 	autoProvisioningGroupStatus_ = autoProvisioningGroupStatus;
 	for(int dep1 = 0; dep1!= autoProvisioningGroupStatus.size(); dep1++) {
-		setCoreParameter("AutoProvisioningGroupStatus."+ std::to_string(dep1), autoProvisioningGroupStatus.at(dep1));
+		setParameter("AutoProvisioningGroupStatus."+ std::to_string(dep1), autoProvisioningGroupStatus.at(dep1));
 	}
 }
 
@@ -92,7 +92,7 @@ std::string DescribeAutoProvisioningGroupsRequest::getResourceOwnerAccount()cons
 void DescribeAutoProvisioningGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAutoProvisioningGroupsRequest::getOwnerAccount()const
@@ -103,7 +103,7 @@ std::string DescribeAutoProvisioningGroupsRequest::getOwnerAccount()const
 void DescribeAutoProvisioningGroupsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeAutoProvisioningGroupsRequest::getOwnerId()const
@@ -114,7 +114,7 @@ long DescribeAutoProvisioningGroupsRequest::getOwnerId()const
 void DescribeAutoProvisioningGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> DescribeAutoProvisioningGroupsRequest::getAutoProvisioningGroupId()const
@@ -126,7 +126,7 @@ void DescribeAutoProvisioningGroupsRequest::setAutoProvisioningGroupId(const std
 {
 	autoProvisioningGroupId_ = autoProvisioningGroupId;
 	for(int dep1 = 0; dep1!= autoProvisioningGroupId.size(); dep1++) {
-		setCoreParameter("AutoProvisioningGroupId."+ std::to_string(dep1), autoProvisioningGroupId.at(dep1));
+		setParameter("AutoProvisioningGroupId."+ std::to_string(dep1), autoProvisioningGroupId.at(dep1));
 	}
 }
 
@@ -138,6 +138,6 @@ std::string DescribeAutoProvisioningGroupsRequest::getAutoProvisioningGroupName(
 void DescribeAutoProvisioningGroupsRequest::setAutoProvisioningGroupName(const std::string& autoProvisioningGroupName)
 {
 	autoProvisioningGroupName_ = autoProvisioningGroupName;
-	setCoreParameter("AutoProvisioningGroupName", autoProvisioningGroupName);
+	setParameter("AutoProvisioningGroupName", autoProvisioningGroupName);
 }
 

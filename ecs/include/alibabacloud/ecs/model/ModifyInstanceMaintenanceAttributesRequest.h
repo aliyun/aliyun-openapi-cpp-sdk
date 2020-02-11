@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT ModifyInstanceMaintenanceAttributesRequest : public RpcServiceRequest
 			{
+			public:
 				struct MaintenanceWindow
 				{
 					std::string startTime;

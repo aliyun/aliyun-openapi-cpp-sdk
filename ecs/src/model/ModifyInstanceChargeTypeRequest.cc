@@ -35,7 +35,7 @@ long ModifyInstanceChargeTypeRequest::getResourceOwnerId()const
 void ModifyInstanceChargeTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyInstanceChargeTypeRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string ModifyInstanceChargeTypeRequest::getClientToken()const
 void ModifyInstanceChargeTypeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyInstanceChargeTypeRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string ModifyInstanceChargeTypeRequest::getRegionId()const
 void ModifyInstanceChargeTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool ModifyInstanceChargeTypeRequest::getIsDetailFee()const
@@ -68,7 +68,7 @@ bool ModifyInstanceChargeTypeRequest::getIsDetailFee()const
 void ModifyInstanceChargeTypeRequest::setIsDetailFee(bool isDetailFee)
 {
 	isDetailFee_ = isDetailFee;
-	setCoreParameter("IsDetailFee", isDetailFee ? "true" : "false");
+	setParameter("IsDetailFee", isDetailFee ? "true" : "false");
 }
 
 std::string ModifyInstanceChargeTypeRequest::getInstanceChargeType()const
@@ -79,7 +79,7 @@ std::string ModifyInstanceChargeTypeRequest::getInstanceChargeType()const
 void ModifyInstanceChargeTypeRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 int ModifyInstanceChargeTypeRequest::getPeriod()const
@@ -90,7 +90,7 @@ int ModifyInstanceChargeTypeRequest::getPeriod()const
 void ModifyInstanceChargeTypeRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 bool ModifyInstanceChargeTypeRequest::getDryRun()const
@@ -101,7 +101,7 @@ bool ModifyInstanceChargeTypeRequest::getDryRun()const
 void ModifyInstanceChargeTypeRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 bool ModifyInstanceChargeTypeRequest::getAutoPay()const
@@ -112,7 +112,7 @@ bool ModifyInstanceChargeTypeRequest::getAutoPay()const
 void ModifyInstanceChargeTypeRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 bool ModifyInstanceChargeTypeRequest::getIncludeDataDisks()const
@@ -123,7 +123,7 @@ bool ModifyInstanceChargeTypeRequest::getIncludeDataDisks()const
 void ModifyInstanceChargeTypeRequest::setIncludeDataDisks(bool includeDataDisks)
 {
 	includeDataDisks_ = includeDataDisks;
-	setCoreParameter("IncludeDataDisks", includeDataDisks ? "true" : "false");
+	setParameter("IncludeDataDisks", includeDataDisks ? "true" : "false");
 }
 
 std::string ModifyInstanceChargeTypeRequest::getResourceOwnerAccount()const
@@ -134,7 +134,7 @@ std::string ModifyInstanceChargeTypeRequest::getResourceOwnerAccount()const
 void ModifyInstanceChargeTypeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceChargeTypeRequest::getOwnerAccount()const
@@ -145,7 +145,7 @@ std::string ModifyInstanceChargeTypeRequest::getOwnerAccount()const
 void ModifyInstanceChargeTypeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyInstanceChargeTypeRequest::getOwnerId()const
@@ -156,7 +156,7 @@ long ModifyInstanceChargeTypeRequest::getOwnerId()const
 void ModifyInstanceChargeTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyInstanceChargeTypeRequest::getPeriodUnit()const
@@ -167,7 +167,7 @@ std::string ModifyInstanceChargeTypeRequest::getPeriodUnit()const
 void ModifyInstanceChargeTypeRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
+	setParameter("PeriodUnit", periodUnit);
 }
 
 std::string ModifyInstanceChargeTypeRequest::getInstanceIds()const
@@ -178,6 +178,6 @@ std::string ModifyInstanceChargeTypeRequest::getInstanceIds()const
 void ModifyInstanceChargeTypeRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setParameter("InstanceIds", instanceIds);
 }
 

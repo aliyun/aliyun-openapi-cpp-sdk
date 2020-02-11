@@ -36,7 +36,7 @@ void DescribeInstancesFullStatusRequest::setEventId(const std::vector<std::strin
 {
 	eventId_ = eventId;
 	for(int dep1 = 0; dep1!= eventId.size(); dep1++) {
-		setCoreParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
+		setParameter("EventId."+ std::to_string(dep1), eventId.at(dep1));
 	}
 }
 
@@ -48,7 +48,7 @@ long DescribeInstancesFullStatusRequest::getResourceOwnerId()const
 void DescribeInstancesFullStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeInstancesFullStatusRequest::getPageNumber()const
@@ -59,7 +59,7 @@ int DescribeInstancesFullStatusRequest::getPageNumber()const
 void DescribeInstancesFullStatusRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeInstancesFullStatusRequest::getRegionId()const
@@ -70,7 +70,7 @@ std::string DescribeInstancesFullStatusRequest::getRegionId()const
 void DescribeInstancesFullStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeInstancesFullStatusRequest::getPageSize()const
@@ -81,7 +81,7 @@ int DescribeInstancesFullStatusRequest::getPageSize()const
 void DescribeInstancesFullStatusRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeInstancesFullStatusRequest::getEventPublishTimeEnd()const
@@ -92,7 +92,7 @@ std::string DescribeInstancesFullStatusRequest::getEventPublishTimeEnd()const
 void DescribeInstancesFullStatusRequest::setEventPublishTimeEnd(const std::string& eventPublishTimeEnd)
 {
 	eventPublishTimeEnd_ = eventPublishTimeEnd;
-	setCoreParameter("EventPublishTimeEnd", eventPublishTimeEnd);
+	setParameter("EventPublishTimeEnd", eventPublishTimeEnd);
 }
 
 std::vector<std::string> DescribeInstancesFullStatusRequest::getInstanceEventType()const
@@ -104,7 +104,7 @@ void DescribeInstancesFullStatusRequest::setInstanceEventType(const std::vector<
 {
 	instanceEventType_ = instanceEventType;
 	for(int dep1 = 0; dep1!= instanceEventType.size(); dep1++) {
-		setCoreParameter("InstanceEventType."+ std::to_string(dep1), instanceEventType.at(dep1));
+		setParameter("InstanceEventType."+ std::to_string(dep1), instanceEventType.at(dep1));
 	}
 }
 
@@ -116,7 +116,7 @@ std::string DescribeInstancesFullStatusRequest::getResourceOwnerAccount()const
 void DescribeInstancesFullStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstancesFullStatusRequest::getOwnerAccount()const
@@ -127,7 +127,7 @@ std::string DescribeInstancesFullStatusRequest::getOwnerAccount()const
 void DescribeInstancesFullStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeInstancesFullStatusRequest::getNotBeforeStart()const
@@ -138,7 +138,7 @@ std::string DescribeInstancesFullStatusRequest::getNotBeforeStart()const
 void DescribeInstancesFullStatusRequest::setNotBeforeStart(const std::string& notBeforeStart)
 {
 	notBeforeStart_ = notBeforeStart;
-	setCoreParameter("NotBeforeStart", notBeforeStart);
+	setParameter("NotBeforeStart", notBeforeStart);
 }
 
 long DescribeInstancesFullStatusRequest::getOwnerId()const
@@ -149,7 +149,7 @@ long DescribeInstancesFullStatusRequest::getOwnerId()const
 void DescribeInstancesFullStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeInstancesFullStatusRequest::getEventPublishTimeStart()const
@@ -160,7 +160,7 @@ std::string DescribeInstancesFullStatusRequest::getEventPublishTimeStart()const
 void DescribeInstancesFullStatusRequest::setEventPublishTimeStart(const std::string& eventPublishTimeStart)
 {
 	eventPublishTimeStart_ = eventPublishTimeStart;
-	setCoreParameter("EventPublishTimeStart", eventPublishTimeStart);
+	setParameter("EventPublishTimeStart", eventPublishTimeStart);
 }
 
 std::vector<std::string> DescribeInstancesFullStatusRequest::getInstanceId()const
@@ -172,7 +172,7 @@ void DescribeInstancesFullStatusRequest::setInstanceId(const std::vector<std::st
 {
 	instanceId_ = instanceId;
 	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
-		setCoreParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
 	}
 }
 
@@ -184,7 +184,7 @@ std::string DescribeInstancesFullStatusRequest::getNotBeforeEnd()const
 void DescribeInstancesFullStatusRequest::setNotBeforeEnd(const std::string& notBeforeEnd)
 {
 	notBeforeEnd_ = notBeforeEnd;
-	setCoreParameter("NotBeforeEnd", notBeforeEnd);
+	setParameter("NotBeforeEnd", notBeforeEnd);
 }
 
 std::string DescribeInstancesFullStatusRequest::getHealthStatus()const
@@ -195,7 +195,7 @@ std::string DescribeInstancesFullStatusRequest::getHealthStatus()const
 void DescribeInstancesFullStatusRequest::setHealthStatus(const std::string& healthStatus)
 {
 	healthStatus_ = healthStatus;
-	setCoreParameter("HealthStatus", healthStatus);
+	setParameter("HealthStatus", healthStatus);
 }
 
 std::string DescribeInstancesFullStatusRequest::getEventType()const
@@ -206,7 +206,7 @@ std::string DescribeInstancesFullStatusRequest::getEventType()const
 void DescribeInstancesFullStatusRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setParameter("EventType", eventType);
 }
 
 std::string DescribeInstancesFullStatusRequest::getStatus()const
@@ -217,6 +217,6 @@ std::string DescribeInstancesFullStatusRequest::getStatus()const
 void DescribeInstancesFullStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

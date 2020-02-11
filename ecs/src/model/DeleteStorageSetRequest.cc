@@ -35,7 +35,7 @@ long DeleteStorageSetRequest::getResourceOwnerId()const
 void DeleteStorageSetRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteStorageSetRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string DeleteStorageSetRequest::getClientToken()const
 void DeleteStorageSetRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteStorageSetRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DeleteStorageSetRequest::getRegionId()const
 void DeleteStorageSetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteStorageSetRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DeleteStorageSetRequest::getResourceOwnerAccount()const
 void DeleteStorageSetRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteStorageSetRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteStorageSetRequest::getOwnerAccount()const
 void DeleteStorageSetRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteStorageSetRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DeleteStorageSetRequest::getOwnerId()const
 void DeleteStorageSetRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteStorageSetRequest::getStorageSetId()const
@@ -101,6 +101,6 @@ std::string DeleteStorageSetRequest::getStorageSetId()const
 void DeleteStorageSetRequest::setStorageSetId(const std::string& storageSetId)
 {
 	storageSetId_ = storageSetId;
-	setCoreParameter("StorageSetId", storageSetId);
+	setParameter("StorageSetId", storageSetId);
 }
 

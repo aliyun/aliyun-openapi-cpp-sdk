@@ -35,7 +35,7 @@ long ModifyStorageSetAttributeRequest::getResourceOwnerId()const
 void ModifyStorageSetAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyStorageSetAttributeRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string ModifyStorageSetAttributeRequest::getClientToken()const
 void ModifyStorageSetAttributeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyStorageSetAttributeRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string ModifyStorageSetAttributeRequest::getDescription()const
 void ModifyStorageSetAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyStorageSetAttributeRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string ModifyStorageSetAttributeRequest::getRegionId()const
 void ModifyStorageSetAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyStorageSetAttributeRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyStorageSetAttributeRequest::getResourceOwnerAccount()const
 void ModifyStorageSetAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyStorageSetAttributeRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyStorageSetAttributeRequest::getOwnerAccount()const
 void ModifyStorageSetAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyStorageSetAttributeRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long ModifyStorageSetAttributeRequest::getOwnerId()const
 void ModifyStorageSetAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyStorageSetAttributeRequest::getStorageSetId()const
@@ -112,7 +112,7 @@ std::string ModifyStorageSetAttributeRequest::getStorageSetId()const
 void ModifyStorageSetAttributeRequest::setStorageSetId(const std::string& storageSetId)
 {
 	storageSetId_ = storageSetId;
-	setCoreParameter("StorageSetId", storageSetId);
+	setParameter("StorageSetId", storageSetId);
 }
 
 std::string ModifyStorageSetAttributeRequest::getStorageSetName()const
@@ -123,6 +123,6 @@ std::string ModifyStorageSetAttributeRequest::getStorageSetName()const
 void ModifyStorageSetAttributeRequest::setStorageSetName(const std::string& storageSetName)
 {
 	storageSetName_ = storageSetName;
-	setCoreParameter("StorageSetName", storageSetName);
+	setParameter("StorageSetName", storageSetName);
 }
 

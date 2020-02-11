@@ -35,7 +35,7 @@ long RebootInstanceRequest::getResourceOwnerId()const
 void RebootInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool RebootInstanceRequest::getForceStop()const
@@ -46,7 +46,7 @@ bool RebootInstanceRequest::getForceStop()const
 void RebootInstanceRequest::setForceStop(bool forceStop)
 {
 	forceStop_ = forceStop;
-	setCoreParameter("ForceStop", forceStop ? "true" : "false");
+	setParameter("ForceStop", forceStop ? "true" : "false");
 }
 
 bool RebootInstanceRequest::getDryRun()const
@@ -57,7 +57,7 @@ bool RebootInstanceRequest::getDryRun()const
 void RebootInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string RebootInstanceRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string RebootInstanceRequest::getResourceOwnerAccount()const
 void RebootInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RebootInstanceRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string RebootInstanceRequest::getOwnerAccount()const
 void RebootInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RebootInstanceRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long RebootInstanceRequest::getOwnerId()const
 void RebootInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RebootInstanceRequest::getInstanceId()const
@@ -101,6 +101,6 @@ std::string RebootInstanceRequest::getInstanceId()const
 void RebootInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

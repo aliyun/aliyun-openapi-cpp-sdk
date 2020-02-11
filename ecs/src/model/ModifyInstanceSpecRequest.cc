@@ -35,7 +35,7 @@ long ModifyInstanceSpecRequest::getResourceOwnerId()const
 void ModifyInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyInstanceSpecRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string ModifyInstanceSpecRequest::getClientToken()const
 void ModifyInstanceSpecRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 bool ModifyInstanceSpecRequest::getAllowMigrateAcrossZone()const
@@ -57,7 +57,7 @@ bool ModifyInstanceSpecRequest::getAllowMigrateAcrossZone()const
 void ModifyInstanceSpecRequest::setAllowMigrateAcrossZone(bool allowMigrateAcrossZone)
 {
 	allowMigrateAcrossZone_ = allowMigrateAcrossZone;
-	setCoreParameter("AllowMigrateAcrossZone", allowMigrateAcrossZone ? "true" : "false");
+	setParameter("AllowMigrateAcrossZone", allowMigrateAcrossZone ? "true" : "false");
 }
 
 int ModifyInstanceSpecRequest::getInternetMaxBandwidthOut()const
@@ -68,7 +68,7 @@ int ModifyInstanceSpecRequest::getInternetMaxBandwidthOut()const
 void ModifyInstanceSpecRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
 {
 	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
-	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
+	setParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
 }
 
 std::string ModifyInstanceSpecRequest::getSystemDiskCategory()const
@@ -79,7 +79,7 @@ std::string ModifyInstanceSpecRequest::getSystemDiskCategory()const
 void ModifyInstanceSpecRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
 {
 	systemDiskCategory_ = systemDiskCategory;
-	setCoreParameter("SystemDiskCategory", systemDiskCategory);
+	setParameter("SystemDiskCategory", systemDiskCategory);
 }
 
 std::string ModifyInstanceSpecRequest::getInstanceType()const
@@ -90,7 +90,7 @@ std::string ModifyInstanceSpecRequest::getInstanceType()const
 void ModifyInstanceSpecRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string ModifyInstanceSpecRequest::getTemporaryEndTime()const
@@ -101,7 +101,7 @@ std::string ModifyInstanceSpecRequest::getTemporaryEndTime()const
 void ModifyInstanceSpecRequest::setTemporaryEndTime(const std::string& temporaryEndTime)
 {
 	temporaryEndTime_ = temporaryEndTime;
-	setCoreParameter("TemporaryEndTime", temporaryEndTime);
+	setParameter("TemporaryEndTime", temporaryEndTime);
 }
 
 std::string ModifyInstanceSpecRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyInstanceSpecRequest::getResourceOwnerAccount()const
 void ModifyInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceSpecRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string ModifyInstanceSpecRequest::getOwnerAccount()const
 void ModifyInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyInstanceSpecRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long ModifyInstanceSpecRequest::getOwnerId()const
 void ModifyInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ModifyInstanceSpecRequest::getTemporaryInternetMaxBandwidthOut()const
@@ -145,7 +145,7 @@ int ModifyInstanceSpecRequest::getTemporaryInternetMaxBandwidthOut()const
 void ModifyInstanceSpecRequest::setTemporaryInternetMaxBandwidthOut(int temporaryInternetMaxBandwidthOut)
 {
 	temporaryInternetMaxBandwidthOut_ = temporaryInternetMaxBandwidthOut;
-	setCoreParameter("TemporaryInternetMaxBandwidthOut", std::to_string(temporaryInternetMaxBandwidthOut));
+	setParameter("TemporaryInternetMaxBandwidthOut", std::to_string(temporaryInternetMaxBandwidthOut));
 }
 
 std::string ModifyInstanceSpecRequest::getTemporaryStartTime()const
@@ -156,7 +156,7 @@ std::string ModifyInstanceSpecRequest::getTemporaryStartTime()const
 void ModifyInstanceSpecRequest::setTemporaryStartTime(const std::string& temporaryStartTime)
 {
 	temporaryStartTime_ = temporaryStartTime;
-	setCoreParameter("TemporaryStartTime", temporaryStartTime);
+	setParameter("TemporaryStartTime", temporaryStartTime);
 }
 
 bool ModifyInstanceSpecRequest::getAsync()const
@@ -167,7 +167,7 @@ bool ModifyInstanceSpecRequest::getAsync()const
 void ModifyInstanceSpecRequest::setAsync(bool async)
 {
 	async_ = async;
-	setCoreParameter("Async", async ? "true" : "false");
+	setParameter("Async", async ? "true" : "false");
 }
 
 std::string ModifyInstanceSpecRequest::getInstanceId()const
@@ -178,7 +178,7 @@ std::string ModifyInstanceSpecRequest::getInstanceId()const
 void ModifyInstanceSpecRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int ModifyInstanceSpecRequest::getInternetMaxBandwidthIn()const
@@ -189,6 +189,6 @@ int ModifyInstanceSpecRequest::getInternetMaxBandwidthIn()const
 void ModifyInstanceSpecRequest::setInternetMaxBandwidthIn(int internetMaxBandwidthIn)
 {
 	internetMaxBandwidthIn_ = internetMaxBandwidthIn;
-	setCoreParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
+	setParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
 }
 

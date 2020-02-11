@@ -35,7 +35,7 @@ long AllocateEipAddressRequest::getResourceOwnerId()const
 void AllocateEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AllocateEipAddressRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string AllocateEipAddressRequest::getClientToken()const
 void AllocateEipAddressRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string AllocateEipAddressRequest::getISP()const
@@ -57,7 +57,7 @@ std::string AllocateEipAddressRequest::getISP()const
 void AllocateEipAddressRequest::setISP(const std::string& iSP)
 {
 	iSP_ = iSP;
-	setCoreParameter("ISP", iSP);
+	setParameter("ISP", iSP);
 }
 
 std::string AllocateEipAddressRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string AllocateEipAddressRequest::getRegionId()const
 void AllocateEipAddressRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AllocateEipAddressRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string AllocateEipAddressRequest::getResourceOwnerAccount()const
 void AllocateEipAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AllocateEipAddressRequest::getBandwidth()const
@@ -90,7 +90,7 @@ std::string AllocateEipAddressRequest::getBandwidth()const
 void AllocateEipAddressRequest::setBandwidth(const std::string& bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setParameter("Bandwidth", bandwidth);
 }
 
 std::string AllocateEipAddressRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string AllocateEipAddressRequest::getOwnerAccount()const
 void AllocateEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AllocateEipAddressRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long AllocateEipAddressRequest::getOwnerId()const
 void AllocateEipAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long AllocateEipAddressRequest::getActivityId()const
@@ -123,7 +123,7 @@ long AllocateEipAddressRequest::getActivityId()const
 void AllocateEipAddressRequest::setActivityId(long activityId)
 {
 	activityId_ = activityId;
-	setCoreParameter("ActivityId", std::to_string(activityId));
+	setParameter("ActivityId", std::to_string(activityId));
 }
 
 std::string AllocateEipAddressRequest::getInternetChargeType()const
@@ -134,6 +134,6 @@ std::string AllocateEipAddressRequest::getInternetChargeType()const
 void AllocateEipAddressRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
+	setParameter("InternetChargeType", internetChargeType);
 }
 

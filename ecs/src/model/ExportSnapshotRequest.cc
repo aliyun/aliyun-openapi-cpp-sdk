@@ -35,7 +35,7 @@ long ExportSnapshotRequest::getResourceOwnerId()const
 void ExportSnapshotRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ExportSnapshotRequest::getSnapshotId()const
@@ -46,7 +46,7 @@ std::string ExportSnapshotRequest::getSnapshotId()const
 void ExportSnapshotRequest::setSnapshotId(const std::string& snapshotId)
 {
 	snapshotId_ = snapshotId;
-	setCoreParameter("SnapshotId", snapshotId);
+	setParameter("SnapshotId", snapshotId);
 }
 
 std::string ExportSnapshotRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string ExportSnapshotRequest::getRegionId()const
 void ExportSnapshotRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ExportSnapshotRequest::getOssBucket()const
@@ -68,7 +68,7 @@ std::string ExportSnapshotRequest::getOssBucket()const
 void ExportSnapshotRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", ossBucket);
+	setParameter("OssBucket", ossBucket);
 }
 
 std::string ExportSnapshotRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ExportSnapshotRequest::getResourceOwnerAccount()const
 void ExportSnapshotRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ExportSnapshotRequest::getRoleName()const
@@ -90,7 +90,7 @@ std::string ExportSnapshotRequest::getRoleName()const
 void ExportSnapshotRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
+	setParameter("RoleName", roleName);
 }
 
 long ExportSnapshotRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long ExportSnapshotRequest::getOwnerId()const
 void ExportSnapshotRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

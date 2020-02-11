@@ -35,7 +35,7 @@ long DescribeStorageSetDetailsRequest::getResourceOwnerId()const
 void DescribeStorageSetDetailsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeStorageSetDetailsRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string DescribeStorageSetDetailsRequest::getClientToken()const
 void DescribeStorageSetDetailsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 int DescribeStorageSetDetailsRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeStorageSetDetailsRequest::getPageNumber()const
 void DescribeStorageSetDetailsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeStorageSetDetailsRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribeStorageSetDetailsRequest::getRegionId()const
 void DescribeStorageSetDetailsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeStorageSetDetailsRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribeStorageSetDetailsRequest::getPageSize()const
 void DescribeStorageSetDetailsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeStorageSetDetailsRequest::getStorageSetPartitionNumber()const
@@ -90,7 +90,7 @@ int DescribeStorageSetDetailsRequest::getStorageSetPartitionNumber()const
 void DescribeStorageSetDetailsRequest::setStorageSetPartitionNumber(int storageSetPartitionNumber)
 {
 	storageSetPartitionNumber_ = storageSetPartitionNumber;
-	setCoreParameter("StorageSetPartitionNumber", std::to_string(storageSetPartitionNumber));
+	setParameter("StorageSetPartitionNumber", std::to_string(storageSetPartitionNumber));
 }
 
 std::string DescribeStorageSetDetailsRequest::getDiskIds()const
@@ -101,7 +101,7 @@ std::string DescribeStorageSetDetailsRequest::getDiskIds()const
 void DescribeStorageSetDetailsRequest::setDiskIds(const std::string& diskIds)
 {
 	diskIds_ = diskIds;
-	setCoreParameter("DiskIds", diskIds);
+	setParameter("DiskIds", diskIds);
 }
 
 std::string DescribeStorageSetDetailsRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribeStorageSetDetailsRequest::getResourceOwnerAccount()const
 void DescribeStorageSetDetailsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeStorageSetDetailsRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string DescribeStorageSetDetailsRequest::getOwnerAccount()const
 void DescribeStorageSetDetailsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeStorageSetDetailsRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long DescribeStorageSetDetailsRequest::getOwnerId()const
 void DescribeStorageSetDetailsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeStorageSetDetailsRequest::getStorageSetId()const
@@ -145,6 +145,6 @@ std::string DescribeStorageSetDetailsRequest::getStorageSetId()const
 void DescribeStorageSetDetailsRequest::setStorageSetId(const std::string& storageSetId)
 {
 	storageSetId_ = storageSetId;
-	setCoreParameter("StorageSetId", storageSetId);
+	setParameter("StorageSetId", storageSetId);
 }
 

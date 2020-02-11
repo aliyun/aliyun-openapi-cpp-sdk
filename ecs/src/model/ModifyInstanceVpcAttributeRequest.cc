@@ -35,7 +35,7 @@ long ModifyInstanceVpcAttributeRequest::getResourceOwnerId()const
 void ModifyInstanceVpcAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyInstanceVpcAttributeRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string ModifyInstanceVpcAttributeRequest::getResourceOwnerAccount()const
 void ModifyInstanceVpcAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceVpcAttributeRequest::getOwnerAccount()const
@@ -57,7 +57,7 @@ std::string ModifyInstanceVpcAttributeRequest::getOwnerAccount()const
 void ModifyInstanceVpcAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyInstanceVpcAttributeRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long ModifyInstanceVpcAttributeRequest::getOwnerId()const
 void ModifyInstanceVpcAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyInstanceVpcAttributeRequest::getVSwitchId()const
@@ -79,7 +79,7 @@ std::string ModifyInstanceVpcAttributeRequest::getVSwitchId()const
 void ModifyInstanceVpcAttributeRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string ModifyInstanceVpcAttributeRequest::getPrivateIpAddress()const
@@ -90,7 +90,7 @@ std::string ModifyInstanceVpcAttributeRequest::getPrivateIpAddress()const
 void ModifyInstanceVpcAttributeRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setParameter("PrivateIpAddress", privateIpAddress);
 }
 
 std::string ModifyInstanceVpcAttributeRequest::getInstanceId()const
@@ -101,6 +101,6 @@ std::string ModifyInstanceVpcAttributeRequest::getInstanceId()const
 void ModifyInstanceVpcAttributeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

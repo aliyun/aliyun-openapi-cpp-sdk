@@ -35,7 +35,7 @@ long ModifyVpcAttributeRequest::getResourceOwnerId()const
 void ModifyVpcAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyVpcAttributeRequest::getDescription()const
@@ -46,7 +46,7 @@ std::string ModifyVpcAttributeRequest::getDescription()const
 void ModifyVpcAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyVpcAttributeRequest::getVpcName()const
@@ -57,7 +57,7 @@ std::string ModifyVpcAttributeRequest::getVpcName()const
 void ModifyVpcAttributeRequest::setVpcName(const std::string& vpcName)
 {
 	vpcName_ = vpcName;
-	setCoreParameter("VpcName", vpcName);
+	setParameter("VpcName", vpcName);
 }
 
 std::string ModifyVpcAttributeRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string ModifyVpcAttributeRequest::getRegionId()const
 void ModifyVpcAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyVpcAttributeRequest::getUserCidr()const
@@ -79,7 +79,7 @@ std::string ModifyVpcAttributeRequest::getUserCidr()const
 void ModifyVpcAttributeRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setParameter("UserCidr", userCidr);
 }
 
 std::string ModifyVpcAttributeRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyVpcAttributeRequest::getResourceOwnerAccount()const
 void ModifyVpcAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyVpcAttributeRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyVpcAttributeRequest::getOwnerAccount()const
 void ModifyVpcAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyVpcAttributeRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long ModifyVpcAttributeRequest::getOwnerId()const
 void ModifyVpcAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyVpcAttributeRequest::getVpcId()const
@@ -123,7 +123,7 @@ std::string ModifyVpcAttributeRequest::getVpcId()const
 void ModifyVpcAttributeRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string ModifyVpcAttributeRequest::getCidrBlock()const
@@ -134,6 +134,6 @@ std::string ModifyVpcAttributeRequest::getCidrBlock()const
 void ModifyVpcAttributeRequest::setCidrBlock(const std::string& cidrBlock)
 {
 	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", cidrBlock);
+	setParameter("CidrBlock", cidrBlock);
 }
 

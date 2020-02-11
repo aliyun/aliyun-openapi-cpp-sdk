@@ -35,7 +35,7 @@ long DescribeKeyPairsRequest::getResourceOwnerId()const
 void DescribeKeyPairsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeKeyPairsRequest::getKeyPairFingerPrint()const
@@ -46,7 +46,7 @@ std::string DescribeKeyPairsRequest::getKeyPairFingerPrint()const
 void DescribeKeyPairsRequest::setKeyPairFingerPrint(const std::string& keyPairFingerPrint)
 {
 	keyPairFingerPrint_ = keyPairFingerPrint;
-	setCoreParameter("KeyPairFingerPrint", keyPairFingerPrint);
+	setParameter("KeyPairFingerPrint", keyPairFingerPrint);
 }
 
 std::string DescribeKeyPairsRequest::getKeyPairName()const
@@ -57,7 +57,7 @@ std::string DescribeKeyPairsRequest::getKeyPairName()const
 void DescribeKeyPairsRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setParameter("KeyPairName", keyPairName);
 }
 
 int DescribeKeyPairsRequest::getPageNumber()const
@@ -68,7 +68,7 @@ int DescribeKeyPairsRequest::getPageNumber()const
 void DescribeKeyPairsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeKeyPairsRequest::getResourceGroupId()const
@@ -79,7 +79,7 @@ std::string DescribeKeyPairsRequest::getResourceGroupId()const
 void DescribeKeyPairsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeKeyPairsRequest::getRegionId()const
@@ -90,7 +90,7 @@ std::string DescribeKeyPairsRequest::getRegionId()const
 void DescribeKeyPairsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeKeyPairsRequest::getPageSize()const
@@ -101,7 +101,7 @@ int DescribeKeyPairsRequest::getPageSize()const
 void DescribeKeyPairsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeKeyPairsRequest::Tag> DescribeKeyPairsRequest::getTag()const
@@ -114,9 +114,9 @@ void DescribeKeyPairsRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -128,7 +128,7 @@ std::string DescribeKeyPairsRequest::getResourceOwnerAccount()const
 void DescribeKeyPairsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeKeyPairsRequest::getOwnerId()const
@@ -139,6 +139,6 @@ long DescribeKeyPairsRequest::getOwnerId()const
 void DescribeKeyPairsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

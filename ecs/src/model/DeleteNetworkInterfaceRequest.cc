@@ -35,7 +35,7 @@ long DeleteNetworkInterfaceRequest::getResourceOwnerId()const
 void DeleteNetworkInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteNetworkInterfaceRequest::getRegionId()const
@@ -46,7 +46,7 @@ std::string DeleteNetworkInterfaceRequest::getRegionId()const
 void DeleteNetworkInterfaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteNetworkInterfaceRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DeleteNetworkInterfaceRequest::getResourceOwnerAccount()const
 void DeleteNetworkInterfaceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteNetworkInterfaceRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DeleteNetworkInterfaceRequest::getOwnerAccount()const
 void DeleteNetworkInterfaceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteNetworkInterfaceRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long DeleteNetworkInterfaceRequest::getOwnerId()const
 void DeleteNetworkInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteNetworkInterfaceRequest::getNetworkInterfaceId()const
@@ -90,6 +90,6 @@ std::string DeleteNetworkInterfaceRequest::getNetworkInterfaceId()const
 void DeleteNetworkInterfaceRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	setCoreParameter("NetworkInterfaceId", networkInterfaceId);
+	setParameter("NetworkInterfaceId", networkInterfaceId);
 }
 
