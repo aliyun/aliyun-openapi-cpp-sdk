@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_RTC_EXPORT CreateTemplateRequest : public RpcServiceRequest
 			{
+			public:
 				struct LiveConfig
 				{
 					std::string domainName;

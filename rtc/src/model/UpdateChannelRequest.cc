@@ -35,7 +35,7 @@ long UpdateChannelRequest::getOwnerId()const
 void UpdateChannelRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateChannelRequest::getNonce()const
@@ -46,7 +46,7 @@ std::string UpdateChannelRequest::getNonce()const
 void UpdateChannelRequest::setNonce(const std::string& nonce)
 {
 	nonce_ = nonce;
-	setCoreParameter("Nonce", nonce);
+	setParameter("Nonce", nonce);
 }
 
 std::string UpdateChannelRequest::getAppId()const
@@ -57,7 +57,7 @@ std::string UpdateChannelRequest::getAppId()const
 void UpdateChannelRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string UpdateChannelRequest::getChannelId()const
@@ -68,6 +68,6 @@ std::string UpdateChannelRequest::getChannelId()const
 void UpdateChannelRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setParameter("ChannelId", channelId);
 }
 

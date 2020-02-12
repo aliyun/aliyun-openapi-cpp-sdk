@@ -35,7 +35,7 @@ std::string DescribeRtcPeakUserCntDataRequest::getStartTime()const
 void DescribeRtcPeakUserCntDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeRtcPeakUserCntDataRequest::getServiceArea()const
@@ -46,7 +46,7 @@ std::string DescribeRtcPeakUserCntDataRequest::getServiceArea()const
 void DescribeRtcPeakUserCntDataRequest::setServiceArea(const std::string& serviceArea)
 {
 	serviceArea_ = serviceArea;
-	setCoreParameter("ServiceArea", serviceArea);
+	setParameter("ServiceArea", serviceArea);
 }
 
 std::string DescribeRtcPeakUserCntDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeRtcPeakUserCntDataRequest::getEndTime()const
 void DescribeRtcPeakUserCntDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeRtcPeakUserCntDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeRtcPeakUserCntDataRequest::getOwnerId()const
 void DescribeRtcPeakUserCntDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRtcPeakUserCntDataRequest::getAppId()const
@@ -79,7 +79,7 @@ std::string DescribeRtcPeakUserCntDataRequest::getAppId()const
 void DescribeRtcPeakUserCntDataRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string DescribeRtcPeakUserCntDataRequest::getInterval()const
@@ -90,6 +90,6 @@ std::string DescribeRtcPeakUserCntDataRequest::getInterval()const
 void DescribeRtcPeakUserCntDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

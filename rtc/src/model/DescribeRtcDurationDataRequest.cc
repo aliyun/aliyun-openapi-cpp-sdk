@@ -35,7 +35,7 @@ std::string DescribeRtcDurationDataRequest::getStartTime()const
 void DescribeRtcDurationDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeRtcDurationDataRequest::getServiceArea()const
@@ -46,7 +46,7 @@ std::string DescribeRtcDurationDataRequest::getServiceArea()const
 void DescribeRtcDurationDataRequest::setServiceArea(const std::string& serviceArea)
 {
 	serviceArea_ = serviceArea;
-	setCoreParameter("ServiceArea", serviceArea);
+	setParameter("ServiceArea", serviceArea);
 }
 
 std::string DescribeRtcDurationDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeRtcDurationDataRequest::getEndTime()const
 void DescribeRtcDurationDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeRtcDurationDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeRtcDurationDataRequest::getOwnerId()const
 void DescribeRtcDurationDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRtcDurationDataRequest::getAppId()const
@@ -79,7 +79,7 @@ std::string DescribeRtcDurationDataRequest::getAppId()const
 void DescribeRtcDurationDataRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string DescribeRtcDurationDataRequest::getInterval()const
@@ -90,6 +90,6 @@ std::string DescribeRtcDurationDataRequest::getInterval()const
 void DescribeRtcDurationDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

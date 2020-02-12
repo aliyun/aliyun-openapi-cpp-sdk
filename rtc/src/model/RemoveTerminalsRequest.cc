@@ -36,7 +36,7 @@ void RemoveTerminalsRequest::setTerminalIds(const std::vector<std::string>& term
 {
 	terminalIds_ = terminalIds;
 	for(int dep1 = 0; dep1!= terminalIds.size(); dep1++) {
-		setCoreParameter("TerminalIds."+ std::to_string(dep1), terminalIds.at(dep1));
+		setParameter("TerminalIds."+ std::to_string(dep1), terminalIds.at(dep1));
 	}
 }
 
@@ -48,7 +48,7 @@ long RemoveTerminalsRequest::getOwnerId()const
 void RemoveTerminalsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveTerminalsRequest::getAppId()const
@@ -59,7 +59,7 @@ std::string RemoveTerminalsRequest::getAppId()const
 void RemoveTerminalsRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string RemoveTerminalsRequest::getChannelId()const
@@ -70,6 +70,6 @@ std::string RemoveTerminalsRequest::getChannelId()const
 void RemoveTerminalsRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setParameter("ChannelId", channelId);
 }
 

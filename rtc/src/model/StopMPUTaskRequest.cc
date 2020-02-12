@@ -35,7 +35,7 @@ long StopMPUTaskRequest::getOwnerId()const
 void StopMPUTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string StopMPUTaskRequest::getAppId()const
@@ -46,7 +46,7 @@ std::string StopMPUTaskRequest::getAppId()const
 void StopMPUTaskRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string StopMPUTaskRequest::getTaskId()const
@@ -57,6 +57,6 @@ std::string StopMPUTaskRequest::getTaskId()const
 void StopMPUTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

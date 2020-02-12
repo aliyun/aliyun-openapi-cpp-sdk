@@ -35,7 +35,7 @@ std::string ModifyConferenceRequest::getStartTime()const
 void ModifyConferenceRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string ModifyConferenceRequest::getType()const
@@ -46,7 +46,7 @@ std::string ModifyConferenceRequest::getType()const
 void ModifyConferenceRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string ModifyConferenceRequest::getConferenceId()const
@@ -57,7 +57,7 @@ std::string ModifyConferenceRequest::getConferenceId()const
 void ModifyConferenceRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
-	setCoreParameter("ConferenceId", conferenceId);
+	setParameter("ConferenceId", conferenceId);
 }
 
 std::string ModifyConferenceRequest::getConferenceName()const
@@ -68,7 +68,7 @@ std::string ModifyConferenceRequest::getConferenceName()const
 void ModifyConferenceRequest::setConferenceName(const std::string& conferenceName)
 {
 	conferenceName_ = conferenceName;
-	setCoreParameter("ConferenceName", conferenceName);
+	setParameter("ConferenceName", conferenceName);
 }
 
 long ModifyConferenceRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long ModifyConferenceRequest::getOwnerId()const
 void ModifyConferenceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyConferenceRequest::getAppId()const
@@ -90,7 +90,7 @@ std::string ModifyConferenceRequest::getAppId()const
 void ModifyConferenceRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 int ModifyConferenceRequest::getRemindNotice()const
@@ -101,6 +101,6 @@ int ModifyConferenceRequest::getRemindNotice()const
 void ModifyConferenceRequest::setRemindNotice(int remindNotice)
 {
 	remindNotice_ = remindNotice;
-	setCoreParameter("RemindNotice", std::to_string(remindNotice));
+	setParameter("RemindNotice", std::to_string(remindNotice));
 }
 

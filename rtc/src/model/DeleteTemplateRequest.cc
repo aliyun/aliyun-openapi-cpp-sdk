@@ -35,7 +35,7 @@ long DeleteTemplateRequest::getOwnerId()const
 void DeleteTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long DeleteTemplateRequest::getTemplateId()const
@@ -46,7 +46,7 @@ long DeleteTemplateRequest::getTemplateId()const
 void DeleteTemplateRequest::setTemplateId(long templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", std::to_string(templateId));
+	setParameter("TemplateId", std::to_string(templateId));
 }
 
 std::string DeleteTemplateRequest::getAppId()const
@@ -57,6 +57,6 @@ std::string DeleteTemplateRequest::getAppId()const
 void DeleteTemplateRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

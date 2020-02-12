@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_RTC_EXPORT StartTaskRequest : public RpcServiceRequest
 			{
+			public:
 				struct MixPanes
 				{
 					int paneId;

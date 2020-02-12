@@ -35,7 +35,7 @@ std::string DeleteConferenceRequest::getConferenceId()const
 void DeleteConferenceRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
-	setCoreParameter("ConferenceId", conferenceId);
+	setParameter("ConferenceId", conferenceId);
 }
 
 long DeleteConferenceRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long DeleteConferenceRequest::getOwnerId()const
 void DeleteConferenceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteConferenceRequest::getAppId()const
@@ -57,6 +57,6 @@ std::string DeleteConferenceRequest::getAppId()const
 void DeleteConferenceRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

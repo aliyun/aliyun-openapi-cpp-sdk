@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_RTC_EXPORT StartMPUTaskRequest : public RpcServiceRequest
 			{
+			public:
 				struct UserPanes
 				{
 					int paneId;

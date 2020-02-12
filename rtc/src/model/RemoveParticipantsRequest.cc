@@ -36,7 +36,7 @@ void RemoveParticipantsRequest::setParticipantIds(const std::vector<std::string>
 {
 	participantIds_ = participantIds;
 	for(int dep1 = 0; dep1!= participantIds.size(); dep1++) {
-		setCoreParameter("ParticipantIds."+ std::to_string(dep1), participantIds.at(dep1));
+		setParameter("ParticipantIds."+ std::to_string(dep1), participantIds.at(dep1));
 	}
 }
 
@@ -48,7 +48,7 @@ long RemoveParticipantsRequest::getOwnerId()const
 void RemoveParticipantsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveParticipantsRequest::getConferenceId()const
@@ -59,7 +59,7 @@ std::string RemoveParticipantsRequest::getConferenceId()const
 void RemoveParticipantsRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
-	setCoreParameter("ConferenceId", conferenceId);
+	setParameter("ConferenceId", conferenceId);
 }
 
 std::string RemoveParticipantsRequest::getAppId()const
@@ -70,6 +70,6 @@ std::string RemoveParticipantsRequest::getAppId()const
 void RemoveParticipantsRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

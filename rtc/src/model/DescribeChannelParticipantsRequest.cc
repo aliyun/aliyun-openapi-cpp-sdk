@@ -35,7 +35,7 @@ int DescribeChannelParticipantsRequest::getPageNum()const
 void DescribeChannelParticipantsRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int DescribeChannelParticipantsRequest::getPageSize()const
@@ -46,7 +46,7 @@ int DescribeChannelParticipantsRequest::getPageSize()const
 void DescribeChannelParticipantsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeChannelParticipantsRequest::getOrder()const
@@ -57,7 +57,7 @@ std::string DescribeChannelParticipantsRequest::getOrder()const
 void DescribeChannelParticipantsRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 long DescribeChannelParticipantsRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeChannelParticipantsRequest::getOwnerId()const
 void DescribeChannelParticipantsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeChannelParticipantsRequest::getAppId()const
@@ -79,7 +79,7 @@ std::string DescribeChannelParticipantsRequest::getAppId()const
 void DescribeChannelParticipantsRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string DescribeChannelParticipantsRequest::getChannelId()const
@@ -90,6 +90,6 @@ std::string DescribeChannelParticipantsRequest::getChannelId()const
 void DescribeChannelParticipantsRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setParameter("ChannelId", channelId);
 }
 

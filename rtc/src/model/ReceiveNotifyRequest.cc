@@ -35,7 +35,7 @@ std::string ReceiveNotifyRequest::getTraceId()const
 void ReceiveNotifyRequest::setTraceId(const std::string& traceId)
 {
 	traceId_ = traceId;
-	setCoreParameter("TraceId", traceId);
+	setParameter("TraceId", traceId);
 }
 
 std::string ReceiveNotifyRequest::getContent()const
@@ -46,7 +46,7 @@ std::string ReceiveNotifyRequest::getContent()const
 void ReceiveNotifyRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setParameter("Content", content);
 }
 
 std::string ReceiveNotifyRequest::getEvent()const
@@ -57,7 +57,7 @@ std::string ReceiveNotifyRequest::getEvent()const
 void ReceiveNotifyRequest::setEvent(const std::string& event)
 {
 	event_ = event;
-	setCoreParameter("Event", event);
+	setParameter("Event", event);
 }
 
 long ReceiveNotifyRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long ReceiveNotifyRequest::getOwnerId()const
 void ReceiveNotifyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReceiveNotifyRequest::getContentType()const
@@ -79,7 +79,7 @@ std::string ReceiveNotifyRequest::getContentType()const
 void ReceiveNotifyRequest::setContentType(const std::string& contentType)
 {
 	contentType_ = contentType;
-	setCoreParameter("ContentType", contentType);
+	setParameter("ContentType", contentType);
 }
 
 std::string ReceiveNotifyRequest::getBizId()const
@@ -90,6 +90,6 @@ std::string ReceiveNotifyRequest::getBizId()const
 void ReceiveNotifyRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

@@ -35,7 +35,7 @@ int CreateTemplateRequest::getServiceMode()const
 void CreateTemplateRequest::setServiceMode(int serviceMode)
 {
 	serviceMode_ = serviceMode;
-	setCoreParameter("ServiceMode", std::to_string(serviceMode));
+	setParameter("ServiceMode", std::to_string(serviceMode));
 }
 
 std::vector<CreateTemplateRequest::LiveConfig> CreateTemplateRequest::getLiveConfig()const
@@ -48,9 +48,9 @@ void CreateTemplateRequest::setLiveConfig(const std::vector<LiveConfig>& liveCon
 	liveConfig_ = liveConfig;
 	for(int dep1 = 0; dep1!= liveConfig.size(); dep1++) {
 		auto liveConfigObj = liveConfig.at(dep1);
-		std::string liveConfigObjStr = "LiveConfig." + std::to_string(dep1);
-		setCoreParameter(liveConfigObjStr + ".DomainName", liveConfigObj.domainName);
-		setCoreParameter(liveConfigObjStr + ".AppName", liveConfigObj.appName);
+		std::string liveConfigObjStr = "LiveConfig." + std::to_string(dep1 + 1);
+		setParameter(liveConfigObjStr + ".DomainName", liveConfigObj.domainName);
+		setParameter(liveConfigObjStr + ".AppName", liveConfigObj.appName);
 	}
 }
 
@@ -62,7 +62,7 @@ int CreateTemplateRequest::getMediaConfig()const
 void CreateTemplateRequest::setMediaConfig(int mediaConfig)
 {
 	mediaConfig_ = mediaConfig;
-	setCoreParameter("MediaConfig", std::to_string(mediaConfig));
+	setParameter("MediaConfig", std::to_string(mediaConfig));
 }
 
 int CreateTemplateRequest::getMaxMixStreamCount()const
@@ -73,7 +73,7 @@ int CreateTemplateRequest::getMaxMixStreamCount()const
 void CreateTemplateRequest::setMaxMixStreamCount(int maxMixStreamCount)
 {
 	maxMixStreamCount_ = maxMixStreamCount;
-	setCoreParameter("MaxMixStreamCount", std::to_string(maxMixStreamCount));
+	setParameter("MaxMixStreamCount", std::to_string(maxMixStreamCount));
 }
 
 std::vector<CreateTemplateRequest::RecordConfig> CreateTemplateRequest::getRecordConfig()const
@@ -86,12 +86,12 @@ void CreateTemplateRequest::setRecordConfig(const std::vector<RecordConfig>& rec
 	recordConfig_ = recordConfig;
 	for(int dep1 = 0; dep1!= recordConfig.size(); dep1++) {
 		auto recordConfigObj = recordConfig.at(dep1);
-		std::string recordConfigObjStr = "RecordConfig." + std::to_string(dep1);
-		setCoreParameter(recordConfigObjStr + ".StorageType", recordConfigObj.storageType);
-		setCoreParameter(recordConfigObjStr + ".FileFormat", std::to_string(recordConfigObj.fileFormat));
-		setCoreParameter(recordConfigObjStr + ".OssEndPoint", recordConfigObj.ossEndPoint);
-		setCoreParameter(recordConfigObjStr + ".OssBucket", recordConfigObj.ossBucket);
-		setCoreParameter(recordConfigObjStr + ".VodTransCodeGroupId", std::to_string(recordConfigObj.vodTransCodeGroupId));
+		std::string recordConfigObjStr = "RecordConfig." + std::to_string(dep1 + 1);
+		setParameter(recordConfigObjStr + ".StorageType", recordConfigObj.storageType);
+		setParameter(recordConfigObjStr + ".FileFormat", std::to_string(recordConfigObj.fileFormat));
+		setParameter(recordConfigObjStr + ".OssEndPoint", recordConfigObj.ossEndPoint);
+		setParameter(recordConfigObjStr + ".OssBucket", recordConfigObj.ossBucket);
+		setParameter(recordConfigObjStr + ".VodTransCodeGroupId", std::to_string(recordConfigObj.vodTransCodeGroupId));
 	}
 }
 
@@ -103,7 +103,7 @@ long CreateTemplateRequest::getOwnerId()const
 void CreateTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<CreateTemplateRequest::LayOut> CreateTemplateRequest::getLayOut()const
@@ -116,10 +116,10 @@ void CreateTemplateRequest::setLayOut(const std::vector<LayOut>& layOut)
 	layOut_ = layOut;
 	for(int dep1 = 0; dep1!= layOut.size(); dep1++) {
 		auto layOutObj = layOut.at(dep1);
-		std::string layOutObjStr = "LayOut." + std::to_string(dep1);
-		setCoreParameter(layOutObjStr + ".Color", layOutObj.color);
-		setCoreParameter(layOutObjStr + ".CutMode", std::to_string(layOutObj.cutMode));
-		setCoreParameter(layOutObjStr + ".LayOutId", std::to_string(layOutObj.layOutId));
+		std::string layOutObjStr = "LayOut." + std::to_string(dep1 + 1);
+		setParameter(layOutObjStr + ".Color", layOutObj.color);
+		setParameter(layOutObjStr + ".CutMode", std::to_string(layOutObj.cutMode));
+		setParameter(layOutObjStr + ".LayOutId", std::to_string(layOutObj.layOutId));
 	}
 }
 
@@ -131,7 +131,7 @@ std::string CreateTemplateRequest::getAppId()const
 void CreateTemplateRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string CreateTemplateRequest::getCallBack()const
@@ -142,7 +142,7 @@ std::string CreateTemplateRequest::getCallBack()const
 void CreateTemplateRequest::setCallBack(const std::string& callBack)
 {
 	callBack_ = callBack;
-	setCoreParameter("CallBack", callBack);
+	setParameter("CallBack", callBack);
 }
 
 int CreateTemplateRequest::getMixMode()const
@@ -153,6 +153,6 @@ int CreateTemplateRequest::getMixMode()const
 void CreateTemplateRequest::setMixMode(int mixMode)
 {
 	mixMode_ = mixMode;
-	setCoreParameter("MixMode", std::to_string(mixMode));
+	setParameter("MixMode", std::to_string(mixMode));
 }
 

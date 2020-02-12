@@ -35,7 +35,7 @@ long CreateChannelRequest::getOwnerId()const
 void CreateChannelRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateChannelRequest::getAppId()const
@@ -46,7 +46,7 @@ std::string CreateChannelRequest::getAppId()const
 void CreateChannelRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string CreateChannelRequest::getChannelId()const
@@ -57,6 +57,6 @@ std::string CreateChannelRequest::getChannelId()const
 void CreateChannelRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setParameter("ChannelId", channelId);
 }
 

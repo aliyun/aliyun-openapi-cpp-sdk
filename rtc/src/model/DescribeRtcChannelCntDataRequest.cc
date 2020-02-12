@@ -35,7 +35,7 @@ std::string DescribeRtcChannelCntDataRequest::getStartTime()const
 void DescribeRtcChannelCntDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeRtcChannelCntDataRequest::getServiceArea()const
@@ -46,7 +46,7 @@ std::string DescribeRtcChannelCntDataRequest::getServiceArea()const
 void DescribeRtcChannelCntDataRequest::setServiceArea(const std::string& serviceArea)
 {
 	serviceArea_ = serviceArea;
-	setCoreParameter("ServiceArea", serviceArea);
+	setParameter("ServiceArea", serviceArea);
 }
 
 std::string DescribeRtcChannelCntDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeRtcChannelCntDataRequest::getEndTime()const
 void DescribeRtcChannelCntDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeRtcChannelCntDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeRtcChannelCntDataRequest::getOwnerId()const
 void DescribeRtcChannelCntDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRtcChannelCntDataRequest::getAppId()const
@@ -79,7 +79,7 @@ std::string DescribeRtcChannelCntDataRequest::getAppId()const
 void DescribeRtcChannelCntDataRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string DescribeRtcChannelCntDataRequest::getInterval()const
@@ -90,6 +90,6 @@ std::string DescribeRtcChannelCntDataRequest::getInterval()const
 void DescribeRtcChannelCntDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

@@ -35,7 +35,7 @@ long DeleteChannelRequest::getOwnerId()const
 void DeleteChannelRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteChannelRequest::getAppId()const
@@ -46,7 +46,7 @@ std::string DeleteChannelRequest::getAppId()const
 void DeleteChannelRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string DeleteChannelRequest::getChannelId()const
@@ -57,6 +57,6 @@ std::string DeleteChannelRequest::getChannelId()const
 void DeleteChannelRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setParameter("ChannelId", channelId);
 }
 

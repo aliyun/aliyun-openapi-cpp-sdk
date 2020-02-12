@@ -37,10 +37,10 @@ void StartTaskRequest::setMixPanes(const std::vector<MixPanes>& mixPanes)
 	mixPanes_ = mixPanes;
 	for(int dep1 = 0; dep1!= mixPanes.size(); dep1++) {
 		auto mixPanesObj = mixPanes.at(dep1);
-		std::string mixPanesObjStr = "MixPanes." + std::to_string(dep1);
-		setCoreParameter(mixPanesObjStr + ".PaneId", std::to_string(mixPanesObj.paneId));
-		setCoreParameter(mixPanesObjStr + ".UserId", mixPanesObj.userId);
-		setCoreParameter(mixPanesObjStr + ".SourceType", mixPanesObj.sourceType);
+		std::string mixPanesObjStr = "MixPanes." + std::to_string(dep1 + 1);
+		setParameter(mixPanesObjStr + ".PaneId", std::to_string(mixPanesObj.paneId));
+		setParameter(mixPanesObjStr + ".UserId", mixPanesObj.userId);
+		setParameter(mixPanesObjStr + ".SourceType", mixPanesObj.sourceType);
 	}
 }
 
@@ -52,7 +52,7 @@ std::string StartTaskRequest::getIdempotentId()const
 void StartTaskRequest::setIdempotentId(const std::string& idempotentId)
 {
 	idempotentId_ = idempotentId;
-	setCoreParameter("IdempotentId", idempotentId);
+	setParameter("IdempotentId", idempotentId);
 }
 
 long StartTaskRequest::getOwnerId()const
@@ -63,7 +63,7 @@ long StartTaskRequest::getOwnerId()const
 void StartTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long StartTaskRequest::getTemplateId()const
@@ -74,7 +74,7 @@ long StartTaskRequest::getTemplateId()const
 void StartTaskRequest::setTemplateId(long templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", std::to_string(templateId));
+	setParameter("TemplateId", std::to_string(templateId));
 }
 
 std::string StartTaskRequest::getAppId()const
@@ -85,7 +85,7 @@ std::string StartTaskRequest::getAppId()const
 void StartTaskRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string StartTaskRequest::getChannelId()const
@@ -96,6 +96,6 @@ std::string StartTaskRequest::getChannelId()const
 void StartTaskRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setParameter("ChannelId", channelId);
 }
 

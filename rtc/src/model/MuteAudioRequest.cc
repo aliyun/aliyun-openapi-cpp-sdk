@@ -36,7 +36,7 @@ void MuteAudioRequest::setParticipantIds(const std::vector<std::string>& partici
 {
 	participantIds_ = participantIds;
 	for(int dep1 = 0; dep1!= participantIds.size(); dep1++) {
-		setCoreParameter("ParticipantIds."+ std::to_string(dep1), participantIds.at(dep1));
+		setParameter("ParticipantIds."+ std::to_string(dep1), participantIds.at(dep1));
 	}
 }
 
@@ -48,7 +48,7 @@ std::string MuteAudioRequest::getConferenceId()const
 void MuteAudioRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
-	setCoreParameter("ConferenceId", conferenceId);
+	setParameter("ConferenceId", conferenceId);
 }
 
 long MuteAudioRequest::getOwnerId()const
@@ -59,7 +59,7 @@ long MuteAudioRequest::getOwnerId()const
 void MuteAudioRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MuteAudioRequest::getAppId()const
@@ -70,6 +70,6 @@ std::string MuteAudioRequest::getAppId()const
 void MuteAudioRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

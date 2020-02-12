@@ -35,7 +35,7 @@ long GetMPUTaskStatusRequest::getOwnerId()const
 void GetMPUTaskStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetMPUTaskStatusRequest::getAppId()const
@@ -46,7 +46,7 @@ std::string GetMPUTaskStatusRequest::getAppId()const
 void GetMPUTaskStatusRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string GetMPUTaskStatusRequest::getTaskId()const
@@ -57,6 +57,6 @@ std::string GetMPUTaskStatusRequest::getTaskId()const
 void GetMPUTaskStatusRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

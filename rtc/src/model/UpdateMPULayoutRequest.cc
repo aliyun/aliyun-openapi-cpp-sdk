@@ -37,10 +37,10 @@ void UpdateMPULayoutRequest::setUserPanes(const std::vector<UserPanes>& userPane
 	userPanes_ = userPanes;
 	for(int dep1 = 0; dep1!= userPanes.size(); dep1++) {
 		auto userPanesObj = userPanes.at(dep1);
-		std::string userPanesObjStr = "UserPanes." + std::to_string(dep1);
-		setCoreParameter(userPanesObjStr + ".PaneId", std::to_string(userPanesObj.paneId));
-		setCoreParameter(userPanesObjStr + ".UserId", userPanesObj.userId);
-		setCoreParameter(userPanesObjStr + ".SourceType", userPanesObj.sourceType);
+		std::string userPanesObjStr = "UserPanes." + std::to_string(dep1 + 1);
+		setParameter(userPanesObjStr + ".PaneId", std::to_string(userPanesObj.paneId));
+		setParameter(userPanesObjStr + ".UserId", userPanesObj.userId);
+		setParameter(userPanesObjStr + ".SourceType", userPanesObj.sourceType);
 	}
 }
 
@@ -52,7 +52,7 @@ int UpdateMPULayoutRequest::getBackgroundColor()const
 void UpdateMPULayoutRequest::setBackgroundColor(int backgroundColor)
 {
 	backgroundColor_ = backgroundColor;
-	setCoreParameter("BackgroundColor", std::to_string(backgroundColor));
+	setParameter("BackgroundColor", std::to_string(backgroundColor));
 }
 
 int UpdateMPULayoutRequest::getCropMode()const
@@ -63,7 +63,7 @@ int UpdateMPULayoutRequest::getCropMode()const
 void UpdateMPULayoutRequest::setCropMode(int cropMode)
 {
 	cropMode_ = cropMode;
-	setCoreParameter("CropMode", std::to_string(cropMode));
+	setParameter("CropMode", std::to_string(cropMode));
 }
 
 std::vector<long> UpdateMPULayoutRequest::getLayoutIds()const
@@ -75,7 +75,7 @@ void UpdateMPULayoutRequest::setLayoutIds(const std::vector<long>& layoutIds)
 {
 	layoutIds_ = layoutIds;
 	for(int dep1 = 0; dep1!= layoutIds.size(); dep1++) {
-		setCoreParameter("LayoutIds."+ std::to_string(dep1), std::to_string(layoutIds.at(dep1)));
+		setParameter("LayoutIds."+ std::to_string(dep1), std::to_string(layoutIds.at(dep1)));
 	}
 }
 
@@ -87,7 +87,7 @@ std::string UpdateMPULayoutRequest::getTaskId()const
 void UpdateMPULayoutRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 
 long UpdateMPULayoutRequest::getOwnerId()const
@@ -98,7 +98,7 @@ long UpdateMPULayoutRequest::getOwnerId()const
 void UpdateMPULayoutRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateMPULayoutRequest::getAppId()const
@@ -109,6 +109,6 @@ std::string UpdateMPULayoutRequest::getAppId()const
 void UpdateMPULayoutRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

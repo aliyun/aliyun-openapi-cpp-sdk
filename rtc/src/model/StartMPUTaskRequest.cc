@@ -37,10 +37,10 @@ void StartMPUTaskRequest::setUserPanes(const std::vector<UserPanes>& userPanes)
 	userPanes_ = userPanes;
 	for(int dep1 = 0; dep1!= userPanes.size(); dep1++) {
 		auto userPanesObj = userPanes.at(dep1);
-		std::string userPanesObjStr = "UserPanes." + std::to_string(dep1);
-		setCoreParameter(userPanesObjStr + ".PaneId", std::to_string(userPanesObj.paneId));
-		setCoreParameter(userPanesObjStr + ".UserId", userPanesObj.userId);
-		setCoreParameter(userPanesObjStr + ".SourceType", userPanesObj.sourceType);
+		std::string userPanesObjStr = "UserPanes." + std::to_string(dep1 + 1);
+		setParameter(userPanesObjStr + ".PaneId", std::to_string(userPanesObj.paneId));
+		setParameter(userPanesObjStr + ".UserId", userPanesObj.userId);
+		setParameter(userPanesObjStr + ".SourceType", userPanesObj.sourceType);
 	}
 }
 
@@ -52,7 +52,7 @@ int StartMPUTaskRequest::getBackgroundColor()const
 void StartMPUTaskRequest::setBackgroundColor(int backgroundColor)
 {
 	backgroundColor_ = backgroundColor;
-	setCoreParameter("BackgroundColor", std::to_string(backgroundColor));
+	setParameter("BackgroundColor", std::to_string(backgroundColor));
 }
 
 int StartMPUTaskRequest::getCropMode()const
@@ -63,7 +63,7 @@ int StartMPUTaskRequest::getCropMode()const
 void StartMPUTaskRequest::setCropMode(int cropMode)
 {
 	cropMode_ = cropMode;
-	setCoreParameter("CropMode", std::to_string(cropMode));
+	setParameter("CropMode", std::to_string(cropMode));
 }
 
 std::string StartMPUTaskRequest::getTaskProfile()const
@@ -74,7 +74,7 @@ std::string StartMPUTaskRequest::getTaskProfile()const
 void StartMPUTaskRequest::setTaskProfile(const std::string& taskProfile)
 {
 	taskProfile_ = taskProfile;
-	setCoreParameter("TaskProfile", taskProfile);
+	setParameter("TaskProfile", taskProfile);
 }
 
 std::vector<long> StartMPUTaskRequest::getLayoutIds()const
@@ -86,7 +86,7 @@ void StartMPUTaskRequest::setLayoutIds(const std::vector<long>& layoutIds)
 {
 	layoutIds_ = layoutIds;
 	for(int dep1 = 0; dep1!= layoutIds.size(); dep1++) {
-		setCoreParameter("LayoutIds."+ std::to_string(dep1), std::to_string(layoutIds.at(dep1)));
+		setParameter("LayoutIds."+ std::to_string(dep1), std::to_string(layoutIds.at(dep1)));
 	}
 }
 
@@ -98,7 +98,7 @@ std::string StartMPUTaskRequest::getTaskId()const
 void StartMPUTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 
 std::string StartMPUTaskRequest::getStreamURL()const
@@ -109,7 +109,7 @@ std::string StartMPUTaskRequest::getStreamURL()const
 void StartMPUTaskRequest::setStreamURL(const std::string& streamURL)
 {
 	streamURL_ = streamURL;
-	setCoreParameter("StreamURL", streamURL);
+	setParameter("StreamURL", streamURL);
 }
 
 long StartMPUTaskRequest::getOwnerId()const
@@ -120,7 +120,7 @@ long StartMPUTaskRequest::getOwnerId()const
 void StartMPUTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> StartMPUTaskRequest::getSubSpecUsers()const
@@ -132,7 +132,7 @@ void StartMPUTaskRequest::setSubSpecUsers(const std::vector<std::string>& subSpe
 {
 	subSpecUsers_ = subSpecUsers;
 	for(int dep1 = 0; dep1!= subSpecUsers.size(); dep1++) {
-		setCoreParameter("SubSpecUsers."+ std::to_string(dep1), subSpecUsers.at(dep1));
+		setParameter("SubSpecUsers."+ std::to_string(dep1), subSpecUsers.at(dep1));
 	}
 }
 
@@ -144,7 +144,7 @@ std::string StartMPUTaskRequest::getAppId()const
 void StartMPUTaskRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 int StartMPUTaskRequest::getMediaEncode()const
@@ -155,7 +155,7 @@ int StartMPUTaskRequest::getMediaEncode()const
 void StartMPUTaskRequest::setMediaEncode(int mediaEncode)
 {
 	mediaEncode_ = mediaEncode;
-	setCoreParameter("MediaEncode", std::to_string(mediaEncode));
+	setParameter("MediaEncode", std::to_string(mediaEncode));
 }
 
 std::string StartMPUTaskRequest::getChannelId()const
@@ -166,6 +166,6 @@ std::string StartMPUTaskRequest::getChannelId()const
 void StartMPUTaskRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setParameter("ChannelId", channelId);
 }
 

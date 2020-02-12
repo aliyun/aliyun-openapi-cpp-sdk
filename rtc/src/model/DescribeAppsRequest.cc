@@ -35,7 +35,7 @@ int DescribeAppsRequest::getPageNum()const
 void DescribeAppsRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int DescribeAppsRequest::getPageSize()const
@@ -46,7 +46,7 @@ int DescribeAppsRequest::getPageSize()const
 void DescribeAppsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAppsRequest::getOrder()const
@@ -57,7 +57,7 @@ std::string DescribeAppsRequest::getOrder()const
 void DescribeAppsRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 long DescribeAppsRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeAppsRequest::getOwnerId()const
 void DescribeAppsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAppsRequest::getAppId()const
@@ -79,7 +79,7 @@ std::string DescribeAppsRequest::getAppId()const
 void DescribeAppsRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string DescribeAppsRequest::getStatus()const
@@ -90,6 +90,6 @@ std::string DescribeAppsRequest::getStatus()const
 void DescribeAppsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

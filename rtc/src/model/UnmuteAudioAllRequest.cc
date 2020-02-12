@@ -35,7 +35,7 @@ std::string UnmuteAudioAllRequest::getConferenceId()const
 void UnmuteAudioAllRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
-	setCoreParameter("ConferenceId", conferenceId);
+	setParameter("ConferenceId", conferenceId);
 }
 
 long UnmuteAudioAllRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long UnmuteAudioAllRequest::getOwnerId()const
 void UnmuteAudioAllRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnmuteAudioAllRequest::getParticipantId()const
@@ -57,7 +57,7 @@ std::string UnmuteAudioAllRequest::getParticipantId()const
 void UnmuteAudioAllRequest::setParticipantId(const std::string& participantId)
 {
 	participantId_ = participantId;
-	setCoreParameter("ParticipantId", participantId);
+	setParameter("ParticipantId", participantId);
 }
 
 std::string UnmuteAudioAllRequest::getAppId()const
@@ -68,6 +68,6 @@ std::string UnmuteAudioAllRequest::getAppId()const
 void UnmuteAudioAllRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

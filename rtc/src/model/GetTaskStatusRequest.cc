@@ -35,7 +35,7 @@ long GetTaskStatusRequest::getOwnerId()const
 void GetTaskStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetTaskStatusRequest::getAppId()const
@@ -46,7 +46,7 @@ std::string GetTaskStatusRequest::getAppId()const
 void GetTaskStatusRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string GetTaskStatusRequest::getChannelId()const
@@ -57,7 +57,7 @@ std::string GetTaskStatusRequest::getChannelId()const
 void GetTaskStatusRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setParameter("ChannelId", channelId);
 }
 
 long GetTaskStatusRequest::getTaskId()const
@@ -68,6 +68,6 @@ long GetTaskStatusRequest::getTaskId()const
 void GetTaskStatusRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setParameter("TaskId", std::to_string(taskId));
 }
 

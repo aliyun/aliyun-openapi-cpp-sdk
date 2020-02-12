@@ -35,7 +35,7 @@ long DescribeRtcChannelUserListRequest::getPageSize()const
 void DescribeRtcChannelUserListRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeRtcChannelUserListRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long DescribeRtcChannelUserListRequest::getOwnerId()const
 void DescribeRtcChannelUserListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long DescribeRtcChannelUserListRequest::getPageNo()const
@@ -57,7 +57,7 @@ long DescribeRtcChannelUserListRequest::getPageNo()const
 void DescribeRtcChannelUserListRequest::setPageNo(long pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string DescribeRtcChannelUserListRequest::getAppId()const
@@ -68,7 +68,7 @@ std::string DescribeRtcChannelUserListRequest::getAppId()const
 void DescribeRtcChannelUserListRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string DescribeRtcChannelUserListRequest::getChannelId()const
@@ -79,7 +79,7 @@ std::string DescribeRtcChannelUserListRequest::getChannelId()const
 void DescribeRtcChannelUserListRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setParameter("ChannelId", channelId);
 }
 
 std::string DescribeRtcChannelUserListRequest::getTimePoint()const
@@ -90,6 +90,6 @@ std::string DescribeRtcChannelUserListRequest::getTimePoint()const
 void DescribeRtcChannelUserListRequest::setTimePoint(const std::string& timePoint)
 {
 	timePoint_ = timePoint;
-	setCoreParameter("TimePoint", timePoint);
+	setParameter("TimePoint", timePoint);
 }
 

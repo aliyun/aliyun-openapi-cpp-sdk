@@ -35,7 +35,7 @@ long DescribeConferenceAuthInfoRequest::getOwnerId()const
 void DescribeConferenceAuthInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeConferenceAuthInfoRequest::getConferenceId()const
@@ -46,7 +46,7 @@ std::string DescribeConferenceAuthInfoRequest::getConferenceId()const
 void DescribeConferenceAuthInfoRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
-	setCoreParameter("ConferenceId", conferenceId);
+	setParameter("ConferenceId", conferenceId);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getAppId()const
@@ -57,6 +57,6 @@ std::string DescribeConferenceAuthInfoRequest::getAppId()const
 void DescribeConferenceAuthInfoRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
