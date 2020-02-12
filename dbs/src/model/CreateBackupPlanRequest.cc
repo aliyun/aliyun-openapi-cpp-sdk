@@ -35,7 +35,7 @@ std::string CreateBackupPlanRequest::getDatabaseType()const
 void CreateBackupPlanRequest::setDatabaseType(const std::string& databaseType)
 {
 	databaseType_ = databaseType;
-	setCoreParameter("DatabaseType", databaseType);
+	setParameter("DatabaseType", databaseType);
 }
 
 std::string CreateBackupPlanRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string CreateBackupPlanRequest::getClientToken()const
 void CreateBackupPlanRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateBackupPlanRequest::getInstanceClass()const
@@ -57,7 +57,7 @@ std::string CreateBackupPlanRequest::getInstanceClass()const
 void CreateBackupPlanRequest::setInstanceClass(const std::string& instanceClass)
 {
 	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", instanceClass);
+	setParameter("InstanceClass", instanceClass);
 }
 
 std::string CreateBackupPlanRequest::getStorageType()const
@@ -68,7 +68,7 @@ std::string CreateBackupPlanRequest::getStorageType()const
 void CreateBackupPlanRequest::setStorageType(const std::string& storageType)
 {
 	storageType_ = storageType;
-	setCoreParameter("StorageType", storageType);
+	setParameter("StorageType", storageType);
 }
 
 std::string CreateBackupPlanRequest::getDatabaseRegion()const
@@ -79,7 +79,7 @@ std::string CreateBackupPlanRequest::getDatabaseRegion()const
 void CreateBackupPlanRequest::setDatabaseRegion(const std::string& databaseRegion)
 {
 	databaseRegion_ = databaseRegion;
-	setCoreParameter("DatabaseRegion", databaseRegion);
+	setParameter("DatabaseRegion", databaseRegion);
 }
 
 std::string CreateBackupPlanRequest::getInstanceType()const
@@ -90,7 +90,7 @@ std::string CreateBackupPlanRequest::getInstanceType()const
 void CreateBackupPlanRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string CreateBackupPlanRequest::getPeriod()const
@@ -101,7 +101,7 @@ std::string CreateBackupPlanRequest::getPeriod()const
 void CreateBackupPlanRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setParameter("Period", period);
 }
 
 std::string CreateBackupPlanRequest::getOwnerId()const
@@ -112,7 +112,7 @@ std::string CreateBackupPlanRequest::getOwnerId()const
 void CreateBackupPlanRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 int CreateBackupPlanRequest::getUsedTime()const
@@ -123,7 +123,7 @@ int CreateBackupPlanRequest::getUsedTime()const
 void CreateBackupPlanRequest::setUsedTime(int usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", std::to_string(usedTime));
+	setParameter("UsedTime", std::to_string(usedTime));
 }
 
 std::string CreateBackupPlanRequest::getBackupMethod()const
@@ -134,7 +134,7 @@ std::string CreateBackupPlanRequest::getBackupMethod()const
 void CreateBackupPlanRequest::setBackupMethod(const std::string& backupMethod)
 {
 	backupMethod_ = backupMethod;
-	setCoreParameter("BackupMethod", backupMethod);
+	setParameter("BackupMethod", backupMethod);
 }
 
 std::string CreateBackupPlanRequest::getStorageRegion()const
@@ -145,7 +145,7 @@ std::string CreateBackupPlanRequest::getStorageRegion()const
 void CreateBackupPlanRequest::setStorageRegion(const std::string& storageRegion)
 {
 	storageRegion_ = storageRegion;
-	setCoreParameter("StorageRegion", storageRegion);
+	setParameter("StorageRegion", storageRegion);
 }
 
 std::string CreateBackupPlanRequest::getRegion()const
@@ -156,7 +156,7 @@ std::string CreateBackupPlanRequest::getRegion()const
 void CreateBackupPlanRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string CreateBackupPlanRequest::getPayType()const
@@ -167,6 +167,6 @@ std::string CreateBackupPlanRequest::getPayType()const
 void CreateBackupPlanRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setParameter("PayType", payType);
 }
 

@@ -35,7 +35,7 @@ long DescribeRestoreRangeInfoRequest::getBeginTimestampForRestore()const
 void DescribeRestoreRangeInfoRequest::setBeginTimestampForRestore(long beginTimestampForRestore)
 {
 	beginTimestampForRestore_ = beginTimestampForRestore;
-	setCoreParameter("BeginTimestampForRestore", std::to_string(beginTimestampForRestore));
+	setParameter("BeginTimestampForRestore", std::to_string(beginTimestampForRestore));
 }
 
 long DescribeRestoreRangeInfoRequest::getEndTimestampForRestore()const
@@ -46,7 +46,7 @@ long DescribeRestoreRangeInfoRequest::getEndTimestampForRestore()const
 void DescribeRestoreRangeInfoRequest::setEndTimestampForRestore(long endTimestampForRestore)
 {
 	endTimestampForRestore_ = endTimestampForRestore;
-	setCoreParameter("EndTimestampForRestore", std::to_string(endTimestampForRestore));
+	setParameter("EndTimestampForRestore", std::to_string(endTimestampForRestore));
 }
 
 std::string DescribeRestoreRangeInfoRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string DescribeRestoreRangeInfoRequest::getClientToken()const
 void DescribeRestoreRangeInfoRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeRestoreRangeInfoRequest::getBackupPlanId()const
@@ -68,7 +68,7 @@ std::string DescribeRestoreRangeInfoRequest::getBackupPlanId()const
 void DescribeRestoreRangeInfoRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 std::string DescribeRestoreRangeInfoRequest::getOwnerId()const
@@ -79,6 +79,6 @@ std::string DescribeRestoreRangeInfoRequest::getOwnerId()const
 void DescribeRestoreRangeInfoRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 

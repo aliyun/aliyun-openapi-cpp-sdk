@@ -35,7 +35,7 @@ std::string DescribeNodeCidrListRequest::getClientToken()const
 void DescribeNodeCidrListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeNodeCidrListRequest::getOwnerId()const
@@ -46,7 +46,7 @@ std::string DescribeNodeCidrListRequest::getOwnerId()const
 void DescribeNodeCidrListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string DescribeNodeCidrListRequest::getRegion()const
@@ -57,6 +57,6 @@ std::string DescribeNodeCidrListRequest::getRegion()const
 void DescribeNodeCidrListRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

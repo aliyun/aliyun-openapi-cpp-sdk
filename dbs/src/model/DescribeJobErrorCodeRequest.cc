@@ -35,7 +35,7 @@ std::string DescribeJobErrorCodeRequest::getClientToken()const
 void DescribeJobErrorCodeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeJobErrorCodeRequest::getLanguage()const
@@ -46,7 +46,7 @@ std::string DescribeJobErrorCodeRequest::getLanguage()const
 void DescribeJobErrorCodeRequest::setLanguage(const std::string& language)
 {
 	language_ = language;
-	setCoreParameter("Language", language);
+	setParameter("Language", language);
 }
 
 std::string DescribeJobErrorCodeRequest::getOwnerId()const
@@ -57,7 +57,7 @@ std::string DescribeJobErrorCodeRequest::getOwnerId()const
 void DescribeJobErrorCodeRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string DescribeJobErrorCodeRequest::getTaskId()const
@@ -68,6 +68,6 @@ std::string DescribeJobErrorCodeRequest::getTaskId()const
 void DescribeJobErrorCodeRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

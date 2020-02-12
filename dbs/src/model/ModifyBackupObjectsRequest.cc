@@ -35,7 +35,7 @@ std::string ModifyBackupObjectsRequest::getClientToken()const
 void ModifyBackupObjectsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyBackupObjectsRequest::getBackupPlanId()const
@@ -46,7 +46,7 @@ std::string ModifyBackupObjectsRequest::getBackupPlanId()const
 void ModifyBackupObjectsRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 std::string ModifyBackupObjectsRequest::getBackupObjects()const
@@ -57,7 +57,7 @@ std::string ModifyBackupObjectsRequest::getBackupObjects()const
 void ModifyBackupObjectsRequest::setBackupObjects(const std::string& backupObjects)
 {
 	backupObjects_ = backupObjects;
-	setCoreParameter("BackupObjects", backupObjects);
+	setParameter("BackupObjects", backupObjects);
 }
 
 std::string ModifyBackupObjectsRequest::getOwnerId()const
@@ -68,6 +68,6 @@ std::string ModifyBackupObjectsRequest::getOwnerId()const
 void ModifyBackupObjectsRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 

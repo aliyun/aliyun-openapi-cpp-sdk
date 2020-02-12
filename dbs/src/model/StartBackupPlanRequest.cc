@@ -35,7 +35,7 @@ std::string StartBackupPlanRequest::getClientToken()const
 void StartBackupPlanRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string StartBackupPlanRequest::getBackupPlanId()const
@@ -46,7 +46,7 @@ std::string StartBackupPlanRequest::getBackupPlanId()const
 void StartBackupPlanRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 std::string StartBackupPlanRequest::getOwnerId()const
@@ -57,6 +57,6 @@ std::string StartBackupPlanRequest::getOwnerId()const
 void StartBackupPlanRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 

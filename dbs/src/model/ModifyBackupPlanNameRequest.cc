@@ -35,7 +35,7 @@ std::string ModifyBackupPlanNameRequest::getClientToken()const
 void ModifyBackupPlanNameRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyBackupPlanNameRequest::getBackupPlanId()const
@@ -46,7 +46,7 @@ std::string ModifyBackupPlanNameRequest::getBackupPlanId()const
 void ModifyBackupPlanNameRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 std::string ModifyBackupPlanNameRequest::getOwnerId()const
@@ -57,7 +57,7 @@ std::string ModifyBackupPlanNameRequest::getOwnerId()const
 void ModifyBackupPlanNameRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string ModifyBackupPlanNameRequest::getBackupPlanName()const
@@ -68,6 +68,6 @@ std::string ModifyBackupPlanNameRequest::getBackupPlanName()const
 void ModifyBackupPlanNameRequest::setBackupPlanName(const std::string& backupPlanName)
 {
 	backupPlanName_ = backupPlanName;
-	setCoreParameter("BackupPlanName", backupPlanName);
+	setParameter("BackupPlanName", backupPlanName);
 }
 

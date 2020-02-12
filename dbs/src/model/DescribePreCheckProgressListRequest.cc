@@ -35,7 +35,7 @@ std::string DescribePreCheckProgressListRequest::getClientToken()const
 void DescribePreCheckProgressListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribePreCheckProgressListRequest::getBackupPlanId()const
@@ -46,7 +46,7 @@ std::string DescribePreCheckProgressListRequest::getBackupPlanId()const
 void DescribePreCheckProgressListRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 std::string DescribePreCheckProgressListRequest::getOwnerId()const
@@ -57,7 +57,7 @@ std::string DescribePreCheckProgressListRequest::getOwnerId()const
 void DescribePreCheckProgressListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string DescribePreCheckProgressListRequest::getRestoreTaskId()const
@@ -68,6 +68,6 @@ std::string DescribePreCheckProgressListRequest::getRestoreTaskId()const
 void DescribePreCheckProgressListRequest::setRestoreTaskId(const std::string& restoreTaskId)
 {
 	restoreTaskId_ = restoreTaskId;
-	setCoreParameter("RestoreTaskId", restoreTaskId);
+	setParameter("RestoreTaskId", restoreTaskId);
 }
 

@@ -35,7 +35,7 @@ std::string DescribeIncrementBackupListRequest::getClientToken()const
 void DescribeIncrementBackupListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeIncrementBackupListRequest::getBackupPlanId()const
@@ -46,7 +46,7 @@ std::string DescribeIncrementBackupListRequest::getBackupPlanId()const
 void DescribeIncrementBackupListRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 int DescribeIncrementBackupListRequest::getPageNum()const
@@ -57,7 +57,7 @@ int DescribeIncrementBackupListRequest::getPageNum()const
 void DescribeIncrementBackupListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeIncrementBackupListRequest::getOwnerId()const
@@ -68,7 +68,18 @@ std::string DescribeIncrementBackupListRequest::getOwnerId()const
 void DescribeIncrementBackupListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
+}
+
+bool DescribeIncrementBackupListRequest::getShowStorageType()const
+{
+	return showStorageType_;
+}
+
+void DescribeIncrementBackupListRequest::setShowStorageType(bool showStorageType)
+{
+	showStorageType_ = showStorageType;
+	setParameter("ShowStorageType", showStorageType ? "true" : "false");
 }
 
 int DescribeIncrementBackupListRequest::getPageSize()const
@@ -79,6 +90,6 @@ int DescribeIncrementBackupListRequest::getPageSize()const
 void DescribeIncrementBackupListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

@@ -35,7 +35,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointRegion()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointRegion(const std::string& sourceEndpointRegion)
 {
 	sourceEndpointRegion_ = sourceEndpointRegion;
-	setCoreParameter("SourceEndpointRegion", sourceEndpointRegion);
+	setParameter("SourceEndpointRegion", sourceEndpointRegion);
 }
 
 long ModifyBackupSourceEndpointRequest::getBackupGatewayId()const
@@ -46,7 +46,7 @@ long ModifyBackupSourceEndpointRequest::getBackupGatewayId()const
 void ModifyBackupSourceEndpointRequest::setBackupGatewayId(long backupGatewayId)
 {
 	backupGatewayId_ = backupGatewayId;
-	setCoreParameter("BackupGatewayId", std::to_string(backupGatewayId));
+	setParameter("BackupGatewayId", std::to_string(backupGatewayId));
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointInstanceID()const
@@ -57,7 +57,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointInstanceID()cons
 void ModifyBackupSourceEndpointRequest::setSourceEndpointInstanceID(const std::string& sourceEndpointInstanceID)
 {
 	sourceEndpointInstanceID_ = sourceEndpointInstanceID;
-	setCoreParameter("SourceEndpointInstanceID", sourceEndpointInstanceID);
+	setParameter("SourceEndpointInstanceID", sourceEndpointInstanceID);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointUserName()const
@@ -68,7 +68,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointUserName()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointUserName(const std::string& sourceEndpointUserName)
 {
 	sourceEndpointUserName_ = sourceEndpointUserName;
-	setCoreParameter("SourceEndpointUserName", sourceEndpointUserName);
+	setParameter("SourceEndpointUserName", sourceEndpointUserName);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getClientToken()const
@@ -79,7 +79,7 @@ std::string ModifyBackupSourceEndpointRequest::getClientToken()const
 void ModifyBackupSourceEndpointRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getBackupPlanId()const
@@ -90,7 +90,7 @@ std::string ModifyBackupSourceEndpointRequest::getBackupPlanId()const
 void ModifyBackupSourceEndpointRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointDatabaseName()const
@@ -101,7 +101,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointDatabaseName()co
 void ModifyBackupSourceEndpointRequest::setSourceEndpointDatabaseName(const std::string& sourceEndpointDatabaseName)
 {
 	sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
-	setCoreParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
+	setParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointIP()const
@@ -112,7 +112,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointIP()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointIP(const std::string& sourceEndpointIP)
 {
 	sourceEndpointIP_ = sourceEndpointIP;
-	setCoreParameter("SourceEndpointIP", sourceEndpointIP);
+	setParameter("SourceEndpointIP", sourceEndpointIP);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointPassword()const
@@ -123,7 +123,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointPassword()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointPassword(const std::string& sourceEndpointPassword)
 {
 	sourceEndpointPassword_ = sourceEndpointPassword;
-	setCoreParameter("SourceEndpointPassword", sourceEndpointPassword);
+	setParameter("SourceEndpointPassword", sourceEndpointPassword);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getBackupObjects()const
@@ -134,7 +134,7 @@ std::string ModifyBackupSourceEndpointRequest::getBackupObjects()const
 void ModifyBackupSourceEndpointRequest::setBackupObjects(const std::string& backupObjects)
 {
 	backupObjects_ = backupObjects;
-	setCoreParameter("BackupObjects", backupObjects);
+	setParameter("BackupObjects", backupObjects);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getOwnerId()const
@@ -145,7 +145,7 @@ std::string ModifyBackupSourceEndpointRequest::getOwnerId()const
 void ModifyBackupSourceEndpointRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 int ModifyBackupSourceEndpointRequest::getSourceEndpointPort()const
@@ -156,7 +156,7 @@ int ModifyBackupSourceEndpointRequest::getSourceEndpointPort()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointPort(int sourceEndpointPort)
 {
 	sourceEndpointPort_ = sourceEndpointPort;
-	setCoreParameter("SourceEndpointPort", std::to_string(sourceEndpointPort));
+	setParameter("SourceEndpointPort", std::to_string(sourceEndpointPort));
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointInstanceType()const
@@ -167,7 +167,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointInstanceType()co
 void ModifyBackupSourceEndpointRequest::setSourceEndpointInstanceType(const std::string& sourceEndpointInstanceType)
 {
 	sourceEndpointInstanceType_ = sourceEndpointInstanceType;
-	setCoreParameter("SourceEndpointInstanceType", sourceEndpointInstanceType);
+	setParameter("SourceEndpointInstanceType", sourceEndpointInstanceType);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointOracleSID()const
@@ -178,6 +178,6 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointOracleSID()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointOracleSID(const std::string& sourceEndpointOracleSID)
 {
 	sourceEndpointOracleSID_ = sourceEndpointOracleSID;
-	setCoreParameter("SourceEndpointOracleSID", sourceEndpointOracleSID);
+	setParameter("SourceEndpointOracleSID", sourceEndpointOracleSID);
 }
 

@@ -35,7 +35,7 @@ std::string UpgradeBackupPlanRequest::getClientToken()const
 void UpgradeBackupPlanRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string UpgradeBackupPlanRequest::getBackupPlanId()const
@@ -46,7 +46,7 @@ std::string UpgradeBackupPlanRequest::getBackupPlanId()const
 void UpgradeBackupPlanRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 std::string UpgradeBackupPlanRequest::getOwnerId()const
@@ -57,7 +57,7 @@ std::string UpgradeBackupPlanRequest::getOwnerId()const
 void UpgradeBackupPlanRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string UpgradeBackupPlanRequest::getInstanceClass()const
@@ -68,6 +68,6 @@ std::string UpgradeBackupPlanRequest::getInstanceClass()const
 void UpgradeBackupPlanRequest::setInstanceClass(const std::string& instanceClass)
 {
 	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", instanceClass);
+	setParameter("InstanceClass", instanceClass);
 }
 

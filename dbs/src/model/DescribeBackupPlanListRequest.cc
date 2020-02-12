@@ -35,7 +35,7 @@ std::string DescribeBackupPlanListRequest::getClientToken()const
 void DescribeBackupPlanListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeBackupPlanListRequest::getBackupPlanId()const
@@ -46,7 +46,7 @@ std::string DescribeBackupPlanListRequest::getBackupPlanId()const
 void DescribeBackupPlanListRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 int DescribeBackupPlanListRequest::getPageNum()const
@@ -57,7 +57,7 @@ int DescribeBackupPlanListRequest::getPageNum()const
 void DescribeBackupPlanListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeBackupPlanListRequest::getOwnerId()const
@@ -68,7 +68,7 @@ std::string DescribeBackupPlanListRequest::getOwnerId()const
 void DescribeBackupPlanListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 int DescribeBackupPlanListRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribeBackupPlanListRequest::getPageSize()const
 void DescribeBackupPlanListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeBackupPlanListRequest::getRegion()const
@@ -90,6 +90,6 @@ std::string DescribeBackupPlanListRequest::getRegion()const
 void DescribeBackupPlanListRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

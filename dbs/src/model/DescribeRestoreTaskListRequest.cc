@@ -35,7 +35,7 @@ std::string DescribeRestoreTaskListRequest::getClientToken()const
 void DescribeRestoreTaskListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeRestoreTaskListRequest::getBackupPlanId()const
@@ -46,7 +46,7 @@ std::string DescribeRestoreTaskListRequest::getBackupPlanId()const
 void DescribeRestoreTaskListRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 int DescribeRestoreTaskListRequest::getPageNum()const
@@ -57,7 +57,7 @@ int DescribeRestoreTaskListRequest::getPageNum()const
 void DescribeRestoreTaskListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeRestoreTaskListRequest::getOwnerId()const
@@ -68,7 +68,7 @@ std::string DescribeRestoreTaskListRequest::getOwnerId()const
 void DescribeRestoreTaskListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string DescribeRestoreTaskListRequest::getRestoreTaskId()const
@@ -79,7 +79,7 @@ std::string DescribeRestoreTaskListRequest::getRestoreTaskId()const
 void DescribeRestoreTaskListRequest::setRestoreTaskId(const std::string& restoreTaskId)
 {
 	restoreTaskId_ = restoreTaskId;
-	setCoreParameter("RestoreTaskId", restoreTaskId);
+	setParameter("RestoreTaskId", restoreTaskId);
 }
 
 int DescribeRestoreTaskListRequest::getPageSize()const
@@ -90,6 +90,6 @@ int DescribeRestoreTaskListRequest::getPageSize()const
 void DescribeRestoreTaskListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
