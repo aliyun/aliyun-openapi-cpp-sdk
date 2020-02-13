@@ -35,7 +35,7 @@ std::string SetL2OssKeyConfigRequest::getDomainName()const
 void SetL2OssKeyConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetL2OssKeyConfigRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long SetL2OssKeyConfigRequest::getOwnerId()const
 void SetL2OssKeyConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetL2OssKeyConfigRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string SetL2OssKeyConfigRequest::getSecurityToken()const
 void SetL2OssKeyConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SetL2OssKeyConfigRequest::getPrivateOssAuth()const
@@ -68,6 +68,6 @@ std::string SetL2OssKeyConfigRequest::getPrivateOssAuth()const
 void SetL2OssKeyConfigRequest::setPrivateOssAuth(const std::string& privateOssAuth)
 {
 	privateOssAuth_ = privateOssAuth;
-	setCoreParameter("PrivateOssAuth", privateOssAuth);
+	setParameter("PrivateOssAuth", privateOssAuth);
 }
 

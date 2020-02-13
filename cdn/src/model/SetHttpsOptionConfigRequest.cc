@@ -35,7 +35,7 @@ std::string SetHttpsOptionConfigRequest::getHttp2()const
 void SetHttpsOptionConfigRequest::setHttp2(const std::string& http2)
 {
 	http2_ = http2;
-	setCoreParameter("Http2", http2);
+	setParameter("Http2", http2);
 }
 
 std::string SetHttpsOptionConfigRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string SetHttpsOptionConfigRequest::getDomainName()const
 void SetHttpsOptionConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetHttpsOptionConfigRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long SetHttpsOptionConfigRequest::getOwnerId()const
 void SetHttpsOptionConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long SetHttpsOptionConfigRequest::getConfigId()const
@@ -68,6 +68,6 @@ long SetHttpsOptionConfigRequest::getConfigId()const
 void SetHttpsOptionConfigRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setParameter("ConfigId", std::to_string(configId));
 }
 

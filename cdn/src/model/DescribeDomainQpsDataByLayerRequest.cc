@@ -35,7 +35,7 @@ std::string DescribeDomainQpsDataByLayerRequest::getLocationNameEn()const
 void DescribeDomainQpsDataByLayerRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainQpsDataByLayerRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDomainQpsDataByLayerRequest::getStartTime()const
 void DescribeDomainQpsDataByLayerRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainQpsDataByLayerRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDomainQpsDataByLayerRequest::getIspNameEn()const
 void DescribeDomainQpsDataByLayerRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainQpsDataByLayerRequest::getLayer()const
@@ -68,7 +68,7 @@ std::string DescribeDomainQpsDataByLayerRequest::getLayer()const
 void DescribeDomainQpsDataByLayerRequest::setLayer(const std::string& layer)
 {
 	layer_ = layer;
-	setCoreParameter("Layer", layer);
+	setParameter("Layer", layer);
 }
 
 std::string DescribeDomainQpsDataByLayerRequest::getDomainName()const
@@ -79,7 +79,7 @@ std::string DescribeDomainQpsDataByLayerRequest::getDomainName()const
 void DescribeDomainQpsDataByLayerRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainQpsDataByLayerRequest::getEndTime()const
@@ -90,7 +90,7 @@ std::string DescribeDomainQpsDataByLayerRequest::getEndTime()const
 void DescribeDomainQpsDataByLayerRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainQpsDataByLayerRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long DescribeDomainQpsDataByLayerRequest::getOwnerId()const
 void DescribeDomainQpsDataByLayerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainQpsDataByLayerRequest::getInterval()const
@@ -112,6 +112,6 @@ std::string DescribeDomainQpsDataByLayerRequest::getInterval()const
 void DescribeDomainQpsDataByLayerRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

@@ -35,7 +35,7 @@ std::string DescribeDomainSrcTrafficDataRequest::getStartTime()const
 void DescribeDomainSrcTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainSrcTrafficDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeDomainSrcTrafficDataRequest::getDomainName()const
 void DescribeDomainSrcTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainSrcTrafficDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeDomainSrcTrafficDataRequest::getEndTime()const
 void DescribeDomainSrcTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainSrcTrafficDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeDomainSrcTrafficDataRequest::getOwnerId()const
 void DescribeDomainSrcTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainSrcTrafficDataRequest::getInterval()const
@@ -79,6 +79,6 @@ std::string DescribeDomainSrcTrafficDataRequest::getInterval()const
 void DescribeDomainSrcTrafficDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

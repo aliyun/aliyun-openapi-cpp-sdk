@@ -35,7 +35,7 @@ std::string BatchAddCdnDomainRequest::getSources()const
 void BatchAddCdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", sources);
+	setParameter("Sources", sources);
 }
 
 std::string BatchAddCdnDomainRequest::getResourceGroupId()const
@@ -46,7 +46,7 @@ std::string BatchAddCdnDomainRequest::getResourceGroupId()const
 void BatchAddCdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string BatchAddCdnDomainRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string BatchAddCdnDomainRequest::getSecurityToken()const
 void BatchAddCdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string BatchAddCdnDomainRequest::getCdnType()const
@@ -68,7 +68,7 @@ std::string BatchAddCdnDomainRequest::getCdnType()const
 void BatchAddCdnDomainRequest::setCdnType(const std::string& cdnType)
 {
 	cdnType_ = cdnType;
-	setCoreParameter("CdnType", cdnType);
+	setParameter("CdnType", cdnType);
 }
 
 std::string BatchAddCdnDomainRequest::getScope()const
@@ -79,7 +79,7 @@ std::string BatchAddCdnDomainRequest::getScope()const
 void BatchAddCdnDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", scope);
+	setParameter("Scope", scope);
 }
 
 std::string BatchAddCdnDomainRequest::getTopLevelDomain()const
@@ -90,7 +90,7 @@ std::string BatchAddCdnDomainRequest::getTopLevelDomain()const
 void BatchAddCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	setParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string BatchAddCdnDomainRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string BatchAddCdnDomainRequest::getOwnerAccount()const
 void BatchAddCdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string BatchAddCdnDomainRequest::getDomainName()const
@@ -112,7 +112,7 @@ std::string BatchAddCdnDomainRequest::getDomainName()const
 void BatchAddCdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long BatchAddCdnDomainRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long BatchAddCdnDomainRequest::getOwnerId()const
 void BatchAddCdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BatchAddCdnDomainRequest::getCheckUrl()const
@@ -134,6 +134,6 @@ std::string BatchAddCdnDomainRequest::getCheckUrl()const
 void BatchAddCdnDomainRequest::setCheckUrl(const std::string& checkUrl)
 {
 	checkUrl_ = checkUrl;
-	setCoreParameter("CheckUrl", checkUrl);
+	setParameter("CheckUrl", checkUrl);
 }
 

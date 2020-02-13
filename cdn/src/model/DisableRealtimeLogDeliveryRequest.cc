@@ -35,7 +35,7 @@ long DisableRealtimeLogDeliveryRequest::getOwnerId()const
 void DisableRealtimeLogDeliveryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DisableRealtimeLogDeliveryRequest::getDomain()const
@@ -46,6 +46,6 @@ std::string DisableRealtimeLogDeliveryRequest::getDomain()const
 void DisableRealtimeLogDeliveryRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 

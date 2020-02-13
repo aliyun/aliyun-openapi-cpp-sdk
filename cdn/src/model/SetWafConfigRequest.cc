@@ -35,7 +35,7 @@ std::string SetWafConfigRequest::getEnable()const
 void SetWafConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setParameter("Enable", enable);
 }
 
 std::string SetWafConfigRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string SetWafConfigRequest::getDomainName()const
 void SetWafConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetWafConfigRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long SetWafConfigRequest::getOwnerId()const
 void SetWafConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long SetWafConfigRequest::getConfigId()const
@@ -68,6 +68,6 @@ long SetWafConfigRequest::getConfigId()const
 void SetWafConfigRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setParameter("ConfigId", std::to_string(configId));
 }
 

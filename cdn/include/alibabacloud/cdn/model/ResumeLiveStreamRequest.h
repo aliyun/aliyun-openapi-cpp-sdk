@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				ResumeLiveStreamRequest();
 				~ResumeLiveStreamRequest();
 
-				std::string getLiveStreamType()const;
-				void setLiveStreamType(const std::string& liveStreamType);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getStreamName()const;
 				void setStreamName(const std::string& streamName);
+				std::string getLiveStreamType()const;
+				void setLiveStreamType(const std::string& liveStreamType);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				std::string liveStreamType_;
-				std::string domainName_;
-				long ownerId_;
 				std::string appName_;
 				std::string securityToken_;
 				std::string streamName_;
+				std::string liveStreamType_;
+				std::string domainName_;
+				long ownerId_;
 
 			};
 		}

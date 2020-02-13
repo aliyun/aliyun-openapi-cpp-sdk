@@ -35,7 +35,7 @@ std::string ModifyCdnDomainSchdmByPropertyRequest::getDomainName()const
 void ModifyCdnDomainSchdmByPropertyRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long ModifyCdnDomainSchdmByPropertyRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long ModifyCdnDomainSchdmByPropertyRequest::getOwnerId()const
 void ModifyCdnDomainSchdmByPropertyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyCdnDomainSchdmByPropertyRequest::getProperty()const
@@ -57,6 +57,6 @@ std::string ModifyCdnDomainSchdmByPropertyRequest::getProperty()const
 void ModifyCdnDomainSchdmByPropertyRequest::setProperty(const std::string& property)
 {
 	property_ = property;
-	setCoreParameter("Property", property);
+	setParameter("Property", property);
 }
 

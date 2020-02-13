@@ -35,7 +35,7 @@ std::string ModifyDomainCustomLogConfigRequest::getDomainName()const
 void ModifyDomainCustomLogConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long ModifyDomainCustomLogConfigRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long ModifyDomainCustomLogConfigRequest::getOwnerId()const
 void ModifyDomainCustomLogConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDomainCustomLogConfigRequest::getConfigId()const
@@ -57,6 +57,6 @@ std::string ModifyDomainCustomLogConfigRequest::getConfigId()const
 void ModifyDomainCustomLogConfigRequest::setConfigId(const std::string& configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", configId);
+	setParameter("ConfigId", configId);
 }
 

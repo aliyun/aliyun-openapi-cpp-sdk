@@ -35,7 +35,7 @@ std::string SetPageCompressConfigRequest::getEnable()const
 void SetPageCompressConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setParameter("Enable", enable);
 }
 
 std::string SetPageCompressConfigRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string SetPageCompressConfigRequest::getDomainName()const
 void SetPageCompressConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetPageCompressConfigRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long SetPageCompressConfigRequest::getOwnerId()const
 void SetPageCompressConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long SetPageCompressConfigRequest::getConfigId()const
@@ -68,6 +68,6 @@ long SetPageCompressConfigRequest::getConfigId()const
 void SetPageCompressConfigRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setParameter("ConfigId", std::to_string(configId));
 }
 

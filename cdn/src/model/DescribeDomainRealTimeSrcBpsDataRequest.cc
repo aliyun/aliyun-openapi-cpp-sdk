@@ -35,7 +35,7 @@ std::string DescribeDomainRealTimeSrcBpsDataRequest::getStartTime()const
 void DescribeDomainRealTimeSrcBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainRealTimeSrcBpsDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeDomainRealTimeSrcBpsDataRequest::getDomainName()const
 void DescribeDomainRealTimeSrcBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainRealTimeSrcBpsDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeDomainRealTimeSrcBpsDataRequest::getEndTime()const
 void DescribeDomainRealTimeSrcBpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainRealTimeSrcBpsDataRequest::getOwnerId()const
@@ -68,6 +68,6 @@ long DescribeDomainRealTimeSrcBpsDataRequest::getOwnerId()const
 void DescribeDomainRealTimeSrcBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,7 +35,7 @@ std::string DescribeTopDomainsByFlowRequest::getStartTime()const
 void DescribeTopDomainsByFlowRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 long DescribeTopDomainsByFlowRequest::getLimit()const
@@ -46,7 +46,7 @@ long DescribeTopDomainsByFlowRequest::getLimit()const
 void DescribeTopDomainsByFlowRequest::setLimit(long limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 std::string DescribeTopDomainsByFlowRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeTopDomainsByFlowRequest::getEndTime()const
 void DescribeTopDomainsByFlowRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeTopDomainsByFlowRequest::getOwnerId()const
@@ -68,6 +68,6 @@ long DescribeTopDomainsByFlowRequest::getOwnerId()const
 void DescribeTopDomainsByFlowRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

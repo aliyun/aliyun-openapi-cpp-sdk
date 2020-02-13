@@ -35,7 +35,7 @@ std::string DescribeDomainBpsDataRequest::getLocationNameEn()const
 void DescribeDomainBpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainBpsDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDomainBpsDataRequest::getStartTime()const
 void DescribeDomainBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainBpsDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDomainBpsDataRequest::getIspNameEn()const
 void DescribeDomainBpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainBpsDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDomainBpsDataRequest::getDomainName()const
 void DescribeDomainBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainBpsDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDomainBpsDataRequest::getEndTime()const
 void DescribeDomainBpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainBpsDataRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DescribeDomainBpsDataRequest::getOwnerId()const
 void DescribeDomainBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainBpsDataRequest::getInterval()const
@@ -101,6 +101,6 @@ std::string DescribeDomainBpsDataRequest::getInterval()const
 void DescribeDomainBpsDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

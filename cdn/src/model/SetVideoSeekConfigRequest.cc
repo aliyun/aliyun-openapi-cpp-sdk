@@ -35,7 +35,7 @@ std::string SetVideoSeekConfigRequest::getEnable()const
 void SetVideoSeekConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setParameter("Enable", enable);
 }
 
 std::string SetVideoSeekConfigRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string SetVideoSeekConfigRequest::getDomainName()const
 void SetVideoSeekConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetVideoSeekConfigRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long SetVideoSeekConfigRequest::getOwnerId()const
 void SetVideoSeekConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long SetVideoSeekConfigRequest::getConfigId()const
@@ -68,6 +68,6 @@ long SetVideoSeekConfigRequest::getConfigId()const
 void SetVideoSeekConfigRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setParameter("ConfigId", std::to_string(configId));
 }
 

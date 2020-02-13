@@ -35,7 +35,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getDomainNames()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setParameter("DomainNames", domainNames);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getLocationNames()const
@@ -46,7 +46,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getLocationNames()con
 void DescribeRangeDataByLocateAndIspServiceRequest::setLocationNames(const std::string& locationNames)
 {
 	locationNames_ = locationNames;
-	setCoreParameter("LocationNames", locationNames);
+	setParameter("LocationNames", locationNames);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getStartTime()const
@@ -57,7 +57,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getStartTime()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getIspNames()const
@@ -68,7 +68,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getIspNames()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setIspNames(const std::string& ispNames)
 {
 	ispNames_ = ispNames;
-	setCoreParameter("IspNames", ispNames);
+	setParameter("IspNames", ispNames);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getEndTime()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeRangeDataByLocateAndIspServiceRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeRangeDataByLocateAndIspServiceRequest::getOwnerId()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,7 +35,7 @@ std::string DescribeDomainRealTimeSrcHttpCodeDataRequest::getLocationNameEn()con
 void DescribeDomainRealTimeSrcHttpCodeDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainRealTimeSrcHttpCodeDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDomainRealTimeSrcHttpCodeDataRequest::getStartTime()const
 void DescribeDomainRealTimeSrcHttpCodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainRealTimeSrcHttpCodeDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDomainRealTimeSrcHttpCodeDataRequest::getIspNameEn()const
 void DescribeDomainRealTimeSrcHttpCodeDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainRealTimeSrcHttpCodeDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDomainRealTimeSrcHttpCodeDataRequest::getDomainName()const
 void DescribeDomainRealTimeSrcHttpCodeDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainRealTimeSrcHttpCodeDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDomainRealTimeSrcHttpCodeDataRequest::getEndTime()const
 void DescribeDomainRealTimeSrcHttpCodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainRealTimeSrcHttpCodeDataRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeDomainRealTimeSrcHttpCodeDataRequest::getOwnerId()const
 void DescribeDomainRealTimeSrcHttpCodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

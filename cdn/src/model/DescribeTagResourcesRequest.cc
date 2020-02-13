@@ -35,7 +35,7 @@ std::string DescribeTagResourcesRequest::getRegionId()const
 void DescribeTagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeTagResourcesRequest::getScope()const
@@ -46,7 +46,7 @@ std::string DescribeTagResourcesRequest::getScope()const
 void DescribeTagResourcesRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", scope);
+	setParameter("Scope", scope);
 }
 
 std::vector<DescribeTagResourcesRequest::Tag> DescribeTagResourcesRequest::getTag()const
@@ -57,12 +57,11 @@ std::vector<DescribeTagResourcesRequest::Tag> DescribeTagResourcesRequest::getTa
 void DescribeTagResourcesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Key", obj.key);
-		setCoreParameter(str + ".Value", obj.value);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
 	}
 }
 
@@ -74,8 +73,9 @@ std::vector<std::string> DescribeTagResourcesRequest::getResourceId()const
 void DescribeTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
+		setParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
 }
 
 long DescribeTagResourcesRequest::getOwnerId()const
@@ -86,7 +86,7 @@ long DescribeTagResourcesRequest::getOwnerId()const
 void DescribeTagResourcesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeTagResourcesRequest::getResourceType()const
@@ -97,6 +97,6 @@ std::string DescribeTagResourcesRequest::getResourceType()const
 void DescribeTagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 

@@ -35,7 +35,7 @@ long DescribeUserCustomerLabelsRequest::getOwnerId()const
 void DescribeUserCustomerLabelsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUserCustomerLabelsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeUserCustomerLabelsRequest::getAccessKeyId()const
 void DescribeUserCustomerLabelsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DescribeUserCustomerLabelsRequest::getUid()const
@@ -57,7 +57,7 @@ long DescribeUserCustomerLabelsRequest::getUid()const
 void DescribeUserCustomerLabelsRequest::setUid(long uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", std::to_string(uid));
+	setParameter("Uid", std::to_string(uid));
 }
 
 std::string DescribeUserCustomerLabelsRequest::getSecurityToken()const
@@ -68,6 +68,6 @@ std::string DescribeUserCustomerLabelsRequest::getSecurityToken()const
 void DescribeUserCustomerLabelsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

@@ -35,7 +35,7 @@ std::string DescribeDomainSlowRatioRequest::getStartTime()const
 void DescribeDomainSlowRatioRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int DescribeDomainSlowRatioRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeDomainSlowRatioRequest::getPageNumber()const
 void DescribeDomainSlowRatioRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeDomainSlowRatioRequest::getPageSize()const
@@ -57,7 +57,7 @@ int DescribeDomainSlowRatioRequest::getPageSize()const
 void DescribeDomainSlowRatioRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDomainSlowRatioRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDomainSlowRatioRequest::getDomainName()const
 void DescribeDomainSlowRatioRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainSlowRatioRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDomainSlowRatioRequest::getEndTime()const
 void DescribeDomainSlowRatioRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainSlowRatioRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeDomainSlowRatioRequest::getOwnerId()const
 void DescribeDomainSlowRatioRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

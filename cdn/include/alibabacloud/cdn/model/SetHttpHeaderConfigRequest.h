@@ -35,24 +35,24 @@ namespace AlibabaCloud
 				SetHttpHeaderConfigRequest();
 				~SetHttpHeaderConfigRequest();
 
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getHeaderValue()const;
 				void setHeaderValue(const std::string& headerValue);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				long getConfigId()const;
 				void setConfigId(long configId);
 				std::string getHeaderKey()const;
 				void setHeaderKey(const std::string& headerKey);
 
             private:
-				std::string domainName_;
-				long ownerId_;
 				std::string headerValue_;
 				std::string securityToken_;
+				std::string domainName_;
+				long ownerId_;
 				long configId_;
 				std::string headerKey_;
 

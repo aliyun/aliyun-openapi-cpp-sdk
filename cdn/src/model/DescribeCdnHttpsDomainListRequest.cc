@@ -35,7 +35,7 @@ int DescribeCdnHttpsDomainListRequest::getPageNumber()const
 void DescribeCdnHttpsDomainListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeCdnHttpsDomainListRequest::getPageSize()const
@@ -46,7 +46,7 @@ int DescribeCdnHttpsDomainListRequest::getPageSize()const
 void DescribeCdnHttpsDomainListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCdnHttpsDomainListRequest::getKeyword()const
@@ -57,7 +57,7 @@ std::string DescribeCdnHttpsDomainListRequest::getKeyword()const
 void DescribeCdnHttpsDomainListRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 long DescribeCdnHttpsDomainListRequest::getOwnerId()const
@@ -68,6 +68,6 @@ long DescribeCdnHttpsDomainListRequest::getOwnerId()const
 void DescribeCdnHttpsDomainListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

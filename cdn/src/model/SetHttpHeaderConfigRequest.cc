@@ -27,28 +27,6 @@ SetHttpHeaderConfigRequest::SetHttpHeaderConfigRequest() :
 SetHttpHeaderConfigRequest::~SetHttpHeaderConfigRequest()
 {}
 
-std::string SetHttpHeaderConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void SetHttpHeaderConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-long SetHttpHeaderConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SetHttpHeaderConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string SetHttpHeaderConfigRequest::getHeaderValue()const
 {
 	return headerValue_;
@@ -57,7 +35,7 @@ std::string SetHttpHeaderConfigRequest::getHeaderValue()const
 void SetHttpHeaderConfigRequest::setHeaderValue(const std::string& headerValue)
 {
 	headerValue_ = headerValue;
-	setCoreParameter("HeaderValue", headerValue);
+	setParameter("HeaderValue", headerValue);
 }
 
 std::string SetHttpHeaderConfigRequest::getSecurityToken()const
@@ -68,7 +46,29 @@ std::string SetHttpHeaderConfigRequest::getSecurityToken()const
 void SetHttpHeaderConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
+}
+
+std::string SetHttpHeaderConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void SetHttpHeaderConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+long SetHttpHeaderConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void SetHttpHeaderConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long SetHttpHeaderConfigRequest::getConfigId()const
@@ -79,7 +79,7 @@ long SetHttpHeaderConfigRequest::getConfigId()const
 void SetHttpHeaderConfigRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setParameter("ConfigId", std::to_string(configId));
 }
 
 std::string SetHttpHeaderConfigRequest::getHeaderKey()const
@@ -90,6 +90,6 @@ std::string SetHttpHeaderConfigRequest::getHeaderKey()const
 void SetHttpHeaderConfigRequest::setHeaderKey(const std::string& headerKey)
 {
 	headerKey_ = headerKey;
-	setCoreParameter("HeaderKey", headerKey);
+	setParameter("HeaderKey", headerKey);
 }
 

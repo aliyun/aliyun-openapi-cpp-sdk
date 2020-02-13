@@ -35,7 +35,7 @@ std::string DescribeLiveStreamOnlineUserNumRequest::getStartTime()const
 void DescribeLiveStreamOnlineUserNumRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveStreamOnlineUserNumRequest::getAppName()const
@@ -46,7 +46,7 @@ std::string DescribeLiveStreamOnlineUserNumRequest::getAppName()const
 void DescribeLiveStreamOnlineUserNumRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DescribeLiveStreamOnlineUserNumRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeLiveStreamOnlineUserNumRequest::getSecurityToken()const
 void DescribeLiveStreamOnlineUserNumRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveStreamOnlineUserNumRequest::getHlsSwitch()const
@@ -68,7 +68,7 @@ std::string DescribeLiveStreamOnlineUserNumRequest::getHlsSwitch()const
 void DescribeLiveStreamOnlineUserNumRequest::setHlsSwitch(const std::string& hlsSwitch)
 {
 	hlsSwitch_ = hlsSwitch;
-	setCoreParameter("HlsSwitch", hlsSwitch);
+	setParameter("HlsSwitch", hlsSwitch);
 }
 
 std::string DescribeLiveStreamOnlineUserNumRequest::getStreamName()const
@@ -79,7 +79,7 @@ std::string DescribeLiveStreamOnlineUserNumRequest::getStreamName()const
 void DescribeLiveStreamOnlineUserNumRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveStreamOnlineUserNumRequest::getDomainName()const
@@ -90,7 +90,7 @@ std::string DescribeLiveStreamOnlineUserNumRequest::getDomainName()const
 void DescribeLiveStreamOnlineUserNumRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveStreamOnlineUserNumRequest::getEndTime()const
@@ -101,7 +101,7 @@ std::string DescribeLiveStreamOnlineUserNumRequest::getEndTime()const
 void DescribeLiveStreamOnlineUserNumRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveStreamOnlineUserNumRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DescribeLiveStreamOnlineUserNumRequest::getOwnerId()const
 void DescribeLiveStreamOnlineUserNumRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

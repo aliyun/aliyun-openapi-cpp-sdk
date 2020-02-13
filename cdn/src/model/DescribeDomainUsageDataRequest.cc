@@ -35,7 +35,7 @@ std::string DescribeDomainUsageDataRequest::getStartTime()const
 void DescribeDomainUsageDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainUsageDataRequest::getDataProtocol()const
@@ -46,7 +46,7 @@ std::string DescribeDomainUsageDataRequest::getDataProtocol()const
 void DescribeDomainUsageDataRequest::setDataProtocol(const std::string& dataProtocol)
 {
 	dataProtocol_ = dataProtocol;
-	setCoreParameter("DataProtocol", dataProtocol);
+	setParameter("DataProtocol", dataProtocol);
 }
 
 std::string DescribeDomainUsageDataRequest::getArea()const
@@ -57,7 +57,7 @@ std::string DescribeDomainUsageDataRequest::getArea()const
 void DescribeDomainUsageDataRequest::setArea(const std::string& area)
 {
 	area_ = area;
-	setCoreParameter("Area", area);
+	setParameter("Area", area);
 }
 
 std::string DescribeDomainUsageDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDomainUsageDataRequest::getDomainName()const
 void DescribeDomainUsageDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainUsageDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDomainUsageDataRequest::getEndTime()const
 void DescribeDomainUsageDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainUsageDataRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DescribeDomainUsageDataRequest::getOwnerId()const
 void DescribeDomainUsageDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainUsageDataRequest::getField()const
@@ -101,7 +101,7 @@ std::string DescribeDomainUsageDataRequest::getField()const
 void DescribeDomainUsageDataRequest::setField(const std::string& field)
 {
 	field_ = field;
-	setCoreParameter("Field", field);
+	setParameter("Field", field);
 }
 
 std::string DescribeDomainUsageDataRequest::getInterval()const
@@ -112,6 +112,6 @@ std::string DescribeDomainUsageDataRequest::getInterval()const
 void DescribeDomainUsageDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

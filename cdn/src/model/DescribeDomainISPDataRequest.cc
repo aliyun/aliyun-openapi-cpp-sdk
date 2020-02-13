@@ -35,7 +35,7 @@ std::string DescribeDomainISPDataRequest::getStartTime()const
 void DescribeDomainISPDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainISPDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeDomainISPDataRequest::getDomainName()const
 void DescribeDomainISPDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainISPDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeDomainISPDataRequest::getEndTime()const
 void DescribeDomainISPDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainISPDataRequest::getOwnerId()const
@@ -68,6 +68,6 @@ long DescribeDomainISPDataRequest::getOwnerId()const
 void DescribeDomainISPDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

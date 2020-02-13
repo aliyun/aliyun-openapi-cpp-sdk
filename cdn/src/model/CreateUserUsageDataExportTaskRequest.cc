@@ -35,7 +35,7 @@ std::string CreateUserUsageDataExportTaskRequest::getTaskName()const
 void CreateUserUsageDataExportTaskRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	setParameter("TaskName", taskName);
 }
 
 std::string CreateUserUsageDataExportTaskRequest::getLanguage()const
@@ -46,7 +46,7 @@ std::string CreateUserUsageDataExportTaskRequest::getLanguage()const
 void CreateUserUsageDataExportTaskRequest::setLanguage(const std::string& language)
 {
 	language_ = language;
-	setCoreParameter("Language", language);
+	setParameter("Language", language);
 }
 
 std::string CreateUserUsageDataExportTaskRequest::getStartTime()const
@@ -57,7 +57,7 @@ std::string CreateUserUsageDataExportTaskRequest::getStartTime()const
 void CreateUserUsageDataExportTaskRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string CreateUserUsageDataExportTaskRequest::getEndTime()const
@@ -68,7 +68,7 @@ std::string CreateUserUsageDataExportTaskRequest::getEndTime()const
 void CreateUserUsageDataExportTaskRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long CreateUserUsageDataExportTaskRequest::getOwnerId()const
@@ -79,6 +79,6 @@ long CreateUserUsageDataExportTaskRequest::getOwnerId()const
 void CreateUserUsageDataExportTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

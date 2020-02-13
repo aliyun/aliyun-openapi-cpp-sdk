@@ -35,7 +35,7 @@ std::string DescribeCdnUserBillPredictionRequest::getStartTime()const
 void DescribeCdnUserBillPredictionRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeCdnUserBillPredictionRequest::getDimension()const
@@ -46,7 +46,7 @@ std::string DescribeCdnUserBillPredictionRequest::getDimension()const
 void DescribeCdnUserBillPredictionRequest::setDimension(const std::string& dimension)
 {
 	dimension_ = dimension;
-	setCoreParameter("Dimension", dimension);
+	setParameter("Dimension", dimension);
 }
 
 std::string DescribeCdnUserBillPredictionRequest::getArea()const
@@ -57,7 +57,7 @@ std::string DescribeCdnUserBillPredictionRequest::getArea()const
 void DescribeCdnUserBillPredictionRequest::setArea(const std::string& area)
 {
 	area_ = area;
-	setCoreParameter("Area", area);
+	setParameter("Area", area);
 }
 
 std::string DescribeCdnUserBillPredictionRequest::getEndTime()const
@@ -68,7 +68,7 @@ std::string DescribeCdnUserBillPredictionRequest::getEndTime()const
 void DescribeCdnUserBillPredictionRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeCdnUserBillPredictionRequest::getOwnerId()const
@@ -79,6 +79,6 @@ long DescribeCdnUserBillPredictionRequest::getOwnerId()const
 void DescribeCdnUserBillPredictionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,7 +35,7 @@ std::string DescribeDomainAverageResponseTimeRequest::getLocationNameEn()const
 void DescribeDomainAverageResponseTimeRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainAverageResponseTimeRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDomainAverageResponseTimeRequest::getStartTime()const
 void DescribeDomainAverageResponseTimeRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainAverageResponseTimeRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDomainAverageResponseTimeRequest::getIspNameEn()const
 void DescribeDomainAverageResponseTimeRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainAverageResponseTimeRequest::getDomainType()const
@@ -68,7 +68,7 @@ std::string DescribeDomainAverageResponseTimeRequest::getDomainType()const
 void DescribeDomainAverageResponseTimeRequest::setDomainType(const std::string& domainType)
 {
 	domainType_ = domainType;
-	setCoreParameter("DomainType", domainType);
+	setParameter("DomainType", domainType);
 }
 
 std::string DescribeDomainAverageResponseTimeRequest::getTimeMerge()const
@@ -79,7 +79,7 @@ std::string DescribeDomainAverageResponseTimeRequest::getTimeMerge()const
 void DescribeDomainAverageResponseTimeRequest::setTimeMerge(const std::string& timeMerge)
 {
 	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", timeMerge);
+	setParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDomainAverageResponseTimeRequest::getDomainName()const
@@ -90,7 +90,7 @@ std::string DescribeDomainAverageResponseTimeRequest::getDomainName()const
 void DescribeDomainAverageResponseTimeRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainAverageResponseTimeRequest::getEndTime()const
@@ -101,7 +101,7 @@ std::string DescribeDomainAverageResponseTimeRequest::getEndTime()const
 void DescribeDomainAverageResponseTimeRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainAverageResponseTimeRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long DescribeDomainAverageResponseTimeRequest::getOwnerId()const
 void DescribeDomainAverageResponseTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainAverageResponseTimeRequest::getInterval()const
@@ -123,6 +123,6 @@ std::string DescribeDomainAverageResponseTimeRequest::getInterval()const
 void DescribeDomainAverageResponseTimeRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

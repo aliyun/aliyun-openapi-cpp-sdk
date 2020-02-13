@@ -35,7 +35,7 @@ std::string DescribeRealtimeDeliveryAccRequest::getProject()const
 void DescribeRealtimeDeliveryAccRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string DescribeRealtimeDeliveryAccRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeRealtimeDeliveryAccRequest::getStartTime()const
 void DescribeRealtimeDeliveryAccRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeRealtimeDeliveryAccRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeRealtimeDeliveryAccRequest::getEndTime()const
 void DescribeRealtimeDeliveryAccRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeRealtimeDeliveryAccRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeRealtimeDeliveryAccRequest::getOwnerId()const
 void DescribeRealtimeDeliveryAccRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRealtimeDeliveryAccRequest::getInterval()const
@@ -79,7 +79,7 @@ std::string DescribeRealtimeDeliveryAccRequest::getInterval()const
 void DescribeRealtimeDeliveryAccRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 
 std::string DescribeRealtimeDeliveryAccRequest::getLogStore()const
@@ -90,6 +90,6 @@ std::string DescribeRealtimeDeliveryAccRequest::getLogStore()const
 void DescribeRealtimeDeliveryAccRequest::setLogStore(const std::string& logStore)
 {
 	logStore_ = logStore;
-	setCoreParameter("LogStore", logStore);
+	setParameter("LogStore", logStore);
 }
 

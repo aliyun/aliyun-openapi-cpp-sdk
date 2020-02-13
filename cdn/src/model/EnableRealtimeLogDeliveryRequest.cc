@@ -35,7 +35,7 @@ long EnableRealtimeLogDeliveryRequest::getOwnerId()const
 void EnableRealtimeLogDeliveryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string EnableRealtimeLogDeliveryRequest::getDomain()const
@@ -46,6 +46,6 @@ std::string EnableRealtimeLogDeliveryRequest::getDomain()const
 void EnableRealtimeLogDeliveryRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 

@@ -35,7 +35,7 @@ std::string SetIpBlackListConfigRequest::getBlockIps()const
 void SetIpBlackListConfigRequest::setBlockIps(const std::string& blockIps)
 {
 	blockIps_ = blockIps;
-	setCoreParameter("BlockIps", blockIps);
+	setParameter("BlockIps", blockIps);
 }
 
 std::string SetIpBlackListConfigRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string SetIpBlackListConfigRequest::getDomainName()const
 void SetIpBlackListConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetIpBlackListConfigRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long SetIpBlackListConfigRequest::getOwnerId()const
 void SetIpBlackListConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long SetIpBlackListConfigRequest::getConfigId()const
@@ -68,6 +68,6 @@ long SetIpBlackListConfigRequest::getConfigId()const
 void SetIpBlackListConfigRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setParameter("ConfigId", std::to_string(configId));
 }
 

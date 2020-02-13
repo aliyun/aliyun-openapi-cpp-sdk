@@ -27,17 +27,6 @@ ModifyCdnDomainRequest::ModifyCdnDomainRequest() :
 ModifyCdnDomainRequest::~ModifyCdnDomainRequest()
 {}
 
-std::string ModifyCdnDomainRequest::getTopLevelDomain()const
-{
-	return topLevelDomain_;
-}
-
-void ModifyCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
-{
-	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
-}
-
 std::string ModifyCdnDomainRequest::getSources()const
 {
 	return sources_;
@@ -46,29 +35,7 @@ std::string ModifyCdnDomainRequest::getSources()const
 void ModifyCdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", sources);
-}
-
-std::string ModifyCdnDomainRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void ModifyCdnDomainRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-long ModifyCdnDomainRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyCdnDomainRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("Sources", sources);
 }
 
 std::string ModifyCdnDomainRequest::getResourceGroupId()const
@@ -79,7 +46,7 @@ std::string ModifyCdnDomainRequest::getResourceGroupId()const
 void ModifyCdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string ModifyCdnDomainRequest::getSecurityToken()const
@@ -90,6 +57,39 @@ std::string ModifyCdnDomainRequest::getSecurityToken()const
 void ModifyCdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
+}
+
+std::string ModifyCdnDomainRequest::getTopLevelDomain()const
+{
+	return topLevelDomain_;
+}
+
+void ModifyCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+{
+	topLevelDomain_ = topLevelDomain;
+	setParameter("TopLevelDomain", topLevelDomain);
+}
+
+std::string ModifyCdnDomainRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void ModifyCdnDomainRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+long ModifyCdnDomainRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyCdnDomainRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

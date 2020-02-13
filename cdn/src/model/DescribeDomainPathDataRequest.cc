@@ -35,7 +35,7 @@ std::string DescribeDomainPathDataRequest::getStartTime()const
 void DescribeDomainPathDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int DescribeDomainPathDataRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeDomainPathDataRequest::getPageNumber()const
 void DescribeDomainPathDataRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDomainPathDataRequest::getPath()const
@@ -57,7 +57,7 @@ std::string DescribeDomainPathDataRequest::getPath()const
 void DescribeDomainPathDataRequest::setPath(const std::string& path)
 {
 	path_ = path;
-	setCoreParameter("Path", path);
+	setParameter("Path", path);
 }
 
 int DescribeDomainPathDataRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeDomainPathDataRequest::getPageSize()const
 void DescribeDomainPathDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDomainPathDataRequest::getDomainName()const
@@ -79,7 +79,7 @@ std::string DescribeDomainPathDataRequest::getDomainName()const
 void DescribeDomainPathDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainPathDataRequest::getEndTime()const
@@ -90,7 +90,7 @@ std::string DescribeDomainPathDataRequest::getEndTime()const
 void DescribeDomainPathDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainPathDataRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DescribeDomainPathDataRequest::getOwnerId()const
 void DescribeDomainPathDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

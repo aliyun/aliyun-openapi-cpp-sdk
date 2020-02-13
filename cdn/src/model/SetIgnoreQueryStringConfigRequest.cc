@@ -35,7 +35,7 @@ std::string SetIgnoreQueryStringConfigRequest::getEnable()const
 void SetIgnoreQueryStringConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setParameter("Enable", enable);
 }
 
 std::string SetIgnoreQueryStringConfigRequest::getKeepOssArgs()const
@@ -46,7 +46,7 @@ std::string SetIgnoreQueryStringConfigRequest::getKeepOssArgs()const
 void SetIgnoreQueryStringConfigRequest::setKeepOssArgs(const std::string& keepOssArgs)
 {
 	keepOssArgs_ = keepOssArgs;
-	setCoreParameter("KeepOssArgs", keepOssArgs);
+	setParameter("KeepOssArgs", keepOssArgs);
 }
 
 std::string SetIgnoreQueryStringConfigRequest::getDomainName()const
@@ -57,7 +57,7 @@ std::string SetIgnoreQueryStringConfigRequest::getDomainName()const
 void SetIgnoreQueryStringConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetIgnoreQueryStringConfigRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long SetIgnoreQueryStringConfigRequest::getOwnerId()const
 void SetIgnoreQueryStringConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetIgnoreQueryStringConfigRequest::getHashKeyArgs()const
@@ -79,7 +79,7 @@ std::string SetIgnoreQueryStringConfigRequest::getHashKeyArgs()const
 void SetIgnoreQueryStringConfigRequest::setHashKeyArgs(const std::string& hashKeyArgs)
 {
 	hashKeyArgs_ = hashKeyArgs;
-	setCoreParameter("HashKeyArgs", hashKeyArgs);
+	setParameter("HashKeyArgs", hashKeyArgs);
 }
 
 long SetIgnoreQueryStringConfigRequest::getConfigId()const
@@ -90,6 +90,6 @@ long SetIgnoreQueryStringConfigRequest::getConfigId()const
 void SetIgnoreQueryStringConfigRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setParameter("ConfigId", std::to_string(configId));
 }
 

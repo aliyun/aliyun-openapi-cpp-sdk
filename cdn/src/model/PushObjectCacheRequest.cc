@@ -35,7 +35,7 @@ std::string PushObjectCacheRequest::getArea()const
 void PushObjectCacheRequest::setArea(const std::string& area)
 {
 	area_ = area;
-	setCoreParameter("Area", area);
+	setParameter("Area", area);
 }
 
 std::string PushObjectCacheRequest::getObjectPath()const
@@ -46,7 +46,7 @@ std::string PushObjectCacheRequest::getObjectPath()const
 void PushObjectCacheRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", objectPath);
+	setParameter("ObjectPath", objectPath);
 }
 
 long PushObjectCacheRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long PushObjectCacheRequest::getOwnerId()const
 void PushObjectCacheRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string PushObjectCacheRequest::getSecurityToken()const
@@ -68,6 +68,6 @@ std::string PushObjectCacheRequest::getSecurityToken()const
 void PushObjectCacheRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

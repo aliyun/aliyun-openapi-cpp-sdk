@@ -35,7 +35,7 @@ std::string DescribeFCTriggerRequest::getTriggerARN()const
 void DescribeFCTriggerRequest::setTriggerARN(const std::string& triggerARN)
 {
 	triggerARN_ = triggerARN;
-	setCoreParameter("TriggerARN", triggerARN);
+	setParameter("TriggerARN", triggerARN);
 }
 
 long DescribeFCTriggerRequest::getOwnerId()const
@@ -46,6 +46,6 @@ long DescribeFCTriggerRequest::getOwnerId()const
 void DescribeFCTriggerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,7 +35,7 @@ std::string DescribeDomainHttpCodeDataRequest::getStartTime()const
 void DescribeDomainHttpCodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeDomainHttpCodeDataRequest::getDomainName()const
 void DescribeDomainHttpCodeDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeDomainHttpCodeDataRequest::getEndTime()const
 void DescribeDomainHttpCodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainHttpCodeDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeDomainHttpCodeDataRequest::getOwnerId()const
 void DescribeDomainHttpCodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getInterval()const
@@ -79,6 +79,6 @@ std::string DescribeDomainHttpCodeDataRequest::getInterval()const
 void DescribeDomainHttpCodeDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

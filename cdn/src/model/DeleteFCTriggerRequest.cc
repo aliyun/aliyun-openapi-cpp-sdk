@@ -35,7 +35,7 @@ std::string DeleteFCTriggerRequest::getTriggerARN()const
 void DeleteFCTriggerRequest::setTriggerARN(const std::string& triggerARN)
 {
 	triggerARN_ = triggerARN;
-	setCoreParameter("TriggerARN", triggerARN);
+	setParameter("TriggerARN", triggerARN);
 }
 
 long DeleteFCTriggerRequest::getOwnerId()const
@@ -46,6 +46,6 @@ long DeleteFCTriggerRequest::getOwnerId()const
 void DeleteFCTriggerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

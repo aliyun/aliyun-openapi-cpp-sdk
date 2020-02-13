@@ -35,7 +35,7 @@ std::string DescribeDomainBpsDataByTimeStampRequest::getLocationNames()const
 void DescribeDomainBpsDataByTimeStampRequest::setLocationNames(const std::string& locationNames)
 {
 	locationNames_ = locationNames;
-	setCoreParameter("LocationNames", locationNames);
+	setParameter("LocationNames", locationNames);
 }
 
 std::string DescribeDomainBpsDataByTimeStampRequest::getIspNames()const
@@ -46,7 +46,7 @@ std::string DescribeDomainBpsDataByTimeStampRequest::getIspNames()const
 void DescribeDomainBpsDataByTimeStampRequest::setIspNames(const std::string& ispNames)
 {
 	ispNames_ = ispNames;
-	setCoreParameter("IspNames", ispNames);
+	setParameter("IspNames", ispNames);
 }
 
 std::string DescribeDomainBpsDataByTimeStampRequest::getDomainName()const
@@ -57,7 +57,7 @@ std::string DescribeDomainBpsDataByTimeStampRequest::getDomainName()const
 void DescribeDomainBpsDataByTimeStampRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeDomainBpsDataByTimeStampRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeDomainBpsDataByTimeStampRequest::getOwnerId()const
 void DescribeDomainBpsDataByTimeStampRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainBpsDataByTimeStampRequest::getTimePoint()const
@@ -79,6 +79,6 @@ std::string DescribeDomainBpsDataByTimeStampRequest::getTimePoint()const
 void DescribeDomainBpsDataByTimeStampRequest::setTimePoint(const std::string& timePoint)
 {
 	timePoint_ = timePoint;
-	setCoreParameter("TimePoint", timePoint);
+	setParameter("TimePoint", timePoint);
 }
 

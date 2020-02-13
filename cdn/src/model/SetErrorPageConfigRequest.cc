@@ -35,40 +35,7 @@ std::string SetErrorPageConfigRequest::getPageType()const
 void SetErrorPageConfigRequest::setPageType(const std::string& pageType)
 {
 	pageType_ = pageType;
-	setCoreParameter("PageType", pageType);
-}
-
-std::string SetErrorPageConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void SetErrorPageConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-std::string SetErrorPageConfigRequest::getCustomPageUrl()const
-{
-	return customPageUrl_;
-}
-
-void SetErrorPageConfigRequest::setCustomPageUrl(const std::string& customPageUrl)
-{
-	customPageUrl_ = customPageUrl;
-	setCoreParameter("CustomPageUrl", customPageUrl);
-}
-
-long SetErrorPageConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SetErrorPageConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("PageType", pageType);
 }
 
 std::string SetErrorPageConfigRequest::getSecurityToken()const
@@ -79,6 +46,39 @@ std::string SetErrorPageConfigRequest::getSecurityToken()const
 void SetErrorPageConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
+}
+
+std::string SetErrorPageConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void SetErrorPageConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+std::string SetErrorPageConfigRequest::getCustomPageUrl()const
+{
+	return customPageUrl_;
+}
+
+void SetErrorPageConfigRequest::setCustomPageUrl(const std::string& customPageUrl)
+{
+	customPageUrl_ = customPageUrl;
+	setParameter("CustomPageUrl", customPageUrl);
+}
+
+long SetErrorPageConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void SetErrorPageConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

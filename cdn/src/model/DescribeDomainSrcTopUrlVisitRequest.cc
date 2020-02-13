@@ -35,7 +35,7 @@ std::string DescribeDomainSrcTopUrlVisitRequest::getStartTime()const
 void DescribeDomainSrcTopUrlVisitRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainSrcTopUrlVisitRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeDomainSrcTopUrlVisitRequest::getDomainName()const
 void DescribeDomainSrcTopUrlVisitRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainSrcTopUrlVisitRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeDomainSrcTopUrlVisitRequest::getEndTime()const
 void DescribeDomainSrcTopUrlVisitRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainSrcTopUrlVisitRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeDomainSrcTopUrlVisitRequest::getOwnerId()const
 void DescribeDomainSrcTopUrlVisitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainSrcTopUrlVisitRequest::getSortBy()const
@@ -79,6 +79,6 @@ std::string DescribeDomainSrcTopUrlVisitRequest::getSortBy()const
 void DescribeDomainSrcTopUrlVisitRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setParameter("SortBy", sortBy);
 }
 

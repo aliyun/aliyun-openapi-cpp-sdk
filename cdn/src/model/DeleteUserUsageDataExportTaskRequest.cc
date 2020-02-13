@@ -35,7 +35,7 @@ long DeleteUserUsageDataExportTaskRequest::getOwnerId()const
 void DeleteUserUsageDataExportTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getTaskId()const
@@ -46,6 +46,6 @@ std::string DeleteUserUsageDataExportTaskRequest::getTaskId()const
 void DeleteUserUsageDataExportTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

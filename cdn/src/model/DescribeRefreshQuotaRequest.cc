@@ -35,7 +35,7 @@ long DescribeRefreshQuotaRequest::getOwnerId()const
 void DescribeRefreshQuotaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRefreshQuotaRequest::getSecurityToken()const
@@ -46,6 +46,6 @@ std::string DescribeRefreshQuotaRequest::getSecurityToken()const
 void DescribeRefreshQuotaRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

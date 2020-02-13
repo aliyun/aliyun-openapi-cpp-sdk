@@ -35,7 +35,7 @@ std::string BatchSetCdnDomainConfigRequest::getFunctions()const
 void BatchSetCdnDomainConfigRequest::setFunctions(const std::string& functions)
 {
 	functions_ = functions;
-	setCoreParameter("Functions", functions);
+	setParameter("Functions", functions);
 }
 
 std::string BatchSetCdnDomainConfigRequest::getDomainNames()const
@@ -46,7 +46,7 @@ std::string BatchSetCdnDomainConfigRequest::getDomainNames()const
 void BatchSetCdnDomainConfigRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setParameter("DomainNames", domainNames);
 }
 
 std::string BatchSetCdnDomainConfigRequest::getOwnerAccount()const
@@ -57,7 +57,7 @@ std::string BatchSetCdnDomainConfigRequest::getOwnerAccount()const
 void BatchSetCdnDomainConfigRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long BatchSetCdnDomainConfigRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long BatchSetCdnDomainConfigRequest::getOwnerId()const
 void BatchSetCdnDomainConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BatchSetCdnDomainConfigRequest::getSecurityToken()const
@@ -79,6 +79,6 @@ std::string BatchSetCdnDomainConfigRequest::getSecurityToken()const
 void BatchSetCdnDomainConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

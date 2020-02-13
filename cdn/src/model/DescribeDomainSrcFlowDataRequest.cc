@@ -35,7 +35,7 @@ std::string DescribeDomainSrcFlowDataRequest::getStartTime()const
 void DescribeDomainSrcFlowDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getFixTimeGap()const
@@ -46,7 +46,7 @@ std::string DescribeDomainSrcFlowDataRequest::getFixTimeGap()const
 void DescribeDomainSrcFlowDataRequest::setFixTimeGap(const std::string& fixTimeGap)
 {
 	fixTimeGap_ = fixTimeGap;
-	setCoreParameter("FixTimeGap", fixTimeGap);
+	setParameter("FixTimeGap", fixTimeGap);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getTimeMerge()const
@@ -57,7 +57,7 @@ std::string DescribeDomainSrcFlowDataRequest::getTimeMerge()const
 void DescribeDomainSrcFlowDataRequest::setTimeMerge(const std::string& timeMerge)
 {
 	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", timeMerge);
+	setParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDomainSrcFlowDataRequest::getDomainName()const
 void DescribeDomainSrcFlowDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDomainSrcFlowDataRequest::getEndTime()const
 void DescribeDomainSrcFlowDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainSrcFlowDataRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DescribeDomainSrcFlowDataRequest::getOwnerId()const
 void DescribeDomainSrcFlowDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getInterval()const
@@ -101,6 +101,6 @@ std::string DescribeDomainSrcFlowDataRequest::getInterval()const
 void DescribeDomainSrcFlowDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

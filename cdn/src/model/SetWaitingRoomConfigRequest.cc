@@ -35,7 +35,7 @@ std::string SetWaitingRoomConfigRequest::getWaitUrl()const
 void SetWaitingRoomConfigRequest::setWaitUrl(const std::string& waitUrl)
 {
 	waitUrl_ = waitUrl;
-	setCoreParameter("WaitUrl", waitUrl);
+	setParameter("WaitUrl", waitUrl);
 }
 
 std::string SetWaitingRoomConfigRequest::getWaitUri()const
@@ -46,7 +46,7 @@ std::string SetWaitingRoomConfigRequest::getWaitUri()const
 void SetWaitingRoomConfigRequest::setWaitUri(const std::string& waitUri)
 {
 	waitUri_ = waitUri;
-	setCoreParameter("WaitUri", waitUri);
+	setParameter("WaitUri", waitUri);
 }
 
 int SetWaitingRoomConfigRequest::getMaxTimeWait()const
@@ -57,7 +57,7 @@ int SetWaitingRoomConfigRequest::getMaxTimeWait()const
 void SetWaitingRoomConfigRequest::setMaxTimeWait(int maxTimeWait)
 {
 	maxTimeWait_ = maxTimeWait;
-	setCoreParameter("MaxTimeWait", std::to_string(maxTimeWait));
+	setParameter("MaxTimeWait", std::to_string(maxTimeWait));
 }
 
 std::string SetWaitingRoomConfigRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string SetWaitingRoomConfigRequest::getDomainName()const
 void SetWaitingRoomConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 int SetWaitingRoomConfigRequest::getAllowPct()const
@@ -79,7 +79,7 @@ int SetWaitingRoomConfigRequest::getAllowPct()const
 void SetWaitingRoomConfigRequest::setAllowPct(int allowPct)
 {
 	allowPct_ = allowPct;
-	setCoreParameter("AllowPct", std::to_string(allowPct));
+	setParameter("AllowPct", std::to_string(allowPct));
 }
 
 int SetWaitingRoomConfigRequest::getGapTime()const
@@ -90,7 +90,7 @@ int SetWaitingRoomConfigRequest::getGapTime()const
 void SetWaitingRoomConfigRequest::setGapTime(int gapTime)
 {
 	gapTime_ = gapTime;
-	setCoreParameter("GapTime", std::to_string(gapTime));
+	setParameter("GapTime", std::to_string(gapTime));
 }
 
 long SetWaitingRoomConfigRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long SetWaitingRoomConfigRequest::getOwnerId()const
 void SetWaitingRoomConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

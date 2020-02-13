@@ -35,7 +35,7 @@ std::string DeleteRealtimeLogDeliveryRequest::getProject()const
 void DeleteRealtimeLogDeliveryRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 long DeleteRealtimeLogDeliveryRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long DeleteRealtimeLogDeliveryRequest::getOwnerId()const
 void DeleteRealtimeLogDeliveryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteRealtimeLogDeliveryRequest::getDomain()const
@@ -57,7 +57,7 @@ std::string DeleteRealtimeLogDeliveryRequest::getDomain()const
 void DeleteRealtimeLogDeliveryRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 
 std::string DeleteRealtimeLogDeliveryRequest::getRegion()const
@@ -68,7 +68,7 @@ std::string DeleteRealtimeLogDeliveryRequest::getRegion()const
 void DeleteRealtimeLogDeliveryRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string DeleteRealtimeLogDeliveryRequest::getLogstore()const
@@ -79,6 +79,6 @@ std::string DeleteRealtimeLogDeliveryRequest::getLogstore()const
 void DeleteRealtimeLogDeliveryRequest::setLogstore(const std::string& logstore)
 {
 	logstore_ = logstore;
-	setCoreParameter("Logstore", logstore);
+	setParameter("Logstore", logstore);
 }
 

@@ -35,7 +35,7 @@ std::string SetForwardSchemeConfigRequest::getSchemeOriginPort()const
 void SetForwardSchemeConfigRequest::setSchemeOriginPort(const std::string& schemeOriginPort)
 {
 	schemeOriginPort_ = schemeOriginPort;
-	setCoreParameter("SchemeOriginPort", schemeOriginPort);
+	setParameter("SchemeOriginPort", schemeOriginPort);
 }
 
 std::string SetForwardSchemeConfigRequest::getEnable()const
@@ -46,7 +46,7 @@ std::string SetForwardSchemeConfigRequest::getEnable()const
 void SetForwardSchemeConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setParameter("Enable", enable);
 }
 
 std::string SetForwardSchemeConfigRequest::getSchemeOrigin()const
@@ -57,7 +57,7 @@ std::string SetForwardSchemeConfigRequest::getSchemeOrigin()const
 void SetForwardSchemeConfigRequest::setSchemeOrigin(const std::string& schemeOrigin)
 {
 	schemeOrigin_ = schemeOrigin;
-	setCoreParameter("SchemeOrigin", schemeOrigin);
+	setParameter("SchemeOrigin", schemeOrigin);
 }
 
 std::string SetForwardSchemeConfigRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string SetForwardSchemeConfigRequest::getDomainName()const
 void SetForwardSchemeConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetForwardSchemeConfigRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long SetForwardSchemeConfigRequest::getOwnerId()const
 void SetForwardSchemeConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long SetForwardSchemeConfigRequest::getConfigId()const
@@ -90,6 +90,6 @@ long SetForwardSchemeConfigRequest::getConfigId()const
 void SetForwardSchemeConfigRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setParameter("ConfigId", std::to_string(configId));
 }
 

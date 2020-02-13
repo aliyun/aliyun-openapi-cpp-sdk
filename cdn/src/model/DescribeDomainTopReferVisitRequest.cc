@@ -35,7 +35,7 @@ std::string DescribeDomainTopReferVisitRequest::getStartTime()const
 void DescribeDomainTopReferVisitRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainTopReferVisitRequest::getPercent()const
@@ -46,7 +46,7 @@ std::string DescribeDomainTopReferVisitRequest::getPercent()const
 void DescribeDomainTopReferVisitRequest::setPercent(const std::string& percent)
 {
 	percent_ = percent;
-	setCoreParameter("Percent", percent);
+	setParameter("Percent", percent);
 }
 
 std::string DescribeDomainTopReferVisitRequest::getDomainName()const
@@ -57,7 +57,7 @@ std::string DescribeDomainTopReferVisitRequest::getDomainName()const
 void DescribeDomainTopReferVisitRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainTopReferVisitRequest::getEndTime()const
@@ -68,7 +68,7 @@ std::string DescribeDomainTopReferVisitRequest::getEndTime()const
 void DescribeDomainTopReferVisitRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainTopReferVisitRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long DescribeDomainTopReferVisitRequest::getOwnerId()const
 void DescribeDomainTopReferVisitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainTopReferVisitRequest::getSortBy()const
@@ -90,6 +90,6 @@ std::string DescribeDomainTopReferVisitRequest::getSortBy()const
 void DescribeDomainTopReferVisitRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setParameter("SortBy", sortBy);
 }
 

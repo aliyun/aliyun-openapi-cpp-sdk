@@ -35,7 +35,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getDomainNames()const
 void CreateUsageDetailDataExportTaskRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setParameter("DomainNames", domainNames);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getTaskName()const
@@ -46,7 +46,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getTaskName()const
 void CreateUsageDetailDataExportTaskRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	setParameter("TaskName", taskName);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getLanguage()const
@@ -57,7 +57,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getLanguage()const
 void CreateUsageDetailDataExportTaskRequest::setLanguage(const std::string& language)
 {
 	language_ = language;
-	setCoreParameter("Language", language);
+	setParameter("Language", language);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getStartTime()const
@@ -68,7 +68,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getStartTime()const
 void CreateUsageDetailDataExportTaskRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getType()const
@@ -79,7 +79,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getType()const
 void CreateUsageDetailDataExportTaskRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getGroup()const
@@ -90,7 +90,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getGroup()const
 void CreateUsageDetailDataExportTaskRequest::setGroup(const std::string& group)
 {
 	group_ = group;
-	setCoreParameter("Group", group);
+	setParameter("Group", group);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getEndTime()const
@@ -101,7 +101,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getEndTime()const
 void CreateUsageDetailDataExportTaskRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long CreateUsageDetailDataExportTaskRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long CreateUsageDetailDataExportTaskRequest::getOwnerId()const
 void CreateUsageDetailDataExportTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,7 +35,7 @@ long DescribeCdnDomainByCertificateRequest::getOwnerId()const
 void DescribeCdnDomainByCertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCdnDomainByCertificateRequest::getSSLPub()const
@@ -46,6 +46,6 @@ std::string DescribeCdnDomainByCertificateRequest::getSSLPub()const
 void DescribeCdnDomainByCertificateRequest::setSSLPub(const std::string& sSLPub)
 {
 	sSLPub_ = sSLPub;
-	setCoreParameter("SSLPub", sSLPub);
+	setParameter("SSLPub", sSLPub);
 }
 

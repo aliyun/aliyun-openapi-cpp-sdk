@@ -35,7 +35,7 @@ std::string ListFCTriggerRequest::getEventMetaVersion()const
 void ListFCTriggerRequest::setEventMetaVersion(const std::string& eventMetaVersion)
 {
 	eventMetaVersion_ = eventMetaVersion;
-	setCoreParameter("EventMetaVersion", eventMetaVersion);
+	setParameter("EventMetaVersion", eventMetaVersion);
 }
 
 long ListFCTriggerRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long ListFCTriggerRequest::getOwnerId()const
 void ListFCTriggerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListFCTriggerRequest::getEventMetaName()const
@@ -57,6 +57,6 @@ std::string ListFCTriggerRequest::getEventMetaName()const
 void ListFCTriggerRequest::setEventMetaName(const std::string& eventMetaName)
 {
 	eventMetaName_ = eventMetaName;
-	setCoreParameter("EventMetaName", eventMetaName);
+	setParameter("EventMetaName", eventMetaName);
 }
 

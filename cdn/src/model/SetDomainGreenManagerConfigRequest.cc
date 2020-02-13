@@ -35,7 +35,7 @@ std::string SetDomainGreenManagerConfigRequest::getEnable()const
 void SetDomainGreenManagerConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setParameter("Enable", enable);
 }
 
 std::string SetDomainGreenManagerConfigRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string SetDomainGreenManagerConfigRequest::getDomainName()const
 void SetDomainGreenManagerConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetDomainGreenManagerConfigRequest::getOwnerId()const
@@ -57,6 +57,6 @@ long SetDomainGreenManagerConfigRequest::getOwnerId()const
 void SetDomainGreenManagerConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

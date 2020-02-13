@@ -35,7 +35,7 @@ std::string DescribeDomainRealTimeHttpCodeDataRequest::getLocationNameEn()const
 void DescribeDomainRealTimeHttpCodeDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainRealTimeHttpCodeDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDomainRealTimeHttpCodeDataRequest::getStartTime()const
 void DescribeDomainRealTimeHttpCodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainRealTimeHttpCodeDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDomainRealTimeHttpCodeDataRequest::getIspNameEn()const
 void DescribeDomainRealTimeHttpCodeDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainRealTimeHttpCodeDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDomainRealTimeHttpCodeDataRequest::getDomainName()const
 void DescribeDomainRealTimeHttpCodeDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainRealTimeHttpCodeDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDomainRealTimeHttpCodeDataRequest::getEndTime()const
 void DescribeDomainRealTimeHttpCodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainRealTimeHttpCodeDataRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeDomainRealTimeHttpCodeDataRequest::getOwnerId()const
 void DescribeDomainRealTimeHttpCodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

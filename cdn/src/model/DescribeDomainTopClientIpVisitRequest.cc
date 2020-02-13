@@ -35,7 +35,7 @@ std::string DescribeDomainTopClientIpVisitRequest::getLocationNameEn()const
 void DescribeDomainTopClientIpVisitRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainTopClientIpVisitRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDomainTopClientIpVisitRequest::getStartTime()const
 void DescribeDomainTopClientIpVisitRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainTopClientIpVisitRequest::getLimit()const
@@ -57,7 +57,7 @@ std::string DescribeDomainTopClientIpVisitRequest::getLimit()const
 void DescribeDomainTopClientIpVisitRequest::setLimit(const std::string& limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", limit);
+	setParameter("Limit", limit);
 }
 
 std::string DescribeDomainTopClientIpVisitRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDomainTopClientIpVisitRequest::getDomainName()const
 void DescribeDomainTopClientIpVisitRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainTopClientIpVisitRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDomainTopClientIpVisitRequest::getEndTime()const
 void DescribeDomainTopClientIpVisitRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainTopClientIpVisitRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DescribeDomainTopClientIpVisitRequest::getOwnerId()const
 void DescribeDomainTopClientIpVisitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainTopClientIpVisitRequest::getSortBy()const
@@ -101,6 +101,6 @@ std::string DescribeDomainTopClientIpVisitRequest::getSortBy()const
 void DescribeDomainTopClientIpVisitRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setParameter("SortBy", sortBy);
 }
 

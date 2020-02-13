@@ -35,7 +35,7 @@ std::string DescribeDomainSrcBpsDataRequest::getStartTime()const
 void DescribeDomainSrcBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainSrcBpsDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeDomainSrcBpsDataRequest::getDomainName()const
 void DescribeDomainSrcBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainSrcBpsDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeDomainSrcBpsDataRequest::getEndTime()const
 void DescribeDomainSrcBpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainSrcBpsDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeDomainSrcBpsDataRequest::getOwnerId()const
 void DescribeDomainSrcBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainSrcBpsDataRequest::getInterval()const
@@ -79,6 +79,6 @@ std::string DescribeDomainSrcBpsDataRequest::getInterval()const
 void DescribeDomainSrcBpsDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

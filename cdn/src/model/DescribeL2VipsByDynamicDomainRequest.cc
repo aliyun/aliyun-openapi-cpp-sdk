@@ -35,7 +35,7 @@ std::string DescribeL2VipsByDynamicDomainRequest::getDomainName()const
 void DescribeL2VipsByDynamicDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeL2VipsByDynamicDomainRequest::getOwnerId()const
@@ -46,6 +46,6 @@ long DescribeL2VipsByDynamicDomainRequest::getOwnerId()const
 void DescribeL2VipsByDynamicDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

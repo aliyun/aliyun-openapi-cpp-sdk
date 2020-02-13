@@ -35,7 +35,7 @@ std::string DescribeUserUsageDetailDataExportTaskRequest::getPageNumber()const
 void DescribeUserUsageDetailDataExportTaskRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeUserUsageDetailDataExportTaskRequest::getPageSize()const
@@ -46,7 +46,7 @@ std::string DescribeUserUsageDetailDataExportTaskRequest::getPageSize()const
 void DescribeUserUsageDetailDataExportTaskRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setParameter("PageSize", pageSize);
 }
 
 long DescribeUserUsageDetailDataExportTaskRequest::getOwnerId()const
@@ -57,6 +57,6 @@ long DescribeUserUsageDetailDataExportTaskRequest::getOwnerId()const
 void DescribeUserUsageDetailDataExportTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

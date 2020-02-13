@@ -37,26 +37,26 @@ namespace AlibabaCloud
 
 				std::string getReferList()const;
 				void setReferList(const std::string& referList);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getReferType()const;
 				void setReferType(const std::string& referType);
 				std::string getDisableAst()const;
 				void setDisableAst(const std::string& disableAst);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getAllowEmpty()const;
 				void setAllowEmpty(const std::string& allowEmpty);
 
             private:
 				std::string referList_;
-				std::string domainName_;
-				long ownerId_;
 				std::string securityToken_;
 				std::string referType_;
 				std::string disableAst_;
+				std::string domainName_;
+				long ownerId_;
 				std::string allowEmpty_;
 
 			};

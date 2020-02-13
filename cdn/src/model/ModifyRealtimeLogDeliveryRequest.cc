@@ -35,7 +35,7 @@ std::string ModifyRealtimeLogDeliveryRequest::getProject()const
 void ModifyRealtimeLogDeliveryRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 long ModifyRealtimeLogDeliveryRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long ModifyRealtimeLogDeliveryRequest::getOwnerId()const
 void ModifyRealtimeLogDeliveryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyRealtimeLogDeliveryRequest::getDomain()const
@@ -57,7 +57,7 @@ std::string ModifyRealtimeLogDeliveryRequest::getDomain()const
 void ModifyRealtimeLogDeliveryRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 
 std::string ModifyRealtimeLogDeliveryRequest::getRegion()const
@@ -68,7 +68,7 @@ std::string ModifyRealtimeLogDeliveryRequest::getRegion()const
 void ModifyRealtimeLogDeliveryRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string ModifyRealtimeLogDeliveryRequest::getLogstore()const
@@ -79,6 +79,6 @@ std::string ModifyRealtimeLogDeliveryRequest::getLogstore()const
 void ModifyRealtimeLogDeliveryRequest::setLogstore(const std::string& logstore)
 {
 	logstore_ = logstore;
-	setCoreParameter("Logstore", logstore);
+	setParameter("Logstore", logstore);
 }
 

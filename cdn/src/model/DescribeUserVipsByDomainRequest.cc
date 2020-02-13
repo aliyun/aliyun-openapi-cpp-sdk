@@ -35,7 +35,7 @@ std::string DescribeUserVipsByDomainRequest::getDomainName()const
 void DescribeUserVipsByDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeUserVipsByDomainRequest::getAvailable()const
@@ -46,7 +46,7 @@ std::string DescribeUserVipsByDomainRequest::getAvailable()const
 void DescribeUserVipsByDomainRequest::setAvailable(const std::string& available)
 {
 	available_ = available;
-	setCoreParameter("Available", available);
+	setParameter("Available", available);
 }
 
 long DescribeUserVipsByDomainRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DescribeUserVipsByDomainRequest::getOwnerId()const
 void DescribeUserVipsByDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUserVipsByDomainRequest::getSecurityToken()const
@@ -68,6 +68,6 @@ std::string DescribeUserVipsByDomainRequest::getSecurityToken()const
 void DescribeUserVipsByDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

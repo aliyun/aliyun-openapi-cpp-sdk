@@ -35,7 +35,7 @@ std::string DescribeLiveStreamsBlockListRequest::getDomainName()const
 void DescribeLiveStreamsBlockListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveStreamsBlockListRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long DescribeLiveStreamsBlockListRequest::getOwnerId()const
 void DescribeLiveStreamsBlockListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamsBlockListRequest::getSecurityToken()const
@@ -57,6 +57,6 @@ std::string DescribeLiveStreamsBlockListRequest::getSecurityToken()const
 void DescribeLiveStreamsBlockListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

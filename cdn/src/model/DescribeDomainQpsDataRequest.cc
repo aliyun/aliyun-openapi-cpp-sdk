@@ -35,7 +35,7 @@ std::string DescribeDomainQpsDataRequest::getLocationNameEn()const
 void DescribeDomainQpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainQpsDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDomainQpsDataRequest::getStartTime()const
 void DescribeDomainQpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainQpsDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDomainQpsDataRequest::getIspNameEn()const
 void DescribeDomainQpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainQpsDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDomainQpsDataRequest::getDomainName()const
 void DescribeDomainQpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainQpsDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDomainQpsDataRequest::getEndTime()const
 void DescribeDomainQpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainQpsDataRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DescribeDomainQpsDataRequest::getOwnerId()const
 void DescribeDomainQpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainQpsDataRequest::getInterval()const
@@ -101,6 +101,6 @@ std::string DescribeDomainQpsDataRequest::getInterval()const
 void DescribeDomainQpsDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

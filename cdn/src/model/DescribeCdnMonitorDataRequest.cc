@@ -35,7 +35,7 @@ std::string DescribeCdnMonitorDataRequest::getStartTime()const
 void DescribeCdnMonitorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeCdnMonitorDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeCdnMonitorDataRequest::getDomainName()const
 void DescribeCdnMonitorDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeCdnMonitorDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeCdnMonitorDataRequest::getEndTime()const
 void DescribeCdnMonitorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeCdnMonitorDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeCdnMonitorDataRequest::getOwnerId()const
 void DescribeCdnMonitorDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCdnMonitorDataRequest::getInterval()const
@@ -79,6 +79,6 @@ std::string DescribeCdnMonitorDataRequest::getInterval()const
 void DescribeCdnMonitorDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

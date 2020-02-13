@@ -35,7 +35,7 @@ std::string SetOptimizeConfigRequest::getEnable()const
 void SetOptimizeConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setParameter("Enable", enable);
 }
 
 std::string SetOptimizeConfigRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string SetOptimizeConfigRequest::getDomainName()const
 void SetOptimizeConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetOptimizeConfigRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long SetOptimizeConfigRequest::getOwnerId()const
 void SetOptimizeConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long SetOptimizeConfigRequest::getConfigId()const
@@ -68,6 +68,6 @@ long SetOptimizeConfigRequest::getConfigId()const
 void SetOptimizeConfigRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setParameter("ConfigId", std::to_string(configId));
 }
 

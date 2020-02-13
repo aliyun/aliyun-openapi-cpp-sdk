@@ -35,6 +35,12 @@ namespace AlibabaCloud
 				ForbidLiveStreamRequest();
 				~ForbidLiveStreamRequest();
 
+				std::string getAppName()const;
+				void setAppName(const std::string& appName);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getStreamName()const;
+				void setStreamName(const std::string& streamName);
 				std::string getResumeTime()const;
 				void setResumeTime(const std::string& resumeTime);
 				std::string getLiveStreamType()const;
@@ -43,21 +49,15 @@ namespace AlibabaCloud
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getStreamName()const;
-				void setStreamName(const std::string& streamName);
 
             private:
+				std::string appName_;
+				std::string securityToken_;
+				std::string streamName_;
 				std::string resumeTime_;
 				std::string liveStreamType_;
 				std::string domainName_;
 				long ownerId_;
-				std::string appName_;
-				std::string securityToken_;
-				std::string streamName_;
 
 			};
 		}

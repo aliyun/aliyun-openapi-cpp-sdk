@@ -27,39 +27,6 @@ ResumeLiveStreamRequest::ResumeLiveStreamRequest() :
 ResumeLiveStreamRequest::~ResumeLiveStreamRequest()
 {}
 
-std::string ResumeLiveStreamRequest::getLiveStreamType()const
-{
-	return liveStreamType_;
-}
-
-void ResumeLiveStreamRequest::setLiveStreamType(const std::string& liveStreamType)
-{
-	liveStreamType_ = liveStreamType;
-	setCoreParameter("LiveStreamType", liveStreamType);
-}
-
-std::string ResumeLiveStreamRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void ResumeLiveStreamRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-long ResumeLiveStreamRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ResumeLiveStreamRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string ResumeLiveStreamRequest::getAppName()const
 {
 	return appName_;
@@ -68,7 +35,7 @@ std::string ResumeLiveStreamRequest::getAppName()const
 void ResumeLiveStreamRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string ResumeLiveStreamRequest::getSecurityToken()const
@@ -79,7 +46,7 @@ std::string ResumeLiveStreamRequest::getSecurityToken()const
 void ResumeLiveStreamRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ResumeLiveStreamRequest::getStreamName()const
@@ -90,6 +57,39 @@ std::string ResumeLiveStreamRequest::getStreamName()const
 void ResumeLiveStreamRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
+}
+
+std::string ResumeLiveStreamRequest::getLiveStreamType()const
+{
+	return liveStreamType_;
+}
+
+void ResumeLiveStreamRequest::setLiveStreamType(const std::string& liveStreamType)
+{
+	liveStreamType_ = liveStreamType;
+	setParameter("LiveStreamType", liveStreamType);
+}
+
+std::string ResumeLiveStreamRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void ResumeLiveStreamRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+long ResumeLiveStreamRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ResumeLiveStreamRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

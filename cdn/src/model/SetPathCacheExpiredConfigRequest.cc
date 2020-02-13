@@ -27,6 +27,17 @@ SetPathCacheExpiredConfigRequest::SetPathCacheExpiredConfigRequest() :
 SetPathCacheExpiredConfigRequest::~SetPathCacheExpiredConfigRequest()
 {}
 
+std::string SetPathCacheExpiredConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetPathCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
+}
+
 std::string SetPathCacheExpiredConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -35,7 +46,7 @@ std::string SetPathCacheExpiredConfigRequest::getDomainName()const
 void SetPathCacheExpiredConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SetPathCacheExpiredConfigRequest::getWeight()const
@@ -46,7 +57,7 @@ std::string SetPathCacheExpiredConfigRequest::getWeight()const
 void SetPathCacheExpiredConfigRequest::setWeight(const std::string& weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", weight);
+	setParameter("Weight", weight);
 }
 
 std::string SetPathCacheExpiredConfigRequest::getCacheContent()const
@@ -57,7 +68,7 @@ std::string SetPathCacheExpiredConfigRequest::getCacheContent()const
 void SetPathCacheExpiredConfigRequest::setCacheContent(const std::string& cacheContent)
 {
 	cacheContent_ = cacheContent;
-	setCoreParameter("CacheContent", cacheContent);
+	setParameter("CacheContent", cacheContent);
 }
 
 long SetPathCacheExpiredConfigRequest::getOwnerId()const
@@ -68,7 +79,7 @@ long SetPathCacheExpiredConfigRequest::getOwnerId()const
 void SetPathCacheExpiredConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetPathCacheExpiredConfigRequest::getTTL()const
@@ -79,17 +90,6 @@ std::string SetPathCacheExpiredConfigRequest::getTTL()const
 void SetPathCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 {
 	tTL_ = tTL;
-	setCoreParameter("TTL", tTL);
-}
-
-std::string SetPathCacheExpiredConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetPathCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("TTL", tTL);
 }
 

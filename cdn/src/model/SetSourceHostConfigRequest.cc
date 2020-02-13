@@ -35,7 +35,7 @@ std::string SetSourceHostConfigRequest::getDomainName()const
 void SetSourceHostConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetSourceHostConfigRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long SetSourceHostConfigRequest::getOwnerId()const
 void SetSourceHostConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetSourceHostConfigRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string SetSourceHostConfigRequest::getSecurityToken()const
 void SetSourceHostConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SetSourceHostConfigRequest::getEnable()const
@@ -68,7 +68,7 @@ std::string SetSourceHostConfigRequest::getEnable()const
 void SetSourceHostConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setParameter("Enable", enable);
 }
 
 std::string SetSourceHostConfigRequest::getBackSrcDomain()const
@@ -79,6 +79,6 @@ std::string SetSourceHostConfigRequest::getBackSrcDomain()const
 void SetSourceHostConfigRequest::setBackSrcDomain(const std::string& backSrcDomain)
 {
 	backSrcDomain_ = backSrcDomain;
-	setCoreParameter("BackSrcDomain", backSrcDomain);
+	setParameter("BackSrcDomain", backSrcDomain);
 }
 

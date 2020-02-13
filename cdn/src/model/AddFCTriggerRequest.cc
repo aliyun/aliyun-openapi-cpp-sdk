@@ -35,7 +35,7 @@ std::string AddFCTriggerRequest::getNotes()const
 void AddFCTriggerRequest::setNotes(const std::string& notes)
 {
 	notes_ = notes;
-	setCoreParameter("Notes", notes);
+	setBodyParameter("Notes", notes);
 }
 
 std::string AddFCTriggerRequest::getEventMetaVersion()const
@@ -46,7 +46,7 @@ std::string AddFCTriggerRequest::getEventMetaVersion()const
 void AddFCTriggerRequest::setEventMetaVersion(const std::string& eventMetaVersion)
 {
 	eventMetaVersion_ = eventMetaVersion;
-	setCoreParameter("EventMetaVersion", eventMetaVersion);
+	setBodyParameter("EventMetaVersion", eventMetaVersion);
 }
 
 std::string AddFCTriggerRequest::getTriggerARN()const
@@ -57,7 +57,7 @@ std::string AddFCTriggerRequest::getTriggerARN()const
 void AddFCTriggerRequest::setTriggerARN(const std::string& triggerARN)
 {
 	triggerARN_ = triggerARN;
-	setCoreParameter("TriggerARN", triggerARN);
+	setParameter("TriggerARN", triggerARN);
 }
 
 std::string AddFCTriggerRequest::getSourceARN()const
@@ -68,7 +68,7 @@ std::string AddFCTriggerRequest::getSourceARN()const
 void AddFCTriggerRequest::setSourceARN(const std::string& sourceARN)
 {
 	sourceARN_ = sourceARN;
-	setCoreParameter("SourceARN", sourceARN);
+	setBodyParameter("SourceARN", sourceARN);
 }
 
 long AddFCTriggerRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long AddFCTriggerRequest::getOwnerId()const
 void AddFCTriggerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddFCTriggerRequest::getRoleARN()const
@@ -90,7 +90,7 @@ std::string AddFCTriggerRequest::getRoleARN()const
 void AddFCTriggerRequest::setRoleARN(const std::string& roleARN)
 {
 	roleARN_ = roleARN;
-	setCoreParameter("RoleARN", roleARN);
+	setBodyParameter("RoleARN", roleARN);
 }
 
 std::string AddFCTriggerRequest::getEventMetaName()const
@@ -101,7 +101,7 @@ std::string AddFCTriggerRequest::getEventMetaName()const
 void AddFCTriggerRequest::setEventMetaName(const std::string& eventMetaName)
 {
 	eventMetaName_ = eventMetaName;
-	setCoreParameter("EventMetaName", eventMetaName);
+	setBodyParameter("EventMetaName", eventMetaName);
 }
 
 std::string AddFCTriggerRequest::getFunctionARN()const
@@ -112,6 +112,6 @@ std::string AddFCTriggerRequest::getFunctionARN()const
 void AddFCTriggerRequest::setFunctionARN(const std::string& functionARN)
 {
 	functionARN_ = functionARN;
-	setCoreParameter("FunctionARN", functionARN);
+	setBodyParameter("FunctionARN", functionARN);
 }
 

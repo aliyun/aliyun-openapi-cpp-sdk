@@ -35,7 +35,7 @@ std::string DescribeDomainPvDataRequest::getDomainName()const
 void DescribeDomainPvDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainPvDataRequest::getEndTime()const
@@ -46,7 +46,7 @@ std::string DescribeDomainPvDataRequest::getEndTime()const
 void DescribeDomainPvDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeDomainPvDataRequest::getStartTime()const
@@ -57,7 +57,7 @@ std::string DescribeDomainPvDataRequest::getStartTime()const
 void DescribeDomainPvDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 long DescribeDomainPvDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeDomainPvDataRequest::getOwnerId()const
 void DescribeDomainPvDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainPvDataRequest::getSecurityToken()const
@@ -79,6 +79,6 @@ std::string DescribeDomainPvDataRequest::getSecurityToken()const
 void DescribeDomainPvDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

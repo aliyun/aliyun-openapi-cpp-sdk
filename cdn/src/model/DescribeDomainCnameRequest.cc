@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainCnameRequest;
 
 DescribeDomainCnameRequest::DescribeDomainCnameRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainCname")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainCname")
 {
 	setMethod(HttpRequest::Method::Get);
 }
@@ -35,7 +35,7 @@ std::string DescribeDomainCnameRequest::getDomainName()const
 void DescribeDomainCnameRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeDomainCnameRequest::getOwnerId()const
@@ -46,6 +46,6 @@ long DescribeDomainCnameRequest::getOwnerId()const
 void DescribeDomainCnameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

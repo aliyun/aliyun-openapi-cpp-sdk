@@ -27,39 +27,6 @@ DescribeLiveStreamsOnlineListRequest::DescribeLiveStreamsOnlineListRequest() :
 DescribeLiveStreamsOnlineListRequest::~DescribeLiveStreamsOnlineListRequest()
 {}
 
-std::string DescribeLiveStreamsOnlineListRequest::getStreamType()const
-{
-	return streamType_;
-}
-
-void DescribeLiveStreamsOnlineListRequest::setStreamType(const std::string& streamType)
-{
-	streamType_ = streamType;
-	setCoreParameter("StreamType", streamType);
-}
-
-std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveStreamsOnlineListRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-long DescribeLiveStreamsOnlineListRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeLiveStreamsOnlineListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 int DescribeLiveStreamsOnlineListRequest::getPageNum()const
 {
 	return pageNum_;
@@ -68,7 +35,7 @@ int DescribeLiveStreamsOnlineListRequest::getPageNum()const
 void DescribeLiveStreamsOnlineListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
@@ -79,7 +46,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
 void DescribeLiveStreamsOnlineListRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getSecurityToken()const
@@ -90,7 +57,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getSecurityToken()const
 void DescribeLiveStreamsOnlineListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeLiveStreamsOnlineListRequest::getPageSize()const
@@ -101,6 +68,39 @@ int DescribeLiveStreamsOnlineListRequest::getPageSize()const
 void DescribeLiveStreamsOnlineListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeLiveStreamsOnlineListRequest::getStreamType()const
+{
+	return streamType_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setStreamType(const std::string& streamType)
+{
+	streamType_ = streamType;
+	setParameter("StreamType", streamType);
+}
+
+std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+long DescribeLiveStreamsOnlineListRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

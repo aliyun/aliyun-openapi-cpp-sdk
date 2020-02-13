@@ -35,7 +35,7 @@ std::string DescribeDomainRealTimeDetailDataRequest::getLocationNameEn()const
 void DescribeDomainRealTimeDetailDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainRealTimeDetailDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDomainRealTimeDetailDataRequest::getStartTime()const
 void DescribeDomainRealTimeDetailDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainRealTimeDetailDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDomainRealTimeDetailDataRequest::getIspNameEn()const
 void DescribeDomainRealTimeDetailDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainRealTimeDetailDataRequest::getMerge()const
@@ -68,7 +68,7 @@ std::string DescribeDomainRealTimeDetailDataRequest::getMerge()const
 void DescribeDomainRealTimeDetailDataRequest::setMerge(const std::string& merge)
 {
 	merge_ = merge;
-	setCoreParameter("Merge", merge);
+	setParameter("Merge", merge);
 }
 
 std::string DescribeDomainRealTimeDetailDataRequest::getDomainName()const
@@ -79,7 +79,7 @@ std::string DescribeDomainRealTimeDetailDataRequest::getDomainName()const
 void DescribeDomainRealTimeDetailDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainRealTimeDetailDataRequest::getEndTime()const
@@ -90,7 +90,18 @@ std::string DescribeDomainRealTimeDetailDataRequest::getEndTime()const
 void DescribeDomainRealTimeDetailDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
+}
+
+std::string DescribeDomainRealTimeDetailDataRequest::getMergeLocIsp()const
+{
+	return mergeLocIsp_;
+}
+
+void DescribeDomainRealTimeDetailDataRequest::setMergeLocIsp(const std::string& mergeLocIsp)
+{
+	mergeLocIsp_ = mergeLocIsp;
+	setParameter("MergeLocIsp", mergeLocIsp);
 }
 
 long DescribeDomainRealTimeDetailDataRequest::getOwnerId()const
@@ -101,7 +112,7 @@ long DescribeDomainRealTimeDetailDataRequest::getOwnerId()const
 void DescribeDomainRealTimeDetailDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainRealTimeDetailDataRequest::getField()const
@@ -112,6 +123,6 @@ std::string DescribeDomainRealTimeDetailDataRequest::getField()const
 void DescribeDomainRealTimeDetailDataRequest::setField(const std::string& field)
 {
 	field_ = field;
-	setCoreParameter("Field", field);
+	setParameter("Field", field);
 }
 

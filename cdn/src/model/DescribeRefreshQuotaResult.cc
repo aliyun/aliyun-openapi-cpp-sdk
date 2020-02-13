@@ -55,6 +55,10 @@ void DescribeRefreshQuotaResult::parse(const std::string &payload)
 		preloadRemain_ = value["PreloadRemain"].asString();
 	if(!value["blockRemain"].isNull())
 		blockRemain_ = value["blockRemain"].asString();
+	if(!value["RegexQuota"].isNull())
+		regexQuota_ = value["RegexQuota"].asString();
+	if(!value["RegexRemain"].isNull())
+		regexRemain_ = value["RegexRemain"].asString();
 
 }
 
@@ -73,6 +77,11 @@ std::string DescribeRefreshQuotaResult::getBlockRemain()const
 	return blockRemain_;
 }
 
+std::string DescribeRefreshQuotaResult::getRegexRemain()const
+{
+	return regexRemain_;
+}
+
 std::string DescribeRefreshQuotaResult::getDirRemain()const
 {
 	return dirRemain_;
@@ -81,6 +90,11 @@ std::string DescribeRefreshQuotaResult::getDirRemain()const
 std::string DescribeRefreshQuotaResult::getBlockQuota()const
 {
 	return blockQuota_;
+}
+
+std::string DescribeRefreshQuotaResult::getRegexQuota()const
+{
+	return regexQuota_;
 }
 
 std::string DescribeRefreshQuotaResult::getUrlQuota()const

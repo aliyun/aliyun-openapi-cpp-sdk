@@ -35,7 +35,7 @@ long DescribeLiveStreamTranscodeInfoRequest::getOwnerId()const
 void DescribeLiveStreamTranscodeInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamTranscodeInfoRequest::getDomainTranscodeName()const
@@ -46,7 +46,7 @@ std::string DescribeLiveStreamTranscodeInfoRequest::getDomainTranscodeName()cons
 void DescribeLiveStreamTranscodeInfoRequest::setDomainTranscodeName(const std::string& domainTranscodeName)
 {
 	domainTranscodeName_ = domainTranscodeName;
-	setCoreParameter("DomainTranscodeName", domainTranscodeName);
+	setParameter("DomainTranscodeName", domainTranscodeName);
 }
 
 std::string DescribeLiveStreamTranscodeInfoRequest::getSecurityToken()const
@@ -57,6 +57,6 @@ std::string DescribeLiveStreamTranscodeInfoRequest::getSecurityToken()const
 void DescribeLiveStreamTranscodeInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

@@ -27,28 +27,6 @@ SetReqHeaderConfigRequest::SetReqHeaderConfigRequest() :
 SetReqHeaderConfigRequest::~SetReqHeaderConfigRequest()
 {}
 
-std::string SetReqHeaderConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void SetReqHeaderConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-long SetReqHeaderConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SetReqHeaderConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string SetReqHeaderConfigRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -57,18 +35,7 @@ std::string SetReqHeaderConfigRequest::getSecurityToken()const
 void SetReqHeaderConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-long SetReqHeaderConfigRequest::getConfigId()const
-{
-	return configId_;
-}
-
-void SetReqHeaderConfigRequest::setConfigId(long configId)
-{
-	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SetReqHeaderConfigRequest::getValue()const
@@ -79,7 +46,7 @@ std::string SetReqHeaderConfigRequest::getValue()const
 void SetReqHeaderConfigRequest::setValue(const std::string& value)
 {
 	value_ = value;
-	setCoreParameter("Value", value);
+	setParameter("Value", value);
 }
 
 std::string SetReqHeaderConfigRequest::getKey()const
@@ -90,6 +57,39 @@ std::string SetReqHeaderConfigRequest::getKey()const
 void SetReqHeaderConfigRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
+}
+
+std::string SetReqHeaderConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void SetReqHeaderConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+long SetReqHeaderConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void SetReqHeaderConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+long SetReqHeaderConfigRequest::getConfigId()const
+{
+	return configId_;
+}
+
+void SetReqHeaderConfigRequest::setConfigId(long configId)
+{
+	configId_ = configId;
+	setParameter("ConfigId", std::to_string(configId));
 }
 

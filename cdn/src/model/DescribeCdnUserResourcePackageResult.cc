@@ -51,6 +51,8 @@ void DescribeCdnUserResourcePackageResult::parse(const std::string &payload)
 			resourcePackageInfosObject.commodityCode = valueResourcePackageInfosResourcePackageInfo["CommodityCode"].asString();
 		if(!valueResourcePackageInfosResourcePackageInfo["DisplayName"].isNull())
 			resourcePackageInfosObject.displayName = valueResourcePackageInfosResourcePackageInfo["DisplayName"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["TemplateName"].isNull())
+			resourcePackageInfosObject.templateName = valueResourcePackageInfosResourcePackageInfo["TemplateName"].asString();
 		if(!valueResourcePackageInfosResourcePackageInfo["InstanceId"].isNull())
 			resourcePackageInfosObject.instanceId = valueResourcePackageInfosResourcePackageInfo["InstanceId"].asString();
 		if(!valueResourcePackageInfosResourcePackageInfo["Status"].isNull())

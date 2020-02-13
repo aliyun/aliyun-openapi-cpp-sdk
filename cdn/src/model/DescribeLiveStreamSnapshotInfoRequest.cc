@@ -35,7 +35,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getStartTime()const
 void DescribeLiveStreamSnapshotInfoRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveStreamSnapshotInfoRequest::getAppName()const
@@ -46,7 +46,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getAppName()const
 void DescribeLiveStreamSnapshotInfoRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DescribeLiveStreamSnapshotInfoRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getSecurityToken()const
 void DescribeLiveStreamSnapshotInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeLiveStreamSnapshotInfoRequest::getLimit()const
@@ -68,7 +68,7 @@ int DescribeLiveStreamSnapshotInfoRequest::getLimit()const
 void DescribeLiveStreamSnapshotInfoRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 std::string DescribeLiveStreamSnapshotInfoRequest::getStreamName()const
@@ -79,7 +79,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getStreamName()const
 void DescribeLiveStreamSnapshotInfoRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveStreamSnapshotInfoRequest::getDomainName()const
@@ -90,7 +90,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getDomainName()const
 void DescribeLiveStreamSnapshotInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveStreamSnapshotInfoRequest::getEndTime()const
@@ -101,7 +101,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getEndTime()const
 void DescribeLiveStreamSnapshotInfoRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveStreamSnapshotInfoRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DescribeLiveStreamSnapshotInfoRequest::getOwnerId()const
 void DescribeLiveStreamSnapshotInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,7 +35,7 @@ std::string DescribeDomainsUsageByDayRequest::getStartTime()const
 void DescribeDomainsUsageByDayRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeDomainsUsageByDayRequest::getDomainName()const
 void DescribeDomainsUsageByDayRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeDomainsUsageByDayRequest::getEndTime()const
 void DescribeDomainsUsageByDayRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainsUsageByDayRequest::getOwnerId()const
@@ -68,6 +68,6 @@ long DescribeDomainsUsageByDayRequest::getOwnerId()const
 void DescribeDomainsUsageByDayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

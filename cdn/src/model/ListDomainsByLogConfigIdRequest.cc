@@ -35,7 +35,7 @@ long ListDomainsByLogConfigIdRequest::getOwnerId()const
 void ListDomainsByLogConfigIdRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListDomainsByLogConfigIdRequest::getConfigId()const
@@ -46,6 +46,6 @@ std::string ListDomainsByLogConfigIdRequest::getConfigId()const
 void ListDomainsByLogConfigIdRequest::setConfigId(const std::string& configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", configId);
+	setParameter("ConfigId", configId);
 }
 

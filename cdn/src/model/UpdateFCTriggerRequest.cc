@@ -35,7 +35,7 @@ std::string UpdateFCTriggerRequest::getNotes()const
 void UpdateFCTriggerRequest::setNotes(const std::string& notes)
 {
 	notes_ = notes;
-	setCoreParameter("Notes", notes);
+	setBodyParameter("Notes", notes);
 }
 
 std::string UpdateFCTriggerRequest::getTriggerARN()const
@@ -46,7 +46,7 @@ std::string UpdateFCTriggerRequest::getTriggerARN()const
 void UpdateFCTriggerRequest::setTriggerARN(const std::string& triggerARN)
 {
 	triggerARN_ = triggerARN;
-	setCoreParameter("TriggerARN", triggerARN);
+	setParameter("TriggerARN", triggerARN);
 }
 
 std::string UpdateFCTriggerRequest::getSourceARN()const
@@ -57,7 +57,7 @@ std::string UpdateFCTriggerRequest::getSourceARN()const
 void UpdateFCTriggerRequest::setSourceARN(const std::string& sourceARN)
 {
 	sourceARN_ = sourceARN;
-	setCoreParameter("SourceARN", sourceARN);
+	setBodyParameter("SourceARN", sourceARN);
 }
 
 long UpdateFCTriggerRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long UpdateFCTriggerRequest::getOwnerId()const
 void UpdateFCTriggerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateFCTriggerRequest::getRoleARN()const
@@ -79,7 +79,7 @@ std::string UpdateFCTriggerRequest::getRoleARN()const
 void UpdateFCTriggerRequest::setRoleARN(const std::string& roleARN)
 {
 	roleARN_ = roleARN;
-	setCoreParameter("RoleARN", roleARN);
+	setBodyParameter("RoleARN", roleARN);
 }
 
 std::string UpdateFCTriggerRequest::getFunctionARN()const
@@ -90,6 +90,6 @@ std::string UpdateFCTriggerRequest::getFunctionARN()const
 void UpdateFCTriggerRequest::setFunctionARN(const std::string& functionARN)
 {
 	functionARN_ = functionARN;
-	setCoreParameter("FunctionARN", functionARN);
+	setBodyParameter("FunctionARN", functionARN);
 }
 

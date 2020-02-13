@@ -35,7 +35,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getLocationNameEn()const
 void DescribeDomainRealTimeBpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getIspNameEn()const
@@ -46,7 +46,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getIspNameEn()const
 void DescribeDomainRealTimeBpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getStartTime()const
@@ -57,7 +57,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getStartTime()const
 void DescribeDomainRealTimeBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getDomainName()const
 void DescribeDomainRealTimeBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getEndTime()const
 void DescribeDomainRealTimeBpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainRealTimeBpsDataRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeDomainRealTimeBpsDataRequest::getOwnerId()const
 void DescribeDomainRealTimeBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

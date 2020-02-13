@@ -35,7 +35,7 @@ std::string DescribeDomainFlowDataRequest::getLocationNameEn()const
 void DescribeDomainFlowDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainFlowDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDomainFlowDataRequest::getStartTime()const
 void DescribeDomainFlowDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainFlowDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDomainFlowDataRequest::getIspNameEn()const
 void DescribeDomainFlowDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainFlowDataRequest::getDomainType()const
@@ -68,7 +68,7 @@ std::string DescribeDomainFlowDataRequest::getDomainType()const
 void DescribeDomainFlowDataRequest::setDomainType(const std::string& domainType)
 {
 	domainType_ = domainType;
-	setCoreParameter("DomainType", domainType);
+	setParameter("DomainType", domainType);
 }
 
 std::string DescribeDomainFlowDataRequest::getTimeMerge()const
@@ -79,7 +79,7 @@ std::string DescribeDomainFlowDataRequest::getTimeMerge()const
 void DescribeDomainFlowDataRequest::setTimeMerge(const std::string& timeMerge)
 {
 	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", timeMerge);
+	setParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDomainFlowDataRequest::getDomainName()const
@@ -90,7 +90,7 @@ std::string DescribeDomainFlowDataRequest::getDomainName()const
 void DescribeDomainFlowDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainFlowDataRequest::getEndTime()const
@@ -101,7 +101,7 @@ std::string DescribeDomainFlowDataRequest::getEndTime()const
 void DescribeDomainFlowDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDomainFlowDataRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long DescribeDomainFlowDataRequest::getOwnerId()const
 void DescribeDomainFlowDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainFlowDataRequest::getInterval()const
@@ -123,6 +123,6 @@ std::string DescribeDomainFlowDataRequest::getInterval()const
 void DescribeDomainFlowDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

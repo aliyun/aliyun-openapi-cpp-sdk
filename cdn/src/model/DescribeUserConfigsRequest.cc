@@ -35,7 +35,7 @@ long DescribeUserConfigsRequest::getOwnerId()const
 void DescribeUserConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUserConfigsRequest::getSecurityToken()const
@@ -46,7 +46,7 @@ std::string DescribeUserConfigsRequest::getSecurityToken()const
 void DescribeUserConfigsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeUserConfigsRequest::getConfig()const
@@ -57,6 +57,6 @@ std::string DescribeUserConfigsRequest::getConfig()const
 void DescribeUserConfigsRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setParameter("Config", config);
 }
 

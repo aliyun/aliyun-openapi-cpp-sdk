@@ -35,7 +35,7 @@ std::string SetFileCacheExpiredConfigRequest::getSecurityToken()const
 void SetFileCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SetFileCacheExpiredConfigRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string SetFileCacheExpiredConfigRequest::getDomainName()const
 void SetFileCacheExpiredConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SetFileCacheExpiredConfigRequest::getWeight()const
@@ -57,7 +57,7 @@ std::string SetFileCacheExpiredConfigRequest::getWeight()const
 void SetFileCacheExpiredConfigRequest::setWeight(const std::string& weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", weight);
+	setParameter("Weight", weight);
 }
 
 std::string SetFileCacheExpiredConfigRequest::getCacheContent()const
@@ -68,7 +68,7 @@ std::string SetFileCacheExpiredConfigRequest::getCacheContent()const
 void SetFileCacheExpiredConfigRequest::setCacheContent(const std::string& cacheContent)
 {
 	cacheContent_ = cacheContent;
-	setCoreParameter("CacheContent", cacheContent);
+	setParameter("CacheContent", cacheContent);
 }
 
 long SetFileCacheExpiredConfigRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long SetFileCacheExpiredConfigRequest::getOwnerId()const
 void SetFileCacheExpiredConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetFileCacheExpiredConfigRequest::getTTL()const
@@ -90,6 +90,6 @@ std::string SetFileCacheExpiredConfigRequest::getTTL()const
 void SetFileCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 {
 	tTL_ = tTL;
-	setCoreParameter("TTL", tTL);
+	setParameter("TTL", tTL);
 }
 
