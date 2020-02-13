@@ -27,6 +27,17 @@ ModifyNetworkInterfaceAttributeRequest::ModifyNetworkInterfaceAttributeRequest()
 ModifyNetworkInterfaceAttributeRequest::~ModifyNetworkInterfaceAttributeRequest()
 {}
 
+int ModifyNetworkInterfaceAttributeRequest::getQueueNumber()const
+{
+	return queueNumber_;
+}
+
+void ModifyNetworkInterfaceAttributeRequest::setQueueNumber(int queueNumber)
+{
+	queueNumber_ = queueNumber;
+	setParameter("QueueNumber", std::to_string(queueNumber));
+}
+
 long ModifyNetworkInterfaceAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

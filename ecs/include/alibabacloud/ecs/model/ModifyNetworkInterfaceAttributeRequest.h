@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyNetworkInterfaceAttributeRequest();
 				~ModifyNetworkInterfaceAttributeRequest();
 
+				int getQueueNumber()const;
+				void setQueueNumber(int queueNumber);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::vector<std::string> getSecurityGroupId()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setNetworkInterfaceId(const std::string& networkInterfaceId);
 
             private:
+				int queueNumber_;
 				long resourceOwnerId_;
 				std::vector<std::string> securityGroupId_;
 				std::string description_;
