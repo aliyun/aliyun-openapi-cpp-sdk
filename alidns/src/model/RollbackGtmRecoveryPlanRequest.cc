@@ -35,7 +35,7 @@ std::string RollbackGtmRecoveryPlanRequest::getUserClientIp()const
 void RollbackGtmRecoveryPlanRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 long RollbackGtmRecoveryPlanRequest::getRecoveryPlanId()const
@@ -46,7 +46,7 @@ long RollbackGtmRecoveryPlanRequest::getRecoveryPlanId()const
 void RollbackGtmRecoveryPlanRequest::setRecoveryPlanId(long recoveryPlanId)
 {
 	recoveryPlanId_ = recoveryPlanId;
-	setCoreParameter("RecoveryPlanId", std::to_string(recoveryPlanId));
+	setParameter("RecoveryPlanId", std::to_string(recoveryPlanId));
 }
 
 std::string RollbackGtmRecoveryPlanRequest::getLang()const
@@ -57,6 +57,6 @@ std::string RollbackGtmRecoveryPlanRequest::getLang()const
 void RollbackGtmRecoveryPlanRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

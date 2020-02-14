@@ -35,7 +35,7 @@ std::string DescribeGtmMonitorAvailableConfigRequest::getUserClientIp()const
 void DescribeGtmMonitorAvailableConfigRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeGtmMonitorAvailableConfigRequest::getLang()const
@@ -46,6 +46,6 @@ std::string DescribeGtmMonitorAvailableConfigRequest::getLang()const
 void DescribeGtmMonitorAvailableConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

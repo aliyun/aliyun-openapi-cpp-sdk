@@ -35,7 +35,7 @@ std::string UnbindInstanceDomainsRequest::getDomainNames()const
 void UnbindInstanceDomainsRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setParameter("DomainNames", domainNames);
 }
 
 std::string UnbindInstanceDomainsRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string UnbindInstanceDomainsRequest::getInstanceId()const
 void UnbindInstanceDomainsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UnbindInstanceDomainsRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string UnbindInstanceDomainsRequest::getUserClientIp()const
 void UnbindInstanceDomainsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string UnbindInstanceDomainsRequest::getLang()const
@@ -68,6 +68,6 @@ std::string UnbindInstanceDomainsRequest::getLang()const
 void UnbindInstanceDomainsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

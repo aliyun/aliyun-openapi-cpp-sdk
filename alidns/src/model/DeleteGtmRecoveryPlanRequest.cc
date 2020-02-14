@@ -35,7 +35,7 @@ std::string DeleteGtmRecoveryPlanRequest::getUserClientIp()const
 void DeleteGtmRecoveryPlanRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 long DeleteGtmRecoveryPlanRequest::getRecoveryPlanId()const
@@ -46,7 +46,7 @@ long DeleteGtmRecoveryPlanRequest::getRecoveryPlanId()const
 void DeleteGtmRecoveryPlanRequest::setRecoveryPlanId(long recoveryPlanId)
 {
 	recoveryPlanId_ = recoveryPlanId;
-	setCoreParameter("RecoveryPlanId", std::to_string(recoveryPlanId));
+	setParameter("RecoveryPlanId", std::to_string(recoveryPlanId));
 }
 
 std::string DeleteGtmRecoveryPlanRequest::getLang()const
@@ -57,6 +57,6 @@ std::string DeleteGtmRecoveryPlanRequest::getLang()const
 void DeleteGtmRecoveryPlanRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

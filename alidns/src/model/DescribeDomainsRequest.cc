@@ -35,7 +35,7 @@ std::string DescribeDomainsRequest::getStartDate()const
 void DescribeDomainsRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 long DescribeDomainsRequest::getPageNumber()const
@@ -46,7 +46,7 @@ long DescribeDomainsRequest::getPageNumber()const
 void DescribeDomainsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDomainsRequest::getResourceGroupId()const
@@ -57,7 +57,7 @@ std::string DescribeDomainsRequest::getResourceGroupId()const
 void DescribeDomainsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 long DescribeDomainsRequest::getPageSize()const
@@ -68,7 +68,7 @@ long DescribeDomainsRequest::getPageSize()const
 void DescribeDomainsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDomainsRequest::getLang()const
@@ -79,7 +79,7 @@ std::string DescribeDomainsRequest::getLang()const
 void DescribeDomainsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeDomainsRequest::getKeyWord()const
@@ -90,7 +90,7 @@ std::string DescribeDomainsRequest::getKeyWord()const
 void DescribeDomainsRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
-	setCoreParameter("KeyWord", keyWord);
+	setParameter("KeyWord", keyWord);
 }
 
 std::string DescribeDomainsRequest::getDirection()const
@@ -101,7 +101,7 @@ std::string DescribeDomainsRequest::getDirection()const
 void DescribeDomainsRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setParameter("Direction", direction);
 }
 
 bool DescribeDomainsRequest::getStarmark()const
@@ -112,7 +112,7 @@ bool DescribeDomainsRequest::getStarmark()const
 void DescribeDomainsRequest::setStarmark(bool starmark)
 {
 	starmark_ = starmark;
-	setCoreParameter("Starmark", starmark ? "true" : "false");
+	setParameter("Starmark", starmark ? "true" : "false");
 }
 
 std::string DescribeDomainsRequest::getGroupId()const
@@ -123,7 +123,7 @@ std::string DescribeDomainsRequest::getGroupId()const
 void DescribeDomainsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeDomainsRequest::getOrderBy()const
@@ -134,7 +134,7 @@ std::string DescribeDomainsRequest::getOrderBy()const
 void DescribeDomainsRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setParameter("OrderBy", orderBy);
 }
 
 std::string DescribeDomainsRequest::getEndDate()const
@@ -145,7 +145,7 @@ std::string DescribeDomainsRequest::getEndDate()const
 void DescribeDomainsRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeDomainsRequest::getUserClientIp()const
@@ -156,7 +156,7 @@ std::string DescribeDomainsRequest::getUserClientIp()const
 void DescribeDomainsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeDomainsRequest::getSearchMode()const
@@ -167,6 +167,6 @@ std::string DescribeDomainsRequest::getSearchMode()const
 void DescribeDomainsRequest::setSearchMode(const std::string& searchMode)
 {
 	searchMode_ = searchMode;
-	setCoreParameter("SearchMode", searchMode);
+	setParameter("SearchMode", searchMode);
 }
 

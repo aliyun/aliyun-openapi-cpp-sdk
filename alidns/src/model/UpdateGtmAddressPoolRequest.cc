@@ -35,7 +35,7 @@ std::string UpdateGtmAddressPoolRequest::getType()const
 void UpdateGtmAddressPoolRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 int UpdateGtmAddressPoolRequest::getMinAvailableAddrNum()const
@@ -46,7 +46,7 @@ int UpdateGtmAddressPoolRequest::getMinAvailableAddrNum()const
 void UpdateGtmAddressPoolRequest::setMinAvailableAddrNum(int minAvailableAddrNum)
 {
 	minAvailableAddrNum_ = minAvailableAddrNum;
-	setCoreParameter("MinAvailableAddrNum", std::to_string(minAvailableAddrNum));
+	setParameter("MinAvailableAddrNum", std::to_string(minAvailableAddrNum));
 }
 
 std::string UpdateGtmAddressPoolRequest::getAddrPoolId()const
@@ -57,7 +57,7 @@ std::string UpdateGtmAddressPoolRequest::getAddrPoolId()const
 void UpdateGtmAddressPoolRequest::setAddrPoolId(const std::string& addrPoolId)
 {
 	addrPoolId_ = addrPoolId;
-	setCoreParameter("AddrPoolId", addrPoolId);
+	setParameter("AddrPoolId", addrPoolId);
 }
 
 std::string UpdateGtmAddressPoolRequest::getUserClientIp()const
@@ -68,7 +68,7 @@ std::string UpdateGtmAddressPoolRequest::getUserClientIp()const
 void UpdateGtmAddressPoolRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string UpdateGtmAddressPoolRequest::getName()const
@@ -79,7 +79,7 @@ std::string UpdateGtmAddressPoolRequest::getName()const
 void UpdateGtmAddressPoolRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string UpdateGtmAddressPoolRequest::getLang()const
@@ -90,7 +90,7 @@ std::string UpdateGtmAddressPoolRequest::getLang()const
 void UpdateGtmAddressPoolRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::vector<UpdateGtmAddressPoolRequest::Addr> UpdateGtmAddressPoolRequest::getAddr()const
@@ -103,10 +103,10 @@ void UpdateGtmAddressPoolRequest::setAddr(const std::vector<Addr>& addr)
 	addr_ = addr;
 	for(int dep1 = 0; dep1!= addr.size(); dep1++) {
 		auto addrObj = addr.at(dep1);
-		std::string addrObjStr = "Addr." + std::to_string(dep1);
-		setCoreParameter(addrObjStr + ".Mode", addrObj.mode);
-		setCoreParameter(addrObjStr + ".LbaWeight", std::to_string(addrObj.lbaWeight));
-		setCoreParameter(addrObjStr + ".Value", addrObj.value);
+		std::string addrObjStr = "Addr." + std::to_string(dep1 + 1);
+		setParameter(addrObjStr + ".Mode", addrObj.mode);
+		setParameter(addrObjStr + ".LbaWeight", std::to_string(addrObj.lbaWeight));
+		setParameter(addrObjStr + ".Value", addrObj.value);
 	}
 }
 

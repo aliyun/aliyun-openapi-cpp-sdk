@@ -35,7 +35,7 @@ std::string GetTxtRecordForVerifyRequest::getDomainName()const
 void GetTxtRecordForVerifyRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string GetTxtRecordForVerifyRequest::getType()const
@@ -46,7 +46,7 @@ std::string GetTxtRecordForVerifyRequest::getType()const
 void GetTxtRecordForVerifyRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string GetTxtRecordForVerifyRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string GetTxtRecordForVerifyRequest::getUserClientIp()const
 void GetTxtRecordForVerifyRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string GetTxtRecordForVerifyRequest::getLang()const
@@ -68,6 +68,6 @@ std::string GetTxtRecordForVerifyRequest::getLang()const
 void GetTxtRecordForVerifyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

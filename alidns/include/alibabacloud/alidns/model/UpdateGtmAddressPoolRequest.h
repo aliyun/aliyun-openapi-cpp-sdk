@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ALIDNS_EXPORT UpdateGtmAddressPoolRequest : public RpcServiceRequest
 			{
+			public:
 				struct Addr
 				{
 					std::string mode;

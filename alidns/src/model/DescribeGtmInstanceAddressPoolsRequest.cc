@@ -35,7 +35,7 @@ int DescribeGtmInstanceAddressPoolsRequest::getPageNumber()const
 void DescribeGtmInstanceAddressPoolsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGtmInstanceAddressPoolsRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string DescribeGtmInstanceAddressPoolsRequest::getInstanceId()const
 void DescribeGtmInstanceAddressPoolsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeGtmInstanceAddressPoolsRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string DescribeGtmInstanceAddressPoolsRequest::getUserClientIp()const
 void DescribeGtmInstanceAddressPoolsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 int DescribeGtmInstanceAddressPoolsRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeGtmInstanceAddressPoolsRequest::getPageSize()const
 void DescribeGtmInstanceAddressPoolsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGtmInstanceAddressPoolsRequest::getLang()const
@@ -79,6 +79,6 @@ std::string DescribeGtmInstanceAddressPoolsRequest::getLang()const
 void DescribeGtmInstanceAddressPoolsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

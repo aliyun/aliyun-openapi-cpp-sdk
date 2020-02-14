@@ -35,7 +35,7 @@ int DescribeGtmInstancesRequest::getPageNumber()const
 void DescribeGtmInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGtmInstancesRequest::getResourceGroupId()const
@@ -46,7 +46,7 @@ std::string DescribeGtmInstancesRequest::getResourceGroupId()const
 void DescribeGtmInstancesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeGtmInstancesRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string DescribeGtmInstancesRequest::getUserClientIp()const
 void DescribeGtmInstancesRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 int DescribeGtmInstancesRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeGtmInstancesRequest::getPageSize()const
 void DescribeGtmInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGtmInstancesRequest::getLang()const
@@ -79,7 +79,7 @@ std::string DescribeGtmInstancesRequest::getLang()const
 void DescribeGtmInstancesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeGtmInstancesRequest::getKeyword()const
@@ -90,7 +90,7 @@ std::string DescribeGtmInstancesRequest::getKeyword()const
 void DescribeGtmInstancesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 bool DescribeGtmInstancesRequest::getNeedDetailAttributes()const
@@ -101,6 +101,6 @@ bool DescribeGtmInstancesRequest::getNeedDetailAttributes()const
 void DescribeGtmInstancesRequest::setNeedDetailAttributes(bool needDetailAttributes)
 {
 	needDetailAttributes_ = needDetailAttributes;
-	setCoreParameter("NeedDetailAttributes", needDetailAttributes ? "true" : "false");
+	setParameter("NeedDetailAttributes", needDetailAttributes ? "true" : "false");
 }
 

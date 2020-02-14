@@ -35,7 +35,7 @@ long DescribeTransferDomainsRequest::getFromUserId()const
 void DescribeTransferDomainsRequest::setFromUserId(long fromUserId)
 {
 	fromUserId_ = fromUserId;
-	setCoreParameter("FromUserId", std::to_string(fromUserId));
+	setParameter("FromUserId", std::to_string(fromUserId));
 }
 
 long DescribeTransferDomainsRequest::getPageNumber()const
@@ -46,7 +46,7 @@ long DescribeTransferDomainsRequest::getPageNumber()const
 void DescribeTransferDomainsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 long DescribeTransferDomainsRequest::getTargetUserId()const
@@ -57,7 +57,7 @@ long DescribeTransferDomainsRequest::getTargetUserId()const
 void DescribeTransferDomainsRequest::setTargetUserId(long targetUserId)
 {
 	targetUserId_ = targetUserId;
-	setCoreParameter("TargetUserId", std::to_string(targetUserId));
+	setParameter("TargetUserId", std::to_string(targetUserId));
 }
 
 long DescribeTransferDomainsRequest::getPageSize()const
@@ -68,7 +68,7 @@ long DescribeTransferDomainsRequest::getPageSize()const
 void DescribeTransferDomainsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeTransferDomainsRequest::getLang()const
@@ -79,7 +79,7 @@ std::string DescribeTransferDomainsRequest::getLang()const
 void DescribeTransferDomainsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeTransferDomainsRequest::getDomainName()const
@@ -90,7 +90,7 @@ std::string DescribeTransferDomainsRequest::getDomainName()const
 void DescribeTransferDomainsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeTransferDomainsRequest::getTransferType()const
@@ -101,7 +101,7 @@ std::string DescribeTransferDomainsRequest::getTransferType()const
 void DescribeTransferDomainsRequest::setTransferType(const std::string& transferType)
 {
 	transferType_ = transferType;
-	setCoreParameter("TransferType", transferType);
+	setParameter("TransferType", transferType);
 }
 
 std::string DescribeTransferDomainsRequest::getUserClientIp()const
@@ -112,6 +112,6 @@ std::string DescribeTransferDomainsRequest::getUserClientIp()const
 void DescribeTransferDomainsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 

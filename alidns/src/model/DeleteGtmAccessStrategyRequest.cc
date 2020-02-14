@@ -35,7 +35,7 @@ std::string DeleteGtmAccessStrategyRequest::getUserClientIp()const
 void DeleteGtmAccessStrategyRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteGtmAccessStrategyRequest::getStrategyId()const
@@ -46,7 +46,7 @@ std::string DeleteGtmAccessStrategyRequest::getStrategyId()const
 void DeleteGtmAccessStrategyRequest::setStrategyId(const std::string& strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setParameter("StrategyId", strategyId);
 }
 
 std::string DeleteGtmAccessStrategyRequest::getLang()const
@@ -57,6 +57,6 @@ std::string DeleteGtmAccessStrategyRequest::getLang()const
 void DeleteGtmAccessStrategyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -35,7 +35,7 @@ std::string DeleteCustomLinesRequest::getLineIds()const
 void DeleteCustomLinesRequest::setLineIds(const std::string& lineIds)
 {
 	lineIds_ = lineIds;
-	setCoreParameter("LineIds", lineIds);
+	setParameter("LineIds", lineIds);
 }
 
 std::string DeleteCustomLinesRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string DeleteCustomLinesRequest::getUserClientIp()const
 void DeleteCustomLinesRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteCustomLinesRequest::getLang()const
@@ -57,6 +57,6 @@ std::string DeleteCustomLinesRequest::getLang()const
 void DeleteCustomLinesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

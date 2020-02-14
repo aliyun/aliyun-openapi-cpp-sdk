@@ -35,7 +35,7 @@ std::string AddGtmAddressPoolRequest::getMonitorExtendInfo()const
 void AddGtmAddressPoolRequest::setMonitorExtendInfo(const std::string& monitorExtendInfo)
 {
 	monitorExtendInfo_ = monitorExtendInfo;
-	setCoreParameter("MonitorExtendInfo", monitorExtendInfo);
+	setParameter("MonitorExtendInfo", monitorExtendInfo);
 }
 
 std::string AddGtmAddressPoolRequest::getType()const
@@ -46,7 +46,7 @@ std::string AddGtmAddressPoolRequest::getType()const
 void AddGtmAddressPoolRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 int AddGtmAddressPoolRequest::getTimeout()const
@@ -57,7 +57,7 @@ int AddGtmAddressPoolRequest::getTimeout()const
 void AddGtmAddressPoolRequest::setTimeout(int timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", std::to_string(timeout));
+	setParameter("Timeout", std::to_string(timeout));
 }
 
 int AddGtmAddressPoolRequest::getMinAvailableAddrNum()const
@@ -68,7 +68,7 @@ int AddGtmAddressPoolRequest::getMinAvailableAddrNum()const
 void AddGtmAddressPoolRequest::setMinAvailableAddrNum(int minAvailableAddrNum)
 {
 	minAvailableAddrNum_ = minAvailableAddrNum;
-	setCoreParameter("MinAvailableAddrNum", std::to_string(minAvailableAddrNum));
+	setParameter("MinAvailableAddrNum", std::to_string(minAvailableAddrNum));
 }
 
 int AddGtmAddressPoolRequest::getEvaluationCount()const
@@ -79,7 +79,7 @@ int AddGtmAddressPoolRequest::getEvaluationCount()const
 void AddGtmAddressPoolRequest::setEvaluationCount(int evaluationCount)
 {
 	evaluationCount_ = evaluationCount;
-	setCoreParameter("EvaluationCount", std::to_string(evaluationCount));
+	setParameter("EvaluationCount", std::to_string(evaluationCount));
 }
 
 std::string AddGtmAddressPoolRequest::getLang()const
@@ -90,7 +90,7 @@ std::string AddGtmAddressPoolRequest::getLang()const
 void AddGtmAddressPoolRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::vector<AddGtmAddressPoolRequest::Addr> AddGtmAddressPoolRequest::getAddr()const
@@ -103,10 +103,10 @@ void AddGtmAddressPoolRequest::setAddr(const std::vector<Addr>& addr)
 	addr_ = addr;
 	for(int dep1 = 0; dep1!= addr.size(); dep1++) {
 		auto addrObj = addr.at(dep1);
-		std::string addrObjStr = "Addr." + std::to_string(dep1);
-		setCoreParameter(addrObjStr + ".Mode", addrObj.mode);
-		setCoreParameter(addrObjStr + ".LbaWeight", std::to_string(addrObj.lbaWeight));
-		setCoreParameter(addrObjStr + ".Value", addrObj.value);
+		std::string addrObjStr = "Addr." + std::to_string(dep1 + 1);
+		setParameter(addrObjStr + ".Mode", addrObj.mode);
+		setParameter(addrObjStr + ".LbaWeight", std::to_string(addrObj.lbaWeight));
+		setParameter(addrObjStr + ".Value", addrObj.value);
 	}
 }
 
@@ -118,7 +118,7 @@ std::string AddGtmAddressPoolRequest::getMonitorStatus()const
 void AddGtmAddressPoolRequest::setMonitorStatus(const std::string& monitorStatus)
 {
 	monitorStatus_ = monitorStatus;
-	setCoreParameter("MonitorStatus", monitorStatus);
+	setParameter("MonitorStatus", monitorStatus);
 }
 
 std::string AddGtmAddressPoolRequest::getInstanceId()const
@@ -129,7 +129,7 @@ std::string AddGtmAddressPoolRequest::getInstanceId()const
 void AddGtmAddressPoolRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string AddGtmAddressPoolRequest::getUserClientIp()const
@@ -140,7 +140,7 @@ std::string AddGtmAddressPoolRequest::getUserClientIp()const
 void AddGtmAddressPoolRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string AddGtmAddressPoolRequest::getName()const
@@ -151,7 +151,7 @@ std::string AddGtmAddressPoolRequest::getName()const
 void AddGtmAddressPoolRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string AddGtmAddressPoolRequest::getProtocolType()const
@@ -162,7 +162,7 @@ std::string AddGtmAddressPoolRequest::getProtocolType()const
 void AddGtmAddressPoolRequest::setProtocolType(const std::string& protocolType)
 {
 	protocolType_ = protocolType;
-	setCoreParameter("ProtocolType", protocolType);
+	setParameter("ProtocolType", protocolType);
 }
 
 int AddGtmAddressPoolRequest::getInterval()const
@@ -173,7 +173,7 @@ int AddGtmAddressPoolRequest::getInterval()const
 void AddGtmAddressPoolRequest::setInterval(int interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setParameter("Interval", std::to_string(interval));
 }
 
 std::vector<AddGtmAddressPoolRequest::IspCityNode> AddGtmAddressPoolRequest::getIspCityNode()const
@@ -186,9 +186,9 @@ void AddGtmAddressPoolRequest::setIspCityNode(const std::vector<IspCityNode>& is
 	ispCityNode_ = ispCityNode;
 	for(int dep1 = 0; dep1!= ispCityNode.size(); dep1++) {
 		auto ispCityNodeObj = ispCityNode.at(dep1);
-		std::string ispCityNodeObjStr = "IspCityNode." + std::to_string(dep1);
-		setCoreParameter(ispCityNodeObjStr + ".CityCode", ispCityNodeObj.cityCode);
-		setCoreParameter(ispCityNodeObjStr + ".IspCode", ispCityNodeObj.ispCode);
+		std::string ispCityNodeObjStr = "IspCityNode." + std::to_string(dep1 + 1);
+		setParameter(ispCityNodeObjStr + ".CityCode", ispCityNodeObj.cityCode);
+		setParameter(ispCityNodeObjStr + ".IspCode", ispCityNodeObj.ispCode);
 	}
 }
 

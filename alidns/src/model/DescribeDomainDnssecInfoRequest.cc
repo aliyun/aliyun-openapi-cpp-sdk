@@ -35,7 +35,7 @@ std::string DescribeDomainDnssecInfoRequest::getDomainName()const
 void DescribeDomainDnssecInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainDnssecInfoRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string DescribeDomainDnssecInfoRequest::getUserClientIp()const
 void DescribeDomainDnssecInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeDomainDnssecInfoRequest::getLang()const
@@ -57,6 +57,6 @@ std::string DescribeDomainDnssecInfoRequest::getLang()const
 void DescribeDomainDnssecInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

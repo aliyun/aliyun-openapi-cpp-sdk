@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ALIDNS_EXPORT AddGtmMonitorRequest : public RpcServiceRequest
 			{
+			public:
 				struct IspCityNode
 				{
 					std::string cityCode;

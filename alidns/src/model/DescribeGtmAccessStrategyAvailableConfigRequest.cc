@@ -35,7 +35,7 @@ std::string DescribeGtmAccessStrategyAvailableConfigRequest::getInstanceId()cons
 void DescribeGtmAccessStrategyAvailableConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeGtmAccessStrategyAvailableConfigRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string DescribeGtmAccessStrategyAvailableConfigRequest::getUserClientIp()co
 void DescribeGtmAccessStrategyAvailableConfigRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeGtmAccessStrategyAvailableConfigRequest::getLang()const
@@ -57,6 +57,6 @@ std::string DescribeGtmAccessStrategyAvailableConfigRequest::getLang()const
 void DescribeGtmAccessStrategyAvailableConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

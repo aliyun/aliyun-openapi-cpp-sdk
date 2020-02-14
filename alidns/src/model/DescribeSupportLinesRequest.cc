@@ -35,7 +35,7 @@ std::string DescribeSupportLinesRequest::getDomainName()const
 void DescribeSupportLinesRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeSupportLinesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeSupportLinesRequest::getAccessKeyId()const
 void DescribeSupportLinesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSupportLinesRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string DescribeSupportLinesRequest::getUserClientIp()const
 void DescribeSupportLinesRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeSupportLinesRequest::getLang()const
@@ -68,6 +68,6 @@ std::string DescribeSupportLinesRequest::getLang()const
 void DescribeSupportLinesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

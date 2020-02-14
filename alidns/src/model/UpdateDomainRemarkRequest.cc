@@ -35,7 +35,7 @@ std::string UpdateDomainRemarkRequest::getDomainName()const
 void UpdateDomainRemarkRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string UpdateDomainRemarkRequest::getRemark()const
@@ -46,7 +46,7 @@ std::string UpdateDomainRemarkRequest::getRemark()const
 void UpdateDomainRemarkRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string UpdateDomainRemarkRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string UpdateDomainRemarkRequest::getAccessKeyId()const
 void UpdateDomainRemarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateDomainRemarkRequest::getUserClientIp()const
@@ -68,7 +68,7 @@ std::string UpdateDomainRemarkRequest::getUserClientIp()const
 void UpdateDomainRemarkRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string UpdateDomainRemarkRequest::getLang()const
@@ -79,6 +79,6 @@ std::string UpdateDomainRemarkRequest::getLang()const
 void UpdateDomainRemarkRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

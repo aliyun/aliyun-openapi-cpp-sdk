@@ -35,7 +35,7 @@ long DescribeDnsProductInstancesRequest::getPageNumber()const
 void DescribeDnsProductInstancesRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDnsProductInstancesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeDnsProductInstancesRequest::getAccessKeyId()const
 void DescribeDnsProductInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDnsProductInstancesRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string DescribeDnsProductInstancesRequest::getUserClientIp()const
 void DescribeDnsProductInstancesRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 long DescribeDnsProductInstancesRequest::getPageSize()const
@@ -68,7 +68,7 @@ long DescribeDnsProductInstancesRequest::getPageSize()const
 void DescribeDnsProductInstancesRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDnsProductInstancesRequest::getLang()const
@@ -79,7 +79,7 @@ std::string DescribeDnsProductInstancesRequest::getLang()const
 void DescribeDnsProductInstancesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeDnsProductInstancesRequest::getVersionCode()const
@@ -90,6 +90,6 @@ std::string DescribeDnsProductInstancesRequest::getVersionCode()const
 void DescribeDnsProductInstancesRequest::setVersionCode(const std::string& versionCode)
 {
 	versionCode_ = versionCode;
-	setCoreParameter("VersionCode", versionCode);
+	setParameter("VersionCode", versionCode);
 }
 

@@ -35,7 +35,7 @@ std::string AddDomainRequest::getGroupId()const
 void AddDomainRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string AddDomainRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string AddDomainRequest::getDomainName()const
 void AddDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string AddDomainRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string AddDomainRequest::getAccessKeyId()const
 void AddDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddDomainRequest::getResourceGroupId()const
@@ -68,7 +68,7 @@ std::string AddDomainRequest::getResourceGroupId()const
 void AddDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string AddDomainRequest::getUserClientIp()const
@@ -79,7 +79,7 @@ std::string AddDomainRequest::getUserClientIp()const
 void AddDomainRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string AddDomainRequest::getLang()const
@@ -90,6 +90,6 @@ std::string AddDomainRequest::getLang()const
 void AddDomainRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

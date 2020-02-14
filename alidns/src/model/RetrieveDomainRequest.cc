@@ -35,7 +35,7 @@ std::string RetrieveDomainRequest::getDomainName()const
 void RetrieveDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string RetrieveDomainRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string RetrieveDomainRequest::getUserClientIp()const
 void RetrieveDomainRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string RetrieveDomainRequest::getLang()const
@@ -57,6 +57,6 @@ std::string RetrieveDomainRequest::getLang()const
 void RetrieveDomainRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

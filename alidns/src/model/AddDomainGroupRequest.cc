@@ -35,7 +35,7 @@ std::string AddDomainGroupRequest::getGroupName()const
 void AddDomainGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string AddDomainGroupRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string AddDomainGroupRequest::getUserClientIp()const
 void AddDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string AddDomainGroupRequest::getLang()const
@@ -57,6 +57,6 @@ std::string AddDomainGroupRequest::getLang()const
 void AddDomainGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

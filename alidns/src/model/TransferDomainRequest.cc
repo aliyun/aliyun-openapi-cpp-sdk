@@ -35,7 +35,7 @@ std::string TransferDomainRequest::getDomainNames()const
 void TransferDomainRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setParameter("DomainNames", domainNames);
 }
 
 std::string TransferDomainRequest::getRemark()const
@@ -46,7 +46,7 @@ std::string TransferDomainRequest::getRemark()const
 void TransferDomainRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string TransferDomainRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string TransferDomainRequest::getAccessKeyId()const
 void TransferDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long TransferDomainRequest::getTargetUserId()const
@@ -68,7 +68,7 @@ long TransferDomainRequest::getTargetUserId()const
 void TransferDomainRequest::setTargetUserId(long targetUserId)
 {
 	targetUserId_ = targetUserId;
-	setCoreParameter("TargetUserId", std::to_string(targetUserId));
+	setParameter("TargetUserId", std::to_string(targetUserId));
 }
 
 std::string TransferDomainRequest::getUserClientIp()const
@@ -79,7 +79,7 @@ std::string TransferDomainRequest::getUserClientIp()const
 void TransferDomainRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string TransferDomainRequest::getLang()const
@@ -90,6 +90,6 @@ std::string TransferDomainRequest::getLang()const
 void TransferDomainRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

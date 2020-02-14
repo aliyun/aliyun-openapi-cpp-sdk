@@ -35,7 +35,7 @@ int PreviewGtmRecoveryPlanRequest::getPageNumber()const
 void PreviewGtmRecoveryPlanRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string PreviewGtmRecoveryPlanRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string PreviewGtmRecoveryPlanRequest::getUserClientIp()const
 void PreviewGtmRecoveryPlanRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 int PreviewGtmRecoveryPlanRequest::getPageSize()const
@@ -57,7 +57,7 @@ int PreviewGtmRecoveryPlanRequest::getPageSize()const
 void PreviewGtmRecoveryPlanRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 long PreviewGtmRecoveryPlanRequest::getRecoveryPlanId()const
@@ -68,7 +68,7 @@ long PreviewGtmRecoveryPlanRequest::getRecoveryPlanId()const
 void PreviewGtmRecoveryPlanRequest::setRecoveryPlanId(long recoveryPlanId)
 {
 	recoveryPlanId_ = recoveryPlanId;
-	setCoreParameter("RecoveryPlanId", std::to_string(recoveryPlanId));
+	setParameter("RecoveryPlanId", std::to_string(recoveryPlanId));
 }
 
 std::string PreviewGtmRecoveryPlanRequest::getLang()const
@@ -79,6 +79,6 @@ std::string PreviewGtmRecoveryPlanRequest::getLang()const
 void PreviewGtmRecoveryPlanRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

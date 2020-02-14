@@ -35,7 +35,7 @@ std::string ExecuteGtmRecoveryPlanRequest::getUserClientIp()const
 void ExecuteGtmRecoveryPlanRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 long ExecuteGtmRecoveryPlanRequest::getRecoveryPlanId()const
@@ -46,7 +46,7 @@ long ExecuteGtmRecoveryPlanRequest::getRecoveryPlanId()const
 void ExecuteGtmRecoveryPlanRequest::setRecoveryPlanId(long recoveryPlanId)
 {
 	recoveryPlanId_ = recoveryPlanId;
-	setCoreParameter("RecoveryPlanId", std::to_string(recoveryPlanId));
+	setParameter("RecoveryPlanId", std::to_string(recoveryPlanId));
 }
 
 std::string ExecuteGtmRecoveryPlanRequest::getLang()const
@@ -57,6 +57,6 @@ std::string ExecuteGtmRecoveryPlanRequest::getLang()const
 void ExecuteGtmRecoveryPlanRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

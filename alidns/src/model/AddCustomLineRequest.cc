@@ -35,7 +35,7 @@ std::string AddCustomLineRequest::getDomainName()const
 void AddCustomLineRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::vector<AddCustomLineRequest::IpSegment> AddCustomLineRequest::getIpSegment()const
@@ -48,9 +48,9 @@ void AddCustomLineRequest::setIpSegment(const std::vector<IpSegment>& ipSegment)
 	ipSegment_ = ipSegment;
 	for(int dep1 = 0; dep1!= ipSegment.size(); dep1++) {
 		auto ipSegmentObj = ipSegment.at(dep1);
-		std::string ipSegmentObjStr = "IpSegment." + std::to_string(dep1);
-		setCoreParameter(ipSegmentObjStr + ".EndIp", ipSegmentObj.endIp);
-		setCoreParameter(ipSegmentObjStr + ".StartIp", ipSegmentObj.startIp);
+		std::string ipSegmentObjStr = "IpSegment." + std::to_string(dep1 + 1);
+		setParameter(ipSegmentObjStr + ".EndIp", ipSegmentObj.endIp);
+		setParameter(ipSegmentObjStr + ".StartIp", ipSegmentObj.startIp);
 	}
 }
 
@@ -62,7 +62,7 @@ std::string AddCustomLineRequest::getUserClientIp()const
 void AddCustomLineRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string AddCustomLineRequest::getLineName()const
@@ -73,7 +73,7 @@ std::string AddCustomLineRequest::getLineName()const
 void AddCustomLineRequest::setLineName(const std::string& lineName)
 {
 	lineName_ = lineName;
-	setCoreParameter("LineName", lineName);
+	setParameter("LineName", lineName);
 }
 
 std::string AddCustomLineRequest::getLang()const
@@ -84,6 +84,6 @@ std::string AddCustomLineRequest::getLang()const
 void AddCustomLineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

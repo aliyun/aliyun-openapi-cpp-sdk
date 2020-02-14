@@ -35,7 +35,7 @@ std::string BindInstanceDomainsRequest::getDomainNames()const
 void BindInstanceDomainsRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setParameter("DomainNames", domainNames);
 }
 
 std::string BindInstanceDomainsRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string BindInstanceDomainsRequest::getInstanceId()const
 void BindInstanceDomainsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string BindInstanceDomainsRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string BindInstanceDomainsRequest::getUserClientIp()const
 void BindInstanceDomainsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string BindInstanceDomainsRequest::getLang()const
@@ -68,6 +68,6 @@ std::string BindInstanceDomainsRequest::getLang()const
 void BindInstanceDomainsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

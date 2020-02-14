@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ALIDNS_EXPORT OperateBatchDomainRequest : public RpcServiceRequest
 			{
+			public:
 				struct DomainRecordInfo
 				{
 					std::string rr;

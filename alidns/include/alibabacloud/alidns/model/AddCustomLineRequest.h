@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ALIDNS_EXPORT AddCustomLineRequest : public RpcServiceRequest
 			{
+			public:
 				struct IpSegment
 				{
 					std::string endIp;

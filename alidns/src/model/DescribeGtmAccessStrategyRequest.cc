@@ -35,7 +35,7 @@ std::string DescribeGtmAccessStrategyRequest::getUserClientIp()const
 void DescribeGtmAccessStrategyRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeGtmAccessStrategyRequest::getStrategyId()const
@@ -46,7 +46,7 @@ std::string DescribeGtmAccessStrategyRequest::getStrategyId()const
 void DescribeGtmAccessStrategyRequest::setStrategyId(const std::string& strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setParameter("StrategyId", strategyId);
 }
 
 std::string DescribeGtmAccessStrategyRequest::getLang()const
@@ -57,6 +57,6 @@ std::string DescribeGtmAccessStrategyRequest::getLang()const
 void DescribeGtmAccessStrategyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

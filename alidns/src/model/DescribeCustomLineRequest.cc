@@ -35,7 +35,7 @@ long DescribeCustomLineRequest::getLineId()const
 void DescribeCustomLineRequest::setLineId(long lineId)
 {
 	lineId_ = lineId;
-	setCoreParameter("LineId", std::to_string(lineId));
+	setParameter("LineId", std::to_string(lineId));
 }
 
 std::string DescribeCustomLineRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string DescribeCustomLineRequest::getUserClientIp()const
 void DescribeCustomLineRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeCustomLineRequest::getLang()const
@@ -57,6 +57,6 @@ std::string DescribeCustomLineRequest::getLang()const
 void DescribeCustomLineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

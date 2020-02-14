@@ -35,7 +35,7 @@ std::string DescribeBatchResultDetailRequest::getBatchType()const
 void DescribeBatchResultDetailRequest::setBatchType(const std::string& batchType)
 {
 	batchType_ = batchType;
-	setCoreParameter("BatchType", batchType);
+	setParameter("BatchType", batchType);
 }
 
 int DescribeBatchResultDetailRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeBatchResultDetailRequest::getPageNumber()const
 void DescribeBatchResultDetailRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeBatchResultDetailRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string DescribeBatchResultDetailRequest::getUserClientIp()const
 void DescribeBatchResultDetailRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 int DescribeBatchResultDetailRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeBatchResultDetailRequest::getPageSize()const
 void DescribeBatchResultDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeBatchResultDetailRequest::getLang()const
@@ -79,7 +79,7 @@ std::string DescribeBatchResultDetailRequest::getLang()const
 void DescribeBatchResultDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long DescribeBatchResultDetailRequest::getTaskId()const
@@ -90,7 +90,7 @@ long DescribeBatchResultDetailRequest::getTaskId()const
 void DescribeBatchResultDetailRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setParameter("TaskId", std::to_string(taskId));
 }
 
 std::string DescribeBatchResultDetailRequest::getStatus()const
@@ -101,6 +101,6 @@ std::string DescribeBatchResultDetailRequest::getStatus()const
 void DescribeBatchResultDetailRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

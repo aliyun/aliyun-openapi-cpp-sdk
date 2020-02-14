@@ -35,7 +35,7 @@ std::string UpdateGtmRecoveryPlanRequest::getFaultAddrPool()const
 void UpdateGtmRecoveryPlanRequest::setFaultAddrPool(const std::string& faultAddrPool)
 {
 	faultAddrPool_ = faultAddrPool;
-	setCoreParameter("FaultAddrPool", faultAddrPool);
+	setParameter("FaultAddrPool", faultAddrPool);
 }
 
 std::string UpdateGtmRecoveryPlanRequest::getRemark()const
@@ -46,7 +46,7 @@ std::string UpdateGtmRecoveryPlanRequest::getRemark()const
 void UpdateGtmRecoveryPlanRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string UpdateGtmRecoveryPlanRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string UpdateGtmRecoveryPlanRequest::getUserClientIp()const
 void UpdateGtmRecoveryPlanRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string UpdateGtmRecoveryPlanRequest::getName()const
@@ -68,7 +68,7 @@ std::string UpdateGtmRecoveryPlanRequest::getName()const
 void UpdateGtmRecoveryPlanRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long UpdateGtmRecoveryPlanRequest::getRecoveryPlanId()const
@@ -79,7 +79,7 @@ long UpdateGtmRecoveryPlanRequest::getRecoveryPlanId()const
 void UpdateGtmRecoveryPlanRequest::setRecoveryPlanId(long recoveryPlanId)
 {
 	recoveryPlanId_ = recoveryPlanId;
-	setCoreParameter("RecoveryPlanId", std::to_string(recoveryPlanId));
+	setParameter("RecoveryPlanId", std::to_string(recoveryPlanId));
 }
 
 std::string UpdateGtmRecoveryPlanRequest::getLang()const
@@ -90,6 +90,6 @@ std::string UpdateGtmRecoveryPlanRequest::getLang()const
 void UpdateGtmRecoveryPlanRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

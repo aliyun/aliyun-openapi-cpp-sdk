@@ -35,7 +35,7 @@ std::string SetGtmAccessModeRequest::getUserClientIp()const
 void SetGtmAccessModeRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SetGtmAccessModeRequest::getStrategyId()const
@@ -46,7 +46,7 @@ std::string SetGtmAccessModeRequest::getStrategyId()const
 void SetGtmAccessModeRequest::setStrategyId(const std::string& strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setParameter("StrategyId", strategyId);
 }
 
 std::string SetGtmAccessModeRequest::getLang()const
@@ -57,7 +57,7 @@ std::string SetGtmAccessModeRequest::getLang()const
 void SetGtmAccessModeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string SetGtmAccessModeRequest::getAccessMode()const
@@ -68,6 +68,6 @@ std::string SetGtmAccessModeRequest::getAccessMode()const
 void SetGtmAccessModeRequest::setAccessMode(const std::string& accessMode)
 {
 	accessMode_ = accessMode;
-	setCoreParameter("AccessMode", accessMode);
+	setParameter("AccessMode", accessMode);
 }
 

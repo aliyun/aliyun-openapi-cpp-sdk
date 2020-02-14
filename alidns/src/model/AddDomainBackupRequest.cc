@@ -35,7 +35,7 @@ std::string AddDomainBackupRequest::getDomainName()const
 void AddDomainBackupRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string AddDomainBackupRequest::getPeriodType()const
@@ -46,7 +46,7 @@ std::string AddDomainBackupRequest::getPeriodType()const
 void AddDomainBackupRequest::setPeriodType(const std::string& periodType)
 {
 	periodType_ = periodType;
-	setCoreParameter("PeriodType", periodType);
+	setParameter("PeriodType", periodType);
 }
 
 std::string AddDomainBackupRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string AddDomainBackupRequest::getAccessKeyId()const
 void AddDomainBackupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddDomainBackupRequest::getUserClientIp()const
@@ -68,7 +68,7 @@ std::string AddDomainBackupRequest::getUserClientIp()const
 void AddDomainBackupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string AddDomainBackupRequest::getLang()const
@@ -79,6 +79,6 @@ std::string AddDomainBackupRequest::getLang()const
 void AddDomainBackupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

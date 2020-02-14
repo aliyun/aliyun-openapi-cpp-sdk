@@ -35,7 +35,7 @@ int DescribeGtmRecoveryPlansRequest::getPageNumber()const
 void DescribeGtmRecoveryPlansRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGtmRecoveryPlansRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string DescribeGtmRecoveryPlansRequest::getUserClientIp()const
 void DescribeGtmRecoveryPlansRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 int DescribeGtmRecoveryPlansRequest::getPageSize()const
@@ -57,7 +57,7 @@ int DescribeGtmRecoveryPlansRequest::getPageSize()const
 void DescribeGtmRecoveryPlansRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGtmRecoveryPlansRequest::getLang()const
@@ -68,7 +68,7 @@ std::string DescribeGtmRecoveryPlansRequest::getLang()const
 void DescribeGtmRecoveryPlansRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeGtmRecoveryPlansRequest::getKeyword()const
@@ -79,6 +79,6 @@ std::string DescribeGtmRecoveryPlansRequest::getKeyword()const
 void DescribeGtmRecoveryPlansRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 

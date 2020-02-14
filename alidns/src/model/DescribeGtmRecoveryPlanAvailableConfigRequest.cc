@@ -35,7 +35,7 @@ std::string DescribeGtmRecoveryPlanAvailableConfigRequest::getUserClientIp()cons
 void DescribeGtmRecoveryPlanAvailableConfigRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeGtmRecoveryPlanAvailableConfigRequest::getLang()const
@@ -46,6 +46,6 @@ std::string DescribeGtmRecoveryPlanAvailableConfigRequest::getLang()const
 void DescribeGtmRecoveryPlanAvailableConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -35,7 +35,7 @@ std::string DescribeRecordLogsRequest::getDomainName()const
 void DescribeRecordLogsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeRecordLogsRequest::getStartDate()const
@@ -46,7 +46,7 @@ std::string DescribeRecordLogsRequest::getStartDate()const
 void DescribeRecordLogsRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 long DescribeRecordLogsRequest::getPageNumber()const
@@ -57,7 +57,7 @@ long DescribeRecordLogsRequest::getPageNumber()const
 void DescribeRecordLogsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeRecordLogsRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeRecordLogsRequest::getAccessKeyId()const
 void DescribeRecordLogsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRecordLogsRequest::getEndDate()const
@@ -79,7 +79,7 @@ std::string DescribeRecordLogsRequest::getEndDate()const
 void DescribeRecordLogsRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeRecordLogsRequest::getUserClientIp()const
@@ -90,7 +90,7 @@ std::string DescribeRecordLogsRequest::getUserClientIp()const
 void DescribeRecordLogsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 long DescribeRecordLogsRequest::getPageSize()const
@@ -101,7 +101,7 @@ long DescribeRecordLogsRequest::getPageSize()const
 void DescribeRecordLogsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRecordLogsRequest::getLang()const
@@ -112,7 +112,7 @@ std::string DescribeRecordLogsRequest::getLang()const
 void DescribeRecordLogsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeRecordLogsRequest::getKeyWord()const
@@ -123,6 +123,6 @@ std::string DescribeRecordLogsRequest::getKeyWord()const
 void DescribeRecordLogsRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
-	setCoreParameter("KeyWord", keyWord);
+	setParameter("KeyWord", keyWord);
 }
 

@@ -35,7 +35,7 @@ std::string DescribeGtmInstanceRequest::getInstanceId()const
 void DescribeGtmInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeGtmInstanceRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string DescribeGtmInstanceRequest::getUserClientIp()const
 void DescribeGtmInstanceRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeGtmInstanceRequest::getLang()const
@@ -57,7 +57,7 @@ std::string DescribeGtmInstanceRequest::getLang()const
 void DescribeGtmInstanceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool DescribeGtmInstanceRequest::getNeedDetailAttributes()const
@@ -68,6 +68,6 @@ bool DescribeGtmInstanceRequest::getNeedDetailAttributes()const
 void DescribeGtmInstanceRequest::setNeedDetailAttributes(bool needDetailAttributes)
 {
 	needDetailAttributes_ = needDetailAttributes;
-	setCoreParameter("NeedDetailAttributes", needDetailAttributes ? "true" : "false");
+	setParameter("NeedDetailAttributes", needDetailAttributes ? "true" : "false");
 }
 

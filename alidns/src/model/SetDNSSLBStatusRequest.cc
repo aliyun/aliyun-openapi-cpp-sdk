@@ -35,7 +35,7 @@ std::string SetDNSSLBStatusRequest::getDomainName()const
 void SetDNSSLBStatusRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SetDNSSLBStatusRequest::getType()const
@@ -46,7 +46,7 @@ std::string SetDNSSLBStatusRequest::getType()const
 void SetDNSSLBStatusRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string SetDNSSLBStatusRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string SetDNSSLBStatusRequest::getAccessKeyId()const
 void SetDNSSLBStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetDNSSLBStatusRequest::getUserClientIp()const
@@ -68,7 +68,7 @@ std::string SetDNSSLBStatusRequest::getUserClientIp()const
 void SetDNSSLBStatusRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SetDNSSLBStatusRequest::getSubDomain()const
@@ -79,7 +79,7 @@ std::string SetDNSSLBStatusRequest::getSubDomain()const
 void SetDNSSLBStatusRequest::setSubDomain(const std::string& subDomain)
 {
 	subDomain_ = subDomain;
-	setCoreParameter("SubDomain", subDomain);
+	setParameter("SubDomain", subDomain);
 }
 
 std::string SetDNSSLBStatusRequest::getLang()const
@@ -90,7 +90,7 @@ std::string SetDNSSLBStatusRequest::getLang()const
 void SetDNSSLBStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool SetDNSSLBStatusRequest::getOpen()const
@@ -101,6 +101,6 @@ bool SetDNSSLBStatusRequest::getOpen()const
 void SetDNSSLBStatusRequest::setOpen(bool open)
 {
 	open_ = open;
-	setCoreParameter("Open", open ? "true" : "false");
+	setParameter("Open", open ? "true" : "false");
 }
 

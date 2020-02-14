@@ -35,7 +35,7 @@ long DescribeRecordStatisticsSummaryRequest::getThreshold()const
 void DescribeRecordStatisticsSummaryRequest::setThreshold(long threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", std::to_string(threshold));
+	setParameter("Threshold", std::to_string(threshold));
 }
 
 std::string DescribeRecordStatisticsSummaryRequest::getStartDate()const
@@ -46,7 +46,7 @@ std::string DescribeRecordStatisticsSummaryRequest::getStartDate()const
 void DescribeRecordStatisticsSummaryRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 long DescribeRecordStatisticsSummaryRequest::getPageNumber()const
@@ -57,7 +57,7 @@ long DescribeRecordStatisticsSummaryRequest::getPageNumber()const
 void DescribeRecordStatisticsSummaryRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 long DescribeRecordStatisticsSummaryRequest::getPageSize()const
@@ -68,7 +68,7 @@ long DescribeRecordStatisticsSummaryRequest::getPageSize()const
 void DescribeRecordStatisticsSummaryRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRecordStatisticsSummaryRequest::getLang()const
@@ -79,7 +79,7 @@ std::string DescribeRecordStatisticsSummaryRequest::getLang()const
 void DescribeRecordStatisticsSummaryRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeRecordStatisticsSummaryRequest::getKeyword()const
@@ -90,7 +90,7 @@ std::string DescribeRecordStatisticsSummaryRequest::getKeyword()const
 void DescribeRecordStatisticsSummaryRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 std::string DescribeRecordStatisticsSummaryRequest::getDirection()const
@@ -101,7 +101,7 @@ std::string DescribeRecordStatisticsSummaryRequest::getDirection()const
 void DescribeRecordStatisticsSummaryRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setParameter("Direction", direction);
 }
 
 std::string DescribeRecordStatisticsSummaryRequest::getDomainName()const
@@ -112,7 +112,7 @@ std::string DescribeRecordStatisticsSummaryRequest::getDomainName()const
 void DescribeRecordStatisticsSummaryRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeRecordStatisticsSummaryRequest::getOrderBy()const
@@ -123,7 +123,7 @@ std::string DescribeRecordStatisticsSummaryRequest::getOrderBy()const
 void DescribeRecordStatisticsSummaryRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setParameter("OrderBy", orderBy);
 }
 
 std::string DescribeRecordStatisticsSummaryRequest::getEndDate()const
@@ -134,7 +134,7 @@ std::string DescribeRecordStatisticsSummaryRequest::getEndDate()const
 void DescribeRecordStatisticsSummaryRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeRecordStatisticsSummaryRequest::getUserClientIp()const
@@ -145,7 +145,7 @@ std::string DescribeRecordStatisticsSummaryRequest::getUserClientIp()const
 void DescribeRecordStatisticsSummaryRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeRecordStatisticsSummaryRequest::getSearchMode()const
@@ -156,6 +156,6 @@ std::string DescribeRecordStatisticsSummaryRequest::getSearchMode()const
 void DescribeRecordStatisticsSummaryRequest::setSearchMode(const std::string& searchMode)
 {
 	searchMode_ = searchMode;
-	setCoreParameter("SearchMode", searchMode);
+	setParameter("SearchMode", searchMode);
 }
 

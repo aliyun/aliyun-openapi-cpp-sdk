@@ -35,7 +35,7 @@ long UpdateCustomLineRequest::getLineId()const
 void UpdateCustomLineRequest::setLineId(long lineId)
 {
 	lineId_ = lineId;
-	setCoreParameter("LineId", std::to_string(lineId));
+	setParameter("LineId", std::to_string(lineId));
 }
 
 std::vector<UpdateCustomLineRequest::IpSegment> UpdateCustomLineRequest::getIpSegment()const
@@ -48,9 +48,9 @@ void UpdateCustomLineRequest::setIpSegment(const std::vector<IpSegment>& ipSegme
 	ipSegment_ = ipSegment;
 	for(int dep1 = 0; dep1!= ipSegment.size(); dep1++) {
 		auto ipSegmentObj = ipSegment.at(dep1);
-		std::string ipSegmentObjStr = "IpSegment." + std::to_string(dep1);
-		setCoreParameter(ipSegmentObjStr + ".EndIp", ipSegmentObj.endIp);
-		setCoreParameter(ipSegmentObjStr + ".StartIp", ipSegmentObj.startIp);
+		std::string ipSegmentObjStr = "IpSegment." + std::to_string(dep1 + 1);
+		setParameter(ipSegmentObjStr + ".EndIp", ipSegmentObj.endIp);
+		setParameter(ipSegmentObjStr + ".StartIp", ipSegmentObj.startIp);
 	}
 }
 
@@ -62,7 +62,7 @@ std::string UpdateCustomLineRequest::getUserClientIp()const
 void UpdateCustomLineRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string UpdateCustomLineRequest::getLineName()const
@@ -73,7 +73,7 @@ std::string UpdateCustomLineRequest::getLineName()const
 void UpdateCustomLineRequest::setLineName(const std::string& lineName)
 {
 	lineName_ = lineName;
-	setCoreParameter("LineName", lineName);
+	setParameter("LineName", lineName);
 }
 
 std::string UpdateCustomLineRequest::getLang()const
@@ -84,6 +84,6 @@ std::string UpdateCustomLineRequest::getLang()const
 void UpdateCustomLineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

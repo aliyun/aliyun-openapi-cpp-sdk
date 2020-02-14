@@ -35,7 +35,7 @@ std::string DescribeGtmInstanceAddressPoolRequest::getAddrPoolId()const
 void DescribeGtmInstanceAddressPoolRequest::setAddrPoolId(const std::string& addrPoolId)
 {
 	addrPoolId_ = addrPoolId;
-	setCoreParameter("AddrPoolId", addrPoolId);
+	setParameter("AddrPoolId", addrPoolId);
 }
 
 std::string DescribeGtmInstanceAddressPoolRequest::getUserClientIp()const
@@ -46,7 +46,7 @@ std::string DescribeGtmInstanceAddressPoolRequest::getUserClientIp()const
 void DescribeGtmInstanceAddressPoolRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeGtmInstanceAddressPoolRequest::getLang()const
@@ -57,6 +57,6 @@ std::string DescribeGtmInstanceAddressPoolRequest::getLang()const
 void DescribeGtmInstanceAddressPoolRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

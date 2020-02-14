@@ -37,17 +37,17 @@ void OperateBatchDomainRequest::setDomainRecordInfo(const std::vector<DomainReco
 	domainRecordInfo_ = domainRecordInfo;
 	for(int dep1 = 0; dep1!= domainRecordInfo.size(); dep1++) {
 		auto domainRecordInfoObj = domainRecordInfo.at(dep1);
-		std::string domainRecordInfoObjStr = "DomainRecordInfo." + std::to_string(dep1);
-		setCoreParameter(domainRecordInfoObjStr + ".Rr", domainRecordInfoObj.rr);
-		setCoreParameter(domainRecordInfoObjStr + ".NewType", domainRecordInfoObj.newType);
-		setCoreParameter(domainRecordInfoObjStr + ".NewValue", domainRecordInfoObj.newValue);
-		setCoreParameter(domainRecordInfoObjStr + ".Line", domainRecordInfoObj.line);
-		setCoreParameter(domainRecordInfoObjStr + ".Domain", domainRecordInfoObj.domain);
-		setCoreParameter(domainRecordInfoObjStr + ".Type", domainRecordInfoObj.type);
-		setCoreParameter(domainRecordInfoObjStr + ".Priority", std::to_string(domainRecordInfoObj.priority));
-		setCoreParameter(domainRecordInfoObjStr + ".Value", domainRecordInfoObj.value);
-		setCoreParameter(domainRecordInfoObjStr + ".Ttl", std::to_string(domainRecordInfoObj.ttl));
-		setCoreParameter(domainRecordInfoObjStr + ".NewRr", domainRecordInfoObj.newRr);
+		std::string domainRecordInfoObjStr = "DomainRecordInfo." + std::to_string(dep1 + 1);
+		setParameter(domainRecordInfoObjStr + ".Rr", domainRecordInfoObj.rr);
+		setParameter(domainRecordInfoObjStr + ".NewType", domainRecordInfoObj.newType);
+		setParameter(domainRecordInfoObjStr + ".NewValue", domainRecordInfoObj.newValue);
+		setParameter(domainRecordInfoObjStr + ".Line", domainRecordInfoObj.line);
+		setParameter(domainRecordInfoObjStr + ".Domain", domainRecordInfoObj.domain);
+		setParameter(domainRecordInfoObjStr + ".Type", domainRecordInfoObj.type);
+		setParameter(domainRecordInfoObjStr + ".Priority", std::to_string(domainRecordInfoObj.priority));
+		setParameter(domainRecordInfoObjStr + ".Value", domainRecordInfoObj.value);
+		setParameter(domainRecordInfoObjStr + ".Ttl", std::to_string(domainRecordInfoObj.ttl));
+		setParameter(domainRecordInfoObjStr + ".NewRr", domainRecordInfoObj.newRr);
 	}
 }
 
@@ -59,7 +59,7 @@ std::string OperateBatchDomainRequest::getType()const
 void OperateBatchDomainRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string OperateBatchDomainRequest::getUserClientIp()const
@@ -70,7 +70,7 @@ std::string OperateBatchDomainRequest::getUserClientIp()const
 void OperateBatchDomainRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string OperateBatchDomainRequest::getLang()const
@@ -81,6 +81,6 @@ std::string OperateBatchDomainRequest::getLang()const
 void OperateBatchDomainRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

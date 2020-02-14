@@ -35,7 +35,7 @@ std::string DeleteDomainRecordRequest::getAccessKeyId()const
 void DeleteDomainRecordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDomainRecordRequest::getRecordId()const
@@ -46,7 +46,7 @@ std::string DeleteDomainRecordRequest::getRecordId()const
 void DeleteDomainRecordRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", recordId);
+	setParameter("RecordId", recordId);
 }
 
 std::string DeleteDomainRecordRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string DeleteDomainRecordRequest::getUserClientIp()const
 void DeleteDomainRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteDomainRecordRequest::getLang()const
@@ -68,6 +68,6 @@ std::string DeleteDomainRecordRequest::getLang()const
 void DeleteDomainRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

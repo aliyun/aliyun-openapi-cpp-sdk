@@ -35,7 +35,7 @@ std::string DescribeCustomLinesRequest::getDomainName()const
 void DescribeCustomLinesRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeCustomLinesRequest::getPageNumber()const
@@ -46,7 +46,7 @@ long DescribeCustomLinesRequest::getPageNumber()const
 void DescribeCustomLinesRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeCustomLinesRequest::getUserClientIp()const
@@ -57,7 +57,7 @@ std::string DescribeCustomLinesRequest::getUserClientIp()const
 void DescribeCustomLinesRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 long DescribeCustomLinesRequest::getPageSize()const
@@ -68,7 +68,7 @@ long DescribeCustomLinesRequest::getPageSize()const
 void DescribeCustomLinesRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCustomLinesRequest::getLang()const
@@ -79,6 +79,6 @@ std::string DescribeCustomLinesRequest::getLang()const
 void DescribeCustomLinesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
