@@ -43,12 +43,15 @@ namespace AlibabaCloud
 				void setLimit(int limit);
 				std::string getFlowName()const;
 				void setFlowName(const std::string& flowName);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
 				std::string nextToken_;
 				std::string requestId_;
 				int limit_;
 				std::string flowName_;
+				std::string status_;
 
 			};
 		}

@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::GetExecutionHistoryRequest;
 
 GetExecutionHistoryRequest::GetExecutionHistoryRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "GetExecutionHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetExecutionHistoryRequest::~GetExecutionHistoryRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetExecutionHistoryRequest::getExecutionName()const
 void GetExecutionHistoryRequest::setExecutionName(const std::string& executionName)
 {
 	executionName_ = executionName;
-	setCoreParameter("ExecutionName", executionName);
+	setParameter("ExecutionName", executionName);
 }
 
 std::string GetExecutionHistoryRequest::getNextToken()const
@@ -44,7 +46,7 @@ std::string GetExecutionHistoryRequest::getNextToken()const
 void GetExecutionHistoryRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
-	setCoreParameter("NextToken", nextToken);
+	setParameter("NextToken", nextToken);
 }
 
 std::string GetExecutionHistoryRequest::getRequestId()const
@@ -55,7 +57,7 @@ std::string GetExecutionHistoryRequest::getRequestId()const
 void GetExecutionHistoryRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setParameter("RequestId", requestId);
 }
 
 int GetExecutionHistoryRequest::getLimit()const
@@ -66,7 +68,7 @@ int GetExecutionHistoryRequest::getLimit()const
 void GetExecutionHistoryRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 std::string GetExecutionHistoryRequest::getFlowName()const
@@ -77,6 +79,6 @@ std::string GetExecutionHistoryRequest::getFlowName()const
 void GetExecutionHistoryRequest::setFlowName(const std::string& flowName)
 {
 	flowName_ = flowName;
-	setCoreParameter("FlowName", flowName);
+	setParameter("FlowName", flowName);
 }
 

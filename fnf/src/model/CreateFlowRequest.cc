@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::CreateFlowRequest;
 
 CreateFlowRequest::CreateFlowRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "CreateFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFlowRequest::~CreateFlowRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateFlowRequest::getDescription()const
 void CreateFlowRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setBodyParameter("Description", description);
 }
 
 std::string CreateFlowRequest::getType()const
@@ -44,7 +46,7 @@ std::string CreateFlowRequest::getType()const
 void CreateFlowRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setBodyParameter("Type", type);
 }
 
 std::string CreateFlowRequest::getRequestId()const
@@ -55,7 +57,7 @@ std::string CreateFlowRequest::getRequestId()const
 void CreateFlowRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setParameter("RequestId", requestId);
 }
 
 std::string CreateFlowRequest::getRoleArn()const
@@ -66,7 +68,7 @@ std::string CreateFlowRequest::getRoleArn()const
 void CreateFlowRequest::setRoleArn(const std::string& roleArn)
 {
 	roleArn_ = roleArn;
-	setCoreParameter("RoleArn", roleArn);
+	setBodyParameter("RoleArn", roleArn);
 }
 
 std::string CreateFlowRequest::getName()const
@@ -77,7 +79,7 @@ std::string CreateFlowRequest::getName()const
 void CreateFlowRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setBodyParameter("Name", name);
 }
 
 std::string CreateFlowRequest::getDefinition()const
@@ -88,6 +90,6 @@ std::string CreateFlowRequest::getDefinition()const
 void CreateFlowRequest::setDefinition(const std::string& definition)
 {
 	definition_ = definition;
-	setCoreParameter("Definition", definition);
+	setBodyParameter("Definition", definition);
 }
 

@@ -20,10 +20,23 @@ using AlibabaCloud::Fnf::Model::StartExecutionRequest;
 
 StartExecutionRequest::StartExecutionRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "StartExecution")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartExecutionRequest::~StartExecutionRequest()
 {}
+
+std::string StartExecutionRequest::getCallbackFnFTaskToken()const
+{
+	return callbackFnFTaskToken_;
+}
+
+void StartExecutionRequest::setCallbackFnFTaskToken(const std::string& callbackFnFTaskToken)
+{
+	callbackFnFTaskToken_ = callbackFnFTaskToken;
+	setBodyParameter("CallbackFnFTaskToken", callbackFnFTaskToken);
+}
 
 std::string StartExecutionRequest::getExecutionName()const
 {
@@ -33,7 +46,7 @@ std::string StartExecutionRequest::getExecutionName()const
 void StartExecutionRequest::setExecutionName(const std::string& executionName)
 {
 	executionName_ = executionName;
-	setCoreParameter("ExecutionName", executionName);
+	setBodyParameter("ExecutionName", executionName);
 }
 
 std::string StartExecutionRequest::getInput()const
@@ -44,7 +57,7 @@ std::string StartExecutionRequest::getInput()const
 void StartExecutionRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setBodyParameter("Input", input);
 }
 
 std::string StartExecutionRequest::getRequestId()const
@@ -55,7 +68,7 @@ std::string StartExecutionRequest::getRequestId()const
 void StartExecutionRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setParameter("RequestId", requestId);
 }
 
 std::string StartExecutionRequest::getFlowName()const
@@ -66,6 +79,6 @@ std::string StartExecutionRequest::getFlowName()const
 void StartExecutionRequest::setFlowName(const std::string& flowName)
 {
 	flowName_ = flowName;
-	setCoreParameter("FlowName", flowName);
+	setBodyParameter("FlowName", flowName);
 }
 

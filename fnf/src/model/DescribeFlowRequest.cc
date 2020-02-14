@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::DescribeFlowRequest;
 
 DescribeFlowRequest::DescribeFlowRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "DescribeFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeFlowRequest::~DescribeFlowRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeFlowRequest::getRequestId()const
 void DescribeFlowRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setParameter("RequestId", requestId);
 }
 
 std::string DescribeFlowRequest::getName()const
@@ -44,6 +46,6 @@ std::string DescribeFlowRequest::getName()const
 void DescribeFlowRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

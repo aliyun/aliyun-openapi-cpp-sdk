@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::DeleteFlowRequest;
 
 DeleteFlowRequest::DeleteFlowRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "DeleteFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DeleteFlowRequest::~DeleteFlowRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteFlowRequest::getRequestId()const
 void DeleteFlowRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setParameter("RequestId", requestId);
 }
 
 std::string DeleteFlowRequest::getName()const
@@ -44,6 +46,6 @@ std::string DeleteFlowRequest::getName()const
 void DeleteFlowRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

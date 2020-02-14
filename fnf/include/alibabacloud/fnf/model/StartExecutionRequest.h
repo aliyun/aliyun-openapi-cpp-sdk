@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				StartExecutionRequest();
 				~StartExecutionRequest();
 
+				std::string getCallbackFnFTaskToken()const;
+				void setCallbackFnFTaskToken(const std::string& callbackFnFTaskToken);
 				std::string getExecutionName()const;
 				void setExecutionName(const std::string& executionName);
 				std::string getInput()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setFlowName(const std::string& flowName);
 
             private:
+				std::string callbackFnFTaskToken_;
 				std::string executionName_;
 				std::string input_;
 				std::string requestId_;

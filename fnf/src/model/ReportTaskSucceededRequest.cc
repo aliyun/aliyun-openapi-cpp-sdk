@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::ReportTaskSucceededRequest;
 
 ReportTaskSucceededRequest::ReportTaskSucceededRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "ReportTaskSucceeded")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportTaskSucceededRequest::~ReportTaskSucceededRequest()
 {}
@@ -33,7 +35,7 @@ std::string ReportTaskSucceededRequest::getOutput()const
 void ReportTaskSucceededRequest::setOutput(const std::string& output)
 {
 	output_ = output;
-	setCoreParameter("Output", output);
+	setBodyParameter("Output", output);
 }
 
 std::string ReportTaskSucceededRequest::getRequestId()const
@@ -44,7 +46,7 @@ std::string ReportTaskSucceededRequest::getRequestId()const
 void ReportTaskSucceededRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setParameter("RequestId", requestId);
 }
 
 std::string ReportTaskSucceededRequest::getTaskToken()const
@@ -55,6 +57,6 @@ std::string ReportTaskSucceededRequest::getTaskToken()const
 void ReportTaskSucceededRequest::setTaskToken(const std::string& taskToken)
 {
 	taskToken_ = taskToken;
-	setCoreParameter("TaskToken", taskToken);
+	setParameter("TaskToken", taskToken);
 }
 

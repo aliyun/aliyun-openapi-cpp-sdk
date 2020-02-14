@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::DescribeExecutionRequest;
 
 DescribeExecutionRequest::DescribeExecutionRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "DescribeExecution")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeExecutionRequest::~DescribeExecutionRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeExecutionRequest::getExecutionName()const
 void DescribeExecutionRequest::setExecutionName(const std::string& executionName)
 {
 	executionName_ = executionName;
-	setCoreParameter("ExecutionName", executionName);
+	setParameter("ExecutionName", executionName);
 }
 
 std::string DescribeExecutionRequest::getRequestId()const
@@ -44,7 +46,7 @@ std::string DescribeExecutionRequest::getRequestId()const
 void DescribeExecutionRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setParameter("RequestId", requestId);
 }
 
 std::string DescribeExecutionRequest::getFlowName()const
@@ -55,6 +57,6 @@ std::string DescribeExecutionRequest::getFlowName()const
 void DescribeExecutionRequest::setFlowName(const std::string& flowName)
 {
 	flowName_ = flowName;
-	setCoreParameter("FlowName", flowName);
+	setParameter("FlowName", flowName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::ListFlowsRequest;
 
 ListFlowsRequest::ListFlowsRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "ListFlows")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListFlowsRequest::~ListFlowsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListFlowsRequest::getNextToken()const
 void ListFlowsRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
-	setCoreParameter("NextToken", nextToken);
+	setParameter("NextToken", nextToken);
 }
 
 std::string ListFlowsRequest::getRequestId()const
@@ -44,7 +46,7 @@ std::string ListFlowsRequest::getRequestId()const
 void ListFlowsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setParameter("RequestId", requestId);
 }
 
 int ListFlowsRequest::getLimit()const
@@ -55,6 +57,6 @@ int ListFlowsRequest::getLimit()const
 void ListFlowsRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 

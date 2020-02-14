@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::ReportTaskFailedRequest;
 
 ReportTaskFailedRequest::ReportTaskFailedRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "ReportTaskFailed")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportTaskFailedRequest::~ReportTaskFailedRequest()
 {}
@@ -33,7 +35,7 @@ std::string ReportTaskFailedRequest::getCause()const
 void ReportTaskFailedRequest::setCause(const std::string& cause)
 {
 	cause_ = cause;
-	setCoreParameter("Cause", cause);
+	setBodyParameter("Cause", cause);
 }
 
 std::string ReportTaskFailedRequest::getError()const
@@ -44,7 +46,7 @@ std::string ReportTaskFailedRequest::getError()const
 void ReportTaskFailedRequest::setError(const std::string& error)
 {
 	error_ = error;
-	setCoreParameter("Error", error);
+	setBodyParameter("Error", error);
 }
 
 std::string ReportTaskFailedRequest::getRequestId()const
@@ -55,7 +57,7 @@ std::string ReportTaskFailedRequest::getRequestId()const
 void ReportTaskFailedRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setParameter("RequestId", requestId);
 }
 
 std::string ReportTaskFailedRequest::getTaskToken()const
@@ -66,6 +68,6 @@ std::string ReportTaskFailedRequest::getTaskToken()const
 void ReportTaskFailedRequest::setTaskToken(const std::string& taskToken)
 {
 	taskToken_ = taskToken;
-	setCoreParameter("TaskToken", taskToken);
+	setParameter("TaskToken", taskToken);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Fnf::Model::StopExecutionRequest;
 
 StopExecutionRequest::StopExecutionRequest() :
 	RpcServiceRequest("fnf", "2019-03-15", "StopExecution")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopExecutionRequest::~StopExecutionRequest()
 {}
@@ -33,7 +35,7 @@ std::string StopExecutionRequest::getExecutionName()const
 void StopExecutionRequest::setExecutionName(const std::string& executionName)
 {
 	executionName_ = executionName;
-	setCoreParameter("ExecutionName", executionName);
+	setBodyParameter("ExecutionName", executionName);
 }
 
 std::string StopExecutionRequest::getCause()const
@@ -44,7 +46,7 @@ std::string StopExecutionRequest::getCause()const
 void StopExecutionRequest::setCause(const std::string& cause)
 {
 	cause_ = cause;
-	setCoreParameter("Cause", cause);
+	setBodyParameter("Cause", cause);
 }
 
 std::string StopExecutionRequest::getError()const
@@ -55,7 +57,7 @@ std::string StopExecutionRequest::getError()const
 void StopExecutionRequest::setError(const std::string& error)
 {
 	error_ = error;
-	setCoreParameter("Error", error);
+	setBodyParameter("Error", error);
 }
 
 std::string StopExecutionRequest::getRequestId()const
@@ -66,7 +68,7 @@ std::string StopExecutionRequest::getRequestId()const
 void StopExecutionRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setParameter("RequestId", requestId);
 }
 
 std::string StopExecutionRequest::getFlowName()const
@@ -77,6 +79,6 @@ std::string StopExecutionRequest::getFlowName()const
 void StopExecutionRequest::setFlowName(const std::string& flowName)
 {
 	flowName_ = flowName;
-	setCoreParameter("FlowName", flowName);
+	setBodyParameter("FlowName", flowName);
 }
 
