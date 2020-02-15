@@ -987,6 +987,42 @@ PolardbClient::DescribeDBClusterPerformanceOutcomeCallable PolardbClient::descri
 	return task->get_future();
 }
 
+PolardbClient::DescribeDBClusterSSLOutcome PolardbClient::describeDBClusterSSL(const DescribeDBClusterSSLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBClusterSSLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBClusterSSLOutcome(DescribeDBClusterSSLResult(outcome.result()));
+	else
+		return DescribeDBClusterSSLOutcome(outcome.error());
+}
+
+void PolardbClient::describeDBClusterSSLAsync(const DescribeDBClusterSSLRequest& request, const DescribeDBClusterSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBClusterSSL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeDBClusterSSLOutcomeCallable PolardbClient::describeDBClusterSSLCallable(const DescribeDBClusterSSLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBClusterSSLOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBClusterSSL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeDBClustersOutcome PolardbClient::describeDBClusters(const DescribeDBClustersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +1701,42 @@ PolardbClient::ModifyDBClusterParametersOutcomeCallable PolardbClient::modifyDBC
 			[this, request]()
 			{
 			return this->modifyDBClusterParameters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::ModifyDBClusterSSLOutcome PolardbClient::modifyDBClusterSSL(const ModifyDBClusterSSLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBClusterSSLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBClusterSSLOutcome(ModifyDBClusterSSLResult(outcome.result()));
+	else
+		return ModifyDBClusterSSLOutcome(outcome.error());
+}
+
+void PolardbClient::modifyDBClusterSSLAsync(const ModifyDBClusterSSLRequest& request, const ModifyDBClusterSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBClusterSSL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::ModifyDBClusterSSLOutcomeCallable PolardbClient::modifyDBClusterSSLCallable(const ModifyDBClusterSSLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBClusterSSLOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBClusterSSL(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

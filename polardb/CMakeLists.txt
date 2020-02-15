@@ -73,6 +73,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDBClusterParametersResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterPerformanceRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClusterPerformanceResult.h
+	include/alibabacloud/polardb/model/DescribeDBClusterSSLRequest.h
+	include/alibabacloud/polardb/model/DescribeDBClusterSSLResult.h
 	include/alibabacloud/polardb/model/DescribeDBClustersRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClustersResult.h
 	include/alibabacloud/polardb/model/DescribeDBNodePerformanceRequest.h
@@ -111,6 +113,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyDBClusterMigrationResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterParametersRequest.h
 	include/alibabacloud/polardb/model/ModifyDBClusterParametersResult.h
+	include/alibabacloud/polardb/model/ModifyDBClusterSSLRequest.h
+	include/alibabacloud/polardb/model/ModifyDBClusterSSLResult.h
 	include/alibabacloud/polardb/model/ModifyDBDescriptionRequest.h
 	include/alibabacloud/polardb/model/ModifyDBDescriptionResult.h
 	include/alibabacloud/polardb/model/ModifyDBEndpointAddressRequest.h
@@ -182,6 +186,8 @@ set(polardb_src
 	src/model/DescribeDBClusterParametersResult.cc
 	src/model/DescribeDBClusterPerformanceRequest.cc
 	src/model/DescribeDBClusterPerformanceResult.cc
+	src/model/DescribeDBClusterSSLRequest.cc
+	src/model/DescribeDBClusterSSLResult.cc
 	src/model/DescribeDBClustersRequest.cc
 	src/model/DescribeDBClustersResult.cc
 	src/model/DescribeDBNodePerformanceRequest.cc
@@ -220,6 +226,8 @@ set(polardb_src
 	src/model/ModifyDBClusterMigrationResult.cc
 	src/model/ModifyDBClusterParametersRequest.cc
 	src/model/ModifyDBClusterParametersResult.cc
+	src/model/ModifyDBClusterSSLRequest.cc
+	src/model/ModifyDBClusterSSLResult.cc
 	src/model/ModifyDBDescriptionRequest.cc
 	src/model/ModifyDBDescriptionResult.cc
 	src/model/ModifyDBEndpointAddressRequest.cc

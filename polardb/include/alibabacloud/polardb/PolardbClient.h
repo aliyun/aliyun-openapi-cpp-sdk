@@ -74,6 +74,8 @@
 #include "model/DescribeDBClusterParametersResult.h"
 #include "model/DescribeDBClusterPerformanceRequest.h"
 #include "model/DescribeDBClusterPerformanceResult.h"
+#include "model/DescribeDBClusterSSLRequest.h"
+#include "model/DescribeDBClusterSSLResult.h"
 #include "model/DescribeDBClustersRequest.h"
 #include "model/DescribeDBClustersResult.h"
 #include "model/DescribeDBNodePerformanceRequest.h"
@@ -112,6 +114,8 @@
 #include "model/ModifyDBClusterMigrationResult.h"
 #include "model/ModifyDBClusterParametersRequest.h"
 #include "model/ModifyDBClusterParametersResult.h"
+#include "model/ModifyDBClusterSSLRequest.h"
+#include "model/ModifyDBClusterSSLResult.h"
 #include "model/ModifyDBDescriptionRequest.h"
 #include "model/ModifyDBDescriptionResult.h"
 #include "model/ModifyDBEndpointAddressRequest.h"
@@ -215,6 +219,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBClusterPerformanceResult> DescribeDBClusterPerformanceOutcome;
 			typedef std::future<DescribeDBClusterPerformanceOutcome> DescribeDBClusterPerformanceOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterPerformanceRequest&, const DescribeDBClusterPerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterPerformanceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBClusterSSLResult> DescribeDBClusterSSLOutcome;
+			typedef std::future<DescribeDBClusterSSLOutcome> DescribeDBClusterSSLOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterSSLRequest&, const DescribeDBClusterSSLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterSSLAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClustersResult> DescribeDBClustersOutcome;
 			typedef std::future<DescribeDBClustersOutcome> DescribeDBClustersOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClustersRequest&, const DescribeDBClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClustersAsyncHandler;
@@ -272,6 +279,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBClusterParametersResult> ModifyDBClusterParametersOutcome;
 			typedef std::future<ModifyDBClusterParametersOutcome> ModifyDBClusterParametersOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterParametersRequest&, const ModifyDBClusterParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterParametersAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBClusterSSLResult> ModifyDBClusterSSLOutcome;
+			typedef std::future<ModifyDBClusterSSLOutcome> ModifyDBClusterSSLOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterSSLRequest&, const ModifyDBClusterSSLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterSSLAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBDescriptionResult> ModifyDBDescriptionOutcome;
 			typedef std::future<ModifyDBDescriptionOutcome> ModifyDBDescriptionOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBDescriptionRequest&, const ModifyDBDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBDescriptionAsyncHandler;
@@ -379,6 +389,9 @@ namespace AlibabaCloud
 			DescribeDBClusterPerformanceOutcome describeDBClusterPerformance(const Model::DescribeDBClusterPerformanceRequest &request)const;
 			void describeDBClusterPerformanceAsync(const Model::DescribeDBClusterPerformanceRequest& request, const DescribeDBClusterPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterPerformanceOutcomeCallable describeDBClusterPerformanceCallable(const Model::DescribeDBClusterPerformanceRequest& request) const;
+			DescribeDBClusterSSLOutcome describeDBClusterSSL(const Model::DescribeDBClusterSSLRequest &request)const;
+			void describeDBClusterSSLAsync(const Model::DescribeDBClusterSSLRequest& request, const DescribeDBClusterSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBClusterSSLOutcomeCallable describeDBClusterSSLCallable(const Model::DescribeDBClusterSSLRequest& request) const;
 			DescribeDBClustersOutcome describeDBClusters(const Model::DescribeDBClustersRequest &request)const;
 			void describeDBClustersAsync(const Model::DescribeDBClustersRequest& request, const DescribeDBClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClustersOutcomeCallable describeDBClustersCallable(const Model::DescribeDBClustersRequest& request) const;
@@ -436,6 +449,9 @@ namespace AlibabaCloud
 			ModifyDBClusterParametersOutcome modifyDBClusterParameters(const Model::ModifyDBClusterParametersRequest &request)const;
 			void modifyDBClusterParametersAsync(const Model::ModifyDBClusterParametersRequest& request, const ModifyDBClusterParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterParametersOutcomeCallable modifyDBClusterParametersCallable(const Model::ModifyDBClusterParametersRequest& request) const;
+			ModifyDBClusterSSLOutcome modifyDBClusterSSL(const Model::ModifyDBClusterSSLRequest &request)const;
+			void modifyDBClusterSSLAsync(const Model::ModifyDBClusterSSLRequest& request, const ModifyDBClusterSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBClusterSSLOutcomeCallable modifyDBClusterSSLCallable(const Model::ModifyDBClusterSSLRequest& request) const;
 			ModifyDBDescriptionOutcome modifyDBDescription(const Model::ModifyDBDescriptionRequest &request)const;
 			void modifyDBDescriptionAsync(const Model::ModifyDBDescriptionRequest& request, const ModifyDBDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBDescriptionOutcomeCallable modifyDBDescriptionCallable(const Model::ModifyDBDescriptionRequest& request) const;
