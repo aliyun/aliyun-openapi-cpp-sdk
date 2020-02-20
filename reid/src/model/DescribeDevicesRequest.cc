@@ -35,6 +35,6 @@ long DescribeDevicesRequest::getStoreId()const
 void DescribeDevicesRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 

@@ -35,7 +35,7 @@ long ListPersonByImageRequest::getStoreId()const
 void ListPersonByImageRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
 std::string ListPersonByImageRequest::getImageUrl()const
@@ -46,6 +46,6 @@ std::string ListPersonByImageRequest::getImageUrl()const
 void ListPersonByImageRequest::setImageUrl(const std::string& imageUrl)
 {
 	imageUrl_ = imageUrl;
-	setCoreParameter("ImageUrl", imageUrl);
+	setBodyParameter("ImageUrl", imageUrl);
 }
 

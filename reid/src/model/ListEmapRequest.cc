@@ -35,6 +35,6 @@ long ListEmapRequest::getStoreId()const
 void ListEmapRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 

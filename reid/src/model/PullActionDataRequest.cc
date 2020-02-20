@@ -35,7 +35,7 @@ long PullActionDataRequest::getStoreId()const
 void PullActionDataRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
 long PullActionDataRequest::getEndMessageId()const
@@ -46,7 +46,7 @@ long PullActionDataRequest::getEndMessageId()const
 void PullActionDataRequest::setEndMessageId(long endMessageId)
 {
 	endMessageId_ = endMessageId;
-	setCoreParameter("EndMessageId", std::to_string(endMessageId));
+	setBodyParameter("EndMessageId", std::to_string(endMessageId));
 }
 
 int PullActionDataRequest::getLimit()const
@@ -57,7 +57,7 @@ int PullActionDataRequest::getLimit()const
 void PullActionDataRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setBodyParameter("Limit", std::to_string(limit));
 }
 
 long PullActionDataRequest::getStartMessageId()const
@@ -68,6 +68,6 @@ long PullActionDataRequest::getStartMessageId()const
 void PullActionDataRequest::setStartMessageId(long startMessageId)
 {
 	startMessageId_ = startMessageId;
-	setCoreParameter("StartMessageId", std::to_string(startMessageId));
+	setBodyParameter("StartMessageId", std::to_string(startMessageId));
 }
 

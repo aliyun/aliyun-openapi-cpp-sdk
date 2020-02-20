@@ -35,7 +35,7 @@ std::string DescribeHeatMapRequest::getDate()const
 void DescribeHeatMapRequest::setDate(const std::string& date)
 {
 	date_ = date;
-	setCoreParameter("Date", date);
+	setBodyParameter("Date", date);
 }
 
 long DescribeHeatMapRequest::getStoreId()const
@@ -46,7 +46,7 @@ long DescribeHeatMapRequest::getStoreId()const
 void DescribeHeatMapRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
 long DescribeHeatMapRequest::getEmapId()const
@@ -57,6 +57,6 @@ long DescribeHeatMapRequest::getEmapId()const
 void DescribeHeatMapRequest::setEmapId(long emapId)
 {
 	emapId_ = emapId;
-	setCoreParameter("EmapId", std::to_string(emapId));
+	setBodyParameter("EmapId", std::to_string(emapId));
 }
 

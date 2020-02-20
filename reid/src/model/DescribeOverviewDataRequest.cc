@@ -35,7 +35,7 @@ std::string DescribeOverviewDataRequest::getDate()const
 void DescribeOverviewDataRequest::setDate(const std::string& date)
 {
 	date_ = date;
-	setCoreParameter("Date", date);
+	setBodyParameter("Date", date);
 }
 
 std::string DescribeOverviewDataRequest::getStoreIds()const
@@ -46,6 +46,6 @@ std::string DescribeOverviewDataRequest::getStoreIds()const
 void DescribeOverviewDataRequest::setStoreIds(const std::string& storeIds)
 {
 	storeIds_ = storeIds;
-	setCoreParameter("StoreIds", storeIds);
+	setBodyParameter("StoreIds", storeIds);
 }
 

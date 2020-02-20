@@ -35,7 +35,7 @@ std::string DescribeCustomerFlowByLocationRequest::getStartDate()const
 void DescribeCustomerFlowByLocationRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setBodyParameter("StartDate", startDate);
 }
 
 long DescribeCustomerFlowByLocationRequest::getStoreId()const
@@ -46,7 +46,7 @@ long DescribeCustomerFlowByLocationRequest::getStoreId()const
 void DescribeCustomerFlowByLocationRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
 long DescribeCustomerFlowByLocationRequest::getMinCount()const
@@ -57,7 +57,7 @@ long DescribeCustomerFlowByLocationRequest::getMinCount()const
 void DescribeCustomerFlowByLocationRequest::setMinCount(long minCount)
 {
 	minCount_ = minCount;
-	setCoreParameter("MinCount", std::to_string(minCount));
+	setBodyParameter("MinCount", std::to_string(minCount));
 }
 
 long DescribeCustomerFlowByLocationRequest::getParentAmount()const
@@ -68,7 +68,7 @@ long DescribeCustomerFlowByLocationRequest::getParentAmount()const
 void DescribeCustomerFlowByLocationRequest::setParentAmount(long parentAmount)
 {
 	parentAmount_ = parentAmount;
-	setCoreParameter("ParentAmount", std::to_string(parentAmount));
+	setBodyParameter("ParentAmount", std::to_string(parentAmount));
 }
 
 long DescribeCustomerFlowByLocationRequest::getMaxCount()const
@@ -79,7 +79,7 @@ long DescribeCustomerFlowByLocationRequest::getMaxCount()const
 void DescribeCustomerFlowByLocationRequest::setMaxCount(long maxCount)
 {
 	maxCount_ = maxCount;
-	setCoreParameter("MaxCount", std::to_string(maxCount));
+	setBodyParameter("MaxCount", std::to_string(maxCount));
 }
 
 std::string DescribeCustomerFlowByLocationRequest::getEndDate()const
@@ -90,7 +90,7 @@ std::string DescribeCustomerFlowByLocationRequest::getEndDate()const
 void DescribeCustomerFlowByLocationRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setBodyParameter("EndDate", endDate);
 }
 
 long DescribeCustomerFlowByLocationRequest::getLocationId()const
@@ -101,7 +101,7 @@ long DescribeCustomerFlowByLocationRequest::getLocationId()const
 void DescribeCustomerFlowByLocationRequest::setLocationId(long locationId)
 {
 	locationId_ = locationId;
-	setCoreParameter("LocationId", std::to_string(locationId));
+	setBodyParameter("LocationId", std::to_string(locationId));
 }
 
 std::string DescribeCustomerFlowByLocationRequest::getParentLocationIds()const
@@ -112,6 +112,6 @@ std::string DescribeCustomerFlowByLocationRequest::getParentLocationIds()const
 void DescribeCustomerFlowByLocationRequest::setParentLocationIds(const std::string& parentLocationIds)
 {
 	parentLocationIds_ = parentLocationIds;
-	setCoreParameter("ParentLocationIds", parentLocationIds);
+	setBodyParameter("ParentLocationIds", parentLocationIds);
 }
 

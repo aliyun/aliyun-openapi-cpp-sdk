@@ -35,7 +35,7 @@ std::string DescribeImageUrlsRequest::getOriginUrls()const
 void DescribeImageUrlsRequest::setOriginUrls(const std::string& originUrls)
 {
 	originUrls_ = originUrls;
-	setCoreParameter("OriginUrls", originUrls);
+	setBodyParameter("OriginUrls", originUrls);
 }
 
 long DescribeImageUrlsRequest::getStoreId()const
@@ -46,7 +46,7 @@ long DescribeImageUrlsRequest::getStoreId()const
 void DescribeImageUrlsRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
 std::string DescribeImageUrlsRequest::getObjectKeys()const
@@ -57,6 +57,6 @@ std::string DescribeImageUrlsRequest::getObjectKeys()const
 void DescribeImageUrlsRequest::setObjectKeys(const std::string& objectKeys)
 {
 	objectKeys_ = objectKeys;
-	setCoreParameter("ObjectKeys", objectKeys);
+	setBodyParameter("ObjectKeys", objectKeys);
 }
 

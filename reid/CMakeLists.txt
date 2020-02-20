@@ -43,6 +43,8 @@ set(reid_public_header_model
 	include/alibabacloud/reid/model/ListEmapResult.h
 	include/alibabacloud/reid/model/ListLocationRequest.h
 	include/alibabacloud/reid/model/ListLocationResult.h
+	include/alibabacloud/reid/model/ListMaskDetectionResultsRequest.h
+	include/alibabacloud/reid/model/ListMaskDetectionResultsResult.h
 	include/alibabacloud/reid/model/ListPersonByImageRequest.h
 	include/alibabacloud/reid/model/ListPersonByImageResult.h
 	include/alibabacloud/reid/model/ListStoreRequest.h
@@ -74,6 +76,8 @@ set(reid_src
 	src/model/ListEmapResult.cc
 	src/model/ListLocationRequest.cc
 	src/model/ListLocationResult.cc
+	src/model/ListMaskDetectionResultsRequest.cc
+	src/model/ListMaskDetectionResultsResult.cc
 	src/model/ListPersonByImageRequest.cc
 	src/model/ListPersonByImageResult.cc
 	src/model/ListStoreRequest.cc

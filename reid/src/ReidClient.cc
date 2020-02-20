@@ -31,21 +31,21 @@ ReidClient::ReidClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.0.0");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "reid");
 }
 
 ReidClient::ReidClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.0.0");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "reid");
 }
 
 ReidClient::ReidClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.0.0");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "reid");
 }
 
 ReidClient::~ReidClient()
@@ -441,6 +441,42 @@ ReidClient::ListLocationOutcomeCallable ReidClient::listLocationCallable(const L
 			[this, request]()
 			{
 			return this->listLocation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ReidClient::ListMaskDetectionResultsOutcome ReidClient::listMaskDetectionResults(const ListMaskDetectionResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMaskDetectionResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMaskDetectionResultsOutcome(ListMaskDetectionResultsResult(outcome.result()));
+	else
+		return ListMaskDetectionResultsOutcome(outcome.error());
+}
+
+void ReidClient::listMaskDetectionResultsAsync(const ListMaskDetectionResultsRequest& request, const ListMaskDetectionResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMaskDetectionResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ReidClient::ListMaskDetectionResultsOutcomeCallable ReidClient::listMaskDetectionResultsCallable(const ListMaskDetectionResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMaskDetectionResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->listMaskDetectionResults(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

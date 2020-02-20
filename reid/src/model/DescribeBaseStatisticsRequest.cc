@@ -35,7 +35,7 @@ std::string DescribeBaseStatisticsRequest::getDate()const
 void DescribeBaseStatisticsRequest::setDate(const std::string& date)
 {
 	date_ = date;
-	setCoreParameter("Date", date);
+	setBodyParameter("Date", date);
 }
 
 std::string DescribeBaseStatisticsRequest::getExtraStatisticTypes()const
@@ -46,7 +46,7 @@ std::string DescribeBaseStatisticsRequest::getExtraStatisticTypes()const
 void DescribeBaseStatisticsRequest::setExtraStatisticTypes(const std::string& extraStatisticTypes)
 {
 	extraStatisticTypes_ = extraStatisticTypes;
-	setCoreParameter("ExtraStatisticTypes", extraStatisticTypes);
+	setBodyParameter("ExtraStatisticTypes", extraStatisticTypes);
 }
 
 long DescribeBaseStatisticsRequest::getStoreId()const
@@ -57,7 +57,7 @@ long DescribeBaseStatisticsRequest::getStoreId()const
 void DescribeBaseStatisticsRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
 std::string DescribeBaseStatisticsRequest::getSummaryType()const
@@ -68,7 +68,7 @@ std::string DescribeBaseStatisticsRequest::getSummaryType()const
 void DescribeBaseStatisticsRequest::setSummaryType(const std::string& summaryType)
 {
 	summaryType_ = summaryType;
-	setCoreParameter("SummaryType", summaryType);
+	setBodyParameter("SummaryType", summaryType);
 }
 
 long DescribeBaseStatisticsRequest::getLocationId()const
@@ -79,6 +79,6 @@ long DescribeBaseStatisticsRequest::getLocationId()const
 void DescribeBaseStatisticsRequest::setLocationId(long locationId)
 {
 	locationId_ = locationId;
-	setCoreParameter("LocationId", std::to_string(locationId));
+	setBodyParameter("LocationId", std::to_string(locationId));
 }
 

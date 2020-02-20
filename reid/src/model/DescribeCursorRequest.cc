@@ -35,7 +35,7 @@ long DescribeCursorRequest::getStoreId()const
 void DescribeCursorRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
 std::string DescribeCursorRequest::getTime()const
@@ -46,6 +46,6 @@ std::string DescribeCursorRequest::getTime()const
 void DescribeCursorRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setCoreParameter("Time", time);
+	setBodyParameter("Time", time);
 }
 

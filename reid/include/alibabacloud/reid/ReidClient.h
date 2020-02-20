@@ -44,6 +44,8 @@
 #include "model/ListEmapResult.h"
 #include "model/ListLocationRequest.h"
 #include "model/ListLocationResult.h"
+#include "model/ListMaskDetectionResultsRequest.h"
+#include "model/ListMaskDetectionResultsResult.h"
 #include "model/ListPersonByImageRequest.h"
 #include "model/ListPersonByImageResult.h"
 #include "model/ListStoreRequest.h"
@@ -92,6 +94,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListLocationResult> ListLocationOutcome;
 			typedef std::future<ListLocationOutcome> ListLocationOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::ListLocationRequest&, const ListLocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLocationAsyncHandler;
+			typedef Outcome<Error, Model::ListMaskDetectionResultsResult> ListMaskDetectionResultsOutcome;
+			typedef std::future<ListMaskDetectionResultsOutcome> ListMaskDetectionResultsOutcomeCallable;
+			typedef std::function<void(const ReidClient*, const Model::ListMaskDetectionResultsRequest&, const ListMaskDetectionResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMaskDetectionResultsAsyncHandler;
 			typedef Outcome<Error, Model::ListPersonByImageResult> ListPersonByImageOutcome;
 			typedef std::future<ListPersonByImageOutcome> ListPersonByImageOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::ListPersonByImageRequest&, const ListPersonByImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonByImageAsyncHandler;
@@ -139,6 +144,9 @@ namespace AlibabaCloud
 			ListLocationOutcome listLocation(const Model::ListLocationRequest &request)const;
 			void listLocationAsync(const Model::ListLocationRequest& request, const ListLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListLocationOutcomeCallable listLocationCallable(const Model::ListLocationRequest& request) const;
+			ListMaskDetectionResultsOutcome listMaskDetectionResults(const Model::ListMaskDetectionResultsRequest &request)const;
+			void listMaskDetectionResultsAsync(const Model::ListMaskDetectionResultsRequest& request, const ListMaskDetectionResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMaskDetectionResultsOutcomeCallable listMaskDetectionResultsCallable(const Model::ListMaskDetectionResultsRequest& request) const;
 			ListPersonByImageOutcome listPersonByImage(const Model::ListPersonByImageRequest &request)const;
 			void listPersonByImageAsync(const Model::ListPersonByImageRequest& request, const ListPersonByImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonByImageOutcomeCallable listPersonByImageCallable(const Model::ListPersonByImageRequest& request) const;

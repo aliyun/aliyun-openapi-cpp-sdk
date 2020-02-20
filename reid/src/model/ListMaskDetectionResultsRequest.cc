@@ -14,82 +14,71 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/reid/model/ListActionDataRequest.h>
+#include <alibabacloud/reid/model/ListMaskDetectionResultsRequest.h>
 
-using AlibabaCloud::Reid::Model::ListActionDataRequest;
+using AlibabaCloud::Reid::Model::ListMaskDetectionResultsRequest;
 
-ListActionDataRequest::ListActionDataRequest() :
-	RpcServiceRequest("reid", "2019-09-28", "ListActionData")
+ListMaskDetectionResultsRequest::ListMaskDetectionResultsRequest() :
+	RpcServiceRequest("reid", "2019-09-28", "ListMaskDetectionResults")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-ListActionDataRequest::~ListActionDataRequest()
+ListMaskDetectionResultsRequest::~ListMaskDetectionResultsRequest()
 {}
 
-long ListActionDataRequest::getEndTime()const
+long ListMaskDetectionResultsRequest::getEndTime()const
 {
 	return endTime_;
 }
 
-void ListActionDataRequest::setEndTime(long endTime)
+void ListMaskDetectionResultsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
 	setBodyParameter("EndTime", std::to_string(endTime));
 }
 
-long ListActionDataRequest::getStartTime()const
+long ListMaskDetectionResultsRequest::getStartTime()const
 {
 	return startTime_;
 }
 
-void ListActionDataRequest::setStartTime(long startTime)
+void ListMaskDetectionResultsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
 	setBodyParameter("StartTime", std::to_string(startTime));
 }
 
-long ListActionDataRequest::getStoreId()const
+long ListMaskDetectionResultsRequest::getStoreId()const
 {
 	return storeId_;
 }
 
-void ListActionDataRequest::setStoreId(long storeId)
+void ListMaskDetectionResultsRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
 	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
-int ListActionDataRequest::getPageNumber()const
+int ListMaskDetectionResultsRequest::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void ListActionDataRequest::setPageNumber(int pageNumber)
+void ListMaskDetectionResultsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setBodyParameter("PageNumber", std::to_string(pageNumber));
 }
 
-int ListActionDataRequest::getPageSize()const
+int ListMaskDetectionResultsRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void ListActionDataRequest::setPageSize(int pageSize)
+void ListMaskDetectionResultsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setBodyParameter("PageSize", std::to_string(pageSize));
-}
-
-bool ListActionDataRequest::getFilterInvalidData()const
-{
-	return filterInvalidData_;
-}
-
-void ListActionDataRequest::setFilterInvalidData(bool filterInvalidData)
-{
-	filterInvalidData_ = filterInvalidData;
-	setBodyParameter("FilterInvalidData", filterInvalidData ? "true" : "false");
 }
 

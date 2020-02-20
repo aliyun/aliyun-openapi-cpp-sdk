@@ -35,7 +35,7 @@ long ImportSpecialPersonnelRequest::getUkId()const
 void ImportSpecialPersonnelRequest::setUkId(long ukId)
 {
 	ukId_ = ukId;
-	setCoreParameter("UkId", std::to_string(ukId));
+	setBodyParameter("UkId", std::to_string(ukId));
 }
 
 std::string ImportSpecialPersonnelRequest::getDescription()const
@@ -46,7 +46,7 @@ std::string ImportSpecialPersonnelRequest::getDescription()const
 void ImportSpecialPersonnelRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setBodyParameter("Description", description);
 }
 
 std::string ImportSpecialPersonnelRequest::getExternalId()const
@@ -57,7 +57,7 @@ std::string ImportSpecialPersonnelRequest::getExternalId()const
 void ImportSpecialPersonnelRequest::setExternalId(const std::string& externalId)
 {
 	externalId_ = externalId;
-	setCoreParameter("ExternalId", externalId);
+	setBodyParameter("ExternalId", externalId);
 }
 
 std::string ImportSpecialPersonnelRequest::getPersonType()const
@@ -68,7 +68,7 @@ std::string ImportSpecialPersonnelRequest::getPersonType()const
 void ImportSpecialPersonnelRequest::setPersonType(const std::string& personType)
 {
 	personType_ = personType;
-	setCoreParameter("PersonType", personType);
+	setBodyParameter("PersonType", personType);
 }
 
 std::string ImportSpecialPersonnelRequest::getUrls()const
@@ -79,7 +79,7 @@ std::string ImportSpecialPersonnelRequest::getUrls()const
 void ImportSpecialPersonnelRequest::setUrls(const std::string& urls)
 {
 	urls_ = urls;
-	setCoreParameter("Urls", urls);
+	setBodyParameter("Urls", urls);
 }
 
 std::string ImportSpecialPersonnelRequest::getPersonName()const
@@ -90,7 +90,7 @@ std::string ImportSpecialPersonnelRequest::getPersonName()const
 void ImportSpecialPersonnelRequest::setPersonName(const std::string& personName)
 {
 	personName_ = personName;
-	setCoreParameter("PersonName", personName);
+	setBodyParameter("PersonName", personName);
 }
 
 std::string ImportSpecialPersonnelRequest::getStoreIds()const
@@ -101,7 +101,7 @@ std::string ImportSpecialPersonnelRequest::getStoreIds()const
 void ImportSpecialPersonnelRequest::setStoreIds(const std::string& storeIds)
 {
 	storeIds_ = storeIds;
-	setCoreParameter("StoreIds", storeIds);
+	setBodyParameter("StoreIds", storeIds);
 }
 
 std::string ImportSpecialPersonnelRequest::getStatus()const
@@ -112,6 +112,6 @@ std::string ImportSpecialPersonnelRequest::getStatus()const
 void ImportSpecialPersonnelRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setBodyParameter("Status", status);
 }
 
