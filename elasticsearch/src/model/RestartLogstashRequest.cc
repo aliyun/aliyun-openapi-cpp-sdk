@@ -36,7 +36,7 @@ std::string RestartLogstashRequest::getInstanceId()const
 void RestartLogstashRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string RestartLogstashRequest::getClientToken()const
@@ -47,7 +47,7 @@ std::string RestartLogstashRequest::getClientToken()const
 void RestartLogstashRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 bool RestartLogstashRequest::getForce()const
@@ -58,6 +58,6 @@ bool RestartLogstashRequest::getForce()const
 void RestartLogstashRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setParameter("Force", force ? "true" : "false");
 }
 

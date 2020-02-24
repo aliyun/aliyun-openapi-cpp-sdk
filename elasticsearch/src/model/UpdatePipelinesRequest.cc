@@ -14,39 +14,50 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/UpdateKibanaWhiteIpsRequest.h>
+#include <alibabacloud/elasticsearch/model/UpdatePipelinesRequest.h>
 
-using AlibabaCloud::Elasticsearch::Model::UpdateKibanaWhiteIpsRequest;
+using AlibabaCloud::Elasticsearch::Model::UpdatePipelinesRequest;
 
-UpdateKibanaWhiteIpsRequest::UpdateKibanaWhiteIpsRequest() :
+UpdatePipelinesRequest::UpdatePipelinesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/kibana-white-ips");
-	setMethod(HttpRequest::Method::Post);
+	setResourcePath("/openapi/logstashes/[InstanceId]/pipelines");
+	setMethod(HttpRequest::Method::Put);
 }
 
-UpdateKibanaWhiteIpsRequest::~UpdateKibanaWhiteIpsRequest()
+UpdatePipelinesRequest::~UpdatePipelinesRequest()
 {}
 
-std::string UpdateKibanaWhiteIpsRequest::getInstanceId()const
+std::string UpdatePipelinesRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void UpdateKibanaWhiteIpsRequest::setInstanceId(const std::string& instanceId)
+void UpdatePipelinesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
 }
 
-std::string UpdateKibanaWhiteIpsRequest::getClientToken()const
+std::string UpdatePipelinesRequest::getClientToken()const
 {
 	return clientToken_;
 }
 
-void UpdateKibanaWhiteIpsRequest::setClientToken(const std::string& clientToken)
+void UpdatePipelinesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);
+}
+
+bool UpdatePipelinesRequest::getTrigger()const
+{
+	return trigger_;
+}
+
+void UpdatePipelinesRequest::setTrigger(bool trigger)
+{
+	trigger_ = trigger;
+	setParameter("Trigger", trigger ? "true" : "false");
 }
 

@@ -36,7 +36,7 @@ std::string UpdateBlackIpsRequest::getInstanceId()const
 void UpdateBlackIpsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UpdateBlackIpsRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string UpdateBlackIpsRequest::getClientToken()const
 void UpdateBlackIpsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

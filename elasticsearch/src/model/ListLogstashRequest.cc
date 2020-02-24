@@ -36,7 +36,7 @@ std::string ListLogstashRequest::getResourceGroupId()const
 void ListLogstashRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string ListLogstashRequest::getInstanceId()const
@@ -47,7 +47,7 @@ std::string ListLogstashRequest::getInstanceId()const
 void ListLogstashRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int ListLogstashRequest::getSize()const
@@ -58,7 +58,7 @@ int ListLogstashRequest::getSize()const
 void ListLogstashRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListLogstashRequest::getDescription()const
@@ -69,7 +69,7 @@ std::string ListLogstashRequest::getDescription()const
 void ListLogstashRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 int ListLogstashRequest::getPage()const
@@ -80,7 +80,7 @@ int ListLogstashRequest::getPage()const
 void ListLogstashRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string ListLogstashRequest::getOwnerId()const
@@ -91,7 +91,7 @@ std::string ListLogstashRequest::getOwnerId()const
 void ListLogstashRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string ListLogstashRequest::getVersion()const
@@ -102,6 +102,6 @@ std::string ListLogstashRequest::getVersion()const
 void ListLogstashRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setParameter("Version", version);
 }
 

@@ -36,7 +36,7 @@ std::string GetSuggestShrinkableNodesRequest::getInstanceId()const
 void GetSuggestShrinkableNodesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetSuggestShrinkableNodesRequest::getNodeType()const
@@ -47,7 +47,7 @@ std::string GetSuggestShrinkableNodesRequest::getNodeType()const
 void GetSuggestShrinkableNodesRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", nodeType);
+	setParameter("NodeType", nodeType);
 }
 
 int GetSuggestShrinkableNodesRequest::getCount()const
@@ -58,6 +58,6 @@ int GetSuggestShrinkableNodesRequest::getCount()const
 void GetSuggestShrinkableNodesRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setParameter("Count", std::to_string(count));
 }
 

@@ -36,7 +36,7 @@ std::string ListSearchLogRequest::getInstanceId()const
 void ListSearchLogRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int ListSearchLogRequest::getSize()const
@@ -47,7 +47,7 @@ int ListSearchLogRequest::getSize()const
 void ListSearchLogRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListSearchLogRequest::getQuery()const
@@ -58,7 +58,7 @@ std::string ListSearchLogRequest::getQuery()const
 void ListSearchLogRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", query);
+	setParameter("Query", query);
 }
 
 long ListSearchLogRequest::getEndTime()const
@@ -69,7 +69,7 @@ long ListSearchLogRequest::getEndTime()const
 void ListSearchLogRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long ListSearchLogRequest::getBeginTime()const
@@ -80,7 +80,7 @@ long ListSearchLogRequest::getBeginTime()const
 void ListSearchLogRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", std::to_string(beginTime));
+	setParameter("BeginTime", std::to_string(beginTime));
 }
 
 int ListSearchLogRequest::getPage()const
@@ -91,7 +91,7 @@ int ListSearchLogRequest::getPage()const
 void ListSearchLogRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string ListSearchLogRequest::getType()const
@@ -102,6 +102,6 @@ std::string ListSearchLogRequest::getType()const
 void ListSearchLogRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 

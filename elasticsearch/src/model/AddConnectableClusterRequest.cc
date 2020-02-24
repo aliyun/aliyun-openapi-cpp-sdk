@@ -36,7 +36,7 @@ std::string AddConnectableClusterRequest::getInstanceId()const
 void AddConnectableClusterRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string AddConnectableClusterRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string AddConnectableClusterRequest::getClientToken()const
 void AddConnectableClusterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

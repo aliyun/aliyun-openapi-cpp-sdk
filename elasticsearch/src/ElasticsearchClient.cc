@@ -2787,6 +2787,42 @@ ElasticsearchClient::UpdatePipelineManagementConfigOutcomeCallable Elasticsearch
 	return task->get_future();
 }
 
+ElasticsearchClient::UpdatePipelinesOutcome ElasticsearchClient::updatePipelines(const UpdatePipelinesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePipelinesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePipelinesOutcome(UpdatePipelinesResult(outcome.result()));
+	else
+		return UpdatePipelinesOutcome(outcome.error());
+}
+
+void ElasticsearchClient::updatePipelinesAsync(const UpdatePipelinesRequest& request, const UpdatePipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePipelines(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::UpdatePipelinesOutcomeCallable ElasticsearchClient::updatePipelinesCallable(const UpdatePipelinesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePipelinesOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePipelines(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::UpdatePrivateNetworkWhiteIpsOutcome ElasticsearchClient::updatePrivateNetworkWhiteIps(const UpdatePrivateNetworkWhiteIpsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2997,6 +3033,42 @@ ElasticsearchClient::UpdateWhiteIpsOutcomeCallable ElasticsearchClient::updateWh
 			[this, request]()
 			{
 			return this->updateWhiteIps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::UpgradeEngineVersionOutcome ElasticsearchClient::upgradeEngineVersion(const UpgradeEngineVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpgradeEngineVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpgradeEngineVersionOutcome(UpgradeEngineVersionResult(outcome.result()));
+	else
+		return UpgradeEngineVersionOutcome(outcome.error());
+}
+
+void ElasticsearchClient::upgradeEngineVersionAsync(const UpgradeEngineVersionRequest& request, const UpgradeEngineVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, upgradeEngineVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::UpgradeEngineVersionOutcomeCallable ElasticsearchClient::upgradeEngineVersionCallable(const UpgradeEngineVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpgradeEngineVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->upgradeEngineVersion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

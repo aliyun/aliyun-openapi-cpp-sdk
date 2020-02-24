@@ -174,6 +174,8 @@
 #include "model/UpdateLogstashSettingsResult.h"
 #include "model/UpdatePipelineManagementConfigRequest.h"
 #include "model/UpdatePipelineManagementConfigResult.h"
+#include "model/UpdatePipelinesRequest.h"
+#include "model/UpdatePipelinesResult.h"
 #include "model/UpdatePrivateNetworkWhiteIpsRequest.h"
 #include "model/UpdatePrivateNetworkWhiteIpsResult.h"
 #include "model/UpdatePublicNetworkRequest.h"
@@ -186,6 +188,8 @@
 #include "model/UpdateSynonymsDictsResult.h"
 #include "model/UpdateWhiteIpsRequest.h"
 #include "model/UpdateWhiteIpsResult.h"
+#include "model/UpgradeEngineVersionRequest.h"
+#include "model/UpgradeEngineVersionResult.h"
 #include "model/ValidateShrinkNodesRequest.h"
 #include "model/ValidateShrinkNodesResult.h"
 #include "model/ValidateTransferableNodesRequest.h"
@@ -427,6 +431,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdatePipelineManagementConfigResult> UpdatePipelineManagementConfigOutcome;
 			typedef std::future<UpdatePipelineManagementConfigOutcome> UpdatePipelineManagementConfigOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdatePipelineManagementConfigRequest&, const UpdatePipelineManagementConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePipelineManagementConfigAsyncHandler;
+			typedef Outcome<Error, Model::UpdatePipelinesResult> UpdatePipelinesOutcome;
+			typedef std::future<UpdatePipelinesOutcome> UpdatePipelinesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdatePipelinesRequest&, const UpdatePipelinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePipelinesAsyncHandler;
 			typedef Outcome<Error, Model::UpdatePrivateNetworkWhiteIpsResult> UpdatePrivateNetworkWhiteIpsOutcome;
 			typedef std::future<UpdatePrivateNetworkWhiteIpsOutcome> UpdatePrivateNetworkWhiteIpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdatePrivateNetworkWhiteIpsRequest&, const UpdatePrivateNetworkWhiteIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrivateNetworkWhiteIpsAsyncHandler;
@@ -445,6 +452,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateWhiteIpsResult> UpdateWhiteIpsOutcome;
 			typedef std::future<UpdateWhiteIpsOutcome> UpdateWhiteIpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateWhiteIpsRequest&, const UpdateWhiteIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWhiteIpsAsyncHandler;
+			typedef Outcome<Error, Model::UpgradeEngineVersionResult> UpgradeEngineVersionOutcome;
+			typedef std::future<UpgradeEngineVersionOutcome> UpgradeEngineVersionOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpgradeEngineVersionRequest&, const UpgradeEngineVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeEngineVersionAsyncHandler;
 			typedef Outcome<Error, Model::ValidateShrinkNodesResult> ValidateShrinkNodesOutcome;
 			typedef std::future<ValidateShrinkNodesOutcome> ValidateShrinkNodesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ValidateShrinkNodesRequest&, const ValidateShrinkNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateShrinkNodesAsyncHandler;
@@ -684,6 +694,9 @@ namespace AlibabaCloud
 			UpdatePipelineManagementConfigOutcome updatePipelineManagementConfig(const Model::UpdatePipelineManagementConfigRequest &request)const;
 			void updatePipelineManagementConfigAsync(const Model::UpdatePipelineManagementConfigRequest& request, const UpdatePipelineManagementConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePipelineManagementConfigOutcomeCallable updatePipelineManagementConfigCallable(const Model::UpdatePipelineManagementConfigRequest& request) const;
+			UpdatePipelinesOutcome updatePipelines(const Model::UpdatePipelinesRequest &request)const;
+			void updatePipelinesAsync(const Model::UpdatePipelinesRequest& request, const UpdatePipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdatePipelinesOutcomeCallable updatePipelinesCallable(const Model::UpdatePipelinesRequest& request) const;
 			UpdatePrivateNetworkWhiteIpsOutcome updatePrivateNetworkWhiteIps(const Model::UpdatePrivateNetworkWhiteIpsRequest &request)const;
 			void updatePrivateNetworkWhiteIpsAsync(const Model::UpdatePrivateNetworkWhiteIpsRequest& request, const UpdatePrivateNetworkWhiteIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePrivateNetworkWhiteIpsOutcomeCallable updatePrivateNetworkWhiteIpsCallable(const Model::UpdatePrivateNetworkWhiteIpsRequest& request) const;
@@ -702,6 +715,9 @@ namespace AlibabaCloud
 			UpdateWhiteIpsOutcome updateWhiteIps(const Model::UpdateWhiteIpsRequest &request)const;
 			void updateWhiteIpsAsync(const Model::UpdateWhiteIpsRequest& request, const UpdateWhiteIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateWhiteIpsOutcomeCallable updateWhiteIpsCallable(const Model::UpdateWhiteIpsRequest& request) const;
+			UpgradeEngineVersionOutcome upgradeEngineVersion(const Model::UpgradeEngineVersionRequest &request)const;
+			void upgradeEngineVersionAsync(const Model::UpgradeEngineVersionRequest& request, const UpgradeEngineVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpgradeEngineVersionOutcomeCallable upgradeEngineVersionCallable(const Model::UpgradeEngineVersionRequest& request) const;
 			ValidateShrinkNodesOutcome validateShrinkNodes(const Model::ValidateShrinkNodesRequest &request)const;
 			void validateShrinkNodesAsync(const Model::ValidateShrinkNodesRequest& request, const ValidateShrinkNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ValidateShrinkNodesOutcomeCallable validateShrinkNodesCallable(const Model::ValidateShrinkNodesRequest& request) const;

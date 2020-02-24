@@ -142,6 +142,16 @@ void DescribeInstanceResult::parse(const std::string &payload)
 			dictObject.sourceType = resultNodealiwsDictsDict["sourceType"].asString();
 		result_.aliwsDicts.push_back(dictObject);
 	}
+	auto alltagsNode = resultNode["tags"]["Tag"];
+	for (auto resultNodetagsTag : alltagsNode)
+	{
+		Result::Tag tagObject;
+		if(!resultNodetagsTag["tagKey"].isNull())
+			tagObject.tagKey = resultNodetagsTag["tagKey"].asString();
+		if(!resultNodetagsTag["tagValue"].isNull())
+			tagObject.tagValue = resultNodetagsTag["tagValue"].asString();
+		result_.tags.push_back(tagObject);
+	}
 	auto nodeSpecNode = resultNode["nodeSpec"];
 	if(!nodeSpecNode["spec"].isNull())
 		result_.nodeSpec.spec = nodeSpecNode["spec"].asString();

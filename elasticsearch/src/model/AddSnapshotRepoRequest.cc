@@ -36,6 +36,6 @@ std::string AddSnapshotRepoRequest::getInstanceId()const
 void AddSnapshotRepoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

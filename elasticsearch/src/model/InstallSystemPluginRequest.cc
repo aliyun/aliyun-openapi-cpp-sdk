@@ -36,7 +36,7 @@ std::string InstallSystemPluginRequest::getInstanceId()const
 void InstallSystemPluginRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string InstallSystemPluginRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string InstallSystemPluginRequest::getClientToken()const
 void InstallSystemPluginRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

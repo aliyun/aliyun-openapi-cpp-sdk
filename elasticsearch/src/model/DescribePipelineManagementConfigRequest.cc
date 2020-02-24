@@ -36,7 +36,7 @@ std::string DescribePipelineManagementConfigRequest::getInstanceId()const
 void DescribePipelineManagementConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribePipelineManagementConfigRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string DescribePipelineManagementConfigRequest::getClientToken()const
 void DescribePipelineManagementConfigRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

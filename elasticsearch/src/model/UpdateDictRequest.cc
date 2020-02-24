@@ -36,7 +36,7 @@ std::string UpdateDictRequest::getInstanceId()const
 void UpdateDictRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UpdateDictRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string UpdateDictRequest::getClientToken()const
 void UpdateDictRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

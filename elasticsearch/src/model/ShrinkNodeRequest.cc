@@ -36,7 +36,7 @@ std::string ShrinkNodeRequest::getInstanceId()const
 void ShrinkNodeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ShrinkNodeRequest::getNodeType()const
@@ -47,7 +47,7 @@ std::string ShrinkNodeRequest::getNodeType()const
 void ShrinkNodeRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", nodeType);
+	setParameter("NodeType", nodeType);
 }
 
 std::string ShrinkNodeRequest::getClientToken()const
@@ -58,6 +58,6 @@ std::string ShrinkNodeRequest::getClientToken()const
 void ShrinkNodeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

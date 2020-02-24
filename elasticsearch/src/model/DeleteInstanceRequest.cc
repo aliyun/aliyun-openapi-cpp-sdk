@@ -36,7 +36,7 @@ std::string DeleteInstanceRequest::getInstanceId()const
 void DeleteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DeleteInstanceRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string DeleteInstanceRequest::getClientToken()const
 void DeleteInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

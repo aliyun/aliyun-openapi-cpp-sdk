@@ -36,7 +36,7 @@ std::string DeleteProjectRequest::getClientToken()const
 void DeleteProjectRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteProjectRequest::getId()const
@@ -47,6 +47,6 @@ std::string DeleteProjectRequest::getId()const
 void DeleteProjectRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

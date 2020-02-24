@@ -36,7 +36,7 @@ std::string ValidateTransferableNodesRequest::getInstanceId()const
 void ValidateTransferableNodesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ValidateTransferableNodesRequest::getNodeType()const
@@ -47,6 +47,6 @@ std::string ValidateTransferableNodesRequest::getNodeType()const
 void ValidateTransferableNodesRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", nodeType);
+	setParameter("NodeType", nodeType);
 }
 

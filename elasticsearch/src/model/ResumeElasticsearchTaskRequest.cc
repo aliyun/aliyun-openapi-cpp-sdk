@@ -36,7 +36,7 @@ std::string ResumeElasticsearchTaskRequest::getInstanceId()const
 void ResumeElasticsearchTaskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ResumeElasticsearchTaskRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string ResumeElasticsearchTaskRequest::getClientToken()const
 void ResumeElasticsearchTaskRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

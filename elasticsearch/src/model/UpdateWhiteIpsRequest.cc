@@ -36,7 +36,7 @@ std::string UpdateWhiteIpsRequest::getInstanceId()const
 void UpdateWhiteIpsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UpdateWhiteIpsRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string UpdateWhiteIpsRequest::getClientToken()const
 void UpdateWhiteIpsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

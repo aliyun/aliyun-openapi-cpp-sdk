@@ -36,7 +36,7 @@ std::string GetTransferableNodesRequest::getInstanceId()const
 void GetTransferableNodesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetTransferableNodesRequest::getNodeType()const
@@ -47,7 +47,7 @@ std::string GetTransferableNodesRequest::getNodeType()const
 void GetTransferableNodesRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", nodeType);
+	setParameter("NodeType", nodeType);
 }
 
 int GetTransferableNodesRequest::getCount()const
@@ -58,6 +58,6 @@ int GetTransferableNodesRequest::getCount()const
 void GetTransferableNodesRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setParameter("Count", std::to_string(count));
 }
 

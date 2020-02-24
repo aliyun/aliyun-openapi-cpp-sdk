@@ -36,7 +36,7 @@ bool UntagResourcesRequest::getAll()const
 void UntagResourcesRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all ? "true" : "false");
+	setParameter("All", all ? "true" : "false");
 }
 
 std::string UntagResourcesRequest::getTagKeys()const
@@ -47,7 +47,7 @@ std::string UntagResourcesRequest::getTagKeys()const
 void UntagResourcesRequest::setTagKeys(const std::string& tagKeys)
 {
 	tagKeys_ = tagKeys;
-	setCoreParameter("TagKeys", tagKeys);
+	setParameter("TagKeys", tagKeys);
 }
 
 std::string UntagResourcesRequest::getResourceType()const
@@ -58,7 +58,7 @@ std::string UntagResourcesRequest::getResourceType()const
 void UntagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string UntagResourcesRequest::getResourceIds()const
@@ -69,6 +69,6 @@ std::string UntagResourcesRequest::getResourceIds()const
 void UntagResourcesRequest::setResourceIds(const std::string& resourceIds)
 {
 	resourceIds_ = resourceIds;
-	setCoreParameter("ResourceIds", resourceIds);
+	setParameter("ResourceIds", resourceIds);
 }
 

@@ -36,6 +36,6 @@ std::string CreateInstanceRequest::getClientToken()const
 void CreateInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

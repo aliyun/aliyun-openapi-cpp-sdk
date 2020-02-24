@@ -36,7 +36,7 @@ std::string InterruptElasticsearchTaskRequest::getInstanceId()const
 void InterruptElasticsearchTaskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string InterruptElasticsearchTaskRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string InterruptElasticsearchTaskRequest::getClientToken()const
 void InterruptElasticsearchTaskRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

@@ -36,6 +36,6 @@ std::string DescribeInstanceRequest::getInstanceId()const
 void DescribeInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

@@ -36,7 +36,7 @@ std::string RenewInstanceRequest::getInstanceId()const
 void RenewInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string RenewInstanceRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string RenewInstanceRequest::getClientToken()const
 void RenewInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

@@ -36,7 +36,7 @@ std::string ActivateZonesRequest::getInstanceId()const
 void ActivateZonesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ActivateZonesRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string ActivateZonesRequest::getClientToken()const
 void ActivateZonesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

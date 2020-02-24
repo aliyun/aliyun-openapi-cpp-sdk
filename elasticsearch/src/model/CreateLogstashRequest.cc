@@ -36,6 +36,6 @@ std::string CreateLogstashRequest::getClientToken()const
 void CreateLogstashRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

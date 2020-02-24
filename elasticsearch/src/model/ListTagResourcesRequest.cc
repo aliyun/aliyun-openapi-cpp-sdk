@@ -36,7 +36,7 @@ int ListTagResourcesRequest::getSize()const
 void ListTagResourcesRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListTagResourcesRequest::getNextToken()const
@@ -47,7 +47,7 @@ std::string ListTagResourcesRequest::getNextToken()const
 void ListTagResourcesRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
-	setCoreParameter("NextToken", nextToken);
+	setParameter("NextToken", nextToken);
 }
 
 int ListTagResourcesRequest::getPage()const
@@ -58,7 +58,7 @@ int ListTagResourcesRequest::getPage()const
 void ListTagResourcesRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string ListTagResourcesRequest::getResourceType()const
@@ -69,7 +69,7 @@ std::string ListTagResourcesRequest::getResourceType()const
 void ListTagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string ListTagResourcesRequest::getResourceIds()const
@@ -80,7 +80,7 @@ std::string ListTagResourcesRequest::getResourceIds()const
 void ListTagResourcesRequest::setResourceIds(const std::string& resourceIds)
 {
 	resourceIds_ = resourceIds;
-	setCoreParameter("ResourceIds", resourceIds);
+	setParameter("ResourceIds", resourceIds);
 }
 
 std::string ListTagResourcesRequest::getTags()const
@@ -91,6 +91,6 @@ std::string ListTagResourcesRequest::getTags()const
 void ListTagResourcesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

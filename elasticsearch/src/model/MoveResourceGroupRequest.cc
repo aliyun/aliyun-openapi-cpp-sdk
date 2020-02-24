@@ -36,7 +36,7 @@ std::string MoveResourceGroupRequest::getInstanceId()const
 void MoveResourceGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string MoveResourceGroupRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string MoveResourceGroupRequest::getClientToken()const
 void MoveResourceGroupRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

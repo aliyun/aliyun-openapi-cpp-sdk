@@ -36,7 +36,7 @@ std::string OpenHttpsRequest::getInstanceId()const
 void OpenHttpsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OpenHttpsRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string OpenHttpsRequest::getClientToken()const
 void OpenHttpsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

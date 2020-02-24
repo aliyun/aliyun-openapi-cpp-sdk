@@ -36,7 +36,7 @@ std::string CancelTaskRequest::getInstanceId()const
 void CancelTaskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CancelTaskRequest::getTaskType()const
@@ -47,7 +47,7 @@ std::string CancelTaskRequest::getTaskType()const
 void CancelTaskRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", taskType);
+	setParameter("TaskType", taskType);
 }
 
 std::string CancelTaskRequest::getClientToken()const
@@ -58,6 +58,6 @@ std::string CancelTaskRequest::getClientToken()const
 void CancelTaskRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

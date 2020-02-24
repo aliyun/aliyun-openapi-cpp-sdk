@@ -65,6 +65,11 @@ namespace AlibabaCloud
 						std::string spec;
 						int disk;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					MasterConfiguration masterConfiguration;
 					std::string status;
 					std::string description;
@@ -75,6 +80,7 @@ namespace AlibabaCloud
 					int nodeAmount;
 					std::string esVersion;
 					std::string updatedAt;
+					std::vector<Instance::Tag> tags;
 					KibanaConfiguration kibanaConfiguration;
 					bool advancedDedicateMaster;
 					NodeSpec nodeSpec;

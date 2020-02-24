@@ -36,7 +36,7 @@ std::string ListAlternativeSnapshotReposRequest::getInstanceId()const
 void ListAlternativeSnapshotReposRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 bool ListAlternativeSnapshotReposRequest::getAlreadySetItems()const
@@ -47,6 +47,6 @@ bool ListAlternativeSnapshotReposRequest::getAlreadySetItems()const
 void ListAlternativeSnapshotReposRequest::setAlreadySetItems(bool alreadySetItems)
 {
 	alreadySetItems_ = alreadySetItems;
-	setCoreParameter("AlreadySetItems", alreadySetItems ? "true" : "false");
+	setParameter("AlreadySetItems", alreadySetItems ? "true" : "false");
 }
 

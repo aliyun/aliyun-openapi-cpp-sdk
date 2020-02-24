@@ -36,7 +36,7 @@ std::string InterruptLogstashTaskRequest::getInstanceId()const
 void InterruptLogstashTaskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string InterruptLogstashTaskRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string InterruptLogstashTaskRequest::getClientToken()const
 void InterruptLogstashTaskRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

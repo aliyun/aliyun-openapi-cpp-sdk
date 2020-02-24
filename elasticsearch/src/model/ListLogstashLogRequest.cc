@@ -36,7 +36,7 @@ std::string ListLogstashLogRequest::getInstanceId()const
 void ListLogstashLogRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int ListLogstashLogRequest::getSize()const
@@ -47,7 +47,7 @@ int ListLogstashLogRequest::getSize()const
 void ListLogstashLogRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListLogstashLogRequest::getQuery()const
@@ -58,7 +58,7 @@ std::string ListLogstashLogRequest::getQuery()const
 void ListLogstashLogRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", query);
+	setParameter("Query", query);
 }
 
 long ListLogstashLogRequest::getEndTime()const
@@ -69,7 +69,7 @@ long ListLogstashLogRequest::getEndTime()const
 void ListLogstashLogRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long ListLogstashLogRequest::getBeginTime()const
@@ -80,7 +80,7 @@ long ListLogstashLogRequest::getBeginTime()const
 void ListLogstashLogRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", std::to_string(beginTime));
+	setParameter("BeginTime", std::to_string(beginTime));
 }
 
 int ListLogstashLogRequest::getPage()const
@@ -91,7 +91,7 @@ int ListLogstashLogRequest::getPage()const
 void ListLogstashLogRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string ListLogstashLogRequest::getType()const
@@ -102,6 +102,6 @@ std::string ListLogstashLogRequest::getType()const
 void ListLogstashLogRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 

@@ -36,6 +36,6 @@ std::string DescribeElasticsearchHealthRequest::getInstanceId()const
 void DescribeElasticsearchHealthRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

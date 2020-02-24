@@ -36,6 +36,6 @@ std::string DescribeKibanaSettingsRequest::getInstanceId()const
 void DescribeKibanaSettingsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

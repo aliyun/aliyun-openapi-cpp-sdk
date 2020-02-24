@@ -36,7 +36,7 @@ std::string UpdateAdminPasswordRequest::getInstanceId()const
 void UpdateAdminPasswordRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UpdateAdminPasswordRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string UpdateAdminPasswordRequest::getClientToken()const
 void UpdateAdminPasswordRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

@@ -14,37 +14,48 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/UpdateKibanaWhiteIpsRequest.h>
+#include <alibabacloud/elasticsearch/model/UpgradeEngineVersionRequest.h>
 
-using AlibabaCloud::Elasticsearch::Model::UpdateKibanaWhiteIpsRequest;
+using AlibabaCloud::Elasticsearch::Model::UpgradeEngineVersionRequest;
 
-UpdateKibanaWhiteIpsRequest::UpdateKibanaWhiteIpsRequest() :
+UpgradeEngineVersionRequest::UpgradeEngineVersionRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/kibana-white-ips");
+	setResourcePath("/openapi/instances/[InstanceId]/actions/upgrade-version");
 	setMethod(HttpRequest::Method::Post);
 }
 
-UpdateKibanaWhiteIpsRequest::~UpdateKibanaWhiteIpsRequest()
+UpgradeEngineVersionRequest::~UpgradeEngineVersionRequest()
 {}
 
-std::string UpdateKibanaWhiteIpsRequest::getInstanceId()const
+std::string UpgradeEngineVersionRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void UpdateKibanaWhiteIpsRequest::setInstanceId(const std::string& instanceId)
+void UpgradeEngineVersionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
 }
 
-std::string UpdateKibanaWhiteIpsRequest::getClientToken()const
+bool UpgradeEngineVersionRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void UpgradeEngineVersionRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", dryRun ? "true" : "false");
+}
+
+std::string UpgradeEngineVersionRequest::getClientToken()const
 {
 	return clientToken_;
 }
 
-void UpdateKibanaWhiteIpsRequest::setClientToken(const std::string& clientToken)
+void UpgradeEngineVersionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);

@@ -36,7 +36,7 @@ std::string TransferNodeRequest::getInstanceId()const
 void TransferNodeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string TransferNodeRequest::getNodeType()const
@@ -47,7 +47,7 @@ std::string TransferNodeRequest::getNodeType()const
 void TransferNodeRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", nodeType);
+	setParameter("NodeType", nodeType);
 }
 
 std::string TransferNodeRequest::getClientToken()const
@@ -58,6 +58,6 @@ std::string TransferNodeRequest::getClientToken()const
 void TransferNodeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

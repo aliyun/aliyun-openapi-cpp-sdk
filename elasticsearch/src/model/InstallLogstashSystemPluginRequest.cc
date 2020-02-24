@@ -36,7 +36,7 @@ std::string InstallLogstashSystemPluginRequest::getInstanceId()const
 void InstallLogstashSystemPluginRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string InstallLogstashSystemPluginRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string InstallLogstashSystemPluginRequest::getClientToken()const
 void InstallLogstashSystemPluginRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

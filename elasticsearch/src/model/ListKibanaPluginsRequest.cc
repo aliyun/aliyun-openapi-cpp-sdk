@@ -36,7 +36,7 @@ std::string ListKibanaPluginsRequest::getInstanceId()const
 void ListKibanaPluginsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int ListKibanaPluginsRequest::getSize()const
@@ -47,7 +47,7 @@ int ListKibanaPluginsRequest::getSize()const
 void ListKibanaPluginsRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListKibanaPluginsRequest::getPage()const
@@ -58,6 +58,6 @@ std::string ListKibanaPluginsRequest::getPage()const
 void ListKibanaPluginsRequest::setPage(const std::string& page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setParameter("Page", page);
 }
 

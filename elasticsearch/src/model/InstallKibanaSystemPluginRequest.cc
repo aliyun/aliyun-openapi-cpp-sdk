@@ -36,7 +36,7 @@ std::string InstallKibanaSystemPluginRequest::getInstanceId()const
 void InstallKibanaSystemPluginRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string InstallKibanaSystemPluginRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string InstallKibanaSystemPluginRequest::getClientToken()const
 void InstallKibanaSystemPluginRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

@@ -36,7 +36,7 @@ std::string DeleteConnectedClusterRequest::getInstanceId()const
 void DeleteConnectedClusterRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DeleteConnectedClusterRequest::getClientToken()const
@@ -47,7 +47,7 @@ std::string DeleteConnectedClusterRequest::getClientToken()const
 void DeleteConnectedClusterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteConnectedClusterRequest::getConnectedInstanceId()const
@@ -58,6 +58,6 @@ std::string DeleteConnectedClusterRequest::getConnectedInstanceId()const
 void DeleteConnectedClusterRequest::setConnectedInstanceId(const std::string& connectedInstanceId)
 {
 	connectedInstanceId_ = connectedInstanceId;
-	setCoreParameter("ConnectedInstanceId", connectedInstanceId);
+	setParameter("ConnectedInstanceId", connectedInstanceId);
 }
 

@@ -36,7 +36,7 @@ std::string UninstallPluginRequest::getInstanceId()const
 void UninstallPluginRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UninstallPluginRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string UninstallPluginRequest::getClientToken()const
 void UninstallPluginRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

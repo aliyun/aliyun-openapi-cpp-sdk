@@ -36,7 +36,7 @@ std::string DeleteLogstashRequest::getInstanceId()const
 void DeleteLogstashRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DeleteLogstashRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string DeleteLogstashRequest::getClientToken()const
 void DeleteLogstashRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

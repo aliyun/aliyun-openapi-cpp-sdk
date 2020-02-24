@@ -36,7 +36,7 @@ std::string DescribeConnectableClustersRequest::getInstanceId()const
 void DescribeConnectableClustersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 bool DescribeConnectableClustersRequest::getAlreadySetItems()const
@@ -47,6 +47,6 @@ bool DescribeConnectableClustersRequest::getAlreadySetItems()const
 void DescribeConnectableClustersRequest::setAlreadySetItems(bool alreadySetItems)
 {
 	alreadySetItems_ = alreadySetItems;
-	setCoreParameter("AlreadySetItems", alreadySetItems ? "true" : "false");
+	setParameter("AlreadySetItems", alreadySetItems ? "true" : "false");
 }
 

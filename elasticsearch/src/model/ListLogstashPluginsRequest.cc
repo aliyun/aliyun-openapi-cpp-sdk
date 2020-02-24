@@ -36,7 +36,7 @@ std::string ListLogstashPluginsRequest::getInstanceId()const
 void ListLogstashPluginsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int ListLogstashPluginsRequest::getSize()const
@@ -47,7 +47,7 @@ int ListLogstashPluginsRequest::getSize()const
 void ListLogstashPluginsRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListLogstashPluginsRequest::getName()const
@@ -58,7 +58,7 @@ std::string ListLogstashPluginsRequest::getName()const
 void ListLogstashPluginsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ListLogstashPluginsRequest::getPage()const
@@ -69,7 +69,7 @@ std::string ListLogstashPluginsRequest::getPage()const
 void ListLogstashPluginsRequest::setPage(const std::string& page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setParameter("Page", page);
 }
 
 std::string ListLogstashPluginsRequest::getSource()const
@@ -80,6 +80,6 @@ std::string ListLogstashPluginsRequest::getSource()const
 void ListLogstashPluginsRequest::setSource(const std::string& source)
 {
 	source_ = source;
-	setCoreParameter("Source", source);
+	setParameter("Source", source);
 }
 

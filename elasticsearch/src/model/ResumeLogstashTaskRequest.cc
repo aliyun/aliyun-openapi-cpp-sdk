@@ -36,7 +36,7 @@ std::string ResumeLogstashTaskRequest::getInstanceId()const
 void ResumeLogstashTaskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ResumeLogstashTaskRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string ResumeLogstashTaskRequest::getClientToken()const
 void ResumeLogstashTaskRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

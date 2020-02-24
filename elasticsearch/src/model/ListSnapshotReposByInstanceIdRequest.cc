@@ -36,6 +36,6 @@ std::string ListSnapshotReposByInstanceIdRequest::getInstanceId()const
 void ListSnapshotReposByInstanceIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

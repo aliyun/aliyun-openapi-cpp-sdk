@@ -36,7 +36,7 @@ std::string UpdateKibanaSettingsRequest::getInstanceId()const
 void UpdateKibanaSettingsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UpdateKibanaSettingsRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string UpdateKibanaSettingsRequest::getClientToken()const
 void UpdateKibanaSettingsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

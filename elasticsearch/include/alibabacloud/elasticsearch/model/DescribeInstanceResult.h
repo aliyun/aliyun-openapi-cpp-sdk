@@ -105,6 +105,11 @@ namespace AlibabaCloud
 						std::string name;
 						long fileSize;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					MasterConfiguration masterConfiguration;
 					std::string description;
 					bool dedicateMaster;
@@ -131,6 +136,7 @@ namespace AlibabaCloud
 					std::string updatedAt;
 					std::vector<DictListItem> dictList;
 					std::string kibanaDomain;
+					std::vector<Tag> tags;
 					std::string publicDomain;
 					std::string esConfig;
 					std::vector<std::string> esIPWhitelist;

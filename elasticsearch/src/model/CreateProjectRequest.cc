@@ -36,6 +36,6 @@ std::string CreateProjectRequest::getClientToken()const
 void CreateProjectRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

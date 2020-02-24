@@ -36,7 +36,7 @@ std::string ListPluginsRequest::getInstanceId()const
 void ListPluginsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int ListPluginsRequest::getSize()const
@@ -47,7 +47,7 @@ int ListPluginsRequest::getSize()const
 void ListPluginsRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListPluginsRequest::getName()const
@@ -58,7 +58,7 @@ std::string ListPluginsRequest::getName()const
 void ListPluginsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ListPluginsRequest::getPage()const
@@ -69,7 +69,7 @@ std::string ListPluginsRequest::getPage()const
 void ListPluginsRequest::setPage(const std::string& page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setParameter("Page", page);
 }
 
 std::string ListPluginsRequest::getSource()const
@@ -80,6 +80,6 @@ std::string ListPluginsRequest::getSource()const
 void ListPluginsRequest::setSource(const std::string& source)
 {
 	source_ = source;
-	setCoreParameter("Source", source);
+	setParameter("Source", source);
 }
 

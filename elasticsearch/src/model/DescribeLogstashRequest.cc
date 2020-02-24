@@ -36,6 +36,6 @@ std::string DescribeLogstashRequest::getInstanceId()const
 void DescribeLogstashRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

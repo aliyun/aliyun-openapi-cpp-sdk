@@ -36,7 +36,7 @@ std::string RestartInstanceRequest::getInstanceId()const
 void RestartInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string RestartInstanceRequest::getClientToken()const
@@ -47,7 +47,7 @@ std::string RestartInstanceRequest::getClientToken()const
 void RestartInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 bool RestartInstanceRequest::getForce()const
@@ -58,6 +58,6 @@ bool RestartInstanceRequest::getForce()const
 void RestartInstanceRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setParameter("Force", force ? "true" : "false");
 }
 

@@ -63,6 +63,16 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.advancedDedicateMaster = valueResultInstance["advancedDedicateMaster"].asString() == "true";
 		if(!valueResultInstance["dedicateMaster"].isNull())
 			resultObject.dedicateMaster = valueResultInstance["dedicateMaster"].asString() == "true";
+		auto alltagsNode = allResultNode["tags"]["Tag"];
+		for (auto allResultNodetagsTag : alltagsNode)
+		{
+			Instance::Tag tagsObject;
+			if(!allResultNodetagsTag["tagKey"].isNull())
+				tagsObject.tagKey = allResultNodetagsTag["tagKey"].asString();
+			if(!allResultNodetagsTag["tagValue"].isNull())
+				tagsObject.tagValue = allResultNodetagsTag["tagValue"].asString();
+			resultObject.tags.push_back(tagsObject);
+		}
 		auto nodeSpecNode = value["nodeSpec"];
 		if(!nodeSpecNode["spec"].isNull())
 			resultObject.nodeSpec.spec = nodeSpecNode["spec"].asString();

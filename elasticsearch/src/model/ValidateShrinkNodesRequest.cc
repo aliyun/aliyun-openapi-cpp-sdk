@@ -36,7 +36,7 @@ std::string ValidateShrinkNodesRequest::getInstanceId()const
 void ValidateShrinkNodesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ValidateShrinkNodesRequest::getNodeType()const
@@ -47,6 +47,6 @@ std::string ValidateShrinkNodesRequest::getNodeType()const
 void ValidateShrinkNodesRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", nodeType);
+	setParameter("NodeType", nodeType);
 }
 

@@ -173,6 +173,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/UpdateLogstashSettingsResult.h
 	include/alibabacloud/elasticsearch/model/UpdatePipelineManagementConfigRequest.h
 	include/alibabacloud/elasticsearch/model/UpdatePipelineManagementConfigResult.h
+	include/alibabacloud/elasticsearch/model/UpdatePipelinesRequest.h
+	include/alibabacloud/elasticsearch/model/UpdatePipelinesResult.h
 	include/alibabacloud/elasticsearch/model/UpdatePrivateNetworkWhiteIpsRequest.h
 	include/alibabacloud/elasticsearch/model/UpdatePrivateNetworkWhiteIpsResult.h
 	include/alibabacloud/elasticsearch/model/UpdatePublicNetworkRequest.h
@@ -185,6 +187,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/UpdateSynonymsDictsResult.h
 	include/alibabacloud/elasticsearch/model/UpdateWhiteIpsRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateWhiteIpsResult.h
+	include/alibabacloud/elasticsearch/model/UpgradeEngineVersionRequest.h
+	include/alibabacloud/elasticsearch/model/UpgradeEngineVersionResult.h
 	include/alibabacloud/elasticsearch/model/ValidateShrinkNodesRequest.h
 	include/alibabacloud/elasticsearch/model/ValidateShrinkNodesResult.h
 	include/alibabacloud/elasticsearch/model/ValidateTransferableNodesRequest.h
@@ -344,6 +348,8 @@ set(elasticsearch_src
 	src/model/UpdateLogstashSettingsResult.cc
 	src/model/UpdatePipelineManagementConfigRequest.cc
 	src/model/UpdatePipelineManagementConfigResult.cc
+	src/model/UpdatePipelinesRequest.cc
+	src/model/UpdatePipelinesResult.cc
 	src/model/UpdatePrivateNetworkWhiteIpsRequest.cc
 	src/model/UpdatePrivateNetworkWhiteIpsResult.cc
 	src/model/UpdatePublicNetworkRequest.cc
@@ -356,6 +362,8 @@ set(elasticsearch_src
 	src/model/UpdateSynonymsDictsResult.cc
 	src/model/UpdateWhiteIpsRequest.cc
 	src/model/UpdateWhiteIpsResult.cc
+	src/model/UpgradeEngineVersionRequest.cc
+	src/model/UpgradeEngineVersionResult.cc
 	src/model/ValidateShrinkNodesRequest.cc
 	src/model/ValidateShrinkNodesResult.cc
 	src/model/ValidateTransferableNodesRequest.cc

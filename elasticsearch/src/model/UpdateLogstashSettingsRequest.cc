@@ -36,7 +36,7 @@ std::string UpdateLogstashSettingsRequest::getInstanceId()const
 void UpdateLogstashSettingsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UpdateLogstashSettingsRequest::getClientToken()const
@@ -47,6 +47,6 @@ std::string UpdateLogstashSettingsRequest::getClientToken()const
 void UpdateLogstashSettingsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 

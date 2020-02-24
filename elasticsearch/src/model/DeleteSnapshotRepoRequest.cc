@@ -36,7 +36,7 @@ std::string DeleteSnapshotRepoRequest::getInstanceId()const
 void DeleteSnapshotRepoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DeleteSnapshotRepoRequest::getRepoPath()const
@@ -47,6 +47,6 @@ std::string DeleteSnapshotRepoRequest::getRepoPath()const
 void DeleteSnapshotRepoRequest::setRepoPath(const std::string& repoPath)
 {
 	repoPath_ = repoPath;
-	setCoreParameter("RepoPath", repoPath);
+	setParameter("RepoPath", repoPath);
 }
 

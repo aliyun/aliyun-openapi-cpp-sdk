@@ -35,6 +35,14 @@ namespace AlibabaCloud
 				ListInstanceRequest();
 				~ListInstanceRequest();
 
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getInstanceCategory()const;
+				void setInstanceCategory(const std::string& instanceCategory);
+				std::string getOwnerId()const;
+				void setOwnerId(const std::string& ownerId);
+				std::string getTags()const;
+				void setTags(const std::string& tags);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getInstanceId()const;
@@ -43,21 +51,28 @@ namespace AlibabaCloud
 				void setSize(int size);
 				std::string getEsVersion()const;
 				void setEsVersion(const std::string& esVersion);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 				int getPage()const;
 				void setPage(int page);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
+				std::string getPaymentType()const;
+				void setPaymentType(const std::string& paymentType);
 
             private:
+				std::string description_;
+				std::string instanceCategory_;
+				std::string ownerId_;
+				std::string tags_;
 				std::string resourceGroupId_;
 				std::string instanceId_;
 				int size_;
 				std::string esVersion_;
-				std::string description_;
+				std::string vpcId_;
+				std::string zoneId_;
 				int page_;
-				std::string ownerId_;
+				std::string paymentType_;
 
 			};
 		}
