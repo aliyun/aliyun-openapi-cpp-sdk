@@ -35,7 +35,7 @@ std::string SwitchHbaseHaSlbRequest::getHaTypes()const
 void SwitchHbaseHaSlbRequest::setHaTypes(const std::string& haTypes)
 {
 	haTypes_ = haTypes;
-	setCoreParameter("HaTypes", haTypes);
+	setParameter("HaTypes", haTypes);
 }
 
 std::string SwitchHbaseHaSlbRequest::getHbaseType()const
@@ -46,7 +46,7 @@ std::string SwitchHbaseHaSlbRequest::getHbaseType()const
 void SwitchHbaseHaSlbRequest::setHbaseType(const std::string& hbaseType)
 {
 	hbaseType_ = hbaseType;
-	setCoreParameter("HbaseType", hbaseType);
+	setParameter("HbaseType", hbaseType);
 }
 
 std::string SwitchHbaseHaSlbRequest::getBdsId()const
@@ -57,7 +57,7 @@ std::string SwitchHbaseHaSlbRequest::getBdsId()const
 void SwitchHbaseHaSlbRequest::setBdsId(const std::string& bdsId)
 {
 	bdsId_ = bdsId;
-	setCoreParameter("BdsId", bdsId);
+	setParameter("BdsId", bdsId);
 }
 
 std::string SwitchHbaseHaSlbRequest::getHaId()const
@@ -68,6 +68,6 @@ std::string SwitchHbaseHaSlbRequest::getHaId()const
 void SwitchHbaseHaSlbRequest::setHaId(const std::string& haId)
 {
 	haId_ = haId;
-	setCoreParameter("HaId", haId);
+	setParameter("HaId", haId);
 }
 

@@ -35,6 +35,6 @@ std::string DescribeRegionsRequest::getAcceptLanguage()const
 void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
 	acceptLanguage_ = acceptLanguage;
-	setCoreParameter("AcceptLanguage", acceptLanguage);
+	setParameter("AcceptLanguage", acceptLanguage);
 }
 

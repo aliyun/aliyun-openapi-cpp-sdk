@@ -35,6 +35,6 @@ std::string DescribeSecurityGroupsRequest::getClusterId()const
 void DescribeSecurityGroupsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

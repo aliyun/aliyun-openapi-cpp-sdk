@@ -109,6 +109,18 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		createdTimeUTC_ = value["CreatedTimeUTC"].asString();
 	if(!value["ExpireTimeUTC"].isNull())
 		expireTimeUTC_ = value["ExpireTimeUTC"].asString();
+	if(!value["IsLatestVersion"].isNull())
+		isLatestVersion_ = value["IsLatestVersion"].asString() == "true";
+	if(!value["IsMultiModel"].isNull())
+		isMultiModel_ = value["IsMultiModel"].asString() == "true";
+	if(!value["ClusterType"].isNull())
+		clusterType_ = value["ClusterType"].asString();
+	if(!value["ClusterId"].isNull())
+		clusterId_ = value["ClusterId"].asString();
+	if(!value["ClusterName"].isNull())
+		clusterName_ = value["ClusterName"].asString();
+	if(!value["IsDeletionProtection"].isNull())
+		isDeletionProtection_ = value["IsDeletionProtection"].asString() == "true";
 
 }
 
@@ -127,6 +139,16 @@ std::string DescribeInstanceResult::getMasterInstanceType()const
 	return masterInstanceType_;
 }
 
+bool DescribeInstanceResult::getIsDeletionProtection()const
+{
+	return isDeletionProtection_;
+}
+
+bool DescribeInstanceResult::getIsLatestVersion()const
+{
+	return isLatestVersion_;
+}
+
 std::string DescribeInstanceResult::getMaintainEndTime()const
 {
 	return maintainEndTime_;
@@ -140,6 +162,11 @@ std::string DescribeInstanceResult::getNetworkType()const
 std::string DescribeInstanceResult::getCoreInstanceType()const
 {
 	return coreInstanceType_;
+}
+
+std::string DescribeInstanceResult::getClusterName()const
+{
+	return clusterName_;
 }
 
 std::string DescribeInstanceResult::getMasterDiskType()const
@@ -202,6 +229,11 @@ int DescribeInstanceResult::getCoreNodeCount()const
 	return coreNodeCount_;
 }
 
+std::string DescribeInstanceResult::getClusterId()const
+{
+	return clusterId_;
+}
+
 std::string DescribeInstanceResult::getColdStorageStatus()const
 {
 	return coldStorageStatus_;
@@ -220,6 +252,16 @@ std::string DescribeInstanceResult::getCreatedTimeUTC()const
 std::string DescribeInstanceResult::getPayType()const
 {
 	return payType_;
+}
+
+bool DescribeInstanceResult::getIsMultiModel()const
+{
+	return isMultiModel_;
+}
+
+std::string DescribeInstanceResult::getClusterType()const
+{
+	return clusterType_;
 }
 
 std::string DescribeInstanceResult::getVswitchId()const

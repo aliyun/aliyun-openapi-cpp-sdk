@@ -26,6 +26,8 @@
 #include "model/AddUserHdfsInfoResult.h"
 #include "model/ConvertInstanceRequest.h"
 #include "model/ConvertInstanceResult.h"
+#include "model/CreateClusterRequest.h"
+#include "model/CreateClusterResult.h"
 #include "model/CreateHbaseHaSlbRequest.h"
 #include "model/CreateHbaseHaSlbResult.h"
 #include "model/CreateInstanceRequest.h"
@@ -56,6 +58,8 @@
 #include "model/ListTagResourcesResult.h"
 #include "model/ListTagsRequest.h"
 #include "model/ListTagsResult.h"
+#include "model/ModifyClusterDeletionProtectionRequest.h"
+#include "model/ModifyClusterDeletionProtectionResult.h"
 #include "model/ModifyInstanceMaintainTimeRequest.h"
 #include "model/ModifyInstanceMaintainTimeResult.h"
 #include "model/ModifyInstanceNameRequest.h"
@@ -101,6 +105,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ConvertInstanceResult> ConvertInstanceOutcome;
 			typedef std::future<ConvertInstanceOutcome> ConvertInstanceOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ConvertInstanceRequest&, const ConvertInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConvertInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateClusterResult> CreateClusterOutcome;
+			typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::CreateClusterRequest&, const CreateClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
 			typedef Outcome<Error, Model::CreateHbaseHaSlbResult> CreateHbaseHaSlbOutcome;
 			typedef std::future<CreateHbaseHaSlbOutcome> CreateHbaseHaSlbOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::CreateHbaseHaSlbRequest&, const CreateHbaseHaSlbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateHbaseHaSlbAsyncHandler;
@@ -146,6 +153,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagsResult> ListTagsOutcome;
 			typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ListTagsRequest&, const ListTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyClusterDeletionProtectionResult> ModifyClusterDeletionProtectionOutcome;
+			typedef std::future<ModifyClusterDeletionProtectionOutcome> ModifyClusterDeletionProtectionOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::ModifyClusterDeletionProtectionRequest&, const ModifyClusterDeletionProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterDeletionProtectionAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceMaintainTimeResult> ModifyInstanceMaintainTimeOutcome;
 			typedef std::future<ModifyInstanceMaintainTimeOutcome> ModifyInstanceMaintainTimeOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ModifyInstanceMaintainTimeRequest&, const ModifyInstanceMaintainTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceMaintainTimeAsyncHandler;
@@ -202,6 +212,9 @@ namespace AlibabaCloud
 			ConvertInstanceOutcome convertInstance(const Model::ConvertInstanceRequest &request)const;
 			void convertInstanceAsync(const Model::ConvertInstanceRequest& request, const ConvertInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConvertInstanceOutcomeCallable convertInstanceCallable(const Model::ConvertInstanceRequest& request) const;
+			CreateClusterOutcome createCluster(const Model::CreateClusterRequest &request)const;
+			void createClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateClusterOutcomeCallable createClusterCallable(const Model::CreateClusterRequest& request) const;
 			CreateHbaseHaSlbOutcome createHbaseHaSlb(const Model::CreateHbaseHaSlbRequest &request)const;
 			void createHbaseHaSlbAsync(const Model::CreateHbaseHaSlbRequest& request, const CreateHbaseHaSlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateHbaseHaSlbOutcomeCallable createHbaseHaSlbCallable(const Model::CreateHbaseHaSlbRequest& request) const;
@@ -247,6 +260,9 @@ namespace AlibabaCloud
 			ListTagsOutcome listTags(const Model::ListTagsRequest &request)const;
 			void listTagsAsync(const Model::ListTagsRequest& request, const ListTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagsOutcomeCallable listTagsCallable(const Model::ListTagsRequest& request) const;
+			ModifyClusterDeletionProtectionOutcome modifyClusterDeletionProtection(const Model::ModifyClusterDeletionProtectionRequest &request)const;
+			void modifyClusterDeletionProtectionAsync(const Model::ModifyClusterDeletionProtectionRequest& request, const ModifyClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyClusterDeletionProtectionOutcomeCallable modifyClusterDeletionProtectionCallable(const Model::ModifyClusterDeletionProtectionRequest& request) const;
 			ModifyInstanceMaintainTimeOutcome modifyInstanceMaintainTime(const Model::ModifyInstanceMaintainTimeRequest &request)const;
 			void modifyInstanceMaintainTimeAsync(const Model::ModifyInstanceMaintainTimeRequest& request, const ModifyInstanceMaintainTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceMaintainTimeOutcomeCallable modifyInstanceMaintainTimeCallable(const Model::ModifyInstanceMaintainTimeRequest& request) const;

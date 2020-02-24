@@ -97,6 +97,12 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.createdTimeUTC = valueInstancesInstance["CreatedTimeUTC"].asString();
 		if(!valueInstancesInstance["ExpireTimeUTC"].isNull())
 			instancesObject.expireTimeUTC = valueInstancesInstance["ExpireTimeUTC"].asString();
+		if(!valueInstancesInstance["ClusterId"].isNull())
+			instancesObject.clusterId = valueInstancesInstance["ClusterId"].asString();
+		if(!valueInstancesInstance["ClusterName"].isNull())
+			instancesObject.clusterName = valueInstancesInstance["ClusterName"].asString();
+		if(!valueInstancesInstance["IsDeletionProtection"].isNull())
+			instancesObject.isDeletionProtection = valueInstancesInstance["IsDeletionProtection"].asString() == "true";
 		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
 		for (auto allInstancesNodeTagsTag : allTagsNode)
 		{

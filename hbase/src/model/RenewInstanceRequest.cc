@@ -35,7 +35,7 @@ std::string RenewInstanceRequest::getClusterId()const
 void RenewInstanceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int RenewInstanceRequest::getDuration()const
@@ -46,7 +46,7 @@ int RenewInstanceRequest::getDuration()const
 void RenewInstanceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setParameter("Duration", std::to_string(duration));
 }
 
 std::string RenewInstanceRequest::getPricingCycle()const
@@ -57,6 +57,6 @@ std::string RenewInstanceRequest::getPricingCycle()const
 void RenewInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setParameter("PricingCycle", pricingCycle);
 }
 

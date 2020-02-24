@@ -35,7 +35,7 @@ std::string ListTagResourcesRequest::getRegionId()const
 void ListTagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ListTagResourcesRequest::getNextToken()const
@@ -46,7 +46,7 @@ std::string ListTagResourcesRequest::getNextToken()const
 void ListTagResourcesRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
-	setCoreParameter("NextToken", nextToken);
+	setParameter("NextToken", nextToken);
 }
 
 std::vector<ListTagResourcesRequest::Tag> ListTagResourcesRequest::getTag()const
@@ -59,9 +59,9 @@ void ListTagResourcesRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -74,7 +74,7 @@ void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& reso
 {
 	resourceId_ = resourceId;
 	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
-		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+		setParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
 	}
 }
 

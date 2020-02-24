@@ -35,6 +35,6 @@ std::string ListTagsRequest::getRegionId()const
 void ListTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

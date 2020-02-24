@@ -36,7 +36,7 @@ void TagResourcesRequest::setResourceId(const std::vector<std::string>& resource
 {
 	resourceId_ = resourceId;
 	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
-		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+		setParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
 	}
 }
 
@@ -48,7 +48,7 @@ std::string TagResourcesRequest::getRegionId()const
 void TagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag()const
@@ -61,9 +61,9 @@ void TagResourcesRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

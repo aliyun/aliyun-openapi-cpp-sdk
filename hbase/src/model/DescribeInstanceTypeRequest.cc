@@ -35,6 +35,6 @@ std::string DescribeInstanceTypeRequest::getInstanceType()const
 void DescribeInstanceTypeRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 

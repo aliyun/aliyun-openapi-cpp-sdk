@@ -35,7 +35,7 @@ std::string DeleteHbaseHaSlbRequest::getHaId()const
 void DeleteHbaseHaSlbRequest::setHaId(const std::string& haId)
 {
 	haId_ = haId;
-	setCoreParameter("HaId", haId);
+	setParameter("HaId", haId);
 }
 
 std::string DeleteHbaseHaSlbRequest::getHaTypes()const
@@ -46,7 +46,7 @@ std::string DeleteHbaseHaSlbRequest::getHaTypes()const
 void DeleteHbaseHaSlbRequest::setHaTypes(const std::string& haTypes)
 {
 	haTypes_ = haTypes;
-	setCoreParameter("HaTypes", haTypes);
+	setParameter("HaTypes", haTypes);
 }
 
 std::string DeleteHbaseHaSlbRequest::getBdsId()const
@@ -57,6 +57,6 @@ std::string DeleteHbaseHaSlbRequest::getBdsId()const
 void DeleteHbaseHaSlbRequest::setBdsId(const std::string& bdsId)
 {
 	bdsId_ = bdsId;
-	setCoreParameter("BdsId", bdsId);
+	setParameter("BdsId", bdsId);
 }
 

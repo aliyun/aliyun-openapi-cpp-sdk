@@ -42,8 +42,10 @@ namespace AlibabaCloud
 					bool isHa;
 					std::string createdTime;
 					std::string masterInstanceType;
+					bool isDeletionProtection;
 					std::string networkType;
 					std::string coreInstanceType;
+					std::string clusterName;
 					std::string masterDiskType;
 					std::vector<Instance::Tag> tags;
 					std::string engine;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string instanceId;
 					int coreNodeCount;
+					std::string clusterId;
 					std::string coldStorageStatus;
 					std::string createdTimeUTC;
 					std::string payType;

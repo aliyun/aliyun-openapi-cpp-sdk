@@ -35,7 +35,7 @@ std::string DescribeInstancesRequest::getClusterName()const
 void DescribeInstancesRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setCoreParameter("ClusterName", clusterName);
+	setParameter("ClusterName", clusterName);
 }
 
 int DescribeInstancesRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeInstancesRequest::getPageNumber()const
 void DescribeInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeInstancesRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DescribeInstancesRequest::getRegionId()const
 void DescribeInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeInstancesRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeInstancesRequest::getPageSize()const
 void DescribeInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeInstancesRequest::Tag> DescribeInstancesRequest::getTag()const
@@ -81,9 +81,9 @@ void DescribeInstancesRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -95,6 +95,6 @@ std::string DescribeInstancesRequest::getDbType()const
 void DescribeInstancesRequest::setDbType(const std::string& dbType)
 {
 	dbType_ = dbType;
-	setCoreParameter("DbType", dbType);
+	setParameter("DbType", dbType);
 }
 

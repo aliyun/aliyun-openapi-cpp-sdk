@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_QUERYXPACKRELATEDBREQUEST_H_
-#define ALIBABACLOUD_HBASE_MODEL_QUERYXPACKRELATEDBREQUEST_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_MODIFYCLUSTERDELETIONPROTECTIONRESULT_H_
+#define ALIBABACLOUD_HBASE_MODEL_MODIFYCLUSTERDELETIONPROTECTIONRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/hbase/HBaseExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT QueryXpackRelateDBRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HBASE_EXPORT ModifyClusterDeletionProtectionResult : public ServiceResult
 			{
-
 			public:
-				QueryXpackRelateDBRequest();
-				~QueryXpackRelateDBRequest();
 
-				bool getHasSingleNode()const;
-				void setHasSingleNode(bool hasSingleNode);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getRelateDbType()const;
-				void setRelateDbType(const std::string& relateDbType);
 
-            private:
-				bool hasSingleNode_;
-				std::string clusterId_;
-				std::string relateDbType_;
+				ModifyClusterDeletionProtectionResult();
+				explicit ModifyClusterDeletionProtectionResult(const std::string &payload);
+				~ModifyClusterDeletionProtectionResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_QUERYXPACKRELATEDBREQUEST_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_MODIFYCLUSTERDELETIONPROTECTIONRESULT_H_

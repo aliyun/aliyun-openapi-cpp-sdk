@@ -35,7 +35,7 @@ std::string RestartInstanceRequest::getComponents()const
 void RestartInstanceRequest::setComponents(const std::string& components)
 {
 	components_ = components;
-	setCoreParameter("Components", components);
+	setParameter("Components", components);
 }
 
 std::string RestartInstanceRequest::getClusterId()const
@@ -46,6 +46,6 @@ std::string RestartInstanceRequest::getClusterId()const
 void RestartInstanceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

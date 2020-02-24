@@ -35,6 +35,6 @@ std::string QueryHBaseHaDBRequest::getBdsId()const
 void QueryHBaseHaDBRequest::setBdsId(const std::string& bdsId)
 {
 	bdsId_ = bdsId;
-	setCoreParameter("BdsId", bdsId);
+	setParameter("BdsId", bdsId);
 }
 

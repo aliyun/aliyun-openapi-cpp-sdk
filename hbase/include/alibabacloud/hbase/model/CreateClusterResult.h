@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_QUERYXPACKRELATEDBREQUEST_H_
-#define ALIBABACLOUD_HBASE_MODEL_QUERYXPACKRELATEDBREQUEST_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_CREATECLUSTERRESULT_H_
+#define ALIBABACLOUD_HBASE_MODEL_CREATECLUSTERRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/hbase/HBaseExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT QueryXpackRelateDBRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HBASE_EXPORT CreateClusterResult : public ServiceResult
 			{
-
 			public:
-				QueryXpackRelateDBRequest();
-				~QueryXpackRelateDBRequest();
 
-				bool getHasSingleNode()const;
-				void setHasSingleNode(bool hasSingleNode);
+
+				CreateClusterResult();
+				explicit CreateClusterResult(const std::string &payload);
+				~CreateClusterResult();
 				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getRelateDbType()const;
-				void setRelateDbType(const std::string& relateDbType);
+				std::string getOrderId()const;
 
-            private:
-				bool hasSingleNode_;
+			protected:
+				void parse(const std::string &payload);
+			private:
 				std::string clusterId_;
-				std::string relateDbType_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_QUERYXPACKRELATEDBREQUEST_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_CREATECLUSTERRESULT_H_

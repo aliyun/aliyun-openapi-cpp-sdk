@@ -35,7 +35,7 @@ std::string CreateInstanceRequest::getClusterName()const
 void CreateInstanceRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setCoreParameter("ClusterName", clusterName);
+	setParameter("ClusterName", clusterName);
 }
 
 std::string CreateInstanceRequest::getDbInstanceConnType()const
@@ -46,7 +46,7 @@ std::string CreateInstanceRequest::getDbInstanceConnType()const
 void CreateInstanceRequest::setDbInstanceConnType(const std::string& dbInstanceConnType)
 {
 	dbInstanceConnType_ = dbInstanceConnType;
-	setCoreParameter("DbInstanceConnType", dbInstanceConnType);
+	setParameter("DbInstanceConnType", dbInstanceConnType);
 }
 
 std::string CreateInstanceRequest::getEngineVersion()const
@@ -57,7 +57,7 @@ std::string CreateInstanceRequest::getEngineVersion()const
 void CreateInstanceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 std::string CreateInstanceRequest::getDepMode()const
@@ -68,7 +68,7 @@ std::string CreateInstanceRequest::getDepMode()const
 void CreateInstanceRequest::setDepMode(const std::string& depMode)
 {
 	depMode_ = depMode;
-	setCoreParameter("DepMode", depMode);
+	setParameter("DepMode", depMode);
 }
 
 std::string CreateInstanceRequest::getBackupId()const
@@ -79,7 +79,7 @@ std::string CreateInstanceRequest::getBackupId()const
 void CreateInstanceRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setParameter("BackupId", backupId);
 }
 
 std::string CreateInstanceRequest::getDbInstanceType()const
@@ -90,7 +90,7 @@ std::string CreateInstanceRequest::getDbInstanceType()const
 void CreateInstanceRequest::setDbInstanceType(const std::string& dbInstanceType)
 {
 	dbInstanceType_ = dbInstanceType;
-	setCoreParameter("DbInstanceType", dbInstanceType);
+	setParameter("DbInstanceType", dbInstanceType);
 }
 
 std::string CreateInstanceRequest::getVSwitchId()const
@@ -101,7 +101,7 @@ std::string CreateInstanceRequest::getVSwitchId()const
 void CreateInstanceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateInstanceRequest::getSecurityIPList()const
@@ -112,7 +112,7 @@ std::string CreateInstanceRequest::getSecurityIPList()const
 void CreateInstanceRequest::setSecurityIPList(const std::string& securityIPList)
 {
 	securityIPList_ = securityIPList;
-	setCoreParameter("SecurityIPList", securityIPList);
+	setParameter("SecurityIPList", securityIPList);
 }
 
 std::string CreateInstanceRequest::getAutoRenew()const
@@ -123,7 +123,7 @@ std::string CreateInstanceRequest::getAutoRenew()const
 void CreateInstanceRequest::setAutoRenew(const std::string& autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew);
+	setParameter("AutoRenew", autoRenew);
 }
 
 std::string CreateInstanceRequest::getNetType()const
@@ -134,7 +134,7 @@ std::string CreateInstanceRequest::getNetType()const
 void CreateInstanceRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", netType);
+	setParameter("NetType", netType);
 }
 
 std::string CreateInstanceRequest::getZoneId()const
@@ -145,7 +145,7 @@ std::string CreateInstanceRequest::getZoneId()const
 void CreateInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string CreateInstanceRequest::getCoreDiskType()const
@@ -156,7 +156,7 @@ std::string CreateInstanceRequest::getCoreDiskType()const
 void CreateInstanceRequest::setCoreDiskType(const std::string& coreDiskType)
 {
 	coreDiskType_ = coreDiskType;
-	setCoreParameter("CoreDiskType", coreDiskType);
+	setParameter("CoreDiskType", coreDiskType);
 }
 
 std::string CreateInstanceRequest::getPricingCycle()const
@@ -167,7 +167,7 @@ std::string CreateInstanceRequest::getPricingCycle()const
 void CreateInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setParameter("PricingCycle", pricingCycle);
 }
 
 std::string CreateInstanceRequest::getCoreInstanceQuantity()const
@@ -178,7 +178,7 @@ std::string CreateInstanceRequest::getCoreInstanceQuantity()const
 void CreateInstanceRequest::setCoreInstanceQuantity(const std::string& coreInstanceQuantity)
 {
 	coreInstanceQuantity_ = coreInstanceQuantity;
-	setCoreParameter("CoreInstanceQuantity", coreInstanceQuantity);
+	setParameter("CoreInstanceQuantity", coreInstanceQuantity);
 }
 
 std::string CreateInstanceRequest::getDuration()const
@@ -189,7 +189,7 @@ std::string CreateInstanceRequest::getDuration()const
 void CreateInstanceRequest::setDuration(const std::string& duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", duration);
+	setParameter("Duration", duration);
 }
 
 std::string CreateInstanceRequest::getRegionId()const
@@ -200,7 +200,7 @@ std::string CreateInstanceRequest::getRegionId()const
 void CreateInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateInstanceRequest::getEngine()const
@@ -211,7 +211,7 @@ std::string CreateInstanceRequest::getEngine()const
 void CreateInstanceRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string CreateInstanceRequest::getRestoreTime()const
@@ -222,7 +222,7 @@ std::string CreateInstanceRequest::getRestoreTime()const
 void CreateInstanceRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
+	setParameter("RestoreTime", restoreTime);
 }
 
 std::string CreateInstanceRequest::getSrcDBInstanceId()const
@@ -233,7 +233,7 @@ std::string CreateInstanceRequest::getSrcDBInstanceId()const
 void CreateInstanceRequest::setSrcDBInstanceId(const std::string& srcDBInstanceId)
 {
 	srcDBInstanceId_ = srcDBInstanceId;
-	setCoreParameter("SrcDBInstanceId", srcDBInstanceId);
+	setParameter("SrcDBInstanceId", srcDBInstanceId);
 }
 
 std::string CreateInstanceRequest::getMasterInstanceType()const
@@ -244,7 +244,7 @@ std::string CreateInstanceRequest::getMasterInstanceType()const
 void CreateInstanceRequest::setMasterInstanceType(const std::string& masterInstanceType)
 {
 	masterInstanceType_ = masterInstanceType;
-	setCoreParameter("MasterInstanceType", masterInstanceType);
+	setParameter("MasterInstanceType", masterInstanceType);
 }
 
 std::string CreateInstanceRequest::getColdStorageSize()const
@@ -255,7 +255,7 @@ std::string CreateInstanceRequest::getColdStorageSize()const
 void CreateInstanceRequest::setColdStorageSize(const std::string& coldStorageSize)
 {
 	coldStorageSize_ = coldStorageSize;
-	setCoreParameter("ColdStorageSize", coldStorageSize);
+	setParameter("ColdStorageSize", coldStorageSize);
 }
 
 std::string CreateInstanceRequest::getCoreDiskQuantity()const
@@ -266,7 +266,7 @@ std::string CreateInstanceRequest::getCoreDiskQuantity()const
 void CreateInstanceRequest::setCoreDiskQuantity(const std::string& coreDiskQuantity)
 {
 	coreDiskQuantity_ = coreDiskQuantity;
-	setCoreParameter("CoreDiskQuantity", coreDiskQuantity);
+	setParameter("CoreDiskQuantity", coreDiskQuantity);
 }
 
 std::string CreateInstanceRequest::getIsColdStorage()const
@@ -277,7 +277,7 @@ std::string CreateInstanceRequest::getIsColdStorage()const
 void CreateInstanceRequest::setIsColdStorage(const std::string& isColdStorage)
 {
 	isColdStorage_ = isColdStorage;
-	setCoreParameter("IsColdStorage", isColdStorage);
+	setParameter("IsColdStorage", isColdStorage);
 }
 
 std::string CreateInstanceRequest::getCoreInstanceType()const
@@ -288,7 +288,7 @@ std::string CreateInstanceRequest::getCoreInstanceType()const
 void CreateInstanceRequest::setCoreInstanceType(const std::string& coreInstanceType)
 {
 	coreInstanceType_ = coreInstanceType;
-	setCoreParameter("CoreInstanceType", coreInstanceType);
+	setParameter("CoreInstanceType", coreInstanceType);
 }
 
 std::string CreateInstanceRequest::getCoreDiskSize()const
@@ -299,7 +299,7 @@ std::string CreateInstanceRequest::getCoreDiskSize()const
 void CreateInstanceRequest::setCoreDiskSize(const std::string& coreDiskSize)
 {
 	coreDiskSize_ = coreDiskSize;
-	setCoreParameter("CoreDiskSize", coreDiskSize);
+	setParameter("CoreDiskSize", coreDiskSize);
 }
 
 std::string CreateInstanceRequest::getVpcId()const
@@ -310,7 +310,7 @@ std::string CreateInstanceRequest::getVpcId()const
 void CreateInstanceRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string CreateInstanceRequest::getDbType()const
@@ -321,7 +321,7 @@ std::string CreateInstanceRequest::getDbType()const
 void CreateInstanceRequest::setDbType(const std::string& dbType)
 {
 	dbType_ = dbType;
-	setCoreParameter("DbType", dbType);
+	setParameter("DbType", dbType);
 }
 
 std::string CreateInstanceRequest::getPayType()const
@@ -332,6 +332,6 @@ std::string CreateInstanceRequest::getPayType()const
 void CreateInstanceRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setParameter("PayType", payType);
 }
 

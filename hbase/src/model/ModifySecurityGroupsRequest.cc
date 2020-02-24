@@ -35,7 +35,7 @@ std::string ModifySecurityGroupsRequest::getClusterId()const
 void ModifySecurityGroupsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifySecurityGroupsRequest::getSecurityGroupIds()const
@@ -46,6 +46,6 @@ std::string ModifySecurityGroupsRequest::getSecurityGroupIds()const
 void ModifySecurityGroupsRequest::setSecurityGroupIds(const std::string& securityGroupIds)
 {
 	securityGroupIds_ = securityGroupIds;
-	setCoreParameter("SecurityGroupIds", securityGroupIds);
+	setParameter("SecurityGroupIds", securityGroupIds);
 }
 

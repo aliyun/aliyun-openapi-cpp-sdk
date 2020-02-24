@@ -35,7 +35,7 @@ int ResizeDiskSizeRequest::getNodeDiskSize()const
 void ResizeDiskSizeRequest::setNodeDiskSize(int nodeDiskSize)
 {
 	nodeDiskSize_ = nodeDiskSize;
-	setCoreParameter("NodeDiskSize", std::to_string(nodeDiskSize));
+	setParameter("NodeDiskSize", std::to_string(nodeDiskSize));
 }
 
 std::string ResizeDiskSizeRequest::getClusterId()const
@@ -46,6 +46,6 @@ std::string ResizeDiskSizeRequest::getClusterId()const
 void ResizeDiskSizeRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

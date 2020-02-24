@@ -35,7 +35,7 @@ std::string DeleteUserHdfsInfoRequest::getClusterId()const
 void DeleteUserHdfsInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DeleteUserHdfsInfoRequest::getNameService()const
@@ -46,6 +46,6 @@ std::string DeleteUserHdfsInfoRequest::getNameService()const
 void DeleteUserHdfsInfoRequest::setNameService(const std::string& nameService)
 {
 	nameService_ = nameService;
-	setCoreParameter("NameService", nameService);
+	setParameter("NameService", nameService);
 }
 

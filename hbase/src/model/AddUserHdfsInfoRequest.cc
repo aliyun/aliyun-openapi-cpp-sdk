@@ -35,7 +35,7 @@ std::string AddUserHdfsInfoRequest::getExtInfo()const
 void AddUserHdfsInfoRequest::setExtInfo(const std::string& extInfo)
 {
 	extInfo_ = extInfo;
-	setCoreParameter("ExtInfo", extInfo);
+	setParameter("ExtInfo", extInfo);
 }
 
 std::string AddUserHdfsInfoRequest::getClusterId()const
@@ -46,6 +46,6 @@ std::string AddUserHdfsInfoRequest::getClusterId()const
 void AddUserHdfsInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

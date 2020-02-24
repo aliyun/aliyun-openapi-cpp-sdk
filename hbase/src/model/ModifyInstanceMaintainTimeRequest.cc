@@ -35,7 +35,7 @@ std::string ModifyInstanceMaintainTimeRequest::getClusterId()const
 void ModifyInstanceMaintainTimeRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyInstanceMaintainTimeRequest::getMaintainEndTime()const
@@ -46,7 +46,7 @@ std::string ModifyInstanceMaintainTimeRequest::getMaintainEndTime()const
 void ModifyInstanceMaintainTimeRequest::setMaintainEndTime(const std::string& maintainEndTime)
 {
 	maintainEndTime_ = maintainEndTime;
-	setCoreParameter("MaintainEndTime", maintainEndTime);
+	setParameter("MaintainEndTime", maintainEndTime);
 }
 
 std::string ModifyInstanceMaintainTimeRequest::getMaintainStartTime()const
@@ -57,6 +57,6 @@ std::string ModifyInstanceMaintainTimeRequest::getMaintainStartTime()const
 void ModifyInstanceMaintainTimeRequest::setMaintainStartTime(const std::string& maintainStartTime)
 {
 	maintainStartTime_ = maintainStartTime;
-	setCoreParameter("MaintainStartTime", maintainStartTime);
+	setParameter("MaintainStartTime", maintainStartTime);
 }
 

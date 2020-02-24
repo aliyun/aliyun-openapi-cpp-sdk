@@ -35,6 +35,6 @@ std::string DescribeIpWhitelistRequest::getClusterId()const
 void DescribeIpWhitelistRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

@@ -25,6 +25,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/AddUserHdfsInfoResult.h
 	include/alibabacloud/hbase/model/ConvertInstanceRequest.h
 	include/alibabacloud/hbase/model/ConvertInstanceResult.h
+	include/alibabacloud/hbase/model/CreateClusterRequest.h
+	include/alibabacloud/hbase/model/CreateClusterResult.h
 	include/alibabacloud/hbase/model/CreateHbaseHaSlbRequest.h
 	include/alibabacloud/hbase/model/CreateHbaseHaSlbResult.h
 	include/alibabacloud/hbase/model/CreateInstanceRequest.h
@@ -55,6 +57,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/ListTagResourcesResult.h
 	include/alibabacloud/hbase/model/ListTagsRequest.h
 	include/alibabacloud/hbase/model/ListTagsResult.h
+	include/alibabacloud/hbase/model/ModifyClusterDeletionProtectionRequest.h
+	include/alibabacloud/hbase/model/ModifyClusterDeletionProtectionResult.h
 	include/alibabacloud/hbase/model/ModifyInstanceMaintainTimeRequest.h
 	include/alibabacloud/hbase/model/ModifyInstanceMaintainTimeResult.h
 	include/alibabacloud/hbase/model/ModifyInstanceNameRequest.h
@@ -92,6 +96,8 @@ set(hbase_src
 	src/model/AddUserHdfsInfoResult.cc
 	src/model/ConvertInstanceRequest.cc
 	src/model/ConvertInstanceResult.cc
+	src/model/CreateClusterRequest.cc
+	src/model/CreateClusterResult.cc
 	src/model/CreateHbaseHaSlbRequest.cc
 	src/model/CreateHbaseHaSlbResult.cc
 	src/model/CreateInstanceRequest.cc
@@ -122,6 +128,8 @@ set(hbase_src
 	src/model/ListTagResourcesResult.cc
 	src/model/ListTagsRequest.cc
 	src/model/ListTagsResult.cc
+	src/model/ModifyClusterDeletionProtectionRequest.cc
+	src/model/ModifyClusterDeletionProtectionResult.cc
 	src/model/ModifyInstanceMaintainTimeRequest.cc
 	src/model/ModifyInstanceMaintainTimeResult.cc
 	src/model/ModifyInstanceNameRequest.cc

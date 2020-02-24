@@ -27,6 +27,17 @@ QueryXpackRelateDBRequest::QueryXpackRelateDBRequest() :
 QueryXpackRelateDBRequest::~QueryXpackRelateDBRequest()
 {}
 
+bool QueryXpackRelateDBRequest::getHasSingleNode()const
+{
+	return hasSingleNode_;
+}
+
+void QueryXpackRelateDBRequest::setHasSingleNode(bool hasSingleNode)
+{
+	hasSingleNode_ = hasSingleNode;
+	setParameter("HasSingleNode", hasSingleNode ? "true" : "false");
+}
+
 std::string QueryXpackRelateDBRequest::getClusterId()const
 {
 	return clusterId_;
@@ -35,7 +46,7 @@ std::string QueryXpackRelateDBRequest::getClusterId()const
 void QueryXpackRelateDBRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string QueryXpackRelateDBRequest::getRelateDbType()const
@@ -46,6 +57,6 @@ std::string QueryXpackRelateDBRequest::getRelateDbType()const
 void QueryXpackRelateDBRequest::setRelateDbType(const std::string& relateDbType)
 {
 	relateDbType_ = relateDbType;
-	setCoreParameter("RelateDbType", relateDbType);
+	setParameter("RelateDbType", relateDbType);
 }
 

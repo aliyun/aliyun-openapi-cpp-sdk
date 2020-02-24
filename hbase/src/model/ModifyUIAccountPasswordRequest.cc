@@ -35,7 +35,7 @@ std::string ModifyUIAccountPasswordRequest::getClusterId()const
 void ModifyUIAccountPasswordRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyUIAccountPasswordRequest::getAccountPassword()const
@@ -46,7 +46,7 @@ std::string ModifyUIAccountPasswordRequest::getAccountPassword()const
 void ModifyUIAccountPasswordRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	setParameter("AccountPassword", accountPassword);
 }
 
 std::string ModifyUIAccountPasswordRequest::getAccountName()const
@@ -57,6 +57,6 @@ std::string ModifyUIAccountPasswordRequest::getAccountName()const
 void ModifyUIAccountPasswordRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setParameter("AccountName", accountName);
 }
 

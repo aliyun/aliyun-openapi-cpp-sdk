@@ -31,21 +31,21 @@ HBaseClient::HBaseClient(const Credentials &credentials, const ClientConfigurati
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "hbase");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 HBaseClient::HBaseClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "hbase");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 HBaseClient::HBaseClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "hbase");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 HBaseClient::~HBaseClient()
@@ -117,6 +117,42 @@ HBaseClient::ConvertInstanceOutcomeCallable HBaseClient::convertInstanceCallable
 			[this, request]()
 			{
 			return this->convertInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::CreateClusterOutcome HBaseClient::createCluster(const CreateClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateClusterOutcome(CreateClusterResult(outcome.result()));
+	else
+		return CreateClusterOutcome(outcome.error());
+}
+
+void HBaseClient::createClusterAsync(const CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::CreateClusterOutcomeCallable HBaseClient::createClusterCallable(const CreateClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->createCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -657,6 +693,42 @@ HBaseClient::ListTagsOutcomeCallable HBaseClient::listTagsCallable(const ListTag
 			[this, request]()
 			{
 			return this->listTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::ModifyClusterDeletionProtectionOutcome HBaseClient::modifyClusterDeletionProtection(const ModifyClusterDeletionProtectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyClusterDeletionProtectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyClusterDeletionProtectionOutcome(ModifyClusterDeletionProtectionResult(outcome.result()));
+	else
+		return ModifyClusterDeletionProtectionOutcome(outcome.error());
+}
+
+void HBaseClient::modifyClusterDeletionProtectionAsync(const ModifyClusterDeletionProtectionRequest& request, const ModifyClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyClusterDeletionProtection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::ModifyClusterDeletionProtectionOutcomeCallable HBaseClient::modifyClusterDeletionProtectionCallable(const ModifyClusterDeletionProtectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyClusterDeletionProtectionOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyClusterDeletionProtection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

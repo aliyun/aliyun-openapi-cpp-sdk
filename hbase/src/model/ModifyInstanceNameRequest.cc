@@ -35,7 +35,7 @@ std::string ModifyInstanceNameRequest::getClientToken()const
 void ModifyInstanceNameRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyInstanceNameRequest::getClusterName()const
@@ -46,7 +46,7 @@ std::string ModifyInstanceNameRequest::getClusterName()const
 void ModifyInstanceNameRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setCoreParameter("ClusterName", clusterName);
+	setParameter("ClusterName", clusterName);
 }
 
 std::string ModifyInstanceNameRequest::getClusterId()const
@@ -57,7 +57,7 @@ std::string ModifyInstanceNameRequest::getClusterId()const
 void ModifyInstanceNameRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyInstanceNameRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string ModifyInstanceNameRequest::getAccessKeyId()const
 void ModifyInstanceNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyInstanceNameRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string ModifyInstanceNameRequest::getRegionId()const
 void ModifyInstanceNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyInstanceNameRequest::getZoneId()const
@@ -90,6 +90,6 @@ std::string ModifyInstanceNameRequest::getZoneId()const
 void ModifyInstanceNameRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

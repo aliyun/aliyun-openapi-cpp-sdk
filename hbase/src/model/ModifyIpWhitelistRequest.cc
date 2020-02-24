@@ -35,7 +35,7 @@ std::string ModifyIpWhitelistRequest::getIpList()const
 void ModifyIpWhitelistRequest::setIpList(const std::string& ipList)
 {
 	ipList_ = ipList;
-	setCoreParameter("IpList", ipList);
+	setParameter("IpList", ipList);
 }
 
 std::string ModifyIpWhitelistRequest::getIpVersion()const
@@ -46,7 +46,7 @@ std::string ModifyIpWhitelistRequest::getIpVersion()const
 void ModifyIpWhitelistRequest::setIpVersion(const std::string& ipVersion)
 {
 	ipVersion_ = ipVersion;
-	setCoreParameter("IpVersion", ipVersion);
+	setParameter("IpVersion", ipVersion);
 }
 
 std::string ModifyIpWhitelistRequest::getClusterId()const
@@ -57,7 +57,7 @@ std::string ModifyIpWhitelistRequest::getClusterId()const
 void ModifyIpWhitelistRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyIpWhitelistRequest::getGroupName()const
@@ -68,6 +68,6 @@ std::string ModifyIpWhitelistRequest::getGroupName()const
 void ModifyIpWhitelistRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 

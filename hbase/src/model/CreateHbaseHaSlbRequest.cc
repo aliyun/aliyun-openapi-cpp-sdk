@@ -35,7 +35,7 @@ std::string CreateHbaseHaSlbRequest::getHaTypes()const
 void CreateHbaseHaSlbRequest::setHaTypes(const std::string& haTypes)
 {
 	haTypes_ = haTypes;
-	setCoreParameter("HaTypes", haTypes);
+	setParameter("HaTypes", haTypes);
 }
 
 std::string CreateHbaseHaSlbRequest::getHbaseType()const
@@ -46,7 +46,7 @@ std::string CreateHbaseHaSlbRequest::getHbaseType()const
 void CreateHbaseHaSlbRequest::setHbaseType(const std::string& hbaseType)
 {
 	hbaseType_ = hbaseType;
-	setCoreParameter("HbaseType", hbaseType);
+	setParameter("HbaseType", hbaseType);
 }
 
 std::string CreateHbaseHaSlbRequest::getBdsId()const
@@ -57,7 +57,7 @@ std::string CreateHbaseHaSlbRequest::getBdsId()const
 void CreateHbaseHaSlbRequest::setBdsId(const std::string& bdsId)
 {
 	bdsId_ = bdsId;
-	setCoreParameter("BdsId", bdsId);
+	setParameter("BdsId", bdsId);
 }
 
 std::string CreateHbaseHaSlbRequest::getHaId()const
@@ -68,6 +68,6 @@ std::string CreateHbaseHaSlbRequest::getHaId()const
 void CreateHbaseHaSlbRequest::setHaId(const std::string& haId)
 {
 	haId_ = haId;
-	setCoreParameter("HaId", haId);
+	setParameter("HaId", haId);
 }
 

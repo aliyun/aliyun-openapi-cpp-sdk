@@ -35,7 +35,7 @@ std::string ResizeNodeCountRequest::getClusterId()const
 void ResizeNodeCountRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int ResizeNodeCountRequest::getNodeCount()const
@@ -46,6 +46,6 @@ int ResizeNodeCountRequest::getNodeCount()const
 void ResizeNodeCountRequest::setNodeCount(int nodeCount)
 {
 	nodeCount_ = nodeCount;
-	setCoreParameter("NodeCount", std::to_string(nodeCount));
+	setParameter("NodeCount", std::to_string(nodeCount));
 }
 

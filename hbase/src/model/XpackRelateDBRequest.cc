@@ -35,7 +35,7 @@ std::string XpackRelateDBRequest::getClusterId()const
 void XpackRelateDBRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string XpackRelateDBRequest::getRelateDbType()const
@@ -46,7 +46,7 @@ std::string XpackRelateDBRequest::getRelateDbType()const
 void XpackRelateDBRequest::setRelateDbType(const std::string& relateDbType)
 {
 	relateDbType_ = relateDbType;
-	setCoreParameter("RelateDbType", relateDbType);
+	setParameter("RelateDbType", relateDbType);
 }
 
 std::string XpackRelateDBRequest::getDbClusterIds()const
@@ -57,6 +57,6 @@ std::string XpackRelateDBRequest::getDbClusterIds()const
 void XpackRelateDBRequest::setDbClusterIds(const std::string& dbClusterIds)
 {
 	dbClusterIds_ = dbClusterIds;
-	setCoreParameter("DbClusterIds", dbClusterIds);
+	setParameter("DbClusterIds", dbClusterIds);
 }
 

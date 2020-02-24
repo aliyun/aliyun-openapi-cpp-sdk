@@ -35,6 +35,6 @@ std::string DescribeDBInstanceUsageRequest::getClusterId()const
 void DescribeDBInstanceUsageRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

@@ -35,7 +35,7 @@ std::string UnTagResourcesRequest::getRegionId()const
 void UnTagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool UnTagResourcesRequest::getAll()const
@@ -46,7 +46,7 @@ bool UnTagResourcesRequest::getAll()const
 void UnTagResourcesRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all ? "true" : "false");
+	setParameter("All", all ? "true" : "false");
 }
 
 std::vector<std::string> UnTagResourcesRequest::getResourceId()const
@@ -58,7 +58,7 @@ void UnTagResourcesRequest::setResourceId(const std::vector<std::string>& resour
 {
 	resourceId_ = resourceId;
 	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
-		setCoreParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+		setParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
 	}
 }
 
@@ -71,7 +71,7 @@ void UnTagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
 	for(int dep1 = 0; dep1!= tagKey.size(); dep1++) {
-		setCoreParameter("TagKey."+ std::to_string(dep1), tagKey.at(dep1));
+		setParameter("TagKey."+ std::to_string(dep1), tagKey.at(dep1));
 	}
 }
 
