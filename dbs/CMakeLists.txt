@@ -25,12 +25,18 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/ConfigureBackupPlanResult.h
 	include/alibabacloud/dbs/model/CreateBackupPlanRequest.h
 	include/alibabacloud/dbs/model/CreateBackupPlanResult.h
+	include/alibabacloud/dbs/model/CreateFullBackupSetDownloadRequest.h
+	include/alibabacloud/dbs/model/CreateFullBackupSetDownloadResult.h
+	include/alibabacloud/dbs/model/CreateIncrementBackupSetDownloadRequest.h
+	include/alibabacloud/dbs/model/CreateIncrementBackupSetDownloadResult.h
 	include/alibabacloud/dbs/model/CreateRestoreTaskRequest.h
 	include/alibabacloud/dbs/model/CreateRestoreTaskResult.h
 	include/alibabacloud/dbs/model/DescribeBackupGatewayListRequest.h
 	include/alibabacloud/dbs/model/DescribeBackupGatewayListResult.h
 	include/alibabacloud/dbs/model/DescribeBackupPlanListRequest.h
 	include/alibabacloud/dbs/model/DescribeBackupPlanListResult.h
+	include/alibabacloud/dbs/model/DescribeBackupSetDownloadTaskListRequest.h
+	include/alibabacloud/dbs/model/DescribeBackupSetDownloadTaskListResult.h
 	include/alibabacloud/dbs/model/DescribeFullBackupListRequest.h
 	include/alibabacloud/dbs/model/DescribeFullBackupListResult.h
 	include/alibabacloud/dbs/model/DescribeIncrementBackupListRequest.h
@@ -49,6 +55,8 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/ModifyBackupObjectsResult.h
 	include/alibabacloud/dbs/model/ModifyBackupPlanNameRequest.h
 	include/alibabacloud/dbs/model/ModifyBackupPlanNameResult.h
+	include/alibabacloud/dbs/model/ModifyBackupSetDownloadRulesRequest.h
+	include/alibabacloud/dbs/model/ModifyBackupSetDownloadRulesResult.h
 	include/alibabacloud/dbs/model/ModifyBackupSourceEndpointRequest.h
 	include/alibabacloud/dbs/model/ModifyBackupSourceEndpointResult.h
 	include/alibabacloud/dbs/model/ModifyBackupStrategyRequest.h
@@ -59,6 +67,8 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/StartBackupPlanResult.h
 	include/alibabacloud/dbs/model/StartRestoreTaskRequest.h
 	include/alibabacloud/dbs/model/StartRestoreTaskResult.h
+	include/alibabacloud/dbs/model/StartTaskRequest.h
+	include/alibabacloud/dbs/model/StartTaskResult.h
 	include/alibabacloud/dbs/model/StopBackupPlanRequest.h
 	include/alibabacloud/dbs/model/StopBackupPlanResult.h
 	include/alibabacloud/dbs/model/UpgradeBackupPlanRequest.h
@@ -70,12 +80,18 @@ set(dbs_src
 	src/model/ConfigureBackupPlanResult.cc
 	src/model/CreateBackupPlanRequest.cc
 	src/model/CreateBackupPlanResult.cc
+	src/model/CreateFullBackupSetDownloadRequest.cc
+	src/model/CreateFullBackupSetDownloadResult.cc
+	src/model/CreateIncrementBackupSetDownloadRequest.cc
+	src/model/CreateIncrementBackupSetDownloadResult.cc
 	src/model/CreateRestoreTaskRequest.cc
 	src/model/CreateRestoreTaskResult.cc
 	src/model/DescribeBackupGatewayListRequest.cc
 	src/model/DescribeBackupGatewayListResult.cc
 	src/model/DescribeBackupPlanListRequest.cc
 	src/model/DescribeBackupPlanListResult.cc
+	src/model/DescribeBackupSetDownloadTaskListRequest.cc
+	src/model/DescribeBackupSetDownloadTaskListResult.cc
 	src/model/DescribeFullBackupListRequest.cc
 	src/model/DescribeFullBackupListResult.cc
 	src/model/DescribeIncrementBackupListRequest.cc
@@ -94,6 +110,8 @@ set(dbs_src
 	src/model/ModifyBackupObjectsResult.cc
 	src/model/ModifyBackupPlanNameRequest.cc
 	src/model/ModifyBackupPlanNameResult.cc
+	src/model/ModifyBackupSetDownloadRulesRequest.cc
+	src/model/ModifyBackupSetDownloadRulesResult.cc
 	src/model/ModifyBackupSourceEndpointRequest.cc
 	src/model/ModifyBackupSourceEndpointResult.cc
 	src/model/ModifyBackupStrategyRequest.cc
@@ -104,6 +122,8 @@ set(dbs_src
 	src/model/StartBackupPlanResult.cc
 	src/model/StartRestoreTaskRequest.cc
 	src/model/StartRestoreTaskResult.cc
+	src/model/StartTaskRequest.cc
+	src/model/StartTaskResult.cc
 	src/model/StopBackupPlanRequest.cc
 	src/model/StopBackupPlanResult.cc
 	src/model/UpgradeBackupPlanRequest.cc
