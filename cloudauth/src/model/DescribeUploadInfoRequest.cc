@@ -35,6 +35,6 @@ std::string DescribeUploadInfoRequest::getSourceIp()const
 void DescribeUploadInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

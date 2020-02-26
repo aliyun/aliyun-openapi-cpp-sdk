@@ -35,7 +35,7 @@ bool CreateVerifySettingRequest::getGuideStep()const
 void CreateVerifySettingRequest::setGuideStep(bool guideStep)
 {
 	guideStep_ = guideStep;
-	setCoreParameter("GuideStep", guideStep ? "true" : "false");
+	setParameter("GuideStep", guideStep ? "true" : "false");
 }
 
 bool CreateVerifySettingRequest::getResultStep()const
@@ -46,7 +46,7 @@ bool CreateVerifySettingRequest::getResultStep()const
 void CreateVerifySettingRequest::setResultStep(bool resultStep)
 {
 	resultStep_ = resultStep;
-	setCoreParameter("ResultStep", resultStep ? "true" : "false");
+	setParameter("ResultStep", resultStep ? "true" : "false");
 }
 
 std::string CreateVerifySettingRequest::getSourceIp()const
@@ -57,7 +57,7 @@ std::string CreateVerifySettingRequest::getSourceIp()const
 void CreateVerifySettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateVerifySettingRequest::getSolution()const
@@ -68,7 +68,7 @@ std::string CreateVerifySettingRequest::getSolution()const
 void CreateVerifySettingRequest::setSolution(const std::string& solution)
 {
 	solution_ = solution;
-	setCoreParameter("Solution", solution);
+	setParameter("Solution", solution);
 }
 
 std::string CreateVerifySettingRequest::getBizName()const
@@ -79,7 +79,7 @@ std::string CreateVerifySettingRequest::getBizName()const
 void CreateVerifySettingRequest::setBizName(const std::string& bizName)
 {
 	bizName_ = bizName;
-	setCoreParameter("BizName", bizName);
+	setParameter("BizName", bizName);
 }
 
 std::string CreateVerifySettingRequest::getBizType()const
@@ -90,7 +90,7 @@ std::string CreateVerifySettingRequest::getBizType()const
 void CreateVerifySettingRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setParameter("BizType", bizType);
 }
 
 bool CreateVerifySettingRequest::getPrivacyStep()const
@@ -101,6 +101,6 @@ bool CreateVerifySettingRequest::getPrivacyStep()const
 void CreateVerifySettingRequest::setPrivacyStep(bool privacyStep)
 {
 	privacyStep_ = privacyStep;
-	setCoreParameter("PrivacyStep", privacyStep ? "true" : "false");
+	setParameter("PrivacyStep", privacyStep ? "true" : "false");
 }
 

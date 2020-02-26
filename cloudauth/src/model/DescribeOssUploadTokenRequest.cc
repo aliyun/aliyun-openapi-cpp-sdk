@@ -35,6 +35,6 @@ std::string DescribeOssUploadTokenRequest::getSourceIp()const
 void DescribeOssUploadTokenRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

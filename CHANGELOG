@@ -1,3 +1,6 @@
+2020-02-26 Version: 1.36.289
+- Add InitFaceVerify and DescribeFaceVerify API.
+
 2020-02-25 Version: 1.36.288
 - Fix ListWorkFlowTemplates, ListWorkFlowNodes API Go SDK build error.
 

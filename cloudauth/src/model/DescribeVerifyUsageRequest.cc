@@ -35,7 +35,7 @@ std::string DescribeVerifyUsageRequest::getStartDate()const
 void DescribeVerifyUsageRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 std::string DescribeVerifyUsageRequest::getBizType()const
@@ -46,7 +46,7 @@ std::string DescribeVerifyUsageRequest::getBizType()const
 void DescribeVerifyUsageRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setParameter("BizType", bizType);
 }
 
 std::string DescribeVerifyUsageRequest::getEndDate()const
@@ -57,7 +57,7 @@ std::string DescribeVerifyUsageRequest::getEndDate()const
 void DescribeVerifyUsageRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeVerifyUsageRequest::getSourceIp()const
@@ -68,6 +68,6 @@ std::string DescribeVerifyUsageRequest::getSourceIp()const
 void DescribeVerifyUsageRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

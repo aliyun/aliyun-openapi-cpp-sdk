@@ -35,6 +35,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeDeviceInfoResult.h
 	include/alibabacloud/cloudauth/model/DescribeFaceUsageRequest.h
 	include/alibabacloud/cloudauth/model/DescribeFaceUsageResult.h
+	include/alibabacloud/cloudauth/model/DescribeFaceVerifyRequest.h
+	include/alibabacloud/cloudauth/model/DescribeFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/DescribeOssUploadTokenRequest.h
 	include/alibabacloud/cloudauth/model/DescribeOssUploadTokenResult.h
 	include/alibabacloud/cloudauth/model/DescribeRPSDKRequest.h
@@ -57,10 +59,16 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeVerifyUsageResult.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesRequest.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesResult.h
+	include/alibabacloud/cloudauth/model/InitDeviceRequest.h
+	include/alibabacloud/cloudauth/model/InitDeviceResult.h
+	include/alibabacloud/cloudauth/model/InitFaceVerifyRequest.h
+	include/alibabacloud/cloudauth/model/InitFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoRequest.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoResult.h
 	include/alibabacloud/cloudauth/model/UpdateVerifySettingRequest.h
 	include/alibabacloud/cloudauth/model/UpdateVerifySettingResult.h
+	include/alibabacloud/cloudauth/model/VerifyDeviceRequest.h
+	include/alibabacloud/cloudauth/model/VerifyDeviceResult.h
 	include/alibabacloud/cloudauth/model/VerifyMaterialRequest.h
 	include/alibabacloud/cloudauth/model/VerifyMaterialResult.h )
 
@@ -80,6 +88,8 @@ set(cloudauth_src
 	src/model/DescribeDeviceInfoResult.cc
 	src/model/DescribeFaceUsageRequest.cc
 	src/model/DescribeFaceUsageResult.cc
+	src/model/DescribeFaceVerifyRequest.cc
+	src/model/DescribeFaceVerifyResult.cc
 	src/model/DescribeOssUploadTokenRequest.cc
 	src/model/DescribeOssUploadTokenResult.cc
 	src/model/DescribeRPSDKRequest.cc
@@ -102,10 +112,16 @@ set(cloudauth_src
 	src/model/DescribeVerifyUsageResult.cc
 	src/model/DetectFaceAttributesRequest.cc
 	src/model/DetectFaceAttributesResult.cc
+	src/model/InitDeviceRequest.cc
+	src/model/InitDeviceResult.cc
+	src/model/InitFaceVerifyRequest.cc
+	src/model/InitFaceVerifyResult.cc
 	src/model/ModifyDeviceInfoRequest.cc
 	src/model/ModifyDeviceInfoResult.cc
 	src/model/UpdateVerifySettingRequest.cc
 	src/model/UpdateVerifySettingResult.cc
+	src/model/VerifyDeviceRequest.cc
+	src/model/VerifyDeviceResult.cc
 	src/model/VerifyMaterialRequest.cc
 	src/model/VerifyMaterialResult.cc )
 

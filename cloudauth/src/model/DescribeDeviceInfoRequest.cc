@@ -35,7 +35,7 @@ std::string DescribeDeviceInfoRequest::getUserDeviceId()const
 void DescribeDeviceInfoRequest::setUserDeviceId(const std::string& userDeviceId)
 {
 	userDeviceId_ = userDeviceId;
-	setCoreParameter("UserDeviceId", userDeviceId);
+	setParameter("UserDeviceId", userDeviceId);
 }
 
 std::string DescribeDeviceInfoRequest::getSourceIp()const
@@ -46,7 +46,7 @@ std::string DescribeDeviceInfoRequest::getSourceIp()const
 void DescribeDeviceInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeDeviceInfoRequest::getPageSize()const
@@ -57,7 +57,7 @@ int DescribeDeviceInfoRequest::getPageSize()const
 void DescribeDeviceInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDeviceInfoRequest::getLang()const
@@ -68,7 +68,7 @@ std::string DescribeDeviceInfoRequest::getLang()const
 void DescribeDeviceInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeDeviceInfoRequest::getExpiredStartDay()const
@@ -79,7 +79,7 @@ std::string DescribeDeviceInfoRequest::getExpiredStartDay()const
 void DescribeDeviceInfoRequest::setExpiredStartDay(const std::string& expiredStartDay)
 {
 	expiredStartDay_ = expiredStartDay;
-	setCoreParameter("ExpiredStartDay", expiredStartDay);
+	setParameter("ExpiredStartDay", expiredStartDay);
 }
 
 int DescribeDeviceInfoRequest::getTotalCount()const
@@ -90,7 +90,7 @@ int DescribeDeviceInfoRequest::getTotalCount()const
 void DescribeDeviceInfoRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 int DescribeDeviceInfoRequest::getCurrentPage()const
@@ -101,7 +101,7 @@ int DescribeDeviceInfoRequest::getCurrentPage()const
 void DescribeDeviceInfoRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDeviceInfoRequest::getDeviceId()const
@@ -112,7 +112,7 @@ std::string DescribeDeviceInfoRequest::getDeviceId()const
 void DescribeDeviceInfoRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", deviceId);
+	setParameter("DeviceId", deviceId);
 }
 
 std::string DescribeDeviceInfoRequest::getBizType()const
@@ -123,7 +123,7 @@ std::string DescribeDeviceInfoRequest::getBizType()const
 void DescribeDeviceInfoRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setParameter("BizType", bizType);
 }
 
 std::string DescribeDeviceInfoRequest::getExpiredEndDay()const
@@ -134,6 +134,6 @@ std::string DescribeDeviceInfoRequest::getExpiredEndDay()const
 void DescribeDeviceInfoRequest::setExpiredEndDay(const std::string& expiredEndDay)
 {
 	expiredEndDay_ = expiredEndDay;
-	setCoreParameter("ExpiredEndDay", expiredEndDay);
+	setParameter("ExpiredEndDay", expiredEndDay);
 }
 

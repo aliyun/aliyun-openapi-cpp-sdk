@@ -35,7 +35,7 @@ std::string DescribeVerifyRecordsRequest::getStatusList()const
 void DescribeVerifyRecordsRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
-	setCoreParameter("StatusList", statusList);
+	setParameter("StatusList", statusList);
 }
 
 std::string DescribeVerifyRecordsRequest::getStartDate()const
@@ -46,7 +46,7 @@ std::string DescribeVerifyRecordsRequest::getStartDate()const
 void DescribeVerifyRecordsRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 std::string DescribeVerifyRecordsRequest::getSourceIp()const
@@ -57,7 +57,7 @@ std::string DescribeVerifyRecordsRequest::getSourceIp()const
 void DescribeVerifyRecordsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeVerifyRecordsRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeVerifyRecordsRequest::getPageSize()const
 void DescribeVerifyRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeVerifyRecordsRequest::getTotalCount()const
@@ -79,7 +79,7 @@ int DescribeVerifyRecordsRequest::getTotalCount()const
 void DescribeVerifyRecordsRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 int DescribeVerifyRecordsRequest::getCurrentPage()const
@@ -90,7 +90,7 @@ int DescribeVerifyRecordsRequest::getCurrentPage()const
 void DescribeVerifyRecordsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeVerifyRecordsRequest::getQueryId()const
@@ -101,7 +101,7 @@ std::string DescribeVerifyRecordsRequest::getQueryId()const
 void DescribeVerifyRecordsRequest::setQueryId(const std::string& queryId)
 {
 	queryId_ = queryId;
-	setCoreParameter("QueryId", queryId);
+	setParameter("QueryId", queryId);
 }
 
 std::string DescribeVerifyRecordsRequest::getBizType()const
@@ -112,7 +112,7 @@ std::string DescribeVerifyRecordsRequest::getBizType()const
 void DescribeVerifyRecordsRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setParameter("BizType", bizType);
 }
 
 std::string DescribeVerifyRecordsRequest::getIdCardNum()const
@@ -123,7 +123,7 @@ std::string DescribeVerifyRecordsRequest::getIdCardNum()const
 void DescribeVerifyRecordsRequest::setIdCardNum(const std::string& idCardNum)
 {
 	idCardNum_ = idCardNum;
-	setCoreParameter("IdCardNum", idCardNum);
+	setParameter("IdCardNum", idCardNum);
 }
 
 std::string DescribeVerifyRecordsRequest::getEndDate()const
@@ -134,7 +134,7 @@ std::string DescribeVerifyRecordsRequest::getEndDate()const
 void DescribeVerifyRecordsRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeVerifyRecordsRequest::getBizId()const
@@ -145,6 +145,6 @@ std::string DescribeVerifyRecordsRequest::getBizId()const
 void DescribeVerifyRecordsRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

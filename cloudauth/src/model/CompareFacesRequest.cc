@@ -35,7 +35,7 @@ std::string CompareFacesRequest::getSourceImageType()const
 void CompareFacesRequest::setSourceImageType(const std::string& sourceImageType)
 {
 	sourceImageType_ = sourceImageType;
-	setCoreParameter("SourceImageType", sourceImageType);
+	setBodyParameter("SourceImageType", sourceImageType);
 }
 
 long CompareFacesRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long CompareFacesRequest::getResourceOwnerId()const
 void CompareFacesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CompareFacesRequest::getTargetImageType()const
@@ -57,7 +57,7 @@ std::string CompareFacesRequest::getTargetImageType()const
 void CompareFacesRequest::setTargetImageType(const std::string& targetImageType)
 {
 	targetImageType_ = targetImageType;
-	setCoreParameter("TargetImageType", targetImageType);
+	setBodyParameter("TargetImageType", targetImageType);
 }
 
 std::string CompareFacesRequest::getTargetImageValue()const
@@ -68,7 +68,7 @@ std::string CompareFacesRequest::getTargetImageValue()const
 void CompareFacesRequest::setTargetImageValue(const std::string& targetImageValue)
 {
 	targetImageValue_ = targetImageValue;
-	setCoreParameter("TargetImageValue", targetImageValue);
+	setBodyParameter("TargetImageValue", targetImageValue);
 }
 
 std::string CompareFacesRequest::getSourceIp()const
@@ -79,7 +79,7 @@ std::string CompareFacesRequest::getSourceIp()const
 void CompareFacesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CompareFacesRequest::getSourceImageValue()const
@@ -90,6 +90,6 @@ std::string CompareFacesRequest::getSourceImageValue()const
 void CompareFacesRequest::setSourceImageValue(const std::string& sourceImageValue)
 {
 	sourceImageValue_ = sourceImageValue;
-	setCoreParameter("SourceImageValue", sourceImageValue);
+	setBodyParameter("SourceImageValue", sourceImageValue);
 }
 

@@ -35,7 +35,7 @@ std::string DescribeRPSDKRequest::getSourceIp()const
 void DescribeRPSDKRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeRPSDKRequest::getLang()const
@@ -46,7 +46,7 @@ std::string DescribeRPSDKRequest::getLang()const
 void DescribeRPSDKRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeRPSDKRequest::getTaskId()const
@@ -57,6 +57,6 @@ std::string DescribeRPSDKRequest::getTaskId()const
 void DescribeRPSDKRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

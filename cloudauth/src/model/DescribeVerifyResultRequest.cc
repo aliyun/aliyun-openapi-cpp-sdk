@@ -35,7 +35,7 @@ std::string DescribeVerifyResultRequest::getBizType()const
 void DescribeVerifyResultRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setParameter("BizType", bizType);
 }
 
 std::string DescribeVerifyResultRequest::getSourceIp()const
@@ -46,7 +46,7 @@ std::string DescribeVerifyResultRequest::getSourceIp()const
 void DescribeVerifyResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeVerifyResultRequest::getBizId()const
@@ -57,6 +57,6 @@ std::string DescribeVerifyResultRequest::getBizId()const
 void DescribeVerifyResultRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

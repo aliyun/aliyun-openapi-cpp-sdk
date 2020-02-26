@@ -36,6 +36,8 @@
 #include "model/DescribeDeviceInfoResult.h"
 #include "model/DescribeFaceUsageRequest.h"
 #include "model/DescribeFaceUsageResult.h"
+#include "model/DescribeFaceVerifyRequest.h"
+#include "model/DescribeFaceVerifyResult.h"
 #include "model/DescribeOssUploadTokenRequest.h"
 #include "model/DescribeOssUploadTokenResult.h"
 #include "model/DescribeRPSDKRequest.h"
@@ -58,10 +60,16 @@
 #include "model/DescribeVerifyUsageResult.h"
 #include "model/DetectFaceAttributesRequest.h"
 #include "model/DetectFaceAttributesResult.h"
+#include "model/InitDeviceRequest.h"
+#include "model/InitDeviceResult.h"
+#include "model/InitFaceVerifyRequest.h"
+#include "model/InitFaceVerifyResult.h"
 #include "model/ModifyDeviceInfoRequest.h"
 #include "model/ModifyDeviceInfoResult.h"
 #include "model/UpdateVerifySettingRequest.h"
 #include "model/UpdateVerifySettingResult.h"
+#include "model/VerifyDeviceRequest.h"
+#include "model/VerifyDeviceResult.h"
 #include "model/VerifyMaterialRequest.h"
 #include "model/VerifyMaterialResult.h"
 
@@ -94,6 +102,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeFaceUsageResult> DescribeFaceUsageOutcome;
 			typedef std::future<DescribeFaceUsageOutcome> DescribeFaceUsageOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::DescribeFaceUsageRequest&, const DescribeFaceUsageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFaceUsageAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFaceVerifyResult> DescribeFaceVerifyOutcome;
+			typedef std::future<DescribeFaceVerifyOutcome> DescribeFaceVerifyOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::DescribeFaceVerifyRequest&, const DescribeFaceVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFaceVerifyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeOssUploadTokenResult> DescribeOssUploadTokenOutcome;
 			typedef std::future<DescribeOssUploadTokenOutcome> DescribeOssUploadTokenOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::DescribeOssUploadTokenRequest&, const DescribeOssUploadTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOssUploadTokenAsyncHandler;
@@ -127,12 +138,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectFaceAttributesResult> DetectFaceAttributesOutcome;
 			typedef std::future<DetectFaceAttributesOutcome> DetectFaceAttributesOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::DetectFaceAttributesRequest&, const DetectFaceAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectFaceAttributesAsyncHandler;
+			typedef Outcome<Error, Model::InitDeviceResult> InitDeviceOutcome;
+			typedef std::future<InitDeviceOutcome> InitDeviceOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::InitDeviceRequest&, const InitDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InitDeviceAsyncHandler;
+			typedef Outcome<Error, Model::InitFaceVerifyResult> InitFaceVerifyOutcome;
+			typedef std::future<InitFaceVerifyOutcome> InitFaceVerifyOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::InitFaceVerifyRequest&, const InitFaceVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InitFaceVerifyAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDeviceInfoResult> ModifyDeviceInfoOutcome;
 			typedef std::future<ModifyDeviceInfoOutcome> ModifyDeviceInfoOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::ModifyDeviceInfoRequest&, const ModifyDeviceInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceInfoAsyncHandler;
 			typedef Outcome<Error, Model::UpdateVerifySettingResult> UpdateVerifySettingOutcome;
 			typedef std::future<UpdateVerifySettingOutcome> UpdateVerifySettingOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::UpdateVerifySettingRequest&, const UpdateVerifySettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVerifySettingAsyncHandler;
+			typedef Outcome<Error, Model::VerifyDeviceResult> VerifyDeviceOutcome;
+			typedef std::future<VerifyDeviceOutcome> VerifyDeviceOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::VerifyDeviceRequest&, const VerifyDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDeviceAsyncHandler;
 			typedef Outcome<Error, Model::VerifyMaterialResult> VerifyMaterialOutcome;
 			typedef std::future<VerifyMaterialOutcome> VerifyMaterialOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::VerifyMaterialRequest&, const VerifyMaterialOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyMaterialAsyncHandler;
@@ -162,6 +182,9 @@ namespace AlibabaCloud
 			DescribeFaceUsageOutcome describeFaceUsage(const Model::DescribeFaceUsageRequest &request)const;
 			void describeFaceUsageAsync(const Model::DescribeFaceUsageRequest& request, const DescribeFaceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeFaceUsageOutcomeCallable describeFaceUsageCallable(const Model::DescribeFaceUsageRequest& request) const;
+			DescribeFaceVerifyOutcome describeFaceVerify(const Model::DescribeFaceVerifyRequest &request)const;
+			void describeFaceVerifyAsync(const Model::DescribeFaceVerifyRequest& request, const DescribeFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFaceVerifyOutcomeCallable describeFaceVerifyCallable(const Model::DescribeFaceVerifyRequest& request) const;
 			DescribeOssUploadTokenOutcome describeOssUploadToken(const Model::DescribeOssUploadTokenRequest &request)const;
 			void describeOssUploadTokenAsync(const Model::DescribeOssUploadTokenRequest& request, const DescribeOssUploadTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOssUploadTokenOutcomeCallable describeOssUploadTokenCallable(const Model::DescribeOssUploadTokenRequest& request) const;
@@ -195,12 +218,21 @@ namespace AlibabaCloud
 			DetectFaceAttributesOutcome detectFaceAttributes(const Model::DetectFaceAttributesRequest &request)const;
 			void detectFaceAttributesAsync(const Model::DetectFaceAttributesRequest& request, const DetectFaceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectFaceAttributesOutcomeCallable detectFaceAttributesCallable(const Model::DetectFaceAttributesRequest& request) const;
+			InitDeviceOutcome initDevice(const Model::InitDeviceRequest &request)const;
+			void initDeviceAsync(const Model::InitDeviceRequest& request, const InitDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InitDeviceOutcomeCallable initDeviceCallable(const Model::InitDeviceRequest& request) const;
+			InitFaceVerifyOutcome initFaceVerify(const Model::InitFaceVerifyRequest &request)const;
+			void initFaceVerifyAsync(const Model::InitFaceVerifyRequest& request, const InitFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InitFaceVerifyOutcomeCallable initFaceVerifyCallable(const Model::InitFaceVerifyRequest& request) const;
 			ModifyDeviceInfoOutcome modifyDeviceInfo(const Model::ModifyDeviceInfoRequest &request)const;
 			void modifyDeviceInfoAsync(const Model::ModifyDeviceInfoRequest& request, const ModifyDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDeviceInfoOutcomeCallable modifyDeviceInfoCallable(const Model::ModifyDeviceInfoRequest& request) const;
 			UpdateVerifySettingOutcome updateVerifySetting(const Model::UpdateVerifySettingRequest &request)const;
 			void updateVerifySettingAsync(const Model::UpdateVerifySettingRequest& request, const UpdateVerifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateVerifySettingOutcomeCallable updateVerifySettingCallable(const Model::UpdateVerifySettingRequest& request) const;
+			VerifyDeviceOutcome verifyDevice(const Model::VerifyDeviceRequest &request)const;
+			void verifyDeviceAsync(const Model::VerifyDeviceRequest& request, const VerifyDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VerifyDeviceOutcomeCallable verifyDeviceCallable(const Model::VerifyDeviceRequest& request) const;
 			VerifyMaterialOutcome verifyMaterial(const Model::VerifyMaterialRequest &request)const;
 			void verifyMaterialAsync(const Model::VerifyMaterialRequest& request, const VerifyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyMaterialOutcomeCallable verifyMaterialCallable(const Model::VerifyMaterialRequest& request) const;

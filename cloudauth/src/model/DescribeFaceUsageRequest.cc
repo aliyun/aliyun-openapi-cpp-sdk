@@ -35,7 +35,7 @@ std::string DescribeFaceUsageRequest::getStartDate()const
 void DescribeFaceUsageRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 std::string DescribeFaceUsageRequest::getEndDate()const
@@ -46,7 +46,7 @@ std::string DescribeFaceUsageRequest::getEndDate()const
 void DescribeFaceUsageRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeFaceUsageRequest::getSourceIp()const
@@ -57,6 +57,6 @@ std::string DescribeFaceUsageRequest::getSourceIp()const
 void DescribeFaceUsageRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

@@ -35,6 +35,6 @@ std::string DescribeUserStatusRequest::getSourceIp()const
 void DescribeUserStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

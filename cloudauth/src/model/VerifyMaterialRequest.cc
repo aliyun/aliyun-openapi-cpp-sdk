@@ -35,7 +35,7 @@ std::string VerifyMaterialRequest::getFaceImageUrl()const
 void VerifyMaterialRequest::setFaceImageUrl(const std::string& faceImageUrl)
 {
 	faceImageUrl_ = faceImageUrl;
-	setCoreParameter("FaceImageUrl", faceImageUrl);
+	setParameter("FaceImageUrl", faceImageUrl);
 }
 
 std::string VerifyMaterialRequest::getUserId()const
@@ -46,7 +46,7 @@ std::string VerifyMaterialRequest::getUserId()const
 void VerifyMaterialRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setParameter("UserId", userId);
 }
 
 std::string VerifyMaterialRequest::getSourceIp()const
@@ -57,7 +57,7 @@ std::string VerifyMaterialRequest::getSourceIp()const
 void VerifyMaterialRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string VerifyMaterialRequest::getIdCardBackImageUrl()const
@@ -68,7 +68,7 @@ std::string VerifyMaterialRequest::getIdCardBackImageUrl()const
 void VerifyMaterialRequest::setIdCardBackImageUrl(const std::string& idCardBackImageUrl)
 {
 	idCardBackImageUrl_ = idCardBackImageUrl;
-	setCoreParameter("IdCardBackImageUrl", idCardBackImageUrl);
+	setParameter("IdCardBackImageUrl", idCardBackImageUrl);
 }
 
 std::string VerifyMaterialRequest::getIdCardNumber()const
@@ -79,7 +79,7 @@ std::string VerifyMaterialRequest::getIdCardNumber()const
 void VerifyMaterialRequest::setIdCardNumber(const std::string& idCardNumber)
 {
 	idCardNumber_ = idCardNumber;
-	setCoreParameter("IdCardNumber", idCardNumber);
+	setParameter("IdCardNumber", idCardNumber);
 }
 
 std::string VerifyMaterialRequest::getIdCardFrontImageUrl()const
@@ -90,7 +90,7 @@ std::string VerifyMaterialRequest::getIdCardFrontImageUrl()const
 void VerifyMaterialRequest::setIdCardFrontImageUrl(const std::string& idCardFrontImageUrl)
 {
 	idCardFrontImageUrl_ = idCardFrontImageUrl;
-	setCoreParameter("IdCardFrontImageUrl", idCardFrontImageUrl);
+	setParameter("IdCardFrontImageUrl", idCardFrontImageUrl);
 }
 
 std::string VerifyMaterialRequest::getBizType()const
@@ -101,7 +101,7 @@ std::string VerifyMaterialRequest::getBizType()const
 void VerifyMaterialRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setParameter("BizType", bizType);
 }
 
 std::string VerifyMaterialRequest::getBizId()const
@@ -112,7 +112,7 @@ std::string VerifyMaterialRequest::getBizId()const
 void VerifyMaterialRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 std::string VerifyMaterialRequest::getName()const
@@ -123,6 +123,6 @@ std::string VerifyMaterialRequest::getName()const
 void VerifyMaterialRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

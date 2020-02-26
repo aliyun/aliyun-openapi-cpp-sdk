@@ -31,21 +31,21 @@ CloudauthClient::CloudauthClient(const Credentials &credentials, const ClientCon
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudauth");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CloudauthClient::CloudauthClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudauth");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CloudauthClient::CloudauthClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudauth");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CloudauthClient::~CloudauthClient()
@@ -297,6 +297,42 @@ CloudauthClient::DescribeFaceUsageOutcomeCallable CloudauthClient::describeFaceU
 			[this, request]()
 			{
 			return this->describeFaceUsage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeFaceVerifyOutcome CloudauthClient::describeFaceVerify(const DescribeFaceVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFaceVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFaceVerifyOutcome(DescribeFaceVerifyResult(outcome.result()));
+	else
+		return DescribeFaceVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::describeFaceVerifyAsync(const DescribeFaceVerifyRequest& request, const DescribeFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFaceVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeFaceVerifyOutcomeCallable CloudauthClient::describeFaceVerifyCallable(const DescribeFaceVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFaceVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFaceVerify(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,6 +735,78 @@ CloudauthClient::DetectFaceAttributesOutcomeCallable CloudauthClient::detectFace
 	return task->get_future();
 }
 
+CloudauthClient::InitDeviceOutcome CloudauthClient::initDevice(const InitDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InitDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InitDeviceOutcome(InitDeviceResult(outcome.result()));
+	else
+		return InitDeviceOutcome(outcome.error());
+}
+
+void CloudauthClient::initDeviceAsync(const InitDeviceRequest& request, const InitDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, initDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::InitDeviceOutcomeCallable CloudauthClient::initDeviceCallable(const InitDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InitDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->initDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::InitFaceVerifyOutcome CloudauthClient::initFaceVerify(const InitFaceVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InitFaceVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InitFaceVerifyOutcome(InitFaceVerifyResult(outcome.result()));
+	else
+		return InitFaceVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::initFaceVerifyAsync(const InitFaceVerifyRequest& request, const InitFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, initFaceVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::InitFaceVerifyOutcomeCallable CloudauthClient::initFaceVerifyCallable(const InitFaceVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InitFaceVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->initFaceVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::ModifyDeviceInfoOutcome CloudauthClient::modifyDeviceInfo(const ModifyDeviceInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +873,42 @@ CloudauthClient::UpdateVerifySettingOutcomeCallable CloudauthClient::updateVerif
 			[this, request]()
 			{
 			return this->updateVerifySetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::VerifyDeviceOutcome CloudauthClient::verifyDevice(const VerifyDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VerifyDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VerifyDeviceOutcome(VerifyDeviceResult(outcome.result()));
+	else
+		return VerifyDeviceOutcome(outcome.error());
+}
+
+void CloudauthClient::verifyDeviceAsync(const VerifyDeviceRequest& request, const VerifyDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, verifyDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::VerifyDeviceOutcomeCallable CloudauthClient::verifyDeviceCallable(const VerifyDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VerifyDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->verifyDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

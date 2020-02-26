@@ -35,7 +35,7 @@ std::string DescribeVerifyTokenRequest::getFaceRetainedImageUrl()const
 void DescribeVerifyTokenRequest::setFaceRetainedImageUrl(const std::string& faceRetainedImageUrl)
 {
 	faceRetainedImageUrl_ = faceRetainedImageUrl;
-	setCoreParameter("FaceRetainedImageUrl", faceRetainedImageUrl);
+	setParameter("FaceRetainedImageUrl", faceRetainedImageUrl);
 }
 
 std::string DescribeVerifyTokenRequest::getUserId()const
@@ -46,7 +46,7 @@ std::string DescribeVerifyTokenRequest::getUserId()const
 void DescribeVerifyTokenRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setParameter("UserId", userId);
 }
 
 std::string DescribeVerifyTokenRequest::getSourceIp()const
@@ -57,7 +57,7 @@ std::string DescribeVerifyTokenRequest::getSourceIp()const
 void DescribeVerifyTokenRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeVerifyTokenRequest::getCallbackSeed()const
@@ -68,7 +68,7 @@ std::string DescribeVerifyTokenRequest::getCallbackSeed()const
 void DescribeVerifyTokenRequest::setCallbackSeed(const std::string& callbackSeed)
 {
 	callbackSeed_ = callbackSeed;
-	setCoreParameter("CallbackSeed", callbackSeed);
+	setParameter("CallbackSeed", callbackSeed);
 }
 
 std::string DescribeVerifyTokenRequest::getIdCardBackImageUrl()const
@@ -79,7 +79,7 @@ std::string DescribeVerifyTokenRequest::getIdCardBackImageUrl()const
 void DescribeVerifyTokenRequest::setIdCardBackImageUrl(const std::string& idCardBackImageUrl)
 {
 	idCardBackImageUrl_ = idCardBackImageUrl;
-	setCoreParameter("IdCardBackImageUrl", idCardBackImageUrl);
+	setParameter("IdCardBackImageUrl", idCardBackImageUrl);
 }
 
 std::string DescribeVerifyTokenRequest::getIdCardNumber()const
@@ -90,7 +90,7 @@ std::string DescribeVerifyTokenRequest::getIdCardNumber()const
 void DescribeVerifyTokenRequest::setIdCardNumber(const std::string& idCardNumber)
 {
 	idCardNumber_ = idCardNumber;
-	setCoreParameter("IdCardNumber", idCardNumber);
+	setParameter("IdCardNumber", idCardNumber);
 }
 
 std::string DescribeVerifyTokenRequest::getIdCardFrontImageUrl()const
@@ -101,7 +101,7 @@ std::string DescribeVerifyTokenRequest::getIdCardFrontImageUrl()const
 void DescribeVerifyTokenRequest::setIdCardFrontImageUrl(const std::string& idCardFrontImageUrl)
 {
 	idCardFrontImageUrl_ = idCardFrontImageUrl;
-	setCoreParameter("IdCardFrontImageUrl", idCardFrontImageUrl);
+	setParameter("IdCardFrontImageUrl", idCardFrontImageUrl);
 }
 
 std::string DescribeVerifyTokenRequest::getBizType()const
@@ -112,7 +112,7 @@ std::string DescribeVerifyTokenRequest::getBizType()const
 void DescribeVerifyTokenRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setParameter("BizType", bizType);
 }
 
 std::string DescribeVerifyTokenRequest::getPassedRedirectUrl()const
@@ -123,7 +123,7 @@ std::string DescribeVerifyTokenRequest::getPassedRedirectUrl()const
 void DescribeVerifyTokenRequest::setPassedRedirectUrl(const std::string& passedRedirectUrl)
 {
 	passedRedirectUrl_ = passedRedirectUrl;
-	setCoreParameter("PassedRedirectUrl", passedRedirectUrl);
+	setParameter("PassedRedirectUrl", passedRedirectUrl);
 }
 
 std::string DescribeVerifyTokenRequest::getBizId()const
@@ -134,7 +134,7 @@ std::string DescribeVerifyTokenRequest::getBizId()const
 void DescribeVerifyTokenRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 std::string DescribeVerifyTokenRequest::getName()const
@@ -145,7 +145,7 @@ std::string DescribeVerifyTokenRequest::getName()const
 void DescribeVerifyTokenRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DescribeVerifyTokenRequest::getCallbackUrl()const
@@ -156,7 +156,7 @@ std::string DescribeVerifyTokenRequest::getCallbackUrl()const
 void DescribeVerifyTokenRequest::setCallbackUrl(const std::string& callbackUrl)
 {
 	callbackUrl_ = callbackUrl;
-	setCoreParameter("CallbackUrl", callbackUrl);
+	setParameter("CallbackUrl", callbackUrl);
 }
 
 std::string DescribeVerifyTokenRequest::getFailedRedirectUrl()const
@@ -167,6 +167,6 @@ std::string DescribeVerifyTokenRequest::getFailedRedirectUrl()const
 void DescribeVerifyTokenRequest::setFailedRedirectUrl(const std::string& failedRedirectUrl)
 {
 	failedRedirectUrl_ = failedRedirectUrl;
-	setCoreParameter("FailedRedirectUrl", failedRedirectUrl);
+	setParameter("FailedRedirectUrl", failedRedirectUrl);
 }
 

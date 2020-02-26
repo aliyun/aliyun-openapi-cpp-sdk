@@ -35,7 +35,7 @@ std::string CreateRPSDKRequest::getAppUrl()const
 void CreateRPSDKRequest::setAppUrl(const std::string& appUrl)
 {
 	appUrl_ = appUrl;
-	setCoreParameter("AppUrl", appUrl);
+	setParameter("AppUrl", appUrl);
 }
 
 std::string CreateRPSDKRequest::getPlatform()const
@@ -46,7 +46,7 @@ std::string CreateRPSDKRequest::getPlatform()const
 void CreateRPSDKRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
-	setCoreParameter("Platform", platform);
+	setParameter("Platform", platform);
 }
 
 std::string CreateRPSDKRequest::getSourceIp()const
@@ -57,7 +57,7 @@ std::string CreateRPSDKRequest::getSourceIp()const
 void CreateRPSDKRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateRPSDKRequest::getLang()const
@@ -68,6 +68,6 @@ std::string CreateRPSDKRequest::getLang()const
 void CreateRPSDKRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
