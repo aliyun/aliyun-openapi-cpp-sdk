@@ -35,7 +35,7 @@ long DeleteUserClusterHostRequest::getResourceOwnerId()const
 void DeleteUserClusterHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteUserClusterHostRequest::getHostId()const
@@ -46,7 +46,7 @@ std::string DeleteUserClusterHostRequest::getHostId()const
 void DeleteUserClusterHostRequest::setHostId(const std::string& hostId)
 {
 	hostId_ = hostId;
-	setCoreParameter("HostId", hostId);
+	setParameter("HostId", hostId);
 }
 
 std::string DeleteUserClusterHostRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DeleteUserClusterHostRequest::getAccessKeyId()const
 void DeleteUserClusterHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteUserClusterHostRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string DeleteUserClusterHostRequest::getSecurityToken()const
 void DeleteUserClusterHostRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteUserClusterHostRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string DeleteUserClusterHostRequest::getRegionId()const
 void DeleteUserClusterHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteUserClusterHostRequest::getEngine()const
@@ -90,7 +90,7 @@ std::string DeleteUserClusterHostRequest::getEngine()const
 void DeleteUserClusterHostRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string DeleteUserClusterHostRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DeleteUserClusterHostRequest::getResourceOwnerAccount()const
 void DeleteUserClusterHostRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteUserClusterHostRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DeleteUserClusterHostRequest::getOwnerAccount()const
 void DeleteUserClusterHostRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteUserClusterHostRequest::getClusterId()const
@@ -123,7 +123,7 @@ std::string DeleteUserClusterHostRequest::getClusterId()const
 void DeleteUserClusterHostRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 long DeleteUserClusterHostRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long DeleteUserClusterHostRequest::getOwnerId()const
 void DeleteUserClusterHostRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteUserClusterHostRequest::getZoneId()const
@@ -145,6 +145,6 @@ std::string DeleteUserClusterHostRequest::getZoneId()const
 void DeleteUserClusterHostRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

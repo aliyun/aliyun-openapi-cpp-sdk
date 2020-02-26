@@ -35,7 +35,7 @@ long ModifyInstanceNetExpireTimeRequest::getResourceOwnerId()const
 void ModifyInstanceNetExpireTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyInstanceNetExpireTimeRequest::getConnectionString()const
@@ -46,7 +46,7 @@ std::string ModifyInstanceNetExpireTimeRequest::getConnectionString()const
 void ModifyInstanceNetExpireTimeRequest::setConnectionString(const std::string& connectionString)
 {
 	connectionString_ = connectionString;
-	setCoreParameter("ConnectionString", connectionString);
+	setParameter("ConnectionString", connectionString);
 }
 
 std::string ModifyInstanceNetExpireTimeRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifyInstanceNetExpireTimeRequest::getAccessKeyId()const
 void ModifyInstanceNetExpireTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyInstanceNetExpireTimeRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string ModifyInstanceNetExpireTimeRequest::getSecurityToken()const
 void ModifyInstanceNetExpireTimeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int ModifyInstanceNetExpireTimeRequest::getClassicExpiredDays()const
@@ -79,7 +79,7 @@ int ModifyInstanceNetExpireTimeRequest::getClassicExpiredDays()const
 void ModifyInstanceNetExpireTimeRequest::setClassicExpiredDays(int classicExpiredDays)
 {
 	classicExpiredDays_ = classicExpiredDays;
-	setCoreParameter("ClassicExpiredDays", std::to_string(classicExpiredDays));
+	setParameter("ClassicExpiredDays", std::to_string(classicExpiredDays));
 }
 
 std::string ModifyInstanceNetExpireTimeRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyInstanceNetExpireTimeRequest::getResourceOwnerAccount()const
 void ModifyInstanceNetExpireTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceNetExpireTimeRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyInstanceNetExpireTimeRequest::getOwnerAccount()const
 void ModifyInstanceNetExpireTimeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyInstanceNetExpireTimeRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long ModifyInstanceNetExpireTimeRequest::getOwnerId()const
 void ModifyInstanceNetExpireTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyInstanceNetExpireTimeRequest::getInstanceId()const
@@ -123,6 +123,6 @@ std::string ModifyInstanceNetExpireTimeRequest::getInstanceId()const
 void ModifyInstanceNetExpireTimeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

@@ -83,8 +83,6 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeMonitorItemsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeParametersRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeParametersResult.h
-	include/alibabacloud/r-kvstore/model/DescribeRedisLogConfigRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeRedisLogConfigResult.h
 	include/alibabacloud/r-kvstore/model/DescribeRegionsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeRegionsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeRunningLogRecordsRequest.h
@@ -232,8 +230,6 @@ set(r-kvstore_src
 	src/model/DescribeMonitorItemsResult.cc
 	src/model/DescribeParametersRequest.cc
 	src/model/DescribeParametersResult.cc
-	src/model/DescribeRedisLogConfigRequest.cc
-	src/model/DescribeRedisLogConfigResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeRunningLogRecordsRequest.cc

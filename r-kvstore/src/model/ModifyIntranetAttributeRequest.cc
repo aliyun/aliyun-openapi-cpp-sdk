@@ -35,7 +35,7 @@ long ModifyIntranetAttributeRequest::getResourceOwnerId()const
 void ModifyIntranetAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyIntranetAttributeRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyIntranetAttributeRequest::getAccessKeyId()const
 void ModifyIntranetAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyIntranetAttributeRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string ModifyIntranetAttributeRequest::getSecurityToken()const
 void ModifyIntranetAttributeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyIntranetAttributeRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string ModifyIntranetAttributeRequest::getResourceOwnerAccount()const
 void ModifyIntranetAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyIntranetAttributeRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyIntranetAttributeRequest::getOwnerAccount()const
 void ModifyIntranetAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyIntranetAttributeRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long ModifyIntranetAttributeRequest::getOwnerId()const
 void ModifyIntranetAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyIntranetAttributeRequest::getInstanceId()const
@@ -101,6 +101,6 @@ std::string ModifyIntranetAttributeRequest::getInstanceId()const
 void ModifyIntranetAttributeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

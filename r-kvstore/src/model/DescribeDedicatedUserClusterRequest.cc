@@ -35,7 +35,7 @@ long DescribeDedicatedUserClusterRequest::getResourceOwnerId()const
 void DescribeDedicatedUserClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDedicatedUserClusterRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeDedicatedUserClusterRequest::getAccessKeyId()const
 void DescribeDedicatedUserClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDedicatedUserClusterRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeDedicatedUserClusterRequest::getSecurityToken()const
 void DescribeDedicatedUserClusterRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDedicatedUserClusterRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribeDedicatedUserClusterRequest::getRegionId()const
 void DescribeDedicatedUserClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDedicatedUserClusterRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeDedicatedUserClusterRequest::getResourceOwnerAccount()const
 void DescribeDedicatedUserClusterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDedicatedUserClusterRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeDedicatedUserClusterRequest::getOwnerAccount()const
 void DescribeDedicatedUserClusterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDedicatedUserClusterRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long DescribeDedicatedUserClusterRequest::getOwnerId()const
 void DescribeDedicatedUserClusterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDedicatedUserClusterRequest::getZoneId()const
@@ -112,6 +112,6 @@ std::string DescribeDedicatedUserClusterRequest::getZoneId()const
 void DescribeDedicatedUserClusterRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

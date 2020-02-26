@@ -35,7 +35,7 @@ long ModifyDedicatedUserClusterRequest::getResourceOwnerId()const
 void ModifyDedicatedUserClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDedicatedUserClusterRequest::getClusterName()const
@@ -46,7 +46,7 @@ std::string ModifyDedicatedUserClusterRequest::getClusterName()const
 void ModifyDedicatedUserClusterRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setCoreParameter("ClusterName", clusterName);
+	setParameter("ClusterName", clusterName);
 }
 
 std::string ModifyDedicatedUserClusterRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifyDedicatedUserClusterRequest::getAccessKeyId()const
 void ModifyDedicatedUserClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDedicatedUserClusterRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string ModifyDedicatedUserClusterRequest::getSecurityToken()const
 void ModifyDedicatedUserClusterRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyDedicatedUserClusterRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string ModifyDedicatedUserClusterRequest::getRegionId()const
 void ModifyDedicatedUserClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDedicatedUserClusterRequest::getEngine()const
@@ -90,7 +90,7 @@ std::string ModifyDedicatedUserClusterRequest::getEngine()const
 void ModifyDedicatedUserClusterRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 int ModifyDedicatedUserClusterRequest::getDiskOverAllocationRatio()const
@@ -101,7 +101,7 @@ int ModifyDedicatedUserClusterRequest::getDiskOverAllocationRatio()const
 void ModifyDedicatedUserClusterRequest::setDiskOverAllocationRatio(int diskOverAllocationRatio)
 {
 	diskOverAllocationRatio_ = diskOverAllocationRatio;
-	setCoreParameter("DiskOverAllocationRatio", std::to_string(diskOverAllocationRatio));
+	setParameter("DiskOverAllocationRatio", std::to_string(diskOverAllocationRatio));
 }
 
 std::string ModifyDedicatedUserClusterRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyDedicatedUserClusterRequest::getResourceOwnerAccount()const
 void ModifyDedicatedUserClusterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDedicatedUserClusterRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string ModifyDedicatedUserClusterRequest::getOwnerAccount()const
 void ModifyDedicatedUserClusterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDedicatedUserClusterRequest::getClusterId()const
@@ -134,7 +134,7 @@ std::string ModifyDedicatedUserClusterRequest::getClusterId()const
 void ModifyDedicatedUserClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int ModifyDedicatedUserClusterRequest::getMemoryOverAllocationRatio()const
@@ -145,7 +145,7 @@ int ModifyDedicatedUserClusterRequest::getMemoryOverAllocationRatio()const
 void ModifyDedicatedUserClusterRequest::setMemoryOverAllocationRatio(int memoryOverAllocationRatio)
 {
 	memoryOverAllocationRatio_ = memoryOverAllocationRatio;
-	setCoreParameter("MemoryOverAllocationRatio", std::to_string(memoryOverAllocationRatio));
+	setParameter("MemoryOverAllocationRatio", std::to_string(memoryOverAllocationRatio));
 }
 
 long ModifyDedicatedUserClusterRequest::getOwnerId()const
@@ -156,7 +156,7 @@ long ModifyDedicatedUserClusterRequest::getOwnerId()const
 void ModifyDedicatedUserClusterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDedicatedUserClusterRequest::getHostReplacePolicy()const
@@ -167,7 +167,7 @@ std::string ModifyDedicatedUserClusterRequest::getHostReplacePolicy()const
 void ModifyDedicatedUserClusterRequest::setHostReplacePolicy(const std::string& hostReplacePolicy)
 {
 	hostReplacePolicy_ = hostReplacePolicy;
-	setCoreParameter("HostReplacePolicy", hostReplacePolicy);
+	setParameter("HostReplacePolicy", hostReplacePolicy);
 }
 
 std::string ModifyDedicatedUserClusterRequest::getAllocationPolicy()const
@@ -178,7 +178,7 @@ std::string ModifyDedicatedUserClusterRequest::getAllocationPolicy()const
 void ModifyDedicatedUserClusterRequest::setAllocationPolicy(const std::string& allocationPolicy)
 {
 	allocationPolicy_ = allocationPolicy;
-	setCoreParameter("AllocationPolicy", allocationPolicy);
+	setParameter("AllocationPolicy", allocationPolicy);
 }
 
 std::string ModifyDedicatedUserClusterRequest::getZoneId()const
@@ -189,7 +189,7 @@ std::string ModifyDedicatedUserClusterRequest::getZoneId()const
 void ModifyDedicatedUserClusterRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 int ModifyDedicatedUserClusterRequest::getCpuOverAllocationRatio()const
@@ -200,6 +200,6 @@ int ModifyDedicatedUserClusterRequest::getCpuOverAllocationRatio()const
 void ModifyDedicatedUserClusterRequest::setCpuOverAllocationRatio(int cpuOverAllocationRatio)
 {
 	cpuOverAllocationRatio_ = cpuOverAllocationRatio;
-	setCoreParameter("CpuOverAllocationRatio", std::to_string(cpuOverAllocationRatio));
+	setParameter("CpuOverAllocationRatio", std::to_string(cpuOverAllocationRatio));
 }
 

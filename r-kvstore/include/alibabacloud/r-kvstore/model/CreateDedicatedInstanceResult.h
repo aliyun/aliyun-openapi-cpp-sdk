@@ -39,7 +39,7 @@ namespace AlibabaCloud
 				~CreateDedicatedInstanceResult();
 				int getConnections()const;
 				std::string getUserName()const;
-				bool getZoneId()const;
+				std::string getZoneId()const;
 				std::string getInstanceId()const;
 				std::string getConfig()const;
 				int getPort()const;
@@ -48,7 +48,7 @@ namespace AlibabaCloud
 				std::string getInstanceName()const;
 				std::string getConnectionDomain()const;
 				std::string getVpcId()const;
-				bool getCapacity()const;
+				long getCapacity()const;
 				std::string getQPS()const;
 				std::string getInstanceStatus()const;
 				std::string getNetworkType()const;
@@ -61,7 +61,7 @@ namespace AlibabaCloud
 			private:
 				int connections_;
 				std::string userName_;
-				bool zoneId_;
+				std::string zoneId_;
 				std::string instanceId_;
 				std::string config_;
 				int port_;
@@ -70,7 +70,7 @@ namespace AlibabaCloud
 				std::string instanceName_;
 				std::string connectionDomain_;
 				std::string vpcId_;
-				bool capacity_;
+				long capacity_;
 				std::string qPS_;
 				std::string instanceStatus_;
 				std::string networkType_;

@@ -35,7 +35,7 @@ long CreateUserClusterHostRequest::getResourceOwnerId()const
 void CreateUserClusterHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateUserClusterHostRequest::getCouponNo()const
@@ -46,7 +46,7 @@ std::string CreateUserClusterHostRequest::getCouponNo()const
 void CreateUserClusterHostRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setParameter("CouponNo", couponNo);
 }
 
 std::string CreateUserClusterHostRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string CreateUserClusterHostRequest::getAccessKeyId()const
 void CreateUserClusterHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateUserClusterHostRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string CreateUserClusterHostRequest::getSecurityToken()const
 void CreateUserClusterHostRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string CreateUserClusterHostRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string CreateUserClusterHostRequest::getRegionId()const
 void CreateUserClusterHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateUserClusterHostRequest::getEngine()const
@@ -90,7 +90,7 @@ std::string CreateUserClusterHostRequest::getEngine()const
 void CreateUserClusterHostRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 int CreateUserClusterHostRequest::getOrderPeriod()const
@@ -101,7 +101,7 @@ int CreateUserClusterHostRequest::getOrderPeriod()const
 void CreateUserClusterHostRequest::setOrderPeriod(int orderPeriod)
 {
 	orderPeriod_ = orderPeriod;
-	setCoreParameter("OrderPeriod", std::to_string(orderPeriod));
+	setParameter("OrderPeriod", std::to_string(orderPeriod));
 }
 
 std::string CreateUserClusterHostRequest::getBusinessInfo()const
@@ -112,7 +112,7 @@ std::string CreateUserClusterHostRequest::getBusinessInfo()const
 void CreateUserClusterHostRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
+	setParameter("BusinessInfo", businessInfo);
 }
 
 std::string CreateUserClusterHostRequest::getAgentId()const
@@ -123,7 +123,7 @@ std::string CreateUserClusterHostRequest::getAgentId()const
 void CreateUserClusterHostRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", agentId);
+	setParameter("AgentId", agentId);
 }
 
 std::string CreateUserClusterHostRequest::getHostClass()const
@@ -134,7 +134,7 @@ std::string CreateUserClusterHostRequest::getHostClass()const
 void CreateUserClusterHostRequest::setHostClass(const std::string& hostClass)
 {
 	hostClass_ = hostClass;
-	setCoreParameter("HostClass", hostClass);
+	setParameter("HostClass", hostClass);
 }
 
 bool CreateUserClusterHostRequest::getAutoPay()const
@@ -145,7 +145,7 @@ bool CreateUserClusterHostRequest::getAutoPay()const
 void CreateUserClusterHostRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateUserClusterHostRequest::getResourceOwnerAccount()const
@@ -156,7 +156,7 @@ std::string CreateUserClusterHostRequest::getResourceOwnerAccount()const
 void CreateUserClusterHostRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateUserClusterHostRequest::getOwnerAccount()const
@@ -167,7 +167,7 @@ std::string CreateUserClusterHostRequest::getOwnerAccount()const
 void CreateUserClusterHostRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 int CreateUserClusterHostRequest::getOrderNum()const
@@ -178,7 +178,7 @@ int CreateUserClusterHostRequest::getOrderNum()const
 void CreateUserClusterHostRequest::setOrderNum(int orderNum)
 {
 	orderNum_ = orderNum;
-	setCoreParameter("OrderNum", std::to_string(orderNum));
+	setParameter("OrderNum", std::to_string(orderNum));
 }
 
 std::string CreateUserClusterHostRequest::getClusterId()const
@@ -189,7 +189,7 @@ std::string CreateUserClusterHostRequest::getClusterId()const
 void CreateUserClusterHostRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 long CreateUserClusterHostRequest::getOwnerId()const
@@ -200,7 +200,7 @@ long CreateUserClusterHostRequest::getOwnerId()const
 void CreateUserClusterHostRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool CreateUserClusterHostRequest::getAutoRenew()const
@@ -211,7 +211,7 @@ bool CreateUserClusterHostRequest::getAutoRenew()const
 void CreateUserClusterHostRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
+	setParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string CreateUserClusterHostRequest::getZoneId()const
@@ -222,7 +222,7 @@ std::string CreateUserClusterHostRequest::getZoneId()const
 void CreateUserClusterHostRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string CreateUserClusterHostRequest::getChargeType()const
@@ -233,6 +233,6 @@ std::string CreateUserClusterHostRequest::getChargeType()const
 void CreateUserClusterHostRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setParameter("ChargeType", chargeType);
 }
 

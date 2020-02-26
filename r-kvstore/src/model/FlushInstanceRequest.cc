@@ -35,7 +35,7 @@ long FlushInstanceRequest::getResourceOwnerId()const
 void FlushInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string FlushInstanceRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string FlushInstanceRequest::getResourceOwnerAccount()const
 void FlushInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string FlushInstanceRequest::getOwnerAccount()const
@@ -57,7 +57,7 @@ std::string FlushInstanceRequest::getOwnerAccount()const
 void FlushInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long FlushInstanceRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long FlushInstanceRequest::getOwnerId()const
 void FlushInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string FlushInstanceRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string FlushInstanceRequest::getAccessKeyId()const
 void FlushInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string FlushInstanceRequest::getInstanceId()const
@@ -90,7 +90,7 @@ std::string FlushInstanceRequest::getInstanceId()const
 void FlushInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string FlushInstanceRequest::getSecurityToken()const
@@ -101,6 +101,6 @@ std::string FlushInstanceRequest::getSecurityToken()const
 void FlushInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

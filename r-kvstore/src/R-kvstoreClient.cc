@@ -31,21 +31,21 @@ R_kvstoreClient::R_kvstoreClient(const Credentials &credentials, const ClientCon
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "R-kvstore");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 R_kvstoreClient::R_kvstoreClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "R-kvstore");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 R_kvstoreClient::R_kvstoreClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "R-kvstore");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 R_kvstoreClient::~R_kvstoreClient()
@@ -1161,42 +1161,6 @@ R_kvstoreClient::DescribeParametersOutcomeCallable R_kvstoreClient::describePara
 			[this, request]()
 			{
 			return this->describeParameters(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-R_kvstoreClient::DescribeRedisLogConfigOutcome R_kvstoreClient::describeRedisLogConfig(const DescribeRedisLogConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRedisLogConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRedisLogConfigOutcome(DescribeRedisLogConfigResult(outcome.result()));
-	else
-		return DescribeRedisLogConfigOutcome(outcome.error());
-}
-
-void R_kvstoreClient::describeRedisLogConfigAsync(const DescribeRedisLogConfigRequest& request, const DescribeRedisLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRedisLogConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-R_kvstoreClient::DescribeRedisLogConfigOutcomeCallable R_kvstoreClient::describeRedisLogConfigCallable(const DescribeRedisLogConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRedisLogConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRedisLogConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -35,7 +35,7 @@ long ModifyUserClusterHostRequest::getResourceOwnerId()const
 void ModifyUserClusterHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyUserClusterHostRequest::getHostId()const
@@ -46,7 +46,7 @@ std::string ModifyUserClusterHostRequest::getHostId()const
 void ModifyUserClusterHostRequest::setHostId(const std::string& hostId)
 {
 	hostId_ = hostId;
-	setCoreParameter("HostId", hostId);
+	setParameter("HostId", hostId);
 }
 
 std::string ModifyUserClusterHostRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifyUserClusterHostRequest::getAccessKeyId()const
 void ModifyUserClusterHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyUserClusterHostRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string ModifyUserClusterHostRequest::getSecurityToken()const
 void ModifyUserClusterHostRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyUserClusterHostRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string ModifyUserClusterHostRequest::getRegionId()const
 void ModifyUserClusterHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ModifyUserClusterHostRequest::getAllocationStatus()const
@@ -90,7 +90,7 @@ int ModifyUserClusterHostRequest::getAllocationStatus()const
 void ModifyUserClusterHostRequest::setAllocationStatus(int allocationStatus)
 {
 	allocationStatus_ = allocationStatus;
-	setCoreParameter("AllocationStatus", std::to_string(allocationStatus));
+	setParameter("AllocationStatus", std::to_string(allocationStatus));
 }
 
 std::string ModifyUserClusterHostRequest::getEngine()const
@@ -101,7 +101,7 @@ std::string ModifyUserClusterHostRequest::getEngine()const
 void ModifyUserClusterHostRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string ModifyUserClusterHostRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyUserClusterHostRequest::getResourceOwnerAccount()const
 void ModifyUserClusterHostRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyUserClusterHostRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string ModifyUserClusterHostRequest::getOwnerAccount()const
 void ModifyUserClusterHostRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyUserClusterHostRequest::getClusterId()const
@@ -134,7 +134,7 @@ std::string ModifyUserClusterHostRequest::getClusterId()const
 void ModifyUserClusterHostRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 long ModifyUserClusterHostRequest::getOwnerId()const
@@ -145,7 +145,7 @@ long ModifyUserClusterHostRequest::getOwnerId()const
 void ModifyUserClusterHostRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyUserClusterHostRequest::getZoneId()const
@@ -156,6 +156,6 @@ std::string ModifyUserClusterHostRequest::getZoneId()const
 void ModifyUserClusterHostRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

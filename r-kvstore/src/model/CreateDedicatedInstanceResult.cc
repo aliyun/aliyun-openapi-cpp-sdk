@@ -54,7 +54,7 @@ void CreateDedicatedInstanceResult::parse(const std::string &payload)
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
 	if(!value["Capacity"].isNull())
-		capacity_ = value["Capacity"].asString() == "true";
+		capacity_ = std::stol(value["Capacity"].asString());
 	if(!value["QPS"].isNull())
 		qPS_ = value["QPS"].asString();
 	if(!value["Bandwidth"].isNull())
@@ -62,7 +62,7 @@ void CreateDedicatedInstanceResult::parse(const std::string &payload)
 	if(!value["Connections"].isNull())
 		connections_ = std::stoi(value["Connections"].asString());
 	if(!value["ZoneId"].isNull())
-		zoneId_ = value["ZoneId"].asString() == "true";
+		zoneId_ = value["ZoneId"].asString();
 	if(!value["Config"].isNull())
 		config_ = value["Config"].asString();
 	if(!value["NodeType"].isNull())
@@ -88,7 +88,7 @@ std::string CreateDedicatedInstanceResult::getUserName()const
 	return userName_;
 }
 
-bool CreateDedicatedInstanceResult::getZoneId()const
+std::string CreateDedicatedInstanceResult::getZoneId()const
 {
 	return zoneId_;
 }
@@ -133,7 +133,7 @@ std::string CreateDedicatedInstanceResult::getVpcId()const
 	return vpcId_;
 }
 
-bool CreateDedicatedInstanceResult::getCapacity()const
+long CreateDedicatedInstanceResult::getCapacity()const
 {
 	return capacity_;
 }

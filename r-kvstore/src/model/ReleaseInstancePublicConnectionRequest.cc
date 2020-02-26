@@ -35,7 +35,7 @@ long ReleaseInstancePublicConnectionRequest::getResourceOwnerId()const
 void ReleaseInstancePublicConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId()const
 void ReleaseInstancePublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string ReleaseInstancePublicConnectionRequest::getSecurityToken()const
 void ReleaseInstancePublicConnectionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string ReleaseInstancePublicConnectionRequest::getResourceOwnerAccount()con
 void ReleaseInstancePublicConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ReleaseInstancePublicConnectionRequest::getOwnerAccount()const
 void ReleaseInstancePublicConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ReleaseInstancePublicConnectionRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long ReleaseInstancePublicConnectionRequest::getOwnerId()const
 void ReleaseInstancePublicConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getCurrentConnectionString()const
@@ -101,7 +101,7 @@ std::string ReleaseInstancePublicConnectionRequest::getCurrentConnectionString()
 void ReleaseInstancePublicConnectionRequest::setCurrentConnectionString(const std::string& currentConnectionString)
 {
 	currentConnectionString_ = currentConnectionString;
-	setCoreParameter("CurrentConnectionString", currentConnectionString);
+	setParameter("CurrentConnectionString", currentConnectionString);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getInstanceId()const
@@ -112,6 +112,6 @@ std::string ReleaseInstancePublicConnectionRequest::getInstanceId()const
 void ReleaseInstancePublicConnectionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

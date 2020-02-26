@@ -35,7 +35,7 @@ long CreateInstanceRequest::getResourceOwnerId()const
 void CreateInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateInstanceRequest::getCouponNo()const
@@ -46,7 +46,7 @@ std::string CreateInstanceRequest::getCouponNo()const
 void CreateInstanceRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setParameter("CouponNo", couponNo);
 }
 
 std::string CreateInstanceRequest::getNetworkType()const
@@ -57,7 +57,7 @@ std::string CreateInstanceRequest::getNetworkType()const
 void CreateInstanceRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setParameter("NetworkType", networkType);
 }
 
 std::string CreateInstanceRequest::getEngineVersion()const
@@ -68,7 +68,7 @@ std::string CreateInstanceRequest::getEngineVersion()const
 void CreateInstanceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 std::string CreateInstanceRequest::getResourceGroupId()const
@@ -79,7 +79,7 @@ std::string CreateInstanceRequest::getResourceGroupId()const
 void CreateInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateInstanceRequest::getPassword()const
@@ -90,7 +90,7 @@ std::string CreateInstanceRequest::getPassword()const
 void CreateInstanceRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setParameter("Password", password);
 }
 
 std::string CreateInstanceRequest::getSecurityToken()const
@@ -101,7 +101,7 @@ std::string CreateInstanceRequest::getSecurityToken()const
 void CreateInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string CreateInstanceRequest::getBusinessInfo()const
@@ -112,7 +112,7 @@ std::string CreateInstanceRequest::getBusinessInfo()const
 void CreateInstanceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
+	setParameter("BusinessInfo", businessInfo);
 }
 
 std::string CreateInstanceRequest::getAutoRenewPeriod()const
@@ -123,7 +123,7 @@ std::string CreateInstanceRequest::getAutoRenewPeriod()const
 void CreateInstanceRequest::setAutoRenewPeriod(const std::string& autoRenewPeriod)
 {
 	autoRenewPeriod_ = autoRenewPeriod;
-	setCoreParameter("AutoRenewPeriod", autoRenewPeriod);
+	setParameter("AutoRenewPeriod", autoRenewPeriod);
 }
 
 std::string CreateInstanceRequest::getPeriod()const
@@ -134,7 +134,7 @@ std::string CreateInstanceRequest::getPeriod()const
 void CreateInstanceRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setParameter("Period", period);
 }
 
 std::string CreateInstanceRequest::getBackupId()const
@@ -145,7 +145,7 @@ std::string CreateInstanceRequest::getBackupId()const
 void CreateInstanceRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setParameter("BackupId", backupId);
 }
 
 long CreateInstanceRequest::getOwnerId()const
@@ -156,7 +156,7 @@ long CreateInstanceRequest::getOwnerId()const
 void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateInstanceRequest::getVSwitchId()const
@@ -167,7 +167,7 @@ std::string CreateInstanceRequest::getVSwitchId()const
 void CreateInstanceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateInstanceRequest::getPrivateIpAddress()const
@@ -178,7 +178,7 @@ std::string CreateInstanceRequest::getPrivateIpAddress()const
 void CreateInstanceRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setParameter("PrivateIpAddress", privateIpAddress);
 }
 
 std::string CreateInstanceRequest::getInstanceName()const
@@ -189,7 +189,7 @@ std::string CreateInstanceRequest::getInstanceName()const
 void CreateInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 
 std::string CreateInstanceRequest::getAutoRenew()const
@@ -200,7 +200,7 @@ std::string CreateInstanceRequest::getAutoRenew()const
 void CreateInstanceRequest::setAutoRenew(const std::string& autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew);
+	setParameter("AutoRenew", autoRenew);
 }
 
 std::string CreateInstanceRequest::getZoneId()const
@@ -211,7 +211,7 @@ std::string CreateInstanceRequest::getZoneId()const
 void CreateInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string CreateInstanceRequest::getNodeType()const
@@ -222,7 +222,7 @@ std::string CreateInstanceRequest::getNodeType()const
 void CreateInstanceRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", nodeType);
+	setParameter("NodeType", nodeType);
 }
 
 std::string CreateInstanceRequest::getAutoUseCoupon()const
@@ -233,7 +233,7 @@ std::string CreateInstanceRequest::getAutoUseCoupon()const
 void CreateInstanceRequest::setAutoUseCoupon(const std::string& autoUseCoupon)
 {
 	autoUseCoupon_ = autoUseCoupon;
-	setCoreParameter("AutoUseCoupon", autoUseCoupon);
+	setParameter("AutoUseCoupon", autoUseCoupon);
 }
 
 std::string CreateInstanceRequest::getInstanceClass()const
@@ -244,7 +244,7 @@ std::string CreateInstanceRequest::getInstanceClass()const
 void CreateInstanceRequest::setInstanceClass(const std::string& instanceClass)
 {
 	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", instanceClass);
+	setParameter("InstanceClass", instanceClass);
 }
 
 std::string CreateInstanceRequest::getAccessKeyId()const
@@ -255,7 +255,7 @@ std::string CreateInstanceRequest::getAccessKeyId()const
 void CreateInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long CreateInstanceRequest::getCapacity()const
@@ -266,7 +266,7 @@ long CreateInstanceRequest::getCapacity()const
 void CreateInstanceRequest::setCapacity(long capacity)
 {
 	capacity_ = capacity;
-	setCoreParameter("Capacity", std::to_string(capacity));
+	setParameter("Capacity", std::to_string(capacity));
 }
 
 std::string CreateInstanceRequest::getInstanceType()const
@@ -277,7 +277,7 @@ std::string CreateInstanceRequest::getInstanceType()const
 void CreateInstanceRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string CreateInstanceRequest::getRestoreTime()const
@@ -288,7 +288,7 @@ std::string CreateInstanceRequest::getRestoreTime()const
 void CreateInstanceRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
+	setParameter("RestoreTime", restoreTime);
 }
 
 std::string CreateInstanceRequest::getResourceOwnerAccount()const
@@ -299,7 +299,7 @@ std::string CreateInstanceRequest::getResourceOwnerAccount()const
 void CreateInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateInstanceRequest::getSrcDBInstanceId()const
@@ -310,7 +310,7 @@ std::string CreateInstanceRequest::getSrcDBInstanceId()const
 void CreateInstanceRequest::setSrcDBInstanceId(const std::string& srcDBInstanceId)
 {
 	srcDBInstanceId_ = srcDBInstanceId;
-	setCoreParameter("SrcDBInstanceId", srcDBInstanceId);
+	setParameter("SrcDBInstanceId", srcDBInstanceId);
 }
 
 std::string CreateInstanceRequest::getOwnerAccount()const
@@ -321,7 +321,7 @@ std::string CreateInstanceRequest::getOwnerAccount()const
 void CreateInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateInstanceRequest::getToken()const
@@ -332,7 +332,7 @@ std::string CreateInstanceRequest::getToken()const
 void CreateInstanceRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", token);
+	setParameter("Token", token);
 }
 
 std::string CreateInstanceRequest::getVpcId()const
@@ -343,7 +343,7 @@ std::string CreateInstanceRequest::getVpcId()const
 void CreateInstanceRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string CreateInstanceRequest::getChargeType()const
@@ -354,7 +354,7 @@ std::string CreateInstanceRequest::getChargeType()const
 void CreateInstanceRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setParameter("ChargeType", chargeType);
 }
 
 std::string CreateInstanceRequest::getConfig()const
@@ -365,6 +365,6 @@ std::string CreateInstanceRequest::getConfig()const
 void CreateInstanceRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setParameter("Config", config);
 }
 

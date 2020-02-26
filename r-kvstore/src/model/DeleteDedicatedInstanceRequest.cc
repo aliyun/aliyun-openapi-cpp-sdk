@@ -35,7 +35,7 @@ long DeleteDedicatedInstanceRequest::getResourceOwnerId()const
 void DeleteDedicatedInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteDedicatedInstanceRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DeleteDedicatedInstanceRequest::getAccessKeyId()const
 void DeleteDedicatedInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDedicatedInstanceRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DeleteDedicatedInstanceRequest::getSecurityToken()const
 void DeleteDedicatedInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteDedicatedInstanceRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DeleteDedicatedInstanceRequest::getRegionId()const
 void DeleteDedicatedInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteDedicatedInstanceRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteDedicatedInstanceRequest::getResourceOwnerAccount()const
 void DeleteDedicatedInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteDedicatedInstanceRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DeleteDedicatedInstanceRequest::getOwnerAccount()const
 void DeleteDedicatedInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteDedicatedInstanceRequest::getClusterId()const
@@ -101,7 +101,7 @@ std::string DeleteDedicatedInstanceRequest::getClusterId()const
 void DeleteDedicatedInstanceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 long DeleteDedicatedInstanceRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long DeleteDedicatedInstanceRequest::getOwnerId()const
 void DeleteDedicatedInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteDedicatedInstanceRequest::getInstanceId()const
@@ -123,7 +123,7 @@ std::string DeleteDedicatedInstanceRequest::getInstanceId()const
 void DeleteDedicatedInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DeleteDedicatedInstanceRequest::getZoneId()const
@@ -134,6 +134,6 @@ std::string DeleteDedicatedInstanceRequest::getZoneId()const
 void DeleteDedicatedInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

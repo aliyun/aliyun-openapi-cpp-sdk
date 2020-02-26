@@ -1,3 +1,7 @@
+2020-02-26 Version: 1.36.290
+- Generated 2015-01-01 for `R-kvstore`.
+- Add VpcCloudInstanceId for DescribeInstanceAttribute.
+
 2020-02-26 Version: 1.36.289
 - Add InitFaceVerify and DescribeFaceVerify API.
 

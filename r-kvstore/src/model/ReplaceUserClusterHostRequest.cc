@@ -35,7 +35,7 @@ long ReplaceUserClusterHostRequest::getResourceOwnerId()const
 void ReplaceUserClusterHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReplaceUserClusterHostRequest::getHostId()const
@@ -46,7 +46,7 @@ std::string ReplaceUserClusterHostRequest::getHostId()const
 void ReplaceUserClusterHostRequest::setHostId(const std::string& hostId)
 {
 	hostId_ = hostId;
-	setCoreParameter("HostId", hostId);
+	setParameter("HostId", hostId);
 }
 
 std::string ReplaceUserClusterHostRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ReplaceUserClusterHostRequest::getAccessKeyId()const
 void ReplaceUserClusterHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReplaceUserClusterHostRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string ReplaceUserClusterHostRequest::getSecurityToken()const
 void ReplaceUserClusterHostRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ReplaceUserClusterHostRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string ReplaceUserClusterHostRequest::getRegionId()const
 void ReplaceUserClusterHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ReplaceUserClusterHostRequest::getEngine()const
@@ -90,7 +90,7 @@ std::string ReplaceUserClusterHostRequest::getEngine()const
 void ReplaceUserClusterHostRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string ReplaceUserClusterHostRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ReplaceUserClusterHostRequest::getResourceOwnerAccount()const
 void ReplaceUserClusterHostRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReplaceUserClusterHostRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ReplaceUserClusterHostRequest::getOwnerAccount()const
 void ReplaceUserClusterHostRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReplaceUserClusterHostRequest::getClusterId()const
@@ -123,7 +123,7 @@ std::string ReplaceUserClusterHostRequest::getClusterId()const
 void ReplaceUserClusterHostRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 long ReplaceUserClusterHostRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long ReplaceUserClusterHostRequest::getOwnerId()const
 void ReplaceUserClusterHostRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReplaceUserClusterHostRequest::getZoneId()const
@@ -145,6 +145,6 @@ std::string ReplaceUserClusterHostRequest::getZoneId()const
 void ReplaceUserClusterHostRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

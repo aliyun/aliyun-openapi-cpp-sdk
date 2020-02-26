@@ -35,7 +35,7 @@ long SwitchNetworkRequest::getResourceOwnerId()const
 void SwitchNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SwitchNetworkRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string SwitchNetworkRequest::getAccessKeyId()const
 void SwitchNetworkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SwitchNetworkRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string SwitchNetworkRequest::getSecurityToken()const
 void SwitchNetworkRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SwitchNetworkRequest::getClassicExpiredDays()const
@@ -68,7 +68,7 @@ std::string SwitchNetworkRequest::getClassicExpiredDays()const
 void SwitchNetworkRequest::setClassicExpiredDays(const std::string& classicExpiredDays)
 {
 	classicExpiredDays_ = classicExpiredDays;
-	setCoreParameter("ClassicExpiredDays", classicExpiredDays);
+	setParameter("ClassicExpiredDays", classicExpiredDays);
 }
 
 std::string SwitchNetworkRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string SwitchNetworkRequest::getResourceOwnerAccount()const
 void SwitchNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SwitchNetworkRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string SwitchNetworkRequest::getOwnerAccount()const
 void SwitchNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SwitchNetworkRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long SwitchNetworkRequest::getOwnerId()const
 void SwitchNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SwitchNetworkRequest::getVSwitchId()const
@@ -112,7 +112,7 @@ std::string SwitchNetworkRequest::getVSwitchId()const
 void SwitchNetworkRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string SwitchNetworkRequest::getInstanceId()const
@@ -123,7 +123,7 @@ std::string SwitchNetworkRequest::getInstanceId()const
 void SwitchNetworkRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string SwitchNetworkRequest::getTargetNetworkType()const
@@ -134,7 +134,7 @@ std::string SwitchNetworkRequest::getTargetNetworkType()const
 void SwitchNetworkRequest::setTargetNetworkType(const std::string& targetNetworkType)
 {
 	targetNetworkType_ = targetNetworkType;
-	setCoreParameter("TargetNetworkType", targetNetworkType);
+	setParameter("TargetNetworkType", targetNetworkType);
 }
 
 std::string SwitchNetworkRequest::getRetainClassic()const
@@ -145,7 +145,7 @@ std::string SwitchNetworkRequest::getRetainClassic()const
 void SwitchNetworkRequest::setRetainClassic(const std::string& retainClassic)
 {
 	retainClassic_ = retainClassic;
-	setCoreParameter("RetainClassic", retainClassic);
+	setParameter("RetainClassic", retainClassic);
 }
 
 std::string SwitchNetworkRequest::getVpcId()const
@@ -156,6 +156,6 @@ std::string SwitchNetworkRequest::getVpcId()const
 void SwitchNetworkRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

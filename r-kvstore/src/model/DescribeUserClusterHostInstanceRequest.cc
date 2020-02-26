@@ -35,7 +35,7 @@ long DescribeUserClusterHostInstanceRequest::getResourceOwnerId()const
 void DescribeUserClusterHostInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getPageNumber()const
@@ -46,7 +46,7 @@ std::string DescribeUserClusterHostInstanceRequest::getPageNumber()const
 void DescribeUserClusterHostInstanceRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DescribeUserClusterHostInstanceRequest::getAccessKeyId()const
 void DescribeUserClusterHostInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string DescribeUserClusterHostInstanceRequest::getSecurityToken()const
 void DescribeUserClusterHostInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string DescribeUserClusterHostInstanceRequest::getRegionId()const
 void DescribeUserClusterHostInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getEngine()const
@@ -90,7 +90,7 @@ std::string DescribeUserClusterHostInstanceRequest::getEngine()const
 void DescribeUserClusterHostInstanceRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getInstanceStatus()const
@@ -101,7 +101,7 @@ std::string DescribeUserClusterHostInstanceRequest::getInstanceStatus()const
 void DescribeUserClusterHostInstanceRequest::setInstanceStatus(const std::string& instanceStatus)
 {
 	instanceStatus_ = instanceStatus;
-	setCoreParameter("InstanceStatus", instanceStatus);
+	setParameter("InstanceStatus", instanceStatus);
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribeUserClusterHostInstanceRequest::getResourceOwnerAccount()con
 void DescribeUserClusterHostInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string DescribeUserClusterHostInstanceRequest::getOwnerAccount()const
 void DescribeUserClusterHostInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getMaxRecordsPerPage()const
@@ -134,7 +134,7 @@ std::string DescribeUserClusterHostInstanceRequest::getMaxRecordsPerPage()const
 void DescribeUserClusterHostInstanceRequest::setMaxRecordsPerPage(const std::string& maxRecordsPerPage)
 {
 	maxRecordsPerPage_ = maxRecordsPerPage;
-	setCoreParameter("MaxRecordsPerPage", maxRecordsPerPage);
+	setParameter("MaxRecordsPerPage", maxRecordsPerPage);
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getClusterId()const
@@ -145,7 +145,7 @@ std::string DescribeUserClusterHostInstanceRequest::getClusterId()const
 void DescribeUserClusterHostInstanceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 long DescribeUserClusterHostInstanceRequest::getOwnerId()const
@@ -156,7 +156,7 @@ long DescribeUserClusterHostInstanceRequest::getOwnerId()const
 void DescribeUserClusterHostInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getInstanceIds()const
@@ -167,7 +167,7 @@ std::string DescribeUserClusterHostInstanceRequest::getInstanceIds()const
 void DescribeUserClusterHostInstanceRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setParameter("InstanceIds", instanceIds);
 }
 
 std::string DescribeUserClusterHostInstanceRequest::getZoneId()const
@@ -178,6 +178,6 @@ std::string DescribeUserClusterHostInstanceRequest::getZoneId()const
 void DescribeUserClusterHostInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

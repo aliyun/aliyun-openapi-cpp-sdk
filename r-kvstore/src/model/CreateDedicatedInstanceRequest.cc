@@ -35,7 +35,7 @@ long CreateDedicatedInstanceRequest::getResourceOwnerId()const
 void CreateDedicatedInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateDedicatedInstanceRequest::getNodeType()const
@@ -46,7 +46,7 @@ std::string CreateDedicatedInstanceRequest::getNodeType()const
 void CreateDedicatedInstanceRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", nodeType);
+	setParameter("NodeType", nodeType);
 }
 
 std::string CreateDedicatedInstanceRequest::getNetworkType()const
@@ -57,7 +57,7 @@ std::string CreateDedicatedInstanceRequest::getNetworkType()const
 void CreateDedicatedInstanceRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setParameter("NetworkType", networkType);
 }
 
 std::string CreateDedicatedInstanceRequest::getEngineVersion()const
@@ -68,7 +68,7 @@ std::string CreateDedicatedInstanceRequest::getEngineVersion()const
 void CreateDedicatedInstanceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 std::string CreateDedicatedInstanceRequest::getInstanceClass()const
@@ -79,7 +79,7 @@ std::string CreateDedicatedInstanceRequest::getInstanceClass()const
 void CreateDedicatedInstanceRequest::setInstanceClass(const std::string& instanceClass)
 {
 	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", instanceClass);
+	setParameter("InstanceClass", instanceClass);
 }
 
 std::string CreateDedicatedInstanceRequest::getAccessKeyId()const
@@ -90,7 +90,7 @@ std::string CreateDedicatedInstanceRequest::getAccessKeyId()const
 void CreateDedicatedInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateDedicatedInstanceRequest::getResourceGroupId()const
@@ -101,7 +101,7 @@ std::string CreateDedicatedInstanceRequest::getResourceGroupId()const
 void CreateDedicatedInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateDedicatedInstanceRequest::getPassword()const
@@ -112,7 +112,7 @@ std::string CreateDedicatedInstanceRequest::getPassword()const
 void CreateDedicatedInstanceRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setParameter("Password", password);
 }
 
 std::string CreateDedicatedInstanceRequest::getSecurityToken()const
@@ -123,7 +123,7 @@ std::string CreateDedicatedInstanceRequest::getSecurityToken()const
 void CreateDedicatedInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string CreateDedicatedInstanceRequest::getRegionId()const
@@ -134,7 +134,7 @@ std::string CreateDedicatedInstanceRequest::getRegionId()const
 void CreateDedicatedInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateDedicatedInstanceRequest::getInstanceType()const
@@ -145,7 +145,7 @@ std::string CreateDedicatedInstanceRequest::getInstanceType()const
 void CreateDedicatedInstanceRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string CreateDedicatedInstanceRequest::getResourceOwnerAccount()const
@@ -156,7 +156,7 @@ std::string CreateDedicatedInstanceRequest::getResourceOwnerAccount()const
 void CreateDedicatedInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateDedicatedInstanceRequest::getSrcDBInstanceId()const
@@ -167,7 +167,7 @@ std::string CreateDedicatedInstanceRequest::getSrcDBInstanceId()const
 void CreateDedicatedInstanceRequest::setSrcDBInstanceId(const std::string& srcDBInstanceId)
 {
 	srcDBInstanceId_ = srcDBInstanceId;
-	setCoreParameter("SrcDBInstanceId", srcDBInstanceId);
+	setParameter("SrcDBInstanceId", srcDBInstanceId);
 }
 
 std::string CreateDedicatedInstanceRequest::getOwnerAccount()const
@@ -178,7 +178,7 @@ std::string CreateDedicatedInstanceRequest::getOwnerAccount()const
 void CreateDedicatedInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateDedicatedInstanceRequest::getBackupId()const
@@ -189,7 +189,7 @@ std::string CreateDedicatedInstanceRequest::getBackupId()const
 void CreateDedicatedInstanceRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setParameter("BackupId", backupId);
 }
 
 std::string CreateDedicatedInstanceRequest::getClusterId()const
@@ -200,7 +200,7 @@ std::string CreateDedicatedInstanceRequest::getClusterId()const
 void CreateDedicatedInstanceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 long CreateDedicatedInstanceRequest::getOwnerId()const
@@ -211,7 +211,7 @@ long CreateDedicatedInstanceRequest::getOwnerId()const
 void CreateDedicatedInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateDedicatedInstanceRequest::getVSwitchId()const
@@ -222,7 +222,7 @@ std::string CreateDedicatedInstanceRequest::getVSwitchId()const
 void CreateDedicatedInstanceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateDedicatedInstanceRequest::getPrivateIpAddress()const
@@ -233,7 +233,7 @@ std::string CreateDedicatedInstanceRequest::getPrivateIpAddress()const
 void CreateDedicatedInstanceRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setParameter("PrivateIpAddress", privateIpAddress);
 }
 
 std::string CreateDedicatedInstanceRequest::getInstanceName()const
@@ -244,7 +244,7 @@ std::string CreateDedicatedInstanceRequest::getInstanceName()const
 void CreateDedicatedInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 
 std::string CreateDedicatedInstanceRequest::getVpcId()const
@@ -255,7 +255,7 @@ std::string CreateDedicatedInstanceRequest::getVpcId()const
 void CreateDedicatedInstanceRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string CreateDedicatedInstanceRequest::getZoneId()const
@@ -266,7 +266,7 @@ std::string CreateDedicatedInstanceRequest::getZoneId()const
 void CreateDedicatedInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string CreateDedicatedInstanceRequest::getConfig()const
@@ -277,6 +277,6 @@ std::string CreateDedicatedInstanceRequest::getConfig()const
 void CreateDedicatedInstanceRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setParameter("Config", config);
 }
 

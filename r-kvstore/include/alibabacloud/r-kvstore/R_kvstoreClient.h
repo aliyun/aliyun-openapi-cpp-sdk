@@ -84,8 +84,6 @@
 #include "model/DescribeMonitorItemsResult.h"
 #include "model/DescribeParametersRequest.h"
 #include "model/DescribeParametersResult.h"
-#include "model/DescribeRedisLogConfigRequest.h"
-#include "model/DescribeRedisLogConfigResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeRunningLogRecordsRequest.h"
@@ -270,9 +268,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeParametersResult> DescribeParametersOutcome;
 			typedef std::future<DescribeParametersOutcome> DescribeParametersOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeParametersRequest&, const DescribeParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParametersAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRedisLogConfigResult> DescribeRedisLogConfigOutcome;
-			typedef std::future<DescribeRedisLogConfigOutcome> DescribeRedisLogConfigOutcomeCallable;
-			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeRedisLogConfigRequest&, const DescribeRedisLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisLogConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -494,9 +489,6 @@ namespace AlibabaCloud
 			DescribeParametersOutcome describeParameters(const Model::DescribeParametersRequest &request)const;
 			void describeParametersAsync(const Model::DescribeParametersRequest& request, const DescribeParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeParametersOutcomeCallable describeParametersCallable(const Model::DescribeParametersRequest& request) const;
-			DescribeRedisLogConfigOutcome describeRedisLogConfig(const Model::DescribeRedisLogConfigRequest &request)const;
-			void describeRedisLogConfigAsync(const Model::DescribeRedisLogConfigRequest& request, const DescribeRedisLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRedisLogConfigOutcomeCallable describeRedisLogConfigCallable(const Model::DescribeRedisLogConfigRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;

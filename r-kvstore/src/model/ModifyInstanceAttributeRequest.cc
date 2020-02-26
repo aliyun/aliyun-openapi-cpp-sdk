@@ -35,7 +35,7 @@ long ModifyInstanceAttributeRequest::getResourceOwnerId()const
 void ModifyInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyInstanceAttributeRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyInstanceAttributeRequest::getAccessKeyId()const
 void ModifyInstanceAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyInstanceAttributeRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string ModifyInstanceAttributeRequest::getSecurityToken()const
 void ModifyInstanceAttributeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyInstanceAttributeRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string ModifyInstanceAttributeRequest::getResourceOwnerAccount()const
 void ModifyInstanceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceAttributeRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyInstanceAttributeRequest::getOwnerAccount()const
 void ModifyInstanceAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyInstanceAttributeRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long ModifyInstanceAttributeRequest::getOwnerId()const
 void ModifyInstanceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyInstanceAttributeRequest::getNewPassword()const
@@ -101,7 +101,7 @@ std::string ModifyInstanceAttributeRequest::getNewPassword()const
 void ModifyInstanceAttributeRequest::setNewPassword(const std::string& newPassword)
 {
 	newPassword_ = newPassword;
-	setCoreParameter("NewPassword", newPassword);
+	setParameter("NewPassword", newPassword);
 }
 
 std::string ModifyInstanceAttributeRequest::getInstanceId()const
@@ -112,7 +112,7 @@ std::string ModifyInstanceAttributeRequest::getInstanceId()const
 void ModifyInstanceAttributeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ModifyInstanceAttributeRequest::getInstanceName()const
@@ -123,6 +123,6 @@ std::string ModifyInstanceAttributeRequest::getInstanceName()const
 void ModifyInstanceAttributeRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 

@@ -35,7 +35,7 @@ long ModifyDedicatedInstanceSpecRequest::getResourceOwnerId()const
 void ModifyDedicatedInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDedicatedInstanceSpecRequest::getInstanceClass()const
@@ -46,7 +46,7 @@ std::string ModifyDedicatedInstanceSpecRequest::getInstanceClass()const
 void ModifyDedicatedInstanceSpecRequest::setInstanceClass(const std::string& instanceClass)
 {
 	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", instanceClass);
+	setParameter("InstanceClass", instanceClass);
 }
 
 std::string ModifyDedicatedInstanceSpecRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifyDedicatedInstanceSpecRequest::getAccessKeyId()const
 void ModifyDedicatedInstanceSpecRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDedicatedInstanceSpecRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string ModifyDedicatedInstanceSpecRequest::getSecurityToken()const
 void ModifyDedicatedInstanceSpecRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyDedicatedInstanceSpecRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string ModifyDedicatedInstanceSpecRequest::getRegionId()const
 void ModifyDedicatedInstanceSpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDedicatedInstanceSpecRequest::getEffectiveTime()const
@@ -90,7 +90,7 @@ std::string ModifyDedicatedInstanceSpecRequest::getEffectiveTime()const
 void ModifyDedicatedInstanceSpecRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", effectiveTime);
+	setParameter("EffectiveTime", effectiveTime);
 }
 
 std::string ModifyDedicatedInstanceSpecRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyDedicatedInstanceSpecRequest::getResourceOwnerAccount()const
 void ModifyDedicatedInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDedicatedInstanceSpecRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyDedicatedInstanceSpecRequest::getOwnerAccount()const
 void ModifyDedicatedInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDedicatedInstanceSpecRequest::getClusterId()const
@@ -123,7 +123,7 @@ std::string ModifyDedicatedInstanceSpecRequest::getClusterId()const
 void ModifyDedicatedInstanceSpecRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 long ModifyDedicatedInstanceSpecRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long ModifyDedicatedInstanceSpecRequest::getOwnerId()const
 void ModifyDedicatedInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDedicatedInstanceSpecRequest::getInstanceId()const
@@ -145,7 +145,7 @@ std::string ModifyDedicatedInstanceSpecRequest::getInstanceId()const
 void ModifyDedicatedInstanceSpecRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ModifyDedicatedInstanceSpecRequest::getZoneId()const
@@ -156,7 +156,7 @@ std::string ModifyDedicatedInstanceSpecRequest::getZoneId()const
 void ModifyDedicatedInstanceSpecRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 bool ModifyDedicatedInstanceSpecRequest::getForceUpgrade()const
@@ -167,6 +167,6 @@ bool ModifyDedicatedInstanceSpecRequest::getForceUpgrade()const
 void ModifyDedicatedInstanceSpecRequest::setForceUpgrade(bool forceUpgrade)
 {
 	forceUpgrade_ = forceUpgrade;
-	setCoreParameter("ForceUpgrade", forceUpgrade ? "true" : "false");
+	setParameter("ForceUpgrade", forceUpgrade ? "true" : "false");
 }
 

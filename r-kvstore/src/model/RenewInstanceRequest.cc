@@ -35,7 +35,7 @@ long RenewInstanceRequest::getResourceOwnerId()const
 void RenewInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RenewInstanceRequest::getCouponNo()const
@@ -46,7 +46,7 @@ std::string RenewInstanceRequest::getCouponNo()const
 void RenewInstanceRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setParameter("CouponNo", couponNo);
 }
 
 std::string RenewInstanceRequest::getInstanceClass()const
@@ -57,7 +57,7 @@ std::string RenewInstanceRequest::getInstanceClass()const
 void RenewInstanceRequest::setInstanceClass(const std::string& instanceClass)
 {
 	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", instanceClass);
+	setParameter("InstanceClass", instanceClass);
 }
 
 std::string RenewInstanceRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string RenewInstanceRequest::getAccessKeyId()const
 void RenewInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RenewInstanceRequest::getCapacity()const
@@ -79,7 +79,7 @@ std::string RenewInstanceRequest::getCapacity()const
 void RenewInstanceRequest::setCapacity(const std::string& capacity)
 {
 	capacity_ = capacity;
-	setCoreParameter("Capacity", capacity);
+	setParameter("Capacity", capacity);
 }
 
 std::string RenewInstanceRequest::getSecurityToken()const
@@ -90,7 +90,7 @@ std::string RenewInstanceRequest::getSecurityToken()const
 void RenewInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string RenewInstanceRequest::getBusinessInfo()const
@@ -101,7 +101,7 @@ std::string RenewInstanceRequest::getBusinessInfo()const
 void RenewInstanceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
+	setParameter("BusinessInfo", businessInfo);
 }
 
 long RenewInstanceRequest::getPeriod()const
@@ -112,7 +112,7 @@ long RenewInstanceRequest::getPeriod()const
 void RenewInstanceRequest::setPeriod(long period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 bool RenewInstanceRequest::getAutoPay()const
@@ -123,7 +123,7 @@ bool RenewInstanceRequest::getAutoPay()const
 void RenewInstanceRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string RenewInstanceRequest::getFromApp()const
@@ -134,7 +134,7 @@ std::string RenewInstanceRequest::getFromApp()const
 void RenewInstanceRequest::setFromApp(const std::string& fromApp)
 {
 	fromApp_ = fromApp;
-	setCoreParameter("FromApp", fromApp);
+	setParameter("FromApp", fromApp);
 }
 
 std::string RenewInstanceRequest::getResourceOwnerAccount()const
@@ -145,7 +145,7 @@ std::string RenewInstanceRequest::getResourceOwnerAccount()const
 void RenewInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RenewInstanceRequest::getOwnerAccount()const
@@ -156,7 +156,7 @@ std::string RenewInstanceRequest::getOwnerAccount()const
 void RenewInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RenewInstanceRequest::getOwnerId()const
@@ -167,7 +167,7 @@ long RenewInstanceRequest::getOwnerId()const
 void RenewInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RenewInstanceRequest::getInstanceId()const
@@ -178,7 +178,7 @@ std::string RenewInstanceRequest::getInstanceId()const
 void RenewInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 bool RenewInstanceRequest::getForceUpgrade()const
@@ -189,6 +189,6 @@ bool RenewInstanceRequest::getForceUpgrade()const
 void RenewInstanceRequest::setForceUpgrade(bool forceUpgrade)
 {
 	forceUpgrade_ = forceUpgrade;
-	setCoreParameter("ForceUpgrade", forceUpgrade ? "true" : "false");
+	setParameter("ForceUpgrade", forceUpgrade ? "true" : "false");
 }
 

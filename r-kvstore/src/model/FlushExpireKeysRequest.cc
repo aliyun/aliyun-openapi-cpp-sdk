@@ -35,7 +35,7 @@ long FlushExpireKeysRequest::getResourceOwnerId()const
 void FlushExpireKeysRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string FlushExpireKeysRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string FlushExpireKeysRequest::getAccessKeyId()const
 void FlushExpireKeysRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string FlushExpireKeysRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string FlushExpireKeysRequest::getSecurityToken()const
 void FlushExpireKeysRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string FlushExpireKeysRequest::getEffectiveTime()const
@@ -68,7 +68,7 @@ std::string FlushExpireKeysRequest::getEffectiveTime()const
 void FlushExpireKeysRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", effectiveTime);
+	setParameter("EffectiveTime", effectiveTime);
 }
 
 std::string FlushExpireKeysRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string FlushExpireKeysRequest::getResourceOwnerAccount()const
 void FlushExpireKeysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string FlushExpireKeysRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string FlushExpireKeysRequest::getOwnerAccount()const
 void FlushExpireKeysRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long FlushExpireKeysRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long FlushExpireKeysRequest::getOwnerId()const
 void FlushExpireKeysRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string FlushExpireKeysRequest::getInstanceId()const
@@ -112,6 +112,6 @@ std::string FlushExpireKeysRequest::getInstanceId()const
 void FlushExpireKeysRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
