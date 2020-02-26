@@ -22,7 +22,7 @@ AddSnapshotRepoRequest::AddSnapshotRepoRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/snapshot-repos");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 AddSnapshotRepoRequest::~AddSnapshotRepoRequest()

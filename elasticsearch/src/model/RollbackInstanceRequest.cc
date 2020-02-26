@@ -22,7 +22,7 @@ RollbackInstanceRequest::RollbackInstanceRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/actions/rollback");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 RollbackInstanceRequest::~RollbackInstanceRequest()

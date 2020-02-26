@@ -22,7 +22,7 @@ ResumeElasticsearchTaskRequest::ResumeElasticsearchTaskRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/actions/resume");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ResumeElasticsearchTaskRequest::~ResumeElasticsearchTaskRequest()

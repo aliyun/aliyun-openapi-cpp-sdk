@@ -22,7 +22,7 @@ RestartLogstashRequest::RestartLogstashRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes/[InstanceId]/actions/restart");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 RestartLogstashRequest::~RestartLogstashRequest()

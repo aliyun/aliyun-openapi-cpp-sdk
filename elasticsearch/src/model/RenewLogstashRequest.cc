@@ -22,7 +22,7 @@ RenewLogstashRequest::RenewLogstashRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes/[InstanceId]/actions/renew");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 RenewLogstashRequest::~RenewLogstashRequest()

@@ -22,7 +22,7 @@ UpdateAdminPasswordRequest::UpdateAdminPasswordRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/admin-pwd");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UpdateAdminPasswordRequest::~UpdateAdminPasswordRequest()

@@ -22,7 +22,7 @@ CreateProjectRequest::CreateProjectRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/projects");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 CreateProjectRequest::~CreateProjectRequest()

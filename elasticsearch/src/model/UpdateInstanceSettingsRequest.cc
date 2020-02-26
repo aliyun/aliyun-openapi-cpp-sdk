@@ -22,7 +22,7 @@ UpdateInstanceSettingsRequest::UpdateInstanceSettingsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/instance-settings");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UpdateInstanceSettingsRequest::~UpdateInstanceSettingsRequest()

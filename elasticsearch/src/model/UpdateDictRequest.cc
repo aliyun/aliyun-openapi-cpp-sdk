@@ -22,7 +22,7 @@ UpdateDictRequest::UpdateDictRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/dict");
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::PUT);
 }
 
 UpdateDictRequest::~UpdateDictRequest()

@@ -22,7 +22,7 @@ ValidateTransferableNodesRequest::ValidateTransferableNodesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/validate-transfer-nodes");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ValidateTransferableNodesRequest::~ValidateTransferableNodesRequest()

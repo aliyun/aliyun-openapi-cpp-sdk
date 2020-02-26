@@ -22,7 +22,7 @@ GetTransferableNodesRequest::GetTransferableNodesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/transferable-nodes");
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetTransferableNodesRequest::~GetTransferableNodesRequest()

@@ -22,7 +22,7 @@ DescribeRegionsRequest::DescribeRegionsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/regions");
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeRegionsRequest::~DescribeRegionsRequest()

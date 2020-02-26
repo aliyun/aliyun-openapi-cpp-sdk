@@ -22,7 +22,7 @@ InstallLogstashSystemPluginRequest::InstallLogstashSystemPluginRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes/[InstanceId]/plugins/system/actions/install");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 InstallLogstashSystemPluginRequest::~InstallLogstashSystemPluginRequest()

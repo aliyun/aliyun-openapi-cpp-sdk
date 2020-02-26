@@ -22,7 +22,7 @@ UpdateSnapshotSettingRequest::UpdateSnapshotSettingRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/snapshot-setting");
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UpdateSnapshotSettingRequest::~UpdateSnapshotSettingRequest()

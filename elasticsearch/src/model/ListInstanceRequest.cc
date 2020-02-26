@@ -22,7 +22,7 @@ ListInstanceRequest::ListInstanceRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances");
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListInstanceRequest::~ListInstanceRequest()

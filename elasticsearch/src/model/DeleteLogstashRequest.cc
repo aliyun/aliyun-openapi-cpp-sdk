@@ -22,7 +22,7 @@ DeleteLogstashRequest::DeleteLogstashRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes/[InstanceId]");
-	setMethod(HttpRequest::Method::Delete);
+	setMethod(HttpRequest::Method::DELETE);
 }
 
 DeleteLogstashRequest::~DeleteLogstashRequest()

@@ -22,7 +22,7 @@ InstallUserPluginsRequest::InstallUserPluginsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/plugins/user/actions/install");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 InstallUserPluginsRequest::~InstallUserPluginsRequest()

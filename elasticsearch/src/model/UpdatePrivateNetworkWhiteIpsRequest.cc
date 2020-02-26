@@ -22,7 +22,7 @@ UpdatePrivateNetworkWhiteIpsRequest::UpdatePrivateNetworkWhiteIpsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/private-network-white-ips");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UpdatePrivateNetworkWhiteIpsRequest::~UpdatePrivateNetworkWhiteIpsRequest()

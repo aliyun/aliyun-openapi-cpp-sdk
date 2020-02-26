@@ -22,7 +22,7 @@ UpdateLogstashSettingsRequest::UpdateLogstashSettingsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes/[InstanceId]/instance-settings");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UpdateLogstashSettingsRequest::~UpdateLogstashSettingsRequest()

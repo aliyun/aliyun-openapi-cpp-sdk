@@ -22,7 +22,7 @@ TagResourcesRequest::TagResourcesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/tags");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 TagResourcesRequest::~TagResourcesRequest()

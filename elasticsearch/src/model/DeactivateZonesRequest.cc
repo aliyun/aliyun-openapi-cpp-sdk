@@ -22,7 +22,7 @@ DeactivateZonesRequest::DeactivateZonesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/actions/down-zones");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 DeactivateZonesRequest::~DeactivateZonesRequest()

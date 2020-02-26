@@ -22,7 +22,7 @@ ResumeLogstashTaskRequest::ResumeLogstashTaskRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes/[InstanceId]/actions/resume");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ResumeLogstashTaskRequest::~ResumeLogstashTaskRequest()

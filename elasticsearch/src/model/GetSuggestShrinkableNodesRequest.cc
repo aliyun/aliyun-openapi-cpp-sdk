@@ -22,7 +22,7 @@ GetSuggestShrinkableNodesRequest::GetSuggestShrinkableNodesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/suggest-shrinkable-nodes");
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetSuggestShrinkableNodesRequest::~GetSuggestShrinkableNodesRequest()

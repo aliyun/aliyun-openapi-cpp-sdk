@@ -22,7 +22,7 @@ ListAllNodeRequest::ListAllNodeRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/nodes");
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListAllNodeRequest::~ListAllNodeRequest()

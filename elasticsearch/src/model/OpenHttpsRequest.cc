@@ -22,7 +22,7 @@ OpenHttpsRequest::OpenHttpsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/actions/open-https");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OpenHttpsRequest::~OpenHttpsRequest()

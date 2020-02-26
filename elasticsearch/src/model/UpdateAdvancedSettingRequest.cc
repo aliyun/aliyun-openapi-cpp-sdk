@@ -22,7 +22,7 @@ UpdateAdvancedSettingRequest::UpdateAdvancedSettingRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/actions/update-advanced-setting");
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UpdateAdvancedSettingRequest::~UpdateAdvancedSettingRequest()

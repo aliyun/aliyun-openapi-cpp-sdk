@@ -22,7 +22,7 @@ UpdateLogstashChargeTypeRequest::UpdateLogstashChargeTypeRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes/[InstanceId]/actions/convert-pay-type");
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UpdateLogstashChargeTypeRequest::~UpdateLogstashChargeTypeRequest()

@@ -22,7 +22,7 @@ DeleteProjectRequest::DeleteProjectRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/projects/[Id]");
-	setMethod(HttpRequest::Method::Delete);
+	setMethod(HttpRequest::Method::DELETE);
 }
 
 DeleteProjectRequest::~DeleteProjectRequest()
