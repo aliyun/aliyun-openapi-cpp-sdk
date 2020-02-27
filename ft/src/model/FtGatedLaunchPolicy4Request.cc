@@ -21,7 +21,7 @@ using AlibabaCloud::Ft::Model::FtGatedLaunchPolicy4Request;
 FtGatedLaunchPolicy4Request::FtGatedLaunchPolicy4Request() :
 	RpcServiceRequest("ft", "2018-07-13", "FtGatedLaunchPolicy4")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 FtGatedLaunchPolicy4Request::~FtGatedLaunchPolicy4Request()

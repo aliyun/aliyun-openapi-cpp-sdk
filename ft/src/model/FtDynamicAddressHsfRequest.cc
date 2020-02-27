@@ -21,7 +21,7 @@ using AlibabaCloud::Ft::Model::FtDynamicAddressHsfRequest;
 FtDynamicAddressHsfRequest::FtDynamicAddressHsfRequest() :
 	RpcServiceRequest("ft", "2018-07-13", "FtDynamicAddressHsf")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 FtDynamicAddressHsfRequest::~FtDynamicAddressHsfRequest()
