@@ -20,7 +20,9 @@ using AlibabaCloud::Alimt::Model::TranslateGeneralRequest;
 
 TranslateGeneralRequest::TranslateGeneralRequest() :
 	RpcServiceRequest("alimt", "2018-10-12", "TranslateGeneral")
-{}
+{
+	setMethod(HttpRequest::Method::POST);
+}
 
 TranslateGeneralRequest::~TranslateGeneralRequest()
 {}
@@ -33,7 +35,7 @@ std::string TranslateGeneralRequest::getSourceLanguage()const
 void TranslateGeneralRequest::setSourceLanguage(const std::string& sourceLanguage)
 {
 	sourceLanguage_ = sourceLanguage;
-	setCoreParameter("SourceLanguage", sourceLanguage);
+	setBodyParameter("SourceLanguage", sourceLanguage);
 }
 
 std::string TranslateGeneralRequest::getSourceText()const
@@ -44,7 +46,7 @@ std::string TranslateGeneralRequest::getSourceText()const
 void TranslateGeneralRequest::setSourceText(const std::string& sourceText)
 {
 	sourceText_ = sourceText;
-	setCoreParameter("SourceText", sourceText);
+	setBodyParameter("SourceText", sourceText);
 }
 
 std::string TranslateGeneralRequest::getFormatType()const
@@ -55,7 +57,7 @@ std::string TranslateGeneralRequest::getFormatType()const
 void TranslateGeneralRequest::setFormatType(const std::string& formatType)
 {
 	formatType_ = formatType;
-	setCoreParameter("FormatType", formatType);
+	setBodyParameter("FormatType", formatType);
 }
 
 std::string TranslateGeneralRequest::getScene()const
@@ -66,7 +68,7 @@ std::string TranslateGeneralRequest::getScene()const
 void TranslateGeneralRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setBodyParameter("Scene", scene);
 }
 
 std::string TranslateGeneralRequest::getTargetLanguage()const
@@ -77,6 +79,6 @@ std::string TranslateGeneralRequest::getTargetLanguage()const
 void TranslateGeneralRequest::setTargetLanguage(const std::string& targetLanguage)
 {
 	targetLanguage_ = targetLanguage;
-	setCoreParameter("TargetLanguage", targetLanguage);
+	setBodyParameter("TargetLanguage", targetLanguage);
 }
 

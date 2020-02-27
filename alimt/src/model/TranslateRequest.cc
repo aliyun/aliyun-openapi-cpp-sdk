@@ -14,69 +14,69 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alimt/model/TranslateECommerceRequest.h>
+#include <alibabacloud/alimt/model/TranslateRequest.h>
 
-using AlibabaCloud::Alimt::Model::TranslateECommerceRequest;
+using AlibabaCloud::Alimt::Model::TranslateRequest;
 
-TranslateECommerceRequest::TranslateECommerceRequest() :
-	RpcServiceRequest("alimt", "2018-10-12", "TranslateECommerce")
+TranslateRequest::TranslateRequest() :
+	RpcServiceRequest("alimt", "2018-10-12", "Translate")
 {
 	setMethod(HttpRequest::Method::POST);
 }
 
-TranslateECommerceRequest::~TranslateECommerceRequest()
+TranslateRequest::~TranslateRequest()
 {}
 
-std::string TranslateECommerceRequest::getSourceLanguage()const
+std::string TranslateRequest::getSourceLanguage()const
 {
 	return sourceLanguage_;
 }
 
-void TranslateECommerceRequest::setSourceLanguage(const std::string& sourceLanguage)
+void TranslateRequest::setSourceLanguage(const std::string& sourceLanguage)
 {
 	sourceLanguage_ = sourceLanguage;
 	setBodyParameter("SourceLanguage", sourceLanguage);
 }
 
-std::string TranslateECommerceRequest::getSourceText()const
+std::string TranslateRequest::getSourceText()const
 {
 	return sourceText_;
 }
 
-void TranslateECommerceRequest::setSourceText(const std::string& sourceText)
+void TranslateRequest::setSourceText(const std::string& sourceText)
 {
 	sourceText_ = sourceText;
 	setBodyParameter("SourceText", sourceText);
 }
 
-std::string TranslateECommerceRequest::getFormatType()const
+std::string TranslateRequest::getFormatType()const
 {
 	return formatType_;
 }
 
-void TranslateECommerceRequest::setFormatType(const std::string& formatType)
+void TranslateRequest::setFormatType(const std::string& formatType)
 {
 	formatType_ = formatType;
 	setBodyParameter("FormatType", formatType);
 }
 
-std::string TranslateECommerceRequest::getScene()const
+std::string TranslateRequest::getScene()const
 {
 	return scene_;
 }
 
-void TranslateECommerceRequest::setScene(const std::string& scene)
+void TranslateRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
 	setBodyParameter("Scene", scene);
 }
 
-std::string TranslateECommerceRequest::getTargetLanguage()const
+std::string TranslateRequest::getTargetLanguage()const
 {
 	return targetLanguage_;
 }
 
-void TranslateECommerceRequest::setTargetLanguage(const std::string& targetLanguage)
+void TranslateRequest::setTargetLanguage(const std::string& targetLanguage)
 {
 	targetLanguage_ = targetLanguage;
 	setBodyParameter("TargetLanguage", targetLanguage);

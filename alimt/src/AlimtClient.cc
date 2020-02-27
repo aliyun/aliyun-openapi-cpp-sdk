@@ -51,6 +51,114 @@ AlimtClient::AlimtClient(const std::string & accessKeyId, const std::string & ac
 AlimtClient::~AlimtClient()
 {}
 
+AlimtClient::CreateDocTranslateTaskOutcome AlimtClient::createDocTranslateTask(const CreateDocTranslateTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDocTranslateTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDocTranslateTaskOutcome(CreateDocTranslateTaskResult(outcome.result()));
+	else
+		return CreateDocTranslateTaskOutcome(outcome.error());
+}
+
+void AlimtClient::createDocTranslateTaskAsync(const CreateDocTranslateTaskRequest& request, const CreateDocTranslateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDocTranslateTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::CreateDocTranslateTaskOutcomeCallable AlimtClient::createDocTranslateTaskCallable(const CreateDocTranslateTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDocTranslateTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createDocTranslateTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlimtClient::GetDocTranslateTaskOutcome AlimtClient::getDocTranslateTask(const GetDocTranslateTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDocTranslateTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDocTranslateTaskOutcome(GetDocTranslateTaskResult(outcome.result()));
+	else
+		return GetDocTranslateTaskOutcome(outcome.error());
+}
+
+void AlimtClient::getDocTranslateTaskAsync(const GetDocTranslateTaskRequest& request, const GetDocTranslateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDocTranslateTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetDocTranslateTaskOutcomeCallable AlimtClient::getDocTranslateTaskCallable(const GetDocTranslateTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDocTranslateTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->getDocTranslateTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlimtClient::TranslateOutcome AlimtClient::translate(const TranslateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TranslateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TranslateOutcome(TranslateResult(outcome.result()));
+	else
+		return TranslateOutcome(outcome.error());
+}
+
+void AlimtClient::translateAsync(const TranslateRequest& request, const TranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, translate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::TranslateOutcomeCallable AlimtClient::translateCallable(const TranslateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TranslateOutcome()>>(
+			[this, request]()
+			{
+			return this->translate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlimtClient::TranslateECommerceOutcome AlimtClient::translateECommerce(const TranslateECommerceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
