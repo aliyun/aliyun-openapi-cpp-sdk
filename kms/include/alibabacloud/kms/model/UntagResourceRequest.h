@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setTagKeys(const std::string& tagKeys);
 				std::string getKeyId()const;
 				void setKeyId(const std::string& keyId);
+				std::string getSecretName()const;
+				void setSecretName(const std::string& secretName);
 
             private:
 				std::string tagKeys_;
 				std::string keyId_;
+				std::string secretName_;
 
 			};
 		}

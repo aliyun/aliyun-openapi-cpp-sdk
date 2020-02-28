@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DecryptRequest;
 DecryptRequest::DecryptRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "Decrypt")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 DecryptRequest::~DecryptRequest()
@@ -35,7 +35,7 @@ std::string DecryptRequest::getEncryptionContext()const
 void DecryptRequest::setEncryptionContext(const std::string& encryptionContext)
 {
 	encryptionContext_ = encryptionContext;
-	setCoreParameter("EncryptionContext", encryptionContext);
+	setParameter("EncryptionContext", encryptionContext);
 }
 
 std::string DecryptRequest::getCiphertextBlob()const
@@ -46,6 +46,6 @@ std::string DecryptRequest::getCiphertextBlob()const
 void DecryptRequest::setCiphertextBlob(const std::string& ciphertextBlob)
 {
 	ciphertextBlob_ = ciphertextBlob;
-	setCoreParameter("CiphertextBlob", ciphertextBlob);
+	setParameter("CiphertextBlob", ciphertextBlob);
 }
 

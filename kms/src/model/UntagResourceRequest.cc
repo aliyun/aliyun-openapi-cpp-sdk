@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::UntagResourceRequest;
 UntagResourceRequest::UntagResourceRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "UntagResource")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UntagResourceRequest::~UntagResourceRequest()
@@ -35,7 +35,7 @@ std::string UntagResourceRequest::getTagKeys()const
 void UntagResourceRequest::setTagKeys(const std::string& tagKeys)
 {
 	tagKeys_ = tagKeys;
-	setCoreParameter("TagKeys", tagKeys);
+	setParameter("TagKeys", tagKeys);
 }
 
 std::string UntagResourceRequest::getKeyId()const
@@ -46,6 +46,17 @@ std::string UntagResourceRequest::getKeyId()const
 void UntagResourceRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
+}
+
+std::string UntagResourceRequest::getSecretName()const
+{
+	return secretName_;
+}
+
+void UntagResourceRequest::setSecretName(const std::string& secretName)
+{
+	secretName_ = secretName;
+	setParameter("SecretName", secretName);
 }
 

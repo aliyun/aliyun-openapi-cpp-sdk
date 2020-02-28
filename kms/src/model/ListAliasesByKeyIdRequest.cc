@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::ListAliasesByKeyIdRequest;
 ListAliasesByKeyIdRequest::ListAliasesByKeyIdRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "ListAliasesByKeyId")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ListAliasesByKeyIdRequest::~ListAliasesByKeyIdRequest()
@@ -35,7 +35,7 @@ int ListAliasesByKeyIdRequest::getPageSize()const
 void ListAliasesByKeyIdRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListAliasesByKeyIdRequest::getKeyId()const
@@ -46,7 +46,7 @@ std::string ListAliasesByKeyIdRequest::getKeyId()const
 void ListAliasesByKeyIdRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 
 int ListAliasesByKeyIdRequest::getPageNumber()const
@@ -57,6 +57,6 @@ int ListAliasesByKeyIdRequest::getPageNumber()const
 void ListAliasesByKeyIdRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 

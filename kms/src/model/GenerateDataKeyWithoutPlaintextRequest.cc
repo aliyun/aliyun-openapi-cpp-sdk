@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::GenerateDataKeyWithoutPlaintextRequest;
 GenerateDataKeyWithoutPlaintextRequest::GenerateDataKeyWithoutPlaintextRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "GenerateDataKeyWithoutPlaintext")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 GenerateDataKeyWithoutPlaintextRequest::~GenerateDataKeyWithoutPlaintextRequest()
@@ -35,7 +35,7 @@ std::string GenerateDataKeyWithoutPlaintextRequest::getEncryptionContext()const
 void GenerateDataKeyWithoutPlaintextRequest::setEncryptionContext(const std::string& encryptionContext)
 {
 	encryptionContext_ = encryptionContext;
-	setCoreParameter("EncryptionContext", encryptionContext);
+	setParameter("EncryptionContext", encryptionContext);
 }
 
 std::string GenerateDataKeyWithoutPlaintextRequest::getKeyId()const
@@ -46,7 +46,7 @@ std::string GenerateDataKeyWithoutPlaintextRequest::getKeyId()const
 void GenerateDataKeyWithoutPlaintextRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 
 std::string GenerateDataKeyWithoutPlaintextRequest::getKeySpec()const
@@ -57,7 +57,7 @@ std::string GenerateDataKeyWithoutPlaintextRequest::getKeySpec()const
 void GenerateDataKeyWithoutPlaintextRequest::setKeySpec(const std::string& keySpec)
 {
 	keySpec_ = keySpec;
-	setCoreParameter("KeySpec", keySpec);
+	setParameter("KeySpec", keySpec);
 }
 
 int GenerateDataKeyWithoutPlaintextRequest::getNumberOfBytes()const
@@ -68,6 +68,6 @@ int GenerateDataKeyWithoutPlaintextRequest::getNumberOfBytes()const
 void GenerateDataKeyWithoutPlaintextRequest::setNumberOfBytes(int numberOfBytes)
 {
 	numberOfBytes_ = numberOfBytes;
-	setCoreParameter("NumberOfBytes", std::to_string(numberOfBytes));
+	setParameter("NumberOfBytes", std::to_string(numberOfBytes));
 }
 

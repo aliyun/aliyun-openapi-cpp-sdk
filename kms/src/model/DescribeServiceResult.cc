@@ -47,11 +47,30 @@ void DescribeServiceResult::parse(const std::string &payload)
 			protectionLevelsObject.type = valueProtectionLevelsProtectionLevel["Type"].asString();
 		protectionLevels_.push_back(protectionLevelsObject);
 	}
+	auto allKeySpecsNode = value["KeySpecs"]["KeySpec"];
+	for (auto valueKeySpecsKeySpec : allKeySpecsNode)
+	{
+		KeySpec keySpecsObject;
+		if(!valueKeySpecsKeySpec["Name"].isNull())
+			keySpecsObject.name = valueKeySpecsKeySpec["Name"].asString();
+		auto allSupportedProtectionLevels = value["SupportedProtectionLevels"]["SupportedProtectionLevel"];
+		for (auto value : allSupportedProtectionLevels)
+			keySpecsObject.supportedProtectionLevels.push_back(value.asString());
+		auto allUsages = value["Usages"]["Usage"];
+		for (auto value : allUsages)
+			keySpecsObject.usages.push_back(value.asString());
+		keySpecs_.push_back(keySpecsObject);
+	}
 
 }
 
 std::vector<DescribeServiceResult::ProtectionLevel> DescribeServiceResult::getProtectionLevels()const
 {
 	return protectionLevels_;
+}
+
+std::vector<DescribeServiceResult::KeySpec> DescribeServiceResult::getKeySpecs()const
+{
+	return keySpecs_;
 }
 

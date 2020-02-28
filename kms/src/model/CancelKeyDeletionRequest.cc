@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::CancelKeyDeletionRequest;
 CancelKeyDeletionRequest::CancelKeyDeletionRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "CancelKeyDeletion")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 CancelKeyDeletionRequest::~CancelKeyDeletionRequest()
@@ -35,6 +35,6 @@ std::string CancelKeyDeletionRequest::getKeyId()const
 void CancelKeyDeletionRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 

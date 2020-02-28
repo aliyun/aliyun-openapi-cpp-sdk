@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::AsymmetricVerifyRequest;
 AsymmetricVerifyRequest::AsymmetricVerifyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "AsymmetricVerify")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 AsymmetricVerifyRequest::~AsymmetricVerifyRequest()
@@ -35,7 +35,7 @@ std::string AsymmetricVerifyRequest::getKeyVersionId()const
 void AsymmetricVerifyRequest::setKeyVersionId(const std::string& keyVersionId)
 {
 	keyVersionId_ = keyVersionId;
-	setCoreParameter("KeyVersionId", keyVersionId);
+	setParameter("KeyVersionId", keyVersionId);
 }
 
 std::string AsymmetricVerifyRequest::getDigest()const
@@ -46,7 +46,7 @@ std::string AsymmetricVerifyRequest::getDigest()const
 void AsymmetricVerifyRequest::setDigest(const std::string& digest)
 {
 	digest_ = digest;
-	setCoreParameter("Digest", digest);
+	setParameter("Digest", digest);
 }
 
 std::string AsymmetricVerifyRequest::getKeyId()const
@@ -57,7 +57,7 @@ std::string AsymmetricVerifyRequest::getKeyId()const
 void AsymmetricVerifyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 
 std::string AsymmetricVerifyRequest::getValue()const
@@ -68,7 +68,7 @@ std::string AsymmetricVerifyRequest::getValue()const
 void AsymmetricVerifyRequest::setValue(const std::string& value)
 {
 	value_ = value;
-	setCoreParameter("Value", value);
+	setParameter("Value", value);
 }
 
 std::string AsymmetricVerifyRequest::getAlgorithm()const
@@ -79,6 +79,6 @@ std::string AsymmetricVerifyRequest::getAlgorithm()const
 void AsymmetricVerifyRequest::setAlgorithm(const std::string& algorithm)
 {
 	algorithm_ = algorithm;
-	setCoreParameter("Algorithm", algorithm);
+	setParameter("Algorithm", algorithm);
 }
 

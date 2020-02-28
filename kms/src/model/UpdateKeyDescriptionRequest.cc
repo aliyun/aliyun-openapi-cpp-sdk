@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::UpdateKeyDescriptionRequest;
 UpdateKeyDescriptionRequest::UpdateKeyDescriptionRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "UpdateKeyDescription")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UpdateKeyDescriptionRequest::~UpdateKeyDescriptionRequest()
@@ -35,7 +35,7 @@ std::string UpdateKeyDescriptionRequest::getKeyId()const
 void UpdateKeyDescriptionRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 
 std::string UpdateKeyDescriptionRequest::getDescription()const
@@ -46,6 +46,6 @@ std::string UpdateKeyDescriptionRequest::getDescription()const
 void UpdateKeyDescriptionRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 

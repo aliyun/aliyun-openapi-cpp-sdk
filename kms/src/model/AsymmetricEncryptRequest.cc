@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::AsymmetricEncryptRequest;
 AsymmetricEncryptRequest::AsymmetricEncryptRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "AsymmetricEncrypt")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 AsymmetricEncryptRequest::~AsymmetricEncryptRequest()
@@ -35,7 +35,7 @@ std::string AsymmetricEncryptRequest::getKeyVersionId()const
 void AsymmetricEncryptRequest::setKeyVersionId(const std::string& keyVersionId)
 {
 	keyVersionId_ = keyVersionId;
-	setCoreParameter("KeyVersionId", keyVersionId);
+	setParameter("KeyVersionId", keyVersionId);
 }
 
 std::string AsymmetricEncryptRequest::getKeyId()const
@@ -46,7 +46,7 @@ std::string AsymmetricEncryptRequest::getKeyId()const
 void AsymmetricEncryptRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 
 std::string AsymmetricEncryptRequest::getPlaintext()const
@@ -57,7 +57,7 @@ std::string AsymmetricEncryptRequest::getPlaintext()const
 void AsymmetricEncryptRequest::setPlaintext(const std::string& plaintext)
 {
 	plaintext_ = plaintext;
-	setCoreParameter("Plaintext", plaintext);
+	setParameter("Plaintext", plaintext);
 }
 
 std::string AsymmetricEncryptRequest::getAlgorithm()const
@@ -68,6 +68,6 @@ std::string AsymmetricEncryptRequest::getAlgorithm()const
 void AsymmetricEncryptRequest::setAlgorithm(const std::string& algorithm)
 {
 	algorithm_ = algorithm;
-	setCoreParameter("Algorithm", algorithm);
+	setParameter("Algorithm", algorithm);
 }
 

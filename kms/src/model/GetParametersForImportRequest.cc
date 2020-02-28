@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::GetParametersForImportRequest;
 GetParametersForImportRequest::GetParametersForImportRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "GetParametersForImport")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 GetParametersForImportRequest::~GetParametersForImportRequest()
@@ -35,7 +35,7 @@ std::string GetParametersForImportRequest::getKeyId()const
 void GetParametersForImportRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 
 std::string GetParametersForImportRequest::getWrappingAlgorithm()const
@@ -46,7 +46,7 @@ std::string GetParametersForImportRequest::getWrappingAlgorithm()const
 void GetParametersForImportRequest::setWrappingAlgorithm(const std::string& wrappingAlgorithm)
 {
 	wrappingAlgorithm_ = wrappingAlgorithm;
-	setCoreParameter("WrappingAlgorithm", wrappingAlgorithm);
+	setParameter("WrappingAlgorithm", wrappingAlgorithm);
 }
 
 std::string GetParametersForImportRequest::getWrappingKeySpec()const
@@ -57,6 +57,6 @@ std::string GetParametersForImportRequest::getWrappingKeySpec()const
 void GetParametersForImportRequest::setWrappingKeySpec(const std::string& wrappingKeySpec)
 {
 	wrappingKeySpec_ = wrappingKeySpec;
-	setCoreParameter("WrappingKeySpec", wrappingKeySpec);
+	setParameter("WrappingKeySpec", wrappingKeySpec);
 }
 

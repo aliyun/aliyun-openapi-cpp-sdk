@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::ImportKeyMaterialRequest;
 ImportKeyMaterialRequest::ImportKeyMaterialRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "ImportKeyMaterial")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ImportKeyMaterialRequest::~ImportKeyMaterialRequest()
@@ -35,7 +35,7 @@ std::string ImportKeyMaterialRequest::getImportToken()const
 void ImportKeyMaterialRequest::setImportToken(const std::string& importToken)
 {
 	importToken_ = importToken;
-	setCoreParameter("ImportToken", importToken);
+	setParameter("ImportToken", importToken);
 }
 
 std::string ImportKeyMaterialRequest::getEncryptedKeyMaterial()const
@@ -46,7 +46,7 @@ std::string ImportKeyMaterialRequest::getEncryptedKeyMaterial()const
 void ImportKeyMaterialRequest::setEncryptedKeyMaterial(const std::string& encryptedKeyMaterial)
 {
 	encryptedKeyMaterial_ = encryptedKeyMaterial;
-	setCoreParameter("EncryptedKeyMaterial", encryptedKeyMaterial);
+	setParameter("EncryptedKeyMaterial", encryptedKeyMaterial);
 }
 
 long ImportKeyMaterialRequest::getKeyMaterialExpireUnix()const
@@ -57,7 +57,7 @@ long ImportKeyMaterialRequest::getKeyMaterialExpireUnix()const
 void ImportKeyMaterialRequest::setKeyMaterialExpireUnix(long keyMaterialExpireUnix)
 {
 	keyMaterialExpireUnix_ = keyMaterialExpireUnix;
-	setCoreParameter("KeyMaterialExpireUnix", std::to_string(keyMaterialExpireUnix));
+	setParameter("KeyMaterialExpireUnix", std::to_string(keyMaterialExpireUnix));
 }
 
 std::string ImportKeyMaterialRequest::getKeyId()const
@@ -68,6 +68,6 @@ std::string ImportKeyMaterialRequest::getKeyId()const
 void ImportKeyMaterialRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 

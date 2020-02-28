@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DeleteKeyMaterialRequest;
 DeleteKeyMaterialRequest::DeleteKeyMaterialRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DeleteKeyMaterial")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 DeleteKeyMaterialRequest::~DeleteKeyMaterialRequest()
@@ -35,6 +35,6 @@ std::string DeleteKeyMaterialRequest::getKeyId()const
 void DeleteKeyMaterialRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 

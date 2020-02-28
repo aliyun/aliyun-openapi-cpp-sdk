@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::CreateKeyRequest;
 CreateKeyRequest::CreateKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "CreateKey")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 CreateKeyRequest::~CreateKeyRequest()
@@ -35,7 +35,7 @@ std::string CreateKeyRequest::getProtectionLevel()const
 void CreateKeyRequest::setProtectionLevel(const std::string& protectionLevel)
 {
 	protectionLevel_ = protectionLevel;
-	setCoreParameter("ProtectionLevel", protectionLevel);
+	setParameter("ProtectionLevel", protectionLevel);
 }
 
 std::string CreateKeyRequest::getKeyUsage()const
@@ -46,7 +46,7 @@ std::string CreateKeyRequest::getKeyUsage()const
 void CreateKeyRequest::setKeyUsage(const std::string& keyUsage)
 {
 	keyUsage_ = keyUsage;
-	setCoreParameter("KeyUsage", keyUsage);
+	setParameter("KeyUsage", keyUsage);
 }
 
 std::string CreateKeyRequest::getOrigin()const
@@ -57,7 +57,7 @@ std::string CreateKeyRequest::getOrigin()const
 void CreateKeyRequest::setOrigin(const std::string& origin)
 {
 	origin_ = origin;
-	setCoreParameter("Origin", origin);
+	setParameter("Origin", origin);
 }
 
 std::string CreateKeyRequest::getDescription()const
@@ -68,7 +68,7 @@ std::string CreateKeyRequest::getDescription()const
 void CreateKeyRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateKeyRequest::getKeySpec()const
@@ -79,7 +79,7 @@ std::string CreateKeyRequest::getKeySpec()const
 void CreateKeyRequest::setKeySpec(const std::string& keySpec)
 {
 	keySpec_ = keySpec;
-	setCoreParameter("KeySpec", keySpec);
+	setParameter("KeySpec", keySpec);
 }
 
 std::string CreateKeyRequest::getRotationInterval()const
@@ -90,7 +90,7 @@ std::string CreateKeyRequest::getRotationInterval()const
 void CreateKeyRequest::setRotationInterval(const std::string& rotationInterval)
 {
 	rotationInterval_ = rotationInterval;
-	setCoreParameter("RotationInterval", rotationInterval);
+	setParameter("RotationInterval", rotationInterval);
 }
 
 bool CreateKeyRequest::getEnableAutomaticRotation()const
@@ -101,6 +101,6 @@ bool CreateKeyRequest::getEnableAutomaticRotation()const
 void CreateKeyRequest::setEnableAutomaticRotation(bool enableAutomaticRotation)
 {
 	enableAutomaticRotation_ = enableAutomaticRotation;
-	setCoreParameter("EnableAutomaticRotation", enableAutomaticRotation ? "true" : "false");
+	setParameter("EnableAutomaticRotation", enableAutomaticRotation ? "true" : "false");
 }
 

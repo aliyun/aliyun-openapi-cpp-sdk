@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DescribeRegionsRequest;
 DescribeRegionsRequest::DescribeRegionsRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DescribeRegions")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 DescribeRegionsRequest::~DescribeRegionsRequest()

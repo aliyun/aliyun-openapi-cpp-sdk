@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::GetPublicKeyRequest;
 GetPublicKeyRequest::GetPublicKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "GetPublicKey")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 GetPublicKeyRequest::~GetPublicKeyRequest()
@@ -35,7 +35,7 @@ std::string GetPublicKeyRequest::getKeyVersionId()const
 void GetPublicKeyRequest::setKeyVersionId(const std::string& keyVersionId)
 {
 	keyVersionId_ = keyVersionId;
-	setCoreParameter("KeyVersionId", keyVersionId);
+	setParameter("KeyVersionId", keyVersionId);
 }
 
 std::string GetPublicKeyRequest::getKeyId()const
@@ -46,6 +46,6 @@ std::string GetPublicKeyRequest::getKeyId()const
 void GetPublicKeyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 

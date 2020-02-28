@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DisableKeyRequest;
 DisableKeyRequest::DisableKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DisableKey")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 DisableKeyRequest::~DisableKeyRequest()
@@ -35,6 +35,6 @@ std::string DisableKeyRequest::getKeyId()const
 void DisableKeyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 

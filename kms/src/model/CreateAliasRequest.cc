@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::CreateAliasRequest;
 CreateAliasRequest::CreateAliasRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "CreateAlias")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 CreateAliasRequest::~CreateAliasRequest()
@@ -35,7 +35,7 @@ std::string CreateAliasRequest::getAliasName()const
 void CreateAliasRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	setParameter("AliasName", aliasName);
 }
 
 std::string CreateAliasRequest::getKeyId()const
@@ -46,6 +46,6 @@ std::string CreateAliasRequest::getKeyId()const
 void CreateAliasRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 

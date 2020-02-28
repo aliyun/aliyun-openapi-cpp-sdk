@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::AsymmetricSignRequest;
 AsymmetricSignRequest::AsymmetricSignRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "AsymmetricSign")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 AsymmetricSignRequest::~AsymmetricSignRequest()
@@ -35,7 +35,7 @@ std::string AsymmetricSignRequest::getKeyVersionId()const
 void AsymmetricSignRequest::setKeyVersionId(const std::string& keyVersionId)
 {
 	keyVersionId_ = keyVersionId;
-	setCoreParameter("KeyVersionId", keyVersionId);
+	setParameter("KeyVersionId", keyVersionId);
 }
 
 std::string AsymmetricSignRequest::getDigest()const
@@ -46,7 +46,7 @@ std::string AsymmetricSignRequest::getDigest()const
 void AsymmetricSignRequest::setDigest(const std::string& digest)
 {
 	digest_ = digest;
-	setCoreParameter("Digest", digest);
+	setParameter("Digest", digest);
 }
 
 std::string AsymmetricSignRequest::getKeyId()const
@@ -57,7 +57,7 @@ std::string AsymmetricSignRequest::getKeyId()const
 void AsymmetricSignRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 
 std::string AsymmetricSignRequest::getAlgorithm()const
@@ -68,6 +68,6 @@ std::string AsymmetricSignRequest::getAlgorithm()const
 void AsymmetricSignRequest::setAlgorithm(const std::string& algorithm)
 {
 	algorithm_ = algorithm;
-	setCoreParameter("Algorithm", algorithm);
+	setParameter("Algorithm", algorithm);
 }
 

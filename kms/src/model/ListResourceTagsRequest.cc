@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::ListResourceTagsRequest;
 ListResourceTagsRequest::ListResourceTagsRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "ListResourceTags")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ListResourceTagsRequest::~ListResourceTagsRequest()
@@ -35,6 +35,6 @@ std::string ListResourceTagsRequest::getKeyId()const
 void ListResourceTagsRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 

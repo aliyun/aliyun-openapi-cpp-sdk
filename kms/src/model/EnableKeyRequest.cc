@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::EnableKeyRequest;
 EnableKeyRequest::EnableKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "EnableKey")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 EnableKeyRequest::~EnableKeyRequest()
@@ -35,6 +35,6 @@ std::string EnableKeyRequest::getKeyId()const
 void EnableKeyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DescribeServiceRequest;
 DescribeServiceRequest::DescribeServiceRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DescribeService")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 DescribeServiceRequest::~DescribeServiceRequest()

@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::UpdateRotationPolicyRequest;
 UpdateRotationPolicyRequest::UpdateRotationPolicyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "UpdateRotationPolicy")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UpdateRotationPolicyRequest::~UpdateRotationPolicyRequest()
@@ -35,7 +35,7 @@ std::string UpdateRotationPolicyRequest::getKeyId()const
 void UpdateRotationPolicyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 
 std::string UpdateRotationPolicyRequest::getRotationInterval()const
@@ -46,7 +46,7 @@ std::string UpdateRotationPolicyRequest::getRotationInterval()const
 void UpdateRotationPolicyRequest::setRotationInterval(const std::string& rotationInterval)
 {
 	rotationInterval_ = rotationInterval;
-	setCoreParameter("RotationInterval", rotationInterval);
+	setParameter("RotationInterval", rotationInterval);
 }
 
 bool UpdateRotationPolicyRequest::getEnableAutomaticRotation()const
@@ -57,6 +57,6 @@ bool UpdateRotationPolicyRequest::getEnableAutomaticRotation()const
 void UpdateRotationPolicyRequest::setEnableAutomaticRotation(bool enableAutomaticRotation)
 {
 	enableAutomaticRotation_ = enableAutomaticRotation;
-	setCoreParameter("EnableAutomaticRotation", enableAutomaticRotation ? "true" : "false");
+	setParameter("EnableAutomaticRotation", enableAutomaticRotation ? "true" : "false");
 }
 

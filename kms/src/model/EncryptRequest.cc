@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::EncryptRequest;
 EncryptRequest::EncryptRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "Encrypt")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 EncryptRequest::~EncryptRequest()
@@ -35,7 +35,7 @@ std::string EncryptRequest::getEncryptionContext()const
 void EncryptRequest::setEncryptionContext(const std::string& encryptionContext)
 {
 	encryptionContext_ = encryptionContext;
-	setCoreParameter("EncryptionContext", encryptionContext);
+	setParameter("EncryptionContext", encryptionContext);
 }
 
 std::string EncryptRequest::getKeyId()const
@@ -46,7 +46,7 @@ std::string EncryptRequest::getKeyId()const
 void EncryptRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 
 std::string EncryptRequest::getPlaintext()const
@@ -57,6 +57,6 @@ std::string EncryptRequest::getPlaintext()const
 void EncryptRequest::setPlaintext(const std::string& plaintext)
 {
 	plaintext_ = plaintext;
-	setCoreParameter("Plaintext", plaintext);
+	setParameter("Plaintext", plaintext);
 }
 

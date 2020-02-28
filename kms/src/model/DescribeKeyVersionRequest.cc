@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DescribeKeyVersionRequest;
 DescribeKeyVersionRequest::DescribeKeyVersionRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DescribeKeyVersion")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 DescribeKeyVersionRequest::~DescribeKeyVersionRequest()
@@ -35,7 +35,7 @@ std::string DescribeKeyVersionRequest::getKeyVersionId()const
 void DescribeKeyVersionRequest::setKeyVersionId(const std::string& keyVersionId)
 {
 	keyVersionId_ = keyVersionId;
-	setCoreParameter("KeyVersionId", keyVersionId);
+	setParameter("KeyVersionId", keyVersionId);
 }
 
 std::string DescribeKeyVersionRequest::getKeyId()const
@@ -46,6 +46,6 @@ std::string DescribeKeyVersionRequest::getKeyId()const
 void DescribeKeyVersionRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 

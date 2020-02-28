@@ -36,17 +36,25 @@ namespace AlibabaCloud
 				{
 					std::string type;
 				};
+				struct KeySpec
+				{
+					std::vector<std::string> supportedProtectionLevels;
+					std::vector<std::string> usages;
+					std::string name;
+				};
 
 
 				DescribeServiceResult();
 				explicit DescribeServiceResult(const std::string &payload);
 				~DescribeServiceResult();
 				std::vector<ProtectionLevel> getProtectionLevels()const;
+				std::vector<KeySpec> getKeySpecs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<ProtectionLevel> protectionLevels_;
+				std::vector<KeySpec> keySpecs_;
 
 			};
 		}

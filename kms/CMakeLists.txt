@@ -37,18 +37,24 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/CreateKeyResult.h
 	include/alibabacloud/kms/model/CreateKeyVersionRequest.h
 	include/alibabacloud/kms/model/CreateKeyVersionResult.h
+	include/alibabacloud/kms/model/CreateSecretRequest.h
+	include/alibabacloud/kms/model/CreateSecretResult.h
 	include/alibabacloud/kms/model/DecryptRequest.h
 	include/alibabacloud/kms/model/DecryptResult.h
 	include/alibabacloud/kms/model/DeleteAliasRequest.h
 	include/alibabacloud/kms/model/DeleteAliasResult.h
 	include/alibabacloud/kms/model/DeleteKeyMaterialRequest.h
 	include/alibabacloud/kms/model/DeleteKeyMaterialResult.h
+	include/alibabacloud/kms/model/DeleteSecretRequest.h
+	include/alibabacloud/kms/model/DeleteSecretResult.h
 	include/alibabacloud/kms/model/DescribeKeyRequest.h
 	include/alibabacloud/kms/model/DescribeKeyResult.h
 	include/alibabacloud/kms/model/DescribeKeyVersionRequest.h
 	include/alibabacloud/kms/model/DescribeKeyVersionResult.h
 	include/alibabacloud/kms/model/DescribeRegionsRequest.h
 	include/alibabacloud/kms/model/DescribeRegionsResult.h
+	include/alibabacloud/kms/model/DescribeSecretRequest.h
+	include/alibabacloud/kms/model/DescribeSecretResult.h
 	include/alibabacloud/kms/model/DescribeServiceRequest.h
 	include/alibabacloud/kms/model/DescribeServiceResult.h
 	include/alibabacloud/kms/model/DisableKeyRequest.h
@@ -65,6 +71,10 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/GetParametersForImportResult.h
 	include/alibabacloud/kms/model/GetPublicKeyRequest.h
 	include/alibabacloud/kms/model/GetPublicKeyResult.h
+	include/alibabacloud/kms/model/GetRandomPasswordRequest.h
+	include/alibabacloud/kms/model/GetRandomPasswordResult.h
+	include/alibabacloud/kms/model/GetSecretValueRequest.h
+	include/alibabacloud/kms/model/GetSecretValueResult.h
 	include/alibabacloud/kms/model/ImportKeyMaterialRequest.h
 	include/alibabacloud/kms/model/ImportKeyMaterialResult.h
 	include/alibabacloud/kms/model/ListAliasesRequest.h
@@ -77,6 +87,14 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/ListKeysResult.h
 	include/alibabacloud/kms/model/ListResourceTagsRequest.h
 	include/alibabacloud/kms/model/ListResourceTagsResult.h
+	include/alibabacloud/kms/model/ListSecretVersionIdsRequest.h
+	include/alibabacloud/kms/model/ListSecretVersionIdsResult.h
+	include/alibabacloud/kms/model/ListSecretsRequest.h
+	include/alibabacloud/kms/model/ListSecretsResult.h
+	include/alibabacloud/kms/model/PutSecretValueRequest.h
+	include/alibabacloud/kms/model/PutSecretValueResult.h
+	include/alibabacloud/kms/model/RestoreSecretRequest.h
+	include/alibabacloud/kms/model/RestoreSecretResult.h
 	include/alibabacloud/kms/model/ScheduleKeyDeletionRequest.h
 	include/alibabacloud/kms/model/ScheduleKeyDeletionResult.h
 	include/alibabacloud/kms/model/TagResourceRequest.h
@@ -88,7 +106,11 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/UpdateKeyDescriptionRequest.h
 	include/alibabacloud/kms/model/UpdateKeyDescriptionResult.h
 	include/alibabacloud/kms/model/UpdateRotationPolicyRequest.h
-	include/alibabacloud/kms/model/UpdateRotationPolicyResult.h )
+	include/alibabacloud/kms/model/UpdateRotationPolicyResult.h
+	include/alibabacloud/kms/model/UpdateSecretRequest.h
+	include/alibabacloud/kms/model/UpdateSecretResult.h
+	include/alibabacloud/kms/model/UpdateSecretVersionStageRequest.h
+	include/alibabacloud/kms/model/UpdateSecretVersionStageResult.h )
 
 set(kms_src 
 	src/KmsClient.cc
@@ -108,18 +130,24 @@ set(kms_src
 	src/model/CreateKeyResult.cc
 	src/model/CreateKeyVersionRequest.cc
 	src/model/CreateKeyVersionResult.cc
+	src/model/CreateSecretRequest.cc
+	src/model/CreateSecretResult.cc
 	src/model/DecryptRequest.cc
 	src/model/DecryptResult.cc
 	src/model/DeleteAliasRequest.cc
 	src/model/DeleteAliasResult.cc
 	src/model/DeleteKeyMaterialRequest.cc
 	src/model/DeleteKeyMaterialResult.cc
+	src/model/DeleteSecretRequest.cc
+	src/model/DeleteSecretResult.cc
 	src/model/DescribeKeyRequest.cc
 	src/model/DescribeKeyResult.cc
 	src/model/DescribeKeyVersionRequest.cc
 	src/model/DescribeKeyVersionResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeSecretRequest.cc
+	src/model/DescribeSecretResult.cc
 	src/model/DescribeServiceRequest.cc
 	src/model/DescribeServiceResult.cc
 	src/model/DisableKeyRequest.cc
@@ -136,6 +164,10 @@ set(kms_src
 	src/model/GetParametersForImportResult.cc
 	src/model/GetPublicKeyRequest.cc
 	src/model/GetPublicKeyResult.cc
+	src/model/GetRandomPasswordRequest.cc
+	src/model/GetRandomPasswordResult.cc
+	src/model/GetSecretValueRequest.cc
+	src/model/GetSecretValueResult.cc
 	src/model/ImportKeyMaterialRequest.cc
 	src/model/ImportKeyMaterialResult.cc
 	src/model/ListAliasesRequest.cc
@@ -148,6 +180,14 @@ set(kms_src
 	src/model/ListKeysResult.cc
 	src/model/ListResourceTagsRequest.cc
 	src/model/ListResourceTagsResult.cc
+	src/model/ListSecretVersionIdsRequest.cc
+	src/model/ListSecretVersionIdsResult.cc
+	src/model/ListSecretsRequest.cc
+	src/model/ListSecretsResult.cc
+	src/model/PutSecretValueRequest.cc
+	src/model/PutSecretValueResult.cc
+	src/model/RestoreSecretRequest.cc
+	src/model/RestoreSecretResult.cc
 	src/model/ScheduleKeyDeletionRequest.cc
 	src/model/ScheduleKeyDeletionResult.cc
 	src/model/TagResourceRequest.cc
@@ -159,7 +199,11 @@ set(kms_src
 	src/model/UpdateKeyDescriptionRequest.cc
 	src/model/UpdateKeyDescriptionResult.cc
 	src/model/UpdateRotationPolicyRequest.cc
-	src/model/UpdateRotationPolicyResult.cc )
+	src/model/UpdateRotationPolicyResult.cc
+	src/model/UpdateSecretRequest.cc
+	src/model/UpdateSecretResult.cc
+	src/model/UpdateSecretVersionStageRequest.cc
+	src/model/UpdateSecretVersionStageResult.cc )
 
 add_library(kms ${LIB_TYPE}
 	${kms_public_header}

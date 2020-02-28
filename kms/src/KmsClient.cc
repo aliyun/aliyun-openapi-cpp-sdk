@@ -339,6 +339,42 @@ KmsClient::CreateKeyVersionOutcomeCallable KmsClient::createKeyVersionCallable(c
 	return task->get_future();
 }
 
+KmsClient::CreateSecretOutcome KmsClient::createSecret(const CreateSecretRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSecretOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSecretOutcome(CreateSecretResult(outcome.result()));
+	else
+		return CreateSecretOutcome(outcome.error());
+}
+
+void KmsClient::createSecretAsync(const CreateSecretRequest& request, const CreateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSecret(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::CreateSecretOutcomeCallable KmsClient::createSecretCallable(const CreateSecretRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSecretOutcome()>>(
+			[this, request]()
+			{
+			return this->createSecret(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::DecryptOutcome KmsClient::decrypt(const DecryptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -447,6 +483,42 @@ KmsClient::DeleteKeyMaterialOutcomeCallable KmsClient::deleteKeyMaterialCallable
 	return task->get_future();
 }
 
+KmsClient::DeleteSecretOutcome KmsClient::deleteSecret(const DeleteSecretRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSecretOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSecretOutcome(DeleteSecretResult(outcome.result()));
+	else
+		return DeleteSecretOutcome(outcome.error());
+}
+
+void KmsClient::deleteSecretAsync(const DeleteSecretRequest& request, const DeleteSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSecret(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DeleteSecretOutcomeCallable KmsClient::deleteSecretCallable(const DeleteSecretRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSecretOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSecret(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::DescribeKeyOutcome KmsClient::describeKey(const DescribeKeyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +621,42 @@ KmsClient::DescribeRegionsOutcomeCallable KmsClient::describeRegionsCallable(con
 			[this, request]()
 			{
 			return this->describeRegions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::DescribeSecretOutcome KmsClient::describeSecret(const DescribeSecretRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSecretOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSecretOutcome(DescribeSecretResult(outcome.result()));
+	else
+		return DescribeSecretOutcome(outcome.error());
+}
+
+void KmsClient::describeSecretAsync(const DescribeSecretRequest& request, const DescribeSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSecret(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DescribeSecretOutcomeCallable KmsClient::describeSecretCallable(const DescribeSecretRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSecretOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSecret(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -843,6 +951,78 @@ KmsClient::GetPublicKeyOutcomeCallable KmsClient::getPublicKeyCallable(const Get
 	return task->get_future();
 }
 
+KmsClient::GetRandomPasswordOutcome KmsClient::getRandomPassword(const GetRandomPasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRandomPasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRandomPasswordOutcome(GetRandomPasswordResult(outcome.result()));
+	else
+		return GetRandomPasswordOutcome(outcome.error());
+}
+
+void KmsClient::getRandomPasswordAsync(const GetRandomPasswordRequest& request, const GetRandomPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRandomPassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::GetRandomPasswordOutcomeCallable KmsClient::getRandomPasswordCallable(const GetRandomPasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRandomPasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->getRandomPassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::GetSecretValueOutcome KmsClient::getSecretValue(const GetSecretValueRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSecretValueOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSecretValueOutcome(GetSecretValueResult(outcome.result()));
+	else
+		return GetSecretValueOutcome(outcome.error());
+}
+
+void KmsClient::getSecretValueAsync(const GetSecretValueRequest& request, const GetSecretValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSecretValue(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::GetSecretValueOutcomeCallable KmsClient::getSecretValueCallable(const GetSecretValueRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSecretValueOutcome()>>(
+			[this, request]()
+			{
+			return this->getSecretValue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::ImportKeyMaterialOutcome KmsClient::importKeyMaterial(const ImportKeyMaterialRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,6 +1239,150 @@ KmsClient::ListResourceTagsOutcomeCallable KmsClient::listResourceTagsCallable(c
 	return task->get_future();
 }
 
+KmsClient::ListSecretVersionIdsOutcome KmsClient::listSecretVersionIds(const ListSecretVersionIdsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSecretVersionIdsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSecretVersionIdsOutcome(ListSecretVersionIdsResult(outcome.result()));
+	else
+		return ListSecretVersionIdsOutcome(outcome.error());
+}
+
+void KmsClient::listSecretVersionIdsAsync(const ListSecretVersionIdsRequest& request, const ListSecretVersionIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSecretVersionIds(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListSecretVersionIdsOutcomeCallable KmsClient::listSecretVersionIdsCallable(const ListSecretVersionIdsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSecretVersionIdsOutcome()>>(
+			[this, request]()
+			{
+			return this->listSecretVersionIds(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ListSecretsOutcome KmsClient::listSecrets(const ListSecretsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSecretsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSecretsOutcome(ListSecretsResult(outcome.result()));
+	else
+		return ListSecretsOutcome(outcome.error());
+}
+
+void KmsClient::listSecretsAsync(const ListSecretsRequest& request, const ListSecretsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSecrets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListSecretsOutcomeCallable KmsClient::listSecretsCallable(const ListSecretsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSecretsOutcome()>>(
+			[this, request]()
+			{
+			return this->listSecrets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::PutSecretValueOutcome KmsClient::putSecretValue(const PutSecretValueRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutSecretValueOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutSecretValueOutcome(PutSecretValueResult(outcome.result()));
+	else
+		return PutSecretValueOutcome(outcome.error());
+}
+
+void KmsClient::putSecretValueAsync(const PutSecretValueRequest& request, const PutSecretValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putSecretValue(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::PutSecretValueOutcomeCallable KmsClient::putSecretValueCallable(const PutSecretValueRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutSecretValueOutcome()>>(
+			[this, request]()
+			{
+			return this->putSecretValue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::RestoreSecretOutcome KmsClient::restoreSecret(const RestoreSecretRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestoreSecretOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestoreSecretOutcome(RestoreSecretResult(outcome.result()));
+	else
+		return RestoreSecretOutcome(outcome.error());
+}
+
+void KmsClient::restoreSecretAsync(const RestoreSecretRequest& request, const RestoreSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restoreSecret(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::RestoreSecretOutcomeCallable KmsClient::restoreSecretCallable(const RestoreSecretRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestoreSecretOutcome()>>(
+			[this, request]()
+			{
+			return this->restoreSecret(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::ScheduleKeyDeletionOutcome KmsClient::scheduleKeyDeletion(const ScheduleKeyDeletionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1269,6 +1593,78 @@ KmsClient::UpdateRotationPolicyOutcomeCallable KmsClient::updateRotationPolicyCa
 			[this, request]()
 			{
 			return this->updateRotationPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UpdateSecretOutcome KmsClient::updateSecret(const UpdateSecretRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSecretOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSecretOutcome(UpdateSecretResult(outcome.result()));
+	else
+		return UpdateSecretOutcome(outcome.error());
+}
+
+void KmsClient::updateSecretAsync(const UpdateSecretRequest& request, const UpdateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSecret(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UpdateSecretOutcomeCallable KmsClient::updateSecretCallable(const UpdateSecretRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSecretOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSecret(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UpdateSecretVersionStageOutcome KmsClient::updateSecretVersionStage(const UpdateSecretVersionStageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSecretVersionStageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSecretVersionStageOutcome(UpdateSecretVersionStageResult(outcome.result()));
+	else
+		return UpdateSecretVersionStageOutcome(outcome.error());
+}
+
+void KmsClient::updateSecretVersionStageAsync(const UpdateSecretVersionStageRequest& request, const UpdateSecretVersionStageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSecretVersionStage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UpdateSecretVersionStageOutcomeCallable KmsClient::updateSecretVersionStageCallable(const UpdateSecretVersionStageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSecretVersionStageOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSecretVersionStage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

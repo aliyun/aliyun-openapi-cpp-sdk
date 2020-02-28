@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DescribeKeyRequest;
 DescribeKeyRequest::DescribeKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DescribeKey")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 DescribeKeyRequest::~DescribeKeyRequest()
@@ -35,6 +35,6 @@ std::string DescribeKeyRequest::getKeyId()const
 void DescribeKeyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 

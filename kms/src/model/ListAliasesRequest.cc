@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::ListAliasesRequest;
 ListAliasesRequest::ListAliasesRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "ListAliases")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ListAliasesRequest::~ListAliasesRequest()
@@ -35,7 +35,7 @@ int ListAliasesRequest::getPageSize()const
 void ListAliasesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListAliasesRequest::getPageNumber()const
@@ -46,6 +46,6 @@ int ListAliasesRequest::getPageNumber()const
 void ListAliasesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 

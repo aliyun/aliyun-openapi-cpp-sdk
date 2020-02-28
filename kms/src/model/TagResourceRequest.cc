@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::TagResourceRequest;
 TagResourceRequest::TagResourceRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "TagResource")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 TagResourceRequest::~TagResourceRequest()
@@ -35,7 +35,18 @@ std::string TagResourceRequest::getKeyId()const
 void TagResourceRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
+}
+
+std::string TagResourceRequest::getSecretName()const
+{
+	return secretName_;
+}
+
+void TagResourceRequest::setSecretName(const std::string& secretName)
+{
+	secretName_ = secretName;
+	setParameter("SecretName", secretName);
 }
 
 std::string TagResourceRequest::getTags()const
@@ -46,6 +57,6 @@ std::string TagResourceRequest::getTags()const
 void TagResourceRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

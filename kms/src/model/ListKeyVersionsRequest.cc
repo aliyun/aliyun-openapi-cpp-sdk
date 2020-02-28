@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::ListKeyVersionsRequest;
 ListKeyVersionsRequest::ListKeyVersionsRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "ListKeyVersions")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ListKeyVersionsRequest::~ListKeyVersionsRequest()
@@ -35,7 +35,7 @@ int ListKeyVersionsRequest::getPageSize()const
 void ListKeyVersionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListKeyVersionsRequest::getKeyId()const
@@ -46,7 +46,7 @@ std::string ListKeyVersionsRequest::getKeyId()const
 void ListKeyVersionsRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 
 int ListKeyVersionsRequest::getPageNumber()const
@@ -57,6 +57,6 @@ int ListKeyVersionsRequest::getPageNumber()const
 void ListKeyVersionsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 

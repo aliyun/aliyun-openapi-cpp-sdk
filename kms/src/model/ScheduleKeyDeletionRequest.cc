@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::ScheduleKeyDeletionRequest;
 ScheduleKeyDeletionRequest::ScheduleKeyDeletionRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "ScheduleKeyDeletion")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ScheduleKeyDeletionRequest::~ScheduleKeyDeletionRequest()
@@ -35,7 +35,7 @@ int ScheduleKeyDeletionRequest::getPendingWindowInDays()const
 void ScheduleKeyDeletionRequest::setPendingWindowInDays(int pendingWindowInDays)
 {
 	pendingWindowInDays_ = pendingWindowInDays;
-	setCoreParameter("PendingWindowInDays", std::to_string(pendingWindowInDays));
+	setParameter("PendingWindowInDays", std::to_string(pendingWindowInDays));
 }
 
 std::string ScheduleKeyDeletionRequest::getKeyId()const
@@ -46,6 +46,6 @@ std::string ScheduleKeyDeletionRequest::getKeyId()const
 void ScheduleKeyDeletionRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 

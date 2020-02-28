@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::GenerateDataKeyRequest;
 GenerateDataKeyRequest::GenerateDataKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "GenerateDataKey")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 GenerateDataKeyRequest::~GenerateDataKeyRequest()
@@ -35,7 +35,7 @@ std::string GenerateDataKeyRequest::getEncryptionContext()const
 void GenerateDataKeyRequest::setEncryptionContext(const std::string& encryptionContext)
 {
 	encryptionContext_ = encryptionContext;
-	setCoreParameter("EncryptionContext", encryptionContext);
+	setParameter("EncryptionContext", encryptionContext);
 }
 
 std::string GenerateDataKeyRequest::getKeyId()const
@@ -46,7 +46,7 @@ std::string GenerateDataKeyRequest::getKeyId()const
 void GenerateDataKeyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setParameter("KeyId", keyId);
 }
 
 std::string GenerateDataKeyRequest::getKeySpec()const
@@ -57,7 +57,7 @@ std::string GenerateDataKeyRequest::getKeySpec()const
 void GenerateDataKeyRequest::setKeySpec(const std::string& keySpec)
 {
 	keySpec_ = keySpec;
-	setCoreParameter("KeySpec", keySpec);
+	setParameter("KeySpec", keySpec);
 }
 
 int GenerateDataKeyRequest::getNumberOfBytes()const
@@ -68,6 +68,6 @@ int GenerateDataKeyRequest::getNumberOfBytes()const
 void GenerateDataKeyRequest::setNumberOfBytes(int numberOfBytes)
 {
 	numberOfBytes_ = numberOfBytes;
-	setCoreParameter("NumberOfBytes", std::to_string(numberOfBytes));
+	setParameter("NumberOfBytes", std::to_string(numberOfBytes));
 }
 

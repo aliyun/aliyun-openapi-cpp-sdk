@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DeleteAliasRequest;
 DeleteAliasRequest::DeleteAliasRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DeleteAlias")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 DeleteAliasRequest::~DeleteAliasRequest()
@@ -35,6 +35,6 @@ std::string DeleteAliasRequest::getAliasName()const
 void DeleteAliasRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	setParameter("AliasName", aliasName);
 }
 
