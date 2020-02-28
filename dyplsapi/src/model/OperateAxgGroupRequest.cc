@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::OperateAxgGroupRequest;
 OperateAxgGroupRequest::OperateAxgGroupRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "OperateAxgGroup")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OperateAxgGroupRequest::~OperateAxgGroupRequest()
@@ -35,7 +35,7 @@ long OperateAxgGroupRequest::getResourceOwnerId()const
 void OperateAxgGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string OperateAxgGroupRequest::getNumbers()const
@@ -46,7 +46,7 @@ std::string OperateAxgGroupRequest::getNumbers()const
 void OperateAxgGroupRequest::setNumbers(const std::string& numbers)
 {
 	numbers_ = numbers;
-	setCoreParameter("Numbers", numbers);
+	setParameter("Numbers", numbers);
 }
 
 std::string OperateAxgGroupRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string OperateAxgGroupRequest::getAccessKeyId()const
 void OperateAxgGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string OperateAxgGroupRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string OperateAxgGroupRequest::getResourceOwnerAccount()const
 void OperateAxgGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long OperateAxgGroupRequest::getGroupId()const
@@ -79,7 +79,7 @@ long OperateAxgGroupRequest::getGroupId()const
 void OperateAxgGroupRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 long OperateAxgGroupRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long OperateAxgGroupRequest::getOwnerId()const
 void OperateAxgGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string OperateAxgGroupRequest::getPoolKey()const
@@ -101,7 +101,7 @@ std::string OperateAxgGroupRequest::getPoolKey()const
 void OperateAxgGroupRequest::setPoolKey(const std::string& poolKey)
 {
 	poolKey_ = poolKey;
-	setCoreParameter("PoolKey", poolKey);
+	setParameter("PoolKey", poolKey);
 }
 
 std::string OperateAxgGroupRequest::getOperateType()const
@@ -112,6 +112,6 @@ std::string OperateAxgGroupRequest::getOperateType()const
 void OperateAxgGroupRequest::setOperateType(const std::string& operateType)
 {
 	operateType_ = operateType;
-	setCoreParameter("OperateType", operateType);
+	setParameter("OperateType", operateType);
 }
 

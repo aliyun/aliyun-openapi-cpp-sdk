@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::BindAxbRequest;
 BindAxbRequest::BindAxbRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "BindAxb")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 BindAxbRequest::~BindAxbRequest()
@@ -35,7 +35,7 @@ long BindAxbRequest::getResourceOwnerId()const
 void BindAxbRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int BindAxbRequest::getCallDisplayType()const
@@ -46,7 +46,7 @@ int BindAxbRequest::getCallDisplayType()const
 void BindAxbRequest::setCallDisplayType(int callDisplayType)
 {
 	callDisplayType_ = callDisplayType;
-	setCoreParameter("CallDisplayType", std::to_string(callDisplayType));
+	setParameter("CallDisplayType", std::to_string(callDisplayType));
 }
 
 std::string BindAxbRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string BindAxbRequest::getAccessKeyId()const
 void BindAxbRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BindAxbRequest::getPhoneNoX()const
@@ -68,7 +68,7 @@ std::string BindAxbRequest::getPhoneNoX()const
 void BindAxbRequest::setPhoneNoX(const std::string& phoneNoX)
 {
 	phoneNoX_ = phoneNoX;
-	setCoreParameter("PhoneNoX", phoneNoX);
+	setParameter("PhoneNoX", phoneNoX);
 }
 
 std::string BindAxbRequest::getRingConfig()const
@@ -79,7 +79,7 @@ std::string BindAxbRequest::getRingConfig()const
 void BindAxbRequest::setRingConfig(const std::string& ringConfig)
 {
 	ringConfig_ = ringConfig;
-	setCoreParameter("RingConfig", ringConfig);
+	setParameter("RingConfig", ringConfig);
 }
 
 std::string BindAxbRequest::getPhoneNoB()const
@@ -90,7 +90,7 @@ std::string BindAxbRequest::getPhoneNoB()const
 void BindAxbRequest::setPhoneNoB(const std::string& phoneNoB)
 {
 	phoneNoB_ = phoneNoB;
-	setCoreParameter("PhoneNoB", phoneNoB);
+	setParameter("PhoneNoB", phoneNoB);
 }
 
 std::string BindAxbRequest::getPhoneNoA()const
@@ -101,7 +101,7 @@ std::string BindAxbRequest::getPhoneNoA()const
 void BindAxbRequest::setPhoneNoA(const std::string& phoneNoA)
 {
 	phoneNoA_ = phoneNoA;
-	setCoreParameter("PhoneNoA", phoneNoA);
+	setParameter("PhoneNoA", phoneNoA);
 }
 
 std::string BindAxbRequest::getExpectCity()const
@@ -112,7 +112,7 @@ std::string BindAxbRequest::getExpectCity()const
 void BindAxbRequest::setExpectCity(const std::string& expectCity)
 {
 	expectCity_ = expectCity;
-	setCoreParameter("ExpectCity", expectCity);
+	setParameter("ExpectCity", expectCity);
 }
 
 std::string BindAxbRequest::getResourceOwnerAccount()const
@@ -123,7 +123,7 @@ std::string BindAxbRequest::getResourceOwnerAccount()const
 void BindAxbRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long BindAxbRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long BindAxbRequest::getOwnerId()const
 void BindAxbRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BindAxbRequest::getOutOrderId()const
@@ -145,7 +145,7 @@ std::string BindAxbRequest::getOutOrderId()const
 void BindAxbRequest::setOutOrderId(const std::string& outOrderId)
 {
 	outOrderId_ = outOrderId;
-	setCoreParameter("OutOrderId", outOrderId);
+	setParameter("OutOrderId", outOrderId);
 }
 
 std::string BindAxbRequest::getPoolKey()const
@@ -156,7 +156,7 @@ std::string BindAxbRequest::getPoolKey()const
 void BindAxbRequest::setPoolKey(const std::string& poolKey)
 {
 	poolKey_ = poolKey;
-	setCoreParameter("PoolKey", poolKey);
+	setParameter("PoolKey", poolKey);
 }
 
 std::string BindAxbRequest::getExpiration()const
@@ -167,7 +167,7 @@ std::string BindAxbRequest::getExpiration()const
 void BindAxbRequest::setExpiration(const std::string& expiration)
 {
 	expiration_ = expiration;
-	setCoreParameter("Expiration", expiration);
+	setParameter("Expiration", expiration);
 }
 
 bool BindAxbRequest::getIsRecordingEnabled()const
@@ -178,7 +178,7 @@ bool BindAxbRequest::getIsRecordingEnabled()const
 void BindAxbRequest::setIsRecordingEnabled(bool isRecordingEnabled)
 {
 	isRecordingEnabled_ = isRecordingEnabled;
-	setCoreParameter("IsRecordingEnabled", isRecordingEnabled ? "true" : "false");
+	setParameter("IsRecordingEnabled", isRecordingEnabled ? "true" : "false");
 }
 
 std::string BindAxbRequest::getOutId()const
@@ -189,6 +189,17 @@ std::string BindAxbRequest::getOutId()const
 void BindAxbRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
-	setCoreParameter("OutId", outId);
+	setParameter("OutId", outId);
+}
+
+std::string BindAxbRequest::getCallRestrict()const
+{
+	return callRestrict_;
+}
+
+void BindAxbRequest::setCallRestrict(const std::string& callRestrict)
+{
+	callRestrict_ = callRestrict;
+	setParameter("CallRestrict", callRestrict);
 }
 

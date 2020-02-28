@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPLSAPI_MODEL_BINDAXBREQUEST_H_
-#define ALIBABACLOUD_DYPLSAPI_MODEL_BINDAXBREQUEST_H_
+#ifndef ALIBABACLOUD_DYPLSAPI_MODEL_ADDAXNTRACKNOREQUEST_H_
+#define ALIBABACLOUD_DYPLSAPI_MODEL_ADDAXNTRACKNOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,66 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYPLSAPI_EXPORT BindAxbRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DYPLSAPI_EXPORT AddAxnTrackNoRequest : public RpcServiceRequest
 			{
 
 			public:
-				BindAxbRequest();
-				~BindAxbRequest();
+				AddAxnTrackNoRequest();
+				~AddAxnTrackNoRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getCallDisplayType()const;
-				void setCallDisplayType(int callDisplayType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSubsId()const;
+				void setSubsId(const std::string& subsId);
 				std::string getPhoneNoX()const;
 				void setPhoneNoX(const std::string& phoneNoX);
-				std::string getRingConfig()const;
-				void setRingConfig(const std::string& ringConfig);
-				std::string getPhoneNoB()const;
-				void setPhoneNoB(const std::string& phoneNoB);
-				std::string getPhoneNoA()const;
-				void setPhoneNoA(const std::string& phoneNoA);
-				std::string getExpectCity()const;
-				void setExpectCity(const std::string& expectCity);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getOutOrderId()const;
-				void setOutOrderId(const std::string& outOrderId);
+				std::string getTrackNo()const;
+				void setTrackNo(const std::string& trackNo);
 				std::string getPoolKey()const;
 				void setPoolKey(const std::string& poolKey);
-				std::string getExpiration()const;
-				void setExpiration(const std::string& expiration);
-				bool getIsRecordingEnabled()const;
-				void setIsRecordingEnabled(bool isRecordingEnabled);
-				std::string getOutId()const;
-				void setOutId(const std::string& outId);
-				std::string getCallRestrict()const;
-				void setCallRestrict(const std::string& callRestrict);
 
             private:
 				long resourceOwnerId_;
-				int callDisplayType_;
 				std::string accessKeyId_;
+				std::string subsId_;
 				std::string phoneNoX_;
-				std::string ringConfig_;
-				std::string phoneNoB_;
-				std::string phoneNoA_;
-				std::string expectCity_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;
-				std::string outOrderId_;
+				std::string trackNo_;
 				std::string poolKey_;
-				std::string expiration_;
-				bool isRecordingEnabled_;
-				std::string outId_;
-				std::string callRestrict_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYPLSAPI_MODEL_BINDAXBREQUEST_H_
+#endif // !ALIBABACLOUD_DYPLSAPI_MODEL_ADDAXNTRACKNOREQUEST_H_

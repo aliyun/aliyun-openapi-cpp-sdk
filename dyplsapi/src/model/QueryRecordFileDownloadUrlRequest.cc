@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::QueryRecordFileDownloadUrlRequest;
 QueryRecordFileDownloadUrlRequest::QueryRecordFileDownloadUrlRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "QueryRecordFileDownloadUrl")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 QueryRecordFileDownloadUrlRequest::~QueryRecordFileDownloadUrlRequest()
@@ -35,7 +35,7 @@ std::string QueryRecordFileDownloadUrlRequest::getCallId()const
 void QueryRecordFileDownloadUrlRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setParameter("CallId", callId);
 }
 
 long QueryRecordFileDownloadUrlRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long QueryRecordFileDownloadUrlRequest::getResourceOwnerId()const
 void QueryRecordFileDownloadUrlRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryRecordFileDownloadUrlRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string QueryRecordFileDownloadUrlRequest::getAccessKeyId()const
 void QueryRecordFileDownloadUrlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryRecordFileDownloadUrlRequest::getProductType()const
@@ -68,7 +68,7 @@ std::string QueryRecordFileDownloadUrlRequest::getProductType()const
 void QueryRecordFileDownloadUrlRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
 }
 
 std::string QueryRecordFileDownloadUrlRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string QueryRecordFileDownloadUrlRequest::getResourceOwnerAccount()const
 void QueryRecordFileDownloadUrlRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long QueryRecordFileDownloadUrlRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long QueryRecordFileDownloadUrlRequest::getOwnerId()const
 void QueryRecordFileDownloadUrlRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryRecordFileDownloadUrlRequest::getCallTime()const
@@ -101,7 +101,7 @@ std::string QueryRecordFileDownloadUrlRequest::getCallTime()const
 void QueryRecordFileDownloadUrlRequest::setCallTime(const std::string& callTime)
 {
 	callTime_ = callTime;
-	setCoreParameter("CallTime", callTime);
+	setParameter("CallTime", callTime);
 }
 
 std::string QueryRecordFileDownloadUrlRequest::getPoolKey()const
@@ -112,6 +112,6 @@ std::string QueryRecordFileDownloadUrlRequest::getPoolKey()const
 void QueryRecordFileDownloadUrlRequest::setPoolKey(const std::string& poolKey)
 {
 	poolKey_ = poolKey;
-	setCoreParameter("PoolKey", poolKey);
+	setParameter("PoolKey", poolKey);
 }
 

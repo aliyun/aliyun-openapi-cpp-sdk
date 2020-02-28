@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "DyplsapiExport.h"
+#include "model/AddAxnTrackNoRequest.h"
+#include "model/AddAxnTrackNoResult.h"
 #include "model/BindAxbRequest.h"
 #include "model/BindAxbResult.h"
 #include "model/BindAxgRequest.h"
@@ -40,6 +42,8 @@
 #include "model/OperateBlackNoResult.h"
 #include "model/QueryCallStatusRequest.h"
 #include "model/QueryCallStatusResult.h"
+#include "model/QueryPhoneNoAByTrackNoRequest.h"
+#include "model/QueryPhoneNoAByTrackNoResult.h"
 #include "model/QueryRecordFileDownloadUrlRequest.h"
 #include "model/QueryRecordFileDownloadUrlResult.h"
 #include "model/QuerySecretNoRemainRequest.h"
@@ -63,6 +67,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_DYPLSAPI_EXPORT DyplsapiClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddAxnTrackNoResult> AddAxnTrackNoOutcome;
+			typedef std::future<AddAxnTrackNoOutcome> AddAxnTrackNoOutcomeCallable;
+			typedef std::function<void(const DyplsapiClient*, const Model::AddAxnTrackNoRequest&, const AddAxnTrackNoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddAxnTrackNoAsyncHandler;
 			typedef Outcome<Error, Model::BindAxbResult> BindAxbOutcome;
 			typedef std::future<BindAxbOutcome> BindAxbOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::BindAxbRequest&, const BindAxbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindAxbAsyncHandler;
@@ -90,6 +97,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryCallStatusResult> QueryCallStatusOutcome;
 			typedef std::future<QueryCallStatusOutcome> QueryCallStatusOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::QueryCallStatusRequest&, const QueryCallStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCallStatusAsyncHandler;
+			typedef Outcome<Error, Model::QueryPhoneNoAByTrackNoResult> QueryPhoneNoAByTrackNoOutcome;
+			typedef std::future<QueryPhoneNoAByTrackNoOutcome> QueryPhoneNoAByTrackNoOutcomeCallable;
+			typedef std::function<void(const DyplsapiClient*, const Model::QueryPhoneNoAByTrackNoRequest&, const QueryPhoneNoAByTrackNoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPhoneNoAByTrackNoAsyncHandler;
 			typedef Outcome<Error, Model::QueryRecordFileDownloadUrlResult> QueryRecordFileDownloadUrlOutcome;
 			typedef std::future<QueryRecordFileDownloadUrlOutcome> QueryRecordFileDownloadUrlOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::QueryRecordFileDownloadUrlRequest&, const QueryRecordFileDownloadUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRecordFileDownloadUrlAsyncHandler;
@@ -116,6 +126,9 @@ namespace AlibabaCloud
 			DyplsapiClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			DyplsapiClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~DyplsapiClient();
+			AddAxnTrackNoOutcome addAxnTrackNo(const Model::AddAxnTrackNoRequest &request)const;
+			void addAxnTrackNoAsync(const Model::AddAxnTrackNoRequest& request, const AddAxnTrackNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddAxnTrackNoOutcomeCallable addAxnTrackNoCallable(const Model::AddAxnTrackNoRequest& request) const;
 			BindAxbOutcome bindAxb(const Model::BindAxbRequest &request)const;
 			void bindAxbAsync(const Model::BindAxbRequest& request, const BindAxbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindAxbOutcomeCallable bindAxbCallable(const Model::BindAxbRequest& request) const;
@@ -143,6 +156,9 @@ namespace AlibabaCloud
 			QueryCallStatusOutcome queryCallStatus(const Model::QueryCallStatusRequest &request)const;
 			void queryCallStatusAsync(const Model::QueryCallStatusRequest& request, const QueryCallStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCallStatusOutcomeCallable queryCallStatusCallable(const Model::QueryCallStatusRequest& request) const;
+			QueryPhoneNoAByTrackNoOutcome queryPhoneNoAByTrackNo(const Model::QueryPhoneNoAByTrackNoRequest &request)const;
+			void queryPhoneNoAByTrackNoAsync(const Model::QueryPhoneNoAByTrackNoRequest& request, const QueryPhoneNoAByTrackNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryPhoneNoAByTrackNoOutcomeCallable queryPhoneNoAByTrackNoCallable(const Model::QueryPhoneNoAByTrackNoRequest& request) const;
 			QueryRecordFileDownloadUrlOutcome queryRecordFileDownloadUrl(const Model::QueryRecordFileDownloadUrlRequest &request)const;
 			void queryRecordFileDownloadUrlAsync(const Model::QueryRecordFileDownloadUrlRequest& request, const QueryRecordFileDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryRecordFileDownloadUrlOutcomeCallable queryRecordFileDownloadUrlCallable(const Model::QueryRecordFileDownloadUrlRequest& request) const;

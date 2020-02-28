@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::QueryCallStatusRequest;
 QueryCallStatusRequest::QueryCallStatusRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "QueryCallStatus")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 QueryCallStatusRequest::~QueryCallStatusRequest()
@@ -35,7 +35,7 @@ long QueryCallStatusRequest::getResourceOwnerId()const
 void QueryCallStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryCallStatusRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string QueryCallStatusRequest::getAccessKeyId()const
 void QueryCallStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryCallStatusRequest::getSubsId()const
@@ -57,7 +57,7 @@ std::string QueryCallStatusRequest::getSubsId()const
 void QueryCallStatusRequest::setSubsId(const std::string& subsId)
 {
 	subsId_ = subsId;
-	setCoreParameter("SubsId", subsId);
+	setParameter("SubsId", subsId);
 }
 
 std::string QueryCallStatusRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string QueryCallStatusRequest::getResourceOwnerAccount()const
 void QueryCallStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryCallStatusRequest::getCallNo()const
@@ -79,7 +79,7 @@ std::string QueryCallStatusRequest::getCallNo()const
 void QueryCallStatusRequest::setCallNo(const std::string& callNo)
 {
 	callNo_ = callNo;
-	setCoreParameter("CallNo", callNo);
+	setParameter("CallNo", callNo);
 }
 
 long QueryCallStatusRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long QueryCallStatusRequest::getOwnerId()const
 void QueryCallStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryCallStatusRequest::getPoolKey()const
@@ -101,6 +101,6 @@ std::string QueryCallStatusRequest::getPoolKey()const
 void QueryCallStatusRequest::setPoolKey(const std::string& poolKey)
 {
 	poolKey_ = poolKey;
-	setCoreParameter("PoolKey", poolKey);
+	setParameter("PoolKey", poolKey);
 }
 

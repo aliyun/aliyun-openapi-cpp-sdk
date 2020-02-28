@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::QuerySecretNoRemainRequest;
 QuerySecretNoRemainRequest::QuerySecretNoRemainRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "QuerySecretNoRemain")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 QuerySecretNoRemainRequest::~QuerySecretNoRemainRequest()
@@ -35,7 +35,7 @@ long QuerySecretNoRemainRequest::getSpecId()const
 void QuerySecretNoRemainRequest::setSpecId(long specId)
 {
 	specId_ = specId;
-	setCoreParameter("SpecId", std::to_string(specId));
+	setParameter("SpecId", std::to_string(specId));
 }
 
 long QuerySecretNoRemainRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long QuerySecretNoRemainRequest::getResourceOwnerId()const
 void QuerySecretNoRemainRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QuerySecretNoRemainRequest::getCity()const
@@ -57,7 +57,7 @@ std::string QuerySecretNoRemainRequest::getCity()const
 void QuerySecretNoRemainRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setCoreParameter("City", city);
+	setParameter("City", city);
 }
 
 std::string QuerySecretNoRemainRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string QuerySecretNoRemainRequest::getAccessKeyId()const
 void QuerySecretNoRemainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QuerySecretNoRemainRequest::getSecretNo()const
@@ -79,7 +79,7 @@ std::string QuerySecretNoRemainRequest::getSecretNo()const
 void QuerySecretNoRemainRequest::setSecretNo(const std::string& secretNo)
 {
 	secretNo_ = secretNo;
-	setCoreParameter("SecretNo", secretNo);
+	setParameter("SecretNo", secretNo);
 }
 
 std::string QuerySecretNoRemainRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string QuerySecretNoRemainRequest::getResourceOwnerAccount()const
 void QuerySecretNoRemainRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long QuerySecretNoRemainRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long QuerySecretNoRemainRequest::getOwnerId()const
 void QuerySecretNoRemainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

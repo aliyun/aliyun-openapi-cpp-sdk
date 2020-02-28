@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::OperateBlackNoRequest;
 OperateBlackNoRequest::OperateBlackNoRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "OperateBlackNo")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OperateBlackNoRequest::~OperateBlackNoRequest()
@@ -35,7 +35,7 @@ long OperateBlackNoRequest::getResourceOwnerId()const
 void OperateBlackNoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string OperateBlackNoRequest::getTips()const
@@ -46,7 +46,7 @@ std::string OperateBlackNoRequest::getTips()const
 void OperateBlackNoRequest::setTips(const std::string& tips)
 {
 	tips_ = tips;
-	setCoreParameter("Tips", tips);
+	setParameter("Tips", tips);
 }
 
 std::string OperateBlackNoRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string OperateBlackNoRequest::getAccessKeyId()const
 void OperateBlackNoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string OperateBlackNoRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string OperateBlackNoRequest::getResourceOwnerAccount()const
 void OperateBlackNoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long OperateBlackNoRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long OperateBlackNoRequest::getOwnerId()const
 void OperateBlackNoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string OperateBlackNoRequest::getPoolKey()const
@@ -90,7 +90,7 @@ std::string OperateBlackNoRequest::getPoolKey()const
 void OperateBlackNoRequest::setPoolKey(const std::string& poolKey)
 {
 	poolKey_ = poolKey;
-	setCoreParameter("PoolKey", poolKey);
+	setParameter("PoolKey", poolKey);
 }
 
 std::string OperateBlackNoRequest::getBlackNo()const
@@ -101,7 +101,7 @@ std::string OperateBlackNoRequest::getBlackNo()const
 void OperateBlackNoRequest::setBlackNo(const std::string& blackNo)
 {
 	blackNo_ = blackNo;
-	setCoreParameter("BlackNo", blackNo);
+	setParameter("BlackNo", blackNo);
 }
 
 std::string OperateBlackNoRequest::getOperateType()const
@@ -112,6 +112,6 @@ std::string OperateBlackNoRequest::getOperateType()const
 void OperateBlackNoRequest::setOperateType(const std::string& operateType)
 {
 	operateType_ = operateType;
-	setCoreParameter("OperateType", operateType);
+	setParameter("OperateType", operateType);
 }
 

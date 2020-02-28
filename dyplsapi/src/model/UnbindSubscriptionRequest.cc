@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::UnbindSubscriptionRequest;
 UnbindSubscriptionRequest::UnbindSubscriptionRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "UnbindSubscription")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UnbindSubscriptionRequest::~UnbindSubscriptionRequest()
@@ -35,7 +35,7 @@ long UnbindSubscriptionRequest::getResourceOwnerId()const
 void UnbindSubscriptionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnbindSubscriptionRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string UnbindSubscriptionRequest::getAccessKeyId()const
 void UnbindSubscriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnbindSubscriptionRequest::getProductType()const
@@ -57,7 +57,7 @@ std::string UnbindSubscriptionRequest::getProductType()const
 void UnbindSubscriptionRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
 }
 
 std::string UnbindSubscriptionRequest::getSubsId()const
@@ -68,7 +68,7 @@ std::string UnbindSubscriptionRequest::getSubsId()const
 void UnbindSubscriptionRequest::setSubsId(const std::string& subsId)
 {
 	subsId_ = subsId;
-	setCoreParameter("SubsId", subsId);
+	setParameter("SubsId", subsId);
 }
 
 std::string UnbindSubscriptionRequest::getSecretNo()const
@@ -79,7 +79,7 @@ std::string UnbindSubscriptionRequest::getSecretNo()const
 void UnbindSubscriptionRequest::setSecretNo(const std::string& secretNo)
 {
 	secretNo_ = secretNo;
-	setCoreParameter("SecretNo", secretNo);
+	setParameter("SecretNo", secretNo);
 }
 
 std::string UnbindSubscriptionRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string UnbindSubscriptionRequest::getResourceOwnerAccount()const
 void UnbindSubscriptionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long UnbindSubscriptionRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long UnbindSubscriptionRequest::getOwnerId()const
 void UnbindSubscriptionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnbindSubscriptionRequest::getPoolKey()const
@@ -112,6 +112,6 @@ std::string UnbindSubscriptionRequest::getPoolKey()const
 void UnbindSubscriptionRequest::setPoolKey(const std::string& poolKey)
 {
 	poolKey_ = poolKey;
-	setCoreParameter("PoolKey", poolKey);
+	setParameter("PoolKey", poolKey);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::ReleaseSecretNoRequest;
 ReleaseSecretNoRequest::ReleaseSecretNoRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "ReleaseSecretNo")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ReleaseSecretNoRequest::~ReleaseSecretNoRequest()
@@ -35,7 +35,7 @@ long ReleaseSecretNoRequest::getResourceOwnerId()const
 void ReleaseSecretNoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleaseSecretNoRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string ReleaseSecretNoRequest::getResourceOwnerAccount()const
 void ReleaseSecretNoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ReleaseSecretNoRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long ReleaseSecretNoRequest::getOwnerId()const
 void ReleaseSecretNoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReleaseSecretNoRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string ReleaseSecretNoRequest::getAccessKeyId()const
 void ReleaseSecretNoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReleaseSecretNoRequest::getPoolKey()const
@@ -79,7 +79,7 @@ std::string ReleaseSecretNoRequest::getPoolKey()const
 void ReleaseSecretNoRequest::setPoolKey(const std::string& poolKey)
 {
 	poolKey_ = poolKey;
-	setCoreParameter("PoolKey", poolKey);
+	setParameter("PoolKey", poolKey);
 }
 
 std::string ReleaseSecretNoRequest::getSecretNo()const
@@ -90,6 +90,6 @@ std::string ReleaseSecretNoRequest::getSecretNo()const
 void ReleaseSecretNoRequest::setSecretNo(const std::string& secretNo)
 {
 	secretNo_ = secretNo;
-	setCoreParameter("SecretNo", secretNo);
+	setParameter("SecretNo", secretNo);
 }
 

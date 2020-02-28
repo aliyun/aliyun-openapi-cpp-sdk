@@ -1,3 +1,6 @@
+2020-02-28 Version: 1.36.295
+- Add QueryPhoneNoAByTrackNo  and AddAxnTrackNo.
+
 2020-02-28 Version: 1.36.294
 - Supported secretmanager for kms.
 

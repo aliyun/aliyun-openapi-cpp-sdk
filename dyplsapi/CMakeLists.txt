@@ -21,6 +21,8 @@ set(dyplsapi_public_header
 	include/alibabacloud/dyplsapi/DyplsapiExport.h )
 
 set(dyplsapi_public_header_model 
+	include/alibabacloud/dyplsapi/model/AddAxnTrackNoRequest.h
+	include/alibabacloud/dyplsapi/model/AddAxnTrackNoResult.h
 	include/alibabacloud/dyplsapi/model/BindAxbRequest.h
 	include/alibabacloud/dyplsapi/model/BindAxbResult.h
 	include/alibabacloud/dyplsapi/model/BindAxgRequest.h
@@ -39,6 +41,8 @@ set(dyplsapi_public_header_model
 	include/alibabacloud/dyplsapi/model/OperateBlackNoResult.h
 	include/alibabacloud/dyplsapi/model/QueryCallStatusRequest.h
 	include/alibabacloud/dyplsapi/model/QueryCallStatusResult.h
+	include/alibabacloud/dyplsapi/model/QueryPhoneNoAByTrackNoRequest.h
+	include/alibabacloud/dyplsapi/model/QueryPhoneNoAByTrackNoResult.h
 	include/alibabacloud/dyplsapi/model/QueryRecordFileDownloadUrlRequest.h
 	include/alibabacloud/dyplsapi/model/QueryRecordFileDownloadUrlResult.h
 	include/alibabacloud/dyplsapi/model/QuerySecretNoRemainRequest.h
@@ -56,6 +60,8 @@ set(dyplsapi_public_header_model
 
 set(dyplsapi_src 
 	src/DyplsapiClient.cc
+	src/model/AddAxnTrackNoRequest.cc
+	src/model/AddAxnTrackNoResult.cc
 	src/model/BindAxbRequest.cc
 	src/model/BindAxbResult.cc
 	src/model/BindAxgRequest.cc
@@ -74,6 +80,8 @@ set(dyplsapi_src
 	src/model/OperateBlackNoResult.cc
 	src/model/QueryCallStatusRequest.cc
 	src/model/QueryCallStatusResult.cc
+	src/model/QueryPhoneNoAByTrackNoRequest.cc
+	src/model/QueryPhoneNoAByTrackNoResult.cc
 	src/model/QueryRecordFileDownloadUrlRequest.cc
 	src/model/QueryRecordFileDownloadUrlResult.cc
 	src/model/QuerySecretNoRemainRequest.cc

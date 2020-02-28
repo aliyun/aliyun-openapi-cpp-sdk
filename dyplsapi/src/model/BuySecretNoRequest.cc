@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::BuySecretNoRequest;
 BuySecretNoRequest::BuySecretNoRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "BuySecretNo")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 BuySecretNoRequest::~BuySecretNoRequest()
@@ -35,7 +35,7 @@ long BuySecretNoRequest::getSpecId()const
 void BuySecretNoRequest::setSpecId(long specId)
 {
 	specId_ = specId;
-	setCoreParameter("SpecId", std::to_string(specId));
+	setParameter("SpecId", std::to_string(specId));
 }
 
 long BuySecretNoRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long BuySecretNoRequest::getResourceOwnerId()const
 void BuySecretNoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string BuySecretNoRequest::getCity()const
@@ -57,7 +57,7 @@ std::string BuySecretNoRequest::getCity()const
 void BuySecretNoRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setCoreParameter("City", city);
+	setParameter("City", city);
 }
 
 std::string BuySecretNoRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string BuySecretNoRequest::getAccessKeyId()const
 void BuySecretNoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BuySecretNoRequest::getSecretNo()const
@@ -79,7 +79,7 @@ std::string BuySecretNoRequest::getSecretNo()const
 void BuySecretNoRequest::setSecretNo(const std::string& secretNo)
 {
 	secretNo_ = secretNo;
-	setCoreParameter("SecretNo", secretNo);
+	setParameter("SecretNo", secretNo);
 }
 
 std::string BuySecretNoRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string BuySecretNoRequest::getResourceOwnerAccount()const
 void BuySecretNoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 bool BuySecretNoRequest::getDisplayPool()const
@@ -101,7 +101,7 @@ bool BuySecretNoRequest::getDisplayPool()const
 void BuySecretNoRequest::setDisplayPool(bool displayPool)
 {
 	displayPool_ = displayPool;
-	setCoreParameter("DisplayPool", displayPool ? "true" : "false");
+	setParameter("DisplayPool", displayPool ? "true" : "false");
 }
 
 long BuySecretNoRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long BuySecretNoRequest::getOwnerId()const
 void BuySecretNoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BuySecretNoRequest::getPoolKey()const
@@ -123,6 +123,6 @@ std::string BuySecretNoRequest::getPoolKey()const
 void BuySecretNoRequest::setPoolKey(const std::string& poolKey)
 {
 	poolKey_ = poolKey;
-	setCoreParameter("PoolKey", poolKey);
+	setParameter("PoolKey", poolKey);
 }
 

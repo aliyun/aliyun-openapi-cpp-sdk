@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::QuerySubscriptionDetailRequest;
 QuerySubscriptionDetailRequest::QuerySubscriptionDetailRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "QuerySubscriptionDetail")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 QuerySubscriptionDetailRequest::~QuerySubscriptionDetailRequest()
@@ -35,7 +35,7 @@ long QuerySubscriptionDetailRequest::getResourceOwnerId()const
 void QuerySubscriptionDetailRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QuerySubscriptionDetailRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string QuerySubscriptionDetailRequest::getAccessKeyId()const
 void QuerySubscriptionDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QuerySubscriptionDetailRequest::getProductType()const
@@ -57,7 +57,7 @@ std::string QuerySubscriptionDetailRequest::getProductType()const
 void QuerySubscriptionDetailRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
 }
 
 std::string QuerySubscriptionDetailRequest::getSubsId()const
@@ -68,7 +68,7 @@ std::string QuerySubscriptionDetailRequest::getSubsId()const
 void QuerySubscriptionDetailRequest::setSubsId(const std::string& subsId)
 {
 	subsId_ = subsId;
-	setCoreParameter("SubsId", subsId);
+	setParameter("SubsId", subsId);
 }
 
 std::string QuerySubscriptionDetailRequest::getPhoneNoX()const
@@ -79,7 +79,7 @@ std::string QuerySubscriptionDetailRequest::getPhoneNoX()const
 void QuerySubscriptionDetailRequest::setPhoneNoX(const std::string& phoneNoX)
 {
 	phoneNoX_ = phoneNoX;
-	setCoreParameter("PhoneNoX", phoneNoX);
+	setParameter("PhoneNoX", phoneNoX);
 }
 
 std::string QuerySubscriptionDetailRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string QuerySubscriptionDetailRequest::getResourceOwnerAccount()const
 void QuerySubscriptionDetailRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long QuerySubscriptionDetailRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long QuerySubscriptionDetailRequest::getOwnerId()const
 void QuerySubscriptionDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QuerySubscriptionDetailRequest::getPoolKey()const
@@ -112,6 +112,6 @@ std::string QuerySubscriptionDetailRequest::getPoolKey()const
 void QuerySubscriptionDetailRequest::setPoolKey(const std::string& poolKey)
 {
 	poolKey_ = poolKey;
-	setCoreParameter("PoolKey", poolKey);
+	setParameter("PoolKey", poolKey);
 }
 

@@ -51,6 +51,42 @@ DyplsapiClient::DyplsapiClient(const std::string & accessKeyId, const std::strin
 DyplsapiClient::~DyplsapiClient()
 {}
 
+DyplsapiClient::AddAxnTrackNoOutcome DyplsapiClient::addAxnTrackNo(const AddAxnTrackNoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddAxnTrackNoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddAxnTrackNoOutcome(AddAxnTrackNoResult(outcome.result()));
+	else
+		return AddAxnTrackNoOutcome(outcome.error());
+}
+
+void DyplsapiClient::addAxnTrackNoAsync(const AddAxnTrackNoRequest& request, const AddAxnTrackNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addAxnTrackNo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::AddAxnTrackNoOutcomeCallable DyplsapiClient::addAxnTrackNoCallable(const AddAxnTrackNoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddAxnTrackNoOutcome()>>(
+			[this, request]()
+			{
+			return this->addAxnTrackNo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyplsapiClient::BindAxbOutcome DyplsapiClient::bindAxb(const BindAxbRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +405,42 @@ DyplsapiClient::QueryCallStatusOutcomeCallable DyplsapiClient::queryCallStatusCa
 			[this, request]()
 			{
 			return this->queryCallStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::QueryPhoneNoAByTrackNoOutcome DyplsapiClient::queryPhoneNoAByTrackNo(const QueryPhoneNoAByTrackNoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryPhoneNoAByTrackNoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryPhoneNoAByTrackNoOutcome(QueryPhoneNoAByTrackNoResult(outcome.result()));
+	else
+		return QueryPhoneNoAByTrackNoOutcome(outcome.error());
+}
+
+void DyplsapiClient::queryPhoneNoAByTrackNoAsync(const QueryPhoneNoAByTrackNoRequest& request, const QueryPhoneNoAByTrackNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryPhoneNoAByTrackNo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::QueryPhoneNoAByTrackNoOutcomeCallable DyplsapiClient::queryPhoneNoAByTrackNoCallable(const QueryPhoneNoAByTrackNoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryPhoneNoAByTrackNoOutcome()>>(
+			[this, request]()
+			{
+			return this->queryPhoneNoAByTrackNo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::UpdateSubscriptionRequest;
 UpdateSubscriptionRequest::UpdateSubscriptionRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "UpdateSubscription")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 UpdateSubscriptionRequest::~UpdateSubscriptionRequest()
@@ -35,7 +35,7 @@ long UpdateSubscriptionRequest::getResourceOwnerId()const
 void UpdateSubscriptionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int UpdateSubscriptionRequest::getCallDisplayType()const
@@ -46,7 +46,7 @@ int UpdateSubscriptionRequest::getCallDisplayType()const
 void UpdateSubscriptionRequest::setCallDisplayType(int callDisplayType)
 {
 	callDisplayType_ = callDisplayType;
-	setCoreParameter("CallDisplayType", std::to_string(callDisplayType));
+	setParameter("CallDisplayType", std::to_string(callDisplayType));
 }
 
 std::string UpdateSubscriptionRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string UpdateSubscriptionRequest::getAccessKeyId()const
 void UpdateSubscriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateSubscriptionRequest::getProductType()const
@@ -68,7 +68,7 @@ std::string UpdateSubscriptionRequest::getProductType()const
 void UpdateSubscriptionRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
 }
 
 std::string UpdateSubscriptionRequest::getSubsId()const
@@ -79,7 +79,7 @@ std::string UpdateSubscriptionRequest::getSubsId()const
 void UpdateSubscriptionRequest::setSubsId(const std::string& subsId)
 {
 	subsId_ = subsId;
-	setCoreParameter("SubsId", subsId);
+	setParameter("SubsId", subsId);
 }
 
 std::string UpdateSubscriptionRequest::getPhoneNoX()const
@@ -90,7 +90,7 @@ std::string UpdateSubscriptionRequest::getPhoneNoX()const
 void UpdateSubscriptionRequest::setPhoneNoX(const std::string& phoneNoX)
 {
 	phoneNoX_ = phoneNoX;
-	setCoreParameter("PhoneNoX", phoneNoX);
+	setParameter("PhoneNoX", phoneNoX);
 }
 
 std::string UpdateSubscriptionRequest::getRingConfig()const
@@ -101,7 +101,7 @@ std::string UpdateSubscriptionRequest::getRingConfig()const
 void UpdateSubscriptionRequest::setRingConfig(const std::string& ringConfig)
 {
 	ringConfig_ = ringConfig;
-	setCoreParameter("RingConfig", ringConfig);
+	setParameter("RingConfig", ringConfig);
 }
 
 std::string UpdateSubscriptionRequest::getPhoneNoB()const
@@ -112,7 +112,7 @@ std::string UpdateSubscriptionRequest::getPhoneNoB()const
 void UpdateSubscriptionRequest::setPhoneNoB(const std::string& phoneNoB)
 {
 	phoneNoB_ = phoneNoB;
-	setCoreParameter("PhoneNoB", phoneNoB);
+	setParameter("PhoneNoB", phoneNoB);
 }
 
 std::string UpdateSubscriptionRequest::getPhoneNoA()const
@@ -123,7 +123,7 @@ std::string UpdateSubscriptionRequest::getPhoneNoA()const
 void UpdateSubscriptionRequest::setPhoneNoA(const std::string& phoneNoA)
 {
 	phoneNoA_ = phoneNoA;
-	setCoreParameter("PhoneNoA", phoneNoA);
+	setParameter("PhoneNoA", phoneNoA);
 }
 
 std::string UpdateSubscriptionRequest::getResourceOwnerAccount()const
@@ -134,7 +134,7 @@ std::string UpdateSubscriptionRequest::getResourceOwnerAccount()const
 void UpdateSubscriptionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateSubscriptionRequest::getGroupId()const
@@ -145,7 +145,7 @@ std::string UpdateSubscriptionRequest::getGroupId()const
 void UpdateSubscriptionRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 long UpdateSubscriptionRequest::getOwnerId()const
@@ -156,7 +156,7 @@ long UpdateSubscriptionRequest::getOwnerId()const
 void UpdateSubscriptionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateSubscriptionRequest::getPoolKey()const
@@ -167,7 +167,7 @@ std::string UpdateSubscriptionRequest::getPoolKey()const
 void UpdateSubscriptionRequest::setPoolKey(const std::string& poolKey)
 {
 	poolKey_ = poolKey;
-	setCoreParameter("PoolKey", poolKey);
+	setParameter("PoolKey", poolKey);
 }
 
 std::string UpdateSubscriptionRequest::getExpiration()const
@@ -178,7 +178,7 @@ std::string UpdateSubscriptionRequest::getExpiration()const
 void UpdateSubscriptionRequest::setExpiration(const std::string& expiration)
 {
 	expiration_ = expiration;
-	setCoreParameter("Expiration", expiration);
+	setParameter("Expiration", expiration);
 }
 
 std::string UpdateSubscriptionRequest::getOutId()const
@@ -189,7 +189,7 @@ std::string UpdateSubscriptionRequest::getOutId()const
 void UpdateSubscriptionRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
-	setCoreParameter("OutId", outId);
+	setParameter("OutId", outId);
 }
 
 bool UpdateSubscriptionRequest::getIsRecordingEnabled()const
@@ -200,7 +200,7 @@ bool UpdateSubscriptionRequest::getIsRecordingEnabled()const
 void UpdateSubscriptionRequest::setIsRecordingEnabled(bool isRecordingEnabled)
 {
 	isRecordingEnabled_ = isRecordingEnabled;
-	setCoreParameter("IsRecordingEnabled", isRecordingEnabled ? "true" : "false");
+	setParameter("IsRecordingEnabled", isRecordingEnabled ? "true" : "false");
 }
 
 std::string UpdateSubscriptionRequest::getOperateType()const
@@ -211,7 +211,7 @@ std::string UpdateSubscriptionRequest::getOperateType()const
 void UpdateSubscriptionRequest::setOperateType(const std::string& operateType)
 {
 	operateType_ = operateType;
-	setCoreParameter("OperateType", operateType);
+	setParameter("OperateType", operateType);
 }
 
 std::string UpdateSubscriptionRequest::getCallRestrict()const
@@ -222,6 +222,6 @@ std::string UpdateSubscriptionRequest::getCallRestrict()const
 void UpdateSubscriptionRequest::setCallRestrict(const std::string& callRestrict)
 {
 	callRestrict_ = callRestrict;
-	setCoreParameter("CallRestrict", callRestrict);
+	setParameter("CallRestrict", callRestrict);
 }
 
