@@ -1,3 +1,6 @@
+2020-03-03 Version: 1.36.297
+- GeoIP Databases SDK initial release.
+
 2020-03-03 Version: 1.36.296
 - Supported secretmanager for kms.
 
