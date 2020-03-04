@@ -24,6 +24,8 @@
 #include "ReidExport.h"
 #include "model/DescribeBaseStatisticsRequest.h"
 #include "model/DescribeBaseStatisticsResult.h"
+#include "model/DescribeCameraStatisticsRequest.h"
+#include "model/DescribeCameraStatisticsResult.h"
 #include "model/DescribeCursorRequest.h"
 #include "model/DescribeCursorResult.h"
 #include "model/DescribeCustomerFlowByLocationRequest.h"
@@ -64,6 +66,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBaseStatisticsResult> DescribeBaseStatisticsOutcome;
 			typedef std::future<DescribeBaseStatisticsOutcome> DescribeBaseStatisticsOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::DescribeBaseStatisticsRequest&, const DescribeBaseStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaseStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCameraStatisticsResult> DescribeCameraStatisticsOutcome;
+			typedef std::future<DescribeCameraStatisticsOutcome> DescribeCameraStatisticsOutcomeCallable;
+			typedef std::function<void(const ReidClient*, const Model::DescribeCameraStatisticsRequest&, const DescribeCameraStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCameraStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCursorResult> DescribeCursorOutcome;
 			typedef std::future<DescribeCursorOutcome> DescribeCursorOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::DescribeCursorRequest&, const DescribeCursorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCursorAsyncHandler;
@@ -114,6 +119,9 @@ namespace AlibabaCloud
 			DescribeBaseStatisticsOutcome describeBaseStatistics(const Model::DescribeBaseStatisticsRequest &request)const;
 			void describeBaseStatisticsAsync(const Model::DescribeBaseStatisticsRequest& request, const DescribeBaseStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBaseStatisticsOutcomeCallable describeBaseStatisticsCallable(const Model::DescribeBaseStatisticsRequest& request) const;
+			DescribeCameraStatisticsOutcome describeCameraStatistics(const Model::DescribeCameraStatisticsRequest &request)const;
+			void describeCameraStatisticsAsync(const Model::DescribeCameraStatisticsRequest& request, const DescribeCameraStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCameraStatisticsOutcomeCallable describeCameraStatisticsCallable(const Model::DescribeCameraStatisticsRequest& request) const;
 			DescribeCursorOutcome describeCursor(const Model::DescribeCursorRequest &request)const;
 			void describeCursorAsync(const Model::DescribeCursorRequest& request, const DescribeCursorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCursorOutcomeCallable describeCursorCallable(const Model::DescribeCursorRequest& request) const;

@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::DescribeDevicesRequest;
 DescribeDevicesRequest::DescribeDevicesRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "DescribeDevices")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 DescribeDevicesRequest::~DescribeDevicesRequest()

@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::ListPersonByImageRequest;
 ListPersonByImageRequest::ListPersonByImageRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "ListPersonByImage")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ListPersonByImageRequest::~ListPersonByImageRequest()

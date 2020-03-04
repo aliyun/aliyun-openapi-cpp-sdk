@@ -31,21 +31,21 @@ ReidClient::ReidClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.0.0");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.2");
 }
 
 ReidClient::ReidClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.0.0");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.2");
 }
 
 ReidClient::ReidClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.0.0");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.2");
 }
 
 ReidClient::~ReidClient()
@@ -81,6 +81,42 @@ ReidClient::DescribeBaseStatisticsOutcomeCallable ReidClient::describeBaseStatis
 			[this, request]()
 			{
 			return this->describeBaseStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ReidClient::DescribeCameraStatisticsOutcome ReidClient::describeCameraStatistics(const DescribeCameraStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCameraStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCameraStatisticsOutcome(DescribeCameraStatisticsResult(outcome.result()));
+	else
+		return DescribeCameraStatisticsOutcome(outcome.error());
+}
+
+void ReidClient::describeCameraStatisticsAsync(const DescribeCameraStatisticsRequest& request, const DescribeCameraStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCameraStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ReidClient::DescribeCameraStatisticsOutcomeCallable ReidClient::describeCameraStatisticsCallable(const DescribeCameraStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCameraStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCameraStatistics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

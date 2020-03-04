@@ -23,6 +23,8 @@ set(reid_public_header
 set(reid_public_header_model 
 	include/alibabacloud/reid/model/DescribeBaseStatisticsRequest.h
 	include/alibabacloud/reid/model/DescribeBaseStatisticsResult.h
+	include/alibabacloud/reid/model/DescribeCameraStatisticsRequest.h
+	include/alibabacloud/reid/model/DescribeCameraStatisticsResult.h
 	include/alibabacloud/reid/model/DescribeCursorRequest.h
 	include/alibabacloud/reid/model/DescribeCursorResult.h
 	include/alibabacloud/reid/model/DescribeCustomerFlowByLocationRequest.h
@@ -56,6 +58,8 @@ set(reid_src
 	src/ReidClient.cc
 	src/model/DescribeBaseStatisticsRequest.cc
 	src/model/DescribeBaseStatisticsResult.cc
+	src/model/DescribeCameraStatisticsRequest.cc
+	src/model/DescribeCameraStatisticsResult.cc
 	src/model/DescribeCursorRequest.cc
 	src/model/DescribeCursorResult.cc
 	src/model/DescribeCustomerFlowByLocationRequest.cc

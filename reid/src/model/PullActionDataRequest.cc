@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::PullActionDataRequest;
 PullActionDataRequest::PullActionDataRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "PullActionData")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 PullActionDataRequest::~PullActionDataRequest()

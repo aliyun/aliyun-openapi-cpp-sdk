@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::DescribeBaseStatisticsRequest;
 DescribeBaseStatisticsRequest::DescribeBaseStatisticsRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "DescribeBaseStatistics")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 DescribeBaseStatisticsRequest::~DescribeBaseStatisticsRequest()

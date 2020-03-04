@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::ListMaskDetectionResultsRequest;
 ListMaskDetectionResultsRequest::ListMaskDetectionResultsRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "ListMaskDetectionResults")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 ListMaskDetectionResultsRequest::~ListMaskDetectionResultsRequest()
