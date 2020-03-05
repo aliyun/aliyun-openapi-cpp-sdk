@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListNodesNoPagingRequest;
 ListNodesNoPagingRequest::ListNodesNoPagingRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListNodesNoPaging")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListNodesNoPagingRequest::~ListNodesNoPagingRequest()
@@ -35,7 +35,7 @@ std::string ListNodesNoPagingRequest::getRole()const
 void ListNodesNoPagingRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setParameter("Role", role);
 }
 
 std::string ListNodesNoPagingRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string ListNodesNoPagingRequest::getClusterId()const
 void ListNodesNoPagingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListNodesNoPagingRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ListNodesNoPagingRequest::getAccessKeyId()const
 void ListNodesNoPagingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListNodesNoPagingRequest::getHostName()const
@@ -68,7 +68,7 @@ std::string ListNodesNoPagingRequest::getHostName()const
 void ListNodesNoPagingRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setParameter("HostName", hostName);
 }
 
 bool ListNodesNoPagingRequest::getOnlyDetached()const
@@ -79,6 +79,6 @@ bool ListNodesNoPagingRequest::getOnlyDetached()const
 void ListNodesNoPagingRequest::setOnlyDetached(bool onlyDetached)
 {
 	onlyDetached_ = onlyDetached;
-	setCoreParameter("OnlyDetached", onlyDetached ? "true" : "false");
+	setParameter("OnlyDetached", onlyDetached ? "true" : "false");
 }
 

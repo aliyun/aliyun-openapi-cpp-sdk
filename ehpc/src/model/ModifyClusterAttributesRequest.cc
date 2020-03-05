@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ModifyClusterAttributesRequest;
 ModifyClusterAttributesRequest::ModifyClusterAttributesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyClusterAttributes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ModifyClusterAttributesRequest::~ModifyClusterAttributesRequest()
@@ -35,7 +35,7 @@ std::string ModifyClusterAttributesRequest::getDescription()const
 void ModifyClusterAttributesRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyClusterAttributesRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string ModifyClusterAttributesRequest::getClusterId()const
 void ModifyClusterAttributesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyClusterAttributesRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifyClusterAttributesRequest::getAccessKeyId()const
 void ModifyClusterAttributesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyClusterAttributesRequest::getName()const
@@ -68,6 +68,6 @@ std::string ModifyClusterAttributesRequest::getName()const
 void ModifyClusterAttributesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT SetAutoScaleConfigRequest : public RpcServiceRequest
 			{
+			public:
 				struct Queues
 				{
 					std::string spotStrategy;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 						float spotPriceLimit;
 					};
 					std::vector<InstanceTypes> instanceTypes;
+					int maxNodesInQueue;
 					std::string instanceType;
 					bool enableAutoGrow;
 					float spotPriceLimit;
@@ -54,6 +56,8 @@ namespace AlibabaCloud
 				SetAutoScaleConfigRequest();
 				~SetAutoScaleConfigRequest();
 
+				std::string getImageId()const;
+				void setImageId(const std::string& imageId);
 				float getSpotPriceLimit()const;
 				void setSpotPriceLimit(float spotPriceLimit);
 				std::string getAccessKeyId()const;
@@ -86,6 +90,7 @@ namespace AlibabaCloud
 				void setGrowRatio(int growRatio);
 
             private:
+				std::string imageId_;
 				float spotPriceLimit_;
 				std::string accessKeyId_;
 				std::string excludeNodes_;

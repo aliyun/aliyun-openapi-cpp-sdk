@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT DeleteContainerAppsRequest : public RpcServiceRequest
 			{
+			public:
 				struct ContainerApp
 				{
 					std::string id;

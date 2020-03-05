@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::SetJobUserRequest;
 SetJobUserRequest::SetJobUserRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "SetJobUser")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 SetJobUserRequest::~SetJobUserRequest()
@@ -35,7 +35,7 @@ std::string SetJobUserRequest::getRunasUserPassword()const
 void SetJobUserRequest::setRunasUserPassword(const std::string& runasUserPassword)
 {
 	runasUserPassword_ = runasUserPassword;
-	setCoreParameter("RunasUserPassword", runasUserPassword);
+	setParameter("RunasUserPassword", runasUserPassword);
 }
 
 std::string SetJobUserRequest::getRunasUser()const
@@ -46,7 +46,7 @@ std::string SetJobUserRequest::getRunasUser()const
 void SetJobUserRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
-	setCoreParameter("RunasUser", runasUser);
+	setParameter("RunasUser", runasUser);
 }
 
 std::string SetJobUserRequest::getClusterId()const
@@ -57,7 +57,7 @@ std::string SetJobUserRequest::getClusterId()const
 void SetJobUserRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string SetJobUserRequest::getAccessKeyId()const
@@ -68,6 +68,6 @@ std::string SetJobUserRequest::getAccessKeyId()const
 void SetJobUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

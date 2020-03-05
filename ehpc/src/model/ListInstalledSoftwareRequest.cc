@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListInstalledSoftwareRequest;
 ListInstalledSoftwareRequest::ListInstalledSoftwareRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListInstalledSoftware")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListInstalledSoftwareRequest::~ListInstalledSoftwareRequest()
@@ -35,7 +35,7 @@ std::string ListInstalledSoftwareRequest::getClusterId()const
 void ListInstalledSoftwareRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListInstalledSoftwareRequest::getAccessKeyId()const
@@ -46,6 +46,6 @@ std::string ListInstalledSoftwareRequest::getAccessKeyId()const
 void ListInstalledSoftwareRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

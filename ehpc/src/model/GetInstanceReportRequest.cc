@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetInstanceReportRequest;
 GetInstanceReportRequest::GetInstanceReportRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetInstanceReport")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetInstanceReportRequest::~GetInstanceReportRequest()
@@ -35,7 +35,7 @@ int GetInstanceReportRequest::getEndTime()const
 void GetInstanceReportRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string GetInstanceReportRequest::getFilterValue()const
@@ -46,7 +46,7 @@ std::string GetInstanceReportRequest::getFilterValue()const
 void GetInstanceReportRequest::setFilterValue(const std::string& filterValue)
 {
 	filterValue_ = filterValue;
-	setCoreParameter("FilterValue", filterValue);
+	setParameter("FilterValue", filterValue);
 }
 
 std::string GetInstanceReportRequest::getClusterId()const
@@ -57,7 +57,7 @@ std::string GetInstanceReportRequest::getClusterId()const
 void GetInstanceReportRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int GetInstanceReportRequest::getStartTime()const
@@ -68,7 +68,7 @@ int GetInstanceReportRequest::getStartTime()const
 void GetInstanceReportRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string GetInstanceReportRequest::getAccessKeyId()const
@@ -79,6 +79,6 @@ std::string GetInstanceReportRequest::getAccessKeyId()const
 void GetInstanceReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

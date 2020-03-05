@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::CreateJobTemplateRequest;
 CreateJobTemplateRequest::CreateJobTemplateRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "CreateJobTemplate")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 CreateJobTemplateRequest::~CreateJobTemplateRequest()
@@ -35,7 +35,7 @@ std::string CreateJobTemplateRequest::getStderrRedirectPath()const
 void CreateJobTemplateRequest::setStderrRedirectPath(const std::string& stderrRedirectPath)
 {
 	stderrRedirectPath_ = stderrRedirectPath;
-	setCoreParameter("StderrRedirectPath", stderrRedirectPath);
+	setParameter("StderrRedirectPath", stderrRedirectPath);
 }
 
 std::string CreateJobTemplateRequest::getCommandLine()const
@@ -46,7 +46,7 @@ std::string CreateJobTemplateRequest::getCommandLine()const
 void CreateJobTemplateRequest::setCommandLine(const std::string& commandLine)
 {
 	commandLine_ = commandLine;
-	setCoreParameter("CommandLine", commandLine);
+	setParameter("CommandLine", commandLine);
 }
 
 std::string CreateJobTemplateRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string CreateJobTemplateRequest::getAccessKeyId()const
 void CreateJobTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateJobTemplateRequest::getArrayRequest()const
@@ -68,7 +68,7 @@ std::string CreateJobTemplateRequest::getArrayRequest()const
 void CreateJobTemplateRequest::setArrayRequest(const std::string& arrayRequest)
 {
 	arrayRequest_ = arrayRequest;
-	setCoreParameter("ArrayRequest", arrayRequest);
+	setParameter("ArrayRequest", arrayRequest);
 }
 
 std::string CreateJobTemplateRequest::getPackagePath()const
@@ -79,7 +79,7 @@ std::string CreateJobTemplateRequest::getPackagePath()const
 void CreateJobTemplateRequest::setPackagePath(const std::string& packagePath)
 {
 	packagePath_ = packagePath;
-	setCoreParameter("PackagePath", packagePath);
+	setParameter("PackagePath", packagePath);
 }
 
 std::string CreateJobTemplateRequest::getStdoutRedirectPath()const
@@ -90,7 +90,7 @@ std::string CreateJobTemplateRequest::getStdoutRedirectPath()const
 void CreateJobTemplateRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
 {
 	stdoutRedirectPath_ = stdoutRedirectPath;
-	setCoreParameter("StdoutRedirectPath", stdoutRedirectPath);
+	setParameter("StdoutRedirectPath", stdoutRedirectPath);
 }
 
 std::string CreateJobTemplateRequest::getVariables()const
@@ -101,7 +101,7 @@ std::string CreateJobTemplateRequest::getVariables()const
 void CreateJobTemplateRequest::setVariables(const std::string& variables)
 {
 	variables_ = variables;
-	setCoreParameter("Variables", variables);
+	setParameter("Variables", variables);
 }
 
 std::string CreateJobTemplateRequest::getRunasUser()const
@@ -112,7 +112,7 @@ std::string CreateJobTemplateRequest::getRunasUser()const
 void CreateJobTemplateRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
-	setCoreParameter("RunasUser", runasUser);
+	setParameter("RunasUser", runasUser);
 }
 
 bool CreateJobTemplateRequest::getReRunable()const
@@ -123,7 +123,7 @@ bool CreateJobTemplateRequest::getReRunable()const
 void CreateJobTemplateRequest::setReRunable(bool reRunable)
 {
 	reRunable_ = reRunable;
-	setCoreParameter("ReRunable", reRunable ? "true" : "false");
+	setParameter("ReRunable", reRunable ? "true" : "false");
 }
 
 int CreateJobTemplateRequest::getPriority()const
@@ -134,7 +134,7 @@ int CreateJobTemplateRequest::getPriority()const
 void CreateJobTemplateRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 std::string CreateJobTemplateRequest::getName()const
@@ -145,6 +145,6 @@ std::string CreateJobTemplateRequest::getName()const
 void CreateJobTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

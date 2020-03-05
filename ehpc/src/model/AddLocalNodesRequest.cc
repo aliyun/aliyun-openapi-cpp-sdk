@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::AddLocalNodesRequest;
 AddLocalNodesRequest::AddLocalNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "AddLocalNodes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 AddLocalNodesRequest::~AddLocalNodesRequest()
@@ -35,7 +35,7 @@ std::string AddLocalNodesRequest::getClusterId()const
 void AddLocalNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string AddLocalNodesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string AddLocalNodesRequest::getAccessKeyId()const
 void AddLocalNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddLocalNodesRequest::getNodes()const
@@ -57,6 +57,6 @@ std::string AddLocalNodesRequest::getNodes()const
 void AddLocalNodesRequest::setNodes(const std::string& nodes)
 {
 	nodes_ = nodes;
-	setCoreParameter("Nodes", nodes);
+	setParameter("Nodes", nodes);
 }
 

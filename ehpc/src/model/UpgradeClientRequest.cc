@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::UpgradeClientRequest;
 UpgradeClientRequest::UpgradeClientRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "UpgradeClient")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 UpgradeClientRequest::~UpgradeClientRequest()
@@ -35,7 +35,7 @@ std::string UpgradeClientRequest::getClientVersion()const
 void UpgradeClientRequest::setClientVersion(const std::string& clientVersion)
 {
 	clientVersion_ = clientVersion;
-	setCoreParameter("ClientVersion", clientVersion);
+	setParameter("ClientVersion", clientVersion);
 }
 
 std::string UpgradeClientRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string UpgradeClientRequest::getClusterId()const
 void UpgradeClientRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string UpgradeClientRequest::getAccessKeyId()const
@@ -57,6 +57,6 @@ std::string UpgradeClientRequest::getAccessKeyId()const
 void UpgradeClientRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

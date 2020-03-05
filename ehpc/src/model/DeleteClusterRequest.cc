@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteClusterRequest;
 DeleteClusterRequest::DeleteClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteCluster")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DeleteClusterRequest::~DeleteClusterRequest()
@@ -35,7 +35,7 @@ std::string DeleteClusterRequest::getClusterId()const
 void DeleteClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DeleteClusterRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DeleteClusterRequest::getAccessKeyId()const
 void DeleteClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteClusterRequest::getReleaseInstance()const
@@ -57,6 +57,6 @@ std::string DeleteClusterRequest::getReleaseInstance()const
 void DeleteClusterRequest::setReleaseInstance(const std::string& releaseInstance)
 {
 	releaseInstance_ = releaseInstance;
-	setCoreParameter("ReleaseInstance", releaseInstance);
+	setParameter("ReleaseInstance", releaseInstance);
 }
 

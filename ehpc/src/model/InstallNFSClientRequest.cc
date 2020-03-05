@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::InstallNFSClientRequest;
 InstallNFSClientRequest::InstallNFSClientRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "InstallNFSClient")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 InstallNFSClientRequest::~InstallNFSClientRequest()
@@ -35,7 +35,7 @@ std::string InstallNFSClientRequest::getAccessKeyId()const
 void InstallNFSClientRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string InstallNFSClientRequest::getInstanceId()const
@@ -46,6 +46,6 @@ std::string InstallNFSClientRequest::getInstanceId()const
 void InstallNFSClientRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

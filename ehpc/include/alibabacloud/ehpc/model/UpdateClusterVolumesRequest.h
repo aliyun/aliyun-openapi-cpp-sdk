@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT UpdateClusterVolumesRequest : public RpcServiceRequest
 			{
+			public:
 				struct AdditionalVolumes
 				{
 					std::string volumeType;

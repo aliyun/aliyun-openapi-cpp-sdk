@@ -21,11 +21,22 @@ using AlibabaCloud::EHPC::Model::ListSoftwaresRequest;
 ListSoftwaresRequest::ListSoftwaresRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListSoftwares")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListSoftwaresRequest::~ListSoftwaresRequest()
 {}
+
+std::string ListSoftwaresRequest::getOsTag()const
+{
+	return osTag_;
+}
+
+void ListSoftwaresRequest::setOsTag(const std::string& osTag)
+{
+	osTag_ = osTag;
+	setParameter("OsTag", osTag);
+}
 
 std::string ListSoftwaresRequest::getEhpcVersion()const
 {
@@ -35,7 +46,7 @@ std::string ListSoftwaresRequest::getEhpcVersion()const
 void ListSoftwaresRequest::setEhpcVersion(const std::string& ehpcVersion)
 {
 	ehpcVersion_ = ehpcVersion;
-	setCoreParameter("EhpcVersion", ehpcVersion);
+	setParameter("EhpcVersion", ehpcVersion);
 }
 
 std::string ListSoftwaresRequest::getAccessKeyId()const
@@ -46,6 +57,6 @@ std::string ListSoftwaresRequest::getAccessKeyId()const
 void ListSoftwaresRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

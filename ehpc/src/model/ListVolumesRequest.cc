@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListVolumesRequest;
 ListVolumesRequest::ListVolumesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListVolumes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListVolumesRequest::~ListVolumesRequest()
@@ -35,7 +35,7 @@ int ListVolumesRequest::getPageNumber()const
 void ListVolumesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListVolumesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ListVolumesRequest::getAccessKeyId()const
 void ListVolumesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListVolumesRequest::getPageSize()const
@@ -57,6 +57,6 @@ int ListVolumesRequest::getPageSize()const
 void ListVolumesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

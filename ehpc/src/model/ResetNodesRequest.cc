@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ResetNodesRequest;
 ResetNodesRequest::ResetNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ResetNodes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ResetNodesRequest::~ResetNodesRequest()
@@ -37,8 +37,8 @@ void ResetNodesRequest::setInstance(const std::vector<Instance>& instance)
 	instance_ = instance;
 	for(int dep1 = 0; dep1!= instance.size(); dep1++) {
 		auto instanceObj = instance.at(dep1);
-		std::string instanceObjStr = "Instance." + std::to_string(dep1);
-		setCoreParameter(instanceObjStr + ".Id", instanceObj.id);
+		std::string instanceObjStr = "Instance." + std::to_string(dep1 + 1);
+		setParameter(instanceObjStr + ".Id", instanceObj.id);
 	}
 }
 
@@ -50,7 +50,7 @@ std::string ResetNodesRequest::getClusterId()const
 void ResetNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ResetNodesRequest::getAccessKeyId()const
@@ -61,6 +61,6 @@ std::string ResetNodesRequest::getAccessKeyId()const
 void ResetNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

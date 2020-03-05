@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::BindAccountToClusterUserRequest;
 BindAccountToClusterUserRequest::BindAccountToClusterUserRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "BindAccountToClusterUser")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 BindAccountToClusterUserRequest::~BindAccountToClusterUserRequest()
@@ -35,7 +35,7 @@ std::string BindAccountToClusterUserRequest::getUserPwd()const
 void BindAccountToClusterUserRequest::setUserPwd(const std::string& userPwd)
 {
 	userPwd_ = userPwd;
-	setCoreParameter("UserPwd", userPwd);
+	setParameter("UserPwd", userPwd);
 }
 
 std::string BindAccountToClusterUserRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string BindAccountToClusterUserRequest::getClusterId()const
 void BindAccountToClusterUserRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string BindAccountToClusterUserRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string BindAccountToClusterUserRequest::getAccessKeyId()const
 void BindAccountToClusterUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BindAccountToClusterUserRequest::getAccountName()const
@@ -68,7 +68,7 @@ std::string BindAccountToClusterUserRequest::getAccountName()const
 void BindAccountToClusterUserRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setParameter("AccountName", accountName);
 }
 
 std::string BindAccountToClusterUserRequest::getAccountUid()const
@@ -79,7 +79,7 @@ std::string BindAccountToClusterUserRequest::getAccountUid()const
 void BindAccountToClusterUserRequest::setAccountUid(const std::string& accountUid)
 {
 	accountUid_ = accountUid;
-	setCoreParameter("AccountUid", accountUid);
+	setParameter("AccountUid", accountUid);
 }
 
 std::string BindAccountToClusterUserRequest::getUserName()const
@@ -90,6 +90,6 @@ std::string BindAccountToClusterUserRequest::getUserName()const
 void BindAccountToClusterUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

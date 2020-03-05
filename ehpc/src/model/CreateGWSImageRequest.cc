@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::CreateGWSImageRequest;
 CreateGWSImageRequest::CreateGWSImageRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "CreateGWSImage")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 CreateGWSImageRequest::~CreateGWSImageRequest()
@@ -35,7 +35,7 @@ std::string CreateGWSImageRequest::getAccessKeyId()const
 void CreateGWSImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateGWSImageRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string CreateGWSImageRequest::getInstanceId()const
 void CreateGWSImageRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateGWSImageRequest::getName()const
@@ -57,6 +57,6 @@ std::string CreateGWSImageRequest::getName()const
 void CreateGWSImageRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

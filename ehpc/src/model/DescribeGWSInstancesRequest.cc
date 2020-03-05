@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeGWSInstancesRequest;
 DescribeGWSInstancesRequest::DescribeGWSInstancesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeGWSInstances")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeGWSInstancesRequest::~DescribeGWSInstancesRequest()
@@ -35,7 +35,7 @@ std::string DescribeGWSInstancesRequest::getClusterId()const
 void DescribeGWSInstancesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int DescribeGWSInstancesRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeGWSInstancesRequest::getPageNumber()const
 void DescribeGWSInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGWSInstancesRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DescribeGWSInstancesRequest::getAccessKeyId()const
 void DescribeGWSInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeGWSInstancesRequest::getInstanceId()const
@@ -68,7 +68,7 @@ std::string DescribeGWSInstancesRequest::getInstanceId()const
 void DescribeGWSInstancesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int DescribeGWSInstancesRequest::getPageSize()const
@@ -79,6 +79,6 @@ int DescribeGWSInstancesRequest::getPageSize()const
 void DescribeGWSInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

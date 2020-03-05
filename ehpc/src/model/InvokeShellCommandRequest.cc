@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::InvokeShellCommandRequest;
 InvokeShellCommandRequest::InvokeShellCommandRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "InvokeShellCommand")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 InvokeShellCommandRequest::~InvokeShellCommandRequest()
@@ -37,8 +37,8 @@ void InvokeShellCommandRequest::setInstance(const std::vector<Instance>& instanc
 	instance_ = instance;
 	for(int dep1 = 0; dep1!= instance.size(); dep1++) {
 		auto instanceObj = instance.at(dep1);
-		std::string instanceObjStr = "Instance." + std::to_string(dep1);
-		setCoreParameter(instanceObjStr + ".Id", instanceObj.id);
+		std::string instanceObjStr = "Instance." + std::to_string(dep1 + 1);
+		setParameter(instanceObjStr + ".Id", instanceObj.id);
 	}
 }
 
@@ -50,7 +50,7 @@ std::string InvokeShellCommandRequest::getWorkingDir()const
 void InvokeShellCommandRequest::setWorkingDir(const std::string& workingDir)
 {
 	workingDir_ = workingDir;
-	setCoreParameter("WorkingDir", workingDir);
+	setParameter("WorkingDir", workingDir);
 }
 
 std::string InvokeShellCommandRequest::getClusterId()const
@@ -61,7 +61,7 @@ std::string InvokeShellCommandRequest::getClusterId()const
 void InvokeShellCommandRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string InvokeShellCommandRequest::getCommand()const
@@ -72,7 +72,7 @@ std::string InvokeShellCommandRequest::getCommand()const
 void InvokeShellCommandRequest::setCommand(const std::string& command)
 {
 	command_ = command;
-	setCoreParameter("Command", command);
+	setParameter("Command", command);
 }
 
 int InvokeShellCommandRequest::getTimeout()const
@@ -83,7 +83,7 @@ int InvokeShellCommandRequest::getTimeout()const
 void InvokeShellCommandRequest::setTimeout(int timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", std::to_string(timeout));
+	setParameter("Timeout", std::to_string(timeout));
 }
 
 std::string InvokeShellCommandRequest::getAccessKeyId()const
@@ -94,6 +94,6 @@ std::string InvokeShellCommandRequest::getAccessKeyId()const
 void InvokeShellCommandRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

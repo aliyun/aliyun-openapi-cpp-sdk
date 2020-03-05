@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT AddUsersRequest : public RpcServiceRequest
 			{
+			public:
 				struct User
 				{
 					std::string password;

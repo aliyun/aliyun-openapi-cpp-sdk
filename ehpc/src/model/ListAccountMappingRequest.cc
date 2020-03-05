@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListAccountMappingRequest;
 ListAccountMappingRequest::ListAccountMappingRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListAccountMapping")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListAccountMappingRequest::~ListAccountMappingRequest()
@@ -35,7 +35,7 @@ std::string ListAccountMappingRequest::getClusterId()const
 void ListAccountMappingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListAccountMappingRequest::getAccessKeyId()const
@@ -46,6 +46,6 @@ std::string ListAccountMappingRequest::getAccessKeyId()const
 void ListAccountMappingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

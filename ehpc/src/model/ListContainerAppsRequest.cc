@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListContainerAppsRequest;
 ListContainerAppsRequest::ListContainerAppsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListContainerApps")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListContainerAppsRequest::~ListContainerAppsRequest()
@@ -35,7 +35,7 @@ int ListContainerAppsRequest::getPageNumber()const
 void ListContainerAppsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListContainerAppsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ListContainerAppsRequest::getAccessKeyId()const
 void ListContainerAppsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListContainerAppsRequest::getPageSize()const
@@ -57,6 +57,6 @@ int ListContainerAppsRequest::getPageSize()const
 void ListContainerAppsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

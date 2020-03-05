@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT ModifyImageGatewayConfigRequest : public RpcServiceRequest
 			{
+			public:
 				struct Repo
 				{
 					std::string auth;

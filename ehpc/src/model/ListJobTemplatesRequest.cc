@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListJobTemplatesRequest;
 ListJobTemplatesRequest::ListJobTemplatesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListJobTemplates")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListJobTemplatesRequest::~ListJobTemplatesRequest()
@@ -35,7 +35,7 @@ int ListJobTemplatesRequest::getPageNumber()const
 void ListJobTemplatesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListJobTemplatesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ListJobTemplatesRequest::getAccessKeyId()const
 void ListJobTemplatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListJobTemplatesRequest::getName()const
@@ -57,7 +57,7 @@ std::string ListJobTemplatesRequest::getName()const
 void ListJobTemplatesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int ListJobTemplatesRequest::getPageSize()const
@@ -68,6 +68,6 @@ int ListJobTemplatesRequest::getPageSize()const
 void ListJobTemplatesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

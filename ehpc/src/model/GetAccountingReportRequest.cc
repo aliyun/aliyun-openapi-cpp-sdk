@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetAccountingReportRequest;
 GetAccountingReportRequest::GetAccountingReportRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetAccountingReport")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetAccountingReportRequest::~GetAccountingReportRequest()
@@ -35,7 +35,7 @@ std::string GetAccountingReportRequest::getReportType()const
 void GetAccountingReportRequest::setReportType(const std::string& reportType)
 {
 	reportType_ = reportType;
-	setCoreParameter("ReportType", reportType);
+	setParameter("ReportType", reportType);
 }
 
 int GetAccountingReportRequest::getEndTime()const
@@ -46,7 +46,7 @@ int GetAccountingReportRequest::getEndTime()const
 void GetAccountingReportRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string GetAccountingReportRequest::getFilterValue()const
@@ -57,7 +57,18 @@ std::string GetAccountingReportRequest::getFilterValue()const
 void GetAccountingReportRequest::setFilterValue(const std::string& filterValue)
 {
 	filterValue_ = filterValue;
-	setCoreParameter("FilterValue", filterValue);
+	setParameter("FilterValue", filterValue);
+}
+
+std::string GetAccountingReportRequest::getDim()const
+{
+	return dim_;
+}
+
+void GetAccountingReportRequest::setDim(const std::string& dim)
+{
+	dim_ = dim;
+	setParameter("Dim", dim);
 }
 
 std::string GetAccountingReportRequest::getClusterId()const
@@ -68,7 +79,7 @@ std::string GetAccountingReportRequest::getClusterId()const
 void GetAccountingReportRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int GetAccountingReportRequest::getStartTime()const
@@ -79,7 +90,18 @@ int GetAccountingReportRequest::getStartTime()const
 void GetAccountingReportRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
+}
+
+int GetAccountingReportRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void GetAccountingReportRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetAccountingReportRequest::getAccessKeyId()const
@@ -90,6 +112,28 @@ std::string GetAccountingReportRequest::getAccessKeyId()const
 void GetAccountingReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetAccountingReportRequest::getJobId()const
+{
+	return jobId_;
+}
+
+void GetAccountingReportRequest::setJobId(const std::string& jobId)
+{
+	jobId_ = jobId;
+	setParameter("JobId", jobId);
+}
+
+int GetAccountingReportRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void GetAccountingReportRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

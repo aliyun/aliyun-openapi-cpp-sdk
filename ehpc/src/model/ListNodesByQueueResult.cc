@@ -79,6 +79,8 @@ void ListNodesByQueueResult::parse(const std::string &payload)
 			nodesObject.zoneId = valueNodesNodeInfo["ZoneId"].asString();
 		if(!valueNodesNodeInfo["VSwitchId"].isNull())
 			nodesObject.vSwitchId = valueNodesNodeInfo["VSwitchId"].asString();
+		if(!valueNodesNodeInfo["HtEnabled"].isNull())
+			nodesObject.htEnabled = valueNodesNodeInfo["HtEnabled"].asString() == "true";
 		auto totalResourcesNode = value["TotalResources"];
 		if(!totalResourcesNode["Cpu"].isNull())
 			nodesObject.totalResources.cpu = std::stoi(totalResourcesNode["Cpu"].asString());

@@ -41,11 +41,14 @@ namespace AlibabaCloud
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
 				std::string getBaseOsTag()const;
 				void setBaseOsTag(const std::string& baseOsTag);
+				std::string getInstanceType()const;
+				void setInstanceType(const std::string& instanceType);
 
             private:
 				std::string accessKeyId_;
 				std::string imageOwnerAlias_;
 				std::string baseOsTag_;
+				std::string instanceType_;
 
 			};
 		}

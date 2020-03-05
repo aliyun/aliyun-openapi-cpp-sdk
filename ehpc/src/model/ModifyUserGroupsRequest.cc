@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ModifyUserGroupsRequest;
 ModifyUserGroupsRequest::ModifyUserGroupsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyUserGroups")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ModifyUserGroupsRequest::~ModifyUserGroupsRequest()
@@ -35,7 +35,7 @@ std::string ModifyUserGroupsRequest::getClusterId()const
 void ModifyUserGroupsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyUserGroupsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyUserGroupsRequest::getAccessKeyId()const
 void ModifyUserGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<ModifyUserGroupsRequest::User> ModifyUserGroupsRequest::getUser()const
@@ -59,9 +59,9 @@ void ModifyUserGroupsRequest::setUser(const std::vector<User>& user)
 	user_ = user;
 	for(int dep1 = 0; dep1!= user.size(); dep1++) {
 		auto userObj = user.at(dep1);
-		std::string userObjStr = "User." + std::to_string(dep1);
-		setCoreParameter(userObjStr + ".Name", userObj.name);
-		setCoreParameter(userObjStr + ".Group", userObj.group);
+		std::string userObjStr = "User." + std::to_string(dep1 + 1);
+		setParameter(userObjStr + ".Name", userObj.name);
+		setParameter(userObjStr + ".Group", userObj.group);
 	}
 }
 

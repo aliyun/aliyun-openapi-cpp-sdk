@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::EditJobTemplateRequest;
 EditJobTemplateRequest::EditJobTemplateRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "EditJobTemplate")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 EditJobTemplateRequest::~EditJobTemplateRequest()
@@ -35,7 +35,7 @@ std::string EditJobTemplateRequest::getStderrRedirectPath()const
 void EditJobTemplateRequest::setStderrRedirectPath(const std::string& stderrRedirectPath)
 {
 	stderrRedirectPath_ = stderrRedirectPath;
-	setCoreParameter("StderrRedirectPath", stderrRedirectPath);
+	setParameter("StderrRedirectPath", stderrRedirectPath);
 }
 
 std::string EditJobTemplateRequest::getCommandLine()const
@@ -46,7 +46,7 @@ std::string EditJobTemplateRequest::getCommandLine()const
 void EditJobTemplateRequest::setCommandLine(const std::string& commandLine)
 {
 	commandLine_ = commandLine;
-	setCoreParameter("CommandLine", commandLine);
+	setParameter("CommandLine", commandLine);
 }
 
 std::string EditJobTemplateRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string EditJobTemplateRequest::getAccessKeyId()const
 void EditJobTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string EditJobTemplateRequest::getArrayRequest()const
@@ -68,7 +68,7 @@ std::string EditJobTemplateRequest::getArrayRequest()const
 void EditJobTemplateRequest::setArrayRequest(const std::string& arrayRequest)
 {
 	arrayRequest_ = arrayRequest;
-	setCoreParameter("ArrayRequest", arrayRequest);
+	setParameter("ArrayRequest", arrayRequest);
 }
 
 std::string EditJobTemplateRequest::getPackagePath()const
@@ -79,7 +79,7 @@ std::string EditJobTemplateRequest::getPackagePath()const
 void EditJobTemplateRequest::setPackagePath(const std::string& packagePath)
 {
 	packagePath_ = packagePath;
-	setCoreParameter("PackagePath", packagePath);
+	setParameter("PackagePath", packagePath);
 }
 
 std::string EditJobTemplateRequest::getStdoutRedirectPath()const
@@ -90,7 +90,7 @@ std::string EditJobTemplateRequest::getStdoutRedirectPath()const
 void EditJobTemplateRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
 {
 	stdoutRedirectPath_ = stdoutRedirectPath;
-	setCoreParameter("StdoutRedirectPath", stdoutRedirectPath);
+	setParameter("StdoutRedirectPath", stdoutRedirectPath);
 }
 
 std::string EditJobTemplateRequest::getVariables()const
@@ -101,7 +101,7 @@ std::string EditJobTemplateRequest::getVariables()const
 void EditJobTemplateRequest::setVariables(const std::string& variables)
 {
 	variables_ = variables;
-	setCoreParameter("Variables", variables);
+	setParameter("Variables", variables);
 }
 
 std::string EditJobTemplateRequest::getRunasUser()const
@@ -112,7 +112,7 @@ std::string EditJobTemplateRequest::getRunasUser()const
 void EditJobTemplateRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
-	setCoreParameter("RunasUser", runasUser);
+	setParameter("RunasUser", runasUser);
 }
 
 bool EditJobTemplateRequest::getReRunable()const
@@ -123,7 +123,7 @@ bool EditJobTemplateRequest::getReRunable()const
 void EditJobTemplateRequest::setReRunable(bool reRunable)
 {
 	reRunable_ = reRunable;
-	setCoreParameter("ReRunable", reRunable ? "true" : "false");
+	setParameter("ReRunable", reRunable ? "true" : "false");
 }
 
 std::string EditJobTemplateRequest::getTemplateId()const
@@ -134,7 +134,7 @@ std::string EditJobTemplateRequest::getTemplateId()const
 void EditJobTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setParameter("TemplateId", templateId);
 }
 
 int EditJobTemplateRequest::getPriority()const
@@ -145,7 +145,7 @@ int EditJobTemplateRequest::getPriority()const
 void EditJobTemplateRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 std::string EditJobTemplateRequest::getName()const
@@ -156,6 +156,6 @@ std::string EditJobTemplateRequest::getName()const
 void EditJobTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

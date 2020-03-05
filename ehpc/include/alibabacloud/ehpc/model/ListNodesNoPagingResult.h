@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					TotalResources totalResources;
 					std::string expiredTime;
 					std::string imageId;
+					bool htEnabled;
 					std::string id;
 					std::string regionId;
 					std::string lockReason;

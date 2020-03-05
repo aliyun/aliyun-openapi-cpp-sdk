@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ModifyContainerAppAttributesRequest;
 ModifyContainerAppAttributesRequest::ModifyContainerAppAttributesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyContainerAppAttributes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ModifyContainerAppAttributesRequest::~ModifyContainerAppAttributesRequest()
@@ -35,7 +35,7 @@ std::string ModifyContainerAppAttributesRequest::getDescription()const
 void ModifyContainerAppAttributesRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyContainerAppAttributesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyContainerAppAttributesRequest::getAccessKeyId()const
 void ModifyContainerAppAttributesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyContainerAppAttributesRequest::getContainerId()const
@@ -57,6 +57,6 @@ std::string ModifyContainerAppAttributesRequest::getContainerId()const
 void ModifyContainerAppAttributesRequest::setContainerId(const std::string& containerId)
 {
 	containerId_ = containerId;
-	setCoreParameter("ContainerId", containerId);
+	setParameter("ContainerId", containerId);
 }
 

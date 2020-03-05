@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteGWSClusterRequest;
 DeleteGWSClusterRequest::DeleteGWSClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteGWSCluster")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DeleteGWSClusterRequest::~DeleteGWSClusterRequest()
@@ -35,7 +35,7 @@ std::string DeleteGWSClusterRequest::getClusterId()const
 void DeleteGWSClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DeleteGWSClusterRequest::getAccessKeyId()const
@@ -46,6 +46,6 @@ std::string DeleteGWSClusterRequest::getAccessKeyId()const
 void DeleteGWSClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

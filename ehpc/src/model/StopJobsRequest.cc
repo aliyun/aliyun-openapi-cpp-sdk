@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::StopJobsRequest;
 StopJobsRequest::StopJobsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StopJobs")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 StopJobsRequest::~StopJobsRequest()
@@ -35,7 +35,7 @@ std::string StopJobsRequest::getJobs()const
 void StopJobsRequest::setJobs(const std::string& jobs)
 {
 	jobs_ = jobs;
-	setCoreParameter("Jobs", jobs);
+	setParameter("Jobs", jobs);
 }
 
 std::string StopJobsRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string StopJobsRequest::getClusterId()const
 void StopJobsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string StopJobsRequest::getAccessKeyId()const
@@ -57,6 +57,6 @@ std::string StopJobsRequest::getAccessKeyId()const
 void StopJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

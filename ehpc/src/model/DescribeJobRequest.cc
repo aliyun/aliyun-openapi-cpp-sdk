@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeJobRequest;
 DescribeJobRequest::DescribeJobRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeJob")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeJobRequest::~DescribeJobRequest()
@@ -35,7 +35,7 @@ std::string DescribeJobRequest::getClusterId()const
 void DescribeJobRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeJobRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeJobRequest::getAccessKeyId()const
 void DescribeJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeJobRequest::getJobId()const
@@ -57,6 +57,6 @@ std::string DescribeJobRequest::getJobId()const
 void DescribeJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 

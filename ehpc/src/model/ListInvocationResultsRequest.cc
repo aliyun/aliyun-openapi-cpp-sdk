@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListInvocationResultsRequest;
 ListInvocationResultsRequest::ListInvocationResultsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListInvocationResults")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListInvocationResultsRequest::~ListInvocationResultsRequest()
@@ -37,8 +37,8 @@ void ListInvocationResultsRequest::setInstance(const std::vector<Instance>& inst
 	instance_ = instance;
 	for(int dep1 = 0; dep1!= instance.size(); dep1++) {
 		auto instanceObj = instance.at(dep1);
-		std::string instanceObjStr = "Instance." + std::to_string(dep1);
-		setCoreParameter(instanceObjStr + ".Id", instanceObj.id);
+		std::string instanceObjStr = "Instance." + std::to_string(dep1 + 1);
+		setParameter(instanceObjStr + ".Id", instanceObj.id);
 	}
 }
 
@@ -50,7 +50,7 @@ std::string ListInvocationResultsRequest::getClusterId()const
 void ListInvocationResultsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListInvocationResultsRequest::getCommandId()const
@@ -61,7 +61,7 @@ std::string ListInvocationResultsRequest::getCommandId()const
 void ListInvocationResultsRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", commandId);
+	setParameter("CommandId", commandId);
 }
 
 int ListInvocationResultsRequest::getPageNumber()const
@@ -72,7 +72,7 @@ int ListInvocationResultsRequest::getPageNumber()const
 void ListInvocationResultsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListInvocationResultsRequest::getAccessKeyId()const
@@ -83,7 +83,7 @@ std::string ListInvocationResultsRequest::getAccessKeyId()const
 void ListInvocationResultsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListInvocationResultsRequest::getInvokeRecordStatus()const
@@ -94,7 +94,7 @@ std::string ListInvocationResultsRequest::getInvokeRecordStatus()const
 void ListInvocationResultsRequest::setInvokeRecordStatus(const std::string& invokeRecordStatus)
 {
 	invokeRecordStatus_ = invokeRecordStatus;
-	setCoreParameter("InvokeRecordStatus", invokeRecordStatus);
+	setParameter("InvokeRecordStatus", invokeRecordStatus);
 }
 
 int ListInvocationResultsRequest::getPageSize()const
@@ -105,6 +105,6 @@ int ListInvocationResultsRequest::getPageSize()const
 void ListInvocationResultsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

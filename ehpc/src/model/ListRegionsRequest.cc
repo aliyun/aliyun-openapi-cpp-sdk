@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListRegionsRequest;
 ListRegionsRequest::ListRegionsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListRegions")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListRegionsRequest::~ListRegionsRequest()
@@ -35,6 +35,6 @@ std::string ListRegionsRequest::getAccessKeyId()const
 void ListRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

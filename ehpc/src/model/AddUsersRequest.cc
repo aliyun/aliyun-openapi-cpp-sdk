@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::AddUsersRequest;
 AddUsersRequest::AddUsersRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "AddUsers")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 AddUsersRequest::~AddUsersRequest()
@@ -35,7 +35,7 @@ std::string AddUsersRequest::getClusterId()const
 void AddUsersRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string AddUsersRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string AddUsersRequest::getAccessKeyId()const
 void AddUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<AddUsersRequest::User> AddUsersRequest::getUser()const
@@ -59,10 +59,10 @@ void AddUsersRequest::setUser(const std::vector<User>& user)
 	user_ = user;
 	for(int dep1 = 0; dep1!= user.size(); dep1++) {
 		auto userObj = user.at(dep1);
-		std::string userObjStr = "User." + std::to_string(dep1);
-		setCoreParameter(userObjStr + ".Password", userObj.password);
-		setCoreParameter(userObjStr + ".Name", userObj.name);
-		setCoreParameter(userObjStr + ".Group", userObj.group);
+		std::string userObjStr = "User." + std::to_string(dep1 + 1);
+		setParameter(userObjStr + ".Password", userObj.password);
+		setParameter(userObjStr + ".Name", userObj.name);
+		setParameter(userObjStr + ".Group", userObj.group);
 	}
 }
 

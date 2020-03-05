@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListInvocationStatusRequest;
 ListInvocationStatusRequest::ListInvocationStatusRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListInvocationStatus")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListInvocationStatusRequest::~ListInvocationStatusRequest()
@@ -35,7 +35,7 @@ std::string ListInvocationStatusRequest::getClusterId()const
 void ListInvocationStatusRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListInvocationStatusRequest::getCommandId()const
@@ -46,7 +46,7 @@ std::string ListInvocationStatusRequest::getCommandId()const
 void ListInvocationStatusRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", commandId);
+	setParameter("CommandId", commandId);
 }
 
 std::string ListInvocationStatusRequest::getAccessKeyId()const
@@ -57,6 +57,6 @@ std::string ListInvocationStatusRequest::getAccessKeyId()const
 void ListInvocationStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

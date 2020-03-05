@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::UninstallSoftwareRequest;
 UninstallSoftwareRequest::UninstallSoftwareRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "UninstallSoftware")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 UninstallSoftwareRequest::~UninstallSoftwareRequest()
@@ -35,7 +35,7 @@ std::string UninstallSoftwareRequest::getClusterId()const
 void UninstallSoftwareRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string UninstallSoftwareRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string UninstallSoftwareRequest::getAccessKeyId()const
 void UninstallSoftwareRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UninstallSoftwareRequest::getApplication()const
@@ -57,6 +57,6 @@ std::string UninstallSoftwareRequest::getApplication()const
 void UninstallSoftwareRequest::setApplication(const std::string& application)
 {
 	application_ = application;
-	setCoreParameter("Application", application);
+	setParameter("Application", application);
 }
 

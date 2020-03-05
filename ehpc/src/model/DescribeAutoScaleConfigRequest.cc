@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeAutoScaleConfigRequest;
 DescribeAutoScaleConfigRequest::DescribeAutoScaleConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeAutoScaleConfig")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeAutoScaleConfigRequest::~DescribeAutoScaleConfigRequest()
@@ -35,7 +35,7 @@ std::string DescribeAutoScaleConfigRequest::getClusterId()const
 void DescribeAutoScaleConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeAutoScaleConfigRequest::getAccessKeyId()const
@@ -46,6 +46,6 @@ std::string DescribeAutoScaleConfigRequest::getAccessKeyId()const
 void DescribeAutoScaleConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

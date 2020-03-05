@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT DescribePriceRequest : public RpcServiceRequest
 			{
+			public:
 				struct Commodities
 				{
 					int amount;

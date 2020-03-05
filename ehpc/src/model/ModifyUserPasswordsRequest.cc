@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ModifyUserPasswordsRequest;
 ModifyUserPasswordsRequest::ModifyUserPasswordsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyUserPasswords")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ModifyUserPasswordsRequest::~ModifyUserPasswordsRequest()
@@ -35,7 +35,7 @@ std::string ModifyUserPasswordsRequest::getClusterId()const
 void ModifyUserPasswordsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyUserPasswordsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyUserPasswordsRequest::getAccessKeyId()const
 void ModifyUserPasswordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<ModifyUserPasswordsRequest::User> ModifyUserPasswordsRequest::getUser()const
@@ -59,9 +59,9 @@ void ModifyUserPasswordsRequest::setUser(const std::vector<User>& user)
 	user_ = user;
 	for(int dep1 = 0; dep1!= user.size(); dep1++) {
 		auto userObj = user.at(dep1);
-		std::string userObjStr = "User." + std::to_string(dep1);
-		setCoreParameter(userObjStr + ".Password", userObj.password);
-		setCoreParameter(userObjStr + ".Name", userObj.name);
+		std::string userObjStr = "User." + std::to_string(dep1 + 1);
+		setParameter(userObjStr + ".Password", userObj.password);
+		setParameter(userObjStr + ".Name", userObj.name);
 	}
 }
 

@@ -987,6 +987,42 @@ EHPCClient::DescribeContainerAppOutcomeCallable EHPCClient::describeContainerApp
 	return task->get_future();
 }
 
+EHPCClient::DescribeGWSClusterPolicyOutcome EHPCClient::describeGWSClusterPolicy(const DescribeGWSClusterPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGWSClusterPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGWSClusterPolicyOutcome(DescribeGWSClusterPolicyResult(outcome.result()));
+	else
+		return DescribeGWSClusterPolicyOutcome(outcome.error());
+}
+
+void EHPCClient::describeGWSClusterPolicyAsync(const DescribeGWSClusterPolicyRequest& request, const DescribeGWSClusterPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGWSClusterPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::DescribeGWSClusterPolicyOutcomeCallable EHPCClient::describeGWSClusterPolicyCallable(const DescribeGWSClusterPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGWSClusterPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGWSClusterPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::DescribeGWSClustersOutcome EHPCClient::describeGWSClusters(const DescribeGWSClustersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3501,6 +3537,42 @@ EHPCClient::SetAutoScaleConfigOutcomeCallable EHPCClient::setAutoScaleConfigCall
 			[this, request]()
 			{
 			return this->setAutoScaleConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::SetGWSClusterPolicyOutcome EHPCClient::setGWSClusterPolicy(const SetGWSClusterPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetGWSClusterPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetGWSClusterPolicyOutcome(SetGWSClusterPolicyResult(outcome.result()));
+	else
+		return SetGWSClusterPolicyOutcome(outcome.error());
+}
+
+void EHPCClient::setGWSClusterPolicyAsync(const SetGWSClusterPolicyRequest& request, const SetGWSClusterPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setGWSClusterPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::SetGWSClusterPolicyOutcomeCallable EHPCClient::setGWSClusterPolicyCallable(const SetGWSClusterPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetGWSClusterPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->setGWSClusterPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

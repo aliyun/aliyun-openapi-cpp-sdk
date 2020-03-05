@@ -57,6 +57,8 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 			queuesObject.enableAutoGrow = valueQueuesQueueInfo["EnableAutoGrow"].asString() == "true";
 		if(!valueQueuesQueueInfo["EnableAutoShrink"].isNull())
 			queuesObject.enableAutoShrink = valueQueuesQueueInfo["EnableAutoShrink"].asString() == "true";
+		if(!valueQueuesQueueInfo["MaxNodesInQueue"].isNull())
+			queuesObject.maxNodesInQueue = std::stoi(valueQueuesQueueInfo["MaxNodesInQueue"].asString());
 		auto allInstanceTypesNode = allQueuesNode["InstanceTypes"]["InstanceTypeInfo"];
 		for (auto allQueuesNodeInstanceTypesInstanceTypeInfo : allInstanceTypesNode)
 		{
@@ -107,6 +109,8 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 		spotStrategy_ = value["SpotStrategy"].asString();
 	if(!value["SpotPriceLimit"].isNull())
 		spotPriceLimit_ = std::stof(value["SpotPriceLimit"].asString());
+	if(!value["ImageId"].isNull())
+		imageId_ = value["ImageId"].asString();
 
 }
 
@@ -163,6 +167,11 @@ std::string GetAutoScaleConfigResult::getUid()const
 int GetAutoScaleConfigResult::getGrowTimeoutInMinutes()const
 {
 	return growTimeoutInMinutes_;
+}
+
+std::string GetAutoScaleConfigResult::getImageId()const
+{
+	return imageId_;
 }
 
 int GetAutoScaleConfigResult::getShrinkIntervalInMinutes()const

@@ -44,6 +44,14 @@ void GetAccountingReportResult::parse(const std::string &payload)
 		data_.push_back(item.asString());
 	if(!value["Metrics"].isNull())
 		metrics_ = value["Metrics"].asString();
+	if(!value["TotalCoreTime"].isNull())
+		totalCoreTime_ = std::stoi(value["TotalCoreTime"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 
@@ -52,8 +60,28 @@ std::string GetAccountingReportResult::getMetrics()const
 	return metrics_;
 }
 
+int GetAccountingReportResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+int GetAccountingReportResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int GetAccountingReportResult::getPageNumber()const
+{
+	return pageNumber_;
+}
+
 std::vector<std::string> GetAccountingReportResult::getData()const
 {
 	return data_;
+}
+
+int GetAccountingReportResult::getTotalCoreTime()const
+{
+	return totalCoreTime_;
 }
 

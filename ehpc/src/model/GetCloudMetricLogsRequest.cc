@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetCloudMetricLogsRequest;
 GetCloudMetricLogsRequest::GetCloudMetricLogsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetCloudMetricLogs")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetCloudMetricLogsRequest::~GetCloudMetricLogsRequest()
@@ -35,7 +35,7 @@ std::string GetCloudMetricLogsRequest::getMetricScope()const
 void GetCloudMetricLogsRequest::setMetricScope(const std::string& metricScope)
 {
 	metricScope_ = metricScope;
-	setCoreParameter("MetricScope", metricScope);
+	setParameter("MetricScope", metricScope);
 }
 
 std::string GetCloudMetricLogsRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string GetCloudMetricLogsRequest::getClusterId()const
 void GetCloudMetricLogsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int GetCloudMetricLogsRequest::getAggregationInterval()const
@@ -57,7 +57,7 @@ int GetCloudMetricLogsRequest::getAggregationInterval()const
 void GetCloudMetricLogsRequest::setAggregationInterval(int aggregationInterval)
 {
 	aggregationInterval_ = aggregationInterval;
-	setCoreParameter("AggregationInterval", std::to_string(aggregationInterval));
+	setParameter("AggregationInterval", std::to_string(aggregationInterval));
 }
 
 bool GetCloudMetricLogsRequest::getReverse()const
@@ -68,7 +68,7 @@ bool GetCloudMetricLogsRequest::getReverse()const
 void GetCloudMetricLogsRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse ? "true" : "false");
+	setParameter("Reverse", reverse ? "true" : "false");
 }
 
 std::string GetCloudMetricLogsRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string GetCloudMetricLogsRequest::getAccessKeyId()const
 void GetCloudMetricLogsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetCloudMetricLogsRequest::getAggregationType()const
@@ -90,7 +90,7 @@ std::string GetCloudMetricLogsRequest::getAggregationType()const
 void GetCloudMetricLogsRequest::setAggregationType(const std::string& aggregationType)
 {
 	aggregationType_ = aggregationType;
-	setCoreParameter("AggregationType", aggregationType);
+	setParameter("AggregationType", aggregationType);
 }
 
 std::string GetCloudMetricLogsRequest::getFilter()const
@@ -101,7 +101,7 @@ std::string GetCloudMetricLogsRequest::getFilter()const
 void GetCloudMetricLogsRequest::setFilter(const std::string& filter)
 {
 	filter_ = filter;
-	setCoreParameter("Filter", filter);
+	setParameter("Filter", filter);
 }
 
 std::string GetCloudMetricLogsRequest::getMetricCategories()const
@@ -112,7 +112,7 @@ std::string GetCloudMetricLogsRequest::getMetricCategories()const
 void GetCloudMetricLogsRequest::setMetricCategories(const std::string& metricCategories)
 {
 	metricCategories_ = metricCategories;
-	setCoreParameter("MetricCategories", metricCategories);
+	setParameter("MetricCategories", metricCategories);
 }
 
 int GetCloudMetricLogsRequest::getFrom()const
@@ -123,7 +123,7 @@ int GetCloudMetricLogsRequest::getFrom()const
 void GetCloudMetricLogsRequest::setFrom(int from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setParameter("From", std::to_string(from));
 }
 
 int GetCloudMetricLogsRequest::getTo()const
@@ -134,6 +134,6 @@ int GetCloudMetricLogsRequest::getTo()const
 void GetCloudMetricLogsRequest::setTo(int to)
 {
 	to_ = to;
-	setCoreParameter("To", std::to_string(to));
+	setParameter("To", std::to_string(to));
 }
 

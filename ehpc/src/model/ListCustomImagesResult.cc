@@ -74,6 +74,17 @@ void ListCustomImagesResult::parse(const std::string &payload)
 			imagesObject.baseOsTag.version = baseOsTagNode["Version"].asString();
 		if(!baseOsTagNode["Architecture"].isNull())
 			imagesObject.baseOsTag.architecture = baseOsTagNode["Architecture"].asString();
+		auto osTagNode = value["OsTag"];
+		if(!osTagNode["OsTag"].isNull())
+			imagesObject.osTag.osTag = osTagNode["OsTag"].asString();
+		if(!osTagNode["BaseOsTag"].isNull())
+			imagesObject.osTag.baseOsTag = osTagNode["BaseOsTag"].asString();
+		if(!osTagNode["Platform"].isNull())
+			imagesObject.osTag.platform = osTagNode["Platform"].asString();
+		if(!osTagNode["Version"].isNull())
+			imagesObject.osTag.version = osTagNode["Version"].asString();
+		if(!osTagNode["Architecture"].isNull())
+			imagesObject.osTag.architecture = osTagNode["Architecture"].asString();
 		images_.push_back(imagesObject);
 	}
 

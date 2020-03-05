@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListPreferredEcsTypesRequest;
 ListPreferredEcsTypesRequest::ListPreferredEcsTypesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListPreferredEcsTypes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListPreferredEcsTypesRequest::~ListPreferredEcsTypesRequest()
@@ -35,7 +35,7 @@ std::string ListPreferredEcsTypesRequest::getAccessKeyId()const
 void ListPreferredEcsTypesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListPreferredEcsTypesRequest::getSpotStrategy()const
@@ -46,7 +46,7 @@ std::string ListPreferredEcsTypesRequest::getSpotStrategy()const
 void ListPreferredEcsTypesRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setCoreParameter("SpotStrategy", spotStrategy);
+	setParameter("SpotStrategy", spotStrategy);
 }
 
 std::string ListPreferredEcsTypesRequest::getZoneId()const
@@ -57,7 +57,7 @@ std::string ListPreferredEcsTypesRequest::getZoneId()const
 void ListPreferredEcsTypesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string ListPreferredEcsTypesRequest::getInstanceChargeType()const
@@ -68,6 +68,6 @@ std::string ListPreferredEcsTypesRequest::getInstanceChargeType()const
 void ListPreferredEcsTypesRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 

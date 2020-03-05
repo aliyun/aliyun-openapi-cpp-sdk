@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeContainerAppRequest;
 DescribeContainerAppRequest::DescribeContainerAppRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeContainerApp")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeContainerAppRequest::~DescribeContainerAppRequest()
@@ -35,7 +35,7 @@ std::string DescribeContainerAppRequest::getAccessKeyId()const
 void DescribeContainerAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeContainerAppRequest::getContainerId()const
@@ -46,6 +46,6 @@ std::string DescribeContainerAppRequest::getContainerId()const
 void DescribeContainerAppRequest::setContainerId(const std::string& containerId)
 {
 	containerId_ = containerId;
-	setCoreParameter("ContainerId", containerId);
+	setParameter("ContainerId", containerId);
 }
 

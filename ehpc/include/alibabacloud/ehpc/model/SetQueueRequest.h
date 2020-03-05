@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT SetQueueRequest : public RpcServiceRequest
 			{
+			public:
 				struct Node
 				{
 					std::string name;

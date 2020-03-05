@@ -74,6 +74,8 @@
 #include "model/DescribeClusterResult.h"
 #include "model/DescribeContainerAppRequest.h"
 #include "model/DescribeContainerAppResult.h"
+#include "model/DescribeGWSClusterPolicyRequest.h"
+#include "model/DescribeGWSClusterPolicyResult.h"
 #include "model/DescribeGWSClustersRequest.h"
 #include "model/DescribeGWSClustersResult.h"
 #include "model/DescribeGWSImagesRequest.h"
@@ -214,6 +216,8 @@
 #include "model/RunCloudMetricProfilingResult.h"
 #include "model/SetAutoScaleConfigRequest.h"
 #include "model/SetAutoScaleConfigResult.h"
+#include "model/SetGWSClusterPolicyRequest.h"
+#include "model/SetGWSClusterPolicyResult.h"
 #include "model/SetGWSInstanceNameRequest.h"
 #include "model/SetGWSInstanceNameResult.h"
 #include "model/SetGWSInstanceUserRequest.h"
@@ -339,6 +343,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeContainerAppResult> DescribeContainerAppOutcome;
 			typedef std::future<DescribeContainerAppOutcome> DescribeContainerAppOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DescribeContainerAppRequest&, const DescribeContainerAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerAppAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGWSClusterPolicyResult> DescribeGWSClusterPolicyOutcome;
+			typedef std::future<DescribeGWSClusterPolicyOutcome> DescribeGWSClusterPolicyOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::DescribeGWSClusterPolicyRequest&, const DescribeGWSClusterPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGWSClusterPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeGWSClustersResult> DescribeGWSClustersOutcome;
 			typedef std::future<DescribeGWSClustersOutcome> DescribeGWSClustersOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DescribeGWSClustersRequest&, const DescribeGWSClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGWSClustersAsyncHandler;
@@ -549,6 +556,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetAutoScaleConfigResult> SetAutoScaleConfigOutcome;
 			typedef std::future<SetAutoScaleConfigOutcome> SetAutoScaleConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::SetAutoScaleConfigRequest&, const SetAutoScaleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoScaleConfigAsyncHandler;
+			typedef Outcome<Error, Model::SetGWSClusterPolicyResult> SetGWSClusterPolicyOutcome;
+			typedef std::future<SetGWSClusterPolicyOutcome> SetGWSClusterPolicyOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::SetGWSClusterPolicyRequest&, const SetGWSClusterPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGWSClusterPolicyAsyncHandler;
 			typedef Outcome<Error, Model::SetGWSInstanceNameResult> SetGWSInstanceNameOutcome;
 			typedef std::future<SetGWSInstanceNameOutcome> SetGWSInstanceNameOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::SetGWSInstanceNameRequest&, const SetGWSInstanceNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGWSInstanceNameAsyncHandler;
@@ -689,6 +699,9 @@ namespace AlibabaCloud
 			DescribeContainerAppOutcome describeContainerApp(const Model::DescribeContainerAppRequest &request)const;
 			void describeContainerAppAsync(const Model::DescribeContainerAppRequest& request, const DescribeContainerAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeContainerAppOutcomeCallable describeContainerAppCallable(const Model::DescribeContainerAppRequest& request) const;
+			DescribeGWSClusterPolicyOutcome describeGWSClusterPolicy(const Model::DescribeGWSClusterPolicyRequest &request)const;
+			void describeGWSClusterPolicyAsync(const Model::DescribeGWSClusterPolicyRequest& request, const DescribeGWSClusterPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGWSClusterPolicyOutcomeCallable describeGWSClusterPolicyCallable(const Model::DescribeGWSClusterPolicyRequest& request) const;
 			DescribeGWSClustersOutcome describeGWSClusters(const Model::DescribeGWSClustersRequest &request)const;
 			void describeGWSClustersAsync(const Model::DescribeGWSClustersRequest& request, const DescribeGWSClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGWSClustersOutcomeCallable describeGWSClustersCallable(const Model::DescribeGWSClustersRequest& request) const;
@@ -899,6 +912,9 @@ namespace AlibabaCloud
 			SetAutoScaleConfigOutcome setAutoScaleConfig(const Model::SetAutoScaleConfigRequest &request)const;
 			void setAutoScaleConfigAsync(const Model::SetAutoScaleConfigRequest& request, const SetAutoScaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetAutoScaleConfigOutcomeCallable setAutoScaleConfigCallable(const Model::SetAutoScaleConfigRequest& request) const;
+			SetGWSClusterPolicyOutcome setGWSClusterPolicy(const Model::SetGWSClusterPolicyRequest &request)const;
+			void setGWSClusterPolicyAsync(const Model::SetGWSClusterPolicyRequest& request, const SetGWSClusterPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetGWSClusterPolicyOutcomeCallable setGWSClusterPolicyCallable(const Model::SetGWSClusterPolicyRequest& request) const;
 			SetGWSInstanceNameOutcome setGWSInstanceName(const Model::SetGWSInstanceNameRequest &request)const;
 			void setGWSInstanceNameAsync(const Model::SetGWSInstanceNameRequest& request, const SetGWSInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetGWSInstanceNameOutcomeCallable setGWSInstanceNameCallable(const Model::SetGWSInstanceNameRequest& request) const;

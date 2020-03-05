@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListClusterLogsRequest;
 ListClusterLogsRequest::ListClusterLogsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListClusterLogs")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListClusterLogsRequest::~ListClusterLogsRequest()
@@ -35,7 +35,7 @@ std::string ListClusterLogsRequest::getClusterId()const
 void ListClusterLogsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int ListClusterLogsRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int ListClusterLogsRequest::getPageNumber()const
 void ListClusterLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClusterLogsRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ListClusterLogsRequest::getAccessKeyId()const
 void ListClusterLogsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListClusterLogsRequest::getPageSize()const
@@ -68,6 +68,6 @@ int ListClusterLogsRequest::getPageSize()const
 void ListClusterLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

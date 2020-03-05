@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::CreateGWSClusterRequest;
 CreateGWSClusterRequest::CreateGWSClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "CreateGWSCluster")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 CreateGWSClusterRequest::~CreateGWSClusterRequest()
@@ -35,7 +35,7 @@ std::string CreateGWSClusterRequest::getAccessKeyId()const
 void CreateGWSClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateGWSClusterRequest::getClusterType()const
@@ -46,7 +46,7 @@ std::string CreateGWSClusterRequest::getClusterType()const
 void CreateGWSClusterRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
+	setParameter("ClusterType", clusterType);
 }
 
 std::string CreateGWSClusterRequest::getVpcId()const
@@ -57,7 +57,7 @@ std::string CreateGWSClusterRequest::getVpcId()const
 void CreateGWSClusterRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string CreateGWSClusterRequest::getName()const
@@ -68,6 +68,6 @@ std::string CreateGWSClusterRequest::getName()const
 void CreateGWSClusterRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

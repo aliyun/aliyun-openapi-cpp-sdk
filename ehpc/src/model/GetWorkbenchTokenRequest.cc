@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetWorkbenchTokenRequest;
 GetWorkbenchTokenRequest::GetWorkbenchTokenRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetWorkbenchToken")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetWorkbenchTokenRequest::~GetWorkbenchTokenRequest()
@@ -35,7 +35,7 @@ std::string GetWorkbenchTokenRequest::getClusterId()const
 void GetWorkbenchTokenRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string GetWorkbenchTokenRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string GetWorkbenchTokenRequest::getAccessKeyId()const
 void GetWorkbenchTokenRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetWorkbenchTokenRequest::getUserPassword()const
@@ -57,7 +57,7 @@ std::string GetWorkbenchTokenRequest::getUserPassword()const
 void GetWorkbenchTokenRequest::setUserPassword(const std::string& userPassword)
 {
 	userPassword_ = userPassword;
-	setCoreParameter("UserPassword", userPassword);
+	setParameter("UserPassword", userPassword);
 }
 
 std::string GetWorkbenchTokenRequest::getInstanceId()const
@@ -68,7 +68,7 @@ std::string GetWorkbenchTokenRequest::getInstanceId()const
 void GetWorkbenchTokenRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int GetWorkbenchTokenRequest::getPort()const
@@ -79,7 +79,7 @@ int GetWorkbenchTokenRequest::getPort()const
 void GetWorkbenchTokenRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setParameter("Port", std::to_string(port));
 }
 
 std::string GetWorkbenchTokenRequest::getAccountSessionTicket()const
@@ -90,7 +90,7 @@ std::string GetWorkbenchTokenRequest::getAccountSessionTicket()const
 void GetWorkbenchTokenRequest::setAccountSessionTicket(const std::string& accountSessionTicket)
 {
 	accountSessionTicket_ = accountSessionTicket;
-	setCoreParameter("AccountSessionTicket", accountSessionTicket);
+	setParameter("AccountSessionTicket", accountSessionTicket);
 }
 
 std::string GetWorkbenchTokenRequest::getAccountUid()const
@@ -101,7 +101,7 @@ std::string GetWorkbenchTokenRequest::getAccountUid()const
 void GetWorkbenchTokenRequest::setAccountUid(const std::string& accountUid)
 {
 	accountUid_ = accountUid;
-	setCoreParameter("AccountUid", accountUid);
+	setParameter("AccountUid", accountUid);
 }
 
 std::string GetWorkbenchTokenRequest::getUserName()const
@@ -112,6 +112,6 @@ std::string GetWorkbenchTokenRequest::getUserName()const
 void GetWorkbenchTokenRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

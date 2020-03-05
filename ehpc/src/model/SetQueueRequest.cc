@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::SetQueueRequest;
 SetQueueRequest::SetQueueRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "SetQueue")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 SetQueueRequest::~SetQueueRequest()
@@ -35,7 +35,7 @@ std::string SetQueueRequest::getQueueName()const
 void SetQueueRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setParameter("QueueName", queueName);
 }
 
 std::string SetQueueRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string SetQueueRequest::getClusterId()const
 void SetQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string SetQueueRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string SetQueueRequest::getAccessKeyId()const
 void SetQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<SetQueueRequest::Node> SetQueueRequest::getNode()const
@@ -70,8 +70,8 @@ void SetQueueRequest::setNode(const std::vector<Node>& node)
 	node_ = node;
 	for(int dep1 = 0; dep1!= node.size(); dep1++) {
 		auto nodeObj = node.at(dep1);
-		std::string nodeObjStr = "Node." + std::to_string(dep1);
-		setCoreParameter(nodeObjStr + ".Name", nodeObj.name);
+		std::string nodeObjStr = "Node." + std::to_string(dep1 + 1);
+		setParameter(nodeObjStr + ".Name", nodeObj.name);
 	}
 }
 

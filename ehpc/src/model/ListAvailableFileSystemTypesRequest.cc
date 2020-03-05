@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListAvailableFileSystemTypesRequest;
 ListAvailableFileSystemTypesRequest::ListAvailableFileSystemTypesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListAvailableFileSystemTypes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListAvailableFileSystemTypesRequest::~ListAvailableFileSystemTypesRequest()
@@ -35,6 +35,6 @@ std::string ListAvailableFileSystemTypesRequest::getAccessKeyId()const
 void ListAvailableFileSystemTypesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

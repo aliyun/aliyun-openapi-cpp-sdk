@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetVisualServiceStatusRequest;
 GetVisualServiceStatusRequest::GetVisualServiceStatusRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetVisualServiceStatus")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetVisualServiceStatusRequest::~GetVisualServiceStatusRequest()
@@ -35,7 +35,7 @@ std::string GetVisualServiceStatusRequest::getClusterId()const
 void GetVisualServiceStatusRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string GetVisualServiceStatusRequest::getAccessKeyId()const
@@ -46,6 +46,6 @@ std::string GetVisualServiceStatusRequest::getAccessKeyId()const
 void GetVisualServiceStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

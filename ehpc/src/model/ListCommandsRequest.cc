@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListCommandsRequest;
 ListCommandsRequest::ListCommandsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListCommands")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListCommandsRequest::~ListCommandsRequest()
@@ -35,7 +35,7 @@ std::string ListCommandsRequest::getClusterId()const
 void ListCommandsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListCommandsRequest::getCommandId()const
@@ -46,7 +46,7 @@ std::string ListCommandsRequest::getCommandId()const
 void ListCommandsRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", commandId);
+	setParameter("CommandId", commandId);
 }
 
 int ListCommandsRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int ListCommandsRequest::getPageNumber()const
 void ListCommandsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListCommandsRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string ListCommandsRequest::getAccessKeyId()const
 void ListCommandsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListCommandsRequest::getPageSize()const
@@ -79,6 +79,6 @@ int ListCommandsRequest::getPageSize()const
 void ListCommandsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

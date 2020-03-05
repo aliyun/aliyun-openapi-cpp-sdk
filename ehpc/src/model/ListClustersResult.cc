@@ -87,6 +87,8 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.nodePrefix = valueClustersClusterInfoSimple["NodePrefix"].asString();
 		if(!valueClustersClusterInfoSimple["NodeSuffix"].isNull())
 			clustersObject.nodeSuffix = valueClustersClusterInfoSimple["NodeSuffix"].asString();
+		if(!valueClustersClusterInfoSimple["BaseOsTag"].isNull())
+			clustersObject.baseOsTag = valueClustersClusterInfoSimple["BaseOsTag"].asString();
 		auto managersNode = value["Managers"];
 		if(!managersNode["Total"].isNull())
 			clustersObject.managers.total = std::stoi(managersNode["Total"].asString());

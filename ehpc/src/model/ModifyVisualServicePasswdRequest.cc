@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ModifyVisualServicePasswdRequest;
 ModifyVisualServicePasswdRequest::ModifyVisualServicePasswdRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyVisualServicePasswd")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ModifyVisualServicePasswdRequest::~ModifyVisualServicePasswdRequest()
@@ -35,7 +35,7 @@ std::string ModifyVisualServicePasswdRequest::getRunasUserPassword()const
 void ModifyVisualServicePasswdRequest::setRunasUserPassword(const std::string& runasUserPassword)
 {
 	runasUserPassword_ = runasUserPassword;
-	setCoreParameter("RunasUserPassword", runasUserPassword);
+	setParameter("RunasUserPassword", runasUserPassword);
 }
 
 std::string ModifyVisualServicePasswdRequest::getRunasUser()const
@@ -46,7 +46,7 @@ std::string ModifyVisualServicePasswdRequest::getRunasUser()const
 void ModifyVisualServicePasswdRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
-	setCoreParameter("RunasUser", runasUser);
+	setParameter("RunasUser", runasUser);
 }
 
 std::string ModifyVisualServicePasswdRequest::getClusterId()const
@@ -57,7 +57,7 @@ std::string ModifyVisualServicePasswdRequest::getClusterId()const
 void ModifyVisualServicePasswdRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyVisualServicePasswdRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string ModifyVisualServicePasswdRequest::getAccessKeyId()const
 void ModifyVisualServicePasswdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyVisualServicePasswdRequest::getPasswd()const
@@ -79,6 +79,6 @@ std::string ModifyVisualServicePasswdRequest::getPasswd()const
 void ModifyVisualServicePasswdRequest::setPasswd(const std::string& passwd)
 {
 	passwd_ = passwd;
-	setCoreParameter("Passwd", passwd);
+	setParameter("Passwd", passwd);
 }
 

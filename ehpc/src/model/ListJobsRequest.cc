@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListJobsRequest;
 ListJobsRequest::ListJobsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListJobs")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListJobsRequest::~ListJobsRequest()
@@ -35,7 +35,7 @@ std::string ListJobsRequest::getOwner()const
 void ListJobsRequest::setOwner(const std::string& owner)
 {
 	owner_ = owner;
-	setCoreParameter("Owner", owner);
+	setParameter("Owner", owner);
 }
 
 std::string ListJobsRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string ListJobsRequest::getClusterId()const
 void ListJobsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListJobsRequest::getRerunable()const
@@ -57,7 +57,7 @@ std::string ListJobsRequest::getRerunable()const
 void ListJobsRequest::setRerunable(const std::string& rerunable)
 {
 	rerunable_ = rerunable;
-	setCoreParameter("Rerunable", rerunable);
+	setParameter("Rerunable", rerunable);
 }
 
 int ListJobsRequest::getPageNumber()const
@@ -68,7 +68,7 @@ int ListJobsRequest::getPageNumber()const
 void ListJobsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListJobsRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string ListJobsRequest::getAccessKeyId()const
 void ListJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListJobsRequest::getPageSize()const
@@ -90,7 +90,7 @@ int ListJobsRequest::getPageSize()const
 void ListJobsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListJobsRequest::getState()const
@@ -101,6 +101,6 @@ std::string ListJobsRequest::getState()const
 void ListJobsRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 

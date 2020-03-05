@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteNodesRequest;
 DeleteNodesRequest::DeleteNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteNodes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DeleteNodesRequest::~DeleteNodesRequest()
@@ -37,8 +37,8 @@ void DeleteNodesRequest::setInstance(const std::vector<Instance>& instance)
 	instance_ = instance;
 	for(int dep1 = 0; dep1!= instance.size(); dep1++) {
 		auto instanceObj = instance.at(dep1);
-		std::string instanceObjStr = "Instance." + std::to_string(dep1);
-		setCoreParameter(instanceObjStr + ".Id", instanceObj.id);
+		std::string instanceObjStr = "Instance." + std::to_string(dep1 + 1);
+		setParameter(instanceObjStr + ".Id", instanceObj.id);
 	}
 }
 
@@ -50,7 +50,7 @@ std::string DeleteNodesRequest::getClusterId()const
 void DeleteNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DeleteNodesRequest::getAccessKeyId()const
@@ -61,7 +61,7 @@ std::string DeleteNodesRequest::getAccessKeyId()const
 void DeleteNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 bool DeleteNodesRequest::getReleaseInstance()const
@@ -72,6 +72,6 @@ bool DeleteNodesRequest::getReleaseInstance()const
 void DeleteNodesRequest::setReleaseInstance(bool releaseInstance)
 {
 	releaseInstance_ = releaseInstance;
-	setCoreParameter("ReleaseInstance", releaseInstance ? "true" : "false");
+	setParameter("ReleaseInstance", releaseInstance ? "true" : "false");
 }
 

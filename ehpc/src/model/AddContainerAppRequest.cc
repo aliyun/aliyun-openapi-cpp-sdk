@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::AddContainerAppRequest;
 AddContainerAppRequest::AddContainerAppRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "AddContainerApp")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 AddContainerAppRequest::~AddContainerAppRequest()
@@ -35,7 +35,7 @@ std::string AddContainerAppRequest::getDescription()const
 void AddContainerAppRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string AddContainerAppRequest::getRepository()const
@@ -46,7 +46,7 @@ std::string AddContainerAppRequest::getRepository()const
 void AddContainerAppRequest::setRepository(const std::string& repository)
 {
 	repository_ = repository;
-	setCoreParameter("Repository", repository);
+	setParameter("Repository", repository);
 }
 
 std::string AddContainerAppRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string AddContainerAppRequest::getAccessKeyId()const
 void AddContainerAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddContainerAppRequest::getContainerType()const
@@ -68,7 +68,7 @@ std::string AddContainerAppRequest::getContainerType()const
 void AddContainerAppRequest::setContainerType(const std::string& containerType)
 {
 	containerType_ = containerType;
-	setCoreParameter("ContainerType", containerType);
+	setParameter("ContainerType", containerType);
 }
 
 std::string AddContainerAppRequest::getName()const
@@ -79,7 +79,7 @@ std::string AddContainerAppRequest::getName()const
 void AddContainerAppRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string AddContainerAppRequest::getImageTag()const
@@ -90,6 +90,6 @@ std::string AddContainerAppRequest::getImageTag()const
 void AddContainerAppRequest::setImageTag(const std::string& imageTag)
 {
 	imageTag_ = imageTag;
-	setCoreParameter("ImageTag", imageTag);
+	setParameter("ImageTag", imageTag);
 }
 

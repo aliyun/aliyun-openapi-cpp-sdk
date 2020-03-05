@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetTotalUserReportRequest;
 GetTotalUserReportRequest::GetTotalUserReportRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetTotalUserReport")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetTotalUserReportRequest::~GetTotalUserReportRequest()
@@ -35,7 +35,7 @@ int GetTotalUserReportRequest::getEndTime()const
 void GetTotalUserReportRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string GetTotalUserReportRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string GetTotalUserReportRequest::getClusterId()const
 void GetTotalUserReportRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int GetTotalUserReportRequest::getStartTime()const
@@ -57,7 +57,7 @@ int GetTotalUserReportRequest::getStartTime()const
 void GetTotalUserReportRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string GetTotalUserReportRequest::getAccessKeyId()const
@@ -68,6 +68,6 @@ std::string GetTotalUserReportRequest::getAccessKeyId()const
 void GetTotalUserReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

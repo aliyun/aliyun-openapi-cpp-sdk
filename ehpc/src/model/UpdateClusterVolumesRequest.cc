@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::UpdateClusterVolumesRequest;
 UpdateClusterVolumesRequest::UpdateClusterVolumesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "UpdateClusterVolumes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 UpdateClusterVolumesRequest::~UpdateClusterVolumesRequest()
@@ -37,20 +37,20 @@ void UpdateClusterVolumesRequest::setAdditionalVolumes(const std::vector<Additio
 	additionalVolumes_ = additionalVolumes;
 	for(int dep1 = 0; dep1!= additionalVolumes.size(); dep1++) {
 		auto additionalVolumesObj = additionalVolumes.at(dep1);
-		std::string additionalVolumesObjStr = "AdditionalVolumes." + std::to_string(dep1);
-		setCoreParameter(additionalVolumesObjStr + ".VolumeType", additionalVolumesObj.volumeType);
-		setCoreParameter(additionalVolumesObjStr + ".VolumeProtocol", additionalVolumesObj.volumeProtocol);
-		setCoreParameter(additionalVolumesObjStr + ".LocalDirectory", additionalVolumesObj.localDirectory);
-		setCoreParameter(additionalVolumesObjStr + ".RemoteDirectory", additionalVolumesObj.remoteDirectory);
+		std::string additionalVolumesObjStr = "AdditionalVolumes." + std::to_string(dep1 + 1);
+		setParameter(additionalVolumesObjStr + ".VolumeType", additionalVolumesObj.volumeType);
+		setParameter(additionalVolumesObjStr + ".VolumeProtocol", additionalVolumesObj.volumeProtocol);
+		setParameter(additionalVolumesObjStr + ".LocalDirectory", additionalVolumesObj.localDirectory);
+		setParameter(additionalVolumesObjStr + ".RemoteDirectory", additionalVolumesObj.remoteDirectory);
 		for(int dep2 = 0; dep2!= additionalVolumesObj.roles.size(); dep2++) {
 			auto rolesObj = additionalVolumesObj.roles.at(dep2);
-			std::string rolesObjStr = additionalVolumesObjStr + "Roles." + std::to_string(dep2);
-			setCoreParameter(rolesObjStr + ".Name", rolesObj.name);
+			std::string rolesObjStr = additionalVolumesObjStr + "Roles." + std::to_string(dep2 + 1);
+			setParameter(rolesObjStr + ".Name", rolesObj.name);
 		}
-		setCoreParameter(additionalVolumesObjStr + ".VolumeId", additionalVolumesObj.volumeId);
-		setCoreParameter(additionalVolumesObjStr + ".VolumeMountpoint", additionalVolumesObj.volumeMountpoint);
-		setCoreParameter(additionalVolumesObjStr + ".Location", additionalVolumesObj.location);
-		setCoreParameter(additionalVolumesObjStr + ".JobQueue", additionalVolumesObj.jobQueue);
+		setParameter(additionalVolumesObjStr + ".VolumeId", additionalVolumesObj.volumeId);
+		setParameter(additionalVolumesObjStr + ".VolumeMountpoint", additionalVolumesObj.volumeMountpoint);
+		setParameter(additionalVolumesObjStr + ".Location", additionalVolumesObj.location);
+		setParameter(additionalVolumesObjStr + ".JobQueue", additionalVolumesObj.jobQueue);
 	}
 }
 
@@ -62,7 +62,7 @@ std::string UpdateClusterVolumesRequest::getClusterId()const
 void UpdateClusterVolumesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string UpdateClusterVolumesRequest::getAccessKeyId()const
@@ -73,6 +73,6 @@ std::string UpdateClusterVolumesRequest::getAccessKeyId()const
 void UpdateClusterVolumesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

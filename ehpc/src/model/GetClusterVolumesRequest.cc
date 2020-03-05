@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetClusterVolumesRequest;
 GetClusterVolumesRequest::GetClusterVolumesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetClusterVolumes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetClusterVolumesRequest::~GetClusterVolumesRequest()
@@ -35,7 +35,7 @@ std::string GetClusterVolumesRequest::getClusterId()const
 void GetClusterVolumesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string GetClusterVolumesRequest::getAccessKeyId()const
@@ -46,6 +46,6 @@ std::string GetClusterVolumesRequest::getAccessKeyId()const
 void GetClusterVolumesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListFileSystemWithMountTargetsRequest;
 ListFileSystemWithMountTargetsRequest::ListFileSystemWithMountTargetsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListFileSystemWithMountTargets")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListFileSystemWithMountTargetsRequest::~ListFileSystemWithMountTargetsRequest()
@@ -35,7 +35,7 @@ int ListFileSystemWithMountTargetsRequest::getPageNumber()const
 void ListFileSystemWithMountTargetsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListFileSystemWithMountTargetsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ListFileSystemWithMountTargetsRequest::getAccessKeyId()const
 void ListFileSystemWithMountTargetsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListFileSystemWithMountTargetsRequest::getPageSize()const
@@ -57,6 +57,6 @@ int ListFileSystemWithMountTargetsRequest::getPageSize()const
 void ListFileSystemWithMountTargetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

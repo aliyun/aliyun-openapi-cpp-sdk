@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListCpfsFileSystemsRequest;
 ListCpfsFileSystemsRequest::ListCpfsFileSystemsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListCpfsFileSystems")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListCpfsFileSystemsRequest::~ListCpfsFileSystemsRequest()
@@ -35,7 +35,7 @@ int ListCpfsFileSystemsRequest::getPageNumber()const
 void ListCpfsFileSystemsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListCpfsFileSystemsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ListCpfsFileSystemsRequest::getAccessKeyId()const
 void ListCpfsFileSystemsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListCpfsFileSystemsRequest::getPageSize()const
@@ -57,7 +57,7 @@ int ListCpfsFileSystemsRequest::getPageSize()const
 void ListCpfsFileSystemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListCpfsFileSystemsRequest::getFileSystemId()const
@@ -68,6 +68,6 @@ std::string ListCpfsFileSystemsRequest::getFileSystemId()const
 void ListCpfsFileSystemsRequest::setFileSystemId(const std::string& fileSystemId)
 {
 	fileSystemId_ = fileSystemId;
-	setCoreParameter("FileSystemId", fileSystemId);
+	setParameter("FileSystemId", fileSystemId);
 }
 

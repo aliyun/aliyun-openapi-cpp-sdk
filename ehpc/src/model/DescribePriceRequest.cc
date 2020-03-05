@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribePriceRequest;
 DescribePriceRequest::DescribePriceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribePrice")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribePriceRequest::~DescribePriceRequest()
@@ -37,14 +37,14 @@ void DescribePriceRequest::setCommodities(const std::vector<Commodities>& commod
 	commodities_ = commodities;
 	for(int dep1 = 0; dep1!= commodities.size(); dep1++) {
 		auto commoditiesObj = commodities.at(dep1);
-		std::string commoditiesObjStr = "Commodities." + std::to_string(dep1);
-		setCoreParameter(commoditiesObjStr + ".Amount", std::to_string(commoditiesObj.amount));
-		setCoreParameter(commoditiesObjStr + ".Period", std::to_string(commoditiesObj.period));
-		setCoreParameter(commoditiesObjStr + ".NodeType", commoditiesObj.nodeType);
-		setCoreParameter(commoditiesObjStr + ".SystemDiskCategory", commoditiesObj.systemDiskCategory);
-		setCoreParameter(commoditiesObjStr + ".SystemDiskSize", std::to_string(commoditiesObj.systemDiskSize));
-		setCoreParameter(commoditiesObjStr + ".InstanceType", commoditiesObj.instanceType);
-		setCoreParameter(commoditiesObjStr + ".NetworkType", commoditiesObj.networkType);
+		std::string commoditiesObjStr = "Commodities." + std::to_string(dep1 + 1);
+		setParameter(commoditiesObjStr + ".Amount", std::to_string(commoditiesObj.amount));
+		setParameter(commoditiesObjStr + ".Period", std::to_string(commoditiesObj.period));
+		setParameter(commoditiesObjStr + ".NodeType", commoditiesObj.nodeType);
+		setParameter(commoditiesObjStr + ".SystemDiskCategory", commoditiesObj.systemDiskCategory);
+		setParameter(commoditiesObjStr + ".SystemDiskSize", std::to_string(commoditiesObj.systemDiskSize));
+		setParameter(commoditiesObjStr + ".InstanceType", commoditiesObj.instanceType);
+		setParameter(commoditiesObjStr + ".NetworkType", commoditiesObj.networkType);
 	}
 }
 
@@ -56,7 +56,7 @@ std::string DescribePriceRequest::getAccessKeyId()const
 void DescribePriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribePriceRequest::getPriceUnit()const
@@ -67,7 +67,7 @@ std::string DescribePriceRequest::getPriceUnit()const
 void DescribePriceRequest::setPriceUnit(const std::string& priceUnit)
 {
 	priceUnit_ = priceUnit;
-	setCoreParameter("PriceUnit", priceUnit);
+	setParameter("PriceUnit", priceUnit);
 }
 
 std::string DescribePriceRequest::getChargeType()const
@@ -78,7 +78,7 @@ std::string DescribePriceRequest::getChargeType()const
 void DescribePriceRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setParameter("ChargeType", chargeType);
 }
 
 std::string DescribePriceRequest::getOrderType()const
@@ -89,6 +89,6 @@ std::string DescribePriceRequest::getOrderType()const
 void DescribePriceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::SetGWSInstanceNameRequest;
 SetGWSInstanceNameRequest::SetGWSInstanceNameRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "SetGWSInstanceName")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 SetGWSInstanceNameRequest::~SetGWSInstanceNameRequest()
@@ -35,7 +35,7 @@ std::string SetGWSInstanceNameRequest::getAccessKeyId()const
 void SetGWSInstanceNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetGWSInstanceNameRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string SetGWSInstanceNameRequest::getInstanceId()const
 void SetGWSInstanceNameRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string SetGWSInstanceNameRequest::getName()const
@@ -57,6 +57,6 @@ std::string SetGWSInstanceNameRequest::getName()const
 void SetGWSInstanceNameRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

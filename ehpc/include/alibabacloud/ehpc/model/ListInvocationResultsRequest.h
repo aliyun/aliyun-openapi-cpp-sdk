@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT ListInvocationResultsRequest : public RpcServiceRequest
 			{
+			public:
 				struct Instance
 				{
 					std::string id;

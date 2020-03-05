@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListAvailableEcsTypesRequest;
 ListAvailableEcsTypesRequest::ListAvailableEcsTypesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListAvailableEcsTypes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListAvailableEcsTypesRequest::~ListAvailableEcsTypesRequest()
@@ -35,7 +35,7 @@ std::string ListAvailableEcsTypesRequest::getAccessKeyId()const
 void ListAvailableEcsTypesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListAvailableEcsTypesRequest::getSpotStrategy()const
@@ -46,7 +46,7 @@ std::string ListAvailableEcsTypesRequest::getSpotStrategy()const
 void ListAvailableEcsTypesRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setCoreParameter("SpotStrategy", spotStrategy);
+	setParameter("SpotStrategy", spotStrategy);
 }
 
 std::string ListAvailableEcsTypesRequest::getZoneId()const
@@ -57,7 +57,7 @@ std::string ListAvailableEcsTypesRequest::getZoneId()const
 void ListAvailableEcsTypesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 bool ListAvailableEcsTypesRequest::getShowSoldOut()const
@@ -68,7 +68,7 @@ bool ListAvailableEcsTypesRequest::getShowSoldOut()const
 void ListAvailableEcsTypesRequest::setShowSoldOut(bool showSoldOut)
 {
 	showSoldOut_ = showSoldOut;
-	setCoreParameter("ShowSoldOut", showSoldOut ? "true" : "false");
+	setParameter("ShowSoldOut", showSoldOut ? "true" : "false");
 }
 
 std::string ListAvailableEcsTypesRequest::getInstanceChargeType()const
@@ -79,6 +79,6 @@ std::string ListAvailableEcsTypesRequest::getInstanceChargeType()const
 void ListAvailableEcsTypesRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 

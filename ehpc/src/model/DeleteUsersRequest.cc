@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteUsersRequest;
 DeleteUsersRequest::DeleteUsersRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteUsers")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DeleteUsersRequest::~DeleteUsersRequest()
@@ -35,7 +35,7 @@ std::string DeleteUsersRequest::getClusterId()const
 void DeleteUsersRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DeleteUsersRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DeleteUsersRequest::getAccessKeyId()const
 void DeleteUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<DeleteUsersRequest::User> DeleteUsersRequest::getUser()const
@@ -59,8 +59,8 @@ void DeleteUsersRequest::setUser(const std::vector<User>& user)
 	user_ = user;
 	for(int dep1 = 0; dep1!= user.size(); dep1++) {
 		auto userObj = user.at(dep1);
-		std::string userObjStr = "User." + std::to_string(dep1);
-		setCoreParameter(userObjStr + ".Name", userObj.name);
+		std::string userObjStr = "User." + std::to_string(dep1 + 1);
+		setParameter(userObjStr + ".Name", userObj.name);
 	}
 }
 

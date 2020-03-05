@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetCloudMetricProfilingRequest;
 GetCloudMetricProfilingRequest::GetCloudMetricProfilingRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetCloudMetricProfiling")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetCloudMetricProfilingRequest::~GetCloudMetricProfilingRequest()
@@ -35,7 +35,7 @@ std::string GetCloudMetricProfilingRequest::getClusterId()const
 void GetCloudMetricProfilingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string GetCloudMetricProfilingRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string GetCloudMetricProfilingRequest::getAccessKeyId()const
 void GetCloudMetricProfilingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetCloudMetricProfilingRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string GetCloudMetricProfilingRequest::getRegionId()const
 void GetCloudMetricProfilingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string GetCloudMetricProfilingRequest::getProfilingId()const
@@ -68,6 +68,6 @@ std::string GetCloudMetricProfilingRequest::getProfilingId()const
 void GetCloudMetricProfilingRequest::setProfilingId(const std::string& profilingId)
 {
 	profilingId_ = profilingId;
-	setCoreParameter("ProfilingId", profilingId);
+	setParameter("ProfilingId", profilingId);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeClusterRequest;
 DescribeClusterRequest::DescribeClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeCluster")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeClusterRequest::~DescribeClusterRequest()
@@ -35,7 +35,7 @@ std::string DescribeClusterRequest::getClusterId()const
 void DescribeClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeClusterRequest::getAccessKeyId()const
@@ -46,6 +46,6 @@ std::string DescribeClusterRequest::getAccessKeyId()const
 void DescribeClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

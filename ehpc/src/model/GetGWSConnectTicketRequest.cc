@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetGWSConnectTicketRequest;
 GetGWSConnectTicketRequest::GetGWSConnectTicketRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetGWSConnectTicket")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetGWSConnectTicketRequest::~GetGWSConnectTicketRequest()
@@ -35,7 +35,7 @@ std::string GetGWSConnectTicketRequest::getAccessKeyId()const
 void GetGWSConnectTicketRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetGWSConnectTicketRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string GetGWSConnectTicketRequest::getInstanceId()const
 void GetGWSConnectTicketRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetGWSConnectTicketRequest::getAppName()const
@@ -57,6 +57,6 @@ std::string GetGWSConnectTicketRequest::getAppName()const
 void GetGWSConnectTicketRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 

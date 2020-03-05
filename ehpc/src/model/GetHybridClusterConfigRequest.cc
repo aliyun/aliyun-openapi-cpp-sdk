@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetHybridClusterConfigRequest;
 GetHybridClusterConfigRequest::GetHybridClusterConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetHybridClusterConfig")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetHybridClusterConfigRequest::~GetHybridClusterConfigRequest()
@@ -35,7 +35,7 @@ std::string GetHybridClusterConfigRequest::getClusterId()const
 void GetHybridClusterConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string GetHybridClusterConfigRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string GetHybridClusterConfigRequest::getAccessKeyId()const
 void GetHybridClusterConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetHybridClusterConfigRequest::getNode()const
@@ -57,6 +57,6 @@ std::string GetHybridClusterConfigRequest::getNode()const
 void GetHybridClusterConfigRequest::setNode(const std::string& node)
 {
 	node_ = node;
-	setCoreParameter("Node", node);
+	setParameter("Node", node);
 }
 

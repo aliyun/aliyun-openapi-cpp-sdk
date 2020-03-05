@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::StopVisualServiceRequest;
 StopVisualServiceRequest::StopVisualServiceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StopVisualService")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 StopVisualServiceRequest::~StopVisualServiceRequest()
@@ -35,7 +35,7 @@ std::string StopVisualServiceRequest::getClusterId()const
 void StopVisualServiceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string StopVisualServiceRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string StopVisualServiceRequest::getAccessKeyId()const
 void StopVisualServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int StopVisualServiceRequest::getPort()const
@@ -57,7 +57,7 @@ int StopVisualServiceRequest::getPort()const
 void StopVisualServiceRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setParameter("Port", std::to_string(port));
 }
 
 std::string StopVisualServiceRequest::getCidrIp()const
@@ -68,6 +68,6 @@ std::string StopVisualServiceRequest::getCidrIp()const
 void StopVisualServiceRequest::setCidrIp(const std::string& cidrIp)
 {
 	cidrIp_ = cidrIp;
-	setCoreParameter("CidrIp", cidrIp);
+	setParameter("CidrIp", cidrIp);
 }
 

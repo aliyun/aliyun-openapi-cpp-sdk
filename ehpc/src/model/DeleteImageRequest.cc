@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteImageRequest;
 DeleteImageRequest::DeleteImageRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteImage")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DeleteImageRequest::~DeleteImageRequest()
@@ -35,7 +35,7 @@ std::string DeleteImageRequest::getClusterId()const
 void DeleteImageRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DeleteImageRequest::getRepository()const
@@ -46,7 +46,7 @@ std::string DeleteImageRequest::getRepository()const
 void DeleteImageRequest::setRepository(const std::string& repository)
 {
 	repository_ = repository;
-	setCoreParameter("Repository", repository);
+	setParameter("Repository", repository);
 }
 
 std::string DeleteImageRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DeleteImageRequest::getAccessKeyId()const
 void DeleteImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteImageRequest::getContainerType()const
@@ -68,7 +68,7 @@ std::string DeleteImageRequest::getContainerType()const
 void DeleteImageRequest::setContainerType(const std::string& containerType)
 {
 	containerType_ = containerType;
-	setCoreParameter("ContainerType", containerType);
+	setParameter("ContainerType", containerType);
 }
 
 std::string DeleteImageRequest::getImageTag()const
@@ -79,6 +79,6 @@ std::string DeleteImageRequest::getImageTag()const
 void DeleteImageRequest::setImageTag(const std::string& imageTag)
 {
 	imageTag_ = imageTag;
-	setCoreParameter("ImageTag", imageTag);
+	setParameter("ImageTag", imageTag);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetJobReportRequest;
 GetJobReportRequest::GetJobReportRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetJobReport")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetJobReportRequest::~GetJobReportRequest()
@@ -35,7 +35,7 @@ std::string GetJobReportRequest::getReportType()const
 void GetJobReportRequest::setReportType(const std::string& reportType)
 {
 	reportType_ = reportType;
-	setCoreParameter("ReportType", reportType);
+	setParameter("ReportType", reportType);
 }
 
 int GetJobReportRequest::getEndTime()const
@@ -46,7 +46,7 @@ int GetJobReportRequest::getEndTime()const
 void GetJobReportRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string GetJobReportRequest::getFilterValue()const
@@ -57,7 +57,7 @@ std::string GetJobReportRequest::getFilterValue()const
 void GetJobReportRequest::setFilterValue(const std::string& filterValue)
 {
 	filterValue_ = filterValue;
-	setCoreParameter("FilterValue", filterValue);
+	setParameter("FilterValue", filterValue);
 }
 
 std::string GetJobReportRequest::getClusterId()const
@@ -68,7 +68,7 @@ std::string GetJobReportRequest::getClusterId()const
 void GetJobReportRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int GetJobReportRequest::getStartTime()const
@@ -79,7 +79,7 @@ int GetJobReportRequest::getStartTime()const
 void GetJobReportRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string GetJobReportRequest::getAccessKeyId()const
@@ -90,6 +90,6 @@ std::string GetJobReportRequest::getAccessKeyId()const
 void GetJobReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

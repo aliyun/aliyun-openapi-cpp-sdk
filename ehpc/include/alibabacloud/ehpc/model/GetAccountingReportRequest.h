@@ -41,20 +41,32 @@ namespace AlibabaCloud
 				void setEndTime(int endTime);
 				std::string getFilterValue()const;
 				void setFilterValue(const std::string& filterValue);
+				std::string getDim()const;
+				void setDim(const std::string& dim);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				int getStartTime()const;
 				void setStartTime(int startTime);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
 				std::string reportType_;
 				int endTime_;
 				std::string filterValue_;
+				std::string dim_;
 				std::string clusterId_;
 				int startTime_;
+				int pageNumber_;
 				std::string accessKeyId_;
+				std::string jobId_;
+				int pageSize_;
 
 			};
 		}

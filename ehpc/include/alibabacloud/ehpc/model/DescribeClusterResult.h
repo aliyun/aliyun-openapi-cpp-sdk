@@ -87,6 +87,7 @@ namespace AlibabaCloud
 					std::string schedulerType;
 					std::string accountType;
 					std::string volumeMountpoint;
+					std::string baseOsTag;
 					std::string vpcId;
 					EcsInfo ecsInfo;
 					bool haEnable;

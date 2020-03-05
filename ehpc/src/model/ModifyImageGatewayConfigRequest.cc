@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ModifyImageGatewayConfigRequest;
 ModifyImageGatewayConfigRequest::ModifyImageGatewayConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyImageGatewayConfig")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ModifyImageGatewayConfigRequest::~ModifyImageGatewayConfigRequest()
@@ -37,10 +37,10 @@ void ModifyImageGatewayConfigRequest::setRepo(const std::vector<Repo>& repo)
 	repo_ = repo;
 	for(int dep1 = 0; dep1!= repo.size(); dep1++) {
 		auto repoObj = repo.at(dep1);
-		std::string repoObjStr = "Repo." + std::to_string(dep1);
-		setCoreParameter(repoObjStr + ".Auth", repoObj.auth);
-		setCoreParameter(repoObjStr + ".Location", repoObj.location);
-		setCoreParameter(repoObjStr + ".URL", repoObj.uRL);
+		std::string repoObjStr = "Repo." + std::to_string(dep1 + 1);
+		setParameter(repoObjStr + ".Auth", repoObj.auth);
+		setParameter(repoObjStr + ".Location", repoObj.location);
+		setParameter(repoObjStr + ".URL", repoObj.uRL);
 	}
 }
 
@@ -52,7 +52,7 @@ std::string ModifyImageGatewayConfigRequest::getDBServerInfo()const
 void ModifyImageGatewayConfigRequest::setDBServerInfo(const std::string& dBServerInfo)
 {
 	dBServerInfo_ = dBServerInfo;
-	setCoreParameter("DBServerInfo", dBServerInfo);
+	setParameter("DBServerInfo", dBServerInfo);
 }
 
 std::string ModifyImageGatewayConfigRequest::getClusterId()const
@@ -63,7 +63,7 @@ std::string ModifyImageGatewayConfigRequest::getClusterId()const
 void ModifyImageGatewayConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyImageGatewayConfigRequest::getAccessKeyId()const
@@ -74,7 +74,7 @@ std::string ModifyImageGatewayConfigRequest::getAccessKeyId()const
 void ModifyImageGatewayConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyImageGatewayConfigRequest::getDefaultRepoLocation()const
@@ -85,7 +85,7 @@ std::string ModifyImageGatewayConfigRequest::getDefaultRepoLocation()const
 void ModifyImageGatewayConfigRequest::setDefaultRepoLocation(const std::string& defaultRepoLocation)
 {
 	defaultRepoLocation_ = defaultRepoLocation;
-	setCoreParameter("DefaultRepoLocation", defaultRepoLocation);
+	setParameter("DefaultRepoLocation", defaultRepoLocation);
 }
 
 std::string ModifyImageGatewayConfigRequest::getDBPassword()const
@@ -96,7 +96,7 @@ std::string ModifyImageGatewayConfigRequest::getDBPassword()const
 void ModifyImageGatewayConfigRequest::setDBPassword(const std::string& dBPassword)
 {
 	dBPassword_ = dBPassword;
-	setCoreParameter("DBPassword", dBPassword);
+	setParameter("DBPassword", dBPassword);
 }
 
 std::string ModifyImageGatewayConfigRequest::getDBType()const
@@ -107,7 +107,7 @@ std::string ModifyImageGatewayConfigRequest::getDBType()const
 void ModifyImageGatewayConfigRequest::setDBType(const std::string& dBType)
 {
 	dBType_ = dBType;
-	setCoreParameter("DBType", dBType);
+	setParameter("DBType", dBType);
 }
 
 std::string ModifyImageGatewayConfigRequest::getDBUsername()const
@@ -118,7 +118,7 @@ std::string ModifyImageGatewayConfigRequest::getDBUsername()const
 void ModifyImageGatewayConfigRequest::setDBUsername(const std::string& dBUsername)
 {
 	dBUsername_ = dBUsername;
-	setCoreParameter("DBUsername", dBUsername);
+	setParameter("DBUsername", dBUsername);
 }
 
 int ModifyImageGatewayConfigRequest::getPullUpdateTimeout()const
@@ -129,7 +129,7 @@ int ModifyImageGatewayConfigRequest::getPullUpdateTimeout()const
 void ModifyImageGatewayConfigRequest::setPullUpdateTimeout(int pullUpdateTimeout)
 {
 	pullUpdateTimeout_ = pullUpdateTimeout;
-	setCoreParameter("PullUpdateTimeout", std::to_string(pullUpdateTimeout));
+	setParameter("PullUpdateTimeout", std::to_string(pullUpdateTimeout));
 }
 
 std::string ModifyImageGatewayConfigRequest::getImageExpirationTimeout()const
@@ -140,6 +140,6 @@ std::string ModifyImageGatewayConfigRequest::getImageExpirationTimeout()const
 void ModifyImageGatewayConfigRequest::setImageExpirationTimeout(const std::string& imageExpirationTimeout)
 {
 	imageExpirationTimeout_ = imageExpirationTimeout;
-	setCoreParameter("ImageExpirationTimeout", imageExpirationTimeout);
+	setParameter("ImageExpirationTimeout", imageExpirationTimeout);
 }
 

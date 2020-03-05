@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::UpdateQueueConfigRequest;
 UpdateQueueConfigRequest::UpdateQueueConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "UpdateQueueConfig")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 UpdateQueueConfigRequest::~UpdateQueueConfigRequest()
@@ -35,7 +35,7 @@ std::string UpdateQueueConfigRequest::getQueueName()const
 void UpdateQueueConfigRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setParameter("QueueName", queueName);
 }
 
 std::string UpdateQueueConfigRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string UpdateQueueConfigRequest::getClusterId()const
 void UpdateQueueConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string UpdateQueueConfigRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string UpdateQueueConfigRequest::getAccessKeyId()const
 void UpdateQueueConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateQueueConfigRequest::getResourceGroupId()const
@@ -68,7 +68,7 @@ std::string UpdateQueueConfigRequest::getResourceGroupId()const
 void UpdateQueueConfigRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UpdateQueueConfigRequest::getComputeInstanceType()const
@@ -79,6 +79,6 @@ std::string UpdateQueueConfigRequest::getComputeInstanceType()const
 void UpdateQueueConfigRequest::setComputeInstanceType(const std::string& computeInstanceType)
 {
 	computeInstanceType_ = computeInstanceType;
-	setCoreParameter("ComputeInstanceType", computeInstanceType);
+	setParameter("ComputeInstanceType", computeInstanceType);
 }
 

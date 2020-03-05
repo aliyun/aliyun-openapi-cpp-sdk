@@ -62,6 +62,7 @@ namespace AlibabaCloud
 					std::string expiredTime;
 					std::string imageId;
 					std::string ipAddress;
+					bool htEnabled;
 					std::string id;
 					std::string regionId;
 					std::string lockReason;

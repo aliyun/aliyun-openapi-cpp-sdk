@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::SetGWSInstanceUserRequest;
 SetGWSInstanceUserRequest::SetGWSInstanceUserRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "SetGWSInstanceUser")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 SetGWSInstanceUserRequest::~SetGWSInstanceUserRequest()
@@ -35,7 +35,7 @@ std::string SetGWSInstanceUserRequest::getAccessKeyId()const
 void SetGWSInstanceUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetGWSInstanceUserRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string SetGWSInstanceUserRequest::getInstanceId()const
 void SetGWSInstanceUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string SetGWSInstanceUserRequest::getUserUid()const
@@ -57,7 +57,7 @@ std::string SetGWSInstanceUserRequest::getUserUid()const
 void SetGWSInstanceUserRequest::setUserUid(const std::string& userUid)
 {
 	userUid_ = userUid;
-	setCoreParameter("UserUid", userUid);
+	setParameter("UserUid", userUid);
 }
 
 std::string SetGWSInstanceUserRequest::getUserName()const
@@ -68,6 +68,6 @@ std::string SetGWSInstanceUserRequest::getUserName()const
 void SetGWSInstanceUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

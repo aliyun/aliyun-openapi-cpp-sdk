@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::AddQueueRequest;
 AddQueueRequest::AddQueueRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "AddQueue")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 AddQueueRequest::~AddQueueRequest()
@@ -35,7 +35,7 @@ std::string AddQueueRequest::getQueueName()const
 void AddQueueRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setParameter("QueueName", queueName);
 }
 
 std::string AddQueueRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string AddQueueRequest::getClusterId()const
 void AddQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string AddQueueRequest::getAccessKeyId()const
@@ -57,6 +57,6 @@ std::string AddQueueRequest::getAccessKeyId()const
 void AddQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeImageGatewayConfigRequest;
 DescribeImageGatewayConfigRequest::DescribeImageGatewayConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeImageGatewayConfig")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeImageGatewayConfigRequest::~DescribeImageGatewayConfigRequest()
@@ -35,7 +35,7 @@ std::string DescribeImageGatewayConfigRequest::getClusterId()const
 void DescribeImageGatewayConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeImageGatewayConfigRequest::getAccessKeyId()const
@@ -46,6 +46,6 @@ std::string DescribeImageGatewayConfigRequest::getAccessKeyId()const
 void DescribeImageGatewayConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

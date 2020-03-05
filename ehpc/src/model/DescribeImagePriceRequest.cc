@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeImagePriceRequest;
 DescribeImagePriceRequest::DescribeImagePriceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeImagePrice")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeImagePriceRequest::~DescribeImagePriceRequest()
@@ -35,7 +35,7 @@ int DescribeImagePriceRequest::getPeriod()const
 void DescribeImagePriceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 int DescribeImagePriceRequest::getAmount()const
@@ -46,7 +46,7 @@ int DescribeImagePriceRequest::getAmount()const
 void DescribeImagePriceRequest::setAmount(int amount)
 {
 	amount_ = amount;
-	setCoreParameter("Amount", std::to_string(amount));
+	setParameter("Amount", std::to_string(amount));
 }
 
 std::string DescribeImagePriceRequest::getImageId()const
@@ -57,7 +57,7 @@ std::string DescribeImagePriceRequest::getImageId()const
 void DescribeImagePriceRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setParameter("ImageId", imageId);
 }
 
 std::string DescribeImagePriceRequest::getSkuCode()const
@@ -68,7 +68,7 @@ std::string DescribeImagePriceRequest::getSkuCode()const
 void DescribeImagePriceRequest::setSkuCode(const std::string& skuCode)
 {
 	skuCode_ = skuCode;
-	setCoreParameter("SkuCode", skuCode);
+	setParameter("SkuCode", skuCode);
 }
 
 std::string DescribeImagePriceRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string DescribeImagePriceRequest::getAccessKeyId()const
 void DescribeImagePriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeImagePriceRequest::getPriceUnit()const
@@ -90,7 +90,7 @@ std::string DescribeImagePriceRequest::getPriceUnit()const
 void DescribeImagePriceRequest::setPriceUnit(const std::string& priceUnit)
 {
 	priceUnit_ = priceUnit;
-	setCoreParameter("PriceUnit", priceUnit);
+	setParameter("PriceUnit", priceUnit);
 }
 
 std::string DescribeImagePriceRequest::getOrderType()const
@@ -101,6 +101,6 @@ std::string DescribeImagePriceRequest::getOrderType()const
 void DescribeImagePriceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::RerunJobsRequest;
 RerunJobsRequest::RerunJobsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "RerunJobs")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 RerunJobsRequest::~RerunJobsRequest()
@@ -35,7 +35,7 @@ std::string RerunJobsRequest::getJobs()const
 void RerunJobsRequest::setJobs(const std::string& jobs)
 {
 	jobs_ = jobs;
-	setCoreParameter("Jobs", jobs);
+	setParameter("Jobs", jobs);
 }
 
 std::string RerunJobsRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string RerunJobsRequest::getClusterId()const
 void RerunJobsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string RerunJobsRequest::getAccessKeyId()const
@@ -57,6 +57,6 @@ std::string RerunJobsRequest::getAccessKeyId()const
 void RerunJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

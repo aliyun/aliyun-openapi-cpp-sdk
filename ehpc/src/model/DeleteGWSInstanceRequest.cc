@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteGWSInstanceRequest;
 DeleteGWSInstanceRequest::DeleteGWSInstanceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteGWSInstance")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DeleteGWSInstanceRequest::~DeleteGWSInstanceRequest()
@@ -35,7 +35,7 @@ std::string DeleteGWSInstanceRequest::getAccessKeyId()const
 void DeleteGWSInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteGWSInstanceRequest::getInstanceId()const
@@ -46,6 +46,6 @@ std::string DeleteGWSInstanceRequest::getInstanceId()const
 void DeleteGWSInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

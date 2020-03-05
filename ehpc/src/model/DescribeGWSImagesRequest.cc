@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeGWSImagesRequest;
 DescribeGWSImagesRequest::DescribeGWSImagesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeGWSImages")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeGWSImagesRequest::~DescribeGWSImagesRequest()
@@ -35,7 +35,7 @@ int DescribeGWSImagesRequest::getPageNumber()const
 void DescribeGWSImagesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGWSImagesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeGWSImagesRequest::getAccessKeyId()const
 void DescribeGWSImagesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeGWSImagesRequest::getPageSize()const
@@ -57,6 +57,6 @@ int DescribeGWSImagesRequest::getPageSize()const
 void DescribeGWSImagesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

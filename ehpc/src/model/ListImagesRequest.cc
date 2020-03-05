@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListImagesRequest;
 ListImagesRequest::ListImagesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListImages")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListImagesRequest::~ListImagesRequest()
@@ -35,6 +35,28 @@ std::string ListImagesRequest::getAccessKeyId()const
 void ListImagesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListImagesRequest::getBaseOsTag()const
+{
+	return baseOsTag_;
+}
+
+void ListImagesRequest::setBaseOsTag(const std::string& baseOsTag)
+{
+	baseOsTag_ = baseOsTag;
+	setParameter("BaseOsTag", baseOsTag);
+}
+
+std::string ListImagesRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void ListImagesRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setParameter("InstanceType", instanceType);
 }
 

@@ -73,6 +73,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/DescribeClusterResult.h
 	include/alibabacloud/ehpc/model/DescribeContainerAppRequest.h
 	include/alibabacloud/ehpc/model/DescribeContainerAppResult.h
+	include/alibabacloud/ehpc/model/DescribeGWSClusterPolicyRequest.h
+	include/alibabacloud/ehpc/model/DescribeGWSClusterPolicyResult.h
 	include/alibabacloud/ehpc/model/DescribeGWSClustersRequest.h
 	include/alibabacloud/ehpc/model/DescribeGWSClustersResult.h
 	include/alibabacloud/ehpc/model/DescribeGWSImagesRequest.h
@@ -213,6 +215,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/RunCloudMetricProfilingResult.h
 	include/alibabacloud/ehpc/model/SetAutoScaleConfigRequest.h
 	include/alibabacloud/ehpc/model/SetAutoScaleConfigResult.h
+	include/alibabacloud/ehpc/model/SetGWSClusterPolicyRequest.h
+	include/alibabacloud/ehpc/model/SetGWSClusterPolicyResult.h
 	include/alibabacloud/ehpc/model/SetGWSInstanceNameRequest.h
 	include/alibabacloud/ehpc/model/SetGWSInstanceNameResult.h
 	include/alibabacloud/ehpc/model/SetGWSInstanceUserRequest.h
@@ -306,6 +310,8 @@ set(ehpc_src
 	src/model/DescribeClusterResult.cc
 	src/model/DescribeContainerAppRequest.cc
 	src/model/DescribeContainerAppResult.cc
+	src/model/DescribeGWSClusterPolicyRequest.cc
+	src/model/DescribeGWSClusterPolicyResult.cc
 	src/model/DescribeGWSClustersRequest.cc
 	src/model/DescribeGWSClustersResult.cc
 	src/model/DescribeGWSImagesRequest.cc
@@ -446,6 +452,8 @@ set(ehpc_src
 	src/model/RunCloudMetricProfilingResult.cc
 	src/model/SetAutoScaleConfigRequest.cc
 	src/model/SetAutoScaleConfigResult.cc
+	src/model/SetGWSClusterPolicyRequest.cc
+	src/model/SetGWSClusterPolicyResult.cc
 	src/model/SetGWSInstanceNameRequest.cc
 	src/model/SetGWSInstanceNameResult.cc
 	src/model/SetGWSInstanceUserRequest.cc

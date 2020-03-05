@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::MountNFSRequest;
 MountNFSRequest::MountNFSRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "MountNFS")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 MountNFSRequest::~MountNFSRequest()
@@ -35,7 +35,7 @@ std::string MountNFSRequest::getMountDir()const
 void MountNFSRequest::setMountDir(const std::string& mountDir)
 {
 	mountDir_ = mountDir;
-	setCoreParameter("MountDir", mountDir);
+	setParameter("MountDir", mountDir);
 }
 
 std::string MountNFSRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string MountNFSRequest::getAccessKeyId()const
 void MountNFSRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string MountNFSRequest::getInstanceId()const
@@ -57,7 +57,7 @@ std::string MountNFSRequest::getInstanceId()const
 void MountNFSRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string MountNFSRequest::getRemoteDir()const
@@ -68,7 +68,7 @@ std::string MountNFSRequest::getRemoteDir()const
 void MountNFSRequest::setRemoteDir(const std::string& remoteDir)
 {
 	remoteDir_ = remoteDir;
-	setCoreParameter("RemoteDir", remoteDir);
+	setParameter("RemoteDir", remoteDir);
 }
 
 std::string MountNFSRequest::getNfsDir()const
@@ -79,7 +79,7 @@ std::string MountNFSRequest::getNfsDir()const
 void MountNFSRequest::setNfsDir(const std::string& nfsDir)
 {
 	nfsDir_ = nfsDir;
-	setCoreParameter("NfsDir", nfsDir);
+	setParameter("NfsDir", nfsDir);
 }
 
 std::string MountNFSRequest::getProtocolType()const
@@ -90,6 +90,6 @@ std::string MountNFSRequest::getProtocolType()const
 void MountNFSRequest::setProtocolType(const std::string& protocolType)
 {
 	protocolType_ = protocolType;
-	setCoreParameter("ProtocolType", protocolType);
+	setParameter("ProtocolType", protocolType);
 }
 

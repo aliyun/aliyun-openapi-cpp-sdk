@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeNFSClientStatusRequest;
 DescribeNFSClientStatusRequest::DescribeNFSClientStatusRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeNFSClientStatus")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeNFSClientStatusRequest::~DescribeNFSClientStatusRequest()
@@ -35,7 +35,7 @@ std::string DescribeNFSClientStatusRequest::getAccessKeyId()const
 void DescribeNFSClientStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeNFSClientStatusRequest::getInstanceId()const
@@ -46,6 +46,6 @@ std::string DescribeNFSClientStatusRequest::getInstanceId()const
 void DescribeNFSClientStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

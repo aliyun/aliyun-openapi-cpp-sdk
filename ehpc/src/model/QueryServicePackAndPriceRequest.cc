@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::QueryServicePackAndPriceRequest;
 QueryServicePackAndPriceRequest::QueryServicePackAndPriceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "QueryServicePackAndPrice")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 QueryServicePackAndPriceRequest::~QueryServicePackAndPriceRequest()
@@ -35,6 +35,6 @@ std::string QueryServicePackAndPriceRequest::getAccessKeyId()const
 void QueryServicePackAndPriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

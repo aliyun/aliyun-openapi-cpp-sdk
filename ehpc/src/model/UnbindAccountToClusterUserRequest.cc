@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::UnbindAccountToClusterUserRequest;
 UnbindAccountToClusterUserRequest::UnbindAccountToClusterUserRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "UnbindAccountToClusterUser")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 UnbindAccountToClusterUserRequest::~UnbindAccountToClusterUserRequest()
@@ -35,7 +35,7 @@ std::string UnbindAccountToClusterUserRequest::getClusterId()const
 void UnbindAccountToClusterUserRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string UnbindAccountToClusterUserRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string UnbindAccountToClusterUserRequest::getAccessKeyId()const
 void UnbindAccountToClusterUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnbindAccountToClusterUserRequest::getAccountUid()const
@@ -57,7 +57,7 @@ std::string UnbindAccountToClusterUserRequest::getAccountUid()const
 void UnbindAccountToClusterUserRequest::setAccountUid(const std::string& accountUid)
 {
 	accountUid_ = accountUid;
-	setCoreParameter("AccountUid", accountUid);
+	setParameter("AccountUid", accountUid);
 }
 
 std::string UnbindAccountToClusterUserRequest::getUserName()const
@@ -68,6 +68,6 @@ std::string UnbindAccountToClusterUserRequest::getUserName()const
 void UnbindAccountToClusterUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

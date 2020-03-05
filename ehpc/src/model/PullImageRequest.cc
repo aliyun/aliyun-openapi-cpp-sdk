@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::PullImageRequest;
 PullImageRequest::PullImageRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "PullImage")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 PullImageRequest::~PullImageRequest()
@@ -35,7 +35,7 @@ std::string PullImageRequest::getClusterId()const
 void PullImageRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string PullImageRequest::getRepository()const
@@ -46,7 +46,7 @@ std::string PullImageRequest::getRepository()const
 void PullImageRequest::setRepository(const std::string& repository)
 {
 	repository_ = repository;
-	setCoreParameter("Repository", repository);
+	setParameter("Repository", repository);
 }
 
 std::string PullImageRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string PullImageRequest::getAccessKeyId()const
 void PullImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PullImageRequest::getContainerType()const
@@ -68,7 +68,7 @@ std::string PullImageRequest::getContainerType()const
 void PullImageRequest::setContainerType(const std::string& containerType)
 {
 	containerType_ = containerType;
-	setCoreParameter("ContainerType", containerType);
+	setParameter("ContainerType", containerType);
 }
 
 std::string PullImageRequest::getImageTag()const
@@ -79,6 +79,6 @@ std::string PullImageRequest::getImageTag()const
 void PullImageRequest::setImageTag(const std::string& imageTag)
 {
 	imageTag_ = imageTag;
-	setCoreParameter("ImageTag", imageTag);
+	setParameter("ImageTag", imageTag);
 }
 

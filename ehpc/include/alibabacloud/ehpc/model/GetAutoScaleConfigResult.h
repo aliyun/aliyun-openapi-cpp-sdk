@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						std::string instanceType;
 						std::string spotStrategy;
 					};
+					int maxNodesInQueue;
 					std::string resourceGroupId;
 					bool enableAutoGrow;
 					float spotPriceLimit;
@@ -68,6 +69,7 @@ namespace AlibabaCloud
 				int getGrowIntervalInMinutes()const;
 				std::string getUid()const;
 				int getGrowTimeoutInMinutes()const;
+				std::string getImageId()const;
 				int getShrinkIntervalInMinutes()const;
 				float getSpotPriceLimit()const;
 				std::vector<QueueInfo> getQueues()const;
@@ -88,6 +90,7 @@ namespace AlibabaCloud
 				int growIntervalInMinutes_;
 				std::string uid_;
 				int growTimeoutInMinutes_;
+				std::string imageId_;
 				int shrinkIntervalInMinutes_;
 				float spotPriceLimit_;
 				std::vector<QueueInfo> queues_;

@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EHPC_EXPORT CreateHybridClusterRequest : public RpcServiceRequest
 			{
+			public:
 				struct PostInstallScript
 				{
 					std::string args;

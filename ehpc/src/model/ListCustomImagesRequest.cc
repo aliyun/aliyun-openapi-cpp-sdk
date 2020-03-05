@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListCustomImagesRequest;
 ListCustomImagesRequest::ListCustomImagesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListCustomImages")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListCustomImagesRequest::~ListCustomImagesRequest()
@@ -35,7 +35,7 @@ std::string ListCustomImagesRequest::getAccessKeyId()const
 void ListCustomImagesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListCustomImagesRequest::getImageOwnerAlias()const
@@ -46,7 +46,7 @@ std::string ListCustomImagesRequest::getImageOwnerAlias()const
 void ListCustomImagesRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
 {
 	imageOwnerAlias_ = imageOwnerAlias;
-	setCoreParameter("ImageOwnerAlias", imageOwnerAlias);
+	setParameter("ImageOwnerAlias", imageOwnerAlias);
 }
 
 std::string ListCustomImagesRequest::getBaseOsTag()const
@@ -57,6 +57,17 @@ std::string ListCustomImagesRequest::getBaseOsTag()const
 void ListCustomImagesRequest::setBaseOsTag(const std::string& baseOsTag)
 {
 	baseOsTag_ = baseOsTag;
-	setCoreParameter("BaseOsTag", baseOsTag);
+	setParameter("BaseOsTag", baseOsTag);
+}
+
+std::string ListCustomImagesRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void ListCustomImagesRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setParameter("InstanceType", instanceType);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::CreateGWSInstanceRequest;
 CreateGWSInstanceRequest::CreateGWSInstanceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "CreateGWSInstance")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 CreateGWSInstanceRequest::~CreateGWSInstanceRequest()
@@ -35,7 +35,7 @@ std::string CreateGWSInstanceRequest::getImageId()const
 void CreateGWSInstanceRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setParameter("ImageId", imageId);
 }
 
 bool CreateGWSInstanceRequest::getAllocatePublicAddress()const
@@ -46,7 +46,7 @@ bool CreateGWSInstanceRequest::getAllocatePublicAddress()const
 void CreateGWSInstanceRequest::setAllocatePublicAddress(bool allocatePublicAddress)
 {
 	allocatePublicAddress_ = allocatePublicAddress;
-	setCoreParameter("AllocatePublicAddress", allocatePublicAddress ? "true" : "false");
+	setParameter("AllocatePublicAddress", allocatePublicAddress ? "true" : "false");
 }
 
 std::string CreateGWSInstanceRequest::getAppList()const
@@ -57,7 +57,7 @@ std::string CreateGWSInstanceRequest::getAppList()const
 void CreateGWSInstanceRequest::setAppList(const std::string& appList)
 {
 	appList_ = appList;
-	setCoreParameter("AppList", appList);
+	setParameter("AppList", appList);
 }
 
 int CreateGWSInstanceRequest::getInternetMaxBandwidthOut()const
@@ -68,7 +68,7 @@ int CreateGWSInstanceRequest::getInternetMaxBandwidthOut()const
 void CreateGWSInstanceRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
 {
 	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
-	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
+	setParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
 }
 
 std::string CreateGWSInstanceRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string CreateGWSInstanceRequest::getAccessKeyId()const
 void CreateGWSInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateGWSInstanceRequest::getSystemDiskCategory()const
@@ -90,7 +90,7 @@ std::string CreateGWSInstanceRequest::getSystemDiskCategory()const
 void CreateGWSInstanceRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
 {
 	systemDiskCategory_ = systemDiskCategory;
-	setCoreParameter("SystemDiskCategory", systemDiskCategory);
+	setParameter("SystemDiskCategory", systemDiskCategory);
 }
 
 int CreateGWSInstanceRequest::getSystemDiskSize()const
@@ -101,7 +101,7 @@ int CreateGWSInstanceRequest::getSystemDiskSize()const
 void CreateGWSInstanceRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+	setParameter("SystemDiskSize", std::to_string(systemDiskSize));
 }
 
 std::string CreateGWSInstanceRequest::getInstanceType()const
@@ -112,7 +112,7 @@ std::string CreateGWSInstanceRequest::getInstanceType()const
 void CreateGWSInstanceRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string CreateGWSInstanceRequest::getInstanceChargeType()const
@@ -123,7 +123,7 @@ std::string CreateGWSInstanceRequest::getInstanceChargeType()const
 void CreateGWSInstanceRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string CreateGWSInstanceRequest::getPeriod()const
@@ -134,7 +134,7 @@ std::string CreateGWSInstanceRequest::getPeriod()const
 void CreateGWSInstanceRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setParameter("Period", period);
 }
 
 std::string CreateGWSInstanceRequest::getClusterId()const
@@ -145,7 +145,7 @@ std::string CreateGWSInstanceRequest::getClusterId()const
 void CreateGWSInstanceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string CreateGWSInstanceRequest::getWorkMode()const
@@ -156,7 +156,7 @@ std::string CreateGWSInstanceRequest::getWorkMode()const
 void CreateGWSInstanceRequest::setWorkMode(const std::string& workMode)
 {
 	workMode_ = workMode;
-	setCoreParameter("WorkMode", workMode);
+	setParameter("WorkMode", workMode);
 }
 
 std::string CreateGWSInstanceRequest::getPeriodUnit()const
@@ -167,7 +167,7 @@ std::string CreateGWSInstanceRequest::getPeriodUnit()const
 void CreateGWSInstanceRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
+	setParameter("PeriodUnit", periodUnit);
 }
 
 bool CreateGWSInstanceRequest::getAutoRenew()const
@@ -178,7 +178,7 @@ bool CreateGWSInstanceRequest::getAutoRenew()const
 void CreateGWSInstanceRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
+	setParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string CreateGWSInstanceRequest::getInternetChargeType()const
@@ -189,7 +189,7 @@ std::string CreateGWSInstanceRequest::getInternetChargeType()const
 void CreateGWSInstanceRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
+	setParameter("InternetChargeType", internetChargeType);
 }
 
 std::string CreateGWSInstanceRequest::getName()const
@@ -200,7 +200,7 @@ std::string CreateGWSInstanceRequest::getName()const
 void CreateGWSInstanceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int CreateGWSInstanceRequest::getInternetMaxBandwidthIn()const
@@ -211,6 +211,6 @@ int CreateGWSInstanceRequest::getInternetMaxBandwidthIn()const
 void CreateGWSInstanceRequest::setInternetMaxBandwidthIn(int internetMaxBandwidthIn)
 {
 	internetMaxBandwidthIn_ = internetMaxBandwidthIn;
-	setCoreParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
+	setParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
 }
 

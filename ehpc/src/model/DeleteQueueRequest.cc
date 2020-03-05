@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteQueueRequest;
 DeleteQueueRequest::DeleteQueueRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteQueue")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DeleteQueueRequest::~DeleteQueueRequest()
@@ -35,7 +35,7 @@ std::string DeleteQueueRequest::getQueueName()const
 void DeleteQueueRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setParameter("QueueName", queueName);
 }
 
 std::string DeleteQueueRequest::getClusterId()const
@@ -46,7 +46,7 @@ std::string DeleteQueueRequest::getClusterId()const
 void DeleteQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DeleteQueueRequest::getAccessKeyId()const
@@ -57,6 +57,6 @@ std::string DeleteQueueRequest::getAccessKeyId()const
 void DeleteQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

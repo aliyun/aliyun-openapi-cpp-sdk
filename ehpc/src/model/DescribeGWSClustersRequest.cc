@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeGWSClustersRequest;
 DescribeGWSClustersRequest::DescribeGWSClustersRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeGWSClusters")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeGWSClustersRequest::~DescribeGWSClustersRequest()
@@ -35,7 +35,7 @@ std::string DescribeGWSClustersRequest::getClusterId()const
 void DescribeGWSClustersRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int DescribeGWSClustersRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeGWSClustersRequest::getPageNumber()const
 void DescribeGWSClustersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGWSClustersRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DescribeGWSClustersRequest::getAccessKeyId()const
 void DescribeGWSClustersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeGWSClustersRequest::getPageSize()const
@@ -68,6 +68,6 @@ int DescribeGWSClustersRequest::getPageSize()const
 void DescribeGWSClustersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

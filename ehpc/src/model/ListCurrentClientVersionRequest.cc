@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListCurrentClientVersionRequest;
 ListCurrentClientVersionRequest::ListCurrentClientVersionRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListCurrentClientVersion")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListCurrentClientVersionRequest::~ListCurrentClientVersionRequest()
@@ -35,6 +35,6 @@ std::string ListCurrentClientVersionRequest::getAccessKeyId()const
 void ListCurrentClientVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

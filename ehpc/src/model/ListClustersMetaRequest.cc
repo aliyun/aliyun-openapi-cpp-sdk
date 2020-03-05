@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListClustersMetaRequest;
 ListClustersMetaRequest::ListClustersMetaRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListClustersMeta")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 ListClustersMetaRequest::~ListClustersMetaRequest()
@@ -35,7 +35,7 @@ int ListClustersMetaRequest::getPageNumber()const
 void ListClustersMetaRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClustersMetaRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ListClustersMetaRequest::getAccessKeyId()const
 void ListClustersMetaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListClustersMetaRequest::getPageSize()const
@@ -57,6 +57,6 @@ int ListClustersMetaRequest::getPageSize()const
 void ListClustersMetaRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

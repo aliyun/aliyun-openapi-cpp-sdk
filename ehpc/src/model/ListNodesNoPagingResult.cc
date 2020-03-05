@@ -69,6 +69,8 @@ void ListNodesNoPagingResult::parse(const std::string &payload)
 			nodesObject.imageOwnerAlias = valueNodesNodeInfo["ImageOwnerAlias"].asString();
 		if(!valueNodesNodeInfo["ImageId"].isNull())
 			nodesObject.imageId = valueNodesNodeInfo["ImageId"].asString();
+		if(!valueNodesNodeInfo["HtEnabled"].isNull())
+			nodesObject.htEnabled = valueNodesNodeInfo["HtEnabled"].asString() == "true";
 		auto totalResourcesNode = value["TotalResources"];
 		if(!totalResourcesNode["Cpu"].isNull())
 			nodesObject.totalResources.cpu = std::stoi(totalResourcesNode["Cpu"].asString());

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetIfEcsTypeSupportHtConfigRequest;
 GetIfEcsTypeSupportHtConfigRequest::GetIfEcsTypeSupportHtConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetIfEcsTypeSupportHtConfig")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetIfEcsTypeSupportHtConfigRequest::~GetIfEcsTypeSupportHtConfigRequest()
@@ -35,7 +35,7 @@ std::string GetIfEcsTypeSupportHtConfigRequest::getAccessKeyId()const
 void GetIfEcsTypeSupportHtConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetIfEcsTypeSupportHtConfigRequest::getInstanceType()const
@@ -46,6 +46,6 @@ std::string GetIfEcsTypeSupportHtConfigRequest::getInstanceType()const
 void GetIfEcsTypeSupportHtConfigRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 

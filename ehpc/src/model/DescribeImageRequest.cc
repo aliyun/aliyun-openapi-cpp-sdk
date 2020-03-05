@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeImageRequest;
 DescribeImageRequest::DescribeImageRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeImage")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DescribeImageRequest::~DescribeImageRequest()
@@ -35,7 +35,7 @@ std::string DescribeImageRequest::getClusterId()const
 void DescribeImageRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeImageRequest::getRepository()const
@@ -46,7 +46,7 @@ std::string DescribeImageRequest::getRepository()const
 void DescribeImageRequest::setRepository(const std::string& repository)
 {
 	repository_ = repository;
-	setCoreParameter("Repository", repository);
+	setParameter("Repository", repository);
 }
 
 std::string DescribeImageRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DescribeImageRequest::getAccessKeyId()const
 void DescribeImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeImageRequest::getContainerType()const
@@ -68,7 +68,7 @@ std::string DescribeImageRequest::getContainerType()const
 void DescribeImageRequest::setContainerType(const std::string& containerType)
 {
 	containerType_ = containerType;
-	setCoreParameter("ContainerType", containerType);
+	setParameter("ContainerType", containerType);
 }
 
 std::string DescribeImageRequest::getImageTag()const
@@ -79,6 +79,6 @@ std::string DescribeImageRequest::getImageTag()const
 void DescribeImageRequest::setImageTag(const std::string& imageTag)
 {
 	imageTag_ = imageTag;
-	setCoreParameter("ImageTag", imageTag);
+	setParameter("ImageTag", imageTag);
 }
 

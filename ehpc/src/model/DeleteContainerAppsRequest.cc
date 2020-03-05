@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteContainerAppsRequest;
 DeleteContainerAppsRequest::DeleteContainerAppsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteContainerApps")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 DeleteContainerAppsRequest::~DeleteContainerAppsRequest()
@@ -37,8 +37,8 @@ void DeleteContainerAppsRequest::setContainerApp(const std::vector<ContainerApp>
 	containerApp_ = containerApp;
 	for(int dep1 = 0; dep1!= containerApp.size(); dep1++) {
 		auto containerAppObj = containerApp.at(dep1);
-		std::string containerAppObjStr = "ContainerApp." + std::to_string(dep1);
-		setCoreParameter(containerAppObjStr + ".Id", containerAppObj.id);
+		std::string containerAppObjStr = "ContainerApp." + std::to_string(dep1 + 1);
+		setParameter(containerAppObjStr + ".Id", containerAppObj.id);
 	}
 }
 
@@ -50,6 +50,6 @@ std::string DeleteContainerAppsRequest::getAccessKeyId()const
 void DeleteContainerAppsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

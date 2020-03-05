@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::StopClusterRequest;
 StopClusterRequest::StopClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StopCluster")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 StopClusterRequest::~StopClusterRequest()
@@ -35,7 +35,7 @@ std::string StopClusterRequest::getClusterId()const
 void StopClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string StopClusterRequest::getAccessKeyId()const
@@ -46,6 +46,6 @@ std::string StopClusterRequest::getAccessKeyId()const
 void StopClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
