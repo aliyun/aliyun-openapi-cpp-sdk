@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsConsumerAccumulateRequest;
 OnsConsumerAccumulateRequest::OnsConsumerAccumulateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsConsumerAccumulate")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsConsumerAccumulateRequest::~OnsConsumerAccumulateRequest()
@@ -35,7 +35,7 @@ std::string OnsConsumerAccumulateRequest::getGroupId()const
 void OnsConsumerAccumulateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsConsumerAccumulateRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string OnsConsumerAccumulateRequest::getInstanceId()const
 void OnsConsumerAccumulateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 bool OnsConsumerAccumulateRequest::getDetail()const
@@ -57,6 +57,6 @@ bool OnsConsumerAccumulateRequest::getDetail()const
 void OnsConsumerAccumulateRequest::setDetail(bool detail)
 {
 	detail_ = detail;
-	setCoreParameter("Detail", detail ? "true" : "false");
+	setParameter("Detail", detail ? "true" : "false");
 }
 

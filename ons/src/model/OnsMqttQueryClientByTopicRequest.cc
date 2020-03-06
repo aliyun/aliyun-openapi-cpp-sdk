@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMqttQueryClientByTopicRequest;
 OnsMqttQueryClientByTopicRequest::OnsMqttQueryClientByTopicRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMqttQueryClientByTopic")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsMqttQueryClientByTopicRequest::~OnsMqttQueryClientByTopicRequest()
@@ -35,7 +35,7 @@ std::string OnsMqttQueryClientByTopicRequest::getParentTopic()const
 void OnsMqttQueryClientByTopicRequest::setParentTopic(const std::string& parentTopic)
 {
 	parentTopic_ = parentTopic;
-	setCoreParameter("ParentTopic", parentTopic);
+	setParameter("ParentTopic", parentTopic);
 }
 
 std::string OnsMqttQueryClientByTopicRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string OnsMqttQueryClientByTopicRequest::getInstanceId()const
 void OnsMqttQueryClientByTopicRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsMqttQueryClientByTopicRequest::getSubTopic()const
@@ -57,6 +57,6 @@ std::string OnsMqttQueryClientByTopicRequest::getSubTopic()const
 void OnsMqttQueryClientByTopicRequest::setSubTopic(const std::string& subTopic)
 {
 	subTopic_ = subTopic;
-	setCoreParameter("SubTopic", subTopic);
+	setParameter("SubTopic", subTopic);
 }
 

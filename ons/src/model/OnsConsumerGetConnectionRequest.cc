@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsConsumerGetConnectionRequest;
 OnsConsumerGetConnectionRequest::OnsConsumerGetConnectionRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsConsumerGetConnection")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsConsumerGetConnectionRequest::~OnsConsumerGetConnectionRequest()
@@ -35,7 +35,7 @@ std::string OnsConsumerGetConnectionRequest::getGroupId()const
 void OnsConsumerGetConnectionRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsConsumerGetConnectionRequest::getInstanceId()const
@@ -46,6 +46,6 @@ std::string OnsConsumerGetConnectionRequest::getInstanceId()const
 void OnsConsumerGetConnectionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

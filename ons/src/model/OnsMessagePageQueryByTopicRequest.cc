@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMessagePageQueryByTopicRequest;
 OnsMessagePageQueryByTopicRequest::OnsMessagePageQueryByTopicRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessagePageQueryByTopic")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsMessagePageQueryByTopicRequest::~OnsMessagePageQueryByTopicRequest()
@@ -35,7 +35,7 @@ long OnsMessagePageQueryByTopicRequest::getEndTime()const
 void OnsMessagePageQueryByTopicRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsMessagePageQueryByTopicRequest::getBeginTime()const
@@ -46,7 +46,7 @@ long OnsMessagePageQueryByTopicRequest::getBeginTime()const
 void OnsMessagePageQueryByTopicRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", std::to_string(beginTime));
+	setParameter("BeginTime", std::to_string(beginTime));
 }
 
 int OnsMessagePageQueryByTopicRequest::getCurrentPage()const
@@ -57,7 +57,7 @@ int OnsMessagePageQueryByTopicRequest::getCurrentPage()const
 void OnsMessagePageQueryByTopicRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string OnsMessagePageQueryByTopicRequest::getInstanceId()const
@@ -68,7 +68,7 @@ std::string OnsMessagePageQueryByTopicRequest::getInstanceId()const
 void OnsMessagePageQueryByTopicRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int OnsMessagePageQueryByTopicRequest::getPageSize()const
@@ -79,7 +79,7 @@ int OnsMessagePageQueryByTopicRequest::getPageSize()const
 void OnsMessagePageQueryByTopicRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string OnsMessagePageQueryByTopicRequest::getTopic()const
@@ -90,7 +90,7 @@ std::string OnsMessagePageQueryByTopicRequest::getTopic()const
 void OnsMessagePageQueryByTopicRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 
 std::string OnsMessagePageQueryByTopicRequest::getTaskId()const
@@ -101,6 +101,6 @@ std::string OnsMessagePageQueryByTopicRequest::getTaskId()const
 void OnsMessagePageQueryByTopicRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

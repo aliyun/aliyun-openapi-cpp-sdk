@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsTraceGetResultRequest;
 OnsTraceGetResultRequest::OnsTraceGetResultRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsTraceGetResult")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsTraceGetResultRequest::~OnsTraceGetResultRequest()
@@ -35,6 +35,6 @@ std::string OnsTraceGetResultRequest::getQueryId()const
 void OnsTraceGetResultRequest::setQueryId(const std::string& queryId)
 {
 	queryId_ = queryId;
-	setCoreParameter("QueryId", queryId);
+	setParameter("QueryId", queryId);
 }
 

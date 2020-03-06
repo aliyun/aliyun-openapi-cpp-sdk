@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMessageGetByMsgIdRequest;
 OnsMessageGetByMsgIdRequest::OnsMessageGetByMsgIdRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessageGetByMsgId")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsMessageGetByMsgIdRequest::~OnsMessageGetByMsgIdRequest()
@@ -35,7 +35,7 @@ std::string OnsMessageGetByMsgIdRequest::getMsgId()const
 void OnsMessageGetByMsgIdRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
-	setCoreParameter("MsgId", msgId);
+	setParameter("MsgId", msgId);
 }
 
 std::string OnsMessageGetByMsgIdRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string OnsMessageGetByMsgIdRequest::getInstanceId()const
 void OnsMessageGetByMsgIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsMessageGetByMsgIdRequest::getTopic()const
@@ -57,6 +57,6 @@ std::string OnsMessageGetByMsgIdRequest::getTopic()const
 void OnsMessageGetByMsgIdRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

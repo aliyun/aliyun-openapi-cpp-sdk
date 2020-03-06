@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMqttQueryClientByGroupIdRequest;
 OnsMqttQueryClientByGroupIdRequest::OnsMqttQueryClientByGroupIdRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMqttQueryClientByGroupId")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsMqttQueryClientByGroupIdRequest::~OnsMqttQueryClientByGroupIdRequest()
@@ -35,7 +35,7 @@ std::string OnsMqttQueryClientByGroupIdRequest::getGroupId()const
 void OnsMqttQueryClientByGroupIdRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsMqttQueryClientByGroupIdRequest::getInstanceId()const
@@ -46,6 +46,6 @@ std::string OnsMqttQueryClientByGroupIdRequest::getInstanceId()const
 void OnsMqttQueryClientByGroupIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

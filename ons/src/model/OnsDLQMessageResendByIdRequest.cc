@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsDLQMessageResendByIdRequest;
 OnsDLQMessageResendByIdRequest::OnsDLQMessageResendByIdRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsDLQMessageResendById")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsDLQMessageResendByIdRequest::~OnsDLQMessageResendByIdRequest()
@@ -35,7 +35,7 @@ std::string OnsDLQMessageResendByIdRequest::getGroupId()const
 void OnsDLQMessageResendByIdRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsDLQMessageResendByIdRequest::getMsgId()const
@@ -46,7 +46,7 @@ std::string OnsDLQMessageResendByIdRequest::getMsgId()const
 void OnsDLQMessageResendByIdRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
-	setCoreParameter("MsgId", msgId);
+	setParameter("MsgId", msgId);
 }
 
 std::string OnsDLQMessageResendByIdRequest::getInstanceId()const
@@ -57,6 +57,6 @@ std::string OnsDLQMessageResendByIdRequest::getInstanceId()const
 void OnsDLQMessageResendByIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

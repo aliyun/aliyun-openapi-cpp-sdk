@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsTraceQueryByMsgKeyRequest;
 OnsTraceQueryByMsgKeyRequest::OnsTraceQueryByMsgKeyRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsTraceQueryByMsgKey")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsTraceQueryByMsgKeyRequest::~OnsTraceQueryByMsgKeyRequest()
@@ -35,7 +35,7 @@ long OnsTraceQueryByMsgKeyRequest::getEndTime()const
 void OnsTraceQueryByMsgKeyRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsTraceQueryByMsgKeyRequest::getBeginTime()const
@@ -46,7 +46,7 @@ long OnsTraceQueryByMsgKeyRequest::getBeginTime()const
 void OnsTraceQueryByMsgKeyRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", std::to_string(beginTime));
+	setParameter("BeginTime", std::to_string(beginTime));
 }
 
 std::string OnsTraceQueryByMsgKeyRequest::getInstanceId()const
@@ -57,7 +57,7 @@ std::string OnsTraceQueryByMsgKeyRequest::getInstanceId()const
 void OnsTraceQueryByMsgKeyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsTraceQueryByMsgKeyRequest::getTopic()const
@@ -68,7 +68,7 @@ std::string OnsTraceQueryByMsgKeyRequest::getTopic()const
 void OnsTraceQueryByMsgKeyRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 
 std::string OnsTraceQueryByMsgKeyRequest::getMsgKey()const
@@ -79,6 +79,6 @@ std::string OnsTraceQueryByMsgKeyRequest::getMsgKey()const
 void OnsTraceQueryByMsgKeyRequest::setMsgKey(const std::string& msgKey)
 {
 	msgKey_ = msgKey;
-	setCoreParameter("MsgKey", msgKey);
+	setParameter("MsgKey", msgKey);
 }
 

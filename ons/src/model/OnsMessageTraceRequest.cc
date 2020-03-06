@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMessageTraceRequest;
 OnsMessageTraceRequest::OnsMessageTraceRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessageTrace")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsMessageTraceRequest::~OnsMessageTraceRequest()
@@ -35,7 +35,7 @@ std::string OnsMessageTraceRequest::getMsgId()const
 void OnsMessageTraceRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
-	setCoreParameter("MsgId", msgId);
+	setParameter("MsgId", msgId);
 }
 
 std::string OnsMessageTraceRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string OnsMessageTraceRequest::getInstanceId()const
 void OnsMessageTraceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsMessageTraceRequest::getTopic()const
@@ -57,6 +57,6 @@ std::string OnsMessageTraceRequest::getTopic()const
 void OnsMessageTraceRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

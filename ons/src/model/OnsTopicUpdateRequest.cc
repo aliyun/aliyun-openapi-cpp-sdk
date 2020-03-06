@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsTopicUpdateRequest;
 OnsTopicUpdateRequest::OnsTopicUpdateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsTopicUpdate")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsTopicUpdateRequest::~OnsTopicUpdateRequest()
@@ -35,7 +35,7 @@ int OnsTopicUpdateRequest::getPerm()const
 void OnsTopicUpdateRequest::setPerm(int perm)
 {
 	perm_ = perm;
-	setCoreParameter("Perm", std::to_string(perm));
+	setParameter("Perm", std::to_string(perm));
 }
 
 std::string OnsTopicUpdateRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string OnsTopicUpdateRequest::getInstanceId()const
 void OnsTopicUpdateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsTopicUpdateRequest::getTopic()const
@@ -57,6 +57,6 @@ std::string OnsTopicUpdateRequest::getTopic()const
 void OnsTopicUpdateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

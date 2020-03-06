@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMessageGetByKeyRequest;
 OnsMessageGetByKeyRequest::OnsMessageGetByKeyRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessageGetByKey")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsMessageGetByKeyRequest::~OnsMessageGetByKeyRequest()
@@ -35,7 +35,7 @@ std::string OnsMessageGetByKeyRequest::getInstanceId()const
 void OnsMessageGetByKeyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsMessageGetByKeyRequest::getTopic()const
@@ -46,7 +46,7 @@ std::string OnsMessageGetByKeyRequest::getTopic()const
 void OnsMessageGetByKeyRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 
 std::string OnsMessageGetByKeyRequest::getKey()const
@@ -57,6 +57,6 @@ std::string OnsMessageGetByKeyRequest::getKey()const
 void OnsMessageGetByKeyRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 

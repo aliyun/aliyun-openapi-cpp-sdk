@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMessageSendRequest;
 OnsMessageSendRequest::OnsMessageSendRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessageSend")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsMessageSendRequest::~OnsMessageSendRequest()
@@ -35,7 +35,7 @@ std::string OnsMessageSendRequest::getMessage()const
 void OnsMessageSendRequest::setMessage(const std::string& message)
 {
 	message_ = message;
-	setCoreParameter("Message", message);
+	setParameter("Message", message);
 }
 
 std::string OnsMessageSendRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string OnsMessageSendRequest::getInstanceId()const
 void OnsMessageSendRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsMessageSendRequest::getTopic()const
@@ -57,7 +57,7 @@ std::string OnsMessageSendRequest::getTopic()const
 void OnsMessageSendRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 
 std::string OnsMessageSendRequest::getTag()const
@@ -68,7 +68,7 @@ std::string OnsMessageSendRequest::getTag()const
 void OnsMessageSendRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setParameter("Tag", tag);
 }
 
 std::string OnsMessageSendRequest::getKey()const
@@ -79,6 +79,6 @@ std::string OnsMessageSendRequest::getKey()const
 void OnsMessageSendRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsConsumerResetOffsetRequest;
 OnsConsumerResetOffsetRequest::OnsConsumerResetOffsetRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsConsumerResetOffset")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsConsumerResetOffsetRequest::~OnsConsumerResetOffsetRequest()
@@ -35,7 +35,7 @@ std::string OnsConsumerResetOffsetRequest::getGroupId()const
 void OnsConsumerResetOffsetRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 long OnsConsumerResetOffsetRequest::getResetTimestamp()const
@@ -46,7 +46,7 @@ long OnsConsumerResetOffsetRequest::getResetTimestamp()const
 void OnsConsumerResetOffsetRequest::setResetTimestamp(long resetTimestamp)
 {
 	resetTimestamp_ = resetTimestamp;
-	setCoreParameter("ResetTimestamp", std::to_string(resetTimestamp));
+	setParameter("ResetTimestamp", std::to_string(resetTimestamp));
 }
 
 int OnsConsumerResetOffsetRequest::getType()const
@@ -57,7 +57,7 @@ int OnsConsumerResetOffsetRequest::getType()const
 void OnsConsumerResetOffsetRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 std::string OnsConsumerResetOffsetRequest::getInstanceId()const
@@ -68,7 +68,7 @@ std::string OnsConsumerResetOffsetRequest::getInstanceId()const
 void OnsConsumerResetOffsetRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsConsumerResetOffsetRequest::getTopic()const
@@ -79,6 +79,6 @@ std::string OnsConsumerResetOffsetRequest::getTopic()const
 void OnsConsumerResetOffsetRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

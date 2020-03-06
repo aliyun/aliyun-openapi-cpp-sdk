@@ -57,6 +57,8 @@ void OnsGroupListResult::parse(const std::string &payload)
 			dataObject.independentNaming = valueDataSubscribeInfoDo["IndependentNaming"].asString() == "true";
 		if(!valueDataSubscribeInfoDo["CreateTime"].isNull())
 			dataObject.createTime = std::stol(valueDataSubscribeInfoDo["CreateTime"].asString());
+		if(!valueDataSubscribeInfoDo["GroupType"].isNull())
+			dataObject.groupType = valueDataSubscribeInfoDo["GroupType"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["HelpUrl"].isNull())

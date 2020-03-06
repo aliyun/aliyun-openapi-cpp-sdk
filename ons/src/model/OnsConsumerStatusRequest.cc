@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsConsumerStatusRequest;
 OnsConsumerStatusRequest::OnsConsumerStatusRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsConsumerStatus")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsConsumerStatusRequest::~OnsConsumerStatusRequest()
@@ -35,7 +35,7 @@ std::string OnsConsumerStatusRequest::getGroupId()const
 void OnsConsumerStatusRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsConsumerStatusRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string OnsConsumerStatusRequest::getInstanceId()const
 void OnsConsumerStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 bool OnsConsumerStatusRequest::getNeedJstack()const
@@ -57,7 +57,7 @@ bool OnsConsumerStatusRequest::getNeedJstack()const
 void OnsConsumerStatusRequest::setNeedJstack(bool needJstack)
 {
 	needJstack_ = needJstack;
-	setCoreParameter("NeedJstack", needJstack ? "true" : "false");
+	setParameter("NeedJstack", needJstack ? "true" : "false");
 }
 
 bool OnsConsumerStatusRequest::getDetail()const
@@ -68,6 +68,6 @@ bool OnsConsumerStatusRequest::getDetail()const
 void OnsConsumerStatusRequest::setDetail(bool detail)
 {
 	detail_ = detail;
-	setCoreParameter("Detail", detail ? "true" : "false");
+	setParameter("Detail", detail ? "true" : "false");
 }
 

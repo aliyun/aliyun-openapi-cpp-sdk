@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsTopicStatusRequest;
 OnsTopicStatusRequest::OnsTopicStatusRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsTopicStatus")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsTopicStatusRequest::~OnsTopicStatusRequest()
@@ -35,7 +35,7 @@ std::string OnsTopicStatusRequest::getInstanceId()const
 void OnsTopicStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsTopicStatusRequest::getTopic()const
@@ -46,6 +46,6 @@ std::string OnsTopicStatusRequest::getTopic()const
 void OnsTopicStatusRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

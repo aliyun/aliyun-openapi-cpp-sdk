@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsGroupSubDetailRequest;
 OnsGroupSubDetailRequest::OnsGroupSubDetailRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsGroupSubDetail")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsGroupSubDetailRequest::~OnsGroupSubDetailRequest()
@@ -35,7 +35,7 @@ std::string OnsGroupSubDetailRequest::getGroupId()const
 void OnsGroupSubDetailRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsGroupSubDetailRequest::getInstanceId()const
@@ -46,6 +46,6 @@ std::string OnsGroupSubDetailRequest::getInstanceId()const
 void OnsGroupSubDetailRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

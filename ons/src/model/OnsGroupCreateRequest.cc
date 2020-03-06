@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsGroupCreateRequest;
 OnsGroupCreateRequest::OnsGroupCreateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsGroupCreate")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsGroupCreateRequest::~OnsGroupCreateRequest()
@@ -35,7 +35,7 @@ std::string OnsGroupCreateRequest::getGroupId()const
 void OnsGroupCreateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsGroupCreateRequest::getRemark()const
@@ -46,7 +46,7 @@ std::string OnsGroupCreateRequest::getRemark()const
 void OnsGroupCreateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string OnsGroupCreateRequest::getInstanceId()const
@@ -57,7 +57,7 @@ std::string OnsGroupCreateRequest::getInstanceId()const
 void OnsGroupCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsGroupCreateRequest::getGroupType()const
@@ -68,6 +68,6 @@ std::string OnsGroupCreateRequest::getGroupType()const
 void OnsGroupCreateRequest::setGroupType(const std::string& groupType)
 {
 	groupType_ = groupType;
-	setCoreParameter("GroupType", groupType);
+	setParameter("GroupType", groupType);
 }
 

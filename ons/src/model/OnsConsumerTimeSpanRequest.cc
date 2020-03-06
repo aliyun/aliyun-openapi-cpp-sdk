@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsConsumerTimeSpanRequest;
 OnsConsumerTimeSpanRequest::OnsConsumerTimeSpanRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsConsumerTimeSpan")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsConsumerTimeSpanRequest::~OnsConsumerTimeSpanRequest()
@@ -35,7 +35,7 @@ std::string OnsConsumerTimeSpanRequest::getGroupId()const
 void OnsConsumerTimeSpanRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsConsumerTimeSpanRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string OnsConsumerTimeSpanRequest::getInstanceId()const
 void OnsConsumerTimeSpanRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsConsumerTimeSpanRequest::getTopic()const
@@ -57,6 +57,6 @@ std::string OnsConsumerTimeSpanRequest::getTopic()const
 void OnsConsumerTimeSpanRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMqttGroupIdCreateRequest;
 OnsMqttGroupIdCreateRequest::OnsMqttGroupIdCreateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMqttGroupIdCreate")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsMqttGroupIdCreateRequest::~OnsMqttGroupIdCreateRequest()
@@ -35,7 +35,7 @@ std::string OnsMqttGroupIdCreateRequest::getGroupId()const
 void OnsMqttGroupIdCreateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsMqttGroupIdCreateRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string OnsMqttGroupIdCreateRequest::getInstanceId()const
 void OnsMqttGroupIdCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsMqttGroupIdCreateRequest::getTopic()const
@@ -57,6 +57,6 @@ std::string OnsMqttGroupIdCreateRequest::getTopic()const
 void OnsMqttGroupIdCreateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

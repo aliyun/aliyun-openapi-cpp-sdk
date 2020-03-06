@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsInstanceBaseInfoRequest;
 OnsInstanceBaseInfoRequest::OnsInstanceBaseInfoRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsInstanceBaseInfo")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsInstanceBaseInfoRequest::~OnsInstanceBaseInfoRequest()
@@ -35,6 +35,6 @@ std::string OnsInstanceBaseInfoRequest::getInstanceId()const
 void OnsInstanceBaseInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

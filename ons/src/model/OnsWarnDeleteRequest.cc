@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsWarnDeleteRequest;
 OnsWarnDeleteRequest::OnsWarnDeleteRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsWarnDelete")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsWarnDeleteRequest::~OnsWarnDeleteRequest()
@@ -35,7 +35,7 @@ std::string OnsWarnDeleteRequest::getGroupId()const
 void OnsWarnDeleteRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsWarnDeleteRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string OnsWarnDeleteRequest::getInstanceId()const
 void OnsWarnDeleteRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsWarnDeleteRequest::getTopic()const
@@ -57,6 +57,6 @@ std::string OnsWarnDeleteRequest::getTopic()const
 void OnsWarnDeleteRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

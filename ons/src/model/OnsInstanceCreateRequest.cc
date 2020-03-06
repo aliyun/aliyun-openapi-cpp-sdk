@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsInstanceCreateRequest;
 OnsInstanceCreateRequest::OnsInstanceCreateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsInstanceCreate")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsInstanceCreateRequest::~OnsInstanceCreateRequest()
@@ -35,7 +35,7 @@ std::string OnsInstanceCreateRequest::getRemark()const
 void OnsInstanceCreateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string OnsInstanceCreateRequest::getInstanceName()const
@@ -46,6 +46,6 @@ std::string OnsInstanceCreateRequest::getInstanceName()const
 void OnsInstanceCreateRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 

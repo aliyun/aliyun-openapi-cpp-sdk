@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsTopicCreateRequest;
 OnsTopicCreateRequest::OnsTopicCreateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsTopicCreate")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsTopicCreateRequest::~OnsTopicCreateRequest()
@@ -35,7 +35,7 @@ int OnsTopicCreateRequest::getMessageType()const
 void OnsTopicCreateRequest::setMessageType(int messageType)
 {
 	messageType_ = messageType;
-	setCoreParameter("MessageType", std::to_string(messageType));
+	setParameter("MessageType", std::to_string(messageType));
 }
 
 std::string OnsTopicCreateRequest::getRemark()const
@@ -46,7 +46,7 @@ std::string OnsTopicCreateRequest::getRemark()const
 void OnsTopicCreateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string OnsTopicCreateRequest::getInstanceId()const
@@ -57,7 +57,7 @@ std::string OnsTopicCreateRequest::getInstanceId()const
 void OnsTopicCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsTopicCreateRequest::getTopic()const
@@ -68,6 +68,6 @@ std::string OnsTopicCreateRequest::getTopic()const
 void OnsTopicCreateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

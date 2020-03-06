@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setGroupId(const std::string& groupId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getGroupType()const;
+				void setGroupType(const std::string& groupType);
 
             private:
 				std::string groupId_;
 				std::string instanceId_;
+				std::string groupType_;
 
 			};
 		}

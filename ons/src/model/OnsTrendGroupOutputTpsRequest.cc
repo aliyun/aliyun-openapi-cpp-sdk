@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsTrendGroupOutputTpsRequest;
 OnsTrendGroupOutputTpsRequest::OnsTrendGroupOutputTpsRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsTrendGroupOutputTps")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsTrendGroupOutputTpsRequest::~OnsTrendGroupOutputTpsRequest()
@@ -35,7 +35,7 @@ long OnsTrendGroupOutputTpsRequest::getPeriod()const
 void OnsTrendGroupOutputTpsRequest::setPeriod(long period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string OnsTrendGroupOutputTpsRequest::getGroupId()const
@@ -46,7 +46,7 @@ std::string OnsTrendGroupOutputTpsRequest::getGroupId()const
 void OnsTrendGroupOutputTpsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 long OnsTrendGroupOutputTpsRequest::getEndTime()const
@@ -57,7 +57,7 @@ long OnsTrendGroupOutputTpsRequest::getEndTime()const
 void OnsTrendGroupOutputTpsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsTrendGroupOutputTpsRequest::getBeginTime()const
@@ -68,7 +68,7 @@ long OnsTrendGroupOutputTpsRequest::getBeginTime()const
 void OnsTrendGroupOutputTpsRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", std::to_string(beginTime));
+	setParameter("BeginTime", std::to_string(beginTime));
 }
 
 int OnsTrendGroupOutputTpsRequest::getType()const
@@ -79,7 +79,7 @@ int OnsTrendGroupOutputTpsRequest::getType()const
 void OnsTrendGroupOutputTpsRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 std::string OnsTrendGroupOutputTpsRequest::getInstanceId()const
@@ -90,7 +90,7 @@ std::string OnsTrendGroupOutputTpsRequest::getInstanceId()const
 void OnsTrendGroupOutputTpsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsTrendGroupOutputTpsRequest::getTopic()const
@@ -101,6 +101,6 @@ std::string OnsTrendGroupOutputTpsRequest::getTopic()const
 void OnsTrendGroupOutputTpsRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

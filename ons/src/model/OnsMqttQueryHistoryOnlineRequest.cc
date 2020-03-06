@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMqttQueryHistoryOnlineRequest;
 OnsMqttQueryHistoryOnlineRequest::OnsMqttQueryHistoryOnlineRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMqttQueryHistoryOnline")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsMqttQueryHistoryOnlineRequest::~OnsMqttQueryHistoryOnlineRequest()
@@ -35,7 +35,7 @@ std::string OnsMqttQueryHistoryOnlineRequest::getGroupId()const
 void OnsMqttQueryHistoryOnlineRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 long OnsMqttQueryHistoryOnlineRequest::getEndTime()const
@@ -46,7 +46,7 @@ long OnsMqttQueryHistoryOnlineRequest::getEndTime()const
 void OnsMqttQueryHistoryOnlineRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsMqttQueryHistoryOnlineRequest::getBeginTime()const
@@ -57,7 +57,7 @@ long OnsMqttQueryHistoryOnlineRequest::getBeginTime()const
 void OnsMqttQueryHistoryOnlineRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", std::to_string(beginTime));
+	setParameter("BeginTime", std::to_string(beginTime));
 }
 
 std::string OnsMqttQueryHistoryOnlineRequest::getInstanceId()const
@@ -68,6 +68,6 @@ std::string OnsMqttQueryHistoryOnlineRequest::getInstanceId()const
 void OnsMqttQueryHistoryOnlineRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

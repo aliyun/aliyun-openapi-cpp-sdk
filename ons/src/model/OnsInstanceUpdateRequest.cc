@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsInstanceUpdateRequest;
 OnsInstanceUpdateRequest::OnsInstanceUpdateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsInstanceUpdate")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsInstanceUpdateRequest::~OnsInstanceUpdateRequest()
@@ -35,7 +35,7 @@ std::string OnsInstanceUpdateRequest::getRemark()const
 void OnsInstanceUpdateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string OnsInstanceUpdateRequest::getInstanceName()const
@@ -46,7 +46,7 @@ std::string OnsInstanceUpdateRequest::getInstanceName()const
 void OnsInstanceUpdateRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 
 std::string OnsInstanceUpdateRequest::getInstanceId()const
@@ -57,6 +57,6 @@ std::string OnsInstanceUpdateRequest::getInstanceId()const
 void OnsInstanceUpdateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

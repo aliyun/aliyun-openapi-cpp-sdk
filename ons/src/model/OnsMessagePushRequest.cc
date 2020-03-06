@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMessagePushRequest;
 OnsMessagePushRequest::OnsMessagePushRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessagePush")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsMessagePushRequest::~OnsMessagePushRequest()
@@ -35,7 +35,7 @@ std::string OnsMessagePushRequest::getClientId()const
 void OnsMessagePushRequest::setClientId(const std::string& clientId)
 {
 	clientId_ = clientId;
-	setCoreParameter("ClientId", clientId);
+	setParameter("ClientId", clientId);
 }
 
 std::string OnsMessagePushRequest::getGroupId()const
@@ -46,7 +46,7 @@ std::string OnsMessagePushRequest::getGroupId()const
 void OnsMessagePushRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsMessagePushRequest::getMsgId()const
@@ -57,7 +57,7 @@ std::string OnsMessagePushRequest::getMsgId()const
 void OnsMessagePushRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
-	setCoreParameter("MsgId", msgId);
+	setParameter("MsgId", msgId);
 }
 
 std::string OnsMessagePushRequest::getInstanceId()const
@@ -68,7 +68,7 @@ std::string OnsMessagePushRequest::getInstanceId()const
 void OnsMessagePushRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsMessagePushRequest::getTopic()const
@@ -79,6 +79,6 @@ std::string OnsMessagePushRequest::getTopic()const
 void OnsMessagePushRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

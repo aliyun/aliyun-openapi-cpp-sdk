@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMqttGroupIdListRequest;
 OnsMqttGroupIdListRequest::OnsMqttGroupIdListRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMqttGroupIdList")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsMqttGroupIdListRequest::~OnsMqttGroupIdListRequest()
@@ -35,6 +35,6 @@ std::string OnsMqttGroupIdListRequest::getInstanceId()const
 void OnsMqttGroupIdListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

@@ -1,3 +1,7 @@
+2020-03-06 Version: 1.36.302
+- Add request parameter groupType for OnsGroupCreate.
+- Add request parameter groupType for OnsGroupList.
+
 2020-03-05 Version: 1.36.301
 - Add param InstanceType for ListImages and ListCustomImages.
 - Fix error codes for SubmitJobs and so on.

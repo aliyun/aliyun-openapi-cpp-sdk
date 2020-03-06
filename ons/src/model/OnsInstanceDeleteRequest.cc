@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsInstanceDeleteRequest;
 OnsInstanceDeleteRequest::OnsInstanceDeleteRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsInstanceDelete")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsInstanceDeleteRequest::~OnsInstanceDeleteRequest()
@@ -35,6 +35,6 @@ std::string OnsInstanceDeleteRequest::getInstanceId()const
 void OnsInstanceDeleteRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

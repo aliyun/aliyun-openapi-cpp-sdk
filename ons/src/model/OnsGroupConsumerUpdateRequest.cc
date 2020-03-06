@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsGroupConsumerUpdateRequest;
 OnsGroupConsumerUpdateRequest::OnsGroupConsumerUpdateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsGroupConsumerUpdate")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsGroupConsumerUpdateRequest::~OnsGroupConsumerUpdateRequest()
@@ -35,7 +35,7 @@ std::string OnsGroupConsumerUpdateRequest::getGroupId()const
 void OnsGroupConsumerUpdateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 bool OnsGroupConsumerUpdateRequest::getReadEnable()const
@@ -46,7 +46,7 @@ bool OnsGroupConsumerUpdateRequest::getReadEnable()const
 void OnsGroupConsumerUpdateRequest::setReadEnable(bool readEnable)
 {
 	readEnable_ = readEnable;
-	setCoreParameter("ReadEnable", readEnable ? "true" : "false");
+	setParameter("ReadEnable", readEnable ? "true" : "false");
 }
 
 std::string OnsGroupConsumerUpdateRequest::getInstanceId()const
@@ -57,6 +57,6 @@ std::string OnsGroupConsumerUpdateRequest::getInstanceId()const
 void OnsGroupConsumerUpdateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

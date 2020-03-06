@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct SubscribeInfoDo
 				{
 					std::string owner;
+					std::string groupType;
 					std::string instanceId;
 					long createTime;
 					long updateTime;

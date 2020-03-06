@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsWarnCreateRequest;
 OnsWarnCreateRequest::OnsWarnCreateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsWarnCreate")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 OnsWarnCreateRequest::~OnsWarnCreateRequest()
@@ -35,7 +35,7 @@ std::string OnsWarnCreateRequest::getLevel()const
 void OnsWarnCreateRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", level);
+	setParameter("Level", level);
 }
 
 std::string OnsWarnCreateRequest::getGroupId()const
@@ -46,7 +46,7 @@ std::string OnsWarnCreateRequest::getGroupId()const
 void OnsWarnCreateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string OnsWarnCreateRequest::getDelayTime()const
@@ -57,7 +57,7 @@ std::string OnsWarnCreateRequest::getDelayTime()const
 void OnsWarnCreateRequest::setDelayTime(const std::string& delayTime)
 {
 	delayTime_ = delayTime;
-	setCoreParameter("DelayTime", delayTime);
+	setParameter("DelayTime", delayTime);
 }
 
 std::string OnsWarnCreateRequest::getThreshold()const
@@ -68,7 +68,7 @@ std::string OnsWarnCreateRequest::getThreshold()const
 void OnsWarnCreateRequest::setThreshold(const std::string& threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", threshold);
+	setParameter("Threshold", threshold);
 }
 
 std::string OnsWarnCreateRequest::getAlertTime()const
@@ -79,7 +79,7 @@ std::string OnsWarnCreateRequest::getAlertTime()const
 void OnsWarnCreateRequest::setAlertTime(const std::string& alertTime)
 {
 	alertTime_ = alertTime;
-	setCoreParameter("AlertTime", alertTime);
+	setParameter("AlertTime", alertTime);
 }
 
 std::string OnsWarnCreateRequest::getInstanceId()const
@@ -90,7 +90,7 @@ std::string OnsWarnCreateRequest::getInstanceId()const
 void OnsWarnCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string OnsWarnCreateRequest::getBlockTime()const
@@ -101,7 +101,7 @@ std::string OnsWarnCreateRequest::getBlockTime()const
 void OnsWarnCreateRequest::setBlockTime(const std::string& blockTime)
 {
 	blockTime_ = blockTime;
-	setCoreParameter("BlockTime", blockTime);
+	setParameter("BlockTime", blockTime);
 }
 
 std::string OnsWarnCreateRequest::getTopic()const
@@ -112,7 +112,7 @@ std::string OnsWarnCreateRequest::getTopic()const
 void OnsWarnCreateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 
 std::string OnsWarnCreateRequest::getContacts()const
@@ -123,6 +123,6 @@ std::string OnsWarnCreateRequest::getContacts()const
 void OnsWarnCreateRequest::setContacts(const std::string& contacts)
 {
 	contacts_ = contacts;
-	setCoreParameter("Contacts", contacts);
+	setParameter("Contacts", contacts);
 }
 
