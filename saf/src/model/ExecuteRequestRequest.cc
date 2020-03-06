@@ -19,7 +19,7 @@
 using AlibabaCloud::Saf::Model::ExecuteRequestRequest;
 
 ExecuteRequestRequest::ExecuteRequestRequest() :
-	RpcServiceRequest("saf", "2019-05-21", "ExecuteRequest")
+	RpcServiceRequest("saf", "2018-09-19", "ExecuteRequest")
 {
 	setMethod(HttpRequest::Method::POST);
 }
