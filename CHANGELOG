@@ -1,3 +1,6 @@
+2020-03-06 Version: 1.36.303
+- Supported Saf for oversea.
+
 2020-03-06 Version: 1.36.302
 - Add request parameter groupType for OnsGroupCreate.
 - Add request parameter groupType for OnsGroupList.

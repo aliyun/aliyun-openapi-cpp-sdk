@@ -32,26 +32,20 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SAF_EXPORT ExecuteRequestResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::string score;
-					std::string extend;
-					std::string tags;
-				};
 
 
 				ExecuteRequestResult();
 				explicit ExecuteRequestResult(const std::string &payload);
 				~ExecuteRequestResult();
 				std::string getMessage()const;
-				Data getData()const;
+				std::string getData()const;
 				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
+				std::string data_;
 				int code_;
 
 			};

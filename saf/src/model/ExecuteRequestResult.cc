@@ -39,17 +39,12 @@ void ExecuteRequestResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["Tags"].isNull())
-		data_.tags = dataNode["Tags"].asString();
-	if(!dataNode["Score"].isNull())
-		data_.score = dataNode["Score"].asString();
-	if(!dataNode["Extend"].isNull())
-		data_.extend = dataNode["Extend"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
 }
 
@@ -58,7 +53,7 @@ std::string ExecuteRequestResult::getMessage()const
 	return message_;
 }
 
-ExecuteRequestResult::Data ExecuteRequestResult::getData()const
+std::string ExecuteRequestResult::getData()const
 {
 	return data_;
 }

@@ -19,8 +19,10 @@
 using AlibabaCloud::Saf::Model::ExecuteRequestRequest;
 
 ExecuteRequestRequest::ExecuteRequestRequest() :
-	RpcServiceRequest("saf", "2018-09-19", "ExecuteRequest")
-{}
+	RpcServiceRequest("saf", "2019-05-21", "ExecuteRequest")
+{
+	setMethod(HttpRequest::Method::POST);
+}
 
 ExecuteRequestRequest::~ExecuteRequestRequest()
 {}
@@ -33,7 +35,7 @@ std::string ExecuteRequestRequest::getServiceParameters()const
 void ExecuteRequestRequest::setServiceParameters(const std::string& serviceParameters)
 {
 	serviceParameters_ = serviceParameters;
-	setCoreParameter("ServiceParameters", serviceParameters);
+	setParameter("ServiceParameters", serviceParameters);
 }
 
 std::string ExecuteRequestRequest::getService()const
@@ -44,6 +46,6 @@ std::string ExecuteRequestRequest::getService()const
 void ExecuteRequestRequest::setService(const std::string& service)
 {
 	service_ = service;
-	setCoreParameter("Service", service);
+	setParameter("Service", service);
 }
 
