@@ -21,7 +21,7 @@ using AlibabaCloud::Nlp_automl::Model::GetAsyncPredictRequest;
 GetAsyncPredictRequest::GetAsyncPredictRequest() :
 	RpcServiceRequest("nlp-automl", "2019-11-11", "GetAsyncPredict")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::GET);
 }
 
 GetAsyncPredictRequest::~GetAsyncPredictRequest()
@@ -35,6 +35,6 @@ int GetAsyncPredictRequest::getAsyncPredictId()const
 void GetAsyncPredictRequest::setAsyncPredictId(int asyncPredictId)
 {
 	asyncPredictId_ = asyncPredictId;
-	setCoreParameter("AsyncPredictId", std::to_string(asyncPredictId));
+	setParameter("AsyncPredictId", std::to_string(asyncPredictId));
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Nlp_automl::Model::CreateAsyncPredictRequest;
 CreateAsyncPredictRequest::CreateAsyncPredictRequest() :
 	RpcServiceRequest("nlp-automl", "2019-11-11", "CreateAsyncPredict")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 CreateAsyncPredictRequest::~CreateAsyncPredictRequest()
@@ -35,7 +35,7 @@ int CreateAsyncPredictRequest::getTopK()const
 void CreateAsyncPredictRequest::setTopK(int topK)
 {
 	topK_ = topK;
-	setCoreParameter("TopK", std::to_string(topK));
+	setBodyParameter("TopK", std::to_string(topK));
 }
 
 std::string CreateAsyncPredictRequest::getFileType()const
@@ -46,7 +46,7 @@ std::string CreateAsyncPredictRequest::getFileType()const
 void CreateAsyncPredictRequest::setFileType(const std::string& fileType)
 {
 	fileType_ = fileType;
-	setCoreParameter("FileType", fileType);
+	setBodyParameter("FileType", fileType);
 }
 
 std::string CreateAsyncPredictRequest::getDetailTag()const
@@ -57,7 +57,7 @@ std::string CreateAsyncPredictRequest::getDetailTag()const
 void CreateAsyncPredictRequest::setDetailTag(const std::string& detailTag)
 {
 	detailTag_ = detailTag;
-	setCoreParameter("DetailTag", detailTag);
+	setBodyParameter("DetailTag", detailTag);
 }
 
 std::string CreateAsyncPredictRequest::getContent()const
@@ -68,7 +68,7 @@ std::string CreateAsyncPredictRequest::getContent()const
 void CreateAsyncPredictRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setBodyParameter("Content", content);
 }
 
 std::string CreateAsyncPredictRequest::getFileContent()const
@@ -79,7 +79,7 @@ std::string CreateAsyncPredictRequest::getFileContent()const
 void CreateAsyncPredictRequest::setFileContent(const std::string& fileContent)
 {
 	fileContent_ = fileContent;
-	setCoreParameter("FileContent", fileContent);
+	setBodyParameter("FileContent", fileContent);
 }
 
 int CreateAsyncPredictRequest::getModelId()const
@@ -90,7 +90,7 @@ int CreateAsyncPredictRequest::getModelId()const
 void CreateAsyncPredictRequest::setModelId(int modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", std::to_string(modelId));
+	setBodyParameter("ModelId", std::to_string(modelId));
 }
 
 std::string CreateAsyncPredictRequest::getFileUrl()const
@@ -101,7 +101,7 @@ std::string CreateAsyncPredictRequest::getFileUrl()const
 void CreateAsyncPredictRequest::setFileUrl(const std::string& fileUrl)
 {
 	fileUrl_ = fileUrl;
-	setCoreParameter("FileUrl", fileUrl);
+	setBodyParameter("FileUrl", fileUrl);
 }
 
 std::string CreateAsyncPredictRequest::getModelVersion()const
@@ -112,6 +112,6 @@ std::string CreateAsyncPredictRequest::getModelVersion()const
 void CreateAsyncPredictRequest::setModelVersion(const std::string& modelVersion)
 {
 	modelVersion_ = modelVersion;
-	setCoreParameter("ModelVersion", modelVersion);
+	setBodyParameter("ModelVersion", modelVersion);
 }
 

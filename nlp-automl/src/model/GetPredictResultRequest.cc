@@ -21,7 +21,7 @@ using AlibabaCloud::Nlp_automl::Model::GetPredictResultRequest;
 GetPredictResultRequest::GetPredictResultRequest() :
 	RpcServiceRequest("nlp-automl", "2019-11-11", "GetPredictResult")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 GetPredictResultRequest::~GetPredictResultRequest()
@@ -35,7 +35,7 @@ int GetPredictResultRequest::getTopK()const
 void GetPredictResultRequest::setTopK(int topK)
 {
 	topK_ = topK;
-	setCoreParameter("TopK", std::to_string(topK));
+	setBodyParameter("TopK", std::to_string(topK));
 }
 
 int GetPredictResultRequest::getModelId()const
@@ -46,7 +46,7 @@ int GetPredictResultRequest::getModelId()const
 void GetPredictResultRequest::setModelId(int modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", std::to_string(modelId));
+	setBodyParameter("ModelId", std::to_string(modelId));
 }
 
 std::string GetPredictResultRequest::getDetailTag()const
@@ -57,7 +57,7 @@ std::string GetPredictResultRequest::getDetailTag()const
 void GetPredictResultRequest::setDetailTag(const std::string& detailTag)
 {
 	detailTag_ = detailTag;
-	setCoreParameter("DetailTag", detailTag);
+	setBodyParameter("DetailTag", detailTag);
 }
 
 std::string GetPredictResultRequest::getContent()const
@@ -68,7 +68,7 @@ std::string GetPredictResultRequest::getContent()const
 void GetPredictResultRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setBodyParameter("Content", content);
 }
 
 std::string GetPredictResultRequest::getModelVersion()const
@@ -79,6 +79,6 @@ std::string GetPredictResultRequest::getModelVersion()const
 void GetPredictResultRequest::setModelVersion(const std::string& modelVersion)
 {
 	modelVersion_ = modelVersion;
-	setCoreParameter("ModelVersion", modelVersion);
+	setBodyParameter("ModelVersion", modelVersion);
 }
 

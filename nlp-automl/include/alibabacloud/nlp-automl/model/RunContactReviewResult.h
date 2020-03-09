@@ -60,11 +60,13 @@ namespace AlibabaCloud
 				RunContactReviewResult();
 				explicit RunContactReviewResult(const std::string &payload);
 				~RunContactReviewResult();
+				std::string getRawContractContent()const;
 				ContactContent getContactContent()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string rawContractContent_;
 				ContactContent contactContent_;
 
 			};

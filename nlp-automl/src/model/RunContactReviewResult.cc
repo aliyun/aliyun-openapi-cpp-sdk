@@ -82,7 +82,14 @@ void RunContactReviewResult::parse(const std::string &payload)
 			structureResultObject.startPosition3.push_back(value.asString());
 		contactContent_.structureResults.push_back(structureResultObject);
 	}
+	if(!value["RawContractContent"].isNull())
+		rawContractContent_ = value["RawContractContent"].asString();
 
+}
+
+std::string RunContactReviewResult::getRawContractContent()const
+{
+	return rawContractContent_;
 }
 
 RunContactReviewResult::ContactContent RunContactReviewResult::getContactContent()const

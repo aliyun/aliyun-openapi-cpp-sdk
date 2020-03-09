@@ -21,7 +21,7 @@ using AlibabaCloud::Nlp_automl::Model::RunContactReviewRequest;
 RunContactReviewRequest::RunContactReviewRequest() :
 	RpcServiceRequest("nlp-automl", "2019-11-11", "RunContactReview")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::POST);
 }
 
 RunContactReviewRequest::~RunContactReviewRequest()
@@ -35,7 +35,7 @@ std::string RunContactReviewRequest::getContactScene()const
 void RunContactReviewRequest::setContactScene(const std::string& contactScene)
 {
 	contactScene_ = contactScene;
-	setCoreParameter("ContactScene", contactScene);
+	setBodyParameter("ContactScene", contactScene);
 }
 
 std::string RunContactReviewRequest::getContactPath()const
@@ -46,6 +46,6 @@ std::string RunContactReviewRequest::getContactPath()const
 void RunContactReviewRequest::setContactPath(const std::string& contactPath)
 {
 	contactPath_ = contactPath;
-	setCoreParameter("ContactPath", contactPath);
+	setBodyParameter("ContactPath", contactPath);
 }
 
