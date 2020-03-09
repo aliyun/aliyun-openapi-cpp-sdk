@@ -148,6 +148,17 @@ void ConfigureBackupPlanRequest::setEnableBackupLog(bool enableBackupLog)
 	setParameter("EnableBackupLog", enableBackupLog ? "true" : "false");
 }
 
+std::string ConfigureBackupPlanRequest::getBackupStorageType()const
+{
+	return backupStorageType_;
+}
+
+void ConfigureBackupPlanRequest::setBackupStorageType(const std::string& backupStorageType)
+{
+	backupStorageType_ = backupStorageType;
+	setParameter("BackupStorageType", backupStorageType);
+}
+
 int ConfigureBackupPlanRequest::getDuplicationArchivePeriod()const
 {
 	return duplicationArchivePeriod_;

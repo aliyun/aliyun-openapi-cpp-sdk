@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setSourceEndpointIP(const std::string& sourceEndpointIP);
 				bool getEnableBackupLog()const;
 				void setEnableBackupLog(bool enableBackupLog);
+				std::string getBackupStorageType()const;
+				void setBackupStorageType(const std::string& backupStorageType);
 				int getDuplicationArchivePeriod()const;
 				void setDuplicationArchivePeriod(int duplicationArchivePeriod);
 				std::string getSourceEndpointPassword()const;
@@ -92,6 +94,7 @@ namespace AlibabaCloud
 				std::string backupStartTime_;
 				std::string sourceEndpointIP_;
 				bool enableBackupLog_;
+				std::string backupStorageType_;
 				int duplicationArchivePeriod_;
 				std::string sourceEndpointPassword_;
 				std::string backupObjects_;
