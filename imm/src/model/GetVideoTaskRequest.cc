@@ -35,7 +35,7 @@ std::string GetVideoTaskRequest::getProject()const
 void GetVideoTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string GetVideoTaskRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string GetVideoTaskRequest::getAccessKeyId()const
 void GetVideoTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetVideoTaskRequest::getTaskId()const
@@ -57,7 +57,7 @@ std::string GetVideoTaskRequest::getTaskId()const
 void GetVideoTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 
 std::string GetVideoTaskRequest::getTaskType()const
@@ -68,6 +68,6 @@ std::string GetVideoTaskRequest::getTaskType()const
 void GetVideoTaskRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", taskType);
+	setParameter("TaskType", taskType);
 }
 

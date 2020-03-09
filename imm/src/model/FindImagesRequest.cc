@@ -35,7 +35,7 @@ std::string FindImagesRequest::getProject()const
 void FindImagesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string FindImagesRequest::getExternalId()const
@@ -46,7 +46,7 @@ std::string FindImagesRequest::getExternalId()const
 void FindImagesRequest::setExternalId(const std::string& externalId)
 {
 	externalId_ = externalId;
-	setCoreParameter("ExternalId", externalId);
+	setParameter("ExternalId", externalId);
 }
 
 std::string FindImagesRequest::getFacesModifyTimeRange()const
@@ -57,7 +57,7 @@ std::string FindImagesRequest::getFacesModifyTimeRange()const
 void FindImagesRequest::setFacesModifyTimeRange(const std::string& facesModifyTimeRange)
 {
 	facesModifyTimeRange_ = facesModifyTimeRange;
-	setCoreParameter("FacesModifyTimeRange", facesModifyTimeRange);
+	setParameter("FacesModifyTimeRange", facesModifyTimeRange);
 }
 
 std::string FindImagesRequest::getOCRContentsMatch()const
@@ -68,7 +68,7 @@ std::string FindImagesRequest::getOCRContentsMatch()const
 void FindImagesRequest::setOCRContentsMatch(const std::string& oCRContentsMatch)
 {
 	oCRContentsMatch_ = oCRContentsMatch;
-	setCoreParameter("OCRContentsMatch", oCRContentsMatch);
+	setParameter("OCRContentsMatch", oCRContentsMatch);
 }
 
 int FindImagesRequest::getLimit()const
@@ -79,7 +79,7 @@ int FindImagesRequest::getLimit()const
 void FindImagesRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 std::string FindImagesRequest::getRemarksDPrefix()const
@@ -90,7 +90,7 @@ std::string FindImagesRequest::getRemarksDPrefix()const
 void FindImagesRequest::setRemarksDPrefix(const std::string& remarksDPrefix)
 {
 	remarksDPrefix_ = remarksDPrefix;
-	setCoreParameter("RemarksDPrefix", remarksDPrefix);
+	setParameter("RemarksDPrefix", remarksDPrefix);
 }
 
 std::string FindImagesRequest::getSourceType()const
@@ -101,7 +101,7 @@ std::string FindImagesRequest::getSourceType()const
 void FindImagesRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
+	setParameter("SourceType", sourceType);
 }
 
 std::string FindImagesRequest::getOrder()const
@@ -112,7 +112,7 @@ std::string FindImagesRequest::getOrder()const
 void FindImagesRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 std::string FindImagesRequest::getGroupId()const
@@ -123,7 +123,7 @@ std::string FindImagesRequest::getGroupId()const
 void FindImagesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string FindImagesRequest::getOrderBy()const
@@ -134,7 +134,7 @@ std::string FindImagesRequest::getOrderBy()const
 void FindImagesRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setParameter("OrderBy", orderBy);
 }
 
 std::string FindImagesRequest::getTagNames()const
@@ -145,7 +145,7 @@ std::string FindImagesRequest::getTagNames()const
 void FindImagesRequest::setTagNames(const std::string& tagNames)
 {
 	tagNames_ = tagNames;
-	setCoreParameter("TagNames", tagNames);
+	setParameter("TagNames", tagNames);
 }
 
 std::string FindImagesRequest::getMarker()const
@@ -156,7 +156,7 @@ std::string FindImagesRequest::getMarker()const
 void FindImagesRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 
 std::string FindImagesRequest::getRemarksCPrefix()const
@@ -167,7 +167,7 @@ std::string FindImagesRequest::getRemarksCPrefix()const
 void FindImagesRequest::setRemarksCPrefix(const std::string& remarksCPrefix)
 {
 	remarksCPrefix_ = remarksCPrefix;
-	setCoreParameter("RemarksCPrefix", remarksCPrefix);
+	setParameter("RemarksCPrefix", remarksCPrefix);
 }
 
 std::string FindImagesRequest::getModifyTimeRange()const
@@ -178,7 +178,7 @@ std::string FindImagesRequest::getModifyTimeRange()const
 void FindImagesRequest::setModifyTimeRange(const std::string& modifyTimeRange)
 {
 	modifyTimeRange_ = modifyTimeRange;
-	setCoreParameter("ModifyTimeRange", modifyTimeRange);
+	setParameter("ModifyTimeRange", modifyTimeRange);
 }
 
 std::string FindImagesRequest::getAddressLineContentsMatch()const
@@ -189,7 +189,7 @@ std::string FindImagesRequest::getAddressLineContentsMatch()const
 void FindImagesRequest::setAddressLineContentsMatch(const std::string& addressLineContentsMatch)
 {
 	addressLineContentsMatch_ = addressLineContentsMatch;
-	setCoreParameter("AddressLineContentsMatch", addressLineContentsMatch);
+	setParameter("AddressLineContentsMatch", addressLineContentsMatch);
 }
 
 std::string FindImagesRequest::getGender()const
@@ -200,7 +200,7 @@ std::string FindImagesRequest::getGender()const
 void FindImagesRequest::setGender(const std::string& gender)
 {
 	gender_ = gender;
-	setCoreParameter("Gender", gender);
+	setParameter("Gender", gender);
 }
 
 std::string FindImagesRequest::getImageSizeRange()const
@@ -211,7 +211,7 @@ std::string FindImagesRequest::getImageSizeRange()const
 void FindImagesRequest::setImageSizeRange(const std::string& imageSizeRange)
 {
 	imageSizeRange_ = imageSizeRange;
-	setCoreParameter("ImageSizeRange", imageSizeRange);
+	setParameter("ImageSizeRange", imageSizeRange);
 }
 
 std::string FindImagesRequest::getRemarksBPrefix()const
@@ -222,7 +222,7 @@ std::string FindImagesRequest::getRemarksBPrefix()const
 void FindImagesRequest::setRemarksBPrefix(const std::string& remarksBPrefix)
 {
 	remarksBPrefix_ = remarksBPrefix;
-	setCoreParameter("RemarksBPrefix", remarksBPrefix);
+	setParameter("RemarksBPrefix", remarksBPrefix);
 }
 
 std::string FindImagesRequest::getAccessKeyId()const
@@ -233,7 +233,7 @@ std::string FindImagesRequest::getAccessKeyId()const
 void FindImagesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string FindImagesRequest::getLocationBoundary()const
@@ -244,7 +244,7 @@ std::string FindImagesRequest::getLocationBoundary()const
 void FindImagesRequest::setLocationBoundary(const std::string& locationBoundary)
 {
 	locationBoundary_ = locationBoundary;
-	setCoreParameter("LocationBoundary", locationBoundary);
+	setParameter("LocationBoundary", locationBoundary);
 }
 
 std::string FindImagesRequest::getImageTimeRange()const
@@ -255,7 +255,7 @@ std::string FindImagesRequest::getImageTimeRange()const
 void FindImagesRequest::setImageTimeRange(const std::string& imageTimeRange)
 {
 	imageTimeRange_ = imageTimeRange;
-	setCoreParameter("ImageTimeRange", imageTimeRange);
+	setParameter("ImageTimeRange", imageTimeRange);
 }
 
 std::string FindImagesRequest::getTagsModifyTimeRange()const
@@ -266,7 +266,7 @@ std::string FindImagesRequest::getTagsModifyTimeRange()const
 void FindImagesRequest::setTagsModifyTimeRange(const std::string& tagsModifyTimeRange)
 {
 	tagsModifyTimeRange_ = tagsModifyTimeRange;
-	setCoreParameter("TagsModifyTimeRange", tagsModifyTimeRange);
+	setParameter("TagsModifyTimeRange", tagsModifyTimeRange);
 }
 
 std::string FindImagesRequest::getAgeRange()const
@@ -277,7 +277,7 @@ std::string FindImagesRequest::getAgeRange()const
 void FindImagesRequest::setAgeRange(const std::string& ageRange)
 {
 	ageRange_ = ageRange;
-	setCoreParameter("AgeRange", ageRange);
+	setParameter("AgeRange", ageRange);
 }
 
 std::string FindImagesRequest::getRemarksAPrefix()const
@@ -288,7 +288,7 @@ std::string FindImagesRequest::getRemarksAPrefix()const
 void FindImagesRequest::setRemarksAPrefix(const std::string& remarksAPrefix)
 {
 	remarksAPrefix_ = remarksAPrefix;
-	setCoreParameter("RemarksAPrefix", remarksAPrefix);
+	setParameter("RemarksAPrefix", remarksAPrefix);
 }
 
 std::string FindImagesRequest::getSourceUriPrefix()const
@@ -299,7 +299,7 @@ std::string FindImagesRequest::getSourceUriPrefix()const
 void FindImagesRequest::setSourceUriPrefix(const std::string& sourceUriPrefix)
 {
 	sourceUriPrefix_ = sourceUriPrefix;
-	setCoreParameter("SourceUriPrefix", sourceUriPrefix);
+	setParameter("SourceUriPrefix", sourceUriPrefix);
 }
 
 std::string FindImagesRequest::getEmotion()const
@@ -310,7 +310,7 @@ std::string FindImagesRequest::getEmotion()const
 void FindImagesRequest::setEmotion(const std::string& emotion)
 {
 	emotion_ = emotion;
-	setCoreParameter("Emotion", emotion);
+	setParameter("Emotion", emotion);
 }
 
 std::string FindImagesRequest::getCreateTimeRange()const
@@ -321,7 +321,7 @@ std::string FindImagesRequest::getCreateTimeRange()const
 void FindImagesRequest::setCreateTimeRange(const std::string& createTimeRange)
 {
 	createTimeRange_ = createTimeRange;
-	setCoreParameter("CreateTimeRange", createTimeRange);
+	setParameter("CreateTimeRange", createTimeRange);
 }
 
 std::string FindImagesRequest::getSetId()const
@@ -332,6 +332,6 @@ std::string FindImagesRequest::getSetId()const
 void FindImagesRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setParameter("SetId", setId);
 }
 

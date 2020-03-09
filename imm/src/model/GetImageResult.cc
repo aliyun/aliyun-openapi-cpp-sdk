@@ -61,6 +61,8 @@ void GetImageResult::parse(const std::string &payload)
 			facesObject.groupId = valueFacesFacesItem["GroupId"].asString();
 		if(!valueFacesFacesItem["FaceQuality"].isNull())
 			facesObject.faceQuality = std::stof(valueFacesFacesItem["FaceQuality"].asString());
+		if(!valueFacesFacesItem["EmotionConfidence"].isNull())
+			facesObject.emotionConfidence = std::stof(valueFacesFacesItem["EmotionConfidence"].asString());
 		auto faceAttributesNode = value["FaceAttributes"];
 		if(!faceAttributesNode["Glasses"].isNull())
 			facesObject.faceAttributes.glasses = faceAttributesNode["Glasses"].asString();

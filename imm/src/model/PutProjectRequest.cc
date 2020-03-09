@@ -35,7 +35,7 @@ std::string PutProjectRequest::getProject()const
 void PutProjectRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string PutProjectRequest::getType()const
@@ -46,7 +46,7 @@ std::string PutProjectRequest::getType()const
 void PutProjectRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string PutProjectRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string PutProjectRequest::getAccessKeyId()const
 void PutProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int PutProjectRequest::getCU()const
@@ -68,7 +68,7 @@ int PutProjectRequest::getCU()const
 void PutProjectRequest::setCU(int cU)
 {
 	cU_ = cU;
-	setCoreParameter("CU", std::to_string(cU));
+	setParameter("CU", std::to_string(cU));
 }
 
 std::string PutProjectRequest::getServiceRole()const
@@ -79,7 +79,7 @@ std::string PutProjectRequest::getServiceRole()const
 void PutProjectRequest::setServiceRole(const std::string& serviceRole)
 {
 	serviceRole_ = serviceRole;
-	setCoreParameter("ServiceRole", serviceRole);
+	setParameter("ServiceRole", serviceRole);
 }
 
 std::string PutProjectRequest::getBillingType()const
@@ -90,6 +90,6 @@ std::string PutProjectRequest::getBillingType()const
 void PutProjectRequest::setBillingType(const std::string& billingType)
 {
 	billingType_ = billingType;
-	setCoreParameter("BillingType", billingType);
+	setParameter("BillingType", billingType);
 }
 

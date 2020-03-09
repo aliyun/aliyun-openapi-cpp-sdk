@@ -35,7 +35,7 @@ std::string GetImageJobRequest::getProject()const
 void GetImageJobRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string GetImageJobRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string GetImageJobRequest::getAccessKeyId()const
 void GetImageJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetImageJobRequest::getJobId()const
@@ -57,7 +57,7 @@ std::string GetImageJobRequest::getJobId()const
 void GetImageJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string GetImageJobRequest::getJobType()const
@@ -68,6 +68,6 @@ std::string GetImageJobRequest::getJobType()const
 void GetImageJobRequest::setJobType(const std::string& jobType)
 {
 	jobType_ = jobType;
-	setCoreParameter("JobType", jobType);
+	setParameter("JobType", jobType);
 }
 

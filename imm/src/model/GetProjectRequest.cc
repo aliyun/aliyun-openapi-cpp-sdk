@@ -35,7 +35,7 @@ std::string GetProjectRequest::getProject()const
 void GetProjectRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string GetProjectRequest::getAccessKeyId()const
@@ -46,6 +46,6 @@ std::string GetProjectRequest::getAccessKeyId()const
 void GetProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

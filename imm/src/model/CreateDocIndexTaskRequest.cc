@@ -35,7 +35,7 @@ std::string CreateDocIndexTaskRequest::getProject()const
 void CreateDocIndexTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string CreateDocIndexTaskRequest::getUniqueId()const
@@ -46,7 +46,7 @@ std::string CreateDocIndexTaskRequest::getUniqueId()const
 void CreateDocIndexTaskRequest::setUniqueId(const std::string& uniqueId)
 {
 	uniqueId_ = uniqueId;
-	setCoreParameter("UniqueId", uniqueId);
+	setParameter("UniqueId", uniqueId);
 }
 
 std::string CreateDocIndexTaskRequest::getCustomKey1()const
@@ -57,7 +57,7 @@ std::string CreateDocIndexTaskRequest::getCustomKey1()const
 void CreateDocIndexTaskRequest::setCustomKey1(const std::string& customKey1)
 {
 	customKey1_ = customKey1;
-	setCoreParameter("CustomKey1", customKey1);
+	setParameter("CustomKey1", customKey1);
 }
 
 std::string CreateDocIndexTaskRequest::getSet()const
@@ -68,7 +68,7 @@ std::string CreateDocIndexTaskRequest::getSet()const
 void CreateDocIndexTaskRequest::setSet(const std::string& set)
 {
 	set_ = set;
-	setCoreParameter("Set", set);
+	setParameter("Set", set);
 }
 
 std::string CreateDocIndexTaskRequest::getCustomKey5()const
@@ -79,7 +79,7 @@ std::string CreateDocIndexTaskRequest::getCustomKey5()const
 void CreateDocIndexTaskRequest::setCustomKey5(const std::string& customKey5)
 {
 	customKey5_ = customKey5;
-	setCoreParameter("CustomKey5", customKey5);
+	setParameter("CustomKey5", customKey5);
 }
 
 std::string CreateDocIndexTaskRequest::getCustomKey4()const
@@ -90,7 +90,7 @@ std::string CreateDocIndexTaskRequest::getCustomKey4()const
 void CreateDocIndexTaskRequest::setCustomKey4(const std::string& customKey4)
 {
 	customKey4_ = customKey4;
-	setCoreParameter("CustomKey4", customKey4);
+	setParameter("CustomKey4", customKey4);
 }
 
 std::string CreateDocIndexTaskRequest::getCustomKey3()const
@@ -101,7 +101,7 @@ std::string CreateDocIndexTaskRequest::getCustomKey3()const
 void CreateDocIndexTaskRequest::setCustomKey3(const std::string& customKey3)
 {
 	customKey3_ = customKey3;
-	setCoreParameter("CustomKey3", customKey3);
+	setParameter("CustomKey3", customKey3);
 }
 
 std::string CreateDocIndexTaskRequest::getCustomKey2()const
@@ -112,7 +112,7 @@ std::string CreateDocIndexTaskRequest::getCustomKey2()const
 void CreateDocIndexTaskRequest::setCustomKey2(const std::string& customKey2)
 {
 	customKey2_ = customKey2;
-	setCoreParameter("CustomKey2", customKey2);
+	setParameter("CustomKey2", customKey2);
 }
 
 std::string CreateDocIndexTaskRequest::getCustomKey6()const
@@ -123,7 +123,7 @@ std::string CreateDocIndexTaskRequest::getCustomKey6()const
 void CreateDocIndexTaskRequest::setCustomKey6(const std::string& customKey6)
 {
 	customKey6_ = customKey6;
-	setCoreParameter("CustomKey6", customKey6);
+	setParameter("CustomKey6", customKey6);
 }
 
 std::string CreateDocIndexTaskRequest::getContentType()const
@@ -134,7 +134,7 @@ std::string CreateDocIndexTaskRequest::getContentType()const
 void CreateDocIndexTaskRequest::setContentType(const std::string& contentType)
 {
 	contentType_ = contentType;
-	setCoreParameter("ContentType", contentType);
+	setParameter("ContentType", contentType);
 }
 
 std::string CreateDocIndexTaskRequest::getName()const
@@ -145,7 +145,7 @@ std::string CreateDocIndexTaskRequest::getName()const
 void CreateDocIndexTaskRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateDocIndexTaskRequest::getSrcUri()const
@@ -156,6 +156,6 @@ std::string CreateDocIndexTaskRequest::getSrcUri()const
 void CreateDocIndexTaskRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", srcUri);
+	setParameter("SrcUri", srcUri);
 }
 

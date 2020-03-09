@@ -35,7 +35,7 @@ std::string CreateMergeFaceGroupsJobRequest::getProject()const
 void CreateMergeFaceGroupsJobRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string CreateMergeFaceGroupsJobRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string CreateMergeFaceGroupsJobRequest::getAccessKeyId()const
 void CreateMergeFaceGroupsJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateMergeFaceGroupsJobRequest::getNotifyEndpoint()const
@@ -57,7 +57,7 @@ std::string CreateMergeFaceGroupsJobRequest::getNotifyEndpoint()const
 void CreateMergeFaceGroupsJobRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+	setParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string CreateMergeFaceGroupsJobRequest::getGroupIdFrom()const
@@ -68,7 +68,7 @@ std::string CreateMergeFaceGroupsJobRequest::getGroupIdFrom()const
 void CreateMergeFaceGroupsJobRequest::setGroupIdFrom(const std::string& groupIdFrom)
 {
 	groupIdFrom_ = groupIdFrom;
-	setCoreParameter("GroupIdFrom", groupIdFrom);
+	setParameter("GroupIdFrom", groupIdFrom);
 }
 
 std::string CreateMergeFaceGroupsJobRequest::getNotifyTopicName()const
@@ -79,7 +79,7 @@ std::string CreateMergeFaceGroupsJobRequest::getNotifyTopicName()const
 void CreateMergeFaceGroupsJobRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	setParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateMergeFaceGroupsJobRequest::getGroupIdTo()const
@@ -90,7 +90,7 @@ std::string CreateMergeFaceGroupsJobRequest::getGroupIdTo()const
 void CreateMergeFaceGroupsJobRequest::setGroupIdTo(const std::string& groupIdTo)
 {
 	groupIdTo_ = groupIdTo;
-	setCoreParameter("GroupIdTo", groupIdTo);
+	setParameter("GroupIdTo", groupIdTo);
 }
 
 std::string CreateMergeFaceGroupsJobRequest::getSetId()const
@@ -101,6 +101,6 @@ std::string CreateMergeFaceGroupsJobRequest::getSetId()const
 void CreateMergeFaceGroupsJobRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setParameter("SetId", setId);
 }
 

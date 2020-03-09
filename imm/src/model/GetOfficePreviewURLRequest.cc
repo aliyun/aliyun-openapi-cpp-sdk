@@ -35,7 +35,7 @@ std::string GetOfficePreviewURLRequest::getSrcType()const
 void GetOfficePreviewURLRequest::setSrcType(const std::string& srcType)
 {
 	srcType_ = srcType;
-	setCoreParameter("SrcType", srcType);
+	setParameter("SrcType", srcType);
 }
 
 std::string GetOfficePreviewURLRequest::getProject()const
@@ -46,7 +46,7 @@ std::string GetOfficePreviewURLRequest::getProject()const
 void GetOfficePreviewURLRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string GetOfficePreviewURLRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string GetOfficePreviewURLRequest::getAccessKeyId()const
 void GetOfficePreviewURLRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 bool GetOfficePreviewURLRequest::getUseHTTPS()const
@@ -68,7 +68,7 @@ bool GetOfficePreviewURLRequest::getUseHTTPS()const
 void GetOfficePreviewURLRequest::setUseHTTPS(bool useHTTPS)
 {
 	useHTTPS_ = useHTTPS;
-	setCoreParameter("UseHTTPS", useHTTPS ? "true" : "false");
+	setParameter("UseHTTPS", useHTTPS ? "true" : "false");
 }
 
 std::string GetOfficePreviewURLRequest::getSrcUri()const
@@ -79,6 +79,6 @@ std::string GetOfficePreviewURLRequest::getSrcUri()const
 void GetOfficePreviewURLRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", srcUri);
+	setParameter("SrcUri", srcUri);
 }
 

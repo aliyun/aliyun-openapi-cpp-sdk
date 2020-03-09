@@ -35,7 +35,7 @@ std::string DetectImageCelebrityRequest::getProject()const
 void DetectImageCelebrityRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string DetectImageCelebrityRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DetectImageCelebrityRequest::getAccessKeyId()const
 void DetectImageCelebrityRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DetectImageCelebrityRequest::getLibrary()const
@@ -57,7 +57,7 @@ std::string DetectImageCelebrityRequest::getLibrary()const
 void DetectImageCelebrityRequest::setLibrary(const std::string& library)
 {
 	library_ = library;
-	setCoreParameter("Library", library);
+	setParameter("Library", library);
 }
 
 std::string DetectImageCelebrityRequest::getRealUid()const
@@ -68,7 +68,7 @@ std::string DetectImageCelebrityRequest::getRealUid()const
 void DetectImageCelebrityRequest::setRealUid(const std::string& realUid)
 {
 	realUid_ = realUid;
-	setCoreParameter("RealUid", realUid);
+	setParameter("RealUid", realUid);
 }
 
 std::string DetectImageCelebrityRequest::getImageUri()const
@@ -79,6 +79,6 @@ std::string DetectImageCelebrityRequest::getImageUri()const
 void DetectImageCelebrityRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
+	setParameter("ImageUri", imageUri);
 }
 

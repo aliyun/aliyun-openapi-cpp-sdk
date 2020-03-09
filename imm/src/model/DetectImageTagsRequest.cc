@@ -35,7 +35,7 @@ std::string DetectImageTagsRequest::getProject()const
 void DetectImageTagsRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string DetectImageTagsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DetectImageTagsRequest::getAccessKeyId()const
 void DetectImageTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DetectImageTagsRequest::getRealUid()const
@@ -57,7 +57,7 @@ std::string DetectImageTagsRequest::getRealUid()const
 void DetectImageTagsRequest::setRealUid(const std::string& realUid)
 {
 	realUid_ = realUid;
-	setCoreParameter("RealUid", realUid);
+	setParameter("RealUid", realUid);
 }
 
 std::string DetectImageTagsRequest::getImageUri()const
@@ -68,6 +68,6 @@ std::string DetectImageTagsRequest::getImageUri()const
 void DetectImageTagsRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
+	setParameter("ImageUri", imageUri);
 }
 

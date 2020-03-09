@@ -35,7 +35,7 @@ std::string CreateCADConversionTaskRequest::getSrcType()const
 void CreateCADConversionTaskRequest::setSrcType(const std::string& srcType)
 {
 	srcType_ = srcType;
-	setCoreParameter("SrcType", srcType);
+	setParameter("SrcType", srcType);
 }
 
 int CreateCADConversionTaskRequest::getBaseRow()const
@@ -46,7 +46,7 @@ int CreateCADConversionTaskRequest::getBaseRow()const
 void CreateCADConversionTaskRequest::setBaseRow(int baseRow)
 {
 	baseRow_ = baseRow;
-	setCoreParameter("BaseRow", std::to_string(baseRow));
+	setParameter("BaseRow", std::to_string(baseRow));
 }
 
 std::string CreateCADConversionTaskRequest::getProject()const
@@ -57,7 +57,7 @@ std::string CreateCADConversionTaskRequest::getProject()const
 void CreateCADConversionTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 int CreateCADConversionTaskRequest::getZoomFactor()const
@@ -68,7 +68,7 @@ int CreateCADConversionTaskRequest::getZoomFactor()const
 void CreateCADConversionTaskRequest::setZoomFactor(int zoomFactor)
 {
 	zoomFactor_ = zoomFactor;
-	setCoreParameter("ZoomFactor", std::to_string(zoomFactor));
+	setParameter("ZoomFactor", std::to_string(zoomFactor));
 }
 
 std::string CreateCADConversionTaskRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string CreateCADConversionTaskRequest::getAccessKeyId()const
 void CreateCADConversionTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateCADConversionTaskRequest::getNotifyEndpoint()const
@@ -90,7 +90,7 @@ std::string CreateCADConversionTaskRequest::getNotifyEndpoint()const
 void CreateCADConversionTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+	setParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 int CreateCADConversionTaskRequest::getBaseCol()const
@@ -101,7 +101,7 @@ int CreateCADConversionTaskRequest::getBaseCol()const
 void CreateCADConversionTaskRequest::setBaseCol(int baseCol)
 {
 	baseCol_ = baseCol;
-	setCoreParameter("BaseCol", std::to_string(baseCol));
+	setParameter("BaseCol", std::to_string(baseCol));
 }
 
 std::string CreateCADConversionTaskRequest::getNotifyTopicName()const
@@ -112,7 +112,7 @@ std::string CreateCADConversionTaskRequest::getNotifyTopicName()const
 void CreateCADConversionTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	setParameter("NotifyTopicName", notifyTopicName);
 }
 
 long CreateCADConversionTaskRequest::getUnitWidth()const
@@ -123,7 +123,7 @@ long CreateCADConversionTaskRequest::getUnitWidth()const
 void CreateCADConversionTaskRequest::setUnitWidth(long unitWidth)
 {
 	unitWidth_ = unitWidth;
-	setCoreParameter("UnitWidth", std::to_string(unitWidth));
+	setParameter("UnitWidth", std::to_string(unitWidth));
 }
 
 int CreateCADConversionTaskRequest::getZoomLevel()const
@@ -134,7 +134,7 @@ int CreateCADConversionTaskRequest::getZoomLevel()const
 void CreateCADConversionTaskRequest::setZoomLevel(int zoomLevel)
 {
 	zoomLevel_ = zoomLevel;
-	setCoreParameter("ZoomLevel", std::to_string(zoomLevel));
+	setParameter("ZoomLevel", std::to_string(zoomLevel));
 }
 
 std::string CreateCADConversionTaskRequest::getModelId()const
@@ -145,7 +145,7 @@ std::string CreateCADConversionTaskRequest::getModelId()const
 void CreateCADConversionTaskRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", modelId);
+	setParameter("ModelId", modelId);
 }
 
 std::string CreateCADConversionTaskRequest::getTgtType()const
@@ -156,7 +156,7 @@ std::string CreateCADConversionTaskRequest::getTgtType()const
 void CreateCADConversionTaskRequest::setTgtType(const std::string& tgtType)
 {
 	tgtType_ = tgtType;
-	setCoreParameter("TgtType", tgtType);
+	setParameter("TgtType", tgtType);
 }
 
 long CreateCADConversionTaskRequest::getUnitHeight()const
@@ -167,7 +167,7 @@ long CreateCADConversionTaskRequest::getUnitHeight()const
 void CreateCADConversionTaskRequest::setUnitHeight(long unitHeight)
 {
 	unitHeight_ = unitHeight;
-	setCoreParameter("UnitHeight", std::to_string(unitHeight));
+	setParameter("UnitHeight", std::to_string(unitHeight));
 }
 
 std::string CreateCADConversionTaskRequest::getSrcUri()const
@@ -178,7 +178,7 @@ std::string CreateCADConversionTaskRequest::getSrcUri()const
 void CreateCADConversionTaskRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", srcUri);
+	setParameter("SrcUri", srcUri);
 }
 
 bool CreateCADConversionTaskRequest::getThumbnails()const
@@ -189,7 +189,7 @@ bool CreateCADConversionTaskRequest::getThumbnails()const
 void CreateCADConversionTaskRequest::setThumbnails(bool thumbnails)
 {
 	thumbnails_ = thumbnails;
-	setCoreParameter("Thumbnails", thumbnails ? "true" : "false");
+	setParameter("Thumbnails", thumbnails ? "true" : "false");
 }
 
 std::string CreateCADConversionTaskRequest::getTgtUri()const
@@ -200,6 +200,6 @@ std::string CreateCADConversionTaskRequest::getTgtUri()const
 void CreateCADConversionTaskRequest::setTgtUri(const std::string& tgtUri)
 {
 	tgtUri_ = tgtUri;
-	setCoreParameter("TgtUri", tgtUri);
+	setParameter("TgtUri", tgtUri);
 }
 

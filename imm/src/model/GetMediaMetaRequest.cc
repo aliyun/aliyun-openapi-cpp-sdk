@@ -35,7 +35,7 @@ std::string GetMediaMetaRequest::getMediaUri()const
 void GetMediaMetaRequest::setMediaUri(const std::string& mediaUri)
 {
 	mediaUri_ = mediaUri;
-	setCoreParameter("MediaUri", mediaUri);
+	setParameter("MediaUri", mediaUri);
 }
 
 std::string GetMediaMetaRequest::getProject()const
@@ -46,7 +46,7 @@ std::string GetMediaMetaRequest::getProject()const
 void GetMediaMetaRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string GetMediaMetaRequest::getAccessKeyId()const
@@ -57,6 +57,6 @@ std::string GetMediaMetaRequest::getAccessKeyId()const
 void GetMediaMetaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -86,6 +86,7 @@ namespace AlibabaCloud
 					float faceQuality;
 					FaceAttributes faceAttributes;
 					float genderConfidence;
+					float emotionConfidence;
 					std::string gender;
 					std::string emotion;
 					std::string age;

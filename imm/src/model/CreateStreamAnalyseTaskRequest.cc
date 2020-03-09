@@ -35,7 +35,7 @@ std::string CreateStreamAnalyseTaskRequest::getGrabType()const
 void CreateStreamAnalyseTaskRequest::setGrabType(const std::string& grabType)
 {
 	grabType_ = grabType;
-	setCoreParameter("GrabType", grabType);
+	setParameter("GrabType", grabType);
 }
 
 std::string CreateStreamAnalyseTaskRequest::getProject()const
@@ -46,7 +46,7 @@ std::string CreateStreamAnalyseTaskRequest::getProject()const
 void CreateStreamAnalyseTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string CreateStreamAnalyseTaskRequest::getStartTime()const
@@ -57,7 +57,7 @@ std::string CreateStreamAnalyseTaskRequest::getStartTime()const
 void CreateStreamAnalyseTaskRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string CreateStreamAnalyseTaskRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string CreateStreamAnalyseTaskRequest::getAccessKeyId()const
 void CreateStreamAnalyseTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateStreamAnalyseTaskRequest::getNotifyEndpoint()const
@@ -79,7 +79,7 @@ std::string CreateStreamAnalyseTaskRequest::getNotifyEndpoint()const
 void CreateStreamAnalyseTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+	setParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string CreateStreamAnalyseTaskRequest::getStreamUri()const
@@ -90,7 +90,7 @@ std::string CreateStreamAnalyseTaskRequest::getStreamUri()const
 void CreateStreamAnalyseTaskRequest::setStreamUri(const std::string& streamUri)
 {
 	streamUri_ = streamUri;
-	setCoreParameter("StreamUri", streamUri);
+	setParameter("StreamUri", streamUri);
 }
 
 std::string CreateStreamAnalyseTaskRequest::getNotifyTopicName()const
@@ -101,7 +101,7 @@ std::string CreateStreamAnalyseTaskRequest::getNotifyTopicName()const
 void CreateStreamAnalyseTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	setParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateStreamAnalyseTaskRequest::getEndTime()const
@@ -112,7 +112,7 @@ std::string CreateStreamAnalyseTaskRequest::getEndTime()const
 void CreateStreamAnalyseTaskRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 bool CreateStreamAnalyseTaskRequest::getSaveType()const
@@ -123,7 +123,7 @@ bool CreateStreamAnalyseTaskRequest::getSaveType()const
 void CreateStreamAnalyseTaskRequest::setSaveType(bool saveType)
 {
 	saveType_ = saveType;
-	setCoreParameter("SaveType", saveType ? "true" : "false");
+	setParameter("SaveType", saveType ? "true" : "false");
 }
 
 std::string CreateStreamAnalyseTaskRequest::getInterval()const
@@ -134,7 +134,7 @@ std::string CreateStreamAnalyseTaskRequest::getInterval()const
 void CreateStreamAnalyseTaskRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 
 std::string CreateStreamAnalyseTaskRequest::getTgtUri()const
@@ -145,6 +145,6 @@ std::string CreateStreamAnalyseTaskRequest::getTgtUri()const
 void CreateStreamAnalyseTaskRequest::setTgtUri(const std::string& tgtUri)
 {
 	tgtUri_ = tgtUri;
-	setCoreParameter("TgtUri", tgtUri);
+	setParameter("TgtUri", tgtUri);
 }
 

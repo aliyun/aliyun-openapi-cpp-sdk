@@ -35,7 +35,7 @@ std::string GetDocIndexRequest::getProject()const
 void GetDocIndexRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string GetDocIndexRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string GetDocIndexRequest::getAccessKeyId()const
 void GetDocIndexRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetDocIndexRequest::getUniqueId()const
@@ -57,7 +57,7 @@ std::string GetDocIndexRequest::getUniqueId()const
 void GetDocIndexRequest::setUniqueId(const std::string& uniqueId)
 {
 	uniqueId_ = uniqueId;
-	setCoreParameter("UniqueId", uniqueId);
+	setParameter("UniqueId", uniqueId);
 }
 
 std::string GetDocIndexRequest::getSet()const
@@ -68,6 +68,6 @@ std::string GetDocIndexRequest::getSet()const
 void GetDocIndexRequest::setSet(const std::string& set)
 {
 	set_ = set;
-	setCoreParameter("Set", set);
+	setParameter("Set", set);
 }
 

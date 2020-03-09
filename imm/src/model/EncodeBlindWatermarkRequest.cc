@@ -35,7 +35,7 @@ std::string EncodeBlindWatermarkRequest::getImageQuality()const
 void EncodeBlindWatermarkRequest::setImageQuality(const std::string& imageQuality)
 {
 	imageQuality_ = imageQuality;
-	setCoreParameter("ImageQuality", imageQuality);
+	setParameter("ImageQuality", imageQuality);
 }
 
 std::string EncodeBlindWatermarkRequest::getWatermarkUri()const
@@ -46,7 +46,7 @@ std::string EncodeBlindWatermarkRequest::getWatermarkUri()const
 void EncodeBlindWatermarkRequest::setWatermarkUri(const std::string& watermarkUri)
 {
 	watermarkUri_ = watermarkUri;
-	setCoreParameter("WatermarkUri", watermarkUri);
+	setParameter("WatermarkUri", watermarkUri);
 }
 
 std::string EncodeBlindWatermarkRequest::getProject()const
@@ -57,7 +57,7 @@ std::string EncodeBlindWatermarkRequest::getProject()const
 void EncodeBlindWatermarkRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string EncodeBlindWatermarkRequest::getContent()const
@@ -68,7 +68,7 @@ std::string EncodeBlindWatermarkRequest::getContent()const
 void EncodeBlindWatermarkRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setParameter("Content", content);
 }
 
 std::string EncodeBlindWatermarkRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string EncodeBlindWatermarkRequest::getAccessKeyId()const
 void EncodeBlindWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string EncodeBlindWatermarkRequest::getWatermarkType()const
@@ -90,7 +90,7 @@ std::string EncodeBlindWatermarkRequest::getWatermarkType()const
 void EncodeBlindWatermarkRequest::setWatermarkType(const std::string& watermarkType)
 {
 	watermarkType_ = watermarkType;
-	setCoreParameter("WatermarkType", watermarkType);
+	setParameter("WatermarkType", watermarkType);
 }
 
 std::string EncodeBlindWatermarkRequest::getTargetUri()const
@@ -101,7 +101,7 @@ std::string EncodeBlindWatermarkRequest::getTargetUri()const
 void EncodeBlindWatermarkRequest::setTargetUri(const std::string& targetUri)
 {
 	targetUri_ = targetUri;
-	setCoreParameter("TargetUri", targetUri);
+	setParameter("TargetUri", targetUri);
 }
 
 std::string EncodeBlindWatermarkRequest::getTargetImageType()const
@@ -112,7 +112,7 @@ std::string EncodeBlindWatermarkRequest::getTargetImageType()const
 void EncodeBlindWatermarkRequest::setTargetImageType(const std::string& targetImageType)
 {
 	targetImageType_ = targetImageType;
-	setCoreParameter("TargetImageType", targetImageType);
+	setParameter("TargetImageType", targetImageType);
 }
 
 std::string EncodeBlindWatermarkRequest::getImageUri()const
@@ -123,6 +123,6 @@ std::string EncodeBlindWatermarkRequest::getImageUri()const
 void EncodeBlindWatermarkRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
+	setParameter("ImageUri", imageUri);
 }
 

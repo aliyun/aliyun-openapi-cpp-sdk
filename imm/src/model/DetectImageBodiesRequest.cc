@@ -35,7 +35,7 @@ std::string DetectImageBodiesRequest::getProject()const
 void DetectImageBodiesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string DetectImageBodiesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DetectImageBodiesRequest::getAccessKeyId()const
 void DetectImageBodiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DetectImageBodiesRequest::getImageUri()const
@@ -57,6 +57,6 @@ std::string DetectImageBodiesRequest::getImageUri()const
 void DetectImageBodiesRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
+	setParameter("ImageUri", imageUri);
 }
 

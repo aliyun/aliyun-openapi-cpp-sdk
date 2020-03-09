@@ -35,7 +35,7 @@ std::string RefreshOfficePreviewTokenRequest::getProject()const
 void RefreshOfficePreviewTokenRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string RefreshOfficePreviewTokenRequest::getAccessToken()const
@@ -46,7 +46,7 @@ std::string RefreshOfficePreviewTokenRequest::getAccessToken()const
 void RefreshOfficePreviewTokenRequest::setAccessToken(const std::string& accessToken)
 {
 	accessToken_ = accessToken;
-	setCoreParameter("AccessToken", accessToken);
+	setParameter("AccessToken", accessToken);
 }
 
 std::string RefreshOfficePreviewTokenRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string RefreshOfficePreviewTokenRequest::getAccessKeyId()const
 void RefreshOfficePreviewTokenRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RefreshOfficePreviewTokenRequest::getRefreshToken()const
@@ -68,6 +68,6 @@ std::string RefreshOfficePreviewTokenRequest::getRefreshToken()const
 void RefreshOfficePreviewTokenRequest::setRefreshToken(const std::string& refreshToken)
 {
 	refreshToken_ = refreshToken;
-	setCoreParameter("RefreshToken", refreshToken);
+	setParameter("RefreshToken", refreshToken);
 }
 

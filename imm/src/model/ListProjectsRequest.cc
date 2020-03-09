@@ -35,7 +35,7 @@ int ListProjectsRequest::getMaxKeys()const
 void ListProjectsRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", std::to_string(maxKeys));
+	setParameter("MaxKeys", std::to_string(maxKeys));
 }
 
 std::string ListProjectsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ListProjectsRequest::getAccessKeyId()const
 void ListProjectsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListProjectsRequest::getMarker()const
@@ -57,6 +57,6 @@ std::string ListProjectsRequest::getMarker()const
 void ListProjectsRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 

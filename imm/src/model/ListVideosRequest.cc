@@ -35,7 +35,7 @@ std::string ListVideosRequest::getProject()const
 void ListVideosRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string ListVideosRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ListVideosRequest::getAccessKeyId()const
 void ListVideosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListVideosRequest::getMarker()const
@@ -57,7 +57,7 @@ std::string ListVideosRequest::getMarker()const
 void ListVideosRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 
 std::string ListVideosRequest::getSetId()const
@@ -68,7 +68,7 @@ std::string ListVideosRequest::getSetId()const
 void ListVideosRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setParameter("SetId", setId);
 }
 
 std::string ListVideosRequest::getCreateTimeStart()const
@@ -79,6 +79,6 @@ std::string ListVideosRequest::getCreateTimeStart()const
 void ListVideosRequest::setCreateTimeStart(const std::string& createTimeStart)
 {
 	createTimeStart_ = createTimeStart;
-	setCoreParameter("CreateTimeStart", createTimeStart);
+	setParameter("CreateTimeStart", createTimeStart);
 }
 

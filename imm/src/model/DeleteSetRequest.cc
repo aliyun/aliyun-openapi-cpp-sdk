@@ -35,7 +35,7 @@ std::string DeleteSetRequest::getProject()const
 void DeleteSetRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string DeleteSetRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DeleteSetRequest::getAccessKeyId()const
 void DeleteSetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteSetRequest::getSetId()const
@@ -57,6 +57,6 @@ std::string DeleteSetRequest::getSetId()const
 void DeleteSetRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setParameter("SetId", setId);
 }
 

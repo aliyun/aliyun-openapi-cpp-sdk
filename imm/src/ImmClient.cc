@@ -51,42 +51,6 @@ ImmClient::ImmClient(const std::string & accessKeyId, const std::string & access
 ImmClient::~ImmClient()
 {}
 
-ImmClient::CompareFaceOutcome ImmClient::compareFace(const CompareFaceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CompareFaceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CompareFaceOutcome(CompareFaceResult(outcome.result()));
-	else
-		return CompareFaceOutcome(outcome.error());
-}
-
-void ImmClient::compareFaceAsync(const CompareFaceRequest& request, const CompareFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, compareFace(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::CompareFaceOutcomeCallable ImmClient::compareFaceCallable(const CompareFaceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CompareFaceOutcome()>>(
-			[this, request]()
-			{
-			return this->compareFace(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::CompareImageFacesOutcome ImmClient::compareImageFaces(const CompareImageFacesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,42 +945,6 @@ ImmClient::DescribeRegionsOutcomeCallable ImmClient::describeRegionsCallable(con
 			[this, request]()
 			{
 			return this->describeRegions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::DetectClothesOutcome ImmClient::detectClothes(const DetectClothesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DetectClothesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DetectClothesOutcome(DetectClothesResult(outcome.result()));
-	else
-		return DetectClothesOutcome(outcome.error());
-}
-
-void ImmClient::detectClothesAsync(const DetectClothesRequest& request, const DetectClothesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, detectClothes(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::DetectClothesOutcomeCallable ImmClient::detectClothesCallable(const DetectClothesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DetectClothesOutcome()>>(
-			[this, request]()
-			{
-			return this->detectClothes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2205,42 +2133,6 @@ ImmClient::ListSetsOutcomeCallable ImmClient::listSetsCallable(const ListSetsReq
 			[this, request]()
 			{
 			return this->listSets(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::ListTagNamesOutcome ImmClient::listTagNames(const ListTagNamesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListTagNamesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListTagNamesOutcome(ListTagNamesResult(outcome.result()));
-	else
-		return ListTagNamesOutcome(outcome.error());
-}
-
-void ImmClient::listTagNamesAsync(const ListTagNamesRequest& request, const ListTagNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listTagNames(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::ListTagNamesOutcomeCallable ImmClient::listTagNamesCallable(const ListTagNamesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListTagNamesOutcome()>>(
-			[this, request]()
-			{
-			return this->listTagNames(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

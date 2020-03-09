@@ -35,7 +35,7 @@ std::string FindImagesByTagNamesRequest::getProject()const
 void FindImagesByTagNamesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string FindImagesByTagNamesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string FindImagesByTagNamesRequest::getAccessKeyId()const
 void FindImagesByTagNamesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int FindImagesByTagNamesRequest::getLimit()const
@@ -57,7 +57,7 @@ int FindImagesByTagNamesRequest::getLimit()const
 void FindImagesByTagNamesRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 std::string FindImagesByTagNamesRequest::getTagNames()const
@@ -68,7 +68,7 @@ std::string FindImagesByTagNamesRequest::getTagNames()const
 void FindImagesByTagNamesRequest::setTagNames(const std::string& tagNames)
 {
 	tagNames_ = tagNames;
-	setCoreParameter("TagNames", tagNames);
+	setParameter("TagNames", tagNames);
 }
 
 std::string FindImagesByTagNamesRequest::getMarker()const
@@ -79,7 +79,7 @@ std::string FindImagesByTagNamesRequest::getMarker()const
 void FindImagesByTagNamesRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 
 std::string FindImagesByTagNamesRequest::getSetId()const
@@ -90,6 +90,6 @@ std::string FindImagesByTagNamesRequest::getSetId()const
 void FindImagesByTagNamesRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setParameter("SetId", setId);
 }
 

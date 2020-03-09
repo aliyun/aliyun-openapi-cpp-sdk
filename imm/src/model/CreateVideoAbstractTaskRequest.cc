@@ -35,7 +35,7 @@ std::string CreateVideoAbstractTaskRequest::getTargetVideoUri()const
 void CreateVideoAbstractTaskRequest::setTargetVideoUri(const std::string& targetVideoUri)
 {
 	targetVideoUri_ = targetVideoUri;
-	setCoreParameter("TargetVideoUri", targetVideoUri);
+	setParameter("TargetVideoUri", targetVideoUri);
 }
 
 std::string CreateVideoAbstractTaskRequest::getProject()const
@@ -46,7 +46,7 @@ std::string CreateVideoAbstractTaskRequest::getProject()const
 void CreateVideoAbstractTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string CreateVideoAbstractTaskRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string CreateVideoAbstractTaskRequest::getAccessKeyId()const
 void CreateVideoAbstractTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateVideoAbstractTaskRequest::getNotifyEndpoint()const
@@ -68,7 +68,7 @@ std::string CreateVideoAbstractTaskRequest::getNotifyEndpoint()const
 void CreateVideoAbstractTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+	setParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string CreateVideoAbstractTaskRequest::getNotifyTopicName()const
@@ -79,7 +79,7 @@ std::string CreateVideoAbstractTaskRequest::getNotifyTopicName()const
 void CreateVideoAbstractTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	setParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateVideoAbstractTaskRequest::getVideoUri()const
@@ -90,7 +90,7 @@ std::string CreateVideoAbstractTaskRequest::getVideoUri()const
 void CreateVideoAbstractTaskRequest::setVideoUri(const std::string& videoUri)
 {
 	videoUri_ = videoUri;
-	setCoreParameter("VideoUri", videoUri);
+	setParameter("VideoUri", videoUri);
 }
 
 int CreateVideoAbstractTaskRequest::getAbstractLength()const
@@ -101,7 +101,7 @@ int CreateVideoAbstractTaskRequest::getAbstractLength()const
 void CreateVideoAbstractTaskRequest::setAbstractLength(int abstractLength)
 {
 	abstractLength_ = abstractLength;
-	setCoreParameter("AbstractLength", std::to_string(abstractLength));
+	setParameter("AbstractLength", std::to_string(abstractLength));
 }
 
 std::string CreateVideoAbstractTaskRequest::getTargetClipsUri()const
@@ -112,6 +112,6 @@ std::string CreateVideoAbstractTaskRequest::getTargetClipsUri()const
 void CreateVideoAbstractTaskRequest::setTargetClipsUri(const std::string& targetClipsUri)
 {
 	targetClipsUri_ = targetClipsUri;
-	setCoreParameter("TargetClipsUri", targetClipsUri);
+	setParameter("TargetClipsUri", targetClipsUri);
 }
 

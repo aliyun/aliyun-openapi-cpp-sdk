@@ -35,7 +35,7 @@ std::string ListSetsRequest::getProject()const
 void ListSetsRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string ListSetsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ListSetsRequest::getAccessKeyId()const
 void ListSetsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListSetsRequest::getMarker()const
@@ -57,6 +57,6 @@ std::string ListSetsRequest::getMarker()const
 void ListSetsRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 

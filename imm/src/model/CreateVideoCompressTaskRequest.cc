@@ -35,7 +35,7 @@ std::string CreateVideoCompressTaskRequest::getProject()const
 void CreateVideoCompressTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string CreateVideoCompressTaskRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string CreateVideoCompressTaskRequest::getAccessKeyId()const
 void CreateVideoCompressTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateVideoCompressTaskRequest::getNotifyEndpoint()const
@@ -57,7 +57,7 @@ std::string CreateVideoCompressTaskRequest::getNotifyEndpoint()const
 void CreateVideoCompressTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+	setParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string CreateVideoCompressTaskRequest::getTargetContainer()const
@@ -68,7 +68,7 @@ std::string CreateVideoCompressTaskRequest::getTargetContainer()const
 void CreateVideoCompressTaskRequest::setTargetContainer(const std::string& targetContainer)
 {
 	targetContainer_ = targetContainer;
-	setCoreParameter("TargetContainer", targetContainer);
+	setParameter("TargetContainer", targetContainer);
 }
 
 std::string CreateVideoCompressTaskRequest::getCustomMessage()const
@@ -79,7 +79,7 @@ std::string CreateVideoCompressTaskRequest::getCustomMessage()const
 void CreateVideoCompressTaskRequest::setCustomMessage(const std::string& customMessage)
 {
 	customMessage_ = customMessage;
-	setCoreParameter("CustomMessage", customMessage);
+	setParameter("CustomMessage", customMessage);
 }
 
 std::string CreateVideoCompressTaskRequest::getNotifyTopicName()const
@@ -90,7 +90,7 @@ std::string CreateVideoCompressTaskRequest::getNotifyTopicName()const
 void CreateVideoCompressTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	setParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateVideoCompressTaskRequest::getTargetList()const
@@ -101,7 +101,7 @@ std::string CreateVideoCompressTaskRequest::getTargetList()const
 void CreateVideoCompressTaskRequest::setTargetList(const std::string& targetList)
 {
 	targetList_ = targetList;
-	setCoreParameter("TargetList", targetList);
+	setParameter("TargetList", targetList);
 }
 
 std::string CreateVideoCompressTaskRequest::getVideoUri()const
@@ -112,6 +112,6 @@ std::string CreateVideoCompressTaskRequest::getVideoUri()const
 void CreateVideoCompressTaskRequest::setVideoUri(const std::string& videoUri)
 {
 	videoUri_ = videoUri;
-	setCoreParameter("VideoUri", videoUri);
+	setParameter("VideoUri", videoUri);
 }
 

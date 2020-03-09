@@ -35,7 +35,7 @@ std::string ListFaceGroupsRequest::getProject()const
 void ListFaceGroupsRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string ListFaceGroupsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ListFaceGroupsRequest::getAccessKeyId()const
 void ListFaceGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListFaceGroupsRequest::getLimit()const
@@ -57,7 +57,7 @@ int ListFaceGroupsRequest::getLimit()const
 void ListFaceGroupsRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 std::string ListFaceGroupsRequest::getOrder()const
@@ -68,7 +68,7 @@ std::string ListFaceGroupsRequest::getOrder()const
 void ListFaceGroupsRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 std::string ListFaceGroupsRequest::getOrderBy()const
@@ -79,7 +79,7 @@ std::string ListFaceGroupsRequest::getOrderBy()const
 void ListFaceGroupsRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setParameter("OrderBy", orderBy);
 }
 
 std::string ListFaceGroupsRequest::getMarker()const
@@ -90,7 +90,7 @@ std::string ListFaceGroupsRequest::getMarker()const
 void ListFaceGroupsRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 
 std::string ListFaceGroupsRequest::getSetId()const
@@ -101,6 +101,6 @@ std::string ListFaceGroupsRequest::getSetId()const
 void ListFaceGroupsRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setParameter("SetId", setId);
 }
 

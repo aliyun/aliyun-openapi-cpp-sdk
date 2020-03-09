@@ -35,7 +35,7 @@ int ListVideoTasksRequest::getMaxKeys()const
 void ListVideoTasksRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", std::to_string(maxKeys));
+	setParameter("MaxKeys", std::to_string(maxKeys));
 }
 
 std::string ListVideoTasksRequest::getProject()const
@@ -46,7 +46,7 @@ std::string ListVideoTasksRequest::getProject()const
 void ListVideoTasksRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string ListVideoTasksRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ListVideoTasksRequest::getAccessKeyId()const
 void ListVideoTasksRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListVideoTasksRequest::getTaskType()const
@@ -68,7 +68,7 @@ std::string ListVideoTasksRequest::getTaskType()const
 void ListVideoTasksRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", taskType);
+	setParameter("TaskType", taskType);
 }
 
 std::string ListVideoTasksRequest::getMarker()const
@@ -79,6 +79,6 @@ std::string ListVideoTasksRequest::getMarker()const
 void ListVideoTasksRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 

@@ -35,7 +35,7 @@ int DecodeBlindWatermarkRequest::getImageQuality()const
 void DecodeBlindWatermarkRequest::setImageQuality(int imageQuality)
 {
 	imageQuality_ = imageQuality;
-	setCoreParameter("ImageQuality", std::to_string(imageQuality));
+	setParameter("ImageQuality", std::to_string(imageQuality));
 }
 
 std::string DecodeBlindWatermarkRequest::getProject()const
@@ -46,7 +46,7 @@ std::string DecodeBlindWatermarkRequest::getProject()const
 void DecodeBlindWatermarkRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string DecodeBlindWatermarkRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DecodeBlindWatermarkRequest::getAccessKeyId()const
 void DecodeBlindWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DecodeBlindWatermarkRequest::getWatermarkType()const
@@ -68,7 +68,7 @@ std::string DecodeBlindWatermarkRequest::getWatermarkType()const
 void DecodeBlindWatermarkRequest::setWatermarkType(const std::string& watermarkType)
 {
 	watermarkType_ = watermarkType;
-	setCoreParameter("WatermarkType", watermarkType);
+	setParameter("WatermarkType", watermarkType);
 }
 
 std::string DecodeBlindWatermarkRequest::getTargetUri()const
@@ -79,7 +79,7 @@ std::string DecodeBlindWatermarkRequest::getTargetUri()const
 void DecodeBlindWatermarkRequest::setTargetUri(const std::string& targetUri)
 {
 	targetUri_ = targetUri;
-	setCoreParameter("TargetUri", targetUri);
+	setParameter("TargetUri", targetUri);
 }
 
 std::string DecodeBlindWatermarkRequest::getImageUri()const
@@ -90,7 +90,7 @@ std::string DecodeBlindWatermarkRequest::getImageUri()const
 void DecodeBlindWatermarkRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
+	setParameter("ImageUri", imageUri);
 }
 
 std::string DecodeBlindWatermarkRequest::getOriginalImageUri()const
@@ -101,6 +101,6 @@ std::string DecodeBlindWatermarkRequest::getOriginalImageUri()const
 void DecodeBlindWatermarkRequest::setOriginalImageUri(const std::string& originalImageUri)
 {
 	originalImageUri_ = originalImageUri;
-	setCoreParameter("OriginalImageUri", originalImageUri);
+	setParameter("OriginalImageUri", originalImageUri);
 }
 

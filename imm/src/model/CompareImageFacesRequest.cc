@@ -35,7 +35,7 @@ std::string CompareImageFacesRequest::getProject()const
 void CompareImageFacesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string CompareImageFacesRequest::getFaceIdA()const
@@ -46,7 +46,7 @@ std::string CompareImageFacesRequest::getFaceIdA()const
 void CompareImageFacesRequest::setFaceIdA(const std::string& faceIdA)
 {
 	faceIdA_ = faceIdA;
-	setCoreParameter("FaceIdA", faceIdA);
+	setParameter("FaceIdA", faceIdA);
 }
 
 std::string CompareImageFacesRequest::getFaceIdB()const
@@ -57,7 +57,7 @@ std::string CompareImageFacesRequest::getFaceIdB()const
 void CompareImageFacesRequest::setFaceIdB(const std::string& faceIdB)
 {
 	faceIdB_ = faceIdB;
-	setCoreParameter("FaceIdB", faceIdB);
+	setParameter("FaceIdB", faceIdB);
 }
 
 std::string CompareImageFacesRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string CompareImageFacesRequest::getAccessKeyId()const
 void CompareImageFacesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CompareImageFacesRequest::getImageUriB()const
@@ -79,7 +79,7 @@ std::string CompareImageFacesRequest::getImageUriB()const
 void CompareImageFacesRequest::setImageUriB(const std::string& imageUriB)
 {
 	imageUriB_ = imageUriB;
-	setCoreParameter("ImageUriB", imageUriB);
+	setParameter("ImageUriB", imageUriB);
 }
 
 std::string CompareImageFacesRequest::getImageUriA()const
@@ -90,7 +90,7 @@ std::string CompareImageFacesRequest::getImageUriA()const
 void CompareImageFacesRequest::setImageUriA(const std::string& imageUriA)
 {
 	imageUriA_ = imageUriA;
-	setCoreParameter("ImageUriA", imageUriA);
+	setParameter("ImageUriA", imageUriA);
 }
 
 std::string CompareImageFacesRequest::getSetId()const
@@ -101,6 +101,6 @@ std::string CompareImageFacesRequest::getSetId()const
 void CompareImageFacesRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setParameter("SetId", setId);
 }
 

@@ -22,8 +22,6 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "ImmExport.h"
-#include "model/CompareFaceRequest.h"
-#include "model/CompareFaceResult.h"
 #include "model/CompareImageFacesRequest.h"
 #include "model/CompareImageFacesResult.h"
 #include "model/ConvertOfficeFormatRequest.h"
@@ -74,8 +72,6 @@
 #include "model/DeleteVideoTaskResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
-#include "model/DetectClothesRequest.h"
-#include "model/DetectClothesResult.h"
 #include "model/DetectImageBodiesRequest.h"
 #include "model/DetectImageBodiesResult.h"
 #include "model/DetectImageCelebrityRequest.h"
@@ -142,8 +138,6 @@
 #include "model/ListSetTagsResult.h"
 #include "model/ListSetsRequest.h"
 #include "model/ListSetsResult.h"
-#include "model/ListTagNamesRequest.h"
-#include "model/ListTagNamesResult.h"
 #include "model/ListVideoAudiosRequest.h"
 #include "model/ListVideoAudiosResult.h"
 #include "model/ListVideoFramesRequest.h"
@@ -177,9 +171,6 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_IMM_EXPORT ImmClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::CompareFaceResult> CompareFaceOutcome;
-			typedef std::future<CompareFaceOutcome> CompareFaceOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::CompareFaceRequest&, const CompareFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompareFaceAsyncHandler;
 			typedef Outcome<Error, Model::CompareImageFacesResult> CompareImageFacesOutcome;
 			typedef std::future<CompareImageFacesOutcome> CompareImageFacesOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CompareImageFacesRequest&, const CompareImageFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompareImageFacesAsyncHandler;
@@ -255,9 +246,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
-			typedef Outcome<Error, Model::DetectClothesResult> DetectClothesOutcome;
-			typedef std::future<DetectClothesOutcome> DetectClothesOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::DetectClothesRequest&, const DetectClothesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectClothesAsyncHandler;
 			typedef Outcome<Error, Model::DetectImageBodiesResult> DetectImageBodiesOutcome;
 			typedef std::future<DetectImageBodiesOutcome> DetectImageBodiesOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::DetectImageBodiesRequest&, const DetectImageBodiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectImageBodiesAsyncHandler;
@@ -357,9 +345,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSetsResult> ListSetsOutcome;
 			typedef std::future<ListSetsOutcome> ListSetsOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ListSetsRequest&, const ListSetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSetsAsyncHandler;
-			typedef Outcome<Error, Model::ListTagNamesResult> ListTagNamesOutcome;
-			typedef std::future<ListTagNamesOutcome> ListTagNamesOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::ListTagNamesRequest&, const ListTagNamesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagNamesAsyncHandler;
 			typedef Outcome<Error, Model::ListVideoAudiosResult> ListVideoAudiosOutcome;
 			typedef std::future<ListVideoAudiosOutcome> ListVideoAudiosOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ListVideoAudiosRequest&, const ListVideoAudiosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVideoAudiosAsyncHandler;
@@ -401,9 +386,6 @@ namespace AlibabaCloud
 			ImmClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			ImmClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~ImmClient();
-			CompareFaceOutcome compareFace(const Model::CompareFaceRequest &request)const;
-			void compareFaceAsync(const Model::CompareFaceRequest& request, const CompareFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CompareFaceOutcomeCallable compareFaceCallable(const Model::CompareFaceRequest& request) const;
 			CompareImageFacesOutcome compareImageFaces(const Model::CompareImageFacesRequest &request)const;
 			void compareImageFacesAsync(const Model::CompareImageFacesRequest& request, const CompareImageFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CompareImageFacesOutcomeCallable compareImageFacesCallable(const Model::CompareImageFacesRequest& request) const;
@@ -479,9 +461,6 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
-			DetectClothesOutcome detectClothes(const Model::DetectClothesRequest &request)const;
-			void detectClothesAsync(const Model::DetectClothesRequest& request, const DetectClothesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DetectClothesOutcomeCallable detectClothesCallable(const Model::DetectClothesRequest& request) const;
 			DetectImageBodiesOutcome detectImageBodies(const Model::DetectImageBodiesRequest &request)const;
 			void detectImageBodiesAsync(const Model::DetectImageBodiesRequest& request, const DetectImageBodiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectImageBodiesOutcomeCallable detectImageBodiesCallable(const Model::DetectImageBodiesRequest& request) const;
@@ -581,9 +560,6 @@ namespace AlibabaCloud
 			ListSetsOutcome listSets(const Model::ListSetsRequest &request)const;
 			void listSetsAsync(const Model::ListSetsRequest& request, const ListSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSetsOutcomeCallable listSetsCallable(const Model::ListSetsRequest& request) const;
-			ListTagNamesOutcome listTagNames(const Model::ListTagNamesRequest &request)const;
-			void listTagNamesAsync(const Model::ListTagNamesRequest& request, const ListTagNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListTagNamesOutcomeCallable listTagNamesCallable(const Model::ListTagNamesRequest& request) const;
 			ListVideoAudiosOutcome listVideoAudios(const Model::ListVideoAudiosRequest &request)const;
 			void listVideoAudiosAsync(const Model::ListVideoAudiosRequest& request, const ListVideoAudiosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListVideoAudiosOutcomeCallable listVideoAudiosCallable(const Model::ListVideoAudiosRequest& request) const;

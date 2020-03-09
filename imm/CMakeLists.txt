@@ -21,8 +21,6 @@ set(imm_public_header
 	include/alibabacloud/imm/ImmExport.h )
 
 set(imm_public_header_model 
-	include/alibabacloud/imm/model/CompareFaceRequest.h
-	include/alibabacloud/imm/model/CompareFaceResult.h
 	include/alibabacloud/imm/model/CompareImageFacesRequest.h
 	include/alibabacloud/imm/model/CompareImageFacesResult.h
 	include/alibabacloud/imm/model/ConvertOfficeFormatRequest.h
@@ -73,8 +71,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/DeleteVideoTaskResult.h
 	include/alibabacloud/imm/model/DescribeRegionsRequest.h
 	include/alibabacloud/imm/model/DescribeRegionsResult.h
-	include/alibabacloud/imm/model/DetectClothesRequest.h
-	include/alibabacloud/imm/model/DetectClothesResult.h
 	include/alibabacloud/imm/model/DetectImageBodiesRequest.h
 	include/alibabacloud/imm/model/DetectImageBodiesResult.h
 	include/alibabacloud/imm/model/DetectImageCelebrityRequest.h
@@ -141,8 +137,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/ListSetTagsResult.h
 	include/alibabacloud/imm/model/ListSetsRequest.h
 	include/alibabacloud/imm/model/ListSetsResult.h
-	include/alibabacloud/imm/model/ListTagNamesRequest.h
-	include/alibabacloud/imm/model/ListTagNamesResult.h
 	include/alibabacloud/imm/model/ListVideoAudiosRequest.h
 	include/alibabacloud/imm/model/ListVideoAudiosResult.h
 	include/alibabacloud/imm/model/ListVideoFramesRequest.h
@@ -170,8 +164,6 @@ set(imm_public_header_model
 
 set(imm_src 
 	src/ImmClient.cc
-	src/model/CompareFaceRequest.cc
-	src/model/CompareFaceResult.cc
 	src/model/CompareImageFacesRequest.cc
 	src/model/CompareImageFacesResult.cc
 	src/model/ConvertOfficeFormatRequest.cc
@@ -222,8 +214,6 @@ set(imm_src
 	src/model/DeleteVideoTaskResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
-	src/model/DetectClothesRequest.cc
-	src/model/DetectClothesResult.cc
 	src/model/DetectImageBodiesRequest.cc
 	src/model/DetectImageBodiesResult.cc
 	src/model/DetectImageCelebrityRequest.cc
@@ -290,8 +280,6 @@ set(imm_src
 	src/model/ListSetTagsResult.cc
 	src/model/ListSetsRequest.cc
 	src/model/ListSetsResult.cc
-	src/model/ListTagNamesRequest.cc
-	src/model/ListTagNamesResult.cc
 	src/model/ListVideoAudiosRequest.cc
 	src/model/ListVideoAudiosResult.cc
 	src/model/ListVideoFramesRequest.cc

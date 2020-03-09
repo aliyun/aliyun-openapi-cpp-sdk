@@ -35,7 +35,7 @@ std::string CreateGroupFacesJobRequest::getProject()const
 void CreateGroupFacesJobRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string CreateGroupFacesJobRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string CreateGroupFacesJobRequest::getAccessKeyId()const
 void CreateGroupFacesJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateGroupFacesJobRequest::getNotifyEndpoint()const
@@ -57,7 +57,7 @@ std::string CreateGroupFacesJobRequest::getNotifyEndpoint()const
 void CreateGroupFacesJobRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+	setParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string CreateGroupFacesJobRequest::getNotifyTopicName()const
@@ -68,7 +68,7 @@ std::string CreateGroupFacesJobRequest::getNotifyTopicName()const
 void CreateGroupFacesJobRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	setParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateGroupFacesJobRequest::getSetId()const
@@ -79,6 +79,6 @@ std::string CreateGroupFacesJobRequest::getSetId()const
 void CreateGroupFacesJobRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setParameter("SetId", setId);
 }
 

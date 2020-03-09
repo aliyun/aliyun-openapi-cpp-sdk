@@ -35,7 +35,7 @@ std::string UpdateFaceGroupRequest::getProject()const
 void UpdateFaceGroupRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string UpdateFaceGroupRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string UpdateFaceGroupRequest::getAccessKeyId()const
 void UpdateFaceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateFaceGroupRequest::getGroupId()const
@@ -57,7 +57,7 @@ std::string UpdateFaceGroupRequest::getGroupId()const
 void UpdateFaceGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string UpdateFaceGroupRequest::getGroupName()const
@@ -68,7 +68,7 @@ std::string UpdateFaceGroupRequest::getGroupName()const
 void UpdateFaceGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string UpdateFaceGroupRequest::getSetId()const
@@ -79,7 +79,7 @@ std::string UpdateFaceGroupRequest::getSetId()const
 void UpdateFaceGroupRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setParameter("SetId", setId);
 }
 
 std::string UpdateFaceGroupRequest::getGroupCoverFaceId()const
@@ -90,6 +90,6 @@ std::string UpdateFaceGroupRequest::getGroupCoverFaceId()const
 void UpdateFaceGroupRequest::setGroupCoverFaceId(const std::string& groupCoverFaceId)
 {
 	groupCoverFaceId_ = groupCoverFaceId;
-	setCoreParameter("GroupCoverFaceId", groupCoverFaceId);
+	setParameter("GroupCoverFaceId", groupCoverFaceId);
 }
 

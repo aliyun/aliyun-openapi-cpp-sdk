@@ -35,7 +35,7 @@ std::string CreateGrabFrameTaskRequest::getProject()const
 void CreateGrabFrameTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string CreateGrabFrameTaskRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string CreateGrabFrameTaskRequest::getAccessKeyId()const
 void CreateGrabFrameTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateGrabFrameTaskRequest::getNotifyEndpoint()const
@@ -57,7 +57,7 @@ std::string CreateGrabFrameTaskRequest::getNotifyEndpoint()const
 void CreateGrabFrameTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+	setParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string CreateGrabFrameTaskRequest::getCustomMessage()const
@@ -68,7 +68,7 @@ std::string CreateGrabFrameTaskRequest::getCustomMessage()const
 void CreateGrabFrameTaskRequest::setCustomMessage(const std::string& customMessage)
 {
 	customMessage_ = customMessage;
-	setCoreParameter("CustomMessage", customMessage);
+	setParameter("CustomMessage", customMessage);
 }
 
 std::string CreateGrabFrameTaskRequest::getNotifyTopicName()const
@@ -79,7 +79,7 @@ std::string CreateGrabFrameTaskRequest::getNotifyTopicName()const
 void CreateGrabFrameTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	setParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateGrabFrameTaskRequest::getTargetList()const
@@ -90,7 +90,7 @@ std::string CreateGrabFrameTaskRequest::getTargetList()const
 void CreateGrabFrameTaskRequest::setTargetList(const std::string& targetList)
 {
 	targetList_ = targetList;
-	setCoreParameter("TargetList", targetList);
+	setParameter("TargetList", targetList);
 }
 
 std::string CreateGrabFrameTaskRequest::getVideoUri()const
@@ -101,6 +101,6 @@ std::string CreateGrabFrameTaskRequest::getVideoUri()const
 void CreateGrabFrameTaskRequest::setVideoUri(const std::string& videoUri)
 {
 	videoUri_ = videoUri;
-	setCoreParameter("VideoUri", videoUri);
+	setParameter("VideoUri", videoUri);
 }
 

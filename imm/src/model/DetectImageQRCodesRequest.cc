@@ -35,7 +35,7 @@ std::string DetectImageQRCodesRequest::getProject()const
 void DetectImageQRCodesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string DetectImageQRCodesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DetectImageQRCodesRequest::getAccessKeyId()const
 void DetectImageQRCodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DetectImageQRCodesRequest::getImageUri()const
@@ -57,6 +57,6 @@ std::string DetectImageQRCodesRequest::getImageUri()const
 void DetectImageQRCodesRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
+	setParameter("ImageUri", imageUri);
 }
 

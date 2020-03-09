@@ -35,7 +35,7 @@ std::string CreateImageProcessTaskRequest::getProject()const
 void CreateImageProcessTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string CreateImageProcessTaskRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string CreateImageProcessTaskRequest::getAccessKeyId()const
 void CreateImageProcessTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateImageProcessTaskRequest::getNotifyEndpoint()const
@@ -57,7 +57,7 @@ std::string CreateImageProcessTaskRequest::getNotifyEndpoint()const
 void CreateImageProcessTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+	setParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string CreateImageProcessTaskRequest::getNotifyTopicName()const
@@ -68,7 +68,7 @@ std::string CreateImageProcessTaskRequest::getNotifyTopicName()const
 void CreateImageProcessTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	setParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateImageProcessTaskRequest::getTargetList()const
@@ -79,7 +79,7 @@ std::string CreateImageProcessTaskRequest::getTargetList()const
 void CreateImageProcessTaskRequest::setTargetList(const std::string& targetList)
 {
 	targetList_ = targetList;
-	setCoreParameter("TargetList", targetList);
+	setParameter("TargetList", targetList);
 }
 
 std::string CreateImageProcessTaskRequest::getImageUri()const
@@ -90,6 +90,6 @@ std::string CreateImageProcessTaskRequest::getImageUri()const
 void CreateImageProcessTaskRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
+	setParameter("ImageUri", imageUri);
 }
 

@@ -35,7 +35,7 @@ std::string UpdateImageRequest::getProject()const
 void UpdateImageRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string UpdateImageRequest::getExternalId()const
@@ -46,7 +46,7 @@ std::string UpdateImageRequest::getExternalId()const
 void UpdateImageRequest::setExternalId(const std::string& externalId)
 {
 	externalId_ = externalId;
-	setCoreParameter("ExternalId", externalId);
+	setParameter("ExternalId", externalId);
 }
 
 std::string UpdateImageRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string UpdateImageRequest::getAccessKeyId()const
 void UpdateImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateImageRequest::getSourceType()const
@@ -68,7 +68,7 @@ std::string UpdateImageRequest::getSourceType()const
 void UpdateImageRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
+	setParameter("SourceType", sourceType);
 }
 
 std::string UpdateImageRequest::getRemarksB()const
@@ -79,7 +79,7 @@ std::string UpdateImageRequest::getRemarksB()const
 void UpdateImageRequest::setRemarksB(const std::string& remarksB)
 {
 	remarksB_ = remarksB;
-	setCoreParameter("RemarksB", remarksB);
+	setParameter("RemarksB", remarksB);
 }
 
 std::string UpdateImageRequest::getRemarksA()const
@@ -90,7 +90,7 @@ std::string UpdateImageRequest::getRemarksA()const
 void UpdateImageRequest::setRemarksA(const std::string& remarksA)
 {
 	remarksA_ = remarksA;
-	setCoreParameter("RemarksA", remarksA);
+	setParameter("RemarksA", remarksA);
 }
 
 std::string UpdateImageRequest::getImageUri()const
@@ -101,7 +101,7 @@ std::string UpdateImageRequest::getImageUri()const
 void UpdateImageRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
+	setParameter("ImageUri", imageUri);
 }
 
 std::string UpdateImageRequest::getSourceUri()const
@@ -112,7 +112,7 @@ std::string UpdateImageRequest::getSourceUri()const
 void UpdateImageRequest::setSourceUri(const std::string& sourceUri)
 {
 	sourceUri_ = sourceUri;
-	setCoreParameter("SourceUri", sourceUri);
+	setParameter("SourceUri", sourceUri);
 }
 
 std::string UpdateImageRequest::getSourcePosition()const
@@ -123,7 +123,7 @@ std::string UpdateImageRequest::getSourcePosition()const
 void UpdateImageRequest::setSourcePosition(const std::string& sourcePosition)
 {
 	sourcePosition_ = sourcePosition;
-	setCoreParameter("SourcePosition", sourcePosition);
+	setParameter("SourcePosition", sourcePosition);
 }
 
 std::string UpdateImageRequest::getRemarksD()const
@@ -134,7 +134,7 @@ std::string UpdateImageRequest::getRemarksD()const
 void UpdateImageRequest::setRemarksD(const std::string& remarksD)
 {
 	remarksD_ = remarksD;
-	setCoreParameter("RemarksD", remarksD);
+	setParameter("RemarksD", remarksD);
 }
 
 std::string UpdateImageRequest::getRemarksC()const
@@ -145,7 +145,7 @@ std::string UpdateImageRequest::getRemarksC()const
 void UpdateImageRequest::setRemarksC(const std::string& remarksC)
 {
 	remarksC_ = remarksC;
-	setCoreParameter("RemarksC", remarksC);
+	setParameter("RemarksC", remarksC);
 }
 
 std::string UpdateImageRequest::getSetId()const
@@ -156,6 +156,6 @@ std::string UpdateImageRequest::getSetId()const
 void UpdateImageRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setParameter("SetId", setId);
 }
 

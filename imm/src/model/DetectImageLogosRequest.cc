@@ -35,7 +35,7 @@ std::string DetectImageLogosRequest::getProject()const
 void DetectImageLogosRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string DetectImageLogosRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DetectImageLogosRequest::getAccessKeyId()const
 void DetectImageLogosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DetectImageLogosRequest::getImageUri()const
@@ -57,6 +57,6 @@ std::string DetectImageLogosRequest::getImageUri()const
 void DetectImageLogosRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
+	setParameter("ImageUri", imageUri);
 }
 
