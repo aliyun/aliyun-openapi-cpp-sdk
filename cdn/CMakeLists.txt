@@ -49,6 +49,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/BatchUpdateCdnDomainResult.h
 	include/alibabacloud/cdn/model/CreateCdnCertificateSigningRequestRequest.h
 	include/alibabacloud/cdn/model/CreateCdnCertificateSigningRequestResult.h
+	include/alibabacloud/cdn/model/CreateIllegalUrlExportTaskRequest.h
+	include/alibabacloud/cdn/model/CreateIllegalUrlExportTaskResult.h
 	include/alibabacloud/cdn/model/CreateLiveStreamRecordIndexFilesRequest.h
 	include/alibabacloud/cdn/model/CreateLiveStreamRecordIndexFilesResult.h
 	include/alibabacloud/cdn/model/CreateRealTimeLogDeliveryRequest.h
@@ -211,6 +213,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainsUsageByDayResult.h
 	include/alibabacloud/cdn/model/DescribeFCTriggerRequest.h
 	include/alibabacloud/cdn/model/DescribeFCTriggerResult.h
+	include/alibabacloud/cdn/model/DescribeIllegalUrlExportTaskRequest.h
+	include/alibabacloud/cdn/model/DescribeIllegalUrlExportTaskResult.h
 	include/alibabacloud/cdn/model/DescribeIpInfoRequest.h
 	include/alibabacloud/cdn/model/DescribeIpInfoResult.h
 	include/alibabacloud/cdn/model/DescribeL2VipsByDomainRequest.h
@@ -434,6 +438,8 @@ set(cdn_src
 	src/model/BatchUpdateCdnDomainResult.cc
 	src/model/CreateCdnCertificateSigningRequestRequest.cc
 	src/model/CreateCdnCertificateSigningRequestResult.cc
+	src/model/CreateIllegalUrlExportTaskRequest.cc
+	src/model/CreateIllegalUrlExportTaskResult.cc
 	src/model/CreateLiveStreamRecordIndexFilesRequest.cc
 	src/model/CreateLiveStreamRecordIndexFilesResult.cc
 	src/model/CreateRealTimeLogDeliveryRequest.cc
@@ -596,6 +602,8 @@ set(cdn_src
 	src/model/DescribeDomainsUsageByDayResult.cc
 	src/model/DescribeFCTriggerRequest.cc
 	src/model/DescribeFCTriggerResult.cc
+	src/model/DescribeIllegalUrlExportTaskRequest.cc
+	src/model/DescribeIllegalUrlExportTaskResult.cc
 	src/model/DescribeIpInfoRequest.cc
 	src/model/DescribeIpInfoResult.cc
 	src/model/DescribeL2VipsByDomainRequest.cc

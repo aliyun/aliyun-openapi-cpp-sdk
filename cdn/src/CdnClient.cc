@@ -555,6 +555,42 @@ CdnClient::CreateCdnCertificateSigningRequestOutcomeCallable CdnClient::createCd
 	return task->get_future();
 }
 
+CdnClient::CreateIllegalUrlExportTaskOutcome CdnClient::createIllegalUrlExportTask(const CreateIllegalUrlExportTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateIllegalUrlExportTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateIllegalUrlExportTaskOutcome(CreateIllegalUrlExportTaskResult(outcome.result()));
+	else
+		return CreateIllegalUrlExportTaskOutcome(outcome.error());
+}
+
+void CdnClient::createIllegalUrlExportTaskAsync(const CreateIllegalUrlExportTaskRequest& request, const CreateIllegalUrlExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createIllegalUrlExportTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::CreateIllegalUrlExportTaskOutcomeCallable CdnClient::createIllegalUrlExportTaskCallable(const CreateIllegalUrlExportTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateIllegalUrlExportTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createIllegalUrlExportTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::CreateLiveStreamRecordIndexFilesOutcome CdnClient::createLiveStreamRecordIndexFiles(const CreateLiveStreamRecordIndexFilesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3465,6 +3501,42 @@ CdnClient::DescribeFCTriggerOutcomeCallable CdnClient::describeFCTriggerCallable
 			[this, request]()
 			{
 			return this->describeFCTrigger(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeIllegalUrlExportTaskOutcome CdnClient::describeIllegalUrlExportTask(const DescribeIllegalUrlExportTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIllegalUrlExportTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIllegalUrlExportTaskOutcome(DescribeIllegalUrlExportTaskResult(outcome.result()));
+	else
+		return DescribeIllegalUrlExportTaskOutcome(outcome.error());
+}
+
+void CdnClient::describeIllegalUrlExportTaskAsync(const DescribeIllegalUrlExportTaskRequest& request, const DescribeIllegalUrlExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIllegalUrlExportTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeIllegalUrlExportTaskOutcomeCallable CdnClient::describeIllegalUrlExportTaskCallable(const DescribeIllegalUrlExportTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIllegalUrlExportTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIllegalUrlExportTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

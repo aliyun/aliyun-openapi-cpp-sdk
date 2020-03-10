@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_BATCHSETCDNDOMAINCONFIGREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_BATCHSETCDNDOMAINCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_CREATEILLEGALURLEXPORTTASKREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_CREATEILLEGALURLEXPORTTASKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT BatchSetCdnDomainConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT CreateIllegalUrlExportTaskRequest : public RpcServiceRequest
 			{
 
 			public:
-				BatchSetCdnDomainConfigRequest();
-				~BatchSetCdnDomainConfigRequest();
+				CreateIllegalUrlExportTaskRequest();
+				~CreateIllegalUrlExportTaskRequest();
 
-				std::string getFunctions()const;
-				void setFunctions(const std::string& functions);
-				std::string getDomainNames()const;
-				void setDomainNames(const std::string& domainNames);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getTaskName()const;
+				void setTaskName(const std::string& taskName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getTimePoint()const;
+				void setTimePoint(const std::string& timePoint);
 
             private:
-				std::string functions_;
-				std::string domainNames_;
-				std::string securityToken_;
-				std::string ownerAccount_;
+				std::string taskName_;
 				long ownerId_;
+				std::string timePoint_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_BATCHSETCDNDOMAINCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_CREATEILLEGALURLEXPORTTASKREQUEST_H_

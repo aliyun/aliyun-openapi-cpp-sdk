@@ -50,6 +50,8 @@
 #include "model/BatchUpdateCdnDomainResult.h"
 #include "model/CreateCdnCertificateSigningRequestRequest.h"
 #include "model/CreateCdnCertificateSigningRequestResult.h"
+#include "model/CreateIllegalUrlExportTaskRequest.h"
+#include "model/CreateIllegalUrlExportTaskResult.h"
 #include "model/CreateLiveStreamRecordIndexFilesRequest.h"
 #include "model/CreateLiveStreamRecordIndexFilesResult.h"
 #include "model/CreateRealTimeLogDeliveryRequest.h"
@@ -212,6 +214,8 @@
 #include "model/DescribeDomainsUsageByDayResult.h"
 #include "model/DescribeFCTriggerRequest.h"
 #include "model/DescribeFCTriggerResult.h"
+#include "model/DescribeIllegalUrlExportTaskRequest.h"
+#include "model/DescribeIllegalUrlExportTaskResult.h"
 #include "model/DescribeIpInfoRequest.h"
 #include "model/DescribeIpInfoResult.h"
 #include "model/DescribeL2VipsByDomainRequest.h"
@@ -455,6 +459,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCdnCertificateSigningRequestResult> CreateCdnCertificateSigningRequestOutcome;
 			typedef std::future<CreateCdnCertificateSigningRequestOutcome> CreateCdnCertificateSigningRequestOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::CreateCdnCertificateSigningRequestRequest&, const CreateCdnCertificateSigningRequestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdnCertificateSigningRequestAsyncHandler;
+			typedef Outcome<Error, Model::CreateIllegalUrlExportTaskResult> CreateIllegalUrlExportTaskOutcome;
+			typedef std::future<CreateIllegalUrlExportTaskOutcome> CreateIllegalUrlExportTaskOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::CreateIllegalUrlExportTaskRequest&, const CreateIllegalUrlExportTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIllegalUrlExportTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateLiveStreamRecordIndexFilesResult> CreateLiveStreamRecordIndexFilesOutcome;
 			typedef std::future<CreateLiveStreamRecordIndexFilesOutcome> CreateLiveStreamRecordIndexFilesOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::CreateLiveStreamRecordIndexFilesRequest&, const CreateLiveStreamRecordIndexFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveStreamRecordIndexFilesAsyncHandler;
@@ -698,6 +705,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeFCTriggerResult> DescribeFCTriggerOutcome;
 			typedef std::future<DescribeFCTriggerOutcome> DescribeFCTriggerOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeFCTriggerRequest&, const DescribeFCTriggerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFCTriggerAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIllegalUrlExportTaskResult> DescribeIllegalUrlExportTaskOutcome;
+			typedef std::future<DescribeIllegalUrlExportTaskOutcome> DescribeIllegalUrlExportTaskOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeIllegalUrlExportTaskRequest&, const DescribeIllegalUrlExportTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIllegalUrlExportTaskAsyncHandler;
 			typedef Outcome<Error, Model::DescribeIpInfoResult> DescribeIpInfoOutcome;
 			typedef std::future<DescribeIpInfoOutcome> DescribeIpInfoOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeIpInfoRequest&, const DescribeIpInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpInfoAsyncHandler;
@@ -1033,6 +1043,9 @@ namespace AlibabaCloud
 			CreateCdnCertificateSigningRequestOutcome createCdnCertificateSigningRequest(const Model::CreateCdnCertificateSigningRequestRequest &request)const;
 			void createCdnCertificateSigningRequestAsync(const Model::CreateCdnCertificateSigningRequestRequest& request, const CreateCdnCertificateSigningRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCdnCertificateSigningRequestOutcomeCallable createCdnCertificateSigningRequestCallable(const Model::CreateCdnCertificateSigningRequestRequest& request) const;
+			CreateIllegalUrlExportTaskOutcome createIllegalUrlExportTask(const Model::CreateIllegalUrlExportTaskRequest &request)const;
+			void createIllegalUrlExportTaskAsync(const Model::CreateIllegalUrlExportTaskRequest& request, const CreateIllegalUrlExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateIllegalUrlExportTaskOutcomeCallable createIllegalUrlExportTaskCallable(const Model::CreateIllegalUrlExportTaskRequest& request) const;
 			CreateLiveStreamRecordIndexFilesOutcome createLiveStreamRecordIndexFiles(const Model::CreateLiveStreamRecordIndexFilesRequest &request)const;
 			void createLiveStreamRecordIndexFilesAsync(const Model::CreateLiveStreamRecordIndexFilesRequest& request, const CreateLiveStreamRecordIndexFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLiveStreamRecordIndexFilesOutcomeCallable createLiveStreamRecordIndexFilesCallable(const Model::CreateLiveStreamRecordIndexFilesRequest& request) const;
@@ -1276,6 +1289,9 @@ namespace AlibabaCloud
 			DescribeFCTriggerOutcome describeFCTrigger(const Model::DescribeFCTriggerRequest &request)const;
 			void describeFCTriggerAsync(const Model::DescribeFCTriggerRequest& request, const DescribeFCTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeFCTriggerOutcomeCallable describeFCTriggerCallable(const Model::DescribeFCTriggerRequest& request) const;
+			DescribeIllegalUrlExportTaskOutcome describeIllegalUrlExportTask(const Model::DescribeIllegalUrlExportTaskRequest &request)const;
+			void describeIllegalUrlExportTaskAsync(const Model::DescribeIllegalUrlExportTaskRequest& request, const DescribeIllegalUrlExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIllegalUrlExportTaskOutcomeCallable describeIllegalUrlExportTaskCallable(const Model::DescribeIllegalUrlExportTaskRequest& request) const;
 			DescribeIpInfoOutcome describeIpInfo(const Model::DescribeIpInfoRequest &request)const;
 			void describeIpInfoAsync(const Model::DescribeIpInfoRequest& request, const DescribeIpInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeIpInfoOutcomeCallable describeIpInfoCallable(const Model::DescribeIpInfoRequest& request) const;

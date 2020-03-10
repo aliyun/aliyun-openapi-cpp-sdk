@@ -38,17 +38,6 @@ void RefreshObjectCachesRequest::setObjectPath(const std::string& objectPath)
 	setParameter("ObjectPath", objectPath);
 }
 
-long RefreshObjectCachesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void RefreshObjectCachesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string RefreshObjectCachesRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -69,5 +58,16 @@ void RefreshObjectCachesRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
 	setParameter("ObjectType", objectType);
+}
+
+long RefreshObjectCachesRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void RefreshObjectCachesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

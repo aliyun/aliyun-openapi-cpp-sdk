@@ -35,15 +35,15 @@ namespace AlibabaCloud
 				SetCdnDomainCSRCertificateRequest();
 				~SetCdnDomainCSRCertificateRequest();
 
-				std::string getCertificate()const;
-				void setCertificate(const std::string& certificate);
+				std::string getServerCertificate()const;
+				void setServerCertificate(const std::string& serverCertificate);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string certificate_;
+				std::string serverCertificate_;
 				std::string domainName_;
 				long ownerId_;
 

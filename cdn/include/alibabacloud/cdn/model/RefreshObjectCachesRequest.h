@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getObjectPath()const;
 				void setObjectPath(const std::string& objectPath);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getObjectType()const;
 				void setObjectType(const std::string& objectType);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				std::string objectPath_;
-				long ownerId_;
 				std::string securityToken_;
 				std::string objectType_;
+				long ownerId_;
 
 			};
 		}

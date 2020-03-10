@@ -27,15 +27,15 @@ SetCdnDomainCSRCertificateRequest::SetCdnDomainCSRCertificateRequest() :
 SetCdnDomainCSRCertificateRequest::~SetCdnDomainCSRCertificateRequest()
 {}
 
-std::string SetCdnDomainCSRCertificateRequest::getCertificate()const
+std::string SetCdnDomainCSRCertificateRequest::getServerCertificate()const
 {
-	return certificate_;
+	return serverCertificate_;
 }
 
-void SetCdnDomainCSRCertificateRequest::setCertificate(const std::string& certificate)
+void SetCdnDomainCSRCertificateRequest::setServerCertificate(const std::string& serverCertificate)
 {
-	certificate_ = certificate;
-	setParameter("Certificate", certificate);
+	serverCertificate_ = serverCertificate;
+	setParameter("ServerCertificate", serverCertificate);
 }
 
 std::string SetCdnDomainCSRCertificateRequest::getDomainName()const
