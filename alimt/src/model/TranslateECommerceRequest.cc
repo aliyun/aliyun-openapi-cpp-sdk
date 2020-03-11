@@ -21,7 +21,7 @@ using AlibabaCloud::Alimt::Model::TranslateECommerceRequest;
 TranslateECommerceRequest::TranslateECommerceRequest() :
 	RpcServiceRequest("alimt", "2018-10-12", "TranslateECommerce")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 TranslateECommerceRequest::~TranslateECommerceRequest()

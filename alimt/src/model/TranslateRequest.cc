@@ -21,7 +21,7 @@ using AlibabaCloud::Alimt::Model::TranslateRequest;
 TranslateRequest::TranslateRequest() :
 	RpcServiceRequest("alimt", "2018-10-12", "Translate")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 TranslateRequest::~TranslateRequest()

@@ -21,7 +21,7 @@ using AlibabaCloud::Alimt::Model::CreateDocTranslateTaskRequest;
 CreateDocTranslateTaskRequest::CreateDocTranslateTaskRequest() :
 	RpcServiceRequest("alimt", "2018-10-12", "CreateDocTranslateTask")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 CreateDocTranslateTaskRequest::~CreateDocTranslateTaskRequest()

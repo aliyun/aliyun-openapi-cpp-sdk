@@ -31,21 +31,21 @@ AlimtClient::AlimtClient(const Credentials &credentials, const ClientConfigurati
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimt");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimtct");
 }
 
 AlimtClient::AlimtClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimt");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimtct");
 }
 
 AlimtClient::AlimtClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimt");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimtct");
 }
 
 AlimtClient::~AlimtClient()
@@ -153,6 +153,42 @@ AlimtClient::TranslateOutcomeCallable AlimtClient::translateCallable(const Trans
 			[this, request]()
 			{
 			return this->translate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlimtClient::TranslateCertificateOutcome AlimtClient::translateCertificate(const TranslateCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TranslateCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TranslateCertificateOutcome(TranslateCertificateResult(outcome.result()));
+	else
+		return TranslateCertificateOutcome(outcome.error());
+}
+
+void AlimtClient::translateCertificateAsync(const TranslateCertificateRequest& request, const TranslateCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, translateCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::TranslateCertificateOutcomeCallable AlimtClient::translateCertificateCallable(const TranslateCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TranslateCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->translateCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

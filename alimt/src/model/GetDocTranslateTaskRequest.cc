@@ -21,7 +21,7 @@ using AlibabaCloud::Alimt::Model::GetDocTranslateTaskRequest;
 GetDocTranslateTaskRequest::GetDocTranslateTaskRequest() :
 	RpcServiceRequest("alimt", "2018-10-12", "GetDocTranslateTask")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 GetDocTranslateTaskRequest::~GetDocTranslateTaskRequest()

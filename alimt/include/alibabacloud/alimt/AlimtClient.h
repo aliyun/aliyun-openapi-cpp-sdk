@@ -28,6 +28,8 @@
 #include "model/GetDocTranslateTaskResult.h"
 #include "model/TranslateRequest.h"
 #include "model/TranslateResult.h"
+#include "model/TranslateCertificateRequest.h"
+#include "model/TranslateCertificateResult.h"
 #include "model/TranslateECommerceRequest.h"
 #include "model/TranslateECommerceResult.h"
 #include "model/TranslateGeneralRequest.h"
@@ -50,6 +52,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TranslateResult> TranslateOutcome;
 			typedef std::future<TranslateOutcome> TranslateOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::TranslateRequest&, const TranslateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TranslateAsyncHandler;
+			typedef Outcome<Error, Model::TranslateCertificateResult> TranslateCertificateOutcome;
+			typedef std::future<TranslateCertificateOutcome> TranslateCertificateOutcomeCallable;
+			typedef std::function<void(const AlimtClient*, const Model::TranslateCertificateRequest&, const TranslateCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TranslateCertificateAsyncHandler;
 			typedef Outcome<Error, Model::TranslateECommerceResult> TranslateECommerceOutcome;
 			typedef std::future<TranslateECommerceOutcome> TranslateECommerceOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::TranslateECommerceRequest&, const TranslateECommerceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TranslateECommerceAsyncHandler;
@@ -70,6 +75,9 @@ namespace AlibabaCloud
 			TranslateOutcome translate(const Model::TranslateRequest &request)const;
 			void translateAsync(const Model::TranslateRequest& request, const TranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TranslateOutcomeCallable translateCallable(const Model::TranslateRequest& request) const;
+			TranslateCertificateOutcome translateCertificate(const Model::TranslateCertificateRequest &request)const;
+			void translateCertificateAsync(const Model::TranslateCertificateRequest& request, const TranslateCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TranslateCertificateOutcomeCallable translateCertificateCallable(const Model::TranslateCertificateRequest& request) const;
 			TranslateECommerceOutcome translateECommerce(const Model::TranslateECommerceRequest &request)const;
 			void translateECommerceAsync(const Model::TranslateECommerceRequest& request, const TranslateECommerceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TranslateECommerceOutcomeCallable translateECommerceCallable(const Model::TranslateECommerceRequest& request) const;
