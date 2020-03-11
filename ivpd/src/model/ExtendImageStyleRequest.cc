@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::ExtendImageStyleRequest;
 
 ExtendImageStyleRequest::ExtendImageStyleRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "ExtendImageStyle")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ExtendImageStyleRequest::~ExtendImageStyleRequest()
 {}
@@ -33,7 +35,7 @@ std::string ExtendImageStyleRequest::getMajorUrl()const
 void ExtendImageStyleRequest::setMajorUrl(const std::string& majorUrl)
 {
 	majorUrl_ = majorUrl;
-	setCoreParameter("MajorUrl", majorUrl);
+	setBodyParameter("MajorUrl", majorUrl);
 }
 
 std::string ExtendImageStyleRequest::getStyleUrl()const
@@ -44,6 +46,6 @@ std::string ExtendImageStyleRequest::getStyleUrl()const
 void ExtendImageStyleRequest::setStyleUrl(const std::string& styleUrl)
 {
 	styleUrl_ = styleUrl;
-	setCoreParameter("StyleUrl", styleUrl);
+	setBodyParameter("StyleUrl", styleUrl);
 }
 

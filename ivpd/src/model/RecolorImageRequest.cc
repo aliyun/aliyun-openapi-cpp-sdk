@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::RecolorImageRequest;
 
 RecolorImageRequest::RecolorImageRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "RecolorImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RecolorImageRequest::~RecolorImageRequest()
 {}
@@ -33,11 +35,10 @@ std::vector<RecolorImageRequest::ColorTemplate> RecolorImageRequest::getColorTem
 void RecolorImageRequest::setColorTemplate(const std::vector<ColorTemplate>& colorTemplate)
 {
 	colorTemplate_ = colorTemplate;
-	int i = 0;
-	for(int i = 0; i!= colorTemplate.size(); i++)	{
-		auto obj = colorTemplate.at(i);
-		std::string str ="ColorTemplate."+ std::to_string(i);
-		setCoreParameter(str + ".Color", obj.color);
+	for(int dep1 = 0; dep1!= colorTemplate.size(); dep1++) {
+		auto colorTemplateObj = colorTemplate.at(dep1);
+		std::string colorTemplateObjStr = "ColorTemplate." + std::to_string(dep1 + 1);
+		setParameter(colorTemplateObjStr + ".Color", colorTemplateObj.color);
 	}
 }
 
@@ -49,7 +50,7 @@ std::string RecolorImageRequest::getUrl()const
 void RecolorImageRequest::setUrl(const std::string& url)
 {
 	url_ = url;
-	setCoreParameter("Url", url);
+	setBodyParameter("Url", url);
 }
 
 std::string RecolorImageRequest::getMode()const
@@ -60,7 +61,7 @@ std::string RecolorImageRequest::getMode()const
 void RecolorImageRequest::setMode(const std::string& mode)
 {
 	mode_ = mode;
-	setCoreParameter("Mode", mode);
+	setBodyParameter("Mode", mode);
 }
 
 int RecolorImageRequest::getColorCount()const
@@ -71,7 +72,7 @@ int RecolorImageRequest::getColorCount()const
 void RecolorImageRequest::setColorCount(int colorCount)
 {
 	colorCount_ = colorCount;
-	setCoreParameter("ColorCount", std::to_string(colorCount));
+	setBodyParameter("ColorCount", std::to_string(colorCount));
 }
 
 std::string RecolorImageRequest::getRefUrl()const
@@ -82,6 +83,6 @@ std::string RecolorImageRequest::getRefUrl()const
 void RecolorImageRequest::setRefUrl(const std::string& refUrl)
 {
 	refUrl_ = refUrl;
-	setCoreParameter("RefUrl", refUrl);
+	setBodyParameter("RefUrl", refUrl);
 }
 

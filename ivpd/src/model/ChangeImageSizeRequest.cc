@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::ChangeImageSizeRequest;
 
 ChangeImageSizeRequest::ChangeImageSizeRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "ChangeImageSize")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ChangeImageSizeRequest::~ChangeImageSizeRequest()
 {}
@@ -33,7 +35,7 @@ std::string ChangeImageSizeRequest::getUrl()const
 void ChangeImageSizeRequest::setUrl(const std::string& url)
 {
 	url_ = url;
-	setCoreParameter("Url", url);
+	setBodyParameter("Url", url);
 }
 
 int ChangeImageSizeRequest::getWidth()const
@@ -44,7 +46,7 @@ int ChangeImageSizeRequest::getWidth()const
 void ChangeImageSizeRequest::setWidth(int width)
 {
 	width_ = width;
-	setCoreParameter("Width", std::to_string(width));
+	setBodyParameter("Width", std::to_string(width));
 }
 
 int ChangeImageSizeRequest::getHeight()const
@@ -55,6 +57,6 @@ int ChangeImageSizeRequest::getHeight()const
 void ChangeImageSizeRequest::setHeight(int height)
 {
 	height_ = height;
-	setCoreParameter("Height", std::to_string(height));
+	setBodyParameter("Height", std::to_string(height));
 }
 

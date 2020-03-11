@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IVPD_EXPORT RecolorImageRequest : public RpcServiceRequest
 			{
+			public:
 				struct ColorTemplate
 				{
 					std::string color;

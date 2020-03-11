@@ -36,6 +36,8 @@
 #include "model/RecognizeImageStyleResult.h"
 #include "model/RecolorImageRequest.h"
 #include "model/RecolorImageResult.h"
+#include "model/SegmentBodyRequest.h"
+#include "model/SegmentBodyResult.h"
 #include "model/SegmentImageRequest.h"
 #include "model/SegmentImageResult.h"
 
@@ -68,6 +70,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecolorImageResult> RecolorImageOutcome;
 			typedef std::future<RecolorImageOutcome> RecolorImageOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::RecolorImageRequest&, const RecolorImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecolorImageAsyncHandler;
+			typedef Outcome<Error, Model::SegmentBodyResult> SegmentBodyOutcome;
+			typedef std::future<SegmentBodyOutcome> SegmentBodyOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::SegmentBodyRequest&, const SegmentBodyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentBodyAsyncHandler;
 			typedef Outcome<Error, Model::SegmentImageResult> SegmentImageOutcome;
 			typedef std::future<SegmentImageOutcome> SegmentImageOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::SegmentImageRequest&, const SegmentImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentImageAsyncHandler;
@@ -97,6 +102,9 @@ namespace AlibabaCloud
 			RecolorImageOutcome recolorImage(const Model::RecolorImageRequest &request)const;
 			void recolorImageAsync(const Model::RecolorImageRequest& request, const RecolorImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecolorImageOutcomeCallable recolorImageCallable(const Model::RecolorImageRequest& request) const;
+			SegmentBodyOutcome segmentBody(const Model::SegmentBodyRequest &request)const;
+			void segmentBodyAsync(const Model::SegmentBodyRequest& request, const SegmentBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SegmentBodyOutcomeCallable segmentBodyCallable(const Model::SegmentBodyRequest& request) const;
 			SegmentImageOutcome segmentImage(const Model::SegmentImageRequest &request)const;
 			void segmentImageAsync(const Model::SegmentImageRequest& request, const SegmentImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentImageOutcomeCallable segmentImageCallable(const Model::SegmentImageRequest& request) const;

@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::RecognizeImageColorRequest;
 
 RecognizeImageColorRequest::RecognizeImageColorRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "RecognizeImageColor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RecognizeImageColorRequest::~RecognizeImageColorRequest()
 {}
@@ -33,7 +35,7 @@ std::string RecognizeImageColorRequest::getUrl()const
 void RecognizeImageColorRequest::setUrl(const std::string& url)
 {
 	url_ = url;
-	setCoreParameter("Url", url);
+	setBodyParameter("Url", url);
 }
 
 std::string RecognizeImageColorRequest::getColorCount()const
@@ -44,6 +46,6 @@ std::string RecognizeImageColorRequest::getColorCount()const
 void RecognizeImageColorRequest::setColorCount(const std::string& colorCount)
 {
 	colorCount_ = colorCount;
-	setCoreParameter("ColorCount", colorCount);
+	setBodyParameter("ColorCount", colorCount);
 }
 

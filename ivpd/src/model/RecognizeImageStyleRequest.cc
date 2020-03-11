@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::RecognizeImageStyleRequest;
 
 RecognizeImageStyleRequest::RecognizeImageStyleRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "RecognizeImageStyle")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RecognizeImageStyleRequest::~RecognizeImageStyleRequest()
 {}
@@ -33,6 +35,6 @@ std::string RecognizeImageStyleRequest::getUrl()const
 void RecognizeImageStyleRequest::setUrl(const std::string& url)
 {
 	url_ = url;
-	setCoreParameter("Url", url);
+	setBodyParameter("Url", url);
 }
 

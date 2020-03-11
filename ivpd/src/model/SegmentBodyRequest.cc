@@ -14,27 +14,27 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ivpd/model/DetectImageElementsRequest.h>
+#include <alibabacloud/ivpd/model/SegmentBodyRequest.h>
 
-using AlibabaCloud::Ivpd::Model::DetectImageElementsRequest;
+using AlibabaCloud::Ivpd::Model::SegmentBodyRequest;
 
-DetectImageElementsRequest::DetectImageElementsRequest() :
-	RpcServiceRequest("ivpd", "2019-06-25", "DetectImageElements")
+SegmentBodyRequest::SegmentBodyRequest() :
+	RpcServiceRequest("ivpd", "2019-06-25", "SegmentBody")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DetectImageElementsRequest::~DetectImageElementsRequest()
+SegmentBodyRequest::~SegmentBodyRequest()
 {}
 
-std::string DetectImageElementsRequest::getUrl()const
+std::string SegmentBodyRequest::getImageUrl()const
 {
-	return url_;
+	return imageUrl_;
 }
 
-void DetectImageElementsRequest::setUrl(const std::string& url)
+void SegmentBodyRequest::setImageUrl(const std::string& imageUrl)
 {
-	url_ = url;
-	setBodyParameter("Url", url);
+	imageUrl_ = imageUrl;
+	setBodyParameter("ImageUrl", imageUrl);
 }
 

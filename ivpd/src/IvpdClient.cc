@@ -303,6 +303,42 @@ IvpdClient::RecolorImageOutcomeCallable IvpdClient::recolorImageCallable(const R
 	return task->get_future();
 }
 
+IvpdClient::SegmentBodyOutcome IvpdClient::segmentBody(const SegmentBodyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SegmentBodyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SegmentBodyOutcome(SegmentBodyResult(outcome.result()));
+	else
+		return SegmentBodyOutcome(outcome.error());
+}
+
+void IvpdClient::segmentBodyAsync(const SegmentBodyRequest& request, const SegmentBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, segmentBody(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::SegmentBodyOutcomeCallable IvpdClient::segmentBodyCallable(const SegmentBodyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SegmentBodyOutcome()>>(
+			[this, request]()
+			{
+			return this->segmentBody(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IvpdClient::SegmentImageOutcome IvpdClient::segmentImage(const SegmentImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

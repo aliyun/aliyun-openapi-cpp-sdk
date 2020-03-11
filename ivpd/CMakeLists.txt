@@ -35,6 +35,8 @@ set(ivpd_public_header_model
 	include/alibabacloud/ivpd/model/RecognizeImageStyleResult.h
 	include/alibabacloud/ivpd/model/RecolorImageRequest.h
 	include/alibabacloud/ivpd/model/RecolorImageResult.h
+	include/alibabacloud/ivpd/model/SegmentBodyRequest.h
+	include/alibabacloud/ivpd/model/SegmentBodyResult.h
 	include/alibabacloud/ivpd/model/SegmentImageRequest.h
 	include/alibabacloud/ivpd/model/SegmentImageResult.h )
 
@@ -54,6 +56,8 @@ set(ivpd_src
 	src/model/RecognizeImageStyleResult.cc
 	src/model/RecolorImageRequest.cc
 	src/model/RecolorImageResult.cc
+	src/model/SegmentBodyRequest.cc
+	src/model/SegmentBodyResult.cc
 	src/model/SegmentImageRequest.cc
 	src/model/SegmentImageResult.cc )
 

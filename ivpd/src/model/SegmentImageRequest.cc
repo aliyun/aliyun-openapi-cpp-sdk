@@ -20,7 +20,9 @@ using AlibabaCloud::Ivpd::Model::SegmentImageRequest;
 
 SegmentImageRequest::SegmentImageRequest() :
 	RpcServiceRequest("ivpd", "2019-06-25", "SegmentImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SegmentImageRequest::~SegmentImageRequest()
 {}
@@ -33,6 +35,6 @@ std::string SegmentImageRequest::getUrl()const
 void SegmentImageRequest::setUrl(const std::string& url)
 {
 	url_ = url;
-	setCoreParameter("Url", url);
+	setBodyParameter("Url", url);
 }
 
