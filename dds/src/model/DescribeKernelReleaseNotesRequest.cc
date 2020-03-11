@@ -35,7 +35,7 @@ long DescribeKernelReleaseNotesRequest::getResourceOwnerId()const
 void DescribeKernelReleaseNotesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeKernelReleaseNotesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeKernelReleaseNotesRequest::getAccessKeyId()const
 void DescribeKernelReleaseNotesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeKernelReleaseNotesRequest::getKernelVersion()const
@@ -57,7 +57,7 @@ std::string DescribeKernelReleaseNotesRequest::getKernelVersion()const
 void DescribeKernelReleaseNotesRequest::setKernelVersion(const std::string& kernelVersion)
 {
 	kernelVersion_ = kernelVersion;
-	setCoreParameter("KernelVersion", kernelVersion);
+	setParameter("KernelVersion", kernelVersion);
 }
 
 std::string DescribeKernelReleaseNotesRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string DescribeKernelReleaseNotesRequest::getSecurityToken()const
 void DescribeKernelReleaseNotesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeKernelReleaseNotesRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeKernelReleaseNotesRequest::getResourceOwnerAccount()const
 void DescribeKernelReleaseNotesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeKernelReleaseNotesRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeKernelReleaseNotesRequest::getOwnerAccount()const
 void DescribeKernelReleaseNotesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeKernelReleaseNotesRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DescribeKernelReleaseNotesRequest::getOwnerId()const
 void DescribeKernelReleaseNotesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

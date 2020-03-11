@@ -35,7 +35,7 @@ long DescribeSecurityIpsRequest::getResourceOwnerId()const
 void DescribeSecurityIpsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSecurityIpsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeSecurityIpsRequest::getAccessKeyId()const
 void DescribeSecurityIpsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSecurityIpsRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeSecurityIpsRequest::getSecurityToken()const
 void DescribeSecurityIpsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeSecurityIpsRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string DescribeSecurityIpsRequest::getDBInstanceId()const
 void DescribeSecurityIpsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeSecurityIpsRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeSecurityIpsRequest::getResourceOwnerAccount()const
 void DescribeSecurityIpsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSecurityIpsRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeSecurityIpsRequest::getOwnerAccount()const
 void DescribeSecurityIpsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeSecurityIpsRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DescribeSecurityIpsRequest::getOwnerId()const
 void DescribeSecurityIpsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

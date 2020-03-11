@@ -35,7 +35,7 @@ long CheckCloudResourceAuthorizedRequest::getResourceOwnerId()const
 void CheckCloudResourceAuthorizedRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CheckCloudResourceAuthorizedRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string CheckCloudResourceAuthorizedRequest::getAccessKeyId()const
 void CheckCloudResourceAuthorizedRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CheckCloudResourceAuthorizedRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string CheckCloudResourceAuthorizedRequest::getSecurityToken()const
 void CheckCloudResourceAuthorizedRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string CheckCloudResourceAuthorizedRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string CheckCloudResourceAuthorizedRequest::getDBInstanceId()const
 void CheckCloudResourceAuthorizedRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string CheckCloudResourceAuthorizedRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string CheckCloudResourceAuthorizedRequest::getResourceOwnerAccount()const
 void CheckCloudResourceAuthorizedRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CheckCloudResourceAuthorizedRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string CheckCloudResourceAuthorizedRequest::getOwnerAccount()const
 void CheckCloudResourceAuthorizedRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CheckCloudResourceAuthorizedRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long CheckCloudResourceAuthorizedRequest::getOwnerId()const
 void CheckCloudResourceAuthorizedRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CheckCloudResourceAuthorizedRequest::getTargetRegionId()const
@@ -112,6 +112,6 @@ std::string CheckCloudResourceAuthorizedRequest::getTargetRegionId()const
 void CheckCloudResourceAuthorizedRequest::setTargetRegionId(const std::string& targetRegionId)
 {
 	targetRegionId_ = targetRegionId;
-	setCoreParameter("TargetRegionId", targetRegionId);
+	setParameter("TargetRegionId", targetRegionId);
 }
 

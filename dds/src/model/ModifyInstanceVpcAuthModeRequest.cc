@@ -35,7 +35,7 @@ long ModifyInstanceVpcAuthModeRequest::getResourceOwnerId()const
 void ModifyInstanceVpcAuthModeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyInstanceVpcAuthModeRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyInstanceVpcAuthModeRequest::getAccessKeyId()const
 void ModifyInstanceVpcAuthModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyInstanceVpcAuthModeRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string ModifyInstanceVpcAuthModeRequest::getSecurityToken()const
 void ModifyInstanceVpcAuthModeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyInstanceVpcAuthModeRequest::getVpcAuthMode()const
@@ -68,7 +68,7 @@ std::string ModifyInstanceVpcAuthModeRequest::getVpcAuthMode()const
 void ModifyInstanceVpcAuthModeRequest::setVpcAuthMode(const std::string& vpcAuthMode)
 {
 	vpcAuthMode_ = vpcAuthMode;
-	setCoreParameter("VpcAuthMode", vpcAuthMode);
+	setParameter("VpcAuthMode", vpcAuthMode);
 }
 
 std::string ModifyInstanceVpcAuthModeRequest::getDBInstanceId()const
@@ -79,7 +79,7 @@ std::string ModifyInstanceVpcAuthModeRequest::getDBInstanceId()const
 void ModifyInstanceVpcAuthModeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyInstanceVpcAuthModeRequest::getNodeId()const
@@ -90,7 +90,7 @@ std::string ModifyInstanceVpcAuthModeRequest::getNodeId()const
 void ModifyInstanceVpcAuthModeRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setParameter("NodeId", nodeId);
 }
 
 std::string ModifyInstanceVpcAuthModeRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyInstanceVpcAuthModeRequest::getResourceOwnerAccount()const
 void ModifyInstanceVpcAuthModeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceVpcAuthModeRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyInstanceVpcAuthModeRequest::getOwnerAccount()const
 void ModifyInstanceVpcAuthModeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyInstanceVpcAuthModeRequest::getOwnerId()const
@@ -123,6 +123,6 @@ long ModifyInstanceVpcAuthModeRequest::getOwnerId()const
 void ModifyInstanceVpcAuthModeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

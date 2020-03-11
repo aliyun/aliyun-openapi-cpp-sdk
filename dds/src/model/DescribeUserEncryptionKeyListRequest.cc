@@ -14,102 +14,91 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dds/model/DescribeParametersRequest.h>
+#include <alibabacloud/dds/model/DescribeUserEncryptionKeyListRequest.h>
 
-using AlibabaCloud::Dds::Model::DescribeParametersRequest;
+using AlibabaCloud::Dds::Model::DescribeUserEncryptionKeyListRequest;
 
-DescribeParametersRequest::DescribeParametersRequest() :
-	RpcServiceRequest("dds", "2015-12-01", "DescribeParameters")
+DescribeUserEncryptionKeyListRequest::DescribeUserEncryptionKeyListRequest() :
+	RpcServiceRequest("dds", "2015-12-01", "DescribeUserEncryptionKeyList")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeParametersRequest::~DescribeParametersRequest()
+DescribeUserEncryptionKeyListRequest::~DescribeUserEncryptionKeyListRequest()
 {}
 
-long DescribeParametersRequest::getResourceOwnerId()const
+long DescribeUserEncryptionKeyListRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeParametersRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeUserEncryptionKeyListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeParametersRequest::getAccessKeyId()const
+std::string DescribeUserEncryptionKeyListRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void DescribeParametersRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeUserEncryptionKeyListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeParametersRequest::getSecurityToken()const
+std::string DescribeUserEncryptionKeyListRequest::getSecurityToken()const
 {
 	return securityToken_;
 }
 
-void DescribeParametersRequest::setSecurityToken(const std::string& securityToken)
+void DescribeUserEncryptionKeyListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeParametersRequest::getDBInstanceId()const
+std::string DescribeUserEncryptionKeyListRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;
 }
 
-void DescribeParametersRequest::setDBInstanceId(const std::string& dBInstanceId)
+void DescribeUserEncryptionKeyListRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
 	setParameter("DBInstanceId", dBInstanceId);
 }
 
-std::string DescribeParametersRequest::getNodeId()const
-{
-	return nodeId_;
-}
-
-void DescribeParametersRequest::setNodeId(const std::string& nodeId)
-{
-	nodeId_ = nodeId;
-	setParameter("NodeId", nodeId);
-}
-
-std::string DescribeParametersRequest::getResourceOwnerAccount()const
+std::string DescribeUserEncryptionKeyListRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void DescribeParametersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeUserEncryptionKeyListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeParametersRequest::getOwnerAccount()const
+std::string DescribeUserEncryptionKeyListRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
 }
 
-void DescribeParametersRequest::setOwnerAccount(const std::string& ownerAccount)
+void DescribeUserEncryptionKeyListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeParametersRequest::getOwnerId()const
+long DescribeUserEncryptionKeyListRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeParametersRequest::setOwnerId(long ownerId)
+void DescribeUserEncryptionKeyListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));

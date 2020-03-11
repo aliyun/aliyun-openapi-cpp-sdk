@@ -35,7 +35,7 @@ long ModifyDBInstanceSpecRequest::getResourceOwnerId()const
 void ModifyDBInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBInstanceSpecRequest::getDBInstanceStorage()const
@@ -46,7 +46,7 @@ std::string ModifyDBInstanceSpecRequest::getDBInstanceStorage()const
 void ModifyDBInstanceSpecRequest::setDBInstanceStorage(const std::string& dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setCoreParameter("DBInstanceStorage", dBInstanceStorage);
+	setParameter("DBInstanceStorage", dBInstanceStorage);
 }
 
 std::string ModifyDBInstanceSpecRequest::getReadonlyReplicas()const
@@ -57,7 +57,7 @@ std::string ModifyDBInstanceSpecRequest::getReadonlyReplicas()const
 void ModifyDBInstanceSpecRequest::setReadonlyReplicas(const std::string& readonlyReplicas)
 {
 	readonlyReplicas_ = readonlyReplicas;
-	setCoreParameter("ReadonlyReplicas", readonlyReplicas);
+	setParameter("ReadonlyReplicas", readonlyReplicas);
 }
 
 std::string ModifyDBInstanceSpecRequest::getCouponNo()const
@@ -68,7 +68,7 @@ std::string ModifyDBInstanceSpecRequest::getCouponNo()const
 void ModifyDBInstanceSpecRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setParameter("CouponNo", couponNo);
 }
 
 std::string ModifyDBInstanceSpecRequest::getReplicationFactor()const
@@ -79,7 +79,7 @@ std::string ModifyDBInstanceSpecRequest::getReplicationFactor()const
 void ModifyDBInstanceSpecRequest::setReplicationFactor(const std::string& replicationFactor)
 {
 	replicationFactor_ = replicationFactor;
-	setCoreParameter("ReplicationFactor", replicationFactor);
+	setParameter("ReplicationFactor", replicationFactor);
 }
 
 std::string ModifyDBInstanceSpecRequest::getAccessKeyId()const
@@ -90,7 +90,7 @@ std::string ModifyDBInstanceSpecRequest::getAccessKeyId()const
 void ModifyDBInstanceSpecRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceSpecRequest::getSecurityToken()const
@@ -101,7 +101,7 @@ std::string ModifyDBInstanceSpecRequest::getSecurityToken()const
 void ModifyDBInstanceSpecRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyDBInstanceSpecRequest::getEffectiveTime()const
@@ -112,7 +112,7 @@ std::string ModifyDBInstanceSpecRequest::getEffectiveTime()const
 void ModifyDBInstanceSpecRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", effectiveTime);
+	setParameter("EffectiveTime", effectiveTime);
 }
 
 std::string ModifyDBInstanceSpecRequest::getDBInstanceId()const
@@ -123,7 +123,7 @@ std::string ModifyDBInstanceSpecRequest::getDBInstanceId()const
 void ModifyDBInstanceSpecRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceSpecRequest::getBusinessInfo()const
@@ -134,7 +134,7 @@ std::string ModifyDBInstanceSpecRequest::getBusinessInfo()const
 void ModifyDBInstanceSpecRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
+	setParameter("BusinessInfo", businessInfo);
 }
 
 bool ModifyDBInstanceSpecRequest::getAutoPay()const
@@ -145,7 +145,7 @@ bool ModifyDBInstanceSpecRequest::getAutoPay()const
 void ModifyDBInstanceSpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyDBInstanceSpecRequest::getFromApp()const
@@ -156,7 +156,7 @@ std::string ModifyDBInstanceSpecRequest::getFromApp()const
 void ModifyDBInstanceSpecRequest::setFromApp(const std::string& fromApp)
 {
 	fromApp_ = fromApp;
-	setCoreParameter("FromApp", fromApp);
+	setParameter("FromApp", fromApp);
 }
 
 std::string ModifyDBInstanceSpecRequest::getResourceOwnerAccount()const
@@ -167,7 +167,7 @@ std::string ModifyDBInstanceSpecRequest::getResourceOwnerAccount()const
 void ModifyDBInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBInstanceSpecRequest::getOwnerAccount()const
@@ -178,7 +178,7 @@ std::string ModifyDBInstanceSpecRequest::getOwnerAccount()const
 void ModifyDBInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyDBInstanceSpecRequest::getOwnerId()const
@@ -189,7 +189,7 @@ long ModifyDBInstanceSpecRequest::getOwnerId()const
 void ModifyDBInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBInstanceSpecRequest::getDBInstanceClass()const
@@ -200,7 +200,7 @@ std::string ModifyDBInstanceSpecRequest::getDBInstanceClass()const
 void ModifyDBInstanceSpecRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
+	setParameter("DBInstanceClass", dBInstanceClass);
 }
 
 std::string ModifyDBInstanceSpecRequest::getOrderType()const
@@ -211,6 +211,6 @@ std::string ModifyDBInstanceSpecRequest::getOrderType()const
 void ModifyDBInstanceSpecRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

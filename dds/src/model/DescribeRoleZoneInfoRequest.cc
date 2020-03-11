@@ -35,7 +35,7 @@ long DescribeRoleZoneInfoRequest::getResourceOwnerId()const
 void DescribeRoleZoneInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRoleZoneInfoRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeRoleZoneInfoRequest::getAccessKeyId()const
 void DescribeRoleZoneInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRoleZoneInfoRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeRoleZoneInfoRequest::getSecurityToken()const
 void DescribeRoleZoneInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeRoleZoneInfoRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string DescribeRoleZoneInfoRequest::getDBInstanceId()const
 void DescribeRoleZoneInfoRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeRoleZoneInfoRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeRoleZoneInfoRequest::getResourceOwnerAccount()const
 void DescribeRoleZoneInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRoleZoneInfoRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeRoleZoneInfoRequest::getOwnerAccount()const
 void DescribeRoleZoneInfoRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeRoleZoneInfoRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DescribeRoleZoneInfoRequest::getOwnerId()const
 void DescribeRoleZoneInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

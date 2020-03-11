@@ -35,7 +35,7 @@ long DescribeDBInstancePerformanceRequest::getResourceOwnerId()const
 void DescribeDBInstancePerformanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstancePerformanceRequest::getRoleId()const
@@ -46,7 +46,7 @@ std::string DescribeDBInstancePerformanceRequest::getRoleId()const
 void DescribeDBInstancePerformanceRequest::setRoleId(const std::string& roleId)
 {
 	roleId_ = roleId;
-	setCoreParameter("RoleId", roleId);
+	setParameter("RoleId", roleId);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getStartTime()const
@@ -57,7 +57,7 @@ std::string DescribeDBInstancePerformanceRequest::getStartTime()const
 void DescribeDBInstancePerformanceRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeDBInstancePerformanceRequest::getAccessKeyId()const
 void DescribeDBInstancePerformanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getReplicaSetRole()const
@@ -79,7 +79,7 @@ std::string DescribeDBInstancePerformanceRequest::getReplicaSetRole()const
 void DescribeDBInstancePerformanceRequest::setReplicaSetRole(const std::string& replicaSetRole)
 {
 	replicaSetRole_ = replicaSetRole;
-	setCoreParameter("ReplicaSetRole", replicaSetRole);
+	setParameter("ReplicaSetRole", replicaSetRole);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getSecurityToken()const
@@ -90,7 +90,7 @@ std::string DescribeDBInstancePerformanceRequest::getSecurityToken()const
 void DescribeDBInstancePerformanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getDBInstanceId()const
@@ -101,7 +101,7 @@ std::string DescribeDBInstancePerformanceRequest::getDBInstanceId()const
 void DescribeDBInstancePerformanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getNodeId()const
@@ -112,7 +112,7 @@ std::string DescribeDBInstancePerformanceRequest::getNodeId()const
 void DescribeDBInstancePerformanceRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setParameter("NodeId", nodeId);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getKey()const
@@ -123,7 +123,7 @@ std::string DescribeDBInstancePerformanceRequest::getKey()const
 void DescribeDBInstancePerformanceRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getResourceOwnerAccount()const
@@ -134,7 +134,7 @@ std::string DescribeDBInstancePerformanceRequest::getResourceOwnerAccount()const
 void DescribeDBInstancePerformanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getOwnerAccount()const
@@ -145,7 +145,7 @@ std::string DescribeDBInstancePerformanceRequest::getOwnerAccount()const
 void DescribeDBInstancePerformanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getEndTime()const
@@ -156,7 +156,7 @@ std::string DescribeDBInstancePerformanceRequest::getEndTime()const
 void DescribeDBInstancePerformanceRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDBInstancePerformanceRequest::getOwnerId()const
@@ -167,6 +167,6 @@ long DescribeDBInstancePerformanceRequest::getOwnerId()const
 void DescribeDBInstancePerformanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

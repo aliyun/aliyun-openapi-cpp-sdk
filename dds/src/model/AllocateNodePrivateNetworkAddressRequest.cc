@@ -35,7 +35,7 @@ long AllocateNodePrivateNetworkAddressRequest::getResourceOwnerId()const
 void AllocateNodePrivateNetworkAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getAccessKeyId()const
 void AllocateNodePrivateNetworkAddressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getAccountName()const
@@ -57,7 +57,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getAccountName()const
 void AllocateNodePrivateNetworkAddressRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setParameter("AccountName", accountName);
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getSecurityToken()const
 void AllocateNodePrivateNetworkAddressRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getDBInstanceId()const
@@ -79,7 +79,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getDBInstanceId()const
 void AllocateNodePrivateNetworkAddressRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getNodeId()const
@@ -90,7 +90,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getNodeId()const
 void AllocateNodePrivateNetworkAddressRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setParameter("NodeId", nodeId);
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getResourceOwnerAccount()c
 void AllocateNodePrivateNetworkAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getOwnerAccount()const
 void AllocateNodePrivateNetworkAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AllocateNodePrivateNetworkAddressRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long AllocateNodePrivateNetworkAddressRequest::getOwnerId()const
 void AllocateNodePrivateNetworkAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getAccountPassword()const
@@ -134,7 +134,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getAccountPassword()const
 void AllocateNodePrivateNetworkAddressRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	setParameter("AccountPassword", accountPassword);
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getZoneId()const
@@ -145,6 +145,6 @@ std::string AllocateNodePrivateNetworkAddressRequest::getZoneId()const
 void AllocateNodePrivateNetworkAddressRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

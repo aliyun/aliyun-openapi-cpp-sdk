@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_CREATEACCOUNTRESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_CREATEACCOUNTRESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEUSERENCRYPTIONKEYLISTRESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBEUSERENCRYPTIONKEYLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT CreateAccountResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT DescribeUserEncryptionKeyListResult : public ServiceResult
 			{
 			public:
 
 
-				CreateAccountResult();
-				explicit CreateAccountResult(const std::string &payload);
-				~CreateAccountResult();
+				DescribeUserEncryptionKeyListResult();
+				explicit DescribeUserEncryptionKeyListResult(const std::string &payload);
+				~DescribeUserEncryptionKeyListResult();
+				std::vector<std::string> getKeyIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> keyIds_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_CREATEACCOUNTRESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEUSERENCRYPTIONKEYLISTRESULT_H_

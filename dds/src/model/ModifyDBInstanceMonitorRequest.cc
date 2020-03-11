@@ -35,7 +35,7 @@ long ModifyDBInstanceMonitorRequest::getResourceOwnerId()const
 void ModifyDBInstanceMonitorRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBInstanceMonitorRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyDBInstanceMonitorRequest::getAccessKeyId()const
 void ModifyDBInstanceMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceMonitorRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string ModifyDBInstanceMonitorRequest::getSecurityToken()const
 void ModifyDBInstanceMonitorRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyDBInstanceMonitorRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string ModifyDBInstanceMonitorRequest::getDBInstanceId()const
 void ModifyDBInstanceMonitorRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceMonitorRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyDBInstanceMonitorRequest::getResourceOwnerAccount()const
 void ModifyDBInstanceMonitorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBInstanceMonitorRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyDBInstanceMonitorRequest::getOwnerAccount()const
 void ModifyDBInstanceMonitorRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyDBInstanceMonitorRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long ModifyDBInstanceMonitorRequest::getOwnerId()const
 void ModifyDBInstanceMonitorRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBInstanceMonitorRequest::getGranularity()const
@@ -112,6 +112,6 @@ std::string ModifyDBInstanceMonitorRequest::getGranularity()const
 void ModifyDBInstanceMonitorRequest::setGranularity(const std::string& granularity)
 {
 	granularity_ = granularity;
-	setCoreParameter("Granularity", granularity);
+	setParameter("Granularity", granularity);
 }
 

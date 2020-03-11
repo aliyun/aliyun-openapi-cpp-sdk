@@ -35,7 +35,7 @@ long DescribeSecurityGroupConfigurationRequest::getResourceOwnerId()const
 void DescribeSecurityGroupConfigurationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSecurityGroupConfigurationRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeSecurityGroupConfigurationRequest::getAccessKeyId()const
 void DescribeSecurityGroupConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSecurityGroupConfigurationRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeSecurityGroupConfigurationRequest::getSecurityToken()const
 void DescribeSecurityGroupConfigurationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeSecurityGroupConfigurationRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string DescribeSecurityGroupConfigurationRequest::getDBInstanceId()const
 void DescribeSecurityGroupConfigurationRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeSecurityGroupConfigurationRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeSecurityGroupConfigurationRequest::getResourceOwnerAccount()
 void DescribeSecurityGroupConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSecurityGroupConfigurationRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeSecurityGroupConfigurationRequest::getOwnerAccount()const
 void DescribeSecurityGroupConfigurationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeSecurityGroupConfigurationRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DescribeSecurityGroupConfigurationRequest::getOwnerId()const
 void DescribeSecurityGroupConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCETDEREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCETDEREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEUSERENCRYPTIONKEYLISTREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBEUSERENCRYPTIONKEYLISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT ModifyDBInstanceTDERequest : public RpcServiceRequest
+			class ALIBABACLOUD_DDS_EXPORT DescribeUserEncryptionKeyListRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyDBInstanceTDERequest();
-				~ModifyDBInstanceTDERequest();
+				DescribeUserEncryptionKeyListRequest();
+				~DescribeUserEncryptionKeyListRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
@@ -47,16 +47,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getEncryptionKey()const;
-				void setEncryptionKey(const std::string& encryptionKey);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getEncryptorName()const;
-				void setEncryptorName(const std::string& encryptorName);
-				std::string getRoleARN()const;
-				void setRoleARN(const std::string& roleARN);
-				std::string getTDEStatus()const;
-				void setTDEStatus(const std::string& tDEStatus);
 
             private:
 				long resourceOwnerId_;
@@ -65,14 +57,10 @@ namespace AlibabaCloud
 				std::string dBInstanceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string encryptionKey_;
 				long ownerId_;
-				std::string encryptorName_;
-				std::string roleARN_;
-				std::string tDEStatus_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYDBINSTANCETDEREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEUSERENCRYPTIONKEYLISTREQUEST_H_

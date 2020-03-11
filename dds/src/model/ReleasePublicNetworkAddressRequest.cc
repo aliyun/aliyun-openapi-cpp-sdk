@@ -35,7 +35,7 @@ long ReleasePublicNetworkAddressRequest::getResourceOwnerId()const
 void ReleasePublicNetworkAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleasePublicNetworkAddressRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ReleasePublicNetworkAddressRequest::getAccessKeyId()const
 void ReleasePublicNetworkAddressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string ReleasePublicNetworkAddressRequest::getSecurityToken()const
 void ReleasePublicNetworkAddressRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string ReleasePublicNetworkAddressRequest::getDBInstanceId()const
 void ReleasePublicNetworkAddressRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getNodeId()const
@@ -79,7 +79,7 @@ std::string ReleasePublicNetworkAddressRequest::getNodeId()const
 void ReleasePublicNetworkAddressRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setParameter("NodeId", nodeId);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ReleasePublicNetworkAddressRequest::getResourceOwnerAccount()const
 void ReleasePublicNetworkAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ReleasePublicNetworkAddressRequest::getOwnerAccount()const
 void ReleasePublicNetworkAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ReleasePublicNetworkAddressRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long ReleasePublicNetworkAddressRequest::getOwnerId()const
 void ReleasePublicNetworkAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

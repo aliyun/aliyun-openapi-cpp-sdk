@@ -35,7 +35,7 @@ long DescribeIndexRecommendationRequest::getResourceOwnerId()const
 void DescribeIndexRecommendationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeIndexRecommendationRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeIndexRecommendationRequest::getStartTime()const
 void DescribeIndexRecommendationRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int DescribeIndexRecommendationRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeIndexRecommendationRequest::getPageNumber()const
 void DescribeIndexRecommendationRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeIndexRecommendationRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeIndexRecommendationRequest::getAccessKeyId()const
 void DescribeIndexRecommendationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeIndexRecommendationRequest::getDatabase()const
@@ -79,7 +79,7 @@ std::string DescribeIndexRecommendationRequest::getDatabase()const
 void DescribeIndexRecommendationRequest::setDatabase(const std::string& database)
 {
 	database_ = database;
-	setCoreParameter("Database", database);
+	setParameter("Database", database);
 }
 
 std::string DescribeIndexRecommendationRequest::getSecurityToken()const
@@ -90,7 +90,7 @@ std::string DescribeIndexRecommendationRequest::getSecurityToken()const
 void DescribeIndexRecommendationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeIndexRecommendationRequest::getPageSize()const
@@ -101,7 +101,7 @@ int DescribeIndexRecommendationRequest::getPageSize()const
 void DescribeIndexRecommendationRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeIndexRecommendationRequest::getNodeId()const
@@ -112,7 +112,7 @@ std::string DescribeIndexRecommendationRequest::getNodeId()const
 void DescribeIndexRecommendationRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setParameter("NodeId", nodeId);
 }
 
 std::string DescribeIndexRecommendationRequest::getTaskId()const
@@ -123,7 +123,7 @@ std::string DescribeIndexRecommendationRequest::getTaskId()const
 void DescribeIndexRecommendationRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 
 std::string DescribeIndexRecommendationRequest::getResourceOwnerAccount()const
@@ -134,7 +134,7 @@ std::string DescribeIndexRecommendationRequest::getResourceOwnerAccount()const
 void DescribeIndexRecommendationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeIndexRecommendationRequest::getOwnerAccount()const
@@ -145,7 +145,7 @@ std::string DescribeIndexRecommendationRequest::getOwnerAccount()const
 void DescribeIndexRecommendationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeIndexRecommendationRequest::getEndTime()const
@@ -156,7 +156,7 @@ std::string DescribeIndexRecommendationRequest::getEndTime()const
 void DescribeIndexRecommendationRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeIndexRecommendationRequest::getCollection()const
@@ -167,7 +167,7 @@ std::string DescribeIndexRecommendationRequest::getCollection()const
 void DescribeIndexRecommendationRequest::setCollection(const std::string& collection)
 {
 	collection_ = collection;
-	setCoreParameter("Collection", collection);
+	setParameter("Collection", collection);
 }
 
 std::string DescribeIndexRecommendationRequest::getOperationType()const
@@ -178,7 +178,7 @@ std::string DescribeIndexRecommendationRequest::getOperationType()const
 void DescribeIndexRecommendationRequest::setOperationType(const std::string& operationType)
 {
 	operationType_ = operationType;
-	setCoreParameter("OperationType", operationType);
+	setParameter("OperationType", operationType);
 }
 
 long DescribeIndexRecommendationRequest::getOwnerId()const
@@ -189,7 +189,7 @@ long DescribeIndexRecommendationRequest::getOwnerId()const
 void DescribeIndexRecommendationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeIndexRecommendationRequest::getInstanceId()const
@@ -200,6 +200,6 @@ std::string DescribeIndexRecommendationRequest::getInstanceId()const
 void DescribeIndexRecommendationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

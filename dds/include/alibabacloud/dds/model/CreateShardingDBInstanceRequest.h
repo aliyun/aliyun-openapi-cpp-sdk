@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DDS_EXPORT CreateShardingDBInstanceRequest : public RpcServiceRequest
 			{
+			public:
 				struct ReplicaSet
 				{
 					int storage;

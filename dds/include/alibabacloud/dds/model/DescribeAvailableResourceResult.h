@@ -32,43 +32,49 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DDS_EXPORT DescribeAvailableResourceResult : public ServiceResult
 			{
 			public:
-				struct AvailableZone
+				struct SupportedDBType
 				{
-					struct SupportedEngineVersion
+					struct AvailableZone
 					{
-						struct SupportedEngine
+						struct SupportedEngineVersion
 						{
-							struct SupportedNodeType
+							struct SupportedEngine
 							{
-								struct AvailableResource
+								struct SupportedNodeType
 								{
-									std::string instanceClass;
+									struct AvailableResource
+									{
+										std::string instanceClassRemark;
+										std::string instanceClass;
+									};
+									std::string networkTypes;
+									std::string nodeType;
+									std::vector<SupportedNodeType::AvailableResource> availableResources;
 								};
-								std::string networkTypes;
-								std::string nodeType;
-								std::vector<SupportedNodeType::AvailableResource> availableResources;
+								std::vector<SupportedEngine::SupportedNodeType> supportedNodeTypes;
+								std::string engine;
 							};
-							std::vector<SupportedEngine::SupportedNodeType> supportedNodeTypes;
-							std::string engine;
+							std::string version;
+							std::vector<SupportedEngineVersion::SupportedEngine> supportedEngines;
 						};
-						std::string version;
-						std::vector<SupportedEngineVersion::SupportedEngine> supportedEngines;
+						std::string zoneId;
+						std::vector<AvailableZone::SupportedEngineVersion> supportedEngineVersions;
+						std::string regionId;
 					};
-					std::string zoneId;
-					std::vector<AvailableZone::SupportedEngineVersion> supportedEngineVersions;
-					std::string regionId;
+					std::string dbType;
+					std::vector<SupportedDBType::AvailableZone> availableZones;
 				};
 
 
 				DescribeAvailableResourceResult();
 				explicit DescribeAvailableResourceResult(const std::string &payload);
 				~DescribeAvailableResourceResult();
-				std::vector<AvailableZone> getAvailableZones()const;
+				std::vector<SupportedDBType> getSupportedDBTypes()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<AvailableZone> availableZones_;
+				std::vector<SupportedDBType> supportedDBTypes_;
 
 			};
 		}

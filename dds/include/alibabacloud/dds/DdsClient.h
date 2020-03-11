@@ -30,8 +30,6 @@
 #include "model/CheckCloudResourceAuthorizedResult.h"
 #include "model/CheckRecoveryConditionRequest.h"
 #include "model/CheckRecoveryConditionResult.h"
-#include "model/CreateAccountRequest.h"
-#include "model/CreateAccountResult.h"
 #include "model/CreateBackupRequest.h"
 #include "model/CreateBackupResult.h"
 #include "model/CreateDBInstanceRequest.h"
@@ -70,6 +68,8 @@
 #include "model/DescribeBackupsResult.h"
 #include "model/DescribeDBInstanceAttributeRequest.h"
 #include "model/DescribeDBInstanceAttributeResult.h"
+#include "model/DescribeDBInstanceEncryptionKeyRequest.h"
+#include "model/DescribeDBInstanceEncryptionKeyResult.h"
 #include "model/DescribeDBInstanceMonitorRequest.h"
 #include "model/DescribeDBInstanceMonitorResult.h"
 #include "model/DescribeDBInstancePerformanceRequest.h"
@@ -114,6 +114,8 @@
 #include "model/DescribeSlowLogRecordsResult.h"
 #include "model/DescribeTagsRequest.h"
 #include "model/DescribeTagsResult.h"
+#include "model/DescribeUserEncryptionKeyListRequest.h"
+#include "model/DescribeUserEncryptionKeyListResult.h"
 #include "model/DestroyInstanceRequest.h"
 #include "model/DestroyInstanceResult.h"
 #include "model/ListTagResourcesRequest.h"
@@ -205,9 +207,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckRecoveryConditionResult> CheckRecoveryConditionOutcome;
 			typedef std::future<CheckRecoveryConditionOutcome> CheckRecoveryConditionOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::CheckRecoveryConditionRequest&, const CheckRecoveryConditionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckRecoveryConditionAsyncHandler;
-			typedef Outcome<Error, Model::CreateAccountResult> CreateAccountOutcome;
-			typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
-			typedef std::function<void(const DdsClient*, const Model::CreateAccountRequest&, const CreateAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountAsyncHandler;
 			typedef Outcome<Error, Model::CreateBackupResult> CreateBackupOutcome;
 			typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::CreateBackupRequest&, const CreateBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupAsyncHandler;
@@ -265,6 +264,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBInstanceAttributeResult> DescribeDBInstanceAttributeOutcome;
 			typedef std::future<DescribeDBInstanceAttributeOutcome> DescribeDBInstanceAttributeOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeDBInstanceAttributeRequest&, const DescribeDBInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBInstanceEncryptionKeyResult> DescribeDBInstanceEncryptionKeyOutcome;
+			typedef std::future<DescribeDBInstanceEncryptionKeyOutcome> DescribeDBInstanceEncryptionKeyOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeDBInstanceEncryptionKeyRequest&, const DescribeDBInstanceEncryptionKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceEncryptionKeyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBInstanceMonitorResult> DescribeDBInstanceMonitorOutcome;
 			typedef std::future<DescribeDBInstanceMonitorOutcome> DescribeDBInstanceMonitorOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeDBInstanceMonitorRequest&, const DescribeDBInstanceMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceMonitorAsyncHandler;
@@ -331,6 +333,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTagsResult> DescribeTagsOutcome;
 			typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeTagsRequest&, const DescribeTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUserEncryptionKeyListResult> DescribeUserEncryptionKeyListOutcome;
+			typedef std::future<DescribeUserEncryptionKeyListOutcome> DescribeUserEncryptionKeyListOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeUserEncryptionKeyListRequest&, const DescribeUserEncryptionKeyListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserEncryptionKeyListAsyncHandler;
 			typedef Outcome<Error, Model::DestroyInstanceResult> DestroyInstanceOutcome;
 			typedef std::future<DestroyInstanceOutcome> DestroyInstanceOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DestroyInstanceRequest&, const DestroyInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DestroyInstanceAsyncHandler;
@@ -453,9 +458,6 @@ namespace AlibabaCloud
 			CheckRecoveryConditionOutcome checkRecoveryCondition(const Model::CheckRecoveryConditionRequest &request)const;
 			void checkRecoveryConditionAsync(const Model::CheckRecoveryConditionRequest& request, const CheckRecoveryConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckRecoveryConditionOutcomeCallable checkRecoveryConditionCallable(const Model::CheckRecoveryConditionRequest& request) const;
-			CreateAccountOutcome createAccount(const Model::CreateAccountRequest &request)const;
-			void createAccountAsync(const Model::CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateAccountOutcomeCallable createAccountCallable(const Model::CreateAccountRequest& request) const;
 			CreateBackupOutcome createBackup(const Model::CreateBackupRequest &request)const;
 			void createBackupAsync(const Model::CreateBackupRequest& request, const CreateBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateBackupOutcomeCallable createBackupCallable(const Model::CreateBackupRequest& request) const;
@@ -513,6 +515,9 @@ namespace AlibabaCloud
 			DescribeDBInstanceAttributeOutcome describeDBInstanceAttribute(const Model::DescribeDBInstanceAttributeRequest &request)const;
 			void describeDBInstanceAttributeAsync(const Model::DescribeDBInstanceAttributeRequest& request, const DescribeDBInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceAttributeOutcomeCallable describeDBInstanceAttributeCallable(const Model::DescribeDBInstanceAttributeRequest& request) const;
+			DescribeDBInstanceEncryptionKeyOutcome describeDBInstanceEncryptionKey(const Model::DescribeDBInstanceEncryptionKeyRequest &request)const;
+			void describeDBInstanceEncryptionKeyAsync(const Model::DescribeDBInstanceEncryptionKeyRequest& request, const DescribeDBInstanceEncryptionKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBInstanceEncryptionKeyOutcomeCallable describeDBInstanceEncryptionKeyCallable(const Model::DescribeDBInstanceEncryptionKeyRequest& request) const;
 			DescribeDBInstanceMonitorOutcome describeDBInstanceMonitor(const Model::DescribeDBInstanceMonitorRequest &request)const;
 			void describeDBInstanceMonitorAsync(const Model::DescribeDBInstanceMonitorRequest& request, const DescribeDBInstanceMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceMonitorOutcomeCallable describeDBInstanceMonitorCallable(const Model::DescribeDBInstanceMonitorRequest& request) const;
@@ -579,6 +584,9 @@ namespace AlibabaCloud
 			DescribeTagsOutcome describeTags(const Model::DescribeTagsRequest &request)const;
 			void describeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTagsOutcomeCallable describeTagsCallable(const Model::DescribeTagsRequest& request) const;
+			DescribeUserEncryptionKeyListOutcome describeUserEncryptionKeyList(const Model::DescribeUserEncryptionKeyListRequest &request)const;
+			void describeUserEncryptionKeyListAsync(const Model::DescribeUserEncryptionKeyListRequest& request, const DescribeUserEncryptionKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUserEncryptionKeyListOutcomeCallable describeUserEncryptionKeyListCallable(const Model::DescribeUserEncryptionKeyListRequest& request) const;
 			DestroyInstanceOutcome destroyInstance(const Model::DestroyInstanceRequest &request)const;
 			void destroyInstanceAsync(const Model::DestroyInstanceRequest& request, const DestroyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DestroyInstanceOutcomeCallable destroyInstanceCallable(const Model::DestroyInstanceRequest& request) const;

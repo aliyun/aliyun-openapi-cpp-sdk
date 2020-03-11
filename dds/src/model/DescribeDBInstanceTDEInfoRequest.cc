@@ -35,7 +35,7 @@ long DescribeDBInstanceTDEInfoRequest::getResourceOwnerId()const
 void DescribeDBInstanceTDEInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstanceTDEInfoRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeDBInstanceTDEInfoRequest::getAccessKeyId()const
 void DescribeDBInstanceTDEInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstanceTDEInfoRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeDBInstanceTDEInfoRequest::getSecurityToken()const
 void DescribeDBInstanceTDEInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDBInstanceTDEInfoRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string DescribeDBInstanceTDEInfoRequest::getDBInstanceId()const
 void DescribeDBInstanceTDEInfoRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBInstanceTDEInfoRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeDBInstanceTDEInfoRequest::getResourceOwnerAccount()const
 void DescribeDBInstanceTDEInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstanceTDEInfoRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeDBInstanceTDEInfoRequest::getOwnerAccount()const
 void DescribeDBInstanceTDEInfoRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBInstanceTDEInfoRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DescribeDBInstanceTDEInfoRequest::getOwnerId()const
 void DescribeDBInstanceTDEInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

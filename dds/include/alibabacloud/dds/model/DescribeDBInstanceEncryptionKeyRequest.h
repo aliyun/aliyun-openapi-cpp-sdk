@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_CREATEACCOUNTREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_CREATEACCOUNTREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCEENCRYPTIONKEYREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCEENCRYPTIONKEYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT CreateAccountRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DDS_EXPORT DescribeDBInstanceEncryptionKeyRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateAccountRequest();
-				~CreateAccountRequest();
+				DescribeDBInstanceEncryptionKeyRequest();
+				~DescribeDBInstanceEncryptionKeyRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getAccountDescription()const;
-				void setAccountDescription(const std::string& accountDescription);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getAccountName()const;
-				void setAccountName(const std::string& accountName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getDBInstanceId()const;
@@ -51,25 +47,23 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getEncryptionKey()const;
+				void setEncryptionKey(const std::string& encryptionKey);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccountPassword()const;
-				void setAccountPassword(const std::string& accountPassword);
 
             private:
 				long resourceOwnerId_;
-				std::string accountDescription_;
 				std::string accessKeyId_;
-				std::string accountName_;
 				std::string securityToken_;
 				std::string dBInstanceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string encryptionKey_;
 				long ownerId_;
-				std::string accountPassword_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_CREATEACCOUNTREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEDBINSTANCEENCRYPTIONKEYREQUEST_H_

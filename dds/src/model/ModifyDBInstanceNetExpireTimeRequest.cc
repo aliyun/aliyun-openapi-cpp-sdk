@@ -35,7 +35,7 @@ long ModifyDBInstanceNetExpireTimeRequest::getResourceOwnerId()const
 void ModifyDBInstanceNetExpireTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getConnectionString()const
@@ -46,7 +46,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getConnectionString()const
 void ModifyDBInstanceNetExpireTimeRequest::setConnectionString(const std::string& connectionString)
 {
 	connectionString_ = connectionString;
-	setCoreParameter("ConnectionString", connectionString);
+	setParameter("ConnectionString", connectionString);
 }
 
 int ModifyDBInstanceNetExpireTimeRequest::getClassicExpendExpiredDays()const
@@ -57,7 +57,7 @@ int ModifyDBInstanceNetExpireTimeRequest::getClassicExpendExpiredDays()const
 void ModifyDBInstanceNetExpireTimeRequest::setClassicExpendExpiredDays(int classicExpendExpiredDays)
 {
 	classicExpendExpiredDays_ = classicExpendExpiredDays;
-	setCoreParameter("ClassicExpendExpiredDays", std::to_string(classicExpendExpiredDays));
+	setParameter("ClassicExpendExpiredDays", std::to_string(classicExpendExpiredDays));
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getAccessKeyId()const
 void ModifyDBInstanceNetExpireTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getSecurityToken()const
@@ -79,7 +79,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getSecurityToken()const
 void ModifyDBInstanceNetExpireTimeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getDBInstanceId()const
@@ -90,7 +90,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getDBInstanceId()const
 void ModifyDBInstanceNetExpireTimeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getResourceOwnerAccount()const
 void ModifyDBInstanceNetExpireTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getOwnerAccount()const
 void ModifyDBInstanceNetExpireTimeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyDBInstanceNetExpireTimeRequest::getOwnerId()const
@@ -123,6 +123,6 @@ long ModifyDBInstanceNetExpireTimeRequest::getOwnerId()const
 void ModifyDBInstanceNetExpireTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

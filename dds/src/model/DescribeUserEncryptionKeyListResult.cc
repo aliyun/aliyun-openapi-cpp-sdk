@@ -14,31 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dds/model/CreateAccountResult.h>
+#include <alibabacloud/dds/model/DescribeUserEncryptionKeyListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dds;
 using namespace AlibabaCloud::Dds::Model;
 
-CreateAccountResult::CreateAccountResult() :
+DescribeUserEncryptionKeyListResult::DescribeUserEncryptionKeyListResult() :
 	ServiceResult()
 {}
 
-CreateAccountResult::CreateAccountResult(const std::string &payload) :
+DescribeUserEncryptionKeyListResult::DescribeUserEncryptionKeyListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateAccountResult::~CreateAccountResult()
+DescribeUserEncryptionKeyListResult::~DescribeUserEncryptionKeyListResult()
 {}
 
-void CreateAccountResult::parse(const std::string &payload)
+void DescribeUserEncryptionKeyListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allKeyIds = value["KeyIds"]["KeyId"];
+	for (const auto &item : allKeyIds)
+		keyIds_.push_back(item.asString());
 
+}
+
+std::vector<std::string> DescribeUserEncryptionKeyListResult::getKeyIds()const
+{
+	return keyIds_;
 }
 

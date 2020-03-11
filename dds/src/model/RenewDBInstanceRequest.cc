@@ -35,7 +35,7 @@ long RenewDBInstanceRequest::getResourceOwnerId()const
 void RenewDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RenewDBInstanceRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string RenewDBInstanceRequest::getClientToken()const
 void RenewDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string RenewDBInstanceRequest::getCouponNo()const
@@ -57,7 +57,7 @@ std::string RenewDBInstanceRequest::getCouponNo()const
 void RenewDBInstanceRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setParameter("CouponNo", couponNo);
 }
 
 std::string RenewDBInstanceRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string RenewDBInstanceRequest::getAccessKeyId()const
 void RenewDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RenewDBInstanceRequest::getSecurityToken()const
@@ -79,7 +79,7 @@ std::string RenewDBInstanceRequest::getSecurityToken()const
 void RenewDBInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string RenewDBInstanceRequest::getDBInstanceId()const
@@ -90,7 +90,7 @@ std::string RenewDBInstanceRequest::getDBInstanceId()const
 void RenewDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string RenewDBInstanceRequest::getBusinessInfo()const
@@ -101,7 +101,7 @@ std::string RenewDBInstanceRequest::getBusinessInfo()const
 void RenewDBInstanceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
+	setParameter("BusinessInfo", businessInfo);
 }
 
 int RenewDBInstanceRequest::getPeriod()const
@@ -112,7 +112,7 @@ int RenewDBInstanceRequest::getPeriod()const
 void RenewDBInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 bool RenewDBInstanceRequest::getAutoPay()const
@@ -123,7 +123,7 @@ bool RenewDBInstanceRequest::getAutoPay()const
 void RenewDBInstanceRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string RenewDBInstanceRequest::getResourceOwnerAccount()const
@@ -134,7 +134,7 @@ std::string RenewDBInstanceRequest::getResourceOwnerAccount()const
 void RenewDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RenewDBInstanceRequest::getOwnerAccount()const
@@ -145,7 +145,7 @@ std::string RenewDBInstanceRequest::getOwnerAccount()const
 void RenewDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RenewDBInstanceRequest::getOwnerId()const
@@ -156,6 +156,6 @@ long RenewDBInstanceRequest::getOwnerId()const
 void RenewDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,7 +35,7 @@ long CreateShardingDBInstanceRequest::getResourceOwnerId()const
 void CreateShardingDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateShardingDBInstanceRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string CreateShardingDBInstanceRequest::getClientToken()const
 void CreateShardingDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateShardingDBInstanceRequest::getEngineVersion()const
@@ -57,7 +57,7 @@ std::string CreateShardingDBInstanceRequest::getEngineVersion()const
 void CreateShardingDBInstanceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 std::string CreateShardingDBInstanceRequest::getNetworkType()const
@@ -68,7 +68,7 @@ std::string CreateShardingDBInstanceRequest::getNetworkType()const
 void CreateShardingDBInstanceRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setParameter("NetworkType", networkType);
 }
 
 std::vector<CreateShardingDBInstanceRequest::ReplicaSet> CreateShardingDBInstanceRequest::getReplicaSet()const
@@ -81,9 +81,9 @@ void CreateShardingDBInstanceRequest::setReplicaSet(const std::vector<ReplicaSet
 	replicaSet_ = replicaSet;
 	for(int dep1 = 0; dep1!= replicaSet.size(); dep1++) {
 		auto replicaSetObj = replicaSet.at(dep1);
-		std::string replicaSetObjStr = "ReplicaSet." + std::to_string(dep1);
-		setCoreParameter(replicaSetObjStr + ".Storage", std::to_string(replicaSetObj.storage));
-		setCoreParameter(replicaSetObjStr + "._Class", replicaSetObj._class);
+		std::string replicaSetObjStr = "ReplicaSet." + std::to_string(dep1 + 1);
+		setParameter(replicaSetObjStr + ".Storage", std::to_string(replicaSetObj.storage));
+		setParameter(replicaSetObjStr + "._Class", replicaSetObj._class);
 	}
 }
 
@@ -95,7 +95,7 @@ std::string CreateShardingDBInstanceRequest::getAccessKeyId()const
 void CreateShardingDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateShardingDBInstanceRequest::getStorageEngine()const
@@ -106,7 +106,7 @@ std::string CreateShardingDBInstanceRequest::getStorageEngine()const
 void CreateShardingDBInstanceRequest::setStorageEngine(const std::string& storageEngine)
 {
 	storageEngine_ = storageEngine;
-	setCoreParameter("StorageEngine", storageEngine);
+	setParameter("StorageEngine", storageEngine);
 }
 
 std::string CreateShardingDBInstanceRequest::getSecurityToken()const
@@ -117,7 +117,7 @@ std::string CreateShardingDBInstanceRequest::getSecurityToken()const
 void CreateShardingDBInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string CreateShardingDBInstanceRequest::getEngine()const
@@ -128,7 +128,7 @@ std::string CreateShardingDBInstanceRequest::getEngine()const
 void CreateShardingDBInstanceRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string CreateShardingDBInstanceRequest::getDBInstanceDescription()const
@@ -139,7 +139,7 @@ std::string CreateShardingDBInstanceRequest::getDBInstanceDescription()const
 void CreateShardingDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
 {
 	dBInstanceDescription_ = dBInstanceDescription;
-	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
+	setParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
 int CreateShardingDBInstanceRequest::getPeriod()const
@@ -150,7 +150,7 @@ int CreateShardingDBInstanceRequest::getPeriod()const
 void CreateShardingDBInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string CreateShardingDBInstanceRequest::getRestoreTime()const
@@ -161,7 +161,7 @@ std::string CreateShardingDBInstanceRequest::getRestoreTime()const
 void CreateShardingDBInstanceRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
+	setParameter("RestoreTime", restoreTime);
 }
 
 std::string CreateShardingDBInstanceRequest::getResourceOwnerAccount()const
@@ -172,7 +172,7 @@ std::string CreateShardingDBInstanceRequest::getResourceOwnerAccount()const
 void CreateShardingDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateShardingDBInstanceRequest::getSrcDBInstanceId()const
@@ -183,7 +183,7 @@ std::string CreateShardingDBInstanceRequest::getSrcDBInstanceId()const
 void CreateShardingDBInstanceRequest::setSrcDBInstanceId(const std::string& srcDBInstanceId)
 {
 	srcDBInstanceId_ = srcDBInstanceId;
-	setCoreParameter("SrcDBInstanceId", srcDBInstanceId);
+	setParameter("SrcDBInstanceId", srcDBInstanceId);
 }
 
 std::string CreateShardingDBInstanceRequest::getOwnerAccount()const
@@ -194,7 +194,7 @@ std::string CreateShardingDBInstanceRequest::getOwnerAccount()const
 void CreateShardingDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::vector<CreateShardingDBInstanceRequest::ConfigServer> CreateShardingDBInstanceRequest::getConfigServer()const
@@ -207,9 +207,9 @@ void CreateShardingDBInstanceRequest::setConfigServer(const std::vector<ConfigSe
 	configServer_ = configServer;
 	for(int dep1 = 0; dep1!= configServer.size(); dep1++) {
 		auto configServerObj = configServer.at(dep1);
-		std::string configServerObjStr = "ConfigServer." + std::to_string(dep1);
-		setCoreParameter(configServerObjStr + ".Storage", std::to_string(configServerObj.storage));
-		setCoreParameter(configServerObjStr + "._Class", configServerObj._class);
+		std::string configServerObjStr = "ConfigServer." + std::to_string(dep1 + 1);
+		setParameter(configServerObjStr + ".Storage", std::to_string(configServerObj.storage));
+		setParameter(configServerObjStr + "._Class", configServerObj._class);
 	}
 }
 
@@ -221,7 +221,7 @@ long CreateShardingDBInstanceRequest::getOwnerId()const
 void CreateShardingDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<CreateShardingDBInstanceRequest::Mongos> CreateShardingDBInstanceRequest::getMongos()const
@@ -234,8 +234,8 @@ void CreateShardingDBInstanceRequest::setMongos(const std::vector<Mongos>& mongo
 	mongos_ = mongos;
 	for(int dep1 = 0; dep1!= mongos.size(); dep1++) {
 		auto mongosObj = mongos.at(dep1);
-		std::string mongosObjStr = "Mongos." + std::to_string(dep1);
-		setCoreParameter(mongosObjStr + "._Class", mongosObj._class);
+		std::string mongosObjStr = "Mongos." + std::to_string(dep1 + 1);
+		setParameter(mongosObjStr + "._Class", mongosObj._class);
 	}
 }
 
@@ -247,7 +247,7 @@ std::string CreateShardingDBInstanceRequest::getSecurityIPList()const
 void CreateShardingDBInstanceRequest::setSecurityIPList(const std::string& securityIPList)
 {
 	securityIPList_ = securityIPList;
-	setCoreParameter("SecurityIPList", securityIPList);
+	setParameter("SecurityIPList", securityIPList);
 }
 
 std::string CreateShardingDBInstanceRequest::getVSwitchId()const
@@ -258,7 +258,7 @@ std::string CreateShardingDBInstanceRequest::getVSwitchId()const
 void CreateShardingDBInstanceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateShardingDBInstanceRequest::getAccountPassword()const
@@ -269,7 +269,7 @@ std::string CreateShardingDBInstanceRequest::getAccountPassword()const
 void CreateShardingDBInstanceRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	setParameter("AccountPassword", accountPassword);
 }
 
 std::string CreateShardingDBInstanceRequest::getAutoRenew()const
@@ -280,7 +280,7 @@ std::string CreateShardingDBInstanceRequest::getAutoRenew()const
 void CreateShardingDBInstanceRequest::setAutoRenew(const std::string& autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew);
+	setParameter("AutoRenew", autoRenew);
 }
 
 std::string CreateShardingDBInstanceRequest::getVpcId()const
@@ -291,7 +291,7 @@ std::string CreateShardingDBInstanceRequest::getVpcId()const
 void CreateShardingDBInstanceRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string CreateShardingDBInstanceRequest::getZoneId()const
@@ -302,7 +302,7 @@ std::string CreateShardingDBInstanceRequest::getZoneId()const
 void CreateShardingDBInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string CreateShardingDBInstanceRequest::getChargeType()const
@@ -313,6 +313,6 @@ std::string CreateShardingDBInstanceRequest::getChargeType()const
 void CreateShardingDBInstanceRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setParameter("ChargeType", chargeType);
 }
 

@@ -31,21 +31,21 @@ DdsClient::DdsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Dds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dds");
 }
 
 DdsClient::DdsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Dds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dds");
 }
 
 DdsClient::DdsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Dds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dds");
 }
 
 DdsClient::~DdsClient()
@@ -189,42 +189,6 @@ DdsClient::CheckRecoveryConditionOutcomeCallable DdsClient::checkRecoveryConditi
 			[this, request]()
 			{
 			return this->checkRecoveryCondition(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DdsClient::CreateAccountOutcome DdsClient::createAccount(const CreateAccountRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateAccountOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateAccountOutcome(CreateAccountResult(outcome.result()));
-	else
-		return CreateAccountOutcome(outcome.error());
-}
-
-void DdsClient::createAccountAsync(const CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createAccount(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::CreateAccountOutcomeCallable DdsClient::createAccountCallable(const CreateAccountRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateAccountOutcome()>>(
-			[this, request]()
-			{
-			return this->createAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -909,6 +873,42 @@ DdsClient::DescribeDBInstanceAttributeOutcomeCallable DdsClient::describeDBInsta
 			[this, request]()
 			{
 			return this->describeDBInstanceAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeDBInstanceEncryptionKeyOutcome DdsClient::describeDBInstanceEncryptionKey(const DescribeDBInstanceEncryptionKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceEncryptionKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceEncryptionKeyOutcome(DescribeDBInstanceEncryptionKeyResult(outcome.result()));
+	else
+		return DescribeDBInstanceEncryptionKeyOutcome(outcome.error());
+}
+
+void DdsClient::describeDBInstanceEncryptionKeyAsync(const DescribeDBInstanceEncryptionKeyRequest& request, const DescribeDBInstanceEncryptionKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceEncryptionKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeDBInstanceEncryptionKeyOutcomeCallable DdsClient::describeDBInstanceEncryptionKeyCallable(const DescribeDBInstanceEncryptionKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceEncryptionKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceEncryptionKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1701,6 +1701,42 @@ DdsClient::DescribeTagsOutcomeCallable DdsClient::describeTagsCallable(const Des
 			[this, request]()
 			{
 			return this->describeTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeUserEncryptionKeyListOutcome DdsClient::describeUserEncryptionKeyList(const DescribeUserEncryptionKeyListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserEncryptionKeyListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserEncryptionKeyListOutcome(DescribeUserEncryptionKeyListResult(outcome.result()));
+	else
+		return DescribeUserEncryptionKeyListOutcome(outcome.error());
+}
+
+void DdsClient::describeUserEncryptionKeyListAsync(const DescribeUserEncryptionKeyListRequest& request, const DescribeUserEncryptionKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserEncryptionKeyList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeUserEncryptionKeyListOutcomeCallable DdsClient::describeUserEncryptionKeyListCallable(const DescribeUserEncryptionKeyListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserEncryptionKeyListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserEncryptionKeyList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

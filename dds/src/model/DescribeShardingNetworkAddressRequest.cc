@@ -35,7 +35,7 @@ long DescribeShardingNetworkAddressRequest::getResourceOwnerId()const
 void DescribeShardingNetworkAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeShardingNetworkAddressRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeShardingNetworkAddressRequest::getAccessKeyId()const
 void DescribeShardingNetworkAddressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeShardingNetworkAddressRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeShardingNetworkAddressRequest::getSecurityToken()const
 void DescribeShardingNetworkAddressRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeShardingNetworkAddressRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string DescribeShardingNetworkAddressRequest::getDBInstanceId()const
 void DescribeShardingNetworkAddressRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeShardingNetworkAddressRequest::getNodeId()const
@@ -79,7 +79,7 @@ std::string DescribeShardingNetworkAddressRequest::getNodeId()const
 void DescribeShardingNetworkAddressRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setParameter("NodeId", nodeId);
 }
 
 std::string DescribeShardingNetworkAddressRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeShardingNetworkAddressRequest::getResourceOwnerAccount()cons
 void DescribeShardingNetworkAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeShardingNetworkAddressRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeShardingNetworkAddressRequest::getOwnerAccount()const
 void DescribeShardingNetworkAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeShardingNetworkAddressRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DescribeShardingNetworkAddressRequest::getOwnerId()const
 void DescribeShardingNetworkAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

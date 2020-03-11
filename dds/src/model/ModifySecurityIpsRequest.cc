@@ -35,7 +35,7 @@ long ModifySecurityIpsRequest::getResourceOwnerId()const
 void ModifySecurityIpsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySecurityIpsRequest::getSecurityIps()const
@@ -46,7 +46,7 @@ std::string ModifySecurityIpsRequest::getSecurityIps()const
 void ModifySecurityIpsRequest::setSecurityIps(const std::string& securityIps)
 {
 	securityIps_ = securityIps;
-	setCoreParameter("SecurityIps", securityIps);
+	setParameter("SecurityIps", securityIps);
 }
 
 std::string ModifySecurityIpsRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifySecurityIpsRequest::getAccessKeyId()const
 void ModifySecurityIpsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifySecurityIpsRequest::getSecurityIpGroupName()const
@@ -68,7 +68,7 @@ std::string ModifySecurityIpsRequest::getSecurityIpGroupName()const
 void ModifySecurityIpsRequest::setSecurityIpGroupName(const std::string& securityIpGroupName)
 {
 	securityIpGroupName_ = securityIpGroupName;
-	setCoreParameter("SecurityIpGroupName", securityIpGroupName);
+	setParameter("SecurityIpGroupName", securityIpGroupName);
 }
 
 std::string ModifySecurityIpsRequest::getSecurityToken()const
@@ -79,7 +79,7 @@ std::string ModifySecurityIpsRequest::getSecurityToken()const
 void ModifySecurityIpsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifySecurityIpsRequest::getDBInstanceId()const
@@ -90,7 +90,7 @@ std::string ModifySecurityIpsRequest::getDBInstanceId()const
 void ModifySecurityIpsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifySecurityIpsRequest::getModifyMode()const
@@ -101,7 +101,7 @@ std::string ModifySecurityIpsRequest::getModifyMode()const
 void ModifySecurityIpsRequest::setModifyMode(const std::string& modifyMode)
 {
 	modifyMode_ = modifyMode;
-	setCoreParameter("ModifyMode", modifyMode);
+	setParameter("ModifyMode", modifyMode);
 }
 
 std::string ModifySecurityIpsRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifySecurityIpsRequest::getResourceOwnerAccount()const
 void ModifySecurityIpsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifySecurityIpsRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string ModifySecurityIpsRequest::getOwnerAccount()const
 void ModifySecurityIpsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifySecurityIpsRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long ModifySecurityIpsRequest::getOwnerId()const
 void ModifySecurityIpsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifySecurityIpsRequest::getSecurityIpGroupAttribute()const
@@ -145,6 +145,6 @@ std::string ModifySecurityIpsRequest::getSecurityIpGroupAttribute()const
 void ModifySecurityIpsRequest::setSecurityIpGroupAttribute(const std::string& securityIpGroupAttribute)
 {
 	securityIpGroupAttribute_ = securityIpGroupAttribute;
-	setCoreParameter("SecurityIpGroupAttribute", securityIpGroupAttribute);
+	setParameter("SecurityIpGroupAttribute", securityIpGroupAttribute);
 }
 

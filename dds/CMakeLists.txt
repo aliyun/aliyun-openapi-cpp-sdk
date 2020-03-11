@@ -29,8 +29,6 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/CheckCloudResourceAuthorizedResult.h
 	include/alibabacloud/dds/model/CheckRecoveryConditionRequest.h
 	include/alibabacloud/dds/model/CheckRecoveryConditionResult.h
-	include/alibabacloud/dds/model/CreateAccountRequest.h
-	include/alibabacloud/dds/model/CreateAccountResult.h
 	include/alibabacloud/dds/model/CreateBackupRequest.h
 	include/alibabacloud/dds/model/CreateBackupResult.h
 	include/alibabacloud/dds/model/CreateDBInstanceRequest.h
@@ -69,6 +67,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeBackupsResult.h
 	include/alibabacloud/dds/model/DescribeDBInstanceAttributeRequest.h
 	include/alibabacloud/dds/model/DescribeDBInstanceAttributeResult.h
+	include/alibabacloud/dds/model/DescribeDBInstanceEncryptionKeyRequest.h
+	include/alibabacloud/dds/model/DescribeDBInstanceEncryptionKeyResult.h
 	include/alibabacloud/dds/model/DescribeDBInstanceMonitorRequest.h
 	include/alibabacloud/dds/model/DescribeDBInstanceMonitorResult.h
 	include/alibabacloud/dds/model/DescribeDBInstancePerformanceRequest.h
@@ -113,6 +113,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeSlowLogRecordsResult.h
 	include/alibabacloud/dds/model/DescribeTagsRequest.h
 	include/alibabacloud/dds/model/DescribeTagsResult.h
+	include/alibabacloud/dds/model/DescribeUserEncryptionKeyListRequest.h
+	include/alibabacloud/dds/model/DescribeUserEncryptionKeyListResult.h
 	include/alibabacloud/dds/model/DestroyInstanceRequest.h
 	include/alibabacloud/dds/model/DestroyInstanceResult.h
 	include/alibabacloud/dds/model/ListTagResourcesRequest.h
@@ -194,8 +196,6 @@ set(dds_src
 	src/model/CheckCloudResourceAuthorizedResult.cc
 	src/model/CheckRecoveryConditionRequest.cc
 	src/model/CheckRecoveryConditionResult.cc
-	src/model/CreateAccountRequest.cc
-	src/model/CreateAccountResult.cc
 	src/model/CreateBackupRequest.cc
 	src/model/CreateBackupResult.cc
 	src/model/CreateDBInstanceRequest.cc
@@ -234,6 +234,8 @@ set(dds_src
 	src/model/DescribeBackupsResult.cc
 	src/model/DescribeDBInstanceAttributeRequest.cc
 	src/model/DescribeDBInstanceAttributeResult.cc
+	src/model/DescribeDBInstanceEncryptionKeyRequest.cc
+	src/model/DescribeDBInstanceEncryptionKeyResult.cc
 	src/model/DescribeDBInstanceMonitorRequest.cc
 	src/model/DescribeDBInstanceMonitorResult.cc
 	src/model/DescribeDBInstancePerformanceRequest.cc
@@ -278,6 +280,8 @@ set(dds_src
 	src/model/DescribeSlowLogRecordsResult.cc
 	src/model/DescribeTagsRequest.cc
 	src/model/DescribeTagsResult.cc
+	src/model/DescribeUserEncryptionKeyListRequest.cc
+	src/model/DescribeUserEncryptionKeyListResult.cc
 	src/model/DestroyInstanceRequest.cc
 	src/model/DestroyInstanceResult.cc
 	src/model/ListTagResourcesRequest.cc

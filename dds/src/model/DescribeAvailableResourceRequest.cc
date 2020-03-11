@@ -35,7 +35,7 @@ long DescribeAvailableResourceRequest::getResourceOwnerId()const
 void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAvailableResourceRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeAvailableResourceRequest::getAccessKeyId()const
 void DescribeAvailableResourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAvailableResourceRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeAvailableResourceRequest::getSecurityToken()const
 void DescribeAvailableResourceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeAvailableResourceRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribeAvailableResourceRequest::getRegionId()const
 void DescribeAvailableResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeAvailableResourceRequest::getInstanceChargeType()const
@@ -79,7 +79,7 @@ std::string DescribeAvailableResourceRequest::getInstanceChargeType()const
 void DescribeAvailableResourceRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
 void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAvailableResourceRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeAvailableResourceRequest::getOwnerAccount()const
 void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeAvailableResourceRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long DescribeAvailableResourceRequest::getOwnerId()const
 void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAvailableResourceRequest::getZoneId()const
@@ -123,6 +123,6 @@ std::string DescribeAvailableResourceRequest::getZoneId()const
 void DescribeAvailableResourceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
