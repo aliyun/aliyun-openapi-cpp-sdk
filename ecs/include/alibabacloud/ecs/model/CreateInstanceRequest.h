@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					int size;
 					bool encrypted;
 					std::string performanceLevel;
+					std::string encryptAlgorithm;
 					std::string description;
 					std::string category;
 					std::string kMSKeyId;
@@ -178,6 +179,8 @@ namespace AlibabaCloud
 				void setStorageSetId(const std::string& storageSetId);
 				int getSystemDiskSize()const;
 				void setSystemDiskSize(int systemDiskSize);
+				std::string getImageFamily()const;
+				void setImageFamily(const std::string& imageFamily);
 				std::string getSystemDiskDescription()const;
 				void setSystemDiskDescription(const std::string& systemDiskDescription);
 
@@ -241,6 +244,7 @@ namespace AlibabaCloud
 				std::vector<DataDisk> dataDisk_;
 				std::string storageSetId_;
 				int systemDiskSize_;
+				std::string imageFamily_;
 				std::string systemDiskDescription_;
 
 			};

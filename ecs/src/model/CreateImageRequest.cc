@@ -204,6 +204,17 @@ void CreateImageRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string CreateImageRequest::getImageFamily()const
+{
+	return imageFamily_;
+}
+
+void CreateImageRequest::setImageFamily(const std::string& imageFamily)
+{
+	imageFamily_ = imageFamily;
+	setParameter("ImageFamily", imageFamily);
+}
+
 std::string CreateImageRequest::getImageVersion()const
 {
 	return imageVersion_;

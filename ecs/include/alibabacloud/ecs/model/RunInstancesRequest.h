@@ -58,6 +58,7 @@ namespace AlibabaCloud
 					bool deleteWithInstance;
 					std::string performanceLevel;
 					std::string autoSnapshotPolicyId;
+					std::string encryptAlgorithm;
 				};
 
 			public:
@@ -202,6 +203,8 @@ namespace AlibabaCloud
 				void setStorageSetId(const std::string& storageSetId);
 				std::string getSystemDiskSize()const;
 				void setSystemDiskSize(const std::string& systemDiskSize);
+				std::string getImageFamily()const;
+				void setImageFamily(const std::string& imageFamily);
 				std::string getSystemDiskDescription()const;
 				void setSystemDiskDescription(const std::string& systemDiskDescription);
 
@@ -275,6 +278,7 @@ namespace AlibabaCloud
 				long launchTemplateVersion_;
 				std::string storageSetId_;
 				std::string systemDiskSize_;
+				std::string imageFamily_;
 				std::string systemDiskDescription_;
 
 			};

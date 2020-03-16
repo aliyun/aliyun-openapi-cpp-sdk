@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGESRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGESRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGEFROMFAMILYRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGEFROMFAMILYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeImagesResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT DescribeImageFromFamilyResult : public ServiceResult
 			{
 			public:
 				struct Image
@@ -38,13 +38,11 @@ namespace AlibabaCloud
 					{
 						std::string snapshotId;
 						std::string type;
-						std::string progress;
 						std::string format;
 						std::string size;
 						std::string device;
 						std::string importOSSBucket;
 						std::string importOSSObject;
-						int remainTime;
 					};
 					struct Tag
 					{
@@ -52,53 +50,43 @@ namespace AlibabaCloud
 						std::string tagValue;
 					};
 					std::string imageOwnerAlias;
-					std::string description;
-					std::string isSelfShared;
-					std::string platform;
-					std::string resourceGroupId;
-					int size;
-					bool isSubscribed;
-					std::string oSName;
-					std::string imageId;
-					std::vector<Image::Tag> tags;
-					std::string oSNameEn;
 					std::string status;
 					std::string progress;
 					std::string usage;
+					std::string description;
+					std::string isSelfShared;
 					std::string architecture;
+					std::string platform;
 					std::string productCode;
+					int size;
+					bool isSubscribed;
 					bool isCopied;
 					std::string imageFamily;
+					std::string oSName;
 					bool isSupportIoOptimized;
 					bool isSupportCloudinit;
 					std::string imageName;
-					std::vector<Image::DiskDeviceMapping> diskDeviceMappings;
+					std::vector<DiskDeviceMapping> diskDeviceMappings;
 					std::string imageVersion;
 					std::string oSType;
+					std::string imageId;
 					std::string creationTime;
+					std::vector<Tag> tags;
 				};
 
 
-				DescribeImagesResult();
-				explicit DescribeImagesResult(const std::string &payload);
-				~DescribeImagesResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<Image> getImages()const;
-				std::string getRegionId()const;
+				DescribeImageFromFamilyResult();
+				explicit DescribeImageFromFamilyResult(const std::string &payload);
+				~DescribeImageFromFamilyResult();
+				Image getImage()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<Image> images_;
-				std::string regionId_;
+				Image image_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGESRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGEFROMFAMILYRESULT_H_

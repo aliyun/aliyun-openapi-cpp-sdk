@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					std::string sourceDiskSize;
 					std::string creationTime;
 					std::string lastModifiedTime;
+					std::string snapshotType;
 					std::string sourceDiskType;
 					int remainTime;
 					std::vector<Snapshot::Tag> tags;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCESTATUSREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCESTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGEFROMFAMILYREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGEFROMFAMILYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeInstanceStatusRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeImageFromFamilyRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeInstanceStatusRequest();
-				~DescribeInstanceStatusRequest();
+				DescribeImageFromFamilyRequest();
+				~DescribeImageFromFamilyRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::vector<std::string> getInstanceId()const;
-				void setInstanceId(const std::vector<std::string>& instanceId);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
+				std::string getImageFamily()const;
+				void setImageFamily(const std::string& imageFamily);
 
             private:
 				long resourceOwnerId_;
-				int pageNumber_;
 				std::string regionId_;
-				int pageSize_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string clusterId_;
 				long ownerId_;
-				std::vector<std::string> instanceId_;
-				std::string zoneId_;
+				std::string imageFamily_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCESTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEIMAGEFROMFAMILYREQUEST_H_

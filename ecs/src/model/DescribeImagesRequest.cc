@@ -290,6 +290,17 @@ void DescribeImagesRequest::setFilter(const std::vector<Filter>& filter)
 	}
 }
 
+std::string DescribeImagesRequest::getImageFamily()const
+{
+	return imageFamily_;
+}
+
+void DescribeImagesRequest::setImageFamily(const std::string& imageFamily)
+{
+	imageFamily_ = imageFamily;
+	setParameter("ImageFamily", imageFamily);
+}
+
 std::string DescribeImagesRequest::getStatus()const
 {
 	return status_;

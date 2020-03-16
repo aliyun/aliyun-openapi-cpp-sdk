@@ -670,6 +670,7 @@ void CreateInstanceRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
 		setParameter(dataDiskObjStr + ".Encrypted", dataDiskObj.encrypted ? "true" : "false");
 		setParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
+		setParameter(dataDiskObjStr + ".EncryptAlgorithm", dataDiskObj.encryptAlgorithm);
 		setParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
 		setParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
 		setParameter(dataDiskObjStr + ".KMSKeyId", dataDiskObj.kMSKeyId);
@@ -698,6 +699,17 @@ void CreateInstanceRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
 	setParameter("SystemDiskSize", std::to_string(systemDiskSize));
+}
+
+std::string CreateInstanceRequest::getImageFamily()const
+{
+	return imageFamily_;
+}
+
+void CreateInstanceRequest::setImageFamily(const std::string& imageFamily)
+{
+	imageFamily_ = imageFamily;
+	setParameter("ImageFamily", imageFamily);
 }
 
 std::string CreateInstanceRequest::getSystemDiskDescription()const

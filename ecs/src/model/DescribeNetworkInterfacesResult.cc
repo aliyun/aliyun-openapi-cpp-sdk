@@ -75,6 +75,8 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 			networkInterfaceSetsObject.serviceManaged = valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceManaged"].asString() == "true";
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["QueueNumber"].isNull())
 			networkInterfaceSetsObject.queueNumber = std::stoi(valueNetworkInterfaceSetsNetworkInterfaceSet["QueueNumber"].asString());
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["OwnerId"].isNull())
+			networkInterfaceSetsObject.ownerId = valueNetworkInterfaceSetsNetworkInterfaceSet["OwnerId"].asString();
 		auto allPrivateIpSetsNode = allNetworkInterfaceSetsNode["PrivateIpSets"]["PrivateIpSet"];
 		for (auto allNetworkInterfaceSetsNodePrivateIpSetsPrivateIpSet : allPrivateIpSetsNode)
 		{

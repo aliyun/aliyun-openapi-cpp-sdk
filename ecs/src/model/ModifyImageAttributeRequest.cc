@@ -115,3 +115,14 @@ void ModifyImageAttributeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyImageAttributeRequest::getStatus()const
+{
+	return status_;
+}
+
+void ModifyImageAttributeRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
+}
+

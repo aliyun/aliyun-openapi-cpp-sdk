@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setSnapshotId(const std::string& snapshotId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getEncryptAlgorithm()const;
+				void setEncryptAlgorithm(const std::string& encryptAlgorithm);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getDiskName()const;
@@ -96,6 +98,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string snapshotId_;
 				std::string clientToken_;
+				std::string encryptAlgorithm_;
 				std::string description_;
 				std::string diskName_;
 				std::string resourceGroupId_;

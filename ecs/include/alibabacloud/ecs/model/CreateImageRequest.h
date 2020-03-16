@@ -78,6 +78,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getImageFamily()const;
+				void setImageFamily(const std::string& imageFamily);
 				std::string getImageVersion()const;
 				void setImageVersion(const std::string& imageVersion);
 
@@ -97,6 +99,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string instanceId_;
+				std::string imageFamily_;
 				std::string imageVersion_;
 
 			};

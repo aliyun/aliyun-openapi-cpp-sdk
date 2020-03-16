@@ -241,6 +241,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeHaVipsResult.h
 	include/alibabacloud/ecs/model/DescribeHpcClustersRequest.h
 	include/alibabacloud/ecs/model/DescribeHpcClustersResult.h
+	include/alibabacloud/ecs/model/DescribeImageFromFamilyRequest.h
+	include/alibabacloud/ecs/model/DescribeImageFromFamilyResult.h
 	include/alibabacloud/ecs/model/DescribeImageSharePermissionRequest.h
 	include/alibabacloud/ecs/model/DescribeImageSharePermissionResult.h
 	include/alibabacloud/ecs/model/DescribeImageSupportInstanceTypesRequest.h
@@ -509,6 +511,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ReInitDiskResult.h
 	include/alibabacloud/ecs/model/RebootInstanceRequest.h
 	include/alibabacloud/ecs/model/RebootInstanceResult.h
+	include/alibabacloud/ecs/model/RebootInstancesRequest.h
+	include/alibabacloud/ecs/model/RebootInstancesResult.h
 	include/alibabacloud/ecs/model/RecoverVirtualBorderRouterRequest.h
 	include/alibabacloud/ecs/model/RecoverVirtualBorderRouterResult.h
 	include/alibabacloud/ecs/model/RedeployDedicatedHostRequest.h
@@ -547,8 +551,12 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RunInstancesResult.h
 	include/alibabacloud/ecs/model/StartInstanceRequest.h
 	include/alibabacloud/ecs/model/StartInstanceResult.h
+	include/alibabacloud/ecs/model/StartInstancesRequest.h
+	include/alibabacloud/ecs/model/StartInstancesResult.h
 	include/alibabacloud/ecs/model/StopInstanceRequest.h
 	include/alibabacloud/ecs/model/StopInstanceResult.h
+	include/alibabacloud/ecs/model/StopInstancesRequest.h
+	include/alibabacloud/ecs/model/StopInstancesResult.h
 	include/alibabacloud/ecs/model/StopInvocationRequest.h
 	include/alibabacloud/ecs/model/StopInvocationResult.h
 	include/alibabacloud/ecs/model/TagResourcesRequest.h
@@ -790,6 +798,8 @@ set(ecs_src
 	src/model/DescribeHaVipsResult.cc
 	src/model/DescribeHpcClustersRequest.cc
 	src/model/DescribeHpcClustersResult.cc
+	src/model/DescribeImageFromFamilyRequest.cc
+	src/model/DescribeImageFromFamilyResult.cc
 	src/model/DescribeImageSharePermissionRequest.cc
 	src/model/DescribeImageSharePermissionResult.cc
 	src/model/DescribeImageSupportInstanceTypesRequest.cc
@@ -1058,6 +1068,8 @@ set(ecs_src
 	src/model/ReInitDiskResult.cc
 	src/model/RebootInstanceRequest.cc
 	src/model/RebootInstanceResult.cc
+	src/model/RebootInstancesRequest.cc
+	src/model/RebootInstancesResult.cc
 	src/model/RecoverVirtualBorderRouterRequest.cc
 	src/model/RecoverVirtualBorderRouterResult.cc
 	src/model/RedeployDedicatedHostRequest.cc
@@ -1096,8 +1108,12 @@ set(ecs_src
 	src/model/RunInstancesResult.cc
 	src/model/StartInstanceRequest.cc
 	src/model/StartInstanceResult.cc
+	src/model/StartInstancesRequest.cc
+	src/model/StartInstancesResult.cc
 	src/model/StopInstanceRequest.cc
 	src/model/StopInstanceResult.cc
+	src/model/StopInstancesRequest.cc
+	src/model/StopInstancesResult.cc
 	src/model/StopInvocationRequest.cc
 	src/model/StopInvocationResult.cc
 	src/model/TagResourcesRequest.cc

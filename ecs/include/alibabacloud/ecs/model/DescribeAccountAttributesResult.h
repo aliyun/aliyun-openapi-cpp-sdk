@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string instanceChargeType;
 						std::string expiredTime;
 						std::string value;
+						std::string diskCategory;
 						int count;
 						std::string instanceType;
 					};

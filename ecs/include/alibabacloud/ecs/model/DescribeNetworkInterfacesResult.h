@@ -76,6 +76,7 @@ namespace AlibabaCloud
 					std::vector<NetworkInterfaceSet::Ipv6Set> ipv6Sets;
 					int queueNumber;
 					std::string vpcId;
+					std::string ownerId;
 					AssociatedPublicIp associatedPublicIp;
 					std::string creationTime;
 					std::vector<NetworkInterfaceSet::Tag> tags;

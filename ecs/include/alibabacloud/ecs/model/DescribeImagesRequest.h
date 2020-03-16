@@ -92,6 +92,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::vector<Filter> getFilter()const;
 				void setFilter(const std::vector<Filter>& filter);
+				std::string getImageFamily()const;
+				void setImageFamily(const std::string& imageFamily);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
@@ -119,6 +121,7 @@ namespace AlibabaCloud
 				std::string oSType_;
 				long ownerId_;
 				std::vector<Filter> filter_;
+				std::string imageFamily_;
 				std::string status_;
 
 			};

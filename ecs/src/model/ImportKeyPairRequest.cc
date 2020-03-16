@@ -49,6 +49,17 @@ void ImportKeyPairRequest::setKeyPairName(const std::string& keyPairName)
 	setParameter("KeyPairName", keyPairName);
 }
 
+std::string ImportKeyPairRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ImportKeyPairRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ImportKeyPairRequest::getRegionId()const
 {
 	return regionId_;
@@ -58,6 +69,22 @@ void ImportKeyPairRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::vector<ImportKeyPairRequest::Tag> ImportKeyPairRequest::getTag()const
+{
+	return tag_;
+}
+
+void ImportKeyPairRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
 }
 
 std::string ImportKeyPairRequest::getResourceOwnerAccount()const

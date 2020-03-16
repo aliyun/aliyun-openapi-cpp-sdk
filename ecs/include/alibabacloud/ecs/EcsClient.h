@@ -242,6 +242,8 @@
 #include "model/DescribeHaVipsResult.h"
 #include "model/DescribeHpcClustersRequest.h"
 #include "model/DescribeHpcClustersResult.h"
+#include "model/DescribeImageFromFamilyRequest.h"
+#include "model/DescribeImageFromFamilyResult.h"
 #include "model/DescribeImageSharePermissionRequest.h"
 #include "model/DescribeImageSharePermissionResult.h"
 #include "model/DescribeImageSupportInstanceTypesRequest.h"
@@ -510,6 +512,8 @@
 #include "model/ReInitDiskResult.h"
 #include "model/RebootInstanceRequest.h"
 #include "model/RebootInstanceResult.h"
+#include "model/RebootInstancesRequest.h"
+#include "model/RebootInstancesResult.h"
 #include "model/RecoverVirtualBorderRouterRequest.h"
 #include "model/RecoverVirtualBorderRouterResult.h"
 #include "model/RedeployDedicatedHostRequest.h"
@@ -548,8 +552,12 @@
 #include "model/RunInstancesResult.h"
 #include "model/StartInstanceRequest.h"
 #include "model/StartInstanceResult.h"
+#include "model/StartInstancesRequest.h"
+#include "model/StartInstancesResult.h"
 #include "model/StopInstanceRequest.h"
 #include "model/StopInstanceResult.h"
+#include "model/StopInstancesRequest.h"
+#include "model/StopInstancesResult.h"
 #include "model/StopInvocationRequest.h"
 #include "model/StopInvocationResult.h"
 #include "model/TagResourcesRequest.h"
@@ -907,6 +915,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeHpcClustersResult> DescribeHpcClustersOutcome;
 			typedef std::future<DescribeHpcClustersOutcome> DescribeHpcClustersOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeHpcClustersRequest&, const DescribeHpcClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHpcClustersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeImageFromFamilyResult> DescribeImageFromFamilyOutcome;
+			typedef std::future<DescribeImageFromFamilyOutcome> DescribeImageFromFamilyOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeImageFromFamilyRequest&, const DescribeImageFromFamilyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageFromFamilyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeImageSharePermissionResult> DescribeImageSharePermissionOutcome;
 			typedef std::future<DescribeImageSharePermissionOutcome> DescribeImageSharePermissionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeImageSharePermissionRequest&, const DescribeImageSharePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSharePermissionAsyncHandler;
@@ -1309,6 +1320,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RebootInstanceResult> RebootInstanceOutcome;
 			typedef std::future<RebootInstanceOutcome> RebootInstanceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RebootInstanceRequest&, const RebootInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RebootInstancesResult> RebootInstancesOutcome;
+			typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::RebootInstancesRequest&, const RebootInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
 			typedef Outcome<Error, Model::RecoverVirtualBorderRouterResult> RecoverVirtualBorderRouterOutcome;
 			typedef std::future<RecoverVirtualBorderRouterOutcome> RecoverVirtualBorderRouterOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RecoverVirtualBorderRouterRequest&, const RecoverVirtualBorderRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecoverVirtualBorderRouterAsyncHandler;
@@ -1366,9 +1380,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartInstanceResult> StartInstanceOutcome;
 			typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::StartInstanceRequest&, const StartInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StartInstancesResult> StartInstancesOutcome;
+			typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::StartInstancesRequest&, const StartInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartInstancesAsyncHandler;
 			typedef Outcome<Error, Model::StopInstanceResult> StopInstanceOutcome;
 			typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::StopInstanceRequest&, const StopInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StopInstancesResult> StopInstancesOutcome;
+			typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::StopInstancesRequest&, const StopInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
 			typedef Outcome<Error, Model::StopInvocationResult> StopInvocationOutcome;
 			typedef std::future<StopInvocationOutcome> StopInvocationOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::StopInvocationRequest&, const StopInvocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInvocationAsyncHandler;
@@ -1731,6 +1751,9 @@ namespace AlibabaCloud
 			DescribeHpcClustersOutcome describeHpcClusters(const Model::DescribeHpcClustersRequest &request)const;
 			void describeHpcClustersAsync(const Model::DescribeHpcClustersRequest& request, const DescribeHpcClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHpcClustersOutcomeCallable describeHpcClustersCallable(const Model::DescribeHpcClustersRequest& request) const;
+			DescribeImageFromFamilyOutcome describeImageFromFamily(const Model::DescribeImageFromFamilyRequest &request)const;
+			void describeImageFromFamilyAsync(const Model::DescribeImageFromFamilyRequest& request, const DescribeImageFromFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeImageFromFamilyOutcomeCallable describeImageFromFamilyCallable(const Model::DescribeImageFromFamilyRequest& request) const;
 			DescribeImageSharePermissionOutcome describeImageSharePermission(const Model::DescribeImageSharePermissionRequest &request)const;
 			void describeImageSharePermissionAsync(const Model::DescribeImageSharePermissionRequest& request, const DescribeImageSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeImageSharePermissionOutcomeCallable describeImageSharePermissionCallable(const Model::DescribeImageSharePermissionRequest& request) const;
@@ -2133,6 +2156,9 @@ namespace AlibabaCloud
 			RebootInstanceOutcome rebootInstance(const Model::RebootInstanceRequest &request)const;
 			void rebootInstanceAsync(const Model::RebootInstanceRequest& request, const RebootInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RebootInstanceOutcomeCallable rebootInstanceCallable(const Model::RebootInstanceRequest& request) const;
+			RebootInstancesOutcome rebootInstances(const Model::RebootInstancesRequest &request)const;
+			void rebootInstancesAsync(const Model::RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RebootInstancesOutcomeCallable rebootInstancesCallable(const Model::RebootInstancesRequest& request) const;
 			RecoverVirtualBorderRouterOutcome recoverVirtualBorderRouter(const Model::RecoverVirtualBorderRouterRequest &request)const;
 			void recoverVirtualBorderRouterAsync(const Model::RecoverVirtualBorderRouterRequest& request, const RecoverVirtualBorderRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecoverVirtualBorderRouterOutcomeCallable recoverVirtualBorderRouterCallable(const Model::RecoverVirtualBorderRouterRequest& request) const;
@@ -2190,9 +2216,15 @@ namespace AlibabaCloud
 			StartInstanceOutcome startInstance(const Model::StartInstanceRequest &request)const;
 			void startInstanceAsync(const Model::StartInstanceRequest& request, const StartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartInstanceOutcomeCallable startInstanceCallable(const Model::StartInstanceRequest& request) const;
+			StartInstancesOutcome startInstances(const Model::StartInstancesRequest &request)const;
+			void startInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartInstancesOutcomeCallable startInstancesCallable(const Model::StartInstancesRequest& request) const;
 			StopInstanceOutcome stopInstance(const Model::StopInstanceRequest &request)const;
 			void stopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopInstanceOutcomeCallable stopInstanceCallable(const Model::StopInstanceRequest& request) const;
+			StopInstancesOutcome stopInstances(const Model::StopInstancesRequest &request)const;
+			void stopInstancesAsync(const Model::StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopInstancesOutcomeCallable stopInstancesCallable(const Model::StopInstancesRequest& request) const;
 			StopInvocationOutcome stopInvocation(const Model::StopInvocationRequest &request)const;
 			void stopInvocationAsync(const Model::StopInvocationRequest& request, const StopInvocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopInvocationOutcomeCallable stopInvocationCallable(const Model::StopInvocationRequest& request) const;

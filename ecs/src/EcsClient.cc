@@ -4011,6 +4011,42 @@ EcsClient::DescribeHpcClustersOutcomeCallable EcsClient::describeHpcClustersCall
 	return task->get_future();
 }
 
+EcsClient::DescribeImageFromFamilyOutcome EcsClient::describeImageFromFamily(const DescribeImageFromFamilyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeImageFromFamilyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeImageFromFamilyOutcome(DescribeImageFromFamilyResult(outcome.result()));
+	else
+		return DescribeImageFromFamilyOutcome(outcome.error());
+}
+
+void EcsClient::describeImageFromFamilyAsync(const DescribeImageFromFamilyRequest& request, const DescribeImageFromFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeImageFromFamily(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeImageFromFamilyOutcomeCallable EcsClient::describeImageFromFamilyCallable(const DescribeImageFromFamilyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeImageFromFamilyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeImageFromFamily(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeImageSharePermissionOutcome EcsClient::describeImageSharePermission(const DescribeImageSharePermissionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8835,6 +8871,42 @@ EcsClient::RebootInstanceOutcomeCallable EcsClient::rebootInstanceCallable(const
 	return task->get_future();
 }
 
+EcsClient::RebootInstancesOutcome EcsClient::rebootInstances(const RebootInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RebootInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RebootInstancesOutcome(RebootInstancesResult(outcome.result()));
+	else
+		return RebootInstancesOutcome(outcome.error());
+}
+
+void EcsClient::rebootInstancesAsync(const RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rebootInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::RebootInstancesOutcomeCallable EcsClient::rebootInstancesCallable(const RebootInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RebootInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->rebootInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::RecoverVirtualBorderRouterOutcome EcsClient::recoverVirtualBorderRouter(const RecoverVirtualBorderRouterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -9519,6 +9591,42 @@ EcsClient::StartInstanceOutcomeCallable EcsClient::startInstanceCallable(const S
 	return task->get_future();
 }
 
+EcsClient::StartInstancesOutcome EcsClient::startInstances(const StartInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartInstancesOutcome(StartInstancesResult(outcome.result()));
+	else
+		return StartInstancesOutcome(outcome.error());
+}
+
+void EcsClient::startInstancesAsync(const StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::StartInstancesOutcomeCallable EcsClient::startInstancesCallable(const StartInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->startInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::StopInstanceOutcome EcsClient::stopInstance(const StopInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -9549,6 +9657,42 @@ EcsClient::StopInstanceOutcomeCallable EcsClient::stopInstanceCallable(const Sto
 			[this, request]()
 			{
 			return this->stopInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::StopInstancesOutcome EcsClient::stopInstances(const StopInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopInstancesOutcome(StopInstancesResult(outcome.result()));
+	else
+		return StopInstancesOutcome(outcome.error());
+}
+
+void EcsClient::stopInstancesAsync(const StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::StopInstancesOutcomeCallable EcsClient::stopInstancesCallable(const StopInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->stopInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

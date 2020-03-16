@@ -115,6 +115,19 @@ void DescribeInstanceStatusRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::vector<std::string> DescribeInstanceStatusRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeInstanceStatusRequest::setInstanceId(const std::vector<std::string>& instanceId)
+{
+	instanceId_ = instanceId;
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
+}
+
 std::string DescribeInstanceStatusRequest::getZoneId()const
 {
 	return zoneId_;

@@ -49,6 +49,17 @@ void CopyImageRequest::setImageId(const std::string& imageId)
 	setParameter("ImageId", imageId);
 }
 
+std::string CopyImageRequest::getEncryptAlgorithm()const
+{
+	return encryptAlgorithm_;
+}
+
+void CopyImageRequest::setEncryptAlgorithm(const std::string& encryptAlgorithm)
+{
+	encryptAlgorithm_ = encryptAlgorithm;
+	setParameter("EncryptAlgorithm", encryptAlgorithm);
+}
+
 std::string CopyImageRequest::getDestinationRegionId()const
 {
 	return destinationRegionId_;

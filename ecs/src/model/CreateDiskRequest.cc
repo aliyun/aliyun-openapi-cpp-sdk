@@ -60,6 +60,17 @@ void CreateDiskRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+std::string CreateDiskRequest::getEncryptAlgorithm()const
+{
+	return encryptAlgorithm_;
+}
+
+void CreateDiskRequest::setEncryptAlgorithm(const std::string& encryptAlgorithm)
+{
+	encryptAlgorithm_ = encryptAlgorithm;
+	setParameter("EncryptAlgorithm", encryptAlgorithm);
+}
+
 std::string CreateDiskRequest::getDescription()const
 {
 	return description_;

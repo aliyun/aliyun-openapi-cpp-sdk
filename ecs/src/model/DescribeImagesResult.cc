@@ -49,6 +49,8 @@ void DescribeImagesResult::parse(const std::string &payload)
 			imagesObject.imageId = valueImagesImage["ImageId"].asString();
 		if(!valueImagesImage["ImageName"].isNull())
 			imagesObject.imageName = valueImagesImage["ImageName"].asString();
+		if(!valueImagesImage["ImageFamily"].isNull())
+			imagesObject.imageFamily = valueImagesImage["ImageFamily"].asString();
 		if(!valueImagesImage["ImageVersion"].isNull())
 			imagesObject.imageVersion = valueImagesImage["ImageVersion"].asString();
 		if(!valueImagesImage["Description"].isNull())

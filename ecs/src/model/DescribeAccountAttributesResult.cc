@@ -61,6 +61,8 @@ void DescribeAccountAttributesResult::parse(const std::string &payload)
 				attributeValuesObject.instanceType = allAccountAttributeItemsNodeAttributeValuesValueItem["InstanceType"].asString();
 			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["Count"].isNull())
 				attributeValuesObject.count = std::stoi(allAccountAttributeItemsNodeAttributeValuesValueItem["Count"].asString());
+			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["DiskCategory"].isNull())
+				attributeValuesObject.diskCategory = allAccountAttributeItemsNodeAttributeValuesValueItem["DiskCategory"].asString();
 			accountAttributeItemsObject.attributeValues.push_back(attributeValuesObject);
 		}
 		accountAttributeItems_.push_back(accountAttributeItemsObject);

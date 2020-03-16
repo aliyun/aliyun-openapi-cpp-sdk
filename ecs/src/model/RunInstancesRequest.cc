@@ -784,6 +784,7 @@ void RunInstancesRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 		setParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
 		setParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
 		setParameter(dataDiskObjStr + ".AutoSnapshotPolicyId", dataDiskObj.autoSnapshotPolicyId);
+		setParameter(dataDiskObjStr + ".EncryptAlgorithm", dataDiskObj.encryptAlgorithm);
 	}
 }
 
@@ -818,6 +819,17 @@ void RunInstancesRequest::setSystemDiskSize(const std::string& systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
 	setParameter("SystemDiskSize", systemDiskSize);
+}
+
+std::string RunInstancesRequest::getImageFamily()const
+{
+	return imageFamily_;
+}
+
+void RunInstancesRequest::setImageFamily(const std::string& imageFamily)
+{
+	imageFamily_ = imageFamily;
+	setParameter("ImageFamily", imageFamily);
 }
 
 std::string RunInstancesRequest::getSystemDiskDescription()const
