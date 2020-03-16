@@ -1,3 +1,10 @@
+2020-03-16 Version: 1.36.320
+- Release.
+- Add virtual host modification API.
+- Add exchange modification API.
+- Add queue modification API.
+- Add binding modification API.
+
 2020-03-16 Version: 1.36.319
 - Add ImageFamily paramters and apis, in Instance creation apis and Image query apis, and add DescribeImageFromFamily.
 - Add Instance batch operation apis RebootInstances StartInstances and StopInstances.
