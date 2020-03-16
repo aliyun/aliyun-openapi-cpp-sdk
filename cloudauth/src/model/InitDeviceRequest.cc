@@ -71,6 +71,17 @@ void InitDeviceRequest::setAppVersion(const std::string& appVersion)
 	setParameter("AppVersion", appVersion);
 }
 
+std::string InitDeviceRequest::getDeviceToken()const
+{
+	return deviceToken_;
+}
+
+void InitDeviceRequest::setDeviceToken(const std::string& deviceToken)
+{
+	deviceToken_ = deviceToken;
+	setParameter("DeviceToken", deviceToken);
+}
+
 std::string InitDeviceRequest::getCertifyId()const
 {
 	return certifyId_;

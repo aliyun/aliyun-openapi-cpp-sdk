@@ -46,6 +46,8 @@ void DescribeFaceVerifyResult::parse(const std::string &payload)
 		resultObject_.identityInfo = resultObjectNode["IdentityInfo"].asString();
 	if(!resultObjectNode["MaterialInfo"].isNull())
 		resultObject_.materialInfo = resultObjectNode["MaterialInfo"].asString();
+	if(!resultObjectNode["DeviceToken"].isNull())
+		resultObject_.deviceToken = resultObjectNode["DeviceToken"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())

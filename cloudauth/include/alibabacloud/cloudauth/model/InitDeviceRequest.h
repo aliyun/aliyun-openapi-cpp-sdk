@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setMerchant(const std::string& merchant);
 				std::string getAppVersion()const;
 				void setAppVersion(const std::string& appVersion);
+				std::string getDeviceToken()const;
+				void setDeviceToken(const std::string& deviceToken);
 				std::string getCertifyId()const;
 				void setCertifyId(const std::string& certifyId);
 				std::string getOuterOrderNo()const;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string bizData_;
 				std::string merchant_;
 				std::string appVersion_;
+				std::string deviceToken_;
 				std::string certifyId_;
 				std::string outerOrderNo_;
 				std::string produceNode_;

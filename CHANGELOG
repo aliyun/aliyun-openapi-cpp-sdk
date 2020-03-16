@@ -1,3 +1,6 @@
+2020-03-16 Version: 1.36.321
+- DescribeFaceVerify API Return DeviceToken Field.
+
 2020-03-16 Version: 1.36.320
 - Release.
 - Add virtual host modification API.

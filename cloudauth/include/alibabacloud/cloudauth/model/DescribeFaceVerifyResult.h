@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct ResultObject
 				{
 					std::string passed;
+					std::string deviceToken;
 					std::string identityInfo;
 					std::string materialInfo;
 				};
