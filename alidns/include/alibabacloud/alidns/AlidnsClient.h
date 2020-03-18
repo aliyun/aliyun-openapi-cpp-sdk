@@ -128,6 +128,8 @@
 #include "model/DescribeGtmRecoveryPlanAvailableConfigResult.h"
 #include "model/DescribeGtmRecoveryPlansRequest.h"
 #include "model/DescribeGtmRecoveryPlansResult.h"
+#include "model/DescribeInstanceDomainsRequest.h"
+#include "model/DescribeInstanceDomainsResult.h"
 #include "model/DescribeRecordLogsRequest.h"
 #include "model/DescribeRecordLogsResult.h"
 #include "model/DescribeRecordStatisticsRequest.h"
@@ -360,6 +362,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeGtmRecoveryPlansResult> DescribeGtmRecoveryPlansOutcome;
 			typedef std::future<DescribeGtmRecoveryPlansOutcome> DescribeGtmRecoveryPlansOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeGtmRecoveryPlansRequest&, const DescribeGtmRecoveryPlansOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGtmRecoveryPlansAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceDomainsResult> DescribeInstanceDomainsOutcome;
+			typedef std::future<DescribeInstanceDomainsOutcome> DescribeInstanceDomainsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeInstanceDomainsRequest&, const DescribeInstanceDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDomainsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRecordLogsResult> DescribeRecordLogsOutcome;
 			typedef std::future<DescribeRecordLogsOutcome> DescribeRecordLogsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeRecordLogsRequest&, const DescribeRecordLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordLogsAsyncHandler;
@@ -620,6 +625,9 @@ namespace AlibabaCloud
 			DescribeGtmRecoveryPlansOutcome describeGtmRecoveryPlans(const Model::DescribeGtmRecoveryPlansRequest &request)const;
 			void describeGtmRecoveryPlansAsync(const Model::DescribeGtmRecoveryPlansRequest& request, const DescribeGtmRecoveryPlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGtmRecoveryPlansOutcomeCallable describeGtmRecoveryPlansCallable(const Model::DescribeGtmRecoveryPlansRequest& request) const;
+			DescribeInstanceDomainsOutcome describeInstanceDomains(const Model::DescribeInstanceDomainsRequest &request)const;
+			void describeInstanceDomainsAsync(const Model::DescribeInstanceDomainsRequest& request, const DescribeInstanceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceDomainsOutcomeCallable describeInstanceDomainsCallable(const Model::DescribeInstanceDomainsRequest& request) const;
 			DescribeRecordLogsOutcome describeRecordLogs(const Model::DescribeRecordLogsRequest &request)const;
 			void describeRecordLogsAsync(const Model::DescribeRecordLogsRequest& request, const DescribeRecordLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecordLogsOutcomeCallable describeRecordLogsCallable(const Model::DescribeRecordLogsRequest& request) const;

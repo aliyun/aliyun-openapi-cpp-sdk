@@ -127,6 +127,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/DescribeGtmRecoveryPlanAvailableConfigResult.h
 	include/alibabacloud/alidns/model/DescribeGtmRecoveryPlansRequest.h
 	include/alibabacloud/alidns/model/DescribeGtmRecoveryPlansResult.h
+	include/alibabacloud/alidns/model/DescribeInstanceDomainsRequest.h
+	include/alibabacloud/alidns/model/DescribeInstanceDomainsResult.h
 	include/alibabacloud/alidns/model/DescribeRecordLogsRequest.h
 	include/alibabacloud/alidns/model/DescribeRecordLogsResult.h
 	include/alibabacloud/alidns/model/DescribeRecordStatisticsRequest.h
@@ -300,6 +302,8 @@ set(alidns_src
 	src/model/DescribeGtmRecoveryPlanAvailableConfigResult.cc
 	src/model/DescribeGtmRecoveryPlansRequest.cc
 	src/model/DescribeGtmRecoveryPlansResult.cc
+	src/model/DescribeInstanceDomainsRequest.cc
+	src/model/DescribeInstanceDomainsResult.cc
 	src/model/DescribeRecordLogsRequest.cc
 	src/model/DescribeRecordLogsResult.cc
 	src/model/DescribeRecordStatisticsRequest.cc

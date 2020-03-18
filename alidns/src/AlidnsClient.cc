@@ -1959,6 +1959,42 @@ AlidnsClient::DescribeGtmRecoveryPlansOutcomeCallable AlidnsClient::describeGtmR
 	return task->get_future();
 }
 
+AlidnsClient::DescribeInstanceDomainsOutcome AlidnsClient::describeInstanceDomains(const DescribeInstanceDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceDomainsOutcome(DescribeInstanceDomainsResult(outcome.result()));
+	else
+		return DescribeInstanceDomainsOutcome(outcome.error());
+}
+
+void AlidnsClient::describeInstanceDomainsAsync(const DescribeInstanceDomainsRequest& request, const DescribeInstanceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeInstanceDomainsOutcomeCallable AlidnsClient::describeInstanceDomainsCallable(const DescribeInstanceDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::DescribeRecordLogsOutcome AlidnsClient::describeRecordLogs(const DescribeRecordLogsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
