@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListNodesByQueueRequest;
 ListNodesByQueueRequest::ListNodesByQueueRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListNodesByQueue")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListNodesByQueueRequest::~ListNodesByQueueRequest()

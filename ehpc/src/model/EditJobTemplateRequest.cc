@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::EditJobTemplateRequest;
 EditJobTemplateRequest::EditJobTemplateRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "EditJobTemplate")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 EditJobTemplateRequest::~EditJobTemplateRequest()

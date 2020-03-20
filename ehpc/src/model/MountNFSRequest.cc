@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::MountNFSRequest;
 MountNFSRequest::MountNFSRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "MountNFS")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 MountNFSRequest::~MountNFSRequest()

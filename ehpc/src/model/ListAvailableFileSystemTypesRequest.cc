@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListAvailableFileSystemTypesRequest;
 ListAvailableFileSystemTypesRequest::ListAvailableFileSystemTypesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListAvailableFileSystemTypes")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListAvailableFileSystemTypesRequest::~ListAvailableFileSystemTypesRequest()

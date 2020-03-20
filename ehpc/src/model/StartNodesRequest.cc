@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::StartNodesRequest;
 StartNodesRequest::StartNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StartNodes")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 StartNodesRequest::~StartNodesRequest()

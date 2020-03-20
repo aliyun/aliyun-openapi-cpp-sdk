@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListContainerAppsRequest;
 ListContainerAppsRequest::ListContainerAppsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListContainerApps")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListContainerAppsRequest::~ListContainerAppsRequest()

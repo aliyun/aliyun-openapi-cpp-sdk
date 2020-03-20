@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListRegionsRequest;
 ListRegionsRequest::ListRegionsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListRegions")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListRegionsRequest::~ListRegionsRequest()

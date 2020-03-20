@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetIfEcsTypeSupportHtConfigRequest;
 GetIfEcsTypeSupportHtConfigRequest::GetIfEcsTypeSupportHtConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetIfEcsTypeSupportHtConfig")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 GetIfEcsTypeSupportHtConfigRequest::~GetIfEcsTypeSupportHtConfigRequest()

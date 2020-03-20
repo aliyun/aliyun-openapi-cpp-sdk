@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteGWSInstanceRequest;
 DeleteGWSInstanceRequest::DeleteGWSInstanceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteGWSInstance")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DeleteGWSInstanceRequest::~DeleteGWSInstanceRequest()

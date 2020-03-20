@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListInstalledSoftwareRequest;
 ListInstalledSoftwareRequest::ListInstalledSoftwareRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListInstalledSoftware")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListInstalledSoftwareRequest::~ListInstalledSoftwareRequest()

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::SetGWSInstanceUserRequest;
 SetGWSInstanceUserRequest::SetGWSInstanceUserRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "SetGWSInstanceUser")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 SetGWSInstanceUserRequest::~SetGWSInstanceUserRequest()

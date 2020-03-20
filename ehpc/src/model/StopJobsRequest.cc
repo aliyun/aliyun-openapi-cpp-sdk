@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::StopJobsRequest;
 StopJobsRequest::StopJobsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StopJobs")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 StopJobsRequest::~StopJobsRequest()

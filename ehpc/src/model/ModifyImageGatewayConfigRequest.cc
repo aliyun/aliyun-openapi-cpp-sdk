@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ModifyImageGatewayConfigRequest;
 ModifyImageGatewayConfigRequest::ModifyImageGatewayConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyImageGatewayConfig")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ModifyImageGatewayConfigRequest::~ModifyImageGatewayConfigRequest()

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListCpfsFileSystemsRequest;
 ListCpfsFileSystemsRequest::ListCpfsFileSystemsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListCpfsFileSystems")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListCpfsFileSystemsRequest::~ListCpfsFileSystemsRequest()

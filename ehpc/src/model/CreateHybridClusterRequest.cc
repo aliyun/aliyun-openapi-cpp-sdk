@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::CreateHybridClusterRequest;
 CreateHybridClusterRequest::CreateHybridClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "CreateHybridCluster")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 CreateHybridClusterRequest::~CreateHybridClusterRequest()

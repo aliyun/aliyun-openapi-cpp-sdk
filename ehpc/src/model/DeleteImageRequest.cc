@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteImageRequest;
 DeleteImageRequest::DeleteImageRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteImage")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DeleteImageRequest::~DeleteImageRequest()

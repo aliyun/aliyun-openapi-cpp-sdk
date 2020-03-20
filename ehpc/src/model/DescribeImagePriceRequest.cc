@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeImagePriceRequest;
 DescribeImagePriceRequest::DescribeImagePriceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeImagePrice")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DescribeImagePriceRequest::~DescribeImagePriceRequest()

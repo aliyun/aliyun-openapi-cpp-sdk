@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::QueryServicePackAndPriceRequest;
 QueryServicePackAndPriceRequest::QueryServicePackAndPriceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "QueryServicePackAndPrice")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 QueryServicePackAndPriceRequest::~QueryServicePackAndPriceRequest()

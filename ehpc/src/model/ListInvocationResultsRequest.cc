@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListInvocationResultsRequest;
 ListInvocationResultsRequest::ListInvocationResultsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListInvocationResults")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListInvocationResultsRequest::~ListInvocationResultsRequest()

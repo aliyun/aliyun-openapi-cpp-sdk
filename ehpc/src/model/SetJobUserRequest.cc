@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::SetJobUserRequest;
 SetJobUserRequest::SetJobUserRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "SetJobUser")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 SetJobUserRequest::~SetJobUserRequest()

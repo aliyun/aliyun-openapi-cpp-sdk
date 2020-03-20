@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ModifyContainerAppAttributesRequest;
 ModifyContainerAppAttributesRequest::ModifyContainerAppAttributesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyContainerAppAttributes")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ModifyContainerAppAttributesRequest::~ModifyContainerAppAttributesRequest()

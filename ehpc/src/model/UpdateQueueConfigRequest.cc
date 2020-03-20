@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::UpdateQueueConfigRequest;
 UpdateQueueConfigRequest::UpdateQueueConfigRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "UpdateQueueConfig")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 UpdateQueueConfigRequest::~UpdateQueueConfigRequest()

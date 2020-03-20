@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteNodesRequest;
 DeleteNodesRequest::DeleteNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteNodes")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DeleteNodesRequest::~DeleteNodesRequest()

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteQueueRequest;
 DeleteQueueRequest::DeleteQueueRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteQueue")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DeleteQueueRequest::~DeleteQueueRequest()

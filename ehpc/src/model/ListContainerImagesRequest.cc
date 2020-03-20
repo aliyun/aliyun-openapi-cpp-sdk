@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListContainerImagesRequest;
 ListContainerImagesRequest::ListContainerImagesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListContainerImages")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListContainerImagesRequest::~ListContainerImagesRequest()

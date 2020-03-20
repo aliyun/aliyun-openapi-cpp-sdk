@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::BindAccountToClusterUserRequest;
 BindAccountToClusterUserRequest::BindAccountToClusterUserRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "BindAccountToClusterUser")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 BindAccountToClusterUserRequest::~BindAccountToClusterUserRequest()

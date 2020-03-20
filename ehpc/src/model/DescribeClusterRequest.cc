@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeClusterRequest;
 DescribeClusterRequest::DescribeClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeCluster")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DescribeClusterRequest::~DescribeClusterRequest()

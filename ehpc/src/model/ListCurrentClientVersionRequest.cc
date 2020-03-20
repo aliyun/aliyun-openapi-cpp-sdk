@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListCurrentClientVersionRequest;
 ListCurrentClientVersionRequest::ListCurrentClientVersionRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListCurrentClientVersion")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListCurrentClientVersionRequest::~ListCurrentClientVersionRequest()

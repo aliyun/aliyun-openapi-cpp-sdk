@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::RerunJobsRequest;
 RerunJobsRequest::RerunJobsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "RerunJobs")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 RerunJobsRequest::~RerunJobsRequest()

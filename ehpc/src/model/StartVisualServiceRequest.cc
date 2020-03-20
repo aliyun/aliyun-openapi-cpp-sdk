@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::StartVisualServiceRequest;
 StartVisualServiceRequest::StartVisualServiceRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StartVisualService")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 StartVisualServiceRequest::~StartVisualServiceRequest()

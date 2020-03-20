@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListJobTemplatesRequest;
 ListJobTemplatesRequest::ListJobTemplatesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListJobTemplates")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListJobTemplatesRequest::~ListJobTemplatesRequest()

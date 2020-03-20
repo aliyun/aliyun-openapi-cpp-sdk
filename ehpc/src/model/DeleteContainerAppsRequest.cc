@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteContainerAppsRequest;
 DeleteContainerAppsRequest::DeleteContainerAppsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteContainerApps")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DeleteContainerAppsRequest::~DeleteContainerAppsRequest()

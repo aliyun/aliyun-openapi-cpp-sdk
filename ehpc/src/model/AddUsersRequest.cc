@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::AddUsersRequest;
 AddUsersRequest::AddUsersRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "AddUsers")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 AddUsersRequest::~AddUsersRequest()

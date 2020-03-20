@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ModifyUserPasswordsRequest;
 ModifyUserPasswordsRequest::ModifyUserPasswordsRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ModifyUserPasswords")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ModifyUserPasswordsRequest::~ModifyUserPasswordsRequest()

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListAccountMappingRequest;
 ListAccountMappingRequest::ListAccountMappingRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListAccountMapping")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListAccountMappingRequest::~ListAccountMappingRequest()

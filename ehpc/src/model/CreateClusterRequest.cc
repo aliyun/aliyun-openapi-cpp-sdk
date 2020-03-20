@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::CreateClusterRequest;
 CreateClusterRequest::CreateClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "CreateCluster")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 CreateClusterRequest::~CreateClusterRequest()

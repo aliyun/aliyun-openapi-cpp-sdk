@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DeleteClusterRequest;
 DeleteClusterRequest::DeleteClusterRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DeleteCluster")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DeleteClusterRequest::~DeleteClusterRequest()

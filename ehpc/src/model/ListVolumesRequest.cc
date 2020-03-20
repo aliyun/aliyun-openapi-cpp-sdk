@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListVolumesRequest;
 ListVolumesRequest::ListVolumesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListVolumes")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListVolumesRequest::~ListVolumesRequest()

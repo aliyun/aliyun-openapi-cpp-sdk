@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ListAvailableEcsTypesRequest;
 ListAvailableEcsTypesRequest::ListAvailableEcsTypesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ListAvailableEcsTypes")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListAvailableEcsTypesRequest::~ListAvailableEcsTypesRequest()

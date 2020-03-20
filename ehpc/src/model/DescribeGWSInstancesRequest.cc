@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeGWSInstancesRequest;
 DescribeGWSInstancesRequest::DescribeGWSInstancesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeGWSInstances")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DescribeGWSInstancesRequest::~DescribeGWSInstancesRequest()

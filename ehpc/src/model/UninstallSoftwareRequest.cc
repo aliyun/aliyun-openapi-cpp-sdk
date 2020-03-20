@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::UninstallSoftwareRequest;
 UninstallSoftwareRequest::UninstallSoftwareRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "UninstallSoftware")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 UninstallSoftwareRequest::~UninstallSoftwareRequest()

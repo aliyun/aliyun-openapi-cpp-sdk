@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::UpdateClusterVolumesRequest;
 UpdateClusterVolumesRequest::UpdateClusterVolumesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "UpdateClusterVolumes")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 UpdateClusterVolumesRequest::~UpdateClusterVolumesRequest()

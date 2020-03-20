@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::UpgradeClientRequest;
 UpgradeClientRequest::UpgradeClientRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "UpgradeClient")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 UpgradeClientRequest::~UpgradeClientRequest()

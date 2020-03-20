@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetWorkbenchTokenRequest;
 GetWorkbenchTokenRequest::GetWorkbenchTokenRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetWorkbenchToken")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 GetWorkbenchTokenRequest::~GetWorkbenchTokenRequest()

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::ResetNodesRequest;
 ResetNodesRequest::ResetNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "ResetNodes")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ResetNodesRequest::~ResetNodesRequest()

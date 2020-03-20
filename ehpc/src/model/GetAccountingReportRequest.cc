@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetAccountingReportRequest;
 GetAccountingReportRequest::GetAccountingReportRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetAccountingReport")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 GetAccountingReportRequest::~GetAccountingReportRequest()

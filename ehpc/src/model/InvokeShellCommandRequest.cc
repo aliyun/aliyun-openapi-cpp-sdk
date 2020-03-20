@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::InvokeShellCommandRequest;
 InvokeShellCommandRequest::InvokeShellCommandRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "InvokeShellCommand")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 InvokeShellCommandRequest::~InvokeShellCommandRequest()

@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::AddNodesRequest;
 AddNodesRequest::AddNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "AddNodes")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 AddNodesRequest::~AddNodesRequest()

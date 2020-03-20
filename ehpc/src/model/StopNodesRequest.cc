@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::StopNodesRequest;
 StopNodesRequest::StopNodesRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "StopNodes")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 StopNodesRequest::~StopNodesRequest()

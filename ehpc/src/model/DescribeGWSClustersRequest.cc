@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::DescribeGWSClustersRequest;
 DescribeGWSClustersRequest::DescribeGWSClustersRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "DescribeGWSClusters")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DescribeGWSClustersRequest::~DescribeGWSClustersRequest()

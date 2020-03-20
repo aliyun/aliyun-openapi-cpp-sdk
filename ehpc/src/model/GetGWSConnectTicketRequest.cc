@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::GetGWSConnectTicketRequest;
 GetGWSConnectTicketRequest::GetGWSConnectTicketRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "GetGWSConnectTicket")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 GetGWSConnectTicketRequest::~GetGWSConnectTicketRequest()

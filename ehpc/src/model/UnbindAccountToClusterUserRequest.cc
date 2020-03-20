@@ -21,7 +21,7 @@ using AlibabaCloud::EHPC::Model::UnbindAccountToClusterUserRequest;
 UnbindAccountToClusterUserRequest::UnbindAccountToClusterUserRequest() :
 	RpcServiceRequest("ehpc", "2018-04-12", "UnbindAccountToClusterUser")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 UnbindAccountToClusterUserRequest::~UnbindAccountToClusterUserRequest()
