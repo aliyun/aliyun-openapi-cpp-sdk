@@ -37,6 +37,10 @@ namespace AlibabaCloud
 
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
+				bool getAllocatePublicAddress()const;
+				void setAllocatePublicAddress(bool allocatePublicAddress);
+				int getInternetMaxBandWidthOut()const;
+				void setInternetMaxBandWidthOut(int internetMaxBandWidthOut);
 				std::string getJobQueue()const;
 				void setJobQueue(const std::string& jobQueue);
 				std::string getAccessKeyId()const;
@@ -75,13 +79,19 @@ namespace AlibabaCloud
 				void setAutoRenew(const std::string& autoRenew);
 				std::string getEcsChargeType()const;
 				void setEcsChargeType(const std::string& ecsChargeType);
+				std::string getInternetChargeType()const;
+				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getCreateMode()const;
 				void setCreateMode(const std::string& createMode);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				int getInternetMaxBandWidthIn()const;
+				void setInternetMaxBandWidthIn(int internetMaxBandWidthIn);
 
             private:
 				std::string imageId_;
+				bool allocatePublicAddress_;
+				int internetMaxBandWidthOut_;
 				std::string jobQueue_;
 				std::string accessKeyId_;
 				std::string imageOwnerAlias_;
@@ -101,8 +111,10 @@ namespace AlibabaCloud
 				bool computeEnableHt_;
 				std::string autoRenew_;
 				std::string ecsChargeType_;
+				std::string internetChargeType_;
 				std::string createMode_;
 				std::string zoneId_;
+				int internetMaxBandWidthIn_;
 
 			};
 		}

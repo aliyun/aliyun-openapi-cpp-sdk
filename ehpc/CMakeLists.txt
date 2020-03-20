@@ -111,20 +111,10 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/GetHybridClusterConfigResult.h
 	include/alibabacloud/ehpc/model/GetIfEcsTypeSupportHtConfigRequest.h
 	include/alibabacloud/ehpc/model/GetIfEcsTypeSupportHtConfigResult.h
-	include/alibabacloud/ehpc/model/GetInstanceReportRequest.h
-	include/alibabacloud/ehpc/model/GetInstanceReportResult.h
-	include/alibabacloud/ehpc/model/GetJobReportRequest.h
-	include/alibabacloud/ehpc/model/GetJobReportResult.h
-	include/alibabacloud/ehpc/model/GetTotalQueueReportRequest.h
-	include/alibabacloud/ehpc/model/GetTotalQueueReportResult.h
-	include/alibabacloud/ehpc/model/GetTotalUserReportRequest.h
-	include/alibabacloud/ehpc/model/GetTotalUserReportResult.h
 	include/alibabacloud/ehpc/model/GetVisualServiceStatusRequest.h
 	include/alibabacloud/ehpc/model/GetVisualServiceStatusResult.h
 	include/alibabacloud/ehpc/model/GetWorkbenchTokenRequest.h
 	include/alibabacloud/ehpc/model/GetWorkbenchTokenResult.h
-	include/alibabacloud/ehpc/model/InstallNFSClientRequest.h
-	include/alibabacloud/ehpc/model/InstallNFSClientResult.h
 	include/alibabacloud/ehpc/model/InstallSoftwareRequest.h
 	include/alibabacloud/ehpc/model/InstallSoftwareResult.h
 	include/alibabacloud/ehpc/model/InvokeShellCommandRequest.h
@@ -348,20 +338,10 @@ set(ehpc_src
 	src/model/GetHybridClusterConfigResult.cc
 	src/model/GetIfEcsTypeSupportHtConfigRequest.cc
 	src/model/GetIfEcsTypeSupportHtConfigResult.cc
-	src/model/GetInstanceReportRequest.cc
-	src/model/GetInstanceReportResult.cc
-	src/model/GetJobReportRequest.cc
-	src/model/GetJobReportResult.cc
-	src/model/GetTotalQueueReportRequest.cc
-	src/model/GetTotalQueueReportResult.cc
-	src/model/GetTotalUserReportRequest.cc
-	src/model/GetTotalUserReportResult.cc
 	src/model/GetVisualServiceStatusRequest.cc
 	src/model/GetVisualServiceStatusResult.cc
 	src/model/GetWorkbenchTokenRequest.cc
 	src/model/GetWorkbenchTokenResult.cc
-	src/model/InstallNFSClientRequest.cc
-	src/model/InstallNFSClientResult.cc
 	src/model/InstallSoftwareRequest.cc
 	src/model/InstallSoftwareResult.cc
 	src/model/InvokeShellCommandRequest.cc

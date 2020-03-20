@@ -54,6 +54,7 @@ namespace AlibabaCloud
 					std::vector<std::string> roles;
 					std::string addTime;
 					UsedResources usedResources;
+					std::string publicIpAddress;
 					bool createdByEhpc;
 					std::string createMode;
 					std::string vpcId;

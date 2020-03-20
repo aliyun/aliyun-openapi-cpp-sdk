@@ -38,6 +38,28 @@ void AddNodesRequest::setImageId(const std::string& imageId)
 	setParameter("ImageId", imageId);
 }
 
+bool AddNodesRequest::getAllocatePublicAddress()const
+{
+	return allocatePublicAddress_;
+}
+
+void AddNodesRequest::setAllocatePublicAddress(bool allocatePublicAddress)
+{
+	allocatePublicAddress_ = allocatePublicAddress;
+	setParameter("AllocatePublicAddress", allocatePublicAddress ? "true" : "false");
+}
+
+int AddNodesRequest::getInternetMaxBandWidthOut()const
+{
+	return internetMaxBandWidthOut_;
+}
+
+void AddNodesRequest::setInternetMaxBandWidthOut(int internetMaxBandWidthOut)
+{
+	internetMaxBandWidthOut_ = internetMaxBandWidthOut;
+	setParameter("InternetMaxBandWidthOut", std::to_string(internetMaxBandWidthOut));
+}
+
 std::string AddNodesRequest::getJobQueue()const
 {
 	return jobQueue_;
@@ -247,6 +269,17 @@ void AddNodesRequest::setEcsChargeType(const std::string& ecsChargeType)
 	setParameter("EcsChargeType", ecsChargeType);
 }
 
+std::string AddNodesRequest::getInternetChargeType()const
+{
+	return internetChargeType_;
+}
+
+void AddNodesRequest::setInternetChargeType(const std::string& internetChargeType)
+{
+	internetChargeType_ = internetChargeType;
+	setParameter("InternetChargeType", internetChargeType);
+}
+
 std::string AddNodesRequest::getCreateMode()const
 {
 	return createMode_;
@@ -267,5 +300,16 @@ void AddNodesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setParameter("ZoneId", zoneId);
+}
+
+int AddNodesRequest::getInternetMaxBandWidthIn()const
+{
+	return internetMaxBandWidthIn_;
+}
+
+void AddNodesRequest::setInternetMaxBandWidthIn(int internetMaxBandWidthIn)
+{
+	internetMaxBandWidthIn_ = internetMaxBandWidthIn;
+	setParameter("InternetMaxBandWidthIn", std::to_string(internetMaxBandWidthIn));
 }
 

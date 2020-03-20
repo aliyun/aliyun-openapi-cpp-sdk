@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					bool expired;
 					std::string addTime;
 					UsedResources usedResources;
+					std::string publicIpAddress;
 					bool createdByEhpc;
 					std::string createMode;
 					std::string vpcId;
@@ -61,6 +62,7 @@ namespace AlibabaCloud
 					std::string expiredTime;
 					std::string imageId;
 					bool htEnabled;
+					std::string ipAddress;
 					std::string id;
 					std::string regionId;
 					std::string lockReason;

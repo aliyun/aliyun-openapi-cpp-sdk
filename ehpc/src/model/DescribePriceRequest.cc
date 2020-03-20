@@ -42,7 +42,9 @@ void DescribePriceRequest::setCommodities(const std::vector<Commodities>& commod
 		setParameter(commoditiesObjStr + ".Period", std::to_string(commoditiesObj.period));
 		setParameter(commoditiesObjStr + ".NodeType", commoditiesObj.nodeType);
 		setParameter(commoditiesObjStr + ".SystemDiskCategory", commoditiesObj.systemDiskCategory);
+		setParameter(commoditiesObjStr + ".InternetChargeType", commoditiesObj.internetChargeType);
 		setParameter(commoditiesObjStr + ".SystemDiskSize", std::to_string(commoditiesObj.systemDiskSize));
+		setParameter(commoditiesObjStr + ".InternetMaxBandWidthOut", std::to_string(commoditiesObj.internetMaxBandWidthOut));
 		setParameter(commoditiesObjStr + ".InstanceType", commoditiesObj.instanceType);
 		setParameter(commoditiesObjStr + ".NetworkType", commoditiesObj.networkType);
 	}

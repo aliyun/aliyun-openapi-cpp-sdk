@@ -81,6 +81,10 @@ void ListNodesByQueueResult::parse(const std::string &payload)
 			nodesObject.vSwitchId = valueNodesNodeInfo["VSwitchId"].asString();
 		if(!valueNodesNodeInfo["HtEnabled"].isNull())
 			nodesObject.htEnabled = valueNodesNodeInfo["HtEnabled"].asString() == "true";
+		if(!valueNodesNodeInfo["IpAddress"].isNull())
+			nodesObject.ipAddress = valueNodesNodeInfo["IpAddress"].asString();
+		if(!valueNodesNodeInfo["PublicIpAddress"].isNull())
+			nodesObject.publicIpAddress = valueNodesNodeInfo["PublicIpAddress"].asString();
 		auto totalResourcesNode = value["TotalResources"];
 		if(!totalResourcesNode["Cpu"].isNull())
 			nodesObject.totalResources.cpu = std::stoi(totalResourcesNode["Cpu"].asString());

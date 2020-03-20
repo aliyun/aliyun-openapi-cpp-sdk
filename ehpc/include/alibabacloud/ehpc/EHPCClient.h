@@ -112,20 +112,10 @@
 #include "model/GetHybridClusterConfigResult.h"
 #include "model/GetIfEcsTypeSupportHtConfigRequest.h"
 #include "model/GetIfEcsTypeSupportHtConfigResult.h"
-#include "model/GetInstanceReportRequest.h"
-#include "model/GetInstanceReportResult.h"
-#include "model/GetJobReportRequest.h"
-#include "model/GetJobReportResult.h"
-#include "model/GetTotalQueueReportRequest.h"
-#include "model/GetTotalQueueReportResult.h"
-#include "model/GetTotalUserReportRequest.h"
-#include "model/GetTotalUserReportResult.h"
 #include "model/GetVisualServiceStatusRequest.h"
 #include "model/GetVisualServiceStatusResult.h"
 #include "model/GetWorkbenchTokenRequest.h"
 #include "model/GetWorkbenchTokenResult.h"
-#include "model/InstallNFSClientRequest.h"
-#include "model/InstallNFSClientResult.h"
 #include "model/InstallSoftwareRequest.h"
 #include "model/InstallSoftwareResult.h"
 #include "model/InvokeShellCommandRequest.h"
@@ -400,27 +390,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetIfEcsTypeSupportHtConfigResult> GetIfEcsTypeSupportHtConfigOutcome;
 			typedef std::future<GetIfEcsTypeSupportHtConfigOutcome> GetIfEcsTypeSupportHtConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetIfEcsTypeSupportHtConfigRequest&, const GetIfEcsTypeSupportHtConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetIfEcsTypeSupportHtConfigAsyncHandler;
-			typedef Outcome<Error, Model::GetInstanceReportResult> GetInstanceReportOutcome;
-			typedef std::future<GetInstanceReportOutcome> GetInstanceReportOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::GetInstanceReportRequest&, const GetInstanceReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceReportAsyncHandler;
-			typedef Outcome<Error, Model::GetJobReportResult> GetJobReportOutcome;
-			typedef std::future<GetJobReportOutcome> GetJobReportOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::GetJobReportRequest&, const GetJobReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobReportAsyncHandler;
-			typedef Outcome<Error, Model::GetTotalQueueReportResult> GetTotalQueueReportOutcome;
-			typedef std::future<GetTotalQueueReportOutcome> GetTotalQueueReportOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::GetTotalQueueReportRequest&, const GetTotalQueueReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTotalQueueReportAsyncHandler;
-			typedef Outcome<Error, Model::GetTotalUserReportResult> GetTotalUserReportOutcome;
-			typedef std::future<GetTotalUserReportOutcome> GetTotalUserReportOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::GetTotalUserReportRequest&, const GetTotalUserReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTotalUserReportAsyncHandler;
 			typedef Outcome<Error, Model::GetVisualServiceStatusResult> GetVisualServiceStatusOutcome;
 			typedef std::future<GetVisualServiceStatusOutcome> GetVisualServiceStatusOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetVisualServiceStatusRequest&, const GetVisualServiceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVisualServiceStatusAsyncHandler;
 			typedef Outcome<Error, Model::GetWorkbenchTokenResult> GetWorkbenchTokenOutcome;
 			typedef std::future<GetWorkbenchTokenOutcome> GetWorkbenchTokenOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetWorkbenchTokenRequest&, const GetWorkbenchTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkbenchTokenAsyncHandler;
-			typedef Outcome<Error, Model::InstallNFSClientResult> InstallNFSClientOutcome;
-			typedef std::future<InstallNFSClientOutcome> InstallNFSClientOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::InstallNFSClientRequest&, const InstallNFSClientOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallNFSClientAsyncHandler;
 			typedef Outcome<Error, Model::InstallSoftwareResult> InstallSoftwareOutcome;
 			typedef std::future<InstallSoftwareOutcome> InstallSoftwareOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::InstallSoftwareRequest&, const InstallSoftwareOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallSoftwareAsyncHandler;
@@ -756,27 +731,12 @@ namespace AlibabaCloud
 			GetIfEcsTypeSupportHtConfigOutcome getIfEcsTypeSupportHtConfig(const Model::GetIfEcsTypeSupportHtConfigRequest &request)const;
 			void getIfEcsTypeSupportHtConfigAsync(const Model::GetIfEcsTypeSupportHtConfigRequest& request, const GetIfEcsTypeSupportHtConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetIfEcsTypeSupportHtConfigOutcomeCallable getIfEcsTypeSupportHtConfigCallable(const Model::GetIfEcsTypeSupportHtConfigRequest& request) const;
-			GetInstanceReportOutcome getInstanceReport(const Model::GetInstanceReportRequest &request)const;
-			void getInstanceReportAsync(const Model::GetInstanceReportRequest& request, const GetInstanceReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetInstanceReportOutcomeCallable getInstanceReportCallable(const Model::GetInstanceReportRequest& request) const;
-			GetJobReportOutcome getJobReport(const Model::GetJobReportRequest &request)const;
-			void getJobReportAsync(const Model::GetJobReportRequest& request, const GetJobReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetJobReportOutcomeCallable getJobReportCallable(const Model::GetJobReportRequest& request) const;
-			GetTotalQueueReportOutcome getTotalQueueReport(const Model::GetTotalQueueReportRequest &request)const;
-			void getTotalQueueReportAsync(const Model::GetTotalQueueReportRequest& request, const GetTotalQueueReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetTotalQueueReportOutcomeCallable getTotalQueueReportCallable(const Model::GetTotalQueueReportRequest& request) const;
-			GetTotalUserReportOutcome getTotalUserReport(const Model::GetTotalUserReportRequest &request)const;
-			void getTotalUserReportAsync(const Model::GetTotalUserReportRequest& request, const GetTotalUserReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetTotalUserReportOutcomeCallable getTotalUserReportCallable(const Model::GetTotalUserReportRequest& request) const;
 			GetVisualServiceStatusOutcome getVisualServiceStatus(const Model::GetVisualServiceStatusRequest &request)const;
 			void getVisualServiceStatusAsync(const Model::GetVisualServiceStatusRequest& request, const GetVisualServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVisualServiceStatusOutcomeCallable getVisualServiceStatusCallable(const Model::GetVisualServiceStatusRequest& request) const;
 			GetWorkbenchTokenOutcome getWorkbenchToken(const Model::GetWorkbenchTokenRequest &request)const;
 			void getWorkbenchTokenAsync(const Model::GetWorkbenchTokenRequest& request, const GetWorkbenchTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWorkbenchTokenOutcomeCallable getWorkbenchTokenCallable(const Model::GetWorkbenchTokenRequest& request) const;
-			InstallNFSClientOutcome installNFSClient(const Model::InstallNFSClientRequest &request)const;
-			void installNFSClientAsync(const Model::InstallNFSClientRequest& request, const InstallNFSClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			InstallNFSClientOutcomeCallable installNFSClientCallable(const Model::InstallNFSClientRequest& request) const;
 			InstallSoftwareOutcome installSoftware(const Model::InstallSoftwareRequest &request)const;
 			void installSoftwareAsync(const Model::InstallSoftwareRequest& request, const InstallSoftwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InstallSoftwareOutcomeCallable installSoftwareCallable(const Model::InstallSoftwareRequest& request) const;

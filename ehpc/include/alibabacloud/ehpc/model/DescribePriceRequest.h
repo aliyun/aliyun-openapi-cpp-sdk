@@ -37,7 +37,9 @@ namespace AlibabaCloud
 					int period;
 					std::string nodeType;
 					std::string systemDiskCategory;
+					std::string internetChargeType;
 					int systemDiskSize;
+					int internetMaxBandWidthOut;
 					std::string instanceType;
 					std::string networkType;
 				};
