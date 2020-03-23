@@ -329,6 +329,7 @@ HttpRequest CommonClient::buildRpcHttpRequest(const std::string &endpoint,
   request.setHeader("Host", url.host());
   request.setHeader("x-sdk-client",
                     std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
+  request.setBody(msg.content(), msg.contentSize());
   return request;
 }
 
