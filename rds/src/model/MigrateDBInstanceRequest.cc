@@ -35,7 +35,7 @@ long MigrateDBInstanceRequest::getResourceOwnerId()const
 void MigrateDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MigrateDBInstanceRequest::getSpecifiedTime()const
@@ -46,7 +46,7 @@ std::string MigrateDBInstanceRequest::getSpecifiedTime()const
 void MigrateDBInstanceRequest::setSpecifiedTime(const std::string& specifiedTime)
 {
 	specifiedTime_ = specifiedTime;
-	setCoreParameter("SpecifiedTime", specifiedTime);
+	setParameter("SpecifiedTime", specifiedTime);
 }
 
 std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForSlave()const
@@ -57,7 +57,7 @@ std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForSlave()const
 void MigrateDBInstanceRequest::setTargetDedicatedHostIdForSlave(const std::string& targetDedicatedHostIdForSlave)
 {
 	targetDedicatedHostIdForSlave_ = targetDedicatedHostIdForSlave;
-	setCoreParameter("TargetDedicatedHostIdForSlave", targetDedicatedHostIdForSlave);
+	setParameter("TargetDedicatedHostIdForSlave", targetDedicatedHostIdForSlave);
 }
 
 std::string MigrateDBInstanceRequest::getEngineVersion()const
@@ -68,7 +68,7 @@ std::string MigrateDBInstanceRequest::getEngineVersion()const
 void MigrateDBInstanceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 int MigrateDBInstanceRequest::getStorage()const
@@ -79,7 +79,7 @@ int MigrateDBInstanceRequest::getStorage()const
 void MigrateDBInstanceRequest::setStorage(int storage)
 {
 	storage_ = storage;
-	setCoreParameter("Storage", std::to_string(storage));
+	setParameter("Storage", std::to_string(storage));
 }
 
 std::string MigrateDBInstanceRequest::getAccessKeyId()const
@@ -90,7 +90,7 @@ std::string MigrateDBInstanceRequest::getAccessKeyId()const
 void MigrateDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string MigrateDBInstanceRequest::getRegionId()const
@@ -101,7 +101,7 @@ std::string MigrateDBInstanceRequest::getRegionId()const
 void MigrateDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string MigrateDBInstanceRequest::getEffectiveTime()const
@@ -112,7 +112,7 @@ std::string MigrateDBInstanceRequest::getEffectiveTime()const
 void MigrateDBInstanceRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", effectiveTime);
+	setParameter("EffectiveTime", effectiveTime);
 }
 
 int MigrateDBInstanceRequest::getDBInstanceTransType()const
@@ -123,7 +123,7 @@ int MigrateDBInstanceRequest::getDBInstanceTransType()const
 void MigrateDBInstanceRequest::setDBInstanceTransType(int dBInstanceTransType)
 {
 	dBInstanceTransType_ = dBInstanceTransType;
-	setCoreParameter("DBInstanceTransType", std::to_string(dBInstanceTransType));
+	setParameter("DBInstanceTransType", std::to_string(dBInstanceTransType));
 }
 
 std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForMaster()const
@@ -134,7 +134,7 @@ std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForMaster()const
 void MigrateDBInstanceRequest::setTargetDedicatedHostIdForMaster(const std::string& targetDedicatedHostIdForMaster)
 {
 	targetDedicatedHostIdForMaster_ = targetDedicatedHostIdForMaster;
-	setCoreParameter("TargetDedicatedHostIdForMaster", targetDedicatedHostIdForMaster);
+	setParameter("TargetDedicatedHostIdForMaster", targetDedicatedHostIdForMaster);
 }
 
 std::string MigrateDBInstanceRequest::getDBInstanceId()const
@@ -145,7 +145,7 @@ std::string MigrateDBInstanceRequest::getDBInstanceId()const
 void MigrateDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string MigrateDBInstanceRequest::getDedicatedHostGroupId()const
@@ -156,7 +156,7 @@ std::string MigrateDBInstanceRequest::getDedicatedHostGroupId()const
 void MigrateDBInstanceRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
 {
 	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 
 std::string MigrateDBInstanceRequest::getResourceOwnerAccount()const
@@ -167,7 +167,7 @@ std::string MigrateDBInstanceRequest::getResourceOwnerAccount()const
 void MigrateDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long MigrateDBInstanceRequest::getOwnerId()const
@@ -178,7 +178,7 @@ long MigrateDBInstanceRequest::getOwnerId()const
 void MigrateDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MigrateDBInstanceRequest::getTargetDBInstanceClass()const
@@ -189,7 +189,7 @@ std::string MigrateDBInstanceRequest::getTargetDBInstanceClass()const
 void MigrateDBInstanceRequest::setTargetDBInstanceClass(const std::string& targetDBInstanceClass)
 {
 	targetDBInstanceClass_ = targetDBInstanceClass;
-	setCoreParameter("TargetDBInstanceClass", targetDBInstanceClass);
+	setParameter("TargetDBInstanceClass", targetDBInstanceClass);
 }
 
 std::string MigrateDBInstanceRequest::getVSwitchId()const
@@ -200,7 +200,7 @@ std::string MigrateDBInstanceRequest::getVSwitchId()const
 void MigrateDBInstanceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForLog()const
@@ -211,7 +211,7 @@ std::string MigrateDBInstanceRequest::getTargetDedicatedHostIdForLog()const
 void MigrateDBInstanceRequest::setTargetDedicatedHostIdForLog(const std::string& targetDedicatedHostIdForLog)
 {
 	targetDedicatedHostIdForLog_ = targetDedicatedHostIdForLog;
-	setCoreParameter("TargetDedicatedHostIdForLog", targetDedicatedHostIdForLog);
+	setParameter("TargetDedicatedHostIdForLog", targetDedicatedHostIdForLog);
 }
 
 std::string MigrateDBInstanceRequest::getZoneId()const
@@ -222,6 +222,6 @@ std::string MigrateDBInstanceRequest::getZoneId()const
 void MigrateDBInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

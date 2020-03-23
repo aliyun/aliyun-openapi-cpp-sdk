@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string dedicatedHostNameForMaster;
 					std::string dBInstanceType;
 					std::string tempDBInstanceId;
+					std::string dedicatedHostZoneIdForMaster;
 					bool mutriORsignle;
 					std::string instanceNetworkType;
 					std::string replicateId;
@@ -73,10 +74,12 @@ namespace AlibabaCloud
 					std::string vpcId;
 					std::string masterInstanceId;
 					std::string connectionMode;
+					std::string dedicatedHostZoneIdForLog;
 					std::string vpcCloudInstanceId;
 					std::string regionId;
 					std::string expireTime;
 					std::string dedicatedHostIdForMaster;
+					std::string dedicatedHostZoneIdForSlave;
 				};
 
 

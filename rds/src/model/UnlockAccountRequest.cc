@@ -35,7 +35,7 @@ long UnlockAccountRequest::getResourceOwnerId()const
 void UnlockAccountRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnlockAccountRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string UnlockAccountRequest::getResourceOwnerAccount()const
 void UnlockAccountRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long UnlockAccountRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long UnlockAccountRequest::getOwnerId()const
 void UnlockAccountRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnlockAccountRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string UnlockAccountRequest::getAccessKeyId()const
 void UnlockAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnlockAccountRequest::getAccountName()const
@@ -79,7 +79,7 @@ std::string UnlockAccountRequest::getAccountName()const
 void UnlockAccountRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setParameter("AccountName", accountName);
 }
 
 std::string UnlockAccountRequest::getDBInstanceId()const
@@ -90,6 +90,6 @@ std::string UnlockAccountRequest::getDBInstanceId()const
 void UnlockAccountRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

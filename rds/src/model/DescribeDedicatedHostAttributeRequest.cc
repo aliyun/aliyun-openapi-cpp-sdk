@@ -35,7 +35,7 @@ long DescribeDedicatedHostAttributeRequest::getResourceOwnerId()const
 void DescribeDedicatedHostAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDedicatedHostAttributeRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeDedicatedHostAttributeRequest::getResourceOwnerAccount()cons
 void DescribeDedicatedHostAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDedicatedHostAttributeRequest::getDedicatedHostId()const
@@ -57,7 +57,7 @@ std::string DescribeDedicatedHostAttributeRequest::getDedicatedHostId()const
 void DescribeDedicatedHostAttributeRequest::setDedicatedHostId(const std::string& dedicatedHostId)
 {
 	dedicatedHostId_ = dedicatedHostId;
-	setCoreParameter("DedicatedHostId", dedicatedHostId);
+	setParameter("DedicatedHostId", dedicatedHostId);
 }
 
 long DescribeDedicatedHostAttributeRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeDedicatedHostAttributeRequest::getOwnerId()const
 void DescribeDedicatedHostAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDedicatedHostAttributeRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string DescribeDedicatedHostAttributeRequest::getAccessKeyId()const
 void DescribeDedicatedHostAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDedicatedHostAttributeRequest::getRegionId()const
@@ -90,7 +90,7 @@ std::string DescribeDedicatedHostAttributeRequest::getRegionId()const
 void DescribeDedicatedHostAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDedicatedHostAttributeRequest::getDedicatedHostGroupId()const
@@ -101,6 +101,6 @@ std::string DescribeDedicatedHostAttributeRequest::getDedicatedHostGroupId()cons
 void DescribeDedicatedHostAttributeRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
 {
 	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 

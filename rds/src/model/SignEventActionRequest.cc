@@ -35,7 +35,7 @@ int SignEventActionRequest::getEventId()const
 void SignEventActionRequest::setEventId(int eventId)
 {
 	eventId_ = eventId;
-	setCoreParameter("EventId", std::to_string(eventId));
+	setParameter("EventId", std::to_string(eventId));
 }
 
 long SignEventActionRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long SignEventActionRequest::getResourceOwnerId()const
 void SignEventActionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SignEventActionRequest::getEventSig()const
@@ -57,7 +57,7 @@ std::string SignEventActionRequest::getEventSig()const
 void SignEventActionRequest::setEventSig(const std::string& eventSig)
 {
 	eventSig_ = eventSig;
-	setCoreParameter("EventSig", eventSig);
+	setParameter("EventSig", eventSig);
 }
 
 std::string SignEventActionRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string SignEventActionRequest::getResourceOwnerAccount()const
 void SignEventActionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long SignEventActionRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long SignEventActionRequest::getOwnerId()const
 void SignEventActionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SignEventActionRequest::getAccessKeyId()const
@@ -90,7 +90,7 @@ std::string SignEventActionRequest::getAccessKeyId()const
 void SignEventActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SignEventActionRequest::getRegionId()const
@@ -101,6 +101,6 @@ std::string SignEventActionRequest::getRegionId()const
 void SignEventActionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

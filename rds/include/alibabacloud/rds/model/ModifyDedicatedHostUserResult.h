@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_RESTOREDBINSTANCERESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_RESTOREDBINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYDEDICATEDHOSTUSERRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_MODIFYDEDICATEDHOSTUSERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT RestoreDBInstanceResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT ModifyDedicatedHostUserResult : public ServiceResult
 			{
 			public:
 
 
-				RestoreDBInstanceResult();
-				explicit RestoreDBInstanceResult(const std::string &payload);
-				~RestoreDBInstanceResult();
+				ModifyDedicatedHostUserResult();
+				explicit ModifyDedicatedHostUserResult(const std::string &payload);
+				~ModifyDedicatedHostUserResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_RESTOREDBINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYDEDICATEDHOSTUSERRESULT_H_

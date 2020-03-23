@@ -35,7 +35,7 @@ long ModifyParameterGroupRequest::getResourceOwnerId()const
 void ModifyParameterGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyParameterGroupRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyParameterGroupRequest::getAccessKeyId()const
 void ModifyParameterGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyParameterGroupRequest::getParameterGroupId()const
@@ -57,7 +57,7 @@ std::string ModifyParameterGroupRequest::getParameterGroupId()const
 void ModifyParameterGroupRequest::setParameterGroupId(const std::string& parameterGroupId)
 {
 	parameterGroupId_ = parameterGroupId;
-	setCoreParameter("ParameterGroupId", parameterGroupId);
+	setParameter("ParameterGroupId", parameterGroupId);
 }
 
 std::string ModifyParameterGroupRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string ModifyParameterGroupRequest::getRegionId()const
 void ModifyParameterGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyParameterGroupRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyParameterGroupRequest::getResourceOwnerAccount()const
 void ModifyParameterGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ModifyParameterGroupRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long ModifyParameterGroupRequest::getOwnerId()const
 void ModifyParameterGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyParameterGroupRequest::getParameterGroupName()const
@@ -101,7 +101,7 @@ std::string ModifyParameterGroupRequest::getParameterGroupName()const
 void ModifyParameterGroupRequest::setParameterGroupName(const std::string& parameterGroupName)
 {
 	parameterGroupName_ = parameterGroupName;
-	setCoreParameter("ParameterGroupName", parameterGroupName);
+	setParameter("ParameterGroupName", parameterGroupName);
 }
 
 std::string ModifyParameterGroupRequest::getParameters()const
@@ -112,7 +112,7 @@ std::string ModifyParameterGroupRequest::getParameters()const
 void ModifyParameterGroupRequest::setParameters(const std::string& parameters)
 {
 	parameters_ = parameters;
-	setCoreParameter("Parameters", parameters);
+	setParameter("Parameters", parameters);
 }
 
 std::string ModifyParameterGroupRequest::getParameterGroupDesc()const
@@ -123,6 +123,6 @@ std::string ModifyParameterGroupRequest::getParameterGroupDesc()const
 void ModifyParameterGroupRequest::setParameterGroupDesc(const std::string& parameterGroupDesc)
 {
 	parameterGroupDesc_ = parameterGroupDesc;
-	setCoreParameter("ParameterGroupDesc", parameterGroupDesc);
+	setParameter("ParameterGroupDesc", parameterGroupDesc);
 }
 

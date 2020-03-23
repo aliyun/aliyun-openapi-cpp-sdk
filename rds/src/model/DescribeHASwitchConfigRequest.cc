@@ -35,7 +35,7 @@ long DescribeHASwitchConfigRequest::getResourceOwnerId()const
 void DescribeHASwitchConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeHASwitchConfigRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeHASwitchConfigRequest::getResourceOwnerAccount()const
 void DescribeHASwitchConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeHASwitchConfigRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DescribeHASwitchConfigRequest::getOwnerId()const
 void DescribeHASwitchConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeHASwitchConfigRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeHASwitchConfigRequest::getAccessKeyId()const
 void DescribeHASwitchConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeHASwitchConfigRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string DescribeHASwitchConfigRequest::getRegionId()const
 void DescribeHASwitchConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeHASwitchConfigRequest::getDBInstanceId()const
@@ -90,6 +90,6 @@ std::string DescribeHASwitchConfigRequest::getDBInstanceId()const
 void DescribeHASwitchConfigRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

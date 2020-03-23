@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string dBName;
 					long parseRowCounts;
 					std::string hostAddress;
+					long queryTimeMS;
 					std::string sQLText;
 				};
 

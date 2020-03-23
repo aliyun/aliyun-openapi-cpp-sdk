@@ -35,7 +35,7 @@ std::string DescribeDBInstancesForCloneRequest::getConnectionMode()const
 void DescribeDBInstancesForCloneRequest::setConnectionMode(const std::string& connectionMode)
 {
 	connectionMode_ = connectionMode;
-	setCoreParameter("ConnectionMode", connectionMode);
+	setParameter("ConnectionMode", connectionMode);
 }
 
 long DescribeDBInstancesForCloneRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long DescribeDBInstancesForCloneRequest::getResourceOwnerId()const
 void DescribeDBInstancesForCloneRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstancesForCloneRequest::getNodeType()const
@@ -57,7 +57,7 @@ std::string DescribeDBInstancesForCloneRequest::getNodeType()const
 void DescribeDBInstancesForCloneRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", nodeType);
+	setParameter("NodeType", nodeType);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getClientToken()const
@@ -68,7 +68,7 @@ std::string DescribeDBInstancesForCloneRequest::getClientToken()const
 void DescribeDBInstancesForCloneRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getSearchKey()const
@@ -79,7 +79,7 @@ std::string DescribeDBInstancesForCloneRequest::getSearchKey()const
 void DescribeDBInstancesForCloneRequest::setSearchKey(const std::string& searchKey)
 {
 	searchKey_ = searchKey;
-	setCoreParameter("SearchKey", searchKey);
+	setParameter("SearchKey", searchKey);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getEngineVersion()const
@@ -90,7 +90,7 @@ std::string DescribeDBInstancesForCloneRequest::getEngineVersion()const
 void DescribeDBInstancesForCloneRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 int DescribeDBInstancesForCloneRequest::getPageNumber()const
@@ -101,7 +101,7 @@ int DescribeDBInstancesForCloneRequest::getPageNumber()const
 void DescribeDBInstancesForCloneRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDBInstancesForCloneRequest::getAccessKeyId()const
@@ -112,7 +112,7 @@ std::string DescribeDBInstancesForCloneRequest::getAccessKeyId()const
 void DescribeDBInstancesForCloneRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getExpired()const
@@ -123,7 +123,7 @@ std::string DescribeDBInstancesForCloneRequest::getExpired()const
 void DescribeDBInstancesForCloneRequest::setExpired(const std::string& expired)
 {
 	expired_ = expired;
-	setCoreParameter("Expired", expired);
+	setParameter("Expired", expired);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getEngine()const
@@ -134,7 +134,7 @@ std::string DescribeDBInstancesForCloneRequest::getEngine()const
 void DescribeDBInstancesForCloneRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getRegionId()const
@@ -145,7 +145,7 @@ std::string DescribeDBInstancesForCloneRequest::getRegionId()const
 void DescribeDBInstancesForCloneRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getCurrentInstanceId()const
@@ -156,7 +156,7 @@ std::string DescribeDBInstancesForCloneRequest::getCurrentInstanceId()const
 void DescribeDBInstancesForCloneRequest::setCurrentInstanceId(const std::string& currentInstanceId)
 {
 	currentInstanceId_ = currentInstanceId;
-	setCoreParameter("CurrentInstanceId", currentInstanceId);
+	setParameter("CurrentInstanceId", currentInstanceId);
 }
 
 int DescribeDBInstancesForCloneRequest::getPageSize()const
@@ -167,7 +167,7 @@ int DescribeDBInstancesForCloneRequest::getPageSize()const
 void DescribeDBInstancesForCloneRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDBInstancesForCloneRequest::getDBInstanceStatus()const
@@ -178,7 +178,7 @@ std::string DescribeDBInstancesForCloneRequest::getDBInstanceStatus()const
 void DescribeDBInstancesForCloneRequest::setDBInstanceStatus(const std::string& dBInstanceStatus)
 {
 	dBInstanceStatus_ = dBInstanceStatus;
-	setCoreParameter("DBInstanceStatus", dBInstanceStatus);
+	setParameter("DBInstanceStatus", dBInstanceStatus);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getDBInstanceId()const
@@ -189,7 +189,7 @@ std::string DescribeDBInstancesForCloneRequest::getDBInstanceId()const
 void DescribeDBInstancesForCloneRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getProxyId()const
@@ -200,7 +200,7 @@ std::string DescribeDBInstancesForCloneRequest::getProxyId()const
 void DescribeDBInstancesForCloneRequest::setProxyId(const std::string& proxyId)
 {
 	proxyId_ = proxyId;
-	setCoreParameter("ProxyId", proxyId);
+	setParameter("ProxyId", proxyId);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getResourceOwnerAccount()const
@@ -211,7 +211,7 @@ std::string DescribeDBInstancesForCloneRequest::getResourceOwnerAccount()const
 void DescribeDBInstancesForCloneRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getOwnerAccount()const
@@ -222,7 +222,7 @@ std::string DescribeDBInstancesForCloneRequest::getOwnerAccount()const
 void DescribeDBInstancesForCloneRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBInstancesForCloneRequest::getOwnerId()const
@@ -233,7 +233,7 @@ long DescribeDBInstancesForCloneRequest::getOwnerId()const
 void DescribeDBInstancesForCloneRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstancesForCloneRequest::getDBInstanceType()const
@@ -244,7 +244,7 @@ std::string DescribeDBInstancesForCloneRequest::getDBInstanceType()const
 void DescribeDBInstancesForCloneRequest::setDBInstanceType(const std::string& dBInstanceType)
 {
 	dBInstanceType_ = dBInstanceType;
-	setCoreParameter("DBInstanceType", dBInstanceType);
+	setParameter("DBInstanceType", dBInstanceType);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getDBInstanceClass()const
@@ -255,7 +255,7 @@ std::string DescribeDBInstancesForCloneRequest::getDBInstanceClass()const
 void DescribeDBInstancesForCloneRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
+	setParameter("DBInstanceClass", dBInstanceClass);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getVSwitchId()const
@@ -266,7 +266,7 @@ std::string DescribeDBInstancesForCloneRequest::getVSwitchId()const
 void DescribeDBInstancesForCloneRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getVpcId()const
@@ -277,7 +277,7 @@ std::string DescribeDBInstancesForCloneRequest::getVpcId()const
 void DescribeDBInstancesForCloneRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getZoneId()const
@@ -288,7 +288,7 @@ std::string DescribeDBInstancesForCloneRequest::getZoneId()const
 void DescribeDBInstancesForCloneRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getPayType()const
@@ -299,7 +299,7 @@ std::string DescribeDBInstancesForCloneRequest::getPayType()const
 void DescribeDBInstancesForCloneRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setParameter("PayType", payType);
 }
 
 std::string DescribeDBInstancesForCloneRequest::getInstanceNetworkType()const
@@ -310,6 +310,6 @@ std::string DescribeDBInstancesForCloneRequest::getInstanceNetworkType()const
 void DescribeDBInstancesForCloneRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setCoreParameter("InstanceNetworkType", instanceNetworkType);
+	setParameter("InstanceNetworkType", instanceNetworkType);
 }
 

@@ -35,7 +35,7 @@ long PurgeDBInstanceLogRequest::getResourceOwnerId()const
 void PurgeDBInstanceLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string PurgeDBInstanceLogRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string PurgeDBInstanceLogRequest::getResourceOwnerAccount()const
 void PurgeDBInstanceLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string PurgeDBInstanceLogRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string PurgeDBInstanceLogRequest::getClientToken()const
 void PurgeDBInstanceLogRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string PurgeDBInstanceLogRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string PurgeDBInstanceLogRequest::getOwnerAccount()const
 void PurgeDBInstanceLogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long PurgeDBInstanceLogRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long PurgeDBInstanceLogRequest::getOwnerId()const
 void PurgeDBInstanceLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string PurgeDBInstanceLogRequest::getAccessKeyId()const
@@ -90,7 +90,7 @@ std::string PurgeDBInstanceLogRequest::getAccessKeyId()const
 void PurgeDBInstanceLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PurgeDBInstanceLogRequest::getDBInstanceId()const
@@ -101,6 +101,6 @@ std::string PurgeDBInstanceLogRequest::getDBInstanceId()const
 void PurgeDBInstanceLogRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

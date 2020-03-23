@@ -35,7 +35,7 @@ long ModifyDBProxyInstanceRequest::getResourceOwnerId()const
 void ModifyDBProxyInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBProxyInstanceRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyDBProxyInstanceRequest::getAccessKeyId()const
 void ModifyDBProxyInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBProxyInstanceRequest::getEffectiveTime()const
@@ -57,7 +57,7 @@ std::string ModifyDBProxyInstanceRequest::getEffectiveTime()const
 void ModifyDBProxyInstanceRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", effectiveTime);
+	setParameter("EffectiveTime", effectiveTime);
 }
 
 std::string ModifyDBProxyInstanceRequest::getEffectiveSpecificTime()const
@@ -68,7 +68,7 @@ std::string ModifyDBProxyInstanceRequest::getEffectiveSpecificTime()const
 void ModifyDBProxyInstanceRequest::setEffectiveSpecificTime(const std::string& effectiveSpecificTime)
 {
 	effectiveSpecificTime_ = effectiveSpecificTime;
-	setCoreParameter("EffectiveSpecificTime", effectiveSpecificTime);
+	setParameter("EffectiveSpecificTime", effectiveSpecificTime);
 }
 
 std::string ModifyDBProxyInstanceRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string ModifyDBProxyInstanceRequest::getRegionId()const
 void ModifyDBProxyInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDBProxyInstanceRequest::getDBInstanceId()const
@@ -90,7 +90,7 @@ std::string ModifyDBProxyInstanceRequest::getDBInstanceId()const
 void ModifyDBProxyInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBProxyInstanceRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyDBProxyInstanceRequest::getResourceOwnerAccount()const
 void ModifyDBProxyInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ModifyDBProxyInstanceRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long ModifyDBProxyInstanceRequest::getOwnerId()const
 void ModifyDBProxyInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBProxyInstanceRequest::getDBProxyInstanceNum()const
@@ -123,7 +123,7 @@ std::string ModifyDBProxyInstanceRequest::getDBProxyInstanceNum()const
 void ModifyDBProxyInstanceRequest::setDBProxyInstanceNum(const std::string& dBProxyInstanceNum)
 {
 	dBProxyInstanceNum_ = dBProxyInstanceNum;
-	setCoreParameter("DBProxyInstanceNum", dBProxyInstanceNum);
+	setParameter("DBProxyInstanceNum", dBProxyInstanceNum);
 }
 
 std::string ModifyDBProxyInstanceRequest::getDBProxyInstanceType()const
@@ -134,6 +134,6 @@ std::string ModifyDBProxyInstanceRequest::getDBProxyInstanceType()const
 void ModifyDBProxyInstanceRequest::setDBProxyInstanceType(const std::string& dBProxyInstanceType)
 {
 	dBProxyInstanceType_ = dBProxyInstanceType;
-	setCoreParameter("DBProxyInstanceType", dBProxyInstanceType);
+	setParameter("DBProxyInstanceType", dBProxyInstanceType);
 }
 

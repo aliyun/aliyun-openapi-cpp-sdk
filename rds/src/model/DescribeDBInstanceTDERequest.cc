@@ -35,7 +35,7 @@ long DescribeDBInstanceTDERequest::getResourceOwnerId()const
 void DescribeDBInstanceTDERequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstanceTDERequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeDBInstanceTDERequest::getResourceOwnerAccount()const
 void DescribeDBInstanceTDERequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstanceTDERequest::getOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeDBInstanceTDERequest::getOwnerAccount()const
 void DescribeDBInstanceTDERequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBInstanceTDERequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeDBInstanceTDERequest::getOwnerId()const
 void DescribeDBInstanceTDERequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstanceTDERequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string DescribeDBInstanceTDERequest::getAccessKeyId()const
 void DescribeDBInstanceTDERequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstanceTDERequest::getDBInstanceId()const
@@ -90,6 +90,6 @@ std::string DescribeDBInstanceTDERequest::getDBInstanceId()const
 void DescribeDBInstanceTDERequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

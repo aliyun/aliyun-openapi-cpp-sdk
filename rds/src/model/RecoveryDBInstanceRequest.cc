@@ -35,7 +35,7 @@ long RecoveryDBInstanceRequest::getResourceOwnerId()const
 void RecoveryDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int RecoveryDBInstanceRequest::getDBInstanceStorage()const
@@ -46,7 +46,7 @@ int RecoveryDBInstanceRequest::getDBInstanceStorage()const
 void RecoveryDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+	setParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
 }
 
 std::string RecoveryDBInstanceRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string RecoveryDBInstanceRequest::getClientToken()const
 void RecoveryDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string RecoveryDBInstanceRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string RecoveryDBInstanceRequest::getAccessKeyId()const
 void RecoveryDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RecoveryDBInstanceRequest::getResourceGroupId()const
@@ -79,7 +79,7 @@ std::string RecoveryDBInstanceRequest::getResourceGroupId()const
 void RecoveryDBInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string RecoveryDBInstanceRequest::getDBInstanceDescription()const
@@ -90,7 +90,7 @@ std::string RecoveryDBInstanceRequest::getDBInstanceDescription()const
 void RecoveryDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
 {
 	dBInstanceDescription_ = dBInstanceDescription;
-	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
+	setParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
 std::string RecoveryDBInstanceRequest::getDBInstanceId()const
@@ -101,7 +101,7 @@ std::string RecoveryDBInstanceRequest::getDBInstanceId()const
 void RecoveryDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string RecoveryDBInstanceRequest::getDBInstanceStorageType()const
@@ -112,7 +112,7 @@ std::string RecoveryDBInstanceRequest::getDBInstanceStorageType()const
 void RecoveryDBInstanceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
 {
 	dBInstanceStorageType_ = dBInstanceStorageType;
-	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+	setParameter("DBInstanceStorageType", dBInstanceStorageType);
 }
 
 std::string RecoveryDBInstanceRequest::getRestoreTime()const
@@ -123,7 +123,7 @@ std::string RecoveryDBInstanceRequest::getRestoreTime()const
 void RecoveryDBInstanceRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
+	setParameter("RestoreTime", restoreTime);
 }
 
 std::string RecoveryDBInstanceRequest::getPeriod()const
@@ -134,7 +134,7 @@ std::string RecoveryDBInstanceRequest::getPeriod()const
 void RecoveryDBInstanceRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setParameter("Period", period);
 }
 
 std::string RecoveryDBInstanceRequest::getResourceOwnerAccount()const
@@ -145,7 +145,7 @@ std::string RecoveryDBInstanceRequest::getResourceOwnerAccount()const
 void RecoveryDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RecoveryDBInstanceRequest::getBackupId()const
@@ -156,7 +156,7 @@ std::string RecoveryDBInstanceRequest::getBackupId()const
 void RecoveryDBInstanceRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setParameter("BackupId", backupId);
 }
 
 std::string RecoveryDBInstanceRequest::getOwnerAccount()const
@@ -167,7 +167,7 @@ std::string RecoveryDBInstanceRequest::getOwnerAccount()const
 void RecoveryDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RecoveryDBInstanceRequest::getOwnerId()const
@@ -178,7 +178,7 @@ long RecoveryDBInstanceRequest::getOwnerId()const
 void RecoveryDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RecoveryDBInstanceRequest::getUsedTime()const
@@ -189,7 +189,7 @@ std::string RecoveryDBInstanceRequest::getUsedTime()const
 void RecoveryDBInstanceRequest::setUsedTime(const std::string& usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", usedTime);
+	setParameter("UsedTime", usedTime);
 }
 
 std::string RecoveryDBInstanceRequest::getDBInstanceClass()const
@@ -200,7 +200,7 @@ std::string RecoveryDBInstanceRequest::getDBInstanceClass()const
 void RecoveryDBInstanceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
+	setParameter("DBInstanceClass", dBInstanceClass);
 }
 
 std::string RecoveryDBInstanceRequest::getDbNames()const
@@ -211,7 +211,7 @@ std::string RecoveryDBInstanceRequest::getDbNames()const
 void RecoveryDBInstanceRequest::setDbNames(const std::string& dbNames)
 {
 	dbNames_ = dbNames;
-	setCoreParameter("DbNames", dbNames);
+	setParameter("DbNames", dbNames);
 }
 
 std::string RecoveryDBInstanceRequest::getVSwitchId()const
@@ -222,7 +222,7 @@ std::string RecoveryDBInstanceRequest::getVSwitchId()const
 void RecoveryDBInstanceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string RecoveryDBInstanceRequest::getPrivateIpAddress()const
@@ -233,7 +233,7 @@ std::string RecoveryDBInstanceRequest::getPrivateIpAddress()const
 void RecoveryDBInstanceRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setParameter("PrivateIpAddress", privateIpAddress);
 }
 
 std::string RecoveryDBInstanceRequest::getTargetDBInstanceId()const
@@ -244,7 +244,7 @@ std::string RecoveryDBInstanceRequest::getTargetDBInstanceId()const
 void RecoveryDBInstanceRequest::setTargetDBInstanceId(const std::string& targetDBInstanceId)
 {
 	targetDBInstanceId_ = targetDBInstanceId;
-	setCoreParameter("TargetDBInstanceId", targetDBInstanceId);
+	setParameter("TargetDBInstanceId", targetDBInstanceId);
 }
 
 std::string RecoveryDBInstanceRequest::getVPCId()const
@@ -255,7 +255,7 @@ std::string RecoveryDBInstanceRequest::getVPCId()const
 void RecoveryDBInstanceRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
-	setCoreParameter("VPCId", vPCId);
+	setParameter("VPCId", vPCId);
 }
 
 std::string RecoveryDBInstanceRequest::getPayType()const
@@ -266,7 +266,7 @@ std::string RecoveryDBInstanceRequest::getPayType()const
 void RecoveryDBInstanceRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setParameter("PayType", payType);
 }
 
 std::string RecoveryDBInstanceRequest::getInstanceNetworkType()const
@@ -277,6 +277,6 @@ std::string RecoveryDBInstanceRequest::getInstanceNetworkType()const
 void RecoveryDBInstanceRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setCoreParameter("InstanceNetworkType", instanceNetworkType);
+	setParameter("InstanceNetworkType", instanceNetworkType);
 }
 

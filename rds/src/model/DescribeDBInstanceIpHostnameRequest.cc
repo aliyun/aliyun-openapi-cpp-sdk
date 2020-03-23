@@ -35,7 +35,7 @@ long DescribeDBInstanceIpHostnameRequest::getResourceOwnerId()const
 void DescribeDBInstanceIpHostnameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstanceIpHostnameRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeDBInstanceIpHostnameRequest::getAccessKeyId()const
 void DescribeDBInstanceIpHostnameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstanceIpHostnameRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeDBInstanceIpHostnameRequest::getSecurityToken()const
 void DescribeDBInstanceIpHostnameRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDBInstanceIpHostnameRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribeDBInstanceIpHostnameRequest::getRegionId()const
 void DescribeDBInstanceIpHostnameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDBInstanceIpHostnameRequest::getDBInstanceId()const
@@ -79,7 +79,7 @@ std::string DescribeDBInstanceIpHostnameRequest::getDBInstanceId()const
 void DescribeDBInstanceIpHostnameRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBInstanceIpHostnameRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeDBInstanceIpHostnameRequest::getResourceOwnerAccount()const
 void DescribeDBInstanceIpHostnameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstanceIpHostnameRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeDBInstanceIpHostnameRequest::getOwnerAccount()const
 void DescribeDBInstanceIpHostnameRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBInstanceIpHostnameRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DescribeDBInstanceIpHostnameRequest::getOwnerId()const
 void DescribeDBInstanceIpHostnameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

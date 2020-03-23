@@ -35,7 +35,7 @@ long MigrateSecurityIPModeRequest::getResourceOwnerId()const
 void MigrateSecurityIPModeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MigrateSecurityIPModeRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string MigrateSecurityIPModeRequest::getResourceOwnerAccount()const
 void MigrateSecurityIPModeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long MigrateSecurityIPModeRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long MigrateSecurityIPModeRequest::getOwnerId()const
 void MigrateSecurityIPModeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MigrateSecurityIPModeRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string MigrateSecurityIPModeRequest::getAccessKeyId()const
 void MigrateSecurityIPModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string MigrateSecurityIPModeRequest::getDBInstanceId()const
@@ -79,6 +79,6 @@ std::string MigrateSecurityIPModeRequest::getDBInstanceId()const
 void MigrateSecurityIPModeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

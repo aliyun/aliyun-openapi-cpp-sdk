@@ -35,7 +35,7 @@ long DescribeDedicatedHostGroupsRequest::getResourceOwnerId()const
 void DescribeDedicatedHostGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDedicatedHostGroupsRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeDedicatedHostGroupsRequest::getResourceOwnerAccount()const
 void DescribeDedicatedHostGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeDedicatedHostGroupsRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DescribeDedicatedHostGroupsRequest::getOwnerId()const
 void DescribeDedicatedHostGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDedicatedHostGroupsRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeDedicatedHostGroupsRequest::getAccessKeyId()const
 void DescribeDedicatedHostGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDedicatedHostGroupsRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string DescribeDedicatedHostGroupsRequest::getRegionId()const
 void DescribeDedicatedHostGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDedicatedHostGroupsRequest::getDedicatedHostGroupId()const
@@ -90,6 +90,6 @@ std::string DescribeDedicatedHostGroupsRequest::getDedicatedHostGroupId()const
 void DescribeDedicatedHostGroupsRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
 {
 	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 

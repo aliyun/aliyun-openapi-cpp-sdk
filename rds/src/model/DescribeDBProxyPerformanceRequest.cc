@@ -35,7 +35,7 @@ long DescribeDBProxyPerformanceRequest::getResourceOwnerId()const
 void DescribeDBProxyPerformanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBProxyPerformanceRequest::getMetricsName()const
@@ -46,7 +46,7 @@ std::string DescribeDBProxyPerformanceRequest::getMetricsName()const
 void DescribeDBProxyPerformanceRequest::setMetricsName(const std::string& metricsName)
 {
 	metricsName_ = metricsName;
-	setCoreParameter("MetricsName", metricsName);
+	setParameter("MetricsName", metricsName);
 }
 
 std::string DescribeDBProxyPerformanceRequest::getStartTime()const
@@ -57,7 +57,7 @@ std::string DescribeDBProxyPerformanceRequest::getStartTime()const
 void DescribeDBProxyPerformanceRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDBProxyPerformanceRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeDBProxyPerformanceRequest::getAccessKeyId()const
 void DescribeDBProxyPerformanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBProxyPerformanceRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string DescribeDBProxyPerformanceRequest::getRegionId()const
 void DescribeDBProxyPerformanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDBProxyPerformanceRequest::getDBInstanceId()const
@@ -90,7 +90,7 @@ std::string DescribeDBProxyPerformanceRequest::getDBInstanceId()const
 void DescribeDBProxyPerformanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBProxyPerformanceRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeDBProxyPerformanceRequest::getResourceOwnerAccount()const
 void DescribeDBProxyPerformanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBProxyPerformanceRequest::getEndTime()const
@@ -112,7 +112,7 @@ std::string DescribeDBProxyPerformanceRequest::getEndTime()const
 void DescribeDBProxyPerformanceRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDBProxyPerformanceRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long DescribeDBProxyPerformanceRequest::getOwnerId()const
 void DescribeDBProxyPerformanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBProxyPerformanceRequest::getDBProxyInstanceType()const
@@ -134,6 +134,6 @@ std::string DescribeDBProxyPerformanceRequest::getDBProxyInstanceType()const
 void DescribeDBProxyPerformanceRequest::setDBProxyInstanceType(const std::string& dBProxyInstanceType)
 {
 	dBProxyInstanceType_ = dBProxyInstanceType;
-	setCoreParameter("DBProxyInstanceType", dBProxyInstanceType);
+	setParameter("DBProxyInstanceType", dBProxyInstanceType);
 }
 

@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getBusinessInfo()const;
 				void setBusinessInfo(const std::string& businessInfo);
-				std::string getPeriod()const;
-				void setPeriod(const std::string& period);
+				int getPeriod()const;
+				void setPeriod(int period);
 				std::string getAutoPay()const;
 				void setAutoPay(const std::string& autoPay);
 				std::string getResourceOwnerAccount()const;
@@ -60,7 +60,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string dBInstanceId_;
 				std::string businessInfo_;
-				std::string period_;
+				int period_;
 				std::string autoPay_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;

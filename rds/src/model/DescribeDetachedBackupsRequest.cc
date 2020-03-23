@@ -35,7 +35,7 @@ long DescribeDetachedBackupsRequest::getResourceOwnerId()const
 void DescribeDetachedBackupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDetachedBackupsRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDetachedBackupsRequest::getStartTime()const
 void DescribeDetachedBackupsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int DescribeDetachedBackupsRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeDetachedBackupsRequest::getPageNumber()const
 void DescribeDetachedBackupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDetachedBackupsRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeDetachedBackupsRequest::getAccessKeyId()const
 void DescribeDetachedBackupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDetachedBackupsRequest::getBackupLocation()const
@@ -79,7 +79,7 @@ std::string DescribeDetachedBackupsRequest::getBackupLocation()const
 void DescribeDetachedBackupsRequest::setBackupLocation(const std::string& backupLocation)
 {
 	backupLocation_ = backupLocation;
-	setCoreParameter("BackupLocation", backupLocation);
+	setParameter("BackupLocation", backupLocation);
 }
 
 int DescribeDetachedBackupsRequest::getPageSize()const
@@ -90,7 +90,7 @@ int DescribeDetachedBackupsRequest::getPageSize()const
 void DescribeDetachedBackupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDetachedBackupsRequest::getDBInstanceId()const
@@ -101,7 +101,7 @@ std::string DescribeDetachedBackupsRequest::getDBInstanceId()const
 void DescribeDetachedBackupsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDetachedBackupsRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribeDetachedBackupsRequest::getResourceOwnerAccount()const
 void DescribeDetachedBackupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDetachedBackupsRequest::getBackupId()const
@@ -123,7 +123,7 @@ std::string DescribeDetachedBackupsRequest::getBackupId()const
 void DescribeDetachedBackupsRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setParameter("BackupId", backupId);
 }
 
 std::string DescribeDetachedBackupsRequest::getOwnerAccount()const
@@ -134,7 +134,7 @@ std::string DescribeDetachedBackupsRequest::getOwnerAccount()const
 void DescribeDetachedBackupsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDetachedBackupsRequest::getEndTime()const
@@ -145,7 +145,7 @@ std::string DescribeDetachedBackupsRequest::getEndTime()const
 void DescribeDetachedBackupsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDetachedBackupsRequest::getOwnerId()const
@@ -156,7 +156,7 @@ long DescribeDetachedBackupsRequest::getOwnerId()const
 void DescribeDetachedBackupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDetachedBackupsRequest::getBackupStatus()const
@@ -167,7 +167,7 @@ std::string DescribeDetachedBackupsRequest::getBackupStatus()const
 void DescribeDetachedBackupsRequest::setBackupStatus(const std::string& backupStatus)
 {
 	backupStatus_ = backupStatus;
-	setCoreParameter("BackupStatus", backupStatus);
+	setParameter("BackupStatus", backupStatus);
 }
 
 std::string DescribeDetachedBackupsRequest::getBackupMode()const
@@ -178,7 +178,7 @@ std::string DescribeDetachedBackupsRequest::getBackupMode()const
 void DescribeDetachedBackupsRequest::setBackupMode(const std::string& backupMode)
 {
 	backupMode_ = backupMode;
-	setCoreParameter("BackupMode", backupMode);
+	setParameter("BackupMode", backupMode);
 }
 
 std::string DescribeDetachedBackupsRequest::getRegion()const
@@ -189,6 +189,6 @@ std::string DescribeDetachedBackupsRequest::getRegion()const
 void DescribeDetachedBackupsRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

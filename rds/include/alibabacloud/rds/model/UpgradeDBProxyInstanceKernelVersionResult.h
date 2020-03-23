@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEMIGRATETASKBYIDRESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEMIGRATETASKBYIDRESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_UPGRADEDBPROXYINSTANCEKERNELVERSIONRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_UPGRADEDBPROXYINSTANCEKERNELVERSIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeMigrateTaskByIdResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT UpgradeDBProxyInstanceKernelVersionResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeMigrateTaskByIdResult();
-				explicit DescribeMigrateTaskByIdResult(const std::string &payload);
-				~DescribeMigrateTaskByIdResult();
-				std::string getStatus()const;
-				std::string getDescription()const;
-				std::string getEndTime()const;
-				std::string getMigrateTaskId()const;
-				std::string getCreateTime()const;
-				std::string getBackupMode()const;
-				std::string getIsDBReplaced()const;
-				std::string getDBName()const;
+				UpgradeDBProxyInstanceKernelVersionResult();
+				explicit UpgradeDBProxyInstanceKernelVersionResult(const std::string &payload);
+				~UpgradeDBProxyInstanceKernelVersionResult();
+				std::string getTaskId()const;
+				std::string getTargetMinorVersion()const;
 				std::string getDBInstanceName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string status_;
-				std::string description_;
-				std::string endTime_;
-				std::string migrateTaskId_;
-				std::string createTime_;
-				std::string backupMode_;
-				std::string isDBReplaced_;
-				std::string dBName_;
+				std::string taskId_;
+				std::string targetMinorVersion_;
 				std::string dBInstanceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEMIGRATETASKBYIDRESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_UPGRADEDBPROXYINSTANCEKERNELVERSIONRESULT_H_

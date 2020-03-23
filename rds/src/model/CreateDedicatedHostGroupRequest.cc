@@ -35,7 +35,7 @@ long CreateDedicatedHostGroupRequest::getResourceOwnerId()const
 void CreateDedicatedHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int CreateDedicatedHostGroupRequest::getCpuAllocationRatio()const
@@ -46,7 +46,7 @@ int CreateDedicatedHostGroupRequest::getCpuAllocationRatio()const
 void CreateDedicatedHostGroupRequest::setCpuAllocationRatio(int cpuAllocationRatio)
 {
 	cpuAllocationRatio_ = cpuAllocationRatio;
-	setCoreParameter("CpuAllocationRatio", std::to_string(cpuAllocationRatio));
+	setParameter("CpuAllocationRatio", std::to_string(cpuAllocationRatio));
 }
 
 std::string CreateDedicatedHostGroupRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string CreateDedicatedHostGroupRequest::getClientToken()const
 void CreateDedicatedHostGroupRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateDedicatedHostGroupRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string CreateDedicatedHostGroupRequest::getAccessKeyId()const
 void CreateDedicatedHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateDedicatedHostGroupRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string CreateDedicatedHostGroupRequest::getRegionId()const
 void CreateDedicatedHostGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateDedicatedHostGroupRequest::getEngine()const
@@ -90,7 +90,7 @@ std::string CreateDedicatedHostGroupRequest::getEngine()const
 void CreateDedicatedHostGroupRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string CreateDedicatedHostGroupRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string CreateDedicatedHostGroupRequest::getResourceOwnerAccount()const
 void CreateDedicatedHostGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int CreateDedicatedHostGroupRequest::getDiskAllocationRatio()const
@@ -112,7 +112,7 @@ int CreateDedicatedHostGroupRequest::getDiskAllocationRatio()const
 void CreateDedicatedHostGroupRequest::setDiskAllocationRatio(int diskAllocationRatio)
 {
 	diskAllocationRatio_ = diskAllocationRatio;
-	setCoreParameter("DiskAllocationRatio", std::to_string(diskAllocationRatio));
+	setParameter("DiskAllocationRatio", std::to_string(diskAllocationRatio));
 }
 
 int CreateDedicatedHostGroupRequest::getMemAllocationRatio()const
@@ -123,7 +123,7 @@ int CreateDedicatedHostGroupRequest::getMemAllocationRatio()const
 void CreateDedicatedHostGroupRequest::setMemAllocationRatio(int memAllocationRatio)
 {
 	memAllocationRatio_ = memAllocationRatio;
-	setCoreParameter("MemAllocationRatio", std::to_string(memAllocationRatio));
+	setParameter("MemAllocationRatio", std::to_string(memAllocationRatio));
 }
 
 long CreateDedicatedHostGroupRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long CreateDedicatedHostGroupRequest::getOwnerId()const
 void CreateDedicatedHostGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateDedicatedHostGroupRequest::getHostReplacePolicy()const
@@ -145,7 +145,7 @@ std::string CreateDedicatedHostGroupRequest::getHostReplacePolicy()const
 void CreateDedicatedHostGroupRequest::setHostReplacePolicy(const std::string& hostReplacePolicy)
 {
 	hostReplacePolicy_ = hostReplacePolicy;
-	setCoreParameter("HostReplacePolicy", hostReplacePolicy);
+	setParameter("HostReplacePolicy", hostReplacePolicy);
 }
 
 std::string CreateDedicatedHostGroupRequest::getAllocationPolicy()const
@@ -156,7 +156,7 @@ std::string CreateDedicatedHostGroupRequest::getAllocationPolicy()const
 void CreateDedicatedHostGroupRequest::setAllocationPolicy(const std::string& allocationPolicy)
 {
 	allocationPolicy_ = allocationPolicy;
-	setCoreParameter("AllocationPolicy", allocationPolicy);
+	setParameter("AllocationPolicy", allocationPolicy);
 }
 
 std::string CreateDedicatedHostGroupRequest::getVPCId()const
@@ -167,6 +167,6 @@ std::string CreateDedicatedHostGroupRequest::getVPCId()const
 void CreateDedicatedHostGroupRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
-	setCoreParameter("VPCId", vPCId);
+	setParameter("VPCId", vPCId);
 }
 

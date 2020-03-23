@@ -35,7 +35,7 @@ long ModifyDedicatedHostGroupAttributeRequest::getResourceOwnerId()const
 void ModifyDedicatedHostGroupAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int ModifyDedicatedHostGroupAttributeRequest::getCpuAllocationRatio()const
@@ -46,7 +46,7 @@ int ModifyDedicatedHostGroupAttributeRequest::getCpuAllocationRatio()const
 void ModifyDedicatedHostGroupAttributeRequest::setCpuAllocationRatio(int cpuAllocationRatio)
 {
 	cpuAllocationRatio_ = cpuAllocationRatio;
-	setCoreParameter("CpuAllocationRatio", std::to_string(cpuAllocationRatio));
+	setParameter("CpuAllocationRatio", std::to_string(cpuAllocationRatio));
 }
 
 std::string ModifyDedicatedHostGroupAttributeRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifyDedicatedHostGroupAttributeRequest::getAccessKeyId()const
 void ModifyDedicatedHostGroupAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDedicatedHostGroupAttributeRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string ModifyDedicatedHostGroupAttributeRequest::getRegionId()const
 void ModifyDedicatedHostGroupAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDedicatedHostGroupAttributeRequest::getDedicatedHostGroupId()const
@@ -79,7 +79,7 @@ std::string ModifyDedicatedHostGroupAttributeRequest::getDedicatedHostGroupId()c
 void ModifyDedicatedHostGroupAttributeRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
 {
 	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 
 std::string ModifyDedicatedHostGroupAttributeRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyDedicatedHostGroupAttributeRequest::getResourceOwnerAccount()c
 void ModifyDedicatedHostGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int ModifyDedicatedHostGroupAttributeRequest::getDiskAllocationRatio()const
@@ -101,7 +101,7 @@ int ModifyDedicatedHostGroupAttributeRequest::getDiskAllocationRatio()const
 void ModifyDedicatedHostGroupAttributeRequest::setDiskAllocationRatio(int diskAllocationRatio)
 {
 	diskAllocationRatio_ = diskAllocationRatio;
-	setCoreParameter("DiskAllocationRatio", std::to_string(diskAllocationRatio));
+	setParameter("DiskAllocationRatio", std::to_string(diskAllocationRatio));
 }
 
 int ModifyDedicatedHostGroupAttributeRequest::getMemAllocationRatio()const
@@ -112,7 +112,7 @@ int ModifyDedicatedHostGroupAttributeRequest::getMemAllocationRatio()const
 void ModifyDedicatedHostGroupAttributeRequest::setMemAllocationRatio(int memAllocationRatio)
 {
 	memAllocationRatio_ = memAllocationRatio;
-	setCoreParameter("MemAllocationRatio", std::to_string(memAllocationRatio));
+	setParameter("MemAllocationRatio", std::to_string(memAllocationRatio));
 }
 
 long ModifyDedicatedHostGroupAttributeRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long ModifyDedicatedHostGroupAttributeRequest::getOwnerId()const
 void ModifyDedicatedHostGroupAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDedicatedHostGroupAttributeRequest::getHostReplacePolicy()const
@@ -134,7 +134,7 @@ std::string ModifyDedicatedHostGroupAttributeRequest::getHostReplacePolicy()cons
 void ModifyDedicatedHostGroupAttributeRequest::setHostReplacePolicy(const std::string& hostReplacePolicy)
 {
 	hostReplacePolicy_ = hostReplacePolicy;
-	setCoreParameter("HostReplacePolicy", hostReplacePolicy);
+	setParameter("HostReplacePolicy", hostReplacePolicy);
 }
 
 std::string ModifyDedicatedHostGroupAttributeRequest::getDedicatedHostGroupDesc()const
@@ -145,7 +145,7 @@ std::string ModifyDedicatedHostGroupAttributeRequest::getDedicatedHostGroupDesc(
 void ModifyDedicatedHostGroupAttributeRequest::setDedicatedHostGroupDesc(const std::string& dedicatedHostGroupDesc)
 {
 	dedicatedHostGroupDesc_ = dedicatedHostGroupDesc;
-	setCoreParameter("DedicatedHostGroupDesc", dedicatedHostGroupDesc);
+	setParameter("DedicatedHostGroupDesc", dedicatedHostGroupDesc);
 }
 
 std::string ModifyDedicatedHostGroupAttributeRequest::getAllocationPolicy()const
@@ -156,6 +156,6 @@ std::string ModifyDedicatedHostGroupAttributeRequest::getAllocationPolicy()const
 void ModifyDedicatedHostGroupAttributeRequest::setAllocationPolicy(const std::string& allocationPolicy)
 {
 	allocationPolicy_ = allocationPolicy;
-	setCoreParameter("AllocationPolicy", allocationPolicy);
+	setParameter("AllocationPolicy", allocationPolicy);
 }
 

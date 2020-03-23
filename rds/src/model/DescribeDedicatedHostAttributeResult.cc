@@ -95,6 +95,12 @@ void DescribeDedicatedHostAttributeResult::parse(const std::string &payload)
 		memoryUsed_ = value["MemoryUsed"].asString();
 	if(!value["StorageUsed"].isNull())
 		storageUsed_ = value["StorageUsed"].asString();
+	if(!value["HostType"].isNull())
+		hostType_ = value["HostType"].asString();
+	if(!value["AccountName"].isNull())
+		accountName_ = value["AccountName"].asString();
+	if(!value["OpenPermission"].isNull())
+		openPermission_ = value["OpenPermission"].asString();
 
 }
 
@@ -141,6 +147,16 @@ int DescribeDedicatedHostAttributeResult::getHostStorage()const
 int DescribeDedicatedHostAttributeResult::getInstanceNumberSlave()const
 {
 	return instanceNumberSlave_;
+}
+
+std::string DescribeDedicatedHostAttributeResult::getOpenPermission()const
+{
+	return openPermission_;
+}
+
+std::string DescribeDedicatedHostAttributeResult::getHostType()const
+{
+	return hostType_;
 }
 
 std::string DescribeDedicatedHostAttributeResult::getExpiredTime()const
@@ -236,5 +252,10 @@ std::string DescribeDedicatedHostAttributeResult::getRegionId()const
 std::string DescribeDedicatedHostAttributeResult::getIPAddress()const
 {
 	return iPAddress_;
+}
+
+std::string DescribeDedicatedHostAttributeResult::getAccountName()const
+{
+	return accountName_;
 }
 

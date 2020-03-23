@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rds/model/CreateDBInstanceReplicaResult.h>
+#include <alibabacloud/rds/model/DescribeLocalAvailableRecoveryTimeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rds;
 using namespace AlibabaCloud::Rds::Model;
 
-CreateDBInstanceReplicaResult::CreateDBInstanceReplicaResult() :
+DescribeLocalAvailableRecoveryTimeResult::DescribeLocalAvailableRecoveryTimeResult() :
 	ServiceResult()
 {}
 
-CreateDBInstanceReplicaResult::CreateDBInstanceReplicaResult(const std::string &payload) :
+DescribeLocalAvailableRecoveryTimeResult::DescribeLocalAvailableRecoveryTimeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateDBInstanceReplicaResult::~CreateDBInstanceReplicaResult()
+DescribeLocalAvailableRecoveryTimeResult::~DescribeLocalAvailableRecoveryTimeResult()
 {}
 
-void CreateDBInstanceReplicaResult::parse(const std::string &payload)
+void DescribeLocalAvailableRecoveryTimeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -41,32 +41,25 @@ void CreateDBInstanceReplicaResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
-	if(!value["ReplicaId"].isNull())
-		replicaId_ = value["ReplicaId"].asString();
-	if(!value["WorkflowId"].isNull())
-		workflowId_ = value["WorkflowId"].asString();
+	if(!value["RecoveryBeginTime"].isNull())
+		recoveryBeginTime_ = value["RecoveryBeginTime"].asString();
+	if(!value["RecoveryEndTime"].isNull())
+		recoveryEndTime_ = value["RecoveryEndTime"].asString();
 
 }
 
-std::string CreateDBInstanceReplicaResult::getDBInstanceId()const
+std::string DescribeLocalAvailableRecoveryTimeResult::getRecoveryEndTime()const
+{
+	return recoveryEndTime_;
+}
+
+std::string DescribeLocalAvailableRecoveryTimeResult::getRecoveryBeginTime()const
+{
+	return recoveryBeginTime_;
+}
+
+std::string DescribeLocalAvailableRecoveryTimeResult::getDBInstanceId()const
 {
 	return dBInstanceId_;
-}
-
-long CreateDBInstanceReplicaResult::getOrderId()const
-{
-	return orderId_;
-}
-
-std::string CreateDBInstanceReplicaResult::getWorkflowId()const
-{
-	return workflowId_;
-}
-
-std::string CreateDBInstanceReplicaResult::getReplicaId()const
-{
-	return replicaId_;
 }
 

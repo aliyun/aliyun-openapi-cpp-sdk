@@ -53,6 +53,10 @@ void DescribeDBProxyResult::parse(const std::string &payload)
 			dBProxyConnectStringItemsObject.dBProxyConnectStringNetType = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetType"].asString();
 		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVpcInstanceId"].isNull())
 			dBProxyConnectStringItemsObject.dBProxyVpcInstanceId = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVpcInstanceId"].asString();
+		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyEndpointName"].isNull())
+			dBProxyConnectStringItemsObject.dBProxyEndpointName = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyEndpointName"].asString();
+		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetWorkType"].isNull())
+			dBProxyConnectStringItemsObject.dBProxyConnectStringNetWorkType = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetWorkType"].asString();
 		dBProxyConnectStringItems_.push_back(dBProxyConnectStringItemsObject);
 	}
 	if(!value["DBProxyServiceStatus"].isNull())
@@ -63,7 +67,23 @@ void DescribeDBProxyResult::parse(const std::string &payload)
 		dBProxyInstanceNum_ = std::stoi(value["DBProxyInstanceNum"].asString());
 	if(!value["DBProxyInstanceStatus"].isNull())
 		dBProxyInstanceStatus_ = value["DBProxyInstanceStatus"].asString();
+	if(!value["DBProxyInstanceCurrentMinorVersion"].isNull())
+		dBProxyInstanceCurrentMinorVersion_ = value["DBProxyInstanceCurrentMinorVersion"].asString();
+	if(!value["DBProxyInstanceLatestMinorVersion"].isNull())
+		dBProxyInstanceLatestMinorVersion_ = value["DBProxyInstanceLatestMinorVersion"].asString();
+	if(!value["DBProxyInstanceName"].isNull())
+		dBProxyInstanceName_ = value["DBProxyInstanceName"].asString();
 
+}
+
+std::string DescribeDBProxyResult::getDBProxyInstanceName()const
+{
+	return dBProxyInstanceName_;
+}
+
+std::string DescribeDBProxyResult::getDBProxyInstanceCurrentMinorVersion()const
+{
+	return dBProxyInstanceCurrentMinorVersion_;
 }
 
 std::string DescribeDBProxyResult::getDBProxyServiceStatus()const
@@ -74,6 +94,11 @@ std::string DescribeDBProxyResult::getDBProxyServiceStatus()const
 int DescribeDBProxyResult::getDBProxyInstanceNum()const
 {
 	return dBProxyInstanceNum_;
+}
+
+std::string DescribeDBProxyResult::getDBProxyInstanceLatestMinorVersion()const
+{
+	return dBProxyInstanceLatestMinorVersion_;
 }
 
 std::vector<DescribeDBProxyResult::DBProxyConnectStringItemsItem> DescribeDBProxyResult::getDBProxyConnectStringItems()const

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rds/model/RestoreDBInstanceResult.h>
+#include <alibabacloud/rds/model/ModifyDedicatedHostAccountResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rds;
 using namespace AlibabaCloud::Rds::Model;
 
-RestoreDBInstanceResult::RestoreDBInstanceResult() :
+ModifyDedicatedHostAccountResult::ModifyDedicatedHostAccountResult() :
 	ServiceResult()
 {}
 
-RestoreDBInstanceResult::RestoreDBInstanceResult(const std::string &payload) :
+ModifyDedicatedHostAccountResult::ModifyDedicatedHostAccountResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RestoreDBInstanceResult::~RestoreDBInstanceResult()
+ModifyDedicatedHostAccountResult::~ModifyDedicatedHostAccountResult()
 {}
 
-void RestoreDBInstanceResult::parse(const std::string &payload)
+void ModifyDedicatedHostAccountResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

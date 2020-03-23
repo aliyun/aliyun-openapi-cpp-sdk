@@ -39,10 +39,6 @@ void DescribeSQLCollectorRetentionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceID"].isNull())
-		dBInstanceID_ = std::stoi(value["DBInstanceID"].asString());
-	if(!value["DBInstanceName"].isNull())
-		dBInstanceName_ = value["DBInstanceName"].asString();
 	if(!value["ConfigValue"].isNull())
 		configValue_ = value["ConfigValue"].asString();
 
@@ -51,15 +47,5 @@ void DescribeSQLCollectorRetentionResult::parse(const std::string &payload)
 std::string DescribeSQLCollectorRetentionResult::getConfigValue()const
 {
 	return configValue_;
-}
-
-int DescribeSQLCollectorRetentionResult::getDBInstanceID()const
-{
-	return dBInstanceID_;
-}
-
-std::string DescribeSQLCollectorRetentionResult::getDBInstanceName()const
-{
-	return dBInstanceName_;
 }
 

@@ -35,7 +35,7 @@ long UpgradeDBInstanceEngineVersionRequest::getResourceOwnerId()const
 void UpgradeDBInstanceEngineVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getClientToken()const
 void UpgradeDBInstanceEngineVersionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getEngineVersion()const
@@ -57,7 +57,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getEngineVersion()const
 void UpgradeDBInstanceEngineVersionRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getAccessKeyId()const
 void UpgradeDBInstanceEngineVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getEffectiveTime()const
@@ -79,7 +79,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getEffectiveTime()const
 void UpgradeDBInstanceEngineVersionRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", effectiveTime);
+	setParameter("EffectiveTime", effectiveTime);
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getDBInstanceId()const
@@ -90,7 +90,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getDBInstanceId()const
 void UpgradeDBInstanceEngineVersionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getResourceOwnerAccount()cons
 void UpgradeDBInstanceEngineVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getOwnerAccount()const
 void UpgradeDBInstanceEngineVersionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UpgradeDBInstanceEngineVersionRequest::getOwnerId()const
@@ -123,6 +123,6 @@ long UpgradeDBInstanceEngineVersionRequest::getOwnerId()const
 void UpgradeDBInstanceEngineVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

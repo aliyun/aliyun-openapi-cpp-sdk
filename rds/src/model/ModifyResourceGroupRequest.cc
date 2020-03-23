@@ -35,7 +35,7 @@ long ModifyResourceGroupRequest::getResourceOwnerId()const
 void ModifyResourceGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyResourceGroupRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string ModifyResourceGroupRequest::getClientToken()const
 void ModifyResourceGroupRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyResourceGroupRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifyResourceGroupRequest::getAccessKeyId()const
 void ModifyResourceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyResourceGroupRequest::getResourceGroupId()const
@@ -68,7 +68,7 @@ std::string ModifyResourceGroupRequest::getResourceGroupId()const
 void ModifyResourceGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string ModifyResourceGroupRequest::getDBInstanceId()const
@@ -79,7 +79,7 @@ std::string ModifyResourceGroupRequest::getDBInstanceId()const
 void ModifyResourceGroupRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyResourceGroupRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyResourceGroupRequest::getResourceOwnerAccount()const
 void ModifyResourceGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyResourceGroupRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyResourceGroupRequest::getOwnerAccount()const
 void ModifyResourceGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyResourceGroupRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long ModifyResourceGroupRequest::getOwnerId()const
 void ModifyResourceGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,7 +35,7 @@ long DescribeParameterGroupsRequest::getResourceOwnerId()const
 void DescribeParameterGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeParameterGroupsRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeParameterGroupsRequest::getResourceOwnerAccount()const
 void DescribeParameterGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeParameterGroupsRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DescribeParameterGroupsRequest::getOwnerId()const
 void DescribeParameterGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeParameterGroupsRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeParameterGroupsRequest::getAccessKeyId()const
 void DescribeParameterGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeParameterGroupsRequest::getRegionId()const
@@ -79,6 +79,6 @@ std::string DescribeParameterGroupsRequest::getRegionId()const
 void DescribeParameterGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

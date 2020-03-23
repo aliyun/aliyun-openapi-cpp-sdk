@@ -35,7 +35,7 @@ long DescribeSQLCollectorRetentionRequest::getResourceOwnerId()const
 void DescribeSQLCollectorRetentionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSQLCollectorRetentionRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeSQLCollectorRetentionRequest::getAccessKeyId()const
 void DescribeSQLCollectorRetentionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSQLCollectorRetentionRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeSQLCollectorRetentionRequest::getSecurityToken()const
 void DescribeSQLCollectorRetentionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeSQLCollectorRetentionRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string DescribeSQLCollectorRetentionRequest::getDBInstanceId()const
 void DescribeSQLCollectorRetentionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeSQLCollectorRetentionRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeSQLCollectorRetentionRequest::getResourceOwnerAccount()const
 void DescribeSQLCollectorRetentionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSQLCollectorRetentionRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeSQLCollectorRetentionRequest::getOwnerAccount()const
 void DescribeSQLCollectorRetentionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeSQLCollectorRetentionRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DescribeSQLCollectorRetentionRequest::getOwnerId()const
 void DescribeSQLCollectorRetentionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

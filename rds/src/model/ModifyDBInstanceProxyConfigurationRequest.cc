@@ -35,7 +35,7 @@ long ModifyDBInstanceProxyConfigurationRequest::getResourceOwnerId()const
 void ModifyDBInstanceProxyConfigurationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBInstanceProxyConfigurationRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string ModifyDBInstanceProxyConfigurationRequest::getResourceOwnerAccount()
 void ModifyDBInstanceProxyConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBInstanceProxyConfigurationRequest::getProxyConfigurationValue()const
@@ -57,7 +57,7 @@ std::string ModifyDBInstanceProxyConfigurationRequest::getProxyConfigurationValu
 void ModifyDBInstanceProxyConfigurationRequest::setProxyConfigurationValue(const std::string& proxyConfigurationValue)
 {
 	proxyConfigurationValue_ = proxyConfigurationValue;
-	setCoreParameter("ProxyConfigurationValue", proxyConfigurationValue);
+	setParameter("ProxyConfigurationValue", proxyConfigurationValue);
 }
 
 long ModifyDBInstanceProxyConfigurationRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long ModifyDBInstanceProxyConfigurationRequest::getOwnerId()const
 void ModifyDBInstanceProxyConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBInstanceProxyConfigurationRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string ModifyDBInstanceProxyConfigurationRequest::getAccessKeyId()const
 void ModifyDBInstanceProxyConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceProxyConfigurationRequest::getProxyConfigurationKey()const
@@ -90,7 +90,7 @@ std::string ModifyDBInstanceProxyConfigurationRequest::getProxyConfigurationKey(
 void ModifyDBInstanceProxyConfigurationRequest::setProxyConfigurationKey(const std::string& proxyConfigurationKey)
 {
 	proxyConfigurationKey_ = proxyConfigurationKey;
-	setCoreParameter("ProxyConfigurationKey", proxyConfigurationKey);
+	setParameter("ProxyConfigurationKey", proxyConfigurationKey);
 }
 
 std::string ModifyDBInstanceProxyConfigurationRequest::getDBInstanceId()const
@@ -101,6 +101,6 @@ std::string ModifyDBInstanceProxyConfigurationRequest::getDBInstanceId()const
 void ModifyDBInstanceProxyConfigurationRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

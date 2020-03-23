@@ -85,6 +85,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.slaveStatus = valueItemsBackup["SlaveStatus"].asString();
 		if(!valueItemsBackup["ConsistentTime"].isNull())
 			itemsObject.consistentTime = std::stol(valueItemsBackup["ConsistentTime"].asString());
+		if(!valueItemsBackup["BackupInitiator"].isNull())
+			itemsObject.backupInitiator = valueItemsBackup["BackupInitiator"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

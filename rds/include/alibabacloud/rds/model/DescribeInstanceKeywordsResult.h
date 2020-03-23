@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_CREATEDBINSTANCEREPLICARESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_CREATEDBINSTANCEREPLICARESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEINSTANCEKEYWORDSRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEINSTANCEKEYWORDSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT CreateDBInstanceReplicaResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT DescribeInstanceKeywordsResult : public ServiceResult
 			{
 			public:
 
 
-				CreateDBInstanceReplicaResult();
-				explicit CreateDBInstanceReplicaResult(const std::string &payload);
-				~CreateDBInstanceReplicaResult();
-				std::string getDBInstanceId()const;
-				long getOrderId()const;
-				std::string getWorkflowId()const;
-				std::string getReplicaId()const;
+				DescribeInstanceKeywordsResult();
+				explicit DescribeInstanceKeywordsResult(const std::string &payload);
+				~DescribeInstanceKeywordsResult();
+				std::vector<std::string> getWords()const;
+				std::string getKey()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dBInstanceId_;
-				long orderId_;
-				std::string workflowId_;
-				std::string replicaId_;
+				std::vector<std::string> words_;
+				std::string key_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_CREATEDBINSTANCEREPLICARESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEINSTANCEKEYWORDSRESULT_H_

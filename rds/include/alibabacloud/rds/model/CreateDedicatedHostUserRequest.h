@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEMIGRATETASKBYIDREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEMIGRATETASKBYIDREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_CREATEDEDICATEDHOSTUSERREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_CREATEDEDICATEDHOSTUSERREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeMigrateTaskByIdRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT CreateDedicatedHostUserRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeMigrateTaskByIdRequest();
-				~DescribeMigrateTaskByIdRequest();
+				CreateDedicatedHostUserRequest();
+				~CreateDedicatedHostUserRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getMigrateTaskId()const;
-				void setMigrateTaskId(const std::string& migrateTaskId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserPassword()const;
+				void setUserPassword(const std::string& userPassword);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getDedicatedHostName()const;
+				void setDedicatedHostName(const std::string& dedicatedHostName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getUserName()const;
+				void setUserName(const std::string& userName);
 
             private:
 				long resourceOwnerId_;
-				std::string migrateTaskId_;
+				std::string accessKeyId_;
+				std::string userPassword_;
+				std::string regionId_;
+				std::string dedicatedHostName_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
-				std::string dBInstanceId_;
+				std::string userName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEMIGRATETASKBYIDREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_CREATEDEDICATEDHOSTUSERREQUEST_H_

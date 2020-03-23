@@ -59,6 +59,8 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 			itemsObject.returnRowCounts = std::stol(valueItemsSQLSlowRecord["ReturnRowCounts"].asString());
 		if(!valueItemsSQLSlowRecord["ExecutionStartTime"].isNull())
 			itemsObject.executionStartTime = valueItemsSQLSlowRecord["ExecutionStartTime"].asString();
+		if(!valueItemsSQLSlowRecord["QueryTimeMS"].isNull())
+			itemsObject.queryTimeMS = std::stol(valueItemsSQLSlowRecord["QueryTimeMS"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceId"].isNull())

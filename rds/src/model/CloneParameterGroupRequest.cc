@@ -35,7 +35,7 @@ long CloneParameterGroupRequest::getResourceOwnerId()const
 void CloneParameterGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CloneParameterGroupRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string CloneParameterGroupRequest::getAccessKeyId()const
 void CloneParameterGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CloneParameterGroupRequest::getParameterGroupId()const
@@ -57,7 +57,7 @@ std::string CloneParameterGroupRequest::getParameterGroupId()const
 void CloneParameterGroupRequest::setParameterGroupId(const std::string& parameterGroupId)
 {
 	parameterGroupId_ = parameterGroupId;
-	setCoreParameter("ParameterGroupId", parameterGroupId);
+	setParameter("ParameterGroupId", parameterGroupId);
 }
 
 std::string CloneParameterGroupRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string CloneParameterGroupRequest::getRegionId()const
 void CloneParameterGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CloneParameterGroupRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string CloneParameterGroupRequest::getResourceOwnerAccount()const
 void CloneParameterGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long CloneParameterGroupRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long CloneParameterGroupRequest::getOwnerId()const
 void CloneParameterGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CloneParameterGroupRequest::getTargetRegionId()const
@@ -101,7 +101,7 @@ std::string CloneParameterGroupRequest::getTargetRegionId()const
 void CloneParameterGroupRequest::setTargetRegionId(const std::string& targetRegionId)
 {
 	targetRegionId_ = targetRegionId;
-	setCoreParameter("TargetRegionId", targetRegionId);
+	setParameter("TargetRegionId", targetRegionId);
 }
 
 std::string CloneParameterGroupRequest::getParameterGroupName()const
@@ -112,7 +112,7 @@ std::string CloneParameterGroupRequest::getParameterGroupName()const
 void CloneParameterGroupRequest::setParameterGroupName(const std::string& parameterGroupName)
 {
 	parameterGroupName_ = parameterGroupName;
-	setCoreParameter("ParameterGroupName", parameterGroupName);
+	setParameter("ParameterGroupName", parameterGroupName);
 }
 
 std::string CloneParameterGroupRequest::getParameterGroupDesc()const
@@ -123,6 +123,6 @@ std::string CloneParameterGroupRequest::getParameterGroupDesc()const
 void CloneParameterGroupRequest::setParameterGroupDesc(const std::string& parameterGroupDesc)
 {
 	parameterGroupDesc_ = parameterGroupDesc;
-	setCoreParameter("ParameterGroupDesc", parameterGroupDesc);
+	setParameter("ParameterGroupDesc", parameterGroupDesc);
 }
 

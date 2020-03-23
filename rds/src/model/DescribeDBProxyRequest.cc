@@ -35,7 +35,7 @@ long DescribeDBProxyRequest::getResourceOwnerId()const
 void DescribeDBProxyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBProxyRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeDBProxyRequest::getResourceOwnerAccount()const
 void DescribeDBProxyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeDBProxyRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DescribeDBProxyRequest::getOwnerId()const
 void DescribeDBProxyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBProxyRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeDBProxyRequest::getAccessKeyId()const
 void DescribeDBProxyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBProxyRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string DescribeDBProxyRequest::getRegionId()const
 void DescribeDBProxyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDBProxyRequest::getDBInstanceId()const
@@ -90,6 +90,6 @@ std::string DescribeDBProxyRequest::getDBInstanceId()const
 void DescribeDBProxyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

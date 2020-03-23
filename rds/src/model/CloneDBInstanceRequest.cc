@@ -35,7 +35,7 @@ long CloneDBInstanceRequest::getResourceOwnerId()const
 void CloneDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int CloneDBInstanceRequest::getDBInstanceStorage()const
@@ -46,7 +46,7 @@ int CloneDBInstanceRequest::getDBInstanceStorage()const
 void CloneDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+	setParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
 }
 
 std::string CloneDBInstanceRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string CloneDBInstanceRequest::getClientToken()const
 void CloneDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CloneDBInstanceRequest::getZoneIdSlave1()const
@@ -68,7 +68,7 @@ std::string CloneDBInstanceRequest::getZoneIdSlave1()const
 void CloneDBInstanceRequest::setZoneIdSlave1(const std::string& zoneIdSlave1)
 {
 	zoneIdSlave1_ = zoneIdSlave1;
-	setCoreParameter("ZoneIdSlave1", zoneIdSlave1);
+	setParameter("ZoneIdSlave1", zoneIdSlave1);
 }
 
 std::string CloneDBInstanceRequest::getZoneIdSlave2()const
@@ -79,7 +79,7 @@ std::string CloneDBInstanceRequest::getZoneIdSlave2()const
 void CloneDBInstanceRequest::setZoneIdSlave2(const std::string& zoneIdSlave2)
 {
 	zoneIdSlave2_ = zoneIdSlave2;
-	setCoreParameter("ZoneIdSlave2", zoneIdSlave2);
+	setParameter("ZoneIdSlave2", zoneIdSlave2);
 }
 
 std::string CloneDBInstanceRequest::getAccessKeyId()const
@@ -90,7 +90,7 @@ std::string CloneDBInstanceRequest::getAccessKeyId()const
 void CloneDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CloneDBInstanceRequest::getResourceGroupId()const
@@ -101,7 +101,7 @@ std::string CloneDBInstanceRequest::getResourceGroupId()const
 void CloneDBInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CloneDBInstanceRequest::getRegionId()const
@@ -112,7 +112,7 @@ std::string CloneDBInstanceRequest::getRegionId()const
 void CloneDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CloneDBInstanceRequest::getTableMeta()const
@@ -123,7 +123,7 @@ std::string CloneDBInstanceRequest::getTableMeta()const
 void CloneDBInstanceRequest::setTableMeta(const std::string& tableMeta)
 {
 	tableMeta_ = tableMeta;
-	setCoreParameter("TableMeta", tableMeta);
+	setParameter("TableMeta", tableMeta);
 }
 
 std::string CloneDBInstanceRequest::getDBInstanceDescription()const
@@ -134,7 +134,7 @@ std::string CloneDBInstanceRequest::getDBInstanceDescription()const
 void CloneDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
 {
 	dBInstanceDescription_ = dBInstanceDescription;
-	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
+	setParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
 std::string CloneDBInstanceRequest::getDBInstanceId()const
@@ -145,7 +145,7 @@ std::string CloneDBInstanceRequest::getDBInstanceId()const
 void CloneDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string CloneDBInstanceRequest::getDBInstanceStorageType()const
@@ -156,7 +156,7 @@ std::string CloneDBInstanceRequest::getDBInstanceStorageType()const
 void CloneDBInstanceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
 {
 	dBInstanceStorageType_ = dBInstanceStorageType;
-	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+	setParameter("DBInstanceStorageType", dBInstanceStorageType);
 }
 
 std::string CloneDBInstanceRequest::getDedicatedHostGroupId()const
@@ -167,7 +167,18 @@ std::string CloneDBInstanceRequest::getDedicatedHostGroupId()const
 void CloneDBInstanceRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
 {
 	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+}
+
+std::string CloneDBInstanceRequest::getBackupType()const
+{
+	return backupType_;
+}
+
+void CloneDBInstanceRequest::setBackupType(const std::string& backupType)
+{
+	backupType_ = backupType;
+	setParameter("BackupType", backupType);
 }
 
 std::string CloneDBInstanceRequest::getRestoreTime()const
@@ -178,7 +189,7 @@ std::string CloneDBInstanceRequest::getRestoreTime()const
 void CloneDBInstanceRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
+	setParameter("RestoreTime", restoreTime);
 }
 
 std::string CloneDBInstanceRequest::getPeriod()const
@@ -189,7 +200,7 @@ std::string CloneDBInstanceRequest::getPeriod()const
 void CloneDBInstanceRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setParameter("Period", period);
 }
 
 std::string CloneDBInstanceRequest::getResourceOwnerAccount()const
@@ -200,7 +211,7 @@ std::string CloneDBInstanceRequest::getResourceOwnerAccount()const
 void CloneDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CloneDBInstanceRequest::getBackupId()const
@@ -211,7 +222,7 @@ std::string CloneDBInstanceRequest::getBackupId()const
 void CloneDBInstanceRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setParameter("BackupId", backupId);
 }
 
 std::string CloneDBInstanceRequest::getOwnerAccount()const
@@ -222,7 +233,7 @@ std::string CloneDBInstanceRequest::getOwnerAccount()const
 void CloneDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CloneDBInstanceRequest::getRestoreTable()const
@@ -233,7 +244,7 @@ std::string CloneDBInstanceRequest::getRestoreTable()const
 void CloneDBInstanceRequest::setRestoreTable(const std::string& restoreTable)
 {
 	restoreTable_ = restoreTable;
-	setCoreParameter("RestoreTable", restoreTable);
+	setParameter("RestoreTable", restoreTable);
 }
 
 long CloneDBInstanceRequest::getOwnerId()const
@@ -244,18 +255,18 @@ long CloneDBInstanceRequest::getOwnerId()const
 void CloneDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CloneDBInstanceRequest::getUsedTime()const
+int CloneDBInstanceRequest::getUsedTime()const
 {
 	return usedTime_;
 }
 
-void CloneDBInstanceRequest::setUsedTime(const std::string& usedTime)
+void CloneDBInstanceRequest::setUsedTime(int usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", usedTime);
+	setParameter("UsedTime", std::to_string(usedTime));
 }
 
 std::string CloneDBInstanceRequest::getDBInstanceClass()const
@@ -266,7 +277,7 @@ std::string CloneDBInstanceRequest::getDBInstanceClass()const
 void CloneDBInstanceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
+	setParameter("DBInstanceClass", dBInstanceClass);
 }
 
 std::string CloneDBInstanceRequest::getDbNames()const
@@ -277,7 +288,7 @@ std::string CloneDBInstanceRequest::getDbNames()const
 void CloneDBInstanceRequest::setDbNames(const std::string& dbNames)
 {
 	dbNames_ = dbNames;
-	setCoreParameter("DbNames", dbNames);
+	setParameter("DbNames", dbNames);
 }
 
 std::string CloneDBInstanceRequest::getVSwitchId()const
@@ -288,7 +299,7 @@ std::string CloneDBInstanceRequest::getVSwitchId()const
 void CloneDBInstanceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string CloneDBInstanceRequest::getPrivateIpAddress()const
@@ -299,7 +310,7 @@ std::string CloneDBInstanceRequest::getPrivateIpAddress()const
 void CloneDBInstanceRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setParameter("PrivateIpAddress", privateIpAddress);
 }
 
 std::string CloneDBInstanceRequest::getVPCId()const
@@ -310,7 +321,7 @@ std::string CloneDBInstanceRequest::getVPCId()const
 void CloneDBInstanceRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
-	setCoreParameter("VPCId", vPCId);
+	setParameter("VPCId", vPCId);
 }
 
 std::string CloneDBInstanceRequest::getZoneId()const
@@ -321,7 +332,7 @@ std::string CloneDBInstanceRequest::getZoneId()const
 void CloneDBInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string CloneDBInstanceRequest::getCategory()const
@@ -332,7 +343,7 @@ std::string CloneDBInstanceRequest::getCategory()const
 void CloneDBInstanceRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setParameter("Category", category);
 }
 
 std::string CloneDBInstanceRequest::getPayType()const
@@ -343,7 +354,7 @@ std::string CloneDBInstanceRequest::getPayType()const
 void CloneDBInstanceRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setParameter("PayType", payType);
 }
 
 std::string CloneDBInstanceRequest::getInstanceNetworkType()const
@@ -354,6 +365,6 @@ std::string CloneDBInstanceRequest::getInstanceNetworkType()const
 void CloneDBInstanceRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setCoreParameter("InstanceNetworkType", instanceNetworkType);
+	setParameter("InstanceNetworkType", instanceNetworkType);
 }
 

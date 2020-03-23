@@ -65,6 +65,8 @@ namespace AlibabaCloud
 				void setDBInstanceClass(const std::string& dBInstanceClass);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 				std::string getOrderType()const;
 				void setOrderType(const std::string& orderType);
 
@@ -84,6 +86,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string dBInstanceClass_;
 				std::string zoneId_;
+				std::string category_;
 				std::string orderType_;
 
 			};

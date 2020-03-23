@@ -35,7 +35,7 @@ long DescribeEventsRequest::getResourceOwnerId()const
 void DescribeEventsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeEventsRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeEventsRequest::getStartTime()const
 void DescribeEventsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int DescribeEventsRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeEventsRequest::getPageNumber()const
 void DescribeEventsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeEventsRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeEventsRequest::getAccessKeyId()const
 void DescribeEventsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeEventsRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string DescribeEventsRequest::getRegionId()const
 void DescribeEventsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeEventsRequest::getPageSize()const
@@ -90,7 +90,7 @@ int DescribeEventsRequest::getPageSize()const
 void DescribeEventsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeEventsRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeEventsRequest::getResourceOwnerAccount()const
 void DescribeEventsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeEventsRequest::getEndTime()const
@@ -112,7 +112,7 @@ std::string DescribeEventsRequest::getEndTime()const
 void DescribeEventsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeEventsRequest::getOwnerId()const
@@ -123,6 +123,6 @@ long DescribeEventsRequest::getOwnerId()const
 void DescribeEventsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

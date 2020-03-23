@@ -42,11 +42,15 @@ namespace AlibabaCloud
 					std::string dedicatedHostGroupId;
 					std::string hostReplacePolicy;
 					std::string createTime;
+					std::string bastionInstanceId;
 					std::string text;
+					std::vector<std::string> zoneIDList;
 					std::string dedicatedHostGroupDesc;
+					std::string openPermission;
 					int cpuAllocationRatio;
 					int hostNumber;
 					std::string engine;
+					std::string dedicatedHostCountGroupByHostType;
 				};
 
 

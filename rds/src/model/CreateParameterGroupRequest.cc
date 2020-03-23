@@ -35,7 +35,7 @@ long CreateParameterGroupRequest::getResourceOwnerId()const
 void CreateParameterGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateParameterGroupRequest::getEngineVersion()const
@@ -46,7 +46,7 @@ std::string CreateParameterGroupRequest::getEngineVersion()const
 void CreateParameterGroupRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 std::string CreateParameterGroupRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string CreateParameterGroupRequest::getAccessKeyId()const
 void CreateParameterGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateParameterGroupRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string CreateParameterGroupRequest::getRegionId()const
 void CreateParameterGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateParameterGroupRequest::getEngine()const
@@ -79,7 +79,7 @@ std::string CreateParameterGroupRequest::getEngine()const
 void CreateParameterGroupRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string CreateParameterGroupRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string CreateParameterGroupRequest::getResourceOwnerAccount()const
 void CreateParameterGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long CreateParameterGroupRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long CreateParameterGroupRequest::getOwnerId()const
 void CreateParameterGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateParameterGroupRequest::getParameterGroupName()const
@@ -112,7 +112,7 @@ std::string CreateParameterGroupRequest::getParameterGroupName()const
 void CreateParameterGroupRequest::setParameterGroupName(const std::string& parameterGroupName)
 {
 	parameterGroupName_ = parameterGroupName;
-	setCoreParameter("ParameterGroupName", parameterGroupName);
+	setParameter("ParameterGroupName", parameterGroupName);
 }
 
 std::string CreateParameterGroupRequest::getParameters()const
@@ -123,7 +123,7 @@ std::string CreateParameterGroupRequest::getParameters()const
 void CreateParameterGroupRequest::setParameters(const std::string& parameters)
 {
 	parameters_ = parameters;
-	setCoreParameter("Parameters", parameters);
+	setParameter("Parameters", parameters);
 }
 
 std::string CreateParameterGroupRequest::getParameterGroupDesc()const
@@ -134,6 +134,6 @@ std::string CreateParameterGroupRequest::getParameterGroupDesc()const
 void CreateParameterGroupRequest::setParameterGroupDesc(const std::string& parameterGroupDesc)
 {
 	parameterGroupDesc_ = parameterGroupDesc;
-	setCoreParameter("ParameterGroupDesc", parameterGroupDesc);
+	setParameter("ParameterGroupDesc", parameterGroupDesc);
 }
 

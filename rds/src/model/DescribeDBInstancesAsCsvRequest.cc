@@ -35,7 +35,7 @@ long DescribeDBInstancesAsCsvRequest::getResourceOwnerId()const
 void DescribeDBInstancesAsCsvRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstancesAsCsvRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeDBInstancesAsCsvRequest::getResourceOwnerAccount()const
 void DescribeDBInstancesAsCsvRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeDBInstancesAsCsvRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DescribeDBInstancesAsCsvRequest::getOwnerId()const
 void DescribeDBInstancesAsCsvRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstancesAsCsvRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeDBInstancesAsCsvRequest::getAccessKeyId()const
 void DescribeDBInstancesAsCsvRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstancesAsCsvRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string DescribeDBInstancesAsCsvRequest::getRegionId()const
 void DescribeDBInstancesAsCsvRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDBInstancesAsCsvRequest::getDBInstanceId()const
@@ -90,6 +90,6 @@ std::string DescribeDBInstancesAsCsvRequest::getDBInstanceId()const
 void DescribeDBInstancesAsCsvRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

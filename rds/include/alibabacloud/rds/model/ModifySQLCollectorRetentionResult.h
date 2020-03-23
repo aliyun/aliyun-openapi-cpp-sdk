@@ -37,16 +37,10 @@ namespace AlibabaCloud
 				ModifySQLCollectorRetentionResult();
 				explicit ModifySQLCollectorRetentionResult(const std::string &payload);
 				~ModifySQLCollectorRetentionResult();
-				int getTaskId()const;
-				int getDBInstanceID()const;
-				std::string getDBInstanceName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int taskId_;
-				int dBInstanceID_;
-				std::string dBInstanceName_;
 
 			};
 		}

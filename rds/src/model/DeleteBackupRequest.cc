@@ -35,7 +35,7 @@ long DeleteBackupRequest::getResourceOwnerId()const
 void DeleteBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteBackupRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DeleteBackupRequest::getResourceOwnerAccount()const
 void DeleteBackupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteBackupRequest::getBackupId()const
@@ -57,7 +57,7 @@ std::string DeleteBackupRequest::getBackupId()const
 void DeleteBackupRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setParameter("BackupId", backupId);
 }
 
 std::string DeleteBackupRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DeleteBackupRequest::getOwnerAccount()const
 void DeleteBackupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteBackupRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long DeleteBackupRequest::getOwnerId()const
 void DeleteBackupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteBackupRequest::getAccessKeyId()const
@@ -90,7 +90,7 @@ std::string DeleteBackupRequest::getAccessKeyId()const
 void DeleteBackupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteBackupRequest::getDBInstanceId()const
@@ -101,6 +101,6 @@ std::string DeleteBackupRequest::getDBInstanceId()const
 void DeleteBackupRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

@@ -71,6 +71,16 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 			dedicatedHostsObject.dedicatedHostId = valueDedicatedHostsDedicatedHostsItem["DedicatedHostId"].asString();
 		if(!valueDedicatedHostsDedicatedHostsItem["AllocationStatus"].isNull())
 			dedicatedHostsObject.allocationStatus = valueDedicatedHostsDedicatedHostsItem["AllocationStatus"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["EndTime"].isNull())
+			dedicatedHostsObject.endTime = valueDedicatedHostsDedicatedHostsItem["EndTime"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["HostType"].isNull())
+			dedicatedHostsObject.hostType = valueDedicatedHostsDedicatedHostsItem["HostType"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["BastionInstanceId"].isNull())
+			dedicatedHostsObject.bastionInstanceId = valueDedicatedHostsDedicatedHostsItem["BastionInstanceId"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["OpenPermission"].isNull())
+			dedicatedHostsObject.openPermission = valueDedicatedHostsDedicatedHostsItem["OpenPermission"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["AccountName"].isNull())
+			dedicatedHostsObject.accountName = valueDedicatedHostsDedicatedHostsItem["AccountName"].asString();
 		dedicatedHosts_.push_back(dedicatedHostsObject);
 	}
 	if(!value["DedicatedHostGroupId"].isNull())

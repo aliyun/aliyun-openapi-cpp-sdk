@@ -35,7 +35,7 @@ long RestartDedicatedHostRequest::getResourceOwnerId()const
 void RestartDedicatedHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RestartDedicatedHostRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string RestartDedicatedHostRequest::getResourceOwnerAccount()const
 void RestartDedicatedHostRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RestartDedicatedHostRequest::getDedicatedHostId()const
@@ -57,7 +57,7 @@ std::string RestartDedicatedHostRequest::getDedicatedHostId()const
 void RestartDedicatedHostRequest::setDedicatedHostId(const std::string& dedicatedHostId)
 {
 	dedicatedHostId_ = dedicatedHostId;
-	setCoreParameter("DedicatedHostId", dedicatedHostId);
+	setParameter("DedicatedHostId", dedicatedHostId);
 }
 
 long RestartDedicatedHostRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long RestartDedicatedHostRequest::getOwnerId()const
 void RestartDedicatedHostRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RestartDedicatedHostRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string RestartDedicatedHostRequest::getAccessKeyId()const
 void RestartDedicatedHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RestartDedicatedHostRequest::getRegionId()const
@@ -90,7 +90,7 @@ std::string RestartDedicatedHostRequest::getRegionId()const
 void RestartDedicatedHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string RestartDedicatedHostRequest::getFailoverMode()const
@@ -101,6 +101,6 @@ std::string RestartDedicatedHostRequest::getFailoverMode()const
 void RestartDedicatedHostRequest::setFailoverMode(const std::string& failoverMode)
 {
 	failoverMode_ = failoverMode;
-	setCoreParameter("FailoverMode", failoverMode);
+	setParameter("FailoverMode", failoverMode);
 }
 

@@ -35,7 +35,7 @@ long DescribeOssDownloadsRequest::getResourceOwnerId()const
 void DescribeOssDownloadsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeOssDownloadsRequest::getMigrateTaskId()const
@@ -46,7 +46,7 @@ std::string DescribeOssDownloadsRequest::getMigrateTaskId()const
 void DescribeOssDownloadsRequest::setMigrateTaskId(const std::string& migrateTaskId)
 {
 	migrateTaskId_ = migrateTaskId;
-	setCoreParameter("MigrateTaskId", migrateTaskId);
+	setParameter("MigrateTaskId", migrateTaskId);
 }
 
 std::string DescribeOssDownloadsRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeOssDownloadsRequest::getResourceOwnerAccount()const
 void DescribeOssDownloadsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeOssDownloadsRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeOssDownloadsRequest::getOwnerId()const
 void DescribeOssDownloadsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeOssDownloadsRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string DescribeOssDownloadsRequest::getAccessKeyId()const
 void DescribeOssDownloadsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeOssDownloadsRequest::getDBInstanceId()const
@@ -90,6 +90,6 @@ std::string DescribeOssDownloadsRequest::getDBInstanceId()const
 void DescribeOssDownloadsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

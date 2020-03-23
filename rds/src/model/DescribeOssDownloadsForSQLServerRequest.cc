@@ -35,7 +35,7 @@ long DescribeOssDownloadsForSQLServerRequest::getResourceOwnerId()const
 void DescribeOssDownloadsForSQLServerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeOssDownloadsForSQLServerRequest::getMigrateTaskId()const
@@ -46,7 +46,7 @@ std::string DescribeOssDownloadsForSQLServerRequest::getMigrateTaskId()const
 void DescribeOssDownloadsForSQLServerRequest::setMigrateTaskId(const std::string& migrateTaskId)
 {
 	migrateTaskId_ = migrateTaskId;
-	setCoreParameter("MigrateTaskId", migrateTaskId);
+	setParameter("MigrateTaskId", migrateTaskId);
 }
 
 std::string DescribeOssDownloadsForSQLServerRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeOssDownloadsForSQLServerRequest::getResourceOwnerAccount()co
 void DescribeOssDownloadsForSQLServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeOssDownloadsForSQLServerRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeOssDownloadsForSQLServerRequest::getOwnerId()const
 void DescribeOssDownloadsForSQLServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeOssDownloadsForSQLServerRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string DescribeOssDownloadsForSQLServerRequest::getAccessKeyId()const
 void DescribeOssDownloadsForSQLServerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeOssDownloadsForSQLServerRequest::getDBInstanceId()const
@@ -90,6 +90,6 @@ std::string DescribeOssDownloadsForSQLServerRequest::getDBInstanceId()const
 void DescribeOssDownloadsForSQLServerRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

@@ -36,6 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string dBProxyConnectString;
 					std::string dBProxyEndpointId;
+					std::string dBProxyEndpointName;
+					std::string dBProxyConnectStringNetWorkType;
 					std::string dBProxyConnectStringNetType;
 					std::string dBProxyConnectStringPort;
 					std::string dBProxyVpcInstanceId;
@@ -45,8 +47,11 @@ namespace AlibabaCloud
 				DescribeDBProxyResult();
 				explicit DescribeDBProxyResult(const std::string &payload);
 				~DescribeDBProxyResult();
+				std::string getDBProxyInstanceName()const;
+				std::string getDBProxyInstanceCurrentMinorVersion()const;
 				std::string getDBProxyServiceStatus()const;
 				int getDBProxyInstanceNum()const;
+				std::string getDBProxyInstanceLatestMinorVersion()const;
 				std::vector<DBProxyConnectStringItemsItem> getDBProxyConnectStringItems()const;
 				std::string getDBProxyInstanceStatus()const;
 				std::string getDBProxyInstanceType()const;
@@ -54,8 +59,11 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dBProxyInstanceName_;
+				std::string dBProxyInstanceCurrentMinorVersion_;
 				std::string dBProxyServiceStatus_;
 				int dBProxyInstanceNum_;
+				std::string dBProxyInstanceLatestMinorVersion_;
 				std::vector<DBProxyConnectStringItemsItem> dBProxyConnectStringItems_;
 				std::string dBProxyInstanceStatus_;
 				std::string dBProxyInstanceType_;

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rds/model/ModifyReplicaDescriptionResult.h>
+#include <alibabacloud/rds/model/ModifyDedicatedHostUserResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rds;
 using namespace AlibabaCloud::Rds::Model;
 
-ModifyReplicaDescriptionResult::ModifyReplicaDescriptionResult() :
+ModifyDedicatedHostUserResult::ModifyDedicatedHostUserResult() :
 	ServiceResult()
 {}
 
-ModifyReplicaDescriptionResult::ModifyReplicaDescriptionResult(const std::string &payload) :
+ModifyDedicatedHostUserResult::ModifyDedicatedHostUserResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyReplicaDescriptionResult::~ModifyReplicaDescriptionResult()
+ModifyDedicatedHostUserResult::~ModifyDedicatedHostUserResult()
 {}
 
-void ModifyReplicaDescriptionResult::parse(const std::string &payload)
+void ModifyDedicatedHostUserResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

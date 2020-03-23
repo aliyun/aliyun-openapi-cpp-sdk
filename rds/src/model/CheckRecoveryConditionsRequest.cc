@@ -35,7 +35,7 @@ long CheckRecoveryConditionsRequest::getResourceOwnerId()const
 void CheckRecoveryConditionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CheckRecoveryConditionsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string CheckRecoveryConditionsRequest::getAccessKeyId()const
 void CheckRecoveryConditionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CheckRecoveryConditionsRequest::getDBInstanceId()const
@@ -57,7 +57,7 @@ std::string CheckRecoveryConditionsRequest::getDBInstanceId()const
 void CheckRecoveryConditionsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string CheckRecoveryConditionsRequest::getRestoreTime()const
@@ -68,7 +68,7 @@ std::string CheckRecoveryConditionsRequest::getRestoreTime()const
 void CheckRecoveryConditionsRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
+	setParameter("RestoreTime", restoreTime);
 }
 
 std::string CheckRecoveryConditionsRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string CheckRecoveryConditionsRequest::getResourceOwnerAccount()const
 void CheckRecoveryConditionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CheckRecoveryConditionsRequest::getBackupFile()const
@@ -90,7 +90,7 @@ std::string CheckRecoveryConditionsRequest::getBackupFile()const
 void CheckRecoveryConditionsRequest::setBackupFile(const std::string& backupFile)
 {
 	backupFile_ = backupFile;
-	setCoreParameter("BackupFile", backupFile);
+	setParameter("BackupFile", backupFile);
 }
 
 std::string CheckRecoveryConditionsRequest::getBackupId()const
@@ -101,7 +101,7 @@ std::string CheckRecoveryConditionsRequest::getBackupId()const
 void CheckRecoveryConditionsRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setParameter("BackupId", backupId);
 }
 
 std::string CheckRecoveryConditionsRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string CheckRecoveryConditionsRequest::getOwnerAccount()const
 void CheckRecoveryConditionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CheckRecoveryConditionsRequest::getOwnerId()const
@@ -123,6 +123,6 @@ long CheckRecoveryConditionsRequest::getOwnerId()const
 void CheckRecoveryConditionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

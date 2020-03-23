@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DescribeBackupTasksRequest();
 				~DescribeBackupTasksRequest();
 
-				std::string getBackupJobId()const;
-				void setBackupJobId(const std::string& backupJobId);
+				int getBackupJobId()const;
+				void setBackupJobId(int backupJobId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getFlag()const;
@@ -59,7 +59,7 @@ namespace AlibabaCloud
 				void setBackupMode(const std::string& backupMode);
 
             private:
-				std::string backupJobId_;
+				int backupJobId_;
 				long resourceOwnerId_;
 				std::string flag_;
 				std::string clientToken_;

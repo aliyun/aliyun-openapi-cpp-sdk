@@ -35,7 +35,7 @@ long DescribeDBInstanceProxyConfigurationRequest::getResourceOwnerId()const
 void DescribeDBInstanceProxyConfigurationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstanceProxyConfigurationRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeDBInstanceProxyConfigurationRequest::getResourceOwnerAccount
 void DescribeDBInstanceProxyConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeDBInstanceProxyConfigurationRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DescribeDBInstanceProxyConfigurationRequest::getOwnerId()const
 void DescribeDBInstanceProxyConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstanceProxyConfigurationRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeDBInstanceProxyConfigurationRequest::getAccessKeyId()const
 void DescribeDBInstanceProxyConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstanceProxyConfigurationRequest::getDBInstanceId()const
@@ -79,6 +79,6 @@ std::string DescribeDBInstanceProxyConfigurationRequest::getDBInstanceId()const
 void DescribeDBInstanceProxyConfigurationRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

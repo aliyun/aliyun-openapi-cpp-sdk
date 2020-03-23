@@ -35,7 +35,7 @@ long DescribeAvailableDedicatedHostClassesRequest::getResourceOwnerId()const
 void DescribeAvailableDedicatedHostClassesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAvailableDedicatedHostClassesRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeAvailableDedicatedHostClassesRequest::getResourceOwnerAccoun
 void DescribeAvailableDedicatedHostClassesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeAvailableDedicatedHostClassesRequest::getOwnerId()const
@@ -57,7 +57,18 @@ long DescribeAvailableDedicatedHostClassesRequest::getOwnerId()const
 void DescribeAvailableDedicatedHostClassesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeAvailableDedicatedHostClassesRequest::getStorageType()const
+{
+	return storageType_;
+}
+
+void DescribeAvailableDedicatedHostClassesRequest::setStorageType(const std::string& storageType)
+{
+	storageType_ = storageType;
+	setParameter("StorageType", storageType);
 }
 
 std::string DescribeAvailableDedicatedHostClassesRequest::getAccessKeyId()const
@@ -68,7 +79,7 @@ std::string DescribeAvailableDedicatedHostClassesRequest::getAccessKeyId()const
 void DescribeAvailableDedicatedHostClassesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAvailableDedicatedHostClassesRequest::getRegionId()const
@@ -79,7 +90,7 @@ std::string DescribeAvailableDedicatedHostClassesRequest::getRegionId()const
 void DescribeAvailableDedicatedHostClassesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeAvailableDedicatedHostClassesRequest::getZoneId()const
@@ -90,6 +101,6 @@ std::string DescribeAvailableDedicatedHostClassesRequest::getZoneId()const
 void DescribeAvailableDedicatedHostClassesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

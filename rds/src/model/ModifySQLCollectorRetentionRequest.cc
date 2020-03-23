@@ -35,7 +35,7 @@ long ModifySQLCollectorRetentionRequest::getResourceOwnerId()const
 void ModifySQLCollectorRetentionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySQLCollectorRetentionRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifySQLCollectorRetentionRequest::getAccessKeyId()const
 void ModifySQLCollectorRetentionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifySQLCollectorRetentionRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string ModifySQLCollectorRetentionRequest::getSecurityToken()const
 void ModifySQLCollectorRetentionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifySQLCollectorRetentionRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string ModifySQLCollectorRetentionRequest::getDBInstanceId()const
 void ModifySQLCollectorRetentionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifySQLCollectorRetentionRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifySQLCollectorRetentionRequest::getResourceOwnerAccount()const
 void ModifySQLCollectorRetentionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifySQLCollectorRetentionRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifySQLCollectorRetentionRequest::getOwnerAccount()const
 void ModifySQLCollectorRetentionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifySQLCollectorRetentionRequest::getConfigValue()const
@@ -101,7 +101,7 @@ std::string ModifySQLCollectorRetentionRequest::getConfigValue()const
 void ModifySQLCollectorRetentionRequest::setConfigValue(const std::string& configValue)
 {
 	configValue_ = configValue;
-	setCoreParameter("ConfigValue", configValue);
+	setParameter("ConfigValue", configValue);
 }
 
 long ModifySQLCollectorRetentionRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long ModifySQLCollectorRetentionRequest::getOwnerId()const
 void ModifySQLCollectorRetentionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

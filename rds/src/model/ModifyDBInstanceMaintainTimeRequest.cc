@@ -35,7 +35,7 @@ long ModifyDBInstanceMaintainTimeRequest::getResourceOwnerId()const
 void ModifyDBInstanceMaintainTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getClientToken()const
 void ModifyDBInstanceMaintainTimeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getAccessKeyId()const
 void ModifyDBInstanceMaintainTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getMaintainTime()const
@@ -68,7 +68,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getMaintainTime()const
 void ModifyDBInstanceMaintainTimeRequest::setMaintainTime(const std::string& maintainTime)
 {
 	maintainTime_ = maintainTime;
-	setCoreParameter("MaintainTime", maintainTime);
+	setParameter("MaintainTime", maintainTime);
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getDBInstanceId()const
@@ -79,7 +79,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getDBInstanceId()const
 void ModifyDBInstanceMaintainTimeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getResourceOwnerAccount()const
 void ModifyDBInstanceMaintainTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getOwnerAccount()const
 void ModifyDBInstanceMaintainTimeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyDBInstanceMaintainTimeRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long ModifyDBInstanceMaintainTimeRequest::getOwnerId()const
 void ModifyDBInstanceMaintainTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

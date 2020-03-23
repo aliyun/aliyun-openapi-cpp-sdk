@@ -35,7 +35,7 @@ std::string CreateDiagnosticReportRequest::getEndTime()const
 void CreateDiagnosticReportRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string CreateDiagnosticReportRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string CreateDiagnosticReportRequest::getStartTime()const
 void CreateDiagnosticReportRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string CreateDiagnosticReportRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string CreateDiagnosticReportRequest::getAccessKeyId()const
 void CreateDiagnosticReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateDiagnosticReportRequest::getDBInstanceId()const
@@ -68,6 +68,6 @@ std::string CreateDiagnosticReportRequest::getDBInstanceId()const
 void CreateDiagnosticReportRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

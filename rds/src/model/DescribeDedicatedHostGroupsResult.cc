@@ -69,6 +69,15 @@ void DescribeDedicatedHostGroupsResult::parse(const std::string &payload)
 			dedicatedHostGroupsObject.engine = valueDedicatedHostGroupsDedicatedHostGroupsItem["Engine"].asString();
 		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["Text"].isNull())
 			dedicatedHostGroupsObject.text = valueDedicatedHostGroupsDedicatedHostGroupsItem["Text"].asString();
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["DedicatedHostCountGroupByHostType"].isNull())
+			dedicatedHostGroupsObject.dedicatedHostCountGroupByHostType = valueDedicatedHostGroupsDedicatedHostGroupsItem["DedicatedHostCountGroupByHostType"].asString();
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["BastionInstanceId"].isNull())
+			dedicatedHostGroupsObject.bastionInstanceId = valueDedicatedHostGroupsDedicatedHostGroupsItem["BastionInstanceId"].asString();
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["OpenPermission"].isNull())
+			dedicatedHostGroupsObject.openPermission = valueDedicatedHostGroupsDedicatedHostGroupsItem["OpenPermission"].asString();
+		auto allZoneIDList = value["ZoneIDList"]["ZoneIDList"];
+		for (auto value : allZoneIDList)
+			dedicatedHostGroupsObject.zoneIDList.push_back(value.asString());
 		dedicatedHostGroups_.push_back(dedicatedHostGroupsObject);
 	}
 

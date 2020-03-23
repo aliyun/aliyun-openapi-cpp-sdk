@@ -35,7 +35,7 @@ long ModifyActionEventPolicyRequest::getResourceOwnerId()const
 void ModifyActionEventPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyActionEventPolicyRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string ModifyActionEventPolicyRequest::getResourceOwnerAccount()const
 void ModifyActionEventPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ModifyActionEventPolicyRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long ModifyActionEventPolicyRequest::getOwnerId()const
 void ModifyActionEventPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyActionEventPolicyRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string ModifyActionEventPolicyRequest::getAccessKeyId()const
 void ModifyActionEventPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyActionEventPolicyRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string ModifyActionEventPolicyRequest::getRegionId()const
 void ModifyActionEventPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyActionEventPolicyRequest::getEnableEventLog()const
@@ -90,6 +90,6 @@ std::string ModifyActionEventPolicyRequest::getEnableEventLog()const
 void ModifyActionEventPolicyRequest::setEnableEventLog(const std::string& enableEventLog)
 {
 	enableEventLog_ = enableEventLog;
-	setCoreParameter("EnableEventLog", enableEventLog);
+	setParameter("EnableEventLog", enableEventLog);
 }
 

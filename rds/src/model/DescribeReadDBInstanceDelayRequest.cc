@@ -35,7 +35,7 @@ long DescribeReadDBInstanceDelayRequest::getResourceOwnerId()const
 void DescribeReadDBInstanceDelayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeReadDBInstanceDelayRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeReadDBInstanceDelayRequest::getAccessKeyId()const
 void DescribeReadDBInstanceDelayRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeReadDBInstanceDelayRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DescribeReadDBInstanceDelayRequest::getSecurityToken()const
 void DescribeReadDBInstanceDelayRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeReadDBInstanceDelayRequest::getReadInstanceId()const
@@ -68,7 +68,7 @@ std::string DescribeReadDBInstanceDelayRequest::getReadInstanceId()const
 void DescribeReadDBInstanceDelayRequest::setReadInstanceId(const std::string& readInstanceId)
 {
 	readInstanceId_ = readInstanceId;
-	setCoreParameter("ReadInstanceId", readInstanceId);
+	setParameter("ReadInstanceId", readInstanceId);
 }
 
 std::string DescribeReadDBInstanceDelayRequest::getDBInstanceId()const
@@ -79,7 +79,7 @@ std::string DescribeReadDBInstanceDelayRequest::getDBInstanceId()const
 void DescribeReadDBInstanceDelayRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeReadDBInstanceDelayRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeReadDBInstanceDelayRequest::getResourceOwnerAccount()const
 void DescribeReadDBInstanceDelayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeReadDBInstanceDelayRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeReadDBInstanceDelayRequest::getOwnerAccount()const
 void DescribeReadDBInstanceDelayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeReadDBInstanceDelayRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DescribeReadDBInstanceDelayRequest::getOwnerId()const
 void DescribeReadDBInstanceDelayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

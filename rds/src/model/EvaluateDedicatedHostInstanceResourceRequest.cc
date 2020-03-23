@@ -35,7 +35,7 @@ long EvaluateDedicatedHostInstanceResourceRequest::getResourceOwnerId()const
 void EvaluateDedicatedHostInstanceResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string EvaluateDedicatedHostInstanceResourceRequest::getEngineVersion()const
@@ -46,7 +46,7 @@ std::string EvaluateDedicatedHostInstanceResourceRequest::getEngineVersion()cons
 void EvaluateDedicatedHostInstanceResourceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 std::string EvaluateDedicatedHostInstanceResourceRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string EvaluateDedicatedHostInstanceResourceRequest::getAccessKeyId()const
 void EvaluateDedicatedHostInstanceResourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string EvaluateDedicatedHostInstanceResourceRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string EvaluateDedicatedHostInstanceResourceRequest::getRegionId()const
 void EvaluateDedicatedHostInstanceResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string EvaluateDedicatedHostInstanceResourceRequest::getEngine()const
@@ -79,7 +79,7 @@ std::string EvaluateDedicatedHostInstanceResourceRequest::getEngine()const
 void EvaluateDedicatedHostInstanceResourceRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string EvaluateDedicatedHostInstanceResourceRequest::getDedicatedHostGroupId()const
@@ -90,7 +90,7 @@ std::string EvaluateDedicatedHostInstanceResourceRequest::getDedicatedHostGroupI
 void EvaluateDedicatedHostInstanceResourceRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
 {
 	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 
 std::string EvaluateDedicatedHostInstanceResourceRequest::getInstanceClassNames()const
@@ -101,7 +101,7 @@ std::string EvaluateDedicatedHostInstanceResourceRequest::getInstanceClassNames(
 void EvaluateDedicatedHostInstanceResourceRequest::setInstanceClassNames(const std::string& instanceClassNames)
 {
 	instanceClassNames_ = instanceClassNames;
-	setCoreParameter("InstanceClassNames", instanceClassNames);
+	setParameter("InstanceClassNames", instanceClassNames);
 }
 
 std::string EvaluateDedicatedHostInstanceResourceRequest::getDiskSize()const
@@ -112,7 +112,7 @@ std::string EvaluateDedicatedHostInstanceResourceRequest::getDiskSize()const
 void EvaluateDedicatedHostInstanceResourceRequest::setDiskSize(const std::string& diskSize)
 {
 	diskSize_ = diskSize;
-	setCoreParameter("DiskSize", diskSize);
+	setParameter("DiskSize", diskSize);
 }
 
 std::string EvaluateDedicatedHostInstanceResourceRequest::getResourceOwnerAccount()const
@@ -123,7 +123,7 @@ std::string EvaluateDedicatedHostInstanceResourceRequest::getResourceOwnerAccoun
 void EvaluateDedicatedHostInstanceResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long EvaluateDedicatedHostInstanceResourceRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long EvaluateDedicatedHostInstanceResourceRequest::getOwnerId()const
 void EvaluateDedicatedHostInstanceResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string EvaluateDedicatedHostInstanceResourceRequest::getDiskType()const
@@ -145,6 +145,6 @@ std::string EvaluateDedicatedHostInstanceResourceRequest::getDiskType()const
 void EvaluateDedicatedHostInstanceResourceRequest::setDiskType(const std::string& diskType)
 {
 	diskType_ = diskType;
-	setCoreParameter("DiskType", diskType);
+	setParameter("DiskType", diskType);
 }
 

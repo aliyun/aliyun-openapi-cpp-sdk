@@ -35,7 +35,7 @@ long DeleteParameterGroupRequest::getResourceOwnerId()const
 void DeleteParameterGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteParameterGroupRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DeleteParameterGroupRequest::getResourceOwnerAccount()const
 void DeleteParameterGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteParameterGroupRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DeleteParameterGroupRequest::getOwnerId()const
 void DeleteParameterGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteParameterGroupRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DeleteParameterGroupRequest::getAccessKeyId()const
 void DeleteParameterGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteParameterGroupRequest::getParameterGroupId()const
@@ -79,7 +79,7 @@ std::string DeleteParameterGroupRequest::getParameterGroupId()const
 void DeleteParameterGroupRequest::setParameterGroupId(const std::string& parameterGroupId)
 {
 	parameterGroupId_ = parameterGroupId;
-	setCoreParameter("ParameterGroupId", parameterGroupId);
+	setParameter("ParameterGroupId", parameterGroupId);
 }
 
 std::string DeleteParameterGroupRequest::getRegionId()const
@@ -90,6 +90,6 @@ std::string DeleteParameterGroupRequest::getRegionId()const
 void DeleteParameterGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

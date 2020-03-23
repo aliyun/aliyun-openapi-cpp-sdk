@@ -35,7 +35,7 @@ long DescribeDBProxyEndpointRequest::getResourceOwnerId()const
 void DescribeDBProxyEndpointRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBProxyEndpointRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeDBProxyEndpointRequest::getAccessKeyId()const
 void DescribeDBProxyEndpointRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBProxyEndpointRequest::getDBProxyConnectString()const
@@ -57,7 +57,7 @@ std::string DescribeDBProxyEndpointRequest::getDBProxyConnectString()const
 void DescribeDBProxyEndpointRequest::setDBProxyConnectString(const std::string& dBProxyConnectString)
 {
 	dBProxyConnectString_ = dBProxyConnectString;
-	setCoreParameter("DBProxyConnectString", dBProxyConnectString);
+	setParameter("DBProxyConnectString", dBProxyConnectString);
 }
 
 std::string DescribeDBProxyEndpointRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string DescribeDBProxyEndpointRequest::getRegionId()const
 void DescribeDBProxyEndpointRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDBProxyEndpointRequest::getDBInstanceId()const
@@ -79,7 +79,7 @@ std::string DescribeDBProxyEndpointRequest::getDBInstanceId()const
 void DescribeDBProxyEndpointRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBProxyEndpointRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeDBProxyEndpointRequest::getResourceOwnerAccount()const
 void DescribeDBProxyEndpointRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeDBProxyEndpointRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long DescribeDBProxyEndpointRequest::getOwnerId()const
 void DescribeDBProxyEndpointRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBProxyEndpointRequest::getDBProxyEndpointId()const
@@ -112,6 +112,6 @@ std::string DescribeDBProxyEndpointRequest::getDBProxyEndpointId()const
 void DescribeDBProxyEndpointRequest::setDBProxyEndpointId(const std::string& dBProxyEndpointId)
 {
 	dBProxyEndpointId_ = dBProxyEndpointId;
-	setCoreParameter("DBProxyEndpointId", dBProxyEndpointId);
+	setParameter("DBProxyEndpointId", dBProxyEndpointId);
 }
 

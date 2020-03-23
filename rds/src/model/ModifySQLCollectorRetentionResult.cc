@@ -39,27 +39,6 @@ void ModifySQLCollectorRetentionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceID"].isNull())
-		dBInstanceID_ = std::stoi(value["DBInstanceID"].asString());
-	if(!value["DBInstanceName"].isNull())
-		dBInstanceName_ = value["DBInstanceName"].asString();
-	if(!value["TaskId"].isNull())
-		taskId_ = std::stoi(value["TaskId"].asString());
 
-}
-
-int ModifySQLCollectorRetentionResult::getTaskId()const
-{
-	return taskId_;
-}
-
-int ModifySQLCollectorRetentionResult::getDBInstanceID()const
-{
-	return dBInstanceID_;
-}
-
-std::string ModifySQLCollectorRetentionResult::getDBInstanceName()const
-{
-	return dBInstanceName_;
 }
 

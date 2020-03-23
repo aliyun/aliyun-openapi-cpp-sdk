@@ -35,7 +35,7 @@ long ModifySecurityGroupConfigurationRequest::getResourceOwnerId()const
 void ModifySecurityGroupConfigurationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySecurityGroupConfigurationRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string ModifySecurityGroupConfigurationRequest::getResourceOwnerAccount()co
 void ModifySecurityGroupConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifySecurityGroupConfigurationRequest::getSecurityGroupId()const
@@ -57,7 +57,7 @@ std::string ModifySecurityGroupConfigurationRequest::getSecurityGroupId()const
 void ModifySecurityGroupConfigurationRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
 long ModifySecurityGroupConfigurationRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long ModifySecurityGroupConfigurationRequest::getOwnerId()const
 void ModifySecurityGroupConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifySecurityGroupConfigurationRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string ModifySecurityGroupConfigurationRequest::getAccessKeyId()const
 void ModifySecurityGroupConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifySecurityGroupConfigurationRequest::getDBInstanceId()const
@@ -90,6 +90,6 @@ std::string ModifySecurityGroupConfigurationRequest::getDBInstanceId()const
 void ModifySecurityGroupConfigurationRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

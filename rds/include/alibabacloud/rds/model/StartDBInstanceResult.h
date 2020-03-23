@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYREPLICADESCRIPTIONRESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_MODIFYREPLICADESCRIPTIONRESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_STARTDBINSTANCERESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_STARTDBINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT ModifyReplicaDescriptionResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT StartDBInstanceResult : public ServiceResult
 			{
 			public:
 
 
-				ModifyReplicaDescriptionResult();
-				explicit ModifyReplicaDescriptionResult(const std::string &payload);
-				~ModifyReplicaDescriptionResult();
+				StartDBInstanceResult();
+				explicit StartDBInstanceResult(const std::string &payload);
+				~StartDBInstanceResult();
+				int getTaskId()const;
+				int getMigrationId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int taskId_;
+				int migrationId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYREPLICADESCRIPTIONRESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_STARTDBINSTANCERESULT_H_

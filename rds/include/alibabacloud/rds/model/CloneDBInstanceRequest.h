@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setDBInstanceStorageType(const std::string& dBInstanceStorageType);
 				std::string getDedicatedHostGroupId()const;
 				void setDedicatedHostGroupId(const std::string& dedicatedHostGroupId);
+				std::string getBackupType()const;
+				void setBackupType(const std::string& backupType);
 				std::string getRestoreTime()const;
 				void setRestoreTime(const std::string& restoreTime);
 				std::string getPeriod()const;
@@ -75,8 +77,8 @@ namespace AlibabaCloud
 				void setRestoreTable(const std::string& restoreTable);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getUsedTime()const;
-				void setUsedTime(const std::string& usedTime);
+				int getUsedTime()const;
+				void setUsedTime(int usedTime);
 				std::string getDBInstanceClass()const;
 				void setDBInstanceClass(const std::string& dBInstanceClass);
 				std::string getDbNames()const;
@@ -110,6 +112,7 @@ namespace AlibabaCloud
 				std::string dBInstanceId_;
 				std::string dBInstanceStorageType_;
 				std::string dedicatedHostGroupId_;
+				std::string backupType_;
 				std::string restoreTime_;
 				std::string period_;
 				std::string resourceOwnerAccount_;
@@ -117,7 +120,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string restoreTable_;
 				long ownerId_;
-				std::string usedTime_;
+				int usedTime_;
 				std::string dBInstanceClass_;
 				std::string dbNames_;
 				std::string vSwitchId_;

@@ -35,7 +35,7 @@ long CancelImportRequest::getResourceOwnerId()const
 void CancelImportRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelImportRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string CancelImportRequest::getResourceOwnerAccount()const
 void CancelImportRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CancelImportRequest::getOwnerAccount()const
@@ -57,7 +57,7 @@ std::string CancelImportRequest::getOwnerAccount()const
 void CancelImportRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CancelImportRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long CancelImportRequest::getOwnerId()const
 void CancelImportRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CancelImportRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string CancelImportRequest::getAccessKeyId()const
 void CancelImportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int CancelImportRequest::getImportId()const
@@ -90,7 +90,7 @@ int CancelImportRequest::getImportId()const
 void CancelImportRequest::setImportId(int importId)
 {
 	importId_ = importId;
-	setCoreParameter("ImportId", std::to_string(importId));
+	setParameter("ImportId", std::to_string(importId));
 }
 
 std::string CancelImportRequest::getDBInstanceId()const
@@ -101,6 +101,6 @@ std::string CancelImportRequest::getDBInstanceId()const
 void CancelImportRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

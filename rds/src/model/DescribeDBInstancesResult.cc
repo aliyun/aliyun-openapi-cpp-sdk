@@ -119,6 +119,12 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.dedicatedHostNameForSlave = valueItemsDBInstance["DedicatedHostNameForSlave"].asString();
 		if(!valueItemsDBInstance["DedicatedHostNameForLog"].isNull())
 			itemsObject.dedicatedHostNameForLog = valueItemsDBInstance["DedicatedHostNameForLog"].asString();
+		if(!valueItemsDBInstance["DedicatedHostZoneIdForMaster"].isNull())
+			itemsObject.dedicatedHostZoneIdForMaster = valueItemsDBInstance["DedicatedHostZoneIdForMaster"].asString();
+		if(!valueItemsDBInstance["DedicatedHostZoneIdForSlave"].isNull())
+			itemsObject.dedicatedHostZoneIdForSlave = valueItemsDBInstance["DedicatedHostZoneIdForSlave"].asString();
+		if(!valueItemsDBInstance["DedicatedHostZoneIdForLog"].isNull())
+			itemsObject.dedicatedHostZoneIdForLog = valueItemsDBInstance["DedicatedHostZoneIdForLog"].asString();
 		auto allReadOnlyDBInstanceIdsNode = allItemsNode["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{

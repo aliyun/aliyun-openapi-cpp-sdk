@@ -35,7 +35,7 @@ long DescribeParameterTemplatesRequest::getResourceOwnerId()const
 void DescribeParameterTemplatesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeParameterTemplatesRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string DescribeParameterTemplatesRequest::getClientToken()const
 void DescribeParameterTemplatesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeParameterTemplatesRequest::getEngineVersion()const
@@ -57,7 +57,7 @@ std::string DescribeParameterTemplatesRequest::getEngineVersion()const
 void DescribeParameterTemplatesRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 std::string DescribeParameterTemplatesRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeParameterTemplatesRequest::getAccessKeyId()const
 void DescribeParameterTemplatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeParameterTemplatesRequest::getEngine()const
@@ -79,7 +79,7 @@ std::string DescribeParameterTemplatesRequest::getEngine()const
 void DescribeParameterTemplatesRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string DescribeParameterTemplatesRequest::getRegionId()const
@@ -90,7 +90,7 @@ std::string DescribeParameterTemplatesRequest::getRegionId()const
 void DescribeParameterTemplatesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeParameterTemplatesRequest::getDBInstanceId()const
@@ -101,7 +101,7 @@ std::string DescribeParameterTemplatesRequest::getDBInstanceId()const
 void DescribeParameterTemplatesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeParameterTemplatesRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribeParameterTemplatesRequest::getResourceOwnerAccount()const
 void DescribeParameterTemplatesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeParameterTemplatesRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string DescribeParameterTemplatesRequest::getOwnerAccount()const
 void DescribeParameterTemplatesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeParameterTemplatesRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long DescribeParameterTemplatesRequest::getOwnerId()const
 void DescribeParameterTemplatesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeParameterTemplatesRequest::getCategory()const
@@ -145,6 +145,6 @@ std::string DescribeParameterTemplatesRequest::getCategory()const
 void DescribeParameterTemplatesRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setParameter("Category", category);
 }
 

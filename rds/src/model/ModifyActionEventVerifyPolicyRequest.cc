@@ -35,7 +35,7 @@ long ModifyActionEventVerifyPolicyRequest::getResourceOwnerId()const
 void ModifyActionEventVerifyPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyActionEventVerifyPolicyRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string ModifyActionEventVerifyPolicyRequest::getResourceOwnerAccount()const
 void ModifyActionEventVerifyPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ModifyActionEventVerifyPolicyRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long ModifyActionEventVerifyPolicyRequest::getOwnerId()const
 void ModifyActionEventVerifyPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyActionEventVerifyPolicyRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string ModifyActionEventVerifyPolicyRequest::getAccessKeyId()const
 void ModifyActionEventVerifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyActionEventVerifyPolicyRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string ModifyActionEventVerifyPolicyRequest::getRegionId()const
 void ModifyActionEventVerifyPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyActionEventVerifyPolicyRequest::getUserPublicKey()const
@@ -90,6 +90,6 @@ std::string ModifyActionEventVerifyPolicyRequest::getUserPublicKey()const
 void ModifyActionEventVerifyPolicyRequest::setUserPublicKey(const std::string& userPublicKey)
 {
 	userPublicKey_ = userPublicKey;
-	setCoreParameter("UserPublicKey", userPublicKey);
+	setParameter("UserPublicKey", userPublicKey);
 }
 

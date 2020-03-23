@@ -35,7 +35,7 @@ long CreateDedicatedHostRequest::getResourceOwnerId()const
 void CreateDedicatedHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateDedicatedHostRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string CreateDedicatedHostRequest::getClientToken()const
 void CreateDedicatedHostRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateDedicatedHostRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string CreateDedicatedHostRequest::getAccessKeyId()const
 void CreateDedicatedHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateDedicatedHostRequest::getHostName()const
@@ -68,7 +68,7 @@ std::string CreateDedicatedHostRequest::getHostName()const
 void CreateDedicatedHostRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setParameter("HostName", hostName);
 }
 
 std::string CreateDedicatedHostRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string CreateDedicatedHostRequest::getRegionId()const
 void CreateDedicatedHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateDedicatedHostRequest::getDedicatedHostGroupId()const
@@ -90,7 +90,7 @@ std::string CreateDedicatedHostRequest::getDedicatedHostGroupId()const
 void CreateDedicatedHostRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
 {
 	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 
 std::string CreateDedicatedHostRequest::getPeriod()const
@@ -101,7 +101,7 @@ std::string CreateDedicatedHostRequest::getPeriod()const
 void CreateDedicatedHostRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setParameter("Period", period);
 }
 
 std::string CreateDedicatedHostRequest::getHostClass()const
@@ -112,7 +112,7 @@ std::string CreateDedicatedHostRequest::getHostClass()const
 void CreateDedicatedHostRequest::setHostClass(const std::string& hostClass)
 {
 	hostClass_ = hostClass;
-	setCoreParameter("HostClass", hostClass);
+	setParameter("HostClass", hostClass);
 }
 
 std::string CreateDedicatedHostRequest::getResourceOwnerAccount()const
@@ -123,7 +123,7 @@ std::string CreateDedicatedHostRequest::getResourceOwnerAccount()const
 void CreateDedicatedHostRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long CreateDedicatedHostRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long CreateDedicatedHostRequest::getOwnerId()const
 void CreateDedicatedHostRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateDedicatedHostRequest::getUsedTime()const
@@ -145,7 +145,7 @@ std::string CreateDedicatedHostRequest::getUsedTime()const
 void CreateDedicatedHostRequest::setUsedTime(const std::string& usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", usedTime);
+	setParameter("UsedTime", usedTime);
 }
 
 std::string CreateDedicatedHostRequest::getVSwitchId()const
@@ -156,7 +156,7 @@ std::string CreateDedicatedHostRequest::getVSwitchId()const
 void CreateDedicatedHostRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateDedicatedHostRequest::getAutoRenew()const
@@ -167,7 +167,7 @@ std::string CreateDedicatedHostRequest::getAutoRenew()const
 void CreateDedicatedHostRequest::setAutoRenew(const std::string& autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew);
+	setParameter("AutoRenew", autoRenew);
 }
 
 std::string CreateDedicatedHostRequest::getZoneId()const
@@ -178,7 +178,7 @@ std::string CreateDedicatedHostRequest::getZoneId()const
 void CreateDedicatedHostRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string CreateDedicatedHostRequest::getPayType()const
@@ -189,6 +189,6 @@ std::string CreateDedicatedHostRequest::getPayType()const
 void CreateDedicatedHostRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setParameter("PayType", payType);
 }
 

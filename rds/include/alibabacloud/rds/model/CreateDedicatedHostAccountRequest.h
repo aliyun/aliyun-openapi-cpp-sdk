@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYREPLICADESCRIPTIONREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_MODIFYREPLICADESCRIPTIONREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_CREATEDEDICATEDHOSTACCOUNTREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_CREATEDEDICATEDHOSTACCOUNTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT ModifyReplicaDescriptionRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT CreateDedicatedHostAccountRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyReplicaDescriptionRequest();
-				~ModifyReplicaDescriptionRequest();
+				CreateDedicatedHostAccountRequest();
+				~CreateDedicatedHostAccountRequest();
 
-				std::string getReplicaDescription()const;
-				void setReplicaDescription(const std::string& replicaDescription);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getReplicaId()const;
-				void setReplicaId(const std::string& replicaId);
+				std::string getAccountName()const;
+				void setAccountName(const std::string& accountName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getDedicatedHostId()const;
+				void setDedicatedHostId(const std::string& dedicatedHostId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getAccountPassword()const;
+				void setAccountPassword(const std::string& accountPassword);
 
             private:
-				std::string replicaDescription_;
 				long resourceOwnerId_;
 				std::string accessKeyId_;
-				std::string securityToken_;
-				std::string replicaId_;
+				std::string accountName_;
+				std::string regionId_;
 				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
+				std::string dedicatedHostId_;
 				long ownerId_;
+				std::string accountPassword_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYREPLICADESCRIPTIONREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_CREATEDEDICATEDHOSTACCOUNTREQUEST_H_

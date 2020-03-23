@@ -35,7 +35,7 @@ long DescribeSignedEventActionsRequest::getResourceOwnerId()const
 void DescribeSignedEventActionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeSignedEventActionsRequest::getBeginEventId()const
@@ -46,7 +46,7 @@ int DescribeSignedEventActionsRequest::getBeginEventId()const
 void DescribeSignedEventActionsRequest::setBeginEventId(int beginEventId)
 {
 	beginEventId_ = beginEventId;
-	setCoreParameter("BeginEventId", std::to_string(beginEventId));
+	setParameter("BeginEventId", std::to_string(beginEventId));
 }
 
 std::string DescribeSignedEventActionsRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeSignedEventActionsRequest::getResourceOwnerAccount()const
 void DescribeSignedEventActionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeSignedEventActionsRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeSignedEventActionsRequest::getOwnerId()const
 void DescribeSignedEventActionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSignedEventActionsRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string DescribeSignedEventActionsRequest::getAccessKeyId()const
 void DescribeSignedEventActionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSignedEventActionsRequest::getRegionId()const
@@ -90,7 +90,7 @@ std::string DescribeSignedEventActionsRequest::getRegionId()const
 void DescribeSignedEventActionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeSignedEventActionsRequest::getPageSize()const
@@ -101,6 +101,6 @@ int DescribeSignedEventActionsRequest::getPageSize()const
 void DescribeSignedEventActionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

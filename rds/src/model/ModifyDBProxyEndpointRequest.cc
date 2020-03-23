@@ -35,7 +35,7 @@ long ModifyDBProxyEndpointRequest::getResourceOwnerId()const
 void ModifyDBProxyEndpointRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBProxyEndpointRequest::getConfigDBProxyFeatures()const
@@ -46,7 +46,7 @@ std::string ModifyDBProxyEndpointRequest::getConfigDBProxyFeatures()const
 void ModifyDBProxyEndpointRequest::setConfigDBProxyFeatures(const std::string& configDBProxyFeatures)
 {
 	configDBProxyFeatures_ = configDBProxyFeatures;
-	setCoreParameter("ConfigDBProxyFeatures", configDBProxyFeatures);
+	setParameter("ConfigDBProxyFeatures", configDBProxyFeatures);
 }
 
 std::string ModifyDBProxyEndpointRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifyDBProxyEndpointRequest::getAccessKeyId()const
 void ModifyDBProxyEndpointRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBProxyEndpointRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string ModifyDBProxyEndpointRequest::getRegionId()const
 void ModifyDBProxyEndpointRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDBProxyEndpointRequest::getDBInstanceId()const
@@ -79,7 +79,7 @@ std::string ModifyDBProxyEndpointRequest::getDBInstanceId()const
 void ModifyDBProxyEndpointRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBProxyEndpointRequest::getReadOnlyInstanceWeight()const
@@ -90,7 +90,7 @@ std::string ModifyDBProxyEndpointRequest::getReadOnlyInstanceWeight()const
 void ModifyDBProxyEndpointRequest::setReadOnlyInstanceWeight(const std::string& readOnlyInstanceWeight)
 {
 	readOnlyInstanceWeight_ = readOnlyInstanceWeight;
-	setCoreParameter("ReadOnlyInstanceWeight", readOnlyInstanceWeight);
+	setParameter("ReadOnlyInstanceWeight", readOnlyInstanceWeight);
 }
 
 std::string ModifyDBProxyEndpointRequest::getReadOnlyInstanceMaxDelayTime()const
@@ -101,7 +101,7 @@ std::string ModifyDBProxyEndpointRequest::getReadOnlyInstanceMaxDelayTime()const
 void ModifyDBProxyEndpointRequest::setReadOnlyInstanceMaxDelayTime(const std::string& readOnlyInstanceMaxDelayTime)
 {
 	readOnlyInstanceMaxDelayTime_ = readOnlyInstanceMaxDelayTime;
-	setCoreParameter("ReadOnlyInstanceMaxDelayTime", readOnlyInstanceMaxDelayTime);
+	setParameter("ReadOnlyInstanceMaxDelayTime", readOnlyInstanceMaxDelayTime);
 }
 
 std::string ModifyDBProxyEndpointRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyDBProxyEndpointRequest::getResourceOwnerAccount()const
 void ModifyDBProxyEndpointRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ModifyDBProxyEndpointRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long ModifyDBProxyEndpointRequest::getOwnerId()const
 void ModifyDBProxyEndpointRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBProxyEndpointRequest::getDBProxyEndpointId()const
@@ -134,7 +134,7 @@ std::string ModifyDBProxyEndpointRequest::getDBProxyEndpointId()const
 void ModifyDBProxyEndpointRequest::setDBProxyEndpointId(const std::string& dBProxyEndpointId)
 {
 	dBProxyEndpointId_ = dBProxyEndpointId;
-	setCoreParameter("DBProxyEndpointId", dBProxyEndpointId);
+	setParameter("DBProxyEndpointId", dBProxyEndpointId);
 }
 
 std::string ModifyDBProxyEndpointRequest::getReadOnlyInstanceDistributionType()const
@@ -145,6 +145,6 @@ std::string ModifyDBProxyEndpointRequest::getReadOnlyInstanceDistributionType()c
 void ModifyDBProxyEndpointRequest::setReadOnlyInstanceDistributionType(const std::string& readOnlyInstanceDistributionType)
 {
 	readOnlyInstanceDistributionType_ = readOnlyInstanceDistributionType;
-	setCoreParameter("ReadOnlyInstanceDistributionType", readOnlyInstanceDistributionType);
+	setParameter("ReadOnlyInstanceDistributionType", readOnlyInstanceDistributionType);
 }
 

@@ -35,7 +35,7 @@ long ModifyDTCSecurityIpHostsForSQLServerRequest::getResourceOwnerId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getWhiteListGroupName()const
@@ -46,7 +46,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getWhiteListGroupName()
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setWhiteListGroupName(const std::string& whiteListGroupName)
 {
 	whiteListGroupName_ = whiteListGroupName;
-	setCoreParameter("WhiteListGroupName", whiteListGroupName);
+	setParameter("WhiteListGroupName", whiteListGroupName);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getSecurityIpHosts()const
@@ -57,7 +57,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getSecurityIpHosts()con
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setSecurityIpHosts(const std::string& securityIpHosts)
 {
 	securityIpHosts_ = securityIpHosts;
-	setCoreParameter("SecurityIpHosts", securityIpHosts);
+	setParameter("SecurityIpHosts", securityIpHosts);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getAccessKeyId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getSecurityToken()const
@@ -79,7 +79,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getSecurityToken()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getRegionId()const
@@ -90,7 +90,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getRegionId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getDBInstanceId()const
@@ -101,7 +101,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getDBInstanceId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getResourceOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getResourceOwnerAccount
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getOwnerAccount()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyDTCSecurityIpHostsForSQLServerRequest::getOwnerId()const
@@ -134,6 +134,6 @@ long ModifyDTCSecurityIpHostsForSQLServerRequest::getOwnerId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

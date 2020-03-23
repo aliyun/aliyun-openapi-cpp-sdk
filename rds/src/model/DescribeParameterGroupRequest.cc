@@ -35,7 +35,7 @@ long DescribeParameterGroupRequest::getResourceOwnerId()const
 void DescribeParameterGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeParameterGroupRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeParameterGroupRequest::getResourceOwnerAccount()const
 void DescribeParameterGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeParameterGroupRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DescribeParameterGroupRequest::getOwnerId()const
 void DescribeParameterGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeParameterGroupRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeParameterGroupRequest::getAccessKeyId()const
 void DescribeParameterGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeParameterGroupRequest::getParameterGroupId()const
@@ -79,7 +79,7 @@ std::string DescribeParameterGroupRequest::getParameterGroupId()const
 void DescribeParameterGroupRequest::setParameterGroupId(const std::string& parameterGroupId)
 {
 	parameterGroupId_ = parameterGroupId;
-	setCoreParameter("ParameterGroupId", parameterGroupId);
+	setParameter("ParameterGroupId", parameterGroupId);
 }
 
 std::string DescribeParameterGroupRequest::getRegionId()const
@@ -90,6 +90,6 @@ std::string DescribeParameterGroupRequest::getRegionId()const
 void DescribeParameterGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

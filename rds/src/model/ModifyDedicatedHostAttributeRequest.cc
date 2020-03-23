@@ -35,7 +35,7 @@ long ModifyDedicatedHostAttributeRequest::getResourceOwnerId()const
 void ModifyDedicatedHostAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyDedicatedHostAttributeRequest::getAccessKeyId()const
 void ModifyDedicatedHostAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getHostName()const
@@ -57,7 +57,7 @@ std::string ModifyDedicatedHostAttributeRequest::getHostName()const
 void ModifyDedicatedHostAttributeRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setParameter("HostName", hostName);
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string ModifyDedicatedHostAttributeRequest::getRegionId()const
 void ModifyDedicatedHostAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getAllocationStatus()const
@@ -79,7 +79,7 @@ std::string ModifyDedicatedHostAttributeRequest::getAllocationStatus()const
 void ModifyDedicatedHostAttributeRequest::setAllocationStatus(const std::string& allocationStatus)
 {
 	allocationStatus_ = allocationStatus;
-	setCoreParameter("AllocationStatus", allocationStatus);
+	setParameter("AllocationStatus", allocationStatus);
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyDedicatedHostAttributeRequest::getResourceOwnerAccount()const
 void ModifyDedicatedHostAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getDedicatedHostId()const
@@ -101,7 +101,7 @@ std::string ModifyDedicatedHostAttributeRequest::getDedicatedHostId()const
 void ModifyDedicatedHostAttributeRequest::setDedicatedHostId(const std::string& dedicatedHostId)
 {
 	dedicatedHostId_ = dedicatedHostId;
-	setCoreParameter("DedicatedHostId", dedicatedHostId);
+	setParameter("DedicatedHostId", dedicatedHostId);
 }
 
 long ModifyDedicatedHostAttributeRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long ModifyDedicatedHostAttributeRequest::getOwnerId()const
 void ModifyDedicatedHostAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

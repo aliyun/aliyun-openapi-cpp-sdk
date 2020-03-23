@@ -35,7 +35,7 @@ long DestroyDBInstanceRequest::getResourceOwnerId()const
 void DestroyDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DestroyDBInstanceRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DestroyDBInstanceRequest::getResourceOwnerAccount()const
 void DestroyDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DestroyDBInstanceRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string DestroyDBInstanceRequest::getClientToken()const
 void DestroyDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DestroyDBInstanceRequest::getOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DestroyDBInstanceRequest::getOwnerAccount()const
 void DestroyDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DestroyDBInstanceRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long DestroyDBInstanceRequest::getOwnerId()const
 void DestroyDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DestroyDBInstanceRequest::getAccessKeyId()const
@@ -90,7 +90,7 @@ std::string DestroyDBInstanceRequest::getAccessKeyId()const
 void DestroyDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DestroyDBInstanceRequest::getDBInstanceId()const
@@ -101,6 +101,6 @@ std::string DestroyDBInstanceRequest::getDBInstanceId()const
 void DestroyDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

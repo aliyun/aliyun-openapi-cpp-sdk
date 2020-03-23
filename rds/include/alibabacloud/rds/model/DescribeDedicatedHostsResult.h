@@ -42,12 +42,17 @@ namespace AlibabaCloud
 					std::string allocationStatus;
 					std::string memAllocationRatio;
 					std::string zoneId;
+					std::string endTime;
 					std::string vPCId;
 					std::string vSwitchId;
+					std::string bastionInstanceId;
+					std::string openPermission;
+					std::string hostType;
 					std::string hostClass;
 					std::string hostStatus;
 					std::string iPAddress;
 					std::string hostName;
+					std::string accountName;
 				};
 
 

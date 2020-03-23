@@ -35,7 +35,7 @@ long DescribeAvailableDedicatedHostZonesRequest::getResourceOwnerId()const
 void DescribeAvailableDedicatedHostZonesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAvailableDedicatedHostZonesRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeAvailableDedicatedHostZonesRequest::getResourceOwnerAccount(
 void DescribeAvailableDedicatedHostZonesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeAvailableDedicatedHostZonesRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DescribeAvailableDedicatedHostZonesRequest::getOwnerId()const
 void DescribeAvailableDedicatedHostZonesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAvailableDedicatedHostZonesRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeAvailableDedicatedHostZonesRequest::getAccessKeyId()const
 void DescribeAvailableDedicatedHostZonesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAvailableDedicatedHostZonesRequest::getRegionId()const
@@ -79,6 +79,6 @@ std::string DescribeAvailableDedicatedHostZonesRequest::getRegionId()const
 void DescribeAvailableDedicatedHostZonesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

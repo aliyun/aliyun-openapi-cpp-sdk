@@ -35,7 +35,7 @@ long ModifyDBInstanceAutoUpgradeMinorVersionRequest::getResourceOwnerId()const
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getResourceOwnerAcco
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getClientToken()cons
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 long ModifyDBInstanceAutoUpgradeMinorVersionRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long ModifyDBInstanceAutoUpgradeMinorVersionRequest::getOwnerId()const
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getAccessKeyId()cons
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getAutoUpgradeMinorVersion()const
@@ -90,7 +90,7 @@ std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getAutoUpgradeMinorV
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setAutoUpgradeMinorVersion(const std::string& autoUpgradeMinorVersion)
 {
 	autoUpgradeMinorVersion_ = autoUpgradeMinorVersion;
-	setCoreParameter("AutoUpgradeMinorVersion", autoUpgradeMinorVersion);
+	setParameter("AutoUpgradeMinorVersion", autoUpgradeMinorVersion);
 }
 
 std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getDBInstanceId()const
@@ -101,6 +101,6 @@ std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getDBInstanceId()con
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

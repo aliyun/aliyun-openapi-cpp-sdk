@@ -35,7 +35,7 @@ long CreateBackupRequest::getResourceOwnerId()const
 void CreateBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateBackupRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string CreateBackupRequest::getAccessKeyId()const
 void CreateBackupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateBackupRequest::getBackupStrategy()const
@@ -57,7 +57,7 @@ std::string CreateBackupRequest::getBackupStrategy()const
 void CreateBackupRequest::setBackupStrategy(const std::string& backupStrategy)
 {
 	backupStrategy_ = backupStrategy;
-	setCoreParameter("BackupStrategy", backupStrategy);
+	setParameter("BackupStrategy", backupStrategy);
 }
 
 std::string CreateBackupRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string CreateBackupRequest::getDBInstanceId()const
 void CreateBackupRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string CreateBackupRequest::getBackupType()const
@@ -79,7 +79,7 @@ std::string CreateBackupRequest::getBackupType()const
 void CreateBackupRequest::setBackupType(const std::string& backupType)
 {
 	backupType_ = backupType;
-	setCoreParameter("BackupType", backupType);
+	setParameter("BackupType", backupType);
 }
 
 std::string CreateBackupRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string CreateBackupRequest::getResourceOwnerAccount()const
 void CreateBackupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateBackupRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string CreateBackupRequest::getOwnerAccount()const
 void CreateBackupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateBackupRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long CreateBackupRequest::getOwnerId()const
 void CreateBackupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateBackupRequest::getBackupMethod()const
@@ -123,7 +123,7 @@ std::string CreateBackupRequest::getBackupMethod()const
 void CreateBackupRequest::setBackupMethod(const std::string& backupMethod)
 {
 	backupMethod_ = backupMethod;
-	setCoreParameter("BackupMethod", backupMethod);
+	setParameter("BackupMethod", backupMethod);
 }
 
 std::string CreateBackupRequest::getDBName()const
@@ -134,6 +134,6 @@ std::string CreateBackupRequest::getDBName()const
 void CreateBackupRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setParameter("DBName", dBName);
 }
 

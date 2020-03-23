@@ -35,7 +35,7 @@ long DescribeBackupPolicyRequest::getResourceOwnerId()const
 void DescribeBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeBackupPolicyRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeBackupPolicyRequest::getAccessKeyId()const
 void DescribeBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeBackupPolicyRequest::getDBInstanceId()const
@@ -57,7 +57,7 @@ std::string DescribeBackupPolicyRequest::getDBInstanceId()const
 void DescribeBackupPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeBackupPolicyRequest::getBackupPolicyMode()const
@@ -68,7 +68,7 @@ std::string DescribeBackupPolicyRequest::getBackupPolicyMode()const
 void DescribeBackupPolicyRequest::setBackupPolicyMode(const std::string& backupPolicyMode)
 {
 	backupPolicyMode_ = backupPolicyMode;
-	setCoreParameter("BackupPolicyMode", backupPolicyMode);
+	setParameter("BackupPolicyMode", backupPolicyMode);
 }
 
 std::string DescribeBackupPolicyRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeBackupPolicyRequest::getResourceOwnerAccount()const
 void DescribeBackupPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeBackupPolicyRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeBackupPolicyRequest::getOwnerAccount()const
 void DescribeBackupPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeBackupPolicyRequest::getCompressType()const
@@ -101,7 +101,7 @@ std::string DescribeBackupPolicyRequest::getCompressType()const
 void DescribeBackupPolicyRequest::setCompressType(const std::string& compressType)
 {
 	compressType_ = compressType;
-	setCoreParameter("CompressType", compressType);
+	setParameter("CompressType", compressType);
 }
 
 long DescribeBackupPolicyRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DescribeBackupPolicyRequest::getOwnerId()const
 void DescribeBackupPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

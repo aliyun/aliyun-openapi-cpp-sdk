@@ -35,7 +35,7 @@ long CheckDBNameAvailableRequest::getResourceOwnerId()const
 void CheckDBNameAvailableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CheckDBNameAvailableRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string CheckDBNameAvailableRequest::getClientToken()const
 void CheckDBNameAvailableRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CheckDBNameAvailableRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string CheckDBNameAvailableRequest::getAccessKeyId()const
 void CheckDBNameAvailableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CheckDBNameAvailableRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string CheckDBNameAvailableRequest::getDBInstanceId()const
 void CheckDBNameAvailableRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string CheckDBNameAvailableRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string CheckDBNameAvailableRequest::getResourceOwnerAccount()const
 void CheckDBNameAvailableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CheckDBNameAvailableRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string CheckDBNameAvailableRequest::getOwnerAccount()const
 void CheckDBNameAvailableRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CheckDBNameAvailableRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long CheckDBNameAvailableRequest::getOwnerId()const
 void CheckDBNameAvailableRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CheckDBNameAvailableRequest::getDBName()const
@@ -112,6 +112,6 @@ std::string CheckDBNameAvailableRequest::getDBName()const
 void CheckDBNameAvailableRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setParameter("DBName", dBName);
 }
 

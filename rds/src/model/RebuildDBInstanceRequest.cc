@@ -35,7 +35,7 @@ long RebuildDBInstanceRequest::getResourceOwnerId()const
 void RebuildDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RebuildDBInstanceRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string RebuildDBInstanceRequest::getAccessKeyId()const
 void RebuildDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RebuildDBInstanceRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string RebuildDBInstanceRequest::getRegionId()const
 void RebuildDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string RebuildDBInstanceRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string RebuildDBInstanceRequest::getDBInstanceId()const
 void RebuildDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string RebuildDBInstanceRequest::getDedicatedHostGroupId()const
@@ -79,7 +79,7 @@ std::string RebuildDBInstanceRequest::getDedicatedHostGroupId()const
 void RebuildDBInstanceRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
 {
 	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 
 std::string RebuildDBInstanceRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string RebuildDBInstanceRequest::getResourceOwnerAccount()const
 void RebuildDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RebuildDBInstanceRequest::getDedicatedHostId()const
@@ -101,7 +101,7 @@ std::string RebuildDBInstanceRequest::getDedicatedHostId()const
 void RebuildDBInstanceRequest::setDedicatedHostId(const std::string& dedicatedHostId)
 {
 	dedicatedHostId_ = dedicatedHostId;
-	setCoreParameter("DedicatedHostId", dedicatedHostId);
+	setParameter("DedicatedHostId", dedicatedHostId);
 }
 
 long RebuildDBInstanceRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long RebuildDBInstanceRequest::getOwnerId()const
 void RebuildDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

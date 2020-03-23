@@ -35,7 +35,7 @@ long DeleteBackupFileRequest::getResourceOwnerId()const
 void DeleteBackupFileRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteBackupFileRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DeleteBackupFileRequest::getAccessKeyId()const
 void DeleteBackupFileRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteBackupFileRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DeleteBackupFileRequest::getRegionId()const
 void DeleteBackupFileRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteBackupFileRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string DeleteBackupFileRequest::getDBInstanceId()const
 void DeleteBackupFileRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DeleteBackupFileRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DeleteBackupFileRequest::getResourceOwnerAccount()const
 void DeleteBackupFileRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteBackupFileRequest::getBackupId()const
@@ -90,7 +90,7 @@ std::string DeleteBackupFileRequest::getBackupId()const
 void DeleteBackupFileRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setParameter("BackupId", backupId);
 }
 
 long DeleteBackupFileRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long DeleteBackupFileRequest::getOwnerId()const
 void DeleteBackupFileRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteBackupFileRequest::getBackupTime()const
@@ -112,7 +112,7 @@ std::string DeleteBackupFileRequest::getBackupTime()const
 void DeleteBackupFileRequest::setBackupTime(const std::string& backupTime)
 {
 	backupTime_ = backupTime;
-	setCoreParameter("BackupTime", backupTime);
+	setParameter("BackupTime", backupTime);
 }
 
 std::string DeleteBackupFileRequest::getDBName()const
@@ -123,6 +123,6 @@ std::string DeleteBackupFileRequest::getDBName()const
 void DeleteBackupFileRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setParameter("DBName", dBName);
 }
 

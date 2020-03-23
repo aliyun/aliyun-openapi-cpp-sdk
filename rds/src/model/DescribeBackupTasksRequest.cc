@@ -27,15 +27,15 @@ DescribeBackupTasksRequest::DescribeBackupTasksRequest() :
 DescribeBackupTasksRequest::~DescribeBackupTasksRequest()
 {}
 
-std::string DescribeBackupTasksRequest::getBackupJobId()const
+int DescribeBackupTasksRequest::getBackupJobId()const
 {
 	return backupJobId_;
 }
 
-void DescribeBackupTasksRequest::setBackupJobId(const std::string& backupJobId)
+void DescribeBackupTasksRequest::setBackupJobId(int backupJobId)
 {
 	backupJobId_ = backupJobId;
-	setCoreParameter("BackupJobId", backupJobId);
+	setParameter("BackupJobId", std::to_string(backupJobId));
 }
 
 long DescribeBackupTasksRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long DescribeBackupTasksRequest::getResourceOwnerId()const
 void DescribeBackupTasksRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeBackupTasksRequest::getFlag()const
@@ -57,7 +57,7 @@ std::string DescribeBackupTasksRequest::getFlag()const
 void DescribeBackupTasksRequest::setFlag(const std::string& flag)
 {
 	flag_ = flag;
-	setCoreParameter("Flag", flag);
+	setParameter("Flag", flag);
 }
 
 std::string DescribeBackupTasksRequest::getClientToken()const
@@ -68,7 +68,7 @@ std::string DescribeBackupTasksRequest::getClientToken()const
 void DescribeBackupTasksRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeBackupTasksRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string DescribeBackupTasksRequest::getAccessKeyId()const
 void DescribeBackupTasksRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeBackupTasksRequest::getDBInstanceId()const
@@ -90,7 +90,7 @@ std::string DescribeBackupTasksRequest::getDBInstanceId()const
 void DescribeBackupTasksRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeBackupTasksRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeBackupTasksRequest::getResourceOwnerAccount()const
 void DescribeBackupTasksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeBackupTasksRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribeBackupTasksRequest::getOwnerAccount()const
 void DescribeBackupTasksRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeBackupTasksRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long DescribeBackupTasksRequest::getOwnerId()const
 void DescribeBackupTasksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeBackupTasksRequest::getBackupJobStatus()const
@@ -134,7 +134,7 @@ std::string DescribeBackupTasksRequest::getBackupJobStatus()const
 void DescribeBackupTasksRequest::setBackupJobStatus(const std::string& backupJobStatus)
 {
 	backupJobStatus_ = backupJobStatus;
-	setCoreParameter("BackupJobStatus", backupJobStatus);
+	setParameter("BackupJobStatus", backupJobStatus);
 }
 
 std::string DescribeBackupTasksRequest::getBackupMode()const
@@ -145,6 +145,6 @@ std::string DescribeBackupTasksRequest::getBackupMode()const
 void DescribeBackupTasksRequest::setBackupMode(const std::string& backupMode)
 {
 	backupMode_ = backupMode;
-	setCoreParameter("BackupMode", backupMode);
+	setParameter("BackupMode", backupMode);
 }
 

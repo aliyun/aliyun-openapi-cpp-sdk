@@ -35,7 +35,7 @@ long ModifyDBProxyRequest::getResourceOwnerId()const
 void ModifyDBProxyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBProxyRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyDBProxyRequest::getAccessKeyId()const
 void ModifyDBProxyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBProxyRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string ModifyDBProxyRequest::getRegionId()const
 void ModifyDBProxyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDBProxyRequest::getDBInstanceId()const
@@ -68,7 +68,7 @@ std::string ModifyDBProxyRequest::getDBInstanceId()const
 void ModifyDBProxyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBProxyRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ModifyDBProxyRequest::getResourceOwnerAccount()const
 void ModifyDBProxyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ModifyDBProxyRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long ModifyDBProxyRequest::getOwnerId()const
 void ModifyDBProxyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBProxyRequest::getDBProxyInstanceNum()const
@@ -101,7 +101,7 @@ std::string ModifyDBProxyRequest::getDBProxyInstanceNum()const
 void ModifyDBProxyRequest::setDBProxyInstanceNum(const std::string& dBProxyInstanceNum)
 {
 	dBProxyInstanceNum_ = dBProxyInstanceNum;
-	setCoreParameter("DBProxyInstanceNum", dBProxyInstanceNum);
+	setParameter("DBProxyInstanceNum", dBProxyInstanceNum);
 }
 
 std::string ModifyDBProxyRequest::getConfigDBProxyService()const
@@ -112,7 +112,7 @@ std::string ModifyDBProxyRequest::getConfigDBProxyService()const
 void ModifyDBProxyRequest::setConfigDBProxyService(const std::string& configDBProxyService)
 {
 	configDBProxyService_ = configDBProxyService;
-	setCoreParameter("ConfigDBProxyService", configDBProxyService);
+	setParameter("ConfigDBProxyService", configDBProxyService);
 }
 
 std::string ModifyDBProxyRequest::getVSwitchId()const
@@ -123,7 +123,7 @@ std::string ModifyDBProxyRequest::getVSwitchId()const
 void ModifyDBProxyRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string ModifyDBProxyRequest::getVPCId()const
@@ -134,7 +134,7 @@ std::string ModifyDBProxyRequest::getVPCId()const
 void ModifyDBProxyRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
-	setCoreParameter("VPCId", vPCId);
+	setParameter("VPCId", vPCId);
 }
 
 std::string ModifyDBProxyRequest::getInstanceNetworkType()const
@@ -145,6 +145,6 @@ std::string ModifyDBProxyRequest::getInstanceNetworkType()const
 void ModifyDBProxyRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setCoreParameter("InstanceNetworkType", instanceNetworkType);
+	setParameter("InstanceNetworkType", instanceNetworkType);
 }
 

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				RestoreTableRequest();
 				~RestoreTableRequest();
 
+				std::string getRestoreTableMode()const;
+				void setRestoreTableMode(const std::string& restoreTableMode);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getClientToken()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string restoreTableMode_;
 				long resourceOwnerId_;
 				std::string clientToken_;
 				std::string accessKeyId_;

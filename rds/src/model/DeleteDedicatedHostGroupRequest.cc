@@ -35,7 +35,7 @@ long DeleteDedicatedHostGroupRequest::getResourceOwnerId()const
 void DeleteDedicatedHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteDedicatedHostGroupRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DeleteDedicatedHostGroupRequest::getResourceOwnerAccount()const
 void DeleteDedicatedHostGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteDedicatedHostGroupRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DeleteDedicatedHostGroupRequest::getOwnerId()const
 void DeleteDedicatedHostGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteDedicatedHostGroupRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DeleteDedicatedHostGroupRequest::getAccessKeyId()const
 void DeleteDedicatedHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDedicatedHostGroupRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string DeleteDedicatedHostGroupRequest::getRegionId()const
 void DeleteDedicatedHostGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteDedicatedHostGroupRequest::getDedicatedHostGroupId()const
@@ -90,6 +90,6 @@ std::string DeleteDedicatedHostGroupRequest::getDedicatedHostGroupId()const
 void DeleteDedicatedHostGroupRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
 {
 	dedicatedHostGroupId_ = dedicatedHostGroupId;
-	setCoreParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 }
 

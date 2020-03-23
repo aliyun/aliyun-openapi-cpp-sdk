@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateDBInstanceRequest();
 				~CreateDBInstanceRequest();
 
+				std::string getDBParamGroupId()const;
+				void setDBParamGroupId(const std::string& dBParamGroupId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				int getDBInstanceStorage()const;
@@ -87,12 +89,16 @@ namespace AlibabaCloud
 				void setZoneIdSlave1(const std::string& zoneIdSlave1);
 				std::string getZoneIdSlave2()const;
 				void setZoneIdSlave2(const std::string& zoneIdSlave2);
+				std::string getDBIsIgnoreCase()const;
+				void setDBIsIgnoreCase(const std::string& dBIsIgnoreCase);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getEngine()const;
 				void setEngine(const std::string& engine);
+				std::string getDBTimeZone()const;
+				void setDBTimeZone(const std::string& dBTimeZone);
 				std::string getDBInstanceStorageType()const;
 				void setDBInstanceStorageType(const std::string& dBInstanceStorageType);
 				std::string getDedicatedHostGroupId()const;
@@ -113,6 +119,7 @@ namespace AlibabaCloud
 				void setPayType(const std::string& payType);
 
             private:
+				std::string dBParamGroupId_;
 				long resourceOwnerId_;
 				int dBInstanceStorage_;
 				std::string systemDBCharset_;
@@ -139,9 +146,11 @@ namespace AlibabaCloud
 				std::string targetDedicatedHostIdForSlave_;
 				std::string zoneIdSlave1_;
 				std::string zoneIdSlave2_;
+				std::string dBIsIgnoreCase_;
 				std::string accessKeyId_;
 				std::string regionId_;
 				std::string engine_;
+				std::string dBTimeZone_;
 				std::string dBInstanceStorageType_;
 				std::string dedicatedHostGroupId_;
 				std::string dBInstanceNetType_;

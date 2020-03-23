@@ -35,7 +35,7 @@ long DescribePriceRequest::getResourceOwnerId()const
 void DescribePriceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribePriceRequest::getDBInstanceStorage()const
@@ -46,7 +46,7 @@ int DescribePriceRequest::getDBInstanceStorage()const
 void DescribePriceRequest::setDBInstanceStorage(int dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+	setParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
 }
 
 std::string DescribePriceRequest::getClientToken()const
@@ -57,7 +57,7 @@ std::string DescribePriceRequest::getClientToken()const
 void DescribePriceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribePriceRequest::getEngineVersion()const
@@ -68,7 +68,7 @@ std::string DescribePriceRequest::getEngineVersion()const
 void DescribePriceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 std::string DescribePriceRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string DescribePriceRequest::getAccessKeyId()const
 void DescribePriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribePriceRequest::getRegionId()const
@@ -90,7 +90,7 @@ std::string DescribePriceRequest::getRegionId()const
 void DescribePriceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribePriceRequest::getEngine()const
@@ -101,7 +101,7 @@ std::string DescribePriceRequest::getEngine()const
 void DescribePriceRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string DescribePriceRequest::getDBInstanceId()const
@@ -112,7 +112,7 @@ std::string DescribePriceRequest::getDBInstanceId()const
 void DescribePriceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribePriceRequest::getDBInstanceStorageType()const
@@ -123,7 +123,7 @@ std::string DescribePriceRequest::getDBInstanceStorageType()const
 void DescribePriceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
 {
 	dBInstanceStorageType_ = dBInstanceStorageType;
-	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+	setParameter("DBInstanceStorageType", dBInstanceStorageType);
 }
 
 int DescribePriceRequest::getQuantity()const
@@ -134,7 +134,7 @@ int DescribePriceRequest::getQuantity()const
 void DescribePriceRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setCoreParameter("Quantity", std::to_string(quantity));
+	setParameter("Quantity", std::to_string(quantity));
 }
 
 std::string DescribePriceRequest::getResourceOwnerAccount()const
@@ -145,7 +145,7 @@ std::string DescribePriceRequest::getResourceOwnerAccount()const
 void DescribePriceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribePriceRequest::getOwnerAccount()const
@@ -156,7 +156,7 @@ std::string DescribePriceRequest::getOwnerAccount()const
 void DescribePriceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribePriceRequest::getCommodityCode()const
@@ -167,7 +167,7 @@ std::string DescribePriceRequest::getCommodityCode()const
 void DescribePriceRequest::setCommodityCode(const std::string& commodityCode)
 {
 	commodityCode_ = commodityCode;
-	setCoreParameter("CommodityCode", commodityCode);
+	setParameter("CommodityCode", commodityCode);
 }
 
 long DescribePriceRequest::getOwnerId()const
@@ -178,7 +178,7 @@ long DescribePriceRequest::getOwnerId()const
 void DescribePriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribePriceRequest::getUsedTime()const
@@ -189,7 +189,7 @@ int DescribePriceRequest::getUsedTime()const
 void DescribePriceRequest::setUsedTime(int usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", std::to_string(usedTime));
+	setParameter("UsedTime", std::to_string(usedTime));
 }
 
 std::string DescribePriceRequest::getDBInstanceClass()const
@@ -200,7 +200,7 @@ std::string DescribePriceRequest::getDBInstanceClass()const
 void DescribePriceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
+	setParameter("DBInstanceClass", dBInstanceClass);
 }
 
 int DescribePriceRequest::getInstanceUsedType()const
@@ -211,7 +211,7 @@ int DescribePriceRequest::getInstanceUsedType()const
 void DescribePriceRequest::setInstanceUsedType(int instanceUsedType)
 {
 	instanceUsedType_ = instanceUsedType;
-	setCoreParameter("InstanceUsedType", std::to_string(instanceUsedType));
+	setParameter("InstanceUsedType", std::to_string(instanceUsedType));
 }
 
 std::string DescribePriceRequest::getZoneId()const
@@ -222,7 +222,7 @@ std::string DescribePriceRequest::getZoneId()const
 void DescribePriceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string DescribePriceRequest::getTimeType()const
@@ -233,7 +233,7 @@ std::string DescribePriceRequest::getTimeType()const
 void DescribePriceRequest::setTimeType(const std::string& timeType)
 {
 	timeType_ = timeType;
-	setCoreParameter("TimeType", timeType);
+	setParameter("TimeType", timeType);
 }
 
 std::string DescribePriceRequest::getPayType()const
@@ -244,7 +244,7 @@ std::string DescribePriceRequest::getPayType()const
 void DescribePriceRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setParameter("PayType", payType);
 }
 
 std::string DescribePriceRequest::getOrderType()const
@@ -255,6 +255,6 @@ std::string DescribePriceRequest::getOrderType()const
 void DescribePriceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

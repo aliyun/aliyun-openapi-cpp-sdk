@@ -46,6 +46,8 @@ namespace AlibabaCloud
 				std::string getAutoRenew()const;
 				int getHostStorage()const;
 				int getInstanceNumberSlave()const;
+				std::string getOpenPermission()const;
+				std::string getHostType()const;
 				std::string getExpiredTime()const;
 				int getHostMem()const;
 				std::string getHostStatus()const;
@@ -65,6 +67,7 @@ namespace AlibabaCloud
 				int getHostCPU()const;
 				std::string getRegionId()const;
 				std::string getIPAddress()const;
+				std::string getAccountName()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -78,6 +81,8 @@ namespace AlibabaCloud
 				std::string autoRenew_;
 				int hostStorage_;
 				int instanceNumberSlave_;
+				std::string openPermission_;
+				std::string hostType_;
 				std::string expiredTime_;
 				int hostMem_;
 				std::string hostStatus_;
@@ -97,6 +102,7 @@ namespace AlibabaCloud
 				int hostCPU_;
 				std::string regionId_;
 				std::string iPAddress_;
+				std::string accountName_;
 
 			};
 		}

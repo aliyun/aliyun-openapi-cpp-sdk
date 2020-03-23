@@ -35,7 +35,7 @@ long DescribeDBInstancesOverviewRequest::getResourceOwnerId()const
 void DescribeDBInstancesOverviewRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstancesOverviewRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string DescribeDBInstancesOverviewRequest::getClientToken()const
 void DescribeDBInstancesOverviewRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeDBInstancesOverviewRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DescribeDBInstancesOverviewRequest::getAccessKeyId()const
 void DescribeDBInstancesOverviewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstancesOverviewRequest::getExpired()const
@@ -68,7 +68,7 @@ std::string DescribeDBInstancesOverviewRequest::getExpired()const
 void DescribeDBInstancesOverviewRequest::setExpired(const std::string& expired)
 {
 	expired_ = expired;
-	setCoreParameter("Expired", expired);
+	setParameter("Expired", expired);
 }
 
 std::string DescribeDBInstancesOverviewRequest::getEngine()const
@@ -79,7 +79,7 @@ std::string DescribeDBInstancesOverviewRequest::getEngine()const
 void DescribeDBInstancesOverviewRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setParameter("Engine", engine);
 }
 
 std::string DescribeDBInstancesOverviewRequest::getRegionId()const
@@ -90,7 +90,7 @@ std::string DescribeDBInstancesOverviewRequest::getRegionId()const
 void DescribeDBInstancesOverviewRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDBInstancesOverviewRequest::getDBInstanceId()const
@@ -101,7 +101,7 @@ std::string DescribeDBInstancesOverviewRequest::getDBInstanceId()const
 void DescribeDBInstancesOverviewRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBInstancesOverviewRequest::getProxyId()const
@@ -112,7 +112,7 @@ std::string DescribeDBInstancesOverviewRequest::getProxyId()const
 void DescribeDBInstancesOverviewRequest::setProxyId(const std::string& proxyId)
 {
 	proxyId_ = proxyId;
-	setCoreParameter("ProxyId", proxyId);
+	setParameter("ProxyId", proxyId);
 }
 
 std::string DescribeDBInstancesOverviewRequest::getResourceOwnerAccount()const
@@ -123,7 +123,7 @@ std::string DescribeDBInstancesOverviewRequest::getResourceOwnerAccount()const
 void DescribeDBInstancesOverviewRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeDBInstancesOverviewRequest::getOwnerId()const
@@ -134,7 +134,7 @@ long DescribeDBInstancesOverviewRequest::getOwnerId()const
 void DescribeDBInstancesOverviewRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstancesOverviewRequest::getZoneId()const
@@ -145,6 +145,6 @@ std::string DescribeDBInstancesOverviewRequest::getZoneId()const
 void DescribeDBInstancesOverviewRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

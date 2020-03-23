@@ -35,7 +35,7 @@ long DescribeDatabasesRequest::getResourceOwnerId()const
 void DescribeDatabasesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeDatabasesRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeDatabasesRequest::getPageNumber()const
 void DescribeDatabasesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDatabasesRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DescribeDatabasesRequest::getAccessKeyId()const
 void DescribeDatabasesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDatabasesRequest::getDBStatus()const
@@ -68,7 +68,7 @@ std::string DescribeDatabasesRequest::getDBStatus()const
 void DescribeDatabasesRequest::setDBStatus(const std::string& dBStatus)
 {
 	dBStatus_ = dBStatus;
-	setCoreParameter("DBStatus", dBStatus);
+	setParameter("DBStatus", dBStatus);
 }
 
 int DescribeDatabasesRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribeDatabasesRequest::getPageSize()const
 void DescribeDatabasesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDatabasesRequest::getDBInstanceId()const
@@ -90,7 +90,7 @@ std::string DescribeDatabasesRequest::getDBInstanceId()const
 void DescribeDatabasesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDatabasesRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeDatabasesRequest::getResourceOwnerAccount()const
 void DescribeDatabasesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDatabasesRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string DescribeDatabasesRequest::getOwnerAccount()const
 void DescribeDatabasesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDatabasesRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long DescribeDatabasesRequest::getOwnerId()const
 void DescribeDatabasesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDatabasesRequest::getDBName()const
@@ -134,6 +134,6 @@ std::string DescribeDatabasesRequest::getDBName()const
 void DescribeDatabasesRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setParameter("DBName", dBName);
 }
 

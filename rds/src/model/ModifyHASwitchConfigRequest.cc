@@ -35,7 +35,7 @@ long ModifyHASwitchConfigRequest::getResourceOwnerId()const
 void ModifyHASwitchConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyHASwitchConfigRequest::getHAConfig()const
@@ -46,7 +46,7 @@ std::string ModifyHASwitchConfigRequest::getHAConfig()const
 void ModifyHASwitchConfigRequest::setHAConfig(const std::string& hAConfig)
 {
 	hAConfig_ = hAConfig;
-	setCoreParameter("HAConfig", hAConfig);
+	setParameter("HAConfig", hAConfig);
 }
 
 std::string ModifyHASwitchConfigRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifyHASwitchConfigRequest::getAccessKeyId()const
 void ModifyHASwitchConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyHASwitchConfigRequest::getManualHATime()const
@@ -68,7 +68,7 @@ std::string ModifyHASwitchConfigRequest::getManualHATime()const
 void ModifyHASwitchConfigRequest::setManualHATime(const std::string& manualHATime)
 {
 	manualHATime_ = manualHATime;
-	setCoreParameter("ManualHATime", manualHATime);
+	setParameter("ManualHATime", manualHATime);
 }
 
 std::string ModifyHASwitchConfigRequest::getRegionId()const
@@ -79,7 +79,7 @@ std::string ModifyHASwitchConfigRequest::getRegionId()const
 void ModifyHASwitchConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyHASwitchConfigRequest::getDBInstanceId()const
@@ -90,7 +90,7 @@ std::string ModifyHASwitchConfigRequest::getDBInstanceId()const
 void ModifyHASwitchConfigRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyHASwitchConfigRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string ModifyHASwitchConfigRequest::getResourceOwnerAccount()const
 void ModifyHASwitchConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ModifyHASwitchConfigRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long ModifyHASwitchConfigRequest::getOwnerId()const
 void ModifyHASwitchConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
