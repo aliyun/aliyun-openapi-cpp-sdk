@@ -159,6 +159,22 @@ namespace {
     ShutdownSdk();
   }
 
+  TEST(CommonClient, bodyParam) {
+    const ClientConfiguration cfg;
+
+    std::string key    = "accessKeyId";
+    std::string secret = "accessSecret";
+    std::string token  = "sessionToken";
+
+    const Credentials credentials(key, secret, token);
+    CommonRequest cr;
+    cr.setBodyParameter("TestBodyParamKey", "TestBodyParamValue");
+    TestCommonClient* client = new TestCommonClient(credentials, cfg);
+    HttpRequest r = client->buildRpcHttpRequest("cn-hangzhou", cr, HttpRequest::Method::Post);
+    const char *s = "TestBodyParamKey=TestBodyParamValue";
+    EXPECT_EQ(*r.body(), *s);
+  }
+
   TEST(CommonClient, abnormal) {
     InitializeSdk();
 
