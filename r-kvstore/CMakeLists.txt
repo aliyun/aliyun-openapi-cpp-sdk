@@ -87,6 +87,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeRegionsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeRunningLogRecordsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeRunningLogRecordsResult.h
+	include/alibabacloud/r-kvstore/model/DescribeSecurityGroupConfigurationRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeSecurityGroupConfigurationResult.h
 	include/alibabacloud/r-kvstore/model/DescribeSecurityIpsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeSecurityIpsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeSlowLogRecordsRequest.h
@@ -141,6 +143,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyInstanceVpcAuthModeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyIntranetAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyIntranetAttributeResult.h
+	include/alibabacloud/r-kvstore/model/ModifySecurityGroupConfigurationRequest.h
+	include/alibabacloud/r-kvstore/model/ModifySecurityGroupConfigurationResult.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityIpsRequest.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityIpsResult.h
 	include/alibabacloud/r-kvstore/model/ModifyUserClusterHostRequest.h
@@ -234,6 +238,8 @@ set(r-kvstore_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeRunningLogRecordsRequest.cc
 	src/model/DescribeRunningLogRecordsResult.cc
+	src/model/DescribeSecurityGroupConfigurationRequest.cc
+	src/model/DescribeSecurityGroupConfigurationResult.cc
 	src/model/DescribeSecurityIpsRequest.cc
 	src/model/DescribeSecurityIpsResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
@@ -288,6 +294,8 @@ set(r-kvstore_src
 	src/model/ModifyInstanceVpcAuthModeResult.cc
 	src/model/ModifyIntranetAttributeRequest.cc
 	src/model/ModifyIntranetAttributeResult.cc
+	src/model/ModifySecurityGroupConfigurationRequest.cc
+	src/model/ModifySecurityGroupConfigurationResult.cc
 	src/model/ModifySecurityIpsRequest.cc
 	src/model/ModifySecurityIpsResult.cc
 	src/model/ModifyUserClusterHostRequest.cc

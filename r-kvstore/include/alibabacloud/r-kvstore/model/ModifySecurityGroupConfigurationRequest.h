@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCEAUTORENEWALATTRIBUTEREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCEAUTORENEWALATTRIBUTEREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYSECURITYGROUPCONFIGURATIONREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYSECURITYGROUPCONFIGURATIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,54 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeInstanceAutoRenewalAttributeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifySecurityGroupConfigurationRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeInstanceAutoRenewalAttributeRequest();
-				~DescribeInstanceAutoRenewalAttributeRequest();
+				ModifySecurityGroupConfigurationRequest();
+				~ModifySecurityGroupConfigurationRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getSecurityGroupId()const;
+				void setSecurityGroupId(const std::string& securityGroupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getProxyId()const;
-				void setProxyId(const std::string& proxyId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getCategory()const;
-				void setCategory(const std::string& category);
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
-				int pageNumber_;
+				std::string securityGroupId_;
 				std::string accessKeyId_;
-				std::string regionId_;
-				int pageSize_;
+				std::string securityToken_;
 				std::string dBInstanceId_;
-				std::string proxyId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string category_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCEAUTORENEWALATTRIBUTEREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYSECURITYGROUPCONFIGURATIONREQUEST_H_

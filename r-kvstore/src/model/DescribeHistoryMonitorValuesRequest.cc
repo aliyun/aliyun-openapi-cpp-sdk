@@ -93,6 +93,28 @@ void DescribeHistoryMonitorValuesRequest::setNodeId(const std::string& nodeId)
 	setParameter("NodeId", nodeId);
 }
 
+std::string DescribeHistoryMonitorValuesRequest::getAccessType()const
+{
+	return accessType_;
+}
+
+void DescribeHistoryMonitorValuesRequest::setAccessType(const std::string& accessType)
+{
+	accessType_ = accessType;
+	setParameter("AccessType", accessType);
+}
+
+std::string DescribeHistoryMonitorValuesRequest::getProduct()const
+{
+	return product_;
+}
+
+void DescribeHistoryMonitorValuesRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setParameter("Product", product);
+}
+
 std::string DescribeHistoryMonitorValuesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -146,6 +168,17 @@ void DescribeHistoryMonitorValuesRequest::setInstanceId(const std::string& insta
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string DescribeHistoryMonitorValuesRequest::getCategory()const
+{
+	return category_;
+}
+
+void DescribeHistoryMonitorValuesRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getMonitorKeys()const

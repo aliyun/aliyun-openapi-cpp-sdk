@@ -148,3 +148,14 @@ void DescribeInstanceAutoRenewalAttributeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeInstanceAutoRenewalAttributeRequest::getCategory()const
+{
+	return category_;
+}
+
+void DescribeInstanceAutoRenewalAttributeRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
+}
+

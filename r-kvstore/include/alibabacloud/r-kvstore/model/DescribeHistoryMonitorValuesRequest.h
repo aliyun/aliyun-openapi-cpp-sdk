@@ -47,6 +47,10 @@ namespace AlibabaCloud
 				void setIntervalForHistory(const std::string& intervalForHistory);
 				std::string getNodeId()const;
 				void setNodeId(const std::string& nodeId);
+				std::string getAccessType()const;
+				void setAccessType(const std::string& accessType);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -57,6 +61,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 				std::string getMonitorKeys()const;
 				void setMonitorKeys(const std::string& monitorKeys);
 
@@ -67,11 +73,14 @@ namespace AlibabaCloud
 				std::string securityToken_;
 				std::string intervalForHistory_;
 				std::string nodeId_;
+				std::string accessType_;
+				std::string product_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string endTime_;
 				long ownerId_;
 				std::string instanceId_;
+				std::string category_;
 				std::string monitorKeys_;
 
 			};
