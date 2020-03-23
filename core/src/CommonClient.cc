@@ -291,13 +291,22 @@ HttpRequest CommonClient::buildRpcHttpRequest(const std::string &endpoint,
   queryParams["Timestamp"] = ss.str();
   queryParams["Version"] = msg.version();
 
+  std::string bodyParamString;
+  auto signParams = queryParams;
+  auto bodyParams = msg.bodyParameters();
+  for (const auto &p : bodyParams)
+  {
+    bodyParamString += "&";
+    bodyParamString += (p.first + "=" + UrlEncode(p.second));
+    signParams[p.first] = p.second;
+  }
+
   std::stringstream plaintext;
   plaintext << HttpMethodToString(method)
             << "&"
             << UrlEncode(url.path())
             << "&"
-            << UrlEncode(canonicalizedQuery(queryParams));
-
+            << UrlEncode(canonicalizedQuery(signParams));
   queryParams["Signature"] = signer_->generate(plaintext.str(),
                                                credentials.accessKeySecret() + "&");
 
@@ -329,6 +338,11 @@ HttpRequest CommonClient::buildRpcHttpRequest(const std::string &endpoint,
   request.setHeader("Host", url.host());
   request.setHeader("x-sdk-client",
                     std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
+
+  if (!bodyParamString.empty())
+  {
+    request.setBody(bodyParamString.c_str() + 1, bodyParamString.size() - 1);
+  }
   return request;
 }
 
