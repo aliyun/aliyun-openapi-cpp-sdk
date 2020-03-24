@@ -457,6 +457,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyInstanceDeploymentResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceMaintenanceAttributesRequest.h
 	include/alibabacloud/ecs/model/ModifyInstanceMaintenanceAttributesResult.h
+	include/alibabacloud/ecs/model/ModifyInstanceMetadataOptionsRequest.h
+	include/alibabacloud/ecs/model/ModifyInstanceMetadataOptionsResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceNetworkSpecRequest.h
 	include/alibabacloud/ecs/model/ModifyInstanceNetworkSpecResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceSpecRequest.h
@@ -1014,6 +1016,8 @@ set(ecs_src
 	src/model/ModifyInstanceDeploymentResult.cc
 	src/model/ModifyInstanceMaintenanceAttributesRequest.cc
 	src/model/ModifyInstanceMaintenanceAttributesResult.cc
+	src/model/ModifyInstanceMetadataOptionsRequest.cc
+	src/model/ModifyInstanceMetadataOptionsResult.cc
 	src/model/ModifyInstanceNetworkSpecRequest.cc
 	src/model/ModifyInstanceNetworkSpecResult.cc
 	src/model/ModifyInstanceSpecRequest.cc

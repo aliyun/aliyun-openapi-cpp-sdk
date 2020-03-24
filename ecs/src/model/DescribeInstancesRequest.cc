@@ -71,6 +71,17 @@ void DescribeInstancesRequest::setHpcClusterId(const std::string& hpcClusterId)
 	setParameter("HpcClusterId", hpcClusterId);
 }
 
+int DescribeInstancesRequest::getHttpPutResponseHopLimit()const
+{
+	return httpPutResponseHopLimit_;
+}
+
+void DescribeInstancesRequest::setHttpPutResponseHopLimit(int httpPutResponseHopLimit)
+{
+	httpPutResponseHopLimit_ = httpPutResponseHopLimit;
+	setParameter("HttpPutResponseHopLimit", std::to_string(httpPutResponseHopLimit));
+}
+
 std::string DescribeInstancesRequest::getFilter2Value()const
 {
 	return filter2Value_;
@@ -217,6 +228,19 @@ void DescribeInstancesRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
 	setParameter("VSwitchId", vSwitchId);
+}
+
+std::vector<std::string> DescribeInstancesRequest::getAdditionalAttributes()const
+{
+	return additionalAttributes_;
+}
+
+void DescribeInstancesRequest::setAdditionalAttributes(const std::vector<std::string>& additionalAttributes)
+{
+	additionalAttributes_ = additionalAttributes;
+	for(int dep1 = 0; dep1!= additionalAttributes.size(); dep1++) {
+		setParameter("AdditionalAttributes."+ std::to_string(dep1), additionalAttributes.at(dep1));
+	}
 }
 
 std::string DescribeInstancesRequest::getInstanceName()const
@@ -373,6 +397,17 @@ void DescribeInstancesRequest::setRdmaIpAddresses(const std::string& rdmaIpAddre
 	setParameter("RdmaIpAddresses", rdmaIpAddresses);
 }
 
+std::string DescribeInstancesRequest::getHttpEndpoint()const
+{
+	return httpEndpoint_;
+}
+
+void DescribeInstancesRequest::setHttpEndpoint(const std::string& httpEndpoint)
+{
+	httpEndpoint_ = httpEndpoint;
+	setParameter("HttpEndpoint", httpEndpoint);
+}
+
 int DescribeInstancesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -481,6 +516,17 @@ void DescribeInstancesRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
 	setParameter("VpcId", vpcId);
+}
+
+std::string DescribeInstancesRequest::getHttpTokens()const
+{
+	return httpTokens_;
+}
+
+void DescribeInstancesRequest::setHttpTokens(const std::string& httpTokens)
+{
+	httpTokens_ = httpTokens;
+	setParameter("HttpTokens", httpTokens);
 }
 
 std::string DescribeInstancesRequest::getFilter3Key()const

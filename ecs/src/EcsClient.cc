@@ -7899,6 +7899,42 @@ EcsClient::ModifyInstanceMaintenanceAttributesOutcomeCallable EcsClient::modifyI
 	return task->get_future();
 }
 
+EcsClient::ModifyInstanceMetadataOptionsOutcome EcsClient::modifyInstanceMetadataOptions(const ModifyInstanceMetadataOptionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceMetadataOptionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceMetadataOptionsOutcome(ModifyInstanceMetadataOptionsResult(outcome.result()));
+	else
+		return ModifyInstanceMetadataOptionsOutcome(outcome.error());
+}
+
+void EcsClient::modifyInstanceMetadataOptionsAsync(const ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceMetadataOptions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyInstanceMetadataOptionsOutcomeCallable EcsClient::modifyInstanceMetadataOptionsCallable(const ModifyInstanceMetadataOptionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceMetadataOptionsOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceMetadataOptions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ModifyInstanceNetworkSpecOutcome EcsClient::modifyInstanceNetworkSpec(const ModifyInstanceNetworkSpecRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

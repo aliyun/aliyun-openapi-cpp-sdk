@@ -206,6 +206,13 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.cpuOptions.threadsPerCore = std::stoi(cpuOptionsNode["ThreadsPerCore"].asString());
 		if(!cpuOptionsNode["Numa"].isNull())
 			instancesObject.cpuOptions.numa = cpuOptionsNode["Numa"].asString();
+		auto metadataOptionsNode = value["MetadataOptions"];
+		if(!metadataOptionsNode["HttpEndpoint"].isNull())
+			instancesObject.metadataOptions.httpEndpoint = metadataOptionsNode["HttpEndpoint"].asString();
+		if(!metadataOptionsNode["HttpTokens"].isNull())
+			instancesObject.metadataOptions.httpTokens = metadataOptionsNode["HttpTokens"].asString();
+		if(!metadataOptionsNode["HttpPutResponseHopLimit"].isNull())
+			instancesObject.metadataOptions.httpPutResponseHopLimit = std::stoi(metadataOptionsNode["HttpPutResponseHopLimit"].asString());
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
 			instancesObject.securityGroupIds.push_back(value.asString());

@@ -73,6 +73,8 @@ namespace AlibabaCloud
 				void setUniqueSuffix(bool uniqueSuffix);
 				std::string getHpcClusterId()const;
 				void setHpcClusterId(const std::string& hpcClusterId);
+				int getHttpPutResponseHopLimit()const;
+				void setHttpPutResponseHopLimit(int httpPutResponseHopLimit);
 				std::string getSecurityEnhancementStrategy()const;
 				void setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy);
 				std::string getKeyPairName()const;
@@ -163,6 +165,8 @@ namespace AlibabaCloud
 				void setPasswordInherit(bool passwordInherit);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getHttpEndpoint()const;
+				void setHttpEndpoint(const std::string& httpEndpoint);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
 				bool getHibernationConfigured()const;
@@ -205,6 +209,8 @@ namespace AlibabaCloud
 				void setSystemDiskSize(const std::string& systemDiskSize);
 				std::string getImageFamily()const;
 				void setImageFamily(const std::string& imageFamily);
+				std::string getHttpTokens()const;
+				void setHttpTokens(const std::string& httpTokens);
 				std::string getSystemDiskDescription()const;
 				void setSystemDiskDescription(const std::string& systemDiskDescription);
 
@@ -213,6 +219,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				bool uniqueSuffix_;
 				std::string hpcClusterId_;
+				int httpPutResponseHopLimit_;
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
 				int minAmount_;
@@ -258,6 +265,7 @@ namespace AlibabaCloud
 				std::string userData_;
 				bool passwordInherit_;
 				std::string regionId_;
+				std::string httpEndpoint_;
 				std::string instanceType_;
 				bool hibernationConfigured_;
 				std::string instanceChargeType_;
@@ -279,6 +287,7 @@ namespace AlibabaCloud
 				std::string storageSetId_;
 				std::string systemDiskSize_;
 				std::string imageFamily_;
+				std::string httpTokens_;
 				std::string systemDiskDescription_;
 
 			};

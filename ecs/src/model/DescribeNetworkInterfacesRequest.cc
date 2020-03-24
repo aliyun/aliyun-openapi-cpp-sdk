@@ -267,3 +267,14 @@ void DescribeNetworkInterfacesRequest::setNetworkInterfaceId(const std::vector<s
 	}
 }
 
+std::string DescribeNetworkInterfacesRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeNetworkInterfacesRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
+}
+

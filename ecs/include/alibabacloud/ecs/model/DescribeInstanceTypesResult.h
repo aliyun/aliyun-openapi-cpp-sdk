@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					float memorySize;
 					long instancePpsTx;
+					int eniIpv6AddressQuantity;
 					int cpuCoreCount;
 					long localStorageCapacity;
 					std::string instanceTypeFamily;

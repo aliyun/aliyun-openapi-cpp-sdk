@@ -70,6 +70,12 @@ namespace AlibabaCloud
 						std::string numa;
 						int coreCount;
 					};
+					struct MetadataOptions
+					{
+						int httpPutResponseHopLimit;
+						std::string httpTokens;
+						std::string httpEndpoint;
+					};
 					struct NetworkInterface
 					{
 						std::string primaryIpAddress;
@@ -100,6 +106,7 @@ namespace AlibabaCloud
 					std::string hostName;
 					std::string vlanId;
 					std::string status;
+					MetadataOptions metadataOptions;
 					std::string instanceId;
 					std::string stoppedMode;
 					CpuOptions cpuOptions;

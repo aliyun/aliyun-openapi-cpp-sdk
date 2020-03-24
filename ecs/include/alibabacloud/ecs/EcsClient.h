@@ -458,6 +458,8 @@
 #include "model/ModifyInstanceDeploymentResult.h"
 #include "model/ModifyInstanceMaintenanceAttributesRequest.h"
 #include "model/ModifyInstanceMaintenanceAttributesResult.h"
+#include "model/ModifyInstanceMetadataOptionsRequest.h"
+#include "model/ModifyInstanceMetadataOptionsResult.h"
 #include "model/ModifyInstanceNetworkSpecRequest.h"
 #include "model/ModifyInstanceNetworkSpecResult.h"
 #include "model/ModifyInstanceSpecRequest.h"
@@ -1239,6 +1241,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyInstanceMaintenanceAttributesResult> ModifyInstanceMaintenanceAttributesOutcome;
 			typedef std::future<ModifyInstanceMaintenanceAttributesOutcome> ModifyInstanceMaintenanceAttributesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyInstanceMaintenanceAttributesRequest&, const ModifyInstanceMaintenanceAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceMaintenanceAttributesAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstanceMetadataOptionsResult> ModifyInstanceMetadataOptionsOutcome;
+			typedef std::future<ModifyInstanceMetadataOptionsOutcome> ModifyInstanceMetadataOptionsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyInstanceMetadataOptionsRequest&, const ModifyInstanceMetadataOptionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceMetadataOptionsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceNetworkSpecResult> ModifyInstanceNetworkSpecOutcome;
 			typedef std::future<ModifyInstanceNetworkSpecOutcome> ModifyInstanceNetworkSpecOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyInstanceNetworkSpecRequest&, const ModifyInstanceNetworkSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNetworkSpecAsyncHandler;
@@ -2075,6 +2080,9 @@ namespace AlibabaCloud
 			ModifyInstanceMaintenanceAttributesOutcome modifyInstanceMaintenanceAttributes(const Model::ModifyInstanceMaintenanceAttributesRequest &request)const;
 			void modifyInstanceMaintenanceAttributesAsync(const Model::ModifyInstanceMaintenanceAttributesRequest& request, const ModifyInstanceMaintenanceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceMaintenanceAttributesOutcomeCallable modifyInstanceMaintenanceAttributesCallable(const Model::ModifyInstanceMaintenanceAttributesRequest& request) const;
+			ModifyInstanceMetadataOptionsOutcome modifyInstanceMetadataOptions(const Model::ModifyInstanceMetadataOptionsRequest &request)const;
+			void modifyInstanceMetadataOptionsAsync(const Model::ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstanceMetadataOptionsOutcomeCallable modifyInstanceMetadataOptionsCallable(const Model::ModifyInstanceMetadataOptionsRequest& request) const;
 			ModifyInstanceNetworkSpecOutcome modifyInstanceNetworkSpec(const Model::ModifyInstanceNetworkSpecRequest &request)const;
 			void modifyInstanceNetworkSpecAsync(const Model::ModifyInstanceNetworkSpecRequest& request, const ModifyInstanceNetworkSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceNetworkSpecOutcomeCallable modifyInstanceNetworkSpecCallable(const Model::ModifyInstanceNetworkSpecRequest& request) const;

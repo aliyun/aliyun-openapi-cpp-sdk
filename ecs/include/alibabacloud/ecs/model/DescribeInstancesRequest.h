@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setPrivateIpAddresses(const std::string& privateIpAddresses);
 				std::string getHpcClusterId()const;
 				void setHpcClusterId(const std::string& hpcClusterId);
+				int getHttpPutResponseHopLimit()const;
+				void setHttpPutResponseHopLimit(int httpPutResponseHopLimit);
 				std::string getFilter2Value()const;
 				void setFilter2Value(const std::string& filter2Value);
 				std::string getKeyPairName()const;
@@ -75,6 +77,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
+				std::vector<std::string> getAdditionalAttributes()const;
+				void setAdditionalAttributes(const std::vector<std::string>& additionalAttributes);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 				std::string getInstanceIds()const;
@@ -103,6 +107,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getRdmaIpAddresses()const;
 				void setRdmaIpAddresses(const std::string& rdmaIpAddresses);
+				std::string getHttpEndpoint()const;
+				void setHttpEndpoint(const std::string& httpEndpoint);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getPublicIpAddresses()const;
@@ -123,6 +129,8 @@ namespace AlibabaCloud
 				void setEipAddresses(const std::string& eipAddresses);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
+				std::string getHttpTokens()const;
+				void setHttpTokens(const std::string& httpTokens);
 				std::string getFilter3Key()const;
 				void setFilter3Key(const std::string& filter3Key);
 
@@ -131,6 +139,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string privateIpAddresses_;
 				std::string hpcClusterId_;
+				int httpPutResponseHopLimit_;
 				std::string filter2Value_;
 				std::string keyPairName_;
 				std::string resourceGroupId_;
@@ -144,6 +153,7 @@ namespace AlibabaCloud
 				bool needSaleCycle_;
 				long ownerId_;
 				std::string vSwitchId_;
+				std::vector<std::string> additionalAttributes_;
 				std::string instanceName_;
 				std::string instanceIds_;
 				std::string internetChargeType_;
@@ -158,6 +168,7 @@ namespace AlibabaCloud
 				int pageNumber_;
 				std::string regionId_;
 				std::string rdmaIpAddresses_;
+				std::string httpEndpoint_;
 				int pageSize_;
 				std::string publicIpAddresses_;
 				std::string instanceType_;
@@ -168,6 +179,7 @@ namespace AlibabaCloud
 				std::string filter2Key_;
 				std::string eipAddresses_;
 				std::string vpcId_;
+				std::string httpTokens_;
 				std::string filter3Key_;
 
 			};

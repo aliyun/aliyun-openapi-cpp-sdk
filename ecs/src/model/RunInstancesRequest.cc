@@ -71,6 +71,17 @@ void RunInstancesRequest::setHpcClusterId(const std::string& hpcClusterId)
 	setParameter("HpcClusterId", hpcClusterId);
 }
 
+int RunInstancesRequest::getHttpPutResponseHopLimit()const
+{
+	return httpPutResponseHopLimit_;
+}
+
+void RunInstancesRequest::setHttpPutResponseHopLimit(int httpPutResponseHopLimit)
+{
+	httpPutResponseHopLimit_ = httpPutResponseHopLimit;
+	setParameter("HttpPutResponseHopLimit", std::to_string(httpPutResponseHopLimit));
+}
+
 std::string RunInstancesRequest::getSecurityEnhancementStrategy()const
 {
 	return securityEnhancementStrategy_;
@@ -573,6 +584,17 @@ void RunInstancesRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string RunInstancesRequest::getHttpEndpoint()const
+{
+	return httpEndpoint_;
+}
+
+void RunInstancesRequest::setHttpEndpoint(const std::string& httpEndpoint)
+{
+	httpEndpoint_ = httpEndpoint;
+	setParameter("HttpEndpoint", httpEndpoint);
+}
+
 std::string RunInstancesRequest::getInstanceType()const
 {
 	return instanceType_;
@@ -830,6 +852,17 @@ void RunInstancesRequest::setImageFamily(const std::string& imageFamily)
 {
 	imageFamily_ = imageFamily;
 	setParameter("ImageFamily", imageFamily);
+}
+
+std::string RunInstancesRequest::getHttpTokens()const
+{
+	return httpTokens_;
+}
+
+void RunInstancesRequest::setHttpTokens(const std::string& httpTokens)
+{
+	httpTokens_ = httpTokens;
+	setParameter("HttpTokens", httpTokens);
 }
 
 std::string RunInstancesRequest::getSystemDiskDescription()const

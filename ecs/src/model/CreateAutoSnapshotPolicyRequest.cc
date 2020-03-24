@@ -71,6 +71,22 @@ void CreateAutoSnapshotPolicyRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::vector<CreateAutoSnapshotPolicyRequest::Tag> CreateAutoSnapshotPolicyRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateAutoSnapshotPolicyRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
 std::string CreateAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

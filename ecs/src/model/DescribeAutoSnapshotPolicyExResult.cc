@@ -63,6 +63,16 @@ void DescribeAutoSnapshotPolicyExResult::parse(const std::string &payload)
 			autoSnapshotPoliciesObject.creationTime = valueAutoSnapshotPoliciesAutoSnapshotPolicy["CreationTime"].asString();
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].isNull())
 			autoSnapshotPoliciesObject.status = valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].asString();
+		auto allTagsNode = allAutoSnapshotPoliciesNode["Tags"]["Tag"];
+		for (auto allAutoSnapshotPoliciesNodeTagsTag : allTagsNode)
+		{
+			AutoSnapshotPolicy::Tag tagsObject;
+			if(!allAutoSnapshotPoliciesNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allAutoSnapshotPoliciesNodeTagsTag["TagKey"].asString();
+			if(!allAutoSnapshotPoliciesNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allAutoSnapshotPoliciesNodeTagsTag["TagValue"].asString();
+			autoSnapshotPoliciesObject.tags.push_back(tagsObject);
+		}
 		autoSnapshotPolicies_.push_back(autoSnapshotPoliciesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct AutoSnapshotPolicy
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					std::string timePoints;
 					int volumeNums;
@@ -43,6 +48,7 @@ namespace AlibabaCloud
 					std::string regionId;
 					std::string repeatWeekdays;
 					std::string autoSnapshotPolicyName;
+					std::vector<AutoSnapshotPolicy::Tag> tags;
 					int diskNums;
 				};
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_CREATEAUTOSNAPSHOTPOLICYREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_CREATEAUTOSNAPSHOTPOLICYREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEMETADATAOPTIONSREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEMETADATAOPTIONSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,51 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT CreateAutoSnapshotPolicyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT ModifyInstanceMetadataOptionsRequest : public RpcServiceRequest
 			{
-			public:
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
 
 			public:
-				CreateAutoSnapshotPolicyRequest();
-				~CreateAutoSnapshotPolicyRequest();
+				ModifyInstanceMetadataOptionsRequest();
+				~ModifyInstanceMetadataOptionsRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getTimePoints()const;
-				void setTimePoints(const std::string& timePoints);
-				std::string getRepeatWeekdays()const;
-				void setRepeatWeekdays(const std::string& repeatWeekdays);
+				int getHttpPutResponseHopLimit()const;
+				void setHttpPutResponseHopLimit(int httpPutResponseHopLimit);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
+				std::string getHttpEndpoint()const;
+				void setHttpEndpoint(const std::string& httpEndpoint);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAutoSnapshotPolicyName()const;
-				void setAutoSnapshotPolicyName(const std::string& autoSnapshotPolicyName);
-				int getRetentionDays()const;
-				void setRetentionDays(int retentionDays);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getHttpTokens()const;
+				void setHttpTokens(const std::string& httpTokens);
 
             private:
 				long resourceOwnerId_;
-				std::string timePoints_;
-				std::string repeatWeekdays_;
+				int httpPutResponseHopLimit_;
 				std::string regionId_;
-				std::vector<Tag> tag_;
+				std::string httpEndpoint_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;
-				std::string autoSnapshotPolicyName_;
-				int retentionDays_;
+				std::string instanceId_;
+				std::string httpTokens_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_CREATEAUTOSNAPSHOTPOLICYREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEMETADATAOPTIONSREQUEST_H_

@@ -69,6 +69,8 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.eniQuantity = std::stoi(valueInstanceTypesInstanceType["EniQuantity"].asString());
 		if(!valueInstanceTypesInstanceType["EniPrivateIpAddressQuantity"].isNull())
 			instanceTypesObject.eniPrivateIpAddressQuantity = std::stoi(valueInstanceTypesInstanceType["EniPrivateIpAddressQuantity"].asString());
+		if(!valueInstanceTypesInstanceType["EniIpv6AddressQuantity"].isNull())
+			instanceTypesObject.eniIpv6AddressQuantity = std::stoi(valueInstanceTypesInstanceType["EniIpv6AddressQuantity"].asString());
 		if(!valueInstanceTypesInstanceType["InstanceBandwidthRx"].isNull())
 			instanceTypesObject.instanceBandwidthRx = std::stoi(valueInstanceTypesInstanceType["InstanceBandwidthRx"].asString());
 		if(!valueInstanceTypesInstanceType["InstanceBandwidthTx"].isNull())
